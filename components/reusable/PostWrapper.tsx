@@ -9,11 +9,11 @@ import { ChevronsLeft } from 'lucide-react';
 import { Link } from '@/i18n/routing';
 import { useClick } from '@/hooks/useAudio';
 
-const PostWrapper = ({ textContent }: { textContent: string }) => {
+const PostWrapper = ({ textContent, minHeight = true }: { textContent: string; minHeight?: boolean }) => {
   const { playClick } = useClick();
 
   return (
-    <div className="min-h-[100dvh] max-w-[100dvw] px-4 pb-10 sm:px-8 md:px-20 xl:px-66">
+    <div className={`${minHeight ? 'min-h-[100dvh]' : ''} max-w-[100dvw] px-4 pb-10 sm:px-8 md:px-20 xl:px-66`}>
       <Banner />
       <Link href="/" className="w-full md:w-1/3 lg:w-1/4">
         <button

@@ -1,6 +1,6 @@
 'use client';
-import { Fragment, lazy, Suspense, useState, useEffect } from 'react';
-import { Link } from '@/i18n/routing';
+import { Fragment, lazy, Suspense, useState, useEffect, useMemo } from 'react';
+import { Link, usePathname } from '@/i18n/routing';
 import Banner from './Banner';
 import Info from '@/components/reusable/Menu/Info';
 import NightlyBanner from '@/components/Modals/NightlyBanner'
@@ -83,12 +83,33 @@ const MainMenu = () => {
     // }
   ];
 
-  const legalLinks = [
-    { name: 'terms', href: '/terms', icon: ScrollText },
-    { name: 'privacy', href: '/privacy', icon: Cookie },
-    { name: 'security', href: '/security', icon: FileLock2 },
-    // { name: 'patch notes', href: '/patch-notes', icon: FileDiff }
-  ];
+  const baseLegalLinks = useMemo(
+    () => [
+      { name: 'terms', href: '/terms', icon: ScrollText },
+      { name: 'privacy', href: '/privacy', icon: Cookie },
+      { name: 'security', href: '/security', icon: FileLock2 },
+      // { name: 'patch notes', href: '/patch-notes', icon: FileDiff }
+    ],
+    []
+  );
+
+  // Show credits link only on large/desktop layouts
+  // Compute links deterministically on the server (baseLegalLinks)
+  // and update on the client after mount to avoid hydration mismatches.
+  const pathname = usePathname()
+  const [legalLinks, setLegalLinks] = useState(() => baseLegalLinks);
+
+  useEffect(() => {
+    // Update legal links when media query result is known on the client
+    if (isLG) {
+      setLegalLinks([
+        ...baseLegalLinks,
+        { name: 'credits', href: '/credits', icon: Sparkle },
+      ]);
+    } else {
+      setLegalLinks(baseLegalLinks);
+    }
+  }, [baseLegalLinks, isLG]);
 
   return (
     <div
@@ -294,17 +315,22 @@ const MainMenu = () => {
           expandDecorations && 'hidden'
         )}
       >
-        {legalLinks.map((link, i) => (
-          <Link
-            href={link.href}
-            key={i}
-            className="p-2 text-sm hover:cursor-pointer  rounded-2xl flex flex-row gap-1 items-center text-[var(--secondary-color)] hover:text-[var(--main-color)]"
-            onClick={() => playClick()}
-          >
-            <link.icon className="size-4" />
-            <span>{link.name}</span>
-          </Link>
-        ))}
+          {legalLinks.map((link, i) => {
+            // Ensure links include current locale prefix (app/[locale]/... routes)
+            const locale = pathname ? pathname.split('/')[1] : 'en'
+            const href = link.href.startsWith('/') ? `/${locale}${link.href}` : link.href
+            return (
+              <Link
+                href={href}
+                key={i}
+                className="p-2 text-sm hover:cursor-pointer  rounded-2xl flex flex-row gap-1 items-center text-[var(--secondary-color)] hover:text-[var(--main-color)]"
+                onClick={() => playClick()}
+              >
+                <link.icon className="size-4" />
+                <span>{link.name}</span>
+              </Link>
+            )
+          })}
       </div>
       {showBanner && (
         <NightlyBanner
