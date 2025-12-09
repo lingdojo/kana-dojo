@@ -78,63 +78,81 @@ export default async function Credits() {
   const maintainers = contributors.slice(0, 2)
   const contributorsList = contributors.slice(2)
 
-  // Combine GitHub sponsors with Ko‑fi supporters. If no GitHub sponsors are
-  // available, show Ko‑fi supporters in development mode only.
-  const sponsorsToShow: Sponsor[] = sponsors.length > 0 ? [...sponsors, ...KO_FI_SUPPORTERS] : (process.env.NODE_ENV !== 'production' ? KO_FI_SUPPORTERS : [])
+  // Combine GitHub sponsors with Ko‑fi supporters.
+  // Always include Ko‑fi supporters alongside GitHub sponsors, and de-duplicate
+  // by login (case-insensitive) so the same supporter won't appear twice.
+  const sponsorsToShow: Sponsor[] = (() => {
+    const merged = [...sponsors, ...KO_FI_SUPPORTERS]
+    const seen = new Map<string, Sponsor>()
+    for (const s of merged) {
+      const key = (s.login || '').toLowerCase()
+      if (!seen.has(key)) seen.set(key, s)
+    }
+    return Array.from(seen.values())
+  })()
 
   const credits = `# Credits
 
-Thank you to everyone who has contributed to KanaDojo — maintainers, contributors, translators and supporters. If you would like your name displayed on this page, please open a PR or contact the maintainers.
-
-The full contributors list is available on GitHub: [Contributors on GitHub](https://github.com/lingdojo/kana-dojo/graphs/contributors).
-
-If you would like to support the project financially you can use:
-
-- [Ko‑fi](https://ko-fi.com/kanadojo)
-- [GitHub Sponsors](https://github.com/sponsors/lingdojo)
+**Thank you to everyone** who has contributed to **[KanaDojo](https://github.com/lingdojo/kana-dojo)** — **maintainers**, **contributors**, **translators** and **supporters**. If you would like your name displayed on this page, please open a PR or contact the maintainers.
 `
-
   return (
     <div>
       <PostWrapper textContent={credits} minHeight={false} />
 
       {maintainers.length > 0 && (
-        <section className="mx-auto max-w-3xl px-6 py-6">
-          <h2 className="text-2xl font-semibold mb-4">Maintainers</h2>
+        <section className="mx-auto max-w-4xl px-9 py-4"> 
+          <h2 className="text-2xl font-semibold mb-4 text-black">Maintainers</h2>
           <ContributorsGrid contributors={maintainers} />
         </section>
       )}
 
       {contributorsList.length > 0 && (
-        <section className="mx-auto max-w-3xl px-6 py-6">
-          <h2 className="text-2xl font-semibold mb-4">Contributors</h2>
+        <section className="mx-auto max-w-4xl px-9 py-4">
+          <h2 className="text-2xl font-semibold mb-4 text-black">Contributors</h2>
           <ContributorsGrid contributors={contributorsList} />
+          <div className="mt-4 prose prose-invert text-[var(--secondary-color)]">
+            <p>
+              The full contributors list is available on GitHub:{' '}
+              <a className="underline font-semibold" href="https://github.com/lingdojo/kana-dojo/graphs/contributors" target="_blank" rel="noreferrer">
+                Contributors on GitHub
+              </a>
+            </p>
+            <p>
+              If you&apos;d like to contribute to the project, visit the repository:{' '}
+              <a className="underline font-semibold text-[var(--secondary-color)]" href="https://github.com/lingdojo/kana-dojo" target="_blank" rel="noreferrer">
+                KanaDojo
+              </a>
+            </p>
+          </div>
         </section>
       )}
 
       {sponsorsToShow.length > 0 ? (
-        <section className="mx-auto max-w-3xl px-6 py-6">
-          <h2 className="text-2xl font-semibold mb-4">Sponsors & Donations</h2>
+        <section className="mx-auto max-w-4xl px-9 py-4">
+          <h2 className="text-2xl font-semibold mb-4 text-black">Sponsors & Donations</h2>
           <SponsorsGrid sponsors={sponsorsToShow} />
+          <div className="mb-4 mt-4 prose prose-invert text-[var(--secondary-color)]"> 
+            <p>
+              If you would like to support the project financially you can use:{' '}
+            </p>
+            <ul className="list-disc list-inside ml-6 font-semibold">
+              <li>
+                <a className="underline" href="https://ko-fi.com/kanadojo" target="_blank" rel="noreferrer">Ko‑fi</a>
+              </li>
+              <li>
+                <a className="underline" href="https://github.com/sponsors/lingdojo" target="_blank" rel="noreferrer">GitHub Sponsors</a>
+              </li>
+            </ul>
+          </div>
         </section>
       ) : (
-        <section className="mx-auto max-w-3xl px-6 py-6">
-          <p>
-            You can support the project via <a href="https://ko-fi.com/kanadojo">Ko‑fi</a> or
-            {' '}
-            <a href="https://github.com/sponsors/lingdojo">GitHub Sponsors</a>.
+        <section className="mx-auto max-w-4xl px-9 py-4 mb-8 prose prose-invert">
+            <p>
+            You can support the project via <a className="underline font-semibold" href="https://ko-fi.com/kanadojo">Ko‑fi</a> or{' '}
+            <a className="underline font-semibold" href="https://github.com/sponsors/lingdojo">GitHub Sponsors</a>.
           </p>
         </section>
-      )}
-
-      <div className="mx-auto max-w-3xl px-6 py-8 prose prose-invert">
-        <p>
-          If you&apos;d like to contribute to the project, visit the repository:{' '}
-          <a href="https://github.com/lingdojo/kana-dojo" target="_blank" rel="noreferrer">
-            KanaDojo
-          </a>
-        </p>
-      </div>
+      )}      
     </div>
   )
 }

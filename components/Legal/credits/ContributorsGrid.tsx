@@ -12,9 +12,9 @@ export default function ContributorsGrid({ contributors }: { contributors: Contr
           href={c.url}
           target="_blank"
           rel="noreferrer"
-          className="flex flex-col items-center text-center p-2 rounded hover:bg-slate-700/20"
+          className="flex flex-col items-center text-center p-2 rounded hover:bg-slate-700/20 text-[var(--secondary-color)]"
         >
-          <Image src={c.avatar} alt={c.login} width={64} height={64} className="rounded-full mb-2" unoptimized />
+          <Image src={c.avatar} alt={c.login} width={48} height={48} className="rounded-full mb-2" unoptimized />
           <span className="text-sm truncate max-w-full">{c.login}</span>
         </a>
       ))}
