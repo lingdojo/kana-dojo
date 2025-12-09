@@ -1,8 +1,7 @@
 "use client"
 import React from 'react'
 import Image from 'next/image'
-
-type Contributor = { login: string; avatar: string; url: string }
+import type { Contributor } from './types'
 
 export default function ContributorsGrid({ contributors }: { contributors: Contributor[] }) {
   return (

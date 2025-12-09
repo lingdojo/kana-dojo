@@ -1,6 +1,6 @@
 'use client';
 import { Fragment, lazy, Suspense, useState, useEffect, useMemo } from 'react';
-import { Link, usePathname } from '@/i18n/routing';
+import { Link } from '@/i18n/routing';
 import Banner from './Banner';
 import Info from '@/components/reusable/Menu/Info';
 import NightlyBanner from '@/components/Modals/NightlyBanner'
@@ -96,7 +96,6 @@ const MainMenu = () => {
   // Show credits link only on large/desktop layouts
   // Compute links deterministically on the server (baseLegalLinks)
   // and update on the client after mount to avoid hydration mismatches.
-  const pathname = usePathname()
   const [legalLinks, setLegalLinks] = useState(() => baseLegalLinks);
 
   useEffect(() => {
@@ -315,22 +314,17 @@ const MainMenu = () => {
           expandDecorations && 'hidden'
         )}
       >
-          {legalLinks.map((link, i) => {
-            // Ensure links include current locale prefix (app/[locale]/... routes)
-            const locale = pathname ? pathname.split('/')[1] : 'en'
-            const href = link.href.startsWith('/') ? `/${locale}${link.href}` : link.href
-            return (
-              <Link
-                href={href}
-                key={i}
-                className="p-2 text-sm hover:cursor-pointer  rounded-2xl flex flex-row gap-1 items-center text-[var(--secondary-color)] hover:text-[var(--main-color)]"
-                onClick={() => playClick()}
-              >
-                <link.icon className="size-4" />
-                <span>{link.name}</span>
-              </Link>
-            )
-          })}
+          {legalLinks.map((link, i) => (
+            <Link
+              href={link.href}
+              key={i}
+              className="p-2 text-sm hover:cursor-pointer  rounded-2xl flex flex-row gap-1 items-center text-[var(--secondary-color)] hover:text-[var(--main-color)]"
+              onClick={() => playClick()}
+            >
+              <link.icon className="size-4" />
+              <span>{link.name}</span>
+            </Link>
+          ))}
       </div>
       {showBanner && (
         <NightlyBanner

@@ -1,10 +1,11 @@
 import React from 'react'
 import PostWrapper from '@/components/reusable/PostWrapper'
-import ContributorsGrid from '@/components/Legal/ContributorsGrid'
-import SponsorsGrid from '@/components/Legal/SponsorsGrid'
+import ContributorsGrid from '@/components/Legal/credits/ContributorsGrid'
+import SponsorsGrid from '@/components/Legal/credits/SponsorsGrid'
+import { KO_FI_SUPPORTERS } from '@/components/Legal/credits/sponsorsData'
+import type { Contributor, Sponsor } from './types'
 
 type GHContributor = { login: string; avatar_url: string; html_url: string }
-type Contributor = { login: string; avatar: string; url: string }
 
 async function fetchContributors(): Promise<Contributor[]> {
   try {
@@ -27,8 +28,6 @@ async function fetchContributors(): Promise<Contributor[]> {
     return []
   }
 }
-
-type Sponsor = { login: string; avatar: string; url: string }
 
 async function fetchSponsors(): Promise<Sponsor[]> {
   const token = process.env.GITHUB_TOKEN || process.env.NEXT_PUBLIC_GITHUB_TOKEN
@@ -79,14 +78,9 @@ export default async function Credits() {
   const maintainers = contributors.slice(0, 2)
   const contributorsList = contributors.slice(2)
 
-  // Development fallback: show mock sponsors locally when no real sponsors available
-  const MOCK_SPONSORS: Sponsor[] = [
-    { login: 'octocat', avatar: 'https://avatars.githubusercontent.com/u/583231?v=4', url: 'https://github.com/octocat' },
-    { login: 'github', avatar: 'https://avatars.githubusercontent.com/u/9919?v=4', url: 'https://github.com/github' },
-    { login: 'microsoft', avatar: 'https://avatars.githubusercontent.com/u/6154722?v=4', url: 'https://github.com/microsoft' },
-  ]
-
-  const sponsorsToShow = sponsors.length > 0 ? sponsors : (process.env.NODE_ENV !== 'production' ? MOCK_SPONSORS : [])
+  // Combine GitHub sponsors with Ko‑fi supporters. If no GitHub sponsors are
+  // available, show Ko‑fi supporters in development mode only.
+  const sponsorsToShow: Sponsor[] = sponsors.length > 0 ? [...sponsors, ...KO_FI_SUPPORTERS] : (process.env.NODE_ENV !== 'production' ? KO_FI_SUPPORTERS : [])
 
   const credits = `# Credits
 
