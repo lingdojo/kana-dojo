@@ -1,6 +1,6 @@
 import React from 'react'
 import PostWrapper from '@/shared/components/PostWrapper';
-import { Link } from '@/core/i18n/routing';
+import BackButton from '@/shared/components/BackButton';
 import ContributorsGrid from '@/features/Legal/credits/ContributorsGrid'
 import SponsorsGrid from '@/features/Legal/credits/SponsorsGrid'
 import { KO_FI_SUPPORTERS } from '@/features/Legal/credits/sponsorsData'
@@ -99,9 +99,11 @@ export default async function Credits() {
   return (
     <div>
       <div className="mx-auto max-w-4xl px-4 py-4 flex justify-center">
-        <Link href="/" className="text-2xl font-semibold underline">«</Link>
+        <BackButton />
       </div>
-      <PostWrapper textContent={credits} minHeight={false} />
+      <div className="mx-auto max-w-4xl px-9 py-4">
+        <PostWrapper textContent={credits} minHeight={false} />
+      </div>
 
       {maintainers.length > 0 && (
         <section className="mx-auto max-w-4xl px-9 py-4"> 
