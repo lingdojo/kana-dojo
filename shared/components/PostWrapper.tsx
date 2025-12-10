@@ -7,13 +7,15 @@ const PostWrapper = ({
   textContent,
   tag,
   date,
+  minHeight,
 }: {
   textContent: string;
   tag?: string;
   date?: string;
+  minHeight?: boolean;
 }) => {
   return (
-    <div>
+    <div className={minHeight === false ? undefined : 'min-h-[24rem]'}>
       {tag && date && (
         <div className="my-2 flex justify-between items-center w-full">
           <h1 className="text-3xl font-bold mt-4 pb-3">{tag}</h1>

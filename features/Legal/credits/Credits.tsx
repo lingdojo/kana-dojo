@@ -1,8 +1,8 @@
 import React from 'react'
-import PostWrapper from '@/components/reusable/PostWrapper'
-import ContributorsGrid from '@/components/Legal/credits/ContributorsGrid'
-import SponsorsGrid from '@/components/Legal/credits/SponsorsGrid'
-import { KO_FI_SUPPORTERS } from '@/components/Legal/credits/sponsorsData'
+import PostWrapper from '@/shared/components/PostWrapper';
+import ContributorsGrid from '@/features/Legal/credits/ContributorsGrid'
+import SponsorsGrid from '@/features/Legal/credits/SponsorsGrid'
+import { KO_FI_SUPPORTERS } from '@/features/Legal/credits/sponsorsData'
 import type { Contributor, Sponsor } from './types'
 
 type GHContributor = { login: string; avatar_url: string; html_url: string }
