@@ -87,7 +87,8 @@ const MainMenu = () => {
     { name: 'terms', href: '/terms', icon: ScrollText },
     { name: 'privacy', href: '/privacy', icon: Cookie },
     { name: 'security', href: '/security', icon: FileLock2 },
-    { name: 'patch notes', href: '/patch-notes', icon: FileDiff }
+    { name: 'patch notes', href: '/patch-notes', icon: FileDiff },
+    { name: 'credits', href: '/credits', icon: Sparkle }
   ];
 
   return (
