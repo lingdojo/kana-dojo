@@ -62,17 +62,17 @@ const MainMenu = () => {
   const links = [
     {
       name_en: 'Kana',
-      name_ja: 'уБВ',
+      name_ja: 'あ',
       href: '/kana'
     },
     {
       name_en: 'Vocab',
-      name_ja: 'шкЮ',
+      name_ja: '語',
       href: '/vocabulary'
     },
     {
       name_en: 'Kanji',
-      name_ja: 'хнЧ',
+      name_ja: '字',
       href: '/kanji'
     }
 

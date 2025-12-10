@@ -1,5 +1,6 @@
 import React from 'react'
 import PostWrapper from '@/shared/components/PostWrapper';
+import { Link } from '@/core/i18n/routing';
 import ContributorsGrid from '@/features/Legal/credits/ContributorsGrid'
 import SponsorsGrid from '@/features/Legal/credits/SponsorsGrid'
 import { KO_FI_SUPPORTERS } from '@/features/Legal/credits/sponsorsData'
@@ -93,10 +94,13 @@ export default async function Credits() {
 
   const credits = `# Credits
 
-**Thank you to everyone** who has contributed to **[KanaDojo](https://github.com/lingdojo/kana-dojo)** — **maintainers**, **contributors**, **translators** and **supporters**. If you would like your name displayed on this page, please open a PR or contact the maintainers.
+**Thank you to everyone** who has contributed to **KanaDojo** — **maintainers**, **contributors**, **translators** and **supporters**. If you would like your name displayed on this page, please open a PR or contact the maintainers.
 `
   return (
     <div>
+      <div className="mx-auto max-w-4xl px-4 py-4 flex justify-center">
+        <Link href="/" className="text-2xl font-semibold underline">«</Link>
+      </div>
       <PostWrapper textContent={credits} minHeight={false} />
 
       {maintainers.length > 0 && (
