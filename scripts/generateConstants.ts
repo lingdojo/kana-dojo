@@ -51,7 +51,7 @@ async function generateConstants() {
       n4: (n4Kanji.default || n4Kanji).length,
       n3: (n3Kanji.default || n3Kanji).length,
       n2: (n2Kanji.default || n2Kanji).length,
-      n1: (n1Kanji.default || n1Kanji).length,
+      n1: (n1Kanji.default || n1Kanji).length
     };
 
     const vocabLengths = {
@@ -59,7 +59,7 @@ async function generateConstants() {
       n4: (n4Vocab.default || n4Vocab).length,
       n3: (n3Vocab.default || n3Vocab).length,
       n2: (n2Vocab.default || n2Vocab).length,
-      n1: (n1Vocab.default || n1Vocab).length,
+      n1: (n1Vocab.default || n1Vocab).length
     };
 
     // Generate the TypeScript file content
@@ -96,7 +96,7 @@ export const N1VocabLength = ${vocabLengths.n1};
     console.log(`   N3: ${vocabLengths.n3}`);
     console.log(`   N2: ${vocabLengths.n2}`);
     console.log(`   N1: ${vocabLengths.n1}`);
-    
+
     console.log(`\n📁 Output: ${outputPath}`);
   } catch (error) {
     console.error('❌ Error generating constants:', error);

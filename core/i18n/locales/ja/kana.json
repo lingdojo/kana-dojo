@@ -1,0 +1,65 @@
+{
+  "metadata": {
+    "title": "KanaDojo: かな",
+    "description": "かな道場は、日本語の2つの基本的な音節文字であるひらがなとカタカナを学習・練習できる場所です。"
+  },
+  "title": "かなトレーニング",
+  "description": "ひらがなとカタカナをマスター",
+  "selection": {
+    "title": "かなグループを選択",
+    "hiragana": "ひらがな",
+    "katakana": "カタカナ",
+    "selectAll": "すべて選択",
+    "deselectAll": "すべて選択解除",
+    "groups": {
+      "basic": "基本",
+      "dakuon": "濁音",
+      "combo": "組み合わせ",
+      "yoon": "拗音"
+    }
+  },
+  "game": {
+    "title": "かなゲーム",
+    "start": "ゲーム開始",
+    "pause": "一時停止",
+    "resume": "再開",
+    "finish": "完了",
+    "nextQuestion": "次の問題",
+    "submit": "回答を送信",
+    "score": "スコア：{{points}}",
+    "timeLeft": "残り時間：{{seconds}}秒",
+    "streak": "連続：{{count}}",
+    "correct": "正解！",
+    "incorrect": "不正解",
+    "tryAgain": "もう一度"
+  },
+  "modes": {
+    "pick": "選択モード",
+    "reversePick": "逆選択",
+    "input": "入力モード",
+    "reverseInput": "逆入力",
+    "description": {
+      "pick": "かなを見て、読み方を選ぶ",
+      "reversePick": "読み方を見て、かなを選ぶ",
+      "input": "かなを見て、読み方を入力",
+      "reverseInput": "読み方を見て、かなを入力"
+    }
+  },
+  "results": {
+    "title": "結果",
+    "congratulations": "おめでとうございます！",
+    "correct": "正解：{{count}}",
+    "incorrect": "不正解：{{count}}",
+    "accuracy": "正解率：{{percentage}}%",
+    "timeSpent": "所要時間：{{time}}",
+    "playAgain": "もう一度プレイ",
+    "backToMenu": "メニューに戻る"
+  },
+  "dictionary": {
+    "title": "かな辞典",
+    "search": "かなを検索...",
+    "character": "文字",
+    "romaji": "ローマ字",
+    "type": "種類"
+  }
+}

@@ -1,17 +1,25 @@
 'use client';
 import clsx from 'clsx';
-// 1. Import useState to hold the dynamically imported module
-import { useEffect, useState } from 'react';
-import usePreferencesStore from '@/store/usePreferencesStore';
-// 2. Remove the static import
-// import fonts from '@/static/fonts';
+import { useState, useEffect } from 'react';
+import usePreferencesStore from '@/features/Preferences/store/usePreferencesStore';
+import useCrazyModeStore from '@/features/CrazyMode/store/useCrazyModeStore';
+import { usePathname } from 'next/navigation';
 import { ScrollRestoration } from 'next-scroll-restoration';
-import WelcomeModal from '@/components/Modals/WelcomeModal';
-import { AchievementNotificationContainer } from '@/components/reusable/AchievementNotification';
-import AchievementIntegration from '@/components/reusable/AchievementIntegration';
-import { applyTheme } from '@/static/themes';
-import BackToTop from '@/components/reusable/BackToTop';
-import { GlobalErrorBoundary } from '@/components/ErrorBoundary';
+import WelcomeModal from '@/shared/components/Modals/WelcomeModal';
+import { AchievementNotificationContainer } from '@/shared/components/AchievementNotification';
+import AchievementIntegration from '@/shared/components/AchievementIntegration';
+import { applyTheme } from '@/features/Preferences/data/themes';
+import BackToTop from '@/shared/components/BackToTop';
+import MobileBottomBar from '@/shared/components/BottomBar';
+import { useVisitTracker } from '@/features/Progress/hooks/useVisitTracker';
+import { getGlobalAdaptiveSelector } from '@/shared/lib/adaptiveSelection';
+
+// Initialize adaptive selector early to load persisted weights from IndexedDB
+// This runs once at module load time, ensuring weights are ready before games start
+if (typeof window !== 'undefined') {
+  const selector = getGlobalAdaptiveSelector();
+  selector.ensureLoaded().catch(console.error);
+}
 
 // Define a type for the font object for clarity, adjust as needed
 type FontObject = {
@@ -21,44 +29,92 @@ type FontObject = {
   };
 };
 
+// Module-level cache for fonts (persists across component remounts)
+let fontsCache: FontObject[] | null = null;
+let fontsLoadingPromise: Promise<FontObject[]> | null = null;
+
+const loadFontsModule = async (): Promise<FontObject[]> => {
+  if (fontsCache) return fontsCache;
+  if (fontsLoadingPromise) return fontsLoadingPromise;
+
+  fontsLoadingPromise = import('@/features/Preferences/data/fonts').then(
+    module => {
+      fontsCache = module.default;
+      fontsLoadingPromise = null;
+      return module.default;
+    }
+  );
+
+  return fontsLoadingPromise;
+};
+
 export default function ClientLayout({
-  children,
+  children
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   const { theme } = usePreferencesStore();
   const font = usePreferencesStore(state => state.font);
 
+  // Crazy Mode Integration
+  const isCrazyMode = useCrazyModeStore(state => state.isCrazyMode);
+  const activeThemeId = useCrazyModeStore(state => state.activeThemeId);
+  const activeFontName = useCrazyModeStore(state => state.activeFontName);
+  const randomize = useCrazyModeStore(state => state.randomize);
+
+  // Determine effective theme and font
+  const effectiveTheme = isCrazyMode && activeThemeId ? activeThemeId : theme;
+  const effectiveFont = isCrazyMode && activeFontName ? activeFontName : font;
+
   // 3. Create state to hold the fonts module
   const [fontsModule, setFontsModule] = useState<FontObject[] | null>(null);
 
-  // 4. Dynamically import the fonts module only in production
-  useEffect(() => {
-    if (process.env.NODE_ENV === 'production') {
-      import('@/static/fonts')
-        .then(module => {
-          // Assuming 'fonts' is a default export from that module
-          setFontsModule(module.default);
-        })
-        .catch(err => {
-          console.error('Failed to dynamically load fonts:', err);
-        });
-    }
-  }, []); // Empty dependency array ensures this runs only once on mount
-
-  // 5. Calculate fontClassName based on the stateful fontsModule
-  // This will be an empty string if fontsModule is null (i.e., in dev or before prod load)
+  // Calculate fontClassName based on the stateful fontsModule
   const fontClassName = fontsModule
-    ? fontsModule.find(fontObj => font === fontObj.name)?.font.className
+    ? fontsModule.find((fontObj: FontObject) => effectiveFont === fontObj.name)
+        ?.font.className
     : '';
 
   useEffect(() => {
-    applyTheme(theme); // This now sets both CSS variables AND data-theme attribute
+    applyTheme(effectiveTheme); // This now sets both CSS variables AND data-theme attribute
 
     if (typeof window !== 'undefined') {
       window.history.scrollRestoration = 'manual';
     }
-  }, [theme]);
+  }, [effectiveTheme]);
+
+  // Trigger randomization on page navigation
+  const pathname = usePathname();
+  useEffect(() => {
+    if (isCrazyMode) {
+      randomize();
+    }
+  }, [pathname, isCrazyMode, randomize]);
+
+  // Load fonts using cached loader - only in production
+  useEffect(() => {
+    let isMounted = true;
+
+    const initFonts = async () => {
+      try {
+        const fonts = await loadFontsModule();
+        if (isMounted) {
+          setFontsModule(fonts);
+        }
+      } catch (err) {
+        console.error('Failed to dynamically load fonts:', err);
+      }
+    };
+
+    void initFonts();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  // Track user visits for streak feature
+  useVisitTracker();
 
   useEffect(() => {
     // Resume AudioContext on first user interaction
@@ -75,27 +131,24 @@ export default function ClientLayout({
   }, []);
 
   return (
-    <GlobalErrorBoundary>
-      <div
-        data-scroll-restoration-id="container"
-        className={clsx(
-          'bg-[var(--background-color)] text-[var(--main-color)] min-h-[100dvh] max-w-[100dvw]',
-          // 6. Apply fontClassName. This is now implicitly conditional
-          // because fontClassName will only have a value in prod after load.
-          fontClassName
-        )}
-        style={{
-          height: '100dvh',
-          overflowY: 'scroll',
-        }}
-      >
-        {children}
-        <ScrollRestoration />
-        <WelcomeModal />
-        <AchievementNotificationContainer />
-        <AchievementIntegration />
-        <BackToTop />
-      </div>
-    </GlobalErrorBoundary>
+    <div
+      data-scroll-restoration-id='container'
+      className={clsx(
+        'bg-[var(--background-color)] text-[var(--main-color)] min-h-[100dvh] max-w-[100dvw]',
+        fontClassName
+      )}
+      style={{
+        height: '100dvh',
+        overflowY: 'auto'
+      }}
+    >
+      {children}
+      <ScrollRestoration />
+      <WelcomeModal />
+      <AchievementNotificationContainer />
+      <AchievementIntegration />
+      <BackToTop />
+      <MobileBottomBar />
+    </div>
   );
 }

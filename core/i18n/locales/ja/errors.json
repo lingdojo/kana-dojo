@@ -1,0 +1,33 @@
+{
+  "general": {
+    "unknownError": "不明なエラーが発生しました",
+    "networkError": "ネットワークエラー。接続を確認してください。",
+    "serverError": "サーバーエラー。後でもう一度お試しください。",
+    "notFound": "見つかりません",
+    "unauthorized": "権限がありません",
+    "forbidden": "アクセスが禁止されています",
+    "timeout": "リクエストがタイムアウトしました"
+  },
+  "validation": {
+    "required": "この項目は必須です",
+    "invalidFormat": "無効な形式",
+    "tooShort": "入力が短すぎます",
+    "tooLong": "入力が長すぎます",
+    "invalidEmail": "無効なメールアドレス",
+    "invalidNumber": "数字である必要があります",
+    "outOfRange": "値が範囲外です"
+  },
+  "game": {
+    "noSelection": "開始するには少なくとも1つ選択してください",
+    "loadFailed": "ゲームデータの読み込みに失敗しました",
+    "saveFailed": "進捗の保存に失敗しました",
+    "invalidAnswer": "無効な回答形式"
+  },
+  "data": {
+    "loadFailed": "データの読み込みに失敗しました",
+    "saveFailed": "データの保存に失敗しました",
+    "exportFailed": "データのエクスポートに失敗しました",
+    "importFailed": "データのインポートに失敗しました",
+    "invalidData": "無効なデータ形式"
+  }
+}

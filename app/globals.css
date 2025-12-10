@@ -1,5 +1,5 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
 @tailwind utilities;
 
 @theme {
@@ -10,7 +10,7 @@
 body {
   touch-action: manipulation; /* Prevents pinch-to-zoom */
   overscroll-behavior: none; /* Prevents zooming on iOS */
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
   scroll-behavior: smooth;
 }
 
@@ -43,7 +43,7 @@ body {
 }
 
 /* Provides a nicer looking checkbox to replace browser defaults */
-input[type="checkbox"] {
+input[type='checkbox'] {
   appearance: none;
   -webkit-appearance: none;
   background-color: var(--card-color);
@@ -58,13 +58,13 @@ input[type="checkbox"] {
   transition: border-color 0.2s, background-color 0.2s;
 }
 
-input[type="checkbox"]:checked {
+input[type='checkbox']:checked {
   background-color: var(--main-color);
   border-color: var(--main-color);
 }
 
-input[type="checkbox"]:checked::after {
-  content: "";
+input[type='checkbox']:checked::after {
+  content: '';
   display: block;
   position: absolute;
   left: 0.28em;
@@ -99,7 +99,35 @@ input[type="checkbox"]:checked::after {
   --on-background: hsl(0, 0%, 0%);
 }
 
+/* scrollbar style */
+[data-scroll-restoration-id='container'] {
+  --scrollbar-color-thumb: var(--main-color);
+  --scrollbar-color-track: transparent;
+  --scrollbar-width: thin; /* auto for the default one */
+  --scrollbar-width-legacy: 10px;
+}
 
+/* Modern browsers with `scrollbar-*` support */
+@supports (scrollbar-width: auto) {
+  [data-scroll-restoration-id='container'] {
+    scrollbar-color: var(--scrollbar-color-thumb) var(--scrollbar-color-track);
+    scrollbar-width: var(--scrollbar-width);
+  }
+}
+
+/* Legacy browsers with `::-webkit-scrollbar-*` support */
+@supports selector(::-webkit-scrollbar) {
+  [data-scroll-restoration-id='container']::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-color-thumb);
+  }
+  [data-scroll-restoration-id='container']::-webkit-scrollbar-track {
+    background: var(--scrollbar-color-track);
+  }
+  [data-scroll-restoration-id='container']::-webkit-scrollbar {
+    max-width: var(--scrollbar-width-legacy);
+    max-height: var(--scrollbar-width-legacy);
+  }
+}
 
 /* @media (prefers-color-scheme: light) {
   :root {

@@ -1,0 +1,58 @@
+{
+  "title": "設定",
+  "description": "学習体験をカスタマイズ",
+  "general": {
+    "title": "一般",
+    "language": "言語",
+    "theme": "テーマ",
+    "sound": "サウンドエフェクト",
+    "notifications": "通知"
+  },
+  "appearance": {
+    "title": "外観",
+    "colorTheme": "カラーテーマ",
+    "font": "日本語フォント",
+    "fontSize": "フォントサイズ",
+    "darkMode": "ダークモード",
+    "customTheme": "カスタムテーマ"
+  },
+  "game": {
+    "title": "ゲーム設定",
+    "timeLimit": "制限時間",
+    "questionsPerSession": "セッションあたりの問題数",
+    "difficulty": "難易度",
+    "autoNext": "自動次の問題",
+    "showHints": "ヒントを表示"
+  },
+  "audio": {
+    "title": "オーディオ",
+    "soundEffects": "サウンドエフェクト",
+    "volume": "音量",
+    "clickSound": "クリック音",
+    "correctSound": "正解音",
+    "incorrectSound": "不正解音"
+  },
+  "preferences": {
+    "title": "環境設定",
+    "showRomaji": "ローマ字を表示",
+    "showFurigana": "ふりがなを表示",
+    "inputMethod": "入力方法",
+    "keyboardShortcuts": "キーボードショートカット"
+  },
+  "data": {
+    "title": "データ",
+    "exportData": "データをエクスポート",
+    "importData": "データをインポート",
+    "resetProgress": "進捗をリセット",
+    "clearCache": "キャッシュをクリア",
+    "confirmReset": "すべての進捗をリセットしてもよろしいですか？この操作は元に戻せません。"
+  },
+  "themes": {
+    "light": "ライト",
+    "dark": "ダーク",
+    "system": "システム",
+    "custom": "カスタム",
+    "presets": "テーマプリセット",
+    "createCustom": "カスタムテーマを作成"
+  }
+}

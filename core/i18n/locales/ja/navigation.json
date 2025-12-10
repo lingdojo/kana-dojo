@@ -1,0 +1,27 @@
+{
+  "menu": {
+    "home": "ホーム",
+    "kana": "かな",
+    "kanji": "漢字",
+    "vocabulary": "語彙",
+    "academy": "アカデミー",
+    "achievements": "実績",
+    "statistics": "統計",
+    "progress": "進捗",
+    "settings": "設定",
+    "preferences": "環境設定",
+    "about": "について",
+    "help": "ヘルプ",
+    "logout": "ログアウト"
+  },
+  "breadcrumbs": {
+    "home": "ホーム",
+    "back": "{{name}}に戻る"
+  },
+  "footer": {
+    "copyright": "© {{year}} KanaDojo. All rights reserved.",
+    "privacy": "プライバシーポリシー",
+    "terms": "利用規約",
+    "contact": "お問い合わせ"
+  }
+}

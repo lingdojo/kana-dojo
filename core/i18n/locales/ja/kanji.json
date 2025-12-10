@@ -1,0 +1,66 @@
+{
+  "title": "漢字トレーニング",
+  "description": "日本語の漢字をマスター",
+  "selection": {
+    "title": "漢字を選択",
+    "byLevel": "JLPTレベル別",
+    "byCategory": "カテゴリー別",
+    "selectAll": "すべて選択",
+    "deselectAll": "すべて選択解除",
+    "levels": {
+      "n5": "JLPT N5",
+      "n4": "JLPT N4",
+      "n3": "JLPT N3",
+      "n2": "JLPT N2",
+      "n1": "JLPT N1"
+    }
+  },
+  "game": {
+    "title": "漢字ゲーム",
+    "start": "ゲーム開始",
+    "pause": "一時停止",
+    "resume": "再開",
+    "finish": "完了",
+    "nextQuestion": "次の問題",
+    "submit": "回答を送信",
+    "score": "スコア：{{points}}",
+    "timeLeft": "残り時間：{{seconds}}秒",
+    "streak": "連続：{{count}}",
+    "correct": "正解！",
+    "incorrect": "不正解",
+    "showAnswer": "答えを表示",
+    "hint": "ヒント"
+  },
+  "modes": {
+    "pick": "選択モード",
+    "reversePick": "逆選択",
+    "input": "入力モード",
+    "reverseInput": "逆入力",
+    "description": {
+      "pick": "漢字を見て、意味を選ぶ",
+      "reversePick": "意味を見て、漢字を選ぶ",
+      "input": "漢字を見て、意味を入力",
+      "reverseInput": "意味を見て、漢字を入力"
+    }
+  },
+  "results": {
+    "title": "結果",
+    "congratulations": "おめでとうございます！",
+    "correct": "正解：{{count}}",
+    "incorrect": "不正解：{{count}}",
+    "accuracy": "正解率：{{percentage}}%",
+    "timeSpent": "所要時間：{{time}}",
+    "playAgain": "もう一度プレイ",
+    "backToMenu": "メニューに戻る"
+  },
+  "details": {
+    "meaning": "意味",
+    "readings": "読み方",
+    "onyomi": "音読み",
+    "kunyomi": "訓読み",
+    "examples": "例",
+    "strokes": "画数",
+    "radical": "部首",
+    "jlptLevel": "JLPTレベル"
+  }
+}

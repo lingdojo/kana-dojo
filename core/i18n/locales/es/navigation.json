@@ -1,0 +1,27 @@
+{
+  "menu": {
+    "home": "Inicio",
+    "kana": "Kana",
+    "kanji": "Kanji",
+    "vocabulary": "Vocabulario",
+    "academy": "Academia",
+    "achievements": "Logros",
+    "statistics": "Estadísticas",
+    "progress": "Progreso",
+    "settings": "Configuración",
+    "preferences": "Preferencias",
+    "about": "Acerca de",
+    "help": "Ayuda",
+    "logout": "Cerrar sesión"
+  },
+  "breadcrumbs": {
+    "home": "Inicio",
+    "back": "Volver a {{name}}"
+  },
+  "footer": {
+    "copyright": "© {{year}} KanaDojo. Todos los derechos reservados.",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio",
+    "contact": "Contáctanos"
+  }
+}

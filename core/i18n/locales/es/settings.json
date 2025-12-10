@@ -1,0 +1,58 @@
+{
+  "title": "Configuración",
+  "description": "Personaliza tu experiencia de aprendizaje",
+  "general": {
+    "title": "General",
+    "language": "Idioma",
+    "theme": "Tema",
+    "sound": "Efectos de Sonido",
+    "notifications": "Notificaciones"
+  },
+  "appearance": {
+    "title": "Apariencia",
+    "colorTheme": "Tema de Color",
+    "font": "Fuente Japonesa",
+    "fontSize": "Tamaño de Fuente",
+    "darkMode": "Modo Oscuro",
+    "customTheme": "Tema Personalizado"
+  },
+  "game": {
+    "title": "Configuración del Juego",
+    "timeLimit": "Límite de Tiempo",
+    "questionsPerSession": "Preguntas por Sesión",
+    "difficulty": "Dificultad",
+    "autoNext": "Siguiente Pregunta Automática",
+    "showHints": "Mostrar Pistas"
+  },
+  "audio": {
+    "title": "Audio",
+    "soundEffects": "Efectos de Sonido",
+    "volume": "Volumen",
+    "clickSound": "Sonido de Clic",
+    "correctSound": "Sonido de Respuesta Correcta",
+    "incorrectSound": "Sonido de Respuesta Incorrecta"
+  },
+  "preferences": {
+    "title": "Preferencias",
+    "showRomaji": "Mostrar Romaji",
+    "showFurigana": "Mostrar Furigana",
+    "inputMethod": "Método de Entrada",
+    "keyboardShortcuts": "Atajos de Teclado"
+  },
+  "data": {
+    "title": "Datos",
+    "exportData": "Exportar Datos",
+    "importData": "Importar Datos",
+    "resetProgress": "Reiniciar Progreso",
+    "clearCache": "Limpiar Caché",
+    "confirmReset": "¿Estás seguro de que deseas reiniciar todo el progreso? Esta acción no se puede deshacer."
+  },
+  "themes": {
+    "light": "Claro",
+    "dark": "Oscuro",
+    "system": "Sistema",
+    "custom": "Personalizado",
+    "presets": "Temas Preestablecidos",
+    "createCustom": "Crear Tema Personalizado"
+  }
+}

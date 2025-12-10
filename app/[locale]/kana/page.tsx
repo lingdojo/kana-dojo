@@ -1,19 +1,41 @@
 import type { Metadata } from 'next';
-import DojoMenu from '@/components/reusable/Menu/DojoMenu';
+import { getTranslations } from 'next-intl/server';
+import DojoMenu from '@/shared/components/Menu/DojoMenu';
 
-export const metadata: Metadata = {
-  title: 'KanaDojo: Kana',
-  description:
-    'The kana dojo is the place where you can learn and practice the two core syllabaries of Japanese - Hiragana and Katakana.',
-  openGraph: {
-    title: 'KanaDojo: Kana',
-    description:
-      'The kana dojo is the place where you can learn and practice the two core syllabaries of Japanese - Hiragana and Katakana.',
-    url: 'https://kanadojo.com/kana',
-    type: 'website',
-    locale: 'en_US',
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations('kana.metadata');
+
+  return {
+    title: t('title'),
+    description: t('description'),
+    keywords: [
+      'learn hiragana',
+      'learn katakana',
+      'hiragana practice',
+      'katakana practice',
+      'japanese kana',
+      'kana learning',
+      'hiragana chart',
+      'katakana chart',
+      'japanese syllabary',
+      'kana quiz'
+    ],
+    openGraph: {
+      title: t('title'),
+      description: t('description'),
+      url: 'https://kanadojo.com/kana',
+      type: 'website'
+    },
+    twitter: {
+      card: 'summary',
+      title: t('title'),
+      description: t('description')
+    },
+    alternates: {
+      canonical: 'https://kanadojo.com/kana'
+    }
+  };
+}
 
 export default function KanaPage() {
   return <DojoMenu />;

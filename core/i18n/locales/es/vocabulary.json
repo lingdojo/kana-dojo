@@ -1,0 +1,71 @@
+{
+  "title": "Entrenamiento de Vocabulario",
+  "description": "Expande tu vocabulario japonés",
+  "selection": {
+    "title": "Seleccionar Vocabulario",
+    "byLevel": "Por Nivel JLPT",
+    "byCategory": "Por Categoría",
+    "selectAll": "Seleccionar Todo",
+    "deselectAll": "Deseleccionar Todo",
+    "levels": {
+      "n5": "JLPT N5",
+      "n4": "JLPT N4",
+      "n3": "JLPT N3",
+      "n2": "JLPT N2",
+      "n1": "JLPT N1"
+    },
+    "categories": {
+      "all": "Todo",
+      "nouns": "Sustantivos",
+      "verbs": "Verbos",
+      "adjectives": "Adjetivos",
+      "adverbs": "Adverbios",
+      "expressions": "Expresiones"
+    }
+  },
+  "game": {
+    "title": "Juego de Vocabulario",
+    "start": "Comenzar Juego",
+    "pause": "Pausar",
+    "resume": "Reanudar",
+    "finish": "Finalizar",
+    "nextQuestion": "Siguiente Pregunta",
+    "submit": "Enviar Respuesta",
+    "score": "Puntuación: {{points}}",
+    "timeLeft": "Tiempo restante: {{seconds}}s",
+    "streak": "Racha: {{count}}",
+    "correct": "¡Correcto!",
+    "incorrect": "Incorrecto",
+    "showAnswer": "Mostrar Respuesta"
+  },
+  "modes": {
+    "pick": "Modo Elegir",
+    "reversePick": "Elegir Inverso",
+    "input": "Modo Escribir",
+    "reverseInput": "Escribir Inverso",
+    "description": {
+      "pick": "Ve la palabra, elige el significado",
+      "reversePick": "Ve el significado, elige la palabra",
+      "input": "Ve la palabra, escribe el significado",
+      "reverseInput": "Ve el significado, escribe la palabra"
+    }
+  },
+  "results": {
+    "title": "Resultados",
+    "congratulations": "¡Felicitaciones!",
+    "correct": "Correctas: {{count}}",
+    "incorrect": "Incorrectas: {{count}}",
+    "accuracy": "Precisión: {{percentage}}%",
+    "timeSpent": "Tiempo empleado: {{time}}",
+    "playAgain": "Jugar de Nuevo",
+    "backToMenu": "Volver al Menú"
+  },
+  "details": {
+    "word": "Palabra",
+    "reading": "Lectura",
+    "meaning": "Significado",
+    "examples": "Oraciones de Ejemplo",
+    "type": "Tipo",
+    "jlptLevel": "Nivel JLPT"
+  }
+}

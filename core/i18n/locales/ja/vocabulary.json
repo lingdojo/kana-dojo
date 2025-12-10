@@ -1,0 +1,71 @@
+{
+  "title": "語彙トレーニング",
+  "description": "日本語の語彙を増やそう",
+  "selection": {
+    "title": "語彙を選択",
+    "byLevel": "JLPTレベル別",
+    "byCategory": "カテゴリー別",
+    "selectAll": "すべて選択",
+    "deselectAll": "すべて選択解除",
+    "levels": {
+      "n5": "JLPT N5",
+      "n4": "JLPT N4",
+      "n3": "JLPT N3",
+      "n2": "JLPT N2",
+      "n1": "JLPT N1"
+    },
+    "categories": {
+      "all": "すべて",
+      "nouns": "名詞",
+      "verbs": "動詞",
+      "adjectives": "形容詞",
+      "adverbs": "副詞",
+      "expressions": "表現"
+    }
+  },
+  "game": {
+    "title": "語彙ゲーム",
+    "start": "ゲーム開始",
+    "pause": "一時停止",
+    "resume": "再開",
+    "finish": "完了",
+    "nextQuestion": "次の問題",
+    "submit": "回答を送信",
+    "score": "スコア：{{points}}",
+    "timeLeft": "残り時間：{{seconds}}秒",
+    "streak": "連続：{{count}}",
+    "correct": "正解！",
+    "incorrect": "不正解",
+    "showAnswer": "答えを表示"
+  },
+  "modes": {
+    "pick": "選択モード",
+    "reversePick": "逆選択",
+    "input": "入力モード",
+    "reverseInput": "逆入力",
+    "description": {
+      "pick": "単語を見て、意味を選ぶ",
+      "reversePick": "意味を見て、単語を選ぶ",
+      "input": "単語を見て、意味を入力",
+      "reverseInput": "意味を見て、単語を入力"
+    }
+  },
+  "results": {
+    "title": "結果",
+    "congratulations": "おめでとうございます！",
+    "correct": "正解：{{count}}",
+    "incorrect": "不正解：{{count}}",
+    "accuracy": "正解率：{{percentage}}%",
+    "timeSpent": "所要時間：{{time}}",
+    "playAgain": "もう一度プレイ",
+    "backToMenu": "メニューに戻る"
+  },
+  "details": {
+    "word": "単語",
+    "reading": "読み方",
+    "meaning": "意味",
+    "examples": "例文",
+    "type": "種類",
+    "jlptLevel": "JLPTレベル"
+  }
+}

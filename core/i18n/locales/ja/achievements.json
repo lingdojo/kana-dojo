@@ -1,0 +1,33 @@
+{
+  "title": "実績",
+  "description": "進捗を追跡し、実績を獲得",
+  "unlocked": "解除済み",
+  "locked": "ロック中",
+  "progress": "進捗：{{current}}/{{total}}",
+  "earnedOn": "{{date}}に獲得",
+  "categories": {
+    "all": "すべて",
+    "kana": "かな",
+    "kanji": "漢字",
+    "vocabulary": "語彙",
+    "general": "一般",
+    "special": "特別"
+  },
+  "rarity": {
+    "common": "コモン",
+    "rare": "レア",
+    "epic": "エピック",
+    "legendary": "レジェンダリー"
+  },
+  "notifications": {
+    "achievementUnlocked": "実績解除！",
+    "congratulations": "おめでとうございます！",
+    "youEarned": "獲得しました"
+  },
+  "stats": {
+    "totalAchievements": "実績総数",
+    "unlockedAchievements": "解除済み",
+    "completionRate": "達成率",
+    "recentAchievements": "最近の実績"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "title": "Logros",
+  "description": "Sigue tu progreso y gana logros",
+  "unlocked": "Desbloqueado",
+  "locked": "Bloqueado",
+  "progress": "Progreso: {{current}}/{{total}}",
+  "earnedOn": "Obtenido el {{date}}",
+  "categories": {
+    "all": "Todos",
+    "kana": "Kana",
+    "kanji": "Kanji",
+    "vocabulary": "Vocabulario",
+    "general": "General",
+    "special": "Especial"
+  },
+  "rarity": {
+    "common": "Común",
+    "rare": "Raro",
+    "epic": "Épico",
+    "legendary": "Legendario"
+  },
+  "notifications": {
+    "achievementUnlocked": "¡Logro Desbloqueado!",
+    "congratulations": "¡Felicitaciones!",
+    "youEarned": "Has obtenido"
+  },
+  "stats": {
+    "totalAchievements": "Total de Logros",
+    "unlockedAchievements": "Desbloqueados",
+    "completionRate": "Tasa de Finalización",
+    "recentAchievements": "Logros Recientes"
+  }
+}

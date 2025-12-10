@@ -1,0 +1,47 @@
+{
+  "title": "統計",
+  "description": "学習の進捗と統計",
+  "overview": {
+    "title": "概要",
+    "totalStudyTime": "総学習時間",
+    "questionsAnswered": "回答した問題数",
+    "accuracy": "総合正解率",
+    "currentStreak": "現在の連続記録",
+    "longestStreak": "最長連続記録"
+  },
+  "charts": {
+    "dailyActivity": "日々の活動",
+    "accuracyOverTime": "正解率の推移",
+    "progressByLevel": "レベル別進捗",
+    "timeByDojo": "道場別時間"
+  },
+  "kana": {
+    "title": "かな統計",
+    "mastered": "習得済み",
+    "learning": "学習中",
+    "notStarted": "未開始",
+    "hiraganaProgress": "ひらがな進捗",
+    "katakanaProgress": "カタカナ進捗"
+  },
+  "kanji": {
+    "title": "漢字統計",
+    "mastered": "習得済み",
+    "learning": "学習中",
+    "notStarted": "未開始",
+    "byLevel": "JLPTレベル別"
+  },
+  "vocabulary": {
+    "title": "語彙統計",
+    "wordsLearned": "学習した単語数",
+    "mastered": "習得済み",
+    "learning": "学習中",
+    "byLevel": "JLPTレベル別"
+  },
+  "performance": {
+    "title": "パフォーマンス",
+    "bestAccuracy": "最高正解率",
+    "fastestTime": "最速タイム",
+    "longestSession": "最長セッション",
+    "mostImproved": "最も上達"
+  }
+}

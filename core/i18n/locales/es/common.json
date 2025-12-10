@@ -1,0 +1,67 @@
+{
+  "buttons": {
+    "submit": "Enviar",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "delete": "Eliminar",
+    "confirm": "Confirmar",
+    "close": "Cerrar",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "finish": "Finalizar",
+    "start": "Comenzar",
+    "pause": "Pausar",
+    "resume": "Reanudar",
+    "reset": "Reiniciar",
+    "clear": "Limpiar",
+    "apply": "Aplicar",
+    "done": "Hecho",
+    "ok": "OK",
+    "yes": "Sí",
+    "no": "No"
+  },
+  "messages": {
+    "loading": "Cargando...",
+    "saving": "Guardando...",
+    "success": "¡Éxito!",
+    "error": "Ocurrió un error",
+    "saved": "Guardado exitosamente",
+    "deleted": "Eliminado exitosamente",
+    "updated": "Actualizado exitosamente",
+    "noData": "No hay datos disponibles",
+    "tryAgain": "Por favor, inténtalo de nuevo",
+    "confirmDelete": "¿Estás seguro de que deseas eliminar esto?"
+  },
+  "validation": {
+    "required": "Este campo es obligatorio",
+    "invalid": "Valor inválido",
+    "tooShort": "Demasiado corto",
+    "tooLong": "Demasiado largo",
+    "email": "Correo electrónico inválido",
+    "number": "Debe ser un número"
+  },
+  "time": {
+    "seconds": "segundos",
+    "minutes": "minutos",
+    "hours": "horas",
+    "days": "días",
+    "second": "segundo",
+    "minute": "minuto",
+    "hour": "hora",
+    "day": "día"
+  },
+  "actions": {
+    "edit": "Editar",
+    "view": "Ver",
+    "download": "Descargar",
+    "upload": "Subir",
+    "search": "Buscar",
+    "filter": "Filtrar",
+    "sort": "Ordenar",
+    "refresh": "Actualizar",
+    "share": "Compartir",
+    "copy": "Copiar",
+    "paste": "Pegar",
+    "backToTop": "Volver arriba"
+  }
+}

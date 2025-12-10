@@ -1,19 +1,78 @@
 /** @type {import('next-sitemap').IConfig} */
-module.exports = {
-  siteUrl: process.env.SITE_URL || 'https://kanadojo.com', // Replace with your site's URL
-  generateRobotsTxt: true, // This line enables robots.txt generation
-  // You can add other sitemap configuration options here
-  // For example:
-  changefreq: 'daily',
-  priority: 0.8
-  // exclude: ['/private/*'],
-  // robotsTxtOptions: {
-  //   additionalSitemaps: [
-  //     'https://example.com/server-sitemap.xml', // If you have a separate server-side sitemap
-  //   ],
-  //   policies: [
-  //     { userAgent: 'Googlebot', allow: '/' },
-  //     { userAgent: 'AhrefsBot', disallow: ['/'] }, // Example: Disallow a specific bot
-  //   ],
-  // },
+export default {
+  siteUrl: process.env.SITE_URL || 'https://kanadojo.com',
+  generateRobotsTxt: true,
+  generateIndexSitemap: false,
+  changefreq: 'weekly',
+  priority: 0.7,
+  sitemapSize: 5000,
+  exclude: [
+    '/api/*',
+    '/_next/*',
+    '/*/train/*' // Exclude dynamic training pages
+  ],
+  robotsTxtOptions: {
+    policies: [
+      {
+        userAgent: '*',
+        allow: '/'
+      },
+      {
+        userAgent: 'Googlebot',
+        allow: '/'
+      },
+      {
+        userAgent: 'Bingbot',
+        allow: '/'
+      }
+    ],
+    additionalSitemaps: []
+  },
+  transform: async (config, path) => {
+    // Custom priority for important pages
+    const priorities = {
+      '/': 1.0,
+      '/kana': 0.9,
+      '/kanji': 0.9,
+      '/vocabulary': 0.9,
+      '/preferences': 0.6,
+      '/achievements': 0.7,
+      '/progress': 0.7
+    };
+
+    const changefreqs = {
+      '/': 'daily',
+      '/kana': 'weekly',
+      '/kanji': 'weekly',
+      '/vocabulary': 'weekly',
+      '/preferences': 'monthly',
+      '/achievements': 'weekly',
+      '/progress': 'weekly'
+    };
+
+    return {
+      loc: path,
+      changefreq: changefreqs[path] || config.changefreq,
+      priority: priorities[path] || config.priority,
+      lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
+      alternateRefs: [
+        {
+          href: `https://kanadojo.com${path}`,
+          hreflang: 'en'
+        },
+        {
+          href: `https://kanadojo.com${path}`,
+          hreflang: 'es'
+        },
+        {
+          href: `https://kanadojo.com${path}`,
+          hreflang: 'ja'
+        },
+        {
+          href: `https://kanadojo.com${path}`,
+          hreflang: 'x-default'
+        }
+      ]
+    };
+  }
 };

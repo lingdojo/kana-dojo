@@ -1,0 +1,33 @@
+{
+  "general": {
+    "unknownError": "Ocurrió un error desconocido",
+    "networkError": "Error de red. Por favor, verifica tu conexión.",
+    "serverError": "Error del servidor. Por favor, inténtalo más tarde.",
+    "notFound": "No encontrado",
+    "unauthorized": "Acceso no autorizado",
+    "forbidden": "Acceso prohibido",
+    "timeout": "Tiempo de espera agotado"
+  },
+  "validation": {
+    "required": "Este campo es obligatorio",
+    "invalidFormat": "Formato inválido",
+    "tooShort": "Entrada demasiado corta",
+    "tooLong": "Entrada demasiado larga",
+    "invalidEmail": "Correo electrónico inválido",
+    "invalidNumber": "Debe ser un número",
+    "outOfRange": "Valor fuera de rango"
+  },
+  "game": {
+    "noSelection": "Por favor, selecciona al menos un elemento para comenzar",
+    "loadFailed": "Error al cargar datos del juego",
+    "saveFailed": "Error al guardar progreso",
+    "invalidAnswer": "Formato de respuesta inválido"
+  },
+  "data": {
+    "loadFailed": "Error al cargar datos",
+    "saveFailed": "Error al guardar datos",
+    "exportFailed": "Error al exportar datos",
+    "importFailed": "Error al importar datos",
+    "invalidData": "Formato de datos inválido"
+  }
+}

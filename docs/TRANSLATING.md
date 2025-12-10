@@ -6,13 +6,13 @@ We use `next-intl` internationalization tool in this project to manage translati
 
 ## Directories and files.
 
-Translated text content is staticly stored as key-value pairs properties of a single object using only one file per language under **/translations/ directory** and it must follow a two letters language code just like `es for Spanish` or `en for English` and its extension must be .json
+Translated text content is staticly stored as key-value pairs properties of a single object using only one file per language under **/core/i18n/locales/ directory** and it must follow a two letters language code just like `es for Spanish` or `en for English` and its extension must be .json
 
-You can go to the translations directory and see already partial translations sitting there.
+You can go to the core/i18n/locales directory and see already partial translations sitting there.
 
-`Translation request helper` is the function defined in **/i18n/request.ts** and it helps retrieving the translated text on demand. Every time we need to render a translated text through `next-intl implementation` this is the function solving the translation. Its conventions are mandatory since they are keys for the `next-intl` workflow.
+`Translation request helper` is the function defined in **/core/i18n/request.ts** and it helps retrieving the translated text on demand. Every time we need to render a translated text through `next-intl implementation` this is the function solving the translation. Its conventions are mandatory since they are keys for the `next-intl` workflow.
 
-This **/i18n/** directory will host more essential functions for the `translation management system` as we implement workflows and strategies to make translation and localization smooth for our users.
+This **/core/i18n/** directory will host more essential functions for the `translation management system` as we implement workflows and strategies to make translation and localization smooth for our users.
 
 ## Implementation.
 
@@ -36,7 +36,7 @@ Above functions are provided by `next-inl` package and **can only be used inside
 
 ## Example.
 
-if **/translations/es.json** holds:
+if **/core/i18n/locales/es.json** holds:
 
 `{ "MenuInfo": { "greeting": "¡Bienvenido a KanaDojo!"...} }`
 

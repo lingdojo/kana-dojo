@@ -1,17 +1,37 @@
 import type { Metadata } from 'next';
-import DojoMenu from '@/components/reusable/Menu/DojoMenu';
+import DojoMenu from '@/shared/components/Menu/DojoMenu';
 
 export const metadata: Metadata = {
-  title: 'KanaDojo: Vocabulary',
+  title: 'Vocabulary Dojo - Learn Japanese Words & Vocabulary by JLPT Level',
   description:
-    'The vocabulary dojo is the place where you can learn and practice the words and vocabulary used in day-to-day Japanese.',
+    'Build your Japanese vocabulary with the Vocabulary Dojo. Learn essential Japanese words organized by JLPT levels with interactive games and multiple training modes. Perfect for daily conversation and JLPT preparation.',
+  keywords: [
+    'japanese vocabulary',
+    'learn japanese words',
+    'JLPT vocabulary',
+    'japanese vocab practice',
+    'japanese words',
+    'vocabulary N5',
+    'vocabulary N4',
+    'vocabulary N3',
+    'vocabulary N2',
+    'japanese language learning'
+  ],
   openGraph: {
-    title: 'KanaDojo: Vocabulary',
+    title: 'Vocabulary Dojo - Learn Japanese Vocabulary by JLPT Level',
     description:
-      'The vocabulary dojo is the place where you can learn and practice the words and vocabulary used in day-to-day Japanese.',
+      'Build your Japanese vocabulary with words organized by JLPT levels. Practice with interactive games and track your progress.',
     url: 'https://kanadojo.com/vocabulary',
-    type: 'website',
-    locale: 'en_US'
+    type: 'website'
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Vocabulary Dojo - Learn Japanese Words',
+    description:
+      'Build Japanese vocabulary by JLPT level with interactive practice.'
+  },
+  alternates: {
+    canonical: 'https://kanadojo.com/vocabulary'
   }
 };
 
