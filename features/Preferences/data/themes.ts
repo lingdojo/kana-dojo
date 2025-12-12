@@ -1,3 +1,4 @@
+/* prettier-ignore-file */
 import { useCustomThemeStore } from "../store/useCustomThemeStore";
 import {
   Atom,
@@ -682,6 +683,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         backgroundColor: 'oklch(17.5% 0.045 285.0 / 1)',  
         mainColor: 'oklch(80.5% 0.210 328.0 / 1)',  
         secondaryColor: 'oklch(82.0% 0.130 210.0 / 1)',  
+      },
+      {
+        id: 'tsukikage',
+        backgroundColor: 'oklch(18.5% 0.030 250.0 / 1)',
+        mainColor: 'oklch(88.0% 0.120 210.0 / 1)',
+        secondaryColor: 'oklch(76.0% 0.090 190.0 / 1)'
       },
     ],
   },
