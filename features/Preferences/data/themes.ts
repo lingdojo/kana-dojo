@@ -689,6 +689,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         backgroundColor: 'oklch(18.5% 0.030 250.0 / 1)',
         mainColor: 'oklch(88.0% 0.120 210.0 / 1)',
         secondaryColor: 'oklch(76.0% 0.090 165.0 / 1)'
+      },
+      {
+        id: 'wabisabi-shadow',
+        backgroundColor: 'oklch(19.00% 0.0220 260.00 / 1)',
+        mainColor: 'oklch(76.00% 0.1100 40.00 / 1)',
+        secondaryColor: 'oklch(65.00% 0.0400 148.00 / 1)'
       }
     ]
   },
