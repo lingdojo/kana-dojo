@@ -695,6 +695,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         backgroundColor: 'oklch(19.00% 0.0220 260.00 / 1)',
         mainColor: 'oklch(76.00% 0.1100 40.00 / 1)',
         secondaryColor: 'oklch(65.00% 0.0400 148.00 / 1)'
+      },
+      {
+        id: 'kurokumo',
+        backgroundColor: 'oklch(17.0% 0.032 270.0 / 1)',
+        mainColor: 'oklch(87.0% 0.135 215.0 / 1)',
+        secondaryColor: 'oklch(74.0% 0.110 305.0 / 1)'
       }
     ]
   },
