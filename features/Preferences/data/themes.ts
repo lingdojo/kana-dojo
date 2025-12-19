@@ -705,21 +705,27 @@ const baseThemeSets: BaseThemeGroup[] = [
       {
         id: 'yume-mori',
         backgroundColor: 'oklch(20.0% 0.040 190.0 / 1)',
-        mainColor:       'oklch(86.0% 0.140 180.0 / 1)', 
-        secondaryColor:  'oklch(74.0% 0.090 150.0 / 1)',  
+        mainColor: 'oklch(86.0% 0.140 180.0 / 1)',
+        secondaryColor: 'oklch(74.0% 0.090 150.0 / 1)'
       },
       {
-       id: 'yozakura',
-       backgroundColor: 'oklch(22.0% 0.030 315.0 / 1)',
-       mainColor:       'oklch(86.5% 0.135 331.0 / 1)',  
-       secondaryColor:  'oklch(72.0% 0.070 320.0 / 1)', 
+        id: 'yozakura',
+        backgroundColor: 'oklch(22.0% 0.030 315.0 / 1)',
+        mainColor: 'oklch(86.5% 0.135 331.0 / 1)',
+        secondaryColor: 'oklch(72.0% 0.070 320.0 / 1)'
       },
       {
-      id: 'kyoto-lanterns',
-      backgroundColor: 'oklch(22.10% 0.0310 265.00 / 1)', 
-      mainColor:        'oklch(78.90% 0.1820 50.00 / 1)',     
-      secondaryColor:   'oklch(84.20% 0.1200 90.00 / 1)',     
+        id: 'kyoto-lanterns',
+        backgroundColor: 'oklch(22.10% 0.0310 265.00 / 1)',
+        mainColor: 'oklch(78.90% 0.1820 50.00 / 1)',
+        secondaryColor: 'oklch(84.20% 0.1200 90.00 / 1)'
       },
+      {
+        id: 'suisen',
+        backgroundColor: 'oklch(17.0% 0.031 260.0 / 1)',
+        mainColor: 'oklch(89.0% 0.053 260.0 / 1)',
+        secondaryColor: 'oklch(74.0% 0.170 295.0 / 1)'
+      }
     ]
   },
   {
