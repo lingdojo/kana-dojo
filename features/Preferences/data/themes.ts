@@ -725,6 +725,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         backgroundColor: 'oklch(17.0% 0.031 260.0 / 1)',
         mainColor: 'oklch(89.0% 0.053 260.0 / 1)',
         secondaryColor: 'oklch(74.0% 0.170 295.0 / 1)'
+      },
+      {
+        id: 'en',
+        backgroundColor: 'oklch(14.5% 0.036 267.0 / 1)',
+        mainColor: 'oklch(91.0% 0.042 253.0 / 1)',
+        secondaryColor: 'oklch(81.0% 0.170 355.0 / 1)'
       }
     ]
   },
