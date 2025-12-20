@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence } from 'framer-motion';
 import clsx from 'clsx';
 import {
   X,
@@ -20,7 +20,7 @@ import usePreferencesStore from '@/features/Preferences/store/usePreferencesStor
 import { useClick } from '@/shared/hooks/useAudio';
 import { buttonBorderStyles, cardBorderStyles } from '@/shared/lib/styles';
 import themeSets from '@/features/Preferences/data/themes';
-import fonts from '@/features/Preferences/data/fonts';
+import { modalFonts } from '@/shared/components/Modals/data/modalFonts';
 
 const WelcomeModal = () => {
   const { playClick } = useClick();
@@ -80,6 +80,17 @@ const WelcomeModal = () => {
     }
   }, [step]);
 
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isVisible) {
+        handleClose();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [isVisible]);
+
   const handleClose = () => {
     playClick();
     setIsVisible(false);
@@ -117,7 +128,7 @@ const WelcomeModal = () => {
     switch (step) {
       case 'welcome':
         return (
-          <div className='text-center space-y-6'>
+          <div className='space-y-6 text-center'>
             <div className='space-y-2'>
               <h2
                 id='welcome-modal-title'
@@ -131,9 +142,9 @@ const WelcomeModal = () => {
             </div>
 
             <div className='space-y-4 text-left'>
-              <div className='flex items-center gap-3 p-3 rounded-lg bg-[var(--background-color)]'>
+              <div className='flex items-center gap-3 rounded-lg bg-[var(--background-color)] p-3'>
                 <Joystick
-                  className='text-[var(--main-color)] flex-shrink-0'
+                  className='flex-shrink-0 text-[var(--main-color)]'
                   size={24}
                 />
                 <div>
@@ -146,9 +157,9 @@ const WelcomeModal = () => {
                 </div>
               </div>
 
-              <div className='flex items-center gap-3 p-3 rounded-lg bg-[var(--background-color)]'>
+              <div className='flex items-center gap-3 rounded-lg bg-[var(--background-color)] p-3'>
                 <Palette
-                  className='text-[var(--main-color)] flex-shrink-0'
+                  className='flex-shrink-0 text-[var(--main-color)]'
                   size={24}
                 />
                 <div>
@@ -161,9 +172,9 @@ const WelcomeModal = () => {
                 </div>
               </div>
 
-              <div className='flex items-center gap-3 p-3 rounded-lg bg-[var(--background-color)]'>
+              <div className='flex items-center gap-3 rounded-lg bg-[var(--background-color)] p-3'>
                 <Type
-                  className='text-[var(--main-color)] flex-shrink-0'
+                  className='flex-shrink-0 text-[var(--main-color)]'
                   size={24}
                 />
                 <div>
@@ -182,8 +193,8 @@ const WelcomeModal = () => {
       case 'behavior':
         return (
           <div className='space-y-6'>
-            <div className='text-center space-y-2'>
-              <h2 className='text-2xl font-bold text-[var(--main-color)] flex items-center justify-center gap-2'>
+            <div className='space-y-2 text-center'>
+              <h2 className='flex items-center justify-center gap-2 text-2xl font-bold text-[var(--main-color)]'>
                 <Joystick size={28} />
                 Configure Behavior
               </h2>
@@ -200,10 +211,10 @@ const WelcomeModal = () => {
                 <p className='text-sm text-[var(--secondary-color)]'>
                   In the character selection menu, for readings, display:
                 </p>
-                <div className='grid grid-cols-1 sm:grid-cols-2 gap-3'>
+                <div className='grid grid-cols-1 gap-3 sm:grid-cols-2'>
                   <button
                     className={clsx(
-                      'p-3 rounded-lg border-2 transition-colors duration-200 text-left cursor-pointer',
+                      'cursor-pointer rounded-lg border-2 p-3 text-left transition-colors duration-200',
                       'hover:border-[var(--main-color)]/50',
                       !localDisplayKana
                         ? 'border-[var(--main-color)] bg-[var(--background-color)]'
@@ -227,7 +238,7 @@ const WelcomeModal = () => {
 
                   <button
                     className={clsx(
-                      'p-3 rounded-lg border-2 transition-colors duration-200 text-left cursor-pointer',
+                      'cursor-pointer rounded-lg border-2 p-3 text-left transition-colors duration-200',
                       'hover:border-[var(--main-color)]/50',
                       localDisplayKana
                         ? 'border-[var(--main-color)] bg-[var(--background-color)]'
@@ -256,10 +267,10 @@ const WelcomeModal = () => {
                 <p className='text-sm text-[var(--secondary-color)]'>
                   Play UI and feedback sound effects:
                 </p>
-                <div className='grid grid-cols-1 sm:grid-cols-2 gap-3'>
+                <div className='grid grid-cols-1 gap-3 sm:grid-cols-2'>
                   <button
                     className={clsx(
-                      'p-3 rounded-lg border-2 transition-colors duration-200 cursor-pointer',
+                      'cursor-pointer rounded-lg border-2 p-3 transition-colors duration-200',
                       'hover:border-[var(--main-color)]/50',
                       !localSilentMode
                         ? 'border-[var(--main-color)] bg-[var(--background-color)]'
@@ -282,7 +293,7 @@ const WelcomeModal = () => {
 
                   <button
                     className={clsx(
-                      'p-3 rounded-lg border-2 transition-colors duration-200 cursor-pointer',
+                      'cursor-pointer rounded-lg border-2 p-3 transition-colors duration-200',
                       'hover:border-[var(--main-color)]/50',
                       localSilentMode
                         ? 'border-[var(--main-color)] bg-[var(--background-color)]'
@@ -311,8 +322,8 @@ const WelcomeModal = () => {
       case 'themes':
         return (
           <div className='space-y-6'>
-            <div className='text-center space-y-2'>
-              <h2 className='text-2xl font-bold text-[var(--main-color)] flex items-center justify-center gap-2'>
+            <div className='space-y-2 text-center'>
+              <h2 className='flex items-center justify-center gap-2 text-2xl font-bold text-[var(--main-color)]'>
                 <Palette size={28} />
                 Choose Your Theme
               </h2>
@@ -324,7 +335,7 @@ const WelcomeModal = () => {
             <div className='mb-4'>
               <button
                 className={clsx(
-                  'w-full p-3 rounded-lg border-2 border-black/30 transition-colors duration-200 cursor-pointer',
+                  'w-full cursor-pointer rounded-lg border-2 border-black/30 p-3 transition-colors duration-200',
                   'hover:border-[var(--main-color)] hover:bg-[var(--background-color)]',
                   buttonBorderStyles,
                   'flex items-center justify-center gap-2 text-[var(--main-color)]'
@@ -346,20 +357,20 @@ const WelcomeModal = () => {
               </button>
             </div>
 
-            <div className='space-y-4 max-h-96 overflow-y-auto px-1'>
+            <div className='max-h-96 space-y-4 overflow-y-auto px-1'>
               {themeSets.map(themeSet => (
                 <div key={themeSet.name} className='space-y-3'>
-                  <h3 className='text-lg font-semibold text-[var(--main-color)] flex items-center gap-2'>
+                  <h3 className='flex items-center gap-2 text-lg font-semibold text-[var(--main-color)]'>
                     <themeSet.icon size={20} />
                     {themeSet.name}
                   </h3>
-                  <div className='grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-2'>
+                  <div className='grid grid-cols-3 gap-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6'>
                     {themeSet.themes.map(theme => (
                       <button
                         key={theme.id}
                         className={clsx(
-                          'p-1.5 rounded-md border-2 transition-all duration-200 cursor-pointer',
-                          'hover:border-[var(--main-color)]/50 active:scale-95 overflow-hidden',
+                          'cursor-pointer rounded-md border-2 p-1.5 transition-all duration-200',
+                          'overflow-hidden hover:border-[var(--main-color)]/50 active:scale-95',
                           'h-12 w-full',
                           localTheme === theme.id
                             ? 'border-[var(--main-color)]'
@@ -397,8 +408,8 @@ const WelcomeModal = () => {
       case 'fonts':
         return (
           <div className='space-y-6'>
-            <div className='text-center space-y-2'>
-              <h2 className='text-2xl font-bold text-[var(--main-color)] flex items-center justify-center gap-2'>
+            <div className='space-y-2 text-center'>
+              <h2 className='flex items-center justify-center gap-2 text-2xl font-bold text-[var(--main-color)]'>
                 <Type size={28} />
                 Choose Your Font
               </h2>
@@ -410,7 +421,7 @@ const WelcomeModal = () => {
             <div className='mb-4'>
               <button
                 className={clsx(
-                  'w-full p-3 rounded-lg border-2 border-black/30 transition-colors duration-200 cursor-pointer',
+                  'w-full cursor-pointer rounded-lg border-2 border-black/30 p-3 transition-colors duration-200',
                   'hover:border-[var(--main-color)] hover:bg-[var(--background-color)]',
                   buttonBorderStyles,
                   'flex items-center justify-center gap-2 text-[var(--main-color)]'
@@ -418,7 +429,7 @@ const WelcomeModal = () => {
                 onClick={() => {
                   playClick();
                   const randomFont =
-                    fonts[Math.floor(Math.random() * fonts.length)];
+                    modalFonts[Math.floor(Math.random() * modalFonts.length)];
                   setLocalFont(randomFont.name);
                   setFont(randomFont.name);
                 }}
@@ -428,12 +439,12 @@ const WelcomeModal = () => {
               </button>
             </div>
 
-            <div className='space-y-3 max-h-80 overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-[var(--border-color)] scrollbar-track-transparent p-1'>
-              {fonts.map((fontObj: (typeof fonts)[number]) => (
+            <div className='scrollbar-thin scrollbar-thumb-[var(--border-color)] scrollbar-track-transparent max-h-80 space-y-3 overflow-y-auto p-1 pr-2'>
+              {modalFonts.map((fontObj: (typeof modalFonts)[number]) => (
                 <button
                   key={fontObj.name}
                   className={clsx(
-                    'w-full p-3 rounded-lg border-2 transition-colors duration-200 text-left cursor-pointer',
+                    'w-full cursor-pointer rounded-lg border-2 p-3 text-left transition-colors duration-200',
                     'hover:border-[var(--main-color)]/70',
                     localFont === fontObj.name
                       ? 'border-[var(--main-color)] bg-[var(--background-color)]'
@@ -459,13 +470,18 @@ const WelcomeModal = () => {
                   </div>
                 </button>
               ))}
+              <div className='mt-4 rounded-lg bg-[var(--background-color)] p-3 text-center'>
+                <p className='text-sm text-[var(--secondary-color)]'>
+                  💡 More fonts available in <strong>Preferences</strong>
+                </p>
+              </div>
             </div>
           </div>
         );
 
       case 'complete':
         return (
-          <div className='text-center space-y-6'>
+          <div className='space-y-6 text-center'>
             <div className='space-y-2'>
               <h2 className='text-3xl font-bold text-[var(--main-color)]'>
                 All Set!
@@ -499,7 +515,7 @@ const WelcomeModal = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className='fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center p-2 sm:p-4 z-[9999] overscroll-none'
+        className='fixed inset-0 z-[9999] flex items-center justify-center overscroll-none bg-black/40 p-2 backdrop-blur-sm sm:p-4'
         onClick={e => {
           if (e.target === e.currentTarget) {
             handleClose();
@@ -514,15 +530,15 @@ const WelcomeModal = () => {
           animate={{ scale: 1, opacity: 1, y: 0 }}
           exit={{ scale: 0.9, opacity: 0, y: 20 }}
           className={clsx(
-            'w-full md:w-4/5 lg:w-3/5 max-h-[85vh] overflow-y-auto',
-            'rounded-2xl bg-[var(--card-color)] m-3',
+            'max-h-[85vh] w-full overflow-y-auto md:w-4/5 lg:w-3/5',
+            'm-3 rounded-2xl bg-[var(--card-color)]',
             'shadow-2xl shadow-black/20',
             cardBorderStyles
           )}
           onClick={e => e.stopPropagation()}
         >
           {/* Header */}
-          <div className='sticky top-0 bg-[var(--card-color)] p-3 sm:p-5 border-b border-[var(--border-color)]/30 z-10'>
+          <div className='sticky top-0 z-10 border-b border-[var(--border-color)]/30 bg-[var(--card-color)] p-3 sm:p-5'>
             <div className='flex items-center justify-between'>
               <div className='flex items-center gap-2'>
                 <div
@@ -553,10 +569,10 @@ const WelcomeModal = () => {
                         <div
                           key={stepName}
                           className={clsx(
-                            'w-2 h-2 rounded-full transition-all duration-300',
+                            'h-2 w-2 rounded-full transition-all duration-300',
                             isActive
-                              ? 'bg-[var(--main-color)] scale-110'
-                              : 'bg-[var(--border-color)] scale-100'
+                              ? 'scale-110 bg-[var(--main-color)]'
+                              : 'scale-100 bg-[var(--border-color)]'
                           )}
                           title={`Step ${index + 1}: ${stepName}`}
                         />
@@ -569,7 +585,7 @@ const WelcomeModal = () => {
               <button
                 onClick={handleClose}
                 className={clsx(
-                  'p-2 rounded-lg transition-colors duration-200 cursor-pointer',
+                  'cursor-pointer rounded-lg p-2 transition-colors duration-200',
                   'hover:bg-[var(--background-color)]',
                   'text-[var(--secondary-color)] hover:text-[var(--main-color)]'
                 )}
@@ -580,27 +596,27 @@ const WelcomeModal = () => {
           </div>
 
           {/* Content */}
-          <div ref={contentRef} className='p-3 sm:p-5 pb-2'>
+          <div ref={contentRef} className='p-3 pb-2 sm:p-5'>
             {renderStepContent()}
           </div>
 
           {/* Actions */}
           {step !== 'complete' && (
-            <div className='sticky bottom-0 bg-[var(--card-color)] p-3 sm:p-5 pt-3 border-t border-[var(--border-color)]/30'>
-              <div className='flex justify-between items-center'>
+            <div className='sticky bottom-0 border-t border-[var(--border-color)]/30 bg-[var(--card-color)] p-3 pt-3 sm:p-5'>
+              <div className='flex items-center justify-between'>
                 {step !== 'welcome' ? (
                   <button
                     onClick={handlePrevious}
                     className={clsx(
-                      'px-4 sm:px-6 py-2 sm:py-3 rounded-xl flex items-center justify-center gap-2 cursor-pointer',
+                      'flex cursor-pointer items-center justify-center gap-2 rounded-xl px-4 py-2 sm:px-6 sm:py-3',
                       'text-[var(--secondary-color)] hover:text-[var(--main-color)]',
-                      'hover:bg-[var(--background-color)] transition-all duration-200',
+                      'transition-all duration-200 hover:bg-[var(--background-color)]',
                       'text-sm sm:text-base'
                     )}
                   >
                     <ChevronLeft
                       size={16}
-                      className='sm:w-[18px] sm:h-[18px]'
+                      className='sm:h-[18px] sm:w-[18px]'
                     />
                     <span className='hidden sm:inline'>Previous</span>
                     <span className='sm:hidden'>Back</span>
@@ -612,20 +628,20 @@ const WelcomeModal = () => {
                 <button
                   onClick={handleNext}
                   className={clsx(
-                    'px-6 sm:px-8 py-2 sm:py-3 rounded-xl flex items-center justify-center gap-2 cursor-pointer',
-                    'text-[var(--main-color)] font-medium text-sm sm:text-base',
+                    'flex cursor-pointer items-center justify-center gap-2 rounded-xl px-6 py-2 sm:px-8 sm:py-3',
+                    'text-sm font-medium text-[var(--main-color)] sm:text-base',
                     buttonBorderStyles,
-                    'hover:bg-[var(--background-color)] active:scale-98 transition-all duration-200'
+                    'transition-all duration-200 hover:bg-[var(--background-color)] active:scale-98'
                   )}
                 >
                   <span>
                     {step === 'welcome'
                       ? 'Get Started'
                       : step === 'fonts'
-                      ? 'Finish Setup'
-                      : 'Next'}
+                        ? 'Finish Setup'
+                        : 'Next'}
                   </span>
-                  <ChevronRight size={16} className='sm:w-[18px] sm:h-[18px]' />
+                  <ChevronRight size={16} className='sm:h-[18px] sm:w-[18px]' />
                 </button>
               </div>
             </div>

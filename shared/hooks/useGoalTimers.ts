@@ -86,11 +86,10 @@ export function useGoalTimers(
 
   // Play goal sound with volume from settings
   const playGoalSound = useCallback(() => {
-    if (typeof Audio !== 'undefined') {
-      const audio = new Audio('/sounds/correct.mp3');
-      audio.volume = settings.soundVolume / 100; // Convert 0-100 to 0-1
-      audio.play().catch(() => {
-        // Ignore errors if sound can't play
+    if (typeof window !== 'undefined') {
+      // Use the audio system's playCorrectSound which handles format detection
+      import('@/shared/hooks/useAudio').then(({ playCorrectSound }) => {
+        playCorrectSound(settings.soundVolume / 100);
       });
     }
   }, [settings.soundVolume]);

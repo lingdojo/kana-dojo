@@ -1,0 +1,10 @@
+// Experiments feature - experimental and relaxation modes
+export { default as ZenMode } from './components/ZenMode';
+export { default as BreathingExercise } from './components/BreathingExercise';
+export { default as AmbientMode } from './components/AmbientMode';
+export { default as KanaRain } from './components/KanaRain';
+export { default as SoundGarden } from './components/SoundGarden';
+export { default as DailyHaiku } from './components/DailyHaiku';
+export { default as KanaConstellation } from './components/KanaConstellation';
+export { default as SpeedTyping } from './components/SpeedTyping';
+export { default as MemoryPalace } from './components/MemoryPalace';

@@ -108,6 +108,14 @@ const Return = ({ isHidden, href, gameMode }: ReturnProps) => {
           />
         </Link>
         <ProgressBar />
+        {/* Stats button - visible only on small screens */}
+        <ActionButton
+          borderRadius='xl'
+          className='py-1 px-3 text-xl w-auto sm:hidden'
+          onClick={handleShowStats}
+        >
+          <ChartSpline size={24} />
+        </ActionButton>
       </div>
 
       {/* Game mode and stats row */}
@@ -131,9 +139,10 @@ const Return = ({ isHidden, href, gameMode }: ReturnProps) => {
           <StatItem icon={Flame} value={currentStreak} />
           <StatItem icon={Star} value={numStars} />
 
+          {/* Stats button - hidden on small screens, visible on sm and up */}
           <ActionButton
             borderRadius='2xl'
-            className='p-2 md:px-6 text-xl w-auto'
+            className='p-2 md:px-6 text-xl w-auto hidden sm:flex'
             onClick={handleShowStats}
           >
             <ChartSpline size={24} />

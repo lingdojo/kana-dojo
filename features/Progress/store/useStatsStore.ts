@@ -153,14 +153,16 @@ const useStatsStore = create<IStatsState>()(
       characterScores: {},
       incrementCharacterScore: (character, field) =>
         set(s => {
-          const scores = structuredClone(s.characterScores);
-          if (!scores[character]) {
-            scores[character] = { correct: 0, wrong: 0, accuracy: 0 };
-          }
-          scores[character][field] += 1;
-          const { correct, wrong } = scores[character];
-          scores[character].accuracy = correct / (correct + wrong);
-          return { characterScores: scores };
+          const currentScore = s.characterScores[character] || { correct: 0, wrong: 0, accuracy: 0 };
+          const updatedScore = { ...currentScore, [field]: currentScore[field] + 1 };
+          const { correct, wrong } = updatedScore;
+          updatedScore.accuracy = correct / (correct + wrong);
+          return {
+            characterScores: {
+              ...s.characterScores,
+              [character]: updatedScore
+            }
+          };
         }),
 
       // Progress indicators

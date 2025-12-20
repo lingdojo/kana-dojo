@@ -487,6 +487,41 @@ export interface MenuInfoTranslations {
   instructions: string;
 }
 
+export interface BlogTranslations {
+  pageTitle: string;
+  pageDescription: string;
+  metaTitle: string;
+  metaDescription: string;
+  categories: {
+    all: string;
+    hiragana: string;
+    katakana: string;
+    kanji: string;
+    vocabulary: string;
+    grammar: string;
+    culture: string;
+  };
+  filter: {
+    label: string;
+    noResults: string;
+  };
+  card: {
+    readMore: string;
+  };
+  post: {
+    by: string;
+    updated: string;
+    readingTime: string;
+    tableOfContents: string;
+    relatedPosts: string;
+  };
+  difficulty: {
+    beginner: string;
+    intermediate: string;
+    advanced: string;
+  };
+}
+
 /**
  * Complete translation structure with all namespaces
  */
@@ -501,6 +536,7 @@ export interface Translations {
   settings: SettingsTranslations;
   errors: ErrorsTranslations;
   menuInfo: MenuInfoTranslations;
+  blog: BlogTranslations;
 }
 
 /**
@@ -517,12 +553,13 @@ export type TranslationKey =
   | `statistics.${keyof StatisticsTranslations}`
   | `settings.${keyof SettingsTranslations}`
   | `errors.${keyof ErrorsTranslations}`
-  | `menuInfo.${keyof MenuInfoTranslations}`;
+  | `menuInfo.${keyof MenuInfoTranslations}`
+  | `blog.${keyof BlogTranslations}`;
 
 /**
  * Available namespaces
  */
-export type Namespace = 'common' | 'navigation' | 'kana' | 'kanji' | 'vocabulary' | 'achievements' | 'statistics' | 'settings' | 'errors' | 'menuInfo';
+export type Namespace = 'common' | 'navigation' | 'kana' | 'kanji' | 'vocabulary' | 'achievements' | 'statistics' | 'settings' | 'errors' | 'menuInfo' | 'blog';
 
 /**
  * Available languages

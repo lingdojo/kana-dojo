@@ -1,4 +1,4 @@
-import TimedChallengeVocab from '@/features/Vocabulary/components/TimedChallenge';
+import BlitzVocab from '@/features/Vocabulary/components/Blitz';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -25,5 +25,5 @@ export const metadata: Metadata = {
 };
 
 export default function BlitzPage() {
-  return <TimedChallengeVocab />;
+  return <BlitzVocab />;
 }

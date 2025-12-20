@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence } from 'framer-motion';
 import clsx from 'clsx';
 import { X, Trophy, Star, Zap, Crown, Gem } from 'lucide-react';
 import { LucideProps } from 'lucide-react'; //
@@ -93,10 +93,10 @@ const AchievementModal = ({
         achievement.rarity === 'legendary'
           ? 5
           : achievement.rarity === 'epic'
-          ? 4
-          : achievement.rarity === 'rare'
-          ? 3
-          : 2;
+            ? 4
+            : achievement.rarity === 'rare'
+              ? 3
+              : 2;
 
       for (let i = 0; i < burstCount; i++) {
         setTimeout(() => {
@@ -158,7 +158,7 @@ const AchievementModal = ({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className='fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-[9999]'
+          className='fixed inset-0 z-[9999] flex items-center justify-center bg-black/50 p-4 backdrop-blur-sm'
           onClick={e => {
             if (e.target === e.currentTarget) {
               handleClose();
@@ -174,7 +174,7 @@ const AchievementModal = ({
             exit={{ scale: 0.8, opacity: 0, y: 50 }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
             className={clsx(
-              'w-full max-w-md relative',
+              'relative w-full max-w-md',
               'rounded-2xl bg-[var(--card-color)]',
               'shadow-2xl shadow-black/25',
               cardBorderStyles
@@ -197,7 +197,7 @@ const AchievementModal = ({
               <button
                 onClick={handleClose}
                 className={clsx(
-                  'p-2 rounded-lg transition-colors duration-200',
+                  'rounded-lg p-2 transition-colors duration-200',
                   'hover:bg-[var(--background-color)]',
                   'text-[var(--secondary-color)] hover:text-[var(--main-color)]'
                 )}
@@ -207,7 +207,7 @@ const AchievementModal = ({
             </div>
 
             {/* Content */}
-            <div className='p-8 text-center space-y-6 relative z-10'>
+            <div className='relative z-10 space-y-6 p-8 text-center'>
               {/* Achievement Unlocked Header */}
               <motion.div
                 initial={{ y: -20, opacity: 0 }}
@@ -217,7 +217,7 @@ const AchievementModal = ({
               >
                 <h2
                   id='achievement-modal-title'
-                  className='text-lg font-semibold text-[var(--main-color)] uppercase tracking-wide'
+                  className='text-lg font-semibold tracking-wide text-[var(--main-color)] uppercase'
                 >
                   Achievement Unlocked!
                 </h2>
@@ -226,7 +226,7 @@ const AchievementModal = ({
                 <div className='flex items-center justify-center gap-2'>
                   <RarityIcon size={16} style={{ color: config.color }} />
                   <span
-                    className='text-sm font-medium uppercase tracking-wider'
+                    className='text-sm font-medium tracking-wider uppercase'
                     style={{ color: config.color }}
                   >
                     {config.label}
@@ -248,7 +248,7 @@ const AchievementModal = ({
               >
                 <div
                   className={clsx(
-                    'w-24 h-24 mx-auto rounded-full flex items-center justify-center',
+                    'mx-auto flex h-24 w-24 items-center justify-center rounded-full',
                     'text-4xl font-bold shadow-lg',
                     'border-4'
                   )}
@@ -286,7 +286,7 @@ const AchievementModal = ({
                 <h3 className='text-2xl font-bold text-[var(--main-color)]'>
                   {achievement.title}
                 </h3>
-                <p className='text-[var(--secondary-color)] leading-relaxed'>
+                <p className='leading-relaxed text-[var(--secondary-color)]'>
                   {achievement.description}
                 </p>
               </motion.div>
@@ -297,8 +297,8 @@ const AchievementModal = ({
                 animate={{ scale: 1 }}
                 transition={{ delay: 0.8, type: 'spring', damping: 20 }}
                 className={clsx(
-                  'inline-flex items-center gap-2 px-4 py-2 rounded-full',
-                  'font-semibold text-sm'
+                  'inline-flex items-center gap-2 rounded-full px-4 py-2',
+                  'text-sm font-semibold'
                 )}
                 style={{
                   backgroundColor: config.bgColor,
@@ -317,14 +317,14 @@ const AchievementModal = ({
                   transition={{ delay: 1 }}
                   className='space-y-2'
                 >
-                  <h4 className='text-sm font-semibold text-[var(--main-color)] uppercase tracking-wide'>
+                  <h4 className='text-sm font-semibold tracking-wide text-[var(--main-color)] uppercase'>
                     Rewards Unlocked
                   </h4>
                   <div className='flex flex-wrap justify-center gap-2'>
                     {achievement.rewards.themes?.map((theme, index) => (
                       <span
                         key={index}
-                        className='px-3 py-1 bg-[var(--background-color)] text-[var(--secondary-color)] rounded-full text-xs'
+                        className='rounded-full bg-[var(--background-color)] px-3 py-1 text-xs text-[var(--secondary-color)]'
                       >
                         {theme} Theme
                       </span>
@@ -332,7 +332,7 @@ const AchievementModal = ({
                     {achievement.rewards.fonts?.map((font, index) => (
                       <span
                         key={index}
-                        className='px-3 py-1 bg-[var(--background-color)] text-[var(--secondary-color)] rounded-full text-xs'
+                        className='rounded-full bg-[var(--background-color)] px-3 py-1 text-xs text-[var(--secondary-color)]'
                       >
                         {font} Font
                       </span>
@@ -350,10 +350,10 @@ const AchievementModal = ({
                 <button
                   onClick={handleClose}
                   className={clsx(
-                    'px-8 py-3 rounded-xl font-medium',
+                    'rounded-xl px-8 py-3 font-medium',
                     'text-[var(--main-color)]',
                     buttonBorderStyles,
-                    'hover:bg-[var(--background-color)] transition-all duration-200',
+                    'transition-all duration-200 hover:bg-[var(--background-color)]',
                     'active:scale-95'
                   )}
                 >

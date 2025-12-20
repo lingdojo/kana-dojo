@@ -16,8 +16,8 @@ const PostWrapper = ({
     <div>
       {tag && date && (
         <div className="my-2 flex justify-between items-center w-full">
-          <h1 className="text-3xl font-bold mt-4 pb-3">{tag}</h1>
-          <span className="my-1 leading-relaxed text-[var(--main-color)]">
+          <h1 className="text-3xl font-bold mt-4 pb-3 text-[var(--main-color)]">{tag}</h1>
+          <span className="my-1 leading-relaxed text-[var(--secondary-color)]">
             {new Date(date).toLocaleDateString('en-GB', {
               day: '2-digit',
               month: 'short',

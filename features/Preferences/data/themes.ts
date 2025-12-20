@@ -248,13 +248,13 @@ const baseThemeSets: BaseThemeGroup[] = [
       },
       {
         id: 'nord',
-        backgroundColor: 'oklch(33.81% 0.0237 264.19 / 1)',
+        backgroundColor: 'oklch(30.81% 0.0237 264.19 / 1)',
         mainColor: 'oklch(77.09% 0.0747 130.82 / 1)',
         secondaryColor: 'oklch(72.67% 0.0638 335.82 / 1)'
       },
       {
         id: 'yukata',
-        backgroundColor: 'oklch(20.83% 0.0367 263.24 / 1)',
+        backgroundColor: 'oklch(18.83% 0.0367 263.24 / 1)',
         mainColor: 'oklch(65.16% 0.1943 14.70 / 1)',
         secondaryColor: 'oklch(68.92% 0.1657 313.51 / 1)'
       },
@@ -701,6 +701,36 @@ const baseThemeSets: BaseThemeGroup[] = [
         backgroundColor: 'oklch(13.0% 0.034 255.0 / 1)',
         mainColor: 'oklch(93.0% 0.047 256.0 / 1)',
         secondaryColor: 'oklch(81.0% 0.164 305.0 / 1)'
+      },
+      {
+        id: 'kurokumo',
+        backgroundColor: 'oklch(17.0% 0.032 270.0 / 1)',
+        mainColor: 'oklch(87.0% 0.135 215.0 / 1)',
+        secondaryColor: 'oklch(74.0% 0.110 305.0 / 1)'
+      },
+      {
+        id: 'yume-mori',
+        backgroundColor: 'oklch(20.0% 0.040 190.0 / 1)',
+        mainColor: 'oklch(86.0% 0.140 180.0 / 1)',
+        secondaryColor: 'oklch(74.0% 0.090 150.0 / 1)'
+      },
+      {
+        id: 'yozakura',
+        backgroundColor: 'oklch(22.0% 0.030 315.0 / 1)',
+        mainColor: 'oklch(86.5% 0.135 331.0 / 1)',
+        secondaryColor: 'oklch(72.0% 0.070 320.0 / 1)'
+      },
+      {
+        id: 'kyoto-lanterns',
+        backgroundColor: 'oklch(22.10% 0.0310 265.00 / 1)',
+        mainColor: 'oklch(78.90% 0.1820 50.00 / 1)',
+        secondaryColor: 'oklch(84.20% 0.1200 90.00 / 1)'
+      },
+      {
+        id: 'suisen',
+        backgroundColor: 'oklch(17.0% 0.031 260.0 / 1)',
+        mainColor: 'oklch(89.0% 0.053 260.0 / 1)',
+        secondaryColor: 'oklch(74.0% 0.170 295.0 / 1)'
       }
     ]
   },
@@ -749,6 +779,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         backgroundColor: 'oklch(21.92% 0.0178 230.20 / 1)',
         mainColor: 'oklch(86.12% 0.1660 169.64 / 1)',
         secondaryColor: 'oklch(65.57% 0.2272 312.53 / 1)'
+      },
+      {
+        id: 'mariah-carey',
+        backgroundColor: 'oklch(18.5% 0.015 15.0 / 1)',
+        mainColor: 'oklch(92.0% 0.045 95.0 / 1)',
+        secondaryColor: 'oklch(64.0% 0.210 28.0 / 1)'
       }
     ]
   }
@@ -759,13 +795,20 @@ const themeSets: ThemeGroup[] = baseThemeSets.map(buildThemeGroup);
 
 export default themeSets;
 
-// Flatten all themes into a map for easy lookup
-const themeMap = new Map<string, Theme>();
-themeSets.forEach(group => {
-  group.themes.forEach(theme => {
-    themeMap.set(theme.id, theme);
-  });
-});
+// Lazy-initialized theme map for efficient lookups
+let _themeMap: Map<string, Theme> | null = null;
+
+function getThemeMap(): Map<string, Theme> {
+  if (!_themeMap) {
+    _themeMap = new Map<string, Theme>();
+    themeSets.forEach(group => {
+      group.themes.forEach(theme => {
+        _themeMap!.set(theme.id, theme);
+      });
+    });
+  }
+  return _themeMap;
+}
 
 /**
  * Converts a ThemeTemplate (from custom store) to a full Theme with accent colors.
@@ -785,22 +828,31 @@ function buildThemeFromTemplate(template: {
   };
 }
 
-// populate map immediately with current store state
-useCustomThemeStore
-  .getState()
-  .themes.forEach(theme =>
-    themeMap.set(theme.id, buildThemeFromTemplate(theme))
-  );
+// Populate map with custom themes from store (lazy)
+let _customThemesLoaded = false;
 
-// subscription for store updates
-useCustomThemeStore.subscribe(state => {
-  state.themes.forEach(theme =>
-    themeMap.set(theme.id, buildThemeFromTemplate(theme))
-  );
-});
+function ensureCustomThemesLoaded(): void {
+  if (_customThemesLoaded) return;
+  _customThemesLoaded = true;
+
+  const themeMap = getThemeMap();
+  useCustomThemeStore
+    .getState()
+    .themes.forEach(theme =>
+      themeMap.set(theme.id, buildThemeFromTemplate(theme))
+    );
+
+  // Subscribe to store updates
+  useCustomThemeStore.subscribe(state => {
+    state.themes.forEach(theme =>
+      themeMap.set(theme.id, buildThemeFromTemplate(theme))
+    );
+  });
+}
 
 export function applyTheme(themeId: string) {
-  const theme = themeMap.get(themeId);
+  ensureCustomThemesLoaded();
+  const theme = getThemeMap().get(themeId);
 
   if (!theme) {
     console.error(`Theme "${themeId}" not found`);
@@ -845,7 +897,8 @@ export function applyThemeObject(theme: Theme) {
 
 // Helper to get a specific theme
 export function getTheme(themeId: string): Theme | undefined {
-  return themeMap.get(themeId);
+  ensureCustomThemesLoaded();
+  return getThemeMap().get(themeId);
 }
 
 /**

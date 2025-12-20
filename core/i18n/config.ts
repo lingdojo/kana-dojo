@@ -1,15 +1,21 @@
-export const locales = ['en', 'es', 'ja'] as const;
+// All possible locales (for type definitions and metadata)
+export const allLocales = ['en', 'es', 'ja'] as const;
+export type AllLocale = (typeof allLocales)[number];
+
+// Active locales (TEMP: Single locale for dev performance)
+export const locales = ['en'] as const; // Change to allLocales for full i18n
 export type Locale = (typeof locales)[number];
 
 export const defaultLocale: Locale = 'en';
 
-export const localeNames: Record<Locale, string> = {
+// Use AllLocale for these to avoid type errors when switching between modes
+export const localeNames: Record<AllLocale, string> = {
   en: 'English',
   es: 'Español',
   ja: '日本語'
 };
 
-export const localeLabels: Record<Locale, string> = {
+export const localeLabels: Record<AllLocale, string> = {
   en: 'EN',
   es: 'ES',
   ja: 'JA'

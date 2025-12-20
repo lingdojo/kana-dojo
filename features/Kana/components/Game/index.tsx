@@ -6,11 +6,16 @@ import Pick from './Pick';
 import Input from './Input';
 import useKanaStore from '@/features/Kana/store/useKanaStore';
 import useStatsStore from '@/features/Progress/store/useStatsStore';
+import { useShallow } from 'zustand/react/shallow';
 import Stats from '@/shared/components/Game/Stats';
 
 const Game = () => {
-  const showStats = useStatsStore(state => state.showStats);
-  const resetStats = useStatsStore(state => state.resetStats);
+  const { showStats, resetStats } = useStatsStore(
+    useShallow(state => ({
+      showStats: state.showStats,
+      resetStats: state.resetStats
+    }))
+  );
   const gameMode = useKanaStore(state => state.selectedGameModeKana);
 
   useEffect(() => {
@@ -20,7 +25,7 @@ const Game = () => {
   return (
     <div
       className={clsx(
-        'flex flex-col gap-6 md:gap-10 items-center min-h-[100dvh] max-w-[100dvw] px-4'
+        'flex min-h-[100dvh] max-w-[100dvw] flex-col items-center gap-6 px-4 md:gap-10'
         // "bg-[url('/wallpapers/neonretrocarcity.jpg')] bg-cover bg-center"
         // "bg-[url('/wallpapers/kanaDojoWallpaper.png')] bg-cover bg-center backdrop-blur-lg"
       )}

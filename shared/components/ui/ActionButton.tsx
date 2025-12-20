@@ -42,8 +42,14 @@ const actionButtonVariants = cva(
 );
 
 export interface ActionButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof actionButtonVariants> {}
+  extends
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof actionButtonVariants> {
+  /** When true, applies a smooth gradient background (main → secondary) */
+  gradient?: boolean;
+  /** When true, reverses the gradient direction (secondary → main) */
+  gradientReversed?: boolean;
+}
 
 const ActionButton = React.forwardRef<HTMLButtonElement, ActionButtonProps>(
   (
@@ -53,22 +59,36 @@ const ActionButton = React.forwardRef<HTMLButtonElement, ActionButtonProps>(
       borderColorScheme,
       borderRadius,
       borderBottomThickness,
+      gradient = false,
+      gradientReversed = false,
       children,
       ...props
     },
     ref
   ) => {
+    const gradientClass = gradientReversed
+      ? 'bg-gradient-to-r from-[var(--secondary-color)] to-[var(--main-color)]'
+      : 'bg-gradient-to-r from-[var(--main-color)] to-[var(--secondary-color)]';
+
+    // When gradient is enabled, match border color to the left side of the gradient
+    const effectiveBorderColorScheme = gradient
+      ? gradientReversed
+        ? 'secondary'
+        : 'main'
+      : borderColorScheme;
+
     return (
       <button
         type='button'
         className={cn(
           actionButtonVariants({
-            colorScheme,
-            borderColorScheme,
+            colorScheme: gradient ? undefined : colorScheme,
+            borderColorScheme: effectiveBorderColorScheme,
             borderRadius,
             borderBottomThickness,
             className
-          })
+          }),
+          gradient && `${gradientClass} text-[var(--background-color)]`
         )}
         ref={ref}
         {...props}

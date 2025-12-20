@@ -1,12 +1,12 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import clsx from 'clsx';
 import useVisitStore from '../store/useVisitStore';
 import StreakStats from './StreakStats';
 import StreakGrid from './StreakGrid';
 import type { TimePeriod } from '../lib/streakCalculations';
 import { useClick } from '@/shared/hooks/useAudio';
+import { ActionButton } from '@/shared/components/ui/ActionButton';
 
 const periodOptions: { value: TimePeriod; label: string; icon: string }[] = [
   { value: 'week', label: 'Week', icon: '📅' },
@@ -45,28 +45,33 @@ export default function StreakProgress() {
       {/* Stats Cards */}
       <StreakStats visits={visits} />
 
-      {/* Period Selector - Improved Design */}
+      {/* Period Selector */}
       <div className='flex justify-center'>
         <div className='inline-flex rounded-2xl bg-[var(--card-color)] border border-[var(--border-color)] p-2 gap-2'>
-          {periodOptions.map(option => (
-            <button
-              key={option.value}
-              onClick={() => {
-                setPeriod(option.value);
-                playClick();
-              }}
-              className={clsx(
-                'relative px-5 py-2.5 rounded-xl text-sm font-medium transition-all hover:cursor-pointer',
-                'flex items-center gap-2',
-                period === option.value
-                  ? 'bg-[var(--main-color)] text-[var(--background-color)]  border-b-4 border-[var(--main-color-accent)]'
-                  : 'text-[var(--secondary-color)] hover:text-[var(--main-color)] border-b-4 border-[var(--card-color)] hover:border-[var(--border-color)]/50 hover:bg-[var(--border-color)]/50'
-              )}
-            >
-              <span className='text-base'>{option.icon}</span>
-              <span>{option.label}</span>
-            </button>
-          ))}
+          {periodOptions.map(option => {
+            const isSelected = period === option.value;
+            return (
+              <ActionButton
+                key={option.value}
+                onClick={() => {
+                  setPeriod(option.value);
+                  playClick();
+                }}
+                colorScheme={isSelected ? 'main' : undefined}
+                borderColorScheme={isSelected ? 'main' : undefined}
+                borderBottomThickness={isSelected ? 6 : 0}
+                borderRadius='2xl'
+                className={
+                  isSelected
+                    ? 'w-auto px-5 py-2.5 text-sm'
+                    : 'w-auto px-5 py-2.5 text-sm bg-transparent text-[var(--secondary-color)] hover:text-[var(--main-color)] hover:bg-[var(--border-color)]/50'
+                }
+              >
+                <span className='text-base'>{option.icon}</span>
+                <span>{option.label}</span>
+              </ActionButton>
+            );
+          })}
         </div>
       </div>
 

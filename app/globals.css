@@ -27,7 +27,9 @@ body {
   max-height: 0;
   opacity: 0;
   overflow: hidden;
-  transition: max-height 0.08s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.05s;
+  transition:
+    max-height 0.08s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.05s;
   will-change: max-height, opacity;
 }
 
@@ -55,7 +57,9 @@ input[type='checkbox'] {
   position: relative;
   vertical-align: middle;
   cursor: pointer;
-  transition: border-color 0.2s, background-color 0.2s;
+  transition:
+    border-color 0.2s,
+    background-color 0.2s;
 }
 
 input[type='checkbox']:checked {
@@ -100,7 +104,8 @@ input[type='checkbox']:checked::after {
 }
 
 /* scrollbar style */
-[data-scroll-restoration-id='container'] {
+[data-scroll-restoration-id='container'],
+#patch-notes-scroll {
   --scrollbar-color-thumb: var(--main-color);
   --scrollbar-color-track: transparent;
   --scrollbar-width: thin; /* auto for the default one */
@@ -109,7 +114,8 @@ input[type='checkbox']:checked::after {
 
 /* Modern browsers with `scrollbar-*` support */
 @supports (scrollbar-width: auto) {
-  [data-scroll-restoration-id='container'] {
+  [data-scroll-restoration-id='container'],
+  #patch-notes-scroll {
     scrollbar-color: var(--scrollbar-color-thumb) var(--scrollbar-color-track);
     scrollbar-width: var(--scrollbar-width);
   }
@@ -117,13 +123,16 @@ input[type='checkbox']:checked::after {
 
 /* Legacy browsers with `::-webkit-scrollbar-*` support */
 @supports selector(::-webkit-scrollbar) {
-  [data-scroll-restoration-id='container']::-webkit-scrollbar-thumb {
+  [data-scroll-restoration-id='container']::-webkit-scrollbar-thumb,
+  #patch-notes-scroll::-webkit-scrollbar-thumb {
     background: var(--scrollbar-color-thumb);
   }
-  [data-scroll-restoration-id='container']::-webkit-scrollbar-track {
+  [data-scroll-restoration-id='container']::-webkit-scrollbar-track,
+  #patch-notes-scroll::-webkit-scrollbar-track {
     background: var(--scrollbar-color-track);
   }
-  [data-scroll-restoration-id='container']::-webkit-scrollbar {
+  [data-scroll-restoration-id='container']::-webkit-scrollbar,
+  #patch-notes-scroll::-webkit-scrollbar {
     max-width: var(--scrollbar-width-legacy);
     max-height: var(--scrollbar-width-legacy);
   }

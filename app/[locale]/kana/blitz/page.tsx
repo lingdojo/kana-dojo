@@ -1,4 +1,4 @@
-import TimedChallengeKana from '@/features/Kana/components/TimedChallenge';
+import BlitzKana from '@/features/Kana/components/Blitz';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -25,5 +25,5 @@ export const metadata: Metadata = {
 };
 
 export default function BlitzPage() {
-  return <TimedChallengeKana />;
+  return <BlitzKana />;
 }

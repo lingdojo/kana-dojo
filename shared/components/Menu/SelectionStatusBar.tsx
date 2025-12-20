@@ -37,6 +37,17 @@ const SelectionStatusBar = () => {
   const { kanaGroupNamesFull, kanaGroupNamesCompact } = useMemo(() => {
     const selected = new Set(kanaGroupIndices);
 
+    // Parent group definitions (for "All Hiragana", "All Katakana", "All Challenge")
+    const parentGroupDefs: Array<{
+      label: string;
+      start: number;
+      end: number;
+    }> = [
+      { label: 'All Hiragana', start: 0, end: 26 },
+      { label: 'All Katakana', start: 26, end: 60 },
+      { label: 'All Challenge', start: 60, end: 69 }
+    ];
+
     const subgroupDefs: Array<{
       label: string;
       start: number;
@@ -89,8 +100,50 @@ const SelectionStatusBar = () => {
       nonChallengeIndices.forEach(i => covered.add(i));
     }
 
+    // Check parent groups first (All Hiragana, All Katakana, All Challenge)
+    parentGroupDefs.forEach(parentDef => {
+      // Skip if already covered by "all kana" and not a challenge group
+      if (allNonChallengeSelected && parentDef.label !== 'All Challenge')
+        return;
+
+      // Check if all indices in this parent group are already covered
+      let allCovered = true;
+      for (let i = parentDef.start; i < parentDef.end; i++) {
+        if (!covered.has(i)) {
+          allCovered = false;
+          break;
+        }
+      }
+      if (allCovered) return;
+
+      // Check if all indices in this parent group are selected
+      let allInRange = true;
+      for (let i = parentDef.start; i < parentDef.end; i++) {
+        if (!selected.has(i)) {
+          allInRange = false;
+          break;
+        }
+      }
+
+      if (!allInRange) return;
+
+      // All selected - add parent group label and mark as covered
+      full.push(parentDef.label);
+      compact.push(parentDef.label);
+      for (let i = parentDef.start; i < parentDef.end; i++) covered.add(i);
+    });
+
+    // Then check individual subgroups for partial selections
     subgroupDefs.forEach(def => {
-      if (allNonChallengeSelected && !def.isChallenge) return;
+      // Skip if covered by "all kana" or parent group
+      let allCovered = true;
+      for (let i = def.start; i < def.end; i++) {
+        if (!covered.has(i)) {
+          allCovered = false;
+          break;
+        }
+      }
+      if (allCovered) return;
 
       let allInRange = true;
       for (let i = def.start; i < def.end; i++) {
@@ -263,31 +316,31 @@ const SelectionStatusBar = () => {
           className={clsx(
             'fixed z-40',
             'bg-[var(--background-color)]',
-            'border-b-2 border-[var(--border-color)] w-full '
+            'w-full border-b-2 border-[var(--border-color)]'
           )}
         >
           <div
             className={clsx(
               'flex flex-row items-center justify-center gap-2 md:gap-4',
-              'w-full ',
-              'py-3 px-4'
+              'w-full',
+              'px-4 py-3'
             )}
           >
             {/* Selected Levels Info */}
-            <div className="flex flex-row items-start gap-2 flex-1 ">
+            <div className='flex flex-1 flex-row items-start gap-2'>
               <CircleCheck
-                className="text-[var(--secondary-color)] shrink-0 mt-0.5"
+                className='mt-0.5 shrink-0 text-[var(--secondary-color)]'
                 size={20}
               />
-              <span className="text-sm md:text-base whitespace-nowrap">
+              <span className='text-sm whitespace-nowrap md:text-base'>
                 {selectionLabel}
               </span>
               {/* Compact form on small screens: "1, 2, 3" */}
-              <span className="text-[var(--secondary-color)] text-sm break-words md:hidden">
+              <span className='text-sm break-words text-[var(--secondary-color)] md:hidden'>
                 {formattedSelectionCompact}
               </span>
               {/* Full form on medium+ screens: "Level 1, Level 2" */}
-              <span className="text-[var(--secondary-color)] text-base break-words hidden md:inline">
+              <span className='hidden text-base break-words text-[var(--secondary-color)] md:inline'>
                 {formattedSelectionFull}
               </span>
             </div>
@@ -295,12 +348,12 @@ const SelectionStatusBar = () => {
             {/* Clear Button */}
             <ActionButton
               // colorScheme='main'
-              borderColorScheme="main"
-              borderRadius="2xl"
+              borderColorScheme='main'
+              borderRadius='2xl'
               borderBottomThickness={8}
-              className="py-3 px-4 bg-[var(--main-color)]/80 w-auto"
+              className='w-auto bg-[var(--main-color)]/80 px-4 py-3'
               onClick={handleClear}
-              aria-label="Clear selected levels"
+              aria-label='Clear selected levels'
             >
               <Trash size={20} />
             </ActionButton>

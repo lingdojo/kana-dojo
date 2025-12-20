@@ -19,12 +19,10 @@ const Subset = ({ sliceRange, subgroup }: SubsetProps) => {
   const [focusedRow, setFocusedRow] = useState('');
 
   const kanaGroups = kana.slice(sliceRange[0], sliceRange[1]);
-  const kanaGroupIndices = useKanaStore((state) => state.kanaGroupIndices);
-  const addKanaGroupIndex = useKanaStore((state) => state.addKanaGroupIndex);
-  const addKanaGroupIndices = useKanaStore(
-    (state) => state.addKanaGroupIndices
-  );
-  const displayKana = usePreferencesStore((state) => state.displayKana);
+  const kanaGroupIndices = useKanaStore(state => state.kanaGroupIndices);
+  const addKanaGroupIndex = useKanaStore(state => state.addKanaGroupIndex);
+  const addKanaGroupIndices = useKanaStore(state => state.addKanaGroupIndices);
+  const displayKana = usePreferencesStore(state => state.displayKana);
 
   const getGlobalIndex = (localIndex: number) => localIndex + sliceRange[0];
 
@@ -61,40 +59,40 @@ const Subset = ({ sliceRange, subgroup }: SubsetProps) => {
   };
 
   return (
-    <fieldset className=" flex flex-col items-start gap-1">
+    <fieldset className='flex flex-col items-start gap-1'>
       {kanaGroups.map((group, i) => {
         const isFocused = focusedRow === group.groupName;
         const isLastInSubset = i === kanaGroups.length - 1;
 
         return (
-          <div key={group.groupName} className="w-full flex flex-col gap-1">
+          <div key={group.groupName} className='flex w-full flex-col gap-1'>
             <label
               className={clsx(
-                'w-full flex flex-row items-center gap-2',
-                'duration-200 transition-all ease-in-out',
+                'flex w-full flex-row items-center gap-2',
+                'transition-all duration-200 ease-in-out',
                 'text-[var(--secondary-color)]'
               )}
               onClick={playClick}
             >
               <input
-                type="checkbox"
+                type='checkbox'
                 value={group.groupName}
                 checked={isChecked(i)}
-                onChange={(e) => {
+                onChange={e => {
                   e.currentTarget.blur();
                   addKanaGroupIndex(getGlobalIndex(i));
                 }}
               />
 
               <div
-                className="group relative grid w-full font-normal min-h-auto place-items-start hover:cursor-pointer"
+                className='group relative grid min-h-auto w-full place-items-start font-normal hover:cursor-pointer'
                 onTouchStart={() => setFocusedRow(group.groupName)}
               >
                 {/* Kana characters */}
                 <span
                   className={clsx(
-                    'row-start-1 col-start-1 transition-all duration-200 z-10',
-                    'flex items-center justify-center h-full text-3xl pb-1',
+                    'z-10 col-start-1 row-start-1 transition-all duration-200',
+                    'flex h-full items-center justify-center pb-1 text-3xl',
                     getTextOpacity(isFocused, true)
                   )}
                 >
@@ -104,8 +102,8 @@ const Subset = ({ sliceRange, subgroup }: SubsetProps) => {
                 {/* Romanji */}
                 <span
                   className={clsx(
-                    'row-start-1 col-start-1 transition-all duration-200',
-                    'flex items-center justify-center h-full text-2xl pb-1',
+                    'col-start-1 row-start-1 transition-all duration-200',
+                    'flex h-full items-center justify-center pb-1 text-2xl',
                     getTextOpacity(isFocused, false)
                   )}
                 >
@@ -116,19 +114,20 @@ const Subset = ({ sliceRange, subgroup }: SubsetProps) => {
 
             {/* Divider (except for last character in group) */}
             {!isLastInSubset && (
-              <hr className="border-t-1 w-full border-[var(--border-color)]" />
+              <hr className='w-full border-t-1 border-[var(--border-color)]' />
             )}
           </div>
         );
       })}
 
       {/* Select All Button */}
-      <div className="flex flex-row gap-2 w-full">
+      <div className='flex w-full flex-row gap-2'>
         <ActionButton
-          onClick={(e) => {
+          onClick={e => {
             e.currentTarget.blur();
             selectAllInSubset();
           }}
+          borderBottomThickness={8}
         >
           <span>select all {subgroup.slice(1).toLowerCase()}</span>
           <MousePointer size={22} />

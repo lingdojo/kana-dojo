@@ -1,31 +1,24 @@
 'use client';
-import { useState, useEffect } from 'react';
-import BarLoader from 'react-spinners/BarLoader';
 
 const Loader = () => {
-  const [loaderColor, setLoaderColor] = useState('#f1f7fb');
-
-  useEffect(() => {
-    // Ensure this runs only in a browser (not SSR)
-    if (typeof window !== 'undefined') {
-      const color = getComputedStyle(document.documentElement)
-        .getPropertyValue('--main-color')
-        .trim();
-
-      if (color) {
-        setLoaderColor(color);
-      }
-    }
-  }, []); // Runs once when component mounts (client-side)
-
   return (
-    <div className='fixed inset-0 flex flex-col gap-1 items-center justify-center'>
-      <BarLoader
-        width={200}
-        color={loaderColor}
-        loading={true}
-        speedMultiplier={1.5}
-      />
+    <div className='fixed inset-0 flex flex-col items-center justify-center gap-1'>
+      <div className='relative h-1 w-[200px] overflow-hidden rounded-full bg-[var(--card-color)]'>
+        <div className='absolute inset-0 animate-[loading_1.5s_ease-in-out_infinite] bg-[var(--main-color)]' />
+      </div>
+      <style jsx>{`
+        @keyframes loading {
+          0% {
+            transform: translateX(-100%);
+          }
+          50% {
+            transform: translateX(100%);
+          }
+          100% {
+            transform: translateX(-100%);
+          }
+        }
+      `}</style>
     </div>
   );
 };

@@ -1,30 +1,21 @@
 'use client';
-import React from 'react';
-import Link from 'next/link';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faDiscord,
   faGithub,
   faPatreon
 } from '@fortawesome/free-brands-svg-icons';
-import {
-  /* Keyboard, */
-  /* Mountain, */
-  /* Heart, */
-  Coffee,
-  Palette,
-  GitBranch,
-  Type,
-  LucideIcon
-} from 'lucide-react';
+import { Coffee, Palette, GitBranch, Type, LucideIcon } from 'lucide-react';
 import clsx from 'clsx';
 import { useClick } from '@/shared/hooks/useAudio';
 import usePreferencesStore from '@/features/Preferences/store/usePreferencesStore';
 import useCrazyModeStore from '@/features/CrazyMode/store/useCrazyModeStore';
 import useDecorationsStore from '@/shared/store/useDecorationsStore';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
+import PatchNotesModal from '@/features/PatchNotes/components/PatchNotesModal';
 
-const APP_VERSION = '0.1.10 (alpha)';
+import { APP_VERSION_DISPLAY } from '@/shared/lib/constants';
 
 type SocialLink = {
   icon: IconDefinition | LucideIcon;
@@ -44,16 +35,6 @@ const socialLinks: SocialLink[] = [
     url: 'https://discord.gg/CyvBNNrSmb',
     type: 'fontawesome'
   },
-  /* { icon: Keyboard, url: 'https://monkeytype.com', type: 'lucide' }, */
-  /* { icon: Mountain, url: 'https://hanabira.org', type: 'lucide' }, */
-  /*
-  {
-    icon: Heart,
-    url: 'https://ko-fi.com/kanadojo',
-    type: 'lucide',
-    special: 'donate'
-  }
-  */
   {
     icon: Coffee,
     url: 'https://ko-fi.com/kanadojo',
@@ -77,10 +58,16 @@ const MobileBottomBar = () => {
     state => state.expandDecorations
   );
   const effectiveTheme = isCrazyMode && activeThemeId ? activeThemeId : theme;
+  const [isPatchNotesOpen, setIsPatchNotesOpen] = useState(false);
 
   const handleClick = (url: string) => {
     playClick();
     window.open(url, '_blank', 'noopener');
+  };
+
+  const handleVersionClick = () => {
+    playClick();
+    setIsPatchNotesOpen(true);
   };
 
   const baseIconClasses = clsx(
@@ -92,20 +79,20 @@ const MobileBottomBar = () => {
   const infoItems = [
     { icon: Palette, text: effectiveTheme.replace('-', ' ') },
     { icon: Type, text: font.toLowerCase() },
-    { icon: GitBranch, text: `v${APP_VERSION}` }
+    { icon: GitBranch, text: `v${APP_VERSION_DISPLAY}` }
   ];
 
   return (
     <div
-      id="main-bottom-bar"
+      id='main-bottom-bar'
       className={clsx(
-        'fixed bottom-0 left-0 right-0 z-50 max-md:hidden',
+        'fixed bottom-0 left-0 right-0 z-50 max-lg:hidden',
         'bg-[var(--background-color)] border-t-1 border-[var(--border-color)]',
         'px-4 py-1 flex items-center justify-between',
         expandDecorations && 'hidden'
       )}
     >
-      <div className="flex items-center gap-3">
+      <div className='flex items-center gap-3'>
         {socialLinks.map((link, idx) => {
           const Icon = link.icon as LucideIcon;
           const isDonate = link.special === 'donate';
@@ -124,7 +111,7 @@ const MobileBottomBar = () => {
               {link.type === 'fontawesome' ? (
                 <FontAwesomeIcon
                   icon={link.icon as IconDefinition}
-                  size="sm"
+                  size='sm'
                   className={clsx(
                     baseIconClasses,
                     pulseClasses,
@@ -145,7 +132,7 @@ const MobileBottomBar = () => {
                 />
               )}
               {idx === 1 && socialLinks.length > 2 && (
-                <span className="text-sm text-[var(--secondary-color)] select-none">
+                <span className='text-sm text-[var(--secondary-color)] select-none'>
                   ~
                 </span>
               )}
@@ -154,11 +141,17 @@ const MobileBottomBar = () => {
         })}
       </div>
 
-      <div className="flex items-center gap-2 text-xs text-[var(--secondary-color)]">
+      <div className='flex items-center gap-2 text-xs text-[var(--secondary-color)]'>
+        <span className='hidden lg:inline-block text-xs text-[var(--secondary-color)]'>
+          made with ❤️ by the community
+        </span>
+        <span className='hidden lg:inline-block text-sm text-[var(--secondary-color)] select-none'>
+          ~
+        </span>
         {infoItems.map((item, idx) => {
           const isVersionItem = idx === infoItems.length - 1;
           const content = (
-            <span className="flex gap-1">
+            <span className='flex gap-1'>
               <item.icon size={16} />
               {item.text}
             </span>
@@ -167,19 +160,18 @@ const MobileBottomBar = () => {
           return (
             <React.Fragment key={idx}>
               {isVersionItem ? (
-                <Link
-                  href="/patch-notes"
-                  className="flex gap-1 hover:text-[var(--main-color)] hover:cursor-pointer "
-                  onClick={playClick}
+                <span
+                  className='flex gap-1 hover:text-[var(--main-color)] hover:cursor-pointer '
+                  onClick={handleVersionClick}
                 >
                   <item.icon size={16} />
                   {item.text}
-                </Link>
+                </span>
               ) : (
                 content
               )}
               {idx < infoItems.length - 1 && (
-                <span className="text-sm text-[var(--secondary-color)] select-none">
+                <span className='text-sm text-[var(--secondary-color)] select-none'>
                   ~
                 </span>
               )}
@@ -187,6 +179,10 @@ const MobileBottomBar = () => {
           );
         })}
       </div>
+      <PatchNotesModal
+        open={isPatchNotesOpen}
+        onOpenChange={setIsPatchNotesOpen}
+      />
     </div>
   );
 };

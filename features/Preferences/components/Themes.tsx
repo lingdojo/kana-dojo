@@ -89,7 +89,6 @@ const Themes = () => {
  */
   useEffect(() => {
     setIsMounted(true);
-    console.log(isMounted);
     setRandomTheme(
       themeSets[2].themes[random.integer(0, themeSets[2].themes.length - 1)]
     );
@@ -219,7 +218,7 @@ const Themes = () => {
                     ? 'long loooooooong theme'
                     : currentTheme.id.split('-').map((themeNamePart, i) => (
                         <span
-                          key={themeNamePart + Math.random() * 9999}
+                          key={`${currentTheme.id}-${i}`}
                           style={{
                             color:
                               process.env.NODE_ENV !== 'production'
@@ -524,7 +523,7 @@ const Themes = () => {
                     </span>
                     {currentTheme.id.split('-').map((themeNamePart, i) => (
                       <span
-                        key={themeNamePart + Math.random() * 9999}
+                        key={`${currentTheme.id}-custom-${i}`}
                         style={{
                           color:
                             process.env.NODE_ENV !== 'production'

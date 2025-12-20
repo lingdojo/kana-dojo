@@ -1,5 +1,5 @@
 'use client';
-import { ReactNode } from 'react';
+import { ReactNode, memo } from 'react';
 import usePreferencesStore from '@/features/Preferences/store/usePreferencesStore';
 
 interface FuriganaTextProps {
@@ -70,4 +70,4 @@ const FuriganaText = ({
   );
 };
 
-export default FuriganaText;
+export default memo(FuriganaText);

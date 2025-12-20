@@ -38,10 +38,6 @@ ProgressBarProps) => {
 
   // const emojiArray = ['🍹'];
 
-  // useIndefiniteConfetti({ active, emojis: emojiArray });
-
-  // console.log('active', active);
-  // console.log('score', score);
   useEffect(() => {
     if (score >= max) {
       setScore(0);

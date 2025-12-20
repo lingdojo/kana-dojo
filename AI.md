@@ -4,9 +4,31 @@ This file provides comprehensive guidance to AI coding assistants (GitHub Copilo
 
 ---
 
+## ⚠️ IMPORTANT: Command Execution for AI Agents
+
+**When executing shell commands, ALWAYS prefix them with `cmd /c`.**
+
+Running commands directly doesn't work properly for AI agents on this Windows system. Always use:
+
+```bash
+cmd /c <your-command>
+```
+
+**Examples:**
+
+```bash
+cmd /c npm run lint
+cmd /c npm run build
+cmd /c npm run test
+```
+
+---
+
 ## ⚠️ IMPORTANT: Git Commit Requirement
 
-**After completing any code changes, you MUST include a combined `git add` and `git commit` command with a descriptive conventional commit message.**
+**After completing any code changes, you MUST PROVIDE (not execute) a combined `git add` and `git commit` command with a descriptive conventional commit message.**
+
+⛔ **DO NOT RUN the git command yourself.** Only provide the command at the end of your response so the user can run it manually.
 
 Always provide this command at the end of your response using multiple `-m` flags for multiline messages:
 
@@ -25,11 +47,45 @@ git add -A && git commit -m "<type>(<scope>): <description>" -m "<body line 1>" 
 - `test`: Adding or updating tests
 - `chore`: Maintenance tasks, dependencies, configs
 
-**Example:**
+**Example (provide this, do not execute):**
 
 ```bash
 git add -A && git commit -m "feat(kana): add dakuon character support" -m "Added new dakuon characters to hiragana set" -m "Updated KanaCards component to display dakuon" -m "Added translations for new character names"
 ```
+
+---
+
+## ⚠️ CRITICAL: Code Verification
+
+**NEVER run `npm run build` for code verification. It is slow (1-2 minutes) and unnecessary.**
+
+### ✅ Use Fast Verification Instead
+
+**Always use `npm run check` for verification** (~10-30 seconds):
+
+```bash
+cmd /c "npm run check"    # TypeScript + ESLint combined
+```
+
+**Or run separately:**
+
+```bash
+cmd /c "npx tsc --noEmit"  # TypeScript type checking only
+cmd /c "npm run lint"      # ESLint code quality checks
+```
+
+### When to Use Each Command
+
+- ✅ **`npm run check`** - Use for all code verification during development
+- ✅ **`npm run lint`** - Quick ESLint-only checks
+- ✅ **`npx tsc --noEmit`** - Quick type checking only
+- ❌ **`npm run build`** - ONLY for final pre-deployment validation or testing actual production bundle
+
+**The full build is unnecessary because:**
+
+1. TypeScript already validates all types during `tsc --noEmit`
+2. ESLint catches code quality issues, unused variables, etc.
+3. Build adds 1-2 minutes of static page generation with no additional validation
 
 ---
 
@@ -212,16 +268,13 @@ KanaDojo uses Next.js App Router with internationalized routes.
 /                           # Home page (main menu)
 /kana                       # Kana selection menu
 /kana/train/[gameMode]      # Kana training (pick, reverse-pick, input, reverse-input)
-/kana/timed-challenge       # Timed kana challenge
 /kana/blitz                 # Kana blitz mode
 /kana/[subset]              # Kana subset dictionary
 /kanji                      # Kanji selection menu
 /kanji/train/[gameMode]     # Kanji training
-/kanji/timed-challenge      # Timed kanji challenge
 /kanji/blitz                # Kanji blitz mode
 /vocabulary                 # Vocabulary selection menu
 /vocabulary/train/[gameMode] # Vocabulary training
-/vocabulary/timed-challenge # Timed vocabulary challenge
 /vocabulary/blitz           # Vocabulary blitz mode
 /achievements               # Achievements page
 /progress                   # Progress tracking

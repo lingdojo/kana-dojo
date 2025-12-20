@@ -1,6 +1,6 @@
 'use client';
 import clsx from 'clsx';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo, memo } from 'react';
 import { CircleCheck, CircleX } from 'lucide-react';
 import { Random } from 'random-js';
 import { IVocabObj } from '@/features/Vocabulary/store/useVocabStore';
@@ -11,6 +11,7 @@ import { pickGameKeyMappings } from '@/shared/lib/keyMappings';
 import { useStopwatch } from 'react-timer-hook';
 import useStats from '@/shared/hooks/useStats';
 import useStatsStore from '@/features/Progress/store/useStatsStore';
+import { useShallow } from 'zustand/react/shallow';
 import Stars from '@/shared/components/Game/Stars';
 import AnswerSummary from '@/shared/components/Game/AnswerSummary';
 import SSRAudioButton from '@/shared/components/audio/SSRAudioButton';
@@ -30,6 +31,79 @@ const containsKanji = (text: string): boolean => {
   return /[\u4E00-\u9FAF]/.test(text);
 };
 
+// Memoized option button component to prevent unnecessary re-renders
+interface OptionButtonProps {
+  option: string;
+  index: number;
+  isWrong: boolean;
+  isReverse: boolean;
+  quizType: 'meaning' | 'reading';
+  wordObjMap: Map<string, IVocabObj>;
+  onClick: (option: string) => void;
+  buttonRef?: (elem: HTMLButtonElement | null) => void;
+}
+
+const OptionButton = memo(
+  ({
+    option,
+    index,
+    isWrong,
+    isReverse,
+    quizType,
+    wordObjMap,
+    onClick,
+    buttonRef
+  }: OptionButtonProps) => {
+    const optionLang =
+      quizType === 'reading' ? 'ja' : isReverse ? 'ja' : undefined;
+
+    return (
+      <button
+        ref={buttonRef}
+        type='button'
+        disabled={isWrong}
+        className={clsx(
+          'flex w-full flex-row items-center justify-start gap-1.5 rounded-xl py-5 pl-8 md:w-1/2',
+          buttonBorderStyles,
+          'active:scale-95 active:duration-200 md:active:scale-98',
+          'text-[var(--border-color)]',
+          'border-b-4',
+          isReverse ? 'text-4xl' : 'text-3xl',
+          isWrong &&
+            'border-[var(--border-color)] hover:bg-[var(--card-color)]',
+          !isWrong &&
+            'border-[var(--secondary-color)]/50 text-[var(--secondary-color)] hover:border-[var(--secondary-color)]'
+        )}
+        onClick={() => onClick(option)}
+        lang={optionLang}
+      >
+        <span className='flex-1 text-left'>
+          {isReverse || quizType === 'meaning' ? (
+            <FuriganaText
+              text={option}
+              reading={isReverse ? wordObjMap.get(option)?.reading : undefined}
+            />
+          ) : (
+            <span>{option}</span>
+          )}
+        </span>
+        <span
+          className={clsx(
+            'mr-4 hidden rounded-full bg-[var(--border-color)] px-1 text-xs lg:inline',
+            isWrong
+              ? 'text-[var(--border-color)]'
+              : 'text-[var(--secondary-color)]'
+          )}
+        >
+          {index + 1}
+        </span>
+      </button>
+    );
+  }
+);
+
+OptionButton.displayName = 'OptionButton';
+
 interface VocabPickGameProps {
   selectedWordObjs: IVocabObj[];
   isHidden: boolean;
@@ -39,8 +113,12 @@ const VocabPickGame = ({ selectedWordObjs, isHidden }: VocabPickGameProps) => {
   const hasWords = !!selectedWordObjs && selectedWordObjs.length > 0;
   const { isReverse, decideNextMode, recordWrongAnswer } =
     useSmartReverseMode();
-  const score = useStatsStore(state => state.score);
-  const setScore = useStatsStore(state => state.setScore);
+  const { score, setScore } = useStatsStore(
+    useShallow(state => ({
+      score: state.score,
+      setScore: state.setScore
+    }))
+  );
 
   const speedStopwatch = useStopwatch({ autoStart: false });
 
@@ -69,8 +147,14 @@ const VocabPickGame = ({ selectedWordObjs, isHidden }: VocabPickGameProps) => {
     return selected;
   });
 
-  // Find the correct object - always by word since correctChar stores the word
-  const correctWordObj = selectedWordObjs.find(obj => obj.word === correctChar);
+  // Create Map for O(1) lookups instead of O(n) find() calls
+  const wordObjMap = useMemo(
+    () => new Map(selectedWordObjs.map(obj => [obj.word, obj])),
+    [selectedWordObjs]
+  );
+
+  // Find the correct object - O(1) lookup
+  const correctWordObj = wordObjMap.get(correctChar);
 
   const [currentWordObj, setCurrentWordObj] = useState<IVocabObj>(
     correctWordObj as IVocabObj
@@ -162,8 +246,8 @@ const VocabPickGame = ({ selectedWordObjs, isHidden }: VocabPickGameProps) => {
       generateNewCharacter();
       setFeedback(
         <>
-          <span className="text-[var(--secondary-color)]">{`${displayChar} = ${selectedOption} `}</span>
-          <CircleCheck className="inline text-[var(--main-color)]" />
+          <span className='text-[var(--secondary-color)]'>{`${displayChar} = ${selectedOption} `}</span>
+          <CircleCheck className='inline text-[var(--main-color)]' />
         </>
       );
       setCurrentWordObj(correctWordObj as IVocabObj);
@@ -171,8 +255,8 @@ const VocabPickGame = ({ selectedWordObjs, isHidden }: VocabPickGameProps) => {
       handleWrongAnswer(selectedOption);
       setFeedback(
         <>
-          <span className="text-[var(--secondary-color)]">{`${displayChar} ≠ ${selectedOption} `}</span>
-          <CircleX className="inline text-[var(--main-color)]" />
+          <span className='text-[var(--secondary-color)]'>{`${displayChar} ≠ ${selectedOption} `}</span>
+          <CircleX className='inline text-[var(--main-color)]' />
         </>
       );
     }
@@ -226,7 +310,7 @@ const VocabPickGame = ({ selectedWordObjs, isHidden }: VocabPickGameProps) => {
     setCorrectChar(newChar);
 
     // Get the actual word for the new character to check if it contains kanji
-    const newWordObj = selectedWordObjs.find(obj => obj.word === newChar);
+    const newWordObj = wordObjMap.get(newChar);
     const wordToCheck = newWordObj?.word ?? '';
 
     // Only toggle to reading quiz if the word contains kanji
@@ -253,7 +337,7 @@ const VocabPickGame = ({ selectedWordObjs, isHidden }: VocabPickGameProps) => {
   return (
     <div
       className={clsx(
-        'flex flex-col gap-6 sm:gap-10 items-center w-full sm:w-4/5',
+        'flex w-full flex-col items-center gap-6 sm:w-4/5 sm:gap-10',
         isHidden ? 'hidden' : ''
       )}
     >
@@ -268,16 +352,16 @@ const VocabPickGame = ({ selectedWordObjs, isHidden }: VocabPickGameProps) => {
 
       {!displayAnswerSummary && (
         <>
-          <div className="flex flex-col items-center gap-4">
+          <div className='flex flex-col items-center gap-4'>
             {/* Show prompt based on quiz type */}
-            <span className="text-sm text-[var(--secondary-color)] mb-2">
+            <span className='mb-2 text-sm text-[var(--secondary-color)]'>
               {quizType === 'meaning'
                 ? isReverse
                   ? 'What is the word?' // reverse: given meaning, find word
                   : 'What is the meaning?' // normal: given word, find meaning
                 : 'What is the reading?'}
             </span>
-            <div className="flex flex-row justify-center items-center gap-1">
+            <div className='flex flex-row items-center justify-center gap-1'>
               <FuriganaText
                 text={displayChar ?? ''}
                 reading={
@@ -291,9 +375,9 @@ const VocabPickGame = ({ selectedWordObjs, isHidden }: VocabPickGameProps) => {
               {!isReverse && (
                 <SSRAudioButton
                   text={correctChar}
-                  variant="icon-only"
-                  size="sm"
-                  className="bg-[var(--card-color)] text-[var(--secondary-color)]"
+                  variant='icon-only'
+                  size='sm'
+                  className='bg-[var(--card-color)] text-[var(--secondary-color)]'
                 />
               )}
             </div>
@@ -301,61 +385,24 @@ const VocabPickGame = ({ selectedWordObjs, isHidden }: VocabPickGameProps) => {
 
           <div
             className={clsx(
-              'flex flex-col w-full gap-6 items-center '
+              'flex w-full flex-col items-center gap-6'
               // 'lg:flex-row'
             )}
           >
             {shuffledOptions.map((option, i) => (
-              <button
-                ref={elem => {
+              <OptionButton
+                key={`${correctChar}-${option}-${i}`}
+                option={option}
+                index={i}
+                isWrong={wrongSelectedAnswers.includes(option)}
+                isReverse={isReverse}
+                quizType={quizType}
+                wordObjMap={wordObjMap}
+                onClick={handleOptionClick}
+                buttonRef={elem => {
                   buttonRefs.current[i] = elem;
                 }}
-                key={option + i}
-                type="button"
-                disabled={wrongSelectedAnswers.includes(option)}
-                className={clsx(
-                  'py-5 pl-8 rounded-xl w-full md:w-1/2 flex flex-row justify-start items-center gap-1.5',
-                  buttonBorderStyles,
-                  'active:scale-95 md:active:scale-98 active:duration-200',
-                  'text-[var(--border-color)]',
-                  ' border-b-4',
-
-                  isReverse ? 'text-4xl' : 'text-3xl',
-                  wrongSelectedAnswers.includes(option) &&
-                    'hover:bg-[var(--card-color)] border-[var(--border-color)]',
-                  !wrongSelectedAnswers.includes(option) &&
-                    'text-[var(--secondary-color)] border-[var(--secondary-color)]/50 hover:border-[var(--secondary-color)]'
-                )}
-                onClick={() => handleOptionClick(option)}
-                lang={optionLang}
-              >
-                {/* Only use FuriganaText when we need furigana (reverse mode or meaning quiz) */}
-                <span className="flex-1 text-left">
-                  {isReverse || quizType === 'meaning' ? (
-                    <FuriganaText
-                      text={option}
-                      reading={
-                        isReverse
-                          ? selectedWordObjs.find(obj => obj.word === option)
-                              ?.reading
-                          : undefined
-                      }
-                    />
-                  ) : (
-                    <span>{option}</span>
-                  )}
-                </span>
-                <span
-                  className={clsx(
-                    'hidden lg:inline text-xs rounded-full bg-[var(--border-color)] px-1 mr-4',
-                    wrongSelectedAnswers.includes(option)
-                      ? 'text-[var(--border-color)]'
-                      : 'text-[var(--secondary-color)]'
-                  )}
-                >
-                  {i + 1}
-                </span>
-              </button>
+              />
             ))}
           </div>
 

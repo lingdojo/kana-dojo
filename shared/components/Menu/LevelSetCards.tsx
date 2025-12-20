@@ -329,8 +329,9 @@ const LevelSetCards = <TLevel extends string, TItem>({
           playClick();
           setIsModalOpen(true);
         }}
-        className='px-2 py-3'
+        className='px-2 py-3 opacity-90'
         // borderRadius='3xl'
+        borderBottomThickness={8}
       >
         <MousePointer />
         Quick Select

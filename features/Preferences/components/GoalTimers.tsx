@@ -241,7 +241,7 @@ export default function GoalTimers() {
             className={clsx(
               'w-12 h-6 rounded-full transition-colors hover:cursor-pointer',
               settings.defaultShowAnimation
-                ? 'bg-[var(--secondary-color)]'
+                ? 'bg-[var(--main-color)]'
                 : 'bg-[var(--border-color)]'
             )}
           >

@@ -30,7 +30,7 @@
   Zen_Antique,
   Kaisei_Tokumin,
   Yuji_Syuku,
-  WDXL_Lubrifont_JP_N, // Commented out - causes font override error
+  // WDXL_Lubrifont_JP_N - Removed: causes font override error in Next.js 15
   Murecho,
   Kaisei_Opti,
   BIZ_UDMincho,
@@ -282,13 +282,7 @@ const yujiSyuku = Yuji_Syuku({
   fallback: ['system-ui', 'sans-serif']
 });
 
-const wdxlLubrifontJPN = WDXL_Lubrifont_JP_N({
-  subsets: ['latin'],
-  weight: ['400'],
-  display: 'swap',
-  preload: false,
-  fallback: ['system-ui', 'sans-serif']
-});
+// WDXL Lubrifont JP N removed - causes font override error in Next.js 15
 
 const murecho = Murecho({
   subsets: ['latin'],
@@ -448,10 +442,7 @@ const fonts = [
     name: 'Yuji Syuku',
     font: yujiSyuku
   },
-  {
-    name: 'WDXL Lubrifont JP N',
-    font: wdxlLubrifontJPN
-  },
+  // WDXL Lubrifont JP N removed - causes font override error
   {
     name: 'Murecho',
     font: murecho

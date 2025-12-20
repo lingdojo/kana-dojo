@@ -5,6 +5,7 @@ import SponsorsGrid from '@/features/Legal/credits/SponsorsGrid';
 import { KO_FI_SUPPORTERS } from '@/features/Legal/credits/sponsorsData';
 import type { Contributor } from './types';
 import { Handshake, Heart } from 'lucide-react';
+import { ORGANIZATION } from '@/features/Legal/credits/organizationData';
 
 type GHContributor = {
   login: string;
@@ -38,8 +39,11 @@ const fetchContributors = async (): Promise<Contributor[]> => {
 
 export default async function Credits() {
   const contributors = await fetchContributors();
-  const maintainers = contributors.slice(0, 2);
-  const contributorsList = contributors.slice(2);
+  const contributorsList = contributors.filter(
+    c =>
+      c.login !== ORGANIZATION.owner.login &&
+      !ORGANIZATION.members.some(m => m.login === c.login)
+  );
 
   const credits = `# Credits
 
@@ -52,30 +56,35 @@ export default async function Credits() {
     <ContentLayout>
       <PostWrapper textContent={credits} />
 
-      {maintainers.length > 0 && (
-        <section>
-          <h2 className="text-2xl font-semibold mt-4 pb-2">Maintainers</h2>
-          <ContributorsGrid contributors={maintainers} />
-        </section>
-      )}
+      <section>
+        <h2 className='mt-4 pb-2 text-2xl font-semibold'>Owner</h2>
+        <ContributorsGrid contributors={[ORGANIZATION.owner]} />
+      </section>
+
+      <section>
+        <h2 className='mt-4 pb-2 text-2xl font-semibold'>
+          Organization Members
+        </h2>
+        <ContributorsGrid contributors={ORGANIZATION.members} />
+      </section>
 
       {contributorsList.length > 0 && (
         <section>
-          <h2 className="text-2xl font-semibold mt-4 pb-2">Contributors</h2>
+          <h2 className='mt-4 pb-2 text-2xl font-semibold'>Contributors</h2>
           <ContributorsGrid contributors={contributorsList} />
 
-          <div className="mt-8 p-6 bg-[var(--card-color)] border border-[var(--border-color)] rounded-lg">
-            <p className="flex items-center gap-2 text-[var(--main-color)] font-medium mb-2">
-              <Handshake className="text-[var(--main-color)]" />
+          <div className='mt-8 rounded-lg border border-[var(--border-color)] bg-[var(--card-color)] p-6'>
+            <p className='mb-2 flex items-center gap-2 font-medium text-[var(--main-color)]'>
+              <Handshake className='text-[var(--main-color)]' />
               Want to contribute?
             </p>
-            <p className="text-[var(--secondary-color)] text-sm">
+            <p className='text-sm text-[var(--secondary-color)]'>
               Visit our{' '}
               <a
-                className="text-[var(--main-color)] underline font-semibold hover:opacity-70 transition-opacity"
-                href="https://github.com/lingdojo/kana-dojo"
-                target="_blank"
-                rel="noreferrer"
+                className='font-semibold text-[var(--main-color)] underline transition-opacity hover:opacity-70'
+                href='https://github.com/lingdojo/kana-dojo'
+                target='_blank'
+                rel='noreferrer'
               >
                 GitHub repository
               </a>{' '}
@@ -87,33 +96,33 @@ export default async function Credits() {
 
       {KO_FI_SUPPORTERS.length > 0 && (
         <section>
-          <h2 className="text-2xl font-semibold mt-4 pb-2">Supporters</h2>
-          <p className="my-1 leading-relaxed text-[var(--secondary-color)]">
+          <h2 className='mt-4 pb-2 text-2xl font-semibold'>Supporters</h2>
+          <p className='my-1 leading-relaxed text-[var(--secondary-color)]'>
             A special thanks to our supporters!
           </p>
           <SponsorsGrid sponsors={KO_FI_SUPPORTERS} />
-          <div className="mt-8 p-6 bg-[var(--card-color)] border border-[var(--border-color)] rounded-lg">
-            <p className="flex items-center gap-2 text-[var(--main-color)] font-medium mb-3">
-              <Heart className="motion-safe:animate-pulse text-red-500 fill-current hover:text-red-500" />
+          <div className='mt-8 rounded-lg border border-[var(--border-color)] bg-[var(--card-color)] p-6'>
+            <p className='mb-3 flex items-center gap-2 font-medium text-[var(--main-color)]'>
+              <Heart className='fill-current text-red-500 hover:text-red-500 motion-safe:animate-pulse' />
               Support KanaDojo
             </p>
-            <p className="text-[var(--secondary-color)] text-sm mb-4">
+            <p className='mb-4 text-sm text-[var(--secondary-color)]'>
               Your support is really appreciated. Thank you!
             </p>
-            <div className="flex flex-wrap gap-3">
+            <div className='flex flex-wrap gap-3'>
               <a
-                className="inline-flex items-center px-4 py-2 bg-[var(--main-color)] text-[var(--background-color)] rounded-lg font-medium text-sm hover:opacity-90 transition-opacity"
-                href="https://ko-fi.com/kanadojo"
-                target="_blank"
-                rel="noreferrer"
+                className='inline-flex items-center rounded-lg bg-[var(--main-color)] px-4 py-2 text-sm font-medium text-[var(--background-color)] transition-opacity hover:opacity-90'
+                href='https://ko-fi.com/kanadojo'
+                target='_blank'
+                rel='noreferrer'
               >
                 Ko-fi
               </a>
               <a
-                className="inline-flex items-center px-4 py-2 border-2 border-[var(--main-color)] text-[var(--main-color)] rounded-lg font-medium text-sm hover:bg-[var(--card-color)] transition-colors"
-                href="https://www.patreon.com/cw/kanadojo"
-                target="_blank"
-                rel="noreferrer"
+                className='inline-flex items-center rounded-lg border-2 border-[var(--main-color)] px-4 py-2 text-sm font-medium text-[var(--main-color)] transition-colors hover:bg-[var(--card-color)]'
+                href='https://www.patreon.com/cw/kanadojo'
+                target='_blank'
+                rel='noreferrer'
               >
                 Patreon
               </a>

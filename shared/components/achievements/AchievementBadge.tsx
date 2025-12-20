@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import clsx from 'clsx';
 import { Trophy } from 'lucide-react';
 import { useAchievements } from '@/features/Achievements/hooks/useAchievements';
@@ -54,27 +54,27 @@ const AchievementBadge = ({
           sizeClasses[size]
         )}
       >
-        <div className="relative">
-          <Trophy size={iconSizes[size]} className="text-yellow-500" />
+        <div className='relative'>
+          <Trophy size={iconSizes[size]} className='text-yellow-500' />
           {showNotificationDot && hasUnseenNotifications && (
             <motion.div
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
-              className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full border-2 border-[var(--card-color)]"
+              className='absolute -top-1 -right-1 h-3 w-3 rounded-full border-2 border-[var(--card-color)] bg-red-500'
             />
           )}
         </div>
 
-        <div className="text-left">
-          <div className="flex items-center gap-2">
-            <span className="font-semibold text-[var(--main-color)]">
+        <div className='text-left'>
+          <div className='flex items-center gap-2'>
+            <span className='font-semibold text-[var(--main-color)]'>
               Level {level}
             </span>
-            <span className="text-xs text-[var(--secondary-color)]">
+            <span className='text-xs text-[var(--secondary-color)]'>
               ({totalPoints} pts)
             </span>
           </div>
-          <div className="text-xs text-[var(--secondary-color)]">
+          <div className='text-xs text-[var(--secondary-color)]'>
             {unlockedCount} achievements
           </div>
         </div>
@@ -95,20 +95,20 @@ const AchievementBadge = ({
         sizeClasses[size]
       )}
     >
-      <Trophy size={iconSizes[size]} className="text-yellow-500" />
+      <Trophy size={iconSizes[size]} className='text-yellow-500' />
 
       {/* Notification dot */}
       {showNotificationDot && hasUnseenNotifications && (
         <motion.div
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
-          className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full border-2 border-[var(--card-color)]"
+          className='absolute -top-1 -right-1 h-3 w-3 rounded-full border-2 border-[var(--card-color)] bg-red-500'
         />
       )}
 
       {/* Level indicator */}
       {level > 1 && (
-        <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-blue-500 text-white text-xs font-bold rounded-full flex items-center justify-center border-2 border-[var(--card-color)]">
+        <div className='absolute -right-1 -bottom-1 flex h-5 w-5 items-center justify-center rounded-full border-2 border-[var(--card-color)] bg-blue-500 text-xs font-bold text-white'>
           {level}
         </div>
       )}

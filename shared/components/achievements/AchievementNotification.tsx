@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence } from 'framer-motion';
 import clsx from 'clsx';
 import { Trophy, X } from 'lucide-react';
 import useAchievementStore, {
@@ -61,11 +61,11 @@ const AchievementNotification = ({
           exit={{ x: 400, opacity: 0 }}
           transition={{ type: 'spring', damping: 25, stiffness: 300 }}
           className={clsx(
-            'relative w-80 p-4 cursor-pointer',
+            'relative w-80 cursor-pointer p-4',
             'bg-[var(--card-color)] shadow-lg',
             cardBorderStyles,
             'border-l-4 border-l-yellow-500',
-            'hover:shadow-xl transition-shadow duration-200'
+            'transition-shadow duration-200 hover:shadow-xl'
           )}
           onClick={handleViewDetails}
         >
@@ -73,21 +73,21 @@ const AchievementNotification = ({
           <button
             onClick={handleClose}
             className={clsx(
-              'absolute top-2 right-2 p-1 rounded',
+              'absolute top-2 right-2 rounded p-1',
               'text-[var(--secondary-color)] hover:text-[var(--main-color)]',
-              'hover:bg-[var(--background-color)] transition-colors duration-200'
+              'transition-colors duration-200 hover:bg-[var(--background-color)]'
             )}
           >
             <X size={14} />
           </button>
 
-          <div className="flex items-start gap-3 pr-6">
+          <div className='flex items-start gap-3 pr-6'>
             {/* Achievement Icon */}
-            <div className="flex-shrink-0">
+            <div className='flex-shrink-0'>
               <div
                 className={clsx(
-                  'w-10 h-10 rounded-full flex items-center justify-center',
-                  'bg-yellow-100 text-yellow-600 text-lg font-bold'
+                  'flex h-10 w-10 items-center justify-center rounded-full',
+                  'bg-yellow-100 text-lg font-bold text-yellow-600'
                 )}
               >
                 {notification.achievement.icon}
@@ -95,27 +95,27 @@ const AchievementNotification = ({
             </div>
 
             {/* Content */}
-            <div className="flex-1 min-w-0">
-              <div className="flex items-center gap-2 mb-1">
-                <Trophy size={14} className="text-yellow-500" />
-                <span className="text-xs font-semibold text-yellow-600 uppercase tracking-wide">
+            <div className='min-w-0 flex-1'>
+              <div className='mb-1 flex items-center gap-2'>
+                <Trophy size={14} className='text-yellow-500' />
+                <span className='text-xs font-semibold tracking-wide text-yellow-600 uppercase'>
                   Achievement Unlocked
                 </span>
               </div>
 
-              <h4 className="font-semibold text-[var(--main-color)] text-sm mb-1 truncate">
+              <h4 className='mb-1 truncate text-sm font-semibold text-[var(--main-color)]'>
                 {notification.achievement.title}
               </h4>
 
-              <p className="text-xs text-[var(--secondary-color)] line-clamp-2">
+              <p className='line-clamp-2 text-xs text-[var(--secondary-color)]'>
                 {notification.achievement.description}
               </p>
 
-              <div className="flex items-center justify-between mt-2">
-                <span className="text-xs text-yellow-600 font-medium">
+              <div className='mt-2 flex items-center justify-between'>
+                <span className='text-xs font-medium text-yellow-600'>
                   +{notification.achievement.points} points
                 </span>
-                <span className="text-xs text-[var(--secondary-color)]">
+                <span className='text-xs text-[var(--secondary-color)]'>
                   Click to view
                 </span>
               </div>
@@ -127,7 +127,7 @@ const AchievementNotification = ({
             initial={{ width: '100%' }}
             animate={{ width: '0%' }}
             transition={{ duration: 8, ease: 'linear' }}
-            className="absolute bottom-0 left-0 h-1 bg-yellow-500 rounded-b-lg"
+            className='absolute bottom-0 left-0 h-1 rounded-b-lg bg-yellow-500'
           />
         </motion.div>
       )}
@@ -175,7 +175,7 @@ export const AchievementNotificationContainer = () => {
   return (
     <>
       {/* Notification Stack */}
-      <div className="fixed top-4 right-4 z-50 space-y-2">
+      <div className='fixed top-4 right-4 z-50 space-y-2'>
         {notifications.slice(0, 3).map((notification, index) => (
           <motion.div
             key={notification.id}
@@ -197,7 +197,7 @@ export const AchievementNotificationContainer = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-[9999]"
+          className='fixed inset-0 z-[9999] flex items-center justify-center bg-black/50 p-4 backdrop-blur-sm'
           onClick={handleCloseModal}
         >
           <motion.div
@@ -210,22 +210,22 @@ export const AchievementNotificationContainer = () => {
             )}
             onClick={e => e.stopPropagation()}
           >
-            <div className="text-4xl mb-4">{selectedAchievement.icon}</div>
-            <h3 className="text-xl font-bold text-[var(--main-color)] mb-2">
+            <div className='mb-4 text-4xl'>{selectedAchievement.icon}</div>
+            <h3 className='mb-2 text-xl font-bold text-[var(--main-color)]'>
               {selectedAchievement.title}
             </h3>
-            <p className="text-[var(--secondary-color)] mb-4">
+            <p className='mb-4 text-[var(--secondary-color)]'>
               {selectedAchievement.description}
             </p>
-            <div className="text-sm text-yellow-600 font-medium mb-4">
+            <div className='mb-4 text-sm font-medium text-yellow-600'>
               +{selectedAchievement.points} Achievement Points
             </div>
             <button
               onClick={handleCloseModal}
               className={clsx(
-                'px-6 py-2 rounded-lg',
+                'rounded-lg px-6 py-2',
                 'bg-[var(--background-color)] text-[var(--main-color)]',
-                'hover:bg-[var(--border-color)] transition-colors duration-200'
+                'transition-colors duration-200 hover:bg-[var(--border-color)]'
               )}
             >
               Continue Learning

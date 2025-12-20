@@ -10,13 +10,13 @@ There’s more than one way to help out here. Some folks code, some write, some 
 
 **You can:**
 
-* 🐛 Report bugs (spelling mistakes count too!)
-* 💬 Suggest new features or UI tweaks
-* 🧠 Improve documentation (like this file!)
-* 🎨 Add new themes or Japanese fonts
-* ✏️ Expand vocabulary and kanji datasets
-* 🧩 Help with accessibility or localization
-* 🧰 Refactor small pieces of code for clarity
+- 🐛 Report bugs (spelling mistakes count too!)
+- 💬 Suggest new features or UI tweaks
+- 🧠 Improve documentation (like this file!)
+- 🎨 Add new themes or Japanese fonts
+- ✏️ Expand vocabulary and kanji datasets
+- 🧩 Help with accessibility or localization
+- 🧰 Refactor small pieces of code for clarity
 
 If you’re new to open source, this is a great place to start. We’ve tagged some issues as `good first issue` to help you find friendly entry points.
 
@@ -28,8 +28,8 @@ Before you jump in, make sure your environment is ready:
 
 ### Prerequisites
 
-* **Node.js 18+**
-* **npm 10+** (comes with Node)
+- **Node.js 18+**
+- **npm 10+** (comes with Node)
 
 ### Setup Steps
 
@@ -66,6 +66,7 @@ That usually does the trick.
 If you're on **Windows 11** and the dev server won't start, this is often due to firewall or network restrictions blocking Google Fonts downloads. See our [**Troubleshooting Guide**](./TROUBLESHOOTING.md#-windows-specific-issues) for detailed solutions.
 
 **Quick fixes to try:**
+
 1. Allow Node.js through Windows Firewall
 2. Temporarily disable antivirus during `npm install` and `npm run dev`
 3. Use [GitHub Codespaces](https://github.com/codespaces) (works out of the box)
@@ -82,16 +83,18 @@ You’ll notice a clean layout when you open the codebase:
 ```
 kanadojo/
 ├── app/                 # Next.js App Router pages
-├── components/          # Reusable UI & Dojo components
-├── store/               # Zustand state management
-├── static/              # Kana, Kanji, and Vocabulary data
-├── lib/                 # Custom hooks and utilities
-├── public/              # Assets (sounds, wallpapers)
-└── tailwind.config.js   # Styling setup
+├── features/            # Feature-based modules
+├── shared/              # Shared resources
+├── core/                # Core infrastructure
+├── public/              # Static assets
+├── docs/                # Documentation
+├── next.config.ts       # Next.js configuration
+├── tailwind.config.js   # Tailwind CSS configuration
+└── tsconfig.json        # TypeScript configuration
 ```
 
-If you're here to make code changes, focus on `components/`, `store/`, or `lib/`.
-If you're here for content (themes, fonts, vocab, kanji), go straight to `static/`.
+If you're here to make code changes, focus on `shared/`.
+If you're here for content (themes, fonts, vocab, kanji), go straight to `public/`.
 
 ---
 
@@ -106,10 +109,9 @@ Here’s how to keep things tidy:
    ```
 
 2. **Code style:**
-
-   * We use **TypeScript** for type safety.
-   * Keep components small and readable.
-   * Follow Tailwind conventions and use the helper `cn()` from `lib/utils.ts`.
+   - We use **TypeScript** for type safety.
+   - Keep components small and readable.
+   - Follow Tailwind conventions and use the helper `cn()` from `lib/utils.ts`.
 
 3. **Commit messages:**
    Use [Conventional Commits](https://www.conventionalcommits.org/) — it keeps the history neat.
@@ -145,11 +147,10 @@ When your change is ready:
 2. Open a pull request against the **`main`** branch of `lingdojo/kanadojo`.
 
 3. In your PR description:
-
-   * Explain what problem you solved and *why* it matters.
-   * Include screenshots for visual changes.
-   * Add reproduction steps if it’s a bug fix.
-   * Mention related issue numbers (e.g., “Fixes #123”).
+   - Explain what problem you solved and _why_ it matters.
+   - Include screenshots for visual changes.
+   - Add reproduction steps if it’s a bug fix.
+   - Mention related issue numbers (e.g., “Fixes #123”).
 
 We try to review PRs within a few days, but remember: this is a volunteer-driven project. If you don’t hear back quickly, a polite ping is totally fine.
 
@@ -163,14 +164,14 @@ If you find something broken or confusing, open an issue!
 
 Please include:
 
-* What you were trying to do
-* What you expected to happen
-* What actually happened (screenshots help!)
-* Your browser + OS info
+- What you were trying to do
+- What you expected to happen
+- What actually happened (screenshots help!)
+- Your browser + OS info
 
 Before opening a new issue, check if it already exists — we might already be on it.
 
-For feature requests, be descriptive. Tell us *why* the feature helps learners. For example:
+For feature requests, be descriptive. Tell us _why_ the feature helps learners. For example:
 
 > “Add keyboard hotkeys for fast input during Pick mode.”
 
@@ -190,8 +191,8 @@ If you ever feel uncomfortable or see behavior that crosses the line, reach out 
 
 If you’re stuck or just want to talk about an idea:
 
-* Open a **GitHub Discussion** or issue.
-* Drop a comment on a related PR.
+- Open a **GitHub Discussion** or issue.
+- Drop a comment on a related PR.
 
 We’re friendly folks — promise. 🙂
 
@@ -201,10 +202,10 @@ Typical response time is within a few days. We’re doing this for the love of J
 
 ## 🌸 A Few Final Tips
 
-* Small PRs are easier to review than massive ones. Break things up when you can.
-* Don’t worry about perfection. We’d rather have your ideas early than never.
-* If something’s unclear, *ask*. That’s how we improve docs like this one.
-* Be mindful that this repo is deployed on **Vercel**, so major changes may affect build times.
+- Small PRs are easier to review than massive ones. Break things up when you can.
+- Don’t worry about perfection. We’d rather have your ideas early than never.
+- If something’s unclear, _ask_. That’s how we improve docs like this one.
+- Be mindful that this repo is deployed on **Vercel**, so major changes may affect build times.
 
 ---
 

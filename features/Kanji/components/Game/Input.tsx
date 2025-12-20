@@ -10,6 +10,7 @@ import { buttonBorderStyles } from '@/shared/lib/styles';
 import { useStopwatch } from 'react-timer-hook';
 import useStats from '@/shared/hooks/useStats';
 import useStatsStore from '@/features/Progress/store/useStatsStore';
+import { useShallow } from 'zustand/react/shallow';
 import Stars from '@/shared/components/Game/Stars';
 import AnswerSummary from '@/shared/components/Game/AnswerSummary';
 import SSRAudioButton from '@/shared/components/audio/SSRAudioButton';
@@ -33,8 +34,12 @@ const KanjiInputGame = ({
   isHidden,
   isReverse = false
 }: KanjiInputGameProps) => {
-  const score = useStatsStore(state => state.score);
-  const setScore = useStatsStore(state => state.setScore);
+  const { score, setScore } = useStatsStore(
+    useShallow(state => ({
+      score: state.score,
+      setScore: state.setScore
+    }))
+  );
 
   const speedStopwatch = useStopwatch({ autoStart: false });
 
@@ -151,10 +156,10 @@ const KanjiInputGame = ({
     generateNewCharacter();
     setFeedback(
       <>
-        <span className="text-[var(--secondary-color)]">{`${correctChar} = ${userInput
+        <span className='text-[var(--secondary-color)]'>{`${correctChar} = ${userInput
           .trim()
           .toLowerCase()} `}</span>
-        <CircleCheck className="inline text-[var(--main-color)]" />
+        <CircleCheck className='inline text-[var(--main-color)]' />
       </>
     );
     triggerCrazyMode();
@@ -166,11 +171,11 @@ const KanjiInputGame = ({
     setInputValue('');
     setFeedback(
       <>
-        <span className="text-[var(--secondary-color)]">{`${correctChar} ≠ ${inputValue
+        <span className='text-[var(--secondary-color)]'>{`${correctChar} ≠ ${inputValue
           .trim()
           .toLowerCase()} `}</span>
 
-        <CircleX className="inline text-[var(--main-color)]" />
+        <CircleX className='inline text-[var(--main-color)]' />
       </>
     );
     playErrorTwice();
@@ -225,7 +230,7 @@ const KanjiInputGame = ({
   return (
     <div
       className={clsx(
-        'flex flex-col items-center w-full sm:w-4/5',
+        'flex w-full flex-col items-center sm:w-4/5',
         gapSize,
         isHidden ? 'hidden' : ''
       )}
@@ -240,7 +245,7 @@ const KanjiInputGame = ({
       )}
       {!displayAnswerSummary && (
         <>
-          <div className="flex flex-row items-center gap-1">
+          <div className='flex flex-row items-center gap-1'>
             <FuriganaText
               text={correctChar}
               reading={
@@ -254,19 +259,19 @@ const KanjiInputGame = ({
             {!isReverse && (
               <SSRAudioButton
                 text={correctChar}
-                variant="icon-only"
-                size="sm"
-                className="bg-[var(--card-color)] text-[var(--secondary-color)]"
+                variant='icon-only'
+                size='sm'
+                className='bg-[var(--card-color)] text-[var(--secondary-color)]'
               />
             )}
           </div>
 
           <input
             ref={inputRef}
-            type="text"
+            type='text'
             value={inputValue}
             className={clsx(
-              'border-b-2 pb-1 text-center focus:outline-none text-2xl lg:text-5xl text-[var(--secondary-color)]',
+              'border-b-2 pb-1 text-center text-2xl text-[var(--secondary-color)] focus:outline-none lg:text-5xl',
               'border-[var(--border-color)] focus:border-[var(--secondary-color)]/80'
             )}
             onChange={e => setInputValue(e.target.value)}
@@ -278,9 +283,9 @@ const KanjiInputGame = ({
           <button
             ref={buttonRef}
             className={clsx(
-              'text-xl font-medium py-4 px-16 ',
+              'px-16 py-4 text-xl font-medium',
               buttonBorderStyles,
-              'active:scale-95 md:active:scale-98 active:duration-200',
+              'active:scale-95 active:duration-200 md:active:scale-98',
               'flex flex-row items-end gap-2',
               'text-[var(--secondary-color)]',
               'border-b-4 border-[var(--border-color)] hover:border-[var(--secondary-color)]/80'

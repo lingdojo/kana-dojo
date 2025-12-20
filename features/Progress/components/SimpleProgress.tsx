@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import useStatsStore from '@/features/Progress/store/useStatsStore';
 import { Trophy, Target, TrendingUp, Trash, AlertTriangle } from 'lucide-react';
 import clsx from 'clsx';
@@ -14,6 +14,7 @@ import {
   AlertDialogTitle
 } from '@/shared/components/ui/alert-dialog';
 import { ActionButton } from '@/shared/components/ui/ActionButton';
+import { useClick } from '@/shared/hooks/useAudio';
 // import yodaCage from "./yodaCage.png";
 
 // Simple Card component to replace the missing UI component
@@ -59,6 +60,7 @@ const CardContent = ({ children }: { children: React.ReactNode }) => (
 );
 
 export default function SimpleProgress() {
+  const { playClick } = useClick();
   const { allTimeStats, clearAllProgress } = useStatsStore();
   const [showResetModal, setShowResetModal] = useState(false);
 
@@ -67,40 +69,46 @@ export default function SimpleProgress() {
   const overallAccuracy =
     totalQuestions > 0 ? (allTimeStats.totalCorrect / totalQuestions) * 100 : 0;
 
-  // Get most difficult characters (lowest accuracy with at least 5 attempts)
-  const difficultCharacters = Object.entries(allTimeStats.characterMastery)
-    .map(([char, stats]) => ({
-      character: char,
-      total: stats.correct + stats.incorrect,
-      accuracy: stats.correct / (stats.correct + stats.incorrect)
-    }))
-    .filter(char => char.total >= 5)
-    .sort((a, b) => a.accuracy - b.accuracy)
-    .slice(0, 5);
+  // Memoized character analysis - single pass through data
+  const { difficultCharacters, masteredCharacters } = useMemo(() => {
+    const characterData = Object.entries(allTimeStats.characterMastery).map(
+      ([char, stats]) => ({
+        character: char,
+        total: stats.correct + stats.incorrect,
+        accuracy: stats.correct / (stats.correct + stats.incorrect)
+      })
+    );
 
-  // Get mastered characters (high accuracy with many attempts)
-  const masteredCharacters = Object.entries(allTimeStats.characterMastery)
-    .map(([char, stats]) => ({
-      character: char,
-      total: stats.correct + stats.incorrect,
-      accuracy: stats.correct / (stats.correct + stats.incorrect)
-    }))
-    .filter(char => char.total >= 10 && char.accuracy >= 0.9)
-    .sort((a, b) => b.accuracy - a.accuracy)
-    .slice(0, 5);
+    // Get most difficult characters (lowest accuracy with at least 5 attempts)
+    const difficult = characterData
+      .filter(char => char.total >= 5)
+      .sort((a, b) => a.accuracy - b.accuracy)
+      .slice(0, 5);
+
+    // Get mastered characters (high accuracy with many attempts)
+    const mastered = characterData
+      .filter(char => char.total >= 10 && char.accuracy >= 0.9)
+      .sort((a, b) => b.accuracy - a.accuracy)
+      .slice(0, 5);
+
+    return { difficultCharacters: difficult, masteredCharacters: mastered };
+  }, [allTimeStats.characterMastery]);
 
   return (
     <div className='space-y-6'>
-      <div className='flex justify-between items-end'>
-        <h1 className='text-3xl font-bold text-[var(--main-color)]'>
+      <div className='flex justify-between items-center'>
+        <h1 className='text-3xl font-medium text-[var(--main-color)]'>
           Your Progress
         </h1>
 
         <ActionButton
-          onClick={() => setShowResetModal(true)}
+          onClick={() => {
+            setShowResetModal(true);
+            playClick();
+          }}
           colorScheme='secondary'
           borderColorScheme='secondary'
-          borderBottomThickness={4}
+          borderBottomThickness={6}
           className='py-2 px-4 w-auto text-sm'
         >
           <Trash className='h-4 w-4' />

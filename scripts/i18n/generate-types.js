@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Generate TypeScript types from translation files
- * 
+ *
  * This script generates TypeScript type definitions for translation keys
  * to enable autocomplete and type checking when using the t() function.
  */
@@ -27,7 +27,8 @@ const NAMESPACES = [
   'statistics',
   'settings',
   'errors',
-  'menuInfo'
+  'menuInfo',
+  'blog'
 ];
 
 /**
@@ -36,7 +37,7 @@ const NAMESPACES = [
 function objectToType(obj, indent = 0) {
   const spaces = '  '.repeat(indent);
   const lines = [];
-  
+
   for (const [key, value] of Object.entries(obj)) {
     if (value && typeof value === 'object' && !Array.isArray(value)) {
       lines.push(`${spaces}${key}: {`);
@@ -46,7 +47,7 @@ function objectToType(obj, indent = 0) {
       lines.push(`${spaces}${key}: string;`);
     }
   }
-  
+
   return lines.join('\n');
 }
 
@@ -55,22 +56,23 @@ function objectToType(obj, indent = 0) {
  */
 function generateInterface(namespace) {
   const filePath = path.join(LOCALES_DIR, REFERENCE_LANG, `${namespace}.json`);
-  
+
   if (!fs.existsSync(filePath)) {
     console.error(`❌ File not found: ${filePath}`);
     return null;
   }
-  
+
   try {
     const content = fs.readFileSync(filePath, 'utf8');
     const data = JSON.parse(content);
-    
-    const interfaceName = namespace.charAt(0).toUpperCase() + namespace.slice(1) + 'Translations';
-    
+
+    const interfaceName =
+      namespace.charAt(0).toUpperCase() + namespace.slice(1) + 'Translations';
+
     const typeDefinition = `export interface ${interfaceName} {
 ${objectToType(data, 1)}
 }`;
-    
+
     return typeDefinition;
   } catch (error) {
     console.error(`❌ Error processing ${namespace}:`, error.message);
@@ -83,21 +85,22 @@ ${objectToType(data, 1)}
  */
 function main() {
   console.log('🔨 Generating TypeScript types for translations...\n');
-  
+
   const interfaces = [];
   const namespaceTypes = [];
-  
+
   for (const namespace of NAMESPACES) {
     console.log(`Processing ${namespace}...`);
     const interfaceDef = generateInterface(namespace);
-    
+
     if (interfaceDef) {
       interfaces.push(interfaceDef);
-      const typeName = namespace.charAt(0).toUpperCase() + namespace.slice(1) + 'Translations';
+      const typeName =
+        namespace.charAt(0).toUpperCase() + namespace.slice(1) + 'Translations';
       namespaceTypes.push(`  ${namespace}: ${typeName};`);
     }
   }
-  
+
   // Generate the complete file
   const fileContent = `/**
  * Auto-generated translation types
@@ -132,10 +135,10 @@ export type Namespace = ${NAMESPACES.map(ns => `'${ns}'`).join(' | ')};
  */
 export type Locale = 'en' | 'es' | 'ja' | 'pt' | 'fr' | 'de' | 'it' | 'zh' | 'ko' | 'ru' | 'ar';
 `;
-  
+
   // Write to file
   fs.writeFileSync(OUTPUT_FILE, fileContent, 'utf8');
-  
+
   console.log('\n✅ TypeScript types generated successfully!');
   console.log(`📁 Output: ${OUTPUT_FILE}`);
 }

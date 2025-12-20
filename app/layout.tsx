@@ -123,6 +123,27 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang='en' suppressHydrationWarning>
       <head>
         <StructuredData data={kanaDojoSchema} />
+        {/* DNS prefetch for external domains - resolve DNS early */}
+        <link rel='dns-prefetch' href='https://www.googletagmanager.com' />
+        <link rel='dns-prefetch' href='https://www.clarity.ms' />
+        <link rel='dns-prefetch' href='https://vercel-analytics.com' />
+        <link rel='dns-prefetch' href='https://vitals.vercel-insights.com' />
+        {/* Preconnect to critical domains - establish early connections */}
+        <link
+          rel='preconnect'
+          href='https://www.googletagmanager.com'
+          crossOrigin='anonymous'
+        />
+        <link
+          rel='preconnect'
+          href='https://vercel-analytics.com'
+          crossOrigin='anonymous'
+        />
+        {/* Prefetch critical JSON data for faster navigation */}
+        <link rel='prefetch' href='/kanji/decorations.json' as='fetch' />
+        <link rel='prefetch' href='/kanji/N5.json' as='fetch' />
+        <link rel='prefetch' href='/vocab/n5.json' as='fetch' />
+        <link rel='prefetch' href='/japan-facts.json' as='fetch' />
       </head>
       <body>
         {isAnalyticsEnabled && (

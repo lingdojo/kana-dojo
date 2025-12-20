@@ -42,7 +42,8 @@ const useCrazyModeStore = create<CrazyModeState>()(
         const allThemes = themeSets.flatMap(group => group.themes);
         const randomTheme = allThemes[random.integer(0, allThemes.length - 1)];
 
-        const randomFont = fonts.length > 0 ? fonts[random.integer(0, fonts.length - 1)] : null;
+        const randomFont =
+          fonts.length > 0 ? fonts[random.integer(0, fonts.length - 1)] : null;
 
         set({
           activeThemeId: randomTheme.id,
@@ -51,7 +52,7 @@ const useCrazyModeStore = create<CrazyModeState>()(
       }
     }),
     {
-      name: 'local-storage'
+      name: 'kanadojo-crazy-mode'
     }
   )
 );

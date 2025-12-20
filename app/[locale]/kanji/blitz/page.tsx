@@ -1,4 +1,4 @@
-import TimedChallengeKanji from '@/features/Kanji/components/TimedChallenge';
+import BlitzKanji from '@/features/Kanji/components/Blitz';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -25,5 +25,5 @@ export const metadata: Metadata = {
 };
 
 export default function BlitzPage() {
-  return <TimedChallengeKanji />;
+  return <BlitzKanji />;
 }

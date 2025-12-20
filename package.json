@@ -12,18 +12,25 @@
     "lint": "next lint",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
+    "clean": "rimraf .next tsconfig.tsbuildinfo",
+    "clean:all": "rimraf .next tsconfig.tsbuildinfo node_modules/.cache",
     "prepare": "husky",
     "lint:fix": "eslint . --ext .ts,.tsx --fix",
     "i18n:validate": "node scripts/i18n/validate-translations.js",
     "i18n:generate-types": "node scripts/i18n/generate-types.js",
     "i18n:check": "npm run i18n:validate && npm run i18n:generate-types",
     "check": "tsc --noEmit --pretty && next lint --format pretty",
-    "generate:constants": "tsx scripts/generateConstants.ts"
+    "generate:constants": "tsx scripts/generateConstants.ts",
+    "analyze": "ANALYZE=true npm run build"
   },
   "type": "module",
   "lint-staged": {
-    "**/*.{js,jsx,ts,tsx,json,css,scss,md,yml,yaml}": [
-      "npx prettier --write"
+    "**/*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "**/*.{js,jsx,json,css,scss,md,yml,yaml}": [
+      "prettier --write"
     ]
   },
   "dependencies": {
@@ -33,6 +40,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@radix-ui/react-alert-dialog": "^1.1.15",
+    "@radix-ui/react-dialog": "^1.1.15",
     "@radix-ui/react-select": "^2.2.5",
     "@radix-ui/react-slot": "^1.2.3",
     "@tailwindcss/postcss": "^4.0.17",
@@ -42,11 +50,14 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.24",
+    "gray-matter": "^4.0.3",
+    "kuroshiro": "^1.2.0",
+    "kuroshiro-analyzer-kuromoji": "^1.1.0",
     "localforage": "^1.10.0",
     "lucide-react": "^0.484.0",
-    "motion": "^12.7.4",
     "next": "15.5.7",
     "next-intl": "^4.3.12",
+    "next-mdx-remote": "^5.0.0",
     "next-scroll-restoration": "^0.0.4",
     "next-sitemap": "^4.2.3",
     "posthog-js": "^1.294.0",
@@ -55,17 +66,16 @@
     "react-dom": "^19.0.0",
     "react-markdown": "^10.1.0",
     "react-responsive": "^10.0.1",
-    "react-spinners": "^0.15.0",
     "react-timer-hook": "^4.0.5",
     "remark-gfm": "^4.0.1",
     "tailwind-merge": "^3.2.0",
-    "tw-animate-css": "^1.2.5",
-    "use-sound": "^5.0.0",
+    "tw-animate-css": "^1.4.0",
     "wanakana": "^5.2.0",
     "zustand": "^5.0.3"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@next/bundle-analyzer": "^15.5.9",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/react": "^16.3.0",
     "@types/node": "^22",
@@ -81,6 +91,8 @@
     "lint-staged": "^16.1.6",
     "postcss": "^8.5.3",
     "prettier": "^3.6.2",
+    "prettier-plugin-tailwindcss": "^0.7.2",
+    "rimraf": "^6.0.1",
     "tailwindcss": "^4.1.4",
     "tsx": "^4.20.6",
     "typescript": "^5",

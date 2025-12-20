@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { CircleCheck, CircleX, CircleArrowRight } from 'lucide-react';
 import clsx from 'clsx';
-import * as wanakana from 'wanakana';
+import { toHiragana } from 'wanakana';
 import { IVocabObj } from '@/features/Vocabulary/store/useVocabStore';
 import { useClick, useCorrect, useError } from '@/shared/hooks/useAudio';
 import GameIntel from '@/shared/components/Game/GameIntel';
@@ -10,6 +10,7 @@ import { buttonBorderStyles } from '@/shared/lib/styles';
 import { useStopwatch } from 'react-timer-hook';
 import useStats from '@/shared/hooks/useStats';
 import useStatsStore from '@/features/Progress/store/useStatsStore';
+import { useShallow } from 'zustand/react/shallow';
 import Stars from '@/shared/components/Game/Stars';
 import AnswerSummary from '@/shared/components/Game/AnswerSummary';
 import SSRAudioButton from '@/shared/components/audio/SSRAudioButton';
@@ -31,8 +32,12 @@ const VocabInputGame = ({
   isHidden,
   isReverse = false
 }: VocabInputGameProps) => {
-  const score = useStatsStore(state => state.score);
-  const setScore = useStatsStore(state => state.setScore);
+  const { score, setScore } = useStatsStore(
+    useShallow(state => ({
+      score: state.score,
+      setScore: state.setScore
+    }))
+  );
 
   const speedStopwatch = useStopwatch({ autoStart: false });
 
@@ -142,8 +147,8 @@ const VocabInputGame = ({
       // Reading quiz: accept both romaji and kana input
       // Convert romaji input to hiragana for comparison
       const targetReading = typeof targetChar === 'string' ? targetChar : '';
-      const inputAsHiragana = wanakana.toHiragana(input);
-      const targetAsHiragana = wanakana.toHiragana(targetReading);
+      const inputAsHiragana = toHiragana(input);
+      const targetAsHiragana = toHiragana(targetReading);
       return inputAsHiragana === targetAsHiragana || input === targetReading;
     }
   };
@@ -164,10 +169,10 @@ const VocabInputGame = ({
     generateNewCharacter();
     setFeedback(
       <>
-        <span className="text-[var(--secondary-color)]">{`${correctChar} = ${userInput
+        <span className='text-[var(--secondary-color)]'>{`${correctChar} = ${userInput
           .trim()
           .toLowerCase()} `}</span>
-        <CircleCheck className="inline text-[var(--main-color)]" />
+        <CircleCheck className='inline text-[var(--main-color)]' />
       </>
     );
     triggerCrazyMode();
@@ -179,10 +184,10 @@ const VocabInputGame = ({
     setInputValue('');
     setFeedback(
       <>
-        <span className="text-[var(--secondary-color)]">{`${correctChar} ≠ ${inputValue
+        <span className='text-[var(--secondary-color)]'>{`${correctChar} ≠ ${inputValue
           .trim()
           .toLowerCase()} `}</span>
-        <CircleX className="inline text-[var(--main-color)]" />
+        <CircleX className='inline text-[var(--main-color)]' />
       </>
     );
     playErrorTwice();
@@ -241,7 +246,7 @@ const VocabInputGame = ({
   return (
     <div
       className={clsx(
-        'flex flex-col gap-10 items-center w-full sm:w-4/5',
+        'flex w-full flex-col items-center gap-10 sm:w-4/5',
         isHidden ? 'hidden' : ''
       )}
     >
@@ -256,16 +261,16 @@ const VocabInputGame = ({
       )}
       {!displayAnswerSummary && (
         <>
-          <div className="flex flex-col items-center gap-4">
+          <div className='flex flex-col items-center gap-4'>
             {/* Show prompt based on quiz type */}
-            <span className="text-sm text-[var(--secondary-color)] mb-2">
+            <span className='mb-2 text-sm text-[var(--secondary-color)]'>
               {quizType === 'meaning'
                 ? isReverse
                   ? 'What is the meaning?'
                   : 'What is the meaning?'
                 : 'What is the reading?'}
             </span>
-            <div className="flex flex-row items-center gap-1">
+            <div className='flex flex-row items-center gap-1'>
               <FuriganaText
                 text={correctChar}
                 reading={
@@ -279,9 +284,9 @@ const VocabInputGame = ({
               {!isReverse && (
                 <SSRAudioButton
                   text={correctChar}
-                  variant="icon-only"
-                  size="sm"
-                  className="bg-[var(--card-color)] text-[var(--secondary-color)]"
+                  variant='icon-only'
+                  size='sm'
+                  className='bg-[var(--card-color)] text-[var(--secondary-color)]'
                 />
               )}
             </div>
@@ -289,10 +294,10 @@ const VocabInputGame = ({
 
           <input
             ref={inputRef}
-            type="text"
+            type='text'
             value={inputValue}
             className={clsx(
-              'border-b-2 pb-1 text-center focus:outline-none text-2xl lg:text-5xl text-[var(--secondary-color)]',
+              'border-b-2 pb-1 text-center text-2xl text-[var(--secondary-color)] focus:outline-none lg:text-5xl',
               'border-[var(--border-color)] focus:border-[var(--secondary-color)]/80'
             )}
             onChange={e => setInputValue(e.target.value)}
@@ -303,10 +308,10 @@ const VocabInputGame = ({
           <button
             ref={buttonRef}
             className={clsx(
-              'text-xl font-medium py-4 px-16',
+              'px-16 py-4 text-xl font-medium',
               buttonBorderStyles,
               'flex flex-row items-end gap-2',
-              'active:scale-95 md:active:scale-98 active:duration-225',
+              'active:scale-95 active:duration-225 md:active:scale-98',
               'text-[var(--secondary-color)]',
               'border-b-4 border-[var(--border-color)] hover:border-[var(--secondary-color)]/80'
             )}

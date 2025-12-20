@@ -4,11 +4,61 @@ This file provides comprehensive guidance to AI coding assistants (GitHub Copilo
 
 ---
 
+## ⚠️ IMPORTANT: Command Execution for AI Agents
+
+**For Windows environments, prefix shell commands with `cmd /c`. For Linux/Unix environments (WSL, Linux, macOS), run commands directly.**
+
+**Examples (Windows):**
+
+```bash
+cmd /c npm run lint
+cmd /c npm run build
+cmd /c npm run test
+```
+
+**Examples (Linux/Unix/WSL):**
+
+```bash
+npm run lint
+npm run build
+npm run test
+```
+
+### Claude Code Permissions
+
+Claude Code has been configured with automatic approval for common development commands and file operations. See `.claude/README.md` for full details. Approved commands include:
+
+**Bash Commands:**
+
+- ✅ All npm and npx commands
+- ✅ Safe git commands (status, diff, log, add, commit, pull, stash, fetch)
+- ✅ File operations (ls, cat, find, grep, sed, awk, head, tail, mkdir, cp, mv)
+- ✅ All cmd /c commands (Windows)
+
+**File Editing Tools:**
+
+- ✅ Read - Read file contents
+- ✅ Write - Create or overwrite files
+- ✅ Edit - Make precise edits to existing files
+- ✅ Glob - Find files by pattern matching
+- ✅ Grep - Search file contents with regex
+- ✅ TodoWrite - Manage task lists
+
+**Safety:**
+
+- ❌ Destructive operations are blocked (force push, hard reset, recursive delete)
+
+This means Claude Code can run verification, testing, file editing, and most development commands without asking for approval each time.
+
+---
+
 ## ⚠️ IMPORTANT: Git Commit Requirement
 
-**After completing any code changes, you MUST include a combined `git add` and `git commit` command with a descriptive conventional commit message.**
+**After completing any code changes, you MUST automatically run `git add` and `git commit` commands with a descriptive conventional commit message.**
 
-Always provide this command at the end of your response using multiple `-m` flags for multiline messages:
+✅ **Automatically execute git commands** - Claude Code will stage and commit changes after completing tasks.
+
+Always use multiple `-m` flags for multiline commit messages:
 
 ```bash
 git add -A && git commit -m "<type>(<scope>): <description>" -m "<body line 1>" -m "<body line 2>"
@@ -30,6 +80,47 @@ git add -A && git commit -m "<type>(<scope>): <description>" -m "<body line 1>" 
 ```bash
 git add -A && git commit -m "feat(kana): add dakuon character support" -m "Added new dakuon characters to hiragana set" -m "Updated KanaCards component to display dakuon" -m "Added translations for new character names"
 ```
+
+**Important Notes:**
+
+- Git commits are executed automatically after code changes
+- Git push is NOT automatic - you maintain control over what goes to remote
+- Commits follow conventional commit format for clear history
+- Keep commit messages concise and professional without unnecessary footers
+
+---
+
+## ⚠️ CRITICAL: Code Verification
+
+**NEVER run `npm run build` for code verification. It is slow (1-2 minutes) and unnecessary.**
+
+### ✅ Use Fast Verification Instead
+
+**Always use `npm run check` for verification** (~10-30 seconds):
+
+```bash
+cmd /c "npm run check"    # TypeScript + ESLint combined
+```
+
+**Or run separately:**
+
+```bash
+cmd /c "npx tsc --noEmit"  # TypeScript type checking only
+cmd /c "npm run lint"      # ESLint code quality checks
+```
+
+### When to Use Each Command
+
+- ✅ **`npm run check`** - Use for all code verification during development
+- ✅ **`npm run lint`** - Quick ESLint-only checks
+- ✅ **`npx tsc --noEmit`** - Quick type checking only
+- ❌ **`npm run build`** - ONLY for final pre-deployment validation or testing actual production bundle
+
+**The full build is unnecessary because:**
+
+1. TypeScript already validates all types during `tsc --noEmit`
+2. ESLint catches code quality issues, unused variables, etc.
+3. Build adds 1-2 minutes of static page generation with no additional validation
 
 ---
 
@@ -212,16 +303,13 @@ KanaDojo uses Next.js App Router with internationalized routes.
 /                           # Home page (main menu)
 /kana                       # Kana selection menu
 /kana/train/[gameMode]      # Kana training (pick, reverse-pick, input, reverse-input)
-/kana/timed-challenge       # Timed kana challenge
 /kana/blitz                 # Kana blitz mode
 /kana/[subset]              # Kana subset dictionary
 /kanji                      # Kanji selection menu
 /kanji/train/[gameMode]     # Kanji training
-/kanji/timed-challenge      # Timed kanji challenge
 /kanji/blitz                # Kanji blitz mode
 /vocabulary                 # Vocabulary selection menu
 /vocabulary/train/[gameMode] # Vocabulary training
-/vocabulary/timed-challenge # Timed vocabulary challenge
 /vocabulary/blitz           # Vocabulary blitz mode
 /achievements               # Achievements page
 /progress                   # Progress tracking
@@ -644,5 +732,5 @@ export type { TypeName } from './types';
 
 ---
 
-**Last Updated**: December 2024
-**Version**: 0.1.8
+**Last Updated**: December 19, 2024
+**Version**: 0.1.11

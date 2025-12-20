@@ -4,11 +4,17 @@ export default {
     './components/**/*.{ts,tsx}',
     './features/**/*.{ts,tsx}',
     './shared/**/*.{ts,tsx}',
-    './core/**/*.{ts,tsx}',
-    './static/styles.ts',
-    './static/info.tsx'
+    './core/**/*.{ts,tsx}'
   ],
   theme: {
+    screens: {
+      xs: '480px',
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+      '2xl': '1536px'
+    },
     extend: {
       keyframes: {
         aurora: {

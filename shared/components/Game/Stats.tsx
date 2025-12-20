@@ -1,5 +1,5 @@
 'use client';
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import clsx from 'clsx';
 import {
   Hourglass,
@@ -18,6 +18,7 @@ import {
   LucideIcon
 } from 'lucide-react';
 import useStatsStore from '@/features/Progress/store/useStatsStore';
+import { useShallow } from 'zustand/react/shallow';
 import { findHighestCounts } from '@/shared/lib/helperFunctions';
 import { useClick } from '@/shared/hooks/useAudio';
 
@@ -49,61 +50,92 @@ const Stats: React.FC = () => {
     return () => window.removeEventListener('keydown', handleKeyDown, true);
   }, [playClick, toggleStats]);
 
-  // Get data from store
-  const numCorrectAnswers: number = useStatsStore(
-    state => state.numCorrectAnswers
-  );
-  const numWrongAnswers: number = useStatsStore(state => state.numWrongAnswers);
-  const characterHistory: string[] = useStatsStore(
-    state => state.characterHistory
-  );
-  const totalMilliseconds: number = useStatsStore(
-    state => state.totalMilliseconds
-  );
-  const correctAnswerTimes: number[] = useStatsStore(
-    state => state.correctAnswerTimes
-  );
-  const characterScores = useStatsStore(state => state.characterScores);
-
-  // Calculate time
-  const totalMinutes: number = Math.floor(totalMilliseconds / 60000);
-  const seconds: string = ((totalMilliseconds / 1000) % 60).toFixed(0);
-  const timeDisplay: string = `${totalMinutes}m ${seconds}s`;
-
-  // Calculate accuracy metrics
-  const totalAnswers: number = numCorrectAnswers + numWrongAnswers;
-  const accuracy: number =
-    totalAnswers > 0 ? (numCorrectAnswers / totalAnswers) * 100 : 0;
-  const ciRatio: number =
-    numWrongAnswers > 0
-      ? numCorrectAnswers / numWrongAnswers
-      : numCorrectAnswers > 0
-      ? Infinity
-      : 0;
-
-  // Calculate timing metrics
-  const hasAnswers: boolean = correctAnswerTimes.length > 0;
-  const avgTime: string | null = hasAnswers
-    ? (
-        correctAnswerTimes.reduce((sum: number, t: number) => sum + t, 0) /
-        correctAnswerTimes.length
-      ).toFixed(2)
-    : null;
-  const fastestTime: string | null = hasAnswers
-    ? Math.min(...correctAnswerTimes).toFixed(2)
-    : null;
-  const slowestTime: string | null = hasAnswers
-    ? Math.max(...correctAnswerTimes).toFixed(2)
-    : null;
-
-  // Calculate character metrics
-  const uniqueChars: number = [...new Set(characterHistory)].length;
+  // Get data from store (combined selector for better performance)
   const {
-    highestCorrectChars,
-    highestCorrectCharsValue,
-    highestWrongChars,
-    highestWrongCharsValue
-  } = findHighestCounts(characterScores);
+    numCorrectAnswers,
+    numWrongAnswers,
+    characterHistory,
+    totalMilliseconds,
+    correctAnswerTimes,
+    characterScores
+  } = useStatsStore(
+    useShallow(state => ({
+      numCorrectAnswers: state.numCorrectAnswers,
+      numWrongAnswers: state.numWrongAnswers,
+      characterHistory: state.characterHistory,
+      totalMilliseconds: state.totalMilliseconds,
+      correctAnswerTimes: state.correctAnswerTimes,
+      characterScores: state.characterScores
+    }))
+  );
+
+  // Memoized stat calculations
+  const stats = useMemo(() => {
+    // Calculate time
+    const totalMinutes = Math.floor(totalMilliseconds / 60000);
+    const seconds = ((totalMilliseconds / 1000) % 60).toFixed(0);
+    const timeDisplay = `${totalMinutes}m ${seconds}s`;
+
+    // Calculate accuracy metrics
+    const totalAnswers = numCorrectAnswers + numWrongAnswers;
+    const accuracy =
+      totalAnswers > 0 ? (numCorrectAnswers / totalAnswers) * 100 : 0;
+    const ciRatio =
+      numWrongAnswers > 0
+        ? numCorrectAnswers / numWrongAnswers
+        : numCorrectAnswers > 0
+          ? Infinity
+          : 0;
+
+    // Calculate timing metrics
+    const hasAnswers = correctAnswerTimes.length > 0;
+    const avgTime = hasAnswers
+      ? (
+          correctAnswerTimes.reduce((sum, t) => sum + t, 0) /
+          correctAnswerTimes.length
+        ).toFixed(2)
+      : null;
+    const fastestTime = hasAnswers
+      ? Math.min(...correctAnswerTimes).toFixed(2)
+      : null;
+    const slowestTime = hasAnswers
+      ? Math.max(...correctAnswerTimes).toFixed(2)
+      : null;
+
+    // Calculate character metrics
+    const uniqueChars = [...new Set(characterHistory)].length;
+    const {
+      highestCorrectChars,
+      highestCorrectCharsValue,
+      highestWrongChars,
+      highestWrongCharsValue
+    } = findHighestCounts(characterScores);
+
+    return {
+      totalMinutes,
+      seconds,
+      timeDisplay,
+      totalAnswers,
+      accuracy,
+      ciRatio,
+      hasAnswers,
+      avgTime,
+      fastestTime,
+      slowestTime,
+      uniqueChars,
+      highestCorrectChars,
+      highestCorrectCharsValue,
+      highestWrongChars,
+      highestWrongCharsValue
+    };
+  }, [
+    totalMilliseconds,
+    numCorrectAnswers,
+    numWrongAnswers,
+    correctAnswerTimes,
+    characterHistory,
+    characterScores
+  ]);
 
   const formatValue = (
     value: string | number | null | undefined,
@@ -115,8 +147,8 @@ const Stats: React.FC = () => {
   };
 
   const StatCard: React.FC<StatCardProps> = ({ title, stats }) => (
-    <div className='bg-[var(--bg-color)]  border-[var(--border-color)] rounded-lg p-6 w-full'>
-      <h3 className='text-2xl font-bold mb-6 text-[var(--secondary-color)] border-b-2 border-[var(--border-color)] pb-3'>
+    <div className='w-full rounded-lg border-[var(--border-color)] bg-[var(--bg-color)] p-6'>
+      <h3 className='mb-6 border-b-2 border-[var(--border-color)] pb-3 text-2xl font-bold text-[var(--secondary-color)]'>
         {title}
       </h3>
       <div className='space-y-4'>
@@ -128,16 +160,16 @@ const Stats: React.FC = () => {
               i < stats.length - 1 && 'border-b border-[var(--border-color)]/70'
             )}
           >
-            <div className='flex items-center gap-2 flex-1 min-w-0'>
+            <div className='flex min-w-0 flex-1 items-center gap-2'>
               <Icon
                 size={20}
-                className='text-[var(--secondary-color)] flex-shrink-0'
+                className='flex-shrink-0 text-[var(--secondary-color)]'
               />
-              <span className='text-sm md:text-base text-[var(--text-color)]/80 truncate'>
+              <span className='truncate text-sm text-[var(--text-color)]/80 md:text-base'>
                 {label}
               </span>
             </div>
-            <span className='font-semibold text-base md:text-lg whitespace-nowrap'>
+            <span className='text-base font-semibold whitespace-nowrap md:text-lg'>
               {value}
             </span>
           </div>
@@ -147,7 +179,7 @@ const Stats: React.FC = () => {
   );
 
   const generalStats: StatItem[] = [
-    { label: 'Training Time', value: timeDisplay, Icon: Hourglass },
+    { label: 'Training Time', value: stats.timeDisplay, Icon: Hourglass },
     {
       label: 'Correct Answers',
       value: formatValue(numCorrectAnswers),
@@ -160,26 +192,32 @@ const Stats: React.FC = () => {
     },
     {
       label: 'Accuracy',
-      value: formatValue(accuracy.toFixed(1), '%'),
+      value: formatValue(stats.accuracy.toFixed(1), '%'),
       Icon: Target
     }
   ];
 
   const answerStats: StatItem[] = [
-    { label: 'Average Time', value: formatValue(avgTime, 's'), Icon: Timer },
+    {
+      label: 'Average Time',
+      value: formatValue(stats.avgTime, 's'),
+      Icon: Timer
+    },
     {
       label: 'Fastest Answer',
-      value: formatValue(fastestTime, 's'),
+      value: formatValue(stats.fastestTime, 's'),
       Icon: Flame
     },
     {
       label: 'Slowest Answer',
-      value: formatValue(slowestTime, 's'),
+      value: formatValue(stats.slowestTime, 's'),
       Icon: Clock
     },
     {
       label: 'Correct/Incorrect Ratio',
-      value: formatValue(ciRatio === Infinity ? '∞' : ciRatio.toFixed(2)),
+      value: formatValue(
+        stats.ciRatio === Infinity ? '∞' : stats.ciRatio.toFixed(2)
+      ),
       Icon: TrendingUp
     }
   ];
@@ -192,50 +230,50 @@ const Stats: React.FC = () => {
     },
     {
       label: 'Unique Characters',
-      value: formatValue(uniqueChars),
+      value: formatValue(stats.uniqueChars),
       Icon: Shapes
     },
     {
       label: 'Easiest Characters',
       value:
-        highestCorrectChars.length > 0
-          ? `${highestCorrectChars.join(', ')} (${highestCorrectCharsValue})`
+        stats.highestCorrectChars.length > 0
+          ? `${stats.highestCorrectChars.join(', ')} (${stats.highestCorrectCharsValue})`
           : '~',
       Icon: Clover
     },
     {
       label: 'Hardest Characters',
       value:
-        highestWrongChars.length > 0
-          ? `${highestWrongChars.join(', ')} (${highestWrongCharsValue})`
+        stats.highestWrongChars.length > 0
+          ? `${stats.highestWrongChars.join(', ')} (${stats.highestWrongCharsValue})`
           : '~',
       Icon: HeartCrack
     }
   ];
 
   return (
-    <div className='min-h-screen w-full bg-[var(--bg-color)] px-4 py-8 md:py-12 flex items-center justify-center'>
-      <div className='max-w-7xl mx-auto w-full'>
+    <div className='flex min-h-screen w-full items-center justify-center bg-[var(--bg-color)] px-4 py-8 md:py-12'>
+      <div className='mx-auto w-full max-w-7xl'>
         {/* Header */}
         <button
           onClick={() => {
             playClick();
             toggleStats();
           }}
-          className='group flex items-center gap-3  justify-center w-full hover:cursor-pointer'
+          className='group flex w-full items-center justify-center gap-3 hover:cursor-pointer'
         >
           <ChevronsLeft
             size={32}
             className='text-[var(--border-color)] hover:text-[var(--secondary-color)]'
           />
-          <h2 className='text-3xl md:text-4xl font-bold flex items-center justify-center gap-3'>
+          <h2 className='flex items-center justify-center gap-3 text-3xl font-bold md:text-4xl'>
             Statistics
             <Activity size={32} className='text-[var(--secondary-color)]' />
           </h2>
         </button>
 
         {/* Stats Grid */}
-        <div className='grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8'>
+        <div className='grid grid-cols-1 gap-6 md:gap-8 lg:grid-cols-3'>
           <StatCard title='General' stats={generalStats} />
           <StatCard title='Answers' stats={answerStats} />
           <StatCard title='Characters' stats={characterStats} />

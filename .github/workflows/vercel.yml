@@ -29,7 +29,7 @@ jobs:
           RUN_ID: ${{ github.run_id }}
           ACTOR: ${{ github.actor }}
         run: |
-          python - <<'PY'
+          python3 << 'PY' > /tmp/payload.json
           import json
           import os
           from datetime import datetime, timezone
@@ -78,7 +78,13 @@ jobs:
           }
 
           print(json.dumps(payload))
-          PY | curl -H "Content-Type: application/json" -X POST -d @- "$DISCORD_WEBHOOK"
+          PY
+
+          echo "Payload:"
+          cat /tmp/payload.json
+          echo ""
+          echo "Sending to Discord..."
+          curl -sf -H "Content-Type: application/json" -X POST -d @/tmp/payload.json "$DISCORD_WEBHOOK"
 
   notify-success:
     runs-on: ubuntu-latest
@@ -98,7 +104,7 @@ jobs:
           SERVER_URL: ${{ github.server_url }}
           RUN_ID: ${{ github.run_id }}
         run: |
-          python - <<'PY'
+          python3 << 'PY' > /tmp/payload.json
           import json
           import os
           from datetime import datetime, timezone
@@ -134,4 +140,10 @@ jobs:
           }
 
           print(json.dumps(payload))
-          PY | curl -H "Content-Type: application/json" -X POST -d @- "$DISCORD_WEBHOOK"
+          PY
+
+          echo "Payload:"
+          cat /tmp/payload.json
+          echo ""
+          echo "Sending to Discord..."
+          curl -sf -H "Content-Type: application/json" -X POST -d @/tmp/payload.json "$DISCORD_WEBHOOK"

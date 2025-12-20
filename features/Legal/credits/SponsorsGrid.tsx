@@ -5,19 +5,20 @@ import type { Sponsor } from './types';
 
 export default function SponsorsGrid({ sponsors }: { sponsors: Sponsor[] }) {
   return (
-    <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-4">
-      {sponsors.map((s) => {
+    <div className='mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8'>
+      {sponsors.map(s => {
         const Content = (
-          <div className="flex flex-col items-center text-center p-2 rounded hover:bg-[var(--card-color)] transition-colors text-[var(--secondary-color)]">
+          <div className='flex flex-col items-center rounded p-2 text-center text-[var(--secondary-color)] transition-colors hover:bg-[var(--card-color)]'>
             <Image
               src={s.avatar}
               alt={s.login}
               width={48}
               height={48}
-              className="rounded-full mb-2"
-              unoptimized
+              className='mb-2 rounded-full'
+              loading='lazy'
+              sizes='48px'
             />
-            <span className="text-sm truncate max-w-full">{s.login}</span>
+            <span className='max-w-full truncate text-sm'>{s.login}</span>
           </div>
         );
 
@@ -26,9 +27,9 @@ export default function SponsorsGrid({ sponsors }: { sponsors: Sponsor[] }) {
           <a
             key={s.login}
             href={s.url}
-            target="_blank"
-            rel="noreferrer"
-            className="hover:bg-slate-700/20 text-[var(--secondary-color)]"
+            target='_blank'
+            rel='noreferrer'
+            className='text-[var(--secondary-color)] hover:bg-slate-700/20'
           >
             {Content}
           </a>

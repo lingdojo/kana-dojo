@@ -1,0 +1,34 @@
+{
+  "pageTitle": "ブログ",
+  "pageDescription": "ひらがな、カタカナ、漢字、語彙、文法、日本文化に関する日本語学習記事のコレクションをご覧ください。",
+  "metaTitle": "ブログ - 日本語学習記事 | KanaDojo",
+  "metaDescription": "ひらがな、カタカナ、漢字、語彙、文法、日本文化に関する日本語学習記事のコレクションをご覧ください。すべてのレベル向けの無料教育コンテンツ。",
+  "categories": {
+    "all": "すべて",
+    "hiragana": "ひらがな",
+    "katakana": "カタカナ",
+    "kanji": "漢字",
+    "vocabulary": "語彙",
+    "grammar": "文法",
+    "culture": "文化"
+  },
+  "filter": {
+    "label": "カテゴリで記事を絞り込む",
+    "noResults": "このカテゴリには記事がありません。"
+  },
+  "card": {
+    "readMore": "{title}についてもっと読む"
+  },
+  "post": {
+    "by": "著者: {author}",
+    "updated": "更新日: {date}",
+    "readingTime": "{minutes}分で読めます",
+    "tableOfContents": "目次",
+    "relatedPosts": "関連記事"
+  },
+  "difficulty": {
+    "beginner": "初級",
+    "intermediate": "中級",
+    "advanced": "上級"
+  }
+}

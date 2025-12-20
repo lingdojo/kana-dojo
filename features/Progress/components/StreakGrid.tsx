@@ -10,6 +10,9 @@ import {
   formatDate
 } from '../lib/streakCalculations';
 
+// Constant empty week array to avoid recreating on every render
+const EMPTY_WEEK: (string | null)[] = Array(7).fill(null);
+
 interface StreakGridProps {
   visits: string[];
   period: TimePeriod;
@@ -82,7 +85,7 @@ function DayCell({
  */
 function getFullWeekDays(days: string[]): (string | null)[] {
   // Get the start of the week (Monday) from the first day in days
-  if (days.length === 0) return new Array(7).fill(null);
+  if (days.length === 0) return [...EMPTY_WEEK];
 
   const firstDay = new Date(days[0]);
   const dayOfWeek = firstDay.getDay();
@@ -185,7 +188,7 @@ function MonthGrid({ visits }: { visits: string[]; days: string[] }) {
 
   // Group days into weeks (columns) - Monday-based
   const weeks: (string | null)[][] = [];
-  let currentWeek: (string | null)[] = new Array(7).fill(null);
+  let currentWeek: (string | null)[] = [...EMPTY_WEEK];
 
   for (const day of allMonthDays) {
     const dayOfWeek = getDayOfWeek(day); // 0 = Monday, 6 = Sunday
@@ -194,7 +197,7 @@ function MonthGrid({ visits }: { visits: string[]; days: string[] }) {
     // If Sunday (6), start a new week
     if (dayOfWeek === 6) {
       weeks.push(currentWeek);
-      currentWeek = new Array(7).fill(null);
+      currentWeek = [...EMPTY_WEEK];
     }
   }
 
@@ -283,7 +286,7 @@ function YearGrid({ visits }: { visits: string[]; days: string[] }) {
   // Build continuous weeks for the entire year - GitHub style
   // Each week is a column, start from the first week containing Jan 1
   const allWeeks: (string | null)[][] = [];
-  let currentWeek: (string | null)[] = new Array(7).fill(null);
+  let currentWeek: (string | null)[] = [...EMPTY_WEEK];
 
   // Find what day of the week Jan 1 falls on
   const jan1 = new Date(currentYear, 0, 1);
@@ -297,7 +300,7 @@ function YearGrid({ visits }: { visits: string[]; days: string[] }) {
     // If Sunday (6), push week and start new
     if (dayOfWeek === 6) {
       allWeeks.push(currentWeek);
-      currentWeek = new Array(7).fill(null);
+      currentWeek = [...EMPTY_WEEK];
     }
   }
 
