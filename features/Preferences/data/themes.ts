@@ -737,6 +737,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         backgroundColor: 'oklch(14.5% 0.036 267.0 / 1)',
         mainColor: 'oklch(91.0% 0.042 253.0 / 1)',
         secondaryColor: 'oklch(81.0% 0.170 355.0 / 1)'
+      },
+      {
+        id: 'amatsubu',
+        backgroundColor: 'oklch(12.5% 0.032 268.0 / 1)',
+        mainColor: 'oklch(91.0% 0.055 263.0 / 1)',
+        secondaryColor: 'oklch(85.0% 0.175 200.0 / 1)'
       }
     ]
   },
