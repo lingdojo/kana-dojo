@@ -81,9 +81,13 @@ const KanjiInputGame = ({
     correctKanjiObj as IKanjiObj
   );
 
-  const targetChar = isReverse
-    ? correctKanjiObj?.kanjiChar
-    : correctKanjiObj?.meanings;
+const targetChar = isReverse
+  ? correctKanjiObj?.kanjiChar
+  : [
+      ...(correctKanjiObj?.meanings ?? []),
+      ...(correctKanjiObj?.kunyomi?.map(k => k.split(' ')[0]) ?? []),
+      ...(correctKanjiObj?.onyomi?.map(k => k.split(' ')[0]) ?? []),
+    ];
 
   const [displayAnswerSummary, setDisplayAnswerSummary] = useState(false);
   const [feedback, setFeedback] = useState(<>{'feedback ~'}</>);
