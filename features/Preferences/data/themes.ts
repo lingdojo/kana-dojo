@@ -86,7 +86,7 @@ function formatOklch(L: number, C: number, H: number, A: number): string {
 export function generateCardColor(
   backgroundColor: string,
   lightnessBoost = 0.2,
-  chromaMultiplier = 1.2  
+  chromaMultiplier = 1.2
 ): string {
   const parsed = parseOklch(backgroundColor);
   if (!parsed) {
@@ -243,8 +243,8 @@ const baseThemeSets: BaseThemeGroup[] = [
       {
         id: 'kuromizu',
         backgroundColor: 'oklch(10.6% 0.034 248.0 / 1)',
-        mainColor: 'oklch(74.8% 0.182 305.5 / 1)',     
-        secondaryColor: 'oklch(82.5% 0.132 187.0 / 1)'  
+        mainColor: 'oklch(74.8% 0.182 305.5 / 1)',
+        secondaryColor: 'oklch(82.5% 0.132 187.0 / 1)'
       },
       {
         id: 'monkeytype',
@@ -749,6 +749,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         backgroundColor: 'oklch(12.5% 0.032 268.0 / 1)',
         mainColor: 'oklch(91.0% 0.055 263.0 / 1)',
         secondaryColor: 'oklch(85.0% 0.175 200.0 / 1)'
+      },
+      {
+        id: 'kiranami',
+        backgroundColor: 'oklch(14.5% 0.046 278.0 / 1)',
+        mainColor: 'oklch(94.0% 0.072 92.0 / 1)',
+        secondaryColor: 'oklch(81.0% 0.180 328.0 / 1)'
       }
     ]
   },
