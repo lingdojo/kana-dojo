@@ -761,6 +761,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         backgroundColor: 'oklch(13.0% 0.041 290.0 / 1)',
         mainColor: 'oklch(88.0% 0.222 192.0 / 1)',
         secondaryColor: 'oklch(90.5% 0.207 28.0 / 1)'
+      },
+      {
+        id: 'hiyozora',
+        backgroundColor: 'oklch(11.0% 0.052 270.0 / 1)',
+        mainColor: 'oklch(82.0% 0.255 12.0 / 1)',
+        secondaryColor: 'oklch(92.0% 0.223 311.0 / 1)'
       }
     ]
   },
