@@ -43,10 +43,12 @@ export default function BlitzKanji() {
     inputPlaceholder: 'Type the meaning...',
     modeDescription: 'Mode: Type (See kanji → Type meaning)',
     checkAnswer: (question, answer, isReverse) => {
-      if (isReverse) {
-        // Reverse: answer should be the kanji character
-        return answer.trim() === question.kanjiChar;
-      }
+      if (!isReverse) {
+        // Reverse: answer should be the kanji character or kunyomi or onyomi
+        return (answer.trim() === question.kanjiChar ||  question.kunyomi.some(k => k.split(' ')[0] === answer)||question.onyomi.some(k => k.split(' ')[0] === answer)||question.meanings.some(
+        meaning => answer.toLowerCase() === meaning.toLowerCase()
+      ));
+    }
       // Normal: answer should match any meaning
       return question.meanings.some(
         meaning => answer.toLowerCase() === meaning.toLowerCase()
