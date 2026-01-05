@@ -240,11 +240,18 @@ const baseThemeSets: BaseThemeGroup[] = [
     name: 'Dark',
     icon: Moon,
     themes: [
+      
       {
         id: 'kuromizu',
         backgroundColor: 'oklch(10.6% 0.034 248.0 / 1)',
         mainColor: 'oklch(74.8% 0.182 305.5 / 1)',
         secondaryColor: 'oklch(82.5% 0.132 187.0 / 1)'
+      },
+      {
+        id: 'midoriha',
+        backgroundColor: 'oklch(25.0% 0.046 137.2 / 1)',  
+        mainColor: 'oklch(89.5% 0.232 178.0 / 1)',       
+        secondaryColor: 'oklch(88.5% 0.195 36.0 / 1)'
       },
       {
         id: 'monkeytype',
