@@ -792,6 +792,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         backgroundColor: 'oklch(6.5% 0.027 256.5 / 1)', // graphite obsidian
         mainColor: 'oklch(84.0% 0.190 145.0 / 1)', // starstream viridian
         secondaryColor: 'oklch(82.0% 0.213 52.0 / 1)' // nova eruption orange
+      },
+      {
+        id: 'sangosabi',
+        backgroundColor: 'oklch(21.0% 0.032 260.0 / 1)',  // moonlit slate, soft and not too dark
+        mainColor: 'oklch(88.7% 0.216 145.0 / 1)',        // wasabi green: vivid but not harsh
+        secondaryColor: 'oklch(90.0% 0.230 39.0 / 1)',    // coral gold: radiant, lively coral-gold
       }
     ]
   },
