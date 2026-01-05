@@ -798,6 +798,18 @@ const baseThemeSets: BaseThemeGroup[] = [
         backgroundColor: 'oklch(21.0% 0.032 260.0 / 1)',  // moonlit slate, soft and not too dark
         mainColor: 'oklch(88.7% 0.216 145.0 / 1)',        // wasabi green: vivid but not harsh
         secondaryColor: 'oklch(90.0% 0.230 39.0 / 1)',    // coral gold: radiant, lively coral-gold
+      },
+      {
+        id: 'kureshio',
+        backgroundColor: 'oklch(23.0% 0.046 298.2 / 1)',  // midnight lavender, gentle and accessible
+        mainColor: 'oklch(91.0% 0.210 225.5 / 1)',        // surf blue: luminescent ocean blue
+        secondaryColor: 'oklch(90.0% 0.219 60.0 / 1)',    // apricot: soft, energetic orange-yellow
+      },
+      {
+        id: 'nirinsou',
+        backgroundColor: 'oklch(23.5% 0.039 285.0 / 1)',  // starlit indigo-violet
+        mainColor: 'oklch(91.0% 0.235 143.0 / 1)',        // wildflower lime (yellow-green)
+        secondaryColor: 'oklch(93.0% 0.198 60.0 / 1)',    // dusk apricot (pastel orange)
       }
     ]
   },
