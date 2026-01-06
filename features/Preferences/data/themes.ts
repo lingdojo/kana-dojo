@@ -843,6 +843,13 @@ const baseThemeSets: BaseThemeGroup[] = [
         mainColor: 'oklch(96.0% 0.125 290.0 / 1)',
         secondaryColor: 'oklch(98.0% 0.118 111.0 / 1)'
       }
+      ,
+      {
+        id: 'shinsei',
+        backgroundColor: 'oklch(18.0% 0.046 247.0 / 1)',
+        mainColor: 'oklch(92.0% 0.252 210.0 / 1)',
+        secondaryColor: 'oklch(93.0% 0.146 338.0 / 1)'
+      }
     ]
   },
   {
