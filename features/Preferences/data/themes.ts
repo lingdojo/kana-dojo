@@ -842,6 +842,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         backgroundColor: 'oklch(18.5% 0.042 306.0 / 1)',
         mainColor: 'oklch(96.0% 0.125 290.0 / 1)',
         secondaryColor: 'oklch(98.0% 0.118 111.0 / 1)'
+      },
+      {
+        id: 'hoshikuzu',
+        backgroundColor: 'oklch(17.7% 0.044 280.0 / 1)',    
+        mainColor: 'oklch(97.0% 0.210 90.0 / 1)',           
+        secondaryColor: 'oklch(92.0% 0.224 200.0 / 1)',     
       }
     ]
   },
