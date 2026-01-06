@@ -810,6 +810,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         backgroundColor: 'oklch(23.5% 0.039 285.0 / 1)',  // starlit indigo-violet
         mainColor: 'oklch(91.0% 0.235 143.0 / 1)',        // wildflower lime (yellow-green)
         secondaryColor: 'oklch(93.0% 0.198 60.0 / 1)',    // dusk apricot (pastel orange)
+      },
+      {
+        id: 'hoshishio',
+        backgroundColor: 'oklch(22.0% 0.038 300.0 / 1)',  // cosmic twilight
+        mainColor: 'oklch(93.0% 0.220 163.0 / 1)',        // stardust seafoam (minty green)
+        secondaryColor: 'oklch(91.0% 0.183 308.0 / 1)',   // bright lavender
       }
     ]
   },
