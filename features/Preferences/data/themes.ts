@@ -216,17 +216,15 @@ const baseThemeSets: BaseThemeGroup[] = [
         mainColor: 'oklch(100.00% 0.0000 89.88 / 1)',
         secondaryColor: 'oklch(80.54% 0.0000 89.88 / 1)'
       },
-   {
-  id: 'yumemizu',
-  backgroundColor: 'oklch(20.5% 0.012 288.7 / 1)',
-  mainColor: 'oklch(90.4% 0.216 274.7 / 1)',
-  secondaryColor: 'oklch(92.6% 0.173 338.0 / 1)',
-},
-
-
+      {
+        id: 'yumemizu',
+        backgroundColor: 'oklch(20.5% 0.012 288.7 / 1)',
+        mainColor: 'oklch(90.4% 0.216 274.7 / 1)',
+        secondaryColor: 'oklch(92.6% 0.173 338.0 / 1)'
+      }
     ]
   },
-  
+
   {
     name: 'Light',
     icon: Sun,
@@ -251,9 +249,9 @@ const baseThemeSets: BaseThemeGroup[] = [
     themes: [
       {
         id: 'kumonasu',
-        backgroundColor: 'oklch(19.0% 0.043 302.0 / 1)',   
-        mainColor: 'oklch(93.0% 0.165 265.0 / 1)',         
-        secondaryColor: 'oklch(92.0% 0.140 200.0 / 1)',    
+        backgroundColor: 'oklch(19.0% 0.043 302.0 / 1)',
+        mainColor: 'oklch(93.0% 0.165 265.0 / 1)',
+        secondaryColor: 'oklch(92.0% 0.140 200.0 / 1)'
       },
       {
         id: 'kuromizu',
@@ -845,9 +843,15 @@ const baseThemeSets: BaseThemeGroup[] = [
       },
       {
         id: 'hoshikuzu',
-        backgroundColor: 'oklch(17.7% 0.044 280.0 / 1)',    
-        mainColor: 'oklch(97.0% 0.210 90.0 / 1)',           
-        secondaryColor: 'oklch(92.0% 0.224 200.0 / 1)',     
+        backgroundColor: 'oklch(17.7% 0.044 280.0 / 1)',
+        mainColor: 'oklch(97.0% 0.210 90.0 / 1)',
+        secondaryColor: 'oklch(92.0% 0.224 200.0 / 1)'
+      },
+      {
+        id: 'ichigoha',
+        backgroundColor: 'oklch(22.3% 0.048 142.7 / 1)', // mossy green night
+        mainColor: 'oklch(94.0% 0.266 125.5 / 1)', // radiant lime-leaf
+        secondaryColor: 'oklch(91.5% 0.184 10.0 / 1)' // blush pink strawberry skin
       }
     ]
   },
