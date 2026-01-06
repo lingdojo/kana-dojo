@@ -215,9 +215,18 @@ const baseThemeSets: BaseThemeGroup[] = [
         backgroundColor: 'oklch(22.67% 0.0000 89.88 / 1)',
         mainColor: 'oklch(100.00% 0.0000 89.88 / 1)',
         secondaryColor: 'oklch(80.54% 0.0000 89.88 / 1)'
-      }
+      },
+   {
+  id: 'yumemizu',
+  backgroundColor: 'oklch(20.5% 0.012 288.7 / 1)',
+  mainColor: 'oklch(90.4% 0.216 274.7 / 1)',
+  secondaryColor: 'oklch(92.6% 0.173 338.0 / 1)',
+},
+
+
     ]
   },
+  
   {
     name: 'Light',
     icon: Sun,
