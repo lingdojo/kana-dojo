@@ -878,6 +878,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         secondaryColor: 'oklch(84.0% 0.140 85.0 / 1)'
       },
       {
+        id: 'oboro',
+        backgroundColor: 'oklch(23.8% 0.041 270.0 / 1)',    // velvet graphite
+        mainColor: 'oklch(91.5% 0.212 120.0 / 1)',           // pear green
+        secondaryColor: 'oklch(80.0% 0.158 340.0 / 1)',      // smoky plum
+      },
+      {
         id: 'hoshikuzu',
         backgroundColor: 'oklch(17.7% 0.044 280.0 / 1)',
         mainColor: 'oklch(97.0% 0.210 90.0 / 1)',
