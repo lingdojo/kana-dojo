@@ -12,6 +12,7 @@
 - [Русский](./docs/translations/README.ru.md)
 - [Türkçe](./docs/translations/README.tr.md)
 - [Tiếng Việt](./docs/translations/README.vi.md)
+- [Bahasa Indonesia](./docs/translations/README.id.md)
 - [中文（简体）](./docs/translations/README.zh-CN.md)
 - [中文（繁體）](./docs/translations/README.zh-tw.md)
 
