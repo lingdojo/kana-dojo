@@ -14,6 +14,7 @@
 - [Tiếng Việt](./docs/translations/README.vi.md)
 - [中文（简体）](./docs/translations/README.zh-CN.md)
 - [中文（繁體）](./docs/translations/README.zh-tw.md)
+- [Українська](./docs/translations/README.ua.md)
 
 </details>
 
