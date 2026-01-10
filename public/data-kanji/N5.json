@@ -434,8 +434,8 @@
     "onyomi": ["ki キ", "ke ケ"],
     "kunyomi": ["iki いき"],
     "displayMeanings": ["spirit", "mind", "air", "mood"],
-    "fullDisplayMeanings": ["spirit", "mind", "air", "atmosphere", "mood"],
-    "meanings": ["spirit", "mind", "air", "atmosphere", "mood"]
+    "fullDisplayMeanings": ["spirit", "mind", "air", "atmosphere", "mood", "energy"],
+    "meanings": ["spirit", "mind", "air", "atmosphere", "mood", "energy"]
   },
   {
     "id": 41,
@@ -719,8 +719,8 @@
     "onyomi": ["ten テン"],
     "kunyomi": ["amatsu あまつ"],
     "displayMeanings": ["heavens", "sky", "imperial"],
-    "fullDisplayMeanings": ["heavens", "sky", "imperial"],
-    "meanings": ["heavens", "sky", "imperial"]
+    "fullDisplayMeanings": ["heavens", "sky", "imperial", "heaven"],
+    "meanings": ["heavens", "sky", "imperial", "heaven"]
   },
   {
     "id": 72,
