@@ -919,6 +919,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         mainColor: 'oklch(82.0% 0.214 30.0 / 1)',           // maple red-orange
         secondaryColor: 'oklch(85.0% 0.180 70.0 / 1)',      // persimmon gold
       },
+      {
+        id: 'miharashi',
+        backgroundColor: 'oklch(17.0% 0.032 215.0 / 1)',    // mountain shadow
+        mainColor: 'oklch(89.0% 0.135 145.0 / 1)',           // horizon sage green
+        secondaryColor: 'oklch(81.0% 0.125 220.0 / 1)',      // distant sky blue
+      },
     ]
   },
   {
