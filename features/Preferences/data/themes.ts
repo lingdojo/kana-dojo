@@ -900,6 +900,8 @@ const baseThemeSets: BaseThemeGroup[] = [
         backgroundColor: 'oklch(18.7% 0.030 240.0 / 1)',   // slate mist
         mainColor: 'oklch(93.0% 0.170 190.0 / 1)',          // dew-spun teal
         secondaryColor: 'oklch(81.0% 0.144 260.0 / 1)',     // hydrangea blue
+      },
+      {
         id: 'sakuraba',
         backgroundColor: 'oklch(24.5% 0.044 150.0 / 1)',    // dappled willow green
         mainColor: 'oklch(93.0% 0.210 340.0 / 1)',           // radiant sakura pink
@@ -910,6 +912,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         backgroundColor: 'oklch(14.2% 0.025 240.0 / 1)',    // midnight frosted slate
         mainColor: 'oklch(98.0% 0.175 285.0 / 1)',           // radiant snow silver
         secondaryColor: 'oklch(86.0% 0.120 210.0 / 1)',      // icy mist blue
+      },
+      {
+        id: 'momiji-blaze',
+        backgroundColor: 'oklch(21.0% 0.042 30.0 / 1)',    // dusk brown-black
+        mainColor: 'oklch(82.0% 0.214 30.0 / 1)',           // maple red-orange
+        secondaryColor: 'oklch(85.0% 0.180 70.0 / 1)',      // persimmon gold
       },
     ]
   },
