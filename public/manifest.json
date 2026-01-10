@@ -1,7 +1,7 @@
 {
-  "name": "KanaDojo - Learn Japanese Hiragana, Katakana, Kanji & Vocabulary",
+  "name": "KanaDojo - Learn Japanese Hiragana, Katakana, Kanji, Vocabulary & Translation",
   "short_name": "KanaDojo",
-  "description": "Master Japanese with KanaDojo - an aesthetic, minimalist platform for learning Hiragana, Katakana, Kanji, and Vocabulary. Practice with interactive games and track your progress.",
+  "description": "Master Japanese with KanaDojo - learn Hiragana, Katakana, Kanji, Vocabulary with interactive games. Free Japanese to English translator with romanization. Track progress and customize your experience.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
@@ -40,6 +40,13 @@
       "short_name": "Vocabulary",
       "description": "Practice Japanese vocabulary",
       "url": "/vocabulary",
+      "icons": []
+    },
+    {
+      "name": "Japanese Translator",
+      "short_name": "Translator",
+      "description": "Translate Japanese to English with romaji",
+      "url": "/translate",
       "icons": []
     }
   ]

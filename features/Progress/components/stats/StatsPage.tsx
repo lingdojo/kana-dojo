@@ -11,7 +11,8 @@ import {
   CheckCircle,
   XCircle,
   Trash,
-  AlertTriangle
+  AlertTriangle,
+  ChartColumn
 } from 'lucide-react';
 import {
   AlertDialog,
@@ -56,9 +57,9 @@ function EmptyState() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.2 }}
-        className='mb-6 text-8xl opacity-20'
+        className='mb-6 opacity-20'
       >
-        📊
+        <ChartColumn className='h-32 w-32' />
       </motion.div>
       <motion.h2
         initial={{ opacity: 0, y: 10 }}
@@ -160,7 +161,8 @@ export default function StatsPage({ className }: StatsPageProps) {
           colorScheme='secondary'
           borderColorScheme='secondary'
           borderBottomThickness={8}
-          className='w-auto cursor-pointer gap-2 px-6 py-3 text-sm font-semibold'
+          disabled={!hasData}
+          className='w-auto cursor-pointer gap-2 px-6 py-3 text-sm font-semibold disabled:bg-[var(--secondary-color)]/70'
         >
           <Trash className='h-4 w-4' />
           Reset
@@ -191,7 +193,7 @@ export default function StatsPage({ className }: StatsPageProps) {
             </AlertDialogCancel>
             <AlertDialogAction
               onClick={handleConfirmReset}
-              className='cursor-pointer rounded-full bg-[var(--secondary-color)] px-6 text-white transition-colors duration-300 hover:bg-[var(--secondary-color)]/80'
+              className='cursor-pointer rounded-full bg-[var(--secondary-color)] px-6 transition-colors duration-300 hover:bg-[var(--secondary-color)]/80'
             >
               Reset Progress
             </AlertDialogAction>

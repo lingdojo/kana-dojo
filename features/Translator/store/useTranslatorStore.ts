@@ -11,6 +11,7 @@ import {
   translate as translateAPI,
   getErrorMessage
 } from '../services/translationAPI';
+import { detectLanguage } from '../lib/languageDetection';
 
 const useTranslatorStore = create<TranslatorState>()((set, get) => ({
   // Input state
@@ -27,18 +28,66 @@ const useTranslatorStore = create<TranslatorState>()((set, get) => ({
   error: null,
   isOffline: typeof navigator !== 'undefined' ? !navigator.onLine : false,
 
+  // Auto detection
+  autoDetect: true,
+  detectedLanguage: null,
+
   // History
   history: [],
 
   // Actions
-  setSourceText: (text: string) => set({ sourceText: text, error: null }),
+  setSourceText: (text: string) => {
+    const { autoDetect } = get();
+
+    // Perform auto detection if enabled
+    if (autoDetect && text.trim().length > 0) {
+      const detection = detectLanguage(text);
+      const targetLang = getOppositeLanguage(detection.language);
+
+      set({
+        sourceText: text,
+        sourceLanguage: detection.language,
+        targetLanguage: targetLang,
+        detectedLanguage: detection,
+        error: null
+      });
+    } else {
+      set({ sourceText: text, detectedLanguage: null, error: null });
+    }
+  },
 
   setSourceLanguage: (lang: Language) => {
     const targetLang = getOppositeLanguage(lang);
-    set({ sourceLanguage: lang, targetLanguage: targetLang, error: null });
+    set({
+      sourceLanguage: lang,
+      targetLanguage: targetLang,
+      autoDetect: false,
+      detectedLanguage: null,
+      error: null
+    });
   },
 
   setTargetLanguage: (lang: Language) => set({ targetLanguage: lang }),
+
+  toggleAutoDetect: () => {
+    const { autoDetect, sourceText } = get();
+    const newAutoDetect = !autoDetect;
+
+    // If turning on auto detect and there's text, detect immediately
+    if (newAutoDetect && sourceText.trim().length > 0) {
+      const detection = detectLanguage(sourceText);
+      const targetLang = getOppositeLanguage(detection.language);
+
+      set({
+        autoDetect: newAutoDetect,
+        sourceLanguage: detection.language,
+        targetLanguage: targetLang,
+        detectedLanguage: detection
+      });
+    } else {
+      set({ autoDetect: newAutoDetect, detectedLanguage: null });
+    }
+  },
 
   swapLanguages: () => {
     const { sourceLanguage, targetLanguage, sourceText, translatedText } =

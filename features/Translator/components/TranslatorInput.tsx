@@ -1,7 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useRef } from 'react';
-import { X, Keyboard } from 'lucide-react';
+import { X, Keyboard, Mic, MicOff } from 'lucide-react';
 import { cn } from '@/shared/lib/utils';
 import { ActionButton } from '@/shared/components/ui/ActionButton';
 import {
@@ -12,6 +12,7 @@ import {
   SelectValue
 } from '@/shared/components/ui/select';
 import type { Language } from '../types';
+import { useVoiceInput } from '../hooks/useVoiceInput';
 
 const MAX_CHARACTERS = 5000;
 
@@ -48,6 +49,31 @@ export default function TranslatorInput({
   const characterCount = getCharacterCount(value);
   const isOverLimit = characterCount > MAX_CHARACTERS;
   const isDisabled = isLoading || isOffline;
+
+  // Voice input hook
+  const {
+    isListening,
+    isSupported: isVoiceSupported,
+    error: voiceError,
+    startListening,
+    stopListening,
+    transcript
+  } = useVoiceInput({
+    language: sourceLanguage,
+    onResult: text => {
+      onChange(text);
+    },
+    onError: err => {
+      console.error('Voice input error:', err);
+    }
+  });
+
+  // Show transcript in real-time while listening
+  useEffect(() => {
+    if (isListening && transcript) {
+      onChange(transcript);
+    }
+  }, [transcript, isListening, onChange]);
 
   // Handle keyboard shortcut (Ctrl/Cmd + Enter)
   const handleKeyDown = useCallback(
@@ -124,24 +150,51 @@ export default function TranslatorInput({
           </Select>
         </div>
 
-        {/* Clear button */}
-        {value.length > 0 && (
-          <ActionButton
-            onClick={handleClear}
-            disabled={isDisabled}
-            colorScheme='secondary'
-            borderColorScheme='secondary'
-            borderRadius='xl'
-            borderBottomThickness={6}
-            className={cn(
-              '!w-9 !min-w-9 h-9 !p-0',
-              'disabled:opacity-50 disabled:cursor-not-allowed'
-            )}
-            aria-label='Clear input'
-          >
-            <X className='h-4 w-4' />
-          </ActionButton>
-        )}
+        <div className='flex items-center gap-2'>
+          {/* Voice input button */}
+          {isVoiceSupported && (
+            <ActionButton
+              onClick={isListening ? stopListening : startListening}
+              disabled={isDisabled}
+              colorScheme={isListening ? 'main' : 'secondary'}
+              borderColorScheme={isListening ? 'main' : 'secondary'}
+              borderRadius='xl'
+              borderBottomThickness={6}
+              className={cn(
+                '!w-9 !min-w-9 h-9 !p-0',
+                'disabled:opacity-50 disabled:cursor-not-allowed',
+                isListening && 'animate-pulse'
+              )}
+              aria-label={isListening ? 'Stop listening' : 'Start voice input'}
+              title={isListening ? 'Stop listening' : 'Voice input'}
+            >
+              {isListening ? (
+                <MicOff className='h-4 w-4' />
+              ) : (
+                <Mic className='h-4 w-4' />
+              )}
+            </ActionButton>
+          )}
+
+          {/* Clear button */}
+          {value.length > 0 && (
+            <ActionButton
+              onClick={handleClear}
+              disabled={isDisabled}
+              colorScheme='secondary'
+              borderColorScheme='secondary'
+              borderRadius='xl'
+              borderBottomThickness={6}
+              className={cn(
+                '!w-9 !min-w-9 h-9 !p-0',
+                'disabled:opacity-50 disabled:cursor-not-allowed'
+              )}
+              aria-label='Clear input'
+            >
+              <X className='h-4 w-4' />
+            </ActionButton>
+          )}
+        </div>
       </div>
 
       {/* Text area */}
@@ -183,8 +236,32 @@ export default function TranslatorInput({
         </div>
       </div>
 
+      {/* Listening indicator */}
+      {isListening && (
+        <div
+          className={cn(
+            'flex items-center gap-2 p-3 rounded-lg',
+            'bg-[var(--main-color)]/10 border border-[var(--main-color)]/30',
+            'text-[var(--main-color)] text-sm'
+          )}
+        >
+          <div className='flex h-4 items-center gap-1'>
+            <span className='h-2 w-1 animate-pulse rounded-full bg-[var(--main-color)]' />
+            <span
+              className='h-2 w-1 animate-pulse rounded-full bg-[var(--main-color)]'
+              style={{ animationDelay: '0.2s' }}
+            />
+            <span
+              className='h-2 w-1 animate-pulse rounded-full bg-[var(--main-color)]'
+              style={{ animationDelay: '0.4s' }}
+            />
+          </div>
+          <span>Listening... Speak now</span>
+        </div>
+      )}
+
       {/* Error message */}
-      {error && (
+      {(error || voiceError) && (
         <div
           className={cn(
             'flex items-center gap-2 p-3 rounded-lg',
@@ -193,7 +270,7 @@ export default function TranslatorInput({
           )}
           role='alert'
         >
-          {error}
+          {error || voiceError}
         </div>
       )}
 

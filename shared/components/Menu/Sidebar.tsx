@@ -1,18 +1,11 @@
 'use client';
 import { Link, useRouter, usePathname } from '@/core/i18n/routing';
 import {
-  BookOpen,
-  Brain,
-  CloudRain,
-  Ghost,
   House,
-  Keyboard,
-  Languages,
-  Leaf,
-  Sparkles,
   Star,
-  Volume2,
-  Wind,
+  Sparkles,
+  BookOpen,
+  Languages,
   LucideIcon
 } from 'lucide-react';
 import clsx from 'clsx';
@@ -20,6 +13,7 @@ import { useClick } from '@/shared/hooks/useAudio';
 import { ReactNode, useEffect, useRef } from 'react';
 import { useInputPreferences } from '@/features/Preferences';
 import { removeLocaleFromPath } from '@/shared/lib/pathUtils';
+import { experiments } from '@/shared/data/experiments';
 
 // ============================================================================
 // Types
@@ -73,20 +67,12 @@ const secondaryNavSections: NavSection[] = [
     title: 'Experiments',
     items: [
       { href: '/experiments', label: 'All Experiments', icon: Sparkles },
-      { href: '/experiments/runner', label: 'Yokai Run', icon: Ghost },
-      { href: '/zen', label: 'Zen Mode', icon: Leaf },
-      { href: '/experiments/breathing', label: 'Breathing', icon: Wind },
-      { href: '/experiments/ambient', label: 'Ambient', icon: Sparkles },
-      { href: '/experiments/rain', label: 'Kana Rain', icon: CloudRain },
-      { href: '/experiments/sound', label: 'Sound Garden', icon: Volume2 },
-      { href: '/experiments/haiku', label: 'Haiku Garden', icon: BookOpen },
-      {
-        href: '/experiments/constellation',
-        label: 'Constellation',
-        icon: Star
-      },
-      { href: '/experiments/typing', label: 'Speed Typing', icon: Keyboard },
-      { href: '/experiments/memory', label: 'Memory Palace', icon: Brain }
+      // Dynamically add all experiments from shared data
+      ...experiments.map(exp => ({
+        href: exp.href,
+        label: exp.name,
+        icon: exp.icon || null
+      }))
     ]
   }
 ];

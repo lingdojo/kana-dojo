@@ -16,3 +16,23 @@ export { default as KanaWave } from './components/KanaWave';
 export { default as ZenBonsai } from './components/ZenBonsai';
 export { default as KanaNebula } from './components/KanaNebula';
 export { default as KanaSearch } from './components/KanaSearch';
+// New experiments (2026-01)
+export { default as KanaMirror } from './components/KanaMirror';
+export { default as KanaOrbit } from './components/KanaOrbit';
+export { default as KanaPulse } from './components/KanaPulse';
+export { default as KanaZen } from './components/KanaZen';
+export { default as KanaShadow } from './components/KanaShadow';
+export { default as KanaStack } from './components/KanaStack';
+export { default as KanaWhisper } from './components/KanaWhisper';
+export { default as KanaGlow } from './components/KanaGlow';
+// Newest experiments (2026-01-08)
+export { default as KanaSnake } from './components/KanaSnake';
+export { default as KanaGravity } from './components/KanaGravity';
+export { default as KanaFortune } from './components/KanaFortune';
+export { default as KanaMagnet } from './components/KanaMagnet';
+export { default as KanaClock } from './components/KanaClock';
+export { default as KanaBounce } from './components/KanaBounce';
+export { default as KanaSlot } from './components/KanaSlot';
+export { default as KanaDNA } from './components/KanaDNA';
+export { default as KanaCatch } from './components/KanaCatch';
+export { default as KanaWordle } from './components/KanaWordle';

@@ -14,7 +14,11 @@ const categoryColors: Record<Category, string> = {
   kanji: 'bg-blue-500/20 text-blue-400 border-blue-500/30',
   vocabulary: 'bg-green-500/20 text-green-400 border-green-500/30',
   grammar: 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30',
-  culture: 'bg-orange-500/20 text-orange-400 border-orange-500/30'
+  culture: 'bg-orange-500/20 text-orange-400 border-orange-500/30',
+  comparison: 'bg-cyan-500/20 text-cyan-400 border-cyan-500/30',
+  tutorial: 'bg-indigo-500/20 text-indigo-400 border-indigo-500/30',
+  resources: 'bg-teal-500/20 text-teal-400 border-teal-500/30',
+  jlpt: 'bg-red-500/20 text-red-400 border-red-500/30'
 };
 
 interface BlogCardProps {

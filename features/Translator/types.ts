@@ -17,6 +17,14 @@ export interface TranslationEntry {
 }
 
 /**
+ * Language detection result
+ */
+export interface LanguageDetectionResult {
+  language: Language;
+  confidence: number;
+}
+
+/**
  * Translator store state interface
  */
 export interface TranslatorState {
@@ -34,6 +42,10 @@ export interface TranslatorState {
   error: string | null;
   isOffline: boolean;
 
+  // Auto detection
+  autoDetect: boolean;
+  detectedLanguage: LanguageDetectionResult | null;
+
   // History
   history: TranslationEntry[];
 
@@ -41,6 +53,7 @@ export interface TranslatorState {
   setSourceText: (text: string) => void;
   setSourceLanguage: (lang: Language) => void;
   setTargetLanguage: (lang: Language) => void;
+  toggleAutoDetect: () => void;
   swapLanguages: () => void;
   translate: () => Promise<void>;
   clearInput: () => void;

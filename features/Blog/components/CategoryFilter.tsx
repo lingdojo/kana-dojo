@@ -14,7 +14,11 @@ const categoryLabels: Record<Category, string> = {
   kanji: 'Kanji',
   vocabulary: 'Vocabulary',
   grammar: 'Grammar',
-  culture: 'Culture'
+  culture: 'Culture',
+  comparison: 'Comparison',
+  tutorial: 'Tutorial',
+  resources: 'Resources',
+  jlpt: 'JLPT'
 };
 
 /**
@@ -31,7 +35,14 @@ const categoryColors: Record<Category, string> = {
   grammar:
     'bg-yellow-500/20 text-yellow-400 border-yellow-500/30 hover:bg-yellow-500/30',
   culture:
-    'bg-orange-500/20 text-orange-400 border-orange-500/30 hover:bg-orange-500/30'
+    'bg-orange-500/20 text-orange-400 border-orange-500/30 hover:bg-orange-500/30',
+  comparison:
+    'bg-cyan-500/20 text-cyan-400 border-cyan-500/30 hover:bg-cyan-500/30',
+  tutorial:
+    'bg-indigo-500/20 text-indigo-400 border-indigo-500/30 hover:bg-indigo-500/30',
+  resources:
+    'bg-teal-500/20 text-teal-400 border-teal-500/30 hover:bg-teal-500/30',
+  jlpt: 'bg-red-500/20 text-red-400 border-red-500/30 hover:bg-red-500/30'
 };
 
 interface CategoryFilterProps {

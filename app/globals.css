@@ -7,11 +7,6 @@
   --breakpoint-3xl: 110rem;
 }
 
-/* Prevent layout shift when scrollbar appears/disappears between pages */
-html {
-  scrollbar-gutter: stable;
-}
-
 body {
   touch-action: manipulation; /* Prevents pinch-to-zoom */
   overscroll-behavior: none; /* Prevents zooming on iOS */
@@ -111,6 +106,7 @@ input[type='checkbox']:checked::after {
 /* scrollbar style */
 [data-scroll-restoration-id='container'],
 #modal-scroll {
+  scrollbar-gutter: stable;
   --scrollbar-color-thumb: var(--main-color);
   --scrollbar-color-track: transparent;
   --scrollbar-width: thin; /* auto for the default one */

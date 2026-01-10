@@ -24,7 +24,11 @@ const categoryColors: Record<Category, string> = {
   kanji: 'bg-blue-500/20 text-blue-400 border-blue-500/30',
   vocabulary: 'bg-green-500/20 text-green-400 border-green-500/30',
   grammar: 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30',
-  culture: 'bg-orange-500/20 text-orange-400 border-orange-500/30'
+  culture: 'bg-orange-500/20 text-orange-400 border-orange-500/30',
+  comparison: 'bg-cyan-500/20 text-cyan-400 border-cyan-500/30',
+  tutorial: 'bg-indigo-500/20 text-indigo-400 border-indigo-500/30',
+  resources: 'bg-teal-500/20 text-teal-400 border-teal-500/30',
+  jlpt: 'bg-red-500/20 text-red-400 border-red-500/30'
 };
 
 interface BlogPostProps {
@@ -72,12 +76,12 @@ export function BlogPost({
       data-testid='blog-post'
     >
       {/* Back to Academy Button - Top */}
-      <Link href='/academy' className='block mb-6' onClick={playClick}>
+      <Link href='/academy' className='mb-6 block' onClick={playClick}>
         <ActionButton
           colorScheme='secondary'
           borderColorScheme='secondary'
           borderBottomThickness={4}
-          className='w-auto inline-flex'
+          className='inline-flex w-auto'
         >
           <ArrowLeft className='size-5' />
           <span>Back to Academy</span>
@@ -99,7 +103,7 @@ export function BlogPost({
           </span>
           {post.difficulty && (
             <span
-              className='inline-flex items-center rounded-full border border-[var(--border-color)] bg-[var(--background-color)] px-3 py-1 text-sm font-medium capitalize text-[var(--secondary-color)]'
+              className='inline-flex items-center rounded-full border border-[var(--border-color)] bg-[var(--background-color)] px-3 py-1 text-sm font-medium text-[var(--secondary-color)] capitalize'
               data-testid='blog-post-difficulty'
             >
               {post.difficulty}
@@ -109,7 +113,7 @@ export function BlogPost({
 
         {/* Title - h1 for proper heading hierarchy */}
         <h1
-          className='mb-4 text-3xl font-bold leading-tight text-[var(--main-color)] md:text-4xl'
+          className='mb-4 text-3xl leading-tight font-bold text-[var(--main-color)] md:text-4xl'
           data-testid='blog-post-title'
         >
           {post.title}
@@ -180,7 +184,7 @@ export function BlogPost({
 
           {/* MDX Content */}
           <section
-            className='prose prose-lg max-w-none text-[var(--secondary-color)] prose-headings:text-[var(--main-color)] prose-a:text-[var(--main-color)] prose-strong:text-[var(--main-color)] prose-code:text-[var(--main-color)]'
+            className='prose prose-lg prose-headings:text-[var(--main-color)] prose-a:text-[var(--main-color)] prose-strong:text-[var(--main-color)] prose-code:text-[var(--main-color)] max-w-none text-[var(--secondary-color)]'
             data-testid='blog-post-content'
           >
             {children}
@@ -194,7 +198,7 @@ export function BlogPost({
           )}
 
           {/* Back to Academy Button - Bottom */}
-          <Link href='/academy' className='block mt-12' onClick={playClick}>
+          <Link href='/academy' className='mt-12 block' onClick={playClick}>
             <ActionButton
               colorScheme='main'
               borderColorScheme='main'

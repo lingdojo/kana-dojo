@@ -62,10 +62,10 @@ export default function TranslatorPage({ locale = 'en' }: TranslatorPageProps) {
         </div>
         <div>
           <h1 className='text-2xl font-bold text-[var(--main-color)] sm:text-3xl'>
-            Japanese Translator
+            Free Japanese to English Translator
           </h1>
           <p className='mt-1 text-xs text-[var(--secondary-color)] sm:text-sm'>
-            Translate between English and Japanese with romanization support
+            Translate Japanese to English or English to Japanese instantly with romanization (romaji). No registration required.
           </p>
         </div>
       </div>
@@ -119,6 +119,8 @@ export default function TranslatorPage({ locale = 'en' }: TranslatorPageProps) {
         <TranslatorOutput
           translation={translatedText}
           romanization={romanization}
+          sourceText={sourceText}
+          sourceLanguage={sourceLanguage}
           targetLanguage={targetLanguage}
           isLoading={isLoading}
         />
