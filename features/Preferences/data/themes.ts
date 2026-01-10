@@ -894,7 +894,13 @@ const baseThemeSets: BaseThemeGroup[] = [
         backgroundColor: 'oklch(18.0% 0.046 247.0 / 1)',
         mainColor: 'oklch(92.0% 0.252 210.0 / 1)',
         secondaryColor: 'oklch(93.0% 0.146 338.0 / 1)'
-      }
+      },
+      {
+        id: 'ameagari',
+        backgroundColor: 'oklch(18.7% 0.030 240.0 / 1)',   // slate mist
+        mainColor: 'oklch(93.0% 0.170 190.0 / 1)',          // dew-spun teal
+        secondaryColor: 'oklch(81.0% 0.144 260.0 / 1)',     // hydrangea blue
+      },
     ]
   },
   {
