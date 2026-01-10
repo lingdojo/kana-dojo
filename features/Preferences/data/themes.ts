@@ -937,6 +937,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         mainColor: 'oklch(78.0% 0.155 140.0 / 1)',         // moss green
         secondaryColor: 'oklch(65.0% 0.110 190.0 / 1)',    // twilight leaf
       },
+      {
+        id: 'akebono',
+        backgroundColor: 'oklch(18.0% 0.030 280.0 / 1)',   // shadowed indigo
+        mainColor: 'oklch(94.0% 0.160 25.0 / 1)',           // pale sunrise pink
+        secondaryColor: 'oklch(88.0% 0.140 305.0 / 1)',     // spring mist violet
+      },
 
     ]
   },
