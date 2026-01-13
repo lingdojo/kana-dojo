@@ -1,4 +1,4 @@
-<a href="#about-kanadojo">Riguardo KanaDojo</a> | <a href="#screenshots">Schermate</a> | <a href="#ui-design-philosophy">UI &amp; Filosofia di Design</a> | <a href="#tech-stack">Stack Tecnologico</a> | <a href="#getting-started">Come Iniziare</a> | <a href="#project-structure">Structura del Progetto</a> | <a href="#contributing">Contribuire</a> | <a href="#license">Licenza</a> | <a href="#acknowledgments">Riconoscimenti</a> | <a href="#contact-links">Contatti &amp; Collegamenti</a>
+<a href="#about-kanadojo">Riguardo KanaDojo</a> | <a href="#screenshots">Schermate</a> | <a href="#ui-design-philosophy">UI &amp; Filosofia di Design</a> | <a href="#tech-stack">Stack Tecnologico</a> | <a href="#getting-started">Come Iniziare</a> | <a href="#project-structure">Struttura del Progetto</a> | <a href="#contributing">Contribuire</a> | <a href="#license">Licenza</a> | <a href="#acknowledgments">Riconoscimenti</a> | <a href="#contact-links">Contatti &amp; Collegamenti</a>
 
 # KanaDojo かな道場
 
@@ -246,7 +246,7 @@ npm run postbuild
 
 ### Risoluzione dei Problemi
 
-Se trovi dei problemi durente lo sviluppo, prova queste soluzioni:
+Se trovi dei problemi durante lo sviluppo, prova queste soluzioni:
 
 > **📘 Per dettagli, specialmente per problemi su Windows, guarda[Troubleshooting Guide](./TROUBLESHOOTING.md)**
 
@@ -484,7 +484,7 @@ Stiamo lavorando attivamente per rendere KanaDojo disponibile in diverse lingue!
 4. **Manda PR**: Apri una pull request con le tue traduzioni
 
 **Attualmente supportate**: Inglese 🇬🇧, Spagnolo 🇪🇸, Giapponese 🇯🇵
-**Pianificate**: Portoghese, Feancese, Tedesco, Italiano, Cinese, Coreano, Russo, Arabo
+**Pianificate**: Portoghese, Francese, Tedesco, Italiano, Cinese, Coreano, Russo, Arabo
 
 #### 📊 Stato Sistema i18n
 
@@ -535,8 +535,8 @@ core/i18n/locales/
 **Comandi Disponibili**:
 
 - `npm run i18n:validate` - Verifica che tutte le chiavi di traduzione corrispondano tra le lingue
-- `npm run i18n:generate-types` - Genera autocompletamento TypeScript
-- `npm run i18n:check` - Lancia assieme validazione e generazine tipi
+- `npm run i18n:generate-types` - Genera auto completamento TypeScript
+- `npm run i18n:check` - Lancia assieme validazione e generazione tipi
 
 **Prossimi Passi**:
 
