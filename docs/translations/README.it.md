@@ -33,9 +33,9 @@ Che tu stia muovendo i primi passi con i sillabari di base o ti stia preparando 
 
 #### 🎯 **Tre Dojo di Allenamento**
 
--   **Kana Dojo** -- Padroneggia i sillabari Hiragana e Katakana con gruppi base, dakuon, yoon e suoni stranieri
--   **Kanji Dojo** -- Studio dei kanji essenziali organizzati per livello JLPT (N5, N4, N3, N2)
--   **Vocabulary Dojo** -- Costruzione del vocabolario giapponese tramite collezioni curate per livello di competenza
+-   **Kana Dojo** - Padroneggia i sillabari Hiragana e Katakana con gruppi base, dakuon, yoon e suoni stranieri
+-   **Kanji Dojo** - Studio dei kanji essenziali organizzati per livello JLPT (N5, N4, N3, N2)
+-   **Vocabulary Dojo** - Costruzione del vocabolario giapponese tramite collezioni curate per livello di competenza
 
 #### 🎮 **Quattro Modalità di Gioco Dinamiche**
 
@@ -151,29 +151,27 @@ KanaDojo è sviluppato utilizzando tecnologie web moderne, con particolare atten
 
 ### Gestione dello Stato
 
--  **Zustand** - State management leggero e con poco boilerplate
+-  **[Zustand](https://zustand-demo.pmnd.rs/)** - State management leggero e con poco boilerplate
 -  **Zustand Persist** - Persistenza delle preferenze utente in localStorage
 
 ### Utility & Funzionalità
 
-- **use-sound** - Sistema di feedback audio
-- **canvas-confetti** - Effetti visivi di celebrazione
-- **react-timer-hook** - Gestione dei timer
-- **react-markdown** - Rendering Markdown per contenuti educativi
-
--   **random-js** - Generazione di numeri casuali crittograficamente sicura
--   **clsx + tailwind-merge** - Utility per classi CSS condizionali
+- **[use-sound](https://www.joshwcomeau.com/react/announcing-use-sound-react-hook/)** - Sistema di feedback audio
+- **[canvas-confetti](https://www.npmjs.com/package/canvas-confetti)** - Effetti visivi di celebrazione
+- **[react-timer-hook](https://www.npmjs.com/package/react-timer-hook)** - Gestione dei timer
+- **[react-markdown](https://github.com/remarkjs/react-markdown)** - Rendering Markdown per contenuti educativi
+- **[random-js](https://www.npmjs.com/package/random-js)** - Generazione di numeri casuali crittograficamente sicura
+- **[clsx](https://www.npmjs.com/package/clsx) + [tailwind-merge](https://www.npmjs.com/package/tailwind-merge)** - Utility per classi CSS condizionali
 
 ### Strumenti di Sviluppo
 
--   **ESLint** - Analisi statica del codice
--   **next-sitemap** - Generazione automatica della sitemap
+- **[ESLint](https://eslint.org/)** - Analisi statica del codice
+- **[next-sitemap](https://www.npmjs.com/package/next-sitemap)** - Generazione automatica della sitemap
 
 ### Analisi & Performance
 
--   **@vercel/analytics** - Web analytics
--   **@vercel/speed-insights** - Monitoraggio delle performance
-
+- **[@vercel/analytics](https://vercel.com/analytics)** - Web analytics
+- **[@vercel/speed-insights](https://vercel.com/docs/speed-insights)** - Monitoraggio delle performance
 
 <a id="architecture"></a>
 
@@ -204,10 +202,10 @@ Per maggiori dettagli: [docs/ARCHITECTURE.md](./docs/ARCHITECTURE.md).
 
 1.  **Clona il repository**
 
-     ```bash
-   git clone https://github.com/lingdojo/kanadojo.git
-   cd kanadojo
-   ```
+    ```bash
+    git clone https://github.com/lingdojo/kanadojo.git
+    cd kanadojo
+    ```
 
 2. **Installa le dipendenze** 
 
