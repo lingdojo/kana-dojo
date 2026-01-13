@@ -10,6 +10,7 @@
 - [Français](./docs/translations/README.fr.md)
 - [Deutsch](./docs/translations/README.de.md)
 - [Português (pt-BR)](./docs/translations/README.pt-br.md)
+- [Italiano](./docs/translations//README.it.md)
 - [Русский](./docs/translations/README.ru.md)
 - [Türkçe](./docs/translations/README.tr.md)
 - [Tiếng Việt](./docs/translations/README.vi.md)

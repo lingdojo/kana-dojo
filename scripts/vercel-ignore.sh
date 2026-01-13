@@ -47,6 +47,8 @@ IGNORE_PATTERNS=(
   "^vitest\.config\.ts$"
   "^features/Preferences/data/themes\\.ts$"
   "^public/japan-facts\\.json$"
+  "^data/community/"
+  "^data/.*\\.json$"
   "\.test\.(ts|tsx)$"
   "\.spec\.(ts|tsx)$"
 )

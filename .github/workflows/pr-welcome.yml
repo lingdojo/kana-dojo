@@ -1,11 +1,12 @@
 name: Welcome PR Authors
 
 on:
-  pull_request:
+  pull_request_target:
     types: [opened]
 
 permissions:
   pull-requests: write
+  contents: read
 
 jobs:
   welcome:
@@ -30,7 +31,7 @@ jobs:
               isFirstTime = !contributions.some(function(c) { return c.login === author; });
             } catch (e) {
               // If the API call fails, assume it's not their first time
-              console.log('Could not fetch contributors list');
+              console.log('Could not fetch contributors list: ' + e.message);
             }
 
             let welcomeMessage = '## 🎉 Thanks for your Pull Request, @' + author + '!\n\n' +

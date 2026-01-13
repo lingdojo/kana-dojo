@@ -40,8 +40,8 @@ jobs:
             });
 
             const now = new Date();
-            const FIVE_DAYS = 5 * 24 * 60 * 60 * 1000;
-            const SEVEN_DAYS = 7 * 24 * 60 * 60 * 1000;
+            const TWO_DAYS = 2 * 24 * 60 * 60 * 1000;
+            const THREE_DAYS = 3 * 24 * 60 * 60 * 1000;
 
             let needsCommit = false;
             let themes = JSON.parse(fs.readFileSync(themeBacklogPath, 'utf8'));
@@ -59,7 +59,7 @@ jobs:
               // Check for stale-warning label
               const hasWarning = issue.labels.some(function(l) { return l.name === 'stale-warning'; });
               
-              if (timeSinceActivity >= SEVEN_DAYS) {
+              if (timeSinceActivity >= THREE_DAYS) {
                 // Close the issue
                 console.log('Closing stale issue #' + issue.number + ': ' + issue.title);
                 
@@ -67,7 +67,7 @@ jobs:
                   owner: context.repo.owner,
                   repo: context.repo.repo,
                   issue_number: issue.number,
-                  body: '🕐 **This issue has been automatically closed** due to 7 days of inactivity.\n\n' +
+                  body: '🕐 **This issue has been automatically closed** due to 3 days of inactivity.\n\n' +
                     'Don\'t worry—the contribution opportunity will be re-posted for someone else to claim.\n\n' +
                     'Thanks for your interest in contributing to KanaDojo! 🙏'
                 });
@@ -106,7 +106,7 @@ jobs:
                   }
                 }
                 
-              } else if (timeSinceActivity >= FIVE_DAYS && !hasWarning) {
+              } else if (timeSinceActivity >= TWO_DAYS && !hasWarning) {
                 // Add warning
                 console.log('Adding warning to issue #' + issue.number);
                 
@@ -114,9 +114,9 @@ jobs:
                   owner: context.repo.owner,
                   repo: context.repo.repo,
                   issue_number: issue.number,
-                  body: '👋 **Heads up!** This issue has been inactive for 5 days.\n\n' +
+                  body: '👋 **Heads up!** This issue has been inactive for 2 days.\n\n' +
                     'If you\'re still working on it, please comment to let us know!\n\n' +
-                    'Otherwise, it will be automatically closed in **2 days** and made available for others to claim.\n\n' +
+                    'Otherwise, it will be automatically closed in **1 day** and made available for others to claim.\n\n' +
                     'Need help? Just ask! 🙌'
                 });
                 

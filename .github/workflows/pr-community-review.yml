@@ -1,0 +1,251 @@
+name: Community Contribution Auto-Review
+
+on:
+  pull_request_target:
+    types: [opened, synchronize]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  validate-and-merge:
+    runs-on: ubuntu-latest
+    # Only run for PRs that might be community contributions
+    if: contains(github.event.pull_request.title, 'theme') || contains(github.event.pull_request.title, 'fact') || contains(github.event.pull_request.title, 'Theme') || contains(github.event.pull_request.title, 'Fact')
+
+    steps:
+      - name: Checkout base branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.ref }}
+
+      - name: Checkout PR head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          path: pr-head
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Validate community contribution
+        id: validate
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+
+            const prTitle = context.payload.pull_request.title.toLowerCase();
+            const prBody = context.payload.pull_request.body || '';
+            const prNumber = context.payload.pull_request.number;
+
+            let isValid = false;
+            let validationType = null;
+            let validationMessage = '';
+            let errors = [];
+
+            // Detect contribution type
+            const isThemeContribution = prTitle.includes('theme');
+            const isFactContribution = prTitle.includes('fact');
+
+            if (!isThemeContribution && !isFactContribution) {
+              console.log('Not a community contribution PR');
+              core.setOutput('is_community', 'false');
+              return;
+            }
+
+            core.setOutput('is_community', 'true');
+
+            if (isThemeContribution) {
+              validationType = 'theme';
+              console.log('Detected theme contribution');
+              
+              try {
+                // Read the themes file from PR
+                const themesPath = 'pr-head/features/Preferences/data/themes.ts';
+                if (!fs.existsSync(themesPath)) {
+                  errors.push('themes.ts file not found in PR');
+                } else {
+                  const content = fs.readFileSync(themesPath, 'utf8');
+                  
+                  // Basic validation checks
+                  // 1. File should contain valid TypeScript syntax (basic check)
+                  if (!content.includes('export const themes')) {
+                    errors.push('themes.ts appears to be malformed (missing export)');
+                  }
+                  
+                  // 2. Check for OKLCH color format
+                  const oklchRegex = /oklch\(\s*[\d.]+%?\s+[\d.]+\s+[\d.]+/g;
+                  const oklchMatches = content.match(oklchRegex);
+                  if (!oklchMatches || oklchMatches.length === 0) {
+                    errors.push('No valid OKLCH colors found');
+                  }
+                  
+                  // 3. Check the PR links to an issue
+                  const issueMatch = prBody.match(/[Cc]loses?\s*#(\d+)|[Ff]ixes?\s*#(\d+)/);
+                  if (!issueMatch) {
+                    errors.push('PR does not link to an issue (use "Closes #123")');
+                  }
+                  
+                  if (errors.length === 0) {
+                    isValid = true;
+                    validationMessage = 'Theme contribution looks valid!';
+                  }
+                }
+              } catch (e) {
+                errors.push('Error reading themes file: ' + e.message);
+              }
+              
+            } else if (isFactContribution) {
+              validationType = 'fact';
+              console.log('Detected fact contribution');
+              
+              try {
+                // Read the facts file from PR
+                const factsPath = 'pr-head/public/japan-facts.json';
+                if (!fs.existsSync(factsPath)) {
+                  errors.push('japan-facts.json file not found in PR');
+                } else {
+                  const content = fs.readFileSync(factsPath, 'utf8');
+                  
+                  // 1. Check valid JSON
+                  try {
+                    const facts = JSON.parse(content);
+                    
+                    // 2. Should be an array
+                    if (!Array.isArray(facts)) {
+                      errors.push('japan-facts.json should be an array');
+                    } else {
+                      // 3. All items should be strings
+                      const nonStrings = facts.filter(function(f) { return typeof f !== 'string'; });
+                      if (nonStrings.length > 0) {
+                        errors.push('All facts should be strings, found ' + nonStrings.length + ' non-string items');
+                      }
+                      
+                      // 4. Check for empty strings
+                      const emptyStrings = facts.filter(function(f) { return typeof f === 'string' && f.trim() === ''; });
+                      if (emptyStrings.length > 0) {
+                        errors.push('Found ' + emptyStrings.length + ' empty fact entries');
+                      }
+                    }
+                  } catch (parseErr) {
+                    errors.push('Invalid JSON: ' + parseErr.message);
+                  }
+                  
+                  // 5. Check the PR links to an issue
+                  const issueMatch = prBody.match(/[Cc]loses?\s*#(\d+)|[Ff]ixes?\s*#(\d+)/);
+                  if (!issueMatch) {
+                    errors.push('PR does not link to an issue (use "Closes #123")');
+                  }
+                  
+                  if (errors.length === 0) {
+                    isValid = true;
+                    validationMessage = 'Fact contribution looks valid!';
+                  }
+                }
+              } catch (e) {
+                errors.push('Error reading facts file: ' + e.message);
+              }
+            }
+
+            // Set outputs
+            core.setOutput('is_valid', isValid ? 'true' : 'false');
+            core.setOutput('validation_type', validationType);
+            core.setOutput('errors', JSON.stringify(errors));
+            core.setOutput('message', validationMessage);
+
+            console.log('Validation result:', { isValid, validationType, errors, validationMessage });
+
+      - name: Comment validation result
+        if: steps.validate.outputs.is_community == 'true'
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const isValid = '${{ steps.validate.outputs.is_valid }}' === 'true';
+            const validationType = '${{ steps.validate.outputs.validation_type }}';
+            const errors = JSON.parse('${{ steps.validate.outputs.errors }}' || '[]');
+            const message = '${{ steps.validate.outputs.message }}';
+
+            let body;
+
+            if (isValid) {
+              body = '## 🤖 Auto-Review: ✅ Passed\n\n' +
+                'This ' + validationType + ' contribution has passed automated validation!\n\n' +
+                '**Checks passed:**\n' +
+                '- ✅ File format is correct\n' +
+                '- ✅ Content is valid\n' +
+                '- ✅ Issue is linked\n\n' +
+                'Once the quality check passes, this PR will be automatically approved for merge.';
+            } else {
+              body = '## 🤖 Auto-Review: ❌ Issues Found\n\n' +
+                'This ' + validationType + ' contribution has some issues that need to be fixed:\n\n' +
+                errors.map(function(e) { return '- ❌ ' + e; }).join('\n') + '\n\n' +
+                '**Please fix the above issues and push again.**\n\n' +
+                'Need help? Comment below and we\'ll assist! 🙌';
+            }
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.pull_request.number,
+              body: body
+            });
+
+      - name: Approve PR if valid
+        if: steps.validate.outputs.is_valid == 'true'
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            await github.rest.pulls.createReview({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.payload.pull_request.number,
+              event: 'APPROVE',
+              body: '🤖 Automated approval - all validation checks passed!'
+            });
+
+      - name: Enable auto-merge
+        if: steps.validate.outputs.is_valid == 'true'
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            // Enable auto-merge (requires branch protection with required checks)
+            try {
+              await github.graphql(`
+                mutation($pullRequestId: ID!) {
+                  enablePullRequestAutoMerge(input: {
+                    pullRequestId: $pullRequestId,
+                    mergeMethod: SQUASH
+                  }) {
+                    pullRequest {
+                      autoMergeRequest {
+                        enabledAt
+                      }
+                    }
+                  }
+                }
+              `, {
+                pullRequestId: context.payload.pull_request.node_id
+              });
+              
+              console.log('Auto-merge enabled for PR #' + context.payload.pull_request.number);
+              
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.pull_request.number,
+                body: '🚀 **Auto-merge enabled!** This PR will be automatically merged once all required checks pass.'
+              });
+            } catch (e) {
+              console.log('Could not enable auto-merge: ' + e.message);
+              console.log('This is normal if branch protection rules are not configured.');
+            }
