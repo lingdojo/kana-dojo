@@ -242,6 +242,12 @@ const baseThemeSets: BaseThemeGroup[] = [
     icon: Moon,
     themes: [
       {
+        id: 'neon-sakura',
+        backgroundColor: 'oklch(14% 0.04 310 / 1)',
+        mainColor: 'oklch(78% 0.23 340 / 1)',
+        secondaryColor: 'oklch(68% 0.18 285 / 1)'
+      },
+      {
         id: 'taikan',
         backgroundColor: 'oklch(21.2% 0.039 255.0 / 1)', // cosmic graphite
         mainColor: 'oklch(93.5% 0.235 122.0 / 1)', // radiant yellow-green
