@@ -242,6 +242,12 @@ const baseThemeSets: BaseThemeGroup[] = [
     icon: Moon,
     themes: [
       {
+        id: 'bamboo-mist',
+        backgroundColor: 'oklch(24.0% 0.032 150.0 / 1)',
+        mainColor: 'oklch(78.0% 0.145 145.0 / 1)',
+        secondaryColor: 'oklch(68.0% 0.085 130.0 / 1)'
+      },
+      {
         id: 'neon-sakura',
         backgroundColor: 'oklch(14% 0.04 310 / 1)',
         mainColor: 'oklch(78% 0.23 340 / 1)',
@@ -265,7 +271,6 @@ const baseThemeSets: BaseThemeGroup[] = [
         mainColor: 'oklch(90.4% 0.216 274.7 / 1)',
         secondaryColor: 'oklch(92.6% 0.173 338.0 / 1)'
       },
-
       {
         id: 'kuromizu',
         backgroundColor: 'oklch(10.6% 0.034 248.0 / 1)',
