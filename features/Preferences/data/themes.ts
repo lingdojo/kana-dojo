@@ -967,6 +967,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         mainColor: 'oklch(75.0% 0.146 300.0 / 1)',           // refined violet
         secondaryColor: 'oklch(58.8% 0.120 145.0 / 1)',      // woodland shadow
       },
+      {
+        id: 'thunder-temple',
+        backgroundColor: 'oklch(16.0% 0.065 280.0 / 1)',
+        mainColor: 'oklch(85.0% 0.185 260.0 / 1)',
+        secondaryColor: 'oklch(75.0% 0.145 290.0 / 1)'
+      },
     ]
   },
   {
