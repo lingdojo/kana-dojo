@@ -108,14 +108,6 @@ jobs:
               return;
             }
 
-            await github.rest.pulls.createReview({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              pull_number: prNumber,
-              event: 'APPROVE',
-              body: 'Automated approval after PR Quality Check passed.'
-            });
-
             const MAX_RETRIES = 10;
             for (let i = 1; i <= MAX_RETRIES; i += 1) {
               try {
