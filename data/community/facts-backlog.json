@@ -53,7 +53,10 @@
   {
     "id": 10,
     "fact": "Raw horse meat, called 'basashi' (馬刺し), is a popular delicacy in Kumamoto prefecture, often served frozen or thinly sliced with soy sauce and ginger.",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "rajatk281",
+    "completedPR": 500
   },
   {
     "id": 11,
