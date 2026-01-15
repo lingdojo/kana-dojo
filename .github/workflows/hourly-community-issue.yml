@@ -8,10 +8,11 @@ on:
 permissions:
   contents: write
   issues: write
+  pull-requests: write
 
 # Prevent multiple runs from overlapping and causing race conditions
 concurrency:
-  group: community-issue-creation
+  group: community-data-updates
   cancel-in-progress: false
 
 jobs:
@@ -44,18 +45,57 @@ jobs:
             const factsBacklogPath = 'data/community/facts-backlog.json';
             const proverbsBacklogPath = 'data/community/proverbs-backlog.json';
 
+            const themesSourcePath = 'features/Preferences/data/themes.ts';
+            const factsSourcePath = 'public/japan-facts.json';
+            const proverbsSourcePath = 'public/japanese-proverbs.json';
+
             let state = JSON.parse(fs.readFileSync(statePath, 'utf8'));
             const themes = JSON.parse(fs.readFileSync(themeBacklogPath, 'utf8'));
             const facts = JSON.parse(fs.readFileSync(factsBacklogPath, 'utf8'));
             const proverbs = JSON.parse(fs.readFileSync(proverbsBacklogPath, 'utf8'));
 
-            // Fetch existing open issues to check for duplicates
-            const { data: existingIssues } = await github.rest.issues.listForRepo({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              state: 'open',
-              per_page: 100
-            });
+            let backlogChanged = false;
+
+            let existingFacts = [];
+            if (fs.existsSync(factsSourcePath)) {
+              try {
+                existingFacts = JSON.parse(fs.readFileSync(factsSourcePath, 'utf8'));
+              } catch (e) {
+                console.log('Could not parse ' + factsSourcePath + ': ' + e.message);
+              }
+            }
+
+            let existingProverbs = [];
+            if (fs.existsSync(proverbsSourcePath)) {
+              try {
+                existingProverbs = JSON.parse(fs.readFileSync(proverbsSourcePath, 'utf8'));
+              } catch (e) {
+                console.log('Could not parse ' + proverbsSourcePath + ': ' + e.message);
+              }
+            }
+
+            let themesSourceContent = '';
+            if (fs.existsSync(themesSourcePath)) {
+              try {
+                themesSourceContent = fs.readFileSync(themesSourcePath, 'utf8');
+              } catch (e) {
+                console.log('Could not read ' + themesSourcePath + ': ' + e.message);
+              }
+            }
+
+            async function hasOpenIssueForQuery(query) {
+              const q = query + ' repo:' + context.repo.owner + '/' + context.repo.repo + ' is:issue is:open';
+              try {
+                const res = await github.rest.search.issuesAndPullRequests({
+                  q: q,
+                  per_page: 1
+                });
+                return res.data && res.data.total_count > 0;
+              } catch (e) {
+                console.log('Search query failed: ' + q + ' :: ' + e.message);
+                return false;
+              }
+            }
 
             // Rotate through types: theme -> fact -> proverb -> theme...
             const typeOrder = ['theme', 'fact', 'proverb'];
@@ -65,26 +105,42 @@ jobs:
             let item, issueTitle, issueBody;
 
             if (nextType === 'theme') {
-              // Skip items that are already issued OR completed
-              item = themes.find(function(th) { return !th.issued && !th.completed; });
+              // Skip items that are already issued OR completed OR already exist in main
+              item = themes.find(function(th) {
+                if (th.issued || th.completed) {
+                  return false;
+                }
+                if (themesSourceContent) {
+                  const hasId = th.id && themesSourceContent.includes("id: '" + th.id + "'");
+                  const hasName = th.name && themesSourceContent.toLowerCase().includes(th.name.toLowerCase());
+                  if (hasId || hasName) {
+                    const themeIdx = themes.findIndex(function(ti) { return ti.id === th.id; });
+                    themes[themeIdx].completed = true;
+                    backlogChanged = true;
+                    return false;
+                  }
+                }
+                return true;
+              });
               
               if (!item) {
                 console.log('No more themes available in backlog.');
-                core.setOutput('should_commit', 'false');
+                if (backlogChanged) {
+                  fs.writeFileSync(themeBacklogPath, JSON.stringify(themes, null, 2));
+                }
+                core.setOutput('should_commit', backlogChanged ? 'true' : 'false');
                 return;
               }
               
               // Check for duplicate theme issue
-              const duplicateTheme = existingIssues.find(function(issue) {
-                return issue.title.includes('Add New Color Theme:') && 
-                       issue.title.toLowerCase().includes(item.name.toLowerCase());
-              });
+              const duplicateTheme = await hasOpenIssueForQuery('"Add New Color Theme:" "' + item.name + '"');
               
               if (duplicateTheme) {
-                console.log('Issue already exists for theme "' + item.name + '": #' + duplicateTheme.number + '. Marking as issued and skipping.');
+                console.log('Issue already exists for theme "' + item.name + '": Marking as issued and skipping.');
                 const themeIdx = themes.findIndex(function(th) { return th.id === item.id; });
                 themes[themeIdx].issued = true;
                 fs.writeFileSync(themeBacklogPath, JSON.stringify(themes, null, 2));
+                backlogChanged = true;
                 
                 // Update lastType so next run tries the other type
                 state.lastType = nextType;
@@ -138,27 +194,43 @@ jobs:
               const themeIndex = themes.findIndex(function(th) { return th.id === item.id; });
               themes[themeIndex].issued = true;
               fs.writeFileSync(themeBacklogPath, JSON.stringify(themes, null, 2));
+              backlogChanged = true;
               
             } else if (nextType === 'fact') {
-              // Skip items that are already issued OR completed
-              item = facts.find(function(f) { return !f.issued && !f.completed; });
+              // Skip items that are already issued OR completed OR already exist in main
+              item = facts.find(function(f) {
+                if (f.issued || f.completed) {
+                  return false;
+                }
+                if (Array.isArray(existingFacts) && existingFacts.includes(f.fact)) {
+                  const factIdx = facts.findIndex(function(fi) { return fi.id === f.id; });
+                  facts[factIdx].completed = true;
+                  backlogChanged = true;
+                  return false;
+                }
+                return true;
+              });
               
               if (!item) {
                 console.log('No more facts available in backlog.');
-                core.setOutput('should_commit', 'false');
+                if (backlogChanged) {
+                  fs.writeFileSync(themeBacklogPath, JSON.stringify(themes, null, 2));
+                  fs.writeFileSync(factsBacklogPath, JSON.stringify(facts, null, 2));
+                  fs.writeFileSync(proverbsBacklogPath, JSON.stringify(proverbs, null, 2));
+                }
+                core.setOutput('should_commit', backlogChanged ? 'true' : 'false');
                 return;
               }
               
               // Check for duplicate fact issue
-              const duplicateFact = existingIssues.find(function(issue) {
-                return issue.title.includes('Add Japan Fact #' + item.id);
-              });
+              const duplicateFact = await hasOpenIssueForQuery('"Add Japan Fact #' + item.id + '"');
               
               if (duplicateFact) {
-                console.log('Issue already exists for fact #' + item.id + ': #' + duplicateFact.number + '. Marking as issued and skipping.');
+                console.log('Issue already exists for fact #' + item.id + ': Marking as issued and skipping.');
                 const factIdx = facts.findIndex(function(f) { return f.id === item.id; });
                 facts[factIdx].issued = true;
                 fs.writeFileSync(factsBacklogPath, JSON.stringify(facts, null, 2));
+                backlogChanged = true;
                 
                 // Update lastType so next run tries the other type
                 state.lastType = nextType;
@@ -193,26 +265,50 @@ jobs:
               const factIndex = facts.findIndex(function(f) { return f.id === item.id; });
               facts[factIndex].issued = true;
               fs.writeFileSync(factsBacklogPath, JSON.stringify(facts, null, 2));
+              backlogChanged = true;
             } else {
               // Proverb
-              item = proverbs.find(function(p) { return !p.issued && !p.completed; });
+              item = proverbs.find(function(p) {
+                if (p.issued || p.completed) {
+                  return false;
+                }
+                if (Array.isArray(existingProverbs)) {
+                  const exists = existingProverbs.some(function(ep) {
+                    if (!ep || typeof ep !== 'object') {
+                      return false;
+                    }
+                    return ep.japanese === p.japanese && ep.romaji === p.romaji && ep.english === p.english;
+                  });
+                  if (exists) {
+                    const proverbIdx = proverbs.findIndex(function(pi) { return pi.id === p.id; });
+                    proverbs[proverbIdx].completed = true;
+                    backlogChanged = true;
+                    return false;
+                  }
+                }
+                return true;
+              });
               
               if (!item) {
                 console.log('No more proverbs available in backlog.');
-                core.setOutput('should_commit', 'false');
+                if (backlogChanged) {
+                  fs.writeFileSync(themeBacklogPath, JSON.stringify(themes, null, 2));
+                  fs.writeFileSync(factsBacklogPath, JSON.stringify(facts, null, 2));
+                  fs.writeFileSync(proverbsBacklogPath, JSON.stringify(proverbs, null, 2));
+                }
+                core.setOutput('should_commit', backlogChanged ? 'true' : 'false');
                 return;
               }
               
               // Check for duplicate proverb issue
-              const duplicateProverb = existingIssues.find(function(issue) {
-                return issue.title.includes('Add Japanese Proverb #' + item.id);
-              });
+              const duplicateProverb = await hasOpenIssueForQuery('"Add Japanese Proverb #' + item.id + '"');
               
               if (duplicateProverb) {
-                console.log('Issue already exists for proverb #' + item.id + ': #' + duplicateProverb.number + '. Marking as issued and skipping.');
+                console.log('Issue already exists for proverb #' + item.id + ': Marking as issued and skipping.');
                 const proverbIdx = proverbs.findIndex(function(p) { return p.id === item.id; });
                 proverbs[proverbIdx].issued = true;
                 fs.writeFileSync(proverbsBacklogPath, JSON.stringify(proverbs, null, 2));
+                backlogChanged = true;
                 
                 // Update lastType so next run tries the other type
                 state.lastType = nextType;
@@ -263,6 +359,7 @@ jobs:
               const proverbIndex = proverbs.findIndex(function(p) { return p.id === item.id; });
               proverbs[proverbIndex].issued = true;
               fs.writeFileSync(proverbsBacklogPath, JSON.stringify(proverbs, null, 2));
+              backlogChanged = true;
             }
 
             const labels = templates.labels.newIssue;
@@ -288,34 +385,68 @@ jobs:
             core.setOutput('should_commit', 'true');
 
       - name: Commit backlog updates
+        id: commit-backlog
         if: steps.create-issue.outputs.should_commit == 'true'
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/community/
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.AUTOMATION_PR_TOKEN }}
+          add-paths: |
+            data/community/
+          commit-message: 'chore(automation): mark item as issued'
+          branch: automation/community-data/hourly-${{ github.run_id }}
+          title: 'chore(automation): update community backlog'
+          body: Automated update to community backlog state.
+          base: main
+          delete-branch: true
 
-          # Check if there are changes to commit
-          if git diff --staged --quiet; then
-            echo "No changes to commit"
-            exit 0
-          fi
+      - name: Auto-approve and merge automation PR
+        if: steps.create-issue.outputs.should_commit == 'true'
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.AUTOMATION_PR_TOKEN }}
+          script: |
+            const prNumber = Number(process.env.PR_NUMBER);
 
-          git commit -m "chore(automation): mark item as issued"
+            async function sleep(ms) {
+              return new Promise(function(resolve) { setTimeout(resolve, ms); });
+            }
 
-          # Pull with rebase and push with retry logic
-          MAX_RETRIES=3
-          for i in $(seq 1 $MAX_RETRIES); do
-            echo "Attempt $i of $MAX_RETRIES"
-            git pull --rebase origin main || git pull --rebase origin master || true
-            if git push; then
-              echo "Push successful!"
-              exit 0
-            fi
-            if [ $i -lt $MAX_RETRIES ]; then
-              echo "Push failed, retrying in 5 seconds..."
-              sleep 5
-            fi
-          done
+            if (!prNumber) {
+              console.log('No PR was created; nothing to merge');
+              return;
+            }
 
-          echo "Failed to push after $MAX_RETRIES attempts"
-          exit 1
+            const MAX_RETRIES = 10;
+            for (let i = 1; i <= MAX_RETRIES; i += 1) {
+              try {
+                await github.rest.pulls.merge({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  pull_number: prNumber,
+                  merge_method: 'squash'
+                });
+                console.log('Merged automation PR #' + prNumber);
+                return;
+              } catch (e) {
+                console.log('Merge attempt ' + i + ' failed: ' + e.message);
+                if (e.status === 409) {
+                  try {
+                    await github.rest.pulls.updateBranch({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      pull_number: prNumber
+                    });
+                    console.log('Requested branch update for PR #' + prNumber);
+                  } catch (updateErr) {
+                    console.log('Could not update branch: ' + updateErr.message);
+                  }
+                }
+                if (i < MAX_RETRIES) {
+                  await sleep(2000);
+                }
+              }
+            }
+
+            throw new Error('Failed to merge automation PR #' + prNumber);
+        env:
+          PR_NUMBER: ${{ steps.commit-backlog.outputs.pull-request-number }}

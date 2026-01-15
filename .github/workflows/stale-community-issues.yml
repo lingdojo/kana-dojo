@@ -8,6 +8,7 @@ on:
 permissions:
   contents: write
   issues: write
+  pull-requests: write
 
 # Prevent race conditions with other community workflows
 concurrency:
@@ -38,13 +39,23 @@ jobs:
             const factsBacklogPath = 'data/community/facts-backlog.json';
             const proverbsBacklogPath = 'data/community/proverbs-backlog.json';
 
-            const { data: issues } = await github.rest.issues.listForRepo({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              labels: templates.labels.community,
-              state: 'open',
-              per_page: 100
-            });
+            let issues = [];
+            let page = 1;
+            while (true) {
+              const { data: pageItems } = await github.rest.issues.listForRepo({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                labels: templates.labels.community,
+                state: 'open',
+                per_page: 100,
+                page: page
+              });
+              issues = issues.concat(pageItems);
+              if (!pageItems || pageItems.length < 100) {
+                break;
+              }
+              page += 1;
+            }
 
             const now = new Date();
             const WARNING_THRESHOLD_MS = templates.config.staleWarningAfterMs;   // 12 hours
@@ -173,35 +184,69 @@ jobs:
               core.setOutput('needs_commit', 'false');
             }
 
-      - name: Commit backlog updates
+      - name: Create PR for backlog updates
+        id: commit-backlog
         if: steps.stale-check.outputs.needs_commit == 'true'
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/community/
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.AUTOMATION_PR_TOKEN }}
+          add-paths: |
+            data/community/
+          commit-message: 'chore(automation): re-enable stale items in backlog'
+          branch: automation/community-data/stale-${{ github.run_id }}
+          title: 'chore(automation): update community backlog'
+          body: Automated update to community backlog state.
+          base: main
+          delete-branch: true
 
-          # Check if there are changes to commit
-          if git diff --staged --quiet; then
-            echo "No changes to commit"
-            exit 0
-          fi
+      - name: Auto-approve and merge automation PR
+        if: steps.stale-check.outputs.needs_commit == 'true'
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.AUTOMATION_PR_TOKEN }}
+          script: |
+            const prNumber = Number(process.env.PR_NUMBER);
 
-          git commit -m "chore(automation): re-enable stale items in backlog"
+            async function sleep(ms) {
+              return new Promise(function(resolve) { setTimeout(resolve, ms); });
+            }
 
-          # Pull with rebase and push with retry logic
-          MAX_RETRIES=3
-          for i in $(seq 1 $MAX_RETRIES); do
-            echo "Attempt $i of $MAX_RETRIES"
-            git pull --rebase origin main || git pull --rebase origin master || true
-            if git push; then
-              echo "Push successful!"
-              exit 0
-            fi
-            if [ $i -lt $MAX_RETRIES ]; then
-              echo "Push failed, retrying in 5 seconds..."
-              sleep 5
-            fi
-          done
+            if (!prNumber) {
+              console.log('No PR was created; nothing to merge');
+              return;
+            }
 
-          echo "Failed to push after $MAX_RETRIES attempts"
-          exit 1
+            const MAX_RETRIES = 10;
+            for (let i = 1; i <= MAX_RETRIES; i += 1) {
+              try {
+                await github.rest.pulls.merge({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  pull_number: prNumber,
+                  merge_method: 'squash'
+                });
+                console.log('Merged automation PR #' + prNumber);
+                return;
+              } catch (e) {
+                console.log('Merge attempt ' + i + ' failed: ' + e.message);
+                if (e.status === 409) {
+                  try {
+                    await github.rest.pulls.updateBranch({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      pull_number: prNumber
+                    });
+                    console.log('Requested branch update for PR #' + prNumber);
+                  } catch (updateErr) {
+                    console.log('Could not update branch: ' + updateErr.message);
+                  }
+                }
+                if (i < MAX_RETRIES) {
+                  await sleep(2000);
+                }
+              }
+            }
+
+            throw new Error('Failed to merge automation PR #' + prNumber);
+        env:
+          PR_NUMBER: ${{ steps.commit-backlog.outputs.pull-request-number }}

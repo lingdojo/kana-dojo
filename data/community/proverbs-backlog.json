@@ -5,7 +5,7 @@
     "romaji": "Isseki nichou",
     "english": "One stone, two birds",
     "meaning": "Accomplishing two things with one action",
-    "issued": false
+    "issued": true
   },
   {
     "id": 2,
@@ -13,7 +13,7 @@
     "romaji": "Hana yori dango",
     "english": "Dumplings over flowers",
     "meaning": "Practical things are more valuable than aesthetic ones",
-    "issued": false
+    "issued": true
   },
   {
     "id": 3,

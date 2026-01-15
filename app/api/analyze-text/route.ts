@@ -84,7 +84,10 @@ async function getKuroshiro(): Promise<KuroshiroInstance> {
   }
 
   const [{ default: Kuroshiro }, { default: KuromojiAnalyzer }] =
-    await Promise.all([import('kuroshiro'), import('kuroshiro-analyzer-kuromoji')]);
+    await Promise.all([
+      import('kuroshiro'),
+      import('kuroshiro-analyzer-kuromoji')
+    ]);
 
   const kuroshiro = new Kuroshiro();
   const analyzer = new KuromojiAnalyzer();
@@ -107,22 +110,22 @@ function katakanaToHiragana(katakana: string): string {
 /**
  * Get simplified POS tag (more readable)
  */
-function getSimplifiedPOS(pos: string, posDetail1: string): string {
+function getSimplifiedPOS(pos: string, _posDetail1: string): string {
   const posMap: Record<string, string> = {
-    '名詞': 'Noun',
-    '動詞': 'Verb',
-    '形容詞': 'Adjective',
-    '形容動詞': 'Na-adjective',
-    '副詞': 'Adverb',
-    '助詞': 'Particle',
-    '助動詞': 'Auxiliary',
-    '接続詞': 'Conjunction',
-    '連体詞': 'Pre-noun',
-    '感動詞': 'Interjection',
-    '記号': 'Symbol',
-    'フィラー': 'Filler',
-    '接頭詞': 'Prefix',
-    '接尾辞': 'Suffix'
+    名詞: 'Noun',
+    動詞: 'Verb',
+    形容詞: 'Adjective',
+    形容動詞: 'Na-adjective',
+    副詞: 'Adverb',
+    助詞: 'Particle',
+    助動詞: 'Auxiliary',
+    接続詞: 'Conjunction',
+    連体詞: 'Pre-noun',
+    感動詞: 'Interjection',
+    記号: 'Symbol',
+    フィラー: 'Filler',
+    接頭詞: 'Prefix',
+    接尾辞: 'Suffix'
   };
 
   return posMap[pos] || pos;
