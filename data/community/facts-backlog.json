@@ -56,7 +56,7 @@
   {
     "id": 11,
     "fact": "Japan's postal system has a special service where you can mail a letter to your future self, and they'll deliver it years later on the date you specify.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 12,
