@@ -6,8 +6,13 @@ on:
 
 permissions:
   issues: write
-  pull-requests: read
-  contents: read
+  pull-requests: write
+  contents: write
+
+# Prevent overlapping runs for the same PR
+concurrency:
+  group: community-data-updates
+  cancel-in-progress: false
 
 jobs:
   close-issue:
@@ -17,14 +22,22 @@ jobs:
     steps:
       - name: Checkout for templates
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Find and close related issue
+        id: close-issue
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
+            const fs = require('fs');
             const templates = require('./.github/templates/messages.cjs');
             const t = templates.prMerge.issueComment;
+
+            const themeBacklogPath = 'data/community/theme-backlog.json';
+            const factsBacklogPath = 'data/community/facts-backlog.json';
+            const proverbsBacklogPath = 'data/community/proverbs-backlog.json';
 
             const prTitle = context.payload.pull_request.title;
             const prTitleLower = prTitle.toLowerCase();
@@ -33,31 +46,34 @@ jobs:
             const prAuthor = context.payload.pull_request.user.login;
 
             const isThemeContribution = prTitleLower.includes('theme');
-            const isFactContribution = prTitleLower.includes('fact');
+            const isFactContribution = prTitleLower.includes('fact') && !prTitleLower.includes('proverb');
+            const isProverbContribution = prTitleLower.includes('proverb');
 
-            if (!isThemeContribution && !isFactContribution) {
+            if (!isThemeContribution && !isFactContribution && !isProverbContribution) {
               console.log('Not a community contribution PR, skipping');
+              core.setOutput('should_commit', 'false');
               return;
             }
 
-            const issueMatch = prBody.match(/[Cc]loses?\s*#(\d+)|[Ff]ixes?\s*#(\d+)/);
+            const issueMatch = prBody.match(/[Cc]loses?\s*#(\d+)|[Ff]ixes?\s*#(\d+)|[Rr]esolves?\s*#(\d+)/);
             let targetIssue = null;
 
             if (issueMatch) {
-              targetIssue = parseInt(issueMatch[1] || issueMatch[2]);
+              targetIssue = parseInt(issueMatch[1] || issueMatch[2] || issueMatch[3]);
               console.log('Found linked issue in PR body: #' + targetIssue);
             }
 
             if (!targetIssue) {
               console.log('No issue linked, searching for matching issue...');
-              
-              const { data: issues } = await github.rest.issues.listForRepo({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                labels: templates.labels.community,
-                state: 'open',
-                per_page: 100
-              });
+
+              async function searchOpenCommunityIssues(query) {
+                const q = query + ' repo:' + context.repo.owner + '/' + context.repo.repo + ' is:issue is:open label:' + templates.labels.community;
+                const res = await github.rest.search.issuesAndPullRequests({
+                  q: q,
+                  per_page: 10
+                });
+                return res.data.items || [];
+              }
               
               if (isThemeContribution) {
                 let themeName = null;
@@ -77,33 +93,50 @@ jobs:
                 
                 if (themeName) {
                   console.log('Looking for theme issue: ' + themeName);
-                  for (const issue of issues) {
-                    if (issue.title.includes('Add Theme:') && 
-                        issue.title.toLowerCase().includes(themeName.toLowerCase())) {
-                      targetIssue = issue.number;
-                      console.log('Found matching theme issue: #' + targetIssue);
-                      break;
-                    }
+                  const matches = await searchOpenCommunityIssues('"Add New Color Theme:" "' + themeName + '"');
+                  if (matches.length > 0) {
+                    targetIssue = matches[0].number;
+                    console.log('Found matching theme issue: #' + targetIssue);
                   }
                 }
               } else if (isFactContribution) {
                 const factIdMatch = prTitle.match(/#(\d+)/);
-                if (factIdMatch) {
-                  const factId = factIdMatch[1];
+                const factId = factIdMatch ? factIdMatch[1] : null;
+                if (factId) {
                   console.log('Looking for fact issue: #' + factId);
-                  for (const issue of issues) {
-                    if (issue.title.includes('Add Japan Fact #' + factId)) {
-                      targetIssue = issue.number;
-                      console.log('Found matching fact issue: #' + targetIssue);
-                      break;
-                    }
+                  const matches = await searchOpenCommunityIssues('"Add Japan Fact #' + factId + '"');
+                  if (matches.length > 0) {
+                    targetIssue = matches[0].number;
+                    console.log('Found matching fact issue: #' + targetIssue);
+                  }
+                }
+              } else if (isProverbContribution) {
+                const proverbIdMatch = prTitle.match(/#(\d+)/);
+                const proverbId = proverbIdMatch ? proverbIdMatch[1] : null;
+                if (proverbId) {
+                  console.log('Looking for proverb issue: #' + proverbId);
+                  const matches = await searchOpenCommunityIssues('"Add Japanese Proverb #' + proverbId + '"');
+                  if (matches.length > 0) {
+                    targetIssue = matches[0].number;
+                    console.log('Found matching proverb issue: #' + targetIssue);
                   }
                 }
               }
             }
 
+            let needsCommit = false;
+
             if (targetIssue) {
               try {
+                const { data: issueData } = await github.rest.issues.get({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: targetIssue
+                });
+
+                const issueTitle = issueData.title || '';
+                const issueTitleLower = issueTitle.toLowerCase();
+
                 await github.rest.issues.createComment({
                   owner: context.repo.owner,
                   repo: context.repo.repo,
@@ -123,9 +156,151 @@ jobs:
                 });
                 
                 console.log('Successfully closed issue #' + targetIssue);
+                
+                // Mark the item as permanently completed in the backlog
+                if (isThemeContribution) {
+                  const themes = JSON.parse(fs.readFileSync(themeBacklogPath, 'utf8'));
+                  // Prefer extracting theme name from the issue title
+                  let themeName = null;
+
+                  const issueThemeMatch = issueTitle.match(/Add New Color Theme:\s*(.+?)(?:\s*\(|$)/i);
+                  if (issueThemeMatch) {
+                    themeName = issueThemeMatch[1].trim();
+                  }
+
+                  // Fallback: try to find theme by PR title
+                  const patterns = [
+                    /add\s+(.+?)\s+theme/i,
+                    /theme[:\s]+(.+)/i,
+                    /feat\(theme\)[:\s]+add\s+(.+)/i
+                  ];
+                  for (const pattern of patterns) {
+                    const match = prTitle.match(pattern);
+                    if (match) {
+                      themeName = match[1].trim().replace(/theme$/i, '').trim();
+                      break;
+                    }
+                  }
+                  if (themeName) {
+                    const themeIndex = themes.findIndex(function(th) {
+                      return th.name.toLowerCase() === themeName.toLowerCase();
+                    });
+                    if (themeIndex !== -1) {
+                      themes[themeIndex].completed = true;
+                      themes[themeIndex].completedBy = prAuthor;
+                      themes[themeIndex].completedPR = prNumber;
+                      fs.writeFileSync(themeBacklogPath, JSON.stringify(themes, null, 2));
+                      needsCommit = true;
+                      console.log('Marked theme "' + themeName + '" as completed');
+                    }
+                  }
+                } else if (isFactContribution) {
+                  const facts = JSON.parse(fs.readFileSync(factsBacklogPath, 'utf8'));
+                  const issueFactMatch = issueTitle.match(/Add Japan Fact\s*#(\d+)/i);
+                  const prFactMatch = prTitle.match(/#(\d+)/);
+                  const factId = issueFactMatch ? parseInt(issueFactMatch[1]) : (prFactMatch ? parseInt(prFactMatch[1]) : null);
+
+                  if (factId !== null) {
+                    const factIndex = facts.findIndex(function(f) { return f.id === factId; });
+                    if (factIndex !== -1) {
+                      facts[factIndex].completed = true;
+                      facts[factIndex].completedBy = prAuthor;
+                      facts[factIndex].completedPR = prNumber;
+                      fs.writeFileSync(factsBacklogPath, JSON.stringify(facts, null, 2));
+                      needsCommit = true;
+                      console.log('Marked fact #' + factId + ' as completed');
+                    }
+                  }
+                } else if (isProverbContribution) {
+                  const proverbs = JSON.parse(fs.readFileSync(proverbsBacklogPath, 'utf8'));
+                  const issueProverbMatch = issueTitle.match(/Add Japanese Proverb\s*#(\d+)/i);
+                  const prProverbMatch = prTitle.match(/#(\d+)/);
+                  const proverbId = issueProverbMatch ? parseInt(issueProverbMatch[1]) : (prProverbMatch ? parseInt(prProverbMatch[1]) : null);
+
+                  if (proverbId !== null) {
+                    const proverbIndex = proverbs.findIndex(function(p) { return p.id === proverbId; });
+                    if (proverbIndex !== -1) {
+                      proverbs[proverbIndex].completed = true;
+                      proverbs[proverbIndex].completedBy = prAuthor;
+                      proverbs[proverbIndex].completedPR = prNumber;
+                      fs.writeFileSync(proverbsBacklogPath, JSON.stringify(proverbs, null, 2));
+                      needsCommit = true;
+                      console.log('Marked proverb #' + proverbId + ' as completed');
+                    }
+                  }
+                }
               } catch (e) {
                 console.log('Error closing issue: ' + e.message);
               }
             } else {
               console.log('No matching issue found to close');
             }
+
+            core.setOutput('should_commit', needsCommit ? 'true' : 'false');
+
+      - name: Create PR for completion updates
+        id: commit-backlog
+        if: steps.close-issue.outputs.should_commit == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.AUTOMATION_PR_TOKEN }}
+          add-paths: |
+            data/community/
+          commit-message: 'chore(automation): mark contribution as completed'
+          branch: automation/community-data/completed-${{ github.run_id }}
+          title: 'chore(automation): update community backlog'
+          body: Automated update to community backlog state.
+          base: main
+          delete-branch: true
+
+      - name: Auto-approve and merge automation PR
+        if: steps.close-issue.outputs.should_commit == 'true'
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.AUTOMATION_PR_TOKEN }}
+          script: |
+            const prNumber = Number(process.env.PR_NUMBER);
+
+            async function sleep(ms) {
+              return new Promise(function(resolve) { setTimeout(resolve, ms); });
+            }
+
+            if (!prNumber) {
+              console.log('No PR was created; nothing to merge');
+              return;
+            }
+
+            const MAX_RETRIES = 10;
+            for (let i = 1; i <= MAX_RETRIES; i += 1) {
+              try {
+                await github.rest.pulls.merge({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  pull_number: prNumber,
+                  merge_method: 'squash'
+                });
+                console.log('Merged automation PR #' + prNumber);
+                return;
+              } catch (e) {
+                console.log('Merge attempt ' + i + ' failed: ' + e.message);
+                if (e.status === 409) {
+                  try {
+                    await github.rest.pulls.updateBranch({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      pull_number: prNumber
+                    });
+                    console.log('Requested branch update for PR #' + prNumber);
+                  } catch (updateErr) {
+                    console.log('Could not update branch: ' + updateErr.message);
+                  }
+                }
+                if (i < MAX_RETRIES) {
+                  await sleep(2000);
+                }
+              }
+            }
+
+            throw new Error('Failed to merge automation PR #' + prNumber);
+        env:
+          PR_NUMBER: ${{ steps.commit-backlog.outputs.pull-request-number }}

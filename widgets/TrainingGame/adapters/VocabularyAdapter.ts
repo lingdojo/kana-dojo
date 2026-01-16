@@ -1,4 +1,5 @@
 import type { IVocabObj } from '@/features/Vocabulary/store/useVocabStore';
+import { shuffle } from '@/shared/lib/shuffle';
 import type { ContentAdapter, GameMode } from './ContentAdapter';
 
 /**
@@ -37,9 +38,8 @@ export const vocabularyAdapter: ContentAdapter<IVocabObj> = {
       .filter((value, index, self) => self.indexOf(value) === index)
       .slice(0, count - 1);
 
-    // Combine and shuffle
-    const allOptions = [correct, ...wrongOptions];
-    return allOptions.sort(() => Math.random() - 0.5);
+    // Combine and shuffle (using secure random)
+    return shuffle([correct, ...wrongOptions]);
   },
 
   validateAnswer(

@@ -1,0 +1,73 @@
+version: 2
+updates:
+  # Enable version updates for npm
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+      day: 'monday'
+      time: '09:00'
+      timezone: 'UTC'
+    open-pull-requests-limit: 10
+    labels:
+      - 'dependencies'
+      - 'npm'
+    commit-message:
+      prefix: 'chore(deps)'
+      prefix-development: 'chore(deps-dev)'
+      include: 'scope'
+    groups:
+      # Group all patch updates together
+      patch-dependencies:
+        applies-to: version-updates
+        patterns:
+          - '*'
+        update-types:
+          - 'patch'
+      # Group minor updates for non-major changes
+      minor-dependencies:
+        applies-to: version-updates
+        patterns:
+          - '*'
+        update-types:
+          - 'minor'
+    # Ignore specific versions if needed
+    ignore:
+      - dependency-name: 'node'
+        versions: ['>=21.0.0']
+    # Allow these to automatically merge
+    automerged:
+      - dependency-type: 'development'
+        update-types: ['patch']
+      - dependency-type: 'production'
+        update-types: ['patch']
+
+  # Enable version updates for GitHub Actions
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+      day: 'monday'
+    labels:
+      - 'dependencies'
+      - 'github-actions'
+    commit-message:
+      prefix: 'chore(ci)'
+    # Auto-merge minor/patch action updates
+    automerged:
+      - dependency-type: 'production'
+        update-types: ['patch', 'minor']
+
+  # Security updates for npm
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'daily'
+    labels:
+      - 'security'
+      - 'npm'
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: 'fix(deps)'
+    # Always create security PRs immediately
+    # Don't wait for weekly schedule

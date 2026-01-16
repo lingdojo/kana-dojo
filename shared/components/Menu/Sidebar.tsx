@@ -201,6 +201,12 @@ const Sidebar = () => {
     });
   }, []);
 
+  useEffect(() => {
+    if (pathWithoutLocale.startsWith('/experiments')) {
+      setIsExperimentsExpanded(true);
+    }
+  }, [pathWithoutLocale]);
+
   // Build secondary nav sections with lazy-loaded experiments
   const secondaryNavSections: NavSection[] = [
     ...staticSecondaryNavSections,

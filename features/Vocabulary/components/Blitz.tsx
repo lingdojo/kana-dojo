@@ -8,6 +8,7 @@ import { useStatsStore } from '@/features/Progress';
 import Blitz, { type BlitzConfig } from '@/shared/components/Blitz';
 import FuriganaText from '@/shared/components/text/FuriganaText';
 import { getSelectionLabels } from '@/shared/lib/selectionFormatting';
+import { shuffle, pickOne } from '@/shared/lib/shuffle';
 
 export default function BlitzVocab() {
   const selectedVocabObjs = useVocabStore(state => state.selectedVocabObjs);
@@ -38,7 +39,7 @@ export default function BlitzVocab() {
     initialGameMode: selectedGameModeVocab === 'Type' ? 'Type' : 'Pick',
     items: selectedVocabObjs,
     selectedSets: formattedSets,
-    generateQuestion: items => items[Math.floor(Math.random() * items.length)],
+    generateQuestion: items => pickOne(items)!,
     // Reverse mode: show meaning, answer is Japanese word
     // Normal mode: show Japanese word, answer is meaning
     renderQuestion: (question, isReverse) =>
@@ -66,18 +67,18 @@ export default function BlitzVocab() {
       if (isReverse) {
         // Reverse: options are Japanese words
         const correctAnswer = question.word;
-        const incorrectOptions = items
-          .filter(item => item.word !== question.word)
-          .sort(() => Math.random() - 0.5)
+        const incorrectOptions = shuffle(
+          items.filter(item => item.word !== question.word)
+        )
           .slice(0, count - 1)
           .map(item => item.word);
         return [correctAnswer, ...incorrectOptions];
       }
       // Normal: options are meanings
       const correctAnswer = question.meanings[0];
-      const incorrectOptions = items
-        .filter(item => item.word !== question.word)
-        .sort(() => Math.random() - 0.5)
+      const incorrectOptions = shuffle(
+        items.filter(item => item.word !== question.word)
+      )
         .slice(0, count - 1)
         .map(item => item.meanings[0]);
       return [correctAnswer, ...incorrectOptions];

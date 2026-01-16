@@ -11,6 +11,7 @@ permissions:
 jobs:
   welcome:
     runs-on: ubuntu-latest
+    if: ${{ !startsWith(github.event.pull_request.head.ref, 'automation/') }}
 
     steps:
       - name: Checkout for templates
@@ -29,11 +30,29 @@ jobs:
 
             let isFirstTime = false;
             try {
-              const { data: contributions } = await github.rest.repos.listContributors({
-                owner: context.repo.owner,
-                repo: context.repo.repo
-              });
-              isFirstTime = !contributions.some(function(c) { return c.login === author; });
+              let found = false;
+              let page = 1;
+              const MAX_PAGES = 10;
+              while (page <= MAX_PAGES) {
+                const { data: contributions } = await github.rest.repos.listContributors({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  per_page: 100,
+                  page: page
+                });
+                if (!contributions || contributions.length === 0) {
+                  break;
+                }
+                found = contributions.some(function(c) { return c.login === author; });
+                if (found) {
+                  break;
+                }
+                if (contributions.length < 100) {
+                  break;
+                }
+                page += 1;
+              }
+              isFirstTime = !found;
             } catch (e) {
               console.log('Could not fetch contributors list: ' + e.message);
             }

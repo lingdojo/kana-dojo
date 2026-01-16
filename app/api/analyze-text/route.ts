@@ -1,4 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
+import {
+  getAnalyzeRateLimiter,
+  getClientIP,
+  createRateLimitHeaders
+} from '@/shared/lib/rateLimit';
 
 // Type for kuromoji token
 interface KuromojiToken {
@@ -31,15 +36,32 @@ const analysisCache = new Map<
 >();
 const CACHE_TTL = 1000 * 60 * 60; // 1 hour
 const MAX_CACHE_SIZE = 200;
+const CLEANUP_INTERVAL = 1000 * 60 * 5; // Cleanup every 5 minutes
+let lastCleanupTime = 0;
 
+/**
+ * Clean up expired cache entries
+ * Runs periodically and when cache exceeds max size
+ */
 function cleanupCache() {
-  if (analysisCache.size > MAX_CACHE_SIZE) {
-    const now = Date.now();
+  const now = Date.now();
+
+  // Run TTL cleanup periodically
+  if (now - lastCleanupTime > CLEANUP_INTERVAL) {
+    lastCleanupTime = now;
     for (const [key, value] of analysisCache) {
       if (now - value.timestamp > CACHE_TTL) {
         analysisCache.delete(key);
       }
     }
+  }
+
+  // If still too large, remove oldest entries (LRU-style eviction)
+  if (analysisCache.size > MAX_CACHE_SIZE) {
+    const entries = Array.from(analysisCache.entries());
+    entries.sort((a, b) => a[1].timestamp - b[1].timestamp);
+    const toRemove = entries.slice(0, entries.length - MAX_CACHE_SIZE / 2);
+    toRemove.forEach(([key]) => analysisCache.delete(key));
   }
 }
 
@@ -62,7 +84,10 @@ async function getKuroshiro(): Promise<KuroshiroInstance> {
   }
 
   const [{ default: Kuroshiro }, { default: KuromojiAnalyzer }] =
-    await Promise.all([import('kuroshiro'), import('kuroshiro-analyzer-kuromoji')]);
+    await Promise.all([
+      import('kuroshiro'),
+      import('kuroshiro-analyzer-kuromoji')
+    ]);
 
   const kuroshiro = new Kuroshiro();
   const analyzer = new KuromojiAnalyzer();
@@ -85,22 +110,22 @@ function katakanaToHiragana(katakana: string): string {
 /**
  * Get simplified POS tag (more readable)
  */
-function getSimplifiedPOS(pos: string, posDetail1: string): string {
+function getSimplifiedPOS(pos: string, _posDetail1: string): string {
   const posMap: Record<string, string> = {
-    '名詞': 'Noun',
-    '動詞': 'Verb',
-    '形容詞': 'Adjective',
-    '形容動詞': 'Na-adjective',
-    '副詞': 'Adverb',
-    '助詞': 'Particle',
-    '助動詞': 'Auxiliary',
-    '接続詞': 'Conjunction',
-    '連体詞': 'Pre-noun',
-    '感動詞': 'Interjection',
-    '記号': 'Symbol',
-    'フィラー': 'Filler',
-    '接頭詞': 'Prefix',
-    '接尾辞': 'Suffix'
+    名詞: 'Noun',
+    動詞: 'Verb',
+    形容詞: 'Adjective',
+    形容動詞: 'Na-adjective',
+    副詞: 'Adverb',
+    助詞: 'Particle',
+    助動詞: 'Auxiliary',
+    接続詞: 'Conjunction',
+    連体詞: 'Pre-noun',
+    感動詞: 'Interjection',
+    記号: 'Symbol',
+    フィラー: 'Filler',
+    接頭詞: 'Prefix',
+    接尾辞: 'Suffix'
   };
 
   return posMap[pos] || pos;
@@ -133,6 +158,34 @@ function getPOSDetail(token: KuromojiToken): string {
  * Analyzes Japanese text using Kuromoji to extract word-by-word information
  */
 export async function POST(request: NextRequest) {
+  // Rate limiting check - protect against abuse
+  const clientIP = getClientIP(request);
+  const rateLimiter = getAnalyzeRateLimiter();
+  const rateLimitResult = rateLimiter.check(clientIP);
+
+  if (!rateLimitResult.allowed) {
+    const headers = createRateLimitHeaders(rateLimitResult);
+
+    let message: string;
+    if (rateLimitResult.reason === 'daily_quota') {
+      message = 'Daily analysis limit reached. Please try again tomorrow.';
+    } else if (rateLimitResult.reason === 'global_limit') {
+      message =
+        'Service is experiencing high demand. Please try again in a moment.';
+    } else {
+      message = `Too many requests. Please wait ${rateLimitResult.retryAfter} seconds.`;
+    }
+
+    return NextResponse.json(
+      {
+        error: message,
+        code: 'RATE_LIMIT',
+        retryAfter: rateLimitResult.retryAfter
+      },
+      { status: 429, headers }
+    );
+  }
+
   try {
     const body = await request.json();
     const { text } = body as { text: string };
@@ -155,7 +208,15 @@ export async function POST(request: NextRequest) {
     // Check cache
     const cached = analysisCache.get(text);
     if (cached && Date.now() - cached.timestamp < CACHE_TTL) {
-      return NextResponse.json({ tokens: cached.tokens, cached: true });
+      const rateLimitHeaders = createRateLimitHeaders(rateLimitResult);
+      const response = NextResponse.json({
+        tokens: cached.tokens,
+        cached: true
+      });
+      rateLimitHeaders.forEach((value, key) => {
+        response.headers.set(key, value);
+      });
+      return response;
     }
 
     // Get kuroshiro instance with kuromoji
@@ -180,7 +241,12 @@ export async function POST(request: NextRequest) {
     });
     cleanupCache();
 
-    return NextResponse.json({ tokens: analyzedTokens });
+    const rateLimitHeaders = createRateLimitHeaders(rateLimitResult);
+    const response = NextResponse.json({ tokens: analyzedTokens });
+    rateLimitHeaders.forEach((value, key) => {
+      response.headers.set(key, value);
+    });
+    return response;
   } catch (error) {
     console.error('Text analysis error:', error);
     return NextResponse.json(

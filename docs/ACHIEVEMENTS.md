@@ -4,7 +4,37 @@
 
 The Achievement System is a comprehensive gamification feature that tracks user milestones, learning streaks, and consistency, rewarding users with badges, themes, and visual celebrations. The system includes **80+ achievements** across **12 categories**, providing players with diverse goals to work toward.
 
-## Features
+## 📋 Table of Contents
+
+- [Overview](#overview)
+- [Achievement Categories](#-achievement-categories)
+- [Achievement List by Category](#achievement-list-by-category)
+  - [Streak Achievements](#-streak-achievements)
+  - [Milestone Achievements](#-milestone-achievements)
+  - [Consistency Achievements](#-consistency-achievements)
+  - [Mastery Achievements](#-mastery-achievements)
+  - [Exploration Achievements](#-exploration-achievements)
+- [Content-Specific Achievements](#content-specific-achievements)
+  - [Kana Achievements](#-kana-achievements)
+  - [Kanji Achievements](#-kanji-achievements)
+  - [Vocabulary Achievements](#-vocabulary-achievements)
+- [Game Mode Achievements](#game-mode-achievements)
+  - [Gauntlet Achievements](#-gauntlet-achievements)
+  - [Blitz Achievements](#-blitz-achievements)
+  - [Speed Achievements](#-speed-achievements)
+- [Fun \& Secret Achievements](#-fun--secret-achievements)
+- [Rarity System](#-rarity-system)
+- [Achievements by Difficulty](#achievements-by-difficulty)
+- [Celebration System](#-celebration-system)
+- [Points \& Leveling](#-points--leveling)
+- [Technical Implementation](#technical-implementation)
+- [Usage](#usage)
+- [File Structure](#file-structure)
+- [Best Practices](#best-practices)
+- [Troubleshooting](#troubleshooting)
+- [Contributing](#contributing)
+
+---
 
 ### 🏆 Achievement Categories
 
@@ -241,7 +271,140 @@ Achievements are categorized by rarity levels:
 
 ---
 
-## 🎉 Celebration System
+## 🎯 Achievements by Difficulty
+
+This section groups achievements by their rarity/difficulty level, making it easier to find challenges appropriate for your skill level.
+
+### 🟢 Common Achievements (Easiest)
+
+Basic milestones that most players can achieve early in their journey.
+
+| Achievement                | Category    | Points | Requirement                               |
+| -------------------------- | ----------- | ------ | ----------------------------------------- |
+| **First Steps**            | Milestone   | 10     | Get your first correct answer             |
+| **Learning from Mistakes** | Fun         | 10     | Answer your first question wrong          |
+| **Streak Starter**         | Streak      | 25     | Achieve a 5-answer streak                 |
+| **Dedicated Learner**      | Consistency | 75     | Complete 10 training sessions             |
+| **Consistent Learner**     | Exploration | 75     | Train on 5 different days                 |
+| **Hiragana Apprentice**    | Kana        | 50     | Answer 50 Hiragana questions correctly    |
+| **Katakana Apprentice**    | Kana        | 50     | Answer 50 Katakana questions correctly    |
+| **Gauntlet Initiate**      | Gauntlet    | 50     | Complete your first Gauntlet run          |
+| **Speed Demon Initiate**   | Blitz       | 50     | Complete your first Blitz session         |
+| **N5 Explorer**            | Kanji       | 75     | Answer 100 N5 Kanji questions correctly   |
+| **Word Collector**         | Vocabulary  | 75     | Answer 100 vocabulary questions correctly |
+
+### 🟢 Uncommon Achievements (Easy)
+
+Regular progress markers that reward consistent practice.
+
+| Achievement            | Category    | Points | Requirement                                  |
+| ---------------------- | ----------- | ------ | -------------------------------------------- |
+| **Hot Streak**         | Streak      | 50     | Achieve a 10-answer streak                   |
+| **Century Scholar**    | Milestone   | 100    | Answer 100 questions correctly               |
+| **Point Collector**    | Milestone   | 100    | Earn 1000 achievement points                 |
+| **Persistent Student** | Consistency | 200    | Complete 50 training sessions                |
+| **Well-Rounded**       | Exploration | 100    | Train in all three dojos                     |
+| **Mode Explorer**      | Exploration | 100    | Try all four game modes                      |
+| **Precision Novice**   | Mastery     | 100    | Maintain 80% accuracy over 50 answers        |
+| **Hiragana Adept**     | Kana        | 150    | Answer 200 Hiragana questions correctly      |
+| **Katakana Adept**     | Kana        | 150    | Answer 200 Katakana questions correctly      |
+| **N4 Explorer**        | Kanji       | 100    | Answer 100 N4 Kanji questions correctly      |
+| **Gauntlet Survivor**  | Gauntlet    | 100    | Complete a Gauntlet run on Normal difficulty |
+| **Gauntlet Veteran**   | Gauntlet    | 150    | Complete 10 Gauntlet runs                    |
+| **Blitz Warrior**      | Blitz       | 150    | Answer 50 questions correctly in Blitz       |
+| **Speed Addict**       | Blitz       | 100    | Complete 10 Blitz sessions                   |
+| **Quick Draw**         | Speed       | 100    | Answer 10 questions correctly in 30 seconds  |
+| **Perseverance**       | Fun         | 50     | Get 5 wrong answers in a row                 |
+| **Night Owl**          | Fun         | 75     | Train at midnight (00:00-01:00)              |
+| **Early Bird**         | Fun         | 75     | Train early morning (05:00-06:00)            |
+| **Achievement Hunter** | Fun         | 100    | Unlock 10 achievements                       |
+
+### 🔵 Rare Achievements (Medium)
+
+Significant accomplishments that require dedicated practice.
+
+| Achievement               | Category    | Points | Requirement                                    |
+| ------------------------- | ----------- | ------ | ---------------------------------------------- |
+| **Streak Legend**         | Streak      | 150    | Achieve a 25-answer streak                     |
+| **Knowledge Seeker**      | Milestone   | 250    | Answer 500 questions correctly                 |
+| **Dedicated Scholar**     | Milestone   | 350    | Answer 2500 questions correctly                |
+| **Point Hoarder**         | Milestone   | 250    | Earn 5000 achievement points                   |
+| **Training Master**       | Consistency | 400    | Complete 100 training sessions                 |
+| **Session Veteran**       | Consistency | 400    | Complete 250 training sessions                 |
+| **Accuracy Expert**       | Mastery     | 250    | Maintain 90% accuracy over 100 answers         |
+| **Monthly Dedication**    | Exploration | 300    | Train on 30 different days                     |
+| **Triple Threat**         | Exploration | 200    | Complete sessions in 3 game modes              |
+| **Hiragana Master**       | Kana        | 300    | Answer 500 Hiragana questions correctly        |
+| **Katakana Master**       | Kana        | 300    | Answer 500 Katakana questions correctly        |
+| **N3 Explorer**           | Kanji       | 150    | Answer 100 N3 Kanji questions correctly        |
+| **N5 Graduate**           | Kanji       | 400    | Master all N5 Kanji with 80% accuracy          |
+| **Lexicon Builder**       | Vocabulary  | 200    | Answer 500 vocabulary questions correctly      |
+| **Word Wizard**           | Vocabulary  | 350    | Master 50 unique vocabulary words (90% acc)    |
+| **Gauntlet Warrior**      | Gauntlet    | 250    | Complete a Gauntlet run on Hard difficulty     |
+| **Phoenix Rising**        | Gauntlet    | 200    | Regenerate 5 lives in a single Gauntlet run    |
+| **Blitz Champion**        | Blitz       | 300    | Answer 100 questions correctly in Blitz        |
+| **Lightning Reflexes**    | Blitz       | 200    | Achieve a 25-streak in Blitz mode              |
+| **Speed Reader**          | Speed       | 200    | Answer 25 questions correctly in 60 seconds    |
+| **Instant Recognition**   | Speed       | 150    | Answer a question correctly in under 1 second  |
+| **Efficient Learner**     | Speed       | 250    | Complete session in 5 min with 90% accuracy    |
+| **Answer to Everything**  | Fun         | 142    | Achieve exactly 42 correct answers in session  |
+| **Perfect Century**       | Fun         | 200    | Achieve exactly 100 correct answers in session |
+| **Achievement Collector** | Fun         | 250    | Unlock 25 achievements                         |
+
+### 🟣 Epic Achievements (Hard)
+
+Major achievements that require significant dedication.
+
+| Achievement                  | Category    | Points | Requirement                                      |
+| ---------------------------- | ----------- | ------ | ------------------------------------------------ |
+| **Unstoppable**              | Streak      | 300    | Achieve a 50-answer streak                       |
+| **Streak Warrior**           | Streak      | 400    | Achieve a 75-answer streak                       |
+| **Century Streak**           | Streak      | 600    | Achieve a 100-answer streak                      |
+| **Master Scholar**           | Milestone   | 500    | Answer 1000 questions correctly                  |
+| **Point Master**             | Milestone   | 500    | Earn 10000 achievement points                    |
+| **Session Legend**           | Consistency | 700    | Complete 500 training sessions                   |
+| **Perfectionist**            | Mastery     | 500    | Maintain 95% accuracy over 200 answers           |
+| **Century of Learning**      | Exploration | 600    | Train on 100 different days                      |
+| **Hiragana Perfectionist**   | Kana        | 500    | Achieve 100% accuracy on all basic Hiragana      |
+| **Katakana Perfectionist**   | Kana        | 500    | Achieve 100% accuracy on all basic Katakana      |
+| **N2 Explorer**              | Kanji       | 200    | Answer 100 N2 Kanji questions correctly          |
+| **N4 Graduate**              | Kanji       | 500    | Master all N4 Kanji with 80% accuracy            |
+| **N3 Graduate**              | Kanji       | 600    | Master all N3 Kanji with 80% accuracy            |
+| **Dictionary Devotee**       | Vocabulary  | 400    | Answer 1000 vocabulary questions correctly       |
+| **Vocabulary Virtuoso**      | Vocabulary  | 750    | Answer 2500 vocabulary questions correctly       |
+| **Gauntlet Legend**          | Gauntlet    | 500    | Complete Gauntlet on Instant Death difficulty    |
+| **Gauntlet Champion**        | Gauntlet    | 400    | Complete 50 Gauntlet runs                        |
+| **Flawless Victory**         | Gauntlet    | 500    | Complete Gauntlet with 100% accuracy             |
+| **Untouchable**              | Gauntlet    | 300    | Complete Gauntlet without losing any lives       |
+| **Gauntlet Streak Master**   | Gauntlet    | 350    | Achieve a 50-streak in Gauntlet mode             |
+| **Blitz Legend**             | Blitz       | 400    | Achieve a 50-streak in Blitz mode                |
+| **Precision Under Pressure** | Blitz       | 350    | Maintain 90% accuracy over 100 Blitz answers     |
+| **Blitz Master**             | Blitz       | 400    | Complete 50 Blitz sessions                       |
+| **Rapid Fire**               | Speed       | 300    | Maintain avg response under 2s over 50 questions |
+| **Achievement Enthusiast**   | Fun         | 500    | Unlock 50 achievements                           |
+
+### 🟠 Legendary Achievements (Hardest)
+
+Exceptional feats that represent mastery of KanaDojo.
+
+| Achievement                | Category    | Points | Requirement                                       |
+| -------------------------- | ----------- | ------ | ------------------------------------------------- |
+| **Streak Titan**           | Streak      | 800    | Achieve a 150-answer streak                       |
+| **Streak Immortal**        | Streak      | 1000   | Achieve a 200-answer streak                       |
+| **Streak God**             | Streak      | 2000   | Achieve a 500-answer streak                       |
+| **Legendary Master**       | Milestone   | 1000   | Answer 5000 questions correctly                   |
+| **Grand Master**           | Milestone   | 1500   | Answer 10000 questions correctly                  |
+| **Legendary Scholar**      | Milestone   | 3000   | Answer 25000 questions correctly                  |
+| **Eternal Student**        | Consistency | 1200   | Complete 1000 training sessions                   |
+| **Year of Mastery**        | Exploration | 1500   | Train on 365 different days                       |
+| **N1 Explorer**            | Kanji       | 300    | Answer 100 N1 Kanji questions correctly           |
+| **N2 Graduate**            | Kanji       | 800    | Master all N2 Kanji with 80% accuracy             |
+| **N1 Graduate**            | Kanji       | 1000   | Master all N1 Kanji with 80% accuracy             |
+| **Linguistic Legend**      | Vocabulary  | 800    | Master 200 unique vocabulary words (90% accuracy) |
+| **Achievement Enthusiast** | Fun         | 500    | Unlock 50 achievements                            |
+| **Completionist**          | Fun         | 2000   | Unlock all achievements                           |
+
+---
 
 - **Confetti Animations** - Full-screen celebrations with rarity-specific colors
 - **Achievement Modals** - Beautiful modal displays with achievement details

@@ -12,6 +12,9 @@ const clientCache = new Map<
 const CLIENT_CACHE_TTL = 1000 * 60 * 30; // 30 minutes
 const MAX_CLIENT_CACHE_SIZE = 100;
 
+// Request deduplication: track in-flight requests to prevent duplicate API calls
+const pendingRequests = new Map<string, Promise<TranslationAPIResponse>>();
+
 function getClientCacheKey(
   text: string,
   source: Language,
@@ -124,8 +127,17 @@ export async function translate(
     return cached.response;
   }
 
-  try {
-    const fetchResponse = await fetch('/api/translate', {
+  // Request deduplication: if there's already a pending request for this text,
+  // wait for it instead of making a duplicate API call
+  const pendingRequest = pendingRequests.get(cacheKey);
+  if (pendingRequest) {
+    return pendingRequest;
+  }
+
+  // Create the actual request and track it
+  const requestPromise = (async (): Promise<TranslationAPIResponse> => {
+    try {
+      const fetchResponse = await fetch('/api/translate', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -188,5 +200,16 @@ export async function translate(
       status: 500
     };
     throw apiError;
+    }
+  })();
+
+  // Track this request so duplicate calls can wait for it
+  pendingRequests.set(cacheKey, requestPromise);
+
+  try {
+    return await requestPromise;
+  } finally {
+    // Clean up pending request tracking
+    pendingRequests.delete(cacheKey);
   }
 }

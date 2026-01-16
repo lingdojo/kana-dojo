@@ -6,6 +6,7 @@ import { generateKanaQuestion } from '@/features/Kana/lib/generateKanaQuestions'
 import type { KanaCharacter } from '@/features/Kana/lib/generateKanaQuestions';
 import { flattenKanaGroups } from '@/features/Kana/lib/flattenKanaGroup';
 import { getSelectionLabels } from '@/shared/lib/selectionFormatting';
+import { shuffle } from '@/shared/lib/shuffle';
 import Gauntlet, { type GauntletConfig } from '@/shared/components/Gauntlet';
 
 interface GauntletKanaProps {
@@ -49,17 +50,17 @@ const GauntletKana: React.FC<GauntletKanaProps> = ({ onCancel }) => {
     generateOptions: (question, items, count, isReverse) => {
       if (isReverse) {
         const correctAnswer = question.kana;
-        const incorrectOptions = items
-          .filter(item => item.kana !== correctAnswer)
-          .sort(() => Math.random() - 0.5)
+        const incorrectOptions = shuffle(
+          items.filter(item => item.kana !== correctAnswer)
+        )
           .slice(0, count - 1)
           .map(item => item.kana);
         return [correctAnswer, ...incorrectOptions];
       }
       const correctAnswer = question.romaji;
-      const incorrectOptions = items
-        .filter(item => item.romaji !== correctAnswer)
-        .sort(() => Math.random() - 0.5)
+      const incorrectOptions = shuffle(
+        items.filter(item => item.romaji !== correctAnswer)
+      )
         .slice(0, count - 1)
         .map(item => item.romaji);
       return [correctAnswer, ...incorrectOptions];

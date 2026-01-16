@@ -28,7 +28,9 @@
       "Edit",
       "Glob",
       "Grep",
-      "TodoWrite"
+      "TodoWrite",
+      "Bash(git rm:*)",
+      "Bash(rm:*)"
     ],
     "deny": [
       "Bash(git push --force:*)",

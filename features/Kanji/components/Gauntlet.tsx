@@ -6,9 +6,7 @@ import useKanjiStore, {
 } from '@/features/Kanji/store/useKanjiStore';
 import Gauntlet, { type GauntletConfig } from '@/shared/components/Gauntlet';
 import { getSelectionLabels } from '@/shared/lib/selectionFormatting';
-import { Random } from 'random-js';
-
-const random = new Random();
+import { shuffle, pickOne } from '@/shared/lib/shuffle';
 
 interface GauntletKanjiProps {
   onCancel?: () => void;
@@ -32,7 +30,7 @@ const GauntletKanji: React.FC<GauntletKanjiProps> = ({ onCancel }) => {
     initialGameMode: selectedGameModeKanji === 'Type' ? 'Type' : 'Pick',
     items: selectedKanjiObjs,
     selectedSets: formattedSets,
-    generateQuestion: items => items[random.integer(0, items.length - 1)],
+    generateQuestion: items => pickOne(items)!,
     // Reverse mode: show meaning, answer is kanji
     // Normal mode: show kanji, answer is meaning
     renderQuestion: (question, isReverse) =>
@@ -56,18 +54,18 @@ const GauntletKanji: React.FC<GauntletKanjiProps> = ({ onCancel }) => {
       if (isReverse) {
         // Reverse: options are kanji characters
         const correctAnswer = question.kanjiChar;
-        const incorrectOptions = items
-          .filter(item => item.kanjiChar !== question.kanjiChar)
-          .sort(() => Math.random() - 0.5)
+        const incorrectOptions = shuffle(
+          items.filter(item => item.kanjiChar !== question.kanjiChar)
+        )
           .slice(0, count - 1)
           .map(item => item.kanjiChar);
         return [correctAnswer, ...incorrectOptions];
       }
       // Normal: options are meanings
       const correctAnswer = question.meanings[0];
-      const incorrectOptions = items
-        .filter(item => item.kanjiChar !== question.kanjiChar)
-        .sort(() => Math.random() - 0.5)
+      const incorrectOptions = shuffle(
+        items.filter(item => item.kanjiChar !== question.kanjiChar)
+      )
         .slice(0, count - 1)
         .map(item => item.meanings[0]);
       return [correctAnswer, ...incorrectOptions];

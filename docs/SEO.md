@@ -4,6 +4,62 @@
 
 KanaDojo implements comprehensive SEO best practices to ensure maximum visibility in search engines and provide the best user experience.
 
+---
+
+## Quick Start for Developers
+
+When adding SEO to new pages, follow these steps:
+
+### Step 1: Import Metadata Type
+
+```typescript
+import type { Metadata } from 'next';
+```
+
+### Step 2: Export Metadata Object
+
+```typescript
+export const metadata: Metadata = {
+  title: 'Your Page Title - KanaDojo',
+  description: 'Your compelling description here (150-160 chars)',
+  keywords: ['keyword1', 'keyword2', 'keyword3'],
+  openGraph: {
+    title: 'Your Page Title',
+    description: 'Social media description',
+    url: 'https://kanadojo.com/your-page',
+    type: 'website'
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Your Page Title',
+    description: 'Twitter description'
+  },
+  alternates: {
+    canonical: 'https://kanadojo.com/your-page'
+  }
+};
+```
+
+### Step 3: Test Your Changes
+
+```bash
+npm run check    # TypeScript + ESLint
+npm run build    # Generate sitemap
+```
+
+### SEO Priority by Page Type
+
+| Page Type    | Priority | Changefreq | Notes            |
+| ------------ | -------- | ---------- | ---------------- |
+| Homepage     | 1.0      | daily      | Highest priority |
+| Main Dojos   | 0.9      | weekly     | Core features    |
+| Achievements | 0.7      | weekly     | User engagement  |
+| Progress     | 0.7      | weekly     | User tracking    |
+| Preferences  | 0.6      | monthly    | Settings         |
+| Legal Pages  | 0.5      | yearly     | Static content   |
+
+---
+
 ## Key SEO Features Implemented
 
 ### 1. Metadata Configuration
@@ -307,4 +363,4 @@ For SEO-related questions or suggestions:
 
 ---
 
-Last Updated: November 28, 2025
+Last Updated: January 2025

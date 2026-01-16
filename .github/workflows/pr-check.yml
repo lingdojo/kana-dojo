@@ -9,8 +9,10 @@ permissions:
   pull-requests: write
 
 jobs:
-  check:
+  lint:
     runs-on: ubuntu-latest
+    if: ${{ !startsWith(github.head_ref, 'automation/') }}
+    timeout-minutes: 10
 
     steps:
       - name: Checkout code
@@ -25,14 +27,79 @@ jobs:
       - name: Install dependencies
         run: npm ci || npm install
 
-      - name: Run checks
+      - name: Run linting
+        id: lint
+        run: |
+          npm run lint 2>&1 | tee lint_output.txt
+          echo "exit_code=${PIPESTATUS[0]}" >> $GITHUB_OUTPUT
+        continue-on-error: true
+
+      - name: Upload lint results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lint-results
+          path: lint_output.txt
+          retention-days: 1
+
+  typecheck:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci || npm install
+
+      - name: Run TypeScript check
+        id: typecheck
+        run: |
+          npx tsc --noEmit 2>&1 | tee tsc_output.txt
+          echo "exit_code=${PIPESTATUS[0]}" >> $GITHUB_OUTPUT
+        continue-on-error: true
+
+      - name: Upload typecheck results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: typecheck-results
+          path: tsc_output.txt
+          retention-days: 1
+
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    needs: [lint, typecheck]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci || npm install
+
+      - name: Run full check
         id: check
         run: |
           npm run check 2>&1 | tee check_output.txt
           echo "exit_code=${PIPESTATUS[0]}" >> $GITHUB_OUTPUT
         continue-on-error: true
 
-      - name: Comment on failure
+      - name: Combine results
         if: steps.check.outputs.exit_code != '0'
         uses: actions/github-script@v7
         with:
@@ -42,11 +109,22 @@ jobs:
             const templates = require('./.github/templates/messages.cjs');
             const t = templates.prCheck.failure;
 
-            const output = fs.readFileSync('check_output.txt', 'utf8');
+            // Collect results from parallel jobs
+            let combinedOutput = '';
+            const files = ['lint_output.txt', 'tsc_output.txt', 'check_output.txt'];
+            for (const file of files) {
+              if (fs.existsSync(file)) {
+                const content = fs.readFileSync(file, 'utf8');
+                if (content.trim()) {
+                  combinedOutput += `\n\n--- ${file} ---\n` + content;
+                }
+              }
+            }
+
             const maxLength = 60000;
-            let truncatedOutput = output.length > maxLength 
-              ? output.substring(0, maxLength) + '\n\n... (output truncated)'
-              : output;
+            let truncatedOutput = combinedOutput.length > maxLength 
+              ? combinedOutput.substring(0, maxLength) + '\n\n... (output truncated)'
+              : combinedOutput;
 
             const howToFix = t.howToFix.map(function(step, i) { 
               return (i + 1) + '. ' + step; 
@@ -79,11 +157,22 @@ jobs:
             const templates = require('./.github/templates/messages.cjs');
             const t = templates.prCheck.success;
 
-            const { data: comments } = await github.rest.issues.listComments({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: context.payload.pull_request.number
-            });
+            let comments = [];
+            let page = 1;
+            while (true) {
+              const { data: pageItems } = await github.rest.issues.listComments({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.pull_request.number,
+                per_page: 100,
+                page: page
+              });
+              comments = comments.concat(pageItems);
+              if (!pageItems || pageItems.length < 100) {
+                break;
+              }
+              page += 1;
+            }
 
             const hasSuccessComment = comments.some(function(c) {
               return c.user.login === 'github-actions[bot]' && 

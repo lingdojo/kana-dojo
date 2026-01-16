@@ -107,7 +107,22 @@ export function useVoiceInput({
 
     return () => {
       if (recognitionRef.current) {
-        recognitionRef.current.stop();
+        // Stop any ongoing recognition
+        try {
+          recognitionRef.current.stop();
+        } catch {
+          // Ignore errors when stopping (may not be started)
+        }
+        // Clear event listeners to prevent memory leaks
+        recognitionRef.current.onstart = null as unknown as () => void;
+        recognitionRef.current.onresult = null as unknown as (
+          e: SpeechRecognitionEvent
+        ) => void;
+        recognitionRef.current.onerror = null as unknown as (
+          e: SpeechRecognitionErrorEvent
+        ) => void;
+        recognitionRef.current.onend = null as unknown as () => void;
+        recognitionRef.current = null;
       }
     };
   }, [isSupported, language, onResult, onError]);

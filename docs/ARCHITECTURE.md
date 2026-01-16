@@ -784,6 +784,6 @@ To continue improving the architecture:
 
 ---
 
-**Last updated**: November 2024  
-**Architecture version**: 1.0.0  
+**Last updated**: January 2025
+**Architecture version**: 2.0.0 (Hybrid Modular)
 **Maintainers**: LingDojo Team

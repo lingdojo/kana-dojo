@@ -84,10 +84,10 @@ import { cn } from '@/lib/utils';
 
 #### 3. Reusable Style Constants
 
-Common patterns are extracted to `static/styles.ts`:
+Common patterns are extracted to `shared/lib/styles.ts`:
 
 ```typescript
-// static/styles.ts
+// shared/lib/styles.ts
 import clsx from 'clsx';
 
 export const cardBorderStyles = clsx('rounded-xl bg-[var(--card-color)]');
@@ -102,7 +102,7 @@ export const buttonBorderStyles = clsx(
 **Usage:**
 
 ```tsx
-import { buttonBorderStyles } from '@/static/styles';
+import { buttonBorderStyles } from '@/shared/lib/styles';
 
 <button className={buttonBorderStyles}>Click me</button>;
 ```
@@ -150,7 +150,7 @@ KanaDojo uses a **5-variable color system** defined in `app/globals.css`:
 
 ### Theme Structure
 
-Themes are defined in `static/themes.ts` with TypeScript interfaces:
+Themes are defined in `features/Preferences/data/themes.ts` with TypeScript interfaces:
 
 ```typescript
 interface Theme {
@@ -165,8 +165,8 @@ interface Theme {
 
 ### How Themes Work
 
-1. **Theme Definition** - Themes are organized into groups (Base, Light, Dark) in `static/themes.ts`
-2. **Theme Storage** - Selected theme ID is persisted via Zustand in `store/useThemeStore.ts`
+1. **Theme Definition** - Themes are organized into groups (Base, Light, Dark) in `features/Preferences/data/themes.ts`
+2. **Theme Storage** - Selected theme ID is persisted via Zustand in `features/Preferences/store/usePreferencesStore.ts`
 3. **Theme Application** - The `applyTheme()` function dynamically updates CSS variables:
 
 ```typescript
@@ -188,7 +188,7 @@ export function applyTheme(themeId: string) {
 
 To add a new theme:
 
-1. **Define the theme** in `static/themes.ts`:
+1. **Define the theme** in `features/Preferences/data/themes.ts`:
 
 ```typescript
 {
@@ -206,9 +206,9 @@ To add a new theme:
 
 #### Sumi Theme (Example)
 
-The `sumi` theme is a minimal, sumi-e (Japanese ink) inspired dark theme added in `static/themes.ts`. It's designed for low visual distraction, high focus, and a neutral, high-clarity UI where content stands out against an almost-black page background.
+The `sumi` theme is a minimal, sumi-e (Japanese ink) inspired dark theme added in `features/Preferences/data/themes.ts`. It's designed for low visual distraction, high focus, and a neutral, high-clarity UI where content stands out against an almost-black page background.
 
-- **Palette (from `static/themes.ts`)**:
+- **Palette (from `features/Preferences/data/themes.ts`)**:
 
 ```ts
 {
@@ -252,7 +252,7 @@ The `sumi` theme is a minimal, sumi-e (Japanese ink) inspired dark theme added i
 
 - **Developer checklist when adding/using `sumi`**:
 
-  - Copy the theme object into `static/themes.ts` exactly (IDs must be kebab-case).
+  - Copy the theme object into `features/Preferences/data/themes.ts` exactly (IDs must be kebab-case).
   - Verify `applyTheme('sumi')` updates CSS variables and `data-theme` attribute correctly.
   - Test interactive components (buttons, inputs, dialogs) visually and via automated contrast checks.
   - Consider providing a slightly lighter variant of `--main-color` for disabled/low-emphasis states to avoid blending with `--card-color`.
@@ -261,7 +261,7 @@ The `sumi` theme is a minimal, sumi-e (Japanese ink) inspired dark theme added i
 
   The `momiji` theme is inspired by autumn maple leaves — warm, cozy, and subtly vibrant. It pairs a deep, neutral page background with amber and yellow-green accents for highlights and CTAs. Use this theme when you want a seasonal, warm-dark aesthetic that still prioritizes readability and clear affordances.
 
-  - **Palette (from `static/themes.ts`):**
+  - **Palette (from `features/Preferences/data/themes.ts`):**
 
   ```ts
   {
@@ -304,7 +304,7 @@ The `sumi` theme is a minimal, sumi-e (Japanese ink) inspired dark theme added i
     - Ensure `--border-color` on `--card-color` meets at least a 3:1 contrast ratio for interactive affordances; increase opacity if necessary when used as a primary focus indicator.
 
   - **Developer checklist when adding/using `momiji`:**
-    - Add the theme object to `static/themes.ts` under the `Dark` theme group.
+    - Add the theme object to `features/Preferences/data/themes.ts` under the `Dark` theme group.
     - Verify `applyTheme('momiji')` updates CSS variables and `data-theme` attribute correctly.
     - Run automated contrast checks (axe, Lighthouse) and manual spot checks for CTAs and small text.
     - Test interactive components (buttons, inputs, dialogs) visually across breakpoints and accessibility modes.
@@ -441,7 +441,7 @@ Follow these patterns for consistency:
 
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
-import useThemeStore from '@/store/useThemeStore';
+import { usePreferencesStore } from '@/features/Preferences';
 
 interface MyComponentProps {
   title: string;
@@ -697,8 +697,8 @@ const buttonVariants = cva(
   isActive && "bg-[var(--main-color)]"
 )} />
 
-// Extract repeated patterns to static/styles.ts
-import { buttonBorderStyles } from '@/static/styles';
+// Extract repeated patterns to shared/lib/styles.ts
+import { buttonBorderStyles } from '@/shared/lib/styles';
 
 // Use responsive prefixes consistently
 <div className="flex flex-col md:flex-row lg:gap-8" />
@@ -856,7 +856,7 @@ interface KanaCharacter {} // Already in lib/interfaces.ts
 'use client';
 
 import { cn } from '@/lib/utils';
-import { cardBorderStyles } from '@/static/styles';
+import { cardBorderStyles } from '@/shared/lib/styles';
 
 interface CardProps {
   title: string;
@@ -890,7 +890,7 @@ export default Card;
 'use client';
 
 import { cn } from '@/lib/utils';
-import { buttonBorderStyles } from '@/static/styles';
+import { buttonBorderStyles } from '@/shared/lib/styles';
 import { useClick } from '@/lib/hooks/useAudio';
 import { Check } from 'lucide-react';
 
@@ -1128,9 +1128,9 @@ import { Button } from '@/components/ui/button';
 
 - `CLAUDE.md` - Project overview and architecture
 - `CONTRIBUTING.md` - Contribution guidelines and code style
-- `static/themes.ts` - Theme definitions and management
+- `features/Preferences/data/themes.ts` - Theme definitions and management
 - `lib/interfaces.ts` - TypeScript interfaces
-- `static/styles.ts` - Reusable style constants
+- `shared/lib/styles.ts` - Reusable style constants
 
 ### External Resources
 
@@ -1160,7 +1160,7 @@ This document should be updated whenever:
 - New accessibility requirements are identified
 - Major design system changes are implemented
 
-**Last Updated:** [Current Date]  
+**Last Updated:** January 2025
 **Maintained By:** KanaDojo Team
 
 ---

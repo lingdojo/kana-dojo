@@ -1,0 +1,242 @@
+[
+  {
+    "id": 1,
+    "japanese": "一石二鳥",
+    "romaji": "Isseki nichou",
+    "english": "One stone, two birds",
+    "meaning": "Accomplishing two things with one action",
+    "issued": true
+  },
+  {
+    "id": 2,
+    "japanese": "花より団子",
+    "romaji": "Hana yori dango",
+    "english": "Dumplings over flowers",
+    "meaning": "Practical things are more valuable than aesthetic ones",
+    "issued": true
+  },
+  {
+    "id": 3,
+    "japanese": "井の中の蛙大海を知らず",
+    "romaji": "I no naka no kawazu taikai wo shirazu",
+    "english": "A frog in a well does not know the great sea",
+    "meaning": "Those with limited experience cannot understand the bigger picture",
+    "issued": true
+  },
+  {
+    "id": 4,
+    "japanese": "石の上にも三年",
+    "romaji": "Ishi no ue ni mo san nen",
+    "english": "Three years on a stone",
+    "meaning": "Patience and perseverance will eventually pay off",
+    "issued": true
+  },
+  {
+    "id": 5,
+    "japanese": "塵も積もれば山となる",
+    "romaji": "Chiri mo tsumoreba yama to naru",
+    "english": "Even dust, if piled up, becomes a mountain",
+    "meaning": "Small efforts accumulate into great achievements",
+    "issued": true
+  },
+  {
+    "id": 6,
+    "japanese": "能ある鷹は爪を隠す",
+    "romaji": "Nou aru taka wa tsume wo kakusu",
+    "english": "The talented hawk hides its talons",
+    "meaning": "Truly skilled people don't show off their abilities",
+    "issued": true
+  },
+  {
+    "id": 7,
+    "japanese": "継続は力なり",
+    "romaji": "Keizoku wa chikara nari",
+    "english": "Continuation is power",
+    "meaning": "Persistence leads to strength and success",
+    "issued": false
+  },
+  {
+    "id": 8,
+    "japanese": "急がば回れ",
+    "romaji": "Isogaba maware",
+    "english": "If in a hurry, go around",
+    "meaning": "Taking the safer, longer route is sometimes faster",
+    "issued": false
+  },
+  {
+    "id": 9,
+    "japanese": "郷に入っては郷に従え",
+    "romaji": "Gou ni itte wa gou ni shitagae",
+    "english": "When in a village, follow the village customs",
+    "meaning": "When in Rome, do as the Romans do",
+    "issued": false
+  },
+  {
+    "id": 10,
+    "japanese": "転ばぬ先の杖",
+    "romaji": "Korobanu saki no tsue",
+    "english": "A cane before falling",
+    "meaning": "Prevention is better than cure",
+    "issued": false
+  },
+  {
+    "id": 11,
+    "japanese": "時は金なり",
+    "romaji": "Toki wa kane nari",
+    "english": "Time is money",
+    "meaning": "Time is valuable and should not be wasted",
+    "issued": false
+  },
+  {
+    "id": 12,
+    "japanese": "二兎を追う者は一兎をも得ず",
+    "romaji": "Ni to wo ou mono wa itto wo mo ezu",
+    "english": "One who chases two rabbits catches neither",
+    "meaning": "Focus on one thing at a time",
+    "issued": false
+  },
+  {
+    "id": 13,
+    "japanese": "雨降って地固まる",
+    "romaji": "Ame futte ji katamaru",
+    "english": "After rain, the ground hardens",
+    "meaning": "Adversity builds strength",
+    "issued": false
+  },
+  {
+    "id": 14,
+    "japanese": "百聞は一見に如かず",
+    "romaji": "Hyakubun wa ikken ni shikazu",
+    "english": "Hearing a hundred times is not as good as seeing once",
+    "meaning": "Seeing is believing",
+    "issued": false
+  },
+  {
+    "id": 15,
+    "japanese": "三人寄れば文殊の知恵",
+    "romaji": "Sannin yoreba monju no chie",
+    "english": "Three people together have the wisdom of Monju",
+    "meaning": "Two heads are better than one",
+    "issued": false
+  },
+  {
+    "id": 16,
+    "japanese": "笑う門には福来る",
+    "romaji": "Warau kado ni wa fuku kitaru",
+    "english": "Fortune comes to a laughing gate",
+    "meaning": "Happiness and good fortune come to those who smile",
+    "issued": false
+  },
+  {
+    "id": 17,
+    "japanese": "案ずるより産むが易し",
+    "romaji": "Anzuru yori umu ga yasushi",
+    "english": "Giving birth is easier than worrying",
+    "meaning": "Things are often easier done than worried about",
+    "issued": false
+  },
+  {
+    "id": 18,
+    "japanese": "魚心あれば水心",
+    "romaji": "Uogokoro areba mizugokoro",
+    "english": "If fish has heart, water has heart",
+    "meaning": "Good intentions will be reciprocated",
+    "issued": false
+  },
+  {
+    "id": 19,
+    "japanese": "犬も歩けば棒に当たる",
+    "romaji": "Inu mo arukeba bou ni ataru",
+    "english": "Even a walking dog will hit a stick",
+    "meaning": "Try anything and you might get lucky (or unlucky)",
+    "issued": false
+  },
+  {
+    "id": 20,
+    "japanese": "知らぬが仏",
+    "romaji": "Shiranu ga hotoke",
+    "english": "Not knowing is Buddha",
+    "meaning": "Ignorance is bliss",
+    "issued": false
+  },
+  {
+    "id": 21,
+    "japanese": "良薬は口に苦し",
+    "romaji": "Ryouyaku wa kuchi ni nigashi",
+    "english": "Good medicine tastes bitter",
+    "meaning": "Helpful advice often sounds harsh",
+    "issued": false
+  },
+  {
+    "id": 22,
+    "japanese": "虎穴に入らずんば虎子を得ず",
+    "romaji": "Koketsu ni irazunba koji wo ezu",
+    "english": "If you don't enter the tiger's den, you can't get the cub",
+    "meaning": "Nothing ventured, nothing gained",
+    "issued": false
+  },
+  {
+    "id": 23,
+    "japanese": "蛙の子は蛙",
+    "romaji": "Kaeru no ko wa kaeru",
+    "english": "A frog's child is a frog",
+    "meaning": "Like father, like son",
+    "issued": false
+  },
+  {
+    "id": 24,
+    "japanese": "馬の耳に念仏",
+    "romaji": "Uma no mimi ni nenbutsu",
+    "english": "Preaching Buddha to a horse's ear",
+    "meaning": "Wasting good advice on someone who won't listen",
+    "issued": false
+  },
+  {
+    "id": 25,
+    "japanese": "早起きは三文の徳",
+    "romaji": "Hayaoki wa sanmon no toku",
+    "english": "Early rising is worth three coins",
+    "meaning": "The early bird catches the worm",
+    "issued": false
+  },
+  {
+    "id": 26,
+    "japanese": "猫に小判",
+    "romaji": "Neko ni koban",
+    "english": "Gold coins to a cat",
+    "meaning": "Giving something valuable to someone who can't appreciate it",
+    "issued": false
+  },
+  {
+    "id": 27,
+    "japanese": "出る杭は打たれる",
+    "romaji": "Deru kui wa utareru",
+    "english": "The nail that sticks out gets hammered down",
+    "meaning": "Those who stand out may face criticism",
+    "issued": false
+  },
+  {
+    "id": 28,
+    "japanese": "七転八倒",
+    "romaji": "Shichiten battou",
+    "english": "Seven falls, eight struggles",
+    "meaning": "Going through great pain and struggle",
+    "issued": false
+  },
+  {
+    "id": 29,
+    "japanese": "一期一会",
+    "romaji": "Ichi go ichi e",
+    "english": "One time, one meeting",
+    "meaning": "Treasure every encounter, for it will never recur",
+    "issued": false
+  },
+  {
+    "id": 30,
+    "japanese": "十人十色",
+    "romaji": "Juunin toiro",
+    "english": "Ten people, ten colors",
+    "meaning": "Different strokes for different folks",
+    "issued": false
+  }
+]

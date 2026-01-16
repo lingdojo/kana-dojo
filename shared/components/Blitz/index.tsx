@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import { useChallengeTimer } from '@/shared/hooks/useTimer';
 import { useGoalTimers } from '@/shared/hooks/useGoalTimers';
 import { useClick, useCorrect, useError } from '@/shared/hooks/useAudio';
+import { shuffle } from '@/shared/lib/shuffle';
 import confetti from 'canvas-confetti';
 import { useRouter } from '@/core/i18n/routing';
 import { statsTracking } from '@/features/Progress';
@@ -187,8 +188,7 @@ export default function Blitz<T>({ config }: BlitzProps<T>) {
         3,
         isReverseActive
       );
-      const shuffled = [...options].sort(() => Math.random() - 0.5);
-      setShuffledOptions(shuffled);
+      setShuffledOptions(shuffle(options));
       setWrongSelectedAnswers([]);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

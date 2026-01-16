@@ -1,4 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
+import {
+  getTranslateRateLimiter,
+  getClientIP,
+  createRateLimitHeaders
+} from '@/shared/lib/rateLimit';
 
 // Simple in-memory cache for translations (reduces API calls)
 const translationCache = new Map<
@@ -7,26 +12,36 @@ const translationCache = new Map<
 >();
 const CACHE_TTL = 1000 * 60 * 60; // 1 hour cache
 const MAX_CACHE_SIZE = 500;
+const CLEANUP_INTERVAL = 1000 * 60 * 5; // Cleanup every 5 minutes
+let lastCleanupTime = 0;
 
 function getCacheKey(text: string, source: string, target: string): string {
   return `${source}:${target}:${text}`;
 }
 
+/**
+ * Clean up expired cache entries
+ * Runs periodically and when cache exceeds max size
+ */
 function cleanupCache() {
-  if (translationCache.size > MAX_CACHE_SIZE) {
-    const now = Date.now();
+  const now = Date.now();
+
+  // Run TTL cleanup periodically (not on every request to avoid overhead)
+  if (now - lastCleanupTime > CLEANUP_INTERVAL) {
+    lastCleanupTime = now;
     for (const [key, value] of translationCache) {
       if (now - value.timestamp > CACHE_TTL) {
         translationCache.delete(key);
       }
     }
-    // If still too large, remove oldest entries
-    if (translationCache.size > MAX_CACHE_SIZE) {
-      const entries = Array.from(translationCache.entries());
-      entries.sort((a, b) => a[1].timestamp - b[1].timestamp);
-      const toRemove = entries.slice(0, entries.length - MAX_CACHE_SIZE / 2);
-      toRemove.forEach(([key]) => translationCache.delete(key));
-    }
+  }
+
+  // If still too large, remove oldest entries (LRU-style eviction)
+  if (translationCache.size > MAX_CACHE_SIZE) {
+    const entries = Array.from(translationCache.entries());
+    entries.sort((a, b) => a[1].timestamp - b[1].timestamp);
+    const toRemove = entries.slice(0, entries.length - MAX_CACHE_SIZE / 2);
+    toRemove.forEach(([key]) => translationCache.delete(key));
   }
 }
 
@@ -134,6 +149,37 @@ const ERROR_CODES = {
  * Translates text between English and Japanese using Google Cloud Translation API
  */
 export async function POST(request: NextRequest) {
+  // Rate limiting check - protect against abuse
+  const clientIP = getClientIP(request);
+  const rateLimiter = getTranslateRateLimiter();
+  const rateLimitResult = rateLimiter.check(clientIP);
+
+  if (!rateLimitResult.allowed) {
+    const headers = createRateLimitHeaders(rateLimitResult);
+
+    // Provide specific error message based on reason
+    let message: string;
+    if (rateLimitResult.reason === 'daily_quota') {
+      message =
+        'Daily translation limit reached. Please try again tomorrow.';
+    } else if (rateLimitResult.reason === 'global_limit') {
+      message =
+        'Service is experiencing high demand. Please try again in a moment.';
+    } else {
+      message = `Too many requests. Please wait ${rateLimitResult.retryAfter} seconds.`;
+    }
+
+    return NextResponse.json(
+      {
+        code: ERROR_CODES.RATE_LIMIT,
+        message,
+        status: 429,
+        retryAfter: rateLimitResult.retryAfter
+      },
+      { status: 429, headers }
+    );
+  }
+
   try {
     const body = (await request.json()) as TranslationRequestBody;
     const { text, sourceLanguage, targetLanguage } = body;
@@ -192,6 +238,7 @@ export async function POST(request: NextRequest) {
     const cacheKey = getCacheKey(text.trim(), sourceLanguage, targetLanguage);
     const cached = translationCache.get(cacheKey);
     if (cached && Date.now() - cached.timestamp < CACHE_TTL) {
+      const rateLimitHeaders = createRateLimitHeaders(rateLimitResult);
       const response = NextResponse.json({
         translatedText: cached.translatedText,
         romanization: cached.romanization,
@@ -199,6 +246,10 @@ export async function POST(request: NextRequest) {
       });
       // Allow browser to cache translation results for 1 hour
       response.headers.set('Cache-Control', 'private, max-age=3600');
+      // Include rate limit info
+      rateLimitHeaders.forEach((value, key) => {
+        response.headers.set(key, value);
+      });
       return response;
     }
 
@@ -291,6 +342,7 @@ export async function POST(request: NextRequest) {
     });
     cleanupCache();
 
+    const rateLimitHeaders = createRateLimitHeaders(rateLimitResult);
     const response = NextResponse.json({
       translatedText: translation.translatedText,
       detectedSourceLanguage: translation.detectedSourceLanguage,
@@ -298,6 +350,10 @@ export async function POST(request: NextRequest) {
     });
     // Allow browser to cache translation results for 1 hour
     response.headers.set('Cache-Control', 'private, max-age=3600');
+    // Include rate limit info
+    rateLimitHeaders.forEach((value, key) => {
+      response.headers.set(key, value);
+    });
     return response;
   } catch (error) {
     console.error('Translation API error:', error);

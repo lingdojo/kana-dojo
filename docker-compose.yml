@@ -1,0 +1,41 @@
+# KanaDojo Docker Compose Configuration
+# For local development and production
+
+services:
+  # Development environment
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - '3000:3000'
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - .:/app
+      - /app/node_modules
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+
+  # Production environment (uncomment for production)
+  # app:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - "3000:3000"
+  #   environment:
+  #     - NODE_ENV=production
+  #   restart: unless-stopped
+
+  # Optional: Visual regression testing
+  # storybook:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile.storybook
+  #   ports:
+  #     - "6006:6006"
+  #   volumes:
+  #     - .:/app
+  #     - /app/node_modules

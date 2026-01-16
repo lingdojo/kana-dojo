@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useMemo } from 'react';
 import { statsApi } from '@/shared/events';
+import { shuffle } from '@/shared/lib/shuffle';
 import type { ContentAdapter, GameMode } from '../adapters/ContentAdapter';
 
 export interface GameEngineConfig<T> {
@@ -37,9 +38,9 @@ export function useGameEngine<T>({
   const [currentIndex, setCurrentIndex] = useState(0);
   const [questionsAnswered, setQuestionsAnswered] = useState(0);
 
-  // Shuffle content once at initialization
+  // Shuffle content once at initialization (using secure random)
   const shuffledContent = useMemo(() => {
-    return [...content].sort(() => Math.random() - 0.5);
+    return shuffle(content);
   }, [content]);
 
   const currentItem = shuffledContent[currentIndex] ?? null;

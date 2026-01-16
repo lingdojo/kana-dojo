@@ -22,10 +22,7 @@ Successfully migrated KanaDojo from a feature-based architecture to a **Hybrid M
 ### Phase 0: Preparation ✅
 - Created feature branch: `refactor/hybrid-modular-architecture`
 - Established baseline test results: 200/300 passing (100 pre-existing failures)
-- Created migration plan documents:
-  - `HYBRID_MODULAR_MIGRATION_PLAN.md` (2697 lines)
-  - `MIGRATION_QUICK_REFERENCE.md`
-  - `ARCHITECTURE_DIAGRAM.md`
+- Created migration plan documents
 
 ### Phase 1: Event System + Facades ✅
 
@@ -141,7 +138,7 @@ Successfully migrated KanaDojo from a feature-based architecture to a **Hybrid M
 
 ## Architectural Benefits Achieved
 
-### 1. ⭐⭐⭐⭐⭐ Clear Layer Boundaries (HIGH VALUE)
+### 1. Clear Layer Boundaries (HIGH VALUE)
 
 **Before**:
 ```typescript
@@ -155,12 +152,7 @@ import useStatsStore from '@/features/Progress/store/useStatsStore'; // ❌ Viol
 import { useStatsDisplay } from '@/features/Progress'; // ✅ Public API
 ```
 
-**Impact**:
-- 27 layer violations eliminated
-- Clear separation of concerns
-- Easier to reason about data flow
-
-### 2. ⭐⭐⭐⭐⭐ Eliminated Hub Anti-Pattern (HIGH VALUE)
+### 2. Eliminated Hub Anti-Pattern (HIGH VALUE)
 
 **Before**: Progress store imported 25+ times across codebase
 
@@ -169,241 +161,23 @@ import { useStatsDisplay } from '@/features/Progress'; // ✅ Public API
 - Progress facade subscribes to events
 - Direct store imports reduced to <10
 
-**Impact**:
-- Decoupled dependencies
-- Features no longer tightly coupled to Progress
-- Easier to test in isolation
-
-### 3. ⭐⭐⭐⭐⭐ Code Reusability (HIGH VALUE)
+### 3. Code Reusability (HIGH VALUE)
 
 **Before**: 540 lines of duplicated game logic across Kana, Kanji, Vocabulary
 
 **After**: Single `TrainingGame` widget with polymorphic `ContentAdapter` pattern
 
-**Impact**:
-- 78% code reduction
-- Single source of truth for game mechanics
-- Bug fixes apply to all content types automatically
-
-### 4. ⭐⭐⭐⭐⭐ Automated Enforcement (HIGH VALUE)
+### 4. Automated Enforcement (HIGH VALUE)
 
 **Before**: No automated checks, violations could slip through code review
 
 **After**: ESLint rules enforce layer boundaries automatically
 
-**Impact**:
-- CI/CD catches violations before merge
-- Developers get instant feedback in IDE
-- Architecture cannot degrade over time
-
-### 5. ⭐⭐⭐⭐ Public API Clarity (HIGH VALUE)
+### 5. Public API Clarity (HIGH VALUE)
 
 **Before**: No clear public/private distinction
 
 **After**: Barrel exports (`index.ts`) with explicit PRIVATE warnings
-
-**Example**:
-```typescript
-// features/Kana/index.ts
-// ============================================================================
-// Kana Feature - Public API
-// ============================================================================
-
-// Facades (PRIMARY API - Use these in new code)
-export { useKanaSelection, useKanaContent } from './facade';
-
-// ============================================================================
-// PRIVATE - DO NOT IMPORT DIRECTLY
-// ============================================================================
-// - store/useKanaStore.ts (use useKanaSelection facade instead)
-// - data/kana.ts (use useKanaContent facade instead)
-```
-
-**Impact**:
-- Clear API surface for new developers
-- Prevents accidental coupling to internals
-- Enables future refactoring without breaking consumers
-
-### 6. ⭐⭐⭐ Improved Testability (MEDIUM VALUE)
-
-**Before**: Tight coupling made unit testing difficult
-
-**After**:
-- Facades can be mocked easily
-- Game logic isolated in `useGameEngine` hook
-- ContentAdapter pattern enables testing with fake data
-
-**Impact**:
-- Easier to write unit tests
-- Can test game logic without full store setup
-- Faster test execution
-
----
-
-## Technical Patterns Implemented
-
-### 1. Event Bus Pattern
-**Purpose**: Decouple game features from Progress store
-
-**Implementation**:
-```typescript
-// Games emit events
-statsApi.recordCorrect('kana', 'あ');
-
-// Progress facade subscribes
-statsEvents.subscribe('correct', (event: StatEvent) => {
-  store.incrementCorrectAnswers();
-  store.addCharacterToHistory(event.character);
-});
-```
-
-**Benefits**:
-- No direct dependency on Progress store
-- Easy to add new event listeners
-- Supports multiple subscribers
-
-### 2. Facade Pattern
-**Purpose**: Provide stable public API while hiding internal implementation
-
-**Implementation**:
-```typescript
-// Public API
-export function useKanaSelection(): KanaSelection & KanaSelectionActions {
-  const store = useKanaStore(); // PRIVATE
-  return {
-    selectedGroupIndices: store.kanaGroupIndices,
-    addGroup: store.addKanaGroupIndex,
-    clearSelection: () => { /* ... */ }
-  };
-}
-```
-
-**Benefits**:
-- Internal store can change without breaking consumers
-- Exposes only necessary methods
-- Type-safe API contracts
-
-### 3. ContentAdapter Pattern (Polymorphism)
-**Purpose**: Unified game logic for different content types
-
-**Implementation**:
-```typescript
-export interface ContentAdapter<T> {
-  getQuestion(item: T, mode: GameMode): string;
-  getCorrectAnswer(item: T, mode: GameMode): string;
-  generateOptions(item: T, pool: T[], mode: GameMode, count: number): string[];
-  validateAnswer(userAnswer: string, item: T, mode: GameMode): boolean;
-}
-
-// Used by TrainingGame widget
-<TrainingGame content={kanaData} adapter={kanaAdapter} mode="pick">
-  {gameState => <GameUI {...gameState} />}
-</TrainingGame>
-```
-
-**Benefits**:
-- Single game engine for all content types
-- Type-safe polymorphic behavior
-- Eliminates code duplication
-
-### 4. Render Prop Pattern
-**Purpose**: Flexible component composition
-
-**Implementation**:
-```typescript
-export function TrainingGame<T>({ content, adapter, children }: TrainingGameProps<T>) {
-  const gameState = useGameEngine({ content, adapter });
-  return <>{children(gameState)}</>;
-}
-```
-
-**Benefits**:
-- Widget provides logic, consumer provides UI
-- Maximum flexibility in presentation
-- Separation of concerns
-
----
-
-## Migration Commit History
-
-```bash
-# Phase 0
-git commit -m "chore: create hybrid modular architecture migration plan"
-
-# Phase 1: Event System
-git commit -m "feat(events): add stats and achievement event system"
-
-# Phase 1: Facades
-git commit -m "feat(Progress): add Progress facade with useGameStats and useStatsDisplay"
-git commit -m "feat(Kana/Kanji/Vocabulary): add content selection facades"
-git commit -m "feat(Preferences): add audio, theme, and input preference facades"
-
-# Phase 2: Widgets
-git commit -m "feat(widgets): add ContentAdapter abstraction and implementations"
-git commit -m "feat(widgets): add TrainingGame widget with unified game engine"
-
-# Phase 3: Shared Migrations
-git commit -m "refactor(shared/hooks): migrate useStats and useAudio to use facades"
-git commit -m "refactor(shared/components/Game): migrate to use Progress facade"
-git commit -m "refactor(shared/components/Menu): migrate Sidebar to use Preferences facade"
-
-# Phase 4: Public APIs
-git commit -m "feat(features): add barrel exports for public APIs"
-git commit -m "feat(eslint): add layer boundary enforcement rules"
-
-# Phase 5: Validation
-git commit -m "chore: validate TypeScript and ESLint - all checks passing"
-git commit -m "docs: add migration summary and completion report"
-```
-
----
-
-## Rollback Strategy
-
-If rollback is needed:
-
-```bash
-# Method 1: Revert to main
-git checkout main
-
-# Method 2: Create revert branch
-git checkout -b revert/hybrid-modular
-git revert <commit-range>
-
-# Method 3: Cherry-pick specific changes
-git cherry-pick <commit-hash>
-```
-
-**Safe to rollback**: All changes are backward compatible. No user-facing features were modified.
-
----
-
-## Future Improvements (Optional)
-
-### 1. Migrate Remaining Menu Components
-**Scope**: ~19 Menu components still have potential layer coupling
-**Effort**: 2-3 hours
-**Benefit**: Complete elimination of all shared → features imports
-
-### 2. Add Additional ESLint Rules
-**Scope**: Enforce naming conventions, file structure
-**Effort**: 1-2 hours
-**Benefit**: Further architectural consistency
-
-### 3. Create More Barrel Exports
-**Scope**: Add index.ts to Achievements, Academy, MainMenu features
-**Effort**: 2-3 hours
-**Benefit**: Complete public API coverage
-
-### 4. Add Integration Tests
-**Scope**: Test facade contracts and event flows
-**Effort**: 4-6 hours
-**Benefit**: Prevent regression in architectural patterns
-
-### 5. Update Documentation
-**Scope**: Update ARCHITECTURE.md with new patterns
-**Effort**: 1-2 hours
-**Benefit**: Onboarding guide for new developers
 
 ---
 
@@ -423,8 +197,6 @@ The codebase is now:
 - **More testable** - Decoupled dependencies and isolated logic
 - **More scalable** - Patterns established for future features
 - **More robust** - Automated enforcement prevents architectural drift
-
-**Recommendation**: Merge to `main` after final code review and user acceptance testing.
 
 ---
 

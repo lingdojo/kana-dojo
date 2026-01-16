@@ -78,6 +78,19 @@ const defaultBlitzStats: BlitzStats = {
   totalCorrect: 0
 };
 
+// Max array sizes to prevent memory exhaustion over extended use
+const MAX_ANSWER_TIMES = 1000; // Keep last 1000 answer times
+const MAX_TRAINING_DAYS = 400; // Keep last ~13 months of training days
+const MAX_CHARACTER_HISTORY = 500; // Keep last 500 characters per session
+
+/**
+ * Cap an array to a maximum size, keeping the most recent entries
+ */
+function capArray<T>(arr: T[], maxSize: number): T[] {
+  if (arr.length <= maxSize) return arr;
+  return arr.slice(-maxSize);
+}
+
 interface IStatsState {
   // Core game stats
   score: number;
@@ -241,14 +254,24 @@ const useStatsStore = create<IStatsState>()(
       // Timing
       correctAnswerTimes: [],
       addCorrectAnswerTime: time =>
-        set(s => ({ correctAnswerTimes: [...s.correctAnswerTimes, time] })),
+        set(s => ({
+          correctAnswerTimes: capArray(
+            [...s.correctAnswerTimes, time],
+            MAX_ANSWER_TIMES
+          )
+        })),
       totalMilliseconds: 0,
       setNewTotalMilliseconds: totalMilliseconds => set({ totalMilliseconds }),
 
       // Character tracking
       characterHistory: [],
       addCharacterToHistory: character =>
-        set(s => ({ characterHistory: [...s.characterHistory, character] })),
+        set(s => ({
+          characterHistory: capArray(
+            [...s.characterHistory, character],
+            MAX_CHARACTER_HISTORY
+          )
+        })),
 
       characterScores: {},
       incrementCharacterScore: (character, field) =>
@@ -406,7 +429,7 @@ const useStatsStore = create<IStatsState>()(
           const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD format
           const trainingDays = s.allTimeStats.trainingDays.includes(today)
             ? s.allTimeStats.trainingDays
-            : [...s.allTimeStats.trainingDays, today];
+            : capArray([...s.allTimeStats.trainingDays, today], MAX_TRAINING_DAYS);
 
           return {
             allTimeStats: {
@@ -595,7 +618,10 @@ const useStatsStore = create<IStatsState>()(
           allTimeStats: {
             ...s.allTimeStats,
             fastestAnswerMs: Math.min(s.allTimeStats.fastestAnswerMs, timeMs),
-            answerTimesMs: [...s.allTimeStats.answerTimesMs, timeMs]
+            answerTimesMs: capArray(
+              [...s.allTimeStats.answerTimesMs, timeMs],
+              MAX_ANSWER_TIMES
+            )
           }
         })),
 
@@ -652,7 +678,10 @@ const useStatsStore = create<IStatsState>()(
           return {
             allTimeStats: {
               ...s.allTimeStats,
-              trainingDays: [...s.allTimeStats.trainingDays, today]
+              trainingDays: capArray(
+                [...s.allTimeStats.trainingDays, today],
+                MAX_TRAINING_DAYS
+              )
             }
           };
         }),

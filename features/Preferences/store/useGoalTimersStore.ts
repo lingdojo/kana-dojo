@@ -143,7 +143,7 @@ export const useGoalTimersStore = create<GoalTimersStore>()(
 
       // Template Actions
       addTemplate: template => {
-        const id = `custom-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+        const id = `custom-${crypto.randomUUID()}`;
         const newTemplate: GoalTemplate = {
           ...template,
           id,

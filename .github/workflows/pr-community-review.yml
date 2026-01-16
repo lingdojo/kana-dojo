@@ -9,10 +9,15 @@ permissions:
   pull-requests: write
   issues: write
 
+# Prevent multiple reviews from overlapping on the same PR
+concurrency:
+  group: pr-community-review-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
 jobs:
   validate-and-merge:
     runs-on: ubuntu-latest
-    if: contains(github.event.pull_request.title, 'theme') || contains(github.event.pull_request.title, 'fact') || contains(github.event.pull_request.title, 'Theme') || contains(github.event.pull_request.title, 'Fact')
+    if: contains(github.event.pull_request.title, 'theme') || contains(github.event.pull_request.title, 'fact') || contains(github.event.pull_request.title, 'Theme') || contains(github.event.pull_request.title, 'Fact') || contains(github.event.pull_request.title, 'proverb') || contains(github.event.pull_request.title, 'Proverb')
 
     steps:
       - name: Checkout base branch
@@ -51,31 +56,59 @@ jobs:
             let linkedIssue = null;
             let foundIssue = null;
 
-            const isThemeContribution = prTitleLower.includes('theme');
-            const isFactContribution = prTitleLower.includes('fact');
+            async function listAllPrFiles() {
+              let files = [];
+              let page = 1;
+              while (true) {
+                const { data: pageItems } = await github.rest.pulls.listFiles({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  pull_number: prNumber,
+                  per_page: 100,
+                  page: page
+                });
+                files = files.concat(pageItems);
+                if (!pageItems || pageItems.length < 100) {
+                  break;
+                }
+                page += 1;
+              }
+              return files;
+            }
 
-            if (!isThemeContribution && !isFactContribution) {
+            let prFiles = [];
+            try {
+              prFiles = await listAllPrFiles();
+            } catch (e) {
+              errors.push('Could not list PR files: ' + e.message);
+            }
+
+            const isThemeContribution = prTitleLower.includes('theme');
+            const isFactContribution = prTitleLower.includes('fact') && !prTitleLower.includes('proverb');
+            const isProverbContribution = prTitleLower.includes('proverb');
+
+            if (!isThemeContribution && !isFactContribution && !isProverbContribution) {
               console.log('Not a community contribution PR');
               return;
             }
 
-            const issueMatch = prBody.match(/[Cc]loses?\s*#(\d+)|[Ff]ixes?\s*#(\d+)/);
+            const issueMatch = prBody.match(/[Cc]loses?\s*#(\d+)|[Ff]ixes?\s*#(\d+)|[Rr]esolves?\s*#(\d+)/);
             if (issueMatch) {
-              linkedIssue = parseInt(issueMatch[1] || issueMatch[2]);
+              linkedIssue = parseInt(issueMatch[1] || issueMatch[2] || issueMatch[3]);
               console.log('Issue already linked: #' + linkedIssue);
             }
 
             if (!linkedIssue) {
               console.log('No issue linked, searching for matching issue...');
-              
-              const issuesResponse = await github.rest.issues.listForRepo({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                labels: templates.labels.community,
-                state: 'open',
-                per_page: 100
-              });
-              const issues = issuesResponse.data;
+
+              async function searchOpenCommunityIssues(query) {
+                const q = query + ' repo:' + context.repo.owner + '/' + context.repo.repo + ' is:issue is:open label:' + templates.labels.community;
+                const res = await github.rest.search.issuesAndPullRequests({
+                  q: q,
+                  per_page: 10
+                });
+                return res.data.items || [];
+              }
               
               if (isThemeContribution) {
                 let themeName = null;
@@ -95,13 +128,10 @@ jobs:
                 
                 if (themeName) {
                   console.log('Looking for theme issue: ' + themeName);
-                  for (const issue of issues) {
-                    if (issue.title.includes('Add Theme:') && 
-                        issue.title.toLowerCase().includes(themeName.toLowerCase())) {
-                      foundIssue = issue.number;
-                      console.log('Found matching theme issue: #' + foundIssue);
-                      break;
-                    }
+                  const matches = await searchOpenCommunityIssues('"Add New Color Theme:" "' + themeName + '"');
+                  if (matches.length > 0) {
+                    foundIssue = matches[0].number;
+                    console.log('Found matching theme issue: #' + foundIssue);
                   }
                 }
               } else if (isFactContribution) {
@@ -109,12 +139,21 @@ jobs:
                 if (factIdMatch) {
                   const factId = factIdMatch[1];
                   console.log('Looking for fact issue: #' + factId);
-                  for (const issue of issues) {
-                    if (issue.title.includes('Add Japan Fact #' + factId)) {
-                      foundIssue = issue.number;
-                      console.log('Found matching fact issue: #' + foundIssue);
-                      break;
-                    }
+                  const matches = await searchOpenCommunityIssues('"Add Japan Fact #' + factId + '"');
+                  if (matches.length > 0) {
+                    foundIssue = matches[0].number;
+                    console.log('Found matching fact issue: #' + foundIssue);
+                  }
+                }
+              } else if (isProverbContribution) {
+                const proverbIdMatch = prTitle.match(/#(\d+)/);
+                if (proverbIdMatch) {
+                  const proverbId = proverbIdMatch[1];
+                  console.log('Looking for proverb issue: #' + proverbId);
+                  const matches = await searchOpenCommunityIssues('"Add Japanese Proverb #' + proverbId + '"');
+                  if (matches.length > 0) {
+                    foundIssue = matches[0].number;
+                    console.log('Found matching proverb issue: #' + foundIssue);
                   }
                 }
               }
@@ -125,6 +164,13 @@ jobs:
             if (isThemeContribution) {
               validationType = 'theme';
               console.log('Validating theme contribution');
+
+              const allowed = ['features/Preferences/data/themes.ts'];
+              const changed = prFiles.map(function(f) { return f.filename; });
+              const invalidFiles = changed.filter(function(p) { return !allowed.includes(p); });
+              if (changed.length !== 1 || invalidFiles.length > 0) {
+                errors.push('Theme PRs must modify only features/Preferences/data/themes.ts');
+              }
               
               try {
                 const themesPath = 'pr-head/features/Preferences/data/themes.ts';
@@ -154,6 +200,13 @@ jobs:
             } else if (isFactContribution) {
               validationType = 'fact';
               console.log('Validating fact contribution');
+
+              const allowed = ['public/japan-facts.json'];
+              const changed = prFiles.map(function(f) { return f.filename; });
+              const invalidFiles = changed.filter(function(p) { return !allowed.includes(p); });
+              if (changed.length !== 1 || invalidFiles.length > 0) {
+                errors.push('Fact PRs must modify only public/japan-facts.json');
+              }
               
               try {
                 const factsPath = 'pr-head/public/japan-facts.json';
@@ -183,6 +236,49 @@ jobs:
                 }
               } catch (e) {
                 errors.push('Error reading facts file: ' + e.message);
+              }
+            } else if (isProverbContribution) {
+              validationType = 'proverb';
+              console.log('Validating proverb contribution');
+
+              const allowed = ['public/japanese-proverbs.json'];
+              const changed = prFiles.map(function(f) { return f.filename; });
+              const invalidFiles = changed.filter(function(p) { return !allowed.includes(p); });
+              if (changed.length !== 1 || invalidFiles.length > 0) {
+                errors.push('Proverb PRs must modify only public/japanese-proverbs.json');
+              }
+              
+              try {
+                const proverbsPath = 'pr-head/public/japanese-proverbs.json';
+                if (!fs.existsSync(proverbsPath)) {
+                  errors.push('japanese-proverbs.json file not found in PR');
+                } else {
+                  const content = fs.readFileSync(proverbsPath, 'utf8');
+                  
+                  try {
+                    const proverbs = JSON.parse(content);
+                    
+                    if (!Array.isArray(proverbs)) {
+                      errors.push('japanese-proverbs.json should be an array');
+                    } else {
+                      // Check each proverb has required fields
+                      const invalidProverbs = proverbs.filter(function(p) {
+                        return !p.japanese || !p.romaji || !p.english || !p.meaning;
+                      });
+                      if (invalidProverbs.length > 0) {
+                        errors.push('Each proverb must have japanese, romaji, english, and meaning fields');
+                      }
+                    }
+                  } catch (parseErr) {
+                    errors.push('Invalid JSON: ' + parseErr.message);
+                  }
+                  
+                  if (!targetIssue) {
+                    errors.push('Could not find a matching community issue for this proverb');
+                  }
+                }
+              } catch (e) {
+                errors.push('Error reading proverbs file: ' + e.message);
               }
             }
 
@@ -230,29 +326,32 @@ jobs:
             });
 
             if (isValid) {
-              await github.rest.pulls.createReview({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                pull_number: prNumber,
-                event: 'APPROVE',
-                body: t.approval
-              });
-              
               try {
-                await github.graphql(
-                  'mutation($pullRequestId: ID!) { enablePullRequestAutoMerge(input: { pullRequestId: $pullRequestId, mergeMethod: SQUASH }) { pullRequest { autoMergeRequest { enabledAt } } } }',
-                  { pullRequestId: context.payload.pull_request.node_id }
-                );
-                
-                console.log('Auto-merge enabled for PR #' + prNumber);
-                
-                await github.rest.issues.createComment({
+                const labelName = 'community-auto-merge';
+                try {
+                  await github.rest.issues.getLabel({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    name: labelName
+                  });
+                } catch (e) {
+                  await github.rest.issues.createLabel({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    name: labelName,
+                    color: '0e8a16'
+                  });
+                }
+
+                await github.rest.issues.addLabels({
                   owner: context.repo.owner,
                   repo: context.repo.repo,
                   issue_number: prNumber,
-                  body: t.autoMergeEnabled
+                  labels: [labelName]
                 });
+
+                console.log('Marked PR #' + prNumber + ' for merge after checks');
               } catch (e) {
-                console.log('Could not enable auto-merge: ' + e.message);
+                console.log('Could not label PR for merge after checks: ' + e.message);
               }
             }

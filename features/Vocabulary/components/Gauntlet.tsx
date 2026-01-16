@@ -6,6 +6,7 @@ import useVocabStore, {
 } from '@/features/Vocabulary/store/useVocabStore';
 import Gauntlet, { type GauntletConfig } from '@/shared/components/Gauntlet';
 import { getSelectionLabels } from '@/shared/lib/selectionFormatting';
+import { shuffle, pickOne } from '@/shared/lib/shuffle';
 import FuriganaText from '@/shared/components/text/FuriganaText';
 
 interface GauntletVocabProps {
@@ -30,7 +31,7 @@ const GauntletVocab: React.FC<GauntletVocabProps> = ({ onCancel }) => {
     initialGameMode: selectedGameModeVocab === 'Type' ? 'Type' : 'Pick',
     items: selectedVocabObjs,
     selectedSets: formattedSets,
-    generateQuestion: items => items[Math.floor(Math.random() * items.length)],
+    generateQuestion: items => pickOne(items)!,
     // Reverse mode: show meaning, answer is Japanese word
     // Normal mode: show Japanese word, answer is meaning
     renderQuestion: (question, isReverse) =>
@@ -56,18 +57,18 @@ const GauntletVocab: React.FC<GauntletVocabProps> = ({ onCancel }) => {
       if (isReverse) {
         // Reverse: options are Japanese words
         const correctAnswer = question.word;
-        const incorrectOptions = items
-          .filter(item => item.word !== question.word)
-          .sort(() => Math.random() - 0.5)
+        const incorrectOptions = shuffle(
+          items.filter(item => item.word !== question.word)
+        )
           .slice(0, count - 1)
           .map(item => item.word);
         return [correctAnswer, ...incorrectOptions];
       }
       // Normal: options are meanings
       const correctAnswer = question.meanings[0];
-      const incorrectOptions = items
-        .filter(item => item.word !== question.word)
-        .sort(() => Math.random() - 0.5)
+      const incorrectOptions = shuffle(
+        items.filter(item => item.word !== question.word)
+      )
         .slice(0, count - 1)
         .map(item => item.meanings[0]);
       return [correctAnswer, ...incorrectOptions];
