@@ -234,7 +234,10 @@
     "backgroundColor": "oklch(15.0% 0.065 300.0 / 1)",
     "mainColor": "oklch(80.0% 0.210 180.0 / 1)",
     "secondaryColor": "oklch(85.0% 0.190 320.0 / 1)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "tasosbeast",
+    "completedPR": 651
   },
   {
     "id": "ocean-tofu",
