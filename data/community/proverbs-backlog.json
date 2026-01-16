@@ -83,7 +83,10 @@
     "romaji": "Korobanu saki no tsue",
     "english": "A cane before falling",
     "meaning": "Prevention is better than cure",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "Xylphy",
+    "completedPR": 633
   },
   {
     "id": 11,
