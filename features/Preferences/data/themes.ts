@@ -241,6 +241,12 @@ const baseThemeSets: BaseThemeGroup[] = [
     name: 'Dark',
     icon: Moon,
     themes: [
+              {
+        id: 'snow-lantern',
+        backgroundColor: 'oklch(94.0% 0.012 250.0 / 1)',
+        mainColor: 'oklch(50.0% 0.145 30.0 / 1)',
+        secondaryColor: 'oklch(40.0% 0.110 250.0 / 1)'
+},
       {
         id: 'plum-blossom',
         backgroundColor: 'oklch(23.0% 0.042 340.0 / 1)',
@@ -959,10 +965,13 @@ const baseThemeSets: BaseThemeGroup[] = [
         backgroundColor: 'oklch(20.0% 0.025 260.0 / 1)',
         mainColor: 'oklch(70.0% 0.180 145.0 / 1)',
         secondaryColor: 'oklch(80.0% 0.120 50.0 / 1)',
-       },
-
-
-      
+      },
+      {
+        id: 'digital-oni',
+        backgroundColor: 'oklch(14.0% 0.075 355.0 / 1)',
+        mainColor: 'oklch(68.0% 0.240 10.0 / 1)',
+        secondaryColor: 'oklch(78.0% 0.195 150.0 / 1)'
+      },      
     ]
   },
   {

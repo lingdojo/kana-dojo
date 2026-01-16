@@ -307,7 +307,7 @@ const VocabInputGame = ({
             value={inputValue}
             placeholder='Type your answer...'
             disabled={showContinue}
-            rows={2}
+            rows={4}
             className={clsx(
               'w-full max-w-xs sm:max-w-sm md:max-w-md',
               'rounded-2xl px-5 py-4',
