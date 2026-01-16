@@ -121,7 +121,10 @@
     "romaji": "Hyakubun wa ikken ni shikazu",
     "english": "Hearing a hundred times is not as good as seeing once",
     "meaning": "Seeing is believing",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "MoriitoDev",
+    "completedPR": 621
   },
   {
     "id": 15,
