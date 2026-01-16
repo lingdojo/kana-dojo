@@ -151,7 +151,7 @@
   {
     "id": 23,
     "fact": "Japanese train conductors point and call out each signal and sign they see - a practice called 'shisa kanko' that reduces errors by up to 85%.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 24,
