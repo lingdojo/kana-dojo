@@ -5,7 +5,10 @@
     "romaji": "Isseki nichou",
     "english": "One stone, two birds",
     "meaning": "Accomplishing two things with one action",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "sheryyll",
+    "completedPR": 538
   },
   {
     "id": 2,
