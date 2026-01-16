@@ -971,6 +971,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         backgroundColor: 'oklch(14.0% 0.075 355.0 / 1)',
         mainColor: 'oklch(68.0% 0.240 10.0 / 1)',
         secondaryColor: 'oklch(78.0% 0.195 150.0 / 1)'
+      },
+      {
+        id: 'indigo-shibori',
+        backgroundColor: 'oklch(19.0% 0.055 255.0 / 1)',
+        mainColor: 'oklch(55.0% 0.165 250.0 / 1)',
+        secondaryColor: 'oklch(85.0% 0.065 90.0 / 1)'
       },      
     ]
   },
