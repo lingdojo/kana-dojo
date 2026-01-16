@@ -242,6 +242,12 @@ const baseThemeSets: BaseThemeGroup[] = [
     icon: Moon,
     themes: [
       {
+        id: 'plum-blossom',
+        backgroundColor: 'oklch(23.0% 0.042 340.0 / 1)',
+        mainColor: 'oklch(78.0% 0.165 350.0 / 1)',
+        secondaryColor: 'oklch(88.0% 0.095 85.0 / 1)'
+      },
+      {
         id: 'shibuya-nights',
         backgroundColor: 'oklch(12.0% 0.045 290.0 / 1)',
         mainColor: 'oklch(78.0% 0.225 330.0 / 1)',
