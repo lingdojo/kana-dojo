@@ -246,7 +246,7 @@
     "backgroundColor": "oklch(21.0% 0.042 235.0 / 1)",
     "mainColor": "oklch(92.0% 0.025 240.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.135 225.0 / 1)",
-    "issued": false
+    "issued": true
   },
   {
     "id": "geisha-grace",
