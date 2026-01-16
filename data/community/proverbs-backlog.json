@@ -72,7 +72,10 @@
     "romaji": "Gou ni itte wa gou ni shitagae",
     "english": "When in a village, follow the village customs",
     "meaning": "When in Rome, do as the Romans do",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "Chidwan3578",
+    "completedPR": 558
   },
   {
     "id": 10,
