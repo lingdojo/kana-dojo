@@ -137,7 +137,10 @@
   {
     "id": 22,
     "fact": "There's a Japanese word 'komorebi' (木漏れ日) specifically for sunlight filtering through leaves - no direct English translation exists.",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "MoriitoDev",
+    "completedPR": 612
   },
   {
     "id": 23,
