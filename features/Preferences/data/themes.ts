@@ -259,6 +259,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         mainColor: 'oklch(72.0% 0.175 295.0 / 1)',
         secondaryColor: 'oklch(80.0% 0.125 320.0 / 1)'
       },
+        {
+          id: 'volcanic-ash',
+          backgroundColor: 'oklch(20.0% 0.018 270.0 / 1)',
+          mainColor: 'oklch(70.0% 0.155 25.0 / 1)',
+          secondaryColor: 'oklch(55.0% 0.045 260.0 / 1)'
+        },
       {
         id: 'plum-blossom',
         backgroundColor: 'oklch(23.0% 0.042 340.0 / 1)',

@@ -91,7 +91,10 @@
     "romaji": "Toki wa kane nari",
     "english": "Time is money",
     "meaning": "Time is valuable and should not be wasted",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "villarroelsaad",
+    "completedPR": 608
   },
   {
     "id": 12,
