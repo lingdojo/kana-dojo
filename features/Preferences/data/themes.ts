@@ -959,10 +959,13 @@ const baseThemeSets: BaseThemeGroup[] = [
         backgroundColor: 'oklch(20.0% 0.025 260.0 / 1)',
         mainColor: 'oklch(70.0% 0.180 145.0 / 1)',
         secondaryColor: 'oklch(80.0% 0.120 50.0 / 1)',
-       },
-
-
-      
+      },
+      {
+        id: 'digital-oni',
+        backgroundColor: 'oklch(14.0% 0.075 355.0 / 1)',
+        mainColor: 'oklch(68.0% 0.240 10.0 / 1)',
+        secondaryColor: 'oklch(78.0% 0.195 150.0 / 1)'
+      },      
     ]
   },
   {
