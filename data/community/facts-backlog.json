@@ -116,7 +116,10 @@
   {
     "id": 19,
     "fact": "Japanese convenience stores (konbini) are so advanced that over 70% of bills in Japan are paid there, not at banks.",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "AadithyaAle",
+    "completedPR": 581
   },
   {
     "id": 20,
