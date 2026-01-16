@@ -1000,8 +1000,17 @@ const baseThemeSets: BaseThemeGroup[] = [
         id: 'thunder-temple',
         backgroundColor: 'oklch(16.0% 0.065 280.0 / 1)',
         mainColor: 'oklch(85.0% 0.185 260.0 / 1)',
-        secondaryColor: 'oklch(75.0% 0.145 290.0 / 1)'
+        secondaryColor: 'oklch(75.0% 0.145 290.0 / 1)',
       },
+      {
+        id: 'tokyo-metro',
+        backgroundColor: 'oklch(20.0% 0.025 260.0 / 1)',
+        mainColor: 'oklch(70.0% 0.180 145.0 / 1)',
+        secondaryColor: 'oklch(80.0% 0.120 50.0 / 1)',
+       },
+
+
+      
     ]
   },
   {
