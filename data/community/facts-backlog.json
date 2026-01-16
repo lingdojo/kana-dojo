@@ -100,7 +100,10 @@
   {
     "id": 17,
     "fact": "The Japanese practice 'forest bathing' (shinrin-yoku) has been scientifically proven to lower cortisol levels and boost the immune system.",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "Chidwan3578",
+    "completedPR": 560
   },
   {
     "id": 18,
