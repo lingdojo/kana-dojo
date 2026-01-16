@@ -110,7 +110,10 @@
     "romaji": "Ame futte ji katamaru",
     "english": "After rain, the ground hardens",
     "meaning": "Adversity builds strength",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "saurabh-xd",
+    "completedPR": 605
   },
   {
     "id": 14,
