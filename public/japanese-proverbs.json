@@ -24,21 +24,27 @@
     "meaning": "Accomplishing two things with one action"
   },
   {
-  "japanese": "郷に入っては郷に従え",
-  "romaji": "Gou ni itte wa gou ni shitagae",
-  "english": "When in a village, follow the village customs",
-  "meaning": "When in Rome, do as the Romans do"
+    "japanese": "郷に入っては郷に従え",
+    "romaji": "Gou ni itte wa gou ni shitagae",
+    "english": "When in a village, follow the village customs",
+    "meaning": "When in Rome, do as the Romans do"
   },
   {
-  "japanese": "時は金なり",
-  "romaji": "Toki wa kane nari",
-  "english": "Time is money",
-  "meaning": "Time is valuable and should not be wasted"
+    "japanese": "時は金なり",
+    "romaji": "Toki wa kane nari",
+    "english": "Time is money",
+    "meaning": "Time is valuable and should not be wasted"
   },
   {
-  "japanese": "百聞は一見に如かず",
-  "romaji": "Hyakubun wa ikken ni shikazu",
-  "english": "Hearing a hundred times is not as good as seeing once",
-  "meaning": "Seeing is believing"
-}
+    "japanese": "百聞は一見に如かず",
+    "romaji": "Hyakubun wa ikken ni shikazu",
+    "english": "Hearing a hundred times is not as good as seeing once",
+    "meaning": "Seeing is believing"
+  },
+  {
+    "japanese": "転ばぬ先の杖",
+    "romaji": "Korobanu saki no tsue",
+    "english": "A cane before falling",
+    "meaning": "Prevention is better than cure"
+  }
 ]
