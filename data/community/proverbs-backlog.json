@@ -105,7 +105,10 @@
     "romaji": "Ni to wo ou mono wa itto wo mo ezu",
     "english": "One who chases two rabbits catches neither",
     "meaning": "Focus on one thing at a time",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "VITianYash42",
+    "completedPR": 670
   },
   {
     "id": 13,
@@ -178,7 +181,10 @@
     "romaji": "Shiranu ga hotoke",
     "english": "Not knowing is Buddha",
     "meaning": "Ignorance is bliss",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "Chidwan3578",
+    "completedPR": 673
   },
   {
     "id": 21,
@@ -186,7 +192,7 @@
     "romaji": "Ryouyaku wa kuchi ni nigashi",
     "english": "Good medicine tastes bitter",
     "meaning": "Helpful advice often sounds harsh",
-    "issued": false
+    "issued": true
   },
   {
     "id": 22,
