@@ -246,7 +246,10 @@
     "romaji": "Deru kui wa utareru",
     "english": "The nail that sticks out gets hammered down",
     "meaning": "Those who stand out may face criticism",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "tamjidahmed0",
+    "completedPR": 742
   },
   {
     "id": 28,
