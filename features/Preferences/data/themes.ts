@@ -242,6 +242,12 @@ const baseThemeSets: BaseThemeGroup[] = [
     icon: Moon,
     themes: [
       {
+        id: 'papercraft-white',
+        backgroundColor: 'oklch(98.0% 0.005 90.0 / 1)',
+        mainColor: 'oklch(35.0% 0.165 255.0 / 1)',
+        secondaryColor: 'oklch(55.0% 0.145 200.0 / 1)'
+      },
+      {
         id: 'firefly-field',
         backgroundColor: 'oklch(16.0% 0.038 150.0 / 1)',
         mainColor: 'oklch(88.0% 0.175 110.0 / 1)',
