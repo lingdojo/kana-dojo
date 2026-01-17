@@ -24,23 +24,24 @@
     "meaning": "Accomplishing two things with one action"
   },
   {
-  "japanese": "郷に入っては郷に従え",
-  "romaji": "Gou ni itte wa gou ni shitagae",
-  "english": "When in a village, follow the village customs",
-  "meaning": "When in Rome, do as the Romans do"
-},
-{
-  "japanese": "知らぬが仏",
-  "romaji": "Shiranu ga hotoke",
-  "english": "Not knowing is Buddha",
-  "meaning": "Ignorance is bliss"
-
+    "japanese": "郷に入っては郷に従え",
+    "romaji": "Gou ni itte wa gou ni shitagae",
+    "english": "When in a village, follow the village customs",
+    "meaning": "When in Rome, do as the Romans do"
   },
   {
-  "japanese": "二兎を追う者は一兎をも得ず",
-  "romaji": "Ni to wo ou mono wa itto wo mo ezu",
-  "english": "One who chases two rabbits catches neither",
-  "meaning": "Focus on one thing at a time"
+    "japanese": "知らぬが仏",
+    "romaji": "Shiranu ga hotoke",
+    "english": "Not knowing is Buddha",
+    "meaning": "Ignorance is bliss"
+  },
+  {
+    "japanese": "二兎を追う者は一兎をも得ず",
+    "romaji": "Ni to wo ou mono wa itto wo mo ezu",
+    "english": "One who chases two rabbits catches neither",
+    "meaning": "Focus on one thing at a time"
+  },
+  {
     "japanese": "郷に入っては郷に従え",
     "romaji": "Gou ni itte wa gou ni shitagae",
     "english": "When in a village, follow the village customs",
