@@ -138,7 +138,10 @@
     "romaji": "Sannin yoreba monju no chie",
     "english": "Three people together have the wisdom of Monju",
     "meaning": "Two heads are better than one",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "RaiwashiRai",
+    "completedPR": 704
   },
   {
     "id": 16,
