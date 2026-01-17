@@ -248,6 +248,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         secondaryColor: 'oklch(70.0% 0.120 95.0 / 1)'
       },
       {
+        id: 'pixel-retro',
+        backgroundColor: 'oklch(14.0% 0.025 280.0 / 1)',
+        mainColor: 'oklch(72.0% 0.200 145.0 / 1)',
+        secondaryColor: 'oklch(80.0% 0.185 55.0 / 1)'
+      },
+      {
         id: 'papercraft-white',
         backgroundColor: 'oklch(98.0% 0.005 90.0 / 1)',
         mainColor: 'oklch(35.0% 0.165 255.0 / 1)',
