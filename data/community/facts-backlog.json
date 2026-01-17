@@ -212,7 +212,10 @@
   {
     "id": 34,
     "fact": "There's a Japanese festival called 'Hadaka Matsuri' where thousands of nearly naked men compete to catch lucky charms thrown by priests.",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "Sindhuu-B",
+    "completedPR": 746
   },
   {
     "id": 35,
