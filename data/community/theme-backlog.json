@@ -270,7 +270,10 @@
     "backgroundColor": "oklch(16.0% 0.038 150.0 / 1)",
     "mainColor": "oklch(88.0% 0.175 110.0 / 1)",
     "secondaryColor": "oklch(65.0% 0.125 145.0 / 1)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "RaiwashiRai",
+    "completedPR": 698
   },
   {
     "id": "sashimi-fresh",
