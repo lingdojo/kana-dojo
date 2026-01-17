@@ -1008,6 +1008,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         backgroundColor: 'oklch(19.0% 0.055 255.0 / 1)',
         mainColor: 'oklch(55.0% 0.165 250.0 / 1)',
         secondaryColor: 'oklch(85.0% 0.065 90.0 / 1)'
+      },
+      {
+        id: 'moss-temple',
+        backgroundColor: 'oklch(22.0% 0.045 145.0 / 1)',
+        mainColor: 'oklch(65.0% 0.155 140.0 / 1)',
+        secondaryColor: 'oklch(55.0% 0.100 120.0 / 1)'
       }
     ]
   },
