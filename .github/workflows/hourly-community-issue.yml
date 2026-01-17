@@ -61,7 +61,7 @@ jobs:
               try {
                 existingFacts = JSON.parse(fs.readFileSync(factsSourcePath, 'utf8'));
               } catch (e) {
-                console.log('Could not parse ' + factsSourcePath + ': ' + e.message);
+                console.log(`Could not parse ${factsSourcePath}: ${e.message}`);
               }
             }
 
@@ -70,7 +70,7 @@ jobs:
               try {
                 existingProverbs = JSON.parse(fs.readFileSync(proverbsSourcePath, 'utf8'));
               } catch (e) {
-                console.log('Could not parse ' + proverbsSourcePath + ': ' + e.message);
+                console.log(`Could not parse ${proverbsSourcePath}: ${e.message}`);
               }
             }
 
@@ -79,12 +79,12 @@ jobs:
               try {
                 themesSourceContent = fs.readFileSync(themesSourcePath, 'utf8');
               } catch (e) {
-                console.log('Could not read ' + themesSourcePath + ': ' + e.message);
+                console.log(`Could not read ${themesSourcePath}: ${e.message}`);
               }
             }
 
             async function hasOpenIssueForQuery(query) {
-              const q = query + ' repo:' + context.repo.owner + '/' + context.repo.repo + ' is:issue is:open';
+              const q = `${query} repo:${context.repo.owner}/${context.repo.repo} is:issue is:open`;
               try {
                 const res = await github.rest.search.issuesAndPullRequests({
                   q: q,
@@ -92,7 +92,7 @@ jobs:
                 });
                 return res.data && res.data.total_count > 0;
               } catch (e) {
-                console.log('Search query failed: ' + q + ' :: ' + e.message);
+                console.log(`Search query failed: ${q} :: ${e.message}`);
                 return false;
               }
             }
@@ -133,10 +133,10 @@ jobs:
               }
               
               // Check for duplicate theme issue
-              const duplicateTheme = await hasOpenIssueForQuery('"Add New Color Theme:" "' + item.name + '"');
+              const duplicateTheme = await hasOpenIssueForQuery(`"Add New Color Theme:" "${item.name}"`);
               
               if (duplicateTheme) {
-                console.log('Issue already exists for theme "' + item.name + '": Marking as issued and skipping.');
+                console.log(`Issue already exists for theme "${item.name}": Marking as issued and skipping.`);
                 const themeIdx = themes.findIndex(function(th) { return th.id === item.id; });
                 themes[themeIdx].issued = true;
                 fs.writeFileSync(themeBacklogPath, JSON.stringify(themes, null, 2));
@@ -154,42 +154,11 @@ jobs:
               const tmpl = t.theme;
               issueTitle = tmpl.title.replace('{name}', item.name);
               
-              const instructions = tmpl.instructions.map(function(instr, i) {
-                return (i + 1) + '. ' + instr.replace(/{name}/g, item.name);
-              });
+              const instructions = tmpl.instructions.map((instr, i) => `${i + 1}. ${instr.replace(/{name}/g, item.name)}`);
               
-              // Insert code block after instruction 3
-              const codeBlock = '```typescript\n{\n' +
-                "  id: '" + item.id + "',\n" +
-                "  backgroundColor: '" + item.backgroundColor + "',\n" +
-                "  mainColor: '" + item.mainColor + "',\n" +
-                "  secondaryColor: '" + item.secondaryColor + "'\n" +
-                '},\n```';
+              const codeBlock = `\`\`\`typescript\n{\n  id: '${item.id}',\n  backgroundColor: '${item.backgroundColor}',\n  mainColor: '${item.mainColor}',\n  secondaryColor: '${item.secondaryColor}'\n},\n\`\`\``;
               
-              issueBody = tmpl.header.replace('{name}', item.name) + '\n\n' +
-                '**Category:** ' + tmpl.category + '  \n' +
-                '**Difficulty:** ' + tmpl.difficulty + '  \n' +
-                '**Estimated Time:** ' + tmpl.estimatedTime + '\n\n' +
-                '---\n\n' +
-                '### 🎯 Your Task\n\n' +
-                tmpl.taskDescription + '\n\n' +
-                tmpl.detailsHeader + '\n\n' +
-                '| Property | Value |\n|----------|-------|\n' +
-                '| **ID** | `' + item.id + '` |\n' +
-                '| **Background** | `' + item.backgroundColor + '` |\n' +
-                '| **Main Color** | `' + item.mainColor + '` |\n' +
-                '| **Secondary** | `' + item.secondaryColor + '` |\n\n' +
-                '> ' + tmpl.vibeLabel + ' ' + item.description + '\n\n' +
-                tmpl.instructionsHeader + '\n\n' +
-                instructions[0] + '\n' +
-                instructions[1] + '\n' +
-                instructions[2] + '\n\n' +
-                codeBlock + '\n\n' +
-                instructions[3] + '\n' +
-                instructions[4] + '\n' +
-                instructions[5] + '\n\n' +
-                '---\n\n' +
-                tmpl.footer;
+              issueBody = `${tmpl.header.replace('{name}', item.name)}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${tmpl.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### 🎯 Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.detailsHeader}\n\n| Property | Value |\n|----------|-------|\n| **ID** | \`${item.id}\` |\n| **Background** | \`${item.backgroundColor}\` |\n| **Main Color** | \`${item.mainColor}\` |\n| **Secondary** | \`${item.secondaryColor}\` |\n\n> ${tmpl.vibeLabel} ${item.description}\n\n${tmpl.instructionsHeader}\n\n${instructions[0]}\n${instructions[1]}\n${instructions[2]}\n\n${codeBlock}\n\n${instructions[3]}\n${instructions[4]}\n${instructions[5]}\n\n---\n\n${tmpl.footer}`;
               
               const themeIndex = themes.findIndex(function(th) { return th.id === item.id; });
               themes[themeIndex].issued = true;
@@ -223,10 +192,10 @@ jobs:
               }
               
               // Check for duplicate fact issue
-              const duplicateFact = await hasOpenIssueForQuery('"Add Japan Fact #' + item.id + '"');
+              const duplicateFact = await hasOpenIssueForQuery(`"Add Japan Fact #${item.id}"`);
               
               if (duplicateFact) {
-                console.log('Issue already exists for fact #' + item.id + ': Marking as issued and skipping.');
+                console.log(`Issue already exists for fact #${item.id}: Marking as issued and skipping.`);
                 const factIdx = facts.findIndex(function(f) { return f.id === item.id; });
                 facts[factIdx].issued = true;
                 fs.writeFileSync(factsBacklogPath, JSON.stringify(facts, null, 2));
@@ -244,23 +213,9 @@ jobs:
               const tmpl = t.fact;
               issueTitle = tmpl.title.replace('{id}', item.id);
               
-              const instructions = tmpl.instructions.map(function(instr, i) {
-                return (i + 1) + '. ' + instr.replace(/{id}/g, item.id);
-              });
+              const instructions = tmpl.instructions.map((instr, i) => `${i + 1}. ${instr.replace(/{id}/g, item.id)}`);
               
-              issueBody = tmpl.header + '\n\n' +
-                '**Category:** ' + tmpl.category + '  \n' +
-                '**Difficulty:** ' + tmpl.difficulty + '  \n' +
-                '**Estimated Time:** ' + tmpl.estimatedTime + '\n\n' +
-                '---\n\n' +
-                '### 🎯 Your Task\n\n' +
-                tmpl.taskDescription + '\n\n' +
-                tmpl.factHeader + '\n\n' +
-                '> ' + item.fact + '\n\n' +
-                tmpl.instructionsHeader + '\n\n' +
-                instructions.join('\n') + '\n\n' +
-                '---\n\n' +
-                tmpl.footer;
+              issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${tmpl.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### 🎯 Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.factHeader}\n\n> ${item.fact}\n\n${tmpl.instructionsHeader}\n\n${instructions.join('\n')}\n\n---\n\n${tmpl.footer}`;
               
               const factIndex = facts.findIndex(function(f) { return f.id === item.id; });
               facts[factIndex].issued = true;
@@ -301,10 +256,10 @@ jobs:
               }
               
               // Check for duplicate proverb issue
-              const duplicateProverb = await hasOpenIssueForQuery('"Add Japanese Proverb #' + item.id + '"');
+              const duplicateProverb = await hasOpenIssueForQuery(`"Add Japanese Proverb #${item.id}"`);
               
               if (duplicateProverb) {
-                console.log('Issue already exists for proverb #' + item.id + ': Marking as issued and skipping.');
+                console.log(`Issue already exists for proverb #${item.id}: Marking as issued and skipping.`);
                 const proverbIdx = proverbs.findIndex(function(p) { return p.id === item.id; });
                 proverbs[proverbIdx].issued = true;
                 fs.writeFileSync(proverbsBacklogPath, JSON.stringify(proverbs, null, 2));
@@ -322,39 +277,11 @@ jobs:
               const tmpl = t.proverb;
               issueTitle = tmpl.title.replace('{id}', item.id);
               
-              const instructions = tmpl.instructions.map(function(instr, i) {
-                return (i + 1) + '. ' + instr.replace(/{id}/g, item.id);
-              });
+              const instructions = tmpl.instructions.map((instr, i) => `${i + 1}. ${instr.replace(/{id}/g, item.id)}`);
               
-              // Create code block for the proverb JSON
-              const codeBlock = '```json\n{\n' +
-                '  "japanese": "' + item.japanese + '",\n' +
-                '  "romaji": "' + item.romaji + '",\n' +
-                '  "english": "' + item.english + '",\n' +
-                '  "meaning": "' + item.meaning + '"\n' +
-                '}\n```';
+              const codeBlock = `\`\`\`json\n{\n  "japanese": "${item.japanese}",\n  "romaji": "${item.romaji}",\n  "english": "${item.english}",\n  "meaning": "${item.meaning}"\n}\n\`\`\``;
               
-              issueBody = tmpl.header + '\n\n' +
-                '**Category:** ' + tmpl.category + '  \n' +
-                '**Difficulty:** ' + tmpl.difficulty + '  \n' +
-                '**Estimated Time:** ' + tmpl.estimatedTime + '\n\n' +
-                '---\n\n' +
-                '### 🎯 Your Task\n\n' +
-                tmpl.taskDescription + '\n\n' +
-                tmpl.proverbHeader + '\n\n' +
-                '| Japanese | Reading | English |\n|----------|---------|---------|\n' +
-                '| **' + item.japanese + '** | ' + item.romaji + ' | ' + item.english + ' |\n\n' +
-                '> 💡 **Meaning:** ' + item.meaning + '\n\n' +
-                tmpl.instructionsHeader + '\n\n' +
-                instructions[0] + '\n' +
-                instructions[1] + '\n' +
-                instructions[2] + '\n\n' +
-                codeBlock + '\n\n' +
-                instructions[3] + '\n' +
-                instructions[4] + '\n' +
-                instructions[5] + '\n\n' +
-                '---\n\n' +
-                tmpl.footer;
+              issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${tmpl.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### 🎯 Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.proverbHeader}\n\n| Japanese | Reading | English |\n|----------|---------|---------|\n| **${item.japanese}** | ${item.romaji} | ${item.english} |\n\n> 💡 **Meaning:** ${item.meaning}\n\n${tmpl.instructionsHeader}\n\n${instructions[0]}\n${instructions[1]}\n${instructions[2]}\n\n${codeBlock}\n\n${instructions[3]}\n${instructions[4]}\n${instructions[5]}\n\n---\n\n${tmpl.footer}`;
               
               const proverbIndex = proverbs.findIndex(function(p) { return p.id === item.id; });
               proverbs[proverbIndex].issued = true;
@@ -372,7 +299,7 @@ jobs:
               labels: labels
             });
 
-            console.log('Created issue #' + response.data.number + ': ' + issueTitle);
+            console.log(`Created issue #${response.data.number}: ${issueTitle}`);
 
             state.lastType = nextType;
             state.lastRun = new Date().toISOString();
@@ -425,7 +352,7 @@ jobs:
                   pull_number: prNumber,
                   merge_method: 'squash'
                 });
-                console.log('Merged automation PR #' + prNumber);
+                console.log(`Merged automation PR #${prNumber}`);
 
                 try {
                   const { data: pr } = await github.rest.pulls.get({
@@ -438,16 +365,16 @@ jobs:
                     await github.rest.git.deleteRef({
                       owner: context.repo.owner,
                       repo: context.repo.repo,
-                      ref: 'heads/' + ref
+                      ref: `heads/${ref}`
                     });
-                    console.log('Deleted automation branch: ' + ref);
+                    console.log(`Deleted automation branch: ${ref}`);
                   }
                 } catch (deleteErr) {
-                  console.log('Could not delete automation branch: ' + deleteErr.message);
+                  console.log(`Could not delete automation branch: ${deleteErr.message}`);
                 }
                 return;
               } catch (e) {
-                console.log('Merge attempt ' + i + ' failed: ' + e.message);
+                console.log(`Merge attempt ${i} failed: ${e.message}`);
                 if (e.status === 409) {
                   try {
                     await github.rest.pulls.updateBranch({
@@ -455,9 +382,9 @@ jobs:
                       repo: context.repo.repo,
                       pull_number: prNumber
                     });
-                    console.log('Requested branch update for PR #' + prNumber);
+                    console.log(`Requested branch update for PR #${prNumber}`);
                   } catch (updateErr) {
-                    console.log('Could not update branch: ' + updateErr.message);
+                    console.log(`Could not update branch: ${updateErr.message}`);
                   }
                 }
                 if (i < MAX_RETRIES) {
@@ -466,6 +393,6 @@ jobs:
               }
             }
 
-            throw new Error('Failed to merge automation PR #' + prNumber);
+            throw new Error(`Failed to merge automation PR #${prNumber}`);
         env:
           PR_NUMBER: ${{ steps.commit-backlog.outputs.pull-request-number }}

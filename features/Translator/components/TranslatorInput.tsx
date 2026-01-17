@@ -269,6 +269,7 @@ export default function TranslatorInput({
             'text-red-500 text-sm'
           )}
           role='alert'
+          aria-live='polite'
         >
           {error || voiceError}
         </div>
@@ -283,6 +284,7 @@ export default function TranslatorInput({
             'text-red-500 text-sm'
           )}
           role='alert'
+          aria-live='assertive'
         >
           Text exceeds maximum length of {MAX_CHARACTERS.toLocaleString()}{' '}
           characters

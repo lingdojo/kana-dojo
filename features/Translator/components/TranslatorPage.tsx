@@ -1,6 +1,8 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useRef, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
+import dynamic from 'next/dynamic';
 import { ArrowLeftRight, WifiOff, Languages, Sparkles } from 'lucide-react';
 import { cn } from '@/shared/lib/utils';
 import { ActionButton } from '@/shared/components/ui/ActionButton';
@@ -9,13 +11,30 @@ import useTranslatorStore from '../store/useTranslatorStore';
 import TranslatorInput from './TranslatorInput';
 import TranslatorOutput from './TranslatorOutput';
 import TranslationHistory from './TranslationHistory';
-import SEOContent from './SEOContent';
+
+// Lazy load SEOContent for better initial page load performance
+const SEOContent = dynamic(() => import('./SEOContent'), {
+  loading: () => (
+    <div className='mt-6 sm:mt-8 p-4 sm:p-6 rounded-2xl bg-[var(--card-color)] border border-[var(--border-color)] animate-pulse'>
+      <div className='h-8 w-64 bg-[var(--border-color)] rounded mb-4' />
+      <div className='space-y-3'>
+        <div className='h-4 w-full bg-[var(--border-color)] rounded' />
+        <div className='h-4 w-3/4 bg-[var(--border-color)] rounded' />
+        <div className='h-4 w-5/6 bg-[var(--border-color)] rounded' />
+      </div>
+    </div>
+  ),
+  ssr: true // Keep SSR for SEO purposes
+});
 
 interface TranslatorPageProps {
   locale?: string;
 }
 
 export default function TranslatorPage({ locale = 'en' }: TranslatorPageProps) {
+  const searchParams = useSearchParams();
+  const initializedFromUrl = useRef(false);
+
   const {
     sourceText,
     sourceLanguage,
@@ -33,21 +52,53 @@ export default function TranslatorPage({ locale = 'en' }: TranslatorPageProps) {
     loadHistory,
     deleteFromHistory,
     clearHistory,
-    restoreFromHistory
+    restoreFromHistory,
+    initFromUrlParams
   } = useTranslatorStore();
 
+  // Load history on mount
   useEffect(() => {
     loadHistory();
   }, [loadHistory]);
+
+  // Handle URL parameters for sharable translations
+  useEffect(() => {
+    if (initializedFromUrl.current) return;
+
+    const text = searchParams.get('text') || searchParams.get('q');
+    const from = searchParams.get('from');
+    const to = searchParams.get('to');
+
+    if (text) {
+      const hasParams = initFromUrlParams({
+        text: text || undefined,
+        from: from || undefined,
+        to: to || undefined,
+        q: searchParams.get('q') || undefined
+      });
+
+      if (hasParams) {
+        initializedFromUrl.current = true;
+        // Auto-translate if text was provided via URL
+        setTimeout(() => {
+          translate();
+        }, 100);
+      }
+    }
+  }, [searchParams, initFromUrlParams, translate]);
 
   const handleTranslate = () => {
     if (!isOffline && sourceText.trim().length > 0) translate();
   };
 
   return (
-    <div className='mx-auto flex w-full max-w-6xl flex-col gap-6'>
-      {/* Header */}
-      <div
+    <div
+      className='mx-auto flex w-full max-w-6xl flex-col gap-6'
+      role='application'
+      aria-label='Japanese to English translator'
+    >
+      {/* Header with SEO-optimized content */}
+      <header
         className={cn(
           'flex flex-col items-start gap-4 rounded-2xl p-4 sm:flex-row sm:items-center sm:p-6',
           'border border-[var(--border-color)] bg-gradient-to-r from-[var(--card-color)] to-[var(--background-color)]'
@@ -57,18 +108,21 @@ export default function TranslatorPage({ locale = 'en' }: TranslatorPageProps) {
           className={cn(
             'rounded-xl border border-[var(--main-color)]/20 bg-[var(--main-color)]/10 p-2.5 sm:p-3'
           )}
+          aria-hidden='true'
         >
           <Languages className='h-6 w-6 text-[var(--main-color)] sm:h-8 sm:w-8' />
         </div>
         <div>
           <h1 className='text-2xl font-bold text-[var(--main-color)] sm:text-3xl'>
-            Free Japanese to English Translator
+            Free English to Japanese Translator
           </h1>
-          <p className='mt-1 text-xs text-[var(--secondary-color)] sm:text-sm'>
-            Translate Japanese to English or English to Japanese instantly with romanization (romaji). No registration required.
+          <p className='mt-1 text-sm text-[var(--secondary-color)] sm:text-base'>
+            <strong>Translate English to Japanese</strong> or Japanese to English
+            instantly. Get accurate translations with{' '}
+            <strong>romaji pronunciation</strong> — no registration required.
           </p>
         </div>
-      </div>
+      </header>
 
       {/* Offline indicator */}
       {isOffline && (

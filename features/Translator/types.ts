@@ -62,6 +62,12 @@ export interface TranslatorState {
   deleteFromHistory: (id: string) => Promise<void>;
   clearHistory: () => Promise<void>;
   restoreFromHistory: (entry: TranslationEntry) => void;
+  initFromUrlParams: (params: {
+    text?: string;
+    from?: string;
+    to?: string;
+    q?: string;
+  }) => boolean;
 }
 
 /**

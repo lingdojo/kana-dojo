@@ -96,7 +96,7 @@ export default function SEOContent({ locale: _locale = 'en' }: SEOContentProps) 
         'bg-[var(--card-color)] border border-[var(--border-color)]',
         'shadow-lg shadow-black/5'
       )}
-      aria-label='Educational content'
+      aria-label='Japanese translation guide and educational content'
     >
       <div className='flex flex-col sm:flex-row sm:items-center gap-3 mb-2'>
         <div
@@ -105,24 +105,94 @@ export default function SEOContent({ locale: _locale = 'en' }: SEOContentProps) 
             'bg-[var(--main-color)]/10',
             'border border-[var(--main-color)]/20'
           )}
+          aria-hidden='true'
         >
           <GraduationCap className='h-5 w-5 sm:h-6 sm:w-6 text-[var(--main-color)]' />
         </div>
         <div>
           <h2 className='text-xl sm:text-2xl font-bold text-[var(--main-color)]'>
-            Japanese Translation Guide
+            How to Translate English to Japanese Online
           </h2>
           <p className='text-xs sm:text-sm text-[var(--secondary-color)]'>
-            Learn more about Japanese translation and writing systems
+            Complete guide to Japanese translation with tips for learners
           </p>
         </div>
+      </div>
+
+      {/* Featured Snippet: Definition Box */}
+      <div
+        className={cn(
+          'p-4 rounded-xl border-2 border-[var(--main-color)]/30',
+          'bg-[var(--main-color)]/5'
+        )}
+        itemScope
+        itemProp='description'
+      >
+        <p className='text-sm leading-relaxed text-[var(--secondary-color)]'>
+          <strong className='text-[var(--main-color)]'>Japanese Translator:</strong>{' '}
+          A tool that converts text between Japanese (日本語) and other languages,
+          typically English. Modern Japanese translators use neural machine
+          translation (NMT) to understand context and provide accurate translations
+          of Hiragana (ひらがな), Katakana (カタカナ), and Kanji (漢字) text. Our
+          free translator includes romaji pronunciation to help learners read
+          Japanese characters.
+        </p>
+      </div>
+
+      {/* Featured Snippet: Quick Translation Table */}
+      <div className='overflow-x-auto'>
+        <table
+          className='w-full text-sm border-collapse'
+          aria-label='Common English to Japanese translations'
+        >
+          <thead>
+            <tr className='border-b border-[var(--border-color)]'>
+              <th className='py-2 px-3 text-left font-semibold text-[var(--main-color)]'>
+                English
+              </th>
+              <th className='py-2 px-3 text-left font-semibold text-[var(--main-color)]'>
+                Japanese
+              </th>
+              <th className='py-2 px-3 text-left font-semibold text-[var(--main-color)]'>
+                Romaji
+              </th>
+            </tr>
+          </thead>
+          <tbody className='text-[var(--secondary-color)]'>
+            <tr className='border-b border-[var(--border-color)]/50'>
+              <td className='py-2 px-3'>Hello</td>
+              <td className='py-2 px-3 font-medium'>こんにちは</td>
+              <td className='py-2 px-3 italic'>Konnichiwa</td>
+            </tr>
+            <tr className='border-b border-[var(--border-color)]/50'>
+              <td className='py-2 px-3'>Thank you</td>
+              <td className='py-2 px-3 font-medium'>ありがとう</td>
+              <td className='py-2 px-3 italic'>Arigatou</td>
+            </tr>
+            <tr className='border-b border-[var(--border-color)]/50'>
+              <td className='py-2 px-3'>Yes</td>
+              <td className='py-2 px-3 font-medium'>はい</td>
+              <td className='py-2 px-3 italic'>Hai</td>
+            </tr>
+            <tr className='border-b border-[var(--border-color)]/50'>
+              <td className='py-2 px-3'>No</td>
+              <td className='py-2 px-3 font-medium'>いいえ</td>
+              <td className='py-2 px-3 italic'>Iie</td>
+            </tr>
+            <tr>
+              <td className='py-2 px-3'>I love you</td>
+              <td className='py-2 px-3 font-medium'>愛してる</td>
+              <td className='py-2 px-3 italic'>Aishiteru</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
       <div className='flex flex-col gap-3'>
         {/* Introduction Section */}
         <div className='space-y-4 text-sm leading-relaxed text-[var(--secondary-color)]'>
           <h2 className='text-lg font-bold text-[var(--main-color)] sm:text-xl'>
-            The Best Free Japanese to English Translator for Language Learners
+            Why Choose KanaDojo&apos;s Free Japanese Translator
           </h2>
           <p>
             Welcome to KanaDojo&apos;s free Japanese translator—the perfect tool
@@ -983,6 +1053,210 @@ export default function SEOContent({ locale: _locale = 'en' }: SEOContentProps) 
               learner-focused features, we provide a translation experience
               that&apos;s both powerful and educational.
             </p>
+          </div>
+        </CollapsibleSection>
+
+        <CollapsibleSection
+          title='How to Translate Anime and Manga Japanese'
+          icon={<BookOpen className='h-4 w-4 text-[var(--main-color)]' />}
+        >
+          <div className='space-y-4 text-sm leading-relaxed'>
+            <p>
+              Translating anime and manga requires understanding informal Japanese,
+              slang, and cultural expressions that differ from textbook Japanese.
+              Here&apos;s how to get the most accurate translations:
+            </p>
+
+            <div className='space-y-3'>
+              <div
+                className={cn(
+                  'p-4 rounded-xl',
+                  'bg-[var(--main-color)]/5 border border-[var(--main-color)]/20'
+                )}
+              >
+                <h4 className='font-semibold text-[var(--main-color)] mb-2'>
+                  Understanding Anime Speech Patterns
+                </h4>
+                <p className='text-[var(--secondary-color)]'>
+                  Anime characters often use exaggerated or stylized speech. Common
+                  patterns include: sentence-ending particles like &quot;だぜ&quot;
+                  (masculine), &quot;わ&quot; (feminine), and &quot;のだ&quot;
+                  (explanatory). Our translator handles these naturally, but knowing
+                  they convey personality rather than literal meaning helps you
+                  understand the translation context.
+                </p>
+              </div>
+
+              <div
+                className={cn(
+                  'p-4 rounded-xl',
+                  'bg-[var(--main-color)]/5 border border-[var(--main-color)]/20'
+                )}
+              >
+                <h4 className='font-semibold text-[var(--main-color)] mb-2'>
+                  Translating Manga Sound Effects
+                </h4>
+                <p className='text-[var(--secondary-color)]'>
+                  Japanese manga uses onomatopoeia extensively. Words like
+                  &quot;ドキドキ&quot; (dokidoki - heartbeat), &quot;シーン&quot;
+                  (shiin - silence), and &quot;ゴゴゴ&quot; (gogogo - menacing
+                  atmosphere) are cultural expressions. Paste these into the
+                  translator to understand their meaning, then appreciate how they
+                  convey mood in the original.
+                </p>
+              </div>
+
+              <div
+                className={cn(
+                  'p-4 rounded-xl',
+                  'bg-[var(--main-color)]/5 border border-[var(--main-color)]/20'
+                )}
+              >
+                <h4 className='font-semibold text-[var(--main-color)] mb-2'>
+                  Common Anime Phrases to Know
+                </h4>
+                <div className='grid gap-2 mt-2'>
+                  {[
+                    {
+                      japanese: '頑張って',
+                      romaji: 'Ganbatte',
+                      english: 'Do your best! / Good luck!'
+                    },
+                    {
+                      japanese: 'なるほど',
+                      romaji: 'Naruhodo',
+                      english: 'I see / I understand'
+                    },
+                    {
+                      japanese: 'やばい',
+                      romaji: 'Yabai',
+                      english: 'Awesome / Terrible (context-dependent)'
+                    },
+                    {
+                      japanese: 'まじで',
+                      romaji: 'Maji de',
+                      english: 'Seriously? / For real?'
+                    }
+                  ].map((phrase, index) => (
+                    <div
+                      key={index}
+                      className='flex items-center gap-3 text-[var(--secondary-color)]'
+                    >
+                      <span className='font-medium text-[var(--main-color)]'>
+                        {phrase.japanese}
+                      </span>
+                      <span className='text-xs italic'>({phrase.romaji})</span>
+                      <span>— {phrase.english}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </CollapsibleSection>
+
+        <CollapsibleSection
+          title='How to Translate Japanese Names to English'
+          icon={<Info className='h-4 w-4 text-[var(--main-color)]' />}
+        >
+          <div className='space-y-4 text-sm leading-relaxed'>
+            <p>
+              Japanese names follow specific patterns and conventions. Understanding
+              these helps you translate names accurately and respectfully.
+            </p>
+
+            <div className='space-y-3'>
+              <div
+                className={cn(
+                  'p-4 rounded-xl',
+                  'bg-[var(--main-color)]/5 border border-[var(--main-color)]/20'
+                )}
+              >
+                <h4 className='font-semibold text-[var(--main-color)] mb-2'>
+                  Japanese Name Order
+                </h4>
+                <p className='text-[var(--secondary-color)]'>
+                  In Japanese, the family name (姓 - sei) comes first, followed by
+                  the given name (名 - mei). For example, &quot;田中太郎&quot;
+                  (Tanaka Tarō) has &quot;Tanaka&quot; as the family name and
+                  &quot;Tarō&quot; as the given name. When romanized, some people
+                  reverse this to Western order (Tarō Tanaka), while others keep the
+                  Japanese order.
+                </p>
+              </div>
+
+              <div
+                className={cn(
+                  'p-4 rounded-xl',
+                  'bg-[var(--main-color)]/5 border border-[var(--main-color)]/20'
+                )}
+              >
+                <h4 className='font-semibold text-[var(--main-color)] mb-2'>
+                  Common Japanese Name Kanji
+                </h4>
+                <div className='grid gap-2 mt-2'>
+                  {[
+                    {
+                      kanji: '山田',
+                      romaji: 'Yamada',
+                      meaning: 'Mountain field (surname)'
+                    },
+                    {
+                      kanji: '佐藤',
+                      romaji: 'Satō',
+                      meaning: 'Helper wisteria (most common surname)'
+                    },
+                    {
+                      kanji: '美咲',
+                      romaji: 'Misaki',
+                      meaning: 'Beautiful bloom (female given name)'
+                    },
+                    {
+                      kanji: '大翔',
+                      romaji: 'Hiroto',
+                      meaning: 'Great flight (male given name)'
+                    }
+                  ].map((name, index) => (
+                    <div
+                      key={index}
+                      className='flex items-center gap-3 text-[var(--secondary-color)]'
+                    >
+                      <span className='font-medium text-[var(--main-color)]'>
+                        {name.kanji}
+                      </span>
+                      <span className='text-xs italic'>({name.romaji})</span>
+                      <span>— {name.meaning}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div
+                className={cn(
+                  'p-4 rounded-xl',
+                  'bg-[var(--main-color)]/5 border border-[var(--main-color)]/20'
+                )}
+              >
+                <h4 className='font-semibold text-[var(--main-color)] mb-2'>
+                  Tips for Translating Names
+                </h4>
+                <ul className='list-disc list-inside space-y-1 text-[var(--secondary-color)]'>
+                  <li>
+                    Names written in kanji may have multiple possible readings
+                  </li>
+                  <li>
+                    Use our translator&apos;s romaji feature to see pronunciation
+                  </li>
+                  <li>
+                    Foreign names in katakana can be transliterated back to their
+                    original form
+                  </li>
+                  <li>
+                    Some names have traditional meanings worth understanding
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </CollapsibleSection>
 
