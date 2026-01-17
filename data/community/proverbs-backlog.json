@@ -238,7 +238,10 @@
     "romaji": "Neko ni koban",
     "english": "Gold coins to a cat",
     "meaning": "Giving something valuable to someone who can't appreciate it",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "tamjidahmed0",
+    "completedPR": 744
   },
   {
     "id": 27,
