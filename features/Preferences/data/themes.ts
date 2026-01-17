@@ -242,11 +242,11 @@ const baseThemeSets: BaseThemeGroup[] = [
     icon: Moon,
     themes: [
       {
-  id: 'akihabara-glow',
-  backgroundColor: 'oklch(15.0% 0.065 300.0 / 1)',
-  mainColor: 'oklch(80.0% 0.210 180.0 / 1)',
-  secondaryColor: 'oklch(85.0% 0.190 320.0 / 1)'
-},
+        id: 'akihabara-glow',
+        backgroundColor: 'oklch(15.0% 0.065 300.0 / 1)',
+        mainColor: 'oklch(80.0% 0.210 180.0 / 1)',
+        secondaryColor: 'oklch(85.0% 0.190 320.0 / 1)'
+      },
       {
         id: 'anime-pop',
         backgroundColor: 'oklch(95.0% 0.015 85.0 / 1)',
@@ -1008,6 +1008,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         backgroundColor: 'oklch(19.0% 0.055 255.0 / 1)',
         mainColor: 'oklch(55.0% 0.165 250.0 / 1)',
         secondaryColor: 'oklch(85.0% 0.065 90.0 / 1)'
+      },
+      {
+        id: 'geisha-grace',
+        backgroundColor: 'oklch(18.0% 0.055 15.0 / 1)',
+        mainColor: 'oklch(60.0% 0.210 25.0 / 1)',
+        secondaryColor: 'oklch(82.0% 0.145 85.0 / 1)'
       }
     ]
   },
