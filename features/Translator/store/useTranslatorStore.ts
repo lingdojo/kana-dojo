@@ -207,6 +207,37 @@ const useTranslatorStore = create<TranslatorState>()((set, get) => ({
       romanization: entry.romanization || null,
       error: null
     });
+  },
+
+  // Initialize from URL parameters for sharable translations
+  initFromUrlParams: (params: {
+    text?: string;
+    from?: string;
+    to?: string;
+    q?: string;
+  }) => {
+    const text = params.text || params.q;
+    if (!text) return false;
+
+    const validLanguages = ['en', 'ja'];
+    const sourceLanguage = validLanguages.includes(params.from || '')
+      ? (params.from as Language)
+      : 'en';
+    const targetLanguage = validLanguages.includes(params.to || '')
+      ? (params.to as Language)
+      : sourceLanguage === 'en'
+        ? 'ja'
+        : 'en';
+
+    set({
+      sourceText: decodeURIComponent(text),
+      sourceLanguage,
+      targetLanguage,
+      autoDetect: false,
+      error: null
+    });
+
+    return true;
   }
 }));
 

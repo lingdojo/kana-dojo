@@ -174,7 +174,10 @@
     "backgroundColor": "oklch(20.0% 0.048 290.0 / 1)",
     "mainColor": "oklch(72.0% 0.175 295.0 / 1)",
     "secondaryColor": "oklch(80.0% 0.125 320.0 / 1)",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "saurabh-xd",
+    "completedPR": 595
   },
   {
     "id": "tatami-room",
@@ -183,7 +186,7 @@
     "backgroundColor": "oklch(88.0% 0.035 85.0 / 1)",
     "mainColor": "oklch(45.0% 0.105 75.0 / 1)",
     "secondaryColor": "oklch(55.0% 0.080 60.0 / 1)",
-    "issued": false
+    "issued": true
   },
   {
     "id": "volcanic-ash",
@@ -192,7 +195,7 @@
     "backgroundColor": "oklch(20.0% 0.018 270.0 / 1)",
     "mainColor": "oklch(70.0% 0.155 25.0 / 1)",
     "secondaryColor": "oklch(55.0% 0.045 260.0 / 1)",
-    "issued": false
+    "issued": true
   },
   {
     "id": "ryokan-evening",
@@ -201,7 +204,7 @@
     "backgroundColor": "oklch(23.0% 0.038 280.0 / 1)",
     "mainColor": "oklch(78.0% 0.130 55.0 / 1)",
     "secondaryColor": "oklch(68.0% 0.095 30.0 / 1)",
-    "issued": false
+    "issued": true
   },
   {
     "id": "anime-pop",
@@ -210,7 +213,10 @@
     "backgroundColor": "oklch(95.0% 0.015 85.0 / 1)",
     "mainColor": "oklch(65.0% 0.235 345.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.200 260.0 / 1)",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "tasosbeast",
+    "completedPR": 643
   },
   {
     "id": "moss-temple",
@@ -219,7 +225,10 @@
     "backgroundColor": "oklch(22.0% 0.045 145.0 / 1)",
     "mainColor": "oklch(65.0% 0.155 140.0 / 1)",
     "secondaryColor": "oklch(55.0% 0.100 120.0 / 1)",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "Utkarsh-Singhal-26",
+    "completedPR": 677
   },
   {
     "id": "akihabara-glow",
@@ -228,7 +237,10 @@
     "backgroundColor": "oklch(15.0% 0.065 300.0 / 1)",
     "mainColor": "oklch(80.0% 0.210 180.0 / 1)",
     "secondaryColor": "oklch(85.0% 0.190 320.0 / 1)",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "tasosbeast",
+    "completedPR": 651
   },
   {
     "id": "ocean-tofu",
@@ -237,7 +249,7 @@
     "backgroundColor": "oklch(21.0% 0.042 235.0 / 1)",
     "mainColor": "oklch(92.0% 0.025 240.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.135 225.0 / 1)",
-    "issued": false
+    "issued": true
   },
   {
     "id": "geisha-grace",
@@ -246,7 +258,10 @@
     "backgroundColor": "oklch(18.0% 0.055 15.0 / 1)",
     "mainColor": "oklch(60.0% 0.210 25.0 / 1)",
     "secondaryColor": "oklch(82.0% 0.145 85.0 / 1)",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "Utkarsh-Singhal-26",
+    "completedPR": 674
   },
   {
     "id": "firefly-field",
@@ -255,7 +270,10 @@
     "backgroundColor": "oklch(16.0% 0.038 150.0 / 1)",
     "mainColor": "oklch(88.0% 0.175 110.0 / 1)",
     "secondaryColor": "oklch(65.0% 0.125 145.0 / 1)",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "RaiwashiRai",
+    "completedPR": 698
   },
   {
     "id": "sashimi-fresh",
@@ -264,7 +282,7 @@
     "backgroundColor": "oklch(17.0% 0.028 280.0 / 1)",
     "mainColor": "oklch(75.0% 0.145 5.0 / 1)",
     "secondaryColor": "oklch(85.0% 0.095 350.0 / 1)",
-    "issued": false
+    "issued": true
   },
   {
     "id": "okinawa-sea",
@@ -273,7 +291,7 @@
     "backgroundColor": "oklch(23.0% 0.055 215.0 / 1)",
     "mainColor": "oklch(82.0% 0.165 195.0 / 1)",
     "secondaryColor": "oklch(90.0% 0.125 180.0 / 1)",
-    "issued": false
+    "issued": true
   },
   {
     "id": "papercraft-white",

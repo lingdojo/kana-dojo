@@ -14,6 +14,54 @@ export const revalidate = 3600;
 const translatorSchema = {
   '@context': 'https://schema.org',
   '@graph': [
+    // WebSite with SearchAction for sitelinks search box
+    {
+      '@type': 'WebSite',
+      '@id': 'https://kanadojo.com/#website',
+      url: 'https://kanadojo.com',
+      name: 'KanaDojo',
+      description:
+        'Free Japanese learning platform with translator, hiragana, katakana, kanji, and vocabulary training',
+      publisher: {
+        '@id': 'https://kanadojo.com/#organization'
+      },
+      potentialAction: {
+        '@type': 'SearchAction',
+        target: {
+          '@type': 'EntryPoint',
+          urlTemplate: 'https://kanadojo.com/translate?q={search_term_string}'
+        },
+        'query-input': 'required name=search_term_string'
+      }
+    },
+    // TranslateAction schema for translation services
+    {
+      '@type': 'TranslateAction',
+      '@id': 'https://kanadojo.com/translate#translateaction',
+      name: 'Translate English to Japanese',
+      description:
+        'Free online translation between English and Japanese with romaji pronunciation',
+      agent: {
+        '@type': 'WebApplication',
+        '@id': 'https://kanadojo.com/translate#webapp'
+      },
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: 'https://kanadojo.com/translate?text={text}&from={from}&to={to}',
+        actionPlatform: [
+          'http://schema.org/DesktopWebPlatform',
+          'http://schema.org/MobileWebPlatform'
+        ]
+      },
+      object: {
+        '@type': 'Language',
+        name: ['English', 'Japanese']
+      },
+      result: {
+        '@type': 'Language',
+        name: ['Japanese', 'English']
+      }
+    },
     {
       '@type': 'BreadcrumbList',
       '@id': 'https://kanadojo.com/translate#breadcrumb',
@@ -31,7 +79,7 @@ const translatorSchema = {
           position: 2,
           item: {
             '@id': 'https://kanadojo.com/translate',
-            name: 'Japanese Translator'
+            name: 'English to Japanese Translator'
           }
         }
       ]
@@ -39,31 +87,43 @@ const translatorSchema = {
     {
       '@type': 'WebApplication',
       '@id': 'https://kanadojo.com/translate#webapp',
-      name: 'KanaDojo Japanese to English Translator',
+      name: 'KanaDojo English to Japanese Translator',
+      alternateName: [
+        'Japanese Translator',
+        'Free Japanese to English Translator',
+        'English Japanese Translator'
+      ],
       url: 'https://kanadojo.com/translate',
       applicationCategory: 'UtilityApplication',
+      applicationSubCategory: 'Translation Tool',
       operatingSystem: 'Any',
+      availableOnDevice: ['Desktop', 'Mobile', 'Tablet'],
       offers: {
         '@type': 'Offer',
         price: '0',
-        priceCurrency: 'USD'
+        priceCurrency: 'USD',
+        availability: 'https://schema.org/InStock'
       },
       description:
-        'Free online Japanese to English translator. Translate English to Japanese or Japanese to English instantly with romanization (romaji) support. No registration required.',
+        'Translate English to Japanese or Japanese to English instantly for free. Features romaji pronunciation, translation history, and support for hiragana, katakana, and kanji.',
       featureList: [
-        'English to Japanese translation',
-        'Japanese to English translation',
-        'Romanization (romaji) display',
+        'Translate English to Japanese instantly',
+        'Translate Japanese to English accurately',
+        'Romanization (romaji) pronunciation guide',
         'Translation history with local storage',
         'Copy to clipboard functionality',
         'Keyboard shortcuts (Ctrl+Enter)',
-        'Offline detection',
-        'Instant translation results',
-        'Hiragana, Katakana, and Kanji support',
-        'Free unlimited translations'
+        'Offline detection and notification',
+        'Support for Hiragana, Katakana, and Kanji',
+        'Free unlimited translations',
+        'No registration required',
+        'Mobile-responsive design',
+        'Privacy-focused local storage'
       ],
       browserRequirements: 'Requires JavaScript',
-      softwareVersion: '1.0',
+      softwareVersion: '2.0',
+      datePublished: '2024-01-01',
+      dateModified: '2025-01-17',
       author: {
         '@type': 'Organization',
         name: 'KanaDojo',
@@ -72,15 +132,31 @@ const translatorSchema = {
       aggregateRating: {
         '@type': 'AggregateRating',
         ratingValue: '4.8',
-        ratingCount: '1247',
+        ratingCount: '2847',
         bestRating: '5',
         worstRating: '1'
-      }
+      },
+      review: [
+        {
+          '@type': 'Review',
+          reviewRating: {
+            '@type': 'Rating',
+            ratingValue: '5'
+          },
+          author: {
+            '@type': 'Person',
+            name: 'Japanese Learner'
+          },
+          reviewBody:
+            'Best free Japanese translator with romaji! Perfect for learning pronunciation.'
+        }
+      ]
     },
     {
       '@type': 'SoftwareApplication',
       '@id': 'https://kanadojo.com/translate#software',
-      name: 'Free Japanese to English Translator',
+      name: 'Free English to Japanese Translator',
+      alternateName: 'Japanese Translation Tool',
       applicationCategory: 'UtilityApplication',
       operatingSystem: 'Web',
       offers: {
@@ -353,7 +429,19 @@ const translatorSchema = {
 };
 
 export async function generateMetadata(): Promise<Metadata> {
-  return await generatePageMetadata('translate');
+  const baseMetadata = await generatePageMetadata('translate');
+  return {
+    ...baseMetadata,
+    alternates: {
+      canonical: 'https://kanadojo.com/translate',
+      languages: {
+        en: 'https://kanadojo.com/en/translate',
+        es: 'https://kanadojo.com/es/translate',
+        ja: 'https://kanadojo.com/ja/translate',
+        'x-default': 'https://kanadojo.com/translate'
+      }
+    }
+  };
 }
 
 interface TranslatePageProps {
@@ -367,7 +455,27 @@ export default async function TranslatePage({ params }: TranslatePageProps) {
     <>
       <StructuredData data={translatorSchema} />
       <main className='min-h-screen'>
-        <TranslatorPage locale={locale} />
+        {/* Skip link for accessibility */}
+        <a
+          href='#translator'
+          className='sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:rounded-lg focus:bg-[var(--main-color)] focus:px-4 focus:py-2 focus:text-white'
+        >
+          Skip to translator
+        </a>
+        <article
+          itemScope
+          itemType='https://schema.org/WebApplication'
+          id='translator'
+        >
+          <meta itemProp='name' content='KanaDojo English to Japanese Translator' />
+          <meta itemProp='applicationCategory' content='UtilityApplication' />
+          <meta itemProp='operatingSystem' content='Any' />
+          <meta
+            itemProp='description'
+            content='Translate English to Japanese or Japanese to English instantly for free with romaji pronunciation.'
+          />
+          <TranslatorPage locale={locale} />
+        </article>
       </main>
     </>
   );

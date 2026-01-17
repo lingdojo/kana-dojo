@@ -38,10 +38,7 @@ jobs:
                   owner: context.repo.owner,
                   repo: context.repo.repo,
                   issue_number: issue.number,
-                  body: msg.greeting.replace('{commenter}', commenter) + '\n\n' +
-                    msg.body.replace('{assignee}', assignee) + '\n\n' +
-                    msg.suggestion + '\n\n' +
-                    msg.encouragement
+                  body: `${msg.greeting.replace('{commenter}', commenter)}\n\n${msg.body.replace('{assignee}', assignee)}\n\n${msg.suggestion}\n\n${msg.encouragement}`
                 });
               }
               return;
@@ -56,7 +53,7 @@ jobs:
 
             const msg = t.assigned;
             const nextSteps = msg.nextSteps.items.map(function(item, i) {
-              return (i + 1) + '. ' + item.replace('{issueNumber}', issue.number);
+              return `${i + 1}. ${item.replace('{issueNumber}', issue.number)}`;
             }).join('\n');
 
             const resources = msg.resources.items.map(function(item) {
@@ -67,12 +64,7 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: issue.number,
-              body: msg.greeting.replace('{commenter}', commenter) + '\n\n' +
-                msg.body + '\n\n' +
-                msg.nextSteps.title + '\n' + nextSteps + '\n\n' +
-                msg.resources.title + '\n' + resources + '\n\n' +
-                msg.footer + '\n\n' +
-                msg.encouragement
+              body: `${msg.greeting.replace('{commenter}', commenter)}\n\n${msg.body}\n\n${msg.nextSteps.title}\n${nextSteps}\n\n${msg.resources.title}\n${resources}\n\n${msg.footer}\n\n${msg.encouragement}`
             });
 
-            console.log('Assigned issue #' + issue.number + ' to @' + commenter);
+            console.log(`Assigned issue #${issue.number} to @${commenter}`);

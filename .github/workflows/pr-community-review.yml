@@ -80,7 +80,7 @@ jobs:
             try {
               prFiles = await listAllPrFiles();
             } catch (e) {
-              errors.push('Could not list PR files: ' + e.message);
+              errors.push(`Could not list PR files: ${e.message}`);
             }
 
             const isThemeContribution = prTitleLower.includes('theme');
@@ -95,14 +95,14 @@ jobs:
             const issueMatch = prBody.match(/[Cc]loses?\s*#(\d+)|[Ff]ixes?\s*#(\d+)|[Rr]esolves?\s*#(\d+)/);
             if (issueMatch) {
               linkedIssue = parseInt(issueMatch[1] || issueMatch[2] || issueMatch[3]);
-              console.log('Issue already linked: #' + linkedIssue);
+              console.log(`Issue already linked: #${linkedIssue}`);
             }
 
             if (!linkedIssue) {
               console.log('No issue linked, searching for matching issue...');
 
               async function searchOpenCommunityIssues(query) {
-                const q = query + ' repo:' + context.repo.owner + '/' + context.repo.repo + ' is:issue is:open label:' + templates.labels.community;
+                const q = `${query} repo:${context.repo.owner}/${context.repo.repo} is:issue is:open label:${templates.labels.community}`;
                 const res = await github.rest.search.issuesAndPullRequests({
                   q: q,
                   per_page: 10
@@ -127,33 +127,33 @@ jobs:
                 }
                 
                 if (themeName) {
-                  console.log('Looking for theme issue: ' + themeName);
-                  const matches = await searchOpenCommunityIssues('"Add New Color Theme:" "' + themeName + '"');
+                  console.log(`Looking for theme issue: ${themeName}`);
+                  const matches = await searchOpenCommunityIssues(`"Add New Color Theme:" "${themeName}"`);
                   if (matches.length > 0) {
                     foundIssue = matches[0].number;
-                    console.log('Found matching theme issue: #' + foundIssue);
+                    console.log(`Found matching theme issue: #${foundIssue}`);
                   }
                 }
               } else if (isFactContribution) {
                 const factIdMatch = prTitle.match(/#(\d+)/);
                 if (factIdMatch) {
                   const factId = factIdMatch[1];
-                  console.log('Looking for fact issue: #' + factId);
-                  const matches = await searchOpenCommunityIssues('"Add Japan Fact #' + factId + '"');
+                  console.log(`Looking for fact issue: #${factId}`);
+                  const matches = await searchOpenCommunityIssues(`"Add Japan Fact #${factId}"`);
                   if (matches.length > 0) {
                     foundIssue = matches[0].number;
-                    console.log('Found matching fact issue: #' + foundIssue);
+                    console.log(`Found matching fact issue: #${foundIssue}`);
                   }
                 }
               } else if (isProverbContribution) {
                 const proverbIdMatch = prTitle.match(/#(\d+)/);
                 if (proverbIdMatch) {
                   const proverbId = proverbIdMatch[1];
-                  console.log('Looking for proverb issue: #' + proverbId);
-                  const matches = await searchOpenCommunityIssues('"Add Japanese Proverb #' + proverbId + '"');
+                  console.log(`Looking for proverb issue: #${proverbId}`);
+                  const matches = await searchOpenCommunityIssues(`"Add Japanese Proverb #${proverbId}"`);
                   if (matches.length > 0) {
                     foundIssue = matches[0].number;
-                    console.log('Found matching proverb issue: #' + foundIssue);
+                    console.log(`Found matching proverb issue: #${foundIssue}`);
                   }
                 }
               }
@@ -194,7 +194,7 @@ jobs:
                   }
                 }
               } catch (e) {
-                errors.push('Error reading themes file: ' + e.message);
+                errors.push(`Error reading themes file: ${e.message}`);
               }
               
             } else if (isFactContribution) {
@@ -227,7 +227,7 @@ jobs:
                       }
                     }
                   } catch (parseErr) {
-                    errors.push('Invalid JSON: ' + parseErr.message);
+                    errors.push(`Invalid JSON: ${parseErr.message}`);
                   }
                   
                   if (!targetIssue) {
@@ -235,7 +235,7 @@ jobs:
                   }
                 }
               } catch (e) {
-                errors.push('Error reading facts file: ' + e.message);
+                errors.push(`Error reading facts file: ${e.message}`);
               }
             } else if (isProverbContribution) {
               validationType = 'proverb';
@@ -270,7 +270,7 @@ jobs:
                       }
                     }
                   } catch (parseErr) {
-                    errors.push('Invalid JSON: ' + parseErr.message);
+                    errors.push(`Invalid JSON: ${parseErr.message}`);
                   }
                   
                   if (!targetIssue) {
@@ -278,21 +278,21 @@ jobs:
                   }
                 }
               } catch (e) {
-                errors.push('Error reading proverbs file: ' + e.message);
+                errors.push(`Error reading proverbs file: ${e.message}`);
               }
             }
 
             isValid = errors.length === 0;
 
             if (foundIssue && !linkedIssue) {
-              const newBody = prBody + '\n\n---\n🤖 **Auto-linked:** Closes #' + foundIssue;
+              const newBody = `${prBody}\n\n---\n🤖 **Auto-linked:** Closes #${foundIssue}`;
               await github.rest.pulls.update({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 pull_number: prNumber,
                 body: newBody
               });
-              console.log('Updated PR body to link issue #' + foundIssue);
+              console.log(`Updated PR body to link issue #${foundIssue}`);
             }
 
             let commentBody;
@@ -306,16 +306,10 @@ jobs:
               
               const checks = t.passed.checks.map(function(c) { return '- ✅ ' + c; }).join('\n');
               
-              commentBody = t.passed.title + '\n\n' +
-                t.passed.body.replace('{type}', validationType) + '\n\n' +
-                '**Checks passed:**\n' + checks + issueNote + '\n\n' +
-                t.passed.footer;
+              commentBody = `${t.passed.title}\n\n${t.passed.body.replace('{type}', validationType)}\n\n**Checks passed:**\n${checks}${issueNote}\n\n${t.passed.footer}`;
             } else {
               const errorList = errors.map(function(e) { return '- ❌ ' + e; }).join('\n');
-              commentBody = t.failed.title + '\n\n' +
-                t.failed.body.replace('{type}', validationType) + '\n\n' +
-                errorList + '\n\n' +
-                t.failed.footer;
+              commentBody = `${t.failed.title}\n\n${t.failed.body.replace('{type}', validationType)}\n\n${errorList}\n\n${t.failed.footer}`;
             }
 
             await github.rest.issues.createComment({
@@ -350,8 +344,8 @@ jobs:
                   labels: [labelName]
                 });
 
-                console.log('Marked PR #' + prNumber + ' for merge after checks');
+                console.log(`Marked PR #${prNumber} for merge after checks`);
               } catch (e) {
-                console.log('Could not label PR for merge after checks: ' + e.message);
+                console.log(`Could not label PR for merge after checks: ${e.message}`);
               }
             }

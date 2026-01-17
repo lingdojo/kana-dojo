@@ -76,7 +76,7 @@ jobs:
               const hasWarning = issue.labels.some(function(l) { return l.name === templates.labels.staleWarning; });
               
               if (timeSinceActivity >= CLOSE_THRESHOLD_MS) {
-                console.log('Closing stale issue #' + issue.number + ': ' + issue.title);
+                console.log(`Closing stale issue #${issue.number}: ${issue.title}`);
                 
                 // Unassign the user before closing
                 const assignees = issue.assignees.map(function(a) { return a.login; });
@@ -87,7 +87,7 @@ jobs:
                     issue_number: issue.number,
                     assignees: assignees
                   });
-                  console.log('Unassigned ' + assignees.join(', ') + ' from issue #' + issue.number);
+                  console.log(`Unassigned ${assignees.join(', ')} from issue #${issue.number}`);
                 }
                 
                 const closedMsg = t.closed;
@@ -95,9 +95,7 @@ jobs:
                   owner: context.repo.owner,
                   repo: context.repo.repo,
                   issue_number: issue.number,
-                  body: closedMsg.title + ' ' + closedMsg.reason + '\n\n' +
-                    closedMsg.reassurance + '\n\n' +
-                    closedMsg.footer
+                  body: `${closedMsg.title} ${closedMsg.reason}\n\n${closedMsg.reassurance}\n\n${closedMsg.footer}`
                 });
                 
                 await github.rest.issues.update({
@@ -119,9 +117,9 @@ jobs:
                     if (themeIndex !== -1 && !themes[themeIndex].completed) {
                       themes[themeIndex].issued = false;
                       needsCommit = true;
-                      console.log('Re-enabled theme: ' + themeName);
+                      console.log(`Re-enabled theme: ${themeName}`);
                     } else if (themeIndex !== -1 && themes[themeIndex].completed) {
-                      console.log('Theme "' + themeName + '" is already completed, not re-enabling');
+                      console.log(`Theme "${themeName}" is already completed, not re-enabling`);
                     }
                   }
                 } else if (title.includes('Add Japan Fact #')) {
@@ -132,9 +130,9 @@ jobs:
                     if (factIndex !== -1 && !facts[factIndex].completed) {
                       facts[factIndex].issued = false;
                       needsCommit = true;
-                      console.log('Re-enabled fact #' + factId);
+                      console.log(`Re-enabled fact #${factId}`);
                     } else if (factIndex !== -1 && facts[factIndex].completed) {
-                      console.log('Fact #' + factId + ' is already completed, not re-enabling');
+                      console.log(`Fact #${factId} is already completed, not re-enabling`);
                     }
                   }
                 } else if (title.includes('Add Japanese Proverb #')) {
@@ -145,25 +143,22 @@ jobs:
                     if (proverbIndex !== -1 && !proverbs[proverbIndex].completed) {
                       proverbs[proverbIndex].issued = false;
                       needsCommit = true;
-                      console.log('Re-enabled proverb #' + proverbId);
+                      console.log(`Re-enabled proverb #${proverbId}`);
                     } else if (proverbIndex !== -1 && proverbs[proverbIndex].completed) {
-                      console.log('Proverb #' + proverbId + ' is already completed, not re-enabling');
+                      console.log(`Proverb #${proverbId} is already completed, not re-enabling`);
                     }
                   }
                 }
                 
               } else if (timeSinceActivity >= WARNING_THRESHOLD_MS && !hasWarning) {
-                console.log('Adding warning to issue #' + issue.number);
+                console.log(`Adding warning to issue #${issue.number}`);
                 
                 const warningMsg = t.warning;
                 await github.rest.issues.createComment({
                   owner: context.repo.owner,
                   repo: context.repo.repo,
                   issue_number: issue.number,
-                  body: warningMsg.greeting + ' ' + warningMsg.body + '\n\n' +
-                    warningMsg.action + '\n\n' +
-                    warningMsg.consequence + '\n\n' +
-                    warningMsg.footer
+                  body: `${warningMsg.greeting} ${warningMsg.body}\n\n${warningMsg.action}\n\n${warningMsg.consequence}\n\n${warningMsg.footer}`
                 });
                 
                 await github.rest.issues.addLabels({
@@ -225,7 +220,7 @@ jobs:
                   pull_number: prNumber,
                   merge_method: 'squash'
                 });
-                console.log('Merged automation PR #' + prNumber);
+                console.log(`Merged automation PR #${prNumber}`);
 
                 try {
                   const { data: pr } = await github.rest.pulls.get({
@@ -238,16 +233,16 @@ jobs:
                     await github.rest.git.deleteRef({
                       owner: context.repo.owner,
                       repo: context.repo.repo,
-                      ref: 'heads/' + ref
+                      ref: `heads/${ref}`
                     });
-                    console.log('Deleted automation branch: ' + ref);
+                    console.log(`Deleted automation branch: ${ref}`);
                   }
                 } catch (deleteErr) {
-                  console.log('Could not delete automation branch: ' + deleteErr.message);
+                  console.log(`Could not delete automation branch: ${deleteErr.message}`);
                 }
                 return;
               } catch (e) {
-                console.log('Merge attempt ' + i + ' failed: ' + e.message);
+                console.log(`Merge attempt ${i} failed: ${e.message}`);
                 if (e.status === 409) {
                   try {
                     await github.rest.pulls.updateBranch({
@@ -255,9 +250,9 @@ jobs:
                       repo: context.repo.repo,
                       pull_number: prNumber
                     });
-                    console.log('Requested branch update for PR #' + prNumber);
+                    console.log(`Requested branch update for PR #${prNumber}`);
                   } catch (updateErr) {
-                    console.log('Could not update branch: ' + updateErr.message);
+                    console.log(`Could not update branch: ${updateErr.message}`);
                   }
                 }
                 if (i < MAX_RETRIES) {
@@ -266,6 +261,6 @@ jobs:
               }
             }
 
-            throw new Error('Failed to merge automation PR #' + prNumber);
+            throw new Error(`Failed to merge automation PR #${prNumber}`);
         env:
           PR_NUMBER: ${{ steps.commit-backlog.outputs.pull-request-number }}

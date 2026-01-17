@@ -159,6 +159,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
         <link rel='dns-prefetch' href='https://www.clarity.ms' />
         <link rel='dns-prefetch' href='https://vercel-analytics.com' />
         <link rel='dns-prefetch' href='https://vitals.vercel-insights.com' />
+        <link rel='dns-prefetch' href='https://translation.googleapis.com' />
         {/* Preconnect to critical domains - establish early connections */}
         <link
           rel='preconnect'
@@ -168,6 +169,11 @@ export default async function RootLayout({ children }: RootLayoutProps) {
         <link
           rel='preconnect'
           href='https://vercel-analytics.com'
+          crossOrigin='anonymous'
+        />
+        <link
+          rel='preconnect'
+          href='https://translation.googleapis.com'
           crossOrigin='anonymous'
         />
         {/* Prefetch critical JSON data for faster navigation */}

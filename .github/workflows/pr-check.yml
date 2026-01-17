@@ -137,19 +137,14 @@ jobs:
 
             const maxLength = 60000;
             let truncatedOutput = combinedOutput.length > maxLength 
-              ? combinedOutput.substring(0, maxLength) + '\n\n... (output truncated)'
+              ? `${combinedOutput.substring(0, maxLength)}\n\n... (output truncated)`
               : combinedOutput;
 
             const howToFix = t.howToFix.map(function(step, i) { 
-              return (i + 1) + '. ' + step; 
+              return `${i + 1}. ${step}`; 
             }).join('\n');
 
-            const body = t.title + '\n\n' +
-              t.body + '\n\n' +
-              '<details>\n<summary>View full output</summary>\n\n' +
-              '```\n' + truncatedOutput + '\n```\n\n</details>\n\n' +
-              '**How to fix:**\n' + howToFix + '\n\n' +
-              t.footer;
+            const body = `${t.title}\n\n${t.body}\n\n<details>\n<summary>View full output</summary>\n\n\`\`\`\n${truncatedOutput}\n\`\`\`\n\n</details>\n\n**How to fix:**\n${howToFix}\n\n${t.footer}`;
 
             await github.rest.issues.createComment({
               owner: context.repo.owner,
@@ -198,6 +193,6 @@ jobs:
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 issue_number: context.payload.pull_request.number,
-                body: t.title + '\n\n' + t.body + '\n\n' + t.footer
+                body: `${t.title}\n\n${t.body}\n\n${t.footer}`
               });
             }

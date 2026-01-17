@@ -54,22 +54,17 @@ jobs:
               }
               isFirstTime = !found;
             } catch (e) {
-              console.log('Could not fetch contributors list: ' + e.message);
+              console.log(`Could not fetch contributors list: ${e.message}`);
             }
 
             const checklist = t.checklist.items.map(function(item) {
               return '- [ ] ' + item;
             }).join('\n');
 
-            let welcomeMessage = t.greeting.replace('{author}', author) + '\n\n' +
-              t.body + '\n\n' +
-              t.checklist.title + '\n' + checklist + '\n\n' +
-              t.footer + '\n\n' +
-              t.thanks;
+            let welcomeMessage = `${t.greeting.replace('{author}', author)}\n\n${t.body}\n\n${t.checklist.title}\n${checklist}\n\n${t.footer}\n\n${t.thanks}`;
 
             if (isFirstTime) {
-              welcomeMessage += '\n\n' + t.firstTimeContributor.separator + '\n\n' +
-                t.firstTimeContributor.title + ' ' + t.firstTimeContributor.body;
+              welcomeMessage += `\n\n${t.firstTimeContributor.separator}\n\n${t.firstTimeContributor.title} ${t.firstTimeContributor.body}`;
             }
 
             await github.rest.issues.createComment({
@@ -79,4 +74,4 @@ jobs:
               body: welcomeMessage
             });
 
-            console.log('Welcomed PR author @' + author + ' on PR #' + pr.number);
+            console.log(`Welcomed PR author @${author} on PR #${pr.number}`);

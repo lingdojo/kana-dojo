@@ -83,7 +83,10 @@
     "romaji": "Korobanu saki no tsue",
     "english": "A cane before falling",
     "meaning": "Prevention is better than cure",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "Xylphy",
+    "completedPR": 633
   },
   {
     "id": 11,
@@ -91,7 +94,10 @@
     "romaji": "Toki wa kane nari",
     "english": "Time is money",
     "meaning": "Time is valuable and should not be wasted",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "villarroelsaad",
+    "completedPR": 608
   },
   {
     "id": 12,
@@ -99,7 +105,10 @@
     "romaji": "Ni to wo ou mono wa itto wo mo ezu",
     "english": "One who chases two rabbits catches neither",
     "meaning": "Focus on one thing at a time",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "VITianYash42",
+    "completedPR": 670
   },
   {
     "id": 13,
@@ -107,7 +116,10 @@
     "romaji": "Ame futte ji katamaru",
     "english": "After rain, the ground hardens",
     "meaning": "Adversity builds strength",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "saurabh-xd",
+    "completedPR": 605
   },
   {
     "id": 14,
@@ -115,7 +127,10 @@
     "romaji": "Hyakubun wa ikken ni shikazu",
     "english": "Hearing a hundred times is not as good as seeing once",
     "meaning": "Seeing is believing",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "MoriitoDev",
+    "completedPR": 621
   },
   {
     "id": 15,
@@ -123,7 +138,7 @@
     "romaji": "Sannin yoreba monju no chie",
     "english": "Three people together have the wisdom of Monju",
     "meaning": "Two heads are better than one",
-    "issued": false
+    "issued": true
   },
   {
     "id": 16,
@@ -131,7 +146,7 @@
     "romaji": "Warau kado ni wa fuku kitaru",
     "english": "Fortune comes to a laughing gate",
     "meaning": "Happiness and good fortune come to those who smile",
-    "issued": false
+    "issued": true
   },
   {
     "id": 17,
@@ -139,7 +154,10 @@
     "romaji": "Anzuru yori umu ga yasushi",
     "english": "Giving birth is easier than worrying",
     "meaning": "Things are often easier done than worried about",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "tasosbeast",
+    "completedPR": 655
   },
   {
     "id": 18,
@@ -147,7 +165,7 @@
     "romaji": "Uogokoro areba mizugokoro",
     "english": "If fish has heart, water has heart",
     "meaning": "Good intentions will be reciprocated",
-    "issued": false
+    "issued": true
   },
   {
     "id": 19,
@@ -155,7 +173,7 @@
     "romaji": "Inu mo arukeba bou ni ataru",
     "english": "Even a walking dog will hit a stick",
     "meaning": "Try anything and you might get lucky (or unlucky)",
-    "issued": false
+    "issued": true
   },
   {
     "id": 20,
@@ -163,7 +181,10 @@
     "romaji": "Shiranu ga hotoke",
     "english": "Not knowing is Buddha",
     "meaning": "Ignorance is bliss",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "Chidwan3578",
+    "completedPR": 673
   },
   {
     "id": 21,
@@ -171,7 +192,7 @@
     "romaji": "Ryouyaku wa kuchi ni nigashi",
     "english": "Good medicine tastes bitter",
     "meaning": "Helpful advice often sounds harsh",
-    "issued": false
+    "issued": true
   },
   {
     "id": 22,
@@ -179,7 +200,7 @@
     "romaji": "Koketsu ni irazunba koji wo ezu",
     "english": "If you don't enter the tiger's den, you can't get the cub",
     "meaning": "Nothing ventured, nothing gained",
-    "issued": false
+    "issued": true
   },
   {
     "id": 23,

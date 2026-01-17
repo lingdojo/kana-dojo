@@ -61,29 +61,29 @@ jobs:
             });
 
             if (!pr.head || pr.head.sha !== expectedHeadSha) {
-              console.log('PR #' + prNumber + ' head SHA does not match expected head SHA; skipping');
+              console.log(`PR #${prNumber} head SHA does not match expected head SHA; skipping`);
               return;
             }
 
             if (pr.state !== 'open') {
-              console.log('PR #' + prNumber + ' is not open');
+              console.log(`PR #${prNumber} is not open`);
               return;
             }
 
             if (pr.draft) {
-              console.log('PR #' + prNumber + ' is a draft');
+              console.log(`PR #${prNumber} is a draft`);
               return;
             }
 
             if (pr.head && pr.head.ref && pr.head.ref.startsWith('automation/')) {
-              console.log('PR #' + prNumber + ' is an automation PR; skipping');
+              console.log(`PR #${prNumber} is an automation PR; skipping`);
               return;
             }
 
             const labels = (pr.labels || []).map(function(l) { return l.name; });
 
             if (!labels.includes('community-auto-merge')) {
-              console.log('PR #' + prNumber + ' is not marked for auto-merge');
+              console.log(`PR #${prNumber} is not marked for auto-merge`);
               return;
             }
 
@@ -98,13 +98,13 @@ jobs:
 
               const latestRun = (runs.workflow_runs && runs.workflow_runs[0]) ? runs.workflow_runs[0] : null;
               if (!latestRun || latestRun.conclusion !== 'success') {
-                console.log('PR #' + prNumber + ' does not have a successful PR Quality Check run for this SHA yet');
+                console.log(`PR #${prNumber} does not have a successful PR Quality Check run for this SHA yet`);
                 return;
               }
             }
 
             if (pr.mergeable === false) {
-              console.log('PR #' + prNumber + ' is not mergeable');
+              console.log(`PR #${prNumber} is not mergeable`);
               return;
             }
 
@@ -117,10 +117,10 @@ jobs:
                   pull_number: prNumber,
                   merge_method: 'squash'
                 });
-                console.log('Merged community PR #' + prNumber);
+                console.log(`Merged community PR #${prNumber}`);
                 return;
               } catch (e) {
-                console.log('Merge attempt ' + i + ' failed: ' + e.message);
+                console.log(`Merge attempt ${i} failed: ${e.message}`);
                 if (e.status === 409) {
                   try {
                     await github.rest.pulls.updateBranch({
@@ -128,9 +128,9 @@ jobs:
                       repo: context.repo.repo,
                       pull_number: prNumber
                     });
-                    console.log('Requested branch update for PR #' + prNumber);
+                    console.log(`Requested branch update for PR #${prNumber}`);
                   } catch (updateErr) {
-                    console.log('Could not update branch: ' + updateErr.message);
+                    console.log(`Could not update branch: ${updateErr.message}`);
                   }
                 }
                 if (i < MAX_RETRIES) {
@@ -139,4 +139,4 @@ jobs:
               }
             }
 
-            throw new Error('Failed to merge community PR #' + prNumber);
+            throw new Error(`Failed to merge community PR #${prNumber}`);

@@ -241,7 +241,37 @@ const baseThemeSets: BaseThemeGroup[] = [
     name: 'Dark',
     icon: Moon,
     themes: [
-              {
+      {
+        id: 'firefly-field',
+        backgroundColor: 'oklch(16.0% 0.038 150.0 / 1)',
+        mainColor: 'oklch(88.0% 0.175 110.0 / 1)',
+        secondaryColor: 'oklch(65.0% 0.125 145.0 / 1)'
+      },
+      {
+        id: 'shinkansen-speed',
+        backgroundColor: 'oklch(22.0% 0.035 240.0 / 1)',
+        mainColor: 'oklch(90.0% 0.085 220.0 / 1)',
+        secondaryColor: 'oklch(65.0% 0.185 25.0 / 1)'
+      },
+      {
+        id: 'akihabara-glow',
+        backgroundColor: 'oklch(15.0% 0.065 300.0 / 1)',
+        mainColor: 'oklch(80.0% 0.210 180.0 / 1)',
+        secondaryColor: 'oklch(85.0% 0.190 320.0 / 1)'
+      },
+      {
+        id: 'anime-pop',
+        backgroundColor: 'oklch(95.0% 0.015 85.0 / 1)',
+        mainColor: 'oklch(65.0% 0.235 345.0 / 1)',
+        secondaryColor: 'oklch(70.0% 0.200 260.0 / 1)'
+      },
+      {
+        id: 'snow-lantern',
+        backgroundColor: 'oklch(94.0% 0.012 250.0 / 1)',
+        mainColor: 'oklch(50.0% 0.145 30.0 / 1)',
+        secondaryColor: 'oklch(40.0% 0.110 250.0 / 1)'
+      },
+      {
         id: 'snow-lantern',
         backgroundColor: 'oklch(94.0% 0.012 250.0 / 1)',
         mainColor: 'oklch(50.0% 0.145 30.0 / 1)',
@@ -254,6 +284,19 @@ const baseThemeSets: BaseThemeGroup[] = [
   mainColor: 'oklch(75.0% 0.145 5.0 / 1)',
   secondaryColor: 'oklch(85.0% 0.095 350.0 / 1)'
 },
+        
+      {
+        id: 'wisteria-dream',
+        backgroundColor: 'oklch(20.0% 0.048 290.0 / 1)',
+        mainColor: 'oklch(72.0% 0.175 295.0 / 1)',
+        secondaryColor: 'oklch(80.0% 0.125 320.0 / 1)'
+      },
+        {
+          id: 'volcanic-ash',
+          backgroundColor: 'oklch(20.0% 0.018 270.0 / 1)',
+          mainColor: 'oklch(70.0% 0.155 25.0 / 1)',
+          secondaryColor: 'oklch(55.0% 0.045 260.0 / 1)'
+        },
       {
         id: 'plum-blossom',
         backgroundColor: 'oklch(23.0% 0.042 340.0 / 1)',
@@ -264,7 +307,8 @@ const baseThemeSets: BaseThemeGroup[] = [
         id: 'shibuya-nights',
         backgroundColor: 'oklch(12.0% 0.045 290.0 / 1)',
         mainColor: 'oklch(78.0% 0.225 330.0 / 1)',
-        secondaryColor: 'oklch(82.0% 0.180 200.0 / 1)'},
+        secondaryColor: 'oklch(82.0% 0.180 200.0 / 1)'
+      },
       {
         id: 'zen-stone',
         backgroundColor: 'oklch(25.0% 0.015 260.0 / 1)',
@@ -957,21 +1001,21 @@ const baseThemeSets: BaseThemeGroup[] = [
       },
       {
         id: 'shion',
-        backgroundColor: 'oklch(18.5% 0.030 270.0 / 1)',    // matte onyx
-        mainColor: 'oklch(75.0% 0.146 300.0 / 1)',           // refined violet
-        secondaryColor: 'oklch(58.8% 0.120 145.0 / 1)',      // woodland shadow
+        backgroundColor: 'oklch(18.5% 0.030 270.0 / 1)', // matte onyx
+        mainColor: 'oklch(75.0% 0.146 300.0 / 1)', // refined violet
+        secondaryColor: 'oklch(58.8% 0.120 145.0 / 1)' // woodland shadow
       },
       {
         id: 'thunder-temple',
         backgroundColor: 'oklch(16.0% 0.065 280.0 / 1)',
         mainColor: 'oklch(85.0% 0.185 260.0 / 1)',
-        secondaryColor: 'oklch(75.0% 0.145 290.0 / 1)',
+        secondaryColor: 'oklch(75.0% 0.145 290.0 / 1)'
       },
       {
         id: 'tokyo-metro',
         backgroundColor: 'oklch(20.0% 0.025 260.0 / 1)',
         mainColor: 'oklch(70.0% 0.180 145.0 / 1)',
-        secondaryColor: 'oklch(80.0% 0.120 50.0 / 1)',
+        secondaryColor: 'oklch(80.0% 0.120 50.0 / 1)'
       },
       {
         id: 'digital-oni',
@@ -984,7 +1028,17 @@ const baseThemeSets: BaseThemeGroup[] = [
         backgroundColor: 'oklch(19.0% 0.055 255.0 / 1)',
         mainColor: 'oklch(55.0% 0.165 250.0 / 1)',
         secondaryColor: 'oklch(85.0% 0.065 90.0 / 1)'
-      },      
+      },
+      {
+        id: 'moss-temple',
+        backgroundColor: 'oklch(22.0% 0.045 145.0 / 1)',
+        mainColor: 'oklch(65.0% 0.155 140.0 / 1)',
+        secondaryColor: 'oklch(55.0% 0.100 120.0 / 1)'},{
+        id: 'geisha-grace',
+        backgroundColor: 'oklch(18.0% 0.055 15.0 / 1)',
+        mainColor: 'oklch(60.0% 0.210 25.0 / 1)',
+        secondaryColor: 'oklch(82.0% 0.145 85.0 / 1)'
+      }
     ]
   },
   {

@@ -83,7 +83,7 @@ jobs:
               }
 
               if (description.length > 4096) {
-                description = description.substring(0, 4090) + '...\n\n*See full changelog on GitHub*';
+                description = `${description.substring(0, 4090)}...\n\n*See full changelog on GitHub*`;
               }
 
               const embed = {

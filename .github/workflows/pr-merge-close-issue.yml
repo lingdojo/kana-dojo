@@ -60,14 +60,14 @@ jobs:
 
             if (issueMatch) {
               targetIssue = parseInt(issueMatch[1] || issueMatch[2] || issueMatch[3]);
-              console.log('Found linked issue in PR body: #' + targetIssue);
+              console.log(`Found linked issue in PR body: #${targetIssue}`);
             }
 
             if (!targetIssue) {
               console.log('No issue linked, searching for matching issue...');
 
               async function searchOpenCommunityIssues(query) {
-                const q = query + ' repo:' + context.repo.owner + '/' + context.repo.repo + ' is:issue is:open label:' + templates.labels.community;
+                const q = `${query} repo:${context.repo.owner}/${context.repo.repo} is:issue is:open label:${templates.labels.community}`;
                 const res = await github.rest.search.issuesAndPullRequests({
                   q: q,
                   per_page: 10
@@ -92,33 +92,33 @@ jobs:
                 }
                 
                 if (themeName) {
-                  console.log('Looking for theme issue: ' + themeName);
-                  const matches = await searchOpenCommunityIssues('"Add New Color Theme:" "' + themeName + '"');
+                  console.log(`Looking for theme issue: ${themeName}`);
+                  const matches = await searchOpenCommunityIssues(`"Add New Color Theme:" "${themeName}"`);
                   if (matches.length > 0) {
                     targetIssue = matches[0].number;
-                    console.log('Found matching theme issue: #' + targetIssue);
+                    console.log(`Found matching theme issue: #${targetIssue}`);
                   }
                 }
               } else if (isFactContribution) {
                 const factIdMatch = prTitle.match(/#(\d+)/);
                 const factId = factIdMatch ? factIdMatch[1] : null;
                 if (factId) {
-                  console.log('Looking for fact issue: #' + factId);
-                  const matches = await searchOpenCommunityIssues('"Add Japan Fact #' + factId + '"');
+                  console.log(`Looking for fact issue: #${factId}`);
+                  const matches = await searchOpenCommunityIssues(`"Add Japan Fact #${factId}"`);
                   if (matches.length > 0) {
                     targetIssue = matches[0].number;
-                    console.log('Found matching fact issue: #' + targetIssue);
+                    console.log(`Found matching fact issue: #${targetIssue}`);
                   }
                 }
               } else if (isProverbContribution) {
                 const proverbIdMatch = prTitle.match(/#(\d+)/);
                 const proverbId = proverbIdMatch ? proverbIdMatch[1] : null;
                 if (proverbId) {
-                  console.log('Looking for proverb issue: #' + proverbId);
-                  const matches = await searchOpenCommunityIssues('"Add Japanese Proverb #' + proverbId + '"');
+                  console.log(`Looking for proverb issue: #${proverbId}`);
+                  const matches = await searchOpenCommunityIssues(`"Add Japanese Proverb #${proverbId}"`);
                   if (matches.length > 0) {
                     targetIssue = matches[0].number;
-                    console.log('Found matching proverb issue: #' + targetIssue);
+                    console.log(`Found matching proverb issue: #${targetIssue}`);
                   }
                 }
               }
@@ -141,10 +141,7 @@ jobs:
                   owner: context.repo.owner,
                   repo: context.repo.repo,
                   issue_number: targetIssue,
-                  body: t.title + '\n\n' +
-                    t.body.replace('{author}', prAuthor) + '\n\n' +
-                    t.mergedIn.replace('{prNumber}', prNumber) + '\n\n' +
-                    t.footer
+                  body: `${t.title}\n\n${t.body.replace('{author}', prAuthor)}\n\n${t.mergedIn.replace('{prNumber}', prNumber)}\n\n${t.footer}`
                 });
                 
                 await github.rest.issues.update({
@@ -155,7 +152,7 @@ jobs:
                   state_reason: 'completed'
                 });
                 
-                console.log('Successfully closed issue #' + targetIssue);
+                console.log(`Successfully closed issue #${targetIssue}`);
                 
                 // Mark the item as permanently completed in the backlog
                 if (isThemeContribution) {
@@ -191,7 +188,7 @@ jobs:
                       themes[themeIndex].completedPR = prNumber;
                       fs.writeFileSync(themeBacklogPath, JSON.stringify(themes, null, 2));
                       needsCommit = true;
-                      console.log('Marked theme "' + themeName + '" as completed');
+                      console.log(`Marked theme "${themeName}" as completed`);
                     }
                   }
                 } else if (isFactContribution) {
@@ -208,7 +205,7 @@ jobs:
                       facts[factIndex].completedPR = prNumber;
                       fs.writeFileSync(factsBacklogPath, JSON.stringify(facts, null, 2));
                       needsCommit = true;
-                      console.log('Marked fact #' + factId + ' as completed');
+                      console.log(`Marked fact #${factId} as completed`);
                     }
                   }
                 } else if (isProverbContribution) {
@@ -225,12 +222,12 @@ jobs:
                       proverbs[proverbIndex].completedPR = prNumber;
                       fs.writeFileSync(proverbsBacklogPath, JSON.stringify(proverbs, null, 2));
                       needsCommit = true;
-                      console.log('Marked proverb #' + proverbId + ' as completed');
+                      console.log(`Marked proverb #${proverbId} as completed`);
                     }
                   }
                 }
               } catch (e) {
-                console.log('Error closing issue: ' + e.message);
+                console.log(`Error closing issue: ${e.message}`);
               }
             } else {
               console.log('No matching issue found to close');
@@ -279,7 +276,7 @@ jobs:
                   pull_number: prNumber,
                   merge_method: 'squash'
                 });
-                console.log('Merged automation PR #' + prNumber);
+                console.log(`Merged automation PR #${prNumber}`);
 
                 try {
                   const { data: pr } = await github.rest.pulls.get({
@@ -292,16 +289,16 @@ jobs:
                     await github.rest.git.deleteRef({
                       owner: context.repo.owner,
                       repo: context.repo.repo,
-                      ref: 'heads/' + ref
+                      ref: `heads/${ref}`
                     });
-                    console.log('Deleted automation branch: ' + ref);
+                    console.log(`Deleted automation branch: ${ref}`);
                   }
                 } catch (deleteErr) {
-                  console.log('Could not delete automation branch: ' + deleteErr.message);
+                  console.log(`Could not delete automation branch: ${deleteErr.message}`);
                 }
                 return;
               } catch (e) {
-                console.log('Merge attempt ' + i + ' failed: ' + e.message);
+                console.log(`Merge attempt ${i} failed: ${e.message}`);
                 if (e.status === 409) {
                   try {
                     await github.rest.pulls.updateBranch({
@@ -309,9 +306,9 @@ jobs:
                       repo: context.repo.repo,
                       pull_number: prNumber
                     });
-                    console.log('Requested branch update for PR #' + prNumber);
+                    console.log(`Requested branch update for PR #${prNumber}`);
                   } catch (updateErr) {
-                    console.log('Could not update branch: ' + updateErr.message);
+                    console.log(`Could not update branch: ${updateErr.message}`);
                   }
                 }
                 if (i < MAX_RETRIES) {
@@ -320,6 +317,6 @@ jobs:
               }
             }
 
-            throw new Error('Failed to merge automation PR #' + prNumber);
+            throw new Error(`Failed to merge automation PR #${prNumber}`);
         env:
           PR_NUMBER: ${{ steps.commit-backlog.outputs.pull-request-number }}
