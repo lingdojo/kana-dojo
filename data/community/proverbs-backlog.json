@@ -151,7 +151,10 @@
     "romaji": "Anzuru yori umu ga yasushi",
     "english": "Giving birth is easier than worrying",
     "meaning": "Things are often easier done than worried about",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "tasosbeast",
+    "completedPR": 655
   },
   {
     "id": 18,
