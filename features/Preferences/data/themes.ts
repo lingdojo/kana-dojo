@@ -242,6 +242,12 @@ const baseThemeSets: BaseThemeGroup[] = [
     icon: Moon,
     themes: [
       {
+        id: 'rice-field-gold',
+        backgroundColor: 'oklch(24.0% 0.045 80.0 / 1)',
+        mainColor: 'oklch(85.0% 0.155 90.0 / 1)',
+        secondaryColor: 'oklch(70.0% 0.120 95.0 / 1)'
+      },
+      {
         id: 'papercraft-white',
         backgroundColor: 'oklch(98.0% 0.005 90.0 / 1)',
         mainColor: 'oklch(35.0% 0.165 255.0 / 1)',
@@ -1039,17 +1045,17 @@ const baseThemeSets: BaseThemeGroup[] = [
         backgroundColor: 'oklch(18.0% 0.055 15.0 / 1)',
         mainColor: 'oklch(60.0% 0.210 25.0 / 1)',
         secondaryColor: 'oklch(82.0% 0.145 85.0 / 1)'
-        },
+      },
 
 
-        {
-            id: 'kabuki-drama',
-            backgroundColor: 'oklch(15.0% 0.048 25.0 / 1)',
-            mainColor: 'oklch(65.0% 0.225 30.0 / 1)',
-            secondaryColor: 'oklch(90.0% 0.055 95.0 / 1)',
-        },
+      {
+        id: 'kabuki-drama',
+        backgroundColor: 'oklch(15.0% 0.048 25.0 / 1)',
+        mainColor: 'oklch(65.0% 0.225 30.0 / 1)',
+        secondaryColor: 'oklch(90.0% 0.055 95.0 / 1)',
+      },
 
-      
+
     ]
   },
   {
