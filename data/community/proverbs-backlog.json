@@ -274,7 +274,10 @@
     "romaji": "Ichi go ichi e",
     "english": "One time, one meeting",
     "meaning": "Treasure every encounter, for it will never recur",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "DarshanCode2005",
+    "completedPR": 771
   },
   {
     "id": 30,
