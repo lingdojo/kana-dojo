@@ -336,7 +336,10 @@
     "backgroundColor": "oklch(14.0% 0.025 280.0 / 1)",
     "mainColor": "oklch(72.0% 0.200 145.0 / 1)",
     "secondaryColor": "oklch(80.0% 0.185 55.0 / 1)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "tamjidahmed0",
+    "completedPR": 735
   },
   {
     "id": "temple-bell",
