@@ -245,7 +245,14 @@ const baseThemeSets: BaseThemeGroup[] = [
         id: 'snow-lantern',
         backgroundColor: 'oklch(94.0% 0.012 250.0 / 1)',
         mainColor: 'oklch(50.0% 0.145 30.0 / 1)',
-        secondaryColor: 'oklch(40.0% 0.110 250.0 / 1)'
+        secondaryColor: 'oklch(40.0% 0.110 250.0 / 1)',
+        
+      },
+      {
+  id: 'sashimi-fresh',
+  backgroundColor: 'oklch(17.0% 0.028 280.0 / 1)',
+  mainColor: 'oklch(75.0% 0.145 5.0 / 1)',
+  secondaryColor: 'oklch(85.0% 0.095 350.0 / 1)'
 },
       {
         id: 'plum-blossom',
