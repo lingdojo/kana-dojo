@@ -242,6 +242,12 @@ const baseThemeSets: BaseThemeGroup[] = [
     icon: Moon,
     themes: [
       {
+        id: 'firefly-field',
+        backgroundColor: 'oklch(16.0% 0.038 150.0 / 1)',
+        mainColor: 'oklch(88.0% 0.175 110.0 / 1)',
+        secondaryColor: 'oklch(65.0% 0.125 145.0 / 1)'
+      },
+      {
         id: 'shinkansen-speed',
         backgroundColor: 'oklch(22.0% 0.035 240.0 / 1)',
         mainColor: 'oklch(90.0% 0.085 220.0 / 1)',
