@@ -225,7 +225,10 @@
   {
     "id": 36,
     "fact": "Japan has a 'Black Company' award given to employers with the worst working conditions - a form of public shaming for labor violations.",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "FiercePhoenix7",
+    "completedPR": 759
   },
   {
     "id": 37,
