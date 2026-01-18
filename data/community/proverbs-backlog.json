@@ -67,7 +67,10 @@
     "romaji": "Isogaba maware",
     "english": "If in a hurry, go around",
     "meaning": "Taking the safer, longer route is sometimes faster",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "kaedeek",
+    "completedPR": 843
   },
   {
     "id": 9,
