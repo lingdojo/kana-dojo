@@ -214,7 +214,10 @@
     "romaji": "Kaeru no ko wa kaeru",
     "english": "A frog's child is a frog",
     "meaning": "Like father, like son",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "Pragya321Mehra",
+    "completedPR": 808
   },
   {
     "id": 24,
