@@ -258,7 +258,10 @@
   {
     "id": 39,
     "fact": "Japan has professional cuddlers you can hire to hold you while you nap - reflecting the country's epidemic of loneliness and touch starvation.",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "soorya38",
+    "completedPR": 799
   },
   {
     "id": 40,
