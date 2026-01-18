@@ -1163,7 +1163,13 @@ const baseThemeSets: BaseThemeGroup[] = [
         backgroundColor: 'oklch(23.8% 0.041 270.0 / 1)', // velvet graphite
         mainColor: 'oklch(91.5% 0.212 120.0 / 1)', // pear green
         secondaryColor: 'oklch(80.0% 0.158 340.0 / 1)' // smoky plum
-      }
+      },
+      {
+        id: 'vaporwave-shrine',
+        backgroundColor: 'oklch(17.0% 0.072 305.0 / 1)',
+        mainColor: 'oklch(75.0% 0.175 195.0 / 1)',
+        secondaryColor: 'oklch(80.0% 0.195 330.0 / 1)'
+      },
     ]
   }
 ];
