@@ -242,6 +242,12 @@ const baseThemeSets: BaseThemeGroup[] = [
     icon: Moon,
     themes: [
       {
+        id: 'calligraphy-ink',
+        backgroundColor: 'oklch(96.0% 0.008 85.0 / 1)',
+        mainColor: 'oklch(20.0% 0.015 270.0 / 1)',
+        secondaryColor: 'oklch(45.0% 0.025 260.0 / 1)'
+      },
+      {
         id: 'ocean-tofu',
         backgroundColor: 'oklch(21.0% 0.042 235.0 / 1)',
         mainColor: 'oklch(92.0% 0.025 240.0 / 1)',
@@ -253,35 +259,39 @@ const baseThemeSets: BaseThemeGroup[] = [
         mainColor: 'oklch(82.0% 0.165 195.0 / 1)',
         secondaryColor: 'oklch(90.0% 0.125 180.0 / 1)'
       },
-      
-    {
+
+      {
         id: 'sashimi-fresh',
         backgroundColor: 'oklch(17.0% 0.028 280.0 / 1)',
         mainColor: 'oklch(75.0% 0.145 5.0 / 1)',
         secondaryColor: 'oklch(85.0% 0.095 350.0 / 1)'
-    },{
+      }, {
         id: 'wasabi-punch',
         backgroundColor: 'oklch(20.0% 0.048 160.0 / 1)',
         mainColor: 'oklch(72.0% 0.185 145.0 / 1)',
         secondaryColor: 'oklch(82.0% 0.145 130.0 / 1)'
-    },{    id: 'autumn-maple',
+      }, {
+        id: 'autumn-maple',
         backgroundColor: 'oklch(21.0% 0.052 30.0 / 1)',
         mainColor: 'oklch(72.0% 0.200 35.0 / 1)',
         secondaryColor: 'oklch(80.0% 0.165 60.0 / 1)'
-       },{ id: 'cyber-kitsune',
+      }, {
+        id: 'cyber-kitsune',
         backgroundColor: 'oklch(13.0% 0.058 295.0 / 1)',
         mainColor: 'oklch(78.0% 0.195 45.0 / 1)',
-        secondaryColor: 'oklch(70.0% 0.220 310.0 / 1)'},
-        {id: 'temple-bell',
+        secondaryColor: 'oklch(70.0% 0.220 310.0 / 1)'
+      },
+      {
+        id: 'temple-bell',
         backgroundColor: 'oklch(22.0% 0.032 60.0 / 1)',
         mainColor: 'oklch(68.0% 0.095 70.0 / 1)',
         secondaryColor: 'oklch(58.0% 0.075 55.0 / 1)'
       },
       {
-      id: 'tatami-room',
-      backgroundColor: 'oklch(88.0% 0.035 85.0 / 1)',
-      mainColor: 'oklch(45.0% 0.105 75.0 / 1)',
-      secondaryColor: 'oklch(55.0% 0.080 60.0 / 1)'
+        id: 'tatami-room',
+        backgroundColor: 'oklch(88.0% 0.035 85.0 / 1)',
+        mainColor: 'oklch(45.0% 0.105 75.0 / 1)',
+        secondaryColor: 'oklch(55.0% 0.080 60.0 / 1)'
       },
       {
         id: 'rice-field-gold',
