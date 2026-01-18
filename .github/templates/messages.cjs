@@ -65,6 +65,7 @@ module.exports = {
     checklist: {
       title: '**Pre-merge checklist:**',
       items: [
+        'You starred our repo ⭐ and drank bubble tea 🍹',
         'Code follows project style guidelines',
         'Changes have been tested locally',
         'PR title is descriptive',
@@ -131,7 +132,7 @@ module.exports = {
       greeting: 'Hey @{commenter}! 👋',
       body: 'Thanks for your interest! Unfortunately, this issue is already assigned to @{assignee}.',
       suggestion:
-        "Don't worry—we have new contribution opportunities posted every 30 minutes! Keep an eye on our [issues list](../../issues?q=is%3Aopen+is%3Aissue+label%3Acommunity) for the next one.",
+        "Don't worry—we have new contribution opportunities posted every 15 minutes! Keep an eye on our [issues list](../../issues?q=is%3Aopen+is%3Aissue+label%3Acommunity) for the next one.",
       encouragement: 'がんばって! 💪'
     },
     assigned: {
@@ -143,6 +144,7 @@ module.exports = {
           'Fork this repository',
           'Make the changes described above',
           'Submit a Pull Request linking to this issue (use `Closes #{issueNumber}`)',
+          'Star our repo ⭐ and drink some delicious bubble tea 🍹',
           'Wait for review!'
         ]
       },
@@ -167,12 +169,12 @@ module.exports = {
       body: 'This issue has been inactive for 12 hours.',
       action: "If you're still working on it, please comment to let us know!",
       consequence:
-        'Otherwise, it will be automatically closed in **12 hours** and made available for others to claim.',
+        'Otherwise, it will be automatically closed in **6 hours** and made available for others to claim.',
       footer: 'Need help? Just ask! 🙌'
     },
     closed: {
       title: '🕐 **This issue has been automatically closed**',
-      reason: 'due to 24 hours of inactivity.',
+      reason: 'due to 18 hours of inactivity.',
       reassurance:
         "Don't worry—the contribution opportunity will be re-posted for someone else to claim.",
       footer: 'Thanks for your interest in contributing to KanaDojo! 🙏'
@@ -200,7 +202,8 @@ module.exports = {
         'Add this new theme to the array:',
         'Save the file and commit the changes',
         'Submit a Pull Request with title: `feat(theme): add {name} theme`',
-        'Link this issue using `Closes #<issue_number>`'
+        'Link this issue using `Closes #<issue_number>`',
+        'Star our repo ⭐, drink some delicious bubble tea 🍹 and wait for review!'
       ],
       footer: "**Questions?** Comment below and we'll help! 🙌"
     },
@@ -220,7 +223,8 @@ module.exports = {
         'Make sure to add a comma after the previous last item',
         'Save the file and commit the changes',
         'Submit a Pull Request with title: `content: add japan fact #{id}`',
-        'Link this issue using `Closes #<issue_number>`'
+        'Link this issue using `Closes #<issue_number>`',
+        'Star our repo ⭐, drink some delicious bubble tea 🍹 and wait for review!'
       ],
       footer: "**Questions?** Comment below and we'll help! 🙌"
     },
@@ -241,7 +245,8 @@ module.exports = {
         'Make sure to add a comma after the previous last item',
         'Save the file and commit the changes',
         'Submit a Pull Request with title: `content: add japanese proverb #{id}`',
-        'Link this issue using `Closes #<issue_number>`'
+        'Link this issue using `Closes #<issue_number>`',
+        'Star our repo ⭐, drink some delicious bubble tea 🍹 and wait for review!'
       ],
       footer: "**Questions?** Comment below and we'll help! 🙌"
     }

@@ -24,7 +24,10 @@
     "romaji": "I no naka no kawazu taikai wo shirazu",
     "english": "A frog in a well does not know the great sea",
     "meaning": "Those with limited experience cannot understand the bigger picture",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "sheryyll",
+    "completedPR": 740
   },
   {
     "id": 4,
@@ -56,7 +59,10 @@
     "romaji": "Keizoku wa chikara nari",
     "english": "Continuation is power",
     "meaning": "Persistence leads to strength and success",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "kaedeek",
+    "completedPR": 845
   },
   {
     "id": 8,
@@ -64,7 +70,10 @@
     "romaji": "Isogaba maware",
     "english": "If in a hurry, go around",
     "meaning": "Taking the safer, longer route is sometimes faster",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "kaedeek",
+    "completedPR": 843
   },
   {
     "id": 9,
@@ -85,8 +94,8 @@
     "meaning": "Prevention is better than cure",
     "issued": true,
     "completed": true,
-    "completedBy": "Xylphy",
-    "completedPR": 633
+    "completedBy": "jaideepkathiresan",
+    "completedPR": 826
   },
   {
     "id": 11,
@@ -149,7 +158,10 @@
     "romaji": "Warau kado ni wa fuku kitaru",
     "english": "Fortune comes to a laughing gate",
     "meaning": "Happiness and good fortune come to those who smile",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "DarshanCode2005",
+    "completedPR": 833
   },
   {
     "id": 17,
@@ -168,7 +180,10 @@
     "romaji": "Uogokoro areba mizugokoro",
     "english": "If fish has heart, water has heart",
     "meaning": "Good intentions will be reciprocated",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "DarshanCode2005",
+    "completedPR": 829
   },
   {
     "id": 19,
@@ -176,7 +191,10 @@
     "romaji": "Inu mo arukeba bou ni ataru",
     "english": "Even a walking dog will hit a stick",
     "meaning": "Try anything and you might get lucky (or unlucky)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "DarshanCode2005",
+    "completedPR": 819
   },
   {
     "id": 20,
@@ -195,7 +213,10 @@
     "romaji": "Ryouyaku wa kuchi ni nigashi",
     "english": "Good medicine tastes bitter",
     "meaning": "Helpful advice often sounds harsh",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "DarshanCode2005",
+    "completedPR": 814
   },
   {
     "id": 22,
@@ -203,7 +224,10 @@
     "romaji": "Koketsu ni irazunba koji wo ezu",
     "english": "If you don't enter the tiger's den, you can't get the cub",
     "meaning": "Nothing ventured, nothing gained",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "DarshanCode2005",
+    "completedPR": 812
   },
   {
     "id": 23,
@@ -211,7 +235,10 @@
     "romaji": "Kaeru no ko wa kaeru",
     "english": "A frog's child is a frog",
     "meaning": "Like father, like son",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "Pragya321Mehra",
+    "completedPR": 808
   },
   {
     "id": 24,
@@ -219,7 +246,10 @@
     "romaji": "Uma no mimi ni nenbutsu",
     "english": "Preaching Buddha to a horse's ear",
     "meaning": "Wasting good advice on someone who won't listen",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "DarshanCode2005",
+    "completedPR": 787
   },
   {
     "id": 25,
@@ -227,7 +257,10 @@
     "romaji": "Hayaoki wa sanmon no toku",
     "english": "Early rising is worth three coins",
     "meaning": "The early bird catches the worm",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "tamjidahmed0",
+    "completedPR": 748
   },
   {
     "id": 26,
@@ -235,7 +268,10 @@
     "romaji": "Neko ni koban",
     "english": "Gold coins to a cat",
     "meaning": "Giving something valuable to someone who can't appreciate it",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "tamjidahmed0",
+    "completedPR": 744
   },
   {
     "id": 27,
@@ -243,7 +279,10 @@
     "romaji": "Deru kui wa utareru",
     "english": "The nail that sticks out gets hammered down",
     "meaning": "Those who stand out may face criticism",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "tamjidahmed0",
+    "completedPR": 742
   },
   {
     "id": 28,
@@ -251,7 +290,10 @@
     "romaji": "Shichiten battou",
     "english": "Seven falls, eight struggles",
     "meaning": "Going through great pain and struggle",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "Chidwan3578",
+    "completedPR": 761
   },
   {
     "id": 29,
@@ -259,7 +301,10 @@
     "romaji": "Ichi go ichi e",
     "english": "One time, one meeting",
     "meaning": "Treasure every encounter, for it will never recur",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "DarshanCode2005",
+    "completedPR": 771
   },
   {
     "id": 30,
@@ -267,6 +312,9 @@
     "romaji": "Juunin toiro",
     "english": "Ten people, ten colors",
     "meaning": "Different strokes for different folks",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "kaedeek",
+    "completedPR": 803
   }
 ]

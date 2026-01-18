@@ -12,7 +12,7 @@ permissions:
 
 # Prevent race conditions with other community workflows
 concurrency:
-  group: community-data-updates
+  group: community-stale-issues
   cancel-in-progress: false
 
 jobs:

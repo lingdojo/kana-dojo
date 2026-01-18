@@ -159,27 +159,42 @@
   {
     "id": 24,
     "fact": "The Japanese word 'natsukashii' (懐かしい) describes nostalgic longing that's bittersweet rather than sad - missing something while appreciating the memory.",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "DarshanCode2005",
+    "completedPR": 837
   },
   {
     "id": 25,
     "fact": "Japan has a museum dedicated to instant ramen in Osaka where visitors can create their own custom Cup Noodles flavor combinations.",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "DarshanCode2005",
+    "completedPR": 831
   },
   {
     "id": 26,
     "fact": "The concept of 'wabi-sabi' (侘寂) finds beauty in imperfection and impermanence - a cracked bowl is more valuable because of its history.",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "DarshanCode2005",
+    "completedPR": 830
   },
   {
     "id": 27,
     "fact": "Japanese addresses are based on blocks rather than streets - buildings are numbered by the order they were built, not their location.",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "cnaples79",
+    "completedPR": 794
   },
   {
     "id": 28,
     "fact": "There are special 'women-only' train cars in Japan during rush hour to prevent groping - marked with pink signs and available on most major lines.",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "DarshanCode2005",
+    "completedPR": 818
   },
   {
     "id": 29,
@@ -192,27 +207,42 @@
   {
     "id": 30,
     "fact": "The Japanese word 'boketto' (ぼけっと) describes the act of gazing vacantly into the distance without thinking about anything specific.",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "DarshanCode2005",
+    "completedPR": 813
   },
   {
     "id": 31,
     "fact": "Japan has 'love hotels' (rabuho) with themed rooms ranging from Hello Kitty to medieval dungeons, renting by the hour or night.",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "DarshanCode2005",
+    "completedPR": 810
   },
   {
     "id": 32,
     "fact": "The practice of 'nemawashi' (根回し) means building consensus before a meeting so decisions appear unanimous - the actual negotiation happens beforehand.",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "DarshanCode2005",
+    "completedPR": 788
   },
   {
     "id": 33,
     "fact": "Japanese toilet seats often have built-in bidets with heated seats, air dryers, and sound effects to mask embarrassing noises.",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "DarshanCode2005",
+    "completedPR": 775
   },
   {
     "id": 34,
     "fact": "There's a Japanese festival called 'Hadaka Matsuri' where thousands of nearly naked men compete to catch lucky charms thrown by priests.",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "Sindhuu-B",
+    "completedPR": 746
   },
   {
     "id": 35,
@@ -222,32 +252,44 @@
   {
     "id": 36,
     "fact": "Japan has a 'Black Company' award given to employers with the worst working conditions - a form of public shaming for labor violations.",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "FiercePhoenix7",
+    "completedPR": 759
   },
   {
     "id": 37,
     "fact": "Japanese business cards (meishi) are exchanged with both hands and a bow - placing one in your pocket immediately is considered disrespectful.",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "DarshanCode2005",
+    "completedPR": 765
   },
   {
     "id": 38,
     "fact": "The word 'gaman' (我慢) means enduring the seemingly unbearable with patience and dignity - a core Japanese cultural value.",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "AbhinavBangar1",
+    "completedPR": 783
   },
   {
     "id": 39,
     "fact": "Japan has professional cuddlers you can hire to hold you while you nap - reflecting the country's epidemic of loneliness and touch starvation.",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "soorya38",
+    "completedPR": 799
   },
   {
     "id": 40,
     "fact": "There are over 200 different KitKat flavors created for Japan including sake, wasabi, sweet potato, and cherry blossom.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 41,
     "fact": "The Japanese word 'yūgen' (幽玄) describes a profound awareness of the universe that triggers emotional responses too deep for words.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 42,

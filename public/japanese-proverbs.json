@@ -24,6 +24,25 @@
     "meaning": "Accomplishing two things with one action"
   },
   {
+  "japanese": "郷に入っては郷に従え",
+  "romaji": "Gou ni itte wa gou ni shitagae",
+  "english": "When in a village, follow the village customs",
+  "meaning": "When in Rome, do as the Romans do"
+},
+{
+  "japanese": "知らぬが仏",
+  "romaji": "Shiranu ga hotoke",
+  "english": "Not knowing is Buddha",
+  "meaning": "Ignorance is bliss"
+
+  },
+  {
+  "japanese": "二兎を追う者は一兎をも得ず",
+  "romaji": "Ni to wo ou mono wa itto wo mo ezu",
+  "english": "One who chases two rabbits catches neither",
+  "meaning": "Focus on one thing at a time"
+  },
+  {
     "japanese": "郷に入っては郷に従え",
     "romaji": "Gou ni itte wa gou ni shitagae",
     "english": "When in a village, follow the village customs",
@@ -88,5 +107,110 @@
     "romaji": "Sannin yoreba monju no chie",
     "english": "Three people together have the wisdom of Monju",
     "meaning": "Two heads are better than one"
+  },
+  {
+  "japanese": "七転八倒",
+  "romaji": "Shichiten battou",
+  "english": "Seven falls, eight struggles",
+  "meaning": "Going through great pain and struggle"},{
+    "japanese": "出る杭は打たれる",
+    "romaji": "Deru kui wa utareru",
+    "english": "The nail that sticks out gets hammered down",
+    "meaning": "Those who stand out may face criticism"
+  },
+  {
+    "japanese": "井の中の蛙大海を知らず",
+    "romaji": "I no naka no kawazu taikai wo shirazu",
+    "english": "A frog in a well does not know the great sea",
+    "meaning": "Those with limited experience cannot understand the bigger picture"
+  },
+  {
+    "japanese": "猫に小判",
+    "romaji": "Neko ni koban",
+    "english": "Gold coins to a cat",
+    "meaning": "Giving something valuable to someone who can't appreciate it"
+  },
+  {
+    "japanese": "早起きは三文の徳",
+    "romaji": "Hayaoki wa sanmon no toku",
+    "english": "Early rising is worth three coins",
+    "meaning": "The early bird catches the worm"
+  },
+  {
+    "japanese": "一期一会",
+    "romaji": "Ichi go ichi e",
+    "english": "One time, one meeting",
+    "meaning": "Treasure every encounter, for it will never recur"
+  },
+  {
+    "japanese": "馬の耳に念仏",
+    "romaji": "Uma no mimi ni nenbutsu",
+    "english": "Preaching Buddha to a horse's ear",
+    "meaning": "Wasting good advice on someone who won't listen"
+  },
+  {
+    "japanese": "十人十色",
+    "romaji": "Juunin toiro",
+    "english": "Ten people, ten colors",
+    "meaning": "Different strokes for different folks"
+  },
+  {
+    "japanese": "蛙の子は蛙",
+    "romaji": "Kaeru no ko wa kaeru",
+    "english": "A frog's child is a frog",
+    "meaning": "Like father, like son"
+  },
+  {
+    "japanese": "犬も歩けば棒に当たる",
+    "romaji": "Inu mo arukeba bou ni ataru",
+    "english": "Even a walking dog will hit a stick",
+    "meaning": "Try anything and you might get lucky (or unlucky)"
+  },{
+    "japanese": "良薬は口に苦し",
+    "romaji": "Ryouyaku wa kuchi ni nigashi",
+    "english": "Good medicine tastes bitter",
+    "meaning": "Helpful advice often sounds harsh"
+  },
+  {
+    "japanese": "虎穴に入らずんば虎子を得ず",
+    "romaji": "Koketsu ni irazunba koji wo ezu",
+    "english": "If you don't enter the tiger's den, you can't get the cub",
+    "meaning": "Nothing ventured, nothing gained"
+  },
+  {
+  "japanese": "蛙の子は蛙",
+  "romaji": "Kaeru no ko wa kaeru",
+  "english": "A frog's child is a frog",
+  "meaning": "Like father, like son"
+  },
+  {
+  "japanese": "笑う門には福来る",
+  "romaji": "Warau kado ni wa fuku kitaru",
+  "english": "Fortune comes to a laughing gate",
+  "meaning": "Happiness and good fortune come to those who smile"
+  },  
+  {
+    "japanese": "魚心あれば水心",
+    "romaji": "Uogokoro areba mizugokoro",
+    "english": "If fish has heart, water has heart",
+    "meaning": "Good intentions will be reciprocated"
+  },
+  {
+    "japanese": "転ばぬ先の杖",
+    "romaji": "Korobanu saki no tsue",
+    "english": "A cane before falling",
+    "meaning": "Prevention is better than cure"
+  },
+  {
+    "japanese": "急がば回れ",
+  "romaji": "Isogaba maware",
+  "english": "If in a hurry, go around",
+  "meaning": "Taking the safer, longer route is sometimes faster"
+  },
+  {
+    "japanese": "継続は力なり",
+    "romaji": "Keizoku wa chikara nari",
+    "english": "Continuation is power",
+    "meaning": "Persistence leads to strength and success"
   }
 ]

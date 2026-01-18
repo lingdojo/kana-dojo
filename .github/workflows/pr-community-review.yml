@@ -24,12 +24,16 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.base.ref }}
+          persist-credentials: false
 
       - name: Checkout PR head
         uses: actions/checkout@v4
         with:
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
           ref: ${{ github.event.pull_request.head.sha }}
           path: pr-head
+          fetch-depth: 1
+          persist-credentials: false
 
       - name: Setup Node.js
         uses: actions/setup-node@v4

@@ -35,13 +35,6 @@ updates:
     ignore:
       - dependency-name: 'node'
         versions: ['>=21.0.0']
-    # Allow these to automatically merge
-    automerged:
-      - dependency-type: 'development'
-        update-types: ['patch']
-      - dependency-type: 'production'
-        update-types: ['patch']
-
   # Enable version updates for GitHub Actions
   - package-ecosystem: 'github-actions'
     directory: '/'
@@ -53,10 +46,6 @@ updates:
       - 'github-actions'
     commit-message:
       prefix: 'chore(ci)'
-    # Auto-merge minor/patch action updates
-    automerged:
-      - dependency-type: 'production'
-        update-types: ['patch', 'minor']
 
   # Security updates for npm
   - package-ecosystem: 'npm'

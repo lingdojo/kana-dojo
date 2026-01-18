@@ -12,7 +12,7 @@ permissions:
 
 # Prevent multiple runs from overlapping and causing race conditions
 concurrency:
-  group: community-data-updates
+  group: community-issue-creation
   cancel-in-progress: false
 
 jobs:
@@ -98,13 +98,21 @@ jobs:
             }
 
             // Rotate through types: theme -> fact -> proverb -> theme...
+            // If a type is exhausted (or duplicates exist), try the next type within the same run
+            // to avoid getting permanently stuck on an empty backlog type.
             const typeOrder = ['theme', 'fact', 'proverb'];
             const currentIndex = typeOrder.indexOf(state.lastType);
-            const nextType = typeOrder[(currentIndex + 1) % typeOrder.length];
 
             let item, issueTitle, issueBody;
+            let selectedType = null;
 
-            if (nextType === 'theme') {
+            for (let offset = 1; offset <= typeOrder.length; offset += 1) {
+              const nextType = typeOrder[((currentIndex === -1 ? -1 : currentIndex) + offset) % typeOrder.length];
+              item = null;
+              issueTitle = null;
+              issueBody = null;
+
+              if (nextType === 'theme') {
               // Skip items that are already issued OR completed OR already exist in main
               item = themes.find(function(th) {
                 if (th.issued || th.completed) {
@@ -128,8 +136,7 @@ jobs:
                 if (backlogChanged) {
                   fs.writeFileSync(themeBacklogPath, JSON.stringify(themes, null, 2));
                 }
-                core.setOutput('should_commit', backlogChanged ? 'true' : 'false');
-                return;
+                continue;
               }
               
               // Check for duplicate theme issue
@@ -141,14 +148,8 @@ jobs:
                 themes[themeIdx].issued = true;
                 fs.writeFileSync(themeBacklogPath, JSON.stringify(themes, null, 2));
                 backlogChanged = true;
-                
-                // Update lastType so next run tries the other type
-                state.lastType = nextType;
-                state.lastRun = new Date().toISOString();
-                fs.writeFileSync(statePath, JSON.stringify(state, null, 2));
-                
-                core.setOutput('should_commit', 'true');
-                return;
+
+                continue;
               }
               
               const tmpl = t.theme;
@@ -165,7 +166,7 @@ jobs:
               fs.writeFileSync(themeBacklogPath, JSON.stringify(themes, null, 2));
               backlogChanged = true;
               
-            } else if (nextType === 'fact') {
+              } else if (nextType === 'fact') {
               // Skip items that are already issued OR completed OR already exist in main
               item = facts.find(function(f) {
                 if (f.issued || f.completed) {
@@ -187,8 +188,7 @@ jobs:
                   fs.writeFileSync(factsBacklogPath, JSON.stringify(facts, null, 2));
                   fs.writeFileSync(proverbsBacklogPath, JSON.stringify(proverbs, null, 2));
                 }
-                core.setOutput('should_commit', backlogChanged ? 'true' : 'false');
-                return;
+                continue;
               }
               
               // Check for duplicate fact issue
@@ -200,14 +200,8 @@ jobs:
                 facts[factIdx].issued = true;
                 fs.writeFileSync(factsBacklogPath, JSON.stringify(facts, null, 2));
                 backlogChanged = true;
-                
-                // Update lastType so next run tries the other type
-                state.lastType = nextType;
-                state.lastRun = new Date().toISOString();
-                fs.writeFileSync(statePath, JSON.stringify(state, null, 2));
-                
-                core.setOutput('should_commit', 'true');
-                return;
+
+                continue;
               }
               
               const tmpl = t.fact;
@@ -221,7 +215,7 @@ jobs:
               facts[factIndex].issued = true;
               fs.writeFileSync(factsBacklogPath, JSON.stringify(facts, null, 2));
               backlogChanged = true;
-            } else {
+              } else {
               // Proverb
               item = proverbs.find(function(p) {
                 if (p.issued || p.completed) {
@@ -251,8 +245,7 @@ jobs:
                   fs.writeFileSync(factsBacklogPath, JSON.stringify(facts, null, 2));
                   fs.writeFileSync(proverbsBacklogPath, JSON.stringify(proverbs, null, 2));
                 }
-                core.setOutput('should_commit', backlogChanged ? 'true' : 'false');
-                return;
+                continue;
               }
               
               // Check for duplicate proverb issue
@@ -264,14 +257,8 @@ jobs:
                 proverbs[proverbIdx].issued = true;
                 fs.writeFileSync(proverbsBacklogPath, JSON.stringify(proverbs, null, 2));
                 backlogChanged = true;
-                
-                // Update lastType so next run tries the other type
-                state.lastType = nextType;
-                state.lastRun = new Date().toISOString();
-                fs.writeFileSync(statePath, JSON.stringify(state, null, 2));
-                
-                core.setOutput('should_commit', 'true');
-                return;
+
+                continue;
               }
               
               const tmpl = t.proverb;
@@ -289,6 +276,18 @@ jobs:
               backlogChanged = true;
             }
 
+              if (issueTitle && issueBody && item) {
+                selectedType = nextType;
+                break;
+              }
+            }
+
+            if (!selectedType) {
+              console.log('No available items found across theme/fact/proverb backlogs.');
+              core.setOutput('should_commit', backlogChanged ? 'true' : 'false');
+              return;
+            }
+
             const labels = templates.labels.newIssue;
 
             const response = await github.rest.issues.create({
@@ -301,13 +300,13 @@ jobs:
 
             console.log(`Created issue #${response.data.number}: ${issueTitle}`);
 
-            state.lastType = nextType;
+            state.lastType = selectedType;
             state.lastRun = new Date().toISOString();
             state.totalIssuesCreated = (state.totalIssuesCreated || 0) + 1;
             fs.writeFileSync(statePath, JSON.stringify(state, null, 2));
 
             core.setOutput('issue_number', response.data.number);
-            core.setOutput('issue_type', nextType);
+            core.setOutput('issue_type', selectedType);
             core.setOutput('item_id', item.id);
             core.setOutput('should_commit', 'true');
 

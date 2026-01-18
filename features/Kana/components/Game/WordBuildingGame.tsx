@@ -601,7 +601,10 @@ const WordBuildingGame = ({
           {/* Word Display */}
           <div className='flex flex-row items-center gap-1'>
             <motion.p
-              className='text-7xl sm:text-8xl'
+              className={clsx(
+                'sm:text-8xl',
+                !isReverse && wordData.wordChars.length === 3 ? 'text-6xl' : 'text-7xl'
+              )}
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
             >

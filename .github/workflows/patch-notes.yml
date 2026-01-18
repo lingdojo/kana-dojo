@@ -9,6 +9,9 @@ on:
       - features/PatchNotes/patchNotesData.json
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   notify-discord:
     runs-on: ubuntu-latest
@@ -35,6 +38,11 @@ jobs:
 
           async function sendPatchNotes() {
             try {
+              if (!process.env.WEBHOOK_URL) {
+                console.log('No DISCORD_WEBHOOK secret configured; skipping');
+                process.exit(0);
+              }
+
               const patchNotes = JSON.parse(
                 fs.readFileSync('./features/PatchNotes/patchNotesData.json', 'utf8')
               );

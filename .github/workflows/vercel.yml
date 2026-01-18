@@ -3,6 +3,8 @@ name: Vercel Deployment Notifications
 on:
   deployment_status:
 
+permissions: {}
+
 concurrency:
   group: vercel-deployment-status-${{ github.event.deployment.id }}-${{ github.event.deployment_status.state }}
   cancel-in-progress: true
