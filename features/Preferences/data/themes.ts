@@ -1112,7 +1112,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         mainColor: 'oklch(65.0% 0.225 30.0 / 1)',
         secondaryColor: 'oklch(90.0% 0.055 95.0 / 1)',
       },
-
+      {
+        id: 'tea-ceremony',
+        backgroundColor: 'oklch(25.0% 0.028 145.0 / 1)',
+        mainColor: 'oklch(62.0% 0.115 135.0 / 1)',
+        secondaryColor: 'oklch(75.0% 0.075 90.0 / 1)'
+      },
 
     ]
   },
