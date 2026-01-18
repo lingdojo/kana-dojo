@@ -1124,7 +1124,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         mainColor: 'oklch(70.0% 0.175 20.0 / 1)',
         secondaryColor: 'oklch(75.0% 0.165 145.0 / 1)'
       },
-
+      {
+        id: 'hanabi-festival',
+        backgroundColor: 'oklch(14.0% 0.055 275.0 / 1)',
+        mainColor: 'oklch(85.0% 0.200 35.0 / 1)',
+        secondaryColor: 'oklch(78.0% 0.215 310.0 / 1)'
+      },
     ]
   },
   {
