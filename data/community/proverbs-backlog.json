@@ -222,7 +222,10 @@
     "romaji": "Uma no mimi ni nenbutsu",
     "english": "Preaching Buddha to a horse's ear",
     "meaning": "Wasting good advice on someone who won't listen",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "DarshanCode2005",
+    "completedPR": 787
   },
   {
     "id": 25,
