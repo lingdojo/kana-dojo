@@ -242,6 +242,12 @@ const baseThemeSets: BaseThemeGroup[] = [
     icon: Moon,
     themes: [
       {
+        id: 'ryokan-evening',
+        backgroundColor: 'oklch(23.0% 0.038 280.0 / 1)',
+        mainColor: 'oklch(78.0% 0.130 55.0 / 1)',
+        secondaryColor: 'oklch(68.0% 0.095 30.0 / 1)'
+      },
+      {
         id: 'rice-field-gold',
         backgroundColor: 'oklch(24.0% 0.045 80.0 / 1)',
         mainColor: 'oklch(85.0% 0.155 90.0 / 1)',
