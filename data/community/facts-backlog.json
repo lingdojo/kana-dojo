@@ -174,7 +174,10 @@
   {
     "id": 27,
     "fact": "Japanese addresses are based on blocks rather than streets - buildings are numbered by the order they were built, not their location.",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "cnaples79",
+    "completedPR": 794
   },
   {
     "id": 28,
