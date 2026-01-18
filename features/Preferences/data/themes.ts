@@ -1130,6 +1130,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         mainColor: 'oklch(85.0% 0.200 35.0 / 1)',
         secondaryColor: 'oklch(78.0% 0.215 310.0 / 1)'
       },
+      {
+        id: 'shogun-gold',
+        backgroundColor: 'oklch(18.0% 0.035 80.0 / 1)',
+        mainColor: 'oklch(82.0% 0.155 85.0 / 1)',
+        secondaryColor: 'oklch(65.0% 0.180 30.0 / 1)'
+      },
     ]
   },
   {
