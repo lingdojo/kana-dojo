@@ -285,7 +285,10 @@
     "backgroundColor": "oklch(17.0% 0.028 280.0 / 1)",
     "mainColor": "oklch(75.0% 0.145 5.0 / 1)",
     "secondaryColor": "oklch(85.0% 0.095 350.0 / 1)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "SrikartikMateti",
+    "completedPR": 809
   },
   {
     "id": "okinawa-sea",
