@@ -1118,6 +1118,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         mainColor: 'oklch(62.0% 0.115 135.0 / 1)',
         secondaryColor: 'oklch(75.0% 0.075 90.0 / 1)'
       },
+      {
+        id: 'bento-box',
+        backgroundColor: 'oklch(22.0% 0.025 45.0 / 1)',
+        mainColor: 'oklch(70.0% 0.175 20.0 / 1)',
+        secondaryColor: 'oklch(75.0% 0.165 145.0 / 1)'
+      },
 
     ]
   },
