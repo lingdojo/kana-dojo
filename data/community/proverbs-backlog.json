@@ -288,6 +288,9 @@
     "romaji": "Juunin toiro",
     "english": "Ten people, ten colors",
     "meaning": "Different strokes for different folks",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "kaedeek",
+    "completedPR": 803
   }
 ]
