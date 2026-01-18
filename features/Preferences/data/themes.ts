@@ -241,7 +241,12 @@ const baseThemeSets: BaseThemeGroup[] = [
     name: 'Dark',
     icon: Moon,
     themes: [
-      {
+    {
+        id: 'sashimi-fresh',
+        backgroundColor: 'oklch(17.0% 0.028 280.0 / 1)',
+        mainColor: 'oklch(75.0% 0.145 5.0 / 1)',
+        secondaryColor: 'oklch(85.0% 0.095 350.0 / 1)'
+    },{
         id: 'wasabi-punch',
         backgroundColor: 'oklch(20.0% 0.048 160.0 / 1)',
         mainColor: 'oklch(72.0% 0.185 145.0 / 1)',
