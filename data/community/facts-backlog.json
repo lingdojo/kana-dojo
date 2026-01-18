@@ -205,7 +205,10 @@
   {
     "id": 32,
     "fact": "The practice of 'nemawashi' (根回し) means building consensus before a meeting so decisions appear unanimous - the actual negotiation happens beforehand.",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "DarshanCode2005",
+    "completedPR": 788
   },
   {
     "id": 33,
