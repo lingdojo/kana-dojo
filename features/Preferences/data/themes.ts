@@ -242,6 +242,18 @@ const baseThemeSets: BaseThemeGroup[] = [
     icon: Moon,
     themes: [
       {
+        id: 'taiko-thunder',
+        backgroundColor: 'oklch(17.0% 0.035 280.0 / 1)',
+        mainColor: 'oklch(68.0% 0.175 30.0 / 1)',
+        secondaryColor: 'oklch(78.0% 0.125 45.0 / 1)'
+      },
+      {
+        id: 'ghost-parade',
+        backgroundColor: 'oklch(15.0% 0.045 310.0 / 1)',
+        mainColor: 'oklch(88.0% 0.065 285.0 / 1)',
+        secondaryColor: 'oklch(70.0% 0.145 340.0 / 1)'
+      },
+      {
         id: 'dragon-scale',
         backgroundColor: 'oklch(19.0% 0.055 165.0 / 1)',
         mainColor: 'oklch(68.0% 0.175 160.0 / 1)',
