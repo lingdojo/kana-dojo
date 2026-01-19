@@ -35,7 +35,10 @@
     "romaji": "Ishi no ue ni mo san nen",
     "english": "Three years on a stone",
     "meaning": "Patience and perseverance will eventually pay off",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "DarshanCode2005",
+    "completedPR": 953
   },
   {
     "id": 5,
