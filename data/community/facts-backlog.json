@@ -451,7 +451,10 @@
   {
     "id": 65,
     "fact": "The word 'mottainai' (もったいない) expresses deep regret over waste - a concept that sparked modern recycling movements worldwide.",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "TheCodingAyush",
+    "completedPR": 1082
   },
   {
     "id": 66,
