@@ -371,7 +371,10 @@
   {
     "id": 52,
     "fact": "Japan's Nakizumo festival has sumo wrestlers compete to make babies cry first - crying is believed to ward off evil spirits.",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "maxwellyoung",
+    "completedPR": 1014
   },
   {
     "id": 53,
