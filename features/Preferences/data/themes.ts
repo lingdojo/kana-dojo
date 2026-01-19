@@ -260,6 +260,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         secondaryColor: 'oklch(65.0% 0.120 170.0 / 1)'
       },
       {
+        id: 'edo-vintage',
+        backgroundColor: 'oklch(24.0% 0.028 65.0 / 1)',
+        mainColor: 'oklch(72.0% 0.085 70.0 / 1)',
+        secondaryColor: 'oklch(60.0% 0.065 55.0 / 1)'
+      },
+      {
         id: 'calligraphy-ink',
         backgroundColor: 'oklch(96.0% 0.008 85.0 / 1)',
         mainColor: 'oklch(20.0% 0.015 270.0 / 1)',
