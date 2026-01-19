@@ -1202,6 +1202,18 @@ const baseThemeSets: BaseThemeGroup[] = [
         secondaryColor: 'oklch(65.0% 0.180 30.0 / 1)'
       },
       {
+        id: 'ramen-steam',
+        backgroundColor: 'oklch(21.0% 0.038 50.0 / 1)',
+        mainColor: 'oklch(82.0% 0.135 85.0 / 1)',
+        secondaryColor: 'oklch(65.0% 0.165 40.0 / 1)'},{
+        id: 'konbini-light',
+        backgroundColor: 'oklch(96.0% 0.015 210.0 / 1)',
+        mainColor: 'oklch(55.0% 0.185 200.0 / 1)',
+        secondaryColor: 'oklch(60.0% 0.155 25.0 / 1)'},{
+        id: 'pachinko-hall',
+        backgroundColor: 'oklch(18.0% 0.042 325.0 / 1)',
+        mainColor: 'oklch(90.0% 0.115 95.0 / 1)',
+        secondaryColor: 'oklch(75.0% 0.195 340.0 / 1)'},{
         id: 'pearl-wave',
         backgroundColor: 'oklch(21.0% 0.045 235.0 / 1)',
         mainColor: 'oklch(88.0% 0.055 245.0 / 1)',
