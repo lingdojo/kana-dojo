@@ -256,6 +256,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         secondaryColor: 'oklch(65.0% 0.170 15.0 / 1)',
       },
       {
+        id: 'frozen-lake',
+        backgroundColor: 'oklch(24.0% 0.035 230.0 / 1)',
+        mainColor: 'oklch(90.0% 0.075 225.0 / 1)',
+        secondaryColor: 'oklch(80.0% 0.055 235.0 / 1)'
+      },
+      {
         id: 'taiko-thunder',
         backgroundColor: 'oklch(17.0% 0.035 280.0 / 1)',
         mainColor: 'oklch(68.0% 0.175 30.0 / 1)',
