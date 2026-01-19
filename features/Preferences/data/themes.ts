@@ -1087,6 +1087,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         mainColor: 'oklch(72.0% 0.195 220.0 / 1)',
         secondaryColor: 'oklch(68.0% 0.205 30.0 / 1)',
       },
+      {
+        id: 'lavender-fields',
+        backgroundColor: 'oklch(19.0% 0.058 290.0 / 1)',
+        mainColor: 'oklch(70.0% 0.165 295.0 / 1)',
+        secondaryColor: 'oklch(80.0% 0.125 285.0 / 1)',
+      },
     ],
   },
   {
