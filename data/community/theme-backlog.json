@@ -547,7 +547,7 @@
     "backgroundColor": "oklch(93.0% 0.025 155.0 / 1)",
     "mainColor": "oklch(50.0% 0.155 160.0 / 1)",
     "secondaryColor": "oklch(65.0% 0.120 170.0 / 1)",
-    "issued": false
+    "issued": true
   },
   {
     "id": "pachinko-hall",
