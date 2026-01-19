@@ -1201,6 +1201,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         mainColor: 'oklch(82.0% 0.155 85.0 / 1)',
         secondaryColor: 'oklch(65.0% 0.180 30.0 / 1)'
       },
+      {
+        id: 'ninja-shadow',
+        backgroundColor: 'oklch(12.0% 0.015 280.0 / 1)',
+        mainColor: 'oklch(65.0% 0.025 270.0 / 1)',
+        secondaryColor: 'oklch(55.0% 0.175 15.0 / 1)'
+      },
     ]
   },
   {
