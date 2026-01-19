@@ -248,6 +248,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         secondaryColor: 'oklch(78.0% 0.145 140.0 / 1)'
       },
       {
+        id: 'daruma-red',
+        backgroundColor: 'oklch(20.0% 0.045 20.0 / 1)',
+        mainColor: 'oklch(58.0% 0.225 28.0 / 1)',
+        secondaryColor: 'oklch(92.0% 0.045 90.0 / 1)'
+      },
+      {
         id: 'calligraphy-ink',
         backgroundColor: 'oklch(96.0% 0.008 85.0 / 1)',
         mainColor: 'oklch(20.0% 0.015 270.0 / 1)',
