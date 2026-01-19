@@ -254,6 +254,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         secondaryColor: 'oklch(92.0% 0.045 90.0 / 1)'
       },
       {
+        id: 'morning-dew',
+        backgroundColor: 'oklch(93.0% 0.025 155.0 / 1)',
+        mainColor: 'oklch(50.0% 0.155 160.0 / 1)',
+        secondaryColor: 'oklch(65.0% 0.120 170.0 / 1)'
+      },
+      {
         id: 'calligraphy-ink',
         backgroundColor: 'oklch(96.0% 0.008 85.0 / 1)',
         mainColor: 'oklch(20.0% 0.015 270.0 / 1)',
