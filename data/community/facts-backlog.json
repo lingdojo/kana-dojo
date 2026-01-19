@@ -379,7 +379,10 @@
   {
     "id": 56,
     "fact": "Japan has the world's oldest population - one in three Japanese citizens is over 60 years old, and the ratio is increasing.",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "HpatricioH",
+    "completedPR": 943
   },
   {
     "id": 57,
