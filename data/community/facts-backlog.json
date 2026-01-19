@@ -77,7 +77,10 @@
   {
     "id": 13,
     "fact": "Japanese police use giant futon-like blankets called 'sasumata' to safely pin suspects against walls, a technique dating back to the Edo period.",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "DarshanCode2005",
+    "completedPR": 954
   },
   {
     "id": 14,
@@ -90,7 +93,10 @@
   {
     "id": 15,
     "fact": "The Japanese word 'shoganai' (しょうがない) expresses accepting what cannot be changed - a cultural philosophy of graceful resignation.",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "DarshanCode2005",
+    "completedPR": 952
   },
   {
     "id": 16,
@@ -300,7 +306,10 @@
   {
     "id": 42,
     "fact": "Japan's elderly population is so large that adult diapers outsell baby diapers - reflecting one of the world's fastest-aging societies.",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "kaedeek",
+    "completedPR": 933
   },
   {
     "id": 43,
@@ -366,7 +375,10 @@
   {
     "id": 54,
     "fact": "Japan has a highway that passes directly through a building in Osaka - the Gate Tower Building has floors 5-7 as a tunnel.",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "kaedeek",
+    "completedPR": 935
   },
   {
     "id": 55,
@@ -379,7 +391,10 @@
   {
     "id": 56,
     "fact": "Japan has the world's oldest population - one in three Japanese citizens is over 60 years old, and the ratio is increasing.",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "HpatricioH",
+    "completedPR": 943
   },
   {
     "id": 57,
@@ -389,17 +404,17 @@
   {
     "id": 58,
     "fact": "Japan's Seikan Tunnel connecting Honshu and Hokkaido is the world's longest undersea tunnel at 53.85 kilometers.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 59,
     "fact": "The word 'sawari' (触り) in Japanese means both 'touch' and 'the most interesting part' - suggesting you save the best for touching.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 60,
     "fact": "Japan has an island called Okunoshima overrun by friendly wild rabbits - formerly a secret chemical weapons manufacturing site.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 61,

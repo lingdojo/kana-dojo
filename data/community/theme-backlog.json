@@ -412,7 +412,10 @@
     "backgroundColor": "oklch(20.0% 0.045 20.0 / 1)",
     "mainColor": "oklch(58.0% 0.225 28.0 / 1)",
     "secondaryColor": "oklch(92.0% 0.045 90.0 / 1)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "kaedeek",
+    "completedPR": 931
   },
   {
     "id": "shogun-gold",
@@ -490,7 +493,10 @@
     "backgroundColor": "oklch(20.0% 0.022 35.0 / 1)",
     "mainColor": "oklch(72.0% 0.065 75.0 / 1)",
     "secondaryColor": "oklch(60.0% 0.185 20.0 / 1)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "SamuelJoseph23",
+    "completedPR": 949
   },
   {
     "id": "sakura-storm",
@@ -574,7 +580,7 @@
     "backgroundColor": "oklch(17.0% 0.035 280.0 / 1)",
     "mainColor": "oklch(68.0% 0.175 30.0 / 1)",
     "secondaryColor": "oklch(78.0% 0.125 45.0 / 1)",
-    "issued": false
+    "issued": true
   },
   {
     "id": "izakaya-warm",
@@ -583,7 +589,7 @@
     "backgroundColor": "oklch(20.0% 0.045 35.0 / 1)",
     "mainColor": "oklch(70.0% 0.165 30.0 / 1)",
     "secondaryColor": "oklch(80.0% 0.115 65.0 / 1)",
-    "issued": false
+    "issued": true
   },
   {
     "id": "crane-flight",
