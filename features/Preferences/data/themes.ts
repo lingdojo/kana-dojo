@@ -1087,6 +1087,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         mainColor: 'oklch(72.0% 0.195 220.0 / 1)',
         secondaryColor: 'oklch(68.0% 0.205 30.0 / 1)',
       },
+      {
+        id: 'bamboo-forest',
+        backgroundColor: 'oklch(21.0% 0.045 155.0 / 1)',
+        mainColor: 'oklch(70.0% 0.145 150.0 / 1)',
+        secondaryColor: 'oklch(78.0% 0.095 140.0 / 1)',
+      },
     ],
   },
   {
