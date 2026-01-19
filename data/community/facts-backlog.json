@@ -416,7 +416,10 @@
   {
     "id": 58,
     "fact": "Japan's Seikan Tunnel connecting Honshu and Hokkaido is the world's longest undersea tunnel at 53.85 kilometers.",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "TanyaAnand1105",
+    "completedPR": 1051
   },
   {
     "id": 59,
