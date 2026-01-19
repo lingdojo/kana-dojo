@@ -508,7 +508,10 @@
     "backgroundColor": "oklch(90.0% 0.032 340.0 / 1)",
     "mainColor": "oklch(70.0% 0.185 345.0 / 1)",
     "secondaryColor": "oklch(55.0% 0.145 350.0 / 1)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "geniusOnCooldown",
+    "completedPR": 1070
   },
   {
     "id": "ramen-steam",
