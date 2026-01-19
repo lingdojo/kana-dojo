@@ -300,7 +300,10 @@
   {
     "id": 42,
     "fact": "Japan's elderly population is so large that adult diapers outsell baby diapers - reflecting one of the world's fastest-aging societies.",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "kaedeek",
+    "completedPR": 933
   },
   {
     "id": 43,
