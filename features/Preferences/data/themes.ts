@@ -249,6 +249,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         secondaryColor: 'oklch(55.0% 0.145 350.0 / 1)',
       },
       {
+        id: 'festival-mask',
+        backgroundColor: 'oklch(20.0% 0.042 15.0 / 1)',
+        mainColor: 'oklch(80.0% 0.175 55.0 / 1)',
+        secondaryColor: 'oklch(72.0% 0.195 20.0 / 1)'
+      },
+      {
         id: 'samurai-steel',
         backgroundColor: 'oklch(18.0% 0.022 250.0 / 1)',
         mainColor: 'oklch(80.0% 0.055 240.0 / 1)',
