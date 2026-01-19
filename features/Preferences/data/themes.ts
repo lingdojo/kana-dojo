@@ -242,6 +242,12 @@ const baseThemeSets: BaseThemeGroup[] = [
     icon: Moon,
     themes: [
       {
+        id: 'sakura-storm',
+        backgroundColor: 'oklch(90.0% 0.032 340.0 / 1)',
+        mainColor: 'oklch(70.0% 0.185 345.0 / 1)',
+        secondaryColor: 'oklch(55.0% 0.145 350.0 / 1)'
+      },
+      {
         id: 'crane-flight',
         backgroundColor: 'oklch(94.0% 0.015 240.0 / 1)',
         mainColor: 'oklch(40.0% 0.025 270.0 / 1)',
