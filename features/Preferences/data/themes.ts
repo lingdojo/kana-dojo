@@ -1087,6 +1087,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         mainColor: 'oklch(72.0% 0.195 220.0 / 1)',
         secondaryColor: 'oklch(68.0% 0.205 30.0 / 1)',
       },
+      {
+        id: 'tanuki-mischief',
+        backgroundColor: 'oklch(22.0% 0.042 55.0 / 1)',
+        mainColor: 'oklch(68.0% 0.125 65.0 / 1)',
+        secondaryColor: 'oklch(72.0% 0.155 145.0 / 1)',
+      },
     ],
   },
   {
