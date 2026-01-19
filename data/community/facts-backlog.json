@@ -424,7 +424,10 @@
   {
     "id": 62,
     "fact": "Japan's crime rate is so low that police often spend time helping lost tourists and giving directions.",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "yamayuki-hub",
+    "completedPR": 998
   },
   {
     "id": 63,
