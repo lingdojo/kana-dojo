@@ -1205,7 +1205,11 @@ const baseThemeSets: BaseThemeGroup[] = [
         id: 'pachinko-hall',
         backgroundColor: 'oklch(18.0% 0.042 325.0 / 1)',
         mainColor: 'oklch(90.0% 0.115 95.0 / 1)',
-        secondaryColor: 'oklch(75.0% 0.195 340.0 / 1)'
+        secondaryColor: 'oklch(75.0% 0.195 340.0 / 1)'},{
+        id: 'pearl-wave',
+        backgroundColor: 'oklch(21.0% 0.045 235.0 / 1)',
+        mainColor: 'oklch(88.0% 0.055 245.0 / 1)',
+        secondaryColor: 'oklch(68.0% 0.165 215.0 / 1)'
       },
     ]
   },
