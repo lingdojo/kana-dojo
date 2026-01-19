@@ -1201,6 +1201,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         mainColor: 'oklch(82.0% 0.155 85.0 / 1)',
         secondaryColor: 'oklch(65.0% 0.180 30.0 / 1)'
       },
+      {
+        id: 'ramen-steam',
+        backgroundColor: 'oklch(21.0% 0.038 50.0 / 1)',
+        mainColor: 'oklch(82.0% 0.135 85.0 / 1)',
+        secondaryColor: 'oklch(65.0% 0.165 40.0 / 1)'
+      },
     ]
   },
   {
