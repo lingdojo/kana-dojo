@@ -1227,6 +1227,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         mainColor: 'oklch(88.0% 0.055 245.0 / 1)',
         secondaryColor: 'oklch(68.0% 0.165 215.0 / 1)'
       },
+      {
+        id: 'soda-float',
+        backgroundColor: 'oklch(93.0% 0.032 150.0 / 1)',
+        mainColor: 'oklch(62.0% 0.175 155.0 / 1)',
+        secondaryColor: 'oklch(85.0% 0.095 95.0 / 1)'
+      },
     ]
   },
   {
