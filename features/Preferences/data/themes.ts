@@ -1201,6 +1201,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         mainColor: 'oklch(82.0% 0.155 85.0 / 1)',
         secondaryColor: 'oklch(65.0% 0.180 30.0 / 1)'
       },
+      {
+        id: 'pearl-wave',
+        backgroundColor: 'oklch(21.0% 0.045 235.0 / 1)',
+        mainColor: 'oklch(88.0% 0.055 245.0 / 1)',
+        secondaryColor: 'oklch(68.0% 0.165 215.0 / 1)'
+      },
     ]
   },
   {
