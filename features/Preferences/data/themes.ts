@@ -1087,6 +1087,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         mainColor: 'oklch(72.0% 0.195 220.0 / 1)',
         secondaryColor: 'oklch(68.0% 0.205 30.0 / 1)',
       },
+      {
+        id: 'onsen-steam',
+        backgroundColor: 'oklch(25.0% 0.022 210.0 / 1)',
+        mainColor: 'oklch(85.0% 0.085 215.0 / 1)',
+        secondaryColor: 'oklch(70.0% 0.065 195.0 / 1)',
+      },
     ],
   },
   {
