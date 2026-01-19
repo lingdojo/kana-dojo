@@ -236,6 +236,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         mainColor: 'oklch(62.02% 0.2504 302.41 / 1)',
         secondaryColor: 'oklch(66.54% 0.2210 304.03 / 1)',
       },
+      {
+        id: 'lucky-cat',
+        backgroundColor: 'oklch(92.0% 0.025 90.0 / 1)',
+        mainColor: 'oklch(65.0% 0.195 40.0 / 1)',
+        secondaryColor: 'oklch(75.0% 0.145 85.0 / 1)',
+      },
     ],
   },
   {
