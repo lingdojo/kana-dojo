@@ -248,6 +248,12 @@ const baseThemeSets: BaseThemeGroup[] = [
       secondaryColor: 'oklch(60.0% 0.175 20.0 / 1)'
       },
       {
+        id: 'izakaya-warm',
+        backgroundColor: 'oklch(20.0% 0.045 35.0 / 1)',
+        mainColor: 'oklch(70.0% 0.165 30.0 / 1)',
+        secondaryColor: 'oklch(80.0% 0.115 65.0 / 1)'
+      },
+      {
         id: 'samurai-steel',
         backgroundColor: 'oklch(18.0% 0.022 250.0 / 1)',
         mainColor: 'oklch(80.0% 0.055 240.0 / 1)',
