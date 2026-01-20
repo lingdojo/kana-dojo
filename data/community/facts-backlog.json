@@ -499,7 +499,10 @@
   {
     "id": 74,
     "fact": "Japan's vending machines have earthquake sensors that automatically release free drinks during major earthquakes as emergency supplies.",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "Lefteris-Tsahalidis",
+    "completedPR": 1134
   },
   {
     "id": 75,
