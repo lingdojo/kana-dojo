@@ -470,7 +470,10 @@
   {
     "id": 67,
     "fact": "There's a Japanese practice called 'kuuki wo yomu' (空気を読む) - reading the air - understanding unspoken social cues.",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "maxwellyoung",
+    "completedPR": 1124
   },
   {
     "id": 68,
