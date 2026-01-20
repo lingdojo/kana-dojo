@@ -462,7 +462,10 @@
   {
     "id": 66,
     "fact": "Japan has a museum entirely dedicated to parasites in Tokyo, featuring a 9-meter tapeworm as its star attraction.",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "maxwellyoung",
+    "completedPR": 1112
   },
   {
     "id": 67,
