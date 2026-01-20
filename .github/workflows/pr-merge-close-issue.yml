@@ -6,8 +6,8 @@ on:
 
 permissions:
   issues: write
-  pull-requests: write
-  contents: write
+  pull-requests: read
+  contents: read
 
 # Prevent overlapping runs for the same PR
 concurrency:
@@ -23,7 +23,6 @@ jobs:
       - name: Checkout for templates
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
           persist-credentials: false
 
       - name: Find and close related issue

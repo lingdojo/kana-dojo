@@ -6,24 +6,24 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
   issues: write
-  pull-requests: write
 
 # Prevent race conditions with other community workflows
 concurrency:
   group: community-stale-issues
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   manage-stale:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: false
 
       - name: Process stale community issues
         id: stale-check

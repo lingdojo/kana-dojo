@@ -670,7 +670,10 @@
     "backgroundColor": "oklch(22.0% 0.042 55.0 / 1)",
     "mainColor": "oklch(68.0% 0.125 65.0 / 1)",
     "secondaryColor": "oklch(72.0% 0.155 145.0 / 1)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "maxwellyoung",
+    "completedPR": 1127
   },
   {
     "id": "soda-float",
@@ -679,7 +682,10 @@
     "backgroundColor": "oklch(93.0% 0.032 150.0 / 1)",
     "mainColor": "oklch(62.0% 0.175 155.0 / 1)",
     "secondaryColor": "oklch(85.0% 0.095 95.0 / 1)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "maxwellyoung",
+    "completedPR": 1103
   },
   {
     "id": "castle-gate",
@@ -727,7 +733,7 @@
     "backgroundColor": "oklch(19.0% 0.058 290.0 / 1)",
     "mainColor": "oklch(70.0% 0.165 295.0 / 1)",
     "secondaryColor": "oklch(80.0% 0.125 285.0 / 1)",
-    "issued": false
+    "issued": true
   },
   {
     "id": "festival-mask",
@@ -736,7 +742,10 @@
     "backgroundColor": "oklch(20.0% 0.042 15.0 / 1)",
     "mainColor": "oklch(80.0% 0.175 55.0 / 1)",
     "secondaryColor": "oklch(72.0% 0.195 20.0 / 1)",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "kostas-arte",
+    "completedPR": 1140
   },
   {
     "id": "frozen-lake",
@@ -745,7 +754,10 @@
     "backgroundColor": "oklch(24.0% 0.035 230.0 / 1)",
     "mainColor": "oklch(90.0% 0.075 225.0 / 1)",
     "secondaryColor": "oklch(80.0% 0.055 235.0 / 1)",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "TheRealChrisFot",
+    "completedPR": 1137
   },
   {
     "id": "sushi-counter",
@@ -754,7 +766,7 @@
     "backgroundColor": "oklch(23.0% 0.028 70.0 / 1)",
     "mainColor": "oklch(70.0% 0.145 20.0 / 1)",
     "secondaryColor": "oklch(68.0% 0.095 75.0 / 1)",
-    "issued": false
+    "issued": true
   },
   {
     "id": "holographic-idol",
@@ -763,7 +775,7 @@
     "backgroundColor": "oklch(14.0% 0.065 300.0 / 1)",
     "mainColor": "oklch(82.0% 0.185 200.0 / 1)",
     "secondaryColor": "oklch(78.0% 0.210 330.0 / 1)",
-    "issued": false
+    "issued": true
   },
   {
     "id": "mochi-pastel",
@@ -772,7 +784,7 @@
     "backgroundColor": "oklch(94.0% 0.028 340.0 / 1)",
     "mainColor": "oklch(72.0% 0.145 345.0 / 1)",
     "secondaryColor": "oklch(75.0% 0.125 155.0 / 1)",
-    "issued": false
+    "issued": true
   },
   {
     "id": "umbrella-rain",
@@ -781,7 +793,10 @@
     "backgroundColor": "oklch(22.0% 0.018 250.0 / 1)",
     "mainColor": "oklch(70.0% 0.175 225.0 / 1)",
     "secondaryColor": "oklch(75.0% 0.145 350.0 / 1)",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "Utkarsh-Singhal-26",
+    "completedPR": 1156
   },
   {
     "id": "kendo-strike",
@@ -790,7 +805,7 @@
     "backgroundColor": "oklch(16.0% 0.028 265.0 / 1)",
     "mainColor": "oklch(65.0% 0.025 270.0 / 1)",
     "secondaryColor": "oklch(72.0% 0.165 25.0 / 1)",
-    "issued": false
+    "issued": true
   },
   {
     "id": "cherry-cola",
@@ -799,7 +814,7 @@
     "backgroundColor": "oklch(18.0% 0.055 20.0 / 1)",
     "mainColor": "oklch(58.0% 0.195 25.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.145 50.0 / 1)",
-    "issued": false
+    "issued": true
   },
   {
     "id": "pagoda-twilight",
@@ -808,7 +823,7 @@
     "backgroundColor": "oklch(20.0% 0.045 290.0 / 1)",
     "mainColor": "oklch(68.0% 0.155 315.0 / 1)",
     "secondaryColor": "oklch(75.0% 0.125 280.0 / 1)",
-    "issued": false
+    "issued": true
   },
   {
     "id": "lucky-bamboo",
@@ -817,7 +832,7 @@
     "backgroundColor": "oklch(92.0% 0.025 145.0 / 1)",
     "mainColor": "oklch(55.0% 0.175 145.0 / 1)",
     "secondaryColor": "oklch(45.0% 0.125 140.0 / 1)",
-    "issued": false
+    "issued": true
   },
   {
     "id": "starry-tanabata",
@@ -1006,6 +1021,213 @@
     "backgroundColor": "oklch(23.0% 0.045 85.0 / 1)",
     "mainColor": "oklch(88.0% 0.170 95.0 / 1)",
     "secondaryColor": "oklch(72.0% 0.135 75.0 / 1)",
+    "issued": false
+  },
+  {
+    "id": "yukata-breeze",
+    "name": "Yukata Breeze",
+    "description": "Summer festival fabric in cool tones",
+    "backgroundColor": "oklch(93.0% 0.012 240.0 / 1)",
+    "mainColor": "oklch(55.0% 0.165 230.0 / 1)",
+    "secondaryColor": "oklch(70.0% 0.115 185.0 / 1)",
+    "issued": false
+  },
+  {
+    "id": "komorebi-green",
+    "name": "Komorebi Green",
+    "description": "Sunlight through leaves in a quiet grove",
+    "backgroundColor": "oklch(22.0% 0.030 150.0 / 1)",
+    "mainColor": "oklch(78.0% 0.135 145.0 / 1)",
+    "secondaryColor": "oklch(70.0% 0.090 110.0 / 1)",
+    "issued": false
+  },
+  {
+    "id": "tsukimi-moon",
+    "name": "Tsukimi Moon",
+    "description": "Harvest moon viewing with silver and indigo",
+    "backgroundColor": "oklch(18.0% 0.028 255.0 / 1)",
+    "mainColor": "oklch(92.0% 0.020 95.0 / 1)",
+    "secondaryColor": "oklch(65.0% 0.105 270.0 / 1)",
+    "issued": false
+  },
+  {
+    "id": "ramune-fizz",
+    "name": "Ramune Fizz",
+    "description": "Marble soda sparkle in bright cyan",
+    "backgroundColor": "oklch(95.0% 0.020 210.0 / 1)",
+    "mainColor": "oklch(70.0% 0.170 205.0 / 1)",
+    "secondaryColor": "oklch(80.0% 0.135 95.0 / 1)",
+    "issued": false
+  },
+  {
+    "id": "night-market",
+    "name": "Night Market",
+    "description": "Lantern-lit stalls and smoky street food",
+    "backgroundColor": "oklch(16.0% 0.035 35.0 / 1)",
+    "mainColor": "oklch(75.0% 0.165 55.0 / 1)",
+    "secondaryColor": "oklch(62.0% 0.185 20.0 / 1)",
+    "issued": false
+  },
+  {
+    "id": "sumi-charcoal",
+    "name": "Sumi Charcoal",
+    "description": "Ink wash grays with crisp white accents",
+    "backgroundColor": "oklch(18.0% 0.010 270.0 / 1)",
+    "mainColor": "oklch(78.0% 0.010 90.0 / 1)",
+    "secondaryColor": "oklch(45.0% 0.020 260.0 / 1)",
+    "issued": false
+  },
+  {
+    "id": "umami-miso",
+    "name": "Umami Miso",
+    "description": "Savory browns and warm broth glow",
+    "backgroundColor": "oklch(22.0% 0.028 55.0 / 1)",
+    "mainColor": "oklch(72.0% 0.095 65.0 / 1)",
+    "secondaryColor": "oklch(60.0% 0.125 30.0 / 1)",
+    "issued": false
+  },
+  {
+    "id": "hanami-picnic",
+    "name": "Hanami Picnic",
+    "description": "Sakura petals, bento cloth, and spring air",
+    "backgroundColor": "oklch(96.0% 0.018 20.0 / 1)",
+    "mainColor": "oklch(70.0% 0.165 350.0 / 1)",
+    "secondaryColor": "oklch(78.0% 0.120 135.0 / 1)",
+    "issued": false
+  },
+  {
+    "id": "coastal-shrine",
+    "name": "Coastal Shrine",
+    "description": "Sea spray and vermilion gates",
+    "backgroundColor": "oklch(20.0% 0.040 235.0 / 1)",
+    "mainColor": "oklch(78.0% 0.205 35.0 / 1)",
+    "secondaryColor": "oklch(88.0% 0.065 210.0 / 1)",
+    "issued": false
+  },
+  {
+    "id": "shoji-glow",
+    "name": "Shoji Glow",
+    "description": "Paper screens with warm evening light",
+    "backgroundColor": "oklch(94.0% 0.010 95.0 / 1)",
+    "mainColor": "oklch(45.0% 0.075 65.0 / 1)",
+    "secondaryColor": "oklch(60.0% 0.045 30.0 / 1)",
+    "issued": false
+  },
+  {
+    "id": "tsuyu-drizzle",
+    "name": "Tsuyu Drizzle",
+    "description": "Rainy season blues and soft gray clouds",
+    "backgroundColor": "oklch(22.0% 0.015 250.0 / 1)",
+    "mainColor": "oklch(72.0% 0.105 230.0 / 1)",
+    "secondaryColor": "oklch(78.0% 0.025 260.0 / 1)",
+    "issued": false
+  },
+  {
+    "id": "sake-glass",
+    "name": "Sake Glass",
+    "description": "Clear crystal with a rice-white sheen",
+    "backgroundColor": "oklch(98.0% 0.004 90.0 / 1)",
+    "mainColor": "oklch(55.0% 0.035 250.0 / 1)",
+    "secondaryColor": "oklch(70.0% 0.015 90.0 / 1)",
+    "issued": false
+  },
+  {
+    "id": "winter-kimono",
+    "name": "Winter Kimono",
+    "description": "Deep indigo with snowy highlights",
+    "backgroundColor": "oklch(16.0% 0.040 260.0 / 1)",
+    "mainColor": "oklch(88.0% 0.020 240.0 / 1)",
+    "secondaryColor": "oklch(68.0% 0.110 310.0 / 1)",
+    "issued": false
+  },
+  {
+    "id": "golden-kintsugi",
+    "name": "Golden Kintsugi",
+    "description": "Cracked pottery repaired with gold lines",
+    "backgroundColor": "oklch(20.0% 0.020 70.0 / 1)",
+    "mainColor": "oklch(85.0% 0.155 85.0 / 1)",
+    "secondaryColor": "oklch(60.0% 0.085 25.0 / 1)",
+    "issued": false
+  },
+  {
+    "id": "seaside-udon",
+    "name": "Seaside Udon",
+    "description": "Creamy noodles, seafoam, and sunny lemon",
+    "backgroundColor": "oklch(92.0% 0.015 210.0 / 1)",
+    "mainColor": "oklch(60.0% 0.130 215.0 / 1)",
+    "secondaryColor": "oklch(85.0% 0.155 95.0 / 1)",
+    "issued": false
+  },
+  {
+    "id": "neon-arcade",
+    "name": "Neon Arcade",
+    "description": "Blazing signs and retro cabinets",
+    "backgroundColor": "oklch(13.0% 0.055 300.0 / 1)",
+    "mainColor": "oklch(78.0% 0.220 330.0 / 1)",
+    "secondaryColor": "oklch(82.0% 0.185 190.0 / 1)",
+    "issued": false
+  },
+  {
+    "id": "quiet-library",
+    "name": "Quiet Library",
+    "description": "Warm wood, paper cream, and ink blue",
+    "backgroundColor": "oklch(92.0% 0.012 90.0 / 1)",
+    "mainColor": "oklch(35.0% 0.085 255.0 / 1)",
+    "secondaryColor": "oklch(55.0% 0.055 65.0 / 1)",
+    "issued": false
+  },
+  {
+    "id": "maple-lacquer",
+    "name": "Maple Lacquer",
+    "description": "Glossy reds with autumn maple warmth",
+    "backgroundColor": "oklch(17.0% 0.035 20.0 / 1)",
+    "mainColor": "oklch(65.0% 0.215 30.0 / 1)",
+    "secondaryColor": "oklch(78.0% 0.135 70.0 / 1)",
+    "issued": false
+  },
+  {
+    "id": "plaza-snow",
+    "name": "Plaza Snow",
+    "description": "City winter: clean whites and cool steel",
+    "backgroundColor": "oklch(97.0% 0.006 240.0 / 1)",
+    "mainColor": "oklch(40.0% 0.035 260.0 / 1)",
+    "secondaryColor": "oklch(65.0% 0.120 220.0 / 1)",
+    "issued": false
+  },
+  {
+    "id": "karasu-black",
+    "name": "Karasu Black",
+    "description": "Crow feathers: dark with subtle iridescence",
+    "backgroundColor": "oklch(14.0% 0.010 270.0 / 1)",
+    "mainColor": "oklch(72.0% 0.055 200.0 / 1)",
+    "secondaryColor": "oklch(62.0% 0.095 320.0 / 1)",
+    "issued": false
+  },
+  {
+    "id": "festival-yatai",
+    "name": "Festival Yatai",
+    "description": "Street stalls: red lanterns and gold signs",
+    "backgroundColor": "oklch(19.0% 0.030 35.0 / 1)",
+    "mainColor": "oklch(78.0% 0.185 45.0 / 1)",
+    "secondaryColor": "oklch(88.0% 0.115 95.0 / 1)",
+    "issued": false
+  },
+  {
+    "id": "blooming-ume",
+    "name": "Blooming Ume",
+    "description": "Plum blossoms before spring truly arrives",
+    "backgroundColor": "oklch(95.0% 0.015 15.0 / 1)",
+    "mainColor": "oklch(62.0% 0.175 350.0 / 1)",
+    "secondaryColor": "oklch(75.0% 0.085 85.0 / 1)",
+    "issued": false
+  },
+  {
+    "id": "mountain-cedar",
+    "name": "Mountain Cedar",
+    "description": "Old-growth sugi forests and cool shade",
+    "backgroundColor": "oklch(20.0% 0.020 150.0 / 1)",
+    "mainColor": "oklch(70.0% 0.105 145.0 / 1)",
+    "secondaryColor": "oklch(60.0% 0.055 110.0 / 1)",
     "issued": false
   }
 ]
