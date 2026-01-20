@@ -6,7 +6,7 @@ import GoogleAnalytics from '@/core/analytics/GoogleAnalytics';
 import MSClarity from '@/core/analytics/MSClarity';
 import {
   StructuredData,
-  kanaDojoSchema
+  kanaDojoSchema,
 } from '@/shared/components/SEO/StructuredData';
 import { Metadata, Viewport } from 'next';
 import Script from 'next/script';
@@ -19,7 +19,7 @@ export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1.0,
   maximumScale: 5.0,
-  userScalable: true
+  userScalable: true,
 };
 
 export const metadata: Metadata = {
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   title: {
     default:
       'KanaDojo - Learn Japanese Hiragana, Katakana, Kanji & Vocabulary Online',
-    template: '%s | KanaDojo'
+    template: '%s | KanaDojo',
   },
   description:
     'Master Japanese with KanaDojo - a fun, aesthetic, minimalist platform for learning Hiragana, Katakana, Kanji, and Vocabulary. Practice with interactive games, track progress, and customize your learning experience.',
@@ -36,14 +36,14 @@ export const metadata: Metadata = {
     icon: [
       { url: '/favicon.ico?v=2' },
       { url: '/favicon.ico?v=2', sizes: '16x16', type: 'image/x-icon' },
-      { url: '/favicon.ico?v=2', sizes: '32x32', type: 'image/x-icon' }
+      { url: '/favicon.ico?v=2', sizes: '32x32', type: 'image/x-icon' },
     ],
     shortcut: '/favicon.ico?v=2',
-    apple: '/favicon.ico?v=2'
+    apple: '/favicon.ico?v=2',
   },
   verification: {
     google: googleVerificationToken,
-    other: { 'msvalidate.01': msVerificationToken }
+    other: { 'msvalidate.01': msVerificationToken },
   },
   keywords: [
     'learn japanese',
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     'japanese language learning',
     'kana dojo',
     'japanese study tool',
-    'free japanese lessons'
+    'free japanese lessons',
   ],
   authors: [{ name: 'LingDojo', url: 'https://kanadojo.com' }],
   creator: 'LingDojo',
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
   formatDetection: {
     email: false,
     address: false,
-    telephone: false
+    telephone: false,
   },
   openGraph: {
     title: 'KanaDojo - Learn Japanese Hiragana, Katakana, Kanji & Vocabulary',
@@ -80,22 +80,22 @@ export const metadata: Metadata = {
     siteName: 'KanaDojo',
     type: 'website',
     locale: 'en_US',
-    alternateLocale: ['es_ES', 'ja_JP']
+    alternateLocale: ['es_ES', 'ja_JP'],
   },
   twitter: {
     card: 'summary',
     title: 'KanaDojo - Learn Japanese Online',
     description:
       'Master Japanese Hiragana, Katakana, Kanji & Vocabulary with interactive games and beautiful themes.',
-    creator: '@kanadojo'
+    creator: '@kanadojo',
   },
   alternates: {
     canonical: 'https://kanadojo.com',
     languages: {
       en: 'https://kanadojo.com/en',
       es: 'https://kanadojo.com/es',
-      ja: 'https://kanadojo.com/ja'
-    }
+      ja: 'https://kanadojo.com/ja',
+    },
   },
   robots: {
     index: true,
@@ -105,10 +105,10 @@ export const metadata: Metadata = {
       follow: true,
       'max-video-preview': -1,
       'max-image-preview': 'large',
-      'max-snippet': -1
-    }
+      'max-snippet': -1,
+    },
   },
-  category: 'education'
+  category: 'education',
 };
 
 // Move analytics condition to a constant to avoid repeated evaluation
