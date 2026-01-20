@@ -527,7 +527,10 @@
   {
     "id": 79,
     "fact": "The Japanese word 'nomunication' combines 'nomu' (drink) and 'communication' - bonding with colleagues over after-work drinks.",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "ManzoorAhmedShaikh",
+    "completedPR": 1159
   },
   {
     "id": 80,
