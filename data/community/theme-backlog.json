@@ -676,7 +676,7 @@
     "issued": true,
     "completed": true,
     "completedBy": "maxwellyoung",
-    "completedPR": 1127
+    "completedPR": 1104
   },
   {
     "id": "soda-float",
@@ -688,7 +688,7 @@
     "issued": true,
     "completed": true,
     "completedBy": "maxwellyoung",
-    "completedPR": 1103
+    "completedPR": 1126
   },
   {
     "id": "castle-gate",
@@ -697,7 +697,10 @@
     "backgroundColor": "oklch(23.0% 0.018 75.0 / 1)",
     "mainColor": "oklch(70.0% 0.055 80.0 / 1)",
     "secondaryColor": "oklch(60.0% 0.145 25.0 / 1)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "maxwellyoung",
+    "completedPR": 1102
   },
   {
     "id": "robot-anime",
@@ -718,7 +721,10 @@
     "backgroundColor": "oklch(21.0% 0.045 155.0 / 1)",
     "mainColor": "oklch(70.0% 0.145 150.0 / 1)",
     "secondaryColor": "oklch(78.0% 0.095 140.0 / 1)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "maxwellyoung",
+    "completedPR": 1120
   },
   {
     "id": "sunset-train",
