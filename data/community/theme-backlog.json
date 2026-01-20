@@ -778,7 +778,7 @@
     "backgroundColor": "oklch(94.0% 0.028 340.0 / 1)",
     "mainColor": "oklch(72.0% 0.145 345.0 / 1)",
     "secondaryColor": "oklch(75.0% 0.125 155.0 / 1)",
-    "issued": false
+    "issued": true
   },
   {
     "id": "umbrella-rain",
