@@ -566,7 +566,10 @@
   {
     "id": 82,
     "fact": "Japan has 'butler cafes' where women are served by men in formal butler attire who address them as 'Princess' or 'Mistress'.",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "Vikash565-dot",
+    "completedPR": 1186
   },
   {
     "id": 83,
