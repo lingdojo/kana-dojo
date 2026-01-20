@@ -319,5 +319,486 @@
     "completed": true,
     "completedBy": "kaedeek",
     "completedPR": 803
+  },
+  {
+    "id": 31,
+    "japanese": "猿も木から落ちる",
+    "romaji": "Saru mo ki kara ochiru",
+    "english": "Even monkeys fall from trees",
+    "meaning": "Experts can make mistakes",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 32,
+    "japanese": "覆水盆に返らず",
+    "romaji": "Fukusui bon ni kaerazu",
+    "english": "Spilled water will not return to the tray",
+    "meaning": "What is done cannot be undone",
+    "issued": true
+  },
+  {
+    "id": 33,
+    "japanese": "情けは人の為ならず",
+    "romaji": "Nasake wa hito no tame narazu",
+    "english": "Kindness is not for others",
+    "meaning": "A good deed returns to you",
+    "issued": true
+  },
+  {
+    "id": 34,
+    "japanese": "弘法にも筆の誤り",
+    "romaji": "Koubou ni mo fude no ayamari",
+    "english": "Even Kobo makes mistakes with his brush",
+    "meaning": "Even masters make mistakes",
+    "issued": false
+  },
+  {
+    "id": 35,
+    "japanese": "泣きっ面に蜂",
+    "romaji": "Nakittsura ni hachi",
+    "english": "A bee on a crying face",
+    "meaning": "Misfortune never comes alone",
+    "issued": false
+  },
+  {
+    "id": 36,
+    "japanese": "口は災いの元",
+    "romaji": "Kuchi wa wazawai no moto",
+    "english": "The mouth is the source of disaster",
+    "meaning": "Careless speech can cause trouble",
+    "issued": false
+  },
+  {
+    "id": 37,
+    "japanese": "出る釘は打たれる",
+    "romaji": "Deru kugi wa utareru",
+    "english": "The nail that sticks out gets hammered down",
+    "meaning": "Those who stand out may be criticized",
+    "issued": false
+  },
+  {
+    "id": 38,
+    "japanese": "知らぬが仏",
+    "romaji": "Shiranu ga hotoke",
+    "english": "Not knowing is Buddha",
+    "meaning": "Ignorance is bliss",
+    "issued": false
+  },
+  {
+    "id": 39,
+    "japanese": "明日は明日の風が吹く",
+    "romaji": "Ashita wa ashita no kaze ga fuku",
+    "english": "Tomorrow's wind will blow tomorrow",
+    "meaning": "Don't worry too much about the future",
+    "issued": false
+  },
+  {
+    "id": 40,
+    "japanese": "縁の下の力持ち",
+    "romaji": "En no shita no chikaramochi",
+    "english": "A strong person under the veranda",
+    "meaning": "An unsung hero who supports behind the scenes",
+    "issued": false
+  },
+  {
+    "id": 41,
+    "japanese": "油断大敵",
+    "romaji": "Yudan taiteki",
+    "english": "Carelessness is the greatest enemy",
+    "meaning": "Don't let your guard down",
+    "issued": false
+  },
+  {
+    "id": 42,
+    "japanese": "怪我の功名",
+    "romaji": "Kega no koumyou",
+    "english": "Fame from a mistake",
+    "meaning": "A lucky break that comes from an error",
+    "issued": false
+  },
+  {
+    "id": 43,
+    "japanese": "七転び八起き",
+    "romaji": "Nanakorobi yaoki",
+    "english": "Fall seven times, get up eight",
+    "meaning": "Never give up",
+    "issued": false
+  },
+  {
+    "id": 44,
+    "japanese": "雨垂れ石を穿つ",
+    "romaji": "Amadare ishi wo ugatsu",
+    "english": "Dripping water pierces stone",
+    "meaning": "Persistence can overcome great obstacles",
+    "issued": false
+  },
+  {
+    "id": 45,
+    "japanese": "石橋を叩いて渡る",
+    "romaji": "Ishibashi wo tataite wataru",
+    "english": "Tap a stone bridge before crossing",
+    "meaning": "Be very cautious",
+    "issued": false
+  },
+  {
+    "id": 46,
+    "japanese": "転んでもただでは起きぬ",
+    "romaji": "Koronde mo tada de wa okinu",
+    "english": "Even if you fall, don't get up empty-handed",
+    "meaning": "Learn something from every setback",
+    "issued": false
+  },
+  {
+    "id": 47,
+    "japanese": "馬子にも衣装",
+    "romaji": "Mago ni mo ishou",
+    "english": "Even a packhorse driver looks good in fine clothes",
+    "meaning": "Clothes make the person",
+    "issued": false
+  },
+  {
+    "id": 48,
+    "japanese": "三日坊主",
+    "romaji": "Mikka bouzu",
+    "english": "A three-day monk",
+    "meaning": "Someone who quits quickly",
+    "issued": false
+  },
+  {
+    "id": 49,
+    "japanese": "早起きは三文の得",
+    "romaji": "Hayaoki wa sanmon no toku",
+    "english": "Early rising is worth three coins",
+    "meaning": "Good things come from getting up early",
+    "issued": false
+  },
+  {
+    "id": 50,
+    "japanese": "案ずるより産むが易し",
+    "romaji": "Anzuru yori umu ga yasushi",
+    "english": "Giving birth is easier than worrying",
+    "meaning": "Doing is often easier than worrying",
+    "issued": false
+  },
+  {
+    "id": 51,
+    "japanese": "二度あることは三度ある",
+    "romaji": "Nido aru koto wa sando aru",
+    "english": "What happens twice will happen a third time",
+    "meaning": "Patterns tend to repeat",
+    "issued": false
+  },
+  {
+    "id": 52,
+    "japanese": "縁は異なもの味なもの",
+    "romaji": "En wa inamono aji na mono",
+    "english": "Fate is strange yet delightful",
+    "meaning": "Chance connections can be surprisingly good",
+    "issued": false
+  },
+  {
+    "id": 53,
+    "japanese": "腹八分目",
+    "romaji": "Hara hachibunme",
+    "english": "Stomach 80 percent full",
+    "meaning": "Eat in moderation",
+    "issued": false
+  },
+  {
+    "id": 54,
+    "japanese": "隣の花は赤い",
+    "romaji": "Tonari no hana wa akai",
+    "english": "The neighbor's flowers are red",
+    "meaning": "The grass is always greener on the other side",
+    "issued": false
+  },
+  {
+    "id": 55,
+    "japanese": "犬も歩けば棒に当たる",
+    "romaji": "Inu mo arukeba bou ni ataru",
+    "english": "Even a walking dog will hit a stick",
+    "meaning": "Acting can lead to luck (or trouble)",
+    "issued": false
+  },
+  {
+    "id": 56,
+    "japanese": "棚からぼた餅",
+    "romaji": "Tana kara botamochi",
+    "english": "A rice cake falls from the shelf",
+    "meaning": "A windfall; unexpected good luck",
+    "issued": false
+  },
+  {
+    "id": 57,
+    "japanese": "猫の手も借りたい",
+    "romaji": "Neko no te mo karitai",
+    "english": "I'd even borrow a cat's paw",
+    "meaning": "Extremely busy",
+    "issued": false
+  },
+  {
+    "id": 58,
+    "japanese": "急いては事を仕損じる",
+    "romaji": "Seite wa koto wo shisonjiru",
+    "english": "Haste will spoil things",
+    "meaning": "Haste makes waste",
+    "issued": false
+  },
+  {
+    "id": 59,
+    "japanese": "頭隠して尻隠さず",
+    "romaji": "Atama kakushite shiri kakusazu",
+    "english": "Hide your head, but not your butt",
+    "meaning": "Trying to hide something obvious",
+    "issued": false
+  },
+  {
+    "id": 60,
+    "japanese": "花は桜木人は武士",
+    "romaji": "Hana wa sakuragi hito wa bushi",
+    "english": "Among flowers, the cherry blossom; among men, the warrior",
+    "meaning": "The best of each kind",
+    "issued": false
+  },
+  {
+    "id": 61,
+    "japanese": "餅は餅屋",
+    "romaji": "Mochi wa mochiya",
+    "english": "Mochi should be made by the mochi shop",
+    "meaning": "Leave it to the experts",
+    "issued": false
+  },
+  {
+    "id": 62,
+    "japanese": "灯台下暗し",
+    "romaji": "Toudai moto kurashi",
+    "english": "It's darkest under the lighthouse",
+    "meaning": "The obvious is often overlooked",
+    "issued": false
+  },
+  {
+    "id": 63,
+    "japanese": "井の中の蛙大海を知らず",
+    "romaji": "I no naka no kawazu taikai wo shirazu",
+    "english": "A frog in a well does not know the great sea",
+    "meaning": "Limited experience limits perspective",
+    "issued": false
+  },
+  {
+    "id": 64,
+    "japanese": "木を見て森を見ず",
+    "romaji": "Ki wo mite mori wo mizu",
+    "english": "See the trees but not the forest",
+    "meaning": "Miss the bigger picture",
+    "issued": false
+  },
+  {
+    "id": 65,
+    "japanese": "毒を食らわば皿まで",
+    "romaji": "Doku wo kurawaba sara made",
+    "english": "If you eat poison, eat the plate too",
+    "meaning": "If you must do something risky, go all the way",
+    "issued": false
+  },
+  {
+    "id": 66,
+    "japanese": "旅は道連れ世は情け",
+    "romaji": "Tabi wa michizure yo wa nasake",
+    "english": "Travel needs companions; life needs kindness",
+    "meaning": "Relationships and compassion matter",
+    "issued": false
+  },
+  {
+    "id": 67,
+    "japanese": "千里の道も一歩から",
+    "romaji": "Senri no michi mo ippo kara",
+    "english": "A journey of a thousand miles begins with a single step",
+    "meaning": "Start small to reach big goals",
+    "issued": false
+  },
+  {
+    "id": 68,
+    "japanese": "笑う門には福来る",
+    "romaji": "Warau kado ni wa fuku kitaru",
+    "english": "Fortune comes to a laughing gate",
+    "meaning": "Good fortune comes to those who smile",
+    "issued": false
+  },
+  {
+    "id": 69,
+    "japanese": "良薬は口に苦し",
+    "romaji": "Ryouyaku wa kuchi ni nigashi",
+    "english": "Good medicine tastes bitter",
+    "meaning": "Helpful advice can be hard to hear",
+    "issued": false
+  },
+  {
+    "id": 70,
+    "japanese": "鶴の一声",
+    "romaji": "Tsuru no hitokoe",
+    "english": "One cry of the crane",
+    "meaning": "A single influential person settles a matter",
+    "issued": false
+  },
+  {
+    "id": 71,
+    "japanese": "鬼に金棒",
+    "romaji": "Oni ni kanabou",
+    "english": "An iron club to an ogre",
+    "meaning": "Making someone strong even stronger",
+    "issued": false
+  },
+  {
+    "id": 72,
+    "japanese": "焼け石に水",
+    "romaji": "Yakeishi ni mizu",
+    "english": "Water on a hot stone",
+    "meaning": "A futile effort with little effect",
+    "issued": false
+  },
+  {
+    "id": 73,
+    "japanese": "鬼の居ぬ間に洗濯",
+    "romaji": "Oni no inuma ni sentaku",
+    "english": "Do laundry while the ogre is away",
+    "meaning": "Take advantage of someone's absence",
+    "issued": false
+  },
+  {
+    "id": 74,
+    "japanese": "捕らぬ狸の皮算用",
+    "romaji": "Toranu tanuki no kawazan'you",
+    "english": "Counting a raccoon dog's skins before catching it",
+    "meaning": "Don't count your chickens before they hatch",
+    "issued": false
+  },
+  {
+    "id": 75,
+    "japanese": "石の上にも三年",
+    "romaji": "Ishi no ue ni mo san nen",
+    "english": "Three years on a stone",
+    "meaning": "Perseverance will be rewarded",
+    "issued": false
+  },
+  {
+    "id": 76,
+    "japanese": "雨降って地固まる",
+    "romaji": "Ame futte ji katamaru",
+    "english": "After rain, the ground hardens",
+    "meaning": "Adversity can strengthen relationships",
+    "issued": false
+  },
+  {
+    "id": 77,
+    "japanese": "針の穴から天を覗く",
+    "romaji": "Hari no ana kara ten wo nozoku",
+    "english": "Peek at the sky through a needle's eye",
+    "meaning": "A narrow viewpoint leads to poor judgment",
+    "issued": false
+  },
+  {
+    "id": 78,
+    "japanese": "善は急げ",
+    "romaji": "Zen wa isoge",
+    "english": "Hurry to do good",
+    "meaning": "If it's worth doing, do it at once",
+    "issued": false
+  },
+  {
+    "id": 79,
+    "japanese": "見るは法楽",
+    "romaji": "Miru wa houraku",
+    "english": "Just watching is a pleasure",
+    "meaning": "Enjoy observing; you don't always need to participate",
+    "issued": false
+  },
+  {
+    "id": 80,
+    "japanese": "月とすっぽん",
+    "romaji": "Tsuki to suppon",
+    "english": "The moon and a turtle",
+    "meaning": "Vast difference; not comparable",
+    "issued": false
+  },
+  {
+    "id": 81,
+    "japanese": "蛙の子は蛙",
+    "romaji": "Kaeru no ko wa kaeru",
+    "english": "A frog's child is a frog",
+    "meaning": "Children resemble their parents",
+    "issued": false
+  },
+  {
+    "id": 82,
+    "japanese": "井戸端会議",
+    "romaji": "Idobata kaigi",
+    "english": "Well-side conference",
+    "meaning": "Neighborhood gossip",
+    "issued": false
+  },
+  {
+    "id": 83,
+    "japanese": "猫に鰹節",
+    "romaji": "Neko ni katsuobushi",
+    "english": "Dried bonito to a cat",
+    "meaning": "Leave temptation unattended at your own risk",
+    "issued": false
+  },
+  {
+    "id": 84,
+    "japanese": "藪をつついて蛇を出す",
+    "romaji": "Yabu wo tsutsuite hebi wo dasu",
+    "english": "Poke the bush and bring out a snake",
+    "meaning": "Stir up trouble unnecessarily",
+    "issued": false
+  },
+  {
+    "id": 85,
+    "japanese": "猫の額",
+    "romaji": "Neko no hitai",
+    "english": "A cat's forehead",
+    "meaning": "Very small space",
+    "issued": false
+  },
+  {
+    "id": 86,
+    "japanese": "念には念を入れよ",
+    "romaji": "Nen ni wa nen wo ireyo",
+    "english": "Put care into care",
+    "meaning": "Double-check; be extra careful",
+    "issued": false
+  },
+  {
+    "id": 87,
+    "japanese": "後悔先に立たず",
+    "romaji": "Koukai saki ni tatazu",
+    "english": "Regret does not stand before",
+    "meaning": "It's too late for regrets",
+    "issued": false
+  },
+  {
+    "id": 88,
+    "japanese": "無い袖は振れぬ",
+    "romaji": "Nai sode wa furenu",
+    "english": "You can't shake a sleeve you don't have",
+    "meaning": "You can't give what you don't have",
+    "issued": false
+  },
+  {
+    "id": 89,
+    "japanese": "人のふり見て我がふり直せ",
+    "romaji": "Hito no furi mite waga furi naose",
+    "english": "Watch others and correct yourself",
+    "meaning": "Learn from others' behavior",
+    "issued": false
+  },
+  {
+    "id": 90,
+    "japanese": "継続は力なり",
+    "romaji": "Keizoku wa chikara nari",
+    "english": "Continuation is power",
+    "meaning": "Consistency leads to strength",
+    "issued": false
   }
 ]
