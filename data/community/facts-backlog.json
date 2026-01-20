@@ -535,7 +535,10 @@
   {
     "id": 80,
     "fact": "Japan has 'midnight service' buses for people who miss the last train, charging premium prices to get workers home.",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "Doc-Entity",
+    "completedPR": 1165
   },
   {
     "id": 81,
