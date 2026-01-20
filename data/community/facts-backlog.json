@@ -495,7 +495,10 @@
   {
     "id": 72,
     "fact": "Japan has an island where cats outnumber humans 6 to 1 - Tashirojima was once used to farm silkworms, and cats protected them from mice.",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "maxwellyoung",
+    "completedPR": 1108
   },
   {
     "id": 73,
