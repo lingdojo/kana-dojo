@@ -7,14 +7,12 @@ name: Merge Community PR After Checks
   pull_request_target:
     types: [labeled]
 
-permissions:
-  contents: write
-  pull-requests: write
-  actions: read
+permissions: {}
 
 jobs:
   merge:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     if: github.event_name == 'pull_request_target' || github.event.workflow_run.conclusion == 'success'
 
     concurrency:
