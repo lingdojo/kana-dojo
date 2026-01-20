@@ -243,17 +243,17 @@ const baseThemeSets: BaseThemeGroup[] = [
     icon: Moon,
     themes: [
       {
-        id: 'sakura-storm',
-        backgroundColor: 'oklch(90.0% 0.032 340.0 / 1)',
-        mainColor: 'oklch(70.0% 0.185 345.0 / 1)',
-        secondaryColor: 'oklch(55.0% 0.145 350.0 / 1)',
-      },
-      {
         id: 'samurai-steel',
         backgroundColor: 'oklch(18.0% 0.022 250.0 / 1)',
         mainColor: 'oklch(80.0% 0.055 240.0 / 1)',
 
         secondaryColor: 'oklch(65.0% 0.170 15.0 / 1)',
+      },
+      {
+        id: 'frozen-lake',
+        backgroundColor: 'oklch(24.0% 0.035 230.0 / 1)',
+        mainColor: 'oklch(90.0% 0.075 225.0 / 1)',
+        secondaryColor: 'oklch(80.0% 0.055 235.0 / 1)',
       },
       {
         id: 'taiko-thunder',
@@ -328,12 +328,6 @@ const baseThemeSets: BaseThemeGroup[] = [
         backgroundColor: 'oklch(15.0% 0.065 300.0 / 1)',
         mainColor: 'oklch(80.0% 0.210 180.0 / 1)',
         secondaryColor: 'oklch(85.0% 0.190 320.0 / 1)',
-      },
-      {
-        id: 'sashimi-fresh',
-        backgroundColor: 'oklch(17.0% 0.028 280.0 / 1)',
-        mainColor: 'oklch(75.0% 0.145 5.0 / 1)',
-        secondaryColor: 'oklch(85.0% 0.095 350.0 / 1)',
       },
 
       {
@@ -1086,6 +1080,18 @@ const baseThemeSets: BaseThemeGroup[] = [
         backgroundColor: 'oklch(16.0% 0.055 270.0 / 1)',
         mainColor: 'oklch(72.0% 0.195 220.0 / 1)',
         secondaryColor: 'oklch(68.0% 0.205 30.0 / 1)',
+      },
+      {
+        id: 'umbrella-rain',
+        backgroundColor: 'oklch(22.0% 0.018 250.0 / 1)',
+        mainColor: 'oklch(70.0% 0.175 225.0 / 1)',
+        secondaryColor: 'oklch(75.0% 0.145 350.0 / 1)',
+      },
+      {
+        id: 'tanuki-mischief',
+        backgroundColor: 'oklch(22.0% 0.042 55.0 / 1)',
+        mainColor: 'oklch(68.0% 0.125 65.0 / 1)',
+        secondaryColor: 'oklch(72.0% 0.155 145.0 / 1)',
       },
     ],
   },
