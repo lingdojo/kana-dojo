@@ -326,7 +326,8 @@
     "romaji": "Saru mo ki kara ochiru",
     "english": "Even monkeys fall from trees",
     "meaning": "Experts can make mistakes",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 32,
@@ -334,7 +335,7 @@
     "romaji": "Fukusui bon ni kaerazu",
     "english": "Spilled water will not return to the tray",
     "meaning": "What is done cannot be undone",
-    "issued": false
+    "issued": true
   },
   {
     "id": 33,
