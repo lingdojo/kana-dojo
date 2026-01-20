@@ -249,11 +249,23 @@ const baseThemeSets: BaseThemeGroup[] = [
         secondaryColor: 'oklch(55.0% 0.145 350.0 / 1)',
       },
       {
+        id: 'festival-mask',
+        backgroundColor: 'oklch(20.0% 0.042 15.0 / 1)',
+        mainColor: 'oklch(80.0% 0.175 55.0 / 1)',
+        secondaryColor: 'oklch(72.0% 0.195 20.0 / 1)'
+      },
+      {
         id: 'samurai-steel',
         backgroundColor: 'oklch(18.0% 0.022 250.0 / 1)',
         mainColor: 'oklch(80.0% 0.055 240.0 / 1)',
 
         secondaryColor: 'oklch(65.0% 0.170 15.0 / 1)',
+      },
+      {
+        id: 'frozen-lake',
+        backgroundColor: 'oklch(24.0% 0.035 230.0 / 1)',
+        mainColor: 'oklch(90.0% 0.075 225.0 / 1)',
+        secondaryColor: 'oklch(80.0% 0.055 235.0 / 1)'
       },
       {
         id: 'taiko-thunder',
@@ -1086,6 +1098,16 @@ const baseThemeSets: BaseThemeGroup[] = [
         backgroundColor: 'oklch(16.0% 0.055 270.0 / 1)',
         mainColor: 'oklch(72.0% 0.195 220.0 / 1)',
         secondaryColor: 'oklch(68.0% 0.205 30.0 / 1)',
+      },
+      {
+        id: 'umbrella-rain',
+        backgroundColor: 'oklch(22.0% 0.018 250.0 / 1)',
+        mainColor: 'oklch(70.0% 0.175 225.0 / 1)',
+        secondaryColor: 'oklch(75.0% 0.145 350.0 / 1)'},{
+        id: 'tanuki-mischief',
+        backgroundColor: 'oklch(22.0% 0.042 55.0 / 1)',
+        mainColor: 'oklch(68.0% 0.125 65.0 / 1)',
+        secondaryColor: 'oklch(72.0% 0.155 145.0 / 1)',
       },
     ],
   },

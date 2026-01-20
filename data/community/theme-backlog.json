@@ -670,7 +670,10 @@
     "backgroundColor": "oklch(22.0% 0.042 55.0 / 1)",
     "mainColor": "oklch(68.0% 0.125 65.0 / 1)",
     "secondaryColor": "oklch(72.0% 0.155 145.0 / 1)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "maxwellyoung",
+    "completedPR": 1127
   },
   {
     "id": "soda-float",
@@ -736,7 +739,10 @@
     "backgroundColor": "oklch(20.0% 0.042 15.0 / 1)",
     "mainColor": "oklch(80.0% 0.175 55.0 / 1)",
     "secondaryColor": "oklch(72.0% 0.195 20.0 / 1)",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "kostas-arte",
+    "completedPR": 1140
   },
   {
     "id": "frozen-lake",
@@ -745,7 +751,10 @@
     "backgroundColor": "oklch(24.0% 0.035 230.0 / 1)",
     "mainColor": "oklch(90.0% 0.075 225.0 / 1)",
     "secondaryColor": "oklch(80.0% 0.055 235.0 / 1)",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "TheRealChrisFot",
+    "completedPR": 1137
   },
   {
     "id": "sushi-counter",
@@ -754,7 +763,7 @@
     "backgroundColor": "oklch(23.0% 0.028 70.0 / 1)",
     "mainColor": "oklch(70.0% 0.145 20.0 / 1)",
     "secondaryColor": "oklch(68.0% 0.095 75.0 / 1)",
-    "issued": false
+    "issued": true
   },
   {
     "id": "holographic-idol",
@@ -763,7 +772,7 @@
     "backgroundColor": "oklch(14.0% 0.065 300.0 / 1)",
     "mainColor": "oklch(82.0% 0.185 200.0 / 1)",
     "secondaryColor": "oklch(78.0% 0.210 330.0 / 1)",
-    "issued": false
+    "issued": true
   },
   {
     "id": "mochi-pastel",
@@ -772,7 +781,7 @@
     "backgroundColor": "oklch(94.0% 0.028 340.0 / 1)",
     "mainColor": "oklch(72.0% 0.145 345.0 / 1)",
     "secondaryColor": "oklch(75.0% 0.125 155.0 / 1)",
-    "issued": false
+    "issued": true
   },
   {
     "id": "umbrella-rain",
@@ -781,7 +790,10 @@
     "backgroundColor": "oklch(22.0% 0.018 250.0 / 1)",
     "mainColor": "oklch(70.0% 0.175 225.0 / 1)",
     "secondaryColor": "oklch(75.0% 0.145 350.0 / 1)",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "Utkarsh-Singhal-26",
+    "completedPR": 1156
   },
   {
     "id": "kendo-strike",
@@ -790,7 +802,7 @@
     "backgroundColor": "oklch(16.0% 0.028 265.0 / 1)",
     "mainColor": "oklch(65.0% 0.025 270.0 / 1)",
     "secondaryColor": "oklch(72.0% 0.165 25.0 / 1)",
-    "issued": false
+    "issued": true
   },
   {
     "id": "cherry-cola",
@@ -799,7 +811,7 @@
     "backgroundColor": "oklch(18.0% 0.055 20.0 / 1)",
     "mainColor": "oklch(58.0% 0.195 25.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.145 50.0 / 1)",
-    "issued": false
+    "issued": true
   },
   {
     "id": "pagoda-twilight",
@@ -808,7 +820,7 @@
     "backgroundColor": "oklch(20.0% 0.045 290.0 / 1)",
     "mainColor": "oklch(68.0% 0.155 315.0 / 1)",
     "secondaryColor": "oklch(75.0% 0.125 280.0 / 1)",
-    "issued": false
+    "issued": true
   },
   {
     "id": "lucky-bamboo",
