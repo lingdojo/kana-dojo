@@ -599,7 +599,10 @@
   {
     "id": 85,
     "fact": "The word 'otsukaresama' (お疲れ様) literally means 'you're tired' but is used to acknowledge someone's hard work.",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "pavitra0",
+    "completedPR": 1224
   },
   {
     "id": 86,
