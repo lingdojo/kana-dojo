@@ -17,7 +17,7 @@ jobs:
     steps:
       - name: Send Failure Notification to Discord
         env:
-          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_URL || secrets.DISCORD_WEBHOOK }}
           DEPLOYMENT_ENV: ${{ github.event.deployment.environment }}
           DEPLOYMENT_REF: ${{ github.event.deployment.ref }}
           DEPLOYMENT_SHA: ${{ github.event.deployment.sha }}
@@ -95,7 +95,7 @@ jobs:
     steps:
       - name: Send Success Notification to Discord
         env:
-          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_URL || secrets.DISCORD_WEBHOOK }}
           DEPLOYMENT_ENV: ${{ github.event.deployment.environment }}
           DEPLOYMENT_REF: ${{ github.event.deployment.ref }}
           DEPLOYMENT_SHA: ${{ github.event.deployment.sha }}

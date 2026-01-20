@@ -4,26 +4,35 @@ on:
   schedule:
     - cron: '*/15 * * * *'
   workflow_dispatch:
+    inputs:
+      force_type:
+        description: 'Force issue type: theme | fact | proverb'
+        required: false
+        type: string
+      dry_run:
+        description: 'Do not create an issue; only log selection'
+        required: false
+        type: boolean
 
 permissions:
-  contents: write
+  contents: read
   issues: write
-  pull-requests: write
 
 # Prevent multiple runs from overlapping and causing race conditions
 concurrency:
   group: community-issue-creation
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   create-issue:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: false
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -40,6 +49,9 @@ jobs:
             const templates = require('./.github/templates/messages.cjs');
             const t = templates.issueCreation;
 
+            const forceType = (context.payload.inputs && context.payload.inputs.force_type) ? String(context.payload.inputs.force_type).trim() : '';
+            const dryRun = !!(context.payload.inputs && (context.payload.inputs.dry_run === true || context.payload.inputs.dry_run === 'true'));
+
             const statePath = 'data/community/automation-state.json';
             const themeBacklogPath = 'data/community/theme-backlog.json';
             const factsBacklogPath = 'data/community/facts-backlog.json';
@@ -53,6 +65,10 @@ jobs:
             const themes = JSON.parse(fs.readFileSync(themeBacklogPath, 'utf8'));
             const facts = JSON.parse(fs.readFileSync(factsBacklogPath, 'utf8'));
             const proverbs = JSON.parse(fs.readFileSync(proverbsBacklogPath, 'utf8'));
+
+            if (typeof state.consecutiveNoIssueRuns !== 'number') {
+              state.consecutiveNoIssueRuns = 0;
+            }
 
             let backlogChanged = false;
 
@@ -84,7 +100,7 @@ jobs:
             }
 
             async function hasOpenIssueForQuery(query) {
-              const q = `${query} repo:${context.repo.owner}/${context.repo.repo} is:issue is:open`;
+              const q = `${query} repo:${context.repo.owner}/${context.repo.repo} is:issue is:open label:${templates.labels.community}`;
               try {
                 const res = await github.rest.search.issuesAndPullRequests({
                   q: q,
@@ -97,10 +113,10 @@ jobs:
               }
             }
 
-            // Rotate through types: theme -> fact -> proverb -> theme...
-            // If a type is exhausted (or duplicates exist), try the next type within the same run
-            // to avoid getting permanently stuck on an empty backlog type.
-            const typeOrder = ['theme', 'fact', 'proverb'];
+            const defaultOrder = ['theme', 'fact', 'proverb'];
+            const typeOrder = forceType && defaultOrder.includes(forceType)
+              ? [forceType]
+              : defaultOrder;
             const currentIndex = typeOrder.indexOf(state.lastType);
 
             let item, issueTitle, issueBody;
@@ -284,7 +300,31 @@ jobs:
 
             if (!selectedType) {
               console.log('No available items found across theme/fact/proverb backlogs.');
+              state.lastRun = new Date().toISOString();
+              state.consecutiveNoIssueRuns = (state.consecutiveNoIssueRuns || 0) + 1;
+              fs.writeFileSync(statePath, JSON.stringify(state, null, 2));
+
+              core.setOutput('issue_created', 'false');
+              core.setOutput('reason', 'no_available_items');
+              core.setOutput('consecutive_no_issue_runs', String(state.consecutiveNoIssueRuns));
               core.setOutput('should_commit', backlogChanged ? 'true' : 'false');
+              core.setOutput('notify_discord', state.consecutiveNoIssueRuns >= 8 ? 'true' : 'false');
+              return;
+            }
+
+            if (dryRun) {
+              console.log(`Dry run enabled; would create a ${selectedType} issue: ${issueTitle}`);
+
+              state.lastType = selectedType;
+              state.lastRun = new Date().toISOString();
+              state.consecutiveNoIssueRuns = 0;
+              fs.writeFileSync(statePath, JSON.stringify(state, null, 2));
+
+              core.setOutput('issue_created', 'false');
+              core.setOutput('reason', 'dry_run');
+              core.setOutput('selected_type', selectedType);
+              core.setOutput('should_commit', backlogChanged ? 'true' : 'false');
+              core.setOutput('notify_discord', 'false');
               return;
             }
 
@@ -303,12 +343,18 @@ jobs:
             state.lastType = selectedType;
             state.lastRun = new Date().toISOString();
             state.totalIssuesCreated = (state.totalIssuesCreated || 0) + 1;
+            state.lastIssueCreatedAt = new Date().toISOString();
+            state.consecutiveNoIssueRuns = 0;
             fs.writeFileSync(statePath, JSON.stringify(state, null, 2));
 
             core.setOutput('issue_number', response.data.number);
             core.setOutput('issue_type', selectedType);
             core.setOutput('item_id', item.id);
+            core.setOutput('issue_created', 'true');
+            core.setOutput('reason', 'created');
+            core.setOutput('consecutive_no_issue_runs', String(state.consecutiveNoIssueRuns));
             core.setOutput('should_commit', 'true');
+            core.setOutput('notify_discord', 'false');
 
       - name: Commit backlog updates
         id: commit-backlog
@@ -395,3 +441,30 @@ jobs:
             throw new Error(`Failed to merge automation PR #${prNumber}`);
         env:
           PR_NUMBER: ${{ steps.commit-backlog.outputs.pull-request-number }}
+
+      - name: Notify Discord if no issues are being created
+        if: steps.create-issue.outputs.notify_discord == 'true'
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_URL || secrets.DISCORD_WEBHOOK }}
+          REPO: ${{ github.repository }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          COUNT: ${{ steps.create-issue.outputs.consecutive_no_issue_runs }}
+        run: |
+          if [ -z "$DISCORD_WEBHOOK" ]; then
+            echo "No Discord webhook configured; skipping"
+            exit 0
+          fi
+          python3 << 'PY' > /tmp/payload.json
+          import json
+          import os
+
+          repo = os.environ.get('REPO', 'unknown')
+          run_url = os.environ.get('RUN_URL', '')
+          count = os.environ.get('COUNT', 'unknown')
+
+          payload = {
+            "content": f"⚠️ Community issue creation has not created any issues for {count} consecutive runs in `{repo}`.\n{run_url}" 
+          }
+          print(json.dumps(payload))
+          PY
+          curl -sf -H "Content-Type: application/json" -X POST -d @/tmp/payload.json "$DISCORD_WEBHOOK"
