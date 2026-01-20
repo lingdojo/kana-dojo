@@ -387,7 +387,8 @@
     "romaji": "Shiranu ga hotoke",
     "english": "Not knowing is Buddha",
     "meaning": "Ignorance is bliss",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 39,
@@ -395,7 +396,7 @@
     "romaji": "Ashita wa ashita no kaze ga fuku",
     "english": "Tomorrow's wind will blow tomorrow",
     "meaning": "Don't worry too much about the future",
-    "issued": false
+    "issued": true
   },
   {
     "id": 40,
