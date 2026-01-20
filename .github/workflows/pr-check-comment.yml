@@ -1,0 +1,87 @@
+name: PR Quality Check Comment
+
+on:
+  workflow_run:
+    workflows: ['PR Quality Check']
+    types: [completed]
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: read
+
+concurrency:
+  group: pr-quality-check-comment-${{ github.event.workflow_run.id }}-${{ github.event.workflow_run.head_sha }}
+  cancel-in-progress: true
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Post PR status comment
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const templates = require('./.github/templates/messages.cjs');
+            const successT = templates.prCheck.success;
+            const failureT = templates.prCheck.failure;
+
+            const run = context.payload.workflow_run;
+            const prs = run.pull_requests || [];
+            if (!prs.length) {
+              console.log('No pull request associated with this workflow_run');
+              return;
+            }
+
+            const prNumber = prs[0].number;
+            const headSha = run.head_sha;
+            const conclusion = run.conclusion;
+
+            const marker = `<!-- pr-quality-check:${headSha} -->`;
+
+            let comments = [];
+            let page = 1;
+            while (true) {
+              const { data: pageItems } = await github.rest.issues.listComments({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: prNumber,
+                per_page: 100,
+                page: page
+              });
+              comments = comments.concat(pageItems);
+              if (!pageItems || pageItems.length < 100) {
+                break;
+              }
+              page += 1;
+            }
+
+            const alreadyCommented = comments.some(function(c) {
+              return c.user && c.user.login === 'github-actions[bot]' &&
+                     typeof c.body === 'string' &&
+                     c.body.includes(marker);
+            });
+
+            if (alreadyCommented) {
+              console.log(`Already commented for SHA ${headSha}; skipping`);
+              return;
+            }
+
+            const isSuccess = conclusion === 'success';
+            const t = isSuccess ? successT : failureT;
+
+            const body = `${t.title}\n\n${t.body}\n\n${t.footer}\n\n${marker}`;
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: prNumber,
+              body: body
+            });
