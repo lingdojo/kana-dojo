@@ -370,7 +370,8 @@
     "romaji": "Kuchi wa wazawai no moto",
     "english": "The mouth is the source of disaster",
     "meaning": "Careless speech can cause trouble",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 37,
@@ -378,7 +379,7 @@
     "romaji": "Deru kugi wa utareru",
     "english": "The nail that sticks out gets hammered down",
     "meaning": "Those who stand out may be criticized",
-    "issued": false
+    "issued": true
   },
   {
     "id": 38,
