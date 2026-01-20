@@ -7,10 +7,7 @@ name: Merge Community PR After Checks
   pull_request_target:
     types: [labeled]
 
-permissions:
-  contents: write
-  pull-requests: write
-  actions: read
+permissions: {}
 
 jobs:
   merge:
