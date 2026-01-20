@@ -23,7 +23,7 @@ module.exports = {
     // Label for filtering community issues
     community: 'community',
     // Label for stale issue warnings
-    staleWarning: 'stale-warning'
+    staleWarning: 'stale-warning',
   },
 
   // =============================================================================
@@ -32,7 +32,7 @@ module.exports = {
   config: {
     // Stale issue timing (in milliseconds)
     staleWarningAfterMs: 12 * 60 * 60 * 1000, // 12 hours
-    staleCloseAfterMs: 18 * 60 * 60 * 1000 // 18 hours
+    staleCloseAfterMs: 18 * 60 * 60 * 1000, // 18 hours
   },
 
   // =============================================================================
@@ -45,15 +45,15 @@ module.exports = {
       howToFix: [
         'Run `npm run check` locally',
         'Fix any TypeScript, ESLint, or formatting errors',
-        'Push your fixes to this PR'
+        'Push your fixes to this PR',
       ],
-      footer: "Need help? Comment below and we'll assist! 🙌"
+      footer: "Need help? Comment below and we'll assist! 🙌",
     },
     success: {
       title: '## ✅ Quality Check Passed',
       body: 'All TypeScript, ESLint, and formatting checks passed! 🎉',
-      footer: 'A maintainer will review your changes shortly.'
-    }
+      footer: 'A maintainer will review your changes shortly.',
+    },
   },
 
   // =============================================================================
@@ -69,8 +69,8 @@ module.exports = {
         'Code follows project style guidelines',
         'Changes have been tested locally',
         'PR title is descriptive',
-        "If this closes an issue, it's linked with `Closes #<number>`"
-      ]
+        "If this closes an issue, it's linked with `Closes #<number>`",
+      ],
     },
     footer:
       'A maintainer will review your PR shortly. In the meantime, make sure all CI checks pass!',
@@ -78,8 +78,8 @@ module.exports = {
     firstTimeContributor: {
       separator: '---',
       title: '🌟 **Welcome to KanaDojo!**',
-      body: "This appears to be your first contribution—that's awesome! We're thrilled to have you here. If you have any questions, don't hesitate to ask."
-    }
+      body: "This appears to be your first contribution—that's awesome! We're thrilled to have you here. If you have any questions, don't hesitate to ask.",
+    },
   },
 
   // =============================================================================
@@ -92,23 +92,23 @@ module.exports = {
       checks: [
         'File format is correct',
         'Content is valid',
-        'Related issue found'
+        'Related issue found',
       ],
       autoDetectedIssue:
         '📎 **Auto-detected issue:** #{issue} will be closed when this PR is merged.',
       linkedIssue: '📎 **Linked issue:** #{issue}',
       footer:
-        'Once the quality check passes, this PR will be automatically approved for merge.'
+        'Once the quality check passes, this PR will be automatically approved for merge.',
     },
     failed: {
       title: '## 🤖 Auto-Review: ❌ Issues Found',
       body: 'This {type} contribution has some issues that need to be fixed:',
       footer:
-        "**Please fix the above issues and push again.**\n\nNeed help? Comment below and we'll assist! 🙌"
+        "**Please fix the above issues and push again.**\n\nNeed help? Comment below and we'll assist! 🙌",
     },
     approval: '🤖 Automated approval - all validation checks passed!',
     autoMergeEnabled:
-      '🚀 **Auto-merge enabled!** This PR will be automatically merged once all required checks pass.'
+      '🚀 **Auto-merge enabled!** This PR will be automatically merged once all required checks pass.',
   },
 
   // =============================================================================
@@ -120,8 +120,8 @@ module.exports = {
       body: 'Thank you @{author} for your contribution!',
       mergedIn: '**Merged in:** #{prNumber}',
       footer:
-        'Your contribution is now live on the main branch. ありがとうございます! 🙏'
-    }
+        'Your contribution is now live on the main branch. ありがとうございます! 🙏',
+    },
   },
 
   // =============================================================================
@@ -133,7 +133,7 @@ module.exports = {
       body: 'Thanks for your interest! Unfortunately, this issue is already assigned to @{assignee}.',
       suggestion:
         "Don't worry—we have new contribution opportunities posted every 15 minutes! Keep an eye on our [issues list](../../issues?q=is%3Aopen+is%3Aissue+label%3Acommunity) for the next one.",
-      encouragement: 'がんばって! 💪'
+      encouragement: 'がんばって! 💪',
     },
     assigned: {
       greeting: 'Hey @{commenter}! 👋',
@@ -145,19 +145,19 @@ module.exports = {
           'Make the changes described above',
           'Submit a Pull Request linking to this issue (use `Closes #{issueNumber}`)',
           'Star our repo ⭐ and drink some delicious bubble tea 🍹',
-          'Wait for review!'
-        ]
+          'Wait for review!',
+        ],
       },
       resources: {
         title: '**Helpful resources:**',
         items: [
           '[Contributing Guide](../../blob/main/CONTRIBUTING.md)',
-          '[Code of Conduct](../../blob/main/CODE_OF_CONDUCT.md)'
-        ]
+          '[Code of Conduct](../../blob/main/CODE_OF_CONDUCT.md)',
+        ],
       },
       footer: "Need help? Just comment here and we'll assist you!",
-      encouragement: '頑張って! 🍀'
-    }
+      encouragement: '頑張って! 🍀',
+    },
   },
 
   // =============================================================================
@@ -170,15 +170,15 @@ module.exports = {
       action: "If you're still working on it, please comment to let us know!",
       consequence:
         'Otherwise, it will be automatically closed in **6 hours** and made available for others to claim.',
-      footer: 'Need help? Just ask! 🙌'
+      footer: 'Need help? Just ask! 🙌',
     },
     closed: {
       title: '🕐 **This issue has been automatically closed**',
       reason: 'due to 18 hours of inactivity.',
       reassurance:
         "Don't worry—the contribution opportunity will be re-posted for someone else to claim.",
-      footer: 'Thanks for your interest in contributing to KanaDojo! 🙏'
-    }
+      footer: 'Thanks for your interest in contributing to KanaDojo! 🙏',
+    },
   },
 
   // =============================================================================
@@ -203,9 +203,9 @@ module.exports = {
         'Save the file and commit the changes',
         'Submit a Pull Request with title: `feat(theme): add {name} theme`',
         'Link this issue using `Closes #<issue_number>`',
-        'Star our repo ⭐, drink some delicious bubble tea 🍹 and wait for review!'
+        'Star our repo ⭐, drink some delicious bubble tea 🍹 and wait for review!',
       ],
-      footer: "**Questions?** Comment below and we'll help! 🙌"
+      footer: "**Questions?** Comment below and we'll help! 🙌",
     },
     fact: {
       title: '[Good First Issue] 🎋 Add Japan Fact #{id} (good-first-issue)',
@@ -224,9 +224,9 @@ module.exports = {
         'Save the file and commit the changes',
         'Submit a Pull Request with title: `content: add japan fact #{id}`',
         'Link this issue using `Closes #<issue_number>`',
-        'Star our repo ⭐, drink some delicious bubble tea 🍹 and wait for review!'
+        'Star our repo ⭐, drink some delicious bubble tea 🍹 and wait for review!',
       ],
-      footer: "**Questions?** Comment below and we'll help! 🙌"
+      footer: "**Questions?** Comment below and we'll help! 🙌",
     },
     proverb: {
       title:
@@ -246,9 +246,9 @@ module.exports = {
         'Save the file and commit the changes',
         'Submit a Pull Request with title: `content: add japanese proverb #{id}`',
         'Link this issue using `Closes #<issue_number>`',
-        'Star our repo ⭐, drink some delicious bubble tea 🍹 and wait for review!'
+        'Star our repo ⭐, drink some delicious bubble tea 🍹 and wait for review!',
       ],
-      footer: "**Questions?** Comment below and we'll help! 🙌"
-    }
-  }
+      footer: "**Questions?** Comment below and we'll help! 🙌",
+    },
+  },
 };
