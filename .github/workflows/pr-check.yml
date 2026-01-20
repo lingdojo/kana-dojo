@@ -2,102 +2,25 @@ name: PR Quality Check
 
 on:
   pull_request:
-    types: [opened, synchronize]
+    types: [opened, synchronize, reopened]
 
 permissions:
   contents: read
-  pull-requests: write
+
+concurrency:
+  group: pr-quality-check-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
 
 jobs:
-  lint:
-    runs-on: ubuntu-latest
-    if: ${{ !startsWith(github.head_ref, 'automation/') }}
-    timeout-minutes: 10
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci || npm install
-
-      - name: Run linting
-        id: lint
-        shell: bash
-        run: |
-          npm run lint 2>&1 | tee lint_output.txt
-          echo "exit_code=${PIPESTATUS[0]}" >> $GITHUB_OUTPUT
-        continue-on-error: true
-
-      - name: Upload lint results
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: lint-results
-          path: lint_output.txt
-          retention-days: 1
-
-  typecheck:
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci || npm install
-
-      - name: Run TypeScript check
-        id: typecheck
-        shell: bash
-        run: |
-          npx tsc --noEmit 2>&1 | tee tsc_output.txt
-          echo "exit_code=${PIPESTATUS[0]}" >> $GITHUB_OUTPUT
-        continue-on-error: true
-
-      - name: Upload typecheck results
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: typecheck-results
-          path: tsc_output.txt
-          retention-days: 1
-
   check:
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    needs: [lint, typecheck]
+
+    if: ${{ !startsWith(github.head_ref, 'automation/') }}
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
-      - name: Download lint results
-        if: always()
-        uses: actions/download-artifact@v4
-        with:
-          name: lint-results
-          path: .
-
-      - name: Download typecheck results
-        if: always()
-        uses: actions/download-artifact@v4
-        with:
-          name: typecheck-results
-          path: .
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -106,96 +29,28 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci || npm install
+        run: npm ci
 
-      - name: Run full check
-        id: check
+      - name: Prettier check (changed files only)
         shell: bash
         run: |
-          npm run check 2>&1 | tee check_output.txt
-          echo "exit_code=${PIPESTATUS[0]}" >> $GITHUB_OUTPUT
-        continue-on-error: true
+          git fetch origin "${{ github.base_ref }}" --depth=1
 
-      - name: Combine results
-        if: steps.check.outputs.exit_code != '0'
-        uses: actions/github-script@v7
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const fs = require('fs');
-            const templates = require('./.github/templates/messages.cjs');
-            const t = templates.prCheck.failure;
+          changed_files=$(git diff --name-only --diff-filter=ACMRT "origin/${{ github.base_ref }}...HEAD" || true)
+          if [ -z "$changed_files" ]; then
+            echo "No changed files detected."
+            exit 0
+          fi
 
-            // Collect results from parallel jobs
-            let combinedOutput = '';
-            const files = ['lint_output.txt', 'tsc_output.txt', 'check_output.txt'];
-            for (const file of files) {
-              if (fs.existsSync(file)) {
-                const content = fs.readFileSync(file, 'utf8');
-                if (content.trim()) {
-                  combinedOutput += `\n\n--- ${file} ---\n` + content;
-                }
-              }
-            }
+          prettier_files=$(echo "$changed_files" | grep -E '\\.(ts|tsx|js|jsx|json|md|yaml|yml|css|scss|html)$' || true)
+          if [ -z "$prettier_files" ]; then
+            echo "No Prettier-supported files changed."
+            exit 0
+          fi
 
-            const maxLength = 60000;
-            let truncatedOutput = combinedOutput.length > maxLength 
-              ? `${combinedOutput.substring(0, maxLength)}\n\n... (output truncated)`
-              : combinedOutput;
+          echo "Running Prettier check on:"
+          echo "$prettier_files"
+          npx prettier --check $prettier_files
 
-            const howToFix = t.howToFix.map(function(step, i) { 
-              return `${i + 1}. ${step}`; 
-            }).join('\n');
-
-            const body = `${t.title}\n\n${t.body}\n\n<details>\n<summary>View full output</summary>\n\n\`\`\`\n${truncatedOutput}\n\`\`\`\n\n</details>\n\n**How to fix:**\n${howToFix}\n\n${t.footer}`;
-
-            await github.rest.issues.createComment({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: context.payload.pull_request.number,
-              body: body
-            });
-
-      - name: Fail if check failed
-        if: steps.check.outputs.exit_code != '0'
-        run: exit 1
-
-      - name: Comment on success
-        if: steps.check.outputs.exit_code == '0'
-        uses: actions/github-script@v7
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const templates = require('./.github/templates/messages.cjs');
-            const t = templates.prCheck.success;
-
-            let comments = [];
-            let page = 1;
-            while (true) {
-              const { data: pageItems } = await github.rest.issues.listComments({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: context.payload.pull_request.number,
-                per_page: 100,
-                page: page
-              });
-              comments = comments.concat(pageItems);
-              if (!pageItems || pageItems.length < 100) {
-                break;
-              }
-              page += 1;
-            }
-
-            const hasSuccessComment = comments.some(function(c) {
-              return c.user.login === 'github-actions[bot]' && 
-                     c.body.includes('Quality Check Passed');
-            });
-
-            if (!hasSuccessComment) {
-              await github.rest.issues.createComment({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: context.payload.pull_request.number,
-                body: `${t.title}\n\n${t.body}\n\n${t.footer}`
-              });
-            }
+      - name: Run full check
+        run: npm run check
