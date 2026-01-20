@@ -736,7 +736,10 @@
     "backgroundColor": "oklch(20.0% 0.042 15.0 / 1)",
     "mainColor": "oklch(80.0% 0.175 55.0 / 1)",
     "secondaryColor": "oklch(72.0% 0.195 20.0 / 1)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "kostas-arte",
+    "completedPR": 1140
   },
   {
     "id": "frozen-lake",
