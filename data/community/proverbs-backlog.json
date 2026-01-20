@@ -351,7 +351,10 @@
     "romaji": "Koubou ni mo fude no ayamari",
     "english": "Even Kobo makes mistakes with his brush",
     "meaning": "Even masters make mistakes",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "JeraldPascual",
+    "completedPR": 1233
   },
   {
     "id": 35,
