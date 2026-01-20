@@ -620,7 +620,10 @@
   {
     "id": 88,
     "fact": "Japan has a 'Hotel for the Deceased' where families can spend one more night with loved ones before cremation.",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "striker561",
+    "completedPR": 1258
   },
   {
     "id": 89,
