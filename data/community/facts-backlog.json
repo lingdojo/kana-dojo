@@ -615,7 +615,10 @@
   {
     "id": 87,
     "fact": "There's a Japanese word 'dokkiri' (ドッキリ) for the heart-pounding shock of surprise - now the name of prank TV shows.",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "thehimanshubansal",
+    "completedPR": 1259
   },
   {
     "id": 88,
