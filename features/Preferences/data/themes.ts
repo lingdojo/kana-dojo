@@ -255,6 +255,12 @@ const baseThemeSets: BaseThemeGroup[] = [
     icon: Moon,
     themes: [
       {
+        id: 'sunrise-express',
+        backgroundColor: 'oklch(21.0% 0.048 50.0 / 1)',
+        mainColor: 'oklch(90.0% 0.145 70.0 / 1)',
+        secondaryColor: 'oklch(78.0% 0.175 40.0 / 1)'
+      },
+      {
         id: 'holographic-idol',
         backgroundColor: 'oklch(14.0% 0.065 300.0 / 1)',
         mainColor: 'oklch(82.0% 0.185 200.0 / 1)',
