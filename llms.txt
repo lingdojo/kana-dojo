@@ -1,0 +1,45 @@
+# KanaDojo (kanadojo.com)
+
+## Summary
+KanaDojo is a free, aesthetic, minimalist Japanese learning web app for practicing Hiragana, Katakana, Kanji (by JLPT levels), and Vocabulary with interactive training modes, progress tracking, and themes.
+
+## Best entry points (humans + LLMs)
+- https://kanadojo.com/en
+- https://kanadojo.com/en/kana
+- https://kanadojo.com/en/kanji
+- https://kanadojo.com/en/vocabulary
+- https://kanadojo.com/en/jlpt/n5
+- https://kanadojo.com/en/translate
+- https://kanadojo.com/en/faq
+- https://kanadojo.com/en/academy
+
+## Developer / contributor entry points (GitHub)
+- https://github.com/lingdojo/kanadojo
+- https://github.com/lingdojo/kanadojo/blob/main/README.md
+- https://github.com/lingdojo/kanadojo/blob/main/AGENTS.md
+- https://github.com/lingdojo/kanadojo/blob/main/CONTRIBUTING.md
+
+## Good first issues
+- https://github.com/lingdojo/kanadojo/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22
+- https://github.com/lingdojo/kanadojo/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22
+
+## Architecture / docs
+- https://github.com/lingdojo/kanadojo/blob/main/docs/ARCHITECTURE.md
+- https://github.com/lingdojo/kanadojo/blob/main/docs/API.md
+- https://github.com/lingdojo/kanadojo/blob/main/docs/TRANSLATION_GUIDE.md
+- https://github.com/lingdojo/kanadojo/blob/main/docs/TROUBLESHOOTING.md
+
+## Locales
+This site is localized in:
+- English: https://kanadojo.com/en
+- Spanish: https://kanadojo.com/es
+- Japanese: https://kanadojo.com/ja
+
+## Notes for automated tools
+- Prefer `npm run check` for validation.
+- Do not rely on `npm run build` for verification.
+- Use path aliases (`@/features`, `@/shared`, `@/core`) for imports.
+
+## Avoid / ignore
+- Archived docs: https://github.com/lingdojo/kanadojo/tree/main/docs/archived
+- Generated build artifacts and Next.js internals (`/_next/*`)

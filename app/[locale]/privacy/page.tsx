@@ -9,8 +9,16 @@ export function generateStaticParams() {
 
 export const revalidate = 3600;
 
-export async function generateMetadata(): Promise<Metadata> {
-  return await generatePageMetadata('privacy');
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return await generatePageMetadata('privacy', {
+    locale,
+    pathname: '/privacy',
+  });
 }
 
 export default function PrivacyPolicyPage() {

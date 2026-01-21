@@ -1,0 +1,33 @@
+{
+  "general": {
+    "unknownError": "An unknown error occurred",
+    "networkError": "Network error. Please check your connection.",
+    "serverError": "Server error. Please try again later.",
+    "notFound": "Not found",
+    "unauthorized": "Unauthorized access",
+    "forbidden": "Access forbidden",
+    "timeout": "Request timeout"
+  },
+  "validation": {
+    "required": "This field is required",
+    "invalidFormat": "Invalid format",
+    "tooShort": "Input is too short",
+    "tooLong": "Input is too long",
+    "invalidEmail": "Invalid email address",
+    "invalidNumber": "Must be a number",
+    "outOfRange": "Value out of range"
+  },
+  "game": {
+    "noSelection": "Please select at least one item to start",
+    "loadFailed": "Failed to load game data",
+    "saveFailed": "Failed to save progress",
+    "invalidAnswer": "Invalid answer format"
+  },
+  "data": {
+    "loadFailed": "Failed to load data",
+    "saveFailed": "Failed to save data",
+    "exportFailed": "Failed to export data",
+    "importFailed": "Failed to import data",
+    "invalidData": "Invalid data format"
+  }
+}

@@ -1,11 +1,66 @@
 /** @type {import('next-sitemap').IConfig} */
-export default {
+const sitemapConfig = {
   siteUrl: process.env.SITE_URL || 'https://kanadojo.com',
   generateRobotsTxt: true,
   generateIndexSitemap: false,
   changefreq: 'weekly',
   priority: 0.7,
   sitemapSize: 5000,
+  additionalPaths: async config => {
+    const siteUrl = config.siteUrl || 'https://kanadojo.com';
+
+    const buildEntry = basePath => {
+      const normalizedBasePath = basePath === '/' ? '' : basePath;
+
+      return {
+        loc: `/en${normalizedBasePath}` || '/en',
+        changefreq: config.changefreq,
+        priority: config.priority,
+        lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
+        alternateRefs: [
+          {
+            href: `${siteUrl}/en${normalizedBasePath}` || `${siteUrl}/en`,
+            hreflang: 'en',
+            hrefIsAbsolute: true,
+          },
+          {
+            href: `${siteUrl}/es${normalizedBasePath}` || `${siteUrl}/es`,
+            hreflang: 'es',
+            hrefIsAbsolute: true,
+          },
+          {
+            href: `${siteUrl}/ja${normalizedBasePath}` || `${siteUrl}/ja`,
+            hreflang: 'ja',
+            hrefIsAbsolute: true,
+          },
+          {
+            href: `${siteUrl}/en${normalizedBasePath}` || `${siteUrl}/en`,
+            hreflang: 'x-default',
+            hrefIsAbsolute: true,
+          },
+        ],
+      };
+    };
+
+    // Ensure key marketing/SEO pages are always present in the sitemap.
+    const basePaths = [
+      '/',
+      '/kana',
+      '/kanji',
+      '/vocabulary',
+      '/translate',
+      '/academy',
+      '/faq',
+      '/hiragana-practice',
+      '/katakana-practice',
+      '/kanji-practice',
+      '/jlpt/n5',
+      '/jlpt/n4',
+      '/jlpt/n3',
+    ];
+
+    return basePaths.map(buildEntry);
+  },
   exclude: [
     '/api/*',
     '/_next/*',
@@ -37,6 +92,9 @@ export default {
       '/kana': 0.9,
       '/kanji': 0.9,
       '/vocabulary': 0.9,
+      '/hiragana-practice': 0.85,
+      '/katakana-practice': 0.85,
+      '/kanji-practice': 0.85,
       '/translate': 0.9,
       '/academy': 0.8,
       '/preferences': 0.6,
@@ -49,6 +107,9 @@ export default {
       '/kana': 'weekly',
       '/kanji': 'weekly',
       '/vocabulary': 'weekly',
+      '/hiragana-practice': 'weekly',
+      '/katakana-practice': 'weekly',
+      '/kanji-practice': 'weekly',
       '/translate': 'daily',
       '/academy': 'weekly',
       '/preferences': 'monthly',
@@ -76,10 +137,15 @@ export default {
 
     const siteUrl = config.siteUrl || 'https://kanadojo.com';
 
+    // Always emit the canonical loc as an English (/en) path.
+    // We exclude /es/* and /ja/* from the sitemap, so /en is the source-of-truth
+    // and alternateRefs provide other locales.
+    const loc = match ? `/en${basePath}` : path;
+
     // FIX: Use absolute URLs for alternateRefs to prevent path doubling
     // next-sitemap was appending href to loc, causing /en/kana/en/kana
     return {
-      loc: path,
+      loc,
       changefreq,
       priority,
       lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
@@ -108,3 +174,5 @@ export default {
     };
   },
 };
+
+export default sitemapConfig;

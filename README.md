@@ -38,6 +38,14 @@ If you fork this project, add these badges to your README:
 
 KanaDojo is an engaging web-based Japanese learning platform that makes mastering Hiragana, Katakana, Kanji, and Vocabulary fun and intuitive. Built with a focus on aesthetics, customization, and effective learning, it provides an immersive training environment for Japanese language learners at all levels.
 
+## Quick Links
+
+- **App**: https://kanadojo.com
+- **Practice**: https://kanadojo.com/en/hiragana-practice · https://kanadojo.com/en/katakana-practice · https://kanadojo.com/en/kanji-practice
+- **Docs**: https://deepwiki.com/lingdojo/kana-dojo · ./docs/
+- **Contributing**: ./CONTRIBUTING.md
+- **Good first issues**: https://github.com/lingdojo/kana-dojo/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22
+
 ## Key Features
 
 - **Three Training Dojos** — Kana (Hiragana/Katakana), Kanji (JLPT N5-N1), and Vocabulary
@@ -56,6 +64,12 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) to start learning.
+
+To validate changes before opening a PR:
+
+```bash
+npm run check
+```
 
 > **Having issues?** See the [Troubleshooting Guide](./docs/TROUBLESHOOTING.md)
 

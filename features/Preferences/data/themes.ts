@@ -254,6 +254,18 @@ const baseThemeSets: BaseThemeGroup[] = [
     name: 'Dark',
     icon: Moon,
     themes: [
+       {
+        id: 'thunder-god',
+        backgroundColor: 'oklch(14.0% 0.058 290.0 / 1)',
+        mainColor: 'oklch(88.0% 0.195 95.0 / 1)',
+        secondaryColor: 'oklch(75.0% 0.180 275.0 / 1)'
+      },
+      {
+        id: 'autumn-temple',
+        backgroundColor: 'oklch(20.0% 0.048 35.0 / 1)',
+        mainColor: 'oklch(68.0% 0.185 40.0 / 1)',
+        secondaryColor: 'oklch(78.0% 0.135 55.0 / 1)',
+      },
       {
         id: 'school-uniform',
         backgroundColor: 'oklch(92.0% 0.015 250.0 / 1)',
@@ -265,25 +277,24 @@ const baseThemeSets: BaseThemeGroup[] = [
         backgroundColor: 'oklch(19.0% 0.038 40.0 / 1)',
         mainColor: 'oklch(85.0% 0.135 55.0 / 1)',
         secondaryColor: 'oklch(68.0% 0.165 30.0 / 1)',
-        secondaryColor: 'oklch(60.0% 0.175 20.0 / 1)'
       },
       {
         id: 'sunrise-express',
         backgroundColor: 'oklch(21.0% 0.048 50.0 / 1)',
         mainColor: 'oklch(90.0% 0.145 70.0 / 1)',
-        secondaryColor: 'oklch(78.0% 0.175 40.0 / 1)'
+        secondaryColor: 'oklch(78.0% 0.175 40.0 / 1)',
       },
       {
-      id: 'midnight-ramen',
-      backgroundColor: 'oklch(16.0% 0.042 30.0 / 1)',
-      mainColor: 'oklch(78.0% 0.160 45.0 / 1)',
-      secondaryColor: 'oklch(85.0% 0.120 85.0 / 1)'
+        id: 'midnight-ramen',
+        backgroundColor: 'oklch(16.0% 0.042 30.0 / 1)',
+        mainColor: 'oklch(78.0% 0.160 45.0 / 1)',
+        secondaryColor: 'oklch(85.0% 0.120 85.0 / 1)',
       },
       {
         id: 'holographic-idol',
         backgroundColor: 'oklch(14.0% 0.065 300.0 / 1)',
         mainColor: 'oklch(82.0% 0.185 200.0 / 1)',
-        secondaryColor: 'oklch(78.0% 0.210 330.0 / 1)'
+        secondaryColor: 'oklch(78.0% 0.210 330.0 / 1)',
       },
       {
         id: 'yakuza-tattoo',
@@ -350,7 +361,7 @@ const baseThemeSets: BaseThemeGroup[] = [
         id: 'street-lantern',
         backgroundColor: 'oklch(19.0% 0.038 40.0 / 1)',
         mainColor: 'oklch(85.0% 0.135 55.0 / 1)',
-        secondaryColor: 'oklch(68.0% 0.165 30.0 / 1)'
+        secondaryColor: 'oklch(68.0% 0.165 30.0 / 1)',
       },
       {
         id: 'dragon-scale',
@@ -1191,10 +1202,10 @@ const baseThemeSets: BaseThemeGroup[] = [
         secondaryColor: 'oklch(75.0% 0.145 350.0 / 1)',
       },
       {
-      id: 'midnight-ramen',
-      backgroundColor: 'oklch(16.0% 0.042 30.0 / 1)',
-      mainColor: 'oklch(78.0% 0.160 45.0 / 1)',
-      secondaryColor: 'oklch(85.0% 0.120 85.0 / 1)',
+        id: 'midnight-ramen',
+        backgroundColor: 'oklch(16.0% 0.042 30.0 / 1)',
+        mainColor: 'oklch(78.0% 0.160 45.0 / 1)',
+        secondaryColor: 'oklch(85.0% 0.120 85.0 / 1)',
       },
     ],
   },
@@ -1266,7 +1277,7 @@ const baseThemeSets: BaseThemeGroup[] = [
         id: 'wind-god',
         backgroundColor: 'oklch(19.0% 0.045 175.0 / 1)',
         mainColor: 'oklch(82.0% 0.155 180.0 / 1)',
-        secondaryColor: 'oklch(72.0% 0.135 165.0 / 1)'
+        secondaryColor: 'oklch(72.0% 0.135 165.0 / 1)',
       },
     ],
   },

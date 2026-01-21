@@ -39,10 +39,12 @@ Closes #
 ## ✅ Pre-Submission Checklist
 
 - [ ] My code follows the project's code style and uses `cn()` utility where needed.
-- [ ] I have run the linter (`npm run lint`) and there are no new errors.
+- [ ] I have run `npm run check` locally and there are no TypeScript/ESLint errors.
 - [ ] My commit messages follow the [Conventional Commits](https://www.conventionalcommits.org/) format.
 - [ ] I have updated the documentation (if applicable).
 - [ ] This PR is against the `main` branch.
+
+**Helpful links:** [Contributing](../blob/main/CONTRIBUTING.md) · [Troubleshooting](../blob/main/docs/TROUBLESHOOTING.md)
 
 ## 📦 Additional Context
 

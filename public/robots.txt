@@ -12,3 +12,6 @@ Allow: /
 
 # Host
 Host: https://kanadojo.com
+
+# Sitemaps
+Sitemap: https://kanadojo.com/sitemap.xml

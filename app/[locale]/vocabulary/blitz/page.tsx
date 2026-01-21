@@ -9,8 +9,16 @@ export function generateStaticParams() {
 
 export const revalidate = 3600;
 
-export async function generateMetadata(): Promise<Metadata> {
-  return await generatePageMetadata('vocabularyBlitz');
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return await generatePageMetadata('vocabularyBlitz', {
+    locale,
+    pathname: '/vocabulary/blitz',
+  });
 }
 
 export default function BlitzPage() {

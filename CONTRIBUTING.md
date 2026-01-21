@@ -48,6 +48,20 @@ npm install && npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) to see KanaDojo running.
 
+## 🔎 Before You Start
+
+- **Docs**: [Architecture](./docs/ARCHITECTURE.md) · [UI Design](./docs/UI_DESIGN.md) · [Translation Guide](./docs/TRANSLATION_GUIDE.md) · [Troubleshooting](./docs/TROUBLESHOOTING.md)
+- **Good first issues**: https://github.com/lingdojo/kana-dojo/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22
+
+## 🏷️ Label Glossary (Quick)
+
+- **good first issue**: Beginner-friendly tasks with small surface area
+- **help wanted**: Maintainers would love community help here
+- **community**: Issues suitable for community contribution / automation-generated
+- **documentation**: Docs-only changes
+- **bug**: Something is broken or incorrect
+- **enhancement**: Improvement to an existing feature
+
 ### Troubleshooting
 
 If you run into issues, see our [**Troubleshooting Guide**](./docs/TROUBLESHOOTING.md) for solutions to common problems including:
@@ -109,6 +123,12 @@ Here’s how to keep things tidy:
 
    ```bash
    npm run lint
+   ```
+
+   For the same checks CI runs, use:
+
+   ```bash
+   npm run check
    ```
 
 6. **Test your feature manually.** Make sure all four game modes still behave correctly: Pick, Reverse-Pick, Input, Reverse-Input.
