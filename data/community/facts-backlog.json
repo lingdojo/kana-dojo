@@ -665,7 +665,10 @@
   {
     "id": 94,
     "fact": "Japan has 'salary men insurance' that pays out if you're transferred to a remote location away from your family.",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "yashasvisharma-iet",
+    "completedPR": 1333
   },
   {
     "id": 95,
