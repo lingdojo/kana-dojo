@@ -970,7 +970,10 @@
     "backgroundColor": "oklch(21.0% 0.048 50.0 / 1)",
     "mainColor": "oklch(90.0% 0.145 70.0 / 1)",
     "secondaryColor": "oklch(78.0% 0.175 40.0 / 1)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "Nani040905",
+    "completedPR": 1320
   },
   {
     "id": "midnight-ramen",
