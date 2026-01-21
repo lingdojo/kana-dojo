@@ -545,7 +545,10 @@
   {
     "id": 76,
     "fact": "Japan has a zero-tolerance policy for drunk driving - any detectable alcohol means immediate arrest and potential prison time.",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "Derek-94",
+    "completedPR": 1346
   },
   {
     "id": 77,
