@@ -895,7 +895,10 @@
     "backgroundColor": "oklch(19.0% 0.045 175.0 / 1)",
     "mainColor": "oklch(82.0% 0.155 180.0 / 1)",
     "secondaryColor": "oklch(72.0% 0.135 165.0 / 1)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "kostas-arte",
+    "completedPR": 1286
   },
   {
     "id": "shaved-ice",
