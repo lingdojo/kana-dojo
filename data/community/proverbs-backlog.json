@@ -415,7 +415,10 @@
     "romaji": "Yudan taiteki",
     "english": "Carelessness is the greatest enemy",
     "meaning": "Don't let your guard down",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "youneedgreg",
+    "completedPR": 1282
   },
   {
     "id": 42,
