@@ -1182,6 +1182,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         mainColor: 'oklch(70.0% 0.175 225.0 / 1)',
         secondaryColor: 'oklch(75.0% 0.145 350.0 / 1)',
       },
+      {
+      id: 'midnight-ramen',
+      backgroundColor: 'oklch(16.0% 0.042 30.0 / 1)',
+      mainColor: 'oklch(78.0% 0.160 45.0 / 1)',
+      secondaryColor: 'oklch(85.0% 0.120 85.0 / 1)',
+      },
     ],
   },
   {
