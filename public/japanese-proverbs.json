@@ -237,7 +237,9 @@
     "japanese": "油断大敵",
     "romaji": "Yudan taiteki",
     "english": "Carelessness is the greatest enemy",
-    "meaning": "Don't let your guard down"},{
+    "meaning": "Don't let your guard down"
+  },
+  {
     "japanese": "明日は明日の風が吹く",
     "romaji": "Ashita wa ashita no kaze ga fuku",
     "english": "Tomorrow's wind will blow tomorrow",
@@ -247,10 +249,18 @@
     "japanese": "縁の下の力持ち",
     "romaji": "En no shita no chikaramochi",
     "english": "A strong person under the veranda",
-    "meaning": "An unsung hero who supports behind the scenes"},{
+    "meaning": "An unsung hero who supports behind the scenes"
+  },
+  {
     "japanese": "石橋を叩いて渡る",
     "romaji": "Ishibashi wo tataite wataru",
     "english": "Tap a stone bridge before crossing",
     "meaning": "Be very cautious"
+  },
+  {
+    "japanese": "花より団子",
+    "romaji": "Hana yori dango",
+    "english": "Dumplings over flowers",
+    "meaning": "Practical needs are more important than aesthetic pleasures"
   }
 ]
