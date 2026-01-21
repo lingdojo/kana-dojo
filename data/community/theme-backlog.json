@@ -934,7 +934,10 @@
     "backgroundColor": "oklch(19.0% 0.038 40.0 / 1)",
     "mainColor": "oklch(85.0% 0.135 55.0 / 1)",
     "secondaryColor": "oklch(68.0% 0.165 30.0 / 1)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "JeraldPascual",
+    "completedPR": 1291
   },
   {
     "id": "garden-bridge",
