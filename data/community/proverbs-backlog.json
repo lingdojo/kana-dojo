@@ -396,7 +396,10 @@
     "romaji": "Ashita wa ashita no kaze ga fuku",
     "english": "Tomorrow's wind will blow tomorrow",
     "meaning": "Don't worry too much about the future",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "youneedgreg",
+    "completedPR": 1274
   },
   {
     "id": 40,
