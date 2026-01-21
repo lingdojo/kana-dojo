@@ -254,6 +254,12 @@ const baseThemeSets: BaseThemeGroup[] = [
     name: 'Dark',
     icon: Moon,
     themes: [
+      {
+        id: 'jpop-energy',
+        backgroundColor: 'oklch(15.0% 0.055 310.0 / 1)',
+        mainColor: 'oklch(80.0% 0.210 345.0 / 1)',
+        secondaryColor: 'oklch(85.0% 0.175 180.0 / 1)'
+      },
        {
         id: 'thunder-god',
         backgroundColor: 'oklch(14.0% 0.058 290.0 / 1)',
