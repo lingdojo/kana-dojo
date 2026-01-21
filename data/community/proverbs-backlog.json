@@ -505,7 +505,8 @@
     "romaji": "Anzuru yori umu ga yasushi",
     "english": "Giving birth is easier than worrying",
     "meaning": "Doing is often easier than worrying",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 51,
@@ -513,7 +514,7 @@
     "romaji": "Nido aru koto wa sando aru",
     "english": "What happens twice will happen a third time",
     "meaning": "Patterns tend to repeat",
-    "issued": false
+    "issued": true
   },
   {
     "id": 52,
