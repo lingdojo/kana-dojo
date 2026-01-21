@@ -445,7 +445,10 @@
     "romaji": "Amadare ishi wo ugatsu",
     "english": "Dripping water pierces stone",
     "meaning": "Persistence can overcome great obstacles",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "kaedeek",
+    "completedPR": 1369
   },
   {
     "id": 45,
