@@ -447,7 +447,10 @@
     "romaji": "Ishibashi wo tataite wataru",
     "english": "Tap a stone bridge before crossing",
     "meaning": "Be very cautious",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "mahatolalit",
+    "completedPR": 1324
   },
   {
     "id": 46,
