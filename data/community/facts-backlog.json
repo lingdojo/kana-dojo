@@ -642,7 +642,10 @@
   {
     "id": 90,
     "fact": "Japan has vending machines that sell used schoolgirl uniforms - though this practice is now heavily regulated in most areas.",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "youneedgreg",
+    "completedPR": 1279
   },
   {
     "id": 91,
