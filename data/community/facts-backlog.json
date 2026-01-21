@@ -540,7 +540,10 @@
   {
     "id": 75,
     "fact": "The word 'enryo' (遠慮) describes polite restraint - like declining seconds even when hungry, to not be a burden.",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "kaedeek",
+    "completedPR": 1371
   },
   {
     "id": 76,
