@@ -56,6 +56,7 @@ The README is available in multiple languages:
 - [Türkçe](./translations/README.tr.md)
 - [Tiếng Việt](./translations/README.vi.md)
 - [Bahasa Indonesia](./translations/README.id.md)
+- [日本語](./translations/README.ja.md)
 - [中文（简体）](./translations/README.zh-CN.md)
 - [中文（繁體）](./translations/README.zh-tw.md)
 - [Українська](./translations/README.ua.md)
