@@ -265,11 +265,19 @@ const baseThemeSets: BaseThemeGroup[] = [
         backgroundColor: 'oklch(19.0% 0.038 40.0 / 1)',
         mainColor: 'oklch(85.0% 0.135 55.0 / 1)',
         secondaryColor: 'oklch(68.0% 0.165 30.0 / 1)',
-        secondaryColor: 'oklch(60.0% 0.175 20.0 / 1)'},{
+        secondaryColor: 'oklch(60.0% 0.175 20.0 / 1)'
+      },
+      {
         id: 'sunrise-express',
         backgroundColor: 'oklch(21.0% 0.048 50.0 / 1)',
         mainColor: 'oklch(90.0% 0.145 70.0 / 1)',
         secondaryColor: 'oklch(78.0% 0.175 40.0 / 1)'
+      },
+      {
+      id: 'midnight-ramen',
+      backgroundColor: 'oklch(16.0% 0.042 30.0 / 1)',
+      mainColor: 'oklch(78.0% 0.160 45.0 / 1)',
+      secondaryColor: 'oklch(85.0% 0.120 85.0 / 1)'
       },
       {
         id: 'holographic-idol',
