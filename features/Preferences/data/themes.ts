@@ -243,6 +243,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         secondaryColor: 'oklch(75.0% 0.145 85.0 / 1)',
       },
       {
+        id: 'vending-glow',
+        backgroundColor: 'oklch(16.0% 0.025 280.0 / 1)',
+        mainColor: 'oklch(85.0% 0.125 220.0 / 1)',
+        secondaryColor: 'oklch(78.0% 0.165 45.0 / 1)'
+      },
+      {
         id: 'soda-float',
         backgroundColor: 'oklch(93.0% 0.032 150.0 / 1)',
         mainColor: 'oklch(62.0% 0.175 155.0 / 1)',
