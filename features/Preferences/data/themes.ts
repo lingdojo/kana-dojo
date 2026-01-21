@@ -255,6 +255,12 @@ const baseThemeSets: BaseThemeGroup[] = [
     icon: Moon,
     themes: [
       {
+        id: 'garden-bridge',
+        backgroundColor: 'oklch(23.0% 0.045 150.0 / 1)',
+        mainColor: 'oklch(60.0% 0.205 25.0 / 1)',
+        secondaryColor: 'oklch(72.0% 0.145 145.0 / 1)',
+      },
+      {
         id: 'jpop-energy',
         backgroundColor: 'oklch(15.0% 0.055 310.0 / 1)',
         mainColor: 'oklch(80.0% 0.210 345.0 / 1)',
