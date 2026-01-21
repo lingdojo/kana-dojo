@@ -427,24 +427,18 @@ const translatorSchema = {
   ],
 };
 
-export async function generateMetadata(): Promise<Metadata> {
-  const baseMetadata = await generatePageMetadata('translate');
-  return {
-    ...baseMetadata,
-    alternates: {
-      canonical: 'https://kanadojo.com/translate',
-      languages: {
-        en: 'https://kanadojo.com/en/translate',
-        es: 'https://kanadojo.com/es/translate',
-        ja: 'https://kanadojo.com/ja/translate',
-        'x-default': 'https://kanadojo.com/translate',
-      },
-    },
-  };
-}
-
 interface TranslatePageProps {
   params: Promise<{ locale: string }>;
+}
+
+export async function generateMetadata({
+  params,
+}: TranslatePageProps): Promise<Metadata> {
+  const { locale } = await params;
+  return await generatePageMetadata('translate', {
+    locale,
+    pathname: '/translate',
+  });
 }
 
 export default async function TranslatePage({ params }: TranslatePageProps) {

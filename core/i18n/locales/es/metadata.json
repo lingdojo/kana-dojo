@@ -193,5 +193,23 @@
       "description": "Aprende los caracteres extendidos de Katakana para préstamos extranjeros (ファ, フィ, ウィ, ウェ, etc.). Domina las combinaciones especiales de katakana usadas en japonés moderno.",
       "keywords": "sonidos extranjeros katakana, katakana extendido, préstamos katakana, ファフィ, ウィウェ, katakana especial, katakana moderno, katakana palabras extranjeras"
     }
+  },
+  "hiraganaPractice": {
+    "title": "Práctica de Hiragana - Aprende Hiragana Rápido | KanaDojo",
+    "titleShort": "Práctica de Hiragana",
+    "description": "Practica Hiragana japonés con ejercicios y juegos interactivos. Aprende la tabla de hiragana, mejora tu velocidad de lectura y gana confianza con retroalimentación instantánea.",
+    "keywords": "práctica de hiragana, practicar hiragana, aprender hiragana, tabla hiragana, ejercicios hiragana, quiz hiragana, juegos hiragana, hiragana japonés"
+  },
+  "katakanaPractice": {
+    "title": "Práctica de Katakana - Aprende Katakana Rápido | KanaDojo",
+    "titleShort": "Práctica de Katakana",
+    "description": "Practica Katakana japonés con ejercicios y juegos interactivos. Domina katakana rápidamente con retroalimentación instantánea y seguimiento de progreso.",
+    "keywords": "práctica de katakana, practicar katakana, aprender katakana, tabla katakana, ejercicios katakana, quiz katakana, juegos katakana, katakana japonés"
+  },
+  "kanjiPractice": {
+    "title": "Práctica de Kanji - Aprende Kanji por Nivel JLPT | KanaDojo",
+    "titleShort": "Práctica de Kanji",
+    "description": "Practica kanji japonés por nivel JLPT con entrenamiento interactivo. Mejora reconocimiento y retención con ejercicios rápidos y seguimiento de progreso.",
+    "keywords": "práctica de kanji, practicar kanji, aprender kanji, kanji jlpt, kanji por nivel, ejercicios kanji, quiz kanji, kanji japonés"
   }
 }

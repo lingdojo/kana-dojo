@@ -11,8 +11,16 @@ export function generateStaticParams() {
 
 export const revalidate = 3600;
 
-export async function generateMetadata(): Promise<Metadata> {
-  return await generatePageMetadata('kanaTrain');
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return await generatePageMetadata('kanaTrain', {
+    locale,
+    pathname: '/kana/train',
+  });
 }
 
 export default function Train() {

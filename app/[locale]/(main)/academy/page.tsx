@@ -2,13 +2,22 @@ import type { Metadata } from 'next';
 import { getBlogPosts, BlogList } from '@/features/Blog';
 import { routing, type Locale } from '@/core/i18n/routing';
 import { generatePageMetadata } from '@/core/i18n/metadata-helpers';
+import { BreadcrumbSchema } from '@/shared/components/SEO/BreadcrumbSchema';
 
 export function generateStaticParams() {
   return routing.locales.map(locale => ({ locale }));
 }
 
-export async function generateMetadata(): Promise<Metadata> {
-  return await generatePageMetadata('academy');
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return await generatePageMetadata('academy', {
+    locale,
+    pathname: '/academy',
+  });
 }
 
 interface AcademyPageProps {
@@ -21,6 +30,12 @@ export default async function AcademyPage({ params }: AcademyPageProps) {
 
   return (
     <>
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: `https://kanadojo.com/${locale}` },
+          { name: 'Academy', url: `https://kanadojo.com/${locale}/academy` },
+        ]}
+      />
       <header className='mb-8'>
         <h1 className='mb-4 text-3xl font-bold text-[var(--main-color)] md:text-4xl'>
           Academy

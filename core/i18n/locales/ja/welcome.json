@@ -1,0 +1,62 @@
+{
+  "title": "Welcome to KanaDojo!",
+  "subtitle": "Let's personalize your learning experience",
+  "steps": {
+    "behavior": {
+      "title": "Configure Behavior",
+      "subtitle": "Set your display and sound preferences",
+      "displayLanguage": {
+        "title": "Display Language",
+        "description": "In the character selection menu, for readings, display:",
+        "romaji": "Romaji, Translations 🇺🇸",
+        "kana": "Kana, Kanji 🇯🇵"
+      },
+      "soundEffects": {
+        "title": "Sound Effects",
+        "description": "Play UI and feedback sound effects:",
+        "on": "On",
+        "off": "Off"
+      }
+    },
+    "themes": {
+      "title": "Choose Your Theme",
+      "subtitle": "Select a theme that matches your style",
+      "randomTheme": "Random Theme"
+    },
+    "fonts": {
+      "title": "Choose Your Font",
+      "subtitle": "Choose the perfect font for characters",
+      "randomFont": "Random Font",
+      "default": "(default)",
+      "moreInfo": "💡 More fonts available in",
+      "preferences": "Preferences"
+    },
+    "complete": {
+      "title": "All Set!",
+      "subtitle": "Your KanaDojo is now personalized",
+      "canChange": "You can always change these settings later in the Preferences.",
+      "happyLearning": "Happy learning!"
+    }
+  },
+  "features": {
+    "behavior": {
+      "title": "Configure Behavior",
+      "description": "Set display language and sound preferences"
+    },
+    "theme": {
+      "title": "Choose Your Theme",
+      "description": "Select a theme that matches your style"
+    },
+    "font": {
+      "title": "Select Your Font",
+      "description": "Choose your perfect font for characters"
+    }
+  },
+  "navigation": {
+    "previous": "Previous",
+    "back": "Back",
+    "next": "Next",
+    "getStarted": "Get Started",
+    "finishSetup": "Finish Setup"
+  }
+}

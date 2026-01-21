@@ -1,0 +1,65 @@
+{
+  "metadata": {
+    "title": "KanaDojo: Kana",
+    "description": "The kana dojo is the place where you can learn and practice the two core syllabaries of Japanese - Hiragana and Katakana."
+  },
+  "title": "Kana Training",
+  "description": "Master Hiragana and Katakana",
+  "selection": {
+    "title": "Select Kana Groups",
+    "hiragana": "Hiragana",
+    "katakana": "Katakana",
+    "selectAll": "Select All",
+    "deselectAll": "Deselect All",
+    "groups": {
+      "basic": "Basic",
+      "dakuon": "Dakuon",
+      "combo": "Combinations",
+      "yoon": "Yōon"
+    }
+  },
+  "game": {
+    "title": "Kana Game",
+    "start": "Start Game",
+    "pause": "Pause",
+    "resume": "Resume",
+    "finish": "Finish",
+    "nextQuestion": "Next Question",
+    "submit": "Submit Answer",
+    "score": "Score: {{points}}",
+    "timeLeft": "Time left: {{seconds}}s",
+    "streak": "Streak: {{count}}",
+    "correct": "Correct!",
+    "incorrect": "Incorrect",
+    "tryAgain": "Try Again"
+  },
+  "modes": {
+    "pick": "Pick Mode",
+    "reversePick": "Reverse Pick",
+    "input": "Input Mode",
+    "reverseInput": "Reverse Input",
+    "description": {
+      "pick": "See kana, choose the reading",
+      "reversePick": "See reading, choose the kana",
+      "input": "See kana, type the reading",
+      "reverseInput": "See reading, type the kana"
+    }
+  },
+  "results": {
+    "title": "Results",
+    "congratulations": "Congratulations!",
+    "correct": "Correct: {{count}}",
+    "incorrect": "Incorrect: {{count}}",
+    "accuracy": "Accuracy: {{percentage}}%",
+    "timeSpent": "Time spent: {{time}}",
+    "playAgain": "Play Again",
+    "backToMenu": "Back to Menu"
+  },
+  "dictionary": {
+    "title": "Kana Dictionary",
+    "search": "Search kana...",
+    "character": "Character",
+    "romaji": "Romaji",
+    "type": "Type"
+  }
+}

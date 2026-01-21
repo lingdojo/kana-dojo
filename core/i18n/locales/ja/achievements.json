@@ -1,0 +1,33 @@
+{
+  "title": "Achievements",
+  "description": "Track your progress and earn achievements",
+  "unlocked": "Unlocked",
+  "locked": "Locked",
+  "progress": "Progress: {{current}}/{{total}}",
+  "earnedOn": "Earned on {{date}}",
+  "categories": {
+    "all": "All",
+    "kana": "Kana",
+    "kanji": "Kanji",
+    "vocabulary": "Vocabulary",
+    "general": "General",
+    "special": "Special"
+  },
+  "rarity": {
+    "common": "Common",
+    "rare": "Rare",
+    "epic": "Epic",
+    "legendary": "Legendary"
+  },
+  "notifications": {
+    "achievementUnlocked": "Achievement Unlocked!",
+    "congratulations": "Congratulations!",
+    "youEarned": "You earned"
+  },
+  "stats": {
+    "totalAchievements": "Total Achievements",
+    "unlockedAchievements": "Unlocked",
+    "completionRate": "Completion Rate",
+    "recentAchievements": "Recent Achievements"
+  }
+}

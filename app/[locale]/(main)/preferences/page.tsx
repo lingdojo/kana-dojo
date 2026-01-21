@@ -11,8 +11,16 @@ export function generateStaticParams() {
 // ISR: Revalidate every hour
 export const revalidate = 3600;
 
-export async function generateMetadata(): Promise<Metadata> {
-  return await generatePageMetadata('preferences');
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return await generatePageMetadata('preferences', {
+    locale,
+    pathname: '/preferences',
+  });
 }
 
 export default function SettingsPage() {

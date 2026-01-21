@@ -1,0 +1,71 @@
+{
+  "title": "Vocabulary Training",
+  "description": "Expand your Japanese vocabulary",
+  "selection": {
+    "title": "Select Vocabulary",
+    "byLevel": "By JLPT Level",
+    "byCategory": "By Category",
+    "selectAll": "Select All",
+    "deselectAll": "Deselect All",
+    "levels": {
+      "n5": "JLPT N5",
+      "n4": "JLPT N4",
+      "n3": "JLPT N3",
+      "n2": "JLPT N2",
+      "n1": "JLPT N1"
+    },
+    "categories": {
+      "all": "All",
+      "nouns": "Nouns",
+      "verbs": "Verbs",
+      "adjectives": "Adjectives",
+      "adverbs": "Adverbs",
+      "expressions": "Expressions"
+    }
+  },
+  "game": {
+    "title": "Vocabulary Game",
+    "start": "Start Game",
+    "pause": "Pause",
+    "resume": "Resume",
+    "finish": "Finish",
+    "nextQuestion": "Next Question",
+    "submit": "Submit Answer",
+    "score": "Score: {{points}}",
+    "timeLeft": "Time left: {{seconds}}s",
+    "streak": "Streak: {{count}}",
+    "correct": "Correct!",
+    "incorrect": "Incorrect",
+    "showAnswer": "Show Answer"
+  },
+  "modes": {
+    "pick": "Pick Mode",
+    "reversePick": "Reverse Pick",
+    "input": "Input Mode",
+    "reverseInput": "Reverse Input",
+    "description": {
+      "pick": "See word, choose the meaning",
+      "reversePick": "See meaning, choose the word",
+      "input": "See word, type the meaning",
+      "reverseInput": "See meaning, type the word"
+    }
+  },
+  "results": {
+    "title": "Results",
+    "congratulations": "Congratulations!",
+    "correct": "Correct: {{count}}",
+    "incorrect": "Incorrect: {{count}}",
+    "accuracy": "Accuracy: {{percentage}}%",
+    "timeSpent": "Time spent: {{time}}",
+    "playAgain": "Play Again",
+    "backToMenu": "Back to Menu"
+  },
+  "details": {
+    "word": "Word",
+    "reading": "Reading",
+    "meaning": "Meaning",
+    "examples": "Example Sentences",
+    "type": "Type",
+    "jlptLevel": "JLPT Level"
+  }
+}

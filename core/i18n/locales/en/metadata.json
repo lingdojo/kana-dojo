@@ -193,5 +193,23 @@
       "description": "Learn extended Katakana characters for foreign loanwords (ファ, フィ, ウィ, ウェ, etc.). Master special katakana combinations used in modern Japanese.",
       "keywords": "katakana foreign sounds, extended katakana, katakana loanwords, ファフィ, ウィウェ, special katakana, modern katakana, foreign word katakana"
     }
+  },
+  "hiraganaPractice": {
+    "title": "Hiragana Practice - Learn Hiragana Fast | KanaDojo",
+    "titleShort": "Hiragana Practice",
+    "description": "Practice Japanese Hiragana with interactive drills and games. Learn the hiragana chart, improve reading speed, and build confidence with instant feedback.",
+    "keywords": "hiragana practice, practice hiragana, learn hiragana, hiragana chart, hiragana drills, hiragana quiz, hiragana games, japanese hiragana"
+  },
+  "katakanaPractice": {
+    "title": "Katakana Practice - Learn Katakana Fast | KanaDojo",
+    "titleShort": "Katakana Practice",
+    "description": "Practice Japanese Katakana with interactive drills and games. Master katakana quickly with instant feedback and progress tracking.",
+    "keywords": "katakana practice, practice katakana, learn katakana, katakana chart, katakana drills, katakana quiz, katakana games, japanese katakana"
+  },
+  "kanjiPractice": {
+    "title": "Kanji Practice - Learn Kanji by JLPT Level | KanaDojo",
+    "titleShort": "Kanji Practice",
+    "description": "Practice Japanese Kanji by JLPT level with interactive training. Improve recognition, readings, and retention with fast drills and progress tracking.",
+    "keywords": "kanji practice, practice kanji, learn kanji, jlpt kanji, kanji by level, kanji drills, kanji quiz, japanese kanji"
   }
 }

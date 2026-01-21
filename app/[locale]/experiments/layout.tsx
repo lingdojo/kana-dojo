@@ -2,8 +2,16 @@ import SidebarLayout from '@/shared/components/layout/SidebarLayout';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/core/i18n/metadata-helpers';
 
-export async function generateMetadata(): Promise<Metadata> {
-  return await generatePageMetadata('experiments');
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return await generatePageMetadata('experiments', {
+    locale,
+    pathname: '/experiments',
+  });
 }
 
 export default function ExperimentsLayout({

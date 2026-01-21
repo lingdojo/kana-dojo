@@ -14,7 +14,7 @@ module.exports = {
       'community',
       'hacktoberfest',
       'help wanted',
-      // 'easy',
+      'easy',
       'up-for-grabs',
       'first-timers-only',
       'documentation',
@@ -49,7 +49,8 @@ module.exports = {
         'Fix any TypeScript, ESLint, or formatting errors',
         'Push your fixes to this PR',
       ],
-      footer: "Need help? Comment below and we'll assist! 🙌",
+      footer:
+        'Need help? Comment below. Helpful links: [Contributing]({repoUrl}/blob/main/CONTRIBUTING.md) · [Troubleshooting]({repoUrl}/blob/main/docs/TROUBLESHOOTING.md)',
     },
     success: {
       title: '## ✅ Quality Check Passed',
@@ -75,7 +76,7 @@ module.exports = {
       ],
     },
     footer:
-      'A maintainer will review your PR shortly. In the meantime, make sure all CI checks pass!',
+      'A maintainer will review your PR shortly. In the meantime, make sure all CI checks pass. You can run `npm run check` locally to match CI.',
     thanks: 'ありがとうございます! 🙏',
     firstTimeContributor: {
       separator: '---',
@@ -154,6 +155,8 @@ module.exports = {
         title: '**Helpful resources:**',
         items: [
           '[Contributing Guide]({repoUrl}/blob/main/CONTRIBUTING.md)',
+          '[Troubleshooting]({repoUrl}/blob/main/docs/TROUBLESHOOTING.md)',
+          '[Architecture]({repoUrl}/blob/main/docs/ARCHITECTURE.md)',
           '[Code of Conduct]({repoUrl}/blob/main/CODE_OF_CONDUCT.md)',
         ],
       },

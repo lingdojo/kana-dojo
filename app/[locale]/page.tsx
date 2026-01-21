@@ -11,8 +11,13 @@ export function generateStaticParams() {
 // ISR: Revalidate every hour (3600 seconds)
 export const revalidate = 3600;
 
-export async function generateMetadata(): Promise<Metadata> {
-  return await generatePageMetadata('home');
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return await generatePageMetadata('home', { locale, pathname: '/' });
 }
 
 export default function Home() {

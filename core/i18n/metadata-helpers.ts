@@ -1,6 +1,40 @@
 import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 
+const DEFAULT_BASE_URL = 'https://kanadojo.com';
+
+interface GeneratePageMetadataOptions {
+  locale?: string;
+  /**
+   * Pathname without locale prefix. Examples: '/', '/kana', '/kanji/train'
+   */
+  pathname?: string;
+  /** Base URL override for testing */
+  baseUrl?: string;
+}
+
+function joinUrl(
+  baseUrl: string,
+  locale: string | undefined,
+  pathname: string,
+) {
+  const normalizedBaseUrl = baseUrl.replace(/\/$/, '');
+  const normalizedPathname = pathname.startsWith('/')
+    ? pathname
+    : `/${pathname}`;
+
+  if (!locale) {
+    return `${normalizedBaseUrl}${normalizedPathname === '/' ? '' : normalizedPathname}`;
+  }
+
+  // Locale root is represented as /{locale} (no trailing slash)
+  if (normalizedPathname === '/') {
+    return `${normalizedBaseUrl}/${locale}`;
+  }
+
+  return `${normalizedBaseUrl}/${locale}${normalizedPathname}`;
+}
+
 /**
  * Generate metadata for a page using the metadata namespace
  * @param key - The key in the metadata translations (e.g., 'home', 'kana', 'kanji')
@@ -9,8 +43,17 @@ import type { Metadata } from 'next';
  */
 export async function generatePageMetadata(
   key: string,
-  locale?: string,
+  localeOrOptions?: string | GeneratePageMetadataOptions,
 ): Promise<Metadata> {
+  const options: GeneratePageMetadataOptions =
+    typeof localeOrOptions === 'string' || localeOrOptions === undefined
+      ? { locale: localeOrOptions }
+      : localeOrOptions;
+
+  const baseUrl = options.baseUrl ?? DEFAULT_BASE_URL;
+  const locale = options.locale;
+  const pathname = options.pathname ?? '/';
+
   const t = locale
     ? await getTranslations({ locale, namespace: 'metadata' as const })
     : await getTranslations('metadata');
@@ -32,6 +75,15 @@ export async function generatePageMetadata(
   const imageType = getImageType(key);
   const ogImageUrl = `https://kanadojo.com/api/og?title=${encodeURIComponent(titleShort)}&description=${encodeURIComponent(description.slice(0, 100))}&type=${imageType}`;
 
+  const canonicalUrl = joinUrl(baseUrl, locale, pathname);
+  const alternatesLanguages: Record<string, string> | undefined = locale
+    ? {
+        en: joinUrl(baseUrl, 'en', pathname),
+        es: joinUrl(baseUrl, 'es', pathname),
+        ja: joinUrl(baseUrl, 'ja', pathname),
+      }
+    : undefined;
+
   return {
     title,
     description,
@@ -39,7 +91,7 @@ export async function generatePageMetadata(
     openGraph: {
       title: titleShort,
       description,
-      url: `https://kanadojo.com`,
+      url: canonicalUrl,
       type: 'website',
       images: [
         {
@@ -57,7 +109,8 @@ export async function generatePageMetadata(
       images: [ogImageUrl],
     },
     alternates: {
-      canonical: `https://kanadojo.com`,
+      canonical: canonicalUrl,
+      languages: alternatesLanguages,
     },
   };
 }

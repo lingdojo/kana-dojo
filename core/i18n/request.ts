@@ -19,6 +19,7 @@ const NAMESPACES = [
   'blog',
   'translator',
   'metadata',
+  'practiceLanding',
   'welcome',
   'experiments',
   'legal',
