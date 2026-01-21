@@ -445,7 +445,10 @@
     "romaji": "Amadare ishi wo ugatsu",
     "english": "Dripping water pierces stone",
     "meaning": "Persistence can overcome great obstacles",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "kaedeek",
+    "completedPR": 1369
   },
   {
     "id": 45,
@@ -464,7 +467,10 @@
     "romaji": "Koronde mo tada de wa okinu",
     "english": "Even if you fall, don't get up empty-handed",
     "meaning": "Learn something from every setback",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "kaedeek",
+    "completedPR": 1364
   },
   {
     "id": 47,
@@ -483,7 +489,7 @@
     "romaji": "Mikka bouzu",
     "english": "A three-day monk",
     "meaning": "Someone who quits quickly",
-    "issued": false
+    "issued": true
   },
   {
     "id": 49,
