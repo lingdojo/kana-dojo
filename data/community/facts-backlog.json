@@ -609,7 +609,8 @@
   {
     "id": 84,
     "fact": "Japan has 'crying rooms' in some theaters where parents can watch movies with babies without disturbing other viewers.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 85,
@@ -703,7 +704,7 @@
   {
     "id": 98,
     "fact": "Japan has a festival where parents throw their babies to sumo wrestlers, who bounce them for good luck and health.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 99,
