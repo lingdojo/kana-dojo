@@ -254,6 +254,12 @@ const baseThemeSets: BaseThemeGroup[] = [
     name: 'Dark',
     icon: Moon,
     themes: [
+       {
+        id: 'thunder-god',
+        backgroundColor: 'oklch(14.0% 0.058 290.0 / 1)',
+        mainColor: 'oklch(88.0% 0.195 95.0 / 1)',
+        secondaryColor: 'oklch(75.0% 0.180 275.0 / 1)'
+      },
       {
         id: 'school-uniform',
         backgroundColor: 'oklch(92.0% 0.015 250.0 / 1)',
