@@ -1301,6 +1301,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         mainColor: 'oklch(82.0% 0.155 180.0 / 1)',
         secondaryColor: 'oklch(72.0% 0.135 165.0 / 1)',
       },
+      {
+        id: 'night-market',
+        backgroundColor: 'oklch(16.0% 0.035 35.0 / 1)',
+        mainColor: 'oklch(75.0% 0.165 55.0 / 1)',
+        secondaryColor: 'oklch(62.0% 0.185 20.0 / 1)'
+      },
     ],
   },
   {
