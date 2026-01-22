@@ -547,7 +547,8 @@
     "romaji": "Inu mo arukeba bou ni ataru",
     "english": "Even a walking dog will hit a stick",
     "meaning": "Acting can lead to luck (or trouble)",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 56,
@@ -555,7 +556,7 @@
     "romaji": "Tana kara botamochi",
     "english": "A rice cake falls from the shelf",
     "meaning": "A windfall; unexpected good luck",
-    "issued": false
+    "issued": true
   },
   {
     "id": 57,
