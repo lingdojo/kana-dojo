@@ -270,7 +270,7 @@ const baseThemeSets: BaseThemeGroup[] = [
         id: 'ramune-fizz',
         backgroundColor: 'oklch(95.0% 0.020 210.0 / 1)',
         mainColor: 'oklch(70.0% 0.170 205.0 / 1)',
-        secondaryColor: 'oklch(80.0% 0.135 95.0 / 1)'
+        secondaryColor: 'oklch(80.0% 0.135 95.0 / 1)',
       },
       {
         id: 'natto-brown',
@@ -294,7 +294,9 @@ const baseThemeSets: BaseThemeGroup[] = [
         id: 'autumn-temple',
         backgroundColor: 'oklch(20.0% 0.048 35.0 / 1)',
         mainColor: 'oklch(68.0% 0.185 40.0 / 1)',
-        secondaryColor: 'oklch(78.0% 0.135 55.0 / 1)'},{
+        secondaryColor: 'oklch(78.0% 0.135 55.0 / 1)',
+      },
+      {
         id: 'cherry-cola',
         backgroundColor: 'oklch(18.0% 0.055 20.0 / 1)',
         mainColor: 'oklch(58.0% 0.195 25.0 / 1)',
@@ -1228,6 +1230,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         backgroundColor: 'oklch(22.0% 0.042 230.0 / 1)',
         mainColor: 'oklch(75.0% 0.135 225.0 / 1)',
         secondaryColor: 'oklch(82.0% 0.100 215.0 / 1)',
+      },
+      {
+        id: 'sumi-charcoal',
+        backgroundColor: 'oklch(18.0% 0.010 270.0 / 1)',
+        mainColor: 'oklch(78.0% 0.010 90.0 / 1)',
+        secondaryColor: 'oklch(45.0% 0.020 260.0 / 1)',
       },
     ],
   },
