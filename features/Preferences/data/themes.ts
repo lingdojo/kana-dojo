@@ -267,6 +267,12 @@ const baseThemeSets: BaseThemeGroup[] = [
     icon: Moon,
     themes: [
       {
+        id: 'ramune-fizz',
+        backgroundColor: 'oklch(95.0% 0.020 210.0 / 1)',
+        mainColor: 'oklch(70.0% 0.170 205.0 / 1)',
+        secondaryColor: 'oklch(80.0% 0.135 95.0 / 1)'
+      },
+      {
         id: 'natto-brown',
         backgroundColor: 'oklch(22.0% 0.032 60.0 / 1)',
         mainColor: 'oklch(58.0% 0.095 65.0 / 1)',
