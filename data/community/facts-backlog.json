@@ -559,7 +559,8 @@
   {
     "id": 77,
     "fact": "There's a Japanese concept 'shuhari' (守破離) - follow the rules, break the rules, transcend the rules - the path to mastery.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 78,
@@ -767,7 +768,7 @@
   {
     "id": 110,
     "fact": "Japan has 'maid cafes' where waitresses in maid costumes call customers 'Master' and draw cute pictures on their food.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 111,
