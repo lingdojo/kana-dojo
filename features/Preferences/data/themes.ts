@@ -249,6 +249,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         secondaryColor: 'oklch(78.0% 0.165 45.0 / 1)',
       },
       {
+        id: 'komorebii-green',
+        backgroundColor: 'oklch(22.0% 0.030 150.0 / 1)',
+        mainColor: 'oklch(78.0% 0.135 145.0 / 1)',
+        secondaryColor: 'oklch(70.0% 0.090 110.0 / 1)',
+      },
+      {
         id: 'soda-float',
         backgroundColor: 'oklch(93.0% 0.032 150.0 / 1)',
         mainColor: 'oklch(62.0% 0.175 155.0 / 1)',
