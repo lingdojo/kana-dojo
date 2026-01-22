@@ -273,6 +273,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         secondaryColor: 'oklch(80.0% 0.135 95.0 / 1)',
       },
       {
+        id: 'umami-miso',
+        backgroundColor: 'oklch(22.0% 0.028 55.0 / 1)',
+        mainColor: 'oklch(72.0% 0.095 65.0 / 1)',
+        secondaryColor: 'oklch(60.0% 0.125 30.0 / 1)'
+      },
+      {
         id: 'natto-brown',
         backgroundColor: 'oklch(22.0% 0.032 60.0 / 1)',
         mainColor: 'oklch(58.0% 0.095 65.0 / 1)',
