@@ -1147,7 +1147,10 @@
     "backgroundColor": "oklch(18.0% 0.010 270.0 / 1)",
     "mainColor": "oklch(78.0% 0.010 90.0 / 1)",
     "secondaryColor": "oklch(45.0% 0.020 260.0 / 1)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "AbbyHumphreys",
+    "completedPR": 1503
   },
   {
     "id": "umami-miso",
