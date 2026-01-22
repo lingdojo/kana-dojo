@@ -1105,7 +1105,10 @@
     "backgroundColor": "oklch(22.0% 0.030 150.0 / 1)",
     "mainColor": "oklch(78.0% 0.135 145.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.090 110.0 / 1)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "Shivanii30",
+    "completedPR": 1478
   },
   {
     "id": "tsukimi-moon",
