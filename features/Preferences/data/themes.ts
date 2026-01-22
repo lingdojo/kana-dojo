@@ -260,6 +260,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         mainColor: 'oklch(62.0% 0.175 155.0 / 1)',
         secondaryColor: 'oklch(85.0% 0.095 95.0 / 1)',
       },
+      {
+        id: 'hanami-picnic',
+        backgroundColor: 'oklch(96.0% 0.018 20.0 / 1)',
+        mainColor: 'oklch(70.0% 0.165 350.0 / 1)',
+        secondaryColor: 'oklch(78.0% 0.120 135.0 / 1)',
+      },
     ],
   },
   {
@@ -276,7 +282,7 @@ const baseThemeSets: BaseThemeGroup[] = [
         id: 'umami-miso',
         backgroundColor: 'oklch(22.0% 0.028 55.0 / 1)',
         mainColor: 'oklch(72.0% 0.095 65.0 / 1)',
-        secondaryColor: 'oklch(60.0% 0.125 30.0 / 1)'
+        secondaryColor: 'oklch(60.0% 0.125 30.0 / 1)',
       },
       {
         id: 'natto-brown',
