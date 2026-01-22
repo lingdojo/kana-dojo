@@ -773,7 +773,7 @@
   {
     "id": 111,
     "fact": "There's a Japanese practice 'ohitori-sama' (お一人様) celebrating doing things alone - solo dining, traveling, and living.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 112,
