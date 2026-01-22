@@ -1,6 +1,7 @@
 ---
 name: 🐛 Bug Report
-description: Report a bug or issue you've encountered in KanaDojo
+about: Report a bug or issue you've encountered in KanaDojo
+title: '[BUG] '
 labels: bug
 ---
 

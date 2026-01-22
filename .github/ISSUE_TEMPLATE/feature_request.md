@@ -1,6 +1,7 @@
 ---
 name: 💡 Feature Request
-description: Suggest a new feature or improvement for KanaDojo
+about: Suggest a new feature or improvement for KanaDojo
+title: '[FEATURE] '
 labels: enhancement
 ---
 
