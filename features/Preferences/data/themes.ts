@@ -1195,6 +1195,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         mainColor: 'oklch(82.0% 0.155 180.0 / 1)',
         secondaryColor: 'oklch(72.0% 0.135 165.0 / 1)',
       },
+      {
+        id: 'biwako-blue',
+        backgroundColor: 'oklch(22.0% 0.042 230.0 / 1)',
+        mainColor: 'oklch(75.0% 0.135 225.0 / 1)',
+        secondaryColor: 'oklch(82.0% 0.100 215.0 / 1)',
+      },
     ],
   },
   {
