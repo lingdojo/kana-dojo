@@ -714,7 +714,8 @@
     "romaji": "Ishi no ue ni mo san nen",
     "english": "Three years on a stone",
     "meaning": "Perseverance will be rewarded",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 76,
@@ -722,7 +723,7 @@
     "romaji": "Ame futte ji katamaru",
     "english": "After rain, the ground hardens",
     "meaning": "Adversity can strengthen relationships",
-    "issued": false
+    "issued": true
   },
   {
     "id": 77,
