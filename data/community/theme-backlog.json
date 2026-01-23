@@ -1243,7 +1243,10 @@
     "backgroundColor": "oklch(92.0% 0.015 210.0 / 1)",
     "mainColor": "oklch(60.0% 0.130 215.0 / 1)",
     "secondaryColor": "oklch(85.0% 0.155 95.0 / 1)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "ParasSalonia",
+    "completedPR": 1587
   },
   {
     "id": "neon-arcade",
