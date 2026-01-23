@@ -1219,7 +1219,10 @@
     "backgroundColor": "oklch(16.0% 0.040 260.0 / 1)",
     "mainColor": "oklch(88.0% 0.020 240.0 / 1)",
     "secondaryColor": "oklch(68.0% 0.110 310.0 / 1)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "Master-Gamer-glitch",
+    "completedPR": 1557
   },
   {
     "id": "golden-kintsugi",
