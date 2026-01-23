@@ -1305,6 +1305,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         mainColor: 'oklch(72.0% 0.055 200.0 / 1)',
         secondaryColor: 'oklch(62.0% 0.095 320.0 / 1)',
       },
+      {
+        id: 'coastal-shrine',
+        backgroundColor: 'oklch(20.0% 0.040 235.0 / 1)',
+        mainColor: 'oklch(78.0% 0.205 35.0 / 1)',
+        secondaryColor: 'oklch(88.0% 0.065 210.0 / 1)',
+      },
     ],
   },
   {
