@@ -1210,7 +1210,10 @@
     "backgroundColor": "oklch(98.0% 0.004 90.0 / 1)",
     "mainColor": "oklch(55.0% 0.035 250.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.015 90.0 / 1)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "Master-Gamer-glitch",
+    "completedPR": 1561
   },
   {
     "id": "winter-kimono",
@@ -1231,7 +1234,7 @@
     "backgroundColor": "oklch(20.0% 0.020 70.0 / 1)",
     "mainColor": "oklch(85.0% 0.155 85.0 / 1)",
     "secondaryColor": "oklch(60.0% 0.085 25.0 / 1)",
-    "issued": false
+    "issued": true
   },
   {
     "id": "seaside-udon",
@@ -1240,7 +1243,10 @@
     "backgroundColor": "oklch(92.0% 0.015 210.0 / 1)",
     "mainColor": "oklch(60.0% 0.130 215.0 / 1)",
     "secondaryColor": "oklch(85.0% 0.155 95.0 / 1)",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "ParasSalonia",
+    "completedPR": 1587
   },
   {
     "id": "neon-arcade",
@@ -1249,7 +1255,10 @@
     "backgroundColor": "oklch(13.0% 0.055 300.0 / 1)",
     "mainColor": "oklch(78.0% 0.220 330.0 / 1)",
     "secondaryColor": "oklch(82.0% 0.185 190.0 / 1)",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "SaxenaAarohi",
+    "completedPR": 1594
   },
   {
     "id": "quiet-library",
@@ -1258,7 +1267,7 @@
     "backgroundColor": "oklch(92.0% 0.012 90.0 / 1)",
     "mainColor": "oklch(35.0% 0.085 255.0 / 1)",
     "secondaryColor": "oklch(55.0% 0.055 65.0 / 1)",
-    "issued": false
+    "issued": true
   },
   {
     "id": "maple-lacquer",
@@ -1267,7 +1276,7 @@
     "backgroundColor": "oklch(17.0% 0.035 20.0 / 1)",
     "mainColor": "oklch(65.0% 0.215 30.0 / 1)",
     "secondaryColor": "oklch(78.0% 0.135 70.0 / 1)",
-    "issued": false
+    "issued": true
   },
   {
     "id": "plaza-snow",

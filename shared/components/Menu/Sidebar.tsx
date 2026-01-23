@@ -20,6 +20,8 @@ import { removeLocaleFromPath } from '@/shared/lib/pathUtils';
 import type { Experiment } from '@/shared/data/experiments';
 import { ActionButton } from '@/shared/components/ui/ActionButton';
 
+const SIDEBAR_SECTION_STORAGE_PREFIX = 'sidebar-collapsible-';
+
 // ============================================================================
 // Types
 // ============================================================================
@@ -68,10 +70,12 @@ const staticSecondaryNavSections: NavSection[] = [
       { href: '/academy', label: 'Guides', icon: BookOpen },
       { href: '/resources', label: 'Resources', icon: Library },
     ],
+    collapsible: true,
   },
   {
     title: 'Tools',
     items: [{ href: '/translate', label: 'Translate', icon: Languages }],
+    collapsible: true,
   },
 ];
 
@@ -116,7 +120,8 @@ const NavLink = memo(
 
     const baseClasses = clsx(
       'flex items-center gap-2 rounded-2xl transition-all duration-250',
-      'text-2xl max-lg:justify-center max-lg:px-3 max-lg:py-2 lg:w-full lg:px-4 lg:py-2',
+      isMain ? 'text-2xl' : 'text-xl',
+      'max-lg:justify-center max-lg:px-3 max-lg:py-2 lg:w-full lg:px-4 lg:py-2',
       !isMain && 'max-lg:hidden',
     );
 
@@ -184,7 +189,8 @@ const NavLink = memo(
             onClick={onClick}
             className={clsx(
               'relative z-10 flex items-center gap-2 rounded-2xl',
-              'text-2xl max-lg:justify-center max-lg:px-3 lg:w-full lg:px-4',
+              isMain ? 'text-2xl' : 'text-xl',
+              'max-lg:justify-center max-lg:px-3 lg:w-full lg:px-4',
               paddingClasses,
               !isMain && 'max-lg:hidden',
               isActive
@@ -214,7 +220,8 @@ const NavLink = memo(
             borderRadius='xl'
             className={clsx(
               'flex items-center gap-2',
-              'text-2xl max-lg:justify-center max-lg:px-3 max-lg:py-2 lg:w-full lg:px-4 lg:py-2',
+              isMain ? 'text-2xl' : 'text-xl',
+              'max-lg:justify-center max-lg:px-3 max-lg:py-2 lg:w-full lg:px-4 lg:py-2',
               !isMain && 'max-lg:hidden',
             )}
           >
@@ -301,8 +308,31 @@ const Sidebar = () => {
   // Lazy load experiments
   const [loadedExperiments, setLoadedExperiments] = useState<Experiment[]>([]);
 
-  // Collapse state for experiments section
-  const [isExperimentsExpanded, setIsExperimentsExpanded] = useState(false);
+  // Collapse state for all collapsible sections
+  const [isAcademyExpanded, setIsAcademyExpanded] = useState(() => {
+    if (typeof window === 'undefined') return false;
+
+    const stored = sessionStorage.getItem(
+      `${SIDEBAR_SECTION_STORAGE_PREFIX}academy`,
+    );
+    return stored === null ? false : stored === 'true';
+  });
+  const [isToolsExpanded, setIsToolsExpanded] = useState(() => {
+    if (typeof window === 'undefined') return false;
+
+    const stored = sessionStorage.getItem(
+      `${SIDEBAR_SECTION_STORAGE_PREFIX}tools`,
+    );
+    return stored === null ? false : stored === 'true';
+  });
+  const [isExperimentsExpanded, setIsExperimentsExpanded] = useState(() => {
+    if (typeof window === 'undefined') return false;
+
+    const stored = sessionStorage.getItem(
+      `${SIDEBAR_SECTION_STORAGE_PREFIX}experiments`,
+    );
+    return stored === null ? false : stored === 'true';
+  });
 
   useEffect(() => {
     // Dynamically import experiments data
@@ -312,8 +342,35 @@ const Sidebar = () => {
   }, []);
 
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    sessionStorage.setItem(
+      `${SIDEBAR_SECTION_STORAGE_PREFIX}academy`,
+      String(isAcademyExpanded),
+    );
+  }, [isAcademyExpanded]);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    sessionStorage.setItem(
+      `${SIDEBAR_SECTION_STORAGE_PREFIX}tools`,
+      String(isToolsExpanded),
+    );
+  }, [isToolsExpanded]);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    sessionStorage.setItem(
+      `${SIDEBAR_SECTION_STORAGE_PREFIX}experiments`,
+      String(isExperimentsExpanded),
+    );
+  }, [isExperimentsExpanded]);
+
+  useEffect(() => {
     if (pathWithoutLocale.startsWith('/experiments')) {
-      setIsExperimentsExpanded(true);
+      setIsExperimentsExpanded(prev => (prev ? prev : true));
     }
   }, [pathWithoutLocale]);
 
@@ -409,26 +466,44 @@ const Sidebar = () => {
       </div>
 
       {/* Secondary Navigation Sections */}
-      {secondaryNavSections.map(section => (
-        <div key={section.title} className='contents'>
-          <SectionHeader
-            title={section.title}
-            collapsible={section.collapsible}
-            isExpanded={isExperimentsExpanded}
-            onToggle={() => setIsExperimentsExpanded(!isExperimentsExpanded)}
-          />
-          {section.items.map(item => (
-            <NavLink
-              key={item.href}
-              item={item}
-              isActive={isActive(item.href)}
-              onClick={playClick}
-              variant='secondary'
-              useSlidingIndicator={true}
+      {secondaryNavSections.map(section => {
+        // Determine which expand state and toggle function to use based on section title
+        const isExpanded =
+          section.title === 'Academy'
+            ? isAcademyExpanded
+            : section.title === 'Tools'
+              ? isToolsExpanded
+              : isExperimentsExpanded;
+        const onToggle =
+          section.title === 'Academy'
+            ? () => setIsAcademyExpanded(prev => !prev)
+            : section.title === 'Tools'
+              ? () => setIsToolsExpanded(prev => !prev)
+              : () => setIsExperimentsExpanded(prev => !prev);
+
+        return (
+          <div key={section.title} className='contents'>
+            <SectionHeader
+              title={section.title}
+              collapsible={section.collapsible}
+              isExpanded={isExpanded}
+              onToggle={onToggle}
             />
-          ))}
-        </div>
-      ))}
+            {/* Only show items if section is expanded or not collapsible */}
+            {(!section.collapsible || isExpanded) &&
+              section.items.map(item => (
+                <NavLink
+                  key={item.href}
+                  item={item}
+                  isActive={isActive(item.href)}
+                  onClick={playClick}
+                  variant='secondary'
+                  useSlidingIndicator={true}
+                />
+              ))}
+          </div>
+        );
+      })}
     </div>
   );
 };

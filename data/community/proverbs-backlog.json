@@ -690,7 +690,7 @@
     "romaji": "Yakeishi ni mizu",
     "english": "Water on a hot stone",
     "meaning": "A futile effort with little effect",
-    "issued": false
+    "issued": true
   },
   {
     "id": 73,
@@ -698,7 +698,7 @@
     "romaji": "Oni no inuma ni sentaku",
     "english": "Do laundry while the ogre is away",
     "meaning": "Take advantage of someone's absence",
-    "issued": false
+    "issued": true
   },
   {
     "id": 74,
@@ -706,7 +706,7 @@
     "romaji": "Toranu tanuki no kawazan'you",
     "english": "Counting a raccoon dog's skins before catching it",
     "meaning": "Don't count your chickens before they hatch",
-    "issued": false
+    "issued": true
   },
   {
     "id": 75,
@@ -714,7 +714,8 @@
     "romaji": "Ishi no ue ni mo san nen",
     "english": "Three years on a stone",
     "meaning": "Perseverance will be rewarded",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 76,
@@ -722,7 +723,7 @@
     "romaji": "Ame futte ji katamaru",
     "english": "After rain, the ground hardens",
     "meaning": "Adversity can strengthen relationships",
-    "issued": false
+    "issued": true
   },
   {
     "id": 77,
@@ -730,7 +731,7 @@
     "romaji": "Hari no ana kara ten wo nozoku",
     "english": "Peek at the sky through a needle's eye",
     "meaning": "A narrow viewpoint leads to poor judgment",
-    "issued": false
+    "issued": true
   },
   {
     "id": 78,

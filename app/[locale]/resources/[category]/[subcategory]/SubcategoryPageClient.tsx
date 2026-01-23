@@ -182,7 +182,6 @@ export function SubcategoryPageClient({
               <CategoryNav
                 categories={categoriesWithCounts}
                 activeCategory={category.id}
-                activeSubcategory={subcategory.id}
                 basePath={`/${locale}/resources`}
               />
             </div>

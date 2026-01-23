@@ -2,7 +2,6 @@
 import { createElement, useEffect, useRef } from 'react';
 import themeSets, {
   applyTheme,
-  applyThemeObject,
   // hexToHsl
 } from '@/features/Preferences/data/themes';
 import usePreferencesStore from '@/features/Preferences/store/usePreferencesStore';
@@ -10,7 +9,7 @@ import clsx from 'clsx';
 import { useClick, useLong } from '@/shared/hooks/useAudio';
 import { buttonBorderStyles } from '@/shared/lib/styles';
 import { useState } from 'react';
-import { Dice5, Plus, Trash2 } from 'lucide-react';
+import { Dice5 } from 'lucide-react';
 import { Random } from 'random-js';
 import { useCustomThemeStore } from '@/features/Preferences/store/useCustomThemeStore';
 import CollapsibleSection from './CollapsibleSection';
@@ -20,10 +19,14 @@ const random = new Random();
 const Themes = () => {
   const { playClick } = useClick();
   const { playLong } = useLong();
-  const { addTheme, removeTheme, themes } = useCustomThemeStore();
+  const {
+    addTheme: _addTheme,
+    removeTheme: _removeTheme,
+    themes: _themes,
+  } = useCustomThemeStore();
 
-  const [isAdding, setIsAdding] = useState(true);
-  const [customTheme, setCustomTheme] = useState({
+  const [isAdding, _setIsAdding] = useState(true);
+  const [_customTheme, _setCustomTheme] = useState({
     id: '',
     backgroundColor: '#240d2f',
     cardColor: '#321441',
@@ -40,7 +43,7 @@ const Themes = () => {
   const [randomTheme, setRandomTheme] = useState(themeSets[2].themes[0]);
 
   // Set random theme only on client side after mount
-  const [isMounted, setIsMounted] = useState(false);
+  const [_isMounted, setIsMounted] = useState(false);
 
   const [isHovered, setIsHovered] = useState('');
 
@@ -155,14 +158,23 @@ const Themes = () => {
                 key={currentTheme.id}
                 style={{
                   color: currentTheme.mainColor,
-                  backgroundColor:
-                    isHovered === currentTheme.id
-                      ? currentTheme.cardColor
-                      : currentTheme.backgroundColor,
-                  /* 
-                  borderWidth:
-                    process.env.NODE_ENV === 'development' ? '2px' : undefined,
- */
+                  background:
+                    currentTheme.id === '?'
+                      ? `linear-gradient(
+                          142deg,
+                          oklch(66.0% 0.18 25.0 / 1) 0%,
+                          oklch(72.0% 0.22 80.0 / 1) 12%,
+                          oklch(68.0% 0.20 145.0 / 1) 24%,
+                          oklch(70.0% 0.19 200.0 / 1) 36%,
+                          oklch(67.0% 0.18 235.0 / 1) 48%,
+                          oklch(73.0% 0.22 290.0 / 1) 60%,
+                          oklch(69.0% 0.21 330.0 / 1) 74%,
+                          oklch(74.0% 0.20 355.0 / 1) 88%,
+                          oklch(66.0% 0.18 25.0 / 1) 100%
+                        )`
+                      : isHovered === currentTheme.id
+                        ? currentTheme.cardColor
+                        : currentTheme.backgroundColor,
                   borderColor: currentTheme.borderColor,
                 }}
                 onMouseEnter={() => {
@@ -214,29 +226,45 @@ const Themes = () => {
                   }}
                   className='hidden'
                 />
-                <span className='flex items-center gap-1.5 text-center text-lg'>
-                  <span className='text-[var(--secondary-color)]'>
-                    {currentTheme.id === selectedTheme ? '\u2B24 ' : ''}
+                {currentTheme.id === '?' ? (
+                  <span className='relative flex w-full items-center justify-center text-center text-lg'>
+                    <span
+                      className={clsx(
+                        'absolute left-1/2 -translate-x-1/2',
+                        currentTheme.id === selectedTheme
+                          ? 'text-black'
+                          : 'text-transparent',
+                      )}
+                    >
+                      {'\u2B24'}
+                    </span>
+                    <span className='opacity-0'>?</span>
                   </span>
-                  {currentTheme.id === 'long'
-                    ? 'long loooooooong theme'
-                    : currentTheme.id.split('-').map((themeNamePart, i) => (
-                        <span
-                          key={`${currentTheme.id}-${i}`}
-                          style={{
-                            color:
-                              process.env.NODE_ENV !== 'production'
-                                ? i === 0
-                                  ? currentTheme.mainColor
-                                  : currentTheme.secondaryColor
-                                : undefined,
-                          }}
-                        >
-                          {i > 0 && ' '}
-                          {themeNamePart}
-                        </span>
-                      ))}
-                </span>
+                ) : (
+                  <span className='flex items-center gap-1.5 text-center text-lg'>
+                    <span className='text-[var(--secondary-color)]'>
+                      {currentTheme.id === selectedTheme ? '\u2B24 ' : ''}
+                    </span>
+                    {currentTheme.id === 'long'
+                      ? 'long loooooooong theme'
+                      : currentTheme.id.split('-').map((themeNamePart, i) => (
+                          <span
+                            key={`${currentTheme.id}-${i}`}
+                            style={{
+                              color:
+                                process.env.NODE_ENV !== 'production'
+                                  ? i === 0
+                                    ? currentTheme.mainColor
+                                    : currentTheme.secondaryColor
+                                  : undefined,
+                            }}
+                          >
+                            {i > 0 && ' '}
+                            {themeNamePart}
+                          </span>
+                        ))}
+                  </span>
+                )}
               </label>
             ))}
           </fieldset>

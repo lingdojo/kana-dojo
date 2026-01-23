@@ -38,6 +38,7 @@ interface BaseTheme {
 interface BaseThemeGroup {
   name: string;
   icon: LucideIcon;
+  isLight: boolean;
   themes: BaseTheme[];
 }
 
@@ -75,17 +76,24 @@ function formatOklch(L: number, C: number, H: number, A: number): string {
 
 /**
  * Generates a card color from a background color.
- * Based on analysis of yukata, nord, and sapphire-bloom themes:
- * - Lightness increases by ~18-20%
- * - Chroma increases by ~28-48%
- * - Hue stays roughly the same
+ *
+ * For dark themes:
+ * - Lightness increases slightly (cards are lighter than background)
+ * - Chroma increases for subtle vibrancy
+ *
+ * For light themes:
+ * - Lightness increases toward white (cards are lighter than background)
+ * - Chroma decreases to create a neutral, recessive surface
+ * - This ensures colored text (mainColor/secondaryColor) pops beautifully
  *
  * @param backgroundColor - OKLCH background color string
- * @param lightnessBoost - Proportional lightness increase (default 0.19)
- * @param chromaMultiplier - Chroma multiplier (default 1.35)
+ * @param isLight - Whether this is a light theme (uses group membership, not heuristic)
+ * @param lightnessBoost - Proportional lightness increase for dark themes (default 0.2)
+ * @param chromaMultiplier - Chroma multiplier for dark themes (default 1.2)
  */
 export function generateCardColor(
   backgroundColor: string,
+  isLight: boolean,
   lightnessBoost = 0.2,
   chromaMultiplier = 1.2,
 ): string {
@@ -97,29 +105,44 @@ export function generateCardColor(
 
   const { L, C, H, A } = parsed;
 
-  // For light themes (L > 0.6), decrease lightness; for dark themes, increase it
-  const isLightTheme = L > 0.6;
-  const newL = isLightTheme
-    ? Math.max(0, L - (1 - L + 0.12) * lightnessBoost * 5) // Darken for light themes
-    : Math.min(1, L + L * lightnessBoost);
-  const newC = Math.min(0.37, C * chromaMultiplier);
+  let newL: number;
+  let newC: number;
+
+  if (isLight) {
+    // Light themes: make cards LIGHTER (toward white)
+    // This creates a subtle "elevated paper" effect and ensures
+    // vibrant colored text remains readable and beautiful
+    newL = Math.min(0.99, L + (1 - L) * 0.45);
+    // Desaturate to make the card neutral and recessive
+    newC = C * 0.5;
+  } else {
+    // Dark themes: existing logic - make cards slightly lighter
+    newL = Math.min(1, L + L * lightnessBoost);
+    newC = Math.min(0.37, C * chromaMultiplier);
+  }
 
   return formatOklch(newL, newC, H, A);
 }
 
 /**
  * Generates a border color from a background color.
- * Based on analysis of yukata, nord, and sapphire-bloom themes:
- * - Lightness increases by ~50-57%
- * - Chroma increases by ~70-117%
- * - Hue stays roughly the same
+ *
+ * For dark themes:
+ * - Lightness increases more than cards (borders are more visible)
+ * - Chroma increases for subtle definition
+ *
+ * For light themes:
+ * - Lightness decreases slightly to create subtle definition
+ * - Chroma is reduced for a soft, elegant border
  *
  * @param backgroundColor - OKLCH background color string
- * @param lightnessBoost - Proportional lightness increase (default 0.53)
- * @param chromaMultiplier - Chroma multiplier (default 1.85)
+ * @param isLight - Whether this is a light theme
+ * @param lightnessBoost - Proportional lightness increase for dark themes (default 0.75)
+ * @param chromaMultiplier - Chroma multiplier for dark themes (default 1.85)
  */
 export function generateBorderColor(
   backgroundColor: string,
+  isLight: boolean,
   lightnessBoost = 0.75,
   chromaMultiplier = 1.85,
 ): string {
@@ -131,12 +154,20 @@ export function generateBorderColor(
 
   const { L, C, H, A } = parsed;
 
-  // For light themes (L > 0.6), decrease lightness; for dark themes, increase it
-  const isLightTheme = L > 0.6;
-  const newL = isLightTheme
-    ? Math.max(0, L - (1 - L + 0.15) * lightnessBoost * 2) // Darken more for borders
-    : Math.min(1, L + L * lightnessBoost);
-  const newC = Math.min(0.37, C * chromaMultiplier);
+  let newL: number;
+  let newC: number;
+
+  if (isLight) {
+    // Light themes: darken slightly for subtle border definition
+    // Not too dark - just enough to separate elements elegantly
+    newL = Math.max(0.7, L - (1 - L + 0.1) * 0.4);
+    // Reduce chroma for a soft, neutral border
+    newC = C * 0.6;
+  } else {
+    // Dark themes: existing logic - make borders lighter than cards
+    newL = Math.min(1, L + L * lightnessBoost);
+    newC = Math.min(0.37, C * chromaMultiplier);
+  }
 
   return formatOklch(newL, newC, H, A);
 }
@@ -174,13 +205,15 @@ export function generateAccentColor(
 
 /**
  * Builds a complete Theme from a BaseTheme by generating derived colors.
+ * @param base - The base theme definition
+ * @param isLight - Whether this theme belongs to a light theme group
  */
-function buildTheme(base: BaseTheme): Theme {
+function buildTheme(base: BaseTheme, isLight: boolean): Theme {
   return {
     id: base.id,
     backgroundColor: base.backgroundColor,
-    cardColor: generateCardColor(base.backgroundColor),
-    borderColor: generateBorderColor(base.backgroundColor),
+    cardColor: generateCardColor(base.backgroundColor, isLight),
+    borderColor: generateBorderColor(base.backgroundColor, isLight),
     mainColor: base.mainColor,
     mainColorAccent: generateAccentColor(base.mainColor),
     secondaryColor: base.secondaryColor,
@@ -190,12 +223,13 @@ function buildTheme(base: BaseTheme): Theme {
 
 /**
  * Builds a complete ThemeGroup from a BaseThemeGroup.
+ * Passes the isLight flag to each theme for proper card/border color generation.
  */
 function buildThemeGroup(baseGroup: BaseThemeGroup): ThemeGroup {
   return {
     name: baseGroup.name,
     icon: baseGroup.icon,
-    themes: baseGroup.themes.map(buildTheme),
+    themes: baseGroup.themes.map(theme => buildTheme(theme, baseGroup.isLight)),
   };
 }
 
@@ -204,6 +238,7 @@ const baseThemeSets: BaseThemeGroup[] = [
   {
     name: 'Base',
     icon: Atom,
+    isLight: false,
     themes: [
       {
         id: 'light',
@@ -223,54 +258,54 @@ const baseThemeSets: BaseThemeGroup[] = [
   {
     name: 'Light',
     icon: Sun,
+    isLight: true,
     themes: [
       {
         id: 'long',
-        backgroundColor: 'oklch(90.25% 0.0525 6.93 / 1)',
+        backgroundColor: 'oklch(84.00% 0.055 6.93 / 1)',
         mainColor: ' oklch(63.71% 0.1862 304.76 / 1)',
         secondaryColor: 'oklch(66.54% 0.2210 304.03 / 1)',
       },
       {
         id: 'amethyst',
-        backgroundColor: 'oklch(94.51% 0.0292 308.12 / 1)',
+        backgroundColor: 'oklch(86.00% 0.045 308.12 / 1)',
         mainColor: 'oklch(62.02% 0.2504 302.41 / 1)',
         secondaryColor: 'oklch(66.54% 0.2210 304.03 / 1)',
       },
       {
         id: 'lucky-cat',
-        backgroundColor: 'oklch(92.0% 0.025 90.0 / 1)',
+        backgroundColor: 'oklch(84.00% 0.040 90.0 / 1)',
         mainColor: 'oklch(65.0% 0.195 40.0 / 1)',
         secondaryColor: 'oklch(75.0% 0.145 85.0 / 1)',
       },
-
       {
-        id: 'tsuyu-drizzle',
-        backgroundColor: 'oklch(22.0% 0.015 250.0 / 1)',
-        mainColor: 'oklch(72.0% 0.105 230.0 / 1)',
-        secondaryColor: 'oklch(78.0% 0.025 260.0 / 1)',
+        id: 'sake-glass',
+        backgroundColor: 'oklch(88.00% 0.015 90.0 / 1)',
+        mainColor: 'oklch(55.0% 0.035 250.0 / 1)',
+        secondaryColor: 'oklch(70.0% 0.015 90.0 / 1)',
       },
 
       {
-        id: 'vending-glow',
-        backgroundColor: 'oklch(16.0% 0.025 280.0 / 1)',
-        mainColor: 'oklch(85.0% 0.125 220.0 / 1)',
-        secondaryColor: 'oklch(78.0% 0.165 45.0 / 1)',
+        id: 'ramune-fizz',
+        backgroundColor: 'oklch(85.00% 0.040 210.0 / 1)',
+        mainColor: 'oklch(70.0% 0.170 205.0 / 1)',
+        secondaryColor: 'oklch(80.0% 0.135 95.0 / 1)',
       },
       {
-        id: 'komorebii-green',
-        backgroundColor: 'oklch(22.0% 0.030 150.0 / 1)',
-        mainColor: 'oklch(78.0% 0.135 145.0 / 1)',
-        secondaryColor: 'oklch(70.0% 0.090 110.0 / 1)',
+        id: 'shaved-ice',
+        backgroundColor: 'oklch(85.00% 0.045 215.0 / 1)',
+        mainColor: 'oklch(60.0% 0.195 25.0 / 1)',
+        secondaryColor: 'oklch(65.0% 0.175 215.0 / 1)',
       },
       {
         id: 'soda-float',
-        backgroundColor: 'oklch(93.0% 0.032 150.0 / 1)',
+        backgroundColor: 'oklch(84.00% 0.050 150.0 / 1)',
         mainColor: 'oklch(62.0% 0.175 155.0 / 1)',
         secondaryColor: 'oklch(85.0% 0.095 95.0 / 1)',
       },
       {
         id: 'hanami-picnic',
-        backgroundColor: 'oklch(96.0% 0.018 20.0 / 1)',
+        backgroundColor: 'oklch(87.00% 0.035 20.0 / 1)',
         mainColor: 'oklch(70.0% 0.165 350.0 / 1)',
         secondaryColor: 'oklch(78.0% 0.120 135.0 / 1)',
       },
@@ -279,60 +314,41 @@ const baseThemeSets: BaseThemeGroup[] = [
   {
     name: 'Dark',
     icon: Moon,
+    isLight: false,
     themes: [
+      {
+        id: 'seaside-udon',
+        backgroundColor: 'oklch(92.0% 0.015 210.0 / 1)',
+        mainColor: 'oklch(60.0% 0.130 215.0 / 1)',
+        secondaryColor: 'oklch(85.0% 0.155 95.0 / 1)'
+      },
+      {
+        id: 'koi-pond',
+        backgroundColor: 'oklch(20.0% 0.048 240.0 / 1)',
+        mainColor: 'oklch(80.0% 0.175 55.0 / 1)',
+        secondaryColor: 'oklch(70.0% 0.130 220.0 / 1)'},{
+  id: 'seaside-udon',
+  backgroundColor: 'oklch(92.0% 0.015 210.0 / 1)',
+  mainColor: 'oklch(60.0% 0.130 215.0 / 1)',
+  secondaryColor: 'oklch(85.0% 0.155 95.0 / 1)'
+},
+      {
+        id: 'tsuyu-drizzle',
+        backgroundColor: 'oklch(22.0% 0.015 250.0 / 1)',
+        mainColor: 'oklch(72.0% 0.105 230.0 / 1)',
+        secondaryColor: 'oklch(78.0% 0.025 260.0 / 1)',
+      },
+      {
+        id: 'vending-glow',
+        backgroundColor: 'oklch(16.0% 0.025 280.0 / 1)',
+        mainColor: 'oklch(85.0% 0.125 220.0 / 1)',
+        secondaryColor: 'oklch(78.0% 0.165 45.0 / 1)',
+      },
       {
         id: 'winter-kimono',
         backgroundColor: 'oklch(16.0% 0.040 260.0 / 1)',
         mainColor: 'oklch(88.0% 0.020 240.0 / 1)',
         secondaryColor: 'oklch(68.0% 0.110 310.0 / 1)',
-      },
-      {
-        id: 'ramune-fizz',
-        backgroundColor: 'oklch(95.0% 0.020 210.0 / 1)',
-        mainColor: 'oklch(70.0% 0.170 205.0 / 1)',
-        secondaryColor: 'oklch(80.0% 0.135 95.0 / 1)',
-      },
-      {
-        id: 'umami-miso',
-        backgroundColor: 'oklch(22.0% 0.028 55.0 / 1)',
-        mainColor: 'oklch(72.0% 0.095 65.0 / 1)',
-        secondaryColor: 'oklch(60.0% 0.125 30.0 / 1)',
-      },
-      {
-        id: 'natto-brown',
-        backgroundColor: 'oklch(22.0% 0.032 60.0 / 1)',
-        mainColor: 'oklch(58.0% 0.095 65.0 / 1)',
-        secondaryColor: 'oklch(70.0% 0.075 55.0 / 1)',
-      },
-      {
-        id: 'ginkgo-gold',
-        backgroundColor: 'oklch(23.0% 0.045 85.0 / 1)',
-        mainColor: 'oklch(88.0% 0.170 95.0 / 1)',
-        secondaryColor: 'oklch(72.0% 0.135 75.0 / 1)',
-      },
-      {
-        id: 'shaved-ice',
-        backgroundColor: 'oklch(95.0% 0.025 215.0 / 1)',
-        mainColor: 'oklch(60.0% 0.195 25.0 / 1)',
-        secondaryColor: 'oklch(65.0% 0.175 215.0 / 1)',
-      },
-      {
-        id: 'autumn-temple',
-        backgroundColor: 'oklch(20.0% 0.048 35.0 / 1)',
-        mainColor: 'oklch(68.0% 0.185 40.0 / 1)',
-        secondaryColor: 'oklch(78.0% 0.135 55.0 / 1)',
-      },
-      {
-        id: 'cherry-cola',
-        backgroundColor: 'oklch(18.0% 0.055 20.0 / 1)',
-        mainColor: 'oklch(58.0% 0.195 25.0 / 1)',
-        secondaryColor: 'oklch(70.0% 0.145 50.0 / 1)',
-      },
-      {
-        id: 'garden-bridge',
-        backgroundColor: 'oklch(23.0% 0.045 150.0 / 1)',
-        mainColor: 'oklch(60.0% 0.205 25.0 / 1)',
-        secondaryColor: 'oklch(72.0% 0.145 145.0 / 1)',
       },
       {
         id: 'tsukimi-moon',
@@ -1234,12 +1250,6 @@ const baseThemeSets: BaseThemeGroup[] = [
         secondaryColor: 'oklch(75.0% 0.145 350.0 / 1)',
       },
       {
-        id: 'kuroyuri',
-        backgroundColor: 'oklch(23.8% 0.041 270.0 / 1)', // velvet graphite
-        mainColor: 'oklch(91.5% 0.212 120.0 / 1)', // pear green
-        secondaryColor: 'oklch(80.0% 0.158 340.0 / 1)', // smoky plum
-      },
-      {
         id: 'vaporwave-shrine',
         backgroundColor: 'oklch(17.0% 0.072 305.0 / 1)',
         mainColor: 'oklch(75.0% 0.175 195.0 / 1)',
@@ -1274,6 +1284,7 @@ const baseThemeSets: BaseThemeGroup[] = [
   {
     name: 'Halloween',
     icon: CloudLightning,
+    isLight: false,
     themes: [
       {
         id: 'pumpkin-night',
@@ -1292,6 +1303,7 @@ const baseThemeSets: BaseThemeGroup[] = [
   {
     name: 'Christmas',
     icon: TreePine,
+    isLight: false,
     themes: [
       {
         id: 'santa-night',
@@ -1324,36 +1336,27 @@ const baseThemeSets: BaseThemeGroup[] = [
         secondaryColor: 'oklch(64.0% 0.210 28.0 / 1)',
       },
       {
-        id: 'kuroyuri',
-        backgroundColor: 'oklch(23.8% 0.041 270.0 / 1)', // velvet graphite
-        mainColor: 'oklch(91.5% 0.212 120.0 / 1)', // pear green
-        secondaryColor: 'oklch(80.0% 0.158 340.0 / 1)', // smoky plum
-      },
-      {
-        id: 'vaporwave-shrine',
-        backgroundColor: 'oklch(17.0% 0.072 305.0 / 1)',
-        mainColor: 'oklch(75.0% 0.175 195.0 / 1)',
-        secondaryColor: 'oklch(80.0% 0.195 330.0 / 1)',
-      },
-      {
-        id: 'wind-god',
-        backgroundColor: 'oklch(19.0% 0.045 175.0 / 1)',
-        mainColor: 'oklch(82.0% 0.155 180.0 / 1)',
-        secondaryColor: 'oklch(72.0% 0.135 165.0 / 1)',
+        id: 'neon-arcade',
+        backgroundColor: 'oklch(13.0% 0.055 300.0 / 1)',
+        mainColor: 'oklch(78.0% 0.220 330.0 / 1)',
+        secondaryColor: 'oklch(82.0% 0.185 190.0 / 1)',
       },
     ],
   },
   {
     name: 'Extra',
     icon: Sparkles,
+    isLight: false,
     themes: [
       {
         // "kyoki" (狂気) means "madness/craziness" in Japanese
         // Selecting this theme enables random theme cycling on each question
-        id: 'kyoki',
-        backgroundColor: 'oklch(18.0% 0.055 300.0 / 1)', // deep purple
-        mainColor: 'oklch(85.0% 0.220 320.0 / 1)', // vibrant magenta-pink
-        secondaryColor: 'oklch(78.0% 0.200 180.0 / 1)', // electric cyan
+        // Display name is "?" to signify mystery/chaos
+        // NOTE: The theme button has a crazy gradient background applied in Themes.tsx
+        id: '?',
+        backgroundColor: 'oklch(15.0% 0.045 280.0 / 1)', // dark base
+        mainColor: 'oklch(95.0% 0.180 320.0 / 1)', // bright magenta-pink
+        secondaryColor: 'oklch(90.0% 0.200 180.0 / 1)', // vivid cyan
       },
     ],
   },

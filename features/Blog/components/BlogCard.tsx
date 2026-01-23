@@ -30,80 +30,134 @@ interface BlogCardProps {
 }
 
 /**
- * BlogCard Component
- * Displays a preview card for a blog post with title, description,
- * category badge, reading time, and publication date.
- * Links to the individual post page.
+ * Editorial BlogCard Component
+ * Displays a preview card for an article with a refined, magazine-style layout.
+ * Supports a "featured" variant for the spotlight article.
  */
-export function BlogCard({ post, className }: BlogCardProps) {
+export function BlogCard({
+  post,
+  className,
+  isFeatured = false,
+}: BlogCardProps & { isFeatured?: boolean }) {
   const formattedDate = new Date(post.publishedAt).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
+    month: 'short',
     day: 'numeric',
+    year: 'numeric',
   });
 
   return (
     <article
       className={cn(
-        'group relative flex flex-col rounded-xl border border-[var(--border-color)] bg-[var(--card-color)] p-6 transition-all duration-200 hover:border-[var(--main-color)] hover:shadow-lg',
+        'group relative flex flex-col transition-all duration-500',
+        isFeatured ? 'md:flex-row md:gap-12 lg:gap-16' : 'gap-6',
         className,
       )}
       data-testid='blog-card'
     >
-      <Link
-        href={`/academy/${post.slug}`}
-        className='absolute inset-0 z-10 cursor-pointer'
-        aria-label={`Read more about ${post.title}`}
-      >
-        <span className='sr-only'>Read article: {post.title}</span>
-      </Link>
+      {/* Featured Background Decor (Asymmetric) */}
+      {isFeatured && (
+        <div className='absolute -inset-4 -z-10 rounded-3xl bg-[var(--main-color)] opacity-[0.02] transition-opacity group-hover:opacity-[0.04]' />
+      )}
 
-      {/* Category Badge */}
-      <div className='mb-3 flex items-center gap-2'>
-        <span
-          className={cn(
-            'inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium capitalize',
-            categoryColors[post.category],
-          )}
-          data-testid='blog-card-category'
-        >
-          {post.category}
-        </span>
-        {post.difficulty && (
-          <span
-            className='inline-flex items-center rounded-full border border-[var(--border-color)] bg-[var(--background-color)] px-2.5 py-0.5 text-xs font-medium text-[var(--secondary-color)] capitalize'
-            data-testid='blog-card-difficulty'
-          >
-            {post.difficulty}
-          </span>
+      {/* Hero Image / Placeholder */}
+      <div
+        className={cn(
+          'relative aspect-[16/10] overflow-hidden rounded-sm bg-[var(--card-color)] brightness-95 transition-all duration-700 group-hover:brightness-100',
+          isFeatured ? 'w-full md:w-3/5 lg:w-2/3' : 'w-full',
         )}
+      >
+        {post.featuredImage ? (
+          <img
+            src={post.featuredImage}
+            alt={post.title}
+            className='h-full w-full object-cover transition-transform duration-700 group-hover:scale-105'
+          />
+        ) : (
+          <div className='flex h-full w-full items-center justify-center opacity-10'>
+            <span className='premium-serif text-6xl font-black italic select-none'>
+              {post.title.charAt(0)}
+            </span>
+          </div>
+        )}
+
+        {/* Category Floating Badge */}
+        <div className='absolute top-4 left-4 z-20'>
+          <span
+            className={cn(
+              'inline-flex items-center rounded-sm bg-white/90 px-3 py-1 text-[10px] font-black tracking-widest text-black uppercase shadow-sm backdrop-blur-sm dark:bg-black/90 dark:text-white',
+            )}
+          >
+            {post.category}
+          </span>
+        </div>
       </div>
 
-      {/* Title */}
-      <h2
-        className='mb-2 text-lg font-semibold text-[var(--main-color)] transition-colors group-hover:text-[var(--secondary-color)]'
-        data-testid='blog-card-title'
+      {/* Content Area */}
+      <div
+        className={cn(
+          'flex flex-col justify-center',
+          isFeatured ? 'w-full py-4 md:w-2/5 lg:w-1/3' : 'w-full px-1',
+        )}
       >
-        {post.title}
-      </h2>
+        <div className='mb-3 flex items-center gap-3 font-mono text-[10px] tracking-tighter text-[var(--secondary-color)] uppercase opacity-50'>
+          <time dateTime={post.publishedAt}>{formattedDate}</time>
+          <span className='h-px w-4 bg-[var(--border-color)]' />
+          <span>{post.readingTime} min read</span>
+        </div>
 
-      {/* Description */}
-      <p
-        className='mb-4 line-clamp-2 flex-grow text-sm text-[var(--secondary-color)]'
-        data-testid='blog-card-description'
-      >
-        {post.description}
-      </p>
+        <Link
+          href={`/academy/${post.slug}`}
+          className='group/title'
+          aria-label={`Read ${post.title}`}
+        >
+          <h2
+            className={cn(
+              'leading-[1.1] font-bold tracking-tight text-[var(--main-color)] transition-colors group-hover/title:text-[var(--secondary-color)]',
+              isFeatured
+                ? 'mb-6 text-3xl md:text-5xl lg:text-6xl'
+                : 'mb-4 line-clamp-2 text-2xl',
+            )}
+          >
+            {post.title}
+          </h2>
+        </Link>
 
-      {/* Meta Information */}
-      <footer className='flex items-center justify-between text-xs text-[var(--secondary-color)]'>
-        <time dateTime={post.publishedAt} data-testid='blog-card-date'>
-          {formattedDate}
-        </time>
-        <span data-testid='blog-card-reading-time'>
-          {post.readingTime} min read
-        </span>
-      </footer>
+        <p
+          className={cn(
+            'leading-relaxed text-[var(--secondary-color)] opacity-70',
+            isFeatured
+              ? 'mb-8 text-lg md:text-xl'
+              : 'mb-6 line-clamp-3 text-sm',
+          )}
+        >
+          {post.description}
+        </p>
+
+        {/* Read More Link */}
+        <Link
+          href={`/academy/${post.slug}`}
+          className='inline-flex items-center gap-2 text-[11px] font-black tracking-[0.2em] text-[var(--main-color)] uppercase underline-offset-8 hover:underline'
+        >
+          Read Article
+          <svg
+            width='12'
+            height='12'
+            viewBox='0 0 24 24'
+            fill='none'
+            stroke='currentColor'
+            strokeWidth='3'
+            strokeLinecap='square'
+            strokeLinejoin='miter'
+          >
+            <path d='M5 12h14M12 5l7 7-7 7' />
+          </svg>
+        </Link>
+      </div>
+
+      {/* Hover Decorator for standard cards */}
+      {!isFeatured && (
+        <div className='absolute right-1 -bottom-4 left-1 h-[1px] origin-left scale-x-0 bg-[var(--main-color)] opacity-10 transition-transform duration-500 group-hover:scale-x-100' />
+      )}
     </article>
   );
 }

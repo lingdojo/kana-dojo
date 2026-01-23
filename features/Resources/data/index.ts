@@ -92,11 +92,17 @@ const resourcesByCategory: Record<string, Resource[]> = {
 let allResourcesCache: Resource[] | null = null;
 
 /**
- * Get all resources from all categories
+ * Get all resources from all categories, deduplicated by ID
  */
 export function getAllResources(): Resource[] {
   if (allResourcesCache === null) {
-    allResourcesCache = Object.values(resourcesByCategory).flat();
+    const rawResources = Object.values(resourcesByCategory).flat();
+    // Deduplicate by ID to prevent key collisions in React
+    const uniqueMap = new Map<string, Resource>();
+    rawResources.forEach(resource => {
+      uniqueMap.set(resource.id, resource);
+    });
+    allResourcesCache = Array.from(uniqueMap.values());
   }
   return allResourcesCache;
 }
