@@ -1183,7 +1183,10 @@
     "backgroundColor": "oklch(20.0% 0.040 235.0 / 1)",
     "mainColor": "oklch(78.0% 0.205 35.0 / 1)",
     "secondaryColor": "oklch(88.0% 0.065 210.0 / 1)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "VaishnavIUpadyaya",
+    "completedPR": 1636
   },
   {
     "id": "shoji-glow",
