@@ -284,7 +284,11 @@ const baseThemeSets: BaseThemeGroup[] = [
         id: 'sake-glass',
         backgroundColor: 'oklch(98.0% 0.004 90.0 / 1)',
         mainColor: 'oklch(55.0% 0.035 250.0 / 1)',
-        secondaryColor: 'oklch(70.0% 0.015 90.0 / 1)',
+        secondaryColor: 'oklch(70.0% 0.015 90.0 / 1)'},{
+        id: 'winter-kimono',
+        backgroundColor: 'oklch(16.0% 0.040 260.0 / 1)',
+        mainColor: 'oklch(88.0% 0.020 240.0 / 1)',
+        secondaryColor: 'oklch(68.0% 0.110 310.0 / 1)',
       },
       {
         id: 'ramune-fizz',
