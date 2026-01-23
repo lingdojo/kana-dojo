@@ -241,6 +241,12 @@ const baseThemeSets: BaseThemeGroup[] = [
     isLight: false,
     themes: [
       {
+        {
+  id: 'maple-lacquer',
+  backgroundColor: 'oklch(17.0% 0.035 20.0 / 1)',
+  mainColor: 'oklch(65.0% 0.215 30.0 / 1)',
+  secondaryColor: 'oklch(78.0% 0.135 70.0 / 1)'
+},
         id: 'light',
         backgroundColor: 'oklch(100.00% 0.0000 89.88 / 1)',
         mainColor: 'oklch(0.00% 0.0000 0.00 / 1)',
