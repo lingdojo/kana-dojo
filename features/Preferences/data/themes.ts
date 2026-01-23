@@ -317,21 +317,29 @@ const baseThemeSets: BaseThemeGroup[] = [
     isLight: false,
     themes: [
       {
+        id: 'shoji-glow',
+        backgroundColor: 'oklch(94.0% 0.010 95.0 / 1)',
+        mainColor: 'oklch(45.0% 0.075 65.0 / 1)',
+        secondaryColor: 'oklch(60.0% 0.045 30.0 / 1)',
+      },
+      {
         id: 'seaside-udon',
         backgroundColor: 'oklch(92.0% 0.015 210.0 / 1)',
         mainColor: 'oklch(60.0% 0.130 215.0 / 1)',
-        secondaryColor: 'oklch(85.0% 0.155 95.0 / 1)'
+        secondaryColor: 'oklch(85.0% 0.155 95.0 / 1)',
       },
       {
         id: 'koi-pond',
         backgroundColor: 'oklch(20.0% 0.048 240.0 / 1)',
         mainColor: 'oklch(80.0% 0.175 55.0 / 1)',
-        secondaryColor: 'oklch(70.0% 0.130 220.0 / 1)'},{
-  id: 'seaside-udon',
-  backgroundColor: 'oklch(92.0% 0.015 210.0 / 1)',
-  mainColor: 'oklch(60.0% 0.130 215.0 / 1)',
-  secondaryColor: 'oklch(85.0% 0.155 95.0 / 1)'
-},
+        secondaryColor: 'oklch(70.0% 0.130 220.0 / 1)',
+      },
+      {
+        id: 'seaside-udon',
+        backgroundColor: 'oklch(92.0% 0.015 210.0 / 1)',
+        mainColor: 'oklch(60.0% 0.130 215.0 / 1)',
+        secondaryColor: 'oklch(85.0% 0.155 95.0 / 1)',
+      },
       {
         id: 'tsuyu-drizzle',
         backgroundColor: 'oklch(22.0% 0.015 250.0 / 1)',
@@ -1283,7 +1291,11 @@ const baseThemeSets: BaseThemeGroup[] = [
         id: 'plaza-snow',
         backgroundColor: 'oklch(97.0% 0.006 240.0 / 1)',
         mainColor: 'oklch(40.0% 0.035 260.0 / 1)',
-        secondaryColor: 'oklch(65.0% 0.120 220.0 / 1)',
+        secondaryColor: 'oklch(65.0% 0.120 220.0 / 1)'},{
+        id: 'quiet-library',
+        backgroundColor: 'oklch(92.0% 0.012 90.0 / 1)',
+        mainColor: 'oklch(35.0% 0.085 255.0 / 1)',
+        secondaryColor: 'oklch(55.0% 0.055 65.0 / 1)',
       },
     ],
   },
