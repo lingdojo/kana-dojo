@@ -242,6 +242,14 @@ const baseThemeSets: BaseThemeGroup[] = [
         mainColor: 'oklch(65.0% 0.195 40.0 / 1)',
         secondaryColor: 'oklch(75.0% 0.145 85.0 / 1)',
       },
+
+      {
+        id: 'tsuyu-drizzle',
+        backgroundColor: 'oklch(22.0% 0.015 250.0 / 1)',
+        mainColor: 'oklch(72.0% 0.105 230.0 / 1)',
+        secondaryColor: 'oklch(78.0% 0.025 260.0 / 1)',
+      },
+      
       {
         id: 'vending-glow',
         backgroundColor: 'oklch(16.0% 0.025 280.0 / 1)',
