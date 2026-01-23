@@ -1306,6 +1306,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         mainColor: 'oklch(92.0% 0.045 95.0 / 1)',
         secondaryColor: 'oklch(64.0% 0.210 28.0 / 1)',
       },
+      {
+        id: 'neon-arcade',
+        backgroundColor: 'oklch(13.0% 0.055 300.0 / 1)',
+        mainColor: 'oklch(78.0% 0.220 330.0 / 1)',
+        secondaryColor: 'oklch(82.0% 0.185 190.0 / 1)',
+      },
     ],
   },
   {
