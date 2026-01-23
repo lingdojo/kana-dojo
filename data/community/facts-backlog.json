@@ -833,7 +833,7 @@
   {
     "id": 123,
     "fact": "There's a Japanese word 'miryoku' (魅力) for charm or attractiveness that draws people in - the quality that makes things captivating.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 124,
