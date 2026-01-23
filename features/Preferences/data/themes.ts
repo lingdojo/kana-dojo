@@ -1310,7 +1310,7 @@ const baseThemeSets: BaseThemeGroup[] = [
         id: 'neon-arcade',
         backgroundColor: 'oklch(13.0% 0.055 300.0 / 1)',
         mainColor: 'oklch(78.0% 0.220 330.0 / 1)',
-        secondaryColor: 'oklch(82.0% 0.185 190.0 / 1)'
+        secondaryColor: 'oklch(82.0% 0.185 190.0 / 1)',
       },
     ],
   },
