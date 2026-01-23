@@ -217,6 +217,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         mainColor: 'oklch(100.00% 0.0000 89.88 / 1)',
         secondaryColor: 'oklch(80.54% 0.0000 89.88 / 1)',
       },
+      {
+        id: 'shinto-portal',
+        backgroundColor: 'oklch(18.0% 0.040 15.0 / 1)',
+        mainColor: 'oklch(58.0% 0.210 25.0 / 1)',
+        secondaryColor: 'oklch(88.0% 0.055 90.0 / 1)'
+      },
     ],
   },
 
