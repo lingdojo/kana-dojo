@@ -1276,7 +1276,10 @@
     "backgroundColor": "oklch(17.0% 0.035 20.0 / 1)",
     "mainColor": "oklch(65.0% 0.215 30.0 / 1)",
     "secondaryColor": "oklch(78.0% 0.135 70.0 / 1)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "Master-Gamer-glitch",
+    "completedPR": 1603
   },
   {
     "id": "plaza-snow",
