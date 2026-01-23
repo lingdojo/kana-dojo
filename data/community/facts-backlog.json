@@ -818,7 +818,7 @@
   {
     "id": 120,
     "fact": "Japan has more Michelin-starred restaurants than any other country - Tokyo alone has more stars than Paris.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 121,
