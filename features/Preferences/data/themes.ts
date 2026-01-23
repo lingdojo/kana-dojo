@@ -1291,11 +1291,19 @@ const baseThemeSets: BaseThemeGroup[] = [
         id: 'plaza-snow',
         backgroundColor: 'oklch(97.0% 0.006 240.0 / 1)',
         mainColor: 'oklch(40.0% 0.035 260.0 / 1)',
-        secondaryColor: 'oklch(65.0% 0.120 220.0 / 1)'},{
+        secondaryColor: 'oklch(65.0% 0.120 220.0 / 1)',
+      },
+      {
         id: 'quiet-library',
         backgroundColor: 'oklch(92.0% 0.012 90.0 / 1)',
         mainColor: 'oklch(35.0% 0.085 255.0 / 1)',
         secondaryColor: 'oklch(55.0% 0.055 65.0 / 1)',
+      },
+      {
+        id: 'karasu-black',
+        backgroundColor: 'oklch(14.0% 0.010 270.0 / 1)',
+        mainColor: 'oklch(72.0% 0.055 200.0 / 1)',
+        secondaryColor: 'oklch(62.0% 0.095 320.0 / 1)',
       },
     ],
   },
