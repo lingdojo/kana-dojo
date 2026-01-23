@@ -273,6 +273,12 @@ const baseThemeSets: BaseThemeGroup[] = [
     icon: Moon,
     themes: [
       {
+        id: 'winter-kimono',
+        backgroundColor: 'oklch(16.0% 0.040 260.0 / 1)',
+        mainColor: 'oklch(88.0% 0.020 240.0 / 1)',
+        secondaryColor: 'oklch(68.0% 0.110 310.0 / 1)',
+      },
+      {
         id: 'ramune-fizz',
         backgroundColor: 'oklch(95.0% 0.020 210.0 / 1)',
         mainColor: 'oklch(70.0% 0.170 205.0 / 1)',
