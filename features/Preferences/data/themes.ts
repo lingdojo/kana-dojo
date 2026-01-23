@@ -316,6 +316,12 @@ const baseThemeSets: BaseThemeGroup[] = [
     isLight: false,
     themes: [
       {
+  id: 'seaside-udon',
+  backgroundColor: 'oklch(92.0% 0.015 210.0 / 1)',
+  mainColor: 'oklch(60.0% 0.130 215.0 / 1)',
+  secondaryColor: 'oklch(85.0% 0.155 95.0 / 1)'
+},
+      {
         id: 'tsuyu-drizzle',
         backgroundColor: 'oklch(22.0% 0.015 250.0 / 1)',
         mainColor: 'oklch(72.0% 0.105 230.0 / 1)',
