@@ -300,39 +300,45 @@
     "meaning": "Never give up"
   },
   {
-  "japanese": "急いては事を仕損じる",
-  "romaji": "Seite wa koto wo shisonjiru",
-  "english": "Haste will spoil things",
-  "meaning": "Haste makes waste"
-},
-{
-  "japanese": "隣の花は赤い",
-  "romaji": "Tonari no hana wa akai",
-  "english": "The neighbor's flowers are red",
-  "meaning": "The grass is always greener on the other side"
-},
-{
-  "japanese": "頭隠して尻隠さず",
-  "romaji": "Atama kakushite shiri kakusazu",
-  "english": "Hide your head, but not your butt",
-  "meaning": "Trying to hide something obvious"
-},
-{
-  "japanese": "花は桜木人は武士",
-  "romaji": "Hana wa sakuragi hito wa bushi",
-  "english": "Among flowers, the cherry blossom; among men, the warrior",
-  "meaning": "The best of each kind"
-},
-{
-  "japanese": "猫の手も借りたい",
-  "romaji": "Neko no te mo karitai",
-  "english": "I'd even borrow a cat's paw",
-  "meaning": "Extremely busy"
-},
-{
-  "japanese": "鬼に金棒",
-  "romaji": "Oni ni kanabou",
-  "english": "An iron club to an ogre",
-  "meaning": "Making someone strong even stronger"
-}
+    "japanese": "急いては事を仕損じる",
+    "romaji": "Seite wa koto wo shisonjiru",
+    "english": "Haste will spoil things",
+    "meaning": "Haste makes waste"
+  },
+  {
+    "japanese": "隣の花は赤い",
+    "romaji": "Tonari no hana wa akai",
+    "english": "The neighbor's flowers are red",
+    "meaning": "The grass is always greener on the other side"
+  },
+  {
+    "japanese": "頭隠して尻隠さず",
+    "romaji": "Atama kakushite shiri kakusazu",
+    "english": "Hide your head, but not your butt",
+    "meaning": "Trying to hide something obvious"
+  },
+  {
+    "japanese": "花は桜木人は武士",
+    "romaji": "Hana wa sakuragi hito wa bushi",
+    "english": "Among flowers, the cherry blossom; among men, the warrior",
+    "meaning": "The best of each kind"
+  },
+  {
+    "japanese": "猫の手も借りたい",
+    "romaji": "Neko no te mo karitai",
+    "english": "I'd even borrow a cat's paw",
+    "meaning": "Extremely busy"
+  },
+  {
+    "japanese": "鬼に金棒",
+    "romaji": "Oni ni kanabou",
+    "english": "An iron club to an ogre",
+    "meaning": "Making someone strong even stronger"
+  },
+  {
+    "japanese": "鶴の一声",
+    "romaji": "Tsuru no hitokoe",
+    "english": "One cry of the crane",
+    "meaning": "A single influential person settles a matter"
+  }
 ]
