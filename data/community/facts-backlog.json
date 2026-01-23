@@ -813,7 +813,7 @@
   {
     "id": 119,
     "fact": "There's a Japanese practice 'meshi' (召し) where a boss inviting you for a meal is essentially a command, not a request.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 120,
