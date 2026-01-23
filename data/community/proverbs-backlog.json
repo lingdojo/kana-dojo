@@ -763,7 +763,8 @@
     "romaji": "Kaeru no ko wa kaeru",
     "english": "A frog's child is a frog",
     "meaning": "Children resemble their parents",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 82,
@@ -771,7 +772,7 @@
     "romaji": "Idobata kaigi",
     "english": "Well-side conference",
     "meaning": "Neighborhood gossip",
-    "issued": false
+    "issued": true
   },
   {
     "id": 83,
