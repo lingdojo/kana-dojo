@@ -241,12 +241,12 @@ const baseThemeSets: BaseThemeGroup[] = [
     isLight: false,
     themes: [
       {
-        {
-  id: 'maple-lacquer',
-  backgroundColor: 'oklch(17.0% 0.035 20.0 / 1)',
-  mainColor: 'oklch(65.0% 0.215 30.0 / 1)',
-  secondaryColor: 'oklch(78.0% 0.135 70.0 / 1)'
-},
+        id: 'maple-lacquer',
+        backgroundColor: 'oklch(17.0% 0.035 20.0 / 1)',
+        mainColor: 'oklch(65.0% 0.215 30.0 / 1)',
+        secondaryColor: 'oklch(78.0% 0.135 70.0 / 1)',
+      },
+      {
         id: 'light',
         backgroundColor: 'oklch(100.00% 0.0000 89.88 / 1)',
         mainColor: 'oklch(0.00% 0.0000 0.00 / 1)',
@@ -322,6 +322,12 @@ const baseThemeSets: BaseThemeGroup[] = [
     icon: Moon,
     isLight: false,
     themes: [
+      {
+        id: 'mountain-cedar',
+        backgroundColor: 'oklch(20.0% 0.020 150.0 / 1)',
+        mainColor: 'oklch(70.0% 0.105 145.0 / 1)',
+        secondaryColor: 'oklch(60.0% 0.055 110.0 / 1)',
+      },
       {
         id: 'shoji-glow',
         backgroundColor: 'oklch(94.0% 0.010 95.0 / 1)',
