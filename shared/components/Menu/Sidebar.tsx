@@ -20,6 +20,8 @@ import { removeLocaleFromPath } from '@/shared/lib/pathUtils';
 import type { Experiment } from '@/shared/data/experiments';
 import { ActionButton } from '@/shared/components/ui/ActionButton';
 
+const SIDEBAR_SECTION_STORAGE_PREFIX = 'sidebar-collapsible-';
+
 // ============================================================================
 // Types
 // ============================================================================
@@ -307,9 +309,30 @@ const Sidebar = () => {
   const [loadedExperiments, setLoadedExperiments] = useState<Experiment[]>([]);
 
   // Collapse state for all collapsible sections
-  const [isAcademyExpanded, setIsAcademyExpanded] = useState(false);
-  const [isToolsExpanded, setIsToolsExpanded] = useState(false);
-  const [isExperimentsExpanded, setIsExperimentsExpanded] = useState(false);
+  const [isAcademyExpanded, setIsAcademyExpanded] = useState(() => {
+    if (typeof window === 'undefined') return false;
+
+    const stored = sessionStorage.getItem(
+      `${SIDEBAR_SECTION_STORAGE_PREFIX}academy`,
+    );
+    return stored === null ? false : stored === 'true';
+  });
+  const [isToolsExpanded, setIsToolsExpanded] = useState(() => {
+    if (typeof window === 'undefined') return false;
+
+    const stored = sessionStorage.getItem(
+      `${SIDEBAR_SECTION_STORAGE_PREFIX}tools`,
+    );
+    return stored === null ? false : stored === 'true';
+  });
+  const [isExperimentsExpanded, setIsExperimentsExpanded] = useState(() => {
+    if (typeof window === 'undefined') return false;
+
+    const stored = sessionStorage.getItem(
+      `${SIDEBAR_SECTION_STORAGE_PREFIX}experiments`,
+    );
+    return stored === null ? false : stored === 'true';
+  });
 
   useEffect(() => {
     // Dynamically import experiments data
@@ -319,8 +342,35 @@ const Sidebar = () => {
   }, []);
 
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    sessionStorage.setItem(
+      `${SIDEBAR_SECTION_STORAGE_PREFIX}academy`,
+      String(isAcademyExpanded),
+    );
+  }, [isAcademyExpanded]);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    sessionStorage.setItem(
+      `${SIDEBAR_SECTION_STORAGE_PREFIX}tools`,
+      String(isToolsExpanded),
+    );
+  }, [isToolsExpanded]);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    sessionStorage.setItem(
+      `${SIDEBAR_SECTION_STORAGE_PREFIX}experiments`,
+      String(isExperimentsExpanded),
+    );
+  }, [isExperimentsExpanded]);
+
+  useEffect(() => {
     if (pathWithoutLocale.startsWith('/experiments')) {
-      setIsExperimentsExpanded(true);
+      setIsExperimentsExpanded(prev => (prev ? prev : true));
     }
   }, [pathWithoutLocale]);
 
@@ -426,10 +476,10 @@ const Sidebar = () => {
               : isExperimentsExpanded;
         const onToggle =
           section.title === 'Academy'
-            ? () => setIsAcademyExpanded(!isAcademyExpanded)
+            ? () => setIsAcademyExpanded(prev => !prev)
             : section.title === 'Tools'
-              ? () => setIsToolsExpanded(!isToolsExpanded)
-              : () => setIsExperimentsExpanded(!isExperimentsExpanded);
+              ? () => setIsToolsExpanded(prev => !prev)
+              : () => setIsExperimentsExpanded(prev => !prev);
 
         return (
           <div key={section.title} className='contents'>

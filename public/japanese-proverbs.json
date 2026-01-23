@@ -1,5 +1,11 @@
 [
   {
+    "japanese": "善は急げ",
+    "romaji": "Zen wa isoge",
+    "english": "Hurry to do good",
+    "meaning": "If it's worth doing, do it at once"
+  },
+  {
     "japanese": "覆水盆に返らず",
     "romaji": "Fukusui bon ni kaerazu",
     "english": "Spilled water will not return to the tray",
@@ -342,9 +348,34 @@
     "meaning": "A single influential person settles a matter"
   },
   {
-  "japanese": "旅は道連れ世は情け",
-  "romaji": "Tabi wa michizure yo wa nasake",
-  "english": "Travel needs companions; life needs kindness",
-  "meaning": "Relationships and compassion matter"
+    "japanese": "旅は道連れ世は情け",
+    "romaji": "Tabi wa michizure yo wa nasake",
+    "english": "Travel needs companions; life needs kindness",
+    "meaning": "Relationships and compassion matter"
+  },
+  {
+    "japanese": "捕らぬ狸の皮算用",
+    "romaji": "Toranu tanuki no kawazan'you",
+    "english": "Counting a raccoon dog's skins before catching it",
+    "meaning": "Don't count your chickens before they hatch"
+  },
+  {
+    "japanese": "鬼の居ぬ間に洗濯",
+    "romaji": "Oni no inuma ni sentaku",
+    "english": "Do laundry while the ogre is away",
+    "meaning": "Take advantage of someone's absence"
+  },
+  {
+    "japanese": "針の穴から天を覗く",
+    "romaji": "Hari no ana kara ten wo nozoku",
+    "english": "Peek at the sky through a needle's eye",
+    "meaning": "A narrow viewpoint leads to poor judgment"
+  },
+  {
+  "japanese": "月とすっぽん",
+  "romaji": "Tsuki to suppon",
+  "english": "The moon and a turtle",
+  "meaning": "Vast difference; not comparable"
 }
+
 ]
