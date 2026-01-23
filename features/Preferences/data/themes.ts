@@ -249,7 +249,7 @@ const baseThemeSets: BaseThemeGroup[] = [
         mainColor: 'oklch(72.0% 0.105 230.0 / 1)',
         secondaryColor: 'oklch(78.0% 0.025 260.0 / 1)',
       },
-      
+
       {
         id: 'vending-glow',
         backgroundColor: 'oklch(16.0% 0.025 280.0 / 1)',
@@ -1262,6 +1262,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         backgroundColor: 'oklch(18.0% 0.010 270.0 / 1)',
         mainColor: 'oklch(78.0% 0.010 90.0 / 1)',
         secondaryColor: 'oklch(45.0% 0.020 260.0 / 1)',
+      },
+      {
+        id: 'maple-lacquer',
+        backgroundColor: 'oklch(17.0% 0.035 20.0 / 1)',
+        mainColor: 'oklch(65.0% 0.215 30.0 / 1)',
+        secondaryColor: 'oklch(78.0% 0.135 70.0 / 1)',
       },
     ],
   },
