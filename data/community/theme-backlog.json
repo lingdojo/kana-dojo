@@ -1291,7 +1291,10 @@
     "backgroundColor": "oklch(97.0% 0.006 240.0 / 1)",
     "mainColor": "oklch(40.0% 0.035 260.0 / 1)",
     "secondaryColor": "oklch(65.0% 0.120 220.0 / 1)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "glenjaysondmello",
+    "completedPR": 1621
   },
   {
     "id": "karasu-black",
