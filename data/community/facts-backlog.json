@@ -938,7 +938,7 @@
   {
     "id": 144,
     "fact": "Japan has a stone you can lick to predict the weather at Kamigamo Shrine - if it tastes salty, rain is coming.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 145,
