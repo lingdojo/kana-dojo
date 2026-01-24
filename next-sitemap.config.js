@@ -51,6 +51,7 @@ const sitemapConfig = {
       '/kanji',
       '/vocabulary',
       '/translate',
+      '/conjugate',
       '/academy',
       '/faq',
       '/hiragana-practice',
@@ -60,6 +61,56 @@ const sitemapConfig = {
       '/jlpt/n4',
       '/jlpt/n3',
     ];
+
+    // Popular Japanese verbs for conjugator sitemap entries
+    // These are commonly searched verbs that should be indexed
+    const popularVerbs = [
+      // Most common verbs
+      'する',
+      '行く',
+      '来る',
+      '見る',
+      '食べる',
+      '飲む',
+      '書く',
+      '読む',
+      '話す',
+      '聞く',
+      '買う',
+      '売る',
+      '作る',
+      '使う',
+      '思う',
+      '知る',
+      '分かる',
+      '出る',
+      '入る',
+      '帰る',
+      '待つ',
+      '持つ',
+      '取る',
+      '置く',
+      // JLPT N5 essential verbs
+      'ある',
+      'いる',
+      'なる',
+      '言う',
+      '会う',
+      '開ける',
+      '閉める',
+      // Common irregular and special verbs
+      '勉強する',
+      '運動する',
+      '料理する',
+      '掃除する',
+    ];
+
+    // Conjugator verb-specific paths with appropriate priorities
+    const conjugatorVerbPaths = popularVerbs.map(verb => ({
+      path: `/conjugate?verb=${encodeURIComponent(verb)}`,
+      priority: 0.7,
+      changefreq: 'monthly',
+    }));
 
     // Resource library paths with appropriate priorities
     // Main resources page: 0.8 priority
@@ -350,7 +401,13 @@ const sitemapConfig = {
         buildEntry(path, priority, changefreq),
     );
 
-    return [...baseEntries, ...resourceEntries];
+    // Build entries for conjugator verb-specific paths
+    const conjugatorEntries = conjugatorVerbPaths.map(
+      ({ path, priority, changefreq }) =>
+        buildEntry(path, priority, changefreq),
+    );
+
+    return [...baseEntries, ...resourceEntries, ...conjugatorEntries];
   },
   exclude: [
     '/api/*',
@@ -383,6 +440,7 @@ const sitemapConfig = {
       '/kana': 0.9,
       '/kanji': 0.9,
       '/vocabulary': 0.9,
+      '/conjugate': 0.9,
       '/hiragana-practice': 0.85,
       '/katakana-practice': 0.85,
       '/kanji-practice': 0.85,
@@ -398,6 +456,7 @@ const sitemapConfig = {
       '/kana': 'weekly',
       '/kanji': 'weekly',
       '/vocabulary': 'weekly',
+      '/conjugate': 'weekly',
       '/hiragana-practice': 'weekly',
       '/katakana-practice': 'weekly',
       '/kanji-practice': 'weekly',

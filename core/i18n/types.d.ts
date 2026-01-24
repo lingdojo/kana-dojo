@@ -522,6 +522,303 @@ export interface BlogTranslations {
   };
 }
 
+export interface ConjugatorTranslations {
+  meta: {
+    title: string;
+    titleWithVerb: string;
+    description: string;
+    descriptionWithVerb: string;
+  };
+  header: {
+    title: string;
+    subtitle: string;
+  };
+  input: {
+    title: string;
+    hint: string;
+    placeholder: string;
+    conjugateButton: string;
+    conjugating: string;
+    clearButton: string;
+    keyboardHint: string;
+  };
+  results: {
+    loading: string;
+    empty: {
+      title: string;
+      hint: string;
+    };
+    statusMessage: string;
+    expandAll: string;
+    collapseAll: string;
+    copyAll: string;
+    copied: string;
+    copiedMessage: string;
+    formCount: string;
+  };
+  verbInfo: {
+    type: string;
+    stem: string;
+    ending: string;
+    compoundPrefix: string;
+    conjugationRules: string;
+  };
+  verbTypes: {
+    godan: {
+      label: string;
+      description: string;
+      rules: string;
+    };
+    ichidan: {
+      label: string;
+      description: string;
+      rules: string;
+    };
+    irregular: {
+      label: string;
+      description: string;
+      rules: string;
+    };
+    suru: {
+      label: string;
+      description: string;
+      rules: string;
+    };
+    kuru: {
+      label: string;
+      description: string;
+      rules: string;
+    };
+    aru: {
+      label: string;
+      description: string;
+      rules: string;
+    };
+    iku: {
+      label: string;
+      description: string;
+      rules: string;
+    };
+    honorific: {
+      label: string;
+      description: string;
+      rules: string;
+    };
+    unknown: {
+      label: string;
+      description: string;
+      rules: string;
+    };
+  };
+  categories: {
+    basic: {
+      name: string;
+      nameJa: string;
+    };
+    polite: {
+      name: string;
+      nameJa: string;
+    };
+    negative: {
+      name: string;
+      nameJa: string;
+    };
+    past: {
+      name: string;
+      nameJa: string;
+    };
+    volitional: {
+      name: string;
+      nameJa: string;
+    };
+    potential: {
+      name: string;
+      nameJa: string;
+    };
+    passive: {
+      name: string;
+      nameJa: string;
+    };
+    causative: {
+      name: string;
+      nameJa: string;
+    };
+    'causative-passive': {
+      name: string;
+      nameJa: string;
+    };
+    imperative: {
+      name: string;
+      nameJa: string;
+    };
+    conditional: {
+      name: string;
+      nameJa: string;
+    };
+    'tai-form': {
+      name: string;
+      nameJa: string;
+    };
+    progressive: {
+      name: string;
+      nameJa: string;
+    };
+    honorific: {
+      name: string;
+      nameJa: string;
+    };
+  };
+  forms: {
+    polite: string;
+    form: string;
+    forms: string;
+    reading: string;
+    romaji: string;
+    expand: string;
+    collapse: string;
+    copy: string;
+    copyForm: string;
+  };
+  history: {
+    title: string;
+    empty: {
+      title: string;
+      hint: string;
+    };
+    verbCount: string;
+    verbCountPlural: string;
+    clearButton: string;
+    clearDialog: {
+      title: string;
+      description: string;
+      cancel: string;
+      confirm: string;
+    };
+    removeEntry: string;
+    timeAgo: {
+      now: string;
+      minutes: string;
+      hours: string;
+      days: string;
+    };
+  };
+  share: {
+    button: string;
+    copied: string;
+    error: string;
+    title: string;
+    text: string;
+  };
+  errors: {
+    emptyInput: string;
+    invalidCharacters: string;
+    unknownVerb: string;
+    ambiguousVerb: string;
+    conjugationFailed: string;
+  };
+  accessibility: {
+    mainRegion: string;
+    inputRegion: string;
+    resultsRegion: string;
+    historyRegion: string;
+    historySidebar: string;
+    categoryToggle: string;
+    categoryTogglePlural: string;
+    categoryForms: string;
+    verbInfoRegion: string;
+    classificationDetails: string;
+    rulesExplanation: string;
+    showRules: string;
+    hideRules: string;
+    resultActions: string;
+    keyboardShortcuts: string;
+  };
+  seo: {
+    title: string;
+    intro: string;
+    verbIntro: string;
+    verbTypesTitle: string;
+    verbTypesGodan: {
+      title: string;
+      description: string;
+    };
+    verbTypesIchidan: {
+      title: string;
+      description: string;
+    };
+    verbTypesIrregular: {
+      title: string;
+      description: string;
+    };
+    commonFormsTitle: string;
+    commonForms: {
+      teForm: {
+        name: string;
+        description: string;
+        example: string;
+      };
+      masuForm: {
+        name: string;
+        description: string;
+        example: string;
+      };
+      potentialForm: {
+        name: string;
+        description: string;
+        example: string;
+      };
+      passiveForm: {
+        name: string;
+        description: string;
+        example: string;
+      };
+      causativeForm: {
+        name: string;
+        description: string;
+        example: string;
+      };
+    };
+    tipsTitle: string;
+    tips: string;
+    aboutTool: string;
+  };
+  faq: {
+    title: string;
+    expandAll: string;
+    collapseAll: string;
+    showMore: string;
+    showLess: string;
+    items: string;
+  };
+  relatedFeatures: {
+    title: string;
+    subtitle: string;
+    links: {
+      kana: {
+        title: string;
+        description: string;
+      };
+      kanji: {
+        title: string;
+        description: string;
+      };
+      vocabulary: {
+        title: string;
+        description: string;
+      };
+      translate: {
+        title: string;
+        description: string;
+      };
+      academy: {
+        title: string;
+        description: string;
+      };
+    };
+    footer: string;
+  };
+}
+
 /**
  * Complete translation structure with all namespaces
  */
@@ -537,6 +834,7 @@ export interface Translations {
   errors: ErrorsTranslations;
   menuInfo: MenuInfoTranslations;
   blog: BlogTranslations;
+  conjugator: ConjugatorTranslations;
 }
 
 /**
@@ -554,12 +852,13 @@ export type TranslationKey =
   | `settings.${keyof SettingsTranslations}`
   | `errors.${keyof ErrorsTranslations}`
   | `menuInfo.${keyof MenuInfoTranslations}`
-  | `blog.${keyof BlogTranslations}`;
+  | `blog.${keyof BlogTranslations}`
+  | `conjugator.${keyof ConjugatorTranslations}`;
 
 /**
  * Available namespaces
  */
-export type Namespace = 'common' | 'navigation' | 'kana' | 'kanji' | 'vocabulary' | 'achievements' | 'statistics' | 'settings' | 'errors' | 'menuInfo' | 'blog';
+export type Namespace = 'common' | 'navigation' | 'kana' | 'kanji' | 'vocabulary' | 'achievements' | 'statistics' | 'settings' | 'errors' | 'menuInfo' | 'blog' | 'conjugator';
 
 /**
  * Available languages
