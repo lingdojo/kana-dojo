@@ -893,7 +893,7 @@
   {
     "id": 135,
     "fact": "There's a Japanese concept 'itadakimasu' (いただきます) - said before eating - acknowledging all who contributed to the meal.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 136,
