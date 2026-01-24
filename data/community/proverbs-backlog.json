@@ -430,7 +430,10 @@
     "romaji": "Kega no koumyou",
     "english": "Fame from a mistake",
     "meaning": "A lucky break that comes from an error",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "iamnikhilranjan",
+    "completedPR": 1677
   },
   {
     "id": 43,
