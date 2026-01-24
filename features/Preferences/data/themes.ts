@@ -262,7 +262,7 @@ const baseThemeSets: BaseThemeGroup[] = [
         id: 'shinto-portal',
         backgroundColor: 'oklch(18.0% 0.040 15.0 / 1)',
         mainColor: 'oklch(58.0% 0.210 25.0 / 1)',
-        secondaryColor: 'oklch(88.0% 0.055 90.0 / 1)'
+        secondaryColor: 'oklch(88.0% 0.055 90.0 / 1)',
       },
     ],
   },
@@ -332,7 +332,9 @@ const baseThemeSets: BaseThemeGroup[] = [
         id: 'festival-yatai',
         backgroundColor: 'oklch(19.0% 0.030 35.0 / 1)',
         mainColor: 'oklch(78.0% 0.185 45.0 / 1)',
-        secondaryColor: 'oklch(88.0% 0.115 95.0 / 1)'},{
+        secondaryColor: 'oklch(88.0% 0.115 95.0 / 1)',
+      },
+      {
         id: 'mountain-cedar',
         backgroundColor: 'oklch(20.0% 0.020 150.0 / 1)',
         mainColor: 'oklch(70.0% 0.105 145.0 / 1)',
@@ -581,6 +583,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         backgroundColor: 'oklch(20.83% 0.0367 263.24 / 1)',
         mainColor: 'oklch(65.16% 0.1943 14.70 / 1)',
         secondaryColor: 'oklch(68.92% 0.1657 313.51 / 1)',
+      },
+      {
+        id: 'yukata-breeze',
+        backgroundColor: 'oklch(93.0% 0.012 240.0 / 1)',
+        mainColor: 'oklch(55.0% 0.165 230.0 / 1)',
+        secondaryColor: 'oklch(70.0% 0.115 185.0 / 1)',
       },
       {
         id: 'dusk-voyager',
