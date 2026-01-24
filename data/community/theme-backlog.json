@@ -1096,7 +1096,10 @@
     "backgroundColor": "oklch(93.0% 0.012 240.0 / 1)",
     "mainColor": "oklch(55.0% 0.165 230.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.115 185.0 / 1)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "tanviphadke22",
+    "completedPR": 1765
   },
   {
     "id": "komorebi-green",
