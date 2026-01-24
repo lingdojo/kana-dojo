@@ -1,10 +1,9 @@
 import { create } from 'zustand';
-import themeSets from '@/features/Preferences/data/themes';
-import fonts from '@/features/Preferences/data/fonts';
+import { themeSets, fonts } from '@/features/Preferences';
 import { Random } from 'random-js';
 
-// The special theme ID that triggers crazy mode
-export const KYOKI_THEME_ID = 'kyoki';
+// The special theme ID that triggers crazy mode ("?" theme)
+export const KYOKI_THEME_ID = '?';
 
 interface CrazyModeState {
   activeThemeId: string | null;
@@ -19,7 +18,7 @@ const useCrazyModeStore = create<CrazyModeState>()(set => ({
   activeFontName: null,
 
   randomize: () => {
-    // Flatten themes to get all available theme IDs, excluding kyoki itself
+    // Flatten themes to get all available theme IDs, excluding the crazy mode theme
     const allThemes = themeSets
       .flatMap(group => group.themes)
       .filter(theme => theme.id !== KYOKI_THEME_ID);
@@ -30,9 +29,9 @@ const useCrazyModeStore = create<CrazyModeState>()(set => ({
 
     set({
       activeThemeId: randomTheme.id,
-      activeFontName: randomFont?.name ?? null
+      activeFontName: randomFont?.name ?? null,
     });
-  }
+  },
 }));
 
 export default useCrazyModeStore;

@@ -241,6 +241,12 @@ const baseThemeSets: BaseThemeGroup[] = [
     isLight: false,
     themes: [
       {
+        id: 'maple-lacquer',
+        backgroundColor: 'oklch(17.0% 0.035 20.0 / 1)',
+        mainColor: 'oklch(65.0% 0.215 30.0 / 1)',
+        secondaryColor: 'oklch(78.0% 0.135 70.0 / 1)',
+      },
+      {
         id: 'light',
         backgroundColor: 'oklch(100.00% 0.0000 89.88 / 1)',
         mainColor: 'oklch(0.00% 0.0000 0.00 / 1)',
@@ -251,6 +257,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         backgroundColor: 'oklch(22.67% 0.0000 89.88 / 1)',
         mainColor: 'oklch(100.00% 0.0000 89.88 / 1)',
         secondaryColor: 'oklch(80.54% 0.0000 89.88 / 1)',
+      },
+      {
+        id: 'shinto-portal',
+        backgroundColor: 'oklch(18.0% 0.040 15.0 / 1)',
+        mainColor: 'oklch(58.0% 0.210 25.0 / 1)',
+        secondaryColor: 'oklch(88.0% 0.055 90.0 / 1)'
       },
     ],
   },
@@ -284,6 +296,7 @@ const baseThemeSets: BaseThemeGroup[] = [
         mainColor: 'oklch(55.0% 0.035 250.0 / 1)',
         secondaryColor: 'oklch(70.0% 0.015 90.0 / 1)',
       },
+
       {
         id: 'ramune-fizz',
         backgroundColor: 'oklch(85.00% 0.040 210.0 / 1)',
@@ -316,21 +329,35 @@ const baseThemeSets: BaseThemeGroup[] = [
     isLight: false,
     themes: [
       {
+        id: 'mountain-cedar',
+        backgroundColor: 'oklch(20.0% 0.020 150.0 / 1)',
+        mainColor: 'oklch(70.0% 0.105 145.0 / 1)',
+        secondaryColor: 'oklch(60.0% 0.055 110.0 / 1)',
+      },
+      {
+        id: 'shoji-glow',
+        backgroundColor: 'oklch(94.0% 0.010 95.0 / 1)',
+        mainColor: 'oklch(45.0% 0.075 65.0 / 1)',
+        secondaryColor: 'oklch(60.0% 0.045 30.0 / 1)',
+      },
+      {
         id: 'seaside-udon',
         backgroundColor: 'oklch(92.0% 0.015 210.0 / 1)',
         mainColor: 'oklch(60.0% 0.130 215.0 / 1)',
-        secondaryColor: 'oklch(85.0% 0.155 95.0 / 1)'
+        secondaryColor: 'oklch(85.0% 0.155 95.0 / 1)',
       },
       {
         id: 'koi-pond',
         backgroundColor: 'oklch(20.0% 0.048 240.0 / 1)',
         mainColor: 'oklch(80.0% 0.175 55.0 / 1)',
-        secondaryColor: 'oklch(70.0% 0.130 220.0 / 1)'},{
-  id: 'seaside-udon',
-  backgroundColor: 'oklch(92.0% 0.015 210.0 / 1)',
-  mainColor: 'oklch(60.0% 0.130 215.0 / 1)',
-  secondaryColor: 'oklch(85.0% 0.155 95.0 / 1)'
-},
+        secondaryColor: 'oklch(70.0% 0.130 220.0 / 1)',
+      },
+      {
+        id: 'seaside-udon',
+        backgroundColor: 'oklch(92.0% 0.015 210.0 / 1)',
+        mainColor: 'oklch(60.0% 0.130 215.0 / 1)',
+        secondaryColor: 'oklch(85.0% 0.155 95.0 / 1)',
+      },
       {
         id: 'tsuyu-drizzle',
         backgroundColor: 'oklch(22.0% 0.015 250.0 / 1)',
@@ -1265,6 +1292,42 @@ const baseThemeSets: BaseThemeGroup[] = [
         backgroundColor: 'oklch(22.0% 0.042 230.0 / 1)',
         mainColor: 'oklch(75.0% 0.135 225.0 / 1)',
         secondaryColor: 'oklch(82.0% 0.100 215.0 / 1)',
+      },
+      {
+        id: 'sumi-charcoal',
+        backgroundColor: 'oklch(18.0% 0.010 270.0 / 1)',
+        mainColor: 'oklch(78.0% 0.010 90.0 / 1)',
+        secondaryColor: 'oklch(45.0% 0.020 260.0 / 1)',
+      },
+      {
+        id: 'maple-lacquer',
+        backgroundColor: 'oklch(17.0% 0.035 20.0 / 1)',
+        mainColor: 'oklch(65.0% 0.215 30.0 / 1)',
+        secondaryColor: 'oklch(78.0% 0.135 70.0 / 1)',
+      },
+      {
+        id: 'plaza-snow',
+        backgroundColor: 'oklch(97.0% 0.006 240.0 / 1)',
+        mainColor: 'oklch(40.0% 0.035 260.0 / 1)',
+        secondaryColor: 'oklch(65.0% 0.120 220.0 / 1)',
+      },
+      {
+        id: 'quiet-library',
+        backgroundColor: 'oklch(92.0% 0.012 90.0 / 1)',
+        mainColor: 'oklch(35.0% 0.085 255.0 / 1)',
+        secondaryColor: 'oklch(55.0% 0.055 65.0 / 1)',
+      },
+      {
+        id: 'karasu-black',
+        backgroundColor: 'oklch(14.0% 0.010 270.0 / 1)',
+        mainColor: 'oklch(72.0% 0.055 200.0 / 1)',
+        secondaryColor: 'oklch(62.0% 0.095 320.0 / 1)',
+      },
+      {
+        id: 'coastal-shrine',
+        backgroundColor: 'oklch(20.0% 0.040 235.0 / 1)',
+        mainColor: 'oklch(78.0% 0.205 35.0 / 1)',
+        secondaryColor: 'oklch(88.0% 0.065 210.0 / 1)',
       },
     ],
   },

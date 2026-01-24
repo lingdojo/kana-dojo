@@ -24,25 +24,16 @@ export interface SearchBarProps {
 }
 
 // ============================================================================
-// SearchBar Component
+// SearchBar Component (Editorial Style)
 // ============================================================================
 
 /**
- * SearchBar provides a search input with icon, result count, and clear button.
- *
- * Features:
- * - Search input with icon
- * - Display result count
- * - Clear button
- * - Accessible with ARIA labels and live regions
- * - Keyboard support (Escape to clear)
- *
- * @requirements 3.1, 8.1, 8.2, 8.4
+ * SearchBar provides a minimalist premium search input.
  */
 export function SearchBar({
   value,
   onChange,
-  placeholder = 'Search resources...',
+  placeholder = 'Search compendium...',
   resultCount,
   className,
   id,
@@ -62,7 +53,6 @@ export function SearchBar({
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    // Clear search on Escape
     if (e.key === 'Escape' && value.length > 0) {
       e.preventDefault();
       handleClear();
@@ -70,11 +60,11 @@ export function SearchBar({
   };
 
   return (
-    <div className={cn('relative', className)} role='search'>
+    <div className={cn('group relative', className)} role='search'>
       {/* Search Icon */}
       <Search
-        size={18}
-        className='absolute top-1/2 left-3 -translate-y-1/2 text-[var(--secondary-color)]'
+        size={20}
+        className='absolute top-1/2 left-0 -translate-y-1/2 text-[var(--main-color)] opacity-30 transition-opacity group-focus-within:opacity-100'
         aria-hidden='true'
       />
 
@@ -88,29 +78,31 @@ export function SearchBar({
         onKeyDown={handleKeyDown}
         placeholder={placeholder}
         className={cn(
-          'w-full rounded-xl border border-[var(--border-color)] bg-[var(--card-color)]',
-          'py-2.5 pr-20 pl-10 text-sm text-[var(--main-color)]',
-          'placeholder:text-[var(--secondary-color)]',
-          'transition-all duration-150',
-          'focus:border-[var(--main-color)] focus:ring-2 focus:ring-[var(--main-color)]/20 focus:outline-none',
-          'focus-visible:ring-2 focus-visible:ring-[var(--main-color)] focus-visible:ring-offset-2',
+          'w-full bg-transparent',
+          'py-4 pr-12 pl-8 text-lg font-medium text-[var(--main-color)] md:text-xl',
+          'placeholder:text-[var(--secondary-color)] placeholder:opacity-40',
+          'transition-all duration-300',
+          'focus:outline-none',
         )}
         aria-label='Search resources'
         aria-describedby={value.length > 0 ? resultsId : undefined}
         aria-controls='resource-grid'
       />
 
+      {/* Underline Animation */}
+      <div className='absolute bottom-0 left-0 h-px w-full bg-[var(--border-color)] transition-colors duration-300 group-focus-within:bg-[var(--main-color)]' />
+
       {/* Right side: Result count and Clear button */}
-      <div className='absolute top-1/2 right-2 flex -translate-y-1/2 items-center gap-2'>
+      <div className='absolute top-1/2 right-0 flex -translate-y-1/2 items-center gap-4'>
         {/* Result Count */}
         {resultCount !== undefined && value.length > 0 && (
           <span
             id={resultsId}
-            className='text-xs text-[var(--secondary-color)] tabular-nums'
+            className='font-mono text-xs tracking-widest text-[var(--secondary-color)] uppercase opacity-60'
             aria-live='polite'
             aria-atomic='true'
           >
-            {resultCount} {resultCount === 1 ? 'result' : 'results'}
+            {resultCount} found
           </span>
         )}
 
@@ -120,14 +112,13 @@ export function SearchBar({
             type='button'
             onClick={handleClear}
             className={cn(
-              'flex h-6 w-6 items-center justify-center rounded-md',
-              'text-[var(--secondary-color)] transition-colors',
-              'hover:bg-[var(--border-color)] hover:text-[var(--main-color)]',
-              'focus-visible:ring-2 focus-visible:ring-[var(--main-color)] focus-visible:ring-offset-2 focus-visible:outline-none',
+              'flex h-8 w-8 items-center justify-center rounded-full',
+              'text-[var(--secondary-color)] transition-all',
+              'hover:bg-[var(--main-color)] hover:text-[var(--background-color)]',
             )}
             aria-label='Clear search'
           >
-            <X size={14} aria-hidden='true' />
+            <X size={16} aria-hidden='true' />
           </button>
         )}
       </div>

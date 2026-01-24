@@ -7,7 +7,6 @@ import {
   SearchBar,
   FilterPanel,
   ResourceDetailModal,
-  ResourceBreadcrumbs,
 } from '@/features/Resources/components';
 import {
   combineFilters,
@@ -33,50 +32,38 @@ export function ResourcesPageClient({
   initialResources,
   categoriesWithCounts,
 }: ResourcesPageClientProps) {
-  // State
   const [filters, setFilters] = useState<ActiveFilters>(createEmptyFilters());
   const [selectedResource, setSelectedResource] = useState<Resource | null>(
     null,
   );
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Filter and search resources
   const filteredResources = useMemo(() => {
     let result = initialResources;
-
-    // Apply search
     if (filters.search.trim()) {
       result = searchResources(result, filters.search);
     }
-
-    // Apply filters
     result = combineFilters(result, filters);
-
     return result;
   }, [initialResources, filters]);
 
-  // Calculate available filter options with counts
   const availableFilters: FilterOptions = useMemo(() => {
     const difficulties = DIFFICULTY_LEVELS.map(level => ({
       value: level,
       count: initialResources.filter(r => r.difficulty === level).length,
     }));
-
     const priceTypes = PRICE_TYPES.map(type => ({
       value: type,
       count: initialResources.filter(r => r.priceType === type).length,
     }));
-
     const platforms = PLATFORMS.map(platform => ({
       value: platform,
       count: initialResources.filter(r => r.platforms.includes(platform))
         .length,
     }));
-
     return { difficulties, priceTypes, platforms };
   }, [initialResources]);
 
-  // Handlers
   const handleSearchChange = useCallback((search: string) => {
     setFilters(prev => ({ ...prev, search }));
   }, []);
@@ -95,7 +82,6 @@ export function ResourcesPageClient({
     setSelectedResource(null);
   }, []);
 
-  // Get related resources for modal
   const relatedResources = useMemo(() => {
     if (!selectedResource) return [];
     return initialResources
@@ -109,87 +95,90 @@ export function ResourcesPageClient({
   }, [selectedResource, initialResources]);
 
   return (
-    <div className='min-h-screen bg-[var(--background-color)]'>
-      <div className='mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8'>
-        {/* Breadcrumbs */}
-        <ResourceBreadcrumbs locale={locale} className='mb-6' />
-
-        {/* Page Header */}
-        <header className='mb-8'>
-          <h1 className='text-3xl font-bold tracking-tight text-[var(--main-color)] md:text-4xl'>
-            Japanese Learning Resources
-          </h1>
-          <p className='mt-2 text-lg text-[var(--secondary-color)]'>
-            Discover {initialResources.length}+ curated resources to help you
-            learn Japanese
-          </p>
-        </header>
-
-        {/* Search Bar */}
-        <div className='mb-6'>
-          <SearchBar
-            value={filters.search}
-            onChange={handleSearchChange}
-            placeholder='Search resources...'
-            resultCount={filteredResources.length}
-          />
-        </div>
-
-        {/* Main Content */}
-        <div className='flex flex-col gap-8 lg:flex-row'>
-          {/* Sidebar */}
-          <aside
-            className='w-full shrink-0 lg:w-64'
-            aria-label='Resource filters and categories'
-          >
-            {/* Category Navigation */}
-            <div className='mb-6 rounded-xl border border-[var(--border-color)] bg-[var(--card-color)] p-4'>
-              <h2 className='mb-4 text-sm font-semibold tracking-wider text-[var(--secondary-color)] uppercase'>
-                Categories
-              </h2>
-              <CategoryNav
-                categories={categoriesWithCounts}
-                basePath={`/${locale}/resources`}
-              />
+    <div className='min-h-screen bg-[var(--background-color)] selection:bg-[var(--main-color)] selection:text-[var(--background-color)]'>
+      {/* Editorial Header */}
+      <header className='overflow-hidden border-b border-[var(--border-color)] py-24'>
+        <div className='mx-auto max-w-screen-2xl px-6 md:px-12'>
+          <div className='flex flex-col justify-between gap-12 md:flex-row md:items-end'>
+            <div className='max-w-3xl'>
+              <div className='mb-8 flex items-center gap-4'>
+                <span className='text-[10px] font-bold tracking-[0.3em] text-[var(--secondary-color)] uppercase opacity-40'>
+                  Resource Compendium
+                </span>
+                <div className='h-px w-12 bg-[var(--border-color)]' />
+              </div>
+              <h1 className='mb-8 text-6xl leading-[0.9] font-black tracking-tighter text-[var(--main-color)] md:text-8xl'>
+                Learn <br className='hidden md:block' />
+                Japanese.
+              </h1>
+              <p className='max-w-xl text-xl leading-relaxed font-medium text-[var(--secondary-color)] opacity-60 md:text-2xl'>
+                A curated indexing of the most effective tools, texts, and
+                platforms for mastering the Japanese language.
+              </p>
             </div>
 
-            {/* Filters */}
-            <FilterPanel
-              filters={filters}
-              onFilterChange={handleFilterChange}
-              availableFilters={availableFilters}
+            <div className='shrink-0 pb-2'>
+              <div className='mb-4 text-[10px] font-bold tracking-[0.2em] text-[var(--main-color)] uppercase'>
+                Global Index
+              </div>
+              <div className='text-6xl font-black tracking-tighter tabular-nums'>
+                {initialResources.length}
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div className='mx-auto max-w-screen-2xl px-6 py-12 md:px-12'>
+        <div className='flex flex-col gap-16 lg:flex-row'>
+          {/* Navigation & Refinement Sidebar */}
+          <aside className='scrollbar-none hover:scrollbar-thin w-full shrink-0 transition-all lg:sticky lg:top-12 lg:h-[calc(100vh-6rem)] lg:w-72 lg:overflow-y-auto lg:pr-6'>
+            <CategoryNav
+              categories={categoriesWithCounts}
+              basePath={`/${locale}/resources`}
             />
+            <div className='mt-12'>
+              <FilterPanel
+                filters={filters}
+                onFilterChange={handleFilterChange}
+                availableFilters={availableFilters}
+              />
+            </div>
           </aside>
 
-          {/* Resource Grid */}
-          <main className='flex-1' id='main-content' aria-label='Resource list'>
-            <div className='mb-4 flex items-center justify-between'>
-              <p
-                className='text-sm text-[var(--secondary-color)]'
-                aria-live='polite'
-                aria-atomic='true'
-              >
-                Showing {filteredResources.length} of {initialResources.length}{' '}
-                resources
-              </p>
+          {/* Main Content Area */}
+          <main className='min-w-0 flex-1'>
+            <div className='mb-12'>
+              <SearchBar
+                value={filters.search}
+                onChange={handleSearchChange}
+                resultCount={filteredResources.length}
+              />
             </div>
 
             <ResourceGrid
               resources={filteredResources}
               onResourceSelect={handleResourceSelect}
             />
+
+            {/* Footer indicator */}
+            <div className='mt-24 flex flex-col items-center border-t border-[var(--border-color)] pt-12 text-center opacity-20'>
+              <div className='mb-4 text-[10px] font-bold tracking-[0.5em] uppercase'>
+                End of Index
+              </div>
+              <div className='h-1 w-1 rounded-full bg-[var(--main-color)]' />
+            </div>
           </main>
         </div>
-
-        {/* Resource Detail Modal */}
-        <ResourceDetailModal
-          resource={selectedResource}
-          isOpen={isModalOpen}
-          onClose={handleModalClose}
-          relatedResources={relatedResources}
-          onRelatedSelect={handleResourceSelect}
-        />
       </div>
+
+      <ResourceDetailModal
+        resource={selectedResource}
+        isOpen={isModalOpen}
+        onClose={handleModalClose}
+        relatedResources={relatedResources}
+        onRelatedSelect={handleResourceSelect}
+      />
     </div>
   );
 }

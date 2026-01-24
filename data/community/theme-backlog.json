@@ -1183,7 +1183,10 @@
     "backgroundColor": "oklch(20.0% 0.040 235.0 / 1)",
     "mainColor": "oklch(78.0% 0.205 35.0 / 1)",
     "secondaryColor": "oklch(88.0% 0.065 210.0 / 1)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "VaishnavIUpadyaya",
+    "completedPR": 1636
   },
   {
     "id": "shoji-glow",
@@ -1267,7 +1270,10 @@
     "backgroundColor": "oklch(92.0% 0.012 90.0 / 1)",
     "mainColor": "oklch(35.0% 0.085 255.0 / 1)",
     "secondaryColor": "oklch(55.0% 0.055 65.0 / 1)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "Riya379",
+    "completedPR": 1620
   },
   {
     "id": "maple-lacquer",
@@ -1276,7 +1282,10 @@
     "backgroundColor": "oklch(17.0% 0.035 20.0 / 1)",
     "mainColor": "oklch(65.0% 0.215 30.0 / 1)",
     "secondaryColor": "oklch(78.0% 0.135 70.0 / 1)",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "Master-Gamer-glitch",
+    "completedPR": 1603
   },
   {
     "id": "plaza-snow",
@@ -1285,7 +1294,10 @@
     "backgroundColor": "oklch(97.0% 0.006 240.0 / 1)",
     "mainColor": "oklch(40.0% 0.035 260.0 / 1)",
     "secondaryColor": "oklch(65.0% 0.120 220.0 / 1)",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "glenjaysondmello",
+    "completedPR": 1621
   },
   {
     "id": "karasu-black",
@@ -1294,7 +1306,10 @@
     "backgroundColor": "oklch(14.0% 0.010 270.0 / 1)",
     "mainColor": "oklch(72.0% 0.055 200.0 / 1)",
     "secondaryColor": "oklch(62.0% 0.095 320.0 / 1)",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "VaishnavIUpadyaya",
+    "completedPR": 1625
   },
   {
     "id": "festival-yatai",
@@ -1303,7 +1318,7 @@
     "backgroundColor": "oklch(19.0% 0.030 35.0 / 1)",
     "mainColor": "oklch(78.0% 0.185 45.0 / 1)",
     "secondaryColor": "oklch(88.0% 0.115 95.0 / 1)",
-    "issued": false
+    "issued": true
   },
   {
     "id": "blooming-ume",
@@ -1312,7 +1327,7 @@
     "backgroundColor": "oklch(95.0% 0.015 15.0 / 1)",
     "mainColor": "oklch(62.0% 0.175 350.0 / 1)",
     "secondaryColor": "oklch(75.0% 0.085 85.0 / 1)",
-    "issued": false
+    "issued": true
   },
   {
     "id": "mountain-cedar",
@@ -1321,6 +1336,6 @@
     "backgroundColor": "oklch(20.0% 0.020 150.0 / 1)",
     "mainColor": "oklch(70.0% 0.105 145.0 / 1)",
     "secondaryColor": "oklch(60.0% 0.055 110.0 / 1)",
-    "issued": false
+    "issued": true
   }
 ]

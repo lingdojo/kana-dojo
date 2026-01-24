@@ -1,24 +1,17 @@
 'use client';
 
-import React from 'react';
+import React, { memo, useCallback } from 'react';
 import { cn } from '@/shared/lib/utils';
+import * as DialogPrimitive from '@radix-ui/react-dialog';
 import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-} from '@/shared/components/ui/dialog';
-import { Button } from '@/shared/components/ui/button';
-import {
-  ExternalLink,
   Smartphone,
   Globe,
   Monitor,
   Apple,
   BookOpen,
   Puzzle,
-  Star,
+  ArrowUpRight,
+  X,
 } from 'lucide-react';
 import type { Resource, DifficultyLevel, PriceType, Platform } from '../types';
 import { ResourceCard } from './ResourceCard';
@@ -45,25 +38,29 @@ export interface ResourceDetailModalProps {
 // ============================================================================
 
 /**
- * Badge component for displaying labels
+ * Editorial Badge component for displaying labels
  */
-interface BadgeProps {
+const Badge = memo(function Badge({
+  children,
+  variant = 'generic',
+  className,
+}: {
   children: React.ReactNode;
-  variant?: 'default' | 'difficulty' | 'price';
+  variant?: 'difficulty' | 'price' | 'generic';
   className?: string;
-}
-
-function Badge({ children, variant = 'default', className }: BadgeProps) {
+}) {
   const variantStyles = {
-    default: 'bg-[var(--border-color)] text-[var(--main-color)]',
-    difficulty: 'bg-[var(--main-color)]/10 text-[var(--main-color)]',
-    price: 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400',
+    generic: 'text-[var(--secondary-color)] border-[var(--border-color)]',
+    difficulty:
+      'text-[var(--main-color)] border-[var(--main-color)]/20 bg-[var(--main-color)]/5',
+    price:
+      'text-emerald-600 dark:text-emerald-400 border-emerald-500/20 bg-emerald-500/5',
   };
 
   return (
     <span
       className={cn(
-        'inline-flex items-center rounded-md px-2.5 py-1 text-xs font-medium',
+        'inline-flex items-center rounded-sm border px-2 py-1 text-[10px] font-bold tracking-widest uppercase',
         variantStyles[variant],
         className,
       )}
@@ -71,43 +68,17 @@ function Badge({ children, variant = 'default', className }: BadgeProps) {
       {children}
     </span>
   );
-}
-
-/**
- * Get display text for difficulty level
- */
-function getDifficultyLabel(difficulty: DifficultyLevel): string {
-  const labels: Record<DifficultyLevel, string> = {
-    beginner: 'Beginner',
-    intermediate: 'Intermediate',
-    advanced: 'Advanced',
-    'all-levels': 'All Levels',
-  };
-  return labels[difficulty];
-}
-
-/**
- * Get display text for price type
- */
-function getPriceLabel(priceType: PriceType): string {
-  const labels: Record<PriceType, string> = {
-    free: 'Free',
-    freemium: 'Freemium',
-    paid: 'Paid',
-    subscription: 'Subscription',
-  };
-  return labels[priceType];
-}
+});
 
 /**
  * Platform icon and label component
  */
-interface PlatformBadgeProps {
+const PlatformBadge = memo(function PlatformBadge({
+  platform,
+}: {
   platform: Platform;
-}
-
-function PlatformBadge({ platform }: PlatformBadgeProps) {
-  const iconProps = { size: 14, className: 'shrink-0' };
+}) {
+  const iconProps = { size: 14, className: 'shrink-0 opacity-40' };
 
   const platformConfig: Record<
     Platform,
@@ -130,248 +101,206 @@ function PlatformBadge({ platform }: PlatformBadgeProps) {
   const config = platformConfig[platform];
 
   return (
-    <span
-      className={cn(
-        'inline-flex items-center gap-1.5 rounded-md px-2 py-1',
-        'bg-[var(--border-color)] text-xs text-[var(--secondary-color)]',
-      )}
-    >
+    <span className='flex items-center gap-2 rounded-full border border-[var(--border-color)] px-3 py-1.5 text-xs text-[var(--secondary-color)]'>
       {config.icon}
       {config.label}
     </span>
   );
-}
-
-/**
- * Star rating component
- */
-function StarRating({ rating }: { rating: number }) {
-  const fullStars = Math.floor(rating);
-  const hasHalfStar = rating % 1 >= 0.5;
-
-  return (
-    <div className='flex items-center gap-1'>
-      {Array.from({ length: 5 }).map((_, i) => (
-        <Star
-          key={i}
-          size={16}
-          className={cn(
-            i < fullStars
-              ? 'fill-yellow-400 text-yellow-400'
-              : i === fullStars && hasHalfStar
-                ? 'fill-yellow-400/50 text-yellow-400'
-                : 'text-[var(--border-color)]',
-          )}
-        />
-      ))}
-      <span className='ml-1 text-sm text-[var(--secondary-color)]'>
-        {rating.toFixed(1)}
-      </span>
-    </div>
-  );
-}
+});
 
 // ============================================================================
-// ResourceDetailModal Component
+// ResourceDetailModal Component (Optimized)
 // ============================================================================
 
-/**
- * ResourceDetailModal displays full resource details in a modal dialog.
- *
- * Features:
- * - Display full resource details
- * - Display related resources section
- * - CTA button linking to resource URL
- * - Smooth open/close animation
- * - Focus trap (handled by Radix UI Dialog)
- * - Keyboard navigation (Escape to close)
- * - ARIA labels and roles
- *
- * @requirements 5.1, 5.2, 5.3, 5.4, 5.6, 8.1, 8.2
- */
-export function ResourceDetailModal({
+const getDifficultyLabel = (difficulty: DifficultyLevel) => {
+  const labels: Record<DifficultyLevel, string> = {
+    beginner: 'Beginner',
+    intermediate: 'Intermediate',
+    advanced: 'Advanced',
+    'all-levels': 'All Levels',
+  };
+  return labels[difficulty];
+};
+
+const getPriceLabel = (priceType: PriceType) => {
+  const labels: Record<PriceType, string> = {
+    free: 'Free',
+    freemium: 'Freemium',
+    paid: 'Paid',
+    subscription: 'Subscription',
+  };
+  return labels[priceType];
+};
+
+export const ResourceDetailModal = memo(function ResourceDetailModal({
   resource,
   isOpen,
   onClose,
   relatedResources = [],
   onRelatedSelect,
 }: ResourceDetailModalProps) {
+  const handleClose = useCallback(() => {
+    onClose();
+  }, [onClose]);
+
   if (!resource) return null;
 
   const description = resource.descriptionLong || resource.description;
 
   return (
-    <Dialog open={isOpen} onOpenChange={open => !open && onClose()}>
-      <DialogContent
-        className='max-h-[90vh] max-w-2xl overflow-y-auto'
-        aria-describedby='resource-detail-description'
-      >
-        <DialogHeader>
-          <DialogTitle className='flex items-start gap-3'>
-            <span>{resource.name}</span>
-            {resource.nameJa && (
-              <span className='text-base font-normal text-[var(--secondary-color)]'>
-                {resource.nameJa}
+    <DialogPrimitive.Root open={isOpen} onOpenChange={onClose}>
+      <DialogPrimitive.Portal forceMount>
+        <DialogPrimitive.Overlay className='fixed inset-0 z-50 bg-black/80' />
+        <DialogPrimitive.Content
+          className='fixed top-1/2 left-1/2 z-50 flex max-h-[85vh] w-[95vw] max-w-4xl -translate-x-1/2 -translate-y-1/2 flex-col gap-0 rounded-2xl border-0 border-[var(--border-color)] bg-[var(--background-color)] p-0 selection:bg-[var(--main-color)] selection:text-[var(--background-color)] sm:max-h-[80vh] sm:w-[90vw]'
+          onOpenAutoFocus={e => e.preventDefault()}
+        >
+          {/* Sticky Header */}
+          <div className='sticky top-0 z-10 flex flex-row items-center justify-between rounded-t-2xl border-b border-[var(--border-color)] bg-[var(--background-color)] px-6 pt-6 pb-4 sm:px-12'>
+            <div className='flex items-center gap-4'>
+              <span className='text-[10px] font-bold tracking-[0.3em] text-[var(--secondary-color)] uppercase opacity-40'>
+                Resource Dossier
               </span>
-            )}
-          </DialogTitle>
-          <DialogDescription
-            id='resource-detail-description'
-            className='sr-only'
-          >
-            Detailed information about {resource.name}, including description,
-            platforms, tags, and related resources.
-          </DialogDescription>
-        </DialogHeader>
-
-        <div className='space-y-6'>
-          {/* Rating */}
-          {resource.rating && (
-            <div aria-label={`Rating: ${resource.rating} out of 5 stars`}>
-              <StarRating rating={resource.rating} />
+              <div className='hidden h-px w-12 bg-[var(--border-color)] sm:block' />
+              <Badge variant='generic' className='hidden sm:inline-flex'>
+                {resource.category}
+              </Badge>
             </div>
-          )}
-
-          {/* Badges Row */}
-          <div
-            className='flex flex-wrap gap-2'
-            role='group'
-            aria-label='Resource attributes'
-          >
-            <Badge variant='difficulty'>
-              {getDifficultyLabel(resource.difficulty)}
-            </Badge>
-            <Badge variant='price'>{getPriceLabel(resource.priceType)}</Badge>
-            {resource.priceDetails && (
-              <span className='text-sm text-[var(--secondary-color)]'>
-                {resource.priceDetails}
-              </span>
-            )}
+            <button
+              onClick={handleClose}
+              className='shrink-0 rounded-xl p-2 hover:cursor-pointer hover:bg-[var(--card-color)]'
+            >
+              <X size={24} className='text-[var(--secondary-color)]' />
+            </button>
           </div>
 
-          {/* Description */}
-          <section aria-labelledby='description-heading'>
-            <h3
-              id='description-heading'
-              className='mb-2 text-sm font-medium text-[var(--main-color)]'
-            >
-              Description
-            </h3>
-            <p className='text-sm leading-relaxed text-[var(--secondary-color)]'>
-              {description}
-            </p>
-          </section>
+          <div
+            id='modal-scroll'
+            className='flex-1 overflow-y-auto px-6 py-8 sm:px-12 sm:py-12'
+          >
+            <DialogPrimitive.Title className='mb-12 flex flex-col text-4xl leading-tight font-black tracking-tighter text-[var(--main-color)] md:text-6xl'>
+              <span>{resource.name}</span>
+              {resource.nameJa && (
+                <span className='mt-2 text-2xl font-medium text-[var(--secondary-color)] opacity-30 md:text-3xl'>
+                  {resource.nameJa}
+                </span>
+              )}
+            </DialogPrimitive.Title>
 
-          {/* Platforms */}
-          <section aria-labelledby='platforms-heading'>
-            <h3
-              id='platforms-heading'
-              className='mb-2 text-sm font-medium text-[var(--main-color)]'
-            >
-              Available On
-            </h3>
-            <div
-              className='flex flex-wrap gap-2'
-              role='list'
-              aria-label='Available platforms'
-            >
-              {resource.platforms.map((platform, index) => (
-                <div key={`${platform}-${index}`} role='listitem'>
-                  <PlatformBadge platform={platform} />
-                </div>
-              ))}
-            </div>
-          </section>
+            <div className='grid grid-cols-1 gap-16 lg:grid-cols-12'>
+              <div className='space-y-12 lg:col-span-8'>
+                <section>
+                  <h3 className='mb-6 text-[10px] font-bold tracking-[0.2em] text-[var(--secondary-color)] uppercase opacity-40'>
+                    Overview
+                  </h3>
+                  <div className='space-y-6 text-lg leading-relaxed text-[var(--main-color)] md:text-xl'>
+                    {description.split('\n').map((para, i) => (
+                      <p key={i}>{para}</p>
+                    ))}
+                  </div>
+                </section>
 
-          {/* Tags */}
-          {resource.tags.length > 0 && (
-            <section aria-labelledby='tags-heading'>
-              <h3
-                id='tags-heading'
-                className='mb-2 text-sm font-medium text-[var(--main-color)]'
-              >
-                Tags
-              </h3>
-              <div
-                className='flex flex-wrap gap-2'
-                role='list'
-                aria-label='Resource tags'
-              >
-                {resource.tags.map(tag => (
-                  <span
-                    key={tag}
-                    role='listitem'
+                {resource.notes && (
+                  <section className='rounded-lg border-l-2 border-[var(--main-color)] bg-[var(--main-color)]/[0.02] p-8'>
+                    <h3 className='mb-4 text-[10px] font-bold tracking-[0.2em] text-[var(--secondary-color)] uppercase opacity-40'>
+                      Curator's Notes
+                    </h3>
+                    <p className='text-sm leading-relaxed text-[var(--secondary-color)] italic'>
+                      {resource.notes}
+                    </p>
+                  </section>
+                )}
+
+                <section>
+                  <h3 className='mb-6 text-[10px] font-bold tracking-[0.2em] text-[var(--secondary-color)] uppercase opacity-40'>
+                    Architecture & Tags
+                  </h3>
+                  <div className='flex flex-wrap gap-2'>
+                    {resource.tags.map(tag => (
+                      <span
+                        key={tag}
+                        className='cursor-default rounded border border-[var(--border-color)] px-2 py-1 font-mono text-[10px] transition-all hover:border-[var(--main-color)] hover:bg-[var(--main-color)] hover:text-[var(--background-color)]'
+                      >
+                        #{tag}
+                      </span>
+                    ))}
+                  </div>
+                </section>
+              </div>
+
+              <div className='shrink-0 space-y-12 lg:col-span-4'>
+                <div className='space-y-8 lg:sticky lg:top-0'>
+                  <section>
+                    <h3 className='mb-4 text-[10px] font-bold tracking-[0.2em] text-[var(--secondary-color)] uppercase opacity-40'>
+                      Credentials
+                    </h3>
+                    <div className='flex flex-col gap-3'>
+                      <Badge variant='difficulty'>
+                        {getDifficultyLabel(resource.difficulty)}
+                      </Badge>
+                      <Badge variant='price'>
+                        {getPriceLabel(resource.priceType)}
+                      </Badge>
+                      {resource.priceDetails && (
+                        <p className='font-mono text-[10px] tracking-tighter uppercase opacity-50'>
+                          {resource.priceDetails}
+                        </p>
+                      )}
+                    </div>
+                  </section>
+
+                  <section>
+                    <h3 className='mb-4 text-[10px] font-bold tracking-[0.2em] text-[var(--secondary-color)] uppercase opacity-40'>
+                      Deployments
+                    </h3>
+                    <div className='flex flex-wrap gap-2'>
+                      {resource.platforms.map(platform => (
+                        <PlatformBadge key={platform} platform={platform} />
+                      ))}
+                    </div>
+                  </section>
+
+                  <a
+                    href={resource.url}
+                    target='_blank'
+                    rel='noopener noreferrer'
                     className={cn(
-                      'rounded-full px-2.5 py-0.5 text-xs',
-                      'bg-[var(--border-color)] text-[var(--secondary-color)]',
+                      'group mt-12 flex w-full items-center justify-between rounded-full bg-[var(--main-color)] p-6 text-[var(--background-color)] transition-all duration-300',
+                      'hover:scale-[1.02] active:scale-[0.98]',
                     )}
                   >
-                    {tag}
-                  </span>
-                ))}
+                    <span className='text-sm font-bold tracking-tight uppercase'>
+                      Initialize Access
+                    </span>
+                    <ArrowUpRight className='transition-transform group-hover:translate-x-1 group-hover:-translate-y-1' />
+                  </a>
+                </div>
               </div>
-            </section>
-          )}
+            </div>
 
-          {/* Notes */}
-          {resource.notes && (
-            <section aria-labelledby='notes-heading'>
-              <h3
-                id='notes-heading'
-                className='mb-2 text-sm font-medium text-[var(--main-color)]'
-              >
-                Notes
-              </h3>
-              <p className='text-sm text-[var(--secondary-color)]'>
-                {resource.notes}
-              </p>
-            </section>
-          )}
-
-          {/* CTA Button */}
-          <Button asChild className='w-full'>
-            <a
-              href={resource.url}
-              target='_blank'
-              rel='noopener noreferrer'
-              className='flex items-center justify-center gap-2'
-              aria-label={`Visit ${resource.name} (opens in new tab)`}
-            >
-              Visit {resource.name}
-              <ExternalLink size={16} aria-hidden='true' />
-            </a>
-          </Button>
-
-          {/* Related Resources */}
-          {relatedResources.length > 0 && (
-            <section aria-labelledby='related-heading'>
-              <h3
-                id='related-heading'
-                className='mb-3 text-sm font-medium text-[var(--main-color)]'
-              >
-                Related Resources
-              </h3>
-              <div
-                className='grid gap-3 sm:grid-cols-2'
-                role='list'
-                aria-label='Related resources'
-              >
-                {relatedResources.slice(0, 4).map(related => (
-                  <div key={related.id} role='listitem'>
+            {/* Related Resources */}
+            {relatedResources.length > 0 && (
+              <footer className='mt-24 border-t border-[var(--border-color)] pt-12'>
+                <h3 className='mb-12 text-center text-[10px] font-bold tracking-[0.5em] uppercase opacity-30'>
+                  Secondary Connections
+                </h3>
+                <div className='flex flex-col'>
+                  {relatedResources.slice(0, 3).map(related => (
                     <ResourceCard
+                      key={related.id}
                       resource={related}
                       onSelect={onRelatedSelect}
                       isCompact
                     />
-                  </div>
-                ))}
-              </div>
-            </section>
-          )}
-        </div>
-      </DialogContent>
-    </Dialog>
+                  ))}
+                </div>
+              </footer>
+            )}
+          </div>
+        </DialogPrimitive.Content>
+      </DialogPrimitive.Portal>
+    </DialogPrimitive.Root>
   );
-}
+});
 
 export default ResourceDetailModal;

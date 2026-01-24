@@ -10,7 +10,7 @@ import {
   Apple,
   BookOpen,
   Puzzle,
-  ExternalLink,
+  ArrowUpRight,
 } from 'lucide-react';
 
 // ============================================================================
@@ -33,7 +33,7 @@ export interface ResourceCardProps {
 // ============================================================================
 
 /**
- * Badge component for displaying labels
+ * Editorial Badge component for displaying labels with a refined look
  */
 interface BadgeProps {
   children: React.ReactNode;
@@ -43,16 +43,19 @@ interface BadgeProps {
 
 function Badge({ children, variant = 'default', className }: BadgeProps) {
   const variantStyles = {
-    default: 'bg-[var(--border-color)] text-[var(--main-color)]',
-    difficulty: 'bg-[var(--main-color)]/10 text-[var(--main-color)]',
-    price: 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400',
-    category: 'bg-[var(--secondary-color)]/10 text-[var(--secondary-color)]',
+    default: 'text-[var(--secondary-color)] border-[var(--border-color)]',
+    difficulty:
+      'text-[var(--main-color)] border-[var(--main-color)]/20 bg-[var(--main-color)]/5',
+    price:
+      'text-emerald-600 dark:text-emerald-400 border-emerald-500/20 bg-emerald-500/5',
+    category:
+      'text-[var(--secondary-color)] border-[var(--border-color)] bg-[var(--background-color)]',
   };
 
   return (
     <span
       className={cn(
-        'inline-flex items-center rounded-md px-2 py-0.5 text-xs font-medium',
+        'inline-flex items-center rounded-sm border px-1.5 py-0.5 text-[10px] font-medium tracking-tight uppercase',
         variantStyles[variant],
         className,
       )}
@@ -83,7 +86,7 @@ function getPriceLabel(priceType: PriceType): string {
     free: 'Free',
     freemium: 'Freemium',
     paid: 'Paid',
-    subscription: 'Subscription',
+    subscription: 'Subs',
   };
   return labels[priceType];
 }
@@ -97,7 +100,10 @@ interface PlatformIconProps {
 }
 
 function PlatformIcon({ platform, className }: PlatformIconProps) {
-  const iconProps = { size: 14, className: cn('shrink-0', className) };
+  const iconProps = {
+    size: 12,
+    className: cn('shrink-0 opacity-40', className),
+  };
 
   const icons: Record<Platform, React.ReactNode> = {
     web: <Globe {...iconProps} aria-label='Web' />,
@@ -117,21 +123,12 @@ function PlatformIcon({ platform, className }: PlatformIconProps) {
 }
 
 // ============================================================================
-// ResourceCard Component
+// ResourceCard Component (Editorial Row Style)
 // ============================================================================
 
 /**
- * ResourceCard displays a single learning resource with its key information.
- *
- * Features:
- * - Displays name, description, category badge, difficulty badge, price badge
- * - Shows platform icons
- * - Implements hover animation (translateY, shadow)
- * - Supports onClick for detail view
- * - Full keyboard navigation support
- * - Accessible focus indicators
- *
- * @requirements 1.3, 1.5, 7.3, 8.1, 8.2, 8.5
+ * ResourceCard displays a single learning resource as a refined editorial row.
+ * Optimized for hierarchy, typography, and a "premium compendium" feel.
  */
 export function ResourceCard({
   resource,
@@ -144,14 +141,11 @@ export function ResourceCard({
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
-    // Handle selection with Enter or Space
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
       onSelect?.(resource);
       return;
     }
-
-    // Pass other key events to parent for grid navigation
     onKeyDown?.(e);
   };
 
@@ -163,89 +157,77 @@ export function ResourceCard({
       onKeyDown={handleKeyDown}
       aria-label={`${resource.name} - ${resource.description}`}
       className={cn(
-        // Base styles
-        'group relative flex flex-col rounded-xl bg-[var(--card-color)]',
-        'border border-[var(--border-color)]',
-        'cursor-pointer outline-none',
-        // Transition and hover effects
-        'transition-all duration-150 ease-out',
-        'hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/10',
-        'focus-visible:ring-2 focus-visible:ring-[var(--main-color)] focus-visible:ring-offset-2',
-        'focus-visible:ring-offset-[var(--background-color)]',
-        // Padding based on compact mode
-        isCompact ? 'p-3' : 'p-4',
+        'group relative flex flex-col gap-4 px-2 py-8 sm:flex-row sm:items-center',
+        'border-b border-[var(--border-color)] transition-all duration-300',
+        'hover:bg-[var(--main-color)]/[0.02]',
+        'outline-none focus-visible:bg-[var(--main-color)]/[0.03]',
+        resource.featured && 'bg-[var(--main-color)]/[0.01]',
       )}
     >
-      {/* Header: Name and External Link Icon */}
-      <div className='flex items-start justify-between gap-2'>
+      {/* Visual Indicator for Featured */}
+      {resource.featured && (
+        <div className='absolute top-1/2 left-0 h-12 w-0.5 -translate-y-1/2 bg-[var(--main-color)]' />
+      )}
+
+      {/* Primary Content Area */}
+      <div className='min-w-0 flex-1'>
+        <div className='mb-2 flex items-center gap-3'>
+          <Badge variant='category'>
+            {formatCategoryName(resource.category)}
+          </Badge>
+          <div className='flex items-center gap-1'>
+            {resource.platforms.slice(0, 3).map(platform => (
+              <PlatformIcon key={platform} platform={platform} />
+            ))}
+          </div>
+        </div>
+
         <h3
           className={cn(
-            'line-clamp-1 font-semibold text-[var(--main-color)]',
-            isCompact ? 'text-sm' : 'text-base',
+            'leading-tight font-bold tracking-tight text-[var(--main-color)]',
+            isCompact ? 'text-lg' : 'text-xl md:text-2xl',
           )}
         >
           {resource.name}
           {resource.nameJa && (
-            <span className='ml-1.5 font-normal text-[var(--secondary-color)]'>
+            <span className='ml-3 font-medium text-[var(--secondary-color)] opacity-50'>
               {resource.nameJa}
             </span>
           )}
         </h3>
-        <ExternalLink
-          size={14}
-          className='shrink-0 text-[var(--secondary-color)] opacity-0 transition-opacity group-hover:opacity-100'
-          aria-hidden='true'
-        />
-      </div>
 
-      {/* Description */}
-      <p
-        className={cn(
-          'mt-1.5 text-[var(--secondary-color)]',
-          isCompact ? 'line-clamp-2 text-xs' : 'line-clamp-3 text-sm',
-        )}
-      >
-        {resource.description}
-      </p>
-
-      {/* Badges Row */}
-      <div className='mt-3 flex flex-wrap items-center gap-1.5'>
-        {/* Category Badge */}
-        <Badge variant='category'>
-          {formatCategoryName(resource.category)}
-        </Badge>
-
-        {/* Difficulty Badge */}
-        <Badge variant='difficulty'>
-          {getDifficultyLabel(resource.difficulty)}
-        </Badge>
-
-        {/* Price Badge */}
-        <Badge variant='price'>{getPriceLabel(resource.priceType)}</Badge>
-      </div>
-
-      {/* Platform Icons */}
-      {resource.platforms.length > 0 && (
-        <div
-          className='mt-3 flex items-center gap-2 text-[var(--secondary-color)]'
-          aria-label={`Available on: ${resource.platforms.join(', ')}`}
-        >
-          {resource.platforms.slice(0, 5).map(platform => (
-            <PlatformIcon key={platform} platform={platform} />
-          ))}
-          {resource.platforms.length > 5 && (
-            <span className='text-xs'>+{resource.platforms.length - 5}</span>
+        <p
+          className={cn(
+            'mt-3 max-w-2xl leading-relaxed text-[var(--secondary-color)]',
+            isCompact
+              ? 'line-clamp-1 text-sm'
+              : 'line-clamp-2 text-base md:line-clamp-none',
           )}
-        </div>
-      )}
+        >
+          {resource.description}
+        </p>
+      </div>
 
-      {/* Featured indicator */}
-      {resource.featured && (
-        <div
-          className='absolute -top-1 -right-1 h-3 w-3 rounded-full bg-[var(--main-color)]'
-          aria-label='Featured resource'
-        />
-      )}
+      {/* Metadata & Actions Area */}
+      <div className='flex shrink-0 flex-wrap items-center gap-4 sm:ml-auto sm:flex-nowrap'>
+        <div className='flex items-center gap-2'>
+          <Badge variant='difficulty'>
+            {getDifficultyLabel(resource.difficulty)}
+          </Badge>
+          <Badge variant='price'>{getPriceLabel(resource.priceType)}</Badge>
+        </div>
+
+        <button
+          className={cn(
+            'flex h-10 w-10 items-center justify-center rounded-full border border-[var(--border-color)]',
+            'text-[var(--main-color)] transition-all duration-300',
+            'group-hover:border-[var(--main-color)] group-hover:bg-[var(--main-color)] group-hover:text-[var(--background-color)]',
+          )}
+          aria-hidden='true'
+        >
+          <ArrowUpRight size={18} />
+        </button>
+      </div>
     </article>
   );
 }
@@ -256,21 +238,21 @@ export function ResourceCard({
 function formatCategoryName(categoryId: string): string {
   const names: Record<string, string> = {
     apps: 'Apps',
-    websites: 'Websites',
-    textbooks: 'Textbooks',
-    youtube: 'YouTube',
-    podcasts: 'Podcasts',
+    websites: 'Web',
+    textbooks: 'Print',
+    youtube: 'Video',
+    podcasts: 'Audio',
     games: 'Games',
     jlpt: 'JLPT',
-    reading: 'Reading',
-    listening: 'Listening',
-    speaking: 'Speaking',
-    writing: 'Writing',
+    reading: 'Read',
+    listening: 'Listen',
+    speaking: 'Speak',
+    writing: 'Write',
     grammar: 'Grammar',
-    vocabulary: 'Vocabulary',
+    vocabulary: 'Vocab',
     kanji: 'Kanji',
     immersion: 'Immersion',
-    community: 'Community',
+    community: 'Social',
   };
   return names[categoryId] || categoryId;
 }
