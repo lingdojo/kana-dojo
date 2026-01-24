@@ -16,10 +16,7 @@ export interface CategoryHeaderProps {
 }
 
 /**
- * CategoryHeader displays category information with SEO-optimized content
- * Shows category name, description, resource count, and optional long-form content
- *
- * @requirements 10.12, 8.2
+ * CategoryHeader displays category information with a refined editorial aesthetic.
  */
 export function CategoryHeader({
   category,
@@ -27,46 +24,53 @@ export function CategoryHeader({
   className,
   showLongDescription = true,
 }: CategoryHeaderProps) {
-  // Get resource count from either prop or CategoryWithCount
   const count =
     resourceCount ?? ('resourceCount' in category ? category.resourceCount : 0);
 
   return (
-    <header className={cn('space-y-4', className)} role='banner'>
-      {/* Category Title and Count */}
-      <div className='flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between'>
-        <h1 className='text-foreground text-3xl font-bold tracking-tight md:text-4xl'>
-          {category.name}
-          {category.nameJa && (
-            <span
-              className='text-muted-foreground ml-2 text-xl font-normal md:text-2xl'
-              lang='ja'
-            >
-              ({category.nameJa})
+    <header
+      className={cn(
+        'mb-12 border-b border-[var(--border-color)] pb-12',
+        className,
+      )}
+      role='banner'
+    >
+      <div className='flex flex-col gap-6 md:flex-row md:items-end md:justify-between'>
+        <div className='max-w-2xl'>
+          <div className='mb-4 flex items-center gap-4'>
+            <span className='text-[10px] font-bold tracking-[0.3em] text-[var(--secondary-color)] uppercase opacity-40'>
+              Category Collection
             </span>
-          )}
-        </h1>
-        <div className='flex items-center gap-2'>
-          <span
-            className='bg-primary/10 text-primary rounded-full px-3 py-1 text-sm font-medium'
-            aria-label={`${count} ${count === 1 ? 'resource' : 'resources'} in this category`}
-          >
-            {count} {count === 1 ? 'resource' : 'resources'}
-          </span>
+            {count > 0 && (
+              <span className='font-mono text-[10px] opacity-40'>
+                / {count} items
+              </span>
+            )}
+          </div>
+          <h1 className='text-5xl leading-none font-black tracking-tighter text-[var(--main-color)] md:text-7xl'>
+            {category.name}
+            {category.nameJa && (
+              <span className='ml-4 text-3xl font-medium text-[var(--secondary-color)] opacity-30 md:text-5xl'>
+                {category.nameJa}
+              </span>
+            )}
+          </h1>
         </div>
       </div>
 
       {/* Short Description */}
-      <p className='text-muted-foreground text-lg'>{category.description}</p>
+      <p className='mt-8 max-w-2xl text-xl font-medium text-[var(--secondary-color)] opacity-60 md:text-2xl'>
+        {category.description}
+      </p>
 
-      {/* Long-form SEO Content */}
+      {/* Long-form Content */}
       {showLongDescription && category.descriptionLong && (
         <div
-          className='prose prose-sm dark:prose-invert max-w-none'
+          className='prose prose-lg dark:prose-invert mt-12 max-w-3xl border-t border-[var(--border-color)] pt-12'
           aria-label='Detailed category description'
         >
           <div
-            className='text-muted-foreground'
+            className='leading-relaxed text-[var(--secondary-color)] opacity-80'
             dangerouslySetInnerHTML={{ __html: category.descriptionLong }}
           />
         </div>

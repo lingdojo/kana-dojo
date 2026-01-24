@@ -29,72 +29,54 @@ export interface ResourceGridProps {
 // ============================================================================
 
 /**
- * Skeleton card for loading state
+ * Skeleton card for loading state (Editorial Row Style)
  */
-function ResourceCardSkeleton() {
+function ResourceRowSkeleton() {
   return (
     <div
       className={cn(
-        'flex flex-col rounded-xl bg-[var(--card-color)]',
-        'border border-[var(--border-color)]',
-        'animate-pulse p-4',
+        'flex flex-col gap-4 px-2 py-8 sm:flex-row sm:items-center',
+        'animate-pulse border-b border-[var(--border-color)]',
       )}
       aria-hidden='true'
     >
-      {/* Title skeleton */}
-      <div className='h-5 w-3/4 rounded bg-[var(--border-color)]' />
-
-      {/* Description skeleton */}
-      <div className='mt-2 space-y-2'>
-        <div className='h-3 w-full rounded bg-[var(--border-color)]' />
-        <div className='h-3 w-5/6 rounded bg-[var(--border-color)]' />
-        <div className='h-3 w-4/6 rounded bg-[var(--border-color)]' />
+      <div className='min-w-0 flex-1'>
+        <div className='mb-2 flex items-center gap-3'>
+          <div className='h-4 w-12 rounded bg-[var(--border-color)]' />
+          <div className='h-3 w-8 rounded bg-[var(--border-color)]' />
+        </div>
+        <div className='mb-3 h-6 w-3/4 rounded bg-[var(--border-color)]' />
+        <div className='space-y-2'>
+          <div className='h-4 w-full rounded bg-[var(--border-color)]' />
+          <div className='h-4 w-5/6 rounded bg-[var(--border-color)]' />
+        </div>
       </div>
-
-      {/* Badges skeleton */}
-      <div className='mt-3 flex gap-1.5'>
-        <div className='h-5 w-16 rounded-md bg-[var(--border-color)]' />
-        <div className='h-5 w-20 rounded-md bg-[var(--border-color)]' />
-        <div className='h-5 w-14 rounded-md bg-[var(--border-color)]' />
-      </div>
-
-      {/* Platform icons skeleton */}
-      <div className='mt-3 flex gap-2'>
-        <div className='h-4 w-4 rounded bg-[var(--border-color)]' />
-        <div className='h-4 w-4 rounded bg-[var(--border-color)]' />
-        <div className='h-4 w-4 rounded bg-[var(--border-color)]' />
+      <div className='flex shrink-0 items-center gap-4 sm:ml-auto'>
+        <div className='h-5 w-16 rounded bg-[var(--border-color)]' />
+        <div className='h-5 w-14 rounded bg-[var(--border-color)]' />
+        <div className='h-10 w-10 rounded-full bg-[var(--border-color)]' />
       </div>
     </div>
   );
 }
 
 // ============================================================================
-// ResourceGrid Component
+// ResourceGrid Component (Editorial List Style)
 // ============================================================================
 
 /**
- * ResourceGrid displays a responsive grid of resource cards.
- *
- * Features:
- * - Responsive grid layout (1/2/3/4 columns)
- * - Loading state with skeleton cards
- * - Content transition animation
- * - Keyboard navigation support (arrow keys)
- * - ARIA live region for dynamic content updates
- *
- * @requirements 1.1, 1.4, 7.3, 8.1, 8.2, 8.4
+ * ResourceGrid displays a refined editorial list of resource rows.
  */
 export function ResourceGrid({
   resources,
   onResourceSelect,
   isLoading = false,
-  skeletonCount = 8,
+  skeletonCount = 6,
   className,
   id = 'resource-grid',
 }: ResourceGridProps) {
   const gridRef = useRef<HTMLDivElement>(null);
 
-  // Handle keyboard navigation within the grid
   const handleKeyDown = useCallback(
     (e: React.KeyboardEvent, currentIndex: number) => {
       if (!gridRef.current) return;
@@ -105,28 +87,16 @@ export function ResourceGrid({
       const itemCount = items.length;
       if (itemCount === 0) return;
 
-      // Calculate columns based on grid layout
-      const gridStyle = window.getComputedStyle(gridRef.current);
-      const columns = gridStyle.gridTemplateColumns.split(' ').length;
-
       let nextIndex = currentIndex;
 
       switch (e.key) {
-        case 'ArrowRight':
+        case 'ArrowDown':
           e.preventDefault();
           nextIndex = Math.min(currentIndex + 1, itemCount - 1);
           break;
-        case 'ArrowLeft':
-          e.preventDefault();
-          nextIndex = Math.max(currentIndex - 1, 0);
-          break;
-        case 'ArrowDown':
-          e.preventDefault();
-          nextIndex = Math.min(currentIndex + columns, itemCount - 1);
-          break;
         case 'ArrowUp':
           e.preventDefault();
-          nextIndex = Math.max(currentIndex - columns, 0);
+          nextIndex = Math.max(currentIndex - 1, 0);
           break;
         case 'Home':
           e.preventDefault();
@@ -147,45 +117,39 @@ export function ResourceGrid({
     [],
   );
 
-  // Show skeletons when loading
   if (isLoading) {
     return (
       <div
         id={id}
-        className={cn(
-          'grid gap-4',
-          'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4',
-          className,
-        )}
+        className={cn('flex flex-col', className)}
         role='list'
         aria-label='Loading resources'
         aria-busy='true'
       >
         {Array.from({ length: skeletonCount }).map((_, index) => (
-          <ResourceCardSkeleton key={`skeleton-${index}`} />
+          <ResourceRowSkeleton key={`skeleton-${index}`} />
         ))}
       </div>
     );
   }
 
-  // Show empty state if no resources
   if (resources.length === 0) {
     return (
       <div
         id={id}
         className={cn(
-          'flex flex-col items-center justify-center py-12 text-center',
+          'flex flex-col items-center justify-center border-t border-[var(--border-color)] py-24 text-center',
           className,
         )}
         role='status'
         aria-live='polite'
         aria-label='No resources found'
       >
-        <p className='text-lg font-medium text-[var(--main-color)]'>
-          No resources found
+        <p className='text-xl font-medium text-[var(--main-color)]'>
+          Empty Collections
         </p>
-        <p className='mt-1 text-sm text-[var(--secondary-color)]'>
-          Try adjusting your filters or search query
+        <p className='mt-2 text-[var(--secondary-color)]'>
+          Refine your filters to discover specialized resources.
         </p>
       </div>
     );
@@ -193,7 +157,6 @@ export function ResourceGrid({
 
   return (
     <>
-      {/* Live region for announcing resource count changes */}
       <div className='sr-only' aria-live='polite' aria-atomic='true'>
         {resources.length} {resources.length === 1 ? 'resource' : 'resources'}{' '}
         found
@@ -203,9 +166,8 @@ export function ResourceGrid({
         ref={gridRef}
         id={id}
         className={cn(
-          'grid gap-4',
-          'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4',
-          'transition-opacity duration-150 ease-out',
+          'flex flex-col border-t border-[var(--border-color)]',
+          'transition-opacity duration-300 ease-out',
           className,
         )}
         role='list'

@@ -1,0 +1,419 @@
+{
+  "meta": {
+    "title": "Conjugador de Verbos Japoneses - Herramienta Gratuita en Línea | KanaDojo",
+    "titleWithVerb": "Conjugación de {verb} ({romaji}) - Todas las Formas Verbales Japonesas | KanaDojo",
+    "description": "Conjugador de verbos japoneses gratuito con todas las formas de conjugación. Conjuga cualquier verbo japonés al instante - Godan, Ichidan, verbos irregulares. Obtén forma-te, forma-masu, potencial, pasivo, causativo y más.",
+    "descriptionWithVerb": "Conjugación completa de {verb} ({romaji}). Ve todas las formas incluyendo forma-te, forma-masu, potencial, pasivo, causativo y más. Conjugador de verbos japoneses gratuito."
+  },
+  "header": {
+    "title": "Conjugador de Verbos Japoneses",
+    "subtitle": "Conjuga cualquier verbo japonés al instante. Obtén todas las formas incluyendo forma-te, forma-masu, potencial, pasivo, causativo y más."
+  },
+  "input": {
+    "title": "Ingresa un Verbo Japonés",
+    "hint": "Forma de diccionario (ej., 食べる, 行く, する)",
+    "placeholder": "日本語の動詞を入力...",
+    "conjugateButton": "Conjugar",
+    "conjugating": "Conjugando...",
+    "clearButton": "Limpiar campo de entrada",
+    "keyboardHint": "Presiona {enter} para conjugar, {escape} para limpiar"
+  },
+  "results": {
+    "loading": "Conjugando verbo...",
+    "empty": {
+      "title": "Ingresa un verbo para ver las conjugaciones",
+      "hint": "Prueba verbos como 食べる, 行く, o する"
+    },
+    "statusMessage": "Conjugación completa para {verb}. {formCount} formas disponibles en {categoryCount} categorías.",
+    "expandAll": "Expandir Todo",
+    "collapseAll": "Contraer Todo",
+    "copyAll": "Copiar Todo",
+    "copied": "¡Copiado!",
+    "copiedMessage": "Todas las formas de conjugación copiadas al portapapeles.",
+    "formCount": "{count} formas de conjugación en {categories} categorías"
+  },
+  "verbInfo": {
+    "type": "Tipo",
+    "stem": "Raíz",
+    "ending": "Terminación",
+    "compoundPrefix": "Verbo compuesto con prefijo:",
+    "conjugationRules": "Reglas de Conjugación"
+  },
+  "verbTypes": {
+    "godan": {
+      "label": "Godan (五段)",
+      "description": "Los verbos Godan (también llamados verbos-u o verbos del Grupo I) se conjugan a través de cinco sonidos vocálicos. El kana final cambia según la forma de conjugación.",
+      "rules": [
+        "La raíz cambia según el grado vocálico (a, i, u, e, o)",
+        "La forma-te tiene cambios de sonido según la terminación (って, んで, いて, etc.)",
+        "La forma negativa usa la raíz de grado-a + ない",
+        "La forma-masu usa la raíz de grado-i + ます"
+      ]
+    },
+    "ichidan": {
+      "label": "Ichidan (一段)",
+      "description": "Los verbos Ichidan (también llamados verbos-ru o verbos del Grupo II) tienen un patrón de conjugación más simple. La terminación る se reemplaza con el sufijo apropiado.",
+      "rules": [
+        "Quita る y añade el sufijo de conjugación",
+        "Forma-te: raíz + て",
+        "Forma negativa: raíz + ない",
+        "Forma-masu: raíz + ます",
+        "La forma potencial tiene tanto la forma tradicional (-られる) como la coloquial (-れる)"
+      ]
+    },
+    "irregular": {
+      "label": "Irregular",
+      "description": "Este verbo tiene patrones de conjugación irregulares que deben memorizarse.",
+      "rules": ["Los patrones de conjugación no siguen reglas estándar"]
+    },
+    "suru": {
+      "label": "Verbo-する",
+      "description": "する (hacer) es uno de los dos verbos irregulares principales en japonés. Tiene patrones de conjugación únicos.",
+      "rules": [
+        "Forma-te: して",
+        "Negativo: しない",
+        "Forma-masu: します",
+        "Potencial: できる (verbo separado)",
+        "Pasivo: される",
+        "Causativo: させる"
+      ]
+    },
+    "kuru": {
+      "label": "Verbo-来る",
+      "description": "来る (venir) es uno de los dos verbos irregulares principales. La lectura cambia entre く y こ dependiendo de la forma.",
+      "rules": [
+        "Forma-te: 来て (きて)",
+        "Negativo: 来ない (こない)",
+        "Forma-masu: 来ます (きます)",
+        "Potencial: 来られる (こられる)",
+        "Pasado: 来た (きた)"
+      ]
+    },
+    "aru": {
+      "label": "Verbo-ある",
+      "description": "ある (existir, para objetos inanimados) tiene una forma negativa única.",
+      "rules": [
+        "Negativo: ない (no あらない)",
+        "Otras formas siguen patrones Godan",
+        "Forma-te: あって",
+        "Pasado: あった"
+      ]
+    },
+    "iku": {
+      "label": "Verbo-行く",
+      "description": "行く (ir) es mayormente regular pero tiene una forma-te irregular.",
+      "rules": [
+        "Forma-te: 行って (no 行いて)",
+        "Forma-ta: 行った (no 行いた)",
+        "Otras formas siguen patrones Godan regulares"
+      ]
+    },
+    "honorific": {
+      "label": "Honorífico",
+      "description": "Los verbos honoríficos (くださる, なさる, いらっしゃる, おっしゃる, ござる) tienen formas-masu irregulares.",
+      "rules": [
+        "La forma-masu usa ます en lugar de ります",
+        "Ejemplo: くださる → くださいます (no くださります)",
+        "Otras formas siguen patrones Godan"
+      ]
+    },
+    "unknown": {
+      "label": "Desconocido",
+      "description": "No se puede determinar el tipo de verbo.",
+      "rules": []
+    }
+  },
+  "categories": {
+    "basic": {
+      "name": "Formas Básicas",
+      "nameJa": "基本形"
+    },
+    "polite": {
+      "name": "Formas Corteses",
+      "nameJa": "丁寧形"
+    },
+    "negative": {
+      "name": "Formas Negativas",
+      "nameJa": "否定形"
+    },
+    "past": {
+      "name": "Formas Pasadas",
+      "nameJa": "過去形"
+    },
+    "volitional": {
+      "name": "Formas Volitivas",
+      "nameJa": "意向形"
+    },
+    "potential": {
+      "name": "Formas Potenciales",
+      "nameJa": "可能形"
+    },
+    "passive": {
+      "name": "Formas Pasivas",
+      "nameJa": "受身形"
+    },
+    "causative": {
+      "name": "Formas Causativas",
+      "nameJa": "使役形"
+    },
+    "causative-passive": {
+      "name": "Causativo-Pasivo",
+      "nameJa": "使役受身形"
+    },
+    "imperative": {
+      "name": "Formas Imperativas",
+      "nameJa": "命令形"
+    },
+    "conditional": {
+      "name": "Formas Condicionales",
+      "nameJa": "条件形"
+    },
+    "tai-form": {
+      "name": "Formas de Deseo",
+      "nameJa": "たい形"
+    },
+    "progressive": {
+      "name": "Formas Progresivas",
+      "nameJa": "進行形"
+    },
+    "honorific": {
+      "name": "Formas Honoríficas",
+      "nameJa": "敬語"
+    }
+  },
+  "forms": {
+    "polite": "Cortés",
+    "form": "forma",
+    "forms": "formas",
+    "reading": "Lectura",
+    "romaji": "Romaji",
+    "expand": "Expandir",
+    "collapse": "Contraer",
+    "copy": "Copiar",
+    "copyForm": "Copiar {form}: {kanji}"
+  },
+  "history": {
+    "title": "Verbos Recientes",
+    "empty": {
+      "title": "Sin historial aún",
+      "hint": "Tus verbos conjugados aparecerán aquí"
+    },
+    "verbCount": "{count} verbo en historial",
+    "verbCountPlural": "{count} verbos en historial",
+    "clearButton": "Limpiar",
+    "clearDialog": {
+      "title": "¿Limpiar Historial?",
+      "description": "Esto eliminará permanentemente todo tu historial de conjugación. Esta acción no se puede deshacer.",
+      "cancel": "Cancelar",
+      "confirm": "Limpiar Todo"
+    },
+    "removeEntry": "Eliminar {verb} del historial",
+    "timeAgo": {
+      "now": "ahora",
+      "minutes": "{count}m",
+      "hours": "{count}h",
+      "days": "{count}d"
+    }
+  },
+  "share": {
+    "button": "Compartir",
+    "copied": "¡Copiado!",
+    "error": "Error al copiar",
+    "title": "Conjugación de {verb} - KanaDojo",
+    "text": "Mira la conjugación de {verb} ({romaji})"
+  },
+  "errors": {
+    "emptyInput": "Por favor ingresa un verbo japonés",
+    "invalidCharacters": "Por favor ingresa un verbo japonés válido usando hiragana, katakana o kanji",
+    "unknownVerb": "Este verbo no es reconocido. Por favor verifica la ortografía o prueba la forma de diccionario",
+    "ambiguousVerb": "Esta entrada podría ser múltiples verbos. Por favor sé más específico",
+    "conjugationFailed": "Ocurrió un error inesperado"
+  },
+  "accessibility": {
+    "mainRegion": "Conjugador de verbos japoneses",
+    "inputRegion": "Entrada de conjugación de verbos japoneses",
+    "resultsRegion": "Resultados de conjugación",
+    "historyRegion": "Historial de conjugación",
+    "historySidebar": "Barra lateral de historial de conjugación",
+    "categoryToggle": "{category} ({categoryJa}), {count} forma. Clic para {action}",
+    "categoryTogglePlural": "{category} ({categoryJa}), {count} formas. Clic para {action}",
+    "categoryForms": "{count} formas de {category}",
+    "verbInfoRegion": "Información del verbo para {verb}",
+    "classificationDetails": "Detalles de clasificación del verbo",
+    "rulesExplanation": "Explicación de reglas de conjugación",
+    "showRules": "Mostrar reglas de conjugación para verbos {verbType}",
+    "hideRules": "Ocultar reglas de conjugación para verbos {verbType}",
+    "resultActions": "Acciones de resultados de conjugación",
+    "keyboardShortcuts": "Atajos de teclado: Presiona Enter en el campo de entrada para conjugar. Presiona Escape para limpiar la entrada. Usa Tab para navegar entre elementos."
+  },
+  "seo": {
+    "title": "Entendiendo la Conjugación de Verbos Japoneses",
+    "intro": "La conjugación de verbos japoneses es un aspecto fundamental del idioma que permite a los hablantes expresar tiempo, modo, cortesía y varias relaciones gramaticales. A diferencia del inglés, los verbos japoneses se conjugan según patrones determinados por su tipo de verbo, lo que hace esencial entender estas clasificaciones.",
+    "verbIntro": "El verbo {verb} ({romaji}) está clasificado como un {verbType}. Entender su patrón de conjugación te ayudará a usarlo correctamente en varios contextos.",
+    "verbTypesTitle": "Tipos de Verbos Japoneses",
+    "verbTypesGodan": {
+      "title": "Verbos Godan (五段動詞)",
+      "description": "También llamados verbos-u o verbos del Grupo I. Estos verbos se conjugan a través de cinco sonidos vocálicos (a, i, u, e, o). Ejemplos incluyen 書く (kaku), 読む (yomu), y 話す (hanasu)."
+    },
+    "verbTypesIchidan": {
+      "title": "Verbos Ichidan (一段動詞)",
+      "description": "También llamados verbos-ru o verbos del Grupo II. Estos verbos terminan en -iru o -eru y se conjugan quitando る y añadiendo sufijos. Ejemplos incluyen 食べる (taberu) y 見る (miru)."
+    },
+    "verbTypesIrregular": {
+      "title": "Verbos Irregulares (不規則動詞)",
+      "description": "El japonés tiene solo dos verbos verdaderamente irregulares: する (suru - hacer) y 来る (kuru - venir). Algunos verbos como ある y 行く tienen irregularidades parciales."
+    },
+    "commonFormsTitle": "Formas de Conjugación Comunes",
+    "commonForms": {
+      "teForm": {
+        "name": "Forma-te (て形)",
+        "description": "La forma conectiva usada para peticiones, acciones progresivas y conectar oraciones. Esencial para la conversación diaria.",
+        "example": "食べる → 食べて (tabete)"
+      },
+      "masuForm": {
+        "name": "Forma-masu (ます形)",
+        "description": "La forma cortés usada en situaciones formales. Esta es a menudo la primera forma enseñada a los estudiantes de japonés.",
+        "example": "食べる → 食べます (tabemasu)"
+      },
+      "potentialForm": {
+        "name": "Forma Potencial (可能形)",
+        "description": "Expresa habilidad o posibilidad. Para verbos Ichidan, existen tanto la forma tradicional (-rareru) como la coloquial (-reru).",
+        "example": "食べる → 食べられる/食べれる (taberareru/tabereru)"
+      },
+      "passiveForm": {
+        "name": "Forma Pasiva (受身形)",
+        "description": "Indica que el sujeto recibe una acción. También puede expresar adversidad o sufrimiento en japonés.",
+        "example": "食べる → 食べられる (taberareru)"
+      },
+      "causativeForm": {
+        "name": "Forma Causativa (使役形)",
+        "description": "Expresa hacer o dejar que alguien haga algo. Importante para expresar permiso o coerción.",
+        "example": "食べる → 食べさせる (tabesaseru)"
+      }
+    },
+    "tipsTitle": "Consejos para Aprender la Conjugación de Verbos Japoneses",
+    "tips": [
+      {
+        "title": "Aprende los tipos de verbos primero:",
+        "content": "Antes de memorizar conjugaciones, entiende si un verbo es Godan, Ichidan o irregular. Esto determina todos los patrones de conjugación."
+      },
+      {
+        "title": "Domina la forma-te:",
+        "content": "La forma-te es la base para muchas otras construcciones incluyendo progresivo (-ている), peticiones (-てください), y verbos de dar/recibir."
+      },
+      {
+        "title": "Practica con verbos comunes:",
+        "content": "Comienza con verbos frecuentemente usados como する, 行く, 来る, 見る, 食べる, y 書く para construir reconocimiento de patrones."
+      },
+      {
+        "title": "Usa contexto:",
+        "content": "Aprende conjugaciones en oraciones en lugar de aislamiento. Esto te ayuda a entender cuándo y cómo usar cada forma naturalmente."
+      },
+      {
+        "title": "Repasa regularmente:",
+        "content": "Los patrones de conjugación se vuelven automáticos con práctica consistente. Usa herramientas como este conjugador para verificar tu comprensión."
+      }
+    ],
+    "aboutTool": "El Conjugador de Verbos Japoneses de KanaDojo es una herramienta educativa gratuita que genera todas las formas de conjugación para cualquier verbo japonés. Soporta verbos Godan, Ichidan e irregulares incluyendo verbos compuestos. El conjugador proporciona pronunciación romaji, detección de tipo de verbo y cobertura completa de formas para preparación JLPT y aprendizaje del idioma japonés."
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes",
+    "expandAll": "Expandir Todo",
+    "collapseAll": "Contraer Todo",
+    "showMore": "Mostrar {count} Preguntas Más",
+    "showLess": "Mostrar Menos",
+    "items": [
+      {
+        "question": "¿Qué es un conjugador de verbos japoneses?",
+        "answer": "Un conjugador de verbos japoneses es una herramienta que transforma verbos japoneses de su forma de diccionario a varias formas gramaticales como tiempo pasado, negativo, potencial, pasivo y más. Nuestro conjugador gratuito maneja todos los tipos de verbos incluyendo Godan (verbos-u), Ichidan (verbos-ru) y verbos irregulares como する y 来る."
+      },
+      {
+        "question": "¿Cómo conjugo verbos japoneses?",
+        "answer": "Ingresa cualquier verbo japonés en su forma de diccionario (la forma que termina en -u) en nuestro conjugador. La herramienta detectará automáticamente el tipo de verbo y generará todas las formas de conjugación incluyendo forma-te, forma-masu, potencial, pasivo, causativo, condicional y más."
+      },
+      {
+        "question": "¿Qué son los verbos Godan (verbos-u)?",
+        "answer": "Los verbos Godan, también llamados verbos-u o verbos del Grupo 1, son verbos japoneses que se conjugan a través de cinco sonidos vocálicos (a, i, u, e, o). Terminan en varias combinaciones de consonante + u como -ku, -gu, -su, -tsu, -nu, -bu, -mu, -ru, o solo -u. Ejemplos incluyen 書く (kaku - escribir), 読む (yomu - leer), y 話す (hanasu - hablar)."
+      },
+      {
+        "question": "¿Qué son los verbos Ichidan (verbos-ru)?",
+        "answer": "Los verbos Ichidan, también llamados verbos-ru o verbos del Grupo 2, son verbos japoneses que terminan en -iru o -eru. Se conjugan simplemente quitando el る final y añadiendo la terminación apropiada. Ejemplos incluyen 食べる (taberu - comer), 見る (miru - ver), y 起きる (okiru - despertar)."
+      },
+      {
+        "question": "¿Qué son los verbos irregulares japoneses?",
+        "answer": "El japonés tiene solo dos verbos verdaderamente irregulares: する (suru - hacer) y 来る (kuru - venir). Adicionalmente, ある (aru - existir) tiene una forma negativa irregular (ない en lugar de あらない), y 行く (iku - ir) tiene una forma-te irregular (行って en lugar de 行いて). Nuestro conjugador maneja todas estas excepciones correctamente."
+      },
+      {
+        "question": "¿Qué es la forma-te en japonés?",
+        "answer": "La forma-te (て形) es una forma verbal conectiva usada para hacer peticiones, expresar acciones continuas (te-iru), conectar oraciones y formar verbos compuestos. Para verbos Godan, la forma-te involucra cambios de sonido basados en la terminación del verbo. Para verbos Ichidan, simplemente reemplaza る con て."
+      },
+      {
+        "question": "¿Qué es la forma-masu en japonés?",
+        "answer": "La forma-masu (ます形) es la forma cortés de los verbos japoneses usada en situaciones formales. Se forma añadiendo ます a la raíz del verbo. Para verbos Godan, cambia el sonido final -u a -i y añade ます. Para verbos Ichidan, quita る y añade ます."
+      },
+      {
+        "question": "¿Qué es la forma potencial en japonés?",
+        "answer": "La forma potencial expresa habilidad o posibilidad (\"poder hacer\"). Para verbos Godan, cambia el -u final a -eru. Para verbos Ichidan, hay dos formas: tradicional (-rareru) y coloquial (-reru). Nuestro conjugador muestra ambas formas para verbos Ichidan."
+      },
+      {
+        "question": "¿Qué es la forma pasiva en japonés?",
+        "answer": "La forma pasiva (受身形) indica que el sujeto recibe una acción. Para verbos Godan, cambia el -u final a -areru. Para verbos Ichidan, quita る y añade られる. La pasiva también puede expresar sufrimiento o adversidad en japonés."
+      },
+      {
+        "question": "¿Qué es la forma causativa en japonés?",
+        "answer": "La forma causativa (使役形) expresa hacer o dejar que alguien haga algo. Para verbos Godan, cambia el -u final a -aseru. Para verbos Ichidan, quita る y añade させる. Esta forma es esencial para expresar permiso o coerción."
+      },
+      {
+        "question": "¿Este conjugador de verbos japoneses es gratuito?",
+        "answer": "¡Sí! Nuestro conjugador de verbos japoneses es completamente gratuito sin necesidad de registro. Puedes conjugar verbos ilimitados y acceder a todas las formas de conjugación sin costo."
+      },
+      {
+        "question": "¿Puedo usar este conjugador para preparación JLPT?",
+        "answer": "¡Absolutamente! Entender la conjugación de verbos es esencial para todos los niveles JLPT. Nuestro conjugador cubre todas las formas evaluadas en el JLPT, desde la forma-masu básica (N5) hasta formas causativo-pasivas complejas (N3-N1). Úsalo junto con nuestro entrenamiento de Kanji y Vocabulario para una preparación JLPT completa."
+      },
+      {
+        "question": "¿Qué es la forma condicional en japonés?",
+        "answer": "El japonés tiene varias formas condicionales: la forma-ba (ば形) para condiciones hipotéticas, la forma-tara (たら形) para eventos secuenciales o condicionales, y la forma-nara (なら形) para condiciones temáticas. Nuestro conjugador genera las tres formas condicionales."
+      },
+      {
+        "question": "¿Qué es la forma volitiva en japonés?",
+        "answer": "La forma volitiva (意向形) expresa intención o sugerencia (\"hagamos\" o \"haré\"). La volitiva simple termina en -ou/-you, mientras que la volitiva cortés usa ましょう. Se usa comúnmente para hacer sugerencias o expresar determinación."
+      },
+      {
+        "question": "¿Cómo funcionan los verbos compuestos en japonés?",
+        "answer": "Los verbos compuestos combinan un sustantivo o raíz verbal con する (hacer) o 来る (venir). Ejemplos incluyen 勉強する (benkyou suru - estudiar) y 持ってくる (motte kuru - traer). Nuestro conjugador maneja correctamente los verbos compuestos preservando el prefijo mientras conjuga la porción する o 来る."
+      },
+      {
+        "question": "¿Qué es la forma-tai en japonés?",
+        "answer": "La forma-tai (たい形) expresa deseo o querer (\"querer hacer\"). Se forma añadiendo たい a la raíz del verbo. La forma-tai se conjuga como un adjetivo-i, así que tiene formas como たくない (no querer), たかった (quería), y たくなかった (no quería)."
+      }
+    ]
+  },
+  "relatedFeatures": {
+    "title": "Continúa Aprendiendo Japonés",
+    "subtitle": "Explora más herramientas y recursos para mejorar tu viaje de aprendizaje del japonés.",
+    "links": {
+      "kana": {
+        "title": "Práctica de Kana",
+        "description": "Domina Hiragana y Katakana con entrenamiento interactivo"
+      },
+      "kanji": {
+        "title": "Aprendizaje de Kanji",
+        "description": "Estudia caracteres Kanji organizados por nivel JLPT"
+      },
+      "vocabulary": {
+        "title": "Entrenamiento de Vocabulario",
+        "description": "Construye tu vocabulario japonés con palabras enfocadas en JLPT"
+      },
+      "translate": {
+        "title": "Traductor Japonés",
+        "description": "Traduce entre inglés y japonés con romaji"
+      },
+      "academy": {
+        "title": "Academia de Japonés",
+        "description": "Lecciones estructuradas para aprendizaje completo del japonés"
+      }
+    },
+    "footer": "KanaDojo ofrece un conjunto completo de herramientas de aprendizaje de japonés. Desde dominar lo básico con práctica de Hiragana y Katakana, hasta construir vocabulario y entender Kanji, nuestra plataforma apoya a estudiantes en todos los niveles. Usa el conjugador de verbos junto con estos recursos para un estudio completo del idioma japonés."
+  }
+}

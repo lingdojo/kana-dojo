@@ -29,6 +29,7 @@ const NAMESPACES = [
   'errors',
   'menuInfo',
   'blog',
+  'conjugator',
 ];
 
 /**
@@ -39,12 +40,15 @@ function objectToType(obj, indent = 0) {
   const lines = [];
 
   for (const [key, value] of Object.entries(obj)) {
+    // Quote keys that contain special characters (like hyphens)
+    const safeKey = /^[a-zA-Z_$][a-zA-Z0-9_$]*$/.test(key) ? key : `'${key}'`;
+
     if (value && typeof value === 'object' && !Array.isArray(value)) {
-      lines.push(`${spaces}${key}: {`);
+      lines.push(`${spaces}${safeKey}: {`);
       lines.push(objectToType(value, indent + 1));
       lines.push(`${spaces}};`);
     } else {
-      lines.push(`${spaces}${key}: string;`);
+      lines.push(`${spaces}${safeKey}: string;`);
     }
   }
 

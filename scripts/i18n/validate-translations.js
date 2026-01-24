@@ -28,6 +28,7 @@ const NAMESPACES = [
   'menuInfo',
   'translator',
   'blog',
+  'conjugator',
 ];
 
 let hasErrors = false;
