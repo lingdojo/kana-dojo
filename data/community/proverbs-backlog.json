@@ -968,7 +968,8 @@
     "romaji": "Seite wa koto wo shisonjiru",
     "english": "Haste will spoil things",
     "meaning": "Rushing leads to mistakes",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 106,
@@ -976,7 +977,8 @@
     "romaji": "Zen wa isoge",
     "english": "Hurry to do good",
     "meaning": "Do worthwhile things promptly",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 107,
@@ -984,7 +986,8 @@
     "romaji": "Tsuki to suppon",
     "english": "The moon and a turtle",
     "meaning": "Vastly different; not comparable",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 108,
@@ -992,7 +995,8 @@
     "romaji": "Ishibashi wo tataite wataru",
     "english": "Tap a stone bridge before crossing",
     "meaning": "Be very cautious",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 109,
@@ -1000,7 +1004,7 @@
     "romaji": "Doku wo kurawaba sara made",
     "english": "If you eat poison, eat the plate too",
     "meaning": "If you must do it, go all the way",
-    "issued": false
+    "issued": true
   },
   {
     "id": 110,
