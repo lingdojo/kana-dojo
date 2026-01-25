@@ -1128,7 +1128,7 @@
   {
     "id": 182,
     "fact": "Japan has over 1,500 earthquakes per year, though most are too small to feel - the country sits on four tectonic plates.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 183,
