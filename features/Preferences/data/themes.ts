@@ -1258,6 +1258,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         mainColor: 'oklch(78.0% 0.205 35.0 / 1)',
         secondaryColor: 'oklch(88.0% 0.065 210.0 / 1)',
       },
+      {
+        id: 'midnight-sushi',
+        backgroundColor: 'oklch(15.0% 0.028 255.0 / 1)',
+        mainColor: 'oklch(82.0% 0.155 210.0 / 1)',
+        secondaryColor: 'oklch(70.0% 0.145 35.0 / 1)',
+      },
     ],
   },
   {
