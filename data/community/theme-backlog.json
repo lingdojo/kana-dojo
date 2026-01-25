@@ -1384,7 +1384,10 @@
     "backgroundColor": "oklch(19.0% 0.020 70.0 / 1)",
     "mainColor": "oklch(72.0% 0.095 75.0 / 1)",
     "secondaryColor": "oklch(58.0% 0.065 55.0 / 1)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "pavitra0",
+    "completedPR": 1884
   },
   {
     "id": "wavecrest-blue",
