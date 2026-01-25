@@ -18,7 +18,7 @@ jobs:
   validate-and-merge:
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    if: contains(github.event.pull_request.title, 'theme') || contains(github.event.pull_request.title, 'fact') || contains(github.event.pull_request.title, 'Theme') || contains(github.event.pull_request.title, 'Fact') || contains(github.event.pull_request.title, 'proverb') || contains(github.event.pull_request.title, 'Proverb')
+    if: contains(github.event.pull_request.title, 'theme') || contains(github.event.pull_request.title, 'fact') || contains(github.event.pull_request.title, 'Theme') || contains(github.event.pull_request.title, 'Fact') || contains(github.event.pull_request.title, 'proverb') || contains(github.event.pull_request.title, 'Proverb') || contains(github.event.pull_request.title, 'trivia') || contains(github.event.pull_request.title, 'Trivia') || contains(github.event.pull_request.title, 'grammar') || contains(github.event.pull_request.title, 'Grammar')
 
     steps:
       - name: Checkout base branch
@@ -58,6 +58,7 @@ jobs:
             let isValid = false;
             let validationType = null;
             let errors = [];
+            let warnings = [];
             let linkedIssue = null;
             let foundIssue = null;
 
@@ -88,11 +89,18 @@ jobs:
               errors.push(`Could not list PR files: ${e.message}`);
             }
 
+            const ignoredFiles = ['package-lock.json'];
+            const reviewedFiles = prFiles.filter(function(file) {
+              return !ignoredFiles.includes(file.filename);
+            });
+
             const isThemeContribution = prTitleLower.includes('theme');
             const isFactContribution = prTitleLower.includes('fact') && !prTitleLower.includes('proverb');
             const isProverbContribution = prTitleLower.includes('proverb');
+            const isTriviaContribution = prTitleLower.includes('trivia');
+            const isGrammarContribution = prTitleLower.includes('grammar');
 
-            if (!isThemeContribution && !isFactContribution && !isProverbContribution) {
+            if (!isThemeContribution && !isFactContribution && !isProverbContribution && !isTriviaContribution && !isGrammarContribution) {
               console.log('Not a community contribution PR');
               return;
             }
@@ -161,6 +169,28 @@ jobs:
                     console.log(`Found matching proverb issue: #${foundIssue}`);
                   }
                 }
+              } else if (isTriviaContribution) {
+                const triviaIdMatch = prTitle.match(/#(\d+)/);
+                if (triviaIdMatch) {
+                  const triviaId = triviaIdMatch[1];
+                  console.log(`Looking for trivia issue: #${triviaId}`);
+                  const matches = await searchOpenCommunityIssues(`"Add New Trivia Question #${triviaId}"`);
+                  if (matches.length > 0) {
+                    foundIssue = matches[0].number;
+                    console.log(`Found matching trivia issue: #${foundIssue}`);
+                  }
+                }
+              } else if (isGrammarContribution) {
+                const grammarIdMatch = prTitle.match(/#(\d+)/);
+                if (grammarIdMatch) {
+                  const grammarId = grammarIdMatch[1];
+                  console.log(`Looking for grammar issue: #${grammarId}`);
+                  const matches = await searchOpenCommunityIssues(`"Add New Grammar Point #${grammarId}"`);
+                  if (matches.length > 0) {
+                    foundIssue = matches[0].number;
+                    console.log(`Found matching grammar issue: #${foundIssue}`);
+                  }
+                }
               }
             }
 
@@ -171,7 +201,7 @@ jobs:
               console.log('Validating theme contribution');
 
               const allowed = ['features/Preferences/data/themes.ts'];
-              const changed = prFiles.map(function(f) { return f.filename; });
+              const changed = reviewedFiles.map(function(f) { return f.filename; });
               const invalidFiles = changed.filter(function(p) { return !allowed.includes(p); });
               if (changed.length !== 1 || invalidFiles.length > 0) {
                 errors.push('Theme PRs must modify only features/Preferences/data/themes.ts');
@@ -195,7 +225,7 @@ jobs:
                   }
                   
                   if (!targetIssue) {
-                    errors.push('Could not find a matching community issue for this theme');
+                    warnings.push('Could not find a matching community issue for this theme');
                   }
                 }
               } catch (e) {
@@ -207,7 +237,7 @@ jobs:
               console.log('Validating fact contribution');
 
               const allowed = ['public/japan-facts.json'];
-              const changed = prFiles.map(function(f) { return f.filename; });
+              const changed = reviewedFiles.map(function(f) { return f.filename; });
               const invalidFiles = changed.filter(function(p) { return !allowed.includes(p); });
               if (changed.length !== 1 || invalidFiles.length > 0) {
                 errors.push('Fact PRs must modify only public/japan-facts.json');
@@ -236,7 +266,7 @@ jobs:
                   }
                   
                   if (!targetIssue) {
-                    errors.push('Could not find a matching community issue for this fact');
+                    warnings.push('Could not find a matching community issue for this fact');
                   }
                 }
               } catch (e) {
@@ -247,7 +277,7 @@ jobs:
               console.log('Validating proverb contribution');
 
               const allowed = ['public/japanese-proverbs.json'];
-              const changed = prFiles.map(function(f) { return f.filename; });
+              const changed = reviewedFiles.map(function(f) { return f.filename; });
               const invalidFiles = changed.filter(function(p) { return !allowed.includes(p); });
               if (changed.length !== 1 || invalidFiles.length > 0) {
                 errors.push('Proverb PRs must modify only public/japanese-proverbs.json');
@@ -279,11 +309,98 @@ jobs:
                   }
                   
                   if (!targetIssue) {
-                    errors.push('Could not find a matching community issue for this proverb');
+                    warnings.push('Could not find a matching community issue for this proverb');
                   }
                 }
               } catch (e) {
                 errors.push(`Error reading proverbs file: ${e.message}`);
+              }
+            } else if (isTriviaContribution) {
+              validationType = 'trivia';
+              console.log('Validating trivia contribution');
+
+              const allowed = [
+                'public/japan-trivia.json',
+                'public/japan-trivia-easy.json',
+                'public/japan-trivia-medium.json',
+                'public/japan-trivia-hard.json'
+              ];
+              const changed = reviewedFiles.map(function(f) { return f.filename; });
+              const invalidFiles = changed.filter(function(p) { return !allowed.includes(p); });
+              if (changed.length !== 1 || invalidFiles.length > 0) {
+                errors.push('Trivia PRs must modify exactly one trivia JSON file (easy/medium/hard).');
+              }
+
+              try {
+                const triviaPath = `pr-head/${changed[0]}`;
+                if (!fs.existsSync(triviaPath)) {
+                  errors.push('Trivia JSON file not found in PR');
+                } else {
+                  const content = fs.readFileSync(triviaPath, 'utf8');
+
+                  try {
+                    const trivia = JSON.parse(content);
+
+                    if (!Array.isArray(trivia)) {
+                      errors.push('Trivia JSON should be an array');
+                    } else {
+                      const invalidTrivia = trivia.filter(function(q) {
+                        return !q.question || !Array.isArray(q.answers) || q.answers.length !== 4 || typeof q.correctIndex !== 'number';
+                      });
+                      if (invalidTrivia.length > 0) {
+                        errors.push('Each trivia entry must include a question, 4 answers, and a numeric correctIndex');
+                      }
+                    }
+                  } catch (parseErr) {
+                    errors.push(`Invalid JSON: ${parseErr.message}`);
+                  }
+
+                  if (!targetIssue) {
+                    warnings.push('Could not find a matching community issue for this trivia question');
+                  }
+                }
+              } catch (e) {
+                errors.push(`Error reading trivia file: ${e.message}`);
+              }
+            } else if (isGrammarContribution) {
+              validationType = 'grammar';
+              console.log('Validating grammar contribution');
+
+              const allowed = ['public/japanese-grammar.json'];
+              const changed = reviewedFiles.map(function(f) { return f.filename; });
+              const invalidFiles = changed.filter(function(p) { return !allowed.includes(p); });
+              if (changed.length !== 1 || invalidFiles.length > 0) {
+                errors.push('Grammar PRs must modify only public/japanese-grammar.json');
+              }
+
+              try {
+                const grammarPath = 'pr-head/public/japanese-grammar.json';
+                if (!fs.existsSync(grammarPath)) {
+                  errors.push('japanese-grammar.json file not found in PR');
+                } else {
+                  const content = fs.readFileSync(grammarPath, 'utf8');
+
+                  try {
+                    const grammar = JSON.parse(content);
+
+                    if (!Array.isArray(grammar)) {
+                      errors.push('japanese-grammar.json should be an array');
+                    } else {
+                      const nonStrings = grammar.filter(function(g) { return typeof g !== 'string'; });
+                      if (nonStrings.length > 0) {
+                        errors.push('All grammar points should be strings');
+                      }
+                    }
+                  } catch (parseErr) {
+                    errors.push(`Invalid JSON: ${parseErr.message}`);
+                  }
+
+                  if (!targetIssue) {
+                    warnings.push('Could not find a matching community issue for this grammar point');
+                  }
+                }
+              } catch (e) {
+                errors.push(`Error reading grammar file: ${e.message}`);
               }
             }
 
@@ -301,6 +418,9 @@ jobs:
             }
 
             let commentBody;
+            const warningList = warnings.length > 0
+              ? `\n\n**Warnings:**\n${warnings.map(function(w) { return '- ⚠️ ' + w; }).join('\n')}`
+              : '';
             if (isValid) {
               let issueNote = '';
               if (foundIssue && !linkedIssue) {
@@ -311,10 +431,10 @@ jobs:
               
               const checks = t.passed.checks.map(function(c) { return '- ✅ ' + c; }).join('\n');
               
-              commentBody = `${t.passed.title}\n\n${t.passed.body.replace('{type}', validationType)}\n\n**Checks passed:**\n${checks}${issueNote}\n\n${t.passed.footer}`;
+              commentBody = `${t.passed.title}\n\n${t.passed.body.replace('{type}', validationType)}\n\n**Checks passed:**\n${checks}${issueNote}${warningList}\n\n${t.passed.footer}`;
             } else {
               const errorList = errors.map(function(e) { return '- ❌ ' + e; }).join('\n');
-              commentBody = `${t.failed.title}\n\n${t.failed.body.replace('{type}', validationType)}\n\n${errorList}\n\n${t.failed.footer}`;
+              commentBody = `${t.failed.title}\n\n${t.failed.body.replace('{type}', validationType)}\n\n${errorList}${warningList}\n\n${t.failed.footer}`;
             }
 
             await github.rest.issues.createComment({

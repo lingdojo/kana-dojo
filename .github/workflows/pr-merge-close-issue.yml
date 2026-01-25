@@ -40,6 +40,8 @@ jobs:
             const themeBacklogPath = 'data/community/theme-backlog.json';
             const factsBacklogPath = 'data/community/facts-backlog.json';
             const proverbsBacklogPath = 'data/community/proverbs-backlog.json';
+            const triviaBacklogPath = 'data/community/trivia-backlog.json';
+            const grammarBacklogPath = 'data/community/grammar-backlog.json';
 
             const prTitle = context.payload.pull_request.title;
             const prTitleLower = prTitle.toLowerCase();
@@ -50,8 +52,10 @@ jobs:
             const isThemeContribution = prTitleLower.includes('theme');
             const isFactContribution = prTitleLower.includes('fact') && !prTitleLower.includes('proverb');
             const isProverbContribution = prTitleLower.includes('proverb');
+            const isTriviaContribution = prTitleLower.includes('trivia');
+            const isGrammarContribution = prTitleLower.includes('grammar');
 
-            if (!isThemeContribution && !isFactContribution && !isProverbContribution) {
+            if (!isThemeContribution && !isFactContribution && !isProverbContribution && !isTriviaContribution && !isGrammarContribution) {
               console.log('Not a community contribution PR, skipping');
               core.setOutput('should_commit', 'false');
               return;
@@ -121,6 +125,28 @@ jobs:
                   if (matches.length > 0) {
                     targetIssue = matches[0].number;
                     console.log(`Found matching proverb issue: #${targetIssue}`);
+                  }
+                }
+              } else if (isTriviaContribution) {
+                const triviaIdMatch = prTitle.match(/#(\d+)/);
+                const triviaId = triviaIdMatch ? triviaIdMatch[1] : null;
+                if (triviaId) {
+                  console.log(`Looking for trivia issue: #${triviaId}`);
+                  const matches = await searchOpenCommunityIssues(`"Add New Trivia Question #${triviaId}"`);
+                  if (matches.length > 0) {
+                    targetIssue = matches[0].number;
+                    console.log(`Found matching trivia issue: #${targetIssue}`);
+                  }
+                }
+              } else if (isGrammarContribution) {
+                const grammarIdMatch = prTitle.match(/#(\d+)/);
+                const grammarId = grammarIdMatch ? grammarIdMatch[1] : null;
+                if (grammarId) {
+                  console.log(`Looking for grammar issue: #${grammarId}`);
+                  const matches = await searchOpenCommunityIssues(`"Add New Grammar Point #${grammarId}"`);
+                  if (matches.length > 0) {
+                    targetIssue = matches[0].number;
+                    console.log(`Found matching grammar issue: #${targetIssue}`);
                   }
                 }
               }
@@ -225,6 +251,40 @@ jobs:
                       fs.writeFileSync(proverbsBacklogPath, JSON.stringify(proverbs, null, 2));
                       needsCommit = true;
                       console.log(`Marked proverb #${proverbId} as completed`);
+                    }
+                  }
+                } else if (isTriviaContribution) {
+                  const trivia = JSON.parse(fs.readFileSync(triviaBacklogPath, 'utf8'));
+                  const issueTriviaMatch = issueTitle.match(/Add New Trivia Question\s*#(\d+)/i);
+                  const prTriviaMatch = prTitle.match(/#(\d+)/);
+                  const triviaId = issueTriviaMatch ? parseInt(issueTriviaMatch[1]) : (prTriviaMatch ? parseInt(prTriviaMatch[1]) : null);
+
+                  if (triviaId !== null) {
+                    const triviaIndex = trivia.findIndex(function(q) { return q.id === triviaId; });
+                    if (triviaIndex !== -1) {
+                      trivia[triviaIndex].completed = true;
+                      trivia[triviaIndex].completedBy = prAuthor;
+                      trivia[triviaIndex].completedPR = prNumber;
+                      fs.writeFileSync(triviaBacklogPath, JSON.stringify(trivia, null, 2));
+                      needsCommit = true;
+                      console.log(`Marked trivia #${triviaId} as completed`);
+                    }
+                  }
+                } else if (isGrammarContribution) {
+                  const grammar = JSON.parse(fs.readFileSync(grammarBacklogPath, 'utf8'));
+                  const issueGrammarMatch = issueTitle.match(/Add New Grammar Point\s*#(\d+)/i);
+                  const prGrammarMatch = prTitle.match(/#(\d+)/);
+                  const grammarId = issueGrammarMatch ? parseInt(issueGrammarMatch[1]) : (prGrammarMatch ? parseInt(prGrammarMatch[1]) : null);
+
+                  if (grammarId !== null) {
+                    const grammarIndex = grammar.findIndex(function(g) { return g.id === grammarId; });
+                    if (grammarIndex !== -1) {
+                      grammar[grammarIndex].completed = true;
+                      grammar[grammarIndex].completedBy = prAuthor;
+                      grammar[grammarIndex].completedPR = prNumber;
+                      fs.writeFileSync(grammarBacklogPath, JSON.stringify(grammar, null, 2));
+                      needsCommit = true;
+                      console.log(`Marked grammar #${grammarId} as completed`);
                     }
                   }
                 }

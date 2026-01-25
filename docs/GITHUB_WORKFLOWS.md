@@ -37,12 +37,13 @@ KanaDojo uses GitHub Actions for automation across the development lifecycle. Wo
 
 **Steps**:
 
-1. Checkout code
-2. Setup Node.js 20 with npm caching
-3. Install dependencies (`npm ci` or `npm install`)
-4. Run `npm run check` (TypeScript + ESLint)
-5. Comment on PR with results
-6. Fail if checks don't pass
+1. Verify the PR is still open (skip if closed/merged)
+2. Checkout code
+3. Setup Node.js 20 with npm caching
+4. Install dependencies (`npm ci` or `npm install`)
+5. Run `npm run check` (TypeScript + ESLint)
+6. Comment on PR with results
+7. Fail if checks don't pass
 
 **Outputs**:
 
@@ -151,6 +152,7 @@ KanaDojo uses GitHub Actions for automation across the development lifecycle. Wo
 
 - Syncs issue status with backlog files
 - Can re-enable items that were closed without completion
+- Creates new community issues with the `Task` issue type
 
 ---
 
@@ -164,6 +166,7 @@ KanaDojo uses GitHub Actions for automation across the development lifecycle. Wo
 
 - Lighter-weight checks for community PRs
 - Focuses on content (themes, facts, proverbs) rather than code
+- Ignores `package-lock.json` when enforcing single-file contribution rules
 
 ---
 

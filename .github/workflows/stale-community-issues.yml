@@ -41,6 +41,8 @@ jobs:
             const themeBacklogPath = 'data/community/theme-backlog.json';
             const factsBacklogPath = 'data/community/facts-backlog.json';
             const proverbsBacklogPath = 'data/community/proverbs-backlog.json';
+            const triviaBacklogPath = 'data/community/trivia-backlog.json';
+            const grammarBacklogPath = 'data/community/grammar-backlog.json';
 
             let issues = [];
             let page = 1;
@@ -62,24 +64,136 @@ jobs:
 
             const now = new Date();
             const WARNING_THRESHOLD_MS = templates.config.staleWarningAfterMs;   // 12 hours
-            const CLOSE_THRESHOLD_MS = templates.config.staleCloseAfterMs;       // 24 hours
+            const CLOSE_THRESHOLD_MS = templates.config.staleCloseAfterMs;       // 18 hours
 
             let needsCommit = false;
             let themes = JSON.parse(fs.readFileSync(themeBacklogPath, 'utf8'));
             let facts = JSON.parse(fs.readFileSync(factsBacklogPath, 'utf8'));
             let proverbs = JSON.parse(fs.readFileSync(proverbsBacklogPath, 'utf8'));
+            let trivia = JSON.parse(fs.readFileSync(triviaBacklogPath, 'utf8'));
+            let grammar = JSON.parse(fs.readFileSync(grammarBacklogPath, 'utf8'));
+
+            let skippedUnassigned = 0;
+            let warnedAssigned = 0;
+            let closedAssigned = 0;
+            let warnedUnassigned = 0;
+            let closedUnassigned = 0;
+
+            function reenableBacklogItem(title, sourceLabel) {
+              const sourceTag = sourceLabel ? ` (${sourceLabel})` : '';
+              if (title.includes('Add New Color Theme:')) {
+                // Extract theme name from title like: "[Good First Issue] 🎨 Add New Color Theme: Neon Sakura (good first issue)"
+                const themeMatch = title.match(/Add New Color Theme:\s*(.+?)\s*\(good first issue\)/i);
+                if (themeMatch) {
+                  const themeName = themeMatch[1].trim();
+                  const themeIndex = themes.findIndex(function(t) { return t.name === themeName; });
+                  if (themeIndex !== -1 && !themes[themeIndex].completed) {
+                    themes[themeIndex].issued = false;
+                    needsCommit = true;
+                    console.log(`Re-enabled theme: ${themeName}${sourceTag}`);
+                  } else if (themeIndex !== -1 && themes[themeIndex].completed) {
+                    console.log(`Theme "${themeName}" is already completed, not re-enabling`);
+                  }
+                }
+              } else if (title.includes('Add Japan Fact #')) {
+                const factIdMatch = title.match(/#(\d+)/);
+                if (factIdMatch) {
+                  const factId = parseInt(factIdMatch[1]);
+                  const factIndex = facts.findIndex(function(f) { return f.id === factId; });
+                  if (factIndex !== -1 && !facts[factIndex].completed) {
+                    facts[factIndex].issued = false;
+                    needsCommit = true;
+                    console.log(`Re-enabled fact #${factId}${sourceTag}`);
+                  } else if (factIndex !== -1 && facts[factIndex].completed) {
+                    console.log(`Fact #${factId} is already completed, not re-enabling`);
+                  }
+                }
+              } else if (title.includes('Add Japanese Proverb #')) {
+                const proverbIdMatch = title.match(/#(\d+)/);
+                if (proverbIdMatch) {
+                  const proverbId = parseInt(proverbIdMatch[1]);
+                  const proverbIndex = proverbs.findIndex(function(p) { return p.id === proverbId; });
+                  if (proverbIndex !== -1 && !proverbs[proverbIndex].completed) {
+                    proverbs[proverbIndex].issued = false;
+                    needsCommit = true;
+                    console.log(`Re-enabled proverb #${proverbId}${sourceTag}`);
+                  } else if (proverbIndex !== -1 && proverbs[proverbIndex].completed) {
+                    console.log(`Proverb #${proverbId} is already completed, not re-enabling`);
+                  }
+                }
+              } else if (title.includes('Add New Trivia Question #')) {
+                const triviaIdMatch = title.match(/#(\d+)/);
+                if (triviaIdMatch) {
+                  const triviaId = parseInt(triviaIdMatch[1]);
+                  const triviaIndex = trivia.findIndex(function(q) { return q.id === triviaId; });
+                  if (triviaIndex !== -1 && !trivia[triviaIndex].completed) {
+                    trivia[triviaIndex].issued = false;
+                    needsCommit = true;
+                    console.log(`Re-enabled trivia #${triviaId}${sourceTag}`);
+                  } else if (triviaIndex !== -1 && trivia[triviaIndex].completed) {
+                    console.log(`Trivia #${triviaId} is already completed, not re-enabling`);
+                  }
+                }
+              } else if (title.includes('Add New Grammar Point #')) {
+                const grammarIdMatch = title.match(/#(\d+)/);
+                if (grammarIdMatch) {
+                  const grammarId = parseInt(grammarIdMatch[1]);
+                  const grammarIndex = grammar.findIndex(function(g) { return g.id === grammarId; });
+                  if (grammarIndex !== -1 && !grammar[grammarIndex].completed) {
+                    grammar[grammarIndex].issued = false;
+                    needsCommit = true;
+                    console.log(`Re-enabled grammar #${grammarId}${sourceTag}`);
+                  } else if (grammarIndex !== -1 && grammar[grammarIndex].completed) {
+                    console.log(`Grammar #${grammarId} is already completed, not re-enabling`);
+                  }
+                }
+              }
+            }
 
             for (const issue of issues) {
-              if (!issue.assignees || issue.assignees.length === 0) {
-                continue;
-              }
-              
               const lastActivity = new Date(issue.updated_at);
               const timeSinceActivity = now - lastActivity;
               const hasWarning = issue.labels.some(function(l) { return l.name === templates.labels.staleWarning; });
-              
+
+              if (!issue.assignees || issue.assignees.length === 0) {
+                if (timeSinceActivity >= CLOSE_THRESHOLD_MS) {
+                  console.log(`Closing stale unassigned issue #${issue.number}: ${issue.title}`);
+                  closedUnassigned += 1;
+
+                  await github.rest.issues.update({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: issue.number,
+                    state: 'closed',
+                    state_reason: 'not_planned'
+                  });
+                } else if (timeSinceActivity >= WARNING_THRESHOLD_MS && !hasWarning) {
+                  console.log(`Adding warning to unassigned issue #${issue.number}`);
+                  warnedUnassigned += 1;
+
+                  const warningMsg = t.unassignedWarning;
+                  await github.rest.issues.createComment({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: issue.number,
+                    body: `${warningMsg.greeting} ${warningMsg.body}\n\n${warningMsg.action}\n\n${warningMsg.consequence}\n\n${warningMsg.footer}`
+                  });
+
+                  await github.rest.issues.addLabels({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: issue.number,
+                    labels: [templates.labels.staleWarning]
+                  });
+                } else {
+                  skippedUnassigned += 1;
+                }
+                continue;
+              }
+
               if (timeSinceActivity >= CLOSE_THRESHOLD_MS) {
                 console.log(`Closing stale issue #${issue.number}: ${issue.title}`);
+                closedAssigned += 1;
                 
                 // Unassign the user before closing
                 const assignees = issue.assignees.map(function(a) { return a.login; });
@@ -93,14 +207,6 @@ jobs:
                   console.log(`Unassigned ${assignees.join(', ')} from issue #${issue.number}`);
                 }
                 
-                const closedMsg = t.closed;
-                await github.rest.issues.createComment({
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  issue_number: issue.number,
-                  body: `${closedMsg.title} ${closedMsg.reason}\n\n${closedMsg.reassurance}\n\n${closedMsg.footer}`
-                });
-                
                 await github.rest.issues.update({
                   owner: context.repo.owner,
                   repo: context.repo.repo,
@@ -108,53 +214,12 @@ jobs:
                   state: 'closed',
                   state_reason: 'not_planned'
                 });
-                
-                const title = issue.title;
-                
-                if (title.includes('Add New Color Theme:')) {
-                  // Extract theme name from title like: "[Good First Issue] 🎨 Add New Color Theme: Neon Sakura (good first issue)"
-                  const themeMatch = title.match(/Add New Color Theme:\s*(.+?)\s*\(good first issue\)/i);
-                  if (themeMatch) {
-                    const themeName = themeMatch[1].trim();
-                    const themeIndex = themes.findIndex(function(t) { return t.name === themeName; });
-                    if (themeIndex !== -1 && !themes[themeIndex].completed) {
-                      themes[themeIndex].issued = false;
-                      needsCommit = true;
-                      console.log(`Re-enabled theme: ${themeName}`);
-                    } else if (themeIndex !== -1 && themes[themeIndex].completed) {
-                      console.log(`Theme "${themeName}" is already completed, not re-enabling`);
-                    }
-                  }
-                } else if (title.includes('Add Japan Fact #')) {
-                  const factIdMatch = title.match(/#(\d+)/);
-                  if (factIdMatch) {
-                    const factId = parseInt(factIdMatch[1]);
-                    const factIndex = facts.findIndex(function(f) { return f.id === factId; });
-                    if (factIndex !== -1 && !facts[factIndex].completed) {
-                      facts[factIndex].issued = false;
-                      needsCommit = true;
-                      console.log(`Re-enabled fact #${factId}`);
-                    } else if (factIndex !== -1 && facts[factIndex].completed) {
-                      console.log(`Fact #${factId} is already completed, not re-enabling`);
-                    }
-                  }
-                } else if (title.includes('Add Japanese Proverb #')) {
-                  const proverbIdMatch = title.match(/#(\d+)/);
-                  if (proverbIdMatch) {
-                    const proverbId = parseInt(proverbIdMatch[1]);
-                    const proverbIndex = proverbs.findIndex(function(p) { return p.id === proverbId; });
-                    if (proverbIndex !== -1 && !proverbs[proverbIndex].completed) {
-                      proverbs[proverbIndex].issued = false;
-                      needsCommit = true;
-                      console.log(`Re-enabled proverb #${proverbId}`);
-                    } else if (proverbIndex !== -1 && proverbs[proverbIndex].completed) {
-                      console.log(`Proverb #${proverbId} is already completed, not re-enabling`);
-                    }
-                  }
-                }
+
+                reenableBacklogItem(issue.title, 'assigned-stale-close');
                 
               } else if (timeSinceActivity >= WARNING_THRESHOLD_MS && !hasWarning) {
                 console.log(`Adding warning to issue #${issue.number}`);
+                warnedAssigned += 1;
                 
                 const warningMsg = t.warning;
                 await github.rest.issues.createComment({
@@ -173,10 +238,14 @@ jobs:
               }
             }
 
+            console.log(`Stale issue summary: total=${issues.length}, skipped_unassigned=${skippedUnassigned}, warned_assigned=${warnedAssigned}, closed_assigned=${closedAssigned}, warned_unassigned=${warnedUnassigned}, closed_unassigned=${closedUnassigned}`);
+
             if (needsCommit) {
               fs.writeFileSync(themeBacklogPath, JSON.stringify(themes, null, 2));
               fs.writeFileSync(factsBacklogPath, JSON.stringify(facts, null, 2));
               fs.writeFileSync(proverbsBacklogPath, JSON.stringify(proverbs, null, 2));
+              fs.writeFileSync(triviaBacklogPath, JSON.stringify(trivia, null, 2));
+              fs.writeFileSync(grammarBacklogPath, JSON.stringify(grammar, null, 2));
               core.setOutput('needs_commit', 'true');
             } else {
               core.setOutput('needs_commit', 'false');
