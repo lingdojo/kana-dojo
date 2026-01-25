@@ -34,5 +34,11 @@
     "difficulty": "easy",
     "answers": ["Honshu", "Hokkaido", "Kyushu", "Shikoku"],
     "correctIndex": 0
+  },
+  {
+    "question": "What is the name of the bullet train network in Japan?",
+    "difficulty": "easy",
+    "answers": ["Shinkansen", "Metro Line", "Skyrail", "Kairo"],
+    "correctIndex": 0
   }
 ]
