@@ -1,14 +1,9 @@
 [
   {
-  "question": "Which month is traditionally associated with cherry blossom viewing (hanami) in Japan?",
-  "difficulty": "easy",
-  "answers": [
-    "January",
-    "April",
-    "July",
-    "October"
-  ],
-  "correctIndex": 1
+    "question": "Which month is traditionally associated with cherry blossom viewing (hanami) in Japan?",
+    "difficulty": "easy",
+    "answers": ["January", "April", "July", "October"],
+    "correctIndex": 1
   },
   {
     "question": "Which Japanese city is known for the historic Gion district?",
@@ -56,6 +51,12 @@
     "question": "Which month is traditionally associated with cherry blossom viewing (hanami) in Japan?",
     "difficulty": "easy",
     "answers": ["January", "April", "July", "October"],
+    "correctIndex": 1
+  },
+  {
+    "question": "Which Japanese food is made from fermented soybeans and has a sticky texture?",
+    "difficulty": "easy",
+    "answers": ["Miso", "Natto", "Tofu", "Udon"],
     "correctIndex": 1
   }
 ]
