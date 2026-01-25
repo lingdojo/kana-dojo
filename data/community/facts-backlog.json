@@ -868,7 +868,10 @@
   {
     "id": 130,
     "fact": "Japan has a toilet museum in Kitakyushu where you can slide down a giant toilet and learn about sewage history.",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "sheryyll",
+    "completedPR": 1854
   },
   {
     "id": 131,
