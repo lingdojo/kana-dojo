@@ -1396,7 +1396,10 @@
     "backgroundColor": "oklch(17.0% 0.030 245.0 / 1)",
     "mainColor": "oklch(88.0% 0.055 230.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.145 210.0 / 1)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "SaxenaAarohi",
+    "completedPR": 1896
   },
   {
     "id": "mountain-onsen",
