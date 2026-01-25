@@ -890,7 +890,8 @@
     "romaji": "I no naka no kawazu taikai wo shirazu",
     "english": "A frog in a well does not know the great sea",
     "meaning": "Limited experience limits perspective",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 97,
@@ -898,7 +899,8 @@
     "romaji": "Saru mo ki kara ochiru",
     "english": "Even monkeys fall from trees",
     "meaning": "Experts also make mistakes",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 98,
@@ -906,7 +908,8 @@
     "romaji": "Tana kara botamochi",
     "english": "A rice cake falls from the shelf",
     "meaning": "Unexpected good luck",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 99,
@@ -914,7 +917,8 @@
     "romaji": "Deru kui wa utareru",
     "english": "The nail that sticks out gets hammered down",
     "meaning": "Standing out invites criticism",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 100,
@@ -922,7 +926,8 @@
     "romaji": "Hana yori dango",
     "english": "Dumplings over flowers",
     "meaning": "Practicality over appearance",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 101,
@@ -930,7 +935,8 @@
     "romaji": "Hayaoki wa sanmon no toku",
     "english": "Early rising is worth three coins",
     "meaning": "Getting up early brings benefits",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 102,
@@ -938,7 +944,7 @@
     "romaji": "Nido aru koto wa sando aru",
     "english": "What happens twice will happen a third time",
     "meaning": "Patterns tend to repeat",
-    "issued": false
+    "issued": true
   },
   {
     "id": 103,
