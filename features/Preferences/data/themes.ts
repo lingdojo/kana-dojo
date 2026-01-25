@@ -247,11 +247,11 @@ const baseThemeSets: BaseThemeGroup[] = [
         secondaryColor: 'oklch(46.49% 0.0000 89.88 / 1)',
       },
       {
-        id: 'dark',
-        backgroundColor: 'oklch(22.67% 0.0000 89.88 / 1)',
-        mainColor: 'oklch(100.00% 0.0000 89.88 / 1)',
-        secondaryColor: 'oklch(80.54% 0.0000 89.88 / 1)',
-      },
+  id: 'tsukiji-morning',
+  backgroundColor: 'oklch(22.0% 0.020 235.0 / 1)',
+  mainColor: 'oklch(78.0% 0.135 215.0 / 1)',
+  secondaryColor: 'oklch(85.0% 0.155 90.0 / 1)'
+},
     ],
   },
 
