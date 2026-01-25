@@ -864,7 +864,8 @@
     "romaji": "Kuchi wa wazawai no moto",
     "english": "The mouth is the source of disaster",
     "meaning": "Careless words cause trouble",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 94,
@@ -872,7 +873,8 @@
     "romaji": "Ishi no ue ni mo san nen",
     "english": "Three years on a stone",
     "meaning": "Perseverance brings success",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 95,
@@ -880,7 +882,7 @@
     "romaji": "Makeru ga kachi",
     "english": "Sometimes losing is winning",
     "meaning": "Conceding can be the best outcome",
-    "issued": false
+    "issued": true
   },
   {
     "id": 96,
