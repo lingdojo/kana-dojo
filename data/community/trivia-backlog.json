@@ -3,15 +3,25 @@
     "id": 1,
     "question": "Which Japanese city is famous for the floating torii gate at Itsukushima Shrine?",
     "difficulty": "easy",
-    "answers": ["Kyoto", "Hiroshima", "Nagasaki", "Kanazawa"],
+    "answers": [
+      "Kyoto",
+      "Hiroshima",
+      "Nagasaki",
+      "Kanazawa"
+    ],
     "correctIndex": 1,
-    "issued": false
+    "issued": true
   },
   {
     "id": 2,
     "question": "What is the name of the bullet train network in Japan?",
     "difficulty": "easy",
-    "answers": ["Shinkansen", "Metro Line", "Skyrail", "Kairo"],
+    "answers": [
+      "Shinkansen",
+      "Metro Line",
+      "Skyrail",
+      "Kairo"
+    ],
     "correctIndex": 0,
     "issued": false
   },
@@ -19,7 +29,12 @@
     "id": 3,
     "question": "Which month is traditionally associated with cherry blossom viewing (hanami) in Japan?",
     "difficulty": "easy",
-    "answers": ["January", "April", "July", "October"],
+    "answers": [
+      "January",
+      "April",
+      "July",
+      "October"
+    ],
     "correctIndex": 1,
     "issued": false
   },
@@ -27,7 +42,12 @@
     "id": 4,
     "question": "What is the traditional Japanese art of paper folding called?",
     "difficulty": "easy",
-    "answers": ["Origami", "Ikebana", "Kintsugi", "Shodo"],
+    "answers": [
+      "Origami",
+      "Ikebana",
+      "Kintsugi",
+      "Shodo"
+    ],
     "correctIndex": 0,
     "issued": false
   },
@@ -35,7 +55,12 @@
     "id": 5,
     "question": "Which Japanese island is home to the city of Sapporo?",
     "difficulty": "easy",
-    "answers": ["Honshu", "Hokkaido", "Shikoku", "Kyushu"],
+    "answers": [
+      "Honshu",
+      "Hokkaido",
+      "Shikoku",
+      "Kyushu"
+    ],
     "correctIndex": 1,
     "issued": false
   },
@@ -43,7 +68,12 @@
     "id": 6,
     "question": "What is the name of Japan's traditional theatre known for stylized performances and masks?",
     "difficulty": "easy",
-    "answers": ["Kabuki", "Noh", "Rakugo", "Bunraku"],
+    "answers": [
+      "Kabuki",
+      "Noh",
+      "Rakugo",
+      "Bunraku"
+    ],
     "correctIndex": 1,
     "issued": false
   },
@@ -51,7 +81,12 @@
     "id": 7,
     "question": "Which Japanese food is made from fermented soybeans and has a sticky texture?",
     "difficulty": "easy",
-    "answers": ["Miso", "Natto", "Tofu", "Udon"],
+    "answers": [
+      "Miso",
+      "Natto",
+      "Tofu",
+      "Udon"
+    ],
     "correctIndex": 1,
     "issued": false
   },
@@ -59,7 +94,12 @@
     "id": 8,
     "question": "What is the name of the traditional Japanese summer festival featuring fireworks?",
     "difficulty": "easy",
-    "answers": ["Seijin Shiki", "Hanabi Taikai", "Setsubun", "Obon"],
+    "answers": [
+      "Seijin Shiki",
+      "Hanabi Taikai",
+      "Setsubun",
+      "Obon"
+    ],
     "correctIndex": 1,
     "issued": false
   },
@@ -93,7 +133,12 @@
     "id": 11,
     "question": "What is the Japanese word for \"thank you\"?",
     "difficulty": "medium",
-    "answers": ["Sumimasen", "Arigatou", "Ohayou", "Sayonara"],
+    "answers": [
+      "Sumimasen",
+      "Arigatou",
+      "Ohayou",
+      "Sayonara"
+    ],
     "correctIndex": 1,
     "issued": false
   },
@@ -101,7 +146,12 @@
     "id": 12,
     "question": "Which Japanese city is known for its deer roaming freely in a large park?",
     "difficulty": "medium",
-    "answers": ["Nara", "Yokohama", "Kobe", "Nagoya"],
+    "answers": [
+      "Nara",
+      "Yokohama",
+      "Kobe",
+      "Nagoya"
+    ],
     "correctIndex": 0,
     "issued": false
   },
@@ -109,7 +159,12 @@
     "id": 13,
     "question": "What is the name of the traditional Japanese garment often worn at festivals?",
     "difficulty": "medium",
-    "answers": ["Yukata", "Haori", "Hakama", "Tabi"],
+    "answers": [
+      "Yukata",
+      "Haori",
+      "Hakama",
+      "Tabi"
+    ],
     "correctIndex": 0,
     "issued": false
   },
@@ -117,7 +172,12 @@
     "id": 14,
     "question": "Which Japanese island is the southernmost of the four main islands?",
     "difficulty": "medium",
-    "answers": ["Honshu", "Hokkaido", "Shikoku", "Kyushu"],
+    "answers": [
+      "Honshu",
+      "Hokkaido",
+      "Shikoku",
+      "Kyushu"
+    ],
     "correctIndex": 3,
     "issued": false
   },
@@ -125,7 +185,12 @@
     "id": 15,
     "question": "What is the name of Japan's highest mountain?",
     "difficulty": "medium",
-    "answers": ["Mount Haku", "Mount Fuji", "Mount Aso", "Mount Tate"],
+    "answers": [
+      "Mount Haku",
+      "Mount Fuji",
+      "Mount Aso",
+      "Mount Tate"
+    ],
     "correctIndex": 1,
     "issued": false
   },
@@ -133,7 +198,12 @@
     "id": 16,
     "question": "Which season is associated with red maple leaves (momiji) in Japan?",
     "difficulty": "medium",
-    "answers": ["Spring", "Summer", "Autumn", "Winter"],
+    "answers": [
+      "Spring",
+      "Summer",
+      "Autumn",
+      "Winter"
+    ],
     "correctIndex": 2,
     "issued": false
   },
@@ -141,7 +211,12 @@
     "id": 17,
     "question": "What is the Japanese term for a convenience store?",
     "difficulty": "medium",
-    "answers": ["Depato", "Konbini", "Ramen-ya", "Kissa"],
+    "answers": [
+      "Depato",
+      "Konbini",
+      "Ramen-ya",
+      "Kissa"
+    ],
     "correctIndex": 1,
     "issued": false
   },
@@ -149,7 +224,12 @@
     "id": 18,
     "question": "Which Japanese city is famous for its snow festival featuring ice sculptures?",
     "difficulty": "medium",
-    "answers": ["Sapporo", "Sendai", "Fukuoka", "Okayama"],
+    "answers": [
+      "Sapporo",
+      "Sendai",
+      "Fukuoka",
+      "Okayama"
+    ],
     "correctIndex": 0,
     "issued": false
   },
@@ -157,7 +237,12 @@
     "id": 19,
     "question": "What is the traditional Japanese tea ceremony called?",
     "difficulty": "medium",
-    "answers": ["Sado", "Judo", "Kendo", "Shodo"],
+    "answers": [
+      "Sado",
+      "Judo",
+      "Kendo",
+      "Shodo"
+    ],
     "correctIndex": 0,
     "issued": false
   },
@@ -165,7 +250,12 @@
     "id": 20,
     "question": "Which of these is a Japanese traditional storytelling art?",
     "difficulty": "medium",
-    "answers": ["Rakugo", "Kabuki", "Noh", "Ikebana"],
+    "answers": [
+      "Rakugo",
+      "Kabuki",
+      "Noh",
+      "Ikebana"
+    ],
     "correctIndex": 0,
     "issued": false
   },
@@ -173,7 +263,12 @@
     "id": 21,
     "question": "What is the name of Japan's national currency?",
     "difficulty": "hard",
-    "answers": ["Yuan", "Yen", "Won", "Rupee"],
+    "answers": [
+      "Yuan",
+      "Yen",
+      "Won",
+      "Rupee"
+    ],
     "correctIndex": 1,
     "issued": false
   },
@@ -181,7 +276,12 @@
     "id": 22,
     "question": "Which Japanese city is famous for its street food district, Dotonbori?",
     "difficulty": "hard",
-    "answers": ["Osaka", "Niigata", "Kagoshima", "Takayama"],
+    "answers": [
+      "Osaka",
+      "Niigata",
+      "Kagoshima",
+      "Takayama"
+    ],
     "correctIndex": 0,
     "issued": false
   },
@@ -189,7 +289,12 @@
     "id": 23,
     "question": "What is the name of the Japanese comic and animation style?",
     "difficulty": "hard",
-    "answers": ["Manga", "Donghua", "Manhwa", "Comique"],
+    "answers": [
+      "Manga",
+      "Donghua",
+      "Manhwa",
+      "Comique"
+    ],
     "correctIndex": 0,
     "issued": false
   },
@@ -197,7 +302,12 @@
     "id": 24,
     "question": "Which Japanese city hosted the 1998 Winter Olympics?",
     "difficulty": "hard",
-    "answers": ["Nagano", "Kobe", "Hiroshima", "Naha"],
+    "answers": [
+      "Nagano",
+      "Kobe",
+      "Hiroshima",
+      "Naha"
+    ],
     "correctIndex": 0,
     "issued": false
   },
@@ -205,7 +315,12 @@
     "id": 25,
     "question": "What is the name of the traditional Japanese board game similar to chess?",
     "difficulty": "hard",
-    "answers": ["Shogi", "Go", "Mahjong", "Reversi"],
+    "answers": [
+      "Shogi",
+      "Go",
+      "Mahjong",
+      "Reversi"
+    ],
     "correctIndex": 0,
     "issued": false
   },
@@ -213,7 +328,12 @@
     "id": 26,
     "question": "Which Japanese food is a grilled eel dish often eaten in summer?",
     "difficulty": "hard",
-    "answers": ["Tempura", "Unagi", "Sukiyaki", "Okonomiyaki"],
+    "answers": [
+      "Tempura",
+      "Unagi",
+      "Sukiyaki",
+      "Okonomiyaki"
+    ],
     "correctIndex": 1,
     "issued": false
   },
@@ -221,7 +341,12 @@
     "id": 27,
     "question": "Which Japanese island chain is known for tropical beaches and coral reefs?",
     "difficulty": "hard",
-    "answers": ["Okinawa", "Sado", "Awaji", "Oki"],
+    "answers": [
+      "Okinawa",
+      "Sado",
+      "Awaji",
+      "Oki"
+    ],
     "correctIndex": 0,
     "issued": false
   },
@@ -229,7 +354,12 @@
     "id": 28,
     "question": "What is the Japanese name for the autumn moon-viewing festival?",
     "difficulty": "hard",
-    "answers": ["Tanabata", "Tsukimi", "Shogatsu", "Hina Matsuri"],
+    "answers": [
+      "Tanabata",
+      "Tsukimi",
+      "Shogatsu",
+      "Hina Matsuri"
+    ],
     "correctIndex": 1,
     "issued": false
   },
@@ -237,7 +367,12 @@
     "id": 29,
     "question": "Which Japanese city is known for its historic wooden district, Gion?",
     "difficulty": "hard",
-    "answers": ["Kyoto", "Yokohama", "Nagoya", "Sendai"],
+    "answers": [
+      "Kyoto",
+      "Yokohama",
+      "Nagoya",
+      "Sendai"
+    ],
     "correctIndex": 0,
     "issued": false
   },
@@ -245,7 +380,12 @@
     "id": 30,
     "question": "What is the name of the traditional Japanese theater featuring puppets?",
     "difficulty": "hard",
-    "answers": ["Bunraku", "Noh", "Kabuki", "Kyogen"],
+    "answers": [
+      "Bunraku",
+      "Noh",
+      "Kabuki",
+      "Kyogen"
+    ],
     "correctIndex": 0,
     "issued": false
   }
