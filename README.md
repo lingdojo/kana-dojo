@@ -50,8 +50,8 @@ All contributions are welcome! Whether you're fixing bugs, adding features, impr
 ## Quick Start
 
 ```bash
-git clone https://github.com/lingdojo/kanadojo.git
-cd kanadojo
+git clone https://github.com/lingdojo/kana-dojo.git
+cd kana-dojo
 npm install
 npm run dev
 ```
@@ -71,9 +71,11 @@ npm run check
 <div align="center">
 
 ### Home Page
+
 <!--
 ![Home](https://github.com/user-attachments/assets/cac78e72-4d31-43e8-8160-104c431e55be)
 -->
+
 ### Training Screen
 
 ![Training](https://github.com/user-attachments/assets/d491708f-2ad3-41c7-9717-dec8a90afd03)
