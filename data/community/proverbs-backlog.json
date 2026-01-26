@@ -1036,7 +1036,8 @@
     "romaji": "Oni ni kanabou",
     "english": "An iron club to an ogre",
     "meaning": "Adding strength to the strong",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 114,
@@ -1044,7 +1045,8 @@
     "romaji": "Neko ni koban",
     "english": "Gold coins to a cat",
     "meaning": "Gifts wasted on those who don't appreciate them",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 115,
@@ -1052,7 +1054,7 @@
     "romaji": "Yanagi ni kaze",
     "english": "Wind in the willow",
     "meaning": "Stay flexible and let problems pass",
-    "issued": false
+    "issued": true
   },
   {
     "id": 116,
