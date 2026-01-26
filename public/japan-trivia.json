@@ -1,0 +1,67 @@
+[
+  {
+    "question": "Which Japanese city is known for the historic Gion district?",
+    "difficulty": "easy",
+    "answers": ["Kyoto", "Osaka", "Sendai", "Saitama"],
+    "correctIndex": 0
+  },
+  {
+    "question": "What is Japan's high-speed rail network called?",
+    "difficulty": "easy",
+    "answers": ["Shinkansen", "Maglev", "JR Loop", "Tsubasa"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which Japanese festival celebrates the return of ancestral spirits in summer?",
+    "difficulty": "easy",
+    "answers": ["Obon", "Tanabata", "Setsubun", "Seijin Shiki"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which Japanese food is typically made by grilling skewered chicken?",
+    "difficulty": "easy",
+    "answers": ["Yakitori", "Okonomiyaki", "Takoyaki", "Soba"],
+    "correctIndex": 0
+  },
+  {
+    "question": "What is the name of the traditional Japanese poetic form with a 5-7-5 syllable pattern?",
+    "difficulty": "easy",
+    "answers": ["Haiku", "Tanka", "Senryu", "Renga"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which Japanese island is the largest by area?",
+    "difficulty": "easy",
+    "answers": ["Honshu", "Hokkaido", "Kyushu", "Shikoku"],
+    "correctIndex": 0
+  },
+  {
+    "question": "What is the name of Japan's national airline?",
+    "difficulty": "medium",
+    "answers": [
+      "Japan Airlines",
+      "All Nippon Express",
+      "Tokyo Air",
+      "Nippon Sky"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which Japanese city is famous for its ramen street, \"Ramen Yokocho\"?",
+    "difficulty": "medium",
+    "answers": ["Sapporo", "Nagoya", "Utsunomiya", "Naha"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which traditional Japanese sport features a ring called a dohyo?",
+    "difficulty": "medium",
+    "answers": ["Sumo", "Kendo", "Karate", "Kyudo"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which Japanese company is known for making the character Hello Kitty?",
+    "difficulty": "hard",
+    "answers": ["Sanrio", "Ghibli", "Capcom", "Namco"],
+    "correctIndex": 0
+  }
+]

@@ -1,0 +1,8 @@
+[
+  {
+    "question": "Which Japanese company is known for making the character Hello Kitty?",
+    "difficulty": "hard",
+    "answers": ["Sanrio", "Ghibli", "Capcom", "Namco"],
+    "correctIndex": 0
+  }
+]

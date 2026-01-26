@@ -1,0 +1,55 @@
+[
+  {
+    "question": "Which month is traditionally associated with cherry blossom viewing (hanami) in Japan?",
+    "difficulty": "easy",
+    "answers": ["January", "April", "July", "October"],
+    "correctIndex": 1
+  },
+  {
+    "question": "Which Japanese city is known for the historic Gion district?",
+    "difficulty": "easy",
+    "answers": ["Kyoto", "Osaka", "Sendai", "Saitama"],
+    "correctIndex": 0
+  },
+  {
+    "question": "What is Japan's high-speed rail network called?",
+    "difficulty": "easy",
+    "answers": ["Shinkansen", "Maglev", "JR Loop", "Tsubasa"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which Japanese festival celebrates the return of ancestral spirits in summer?",
+    "difficulty": "easy",
+    "answers": ["Obon", "Tanabata", "Setsubun", "Seijin Shiki"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which Japanese food is typically made by grilling skewered chicken?",
+    "difficulty": "easy",
+    "answers": ["Yakitori", "Okonomiyaki", "Takoyaki", "Soba"],
+    "correctIndex": 0
+  },
+  {
+    "question": "What is the name of the traditional Japanese poetic form with a 5-7-5 syllable pattern?",
+    "difficulty": "easy",
+    "answers": ["Haiku", "Tanka", "Senryu", "Renga"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which Japanese island is the largest by area?",
+    "difficulty": "easy",
+    "answers": ["Honshu", "Hokkaido", "Kyushu", "Shikoku"],
+    "correctIndex": 0
+  },
+  {
+    "question": "What is the name of the traditional Japanese summer festival featuring fireworks?",
+    "difficulty": "easy",
+    "answers": [
+      "Seijin Shiki",
+      "Hanabi Taikai",
+      "Setsubun",
+      "Obon"
+    ],
+    "correctIndex": 1
+  }
+]

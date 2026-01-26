@@ -1,0 +1,25 @@
+[
+  {
+    "question": "What is the name of Japan's national airline?",
+    "difficulty": "medium",
+    "answers": [
+      "Japan Airlines",
+      "All Nippon Express",
+      "Tokyo Air",
+      "Nippon Sky"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which Japanese city is famous for its ramen street, \"Ramen Yokocho\"?",
+    "difficulty": "medium",
+    "answers": ["Sapporo", "Nagoya", "Utsunomiya", "Naha"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which traditional Japanese sport features a ring called a dohyo?",
+    "difficulty": "medium",
+    "answers": ["Sumo", "Kendo", "Karate", "Kyudo"],
+    "correctIndex": 0
+  }
+]

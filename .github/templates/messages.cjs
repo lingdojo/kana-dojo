@@ -177,6 +177,15 @@ module.exports = {
         'Otherwise, it will be automatically closed in **6 hours** and made available for others to claim.',
       footer: 'Need help? Just ask! 🙌',
     },
+    unassignedWarning: {
+      greeting: '👋 **Heads up!**',
+      body: 'This unassigned issue has been inactive for 12 hours.',
+      action:
+        'If you want to work on it, please comment to claim it! We will auto-assign you.',
+      consequence:
+        'Otherwise, it will be automatically closed in **6 hours** until someone claims it.',
+      footer: 'Want to help? Just comment below! 🙌',
+    },
     closed: {
       title: '🕐 **This issue has been automatically closed**',
       reason: 'due to 18 hours of inactivity.',
@@ -184,76 +193,136 @@ module.exports = {
         "Don't worry—the contribution opportunity will be re-posted for someone else to claim.",
       footer: 'Thanks for your interest in contributing to KanaDojo! 🙏',
     },
+    unassignedClosed: {
+      title: '🕐 **This unassigned issue has been automatically closed**',
+      reason: 'due to 18 hours without activity or a claim.',
+      reassurance:
+        "Don't worry—this task will be re-posted for someone else to claim.",
+      footer: 'Interested in contributing? Keep an eye out for new issues! 🙏',
+    },
   },
 
   // =============================================================================
   // HOURLY ISSUE CREATION (hourly-community-issue.yml)
   // =============================================================================
   issueCreation: {
+    // Shared constants and helpers
+    common: {
+      difficulty: 'Easy (good first issue!)',
+      instructionsHeader: '### 📝 Instructions',
+      footer: "**Questions?** Comment below and we'll help! 🙌",
+      // Common instruction steps (used by buildInstructions)
+      steps: {
+        addComma: 'Make sure to add a comma after the previous last item',
+        save: 'Save the file and commit the changes',
+        linkIssue: 'Link this issue using `Closes #<issue_number>`',
+        finalize:
+          'Star our repo ⭐, drink some delicious bubble tea 🍹 and wait for review!',
+      },
+    },
+
+    /**
+     * Builds instructions array for content types.
+     * @param {string} filePath - Path to the file (for display and link)
+     * @param {string} itemType - Description like "fact", "proverb object", "trivia object"
+     * @param {string} prTitle - PR title like "content: add new japan fact"
+     * @param {object} [overrides] - Optional step overrides (step2, step3)
+     */
+    buildInstructions(filePath, itemType, prTitle, overrides = {}) {
+      const steps = this.common.steps;
+      return [
+        `Open [\`${filePath}\`](../blob/main/${filePath})`,
+        overrides.step2 ||
+          `Add this ${itemType} to the end of the array (before the closing \`]\`)`,
+        overrides.step3 || steps.addComma,
+        steps.save,
+        `Submit a Pull Request with title: \`${prTitle}\``,
+        steps.linkIssue,
+        steps.finalize,
+      ];
+    },
+
     theme: {
       title:
-        '[Good First Issue] 🎨 Add New Color Theme: {name} (good-first-issue)',
+        '[Good First Issue] {emoji} Add New Color Theme: {name} (good first issue)',
       header: '## 🎨 Add New Color Theme: "{name}"',
       category: 'Community Contribution - Theme',
-      difficulty: 'Easy (good first issue!)',
       estimatedTime: '1 minute (good-first-issue!)',
       taskDescription: 'Add this beautiful new theme to KanaDojo!',
       detailsHeader: '### Theme Details',
       vibeLabel: '💡 **Vibe:**',
-      instructionsHeader: '### 📝 Instructions',
-      instructions: [
-        'Open [`features/Preferences/data/themes.ts`](../blob/main/features/Preferences/data/themes.ts)',
-        'Find the `Dark` themes section (around line 243)',
-        'Add this new theme to the array:',
-        'Save the file and commit the changes',
-        'Submit a Pull Request with title: `feat(theme): add {name} theme`',
-        'Link this issue using `Closes #<issue_number>`',
-        'Star our repo ⭐, drink some delicious bubble tea 🍹 and wait for review!',
-      ],
-      footer: "**Questions?** Comment below and we'll help! 🙌",
+      file: 'features/Preferences/data/themes.ts',
+      itemType: 'theme',
+      prTitle: 'feat(theme): add {name} theme',
+      // Theme has unique step2 and step3
+      step2: 'Find the `Dark` themes section (around line 243)',
+      step3: 'Add this new theme to the array:',
     },
     fact: {
-      title: '[Good First Issue] 🎋 Add Interesting, Cultural Fact about Japan {id} (good-first-issue)',
+      title:
+        '[Good First Issue] {emoji} Add Interesting, Cultural Fact about Japan {id} (good first issue)',
       header: '## 🎋 Add New Japan Fact',
       category: 'Community Contribution - Fun Fact',
-      difficulty: 'Easy (good first issue!)',
       estimatedTime: '1 minute (good-first-issue!)',
       taskDescription:
         'Add this interesting fact about Japan to our collection!',
       factHeader: '### The Fact',
-      instructionsHeader: '### 📝 Instructions',
-      instructions: [
-        'Open [`public/japan-facts.json`](../blob/main/public/japan-facts.json)',
-        'Add this fact to the end of the array (before the closing `]`)',
-        'Make sure to add a comma after the previous last item',
-        'Save the file and commit the changes',
-        'Submit a Pull Request with title: `content: add new japan fact`',
-        'Link this issue using `Closes #<issue_number>`',
-        'Star our repo ⭐, drink some delicious bubble tea 🍹 and wait for review!',
-      ],
-      footer: "**Questions?** Comment below and we'll help! 🙌",
+      // Use buildInstructions: filePath, itemType, prTitle
+      file: 'public/japan-facts.json',
+      itemType: 'fact',
+      prTitle: 'content: add new japan fact',
     },
     proverb: {
       title:
-        '[Good First Issue] 🎌 Add New Japanese Proverb {id} (good-first-issue)',
+        '[Good First Issue] {emoji} Add New Japanese Proverb {id} (good first issue)',
       header: '## 🎌 Add Japanese Proverb (ことわざ)',
       category: 'Community Contribution - Proverb',
-      difficulty: 'Easy (good first issue!)',
       estimatedTime: '1 minute (good-first-issue!)',
       taskDescription:
         'Add this traditional Japanese proverb to help learners understand Japanese wisdom!',
       proverbHeader: '### The Proverb',
-      instructionsHeader: '### 📝 Instructions',
-      instructions: [
-        'Open [`public/japanese-proverbs.json`](../blob/main/public/japanese-proverbs.json)',
-        'Add this proverb object to the end of the array (before the closing `]`)',
-        'Make sure to add a comma after the previous last item',
-        'Save the file and commit the changes',
-        'Submit a Pull Request with title: `content: add new japanese proverb`',
-        'Link this issue using `Closes #<issue_number>`',
-        'Star our repo ⭐, drink some delicious bubble tea 🍹 and wait for review!',
-      ],
-      footer: "**Questions?** Comment below and we'll help! 🙌",
+      file: 'public/japanese-proverbs.json',
+      itemType: 'proverb object',
+      prTitle: 'content: add new japanese proverb',
+    },
+    trivia: {
+      title:
+        '[Good First Issue] {emoji} Add New Trivia Question {id} (good first issue)',
+      header: '## 🧠 Add New Trivia Question',
+      category: 'Community Contribution - Trivia',
+      estimatedTime: '2 minutes (good-first-issue!)',
+      taskDescription: 'Add this trivia question to our growing quiz bank!',
+      triviaHeader: '### The Trivia Question',
+      // Trivia uses dynamic file path: public/{difficultyFile}
+      file: 'public/{difficultyFile}',
+      itemType: 'trivia object',
+      prTitle: 'content: add new trivia question',
+    },
+    grammar: {
+      title:
+        '[Good First Issue] {emoji} Add New Grammar Point {id} (good first issue)',
+      header: '## 📖 Add New Grammar Point',
+      category: 'Community Contribution - Grammar',
+      estimatedTime: '2 minutes (good-first-issue!)',
+      taskDescription:
+        'Add this grammar explanation to our learner-friendly grammar list!',
+      grammarHeader: '### The Grammar Point',
+      file: 'public/japanese-grammar.json',
+      itemType: 'grammar string',
+      prTitle: 'content: add new grammar point',
+    },
+    animeQuote: {
+      title:
+        '[Good First Issue] {emoji} Add Famous Anime Quote #{id} (good first issue)',
+      header: '## 🎬 Add Famous Anime Quote',
+      category: 'Community Contribution - Anime Quote',
+      estimatedTime: '2 minutes (good-first-issue!)',
+      taskDescription:
+        'Add this iconic anime quote so learners can enjoy Japanese pop culture!',
+      quoteHeader: '### The Quote',
+      file: 'public/anime-quotes.json',
+      itemType: 'anime quote object',
+      prTitle: 'content: add anime quote',
     },
   },
 };
