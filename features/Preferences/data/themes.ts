@@ -1289,11 +1289,17 @@ const baseThemeSets: BaseThemeGroup[] = [
   secondaryColor: 'oklch(68.0% 0.085 30.0 / 1)'
 },
       {
-  id: 'wavecrest-blue',
-  backgroundColor: 'oklch(17.0% 0.030 245.0 / 1)',
-  mainColor: 'oklch(88.0% 0.055 230.0 / 1)',
-  secondaryColor: 'oklch(70.0% 0.145 210.0 / 1)'
-},
+        id: 'wavecrest-blue',
+        backgroundColor: 'oklch(17.0% 0.030 245.0 / 1)',
+        mainColor: 'oklch(88.0% 0.055 230.0 / 1)',
+        secondaryColor: 'oklch(70.0% 0.145 210.0 / 1)',
+      },
+      {
+        id: 'sundown-shrine',
+        backgroundColor: 'oklch(18.0% 0.055 330.0 / 1)',
+        mainColor: 'oklch(72.0% 0.195 35.0 / 1)',
+        secondaryColor: 'oklch(85.0% 0.095 275.0 / 1)',
+      },
     ],
   },
   {
