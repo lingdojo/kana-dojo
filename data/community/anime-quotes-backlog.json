@@ -48,7 +48,10 @@
     "english": "I, Giorno Giovanna, have a dream!",
     "anime": "JoJo's Bizarre Adventure: Golden Wind",
     "character": "Giorno Giovanna",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "gouravrayGithub",
+    "completedPR": 1941
   },
   {
     "id": 6,
