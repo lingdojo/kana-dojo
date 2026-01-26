@@ -1062,7 +1062,8 @@
     "romaji": "Oni no inuma ni sentaku",
     "english": "Do laundry while the ogre is away",
     "meaning": "Take advantage of an opportunity",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 117,
@@ -1070,7 +1071,7 @@
     "romaji": "Yakeishi ni mizu",
     "english": "Water on a hot stone",
     "meaning": "A futile effort",
-    "issued": false
+    "issued": true
   },
   {
     "id": 118,
