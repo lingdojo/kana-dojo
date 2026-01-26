@@ -182,25 +182,8 @@ jobs:
                     state: 'closed',
                     state_reason: 'not_planned'
                   });
-                } else if (timeSinceActivity >= WARNING_THRESHOLD_MS && !hasWarning) {
-                  console.log(`Adding warning to unassigned issue #${issue.number}`);
-                  warnedUnassigned += 1;
-
-                  const warningMsg = t.unassignedWarning;
-                  await github.rest.issues.createComment({
-                    owner: context.repo.owner,
-                    repo: context.repo.repo,
-                    issue_number: issue.number,
-                    body: `${warningMsg.greeting} ${warningMsg.body}\n\n${warningMsg.action}\n\n${warningMsg.consequence}\n\n${warningMsg.footer}`
-                  });
-
-                  await github.rest.issues.addLabels({
-                    owner: context.repo.owner,
-                    repo: context.repo.repo,
-                    issue_number: issue.number,
-                    labels: [templates.labels.staleWarning]
-                  });
                 } else {
+                  // Leave unassigned issues quiet until auto-close to avoid noisy bot comments
                   skippedUnassigned += 1;
                 }
                 continue;
