@@ -52,7 +52,7 @@
   {
     "id": 11,
     "text": "\"〜でしょう\" adds probability or softens statements, like \"probably\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 12,
