@@ -1474,7 +1474,7 @@
     "backgroundColor": "oklch(19.0% 0.035 45.0 / 1)",
     "mainColor": "oklch(82.0% 0.155 85.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.145 20.0 / 1)",
-    "issued": false
+    "issued": true
   },
   {
     "id": "harbor-fog",
