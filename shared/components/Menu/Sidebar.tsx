@@ -123,7 +123,7 @@ const NavLink = memo(
 
     const baseClasses = clsx(
       'flex items-center gap-2 rounded-2xl transition-all duration-250',
-      isMain ? 'text-2xl' : 'text-lg',
+      isMain ? 'text-2xl' : 'text-base',
       'max-lg:justify-center max-lg:px-3 max-lg:py-2 lg:w-full lg:px-4 lg:py-2',
       !isMain && 'max-lg:hidden',
     );
@@ -192,7 +192,7 @@ const NavLink = memo(
             onClick={onClick}
             className={clsx(
               'relative z-10 flex items-center gap-2 rounded-2xl',
-              isMain ? 'text-2xl' : 'text-lg',
+              isMain ? 'text-2xl' : 'text-base',
               'max-lg:justify-center max-lg:px-3 lg:w-full lg:px-4',
               paddingClasses,
               !isMain && 'max-lg:hidden',
@@ -223,7 +223,7 @@ const NavLink = memo(
             borderRadius='xl'
             className={clsx(
               'flex items-center gap-2',
-              isMain ? 'text-2xl' : 'text-lg',
+              isMain ? 'text-2xl' : 'text-base',
               'max-lg:justify-center max-lg:px-3 max-lg:py-2 lg:w-full lg:px-4 lg:py-2',
               !isMain && 'max-lg:hidden',
             )}
@@ -340,7 +340,11 @@ const Sidebar = () => {
   useEffect(() => {
     // Dynamically import experiments data
     import('@/shared/data/experiments').then(module => {
-      setLoadedExperiments(module.experiments);
+      // Shuffle experiments randomly
+      const shuffledExperiments = [...module.experiments].sort(
+        () => Math.random() - 0.5,
+      );
+      setLoadedExperiments(shuffledExperiments);
     });
   }, []);
 
@@ -440,6 +444,7 @@ const Sidebar = () => {
         'lg:h-auto lg:border-r-1 lg:px-3',
         'lg:pb-12',
       )}
+      // style={{ scrollbarGutter: 'stable' }}
     >
       {/* Logo */}
       <h1

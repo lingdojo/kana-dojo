@@ -81,6 +81,7 @@ IGNORE_PATTERNS=(
   "^public/japan-facts\\.json$"
   "^data/community/"
   "^data/.*\\.json$"
+  "^data/"
 )
 
 # Build the combined regex pattern

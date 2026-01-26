@@ -4,7 +4,7 @@
 
 <div align="center">
 
-![KanaDojo Banner](https://github.com/user-attachments/assets/b7931764-be5e-43c7-b1b3-9d2568b2fecf)
+![KanaDojo Banner](https://github.com/user-attachments/assets/56716ee9-9347-4224-9fe2-ef1beb93e286)
 
 **An aesthetic, minimalist and highly customizable platform for mastering Japanese inspired by Monkeytype**
 
@@ -19,32 +19,23 @@
 
 ---
 
-## Badges (for forks)
-
-If you fork this project, add these badges to your README:
-
-```markdown
-[![CI](https://github.com/YOUR_USERNAME/kana-dojo/actions/workflows/pr-check.yml/badge.svg)](https://github.com/YOUR_USERNAME/kana-dojo/actions)
-[![Issues](https://img.shields.io/github/issues/YOUR_USERNAME/kana-dojo)](https://github.com/YOUR_USERNAME/kana-dojo/issues)
-[![Pull Requests](https://img.shields.io/github/issues-pr/YOUR_USERNAME/kana-dojo)](https://github.com/YOUR_USERNAME/kana-dojo/pulls)
-[![Contributors](https://img.shields.io/github/contributors/YOUR_USERNAME/kana-dojo)](https://github.com/YOUR_USERNAME/kana-dojo/graphs/contributors)
-```
-
-[Live Demo](https://kanadojo.com) · [Documentation](./docs/) · [Contributing](./CONTRIBUTING.md)
-
-</div>
-
 ## About
 
 KanaDojo is an engaging web-based Japanese learning platform that makes mastering Hiragana, Katakana, Kanji, and Vocabulary fun and intuitive. Built with a focus on aesthetics, customization, and effective learning, it provides an immersive training environment for Japanese language learners at all levels.
 
-## Quick Links
+## Contributing
 
-- **App**: https://kanadojo.com
-- **Practice**: https://kanadojo.com/en/hiragana-practice · https://kanadojo.com/en/katakana-practice · https://kanadojo.com/en/kanji-practice
-- **Docs**: https://deepwiki.com/lingdojo/kana-dojo · ./docs/
-- **Contributing**: ./CONTRIBUTING.md
-- **Good first issues**: https://github.com/lingdojo/kana-dojo/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22
+### For Complete Beginners
+
+Start with the [Beginner's Contribution Guide](./docs/CONTRIBUTING-BEGINNERS.md) for a step-by-step walkthrough that explains everything from creating a GitHub account to opening your first PR.
+
+### Not a beginner?
+
+All contributions are welcome! Whether you're fixing bugs, adding features, improving documentation, or translating — check out [CONTRIBUTING.md](./CONTRIBUTING.md) to get started.
+
+[Live Demo](https://kanadojo.com) · [Documentation](./docs/)
+
+</div>
 
 ## Key Features
 
@@ -78,12 +69,12 @@ npm run check
 <div align="center">
 
 ### Home Page
-
+<!--
 ![Home](https://github.com/user-attachments/assets/cac78e72-4d31-43e8-8160-104c431e55be)
+-->
+### Training Screen
 
-### Training
-
-![Training](https://github.com/user-attachments/assets/053020ef-77c7-492b-b8db-c381d1ec7db8)
+![Training](https://github.com/user-attachments/assets/d491708f-2ad3-41c7-9717-dec8a90afd03)
 
 ### Themes & Customization
 
@@ -93,23 +84,20 @@ npm run check
 
 ## Documentation
 
-| Document                                         | Description                                  |
-| ------------------------------------------------ | -------------------------------------------- |
-| [Architecture](./docs/ARCHITECTURE.md)           | Project structure, patterns, and conventions |
-| [UI Design](./docs/UI_DESIGN.md)                 | Theming, styling, and component guidelines   |
-| [Translation Guide](./docs/TRANSLATION_GUIDE.md) | How to translate the app                     |
-| [Troubleshooting](./docs/TROUBLESHOOTING.md)     | Common issues and solutions                  |
-| [All Documentation](./docs/)                     | Complete documentation index                 |
+| Document                                                  | Description                                    |
+| --------------------------------------------------------- | ---------------------------------------------- |
+| [Architecture](./docs/ARCHITECTURE.md)                    | Project structure, patterns, and conventions   |
+| [UI Design](./docs/UI_DESIGN.md)                          | Theming, styling, and component guidelines     |
+| [Translation Guide](./docs/TRANSLATION_GUIDE.md)          | How to translate the app                       |
+| [Troubleshooting](./docs/TROUBLESHOOTING.md)              | Common issues and solutions                    |
+| [Beginner Contributing](./docs/CONTRIBUTING-BEGINNERS.md) | Step-by-step guide for first-time contributors |
+| [All Documentation](./docs/)                              | Complete documentation index                   |
 
 ## Tech Stack
 
 Next.js 15 · React 19 · TypeScript · Tailwind CSS · shadcn/ui · Zustand · Framer Motion
 
 > See [Architecture docs](./docs/ARCHITECTURE.md) for full technical details.
-
-## Contributing
-
-Contributions are welcome! Whether you're fixing bugs, adding features, improving documentation, or translating — check out [CONTRIBUTING.md](./CONTRIBUTING.md) to get started.
 
 ## Star History
 
@@ -123,10 +111,9 @@ Contributions are welcome! Whether you're fixing bugs, adding features, improvin
 
 This project is licensed under the AGPL 3.0 License — see [LICENSE.md](./LICENSE.md) for details.
 
-## Links
+## Contact
 
-- **Website**: [kanadojo.com](https://kanadojo.com)
-- **Repository**: [github.com/lingdojo/kanadojo](https://github.com/lingdojo/kanadojo)
+- **Discord**: https://discord.gg/CyvBNNrSmb
 - **Email**: dev@kanadojo.com
 
 ---

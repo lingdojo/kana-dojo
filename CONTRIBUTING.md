@@ -1,5 +1,7 @@
 # 🥋 Contributing to KanaDojo
 
+> **Brand new to Git/GitHub?** Start with the [Beginner Contribution Guide](./docs/CONTRIBUTING-BEGINNERS.md) for a zero-to-PR walkthrough, then come back here for the standard workflow.
+
 Hey there! Thanks for checking out **KanaDojo** — we're genuinely glad you're here. Whether you're fixing a typo, adding new kanji, or building a brand-new feature, your time and effort matter a lot. This project exists to make learning Japanese beautiful and fun, and we’d love for you to be part of it.
 
 ---

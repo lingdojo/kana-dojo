@@ -1,15 +1,21 @@
 [
   {
+  "japanese": "転石苔むさず",
+  "romaji": "Tenseki koke musazu",
+  "english": "A rolling stone gathers no moss",
+  "meaning": "Constant change prevents stagnation"
+  },
+  {
   "japanese": "人のふり見て我がふり直せ",
   "romaji": "Hito no furi mite waga furi naose",
   "english": "Watch others and correct yourself",
   "meaning": "Learn from others' behavior"
   },
   {
-  "japanese": "井戸端会議",
-  "romaji": "Idobata kaigi",
-  "english": "Well-side conference",
-  "meaning": "Neighborhood gossip"
+    "japanese": "井戸端会議",
+    "romaji": "Idobata kaigi",
+    "english": "Well-side conference",
+    "meaning": "Neighborhood gossip"
   },
   {
     "japanese": "善は急げ",
@@ -394,5 +400,17 @@
     "romaji": "Kega no koumyou",
     "english": "Fame from a mistake",
     "meaning": "A lucky break that comes from an error"
+  },
+  {
+    "japanese": "負けるが勝ち",
+    "romaji": "Makeru ga kachi",
+    "english": "Sometimes losing is winning",
+    "meaning": "Conceding can be the best outcome"
+  },
+  {
+    "japanese": "雨降って地固まる",
+    "romaji": "Ame futte ji katamaru",
+    "english": "After the rain, the ground hardens",
+    "meaning": "Hard times make relationships stronger"
   }
 ]

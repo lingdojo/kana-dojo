@@ -2,11 +2,11 @@ name: Create Community Contribution Issue
 
 on:
   schedule:
-    - cron: '*/15 * * * *'
+    - cron: '*/20 * * * *'
   workflow_dispatch:
     inputs:
       force_type:
-        description: 'Force issue type: theme | fact | proverb'
+        description: 'Force issue type: theme | fact | proverb | trivia | grammar | animeQuote'
         required: false
         type: string
       dry_run:
@@ -55,19 +55,45 @@ jobs:
             const forceType = (context.payload.inputs && context.payload.inputs.force_type) ? String(context.payload.inputs.force_type).trim() : '';
             const dryRun = !!(context.payload.inputs && (context.payload.inputs.dry_run === true || context.payload.inputs.dry_run === 'true'));
 
+            const emojiBank = [
+              '🎨', '🎋', '🎌', '🌸', '🌊', '🌙', '⭐', '🍜', '🍙', '🍵',
+              '🧭', '🧩', '🪄', '🪷', '🪭', '🎏', '🏮', '🗾', '⛩️', '🗻',
+              '🌧️', '⚡', '❄️', '🍂', '🍣', '🍡', '🥢', '🧧', '📚', '🖌️',
+              '🧵', '🎎', '🪙', '🛤️', '🚅', '🧪', '🧠', '🧶', '🪟', '🪨',
+              '🏯', '🏹', '🪁', '🐉', '🦊', '🐾', '🐼', '🦋', '🐟', '🪸'
+            ];
+
+            function pickEmoji() {
+              return emojiBank[Math.floor(Math.random() * emojiBank.length)];
+            }
+
             const statePath = 'data/community/automation-state.json';
             const themeBacklogPath = 'data/community/theme-backlog.json';
             const factsBacklogPath = 'data/community/facts-backlog.json';
             const proverbsBacklogPath = 'data/community/proverbs-backlog.json';
+            const triviaBacklogPath = 'data/community/trivia-backlog.json';
+            const grammarBacklogPath = 'data/community/grammar-backlog.json';
+            const animeQuotesBacklogPath = 'data/community/anime-quotes-backlog.json';
 
             const themesSourcePath = 'features/Preferences/data/themes.ts';
             const factsSourcePath = 'public/japan-facts.json';
             const proverbsSourcePath = 'public/japanese-proverbs.json';
+            const triviaSourcePaths = {
+              easy: 'public/japan-trivia-easy.json',
+              medium: 'public/japan-trivia-medium.json',
+              hard: 'public/japan-trivia-hard.json'
+            };
+            const triviaLegacyPath = 'public/japan-trivia.json';
+            const grammarSourcePath = 'public/japanese-grammar.json';
+            const animeQuotesSourcePath = 'public/anime-quotes.json';
 
             let state = JSON.parse(fs.readFileSync(statePath, 'utf8'));
             const themes = JSON.parse(fs.readFileSync(themeBacklogPath, 'utf8'));
             const facts = JSON.parse(fs.readFileSync(factsBacklogPath, 'utf8'));
             const proverbs = JSON.parse(fs.readFileSync(proverbsBacklogPath, 'utf8'));
+            const trivia = JSON.parse(fs.readFileSync(triviaBacklogPath, 'utf8'));
+            const grammar = JSON.parse(fs.readFileSync(grammarBacklogPath, 'utf8'));
+            const animeQuotes = JSON.parse(fs.readFileSync(animeQuotesBacklogPath, 'utf8'));
 
             if (typeof state.consecutiveNoIssueRuns !== 'number') {
               state.consecutiveNoIssueRuns = 0;
@@ -90,6 +116,42 @@ jobs:
                 existingProverbs = JSON.parse(fs.readFileSync(proverbsSourcePath, 'utf8'));
               } catch (e) {
                 console.log(`Could not parse ${proverbsSourcePath}: ${e.message}`);
+              }
+            }
+
+            let existingTrivia = [];
+            const triviaSourceFiles = [
+              ...Object.values(triviaSourcePaths),
+              triviaLegacyPath
+            ];
+            triviaSourceFiles.forEach(function(path) {
+              if (fs.existsSync(path)) {
+                try {
+                  const data = JSON.parse(fs.readFileSync(path, 'utf8'));
+                  if (Array.isArray(data)) {
+                    existingTrivia = existingTrivia.concat(data);
+                  }
+                } catch (e) {
+                  console.log(`Could not parse ${path}: ${e.message}`);
+                }
+              }
+            });
+
+            let existingGrammar = [];
+            if (fs.existsSync(grammarSourcePath)) {
+              try {
+                existingGrammar = JSON.parse(fs.readFileSync(grammarSourcePath, 'utf8'));
+              } catch (e) {
+                console.log(`Could not parse ${grammarSourcePath}: ${e.message}`);
+              }
+            }
+
+            let existingAnimeQuotes = [];
+            if (fs.existsSync(animeQuotesSourcePath)) {
+              try {
+                existingAnimeQuotes = JSON.parse(fs.readFileSync(animeQuotesSourcePath, 'utf8'));
+              } catch (e) {
+                console.log(`Could not parse ${animeQuotesSourcePath}: ${e.message}`);
               }
             }
 
@@ -116,7 +178,7 @@ jobs:
               }
             }
 
-            const defaultOrder = ['theme', 'fact', 'proverb'];
+            const defaultOrder = ['theme', 'fact', 'proverb', 'trivia', 'grammar', 'animeQuote'];
             const typeOrder = forceType && defaultOrder.includes(forceType)
               ? [forceType]
               : defaultOrder;
@@ -172,13 +234,16 @@ jobs:
               }
               
               const tmpl = t.theme;
-              issueTitle = tmpl.title.replace('{name}', item.name);
+              const common = t.common;
+              issueTitle = tmpl.title
+                .replace('{emoji}', pickEmoji())
+                .replace('{name}', item.name);
               
-              const instructions = tmpl.instructions.map((instr, i) => `${i + 1}. ${instr.replace(/{name}/g, item.name)}`);
+              const instructions = t.buildInstructions(tmpl.file, tmpl.itemType, tmpl.prTitle, { step2: tmpl.step2, step3: tmpl.step3 }).map((instr, i) => `${i + 1}. ${instr.replace(/{name}/g, item.name)}`);
               
               const codeBlock = `\`\`\`typescript\n{\n  id: '${item.id}',\n  backgroundColor: '${item.backgroundColor}',\n  mainColor: '${item.mainColor}',\n  secondaryColor: '${item.secondaryColor}'\n},\n\`\`\``;
               
-              issueBody = `${tmpl.header.replace('{name}', item.name)}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${tmpl.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### 🎯 Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.detailsHeader}\n\n| Property | Value |\n|----------|-------|\n| **ID** | \`${item.id}\` |\n| **Background** | \`${item.backgroundColor}\` |\n| **Main Color** | \`${item.mainColor}\` |\n| **Secondary** | \`${item.secondaryColor}\` |\n\n> ${tmpl.vibeLabel} ${item.description}\n\n${tmpl.instructionsHeader}\n\n${instructions[0]}\n${instructions[1]}\n${instructions[2]}\n\n${codeBlock}\n\n${instructions[3]}\n${instructions[4]}\n${instructions[5]}\n\n---\n\n${tmpl.footer}`;
+              issueBody = `${tmpl.header.replace('{name}', item.name)}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### 🎯 Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.detailsHeader}\n\n| Property | Value |\n|----------|-------|\n| **ID** | \`${item.id}\` |\n| **Background** | \`${item.backgroundColor}\` |\n| **Main Color** | \`${item.mainColor}\` |\n| **Secondary** | \`${item.secondaryColor}\` |\n\n> ${tmpl.vibeLabel} ${item.description}\n\n${common.instructionsHeader}\n\n${instructions[0]}\n${instructions[1]}\n${instructions[2]}\n\n${codeBlock}\n\n${instructions[3]}\n${instructions[4]}\n${instructions[5]}\n\n---\n\n${common.footer}`;
               
               const themeIndex = themes.findIndex(function(th) { return th.id === item.id; });
               themes[themeIndex].issued = true;
@@ -224,17 +289,20 @@ jobs:
               }
               
               const tmpl = t.fact;
-              issueTitle = tmpl.title.replace('{id}', item.id);
+              const common = t.common;
+              issueTitle = tmpl.title
+                .replace('{emoji}', pickEmoji())
+                .replace('{id}', item.id);
               
-              const instructions = tmpl.instructions.map((instr, i) => `${i + 1}. ${instr.replace(/{id}/g, item.id)}`);
+              const instructions = t.buildInstructions(tmpl.file, tmpl.itemType, tmpl.prTitle).map((instr, i) => `${i + 1}. ${instr.replace(/{id}/g, item.id)}`);
               
-              issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${tmpl.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### 🎯 Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.factHeader}\n\n> ${item.fact}\n\n${tmpl.instructionsHeader}\n\n${instructions.join('\n')}\n\n---\n\n${tmpl.footer}`;
+              issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### 🎯 Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.factHeader}\n\n> ${item.fact}\n\n${common.instructionsHeader}\n\n${instructions.join('\n')}\n\n---\n\n${common.footer}`;
               
               const factIndex = facts.findIndex(function(f) { return f.id === item.id; });
               facts[factIndex].issued = true;
               fs.writeFileSync(factsBacklogPath, JSON.stringify(facts, null, 2));
               backlogChanged = true;
-              } else {
+              } else if (nextType === 'proverb') {
               // Proverb
               item = proverbs.find(function(p) {
                 if (p.issued || p.completed) {
@@ -281,17 +349,208 @@ jobs:
               }
               
               const tmpl = t.proverb;
-              issueTitle = tmpl.title.replace('{id}', item.id);
+              const common = t.common;
+              issueTitle = tmpl.title
+                .replace('{emoji}', pickEmoji())
+                .replace('{id}', item.id);
               
-              const instructions = tmpl.instructions.map((instr, i) => `${i + 1}. ${instr.replace(/{id}/g, item.id)}`);
+              const instructions = t.buildInstructions(tmpl.file, tmpl.itemType, tmpl.prTitle).map((instr, i) => `${i + 1}. ${instr.replace(/{id}/g, item.id)}`);
               
               const codeBlock = `\`\`\`json\n{\n  "japanese": "${item.japanese}",\n  "romaji": "${item.romaji}",\n  "english": "${item.english}",\n  "meaning": "${item.meaning}"\n}\n\`\`\``;
               
-              issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${tmpl.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### 🎯 Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.proverbHeader}\n\n| Japanese | Reading | English |\n|----------|---------|---------|\n| **${item.japanese}** | ${item.romaji} | ${item.english} |\n\n> 💡 **Meaning:** ${item.meaning}\n\n${tmpl.instructionsHeader}\n\n${instructions[0]}\n${instructions[1]}\n${instructions[2]}\n\n${codeBlock}\n\n${instructions[3]}\n${instructions[4]}\n${instructions[5]}\n\n---\n\n${tmpl.footer}`;
+              issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### 🎯 Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.proverbHeader}\n\n| Japanese | Reading | English |\n|----------|---------|---------|\n| **${item.japanese}** | ${item.romaji} | ${item.english} |\n\n> 💡 **Meaning:** ${item.meaning}\n\n${common.instructionsHeader}\n\n${instructions[0]}\n${instructions[1]}\n${instructions[2]}\n\n${codeBlock}\n\n${instructions[3]}\n${instructions[4]}\n${instructions[5]}\n\n---\n\n${common.footer}`;
               
               const proverbIndex = proverbs.findIndex(function(p) { return p.id === item.id; });
               proverbs[proverbIndex].issued = true;
               fs.writeFileSync(proverbsBacklogPath, JSON.stringify(proverbs, null, 2));
+              backlogChanged = true;
+              } else if (nextType === 'trivia') {
+              item = trivia.find(function(q) {
+                if (q.issued || q.completed) {
+                  return false;
+                }
+                if (Array.isArray(existingTrivia)) {
+                  const exists = existingTrivia.some(function(eq) {
+                    if (!eq || typeof eq !== 'object') {
+                      return false;
+                    }
+                    if (eq.question !== q.question) {
+                      return false;
+                    }
+                    const eqAnswers = Array.isArray(eq.answers) ? eq.answers : [];
+                    const qAnswers = Array.isArray(q.answers) ? q.answers : [];
+                    return eqAnswers.length === qAnswers.length && eqAnswers.every(function(ans, idx) {
+                      return ans === qAnswers[idx];
+                    });
+                  });
+                  if (exists) {
+                    const triviaIdx = trivia.findIndex(function(ti) { return ti.id === q.id; });
+                    trivia[triviaIdx].completed = true;
+                    backlogChanged = true;
+                    return false;
+                  }
+                }
+                return true;
+              });
+
+              if (!item) {
+                console.log('No more trivia questions available in backlog.');
+                if (backlogChanged) {
+                  fs.writeFileSync(themeBacklogPath, JSON.stringify(themes, null, 2));
+                  fs.writeFileSync(factsBacklogPath, JSON.stringify(facts, null, 2));
+                  fs.writeFileSync(proverbsBacklogPath, JSON.stringify(proverbs, null, 2));
+                  fs.writeFileSync(triviaBacklogPath, JSON.stringify(trivia, null, 2));
+                  fs.writeFileSync(grammarBacklogPath, JSON.stringify(grammar, null, 2));
+                }
+                continue;
+              }
+
+              const duplicateTrivia = await hasOpenIssueForQuery(`"Add New Trivia Question #${item.id}"`);
+
+              if (duplicateTrivia) {
+                console.log(`Issue already exists for trivia #${item.id}: Marking as issued and skipping.`);
+                const triviaIdx = trivia.findIndex(function(q) { return q.id === item.id; });
+                trivia[triviaIdx].issued = true;
+                fs.writeFileSync(triviaBacklogPath, JSON.stringify(trivia, null, 2));
+                backlogChanged = true;
+                continue;
+              }
+
+              const tmpl = t.trivia;
+              const common = t.common;
+              issueTitle = tmpl.title
+                .replace('{emoji}', pickEmoji())
+                .replace('{id}', item.id);
+
+              const difficultyFile = triviaSourcePaths[item.difficulty] || triviaSourcePaths.easy;
+              const instructions = t.buildInstructions(tmpl.file.replace('{difficultyFile}', difficultyFile), tmpl.itemType, tmpl.prTitle).map((instr, i) => `${i + 1}. ${instr.replace(/{id}/g, item.id)}`);
+              const answers = Array.isArray(item.answers) ? item.answers : [];
+              const codeBlock = `\`\`\`json\n{\n  "question": "${item.question}",\n  "difficulty": "${item.difficulty}",\n  "answers": [\n    "${answers.join('\",\n    \"')}"\n  ],\n  "correctIndex": ${item.correctIndex}\n}\n\`\`\``;
+
+              issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### 🎯 Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.triviaHeader}\n\n**Question:** ${item.question}\n\n**Answers:**\n${answers.map(function(a, idx) { return `${idx + 1}. ${a}`; }).join('\n')}\n\n**Correct Answer Index:** ${item.correctIndex}\n\n${common.instructionsHeader}\n\n${instructions[0]}\n${instructions[1]}\n${instructions[2]}\n\n${codeBlock}\n\n${instructions[3]}\n${instructions[4]}\n${instructions[5]}\n\n---\n\n${common.footer}`;
+
+              const triviaIndex = trivia.findIndex(function(q) { return q.id === item.id; });
+              trivia[triviaIndex].issued = true;
+              fs.writeFileSync(triviaBacklogPath, JSON.stringify(trivia, null, 2));
+              backlogChanged = true;
+              } else if (nextType === 'grammar') {
+              // Grammar
+              item = grammar.find(function(g) {
+                if (g.issued || g.completed) {
+                  return false;
+                }
+                if (Array.isArray(existingGrammar) && existingGrammar.includes(g.text)) {
+                  const grammarIdx = grammar.findIndex(function(gi) { return gi.id === g.id; });
+                  grammar[grammarIdx].completed = true;
+                  backlogChanged = true;
+                  return false;
+                }
+                return true;
+              });
+
+              if (!item) {
+                console.log('No more grammar points available in backlog.');
+                if (backlogChanged) {
+                  fs.writeFileSync(themeBacklogPath, JSON.stringify(themes, null, 2));
+                  fs.writeFileSync(factsBacklogPath, JSON.stringify(facts, null, 2));
+                  fs.writeFileSync(proverbsBacklogPath, JSON.stringify(proverbs, null, 2));
+                  fs.writeFileSync(triviaBacklogPath, JSON.stringify(trivia, null, 2));
+                  fs.writeFileSync(grammarBacklogPath, JSON.stringify(grammar, null, 2));
+                }
+                continue;
+              }
+
+              const duplicateGrammar = await hasOpenIssueForQuery(`"Add New Grammar Point #${item.id}"`);
+
+              if (duplicateGrammar) {
+                console.log(`Issue already exists for grammar #${item.id}: Marking as issued and skipping.`);
+                const grammarIdx = grammar.findIndex(function(g) { return g.id === item.id; });
+                grammar[grammarIdx].issued = true;
+                fs.writeFileSync(grammarBacklogPath, JSON.stringify(grammar, null, 2));
+                backlogChanged = true;
+                continue;
+              }
+
+              const tmpl = t.grammar;
+              const common = t.common;
+              issueTitle = tmpl.title
+                .replace('{emoji}', pickEmoji())
+                .replace('{id}', item.id);
+
+              const instructions = t.buildInstructions(tmpl.file, tmpl.itemType, tmpl.prTitle).map((instr, i) => `${i + 1}. ${instr.replace(/{id}/g, item.id)}`);
+              const codeBlock = `\`\`\`json\n"${item.text}"\n\`\`\``;
+
+              issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### 🎯 Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.grammarHeader}\n\n> ${item.text}\n\n${common.instructionsHeader}\n\n${instructions[0]}\n${instructions[1]}\n${instructions[2]}\n\n${codeBlock}\n\n${instructions[3]}\n${instructions[4]}\n${instructions[5]}\n\n---\n\n${common.footer}`;
+
+              const grammarIndex = grammar.findIndex(function(g) { return g.id === item.id; });
+              grammar[grammarIndex].issued = true;
+              fs.writeFileSync(grammarBacklogPath, JSON.stringify(grammar, null, 2));
+              backlogChanged = true;
+              } else {
+              // Anime Quote
+              item = animeQuotes.find(function(q) {
+                if (q.issued || q.completed) {
+                  return false;
+                }
+                if (Array.isArray(existingAnimeQuotes)) {
+                  const exists = existingAnimeQuotes.some(function(eq) {
+                    if (!eq || typeof eq !== 'object') {
+                      return false;
+                    }
+                    return eq.japanese === q.japanese
+                      && eq.romaji === q.romaji
+                      && eq.english === q.english
+                      && eq.anime === q.anime
+                      && eq.character === q.character;
+                  });
+                  if (exists) {
+                    const quoteIdx = animeQuotes.findIndex(function(qi) { return qi.id === q.id; });
+                    animeQuotes[quoteIdx].completed = true;
+                    backlogChanged = true;
+                    return false;
+                  }
+                }
+                return true;
+              });
+
+              if (!item) {
+                console.log('No more anime quotes available in backlog.');
+                if (backlogChanged) {
+                  fs.writeFileSync(themeBacklogPath, JSON.stringify(themes, null, 2));
+                  fs.writeFileSync(factsBacklogPath, JSON.stringify(facts, null, 2));
+                  fs.writeFileSync(proverbsBacklogPath, JSON.stringify(proverbs, null, 2));
+                  fs.writeFileSync(triviaBacklogPath, JSON.stringify(trivia, null, 2));
+                  fs.writeFileSync(grammarBacklogPath, JSON.stringify(grammar, null, 2));
+                  fs.writeFileSync(animeQuotesBacklogPath, JSON.stringify(animeQuotes, null, 2));
+                }
+                continue;
+              }
+
+              const duplicateQuote = await hasOpenIssueForQuery(`"Add Famous Anime Quote #${item.id}"`);
+
+              if (duplicateQuote) {
+                console.log(`Issue already exists for anime quote #${item.id}: Marking as issued and skipping.`);
+                const quoteIdx = animeQuotes.findIndex(function(q) { return q.id === item.id; });
+                animeQuotes[quoteIdx].issued = true;
+                fs.writeFileSync(animeQuotesBacklogPath, JSON.stringify(animeQuotes, null, 2));
+                backlogChanged = true;
+                continue;
+              }
+
+              const tmpl = t.animeQuote;
+              const common = t.common;
+              issueTitle = tmpl.title
+                .replace('{emoji}', pickEmoji())
+                .replace('{id}', item.id);
+
+              const instructions = t.buildInstructions(tmpl.file, tmpl.itemType, tmpl.prTitle).map((instr, i) => `${i + 1}. ${instr.replace(/{id}/g, item.id)}`);
+              const codeBlock = `\`\`\`json\n{\n  \"japanese\": \"${item.japanese}\",\n  \"romaji\": \"${item.romaji}\",\n  \"english\": \"${item.english}\",\n  \"anime\": \"${item.anime}\",\n  \"character\": \"${item.character}\"\n}\n\`\`\``;
+
+              issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### 🎯 Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.quoteHeader}\n\n| Japanese | Romaji | English |\n|----------|--------|---------|\n| **${item.japanese}** | ${item.romaji} | ${item.english} |\n\n**Anime:** ${item.anime}  \n**Character:** ${item.character}\n\n${common.instructionsHeader}\n\n${instructions[0]}\n${instructions[1]}\n${instructions[2]}\n\n${codeBlock}\n\n${instructions[3]}\n${instructions[4]}\n${instructions[5]}\n\n---\n\n${common.footer}`;
+
+              const quoteIndex = animeQuotes.findIndex(function(q) { return q.id === item.id; });
+              animeQuotes[quoteIndex].issued = true;
+              fs.writeFileSync(animeQuotesBacklogPath, JSON.stringify(animeQuotes, null, 2));
               backlogChanged = true;
             }
 
@@ -338,7 +597,8 @@ jobs:
               repo: context.repo.repo,
               title: issueTitle,
               body: issueBody,
-              labels: labels
+              labels: labels,
+              type: 'Task'
             });
 
             console.log(`Created issue #${response.data.number}: ${issueTitle}`);
