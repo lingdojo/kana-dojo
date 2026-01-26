@@ -21,5 +21,17 @@
     "difficulty": "medium",
     "answers": ["Sumo", "Kendo", "Karate", "Kyudo"],
     "correctIndex": 0
-  }
+  },
+
+  {
+  "question": "What is the Japanese word for \"thank you\"?",
+  "difficulty": "medium",
+  "answers": [
+    "Sumimasen",
+    "Arigatou",
+    "Ohayou",
+    "Sayonara"
+  ],
+  "correctIndex": 1
+}
 ]
