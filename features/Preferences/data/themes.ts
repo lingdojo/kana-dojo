@@ -323,6 +323,12 @@ const baseThemeSets: BaseThemeGroup[] = [
     isLight: false,
     themes: [
       {
+        id: 'ginger-koi',
+        backgroundColor: 'oklch(95.0% 0.012 85.0 / 1)',
+        mainColor: 'oklch(60.0% 0.170 40.0 / 1)',
+        secondaryColor: 'oklch(72.0% 0.095 120.0 / 1)'
+      },
+      {
         id: 'koi-pond',
         backgroundColor: 'oklch(20.0% 0.048 240.0 / 1)',
         mainColor: 'oklch(80.0% 0.175 55.0 / 1)',
