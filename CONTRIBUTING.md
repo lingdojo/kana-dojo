@@ -158,7 +158,7 @@ When your change is ready:
    git push origin feat/dark-mode-improvements
    ```
 
-2. Open a pull request against the **`main`** branch of `lingdojo/kanadojo`.
+2. Open a pull request against the **`main`** branch of `lingdojo/kana-dojo`.
 
 3. In your PR description:
    - Explain what problem you solved and _why_ it matters.

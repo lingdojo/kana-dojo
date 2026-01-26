@@ -33,14 +33,14 @@ Before you jump in, make sure your environment is ready:
 
 ```bash
 # 1. Fork the repo
-https://github.com/lingdojo/kanadojo/fork
+https://github.com/lingdojo/kana-dojo/fork
 
 # 2. Clone your fork
-git clone https://github.com/<your-username>/kanadojo.git
-cd kanadojo
+git clone https://github.com/<your-username>/kana-dojo.git
+cd kana-dojo
 
 # 3. Add the original repo as upstream (to stay in sync)
-git remote add upstream https://github.com/lingdojo/kanadojo.git
+git remote add upstream https://github.com/lingdojo/kana-dojo.git
 
 # 4. Install dependencies and start the dev server
 npm install && npm run dev
@@ -126,7 +126,7 @@ When your change is ready:
    git push origin feat/dark-mode-improvements
    ```
 
-2. Open a pull request against the **`main`** branch of `lingdojo/kanadojo`.
+2. Open a pull request against the **`main`** branch of `lingdojo/kana-dojo`.
 
 3. In your PR description:
    - Explain what problem you solved and _why_ it matters.
