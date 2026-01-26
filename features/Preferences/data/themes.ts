@@ -398,6 +398,114 @@ const baseThemeSets: BaseThemeGroup[] = [
                 id: 'samurai-steel',
                 backgroundColor: 'oklch(18.0% 0.022 250.0 / 1)',
                 mainColor: 'oklch(80.0% 0.055 240.0 / 1)',
+      {
+        id: 'ramune-fizz',
+        backgroundColor: 'oklch(85.00% 0.040 210.0 / 1)',
+        mainColor: 'oklch(70.0% 0.170 205.0 / 1)',
+        secondaryColor: 'oklch(80.0% 0.135 95.0 / 1)',
+      },
+      {
+        id: 'shaved-ice',
+        backgroundColor: 'oklch(85.00% 0.045 215.0 / 1)',
+        mainColor: 'oklch(60.0% 0.195 25.0 / 1)',
+        secondaryColor: 'oklch(65.0% 0.175 215.0 / 1)',
+      },
+      {
+        id: 'soda-float',
+        backgroundColor: 'oklch(84.00% 0.050 150.0 / 1)',
+        mainColor: 'oklch(62.0% 0.175 155.0 / 1)',
+        secondaryColor: 'oklch(85.0% 0.095 95.0 / 1)',
+      },
+      {
+        id: 'hanami-picnic',
+        backgroundColor: 'oklch(87.00% 0.035 20.0 / 1)',
+        mainColor: 'oklch(70.0% 0.165 350.0 / 1)',
+        secondaryColor: 'oklch(78.0% 0.120 135.0 / 1)',
+      },
+    ],
+  },
+  {
+    name: 'Dark',
+    icon: Moon,
+    isLight: false,
+    themes: [
+      {
+       id: 'spring-bamboo',
+       backgroundColor: 'oklch(93.0% 0.018 150.0 / 1)',
+       mainColor: 'oklch(55.0% 0.145 145.0 / 1)',
+       secondaryColor: 'oklch(70.0% 0.085 120.0 / 1)'
+      },     
+
+      {
+        id: 'ginger-koi',
+        backgroundColor: 'oklch(95.0% 0.012 85.0 / 1)',
+        mainColor: 'oklch(60.0% 0.170 40.0 / 1)',
+        secondaryColor: 'oklch(72.0% 0.095 120.0 / 1)'
+      },
+      {
+        id: 'koi-pond',
+        backgroundColor: 'oklch(20.0% 0.048 240.0 / 1)',
+        mainColor: 'oklch(80.0% 0.175 55.0 / 1)',
+        secondaryColor: 'oklch(70.0% 0.130 220.0 / 1)',
+      },
+      {
+        id: 'tsuyu-drizzle',
+        backgroundColor: 'oklch(22.0% 0.015 250.0 / 1)',
+        mainColor: 'oklch(72.0% 0.105 230.0 / 1)',
+        secondaryColor: 'oklch(78.0% 0.025 260.0 / 1)',
+      },
+      {
+        id: 'vending-glow',
+        backgroundColor: 'oklch(16.0% 0.025 280.0 / 1)',
+        mainColor: 'oklch(85.0% 0.125 220.0 / 1)',
+        secondaryColor: 'oklch(78.0% 0.165 45.0 / 1)',
+      },
+      {
+        id: 'winter-kimono',
+        backgroundColor: 'oklch(16.0% 0.040 260.0 / 1)',
+        mainColor: 'oklch(88.0% 0.020 240.0 / 1)',
+        secondaryColor: 'oklch(68.0% 0.110 310.0 / 1)',
+      },
+      {
+        id: 'tsukimi-moon',
+        backgroundColor: 'oklch(18.0% 0.028 255.0 / 1)',
+        mainColor: 'oklch(92.0% 0.020 95.0 / 1)',
+        secondaryColor: 'oklch(65.0% 0.105 270.0 / 1)',
+      },
+      {
+        id: 'jpop-energy',
+        backgroundColor: 'oklch(15.0% 0.055 310.0 / 1)',
+        mainColor: 'oklch(80.0% 0.210 345.0 / 1)',
+        secondaryColor: 'oklch(85.0% 0.175 180.0 / 1)',
+      },
+      {
+        id: 'thunder-god',
+        backgroundColor: 'oklch(14.0% 0.058 290.0 / 1)',
+        mainColor: 'oklch(88.0% 0.195 95.0 / 1)',
+        secondaryColor: 'oklch(75.0% 0.180 275.0 / 1)',
+      },
+      {
+        id: 'holographic-idol',
+        backgroundColor: 'oklch(14.0% 0.065 300.0 / 1)',
+        mainColor: 'oklch(82.0% 0.185 200.0 / 1)',
+        secondaryColor: 'oklch(78.0% 0.210 330.0 / 1)',
+      },
+      {
+        id: 'yakuza-tattoo',
+        backgroundColor: 'oklch(17.0% 0.045 255.0 / 1)',
+        mainColor: 'oklch(62.0% 0.185 220.0 / 1)',
+        secondaryColor: 'oklch(70.0% 0.175 15.0 / 1)',
+      },
+      {
+        id: 'starry-tanabata',
+        backgroundColor: 'oklch(15.0% 0.048 275.0 / 1)',
+        mainColor: 'oklch(88.0% 0.125 255.0 / 1)',
+        secondaryColor: 'oklch(78.0% 0.165 330.0 / 1)',
+      },
+      {
+        id: 'samurai-steel',
+        backgroundColor: 'oklch(18.0% 0.022 250.0 / 1)',
+        mainColor: 'oklch(80.0% 0.055 240.0 / 1)',
 
                 secondaryColor: 'oklch(65.0% 0.170 15.0 / 1)',
             },
@@ -1375,6 +1483,117 @@ const baseThemeSets: BaseThemeGroup[] = [
             },
         ],
     },
+      {
+        id: 'coastal-shrine',
+        backgroundColor: 'oklch(20.0% 0.040 235.0 / 1)',
+        mainColor: 'oklch(78.0% 0.205 35.0 / 1)',
+        secondaryColor: 'oklch(88.0% 0.065 210.0 / 1)',
+      },
+      {
+        id: 'midnight-sushi',
+        backgroundColor: 'oklch(15.0% 0.028 255.0 / 1)',
+        mainColor: 'oklch(82.0% 0.155 210.0 / 1)',
+        secondaryColor: 'oklch(70.0% 0.145 35.0 / 1)',
+      },
+      {
+        id: 'paper-lantern',
+        backgroundColor: 'oklch(94.0% 0.010 95.0 / 1)',
+        mainColor: 'oklch(55.0% 0.095 55.0 / 1)',
+        secondaryColor: 'oklch(68.0% 0.085 30.0 / 1)'
+      },
+      {
+  id: 'paper-lantern',
+  backgroundColor: 'oklch(94.0% 0.010 95.0 / 1)',
+  mainColor: 'oklch(55.0% 0.095 55.0 / 1)',
+  secondaryColor: 'oklch(68.0% 0.085 30.0 / 1)'
+},
+      {
+        id: 'wavecrest-blue',
+        backgroundColor: 'oklch(17.0% 0.030 245.0 / 1)',
+        mainColor: 'oklch(88.0% 0.055 230.0 / 1)',
+        secondaryColor: 'oklch(70.0% 0.145 210.0 / 1)',
+      },
+      {
+        id: 'sundown-shrine',
+        backgroundColor: 'oklch(18.0% 0.055 330.0 / 1)',
+        mainColor: 'oklch(72.0% 0.195 35.0 / 1)',
+        secondaryColor: 'oklch(85.0% 0.095 275.0 / 1)',
+      },
+    ],
+  },
+  {
+    name: 'Halloween',
+    icon: CloudLightning,
+    isLight: false,
+    themes: [
+      {
+        id: 'pumpkin-night',
+        backgroundColor: 'oklch(18.52% 0.0184 314.34 / 1)',
+        mainColor: 'oklch(74.61% 0.1715 51.56 / 1)',
+        secondaryColor: 'oklch(63.26% 0.2293 339.96 / 1)',
+      },
+      {
+        id: 'spooky-glow',
+        backgroundColor: 'oklch(15.70% 0.0034 248.05 / 1)',
+        mainColor: 'oklch(88.07% 0.1974 131.90 / 1)',
+        secondaryColor: 'oklch(67.13% 0.2017 304.62 / 1)',
+      },
+    ],
+  },
+  {
+    name: 'Christmas',
+    icon: TreePine,
+    isLight: false,
+    themes: [
+      {
+        id: 'santa-night',
+        backgroundColor: 'oklch(21.77% 0.0430 263.13 / 1)',
+        mainColor: 'oklch(61.42% 0.2261 23.63 / 1)',
+        secondaryColor: 'oklch(85.33% 0.1706 86.75 / 1)',
+      },
+      {
+        id: 'winter-wonderland',
+        backgroundColor: 'oklch(94.76% 0.0133 185.08 / 1)',
+        mainColor: 'oklch(58.04% 0.2202 24.52 / 1)',
+        secondaryColor: 'oklch(70.13% 0.1252 171.56 / 1)',
+      },
+      {
+        id: 'christmas-eve',
+        backgroundColor: 'oklch(23.26% 0.0557 272.84 / 1)',
+        mainColor: 'oklch(85.68% 0.1599 89.08 / 1)',
+        secondaryColor: 'oklch(61.95% 0.1489 150.29 / 1)',
+      },
+      {
+        id: 'northern-lights',
+        backgroundColor: 'oklch(21.92% 0.0178 230.20 / 1)',
+        mainColor: 'oklch(86.12% 0.1660 169.64 / 1)',
+        secondaryColor: 'oklch(65.57% 0.2272 312.53 / 1)',
+      },
+      {
+        id: 'mariah',
+        backgroundColor: 'oklch(18.5% 0.015 15.0 / 1)',
+        mainColor: 'oklch(92.0% 0.045 95.0 / 1)',
+        secondaryColor: 'oklch(64.0% 0.210 28.0 / 1)',
+      },
+    ],
+  },
+  {
+    name: 'Extra',
+    icon: Sparkles,
+    isLight: false,
+    themes: [
+      {
+        // "kyoki" (狂気) means "madness/craziness" in Japanese
+        // Selecting this theme enables random theme cycling on each question
+        // Display name is "?" to signify mystery/chaos
+        // NOTE: The theme button has a crazy gradient background applied in Themes.tsx
+        id: '?',
+        backgroundColor: 'oklch(15.0% 0.045 280.0 / 1)', // dark base
+        mainColor: 'oklch(95.0% 0.180 320.0 / 1)', // bright magenta-pink
+        secondaryColor: 'oklch(90.0% 0.200 180.0 / 1)', // vivid cyan
+      },
+    ],
+  },
 ];
 
 // Build the complete theme sets with generated card and border colors

@@ -1438,7 +1438,10 @@
     "backgroundColor": "oklch(18.0% 0.055 330.0 / 1)",
     "mainColor": "oklch(72.0% 0.195 35.0 / 1)",
     "secondaryColor": "oklch(85.0% 0.095 275.0 / 1)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "Keerthi421",
+    "completedPR": 1996
   },
   {
     "id": "spring-bamboo",
@@ -1447,7 +1450,10 @@
     "backgroundColor": "oklch(93.0% 0.018 150.0 / 1)",
     "mainColor": "oklch(55.0% 0.145 145.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.085 120.0 / 1)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "AtharvaKathe18",
+    "completedPR": 1995
   },
   {
     "id": "plum-ink",
