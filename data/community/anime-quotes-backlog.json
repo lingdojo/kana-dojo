@@ -36,7 +36,10 @@
     "english": "But I refuse.",
     "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
     "character": "Rohan Kishibe",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "zeno-mac",
+    "completedPR": 1917
   },
   {
     "id": 5,
