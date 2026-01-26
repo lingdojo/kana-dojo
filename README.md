@@ -19,6 +19,14 @@
 
 ---
 
+## 🌐 Translations / 번역 / 翻訳
+
+This README is available in multiple languages:
+
+**English** (current) · [한국어 (Korean)](./docs/translations/README.ko.md) · [日本語 (Japanese)](./docs/translations/README.ja.md) · [Español (Spanish)](./docs/translations/README.es.md) · [Français (French)](./docs/translations/README.fr.md) · [Deutsch (German)](./docs/translations/README.de.md) · [Português (Portuguese)](./docs/translations/README.pt-br.md) · [Русский (Russian)](./docs/translations/README.ru.md) · [Türkçe (Turkish)](./docs/translations/README.tr.md) · [العربية (Arabic)](./docs/translations/README.ar.md) · [हिन्दी (Hindi)](./docs/translations/README.hin.md) · [Italiano (Italian)](./docs/translations/README.it.md) · [Bahasa Indonesia (Indonesian)](./docs/translations/README.id.md) · [Українська (Ukrainian)](./docs/translations/README.ua.md) · [Tiếng Việt (Vietnamese)](./docs/translations/README.vi.md) · [简体中文 (Simplified Chinese)](./docs/translations/README.zh-CN.md) · [繁體中文 (Traditional Chinese)](./docs/translations/README.zh-tw.md)
+
+---
+
 ## About
 
 KanaDojo is an engaging web-based Japanese learning platform that makes mastering Hiragana, Katakana, Kanji, and Vocabulary fun and intuitive. Built with a focus on aesthetics, customization, and effective learning, it provides an immersive training environment for Japanese language learners at all levels.
