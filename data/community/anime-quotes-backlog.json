@@ -60,7 +60,10 @@
     "english": "Good grief.",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Jotaro Kujo",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "Alenbosh",
+    "completedPR": 1994
   },
   {
     "id": 7,
