@@ -252,6 +252,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         mainColor: 'oklch(78.0% 0.135 215.0 / 1)',
         secondaryColor: 'oklch(85.0% 0.155 90.0 / 1)',
       },
+      {
+        id: 'festival-gold',
+        backgroundColor: 'oklch(19.0% 0.035 45.0 / 1)',
+        mainColor: 'oklch(82.0% 0.155 85.0 / 1)',
+        secondaryColor: 'oklch(70.0% 0.145 20.0 / 1)'
+      },
     ],
   },
 
