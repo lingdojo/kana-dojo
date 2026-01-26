@@ -323,6 +323,13 @@ const baseThemeSets: BaseThemeGroup[] = [
     isLight: false,
     themes: [
       {
+       id: 'spring-bamboo',
+       backgroundColor: 'oklch(93.0% 0.018 150.0 / 1)',
+       mainColor: 'oklch(55.0% 0.145 145.0 / 1)',
+       secondaryColor: 'oklch(70.0% 0.085 120.0 / 1)'
+      },     
+
+      {
         id: 'ginger-koi',
         backgroundColor: 'oklch(95.0% 0.012 85.0 / 1)',
         mainColor: 'oklch(60.0% 0.170 40.0 / 1)',
