@@ -1149,7 +1149,8 @@
     "romaji": "Neko no te mo karitai",
     "english": "I'd even borrow a cat's paw",
     "meaning": "Extremely busy",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 127,
@@ -1157,7 +1158,8 @@
     "romaji": "Hito no furi mite waga furi naose",
     "english": "Watch others and correct yourself",
     "meaning": "Learn from others' behavior",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 128,
@@ -1165,7 +1167,7 @@
     "romaji": "Ki wo mite mori wo mizu",
     "english": "See the trees but not the forest",
     "meaning": "Missing the bigger picture",
-    "issued": false
+    "issued": true
   },
   {
     "id": 129,
