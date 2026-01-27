@@ -1221,7 +1221,7 @@
   {
     "id": 200,
     "fact": "Japan has 'hansei' (反省) - structured self-reflection sessions where you honestly examine your mistakes to improve.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 201,
