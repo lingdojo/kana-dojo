@@ -1,5 +1,12 @@
 [
   {
+    "japanese": "やれやれだぜ…まったく。",
+    "romaji": "Yare yare da ze... mattaku.",
+    "english": "Good grief... honestly.",
+    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+    "character": "Jotaro Kujo"
+  },
+  {
     "japanese": "このジョルノ・ジョバァーナには夢がある！",
     "romaji": "Kono Joruno Jobana ni wa yume ga aru!",
     "english": "I, Giorno Giovanna, have a dream!",
@@ -35,10 +42,10 @@
     "character": "Joseph Joestar"
   },
   {
-  "japanese": "俺は人間をやめるぞ！ジョジョーーッ！！",
-  "romaji": "Ore wa ningen o yameru zo! Jojo!!",
-  "english": "I'm going to stop being human, JoJo!",
-  "anime": "JoJo's Bizarre Adventure: Phantom Blood",
-  "character": "Dio Brando"
-}
+    "japanese": "俺は人間をやめるぞ！ジョジョーーッ！！",
+    "romaji": "Ore wa ningen o yameru zo! Jojo!!",
+    "english": "I'm going to stop being human, JoJo!",
+    "anime": "JoJo's Bizarre Adventure: Phantom Blood",
+    "character": "Dio Brando"
+  }
 ]
