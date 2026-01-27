@@ -335,6 +335,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         secondaryColor: 'oklch(70.0% 0.130 220.0 / 1)',
       },
       {
+        id: 'sea-glass',
+        backgroundColor: 'oklch(96.0% 0.015 210.0 / 1)',
+        mainColor: 'oklch(60.0% 0.135 200.0 / 1)',
+        secondaryColor: 'oklch(78.0% 0.065 100.0 / 1)'
+      },
+      {
         id: 'tsuyu-drizzle',
         backgroundColor: 'oklch(22.0% 0.015 250.0 / 1)',
         mainColor: 'oklch(72.0% 0.105 230.0 / 1)',
