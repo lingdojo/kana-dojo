@@ -1,0 +1,14 @@
+[
+  {
+    "question": "Which Japanese company is known for making the character Hello Kitty?",
+    "difficulty": "hard",
+    "answers": ["Sanrio", "Ghibli", "Capcom", "Namco"],
+    "correctIndex": 0
+  },
+  {
+  "question": "Which Japanese city is famous for its street food district, Dotonbori?",
+  "difficulty": "hard",
+  "answers": ["Osaka", "Niigata", "Kagoshima", "Takayama"],
+  "correctIndex": 0
+  }
+]
