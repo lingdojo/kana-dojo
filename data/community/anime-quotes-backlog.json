@@ -120,7 +120,10 @@
     "english": "I'm going to stop being human, JoJo!",
     "anime": "JoJo's Bizarre Adventure: Phantom Blood",
     "character": "Dio Brando",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "anushac13",
+    "completedPR": 2074
   },
   {
     "id": 13,
