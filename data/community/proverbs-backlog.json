@@ -1192,7 +1192,8 @@
     "romaji": "Ishi no ue ni mo san nen",
     "english": "Three years on a stone",
     "meaning": "Perseverance brings results",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 132,
@@ -1200,7 +1201,8 @@
     "romaji": "Isogaba maware",
     "english": "If in a hurry, go around",
     "meaning": "The safer path can be faster",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 133,
@@ -1208,7 +1210,8 @@
     "romaji": "Mikka bouzu",
     "english": "A three-day monk",
     "meaning": "Someone who quits quickly",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 134,
@@ -1216,7 +1219,7 @@
     "romaji": "Nodomoto sugireba atsusa wo wasureru",
     "english": "Once it passes your throat, you forget the heat",
     "meaning": "People forget hardships once they are over",
-    "issued": false
+    "issued": true
   },
   {
     "id": 135,
