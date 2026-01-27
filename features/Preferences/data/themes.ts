@@ -323,6 +323,12 @@ const baseThemeSets: BaseThemeGroup[] = [
     isLight: false,
     themes: [
       {
+        id: 'matcha-foam',
+        backgroundColor: 'oklch(92.0% 0.020 140.0 / 1)',
+        mainColor: 'oklch(58.0% 0.165 140.0 / 1)',
+        secondaryColor: 'oklch(72.0% 0.115 95.0 / 1)',
+      },
+      {
         id: 'koi-pond',
         backgroundColor: 'oklch(20.0% 0.048 240.0 / 1)',
         mainColor: 'oklch(80.0% 0.175 55.0 / 1)',
