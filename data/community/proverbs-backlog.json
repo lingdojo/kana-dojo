@@ -1287,7 +1287,8 @@
     "romaji": "Shiranu ga hotoke",
     "english": "Not knowing is Buddha",
     "meaning": "Ignorance is bliss",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 143,
@@ -1295,7 +1296,8 @@
     "romaji": "Sannin yoreba monju no chie",
     "english": "Three people together have the wisdom of Monju",
     "meaning": "Two heads are better than one",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 144,
@@ -1303,7 +1305,8 @@
     "romaji": "Kaeru no ko wa kaeru",
     "english": "A frog's child is a frog",
     "meaning": "Children resemble their parents",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 145,
@@ -1311,7 +1314,8 @@
     "romaji": "Korobanu saki no tsue",
     "english": "A cane before falling",
     "meaning": "Prevention is better than cure",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 146,
@@ -1319,7 +1323,8 @@
     "romaji": "Uogokoro areba mizugokoro",
     "english": "If fish has heart, water has heart",
     "meaning": "Good intentions are reciprocated",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 147,
@@ -1327,7 +1332,8 @@
     "romaji": "Nido aru koto wa sando aru",
     "english": "What happens twice will happen a third time",
     "meaning": "Patterns tend to repeat",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 148,
@@ -1335,7 +1341,7 @@
     "romaji": "Deru kugi wa utareru",
     "english": "The nail that sticks out gets hammered down",
     "meaning": "Standing out invites criticism",
-    "issued": false
+    "issued": true
   },
   {
     "id": 149,
