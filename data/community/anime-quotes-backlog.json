@@ -141,7 +141,10 @@
     "english": "I will transcend humanity!",
     "anime": "JoJo's Bizarre Adventure: Battle Tendency",
     "character": "Kars",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "Rakesh-Manthri",
+    "completedPR": 2111
   },
   {
     "id": 15,
