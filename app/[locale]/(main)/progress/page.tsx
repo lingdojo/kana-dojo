@@ -1,4 +1,4 @@
-import { ProgressTabs } from '@/features/Progress';
+import ProgressTabs from '@/features/Progress/components/ProgressTabs';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/core/i18n/metadata-helpers';
 import { routing } from '@/core/i18n/routing';

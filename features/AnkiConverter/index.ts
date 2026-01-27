@@ -8,13 +8,6 @@
 // Components
 export { ConverterInterface } from './components/ConverterInterface';
 
-// Hooks
-export {
-  useConversionWorker,
-  type ConversionState,
-  type UseConversionWorkerReturn,
-} from './hooks';
-
 // Error class and enum (runtime values)
 export { ConversionError, ErrorCode } from './types';
 

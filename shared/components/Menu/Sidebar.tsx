@@ -9,6 +9,8 @@ import {
   ChevronDown,
   ChevronRight,
   Library,
+  Repeat,
+  Package,
   type LucideIcon,
 } from 'lucide-react';
 import clsx from 'clsx';
@@ -76,7 +78,8 @@ const staticSecondaryNavSections: NavSection[] = [
     title: 'Tools',
     items: [
       { href: '/translate', label: 'Translate', icon: Languages },
-      { href: '/conjugate', label: 'Conjugate', charIcon: '動' },
+      { href: '/conjugate', label: 'Conjugate', icon: Repeat },
+      { href: '/tools/anki-converter', label: 'Converter', icon: Package },
     ],
     collapsible: true,
   },
@@ -198,7 +201,7 @@ const NavLink = memo(
               !isMain && 'max-lg:hidden',
               isActive
                 ? activeTextClass
-                : 'text-[var(--secondary-color)] hover:bg-[var(--card-color)]',
+                : 'text-(--secondary-color) hover:bg-(--card-color)',
             )}
           >
             {renderIcon()}
@@ -275,7 +278,7 @@ const SectionHeader = ({
     return (
       <button
         onClick={onToggle}
-        className='mt-3 flex w-full cursor-pointer items-center gap-1 px-4 text-xs text-[var(--main-color)] uppercase opacity-70 transition-opacity hover:opacity-100 max-lg:hidden'
+        className='mt-3 flex w-full cursor-pointer items-center gap-1 px-4 text-xs text-(--main-color) uppercase opacity-70 transition-opacity hover:opacity-100 max-lg:hidden'
       >
         {isExpanded ? (
           <ChevronDown className='h-3 w-3' />
@@ -288,7 +291,7 @@ const SectionHeader = ({
   }
 
   return (
-    <div className='mt-3 w-full px-4 text-xs text-[var(--main-color)] uppercase opacity-70 max-lg:hidden'>
+    <div className='mt-3 w-full px-4 text-xs text-(--main-color) uppercase opacity-70 max-lg:hidden'>
       {title}
     </div>
   );
@@ -338,12 +341,64 @@ const Sidebar = () => {
   });
 
   useEffect(() => {
+    const EXPERIMENTS_ORDER_KEY = 'sidebar-experiments-order';
+
+    const shuffleExperiments = (experiments: Experiment[]) => {
+      const shuffled = [...experiments];
+      for (let i = shuffled.length - 1; i > 0; i -= 1) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+      return shuffled;
+    };
+
+    const persistOrder = (experimentsList: Experiment[]) => {
+      if (typeof window === 'undefined') return;
+      sessionStorage.setItem(
+        EXPERIMENTS_ORDER_KEY,
+        JSON.stringify(experimentsList.map(exp => exp.href)),
+      );
+    };
+
     // Dynamically import experiments data
     import('@/shared/data/experiments').then(module => {
-      // Shuffle experiments randomly
-      const shuffledExperiments = [...module.experiments].sort(
-        () => Math.random() - 0.5,
-      );
+      const experiments = module.experiments;
+
+      if (typeof window === 'undefined') {
+        setLoadedExperiments(experiments);
+        return;
+      }
+
+      const storedOrder = sessionStorage.getItem(EXPERIMENTS_ORDER_KEY);
+
+      if (storedOrder) {
+        try {
+          const hrefOrder: string[] = JSON.parse(storedOrder);
+          const orderMap = new Map(
+            hrefOrder.map((href, index) => [href, index]),
+          );
+
+          const knownExperiments = experiments
+            .filter(exp => orderMap.has(exp.href))
+            .sort(
+              (a, b) =>
+                (orderMap.get(a.href) ?? 0) - (orderMap.get(b.href) ?? 0),
+            );
+          const newExperiments = experiments.filter(
+            exp => !orderMap.has(exp.href),
+          );
+          const combined = [...knownExperiments, ...newExperiments];
+
+          persistOrder(combined);
+          setLoadedExperiments(combined);
+          return;
+        } catch {
+          sessionStorage.removeItem(EXPERIMENTS_ORDER_KEY);
+        }
+      }
+
+      const shuffledExperiments = shuffleExperiments(experiments);
+      persistOrder(shuffledExperiments);
       setLoadedExperiments(shuffledExperiments);
     });
   }, []);
@@ -438,10 +493,10 @@ const Sidebar = () => {
         'lg:sticky lg:top-0 lg:h-screen lg:w-1/5 lg:overflow-y-auto',
         'lg:pt-6',
         'max-lg:fixed max-lg:bottom-0 max-lg:w-full',
-        'max-lg:bg-[var(--card-color)]',
+        'max-lg:bg-(--card-color)',
         'z-50',
-        'border-[var(--border-color)] max-lg:items-center max-lg:justify-evenly max-lg:border-t-2 max-lg:py-2',
-        'lg:h-auto lg:border-r-1 lg:px-3',
+        'border-(--border-color) max-lg:items-center max-lg:justify-evenly max-lg:border-t-2 max-lg:py-2',
+        'lg:h-auto lg:border-r lg:px-3',
         'lg:pb-12',
       )}
       // style={{ scrollbarGutter: 'stable' }}
@@ -454,9 +509,7 @@ const Sidebar = () => {
         )}
       >
         <span className='font-bold'>KanaDojo</span>
-        <span className='font-normal text-[var(--secondary-color)]'>
-          かな道場️
-        </span>
+        <span className='font-normal text-(--secondary-color)'>かな道場️</span>
       </h1>
 
       {/* Main Navigation - with sliding indicator */}

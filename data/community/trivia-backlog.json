@@ -166,7 +166,7 @@
       "Tabi"
     ],
     "correctIndex": 0,
-    "issued": false
+    "issued": true
   },
   {
     "id": 14,
@@ -179,7 +179,7 @@
       "Kyushu"
     ],
     "correctIndex": 3,
-    "issued": false
+    "issued": true
   },
   {
     "id": 15,

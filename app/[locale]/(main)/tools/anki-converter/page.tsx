@@ -1,4 +1,4 @@
-import { ConverterInterface } from '@/features/AnkiConverter';
+import { ConverterInterface } from '@/features/AnkiConverter/components/ConverterInterface';
 import { routing } from '@/core/i18n/routing';
 import { FAQSchema, type FAQItem } from '@/shared/components/SEO/FAQSchema';
 import {
