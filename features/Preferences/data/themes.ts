@@ -323,6 +323,12 @@ const baseThemeSets: BaseThemeGroup[] = [
     isLight: false,
     themes: [
       {
+        id: 'kyoto-kimono',
+        backgroundColor: 'oklch(19.0% 0.050 20.0 / 1)',
+        mainColor: 'oklch(65.0% 0.195 25.0 / 1)',
+        secondaryColor: 'oklch(78.0% 0.105 85.0 / 1)',
+      },
+      {
         id: 'matcha-foam',
         backgroundColor: 'oklch(92.0% 0.020 140.0 / 1)',
         mainColor: 'oklch(58.0% 0.165 140.0 / 1)',
