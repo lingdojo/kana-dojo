@@ -90,7 +90,10 @@
     "english": "What?!",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Joseph Joestar",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "tchalikanti1705",
+    "completedPR": 2023
   },
   {
     "id": 10,
