@@ -1408,7 +1408,7 @@
     "backgroundColor": "oklch(20.0% 0.018 210.0 / 1)",
     "mainColor": "oklch(80.0% 0.085 200.0 / 1)",
     "secondaryColor": "oklch(68.0% 0.105 160.0 / 1)",
-    "issued": true
+    "issued": false
   },
   {
     "id": "osaka-neon",
