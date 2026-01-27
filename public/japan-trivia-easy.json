@@ -24,6 +24,17 @@
     "correctIndex": 0
   },
   {
+    "question": "Which ocean borders Japan to the east?",
+    "difficulty": "easy",
+    "answers": [
+        "Atlantic Ocean",
+        "Indian Ocean",
+        "Pacific Ocean",
+        "Arctic Ocean"
+    ],
+    "correctIndex": 2
+  },
+  {
     "question": "Which Japanese food is typically made by grilling skewered chicken?",
     "difficulty": "easy",
     "answers": ["Yakitori", "Okonomiyaki", "Takoyaki", "Soba"],
