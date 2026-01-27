@@ -17,8 +17,11 @@ interface TTSState {
 }
 
 export const useJapaneseTTS = () => {
-  const { silentMode, pronunciationVoiceName, setPronunciationVoiceName } =
-    useAudioPreferences();
+  const {
+    pronunciationEnabled,
+    pronunciationVoiceName,
+    setPronunciationVoiceName,
+  } = useAudioPreferences();
   const [state, setState] = useState<TTSState>({
     isPlaying: false,
     isSupported: false,
@@ -169,7 +172,7 @@ export const useJapaneseTTS = () => {
         voice?: JapaneseVoice;
       },
     ) => {
-      if (!isClient || silentMode) {
+      if (!isClient || !pronunciationEnabled) {
         return Promise.resolve();
       }
 
@@ -324,7 +327,7 @@ export const useJapaneseTTS = () => {
         attemptSpeak();
       });
     },
-    [isClient, silentMode],
+    [isClient, pronunciationEnabled],
   );
 
   const stop = useCallback(() => {
