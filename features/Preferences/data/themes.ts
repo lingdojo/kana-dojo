@@ -323,6 +323,12 @@ const baseThemeSets: BaseThemeGroup[] = [
     isLight: false,
     themes: [
       {
+        id: 'poppy-udon',
+        backgroundColor: 'oklch(21.0% 0.030 45.0 / 1)',
+        mainColor: 'oklch(75.0% 0.155 55.0 / 1)',
+        secondaryColor: 'oklch(82.0% 0.135 95.0 / 1)',
+      },
+      {
         id: 'kyoto-kimono',
         backgroundColor: 'oklch(19.0% 0.050 20.0 / 1)',
         mainColor: 'oklch(65.0% 0.195 25.0 / 1)',
@@ -368,7 +374,7 @@ const baseThemeSets: BaseThemeGroup[] = [
         id: 'mountain-onsen',
         backgroundColor: 'oklch(20.0% 0.018 210.0 / 1)',
         mainColor: 'oklch(80.0% 0.085 200.0 / 1)',
-        secondaryColor: 'oklch(68.0% 0.105 160.0 / 1)'
+        secondaryColor: 'oklch(68.0% 0.105 160.0 / 1)',
       },
       {
         id: 'jpop-energy',
