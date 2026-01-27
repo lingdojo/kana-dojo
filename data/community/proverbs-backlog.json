@@ -1243,7 +1243,8 @@
     "romaji": "Isseki nichou",
     "english": "One stone, two birds",
     "meaning": "Do two things with one action",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 138,
@@ -1251,7 +1252,8 @@
     "romaji": "Keizoku wa chikara nari",
     "english": "Continuation is power",
     "meaning": "Consistency builds strength",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 139,
@@ -1259,7 +1261,8 @@
     "romaji": "Fukusui bon ni kaerazu",
     "english": "Spilled water will not return to the tray",
     "meaning": "What is done cannot be undone",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 140,
@@ -1267,7 +1270,8 @@
     "romaji": "Tana kara botamochi",
     "english": "A rice cake falls from the shelf",
     "meaning": "Unexpected good luck",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 141,
@@ -1275,7 +1279,7 @@
     "romaji": "Nakittsura ni hachi",
     "english": "A bee on a crying face",
     "meaning": "Misfortune never comes alone",
-    "issued": false
+    "issued": true
   },
   {
     "id": 142,
