@@ -1246,7 +1246,7 @@
   {
     "id": 205,
     "fact": "Japan has 'eki-stamps' (駅スタンプ) — collectible rubber stamps at train stations that travelers gather like a passport.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 206,
