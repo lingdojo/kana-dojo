@@ -1175,7 +1175,8 @@
     "romaji": "Tabi wa michizure yo wa nasake",
     "english": "Travel needs companions; life needs kindness",
     "meaning": "Relationships and compassion matter",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 130,
@@ -1183,7 +1184,7 @@
     "romaji": "Zenin zenka",
     "english": "Good causes bring good results",
     "meaning": "Good deeds lead to good outcomes",
-    "issued": false
+    "issued": true
   },
   {
     "id": 131,
