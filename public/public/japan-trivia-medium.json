@@ -16,5 +16,16 @@
    "difficulty": "medium",
    "answers": ["Sapporo","Sendai","Fukuoka","Okayama"],
    "correctIndex": 0
-  }
+  },
+  {
+  "question": "What is the traditional Japanese tea ceremony called?",
+  "difficulty": "medium",
+  "answers": [
+    "Sado",
+    "Judo",
+    "Kendo",
+    "Shodo"
+  ],
+  "correctIndex": 0
+}
 ]
