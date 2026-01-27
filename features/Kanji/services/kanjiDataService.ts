@@ -5,8 +5,6 @@ type RawKanjiEntry = {
   kanjiChar: string;
   onyomi: string[];
   kunyomi: string[];
-  displayMeanings: string[];
-  fullDisplayMeanings: string[];
   meanings: string[];
 };
 

@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { cn } from '@/shared/lib/utils';
-import { ChevronDown, X, Filter } from 'lucide-react';
+import { ChevronDown, Filter } from 'lucide-react';
 import type {
   ActiveFilters,
   FilterOptions,
@@ -62,7 +62,7 @@ function CheckboxGroup<T extends string>({
       <button
         type='button'
         onClick={() => setIsExpanded(!isExpanded)}
-        className='group flex w-full items-center justify-between'
+        className='group flex w-full cursor-pointer items-center justify-between'
       >
         <span className='text-[10px] font-bold tracking-[0.2em] text-[var(--secondary-color)] uppercase opacity-40'>
           {title}
@@ -99,7 +99,7 @@ function CheckboxGroup<T extends string>({
                   />
                   <div
                     className={cn(
-                      'h-1.5 w-1.5 rounded-full transition-all duration-300',
+                      'h-1.5 w-1.5 rounded-full transition-colors duration-300',
                       isSelected
                         ? 'scale-100 bg-[var(--main-color)]'
                         : 'scale-0 bg-transparent',
@@ -188,7 +188,7 @@ export function FilterPanel({
       {/* Mobile Toggle */}
       <button
         onClick={() => setShowMobile(!showMobile)}
-        className='flex items-center justify-between border-b border-[var(--border-color)] py-4 lg:hidden'
+        className='flex cursor-pointer items-center justify-between border-b border-[var(--border-color)] py-4 text-[var(--main-color)] lg:hidden'
       >
         <span className='flex items-center gap-2 text-sm font-bold'>
           <Filter size={16} />
@@ -213,7 +213,7 @@ export function FilterPanel({
           {activeCount > 0 && (
             <button
               onClick={handleClearAll}
-              className='text-[10px] font-bold tracking-widest uppercase transition-colors hover:text-[var(--main-color)]'
+              className='cursor-pointer text-[10px] font-bold tracking-widest text-[var(--secondary-color)] uppercase transition-colors hover:text-[var(--main-color)]'
             >
               Reset
             </button>

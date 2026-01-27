@@ -10,16 +10,12 @@ import type { ContentAdapter, GameMode } from './ContentAdapter';
 export const kanjiAdapter: ContentAdapter<IKanjiObj> = {
   getQuestion(kanji: IKanjiObj, mode: GameMode): string {
     // reverse modes show meaning, regular modes show kanji character
-    return mode.includes('reverse')
-      ? kanji.displayMeanings[0] || kanji.meanings[0] || ''
-      : kanji.kanjiChar;
+    return mode.includes('reverse') ? kanji.meanings[0] || '' : kanji.kanjiChar;
   },
 
   getCorrectAnswer(kanji: IKanjiObj, mode: GameMode): string {
     // reverse modes expect kanji character, regular modes expect meaning
-    return mode.includes('reverse')
-      ? kanji.kanjiChar
-      : kanji.displayMeanings[0] || kanji.meanings[0] || '';
+    return mode.includes('reverse') ? kanji.kanjiChar : kanji.meanings[0] || '';
   },
 
   generateOptions(
@@ -54,11 +50,9 @@ export const kanjiAdapter: ContentAdapter<IKanjiObj> = {
   getMetadata(kanji: IKanjiObj) {
     return {
       primary: kanji.kanjiChar,
-      secondary: kanji.displayMeanings[0] || kanji.meanings[0],
+      secondary: kanji.meanings[0],
       readings: [...kanji.onyomi, ...kanji.kunyomi],
-      meanings: kanji.displayMeanings.length
-        ? kanji.displayMeanings
-        : kanji.meanings,
+      meanings: kanji.meanings,
     };
   },
 };

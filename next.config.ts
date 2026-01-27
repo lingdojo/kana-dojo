@@ -68,6 +68,17 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: isDev,
   },
 
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...(config.resolve.fallback ?? {}),
+        fs: false,
+        path: false,
+      };
+    }
+    return config;
+  },
+
   // Cache headers for static assets - reduces data transfer and edge requests
   async headers() {
     return [

@@ -47,7 +47,7 @@ function Badge({ children, variant = 'default', className }: BadgeProps) {
     difficulty:
       'text-[var(--main-color)] border-[var(--main-color)]/20 bg-[var(--main-color)]/5',
     price:
-      'text-emerald-600 dark:text-emerald-400 border-emerald-500/20 bg-emerald-500/5',
+      'text-[var(--secondary-color)] border-[var(--secondary-color)]/30 bg-[var(--secondary-color)]/10',
     category:
       'text-[var(--secondary-color)] border-[var(--border-color)] bg-[var(--background-color)]',
   };
@@ -102,7 +102,10 @@ interface PlatformIconProps {
 function PlatformIcon({ platform, className }: PlatformIconProps) {
   const iconProps = {
     size: 12,
-    className: cn('shrink-0 opacity-40', className),
+    className: cn(
+      'shrink-0 text-[var(--secondary-color)] opacity-40',
+      className,
+    ),
   };
 
   const icons: Record<Platform, React.ReactNode> = {
@@ -157,7 +160,7 @@ export function ResourceCard({
       onKeyDown={handleKeyDown}
       aria-label={`${resource.name} - ${resource.description}`}
       className={cn(
-        'group relative flex flex-col gap-4 px-2 py-8 sm:flex-row sm:items-center',
+        'group relative flex cursor-pointer flex-col gap-4 px-2 py-8 sm:flex-row sm:items-center',
         'border-b border-[var(--border-color)] transition-all duration-300',
         'hover:bg-[var(--main-color)]/[0.02]',
         'outline-none focus-visible:bg-[var(--main-color)]/[0.03]',
@@ -189,11 +192,6 @@ export function ResourceCard({
           )}
         >
           {resource.name}
-          {resource.nameJa && (
-            <span className='ml-3 font-medium text-[var(--secondary-color)] opacity-50'>
-              {resource.nameJa}
-            </span>
-          )}
         </h3>
 
         <p
@@ -219,7 +217,7 @@ export function ResourceCard({
 
         <button
           className={cn(
-            'flex h-10 w-10 items-center justify-center rounded-full border border-[var(--border-color)]',
+            'flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-[var(--border-color)]',
             'text-[var(--main-color)] transition-all duration-300',
             'group-hover:border-[var(--main-color)] group-hover:bg-[var(--main-color)] group-hover:text-[var(--background-color)]',
           )}

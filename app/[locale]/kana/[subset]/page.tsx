@@ -67,7 +67,6 @@ export async function generateMetadata({
       languages: {
         en: `https://kanadojo.com/en/kana/${subset}`,
         es: `https://kanadojo.com/es/kana/${subset}`,
-        ja: `https://kanadojo.com/ja/kana/${subset}`,
       },
     },
   };

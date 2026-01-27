@@ -88,7 +88,7 @@ export const metadata: Metadata = {
     siteName: 'KanaDojo',
     type: 'website',
     locale: 'en_US',
-    alternateLocale: ['es_ES', 'ja_JP'],
+    alternateLocale: ['es_ES'],
   },
   twitter: {
     card: 'summary',
@@ -102,7 +102,6 @@ export const metadata: Metadata = {
     languages: {
       en: 'https://kanadojo.com/en',
       es: 'https://kanadojo.com/es',
-      ja: 'https://kanadojo.com/ja',
     },
   },
   robots: {

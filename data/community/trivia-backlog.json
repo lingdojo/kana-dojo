@@ -153,7 +153,7 @@
       "Nagoya"
     ],
     "correctIndex": 0,
-    "issued": false
+    "issued": true
   },
   {
     "id": 13,
@@ -166,7 +166,7 @@
       "Tabi"
     ],
     "correctIndex": 0,
-    "issued": false
+    "issued": true
   },
   {
     "id": 14,
@@ -179,7 +179,7 @@
       "Kyushu"
     ],
     "correctIndex": 3,
-    "issued": false
+    "issued": true
   },
   {
     "id": 15,
@@ -192,7 +192,7 @@
       "Mount Tate"
     ],
     "correctIndex": 1,
-    "issued": false
+    "issued": true
   },
   {
     "id": 16,
@@ -205,7 +205,7 @@
       "Winter"
     ],
     "correctIndex": 2,
-    "issued": false
+    "issued": true
   },
   {
     "id": 17,
@@ -218,7 +218,7 @@
       "Kissa"
     ],
     "correctIndex": 1,
-    "issued": false
+    "issued": true
   },
   {
     "id": 18,

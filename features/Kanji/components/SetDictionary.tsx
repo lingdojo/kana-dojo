@@ -3,7 +3,7 @@
 import clsx from 'clsx';
 import { cardBorderStyles } from '@/shared/lib/styles';
 import type { IKanjiObj } from '@/features/Kanji/store/useKanjiStore';
-import usePreferencesStore from '@/features/Preferences/store/usePreferencesStore';
+import { useThemePreferences } from '@/features/Preferences';
 import FuriganaText from '@/shared/components/text/FuriganaText';
 import { useClick } from '@/shared/hooks/useAudio';
 import { memo } from 'react';
@@ -16,7 +16,7 @@ const KanjiSetDictionary = memo(function KanjiSetDictionary({
   words,
 }: KanjiSetDictionaryProps) {
   const { playClick } = useClick();
-  const showKana = usePreferencesStore(state => state.displayKana);
+  const { displayKana: showKana } = useThemePreferences();
 
   return (
     <div className={clsx('flex flex-col', cardBorderStyles)}>
@@ -137,7 +137,7 @@ const KanjiSetDictionary = memo(function KanjiSetDictionary({
           </div>
 
           <p className='w-full text-xl text-[var(--secondary-color)] md:text-2xl'>
-            {kanjiObj.fullDisplayMeanings.join(', ')}
+            {kanjiObj.meanings.join(', ')}
           </p>
         </div>
       ))}

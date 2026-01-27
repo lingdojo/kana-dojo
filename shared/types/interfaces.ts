@@ -28,6 +28,5 @@ export interface ISet extends IWordClass {
 export interface IWord {
   word: string;
   reading: string;
-  displayMeanings: string[];
   meanings: string[];
 }

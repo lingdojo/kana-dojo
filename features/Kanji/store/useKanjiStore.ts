@@ -5,8 +5,6 @@ export interface IKanjiObj {
   kanjiChar: string;
   onyomi: string[];
   kunyomi: string[];
-  displayMeanings: string[];
-  fullDisplayMeanings: string[];
   meanings: string[];
 }
 

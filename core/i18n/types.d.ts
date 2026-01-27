@@ -863,4 +863,4 @@ export type Namespace = 'common' | 'navigation' | 'kana' | 'kanji' | 'vocabulary
 /**
  * Available languages
  */
-export type Locale = 'en' | 'es' | 'ja' | 'pt' | 'fr' | 'de' | 'it' | 'zh' | 'ko' | 'ru' | 'ar';
+export type Locale = 'en' | 'es' | 'pt' | 'fr' | 'de' | 'it' | 'zh' | 'ko' | 'ru' | 'ar';

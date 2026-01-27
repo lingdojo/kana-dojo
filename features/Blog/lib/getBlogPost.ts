@@ -8,7 +8,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import { calculateReadingTime } from './calculateReadingTime';
 import { validateFrontmatter } from './validateFrontmatter';
-import { extractHeadings, generateHeadingId } from './extractHeadings';
+import { extractHeadings } from './extractHeadings';
 import type { BlogPost, BlogPostMeta, Locale, Category } from '../types/blog';
 
 // Re-export for backwards compatibility
@@ -167,6 +167,6 @@ export function getBlogPost(
  * @returns Array of locales where the post exists
  */
 export function getPostLocales(slug: string): Locale[] {
-  const locales: Locale[] = ['en', 'es', 'ja'];
+  const locales: Locale[] = ['en', 'es'];
   return locales.filter(locale => postExists(locale, slug));
 }

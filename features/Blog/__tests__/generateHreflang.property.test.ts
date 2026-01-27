@@ -4,9 +4,6 @@ import { generateHreflang } from '../lib/generateHreflang';
 import { VALID_LOCALES } from '../types/blog';
 import type { Locale } from '../types/blog';
 
-// Arbitraries for generating test data
-const localeArb: fc.Arbitrary<Locale> = fc.constantFrom(...VALID_LOCALES);
-
 const slugArb = fc
   .array(fc.stringMatching(/^[a-z0-9]+$/), { minLength: 1, maxLength: 5 })
   .map(parts => parts.join('-'));
@@ -107,7 +104,7 @@ describe('Property 12: Hreflang Tags for Multi-Locale Posts', () => {
 
         for (const tag of tags) {
           expect(tag.href).toMatch(
-            /^https:\/\/kanadojo\.com\/(en|es|ja)\/academy\/.+$/,
+            /^https:\/\/kanadojo\.com\/(en|es)\/academy\/.+$/,
           );
         }
       }),

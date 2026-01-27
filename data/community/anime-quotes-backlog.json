@@ -81,7 +81,7 @@
     "english": "Ora ora ora ora ora!",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Jotaro Kujo",
-    "issued": false
+    "issued": true
   },
   {
     "id": 9,
@@ -90,7 +90,10 @@
     "english": "What?!",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Joseph Joestar",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "tchalikanti1705",
+    "completedPR": 2023
   },
   {
     "id": 10,
@@ -99,7 +102,7 @@
     "english": "Next you'll say, 'Good grief!'",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Joseph Joestar",
-    "issued": false
+    "issued": true
   },
   {
     "id": 11,
@@ -108,7 +111,7 @@
     "english": "You! You're watching me!",
     "anime": "JoJo's Bizarre Adventure: Stone Ocean",
     "character": "Jolyne Cujoh",
-    "issued": false
+    "issued": true
   },
   {
     "id": 12,
@@ -117,7 +120,10 @@
     "english": "I'm going to stop being human, JoJo!",
     "anime": "JoJo's Bizarre Adventure: Phantom Blood",
     "character": "Dio Brando",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "anushac13",
+    "completedPR": 2074
   },
   {
     "id": 13,
@@ -126,7 +132,7 @@
     "english": "I'm on a different level today!",
     "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
     "character": "Okuyasu Nijimura",
-    "issued": false
+    "issued": true
   },
   {
     "id": 14,

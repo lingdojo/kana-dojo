@@ -21,17 +21,24 @@
     "character": "DIO"
   },
   {
-    "japanese": "このジョルノ・ジョバァーナには夢がある！",
-    "romaji": "Kono Joruno Jobana ni wa yume ga aru!",
-    "english": "I, Giorno Giovanna, have a dream!",
-    "anime": "JoJo's Bizarre Adventure: Golden Wind",
-    "character": "Giorno Giovanna"
-  },
-  {
     "japanese": "やれやれだぜ",
     "romaji": "Yare yare da ze",
     "english": "Good grief.",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Jotaro Kujo"
-  }
+  },
+  {
+    "japanese": "なにィ！？",
+    "romaji": "Nanii!?",
+    "english": "What?!",
+    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+    "character": "Joseph Joestar"
+  },
+  {
+  "japanese": "俺は人間をやめるぞ！ジョジョーーッ！！",
+  "romaji": "Ore wa ningen o yameru zo! Jojo!!",
+  "english": "I'm going to stop being human, JoJo!",
+  "anime": "JoJo's Bizarre Adventure: Phantom Blood",
+  "character": "Dio Brando"
+}
 ]

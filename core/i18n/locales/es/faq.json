@@ -1,36 +1,134 @@
 {
-  "title": "Preguntas Frecuentes",
-  "subtitle": "Encuentra respuestas a preguntas comunes sobre KanaDojo",
-  "q1": {
-    "question": "¿Qué es KanaDojo?",
-    "answer": "KanaDojo es una plataforma gratuita y estética para aprender japonés que te ayuda a dominar Hiragana, Katakana, Kanji y Vocabulario a través de juegos y ejercicios interactivos. Cuenta con más de 100 temas personalizables, seguimiento de progreso y modos de entrenamiento diseñados para hacer que aprender japonés sea agradable y efectivo."
+  "kicker": "CENTRO DE AYUDA",
+  "title": "Preguntas frecuentes",
+  "subtitle": "Respuestas claras, detalles útiles y el camino más rápido de ‘no puedo leer japonés’ a practicar kana, kanji y vocabulario con confianza.",
+  "links": {
+    "howToUse": "Cómo usar KanaDojo",
+    "glossary": "Glosario de japonés",
+    "translator": "Traductor Inglés ↔ Japonés",
+    "academy": "Guías de aprendizaje",
+    "privacy": "Política de privacidad",
+    "terms": "Términos de servicio"
   },
-  "q2": {
-    "question": "¿Es KanaDojo completamente gratis?",
-    "answer": "¡Sí! KanaDojo es completamente gratis sin costos ocultos, suscripciones o funciones premium. Todo el contenido de aprendizaje, juegos, temas y funciones están disponibles para todos sin cargo."
+  "nav": {
+    "title": "Ir a",
+    "backToTop": "Inicio",
+    "aria": "Navegación por secciones de preguntas frecuentes",
+    "note": "Consejo: usa el Glosario si ves un término como ‘dakuon’, ‘yoon’, ‘onyomi’ o ‘kunyomi’."
   },
-  "q3": {
-    "question": "¿Qué puedo aprender en KanaDojo?",
-    "answer": "Puedes aprender todos los sistemas de escritura japonesa fundamentales: Hiragana (básico, dakuon, yoon), Katakana (básico, dakuon, yoon, sonidos extranjeros), Kanji organizados por niveles JLPT (N5-N1), y Vocabulario japonés también organizado por niveles JLPT con miles de palabras y oraciones de ejemplo."
+  "intro": {
+    "title": "Orientación rápida",
+    "body": "KanaDojo es una app web gratuita para practicar Hiragana, Katakana, Kanji y vocabulario por niveles JLPT. No necesitas cuenta. Tu progreso se guarda localmente en el navegador y puedes personalizar la experiencia con temas y fuentes."
   },
-  "q4": {
-    "question": "¿Necesito crear una cuenta?",
-    "answer": "¡No se requiere cuenta! KanaDojo almacena todo tu progreso localmente en tu navegador, por lo que puedes comenzar a aprender inmediatamente sin registrarte. Tu progreso y preferencias se guardan automáticamente mientras usas la plataforma."
+  "cta": {
+    "hiragana": "Empezar práctica de Hiragana",
+    "katakana": "Empezar práctica de Katakana",
+    "kanji": "Empezar práctica de Kanji"
   },
-  "q5": {
-    "question": "¿Cuáles son los diferentes modos de entrenamiento?",
-    "answer": "KanaDojo ofrece múltiples modos de entrenamiento: Modo Pick (reconocimiento de opción múltiple), Reverse-Pick (opción múltiple inversa), Modo Input (práctica de entrada de texto), Reverse-Input (entrada de texto inversa), Modo Blitz (pruebas de velocidad) y Modo Gauntlet (desafíos de dominio integral)."
+  "footer": {
+    "title": "¿Aún tienes dudas?",
+    "body": "Si algo no encaja, casi siempre es por una de dos razones: un conjunto demasiado grande (demasiados caracteres nuevos) o un modo inadecuado (reconocimiento vs recuerdo). Usa los enlaces de abajo para reajustar en un minuto.",
+    "links": {
+      "kana": "Ver conjuntos de Kana",
+      "progress": "Abrir panel de progreso"
+    }
   },
-  "q6": {
-    "question": "¿Cómo funciona el seguimiento del progreso?",
-    "answer": "KanaDojo rastrea automáticamente tus estadísticas de aprendizaje, incluyendo respuestas correctas, velocidad, precisión y niveles de dominio para cada carácter o palabra. Todo el progreso se almacena localmente en tu navegador y se muestra en gráficos y estadísticas detalladas en la página de Progreso."
-  },
-  "q7": {
-    "question": "¿Puedo usar KanaDojo en dispositivos móviles?",
-    "answer": "¡Sí! KanaDojo es totalmente responsive y funciona perfectamente en teléfonos móviles, tabletas y computadoras de escritorio. La interfaz se adapta al tamaño de tu pantalla para una experiencia de aprendizaje óptima en cualquier dispositivo."
-  },
-  "q8": {
-    "question": "¿Es KanaDojo adecuado para la preparación del JLPT?",
-    "answer": "¡Absolutamente! KanaDojo organiza el contenido de Kanji y Vocabulario por niveles JLPT (N5, N4, N3, N2, N1), lo que lo convierte en una excelente herramienta complementaria para la preparación del examen JLPT. Practica caracteres y palabras específicas para tu nivel JLPT objetivo."
+  "sections": {
+    "gettingStarted": {
+      "title": "Primeros pasos",
+      "description": "Qué es KanaDojo, cómo funciona y qué hacer primero.",
+      "q1": {
+        "question": "¿Qué es KanaDojo?",
+        "answer": "KanaDojo es una plataforma gratuita para aprender japonés y practicar Hiragana, Katakana, Kanji y vocabulario con ejercicios rápidos y modos tipo juego. Está pensada para autoestudio, retroalimentación inmediata y progreso constante."
+      },
+      "q2": {
+        "question": "¿KanaDojo es realmente gratis?",
+        "answer": "Sí. KanaDojo es gratis: no requiere cuenta y no hay contenido de práctica bloqueado por pago."
+      },
+      "q3": {
+        "question": "¿Necesito crear una cuenta?",
+        "answer": "No. Tus preferencias y estadísticas se guardan localmente en tu navegador. Si borras los datos del sitio o cambias de dispositivo/navegador, tu progreso local no se transfiere automáticamente."
+      }
+    },
+    "learningPath": {
+      "title": "Ruta de aprendizaje",
+      "description": "Un orden práctico para aprender a leer japonés.",
+      "q1": {
+        "question": "¿Qué debo aprender primero: Hiragana o Katakana?",
+        "answer": "La mayoría empieza con Hiragana y luego pasa a Katakana. Cuando ya leas kana con cierta comodidad (aunque sea lento), empieza Kanji básico y vocabulario juntos para retener mejor."
+      },
+      "q2": {
+        "question": "¿Cuánto se tarda en aprender Hiragana y Katakana?",
+        "answer": "Con práctica diaria constante, muchas personas memorizan cada conjunto en 1–2 semanas y se sienten cómodas leyendo en un mes. Sesiones cortas y frecuentes funcionan mejor que estudiar de golpe."
+      },
+      "q3": {
+        "question": "¿Cuándo debería empezar Kanji?",
+        "answer": "Cuando ya conozcas kana lo suficiente como para leer palabras básicas, empieza Kanji (idealmente por niveles JLPT: N5 → N4 → N3 → N2 → N1). Aprender Kanji junto con vocabulario ayuda mucho a la retención."
+      }
+    },
+    "features": {
+      "title": "Funciones y modos",
+      "description": "Cómo funciona la práctica y qué modo elegir según tu objetivo.",
+      "q1": {
+        "question": "¿Qué modos de entrenamiento existen?",
+        "answer": "KanaDojo incluye modos de reconocimiento y recuerdo (pick/reverse-pick, input/reverse-input) y también retos de velocidad como Blitz y pruebas más largas como Gauntlet. Cambia de modo según busques precisión, recuerdo o velocidad."
+      },
+      "q2": {
+        "question": "¿Cuál es el mejor modo para principiantes?",
+        "answer": "Empieza con reconocimiento (pick) para construir identificación rápida, y añade input para practicar el recuerdo activo. Alternar reconocimiento y escritura/tecleo suele funcionar muy bien para kana."
+      },
+      "q3": {
+        "question": "¿Puedo personalizar temas y fuentes?",
+        "answer": "Sí. KanaDojo ofrece mucha personalización (temas, fuentes y preferencias) para que encuentres un estilo cómodo para estudiar durante mucho tiempo."
+      }
+    },
+    "privacy": {
+      "title": "Privacidad y datos",
+      "description": "Qué se guarda, dónde se guarda y qué significa para ti.",
+      "q1": {
+        "question": "¿Dónde se guarda mi progreso?",
+        "answer": "Tu progreso se guarda localmente en tu navegador (en tu dispositivo). Esto mantiene tus estadísticas privadas y te permite empezar al instante sin registro."
+      },
+      "q2": {
+        "question": "¿Mi progreso se sincroniza entre dispositivos?",
+        "answer": "No automáticamente. Como el progreso se guarda localmente, al cambiar de navegador/dispositivo no se transfiere a menos que lo muevas manualmente."
+      },
+      "q3": {
+        "question": "¿KanaDojo funciona sin internet?",
+        "answer": "Puede funcionar sin conexión para la práctica básica una vez que los recursos estén en caché, pero la mejor experiencia es con internet, especialmente la primera vez que cargas la página."
+      }
+    },
+    "jlpt": {
+      "title": "Preparación JLPT",
+      "description": "Cómo encaja KanaDojo en un plan de estudio del JLPT.",
+      "q1": {
+        "question": "¿KanaDojo ayuda con el JLPT?",
+        "answer": "Sí. KanaDojo organiza Kanji y vocabulario por nivel JLPT (N5–N1), lo que facilita practicar exactamente lo que necesitas para tu objetivo."
+      },
+      "q2": {
+        "question": "¿KanaDojo es suficiente para aprobar el JLPT?",
+        "answer": "Es una gran herramienta para reconocimiento, recuerdo y velocidad, pero el JLPT también evalúa comprensión lectora, gramática en contexto y comprensión auditiva. Combínalo con lectura graduada, escucha y una buena guía de gramática."
+      },
+      "q3": {
+        "question": "¿Qué debería estudiar primero para JLPT N5?",
+        "answer": "Empieza por Hiragana + Katakana, luego Kanji N5 y vocabulario básico. La constancia diaria supera al estudio ocasional: revisa a menudo tus elementos más débiles."
+      }
+    },
+    "troubleshooting": {
+      "title": "Solución de problemas",
+      "description": "Arregla los problemas más comunes de ‘no estoy mejorando’.",
+      "q1": {
+        "question": "Confundo caracteres parecidos. ¿Qué hago?",
+        "answer": "Reduce el conjunto activo, practica primero reconocimiento y añade sesiones cortas de recuerdo. En kana, trabaja pares mínimos y fíjate en los trazos que distinguen (por ejemplo, さ vs ち, シ vs ツ)."
+      },
+      "q2": {
+        "question": "Tengo buena precisión, pero soy lento/a.",
+        "answer": "Añade práctica con tiempo (Blitz) usando un conjunto pequeño. La velocidad suele mejorar después de estabilizar la precisión."
+      },
+      "q3": {
+        "question": "Mi progreso parece reiniciado. ¿Lo perdí?",
+        "answer": "El progreso se guarda localmente. Borrar datos del navegador, usar modo incógnito o cambiar de dispositivo/navegador puede hacer que parezca reiniciado. Verifica que estás en el mismo perfil del navegador y que no se borren datos automáticamente."
+      }
+    }
   }
 }

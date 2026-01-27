@@ -18,36 +18,6 @@ const springConfig = {
   mass: 0.8,
 };
 
-// Duolingo-like slide animation - slides in from right, fades in
-const slideInVariants = {
-  hidden: {
-    opacity: 0,
-    x: 100,
-  },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      type: 'spring' as const,
-      stiffness: 500,
-      damping: 35,
-      mass: 0.5,
-      staggerChildren: 0.08,
-      delayChildren: 0.02,
-    },
-  },
-  exit: {
-    opacity: 0,
-    x: -100,
-    transition: {
-      type: 'spring' as const,
-      stiffness: 600,
-      damping: 40,
-      mass: 0.4,
-    },
-  },
-};
-
 // Container variants for staggered children animations
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -314,7 +284,7 @@ const KanjiSummary = ({
       variants={meaningVariants}
       className='w-full text-xl text-[var(--secondary-color)] md:text-2xl'
     >
-      {payload.fullDisplayMeanings.join(', ')}
+      {payload.meanings.join(', ')}
     </motion.p>
 
     {!isEmbedded && (
@@ -392,7 +362,7 @@ const VocabSummary = ({
           variants={meaningVariants}
           className='text-xl text-[var(--secondary-color)] md:text-2xl'
         >
-          {payload.displayMeanings.join(', ')}
+          {payload.meanings.join(', ')}
         </motion.p>
       </motion.div>
 

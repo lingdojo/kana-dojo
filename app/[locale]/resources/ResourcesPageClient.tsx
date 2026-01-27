@@ -121,7 +121,7 @@ export function ResourcesPageClient({
               <div className='mb-4 text-[10px] font-bold tracking-[0.2em] text-[var(--main-color)] uppercase'>
                 Global Index
               </div>
-              <div className='text-6xl font-black tracking-tighter tabular-nums'>
+              <div className='text-6xl font-black tracking-tighter text-[var(--main-color)] tabular-nums'>
                 {initialResources.length}
               </div>
             </div>
@@ -163,7 +163,7 @@ export function ResourcesPageClient({
 
             {/* Footer indicator */}
             <div className='mt-24 flex flex-col items-center border-t border-[var(--border-color)] pt-12 text-center opacity-20'>
-              <div className='mb-4 text-[10px] font-bold tracking-[0.5em] uppercase'>
+              <div className='mb-4 text-[10px] font-bold tracking-[0.5em] text-[var(--secondary-color)] uppercase'>
                 End of Index
               </div>
               <div className='h-1 w-1 rounded-full bg-[var(--main-color)]' />

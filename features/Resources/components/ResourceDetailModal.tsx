@@ -54,7 +54,7 @@ const Badge = memo(function Badge({
     difficulty:
       'text-[var(--main-color)] border-[var(--main-color)]/20 bg-[var(--main-color)]/5',
     price:
-      'text-emerald-600 dark:text-emerald-400 border-emerald-500/20 bg-emerald-500/5',
+      'text-[var(--secondary-color)] border-[var(--secondary-color)]/30 bg-[var(--secondary-color)]/10',
   };
 
   return (
@@ -78,7 +78,10 @@ const PlatformBadge = memo(function PlatformBadge({
 }: {
   platform: Platform;
 }) {
-  const iconProps = { size: 14, className: 'shrink-0 opacity-40' };
+  const iconProps = {
+    size: 14,
+    className: 'shrink-0 text-[var(--secondary-color)] opacity-40',
+  };
 
   const platformConfig: Record<
     Platform,
@@ -168,7 +171,7 @@ export const ResourceDetailModal = memo(function ResourceDetailModal({
             </div>
             <button
               onClick={handleClose}
-              className='shrink-0 rounded-xl p-2 hover:cursor-pointer hover:bg-[var(--card-color)]'
+              className='shrink-0 cursor-pointer rounded-xl p-2 hover:bg-[var(--card-color)]'
             >
               <X size={24} className='text-[var(--secondary-color)]' />
             </button>
@@ -180,11 +183,6 @@ export const ResourceDetailModal = memo(function ResourceDetailModal({
           >
             <DialogPrimitive.Title className='mb-12 flex flex-col text-4xl leading-tight font-black tracking-tighter text-[var(--main-color)] md:text-6xl'>
               <span>{resource.name}</span>
-              {resource.nameJa && (
-                <span className='mt-2 text-2xl font-medium text-[var(--secondary-color)] opacity-30 md:text-3xl'>
-                  {resource.nameJa}
-                </span>
-              )}
             </DialogPrimitive.Title>
 
             <div className='grid grid-cols-1 gap-16 lg:grid-cols-12'>
@@ -203,7 +201,7 @@ export const ResourceDetailModal = memo(function ResourceDetailModal({
                 {resource.notes && (
                   <section className='rounded-lg border-l-2 border-[var(--main-color)] bg-[var(--main-color)]/[0.02] p-8'>
                     <h3 className='mb-4 text-[10px] font-bold tracking-[0.2em] text-[var(--secondary-color)] uppercase opacity-40'>
-                      Curator's Notes
+                      Curator&apos;s Notes
                     </h3>
                     <p className='text-sm leading-relaxed text-[var(--secondary-color)] italic'>
                       {resource.notes}
@@ -219,7 +217,7 @@ export const ResourceDetailModal = memo(function ResourceDetailModal({
                     {resource.tags.map(tag => (
                       <span
                         key={tag}
-                        className='cursor-default rounded border border-[var(--border-color)] px-2 py-1 font-mono text-[10px] transition-all hover:border-[var(--main-color)] hover:bg-[var(--main-color)] hover:text-[var(--background-color)]'
+                        className='cursor-default rounded border border-[var(--border-color)] px-2 py-1 font-mono text-[10px] text-[var(--secondary-color)] transition-colors hover:border-[var(--main-color)] hover:bg-[var(--main-color)] hover:text-[var(--background-color)]'
                       >
                         #{tag}
                       </span>
@@ -242,7 +240,7 @@ export const ResourceDetailModal = memo(function ResourceDetailModal({
                         {getPriceLabel(resource.priceType)}
                       </Badge>
                       {resource.priceDetails && (
-                        <p className='font-mono text-[10px] tracking-tighter uppercase opacity-50'>
+                        <p className='font-mono text-[10px] tracking-tighter text-[var(--secondary-color)] uppercase opacity-50'>
                           {resource.priceDetails}
                         </p>
                       )}
@@ -265,14 +263,14 @@ export const ResourceDetailModal = memo(function ResourceDetailModal({
                     target='_blank'
                     rel='noopener noreferrer'
                     className={cn(
-                      'group mt-12 flex w-full items-center justify-between rounded-full bg-[var(--main-color)] p-6 text-[var(--background-color)] transition-all duration-300',
-                      'hover:scale-[1.02] active:scale-[0.98]',
+                      'group mt-12 flex w-full cursor-pointer items-center justify-between rounded-full bg-[var(--main-color)] p-6 text-[var(--background-color)] transition-colors duration-300',
+                      'hover:bg-[var(--main-color)]/90',
                     )}
                   >
                     <span className='text-sm font-bold tracking-tight uppercase'>
                       Initialize Access
                     </span>
-                    <ArrowUpRight className='transition-transform group-hover:translate-x-1 group-hover:-translate-y-1' />
+                    <ArrowUpRight className='transition-colors group-hover:text-[var(--background-color)]' />
                   </a>
                 </div>
               </div>
@@ -281,7 +279,7 @@ export const ResourceDetailModal = memo(function ResourceDetailModal({
             {/* Related Resources */}
             {relatedResources.length > 0 && (
               <footer className='mt-24 border-t border-[var(--border-color)] pt-12'>
-                <h3 className='mb-12 text-center text-[10px] font-bold tracking-[0.5em] uppercase opacity-30'>
+                <h3 className='mb-12 text-center text-[10px] font-bold tracking-[0.5em] text-[var(--secondary-color)] uppercase opacity-30'>
                   Secondary Connections
                 </h3>
                 <div className='flex flex-col'>

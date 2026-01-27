@@ -33,7 +33,6 @@ export async function generateMetadata({
       languages: {
         en: 'https://kanadojo.com/en/glossary',
         es: 'https://kanadojo.com/es/glossary',
-        ja: 'https://kanadojo.com/ja/glossary',
       },
     },
     openGraph: {
@@ -97,7 +96,7 @@ const glossaryTerms: GlossaryTerm[] = [
     term: 'Onyomi',
     reading: 'おんよみ / 音読み',
     definition:
-      "The Chinese-derived reading of a Kanji character. Usually used when kanji appear in compound words. Often written in Katakana in dictionaries.",
+      'The Chinese-derived reading of a Kanji character. Usually used when kanji appear in compound words. Often written in Katakana in dictionaries.',
     example: '日 → ニチ (nichi) in 日本 (Nihon, Japan)',
     relatedTerms: ['Kunyomi', 'Kanji'],
   },
@@ -158,7 +157,7 @@ const glossaryTerms: GlossaryTerm[] = [
     term: 'Furigana',
     reading: 'ふりがな / 振り仮名',
     definition:
-      'Small hiragana characters written above or beside kanji to show pronunciation. Commonly used in children\'s books and learning materials.',
+      "Small hiragana characters written above or beside kanji to show pronunciation. Commonly used in children's books and learning materials.",
     example: '日本 (にほん)',
     relatedTerms: ['Hiragana', 'Kanji'],
   },

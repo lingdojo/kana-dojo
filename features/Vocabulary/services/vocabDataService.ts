@@ -18,7 +18,6 @@ const toWordObj = (entry: RawVocabEntry): IWord => {
   return {
     word: entry.kanji?.trim() || entry.kana,
     reading: `${entry.kana}`.trim(),
-    displayMeanings: definitionPieces,
     meanings: definitionPieces,
   };
 };

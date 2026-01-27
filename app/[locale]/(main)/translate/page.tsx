@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { TranslatorPage } from '@/features/Translator';
+import TranslatorPage from '@/features/Translator/components/TranslatorPage';
 import { StructuredData } from '@/shared/components/SEO/StructuredData';
 import { generatePageMetadata } from '@/core/i18n/metadata-helpers';
 import { routing } from '@/core/i18n/routing';

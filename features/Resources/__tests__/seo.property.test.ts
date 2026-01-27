@@ -2,14 +2,12 @@ import { describe, it, expect } from 'vitest';
 import * as fc from 'fast-check';
 import {
   getAllCategories,
-  getCategoryById,
-  getSubcategoryById,
   getResourcesByCategory,
   getResourcesBySubcategory,
 } from '../data';
 
 // Define locales directly to avoid Next.js navigation module import issues in tests
-const SUPPORTED_LOCALES = ['en', 'es', 'ja'] as const;
+const SUPPORTED_LOCALES = ['en', 'es'] as const;
 type Locale = (typeof SUPPORTED_LOCALES)[number];
 
 // Helper functions to generate metadata (mirrors the page implementations)
@@ -48,7 +46,6 @@ function generateMainPageMetadata(locale: Locale, totalCount: number) {
       languages: {
         en: '/en/resources',
         es: '/es/resources',
-        ja: '/ja/resources',
       },
     },
   };
@@ -91,7 +88,6 @@ function generateCategoryPageMetadata(
       languages: {
         en: `/en/resources/${categoryId}`,
         es: `/es/resources/${categoryId}`,
-        ja: `/ja/resources/${categoryId}`,
       },
     },
   };
@@ -134,7 +130,6 @@ function generateSubcategoryPageMetadata(
       languages: {
         en: `/en/resources/${categoryId}/${subcategoryId}`,
         es: `/es/resources/${categoryId}/${subcategoryId}`,
-        ja: `/ja/resources/${categoryId}/${subcategoryId}`,
       },
     },
   };

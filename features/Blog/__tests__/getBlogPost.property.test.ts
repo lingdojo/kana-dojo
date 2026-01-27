@@ -124,7 +124,6 @@ describe('Property 13: Locale-Based Content Retrieval', () => {
   });
 
   it('postExists returns false for non-existing posts', () => {
-    expect(postExists('ja', 'test-post-en')).toBe(false);
     expect(postExists('en', 'non-existent-post')).toBe(false);
   });
 
@@ -142,8 +141,8 @@ describe('Property 13: Locale-Based Content Retrieval', () => {
  */
 describe('Property 14: English Fallback When Locale Missing', () => {
   it('falls back to English when post not found in requested locale', () => {
-    // Request Japanese version of English-only post
-    const post = getBlogPost('english-only-post', 'ja');
+    // Request Spanish version of English-only post
+    const post = getBlogPost('english-only-post', 'es');
     expect(post).not.toBeNull();
     expect(post?.locale).toBe('en'); // Should be English locale
     expect(post?.slug).toBe('english-only-post');
@@ -158,7 +157,7 @@ describe('Property 14: English Fallback When Locale Missing', () => {
   });
 
   it('returns null when post not found in English either', () => {
-    const post = getBlogPost('non-existent-anywhere', 'ja');
+    const post = getBlogPost('non-existent-anywhere', 'es');
     expect(post).toBeNull();
   });
 

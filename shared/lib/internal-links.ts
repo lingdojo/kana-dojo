@@ -193,24 +193,18 @@ export function getContextualLink(keyword: string): InternalLink | null {
 
   // Vocabulary
   if (
-    [
-      'vocabulary',
-      'japanese vocabulary',
-      'japanese words',
-      'vocab',
-    ].includes(keywordLower)
+    ['vocabulary', 'japanese vocabulary', 'japanese words', 'vocab'].includes(
+      keywordLower,
+    )
   ) {
     return mainLinks.vocabulary;
   }
 
   // Translator
   if (
-    [
-      'translator',
-      'translate',
-      'translation',
-      'japanese translator',
-    ].includes(keywordLower)
+    ['translator', 'translate', 'translation', 'japanese translator'].includes(
+      keywordLower,
+    )
   ) {
     return mainLinks.translate;
   }
@@ -253,11 +247,7 @@ export function getRelatedLinks(currentPath: string): InternalLink[] {
 
   // Vocabulary-related pages
   if (currentPath.includes('vocabulary') || currentPath.includes('vocab')) {
-    related.push(
-      learningLinks.vocabularyBlitz,
-      jlptLinks.n5,
-      mainLinks.kanji,
-    );
+    related.push(learningLinks.vocabularyBlitz, jlptLinks.n5, mainLinks.kanji);
   }
 
   // JLPT-related pages
@@ -272,7 +262,7 @@ export function getRelatedLinks(currentPath: string): InternalLink[] {
   // Remove duplicates and current page
   return related.filter(
     (link, index, self) =>
-      self.findIndex((l) => l.href === link.href) === index &&
+      self.findIndex(l => l.href === link.href) === index &&
       !currentPath.includes(link.href),
   );
 }
@@ -298,18 +288,18 @@ export function generateBreadcrumbLinks(
   const breadcrumbs = [{ name: 'Home', url: `/${locale}` }];
 
   // Remove locale prefix and split path
-  const pathWithoutLocale = pathname.replace(/^\/(en|es|ja)/, '');
+  const pathWithoutLocale = pathname.replace(/^\/(en|es)/, '');
   const segments = pathWithoutLocale.split('/').filter(Boolean);
 
   let currentPath = `/${locale}`;
 
-  segments.forEach((segment) => {
+  segments.forEach(segment => {
     currentPath += `/${segment}`;
 
     // Convert segment to readable name
     let name = segment
       .split('-')
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
       .join(' ');
 
     // Special cases
@@ -358,26 +348,24 @@ export function getContinueLearningLinks(
   const suggestions: InternalLink[] = [];
 
   // If user visited Hiragana, suggest Katakana
-  if (lastVisited.some((path) => path.includes('hiragana'))) {
+  if (lastVisited.some(path => path.includes('hiragana'))) {
     suggestions.push(learningLinks.katakanaPractice);
   }
 
   // If user visited Kana, suggest Kanji
   if (
-    lastVisited.some(
-      (path) => path.includes('kana') || path.includes('katakana'),
-    )
+    lastVisited.some(path => path.includes('kana') || path.includes('katakana'))
   ) {
     suggestions.push(mainLinks.kanji);
   }
 
   // If user visited Kanji, suggest Vocabulary
-  if (lastVisited.some((path) => path.includes('kanji'))) {
+  if (lastVisited.some(path => path.includes('kanji'))) {
     suggestions.push(mainLinks.vocabulary);
   }
 
   // Always suggest practice games
-  if (!lastVisited.some((path) => path.includes('blitz'))) {
+  if (!lastVisited.some(path => path.includes('blitz'))) {
     suggestions.push(learningLinks.kanaBlitz);
   }
 

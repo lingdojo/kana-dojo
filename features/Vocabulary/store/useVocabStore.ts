@@ -3,7 +3,6 @@ import { create } from 'zustand';
 export interface IVocabObj {
   word: string;
   reading: string;
-  displayMeanings: string[];
   meanings: string[];
 }
 
