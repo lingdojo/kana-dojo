@@ -1,4 +1,8 @@
 import type { IKanjiObj } from '@/features/Kanji/store/useKanjiStore';
+import {
+  useKanjiCacheStore,
+  type KanjiLevel,
+} from '@/features/Kanji/store/useKanjiCacheStore';
 
 type RawKanjiEntry = {
   id: number;
@@ -8,11 +12,20 @@ type RawKanjiEntry = {
   meanings: string[];
 };
 
-type KanjiLevel = 'n5' | 'n4' | 'n3' | 'n2' | 'n1';
-
 // Module-level cache - persists across component mounts
 const kanjiCache: Partial<Record<KanjiLevel, IKanjiObj[]>> = {};
 const pendingRequests: Partial<Record<KanjiLevel, Promise<IKanjiObj[]>>> = {};
+
+const getCachedLevel = (level: KanjiLevel) => {
+  const sessionCache = useKanjiCacheStore.getState().cachedByLevel[level];
+  if (sessionCache) return sessionCache;
+  return kanjiCache[level];
+};
+
+const setCachedLevel = (level: KanjiLevel, items: IKanjiObj[]) => {
+  kanjiCache[level] = items;
+  useKanjiCacheStore.getState().setCachedLevel(level, items);
+};
 
 export const kanjiDataService = {
   /**
@@ -21,9 +34,8 @@ export const kanjiDataService = {
    */
   async getKanjiByLevel(level: KanjiLevel): Promise<IKanjiObj[]> {
     // Return cached data immediately if available
-    if (kanjiCache[level]) {
-      return kanjiCache[level];
-    }
+    const cached = getCachedLevel(level);
+    if (cached) return cached;
 
     // If there's already a pending request for this level, wait for it
     if (pendingRequests[level]) {
@@ -35,7 +47,7 @@ export const kanjiDataService = {
       .then(res => res.json() as Promise<RawKanjiEntry[]>)
       .then(data => {
         const kanji = data.map(entry => ({ ...entry })) as IKanjiObj[];
-        kanjiCache[level] = kanji;
+        setCachedLevel(level, kanji);
         delete pendingRequests[level];
         return kanji;
       })
@@ -59,14 +71,14 @@ export const kanjiDataService = {
    * Check if a level is already cached
    */
   isCached(level: KanjiLevel): boolean {
-    return !!kanjiCache[level];
+    return !!getCachedLevel(level);
   },
 
   /**
    * Get all cached data (for components that need all levels)
    */
   getAllCached(): Partial<Record<KanjiLevel, IKanjiObj[]>> {
-    return { ...kanjiCache };
+    return { ...useKanjiCacheStore.getState().cachedByLevel, ...kanjiCache };
   },
 
   /**
@@ -76,6 +88,7 @@ export const kanjiDataService = {
     Object.keys(kanjiCache).forEach(key => {
       delete kanjiCache[key as KanjiLevel];
     });
+    useKanjiCacheStore.getState().clearCache();
   },
 };
 

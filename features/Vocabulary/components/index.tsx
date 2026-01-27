@@ -9,11 +9,25 @@ import {
   VocabLevel,
 } from '@/features/Vocabulary/services/vocabDataService';
 import LevelSetCards from '@/shared/components/Menu/LevelSetCards';
+import {
+  N1VocabLength,
+  N2VocabLength,
+  N3VocabLength,
+  N4VocabLength,
+  N5VocabLength,
+} from '@/shared/lib/unitSets';
 
 import type { IWord } from '@/shared/types/interfaces';
 
 const levelOrder: VocabLevel[] = ['n5', 'n4', 'n3', 'n2', 'n1'];
 const WORDS_PER_SET = 10;
+const VOCAB_LENGTHS: Record<VocabLevel, number> = {
+  n5: N5VocabLength,
+  n4: N4VocabLength,
+  n3: N3VocabLength,
+  n2: N2VocabLength,
+  n1: N1VocabLength,
+};
 
 const vocabCollectionNames: Record<VocabLevel, string> = {
   n5: 'N5',
@@ -62,6 +76,10 @@ const VocabCards = () => {
     (level: VocabLevel) => vocabDataService.getVocabByLevel(level),
     [],
   );
+  const getCollectionSize = useCallback(
+    (level: VocabLevel) => VOCAB_LENGTHS[level],
+    [],
+  );
 
   return (
     <LevelSetCards<VocabLevel, IWord>
@@ -69,6 +87,7 @@ const VocabCards = () => {
       selectedUnitName={selectedVocabCollectionName as VocabLevel}
       itemsPerSet={WORDS_PER_SET}
       getCollectionName={getCollectionName}
+      getCollectionSize={getCollectionSize}
       loadItemsByLevel={loadItemsByLevel}
       selectedSets={selectedVocabSets}
       setSelectedSets={setSelectedVocabSets}

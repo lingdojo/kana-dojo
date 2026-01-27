@@ -1,4 +1,8 @@
 import { IWord } from '@/shared/types/interfaces';
+import {
+  useVocabCacheStore,
+  type VocabLevel,
+} from '@/features/Vocabulary/store/useVocabCacheStore';
 
 type RawVocabEntry = {
   jmdict_seq: string;
@@ -6,8 +10,6 @@ type RawVocabEntry = {
   kanji: string;
   waller_definition: string;
 };
-
-type VocabLevel = 'n5' | 'n4' | 'n3' | 'n2' | 'n1';
 
 const toWordObj = (entry: RawVocabEntry): IWord => {
   const definitionPieces = entry.waller_definition
@@ -26,6 +28,17 @@ const toWordObj = (entry: RawVocabEntry): IWord => {
 const vocabCache: Partial<Record<VocabLevel, IWord[]>> = {};
 const pendingRequests: Partial<Record<VocabLevel, Promise<IWord[]>>> = {};
 
+const getCachedLevel = (level: VocabLevel) => {
+  const sessionCache = useVocabCacheStore.getState().cachedByLevel[level];
+  if (sessionCache) return sessionCache;
+  return vocabCache[level];
+};
+
+const setCachedLevel = (level: VocabLevel, items: IWord[]) => {
+  vocabCache[level] = items;
+  useVocabCacheStore.getState().setCachedLevel(level, items);
+};
+
 export const vocabDataService = {
   /**
    * Get vocab data for a specific level. Returns cached data if available,
@@ -33,9 +46,8 @@ export const vocabDataService = {
    */
   async getVocabByLevel(level: VocabLevel): Promise<IWord[]> {
     // Return cached data immediately if available
-    if (vocabCache[level]) {
-      return vocabCache[level];
-    }
+    const cached = getCachedLevel(level);
+    if (cached) return cached;
 
     // If there's already a pending request for this level, wait for it
     if (pendingRequests[level]) {
@@ -47,7 +59,7 @@ export const vocabDataService = {
       .then(res => res.json() as Promise<RawVocabEntry[]>)
       .then(data => {
         const words = data.map(toWordObj);
-        vocabCache[level] = words;
+        setCachedLevel(level, words);
         delete pendingRequests[level];
         return words;
       })
@@ -71,14 +83,14 @@ export const vocabDataService = {
    * Check if a level is already cached
    */
   isCached(level: VocabLevel): boolean {
-    return !!vocabCache[level];
+    return !!getCachedLevel(level);
   },
 
   /**
    * Get all cached data (for components that need all levels)
    */
   getAllCached(): Partial<Record<VocabLevel, IWord[]>> {
-    return { ...vocabCache };
+    return { ...useVocabCacheStore.getState().cachedByLevel, ...vocabCache };
   },
 
   /**
@@ -88,6 +100,7 @@ export const vocabDataService = {
     Object.keys(vocabCache).forEach(key => {
       delete vocabCache[key as VocabLevel];
     });
+    useVocabCacheStore.getState().clearCache();
   },
 };
 

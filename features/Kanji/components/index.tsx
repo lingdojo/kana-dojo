@@ -11,9 +11,23 @@ import {
   KanjiLevel,
 } from '@/features/Kanji/services/kanjiDataService';
 import LevelSetCards from '@/shared/components/Menu/LevelSetCards';
+import {
+  N1KanjiLength,
+  N2KanjiLength,
+  N3KanjiLength,
+  N4KanjiLength,
+  N5KanjiLength,
+} from '@/shared/lib/unitSets';
 
 const levelOrder: KanjiLevel[] = ['n5', 'n4', 'n3', 'n2', 'n1'];
 const KANJI_PER_SET = 10;
+const KANJI_LENGTHS: Record<KanjiLevel, number> = {
+  n5: N5KanjiLength,
+  n4: N4KanjiLength,
+  n3: N3KanjiLength,
+  n2: N2KanjiLength,
+  n1: N1KanjiLength,
+};
 
 const KanjiCards = () => {
   const selectedKanjiCollectionName = useKanjiStore(
@@ -54,6 +68,10 @@ const KanjiCards = () => {
     (level: KanjiLevel) => kanjiDataService.getKanjiByLevel(level),
     [],
   );
+  const getCollectionSize = useCallback(
+    (level: KanjiLevel) => KANJI_LENGTHS[level],
+    [],
+  );
 
   return (
     <LevelSetCards<KanjiLevel, IKanjiObj>
@@ -61,6 +79,7 @@ const KanjiCards = () => {
       selectedUnitName={selectedKanjiCollectionName as KanjiLevel}
       itemsPerSet={KANJI_PER_SET}
       getCollectionName={getCollectionName}
+      getCollectionSize={getCollectionSize}
       loadItemsByLevel={loadItemsByLevel}
       selectedSets={selectedKanjiSets}
       setSelectedSets={setSelectedKanjiSets}
