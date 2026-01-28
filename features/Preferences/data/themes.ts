@@ -1317,6 +1317,12 @@ const baseThemeSets: BaseThemeGroup[] = [
   	  mainColor: 'oklch(70.0% 0.155 350.0 / 1)',
   	  secondaryColor: 'oklch(82.0% 0.090 95.0 / 1)'
 	},
+	{
+  	  id: 'plum-ink',
+    	  backgroundColor: 'oklch(16.0% 0.030 280.0 / 1)',
+  	  mainColor: 'oklch(72.0% 0.145 330.0 / 1)',
+  	  secondaryColor: 'oklch(60.0% 0.075 260.0 / 1)'
+	},
     ],
   },
   {
