@@ -249,7 +249,10 @@
     "english": "I think you should just laugh.",
     "anime": "Neon Genesis Evangelion",
     "character": "Rei Ayanami",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "natanaelmustafa",
+    "completedPR": 2268
   },
   {
     "id": 25,
