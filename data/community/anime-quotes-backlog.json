@@ -192,7 +192,10 @@
     "english": "What?!",
     "anime": "Fist of the North Star",
     "character": "Shin",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "patrick-ouano",
+    "completedPR": 2193
   },
   {
     "id": 20,
