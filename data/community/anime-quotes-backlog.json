@@ -174,7 +174,10 @@
     "english": "Bucciarati is here!",
     "anime": "JoJo's Bizarre Adventure: Golden Wind",
     "character": "Narancia Ghirga",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "shreeney",
+    "completedPR": 2199
   },
   {
     "id": 18,
