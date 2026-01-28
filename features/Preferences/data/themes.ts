@@ -1287,6 +1287,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         mainColor: 'oklch(88.0% 0.055 230.0 / 1)',
         secondaryColor: 'oklch(70.0% 0.145 210.0 / 1)',
       },
+      {
+        id: 'bamboo-shadow',
+        backgroundColor: 'oklch(18.0% 0.030 150.0 / 1)',
+        mainColor: 'oklch(70.0% 0.120 145.0 / 1)',
+        secondaryColor: 'oklch(60.0% 0.085 120.0 / 1)',
+      },
     ],
   },
   {
