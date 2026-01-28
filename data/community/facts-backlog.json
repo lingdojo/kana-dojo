@@ -1291,7 +1291,7 @@
   {
     "id": 214,
     "fact": "In many Japanese cities, you can find public 'koban' (交番) — small neighborhood police boxes that help with directions and lost items.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 215,
