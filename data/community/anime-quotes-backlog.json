@@ -228,7 +228,10 @@
     "english": "Not yet! It's not over yet!",
     "anime": "Mobile Suit Gundam",
     "character": "Char Aznable",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "juztmsd777777",
+    "completedPR": 2245
   },
   {
     "id": 23,
