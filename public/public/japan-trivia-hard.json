@@ -21,5 +21,16 @@
     "Comique"
   ],
   "correctIndex": 0
-}
+},
+  {
+    "question": "What is the Japanese name for the autumn moon-viewing festival?",
+    "difficulty": "hard",
+    "answers": [
+      "Tanabata",
+      "Tsukimi",
+      "Shogatsu",
+      "Hina Matsuri"
+    ],
+    "correctIndex": 1
+  }
 ]
