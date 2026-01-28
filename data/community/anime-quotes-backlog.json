@@ -261,7 +261,10 @@
     "english": "I am Gundam!",
     "anime": "Mobile Suit Gundam 00",
     "character": "Setsuna F. Seiei",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "EmmanuelChigwende",
+    "completedPR": 2283
   },
   {
     "id": 26,
