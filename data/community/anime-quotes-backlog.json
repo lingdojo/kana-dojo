@@ -132,7 +132,10 @@
     "english": "I'm on a different level today!",
     "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
     "character": "Okuyasu Nijimura",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "suraj-mandal",
+    "completedPR": 2318
   },
   {
     "id": 14,
@@ -174,7 +177,10 @@
     "english": "Bucciarati is here!",
     "anime": "JoJo's Bizarre Adventure: Golden Wind",
     "character": "Narancia Ghirga",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "shreeney",
+    "completedPR": 2199
   },
   {
     "id": 18,
@@ -192,7 +198,10 @@
     "english": "What?!",
     "anime": "Fist of the North Star",
     "character": "Shin",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "patrick-ouano",
+    "completedPR": 2193
   },
   {
     "id": 20,
@@ -201,7 +210,10 @@
     "english": "I'm gonna be King of the Pirates!",
     "anime": "One Piece",
     "character": "Monkey D. Luffy",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "gouravrayGithub",
+    "completedPR": 2205
   },
   {
     "id": 21,
@@ -210,7 +222,7 @@
     "english": "If you give up, that's the end of the game.",
     "anime": "Slam Dunk",
     "character": "Kaede Rukawa",
-    "issued": false
+    "issued": true
   },
   {
     "id": 22,
@@ -219,7 +231,10 @@
     "english": "Not yet! It's not over yet!",
     "anime": "Mobile Suit Gundam",
     "character": "Char Aznable",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "juztmsd777777",
+    "completedPR": 2245
   },
   {
     "id": 23,
@@ -228,7 +243,7 @@
     "english": "Dance to my beautiful technique!",
     "anime": "The Prince of Tennis",
     "character": "Keigo Atobe",
-    "issued": false
+    "issued": true
   },
   {
     "id": 24,
@@ -237,7 +252,10 @@
     "english": "I think you should just laugh.",
     "anime": "Neon Genesis Evangelion",
     "character": "Rei Ayanami",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "natanaelmustafa",
+    "completedPR": 2268
   },
   {
     "id": 25,
@@ -246,7 +264,10 @@
     "english": "I am Gundam!",
     "anime": "Mobile Suit Gundam 00",
     "character": "Setsuna F. Seiei",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "EmmanuelChigwende",
+    "completedPR": 2283
   },
   {
     "id": 26,
@@ -255,7 +276,10 @@
     "english": "This world is cruel... yet so beautiful.",
     "anime": "Attack on Titan",
     "character": "Mikasa Ackerman",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "anushac13",
+    "completedPR": 2307
   },
   {
     "id": 27,
@@ -264,7 +288,7 @@
     "english": "Lero lero lero lero.",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Noriaki Kakyoin",
-    "issued": false
+    "issued": true
   },
   {
     "id": 28,
@@ -273,7 +297,7 @@
     "english": "Fosh fosh fosh fosh.",
     "anime": "One Piece",
     "character": "Kozuki Sukiyaki",
-    "issued": false
+    "issued": true
   },
   {
     "id": 29,
@@ -282,7 +306,7 @@
     "english": "Mama mama mama.",
     "anime": "One Piece",
     "character": "Charlotte Linlin (Big Mom)",
-    "issued": false
+    "issued": true
   },
   {
     "id": 30,

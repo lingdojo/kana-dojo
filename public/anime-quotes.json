@@ -1,5 +1,12 @@
 [
   {
+    "japanese": "世界は残酷だ…それでも美しい",
+    "romaji": "Sekai wa zankoku da... soredemo utsukushii",
+    "english": "This world is cruel... yet so beautiful.",
+    "anime": "Attack on Titan",
+    "character": "Mikasa Ackerman"
+  },
+  {
     "japanese": "やれやれだぜ…まったく。",
     "romaji": "Yare yare da ze... mattaku.",
     "english": "Good grief... honestly.",
@@ -42,17 +49,87 @@
     "character": "Joseph Joestar"
   },
   {
-  "japanese": "俺は人間をやめるぞ！ジョジョーーッ！！",
-  "romaji": "Ore wa ningen o yameru zo! Jojo!!",
-  "english": "I'm going to stop being human, JoJo!",
-  "anime": "JoJo's Bizarre Adventure: Phantom Blood",
-  "character": "Dio Brando"
+    "japanese": "俺は人間をやめるぞ！ジョジョーーッ！！",
+    "romaji": "Ore wa ningen o yameru zo! Jojo!!",
+    "english": "I'm going to stop being human, JoJo!",
+    "anime": "JoJo's Bizarre Adventure: Phantom Blood",
+    "character": "Dio Brando"
   },
   {
-  "japanese": "おれは人間を超越する！",
-  "romaji": "Ore wa ningen o chouetsu suru!",
-  "english": "I will transcend humanity!",
-  "anime": "JoJo's Bizarre Adventure: Battle Tendency",
-  "character": "Kars"
-}
+    "japanese": "おれは人間を超越する！",
+    "romaji": "Ore wa ningen o chouetsu suru!",
+    "english": "I will transcend humanity!",
+    "anime": "JoJo's Bizarre Adventure: Battle Tendency",
+    "character": "Kars"
+  },
+  {
+    "japanese": "何ッ！？",
+    "romaji": "Nani!?",
+    "english": "What?!",
+    "anime": "Fist of the North Star",
+    "character": "Shin"
+  },
+  {
+    "japanese": "ブチャラティ、来た！",
+    "romaji": "Bucharati, kita!",
+    "english": "Bucciarati is here!",
+    "anime": "JoJo's Bizarre Adventure: Golden Wind",
+    "character": "Narancia Ghirga"
+  },
+  {
+    "japanese": "俺は海賊王になる！",
+    "romaji": "Ore wa kaizoku ou ni naru!",
+    "english": "I'm gonna be King of the Pirates!",
+    "anime": "One Piece",
+    "character": "Monkey D. Luffy"
+  },
+  {
+    "japanese": "あきらめたらそこで試合終了ですよ…？",
+    "romaji": "Akirametara soko de shiai shuuryou desu yo...?",
+    "english": "If you give up, that's the end of the game.",
+    "anime": "Slam Dunk",
+    "character": "Kaede Rukawa"
+  },
+  {
+    "japanese": "まだだ、まだ終わらんよ！",
+    "romaji": "Mada da, mada owaran yo!",
+    "english": "Not yet! It's not over yet!",
+    "anime": "Mobile Suit Gundam",
+    "character": "Char Aznable"
+  },
+  {
+    "japanese": "笑えばいいと思うよ",
+    "romaji": "Waraeba ii to omou yo",
+    "english": "I think you should just laugh.",
+    "anime": "Neon Genesis Evangelion",
+    "character": "Rei Ayanami"
+  },
+  {
+    "japanese": "おまえはもう死んでいる",
+    "romaji": "Omae wa mou shindeiru",
+    "english": "You're already dead.",
+    "anime": "Fist of the North Star",
+    "character": "Kenshiro"
+  },
+  {
+    "japanese": "俺はガンダムだ！",
+    "romaji": "Ore wa Gandamu da!",
+    "english": "I am Gundam!",
+    "anime": "Mobile Suit Gundam 00",
+    "character": "Setsuna F. Seiei"
+  },
+  {
+    "japanese": "世界は残酷だ…それでも美しい",
+    "romaji": "Sekai wa zankoku da... soredemo utsukushii",
+    "english": "This world is cruel... yet so beautiful.",
+    "anime": "Attack on Titan",
+    "character": "Mikasa Ackerman"
+  },
+  {
+    "japanese": "今日の俺は一味違うぜ！",
+    "romaji": "Kyou no ore wa hitomi chigau ze!",
+    "english": "I'm on a different level today!",
+    "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
+    "character": "Okuyasu Nijimura"
+  }
 ]

@@ -1468,7 +1468,10 @@
     "backgroundColor": "oklch(16.0% 0.030 280.0 / 1)",
     "mainColor": "oklch(72.0% 0.145 330.0 / 1)",
     "secondaryColor": "oklch(60.0% 0.075 260.0 / 1)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "Prasad3Suryavanshi",
+    "completedPR": 2292
   },
   {
     "id": "festival-gold",
@@ -1519,7 +1522,10 @@
     "backgroundColor": "oklch(15.0% 0.015 250.0 / 1)",
     "mainColor": "oklch(78.0% 0.035 230.0 / 1)",
     "secondaryColor": "oklch(65.0% 0.105 300.0 / 1)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "EmmanuelChigwende",
+    "completedPR": 2291
   },
   {
     "id": "sea-glass",
@@ -1558,7 +1564,10 @@
     "backgroundColor": "oklch(21.0% 0.030 45.0 / 1)",
     "mainColor": "oklch(75.0% 0.155 55.0 / 1)",
     "secondaryColor": "oklch(82.0% 0.135 95.0 / 1)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "lorenzotiziani",
+    "completedPR": 2179
   },
   {
     "id": "riverstone-gray",
@@ -1567,7 +1576,7 @@
     "backgroundColor": "oklch(20.0% 0.010 260.0 / 1)",
     "mainColor": "oklch(78.0% 0.020 90.0 / 1)",
     "secondaryColor": "oklch(55.0% 0.035 240.0 / 1)",
-    "issued": false
+    "issued": true
   },
   {
     "id": "temple-mist",
@@ -1576,7 +1585,10 @@
     "backgroundColor": "oklch(21.0% 0.020 200.0 / 1)",
     "mainColor": "oklch(78.0% 0.085 195.0 / 1)",
     "secondaryColor": "oklch(65.0% 0.045 230.0 / 1)",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "gouravrayGithub",
+    "completedPR": 2206
   },
   {
     "id": "peach-mochi",
@@ -1585,7 +1597,10 @@
     "backgroundColor": "oklch(96.0% 0.020 25.0 / 1)",
     "mainColor": "oklch(68.0% 0.165 15.0 / 1)",
     "secondaryColor": "oklch(78.0% 0.105 85.0 / 1)",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "TM-SAF1",
+    "completedPR": 2227
   },
   {
     "id": "inkstone-blue",
@@ -1594,7 +1609,7 @@
     "backgroundColor": "oklch(17.0% 0.020 255.0 / 1)",
     "mainColor": "oklch(74.0% 0.060 230.0 / 1)",
     "secondaryColor": "oklch(60.0% 0.085 280.0 / 1)",
-    "issued": false
+    "issued": true
   },
   {
     "id": "sakura-latte",
@@ -1603,7 +1618,10 @@
     "backgroundColor": "oklch(95.0% 0.020 15.0 / 1)",
     "mainColor": "oklch(70.0% 0.155 350.0 / 1)",
     "secondaryColor": "oklch(82.0% 0.090 95.0 / 1)",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "Prasad3Suryavanshi",
+    "completedPR": 2280
   },
   {
     "id": "shrine-stone",
@@ -1612,7 +1630,10 @@
     "backgroundColor": "oklch(19.0% 0.015 260.0 / 1)",
     "mainColor": "oklch(72.0% 0.155 35.0 / 1)",
     "secondaryColor": "oklch(58.0% 0.035 240.0 / 1)",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "EmmanuelChigwende",
+    "completedPR": 2287
   },
   {
     "id": "tangerine-fizz",
@@ -1621,7 +1642,10 @@
     "backgroundColor": "oklch(94.0% 0.015 80.0 / 1)",
     "mainColor": "oklch(70.0% 0.195 55.0 / 1)",
     "secondaryColor": "oklch(80.0% 0.125 95.0 / 1)",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "suraj-mandal",
+    "completedPR": 2320
   },
   {
     "id": "bamboo-shadow",
@@ -1630,7 +1654,7 @@
     "backgroundColor": "oklch(18.0% 0.030 150.0 / 1)",
     "mainColor": "oklch(70.0% 0.120 145.0 / 1)",
     "secondaryColor": "oklch(60.0% 0.085 120.0 / 1)",
-    "issued": false
+    "issued": true
   },
   {
     "id": "harajuku-pop",
@@ -1639,7 +1663,7 @@
     "backgroundColor": "oklch(96.0% 0.025 85.0 / 1)",
     "mainColor": "oklch(72.0% 0.225 320.0 / 1)",
     "secondaryColor": "oklch(80.0% 0.195 200.0 / 1)",
-    "issued": false
+    "issued": true
   },
   {
     "id": "moonlit-bay",
@@ -1648,7 +1672,7 @@
     "backgroundColor": "oklch(16.0% 0.018 240.0 / 1)",
     "mainColor": "oklch(82.0% 0.040 230.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.095 260.0 / 1)",
-    "issued": false
+    "issued": true
   },
   {
     "id": "gingko-avenue",

@@ -12,6 +12,18 @@
     "description": "Meistern Sie Hiragana und Katakana mit interaktiven Spielen und Übungen. Üben Sie japanische Kana-Zeichen nach Schwierigkeitsgrad mit sofortigem Feedback und Fortschrittsverfolgung.",
     "keywords": "hiragana, katakana, japanische kana, hiragana lernen, katakana lernen, kana übung, japanisches alphabet"
   },
+  "learnHiragana": {
+    "title": "Hiragana Lernen - Komplette Tabelle, Übungen & Training | KanaDojo",
+    "titleShort": "Hiragana Lernen",
+    "description": "Lernen Sie Hiragana schnell mit interaktiven Übungen, auswählbaren Kana-Karten und geführter Praxis. Meistern Sie die komplette Hiragana-Tabelle, Dakuon und Yoon mit sofortigem Feedback.",
+    "keywords": "hiragana lernen, hiragana tabelle, hiragana übung, hiragana quiz, hiragana karteikarten, hiragana aussprache, hiragana lesen, hiragana zeichen, hiragana dakuon, hiragana yoon, hiragana für anfänger"
+  },
+  "learnKatakana": {
+    "title": "Katakana Lernen - Komplette Tabelle, Übungen & Training | KanaDojo",
+    "titleShort": "Katakana Lernen",
+    "description": "Lernen Sie Katakana schnell mit interaktiven Übungen, auswählbaren Kana-Karten und geführter Praxis. Meistern Sie die komplette Katakana-Tabelle, Dakuon, Yoon und Fremdlaute mit sofortigem Feedback.",
+    "keywords": "katakana lernen, katakana tabelle, katakana übung, katakana quiz, katakana karteikarten, katakana aussprache, katakana lesen, katakana zeichen, katakana dakuon, katakana yoon, katakana fremdlaute"
+  },
   "kanaBlitz": {
     "title": "Kana Blitz - Testen Sie Ihre Hiragana und Katakana Geschwindigkeit",
     "titleShort": "Kana Blitz",

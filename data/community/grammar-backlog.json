@@ -112,52 +112,52 @@
   {
     "id": 23,
     "text": "\"〜のに\" expresses contrast or regret, similar to \"even though\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 24,
     "text": "\"〜ので\" gives a reason in a polite or softer way than \"から\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 25,
     "text": "\"〜たところ\" can mean \"just did\" something and observed a result.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 26,
     "text": "\"〜まま\" means \"as is\" or \"unchanged\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 27,
     "text": "\"〜ばかり\" means \"just\" (in terms of time) or \"only\" depending on context.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 28,
     "text": "\"〜すぎる\" attaches to verbs or adjectives to mean \"too much\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 29,
     "text": "\"〜らしい\" can mean \"seems\" or describe a typical characteristic.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 30,
     "text": "\"〜おう/〜よう\" is the volitional form, used to say \"let's\" or \"I will\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 31,
     "text": "\"〜ところ\" refers to a point in time, like \"about to\", \"in the middle of\", or \"just finished\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 32,
     "text": "\"〜たり〜たり\" lists representative actions, like \"do things like A and B\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 33,
