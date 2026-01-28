@@ -328,6 +328,12 @@ const baseThemeSets: BaseThemeGroup[] = [
     icon: Moon,
     isLight: false,
     themes: [
+		{
+		  id: 'shrine-stone',
+		  backgroundColor: 'oklch(19.0% 0.015 260.0 / 1)',
+		  mainColor: 'oklch(72.0% 0.155 35.0 / 1)',
+		  secondaryColor: 'oklch(58.0% 0.035 240.0 / 1)'
+		},
       {
         id: 'temple-mist',
         backgroundColor: 'oklch(21.0% 0.020 200.0 / 1)',
