@@ -131,11 +131,6 @@ export function SubcategoryPageClient({
           <div className='flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between'>
             <h1 className='text-3xl font-bold tracking-tight text-[var(--main-color)] md:text-4xl'>
               {subcategory.name}
-              {subcategory.nameJa && (
-                <span className='ml-2 text-xl font-normal text-[var(--secondary-color)] md:text-2xl'>
-                  ({subcategory.nameJa})
-                </span>
-              )}
             </h1>
             <div className='flex items-center gap-2'>
               <span className='rounded-full bg-[var(--main-color)]/10 px-3 py-1 text-sm font-medium text-[var(--main-color)]'>

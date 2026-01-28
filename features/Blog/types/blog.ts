@@ -27,7 +27,7 @@ export type Difficulty = 'beginner' | 'intermediate' | 'advanced';
 /**
  * Supported locales for blog content
  */
-export type Locale = 'en' | 'es' | 'ja';
+export type Locale = 'en' | 'es';
 
 /**
  * Heading extracted from MDX content for table of contents
@@ -124,4 +124,4 @@ export const VALID_DIFFICULTIES: Difficulty[] = [
 /**
  * Valid locales for validation
  */
-export const VALID_LOCALES: Locale[] = ['en', 'es', 'ja'];
+export const VALID_LOCALES: Locale[] = ['en', 'es'];

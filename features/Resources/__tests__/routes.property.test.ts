@@ -3,7 +3,7 @@ import * as fc from 'fast-check';
 import { getAllCategories } from '../data';
 
 // Define locales directly to avoid Next.js navigation module import issues in tests
-const SUPPORTED_LOCALES = ['en', 'es', 'ja'] as const;
+const SUPPORTED_LOCALES = ['en', 'es'] as const;
 
 /**
  * **Feature: japanese-resources-library, Property 8: Route Generation for Categories**

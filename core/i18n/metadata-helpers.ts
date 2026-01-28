@@ -80,7 +80,6 @@ export async function generatePageMetadata(
     ? {
         en: joinUrl(baseUrl, 'en', pathname),
         es: joinUrl(baseUrl, 'es', pathname),
-        ja: joinUrl(baseUrl, 'ja', pathname),
       }
     : undefined;
 

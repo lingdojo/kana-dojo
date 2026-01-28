@@ -32,7 +32,6 @@ export async function generateMetadata({
       languages: {
         en: 'https://kanadojo.com/en/jlpt/n4',
         es: 'https://kanadojo.com/es/jlpt/n4',
-        ja: 'https://kanadojo.com/ja/jlpt/n4',
       },
     },
     openGraph: {

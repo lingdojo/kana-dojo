@@ -67,7 +67,7 @@ export async function notifyPageUpdate(pathname: string) {
   const url = `${SITE_URL}${pathname.startsWith('/') ? pathname : `/${pathname}`}`;
 
   // Submit to IndexNow in background (fire and forget)
-  submitUrlToIndexNow(url).catch((err) => {
+  submitUrlToIndexNow(url).catch(err => {
     console.warn('IndexNow submission failed:', err);
   });
 }
@@ -77,14 +77,14 @@ export async function notifyPageUpdate(pathname: string) {
  * @param pathname - Pathname without locale prefix (e.g., '/academy/post-slug')
  */
 export async function notifyPageUpdateAllLocales(pathname: string) {
-  const locales = ['en', 'es', 'ja'];
+  const locales = ['en', 'es'];
   const urls = locales.map(
-    (locale) =>
+    locale =>
       `${SITE_URL}/${locale}${pathname.startsWith('/') ? pathname : `/${pathname}`}`,
   );
 
   // Submit all locales at once
-  submitUrlsToIndexNow(urls).catch((err) => {
+  submitUrlsToIndexNow(urls).catch(err => {
     console.warn('IndexNow submission failed:', err);
   });
 }
@@ -100,7 +100,7 @@ export async function notifySitemapUpdate() {
     // Add other sitemap files if you have multiple
   ];
 
-  submitUrlsToIndexNow(urls).catch((err) => {
+  submitUrlsToIndexNow(urls).catch(err => {
     console.warn('Sitemap IndexNow submission failed:', err);
   });
 }

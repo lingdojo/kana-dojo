@@ -31,11 +31,6 @@ const sitemapConfig = {
             hrefIsAbsolute: true,
           },
           {
-            href: `${siteUrl}/ja${normalizedBasePath}` || `${siteUrl}/ja`,
-            hreflang: 'ja',
-            hrefIsAbsolute: true,
-          },
-          {
             href: `${siteUrl}/en${normalizedBasePath}` || `${siteUrl}/en`,
             hreflang: 'x-default',
             hrefIsAbsolute: true,
@@ -60,6 +55,12 @@ const sitemapConfig = {
       '/jlpt/n5',
       '/jlpt/n4',
       '/jlpt/n3',
+    ];
+
+    // Tools pages with custom priorities
+    const toolsPaths = [
+      { path: '/tools/anki-converter', priority: 0.8, changefreq: 'weekly' },
+      { path: '/tools/kana-chart', priority: 0.7, changefreq: 'monthly' },
     ];
 
     // Popular Japanese verbs for conjugator sitemap entries
@@ -395,6 +396,11 @@ const sitemapConfig = {
     // Build entries for base paths (default priority)
     const baseEntries = basePaths.map(path => buildEntry(path));
 
+    // Build entries for tools paths (custom priorities)
+    const toolsEntries = toolsPaths.map(({ path, priority, changefreq }) =>
+      buildEntry(path, priority, changefreq),
+    );
+
     // Build entries for resource paths (custom priorities)
     const resourceEntries = resourcePaths.map(
       ({ path, priority, changefreq }) =>
@@ -407,14 +413,18 @@ const sitemapConfig = {
         buildEntry(path, priority, changefreq),
     );
 
-    return [...baseEntries, ...resourceEntries, ...conjugatorEntries];
+    return [
+      ...baseEntries,
+      ...toolsEntries,
+      ...resourceEntries,
+      ...conjugatorEntries,
+    ];
   },
   exclude: [
     '/api/*',
     '/_next/*',
     '/*/train/*', // Exclude dynamic training pages
-    '/es/*', // Exclude es/ja locales - we only generate /en/* URLs
-    '/ja/*', // and add alternateRefs for other locales
+    '/es/*', // Exclude es locale - we only generate /en/* URLs
   ],
   robotsTxtOptions: {
     policies: [
@@ -468,7 +478,7 @@ const sitemapConfig = {
     };
 
     // Extract base path without locale (e.g., /en/kana -> /kana)
-    const localePattern = /^\/(en|es|ja)(\/.*)?$/;
+    const localePattern = /^\/(en|es)(\/.*)?$/;
     const match = path.match(localePattern);
     const basePath = match ? match[2] || '/' : path;
 
@@ -508,11 +518,6 @@ const sitemapConfig = {
         {
           href: `${siteUrl}/es${basePath}`,
           hreflang: 'es',
-          hrefIsAbsolute: true,
-        },
-        {
-          href: `${siteUrl}/ja${basePath}`,
-          hreflang: 'ja',
           hrefIsAbsolute: true,
         },
         {

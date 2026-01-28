@@ -26,6 +26,19 @@ import { useClick } from '@/shared/hooks/useAudio';
 import { buttonBorderStyles, cardBorderStyles } from '@/shared/lib/styles';
 import { modalFonts } from '@/shared/components/Modals/data/modalFonts';
 
+const CHAOS_THEME_GRADIENT = `linear-gradient(
+  142deg,
+  oklch(66.0% 0.18 25.0 / 1) 0%,
+  oklch(72.0% 0.22 80.0 / 1) 12%,
+  oklch(68.0% 0.20 145.0 / 1) 24%,
+  oklch(70.0% 0.19 200.0 / 1) 36%,
+  oklch(67.0% 0.18 235.0 / 1) 48%,
+  oklch(73.0% 0.22 290.0 / 1) 60%,
+  oklch(69.0% 0.21 330.0 / 1) 74%,
+  oklch(74.0% 0.20 355.0 / 1) 88%,
+  oklch(66.0% 0.18 25.0 / 1) 100%
+)`;
+
 const WelcomeModal = () => {
   const t = useTranslations('welcome');
   const { playClick } = useClick();
@@ -379,69 +392,78 @@ const WelcomeModal = () => {
                   <div className='flex items-center gap-2 text-lg font-medium text-[var(--main-color)]'>
                     <themeSet.icon size={20} />
                     {themeSet.name}
-                    <span className='text-sm font-normal text-[var(--secondary-color)]'>
+                    {/* <span className='text-sm font-normal text-[var(--secondary-color)]'>
                       ({themeSet.themes.length})
-                    </span>
+                    </span> */}
                   </div>
                   <div className='grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4'>
-                    {themeSet.themes.map(theme => (
-                      <button
-                        key={theme.id}
-                        className='cursor-pointer rounded-lg p-3 transition-all duration-200 hover:opacity-90 active:scale-95'
-                        style={{
-                          backgroundColor: theme.backgroundColor,
-                          border:
-                            localTheme === theme.id
-                              ? `1px solid ${theme.mainColor}`
-                              : `1px solid ${theme.borderColor}`,
-                        }}
-                        onClick={() => {
-                          playClick();
-                          setLocalTheme(theme.id);
-                          setSelectedTheme(theme.id);
-                        }}
-                        title={theme.id}
-                      >
-                        <div className='mb-2'>
-                          <span
-                            className='text-sm capitalize'
-                            style={{ color: theme.mainColor }}
+                    {themeSet.themes.map(theme => {
+                      const isChaosTheme = theme.id === '?';
+                      const background = isChaosTheme
+                        ? CHAOS_THEME_GRADIENT
+                        : theme.backgroundColor;
+                      return (
+                        <button
+                          key={theme.id}
+                          className='cursor-pointer rounded-lg p-3 transition-all duration-200 hover:opacity-90 active:scale-95'
+                          style={{
+                            background,
+                            border:
+                              localTheme === theme.id
+                                ? `1px solid ${theme.mainColor}`
+                                : `1px solid ${theme.borderColor}`,
+                          }}
+                          onClick={() => {
+                            playClick();
+                            setLocalTheme(theme.id);
+                            setSelectedTheme(theme.id);
+                          }}
+                          title={theme.id}
+                        >
+                          <div className='mb-2'>
+                            {isChaosTheme ? (
+                              <span className='relative flex items-center justify-center text-sm text-white capitalize'>
+                                <span
+                                  className='absolute left-1/2 -translate-x-1/2'
+                                  style={{
+                                    color:
+                                      localTheme === theme.id
+                                        ? '#000'
+                                        : 'transparent',
+                                  }}
+                                >
+                                  {'\u2B24'}
+                                </span>
+                                <span className='opacity-0'>?</span>
+                              </span>
+                            ) : (
+                              <span
+                                className='text-sm capitalize'
+                                style={{ color: theme.mainColor }}
+                              >
+                                {localTheme === theme.id && '\u2B24 '}
+                                {theme.id.replaceAll('-', ' ')}
+                              </span>
+                            )}
+                          </div>
+                          <div
+                            className='flex gap-1.5'
+                            style={{
+                              visibility: isChaosTheme ? 'hidden' : 'visible',
+                            }}
                           >
-                            {localTheme === theme.id && '\u2B24 '}
-                            {theme.id.replaceAll('-', ' ')}
-                          </span>
-                        </div>
-                        <div className='flex gap-1.5'>
-                          <div
-                            className='h-4 w-4 rounded-full ring-1'
-                            style={
-                              {
-                                background: theme.backgroundColor,
-                                '--tw-ring-color': theme.borderColor,
-                              } as React.CSSProperties
-                            }
-                          />
-                          <div
-                            className='h-4 w-4 rounded-full ring-1'
-                            style={
-                              {
-                                background: theme.mainColor,
-                                '--tw-ring-color': theme.borderColor,
-                              } as React.CSSProperties
-                            }
-                          />
-                          <div
-                            className='h-4 w-4 rounded-full ring-1'
-                            style={
-                              {
-                                background: theme.secondaryColor,
-                                '--tw-ring-color': theme.borderColor,
-                              } as React.CSSProperties
-                            }
-                          />
-                        </div>
-                      </button>
-                    ))}
+                            <div
+                              className='h-4 w-4 rounded-full'
+                              style={{ background: theme.mainColor }}
+                            />
+                            <div
+                              className='h-4 w-4 rounded-full'
+                              style={{ background: theme.secondaryColor }}
+                            />
+                          </div>
+                        </button>
+                      );
+                    })}
                   </div>
                 </div>
               ))}

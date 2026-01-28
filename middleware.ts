@@ -20,8 +20,8 @@ export default function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // Extract locale from pathname (URLs have /en/, /es/, /ja/ prefixes)
-  const localeMatch = pathname.match(/^\/(en|es|ja)/);
+  // Extract locale from pathname (URLs have /en/ or /es/ prefixes)
+  const localeMatch = pathname.match(/^\/(en|es)/);
   const locale = localeMatch ? localeMatch[1] : 'en';
 
   // Use next-intl middleware for locale handling

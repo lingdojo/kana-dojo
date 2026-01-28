@@ -1,15 +1,21 @@
 [
   {
-  "japanese": "転石苔むさず",
-  "romaji": "Tenseki koke musazu",
-  "english": "A rolling stone gathers no moss",
-  "meaning": "Constant change prevents stagnation"
+    "japanese": "柳に風",
+    "romaji": "Yanagi ni kaze",
+    "english": "Wind in the willow",
+    "meaning": "Stay flexible and let problems pass"
   },
   {
-  "japanese": "人のふり見て我がふり直せ",
-  "romaji": "Hito no furi mite waga furi naose",
-  "english": "Watch others and correct yourself",
-  "meaning": "Learn from others' behavior"
+    "japanese": "転石苔むさず",
+    "romaji": "Tenseki koke musazu",
+    "english": "A rolling stone gathers no moss",
+    "meaning": "Constant change prevents stagnation"
+  },
+  {
+    "japanese": "人のふり見て我がふり直せ",
+    "romaji": "Hito no furi mite waga furi naose",
+    "english": "Watch others and correct yourself",
+    "meaning": "Learn from others' behavior"
   },
   {
     "japanese": "井戸端会議",
@@ -28,6 +34,13 @@
     "romaji": "Fukusui bon ni kaerazu",
     "english": "Spilled water will not return to the tray",
     "meaning": "What is done cannot be undone"
+  },
+  
+  {
+    "japanese": "石の上にも三年",
+    "romaji": "Ishi no ue ni mo sannen",
+    "english": "Three years on a stone",
+    "meaning": "Perseverance prevails"
   },
   {
     "japanese": "七転び八起き",
@@ -414,21 +427,27 @@
     "meaning": "Hard times make relationships stronger"
   },
   {
-  "japanese": "一寸先は闇",
-  "romaji": "Issun saki wa yami",
-  "english": "An inch ahead is darkness",
-  "meaning": "The future is uncertain"
-},
-{
-  "japanese": "二度あることは三度ある",
-  "romaji": "Nido aru koto wa sando aru",
-  "english": "What happens twice will happen a third time",
-  "meaning": "Patterns tend to repeat"
-},
-{
-  "japanese": "千里の道も一歩から",
-  "romaji": "Senri no michi mo ippo kara",
-  "english": "A journey of a thousand miles begins with one step",
-  "meaning": "Start small to reach big goals"
-}
+    "japanese": "一寸先は闇",
+    "romaji": "Issun saki wa yami",
+    "english": "An inch ahead is darkness",
+    "meaning": "The future is uncertain"
+  },
+  {
+    "japanese": "二度あることは三度ある",
+    "romaji": "Nido aru koto wa sando aru",
+    "english": "What happens twice will happen a third time",
+    "meaning": "Patterns tend to repeat"
+  },
+  {
+    "japanese": "灯台下暗し",
+    "romaji": "Toudai moto kurashi",
+    "english": "It's darkest under the lighthouse",
+    "meaning": "The obvious is often overlooked"
+  },
+  {
+    "japanese": "木を見て森を見ず",
+    "romaji": "Ki wo mite mori wo mizu",
+    "english": "See the trees but not the forest",
+    "meaning": "Missing the bigger picture"
+  }
 ]

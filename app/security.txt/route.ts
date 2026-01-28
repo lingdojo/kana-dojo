@@ -9,7 +9,7 @@ export async function GET() {
   const securityTxt = `Contact: https://github.com/lingdojo/kanadojo/security
 Contact: mailto:security@kanadojo.com
 Expires: 2026-12-31T23:59:59.000Z
-Preferred-Languages: en, ja, es
+Preferred-Languages: en, es
 Canonical: https://kanadojo.com/.well-known/security.txt
 Policy: https://kanadojo.com/security
 Acknowledgments: https://kanadojo.com/credits

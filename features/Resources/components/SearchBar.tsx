@@ -112,7 +112,7 @@ export function SearchBar({
             type='button'
             onClick={handleClear}
             className={cn(
-              'flex h-8 w-8 items-center justify-center rounded-full',
+              'flex h-8 w-8 cursor-pointer items-center justify-center rounded-full',
               'text-[var(--secondary-color)] transition-all',
               'hover:bg-[var(--main-color)] hover:text-[var(--background-color)]',
             )}

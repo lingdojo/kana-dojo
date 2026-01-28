@@ -39,6 +39,7 @@ type LevelSetCardsProps<TLevel extends string, TItem> = {
   selectedUnitName: TLevel;
   itemsPerSet: number;
   getCollectionName: (level: TLevel) => string;
+  getCollectionSize: (level: TLevel) => number;
   loadItemsByLevel: (level: TLevel) => Promise<TItem[]>;
 
   selectedSets: string[];
@@ -68,6 +69,7 @@ const LevelSetCards = <TLevel extends string, TItem>({
   selectedUnitName,
   itemsPerSet,
   getCollectionName,
+  getCollectionSize,
   loadItemsByLevel,
   selectedSets,
   setSelectedSets,
@@ -90,38 +92,23 @@ const LevelSetCards = <TLevel extends string, TItem>({
     Partial<Record<TLevel, { data: TItem[]; name: string; prevLength: number }>>
   >({});
 
-  const [cumulativeCounts, setCumulativeCounts] = useState<Record<
-    TLevel,
-    number
-  > | null>(null);
+  const cumulativeCounts = (() => {
+    const counts = {} as Record<TLevel, number>;
+    let cumulative = 0;
+
+    for (const level of levelOrder) {
+      counts[level] = cumulative;
+      const size = getCollectionSize(level);
+      cumulative += Math.ceil(size / itemsPerSet);
+    }
+
+    return counts;
+  })();
 
   useEffect(() => {
     let isMounted = true;
 
-    const loadCumulativeCounts = async () => {
-      const counts = {} as Record<TLevel, number>;
-      let cumulative = 0;
-
-      for (const level of levelOrder) {
-        counts[level] = cumulative;
-        const items = await loadItemsByLevel(level);
-        cumulative += Math.ceil(items.length / itemsPerSet);
-      }
-
-      if (isMounted) setCumulativeCounts(counts);
-    };
-
-    void loadCumulativeCounts();
-
-    return () => {
-      isMounted = false;
-    };
-  }, [itemsPerSet, levelOrder, loadItemsByLevel]);
-
-  useEffect(() => {
-    let isMounted = true;
-
-    if (!cumulativeCounts || collections[selectedUnitName]) return;
+    if (collections[selectedUnitName]) return;
 
     const loadSelectedCollection = async () => {
       const items = await loadItemsByLevel(selectedUnitName);

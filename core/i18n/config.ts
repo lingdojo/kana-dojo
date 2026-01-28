@@ -1,5 +1,5 @@
 // All possible locales (for type definitions and metadata)
-export const allLocales = ['en', 'es', 'ja'] as const;
+export const allLocales = ['en', 'es'] as const;
 export type AllLocale = (typeof allLocales)[number];
 
 // Active locales (TEMP: Single locale for dev performance)
@@ -12,11 +12,9 @@ export const defaultLocale: Locale = 'en';
 export const localeNames: Record<AllLocale, string> = {
   en: 'English',
   es: 'Español',
-  ja: '日本語',
 };
 
 export const localeLabels: Record<AllLocale, string> = {
   en: 'EN',
   es: 'ES',
-  ja: 'JA',
 };

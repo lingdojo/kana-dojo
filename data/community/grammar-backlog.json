@@ -52,82 +52,82 @@
   {
     "id": 11,
     "text": "\"〜でしょう\" adds probability or softens statements, like \"probably\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 12,
     "text": "\"〜つもり\" expresses intent, like \"I plan to\" do something.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 13,
     "text": "\"〜なければならない\" means \"must\" or \"have to\" do something.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 14,
     "text": "\"〜なくてもいい\" means \"don't have to\" and lifts an obligation.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 15,
     "text": "\"〜てくれる\" indicates someone does a favor for the speaker.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 16,
     "text": "\"〜てもらう\" means \"receive a favor\" from someone.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 17,
     "text": "\"〜てあげる\" shows the speaker does a favor for someone else.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 18,
     "text": "\"〜ようと思う\" expresses a decision made at the moment of speaking.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 19,
     "text": "\"〜なら\" means \"if\" or \"in the case of\" and often gives advice.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 20,
     "text": "\"〜たら\" is a conditional \"if/when\" that also expresses sequence.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 21,
     "text": "\"〜ば\" forms a conditional meaning \"if\" in a general sense.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 22,
     "text": "\"〜ても\" means \"even if\" or \"even though\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 23,
     "text": "\"〜のに\" expresses contrast or regret, similar to \"even though\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 24,
     "text": "\"〜ので\" gives a reason in a polite or softer way than \"から\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 25,
     "text": "\"〜たところ\" can mean \"just did\" something and observed a result.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 26,
     "text": "\"〜まま\" means \"as is\" or \"unchanged\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 27,

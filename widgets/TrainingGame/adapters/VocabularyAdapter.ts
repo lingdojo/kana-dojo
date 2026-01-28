@@ -10,16 +10,12 @@ import type { ContentAdapter, GameMode } from './ContentAdapter';
 export const vocabularyAdapter: ContentAdapter<IVocabObj> = {
   getQuestion(vocab: IVocabObj, mode: GameMode): string {
     // reverse modes show meaning, regular modes show word
-    return mode.includes('reverse')
-      ? vocab.displayMeanings[0] || vocab.meanings[0] || ''
-      : vocab.word;
+    return mode.includes('reverse') ? vocab.meanings[0] || '' : vocab.word;
   },
 
   getCorrectAnswer(vocab: IVocabObj, mode: GameMode): string {
     // reverse modes expect word, regular modes expect meaning
-    return mode.includes('reverse')
-      ? vocab.word
-      : vocab.displayMeanings[0] || vocab.meanings[0] || '';
+    return mode.includes('reverse') ? vocab.word : vocab.meanings[0] || '';
   },
 
   generateOptions(
@@ -56,9 +52,7 @@ export const vocabularyAdapter: ContentAdapter<IVocabObj> = {
       primary: vocab.word,
       secondary: vocab.reading,
       readings: [vocab.reading],
-      meanings: vocab.displayMeanings.length
-        ? vocab.displayMeanings
-        : vocab.meanings,
+      meanings: vocab.meanings,
     };
   },
 };

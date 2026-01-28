@@ -21,5 +21,18 @@
     "difficulty": "medium",
     "answers": ["Sumo", "Kendo", "Karate", "Kyudo"],
     "correctIndex": 0
+  },
+
+  {
+    "question": "What is the Japanese word for \"thank you\"?",
+    "difficulty": "medium",
+    "answers": ["Sumimasen", "Arigatou", "Ohayou", "Sayonara"],
+    "correctIndex": 1
+  },
+  {
+    "question": "Which Japanese city is known for its deer roaming freely in a large park?",
+    "difficulty": "medium",
+    "answers": ["Nara", "Yokohama", "Kobe", "Nagoya"],
+    "correctIndex": 0
   }
 ]

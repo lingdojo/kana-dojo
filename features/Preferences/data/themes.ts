@@ -247,11 +247,23 @@ const baseThemeSets: BaseThemeGroup[] = [
         secondaryColor: 'oklch(46.49% 0.0000 89.88 / 1)',
       },
       {
-  id: 'tsukiji-morning',
-  backgroundColor: 'oklch(22.0% 0.020 235.0 / 1)',
-  mainColor: 'oklch(78.0% 0.135 215.0 / 1)',
-  secondaryColor: 'oklch(85.0% 0.155 90.0 / 1)'
-},
+        id: 'peach-mochi',
+        backgroundColor: 'oklch(96.0% 0.020 25.0 / 1)',
+        mainColor: 'oklch(68.0% 0.165 15.0 / 1)',
+        secondaryColor: 'oklch(78.0% 0.105 85.0 / 1)'
+      },
+      {
+        id: 'dark',
+        backgroundColor: 'oklch(22.67% 0.0000 89.88 / 1)',
+        mainColor: 'oklch(100.00% 0.0000 89.88 / 1)',
+        secondaryColor: 'oklch(80.54% 0.0000 89.88 / 1)',
+      },
+      {
+        id: 'tsukiji-morning',
+        backgroundColor: 'oklch(22.0% 0.020 235.0 / 1)',
+        mainColor: 'oklch(78.0% 0.135 215.0 / 1)',
+        secondaryColor: 'oklch(85.0% 0.155 90.0 / 1)',
+      },
     ],
   },
 
@@ -260,12 +272,6 @@ const baseThemeSets: BaseThemeGroup[] = [
     icon: Sun,
     isLight: true,
     themes: [
-      {
-        id: 'cedar-incense',
-        backgroundColor: 'oklch(19.0% 0.020 70.0 / 1)',
-        mainColor: 'oklch(72.0% 0.095 75.0 / 1)',
-        secondaryColor: 'oklch(58.0% 0.065 55.0 / 1)'
-      },
       {
         id: 'long',
         backgroundColor: 'oklch(84.00% 0.055 6.93 / 1)',
@@ -323,10 +329,28 @@ const baseThemeSets: BaseThemeGroup[] = [
     isLight: false,
     themes: [
       {
-        id: 'ginger-koi',
-        backgroundColor: 'oklch(95.0% 0.012 85.0 / 1)',
-        mainColor: 'oklch(60.0% 0.170 40.0 / 1)',
-        secondaryColor: 'oklch(72.0% 0.095 120.0 / 1)'
+        id: 'temple-mist',
+        backgroundColor: 'oklch(21.0% 0.020 200.0 / 1)',
+        mainColor: 'oklch(78.0% 0.085 195.0 / 1)',
+        secondaryColor: 'oklch(65.0% 0.045 230.0 / 1)',
+      },
+      {
+        id: 'poppy-udon',
+        backgroundColor: 'oklch(21.0% 0.030 45.0 / 1)',
+        mainColor: 'oklch(75.0% 0.155 55.0 / 1)',
+        secondaryColor: 'oklch(82.0% 0.135 95.0 / 1)',
+      },
+      {
+        id: 'kyoto-kimono',
+        backgroundColor: 'oklch(19.0% 0.050 20.0 / 1)',
+        mainColor: 'oklch(65.0% 0.195 25.0 / 1)',
+        secondaryColor: 'oklch(78.0% 0.105 85.0 / 1)',
+      },
+      {
+        id: 'matcha-foam',
+        backgroundColor: 'oklch(92.0% 0.020 140.0 / 1)',
+        mainColor: 'oklch(58.0% 0.165 140.0 / 1)',
+        secondaryColor: 'oklch(72.0% 0.115 95.0 / 1)',
       },
       {
         id: 'koi-pond',
@@ -363,6 +387,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         backgroundColor: 'oklch(18.0% 0.028 255.0 / 1)',
         mainColor: 'oklch(92.0% 0.020 95.0 / 1)',
         secondaryColor: 'oklch(65.0% 0.105 270.0 / 1)',
+      },
+      {
+        id: 'mountain-onsen',
+        backgroundColor: 'oklch(20.0% 0.018 210.0 / 1)',
+        mainColor: 'oklch(80.0% 0.085 200.0 / 1)',
+        secondaryColor: 'oklch(68.0% 0.105 160.0 / 1)',
       },
       {
         id: 'jpop-energy',
@@ -481,7 +511,6 @@ const baseThemeSets: BaseThemeGroup[] = [
         mainColor: 'oklch(80.0% 0.210 180.0 / 1)',
         secondaryColor: 'oklch(85.0% 0.190 320.0 / 1)',
       },
-
       {
         id: 'wisteria-dream',
         backgroundColor: 'oklch(20.0% 0.048 290.0 / 1)',
@@ -553,12 +582,6 @@ const baseThemeSets: BaseThemeGroup[] = [
         backgroundColor: 'oklch(20.83% 0.0367 263.24 / 1)',
         mainColor: 'oklch(65.16% 0.1943 14.70 / 1)',
         secondaryColor: 'oklch(68.92% 0.1657 313.51 / 1)',
-      },
-      {
-        id: 'yukata-breeze',
-        backgroundColor: 'oklch(93.0% 0.012 240.0 / 1)',
-        mainColor: 'oklch(55.0% 0.165 230.0 / 1)',
-        secondaryColor: 'oklch(70.0% 0.115 185.0 / 1)',
       },
       {
         id: 'dusk-voyager',
@@ -1283,23 +1306,11 @@ const baseThemeSets: BaseThemeGroup[] = [
         secondaryColor: 'oklch(70.0% 0.145 35.0 / 1)',
       },
       {
-        id: 'paper-lantern',
-        backgroundColor: 'oklch(94.0% 0.010 95.0 / 1)',
-        mainColor: 'oklch(55.0% 0.095 55.0 / 1)',
-        secondaryColor: 'oklch(68.0% 0.085 30.0 / 1)'
+        id: 'wavecrest-blue',
+        backgroundColor: 'oklch(17.0% 0.030 245.0 / 1)',
+        mainColor: 'oklch(88.0% 0.055 230.0 / 1)',
+        secondaryColor: 'oklch(70.0% 0.145 210.0 / 1)',
       },
-      {
-  id: 'paper-lantern',
-  backgroundColor: 'oklch(94.0% 0.010 95.0 / 1)',
-  mainColor: 'oklch(55.0% 0.095 55.0 / 1)',
-  secondaryColor: 'oklch(68.0% 0.085 30.0 / 1)'
-},
-      {
-  id: 'wavecrest-blue',
-  backgroundColor: 'oklch(17.0% 0.030 245.0 / 1)',
-  mainColor: 'oklch(88.0% 0.055 230.0 / 1)',
-  secondaryColor: 'oklch(70.0% 0.145 210.0 / 1)'
-},
     ],
   },
   {

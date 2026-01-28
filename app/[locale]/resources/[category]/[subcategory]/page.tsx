@@ -88,7 +88,6 @@ export async function generateMetadata({
       languages: {
         en: `/en/resources/${categoryId}/${subcategoryId}`,
         es: `/es/resources/${categoryId}/${subcategoryId}`,
-        ja: `/ja/resources/${categoryId}/${subcategoryId}`,
       },
     },
   };

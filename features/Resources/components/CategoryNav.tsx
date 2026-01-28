@@ -50,7 +50,7 @@ export function CategoryNav({
             <Link
               href={basePath}
               className={cn(
-                'group flex items-center justify-between py-1.5 text-sm transition-all duration-300',
+                'group flex cursor-pointer items-center justify-between py-1.5 text-sm transition-all duration-300',
                 !activeCategory
                   ? 'font-bold text-[var(--main-color)]'
                   : 'text-[var(--secondary-color)] hover:text-[var(--main-color)]',
@@ -71,7 +71,7 @@ export function CategoryNav({
                 <Link
                   href={`${basePath}/${category.id}`}
                   className={cn(
-                    'group flex items-center justify-between py-1.5 text-sm transition-all duration-300',
+                    'group flex cursor-pointer items-center justify-between py-1.5 text-sm transition-all duration-300',
                     isActive
                       ? 'font-bold text-[var(--main-color)]'
                       : 'text-[var(--secondary-color)] hover:text-[var(--main-color)]',
@@ -106,7 +106,7 @@ export function CategoryNav({
                 <Link
                   href={`${basePath}/${category.id}`}
                   className={cn(
-                    'group flex items-center justify-between py-1.5 text-sm transition-all duration-300',
+                    'group flex cursor-pointer items-center justify-between py-1.5 text-sm transition-all duration-300',
                     isActive
                       ? 'font-bold text-[var(--main-color)]'
                       : 'text-[var(--secondary-color)] hover:text-[var(--main-color)]',

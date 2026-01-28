@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import { toKana, toRomaji } from 'wanakana';
 import { IWord } from '@/shared/types/interfaces';
 import { cardBorderStyles } from '@/shared/lib/styles';
-import usePreferencesStore from '@/features/Preferences/store/usePreferencesStore';
+import { useThemePreferences } from '@/features/Preferences';
 import FuriganaText from '@/shared/components/text/FuriganaText';
 import { memo } from 'react';
 
@@ -15,7 +15,7 @@ type SetDictionaryProps = {
 const SetDictionary = memo(function SetDictionary({
   words,
 }: SetDictionaryProps) {
-  const showKana = usePreferencesStore(state => state.displayKana);
+  const { displayKana: showKana } = useThemePreferences();
 
   return (
     <div className={clsx('flex flex-col', cardBorderStyles)}>
@@ -63,7 +63,7 @@ const SetDictionary = memo(function SetDictionary({
                 {displayReading}
               </span>
               <p className='text-xl text-[var(--secondary-color)] md:text-2xl'>
-                {wordObj.displayMeanings.join(', ')}
+                {wordObj.meanings.join(', ')}
               </p>
             </div>
           </div>

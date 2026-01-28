@@ -1,14 +1,12 @@
 import type { Metadata } from 'next';
 import { Suspense } from 'react';
-import {
-  ConjugatorPage,
-  generateNextMetadata,
-  generateConjugatorSchema,
-  getVerbInfo,
-  SEOContent,
-  FAQ,
-  RelatedFeatures,
-} from '@/features/Conjugator';
+import ConjugatorPage from '@/features/Conjugator/components/ConjugatorPage';
+import SEOContent from '@/features/Conjugator/components/SEOContent';
+import FAQ from '@/features/Conjugator/components/FAQ';
+import RelatedFeatures from '@/features/Conjugator/components/RelatedFeatures';
+import { getVerbInfo } from '@/features/Conjugator/lib/engine';
+import { generateNextMetadata } from '@/features/Conjugator/lib/seo/generateMeta';
+import { generateConjugatorSchema } from '@/features/Conjugator/lib/seo/structuredData';
 import { StructuredData } from '@/shared/components/SEO/StructuredData';
 import { routing } from '@/core/i18n/routing';
 import Loader from '@/shared/components/Skeletons/Loader';

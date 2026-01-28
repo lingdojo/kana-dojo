@@ -1,0 +1,31 @@
+[
+  {
+    "question": "What is the name of Japan's highest mountain?",
+    "difficulty": "medium",
+    "answers": ["Mount Haku", "Mount Fuji", "Mount Aso", "Mount Tate"],
+    "correctIndex": 1
+  },
+  {
+    "question": "Which season is associated with red maple leaves (momiji) in Japan?",
+    "difficulty": "medium",
+    "answers": ["Spring", "Summer", "Autumn", "Winter"],
+    "correctIndex": 2
+  },
+  {
+   "question": "Which Japanese city is famous for its snow festival featuring ice sculptures?",
+   "difficulty": "medium",
+   "answers": ["Sapporo","Sendai","Fukuoka","Okayama"],
+   "correctIndex": 0
+  },
+  {
+  "question": "What is the traditional Japanese tea ceremony called?",
+  "difficulty": "medium",
+  "answers": [
+    "Sado",
+    "Judo",
+    "Kendo",
+    "Shodo"
+  ],
+  "correctIndex": 0
+}
+]

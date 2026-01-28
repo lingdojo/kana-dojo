@@ -331,21 +331,20 @@ jobs:
               validationType = 'trivia';
               console.log('Validating trivia contribution');
 
-              const allowed = [
-                'public/japan-trivia.json',
-                'public/japan-trivia-easy.json',
-                'public/japan-trivia-medium.json',
-                'public/japan-trivia-hard.json'
-              ];
+              const triviaFilePattern = /^public\/(?:public\/)?japan-trivia(?:-(easy|medium|hard))?\.json$/;
               const changed = reviewedFiles.map(function(f) { return f.filename; });
-              const invalidFiles = changed.filter(function(p) { return !allowed.includes(p); });
-              if (changed.length !== 1 || invalidFiles.length > 0) {
+              const triviaChanged = changed.filter(function(p) { return triviaFilePattern.test(p); });
+              const invalidFiles = changed.filter(function(p) { return !triviaFilePattern.test(p); });
+              if (triviaChanged.some(function(p) { return p.startsWith('public/public/'); })) {
+                warnings.push('Trivia file path includes public/public/. Consider moving to public/ to avoid duplicate assets.');
+              }
+              if (triviaChanged.length !== 1 || invalidFiles.length > 0) {
                 errors.push('Trivia PRs must modify exactly one trivia JSON file (easy/medium/hard).');
               }
 
               try {
-                const triviaPath = `pr-head/${changed[0]}`;
-                if (!fs.existsSync(triviaPath)) {
+                const triviaPath = triviaChanged.length > 0 ? `pr-head/${triviaChanged[0]}` : null;
+                if (!triviaPath || !fs.existsSync(triviaPath)) {
                   errors.push('Trivia JSON file not found in PR');
                 } else {
                   const content = fs.readFileSync(triviaPath, 'utf8');

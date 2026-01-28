@@ -60,7 +60,10 @@
     "english": "Good grief.",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Jotaro Kujo",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "Alenbosh",
+    "completedPR": 1994
   },
   {
     "id": 7,
@@ -78,7 +81,7 @@
     "english": "Ora ora ora ora ora!",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Jotaro Kujo",
-    "issued": false
+    "issued": true
   },
   {
     "id": 9,
@@ -87,7 +90,10 @@
     "english": "What?!",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Joseph Joestar",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "tchalikanti1705",
+    "completedPR": 2023
   },
   {
     "id": 10,
@@ -96,7 +102,7 @@
     "english": "Next you'll say, 'Good grief!'",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Joseph Joestar",
-    "issued": false
+    "issued": true
   },
   {
     "id": 11,
@@ -105,7 +111,7 @@
     "english": "You! You're watching me!",
     "anime": "JoJo's Bizarre Adventure: Stone Ocean",
     "character": "Jolyne Cujoh",
-    "issued": false
+    "issued": true
   },
   {
     "id": 12,
@@ -114,7 +120,10 @@
     "english": "I'm going to stop being human, JoJo!",
     "anime": "JoJo's Bizarre Adventure: Phantom Blood",
     "character": "Dio Brando",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "anushac13",
+    "completedPR": 2074
   },
   {
     "id": 13,
@@ -123,7 +132,7 @@
     "english": "I'm on a different level today!",
     "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
     "character": "Okuyasu Nijimura",
-    "issued": false
+    "issued": true
   },
   {
     "id": 14,
@@ -132,7 +141,10 @@
     "english": "I will transcend humanity!",
     "anime": "JoJo's Bizarre Adventure: Battle Tendency",
     "character": "Kars",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "Rakesh-Manthri",
+    "completedPR": 2111
   },
   {
     "id": 15,
@@ -141,7 +153,10 @@
     "english": "Good grief... honestly.",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Jotaro Kujo",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "YoungCarti",
+    "completedPR": 2125
   },
   {
     "id": 16,
@@ -150,7 +165,7 @@
     "english": "But... that's what I like.",
     "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
     "character": "Yoshikage Kira",
-    "issued": false
+    "issued": true
   },
   {
     "id": 17,
@@ -159,7 +174,10 @@
     "english": "Bucciarati is here!",
     "anime": "JoJo's Bizarre Adventure: Golden Wind",
     "character": "Narancia Ghirga",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "shreeney",
+    "completedPR": 2199
   },
   {
     "id": 18,
@@ -168,7 +186,7 @@
     "english": "You're already dead.",
     "anime": "Fist of the North Star",
     "character": "Kenshiro",
-    "issued": false
+    "issued": true
   },
   {
     "id": 19,
@@ -177,7 +195,10 @@
     "english": "What?!",
     "anime": "Fist of the North Star",
     "character": "Shin",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "patrick-ouano",
+    "completedPR": 2193
   },
   {
     "id": 20,
@@ -186,7 +207,10 @@
     "english": "I'm gonna be King of the Pirates!",
     "anime": "One Piece",
     "character": "Monkey D. Luffy",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "gouravrayGithub",
+    "completedPR": 2205
   },
   {
     "id": 21,
@@ -195,7 +219,7 @@
     "english": "If you give up, that's the end of the game.",
     "anime": "Slam Dunk",
     "character": "Kaede Rukawa",
-    "issued": false
+    "issued": true
   },
   {
     "id": 22,
@@ -204,7 +228,10 @@
     "english": "Not yet! It's not over yet!",
     "anime": "Mobile Suit Gundam",
     "character": "Char Aznable",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "juztmsd777777",
+    "completedPR": 2245
   },
   {
     "id": 23,
@@ -213,7 +240,7 @@
     "english": "Dance to my beautiful technique!",
     "anime": "The Prince of Tennis",
     "character": "Keigo Atobe",
-    "issued": false
+    "issued": true
   },
   {
     "id": 24,

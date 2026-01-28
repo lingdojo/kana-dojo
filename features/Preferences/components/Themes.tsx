@@ -148,6 +148,9 @@ const Themes = () => {
           defaultOpen={true}
           storageKey={`prefs-theme-group-${themeSet.name.toLowerCase()}`}
         >
+          {/* <span className='text-sm font-normal text-[var(--secondary-color)]'>
+            ({themeSet.themes.length})
+          </span> */}
           <fieldset
             className={clsx(
               'grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4',

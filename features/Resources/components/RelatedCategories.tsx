@@ -84,7 +84,7 @@ export function RelatedCategories({
     >
       <h2
         id='related-categories-heading'
-        className='mb-4 text-lg font-semibold text-[var(--text-color)]'
+        className='mb-4 text-lg font-semibold text-[var(--main-color)]'
       >
         Related Categories
       </h2>
@@ -96,11 +96,11 @@ export function RelatedCategories({
           <li key={category.id} role='listitem'>
             <Link
               href={`${basePath}/${category.id}`}
-              className='group flex items-center justify-between rounded-lg border border-[var(--border-color)] bg-[var(--background-color)] p-3 transition-all hover:border-[var(--main-color)] hover:shadow-sm focus-visible:ring-2 focus-visible:ring-[var(--main-color)] focus-visible:ring-offset-2 focus-visible:outline-none'
+              className='group flex cursor-pointer items-center justify-between rounded-lg border border-[var(--border-color)] bg-[var(--background-color)] p-3 transition-colors hover:border-[var(--main-color)] hover:shadow-sm focus-visible:ring-2 focus-visible:ring-[var(--main-color)] focus-visible:ring-offset-2 focus-visible:outline-none'
               aria-label={`${category.name} - ${category.resourceCount} resources`}
             >
               <div className='flex-1'>
-                <span className='font-medium text-[var(--text-color)] group-hover:text-[var(--main-color)]'>
+                <span className='font-medium text-[var(--main-color)] group-hover:text-[var(--main-color)]'>
                   {category.name}
                 </span>
                 <p className='mt-0.5 text-xs text-[var(--secondary-color)]'>
@@ -108,7 +108,7 @@ export function RelatedCategories({
                 </p>
               </div>
               <ArrowRight
-                className='h-4 w-4 text-[var(--secondary-color)] transition-transform group-hover:translate-x-1 group-hover:text-[var(--main-color)]'
+                className='h-4 w-4 text-[var(--secondary-color)] transition-colors group-hover:text-[var(--main-color)]'
                 aria-hidden='true'
               />
             </Link>
@@ -120,7 +120,7 @@ export function RelatedCategories({
       <div className='mt-4 border-t border-[var(--border-color)] pt-4'>
         <Link
           href={basePath}
-          className='inline-flex items-center gap-1 rounded-md text-sm text-[var(--main-color)] hover:underline focus-visible:ring-2 focus-visible:ring-[var(--main-color)] focus-visible:ring-offset-2 focus-visible:outline-none'
+          className='inline-flex cursor-pointer items-center gap-1 rounded-md text-sm text-[var(--main-color)] hover:underline focus-visible:ring-2 focus-visible:ring-[var(--main-color)] focus-visible:ring-offset-2 focus-visible:outline-none'
         >
           View all categories
           <ArrowRight className='h-3 w-3' aria-hidden='true' />

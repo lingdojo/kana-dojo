@@ -60,7 +60,6 @@ export async function generateMetadata({
       languages: {
         en: '/en/resources',
         es: '/es/resources',
-        ja: '/ja/resources',
       },
     },
   };

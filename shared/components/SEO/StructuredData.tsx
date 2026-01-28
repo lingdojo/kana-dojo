@@ -41,7 +41,7 @@ export const kanaDojoSchema = {
       description:
         'Master Japanese with KanaDojo - Learn Hiragana, Katakana, Kanji, and Vocabulary',
       publisher: { '@id': 'https://kanadojo.com/#organization' },
-      inLanguage: ['en', 'es', 'ja'],
+      inLanguage: ['en', 'es'],
       potentialAction: {
         '@type': 'SearchAction',
         target: {
@@ -90,8 +90,8 @@ export const kanaDojoSchema = {
         '@type': 'Organization',
         name: 'LingDojo',
       },
-      inLanguage: ['en', 'es', 'ja'],
-      availableLanguage: ['English', 'Spanish', 'Japanese'],
+      inLanguage: ['en', 'es'],
+      availableLanguage: ['English', 'Spanish'],
       isAccessibleForFree: true,
       audience: {
         '@type': 'EducationalAudience',
