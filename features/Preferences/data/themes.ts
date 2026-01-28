@@ -247,6 +247,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         secondaryColor: 'oklch(46.49% 0.0000 89.88 / 1)',
       },
       {
+        id: 'peach-mochi',
+        backgroundColor: 'oklch(96.0% 0.020 25.0 / 1)',
+        mainColor: 'oklch(68.0% 0.165 15.0 / 1)',
+        secondaryColor: 'oklch(78.0% 0.105 85.0 / 1)'
+      },
+      {
         id: 'dark',
         backgroundColor: 'oklch(22.67% 0.0000 89.88 / 1)',
         mainColor: 'oklch(100.00% 0.0000 89.88 / 1)',
