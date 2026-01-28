@@ -1251,7 +1251,7 @@
   {
     "id": 206,
     "fact": "Many Japanese supermarkets sell 'bento' at night with discount stickers that increase as closing time approaches.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 207,
