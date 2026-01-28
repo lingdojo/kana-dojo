@@ -273,7 +273,10 @@
     "english": "This world is cruel... yet so beautiful.",
     "anime": "Attack on Titan",
     "character": "Mikasa Ackerman",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "EmmanuelChigwende",
+    "completedPR": 2309
   },
   {
     "id": 27,
