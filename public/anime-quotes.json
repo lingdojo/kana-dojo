@@ -1,5 +1,12 @@
 [
   {
+    "japanese": "やれやれだぜ…まったく。",
+    "romaji": "Yare yare da ze... mattaku.",
+    "english": "Good grief... honestly.",
+    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+    "character": "Jotaro Kujo"
+  },
+  {
     "japanese": "このジョルノ・ジョバァーナには夢がある！",
     "romaji": "Kono Joruno Jobana ni wa yume ga aru!",
     "english": "I, Giorno Giovanna, have a dream!",
@@ -35,10 +42,37 @@
     "character": "Joseph Joestar"
   },
   {
-  "japanese": "俺は人間をやめるぞ！ジョジョーーッ！！",
-  "romaji": "Ore wa ningen o yameru zo! Jojo!!",
-  "english": "I'm going to stop being human, JoJo!",
-  "anime": "JoJo's Bizarre Adventure: Phantom Blood",
-  "character": "Dio Brando"
+    "japanese": "俺は人間をやめるぞ！ジョジョーーッ！！",
+    "romaji": "Ore wa ningen o yameru zo! Jojo!!",
+    "english": "I'm going to stop being human, JoJo!",
+    "anime": "JoJo's Bizarre Adventure: Phantom Blood",
+    "character": "Dio Brando"
+  },
+  {
+    "japanese": "おれは人間を超越する！",
+    "romaji": "Ore wa ningen o chouetsu suru!",
+    "english": "I will transcend humanity!",
+    "anime": "JoJo's Bizarre Adventure: Battle Tendency",
+    "character": "Kars"
+  },
+  {
+    "japanese": "何ッ！？",
+    "romaji": "Nani!?",
+    "english": "What?!",
+    "anime": "Fist of the North Star",
+    "character": "Shin"
+  },
+  {
+  "japanese": "ブチャラティ、来た！",
+  "romaji": "Bucharati, kita!",
+  "english": "Bucciarati is here!",
+  "anime": "JoJo's Bizarre Adventure: Golden Wind",
+  "character": "Narancia Ghirga"
+  },{
+  "japanese": "俺は海賊王になる！",
+  "romaji": "Ore wa kaizoku ou ni naru!",
+  "english": "I'm gonna be King of the Pirates!",
+  "anime": "One Piece",
+  "character": "Monkey D. Luffy"
 }
 ]

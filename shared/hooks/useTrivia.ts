@@ -37,6 +37,7 @@ export function useTrivia(options: UseTriviaOptions = {}): UseTriviaResult {
   const [isLoading, setIsLoading] = useState(enabled);
   const [error, setError] = useState<string | null>(null);
   const [reloadKey, setReloadKey] = useState(0);
+  const shouldBypassCache = reloadKey > 0;
 
   const query = useMemo(() => {
     const params = new URLSearchParams({
@@ -56,6 +57,20 @@ export function useTrivia(options: UseTriviaOptions = {}): UseTriviaResult {
 
     const controller = new AbortController();
     const loadTrivia = async () => {
+      if (typeof window !== 'undefined' && !shouldBypassCache) {
+        const cached = sessionStorage.getItem(`trivia-cache:${query}`);
+        if (cached) {
+          try {
+            const parsed = JSON.parse(cached) as TriviaResponse;
+            setData(parsed);
+            setIsLoading(false);
+            return;
+          } catch {
+            sessionStorage.removeItem(`trivia-cache:${query}`);
+          }
+        }
+      }
+
       setIsLoading(true);
       setError(null);
 
@@ -70,6 +85,9 @@ export function useTrivia(options: UseTriviaOptions = {}): UseTriviaResult {
 
         const json = (await response.json()) as TriviaResponse;
         setData(json);
+        if (typeof window !== 'undefined') {
+          sessionStorage.setItem(`trivia-cache:${query}`, JSON.stringify(json));
+        }
       } catch (err) {
         if ((err as Error).name === 'AbortError') {
           return;

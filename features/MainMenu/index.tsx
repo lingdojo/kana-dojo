@@ -239,7 +239,11 @@ const MainMenu = () => {
         >
           {links.map((link, i) => (
             <Fragment key={i}>
-              <Link href={link.href} className={clsx('w-full overflow-hidden')}>
+              <Link
+                href={link.href}
+                prefetch
+                className={clsx('w-full overflow-hidden')}
+              >
                 <button
                   className={clsx(
                     'flex h-full w-full text-2xl',
@@ -293,6 +297,7 @@ const MainMenu = () => {
           {legalLinks.map((link, i) => (
             <Link
               href={link.href}
+              prefetch
               key={i}
               className={clsx(
                 'flex flex-row items-center gap-1 text-[var(--secondary-color)] hover:cursor-pointer hover:text-[var(--main-color)]',

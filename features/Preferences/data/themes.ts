@@ -323,6 +323,30 @@ const baseThemeSets: BaseThemeGroup[] = [
     isLight: false,
     themes: [
       {
+        id: 'temple-mist',
+        backgroundColor: 'oklch(21.0% 0.020 200.0 / 1)',
+        mainColor: 'oklch(78.0% 0.085 195.0 / 1)',
+        secondaryColor: 'oklch(65.0% 0.045 230.0 / 1)',
+      },
+      {
+        id: 'poppy-udon',
+        backgroundColor: 'oklch(21.0% 0.030 45.0 / 1)',
+        mainColor: 'oklch(75.0% 0.155 55.0 / 1)',
+        secondaryColor: 'oklch(82.0% 0.135 95.0 / 1)',
+      },
+      {
+        id: 'kyoto-kimono',
+        backgroundColor: 'oklch(19.0% 0.050 20.0 / 1)',
+        mainColor: 'oklch(65.0% 0.195 25.0 / 1)',
+        secondaryColor: 'oklch(78.0% 0.105 85.0 / 1)',
+      },
+      {
+        id: 'matcha-foam',
+        backgroundColor: 'oklch(92.0% 0.020 140.0 / 1)',
+        mainColor: 'oklch(58.0% 0.165 140.0 / 1)',
+        secondaryColor: 'oklch(72.0% 0.115 95.0 / 1)',
+      },
+      {
         id: 'koi-pond',
         backgroundColor: 'oklch(20.0% 0.048 240.0 / 1)',
         mainColor: 'oklch(80.0% 0.175 55.0 / 1)',
@@ -351,6 +375,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         backgroundColor: 'oklch(18.0% 0.028 255.0 / 1)',
         mainColor: 'oklch(92.0% 0.020 95.0 / 1)',
         secondaryColor: 'oklch(65.0% 0.105 270.0 / 1)',
+      },
+      {
+        id: 'mountain-onsen',
+        backgroundColor: 'oklch(20.0% 0.018 210.0 / 1)',
+        mainColor: 'oklch(80.0% 0.085 200.0 / 1)',
+        secondaryColor: 'oklch(68.0% 0.105 160.0 / 1)',
       },
       {
         id: 'jpop-energy',

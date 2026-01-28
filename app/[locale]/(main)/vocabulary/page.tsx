@@ -1,4 +1,4 @@
-import DojoMenu from '@/shared/components/Menu/DojoMenu';
+import VocabMenu from '@/shared/components/Menu/VocabMenu';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/core/i18n/metadata-helpers';
 import { CourseSchema } from '@/shared/components/SEO/CourseSchema';
@@ -51,7 +51,7 @@ export default async function VocabularyPage({
         skillLevel='All Levels'
         learningResourceType='Interactive Exercise and Games'
       />
-      <DojoMenu />
+      <VocabMenu />
     </>
   );
 }

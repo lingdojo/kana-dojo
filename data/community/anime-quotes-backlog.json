@@ -141,7 +141,10 @@
     "english": "I will transcend humanity!",
     "anime": "JoJo's Bizarre Adventure: Battle Tendency",
     "character": "Kars",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "Rakesh-Manthri",
+    "completedPR": 2111
   },
   {
     "id": 15,
@@ -150,7 +153,10 @@
     "english": "Good grief... honestly.",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Jotaro Kujo",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "YoungCarti",
+    "completedPR": 2125
   },
   {
     "id": 16,
@@ -159,7 +165,7 @@
     "english": "But... that's what I like.",
     "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
     "character": "Yoshikage Kira",
-    "issued": false
+    "issued": true
   },
   {
     "id": 17,
@@ -168,7 +174,10 @@
     "english": "Bucciarati is here!",
     "anime": "JoJo's Bizarre Adventure: Golden Wind",
     "character": "Narancia Ghirga",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "shreeney",
+    "completedPR": 2199
   },
   {
     "id": 18,
@@ -177,7 +186,7 @@
     "english": "You're already dead.",
     "anime": "Fist of the North Star",
     "character": "Kenshiro",
-    "issued": false
+    "issued": true
   },
   {
     "id": 19,
@@ -186,7 +195,10 @@
     "english": "What?!",
     "anime": "Fist of the North Star",
     "character": "Shin",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "patrick-ouano",
+    "completedPR": 2193
   },
   {
     "id": 20,
@@ -195,7 +207,10 @@
     "english": "I'm gonna be King of the Pirates!",
     "anime": "One Piece",
     "character": "Monkey D. Luffy",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "gouravrayGithub",
+    "completedPR": 2205
   },
   {
     "id": 21,
@@ -204,7 +219,7 @@
     "english": "If you give up, that's the end of the game.",
     "anime": "Slam Dunk",
     "character": "Kaede Rukawa",
-    "issued": false
+    "issued": true
   },
   {
     "id": 22,

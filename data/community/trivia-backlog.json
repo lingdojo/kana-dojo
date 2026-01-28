@@ -231,7 +231,7 @@
       "Okayama"
     ],
     "correctIndex": 0,
-    "issued": false
+    "issued": true
   },
   {
     "id": 19,
@@ -244,7 +244,7 @@
       "Shodo"
     ],
     "correctIndex": 0,
-    "issued": false
+    "issued": true
   },
   {
     "id": 20,
@@ -257,7 +257,7 @@
       "Ikebana"
     ],
     "correctIndex": 0,
-    "issued": false
+    "issued": true
   },
   {
     "id": 21,
@@ -270,7 +270,7 @@
       "Rupee"
     ],
     "correctIndex": 1,
-    "issued": false
+    "issued": true
   },
   {
     "id": 22,
@@ -283,7 +283,7 @@
       "Takayama"
     ],
     "correctIndex": 0,
-    "issued": false
+    "issued": true
   },
   {
     "id": 23,
@@ -296,7 +296,7 @@
       "Comique"
     ],
     "correctIndex": 0,
-    "issued": false
+    "issued": true
   },
   {
     "id": 24,
@@ -309,7 +309,7 @@
       "Naha"
     ],
     "correctIndex": 0,
-    "issued": false
+    "issued": true
   },
   {
     "id": 25,

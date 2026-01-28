@@ -192,6 +192,7 @@ const NavLink = memo(
           )}
           <Link
             href={item.href}
+            prefetch
             onClick={onClick}
             className={clsx(
               'relative z-10 flex items-center gap-2 rounded-2xl',
@@ -218,6 +219,7 @@ const NavLink = memo(
       return (
         <Link
           href={item.href}
+          prefetch
           onClick={onClick}
           className='w-full max-lg:contents'
         >
@@ -244,6 +246,7 @@ const NavLink = memo(
     return (
       <Link
         href={item.href}
+        prefetch
         className={clsx(
           baseClasses,
           isActive ? activeClassesSimple : inactiveClasses,

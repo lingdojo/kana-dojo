@@ -1227,7 +1227,7 @@
     "romaji": "Kuchi wa wazawai no moto",
     "english": "The mouth is the source of misfortune",
     "meaning": "Careless words cause trouble",
-    "issued": false
+    "issued": true
   },
   {
     "id": 136,
@@ -1235,7 +1235,7 @@
     "romaji": "Raku areba ku ari",
     "english": "After ease comes hardship",
     "meaning": "Good times and bad times alternate",
-    "issued": false
+    "issued": true
   },
   {
     "id": 137,
@@ -1243,7 +1243,8 @@
     "romaji": "Isseki nichou",
     "english": "One stone, two birds",
     "meaning": "Do two things with one action",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 138,
@@ -1251,7 +1252,8 @@
     "romaji": "Keizoku wa chikara nari",
     "english": "Continuation is power",
     "meaning": "Consistency builds strength",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 139,
@@ -1259,7 +1261,8 @@
     "romaji": "Fukusui bon ni kaerazu",
     "english": "Spilled water will not return to the tray",
     "meaning": "What is done cannot be undone",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 140,
@@ -1267,7 +1270,8 @@
     "romaji": "Tana kara botamochi",
     "english": "A rice cake falls from the shelf",
     "meaning": "Unexpected good luck",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 141,
@@ -1275,7 +1279,7 @@
     "romaji": "Nakittsura ni hachi",
     "english": "A bee on a crying face",
     "meaning": "Misfortune never comes alone",
-    "issued": false
+    "issued": true
   },
   {
     "id": 142,
@@ -1283,7 +1287,8 @@
     "romaji": "Shiranu ga hotoke",
     "english": "Not knowing is Buddha",
     "meaning": "Ignorance is bliss",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 143,
@@ -1291,7 +1296,8 @@
     "romaji": "Sannin yoreba monju no chie",
     "english": "Three people together have the wisdom of Monju",
     "meaning": "Two heads are better than one",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 144,
@@ -1299,7 +1305,8 @@
     "romaji": "Kaeru no ko wa kaeru",
     "english": "A frog's child is a frog",
     "meaning": "Children resemble their parents",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 145,
@@ -1307,7 +1314,8 @@
     "romaji": "Korobanu saki no tsue",
     "english": "A cane before falling",
     "meaning": "Prevention is better than cure",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 146,
@@ -1315,7 +1323,8 @@
     "romaji": "Uogokoro areba mizugokoro",
     "english": "If fish has heart, water has heart",
     "meaning": "Good intentions are reciprocated",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 147,
@@ -1323,7 +1332,8 @@
     "romaji": "Nido aru koto wa sando aru",
     "english": "What happens twice will happen a third time",
     "meaning": "Patterns tend to repeat",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 148,
@@ -1331,7 +1341,7 @@
     "romaji": "Deru kugi wa utareru",
     "english": "The nail that sticks out gets hammered down",
     "meaning": "Standing out invites criticism",
-    "issued": false
+    "issued": true
   },
   {
     "id": 149,
@@ -1339,7 +1349,7 @@
     "romaji": "Mago ni mo ishou",
     "english": "Even a packhorse driver looks good in fine clothes",
     "meaning": "Clothes make the person",
-    "issued": false
+    "issued": true
   },
   {
     "id": 150,
@@ -1347,6 +1357,7 @@
     "romaji": "Nanakorobi yaoki",
     "english": "Fall seven times, get up eight",
     "meaning": "Never give up",
-    "issued": false
+    "issued": false,
+    "completed": true
   }
 ]

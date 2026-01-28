@@ -1,4 +1,4 @@
-import DojoMenu from '@/shared/components/Menu/DojoMenu';
+import KanaMenu from '@/shared/components/Menu/KanaMenu';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/core/i18n/metadata-helpers';
 import { CourseSchema } from '@/shared/components/SEO/CourseSchema';
@@ -45,7 +45,7 @@ export default async function KanaPage({
         skillLevel='Beginner'
         learningResourceType='Interactive Exercise and Games'
       />
-      <DojoMenu />
+      <KanaMenu />
     </>
   );
 }

@@ -7,7 +7,12 @@
 # Get list of changed files
 CHANGED_FILES=""
 
-if [ -n "${VERCEL_GIT_PREVIOUS_SHA:-}" ] && [ -n "${VERCEL_GIT_COMMIT_SHA:-}" ]; then
+if [ -n "${VERCEL_GIT_PULL_REQUEST_BASE_BRANCH:-}" ] && [ -n "${VERCEL_GIT_COMMIT_SHA:-}" ]; then
+  git fetch origin "${VERCEL_GIT_PULL_REQUEST_BASE_BRANCH}" --depth=1 2>/dev/null
+  CHANGED_FILES=$(git diff "origin/${VERCEL_GIT_PULL_REQUEST_BASE_BRANCH}...${VERCEL_GIT_COMMIT_SHA}" --name-only 2>/dev/null)
+fi
+
+if [ -z "$CHANGED_FILES" ] && [ -n "${VERCEL_GIT_PREVIOUS_SHA:-}" ] && [ -n "${VERCEL_GIT_COMMIT_SHA:-}" ]; then
   CHANGED_FILES=$(git diff "${VERCEL_GIT_PREVIOUS_SHA}...${VERCEL_GIT_COMMIT_SHA}" --name-only 2>/dev/null)
 fi
 
@@ -79,6 +84,12 @@ IGNORE_PATTERNS=(
   # Data and community content (non-build affecting)
   "^features/Preferences/data/themes\\.ts$"
   "^public/japan-facts\\.json$"
+  "^public/japanese-proverbs\\.json$"
+  "^public/japanese-grammar\\.json$"
+  "^public/anime-quotes\\.json$"
+  "^public/japan-trivia\\.json$"
+  "^public/japan-trivia-(easy|medium|hard)\\.json$"
+  "^public/public/japan-trivia-(easy|medium|hard)\\.json$"
   "^data/community/"
   "^data/.*\\.json$"
   "^data/"

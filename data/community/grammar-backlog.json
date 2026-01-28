@@ -87,37 +87,37 @@
   {
     "id": 18,
     "text": "\"〜ようと思う\" expresses a decision made at the moment of speaking.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 19,
     "text": "\"〜なら\" means \"if\" or \"in the case of\" and often gives advice.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 20,
     "text": "\"〜たら\" is a conditional \"if/when\" that also expresses sequence.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 21,
     "text": "\"〜ば\" forms a conditional meaning \"if\" in a general sense.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 22,
     "text": "\"〜ても\" means \"even if\" or \"even though\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 23,
     "text": "\"〜のに\" expresses contrast or regret, similar to \"even though\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 24,
     "text": "\"〜ので\" gives a reason in a polite or softer way than \"から\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 25,
