@@ -1266,7 +1266,7 @@
   {
     "id": 209,
     "fact": "The Japanese phrase 'ittekimasu' (行ってきます) is said when leaving home, meaning 'I'll go and come back'.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 210,
