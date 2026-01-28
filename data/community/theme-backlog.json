@@ -1672,7 +1672,7 @@
     "backgroundColor": "oklch(16.0% 0.018 240.0 / 1)",
     "mainColor": "oklch(82.0% 0.040 230.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.095 260.0 / 1)",
-    "issued": false
+    "issued": true
   },
   {
     "id": "gingko-avenue",
