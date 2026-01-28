@@ -1654,7 +1654,10 @@
     "backgroundColor": "oklch(18.0% 0.030 150.0 / 1)",
     "mainColor": "oklch(70.0% 0.120 145.0 / 1)",
     "secondaryColor": "oklch(60.0% 0.085 120.0 / 1)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "LucasVer17",
+    "completedPR": 2343
   },
   {
     "id": "harajuku-pop",
