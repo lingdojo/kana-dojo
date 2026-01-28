@@ -1558,7 +1558,10 @@
     "backgroundColor": "oklch(21.0% 0.030 45.0 / 1)",
     "mainColor": "oklch(75.0% 0.155 55.0 / 1)",
     "secondaryColor": "oklch(82.0% 0.135 95.0 / 1)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "lorenzotiziani",
+    "completedPR": 2179
   },
   {
     "id": "riverstone-gray",
