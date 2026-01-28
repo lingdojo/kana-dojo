@@ -323,6 +323,12 @@ const baseThemeSets: BaseThemeGroup[] = [
     isLight: false,
     themes: [
       {
+        id: 'temple-mist',
+        backgroundColor: 'oklch(21.0% 0.020 200.0 / 1)',
+        mainColor: 'oklch(78.0% 0.085 195.0 / 1)',
+        secondaryColor: 'oklch(65.0% 0.045 230.0 / 1)',
+      },
+      {
         id: 'poppy-udon',
         backgroundColor: 'oklch(21.0% 0.030 45.0 / 1)',
         mainColor: 'oklch(75.0% 0.155 55.0 / 1)',
