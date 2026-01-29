@@ -1694,7 +1694,10 @@
     "backgroundColor": "oklch(20.0% 0.035 35.0 / 1)",
     "mainColor": "oklch(80.0% 0.170 45.0 / 1)",
     "secondaryColor": "oklch(78.0% 0.095 140.0 / 1)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "YoungCarti",
+    "completedPR": 2431
   },
   {
     "id": "soba-slate",
