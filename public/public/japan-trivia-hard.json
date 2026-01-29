@@ -2,56 +2,31 @@
   {
     "question": "Which Japanese city is known for its historic wooden district, Gion?",
     "difficulty": "hard",
-    "answers": [
-      "Kyoto",
-      "Yokohama",
-      "Nagoya",
-      "Sendai"
-    ],
+    "answers": ["Kyoto", "Yokohama", "Nagoya", "Sendai"],
     "correctIndex": 0
   },
   {
     "question": "Which Japanese company is known for making the character Hello Kitty?",
     "difficulty": "hard",
-    "answers": [
-      "Sanrio",
-      "Ghibli",
-      "Capcom",
-      "Namco"
-    ],
+    "answers": ["Sanrio", "Ghibli", "Capcom", "Namco"],
     "correctIndex": 0
   },
   {
     "question": "Which Japanese city is famous for its street food district, Dotonbori?",
     "difficulty": "hard",
-    "answers": [
-      "Osaka",
-      "Niigata",
-      "Kagoshima",
-      "Takayama"
-    ],
+    "answers": ["Osaka", "Niigata", "Kagoshima", "Takayama"],
     "correctIndex": 0
   },
   {
     "question": "What is the name of the Japanese comic and animation style?",
     "difficulty": "hard",
-    "answers": [
-      "Manga",
-      "Donghua",
-      "Manhwa",
-      "Comique"
-    ],
+    "answers": ["Manga", "Donghua", "Manhwa", "Comique"],
     "correctIndex": 0
   },
   {
     "question": "What is the Japanese name for the autumn moon-viewing festival?",
     "difficulty": "hard",
-    "answers": [
-      "Tanabata",
-      "Tsukimi",
-      "Shogatsu",
-      "Hina Matsuri"
-    ],
+    "answers": ["Tanabata", "Tsukimi", "Shogatsu", "Hina Matsuri"],
     "correctIndex": 1
   },
   {
@@ -62,6 +37,17 @@
       "East China Sea",
       "Philippine Sea",
       "Bering Sea"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which Japanese castle is known for its black exterior and nickname \"Crow Castle\"?",
+    "difficulty": "hard",
+    "answers": [
+      "Matsumoto Castle",
+      "Osaka Castle",
+      "Nijo Castle",
+      "Himeji Castle"
     ],
     "correctIndex": 0
   }
