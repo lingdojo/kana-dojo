@@ -268,13 +268,13 @@ const baseThemeSets: BaseThemeGroup[] = [
         id: 'ruby-kabuki',
         backgroundColor: 'oklch(16.0% 0.040 20.0 / 1)',
         mainColor: 'oklch(70.0% 0.215 25.0 / 1)',
-        secondaryColor: 'oklch(85.0% 0.055 95.0 / 1)'
+        secondaryColor: 'oklch(85.0% 0.055 95.0 / 1)',
       },
       {
         id: 'morning-fog',
         backgroundColor: 'oklch(22.0% 0.010 240.0 / 1)',
         mainColor: 'oklch(78.0% 0.030 220.0 / 1)',
-        secondaryColor: 'oklch(65.0% 0.040 260.0 / 1)'
+        secondaryColor: 'oklch(65.0% 0.040 260.0 / 1)',
       },
     ],
   },
@@ -387,6 +387,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         backgroundColor: 'oklch(92.0% 0.020 140.0 / 1)',
         mainColor: 'oklch(58.0% 0.165 140.0 / 1)',
         secondaryColor: 'oklch(72.0% 0.115 95.0 / 1)',
+      },
+      {
+        id: 'harajuku-pop',
+        backgroundColor: 'oklch(96.0% 0.025 85.0 / 1)',
+        mainColor: 'oklch(72.0% 0.225 320.0 / 1)',
+        secondaryColor: 'oklch(80.0% 0.195 200.0 / 1)',
       },
       {
         id: 'koi-pond',
