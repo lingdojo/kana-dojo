@@ -12,20 +12,21 @@
     "correctIndex": 2
   },
   {
-   "question": "Which Japanese city is famous for its snow festival featuring ice sculptures?",
-   "difficulty": "medium",
-   "answers": ["Sapporo","Sendai","Fukuoka","Okayama"],
-   "correctIndex": 0
+    "question": "Which Japanese city is famous for its snow festival featuring ice sculptures?",
+    "difficulty": "medium",
+    "answers": ["Sapporo", "Sendai", "Fukuoka", "Okayama"],
+    "correctIndex": 0
   },
   {
-  "question": "What is the traditional Japanese tea ceremony called?",
-  "difficulty": "medium",
-  "answers": [
-    "Sado",
-    "Judo",
-    "Kendo",
-    "Shodo"
-  ],
-  "correctIndex": 0
-}
+    "question": "What is the traditional Japanese tea ceremony called?",
+    "difficulty": "medium",
+    "answers": ["Sado", "Judo", "Kendo", "Shodo"],
+    "correctIndex": 0
+  },
+  {
+    "question": "What is the Japanese writing system used for foreign words?",
+    "difficulty": "medium",
+    "answers": ["Katakana", "Hiragana", "Kanji", "Romaji"],
+    "correctIndex": 0
+  }
 ]

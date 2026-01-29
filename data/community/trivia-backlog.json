@@ -361,7 +361,7 @@
       "Hina Matsuri"
     ],
     "correctIndex": 1,
-    "issued": false
+    "issued": true
   },
   {
     "id": 29,
@@ -374,7 +374,7 @@
       "Sendai"
     ],
     "correctIndex": 0,
-    "issued": false
+    "issued": true
   },
   {
     "id": 30,
@@ -387,7 +387,7 @@
       "Kyogen"
     ],
     "correctIndex": 0,
-    "issued": false
+    "issued": true
   },
   {
     "id": 31,
@@ -400,7 +400,7 @@
       "Fukuoka"
     ],
     "correctIndex": 0,
-    "issued": false
+    "issued": true
   },
   {
     "id": 32,
@@ -413,7 +413,7 @@
       "Oyasumi"
     ],
     "correctIndex": 0,
-    "issued": false
+    "issued": true
   },
   {
     "id": 33,
@@ -426,7 +426,7 @@
       "Deer"
     ],
     "correctIndex": 0,
-    "issued": false
+    "issued": true
   },
   {
     "id": 34,
@@ -439,7 +439,7 @@
       "Okonomiyaki"
     ],
     "correctIndex": 0,
-    "issued": false
+    "issued": true
   },
   {
     "id": 35,
@@ -452,7 +452,7 @@
       "Romaji"
     ],
     "correctIndex": 0,
-    "issued": false
+    "issued": true
   },
   {
     "id": 36,
@@ -465,7 +465,7 @@
       "Aikido"
     ],
     "correctIndex": 0,
-    "issued": false
+    "issued": true
   },
   {
     "id": 37,

@@ -486,7 +486,15 @@ const Sidebar = () => {
     };
   }, [hotkeysOn, router]);
 
-  const isActive = (href: string) => pathWithoutLocale === href;
+  const isActive = (href: string) => {
+    if (href === '/kana') {
+      return (
+        pathWithoutLocale === href || pathWithoutLocale.startsWith('/kana/')
+      );
+    }
+
+    return pathWithoutLocale === href;
+  };
 
   return (
     <div
