@@ -2,7 +2,23 @@
   {
     "question": "What is the Japanese word for \"goodbye\"?",
     "difficulty": "easy",
-    "answers": ["Sayonara", "Konnichiwa", "Arigatou", "Oyasumi"],
+    "answers": [
+      "Sayonara",
+      "Konnichiwa",
+      "Arigatou",
+      "Oyasumi"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "question": "What is the Japanese term for a hot spring?",
+    "difficulty": "easy",
+    "answers": [
+      "Onsen",
+      "Sentou",
+      "Ryokan",
+      "Izakaya"
+    ],
     "correctIndex": 0
   }
 ]
