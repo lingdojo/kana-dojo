@@ -1727,6 +1727,9 @@
     "backgroundColor": "oklch(22.0% 0.010 240.0 / 1)",
     "mainColor": "oklch(78.0% 0.030 220.0 / 1)",
     "secondaryColor": "oklch(65.0% 0.040 260.0 / 1)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "2024si96559-code",
+    "completedPR": 2418
   }
 ]
