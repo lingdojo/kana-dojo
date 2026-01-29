@@ -324,7 +324,10 @@
     "english": "Gurararara!",
     "anime": "One Piece",
     "character": "Edward Newgate (Whitebeard)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "nitij-bits",
+    "completedPR": 2424
   },
   {
     "id": 32,
