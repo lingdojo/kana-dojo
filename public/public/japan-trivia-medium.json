@@ -1,5 +1,16 @@
 [
   {
+  "question": "Which Japanese food is a savory pancake cooked on a griddle?",
+  "difficulty": "medium",
+  "answers": [
+    "Okonomiyaki",
+    "Sashimi",
+    "Onigiri",
+    "Mochi"
+  ],
+  "correctIndex": 0
+  },
+  {
     "question": "What is the name of Japan's highest mountain?",
     "difficulty": "medium",
     "answers": ["Mount Haku", "Mount Fuji", "Mount Aso", "Mount Tate"],
