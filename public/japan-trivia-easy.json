@@ -1,5 +1,16 @@
 [
   {
+  "question": "Which Japanese castle was the seat of the Tokugawa shogunate?",
+  "difficulty": "medium",
+  "answers": [
+    "Edo Castle",
+    "Himeji Castle",
+    "Matsumoto Castle",
+    "Osaka Castle"
+  ],
+    "correctIndex": 0
+  }, 
+  {
     "question": "Which month is traditionally associated with cherry blossom viewing (hanami) in Japan?",
     "difficulty": "easy",
     "answers": ["January", "April", "July", "October"],
