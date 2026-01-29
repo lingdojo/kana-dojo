@@ -306,7 +306,10 @@
     "english": "Mama mama mama.",
     "anime": "One Piece",
     "character": "Charlotte Linlin (Big Mom)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "zacharikf",
+    "completedPR": 2474
   },
   {
     "id": 30,
