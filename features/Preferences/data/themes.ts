@@ -392,7 +392,7 @@ const baseThemeSets: BaseThemeGroup[] = [
         id: 'harajuku-pop',
         backgroundColor: 'oklch(96.0% 0.025 85.0 / 1)',
         mainColor: 'oklch(72.0% 0.225 320.0 / 1)',
-        secondaryColor: 'oklch(81.0% 0.195 200.0 / 1)',
+        secondaryColor: 'oklch(80.0% 0.195 200.0 / 1)',
       },
       {
         id: 'koi-pond',
