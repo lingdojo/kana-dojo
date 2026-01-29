@@ -377,6 +377,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         secondaryColor: 'oklch(78.0% 0.105 85.0 / 1)',
       },
       {
+        id: 'koi-sunrise',
+        backgroundColor: 'oklch(20.0% 0.035 35.0 / 1)',
+        mainColor: 'oklch(80.0% 0.170 45.0 / 1)',
+        secondaryColor: 'oklch(78.0% 0.095 140.0 / 1)',
+      },
+      {
         id: 'matcha-foam',
         backgroundColor: 'oklch(92.0% 0.020 140.0 / 1)',
         mainColor: 'oklch(58.0% 0.165 140.0 / 1)',
