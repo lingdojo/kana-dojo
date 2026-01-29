@@ -329,6 +329,12 @@ const baseThemeSets: BaseThemeGroup[] = [
     isLight: false,
     themes: [
       {
+        id: 'soba-slate',
+        backgroundColor: 'oklch(18.0% 0.015 250.0 / 1)',
+        mainColor: 'oklch(68.0% 0.085 60.0 / 1)',
+        secondaryColor: 'oklch(58.0% 0.045 70.0 / 1)',
+      },
+      {
         id: 'fuji-shadow',
         backgroundColor: 'oklch(15.0% 0.015 250.0 / 1)',
         mainColor: 'oklch(78.0% 0.035 230.0 / 1)',
