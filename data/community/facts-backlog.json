@@ -1331,7 +1331,7 @@
   {
     "id": 222,
     "fact": "Japanese New Year’s cards ('nengajou', 年賀状) are traditionally delivered all at once on January 1st.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 223,
