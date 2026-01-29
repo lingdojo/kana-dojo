@@ -347,6 +347,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         secondaryColor: 'oklch(58.0% 0.045 70.0 / 1)',
       },
       {
+        id: 'moonlit-bay',
+        backgroundColor: 'oklch(16.0% 0.018 240.0 / 1)',
+        mainColor: 'oklch(82.0% 0.040 230.0 / 1)',
+        secondaryColor: 'oklch(70.0% 0.095 260.0 / 1)',
+      },
+      {
         id: 'fuji-shadow',
         backgroundColor: 'oklch(15.0% 0.015 250.0 / 1)',
         mainColor: 'oklch(78.0% 0.035 230.0 / 1)',
