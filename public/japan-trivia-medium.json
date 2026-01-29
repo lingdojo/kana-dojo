@@ -1,5 +1,16 @@
 [
   {
+  "question": "Which Japanese festival features people throwing beans to drive away evil spirits?",
+  "difficulty": "medium",
+  "answers": [
+    "Setsubun",
+    "Obon",
+    "Tanabata",
+    "Shichi-Go-San"
+    ],
+    "correctIndex": 0
+  },
+  {
     "question": "What is the name of Japan's national airline?",
     "difficulty": "medium",
     "answers": [
