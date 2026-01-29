@@ -336,6 +336,9 @@
     "english": "Ze ha ha ha!",
     "anime": "One Piece",
     "character": "Marshall D. Teach (Blackbeard)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "anushac13",
+    "completedPR": 2443
   }
 ]
