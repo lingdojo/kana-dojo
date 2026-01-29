@@ -27,10 +27,10 @@
     "question": "Which ocean borders Japan to the east?",
     "difficulty": "easy",
     "answers": [
-        "Atlantic Ocean",
-        "Indian Ocean",
-        "Pacific Ocean",
-        "Arctic Ocean"
+      "Atlantic Ocean",
+      "Indian Ocean",
+      "Pacific Ocean",
+      "Arctic Ocean"
     ],
     "correctIndex": 2
   },
@@ -55,23 +55,13 @@
   {
     "question": "What is the name of the traditional Japanese summer festival featuring fireworks?",
     "difficulty": "easy",
-    "answers": [
-      "Seijin Shiki",
-      "Hanabi Taikai",
-      "Setsubun",
-      "Obon"
-    ],
+    "answers": ["Seijin Shiki", "Hanabi Taikai", "Setsubun", "Obon"],
     "correctIndex": 1
   },
   {
     "question": "Which Japanese city is famous for the floating torii gate at Itsukushima Shrine?",
     "difficulty": "easy",
-    "answers": [
-      "Kyoto",
-      "Hiroshima",
-      "Nagasaki",
-      "Kanazawa"
-    ],
+    "answers": ["Kyoto", "Hiroshima", "Nagasaki", "Kanazawa"],
     "correctIndex": 1
   },
   {
@@ -84,5 +74,11 @@
       "Arctic Ocean"
     ],
     "correctIndex": 2
+  },
+  {
+    "question": "Which traditional Japanese sport involves wrestling in a ring?",
+    "difficulty": "easy",
+    "answers": ["Sumo", "Kendo", "Judo", "Aikido"],
+    "correctIndex": 0
   }
 ]
