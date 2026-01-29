@@ -556,7 +556,7 @@
       "Shodo"
     ],
     "correctIndex": 0,
-    "issued": false
+    "issued": true
   },
   {
     "id": 44,
@@ -569,7 +569,7 @@
       "Yakitori"
     ],
     "correctIndex": 0,
-    "issued": false
+    "issued": true
   },
   {
     "id": 45,
