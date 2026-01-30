@@ -47,10 +47,10 @@ export default async function Credits() {
 
   const credits = `# Credits
 
-  Thank you to everyone who has contributed to **KanaDojo** — maintainers, contributors, translators, and supporters.
+Thank you to everyone who has contributed to **KanaDojo** — maintainers, contributors, translators, and supporters.
 
-  KanaDojo is what you see today thanks to everyone's work and suggestions. We'll keep making it **better**, and we hope you stay with us on this amazing adventure!
-  `;
+KanaDojo is what you see today thanks to everyone's work and suggestions. We'll keep making it **better**, and we hope you stay with us on this amazing adventure!
+`;
 
   return (
     <ContentLayout>
@@ -101,6 +101,7 @@ export default async function Credits() {
             A special thanks to our supporters!
           </p>
           <SponsorsGrid sponsors={KO_FI_SUPPORTERS} />
+
           <div className='mt-8 rounded-lg border border-[var(--border-color)] bg-[var(--card-color)] p-6'>
             <p className='mb-3 flex items-center gap-2 font-medium text-[var(--main-color)]'>
               <Heart className='fill-current text-red-500 hover:text-red-500 motion-safe:animate-pulse' />
@@ -109,6 +110,7 @@ export default async function Credits() {
             <p className='mb-4 text-sm text-[var(--secondary-color)]'>
               Your support is really appreciated. Thank you!
             </p>
+
             <div className='flex flex-wrap gap-3'>
               <a
                 className='inline-flex items-center rounded-lg bg-[var(--main-color)] px-4 py-2 text-sm font-medium text-[var(--background-color)] transition-opacity hover:opacity-90'
@@ -118,9 +120,10 @@ export default async function Credits() {
               >
                 Ko-fi
               </a>
+
               <a
                 className='inline-flex items-center rounded-lg border-2 border-[var(--main-color)] px-4 py-2 text-sm font-medium text-[var(--main-color)] transition-colors hover:bg-[var(--card-color)]'
-                href='https://www.patreon.com/cw/kanadojo'
+                href='https://www.patreon.com/kanadojo'
                 target='_blank'
                 rel='noreferrer'
               >

@@ -1,5 +1,16 @@
 [
   {
+  "question": "Which Japanese food is a savory pancake cooked on a griddle?",
+  "difficulty": "medium",
+  "answers": [
+    "Okonomiyaki",
+    "Sashimi",
+    "Onigiri",
+    "Mochi"
+  ],
+  "correctIndex": 0
+  },
+  {
     "question": "What is the name of Japan's highest mountain?",
     "difficulty": "medium",
     "answers": ["Mount Haku", "Mount Fuji", "Mount Aso", "Mount Tate"],
@@ -12,20 +23,66 @@
     "correctIndex": 2
   },
   {
-   "question": "Which Japanese city is famous for its snow festival featuring ice sculptures?",
-   "difficulty": "medium",
-   "answers": ["Sapporo","Sendai","Fukuoka","Okayama"],
-   "correctIndex": 0
+    "question": "Which Japanese city is famous for its snow festival featuring ice sculptures?",
+    "difficulty": "medium",
+    "answers": ["Sapporo", "Sendai", "Fukuoka", "Okayama"],
+    "correctIndex": 0
   },
   {
-  "question": "What is the traditional Japanese tea ceremony called?",
+    "question": "What is the traditional Japanese tea ceremony called?",
+    "difficulty": "medium",
+    "answers": ["Sado", "Judo", "Kendo", "Shodo"],
+    "correctIndex": 0
+  },
+  {
+    "question": "What is the Japanese writing system used for foreign words?",
+    "difficulty": "medium",
+    "answers": ["Katakana", "Hiragana", "Kanji", "Romaji"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which Japanese city is famous for the Gion Matsuri festival?",
+    "difficulty": "medium",
+    "answers": [
+      "Kyoto",
+      "Nagoya",
+      "Hiroshima",
+      "Sendai"
+    ],
+    "correctIndex": 0
+  },
+  {
+  "question": "Which Japanese castle was the seat of the Tokugawa shogunate?",
   "difficulty": "medium",
   "answers": [
-    "Sado",
-    "Judo",
-    "Kendo",
-    "Shodo"
+    "Edo Castle",
+    "Himeji Castle",
+    "Matsumoto Castle",
+    "Osaka Castle"
+  ],
+  "correctIndex": 0
+},
+{
+  "question": "What is the Japanese term for a traditional inn?",
+  "difficulty": "medium",
+  "answers": [
+    "Ryokan",
+    "Izakaya",
+    "Minshuku",
+    "Tateyama"
+  ],
+  "correctIndex": 0
+},
+{
+  "question": "What is the Japanese term for \"new year\"?",
+  "difficulty": "medium",
+  "answers": [
+    "Shogatsu",
+    "Obon",
+    "Tanabata",
+    "Hinamatsuri"
   ],
   "correctIndex": 0
 }
+
 ]
