@@ -31,9 +31,15 @@ const Info = () => {
   const { playClick } = useClick();
 
   const [showInfo, setShowInfo] = useState(
-    ['/kana', '/kanji', '/vocabulary', '/', '/sentences'].includes(
-      pathWithoutLocale,
-    )
+    [
+      '/kana',
+      '/kana/learn-hiragana',
+      '/kana/learn-katakana',
+      '/kanji',
+      '/vocabulary',
+      '/',
+      '/sentences',
+    ].includes(pathWithoutLocale)
       ? true
       : false,
   );
@@ -61,9 +67,9 @@ const Info = () => {
         <ChevronUp
           className={clsx(
             'duration-250',
-            'text-[var(--border-color)]',
-            'max-md:group-active:text-[var(--secondary-color)]',
-            'md:group-hover:text-[var(--secondary-color)]',
+            'text-(--border-color)',
+            'max-md:group-active:text-(--secondary-color)',
+            'md:group-hover:text-(--secondary-color)',
             !showInfo && 'rotate-180',
           )}
           size={24}
