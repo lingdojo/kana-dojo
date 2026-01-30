@@ -91,9 +91,6 @@ export default function FontsModal({ open, onOpenChange }: FontsModalProps) {
           <div className='sticky top-0 z-10 flex flex-row items-center justify-between rounded-t-2xl border-b border-[var(--border-color)] bg-[var(--background-color)] px-6 pt-6 pb-4'>
             <DialogPrimitive.Title className='text-2xl font-semibold text-[var(--main-color)]'>
               Fonts
-              <span className='ml-2 text-sm font-normal text-[var(--secondary-color)]'>
-                ({fonts.length})
-              </span>
             </DialogPrimitive.Title>
             <button
               onClick={handleClose}
