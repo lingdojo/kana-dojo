@@ -11,20 +11,16 @@ export default function translationGen(t: (key: string) => string) {
         <p className='flex flex-1 items-center gap-2 overflow-hidden'>
           {/* render localized content */}
           <span>{t('greeting')}</span>
-          <i className='mt-1.5 text-xs text-[var(--secondary-color)] max-md:hidden'>
+          <i className='mt-1.5 text-xs text-(--secondary-color) max-md:hidden'>
             {/* v0.1.5 (alpha) */}
           </i>
         </p>
       ),
       content: (
         <>
-          <p className='text-lg text-[var(--secondary-color)]'>
-            {t('description')}
-          </p>
-          <p className='text-lg text-[var(--secondary-color)]'>
-            {t('instructions')}
-          </p>
-          {/*         <p className='text-sm text-[var(--secondary-color)]'>
+          <p className='text-secondary text-lg'>{t('description')}</p>
+          <p className='text-secondary text-lg'>{t('instructions')}</p>
+          {/*         <p className='text-sm text-secondary'>
           Want to support an independent project built by the community, for the
           community, and help KanaDojo continue growing? Then please consider
           donating{' '}
@@ -46,13 +42,53 @@ export default function translationGen(t: (key: string) => string) {
       header: <span>Welcome to the kana (hiragana and katakana) dojo!</span>,
       content: (
         <>
-          <p className='text-lg text-[var(--secondary-color)]'>
+          <p className='text-lg text-(--secondary-color)'>
             This is the place where you can learn and practice the two core
             syllabaries of Japanese - Hiragana and Katakana.
           </p>
-          <p className='text-lg text-[var(--secondary-color)]'>
+          <p className='text-lg text-(--secondary-color)'>
             To begin, select at least 1 set of characters, select or change the
             training mode, then hit <b>Go!</b> below and start training now!
+          </p>
+        </>
+      ),
+    },
+    '/kana/learn-hiragana': {
+      header: (
+        <span className='flex items-center gap-2'>
+          <span className='text-2xl'>ひ</span>
+          <span>Welcome to the Hiragana dojo!</span>
+        </span>
+      ),
+      content: (
+        <>
+          <p className='text-lg text-(--secondary-color)'>
+            Focus on Hiragana only. This view filters the kana sets to the
+            complete Hiragana chart including dakuon and yoon.
+          </p>
+          <p className='text-lg text-(--secondary-color)'>
+            Select at least 1 hiragana group, pick your training mode, then hit{' '}
+            <b>Go!</b> to start practicing.
+          </p>
+        </>
+      ),
+    },
+    '/kana/learn-katakana': {
+      header: (
+        <span className='flex items-center gap-2'>
+          <span className='text-2xl'>カ</span>
+          <span>Welcome to the Katakana dojo!</span>
+        </span>
+      ),
+      content: (
+        <>
+          <p className='text-lg text-(--secondary-color)'>
+            Focus on Katakana only. This view filters the kana sets to the full
+            Katakana chart including dakuon, yoon, and foreign sounds.
+          </p>
+          <p className='text-lg text-(--secondary-color)'>
+            Select at least 1 katakana group, pick your training mode, then hit{' '}
+            <b>Go!</b> to start practicing.
           </p>
         </>
       ),
@@ -61,11 +97,11 @@ export default function translationGen(t: (key: string) => string) {
       header: <span>Welcome to the kanji dojo!</span>,
       content: (
         <>
-          <p className='text-lg text-[var(--secondary-color)]'>
+          <p className='text-lg text-(--secondary-color)'>
             This is the place where you can learn and practice the main
             component of the Japanese writing system - the kanji characters.
           </p>
-          <p className='text-lg text-[var(--secondary-color)]'>
+          <p className='text-lg text-(--secondary-color)'>
             To begin, select at least 1 level, select your training mode, then
             hit <b>Go!</b> below and start training!
           </p>
@@ -87,11 +123,11 @@ export default function translationGen(t: (key: string) => string) {
       header: <span>Welcome to the vocabulary dojo!</span>,
       content: (
         <>
-          <p className='text-lg text-[var(--secondary-color)]'>
+          <p className='text-lg text-(--secondary-color)'>
             This is the place where you can learn and practice the most common
             words used in day-to-day Japanese.
           </p>
-          <p className='text-lg text-[var(--secondary-color)]'>
+          <p className='text-lg text-(--secondary-color)'>
             To begin, select at least 1 level, select your training mode, then
             hit <b>Go!</b> below and start training!
           </p>
@@ -113,7 +149,7 @@ export default function translationGen(t: (key: string) => string) {
     jlptMenu: {
       header: <span>About the JLPT kanji/vocabulary groups</span>,
       content: (
-        <p className='text-lg text-[var(--secondary-color)]'>
+        <p className='text-lg text-(--secondary-color)'>
           The test consists of five levels, with N1 being the highest level and
           N5 the lowest. N1 covers kanji characters and vocabulary that allow
           the user to understand Japanese used in business, academia and other
@@ -131,7 +167,7 @@ export default function translationGen(t: (key: string) => string) {
     groupMenu: {
       header: <span>About the Japanese Language Proficiency Test (JLPT)</span>,
       content: (
-        <p className='text-lg text-[var(--secondary-color)]'>
+        <p className='text-lg text-(--secondary-color)'>
           JLPT (short for Japanese-Language Proficiency Test) is a standardized
           criterion-referenced test to evaluate and certify Japanese language
           proficiency for non-native speakers.
@@ -151,7 +187,7 @@ export default function translationGen(t: (key: string) => string) {
     wordClassMenu: {
       header: <span>About word types</span>,
       content: (
-        <p className='text-lg text-[var(--secondary-color)]'>
+        <p className='text-lg text-(--secondary-color)'>
           Word types categorize words based on their function and meaning in a
           sentence. Nouns name people, places, things, or ideas - like
           &quot;dog&quot;, &quot;city&quot;, &quot;happiness&quot;, and so on.

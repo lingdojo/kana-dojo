@@ -132,7 +132,10 @@
     "english": "I'm on a different level today!",
     "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
     "character": "Okuyasu Nijimura",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "suraj-mandal",
+    "completedPR": 2318
   },
   {
     "id": 14,
@@ -240,7 +243,7 @@
     "english": "Dance to my beautiful technique!",
     "anime": "The Prince of Tennis",
     "character": "Keigo Atobe",
-    "issued": false
+    "issued": true
   },
   {
     "id": 24,
@@ -249,7 +252,10 @@
     "english": "I think you should just laugh.",
     "anime": "Neon Genesis Evangelion",
     "character": "Rei Ayanami",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "natanaelmustafa",
+    "completedPR": 2268
   },
   {
     "id": 25,
@@ -258,7 +264,10 @@
     "english": "I am Gundam!",
     "anime": "Mobile Suit Gundam 00",
     "character": "Setsuna F. Seiei",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "EmmanuelChigwende",
+    "completedPR": 2283
   },
   {
     "id": 26,
@@ -267,7 +276,10 @@
     "english": "This world is cruel... yet so beautiful.",
     "anime": "Attack on Titan",
     "character": "Mikasa Ackerman",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "anushac13",
+    "completedPR": 2307
   },
   {
     "id": 27,
@@ -276,7 +288,10 @@
     "english": "Lero lero lero lero.",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Noriaki Kakyoin",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "rolloerro",
+    "completedPR": 2656
   },
   {
     "id": 28,
@@ -285,7 +300,7 @@
     "english": "Fosh fosh fosh fosh.",
     "anime": "One Piece",
     "character": "Kozuki Sukiyaki",
-    "issued": false
+    "issued": true
   },
   {
     "id": 29,
@@ -294,7 +309,10 @@
     "english": "Mama mama mama.",
     "anime": "One Piece",
     "character": "Charlotte Linlin (Big Mom)",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "zacharikf",
+    "completedPR": 2474
   },
   {
     "id": 30,
@@ -303,7 +321,7 @@
     "english": "Shishishi!",
     "anime": "One Piece",
     "character": "Monkey D. Luffy",
-    "issued": false
+    "issued": true
   },
   {
     "id": 31,
@@ -312,7 +330,10 @@
     "english": "Gurararara!",
     "anime": "One Piece",
     "character": "Edward Newgate (Whitebeard)",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "nitij-bits",
+    "completedPR": 2424
   },
   {
     "id": 32,
@@ -321,6 +342,9 @@
     "english": "Ze ha ha ha!",
     "anime": "One Piece",
     "character": "Marshall D. Teach (Blackbeard)",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "anushac13",
+    "completedPR": 2443
   }
 ]

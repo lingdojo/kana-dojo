@@ -8,12 +8,13 @@ import { ChevronUp } from 'lucide-react';
 
 const STORAGE_KEY = 'kana-hidden-subsets';
 
-const DEFAULT_SHOWN_SUBSETS = [
-  'hiragana ひらがな',
-  'hbase',
-  'katakana カタカナ',
-  'kbase',
-];
+type KanaCardsFilter = 'all' | 'hiragana' | 'katakana';
+
+const DEFAULT_SHOWN_SUBSETS: Record<KanaCardsFilter, string[]> = {
+  all: ['hiragana ひらがな', 'hbase', 'katakana カタカナ', 'kbase'],
+  hiragana: ['hiragana ひらがな', 'hbase'],
+  katakana: ['katakana カタカナ', 'kbase'],
+};
 
 const kanaGroups = [
   {
@@ -43,40 +44,69 @@ const kanaGroups = [
   // }
 ];
 
-const getDefaultHiddenSubsets = () => {
-  const allToggleKeys = kanaGroups.flatMap(group => [
+const getDefaultHiddenSubsets = (
+  groups: typeof kanaGroups,
+  filter: KanaCardsFilter,
+) => {
+  const allToggleKeys = groups.flatMap(group => [
     group.name.toLowerCase(),
     ...group.subsets.map(subset => subset.name.toLowerCase()),
   ]);
 
-  const shown = new Set(DEFAULT_SHOWN_SUBSETS.map(name => name.toLowerCase()));
+  const shown = new Set(
+    DEFAULT_SHOWN_SUBSETS[filter].map(name => name.toLowerCase()),
+  );
   return allToggleKeys.filter(key => !shown.has(key));
 };
 
-const getInitialState = (): string[] => {
-  if (typeof window === 'undefined') return getDefaultHiddenSubsets();
+const getInitialState = (
+  storageKey: string,
+  groups: typeof kanaGroups,
+  filter: KanaCardsFilter,
+): string[] => {
+  if (typeof window === 'undefined')
+    return getDefaultHiddenSubsets(groups, filter);
 
   try {
-    const stored = sessionStorage.getItem(STORAGE_KEY);
-    return stored ? JSON.parse(stored) : getDefaultHiddenSubsets();
+    const stored = sessionStorage.getItem(storageKey);
+    return stored
+      ? JSON.parse(stored)
+      : getDefaultHiddenSubsets(groups, filter);
   } catch (error) {
     console.error('Failed to load from session storage:', error);
-    return getDefaultHiddenSubsets();
+    return getDefaultHiddenSubsets(groups, filter);
   }
 };
 
-const saveToSessionStorage = (hiddenSubsets: string[]) => {
+const saveToSessionStorage = (storageKey: string, hiddenSubsets: string[]) => {
   try {
-    sessionStorage.setItem(STORAGE_KEY, JSON.stringify(hiddenSubsets));
+    sessionStorage.setItem(storageKey, JSON.stringify(hiddenSubsets));
   } catch (error) {
     console.error('Failed to save to session storage:', error);
   }
 };
 
-const KanaCards = () => {
+const KanaCards = ({ filter = 'all' }: { filter?: KanaCardsFilter }) => {
   const { playClick } = useClick();
 
-  const [hiddenSubsets, setHiddenSubsets] = useState<string[]>(getInitialState);
+  const filteredGroups = kanaGroups.filter(group => {
+    if (filter === 'hiragana') {
+      return group.name.toLowerCase().startsWith('hiragana');
+    }
+    if (filter === 'katakana') {
+      return group.name.toLowerCase().startsWith('katakana');
+    }
+    return true;
+  });
+
+  const isSingleGroup = filteredGroups.length === 1;
+
+  const storageKey =
+    filter === 'all' ? STORAGE_KEY : `${STORAGE_KEY}-${filter}`;
+
+  const [hiddenSubsets, setHiddenSubsets] = useState<string[]>(() =>
+    getInitialState(storageKey, filteredGroups, filter),
+  );
 
   const toggleVisibility = (name: string) => {
     playClick();
@@ -87,7 +117,7 @@ const KanaCards = () => {
         ? prev.filter(item => item !== lowerName)
         : [...prev, lowerName];
 
-      saveToSessionStorage(updated);
+      saveToSessionStorage(storageKey, updated);
       return updated;
     });
   };
@@ -104,7 +134,7 @@ const KanaCards = () => {
 
   return (
     <div className='flex w-full flex-col gap-2 sm:flex-row sm:items-start'>
-      {kanaGroups.map(group => {
+      {filteredGroups.map(group => {
         const groupHidden = isHidden(group.name);
         const [mainTitle, japaneseTitle] = group.name.split(' ');
 
@@ -112,7 +142,8 @@ const KanaCards = () => {
           <Fragment key={group.name}>
             <form
               className={clsx(
-                'flex w-full flex-col gap-2 p-4 sm:w-1/2',
+                'flex w-full flex-col gap-2 p-4',
+                isSingleGroup ? 'sm:w-full' : 'sm:w-1/2',
                 cardBorderStyles,
               )}
             >
@@ -124,7 +155,7 @@ const KanaCards = () => {
                 <ChevronUp className={chevronClasses(groupHidden)} />
                 <h3 className='flex items-center gap-2'>
                   <span>{mainTitle}</span>
-                  <span className='text-[var(--secondary-color)]'>
+                  <span className='text-(--secondary-color)'>
                     {japaneseTitle}
                   </span>
                 </h3>
@@ -166,7 +197,7 @@ const KanaCards = () => {
 
                       {/* Divider (except after last subset) */}
                       {!isLastSubset && (
-                        <hr className='border-t-1 border-[var(--border-color)]' />
+                        <hr className='w-full border-t border-(--border-color)' />
                       )}
                     </div>
                   );
