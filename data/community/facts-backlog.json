@@ -1501,7 +1501,7 @@
   {
     "id": 256,
     "fact": "The word 'asahi' (朝日) means morning sun, and many towns host sunrise walks called 'asahi sanpo'.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 257,
