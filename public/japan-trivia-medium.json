@@ -1,5 +1,16 @@
 [
   {
+  "question": "Which Japanese festival features people throwing beans to drive away evil spirits?",
+  "difficulty": "medium",
+  "answers": [
+    "Setsubun",
+    "Obon",
+    "Tanabata",
+    "Shichi-Go-San"
+    ],
+    "correctIndex": 0
+  },
+  {
     "question": "What is the name of Japan's national airline?",
     "difficulty": "medium",
     "answers": [
@@ -33,6 +44,17 @@
     "question": "Which Japanese city is known for its deer roaming freely in a large park?",
     "difficulty": "medium",
     "answers": ["Nara", "Yokohama", "Kobe", "Nagoya"],
+    "correctIndex": 0
+  },
+  {
+    "question": "What is the Japanese term for a traditional inn?",
+    "difficulty": "medium",
+    "answers": [
+      "Ryokan",
+      "Izakaya",
+      "Minshuku",
+      "Tateyama"
+    ],
     "correctIndex": 0
   }
 ]

@@ -4,5 +4,21 @@
     "difficulty": "hard",
     "answers": ["Sanrio", "Ghibli", "Capcom", "Namco"],
     "correctIndex": 0
+  },
+  {
+  "question": "Which Japanese island chain is known for tropical beaches and coral reefs?",
+  "difficulty": "hard",
+  "answers": [
+    "Okinawa",
+    "Sado",
+    "Awaji",
+    "Oki"
+  ],
+  "correctIndex": 0
+}
+  "question": "Which Japanese food is a grilled eel dish often eaten in summer?",
+  "difficulty": "hard",
+  "answers": ["Tempura","Unagi", "Sukiyaki", "Okonomiyaki"],
+  "correctIndex": 1
   }
 ]

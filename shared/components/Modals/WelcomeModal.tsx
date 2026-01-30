@@ -420,11 +420,11 @@ const WelcomeModal = () => {
                           }}
                           title={theme.id}
                         >
-                          <div className='mb-2'>
+                          <div className='mb-2 text-left'>
                             {isChaosTheme ? (
-                              <span className='relative flex items-center justify-center text-sm text-white capitalize'>
+                              <span className='relative flex items-center justify-start text-sm text-white capitalize'>
                                 <span
-                                  className='absolute left-1/2 -translate-x-1/2'
+                                  className='absolute left-0'
                                   style={{
                                     color:
                                       localTheme === theme.id
