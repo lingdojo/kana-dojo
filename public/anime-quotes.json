@@ -1,5 +1,12 @@
 [
   {
+    "japanese": "世界は残酷だ…それでも美しい",
+    "romaji": "Sekai wa zankoku da... soredemo utsukushii",
+    "english": "This world is cruel... yet so beautiful.",
+    "anime": "Attack on Titan",
+    "character": "Mikasa Ackerman"
+  },
+  {
     "japanese": "やれやれだぜ…まったく。",
     "romaji": "Yare yare da ze... mattaku.",
     "english": "Good grief... honestly.",
@@ -89,5 +96,77 @@
     "english": "Not yet! It's not over yet!",
     "anime": "Mobile Suit Gundam",
     "character": "Char Aznable"
+  },
+  {
+    "japanese": "笑えばいいと思うよ",
+    "romaji": "Waraeba ii to omou yo",
+    "english": "I think you should just laugh.",
+    "anime": "Neon Genesis Evangelion",
+    "character": "Rei Ayanami"
+  },
+  {
+    "japanese": "おまえはもう死んでいる",
+    "romaji": "Omae wa mou shindeiru",
+    "english": "You're already dead.",
+    "anime": "Fist of the North Star",
+    "character": "Kenshiro"
+  },
+  {
+    "japanese": "俺はガンダムだ！",
+    "romaji": "Ore wa Gandamu da!",
+    "english": "I am Gundam!",
+    "anime": "Mobile Suit Gundam 00",
+    "character": "Setsuna F. Seiei"
+  },
+  {
+    "japanese": "世界は残酷だ…それでも美しい",
+    "romaji": "Sekai wa zankoku da... soredemo utsukushii",
+    "english": "This world is cruel... yet so beautiful.",
+    "anime": "Attack on Titan",
+    "character": "Mikasa Ackerman"
+  },
+  {
+    "japanese": "今日の俺は一味違うぜ！",
+    "romaji": "Kyou no ore wa hitomi chigau ze!",
+    "english": "I'm on a different level today!",
+    "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
+    "character": "Okuyasu Nijimura"
+  },
+  {
+    "japanese": "シシシシシ",
+    "romaji": "Shishishishi",
+    "english": "Shishishi!",
+    "anime": "One Piece",
+    "character": "Monkey D. Luffy"
+  },
+  {
+  "japanese": "グララララ",
+  "romaji": "Gurararara",
+  "english": "Gurararara!",
+  "anime": "One Piece",
+  "character": "Edward Newgate (Whitebeard)"
+ },
+  {
+  "japanese": "ゼハハハハ",
+  "romaji": "Ze hahaha",
+  "english": "Ze ha ha ha!",
+  "anime": "One Piece",
+  "character": "Marshall D. Teach (Blackbeard)"
+},
+  {
+  "japanese": "マママママ",
+  "romaji": "Mama mama mama",
+  "english": "Mama mama mama.",
+  "anime": "One Piece",
+  "character": "Charlotte Linlin (Big Mom)"
+},
+  {
+  "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+  "character": "Noriaki Kakyoin",
+  "quote": {
+    "japanese": "レロレロレロレロ",
+    "romaji": "Rero rero rero rero",
+    "english": "Rero rero rero rero."
   }
+}
 ]
