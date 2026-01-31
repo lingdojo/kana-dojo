@@ -117,7 +117,10 @@
     "english": "You! You're watching me!",
     "anime": "JoJo's Bizarre Adventure: Stone Ocean",
     "character": "Jolyne Cujoh",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "YakVash",
+    "completedPR": 2823
   },
   {
     "id": 12,
@@ -174,7 +177,7 @@
     "english": "But... that's what I like.",
     "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
     "character": "Yoshikage Kira",
-    "issued": false
+    "issued": true
   },
   {
     "id": 17,
