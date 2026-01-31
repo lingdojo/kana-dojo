@@ -1706,7 +1706,7 @@
   {
     "id": 297,
     "fact": "Japan’s 'eki-ben' (駅弁) are region-specific boxed meals sold at train stations, often featuring local specialties.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 298,
