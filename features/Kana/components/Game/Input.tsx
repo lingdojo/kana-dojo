@@ -173,16 +173,6 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
     setCorrectChar(newChar);
   }, [isReady, isReverse, selectedRomaji, selectedKana, correctChar]);
 
-  const handleEnter = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
-    if (
-      e.key === 'Enter' &&
-      inputValue.trim().length &&
-      bottomBarState !== 'correct'
-    ) {
-      handleCheck();
-    }
-  };
-
   const handleCheck = () => {
     if (inputValue.trim().length === 0) return;
 
@@ -311,7 +301,9 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
         onKeyDown={e => {
           if (e.key === 'Enter') {
             e.preventDefault();
-            handleEnter(e);
+            if (inputValue.trim().length > 0 && bottomBarState !== 'correct') {
+              handleCheck();
+            }
           }
         }}
       />
