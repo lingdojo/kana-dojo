@@ -6,7 +6,7 @@
     "english": "Road roller!",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "DIO",
-    "issued": true
+    "issued": false
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "english": "Yes! Yes! Yes! Yes!",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "DIO",
-    "issued": true
+    "issued": false
   },
   {
     "id": 3,
@@ -72,7 +72,7 @@
     "english": "Useless! Useless! Useless!",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "DIO",
-    "issued": true
+    "issued": false
   },
   {
     "id": 8,
@@ -81,7 +81,7 @@
     "english": "Ora ora ora ora ora!",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Jotaro Kujo",
-    "issued": true
+    "issued": false
   },
   {
     "id": 9,
@@ -111,7 +111,7 @@
     "english": "You! You're watching me!",
     "anime": "JoJo's Bizarre Adventure: Stone Ocean",
     "character": "Jolyne Cujoh",
-    "issued": true
+    "issued": false
   },
   {
     "id": 12,
@@ -168,7 +168,7 @@
     "english": "But... that's what I like.",
     "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
     "character": "Yoshikage Kira",
-    "issued": true
+    "issued": false
   },
   {
     "id": 17,
@@ -222,7 +222,7 @@
     "english": "If you give up, that's the end of the game.",
     "anime": "Slam Dunk",
     "character": "Kaede Rukawa",
-    "issued": true
+    "issued": false
   },
   {
     "id": 22,
@@ -243,7 +243,7 @@
     "english": "Dance to my beautiful technique!",
     "anime": "The Prince of Tennis",
     "character": "Keigo Atobe",
-    "issued": true
+    "issued": false
   },
   {
     "id": 24,
@@ -300,7 +300,7 @@
     "english": "Fosh fosh fosh fosh.",
     "anime": "One Piece",
     "character": "Kozuki Sukiyaki",
-    "issued": true
+    "issued": false
   },
   {
     "id": 29,
