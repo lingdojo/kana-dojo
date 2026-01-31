@@ -1544,7 +1544,10 @@
     "backgroundColor": "oklch(16.0% 0.030 260.0 / 1)",
     "mainColor": "oklch(82.0% 0.085 220.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.145 330.0 / 1)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "detox-24",
+    "completedPR": 2805
   },
   {
     "id": "kyoto-kimono",
