@@ -85,5 +85,13 @@
     "Aikido"
   ],
   "correctIndex": 0
-}
+  },
+  {
+    "question": "Which mountain is Japan's highest peak?",
+      "Mount Kita",
+      "Mount Tate",
+      "Mount Haku"
+    ],
+    "correctIndex": 0
+  }
 ]
