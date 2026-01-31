@@ -1696,7 +1696,7 @@
   {
     "id": 295,
     "fact": "A 'shuincho' (朱印帳) is a stamp book used to collect shrine and temple seals during visits across Japan.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 296,
