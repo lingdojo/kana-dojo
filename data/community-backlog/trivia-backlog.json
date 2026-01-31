@@ -686,7 +686,7 @@
       "Mount Haku"
     ],
     "correctIndex": 0,
-    "issued": false
+    "issued": true
   },
   {
     "id": 54,
@@ -699,7 +699,7 @@
       "Fuji TV"
     ],
     "correctIndex": 0,
-    "issued": false
+    "issued": true
   },
   {
     "id": 55,
@@ -712,7 +712,7 @@
       "Hokkaido"
     ],
     "correctIndex": 0,
-    "issued": false
+    "issued": true
   },
   {
     "id": 56,

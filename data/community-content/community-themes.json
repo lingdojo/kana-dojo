@@ -1,1 +1,14 @@
-[]
+[
+ {
+  "id": "riverstone-gray",
+  "backgroundColor": "oklch(20.0% 0.010 260.0 / 1)",
+  "mainColor": "oklch(78.0% 0.020 90.0 / 1)",
+  "secondaryColor": "oklch(55.0% 0.035 240.0 / 1)"
+ },
+ {
+  "id": "city-rain",
+  "backgroundColor": "oklch(16.0% 0.030 260.0 / 1)",
+  "mainColor": "oklch(82.0% 0.085 220.0 / 1)",
+  "secondaryColor": "oklch(70.0% 0.145 330.0 / 1)"
+}
+]

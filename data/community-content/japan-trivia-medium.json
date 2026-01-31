@@ -56,5 +56,16 @@
       "Tateyama"
     ],
     "correctIndex": 0
-  }
+  },
+  {
+  "question": "What is the name of Japan's national public broadcaster?",
+  "difficulty": "medium",
+  "answers": [
+    "NHK",
+    "NHK World Japan",
+    "Asahi",
+    "Fuji TV"
+  ],
+  "correctIndex": 0
+}
 ]
