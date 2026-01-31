@@ -256,7 +256,10 @@
     "english": "Dance to my beautiful technique!",
     "anime": "The Prince of Tennis",
     "character": "Keigo Atobe",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "arushi-punhani",
+    "completedPR": 2877
   },
   {
     "id": 24,
