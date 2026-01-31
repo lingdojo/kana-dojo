@@ -431,7 +431,8 @@
     "english": "Fame from a mistake",
     "meaning": "A lucky break that comes from an error",
     "completedBy": "iamnikhilranjan",
-    "completedPR": 1677
+    "completedPR": 1677,
+    "completed": true
   },
   {
     "id": 44,
@@ -1361,7 +1362,8 @@
     "romaji": "Ame futte ji katamaru",
     "english": "After the rain, the ground hardens",
     "meaning": "Hard times build resilience",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 152,
@@ -1369,7 +1371,7 @@
     "romaji": "Omoitattaga kichijitsu",
     "english": "The day you decide is a lucky day",
     "meaning": "Start now",
-    "issued": false
+    "issued": true
   },
   {
     "id": 153,
