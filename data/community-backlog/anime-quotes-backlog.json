@@ -75,7 +75,10 @@
     "english": "Useless! Useless! Useless!",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "DIO",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "detox-24",
+    "completedPR": 2783
   },
   {
     "id": 8,
