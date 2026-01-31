@@ -1282,6 +1282,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         mainColor: 'oklch(72.0% 0.145 330.0 / 1)',
         secondaryColor: 'oklch(60.0% 0.075 260.0 / 1)',
       },
+	{
+  	id: 'harbor-fog',
+  	backgroundColor: 'oklch(22.0% 0.018 230.0 / 1)',
+  	mainColor: 'oklch(80.0% 0.055 215.0 / 1)',
+  	secondaryColor: 'oklch(62.0% 0.045 240.0 / 1)'
+	},
     ],
   },
   {
