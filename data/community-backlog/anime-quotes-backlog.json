@@ -231,7 +231,8 @@
     "english": "If you give up, that's the end of the game.",
     "anime": "Slam Dunk",
     "character": "Kaede Rukawa",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 22,
@@ -252,7 +253,7 @@
     "english": "Dance to my beautiful technique!",
     "anime": "The Prince of Tennis",
     "character": "Keigo Atobe",
-    "issued": false
+    "issued": true
   },
   {
     "id": 24,
