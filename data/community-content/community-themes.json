@@ -10,5 +10,11 @@
   "backgroundColor": "oklch(16.0% 0.030 260.0 / 1)",
   "mainColor": "oklch(82.0% 0.085 220.0 / 1)",
   "secondaryColor": "oklch(70.0% 0.145 330.0 / 1)"
+},
+ {
+  "id": "inkstone-blue",
+  "backgroundColor": "oklch(17.0% 0.020 255.0 / 1)",
+  "mainColor": "oklch(74.0% 0.060 230.0 / 1)",
+  "secondaryColor": "oklch(60.0% 0.085 280.0 / 1)"
 }
 ]
