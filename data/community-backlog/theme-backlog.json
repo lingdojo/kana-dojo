@@ -1577,7 +1577,10 @@
     "backgroundColor": "oklch(20.0% 0.010 260.0 / 1)",
     "mainColor": "oklch(78.0% 0.020 90.0 / 1)",
     "secondaryColor": "oklch(55.0% 0.035 240.0 / 1)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "detox-24",
+    "completedPR": 2799
   },
   {
     "id": "temple-mist",
