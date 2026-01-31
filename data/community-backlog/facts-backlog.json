@@ -408,7 +408,7 @@
   {
     "id": 57,
     "fact": "There's a Japanese word 'tsujigiri' (辻斬り) that historically meant testing a new sword on a random passerby - thankfully outlawed centuries ago.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 58,
@@ -667,7 +667,7 @@
   {
     "id": 91,
     "fact": "There's a Japanese word 'shinpai' (心配) that describes worry with a sense of caring - unlike English, it's not purely negative.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 92,
