@@ -388,7 +388,10 @@
     "english": "A lesson without pain is meaningless.",
     "anime": "Fullmetal Alchemist: Brotherhood",
     "character": "Edward Elric",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "wicked2112",
+    "completedPR": 2927
   },
   {
     "id": 36,
