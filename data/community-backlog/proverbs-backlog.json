@@ -1436,7 +1436,8 @@
     "romaji": "Ishibashi wo tataite wataru",
     "english": "Tap a stone bridge before crossing",
     "meaning": "Be very cautious",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 161,
@@ -1444,7 +1445,8 @@
     "romaji": "Issun saki wa yami",
     "english": "An inch ahead is darkness",
     "meaning": "The future is uncertain",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 162,
@@ -1452,7 +1454,7 @@
     "romaji": "Warau kado ni wa fuku kitaru",
     "english": "Good fortune comes to a laughing home",
     "meaning": "Happiness invites luck",
-    "issued": false
+    "issued": true
   },
   {
     "id": 163,
