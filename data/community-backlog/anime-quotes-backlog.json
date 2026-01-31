@@ -400,7 +400,10 @@
     "english": "I'll exterminate them! Every last one from this world!",
     "anime": "Attack on Titan",
     "character": "Eren Yeager",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "khaoticvs",
+    "completedPR": 2949
   },
   {
     "id": 37,
