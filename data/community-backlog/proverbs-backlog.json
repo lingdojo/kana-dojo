@@ -1582,7 +1582,8 @@
     "romaji": "Ki wo mite mori wo mizu",
     "english": "See the trees but not the forest",
     "meaning": "Miss the bigger picture",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 179,
@@ -1590,7 +1591,8 @@
     "romaji": "Tabi wa michizure yo wa nasake",
     "english": "Travel needs companions; life needs kindness",
     "meaning": "Relationships and compassion matter",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 180,
@@ -1598,6 +1600,7 @@
     "romaji": "Inu mo arukeba bou ni ataru",
     "english": "Even a walking dog will hit a stick",
     "meaning": "Acting can lead to luck or trouble",
-    "issued": false
+    "issued": false,
+    "completed": true
   }
 ]
