@@ -87,11 +87,44 @@
   "correctIndex": 0
   },
   {
+content/add-new-japan-fact
     "question": "Which mountain is Japan's highest peak?",
+
+    "question": "Which mountain is Japan’s highest peak?",
+    "difficulty": "easy",
+    "answers": [
+      "Mount Fuji",
+main
       "Mount Kita",
       "Mount Tate",
       "Mount Haku"
     ],
     "correctIndex": 0
+content/add-new-japan-fact
   }
+
+  },
+  {
+    "question": "What is the Japanese term for a traditional inn?",
+    "difficulty": "easy",
+    "answers": [
+      "Ryokan",
+      "Minshuku",
+      "Izakaya",
+      "Yatai"
+    ],
+    "correctIndex": 0
+  },
+  {
+  "question": "Which city is known for its beef brand Kobe?",
+  "difficulty": "easy",
+  "answers": [
+    "Kobe",
+    "Nagoya",
+    "Kanazawa",
+    "Hiroshima"
+  ],
+  "correctIndex": 0
+}
+ main
 ]

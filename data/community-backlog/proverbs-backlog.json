@@ -1420,7 +1420,7 @@
     "romaji": "Yake ishi ni mizu",
     "english": "Water on a hot stone",
     "meaning": "A futile effort",
-    "issued": false
+    "issued": true
   },
   {
     "id": 159,
@@ -1428,7 +1428,7 @@
     "romaji": "Nasake wa hito no tame narazu",
     "english": "Kindness is not for others alone",
     "meaning": "Kindness comes back to you",
-    "issued": false
+    "issued": true
   },
   {
     "id": 160,
@@ -1436,7 +1436,8 @@
     "romaji": "Ishibashi wo tataite wataru",
     "english": "Tap a stone bridge before crossing",
     "meaning": "Be very cautious",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 161,
@@ -1444,7 +1445,8 @@
     "romaji": "Issun saki wa yami",
     "english": "An inch ahead is darkness",
     "meaning": "The future is uncertain",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 162,
@@ -1452,7 +1454,7 @@
     "romaji": "Warau kado ni wa fuku kitaru",
     "english": "Good fortune comes to a laughing home",
     "meaning": "Happiness invites luck",
-    "issued": false
+    "issued": true
   },
   {
     "id": 163,
@@ -1460,7 +1462,7 @@
     "romaji": "Ugo no takenoko",
     "english": "Bamboo shoots after rain",
     "meaning": "Things spring up rapidly",
-    "issued": false
+    "issued": true
   },
   {
     "id": 164,
@@ -1468,7 +1470,7 @@
     "romaji": "Senri no michi mo ippo kara",
     "english": "A journey of a thousand miles begins with one step",
     "meaning": "Start small",
-    "issued": false
+    "issued": true
   },
   {
     "id": 165,
@@ -1476,7 +1478,7 @@
     "romaji": "Hayaoki wa sanmon no toku",
     "english": "Early rising brings three coins of benefit",
     "meaning": "Wake early for advantage",
-    "issued": false
+    "issued": true
   },
   {
     "id": 166,
@@ -1484,7 +1486,7 @@
     "romaji": "Mago ni mo ishou",
     "english": "Even a packhorse driver looks good in fine clothes",
     "meaning": "Clothes make the person",
-    "issued": false
+    "issued": true
   },
   {
     "id": 167,
@@ -1492,7 +1494,7 @@
     "romaji": "Ni to wo ou mono wa itto wo mo ezu",
     "english": "Chase two rabbits, catch none",
     "meaning": "Focus on one thing",
-    "issued": false
+    "issued": true
   },
   {
     "id": 168,
@@ -1500,7 +1502,7 @@
     "romaji": "I no naka no kawazu taikai wo shirazu",
     "english": "A frog in a well doesn’t know the ocean",
     "meaning": "Limited experience limits perspective",
-    "issued": false
+    "issued": true
   },
   {
     "id": 169,
@@ -1508,7 +1510,7 @@
     "romaji": "Kuchi wa wazawai no moto",
     "english": "The mouth is the source of misfortune",
     "meaning": "Careless words cause trouble",
-    "issued": false
+    "issued": true
   },
   {
     "id": 170,

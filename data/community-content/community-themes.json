@@ -1,14 +1,44 @@
 [
- {
-  "id": "riverstone-gray",
-  "backgroundColor": "oklch(20.0% 0.010 260.0 / 1)",
-  "mainColor": "oklch(78.0% 0.020 90.0 / 1)",
-  "secondaryColor": "oklch(55.0% 0.035 240.0 / 1)"
+  {
+    "id": "riverstone-gray",
+    "backgroundColor": "oklch(20.0% 0.010 260.0 / 1)",
+    "mainColor": "oklch(78.0% 0.020 90.0 / 1)",
+    "secondaryColor": "oklch(55.0% 0.035 240.0 / 1)"
+  },
+  {
+    "id": "city-rain",
+    "backgroundColor": "oklch(16.0% 0.030 260.0 / 1)",
+    "mainColor": "oklch(82.0% 0.085 220.0 / 1)",
+    "secondaryColor": "oklch(70.0% 0.145 330.0 / 1)"
+  },
+  {
+    "id": "inkstone-blue",
+    "backgroundColor": "oklch(17.0% 0.020 255.0 / 1)",
+    "mainColor": "oklch(74.0% 0.060 230.0 / 1)",
+    "secondaryColor": "oklch(60.0% 0.085 280.0 / 1)"
+  },
+  {
+    "id": "paper-lantern",
+    "backgroundColor": "oklch(18.0% 0.030 20.0 / 1)",
+    "mainColor": "oklch(82.0% 0.175 35.0 / 1)",
+    "secondaryColor": "oklch(70.0% 0.095 75.0 / 1)"
+  },
+  {
+    "id": "river-stone",
+    "backgroundColor": "oklch(19.0% 0.020 250.0 / 1)",
+    "mainColor": "oklch(72.0% 0.050 215.0 / 1)",
+    "secondaryColor": "oklch(60.0% 0.040 230.0 / 1)"
+  },
+  {
+  "id": "tea-garden",
+  "backgroundColor": "oklch(22.0% 0.035 140.0 / 1)",
+  "mainColor": "oklch(74.0% 0.145 135.0 / 1)",
+  "secondaryColor": "oklch(65.0% 0.085 115.0 / 1)"
  },
- {
-  "id": "city-rain",
-  "backgroundColor": "oklch(16.0% 0.030 260.0 / 1)",
-  "mainColor": "oklch(82.0% 0.085 220.0 / 1)",
-  "secondaryColor": "oklch(70.0% 0.145 330.0 / 1)"
-}
+  {
+  id: 'coastal-breeze',
+  backgroundColor: 'oklch(20.0% 0.035 225.0 / 1)',
+  mainColor: 'oklch(80.0% 0.120 210.0 / 1)',
+  secondaryColor: 'oklch(70.0% 0.085 195.0 / 1)'
+},
 ]

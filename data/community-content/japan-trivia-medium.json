@@ -67,5 +67,27 @@
     "Fuji TV"
   ],
   "correctIndex": 0
+},
+{
+  "question": "Which Japanese island is known for its active volcano Mount Aso?",
+  "difficulty": "medium",
+  "answers": [
+    "Kyushu",
+    "Honshu",
+    "Shikoku",
+    "Hokkaido"
+  ],
+  "correctIndex": 0
+}
+{
+  "question": "Which Japanese festival features floating lanterns on water?",
+  "difficulty": "medium",
+  "answers": [
+    "Toro Nagashi",
+    "Setsubun",
+    "Tanabata",
+    "Aoi Matsuri"
+  ],
+  "correctIndex": 0
 }
 ]
