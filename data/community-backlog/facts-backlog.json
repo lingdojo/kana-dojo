@@ -1721,7 +1721,7 @@
   {
     "id": 300,
     "fact": "A 'hikimono' (引き物) is a small parting gift given at weddings, often a set of sweets or tea.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 301,
