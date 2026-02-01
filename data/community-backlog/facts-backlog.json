@@ -672,7 +672,8 @@
   {
     "id": 92,
     "fact": "Japan's National Apology Day falls on August 15th, when the nation reflects on World War II and its aftermath.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 93,
@@ -1751,7 +1752,7 @@
   {
     "id": 306,
     "fact": "A 'kotatsu' is a low table with a heater and blanket, making winter living rooms warm and cozy in Japan.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 307,
