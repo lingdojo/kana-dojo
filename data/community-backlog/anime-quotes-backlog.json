@@ -460,7 +460,10 @@
     "english": "I'm just a hero for fun.",
     "anime": "One Punch Man",
     "character": "Saitama",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "luminash18",
+    "completedPR": 3044
   },
   {
     "id": 43,
