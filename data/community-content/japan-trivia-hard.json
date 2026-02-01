@@ -16,5 +16,16 @@
     "difficulty": "hard",
     "answers": ["Tempura", "Unagi", "Sukiyaki", "Okonomiyaki"],
     "correctIndex": 1
-  }
+  },
+  {
+  "question": "Which Japanese island is known for the UNESCO site Shirakami-Sanchi?",
+  "difficulty": "hard",
+  "answers": [
+    "Honshu",
+    "Hokkaido",
+    "Shikoku",
+    "Kyushu"
+  ],
+  "correctIndex": 0
+}
 ]
