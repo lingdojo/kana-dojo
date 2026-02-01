@@ -442,7 +442,10 @@
     "english": "All I want is to live a normal life.",
     "anime": "Chainsaw Man",
     "character": "Denji",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "marwa-eltayeb",
+    "completedPR": 3176
   },
   {
     "id": 41,
