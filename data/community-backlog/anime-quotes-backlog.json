@@ -484,7 +484,10 @@
     "english": "I will become the god of the new world.",
     "anime": "Death Note",
     "character": "Light Yagami",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "Sujeev-Uthayakumar",
+    "completedPR": 3192
   },
   {
     "id": 45,
