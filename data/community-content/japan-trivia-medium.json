@@ -78,15 +78,26 @@
     "correctIndex": 0
   },
   {
-  "question": "What is the Japanese term for a traditional tea ceremony?",
-  "difficulty": "medium",
-  "answers": [
-    "Sado",
-    "Kado",
-    "Budo",
-    "Shodo"
-  ],
-  "correctIndex": 0
-}
+    "question": "What is the Japanese term for a traditional tea ceremony?",
+    "difficulty": "medium",
+    "answers": [
+      "Sado",
+      "Kado",
+      "Budo",
+      "Shodo"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "question": "What is the name of Japan’s largest lake?",
+    "difficulty": "medium",
+    "answers": [
+      "Lake Biwa",
+      "Lake Towada",
+      "Lake Ashi",
+      "Lake Shinji"
+    ],
+    "correctIndex": 0
+  }
 ]
 
