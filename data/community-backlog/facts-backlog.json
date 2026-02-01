@@ -361,12 +361,12 @@
   {
     "id": 50,
     "fact": "Japanese farmers grow cubic watermelons in glass boxes - not for taste but because they're easier to stack and refrigerate.",
-    "issued": true
+    "issued": false
   },
   {
     "id": 51,
     "fact": "There's a Japanese practice of 'honne and tatemae' - your true feelings (honne) versus your public facade (tatemae) - both are considered valid.",
-    "issued": true
+    "issued": false
   },
   {
     "id": 52,
@@ -408,7 +408,7 @@
   {
     "id": 57,
     "fact": "There's a Japanese word 'tsujigiri' (辻斬り) that historically meant testing a new sword on a random passerby - thankfully outlawed centuries ago.",
-    "issued": true
+    "issued": false
   },
   {
     "id": 58,
@@ -667,12 +667,12 @@
   {
     "id": 91,
     "fact": "There's a Japanese word 'shinpai' (心配) that describes worry with a sense of caring - unlike English, it's not purely negative.",
-    "issued": true
+    "issued": false
   },
   {
     "id": 92,
     "fact": "Japan's National Apology Day falls on August 15th, when the nation reflects on World War II and its aftermath.",
-    "issued": true
+    "issued": false
   },
   {
     "id": 93,

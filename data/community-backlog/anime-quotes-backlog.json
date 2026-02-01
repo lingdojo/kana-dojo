@@ -6,7 +6,7 @@
     "english": "Road roller!",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "DIO",
-    "issued": true
+    "issued": false
   },
   {
     "id": 2,
@@ -316,7 +316,7 @@
     "english": "Fosh fosh fosh fosh.",
     "anime": "One Piece",
     "character": "Kozuki Sukiyaki",
-    "issued": true
+    "issued": false
   },
   {
     "id": 29,
@@ -379,7 +379,7 @@
     "english": "Those who don't take care of their comrades are worse than scum.",
     "anime": "Naruto",
     "character": "Kakashi Hatake",
-    "issued": true
+    "issued": false
   },
   {
     "id": 35,
@@ -421,7 +421,7 @@
     "english": "Go beyond! Plus Ultra!",
     "anime": "My Hero Academia",
     "character": "All Might",
-    "issued": true
+    "issued": false
   },
   {
     "id": 39,
@@ -442,7 +442,7 @@
     "english": "All I want is to live a normal life.",
     "anime": "Chainsaw Man",
     "character": "Denji",
-    "issued": true
+    "issued": false
   },
   {
     "id": 41,

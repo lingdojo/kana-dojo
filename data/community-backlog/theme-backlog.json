@@ -1492,7 +1492,7 @@
     "backgroundColor": "oklch(22.0% 0.018 230.0 / 1)",
     "mainColor": "oklch(80.0% 0.055 215.0 / 1)",
     "secondaryColor": "oklch(62.0% 0.045 240.0 / 1)",
-    "issued": true
+    "issued": false
   },
   {
     "id": "matcha-foam",
@@ -1513,7 +1513,7 @@
     "backgroundColor": "oklch(18.0% 0.028 65.0 / 1)",
     "mainColor": "oklch(72.0% 0.115 65.0 / 1)",
     "secondaryColor": "oklch(60.0% 0.085 25.0 / 1)",
-    "issued": true
+    "issued": false
   },
   {
     "id": "fuji-shadow",
@@ -1616,7 +1616,7 @@
     "backgroundColor": "oklch(17.0% 0.020 255.0 / 1)",
     "mainColor": "oklch(74.0% 0.060 230.0 / 1)",
     "secondaryColor": "oklch(60.0% 0.085 280.0 / 1)",
-    "issued": true
+    "issued": false
   },
   {
     "id": "sakura-latte",
@@ -1694,7 +1694,7 @@
     "backgroundColor": "oklch(23.0% 0.020 75.0 / 1)",
     "mainColor": "oklch(82.0% 0.155 95.0 / 1)",
     "secondaryColor": "oklch(62.0% 0.085 55.0 / 1)",
-    "issued": true
+    "issued": false
   },
   {
     "id": "koi-sunrise",
