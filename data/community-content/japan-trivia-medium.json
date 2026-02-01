@@ -78,7 +78,7 @@
     "Hokkaido"
   ],
   "correctIndex": 0
-}
+},
 {
   "question": "Which Japanese festival features floating lanterns on water?",
   "difficulty": "medium",
@@ -87,6 +87,17 @@
     "Setsubun",
     "Tanabata",
     "Aoi Matsuri"
+  ],
+  "correctIndex": 0
+},
+  {
+  "question": "Which Japanese beverage is made from roasted barley?",
+  "difficulty": "medium",
+  "answers": [
+    "Mugicha",
+    "Matcha",
+    "Genmaicha",
+    "Sencha"
   ],
   "correctIndex": 0
 }

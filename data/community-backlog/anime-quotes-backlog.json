@@ -430,7 +430,10 @@
     "english": "Relax, I'm the strongest.",
     "anime": "Jujutsu Kaisen",
     "character": "Satoru Gojo",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "YakVash",
+    "completedPR": 3008
   },
   {
     "id": 40,
