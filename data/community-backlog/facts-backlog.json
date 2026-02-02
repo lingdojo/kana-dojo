@@ -19,12 +19,13 @@
   {
     "id": 4,
     "fact": "The Japanese word 'age-otori' (上げ劣り) describes the specific experience of looking worse after a haircut - a feeling so common it needed its own word.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 5,
     "fact": "Japan's Aokigahara forest, also called the Sea of Trees, is so dense that GPS devices and compasses often malfunction due to the iron-rich volcanic soil.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 6,
