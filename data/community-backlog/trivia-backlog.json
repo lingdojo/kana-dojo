@@ -103,7 +103,8 @@
       "Obon"
     ],
     "correctIndex": 1,
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 9,
@@ -116,7 +117,7 @@
       "Nijo Castle"
     ],
     "correctIndex": 0,
-    "issued": false
+    "issued": true
   },
   {
     "id": 10,
