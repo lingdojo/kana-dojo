@@ -35,7 +35,7 @@
     "english": "Spilled water will not return to the tray",
     "meaning": "What is done cannot be undone"
   },
-  
+
   {
     "japanese": "石の上にも三年",
     "romaji": "Ishi no ue ni mo sannen",
@@ -451,83 +451,87 @@
     "meaning": "Missing the bigger picture"
   },
   {
-  "japanese": "喉元過ぎれば熱さを忘れる",
-  "romaji": "Nodomoto sugireba atsusa wo wasureru",
-  "english": "Once it passes your throat, you forget the heat",
-  "meaning": "People forget hardships once they are over"
+    "japanese": "喉元過ぎれば熱さを忘れる",
+    "romaji": "Nodomoto sugireba atsusa wo wasureru",
+    "english": "Once it passes your throat, you forget the heat",
+    "meaning": "People forget hardships once they are over"
   },
   {
-  "japanese": "泣きっ面に蜂",
-  "romaji": "Naki tsura ni hachi",
-  "english": "A bee on a crying face",
-  "meaning": "Misfortune piles up"
+    "japanese": "泣きっ面に蜂",
+    "romaji": "Naki tsura ni hachi",
+    "english": "A bee on a crying face",
+    "meaning": "Misfortune piles up"
   },
   {
-  "japanese": "能ある鷹は爪を隠す",
-  "romaji": "Nou aru taka wa tsume wo kakusu",
-  "english": "A skilled hawk hides its talons",
-  "meaning": "True skill is modest"
+    "japanese": "能ある鷹は爪を隠す",
+    "romaji": "Nou aru taka wa tsume wo kakusu",
+    "english": "A skilled hawk hides its talons",
+    "meaning": "True skill is modest"
   },
   {
-  "japanese": "覆水盆に返らず",
-  "romaji": "Fukusui bon ni kaerazu",
-  "english": "Spilled water doesn’t return to the tray",
-  "meaning": "What’s done is done"
+    "japanese": "覆水盆に返らず",
+    "romaji": "Fukusui bon ni kaerazu",
+    "english": "Spilled water doesn’t return to the tray",
+    "meaning": "What’s done is done"
   },
   {
-  "japanese": "焼け石に水",
-  "romaji": "Yake ishi ni mizu",
-  "english": "Water on a hot stone",
-  "meaning": "A futile effort"
-},
-{
-  "japanese": "情けは人の為ならず",
-  "romaji": "Nasake wa hito no tame narazu",
-  "english": "Kindness is not for others alone",
-  "meaning": "Kindness comes back to you"
-},
-{
-  "japanese": "雨後の筍",
-  "romaji": "Ugo no takenoko",
-  "english": "Bamboo shoots after rain",
-  "meaning": "Things spring up rapidly"
-},
-{
-  "japanese": "千里の道も一歩から",
-  "romaji": "Senri no michi mo ippo kara",
-  "english": "A journey of a thousand miles begins with one step",
-  "meaning": "Start small"
-},
-{
-  "japanese": "井の中の蛙大海を知らず",
-  "romaji": "I no naka no kawazu taikai wo shirazu",
-  "english": "A frog in a well doesn’t know the ocean",
-  "meaning": "Limited experience limits perspective"
-}
-,
-{
-  "japanese": "口は禍の元",
-  "romaji": "Kuchi wa wazawai no moto",
-  "english": "The mouth is the source of misfortune",
-  "meaning": "Careless words cause trouble"
-}
-,
-{
-  "japanese": "明日は明日の風が吹く",
-  "romaji": "Ashita wa ashita no kaze ga fuku",
-  "english": "Tomorrow’s wind will blow tomorrow",
-  "meaning": "Don’t worry too much about the future"
-},
-{
-  "japanese": "楽あれば苦あり",
-  "romaji": "Raku areba ku ari",
-  "english": "With comfort comes hardship",
-  "meaning": "Life has ups and downs"
-},
-{
-  "japanese": "見ぬが花",
-  "romaji": "Minu ga hana",
-  "english": "What you imagine is better than reality",
-  "meaning": "Things unseen often seem more beautiful than they really are"
-}
+    "japanese": "焼け石に水",
+    "romaji": "Yake ishi ni mizu",
+    "english": "Water on a hot stone",
+    "meaning": "A futile effort"
+  },
+  {
+    "japanese": "情けは人の為ならず",
+    "romaji": "Nasake wa hito no tame narazu",
+    "english": "Kindness is not for others alone",
+    "meaning": "Kindness comes back to you"
+  },
+  {
+    "japanese": "雨後の筍",
+    "romaji": "Ugo no takenoko",
+    "english": "Bamboo shoots after rain",
+    "meaning": "Things spring up rapidly"
+  },
+  {
+    "japanese": "千里の道も一歩から",
+    "romaji": "Senri no michi mo ippo kara",
+    "english": "A journey of a thousand miles begins with one step",
+    "meaning": "Start small"
+  },
+  {
+    "japanese": "井の中の蛙大海を知らず",
+    "romaji": "I no naka no kawazu taikai wo shirazu",
+    "english": "A frog in a well doesn’t know the ocean",
+    "meaning": "Limited experience limits perspective"
+  },
+  {
+    "japanese": "口は禍の元",
+    "romaji": "Kuchi wa wazawai no moto",
+    "english": "The mouth is the source of misfortune",
+    "meaning": "Careless words cause trouble"
+  },
+  {
+    "japanese": "明日は明日の風が吹く",
+    "romaji": "Ashita wa ashita no kaze ga fuku",
+    "english": "Tomorrow’s wind will blow tomorrow",
+    "meaning": "Don’t worry too much about the future"
+  },
+  {
+    "japanese": "楽あれば苦あり",
+    "romaji": "Raku areba ku ari",
+    "english": "With comfort comes hardship",
+    "meaning": "Life has ups and downs"
+  },
+  {
+    "japanese": "見ぬが花",
+    "romaji": "Minu ga hana",
+    "english": "What you imagine is better than reality",
+    "meaning": "Things unseen often seem more beautiful than they really are"
+  },
+  {
+    "japanese": "早起きは三文の得",
+    "romaji": "Hayaoki wa sanmon no toku",
+    "english": "Early rising is worth three coins",
+    "meaning": "Good things come from getting up early"
+  }
 ]
