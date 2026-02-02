@@ -323,7 +323,7 @@
   {
     "id": 44,
     "fact": "Japan has a unique 4-4-9 emergency number system: 110 for police, 119 for fire/ambulance, and 118 for coast guard emergencies.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 45,
