@@ -16,7 +16,8 @@
     "romaji": "Hana yori dango",
     "english": "Dumplings over flowers",
     "meaning": "Practical things are more valuable than aesthetic ones",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 3,
@@ -46,7 +47,7 @@
     "romaji": "Chiri mo tsumoreba yama to naru",
     "english": "Even dust, if piled up, becomes a mountain",
     "meaning": "Small efforts accumulate into great achievements",
-    "issued": false
+    "issued": true
   },
   {
     "id": 6,
