@@ -12,12 +12,13 @@
   {
     "id": 3,
     "text": "\"〜たい\" attaches to a verb stem to express \"want to do\" something.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 4,
     "text": "\"〜てもいいです\" means \"it's okay to\" and grants permission.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 5,
