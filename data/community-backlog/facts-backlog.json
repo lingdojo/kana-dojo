@@ -2,17 +2,19 @@
   {
     "id": 1,
     "fact": "Japan has a word 'kuchisabishii' (口寂しい) that literally means 'lonely mouth' - the feeling of eating when you're not hungry, just because your mouth wants something to do.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 2,
     "fact": "There's a Japanese practice called 'inemuri' (居眠り) - sleeping while present - where napping in public or at work is seen as a sign of dedication rather than laziness.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 3,
     "fact": "Japanese blood types are believed to determine personality, similar to zodiac signs in the West. Type A is organized, B is creative, O is confident, and AB is rational.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 4,
