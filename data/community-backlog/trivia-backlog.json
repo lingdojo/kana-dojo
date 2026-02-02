@@ -10,7 +10,8 @@
       "Kanazawa"
     ],
     "correctIndex": 1,
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 2,
@@ -23,7 +24,7 @@
       "Kairo"
     ],
     "correctIndex": 0,
-    "issued": false
+    "issued": true
   },
   {
     "id": 3,
