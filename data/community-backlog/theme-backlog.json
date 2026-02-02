@@ -36,7 +36,10 @@
     "backgroundColor": "oklch(95.0% 0.008 90.0 / 1)",
     "mainColor": "oklch(55.0% 0.220 25.0 / 1)",
     "secondaryColor": "oklch(45.0% 0.150 20.0 / 1)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "carolinesholar",
+    "completedPR": 3336
   },
   {
     "id": "thunder-temple",
