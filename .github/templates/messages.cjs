@@ -314,7 +314,7 @@ module.exports = {
     },
     animeQuote: {
       title:
-        '[Good First Issue] {emoji} Add Famous Anime Quote #{id} (good-first-issue)',
+        '[Good First Issue] {emoji} Add Famous Anime Quote {id} (good-first-issue)',
       header: '## 🎬 Add Famous Anime Quote',
       category: 'Community Contribution - Anime Quote',
       estimatedTime: '<1 min',

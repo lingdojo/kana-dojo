@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback } from 'react';
+import { motion } from 'framer-motion';
 import clsx from 'clsx';
 import { Link, useRouter } from '@/core/i18n/routing';
 import {
@@ -192,7 +193,7 @@ export default function PreGameScreen({
             return (
               <div className='space-y-3'>
                 <h3 className='text-sm text-[var(--main-color)]'>Difficulty</h3>
-                <div className='flex w-full justify-center gap-2 rounded-3xl border-0 border-[var(--border-color)] bg-[var(--card-color)] p-2'>
+                <div className='flex w-full justify-center gap-1 rounded-[22px] bg-[var(--card-color)] p-1.5'>
                   {(
                     Object.entries(DIFFICULTY_CONFIG) as [
                       GauntletDifficulty,
@@ -201,22 +202,32 @@ export default function PreGameScreen({
                   ).map(([key, config]) => {
                     const isSelected = key === difficulty;
                     return (
-                      <ActionButton
-                        key={key}
-                        onClick={() => handleDifficultyClick(key)}
-                        colorScheme={isSelected ? 'main' : undefined}
-                        borderColorScheme={isSelected ? 'main' : undefined}
-                        borderBottomThickness={isSelected ? 10 : 0}
-                        borderRadius='3xl'
-                        className={clsx(
-                          'flex-1 gap-1.5 px-4 py-2.5 text-sm',
-                          !isSelected &&
-                            'bg-transparent text-[var(--secondary-color)] hover:bg-[var(--border-color)]/50 hover:text-[var(--main-color)]',
+                      <div key={key} className='relative flex-1'>
+                        {/* Smooth sliding background indicator */}
+                        {isSelected && (
+                          <motion.div
+                            layoutId='activeDifficultyTab'
+                            className='absolute inset-0 rounded-2xl border-b-10 border-[var(--main-color-accent)] bg-[var(--main-color)]'
+                            transition={{
+                              type: 'spring',
+                              stiffness: 300,
+                              damping: 30,
+                            }}
+                          />
                         )}
-                      >
-                        {difficultyIcons[key]}
-                        <span>{config.label}</span>
-                      </ActionButton>
+                        <button
+                          onClick={() => handleDifficultyClick(key)}
+                          className={clsx(
+                            'relative z-10 flex w-full cursor-pointer items-center justify-center gap-1.5 rounded-2xl px-4 pt-3 pb-5 text-sm font-semibold transition-colors duration-300',
+                            isSelected
+                              ? 'text-[var(--background-color)]'
+                              : 'text-[var(--secondary-color)] hover:text-[var(--main-color)]',
+                          )}
+                        >
+                          {difficultyIcons[key]}
+                          <span>{config.label}</span>
+                        </button>
+                      </div>
                     );
                   })}
                 </div>

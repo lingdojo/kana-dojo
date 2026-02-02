@@ -1,13 +1,8 @@
 [
   {
-  "question": "Which Japanese festival features people throwing beans to drive away evil spirits?",
-  "difficulty": "medium",
-  "answers": [
-    "Setsubun",
-    "Obon",
-    "Tanabata",
-    "Shichi-Go-San"
-    ],
+    "question": "Which Japanese festival features people throwing beans to drive away evil spirits?",
+    "difficulty": "medium",
+    "answers": ["Setsubun", "Obon", "Tanabata", "Shichi-Go-San"],
     "correctIndex": 0
   },
   {
@@ -49,34 +44,60 @@
   {
     "question": "What is the Japanese term for a traditional inn?",
     "difficulty": "medium",
+    "answers": ["Ryokan", "Izakaya", "Minshuku", "Tateyama"],
+    "correctIndex": 0
+  },
+  {
+    "question": "What is the name of Japan's national public broadcaster?",
+    "difficulty": "medium",
+    "answers": ["NHK", "NHK World Japan", "Asahi", "Fuji TV"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which Japanese island is known for its active volcano Mount Aso?",
+    "difficulty": "medium",
+    "answers": ["Kyushu", "Honshu", "Shikoku", "Hokkaido"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which Japanese festival features floating lanterns on water?",
+    "difficulty": "medium",
+    "answers": ["Toro Nagashi", "Setsubun", "Tanabata", "Aoi Matsuri"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which Japanese beverage is made from roasted barley?",
+    "difficulty": "medium",
+    "answers": ["Mugicha", "Matcha", "Genmaicha", "Sencha"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which Japanese city hosted the 1998 Winter Olympics?",
+    "difficulty": "medium",
+    "answers": ["Nagano", "Sapporo", "Niigata", "Sendai"],
+    "correctIndex": 0
+  },
+  {
+    "question": "What is the Japanese term for a traditional tea ceremony?",
+    "difficulty": "medium",
     "answers": [
-      "Ryokan",
-      "Izakaya",
-      "Minshuku",
-      "Tateyama"
+      "Sado",
+      "Kado",
+      "Budo",
+      "Shodo"
     ],
     "correctIndex": 0
   },
   {
-  "question": "What is the name of Japan's national public broadcaster?",
-  "difficulty": "medium",
-  "answers": [
-    "NHK",
-    "NHK World Japan",
-    "Asahi",
-    "Fuji TV"
-  ],
-  "correctIndex": 0
-},
-{
-  "question": "Which Japanese island is known for its active volcano Mount Aso?",
-  "difficulty": "medium",
-  "answers": [
-    "Kyushu",
-    "Honshu",
-    "Shikoku",
-    "Hokkaido"
-  ],
-  "correctIndex": 0
-}
+    "question": "What is the name of Japan’s largest lake?",
+    "difficulty": "medium",
+    "answers": [
+      "Lake Biwa",
+      "Lake Towada",
+      "Lake Ashi",
+      "Lake Shinji"
+    ],
+    "correctIndex": 0
+  }
 ]
+

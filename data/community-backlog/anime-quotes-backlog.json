@@ -177,7 +177,10 @@
     "english": "But... that's what I like.",
     "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
     "character": "Yoshikage Kira",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "YakVash",
+    "completedPR": 2858
   },
   {
     "id": 17,
@@ -253,7 +256,10 @@
     "english": "Dance to my beautiful technique!",
     "anime": "The Prince of Tennis",
     "character": "Keigo Atobe",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "arushi-punhani",
+    "completedPR": 2877
   },
   {
     "id": 24,
@@ -310,7 +316,7 @@
     "english": "Fosh fosh fosh fosh.",
     "anime": "One Piece",
     "character": "Kozuki Sukiyaki",
-    "issued": false
+    "issued": true
   },
   {
     "id": 29,
@@ -331,7 +337,7 @@
     "english": "Shishishi!",
     "anime": "One Piece",
     "character": "Monkey D. Luffy",
-    "issued": true
+    "issued": false
   },
   {
     "id": 31,
@@ -382,7 +388,10 @@
     "english": "A lesson without pain is meaningless.",
     "anime": "Fullmetal Alchemist: Brotherhood",
     "character": "Edward Elric",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "wicked2112",
+    "completedPR": 2927
   },
   {
     "id": 36,
@@ -391,7 +400,10 @@
     "english": "I'll exterminate them! Every last one from this world!",
     "anime": "Attack on Titan",
     "character": "Eren Yeager",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "khaoticvs",
+    "completedPR": 2949
   },
   {
     "id": 37,
@@ -418,7 +430,10 @@
     "english": "Relax, I'm the strongest.",
     "anime": "Jujutsu Kaisen",
     "character": "Satoru Gojo",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "YakVash",
+    "completedPR": 3008
   },
   {
     "id": 40,
@@ -427,7 +442,10 @@
     "english": "All I want is to live a normal life.",
     "anime": "Chainsaw Man",
     "character": "Denji",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "marwa-eltayeb",
+    "completedPR": 3176
   },
   {
     "id": 41,
@@ -445,7 +463,10 @@
     "english": "I'm just a hero for fun.",
     "anime": "One Punch Man",
     "character": "Saitama",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "luminash18",
+    "completedPR": 3044
   },
   {
     "id": 43,
@@ -463,7 +484,10 @@
     "english": "I will become the god of the new world.",
     "anime": "Death Note",
     "character": "Light Yagami",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "Sujeev-Uthayakumar",
+    "completedPR": 3192
   },
   {
     "id": 45,

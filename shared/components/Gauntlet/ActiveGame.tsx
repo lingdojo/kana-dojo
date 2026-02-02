@@ -1,23 +1,213 @@
 'use client';
 
-import React, { useRef, useEffect } from 'react';
+import React, {
+  memo,
+  useRef,
+  useEffect,
+  useCallback,
+  useState,
+  useMemo,
+} from 'react';
 import clsx from 'clsx';
 import {
-  Heart,
-  HeartCrack,
-  X,
-  Flame,
-  SquareCheck,
-  SquareX,
-  MousePointerClick,
-  Keyboard,
-} from 'lucide-react';
-import { buttonBorderStyles } from '@/shared/lib/styles';
+  motion,
+  AnimatePresence,
+  type Variants,
+  type MotionStyle,
+} from 'framer-motion';
+import { Heart, HeartCrack, X } from 'lucide-react';
 import {
-  DIFFICULTY_CONFIG,
-  type GauntletDifficulty,
-  type GauntletGameMode,
-} from './types';
+  GameBottomBar,
+  type BottomBarState,
+} from '@/shared/components/Game/GameBottomBar';
+import Stars from '@/shared/components/Game/Stars';
+import ProgressBar from '@/shared/components/Game/ProgressBar';
+import { useClick } from '@/shared/hooks/useAudio';
+
+// Duolingo-like spring animation config
+const springConfig = {
+  type: 'spring' as const,
+  stiffness: 400,
+  damping: 30,
+  mass: 0.8,
+};
+
+// Premium entry animation variants for option tiles
+const tileContainerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.08,
+      delayChildren: 0.15,
+    },
+  },
+};
+
+const tileEntryVariants = {
+  hidden: {
+    opacity: 0,
+    scale: 0.7,
+    y: 20,
+    rotateX: -15,
+  },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    rotateX: 0,
+    transition: {
+      type: 'spring' as const,
+      stiffness: 350,
+      damping: 25,
+      mass: 0.8,
+    },
+  },
+};
+
+// Duolingo-like slide animation for game content transitions
+const gameContentVariants = {
+  hidden: {
+    opacity: 0,
+    x: 80,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      x: {
+        type: 'spring' as const,
+        stiffness: 350,
+        damping: 30,
+        mass: 0.7,
+      },
+      opacity: {
+        duration: 0.25,
+        ease: [0.0, 0.0, 0.2, 1] as [number, number, number, number],
+      },
+    },
+  },
+  exit: {
+    opacity: 0,
+    x: -80,
+    transition: {
+      x: {
+        type: 'spring' as const,
+        stiffness: 350,
+        damping: 30,
+        mass: 0.7,
+      },
+      opacity: {
+        duration: 0.25,
+        ease: [0.4, 0.0, 1, 1] as [number, number, number, number],
+      },
+    },
+  },
+};
+
+// Celebration bounce animation for correct answers
+const celebrationContainerVariants = {
+  idle: {},
+  celebrate: {
+    transition: {
+      staggerChildren: 0.18,
+      delayChildren: 0.08,
+    },
+  },
+};
+
+const celebrationBounceVariants = {
+  idle: {
+    y: 0,
+    scaleX: 1,
+    scaleY: 1,
+    opacity: 1,
+  },
+  celebrate: {
+    y: [0, -32, -35, 0, -10, 0],
+    scaleX: [1, 0.94, 0.96, 1.06, 0.98, 1],
+    scaleY: [1, 1.08, 1.04, 0.92, 1.02, 1],
+    opacity: [1, 1, 1, 1, 1, 1],
+    transition: {
+      duration: 1,
+      ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
+      times: [0, 0.25, 0.35, 0.6, 0.8, 1],
+    },
+  },
+};
+
+// Tile styles shared between active and blank tiles
+const tileBaseStyles =
+  'relative flex items-center justify-center rounded-3xl px-6 sm:px-8 py-3 border-b-10 transition-all duration-150';
+
+interface TileProps {
+  id: string;
+  char: string;
+  onClick: () => void;
+  isDisabled?: boolean;
+  tileSizeClass: string;
+  variants?: Variants;
+  motionStyle?: MotionStyle;
+}
+
+// Active tile - uses layoutId for smooth position animations
+const ActiveTile = memo(
+  ({
+    id,
+    char,
+    onClick,
+    isDisabled,
+    tileSizeClass,
+    variants,
+    motionStyle,
+  }: TileProps) => {
+    return (
+      <motion.button
+        layoutId={id}
+        layout='position'
+        type='button'
+        onClick={onClick}
+        disabled={isDisabled}
+        variants={variants}
+        className={clsx(
+          tileBaseStyles,
+          'cursor-pointer transition-colors',
+          'active:mb-[10px] active:translate-y-[10px] active:border-b-0',
+          'border-[var(--secondary-color-accent)] bg-[var(--secondary-color)] text-[var(--background-color)]',
+          isDisabled && 'cursor-not-allowed opacity-50',
+          // Kana tiles use text-2xl sm:text-3xl, Kanji/Vocab use larger for Japanese
+          tileSizeClass,
+        )}
+        transition={springConfig}
+        style={motionStyle}
+      >
+        {char}
+      </motion.button>
+    );
+  },
+);
+
+ActiveTile.displayName = 'ActiveTile';
+
+// Blank placeholder - no layoutId, just takes up space
+const BlankTile = memo(
+  ({ char, tileSizeClass }: { char: string; tileSizeClass: string }) => {
+    return (
+      <div
+        className={clsx(
+          tileBaseStyles,
+          'border-transparent bg-[var(--border-color)]/30',
+          'select-none',
+          // Kana tiles use text-2xl sm:text-3xl, Kanji/Vocab use larger for Japanese
+          tileSizeClass,
+        )}
+      >
+        <span className='opacity-0'>{char}</span>
+      </div>
+    );
+  },
+);
+
+BlankTile.displayName = 'BlankTile';
 
 interface ActiveGameProps<T> {
   // Dojo type for layout customization
@@ -30,30 +220,14 @@ interface ActiveGameProps<T> {
   // Lives
   lives: number;
   maxLives: number;
-  difficulty: GauntletDifficulty;
-  lifeJustGained: boolean;
-  lifeJustLost: boolean;
-
-  // Time
-  elapsedTime: number;
 
   // Question display
   currentQuestion: T | null;
   renderQuestion: (question: T, isReverse?: boolean) => React.ReactNode;
   isReverseActive: boolean;
 
-  // Game mode
-  gameMode: GauntletGameMode;
-  inputPlaceholder: string;
-  userAnswer: string;
-  setUserAnswer: (answer: string) => void;
-  onSubmit: (e?: React.FormEvent) => void;
-  getCorrectAnswer: (question: T, isReverse?: boolean) => string;
-
-  // Pick mode
+  // Pick mode options
   shuffledOptions: string[];
-  wrongSelectedAnswers: string[];
-  onOptionClick: (option: string) => void;
   renderOption?: (
     option: string,
     items: T[],
@@ -61,33 +235,16 @@ interface ActiveGameProps<T> {
   ) => React.ReactNode;
   items: T[];
 
-  // Feedback (kept for API compatibility but no longer displayed)
-  lastAnswerCorrect: boolean | null;
-  currentStreak: number;
-  correctSinceLastRegen: number;
-  regenThreshold: number;
+  // Answer handling
+  onSubmit: (selectedOption: string, isCorrect: boolean) => void;
+  getCorrectOption: (question: T, isReverse?: boolean) => string;
 
-  // Stats
-  correctAnswers: number;
-  wrongAnswers: number;
-
-  // Actions
+  // Navigation
   onCancel: () => void;
-}
 
-// Stat item component matching ReturnFromGame
-const StatItem = ({
-  icon: Icon,
-  value,
-}: {
-  icon: React.ElementType;
-  value: number;
-}) => (
-  <p className='flex flex-row items-center gap-1 text-xl'>
-    <Icon size={20} />
-    <span>{value}</span>
-  </p>
-);
+  // Unique key for the current question (to reset internal state)
+  questionKey: string;
+}
 
 export default function ActiveGame<T>({
   dojoType,
@@ -95,67 +252,148 @@ export default function ActiveGame<T>({
   totalQuestions,
   lives,
   maxLives,
-  difficulty,
-  elapsedTime: _elapsedTime,
   currentQuestion,
   renderQuestion,
   isReverseActive,
-  gameMode,
-  inputPlaceholder,
-  userAnswer,
-  setUserAnswer,
-  onSubmit,
-  getCorrectAnswer: _getCorrectAnswer,
   shuffledOptions,
-  wrongSelectedAnswers,
-  onOptionClick,
   renderOption,
   items,
-  lastAnswerCorrect: _lastAnswerCorrect,
-  currentStreak,
-  correctSinceLastRegen: _correctSinceLastRegen,
-  regenThreshold: _regenThreshold,
-  correctAnswers,
-  wrongAnswers,
+  onSubmit,
+  getCorrectOption,
   onCancel,
+  questionKey,
 }: ActiveGameProps<T>) {
-  const inputRef = useRef<HTMLInputElement>(null);
-  const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const { playClick } = useClick();
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
-  const progressPercent = Math.round((currentIndex / totalQuestions) * 100);
+  // Internal game state - reset when question changes
+  const [placedTiles, setPlacedTiles] = useState<string[]>([]);
+  const [bottomBarState, setBottomBarState] = useState<BottomBarState>('check');
+  const [isChecking, setIsChecking] = useState(false);
+  const [isCelebrating, setIsCelebrating] = useState(false);
 
-  // Focus input for Type mode
+  // Reset state when question changes
   useEffect(() => {
-    if (gameMode === 'Type' && inputRef.current) {
-      inputRef.current.focus();
-    }
-  }, [currentQuestion, gameMode]);
+    setPlacedTiles([]);
+    setBottomBarState('check');
+    setIsChecking(false);
+    setIsCelebrating(false);
+  }, [questionKey]);
 
-  // Keyboard shortcuts for Pick mode (1, 2, 3 keys)
+  // Keyboard shortcut for Enter/Space to trigger button
   useEffect(() => {
-    if (gameMode !== 'Pick') return;
-
     const handleKeyDown = (event: KeyboardEvent) => {
-      const keyMap: Record<string, number> = {
-        Digit1: 0,
-        Digit2: 1,
-        Digit3: 2,
-        Numpad1: 0,
-        Numpad2: 1,
-        Numpad3: 2,
-      };
-      const index = keyMap[event.code];
-      if (index !== undefined && index < shuffledOptions.length) {
-        buttonRefs.current[index]?.click();
+      if (
+        event.key === 'Enter' ||
+        event.code === 'Space' ||
+        event.key === ' '
+      ) {
+        buttonRef.current?.click();
       }
     };
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [gameMode, shuffledOptions.length]);
+  }, []);
 
-  // Get game mode icon
-  const ModeIcon = gameMode === 'Pick' ? MousePointerClick : Keyboard;
+  // Get correct answer for current question
+  const correctAnswer = useMemo(() => {
+    if (!currentQuestion) return '';
+    return getCorrectOption(currentQuestion, isReverseActive);
+  }, [currentQuestion, getCorrectOption, isReverseActive]);
+
+  // Handle Check button
+  const handleCheck = useCallback(() => {
+    if (placedTiles.length === 0 || !currentQuestion) return;
+
+    playClick();
+    setIsChecking(true);
+
+    // Correct if exactly one tile placed and it matches the correct answer
+    const isCorrect =
+      placedTiles.length === 1 && placedTiles[0] === correctAnswer;
+
+    if (isCorrect) {
+      setBottomBarState('correct');
+      setIsCelebrating(true);
+    } else {
+      setBottomBarState('wrong');
+    }
+  }, [placedTiles, currentQuestion, playClick, correctAnswer]);
+
+  // Handle Continue/Next button (auto-advance regardless of correctness)
+  const handleContinue = useCallback(() => {
+    playClick();
+
+    // Determine if was correct or wrong for parent callback
+    const wasCorrect =
+      placedTiles.length === 1 && placedTiles[0] === correctAnswer;
+
+    // Call parent with selected option and result
+    onSubmit(placedTiles[0] || '', wasCorrect);
+  }, [playClick, placedTiles, correctAnswer, onSubmit]);
+
+  // Handle tile click - add or remove from placed tiles
+  const handleTileClick = useCallback(
+    (char: string) => {
+      if (isChecking && bottomBarState !== 'wrong') return;
+
+      playClick();
+
+      // If already in a checked state, clicking a tile restarts checking
+      if (bottomBarState !== 'check') {
+        setIsChecking(false);
+        setBottomBarState('check');
+        setIsCelebrating(false);
+      }
+
+      // Toggle tile in placed tiles array
+      if (placedTiles.includes(char)) {
+        setPlacedTiles(prev => prev.filter(c => c !== char));
+      } else {
+        setPlacedTiles(prev => [...prev, char]);
+      }
+    },
+    [isChecking, bottomBarState, placedTiles, playClick],
+  );
+
+  // Not enough data to render
+  if (!currentQuestion) {
+    return null;
+  }
+
+  const canCheck = placedTiles.length > 0 && !isChecking;
+  const showContinue = bottomBarState === 'correct';
+  const showTryAgain = bottomBarState === 'wrong';
+
+  // Sizing classes based on dojoType (matching exact sizes from each WordBuildingGame)
+  // Kana: tiles text-2xl sm:text-3xl, question text-7xl sm:text-8xl
+  // Kanji: tiles text-3xl/4xl (kanji) or text-xl/2xl (meaning), question text-8xl/9xl
+  // Vocab: tiles text-3xl/4xl (japanese) or text-xl/2xl (meaning), question text-6xl/8xl
+  const tileSizeClass =
+    dojoType === 'kana'
+      ? 'text-2xl sm:text-3xl' // Kana tiles are always this size
+      : isReverseActive
+        ? 'text-3xl sm:text-4xl' // Kanji/Vocab in reverse: Japanese tiles
+        : 'text-xl sm:text-2xl'; // Kanji/Vocab normal: meaning tiles
+
+  const questionSizeClass =
+    dojoType === 'kana'
+      ? 'text-7xl sm:text-8xl' // Kana question
+      : dojoType === 'kanji'
+        ? isReverseActive
+          ? 'text-5xl sm:text-6xl' // Kanji reverse (showing meaning)
+          : 'text-8xl sm:text-9xl' // Kanji normal (showing kanji)
+        : isReverseActive
+          ? 'text-5xl sm:text-6xl' // Vocab reverse (showing meaning)
+          : 'text-6xl sm:text-8xl'; // Vocab normal (showing word)
+
+  const answerRowMinHeight =
+    dojoType === 'kana'
+      ? 'min-h-[5rem]'
+      : isReverseActive
+        ? 'min-h-[5.5rem]'
+        : 'min-h-[5rem]';
 
   return (
     <div
@@ -163,234 +401,187 @@ export default function ActiveGame<T>({
         'flex min-h-[100dvh] flex-col items-center px-4 pt-4 md:pt-8',
       )}
     >
-      {/* Header section - matching ReturnFromGame layout */}
-      <div className='flex w-full flex-col md:w-2/3 lg:w-1/2'>
-        {/* Row 1: Exit button, Progress bar, Lives */}
-        <div className='flex w-full flex-row items-center justify-between gap-4 md:gap-6'>
-          {/* Exit Button */}
-          <button
-            onClick={onCancel}
-            className='text-[var(--border-color)] duration-250 hover:cursor-pointer hover:text-[var(--secondary-color)]'
-          >
-            <X size={32} />
-          </button>
+      {/* Minimal Header - Exit, Progress, and Lives only */}
+      <div className='flex w-full flex-row items-center justify-between gap-4 md:w-2/3 md:gap-6 lg:w-1/2'>
+        {/* Exit Button */}
+        <button
+          onClick={onCancel}
+          className='text-[var(--border-color)] duration-250 hover:cursor-pointer hover:text-[var(--secondary-color)]'
+        >
+          <X size={32} />
+        </button>
 
-          {/* Progress Bar - Gauntlet specific with percentage */}
-          <div className='flex flex-1 flex-col gap-1'>
-            <div className='h-3 w-full overflow-hidden rounded-full bg-[var(--card-color)]'>
-              <div
-                className='h-3 rounded-full bg-[var(--main-color)] transition-all duration-300'
-                style={{ width: `${progressPercent}%` }}
-              />
-            </div>
-            <div className='flex justify-between text-xs text-[var(--muted-color)]'>
-              <span>
-                {currentIndex + 1} / {totalQuestions}
-              </span>
-              <span>{progressPercent}%</span>
-            </div>
-          </div>
-
-          {/* Lives Display */}
-          <div className='flex items-center gap-1'>
-            {Array.from({ length: maxLives }).map((_, i) => {
-              const hasLife = i < lives;
-              return (
-                <div key={i}>
-                  {hasLife ? (
-                    <Heart
-                      size={24}
-                      className='fill-[var(--main-color)] text-[var(--main-color)]'
-                    />
-                  ) : (
-                    <HeartCrack
-                      size={24}
-                      className='text-[var(--border-color)]'
-                    />
-                  )}
-                </div>
-              );
-            })}
-          </div>
+        {/* Progress Display */}
+        <div className='flex items-center gap-2 text-sm text-[var(--muted-color)]'>
+          <span>
+            {currentIndex + 1} / {totalQuestions}
+          </span>
         </div>
 
-        {/* Row 2: Game mode and stats - matching ReturnFromGame exactly */}
-        <div className='flex w-full flex-row items-center'>
-          {/* Game mode indicator */}
-          <p className='flex w-1/2 items-center justify-start gap-1 text-lg sm:gap-2 sm:pl-1 md:text-xl'>
-            <ModeIcon className='text-[var(--main-color)]' />
-            <span className='text-[var(--secondary-color)]'>
-              {gameMode.toLowerCase()}
-            </span>
-          </p>
-
-          {/* Stats display - matching ReturnFromGame */}
-          <div className='flex w-1/2 flex-row items-center justify-end gap-1.5 py-2 text-[var(--secondary-color)] sm:gap-2 md:gap-3'>
-            <StatItem icon={SquareCheck} value={correctAnswers} />
-            <StatItem icon={SquareX} value={wrongAnswers} />
-            <StatItem icon={Flame} value={currentStreak} />
-          </div>
+        {/* Lives Display */}
+        <div className='flex items-center gap-1'>
+          {Array.from({ length: maxLives }).map((_, i) => {
+            const hasLife = i < lives;
+            return (
+              <div key={i}>
+                {hasLife ? (
+                  <Heart
+                    size={24}
+                    className='fill-[var(--main-color)] text-[var(--main-color)]'
+                  />
+                ) : (
+                  <HeartCrack
+                    size={24}
+                    className='text-[var(--border-color)]'
+                  />
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
 
-      {/* Main game area - centered with proper spacing */}
-      <div className='flex w-full flex-1 flex-col items-center gap-8 sm:w-4/5 sm:gap-10'>
-        {/* Question Display - matching Classic game layout */}
-        <div className='flex flex-row items-center justify-center gap-1'>
-          <p className='text-8xl font-medium sm:text-9xl'>
-            {currentQuestion &&
-              renderQuestion(currentQuestion, isReverseActive)}
-          </p>
-        </div>
+      {/* Progress Bar */}
+      <div className='mt-4 w-full md:w-2/3 lg:w-1/2'>
+        <ProgressBar />
+      </div>
 
-        {/* Answer Area - layout based on dojoType and gameMode */}
-        {gameMode === 'Type' ? (
-          /* Type mode - same for all dojos */
-          <form
-            onSubmit={onSubmit}
-            className='flex w-full max-w-lg flex-col items-center gap-4'
+      {/* Main Game Area - EXACTLY matching WordBuildingGame */}
+      <div className='mt-8 flex w-full flex-col items-center gap-6 sm:mt-12 sm:w-4/5 sm:gap-10'>
+        <AnimatePresence mode='wait'>
+          <motion.div
+            key={questionKey}
+            variants={gameContentVariants}
+            initial='hidden'
+            animate='visible'
+            exit='exit'
+            className='flex w-full flex-col items-center gap-6 sm:gap-10'
           >
-            <input
-              ref={inputRef}
-              type='text'
-              value={userAnswer}
-              onChange={e => setUserAnswer(e.target.value)}
-              placeholder={inputPlaceholder}
-              className={clsx(
-                'w-full text-center text-2xl lg:text-4xl',
-                'border-b-2 bg-transparent pb-2 outline-none',
-                'text-[var(--secondary-color)]',
-                'border-[var(--border-color)] focus:border-[var(--main-color)]',
-              )}
-              autoComplete='off'
-              autoCorrect='off'
-              autoCapitalize='off'
-              spellCheck='false'
-            />
-            <button
-              type='submit'
-              disabled={!userAnswer.trim()}
-              className={clsx(
-                'flex h-12 w-full flex-row items-center justify-center gap-2 px-6',
-                'rounded-2xl transition-colors duration-200',
-                'border-b-6 font-medium shadow-sm',
-                userAnswer.trim()
-                  ? 'border-[var(--main-color-accent)] bg-[var(--main-color)] text-[var(--background-color)] hover:cursor-pointer'
-                  : 'cursor-not-allowed border-[var(--border-color)] bg-[var(--card-color)] text-[var(--border-color)]',
-              )}
-            >
-              Submit
-            </button>
-          </form>
-        ) : dojoType === 'kana' ? (
-          /* Kana Pick mode - horizontal row layout matching Kana/Pick.tsx */
-          <div className='flex w-full flex-row gap-5 sm:justify-evenly sm:gap-0'>
-            {shuffledOptions.map((option, i) => {
-              const isWrong = wrongSelectedAnswers.includes(option);
-              return (
-                <button
-                  ref={elem => {
-                    buttonRefs.current[i] = elem;
-                  }}
-                  key={option + i}
-                  type='button'
-                  disabled={isWrong}
-                  className={clsx(
-                    'relative flex w-full flex-row items-center justify-center gap-1 pt-3 pb-6 text-5xl font-semibold sm:w-1/5',
-                    buttonBorderStyles,
-                    'border-b-4',
-                    isWrong &&
-                      'border-[var(--border-color)] text-[var(--border-color)] hover:border-[var(--border-color)] hover:bg-[var(--card-color)]',
-                    !isWrong &&
-                      'border-[var(--secondary-color)]/50 text-[var(--secondary-color)] hover:border-[var(--secondary-color)]',
-                  )}
-                  onClick={() => onOptionClick(option)}
-                  lang={isReverseActive ? 'ja' : undefined}
+            {/* Question Display */}
+            <div className='flex flex-row items-center gap-1'>
+              <motion.div
+                className={questionSizeClass}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+              >
+                {renderQuestion(currentQuestion, isReverseActive)}
+              </motion.div>
+            </div>
+
+            {/* Answer Row Area - shows placed tiles */}
+            <div className='flex w-full flex-col items-center'>
+              <div
+                className={clsx(
+                  'flex w-full items-center border-b-2 border-[var(--border-color)] px-2 pb-2 md:w-3/4 lg:w-2/3 xl:w-1/2',
+                  answerRowMinHeight,
+                )}
+              >
+                <motion.div
+                  className='flex flex-row flex-wrap justify-start gap-3'
+                  variants={celebrationContainerVariants}
+                  initial='idle'
+                  animate={isCelebrating ? 'celebrate' : 'idle'}
                 >
-                  <span>
-                    {renderOption
-                      ? renderOption(option, items, isReverseActive)
-                      : option}
-                  </span>
-                  <span
-                    className={clsx(
-                      'absolute top-1/2 right-4 hidden h-5 min-w-5 -translate-y-1/2 items-center justify-center rounded-full bg-[var(--border-color)] px-1 text-xs leading-none lg:inline-flex',
-                      isWrong
-                        ? 'text-[var(--border-color)]'
-                        : 'text-[var(--secondary-color)]',
-                    )}
+                  {/* Render placed tiles in the answer row */}
+                  {placedTiles.map(char => {
+                    // Get display text - use renderOption if available
+                    const displayChar = renderOption
+                      ? String(renderOption(char, items, isReverseActive))
+                      : char;
+                    return (
+                      <ActiveTile
+                        key={`answer-tile-${char}`}
+                        id={`tile-${char}`}
+                        char={displayChar}
+                        onClick={() => handleTileClick(char)}
+                        isDisabled={isChecking && bottomBarState !== 'wrong'}
+                        tileSizeClass={tileSizeClass}
+                        variants={celebrationBounceVariants}
+                        motionStyle={{ transformOrigin: '50% 100%' }}
+                      />
+                    );
+                  })}
+                </motion.div>
+              </div>
+            </div>
+
+            {/* Available Tiles - 2 rows */}
+            {(() => {
+              const tilesPerRow = 2;
+              const topRowTiles = shuffledOptions.slice(0, tilesPerRow);
+              const bottomRowTiles = shuffledOptions.slice(tilesPerRow);
+
+              const renderTile = (option: string) => {
+                const isPlaced = placedTiles.includes(option);
+                // Get display text - use renderOption if available
+                const displayChar = renderOption
+                  ? String(renderOption(option, items, isReverseActive))
+                  : option;
+
+                return (
+                  <motion.div
+                    key={`tile-slot-${option}`}
+                    className='relative'
+                    variants={tileEntryVariants}
+                    style={{ perspective: 1000 }}
                   >
-                    {i + 1}
-                  </span>
-                </button>
-              );
-            })}
-          </div>
-        ) : (
-          /* Kanji/Vocabulary Pick mode - vertical stacked layout matching their Pick.tsx */
-          <div
-            className={clsx(
-              'flex w-full flex-col items-center gap-6',
-              dojoType === 'kanji' &&
-                isReverseActive &&
-                'md:flex-row md:justify-evenly',
-            )}
-          >
-            {shuffledOptions.map((option, i) => {
-              const isWrong = wrongSelectedAnswers.includes(option);
-              return (
-                <button
-                  ref={elem => {
-                    buttonRefs.current[i] = elem;
-                  }}
-                  key={option + i}
-                  type='button'
-                  disabled={isWrong}
-                  className={clsx(
-                    'flex flex-row items-center gap-1.5 rounded-xl py-5',
-                    buttonBorderStyles,
-                    'active:scale-95 active:duration-200 md:active:scale-98',
-                    'border-b-4',
-                    // Width and alignment based on dojo and mode
-                    dojoType === 'kanji' && isReverseActive
-                      ? 'w-full justify-center text-5xl md:w-1/4 lg:w-1/5'
-                      : 'w-full justify-start pl-8 text-3xl md:w-1/2 md:text-4xl',
-                    // Colors
-                    isWrong &&
-                      'border-[var(--border-color)] text-[var(--border-color)] hover:border-[var(--border-color)] hover:bg-[var(--card-color)]',
-                    !isWrong &&
-                      'border-[var(--secondary-color)]/50 text-[var(--secondary-color)] hover:border-[var(--secondary-color)]',
-                  )}
-                  onClick={() => onOptionClick(option)}
-                  lang={isReverseActive ? 'ja' : undefined}
+                    {/* Blank tile underneath */}
+                    <BlankTile
+                      char={displayChar}
+                      tileSizeClass={tileSizeClass}
+                    />
+
+                    {/* Active tile on top when NOT placed */}
+                    {!isPlaced && (
+                      <div className='absolute inset-0 z-10'>
+                        <ActiveTile
+                          id={`tile-${option}`}
+                          char={displayChar}
+                          onClick={() => handleTileClick(option)}
+                          isDisabled={isChecking && bottomBarState !== 'wrong'}
+                          tileSizeClass={tileSizeClass}
+                        />
+                      </div>
+                    )}
+                  </motion.div>
+                );
+              };
+
+              return shuffledOptions.length > 0 ? (
+                <motion.div
+                  className='flex flex-col items-center gap-3 sm:gap-4'
+                  variants={tileContainerVariants}
+                  initial='hidden'
+                  animate='visible'
                 >
-                  <span
-                    className={clsx(
-                      dojoType === 'kanji' && isReverseActive
-                        ? ''
-                        : 'flex-1 text-left',
-                    )}
-                  >
-                    {renderOption
-                      ? renderOption(option, items, isReverseActive)
-                      : option}
-                  </span>
-                  <span
-                    className={clsx(
-                      'hidden rounded-full bg-[var(--border-color)] px-1 text-xs lg:inline',
-                      dojoType === 'kanji' && isReverseActive ? '' : 'mr-4',
-                      isWrong
-                        ? 'text-[var(--border-color)]'
-                        : 'text-[var(--secondary-color)]',
-                    )}
-                  >
-                    {i + 1}
-                  </span>
-                </button>
-              );
-            })}
-          </div>
-        )}
+                  <motion.div className='flex flex-row justify-center gap-3 sm:gap-4'>
+                    {topRowTiles.map(option => renderTile(option))}
+                  </motion.div>
+                  {bottomRowTiles.length > 0 && (
+                    <motion.div className='flex flex-row justify-center gap-3 sm:gap-4'>
+                      {bottomRowTiles.map(option => renderTile(option))}
+                    </motion.div>
+                  )}
+                </motion.div>
+              ) : null;
+            })()}
+          </motion.div>
+        </AnimatePresence>
+
+        <Stars />
+
+        <GameBottomBar
+          state={bottomBarState}
+          onAction={showContinue || showTryAgain ? handleContinue : handleCheck}
+          canCheck={canCheck}
+          feedbackTitle={showContinue ? 'Correct!' : 'Wrong!'}
+          feedbackContent=''
+          buttonRef={buttonRef}
+          actionLabel={showContinue ? 'next' : showTryAgain ? 'next' : 'check'}
+        />
+
+        {/* Spacer */}
+        <div className='h-32' />
       </div>
     </div>
   );
