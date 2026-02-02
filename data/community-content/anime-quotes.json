@@ -21,57 +21,66 @@
     "character": "Edward Elric"
   },
   {
-  "japanese": "大丈夫、僕最強だから",
-  "romaji": "Daijoubu, boku saikyou dakara",
-  "english": "Relax, I'm the strongest.",
-  "anime": "Jujutsu Kaisen",
-  "character": "Satoru Gojo"
+    "japanese": "大丈夫、僕最強だから",
+    "romaji": "Daijoubu, boku saikyou dakara",
+    "english": "Relax, I'm the strongest.",
+    "anime": "Jujutsu Kaisen",
+    "character": "Satoru Gojo"
   },
   {
-  "japanese": "俺は趣味でヒーローをやっている者だ",
-  "romaji": "Ore wa shumi de hiiroo o yatte iru mono da",
-  "english": "I'm just a hero for fun.",
-  "anime": "One Punch Man",
-  "character": "Saitama"},{
-  "japanese": "貴様ッ！見ているなッ！！",
-  "romaji": "Kisama! Mite iru na!!",
-  "english": "You! You're watching me!",
-  "anime": "JoJo's Bizarre Adventure: Stone Ocean",
-  "character": "Jolyne Cujoh"
-},
-{
-  "japanese": "レロレロレロレロ",
-  "romaji": "Rero rero rero rero",
-  "english": "Rero rero rero rero.",
-  "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
-  "character": "Noriaki Kakyoin"
-},
-{
-  "japanese": "守るものがある限り、俺は負けない",
-  "romaji": "Mamoru mono ga aru kagiri, ore wa makenai",
-  "english": "As long as I have something to protect, I won't lose.",
-  "anime": "Bleach",
-  "character": "Ichigo Kurosaki"
-},
-{
-  "japanese": "本気を出す時が来たようだ",
-  "romaji": "Honki wo dasu toki ga kita you da",
-  "english": "It looks like it's time to get serious.",
-  "anime": "My Hero Academia",
-  "character": "All Might"
-},
-{
-  "japanese": "普通の生活がしたいだけなんだ",
-  "romaji": "Futsuu no seikatsu ga shitai dake nanda",
-  "english": "All I want is to live a normal life.",
-  "anime": "Chainsaw Man",
-  "character": "Denji"
-},
-{
-  "japanese": "僕は新世界の神となる",
-  "romaji": "Boku wa shin sekai no kami to naru",
-  "english": "I will become the god of the new world.",
-  "anime": "Death Note",
-  "character": "Light Yagami"
-}
+    "japanese": "俺は趣味でヒーローをやっている者だ",
+    "romaji": "Ore wa shumi de hiiroo o yatte iru mono da",
+    "english": "I'm just a hero for fun.",
+    "anime": "One Punch Man",
+    "character": "Saitama"
+  },
+  {
+    "japanese": "貴様ッ！見ているなッ！！",
+    "romaji": "Kisama! Mite iru na!!",
+    "english": "You! You're watching me!",
+    "anime": "JoJo's Bizarre Adventure: Stone Ocean",
+    "character": "Jolyne Cujoh"
+  },
+  {
+    "japanese": "レロレロレロレロ",
+    "romaji": "Rero rero rero rero",
+    "english": "Rero rero rero rero.",
+    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+    "character": "Noriaki Kakyoin"
+  },
+  {
+    "japanese": "守るものがある限り、俺は負けない",
+    "romaji": "Mamoru mono ga aru kagiri, ore wa makenai",
+    "english": "As long as I have something to protect, I won't lose.",
+    "anime": "Bleach",
+    "character": "Ichigo Kurosaki"
+  },
+  {
+    "japanese": "本気を出す時が来たようだ",
+    "romaji": "Honki wo dasu toki ga kita you da",
+    "english": "It looks like it's time to get serious.",
+    "anime": "My Hero Academia",
+    "character": "All Might"
+  },
+  {
+    "japanese": "普通の生活がしたいだけなんだ",
+    "romaji": "Futsuu no seikatsu ga shitai dake nanda",
+    "english": "All I want is to live a normal life.",
+    "anime": "Chainsaw Man",
+    "character": "Denji"
+  },
+  {
+    "japanese": "僕は新世界の神となる",
+    "romaji": "Boku wa shin sekai no kami to naru",
+    "english": "I will become the god of the new world.",
+    "anime": "Death Note",
+    "character": "Light Yagami"
+  },
+  {
+    "japanese": "次にお前は「やれやれだぜ」と言う！",
+    "romaji": "Tsugi ni omae wa 'yare yare da ze' to iu!",
+    "english": "Next you'll say, 'Good grief!'",
+    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+    "character": "Joseph Joestar"
+  }
 ]
