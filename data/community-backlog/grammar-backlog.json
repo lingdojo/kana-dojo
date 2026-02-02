@@ -33,12 +33,13 @@
   {
     "id": 7,
     "text": "\"〜たことがある\" expresses past experience, like \"have done\" something before.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 8,
     "text": "\"〜てしまう\" can show completion or regret about an action.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 9,
