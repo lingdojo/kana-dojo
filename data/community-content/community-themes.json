@@ -35,10 +35,18 @@
     "mainColor": "oklch(82.0% 0.155 95.0 / 1)",
     "secondaryColor": "oklch(62.0% 0.085 55.0 / 1)"
   },
-  {
+    {
     "id": "bamboo-shadow",
     "backgroundColor": "oklch(18.0% 0.040 150.0 / 1)",
     "mainColor": "oklch(72.0% 0.135 145.0 / 1)",
     "secondaryColor": "oklch(60.0% 0.090 135.0 / 1)"
+  },
+  {
+    "id": "ink-wash",
+    "backgroundColor": "oklch(96.0% 0.006 90.0 / 1)",
+    "mainColor": "oklch(30.0% 0.015 260.0 / 1)",
+    "secondaryColor": "oklch(55.0% 0.020 260.0 / 1)"
   }
 ]
+
+
