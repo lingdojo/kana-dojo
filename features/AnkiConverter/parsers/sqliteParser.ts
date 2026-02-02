@@ -7,7 +7,7 @@
  * @module features/AnkiConverter/parsers/sqliteParser
  */
 
-import initSqlJs, { type Database, type SqlJsStatic } from 'sql.js';
+import type { Database, SqlJsStatic } from 'sql.js';
 import type {
   ParsedAnkiData,
   Note,
@@ -93,12 +93,13 @@ interface RawColData {
 let sqlPromise: Promise<SqlJsStatic> | null = null;
 
 /**
- * Detect if we're running in a browser environment
+ * Detect if we're running in a web environment (browser or web worker)
  */
 function isBrowser(): boolean {
-  return (
-    typeof window !== 'undefined' && typeof window.document !== 'undefined'
-  );
+  const isNode =
+    typeof process !== 'undefined' &&
+    typeof process.versions?.node !== 'undefined';
+  return !isNode;
 }
 
 /**
@@ -108,7 +109,18 @@ async function getSqlJs(): Promise<SqlJsStatic> {
   if (!sqlPromise) {
     sqlPromise = (async () => {
       try {
-        if (isBrowser()) {
+        const initSqlJs = (await import('sql.js')).default;
+        const isWeb = isBrowser();
+
+        if (
+          isWeb &&
+          typeof window === 'undefined' &&
+          typeof self !== 'undefined'
+        ) {
+          (self as unknown as { window?: unknown }).window = self;
+        }
+
+        if (isWeb) {
           // Browser: use CDN for WASM file
           return await initSqlJs({
             locateFile: (file: string) => `https://sql.js.org/dist/${file}`,

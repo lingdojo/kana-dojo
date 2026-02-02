@@ -17,6 +17,7 @@ import type {
 import type { ConversionOptions, ProgressEvent } from '../../types';
 import { ConversionError, ErrorCode } from '../../types';
 import { createConversionPipeline } from '../conversionPipeline';
+import { detectFormatFromExtension } from '../formatDetection';
 
 // Track active conversions for cancellation
 const activeConversions = new Map<string, AbortController>();
@@ -43,6 +44,17 @@ async function handleConvert(
 
   try {
     const pipeline = createConversionPipeline();
+    const normalizedOptions = { ...options };
+
+    if (
+      (!normalizedOptions.format || normalizedOptions.format === 'auto') &&
+      filename
+    ) {
+      const inferredFormat = detectFormatFromExtension(filename);
+      if (inferredFormat !== 'unknown') {
+        normalizedOptions.format = inferredFormat;
+      }
+    }
 
     // Forward progress events to main thread
     pipeline.on('progress', (event: ProgressEvent) => {
@@ -64,7 +76,7 @@ async function handleConvert(
     });
 
     // Run conversion
-    const result = await pipeline.convert(buffer, options);
+    const result = await pipeline.convert(buffer, normalizedOptions);
 
     // Check if cancelled before sending result
     if (abortController.signal.aborted) {

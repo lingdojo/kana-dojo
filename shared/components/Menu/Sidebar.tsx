@@ -111,6 +111,8 @@ type NavLinkProps = {
   variant: 'main' | 'secondary';
   /** When true, uses framer-motion sliding indicator behind nav item */
   useSlidingIndicator?: boolean;
+  /** When true, uses smaller font size for experiment items */
+  isExperiment?: boolean;
 };
 
 const NavLink = memo(
@@ -120,13 +122,14 @@ const NavLink = memo(
     onClick,
     variant,
     useSlidingIndicator = false,
+    isExperiment = false,
   }: NavLinkProps) => {
     const Icon = item.icon;
     const isMain = variant === 'main';
 
     const baseClasses = clsx(
       'flex items-center gap-2 rounded-2xl transition-all duration-250',
-      isMain ? 'text-2xl' : 'text-base',
+      isMain ? 'text-2xl' : isExperiment ? 'text-sm' : 'text-base',
       'max-lg:justify-center max-lg:px-3 max-lg:py-2 lg:w-full lg:px-4 lg:py-2',
       !isMain && 'max-lg:hidden',
     );
@@ -177,39 +180,41 @@ const NavLink = memo(
         : 'max-lg:py-2 lg:py-2';
 
       return (
-        <div className='relative lg:w-full'>
-          {/* Sliding indicator - smooth spring animation */}
-          {isActive && (
-            <motion.div
-              layoutId='sidebar-nav-indicator'
-              className={indicatorClasses}
-              transition={{
-                type: 'spring',
-                stiffness: 300,
-                damping: 30,
-              }}
-            />
-          )}
-          <Link
-            href={item.href}
-            prefetch
-            onClick={onClick}
-            className={clsx(
-              'relative z-10 flex items-center gap-2 rounded-2xl',
-              isMain ? 'text-2xl' : 'text-base',
-              'max-lg:justify-center max-lg:px-3 lg:w-full lg:px-4',
-              paddingClasses,
-              !isMain && 'max-lg:hidden',
-              isActive
-                ? activeTextClass
-                : 'text-(--secondary-color) hover:bg-(--card-color)',
+        <div className={!isMain ? 'lg:-mt-1' : undefined}>
+          <div className='relative lg:w-full'>
+            {/* Sliding indicator - smooth spring animation */}
+            {isActive && (
+              <motion.div
+                layoutId='sidebar-nav-indicator'
+                className={indicatorClasses}
+                transition={{
+                  type: 'spring',
+                  stiffness: 300,
+                  damping: 30,
+                }}
+              />
             )}
-          >
-            {renderIcon()}
-            <span className={isMain ? 'max-lg:hidden' : undefined}>
-              {item.label}
-            </span>
-          </Link>
+            <Link
+              href={item.href}
+              prefetch
+              onClick={onClick}
+              className={clsx(
+                'relative z-10 flex items-center gap-2 rounded-2xl',
+                isMain ? 'text-2xl' : isExperiment ? 'text-sm' : 'text-base',
+                'max-lg:justify-center max-lg:px-3 lg:w-full lg:px-4',
+                paddingClasses,
+                !isMain && 'max-lg:hidden',
+                isActive
+                  ? activeTextClass
+                  : 'text-(--secondary-color) hover:bg-(--card-color)',
+              )}
+            >
+              {renderIcon()}
+              <span className={isMain ? 'max-lg:hidden' : undefined}>
+                {item.label}
+              </span>
+            </Link>
+          </div>
         </div>
       );
     }
@@ -217,47 +222,51 @@ const NavLink = memo(
     // Active state with ActionButton style (non-sliding)
     if (isActive && USE_ACTION_BUTTON_STYLE) {
       return (
-        <Link
-          href={item.href}
-          prefetch
-          onClick={onClick}
-          className='w-full max-lg:contents'
-        >
-          <ActionButton
-            borderBottomThickness={6}
-            borderRadius='xl'
-            className={clsx(
-              'flex items-center gap-2',
-              isMain ? 'text-2xl' : 'text-base',
-              'max-lg:justify-center max-lg:px-3 max-lg:py-2 lg:w-full lg:px-4 lg:py-2',
-              !isMain && 'max-lg:hidden',
-            )}
+        <div className={!isMain ? 'lg:-mt-1' : undefined}>
+          <Link
+            href={item.href}
+            prefetch
+            onClick={onClick}
+            className='w-full max-lg:contents'
           >
-            {renderIcon()}
-            <span className={isMain ? 'max-lg:hidden' : undefined}>
-              {item.label}
-            </span>
-          </ActionButton>
-        </Link>
+            <ActionButton
+              borderBottomThickness={6}
+              borderRadius='xl'
+              className={clsx(
+                'flex items-center gap-2',
+                isMain ? 'text-2xl' : isExperiment ? 'text-sm' : 'text-base',
+                'max-lg:justify-center max-lg:px-3 max-lg:py-2 lg:w-full lg:px-4 lg:py-2',
+                !isMain && 'max-lg:hidden',
+              )}
+            >
+              {renderIcon()}
+              <span className={isMain ? 'max-lg:hidden' : undefined}>
+                {item.label}
+              </span>
+            </ActionButton>
+          </Link>
+        </div>
       );
     }
 
     // Default Link style (used for inactive, or active with simple style)
     return (
-      <Link
-        href={item.href}
-        prefetch
-        className={clsx(
-          baseClasses,
-          isActive ? activeClassesSimple : inactiveClasses,
-        )}
-        onClick={onClick}
-      >
-        {renderIcon()}
-        <span className={isMain ? 'max-lg:hidden' : undefined}>
-          {item.label}
-        </span>
-      </Link>
+      <div className={!isMain ? 'lg:-mt-1' : undefined}>
+        <Link
+          href={item.href}
+          prefetch
+          className={clsx(
+            baseClasses,
+            isActive ? activeClassesSimple : inactiveClasses,
+          )}
+          onClick={onClick}
+        >
+          {renderIcon()}
+          <span className={isMain ? 'max-lg:hidden' : undefined}>
+            {item.label}
+          </span>
+        </Link>
+      </div>
     );
   },
 );
@@ -571,6 +580,7 @@ const Sidebar = () => {
                   onClick={playClick}
                   variant='secondary'
                   useSlidingIndicator={true}
+                  isExperiment={section.title === 'Experiments'}
                 />
               ))}
           </div>

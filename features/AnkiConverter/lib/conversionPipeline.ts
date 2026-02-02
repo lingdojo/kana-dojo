@@ -339,10 +339,10 @@ export function createConversionPipeline(): ConversionPipeline {
       const filename = getFilename(file);
 
       // Validate file size (500MB for browser, 2GB for CLI)
-      const maxSize =
-        typeof window !== 'undefined'
-          ? 500 * 1024 * 1024
-          : 2 * 1024 * 1024 * 1024;
+      const isNode =
+        typeof process !== 'undefined' &&
+        typeof process.versions?.node !== 'undefined';
+      const maxSize = isNode ? 2 * 1024 * 1024 * 1024 : 500 * 1024 * 1024;
       validateFileSize(buffer.byteLength, maxSize);
 
       emitProgress('detecting', 50, 'Analyzing file format...');

@@ -45,7 +45,11 @@ export function buildJson(
   options: ConversionOptions = {},
   startTime: number = Date.now(),
 ): ConversionResult {
-  const { includeSuspended = false, includeStats = false } = options;
+  const {
+    includeSuspended = false,
+    includeStats = false,
+    includeTags = true,
+  } = options;
 
   // Build lookup maps for efficient access
   const noteMap = new Map<number, Note>();
@@ -86,6 +90,7 @@ export function buildJson(
     noteTypeMap,
     includeStats,
     includeSuspended,
+    includeTags,
   );
 
   // Generate metadata
@@ -111,6 +116,7 @@ function buildDeckHierarchy(
   noteTypeMap: Map<number, NoteType>,
   includeStats: boolean,
   includeSuspended: boolean,
+  includeTags: boolean,
 ): Deck[] {
   // Parse deck names into hierarchy
   interface DeckNode {
@@ -158,6 +164,7 @@ function buildDeckHierarchy(
         noteTypeMap,
         includeStats,
         includeSuspended,
+        includeTags,
       ),
     );
 
@@ -192,6 +199,7 @@ function buildOutputCard(
   noteTypeMap: Map<number, NoteType>,
   includeStats: boolean,
   includeSuspended: boolean,
+  includeTags: boolean,
 ): OutputCard {
   const note = noteMap.get(card.noteId);
   if (!note) {
@@ -214,7 +222,7 @@ function buildOutputCard(
   const baseCard: Partial<OutputCard> = {
     id: String(card.id),
     fields,
-    tags: note.tags || [],
+    tags: includeTags ? note.tags || [] : [],
   };
 
   // Add optional stats
