@@ -35,7 +35,8 @@
   {
     "id": 7,
     "fact": "Japan has a word 'tarento' (タレント) for TV personalities who are famous simply for being on TV - not actors or musicians, just professional celebrities.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 8,
@@ -256,7 +257,7 @@
   {
     "id": 35,
     "fact": "The word 'hikikomori' (引きこもり) describes people who withdraw completely from society, sometimes staying in their rooms for years.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 36,
