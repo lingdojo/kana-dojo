@@ -30,7 +30,7 @@
   {
     "id": 6,
     "fact": "There are over 5.5 million vending machines in Japan - one for every 23 people - selling everything from hot ramen to fresh eggs to underwear.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 7,
