@@ -499,35 +499,9 @@
   "meaning": "Start small"
 },
 {
-  "japanese": "井の中の蛙大海を知らず",
-  "romaji": "I no naka no kawazu taikai wo shirazu",
-  "english": "A frog in a well doesn’t know the ocean",
-  "meaning": "Limited experience limits perspective"
-}
-,
-{
-  "japanese": "口は禍の元",
-  "romaji": "Kuchi wa wazawai no moto",
-  "english": "The mouth is the source of misfortune",
-  "meaning": "Careless words cause trouble"
-}
-,
-{
-  "japanese": "明日は明日の風が吹く",
-  "romaji": "Ashita wa ashita no kaze ga fuku",
-  "english": "Tomorrow’s wind will blow tomorrow",
-  "meaning": "Don’t worry too much about the future"
-},
-{
-  "japanese": "楽あれば苦あり",
-  "romaji": "Raku areba ku ari",
-  "english": "With comfort comes hardship",
-  "meaning": "Life has ups and downs"
-},
-{
-  "japanese": "見ぬが花",
-  "romaji": "Minu ga hana",
-  "english": "What you imagine is better than reality",
-  "meaning": "Things unseen often seem more beautiful than they really are"
+  "japanese": "情けは人の為ならず",
+  "romaji": "Nasake wa hito no tame narazu",
+  "english": "Kindness is not for others",
+  "meaning": "A good deed returns to you"
 }
 ]
