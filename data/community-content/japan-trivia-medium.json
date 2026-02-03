@@ -2,7 +2,12 @@
   {
     "question": "Which Japanese festival features people throwing beans to drive away evil spirits?",
     "difficulty": "medium",
-    "answers": ["Setsubun", "Obon", "Tanabata", "Shichi-Go-San"],
+    "answers": [
+      "Setsubun",
+      "Obon",
+      "Tanabata",
+      "Shichi-Go-San"
+    ],
     "correctIndex": 0
   },
   {
@@ -19,92 +24,145 @@
   {
     "question": "Which Japanese city is famous for its ramen street, \"Ramen Yokocho\"?",
     "difficulty": "medium",
-    "answers": ["Sapporo", "Nagoya", "Utsunomiya", "Naha"],
+    "answers": [
+      "Sapporo",
+      "Nagoya",
+      "Utsunomiya",
+      "Naha"
+    ],
     "correctIndex": 0
   },
   {
     "question": "Which traditional Japanese sport features a ring called a dohyo?",
     "difficulty": "medium",
-    "answers": ["Sumo", "Kendo", "Karate", "Kyudo"],
+    "answers": [
+      "Sumo",
+      "Kendo",
+      "Karate",
+      "Kyudo"
+    ],
     "correctIndex": 0
   },
-
   {
     "question": "What is the Japanese word for \"thank you\"?",
     "difficulty": "medium",
-    "answers": ["Sumimasen", "Arigatou", "Ohayou", "Sayonara"],
+    "answers": [
+      "Sumimasen",
+      "Arigatou",
+      "Ohayou",
+      "Sayonara"
+    ],
     "correctIndex": 1
   },
   {
     "question": "Which Japanese city is known for its deer roaming freely in a large park?",
     "difficulty": "medium",
-    "answers": ["Nara", "Yokohama", "Kobe", "Nagoya"],
+    "answers": [
+      "Nara",
+      "Yokohama",
+      "Kobe",
+      "Nagoya"
+    ],
     "correctIndex": 0
   },
   {
     "question": "What is the Japanese term for a traditional inn?",
     "difficulty": "medium",
-    "answers": ["Ryokan", "Izakaya", "Minshuku", "Tateyama"],
+    "answers": [
+      "Ryokan",
+      "Izakaya",
+      "Minshuku",
+      "Tateyama"
+    ],
     "correctIndex": 0
   },
   {
     "question": "What is the name of Japan's national public broadcaster?",
     "difficulty": "medium",
-    "answers": ["NHK", "NHK World Japan", "Asahi", "Fuji TV"],
+    "answers": [
+      "NHK",
+      "NHK World Japan",
+      "Asahi",
+      "Fuji TV"
+    ],
     "correctIndex": 0
   },
   {
     "question": "Which Japanese island is known for its active volcano Mount Aso?",
     "difficulty": "medium",
-    "answers": ["Kyushu", "Honshu", "Shikoku", "Hokkaido"],
+    "answers": [
+      "Kyushu",
+      "Honshu",
+      "Shikoku",
+      "Hokkaido"
+    ],
     "correctIndex": 0
   },
   {
     "question": "Which Japanese festival features floating lanterns on water?",
     "difficulty": "medium",
-    "answers": ["Toro Nagashi", "Setsubun", "Tanabata", "Aoi Matsuri"],
+    "answers": [
+      "Toro Nagashi",
+      "Setsubun",
+      "Tanabata",
+      "Aoi Matsuri"
+    ],
     "correctIndex": 0
   },
   {
     "question": "Which Japanese beverage is made from roasted barley?",
     "difficulty": "medium",
-    "answers": ["Mugicha", "Matcha", "Genmaicha", "Sencha"],
+    "answers": [
+      "Mugicha",
+      "Matcha",
+      "Genmaicha",
+      "Sencha"
+    ],
     "correctIndex": 0
   },
   {
     "question": "Which Japanese city hosted the 1998 Winter Olympics?",
     "difficulty": "medium",
-    "answers": ["Nagano", "Sapporo", "Niigata", "Sendai"],
+    "answers": [
+      "Nagano",
+      "Sapporo",
+      "Niigata",
+      "Sendai"
+    ],
     "correctIndex": 0
   },
   {
     "question": "What is the Japanese term for a traditional tea ceremony?",
     "difficulty": "medium",
-    "answers": ["Sado", "Kado", "Budo", "Shodo"],
+    "answers": [
+      "Sado",
+      "Kado",
+      "Budo",
+      "Shodo"
+    ],
     "correctIndex": 0
   },
   {
     "question": "What is the name of Japan’s largest lake?",
     "difficulty": "medium",
-    "answers": ["Lake Biwa", "Lake Towada", "Lake Ashi", "Lake Shinji"],
+    "answers": [
+      "Lake Biwa",
+      "Lake Towada",
+      "Lake Ashi",
+      "Lake Shinji"
+    ],
     "correctIndex": 0
   },
   {
     "question": "Which Japanese island is the southernmost of the four main islands?",
     "difficulty": "medium",
-    "answers": ["Honshu", "Hokkaido", "Shikoku", "Kyushu"],
-    "correctIndex": 3
-  },
-  {
-    "question": "Which season is associated with red maple leaves (momiji) in Japan?",
-    "difficulty": "medium",
     "answers": [
-      "Spring",
-      "Summer",
-      "Autumn",
-      "Winter"
+      "Honshu",
+      "Hokkaido",
+      "Shikoku",
+      "Kyushu"
     ],
-    "correctIndex": 2
+    "correctIndex": 3
   },
   {
     "question": "Which season is associated with red maple leaves (momiji) in Japan?",
@@ -127,5 +185,16 @@
       "Kissa"
     ],
     "correctIndex": 1
+  },
+  {
+    "question": "What is the traditional Japanese tea ceremony called?",
+    "difficulty": "medium",
+    "answers": [
+      "Sado",
+      "Judo",
+      "Kendo",
+      "Shodo"
+    ],
+    "correctIndex": 0
   }
 ]
