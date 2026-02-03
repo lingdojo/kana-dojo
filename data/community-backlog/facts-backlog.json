@@ -672,7 +672,8 @@
   {
     "id": 91,
     "fact": "There's a Japanese word 'shinpai' (心配) that describes worry with a sense of caring - unlike English, it's not purely negative.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 92,
@@ -699,7 +700,7 @@
   {
     "id": 95,
     "fact": "There's a Japanese practice called 'goraiko' (御来光) - watching the sunrise from a mountain peak, especially on New Year's Day.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 96,
