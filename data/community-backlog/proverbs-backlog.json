@@ -651,7 +651,8 @@
     "romaji": "Tabi wa michizure yo wa nasake",
     "english": "Travel needs companions; life needs kindness",
     "meaning": "Relationships and compassion matter",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 67,
@@ -659,7 +660,7 @@
     "romaji": "Senri no michi mo ippo kara",
     "english": "A journey of a thousand miles begins with a single step",
     "meaning": "Start small to reach big goals",
-    "issued": false
+    "issued": true
   },
   {
     "id": 68,
