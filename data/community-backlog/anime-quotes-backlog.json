@@ -476,7 +476,8 @@
     "english": "As long as I have something to protect, I won't lose.",
     "anime": "Bleach",
     "character": "Ichigo Kurosaki",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 44,
@@ -497,7 +498,7 @@
     "english": "Only those prepared to be shot should pull the trigger.",
     "anime": "Code Geass: Lelouch of the Rebellion",
     "character": "Lelouch vi Britannia",
-    "issued": false
+    "issued": true
   },
   {
     "id": 46,
