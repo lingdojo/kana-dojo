@@ -370,7 +370,8 @@
     "english": "I never give up, believe it!",
     "anime": "Naruto",
     "character": "Naruto Uzumaki",
-    "issued": true
+    "issued": false,
+    "completed": true
   },
   {
     "id": 34,
@@ -412,7 +413,7 @@
     "english": "Don't let anyone else take control of your life and death!",
     "anime": "Demon Slayer: Kimetsu no Yaiba",
     "character": "Tanjiro Kamado",
-    "issued": true
+    "issued": false
   },
   {
     "id": 38,
@@ -421,7 +422,7 @@
     "english": "Go beyond! Plus Ultra!",
     "anime": "My Hero Academia",
     "character": "All Might",
-    "issued": true
+    "issued": false
   },
   {
     "id": 39,
@@ -454,7 +455,7 @@
     "english": "In the name of the moon, I'll punish you!",
     "anime": "Sailor Moon",
     "character": "Usagi Tsukino",
-    "issued": true
+    "issued": false
   },
   {
     "id": 42,
@@ -475,7 +476,7 @@
     "english": "As long as I have something to protect, I won't lose.",
     "anime": "Bleach",
     "character": "Ichigo Kurosaki",
-    "issued": true
+    "issued": false
   },
   {
     "id": 44,
@@ -496,7 +497,7 @@
     "english": "Only those prepared to be shot should pull the trigger.",
     "anime": "Code Geass: Lelouch of the Rebellion",
     "character": "Lelouch vi Britannia",
-    "issued": true
+    "issued": false
   },
   {
     "id": 46,
@@ -505,7 +506,7 @@
     "english": "Who the hell do you think I am!",
     "anime": "Gurren Lagann",
     "character": "Kamina",
-    "issued": true
+    "issued": false
   },
   {
     "id": 47,
@@ -514,7 +515,7 @@
     "english": "I won't run away anymore!",
     "anime": "Hunter x Hunter",
     "character": "Gon Freecss",
-    "issued": true
+    "issued": false
   },
   {
     "id": 48,
@@ -523,7 +524,7 @@
     "english": "I mustn't run away!",
     "anime": "Neon Genesis Evangelion",
     "character": "Shinji Ikari",
-    "issued": true
+    "issued": false
   },
   {
     "id": 49,
@@ -532,7 +533,10 @@
     "english": "Believing in my friends is my magic.",
     "anime": "Fairy Tail",
     "character": "Natsu Dragneel",
-    "issued": false
+    "issued": false,
+    "completed": true,
+    "completedBy": "kaigritun",
+    "completedPR": 3347
   },
   {
     "id": 50,

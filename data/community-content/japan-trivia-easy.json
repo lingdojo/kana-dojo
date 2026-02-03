@@ -76,58 +76,50 @@
     "correctIndex": 2
   },
   {
-  "question": "Which traditional Japanese sport involves wrestling in a ring?",
-  "difficulty": "easy",
-  "answers": [
-    "Sumo",
-    "Kendo",
-    "Judo",
-    "Aikido"
-  ],
-  "correctIndex": 0
+    "question": "Which traditional Japanese sport involves wrestling in a ring?",
+    "difficulty": "easy",
+    "answers": ["Sumo", "Kendo", "Judo", "Aikido"],
+    "correctIndex": 0
   },
   {
     "question": "Which mountain is Japan’s highest peak?",
     "difficulty": "easy",
-    "answers": [
-      "Mount Fuji",
-      "Mount Kita",
-      "Mount Tate",
-      "Mount Haku"
-    ],
+    "answers": ["Mount Fuji", "Mount Kita", "Mount Tate", "Mount Haku"],
     "correctIndex": 0
   },
   {
     "question": "What is the Japanese term for a traditional inn?",
     "difficulty": "easy",
-    "answers": [
-      "Ryokan",
-      "Minshuku",
-      "Izakaya",
-      "Yatai"
-    ],
+    "answers": ["Ryokan", "Minshuku", "Izakaya", "Yatai"],
     "correctIndex": 0
   },
   {
-  "question": "Which city is known for its beef brand Kobe?",
-  "difficulty": "easy",
-  "answers": [
-    "Kobe",
-    "Nagoya",
-    "Kanazawa",
-    "Hiroshima"
-  ],
-  "correctIndex": 0
+    "question": "Which city is known for its beef brand Kobe?",
+    "difficulty": "easy",
+    "answers": ["Kobe", "Nagoya", "Kanazawa", "Hiroshima"],
+    "correctIndex": 0
   },
   {
     "question": "Which Japanese dish is made with buckwheat noodles?",
     "difficulty": "easy",
+    "answers": ["Soba", "Udon", "Ramen", "Somem"],
+    "correctIndex": 0
+  },
+  {
+    "question": "What is the name of the bullet train network in Japan?",
+    "difficulty": "easy",
+    "answers": ["Shinkansen", "Metro Line", "Skyrail", "Kairo"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which Japanese castle is nicknamed the \"White Heron\" for its bright exterior?",
+    "difficulty": "easy",
     "answers": [
-      "Soba",
-      "Udon",
-      "Ramen",
-      "Somem"
+      "Himeji Castle",
+      "Osaka Castle",
+      "Matsumoto Castle",
+      "Nijo Castle"
     ],
     "correctIndex": 0
-  }
+  }  
 ]

@@ -7,7 +7,7 @@
  * **Validates: Requirements 3.1, 3.2, 3.3, 3.4, 3.5**
  */
 
-import { describe, it, expect, beforeAll } from 'vitest';
+import { describe, it, expect, beforeAll, vi } from 'vitest';
 import fc from 'fast-check';
 import initSqlJs, { type Database, type SqlJsStatic } from 'sql.js';
 import path from 'path';
@@ -233,6 +233,49 @@ function generateGuid(): string {
 }
 
 describe('SQLite Parser', () => {
+  describe('web worker environment', () => {
+    it('should initialize sql.js without window in worker-like contexts', async () => {
+      const originalProcess = globalThis.process;
+      const originalSelf = (globalThis as { self?: unknown }).self;
+      const originalWindow = (globalThis as { window?: unknown }).window;
+      let locateFileUrl = '';
+
+      vi.resetModules();
+      vi.doMock('sql.js', () => ({
+        default: async (options: { locateFile: (file: string) => string }) => {
+          locateFileUrl = options.locateFile('sql-wasm.wasm');
+          return {
+            Database: class MockDatabase {
+              constructor(_: Uint8Array) {}
+              close() {}
+            },
+          };
+        },
+      }));
+
+      (globalThis as { process?: unknown }).process = undefined;
+      vi.stubGlobal('self', {});
+      if ('window' in globalThis) {
+        (globalThis as { window?: unknown }).window = undefined;
+      }
+
+      try {
+        const { openDatabase } = await import('../parsers/sqliteParser');
+        await openDatabase(new ArrayBuffer(8));
+
+        expect(locateFileUrl).toBe('https://sql.js.org/dist/sql-wasm.wasm');
+        expect(
+          (globalThis as { self?: { window?: unknown } }).self?.window,
+        ).toBe((globalThis as { self?: unknown }).self);
+      } finally {
+        vi.doUnmock('sql.js');
+        vi.unstubAllGlobals();
+        (globalThis as { process?: unknown }).process = originalProcess;
+        (globalThis as { self?: unknown }).self = originalSelf;
+        (globalThis as { window?: unknown }).window = originalWindow;
+      }
+    });
+  });
   describe('openDatabase', () => {
     it('should open a valid SQLite database', async () => {
       const dbBuffer = createAnkiDatabase({});
