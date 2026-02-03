@@ -484,7 +484,10 @@
     "backgroundColor": "oklch(22.0% 0.025 45.0 / 1)",
     "mainColor": "oklch(70.0% 0.175 20.0 / 1)",
     "secondaryColor": "oklch(75.0% 0.165 145.0 / 1)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "niveshdandyan",
+    "completedPR": 3481
   },
   {
     "id": "ninja-shadow",
