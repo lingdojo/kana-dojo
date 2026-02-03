@@ -130,7 +130,8 @@
       "Arctic Ocean"
     ],
     "correctIndex": 2,
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 11,
@@ -143,7 +144,8 @@
       "Sayonara"
     ],
     "correctIndex": 1,
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 12,
@@ -156,7 +158,8 @@
       "Nagoya"
     ],
     "correctIndex": 0,
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 13,
@@ -169,7 +172,7 @@
       "Tabi"
     ],
     "correctIndex": 0,
-    "issued": false
+    "issued": true
   },
   {
     "id": 14,
