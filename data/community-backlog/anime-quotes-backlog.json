@@ -370,7 +370,8 @@
     "english": "I never give up, believe it!",
     "anime": "Naruto",
     "character": "Naruto Uzumaki",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 34,
@@ -379,7 +380,7 @@
     "english": "Those who don't take care of their comrades are worse than scum.",
     "anime": "Naruto",
     "character": "Kakashi Hatake",
-    "issued": false
+    "issued": true
   },
   {
     "id": 35,
