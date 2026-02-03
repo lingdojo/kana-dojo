@@ -686,7 +686,8 @@
     "romaji": "Tsuru no hitokoe",
     "english": "One cry of the crane",
     "meaning": "A single influential person settles a matter",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 71,
@@ -694,7 +695,8 @@
     "romaji": "Oni ni kanabou",
     "english": "An iron club to an ogre",
     "meaning": "Making someone strong even stronger",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 72,
@@ -702,7 +704,7 @@
     "romaji": "Yakeishi ni mizu",
     "english": "Water on a hot stone",
     "meaning": "A futile effort with little effect",
-    "issued": false
+    "issued": true
   },
   {
     "id": 73,
