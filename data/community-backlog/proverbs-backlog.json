@@ -712,7 +712,8 @@
     "romaji": "Oni no inuma ni sentaku",
     "english": "Do laundry while the ogre is away",
     "meaning": "Take advantage of someone's absence",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 74,
@@ -720,7 +721,8 @@
     "romaji": "Toranu tanuki no kawazan'you",
     "english": "Counting a raccoon dog's skins before catching it",
     "meaning": "Don't count your chickens before they hatch",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 75,
@@ -737,7 +739,7 @@
     "romaji": "Ame futte ji katamaru",
     "english": "After rain, the ground hardens",
     "meaning": "Adversity can strengthen relationships",
-    "issued": false
+    "issued": true
   },
   {
     "id": 77,
