@@ -747,7 +747,8 @@
     "romaji": "Hari no ana kara ten wo nozoku",
     "english": "Peek at the sky through a needle's eye",
     "meaning": "A narrow viewpoint leads to poor judgment",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 78,
@@ -755,7 +756,8 @@
     "romaji": "Zen wa isoge",
     "english": "Hurry to do good",
     "meaning": "If it's worth doing, do it at once",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 79,
@@ -763,7 +765,7 @@
     "romaji": "Miru wa houraku",
     "english": "Just watching is a pleasure",
     "meaning": "Enjoy observing; you don't always need to participate",
-    "issued": false
+    "issued": true
   },
   {
     "id": 80,
