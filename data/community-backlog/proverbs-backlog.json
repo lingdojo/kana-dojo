@@ -616,7 +616,8 @@
     "romaji": "Toudai moto kurashi",
     "english": "It's darkest under the lighthouse",
     "meaning": "The obvious is often overlooked",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 63,
@@ -633,7 +634,8 @@
     "romaji": "Ki wo mite mori wo mizu",
     "english": "See the trees but not the forest",
     "meaning": "Miss the bigger picture",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 65,
@@ -641,7 +643,7 @@
     "romaji": "Doku wo kurawaba sara made",
     "english": "If you eat poison, eat the plate too",
     "meaning": "If you must do something risky, go all the way",
-    "issued": false
+    "issued": true
   },
   {
     "id": 66,
