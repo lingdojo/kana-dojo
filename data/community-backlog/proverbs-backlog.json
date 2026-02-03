@@ -773,7 +773,8 @@
     "romaji": "Tsuki to suppon",
     "english": "The moon and a turtle",
     "meaning": "Vast difference; not comparable",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 81,
@@ -790,7 +791,8 @@
     "romaji": "Idobata kaigi",
     "english": "Well-side conference",
     "meaning": "Neighborhood gossip",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 83,
@@ -798,7 +800,7 @@
     "romaji": "Neko ni katsuobushi",
     "english": "Dried bonito to a cat",
     "meaning": "Leave temptation unattended at your own risk",
-    "issued": false
+    "issued": true
   },
   {
     "id": 84,
