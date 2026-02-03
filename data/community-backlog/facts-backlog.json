@@ -412,12 +412,13 @@
   {
     "id": 57,
     "fact": "There's a Japanese word 'tsujigiri' (辻斬り) that historically meant testing a new sword on a random passerby - thankfully outlawed centuries ago.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 58,
     "fact": "Japan's Seikan Tunnel connecting Honshu and Hokkaido is the world's longest undersea tunnel at 53.85 kilometers.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 59,
