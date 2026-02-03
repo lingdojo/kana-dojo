@@ -57,7 +57,10 @@
     "backgroundColor": "oklch(92.0% 0.025 140.0 / 1)",
     "mainColor": "oklch(55.0% 0.180 140.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.120 80.0 / 1)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "lorenzotiziani",
+    "completedPR": 3351
   },
   {
     "id": "torii-sunset",
