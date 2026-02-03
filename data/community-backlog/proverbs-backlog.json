@@ -520,7 +520,8 @@
     "romaji": "Nido aru koto wa sando aru",
     "english": "What happens twice will happen a third time",
     "meaning": "Patterns tend to repeat",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 52,
@@ -528,7 +529,7 @@
     "romaji": "En wa inamono aji na mono",
     "english": "Fate is strange yet delightful",
     "meaning": "Chance connections can be surprisingly good",
-    "issued": false
+    "issued": true
   },
   {
     "id": 53,
