@@ -1192,7 +1192,8 @@
     "romaji": "Ki wo mite mori wo mizu",
     "english": "See the trees but not the forest",
     "meaning": "Missing the bigger picture",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 129,
@@ -1209,7 +1210,7 @@
     "romaji": "Zenin zenka",
     "english": "Good causes bring good results",
     "meaning": "Good deeds lead to good outcomes",
-    "issued": false
+    "issued": true
   },
   {
     "id": 131,
