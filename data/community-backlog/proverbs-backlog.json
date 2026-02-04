@@ -1245,7 +1245,8 @@
     "romaji": "Nodomoto sugireba atsusa wo wasureru",
     "english": "Once it passes your throat, you forget the heat",
     "meaning": "People forget hardships once they are over",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 135,
@@ -1253,7 +1254,8 @@
     "romaji": "Kuchi wa wazawai no moto",
     "english": "The mouth is the source of misfortune",
     "meaning": "Careless words cause trouble",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 136,
@@ -1261,7 +1263,7 @@
     "romaji": "Raku areba ku ari",
     "english": "After ease comes hardship",
     "meaning": "Good times and bad times alternate",
-    "issued": false
+    "issued": true
   },
   {
     "id": 137,
