@@ -817,22 +817,25 @@
   {
     "id": 116,
     "fact": "Japan has themed trains where the entire interior is decorated for specific anime, seasonal events, or tourist destinations.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 117,
     "fact": "The Japanese word 'yabai' (やばい) originally meant 'dangerous' but now means anything extreme - amazing or terrible.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 118,
     "fact": "Japan has 'cuddle therapy' clinics where you can pay to be held, spooned, or simply have physical human contact.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 119,
     "fact": "There's a Japanese practice 'meshi' (召し) where a boss inviting you for a meal is essentially a command, not a request.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 120,
