@@ -658,7 +658,7 @@
     "backgroundColor": "oklch(21.0% 0.045 235.0 / 1)",
     "mainColor": "oklch(88.0% 0.055 245.0 / 1)",
     "secondaryColor": "oklch(68.0% 0.165 215.0 / 1)",
-    "issued": false
+    "issued": true
   },
   {
     "id": "kimono-silk",
