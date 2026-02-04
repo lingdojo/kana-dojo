@@ -804,7 +804,10 @@
   {
     "id": 114,
     "fact": "Japan has an 'everlasting love' museum in Hokkaido dedicated to sculptor Takeichi Nishimura's 60-year love for his wife.",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "rolloerro",
+    "completedPR": 3609
   },
   {
     "id": 115,
