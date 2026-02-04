@@ -67,17 +67,17 @@ export default async function JLPTN3Page({
             { name: 'N3', url: `/${locale}/jlpt/n3` },
           ]}
         />
-        <h1 className='mb-4 text-center text-4xl font-bold text-[var(--main-color)]'>
+        <h1 className='mb-4 text-center text-4xl font-bold text-(--main-color)'>
           JLPT N3 Vocabulary Guide
         </h1>
-        <p className='mb-8 text-center text-xl text-[var(--secondary-color)]'>
+        <p className='mb-8 text-center text-xl text-(--secondary-color)'>
           Master intermediate Japanese vocabulary and kanji for N3 success
         </p>
 
-        <div className='space-y-8 text-[var(--secondary-color)]'>
+        <div className='space-y-8 text-(--secondary-color)'>
           {/* Overview */}
-          <section className='rounded-lg border-2 border-[var(--border-color)] bg-[var(--card-color)] p-6'>
-            <h2 className='mb-4 text-2xl font-semibold text-[var(--main-color)]'>
+          <section className='rounded-lg border-2 border-(--border-color) bg-(--card-color) p-6'>
+            <h2 className='mb-4 text-2xl font-semibold text-(--main-color)'>
               JLPT N3 Level Overview
             </h2>
             <p className='mb-4'>
@@ -87,28 +87,28 @@ export default async function JLPTN3Page({
             </p>
             <div className='grid gap-4 md:grid-cols-3'>
               <div>
-                <h3 className='mb-2 font-semibold text-[var(--main-color)]'>
+                <h3 className='mb-2 font-semibold text-(--main-color)'>
                   Kanji
                 </h3>
-                <p className='text-2xl font-bold text-[var(--main-color)]'>
+                <p className='text-2xl font-bold text-(--main-color)'>
                   ~370 new
                 </p>
                 <p className='text-sm'>(~620 total including N5+N4)</p>
               </div>
               <div>
-                <h3 className='mb-2 font-semibold text-[var(--main-color)]'>
+                <h3 className='mb-2 font-semibold text-(--main-color)'>
                   Vocabulary
                 </h3>
-                <p className='text-2xl font-bold text-[var(--main-color)]'>
+                <p className='text-2xl font-bold text-(--main-color)'>
                   ~3,000
                 </p>
                 <p className='text-sm'>Total words needed</p>
               </div>
               <div>
-                <h3 className='mb-2 font-semibold text-[var(--main-color)]'>
+                <h3 className='mb-2 font-semibold text-(--main-color)'>
                   Study Time
                 </h3>
-                <p className='text-2xl font-bold text-[var(--main-color)]'>
+                <p className='text-2xl font-bold text-(--main-color)'>
                   450-600h
                 </p>
                 <p className='text-sm'>From beginner level</p>
@@ -118,52 +118,52 @@ export default async function JLPTN3Page({
 
           {/* Vocabulary Topics */}
           <section>
-            <h2 className='mb-4 text-3xl font-semibold text-[var(--main-color)]'>
+            <h2 className='mb-4 text-3xl font-semibold text-(--main-color)'>
               N3 Vocabulary Categories
             </h2>
             <div className='grid gap-4 md:grid-cols-2'>
-              <div className='rounded-lg border-2 border-[var(--border-color)] p-4'>
-                <h3 className='mb-2 text-lg font-semibold text-[var(--main-color)]'>
+              <div className='rounded-lg border-2 border-(--border-color) p-4'>
+                <h3 className='mb-2 text-lg font-semibold text-(--main-color)'>
                   📰 News & Current Events
                 </h3>
                 <p className='text-sm'>
                   Politics, economy, society, environment, technology
                 </p>
               </div>
-              <div className='rounded-lg border-2 border-[var(--border-color)] p-4'>
-                <h3 className='mb-2 text-lg font-semibold text-[var(--main-color)]'>
+              <div className='rounded-lg border-2 border-(--border-color) p-4'>
+                <h3 className='mb-2 text-lg font-semibold text-(--main-color)'>
                   🎓 Academic Topics
                 </h3>
                 <p className='text-sm'>
                   Sciences, history, culture, abstract concepts
                 </p>
               </div>
-              <div className='rounded-lg border-2 border-[var(--border-color)] p-4'>
-                <h3 className='mb-2 text-lg font-semibold text-[var(--main-color)]'>
+              <div className='rounded-lg border-2 border-(--border-color) p-4'>
+                <h3 className='mb-2 text-lg font-semibold text-(--main-color)'>
                   💼 Professional Context
                 </h3>
                 <p className='text-sm'>
                   Business terminology, workplace situations, formal language
                 </p>
               </div>
-              <div className='rounded-lg border-2 border-[var(--border-color)] p-4'>
-                <h3 className='mb-2 text-lg font-semibold text-[var(--main-color)]'>
+              <div className='rounded-lg border-2 border-(--border-color) p-4'>
+                <h3 className='mb-2 text-lg font-semibold text-(--main-color)'>
                   🎨 Culture & Arts
                 </h3>
                 <p className='text-sm'>
                   Literature, music, traditional culture, entertainment
                 </p>
               </div>
-              <div className='rounded-lg border-2 border-[var(--border-color)] p-4'>
-                <h3 className='mb-2 text-lg font-semibold text-[var(--main-color)]'>
+              <div className='rounded-lg border-2 border-(--border-color) p-4'>
+                <h3 className='mb-2 text-lg font-semibold text-(--main-color)'>
                   🗣️ Advanced Expressions
                 </h3>
                 <p className='text-sm'>
                   Idioms, proverbs, nuanced expressions, formal speech
                 </p>
               </div>
-              <div className='rounded-lg border-2 border-[var(--border-color)] p-4'>
-                <h3 className='mb-2 text-lg font-semibold text-[var(--main-color)]'>
+              <div className='rounded-lg border-2 border-(--border-color) p-4'>
+                <h3 className='mb-2 text-lg font-semibold text-(--main-color)'>
                   🌐 International Topics
                 </h3>
                 <p className='text-sm'>
@@ -175,12 +175,12 @@ export default async function JLPTN3Page({
 
           {/* Study Approach */}
           <section>
-            <h2 className='mb-4 text-3xl font-semibold text-[var(--main-color)]'>
+            <h2 className='mb-4 text-3xl font-semibold text-(--main-color)'>
               N3 Study Approach
             </h2>
             <div className='space-y-4'>
-              <div className='rounded-lg bg-[var(--card-color)] p-4'>
-                <h3 className='mb-2 font-semibold text-[var(--main-color)]'>
+              <div className='rounded-lg bg-(--card-color) p-4'>
+                <h3 className='mb-2 font-semibold text-(--main-color)'>
                   🎯 Focus on Compound Words
                 </h3>
                 <p>
@@ -193,8 +193,8 @@ export default async function JLPTN3Page({
                 </p>
               </div>
 
-              <div className='rounded-lg bg-[var(--card-color)] p-4'>
-                <h3 className='mb-2 font-semibold text-[var(--main-color)]'>
+              <div className='rounded-lg bg-(--card-color) p-4'>
+                <h3 className='mb-2 font-semibold text-(--main-color)'>
                   📖 Read Native Materials
                 </h3>
                 <p>
@@ -203,8 +203,8 @@ export default async function JLPTN3Page({
                 </p>
               </div>
 
-              <div className='rounded-lg bg-[var(--card-color)] p-4'>
-                <h3 className='mb-2 font-semibold text-[var(--main-color)]'>
+              <div className='rounded-lg bg-(--card-color) p-4'>
+                <h3 className='mb-2 font-semibold text-(--main-color)'>
                   🔊 Context is King
                 </h3>
                 <p>
@@ -213,8 +213,8 @@ export default async function JLPTN3Page({
                 </p>
               </div>
 
-              <div className='rounded-lg bg-[var(--card-color)] p-4'>
-                <h3 className='mb-2 font-semibold text-[var(--main-color)]'>
+              <div className='rounded-lg bg-(--card-color) p-4'>
+                <h3 className='mb-2 font-semibold text-(--main-color)'>
                   ⚡ Use Spaced Repetition
                 </h3>
                 <p>
@@ -226,13 +226,13 @@ export default async function JLPTN3Page({
           </section>
 
           {/* Challenge Areas */}
-          <section className='rounded-lg border-2 border-[var(--main-color)] bg-[var(--card-color)] p-6'>
-            <h2 className='mb-4 text-2xl font-semibold text-[var(--main-color)]'>
+          <section className='rounded-lg border-2 border-(--main-color) bg-(--card-color) p-6'>
+            <h2 className='mb-4 text-2xl font-semibold text-(--main-color)'>
               ⚠️ N3 Challenge Areas
             </h2>
             <div className='space-y-3'>
               <div>
-                <h4 className='mb-1 font-semibold text-[var(--main-color)]'>
+                <h4 className='mb-1 font-semibold text-(--main-color)'>
                   Similar Meanings
                 </h4>
                 <p className='text-sm'>
@@ -241,7 +241,7 @@ export default async function JLPTN3Page({
                 </p>
               </div>
               <div>
-                <h4 className='mb-1 font-semibold text-[var(--main-color)]'>
+                <h4 className='mb-1 font-semibold text-(--main-color)'>
                   Formal vs Casual
                 </h4>
                 <p className='text-sm'>
@@ -250,7 +250,7 @@ export default async function JLPTN3Page({
                 </p>
               </div>
               <div>
-                <h4 className='mb-1 font-semibold text-[var(--main-color)]'>
+                <h4 className='mb-1 font-semibold text-(--main-color)'>
                   Complex Kanji Compounds
                 </h4>
                 <p className='text-sm'>
@@ -263,12 +263,12 @@ export default async function JLPTN3Page({
 
           {/* Practice Tools */}
           <section>
-            <h2 className='mb-4 text-3xl font-semibold text-[var(--main-color)]'>
+            <h2 className='mb-4 text-3xl font-semibold text-(--main-color)'>
               Practice with KanaDojo
             </h2>
             <div className='grid gap-4 md:grid-cols-2'>
-              <div className='rounded-lg border-2 border-[var(--border-color)] p-4'>
-                <h3 className='mb-2 font-semibold text-[var(--main-color)]'>
+              <div className='rounded-lg border-2 border-(--border-color) p-4'>
+                <h3 className='mb-2 font-semibold text-(--main-color)'>
                   Vocabulary Training
                 </h3>
                 <ul className='mb-3 list-disc space-y-1 pl-6 text-sm'>
@@ -279,14 +279,14 @@ export default async function JLPTN3Page({
                 </ul>
                 <Link
                   href={`/${locale}/vocabulary`}
-                  className='inline-block rounded bg-[var(--main-color)] px-4 py-2 text-sm font-semibold text-[var(--background-color)] transition-all hover:opacity-90'
+                  className='inline-block rounded bg-(--main-color) px-4 py-2 text-sm font-semibold text-(--background-color) transition-all hover:opacity-90'
                 >
                   Practice Vocabulary →
                 </Link>
               </div>
 
-              <div className='rounded-lg border-2 border-[var(--border-color)] p-4'>
-                <h3 className='mb-2 font-semibold text-[var(--main-color)]'>
+              <div className='rounded-lg border-2 border-(--border-color) p-4'>
+                <h3 className='mb-2 font-semibold text-(--main-color)'>
                   Kanji Review
                 </h3>
                 <ul className='mb-3 list-disc space-y-1 pl-6 text-sm'>
@@ -297,7 +297,7 @@ export default async function JLPTN3Page({
                 </ul>
                 <Link
                   href={`/${locale}/kanji`}
-                  className='inline-block rounded bg-[var(--main-color)] px-4 py-2 text-sm font-semibold text-[var(--background-color)] transition-all hover:opacity-90'
+                  className='inline-block rounded bg-(--main-color) px-4 py-2 text-sm font-semibold text-(--background-color) transition-all hover:opacity-90'
                 >
                   Practice Kanji →
                 </Link>
@@ -306,7 +306,7 @@ export default async function JLPTN3Page({
           </section>
 
           {/* CTA */}
-          <section className='rounded-lg bg-[var(--main-color)] p-8 text-center text-[var(--background-color)]'>
+          <section className='rounded-lg bg-(--main-color) p-8 text-center text-(--background-color)'>
             <h2 className='mb-4 text-3xl font-bold'>
               Start Your N3 Journey Today
             </h2>
@@ -316,7 +316,7 @@ export default async function JLPTN3Page({
             </p>
             <Link
               href={`/${locale}/vocabulary`}
-              className='inline-block rounded-lg border-2 border-[var(--background-color)] bg-[var(--background-color)] px-8 py-4 text-lg font-semibold text-[var(--main-color)] transition-all hover:opacity-90'
+              className='inline-block rounded-lg border-2 border-(--background-color) bg-(--background-color) px-8 py-4 text-lg font-semibold text-(--main-color) transition-all hover:opacity-90'
             >
               Practice N3 Vocabulary Now →
             </Link>

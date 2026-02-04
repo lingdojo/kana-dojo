@@ -49,7 +49,7 @@ const KanaOrbit = () => {
         {rings.map((ring, i) => (
           <div
             key={i}
-            className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[var(--border-color)] opacity-30'
+            className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-(--border-color) opacity-30'
             style={{
               width: ring.radius * 2,
               height: ring.radius * 2,

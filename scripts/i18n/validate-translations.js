@@ -14,7 +14,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const LOCALES_DIR = path.resolve(__dirname, '../../core/i18n/locales');
-const LANGUAGES = ['en', 'es', 'ja']; // Add more as needed
+const LANGUAGES = ['en', 'es']; // Keep in sync with core/i18n/routing.ts
 const NAMESPACES = [
   'common',
   'navigation',
@@ -26,9 +26,13 @@ const NAMESPACES = [
   'settings',
   'errors',
   'menuInfo',
-  'translator',
   'blog',
-  'conjugator',
+  'translator',
+  'metadata',
+  'practiceLanding',
+  'welcome',
+  'experiments',
+  'legal',
 ];
 
 let hasErrors = false;

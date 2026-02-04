@@ -2,6 +2,7 @@
 import { createElement, useEffect, useRef } from 'react';
 import themeSets, {
   applyTheme,
+  getNeonCityWallpaperStyles,
   // hexToHsl
 } from '@/features/Preferences/data/themes';
 import usePreferencesStore from '@/features/Preferences/store/usePreferencesStore';
@@ -100,7 +101,7 @@ const Themes = () => {
 
   return (
     <div className='flex flex-col gap-6'>
-      <div className='flex gap-2'>
+      {/* <div className='flex gap-2'>
         <button
           className={clsx(
             'flex w-full flex-1 items-center justify-center gap-2 overflow-hidden p-6 md:w-1/2',
@@ -138,7 +139,7 @@ const Themes = () => {
           />
           Random Theme
         </button>
-      </div>
+      </div> */}
       {themeSets.map((themeSet, i) => (
         <CollapsibleSection
           key={i}
@@ -148,7 +149,7 @@ const Themes = () => {
           defaultOpen={true}
           storageKey={`prefs-theme-group-${themeSet.name.toLowerCase()}`}
         >
-          {/* <span className='text-sm font-normal text-[var(--secondary-color)]'>
+          {/* <span className='text-sm font-normal text-(--secondary-color)'>
             ({themeSet.themes.length})
           </span> */}
           <fieldset
@@ -159,26 +160,42 @@ const Themes = () => {
             {themeSet.themes.map(currentTheme => (
               <label
                 key={currentTheme.id}
+                className={clsx(
+                  currentTheme.id === 'long' && 'col-span-full',
+                  'flex items-center justify-center rounded-xl py-4 duration-275 hover:cursor-pointer',
+                  'flex-1 overflow-hidden',
+                  currentTheme.id === selectedTheme &&
+                    'border-0 border-(--main-color)',
+                )}
                 style={{
                   color: currentTheme.mainColor,
-                  background:
-                    currentTheme.id === '?'
-                      ? `linear-gradient(
-                          142deg,
-                          oklch(66.0% 0.18 25.0 / 1) 0%,
-                          oklch(72.0% 0.22 80.0 / 1) 12%,
-                          oklch(68.0% 0.20 145.0 / 1) 24%,
-                          oklch(70.0% 0.19 200.0 / 1) 36%,
-                          oklch(67.0% 0.18 235.0 / 1) 48%,
-                          oklch(73.0% 0.22 290.0 / 1) 60%,
-                          oklch(69.0% 0.21 330.0 / 1) 74%,
-                          oklch(74.0% 0.20 355.0 / 1) 88%,
-                          oklch(66.0% 0.18 25.0 / 1) 100%
-                        )`
-                      : isHovered === currentTheme.id
-                        ? currentTheme.cardColor
-                        : currentTheme.backgroundColor,
-                  borderColor: currentTheme.borderColor,
+                  ...(currentTheme.id === 'neon-city'
+                    ? {
+                        ...getNeonCityWallpaperStyles(
+                          isHovered === currentTheme.id,
+                        ),
+                        borderColor: currentTheme.borderColor,
+                      }
+                    : {
+                        background:
+                          currentTheme.id === '?'
+                            ? `linear-gradient(
+                                142deg,
+                                oklch(66.0% 0.18 25.0 / 1) 0%,
+                                oklch(72.0% 0.22 80.0 / 1) 12%,
+                                oklch(68.0% 0.20 145.0 / 1) 24%,
+                                oklch(70.0% 0.19 200.0 / 1) 36%,
+                                oklch(67.0% 0.18 235.0 / 1) 48%,
+                                oklch(73.0% 0.22 290.0 / 1) 60%,
+                                oklch(69.0% 0.21 330.0 / 1) 74%,
+                                oklch(74.0% 0.20 355.0 / 1) 88%,
+                                oklch(66.0% 0.18 25.0 / 1) 100%
+                              )`
+                            : isHovered === currentTheme.id
+                              ? currentTheme.cardColor
+                              : currentTheme.backgroundColor,
+                        borderColor: currentTheme.borderColor,
+                      }),
                 }}
                 onMouseEnter={() => {
                   if (isAdding) return;
@@ -193,14 +210,6 @@ const Themes = () => {
                   }, 150);
                   setIsHovered('');
                 }}
-                className={clsx(
-                  currentTheme.id === 'long' && 'col-span-full',
-                  'flex items-center justify-center rounded-xl py-4 duration-275 hover:cursor-pointer',
-                  'flex-1 overflow-hidden',
-                  // 'border-b-4',
-                  currentTheme.id === selectedTheme &&
-                    'border-0 border-[var(--main-color)]',
-                )}
                 onClick={() => {
                   playClick();
                   if (currentTheme.id === 'long') playLong();
@@ -245,7 +254,7 @@ const Themes = () => {
                   </span>
                 ) : (
                   <span className='flex items-center gap-1.5 text-center text-lg'>
-                    <span className='text-[var(--secondary-color)]'>
+                    <span className='text-(--secondary-color)'>
                       {currentTheme.id === selectedTheme ? '\u2B24 ' : ''}
                     </span>
                     {currentTheme.id === 'long'
@@ -284,8 +293,8 @@ const Themes = () => {
               onClick={() => setIsAdding(true)}
               className={clsx(
                 'px-3 py-1.5 rounded-lg border-2 transition-colors hover:cursor-pointer',
-                'border-[var(--border-color)]',
-                'hover:bg-[var(--border-color)]',
+                'border-(--border-color)',
+                'hover:bg-(--border-color)',
                 'flex items-center gap-2'
               )}
             >
@@ -299,7 +308,7 @@ const Themes = () => {
           <div
             className={clsx(
               'mb-4 p-4 rounded-xl border-2',
-              'bg-[var(--card-color)] border-[var(--border-color)]'
+              'bg-(--card-color) border-(--border-color)'
             )}
           >
             <div className='space-y-3'>
@@ -316,8 +325,8 @@ const Themes = () => {
                   }
                   className={clsx(
                     'flex-1 px-3 py-2 rounded-lg border-2',
-                    'bg-[var(--card-color)] border-[var(--border-color)]',
-                    'text-[var(--main-color)]'
+                    'bg-(--card-color) border-(--border-color)',
+                    'text-(--main-color)'
                   )}
                 />
               </div>
@@ -336,11 +345,11 @@ const Themes = () => {
                     }}
                     className={clsx(
                       'w-24 px-1.5 rounded-lg border-2',
-                      'bg-[var(--card-color)] border-[var(--border-color)]',
-                      'text-[var(--main-color)]'
+                      'bg-(--card-color) border-(--border-color)',
+                      'text-(--main-color)'
                     )}
                   />
-                  <span className='text-sm text-[var(--secondary-color)]'>
+                  <span className='text-sm text-(--secondary-color)'>
                     Background Color
                   </span>
                 </div>
@@ -358,11 +367,11 @@ const Themes = () => {
                     }}
                     className={clsx(
                       'w-24 px-1.5 rounded-lg border-2',
-                      'bg-[var(--card-color)] border-[var(--border-color)]',
-                      'text-[var(--main-color)]'
+                      'bg-(--card-color) border-(--border-color)',
+                      'text-(--main-color)'
                     )}
                   />
-                  <span className='text-sm text-[var(--secondary-color)]'>
+                  <span className='text-sm text-(--secondary-color)'>
                     Card Color
                   </span>
                 </div>
@@ -380,11 +389,11 @@ const Themes = () => {
                     }}
                     className={clsx(
                       'w-24 px-1.5 rounded-lg border-2',
-                      'bg-[var(--card-color)] border-[var(--border-color)]',
-                      'text-[var(--main-color)]'
+                      'bg-(--card-color) border-(--border-color)',
+                      'text-(--main-color)'
                     )}
                   />
-                  <span className='text-sm text-[var(--secondary-color)]'>
+                  <span className='text-sm text-(--secondary-color)'>
                     Border Color
                   </span>
                 </div>
@@ -402,11 +411,11 @@ const Themes = () => {
                     }}
                     className={clsx(
                       'w-24 px-1.5 rounded-lg border-2',
-                      'bg-[var(--card-color)] border-[var(--border-color)]',
-                      'text-[var(--main-color)]'
+                      'bg-(--card-color) border-(--border-color)',
+                      'text-(--main-color)'
                     )}
                   />
-                  <span className='text-sm text-[var(--secondary-color)]'>
+                  <span className='text-sm text-(--secondary-color)'>
                     Main Color
                   </span>
                 </div>
@@ -424,11 +433,11 @@ const Themes = () => {
                     }}
                     className={clsx(
                       'w-24 px-1.5 rounded-lg border-2',
-                      'bg-[var(--card-color)] border-[var(--border-color)]',
-                      'text-[var(--main-color)]'
+                      'bg-(--card-color) border-(--border-color)',
+                      'text-(--main-color)'
                     )}
                   />
-                  <span className='text-sm text-[var(--secondary-color)]'>
+                  <span className='text-sm text-(--secondary-color)'>
                     Secondary Color
                   </span>
                 </div>
@@ -438,7 +447,7 @@ const Themes = () => {
                   onClick={handleCustomTheme}
                   className={clsx(
                     'flex-1 px-4 py-2 rounded-lg transition-opacity hover:cursor-pointer',
-                    'bg-[var(--main-color)] text-[var(--background-color)]',
+                    'bg-(--main-color) text-(--background-color)',
                     'hover:opacity-90'
                   )}
                 >
@@ -459,17 +468,17 @@ const Themes = () => {
                   }}
                   className={clsx(
                     'px-4 py-2 border-2 rounded-lg transition-colors hover:cursor-pointer',
-                    'border-[var(--border-color)]',
-                    'hover:bg-[var(--border-color)]'
+                    'border-(--border-color)',
+                    'hover:bg-(--border-color)'
                   )}
                 >
                   Cancel
                 </button>
               </div>
-              <p className='text-sm text-[var(--secondary-color)] text-center py-2'>
+              <p className='text-sm text-(--secondary-color) text-center py-2'>
                 Check the{' '}
                 <a
-                  className='text-[var(--main-color)] font-bold underline'
+                  className='text-(--main-color) font-bold underline'
                   target='_blank'
                   rel='noopener noreferrer'
                   href='https://github.com/lingdojo/kana-dojo/blob/main/docs/UI_DESIGN.md#theming-system'
@@ -477,9 +486,9 @@ const Themes = () => {
                   UI_DESIGN
                 </a>{' '}
                 documentation for better understanding of the{' '}
-                <span className='text-[var(--main-color)]'>theming system</span>{' '}
+                <span className='text-(--main-color)'>theming system</span>{' '}
                 and{' '}
-                <span className='text-[var(--main-color)]'>accessibility</span>
+                <span className='text-(--main-color)'>accessibility</span>
               </p>
             </div>
           </div>
@@ -519,10 +528,10 @@ const Themes = () => {
                 className={clsx(
                   currentTheme.id === 'long' && 'col-span-full',
                   'py-4 flex justify-center items-center',
-                  'flex-1 overflow-hidden border-[var(--background-color)]',
+                  'flex-1 overflow-hidden border-(--background-color)',
                   buttonBorderStyles,
                   currentTheme.id === selectedTheme &&
-                    'border-2 border-[var(--main-color)]'
+                    'border-2 border-(--main-color)'
                 )}
                 onClick={() => {
                   playClick();
@@ -553,7 +562,7 @@ const Themes = () => {
                 />
                 <div className='flex w-full justify-around items-center'>
                   <span className='text-center text-lg flex items-center gap-1.5'>
-                    <span className='text-[var(--secondary-color)]'>
+                    <span className='text-(--secondary-color)'>
                       {currentTheme.id === selectedTheme ? '\u2B24 ' : ''}
                     </span>
                     {currentTheme.id.split('-').map((themeNamePart, i) => (
@@ -583,7 +592,7 @@ const Themes = () => {
                       setRandomTheme(randomTheme);
                       setSelectedTheme(randomTheme.id);
                     }}
-                    className='p-2 text-red-500 hover:bg-red-500 hover:text-[var(--card-color)] hover:bg-opacity-10 rounded transition-colors hover:cursor-pointer'
+                    className='p-2 text-red-500 hover:bg-red-500 hover:text-(--card-color) hover:bg-opacity-10 rounded transition-colors hover:cursor-pointer'
                     title='Delete theme'
                   >
                     <Trash2 className='w-4 h-4' />
@@ -593,7 +602,7 @@ const Themes = () => {
             ))}
           </fieldset>
         ) : (
-          <p className='text-sm text-[var(--secondary-color)] text-center py-8'>
+          <p className='text-sm text-(--secondary-color) text-center py-8'>
             No custom themes yet. Create one to get started!
           </p>
         )}

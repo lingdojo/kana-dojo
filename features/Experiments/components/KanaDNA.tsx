@@ -81,7 +81,7 @@ const KanaDNA = () => {
 
               {/* Connecting line */}
               <div
-                className='absolute h-px bg-[var(--border-color)]'
+                className='absolute h-px bg-(--border-color)'
                 style={{
                   left: `calc(50% - ${xOffset}px)`,
                   top: y,
@@ -95,7 +95,7 @@ const KanaDNA = () => {
         })}
       </div>
 
-      <div className='absolute bottom-8 text-center text-[var(--secondary-color)]'>
+      <div className='absolute bottom-8 text-center text-(--secondary-color)'>
         <p>🧬 Kana DNA Helix</p>
         <p className='mt-1 text-sm'>Hover to highlight</p>
       </div>

@@ -51,7 +51,7 @@ export function QuizQuestion({
 
   const getOptionStyles = (index: number) => {
     if (!hasAnswered) {
-      return 'border-[var(--border-color)] bg-[var(--card-color)] hover:border-[var(--main-color)] cursor-pointer';
+      return 'border-(--border-color) bg-(--card-color) hover:border-(--main-color) cursor-pointer';
     }
 
     if (index === answer) {
@@ -62,20 +62,20 @@ export function QuizQuestion({
       return 'border-red-500 bg-red-500/10 text-red-400';
     }
 
-    return 'border-[var(--border-color)] bg-[var(--card-color)] opacity-50';
+    return 'border-(--border-color) bg-(--card-color) opacity-50';
   };
 
   return (
     <div
       className={cn(
-        'my-6 rounded-lg border border-[var(--border-color)] bg-[var(--card-color)] p-4',
+        'my-6 rounded-lg border border-(--border-color) bg-(--card-color) p-4',
         className,
       )}
       data-testid='quiz-question'
     >
       {/* Question */}
       <p
-        className='mb-4 text-lg font-medium text-[var(--main-color)]'
+        className='mb-4 text-lg font-medium text-(--main-color)'
         data-testid='quiz-question-text'
       >
         {question}
@@ -105,7 +105,7 @@ export function QuizQuestion({
                   ? 'border-green-500 bg-green-500/20 text-green-400'
                   : hasAnswered && index === selectedIndex
                     ? 'border-red-500 bg-red-500/20 text-red-400'
-                    : 'border-[var(--border-color)]',
+                    : 'border-(--border-color)',
               )}
             >
               {String.fromCharCode(65 + index)}
@@ -132,7 +132,7 @@ export function QuizQuestion({
           </p>
           {explanation && (
             <p
-              className='mt-1 text-sm text-[var(--main-color)]'
+              className='mt-1 text-sm text-(--main-color)'
               data-testid='quiz-explanation'
             >
               {explanation}

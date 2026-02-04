@@ -92,7 +92,8 @@ You are a senior software architect and Full-Stack Engineer specializing in Next
 
 ### 3.1 Bundle Analysis
 
-- Run `npm run analyze` and report:
+- Run `npm run analyze` ONLY when explicitly requested (it runs a full build).
+- When run, report:
   - Total bundle size (JS, CSS, Images)
   - Largest modules by size
   - Duplicate dependencies
@@ -151,7 +152,7 @@ You are a senior software architect and Full-Stack Engineer specializing in Next
 
 ### 4.3 Dependency Security
 
-- Run `npm audit` and report vulnerabilities
+- Run `npm audit --omit=dev` and report vulnerabilities
 - Check for outdated dependencies with known CVEs
 - Review dependency update strategy
 - Verify lock file integrity
@@ -344,6 +345,8 @@ You are a senior software architect and Full-Stack Engineer specializing in Next
 - Check translation key naming conventions
 - Review fallback locale configuration
 - Verify dynamic imports for locale files
+- Ensure locales in `scripts/i18n/validate-translations.js` match `core/i18n/routing.ts`
+- Ensure namespaces in `scripts/i18n/validate-translations.js` match `core/i18n/request.ts`
 
 ---
 
@@ -380,6 +383,7 @@ You are a senior software architect and Full-Stack Engineer specializing in Next
 - Identify outdated packages
 - Check for unused dependencies
 - Review peer dependency conflicts
+- Verify `next` and `@next/swc` versions match
 
 ### 11.2 Version Strategy
 
@@ -587,16 +591,27 @@ npm run check
 npm run test
 
 # Bundle analysis
+# NOTE: Runs a full build (slow). Only run when explicitly requested.
 npm run analyze
+
+# Bundle size regression check (requires a prior build)
+npm run bundle:check
 
 # i18n validation
 npm run i18n:check
 
 # Security audit
-npm audit --production
+npm audit --omit=dev
 
 # Format check
 npm run format:check
+```
+
+## EXTRA INTEGRITY CHECKS
+
+```bash
+# Ensure Next.js and SWC versions match
+npm ls next @next/swc
 ```
 
 ---

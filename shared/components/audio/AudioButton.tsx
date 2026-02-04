@@ -107,7 +107,7 @@ const AudioButton: React.FC<AudioButtonProps> = ({
         disabled={disabled}
         className={clsx(
           'rounded-full transition-all duration-275',
-          'hover:cursor-pointer hover:bg-[var(--border-color)] active:scale-95',
+          'hover:cursor-pointer hover:bg-(--border-color) active:scale-95',
           'disabled:cursor-not-allowed disabled:opacity-50',
           'flex items-center justify-center',
           sizeClasses[size],
@@ -150,7 +150,7 @@ const AudioButton: React.FC<AudioButtonProps> = ({
         'flex items-center gap-2 transition-all duration-200',
         'hover:scale-105 active:scale-95',
         'disabled:cursor-not-allowed disabled:opacity-50',
-        'text-[var(--secondary-color)]',
+        'text-(--secondary-color)',
         'flex-1 overflow-hidden',
         sizeClasses[size],
         className,

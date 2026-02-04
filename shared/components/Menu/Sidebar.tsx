@@ -133,9 +133,9 @@ const NavLink = memo(
 
     // Style classes for original (simple) design
     const activeClassesSimple =
-      'bg-[var(--border-color)] text-[var(--main-color)] lg:bg-[var(--card-color)]';
+      'bg-(--border-color) text-(--main-color) lg:bg-(--card-color)';
     const inactiveClasses =
-      'text-[var(--secondary-color)] hover:bg-[var(--card-color)]';
+      'text-(--secondary-color) hover:bg-(--card-color)';
 
     const renderIcon = (): ReactNode => {
       if (item.charIcon) {
@@ -163,13 +163,13 @@ const NavLink = memo(
     if (useSlidingIndicator) {
       // Different indicator styles based on USE_ACTION_BUTTON_STYLE
       const indicatorClasses = USE_ACTION_BUTTON_STYLE
-        ? 'absolute inset-0 rounded-xl lg:rounded-2xl border-b-6 lg:border-b-8 border-[var(--main-color-accent)] bg-[var(--main-color)]'
-        : 'absolute inset-0 rounded-2xl bg-[var(--card-color)]';
+        ? 'absolute inset-0 rounded-xl lg:rounded-2xl border-b-6 lg:border-b-8 border-(--main-color-accent) bg-(--main-color)'
+        : 'absolute inset-0 rounded-2xl bg-(--card-color)';
 
       // Text color when active differs based on style
       const activeTextClass = USE_ACTION_BUTTON_STYLE
-        ? 'text-[var(--background-color)]'
-        : 'text-[var(--main-color)]';
+        ? 'text-(--background-color)'
+        : 'text-(--main-color)';
 
       // Padding adjustment for ActionButton style (compensate for border)
       const paddingClasses = USE_ACTION_BUTTON_STYLE

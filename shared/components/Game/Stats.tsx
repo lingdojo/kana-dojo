@@ -136,8 +136,8 @@ const Stats: React.FC = () => {
   };
 
   const StatCard: React.FC<StatCardProps> = ({ title, stats }) => (
-    <div className='w-full rounded-lg border-[var(--border-color)] bg-[var(--bg-color)] p-6'>
-      <h3 className='mb-6 border-b-2 border-[var(--border-color)] pb-3 text-2xl font-bold text-[var(--secondary-color)]'>
+    <div className='w-full rounded-lg border-(--border-color) bg-(--bg-color) p-6'>
+      <h3 className='mb-6 border-b-2 border-(--border-color) pb-3 text-2xl font-bold text-(--secondary-color)'>
         {title}
       </h3>
       <div className='space-y-4'>
@@ -147,15 +147,15 @@ const Stats: React.FC = () => {
             className={clsx(
               'flex items-center justify-between gap-4 pb-4',
               i < stats.length - 1 &&
-                'border-b border-[var(--border-color)]/70',
+                'border-b border-(--border-color)/70',
             )}
           >
             <div className='flex min-w-0 flex-1 items-center gap-2'>
               <Icon
                 size={20}
-                className='flex-shrink-0 text-[var(--secondary-color)]'
+                className='flex-shrink-0 text-(--secondary-color)'
               />
-              <span className='truncate text-sm text-[var(--text-color)]/80 md:text-base'>
+              <span className='truncate text-sm text-(--text-color)/80 md:text-base'>
                 {label}
               </span>
             </div>
@@ -242,7 +242,7 @@ const Stats: React.FC = () => {
   ];
 
   return (
-    <div className='flex min-h-screen w-full items-center justify-center bg-[var(--bg-color)] px-4 py-8 md:py-12'>
+    <div className='flex min-h-screen w-full items-center justify-center bg-(--bg-color) px-4 py-8 md:py-12'>
       <div className='mx-auto w-full max-w-7xl'>
         {/* Header */}
         <button
@@ -254,11 +254,11 @@ const Stats: React.FC = () => {
         >
           <ChevronsLeft
             size={32}
-            className='text-[var(--border-color)] hover:text-[var(--secondary-color)]'
+            className='text-(--border-color) hover:text-(--secondary-color)'
           />
           <h2 className='flex items-center justify-center gap-3 text-3xl font-bold md:text-4xl'>
             Statistics
-            <Activity size={32} className='text-[var(--secondary-color)]' />
+            <Activity size={32} className='text-(--secondary-color)' />
           </h2>
         </button>
 

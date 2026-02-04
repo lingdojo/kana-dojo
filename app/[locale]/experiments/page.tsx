@@ -10,10 +10,10 @@ export default function ExperimentsPage() {
   return (
     <div className='flex flex-col gap-4 pt-4 md:pt-8'>
       <div className='mb-4'>
-        <h1 className='text-2xl text-[var(--main-color)] md:text-3xl'>
+        <h1 className='text-2xl text-(--main-color) md:text-3xl'>
           Experiments
         </h1>
-        <p className='mt-1 text-[var(--secondary-color)]'>
+        <p className='mt-1 text-(--secondary-color)'>
           Relaxation and experimental features
         </p>
       </div>
@@ -24,7 +24,7 @@ export default function ExperimentsPage() {
             href={exp.href}
             onClick={() => playClick()}
             className={clsx(
-              'flex cursor-pointer flex-col gap-3 rounded-xl border border-[var(--border-color)] bg-[var(--card-color)] p-6 transition-all duration-250 hover:border-[var(--main-color)]',
+              'flex cursor-pointer flex-col gap-3 rounded-xl border border-(--border-color) bg-(--card-color) p-6 transition-all duration-250 hover:border-(--main-color)',
             )}
           >
             {exp.charIcon ? (
@@ -35,8 +35,8 @@ export default function ExperimentsPage() {
               <exp.icon size={32} className={exp.color} />
             ) : null}
             <div>
-              <h2 className='text-lg text-[var(--main-color)]'>{exp.name}</h2>
-              <p className='text-sm text-[var(--secondary-color)]'>
+              <h2 className='text-lg text-(--main-color)'>{exp.name}</h2>
+              <p className='text-sm text-(--secondary-color)'>
                 {exp.description}
               </p>
             </div>

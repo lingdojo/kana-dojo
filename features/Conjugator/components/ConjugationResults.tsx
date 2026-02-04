@@ -109,11 +109,11 @@ export default function ConjugationResults({
       <div
         className={cn(
           'flex flex-col items-center justify-center rounded-2xl py-16',
-          'border border-[var(--border-color)] bg-[var(--card-color)]',
+          'border border-(--border-color) bg-(--card-color)',
         )}
       >
-        <Loader2 className='h-10 w-10 animate-spin text-[var(--main-color)]' />
-        <p className='mt-4 text-sm text-[var(--secondary-color)]'>
+        <Loader2 className='h-10 w-10 animate-spin text-(--main-color)' />
+        <p className='mt-4 text-sm text-(--secondary-color)'>
           Conjugating verb...
         </p>
       </div>
@@ -126,14 +126,14 @@ export default function ConjugationResults({
       <div
         className={cn(
           'flex flex-col items-center justify-center rounded-2xl py-16',
-          'border border-[var(--border-color)] bg-[var(--card-color)]',
-          'text-[var(--secondary-color)]',
+          'border border-(--border-color) bg-(--card-color)',
+          'text-(--secondary-color)',
         )}
       >
         <div
           className={cn(
             'mb-4 rounded-full p-4',
-            'bg-[var(--secondary-color)]/10',
+            'bg-(--secondary-color)/10',
           )}
         >
           <span className='text-4xl'>📚</span>
@@ -246,7 +246,7 @@ export default function ConjugationResults({
       </div>
 
       {/* Form count summary */}
-      <div className='text-center text-xs text-[var(--secondary-color)]'>
+      <div className='text-center text-xs text-(--secondary-color)'>
         {result.forms.length} conjugation forms across{' '}
         {categoriesWithForms.length} categories
       </div>

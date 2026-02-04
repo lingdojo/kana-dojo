@@ -57,12 +57,12 @@ const KanaStack = () => {
 
   return (
     <div className='flex flex-1 flex-col items-center justify-center gap-8 p-4'>
-      <h2 className='text-xl text-[var(--main-color)]'>
+      <h2 className='text-xl text-(--main-color)'>
         {allStacked
           ? '🎉 Perfect Stack!'
           : `Stack alphabetically by romanji (${stack.length}/8)`}
       </h2>
-      <p className='text-sm text-[var(--secondary-color)]'>
+      <p className='text-sm text-(--secondary-color)'>
         Next: Pick the kana with the earliest romanji
       </p>
 
@@ -79,13 +79,13 @@ const KanaStack = () => {
                 'border-2 transition-all duration-200',
                 selectedId === card.id
                   ? 'animate-shake scale-95 border-red-500 bg-red-500/20'
-                  : 'border-[var(--border-color)] bg-[var(--card-color)] hover:scale-105 hover:border-[var(--accent-color)]',
+                  : 'border-(--border-color) bg-(--card-color) hover:scale-105 hover:border-(--accent-color)',
               )}
             >
-              <span lang='ja' className='text-3xl text-[var(--main-color)]'>
+              <span lang='ja' className='text-3xl text-(--main-color)'>
                 {card.kana}
               </span>
-              <span className='text-xs text-[var(--secondary-color)]'>
+              <span className='text-xs text-(--secondary-color)'>
                 {card.romanji}
               </span>
             </button>
@@ -112,7 +112,7 @@ const KanaStack = () => {
       {allStacked && (
         <button
           onClick={restart}
-          className='rounded-xl bg-[var(--accent-color)] px-6 py-3 text-white transition-transform hover:scale-105'
+          className='rounded-xl bg-(--accent-color) px-6 py-3 text-white transition-transform hover:scale-105'
         >
           Play Again
         </button>

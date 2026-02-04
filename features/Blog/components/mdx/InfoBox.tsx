@@ -100,7 +100,7 @@ export function InfoBox({ type, children, title, className }: InfoBoxProps) {
             </p>
           )}
           <div
-            className='text-sm text-[var(--main-color)]'
+            className='text-sm text-(--main-color)'
             data-testid='info-box-content'
           >
             {children}

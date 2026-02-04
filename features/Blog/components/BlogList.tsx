@@ -59,8 +59,8 @@ export function BlogList({
       data-testid='blog-list'
     >
       {showFilter && (
-        <div className='flex items-center justify-between border-b border-[var(--border-color)] pb-4'>
-          <h3 className='text-[10px] font-black tracking-[0.3em] text-[var(--secondary-color)] uppercase opacity-40'>
+        <div className='flex items-center justify-between border-b border-(--border-color) pb-4'>
+          <h3 className='text-[10px] font-black tracking-[0.3em] text-(--secondary-color) uppercase opacity-40'>
             Filter by Category
           </h3>
           <CategoryFilter
@@ -72,7 +72,7 @@ export function BlogList({
 
       {filteredPosts.length === 0 ? (
         <div className='py-24 text-center' data-testid='blog-list-empty'>
-          <p className='premium-serif text-2xl text-[var(--secondary-color)] italic opacity-50'>
+          <p className='premium-serif text-2xl text-(--secondary-color) italic opacity-50'>
             No articles found in this collection.
           </p>
         </div>

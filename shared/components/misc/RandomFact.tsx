@@ -59,10 +59,10 @@ const RandomFact = () => {
   if (!fact) return null;
 
   return (
-    <div className='mt-3 border-t border-[var(--border-color)] pt-3'>
+    <div className='mt-3 border-t border-(--border-color) pt-3'>
       <div className='flex items-start gap-2'>
-        <Lightbulb className='size-4 flex-shrink-0 text-[var(--main-color)]' />
-        <p className='text-xs text-[var(--secondary-color)] italic md:text-sm'>
+        <Lightbulb className='size-4 flex-shrink-0 text-(--main-color)' />
+        <p className='text-xs text-(--secondary-color) italic md:text-sm'>
           {fact}
         </p>
       </div>

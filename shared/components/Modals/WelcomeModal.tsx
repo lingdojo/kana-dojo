@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import clsx from 'clsx';
 import {
@@ -16,10 +16,10 @@ import { usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import useOnboardingStore from '@/shared/store/useOnboardingStore';
 import { themeSets, useThemePreferences } from '@/features/Preferences';
+import fonts from '@/features/Preferences/data/fonts';
 import { isRecommendedFont } from '@/features/Preferences/data/recommendedFonts';
 import { useClick } from '@/shared/hooks/useAudio';
 import { cardBorderStyles } from '@/shared/lib/styles';
-import { modalFonts } from '@/shared/components/Modals/data/modalFonts';
 import { ActionButton } from '@/shared/components/ui/ActionButton';
 
 const CHAOS_THEME_GRADIENT = `linear-gradient(
@@ -58,6 +58,10 @@ const WelcomeModal = () => {
 
   const [localTheme, setLocalTheme] = useState(selectedTheme);
   const [localFont, setLocalFont] = useState(currentFont);
+  const recommendedFonts = useMemo(
+    () => fonts.filter(fontObj => isRecommendedFont(fontObj.name)),
+    [],
+  );
 
   useEffect(() => {
     const isDev = process.env.NODE_ENV === 'development';
@@ -171,41 +175,41 @@ const WelcomeModal = () => {
             <div className='space-y-2'>
               <h2
                 id='welcome-modal-title'
-                className='text-3xl font-bold text-[var(--main-color)]'
+                className='text-3xl font-bold text-(--main-color)'
               >
                 {t('title')}
               </h2>
-              <p className='text-lg text-[var(--secondary-color)]'>
+              <p className='text-lg text-(--secondary-color)'>
                 {t('subtitle')}
               </p>
             </div>
 
             <div className='space-y-4 text-left'>
-              <div className='flex items-center gap-3 rounded-lg bg-[var(--background-color)] p-3'>
+              <div className='flex items-center gap-3 rounded-lg bg-(--background-color) p-3'>
                 <Palette
-                  className='flex-shrink-0 text-[var(--main-color)]'
+                  className='flex-shrink-0 text-(--main-color)'
                   size={24}
                 />
                 <div>
-                  <h3 className='font-semibold text-[var(--main-color)]'>
+                  <h3 className='font-semibold text-(--main-color)'>
                     {t('features.theme.title')}
                   </h3>
-                  <p className='text-sm text-[var(--secondary-color)]'>
+                  <p className='text-sm text-(--secondary-color)'>
                     {t('features.theme.description')}
                   </p>
                 </div>
               </div>
 
-              <div className='flex items-center gap-3 rounded-lg bg-[var(--background-color)] p-3'>
+              <div className='flex items-center gap-3 rounded-lg bg-(--background-color) p-3'>
                 <Type
-                  className='flex-shrink-0 text-[var(--main-color)]'
+                  className='flex-shrink-0 text-(--main-color)'
                   size={24}
                 />
                 <div>
-                  <h3 className='font-semibold text-[var(--main-color)]'>
+                  <h3 className='font-semibold text-(--main-color)'>
                     {t('features.font.title')}
                   </h3>
-                  <p className='text-sm text-[var(--secondary-color)]'>
+                  <p className='text-sm text-(--secondary-color)'>
                     {t('features.font.description')}
                   </p>
                 </div>
@@ -218,7 +222,7 @@ const WelcomeModal = () => {
                 onClick={handleTryDemo}
               >
                 <CircleStar
-                  className='h-6 w-6 animate-spin text-[var(--background-color)]'
+                  className='h-6 w-6 animate-spin text-(--background-color)'
                   aria-hidden
                 />
                 <span className='ml-2'>{t('steps.welcome.demoCta')}</span>
@@ -230,31 +234,31 @@ const WelcomeModal = () => {
         return (
           <div className='space-y-6'>
             <div className='space-y-2 text-center'>
-              <h2 className='flex items-center justify-center gap-2 text-2xl font-bold text-[var(--main-color)]'>
+              <h2 className='flex items-center justify-center gap-2 text-2xl font-bold text-(--main-color)'>
                 <Joystick size={28} />
                 {t('steps.behavior.title')}
               </h2>
-              <p className='text-[var(--secondary-color)]'>
+              <p className='text-(--secondary-color)'>
                 {t('steps.behavior.subtitle')}
               </p>
             </div>
 
             <div className='space-y-6'>
               <div className='space-y-3'>
-                <h3 className='text-lg font-semibold text-[var(--main-color)]'>
+                <h3 className='text-lg font-semibold text-(--main-color)'>
                   {t('steps.behavior.displayLanguage.title')}
                 </h3>
-                <p className='text-sm text-[var(--secondary-color)]'>
+                <p className='text-sm text-(--secondary-color)'>
                   {t('steps.behavior.displayLanguage.description')}
                 </p>
                 <div className='grid grid-cols-1 gap-3 sm:grid-cols-2'>
                   <button
                     className={clsx(
                       'cursor-pointer rounded-lg border-2 p-3 text-left transition-colors duration-200',
-                      'hover:border-[var(--main-color)]/50',
+                      'hover:border-(--main-color)/50',
                       !localDisplayKana
-                        ? 'border-[var(--main-color)] bg-[var(--background-color)]'
-                        : 'border-[var(--border-color)] bg-[var(--card-color)]',
+                        ? 'border-(--main-color) bg-(--background-color)'
+                        : 'border-(--border-color) bg-(--card-color)',
                     )}
                     onClick={() => {
                       playClick();
@@ -263,7 +267,7 @@ const WelcomeModal = () => {
                     }}
                   >
                     <div className='flex items-center gap-2'>
-                      <span className='text-[var(--main-color)]'>
+                      <span className='text-(--main-color)'>
                         {!localDisplayKana && '● '}
                       </span>
                       <span className='font-medium'>
@@ -275,10 +279,10 @@ const WelcomeModal = () => {
                   <button
                     className={clsx(
                       'cursor-pointer rounded-lg border-2 p-3 text-left transition-colors duration-200',
-                      'hover:border-[var(--main-color)]/50',
+                      'hover:border-(--main-color)/50',
                       localDisplayKana
-                        ? 'border-[var(--main-color)] bg-[var(--background-color)]'
-                        : 'border-[var(--border-color)] bg-[var(--card-color)]',
+                        ? 'border-(--main-color) bg-(--background-color)'
+                        : 'border-(--border-color) bg-(--card-color)',
                     )}
                     onClick={() => {
                       playClick();
@@ -287,7 +291,7 @@ const WelcomeModal = () => {
                     }}
                   >
                     <div className='flex items-center gap-2'>
-                      <span className='text-[var(--main-color)]'>
+                      <span className='text-(--main-color)'>
                         {localDisplayKana && '● '}
                       </span>
                       <span className='font-medium'>
@@ -299,20 +303,20 @@ const WelcomeModal = () => {
               </div>
 
               <div className='space-y-3'>
-                <h3 className='text-lg font-semibold text-[var(--main-color)]'>
+                <h3 className='text-lg font-semibold text-(--main-color)'>
                   {t('steps.behavior.soundEffects.title')}
                 </h3>
-                <p className='text-sm text-[var(--secondary-color)]'>
+                <p className='text-sm text-(--secondary-color)'>
                   {t('steps.behavior.soundEffects.description')}
                 </p>
                 <div className='grid grid-cols-1 gap-3 sm:grid-cols-2'>
                   <button
                     className={clsx(
                       'cursor-pointer rounded-lg border-2 p-3 transition-colors duration-200',
-                      'hover:border-[var(--main-color)]/50',
+                      'hover:border-(--main-color)/50',
                       !localSilentMode
-                        ? 'border-[var(--main-color)] bg-[var(--background-color)]'
-                        : 'border-[var(--border-color)] bg-[var(--card-color)]',
+                        ? 'border-(--main-color) bg-(--background-color)'
+                        : 'border-(--border-color) bg-(--card-color)',
                     )}
                     onClick={() => {
                       playClick();
@@ -321,7 +325,7 @@ const WelcomeModal = () => {
                     }}
                   >
                     <div className='flex items-center justify-center gap-2'>
-                      <span className='text-[var(--main-color)]'>
+                      <span className='text-(--main-color)'>
                         {!localSilentMode && '● '}
                       </span>
                       <span className='font-medium'>
@@ -334,10 +338,10 @@ const WelcomeModal = () => {
                   <button
                     className={clsx(
                       'cursor-pointer rounded-lg border-2 p-3 transition-colors duration-200',
-                      'hover:border-[var(--main-color)]/50',
+                      'hover:border-(--main-color)/50',
                       localSilentMode
-                        ? 'border-[var(--main-color)] bg-[var(--background-color)]'
-                        : 'border-[var(--border-color)] bg-[var(--card-color)]',
+                        ? 'border-(--main-color) bg-(--background-color)'
+                        : 'border-(--border-color) bg-(--card-color)',
                     )}
                     onClick={() => {
                       playClick();
@@ -346,7 +350,7 @@ const WelcomeModal = () => {
                     }}
                   >
                     <div className='flex items-center justify-center gap-2'>
-                      <span className='text-[var(--main-color)]'>
+                      <span className='text-(--main-color)'>
                         {localSilentMode && '● '}
                       </span>
                       <span className='font-medium'>
@@ -365,11 +369,11 @@ const WelcomeModal = () => {
         return (
           <div className='space-y-6'>
             <div className='space-y-2 text-center'>
-              <h2 className='flex items-center justify-center gap-2 text-2xl font-bold text-[var(--main-color)]'>
+              <h2 className='flex items-center justify-center gap-2 text-2xl font-bold text-(--main-color)'>
                 <Palette size={28} />
                 {t('steps.themes.title')}
               </h2>
-              <p className='text-[var(--secondary-color)]'>
+              <p className='text-(--secondary-color)'>
                 {t('steps.themes.subtitle')}
               </p>
             </div>
@@ -413,10 +417,10 @@ const WelcomeModal = () => {
 
                   return (
                     <div key={themeSet.name} className='space-y-3'>
-                      <div className='flex items-center gap-2 text-lg font-medium text-[var(--main-color)]'>
+                      <div className='flex items-center gap-2 text-lg font-medium text-(--main-color)'>
                         <themeSet.icon size={20} />
                         {themeSet.name}
-                        {/* <span className='text-sm font-normal text-[var(--secondary-color)]'>
+                        {/* <span className='text-sm font-normal text-(--secondary-color)'>
                       ({themeSet.themes.length})
                     </span> */}
                       </div>
@@ -495,8 +499,8 @@ const WelcomeModal = () => {
                   );
                 })}
             </div>
-            <div className='rounded-lg bg-[var(--secondary-color)] p-3 text-center'>
-              <p className='text-sm text-[var(--background-color)]'>
+            <div className='rounded-lg bg-(--secondary-color) p-3 text-center'>
+              <p className='text-sm text-(--background-color)'>
                 {t('steps.themes.moreInfo')}{' '}
                 <strong>{t('steps.themes.preferences')}</strong>
               </p>
@@ -508,57 +512,56 @@ const WelcomeModal = () => {
         return (
           <div className='space-y-6'>
             <div className='space-y-2 text-center'>
-              <h2 className='flex items-center justify-center gap-2 text-2xl font-bold text-[var(--main-color)]'>
+              <h2 className='flex items-center justify-center gap-2 text-2xl font-bold text-(--main-color)'>
                 <Type size={28} />
                 {t('steps.fonts.title')}
               </h2>
-              <p className='text-[var(--secondary-color)]'>
+              <p className='text-(--secondary-color)'>
                 {t('steps.fonts.subtitle')}
               </p>
             </div>
 
-            <div className='scrollbar-thin scrollbar-thumb-[var(--border-color)] scrollbar-track-transparent max-h-80 space-y-4 overflow-y-auto p-1 pr-2'>
+            <div className='scrollbar-thin scrollbar-thumb-(--border-color) scrollbar-track-transparent max-h-80 space-y-4 overflow-y-auto p-1 pr-2'>
               <div className='grid grid-cols-1 gap-4 sm:grid-cols-2'>
-                {modalFonts
-                  .filter(fontObj => isRecommendedFont(fontObj.name))
-                  .map((fontObj: (typeof modalFonts)[number]) => (
-                    <button
-                      key={fontObj.name}
+                {recommendedFonts.map(fontObj => (
+                  <button
+                    key={fontObj.name}
+                    className={clsx(
+                      'flex cursor-pointer items-center justify-center overflow-hidden rounded-xl border-0 px-4 py-4 transition-all duration-200 hover:opacity-90 active:scale-95',
+                      localFont === fontObj.name
+                        ? 'border-(--main-color)'
+                        : 'border-(--card-color)',
+                    )}
+                    style={{ backgroundColor: 'var(--background-color)' }}
+                    onClick={() => {
+                      playClick();
+                      setLocalFont(fontObj.name);
+                      setFont(fontObj.name);
+                    }}
+                  >
+                    <p
                       className={clsx(
-                        'flex cursor-pointer items-center justify-center overflow-hidden rounded-xl border-0 bg-[var(--card-color)] px-4 py-4 transition-all duration-200 hover:opacity-90 active:scale-95',
-                        localFont === fontObj.name
-                          ? 'border-[var(--main-color)]'
-                          : 'border-[var(--card-color)]',
+                        'text-center text-xl',
+                        fontObj.font.className,
                       )}
-                      onClick={() => {
-                        playClick();
-                        setLocalFont(fontObj.name);
-                        setFont(fontObj.name);
-                      }}
                     >
-                      <p
-                        className={clsx(
-                          'text-center text-xl',
-                          fontObj.font.className,
-                        )}
-                      >
-                        <span className='text-[var(--secondary-color)]'>
-                          {localFont === fontObj.name ? '\u2B24 ' : ''}
-                        </span>
-                        <span className='text-[var(--main-color)]'>
-                          {fontObj.name}
-                          {fontObj.name === 'Zen Maru Gothic' &&
-                            ` ${t('steps.fonts.default')}`}
-                        </span>
-                        <span className='ml-2 text-[var(--secondary-color)]'>
-                          かな道場
-                        </span>
-                      </p>
-                    </button>
-                  ))}
+                      <span className='text-(--secondary-color)'>
+                        {localFont === fontObj.name ? '\u2B24 ' : ''}
+                      </span>
+                      <span className='text-(--main-color)'>
+                        {fontObj.name}
+                        {fontObj.name === 'Zen Maru Gothic' &&
+                          ` ${t('steps.fonts.default')}`}
+                      </span>
+                      <span className='ml-2 text-(--secondary-color)'>
+                        かな道場
+                      </span>
+                    </p>
+                  </button>
+                ))}
               </div>
-              <div className='mt-4 rounded-lg bg-[var(--secondary-color)] p-3 text-center'>
-                <p className='text-sm text-[var(--background-color)]'>
+              <div className='mt-4 rounded-lg bg-(--secondary-color) p-3 text-center'>
+                <p className='text-sm text-(--background-color)'>
                   {t('steps.fonts.moreInfo')}{' '}
                   <strong>{t('steps.fonts.preferences')}</strong>
                 </p>
@@ -571,19 +574,19 @@ const WelcomeModal = () => {
         return (
           <div className='space-y-6 text-center'>
             <div className='space-y-2'>
-              <h2 className='text-3xl font-bold text-[var(--main-color)]'>
+              <h2 className='text-3xl font-bold text-(--main-color)'>
                 {t('steps.complete.title')}
               </h2>
-              <p className='text-lg text-[var(--secondary-color)]'>
+              <p className='text-lg text-(--secondary-color)'>
                 {t('steps.complete.subtitle')}
               </p>
             </div>
 
             <div className='space-y-4'>
-              <p className='text-[var(--secondary-color)]'>
+              <p className='text-(--secondary-color)'>
                 {t('steps.complete.canChange')}
               </p>
-              <p className='text-sm text-[var(--secondary-color)]'>
+              <p className='text-sm text-(--secondary-color)'>
                 {t('steps.complete.happyLearning')}
               </p>
             </div>
@@ -619,14 +622,14 @@ const WelcomeModal = () => {
           exit={{ scale: 0.9, opacity: 0, y: 20 }}
           className={clsx(
             'max-h-[85vh] w-full overflow-y-auto md:w-4/5 lg:w-3/5',
-            'm-3 rounded-2xl bg-[var(--card-color)]',
+            'm-3 rounded-2xl bg-(--card-color)',
             'shadow-2xl shadow-black/20',
             cardBorderStyles,
           )}
           onClick={e => e.stopPropagation()}
         >
           {/* Header */}
-          <div className='sticky top-0 z-10 border-b border-[var(--border-color)]/30 bg-[var(--card-color)] p-3 sm:p-5'>
+          <div className='sticky top-0 z-10 border-b border-(--border-color)/30 bg-(--card-color) p-3 sm:p-5'>
             <div className='flex items-center justify-between'>
               <div className='flex items-center gap-2'>
                 <div
@@ -646,8 +649,8 @@ const WelcomeModal = () => {
                         className={clsx(
                           'h-2 w-2 rounded-full transition-all duration-300',
                           isActive
-                            ? 'scale-110 bg-[var(--main-color)]'
-                            : 'scale-100 bg-[var(--border-color)]',
+                            ? 'scale-110 bg-(--main-color)'
+                            : 'scale-100 bg-(--border-color)',
                         )}
                         title={`Step ${index + 1}: ${stepName}`}
                       />
@@ -660,8 +663,8 @@ const WelcomeModal = () => {
                 onClick={handleClose}
                 className={clsx(
                   'cursor-pointer rounded-lg p-2 transition-colors duration-200',
-                  'hover:bg-[var(--background-color)]',
-                  'text-[var(--secondary-color)] hover:text-[var(--main-color)]',
+                  'hover:bg-(--background-color)',
+                  'text-(--secondary-color) hover:text-(--main-color)',
                 )}
               >
                 <X size={20} />
@@ -675,15 +678,15 @@ const WelcomeModal = () => {
           </div>
 
           {/* Actions */}
-          <div className='sticky bottom-0 border-t border-[var(--border-color)]/30 bg-[var(--card-color)] p-3 pt-3 sm:p-5'>
+          <div className='sticky bottom-0 border-t border-(--border-color)/30 bg-(--card-color) p-3 pt-3 sm:p-5'>
             <div className='flex items-center justify-between'>
               {step !== 'welcome' ? (
                 <button
                   onClick={handlePrevious}
                   className={clsx(
                     'flex cursor-pointer items-center justify-center gap-2 rounded-xl px-4 py-2 sm:px-6 sm:py-3',
-                    'text-[var(--secondary-color)] hover:text-[var(--main-color)]',
-                    'transition-all duration-200 hover:bg-[var(--background-color)]',
+                    'text-(--secondary-color) hover:text-(--main-color)',
+                    'transition-all duration-200 hover:bg-(--background-color)',
                     'text-sm sm:text-base',
                   )}
                 >
@@ -701,8 +704,8 @@ const WelcomeModal = () => {
                 onClick={handleNext}
                 className={clsx(
                   'flex cursor-pointer items-center justify-center gap-2 rounded-xl px-6 py-2 sm:px-8 sm:py-3',
-                  'text-sm font-medium text-[var(--main-color)] sm:text-base',
-                  'transition-all duration-200 hover:bg-[var(--background-color)] active:scale-98',
+                  'text-sm font-medium text-(--main-color) sm:text-base',
+                  'transition-all duration-200 hover:bg-(--background-color) active:scale-98',
                 )}
               >
                 <span>

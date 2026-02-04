@@ -33,7 +33,7 @@ const FuriganaText = ({
         <ruby className={className} lang={lang}>
           {children}
           <rt
-            className={`text-xs ${furiganaClassName} text-[var(--secondary-color)]`}
+            className={`text-xs ${furiganaClassName} text-(--secondary-color)`}
           >
             {reading}
           </rt>
@@ -56,7 +56,7 @@ const FuriganaText = ({
       <ruby className={className} lang={lang}>
         {text}
         <rt
-          className={`text-xs ${furiganaClassName} text-[var(--secondary-color)]`}
+          className={`text-xs ${furiganaClassName} text-(--secondary-color)`}
         >
           {hiraganaReading}
         </rt>

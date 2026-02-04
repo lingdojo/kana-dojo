@@ -134,8 +134,8 @@ const UnitSelector = () => {
                     className={clsx(
                       'rounded px-1.5 py-0.5 text-xs',
                       isSelected
-                        ? 'bg-[var(--background-color)]/20 text-[var(--background-color)]'
-                        : 'bg-[var(--background-color)]/20 text-[var(--background-color)]',
+                        ? 'bg-(--background-color)/20 text-(--background-color)'
+                        : 'bg-(--background-color)/20 text-(--background-color)',
                     )}
                   >
                     {collection.jlpt}
@@ -145,8 +145,8 @@ const UnitSelector = () => {
                   className={clsx(
                     'text-xs',
                     isSelected
-                      ? 'text-[var(--background-color)]/80'
-                      : 'text-[var(--background-color)]/80',
+                      ? 'text-(--background-color)/80'
+                      : 'text-(--background-color)/80',
                   )}
                 >
                   {collection.subtitle}
@@ -166,7 +166,7 @@ const UnitSelector = () => {
   return (
     <div className='flex flex-col'>
       {/* Modern Toggle-Style Unit Selector */}
-      <div className='flex flex-col gap-2 rounded-[2rem] bg-[var(--card-color)] p-2 md:flex-row'>
+      <div className='flex flex-col gap-2 rounded-[2rem] bg-(--card-color) p-2 md:flex-row'>
         {collections.map(collection => {
           const isSelected = collection.name === selectedCollection;
 
@@ -176,7 +176,7 @@ const UnitSelector = () => {
               {isSelected && (
                 <motion.div
                   layoutId='collection-selector-indicator'
-                  className='absolute inset-0 rounded-3xl border-b-10 border-[var(--main-color-accent)] bg-[var(--main-color)]'
+                  className='absolute inset-0 rounded-3xl border-b-10 border-(--main-color-accent) bg-(--main-color)'
                   transition={{
                     type: 'spring',
                     stiffness: 300,
@@ -193,8 +193,8 @@ const UnitSelector = () => {
                 className={clsx(
                   'relative z-10 w-full flex-col gap-1 px-4 pt-4 pb-6',
                   isSelected
-                    ? 'bg-transparent text-[var(--background-color)]'
-                    : 'bg-transparent text-[var(--main-color)] hover:bg-[var(--border-color)]/50',
+                    ? 'bg-transparent text-(--background-color)'
+                    : 'bg-transparent text-(--main-color) hover:bg-(--border-color)/50',
                 )}
               >
                 <div className='flex items-center gap-2'>
@@ -202,7 +202,7 @@ const UnitSelector = () => {
                   <span
                     className={clsx(
                       'rounded px-1.5 py-0.5 text-xs',
-                      'bg-[var(--border-color)] text-[var(--secondary-color)]',
+                      'bg-(--border-color) text-(--secondary-color)',
                     )}
                   >
                     {collection.jlpt}
@@ -212,8 +212,8 @@ const UnitSelector = () => {
                   className={clsx(
                     'text-xs',
                     isSelected
-                      ? 'text-[var(--background-color)]/80'
-                      : 'text-[var(--secondary-color)]/80',
+                      ? 'text-(--background-color)/80'
+                      : 'text-(--secondary-color)/80',
                   )}
                 >
                   {collection.subtitle}

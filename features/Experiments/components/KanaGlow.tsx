@@ -75,7 +75,7 @@ const KanaGlow = () => {
         );
       })}
 
-      <div className='pointer-events-none absolute bottom-8 left-1/2 -translate-x-1/2 text-[var(--secondary-color)] opacity-60'>
+      <div className='pointer-events-none absolute bottom-8 left-1/2 -translate-x-1/2 text-(--secondary-color) opacity-60'>
         Move your cursor to illuminate the kana ✨
       </div>
     </div>

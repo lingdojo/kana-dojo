@@ -11,7 +11,10 @@ import {
   AchievementNotificationContainer,
   AchievementIntegration,
 } from '@/features/Achievements/components';
-import { applyTheme } from '@/features/Preferences/data/themes';
+import {
+  applyTheme,
+  isPremiumThemeId,
+} from '@/features/Preferences/data/themes';
 import BackToTop from '@/shared/components/navigation/BackToTop';
 import MobileBottomBar from '@/shared/components/layout/BottomBar';
 import { useVisitTracker } from '@/features/Progress/hooks/useVisitTracker';
@@ -58,6 +61,7 @@ export default function ClientLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Redundant comment for deployment trigger
   const { theme, font } = usePreferencesStore(
     useShallow(state => ({ theme: state.theme, font: state.font })),
   );
@@ -131,12 +135,20 @@ export default function ClientLayout({
     <div
       data-scroll-restoration-id='container'
       className={clsx(
-        'min-h-[100dvh] max-w-[100dvw] bg-[var(--background-color)] text-[var(--main-color)]',
+        'min-h-[100dvh] max-w-[100dvw] bg-(--background-color) text-(--main-color)',
         fontClassName,
       )}
       style={{
         height: '100dvh',
         overflowY: 'auto',
+        ...(isPremiumThemeId(effectiveTheme)
+          ? {
+              backgroundImage: "url('/wallpapers/neonretrocarcity.jpg')",
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundAttachment: 'fixed',
+            }
+          : {}),
       }}
     >
       <GlobalAudioController />

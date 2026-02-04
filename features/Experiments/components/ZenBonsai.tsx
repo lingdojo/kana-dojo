@@ -1,5 +1,5 @@
 'use client';
-import { useState, useRef, useEffect, useCallback } from 'react';
+import { useState, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useClick, useCorrect } from '@/shared/hooks/useAudio';
 import { allKana } from '../data/kanaData';
@@ -72,10 +72,10 @@ export default function ZenBonsai() {
   return (
     <div className='flex min-h-[85vh] flex-1 flex-col items-center justify-between gap-8 overflow-hidden'>
       <div className='text-center'>
-        <h1 className='flex items-center justify-center gap-2 text-3xl font-bold text-[var(--main-color)]'>
+        <h1 className='flex items-center justify-center gap-2 text-3xl font-bold text-(--main-color)'>
           <TreePine className='text-emerald-500' /> Zen Bonsai
         </h1>
-        <p className='text-[var(--secondary-color)]'>
+        <p className='text-(--secondary-color)'>
           Nurture your kana tree with mindful actions
         </p>
       </div>
@@ -135,34 +135,34 @@ export default function ZenBonsai() {
 
       {/* Controls */}
       <div className='flex flex-col items-center gap-6 pb-8'>
-        <div className='h-2 w-64 overflow-hidden rounded-full bg-[var(--border-color)]'>
+        <div className='h-2 w-64 overflow-hidden rounded-full bg-(--border-color)'>
           <motion.div
             className='h-full bg-emerald-400'
             animate={{ width: `${(energy / (level * 10)) * 100}%` }}
           />
         </div>
-        <p className='text-sm font-bold tracking-tighter text-[var(--secondary-color)] uppercase'>
+        <p className='text-sm font-bold tracking-tighter text-(--secondary-color) uppercase'>
           Level {level} Evolution
         </p>
 
         <div className='flex gap-4'>
           <button
             onClick={() => handleInteract('water')}
-            className='flex flex-col items-center gap-2 rounded-2xl border border-[var(--border-color)] bg-[var(--card-color)] p-4 text-[var(--secondary-color)] transition-all hover:border-blue-400 hover:text-blue-400 active:scale-95'
+            className='flex flex-col items-center gap-2 rounded-2xl border border-(--border-color) bg-(--card-color) p-4 text-(--secondary-color) transition-all hover:border-blue-400 hover:text-blue-400 active:scale-95'
           >
             <Droplet />
             <span className='text-[10px] font-bold'>WATER</span>
           </button>
           <button
             onClick={() => handleInteract('sun')}
-            className='flex flex-col items-center gap-2 rounded-2xl border border-[var(--border-color)] bg-[var(--card-color)] p-4 text-[var(--secondary-color)] transition-all hover:border-orange-400 hover:text-orange-400 active:scale-95'
+            className='flex flex-col items-center gap-2 rounded-2xl border border-(--border-color) bg-(--card-color) p-4 text-(--secondary-color) transition-all hover:border-orange-400 hover:text-orange-400 active:scale-95'
           >
             <Sun />
             <span className='text-[10px] font-bold'>SUN</span>
           </button>
           <button
             onClick={() => handleInteract('wind')}
-            className='flex flex-col items-center gap-2 rounded-2xl border border-[var(--border-color)] bg-[var(--card-color)] p-4 text-[var(--secondary-color)] transition-all hover:border-[var(--main-color)] hover:text-[var(--main-color)] active:scale-95'
+            className='flex flex-col items-center gap-2 rounded-2xl border border-(--border-color) bg-(--card-color) p-4 text-(--secondary-color) transition-all hover:border-(--main-color) hover:text-(--main-color) active:scale-95'
           >
             <Wind />
             <span className='text-[10px] font-bold'>WIND</span>

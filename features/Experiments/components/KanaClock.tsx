@@ -39,10 +39,10 @@ const KanaClock = () => {
 
   return (
     <div className='flex flex-1 flex-col items-center justify-center gap-8 p-4'>
-      <h2 className='text-2xl text-[var(--main-color)]'>⏰ Kana Clock</h2>
+      <h2 className='text-2xl text-(--main-color)'>⏰ Kana Clock</h2>
 
       {/* Clock Face */}
-      <div className='relative h-72 w-72 rounded-full border-4 border-[var(--border-color)] bg-[var(--card-color)] md:h-80 md:w-80'>
+      <div className='relative h-72 w-72 rounded-full border-4 border-(--border-color) bg-(--card-color) md:h-80 md:w-80'>
         {/* Kana Numbers */}
         {clockKana.map((kana, i) => {
           const angle = (i - 3) * 30 * (Math.PI / 180);
@@ -51,7 +51,7 @@ const KanaClock = () => {
             <span
               key={i}
               lang='ja'
-              className='absolute text-xs whitespace-nowrap text-[var(--main-color)] md:text-sm'
+              className='absolute text-xs whitespace-nowrap text-(--main-color) md:text-sm'
               style={{
                 left: `${50 + radius * Math.cos(angle)}%`,
                 top: `${50 + radius * Math.sin(angle)}%`,
@@ -65,7 +65,7 @@ const KanaClock = () => {
 
         {/* Hour Hand */}
         <div
-          className='absolute top-1/2 left-1/2 h-20 w-1.5 origin-bottom rounded-full bg-[var(--main-color)]'
+          className='absolute top-1/2 left-1/2 h-20 w-1.5 origin-bottom rounded-full bg-(--main-color)'
           style={{
             transform: `translateX(-50%) translateY(-100%) rotate(${hourAngle}deg)`,
           }}
@@ -73,7 +73,7 @@ const KanaClock = () => {
 
         {/* Minute Hand */}
         <div
-          className='absolute top-1/2 left-1/2 h-28 w-1 origin-bottom rounded-full bg-[var(--accent-color)]'
+          className='absolute top-1/2 left-1/2 h-28 w-1 origin-bottom rounded-full bg-(--accent-color)'
           style={{
             transform: `translateX(-50%) translateY(-100%) rotate(${minuteAngle}deg)`,
           }}
@@ -89,19 +89,19 @@ const KanaClock = () => {
         />
 
         {/* Center Dot */}
-        <div className='absolute top-1/2 left-1/2 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--main-color)]' />
+        <div className='absolute top-1/2 left-1/2 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-(--main-color)' />
 
         {/* Floating Kana Decoration */}
         <span
           lang='ja'
-          className='absolute right-4 bottom-4 text-2xl text-[var(--accent-color)] opacity-50'
+          className='absolute right-4 bottom-4 text-2xl text-(--accent-color) opacity-50'
         >
           {hiraganaOnly[seconds % hiraganaOnly.length].kana}
         </span>
       </div>
 
       {/* Digital Time */}
-      <div className='font-mono text-3xl text-[var(--main-color)]'>
+      <div className='font-mono text-3xl text-(--main-color)'>
         {time.toLocaleTimeString('ja-JP')}
       </div>
     </div>

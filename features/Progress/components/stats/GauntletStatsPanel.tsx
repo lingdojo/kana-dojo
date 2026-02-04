@@ -64,31 +64,31 @@ function StatItem({
       transition={{ duration: 0.3, delay: index * 0.05 }}
       className={cn(
         'group/item cursor-pointer rounded-2xl p-4',
-        'bg-[var(--background-color)]',
+        'bg-(--background-color)',
         'border border-transparent',
         'transition-colors duration-300',
-        'hover:border-[var(--main-color)]/20',
+        'hover:border-(--main-color)/20',
       )}
     >
       <div className='flex items-center gap-4'>
         <div
           className={cn(
             'flex h-12 w-12 shrink-0 items-center justify-center rounded-xl',
-            'bg-gradient-to-br from-[var(--main-color)]/10 to-[var(--secondary-color)]/5',
-            'text-[var(--main-color)]',
+            'bg-gradient-to-br from-(--main-color)/10 to-(--secondary-color)/5',
+            'text-(--main-color)',
             'transition-colors duration-300',
-            'group-hover/item:from-[var(--main-color)]/15 group-hover/item:to-[var(--secondary-color)]/10',
+            'group-hover/item:from-(--main-color)/15 group-hover/item:to-(--secondary-color)/10',
           )}
         >
           <Icon className='h-5 w-5' />
         </div>
         <div className='min-w-0 flex-1'>
-          <p className='text-xs font-medium text-[var(--secondary-color)]'>
+          <p className='text-xs font-medium text-(--secondary-color)'>
             {label}
           </p>
-          <p className='text-xl font-bold text-[var(--main-color)]'>{value}</p>
+          <p className='text-xl font-bold text-(--main-color)'>{value}</p>
           {subValue && (
-            <p className='text-xs text-[var(--secondary-color)]/60'>
+            <p className='text-xs text-(--secondary-color)/60'>
               {subValue}
             </p>
           )}
@@ -107,14 +107,14 @@ function LoadingSkeleton() {
       {[...Array(6)].map((_, i) => (
         <div
           key={i}
-          className='relative overflow-hidden rounded-2xl bg-[var(--background-color)] p-4'
+          className='relative overflow-hidden rounded-2xl bg-(--background-color) p-4'
         >
-          <div className='animate-shimmer absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-[var(--card-color)]/50 to-transparent' />
+          <div className='animate-shimmer absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-(--card-color)/50 to-transparent' />
           <div className='flex items-center gap-4'>
-            <div className='h-12 w-12 shrink-0 rounded-xl bg-[var(--border-color)]/30' />
+            <div className='h-12 w-12 shrink-0 rounded-xl bg-(--border-color)/30' />
             <div className='flex-1 space-y-2'>
-              <div className='h-3 w-16 rounded bg-[var(--border-color)]/30' />
-              <div className='h-5 w-12 rounded bg-[var(--border-color)]/30' />
+              <div className='h-3 w-16 rounded bg-(--border-color)/30' />
+              <div className='h-5 w-12 rounded bg-(--border-color)/30' />
             </div>
           </div>
         </div>
@@ -136,8 +136,8 @@ function EmptyState() {
       <div className='mb-4 opacity-30'>
         <Trophy className='h-16 w-16' />
       </div>
-      <p className='text-[var(--secondary-color)]'>No gauntlet data yet</p>
-      <p className='text-sm text-[var(--secondary-color)]/60'>
+      <p className='text-(--secondary-color)'>No gauntlet data yet</p>
+      <p className='text-sm text-(--secondary-color)/60'>
         Complete a gauntlet to see your stats!
       </p>
     </motion.div>
@@ -188,13 +188,13 @@ export default function GauntletStatsPanel({
       transition={{ duration: 0.5, delay: 0.5 }}
       className={cn(
         'group relative overflow-hidden rounded-3xl',
-        'border border-[var(--border-color)]/50 bg-[var(--card-color)]',
+        'border border-(--border-color)/50 bg-(--card-color)',
         'p-6',
         className,
       )}
     >
       {/* Decorative element */}
-      <div className='pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-gradient-to-tr from-[var(--secondary-color)]/5 to-transparent' />
+      <div className='pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-gradient-to-tr from-(--secondary-color)/5 to-transparent' />
 
       <div className='relative z-10 flex flex-col gap-6'>
         {/* Header */}
@@ -202,15 +202,15 @@ export default function GauntletStatsPanel({
           <motion.div
             animate={{ rotate: [0, 5, -5, 0] }}
             transition={{ duration: 3, repeat: Infinity, repeatDelay: 2 }}
-            className='flex h-14 w-14 items-center justify-center rounded-2xl border border-[var(--main-color)]/20 bg-gradient-to-br from-[var(--main-color)]/20 to-[var(--secondary-color)]/10'
+            className='flex h-14 w-14 items-center justify-center rounded-2xl border border-(--main-color)/20 bg-gradient-to-br from-(--main-color)/20 to-(--secondary-color)/10'
           >
-            <Swords className='h-7 w-7 text-[var(--main-color)]' />
+            <Swords className='h-7 w-7 text-(--main-color)' />
           </motion.div>
           <div>
-            <h3 className='text-2xl font-bold text-[var(--main-color)]'>
+            <h3 className='text-2xl font-bold text-(--main-color)'>
               Gauntlet
             </h3>
-            <p className='text-sm text-[var(--secondary-color)]/70'>
+            <p className='text-sm text-(--secondary-color)/70'>
               Endurance challenge stats
             </p>
           </div>

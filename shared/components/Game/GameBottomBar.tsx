@@ -52,7 +52,7 @@ export const GameBottomBar = ({
     <div
       className={clsx(
         'right-0 left-0 w-full',
-        'border-t-2 border-[var(--border-color)] bg-[var(--card-color)]',
+        'border-t-2 border-(--border-color) bg-(--card-color)',
         'absolute bottom-0 z-10 px-2 py-4 sm:py-3 md:bottom-6 md:px-12 md:pt-2 md:pb-4',
         'flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-0',
         className,
@@ -74,15 +74,15 @@ export const GameBottomBar = ({
           )}
         >
           {isCorrect ? (
-            <CircleCheck className='h-10 w-10 text-[var(--main-color)] sm:h-12 sm:w-12' />
+            <CircleCheck className='h-10 w-10 text-(--main-color) sm:h-12 sm:w-12' />
           ) : (
-            <CircleX className='h-10 w-10 text-[var(--main-color)] sm:h-12 sm:w-12' />
+            <CircleX className='h-10 w-10 text-(--main-color) sm:h-12 sm:w-12' />
           )}
           <div className='flex flex-col'>
-            <span className='text-lg text-[var(--secondary-color)] sm:text-xl'>
+            <span className='text-lg text-(--secondary-color) sm:text-xl'>
               {displayTitle}
             </span>
-            <span className='text-sm text-[var(--main-color)] sm:text-lg'>
+            <span className='text-sm text-(--main-color) sm:text-lg'>
               {feedbackContent}
             </span>
           </div>

@@ -39,7 +39,7 @@ const Academy = () => {
           <Link href={link.href} key={i}>
             <button
               className={clsx(
-                'h-full w-full transform items-center justify-center rounded-2xl border-2 border-[var(--border-color)] bg-[var(--card-color)] py-6 text-2xl font-semibold transition duration-200 hover:scale-x-102 hover:scale-y-108 hover:cursor-pointer',
+                'h-full w-full transform items-center justify-center rounded-2xl border-2 border-(--border-color) bg-(--card-color) py-6 text-2xl font-semibold transition duration-200 hover:scale-x-102 hover:scale-y-108 hover:cursor-pointer',
                 'flex flex-col',
               )}
             >

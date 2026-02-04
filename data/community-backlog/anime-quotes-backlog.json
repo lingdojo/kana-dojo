@@ -370,7 +370,8 @@
     "english": "I never give up, believe it!",
     "anime": "Naruto",
     "character": "Naruto Uzumaki",
-    "issued": true
+    "issued": false,
+    "completed": true
   },
   {
     "id": 34,
@@ -475,7 +476,8 @@
     "english": "As long as I have something to protect, I won't lose.",
     "anime": "Bleach",
     "character": "Ichigo Kurosaki",
-    "issued": true
+    "issued": false,
+    "completed": true
   },
   {
     "id": 44,
@@ -532,7 +534,10 @@
     "english": "Believing in my friends is my magic.",
     "anime": "Fairy Tail",
     "character": "Natsu Dragneel",
-    "issued": false
+    "issued": false,
+    "completed": true,
+    "completedBy": "kaigritun",
+    "completedPR": 3347
   },
   {
     "id": 50,
@@ -541,7 +546,7 @@
     "english": "The word 'give up' isn't in my dictionary.",
     "anime": "Black Clover",
     "character": "Asta",
-    "issued": false
+    "issued": true
   },
   {
     "id": 51,
@@ -550,7 +555,7 @@
     "english": "Running away can take courage too.",
     "anime": "Mob Psycho 100",
     "character": "Arataka Reigen",
-    "issued": false
+    "issued": true
   },
   {
     "id": 52,
@@ -559,6 +564,6 @@
     "english": "Lend me your energy!",
     "anime": "Dragon Ball Z",
     "character": "Son Goku",
-    "issued": false
+    "issued": true
   }
 ]

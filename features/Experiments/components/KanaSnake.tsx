@@ -120,15 +120,15 @@ const KanaSnake = () => {
 
   return (
     <div className='flex flex-1 flex-col items-center justify-center gap-4 p-4'>
-      <div className='flex items-center gap-6 text-lg text-[var(--main-color)]'>
+      <div className='flex items-center gap-6 text-lg text-(--main-color)'>
         <span>Score: {score}</span>
-        <span className='text-sm text-[var(--secondary-color)]'>
+        <span className='text-sm text-(--secondary-color)'>
           Collected: {collected.join(' ')}
         </span>
       </div>
 
       <div
-        className='grid gap-px rounded-lg bg-[var(--border-color)] p-1'
+        className='grid gap-px rounded-lg bg-(--border-color) p-1'
         style={{
           gridTemplateColumns: `repeat(${GRID_SIZE}, 1fr)`,
         }}
@@ -150,8 +150,8 @@ const KanaSnake = () => {
                   : isSnakeBody
                     ? 'bg-green-400/70'
                     : isFood
-                      ? 'bg-[var(--accent-color)]/30'
-                      : 'bg-[var(--card-color)]',
+                      ? 'bg-(--accent-color)/30'
+                      : 'bg-(--card-color)',
               )}
             >
               {isFood && <span lang='ja'>{food.kana}</span>}
@@ -162,19 +162,19 @@ const KanaSnake = () => {
 
       {gameOver && (
         <div className='flex flex-col items-center gap-3'>
-          <p className='text-xl text-[var(--main-color)]'>
+          <p className='text-xl text-(--main-color)'>
             Game Over! Score: {score}
           </p>
           <button
             onClick={restart}
-            className='rounded-xl bg-[var(--accent-color)] px-6 py-3 text-white transition-transform hover:scale-105'
+            className='rounded-xl bg-(--accent-color) px-6 py-3 text-white transition-transform hover:scale-105'
           >
             Play Again
           </button>
         </div>
       )}
 
-      <p className='text-sm text-[var(--secondary-color)]'>
+      <p className='text-sm text-(--secondary-color)'>
         Use Arrow Keys or WASD to move
       </p>
     </div>

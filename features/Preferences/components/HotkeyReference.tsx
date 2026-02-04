@@ -8,21 +8,21 @@ const HotkeyReference = ({
       <h5 className='mb-2 text-lg'>Hotkey Reference</h5>
       <div className='overflow-x-auto'>
         <table className='min-w-full overflow-hidden rounded-lg'>
-          <thead className='bg-[var(--card-color)]'>
+          <thead className='bg-(--card-color)'>
             <tr>
-              <th className='bg-[var(--border-color)] px-4 py-2 text-left'>
+              <th className='bg-(--border-color) px-4 py-2 text-left'>
                 Key
               </th>
-              <th className='bg-[var(--border-color)] px-4 py-2 text-left'>
+              <th className='bg-(--border-color) px-4 py-2 text-left'>
                 Action
               </th>
             </tr>
           </thead>
-          <tbody className='divide-y divide-[var(--border-color)]'>
+          <tbody className='divide-y divide-(--border-color)'>
             {hotkeys.map((hotkey, index) => (
-              <tr key={index} className={'bg-[var(--card-color)]'}>
-                <td className='bg-[var(--card-color)] px-4 py-3 font-mono'>
-                  <kbd className='rounded-md bg-[var(--border-color)] px-2 py-1'>
+              <tr key={index} className={'bg-(--card-color)'}>
+                <td className='bg-(--card-color) px-4 py-3 font-mono'>
+                  <kbd className='rounded-md bg-(--border-color) px-2 py-1'>
                     {hotkey.key}
                   </kbd>
                 </td>

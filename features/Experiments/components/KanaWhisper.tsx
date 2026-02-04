@@ -66,23 +66,23 @@ const KanaWhisper = () => {
 
   return (
     <div className='flex flex-1 flex-col items-center justify-center gap-8 p-4'>
-      <div className='flex gap-8 text-lg text-[var(--main-color)]'>
+      <div className='flex gap-8 text-lg text-(--main-color)'>
         <span>Score: {score}</span>
         <span>🔥 Streak: {streak}</span>
       </div>
 
       {/* Display Area */}
-      <div className='flex h-48 w-48 items-center justify-center rounded-2xl border-2 border-[var(--border-color)] bg-[var(--card-color)]'>
+      <div className='flex h-48 w-48 items-center justify-center rounded-2xl border-2 border-(--border-color) bg-(--card-color)'>
         {phase !== 'guess' ? (
           <span
             lang='ja'
-            className='text-8xl text-[var(--main-color)] transition-opacity duration-500'
+            className='text-8xl text-(--main-color) transition-opacity duration-500'
             style={{ opacity: phase === 'show' ? 1 : 0 }}
           >
             {target.kana}
           </span>
         ) : (
-          <span className='text-4xl text-[var(--secondary-color)]'>?</span>
+          <span className='text-4xl text-(--secondary-color)'>?</span>
         )}
       </div>
 
@@ -101,7 +101,7 @@ const KanaWhisper = () => {
                   ? 'border-green-500 bg-green-500/20 text-green-400'
                   : result === 'wrong'
                     ? 'opacity-50'
-                    : 'border-[var(--border-color)] bg-[var(--card-color)] text-[var(--main-color)] hover:scale-105',
+                    : 'border-(--border-color) bg-(--card-color) text-(--main-color) hover:scale-105',
               )}
             >
               {opt.kana}
@@ -111,7 +111,7 @@ const KanaWhisper = () => {
       )}
 
       {/* Instructions */}
-      <p className='text-sm text-[var(--secondary-color)]'>
+      <p className='text-sm text-(--secondary-color)'>
         {phase === 'show'
           ? 'Remember this kana...'
           : phase === 'hide'

@@ -20,14 +20,14 @@ const StatCard = ({ value, label, index }: StatCardProps) => (
     animate={{ opacity: 1, y: 0 }}
     transition={{ delay: 0.1 * (index + 1) }}
     className={clsx(
-      'border border-[var(--border-color)] p-6 text-center',
+      'border border-(--border-color) p-6 text-center',
       cardBorderStyles,
     )}
   >
-    <div className='mb-1 text-3xl font-bold text-[var(--main-color)]'>
+    <div className='mb-1 text-3xl font-bold text-(--main-color)'>
       {value}
     </div>
-    <div className='text-sm text-[var(--secondary-color)]'>{label}</div>
+    <div className='text-sm text-(--secondary-color)'>{label}</div>
   </motion.div>
 );
 
@@ -46,14 +46,14 @@ const ProgressBar = ({ percentage }: ProgressBarProps) => (
     className='mx-auto mt-6 max-w-md'
   >
     <div className='mb-2 flex items-center justify-between'>
-      <span className='text-sm font-medium text-[var(--main-color)]'>
+      <span className='text-sm font-medium text-(--main-color)'>
         Overall Progress
       </span>
-      <span className='text-sm font-bold text-[var(--main-color)]'>
+      <span className='text-sm font-bold text-(--main-color)'>
         {Math.round(percentage)}%
       </span>
     </div>
-    <div className='h-4 w-full rounded-full bg-[var(--card-color)]'>
+    <div className='h-4 w-full rounded-full bg-(--card-color)'>
       <motion.div
         initial={{ width: 0 }}
         animate={{ width: `${percentage}%` }}
@@ -104,11 +104,11 @@ export const HeroSection = ({
         >
           <div className='mb-4 flex items-center justify-center gap-3'>
             <Trophy className='text-yellow-500' size={40} />
-            <h1 className='text-4xl font-bold text-[var(--main-color)]'>
+            <h1 className='text-4xl font-bold text-(--main-color)'>
               Achievements
             </h1>
           </div>
-          <p className='mx-auto max-w-2xl text-lg text-[var(--secondary-color)]'>
+          <p className='mx-auto max-w-2xl text-lg text-(--secondary-color)'>
             Track your Japanese learning journey and celebrate your milestones
           </p>
 

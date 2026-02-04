@@ -9,7 +9,9 @@ import type {
   SubcategoryId,
   CategoryWithCount,
   SubcategoryWithCount,
+  FilterOptions,
 } from '../types';
+import { DIFFICULTY_LEVELS, PRICE_TYPES, PLATFORMS } from '../types';
 
 /**
  * Count resources by category
@@ -153,4 +155,28 @@ export function validateCategoryCounts(
   }
 
   return true;
+}
+
+/**
+ * Build filter option counts for resources
+ * @param resources - Array of resources to count
+ * @returns Filter options with counts
+ */
+export function getFilterOptions(resources: Resource[]): FilterOptions {
+  const difficulties = DIFFICULTY_LEVELS.map(level => ({
+    value: level,
+    count: resources.filter(r => r.difficulty === level).length,
+  }));
+
+  const priceTypes = PRICE_TYPES.map(type => ({
+    value: type,
+    count: resources.filter(r => r.priceType === type).length,
+  }));
+
+  const platforms = PLATFORMS.map(platform => ({
+    value: platform,
+    count: resources.filter(r => r.platforms.includes(platform)).length,
+  }));
+
+  return { difficulties, priceTypes, platforms };
 }

@@ -58,19 +58,19 @@ function CheckboxGroup<T extends string>({
   };
 
   return (
-    <div className='border-b border-[var(--border-color)] py-6'>
+    <div className='border-b border-(--border-color) py-6'>
       <button
         type='button'
         onClick={() => setIsExpanded(!isExpanded)}
         className='group flex w-full cursor-pointer items-center justify-between'
       >
-        <span className='text-[10px] font-bold tracking-[0.2em] text-[var(--secondary-color)] uppercase opacity-40'>
+        <span className='text-[10px] font-bold tracking-[0.2em] text-(--secondary-color) uppercase opacity-40'>
           {title}
         </span>
         <ChevronDown
           size={14}
           className={cn(
-            'text-[var(--secondary-color)] opacity-40 transition-transform duration-300',
+            'text-(--secondary-color) opacity-40 transition-transform duration-300',
             isExpanded && 'rotate-180',
           )}
         />
@@ -86,8 +86,8 @@ function CheckboxGroup<T extends string>({
                 className={cn(
                   'group flex cursor-pointer items-center justify-between transition-colors duration-300',
                   isSelected
-                    ? 'font-medium text-[var(--main-color)]'
-                    : 'text-[var(--secondary-color)] hover:text-[var(--main-color)]',
+                    ? 'font-medium text-(--main-color)'
+                    : 'text-(--secondary-color) hover:text-(--main-color)',
                 )}
               >
                 <div className='flex items-center gap-2'>
@@ -101,7 +101,7 @@ function CheckboxGroup<T extends string>({
                     className={cn(
                       'h-1.5 w-1.5 rounded-full transition-colors duration-300',
                       isSelected
-                        ? 'scale-100 bg-[var(--main-color)]'
+                        ? 'scale-100 bg-(--main-color)'
                         : 'scale-0 bg-transparent',
                     )}
                   />
@@ -188,7 +188,7 @@ export function FilterPanel({
       {/* Mobile Toggle */}
       <button
         onClick={() => setShowMobile(!showMobile)}
-        className='flex cursor-pointer items-center justify-between border-b border-[var(--border-color)] py-4 text-[var(--main-color)] lg:hidden'
+        className='flex cursor-pointer items-center justify-between border-b border-(--border-color) py-4 text-(--main-color) lg:hidden'
       >
         <span className='flex items-center gap-2 text-sm font-bold'>
           <Filter size={16} />
@@ -207,13 +207,13 @@ export function FilterPanel({
 
       <div className={cn('mt-2 lg:block', !showMobile && 'hidden')}>
         <div className='mb-2 flex items-center justify-between'>
-          <h2 className='text-[10px] font-bold tracking-[0.2em] text-[var(--secondary-color)] uppercase opacity-40'>
+          <h2 className='text-[10px] font-bold tracking-[0.2em] text-(--secondary-color) uppercase opacity-40'>
             Filters
           </h2>
           {activeCount > 0 && (
             <button
               onClick={handleClearAll}
-              className='cursor-pointer text-[10px] font-bold tracking-widest text-[var(--secondary-color)] uppercase transition-colors hover:text-[var(--main-color)]'
+              className='cursor-pointer text-[10px] font-bold tracking-widest text-(--secondary-color) uppercase transition-colors hover:text-(--main-color)'
             >
               Reset
             </button>

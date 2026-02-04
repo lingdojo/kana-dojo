@@ -115,7 +115,7 @@ const isKanjiObj = (obj: IKanjiObj | IVocabObj): obj is IKanjiObj => {
 const FeedbackHeader = ({ feedback }: { feedback: React.ReactElement }) => (
   <motion.p
     variants={itemVariants}
-    className='flex w-full items-center justify-center gap-1.5 border-t-1 border-b-1 border-[var(--border-color)] px-4 py-3 text-xl'
+    className='flex w-full items-center justify-center gap-1.5 border-t-1 border-b-1 border-(--border-color) px-4 py-3 text-xl'
   >
     {feedback}
   </motion.p>
@@ -142,7 +142,7 @@ const ContinueButton = ({
       }}
       className={clsx(
         'w-[100vw]',
-        'border-t-2 border-[var(--border-color)] bg-[var(--card-color)]',
+        'border-t-2 border-(--border-color) bg-(--card-color)',
         'absolute bottom-0 z-10 px-4 py-4 md:bottom-6',
         'flex items-center justify-center',
       )}
@@ -180,11 +180,11 @@ const KanjiDisplay = ({ payload }: { payload: IKanjiObj }) => (
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ delay: 0.1, duration: 0.3 }}
-      className='absolute inset-0 grid grid-cols-2 grid-rows-2 rounded-xl border-1 border-[var(--border-color)] bg-[var(--background-color)] transition-all group-hover:bg-[var(--card-color)]'
+      className='absolute inset-0 grid grid-cols-2 grid-rows-2 rounded-xl border-1 border-(--border-color) bg-(--background-color) transition-all group-hover:bg-(--card-color)'
     >
-      <div className='border-r border-b border-[var(--border-color)]' />
-      <div className='border-b border-[var(--border-color)]' />
-      <div className='border-r border-[var(--border-color)]' />
+      <div className='border-r border-b border-(--border-color)' />
+      <div className='border-b border-(--border-color)' />
+      <div className='border-r border-(--border-color)' />
       <div />
     </motion.div>
 
@@ -212,7 +212,7 @@ const ReadingsList = ({
     <motion.div
       variants={readingVariants}
       custom={delay}
-      className='flex h-1/2 flex-row gap-2 rounded-2xl bg-[var(--card-color)]'
+      className='flex h-1/2 flex-row gap-2 rounded-2xl bg-(--card-color)'
     >
       {readings.slice(0, 2).map((reading, i) => (
         <motion.span
@@ -227,9 +227,9 @@ const ReadingsList = ({
           }}
           className={clsx(
             'flex flex-row items-center justify-center px-2 py-1 text-sm md:text-base',
-            'w-full text-[var(--secondary-color)]',
+            'w-full text-(--secondary-color)',
             i < readings.slice(0, 2).length - 1 &&
-              'border-r-1 border-[var(--border-color)]',
+              'border-r-1 border-(--border-color)',
           )}
         >
           {reading}
@@ -282,7 +282,7 @@ const KanjiSummary = ({
 
     <motion.p
       variants={meaningVariants}
-      className='w-full text-xl text-[var(--secondary-color)] md:text-2xl'
+      className='w-full text-xl text-(--secondary-color) md:text-2xl'
     >
       {payload.meanings.join(', ')}
     </motion.p>
@@ -352,15 +352,15 @@ const VocabSummary = ({
           variants={readingVariants}
           className={clsx(
             'flex flex-row items-center rounded-xl px-2 py-1',
-            'bg-[var(--card-color)] text-lg',
-            'text-[var(--secondary-color)]',
+            'bg-(--card-color) text-lg',
+            'text-(--secondary-color)',
           )}
         >
           {displayReading}
         </motion.span>
         <motion.p
           variants={meaningVariants}
-          className='text-xl text-[var(--secondary-color)] md:text-2xl'
+          className='text-xl text-(--secondary-color) md:text-2xl'
         >
           {payload.meanings.join(', ')}
         </motion.p>

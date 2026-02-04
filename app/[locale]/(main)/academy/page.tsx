@@ -35,26 +35,26 @@ export default async function AcademyPage({ params }: AcademyPageProps) {
       >
         {/* Editorial Subtitle */}
         <div className='mb-6 flex items-center gap-4'>
-          <span className='h-[1px] w-12 bg-[var(--main-color)] opacity-20' />
-          <span className='text-[10px] font-black tracking-[0.4em] text-[var(--main-color)] uppercase opacity-60'>
+          <span className='h-[1px] w-12 bg-(--main-color) opacity-20' />
+          <span className='text-[10px] font-black tracking-[0.4em] text-(--main-color) uppercase opacity-60'>
             The Collected Journal
           </span>
         </div>
 
         {/* Main Title */}
-        <h1 className='premium-serif relative z-10 text-7xl font-black tracking-tighter text-[var(--main-color)] md:text-8xl lg:text-9xl'>
+        <h1 className='premium-serif relative z-10 text-7xl font-black tracking-tighter text-(--main-color) md:text-8xl lg:text-9xl'>
           Academy
-          <span className='text-[var(--secondary-color)] opacity-10'>.</span>
+          <span className='text-(--secondary-color) opacity-10'>.</span>
         </h1>
 
         {/* Decorative Element */}
-        <div className='absolute -top-4 -left-12 -z-10 font-serif text-[18rem] font-black tracking-tighter text-[var(--main-color)] opacity-[0.03] select-none md:text-[24rem]'>
+        <div className='absolute -top-4 -left-12 -z-10 font-serif text-[18rem] font-black tracking-tighter text-(--main-color) opacity-[0.03] select-none md:text-[24rem]'>
           A
         </div>
 
         {/* Refined Description */}
         <div className='mt-8 max-w-2xl'>
-          <p className='text-xl leading-relaxed text-[var(--secondary-color)] opacity-80 md:text-2xl'>
+          <p className='text-xl leading-relaxed text-(--secondary-color) opacity-80 md:text-2xl'>
             A curated compendium of Japanese linguistic insights, cultural
             dossiers, and strategic studies for the modern learner.
           </p>

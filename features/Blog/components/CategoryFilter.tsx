@@ -80,8 +80,8 @@ export function CategoryFilter({
         className={cn(
           'inline-flex cursor-pointer items-center rounded-full border px-3 py-1.5 text-sm font-medium transition-all duration-200',
           selectedCategory === null
-            ? 'border-[var(--main-color)] bg-[var(--main-color)] text-[var(--background-color)]'
-            : 'border-[var(--border-color)] bg-transparent text-[var(--secondary-color)] hover:border-[var(--main-color)] hover:text-[var(--main-color)]',
+            ? 'border-(--main-color) bg-(--main-color) text-(--background-color)'
+            : 'border-(--border-color) bg-transparent text-(--secondary-color) hover:border-(--main-color) hover:text-(--main-color)',
         )}
         aria-pressed={selectedCategory === null}
         data-testid='category-filter-all'
@@ -100,10 +100,10 @@ export function CategoryFilter({
             selectedCategory === category
               ? cn(
                   categoryColors[category],
-                  'ring-2 ring-offset-2 ring-offset-[var(--background-color)]',
+                  'ring-2 ring-offset-2 ring-offset-(--background-color)',
                 )
               : cn(
-                  'border-[var(--border-color)] bg-transparent text-[var(--secondary-color)]',
+                  'border-(--border-color) bg-transparent text-(--secondary-color)',
                   categoryColors[category]
                     .split(' ')
                     .slice(0, 2)

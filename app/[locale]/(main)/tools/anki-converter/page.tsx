@@ -240,10 +240,10 @@ export default function AnkiConverterPage() {
       <article className='mx-auto max-w-7xl px-4 py-8'>
         {/* Main Heading */}
         <header className='mb-8 text-center'>
-          <h1 className='mb-4 text-4xl font-bold text-[var(--main-color)]'>
+          <h1 className='mb-4 text-4xl font-bold text-(--main-color)'>
             Anki Deck to JSON Converter
           </h1>
-          <p className='mx-auto max-w-2xl text-lg text-[var(--secondary-color)]'>
+          <p className='mx-auto max-w-2xl text-lg text-(--secondary-color)'>
             Convert your Anki flashcard decks to clean, structured JSON format.
             Free, fast, and completely private — all processing happens in your
             browser.
@@ -256,12 +256,12 @@ export default function AnkiConverterPage() {
         </section>
 
         {/* Content sections for SEO */}
-        <div className='mt-12 space-y-10 text-[var(--secondary-color)]'>
+        <div className='mt-12 space-y-10 text-(--secondary-color)'>
           {/* Supported Formats Section */}
           <section aria-labelledby='supported-formats-heading'>
             <h2
               id='supported-formats-heading'
-              className='mb-4 text-2xl font-semibold text-[var(--main-color)]'
+              className='mb-4 text-2xl font-semibold text-(--main-color)'
             >
               Supported Anki Formats
             </h2>
@@ -271,7 +271,7 @@ export default function AnkiConverterPage() {
             </p>
             <ul className='space-y-3'>
               <li>
-                <strong className='text-[var(--main-color)]'>
+                <strong className='text-(--main-color)'>
                   APKG files (.apkg)
                 </strong>{' '}
                 — The standard Anki package format containing deck data, note
@@ -279,7 +279,7 @@ export default function AnkiConverterPage() {
                 Anki desktop and AnkiWeb.
               </li>
               <li>
-                <strong className='text-[var(--main-color)]'>
+                <strong className='text-(--main-color)'>
                   TSV files (.tsv)
                 </strong>{' '}
                 — Tab-separated values format for simple deck imports and
@@ -287,14 +287,14 @@ export default function AnkiConverterPage() {
                 files.
               </li>
               <li>
-                <strong className='text-[var(--main-color)]'>
+                <strong className='text-(--main-color)'>
                   SQLite databases (.db, .sqlite, .anki2)
                 </strong>{' '}
                 — Direct Anki database files containing all deck information.
                 Found in your Anki profile folder.
               </li>
               <li>
-                <strong className='text-[var(--main-color)]'>
+                <strong className='text-(--main-color)'>
                   COLPKG files (.colpkg)
                 </strong>{' '}
                 — Collection packages that include your entire Anki collection
@@ -307,7 +307,7 @@ export default function AnkiConverterPage() {
           <section aria-labelledby='how-to-convert-heading'>
             <h2
               id='how-to-convert-heading'
-              className='mb-4 text-2xl font-semibold text-[var(--main-color)]'
+              className='mb-4 text-2xl font-semibold text-(--main-color)'
             >
               How to Convert Anki Decks to JSON
             </h2>
@@ -336,13 +336,13 @@ export default function AnkiConverterPage() {
           <section aria-labelledby='features-heading'>
             <h2
               id='features-heading'
-              className='mb-4 text-2xl font-semibold text-[var(--main-color)]'
+              className='mb-4 text-2xl font-semibold text-(--main-color)'
             >
               Features
             </h2>
             <div className='grid gap-4 md:grid-cols-2'>
-              <div className='rounded-lg border border-[var(--border-color)] bg-[var(--card-color)] p-4'>
-                <h3 className='mb-2 font-semibold text-[var(--main-color)]'>
+              <div className='rounded-lg border border-(--border-color) bg-(--card-color) p-4'>
+                <h3 className='mb-2 font-semibold text-(--main-color)'>
                   🔒 100% Private
                 </h3>
                 <p className='text-sm'>
@@ -350,8 +350,8 @@ export default function AnkiConverterPage() {
                   never leave your device — no data is sent to any server.
                 </p>
               </div>
-              <div className='rounded-lg border border-[var(--border-color)] bg-[var(--card-color)] p-4'>
-                <h3 className='mb-2 font-semibold text-[var(--main-color)]'>
+              <div className='rounded-lg border border-(--border-color) bg-(--card-color) p-4'>
+                <h3 className='mb-2 font-semibold text-(--main-color)'>
                   ⚡ Fast Conversion
                 </h3>
                 <p className='text-sm'>
@@ -359,8 +359,8 @@ export default function AnkiConverterPage() {
                   ensure the UI stays responsive during processing.
                 </p>
               </div>
-              <div className='rounded-lg border border-[var(--border-color)] bg-[var(--card-color)] p-4'>
-                <h3 className='mb-2 font-semibold text-[var(--main-color)]'>
+              <div className='rounded-lg border border-(--border-color) bg-(--card-color) p-4'>
+                <h3 className='mb-2 font-semibold text-(--main-color)'>
                   📁 All Formats Supported
                 </h3>
                 <p className='text-sm'>
@@ -368,8 +368,8 @@ export default function AnkiConverterPage() {
                   any Anki deck regardless of export format.
                 </p>
               </div>
-              <div className='rounded-lg border border-[var(--border-color)] bg-[var(--card-color)] p-4'>
-                <h3 className='mb-2 font-semibold text-[var(--main-color)]'>
+              <div className='rounded-lg border border-(--border-color) bg-(--card-color) p-4'>
+                <h3 className='mb-2 font-semibold text-(--main-color)'>
                   🎯 Smart Output
                 </h3>
                 <p className='text-sm'>
@@ -377,8 +377,8 @@ export default function AnkiConverterPage() {
                   custom note types are all handled intelligently.
                 </p>
               </div>
-              <div className='rounded-lg border border-[var(--border-color)] bg-[var(--card-color)] p-4'>
-                <h3 className='mb-2 font-semibold text-[var(--main-color)]'>
+              <div className='rounded-lg border border-(--border-color) bg-(--card-color) p-4'>
+                <h3 className='mb-2 font-semibold text-(--main-color)'>
                   🏷️ Preserves Structure
                 </h3>
                 <p className='text-sm'>
@@ -386,8 +386,8 @@ export default function AnkiConverterPage() {
                   preserved in the JSON output.
                 </p>
               </div>
-              <div className='rounded-lg border border-[var(--border-color)] bg-[var(--card-color)] p-4'>
-                <h3 className='mb-2 font-semibold text-[var(--main-color)]'>
+              <div className='rounded-lg border border-(--border-color) bg-(--card-color) p-4'>
+                <h3 className='mb-2 font-semibold text-(--main-color)'>
                   💻 CLI Available
                 </h3>
                 <p className='text-sm'>
@@ -402,7 +402,7 @@ export default function AnkiConverterPage() {
           <section aria-labelledby='why-convert-heading'>
             <h2
               id='why-convert-heading'
-              className='mb-4 text-2xl font-semibold text-[var(--main-color)]'
+              className='mb-4 text-2xl font-semibold text-(--main-color)'
             >
               Why Convert Anki Decks to JSON?
             </h2>
@@ -443,7 +443,7 @@ export default function AnkiConverterPage() {
           <section aria-labelledby='cli-heading'>
             <h2
               id='cli-heading'
-              className='mb-4 text-2xl font-semibold text-[var(--main-color)]'
+              className='mb-4 text-2xl font-semibold text-(--main-color)'
             >
               Command Line Tool
             </h2>
@@ -453,21 +453,21 @@ export default function AnkiConverterPage() {
             </p>
             <div className='space-y-4'>
               <div>
-                <h3 className='mb-2 font-medium text-[var(--main-color)]'>
+                <h3 className='mb-2 font-medium text-(--main-color)'>
                   Basic Usage
                 </h3>
-                <pre className='overflow-x-auto rounded-lg bg-[var(--card-color)] p-4'>
-                  <code className='text-sm text-[var(--text-color)]'>
+                <pre className='overflow-x-auto rounded-lg bg-(--card-color) p-4'>
+                  <code className='text-sm text-(--text-color)'>
                     npm run anki:convert -- --input deck.apkg --output deck.json
                   </code>
                 </pre>
               </div>
               <div>
-                <h3 className='mb-2 font-medium text-[var(--main-color)]'>
+                <h3 className='mb-2 font-medium text-(--main-color)'>
                   With Options
                 </h3>
-                <pre className='overflow-x-auto rounded-lg bg-[var(--card-color)] p-4'>
-                  <code className='text-sm text-[var(--text-color)]'>
+                <pre className='overflow-x-auto rounded-lg bg-(--card-color) p-4'>
+                  <code className='text-sm text-(--text-color)'>
                     {`# Include statistics and suspended cards
 npm run anki:convert -- -i deck.apkg -o deck.json --include-stats --include-suspended
 
@@ -477,36 +477,36 @@ npm run anki:convert -- --help`}
                 </pre>
               </div>
               <div>
-                <h3 className='mb-2 font-medium text-[var(--main-color)]'>
+                <h3 className='mb-2 font-medium text-(--main-color)'>
                   CLI Options
                 </h3>
                 <ul className='list-disc space-y-1 pl-6 text-sm'>
                   <li>
-                    <code className='rounded bg-[var(--card-color)] px-1'>
+                    <code className='rounded bg-(--card-color) px-1'>
                       -i, --input
                     </code>{' '}
                     — Input file path (required)
                   </li>
                   <li>
-                    <code className='rounded bg-[var(--card-color)] px-1'>
+                    <code className='rounded bg-(--card-color) px-1'>
                       -o, --output
                     </code>{' '}
                     — Output file path (required)
                   </li>
                   <li>
-                    <code className='rounded bg-[var(--card-color)] px-1'>
+                    <code className='rounded bg-(--card-color) px-1'>
                       --include-stats
                     </code>{' '}
                     — Include card statistics in output
                   </li>
                   <li>
-                    <code className='rounded bg-[var(--card-color)] px-1'>
+                    <code className='rounded bg-(--card-color) px-1'>
                       --include-suspended
                     </code>{' '}
                     — Include suspended cards
                   </li>
                   <li>
-                    <code className='rounded bg-[var(--card-color)] px-1'>
+                    <code className='rounded bg-(--card-color) px-1'>
                       -h, --help
                     </code>{' '}
                     — Show help documentation
@@ -520,7 +520,7 @@ npm run anki:convert -- --help`}
           <section aria-labelledby='faq-heading'>
             <h2
               id='faq-heading'
-              className='mb-6 text-2xl font-semibold text-[var(--main-color)]'
+              className='mb-6 text-2xl font-semibold text-(--main-color)'
             >
               Frequently Asked Questions
             </h2>
@@ -528,9 +528,9 @@ npm run anki:convert -- --help`}
               {faqItems.map((faq, index) => (
                 <div
                   key={index}
-                  className='border-b border-[var(--border-color)] pb-4 last:border-0'
+                  className='border-b border-(--border-color) pb-4 last:border-0'
                 >
-                  <h3 className='mb-2 text-lg font-medium text-[var(--main-color)]'>
+                  <h3 className='mb-2 text-lg font-medium text-(--main-color)'>
                     {faq.question}
                   </h3>
                   <p>{faq.answer}</p>
@@ -543,7 +543,7 @@ npm run anki:convert -- --help`}
           <section aria-labelledby='related-tools-heading'>
             <h2
               id='related-tools-heading'
-              className='mb-4 text-2xl font-semibold text-[var(--main-color)]'
+              className='mb-4 text-2xl font-semibold text-(--main-color)'
             >
               Related Japanese Learning Tools
             </h2>
@@ -554,9 +554,9 @@ npm run anki:convert -- --help`}
             <div className='grid gap-4 sm:grid-cols-2 lg:grid-cols-3'>
               <Link
                 href='/translate'
-                className='block rounded-lg border border-[var(--border-color)] bg-[var(--card-color)] p-4 transition-colors hover:border-[var(--main-color)]'
+                className='block rounded-lg border border-(--border-color) bg-(--card-color) p-4 transition-colors hover:border-(--main-color)'
               >
-                <h3 className='mb-1 font-semibold text-[var(--main-color)]'>
+                <h3 className='mb-1 font-semibold text-(--main-color)'>
                   Japanese Translator
                 </h3>
                 <p className='text-sm'>
@@ -566,9 +566,9 @@ npm run anki:convert -- --help`}
               </Link>
               <Link
                 href='/kana'
-                className='block rounded-lg border border-[var(--border-color)] bg-[var(--card-color)] p-4 transition-colors hover:border-[var(--main-color)]'
+                className='block rounded-lg border border-(--border-color) bg-(--card-color) p-4 transition-colors hover:border-(--main-color)'
               >
-                <h3 className='mb-1 font-semibold text-[var(--main-color)]'>
+                <h3 className='mb-1 font-semibold text-(--main-color)'>
                   Kana Practice
                 </h3>
                 <p className='text-sm'>
@@ -578,9 +578,9 @@ npm run anki:convert -- --help`}
               </Link>
               <Link
                 href='/kanji'
-                className='block rounded-lg border border-[var(--border-color)] bg-[var(--card-color)] p-4 transition-colors hover:border-[var(--main-color)]'
+                className='block rounded-lg border border-(--border-color) bg-(--card-color) p-4 transition-colors hover:border-(--main-color)'
               >
-                <h3 className='mb-1 font-semibold text-[var(--main-color)]'>
+                <h3 className='mb-1 font-semibold text-(--main-color)'>
                   Kanji Study
                 </h3>
                 <p className='text-sm'>
@@ -589,9 +589,9 @@ npm run anki:convert -- --help`}
               </Link>
               <Link
                 href='/vocabulary'
-                className='block rounded-lg border border-[var(--border-color)] bg-[var(--card-color)] p-4 transition-colors hover:border-[var(--main-color)]'
+                className='block rounded-lg border border-(--border-color) bg-(--card-color) p-4 transition-colors hover:border-(--main-color)'
               >
-                <h3 className='mb-1 font-semibold text-[var(--main-color)]'>
+                <h3 className='mb-1 font-semibold text-(--main-color)'>
                   Vocabulary Builder
                 </h3>
                 <p className='text-sm'>
@@ -601,9 +601,9 @@ npm run anki:convert -- --help`}
               </Link>
               <Link
                 href='/conjugate'
-                className='block rounded-lg border border-[var(--border-color)] bg-[var(--card-color)] p-4 transition-colors hover:border-[var(--main-color)]'
+                className='block rounded-lg border border-(--border-color) bg-(--card-color) p-4 transition-colors hover:border-(--main-color)'
               >
-                <h3 className='mb-1 font-semibold text-[var(--main-color)]'>
+                <h3 className='mb-1 font-semibold text-(--main-color)'>
                   Verb Conjugator
                 </h3>
                 <p className='text-sm'>
@@ -612,9 +612,9 @@ npm run anki:convert -- --help`}
               </Link>
               <Link
                 href='/resources'
-                className='block rounded-lg border border-[var(--border-color)] bg-[var(--card-color)] p-4 transition-colors hover:border-[var(--main-color)]'
+                className='block rounded-lg border border-(--border-color) bg-(--card-color) p-4 transition-colors hover:border-(--main-color)'
               >
-                <h3 className='mb-1 font-semibold text-[var(--main-color)]'>
+                <h3 className='mb-1 font-semibold text-(--main-color)'>
                   Learning Resources
                 </h3>
                 <p className='text-sm'>
@@ -626,12 +626,12 @@ npm run anki:convert -- --help`}
           </section>
 
           {/* Last Updated */}
-          <footer className='border-t border-[var(--border-color)] pt-6 text-center text-sm text-[var(--secondary-color)]'>
+          <footer className='border-t border-(--border-color) pt-6 text-center text-sm text-(--secondary-color)'>
             <p>
               Last updated: January 2025 •
               <Link
                 href='/privacy'
-                className='ml-1 underline hover:text-[var(--main-color)]'
+                className='ml-1 underline hover:text-(--main-color)'
               >
                 Privacy Policy
               </Link>

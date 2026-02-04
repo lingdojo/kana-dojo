@@ -52,7 +52,7 @@ const KanaMirror = () => {
 
   return (
     <div className='flex flex-1 flex-col items-center justify-center gap-8 p-4'>
-      <h2 className='text-2xl text-[var(--main-color)]'>
+      <h2 className='text-2xl text-(--main-color)'>
         {allMatched ? '✨ Perfect Match!' : 'Match Hiragana ↔ Katakana'}
       </h2>
 
@@ -66,12 +66,12 @@ const KanaMirror = () => {
               disabled={matched.includes(p.id)}
               className={clsx(
                 'h-16 w-16 rounded-xl text-3xl transition-all duration-200',
-                'border-2 border-[var(--border-color)]',
+                'border-2 border-(--border-color)',
                 matched.includes(p.id)
                   ? 'scale-90 bg-green-500/20 text-green-400'
                   : selected?.type === 'h' && selected.id === p.id
-                    ? 'scale-110 bg-[var(--accent-color)] text-white'
-                    : 'bg-[var(--card-color)] text-[var(--main-color)] hover:scale-105',
+                    ? 'scale-110 bg-(--accent-color) text-white'
+                    : 'bg-(--card-color) text-(--main-color) hover:scale-105',
               )}
             >
               {p.hiragana}
@@ -88,12 +88,12 @@ const KanaMirror = () => {
               disabled={matched.includes(p.id)}
               className={clsx(
                 'h-16 w-16 rounded-xl text-3xl transition-all duration-200',
-                'border-2 border-[var(--border-color)]',
+                'border-2 border-(--border-color)',
                 matched.includes(p.id)
                   ? 'scale-90 bg-green-500/20 text-green-400'
                   : selected?.type === 'k' && selected.id === p.id
-                    ? 'scale-110 bg-[var(--accent-color)] text-white'
-                    : 'bg-[var(--card-color)] text-[var(--main-color)] hover:scale-105',
+                    ? 'scale-110 bg-(--accent-color) text-white'
+                    : 'bg-(--card-color) text-(--main-color) hover:scale-105',
               )}
             >
               {p.katakana}
@@ -105,7 +105,7 @@ const KanaMirror = () => {
       {allMatched && (
         <button
           onClick={() => window.location.reload()}
-          className='rounded-xl bg-[var(--accent-color)] px-6 py-3 text-white transition-transform hover:scale-105'
+          className='rounded-xl bg-(--accent-color) px-6 py-3 text-white transition-transform hover:scale-105'
         >
           Play Again
         </button>

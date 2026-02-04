@@ -154,8 +154,8 @@ const SelectionStatusBar = () => {
           }}
           className={clsx(
             'fixed z-40',
-            'bg-[var(--background-color)]',
-            'w-full border-b-2 border-[var(--border-color)]',
+            'bg-(--background-color)',
+            'w-full border-b-2 border-(--border-color)',
           )}
         >
           <div
@@ -168,18 +168,18 @@ const SelectionStatusBar = () => {
             {/* Selected Levels Info */}
             <div className='flex flex-1 flex-row items-start gap-2'>
               <CircleCheck
-                className='mt-0.5 shrink-0 text-[var(--secondary-color)]'
+                className='mt-0.5 shrink-0 text-(--secondary-color)'
                 size={20}
               />
               <span className='text-sm whitespace-nowrap md:text-base'>
                 {selectionLabel}
               </span>
               {/* Compact form on small screens: "1, 2, 3" */}
-              <span className='text-sm break-words text-[var(--secondary-color)] md:hidden'>
+              <span className='text-sm break-words text-(--secondary-color) md:hidden'>
                 {formattedSelectionCompact}
               </span>
               {/* Full form on medium+ screens: "Level 1, Level 2" */}
-              <span className='hidden text-base break-words text-[var(--secondary-color)] md:inline'>
+              <span className='hidden text-base break-words text-(--secondary-color) md:inline'>
                 {formattedSelectionFull}
               </span>
             </div>
@@ -190,7 +190,7 @@ const SelectionStatusBar = () => {
               borderColorScheme='main'
               borderRadius='3xl'
               borderBottomThickness={10}
-              className='w-auto bg-[var(--main-color)]/80 px-4 py-3 lg:px-6'
+              className='w-auto bg-(--main-color)/80 px-4 py-3 lg:px-6'
               onClick={handleClear}
               aria-label='Clear selected levels'
             >

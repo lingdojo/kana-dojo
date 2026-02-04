@@ -121,14 +121,14 @@ export default function TranslationHistory({
       <div
         className={cn(
           'flex flex-col items-center justify-center rounded-2xl py-12',
-          'border border-[var(--border-color)] bg-[var(--card-color)]',
-          'text-[var(--secondary-color)]',
+          'border border-(--border-color) bg-(--card-color)',
+          'text-(--secondary-color)',
         )}
       >
         <div
           className={cn(
             'mb-4 rounded-full p-4',
-            'bg-[var(--secondary-color)]/10',
+            'bg-(--secondary-color)/10',
           )}
         >
           <History className='h-10 w-10 opacity-50' />
@@ -145,7 +145,7 @@ export default function TranslationHistory({
     <div
       className={cn(
         'flex flex-col gap-4 rounded-2xl p-4 sm:p-5',
-        'border border-[var(--border-color)] bg-[var(--card-color)]',
+        'border border-(--border-color) bg-(--card-color)',
         'shadow-lg shadow-black/5',
       )}
     >
@@ -155,17 +155,17 @@ export default function TranslationHistory({
           <div
             className={cn(
               'rounded-lg p-2',
-              'bg-[var(--main-color)]/10',
-              'border border-[var(--main-color)]/20',
+              'bg-(--main-color)/10',
+              'border border-(--main-color)/20',
             )}
           >
-            <History className='h-5 w-5 text-[var(--main-color)]' />
+            <History className='h-5 w-5 text-(--main-color)' />
           </div>
           <div>
-            <h3 className='text-base font-semibold text-[var(--main-color)] sm:text-lg'>
+            <h3 className='text-base font-semibold text-(--main-color) sm:text-lg'>
               Translation History
             </h3>
-            <p className='text-xs text-[var(--secondary-color)]'>
+            <p className='text-xs text-(--secondary-color)'>
               {filterSummary}
             </p>
           </div>
@@ -199,15 +199,15 @@ export default function TranslationHistory({
             </AlertDialogTrigger>
             <AlertDialogContent
               className={cn(
-                'border-[var(--border-color)] bg-[var(--background-color)]',
+                'border-(--border-color) bg-(--background-color)',
                 'rounded-2xl',
               )}
             >
               <AlertDialogHeader>
-                <AlertDialogTitle className='text-[var(--main-color)]'>
+                <AlertDialogTitle className='text-(--main-color)'>
                   Clear Translation History?
                 </AlertDialogTitle>
-                <AlertDialogDescription className='text-[var(--secondary-color)]'>
+                <AlertDialogDescription className='text-(--secondary-color)'>
                   This will permanently delete all your translation history.
                   This action cannot be undone.
                 </AlertDialogDescription>
@@ -246,7 +246,7 @@ export default function TranslationHistory({
       <div className='flex flex-col gap-3'>
         {/* Search bar */}
         <div className='relative'>
-          <Search className='absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-[var(--secondary-color)]' />
+          <Search className='absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-(--secondary-color)' />
           <Input
             placeholder='Search translations...'
             value={filters.searchQuery}
@@ -255,9 +255,9 @@ export default function TranslationHistory({
             }
             className={cn(
               'h-10 py-2 pr-4 pl-10',
-              'border-[var(--border-color)] bg-[var(--background-color)]',
-              'text-[var(--main-color)] placeholder:text-[var(--secondary-color)]',
-              'focus:border-[var(--main-color)] focus:ring-[var(--main-color)]/20',
+              'border-(--border-color) bg-(--background-color)',
+              'text-(--main-color) placeholder:text-(--secondary-color)',
+              'focus:border-(--main-color) focus:ring-(--main-color)/20',
               'rounded-xl',
             )}
           />
@@ -274,9 +274,9 @@ export default function TranslationHistory({
             <SelectTrigger
               className={cn(
                 'h-10 rounded-xl',
-                'border-[var(--border-color)] bg-[var(--background-color)]',
-                'text-[var(--main-color)]',
-                'focus:border-[var(--main-color)] focus:ring-[var(--main-color)]/20',
+                'border-(--border-color) bg-(--background-color)',
+                'text-(--main-color)',
+                'focus:border-(--main-color) focus:ring-(--main-color)/20',
               )}
             >
               <div className='flex items-center gap-2'>
@@ -286,7 +286,7 @@ export default function TranslationHistory({
             </SelectTrigger>
             <SelectContent
               className={cn(
-                'border-[var(--border-color)] bg-[var(--card-color)]',
+                'border-(--border-color) bg-(--card-color)',
                 'rounded-xl',
               )}
             >
@@ -305,9 +305,9 @@ export default function TranslationHistory({
             <SelectTrigger
               className={cn(
                 'h-10 rounded-xl',
-                'border-[var(--border-color)] bg-[var(--background-color)]',
-                'text-[var(--main-color)]',
-                'focus:border-[var(--main-color)] focus:ring-[var(--main-color)]/20',
+                'border-(--border-color) bg-(--background-color)',
+                'text-(--main-color)',
+                'focus:border-(--main-color) focus:ring-(--main-color)/20',
               )}
             >
               <div className='flex items-center gap-2'>
@@ -317,7 +317,7 @@ export default function TranslationHistory({
             </SelectTrigger>
             <SelectContent
               className={cn(
-                'border-[var(--border-color)] bg-[var(--card-color)]',
+                'border-(--border-color) bg-(--card-color)',
                 'rounded-xl',
               )}
             >
@@ -336,9 +336,9 @@ export default function TranslationHistory({
             <SelectTrigger
               className={cn(
                 'h-10 rounded-xl',
-                'border-[var(--border-color)] bg-[var(--background-color)]',
-                'text-[var(--main-color)]',
-                'focus:border-[var(--main-color)] focus:ring-[var(--main-color)]/20',
+                'border-(--border-color) bg-(--background-color)',
+                'text-(--main-color)',
+                'focus:border-(--main-color) focus:ring-(--main-color)/20',
               )}
             >
               <div className='flex items-center gap-2'>
@@ -348,7 +348,7 @@ export default function TranslationHistory({
             </SelectTrigger>
             <SelectContent
               className={cn(
-                'border-[var(--border-color)] bg-[var(--card-color)]',
+                'border-(--border-color) bg-(--card-color)',
                 'rounded-xl',
               )}
             >
@@ -366,10 +366,10 @@ export default function TranslationHistory({
             onClick={clearFilters}
             className={cn(
               'flex items-center justify-center gap-2 px-3 py-2',
-              'text-xs font-medium text-[var(--secondary-color)]',
-              'hover:text-[var(--main-color)]',
+              'text-xs font-medium text-(--secondary-color)',
+              'hover:text-(--main-color)',
               'transition-colors duration-200',
-              'rounded-lg hover:bg-[var(--background-color)]',
+              'rounded-lg hover:bg-(--background-color)',
             )}
           >
             <XCircle className='h-3.5 w-3.5' />
@@ -384,8 +384,8 @@ export default function TranslationHistory({
           <div
             className={cn(
               'flex flex-col items-center justify-center rounded-xl py-8',
-              'border border-[var(--border-color)] bg-[var(--background-color)]',
-              'text-[var(--secondary-color)]',
+              'border border-(--border-color) bg-(--background-color)',
+              'text-(--secondary-color)',
             )}
           >
             <Search className='mb-2 h-8 w-8 opacity-50' />
@@ -400,8 +400,8 @@ export default function TranslationHistory({
               key={entry.id}
               className={cn(
                 'group flex cursor-pointer items-start gap-2 rounded-xl p-3 sm:gap-3 sm:p-4',
-                'border border-[var(--border-color)] bg-[var(--background-color)]',
-                'hover:border-[var(--main-color)] hover:shadow-md',
+                'border border-(--border-color) bg-(--background-color)',
+                'hover:border-(--main-color) hover:shadow-md',
                 'transition-all duration-200',
               )}
               onClick={() => onSelect(entry)}
@@ -420,23 +420,23 @@ export default function TranslationHistory({
                   <span
                     className={cn(
                       'rounded-md px-2 py-1 text-xs font-medium',
-                      'bg-[var(--main-color)]/10 text-[var(--main-color)]',
-                      'border border-[var(--main-color)]/20',
+                      'bg-(--main-color)/10 text-(--main-color)',
+                      'border border-(--main-color)/20',
                     )}
                   >
                     {entry.sourceLanguage === 'en' ? '🇺🇸 EN' : '🇯🇵 JA'}
                     <ArrowRight className='mx-1 inline h-3 w-3' />
                     {entry.targetLanguage === 'en' ? '🇺🇸 EN' : '🇯🇵 JA'}
                   </span>
-                  <span className='flex items-center gap-1 text-xs text-[var(--secondary-color)]'>
+                  <span className='flex items-center gap-1 text-xs text-(--secondary-color)'>
                     <Clock className='h-3 w-3' />
                     {formatTimestamp(entry.timestamp)}
                   </span>
                 </div>
-                <p className='truncate text-xs font-medium text-[var(--main-color)] sm:text-sm'>
+                <p className='truncate text-xs font-medium text-(--main-color) sm:text-sm'>
                   {truncateText(entry.sourceText, 40)}
                 </p>
-                <p className='mt-1 flex items-center gap-1 truncate text-xs text-[var(--secondary-color)]'>
+                <p className='mt-1 flex items-center gap-1 truncate text-xs text-(--secondary-color)'>
                   <ArrowRight className='h-3 w-3 flex-shrink-0' />
                   {truncateText(entry.translatedText, 40)}
                 </p>

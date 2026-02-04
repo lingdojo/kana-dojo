@@ -49,7 +49,7 @@ export default function ResultsScreen({
   const missedGoals = goals.filter(g => !g.reached);
 
   return (
-    <div className='fixed inset-0 z-50 bg-[var(--background-color)]'>
+    <div className='fixed inset-0 z-50 bg-(--background-color)'>
       <div className='flex min-h-[100dvh] flex-col items-center justify-center p-4'>
         <div className='max-h-[90vh] w-full max-w-2xl space-y-6 overflow-y-auto'>
           {/* Header */}
@@ -65,15 +65,15 @@ export default function ResultsScreen({
 
           {/* Secondary Stats */}
           <div className='grid grid-cols-2 gap-4'>
-            <div className='space-y-2 rounded-lg border border-[var(--border-color)] bg-[var(--card-color)] p-4'>
-              <p className='text-sm text-[var(--muted-color)]'>Best Streak</p>
-              <p className='text-2xl font-bold text-[var(--secondary-color)]'>
+            <div className='space-y-2 rounded-lg border border-(--border-color) bg-(--card-color) p-4'>
+              <p className='text-sm text-(--muted-color)'>Best Streak</p>
+              <p className='text-2xl font-bold text-(--secondary-color)'>
                 🔥 {stats.bestStreak}
               </p>
             </div>
-            <div className='space-y-2 rounded-lg border border-[var(--border-color)] bg-[var(--card-color)] p-4'>
-              <p className='text-sm text-[var(--muted-color)]'>Total Answers</p>
-              <p className='text-2xl font-bold text-[var(--secondary-color)]'>
+            <div className='space-y-2 rounded-lg border border-(--border-color) bg-(--card-color) p-4'>
+              <p className='text-sm text-(--muted-color)'>Total Answers</p>
+              <p className='text-2xl font-bold text-(--secondary-color)'>
                 {totalAnswers}
               </p>
             </div>
@@ -93,9 +93,9 @@ export default function ResultsScreen({
               <button
                 className={clsx(
                   'flex h-12 w-full flex-row items-center justify-center gap-2 px-2 sm:px-6',
-                  'bg-[var(--secondary-color)] text-[var(--background-color)]',
+                  'bg-(--secondary-color) text-(--background-color)',
                   'rounded-2xl transition-colors duration-200',
-                  'border-b-6 border-[var(--secondary-color-accent)] shadow-sm',
+                  'border-b-6 border-(--secondary-color-accent) shadow-sm',
                   'hover:cursor-pointer',
                 )}
                 onClick={() => playClick()}
@@ -108,9 +108,9 @@ export default function ResultsScreen({
               onClick={onRestart}
               className={clsx(
                 'flex h-12 w-1/2 flex-row items-center justify-center gap-2 px-2 sm:px-6',
-                'bg-[var(--main-color)] text-[var(--background-color)]',
+                'bg-(--main-color) text-(--background-color)',
                 'rounded-2xl transition-colors duration-200',
-                'border-b-6 border-[var(--main-color-accent)] font-medium shadow-sm',
+                'border-b-6 border-(--main-color-accent) font-medium shadow-sm',
                 'hover:cursor-pointer',
               )}
             >
@@ -129,13 +129,13 @@ export default function ResultsScreen({
 function ResultsHeader({ challengeDuration }: { challengeDuration: number }) {
   return (
     <div className='space-y-2 text-center'>
-      <div className='mb-4 inline-flex h-20 w-20 items-center justify-center rounded-full bg-[var(--main-color)]/10'>
-        <Timer size={48} className='text-[var(--main-color)]' />
+      <div className='mb-4 inline-flex h-20 w-20 items-center justify-center rounded-full bg-(--main-color)/10'>
+        <Timer size={48} className='text-(--main-color)' />
       </div>
-      <h1 className='text-3xl font-bold text-[var(--secondary-color)]'>
+      <h1 className='text-3xl font-bold text-(--secondary-color)'>
         Challenge Complete!
       </h1>
-      <p className='text-[var(--muted-color)]'>
+      <p className='text-(--muted-color)'>
         {challengeDuration < 60
           ? `${challengeDuration} seconds`
           : `${challengeDuration / 60} minute${
@@ -160,27 +160,27 @@ function MainStatsGrid({
 }) {
   return (
     <div className='grid grid-cols-2 gap-4 md:grid-cols-4'>
-      <div className='space-y-2 rounded-xl border-2 border-[var(--border-color)] bg-[var(--card-color)] p-4 text-center'>
+      <div className='space-y-2 rounded-xl border-2 border-(--border-color) bg-(--card-color) p-4 text-center'>
         <Target className='mx-auto text-green-500' size={28} />
         <p className='text-3xl font-bold text-green-500'>{correct}</p>
-        <p className='text-sm text-[var(--muted-color)]'>Correct</p>
+        <p className='text-sm text-(--muted-color)'>Correct</p>
       </div>
-      <div className='space-y-2 rounded-xl border-2 border-[var(--border-color)] bg-[var(--card-color)] p-4 text-center'>
+      <div className='space-y-2 rounded-xl border-2 border-(--border-color) bg-(--card-color) p-4 text-center'>
         <XCircle className='mx-auto text-red-500' size={28} />
         <p className='text-3xl font-bold text-red-500'>{wrong}</p>
-        <p className='text-sm text-[var(--muted-color)]'>Wrong</p>
+        <p className='text-sm text-(--muted-color)'>Wrong</p>
       </div>
-      <div className='space-y-2 rounded-xl border-2 border-[var(--border-color)] bg-[var(--card-color)] p-4 text-center'>
-        <TrendingUp className='mx-auto text-[var(--main-color)]' size={28} />
-        <p className='text-3xl font-bold text-[var(--main-color)]'>
+      <div className='space-y-2 rounded-xl border-2 border-(--border-color) bg-(--card-color) p-4 text-center'>
+        <TrendingUp className='mx-auto text-(--main-color)' size={28} />
+        <p className='text-3xl font-bold text-(--main-color)'>
           {accuracy}%
         </p>
-        <p className='text-sm text-[var(--muted-color)]'>Accuracy</p>
+        <p className='text-sm text-(--muted-color)'>Accuracy</p>
       </div>
-      <div className='space-y-2 rounded-xl border-2 border-[var(--border-color)] bg-[var(--card-color)] p-4 text-center'>
+      <div className='space-y-2 rounded-xl border-2 border-(--border-color) bg-(--card-color) p-4 text-center'>
         <Timer className='mx-auto text-blue-500' size={28} />
         <p className='text-3xl font-bold text-blue-500'>{questionsPerMinute}</p>
-        <p className='text-sm text-[var(--muted-color)]'>Q/Min</p>
+        <p className='text-sm text-(--muted-color)'>Q/Min</p>
       </div>
     </div>
   );
@@ -194,10 +194,10 @@ function GoalTimersResults({
   missedGoals: GoalTimer[];
 }) {
   return (
-    <div className='space-y-3 rounded-lg border border-[var(--border-color)] bg-[var(--card-color)] p-4 text-left'>
+    <div className='space-y-3 rounded-lg border border-(--border-color) bg-(--card-color) p-4 text-left'>
       <div className='flex items-center justify-center gap-2'>
-        <Target className='text-[var(--main-color)]' size={20} />
-        <h3 className='text-lg font-semibold text-[var(--secondary-color)]'>
+        <Target className='text-(--main-color)' size={20} />
+        <h3 className='text-lg font-semibold text-(--secondary-color)'>
           Goal Timers Results
         </h3>
       </div>
@@ -213,7 +213,7 @@ function GoalTimersResults({
                 key={goal.id}
                 className='flex items-center justify-between rounded border border-green-500/20 bg-green-500/10 p-2 text-sm'
               >
-                <span className='text-[var(--secondary-color)]'>
+                <span className='text-(--secondary-color)'>
                   {goal.label}
                 </span>
                 <span className='font-mono text-green-500'>
@@ -227,7 +227,7 @@ function GoalTimersResults({
       )}
       {missedGoals.length > 0 && (
         <div className='space-y-2'>
-          <p className='flex items-center gap-2 text-sm font-medium text-[var(--muted-color)]'>
+          <p className='flex items-center gap-2 text-sm font-medium text-(--muted-color)'>
             <XCircle size={16} />
             Not Reached ({missedGoals.length})
           </p>
@@ -235,10 +235,10 @@ function GoalTimersResults({
             {missedGoals.map(goal => (
               <div
                 key={goal.id}
-                className='flex items-center justify-between rounded bg-[var(--border-color)] p-2 text-sm opacity-60'
+                className='flex items-center justify-between rounded bg-(--border-color) p-2 text-sm opacity-60'
               >
-                <span className='text-[var(--muted-color)]'>{goal.label}</span>
-                <span className='font-mono text-[var(--muted-color)]'>
+                <span className='text-(--muted-color)'>{goal.label}</span>
+                <span className='font-mono text-(--muted-color)'>
                   {Math.floor(goal.targetSeconds / 60)}:
                   {(goal.targetSeconds % 60).toString().padStart(2, '0')}
                 </span>

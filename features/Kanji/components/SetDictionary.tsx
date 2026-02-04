@@ -25,7 +25,7 @@ const KanjiSetDictionary = memo(function KanjiSetDictionary({
           key={kanjiObj.id}
           className={clsx(
             'flex flex-col items-center justify-start gap-2 py-4 max-md:px-4',
-            i !== words.length - 1 && 'border-b-1 border-[var(--border-color)]',
+            i !== words.length - 1 && 'border-b-1 border-(--border-color)',
           )}
         >
           <div className='flex w-full flex-row gap-4'>
@@ -39,10 +39,10 @@ const KanjiSetDictionary = memo(function KanjiSetDictionary({
               }}
             >
               {/* 4-segment square background */}
-              <div className='absolute inset-0 grid grid-cols-2 grid-rows-2 rounded-xl border-1 border-[var(--border-color)] bg-[var(--background-color)] transition-all group-hover:bg-[var(--card-color)]'>
-                <div className='border-r border-b border-[var(--border-color)]'></div>
-                <div className='border-b border-[var(--border-color)]'></div>
-                <div className='border-r border-[var(--border-color)]'></div>
+              <div className='absolute inset-0 grid grid-cols-2 grid-rows-2 rounded-xl border-1 border-(--border-color) bg-(--background-color) transition-all group-hover:bg-(--card-color)'>
+                <div className='border-r border-b border-(--border-color)'></div>
+                <div className='border-b border-(--border-color)'></div>
+                <div className='border-r border-(--border-color)'></div>
                 <div className=''></div>
               </div>
 
@@ -56,7 +56,7 @@ const KanjiSetDictionary = memo(function KanjiSetDictionary({
 
             <div className='flex w-full flex-col gap-1'>
               <a
-                className='hover:text-underline w-full text-xs text-[var(--main-color)]/80 hover:text-[var(--main-color)]'
+                className='hover:text-underline w-full text-xs text-(--main-color)/80 hover:text-(--main-color)'
                 href='https://lingopie.com/blog/onyomi-vs-kunyomi/'
                 target='_blank'
                 rel='noopener'
@@ -69,9 +69,9 @@ const KanjiSetDictionary = memo(function KanjiSetDictionary({
               <div
                 className={clsx(
                   'h-1/2',
-                  'rounded-xl bg-[var(--background-color)]',
+                  'rounded-xl bg-(--background-color)',
                   'flex flex-row gap-2',
-                  // 'border-1 border-[var(--border-color)]',
+                  // 'border-1 border-(--border-color)',
                   (kanjiObj.onyomi[0] === '' || kanjiObj.onyomi.length === 0) &&
                     'hidden',
                 )}
@@ -81,10 +81,10 @@ const KanjiSetDictionary = memo(function KanjiSetDictionary({
                     key={onyomiReading}
                     className={clsx(
                       'flex flex-row items-center justify-center px-2 py-1 text-sm md:text-base',
-                      'w-full text-[var(--secondary-color)]',
+                      'w-full text-(--secondary-color)',
 
                       i < kanjiObj.onyomi.slice(0, 2).length - 1 &&
-                        'border-r-1 border-[var(--border-color)]',
+                        'border-r-1 border-(--border-color)',
                     )}
                   >
                     {showKana
@@ -94,7 +94,7 @@ const KanjiSetDictionary = memo(function KanjiSetDictionary({
                 ))}
               </div>
               <a
-                className='hover:text-underline w-full text-xs text-[var(--main-color)]/80 hover:text-[var(--main-color)]'
+                className='hover:text-underline w-full text-xs text-(--main-color)/80 hover:text-(--main-color)'
                 href='https://lingopie.com/blog/onyomi-vs-kunyomi/'
                 target='_blank'
                 rel='noopener'
@@ -108,10 +108,10 @@ const KanjiSetDictionary = memo(function KanjiSetDictionary({
               <div
                 className={clsx(
                   'h-1/2',
-                  'rounded-xl bg-[var(--background-color)]',
+                  'rounded-xl bg-(--background-color)',
                   'flex flex-row gap-2',
 
-                  // 'border-1 border-[var(--border-color)]',
+                  // 'border-1 border-(--border-color)',
                   (kanjiObj.kunyomi[0] === '' ||
                     kanjiObj.kunyomi.length === 0) &&
                     'hidden',
@@ -122,9 +122,9 @@ const KanjiSetDictionary = memo(function KanjiSetDictionary({
                     key={kunyomiReading}
                     className={clsx(
                       'flex flex-row items-center justify-center px-2 py-1 text-sm md:text-base',
-                      'w-full text-[var(--secondary-color)]',
+                      'w-full text-(--secondary-color)',
                       i < kanjiObj.kunyomi.slice(0, 2).length - 1 &&
-                        'border-r-1 border-[var(--border-color)]',
+                        'border-r-1 border-(--border-color)',
                     )}
                   >
                     {showKana
@@ -136,7 +136,7 @@ const KanjiSetDictionary = memo(function KanjiSetDictionary({
             </div>
           </div>
 
-          <p className='w-full text-xl text-[var(--secondary-color)] md:text-2xl'>
+          <p className='w-full text-xl text-(--secondary-color) md:text-2xl'>
             {kanjiObj.meanings.join(', ')}
           </p>
         </div>

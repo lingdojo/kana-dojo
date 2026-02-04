@@ -63,8 +63,8 @@ const KanaPulse = () => {
   return (
     <div className='flex flex-1 flex-col items-center justify-center gap-6 p-4'>
       <div className='flex items-center gap-8 text-xl'>
-        <span className='text-[var(--main-color)]'>Score: {score}</span>
-        <div className='h-3 w-40 overflow-hidden rounded-full bg-[var(--border-color)]'>
+        <span className='text-(--main-color)'>Score: {score}</span>
+        <div className='h-3 w-40 overflow-hidden rounded-full bg-(--border-color)'>
           <div
             className='h-full transition-all duration-100'
             style={{
@@ -90,8 +90,8 @@ const KanaPulse = () => {
               'h-16 w-16 rounded-xl text-2xl transition-all duration-150 md:h-20 md:w-20 md:text-3xl',
               'border-2',
               idx === targetIdx
-                ? 'scale-110 animate-pulse border-[var(--accent-color)] bg-[var(--accent-color)]/20 text-[var(--accent-color)]'
-                : 'border-[var(--border-color)] bg-[var(--card-color)] text-[var(--main-color)] hover:scale-105',
+                ? 'scale-110 animate-pulse border-(--accent-color) bg-(--accent-color)/20 text-(--accent-color)'
+                : 'border-(--border-color) bg-(--card-color) text-(--main-color) hover:scale-105',
             )}
           >
             {cell.kana}
@@ -101,12 +101,12 @@ const KanaPulse = () => {
 
       {gameOver && (
         <div className='flex flex-col items-center gap-4'>
-          <p className='text-2xl text-[var(--main-color)]'>
+          <p className='text-2xl text-(--main-color)'>
             Game Over! Final Score: {score}
           </p>
           <button
             onClick={restart}
-            className='rounded-xl bg-[var(--accent-color)] px-6 py-3 text-white transition-transform hover:scale-105'
+            className='rounded-xl bg-(--accent-color) px-6 py-3 text-white transition-transform hover:scale-105'
           >
             Play Again
           </button>

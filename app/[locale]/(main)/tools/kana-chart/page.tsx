@@ -23,25 +23,25 @@ export default async function KanaChartPage() {
 
   return (
     <div className='mx-auto max-w-7xl px-4 py-8'>
-      <h1 className='mb-4 text-center text-4xl font-bold text-[var(--main-color)]'>
+      <h1 className='mb-4 text-center text-4xl font-bold text-(--main-color)'>
         {t('title')}
       </h1>
-      <p className='mb-8 text-center text-lg text-[var(--secondary-color)]'>
+      <p className='mb-8 text-center text-lg text-(--secondary-color)'>
         {t('subtitle')}
       </p>
 
       <KanaChartDisplay />
 
-      <div className='mt-12 space-y-6 text-[var(--secondary-color)]'>
+      <div className='mt-12 space-y-6 text-(--secondary-color)'>
         <section>
-          <h2 className='mb-3 text-2xl font-semibold text-[var(--main-color)]'>
+          <h2 className='mb-3 text-2xl font-semibold text-(--main-color)'>
             {t('aboutTitle')}
           </h2>
           <p className='mb-4'>{t('aboutText')}</p>
         </section>
 
         <section>
-          <h2 className='mb-3 text-2xl font-semibold text-[var(--main-color)]'>
+          <h2 className='mb-3 text-2xl font-semibold text-(--main-color)'>
             {t('howToUseTitle')}
           </h2>
           <ul className='list-disc space-y-2 pl-6'>
@@ -53,7 +53,7 @@ export default async function KanaChartPage() {
         </section>
 
         <section>
-          <h2 className='mb-3 text-2xl font-semibold text-[var(--main-color)]'>
+          <h2 className='mb-3 text-2xl font-semibold text-(--main-color)'>
             {t('practiceTitle')}
           </h2>
           <p>{t('practiceText')}</p>

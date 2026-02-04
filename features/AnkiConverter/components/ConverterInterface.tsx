@@ -215,7 +215,7 @@ export function ConverterInterface({
   return (
     <div className='mx-auto flex w-full max-w-2xl flex-col gap-6'>
       {/* Privacy Notice */}
-      <div className='flex items-center gap-2 rounded-lg border border-[var(--border-color)] bg-[var(--card-color)] p-3'>
+      <div className='flex items-center gap-2 rounded-lg border border-(--border-color) bg-(--card-color) p-3'>
         <svg
           className='h-5 w-5 flex-shrink-0 text-green-500'
           fill='none'
@@ -229,7 +229,7 @@ export function ConverterInterface({
             d='M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z'
           />
         </svg>
-        <p className='text-sm text-[var(--text-color)]'>
+        <p className='text-sm text-(--text-color)'>
           <span className='font-medium'>100% Private:</span> All conversion
           happens locally in your browser. Your files never leave your device.
         </p>
@@ -240,8 +240,8 @@ export function ConverterInterface({
         className={cn(
           'relative flex min-h-[200px] cursor-pointer flex-col items-center justify-center rounded-xl border-2 border-dashed p-8 transition-all duration-200',
           isDragOver
-            ? 'border-[var(--main-color)] bg-[var(--main-color)]/10'
-            : 'border-[var(--border-color)] bg-[var(--card-color)] hover:border-[var(--main-color)]/50',
+            ? 'border-(--main-color) bg-(--main-color)/10'
+            : 'border-(--border-color) bg-(--card-color) hover:border-(--main-color)/50',
           state.isConverting && 'pointer-events-none opacity-75',
         )}
         onDragOver={handleDragOver}
@@ -266,7 +266,7 @@ export function ConverterInterface({
         {!state.isConverting && !state.result && !state.error && (
           <>
             <svg
-              className='mb-4 h-12 w-12 text-[var(--text-color)]/50'
+              className='mb-4 h-12 w-12 text-(--text-color)/50'
               fill='none'
               stroke='currentColor'
               viewBox='0 0 24 24'
@@ -278,12 +278,12 @@ export function ConverterInterface({
                 d='M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12'
               />
             </svg>
-            <p className='mb-2 text-lg font-medium text-[var(--text-color)]'>
+            <p className='mb-2 text-lg font-medium text-(--text-color)'>
               {isDragOver
                 ? 'Drop your file here'
                 : 'Drag & drop your Anki file'}
             </p>
-            <p className='mb-4 text-sm text-[var(--text-color)]/70'>
+            <p className='mb-4 text-sm text-(--text-color)/70'>
               or click to select a file
             </p>
             <div className='flex flex-wrap justify-center gap-2'>
@@ -292,7 +292,7 @@ export function ConverterInterface({
                 .map(ext => (
                   <span
                     key={ext}
-                    className='rounded bg-[var(--border-color)] px-2 py-1 text-xs text-[var(--text-color)]/70'
+                    className='rounded bg-(--border-color) px-2 py-1 text-xs text-(--text-color)/70'
                   >
                     {ext}
                   </span>
@@ -306,7 +306,7 @@ export function ConverterInterface({
           <div className='flex w-full flex-col items-center'>
             <div className='mb-4 w-full max-w-xs'>
               {/* Progress bar */}
-              <div className='h-2 w-full overflow-hidden rounded-full bg-[var(--border-color)]'>
+              <div className='h-2 w-full overflow-hidden rounded-full bg-(--border-color)'>
                 <div
                   className='h-full rounded-full transition-all duration-300'
                   style={{
@@ -317,14 +317,14 @@ export function ConverterInterface({
                 />
               </div>
             </div>
-            <p className='mb-1 text-lg font-medium text-[var(--text-color)]'>
+            <p className='mb-1 text-lg font-medium text-(--text-color)'>
               {state.progress}%
             </p>
-            <p className='text-sm text-[var(--text-color)]/70'>
+            <p className='text-sm text-(--text-color)/70'>
               {getStageLabel(state.stage)}
             </p>
             {selectedFile && (
-              <p className='mt-2 text-xs text-[var(--text-color)]/50'>
+              <p className='mt-2 text-xs text-(--text-color)/50'>
                 {selectedFile.name}
               </p>
             )}
@@ -347,10 +347,10 @@ export function ConverterInterface({
                 d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z'
               />
             </svg>
-            <p className='mb-2 text-lg font-medium text-[var(--text-color)]'>
+            <p className='mb-2 text-lg font-medium text-(--text-color)'>
               Conversion Complete!
             </p>
-            <div className='mb-4 flex gap-4 text-sm text-[var(--text-color)]/70'>
+            <div className='mb-4 flex gap-4 text-sm text-(--text-color)/70'>
               <span>{state.result.metadata.totalCards} cards</span>
               <span>•</span>
               <span>{state.result.metadata.totalDecks} deck(s)</span>
@@ -379,11 +379,11 @@ export function ConverterInterface({
             <p className='mb-2 text-lg font-medium text-red-500'>
               Conversion Failed
             </p>
-            <p className='mb-2 max-w-md text-center text-sm text-[var(--text-color)]/70'>
+            <p className='mb-2 max-w-md text-center text-sm text-(--text-color)/70'>
               {state.error.message}
             </p>
             {state.error.recoverable && (
-              <p className='text-xs text-[var(--text-color)]/50'>
+              <p className='text-xs text-(--text-color)/50'>
                 This error may be recoverable. Try again or use a different
                 file.
               </p>
@@ -445,19 +445,19 @@ export function ConverterInterface({
       {/* Supported Formats Info */}
       {!state.isConverting && !state.result && !state.error && (
         <div className='text-center'>
-          <p className='mb-3 text-sm text-[var(--text-color)]/70'>
+          <p className='mb-3 text-sm text-(--text-color)/70'>
             Supported formats:
           </p>
           <div className='flex flex-wrap justify-center gap-3'>
             {SUPPORTED_FORMATS.map(({ ext, name }) => (
               <div
                 key={ext}
-                className='flex items-center gap-2 rounded-lg border border-[var(--border-color)] bg-[var(--card-color)] px-3 py-2'
+                className='flex items-center gap-2 rounded-lg border border-(--border-color) bg-(--card-color) px-3 py-2'
               >
-                <span className='font-mono text-sm text-[var(--main-color)]'>
+                <span className='font-mono text-sm text-(--main-color)'>
                   {ext}
                 </span>
-                <span className='text-xs text-[var(--text-color)]/50'>
+                <span className='text-xs text-(--text-color)/50'>
                   {name}
                 </span>
               </div>
@@ -468,7 +468,7 @@ export function ConverterInterface({
 
       {/* Worker support notice */}
       {!isWorkerSupported && (
-        <p className='text-center text-xs text-[var(--text-color)]/50'>
+        <p className='text-center text-xs text-(--text-color)/50'>
           Note: Web Workers are not supported in your browser. Conversion will
           run on the main thread, which may cause brief UI freezes for large
           files.

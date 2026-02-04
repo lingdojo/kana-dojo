@@ -66,13 +66,13 @@ const OptionButton = memo(
           'flex w-full flex-row items-center justify-start gap-1.5 rounded-xl py-5 pl-8 md:w-1/2',
           buttonBorderStyles,
           'active:scale-95 active:duration-200 md:active:scale-98',
-          'text-[var(--border-color)]',
+          'text-(--border-color)',
           'border-b-4',
           isReverse ? 'text-4xl' : 'text-3xl',
           isWrong &&
-            'border-[var(--border-color)] hover:bg-[var(--card-color)]',
+            'border-(--border-color) hover:bg-(--card-color)',
           !isWrong &&
-            'border-[var(--secondary-color)]/50 text-[var(--secondary-color)] hover:border-[var(--secondary-color)]',
+            'border-(--secondary-color)/50 text-(--secondary-color) hover:border-(--secondary-color)',
         )}
         onClick={() => onClick(option)}
         lang={optionLang}
@@ -89,10 +89,10 @@ const OptionButton = memo(
         </span>
         <span
           className={clsx(
-            'mr-4 hidden rounded-full bg-[var(--border-color)] px-1 text-xs lg:inline',
+            'mr-4 hidden rounded-full bg-(--border-color) px-1 text-xs lg:inline',
             isWrong
-              ? 'text-[var(--border-color)]'
-              : 'text-[var(--secondary-color)]',
+              ? 'text-(--border-color)'
+              : 'text-(--secondary-color)',
           )}
         >
           {index + 1}
@@ -257,8 +257,8 @@ const VocabPickGame = ({ selectedWordObjs, isHidden }: VocabPickGameProps) => {
       generateNewCharacter();
       setFeedback(
         <>
-          <span className='text-[var(--secondary-color)]'>{`${displayChar} = ${selectedOption} `}</span>
-          <CircleCheck className='inline text-[var(--main-color)]' />
+          <span className='text-(--secondary-color)'>{`${displayChar} = ${selectedOption} `}</span>
+          <CircleCheck className='inline text-(--main-color)' />
         </>,
       );
       setCurrentWordObj(correctWordObj as IVocabObj);
@@ -266,8 +266,8 @@ const VocabPickGame = ({ selectedWordObjs, isHidden }: VocabPickGameProps) => {
       handleWrongAnswer(selectedOption);
       setFeedback(
         <>
-          <span className='text-[var(--secondary-color)]'>{`${displayChar} ≠ ${selectedOption} `}</span>
-          <CircleX className='inline text-[var(--main-color)]' />
+          <span className='text-(--secondary-color)'>{`${displayChar} ≠ ${selectedOption} `}</span>
+          <CircleX className='inline text-(--main-color)' />
         </>,
       );
     }
@@ -374,7 +374,7 @@ const VocabPickGame = ({ selectedWordObjs, isHidden }: VocabPickGameProps) => {
         <>
           <div className='flex flex-col items-center gap-4'>
             {/* Show prompt based on quiz type */}
-            <span className='mb-2 text-sm text-[var(--secondary-color)]'>
+            <span className='mb-2 text-sm text-(--secondary-color)'>
               {quizType === 'meaning'
                 ? isReverse
                   ? 'What is the word?' // reverse: given meaning, find word
@@ -397,7 +397,7 @@ const VocabPickGame = ({ selectedWordObjs, isHidden }: VocabPickGameProps) => {
                   text={correctChar}
                   variant='icon-only'
                   size='sm'
-                  className='bg-[var(--card-color)] text-[var(--secondary-color)]'
+                  className='bg-(--card-color) text-(--secondary-color)'
                 />
               )}
             </div>

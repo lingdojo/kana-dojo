@@ -110,14 +110,14 @@ const KanaConstellation = () => {
     <div className='flex min-h-[80vh] flex-1 flex-col items-center justify-center gap-4'>
       {/* Header */}
       <div className='mb-4 text-center'>
-        <h1 className='flex items-center justify-center gap-2 text-2xl text-[var(--main-color)] md:text-3xl'>
+        <h1 className='flex items-center justify-center gap-2 text-2xl text-(--main-color) md:text-3xl'>
           <Star size={28} />
           Kana Constellation
         </h1>
-        <p className='mt-2 text-[var(--secondary-color)]'>
+        <p className='mt-2 text-(--secondary-color)'>
           Connect the stars in order: {currentTarget?.romanji || 'Complete!'}
         </p>
-        <p className='text-sm text-[var(--secondary-color)]'>
+        <p className='text-sm text-(--secondary-color)'>
           Constellations completed: {score}
         </p>
       </div>
@@ -126,7 +126,7 @@ const KanaConstellation = () => {
       <div
         className={clsx(
           'relative aspect-[4/3] w-full max-w-2xl',
-          'border border-[var(--border-color)] bg-[var(--card-color)]',
+          'border border-(--border-color) bg-(--card-color)',
           'overflow-hidden rounded-2xl',
         )}
       >
@@ -158,8 +158,8 @@ const KanaConstellation = () => {
               'transition-all duration-200',
               'hover:scale-110 hover:cursor-pointer',
               point.isConnected
-                ? 'bg-[var(--main-color)] text-[var(--background-color)]'
-                : 'border-2 border-[var(--border-color)] bg-[var(--background-color)] hover:border-[var(--main-color)]',
+                ? 'bg-(--main-color) text-(--background-color)'
+                : 'border-2 border-(--border-color) bg-(--background-color) hover:border-(--main-color)',
             )}
             style={{
               left: `${point.x}%`,
@@ -175,18 +175,18 @@ const KanaConstellation = () => {
 
         {/* Complete overlay */}
         {isComplete && (
-          <div className='absolute inset-0 flex items-center justify-center bg-[var(--background-color)]/80'>
+          <div className='absolute inset-0 flex items-center justify-center bg-(--background-color)/80'>
             <div className='text-center'>
-              <p className='mb-4 text-2xl text-[var(--main-color)]'>
+              <p className='mb-4 text-2xl text-(--main-color)'>
                 ✨ Constellation Complete! ✨
               </p>
               <button
                 onClick={resetGame}
                 className={clsx(
                   'mx-auto flex items-center gap-2 rounded-xl px-6 py-3',
-                  'border border-[var(--border-color)] bg-[var(--card-color)]',
-                  'text-[var(--main-color)]',
-                  'hover:cursor-pointer hover:border-[var(--main-color)]',
+                  'border border-(--border-color) bg-(--card-color)',
+                  'text-(--main-color)',
+                  'hover:cursor-pointer hover:border-(--main-color)',
                   'transition-all duration-250 active:scale-95',
                 )}
               >
@@ -204,8 +204,8 @@ const KanaConstellation = () => {
           onClick={resetGame}
           className={clsx(
             'mt-4 flex items-center gap-2 rounded-lg px-4 py-2',
-            'border border-[var(--border-color)] bg-[var(--card-color)]',
-            'text-[var(--secondary-color)] hover:text-[var(--main-color)]',
+            'border border-(--border-color) bg-(--card-color)',
+            'text-(--secondary-color) hover:text-(--main-color)',
             'transition-all duration-250 hover:cursor-pointer',
             'active:scale-95',
           )}

@@ -178,7 +178,7 @@ const ActiveTile = memo(
           'cursor-pointer transition-colors',
           // Match ActionButton's smooth press animation: translate down + add margin to prevent layout shift
           'active:mb-[10px] active:translate-y-[10px] active:border-b-0',
-          'border-[var(--secondary-color-accent)] bg-[var(--secondary-color)] text-[var(--background-color)]',
+          'border-(--secondary-color-accent) bg-(--secondary-color) text-(--background-color)',
           isDisabled && 'cursor-not-allowed opacity-50',
         )}
         transition={springConfig}
@@ -204,7 +204,7 @@ const BlankTile = memo(
       <div
         className={clsx(
           tileBaseStyles,
-          'border-transparent bg-[var(--border-color)]/30',
+          'border-transparent bg-(--border-color)/30',
           'select-none',
         )}
       >
@@ -630,7 +630,7 @@ const WordBuildingGame = ({
 
           {/* Answer Row Area */}
           <div className='flex w-full flex-col items-center'>
-            <div className='flex min-h-[5rem] w-full items-center border-b-2 border-[var(--border-color)] px-2 pb-2 md:w-3/4 lg:w-2/3 xl:w-1/2'>
+            <div className='flex min-h-[5rem] w-full items-center border-b-2 border-(--border-color) px-2 pb-2 md:w-3/4 lg:w-2/3 xl:w-1/2'>
               <motion.div
                 className='flex flex-row flex-wrap justify-start gap-3'
                 variants={celebrationContainerVariants}

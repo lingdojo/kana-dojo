@@ -66,18 +66,18 @@ export default function KanaPop() {
   if (!isMounted) return null;
 
   return (
-    <div className='relative flex min-h-[85vh] flex-1 flex-col overflow-hidden rounded-3xl border border-[var(--border-color)] bg-gradient-to-b from-transparent to-[var(--main-color)]/5'>
+    <div className='relative flex min-h-[85vh] flex-1 flex-col overflow-hidden rounded-3xl border border-(--border-color) bg-gradient-to-b from-transparent to-(--main-color)/5'>
       {/* Header Info */}
       <div className='pointer-events-none absolute top-8 left-8 z-10 flex flex-col gap-1'>
         <div className='flex items-center gap-2'>
           <Sparkles className='text-yellow-400' size={24} />
-          <h1 className='text-3xl font-bold tracking-tight text-[var(--main-color)]'>
+          <h1 className='text-3xl font-bold tracking-tight text-(--main-color)'>
             Kana Pop!
           </h1>
         </div>
         <div className='flex items-center gap-4'>
-          <p className='text-lg font-medium text-[var(--secondary-color)]'>
-            Score: <span className='text-[var(--main-color)]'>{score}</span>
+          <p className='text-lg font-medium text-(--secondary-color)'>
+            Score: <span className='text-(--main-color)'>{score}</span>
           </p>
         </div>
       </div>
@@ -148,7 +148,7 @@ export default function KanaPop() {
       </div>
 
       {/* Instructions */}
-      <div className='pointer-events-none absolute bottom-8 left-1/2 -translate-x-1/2 text-sm text-[var(--secondary-color)] opacity-50'>
+      <div className='pointer-events-none absolute bottom-8 left-1/2 -translate-x-1/2 text-sm text-(--secondary-color) opacity-50'>
         Pop the bubbles to score points!
       </div>
     </div>

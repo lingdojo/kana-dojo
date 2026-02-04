@@ -288,6 +288,111 @@ export class RateLimiter {
   }
 }
 
+function getNextMidnightUTC(now: number): number {
+  const date = new Date(now);
+  date.setUTCHours(24, 0, 0, 0);
+  return date.getTime();
+}
+
+function getDayIdUTC(now: number): string {
+  const date = new Date(now);
+  const y = date.getUTCFullYear();
+  const m = String(date.getUTCMonth() + 1).padStart(2, '0');
+  const d = String(date.getUTCDate()).padStart(2, '0');
+  return `${y}${m}${d}`;
+}
+
+async function checkRateLimitRedis(
+  identifier: string,
+  config: RateLimitConfig,
+  scope: string,
+): Promise<RateLimitResult> {
+  const { hasRedisConfig, redisPipeline } = await import('@/shared/lib/redis');
+
+  if (!hasRedisConfig()) {
+    throw new Error('Redis not configured.');
+  }
+
+  const now = Date.now();
+  const windowMs = config.windowMs;
+  const windowId = Math.floor(now / windowMs);
+  const windowResetAt = (windowId + 1) * windowMs;
+  const ttlSeconds = Math.ceil(windowMs / 1000);
+
+  const perIpKey = `rl:${scope}:ip:${identifier}:${windowId}`;
+  const globalKey = `rl:${scope}:global:${windowId}`;
+
+  const commands: Array<Array<string | number>> = [
+    ['INCR', perIpKey],
+    ['EXPIRE', perIpKey, ttlSeconds],
+    ['INCR', globalKey],
+    ['EXPIRE', globalKey, ttlSeconds],
+  ];
+
+  let dailyKey: string | null = null;
+  if (config.dailyLimit) {
+    const dayId = getDayIdUTC(now);
+    dailyKey = `rl:${scope}:daily:${identifier}:${dayId}`;
+    commands.push(['INCR', dailyKey]);
+    commands.push(['EXPIRE', dailyKey, 86400]);
+  }
+
+  const results = await redisPipeline(commands);
+  const perIpCount = Number(results[0]?.result ?? 0);
+  const globalCount = Number(results[2]?.result ?? 0);
+  const dailyCount = dailyKey ? Number(results[4]?.result ?? 0) : 0;
+
+  if (globalCount > GLOBAL_RATE_LIMIT_CONFIG.maxRequests) {
+    return {
+      allowed: false,
+      remaining: 0,
+      resetAt: windowResetAt,
+      retryAfter: Math.ceil((windowResetAt - now) / 1000),
+      reason: 'global_limit',
+    };
+  }
+
+  if (config.dailyLimit && dailyCount > config.dailyLimit) {
+    const resetAt = getNextMidnightUTC(now);
+    return {
+      allowed: false,
+      remaining: 0,
+      resetAt,
+      retryAfter: Math.ceil((resetAt - now) / 1000),
+      reason: 'daily_quota',
+    };
+  }
+
+  if (perIpCount > config.maxRequests) {
+    return {
+      allowed: false,
+      remaining: 0,
+      resetAt: windowResetAt,
+      retryAfter: Math.ceil((windowResetAt - now) / 1000),
+      reason: 'rate_limit',
+    };
+  }
+
+  return {
+    allowed: true,
+    remaining: Math.max(0, config.maxRequests - perIpCount),
+    resetAt: windowResetAt,
+  };
+}
+
+async function checkRateLimitWithFallback(
+  identifier: string,
+  config: RateLimitConfig,
+  scope: string,
+  limiter: RateLimiter,
+): Promise<RateLimitResult> {
+  try {
+    return await checkRateLimitRedis(identifier, config, scope);
+  } catch {
+    return limiter.check(identifier);
+  }
+}
+
 // Singleton instances for each API endpoint
 let translateRateLimiter: RateLimiter | null = null;
 let analyzeRateLimiter: RateLimiter | null = null;
@@ -310,6 +415,30 @@ export function getAnalyzeRateLimiter(): RateLimiter {
     analyzeRateLimiter = new RateLimiter(ANALYZE_RATE_LIMIT_CONFIG);
   }
   return analyzeRateLimiter;
+}
+
+export async function checkTranslateRateLimit(
+  identifier: string,
+): Promise<RateLimitResult> {
+  const limiter = getTranslateRateLimiter();
+  return checkRateLimitWithFallback(
+    identifier,
+    TRANSLATE_RATE_LIMIT_CONFIG,
+    'translate',
+    limiter,
+  );
+}
+
+export async function checkAnalyzeRateLimit(
+  identifier: string,
+): Promise<RateLimitResult> {
+  const limiter = getAnalyzeRateLimiter();
+  return checkRateLimitWithFallback(
+    identifier,
+    ANALYZE_RATE_LIMIT_CONFIG,
+    'analyze',
+    limiter,
+  );
 }
 
 /**

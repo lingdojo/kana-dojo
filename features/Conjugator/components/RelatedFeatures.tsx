@@ -87,19 +87,19 @@ export default function RelatedFeatures({
     <section
       className={cn(
         'mt-8 rounded-2xl',
-        'border border-[var(--border-color)] bg-[var(--card-color)]',
+        'border border-(--border-color) bg-(--card-color)',
         'p-6 sm:p-8',
       )}
       aria-labelledby='related-features-heading'
     >
       <h2
         id='related-features-heading'
-        className='mb-6 text-xl font-bold text-[var(--main-color)] sm:text-2xl'
+        className='mb-6 text-xl font-bold text-(--main-color) sm:text-2xl'
       >
         Continue Learning Japanese
       </h2>
 
-      <p className='mb-6 text-sm text-[var(--secondary-color)]'>
+      <p className='mb-6 text-sm text-(--secondary-color)'>
         Explore more tools and resources to enhance your Japanese learning
         journey.
       </p>
@@ -112,10 +112,10 @@ export default function RelatedFeatures({
                 href={getLocalizedHref(link.href)}
                 className={cn(
                   'flex h-full flex-col gap-3 rounded-xl p-4',
-                  'border border-[var(--border-color)]',
-                  'bg-[var(--background-color)]',
-                  'hover:border-[var(--main-color)]/50',
-                  'hover:bg-[var(--main-color)]/5',
+                  'border border-(--border-color)',
+                  'bg-(--background-color)',
+                  'hover:border-(--main-color)/50',
+                  'hover:bg-(--main-color)/5',
                   'transition-colors duration-200',
                   'group',
                 )}
@@ -124,9 +124,9 @@ export default function RelatedFeatures({
                 <div
                   className={cn(
                     'flex h-10 w-10 items-center justify-center rounded-lg',
-                    'bg-[var(--main-color)]/10',
-                    'text-[var(--main-color)]',
-                    'group-hover:bg-[var(--main-color)]/20',
+                    'bg-(--main-color)/10',
+                    'text-(--main-color)',
+                    'group-hover:bg-(--main-color)/20',
                     'transition-colors duration-200',
                   )}
                 >
@@ -135,10 +135,10 @@ export default function RelatedFeatures({
 
                 {/* Content */}
                 <div className='flex-1'>
-                  <h3 className='font-semibold text-[var(--main-color)] group-hover:underline'>
+                  <h3 className='font-semibold text-(--main-color) group-hover:underline'>
                     {link.title}
                   </h3>
-                  <p className='mt-1 text-sm text-[var(--secondary-color)]'>
+                  <p className='mt-1 text-sm text-(--secondary-color)'>
                     {link.description}
                   </p>
                 </div>
@@ -149,7 +149,7 @@ export default function RelatedFeatures({
       </nav>
 
       {/* Additional SEO text */}
-      <p className='mt-6 text-xs text-[var(--secondary-color)]'>
+      <p className='mt-6 text-xs text-(--secondary-color)'>
         KanaDojo offers a complete suite of Japanese learning tools. From
         mastering the basics with Hiragana and Katakana practice, to building
         vocabulary and understanding Kanji, our platform supports learners at

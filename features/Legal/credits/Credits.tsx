@@ -73,15 +73,15 @@ KanaDojo is what you see today thanks to everyone's work and suggestions. We'll 
           <h2 className='mt-4 pb-2 text-2xl font-semibold'>Contributors</h2>
           <ContributorsGrid contributors={contributorsList} />
 
-          <div className='mt-8 rounded-lg border border-[var(--border-color)] bg-[var(--card-color)] p-6'>
-            <p className='mb-2 flex items-center gap-2 font-medium text-[var(--main-color)]'>
-              <Handshake className='text-[var(--main-color)]' />
+          <div className='mt-8 rounded-lg border border-(--border-color) bg-(--card-color) p-6'>
+            <p className='mb-2 flex items-center gap-2 font-medium text-(--main-color)'>
+              <Handshake className='text-(--main-color)' />
               Want to contribute?
             </p>
-            <p className='text-sm text-[var(--secondary-color)]'>
+            <p className='text-sm text-(--secondary-color)'>
               Visit our{' '}
               <a
-                className='font-semibold text-[var(--main-color)] underline transition-opacity hover:opacity-70'
+                className='font-semibold text-(--main-color) underline transition-opacity hover:opacity-70'
                 href='https://github.com/lingdojo/kana-dojo'
                 target='_blank'
                 rel='noreferrer'
@@ -97,23 +97,23 @@ KanaDojo is what you see today thanks to everyone's work and suggestions. We'll 
       {KO_FI_SUPPORTERS.length > 0 && (
         <section>
           <h2 className='mt-4 pb-2 text-2xl font-semibold'>Supporters</h2>
-          <p className='my-1 leading-relaxed text-[var(--secondary-color)]'>
+          <p className='my-1 leading-relaxed text-(--secondary-color)'>
             A special thanks to our supporters!
           </p>
           <SponsorsGrid sponsors={KO_FI_SUPPORTERS} />
 
-          <div className='mt-8 rounded-lg border border-[var(--border-color)] bg-[var(--card-color)] p-6'>
-            <p className='mb-3 flex items-center gap-2 font-medium text-[var(--main-color)]'>
+          <div className='mt-8 rounded-lg border border-(--border-color) bg-(--card-color) p-6'>
+            <p className='mb-3 flex items-center gap-2 font-medium text-(--main-color)'>
               <Heart className='fill-current text-red-500 hover:text-red-500 motion-safe:animate-pulse' />
               Support KanaDojo
             </p>
-            <p className='mb-4 text-sm text-[var(--secondary-color)]'>
+            <p className='mb-4 text-sm text-(--secondary-color)'>
               Your support is really appreciated. Thank you!
             </p>
 
             <div className='flex flex-wrap gap-3'>
               <a
-                className='inline-flex items-center rounded-lg bg-[var(--main-color)] px-4 py-2 text-sm font-medium text-[var(--background-color)] transition-opacity hover:opacity-90'
+                className='inline-flex items-center rounded-lg bg-(--main-color) px-4 py-2 text-sm font-medium text-(--background-color) transition-opacity hover:opacity-90'
                 href='https://ko-fi.com/kanadojo'
                 target='_blank'
                 rel='noreferrer'
@@ -122,7 +122,7 @@ KanaDojo is what you see today thanks to everyone's work and suggestions. We'll 
               </a>
 
               <a
-                className='inline-flex items-center rounded-lg border-2 border-[var(--main-color)] px-4 py-2 text-sm font-medium text-[var(--main-color)] transition-colors hover:bg-[var(--card-color)]'
+                className='inline-flex items-center rounded-lg border-2 border-(--main-color) px-4 py-2 text-sm font-medium text-(--main-color) transition-colors hover:bg-(--card-color)'
                 href='https://www.patreon.com/kanadojo'
                 target='_blank'
                 rel='noreferrer'

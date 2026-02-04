@@ -57,10 +57,10 @@ export function ErrorFallback({
 
         {/* Error Title */}
         <div className='space-y-2'>
-          <h1 className='text-2xl font-bold text-[var(--secondary-color)]'>
+          <h1 className='text-2xl font-bold text-(--secondary-color)'>
             {content.title}
           </h1>
-          <p className='text-[var(--muted-color)]'>{content.description}</p>
+          <p className='text-(--muted-color)'>{content.description}</p>
         </div>
 
         {/* Error Details (Development Only) */}
@@ -71,10 +71,10 @@ export function ErrorFallback({
             </p>
             {error.stack && (
               <details className='mt-2'>
-                <summary className='cursor-pointer text-xs text-[var(--muted-color)] hover:text-[var(--secondary-color)]'>
+                <summary className='cursor-pointer text-xs text-(--muted-color) hover:text-(--secondary-color)'>
                   Stack trace
                 </summary>
-                <pre className='mt-2 overflow-x-auto text-xs text-[var(--muted-color)]'>
+                <pre className='mt-2 overflow-x-auto text-xs text-(--muted-color)'>
                   {error.stack}
                 </pre>
               </details>
@@ -88,7 +88,7 @@ export function ErrorFallback({
             {resetErrorBoundary && (
               <Button
                 onClick={resetErrorBoundary}
-                className='w-full bg-[var(--main-color)] hover:bg-[var(--main-color)]/90'
+                className='w-full bg-(--main-color) hover:bg-(--main-color)/90'
               >
                 <RefreshCw size={16} className='mr-2' />
                 {type === 'game' ? 'Restart Game' : 'Try Again'}

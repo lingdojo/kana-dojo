@@ -56,13 +56,13 @@ export function BlogCard({
     >
       {/* Featured Background Decor (Asymmetric) */}
       {isFeatured && (
-        <div className='absolute -inset-4 -z-10 rounded-3xl bg-[var(--main-color)] opacity-[0.02] transition-opacity group-hover:opacity-[0.04]' />
+        <div className='absolute -inset-4 -z-10 rounded-3xl bg-(--main-color) opacity-[0.02] transition-opacity group-hover:opacity-[0.04]' />
       )}
 
       {/* Hero Image / Placeholder */}
       <div
         className={cn(
-          'relative aspect-[16/10] overflow-hidden rounded-sm bg-[var(--card-color)] brightness-95 transition-all duration-700 group-hover:brightness-100',
+          'relative aspect-[16/10] overflow-hidden rounded-sm bg-(--card-color) brightness-95 transition-all duration-700 group-hover:brightness-100',
           isFeatured ? 'w-full md:w-3/5 lg:w-2/3' : 'w-full',
         )}
       >
@@ -99,9 +99,9 @@ export function BlogCard({
           isFeatured ? 'w-full py-4 md:w-2/5 lg:w-1/3' : 'w-full px-1',
         )}
       >
-        <div className='mb-3 flex items-center gap-3 font-mono text-[10px] tracking-tighter text-[var(--secondary-color)] uppercase opacity-50'>
+        <div className='mb-3 flex items-center gap-3 font-mono text-[10px] tracking-tighter text-(--secondary-color) uppercase opacity-50'>
           <time dateTime={post.publishedAt}>{formattedDate}</time>
-          <span className='h-px w-4 bg-[var(--border-color)]' />
+          <span className='h-px w-4 bg-(--border-color)' />
           <span>{post.readingTime} min read</span>
         </div>
 
@@ -112,7 +112,7 @@ export function BlogCard({
         >
           <h2
             className={cn(
-              'leading-[1.1] font-bold tracking-tight text-[var(--main-color)] transition-colors group-hover/title:text-[var(--secondary-color)]',
+              'leading-[1.1] font-bold tracking-tight text-(--main-color) transition-colors group-hover/title:text-(--secondary-color)',
               isFeatured
                 ? 'mb-6 text-3xl md:text-5xl lg:text-6xl'
                 : 'mb-4 line-clamp-2 text-2xl',
@@ -124,7 +124,7 @@ export function BlogCard({
 
         <p
           className={cn(
-            'leading-relaxed text-[var(--secondary-color)] opacity-70',
+            'leading-relaxed text-(--secondary-color) opacity-70',
             isFeatured
               ? 'mb-8 text-lg md:text-xl'
               : 'mb-6 line-clamp-3 text-sm',
@@ -136,7 +136,7 @@ export function BlogCard({
         {/* Read More Link */}
         <Link
           href={`/academy/${post.slug}`}
-          className='inline-flex items-center gap-2 text-[11px] font-black tracking-[0.2em] text-[var(--main-color)] uppercase underline-offset-8 hover:underline'
+          className='inline-flex items-center gap-2 text-[11px] font-black tracking-[0.2em] text-(--main-color) uppercase underline-offset-8 hover:underline'
         >
           Read Article
           <svg
@@ -156,7 +156,7 @@ export function BlogCard({
 
       {/* Hover Decorator for standard cards */}
       {!isFeatured && (
-        <div className='absolute right-1 -bottom-4 left-1 h-[1px] origin-left scale-x-0 bg-[var(--main-color)] opacity-10 transition-transform duration-500 group-hover:scale-x-100' />
+        <div className='absolute right-1 -bottom-4 left-1 h-[1px] origin-left scale-x-0 bg-(--main-color) opacity-10 transition-transform duration-500 group-hover:scale-x-100' />
       )}
     </article>
   );

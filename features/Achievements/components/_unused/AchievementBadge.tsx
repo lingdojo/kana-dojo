@@ -48,8 +48,8 @@ const AchievementBadge = ({
         onClick={handleClick}
         className={clsx(
           'relative flex items-center gap-3 rounded-xl',
-          'bg-[var(--card-color)] hover:bg-[var(--background-color)]',
-          'border border-[var(--border-color)]',
+          'bg-(--card-color) hover:bg-(--background-color)',
+          'border border-(--border-color)',
           'transition-all duration-200',
           sizeClasses[size],
         )}
@@ -60,21 +60,21 @@ const AchievementBadge = ({
             <motion.div
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
-              className='absolute -top-1 -right-1 h-3 w-3 rounded-full border-2 border-[var(--card-color)] bg-red-500'
+              className='absolute -top-1 -right-1 h-3 w-3 rounded-full border-2 border-(--card-color) bg-red-500'
             />
           )}
         </div>
 
         <div className='text-left'>
           <div className='flex items-center gap-2'>
-            <span className='font-semibold text-[var(--main-color)]'>
+            <span className='font-semibold text-(--main-color)'>
               Level {level}
             </span>
-            <span className='text-xs text-[var(--secondary-color)]'>
+            <span className='text-xs text-(--secondary-color)'>
               ({totalPoints} pts)
             </span>
           </div>
-          <div className='text-xs text-[var(--secondary-color)]'>
+          <div className='text-xs text-(--secondary-color)'>
             {unlockedCount} achievements
           </div>
         </div>
@@ -89,8 +89,8 @@ const AchievementBadge = ({
       onClick={handleClick}
       className={clsx(
         'relative rounded-full',
-        'bg-[var(--card-color)] hover:bg-[var(--background-color)]',
-        'border border-[var(--border-color)]',
+        'bg-(--card-color) hover:bg-(--background-color)',
+        'border border-(--border-color)',
         'transition-all duration-200',
         sizeClasses[size],
       )}
@@ -102,13 +102,13 @@ const AchievementBadge = ({
         <motion.div
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
-          className='absolute -top-1 -right-1 h-3 w-3 rounded-full border-2 border-[var(--card-color)] bg-red-500'
+          className='absolute -top-1 -right-1 h-3 w-3 rounded-full border-2 border-(--card-color) bg-red-500'
         />
       )}
 
       {/* Level indicator */}
       {level > 1 && (
-        <div className='absolute -right-1 -bottom-1 flex h-5 w-5 items-center justify-center rounded-full border-2 border-[var(--card-color)] bg-blue-500 text-xs font-bold text-white'>
+        <div className='absolute -right-1 -bottom-1 flex h-5 w-5 items-center justify-center rounded-full border-2 border-(--card-color) bg-blue-500 text-xs font-bold text-white'>
           {level}
         </div>
       )}

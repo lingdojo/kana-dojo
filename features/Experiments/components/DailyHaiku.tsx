@@ -34,7 +34,7 @@ const DailyHaiku = () => {
     <div className='flex min-h-[80vh] flex-1 flex-col items-center justify-center gap-8'>
       {/* Title */}
       <div className='text-center'>
-        <h1 className='text-xl text-[var(--secondary-color)] md:text-2xl'>
+        <h1 className='text-xl text-(--secondary-color) md:text-2xl'>
           {isDaily ? "Today's Haiku" : 'Random Haiku'}
         </h1>
       </div>
@@ -42,7 +42,7 @@ const DailyHaiku = () => {
       {/* Haiku card */}
       <div
         className={clsx(
-          'border border-[var(--border-color)] bg-[var(--card-color)]',
+          'border border-(--border-color) bg-(--card-color)',
           'w-full max-w-xl rounded-2xl p-8 md:p-12',
           'flex flex-col items-center gap-6',
         )}
@@ -53,12 +53,12 @@ const DailyHaiku = () => {
             <div key={i} className='text-center'>
               <p
                 lang='ja'
-                className='text-2xl tracking-wider text-[var(--main-color)] md:text-3xl'
+                className='text-2xl tracking-wider text-(--main-color) md:text-3xl'
               >
                 {line}
               </p>
               {showRomanji && (
-                <p className='mt-1 text-sm text-[var(--secondary-color)] italic'>
+                <p className='mt-1 text-sm text-(--secondary-color) italic'>
                   {haiku.romanji[i]}
                 </p>
               )}
@@ -67,14 +67,14 @@ const DailyHaiku = () => {
         </div>
 
         {/* Divider */}
-        <div className='h-px w-16 bg-[var(--border-color)]' />
+        <div className='h-px w-16 bg-(--border-color)' />
 
         {/* English translation */}
         <div className='flex flex-col items-center gap-1'>
           {haiku.english.map((line, i) => (
             <p
               key={i}
-              className='text-center text-base text-[var(--secondary-color)] italic md:text-lg'
+              className='text-center text-base text-(--secondary-color) italic md:text-lg'
             >
               {line}
             </p>
@@ -83,10 +83,10 @@ const DailyHaiku = () => {
 
         {/* Author */}
         <div className='mt-4 text-center'>
-          <p className='text-sm text-[var(--secondary-color)]'>
+          <p className='text-sm text-(--secondary-color)'>
             — {haiku.author}
           </p>
-          <p lang='ja' className='text-sm text-[var(--main-color)]'>
+          <p lang='ja' className='text-sm text-(--main-color)'>
             {haiku.authorJapanese}
           </p>
         </div>
@@ -98,12 +98,12 @@ const DailyHaiku = () => {
           onClick={toggleRomanji}
           className={clsx(
             'rounded-lg px-4 py-2',
-            'border border-[var(--border-color)] bg-[var(--card-color)]',
-            'text-[var(--secondary-color)] hover:text-[var(--main-color)]',
+            'border border-(--border-color) bg-(--card-color)',
+            'text-(--secondary-color) hover:text-(--main-color)',
             'transition-all duration-250 hover:cursor-pointer',
             'active:scale-95',
             showRomanji &&
-              'border-[var(--main-color)] text-[var(--main-color)]',
+              'border-(--main-color) text-(--main-color)',
           )}
         >
           {showRomanji ? 'Hide' : 'Show'} Romanji
@@ -112,8 +112,8 @@ const DailyHaiku = () => {
           onClick={handleNewHaiku}
           className={clsx(
             'flex items-center gap-2 rounded-lg px-4 py-2',
-            'border border-[var(--border-color)] bg-[var(--card-color)]',
-            'text-[var(--secondary-color)] hover:text-[var(--main-color)]',
+            'border border-(--border-color) bg-(--card-color)',
+            'text-(--secondary-color) hover:text-(--main-color)',
             'transition-all duration-250 hover:cursor-pointer',
             'active:scale-95',
           )}

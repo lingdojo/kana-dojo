@@ -8,6 +8,9 @@ interface PreferencesState {
   theme: string;
   setTheme: (theme: string) => void;
 
+  isGlassMode: boolean;
+  setGlassMode: (isGlassMode: boolean) => void;
+
   font: string;
   setFont: (fontName: string) => void;
 
@@ -46,6 +49,8 @@ const usePreferencesStore = create<PreferencesState>()(
       setDisplayKana: displayKana => set({ displayKana }),
       theme: 'light',
       setTheme: theme => set({ theme }),
+      isGlassMode: false,
+      setGlassMode: isGlassMode => set({ isGlassMode }),
       font: 'Zen Maru Gothic',
       setFont: fontName => set({ font: fontName }),
       silentMode: false,

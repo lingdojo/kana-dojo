@@ -18,13 +18,13 @@ interface CollapsibleSectionProps {
 const levelStyles = {
   section: {
     header: 'text-3xl py-4',
-    border: 'border-b-2 border-[var(--border-color)]',
+    border: 'border-b-2 border-(--border-color)',
     chevronSize: 24,
     gap: 'gap-4',
   },
   subsection: {
     header: 'text-2xl py-3',
-    border: 'border-b-1 border-[var(--border-color)]',
+    border: 'border-b-1 border-(--border-color)',
     chevronSize: 22,
     gap: 'gap-3',
   },
@@ -88,9 +88,9 @@ const CollapsibleSection = ({
           className={clsx(
             'transition-transform duration-300 ease-out',
             'transition-colors delay-200 duration-300',
-            'text-[var(--secondary-color)]',
-            'max-md:group-active:text-[var(--main-color)]',
-            'md:group-hover:text-[var(--main-color)]',
+            'text-(--secondary-color)',
+            'max-md:group-active:text-(--main-color)',
+            'md:group-hover:text-(--main-color)',
             !isOpen && 'rotate-180',
           )}
           size={styles.chevronSize}
@@ -98,7 +98,7 @@ const CollapsibleSection = ({
 
         {/* Optional icon */}
         {icon && (
-          <span className='flex items-center text-[var(--secondary-color)]'>
+          <span className='flex items-center text-(--secondary-color)'>
             {icon}
           </span>
         )}

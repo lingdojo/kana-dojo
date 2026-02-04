@@ -89,13 +89,13 @@ const KanaBounce = () => {
       onClick={handleClick}
     >
       {/* Instructions */}
-      <div className='absolute top-4 left-1/2 z-10 -translate-x-1/2 text-center text-[var(--secondary-color)]'>
+      <div className='absolute top-4 left-1/2 z-10 -translate-x-1/2 text-center text-(--secondary-color)'>
         <p>Click anywhere to spawn bouncing kana!</p>
         <p className='mt-1 text-sm'>🎱 Balls: {balls.length}/20</p>
       </div>
 
       {/* Floor */}
-      <div className='absolute right-4 bottom-[7%] left-4 h-1 rounded-full bg-[var(--border-color)]' />
+      <div className='absolute right-4 bottom-[7%] left-4 h-1 rounded-full bg-(--border-color)' />
 
       {/* Balls */}
       {balls.map(ball => (
@@ -113,7 +113,7 @@ const KanaBounce = () => {
         >
           <span
             lang='ja'
-            className='text-lg text-[var(--main-color)] md:text-xl'
+            className='text-lg text-(--main-color) md:text-xl'
           >
             {ball.kana}
           </span>

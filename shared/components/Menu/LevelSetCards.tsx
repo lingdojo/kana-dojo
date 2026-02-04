@@ -92,7 +92,7 @@ const LevelSetCards = <TLevel extends string, TItem>({
     Partial<Record<TLevel, { data: TItem[]; name: string; prevLength: number }>>
   >({});
 
-  const cumulativeCounts = (() => {
+  const cumulativeCounts = useMemo(() => {
     const counts = {} as Record<TLevel, number>;
     let cumulative = 0;
 
@@ -103,7 +103,7 @@ const LevelSetCards = <TLevel extends string, TItem>({
     }
 
     return counts;
-  })();
+  }, [getCollectionSize, itemsPerSet, levelOrder]);
 
   useEffect(() => {
     let isMounted = true;
@@ -246,7 +246,10 @@ const LevelSetCards = <TLevel extends string, TItem>({
     return () => observer.disconnect();
   }, [hasMoreRows, isLoadingMore, loadMoreRows]);
 
-  const hasProgressData = Object.keys(masteryByKey).length > 0;
+  const hasProgressData = useMemo(
+    () => Object.keys(masteryByKey).length > 0,
+    [masteryByKey],
+  );
 
   const handleToggleSet = (setName: string) => {
     const set = setsTemp.find(s => s.name === setName);
@@ -297,8 +300,8 @@ const LevelSetCards = <TLevel extends string, TItem>({
   if (!selectedCollection) {
     return (
       <div className={clsx('flex w-full flex-col gap-4')}>
-        <div className='mx-4 rounded-xl border-2 border-[var(--border-color)] bg-[var(--card-color)] px-4 py-3'>
-          <p className='text-sm text-[var(--secondary-color)]'>{loadingText}</p>
+        <div className='mx-4 rounded-xl border-2 border-(--border-color) bg-(--card-color) px-4 py-3'>
+          <p className='text-sm text-(--secondary-color)'>{loadingText}</p>
         </div>
       </div>
     );
@@ -307,8 +310,8 @@ const LevelSetCards = <TLevel extends string, TItem>({
   return (
     <div className='flex w-full flex-col gap-4'>
       {!hasProgressData && (
-        <div className='mx-4 rounded-xl border-2 border-[var(--border-color)] bg-[var(--card-color)] px-4 py-3'>
-          <p className='text-sm text-[var(--secondary-color)]'>{tipText}</p>
+        <div className='mx-4 rounded-xl border-2 border-(--border-color) bg-(--card-color) px-4 py-3'>
+          <p className='text-sm text-(--secondary-color)'>{tipText}</p>
         </div>
       )}
 
@@ -349,23 +352,23 @@ const LevelSetCards = <TLevel extends string, TItem>({
             className={clsx(
               'flex items-center gap-2 rounded-xl px-4 py-2',
               'transition-all duration-250 ease-in-out',
-              'border-2 border-[var(--border-color)]',
-              'hover:bg-[var(--card-color)]',
+              'border-2 border-(--border-color)',
+              'hover:bg-(--card-color)',
               hideMastered &&
-                'border-[var(--main-color)] bg-[var(--card-color)]',
+                'border-(--main-color) bg-(--card-color)',
             )}
           >
             {hideMastered ? (
               <>
-                <FilterX size={20} className='text-[var(--main-color)]' />
-                <span className='text-[var(--main-color)]'>
+                <FilterX size={20} className='text-(--main-color)' />
+                <span className='text-(--main-color)'>
                   Show All Sets ({masteredCount} mastered hidden)
                 </span>
               </>
             ) : (
               <>
-                <Filter size={20} className='text-[var(--secondary-color)]' />
-                <span className='text-[var(--secondary-color)]'>
+                <Filter size={20} className='text-(--secondary-color)' />
+                <span className='text-(--secondary-color)'>
                   Hide Mastered Sets ({masteredCount})
                 </span>
               </>
@@ -400,9 +403,9 @@ const LevelSetCards = <TLevel extends string, TItem>({
             >
               <ChevronUp
                 className={clsx(
-                  'text-[var(--border-color)] duration-250',
-                  'max-md:group-active:text-[var(--secondary-color)]',
-                  'md:group-hover:text-[var(--secondary-color)]',
+                  'text-(--border-color) duration-250',
+                  'max-md:group-active:text-(--secondary-color)',
+                  'md:group-hover:text-(--secondary-color)',
                   collapsedRows.includes(rowIndex) && 'rotate-180',
                 )}
                 size={28}
@@ -433,7 +436,7 @@ const LevelSetCards = <TLevel extends string, TItem>({
                       key={setTemp.id + setTemp.name}
                       className={clsx(
                         'flex h-full flex-col md:px-4',
-                        'border-[var(--border-color)]',
+                        'border-(--border-color)',
                         i < rowSets.length - 1 && 'md:border-r-1',
                       )}
                     >
@@ -444,8 +447,8 @@ const LevelSetCards = <TLevel extends string, TItem>({
                           'transition-all duration-250 ease-in-out',
                           'border-b-10 px-2 py-3 max-md:mx-4',
                           isSelected
-                            ? 'border-[var(--secondary-color-accent)] bg-[var(--secondary-color)] text-[var(--background-color)]'
-                            : 'border-[var(--border-color)] bg-[var(--background-color)] hover:border-[var(--main-color)]/70',
+                            ? 'border-(--secondary-color-accent) bg-(--secondary-color) text-(--background-color)'
+                            : 'border-(--border-color) bg-(--background-color) hover:border-(--main-color)/70',
                         )}
                         onClick={e => {
                           e.currentTarget.blur();
@@ -463,9 +466,9 @@ const LevelSetCards = <TLevel extends string, TItem>({
                         }}
                       >
                         {isSelected ? (
-                          <CircleCheck className='mt-0.5 fill-current text-[var(--background-color)] duration-250' />
+                          <CircleCheck className='mt-0.5 fill-current text-(--background-color) duration-250' />
                         ) : (
-                          <Circle className='mt-0.5 text-[var(--border-color)] duration-250' />
+                          <Circle className='mt-0.5 text-(--border-color) duration-250' />
                         )}
                         {setTemp.name.replace('Set ', 'Level ')}
                       </button>
@@ -483,12 +486,12 @@ const LevelSetCards = <TLevel extends string, TItem>({
       <div ref={loaderRef} className='flex justify-center py-4'>
         {isLoadingMore && (
           <Loader2
-            className='animate-spin text-[var(--secondary-color)]'
+            className='animate-spin text-(--secondary-color)'
             size={24}
           />
         )}
         {hasMoreRows && !isLoadingMore && (
-          <span className='text-sm text-[var(--secondary-color)]'>
+          <span className='text-sm text-(--secondary-color)'>
             Scroll for more ({totalRows - visibleRowCount} rows remaining)
           </span>
         )}

@@ -6,6 +6,8 @@ import usePreferencesStore from '../store/usePreferencesStore';
 export interface ThemePreferences {
   theme: string;
   setTheme: (theme: string) => void;
+  isGlassMode: boolean;
+  setGlassMode: (isGlass: boolean) => void;
   font: string;
   setFont: (fontName: string) => void;
   themePreview: boolean;
@@ -24,6 +26,8 @@ export interface ThemePreferences {
 export function useThemePreferences(): ThemePreferences {
   const theme = usePreferencesStore(state => state.theme);
   const setTheme = usePreferencesStore(state => state.setTheme);
+  const isGlassMode = usePreferencesStore(state => state.isGlassMode);
+  const setGlassMode = usePreferencesStore(state => state.setGlassMode);
   const font = usePreferencesStore(state => state.font);
   const setFont = usePreferencesStore(state => state.setFont);
   const themePreview = usePreferencesStore(state => state.themePreview);
@@ -39,6 +43,8 @@ export function useThemePreferences(): ThemePreferences {
     () => ({
       theme,
       setTheme,
+      isGlassMode,
+      setGlassMode,
       font,
       setFont,
       themePreview,
@@ -51,6 +57,8 @@ export function useThemePreferences(): ThemePreferences {
     [
       theme,
       setTheme,
+      isGlassMode,
+      setGlassMode,
       font,
       setFont,
       themePreview,

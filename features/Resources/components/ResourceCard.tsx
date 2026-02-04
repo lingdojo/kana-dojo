@@ -43,13 +43,13 @@ interface BadgeProps {
 
 function Badge({ children, variant = 'default', className }: BadgeProps) {
   const variantStyles = {
-    default: 'text-[var(--secondary-color)] border-[var(--border-color)]',
+    default: 'text-(--secondary-color) border-(--border-color)',
     difficulty:
-      'text-[var(--main-color)] border-[var(--main-color)]/20 bg-[var(--main-color)]/5',
+      'text-(--main-color) border-(--main-color)/20 bg-(--main-color)/5',
     price:
-      'text-[var(--secondary-color)] border-[var(--secondary-color)]/30 bg-[var(--secondary-color)]/10',
+      'text-(--secondary-color) border-(--secondary-color)/30 bg-(--secondary-color)/10',
     category:
-      'text-[var(--secondary-color)] border-[var(--border-color)] bg-[var(--background-color)]',
+      'text-(--secondary-color) border-(--border-color) bg-(--background-color)',
   };
 
   return (
@@ -103,7 +103,7 @@ function PlatformIcon({ platform, className }: PlatformIconProps) {
   const iconProps = {
     size: 12,
     className: cn(
-      'shrink-0 text-[var(--secondary-color)] opacity-40',
+      'shrink-0 text-(--secondary-color) opacity-40',
       className,
     ),
   };
@@ -161,15 +161,15 @@ export function ResourceCard({
       aria-label={`${resource.name} - ${resource.description}`}
       className={cn(
         'group relative flex cursor-pointer flex-col gap-4 px-2 py-8 sm:flex-row sm:items-center',
-        'border-b border-[var(--border-color)] transition-all duration-300',
-        'hover:bg-[var(--main-color)]/[0.02]',
-        'outline-none focus-visible:bg-[var(--main-color)]/[0.03]',
-        resource.featured && 'bg-[var(--main-color)]/[0.01]',
+        'border-b border-(--border-color) transition-all duration-300',
+        'hover:bg-(--main-color)/[0.02]',
+        'outline-none focus-visible:bg-(--main-color)/[0.03]',
+        resource.featured && 'bg-(--main-color)/[0.01]',
       )}
     >
       {/* Visual Indicator for Featured */}
       {resource.featured && (
-        <div className='absolute top-1/2 left-0 h-12 w-0.5 -translate-y-1/2 bg-[var(--main-color)]' />
+        <div className='absolute top-1/2 left-0 h-12 w-0.5 -translate-y-1/2 bg-(--main-color)' />
       )}
 
       {/* Primary Content Area */}
@@ -187,7 +187,7 @@ export function ResourceCard({
 
         <h3
           className={cn(
-            'leading-tight font-bold tracking-tight text-[var(--main-color)]',
+            'leading-tight font-bold tracking-tight text-(--main-color)',
             isCompact ? 'text-lg' : 'text-xl md:text-2xl',
           )}
         >
@@ -196,7 +196,7 @@ export function ResourceCard({
 
         <p
           className={cn(
-            'mt-3 max-w-2xl leading-relaxed text-[var(--secondary-color)]',
+            'mt-3 max-w-2xl leading-relaxed text-(--secondary-color)',
             isCompact
               ? 'line-clamp-1 text-sm'
               : 'line-clamp-2 text-base md:line-clamp-none',
@@ -217,9 +217,9 @@ export function ResourceCard({
 
         <button
           className={cn(
-            'flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-[var(--border-color)]',
-            'text-[var(--main-color)] transition-all duration-300',
-            'group-hover:border-[var(--main-color)] group-hover:bg-[var(--main-color)] group-hover:text-[var(--background-color)]',
+            'flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-(--border-color)',
+            'text-(--main-color) transition-all duration-300',
+            'group-hover:border-(--main-color) group-hover:bg-(--main-color) group-hover:text-(--background-color)',
           )}
           aria-hidden='true'
         >

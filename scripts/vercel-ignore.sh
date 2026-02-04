@@ -37,8 +37,8 @@ fi
 
 # Patterns to ignore (won't trigger a build)
 IGNORE_PATTERNS=(
-  # Documentation
-  "\\.[mM][dD]([xX])?$"
+  # Documentation (excluding .mdx which is used for blog posts)
+  "\\.[mM][dD]$"
   "^LICENSE\\.md$"
   "^SECURITY\\.md$"
   "^CONTRIBUTING\\.md$"
@@ -46,6 +46,9 @@ IGNORE_PATTERNS=(
   "^CHANGELOG\\.md$"
   "^AGENTS\\.md$"
   "^CLAUDE\\.md$"
+  "^SEO_IMPROVEMENTS_SUMMARY\\.md$"
+  "^SOLUTION\\.md$"
+  "^TODO_.*\\.md$"
   "^llms\\.txt$"
   "^docs/"
   
@@ -90,6 +93,30 @@ IGNORE_PATTERNS=(
   # Environment examples
   "^\\.env\\.example$"
   "^\\.env\\.sample$"
+  
+  # Generated/Build artifacts
+  "^tsconfig\\.tsbuildinfo$"
+  "^next-env\\.d\\.ts$"
+  
+  # Custom type definitions (non-affecting)
+  "^canvas-confetti\\.d\\.ts$"
+  "^kuroshiro\\.d\\.ts$"
+  "^sql\\.js\\.d\\.ts$"
+  "^global\\.d\\.ts$"
+  "^vitest\\.shims\\.d\\.ts$"
+  
+  # Auto-generated sitemaps and SEO files
+  "^public/sitemap(-[0-9]+)?\\.xml$"
+  "^public/robots\\.txt$"
+  "^public/browserconfig\\.xml$"
+  
+  # Verification files
+  "^public/google[a-z0-9]+\\.html$"
+  "^public/\\.well-known/"
+  
+  # Config files (non-build-affecting)
+  "^next-sitemap\\.config\\.js$"
+  "^components\\.json$"
   
   # Data and community content (non-build affecting)
   "^features/Preferences/data/themes\\.ts$"

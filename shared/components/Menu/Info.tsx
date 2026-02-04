@@ -80,7 +80,7 @@ const Info = () => {
         className={clsx(
           'overflow-hidden duration-300',
           showInfo ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0',
-          // 'text-[var(--secondary-color)]'
+          // 'text-(--secondary-color)'
         )}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

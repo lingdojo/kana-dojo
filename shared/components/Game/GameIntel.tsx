@@ -40,24 +40,24 @@ const GameIntel = memo(({ gameMode: _gameMode }: { gameMode: string }) => {
       className={clsx(
         'flex flex-col',
         cardBorderStyles,
-        'text-[var(--secondary-color)]',
+        'text-(--secondary-color)',
       )}
     >
       <div
         className={clsx(
-          'flex w-full flex-col gap-2 border-[var(--border-color)] p-4',
+          'flex w-full flex-col gap-2 border-(--border-color) p-4',
         )}
       >
         <span className='flex items-center gap-2'>
-          <MousePointer size={20} className='text-[var(--main-color)]' />
+          <MousePointer size={20} className='text-(--main-color)' />
           {selectionLabel}
         </span>
         {/* Compact form on small screens */}
-        <span className='text-sm break-words text-[var(--main-color)] md:hidden'>
+        <span className='text-sm break-words text-(--main-color) md:hidden'>
           {formattedSelectionCompact}
         </span>
         {/* Full form on medium+ screens */}
-        <span className='hidden text-sm break-words text-[var(--main-color)] md:inline'>
+        <span className='hidden text-sm break-words text-(--main-color) md:inline'>
           {formattedSelectionFull}
         </span>
       </div>

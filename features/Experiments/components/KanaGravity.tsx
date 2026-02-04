@@ -76,7 +76,7 @@ const KanaGravity = () => {
       onClick={() => setGravityUp(g => !g)}
     >
       {/* Gravity indicator */}
-      <div className='absolute top-4 left-1/2 z-10 flex -translate-x-1/2 items-center gap-2 text-[var(--main-color)]'>
+      <div className='absolute top-4 left-1/2 z-10 flex -translate-x-1/2 items-center gap-2 text-(--main-color)'>
         <span
           className={`text-3xl transition-transform duration-300 ${gravityUp ? 'rotate-180' : ''}`}
         >
@@ -90,7 +90,7 @@ const KanaGravity = () => {
         <span
           key={p.id}
           lang='ja'
-          className='absolute text-2xl text-[var(--main-color)] transition-none select-none md:text-3xl'
+          className='absolute text-2xl text-(--main-color) transition-none select-none md:text-3xl'
           style={{
             left: `${p.x}%`,
             top: `${p.y}%`,
@@ -102,8 +102,8 @@ const KanaGravity = () => {
       ))}
 
       {/* Ground/Ceiling lines */}
-      <div className='absolute right-0 bottom-[10%] left-0 h-px bg-[var(--border-color)]' />
-      <div className='absolute top-[5%] right-0 left-0 h-px bg-[var(--border-color)]' />
+      <div className='absolute right-0 bottom-[10%] left-0 h-px bg-(--border-color)' />
+      <div className='absolute top-[5%] right-0 left-0 h-px bg-(--border-color)' />
     </div>
   );
 };

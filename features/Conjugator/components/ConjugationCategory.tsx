@@ -51,8 +51,8 @@ export default function ConjugationCategory({
     <div
       className={cn(
         'flex flex-col overflow-hidden rounded-xl',
-        'border border-[var(--border-color)]',
-        'bg-[var(--card-color)]',
+        'border border-(--border-color)',
+        'bg-(--card-color)',
         'transition-all duration-200',
       )}
       role='listitem'
@@ -62,11 +62,11 @@ export default function ConjugationCategory({
         onClick={onToggle}
         className={cn(
           'flex items-center justify-between px-4 py-3',
-          'bg-[var(--background-color)]',
-          'hover:bg-[var(--border-color)]/50',
+          'bg-(--background-color)',
+          'hover:bg-(--border-color)/50',
           'transition-colors duration-200',
           'cursor-pointer',
-          'focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--main-color)] focus-visible:ring-inset',
+          'focus:outline-none focus-visible:ring-2 focus-visible:ring-(--main-color) focus-visible:ring-inset',
         )}
         aria-expanded={isExpanded}
         aria-controls={`category-${category}`}
@@ -84,10 +84,10 @@ export default function ConjugationCategory({
             {categoryInfo.icon}
           </div>
           <div className='text-left'>
-            <h4 className='text-sm font-semibold text-[var(--main-color)]'>
+            <h4 className='text-sm font-semibold text-(--main-color)'>
               {categoryInfo.name}
             </h4>
-            <p className='text-xs text-[var(--secondary-color)]'>
+            <p className='text-xs text-(--secondary-color)'>
               {categoryInfo.nameJa} · {forms.length} form
               {forms.length !== 1 ? 's' : ''}
             </p>
@@ -95,19 +95,19 @@ export default function ConjugationCategory({
         </div>
         <div className='flex items-center gap-2'>
           <span
-            className='text-xs text-[var(--secondary-color)]'
+            className='text-xs text-(--secondary-color)'
             aria-hidden='true'
           >
             {isExpanded ? 'Collapse' : 'Expand'}
           </span>
           {isExpanded ? (
             <ChevronUp
-              className='h-4 w-4 text-[var(--secondary-color)]'
+              className='h-4 w-4 text-(--secondary-color)'
               aria-hidden='true'
             />
           ) : (
             <ChevronDown
-              className='h-4 w-4 text-[var(--secondary-color)]'
+              className='h-4 w-4 text-(--secondary-color)'
               aria-hidden='true'
             />
           )}
@@ -127,7 +127,7 @@ export default function ConjugationCategory({
       >
         <div className='overflow-hidden'>
           <div
-            className='flex flex-col divide-y divide-[var(--border-color)]'
+            className='flex flex-col divide-y divide-(--border-color)'
             role='list'
             aria-label={`${forms.length} ${categoryInfo.name.toLowerCase()} forms`}
           >
@@ -163,9 +163,9 @@ function FormRow({
     <div
       className={cn(
         'group flex items-center justify-between px-4 py-3',
-        'hover:bg-[var(--background-color)]',
+        'hover:bg-(--background-color)',
         'transition-colors duration-150',
-        'focus-within:bg-[var(--background-color)]',
+        'focus-within:bg-(--background-color)',
       )}
       role='listitem'
     >
@@ -173,14 +173,14 @@ function FormRow({
       <div className='flex min-w-0 flex-1 flex-col gap-1'>
         <div className='flex flex-wrap items-center gap-2'>
           <span
-            className='font-japanese text-base font-semibold text-[var(--main-color)]'
+            className='font-japanese text-base font-semibold text-(--main-color)'
             lang='ja'
           >
             {form.kanji}
           </span>
           {form.kanji !== form.hiragana && (
             <span
-              className='font-japanese text-sm text-[var(--secondary-color)]'
+              className='font-japanese text-sm text-(--secondary-color)'
               lang='ja'
               aria-label={`Reading: ${form.hiragana}`}
             >
@@ -189,17 +189,17 @@ function FormRow({
           )}
         </div>
         <div className='flex flex-wrap items-center gap-2'>
-          <span className='text-xs text-[var(--secondary-color)]'>
+          <span className='text-xs text-(--secondary-color)'>
             {form.name}
           </span>
           <span
-            className='text-xs text-[var(--secondary-color)]/60'
+            className='text-xs text-(--secondary-color)/60'
             aria-hidden='true'
           >
             ·
           </span>
           <span
-            className='font-mono text-xs text-[var(--secondary-color)]/80'
+            className='font-mono text-xs text-(--secondary-color)/80'
             aria-label={`Romaji: ${form.romaji}`}
           >
             {form.romaji}
@@ -207,7 +207,7 @@ function FormRow({
           {form.formality === 'polite' && (
             <>
               <span
-                className='text-xs text-[var(--secondary-color)]/60'
+                className='text-xs text-(--secondary-color)/60'
                 aria-hidden='true'
               >
                 ·
@@ -231,11 +231,11 @@ function FormRow({
         onClick={handleCopy}
         className={cn(
           'flex h-8 w-8 items-center justify-center rounded-lg',
-          'text-[var(--secondary-color)]',
-          'hover:bg-[var(--border-color)] hover:text-[var(--main-color)]',
+          'text-(--secondary-color)',
+          'hover:bg-(--border-color) hover:text-(--main-color)',
           'opacity-0 group-focus-within:opacity-100 group-hover:opacity-100',
           'transition-all duration-150',
-          'focus:opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--main-color)] focus-visible:ring-offset-2',
+          'focus:opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-(--main-color) focus-visible:ring-offset-2',
           copied && 'text-green-500 hover:text-green-500',
         )}
         aria-label={

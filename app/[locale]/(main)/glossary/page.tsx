@@ -250,20 +250,20 @@ export default async function GlossaryPage({
         />
 
         <header className='mb-8 text-center'>
-          <h1 className='mb-4 text-4xl font-bold text-[var(--main-color)]'>
+          <h1 className='mb-4 text-4xl font-bold text-(--main-color)'>
             Japanese-English Glossary
           </h1>
-          <p className='text-lg text-[var(--secondary-color)]'>
+          <p className='text-lg text-(--secondary-color)'>
             Essential terms and concepts for learning Japanese
           </p>
         </header>
 
         {/* Quick Navigation */}
         <nav
-          className='mb-8 rounded-lg border-2 border-[var(--border-color)] bg-[var(--card-color)] p-4'
+          className='mb-8 rounded-lg border-2 border-(--border-color) bg-(--card-color) p-4'
           aria-label='Glossary quick navigation'
         >
-          <div className='mb-2 font-semibold text-[var(--main-color)]'>
+          <div className='mb-2 font-semibold text-(--main-color)'>
             Jump to:
           </div>
           <div className='flex flex-wrap gap-2'>
@@ -271,7 +271,7 @@ export default async function GlossaryPage({
               <a
                 key={letter}
                 href={`#letter-${letter}`}
-                className='rounded bg-[var(--main-color)] px-3 py-1 text-sm font-semibold text-[var(--background-color)] transition-all hover:opacity-80'
+                className='rounded bg-(--main-color) px-3 py-1 text-sm font-semibold text-(--background-color) transition-all hover:opacity-80'
               >
                 {letter}
               </a>
@@ -287,36 +287,36 @@ export default async function GlossaryPage({
               id={`letter-${letter}`}
               className='scroll-mt-4'
             >
-              <h2 className='mb-4 border-b-2 border-[var(--border-color)] pb-2 text-3xl font-bold text-[var(--main-color)]'>
+              <h2 className='mb-4 border-b-2 border-(--border-color) pb-2 text-3xl font-bold text-(--main-color)'>
                 {letter}
               </h2>
               <div className='space-y-4'>
                 {groupedTerms[letter].map(term => (
                   <article
                     key={term.term}
-                    className='rounded-lg border-2 border-[var(--border-color)] bg-[var(--card-color)] p-6'
+                    className='rounded-lg border-2 border-(--border-color) bg-(--card-color) p-6'
                   >
                     <header className='mb-2'>
-                      <h3 className='inline text-2xl font-bold text-[var(--main-color)]'>
+                      <h3 className='inline text-2xl font-bold text-(--main-color)'>
                         {term.term}
                       </h3>
                       {term.reading && (
-                        <span className='ml-3 text-xl text-[var(--secondary-color)]'>
+                        <span className='ml-3 text-xl text-(--secondary-color)'>
                           {term.reading}
                         </span>
                       )}
                     </header>
 
-                    <p className='mb-3 text-[var(--secondary-color)]'>
+                    <p className='mb-3 text-(--secondary-color)'>
                       {term.definition}
                     </p>
 
                     {term.example && (
-                      <div className='mb-3 rounded bg-[var(--background-color)] p-3'>
-                        <strong className='text-[var(--main-color)]'>
+                      <div className='mb-3 rounded bg-(--background-color) p-3'>
+                        <strong className='text-(--main-color)'>
                           Example:
                         </strong>{' '}
-                        <span className='text-[var(--secondary-color)]'>
+                        <span className='text-(--secondary-color)'>
                           {term.example}
                         </span>
                       </div>
@@ -324,10 +324,10 @@ export default async function GlossaryPage({
 
                     {term.relatedTerms && term.relatedTerms.length > 0 && (
                       <div className='text-sm'>
-                        <strong className='text-[var(--main-color)]'>
+                        <strong className='text-(--main-color)'>
                           Related:
                         </strong>{' '}
-                        <span className='text-[var(--secondary-color)]'>
+                        <span className='text-(--secondary-color)'>
                           {term.relatedTerms.join(', ')}
                         </span>
                       </div>
@@ -340,44 +340,44 @@ export default async function GlossaryPage({
         </main>
 
         {/* Related Resources */}
-        <aside className='mt-12 rounded-lg border-2 border-[var(--main-color)] bg-[var(--card-color)] p-6'>
-          <h2 className='mb-4 text-2xl font-semibold text-[var(--main-color)]'>
+        <aside className='mt-12 rounded-lg border-2 border-(--main-color) bg-(--card-color) p-6'>
+          <h2 className='mb-4 text-2xl font-semibold text-(--main-color)'>
             Continue Learning
           </h2>
           <div className='grid gap-3 sm:grid-cols-2 md:grid-cols-3'>
             <Link
               href={`/${locale}/kana/train`}
-              className='rounded-lg border-2 border-[var(--border-color)] px-4 py-3 font-semibold text-[var(--main-color)] transition-all hover:border-[var(--main-color)]'
+              className='rounded-lg border-2 border-(--border-color) px-4 py-3 font-semibold text-(--main-color) transition-all hover:border-(--main-color)'
             >
               Practice Kana →
             </Link>
             <Link
               href={`/${locale}/kanji/train`}
-              className='rounded-lg border-2 border-[var(--border-color)] px-4 py-3 font-semibold text-[var(--main-color)] transition-all hover:border-[var(--main-color)]'
+              className='rounded-lg border-2 border-(--border-color) px-4 py-3 font-semibold text-(--main-color) transition-all hover:border-(--main-color)'
             >
               Practice Kanji →
             </Link>
             <Link
               href={`/${locale}/vocabulary/train`}
-              className='rounded-lg border-2 border-[var(--border-color)] px-4 py-3 font-semibold text-[var(--main-color)] transition-all hover:border-[var(--main-color)]'
+              className='rounded-lg border-2 border-(--border-color) px-4 py-3 font-semibold text-(--main-color) transition-all hover:border-(--main-color)'
             >
               Practice Vocabulary →
             </Link>
             <Link
               href={`/${locale}/academy`}
-              className='rounded-lg border-2 border-[var(--border-color)] px-4 py-3 font-semibold text-[var(--main-color)] transition-all hover:border-[var(--main-color)]'
+              className='rounded-lg border-2 border-(--border-color) px-4 py-3 font-semibold text-(--main-color) transition-all hover:border-(--main-color)'
             >
               Visit Academy →
             </Link>
             <Link
               href={`/${locale}/faq`}
-              className='rounded-lg border-2 border-[var(--border-color)] px-4 py-3 font-semibold text-[var(--main-color)] transition-all hover:border-[var(--main-color)]'
+              className='rounded-lg border-2 border-(--border-color) px-4 py-3 font-semibold text-(--main-color) transition-all hover:border-(--main-color)'
             >
               View FAQ →
             </Link>
             <Link
               href={`/${locale}/jlpt/n5`}
-              className='rounded-lg border-2 border-[var(--border-color)] px-4 py-3 font-semibold text-[var(--main-color)] transition-all hover:border-[var(--main-color)]'
+              className='rounded-lg border-2 border-(--border-color) px-4 py-3 font-semibold text-(--main-color) transition-all hover:border-(--main-color)'
             >
               JLPT Guide →
             </Link>

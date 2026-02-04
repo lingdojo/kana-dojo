@@ -27,7 +27,7 @@ const NightlyBanner = ({
 
   return (
     <div
-      className={`fixed right-4 bottom-4 left-4 z-50 transform rounded-xl bg-[var(--card-color)] p-5 text-[var(--main-color)] shadow-2xl transition-all duration-300 ease-in-out sm:right-5 sm:bottom-5 sm:left-auto sm:w-full sm:max-w-[400px] ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'} `}
+      className={`fixed right-4 bottom-4 left-4 z-50 transform rounded-xl bg-(--card-color) p-5 text-(--main-color) shadow-2xl transition-all duration-300 ease-in-out sm:right-5 sm:bottom-5 sm:left-auto sm:w-full sm:max-w-[400px] ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'} `}
       role='alert'
     >
       <div className='flex flex-col gap-4'>
@@ -51,7 +51,7 @@ const NightlyBanner = ({
               </svg>
               A new Nightly preview is available.
             </span>
-            <span className='text-[var(--secondary-color)] opacity-90'>
+            <span className='text-(--secondary-color) opacity-90'>
               The latest kanadojo build
               <span className='mt-1 ml-1 block text-xs italic opacity-75'>
                 * This version may be unstable.
@@ -63,14 +63,14 @@ const NightlyBanner = ({
         <div className='mt-1 flex items-center justify-end gap-3'>
           <button
             onClick={handleDismiss}
-            className='px-3 py-2 text-sm text-[var(--secondary-color)] transition-colors hover:opacity-80'
+            className='px-3 py-2 text-sm text-(--secondary-color) transition-colors hover:opacity-80'
           >
             Dismiss
           </button>
 
           <button
             onClick={onSwitch}
-            className='rounded-lg bg-[var(--border-color)] px-4 py-2 text-sm font-medium text-[var(--secondary-color)] shadow-sm transition-colors hover:opacity-90'
+            className='rounded-lg bg-(--border-color) px-4 py-2 text-sm font-medium text-(--secondary-color) shadow-sm transition-colors hover:opacity-90'
           >
             <a href='https://nightly.kanadojo.com' target='_blank'>
               Switch to Nightly

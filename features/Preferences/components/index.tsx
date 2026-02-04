@@ -77,8 +77,8 @@ const Settings = () => {
 
       {/* Backup Section - not collapsible since it's short */}
       <div className='flex flex-col gap-4'>
-        <h3 className='flex flex-row items-end gap-2 border-b-1 border-[var(--border-color)] pb-2 text-2xl'>
-          <Save size={22} className='text-[var(--secondary-color)]' />
+        <h3 className='flex flex-row items-end gap-2 border-b-1 border-(--border-color) pb-2 text-2xl'>
+          <Save size={22} className='text-(--secondary-color)' />
           <span>Backup</span>
         </h3>
         <Backup />
@@ -88,7 +88,7 @@ const Settings = () => {
       <div className='mb-12 flex flex-col gap-4'>
         <h3
           className={clsx(
-            'flex flex-row items-end gap-2 border-b-0 border-[var(--border-color)] py-6 text-3xl',
+            'flex flex-row items-end gap-2 border-b-0 border-(--border-color) py-6 text-3xl',
           )}
         >
           <Blocks size={32} />

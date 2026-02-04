@@ -79,16 +79,16 @@ export default function FlashRush() {
             className='absolute -top-8 -right-8 animate-pulse text-yellow-400'
             size={48}
           />
-          <h1 className='text-center text-5xl font-black text-[var(--main-color)]'>
+          <h1 className='text-center text-5xl font-black text-(--main-color)'>
             FLASH RUSH
           </h1>
         </div>
-        <p className='max-w-md text-center text-[var(--secondary-color)]'>
+        <p className='max-w-md text-center text-(--secondary-color)'>
           Identify as many kana as you can in 30 seconds. Speed is key!
         </p>
         <button
           onClick={startGame}
-          className='group relative flex items-center gap-3 rounded-2xl bg-[var(--main-color)] px-10 py-5 text-xl font-bold text-white transition-all hover:scale-105 active:scale-95'
+          className='group relative flex items-center gap-3 rounded-2xl bg-(--main-color) px-10 py-5 text-xl font-bold text-white transition-all hover:scale-105 active:scale-95'
         >
           <Zap className='fill-current' size={24} />
           START RUSH
@@ -107,21 +107,21 @@ export default function FlashRush() {
           className='flex flex-col items-center gap-4 text-center'
         >
           <Trophy className='text-yellow-400' size={80} />
-          <h2 className='text-4xl font-bold text-[var(--main-color)]'>
+          <h2 className='text-4xl font-bold text-(--main-color)'>
             Rush Over!
           </h2>
-          <div className='rounded-3xl border border-[var(--border-color)] bg-[var(--card-color)] p-8 shadow-xl'>
-            <p className='text-sm tracking-widest text-[var(--secondary-color)] uppercase'>
+          <div className='rounded-3xl border border-(--border-color) bg-(--card-color) p-8 shadow-xl'>
+            <p className='text-sm tracking-widest text-(--secondary-color) uppercase'>
               Final Score
             </p>
-            <p className='text-7xl font-black text-[var(--main-color)]'>
+            <p className='text-7xl font-black text-(--main-color)'>
               {score}
             </p>
           </div>
         </motion.div>
         <button
           onClick={startGame}
-          className='flex items-center gap-2 rounded-xl border-2 border-[var(--main-color)] px-8 py-3 font-bold text-[var(--main-color)] transition-all hover:bg-[var(--main-color)] hover:text-white'
+          className='flex items-center gap-2 rounded-xl border-2 border-(--main-color) px-8 py-3 font-bold text-(--main-color) transition-all hover:bg-(--main-color) hover:text-white'
         >
           <RefreshCcw size={20} />
           TRY AGAIN
@@ -134,10 +134,10 @@ export default function FlashRush() {
     <div className='flex min-h-[85vh] flex-1 flex-col items-center justify-center gap-12'>
       {/* Stats Bar */}
       <div className='flex w-full max-w-md items-center justify-between px-4'>
-        <div className='flex items-center gap-2 rounded-full border border-[var(--border-color)] bg-[var(--card-color)] px-4 py-2'>
+        <div className='flex items-center gap-2 rounded-full border border-(--border-color) bg-(--card-color) px-4 py-2'>
           <Timer
             className={clsx(
-              'text-[var(--main-color)]',
+              'text-(--main-color)',
               timeLeft < 5 && 'animate-bounce text-red-500',
             )}
             size={20}
@@ -145,15 +145,15 @@ export default function FlashRush() {
           <span
             className={clsx(
               'font-mono text-xl font-bold',
-              timeLeft < 5 ? 'text-red-500' : 'text-[var(--main-color)]',
+              timeLeft < 5 ? 'text-red-500' : 'text-(--main-color)',
             )}
           >
             {timeLeft}s
           </span>
         </div>
-        <div className='flex items-center gap-2 rounded-full border border-[var(--border-color)] bg-[var(--card-color)] px-4 py-2'>
+        <div className='flex items-center gap-2 rounded-full border border-(--border-color) bg-(--card-color) px-4 py-2'>
           <Trophy className='text-yellow-400' size={20} />
-          <span className='font-mono text-xl font-bold text-[var(--main-color)]'>
+          <span className='font-mono text-xl font-bold text-(--main-color)'>
             {score}
           </span>
         </div>
@@ -166,9 +166,9 @@ export default function FlashRush() {
           initial={{ scale: 0.8, opacity: 0, y: 20 }}
           animate={{ scale: 1, opacity: 1, y: 0 }}
           exit={{ scale: 1.2, opacity: 0 }}
-          className='relative flex h-48 w-48 items-center justify-center rounded-[3rem] border-4 border-[var(--border-color)] bg-[var(--card-color)] shadow-2xl'
+          className='relative flex h-48 w-48 items-center justify-center rounded-[3rem] border-4 border-(--border-color) bg-(--card-color) shadow-2xl'
         >
-          <span className='text-8xl font-black text-[var(--main-color)]'>
+          <span className='text-8xl font-black text-(--main-color)'>
             {currentKana?.kana}
           </span>
 
@@ -195,10 +195,10 @@ export default function FlashRush() {
             onClick={() => handleAnswer(option)}
             className={clsx(
               'flex flex-col items-center justify-center rounded-2xl border-2 py-6 transition-all',
-              'border-[var(--border-color)] bg-[var(--card-color)] hover:border-[var(--main-color)]',
+              'border-(--border-color) bg-(--card-color) hover:border-(--main-color)',
             )}
           >
-            <span className='text-3xl font-bold text-[var(--main-color)]'>
+            <span className='text-3xl font-bold text-(--main-color)'>
               {option.romanji}
             </span>
           </motion.button>

@@ -451,7 +451,7 @@ export default async function TranslatePage({ params }: TranslatePageProps) {
         {/* Skip link for accessibility */}
         <a
           href='#translator'
-          className='sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:rounded-lg focus:bg-[var(--main-color)] focus:px-4 focus:py-2 focus:text-white'
+          className='sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:rounded-lg focus:bg-(--main-color) focus:px-4 focus:py-2 focus:text-white'
         >
           Skip to translator
         </a>

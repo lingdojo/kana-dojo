@@ -61,39 +61,39 @@ export default async function KatakanaPracticePage({
           ]}
         />
         <header className='mb-8 text-center'>
-          <h1 className='mb-3 text-4xl font-bold text-[var(--main-color)]'>
+          <h1 className='mb-3 text-4xl font-bold text-(--main-color)'>
             {t('katakana.title')}
           </h1>
-          <p className='text-lg text-[var(--secondary-color)]'>
+          <p className='text-lg text-(--secondary-color)'>
             {t('katakana.subtitle')}
           </p>
 
           <div className='mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center'>
             <Link
               href={`/${locale}/kana/train`}
-              className='rounded-lg bg-[var(--main-color)] px-6 py-3 font-semibold text-[var(--background-color)] transition-all hover:opacity-90'
+              className='rounded-lg bg-(--main-color) px-6 py-3 font-semibold text-(--background-color) transition-all hover:opacity-90'
             >
               {t('katakana.ctaPrimary')} →
             </Link>
             <Link
               href={`/${locale}/kana`}
-              className='rounded-lg border-2 border-[var(--border-color)] px-6 py-3 font-semibold text-[var(--main-color)] transition-all hover:border-[var(--main-color)]'
+              className='rounded-lg border-2 border-(--border-color) px-6 py-3 font-semibold text-(--main-color) transition-all hover:border-(--main-color)'
             >
               {t('katakana.ctaSecondary')} →
             </Link>
           </div>
         </header>
 
-        <main className='space-y-8 text-[var(--secondary-color)]'>
-          <section className='rounded-lg border-2 border-[var(--border-color)] bg-[var(--card-color)] p-6'>
-            <h2 className='mb-3 text-2xl font-semibold text-[var(--main-color)]'>
+        <main className='space-y-8 text-(--secondary-color)'>
+          <section className='rounded-lg border-2 border-(--border-color) bg-(--card-color) p-6'>
+            <h2 className='mb-3 text-2xl font-semibold text-(--main-color)'>
               {t('katakana.sections.what.title')}
             </h2>
             <p>{t('katakana.sections.what.body')}</p>
           </section>
 
-          <section className='rounded-lg border-2 border-[var(--border-color)] bg-[var(--card-color)] p-6'>
-            <h2 className='mb-3 text-2xl font-semibold text-[var(--main-color)]'>
+          <section className='rounded-lg border-2 border-(--border-color) bg-(--card-color) p-6'>
+            <h2 className='mb-3 text-2xl font-semibold text-(--main-color)'>
               {t('katakana.sections.how.title')}
             </h2>
             <ul className='list-disc space-y-2 pl-6'>
@@ -103,8 +103,8 @@ export default async function KatakanaPracticePage({
             </ul>
           </section>
 
-          <section className='rounded-lg border-2 border-[var(--border-color)] bg-[var(--card-color)] p-6'>
-            <h2 className='mb-3 text-2xl font-semibold text-[var(--main-color)]'>
+          <section className='rounded-lg border-2 border-(--border-color) bg-(--card-color) p-6'>
+            <h2 className='mb-3 text-2xl font-semibold text-(--main-color)'>
               {t('katakana.sections.why.title')}
             </h2>
             <ul className='list-disc space-y-2 pl-6'>
@@ -114,32 +114,32 @@ export default async function KatakanaPracticePage({
             </ul>
           </section>
 
-          <section className='rounded-lg border-2 border-[var(--border-color)] bg-[var(--card-color)] p-6'>
-            <h2 className='mb-4 text-2xl font-semibold text-[var(--main-color)]'>
+          <section className='rounded-lg border-2 border-(--border-color) bg-(--card-color) p-6'>
+            <h2 className='mb-4 text-2xl font-semibold text-(--main-color)'>
               {t('katakana.links.kana')}
             </h2>
             <div className='grid gap-3 sm:grid-cols-2'>
               <Link
                 href={`/${locale}/kana/train`}
-                className='rounded-lg border-2 border-[var(--border-color)] px-4 py-3 font-semibold text-[var(--main-color)] transition-all hover:border-[var(--main-color)]'
+                className='rounded-lg border-2 border-(--border-color) px-4 py-3 font-semibold text-(--main-color) transition-all hover:border-(--main-color)'
               >
                 {t('katakana.links.train')} →
               </Link>
               <Link
                 href={`/${locale}/kana/blitz`}
-                className='rounded-lg border-2 border-[var(--border-color)] px-4 py-3 font-semibold text-[var(--main-color)] transition-all hover:border-[var(--main-color)]'
+                className='rounded-lg border-2 border-(--border-color) px-4 py-3 font-semibold text-(--main-color) transition-all hover:border-(--main-color)'
               >
                 {t('katakana.links.blitz')} →
               </Link>
               <Link
                 href={`/${locale}/kana/gauntlet`}
-                className='rounded-lg border-2 border-[var(--border-color)] px-4 py-3 font-semibold text-[var(--main-color)] transition-all hover:border-[var(--main-color)]'
+                className='rounded-lg border-2 border-(--border-color) px-4 py-3 font-semibold text-(--main-color) transition-all hover:border-(--main-color)'
               >
                 {t('katakana.links.gauntlet')} →
               </Link>
               <Link
                 href={`/${locale}/faq`}
-                className='rounded-lg border-2 border-[var(--border-color)] px-4 py-3 font-semibold text-[var(--main-color)] transition-all hover:border-[var(--main-color)]'
+                className='rounded-lg border-2 border-(--border-color) px-4 py-3 font-semibold text-(--main-color) transition-all hover:border-(--main-color)'
               >
                 {t('katakana.links.faq')} →
               </Link>

@@ -74,21 +74,21 @@ const KanaSlot = () => {
 
   return (
     <div className='flex flex-1 flex-col items-center justify-center gap-6 p-4'>
-      <h2 className='text-2xl text-[var(--main-color)]'>🎰 Kana Slot</h2>
+      <h2 className='text-2xl text-(--main-color)'>🎰 Kana Slot</h2>
 
       {/* Coins */}
-      <div className='text-xl text-[var(--accent-color)]'>
+      <div className='text-xl text-(--accent-color)'>
         💰 Coins: {coins}
       </div>
 
       {/* Slot Machine */}
-      <div className='flex gap-2 rounded-2xl border-4 border-[var(--border-color)] bg-[var(--card-color)] p-4'>
+      <div className='flex gap-2 rounded-2xl border-4 border-(--border-color) bg-(--card-color) p-4'>
         {reels.map((reel, i) => (
           <div
             key={i}
             className={clsx(
               'flex h-24 w-20 items-center justify-center rounded-xl',
-              'border-2 border-[var(--border-color)] bg-[var(--bg-color)]',
+              'border-2 border-(--border-color) bg-(--bg-color)',
               win && 'animate-pulse border-yellow-400',
             )}
           >
@@ -111,7 +111,7 @@ const KanaSlot = () => {
       <p
         className={clsx(
           'h-8 text-xl transition-all',
-          win ? 'text-yellow-400' : 'text-[var(--secondary-color)]',
+          win ? 'text-yellow-400' : 'text-(--secondary-color)',
         )}
       >
         {message}
@@ -125,7 +125,7 @@ const KanaSlot = () => {
           'rounded-xl px-8 py-4 text-xl text-white transition-all',
           spinning.some(s => s) || coins < 10
             ? 'cursor-not-allowed bg-gray-500'
-            : 'bg-[var(--accent-color)] hover:scale-105',
+            : 'bg-(--accent-color) hover:scale-105',
         )}
       >
         {coins < 10 ? '💸 No coins!' : '🎰 Spin! (-10)'}
@@ -135,7 +135,7 @@ const KanaSlot = () => {
       {coins < 10 && (
         <button
           onClick={() => setCoins(100)}
-          className='text-sm text-[var(--secondary-color)] underline'
+          className='text-sm text-(--secondary-color) underline'
         >
           Get 100 free coins
         </button>

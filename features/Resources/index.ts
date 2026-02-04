@@ -74,6 +74,7 @@ export {
   enrichCategoriesWithCounts,
   getTotalResourceCount as getTotalCount,
   validateCategoryCounts,
+  getFilterOptions,
 } from './lib';
 
 // Data access functions

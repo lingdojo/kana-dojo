@@ -71,7 +71,7 @@ const Subset = ({ sliceRange, subgroup }: SubsetProps) => {
               className={clsx(
                 'flex w-full flex-row items-center gap-2',
                 'transition-all duration-200 ease-in-out',
-                'text-[var(--secondary-color)]',
+                'text-(--secondary-color)',
               )}
               onClick={playClick}
             >
@@ -115,7 +115,7 @@ const Subset = ({ sliceRange, subgroup }: SubsetProps) => {
 
             {/* Divider (except for last character in group) */}
             {!isLastInSubset && (
-              <hr className='w-full border-t-1 border-[var(--border-color)]' />
+              <hr className='w-full border-t-1 border-(--border-color)' />
             )}
           </div>
         );

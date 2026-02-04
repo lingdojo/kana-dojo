@@ -1,9 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
 import {
-  getAnalyzeRateLimiter,
+  checkAnalyzeRateLimit,
   getClientIP,
   createRateLimitHeaders,
 } from '@/shared/lib/rateLimit';
+import {
+  getRedisCachedJson,
+  setRedisCachedJson,
+} from '@/shared/lib/apiCache';
+import type { ApiErrorResponse } from '@/shared/types/api';
 
 // Type for kuromoji token
 interface KuromojiToken {
@@ -28,6 +33,12 @@ export interface AnalyzedToken {
   posDetail: string; // Detailed POS info
   translation?: string; // English meaning (if available)
 }
+
+const ERROR_CODES = {
+  INVALID_INPUT: 'INVALID_INPUT',
+  RATE_LIMIT: 'RATE_LIMIT',
+  API_ERROR: 'API_ERROR',
+} as const;
 
 // Cache for analyzed text
 const analysisCache = new Map<
@@ -160,8 +171,7 @@ function getPOSDetail(token: KuromojiToken): string {
 export async function POST(request: NextRequest) {
   // Rate limiting check - protect against abuse
   const clientIP = getClientIP(request);
-  const rateLimiter = getAnalyzeRateLimiter();
-  const rateLimitResult = rateLimiter.check(clientIP);
+  const rateLimitResult = await checkAnalyzeRateLimit(clientIP);
 
   if (!rateLimitResult.allowed) {
     const headers = createRateLimitHeaders(rateLimitResult);
@@ -179,9 +189,11 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(
       {
         error: message,
-        code: 'RATE_LIMIT',
+        message,
+        code: ERROR_CODES.RATE_LIMIT,
+        status: 429,
         retryAfter: rateLimitResult.retryAfter,
-      },
+      } satisfies ApiErrorResponse,
       { status: 429, headers },
     );
   }
@@ -193,19 +205,44 @@ export async function POST(request: NextRequest) {
     // Validate input
     if (!text || typeof text !== 'string' || text.trim().length === 0) {
       return NextResponse.json(
-        { error: 'Please provide valid text to analyze.' },
+        {
+          error: 'Please provide valid text to analyze.',
+          message: 'Please provide valid text to analyze.',
+          code: ERROR_CODES.INVALID_INPUT,
+          status: 400,
+        } satisfies ApiErrorResponse,
         { status: 400 },
       );
     }
 
     if (text.length > 5000) {
       return NextResponse.json(
-        { error: 'Text exceeds maximum length of 5000 characters.' },
+        {
+          error: 'Text exceeds maximum length of 5000 characters.',
+          message: 'Text exceeds maximum length of 5000 characters.',
+          code: ERROR_CODES.INVALID_INPUT,
+          status: 400,
+        } satisfies ApiErrorResponse,
         { status: 400 },
       );
     }
 
     // Check cache
+    const redisCached = await getRedisCachedJson<{
+      tokens: AnalyzedToken[];
+    }>('analyze', text);
+    if (redisCached) {
+      const rateLimitHeaders = createRateLimitHeaders(rateLimitResult);
+      const response = NextResponse.json({
+        tokens: redisCached.tokens,
+        cached: true,
+      });
+      rateLimitHeaders.forEach((value, key) => {
+        response.headers.set(key, value);
+      });
+      return response;
+    }
+
     const cached = analysisCache.get(text);
     if (cached && Date.now() - cached.timestamp < CACHE_TTL) {
       const rateLimitHeaders = createRateLimitHeaders(rateLimitResult);
@@ -235,6 +272,13 @@ export async function POST(request: NextRequest) {
     }));
 
     // Cache the result
+    await setRedisCachedJson(
+      'analyze',
+      text,
+      { tokens: analyzedTokens },
+      Math.ceil(CACHE_TTL / 1000),
+    );
+
     analysisCache.set(text, {
       tokens: analyzedTokens,
       timestamp: Date.now(),
@@ -250,7 +294,12 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error('Text analysis error:', error);
     return NextResponse.json(
-      { error: 'Failed to analyze text. Please try again.' },
+      {
+        error: 'Failed to analyze text. Please try again.',
+        message: 'Failed to analyze text. Please try again.',
+        code: ERROR_CODES.API_ERROR,
+        status: 500,
+      } satisfies ApiErrorResponse,
       { status: 500 },
     );
   }

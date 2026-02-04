@@ -75,7 +75,7 @@ const BreathingExercise = () => {
         <div
           className={clsx(
             'h-64 w-64 rounded-full md:h-80 md:w-80',
-            'border-4 border-[var(--border-color)] bg-[var(--card-color)]',
+            'border-4 border-(--border-color) bg-(--card-color)',
             'flex items-center justify-center',
             'transition-transform ease-in-out',
             scale,
@@ -88,11 +88,11 @@ const BreathingExercise = () => {
           <div className='text-center'>
             <span
               lang='ja'
-              className='block text-6xl text-[var(--main-color)] md:text-8xl'
+              className='block text-6xl text-(--main-color) md:text-8xl'
             >
               {currentKana.kana}
             </span>
-            <span className='text-xl text-[var(--secondary-color)] md:text-2xl'>
+            <span className='text-xl text-(--secondary-color) md:text-2xl'>
               {currentKana.romanji}
             </span>
           </div>
@@ -100,10 +100,10 @@ const BreathingExercise = () => {
 
         {/* Phase indicator */}
         <div className='text-center'>
-          <p className='text-2xl font-medium text-[var(--main-color)] md:text-3xl'>
+          <p className='text-2xl font-medium text-(--main-color) md:text-3xl'>
             {PHASE_LABELS[phase]}
           </p>
-          <p className='mt-2 text-sm text-[var(--secondary-color)]'>
+          <p className='mt-2 text-sm text-(--secondary-color)'>
             Cycle {cycleCount + 1}
           </p>
         </div>
@@ -113,8 +113,8 @@ const BreathingExercise = () => {
           onClick={togglePlay}
           className={clsx(
             'rounded-full p-4',
-            'border border-[var(--border-color)] bg-[var(--card-color)]',
-            'text-[var(--secondary-color)] hover:text-[var(--main-color)]',
+            'border border-(--border-color) bg-(--card-color)',
+            'text-(--secondary-color) hover:text-(--main-color)',
             'transition-all duration-250 hover:cursor-pointer',
             'active:scale-95',
           )}

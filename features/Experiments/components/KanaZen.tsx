@@ -29,12 +29,12 @@ const KanaZen = () => {
   if (!isMounted) return null;
 
   return (
-    <div className='relative min-h-[80vh] flex-1 overflow-hidden bg-gradient-to-b from-transparent to-[var(--card-color)]/30'>
+    <div className='relative min-h-[80vh] flex-1 overflow-hidden bg-gradient-to-b from-transparent to-(--card-color)/30'>
       {floaters.map(f => (
         <span
           key={f.id}
           lang='ja'
-          className='absolute cursor-default text-[var(--main-color)] opacity-40 will-change-transform select-none'
+          className='absolute cursor-default text-(--main-color) opacity-40 will-change-transform select-none'
           style={{
             left: `${f.x}%`,
             top: `${f.y}%`,
@@ -48,7 +48,7 @@ const KanaZen = () => {
       ))}
 
       <div className='pointer-events-none absolute inset-0 flex items-center justify-center'>
-        <p className='text-lg text-[var(--secondary-color)] opacity-60'>
+        <p className='text-lg text-(--secondary-color) opacity-60'>
           Breathe and relax...
         </p>
       </div>

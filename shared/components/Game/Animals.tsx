@@ -24,7 +24,7 @@ const Stars = () => {
                 ? 'motion-safe:animate-pulse'
                 : '',
 
-              'text-[var(--secondary-color)]'
+              'text-(--secondary-color)'
             )}
             style={{
               animationDelay: `${index * 100}ms`
@@ -35,7 +35,7 @@ const Stars = () => {
           <div
             key={index}
             className={clsx(
-              'text-[var(--secondary-color)]',
+              'text-(--secondary-color)',
               iconIndices.length >= 20
                 ? 'motion-safe:animate-ping'
                 : iconIndices.length >= 15

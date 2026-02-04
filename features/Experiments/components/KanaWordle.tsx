@@ -63,14 +63,14 @@ const KanaWordle = () => {
 
   return (
     <div className='flex flex-1 flex-col items-center justify-center gap-6 p-4'>
-      <h2 className='text-2xl text-[var(--main-color)]'>🎯 Kana Wordle</h2>
+      <h2 className='text-2xl text-(--main-color)'>🎯 Kana Wordle</h2>
 
       {/* Hint */}
       <div className='text-center'>
-        <p className='text-lg text-[var(--secondary-color)]'>
+        <p className='text-lg text-(--secondary-color)'>
           Find the kana that sounds like:
         </p>
-        <p className='mt-2 font-mono text-3xl text-[var(--accent-color)]'>
+        <p className='mt-2 font-mono text-3xl text-(--accent-color)'>
           "{target.romanji}"
         </p>
       </div>
@@ -85,7 +85,7 @@ const KanaWordle = () => {
               className={clsx(
                 'flex h-14 w-14 items-center justify-center rounded-xl border-2 text-2xl transition-all',
                 !guess
-                  ? 'border-[var(--border-color)] bg-[var(--card-color)]'
+                  ? 'border-(--border-color) bg-(--card-color)'
                   : guess.result === 'correct'
                     ? 'scale-110 border-green-500 bg-green-500/20 text-green-400'
                     : 'border-red-500 bg-red-500/20 text-red-400',
@@ -114,8 +114,8 @@ const KanaWordle = () => {
                   : guessed?.result === 'wrong'
                     ? 'border-red-500 bg-red-500/20 opacity-50'
                     : gameState !== 'playing'
-                      ? 'border-[var(--border-color)] opacity-50'
-                      : 'border-[var(--border-color)] bg-[var(--card-color)] hover:scale-105 hover:border-[var(--accent-color)]',
+                      ? 'border-(--border-color) opacity-50'
+                      : 'border-(--border-color) bg-(--card-color) hover:scale-105 hover:border-(--accent-color)',
               )}
             >
               {opt.kana}
@@ -139,7 +139,7 @@ const KanaWordle = () => {
           </p>
           <button
             onClick={restart}
-            className='rounded-xl bg-[var(--accent-color)] px-6 py-3 text-white transition-transform hover:scale-105'
+            className='rounded-xl bg-(--accent-color) px-6 py-3 text-white transition-transform hover:scale-105'
           >
             Play Again
           </button>

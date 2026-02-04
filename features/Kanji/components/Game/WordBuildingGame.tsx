@@ -174,7 +174,7 @@ const ActiveTile = memo(
           tileBaseStyles,
           'cursor-pointer transition-colors',
           'active:mb-[10px] active:translate-y-[10px] active:border-b-0',
-          'border-[var(--secondary-color-accent)] bg-[var(--secondary-color)] text-[var(--background-color)]',
+          'border-(--secondary-color-accent) bg-(--secondary-color) text-(--background-color)',
           isDisabled && 'cursor-not-allowed opacity-50',
           // Larger font for kanji tiles, smaller for meaning tiles
           isKanji ? 'text-3xl sm:text-4xl' : 'text-xl sm:text-2xl',
@@ -198,7 +198,7 @@ const BlankTile = memo(
       <div
         className={clsx(
           tileBaseStyles,
-          'border-transparent bg-[var(--border-color)]/30',
+          'border-transparent bg-(--border-color)/30',
           'select-none',
           isKanji ? 'text-3xl sm:text-4xl' : 'text-xl sm:text-2xl',
         )}
@@ -441,8 +441,8 @@ const KanjiWordBuildingGame = ({
         : questionData.kanjiChar;
       setFeedback(
         <>
-          <span className='text-[var(--secondary-color)]'>{`${displayText} = ${questionData.correctAnswer} `}</span>
-          <CircleCheck className='inline text-[var(--main-color)]' />
+          <span className='text-(--secondary-color)'>{`${displayText} = ${questionData.correctAnswer} `}</span>
+          <CircleCheck className='inline text-(--main-color)' />
         </>,
       );
 
@@ -620,7 +620,7 @@ const KanjiWordBuildingGame = ({
             <div className='flex w-full flex-col items-center'>
               <div
                 className={clsx(
-                  'flex w-full items-center border-b-2 border-[var(--border-color)] px-2 pb-2 md:w-3/4 lg:w-2/3 xl:w-1/2',
+                  'flex w-full items-center border-b-2 border-(--border-color) px-2 pb-2 md:w-3/4 lg:w-2/3 xl:w-1/2',
                   // Use taller min-height when in reverse mode (kanji tiles have larger font size)
                   isReverse ? 'min-h-[5.5rem]' : 'min-h-[5rem]',
                 )}

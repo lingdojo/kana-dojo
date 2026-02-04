@@ -36,7 +36,7 @@ function CollapsibleSection({
   return (
     <div
       className={cn(
-        'overflow-hidden rounded-xl border border-[var(--border-color)]',
+        'overflow-hidden rounded-xl border border-(--border-color)',
         'transition-all duration-200',
         isOpen && 'shadow-md',
       )}
@@ -45,9 +45,9 @@ function CollapsibleSection({
         onClick={() => setIsOpen(!isOpen)}
         className={cn(
           'flex w-full cursor-pointer items-center justify-between p-3 sm:p-4',
-          'bg-[var(--card-color)]',
-          'hover:bg-[var(--border-color)]',
-          'text-[var(--main-color)] transition-colors duration-200',
+          'bg-(--card-color)',
+          'hover:bg-(--border-color)',
+          'text-(--main-color) transition-colors duration-200',
         )}
         aria-expanded={isOpen}
       >
@@ -55,8 +55,8 @@ function CollapsibleSection({
           <span
             className={cn(
               'rounded-lg p-1.5 sm:p-2',
-              'bg-[var(--main-color)]/10',
-              'border border-[var(--main-color)]/20',
+              'bg-(--main-color)/10',
+              'border border-(--main-color)/20',
             )}
           >
             {icon}
@@ -66,7 +66,7 @@ function CollapsibleSection({
         <span
           className={cn(
             'rounded-lg p-1 sm:p-1.5',
-            'bg-[var(--background-color)]',
+            'bg-(--background-color)',
             'transition-transform duration-200',
             isOpen && 'rotate-180',
           )}
@@ -80,7 +80,7 @@ function CollapsibleSection({
           isOpen ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0',
         )}
       >
-        <div className='border-t border-[var(--border-color)] bg-[var(--background-color)] p-4 text-[var(--secondary-color)] sm:p-5'>
+        <div className='border-t border-(--border-color) bg-(--background-color) p-4 text-(--secondary-color) sm:p-5'>
           {children}
         </div>
       </div>
@@ -95,7 +95,7 @@ export default function SEOContent({
     <section
       className={cn(
         'mt-6 flex flex-col gap-4 rounded-2xl p-4 sm:mt-8 sm:p-6',
-        'border border-[var(--border-color)] bg-[var(--card-color)]',
+        'border border-(--border-color) bg-(--card-color)',
         'shadow-lg shadow-black/5',
       )}
       aria-label='Japanese translation guide and educational content'
@@ -104,18 +104,18 @@ export default function SEOContent({
         <div
           className={cn(
             'w-fit rounded-xl p-2 sm:p-2.5',
-            'bg-[var(--main-color)]/10',
-            'border border-[var(--main-color)]/20',
+            'bg-(--main-color)/10',
+            'border border-(--main-color)/20',
           )}
           aria-hidden='true'
         >
-          <GraduationCap className='h-5 w-5 text-[var(--main-color)] sm:h-6 sm:w-6' />
+          <GraduationCap className='h-5 w-5 text-(--main-color) sm:h-6 sm:w-6' />
         </div>
         <div>
-          <h2 className='text-xl font-bold text-[var(--main-color)] sm:text-2xl'>
+          <h2 className='text-xl font-bold text-(--main-color) sm:text-2xl'>
             How to Translate English to Japanese Online
           </h2>
-          <p className='text-xs text-[var(--secondary-color)] sm:text-sm'>
+          <p className='text-xs text-(--secondary-color) sm:text-sm'>
             Complete guide to Japanese translation with tips for learners
           </p>
         </div>
@@ -124,14 +124,14 @@ export default function SEOContent({
       {/* Featured Snippet: Definition Box */}
       <div
         className={cn(
-          'rounded-xl border-2 border-[var(--main-color)]/30 p-4',
-          'bg-[var(--main-color)]/5',
+          'rounded-xl border-2 border-(--main-color)/30 p-4',
+          'bg-(--main-color)/5',
         )}
         itemScope
         itemProp='description'
       >
-        <p className='text-sm leading-relaxed text-[var(--secondary-color)]'>
-          <strong className='text-[var(--main-color)]'>
+        <p className='text-sm leading-relaxed text-(--secondary-color)'>
+          <strong className='text-(--main-color)'>
             Japanese Translator:
           </strong>{' '}
           A tool that converts text between Japanese (日本語) and other
@@ -150,35 +150,35 @@ export default function SEOContent({
           aria-label='Common English to Japanese translations'
         >
           <thead>
-            <tr className='border-b border-[var(--border-color)]'>
-              <th className='px-3 py-2 text-left font-semibold text-[var(--main-color)]'>
+            <tr className='border-b border-(--border-color)'>
+              <th className='px-3 py-2 text-left font-semibold text-(--main-color)'>
                 English
               </th>
-              <th className='px-3 py-2 text-left font-semibold text-[var(--main-color)]'>
+              <th className='px-3 py-2 text-left font-semibold text-(--main-color)'>
                 Japanese
               </th>
-              <th className='px-3 py-2 text-left font-semibold text-[var(--main-color)]'>
+              <th className='px-3 py-2 text-left font-semibold text-(--main-color)'>
                 Romaji
               </th>
             </tr>
           </thead>
-          <tbody className='text-[var(--secondary-color)]'>
-            <tr className='border-b border-[var(--border-color)]/50'>
+          <tbody className='text-(--secondary-color)'>
+            <tr className='border-b border-(--border-color)/50'>
               <td className='px-3 py-2'>Hello</td>
               <td className='px-3 py-2 font-medium'>こんにちは</td>
               <td className='px-3 py-2 italic'>Konnichiwa</td>
             </tr>
-            <tr className='border-b border-[var(--border-color)]/50'>
+            <tr className='border-b border-(--border-color)/50'>
               <td className='px-3 py-2'>Thank you</td>
               <td className='px-3 py-2 font-medium'>ありがとう</td>
               <td className='px-3 py-2 italic'>Arigatou</td>
             </tr>
-            <tr className='border-b border-[var(--border-color)]/50'>
+            <tr className='border-b border-(--border-color)/50'>
               <td className='px-3 py-2'>Yes</td>
               <td className='px-3 py-2 font-medium'>はい</td>
               <td className='px-3 py-2 italic'>Hai</td>
             </tr>
-            <tr className='border-b border-[var(--border-color)]/50'>
+            <tr className='border-b border-(--border-color)/50'>
               <td className='px-3 py-2'>No</td>
               <td className='px-3 py-2 font-medium'>いいえ</td>
               <td className='px-3 py-2 italic'>Iie</td>
@@ -194,8 +194,8 @@ export default function SEOContent({
 
       <div className='flex flex-col gap-3'>
         {/* Introduction Section */}
-        <div className='space-y-4 text-sm leading-relaxed text-[var(--secondary-color)]'>
-          <h2 className='text-lg font-bold text-[var(--main-color)] sm:text-xl'>
+        <div className='space-y-4 text-sm leading-relaxed text-(--secondary-color)'>
+          <h2 className='text-lg font-bold text-(--main-color) sm:text-xl'>
             Why Choose KanaDojo&apos;s Free Japanese Translator
           </h2>
           <p>
@@ -236,7 +236,7 @@ export default function SEOContent({
 
         <CollapsibleSection
           title='How to Use the Japanese Translator'
-          icon={<BookOpen className='h-4 w-4 text-[var(--main-color)]' />}
+          icon={<BookOpen className='h-4 w-4 text-(--main-color)' />}
           defaultOpen={true}
         >
           <div className='space-y-4 text-sm leading-relaxed'>
@@ -256,7 +256,7 @@ export default function SEOContent({
                   <span
                     className={cn(
                       'h-6 w-6 flex-shrink-0 rounded-full',
-                      'bg-[var(--main-color)]/10 text-[var(--main-color)]',
+                      'bg-(--main-color)/10 text-(--main-color)',
                       'flex items-center justify-center text-xs font-bold',
                     )}
                   >
@@ -269,12 +269,12 @@ export default function SEOContent({
             <div
               className={cn(
                 'mt-4 rounded-xl p-4',
-                'border border-[var(--main-color)]/20 bg-[var(--main-color)]/5',
+                'border border-(--main-color)/20 bg-(--main-color)/5',
               )}
             >
-              <p className='font-medium text-[var(--main-color)]'>
+              <p className='font-medium text-(--main-color)'>
                 💡 Pro tip:{' '}
-                <span className='font-normal text-[var(--secondary-color)]'>
+                <span className='font-normal text-(--secondary-color)'>
                   Use the swap button to quickly reverse the translation
                   direction and translate the output back.
                 </span>
@@ -285,7 +285,7 @@ export default function SEOContent({
 
         <CollapsibleSection
           title='About Japanese Writing Systems'
-          icon={<Info className='h-4 w-4 text-[var(--main-color)]' />}
+          icon={<Info className='h-4 w-4 text-(--main-color)' />}
         >
           <div className='space-y-4 text-sm leading-relaxed'>
             <p>
@@ -326,7 +326,7 @@ export default function SEOContent({
                   >
                     {system.name}
                   </h4>
-                  <p className='text-[var(--secondary-color)]'>{system.desc}</p>
+                  <p className='text-(--secondary-color)'>{system.desc}</p>
                 </div>
               ))}
             </div>
@@ -340,7 +340,7 @@ export default function SEOContent({
 
         <CollapsibleSection
           title='Translation Tips & Best Practices'
-          icon={<Lightbulb className='h-4 w-4 text-[var(--main-color)]' />}
+          icon={<Lightbulb className='h-4 w-4 text-(--main-color)' />}
         >
           <div className='space-y-4 text-sm leading-relaxed'>
             <p>
@@ -353,13 +353,13 @@ export default function SEOContent({
               <div
                 className={cn(
                   'rounded-xl p-4',
-                  'border border-[var(--main-color)]/20 bg-[var(--main-color)]/5',
+                  'border border-(--main-color)/20 bg-(--main-color)/5',
                 )}
               >
-                <h4 className='mb-2 font-semibold text-[var(--main-color)]'>
+                <h4 className='mb-2 font-semibold text-(--main-color)'>
                   Provide Context When Possible
                 </h4>
-                <p className='text-[var(--secondary-color)]'>
+                <p className='text-(--secondary-color)'>
                   Japanese is a highly context-dependent language. Many words
                   have multiple meanings depending on the situation. When
                   translating, include surrounding sentences or specify the
@@ -372,13 +372,13 @@ export default function SEOContent({
               <div
                 className={cn(
                   'rounded-xl p-4',
-                  'border border-[var(--main-color)]/20 bg-[var(--main-color)]/5',
+                  'border border-(--main-color)/20 bg-(--main-color)/5',
                 )}
               >
-                <h4 className='mb-2 font-semibold text-[var(--main-color)]'>
+                <h4 className='mb-2 font-semibold text-(--main-color)'>
                   Understand Particles and Their Importance
                 </h4>
-                <p className='text-[var(--secondary-color)]'>
+                <p className='text-(--secondary-color)'>
                   Japanese particles (は、が、を、に、で、と、etc.) are crucial
                   for understanding sentence structure. While our translator
                   handles these automatically, being aware of them helps you
@@ -391,13 +391,13 @@ export default function SEOContent({
               <div
                 className={cn(
                   'rounded-xl p-4',
-                  'border border-[var(--main-color)]/20 bg-[var(--main-color)]/5',
+                  'border border-(--main-color)/20 bg-(--main-color)/5',
                 )}
               >
-                <h4 className='mb-2 font-semibold text-[var(--main-color)]'>
+                <h4 className='mb-2 font-semibold text-(--main-color)'>
                   Be Aware of Formality Levels
                 </h4>
-                <p className='text-[var(--secondary-color)]'>
+                <p className='text-(--secondary-color)'>
                   Japanese has distinct formality levels: casual (だ、である),
                   polite (です、ます), and honorific (keigo). When translating
                   to Japanese, consider your relationship with the audience. For
@@ -410,13 +410,13 @@ export default function SEOContent({
               <div
                 className={cn(
                   'rounded-xl p-4',
-                  'border border-[var(--main-color)]/20 bg-[var(--main-color)]/5',
+                  'border border-(--main-color)/20 bg-(--main-color)/5',
                 )}
               >
-                <h4 className='mb-2 font-semibold text-[var(--main-color)]'>
+                <h4 className='mb-2 font-semibold text-(--main-color)'>
                   Use Romanization (Romaji) for Pronunciation
                 </h4>
-                <p className='text-[var(--secondary-color)]'>
+                <p className='text-(--secondary-color)'>
                   Our translator automatically provides Hepburn romanization for
                   all Japanese text. Use this to learn proper pronunciation and
                   to verify that the translation matches what you expected.
@@ -428,13 +428,13 @@ export default function SEOContent({
               <div
                 className={cn(
                   'rounded-xl p-4',
-                  'border border-[var(--main-color)]/20 bg-[var(--main-color)]/5',
+                  'border border-(--main-color)/20 bg-(--main-color)/5',
                 )}
               >
-                <h4 className='mb-2 font-semibold text-[var(--main-color)]'>
+                <h4 className='mb-2 font-semibold text-(--main-color)'>
                   Break Long Texts into Sentences
                 </h4>
-                <p className='text-[var(--secondary-color)]'>
+                <p className='text-(--secondary-color)'>
                   While you can translate up to 5,000 characters at once, for
                   complex or technical text, translate sentence by sentence.
                   This gives you more control and helps identify any translation
@@ -447,18 +447,18 @@ export default function SEOContent({
               <div
                 className={cn(
                   'rounded-xl p-4',
-                  'border border-[var(--main-color)]/20 bg-[var(--main-color)]/5',
+                  'border border-(--main-color)/20 bg-(--main-color)/5',
                 )}
               >
-                <h4 className='mb-2 font-semibold text-[var(--main-color)]'>
+                <h4 className='mb-2 font-semibold text-(--main-color)'>
                   Learn Common Kanji to Verify Translations
                 </h4>
-                <p className='text-[var(--secondary-color)]'>
+                <p className='text-(--secondary-color)'>
                   Understanding common kanji characters helps you verify
                   translation accuracy. Use our{' '}
                   <Link
                     href='/kanji'
-                    className='font-semibold text-[var(--main-color)] underline decoration-[var(--main-color)]/30 underline-offset-2 hover:decoration-[var(--main-color)]'
+                    className='font-semibold text-(--main-color) underline decoration-(--main-color)/30 underline-offset-2 hover:decoration-(--main-color)'
                   >
                     Kanji learning tool
                   </Link>{' '}
@@ -469,26 +469,26 @@ export default function SEOContent({
               </div>
             </div>
 
-            <p className='mt-4 text-[var(--secondary-color)] italic'>
+            <p className='mt-4 text-(--secondary-color) italic'>
               For comprehensive Japanese language learning beyond translation,
               explore our interactive{' '}
               <Link
                 href='/kana'
-                className='font-semibold text-[var(--main-color)] underline decoration-[var(--main-color)]/30 underline-offset-2 hover:decoration-[var(--main-color)]'
+                className='font-semibold text-(--main-color) underline decoration-(--main-color)/30 underline-offset-2 hover:decoration-(--main-color)'
               >
                 Hiragana and Katakana practice
               </Link>
               ,{' '}
               <Link
                 href='/kanji'
-                className='font-semibold text-[var(--main-color)] underline decoration-[var(--main-color)]/30 underline-offset-2 hover:decoration-[var(--main-color)]'
+                className='font-semibold text-(--main-color) underline decoration-(--main-color)/30 underline-offset-2 hover:decoration-(--main-color)'
               >
                 Kanji training
               </Link>
               , and{' '}
               <Link
                 href='/vocabulary'
-                className='font-semibold text-[var(--main-color)] underline decoration-[var(--main-color)]/30 underline-offset-2 hover:decoration-[var(--main-color)]'
+                className='font-semibold text-(--main-color) underline decoration-(--main-color)/30 underline-offset-2 hover:decoration-(--main-color)'
               >
                 vocabulary building
               </Link>{' '}
@@ -499,7 +499,7 @@ export default function SEOContent({
 
         <CollapsibleSection
           title='Frequently Asked Questions'
-          icon={<HelpCircle className='h-4 w-4 text-[var(--main-color)]' />}
+          icon={<HelpCircle className='h-4 w-4 text-(--main-color)' />}
         >
           <div className='space-y-5 text-sm'>
             {[
@@ -596,13 +596,13 @@ export default function SEOContent({
                 key={index}
                 className={cn(
                   'rounded-xl p-4',
-                  'border border-[var(--border-color)] bg-[var(--card-color)]',
+                  'border border-(--border-color) bg-(--card-color)',
                 )}
               >
-                <h4 className='mb-2 font-semibold text-[var(--main-color)]'>
+                <h4 className='mb-2 font-semibold text-(--main-color)'>
                   {faq.q}
                 </h4>
-                <p className='leading-relaxed text-[var(--secondary-color)]'>
+                <p className='leading-relaxed text-(--secondary-color)'>
                   {faq.a}
                 </p>
               </div>
@@ -616,7 +616,7 @@ export default function SEOContent({
 
         <CollapsibleSection
           title='Common Use Cases for Japanese Translation'
-          icon={<BookOpen className='h-4 w-4 text-[var(--main-color)]' />}
+          icon={<BookOpen className='h-4 w-4 text-(--main-color)' />}
         >
           <div className='space-y-4 text-sm leading-relaxed'>
             <p>
@@ -628,14 +628,14 @@ export default function SEOContent({
             <div className='grid gap-4 sm:grid-cols-2'>
               <div
                 className={cn(
-                  'rounded-xl border border-[var(--border-color)] p-4',
-                  'bg-[var(--card-color)]',
+                  'rounded-xl border border-(--border-color) p-4',
+                  'bg-(--card-color)',
                 )}
               >
-                <h4 className='mb-2 font-semibold text-[var(--main-color)]'>
+                <h4 className='mb-2 font-semibold text-(--main-color)'>
                   🗾 Travel to Japan
                 </h4>
-                <p className='text-[var(--secondary-color)]'>
+                <p className='text-(--secondary-color)'>
                   Translate restaurant menus, street signs, train schedules, and
                   hotel information. Perfect for tourists who need quick
                   translations of Japanese text encountered while exploring
@@ -646,14 +646,14 @@ export default function SEOContent({
 
               <div
                 className={cn(
-                  'rounded-xl border border-[var(--border-color)] p-4',
-                  'bg-[var(--card-color)]',
+                  'rounded-xl border border-(--border-color) p-4',
+                  'bg-(--card-color)',
                 )}
               >
-                <h4 className='mb-2 font-semibold text-[var(--main-color)]'>
+                <h4 className='mb-2 font-semibold text-(--main-color)'>
                   📺 Anime & Manga Translation
                 </h4>
-                <p className='text-[var(--secondary-color)]'>
+                <p className='text-(--secondary-color)'>
                   Understand Japanese anime subtitles, translate manga panels,
                   and learn the meaning behind character dialogue. Our romaji
                   feature helps you pronounce character names and understand the
@@ -664,14 +664,14 @@ export default function SEOContent({
 
               <div
                 className={cn(
-                  'rounded-xl border border-[var(--border-color)] p-4',
-                  'bg-[var(--card-color)]',
+                  'rounded-xl border border-(--border-color) p-4',
+                  'bg-(--card-color)',
                 )}
               >
-                <h4 className='mb-2 font-semibold text-[var(--main-color)]'>
+                <h4 className='mb-2 font-semibold text-(--main-color)'>
                   🎓 JLPT Exam Preparation
                 </h4>
-                <p className='text-[var(--secondary-color)]'>
+                <p className='text-(--secondary-color)'>
                   Study for the Japanese Language Proficiency Test by
                   translating practice questions, verifying your understanding
                   of reading passages, and checking vocabulary meanings. Combine
@@ -682,14 +682,14 @@ export default function SEOContent({
 
               <div
                 className={cn(
-                  'rounded-xl border border-[var(--border-color)] p-4',
-                  'bg-[var(--card-color)]',
+                  'rounded-xl border border-(--border-color) p-4',
+                  'bg-(--card-color)',
                 )}
               >
-                <h4 className='mb-2 font-semibold text-[var(--main-color)]'>
+                <h4 className='mb-2 font-semibold text-(--main-color)'>
                   💼 Business Communication
                 </h4>
-                <p className='text-[var(--secondary-color)]'>
+                <p className='text-(--secondary-color)'>
                   Translate emails from Japanese clients or colleagues,
                   understand business documents, and draft responses in
                   Japanese. Useful for international business professionals
@@ -699,14 +699,14 @@ export default function SEOContent({
 
               <div
                 className={cn(
-                  'rounded-xl border border-[var(--border-color)] p-4',
-                  'bg-[var(--card-color)]',
+                  'rounded-xl border border-(--border-color) p-4',
+                  'bg-(--card-color)',
                 )}
               >
-                <h4 className='mb-2 font-semibold text-[var(--main-color)]'>
+                <h4 className='mb-2 font-semibold text-(--main-color)'>
                   📱 Social Media & Gaming
                 </h4>
-                <p className='text-[var(--secondary-color)]'>
+                <p className='text-(--secondary-color)'>
                   Communicate with Japanese friends on social media, understand
                   tweets in Japanese, or translate messages in Japanese video
                   games. Perfect for connecting with Japanese-speaking online
@@ -716,14 +716,14 @@ export default function SEOContent({
 
               <div
                 className={cn(
-                  'rounded-xl border border-[var(--border-color)] p-4',
-                  'bg-[var(--card-color)]',
+                  'rounded-xl border border-(--border-color) p-4',
+                  'bg-(--card-color)',
                 )}
               >
-                <h4 className='mb-2 font-semibold text-[var(--main-color)]'>
+                <h4 className='mb-2 font-semibold text-(--main-color)'>
                   📚 Academic Research
                 </h4>
-                <p className='text-[var(--secondary-color)]'>
+                <p className='text-(--secondary-color)'>
                   Translate Japanese academic papers, historical documents, or
                   research materials. Scholars studying Japanese culture,
                   history, or literature can quickly understand source materials
@@ -742,7 +742,7 @@ export default function SEOContent({
 
         <CollapsibleSection
           title='Common Japanese Phrases & Translations'
-          icon={<BookOpen className='h-4 w-4 text-[var(--main-color)]' />}
+          icon={<BookOpen className='h-4 w-4 text-(--main-color)' />}
         >
           <div className='space-y-4 text-sm leading-relaxed'>
             <p>
@@ -752,7 +752,7 @@ export default function SEOContent({
             </p>
 
             <div className='space-y-2'>
-              <h4 className='font-semibold text-[var(--main-color)]'>
+              <h4 className='font-semibold text-(--main-color)'>
                 Basic Greetings
               </h4>
               <div className='grid gap-2'>
@@ -791,17 +791,17 @@ export default function SEOContent({
                   <div
                     key={index}
                     className={cn(
-                      'rounded-lg border border-[var(--border-color)] p-3',
-                      'grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 bg-[var(--background-color)]',
+                      'rounded-lg border border-(--border-color) p-3',
+                      'grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 bg-(--background-color)',
                     )}
                   >
-                    <span className='font-medium text-[var(--main-color)]'>
+                    <span className='font-medium text-(--main-color)'>
                       {phrase.japanese}
                     </span>
-                    <span className='text-[var(--secondary-color)]'>
+                    <span className='text-(--secondary-color)'>
                       {phrase.english}
                     </span>
-                    <span className='text-xs text-[var(--secondary-color)] italic opacity-75'>
+                    <span className='text-xs text-(--secondary-color) italic opacity-75'>
                       {phrase.romaji}
                     </span>
                   </div>
@@ -810,7 +810,7 @@ export default function SEOContent({
             </div>
 
             <div className='space-y-2'>
-              <h4 className='font-semibold text-[var(--main-color)]'>
+              <h4 className='font-semibold text-(--main-color)'>
                 Travel Essentials
               </h4>
               <div className='grid gap-2'>
@@ -844,17 +844,17 @@ export default function SEOContent({
                   <div
                     key={index}
                     className={cn(
-                      'rounded-lg border border-[var(--border-color)] p-3',
-                      'grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 bg-[var(--background-color)]',
+                      'rounded-lg border border-(--border-color) p-3',
+                      'grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 bg-(--background-color)',
                     )}
                   >
-                    <span className='font-medium text-[var(--main-color)]'>
+                    <span className='font-medium text-(--main-color)'>
                       {phrase.japanese}
                     </span>
-                    <span className='text-[var(--secondary-color)]'>
+                    <span className='text-(--secondary-color)'>
                       {phrase.english}
                     </span>
-                    <span className='text-xs text-[var(--secondary-color)] italic opacity-75'>
+                    <span className='text-xs text-(--secondary-color) italic opacity-75'>
                       {phrase.romaji}
                     </span>
                   </div>
@@ -863,7 +863,7 @@ export default function SEOContent({
             </div>
 
             <div className='space-y-2'>
-              <h4 className='font-semibold text-[var(--main-color)]'>
+              <h4 className='font-semibold text-(--main-color)'>
                 Dining & Food
               </h4>
               <div className='grid gap-2'>
@@ -897,17 +897,17 @@ export default function SEOContent({
                   <div
                     key={index}
                     className={cn(
-                      'rounded-lg border border-[var(--border-color)] p-3',
-                      'grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 bg-[var(--background-color)]',
+                      'rounded-lg border border-(--border-color) p-3',
+                      'grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 bg-(--background-color)',
                     )}
                   >
-                    <span className='font-medium text-[var(--main-color)]'>
+                    <span className='font-medium text-(--main-color)'>
                       {phrase.japanese}
                     </span>
-                    <span className='text-[var(--secondary-color)]'>
+                    <span className='text-(--secondary-color)'>
                       {phrase.english}
                     </span>
-                    <span className='text-xs text-[var(--secondary-color)] italic opacity-75'>
+                    <span className='text-xs text-(--secondary-color) italic opacity-75'>
                       {phrase.romaji}
                     </span>
                   </div>
@@ -915,7 +915,7 @@ export default function SEOContent({
               </div>
             </div>
 
-            <p className='mt-4 text-[var(--secondary-color)]'>
+            <p className='mt-4 text-(--secondary-color)'>
               Use our translator to practice these phrases and discover their
               variations. Understanding these common expressions will make your
               Japanese interactions much smoother!
@@ -925,7 +925,7 @@ export default function SEOContent({
 
         <CollapsibleSection
           title='How Our Translation Technology Works'
-          icon={<Info className='h-4 w-4 text-[var(--main-color)]' />}
+          icon={<Info className='h-4 w-4 text-(--main-color)' />}
         >
           <div className='space-y-4 text-sm leading-relaxed'>
             <p>
@@ -938,13 +938,13 @@ export default function SEOContent({
               <div
                 className={cn(
                   'rounded-xl p-4',
-                  'border border-[var(--main-color)]/20 bg-[var(--main-color)]/5',
+                  'border border-(--main-color)/20 bg-(--main-color)/5',
                 )}
               >
-                <h4 className='mb-2 font-semibold text-[var(--main-color)]'>
+                <h4 className='mb-2 font-semibold text-(--main-color)'>
                   Neural Machine Translation (NMT)
                 </h4>
-                <p className='text-[var(--secondary-color)]'>
+                <p className='text-(--secondary-color)'>
                   We use Google Cloud Translation API, which employs
                   state-of-the-art neural machine translation technology. Unlike
                   older phrase-based systems, NMT analyzes entire sentences to
@@ -958,13 +958,13 @@ export default function SEOContent({
               <div
                 className={cn(
                   'rounded-xl p-4',
-                  'border border-[var(--main-color)]/20 bg-[var(--main-color)]/5',
+                  'border border-(--main-color)/20 bg-(--main-color)/5',
                 )}
               >
-                <h4 className='mb-2 font-semibold text-[var(--main-color)]'>
+                <h4 className='mb-2 font-semibold text-(--main-color)'>
                   Automatic Romanization with Kuroshiro
                 </h4>
-                <p className='text-[var(--secondary-color)]'>
+                <p className='text-(--secondary-color)'>
                   When translating to Japanese, we automatically generate romaji
                   (romanization) using Kuroshiro, a specialized library for
                   Japanese text processing. Kuroshiro uses the Kuromoji analyzer
@@ -978,13 +978,13 @@ export default function SEOContent({
               <div
                 className={cn(
                   'rounded-xl p-4',
-                  'border border-[var(--main-color)]/20 bg-[var(--main-color)]/5',
+                  'border border-(--main-color)/20 bg-(--main-color)/5',
                 )}
               >
-                <h4 className='mb-2 font-semibold text-[var(--main-color)]'>
+                <h4 className='mb-2 font-semibold text-(--main-color)'>
                   Client & Server-Side Caching
                 </h4>
-                <p className='text-[var(--secondary-color)]'>
+                <p className='text-(--secondary-color)'>
                   To improve speed and reduce API calls, we implement a
                   two-layer caching system. Client-side caching (30-minute TTL)
                   stores recent translations in your browser, providing instant
@@ -998,13 +998,13 @@ export default function SEOContent({
               <div
                 className={cn(
                   'rounded-xl p-4',
-                  'border border-[var(--main-color)]/20 bg-[var(--main-color)]/5',
+                  'border border-(--main-color)/20 bg-(--main-color)/5',
                 )}
               >
-                <h4 className='mb-2 font-semibold text-[var(--main-color)]'>
+                <h4 className='mb-2 font-semibold text-(--main-color)'>
                   Privacy-First Architecture
                 </h4>
-                <p className='text-[var(--secondary-color)]'>
+                <p className='text-(--secondary-color)'>
                   Your translation history is stored exclusively in your
                   browser&apos;s localStorage using localForage, not on our
                   servers. This means your translations are completely private
@@ -1018,13 +1018,13 @@ export default function SEOContent({
               <div
                 className={cn(
                   'rounded-xl p-4',
-                  'border border-[var(--main-color)]/20 bg-[var(--main-color)]/5',
+                  'border border-(--main-color)/20 bg-(--main-color)/5',
                 )}
               >
-                <h4 className='mb-2 font-semibold text-[var(--main-color)]'>
+                <h4 className='mb-2 font-semibold text-(--main-color)'>
                   Multi-Script Support
                 </h4>
-                <p className='text-[var(--secondary-color)]'>
+                <p className='text-(--secondary-color)'>
                   Our translator seamlessly handles all Japanese writing
                   systems: Hiragana (native Japanese words), Katakana (foreign
                   loanwords and emphasis), and Kanji (Chinese characters for
@@ -1038,13 +1038,13 @@ export default function SEOContent({
               <div
                 className={cn(
                   'rounded-xl p-4',
-                  'border border-[var(--main-color)]/20 bg-[var(--main-color)]/5',
+                  'border border-(--main-color)/20 bg-(--main-color)/5',
                 )}
               >
-                <h4 className='mb-2 font-semibold text-[var(--main-color)]'>
+                <h4 className='mb-2 font-semibold text-(--main-color)'>
                   Error Handling & Validation
                 </h4>
-                <p className='text-[var(--secondary-color)]'>
+                <p className='text-(--secondary-color)'>
                   Before sending text to the translation API, we validate input
                   for common issues: empty text, excessive length (5,000
                   character limit), and network connectivity. Offline detection
@@ -1054,7 +1054,7 @@ export default function SEOContent({
               </div>
             </div>
 
-            <p className='mt-4 text-[var(--secondary-color)]'>
+            <p className='mt-4 text-(--secondary-color)'>
               By combining industry-leading translation technology with
               learner-focused features, we provide a translation experience
               that&apos;s both powerful and educational.
@@ -1064,7 +1064,7 @@ export default function SEOContent({
 
         <CollapsibleSection
           title='How to Translate Anime and Manga Japanese'
-          icon={<BookOpen className='h-4 w-4 text-[var(--main-color)]' />}
+          icon={<BookOpen className='h-4 w-4 text-(--main-color)' />}
         >
           <div className='space-y-4 text-sm leading-relaxed'>
             <p>
@@ -1078,13 +1078,13 @@ export default function SEOContent({
               <div
                 className={cn(
                   'rounded-xl p-4',
-                  'border border-[var(--main-color)]/20 bg-[var(--main-color)]/5',
+                  'border border-(--main-color)/20 bg-(--main-color)/5',
                 )}
               >
-                <h4 className='mb-2 font-semibold text-[var(--main-color)]'>
+                <h4 className='mb-2 font-semibold text-(--main-color)'>
                   Understanding Anime Speech Patterns
                 </h4>
-                <p className='text-[var(--secondary-color)]'>
+                <p className='text-(--secondary-color)'>
                   Anime characters often use exaggerated or stylized speech.
                   Common patterns include: sentence-ending particles like
                   &quot;だぜ&quot; (masculine), &quot;わ&quot; (feminine), and
@@ -1097,13 +1097,13 @@ export default function SEOContent({
               <div
                 className={cn(
                   'rounded-xl p-4',
-                  'border border-[var(--main-color)]/20 bg-[var(--main-color)]/5',
+                  'border border-(--main-color)/20 bg-(--main-color)/5',
                 )}
               >
-                <h4 className='mb-2 font-semibold text-[var(--main-color)]'>
+                <h4 className='mb-2 font-semibold text-(--main-color)'>
                   Translating Manga Sound Effects
                 </h4>
-                <p className='text-[var(--secondary-color)]'>
+                <p className='text-(--secondary-color)'>
                   Japanese manga uses onomatopoeia extensively. Words like
                   &quot;ドキドキ&quot; (dokidoki - heartbeat),
                   &quot;シーン&quot; (shiin - silence), and &quot;ゴゴゴ&quot;
@@ -1116,10 +1116,10 @@ export default function SEOContent({
               <div
                 className={cn(
                   'rounded-xl p-4',
-                  'border border-[var(--main-color)]/20 bg-[var(--main-color)]/5',
+                  'border border-(--main-color)/20 bg-(--main-color)/5',
                 )}
               >
-                <h4 className='mb-2 font-semibold text-[var(--main-color)]'>
+                <h4 className='mb-2 font-semibold text-(--main-color)'>
                   Common Anime Phrases to Know
                 </h4>
                 <div className='mt-2 grid gap-2'>
@@ -1147,9 +1147,9 @@ export default function SEOContent({
                   ].map((phrase, index) => (
                     <div
                       key={index}
-                      className='flex items-center gap-3 text-[var(--secondary-color)]'
+                      className='flex items-center gap-3 text-(--secondary-color)'
                     >
-                      <span className='font-medium text-[var(--main-color)]'>
+                      <span className='font-medium text-(--main-color)'>
                         {phrase.japanese}
                       </span>
                       <span className='text-xs italic'>({phrase.romaji})</span>
@@ -1164,7 +1164,7 @@ export default function SEOContent({
 
         <CollapsibleSection
           title='How to Translate Japanese Names to English'
-          icon={<Info className='h-4 w-4 text-[var(--main-color)]' />}
+          icon={<Info className='h-4 w-4 text-(--main-color)' />}
         >
           <div className='space-y-4 text-sm leading-relaxed'>
             <p>
@@ -1177,13 +1177,13 @@ export default function SEOContent({
               <div
                 className={cn(
                   'rounded-xl p-4',
-                  'border border-[var(--main-color)]/20 bg-[var(--main-color)]/5',
+                  'border border-(--main-color)/20 bg-(--main-color)/5',
                 )}
               >
-                <h4 className='mb-2 font-semibold text-[var(--main-color)]'>
+                <h4 className='mb-2 font-semibold text-(--main-color)'>
                   Japanese Name Order
                 </h4>
-                <p className='text-[var(--secondary-color)]'>
+                <p className='text-(--secondary-color)'>
                   In Japanese, the family name (姓 - sei) comes first, followed
                   by the given name (名 - mei). For example,
                   &quot;田中太郎&quot; (Tanaka Tarō) has &quot;Tanaka&quot; as
@@ -1196,10 +1196,10 @@ export default function SEOContent({
               <div
                 className={cn(
                   'rounded-xl p-4',
-                  'border border-[var(--main-color)]/20 bg-[var(--main-color)]/5',
+                  'border border-(--main-color)/20 bg-(--main-color)/5',
                 )}
               >
-                <h4 className='mb-2 font-semibold text-[var(--main-color)]'>
+                <h4 className='mb-2 font-semibold text-(--main-color)'>
                   Common Japanese Name Kanji
                 </h4>
                 <div className='mt-2 grid gap-2'>
@@ -1227,9 +1227,9 @@ export default function SEOContent({
                   ].map((name, index) => (
                     <div
                       key={index}
-                      className='flex items-center gap-3 text-[var(--secondary-color)]'
+                      className='flex items-center gap-3 text-(--secondary-color)'
                     >
-                      <span className='font-medium text-[var(--main-color)]'>
+                      <span className='font-medium text-(--main-color)'>
                         {name.kanji}
                       </span>
                       <span className='text-xs italic'>({name.romaji})</span>
@@ -1242,13 +1242,13 @@ export default function SEOContent({
               <div
                 className={cn(
                   'rounded-xl p-4',
-                  'border border-[var(--main-color)]/20 bg-[var(--main-color)]/5',
+                  'border border-(--main-color)/20 bg-(--main-color)/5',
                 )}
               >
-                <h4 className='mb-2 font-semibold text-[var(--main-color)]'>
+                <h4 className='mb-2 font-semibold text-(--main-color)'>
                   Tips for Translating Names
                 </h4>
-                <ul className='list-inside list-disc space-y-1 text-[var(--secondary-color)]'>
+                <ul className='list-inside list-disc space-y-1 text-(--secondary-color)'>
                   <li>
                     Names written in kanji may have multiple possible readings
                   </li>
@@ -1271,21 +1271,21 @@ export default function SEOContent({
 
         <CollapsibleSection
           title='Related Japanese Learning Tools'
-          icon={<LinkIcon className='h-4 w-4 text-[var(--main-color)]' />}
+          icon={<LinkIcon className='h-4 w-4 text-(--main-color)' />}
         >
           <div className='grid gap-4 sm:grid-cols-2'>
             <Link
               href='/kana'
               className={cn(
                 'group rounded-xl p-4 transition-all duration-200',
-                'border border-[var(--border-color)] bg-[var(--card-color)]',
-                'hover:border-[var(--main-color)] hover:shadow-[var(--main-color)]/10 hover:shadow-md',
+                'border border-(--border-color) bg-(--card-color)',
+                'hover:border-(--main-color) hover:shadow-(--main-color)/10 hover:shadow-md',
               )}
             >
-              <h4 className='mb-2 font-semibold text-[var(--main-color)] group-hover:underline'>
+              <h4 className='mb-2 font-semibold text-(--main-color) group-hover:underline'>
                 Hiragana & Katakana Practice
               </h4>
-              <p className='text-xs leading-relaxed text-[var(--secondary-color)] sm:text-sm'>
+              <p className='text-xs leading-relaxed text-(--secondary-color) sm:text-sm'>
                 Master the Japanese phonetic alphabets with interactive games
                 and exercises. Learn all 46 base characters plus dakuon, yoon,
                 and foreign sounds.
@@ -1296,14 +1296,14 @@ export default function SEOContent({
               href='/kanji'
               className={cn(
                 'group rounded-xl p-4 transition-all duration-200',
-                'border border-[var(--border-color)] bg-[var(--card-color)]',
-                'hover:border-[var(--main-color)] hover:shadow-[var(--main-color)]/10 hover:shadow-md',
+                'border border-(--border-color) bg-(--card-color)',
+                'hover:border-(--main-color) hover:shadow-(--main-color)/10 hover:shadow-md',
               )}
             >
-              <h4 className='mb-2 font-semibold text-[var(--main-color)] group-hover:underline'>
+              <h4 className='mb-2 font-semibold text-(--main-color) group-hover:underline'>
                 Kanji Learning by JLPT Level
               </h4>
-              <p className='text-xs leading-relaxed text-[var(--secondary-color)] sm:text-sm'>
+              <p className='text-xs leading-relaxed text-(--secondary-color) sm:text-sm'>
                 Study Japanese kanji characters organized by JLPT levels (N5 to
                 N1). Practice readings, meanings, and stroke order for over
                 2,000 kanji.
@@ -1314,14 +1314,14 @@ export default function SEOContent({
               href='/vocabulary'
               className={cn(
                 'group rounded-xl p-4 transition-all duration-200',
-                'border border-[var(--border-color)] bg-[var(--card-color)]',
-                'hover:border-[var(--main-color)] hover:shadow-[var(--main-color)]/10 hover:shadow-md',
+                'border border-(--border-color) bg-(--card-color)',
+                'hover:border-(--main-color) hover:shadow-(--main-color)/10 hover:shadow-md',
               )}
             >
-              <h4 className='mb-2 font-semibold text-[var(--main-color)] group-hover:underline'>
+              <h4 className='mb-2 font-semibold text-(--main-color) group-hover:underline'>
                 Japanese Vocabulary Training
               </h4>
-              <p className='text-xs leading-relaxed text-[var(--secondary-color)] sm:text-sm'>
+              <p className='text-xs leading-relaxed text-(--secondary-color) sm:text-sm'>
                 Build your Japanese vocabulary with thousands of words organized
                 by JLPT level. Practice nouns, verbs, adjectives, and adverbs
                 with example sentences.
@@ -1332,14 +1332,14 @@ export default function SEOContent({
               href='/academy'
               className={cn(
                 'group rounded-xl p-4 transition-all duration-200',
-                'border border-[var(--border-color)] bg-[var(--card-color)]',
-                'hover:border-[var(--main-color)] hover:shadow-[var(--main-color)]/10 hover:shadow-md',
+                'border border-(--border-color) bg-(--card-color)',
+                'hover:border-(--main-color) hover:shadow-(--main-color)/10 hover:shadow-md',
               )}
             >
-              <h4 className='mb-2 font-semibold text-[var(--main-color)] group-hover:underline'>
+              <h4 className='mb-2 font-semibold text-(--main-color) group-hover:underline'>
                 Japanese Learning Academy
               </h4>
-              <p className='text-xs leading-relaxed text-[var(--secondary-color)] sm:text-sm'>
+              <p className='text-xs leading-relaxed text-(--secondary-color) sm:text-sm'>
                 Access comprehensive guides and articles about learning
                 Japanese. Get expert tips, study strategies, and cultural
                 insights to accelerate your learning.

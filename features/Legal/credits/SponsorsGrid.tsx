@@ -8,7 +8,7 @@ export default function SponsorsGrid({ sponsors }: { sponsors: Sponsor[] }) {
     <div className='mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8'>
       {sponsors.map(s => {
         const Content = (
-          <div className='flex flex-col items-center rounded p-2 text-center text-[var(--secondary-color)] transition-colors hover:bg-[var(--card-color)]'>
+          <div className='flex flex-col items-center rounded p-2 text-center text-(--secondary-color) transition-colors hover:bg-(--card-color)'>
             <Image
               src={s.avatar}
               alt={`${s.login} - KanaDojo sponsor avatar`}
@@ -30,7 +30,7 @@ export default function SponsorsGrid({ sponsors }: { sponsors: Sponsor[] }) {
             href={s.url}
             target='_blank'
             rel='noreferrer'
-            className='text-[var(--secondary-color)] hover:bg-slate-700/20'
+            className='text-(--secondary-color) hover:bg-slate-700/20'
           >
             {Content}
           </a>

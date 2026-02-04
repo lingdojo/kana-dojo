@@ -77,18 +77,18 @@ export function RelatedCategories({
   return (
     <section
       className={cn(
-        'rounded-xl border border-[var(--border-color)] bg-[var(--card-color)] p-6',
+        'rounded-xl border border-(--border-color) bg-(--card-color) p-6',
         className,
       )}
       aria-labelledby='related-categories-heading'
     >
       <h2
         id='related-categories-heading'
-        className='mb-4 text-lg font-semibold text-[var(--main-color)]'
+        className='mb-4 text-lg font-semibold text-(--main-color)'
       >
         Related Categories
       </h2>
-      <p className='mb-4 text-sm text-[var(--secondary-color)]'>
+      <p className='mb-4 text-sm text-(--secondary-color)'>
         Explore more Japanese learning resources in these related categories:
       </p>
       <ul className='space-y-3' role='list' aria-label='Related categories'>
@@ -96,19 +96,19 @@ export function RelatedCategories({
           <li key={category.id} role='listitem'>
             <Link
               href={`${basePath}/${category.id}`}
-              className='group flex cursor-pointer items-center justify-between rounded-lg border border-[var(--border-color)] bg-[var(--background-color)] p-3 transition-colors hover:border-[var(--main-color)] hover:shadow-sm focus-visible:ring-2 focus-visible:ring-[var(--main-color)] focus-visible:ring-offset-2 focus-visible:outline-none'
+              className='group flex cursor-pointer items-center justify-between rounded-lg border border-(--border-color) bg-(--background-color) p-3 transition-colors hover:border-(--main-color) hover:shadow-sm focus-visible:ring-2 focus-visible:ring-(--main-color) focus-visible:ring-offset-2 focus-visible:outline-none'
               aria-label={`${category.name} - ${category.resourceCount} resources`}
             >
               <div className='flex-1'>
-                <span className='font-medium text-[var(--main-color)] group-hover:text-[var(--main-color)]'>
+                <span className='font-medium text-(--main-color) group-hover:text-(--main-color)'>
                   {category.name}
                 </span>
-                <p className='mt-0.5 text-xs text-[var(--secondary-color)]'>
+                <p className='mt-0.5 text-xs text-(--secondary-color)'>
                   {category.resourceCount} resources
                 </p>
               </div>
               <ArrowRight
-                className='h-4 w-4 text-[var(--secondary-color)] transition-colors group-hover:text-[var(--main-color)]'
+                className='h-4 w-4 text-(--secondary-color) transition-colors group-hover:text-(--main-color)'
                 aria-hidden='true'
               />
             </Link>
@@ -117,10 +117,10 @@ export function RelatedCategories({
       </ul>
 
       {/* Link back to main resources page */}
-      <div className='mt-4 border-t border-[var(--border-color)] pt-4'>
+      <div className='mt-4 border-t border-(--border-color) pt-4'>
         <Link
           href={basePath}
-          className='inline-flex cursor-pointer items-center gap-1 rounded-md text-sm text-[var(--main-color)] hover:underline focus-visible:ring-2 focus-visible:ring-[var(--main-color)] focus-visible:ring-offset-2 focus-visible:outline-none'
+          className='inline-flex cursor-pointer items-center gap-1 rounded-md text-sm text-(--main-color) hover:underline focus-visible:ring-2 focus-visible:ring-(--main-color) focus-visible:ring-offset-2 focus-visible:outline-none'
         >
           View all categories
           <ArrowRight className='h-3 w-3' aria-hidden='true' />

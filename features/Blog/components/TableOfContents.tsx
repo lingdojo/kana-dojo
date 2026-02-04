@@ -36,7 +36,7 @@ export function TableOfContents({ headings, className }: TableOfContentsProps) {
       aria-label='Table of contents'
       data-testid='table-of-contents'
     >
-      <h2 className='mb-4 text-sm font-semibold tracking-wider text-[var(--main-color)] uppercase'>
+      <h2 className='mb-4 text-sm font-semibold tracking-wider text-(--main-color) uppercase'>
         On this page
       </h2>
       <ul className='space-y-1' data-testid='toc-list'>
@@ -54,7 +54,7 @@ export function TableOfContents({ headings, className }: TableOfContentsProps) {
             <a
               href={`#${heading.id}`}
               onClick={e => handleClick(e, heading.id)}
-              className='block cursor-pointer py-1 text-[var(--secondary-color)] transition-colors hover:text-[var(--main-color)]'
+              className='block cursor-pointer py-1 text-(--secondary-color) transition-colors hover:text-(--main-color)'
               data-testid={`toc-link-${heading.id}`}
             >
               {heading.text}

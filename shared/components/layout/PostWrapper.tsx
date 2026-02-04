@@ -16,10 +16,10 @@ const PostWrapper = ({
     <div>
       {tag && date && (
         <div className='my-2 flex w-full items-center justify-between'>
-          <h1 className='mt-4 pb-3 text-3xl font-bold text-[var(--main-color)]'>
+          <h1 className='mt-4 pb-3 text-3xl font-bold text-(--main-color)'>
             {tag}
           </h1>
-          <span className='my-1 leading-relaxed text-[var(--secondary-color)]'>
+          <span className='my-1 leading-relaxed text-(--secondary-color)'>
             {new Date(date).toLocaleDateString('en-GB', {
               day: '2-digit',
               month: 'short',
@@ -42,19 +42,19 @@ const PostWrapper = ({
           ),
           p: props => (
             <p
-              className='my-1 leading-relaxed text-[var(--secondary-color)]'
+              className='my-1 leading-relaxed text-(--secondary-color)'
               {...props}
             />
           ),
           ul: props => (
             <ul
-              className='list-inside list-disc pb-2 text-[var(--secondary-color)]'
+              className='list-inside list-disc pb-2 text-(--secondary-color)'
               {...props}
             />
           ),
           ol: props => (
             <ol
-              className='list-inside list-decimal pb-4 text-[var(--secondary-color)]'
+              className='list-inside list-decimal pb-4 text-(--secondary-color)'
               {...props}
             />
           ),
@@ -62,31 +62,31 @@ const PostWrapper = ({
           a: props => (
             <a
               target='_blank'
-              className='text-[var(--main-color)] underline'
+              className='text-(--main-color) underline'
               {...props}
             />
           ),
 
           table: props => (
             <table
-              className='w-full border-collapse border border-[var(--border-color)]'
+              className='w-full border-collapse border border-(--border-color)'
               {...props}
             />
           ),
           th: props => (
             <th
-              className='border border-[var(--border-color)] px-2 py-1'
+              className='border border-(--border-color) px-2 py-1'
               {...props}
             />
           ),
           td: props => (
             <td
-              className='border border-[var(--border-color)] px-2 py-1'
+              className='border border-(--border-color) px-2 py-1'
               {...props}
             />
           ),
           hr: props => (
-            <hr className='border-[var(--border-color)]' {...props} />
+            <hr className='border-(--border-color)' {...props} />
           ),
         }}
       >

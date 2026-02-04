@@ -132,22 +132,22 @@ export default function ConjugatorPage({ locale = 'en' }: ConjugatorPageProps) {
       <header
         className={cn(
           'flex flex-col items-start gap-4 rounded-2xl p-4 sm:flex-row sm:items-center sm:p-6',
-          'border border-[var(--border-color)] bg-gradient-to-r from-[var(--card-color)] to-[var(--background-color)]',
+          'border border-(--border-color) bg-gradient-to-r from-(--card-color) to-(--background-color)',
         )}
       >
         <div
           className={cn(
-            'rounded-xl border border-[var(--main-color)]/20 bg-[var(--main-color)]/10 p-2.5 sm:p-3',
+            'rounded-xl border border-(--main-color)/20 bg-(--main-color)/10 p-2.5 sm:p-3',
           )}
           aria-hidden='true'
         >
-          <Languages className='h-6 w-6 text-[var(--main-color)] sm:h-8 sm:w-8' />
+          <Languages className='h-6 w-6 text-(--main-color) sm:h-8 sm:w-8' />
         </div>
         <div className='flex-1'>
-          <h1 className='text-2xl font-bold text-[var(--main-color)] sm:text-3xl'>
+          <h1 className='text-2xl font-bold text-(--main-color) sm:text-3xl'>
             Japanese Verb Conjugator
           </h1>
-          <p className='mt-1 text-sm text-[var(--secondary-color)] sm:text-base'>
+          <p className='mt-1 text-sm text-(--secondary-color) sm:text-base'>
             <strong>Conjugate any Japanese verb</strong> instantly. Get all
             forms including te-form, masu-form, potential, passive, causative,
             and more.
@@ -159,9 +159,9 @@ export default function ConjugatorPage({ locale = 'en' }: ConjugatorPageProps) {
             onClick={handleShare}
             className={cn(
               'flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium transition-all',
-              'border border-[var(--border-color)] bg-[var(--card-color)]',
-              'hover:border-[var(--main-color)]/50 hover:bg-[var(--main-color)]/10',
-              'focus:ring-2 focus:ring-[var(--main-color)]/50 focus:outline-none',
+              'border border-(--border-color) bg-(--card-color)',
+              'hover:border-(--main-color)/50 hover:bg-(--main-color)/10',
+              'focus:ring-2 focus:ring-(--main-color)/50 focus:outline-none',
               shareButtonState === 'copied' &&
                 'border-green-500/50 bg-green-500/10 text-green-600',
               shareButtonState === 'error' &&

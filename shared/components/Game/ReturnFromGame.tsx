@@ -105,7 +105,7 @@ const Return = ({ isHidden, href, gameMode }: ReturnProps) => {
         <Link href={href} ref={buttonRef} onClick={handleExit}>
           <X
             size={32}
-            className='text-[var(--border-color)] duration-250 hover:scale-125 hover:cursor-pointer hover:text-[var(--secondary-color)]'
+            className='text-(--border-color) duration-250 hover:scale-125 hover:cursor-pointer hover:text-(--secondary-color)'
           />
         </Link>
         <ProgressBar />
@@ -125,16 +125,16 @@ const Return = ({ isHidden, href, gameMode }: ReturnProps) => {
         <p className='flex w-1/2 items-center justify-start gap-1 text-lg sm:gap-2 sm:pl-1 md:text-xl'>
           {ModeIcon && (
             <ModeIcon
-              className={clsx('text-[var(--main-color)]', modeConfig.className)}
+              className={clsx('text-(--main-color)', modeConfig.className)}
             />
           )}
-          <span className='text-[var(--secondary-color)]'>
+          <span className='text-(--secondary-color)'>
             {normalizedMode}
           </span>
         </p>
 
         {/* Stats display */}
-        <div className='flex w-1/2 flex-row items-center justify-end gap-2.5 py-2 text-[var(--secondary-color)] sm:gap-3'>
+        <div className='flex w-1/2 flex-row items-center justify-end gap-2.5 py-2 text-(--secondary-color) sm:gap-3'>
           <StatItem icon={SquareCheck} value={numCorrectAnswers} />
           <StatItem icon={SquareX} value={numWrongAnswers} />
           <StatItem icon={Flame} value={currentStreak} />

@@ -6,21 +6,14 @@ import usePreferencesStore from '@/features/Preferences/store/usePreferencesStor
 import { buttonBorderStyles } from '@/shared/lib/styles';
 import fonts from '../data/fonts';
 import { isRecommendedFont } from '../data/recommendedFonts';
-import { Dice5, Star, Type } from 'lucide-react';
-import { Random } from 'random-js';
+import { Star, Type } from 'lucide-react';
 import CollapsibleSection from './CollapsibleSection';
-
-const random = new Random();
 
 const Fonts = () => {
   const { playClick } = useClick();
 
   const currentFont = usePreferencesStore(state => state.font);
   const setFont = usePreferencesStore(state => state.setFont);
-
-  const [randomFont, setRandomFont] = useState(
-    fonts.length > 0 ? fonts[random.integer(0, fonts.length - 1)] : null,
-  );
 
   // Separate fonts into recommended and other categories
   const { recommendedFonts, otherFonts } = useMemo(() => {
@@ -35,9 +28,9 @@ const Fonts = () => {
       className={clsx(
         'flex items-center justify-center',
         buttonBorderStyles,
-        'border-1 border-[var(--card-color)] px-4 py-4',
+        'border-1 border-(--card-color) px-4 py-4',
         'flex-1 overflow-hidden',
-        fontObj.name === currentFont && 'border-[var(--main-color)]',
+        fontObj.name === currentFont && 'border-(--main-color)',
       )}
       onClick={() => playClick()}
     >
@@ -50,19 +43,19 @@ const Fonts = () => {
         className='hidden'
       />
       <p className={clsx('text-center text-xl', fontObj.font.className)}>
-        <span className='text-[var(--secondary-color)]'>
+        <span className='text-(--secondary-color)'>
           {fontObj.name === currentFont ? '\u2B24 ' : ''}
         </span>
         <span className=''>{fontObj.name}</span>
         {fontObj.name === 'Zen Maru Gothic' && ' (default)'}
-        <span className='ml-2 text-[var(--secondary-color)]'>かな道場</span>
+        <span className='ml-2 text-(--secondary-color)'>かな道場</span>
       </p>
     </label>
   );
 
   return (
     <div className='flex flex-col gap-6'>
-      <button
+      {/* <button
         className={clsx(
           'flex w-1/4 items-center justify-center gap-2 p-6',
           buttonBorderStyles,
@@ -81,9 +74,9 @@ const Fonts = () => {
         <span className='mb-0.5'>
           {randomFont?.name === currentFont ? '\u2B24 ' : ''}
         </span>
-        <Dice5 className='text-[var(--secondary-color)]' />
+        <Dice5 className='text-(--secondary-color)' />
         Random Font
-      </button>
+      </button> */}
 
       {/* Recommended Fonts Section */}
       <CollapsibleSection
@@ -120,26 +113,26 @@ const Fonts = () => {
       </CollapsibleSection>
       <div className='flex flex-col gap-2'>
         <h4 className='text-xl'>Hiragana:</h4>
-        <p className='text-3xl text-[var(--secondary-color)]' lang='ja'>
+        <p className='text-3xl text-(--secondary-color)' lang='ja'>
           {'あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん'.slice(
             0,
             20,
           )}
         </p>
         <h4 className='text-xl'>Katakana:</h4>
-        <p className='text-3xl text-[var(--secondary-color)]' lang='ja'>
+        <p className='text-3xl text-(--secondary-color)' lang='ja'>
           {'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメもヤユヨラリルレロワヲン'.slice(
             0,
             20,
           )}
         </p>
         <h4 className='text-xl'>Kanji:</h4>
-        <p className='text-3xl text-[var(--secondary-color)]' lang='ja'>
+        <p className='text-3xl text-(--secondary-color)' lang='ja'>
           人日大小学 校生先円上下中外右左名前時分国
         </p>
         {/* 
         <h4 className='text-xl'>Sample sentence:</h4>
-        <p className='text-3xl text-[var(--secondary-color)]' lang='ja'>
+        <p className='text-3xl text-(--secondary-color)' lang='ja'>
           人類社会のすべての構成員の固有の尊厳と平等で譲ることのできない権利とを承認することは
         </p>
  */}

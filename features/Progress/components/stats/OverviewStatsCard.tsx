@@ -57,21 +57,21 @@ export default function OverviewStatsCard({
       }}
       className={cn(
         'group relative overflow-hidden rounded-3xl',
-        'bg-gradient-to-br from-[var(--card-color)] to-[var(--card-color)]',
-        'border border-[var(--border-color)]/50',
+        'bg-gradient-to-br from-(--card-color) to-(--card-color)',
+        'border border-(--border-color)/50',
         'cursor-pointer p-6',
         'transition-colors duration-300',
-        'hover:border-[var(--main-color)]/30',
+        'hover:border-(--main-color)/30',
         className,
       )}
     >
       {/* Decorative geometric shape - top right corner */}
-      <div className='absolute -top-8 -right-8 h-24 w-24 rounded-full bg-gradient-to-br from-[var(--main-color)]/8 to-[var(--secondary-color)]/5 opacity-60 blur-2xl transition-opacity duration-300 group-hover:opacity-100' />
+      <div className='absolute -top-8 -right-8 h-24 w-24 rounded-full bg-gradient-to-br from-(--main-color)/8 to-(--secondary-color)/5 opacity-60 blur-2xl transition-opacity duration-300 group-hover:opacity-100' />
 
       {/* Smooth gradient accent bar - position controlled by USE_TOP_BORDER */}
       <motion.div
         className={cn(
-          'absolute right-0 left-0 h-1.5 bg-gradient-to-r from-[var(--main-color)] via-[var(--secondary-color)] to-[var(--main-color)]',
+          'absolute right-0 left-0 h-1.5 bg-gradient-to-r from-(--main-color) via-(--secondary-color) to-(--main-color)',
           USE_TOP_BORDER ? 'top-0 rounded-t-3xl' : 'bottom-0 rounded-b-3xl',
         )}
         initial={{ opacity: 0, scaleX: 0 }}
@@ -85,12 +85,12 @@ export default function OverviewStatsCard({
           <div
             className={cn(
               'flex h-12 w-12 items-center justify-center rounded-2xl',
-              'bg-gradient-to-br from-[var(--main-color)]/10 to-[var(--secondary-color)]/5',
-              'border border-[var(--border-color)]/30',
-              'text-[var(--main-color)]',
+              'bg-gradient-to-br from-(--main-color)/10 to-(--secondary-color)/5',
+              'border border-(--border-color)/30',
+              'text-(--main-color)',
               'transition-colors duration-300',
-              'group-hover:from-[var(--main-color)]/20 group-hover:to-[var(--secondary-color)]/10',
-              'group-hover:border-[var(--main-color)]/40',
+              'group-hover:from-(--main-color)/20 group-hover:to-(--secondary-color)/10',
+              'group-hover:border-(--main-color)/40',
             )}
           >
             {icon}
@@ -104,9 +104,9 @@ export default function OverviewStatsCard({
               className={cn(
                 'flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-bold',
                 trend === 'up' &&
-                  'bg-[var(--main-color)]/10 text-[var(--main-color)]',
+                  'bg-(--main-color)/10 text-(--main-color)',
                 trend === 'down' &&
-                  'bg-[var(--secondary-color)]/10 text-[var(--secondary-color)]',
+                  'bg-(--secondary-color)/10 text-(--secondary-color)',
               )}
             >
               {trend === 'up' ? '↑' : '↓'}
@@ -117,19 +117,19 @@ export default function OverviewStatsCard({
         {/* Value and title */}
         <div className='space-y-1'>
           <motion.div
-            className='text-4xl font-bold tracking-tight text-[var(--main-color)]'
+            className='text-4xl font-bold tracking-tight text-(--main-color)'
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4, delay: index * 0.08 + 0.2 }}
           >
             {value}
           </motion.div>
-          <h3 className='text-sm font-medium text-[var(--secondary-color)] transition-colors duration-300 group-hover:text-[var(--main-color)]'>
+          <h3 className='text-sm font-medium text-(--secondary-color) transition-colors duration-300 group-hover:text-(--main-color)'>
             {title}
           </h3>
           {subtitle && (
             <motion.p
-              className='text-xs text-[var(--secondary-color)]/60'
+              className='text-xs text-(--secondary-color)/60'
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.3, delay: index * 0.08 + 0.35 }}

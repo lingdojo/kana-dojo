@@ -24,13 +24,13 @@ export function RelatedPosts({ posts, className }: RelatedPostsProps) {
   return (
     <aside
       className={cn(
-        'rounded-xl border border-[var(--border-color)] bg-[var(--card-color)] p-6',
+        'rounded-xl border border-(--border-color) bg-(--card-color) p-6',
         className,
       )}
       aria-label='Related posts'
       data-testid='related-posts'
     >
-      <h2 className='mb-4 text-lg font-semibold text-[var(--main-color)]'>
+      <h2 className='mb-4 text-lg font-semibold text-(--main-color)'>
         Related Posts
       </h2>
       <ul className='space-y-3' data-testid='related-posts-list'>
@@ -41,10 +41,10 @@ export function RelatedPosts({ posts, className }: RelatedPostsProps) {
               className='group block'
               data-testid={`related-post-link-${post.slug}`}
             >
-              <span className='text-[var(--secondary-color)] transition-colors group-hover:text-[var(--main-color)]'>
+              <span className='text-(--secondary-color) transition-colors group-hover:text-(--main-color)'>
                 {post.title}
               </span>
-              <span className='ml-2 text-xs text-[var(--secondary-color)] opacity-60'>
+              <span className='ml-2 text-xs text-(--secondary-color) opacity-60'>
                 {post.readingTime} min read
               </span>
             </Link>

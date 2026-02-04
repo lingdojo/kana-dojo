@@ -59,19 +59,19 @@ const SoundGarden = () => {
     <div className='flex min-h-[80vh] flex-1 flex-col items-center justify-center gap-8'>
       {/* Header */}
       <div className='text-center'>
-        <h1 className='flex items-center justify-center gap-2 text-2xl text-[var(--main-color)] md:text-3xl'>
+        <h1 className='flex items-center justify-center gap-2 text-2xl text-(--main-color) md:text-3xl'>
           <Volume2 size={28} />
           Sound Garden
         </h1>
-        <p className='mt-2 text-[var(--secondary-color)]'>
+        <p className='mt-2 text-(--secondary-color)'>
           Tap the kana to hear their sounds
         </p>
       </div>
 
       {/* Last played indicator */}
       {lastPlayed && (
-        <div className='text-lg text-[var(--secondary-color)]'>
-          Last: <span className='text-[var(--main-color)]'>{lastPlayed}</span>
+        <div className='text-lg text-(--secondary-color)'>
+          Last: <span className='text-(--main-color)'>{lastPlayed}</span>
         </div>
       )}
 
@@ -83,13 +83,13 @@ const SoundGarden = () => {
             onClick={() => handleTileClick(index)}
             className={clsx(
               'h-14 w-14 rounded-xl md:h-16 md:w-16',
-              'border-2 border-[var(--border-color)] bg-[var(--card-color)]',
+              'border-2 border-(--border-color) bg-(--card-color)',
               'flex flex-col items-center justify-center',
               'transition-all duration-150 hover:cursor-pointer',
-              'hover:scale-105 hover:border-[var(--main-color)]',
+              'hover:scale-105 hover:border-(--main-color)',
               'active:scale-95',
               tile.isActive &&
-                'scale-110 border-[var(--main-color)] bg-[var(--main-color)]',
+                'scale-110 border-(--main-color) bg-(--main-color)',
             )}
           >
             <span
@@ -97,8 +97,8 @@ const SoundGarden = () => {
               className={clsx(
                 'text-2xl transition-colors md:text-3xl',
                 tile.isActive
-                  ? 'text-[var(--background-color)]'
-                  : 'text-[var(--main-color)]',
+                  ? 'text-(--background-color)'
+                  : 'text-(--main-color)',
               )}
             >
               {tile.kana}
@@ -107,8 +107,8 @@ const SoundGarden = () => {
               className={clsx(
                 'text-xs transition-colors',
                 tile.isActive
-                  ? 'text-[var(--background-color)]'
-                  : 'text-[var(--secondary-color)]',
+                  ? 'text-(--background-color)'
+                  : 'text-(--secondary-color)',
               )}
             >
               {tile.romanji}
@@ -118,7 +118,7 @@ const SoundGarden = () => {
       </div>
 
       {/* Instructions */}
-      <p className='text-center text-sm text-[var(--secondary-color)]'>
+      <p className='text-center text-sm text-(--secondary-color)'>
         Create melodies by tapping different kana in sequence
       </p>
     </div>

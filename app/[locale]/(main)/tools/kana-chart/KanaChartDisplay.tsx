@@ -74,8 +74,8 @@ export default function KanaChartDisplay() {
           onClick={() => setActiveTab('hiragana')}
           className={`rounded-lg px-6 py-3 text-lg font-semibold transition-all ${
             activeTab === 'hiragana'
-              ? 'bg-[var(--main-color)] text-[var(--background-color)]'
-              : 'border-2 border-[var(--border-color)] bg-[var(--card-color)] text-[var(--secondary-color)] hover:border-[var(--main-color)]'
+              ? 'bg-(--main-color) text-(--background-color)'
+              : 'border-2 border-(--border-color) bg-(--card-color) text-(--secondary-color) hover:border-(--main-color)'
           }`}
         >
           Hiragana (ひらがな)
@@ -84,8 +84,8 @@ export default function KanaChartDisplay() {
           onClick={() => setActiveTab('katakana')}
           className={`rounded-lg px-6 py-3 text-lg font-semibold transition-all ${
             activeTab === 'katakana'
-              ? 'bg-[var(--main-color)] text-[var(--background-color)]'
-              : 'border-2 border-[var(--border-color)] bg-[var(--card-color)] text-[var(--secondary-color)] hover:border-[var(--main-color)]'
+              ? 'bg-(--main-color) text-(--background-color)'
+              : 'border-2 border-(--border-color) bg-(--card-color) text-(--secondary-color) hover:border-(--main-color)'
           }`}
         >
           Katakana (カタカナ)
@@ -94,40 +94,40 @@ export default function KanaChartDisplay() {
 
       {/* Kana Chart */}
       <div className='overflow-x-auto'>
-        <table className='mx-auto w-full max-w-4xl border-2 border-[var(--border-color)]'>
+        <table className='mx-auto w-full max-w-4xl border-2 border-(--border-color)'>
           <thead>
-            <tr className='bg-[var(--card-color)]'>
-              <th className='border border-[var(--border-color)] px-4 py-2 text-[var(--secondary-color)]'>
+            <tr className='bg-(--card-color)'>
+              <th className='border border-(--border-color) px-4 py-2 text-(--secondary-color)'>
                 a
               </th>
-              <th className='border border-[var(--border-color)] px-4 py-2 text-[var(--secondary-color)]'>
+              <th className='border border-(--border-color) px-4 py-2 text-(--secondary-color)'>
                 i
               </th>
-              <th className='border border-[var(--border-color)] px-4 py-2 text-[var(--secondary-color)]'>
+              <th className='border border-(--border-color) px-4 py-2 text-(--secondary-color)'>
                 u
               </th>
-              <th className='border border-[var(--border-color)] px-4 py-2 text-[var(--secondary-color)]'>
+              <th className='border border-(--border-color) px-4 py-2 text-(--secondary-color)'>
                 e
               </th>
-              <th className='border border-[var(--border-color)] px-4 py-2 text-[var(--secondary-color)]'>
+              <th className='border border-(--border-color) px-4 py-2 text-(--secondary-color)'>
                 o
               </th>
             </tr>
           </thead>
           <tbody>
             {currentData.basic.map((row, rowIndex) => (
-              <tr key={rowIndex} className='hover:bg-[var(--card-color)]'>
+              <tr key={rowIndex} className='hover:bg-(--card-color)'>
                 {row.map((char, colIndex) => (
                   <td
                     key={colIndex}
-                    className='border border-[var(--border-color)] px-4 py-3 text-center'
+                    className='border border-(--border-color) px-4 py-3 text-center'
                   >
                     {char ? (
                       <div>
-                        <div className='text-3xl font-bold text-[var(--main-color)]'>
+                        <div className='text-3xl font-bold text-(--main-color)'>
                           {char}
                         </div>
-                        <div className='mt-1 text-sm text-[var(--secondary-color)]'>
+                        <div className='mt-1 text-sm text-(--secondary-color)'>
                           {currentData.romanji[rowIndex][colIndex]}
                         </div>
                       </div>
@@ -142,13 +142,13 @@ export default function KanaChartDisplay() {
 
       {/* Download/Print Info */}
       <div className='mt-8 text-center'>
-        <p className='text-[var(--secondary-color)]'>
+        <p className='text-(--secondary-color)'>
           Tip: Press{' '}
-          <kbd className='rounded bg-[var(--card-color)] px-2 py-1 text-xs'>
+          <kbd className='rounded bg-(--card-color) px-2 py-1 text-xs'>
             Ctrl+P
           </kbd>{' '}
           or{' '}
-          <kbd className='rounded bg-[var(--card-color)] px-2 py-1 text-xs'>
+          <kbd className='rounded bg-(--card-color) px-2 py-1 text-xs'>
             ⌘+P
           </kbd>{' '}
           to print or save this chart as PDF

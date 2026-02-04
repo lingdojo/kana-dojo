@@ -21,7 +21,7 @@ const StarItem = memo(({ index, totalStars }: StarItemProps) => (
           : totalStars >= 5
             ? 'motion-safe:animate-pulse'
             : '',
-      'text-[var(--secondary-color)]',
+      'text-(--secondary-color)',
     )}
     style={{
       animationDelay: `${index * 100}ms`,

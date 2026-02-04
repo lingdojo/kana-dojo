@@ -767,7 +767,7 @@ export const RunnerGame = () => {
           )}
         </Button>
       </div>
-      <div className='relative aspect-[2/1] w-full overflow-hidden rounded-xl border border-[var(--border-color)] bg-[var(--card-color)] shadow-sm'>
+      <div className='relative aspect-[2/1] w-full overflow-hidden rounded-xl border border-(--border-color) bg-(--card-color) shadow-sm'>
         <canvas
           ref={canvasRef}
           width={CANVAS_WIDTH}
@@ -788,11 +788,11 @@ export const RunnerGame = () => {
         {/* Overlay UI */}
         {gameState !== 'PLAYING' && (
           <div className='absolute inset-0 flex flex-col items-center justify-center bg-black/40 backdrop-blur-[2px] transition-all'>
-            <div className='animate-in fade-in zoom-in rounded-2xl border border-[var(--border-color)] bg-[var(--bg-color)] p-8 text-center shadow-xl duration-300'>
-              <h2 className='mb-2 text-4xl font-bold text-[var(--main-color)]'>
+            <div className='animate-in fade-in zoom-in rounded-2xl border border-(--border-color) bg-(--bg-color) p-8 text-center shadow-xl duration-300'>
+              <h2 className='mb-2 text-4xl font-bold text-(--main-color)'>
                 {gameState === 'START' ? '妖怪ラン' : 'Game Over'}
               </h2>
-              <p className='mb-6 text-lg tracking-widest text-[var(--secondary-color)] uppercase'>
+              <p className='mb-6 text-lg tracking-widest text-(--secondary-color) uppercase'>
                 {gameState === 'START' ? 'Yokai Run' : 'Try Again?'}
               </p>
 
@@ -815,7 +815,7 @@ export const RunnerGame = () => {
                 {gameState === 'START' ? 'Start Game' : 'Retry'}
               </Button>
 
-              <p className='mt-4 text-xs text-[var(--secondary-color)] opacity-70'>
+              <p className='mt-4 text-xs text-(--secondary-color) opacity-70'>
                 Space / Tap to Jump • Down to Dive • Collect Kana for Points
               </p>
             </div>

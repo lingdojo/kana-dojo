@@ -114,7 +114,7 @@ const KanaCatch = () => {
       onMouseMove={handleMouseMove}
     >
       {/* HUD */}
-      <div className='absolute top-4 left-1/2 z-10 flex -translate-x-1/2 gap-8 text-lg text-[var(--main-color)]'>
+      <div className='absolute top-4 left-1/2 z-10 flex -translate-x-1/2 gap-8 text-lg text-(--main-color)'>
         <span>Score: {score}</span>
         <span className='text-red-400'>Missed: {missed}/5</span>
       </div>
@@ -130,7 +130,7 @@ const KanaCatch = () => {
             transform: 'translate(-50%, -50%)',
           }}
         >
-          <span lang='ja' className='text-3xl text-[var(--main-color)]'>
+          <span lang='ja' className='text-3xl text-(--main-color)'>
             {k.kana}
           </span>
         </div>
@@ -138,7 +138,7 @@ const KanaCatch = () => {
 
       {/* Basket */}
       <div
-        className='absolute bottom-[8%] h-12 w-20 rounded-b-xl border-4 border-t-0 border-[var(--accent-color)] bg-[var(--accent-color)]/20'
+        className='absolute bottom-[8%] h-12 w-20 rounded-b-xl border-4 border-t-0 border-(--accent-color) bg-(--accent-color)/20'
         style={{
           left: `${basketX}%`,
           transform: 'translateX(-50%)',
@@ -152,14 +152,14 @@ const KanaCatch = () => {
       {/* Game Over */}
       {gameOver && (
         <div className='absolute inset-0 z-20 flex flex-col items-center justify-center bg-black/50'>
-          <div className='flex flex-col items-center gap-4 rounded-2xl bg-[var(--card-color)] p-8'>
-            <p className='text-2xl text-[var(--main-color)]'>Game Over!</p>
-            <p className='text-xl text-[var(--accent-color)]'>
+          <div className='flex flex-col items-center gap-4 rounded-2xl bg-(--card-color) p-8'>
+            <p className='text-2xl text-(--main-color)'>Game Over!</p>
+            <p className='text-xl text-(--accent-color)'>
               Final Score: {score}
             </p>
             <button
               onClick={restart}
-              className='rounded-xl bg-[var(--accent-color)] px-6 py-3 text-white transition-transform hover:scale-105'
+              className='rounded-xl bg-(--accent-color) px-6 py-3 text-white transition-transform hover:scale-105'
             >
               Play Again
             </button>
@@ -169,7 +169,7 @@ const KanaCatch = () => {
 
       {/* Instructions */}
       {!gameOver && (
-        <p className='absolute bottom-2 left-1/2 -translate-x-1/2 text-sm text-[var(--secondary-color)]'>
+        <p className='absolute bottom-2 left-1/2 -translate-x-1/2 text-sm text-(--secondary-color)'>
           Move mouse or use ← → arrow keys
         </p>
       )}

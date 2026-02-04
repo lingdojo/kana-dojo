@@ -85,16 +85,16 @@ export default function KanaSearch() {
     <div className='flex min-h-[85vh] flex-1 flex-col items-center justify-center gap-8'>
       <div className='flex w-full max-w-md items-center justify-between px-4'>
         <div className='flex items-center gap-2'>
-          <Search className='text-[var(--main-color)]' size={32} />
-          <h1 className='text-2xl font-black text-[var(--main-color)] uppercase'>
+          <Search className='text-(--main-color)' size={32} />
+          <h1 className='text-2xl font-black text-(--main-color) uppercase'>
             Kana Search
           </h1>
         </div>
         <div className='flex flex-col items-end'>
-          <span className='text-[10px] font-bold text-[var(--secondary-color)]'>
+          <span className='text-[10px] font-bold text-(--secondary-color)'>
             High Score
           </span>
-          <span className='text-xl font-black text-[var(--main-color)]'>
+          <span className='text-xl font-black text-(--main-color)'>
             {score}
           </span>
         </div>
@@ -102,12 +102,12 @@ export default function KanaSearch() {
 
       {gameState === 'idle' ? (
         <div className='flex flex-col items-center gap-6'>
-          <p className='max-w-xs text-center text-[var(--secondary-color)]'>
+          <p className='max-w-xs text-center text-(--secondary-color)'>
             Find the target character in the grid before the time runs out!
           </p>
           <button
             onClick={startGame}
-            className='rounded-2xl bg-[var(--main-color)] px-8 py-4 font-bold text-white shadow-lg transition-all hover:scale-105 active:scale-95'
+            className='rounded-2xl bg-(--main-color) px-8 py-4 font-bold text-white shadow-lg transition-all hover:scale-105 active:scale-95'
           >
             START SEARCH
           </button>
@@ -122,16 +122,16 @@ export default function KanaSearch() {
             <AlertCircle size={80} />
           </div>
           <div>
-            <h2 className='text-3xl font-black text-[var(--main-color)]'>
+            <h2 className='text-3xl font-black text-(--main-color)'>
               TIME'S UP!
             </h2>
-            <p className='text-[var(--secondary-color)]'>
+            <p className='text-(--secondary-color)'>
               You reached Level {level}
             </p>
           </div>
           <button
             onClick={startGame}
-            className='flex items-center gap-2 rounded-xl border border-[var(--border-color)] bg-[var(--card-color)] px-8 py-3 font-bold text-[var(--main-color)] transition-all hover:border-[var(--main-color)]'
+            className='flex items-center gap-2 rounded-xl border border-(--border-color) bg-(--card-color) px-8 py-3 font-bold text-(--main-color) transition-all hover:border-(--main-color)'
           >
             RETRY
           </button>
@@ -139,13 +139,13 @@ export default function KanaSearch() {
       ) : (
         <div className='flex w-full flex-col items-center gap-8'>
           <div className='flex items-center gap-6'>
-            <div className='flex min-w-[100px] flex-col items-center rounded-2xl bg-[var(--main-color)] p-4 text-white shadow-xl'>
+            <div className='flex min-w-[100px] flex-col items-center rounded-2xl bg-(--main-color) p-4 text-white shadow-xl'>
               <span className='text-xs font-bold tracking-widest uppercase opacity-80'>
                 Target
               </span>
               <span className='text-5xl font-black'>{target.kana}</span>
             </div>
-            <div className='flex min-w-[100px] flex-col items-center rounded-2xl border border-[var(--border-color)] bg-[var(--card-color)] p-4 text-[var(--main-color)]'>
+            <div className='flex min-w-[100px] flex-col items-center rounded-2xl border border-(--border-color) bg-(--card-color) p-4 text-(--main-color)'>
               <Timer
                 size={20}
                 className={clsx(timeLeft < 4 && 'animate-ping text-red-500')}
@@ -161,14 +161,14 @@ export default function KanaSearch() {
             </div>
           </div>
 
-          <div className='grid grid-cols-6 gap-2 rounded-[2.5rem] border border-[var(--border-color)] bg-[var(--card-color)] p-4 shadow-2xl'>
+          <div className='grid grid-cols-6 gap-2 rounded-[2.5rem] border border-(--border-color) bg-(--card-color) p-4 shadow-2xl'>
             {grid.map((item, i) => (
               <motion.button
                 key={i}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 onClick={() => handleSelect(item)}
-                className='flex h-12 w-12 items-center justify-center rounded-xl border border-[var(--border-color)] bg-[var(--background-color)] text-xl font-bold text-[var(--secondary-color)] transition-colors hover:border-[var(--main-color)] hover:text-[var(--main-color)] md:h-14 md:w-14 md:text-2xl'
+                className='flex h-12 w-12 items-center justify-center rounded-xl border border-(--border-color) bg-(--background-color) text-xl font-bold text-(--secondary-color) transition-colors hover:border-(--main-color) hover:text-(--main-color) md:h-14 md:w-14 md:text-2xl'
               >
                 {item.kana}
               </motion.button>

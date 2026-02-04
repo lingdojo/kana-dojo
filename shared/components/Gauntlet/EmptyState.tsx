@@ -16,13 +16,13 @@ export default function EmptyState({ dojoType, dojoLabel }: EmptyStateProps) {
   return (
     <div className='flex min-h-[100dvh] flex-col items-center justify-center gap-6 p-4'>
       <div className='flex flex-col items-center gap-4 text-center'>
-        <div className='flex h-20 w-20 items-center justify-center rounded-full bg-[var(--card-color)]'>
-          <Swords className='h-10 w-10 text-[var(--muted-color)]' />
+        <div className='flex h-20 w-20 items-center justify-center rounded-full bg-(--card-color)'>
+          <Swords className='h-10 w-10 text-(--muted-color)' />
         </div>
-        <h2 className='text-2xl font-bold text-[var(--secondary-color)]'>
+        <h2 className='text-2xl font-bold text-(--secondary-color)'>
           No {dojoLabel} Selected
         </h2>
-        <p className='max-w-sm text-[var(--muted-color)]'>
+        <p className='max-w-sm text-(--muted-color)'>
           Select at least {minRequired} {itemLabel}
           {minRequired > 1 ? 's' : ''} to start the Gauntlet challenge.
         </p>
@@ -33,8 +33,8 @@ export default function EmptyState({ dojoType, dojoLabel }: EmptyStateProps) {
         className={clsx(
           'flex flex-row items-center gap-2 px-6 py-3',
           'rounded-2xl transition-colors duration-200',
-          'bg-[var(--main-color)] text-[var(--background-color)]',
-          'border-b-4 border-[var(--main-color-accent)]',
+          'bg-(--main-color) text-(--background-color)',
+          'border-b-4 border-(--main-color-accent)',
           'hover:opacity-90',
         )}
       >

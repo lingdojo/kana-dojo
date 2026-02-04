@@ -67,17 +67,17 @@ export default async function JLPTN4Page({
             { name: 'N4', url: `/${locale}/jlpt/n4` },
           ]}
         />
-        <h1 className='mb-4 text-center text-4xl font-bold text-[var(--main-color)]'>
+        <h1 className='mb-4 text-center text-4xl font-bold text-(--main-color)'>
           JLPT N4 Kanji List
         </h1>
-        <p className='mb-8 text-center text-xl text-[var(--secondary-color)]'>
+        <p className='mb-8 text-center text-xl text-(--secondary-color)'>
           Master ~170 intermediate Kanji for JLPT N4 success
         </p>
 
-        <div className='space-y-8 text-[var(--secondary-color)]'>
+        <div className='space-y-8 text-(--secondary-color)'>
           {/* Overview */}
-          <section className='rounded-lg border-2 border-[var(--border-color)] bg-[var(--card-color)] p-6'>
-            <h2 className='mb-4 text-2xl font-semibold text-[var(--main-color)]'>
+          <section className='rounded-lg border-2 border-(--border-color) bg-(--card-color) p-6'>
+            <h2 className='mb-4 text-2xl font-semibold text-(--main-color)'>
               JLPT N4 Requirements
             </h2>
             <p className='mb-4'>
@@ -86,28 +86,28 @@ export default async function JLPTN4Page({
             </p>
             <div className='grid gap-4 md:grid-cols-3'>
               <div>
-                <h3 className='mb-2 font-semibold text-[var(--main-color)]'>
+                <h3 className='mb-2 font-semibold text-(--main-color)'>
                   Kanji
                 </h3>
-                <p className='text-2xl font-bold text-[var(--main-color)]'>
+                <p className='text-2xl font-bold text-(--main-color)'>
                   ~170 new
                 </p>
                 <p className='text-sm'>(Plus all N5 kanji)</p>
               </div>
               <div>
-                <h3 className='mb-2 font-semibold text-[var(--main-color)]'>
+                <h3 className='mb-2 font-semibold text-(--main-color)'>
                   Vocabulary
                 </h3>
-                <p className='text-2xl font-bold text-[var(--main-color)]'>
+                <p className='text-2xl font-bold text-(--main-color)'>
                   ~1,500
                 </p>
                 <p className='text-sm'>Total words needed</p>
               </div>
               <div>
-                <h3 className='mb-2 font-semibold text-[var(--main-color)]'>
+                <h3 className='mb-2 font-semibold text-(--main-color)'>
                   Study Time
                 </h3>
-                <p className='text-2xl font-bold text-[var(--main-color)]'>
+                <p className='text-2xl font-bold text-(--main-color)'>
                   300-400h
                 </p>
                 <p className='text-sm'>From beginner level</p>
@@ -117,36 +117,36 @@ export default async function JLPTN4Page({
 
           {/* Key Kanji Topics */}
           <section>
-            <h2 className='mb-4 text-3xl font-semibold text-[var(--main-color)]'>
+            <h2 className='mb-4 text-3xl font-semibold text-(--main-color)'>
               N4 Kanji Topics
             </h2>
             <div className='grid gap-4 md:grid-cols-2'>
-              <div className='rounded-lg border-2 border-[var(--border-color)] p-4'>
-                <h3 className='mb-2 text-lg font-semibold text-[var(--main-color)]'>
+              <div className='rounded-lg border-2 border-(--border-color) p-4'>
+                <h3 className='mb-2 text-lg font-semibold text-(--main-color)'>
                   🏠 Daily Life
                 </h3>
                 <p className='text-sm'>
                   Family, housing, shopping, transportation, common activities
                 </p>
               </div>
-              <div className='rounded-lg border-2 border-[var(--border-color)] p-4'>
-                <h3 className='mb-2 text-lg font-semibold text-[var(--main-color)]'>
+              <div className='rounded-lg border-2 border-(--border-color) p-4'>
+                <h3 className='mb-2 text-lg font-semibold text-(--main-color)'>
                   📚 Education & Work
                 </h3>
                 <p className='text-sm'>
                   School subjects, workplace, job-related terms
                 </p>
               </div>
-              <div className='rounded-lg border-2 border-[var(--border-color)] p-4'>
-                <h3 className='mb-2 text-lg font-semibold text-[var(--main-color)]'>
+              <div className='rounded-lg border-2 border-(--border-color) p-4'>
+                <h3 className='mb-2 text-lg font-semibold text-(--main-color)'>
                   🌏 Nature & Places
                 </h3>
                 <p className='text-sm'>
                   Geography, nature, weather, locations, countries
                 </p>
               </div>
-              <div className='rounded-lg border-2 border-[var(--border-color)] p-4'>
-                <h3 className='mb-2 text-lg font-semibold text-[var(--main-color)]'>
+              <div className='rounded-lg border-2 border-(--border-color) p-4'>
+                <h3 className='mb-2 text-lg font-semibold text-(--main-color)'>
                   💬 Communication
                 </h3>
                 <p className='text-sm'>
@@ -158,12 +158,12 @@ export default async function JLPTN4Page({
 
           {/* Study Strategy */}
           <section>
-            <h2 className='mb-4 text-3xl font-semibold text-[var(--main-color)]'>
+            <h2 className='mb-4 text-3xl font-semibold text-(--main-color)'>
               Effective Study Strategy
             </h2>
             <div className='space-y-4'>
-              <div className='rounded-lg bg-[var(--card-color)] p-4'>
-                <h3 className='mb-2 font-semibold text-[var(--main-color)]'>
+              <div className='rounded-lg bg-(--card-color) p-4'>
+                <h3 className='mb-2 font-semibold text-(--main-color)'>
                   1️⃣ Build on N5 Foundation
                 </h3>
                 <p>
@@ -172,8 +172,8 @@ export default async function JLPTN4Page({
                 </p>
               </div>
 
-              <div className='rounded-lg bg-[var(--card-color)] p-4'>
-                <h3 className='mb-2 font-semibold text-[var(--main-color)]'>
+              <div className='rounded-lg bg-(--card-color) p-4'>
+                <h3 className='mb-2 font-semibold text-(--main-color)'>
                   2️⃣ Learn in Context
                 </h3>
                 <p>
@@ -182,8 +182,8 @@ export default async function JLPTN4Page({
                 </p>
               </div>
 
-              <div className='rounded-lg bg-[var(--card-color)] p-4'>
-                <h3 className='mb-2 font-semibold text-[var(--main-color)]'>
+              <div className='rounded-lg bg-(--card-color) p-4'>
+                <h3 className='mb-2 font-semibold text-(--main-color)'>
                   3️⃣ Practice Multiple Readings
                 </h3>
                 <p>
@@ -192,8 +192,8 @@ export default async function JLPTN4Page({
                 </p>
               </div>
 
-              <div className='rounded-lg bg-[var(--card-color)] p-4'>
-                <h3 className='mb-2 font-semibold text-[var(--main-color)]'>
+              <div className='rounded-lg bg-(--card-color) p-4'>
+                <h3 className='mb-2 font-semibold text-(--main-color)'>
                   4️⃣ Use KanaDojo&apos;s Training Modes
                 </h3>
                 <p>
@@ -205,8 +205,8 @@ export default async function JLPTN4Page({
           </section>
 
           {/* Progress Tracking */}
-          <section className='rounded-lg border-2 border-[var(--main-color)] bg-[var(--card-color)] p-6'>
-            <h2 className='mb-4 text-2xl font-semibold text-[var(--main-color)]'>
+          <section className='rounded-lg border-2 border-(--main-color) bg-(--card-color) p-6'>
+            <h2 className='mb-4 text-2xl font-semibold text-(--main-color)'>
               📊 Track Your N4 Progress
             </h2>
             <p className='mb-4'>
@@ -222,14 +222,14 @@ export default async function JLPTN4Page({
             </ul>
             <Link
               href={`/${locale}/progress`}
-              className='inline-block rounded-lg bg-[var(--main-color)] px-6 py-3 font-semibold text-[var(--background-color)] transition-all hover:opacity-90'
+              className='inline-block rounded-lg bg-(--main-color) px-6 py-3 font-semibold text-(--background-color) transition-all hover:opacity-90'
             >
               View Your Progress →
             </Link>
           </section>
 
           {/* Start Practicing CTA */}
-          <section className='rounded-lg bg-[var(--main-color)] p-8 text-center text-[var(--background-color)]'>
+          <section className='rounded-lg bg-(--main-color) p-8 text-center text-(--background-color)'>
             <h2 className='mb-4 text-3xl font-bold'>
               Start Practicing N4 Kanji Today
             </h2>
@@ -239,7 +239,7 @@ export default async function JLPTN4Page({
             </p>
             <Link
               href={`/${locale}/kanji`}
-              className='inline-block rounded-lg border-2 border-[var(--background-color)] bg-[var(--background-color)] px-8 py-4 text-lg font-semibold text-[var(--main-color)] transition-all hover:opacity-90'
+              className='inline-block rounded-lg border-2 border-(--background-color) bg-(--background-color) px-8 py-4 text-lg font-semibold text-(--main-color) transition-all hover:opacity-90'
             >
               Practice N4 Kanji Now →
             </Link>

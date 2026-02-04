@@ -7,6 +7,7 @@ import {
   getAllResources,
   getAllCategories,
   enrichCategoriesWithCounts,
+  getFilterOptions,
 } from '@/features/Resources';
 
 // Generate static pages for all locales at build time
@@ -92,6 +93,7 @@ export default async function ResourcesPage({
     categories,
     resources,
   );
+  const availableFilters = getFilterOptions(resources);
 
   const breadcrumbItems = [
     { name: 'Home', url: `https://kanadojo.com/${locale}` },
@@ -115,6 +117,7 @@ export default async function ResourcesPage({
         locale={locale}
         initialResources={resources}
         categoriesWithCounts={categoriesWithCounts}
+        availableFilters={availableFilters}
       />
     </>
   );

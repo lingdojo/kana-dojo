@@ -36,4 +36,5 @@ export {
   enrichCategoriesWithCounts,
   getTotalResourceCount,
   validateCategoryCounts,
+  getFilterOptions,
 } from './counts';

@@ -67,7 +67,7 @@ export default function Hanabi() {
 
   return (
     <div
-      className='relative flex flex-1 cursor-crosshair flex-col overflow-hidden rounded-3xl border border-[var(--border-color)] bg-[#0a0a0f]'
+      className='relative flex flex-1 cursor-crosshair flex-col overflow-hidden rounded-3xl border border-(--border-color) bg-[#0a0a0f]'
       onMouseDown={launchFirework}
       onTouchStart={launchFirework}
     >

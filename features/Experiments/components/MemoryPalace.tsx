@@ -145,22 +145,22 @@ const MemoryPalace = () => {
   return (
     <div className='flex min-h-[80vh] flex-1 flex-col items-center justify-center gap-6'>
       <div className='mb-2 text-center'>
-        <h1 className='text-2xl text-[var(--main-color)] md:text-3xl'>
+        <h1 className='text-2xl text-(--main-color) md:text-3xl'>
           Memory Palace
         </h1>
-        <p className='mt-2 text-[var(--secondary-color)]'>
+        <p className='mt-2 text-(--secondary-color)'>
           {phase === 'memorize' && `Memorize the positions! ${timeLeft}s`}
           {phase === 'recall' && 'Find the matching pairs!'}
           {phase === 'result' && 'Round Complete!'}
         </p>
         <div className='mt-2 flex justify-center gap-4 text-sm'>
-          <span className='text-[var(--secondary-color)]'>
-            Round: <span className='text-[var(--main-color)]'>{round}</span>
+          <span className='text-(--secondary-color)'>
+            Round: <span className='text-(--main-color)'>{round}</span>
           </span>
-          <span className='text-[var(--secondary-color)]'>
-            Score: <span className='text-[var(--main-color)]'>{score}</span>
+          <span className='text-(--secondary-color)'>
+            Score: <span className='text-(--main-color)'>{score}</span>
           </span>
-          <span className='text-[var(--secondary-color)]'>
+          <span className='text-(--secondary-color)'>
             Mistakes: <span className='text-red-400'>{mistakes}</span>
           </span>
         </div>
@@ -177,31 +177,31 @@ const MemoryPalace = () => {
                 'flex h-20 w-16 transform flex-col items-center justify-center rounded-xl transition-all duration-300 hover:cursor-pointer md:h-24 md:w-20',
                 card.isMatched && 'scale-95 opacity-50',
                 card.isRevealed || card.isMatched
-                  ? 'border-2 border-[var(--main-color)] bg-[var(--card-color)]'
-                  : 'border-2 border-[var(--border-color)] bg-[var(--border-color)] hover:border-[var(--main-color)]',
+                  ? 'border-2 border-(--main-color) bg-(--card-color)'
+                  : 'border-2 border-(--border-color) bg-(--border-color) hover:border-(--main-color)',
               )}
             >
               {card.isRevealed || card.isMatched ? (
                 <>
                   <span
                     lang='ja'
-                    className='text-2xl text-[var(--main-color)] md:text-3xl'
+                    className='text-2xl text-(--main-color) md:text-3xl'
                   >
                     {card.kana}
                   </span>
-                  <span className='text-xs text-[var(--secondary-color)]'>
+                  <span className='text-xs text-(--secondary-color)'>
                     {card.romanji}
                   </span>
                 </>
               ) : (
-                <EyeOff size={24} className='text-[var(--secondary-color)]' />
+                <EyeOff size={24} className='text-(--secondary-color)' />
               )}
             </button>
           ))}
       </div>
       {phase === 'result' && (
         <div className='mt-2 text-center'>
-          <p className='mb-4 text-xl text-[var(--main-color)]'>
+          <p className='mb-4 text-xl text-(--main-color)'>
             {mistakes === 0
               ? '🎉 Perfect!'
               : mistakes <= 2
@@ -211,7 +211,7 @@ const MemoryPalace = () => {
           <button
             onClick={nextRound}
             className={clsx(
-              'mx-auto flex items-center gap-2 rounded-xl border border-[var(--border-color)] bg-[var(--card-color)] px-6 py-3 text-[var(--main-color)] transition-all duration-250 hover:cursor-pointer hover:border-[var(--main-color)] active:scale-95',
+              'mx-auto flex items-center gap-2 rounded-xl border border-(--border-color) bg-(--card-color) px-6 py-3 text-(--main-color) transition-all duration-250 hover:cursor-pointer hover:border-(--main-color) active:scale-95',
             )}
           >
             <Play size={20} />

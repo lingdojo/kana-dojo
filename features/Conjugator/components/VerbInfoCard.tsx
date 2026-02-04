@@ -30,7 +30,7 @@ export default function VerbInfoCard({ verb }: VerbInfoCardProps) {
     <div
       className={cn(
         'flex flex-col rounded-2xl',
-        'border border-[var(--border-color)] bg-[var(--card-color)]',
+        'border border-(--border-color) bg-(--card-color)',
         'shadow-lg shadow-black/5',
         'overflow-hidden',
       )}
@@ -44,21 +44,21 @@ export default function VerbInfoCard({ verb }: VerbInfoCardProps) {
           <div
             className={cn(
               'rounded-lg p-2',
-              'bg-[var(--main-color)]/10',
-              'border border-[var(--main-color)]/20',
+              'bg-(--main-color)/10',
+              'border border-(--main-color)/20',
             )}
             aria-hidden='true'
           >
-            <BookOpen className='h-5 w-5 text-[var(--main-color)]' />
+            <BookOpen className='h-5 w-5 text-(--main-color)' />
           </div>
           <div className='min-w-0 flex-1'>
             <h3
-              className='font-japanese truncate text-xl font-bold text-[var(--main-color)] sm:text-2xl'
+              className='font-japanese truncate text-xl font-bold text-(--main-color) sm:text-2xl'
               lang='ja'
             >
               {verb.dictionaryForm}
             </h3>
-            <p className='text-sm text-[var(--secondary-color)]'>
+            <p className='text-sm text-(--secondary-color)'>
               <span lang='ja'>{verb.reading}</span> ({verb.romaji})
             </p>
           </div>
@@ -74,10 +74,10 @@ export default function VerbInfoCard({ verb }: VerbInfoCardProps) {
           <div
             className={cn(
               'flex flex-col gap-1 rounded-xl p-3',
-              'border border-[var(--border-color)] bg-[var(--background-color)]',
+              'border border-(--border-color) bg-(--background-color)',
             )}
           >
-            <span className='text-xs font-medium tracking-wider text-[var(--secondary-color)] uppercase'>
+            <span className='text-xs font-medium tracking-wider text-(--secondary-color) uppercase'>
               Type
             </span>
             <span
@@ -91,14 +91,14 @@ export default function VerbInfoCard({ verb }: VerbInfoCardProps) {
           <div
             className={cn(
               'flex flex-col gap-1 rounded-xl p-3',
-              'border border-[var(--border-color)] bg-[var(--background-color)]',
+              'border border-(--border-color) bg-(--background-color)',
             )}
           >
-            <span className='text-xs font-medium tracking-wider text-[var(--secondary-color)] uppercase'>
+            <span className='text-xs font-medium tracking-wider text-(--secondary-color) uppercase'>
               Stem
             </span>
             <span
-              className='font-japanese text-sm font-semibold text-[var(--main-color)]'
+              className='font-japanese text-sm font-semibold text-(--main-color)'
               lang='ja'
             >
               {verb.stem || '—'}
@@ -109,15 +109,15 @@ export default function VerbInfoCard({ verb }: VerbInfoCardProps) {
           <div
             className={cn(
               'flex flex-col gap-1 rounded-xl p-3',
-              'border border-[var(--border-color)] bg-[var(--background-color)]',
+              'border border-(--border-color) bg-(--background-color)',
               'col-span-2 sm:col-span-1',
             )}
           >
-            <span className='text-xs font-medium tracking-wider text-[var(--secondary-color)] uppercase'>
+            <span className='text-xs font-medium tracking-wider text-(--secondary-color) uppercase'>
               Ending
             </span>
             <span
-              className='font-japanese text-sm font-semibold text-[var(--main-color)]'
+              className='font-japanese text-sm font-semibold text-(--main-color)'
               lang='ja'
             >
               {verb.ending || '—'}
@@ -130,15 +130,15 @@ export default function VerbInfoCard({ verb }: VerbInfoCardProps) {
           <div
             className={cn(
               'flex items-center gap-2 rounded-xl p-3',
-              'border border-[var(--main-color)]/30 bg-[var(--main-color)]/10',
+              'border border-(--main-color)/30 bg-(--main-color)/10',
             )}
             role='note'
           >
             <Info
-              className='h-4 w-4 text-[var(--main-color)]'
+              className='h-4 w-4 text-(--main-color)'
               aria-hidden='true'
             />
-            <span className='text-sm text-[var(--main-color)]'>
+            <span className='text-sm text-(--main-color)'>
               Compound verb with prefix:{' '}
               <span className='font-japanese font-semibold' lang='ja'>
                 {verb.compoundPrefix}
@@ -153,13 +153,13 @@ export default function VerbInfoCard({ verb }: VerbInfoCardProps) {
         onClick={() => setIsExpanded(!isExpanded)}
         className={cn(
           'flex items-center justify-between px-4 py-3 sm:px-5',
-          'border-t border-[var(--border-color)]',
-          'bg-[var(--background-color)]',
-          'text-sm font-medium text-[var(--secondary-color)]',
-          'hover:bg-[var(--border-color)]/50',
+          'border-t border-(--border-color)',
+          'bg-(--background-color)',
+          'text-sm font-medium text-(--secondary-color)',
+          'hover:bg-(--border-color)/50',
           'transition-colors duration-200',
           'cursor-pointer',
-          'focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--main-color)] focus-visible:ring-inset',
+          'focus:outline-none focus-visible:ring-2 focus-visible:ring-(--main-color) focus-visible:ring-inset',
         )}
         aria-expanded={isExpanded}
         aria-controls='verb-explanation'
@@ -179,9 +179,9 @@ export default function VerbInfoCard({ verb }: VerbInfoCardProps) {
           id='verb-explanation'
           className={cn(
             'px-4 py-4 sm:px-5',
-            'border-t border-[var(--border-color)]',
-            'bg-[var(--background-color)]',
-            'text-sm text-[var(--secondary-color)]',
+            'border-t border-(--border-color)',
+            'bg-(--background-color)',
+            'text-sm text-(--secondary-color)',
           )}
           role='region'
           aria-label='Conjugation rules explanation'
@@ -192,7 +192,7 @@ export default function VerbInfoCard({ verb }: VerbInfoCardProps) {
               {verbTypeInfo.rules.map((rule, index) => (
                 <li key={index} className='flex items-start gap-2'>
                   <span
-                    className='mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--main-color)]'
+                    className='mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-(--main-color)'
                     aria-hidden='true'
                   />
                   <span>{rule}</span>
@@ -261,7 +261,7 @@ function getVerbTypeInfo(
     default:
       return {
         label: 'Unknown',
-        colorClass: 'text-[var(--secondary-color)]',
+        colorClass: 'text-(--secondary-color)',
         description: 'Unable to determine verb type.',
         rules: [],
       };

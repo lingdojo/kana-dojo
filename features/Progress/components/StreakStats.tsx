@@ -16,16 +16,16 @@ interface StatCardProps {
 
 function StatCard({ title, icon: Icon, value, description }: StatCardProps) {
   return (
-    <div className='rounded-2xl border border-[var(--border-color)] bg-[var(--card-color)] p-4'>
+    <div className='rounded-2xl border border-(--border-color) bg-(--card-color) p-4'>
       <div className='flex flex-row items-center justify-between space-y-0 pb-2'>
-        <h3 className='text-sm text-[var(--secondary-color)]'>{title}</h3>
-        <Icon className='h-4 w-4 text-[var(--main-color)]' />
+        <h3 className='text-sm text-(--secondary-color)'>{title}</h3>
+        <Icon className='h-4 w-4 text-(--main-color)' />
       </div>
       <div className='flex flex-col gap-1 pt-2'>
-        <div className='text-2xl text-[var(--main-color)]'>
+        <div className='text-2xl text-(--main-color)'>
           {value} {value === 1 ? 'day' : 'days'}
         </div>
-        <p className='text-xs text-[var(--secondary-color)]'>{description}</p>
+        <p className='text-xs text-(--secondary-color)'>{description}</p>
       </div>
     </div>
   );

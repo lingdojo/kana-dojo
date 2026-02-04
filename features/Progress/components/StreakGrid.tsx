@@ -70,10 +70,10 @@ function DayCell({
         'cursor-default rounded transition-colors',
         sizeClasses[size],
         isFuture
-          ? 'border border-[var(--border-color)] bg-transparent opacity-40'
+          ? 'border border-(--border-color) bg-transparent opacity-40'
           : isVisited
-            ? 'bg-[var(--main-color)]'
-            : 'bg-[var(--border-color)] opacity-25',
+            ? 'bg-(--main-color)'
+            : 'bg-(--border-color) opacity-25',
       )}
       title={`${date}${isFuture ? ' (future)' : isVisited ? ' ✓' : ''}`}
     />
@@ -115,7 +115,7 @@ function WeekGrid({ visits, days }: { visits: string[]; days: string[] }) {
         {DAY_LABELS.map(label => (
           <div
             key={label}
-            className='w-10 text-center text-xs font-medium text-[var(--secondary-color)]'
+            className='w-10 text-center text-xs font-medium text-(--secondary-color)'
           >
             {label}
           </div>
@@ -138,10 +138,10 @@ function WeekGrid({ visits, days }: { visits: string[]; days: string[] }) {
                 className={clsx(
                   'h-8 w-8 rounded-md transition-colors',
                   isFuture
-                    ? 'border border-[var(--border-color)] bg-transparent opacity-40'
+                    ? 'border border-(--border-color) bg-transparent opacity-40'
                     : isVisited
-                      ? 'bg-[var(--main-color)]'
-                      : 'bg-[var(--border-color)] opacity-25',
+                      ? 'bg-(--main-color)'
+                      : 'bg-(--border-color) opacity-25',
                 )}
                 title={`${dayDate}${
                   isFuture ? ' (future)' : isVisited ? ' ✓' : ''
@@ -209,7 +209,7 @@ function MonthGrid({ visits }: { visits: string[]; days: string[] }) {
   return (
     <div className='flex flex-col gap-3'>
       {/* Month title */}
-      <h3 className='text-lg font-semibold text-[var(--main-color)]'>
+      <h3 className='text-lg font-semibold text-(--main-color)'>
         {monthName}
       </h3>
 
@@ -219,7 +219,7 @@ function MonthGrid({ visits }: { visits: string[]; days: string[] }) {
           {DAY_LABELS.map(label => (
             <div
               key={label}
-              className='flex h-5 w-8 items-center justify-end pr-2 text-xs text-[var(--secondary-color)]'
+              className='flex h-5 w-8 items-center justify-end pr-2 text-xs text-(--secondary-color)'
             >
               {label}
             </div>
@@ -338,7 +338,7 @@ function YearGrid({ visits }: { visits: string[]; days: string[] }) {
   return (
     <div className='flex flex-col gap-3'>
       {/* Year title */}
-      <h3 className='text-lg font-semibold text-[var(--main-color)]'>
+      <h3 className='text-lg font-semibold text-(--main-color)'>
         {currentYear}
       </h3>
 
@@ -352,7 +352,7 @@ function YearGrid({ visits }: { visits: string[]; days: string[] }) {
             {DAY_LABELS.map(label => (
               <div
                 key={label}
-                className='flex h-4 w-8 items-center justify-end pr-2 text-xs text-[var(--secondary-color)]'
+                className='flex h-4 w-8 items-center justify-end pr-2 text-xs text-(--secondary-color)'
               >
                 {label}
               </div>
@@ -368,7 +368,7 @@ function YearGrid({ visits }: { visits: string[]; days: string[] }) {
               {monthLabels.map((label, i) => (
                 <div
                   key={`month-${label}-${i}`}
-                  className='w-4 text-xs whitespace-nowrap text-[var(--secondary-color)]'
+                  className='w-4 text-xs whitespace-nowrap text-(--secondary-color)'
                 >
                   {label}
                 </div>
@@ -412,7 +412,7 @@ export default function StreakGrid({ visits, period }: StreakGridProps) {
   const days = getDaysInPeriod(period);
 
   return (
-    <div className='rounded-2xl border border-[var(--border-color)] bg-[var(--card-color)] p-5'>
+    <div className='rounded-2xl border border-(--border-color) bg-(--card-color) p-5'>
       {period === 'week' && <WeekGrid visits={visits} days={days} />}
       {period === 'month' && <MonthGrid visits={visits} days={days} />}
       {period === 'year' && <YearGrid visits={visits} days={days} />}

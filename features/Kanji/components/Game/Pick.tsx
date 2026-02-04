@@ -60,12 +60,12 @@ const OptionButton = memo(
             : 'w-full justify-start pl-8 text-3xl md:w-1/2 md:text-4xl',
           'flex flex-row items-center gap-1.5 rounded-xl py-5',
           buttonBorderStyles,
-          'text-[var(--border-color)]',
+          'text-(--border-color)',
           'border-b-4',
           isWrong &&
-            'border-[var(--border-color)] hover:bg-[var(--card-color)]',
+            'border-(--border-color) hover:bg-(--card-color)',
           !isWrong &&
-            'border-[var(--secondary-color)]/50 text-[var(--secondary-color)] hover:border-[var(--secondary-color)]',
+            'border-(--secondary-color)/50 text-(--secondary-color) hover:border-(--secondary-color)',
         )}
         onClick={() => onClick(option)}
         lang={isReverse ? 'ja' : undefined}
@@ -83,11 +83,11 @@ const OptionButton = memo(
         </span>
         <span
           className={clsx(
-            'hidden rounded-full bg-[var(--border-color)] px-1 text-xs lg:inline',
+            'hidden rounded-full bg-(--border-color) px-1 text-xs lg:inline',
             isReverse ? '' : 'mr-4',
             isWrong
-              ? 'text-[var(--border-color)]'
-              : 'text-[var(--secondary-color)]',
+              ? 'text-(--border-color)'
+              : 'text-(--secondary-color)',
           )}
         >
           {index + 1}
@@ -299,16 +299,16 @@ const KanjiPickGame = ({ selectedKanjiObjs, isHidden }: KanjiPickGameProps) => {
       generateNewCharacter();
       setFeedback(
         <>
-          <span className='text-[var(--secondary-color)]'>{`${displayChar} = ${selectedOption} `}</span>
-          <CircleCheck className='inline text-[var(--main-color)]' />
+          <span className='text-(--secondary-color)'>{`${displayChar} = ${selectedOption} `}</span>
+          <CircleCheck className='inline text-(--main-color)' />
         </>,
       );
     } else {
       handleWrongAnswer(selectedOption);
       setFeedback(
         <>
-          <span className='text-[var(--secondary-color)]'>{`${displayChar} ≠ ${selectedOption} `}</span>
-          <CircleX className='inline text-[var(--main-color)]' />
+          <span className='text-(--secondary-color)'>{`${displayChar} ≠ ${selectedOption} `}</span>
+          <CircleX className='inline text-(--main-color)' />
         </>,
       );
     }
@@ -410,7 +410,7 @@ const KanjiPickGame = ({ selectedKanjiObjs, isHidden }: KanjiPickGameProps) => {
                 text={correctChar}
                 variant='icon-only'
                 size='sm'
-                className='bg-[var(--card-color)] text-[var(--secondary-color)]'
+                className='bg-(--card-color) text-(--secondary-color)'
               />
             )}
           </div>

@@ -51,8 +51,8 @@ export default function ConjugationHistory({
       <div
         className={cn(
           'flex flex-col items-center justify-center rounded-2xl py-8',
-          'border border-[var(--border-color)] bg-[var(--card-color)]',
-          'text-[var(--secondary-color)]',
+          'border border-(--border-color) bg-(--card-color)',
+          'text-(--secondary-color)',
         )}
         role='region'
         aria-label='Conjugation history'
@@ -60,7 +60,7 @@ export default function ConjugationHistory({
         <div
           className={cn(
             'mb-3 rounded-full p-3',
-            'bg-[var(--secondary-color)]/10',
+            'bg-(--secondary-color)/10',
           )}
           aria-hidden='true'
         >
@@ -78,7 +78,7 @@ export default function ConjugationHistory({
     <div
       className={cn(
         'flex flex-col gap-3 rounded-2xl p-4 sm:p-5',
-        'border border-[var(--border-color)] bg-[var(--card-color)]',
+        'border border-(--border-color) bg-(--card-color)',
         'shadow-lg shadow-black/5',
       )}
       role='region'
@@ -90,18 +90,18 @@ export default function ConjugationHistory({
           <div
             className={cn(
               'rounded-lg p-2',
-              'bg-[var(--main-color)]/10',
-              'border border-[var(--main-color)]/20',
+              'bg-(--main-color)/10',
+              'border border-(--main-color)/20',
             )}
             aria-hidden='true'
           >
-            <History className='h-5 w-5 text-[var(--main-color)]' />
+            <History className='h-5 w-5 text-(--main-color)' />
           </div>
           <div>
-            <h3 className='text-base font-semibold text-[var(--main-color)]'>
+            <h3 className='text-base font-semibold text-(--main-color)'>
               Recent Verbs
             </h3>
-            <p className='text-xs text-[var(--secondary-color)]'>
+            <p className='text-xs text-(--secondary-color)'>
               {entries.length} verb{entries.length !== 1 ? 's' : ''} in history
             </p>
           </div>
@@ -124,15 +124,15 @@ export default function ConjugationHistory({
           </AlertDialogTrigger>
           <AlertDialogContent
             className={cn(
-              'border-[var(--border-color)] bg-[var(--background-color)]',
+              'border-(--border-color) bg-(--background-color)',
               'rounded-2xl',
             )}
           >
             <AlertDialogHeader>
-              <AlertDialogTitle className='text-[var(--main-color)]'>
+              <AlertDialogTitle className='text-(--main-color)'>
                 Clear History?
               </AlertDialogTitle>
-              <AlertDialogDescription className='text-[var(--secondary-color)]'>
+              <AlertDialogDescription className='text-(--secondary-color)'>
                 This will permanently delete all your conjugation history. This
                 action cannot be undone.
               </AlertDialogDescription>
@@ -203,8 +203,8 @@ function HistoryChip({
     <div
       className={cn(
         'group flex items-center gap-1.5 rounded-xl',
-        'border border-[var(--border-color)] bg-[var(--background-color)]',
-        'hover:border-[var(--main-color)] hover:shadow-md',
+        'border border-(--border-color) bg-(--background-color)',
+        'hover:border-(--main-color) hover:shadow-md',
         'transition-all duration-200',
         'overflow-hidden',
       )}
@@ -216,7 +216,7 @@ function HistoryChip({
         className={cn(
           'flex items-center gap-2 py-2 pr-1 pl-3',
           'cursor-pointer',
-          'focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--main-color)] focus-visible:ring-inset',
+          'focus:outline-none focus-visible:ring-2 focus-visible:ring-(--main-color) focus-visible:ring-inset',
         )}
         aria-label={`Conjugate ${entry.verb}, ${typeInfo.label} verb, conjugated ${formatTimestamp(entry.timestamp)} ago`}
       >
@@ -235,7 +235,7 @@ function HistoryChip({
 
         {/* Verb text */}
         <span
-          className='font-japanese text-sm font-medium text-[var(--main-color)]'
+          className='font-japanese text-sm font-medium text-(--main-color)'
           lang='ja'
         >
           {entry.verb}
@@ -243,7 +243,7 @@ function HistoryChip({
 
         {/* Timestamp */}
         <span
-          className='flex items-center gap-1 text-[10px] text-[var(--secondary-color)]'
+          className='flex items-center gap-1 text-[10px] text-(--secondary-color)'
           aria-hidden='true'
         >
           <Clock className='h-3 w-3' />
@@ -259,7 +259,7 @@ function HistoryChip({
         }}
         className={cn(
           'flex h-full items-center justify-center px-2 py-2',
-          'text-[var(--secondary-color)]',
+          'text-(--secondary-color)',
           'hover:bg-red-500/10 hover:text-red-500',
           'opacity-0 group-hover:opacity-100 focus:opacity-100',
           'transition-all duration-150',

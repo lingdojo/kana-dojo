@@ -60,19 +60,19 @@ const OptionButton = memo(
           buttonBorderStyles,
           'border-b-4',
           isWrong &&
-            'text-[var(--border-color)] hover:border-[var(--border-color)] hover:bg-[var(--card-color)]',
+            'text-(--border-color) hover:border-(--border-color) hover:bg-(--card-color)',
           !isWrong &&
-            'border-[var(--secondary-color)]/50 text-[var(--secondary-color)] hover:border-[var(--secondary-color)]',
+            'border-(--secondary-color)/50 text-(--secondary-color) hover:border-(--secondary-color)',
         )}
         onClick={() => onClick(variantChar)}
       >
         <span>{variantChar}</span>
         <span
           className={clsx(
-            'absolute top-1/2 right-4 hidden h-5 min-w-5 -translate-y-1/2 items-center justify-center rounded-full bg-[var(--border-color)] px-1 text-xs leading-none lg:inline-flex',
+            'absolute top-1/2 right-4 hidden h-5 min-w-5 -translate-y-1/2 items-center justify-center rounded-full bg-(--border-color) px-1 text-xs leading-none lg:inline-flex',
             isWrong
-              ? 'text-[var(--border-color)]'
-              : 'text-[var(--secondary-color)]',
+              ? 'text-(--border-color)'
+              : 'text-(--secondary-color)',
           )}
         >
           {index + 1}
@@ -440,7 +440,7 @@ const PickGame = ({ isHidden }: PickGameProps) => {
           setFeedback(
             <>
               <span>{`${correctKanaChar} = ${correctRomajiChar} `}</span>
-              <CircleCheck className='inline text-[var(--main-color)]' />
+              <CircleCheck className='inline text-(--main-color)' />
             </>,
           );
         } else {
@@ -448,7 +448,7 @@ const PickGame = ({ isHidden }: PickGameProps) => {
           setFeedback(
             <>
               <span>{`${correctKanaChar} ≠ ${selectedChar} `}</span>
-              <CircleX className='inline text-[var(--main-color)]' />
+              <CircleX className='inline text-(--main-color)' />
             </>,
           );
         }
@@ -469,7 +469,7 @@ const PickGame = ({ isHidden }: PickGameProps) => {
           setFeedback(
             <>
               <span>{`${correctRomajiCharReverse} = ${correctKanaCharReverse} `}</span>
-              <CircleCheck className='inline text-[var(--main-color)]' />
+              <CircleCheck className='inline text-(--main-color)' />
             </>,
           );
         } else {
@@ -477,7 +477,7 @@ const PickGame = ({ isHidden }: PickGameProps) => {
           setFeedback(
             <>
               <span>{`${correctRomajiCharReverse} ≠ ${selectedChar} `}</span>
-              <CircleX className='inline text-[var(--main-color)]' />
+              <CircleX className='inline text-(--main-color)' />
             </>,
           );
         }

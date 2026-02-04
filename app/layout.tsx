@@ -11,6 +11,7 @@ import {
 import { Metadata, Viewport } from 'next';
 import Script from 'next/script';
 import { headers } from 'next/headers';
+import SessionPrefetch from '@/shared/components/Performance/SessionPrefetch';
 
 const googleVerificationToken = process.env.GOOGLE_VERIFICATION_TOKEN || '';
 const msVerificationToken = process.env.MS_VERIFICATION_TOKEN || '';
@@ -163,34 +164,38 @@ export default async function RootLayout({ children }: RootLayoutProps) {
 } catch (_) {}`}
         </Script>
         {/* DNS prefetch for external domains - resolve DNS early */}
-        <link rel='dns-prefetch' href='https://www.googletagmanager.com' />
-        <link rel='dns-prefetch' href='https://www.clarity.ms' />
-        <link rel='dns-prefetch' href='https://vercel-analytics.com' />
-        <link rel='dns-prefetch' href='https://vitals.vercel-insights.com' />
+        {isAnalyticsEnabled && (
+          <>
+            <link rel='dns-prefetch' href='https://www.googletagmanager.com' />
+            <link rel='dns-prefetch' href='https://www.clarity.ms' />
+            <link rel='dns-prefetch' href='https://vercel-analytics.com' />
+            <link rel='dns-prefetch' href='https://vitals.vercel-insights.com' />
+          </>
+        )}
         <link rel='dns-prefetch' href='https://translation.googleapis.com' />
         {/* Preconnect to critical domains - establish early connections */}
-        <link
-          rel='preconnect'
-          href='https://www.googletagmanager.com'
-          crossOrigin='anonymous'
-        />
-        <link
-          rel='preconnect'
-          href='https://vercel-analytics.com'
-          crossOrigin='anonymous'
-        />
+        {isAnalyticsEnabled && (
+          <>
+            <link
+              rel='preconnect'
+              href='https://www.googletagmanager.com'
+              crossOrigin='anonymous'
+            />
+            <link
+              rel='preconnect'
+              href='https://vercel-analytics.com'
+              crossOrigin='anonymous'
+            />
+          </>
+        )}
         <link
           rel='preconnect'
           href='https://translation.googleapis.com'
           crossOrigin='anonymous'
         />
-        {/* Prefetch critical JSON data for faster navigation */}
-        <link rel='prefetch' href='/data-kanji/decorations.json' as='fetch' />
-        <link rel='prefetch' href='/data-kanji/N5.json' as='fetch' />
-        <link rel='prefetch' href='/data-vocab/n5.json' as='fetch' />
-        <link rel='prefetch' href='/api/facts' as='fetch' />
       </head>
       <body>
+        <SessionPrefetch />
         {isAnalyticsEnabled && (
           <>
             <GoogleAnalytics />

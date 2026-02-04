@@ -56,7 +56,7 @@ const KanaFortune = () => {
 
   return (
     <div className='flex flex-1 flex-col items-center justify-center gap-8 p-4'>
-      <h2 className='text-2xl text-[var(--main-color)]'>🔮 Kana Fortune</h2>
+      <h2 className='text-2xl text-(--main-color)'>🔮 Kana Fortune</h2>
 
       {/* Wheel */}
       <div className='relative'>
@@ -67,7 +67,7 @@ const KanaFortune = () => {
 
         {/* Wheel */}
         <div
-          className='relative h-64 w-64 rounded-full border-4 border-[var(--border-color)] bg-[var(--card-color)]'
+          className='relative h-64 w-64 rounded-full border-4 border-(--border-color) bg-(--card-color)'
           style={{
             transform: `rotate(${rotation}deg)`,
             transition: spinning
@@ -79,7 +79,7 @@ const KanaFortune = () => {
             <span
               key={i}
               lang='ja'
-              className='absolute top-1/2 left-1/2 text-2xl text-[var(--main-color)]'
+              className='absolute top-1/2 left-1/2 text-2xl text-(--main-color)'
               style={{
                 transform: `rotate(${k.angle}deg) translateY(-90px) rotate(-${k.angle}deg)`,
                 transformOrigin: '0 0',
@@ -93,7 +93,7 @@ const KanaFortune = () => {
           {wheelKana.map((_, i) => (
             <div
               key={i}
-              className='absolute top-1/2 left-1/2 h-px w-32 origin-left bg-[var(--border-color)]/50'
+              className='absolute top-1/2 left-1/2 h-px w-32 origin-left bg-(--border-color)/50'
               style={{ transform: `rotate(${i * 45}deg)` }}
             />
           ))}
@@ -107,7 +107,7 @@ const KanaFortune = () => {
         className={`rounded-xl px-8 py-4 text-xl text-white transition-all ${
           spinning
             ? 'cursor-not-allowed bg-gray-500'
-            : 'bg-[var(--accent-color)] hover:scale-105'
+            : 'bg-(--accent-color) hover:scale-105'
         }`}
       >
         {spinning ? '🌀 Spinning...' : '✨ Spin!'}
@@ -118,10 +118,10 @@ const KanaFortune = () => {
         <div className='animate-fade-in flex flex-col items-center gap-3'>
           <div className='text-6xl'>{result.fortune.emoji}</div>
           <div className='flex items-center gap-3'>
-            <span lang='ja' className='text-4xl text-[var(--accent-color)]'>
+            <span lang='ja' className='text-4xl text-(--accent-color)'>
               {result.kana.kana}
             </span>
-            <span className='text-xl text-[var(--secondary-color)]'>
+            <span className='text-xl text-(--secondary-color)'>
               ({result.kana.romanji})
             </span>
           </div>

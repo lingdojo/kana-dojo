@@ -106,7 +106,7 @@ const KanaMagnet = () => {
         <span
           key={p.id}
           lang='ja'
-          className='absolute text-xl text-[var(--main-color)] select-none md:text-2xl'
+          className='absolute text-xl text-(--main-color) select-none md:text-2xl'
           style={{
             left: `${p.x}%`,
             top: `${p.y}%`,
@@ -118,7 +118,7 @@ const KanaMagnet = () => {
       ))}
 
       {/* Instructions */}
-      <div className='absolute bottom-8 left-1/2 -translate-x-1/2 text-center text-[var(--secondary-color)]'>
+      <div className='absolute bottom-8 left-1/2 -translate-x-1/2 text-center text-(--secondary-color)'>
         <p>Move cursor to attract • Hold click to repel</p>
         <p className='mt-1 text-sm'>
           {repel ? '💥 Repelling!' : '🧲 Attracting...'}

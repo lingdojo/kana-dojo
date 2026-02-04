@@ -29,7 +29,7 @@ export function FuriganaText({ kanji, reading, className }: FuriganaTextProps) {
     >
       <span data-testid='furigana-kanji'>{kanji}</span>
       <rt
-        className='text-xs text-[var(--secondary-color)]'
+        className='text-xs text-(--secondary-color)'
         data-testid='furigana-reading'
       >
         {reading}

@@ -11,6 +11,7 @@ import {
   getSubcategoryById,
   getResourcesBySubcategory,
   enrichCategoriesWithCounts,
+  getFilterOptions,
 } from '@/features/Resources';
 
 // Generate static pages for all locales, categories, and subcategories at build time
@@ -138,6 +139,7 @@ export default async function SubcategoryPage({
     categories,
     allResources,
   );
+  const availableFilters = getFilterOptions(subcategoryResources);
 
   const breadcrumbItems = [
     { name: 'Home', url: `https://kanadojo.com/${locale}` },
@@ -175,6 +177,7 @@ export default async function SubcategoryPage({
         subcategory={subcategory}
         initialResources={subcategoryResources}
         categoriesWithCounts={categoriesWithCounts}
+        availableFilters={availableFilters}
       />
     </>
   );

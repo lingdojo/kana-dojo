@@ -183,7 +183,7 @@ const ActiveTile = memo(
           tileBaseStyles,
           'cursor-pointer transition-colors',
           'active:mb-[10px] active:translate-y-[10px] active:border-b-0',
-          'border-[var(--secondary-color-accent)] bg-[var(--secondary-color)] text-[var(--background-color)]',
+          'border-(--secondary-color-accent) bg-(--secondary-color) text-(--background-color)',
           isDisabled && 'cursor-not-allowed opacity-50',
           // Larger font for Japanese tiles, smaller for meaning tiles
           isJapanese ? 'text-3xl sm:text-4xl' : 'text-xl sm:text-2xl',
@@ -207,7 +207,7 @@ const BlankTile = memo(
       <div
         className={clsx(
           tileBaseStyles,
-          'border-transparent bg-[var(--border-color)]/30',
+          'border-transparent bg-(--border-color)/30',
           'select-none',
           isJapanese ? 'text-3xl sm:text-4xl' : 'text-xl sm:text-2xl',
         )}
@@ -535,8 +535,8 @@ const VocabWordBuildingGame = ({
           : questionData.word; // meaning+normal or reading: showed word
       setFeedback(
         <>
-          <span className='text-[var(--secondary-color)]'>{`${displayText} = ${questionData.correctAnswer} `}</span>
-          <CircleCheck className='inline text-[var(--main-color)]' />
+          <span className='text-(--secondary-color)'>{`${displayText} = ${questionData.correctAnswer} `}</span>
+          <CircleCheck className='inline text-(--main-color)' />
         </>,
       );
 
@@ -700,7 +700,7 @@ const VocabWordBuildingGame = ({
             {/* Question Display */}
             <div className='flex flex-col items-center gap-4'>
               {/* Show prompt based on quiz type (use effective quiz type from question) */}
-              <span className='mb-2 text-sm text-[var(--secondary-color)]'>
+              <span className='mb-2 text-sm text-(--secondary-color)'>
                 {questionData.quizType === 'meaning'
                   ? isReverse
                     ? 'What is the word?' // meaning+reverse: given meaning, find word
@@ -751,7 +751,7 @@ const VocabWordBuildingGame = ({
                       text={questionData.word}
                       variant='icon-only'
                       size='sm'
-                      className='bg-[var(--card-color)] text-[var(--secondary-color)]'
+                      className='bg-(--card-color) text-(--secondary-color)'
                     />
                   )}
                 </motion.div>
@@ -762,7 +762,7 @@ const VocabWordBuildingGame = ({
             <div className='flex w-full flex-col items-center'>
               <div
                 className={clsx(
-                  'flex w-full items-center border-b-2 border-[var(--border-color)] px-2 pb-2 md:w-3/4 lg:w-2/3 xl:w-1/2',
+                  'flex w-full items-center border-b-2 border-(--border-color) px-2 pb-2 md:w-3/4 lg:w-2/3 xl:w-1/2',
                   // Use taller min-height when tiles are Japanese (reverse mode OR reading quiz)
                   isReverse || questionData.quizType === 'reading'
                     ? 'min-h-[5.5rem]'

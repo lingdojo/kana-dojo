@@ -53,8 +53,8 @@ export const CategoryTabs = ({
                 className={clsx(
                   'rounded-full px-2 py-1 text-xs',
                   isSelected
-                    ? 'bg-[var(--background-color)]/20 text-[var(--background-color)]'
-                    : 'bg-[var(--background-color)] text-[var(--secondary-color)]',
+                    ? 'bg-(--background-color)/20 text-(--background-color)'
+                    : 'bg-(--background-color) text-(--secondary-color)',
                 )}
               >
                 {categoryStats.unlocked}/{categoryStats.total}

@@ -113,10 +113,10 @@ export default function KanaTrace() {
     <div className='flex min-h-[85vh] flex-1 flex-col gap-6'>
       <div className='flex flex-col items-center justify-between gap-4 md:flex-row'>
         <div>
-          <h1 className='text-3xl font-bold text-[var(--main-color)]'>
+          <h1 className='text-3xl font-bold text-(--main-color)'>
             Kana Trace
           </h1>
-          <p className='text-[var(--secondary-color)]'>
+          <p className='text-(--secondary-color)'>
             Practice drawing strokes in a relaxing way
           </p>
         </div>
@@ -126,8 +126,8 @@ export default function KanaTrace() {
             className={clsx(
               'rounded-xl border p-3 transition-all',
               showReference
-                ? 'border-[var(--main-color)] bg-[var(--main-color)] text-white'
-                : 'border-[var(--border-color)] bg-[var(--card-color)] text-[var(--secondary-color)]',
+                ? 'border-(--main-color) bg-(--main-color) text-white'
+                : 'border-(--border-color) bg-(--card-color) text-(--secondary-color)',
             )}
             title='Toggle Reference'
           >
@@ -135,14 +135,14 @@ export default function KanaTrace() {
           </button>
           <button
             onClick={clearCanvas}
-            className='rounded-xl border border-[var(--border-color)] bg-[var(--card-color)] p-3 text-[var(--secondary-color)] transition-all hover:border-red-400 hover:text-red-400'
+            className='rounded-xl border border-(--border-color) bg-(--card-color) p-3 text-(--secondary-color) transition-all hover:border-red-400 hover:text-red-400'
             title='Clear Canvas'
           >
             <Eraser size={20} />
           </button>
           <button
             onClick={downloadImage}
-            className='rounded-xl border border-[var(--border-color)] bg-[var(--card-color)] p-3 text-[var(--secondary-color)] transition-all hover:border-[var(--main-color)] hover:text-[var(--main-color)]'
+            className='rounded-xl border border-(--border-color) bg-(--card-color) p-3 text-(--secondary-color) transition-all hover:border-(--main-color) hover:text-(--main-color)'
             title='Download Practice'
           >
             <Download size={20} />
@@ -152,11 +152,11 @@ export default function KanaTrace() {
 
       <div className='flex flex-1 flex-col gap-6 lg:flex-row'>
         {/* Main Canvas Area */}
-        <div className='relative flex-1 overflow-hidden rounded-3xl border-2 border-dashed border-[var(--border-color)] bg-[var(--card-color)]'>
+        <div className='relative flex-1 overflow-hidden rounded-3xl border-2 border-dashed border-(--border-color) bg-(--card-color)'>
           {/* Reference Kana (Background) */}
           {showReference && (
             <div className='pointer-events-none absolute inset-0 flex items-center justify-center opacity-10 select-none'>
-              <span className='text-[20rem] font-bold text-[var(--main-color)]'>
+              <span className='text-[20rem] font-bold text-(--main-color)'>
                 {targetKana.kana}
               </span>
             </div>
@@ -177,21 +177,21 @@ export default function KanaTrace() {
 
         {/* Controls Sidebar */}
         <div className='flex w-full flex-col gap-6 lg:w-64'>
-          <div className='rounded-2xl border border-[var(--border-color)] bg-[var(--card-color)] p-6'>
-            <h2 className='mb-4 text-sm font-bold tracking-widest text-[var(--secondary-color)] uppercase'>
+          <div className='rounded-2xl border border-(--border-color) bg-(--card-color) p-6'>
+            <h2 className='mb-4 text-sm font-bold tracking-widest text-(--secondary-color) uppercase'>
               Current Target
             </h2>
             <div className='flex items-center gap-4'>
-              <div className='flex h-16 w-16 items-center justify-center rounded-xl bg-[var(--main-color)]/10 text-3xl font-bold text-[var(--main-color)]'>
+              <div className='flex h-16 w-16 items-center justify-center rounded-xl bg-(--main-color)/10 text-3xl font-bold text-(--main-color)'>
                 {targetKana.kana}
               </div>
               <div>
-                <p className='text-xl font-bold text-[var(--main-color)] capitalize'>
+                <p className='text-xl font-bold text-(--main-color) capitalize'>
                   {targetKana.romanji}
                 </p>
                 <button
                   onClick={nextKana}
-                  className='text-xs text-[var(--secondary-color)] underline underline-offset-2 hover:text-[var(--main-color)]'
+                  className='text-xs text-(--secondary-color) underline underline-offset-2 hover:text-(--main-color)'
                 >
                   Change Target
                 </button>
@@ -199,13 +199,13 @@ export default function KanaTrace() {
             </div>
           </div>
 
-          <div className='rounded-2xl border border-[var(--border-color)] bg-[var(--card-color)] p-6'>
-            <h2 className='mb-4 text-sm font-bold tracking-widest text-[var(--secondary-color)] uppercase'>
+          <div className='rounded-2xl border border-(--border-color) bg-(--card-color) p-6'>
+            <h2 className='mb-4 text-sm font-bold tracking-widest text-(--secondary-color) uppercase'>
               Settings
             </h2>
             <div className='space-y-6'>
               <div>
-                <label className='mb-2 block text-sm text-[var(--secondary-color)]'>
+                <label className='mb-2 block text-sm text-(--secondary-color)'>
                   Brush Color
                 </label>
                 <div className='flex flex-wrap gap-2'>
@@ -232,7 +232,7 @@ export default function KanaTrace() {
                 </div>
               </div>
               <div>
-                <label className='mb-2 block text-sm text-[var(--secondary-color)]'>
+                <label className='mb-2 block text-sm text-(--secondary-color)'>
                   Brush Size: {brushSize}px
                 </label>
                 <input
@@ -241,7 +241,7 @@ export default function KanaTrace() {
                   max='20'
                   value={brushSize}
                   onChange={e => setBrushSize(parseInt(e.target.value))}
-                  className='w-full accent-[var(--main-color)]'
+                  className='w-full accent-(--main-color)'
                 />
               </div>
             </div>

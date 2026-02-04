@@ -1,5 +1,6 @@
 'use client';
 
+import { useMemo } from 'react';
 import {
   Timer,
   Target,
@@ -79,11 +80,11 @@ export default function PreGameScreen({
   return (
     <div className='flex min-h-[100dvh] flex-col items-start justify-center gap-6 p-4 lg:flex-row'>
       <div className='w-full max-w-md space-y-5 text-center lg:max-w-lg'>
-        <Timer size={64} className='mx-auto text-[var(--main-color)]' />
-        <h1 className='text-2xl font-bold text-[var(--secondary-color)]'>
+        <Timer size={64} className='mx-auto text-(--main-color)' />
+        <h1 className='text-2xl font-bold text-(--secondary-color)'>
           Blitz
         </h1>
-        <p className='text-[var(--muted-color)]'>
+        <p className='text-(--muted-color)'>
           Test your {dojoLabel.toLowerCase()} recognition speed! Answer as many
           questions as possible before time runs out.
         </p>
@@ -115,9 +116,9 @@ export default function PreGameScreen({
             <button
               className={clsx(
                 'flex h-12 w-full flex-row items-center justify-center gap-2 px-2 sm:px-6',
-                'bg-[var(--secondary-color)] text-[var(--background-color)]',
+                'bg-(--secondary-color) text-(--background-color)',
                 'rounded-2xl transition-colors duration-200',
-                'border-b-6 border-[var(--secondary-color-accent)] shadow-sm',
+                'border-b-6 border-(--secondary-color-accent) shadow-sm',
                 'hover:cursor-pointer',
               )}
               onClick={() => playClick()}
@@ -130,9 +131,9 @@ export default function PreGameScreen({
             onClick={onStart}
             className={clsx(
               'flex h-12 w-1/2 flex-row items-center justify-center gap-2 px-2 sm:px-6',
-              'bg-[var(--main-color)] text-[var(--background-color)]',
+              'bg-(--main-color) text-(--background-color)',
               'rounded-2xl transition-colors duration-200',
-              'border-b-6 border-[var(--main-color-accent)] font-medium shadow-sm',
+              'border-b-6 border-(--main-color-accent) font-medium shadow-sm',
               'hover:cursor-pointer',
             )}
           >
@@ -186,16 +187,20 @@ function SelectedLevelsCard({
   itemsCount: number;
   selectedSets?: string[];
 }) {
-  const formatCompact = () => {
-    if (!selectedSets || selectedSets.length === 0) {
+  const sortedSets = useMemo(() => {
+    if (!selectedSets || selectedSets.length === 0) return [];
+    return [...selectedSets].sort((a, b) => {
+      const numA = parseInt(a.replace(/\D/g, '')) || 0;
+      const numB = parseInt(b.replace(/\D/g, '')) || 0;
+      return numA - numB;
+    });
+  }, [selectedSets]);
+
+  const compactText = useMemo(() => {
+    if (sortedSets.length === 0) {
       return `${itemsCount} ${dojoLabel.toLowerCase()}`;
     }
-    return selectedSets
-      .sort((a, b) => {
-        const numA = parseInt(a.replace(/\D/g, '')) || 0;
-        const numB = parseInt(b.replace(/\D/g, '')) || 0;
-        return numA - numB;
-      })
+    return sortedSets
       .map(set =>
         set
           .replace('Set ', '')
@@ -203,18 +208,13 @@ function SelectedLevelsCard({
           .replace(/-group.*$/, ''),
       )
       .join(', ');
-  };
+  }, [dojoLabel, itemsCount, sortedSets]);
 
-  const formatFull = () => {
-    if (!selectedSets || selectedSets.length === 0) {
+  const fullText = useMemo(() => {
+    if (sortedSets.length === 0) {
       return `${itemsCount} ${dojoLabel.toLowerCase()}`;
     }
-    return selectedSets
-      .sort((a, b) => {
-        const numA = parseInt(a.replace(/\D/g, '')) || 0;
-        const numB = parseInt(b.replace(/\D/g, '')) || 0;
-        return numA - numB;
-      })
+    return sortedSets
       .map(set => {
         const cleaned = set.replace('Set ', '').replace('Level ', '');
         return dojoType === 'kana'
@@ -222,25 +222,25 @@ function SelectedLevelsCard({
           : `${cleaned.includes('-') ? 'Levels' : 'Level'} ${cleaned}`;
       })
       .join(', ');
-  };
+  }, [dojoLabel, dojoType, itemsCount, sortedSets]);
 
   return (
-    <div className='rounded-lg bg-[var(--card-color)] p-4 text-left'>
+    <div className='rounded-lg bg-(--card-color) p-4 text-left'>
       <div className='flex flex-col gap-2'>
         <div className='flex flex-row items-center gap-2'>
           <CheckCircle2
-            className='shrink-0 text-[var(--secondary-color)]'
+            className='shrink-0 text-(--secondary-color)'
             size={20}
           />
           <span className='text-sm'>
             {dojoType === 'kana' ? 'Selected Groups:' : 'Selected Levels:'}
           </span>
         </div>
-        <span className='text-sm break-words text-[var(--secondary-color)] md:hidden'>
-          {formatCompact()}
+        <span className='text-sm break-words text-(--secondary-color) md:hidden'>
+          {compactText}
         </span>
-        <span className='hidden text-sm break-words text-[var(--secondary-color)] md:inline'>
-          {formatFull()}
+        <span className='hidden text-sm break-words text-(--secondary-color) md:inline'>
+          {fullText}
         </span>
       </div>
     </div>
@@ -277,28 +277,28 @@ function GameModeSelector({
             disabled={isDisabled}
             className={clsx(
               'w-full rounded-xl p-4 text-left hover:cursor-pointer',
-              'flex items-center gap-4 border-2 bg-[var(--card-color)]',
+              'flex items-center gap-4 border-2 bg-(--card-color)',
               isDisabled && 'cursor-not-allowed opacity-50',
               isSelected
-                ? 'border-[var(--main-color)]'
-                : 'border-[var(--border-color)]',
+                ? 'border-(--main-color)'
+                : 'border-(--border-color)',
             )}
           >
             <div
               className={clsx(
                 'flex h-10 w-10 shrink-0 items-center justify-center rounded-xl',
                 isSelected
-                  ? 'bg-[var(--main-color)] text-[var(--background-color)]'
-                  : 'bg-[var(--border-color)] text-[var(--muted-color)]',
+                  ? 'bg-(--main-color) text-(--background-color)'
+                  : 'bg-(--border-color) text-(--muted-color)',
               )}
             >
               <Icon size={20} />
             </div>
             <div className='min-w-0 flex-1'>
-              <h3 className='text-base font-medium text-[var(--main-color)]'>
+              <h3 className='text-base font-medium text-(--main-color)'>
                 {mode.title}
               </h3>
-              <p className='text-xs text-[var(--secondary-color)]'>
+              <p className='text-xs text-(--secondary-color)'>
                 {mode.description}
               </p>
             </div>
@@ -306,13 +306,13 @@ function GameModeSelector({
               className={clsx(
                 'flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2',
                 isSelected
-                  ? 'border-[var(--secondary-color)] bg-[var(--secondary-color)]'
-                  : 'border-[var(--border-color)]',
+                  ? 'border-(--secondary-color) bg-(--secondary-color)'
+                  : 'border-(--border-color)',
               )}
             >
               {isSelected && (
                 <svg
-                  className='h-3 w-3 text-[var(--background-color)]'
+                  className='h-3 w-3 text-(--background-color)'
                   fill='none'
                   viewBox='0 0 24 24'
                   stroke='currentColor'
@@ -343,8 +343,8 @@ function DurationSelector({
   const { playClick } = useClick();
 
   return (
-    <div className='space-y-3 rounded-lg bg-[var(--card-color)] p-4'>
-      <p className='text-sm font-medium text-[var(--secondary-color)]'>
+    <div className='space-y-3 rounded-lg bg-(--card-color) p-4'>
+      <p className='text-sm font-medium text-(--secondary-color)'>
         Duration:
       </p>
       <div className='flex flex-wrap justify-center gap-2'>

@@ -82,7 +82,7 @@ const KanaRain = () => {
           <span
             lang='ja'
             className={clsx(
-              'text-[var(--main-color)] transition-all duration-200',
+              'text-(--main-color) transition-all duration-200',
               hoveredId === drop.id && 'scale-150 text-green-400',
             )}
             style={{

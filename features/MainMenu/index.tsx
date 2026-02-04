@@ -30,7 +30,7 @@ const MainMenu = () => {
   const [isMounted, setIsMounted] = useState(false);
   const isLG = useMediaQuery({ minWidth: 1024 });
 
-  const { theme, setTheme } = useThemePreferences();
+  const { theme, setTheme, isGlassMode } = useThemePreferences();
 
   const { playClick } = useClick();
 
@@ -97,14 +97,15 @@ const MainMenu = () => {
         'flex min-h-[100dvh] max-w-[100dvw] flex-row justify-center',
       )}
     >
-      {isMounted && isLG && (
+      {isMounted && isLG && !isGlassMode && (
         <Suspense fallback={<></>}>
           <Decorations expandDecorations={expandDecorations} forceShow={true} />
           <Button
             variant='secondary'
             size='icon'
             className={clsx(
-              'fixed top-4 right-8 z-50 opacity-90',
+              'fixed top-4 right-8 z-50',
+              !isGlassMode && 'opacity-90',
               buttonBorderStyles,
               'transition-transform duration-250 active:scale-95',
             )}
@@ -138,7 +139,8 @@ const MainMenu = () => {
       <div
         className={clsx(
           '3xl:w-2/5 flex w-full flex-col items-center gap-4 px-4 pb-16 max-md:pt-4 sm:w-3/4 md:justify-center lg:w-1/2',
-          'z-50 opacity-90',
+          'z-50',
+          !isGlassMode && 'opacity-90',
           expandDecorations && 'hidden',
         )}
       >
@@ -155,7 +157,7 @@ const MainMenu = () => {
                 className={clsx(
                   'duration-250 hover:cursor-pointer',
                   'active:scale-100 active:duration-225',
-                  'text-[var(--secondary-color)] hover:text-[var(--main-color)]',
+                  'text-(--secondary-color) hover:text-(--main-color)',
                 )}
               />
             ) : (
@@ -168,7 +170,7 @@ const MainMenu = () => {
                 className={clsx(
                   'duration-250 hover:cursor-pointer',
                   'active:scale-100 active:duration-225',
-                  'text-[var(--secondary-color)] hover:text-[var(--main-color)]',
+                  'text-(--secondary-color) hover:text-(--main-color)',
                 )}
               />
             )}
@@ -191,7 +193,7 @@ const MainMenu = () => {
                 'duration-250 hover:cursor-pointer',
                 'active:scale-100 active:duration-225',
                 'md:hidden',
-                'text-[var(--secondary-color)] hover:text-[var(--main-color)]',
+                'text-(--secondary-color) hover:text-(--main-color)',
               )}
               onClick={() => {
                 playClick();
@@ -204,7 +206,7 @@ const MainMenu = () => {
               className={clsx(
                 'duration-250 hover:cursor-pointer',
                 'active:scale-100 active:duration-225',
-                'text-[var(--secondary-color)] hover:text-[var(--main-color)]',
+                'text-(--secondary-color) hover:text-(--main-color)',
               )}
               onClick={() => {
                 playClick();
@@ -228,12 +230,13 @@ const MainMenu = () => {
         <Info />
         <div
           className={clsx(
-            'rounded-2xl bg-[var(--card-color)]',
+            'rounded-2xl bg-(--card-color)',
             'duration-250',
             'transition-all ease-in-out',
             'flex flex-col md:flex-row',
             'w-full',
-            'max-md:border-b-4 max-md:border-[var(--border-color)]',
+            'max-md:border-b-4 max-md:border-(--border-color)',
+            // 'backdrop-blur-xl',
           )}
         >
           {links.map((link, i) => (
@@ -246,20 +249,20 @@ const MainMenu = () => {
                 <button
                   className={clsx(
                     'flex h-full w-full text-2xl',
-                    'items-center justify-center gap-1.5 border-[var(--border-color)]',
+                    'items-center justify-center gap-1.5 border-(--border-color)',
                     'md:border-b-4',
                     'py-8',
                     'group',
                     i === 0 && 'rounded-tl-2xl rounded-bl-2xl',
                     i === links.length - 1 && 'rounded-tr-2xl rounded-br-2xl',
-                    'hover:cursor-pointer md:hover:border-[var(--main-color)]/80',
-                    'hover:bg-[var(--border-color)]',
+                    'hover:cursor-pointer md:hover:border-(--main-color)/80',
+                    'hover:bg-(--border-color)',
                   )}
                   onClick={() => playClick()}
                 >
                   <span
                     lang='ja'
-                    className='font-normal text-[var(--secondary-color)]'
+                    className='font-normal text-(--secondary-color)'
                   >
                     {link.name_ja}
                   </span>
@@ -273,8 +276,8 @@ const MainMenu = () => {
                 <div
                   className={clsx(
                     'md:h-auto md:w-0 md:border-l-1',
-                    'border-[var(--border-color)]',
-                    'w-full border-t-1 border-[var(--border-color)]',
+                    'border-(--border-color)',
+                    'w-full border-t-1 border-(--border-color)',
                   )}
                 />
               )}
@@ -286,9 +289,9 @@ const MainMenu = () => {
         className={clsx(
           'fixed right-0 bottom-0 left-0 z-50 md:bottom-6',
           'justify-center gap-2 max-md:flex',
-          'border-[var(--border-color)] max-md:border-t-2',
+          'border-(--border-color) max-md:border-t-2',
           'px-2 py-2 sm:px-4',
-          'flex items-center justify-between max-md:bg-[var(--background-color)]',
+          'flex items-center justify-between max-md:bg-(--background-color)',
           expandDecorations && 'hidden',
         )}
       >
@@ -299,7 +302,7 @@ const MainMenu = () => {
               prefetch
               key={i}
               className={clsx(
-                'flex flex-row items-center gap-1 text-[var(--secondary-color)] hover:cursor-pointer hover:text-[var(--main-color)]',
+                'flex flex-row items-center gap-1 text-(--secondary-color) hover:cursor-pointer hover:text-(--main-color)',
                 link.name === 'credits' && 'hidden lg:flex',
               )}
               onClick={() => playClick()}

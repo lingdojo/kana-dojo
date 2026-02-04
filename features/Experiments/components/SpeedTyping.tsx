@@ -106,10 +106,10 @@ const SpeedTyping = () => {
     <div className='flex min-h-[80vh] flex-1 flex-col items-center justify-center gap-8'>
       {/* Header */}
       <div className='text-center'>
-        <h1 className='text-2xl text-[var(--main-color)] md:text-3xl'>
+        <h1 className='text-2xl text-(--main-color) md:text-3xl'>
           Speed Typing
         </h1>
-        <p className='mt-2 text-[var(--secondary-color)]'>
+        <p className='mt-2 text-(--secondary-color)'>
           Type the romanji as fast as you can!
         </p>
       </div>
@@ -119,9 +119,9 @@ const SpeedTyping = () => {
           onClick={startGame}
           className={clsx(
             'flex items-center gap-3 rounded-xl px-8 py-4',
-            'border-2 border-[var(--border-color)] bg-[var(--card-color)]',
-            'text-xl text-[var(--main-color)]',
-            'hover:cursor-pointer hover:border-[var(--main-color)]',
+            'border-2 border-(--border-color) bg-(--card-color)',
+            'text-xl text-(--main-color)',
+            'hover:cursor-pointer hover:border-(--main-color)',
             'transition-all duration-250 active:scale-95',
           )}
         >
@@ -134,14 +134,14 @@ const SpeedTyping = () => {
         <>
           {/* Stats bar */}
           <div className='flex w-full max-w-md justify-between text-lg'>
-            <span className='text-[var(--secondary-color)]'>
-              Score: <span className='text-[var(--main-color)]'>{score}</span>
+            <span className='text-(--secondary-color)'>
+              Score: <span className='text-(--main-color)'>{score}</span>
             </span>
-            <span className='text-[var(--secondary-color)]'>
+            <span className='text-(--secondary-color)'>
               Time:{' '}
-              <span className='text-[var(--main-color)]'>{timeLeft}s</span>
+              <span className='text-(--main-color)'>{timeLeft}s</span>
             </span>
-            <span className='text-[var(--secondary-color)]'>
+            <span className='text-(--secondary-color)'>
               Errors: <span className='text-red-400'>{mistakes}</span>
             </span>
           </div>
@@ -154,18 +154,18 @@ const SpeedTyping = () => {
                 className={clsx(
                   'flex flex-col items-center rounded-xl p-4 transition-all',
                   i === 0
-                    ? 'scale-110 border-2 border-[var(--main-color)] bg-[var(--card-color)]'
+                    ? 'scale-110 border-2 border-(--main-color) bg-(--card-color)'
                     : 'opacity-50',
                 )}
               >
                 <span
                   lang='ja'
-                  className='text-4xl text-[var(--main-color)] md:text-5xl'
+                  className='text-4xl text-(--main-color) md:text-5xl'
                 >
                   {kana.kana}
                 </span>
                 {i === 0 && (
-                  <span className='mt-1 text-xs text-[var(--secondary-color)]'>
+                  <span className='mt-1 text-xs text-(--secondary-color)'>
                     {kana.romanji}
                   </span>
                 )}
@@ -181,9 +181,9 @@ const SpeedTyping = () => {
             onChange={handleInput}
             className={clsx(
               'w-full max-w-xs rounded-xl px-6 py-4 text-center text-2xl',
-              'border-2 border-[var(--border-color)] bg-[var(--card-color)]',
-              'text-[var(--main-color)] outline-none',
-              'focus:border-[var(--main-color)]',
+              'border-2 border-(--border-color) bg-(--card-color)',
+              'text-(--main-color) outline-none',
+              'focus:border-(--main-color)',
             )}
             placeholder='Type here...'
             autoComplete='off'
@@ -196,32 +196,32 @@ const SpeedTyping = () => {
         <div className='flex flex-col items-center gap-6'>
           <div
             className={clsx(
-              'border border-[var(--border-color)] bg-[var(--card-color)]',
+              'border border-(--border-color) bg-(--card-color)',
               'rounded-2xl p-8 text-center',
             )}
           >
-            <h2 className='mb-4 text-2xl text-[var(--main-color)]'>Results</h2>
+            <h2 className='mb-4 text-2xl text-(--main-color)'>Results</h2>
             <div className='space-y-2'>
-              <p className='text-lg text-[var(--secondary-color)]'>
+              <p className='text-lg text-(--secondary-color)'>
                 Correct:{' '}
-                <span className='text-[var(--main-color)]'>{score}</span>
+                <span className='text-(--main-color)'>{score}</span>
               </p>
-              <p className='text-lg text-[var(--secondary-color)]'>
+              <p className='text-lg text-(--secondary-color)'>
                 Mistakes: <span className='text-red-400'>{mistakes}</span>
               </p>
-              <p className='text-lg text-[var(--secondary-color)]'>
+              <p className='text-lg text-(--secondary-color)'>
                 Accuracy:{' '}
-                <span className='text-[var(--main-color)]'>
+                <span className='text-(--main-color)'>
                   {score + mistakes > 0
                     ? Math.round((score / (score + mistakes)) * 100)
                     : 0}
                   %
                 </span>
               </p>
-              <p className='mt-4 text-2xl text-[var(--main-color)]'>
+              <p className='mt-4 text-2xl text-(--main-color)'>
                 {wpm} KPM
               </p>
-              <p className='text-sm text-[var(--secondary-color)]'>
+              <p className='text-sm text-(--secondary-color)'>
                 (Kana Per Minute)
               </p>
             </div>
@@ -231,9 +231,9 @@ const SpeedTyping = () => {
             onClick={startGame}
             className={clsx(
               'flex items-center gap-2 rounded-xl px-6 py-3',
-              'border border-[var(--border-color)] bg-[var(--card-color)]',
-              'text-[var(--main-color)]',
-              'hover:cursor-pointer hover:border-[var(--main-color)]',
+              'border border-(--border-color) bg-(--card-color)',
+              'text-(--main-color)',
+              'hover:cursor-pointer hover:border-(--main-color)',
               'transition-all duration-250 active:scale-95',
             )}
           >

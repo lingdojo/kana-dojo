@@ -143,9 +143,9 @@ export default function ActiveGame<T>({
         />
 
         {/* Progress bar */}
-        <div className='h-2 w-full rounded-full bg-[var(--border-color)]'>
+        <div className='h-2 w-full rounded-full bg-(--border-color)'>
           <div
-            className='h-2 rounded-full bg-[var(--main-color)] transition-all duration-1000'
+            className='h-2 rounded-full bg-(--main-color) transition-all duration-1000'
             style={{
               width: `${
                 ((challengeDuration - timeLeft) / challengeDuration) * 100
@@ -226,27 +226,27 @@ function GameHeader({
   return (
     <div className='flex items-center justify-between'>
       <div className='flex items-center gap-2'>
-        <Timer className='text-[var(--main-color)]' size={20} />
+        <Timer className='text-(--main-color)' size={20} />
         <span
           className={clsx(
             'text-lg font-bold',
             timeLeft <= 10
               ? 'animate-pulse text-red-500'
-              : 'text-[var(--secondary-color)]',
+              : 'text-(--secondary-color)',
           )}
         >
           {minutes}:{seconds.toString().padStart(2, '0')}
         </span>
       </div>
       <div className='flex items-center gap-4'>
-        <div className='text-right text-sm text-[var(--muted-color)]'>
+        <div className='text-right text-sm text-(--muted-color)'>
           <div>
-            <span className='text-[var(--secondary-color)]'>Score: </span>
-            <span className='text-[var(--main-color)]'>{stats.correct}</span>
+            <span className='text-(--secondary-color)'>Score: </span>
+            <span className='text-(--main-color)'>{stats.correct}</span>
           </div>
           <div>
-            <span className='text-[var(--secondary-color)]'>Streak: </span>
-            <span className='text-[var(--main-color)]'>{stats.streak}</span>
+            <span className='text-(--secondary-color)'>Streak: </span>
+            <span className='text-(--main-color)'>{stats.streak}</span>
           </div>
         </div>
         <ActionButton
@@ -291,7 +291,7 @@ function QuestionDisplay<T>({
               : 'text-6xl font-semibold md:text-7xl',
             lastAnswerCorrect === true && 'text-green-500',
             lastAnswerCorrect === false && 'text-red-500',
-            lastAnswerCorrect === null && 'text-[var(--main-color)]',
+            lastAnswerCorrect === null && 'text-(--main-color)',
           )}
         >
           {currentQuestion && renderQuestion(currentQuestion, isReverseActive)}
@@ -343,7 +343,7 @@ function TypeModeInput({
         value={userAnswer}
         onChange={e => setUserAnswer(e.target.value)}
         onKeyPress={e => e.key === 'Enter' && onSubmit()}
-        className='w-full rounded-lg border-2 border-[var(--border-color)] bg-[var(--card-color)] p-4 text-center text-lg text-[var(--secondary-color)] focus:border-[var(--main-color)] focus:outline-none'
+        className='w-full rounded-lg border-2 border-(--border-color) bg-(--card-color) p-4 text-center text-lg text-(--secondary-color) focus:border-(--main-color) focus:outline-none'
         placeholder={inputPlaceholder}
         autoComplete='off'
         autoFocus
@@ -356,8 +356,8 @@ function TypeModeInput({
           'rounded-2xl transition-colors duration-200',
           'border-b-6 font-medium shadow-sm',
           userAnswer.trim()
-            ? 'border-[var(--main-color-accent)] bg-[var(--main-color)] text-[var(--background-color)] hover:cursor-pointer'
-            : 'cursor-not-allowed border-[var(--border-color)] bg-[var(--card-color)] text-[var(--border-color)]',
+            ? 'border-(--main-color-accent) bg-(--main-color) text-(--background-color) hover:cursor-pointer'
+            : 'cursor-not-allowed border-(--border-color) bg-(--card-color) text-(--border-color)',
         )}
       >
         Submit
@@ -406,12 +406,12 @@ function PickModeOptions<T>({
                 : 'justify-start pl-8 text-2xl md:text-3xl',
               buttonBorderStyles,
               'active:scale-95 active:duration-200 md:active:scale-98',
-              'text-[var(--border-color)]',
+              'text-(--border-color)',
               'border-b-4',
               isWrong &&
-                'border-[var(--border-color)] hover:bg-[var(--card-color)]',
+                'border-(--border-color) hover:bg-(--card-color)',
               !isWrong &&
-                'border-[var(--secondary-color)]/50 text-[var(--secondary-color)] hover:border-[var(--secondary-color)]',
+                'border-(--secondary-color)/50 text-(--secondary-color) hover:border-(--secondary-color)',
             )}
             onClick={() => onOptionClick(option)}
             lang={isReverseActive ? 'ja' : undefined}
@@ -423,11 +423,11 @@ function PickModeOptions<T>({
             </span>
             <span
               className={clsx(
-                'hidden rounded-full bg-[var(--border-color)] px-1 text-xs lg:inline',
+                'hidden rounded-full bg-(--border-color) px-1 text-xs lg:inline',
                 isReverseActive ? '' : 'mr-4',
                 isWrong
-                  ? 'text-[var(--border-color)]'
-                  : 'text-[var(--secondary-color)]',
+                  ? 'text-(--border-color)'
+                  : 'text-(--secondary-color)',
               )}
             >
               {i + 1}
@@ -450,17 +450,17 @@ function RealTimeStats({
 }) {
   return (
     <div className='grid grid-cols-3 gap-2 text-center text-sm'>
-      <div className='rounded-lg bg-[var(--card-color)] p-2'>
+      <div className='rounded-lg bg-(--card-color) p-2'>
         <div className='font-bold text-green-500'>{correct}</div>
-        <div className='text-[var(--muted-color)]'>Correct</div>
+        <div className='text-(--muted-color)'>Correct</div>
       </div>
-      <div className='rounded-lg bg-[var(--card-color)] p-2'>
+      <div className='rounded-lg bg-(--card-color) p-2'>
         <div className='font-bold text-red-500'>{wrong}</div>
-        <div className='text-[var(--muted-color)]'>Wrong</div>
+        <div className='text-(--muted-color)'>Wrong</div>
       </div>
-      <div className='rounded-lg bg-[var(--card-color)] p-2'>
-        <div className='font-bold text-[var(--main-color)]'>{accuracy}%</div>
-        <div className='text-[var(--muted-color)]'>Accuracy</div>
+      <div className='rounded-lg bg-(--card-color) p-2'>
+        <div className='font-bold text-(--main-color)'>{accuracy}%</div>
+        <div className='text-(--muted-color)'>Accuracy</div>
       </div>
     </div>
   );
@@ -495,25 +495,25 @@ function GoalTimersSidebar({
         <div
           className={clsx(
             'rounded-xl border-2 p-4',
-            'border-[var(--main-color)] bg-[var(--main-color)]/5',
+            'border-(--main-color) bg-(--main-color)/5',
           )}
         >
           <div className='mb-2 flex items-center gap-2'>
-            <Target size={16} className='text-[var(--main-color)]' />
-            <p className='text-sm font-medium text-[var(--secondary-color)]'>
+            <Target size={16} className='text-(--main-color)' />
+            <p className='text-sm font-medium text-(--secondary-color)'>
               Next Goal
             </p>
           </div>
-          <p className='mb-2 font-bold text-[var(--main-color)]'>
+          <p className='mb-2 font-bold text-(--main-color)'>
             {goalTimers.nextGoal.label}
           </p>
-          <div className='h-2 w-full rounded-full bg-[var(--border-color)]'>
+          <div className='h-2 w-full rounded-full bg-(--border-color)'>
             <div
-              className='h-2 rounded-full bg-[var(--main-color)] transition-all'
+              className='h-2 rounded-full bg-(--main-color) transition-all'
               style={{ width: `${goalTimers.progressToNextGoal}%` }}
             />
           </div>
-          <p className='mt-1 text-center text-xs text-[var(--secondary-color)]'>
+          <p className='mt-1 text-center text-xs text-(--secondary-color)'>
             {Math.floor(goalTimers.nextGoal.targetSeconds / 60)}:
             {(goalTimers.nextGoal.targetSeconds % 60)
               .toString()

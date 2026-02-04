@@ -27,11 +27,11 @@ const AchievementGridComponent = ({
   if (achievements.length === 0) {
     return (
       <div className='py-12 text-center'>
-        <Trophy className='mx-auto mb-4 text-[var(--border-color)]' size={48} />
-        <h3 className='mb-2 text-lg font-semibold text-[var(--main-color)]'>
+        <Trophy className='mx-auto mb-4 text-(--border-color)' size={48} />
+        <h3 className='mb-2 text-lg font-semibold text-(--main-color)'>
           No achievements in this category
         </h3>
-        <p className='text-[var(--secondary-color)]'>
+        <p className='text-(--secondary-color)'>
           Try selecting a different category to see more achievements.
         </p>
       </div>

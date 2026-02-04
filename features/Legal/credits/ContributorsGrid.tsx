@@ -16,7 +16,7 @@ export default function ContributorsGrid({
           href={c.url}
           target='_blank'
           rel='noreferrer'
-          className='flex flex-col items-center rounded p-2 text-center text-[var(--secondary-color)] transition-colors hover:bg-[var(--card-color)]'
+          className='flex flex-col items-center rounded p-2 text-center text-(--secondary-color) transition-colors hover:bg-(--card-color)'
         >
           <Image
             src={c.avatar}

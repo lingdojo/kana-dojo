@@ -31,6 +31,7 @@ interface SubcategoryPageClientProps {
   subcategory: Subcategory;
   initialResources: Resource[];
   categoriesWithCounts: CategoryWithCount[];
+  availableFilters?: FilterOptions;
 }
 
 export function SubcategoryPageClient({
@@ -39,6 +40,7 @@ export function SubcategoryPageClient({
   subcategory,
   initialResources,
   categoriesWithCounts,
+  availableFilters,
 }: SubcategoryPageClientProps) {
   // State
   const [filters, setFilters] = useState<ActiveFilters>(createEmptyFilters());
@@ -63,7 +65,7 @@ export function SubcategoryPageClient({
   }, [initialResources, filters]);
 
   // Calculate available filter options with counts
-  const availableFilters: FilterOptions = useMemo(() => {
+  const computedFilters: FilterOptions = useMemo(() => {
     const difficulties = DIFFICULTY_LEVELS.map(level => ({
       value: level,
       count: initialResources.filter(r => r.difficulty === level).length,
@@ -82,6 +84,8 @@ export function SubcategoryPageClient({
 
     return { difficulties, priceTypes, platforms };
   }, [initialResources]);
+
+  const filterOptions = availableFilters ?? computedFilters;
 
   // Handlers
   const handleSearchChange = useCallback((search: string) => {
@@ -115,7 +119,7 @@ export function SubcategoryPageClient({
   }, [selectedResource, initialResources]);
 
   return (
-    <div className='min-h-screen bg-[var(--background-color)]'>
+    <div className='min-h-screen bg-(--background-color)'>
       <div className='mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8'>
         {/* Breadcrumbs */}
         <ResourceBreadcrumbs
@@ -129,11 +133,11 @@ export function SubcategoryPageClient({
         <header className='mb-8 space-y-4'>
           {/* Subcategory Title and Count */}
           <div className='flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between'>
-            <h1 className='text-3xl font-bold tracking-tight text-[var(--main-color)] md:text-4xl'>
+            <h1 className='text-3xl font-bold tracking-tight text-(--main-color) md:text-4xl'>
               {subcategory.name}
             </h1>
             <div className='flex items-center gap-2'>
-              <span className='rounded-full bg-[var(--main-color)]/10 px-3 py-1 text-sm font-medium text-[var(--main-color)]'>
+              <span className='rounded-full bg-(--main-color)/10 px-3 py-1 text-sm font-medium text-(--main-color)'>
                 {initialResources.length}{' '}
                 {initialResources.length === 1 ? 'resource' : 'resources'}
               </span>
@@ -141,14 +145,14 @@ export function SubcategoryPageClient({
           </div>
 
           {/* Short Description */}
-          <p className='text-lg text-[var(--secondary-color)]'>
+          <p className='text-lg text-(--secondary-color)'>
             {subcategory.description}
           </p>
 
           {/* Long-form SEO Content */}
           {subcategory.descriptionLong && (
             <div className='prose prose-sm dark:prose-invert max-w-none'>
-              <p className='text-[var(--secondary-color)]'>
+              <p className='text-(--secondary-color)'>
                 {subcategory.descriptionLong}
               </p>
             </div>
@@ -170,8 +174,8 @@ export function SubcategoryPageClient({
           {/* Sidebar */}
           <aside className='w-full shrink-0 lg:w-64'>
             {/* Category Navigation */}
-            <div className='mb-6 rounded-xl border border-[var(--border-color)] bg-[var(--card-color)] p-4'>
-              <h2 className='mb-4 text-sm font-semibold tracking-wider text-[var(--secondary-color)] uppercase'>
+            <div className='mb-6 rounded-xl border border-(--border-color) bg-(--card-color) p-4'>
+              <h2 className='mb-4 text-sm font-semibold tracking-wider text-(--secondary-color) uppercase'>
                 Categories
               </h2>
               <CategoryNav
@@ -185,7 +189,7 @@ export function SubcategoryPageClient({
             <FilterPanel
               filters={filters}
               onFilterChange={handleFilterChange}
-              availableFilters={availableFilters}
+              availableFilters={filterOptions}
             />
 
             {/* Related Categories for Internal Linking */}
@@ -200,7 +204,7 @@ export function SubcategoryPageClient({
           {/* Resource Grid */}
           <main className='flex-1'>
             <div className='mb-4 flex items-center justify-between'>
-              <p className='text-sm text-[var(--secondary-color)]'>
+              <p className='text-sm text-(--secondary-color)'>
                 Showing {filteredResources.length} of {initialResources.length}{' '}
                 {subcategory.name.toLowerCase()}
               </p>

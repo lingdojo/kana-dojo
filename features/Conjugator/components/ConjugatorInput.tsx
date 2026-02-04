@@ -83,7 +83,7 @@ export default function ConjugatorInput({
     <div
       className={cn(
         'flex w-full flex-col gap-4 rounded-2xl p-4 sm:p-5',
-        'border border-[var(--border-color)] bg-[var(--card-color)]',
+        'border border-(--border-color) bg-(--card-color)',
         'shadow-lg shadow-black/5',
       )}
       role='search'
@@ -94,22 +94,22 @@ export default function ConjugatorInput({
         <div
           className={cn(
             'rounded-lg p-2',
-            'bg-[var(--main-color)]/10',
-            'border border-[var(--main-color)]/20',
+            'bg-(--main-color)/10',
+            'border border-(--main-color)/20',
           )}
           aria-hidden='true'
         >
-          <Search className='h-5 w-5 text-[var(--main-color)]' />
+          <Search className='h-5 w-5 text-(--main-color)' />
         </div>
         <div>
           <h2
-            className='text-base font-semibold text-[var(--main-color)] sm:text-lg'
+            className='text-base font-semibold text-(--main-color) sm:text-lg'
             id='verb-input-label'
           >
             Enter a Japanese Verb
           </h2>
           <p
-            className='text-xs text-[var(--secondary-color)]'
+            className='text-xs text-(--secondary-color)'
             id='verb-input-hint'
           >
             Dictionary form (e.g., 食べる, 行く, する)
@@ -129,10 +129,10 @@ export default function ConjugatorInput({
           placeholder='日本語の動詞を入力...'
           className={cn(
             'h-12 w-full rounded-xl px-4 sm:h-14 sm:px-5',
-            'border border-[var(--border-color)] bg-[var(--background-color)]',
-            'text-lg text-[var(--main-color)] placeholder:text-[var(--secondary-color)]/60 sm:text-xl',
+            'border border-(--border-color) bg-(--background-color)',
+            'text-lg text-(--main-color) placeholder:text-(--secondary-color)/60 sm:text-xl',
             'font-japanese',
-            'focus:border-transparent focus:ring-2 focus:ring-[var(--main-color)] focus:outline-none',
+            'focus:border-transparent focus:ring-2 focus:ring-(--main-color) focus:outline-none',
             'transition-all duration-200',
             error && 'border-red-500 focus:ring-red-500',
             isDisabled && 'cursor-not-allowed opacity-60',
@@ -206,17 +206,17 @@ export default function ConjugatorInput({
 
       {/* Keyboard shortcut hint */}
       <div
-        className='hidden items-center justify-center gap-2 text-xs text-[var(--secondary-color)] sm:flex'
+        className='hidden items-center justify-center gap-2 text-xs text-(--secondary-color) sm:flex'
         aria-hidden='true'
       >
         <Keyboard className='h-3.5 w-3.5' />
         <span>
           Press{' '}
-          <kbd className='rounded bg-[var(--background-color)] px-1.5 py-0.5 font-mono text-[10px]'>
+          <kbd className='rounded bg-(--background-color) px-1.5 py-0.5 font-mono text-[10px]'>
             Enter
           </kbd>{' '}
           to conjugate,{' '}
-          <kbd className='rounded bg-[var(--background-color)] px-1.5 py-0.5 font-mono text-[10px]'>
+          <kbd className='rounded bg-(--background-color) px-1.5 py-0.5 font-mono text-[10px]'>
             Esc
           </kbd>{' '}
           to clear

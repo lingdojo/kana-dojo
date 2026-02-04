@@ -172,7 +172,7 @@ const AchievementModal = ({
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
             className={clsx(
               'relative w-full max-w-md',
-              'rounded-2xl bg-[var(--card-color)]',
+              'rounded-2xl bg-(--card-color)',
               'shadow-2xl shadow-black/25',
               cardBorderStyles,
             )}
@@ -195,8 +195,8 @@ const AchievementModal = ({
                 onClick={handleClose}
                 className={clsx(
                   'rounded-lg p-2 transition-colors duration-200',
-                  'hover:bg-[var(--background-color)]',
-                  'text-[var(--secondary-color)] hover:text-[var(--main-color)]',
+                  'hover:bg-(--background-color)',
+                  'text-(--secondary-color) hover:text-(--main-color)',
                 )}
               >
                 <X size={20} />
@@ -214,7 +214,7 @@ const AchievementModal = ({
               >
                 <h2
                   id='achievement-modal-title'
-                  className='text-lg font-semibold tracking-wide text-[var(--main-color)] uppercase'
+                  className='text-lg font-semibold tracking-wide text-(--main-color) uppercase'
                 >
                   Achievement Unlocked!
                 </h2>
@@ -280,10 +280,10 @@ const AchievementModal = ({
                 transition={{ delay: 0.6 }}
                 className='space-y-3'
               >
-                <h3 className='text-2xl font-bold text-[var(--main-color)]'>
+                <h3 className='text-2xl font-bold text-(--main-color)'>
                   {achievement.title}
                 </h3>
-                <p className='leading-relaxed text-[var(--secondary-color)]'>
+                <p className='leading-relaxed text-(--secondary-color)'>
                   {achievement.description}
                 </p>
               </motion.div>
@@ -314,14 +314,14 @@ const AchievementModal = ({
                   transition={{ delay: 1 }}
                   className='space-y-2'
                 >
-                  <h4 className='text-sm font-semibold tracking-wide text-[var(--main-color)] uppercase'>
+                  <h4 className='text-sm font-semibold tracking-wide text-(--main-color) uppercase'>
                     Rewards Unlocked
                   </h4>
                   <div className='flex flex-wrap justify-center gap-2'>
                     {achievement.rewards.themes?.map((theme, index) => (
                       <span
                         key={index}
-                        className='rounded-full bg-[var(--background-color)] px-3 py-1 text-xs text-[var(--secondary-color)]'
+                        className='rounded-full bg-(--background-color) px-3 py-1 text-xs text-(--secondary-color)'
                       >
                         {theme} Theme
                       </span>
@@ -329,7 +329,7 @@ const AchievementModal = ({
                     {achievement.rewards.fonts?.map((font, index) => (
                       <span
                         key={index}
-                        className='rounded-full bg-[var(--background-color)] px-3 py-1 text-xs text-[var(--secondary-color)]'
+                        className='rounded-full bg-(--background-color) px-3 py-1 text-xs text-(--secondary-color)'
                       >
                         {font} Font
                       </span>
@@ -348,9 +348,9 @@ const AchievementModal = ({
                   onClick={handleClose}
                   className={clsx(
                     'rounded-xl px-8 py-3 font-medium',
-                    'text-[var(--main-color)]',
+                    'text-(--main-color)',
                     buttonBorderStyles,
-                    'transition-all duration-200 hover:bg-[var(--background-color)]',
+                    'transition-all duration-200 hover:bg-(--background-color)',
                     'active:scale-95',
                   )}
                 >

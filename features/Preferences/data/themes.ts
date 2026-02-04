@@ -1,5 +1,6 @@
 /* prettier-ignore-file */
 import { useCustomThemeStore } from '../store/useCustomThemeStore';
+import usePreferencesStore from '../store/usePreferencesStore';
 import {
   Atom,
   Sun,
@@ -125,6 +126,42 @@ export function generateCardColor(
 }
 
 /**
+ * Handles special cases for transparency (Glass themes).
+ * Returns the card color with specific opacity for glass effects.
+ */
+export function getModifiedCardColor(
+  themeId: string,
+  cardColor: string,
+): string {
+  if (isPremiumThemeId(themeId)) {
+    return 'oklch(20% 0.01 255 / 0.85)'; // Dark semi-transparent
+  }
+  return cardColor;
+}
+
+/**
+ * Handles special cases for border transparency.
+ */
+export function getModifiedBorderColor(
+  themeId: string,
+  borderColor: string,
+): string {
+  if (isPremiumThemeId(themeId)) {
+    // return 'oklch(100% 0 0 / 0.12)'; // Light semi-transparent
+    return 'oklch(30% 0.01 255 / 0.85)'; // Dark semi-transparent
+  }
+  return borderColor;
+}
+
+export const getNeonCityWallpaperStyles = (isHighlighted: boolean) => ({
+  backgroundImage: "url('/wallpapers/neonretrocarcity.jpg')",
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+  backgroundRepeat: 'no-repeat',
+  filter: isHighlighted ? 'brightness(1)' : 'brightness(0.85)',
+});
+
+/**
  * Generates a border color from a background color.
  *
  * For dark themes:
@@ -235,6 +272,19 @@ function buildThemeGroup(baseGroup: BaseThemeGroup): ThemeGroup {
 
 // Base theme definitions - only id, backgroundColor, mainColor, secondaryColor
 const baseThemeSets: BaseThemeGroup[] = [
+  {
+    name: 'Premium',
+    icon: Sparkles,
+    isLight: false,
+    themes: [
+      {
+        id: 'neon-city',
+        backgroundColor: 'oklch(0% 0 0 / 0.95)', // Fully transparent, as wallpaper will be behind
+        mainColor: 'oklch(100% 0 0)', // High contrast white
+        secondaryColor: 'oklch(90% 0 0)', // Muted light gray
+      },
+    ],
+  },
   {
     name: 'Base',
     icon: Atom,
@@ -1359,6 +1409,22 @@ const baseThemeSets: BaseThemeGroup[] = [
   },
 ];
 
+const premiumThemeIds = new Set(
+  baseThemeSets
+    .find(group => group.name === 'Premium')
+    ?.themes.map(theme => theme.id) ?? [],
+);
+
+const legacyThemeAliases = new Map<string, string>([
+  ['neon-city-glass', 'neon-city'],
+]);
+
+const resolveThemeId = (themeId: string): string =>
+  legacyThemeAliases.get(themeId) ?? themeId;
+
+export const isPremiumThemeId = (themeId: string): boolean =>
+  premiumThemeIds.has(resolveThemeId(themeId));
+
 // Build the complete theme sets with generated card and border colors
 const themeSets: ThemeGroup[] = baseThemeSets.map(buildThemeGroup);
 
@@ -1416,23 +1482,35 @@ function ensureCustomThemesLoaded(): void {
     state.themes.forEach(theme =>
       themeMap.set(theme.id, buildThemeFromTemplate(theme)),
     );
+    // Clear cache to force rebuild of theme map next time it's accessed
+    _themeMap = null;
   });
 }
 
 export function applyTheme(themeId: string) {
   ensureCustomThemesLoaded();
-  const theme = getThemeMap().get(themeId);
+  const resolvedThemeId = resolveThemeId(themeId);
+  const theme = getThemeMap().get(resolvedThemeId);
 
   if (!theme) {
     console.error(`Theme "${themeId}" not found`);
     return;
   }
 
+  usePreferencesStore
+    .getState()
+    .setGlassMode(isPremiumThemeId(resolvedThemeId));
+
   const root = document.documentElement;
 
   root.style.setProperty('--background-color', theme.backgroundColor);
-  root.style.setProperty('--card-color', theme.cardColor);
-  root.style.setProperty('--border-color', theme.borderColor);
+
+  // Handle modified colors for glass themes
+  const cardColor = getModifiedCardColor(theme.id, theme.cardColor);
+  const borderColor = getModifiedBorderColor(theme.id, theme.borderColor);
+
+  root.style.setProperty('--card-color', cardColor);
+  root.style.setProperty('--border-color', borderColor);
   root.style.setProperty('--main-color', theme.mainColor);
   root.style.setProperty('--main-color-accent', theme.mainColorAccent);
 
@@ -1444,15 +1522,20 @@ export function applyTheme(themeId: string) {
     );
   }
 
-  root.setAttribute('data-theme', theme.id);
+  root.setAttribute('data-theme', resolvedThemeId);
 }
 
 // Apply a theme object directly (live preview theme)
 export function applyThemeObject(theme: Theme) {
   const root = document.documentElement;
   root.style.setProperty('--background-color', theme.backgroundColor);
-  root.style.setProperty('--card-color', theme.cardColor);
-  root.style.setProperty('--border-color', theme.borderColor);
+
+  // Handle modified colors for glass themes
+  const cardColor = getModifiedCardColor(theme.id, theme.cardColor);
+  const borderColor = getModifiedBorderColor(theme.id, theme.borderColor);
+
+  root.style.setProperty('--card-color', cardColor);
+  root.style.setProperty('--border-color', borderColor);
   root.style.setProperty('--main-color', theme.mainColor);
   root.style.setProperty('--main-color-accent', theme.mainColorAccent);
   if (theme.secondaryColor) {
@@ -1467,7 +1550,7 @@ export function applyThemeObject(theme: Theme) {
 // Helper to get a specific theme
 export function getTheme(themeId: string): Theme | undefined {
   ensureCustomThemesLoaded();
-  return getThemeMap().get(themeId);
+  return getThemeMap().get(resolveThemeId(themeId));
 }
 
 /**

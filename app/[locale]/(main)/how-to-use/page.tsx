@@ -20,25 +20,25 @@ export async function generateMetadata() {
 export default async function HowToUsePage() {
   return (
     <div className='mx-auto max-w-4xl px-4 py-8'>
-      <h1 className='mb-4 text-center text-4xl font-bold text-[var(--main-color)]'>
+      <h1 className='mb-4 text-center text-4xl font-bold text-(--main-color)'>
         How to Use KanaDojo
       </h1>
-      <p className='mb-8 text-center text-lg text-[var(--secondary-color)]'>
+      <p className='mb-8 text-center text-lg text-(--secondary-color)'>
         Your complete guide to mastering Japanese with KanaDojo
       </p>
 
-      <div className='space-y-8 text-[var(--secondary-color)]'>
+      <div className='space-y-8 text-(--secondary-color)'>
         {/* Getting Started */}
         <section>
-          <h2 className='mb-4 text-3xl font-semibold text-[var(--main-color)]'>
+          <h2 className='mb-4 text-3xl font-semibold text-(--main-color)'>
             Getting Started
           </h2>
           <p className='mb-4'>
             KanaDojo is designed to be intuitive and easy to use. No account
             required - just visit the site and start learning!
           </p>
-          <div className='rounded-lg border-2 border-[var(--border-color)] bg-[var(--card-color)] p-6'>
-            <h3 className='mb-3 text-xl font-semibold text-[var(--main-color)]'>
+          <div className='rounded-lg border-2 border-(--border-color) bg-(--card-color) p-6'>
+            <h3 className='mb-3 text-xl font-semibold text-(--main-color)'>
               Quick Start (3 Steps)
             </h3>
             <ol className='list-decimal space-y-2 pl-6'>
@@ -57,13 +57,13 @@ export default async function HowToUsePage() {
 
         {/* Content Types */}
         <section>
-          <h2 className='mb-4 text-3xl font-semibold text-[var(--main-color)]'>
+          <h2 className='mb-4 text-3xl font-semibold text-(--main-color)'>
             Content Types
           </h2>
 
           <div className='space-y-4'>
-            <div className='rounded-lg border-2 border-[var(--border-color)] p-4'>
-              <h3 className='mb-2 text-xl font-semibold text-[var(--main-color)]'>
+            <div className='rounded-lg border-2 border-(--border-color) p-4'>
+              <h3 className='mb-2 text-xl font-semibold text-(--main-color)'>
                 📚 Kana (Hiragana & Katakana)
               </h3>
               <p className='mb-2'>
@@ -80,8 +80,8 @@ export default async function HowToUsePage() {
               </p>
             </div>
 
-            <div className='rounded-lg border-2 border-[var(--border-color)] p-4'>
-              <h3 className='mb-2 text-xl font-semibold text-[var(--main-color)]'>
+            <div className='rounded-lg border-2 border-(--border-color) p-4'>
+              <h3 className='mb-2 text-xl font-semibold text-(--main-color)'>
                 🈹 Kanji
               </h3>
               <p className='mb-2'>
@@ -98,8 +98,8 @@ export default async function HowToUsePage() {
               </p>
             </div>
 
-            <div className='rounded-lg border-2 border-[var(--border-color)] p-4'>
-              <h3 className='mb-2 text-xl font-semibold text-[var(--main-color)]'>
+            <div className='rounded-lg border-2 border-(--border-color) p-4'>
+              <h3 className='mb-2 text-xl font-semibold text-(--main-color)'>
                 💬 Vocabulary
               </h3>
               <p className='mb-2'>
@@ -120,7 +120,7 @@ export default async function HowToUsePage() {
 
         {/* Training Modes */}
         <section>
-          <h2 className='mb-4 text-3xl font-semibold text-[var(--main-color)]'>
+          <h2 className='mb-4 text-3xl font-semibold text-(--main-color)'>
             Training Modes
           </h2>
           <p className='mb-4'>
@@ -129,8 +129,8 @@ export default async function HowToUsePage() {
           </p>
 
           <div className='space-y-3'>
-            <div className='rounded-lg border-2 border-[var(--border-color)] bg-[var(--card-color)] p-4'>
-              <h4 className='mb-2 font-semibold text-[var(--main-color)]'>
+            <div className='rounded-lg border-2 border-(--border-color) bg-(--card-color) p-4'>
+              <h4 className='mb-2 font-semibold text-(--main-color)'>
                 1. 🎯 Pick Mode (Recognition)
               </h4>
               <p>
@@ -139,8 +139,8 @@ export default async function HowToUsePage() {
               </p>
             </div>
 
-            <div className='rounded-lg border-2 border-[var(--border-color)] bg-[var(--card-color)] p-4'>
-              <h4 className='mb-2 font-semibold text-[var(--main-color)]'>
+            <div className='rounded-lg border-2 border-(--border-color) bg-(--card-color) p-4'>
+              <h4 className='mb-2 font-semibold text-(--main-color)'>
                 2. 🔄 Reverse-Pick Mode
               </h4>
               <p>
@@ -149,8 +149,8 @@ export default async function HowToUsePage() {
               </p>
             </div>
 
-            <div className='rounded-lg border-2 border-[var(--border-color)] bg-[var(--card-color)] p-4'>
-              <h4 className='mb-2 font-semibold text-[var(--main-color)]'>
+            <div className='rounded-lg border-2 border-(--border-color) bg-(--card-color) p-4'>
+              <h4 className='mb-2 font-semibold text-(--main-color)'>
                 3. ⌨️ Input Mode (Typing)
               </h4>
               <p>
@@ -159,8 +159,8 @@ export default async function HowToUsePage() {
               </p>
             </div>
 
-            <div className='rounded-lg border-2 border-[var(--border-color)] bg-[var(--card-color)] p-4'>
-              <h4 className='mb-2 font-semibold text-[var(--main-color)]'>
+            <div className='rounded-lg border-2 border-(--border-color) bg-(--card-color) p-4'>
+              <h4 className='mb-2 font-semibold text-(--main-color)'>
                 4. 🔁 Reverse-Input Mode
               </h4>
               <p>
@@ -169,8 +169,8 @@ export default async function HowToUsePage() {
               </p>
             </div>
 
-            <div className='rounded-lg border-2 border-[var(--border-color)] bg-[var(--card-color)] p-4'>
-              <h4 className='mb-2 font-semibold text-[var(--main-color)]'>
+            <div className='rounded-lg border-2 border-(--border-color) bg-(--card-color) p-4'>
+              <h4 className='mb-2 font-semibold text-(--main-color)'>
                 5. ⚡ Blitz Mode (Speed Test)
               </h4>
               <p>
@@ -179,8 +179,8 @@ export default async function HowToUsePage() {
               </p>
             </div>
 
-            <div className='rounded-lg border-2 border-[var(--border-color)] bg-[var(--card-color)] p-4'>
-              <h4 className='mb-2 font-semibold text-[var(--main-color)]'>
+            <div className='rounded-lg border-2 border-(--border-color) bg-(--card-color) p-4'>
+              <h4 className='mb-2 font-semibold text-(--main-color)'>
                 6. 🏆 Gauntlet Mode (Ultimate Challenge)
               </h4>
               <p>
@@ -193,7 +193,7 @@ export default async function HowToUsePage() {
 
         {/* Progress Tracking */}
         <section>
-          <h2 className='mb-4 text-3xl font-semibold text-[var(--main-color)]'>
+          <h2 className='mb-4 text-3xl font-semibold text-(--main-color)'>
             Progress Tracking
           </h2>
           <p className='mb-4'>
@@ -225,7 +225,7 @@ export default async function HowToUsePage() {
 
         {/* Customization */}
         <section>
-          <h2 className='mb-4 text-3xl font-semibold text-[var(--main-color)]'>
+          <h2 className='mb-4 text-3xl font-semibold text-(--main-color)'>
             Customization
           </h2>
           <p className='mb-4'>Make KanaDojo your own:</p>
@@ -253,12 +253,12 @@ export default async function HowToUsePage() {
 
         {/* Tips for Success */}
         <section>
-          <h2 className='mb-4 text-3xl font-semibold text-[var(--main-color)]'>
+          <h2 className='mb-4 text-3xl font-semibold text-(--main-color)'>
             Tips for Success
           </h2>
           <div className='space-y-3'>
-            <div className='rounded-lg border-l-4 border-[var(--main-color)] bg-[var(--card-color)] p-4'>
-              <p className='font-semibold text-[var(--main-color)]'>
+            <div className='rounded-lg border-l-4 border-(--main-color) bg-(--card-color) p-4'>
+              <p className='font-semibold text-(--main-color)'>
                 ✅ Practice Daily
               </p>
               <p>
@@ -266,8 +266,8 @@ export default async function HowToUsePage() {
               </p>
             </div>
 
-            <div className='rounded-lg border-l-4 border-[var(--main-color)] bg-[var(--card-color)] p-4'>
-              <p className='font-semibold text-[var(--main-color)]'>
+            <div className='rounded-lg border-l-4 border-(--main-color) bg-(--card-color) p-4'>
+              <p className='font-semibold text-(--main-color)'>
                 ✅ Vary Your Training Modes
               </p>
               <p>
@@ -275,8 +275,8 @@ export default async function HowToUsePage() {
               </p>
             </div>
 
-            <div className='rounded-lg border-l-4 border-[var(--main-color)] bg-[var(--card-color)] p-4'>
-              <p className='font-semibold text-[var(--main-color)]'>
+            <div className='rounded-lg border-l-4 border-(--main-color) bg-(--card-color) p-4'>
+              <p className='font-semibold text-(--main-color)'>
                 ✅ Review Weak Characters
               </p>
               <p>
@@ -285,8 +285,8 @@ export default async function HowToUsePage() {
               </p>
             </div>
 
-            <div className='rounded-lg border-l-4 border-[var(--main-color)] bg-[var(--card-color)] p-4'>
-              <p className='font-semibold text-[var(--main-color)]'>
+            <div className='rounded-lg border-l-4 border-(--main-color) bg-(--card-color) p-4'>
+              <p className='font-semibold text-(--main-color)'>
                 ✅ Write by Hand Too
               </p>
               <p>
@@ -295,8 +295,8 @@ export default async function HowToUsePage() {
               </p>
             </div>
 
-            <div className='rounded-lg border-l-4 border-[var(--main-color)] bg-[var(--card-color)] p-4'>
-              <p className='font-semibold text-[var(--main-color)]'>
+            <div className='rounded-lg border-l-4 border-(--main-color) bg-(--card-color) p-4'>
+              <p className='font-semibold text-(--main-color)'>
                 ✅ Set Realistic Goals
               </p>
               <p>
@@ -309,16 +309,16 @@ export default async function HowToUsePage() {
 
         {/* Recommended Learning Path */}
         <section>
-          <h2 className='mb-4 text-3xl font-semibold text-[var(--main-color)]'>
+          <h2 className='mb-4 text-3xl font-semibold text-(--main-color)'>
             Recommended Learning Path
           </h2>
           <div className='space-y-4'>
             <div className='flex items-start gap-4'>
-              <div className='flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-[var(--main-color)] text-xl font-bold text-[var(--background-color)]'>
+              <div className='flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-(--main-color) text-xl font-bold text-(--background-color)'>
                 1
               </div>
               <div>
-                <h4 className='mb-1 font-semibold text-[var(--main-color)]'>
+                <h4 className='mb-1 font-semibold text-(--main-color)'>
                   Week 1-2: Master Hiragana
                 </h4>
                 <p>
@@ -329,11 +329,11 @@ export default async function HowToUsePage() {
             </div>
 
             <div className='flex items-start gap-4'>
-              <div className='flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-[var(--main-color)] text-xl font-bold text-[var(--background-color)]'>
+              <div className='flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-(--main-color) text-xl font-bold text-(--background-color)'>
                 2
               </div>
               <div>
-                <h4 className='mb-1 font-semibold text-[var(--main-color)]'>
+                <h4 className='mb-1 font-semibold text-(--main-color)'>
                   Week 3-4: Master Katakana
                 </h4>
                 <p>Apply the same method to Katakana characters.</p>
@@ -341,11 +341,11 @@ export default async function HowToUsePage() {
             </div>
 
             <div className='flex items-start gap-4'>
-              <div className='flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-[var(--main-color)] text-xl font-bold text-[var(--background-color)]'>
+              <div className='flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-(--main-color) text-xl font-bold text-(--background-color)'>
                 3
               </div>
               <div>
-                <h4 className='mb-1 font-semibold text-[var(--main-color)]'>
+                <h4 className='mb-1 font-semibold text-(--main-color)'>
                   Month 2-3: Start JLPT N5 Kanji
                 </h4>
                 <p>Begin learning the 80 essential N5 Kanji characters.</p>
@@ -353,11 +353,11 @@ export default async function HowToUsePage() {
             </div>
 
             <div className='flex items-start gap-4'>
-              <div className='flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-[var(--main-color)] text-xl font-bold text-[var(--background-color)]'>
+              <div className='flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-(--main-color) text-xl font-bold text-(--background-color)'>
                 4
               </div>
               <div>
-                <h4 className='mb-1 font-semibold text-[var(--main-color)]'>
+                <h4 className='mb-1 font-semibold text-(--main-color)'>
                   Month 3+: Build Vocabulary
                 </h4>
                 <p>Add vocabulary practice alongside Kanji learning.</p>
@@ -365,11 +365,11 @@ export default async function HowToUsePage() {
             </div>
 
             <div className='flex items-start gap-4'>
-              <div className='flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-[var(--main-color)] text-xl font-bold text-[var(--background-color)]'>
+              <div className='flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-(--main-color) text-xl font-bold text-(--background-color)'>
                 5
               </div>
               <div>
-                <h4 className='mb-1 font-semibold text-[var(--main-color)]'>
+                <h4 className='mb-1 font-semibold text-(--main-color)'>
                   Month 6+: Progress Through JLPT Levels
                 </h4>
                 <p>Continue with N4, N3, N2, and N1 content as you advance.</p>
@@ -380,12 +380,12 @@ export default async function HowToUsePage() {
 
         {/* FAQ Section */}
         <section>
-          <h2 className='mb-4 text-3xl font-semibold text-[var(--main-color)]'>
+          <h2 className='mb-4 text-3xl font-semibold text-(--main-color)'>
             Common Questions
           </h2>
           <div className='space-y-4'>
             <div>
-              <h4 className='mb-2 font-semibold text-[var(--main-color)]'>
+              <h4 className='mb-2 font-semibold text-(--main-color)'>
                 Do I need to create an account?
               </h4>
               <p>
@@ -395,7 +395,7 @@ export default async function HowToUsePage() {
             </div>
 
             <div>
-              <h4 className='mb-2 font-semibold text-[var(--main-color)]'>
+              <h4 className='mb-2 font-semibold text-(--main-color)'>
                 Is KanaDojo really completely free?
               </h4>
               <p>
@@ -405,7 +405,7 @@ export default async function HowToUsePage() {
             </div>
 
             <div>
-              <h4 className='mb-2 font-semibold text-[var(--main-color)]'>
+              <h4 className='mb-2 font-semibold text-(--main-color)'>
                 Can I use KanaDojo offline?
               </h4>
               <p>
@@ -415,7 +415,7 @@ export default async function HowToUsePage() {
             </div>
 
             <div>
-              <h4 className='mb-2 font-semibold text-[var(--main-color)]'>
+              <h4 className='mb-2 font-semibold text-(--main-color)'>
                 How long does it take to learn Japanese with KanaDojo?
               </h4>
               <p>
@@ -428,7 +428,7 @@ export default async function HowToUsePage() {
         </section>
 
         {/* Get Started CTA */}
-        <section className='rounded-lg bg-[var(--main-color)] p-8 text-center text-[var(--background-color)]'>
+        <section className='rounded-lg bg-(--main-color) p-8 text-center text-(--background-color)'>
           <h2 className='mb-4 text-3xl font-bold'>Ready to Start Learning?</h2>
           <p className='mb-6 text-lg'>
             Begin your Japanese journey today with KanaDojo&apos;s free
@@ -437,13 +437,13 @@ export default async function HowToUsePage() {
           <div className='flex flex-col gap-4 sm:flex-row sm:justify-center'>
             <Link
               href='/kana'
-              className='rounded-lg border-2 border-[var(--background-color)] bg-[var(--background-color)] px-6 py-3 font-semibold text-[var(--main-color)] transition-all hover:opacity-90'
+              className='rounded-lg border-2 border-(--background-color) bg-(--background-color) px-6 py-3 font-semibold text-(--main-color) transition-all hover:opacity-90'
             >
               Start with Kana
             </Link>
             <Link
               href='/faq'
-              className='rounded-lg border-2 border-[var(--background-color)] px-6 py-3 font-semibold transition-all hover:bg-[var(--background-color)] hover:text-[var(--main-color)]'
+              className='rounded-lg border-2 border-(--background-color) px-6 py-3 font-semibold transition-all hover:bg-(--background-color) hover:text-(--main-color)'
             >
               View FAQ
             </Link>

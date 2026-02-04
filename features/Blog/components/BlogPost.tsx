@@ -68,10 +68,10 @@ export function BlogPost({
       data-testid='blog-post'
     >
       {/* Back Navigation Bar - Minimalist */}
-      <nav className='mb-16 flex items-center justify-between border-b border-[var(--border-color)] py-12'>
+      <nav className='mb-16 flex items-center justify-between border-b border-(--border-color) py-12'>
         <Link
           href='/academy'
-          className='group flex items-center gap-3 text-[10px] font-black tracking-[0.3em] text-[var(--main-color)] uppercase opacity-60 transition-opacity hover:opacity-100'
+          className='group flex items-center gap-3 text-[10px] font-black tracking-[0.3em] text-(--main-color) uppercase opacity-60 transition-opacity hover:opacity-100'
           onClick={playClick}
         >
           <ArrowLeft
@@ -91,24 +91,24 @@ export function BlogPost({
           {/* Hero Header Section */}
           <header className='mb-20 text-left'>
             <div className='mb-8 flex items-center gap-4'>
-              <span className='h-[1px] w-8 bg-[var(--main-color)] opacity-20' />
-              <span className='text-[10px] font-black tracking-[0.2em] text-[var(--main-color)] uppercase'>
+              <span className='h-[1px] w-8 bg-(--main-color) opacity-20' />
+              <span className='text-[10px] font-black tracking-[0.2em] text-(--main-color) uppercase'>
                 {post.category}
               </span>
             </div>
 
-            <h1 className='premium-serif mb-10 text-5xl leading-[1.05] font-black tracking-tight text-[var(--main-color)] md:text-7xl lg:text-8xl'>
+            <h1 className='premium-serif mb-10 text-5xl leading-[1.05] font-black tracking-tight text-(--main-color) md:text-7xl lg:text-8xl'>
               {post.title}
             </h1>
 
-            <p className='mb-12 max-w-3xl text-xl leading-relaxed font-medium text-[var(--secondary-color)] opacity-80 md:text-2xl lg:text-3xl'>
+            <p className='mb-12 max-w-3xl text-xl leading-relaxed font-medium text-(--secondary-color) opacity-80 md:text-2xl lg:text-3xl'>
               {post.description}
             </p>
 
-            <div className='flex flex-wrap items-center gap-6 border-y border-[var(--border-color)] py-8 text-[11px] font-bold tracking-widest text-[var(--main-color)] uppercase'>
+            <div className='flex flex-wrap items-center gap-6 border-y border-(--border-color) py-8 text-[11px] font-bold tracking-widest text-(--main-color) uppercase'>
               <div className='flex items-center gap-3'>
                 <span className='italic opacity-40'>Text by</span>
-                <span className='border-b border-[var(--main-color)]'>
+                <span className='border-b border-(--main-color)'>
                   {post.author}
                 </span>
               </div>
@@ -128,7 +128,7 @@ export function BlogPost({
           {/* Social / Share Placeholder (Minimal) */}
           <div className='mb-12 lg:hidden'>
             {post.headings.length > 0 && (
-              <div className='rounded-sm border border-[var(--border-color)] bg-[var(--background-color)] p-6'>
+              <div className='rounded-sm border border-(--border-color) bg-(--background-color) p-6'>
                 <TableOfContents headings={post.headings} />
               </div>
             )}
@@ -136,21 +136,21 @@ export function BlogPost({
 
           {/* Article Body Content */}
           <main className='editorial-content mx-auto max-w-3xl lg:mx-0'>
-            <div className='editorial-drop-cap prose-lg prose-serif leading-[1.8] text-[var(--secondary-color)]'>
+            <div className='editorial-drop-cap prose-lg prose-serif leading-[1.8] text-(--secondary-color)'>
               {children}
             </div>
 
             {/* Tag Dossier */}
             {post.tags.length > 0 && (
-              <footer className='mt-24 border-t border-[var(--border-color)] pt-12'>
-                <h4 className='mb-6 text-[10px] font-black tracking-[0.4em] text-[var(--main-color)] uppercase opacity-30'>
+              <footer className='mt-24 border-t border-(--border-color) pt-12'>
+                <h4 className='mb-6 text-[10px] font-black tracking-[0.4em] text-(--main-color) uppercase opacity-30'>
                   Dossier Keywords
                 </h4>
                 <div className='flex flex-wrap gap-3'>
                   {post.tags.map(tag => (
                     <span
                       key={tag}
-                      className='rounded-sm border border-[var(--border-color)] bg-[var(--card-color)] px-4 py-2 text-xs font-medium text-[var(--secondary-color)] transition-colors hover:border-[var(--main-color)]'
+                      className='rounded-sm border border-(--border-color) bg-(--card-color) px-4 py-2 text-xs font-medium text-(--secondary-color) transition-colors hover:border-(--main-color)'
                     >
                       #{tag}
                     </span>
@@ -161,7 +161,7 @@ export function BlogPost({
 
             {/* Related Studies Section */}
             {relatedPosts.length > 0 && (
-              <section className='mt-32 border-t-[3px] border-[var(--main-color)] pt-16'>
+              <section className='mt-32 border-t-[3px] border-(--main-color) pt-16'>
                 <h3 className='premium-serif mb-12 text-4xl font-black italic'>
                   Complementary Studies
                 </h3>
@@ -176,14 +176,14 @@ export function BlogPost({
                 onClick={playClick}
                 className='group inline-flex items-center gap-6'
               >
-                <div className='flex h-16 w-16 items-center justify-center rounded-full border border-[var(--border-color)] transition-all duration-500 group-hover:border-[var(--main-color)] group-hover:bg-[var(--main-color)] group-hover:text-[var(--background-color)]'>
+                <div className='flex h-16 w-16 items-center justify-center rounded-full border border-(--border-color) transition-all duration-500 group-hover:border-(--main-color) group-hover:bg-(--main-color) group-hover:text-(--background-color)'>
                   <BookOpen size={24} />
                 </div>
                 <div className='flex flex-col'>
                   <span className='text-[10px] font-black tracking-[0.2em] uppercase opacity-40'>
                     Academy Archive
                   </span>
-                  <span className='border-b border-transparent text-xl font-bold transition-all group-hover:border-[var(--main-color)]'>
+                  <span className='border-b border-transparent text-xl font-bold transition-all group-hover:border-(--main-color)'>
                     Explore More Journals
                   </span>
                 </div>
@@ -197,8 +197,8 @@ export function BlogPost({
           <div className='sticky top-24 space-y-16'>
             {/* Minimal TOC */}
             {post.headings.length > 0 && (
-              <div className='border-l border-[var(--border-color)] pl-8'>
-                <h5 className='mb-8 text-[10px] font-black tracking-[0.3em] text-[var(--main-color)] uppercase opacity-30'>
+              <div className='border-l border-(--border-color) pl-8'>
+                <h5 className='mb-8 text-[10px] font-black tracking-[0.3em] text-(--main-color) uppercase opacity-30'>
                   Journal Index
                 </h5>
                 <TableOfContents headings={post.headings} />
@@ -206,8 +206,8 @@ export function BlogPost({
             )}
 
             {/* Side Branding */}
-            <div className='border-t border-dashed border-[var(--border-color)] py-12 pl-8 select-none'>
-              <div className='premium-serif origin-left translate-x-12 rotate-[-90deg] text-5xl font-black text-[var(--main-color)] italic opacity-[0.05]'>
+            <div className='border-t border-dashed border-(--border-color) py-12 pl-8 select-none'>
+              <div className='premium-serif origin-left translate-x-12 rotate-[-90deg] text-5xl font-black text-(--main-color) italic opacity-[0.05]'>
                 KanaDojo.
               </div>
             </div>

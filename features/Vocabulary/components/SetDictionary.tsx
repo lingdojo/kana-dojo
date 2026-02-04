@@ -33,7 +33,7 @@ const SetDictionary = memo(function SetDictionary({
             className={clsx(
               'flex flex-col items-start justify-start gap-4 py-4 max-md:px-4',
               i !== words.length - 1 &&
-                'border-b-1 border-[var(--border-color)]',
+                'border-b-1 border-(--border-color)',
             )}
           >
             <a
@@ -55,14 +55,14 @@ const SetDictionary = memo(function SetDictionary({
               <span
                 className={clsx(
                   'flex flex-row items-center rounded-xl px-2 py-1',
-                  'bg-[var(--background-color)] text-lg',
-                  'text-[var(--secondary-color)]',
+                  'bg-(--background-color) text-lg',
+                  'text-(--secondary-color)',
                 )}
               >
                 {/* {toRomaji(rawReading) + ' ' + rawReading} */}
                 {displayReading}
               </span>
-              <p className='text-xl text-[var(--secondary-color)] md:text-2xl'>
+              <p className='text-xl text-(--secondary-color) md:text-2xl'>
                 {wordObj.meanings.join(', ')}
               </p>
             </div>

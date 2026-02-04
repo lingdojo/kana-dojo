@@ -36,25 +36,25 @@ function ResourceRowSkeleton() {
     <div
       className={cn(
         'flex flex-col gap-4 px-2 py-8 sm:flex-row sm:items-center',
-        'animate-pulse border-b border-[var(--border-color)]',
+        'animate-pulse border-b border-(--border-color)',
       )}
       aria-hidden='true'
     >
       <div className='min-w-0 flex-1'>
         <div className='mb-2 flex items-center gap-3'>
-          <div className='h-4 w-12 rounded bg-[var(--border-color)]' />
-          <div className='h-3 w-8 rounded bg-[var(--border-color)]' />
+          <div className='h-4 w-12 rounded bg-(--border-color)' />
+          <div className='h-3 w-8 rounded bg-(--border-color)' />
         </div>
-        <div className='mb-3 h-6 w-3/4 rounded bg-[var(--border-color)]' />
+        <div className='mb-3 h-6 w-3/4 rounded bg-(--border-color)' />
         <div className='space-y-2'>
-          <div className='h-4 w-full rounded bg-[var(--border-color)]' />
-          <div className='h-4 w-5/6 rounded bg-[var(--border-color)]' />
+          <div className='h-4 w-full rounded bg-(--border-color)' />
+          <div className='h-4 w-5/6 rounded bg-(--border-color)' />
         </div>
       </div>
       <div className='flex shrink-0 items-center gap-4 sm:ml-auto'>
-        <div className='h-5 w-16 rounded bg-[var(--border-color)]' />
-        <div className='h-5 w-14 rounded bg-[var(--border-color)]' />
-        <div className='h-10 w-10 rounded-full bg-[var(--border-color)]' />
+        <div className='h-5 w-16 rounded bg-(--border-color)' />
+        <div className='h-5 w-14 rounded bg-(--border-color)' />
+        <div className='h-10 w-10 rounded-full bg-(--border-color)' />
       </div>
     </div>
   );
@@ -138,17 +138,17 @@ export function ResourceGrid({
       <div
         id={id}
         className={cn(
-          'flex flex-col items-center justify-center border-t border-[var(--border-color)] py-24 text-center',
+          'flex flex-col items-center justify-center border-t border-(--border-color) py-24 text-center',
           className,
         )}
         role='status'
         aria-live='polite'
         aria-label='No resources found'
       >
-        <p className='text-xl font-medium text-[var(--main-color)]'>
+        <p className='text-xl font-medium text-(--main-color)'>
           Empty Collections
         </p>
-        <p className='mt-2 text-[var(--secondary-color)]'>
+        <p className='mt-2 text-(--secondary-color)'>
           Refine your filters to discover specialized resources.
         </p>
       </div>
@@ -166,7 +166,7 @@ export function ResourceGrid({
         ref={gridRef}
         id={id}
         className={cn(
-          'flex flex-col border-t border-[var(--border-color)]',
+          'flex flex-col border-t border-(--border-color)',
           'transition-opacity duration-300 ease-out',
           className,
         )}

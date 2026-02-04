@@ -51,7 +51,7 @@ const KanaShadow = () => {
 
   return (
     <div className='flex flex-1 flex-col items-center justify-center gap-8 p-4'>
-      <div className='flex gap-6 text-xl text-[var(--main-color)]'>
+      <div className='flex gap-6 text-xl text-(--main-color)'>
         <span>Round: {round + 1}</span>
         <span>Score: {score}</span>
       </div>
@@ -60,13 +60,13 @@ const KanaShadow = () => {
       <div
         className={clsx(
           'flex h-40 w-40 items-center justify-center rounded-2xl',
-          'border-2 border-[var(--border-color)] bg-[var(--card-color)]',
+          'border-2 border-(--border-color) bg-(--card-color)',
           'transition-all duration-500',
         )}
       >
         <span
           lang='ja'
-          className='text-7xl text-[var(--main-color)] transition-all duration-500'
+          className='text-7xl text-(--main-color) transition-all duration-500'
           style={{
             filter: revealed ? 'blur(0)' : 'blur(8px)',
             opacity: revealed ? 1 : 0.6,
@@ -89,8 +89,8 @@ const KanaShadow = () => {
               revealed && opt.kana === currentRound.shadow.kana
                 ? 'border-green-500 bg-green-500/20 text-green-400'
                 : revealed && feedback === 'wrong'
-                  ? 'border-[var(--border-color)] opacity-50'
-                  : 'border-[var(--border-color)] bg-[var(--card-color)] text-[var(--main-color)] hover:scale-105 hover:border-[var(--accent-color)]',
+                  ? 'border-(--border-color) opacity-50'
+                  : 'border-(--border-color) bg-(--card-color) text-(--main-color) hover:scale-105 hover:border-(--accent-color)',
             )}
           >
             {opt.kana}
@@ -111,7 +111,7 @@ const KanaShadow = () => {
           </p>
           <button
             onClick={nextRound}
-            className='mt-2 rounded-xl bg-[var(--accent-color)] px-6 py-3 text-white transition-transform hover:scale-105'
+            className='mt-2 rounded-xl bg-(--accent-color) px-6 py-3 text-white transition-transform hover:scale-105'
           >
             Next
           </button>

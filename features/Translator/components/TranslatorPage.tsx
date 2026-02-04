@@ -15,12 +15,12 @@ import TranslationHistory from './TranslationHistory';
 // Lazy load SEOContent for better initial page load performance
 const SEOContent = dynamic(() => import('./SEOContent'), {
   loading: () => (
-    <div className='mt-6 animate-pulse rounded-2xl border border-[var(--border-color)] bg-[var(--card-color)] p-4 sm:mt-8 sm:p-6'>
-      <div className='mb-4 h-8 w-64 rounded bg-[var(--border-color)]' />
+    <div className='mt-6 animate-pulse rounded-2xl border border-(--border-color) bg-(--card-color) p-4 sm:mt-8 sm:p-6'>
+      <div className='mb-4 h-8 w-64 rounded bg-(--border-color)' />
       <div className='space-y-3'>
-        <div className='h-4 w-full rounded bg-[var(--border-color)]' />
-        <div className='h-4 w-3/4 rounded bg-[var(--border-color)]' />
-        <div className='h-4 w-5/6 rounded bg-[var(--border-color)]' />
+        <div className='h-4 w-full rounded bg-(--border-color)' />
+        <div className='h-4 w-3/4 rounded bg-(--border-color)' />
+        <div className='h-4 w-5/6 rounded bg-(--border-color)' />
       </div>
     </div>
   ),
@@ -101,22 +101,22 @@ export default function TranslatorPage({ locale = 'en' }: TranslatorPageProps) {
       <header
         className={cn(
           'flex flex-col items-start gap-4 rounded-2xl p-4 sm:flex-row sm:items-center sm:p-6',
-          'border border-[var(--border-color)] bg-gradient-to-r from-[var(--card-color)] to-[var(--background-color)]',
+          'border border-(--border-color) bg-gradient-to-r from-(--card-color) to-(--background-color)',
         )}
       >
         <div
           className={cn(
-            'rounded-xl border border-[var(--main-color)]/20 bg-[var(--main-color)]/10 p-2.5 sm:p-3',
+            'rounded-xl border border-(--main-color)/20 bg-(--main-color)/10 p-2.5 sm:p-3',
           )}
           aria-hidden='true'
         >
-          <Languages className='h-6 w-6 text-[var(--main-color)] sm:h-8 sm:w-8' />
+          <Languages className='h-6 w-6 text-(--main-color) sm:h-8 sm:w-8' />
         </div>
         <div>
-          <h1 className='text-2xl font-bold text-[var(--main-color)] sm:text-3xl'>
+          <h1 className='text-2xl font-bold text-(--main-color) sm:text-3xl'>
             Free English to Japanese Translator
           </h1>
-          <p className='mt-1 text-sm text-[var(--secondary-color)] sm:text-base'>
+          <p className='mt-1 text-sm text-(--secondary-color) sm:text-base'>
             <strong>Translate English to Japanese</strong> or Japanese to
             English instantly. Get accurate translations with{' '}
             <strong>romaji pronunciation</strong> — no registration required.
@@ -160,14 +160,14 @@ export default function TranslatorPage({ locale = 'en' }: TranslatorPageProps) {
             onClick={swapLanguages}
             disabled={isLoading || isOffline}
             className={cn(
-              'h-12 w-12 cursor-pointer rounded-full border-2 border-[var(--border-color)] bg-[var(--card-color)] lg:h-14 lg:w-14',
-              'transition-all duration-200 hover:border-[var(--main-color)] hover:bg-[var(--border-color)] active:scale-95',
+              'h-12 w-12 cursor-pointer rounded-full border-2 border-(--border-color) bg-(--card-color) lg:h-14 lg:w-14',
+              'transition-all duration-200 hover:border-(--main-color) hover:bg-(--border-color) active:scale-95',
               'flex rotate-90 items-center justify-center disabled:cursor-not-allowed disabled:opacity-50 lg:rotate-0',
-              'focus-visible:ring-2 focus-visible:ring-[var(--main-color)] focus-visible:ring-offset-2',
+              'focus-visible:ring-2 focus-visible:ring-(--main-color) focus-visible:ring-offset-2',
             )}
             aria-label='Swap languages'
           >
-            <ArrowLeftRight className='h-5 w-5 text-[var(--main-color)]' />
+            <ArrowLeftRight className='h-5 w-5 text-(--main-color)' />
           </button>
         </div>
         <TranslatorOutput

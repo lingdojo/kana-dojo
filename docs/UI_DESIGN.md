@@ -131,6 +131,8 @@ Use Tailwind's responsive prefixes consistently:
 
 ## 🎭 Theming System
 
+- **[Glass Mode Documentation](./GLASS_MODE_THEME.md)**: Detailed guide for wallpaper-based transparent themes.
+
 ### Core Theme Variables
 
 KanaDojo uses a **5-variable color system** defined in `app/globals.css`:
@@ -980,7 +982,7 @@ const Modal = ({ isOpen, onClose, title, children }: ModalProps) => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             className={cn(
-              'fixed left-1/2 top-1/2 z-50 -translate-x-1/2 -translate-y-1/2',
+              'fixed top-1/2 left-1/2 z-50 -translate-x-1/2 -translate-y-1/2',
               'max-h-[85vh] w-full max-w-md overflow-y-auto',
               'rounded-2xl bg-[var(--background-color)] shadow-2xl',
               'p-6',

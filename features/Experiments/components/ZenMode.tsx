@@ -32,7 +32,7 @@ const ZenMode = () => {
   if (!isMounted) return null;
 
   return (
-    <div className='relative min-h-[100dvh] max-w-[100dvw] overflow-hidden bg-[var(--background-color)]'>
+    <div className='relative min-h-[100dvh] max-w-[100dvw] overflow-hidden bg-(--background-color)'>
       <Decorations
         expandDecorations={true}
         forceShow={true}
@@ -42,8 +42,8 @@ const ZenMode = () => {
         onClick={handleClose}
         className={clsx(
           'fixed top-4 right-4 z-50 rounded-lg p-2',
-          'border border-[var(--border-color)] bg-[var(--card-color)]',
-          'text-[var(--secondary-color)] hover:text-[var(--main-color)]',
+          'border border-(--border-color) bg-(--card-color)',
+          'text-(--secondary-color) hover:text-(--main-color)',
           'transition-all duration-250 hover:cursor-pointer',
           'active:scale-95',
         )}

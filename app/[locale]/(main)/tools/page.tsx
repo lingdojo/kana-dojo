@@ -46,10 +46,10 @@ const tools: Tool[] = [
 export default async function ToolsPage() {
   return (
     <div className='mx-auto max-w-7xl px-4 py-8'>
-      <h1 className='mb-4 text-center text-4xl font-bold text-[var(--main-color)]'>
+      <h1 className='mb-4 text-center text-4xl font-bold text-(--main-color)'>
         Japanese Learning Tools
       </h1>
-      <p className='mb-8 text-center text-lg text-[var(--secondary-color)]'>
+      <p className='mb-8 text-center text-lg text-(--secondary-color)'>
         Free utilities and tools to support your Japanese learning journey
       </p>
 
@@ -59,25 +59,25 @@ export default async function ToolsPage() {
             key={index}
             href={tool.href}
             className={cn(
-              'group flex flex-col rounded-lg border-2 border-[var(--border-color)] bg-[var(--card-color)] p-6 transition-all hover:border-[var(--main-color)] hover:shadow-lg',
+              'group flex flex-col rounded-lg border-2 border-(--border-color) bg-(--card-color) p-6 transition-all hover:border-(--main-color) hover:shadow-lg',
             )}
           >
             <div className='mb-4 flex items-center gap-3'>
-              <div className='rounded-lg bg-[var(--main-color)]/10 p-3'>
-                <tool.icon className='size-6 text-[var(--main-color)]' />
+              <div className='rounded-lg bg-(--main-color)/10 p-3'>
+                <tool.icon className='size-6 text-(--main-color)' />
               </div>
-              <h2 className='text-xl font-semibold text-[var(--main-color)]'>
+              <h2 className='text-xl font-semibold text-(--main-color)'>
                 {tool.name}
               </h2>
             </div>
-            <p className='text-[var(--secondary-color)]'>{tool.description}</p>
+            <p className='text-(--secondary-color)'>{tool.description}</p>
           </Link>
         ))}
       </div>
 
-      <div className='mt-12 space-y-6 text-[var(--secondary-color)]'>
+      <div className='mt-12 space-y-6 text-(--secondary-color)'>
         <section>
-          <h2 className='mb-3 text-2xl font-semibold text-[var(--main-color)]'>
+          <h2 className='mb-3 text-2xl font-semibold text-(--main-color)'>
             About These Tools
           </h2>
           <p className='mb-4'>
@@ -89,7 +89,7 @@ export default async function ToolsPage() {
         </section>
 
         <section>
-          <h2 className='mb-3 text-2xl font-semibold text-[var(--main-color)]'>
+          <h2 className='mb-3 text-2xl font-semibold text-(--main-color)'>
             More Tools Coming Soon
           </h2>
           <p>
@@ -99,7 +99,7 @@ export default async function ToolsPage() {
               href='https://github.com/lingdojo/kana-dojo'
               target='_blank'
               rel='noopener noreferrer'
-              className='text-[var(--main-color)] underline hover:no-underline'
+              className='text-(--main-color) underline hover:no-underline'
             >
               GitHub repository
             </a>

@@ -42,7 +42,7 @@ export function CategoryNav({
       aria-label='Resource categories'
     >
       <div>
-        <h2 className='mb-4 text-[10px] font-bold tracking-[0.2em] text-[var(--secondary-color)] uppercase opacity-40'>
+        <h2 className='mb-4 text-[10px] font-bold tracking-[0.2em] text-(--secondary-color) uppercase opacity-40'>
           Collections
         </h2>
         <ul className='space-y-1' role='list'>
@@ -52,8 +52,8 @@ export function CategoryNav({
               className={cn(
                 'group flex cursor-pointer items-center justify-between py-1.5 text-sm transition-all duration-300',
                 !activeCategory
-                  ? 'font-bold text-[var(--main-color)]'
-                  : 'text-[var(--secondary-color)] hover:text-[var(--main-color)]',
+                  ? 'font-bold text-(--main-color)'
+                  : 'text-(--secondary-color) hover:text-(--main-color)',
               )}
               aria-current={!activeCategory ? 'page' : undefined}
             >
@@ -73,14 +73,14 @@ export function CategoryNav({
                   className={cn(
                     'group flex cursor-pointer items-center justify-between py-1.5 text-sm transition-all duration-300',
                     isActive
-                      ? 'font-bold text-[var(--main-color)]'
-                      : 'text-[var(--secondary-color)] hover:text-[var(--main-color)]',
+                      ? 'font-bold text-(--main-color)'
+                      : 'text-(--secondary-color) hover:text-(--main-color)',
                   )}
                   aria-current={isActive ? 'page' : undefined}
                 >
                   <span className='flex items-center gap-2'>
                     {isActive && (
-                      <span className='h-1 w-1 rounded-full bg-[var(--main-color)]' />
+                      <span className='h-1 w-1 rounded-full bg-(--main-color)' />
                     )}
                     {category.name}
                   </span>
@@ -95,7 +95,7 @@ export function CategoryNav({
       </div>
 
       <div>
-        <h2 className='mb-4 text-[10px] font-bold tracking-[0.2em] text-[var(--secondary-color)] uppercase opacity-40'>
+        <h2 className='mb-4 text-[10px] font-bold tracking-[0.2em] text-(--secondary-color) uppercase opacity-40'>
           Specialized
         </h2>
         <ul className='space-y-1' role='list'>
@@ -108,14 +108,14 @@ export function CategoryNav({
                   className={cn(
                     'group flex cursor-pointer items-center justify-between py-1.5 text-sm transition-all duration-300',
                     isActive
-                      ? 'font-bold text-[var(--main-color)]'
-                      : 'text-[var(--secondary-color)] hover:text-[var(--main-color)]',
+                      ? 'font-bold text-(--main-color)'
+                      : 'text-(--secondary-color) hover:text-(--main-color)',
                   )}
                   aria-current={isActive ? 'page' : undefined}
                 >
                   <span className='flex items-center gap-2'>
                     {isActive && (
-                      <span className='h-1 w-1 rounded-full bg-[var(--main-color)]' />
+                      <span className='h-1 w-1 rounded-full bg-(--main-color)' />
                     )}
                     {category.name}
                   </span>

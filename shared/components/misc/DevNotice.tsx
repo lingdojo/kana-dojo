@@ -10,7 +10,7 @@
 
 const DevNotice = () => {
   return (
-    <p className='text-lg text-[var(--secondary-color)]'>
+    <p className='text-lg text-(--secondary-color)'>
       {/* <Select>
         <SelectTrigger className='w-[180px]'>
           <SelectValue placeholder='Select a fruit' />

@@ -40,18 +40,18 @@ function StatItem({
       <div
         className={cn(
           'flex h-14 w-14 items-center justify-center rounded-2xl',
-          'bg-gradient-to-br from-[var(--main-color)]/10 to-[var(--secondary-color)]/5',
-          'border border-[var(--border-color)]/30',
-          'text-[var(--main-color)]',
+          'bg-gradient-to-br from-(--main-color)/10 to-(--secondary-color)/5',
+          'border border-(--border-color)/30',
+          'text-(--main-color)',
         )}
       >
         <Icon className='h-6 w-6' />
       </div>
       <div className='flex flex-col'>
-        <span className='text-2xl font-bold text-[var(--main-color)]'>
+        <span className='text-2xl font-bold text-(--main-color)'>
           {value}
         </span>
-        <span className='text-xs font-medium text-[var(--secondary-color)]'>
+        <span className='text-xs font-medium text-(--secondary-color)'>
           {label}
         </span>
       </div>
@@ -79,13 +79,13 @@ export default function AchievementSummaryBar({
       transition={{ duration: 0.5, delay: 0.1 }}
       className={cn(
         'group relative overflow-hidden rounded-3xl',
-        'border border-[var(--border-color)]/50 bg-[var(--card-color)]',
+        'border border-(--border-color)/50 bg-(--card-color)',
         'p-6',
         className,
       )}
     >
       {/* Decorative trophy glow */}
-      <div className='pointer-events-none absolute -top-10 -right-10 h-40 w-40 rounded-full bg-gradient-to-br from-[var(--main-color)]/10 to-transparent blur-3xl' />
+      <div className='pointer-events-none absolute -top-10 -right-10 h-40 w-40 rounded-full bg-gradient-to-br from-(--main-color)/10 to-transparent blur-3xl' />
 
       <div className='relative z-10 flex flex-col gap-6'>
         {/* Header with animated trophy */}
@@ -94,15 +94,15 @@ export default function AchievementSummaryBar({
             <motion.div
               animate={{ rotate: [0, 5, -5, 0] }}
               transition={{ duration: 3, repeat: Infinity, repeatDelay: 2 }}
-              className='flex h-14 w-14 items-center justify-center rounded-2xl border border-[var(--main-color)]/20 bg-gradient-to-br from-[var(--main-color)]/20 to-[var(--secondary-color)]/10'
+              className='flex h-14 w-14 items-center justify-center rounded-2xl border border-(--main-color)/20 bg-gradient-to-br from-(--main-color)/20 to-(--secondary-color)/10'
             >
-              <Trophy className='h-7 w-7 text-[var(--main-color)]' />
+              <Trophy className='h-7 w-7 text-(--main-color)' />
             </motion.div>
             <div>
-              <h3 className='text-2xl font-bold text-[var(--main-color)]'>
+              <h3 className='text-2xl font-bold text-(--main-color)'>
                 Achievements
               </h3>
-              <p className='text-sm text-[var(--secondary-color)]/70'>
+              <p className='text-sm text-(--secondary-color)/70'>
                 Celebrate your milestones
               </p>
             </div>
@@ -111,11 +111,11 @@ export default function AchievementSummaryBar({
             href='/progress'
             className={cn(
               'group/link flex cursor-pointer items-center gap-2 rounded-full px-5 py-2.5',
-              'bg-[var(--background-color)]',
-              'border border-[var(--border-color)]/30',
-              'text-sm font-semibold text-[var(--secondary-color)]',
+              'bg-(--background-color)',
+              'border border-(--border-color)/30',
+              'text-sm font-semibold text-(--secondary-color)',
               'transition-colors duration-300',
-              'hover:border-[var(--main-color)]/30 hover:text-[var(--main-color)]',
+              'hover:border-(--main-color)/30 hover:text-(--main-color)',
             )}
           >
             View All
@@ -142,19 +142,19 @@ export default function AchievementSummaryBar({
 
         {/* Progress bar */}
         <div className='space-y-3'>
-          <div className='relative h-4 overflow-hidden rounded-full bg-[var(--background-color)]'>
+          <div className='relative h-4 overflow-hidden rounded-full bg-(--background-color)'>
             <motion.div
-              className='absolute inset-y-0 left-0 rounded-full bg-gradient-to-r from-[var(--secondary-color)] to-[var(--main-color)]'
+              className='absolute inset-y-0 left-0 rounded-full bg-gradient-to-r from-(--secondary-color) to-(--main-color)'
               initial={{ width: 0 }}
               animate={{ width: `${progressPercent}%` }}
               transition={{ duration: 1, delay: 0.5, ease: 'easeOut' }}
             />
           </div>
           <div className='flex items-center justify-between text-sm'>
-            <span className='text-[var(--secondary-color)]/70'>
+            <span className='text-(--secondary-color)/70'>
               Overall Progress
             </span>
-            <span className='font-bold text-[var(--main-color)]'>
+            <span className='font-bold text-(--main-color)'>
               {progressPercent.toFixed(0)}%
             </span>
           </div>

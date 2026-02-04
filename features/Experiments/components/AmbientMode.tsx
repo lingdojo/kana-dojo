@@ -96,14 +96,14 @@ const AmbientMode = () => {
           <span
             lang='ja'
             className={clsx(
-              'text-[var(--main-color)] transition-all duration-300',
+              'text-(--main-color) transition-all duration-300',
               hoveredId === item.id && 'scale-125',
             )}
           >
             {item.kana}
           </span>
           {hoveredId === item.id && (
-            <span className='absolute -bottom-6 left-1/2 -translate-x-1/2 text-sm whitespace-nowrap text-[var(--secondary-color)]'>
+            <span className='absolute -bottom-6 left-1/2 -translate-x-1/2 text-sm whitespace-nowrap text-(--secondary-color)'>
               {item.romanji}
             </span>
           )}

@@ -15,7 +15,7 @@ const BackButton = () => {
         onClick={() => playClick()}
         className={clsx(
           buttonBorderStyles,
-          'border-b-4 border-[var(--border-color)] px-16 py-4 text-[var(--main-color)] hover:border-[var(--main-color)]/80',
+          'border-b-4 border-(--border-color) px-16 py-4 text-(--main-color) hover:border-(--main-color)/80',
           'w-full',
           'flex cursor-pointer items-center justify-center',
         )}

@@ -75,7 +75,7 @@ export default function WordByWordBreakdown({
       <div
         className={cn(
           'flex items-center justify-center gap-2 py-4',
-          'text-[var(--secondary-color)]',
+          'text-(--secondary-color)',
           className,
         )}
       >
@@ -89,7 +89,7 @@ export default function WordByWordBreakdown({
   if (error) {
     return (
       <div
-        className={cn('py-2 text-sm text-[var(--secondary-color)]', className)}
+        className={cn('py-2 text-sm text-(--secondary-color)', className)}
       >
         {error}
       </div>
@@ -99,7 +99,7 @@ export default function WordByWordBreakdown({
   // If no tokens (not Japanese text), show regular text
   if (tokens.length === 0) {
     return (
-      <div className={cn('text-[var(--main-color)]', className)}>{text}</div>
+      <div className={cn('text-(--main-color)', className)}>{text}</div>
     );
   }
 
@@ -118,11 +118,11 @@ export default function WordByWordBreakdown({
               <span
                 className={cn(
                   'inline-block cursor-help',
-                  'hover:bg-[var(--main-color)]/10',
-                  'hover:text-[var(--main-color)]',
+                  'hover:bg-(--main-color)/10',
+                  'hover:text-(--main-color)',
                   'rounded px-1 py-0.5',
                   'transition-colors duration-150',
-                  'text-[var(--main-color)]',
+                  'text-(--main-color)',
                 )}
               >
                 {token.surface}
@@ -132,14 +132,14 @@ export default function WordByWordBreakdown({
               side='top'
               className={cn(
                 'max-w-xs p-3',
-                'border border-[var(--border-color)] bg-[var(--card-color)]',
+                'border border-(--border-color) bg-(--card-color)',
                 'rounded-xl shadow-lg',
               )}
             >
               <div className='flex flex-col gap-2 text-xs'>
                 {/* Surface form (the word itself) */}
                 <div>
-                  <span className='text-base font-bold text-[var(--main-color)]'>
+                  <span className='text-base font-bold text-(--main-color)'>
                     {token.surface}
                   </span>
                 </div>
@@ -147,10 +147,10 @@ export default function WordByWordBreakdown({
                 {/* Reading (hiragana) */}
                 {token.reading && token.reading !== token.surface && (
                   <div className='flex items-baseline gap-2'>
-                    <span className='min-w-[60px] font-medium text-[var(--secondary-color)]'>
+                    <span className='min-w-[60px] font-medium text-(--secondary-color)'>
                       Reading:
                     </span>
-                    <span className='text-[var(--main-color)]'>
+                    <span className='text-(--main-color)'>
                       {token.reading}
                     </span>
                   </div>
@@ -161,10 +161,10 @@ export default function WordByWordBreakdown({
                   token.basicForm !== '*' &&
                   token.basicForm !== token.surface && (
                     <div className='flex items-baseline gap-2'>
-                      <span className='min-w-[60px] font-medium text-[var(--secondary-color)]'>
+                      <span className='min-w-[60px] font-medium text-(--secondary-color)'>
                         Base form:
                       </span>
-                      <span className='text-[var(--main-color)]'>
+                      <span className='text-(--main-color)'>
                         {token.basicForm}
                       </span>
                     </div>
@@ -172,14 +172,14 @@ export default function WordByWordBreakdown({
 
                 {/* Part of speech */}
                 <div className='flex items-baseline gap-2'>
-                  <span className='min-w-[60px] font-medium text-[var(--secondary-color)]'>
+                  <span className='min-w-[60px] font-medium text-(--secondary-color)'>
                     Type:
                   </span>
                   <span
                     className={cn(
                       'rounded-md px-2 py-0.5 text-xs font-medium',
-                      'bg-[var(--main-color)]/10 text-[var(--main-color)]',
-                      'border border-[var(--main-color)]/20',
+                      'bg-(--main-color)/10 text-(--main-color)',
+                      'border border-(--main-color)/20',
                     )}
                   >
                     {token.pos}
@@ -190,10 +190,10 @@ export default function WordByWordBreakdown({
                 {token.posDetail &&
                   token.posDetail !== 'No additional info' && (
                     <div className='flex items-baseline gap-2'>
-                      <span className='min-w-[60px] font-medium text-[var(--secondary-color)]'>
+                      <span className='min-w-[60px] font-medium text-(--secondary-color)'>
                         Details:
                       </span>
-                      <span className='text-xs text-[var(--main-color)]'>
+                      <span className='text-xs text-(--main-color)'>
                         {token.posDetail}
                       </span>
                     </div>
@@ -201,11 +201,11 @@ export default function WordByWordBreakdown({
 
                 {/* Translation (if available) */}
                 {token.translation && (
-                  <div className='flex items-baseline gap-2 border-t border-[var(--border-color)] pt-1'>
-                    <span className='min-w-[60px] font-medium text-[var(--secondary-color)]'>
+                  <div className='flex items-baseline gap-2 border-t border-(--border-color) pt-1'>
+                    <span className='min-w-[60px] font-medium text-(--secondary-color)'>
                       Meaning:
                     </span>
-                    <span className='font-medium text-[var(--main-color)]'>
+                    <span className='font-medium text-(--main-color)'>
                       {token.translation}
                     </span>
                   </div>

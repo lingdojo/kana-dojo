@@ -31,10 +31,10 @@ export const AchievementCard = ({
     <div
       className={clsx(
         'relative p-6',
-        'overflow-hidden rounded-2xl border border-[var(--border-color)]',
+        'overflow-hidden rounded-2xl border border-(--border-color)',
         isUnlocked
-          ? 'bg-[var(--card-color)]'
-          : 'bg-[var(--background-color)] opacity-80',
+          ? 'bg-(--card-color)'
+          : 'bg-(--background-color) opacity-80',
       )}
     >
       {/* Gradient overlay for unlocked achievements */}
@@ -103,8 +103,8 @@ export const AchievementCard = ({
               className={clsx(
                 'mb-1 text-lg font-bold',
                 isUnlocked
-                  ? 'text-[var(--main-color)]'
-                  : 'text-[var(--secondary-color)]',
+                  ? 'text-(--main-color)'
+                  : 'text-(--secondary-color)',
               )}
             >
               {achievement.title}
@@ -114,8 +114,8 @@ export const AchievementCard = ({
               className={clsx(
                 'text-sm leading-relaxed',
                 isUnlocked
-                  ? 'text-[var(--secondary-color)]'
-                  : 'text-[var(--secondary-color)]/70',
+                  ? 'text-(--secondary-color)'
+                  : 'text-(--secondary-color)/70',
               )}
             >
               {achievement.description}
@@ -127,14 +127,14 @@ export const AchievementCard = ({
         {!isUnlocked && progress > 0 && (
           <div className='space-y-2'>
             <div className='flex items-center justify-between'>
-              <span className='text-sm font-medium text-[var(--main-color)]'>
+              <span className='text-sm font-medium text-(--main-color)'>
                 Progress
               </span>
-              <span className='text-sm font-bold text-[var(--main-color)]'>
+              <span className='text-sm font-bold text-(--main-color)'>
                 {Math.round(progress)}%
               </span>
             </div>
-            <div className='h-3 w-full rounded-full bg-[var(--card-color)]'>
+            <div className='h-3 w-full rounded-full bg-(--card-color)'>
               <motion.div
                 initial={{ width: 0 }}
                 animate={{ width: `${progress}%` }}
@@ -150,20 +150,20 @@ export const AchievementCard = ({
         )}
 
         {/* Footer */}
-        <div className='flex items-center justify-between border-t border-[var(--border-color)]/30 pt-2'>
+        <div className='flex items-center justify-between border-t border-(--border-color)/30 pt-2'>
           <div className='flex items-center gap-2'>
             <Trophy
               size={16}
               className={
-                isUnlocked ? 'text-yellow-500' : 'text-[var(--border-color)]'
+                isUnlocked ? 'text-yellow-500' : 'text-(--border-color)'
               }
             />
             <span
               className={clsx(
                 'text-sm font-bold',
                 isUnlocked
-                  ? 'text-[var(--main-color)]'
-                  : 'text-[var(--secondary-color)]',
+                  ? 'text-(--main-color)'
+                  : 'text-(--secondary-color)',
               )}
             >
               {achievement.points} points
@@ -171,7 +171,7 @@ export const AchievementCard = ({
           </div>
 
           {isUnlocked && (
-            <div className='rounded-full bg-[var(--background-color)] px-2 py-1 text-xs text-[var(--secondary-color)]'>
+            <div className='rounded-full bg-(--background-color) px-2 py-1 text-xs text-(--secondary-color)'>
               Unlocked ✓
             </div>
           )}

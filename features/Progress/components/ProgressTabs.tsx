@@ -40,7 +40,7 @@ const ProgressTabs = () => {
         <div
           className={cn(
             'inline-flex flex-wrap justify-center gap-1 rounded-[22px]',
-            'border border-[var(--border-color)] bg-[var(--card-color)] p-1.5',
+            'border border-(--border-color) bg-(--card-color) p-1.5',
           )}
         >
           {viewOptions.map(option => {
@@ -51,7 +51,7 @@ const ProgressTabs = () => {
                 {isSelected && (
                   <motion.div
                     layoutId='activeProgressTab'
-                    className='absolute inset-0 rounded-2xl border-b-10 border-[var(--main-color-accent)] bg-[var(--main-color)]'
+                    className='absolute inset-0 rounded-2xl border-b-10 border-(--main-color-accent) bg-(--main-color)'
                     transition={{
                       type: 'spring',
                       stiffness: 300,
@@ -67,8 +67,8 @@ const ProgressTabs = () => {
                   className={cn(
                     'relative z-10 flex cursor-pointer items-center gap-2 rounded-2xl px-6 pt-3 pb-5 text-sm font-semibold transition-colors duration-300',
                     isSelected
-                      ? 'text-[var(--background-color)]'
-                      : 'text-[var(--secondary-color)] hover:text-[var(--main-color)]',
+                      ? 'text-(--background-color)'
+                      : 'text-(--secondary-color) hover:text-(--main-color)',
                   )}
                 >
                   {option.icon}

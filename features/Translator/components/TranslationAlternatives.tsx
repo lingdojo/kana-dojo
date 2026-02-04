@@ -223,7 +223,7 @@ export default function TranslationAlternatives({
       <div
         className={cn(
           'flex items-center justify-center gap-2 py-4',
-          'text-[var(--secondary-color)]',
+          'text-(--secondary-color)',
           className,
         )}
       >
@@ -240,8 +240,8 @@ export default function TranslationAlternatives({
   return (
     <div className={cn('flex flex-col gap-3', className)}>
       <div className='flex items-center gap-2'>
-        <Lightbulb className='h-4 w-4 text-[var(--secondary-color)]' />
-        <span className='text-xs font-medium tracking-wider text-[var(--secondary-color)] uppercase'>
+        <Lightbulb className='h-4 w-4 text-(--secondary-color)' />
+        <span className='text-xs font-medium tracking-wider text-(--secondary-color) uppercase'>
           Translation Alternatives ({alternatives.length})
         </span>
       </div>
@@ -256,16 +256,16 @@ export default function TranslationAlternatives({
               'border transition-all duration-200',
               'hover:shadow-md',
               selectedIndex === index
-                ? 'border-[var(--main-color)] bg-[var(--main-color)]/10 shadow-md'
-                : 'border-[var(--border-color)] bg-[var(--background-color)] hover:border-[var(--main-color)]/50',
+                ? 'border-(--main-color) bg-(--main-color)/10 shadow-md'
+                : 'border-(--border-color) bg-(--background-color) hover:border-(--main-color)/50',
             )}
           >
             <div className='flex items-start justify-between gap-2'>
               <div className='flex flex-1 items-center gap-2'>
                 {selectedIndex === index ? (
-                  <CheckCircle2 className='h-4 w-4 flex-shrink-0 text-[var(--main-color)]' />
+                  <CheckCircle2 className='h-4 w-4 flex-shrink-0 text-(--main-color)' />
                 ) : (
-                  <Circle className='h-4 w-4 flex-shrink-0 text-[var(--secondary-color)]' />
+                  <Circle className='h-4 w-4 flex-shrink-0 text-(--secondary-color)' />
                 )}
                 <div className='flex flex-1 flex-col gap-1'>
                   <div className='flex flex-wrap items-center gap-2'>
@@ -276,13 +276,13 @@ export default function TranslationAlternatives({
                           ? 'border border-green-500/20 bg-green-500/10 text-green-500'
                           : alt.type === 'literal'
                             ? 'border border-blue-500/20 bg-blue-500/10 text-blue-500'
-                            : 'border border-[var(--main-color)]/20 bg-[var(--main-color)]/10 text-[var(--main-color)]',
+                            : 'border border-(--main-color)/20 bg-(--main-color)/10 text-(--main-color)',
                       )}
                     >
                       {alt.label}
                     </span>
                     {alt.description && (
-                      <span className='text-xs text-[var(--secondary-color)]'>
+                      <span className='text-xs text-(--secondary-color)'>
                         {alt.description}
                       </span>
                     )}
@@ -291,8 +291,8 @@ export default function TranslationAlternatives({
                     className={cn(
                       'text-sm leading-relaxed font-medium',
                       selectedIndex === index
-                        ? 'text-[var(--main-color)]'
-                        : 'text-[var(--main-color)]/80',
+                        ? 'text-(--main-color)'
+                        : 'text-(--main-color)/80',
                     )}
                   >
                     {alt.translation}
@@ -305,7 +305,7 @@ export default function TranslationAlternatives({
       </div>
 
       {alternatives.length === 1 && (
-        <p className='text-xs text-[var(--secondary-color)] italic'>
+        <p className='text-xs text-(--secondary-color) italic'>
           Tip: Translation alternatives are available for common phrases and
           Japanese text with word breakdowns.
         </p>

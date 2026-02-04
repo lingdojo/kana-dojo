@@ -189,8 +189,8 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
             id='main-training-action-bar'
             className={clsx(
               'fixed z-40',
-              'bg-[var(--background-color)]',
-              'border-t-2 border-[var(--border-color)]',
+              'bg-(--background-color)',
+              'border-t-2 border-(--border-color)',
               'px-2 py-3',
             )}
           >
@@ -262,11 +262,11 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
                         'border-b-10',
                         'hover:cursor-pointer',
                         colorScheme === 'secondary' &&
-                          'border-[var(--secondary-color-accent)] bg-[var(--secondary-color)]/90 text-[var(--background-color)]',
+                          'border-(--secondary-color-accent) bg-(--secondary-color)/90 text-(--background-color)',
                         colorScheme === 'primary' &&
                           (isFilled
-                            ? 'border-[var(--main-color-accent)] bg-[var(--main-color)] text-[var(--background-color)]'
-                            : 'cursor-not-allowed bg-[var(--card-color)] text-[var(--border-color)]'),
+                            ? 'border-(--main-color-accent) bg-(--main-color) text-(--background-color)'
+                            : 'cursor-not-allowed bg-(--card-color) text-(--border-color)'),
                       )}
                       onClick={e => {
                         e.currentTarget.blur();
@@ -302,7 +302,7 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
 
       {/* Gauntlet Modal - shows Gauntlet component without route change */}
       {showGauntletModal && (
-        <div className='fixed inset-0 z-[80] bg-[var(--background-color)]'>
+        <div className='fixed inset-0 z-[80] bg-(--background-color)'>
           {currentDojo === 'kana' && (
             <KanaGauntlet onCancel={() => setShowGauntletModal(false)} />
           )}

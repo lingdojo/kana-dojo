@@ -108,16 +108,16 @@ export default function ComparisonTable() {
   return (
     <div
       className={cn(
-        'mt-8 overflow-hidden rounded-2xl border border-[var(--border-color)]',
-        'bg-[var(--card-color)] shadow-lg shadow-black/5',
+        'mt-8 overflow-hidden rounded-2xl border border-(--border-color)',
+        'bg-(--card-color) shadow-lg shadow-black/5',
       )}
     >
       {/* Header */}
-      <div className='border-b border-[var(--border-color)] bg-gradient-to-r from-[var(--card-color)] to-[var(--background-color)] p-4 sm:p-6'>
-        <h2 className='text-xl font-bold text-[var(--main-color)] sm:text-2xl'>
+      <div className='border-b border-(--border-color) bg-gradient-to-r from-(--card-color) to-(--background-color) p-4 sm:p-6'>
+        <h2 className='text-xl font-bold text-(--main-color) sm:text-2xl'>
           KanaDojo vs Other Japanese Translators
         </h2>
-        <p className='mt-1 text-xs text-[var(--secondary-color)] sm:text-sm'>
+        <p className='mt-1 text-xs text-(--secondary-color) sm:text-sm'>
           Compare features to find the best Japanese translation tool for your
           needs
         </p>
@@ -129,28 +129,28 @@ export default function ComparisonTable() {
           <thead>
             <tr
               className={cn(
-                'border-b border-[var(--border-color)]',
-                'bg-[var(--background-color)]',
+                'border-b border-(--border-color)',
+                'bg-(--background-color)',
               )}
             >
-              <th className='px-3 py-3 text-left text-xs font-semibold text-[var(--main-color)] sm:px-6 sm:text-sm'>
+              <th className='px-3 py-3 text-left text-xs font-semibold text-(--main-color) sm:px-6 sm:text-sm'>
                 Feature
               </th>
               <th
                 className={cn(
                   'px-3 py-3 text-center text-xs font-bold sm:px-6 sm:text-sm',
-                  'bg-[var(--main-color)]/10 text-[var(--main-color)]',
+                  'bg-(--main-color)/10 text-(--main-color)',
                 )}
               >
                 KanaDojo
               </th>
-              <th className='px-3 py-3 text-center text-xs font-semibold text-[var(--secondary-color)] sm:px-6 sm:text-sm'>
+              <th className='px-3 py-3 text-center text-xs font-semibold text-(--secondary-color) sm:px-6 sm:text-sm'>
                 Google Translate
               </th>
-              <th className='px-3 py-3 text-center text-xs font-semibold text-[var(--secondary-color)] sm:px-6 sm:text-sm'>
+              <th className='px-3 py-3 text-center text-xs font-semibold text-(--secondary-color) sm:px-6 sm:text-sm'>
                 DeepL
               </th>
-              <th className='px-3 py-3 text-center text-xs font-semibold text-[var(--secondary-color)] sm:px-6 sm:text-sm'>
+              <th className='px-3 py-3 text-center text-xs font-semibold text-(--secondary-color) sm:px-6 sm:text-sm'>
                 Microsoft
               </th>
             </tr>
@@ -160,16 +160,16 @@ export default function ComparisonTable() {
               <tr
                 key={index}
                 className={cn(
-                  'border-b border-[var(--border-color)] transition-colors duration-150',
-                  'hover:bg-[var(--background-color)]',
+                  'border-b border-(--border-color) transition-colors duration-150',
+                  'hover:bg-(--background-color)',
                 )}
               >
-                <td className='px-3 py-3 text-xs text-[var(--secondary-color)] sm:px-6 sm:text-sm'>
+                <td className='px-3 py-3 text-xs text-(--secondary-color) sm:px-6 sm:text-sm'>
                   {feature.name}
                 </td>
                 <td
                   className={cn(
-                    'bg-[var(--main-color)]/5 px-3 py-3 text-center sm:px-6',
+                    'bg-(--main-color)/5 px-3 py-3 text-center sm:px-6',
                   )}
                 >
                   {feature.kanadojo ? <CheckIcon /> : <XIcon />}
@@ -192,11 +192,11 @@ export default function ComparisonTable() {
       {/* Footer note */}
       <div
         className={cn(
-          'border-t border-[var(--border-color)] bg-[var(--main-color)]/5 p-4',
+          'border-t border-(--border-color) bg-(--main-color)/5 p-4',
         )}
       >
-        <p className='text-xs leading-relaxed text-[var(--secondary-color)] sm:text-sm'>
-          <strong className='text-[var(--main-color)]'>
+        <p className='text-xs leading-relaxed text-(--secondary-color) sm:text-sm'>
+          <strong className='text-(--main-color)'>
             When to use each:
           </strong>{' '}
           <span className='font-medium'>KanaDojo</span> is best for Japanese

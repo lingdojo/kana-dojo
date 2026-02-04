@@ -24,7 +24,7 @@ const Banner = () => {
         'flex items-center gap-2 overflow-hidden',
       )}
     >
-      <span className='text-[var(--secondary-color)]'>
+      <span className='text-(--secondary-color)'>
         {subheading.split(' ')[1]}
       </span>
       <span>{subheading.split(' ')[0]}</span>

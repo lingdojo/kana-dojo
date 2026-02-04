@@ -224,11 +224,11 @@ export function KanaChart({
         {characters.map((char, index) => (
           <div
             key={`${char.kana}-${index}`}
-            className='flex flex-col items-center justify-center rounded-lg border border-[var(--border-color)] bg-[var(--card-color)] p-2 transition-colors hover:border-[var(--main-color)]'
+            className='flex flex-col items-center justify-center rounded-lg border border-(--border-color) bg-(--card-color) p-2 transition-colors hover:border-(--main-color)'
             data-testid='kana-chart-cell'
           >
             <span
-              className='text-2xl font-medium text-[var(--main-color)]'
+              className='text-2xl font-medium text-(--main-color)'
               lang='ja'
               data-testid='kana-character'
             >
@@ -236,7 +236,7 @@ export function KanaChart({
             </span>
             {showRomaji && (
               <span
-                className='mt-1 text-xs text-[var(--secondary-color)]'
+                className='mt-1 text-xs text-(--secondary-color)'
                 data-testid='kana-romaji'
               >
                 {char.romaji}

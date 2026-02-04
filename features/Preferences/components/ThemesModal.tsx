@@ -1,6 +1,9 @@
 'use client';
 
-import { applyTheme } from '@/features/Preferences/data/themes';
+import {
+  applyTheme,
+  isPremiumThemeId,
+} from '@/features/Preferences/data/themes';
 import usePreferencesStore from '@/features/Preferences/store/usePreferencesStore';
 import { useClick } from '@/shared/hooks/useAudio';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
@@ -55,6 +58,14 @@ const CHAOS_THEME_GRADIENT = `linear-gradient(
   oklch(66.0% 0.18 25.0 / 1) 100%
 )`;
 
+const getNeonCityWallpaperStyles = (isHovered: boolean) => ({
+  backgroundImage: "url('/wallpapers/neonretrocarcity.jpg')",
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+  backgroundRepeat: 'no-repeat',
+  filter: isHovered ? 'brightness(1)' : 'brightness(0.85)',
+});
+
 const ThemeCard = memo(function ThemeCard({
   theme,
   isSelected,
@@ -63,17 +74,22 @@ const ThemeCard = memo(function ThemeCard({
   const [isHovered, setIsHovered] = useState(false);
   const themeName = theme.id.replaceAll('-', ' ');
   const isChaosTheme = theme.id === '?';
+  const isNeonCityTheme = theme.id === 'neon-city';
+  const isPremiumTheme = isPremiumThemeId(theme.id);
   const background = isChaosTheme
     ? CHAOS_THEME_GRADIENT
     : isHovered
       ? theme.cardColor
       : theme.backgroundColor;
+  const neonCityStyles = isNeonCityTheme
+    ? getNeonCityWallpaperStyles(isHovered)
+    : {};
 
   return (
     <div
       className='cursor-pointer rounded-lg p-3'
       style={{
-        background,
+        ...(isNeonCityTheme ? neonCityStyles : { background }),
         border: isSelected
           ? `1px solid ${theme.mainColor}`
           : `1px solid ${theme.borderColor}`,
@@ -104,15 +120,15 @@ const ThemeCard = memo(function ThemeCard({
         )}
       </div>
       <div
-        className='flex gap-1.5'
+        className='flex min-h-4 gap-1.5'
         style={{ visibility: isChaosTheme ? 'hidden' : 'visible' }}
       >
         <div
-          className='h-4 w-4 rounded-full'
+          className={`h-4 w-4 rounded-full ${isPremiumTheme ? 'hidden' : ''}`}
           style={{ background: theme.mainColor }}
         />
         <div
-          className='h-4 w-4 rounded-full'
+          className={`h-4 w-4 rounded-full ${isPremiumTheme ? 'hidden' : ''}`}
           style={{ background: theme.secondaryColor }}
         />
       </div>

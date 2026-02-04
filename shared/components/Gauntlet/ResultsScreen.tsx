@@ -108,12 +108,12 @@ export default function ResultsScreen({
         <div className='text-center'>
           {isVictory ? (
             <>
-              <Trophy size={80} className='mx-auto text-[var(--main-color)]' />
-              <h1 className='mt-4 text-3xl font-bold text-[var(--main-color)]'>
+              <Trophy size={80} className='mx-auto text-(--main-color)' />
+              <h1 className='mt-4 text-3xl font-bold text-(--main-color)'>
                 Victory!
               </h1>
               {isNewBest && (
-                <div className='mt-2 flex items-center justify-center gap-2 text-[var(--main-color)]'>
+                <div className='mt-2 flex items-center justify-center gap-2 text-(--main-color)'>
                   <Crown size={20} className='fill-current' />
                   <span className='font-medium'>New Personal Best!</span>
                   <Sparkles size={16} />
@@ -124,12 +124,12 @@ export default function ResultsScreen({
             <>
               <Skull
                 size={80}
-                className='mx-auto text-[var(--secondary-color)]'
+                className='mx-auto text-(--secondary-color)'
               />
-              <h1 className='mt-4 text-3xl font-bold text-[var(--secondary-color)]'>
+              <h1 className='mt-4 text-3xl font-bold text-(--secondary-color)'>
                 Game Over
               </h1>
-              <p className='mt-2 text-[var(--muted-color)]'>
+              <p className='mt-2 text-(--muted-color)'>
                 You got{' '}
                 {Math.round(
                   (stats.questionsCompleted / stats.totalQuestions) * 100,
@@ -145,7 +145,7 @@ export default function ResultsScreen({
           <span
             className={clsx(
               'inline-flex items-center gap-2 rounded-full px-4 py-1',
-              'bg-[var(--card-color)] text-sm text-[var(--secondary-color)]',
+              'bg-(--card-color) text-sm text-(--secondary-color)',
             )}
           >
             <span>{difficultyConfig.icon}</span>
@@ -156,57 +156,57 @@ export default function ResultsScreen({
         {/* Stats Grid */}
         <div className='grid grid-cols-2 gap-3'>
           {/* Time */}
-          <div className='rounded-xl bg-[var(--card-color)] p-4'>
-            <div className='flex items-center gap-2 text-[var(--muted-color)]'>
+          <div className='rounded-xl bg-(--card-color) p-4'>
+            <div className='flex items-center gap-2 text-(--muted-color)'>
               <Clock size={18} />
               <span className='text-sm'>Time</span>
             </div>
-            <p className='mt-1 text-2xl font-bold text-[var(--secondary-color)]'>
+            <p className='mt-1 text-2xl font-bold text-(--secondary-color)'>
               {formatTime(stats.totalTimeMs)}
             </p>
             {previousBest && (
-              <p className='text-xs text-[var(--muted-color)]'>
+              <p className='text-xs text-(--muted-color)'>
                 Best: {formatTime(previousBest)}
               </p>
             )}
           </div>
 
           {/* Accuracy */}
-          <div className='rounded-xl bg-[var(--card-color)] p-4'>
-            <div className='flex items-center gap-2 text-[var(--muted-color)]'>
+          <div className='rounded-xl bg-(--card-color) p-4'>
+            <div className='flex items-center gap-2 text-(--muted-color)'>
               <Target size={18} />
               <span className='text-sm'>Accuracy</span>
             </div>
-            <p className='mt-1 text-2xl font-bold text-[var(--secondary-color)]'>
+            <p className='mt-1 text-2xl font-bold text-(--secondary-color)'>
               {Math.round(stats.accuracy * 100)}%
             </p>
-            <p className='text-xs text-[var(--muted-color)]'>
+            <p className='text-xs text-(--muted-color)'>
               {stats.correctAnswers}/{stats.correctAnswers + stats.wrongAnswers}
             </p>
           </div>
 
           {/* Best Streak */}
-          <div className='rounded-xl bg-[var(--card-color)] p-4'>
-            <div className='flex items-center gap-2 text-[var(--muted-color)]'>
+          <div className='rounded-xl bg-(--card-color) p-4'>
+            <div className='flex items-center gap-2 text-(--muted-color)'>
               <Flame size={18} />
               <span className='text-sm'>Best Streak</span>
             </div>
-            <p className='mt-1 text-2xl font-bold text-[var(--secondary-color)]'>
+            <p className='mt-1 text-2xl font-bold text-(--secondary-color)'>
               {stats.bestStreak}
             </p>
           </div>
 
           {/* Lives */}
-          <div className='rounded-xl bg-[var(--card-color)] p-4'>
-            <div className='flex items-center gap-2 text-[var(--muted-color)]'>
+          <div className='rounded-xl bg-(--card-color) p-4'>
+            <div className='flex items-center gap-2 text-(--muted-color)'>
               <Heart size={18} />
               <span className='text-sm'>Lives</span>
             </div>
-            <p className='mt-1 text-2xl font-bold text-[var(--secondary-color)]'>
+            <p className='mt-1 text-2xl font-bold text-(--secondary-color)'>
               {stats.livesRemaining}/{stats.startingLives}
             </p>
             {stats.livesRegenerated > 0 && (
-              <p className='text-xs text-[var(--main-color)]'>
+              <p className='text-xs text-(--main-color)'>
                 +{stats.livesRegenerated} regenerated
               </p>
             )}
@@ -214,71 +214,71 @@ export default function ResultsScreen({
         </div>
 
         {/* Average Time */}
-        <div className='rounded-xl bg-[var(--card-color)] p-4'>
+        <div className='rounded-xl bg-(--card-color) p-4'>
           <div className='flex justify-between text-sm'>
-            <span className='text-[var(--muted-color)]'>Avg per question</span>
-            <span className='text-[var(--secondary-color)]'>
+            <span className='text-(--muted-color)'>Avg per question</span>
+            <span className='text-(--secondary-color)'>
               {formatTime(stats.averageTimePerQuestionMs)}
             </span>
           </div>
           <div className='mt-2 flex justify-between text-sm'>
-            <span className='text-[var(--muted-color)]'>Fastest</span>
-            <span className='text-[var(--main-color)]'>
+            <span className='text-(--muted-color)'>Fastest</span>
+            <span className='text-(--main-color)'>
               {formatTime(stats.fastestAnswerMs)}
             </span>
           </div>
           <div className='mt-1 flex justify-between text-sm'>
-            <span className='text-[var(--muted-color)]'>Slowest</span>
-            <span className='text-[var(--secondary-color)]'>
+            <span className='text-(--muted-color)'>Slowest</span>
+            <span className='text-(--secondary-color)'>
               {formatTime(stats.slowestAnswerMs)}
             </span>
           </div>
         </div>
 
         {/* Character Breakdown (Collapsible) */}
-        <div className='overflow-hidden rounded-xl bg-[var(--card-color)]'>
+        <div className='overflow-hidden rounded-xl bg-(--card-color)'>
           <button
             onClick={() => {
               playClick();
               setShowCharacterBreakdown(!showCharacterBreakdown);
             }}
-            className='flex w-full items-center justify-between p-4 text-left hover:bg-[var(--border-color)]/20'
+            className='flex w-full items-center justify-between p-4 text-left hover:bg-(--border-color)/20'
           >
-            <span className='font-medium text-[var(--secondary-color)]'>
+            <span className='font-medium text-(--secondary-color)'>
               Character Breakdown
             </span>
             {showCharacterBreakdown ? (
-              <ChevronUp size={20} className='text-[var(--muted-color)]' />
+              <ChevronUp size={20} className='text-(--muted-color)' />
             ) : (
-              <ChevronDown size={20} className='text-[var(--muted-color)]' />
+              <ChevronDown size={20} className='text-(--muted-color)' />
             )}
           </button>
 
           {showCharacterBreakdown && (
-            <div className='border-t border-[var(--border-color)] p-4'>
+            <div className='border-t border-(--border-color) p-4'>
               <div className='max-h-60 space-y-2 overflow-y-auto'>
                 {characterBreakdownSorted.map(
                   ({ char, correct, wrong, accuracy }) => (
                     <div
                       key={char}
-                      className='flex items-center justify-between rounded-lg bg-[var(--background-color)] p-2'
+                      className='flex items-center justify-between rounded-lg bg-(--background-color) p-2'
                     >
-                      <span className='text-lg font-medium text-[var(--secondary-color)]'>
+                      <span className='text-lg font-medium text-(--secondary-color)'>
                         {char}
                       </span>
                       <div className='flex items-center gap-3'>
-                        <span className='text-sm text-[var(--main-color)]'>
+                        <span className='text-sm text-(--main-color)'>
                           {correct}✓
                         </span>
-                        <span className='text-sm text-[var(--muted-color)]'>
+                        <span className='text-sm text-(--muted-color)'>
                           {wrong}✗
                         </span>
                         <span
                           className={clsx(
                             'text-sm font-medium',
                             accuracy >= 0.8
-                              ? 'text-[var(--main-color)]'
-                              : 'text-[var(--secondary-color)]',
+                              ? 'text-(--main-color)'
+                              : 'text-(--secondary-color)',
                           )}
                         >
                           {Math.round(accuracy * 100)}%
@@ -302,8 +302,8 @@ export default function ResultsScreen({
               }}
               className={clsx(
                 'flex flex-1 items-center justify-center gap-2 rounded-2xl py-3',
-                'bg-[var(--main-color)] text-[var(--background-color)]',
-                'border-b-4 border-[var(--main-color-accent)]',
+                'bg-(--main-color) text-(--background-color)',
+                'border-b-4 border-(--main-color-accent)',
                 'transition-opacity hover:opacity-90',
               )}
             >
@@ -318,8 +318,8 @@ export default function ResultsScreen({
               }}
               className={clsx(
                 'flex flex-1 items-center justify-center gap-2 rounded-2xl py-3',
-                'bg-[var(--secondary-color)] text-[var(--background-color)]',
-                'border-b-4 border-[var(--secondary-color-accent)]',
+                'bg-(--secondary-color) text-(--background-color)',
+                'border-b-4 border-(--secondary-color-accent)',
                 'transition-opacity hover:opacity-90',
               )}
             >
@@ -332,9 +332,9 @@ export default function ResultsScreen({
               onClick={() => playClick()}
               className={clsx(
                 'flex w-full items-center justify-center gap-2 rounded-2xl py-3',
-                'bg-[var(--card-color)] text-[var(--secondary-color)]',
-                'border-b-4 border-[var(--border-color)]',
-                'transition-colors hover:bg-[var(--border-color)]/50',
+                'bg-(--card-color) text-(--secondary-color)',
+                'border-b-4 border-(--border-color)',
+                'transition-colors hover:bg-(--border-color)/50',
               )}
             >
               <ArrowLeft size={20} />

@@ -235,7 +235,7 @@ const ActiveTile = memo(
           tileBaseStyles,
           'cursor-pointer transition-colors',
           'active:mb-[10px] active:translate-y-[10px] active:border-b-0',
-          'border-[var(--secondary-color-accent)] bg-[var(--secondary-color)] text-[var(--background-color)]',
+          'border-(--secondary-color-accent) bg-(--secondary-color) text-(--background-color)',
           isDisabled && 'cursor-not-allowed opacity-50',
           isLarge ? 'text-3xl sm:text-4xl' : 'text-xl sm:text-2xl',
         )}
@@ -257,7 +257,7 @@ const BlankTile = memo(
       <div
         className={clsx(
           tileBaseStyles,
-          'border-transparent bg-[var(--border-color)]/30',
+          'border-transparent bg-(--border-color)/30',
           'select-none',
           isLarge ? 'text-3xl sm:text-4xl' : 'text-xl sm:text-2xl',
         )}
@@ -295,7 +295,7 @@ const DemoProgressBar = ({
 
   return (
     <div className='relative flex w-full flex-col items-center'>
-      <div className='relative h-4 w-full overflow-hidden rounded-full bg-[var(--card-color)]'>
+      <div className='relative h-4 w-full overflow-hidden rounded-full bg-(--card-color)'>
         <div
           className='relative z-10 h-4 rounded-full transition-all duration-500'
           style={{
@@ -307,7 +307,7 @@ const DemoProgressBar = ({
         {[25, 50, 75].map(cp => (
           <div
             key={cp}
-            className='absolute top-0 z-0 h-4 w-0 bg-[var(--border-color)]'
+            className='absolute top-0 z-0 h-4 w-0 bg-(--border-color)'
             style={{
               left: `calc(${cp}% - 2px)`,
             }}
@@ -561,7 +561,7 @@ const DemoGame = () => {
             <Link href='/' onClick={handleExit}>
               <X
                 size={32}
-                className='text-[var(--border-color)] duration-250 hover:scale-125 hover:cursor-pointer hover:text-[var(--secondary-color)]'
+                className='text-(--border-color) duration-250 hover:scale-125 hover:cursor-pointer hover:text-(--secondary-color)'
               />
             </Link>
             <div className='flex-1'>
@@ -576,8 +576,8 @@ const DemoGame = () => {
             {/* Game mode indicator */}
             {SHOW_GAME_MODE_NAME && (
               <p className='flex w-1/2 items-center justify-start gap-1 text-lg sm:gap-2 sm:pl-1 md:text-xl'>
-                <MousePointerClick className='text-[var(--main-color)]' />
-                <span className='text-[var(--secondary-color)]'>demo</span>
+                <MousePointerClick className='text-(--main-color)' />
+                <span className='text-(--secondary-color)'>demo</span>
               </p>
             )}
 
@@ -585,7 +585,7 @@ const DemoGame = () => {
             {SHOW_STATS_LINE && (
               <div
                 className={clsx(
-                  'flex flex-row items-center justify-end gap-2.5 py-2 text-[var(--secondary-color)] sm:gap-3',
+                  'flex flex-row items-center justify-end gap-2.5 py-2 text-(--secondary-color) sm:gap-3',
                   SHOW_GAME_MODE_NAME ? 'w-1/2' : 'w-full',
                 )}
               >
@@ -630,7 +630,7 @@ const DemoGame = () => {
             <div className='flex w-full flex-col items-center'>
               <div
                 className={clsx(
-                  'flex w-full items-center border-b-2 border-[var(--border-color)] px-2 pb-2 md:w-3/4 lg:w-2/3 xl:w-1/2',
+                  'flex w-full items-center border-b-2 border-(--border-color) px-2 pb-2 md:w-3/4 lg:w-2/3 xl:w-1/2',
                   isLargeTile ? 'min-h-[5.5rem]' : 'min-h-[5rem]',
                 )}
               >

@@ -87,7 +87,7 @@ const MobileBottomBar = () => {
   const baseIconClasses = clsx(
     'hover:cursor-pointer ',
     'active:scale-100 active:duration-225',
-    'text-[var(--secondary-color)] hover:text-[var(--main-color)]',
+    'text-(--secondary-color) hover:text-(--main-color)',
   );
 
   const infoItems = [
@@ -109,7 +109,7 @@ const MobileBottomBar = () => {
       id='main-bottom-bar'
       className={clsx(
         'fixed right-0 bottom-0 left-0 z-50 max-lg:hidden',
-        'border-t-1 border-[var(--border-color)] bg-[var(--background-color)]',
+        'border-t-1 border-(--border-color) bg-(--background-color)',
         'flex items-center justify-between px-4 py-1',
         expandDecorations && 'hidden',
       )}
@@ -154,7 +154,7 @@ const MobileBottomBar = () => {
                 />
               )}
               {idx === 1 && socialLinks.length > 2 && (
-                <span className='text-sm text-[var(--secondary-color)] select-none'>
+                <span className='text-sm text-(--secondary-color) select-none'>
                   ~
                 </span>
               )}
@@ -163,14 +163,14 @@ const MobileBottomBar = () => {
         })}
       </div>
 
-      <div className='flex items-center gap-2 text-xs text-[var(--secondary-color)]'>
+      <div className='flex items-center gap-2 text-xs text-(--secondary-color)'>
         <span
-          className='hidden text-xs text-[var(--secondary-color)] hover:cursor-pointer hover:text-[var(--main-color)] lg:inline-block'
+          className='hidden text-xs text-(--secondary-color) hover:cursor-pointer hover:text-(--main-color) lg:inline-block'
           onClick={() => handleClick('https://ko-fi.com/kanadojo')}
         >
           made with ❤️ by the community
         </span>
-        <span className='hidden text-sm text-[var(--secondary-color)] select-none lg:inline-block'>
+        <span className='hidden text-sm text-(--secondary-color) select-none lg:inline-block'>
           ~
         </span>
         {infoItems.map((item, idx) => {
@@ -188,7 +188,7 @@ const MobileBottomBar = () => {
             <React.Fragment key={idx}>
               {content}
               {idx < infoItems.length - 1 && (
-                <span className='text-sm text-[var(--secondary-color)] select-none'>
+                <span className='text-sm text-(--secondary-color) select-none'>
                   ~
                 </span>
               )}

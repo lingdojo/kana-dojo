@@ -116,31 +116,31 @@ export default function KanaWave() {
     <div className='flex min-h-[85vh] flex-1 flex-col gap-8'>
       <div className='flex items-center justify-between'>
         <div>
-          <h1 className='flex items-center gap-2 text-3xl font-bold text-[var(--main-color)]'>
+          <h1 className='flex items-center gap-2 text-3xl font-bold text-(--main-color)'>
             <Music className='text-pink-400' /> Kana Wave
           </h1>
-          <p className='text-[var(--secondary-color)]'>
+          <p className='text-(--secondary-color)'>
             Catch the kana in the target zone!
           </p>
         </div>
         <div className='flex flex-col items-end'>
-          <span className='text-sm tracking-widest text-[var(--secondary-color)] uppercase'>
+          <span className='text-sm tracking-widest text-(--secondary-color) uppercase'>
             Score
           </span>
-          <span className='font-mono text-4xl font-black text-[var(--main-color)]'>
+          <span className='font-mono text-4xl font-black text-(--main-color)'>
             {score.toString().padStart(6, '0')}
           </span>
         </div>
       </div>
 
       {!isPlaying ? (
-        <div className='flex flex-1 flex-col items-center justify-center gap-6 rounded-[3rem] border-2 border-dashed border-[var(--border-color)] bg-[var(--card-color)]/50'>
-          <Activity size={64} className='text-[var(--main-color)] opacity-20' />
+        <div className='flex flex-1 flex-col items-center justify-center gap-6 rounded-[3rem] border-2 border-dashed border-(--border-color) bg-(--card-color)/50'>
+          <Activity size={64} className='text-(--main-color) opacity-20' />
           <div className='space-y-2 text-center'>
-            <p className='text-[var(--secondary-color)]'>
+            <p className='text-(--secondary-color)'>
               Use Arrow Keys to switch lanes and Space to hit!
             </p>
-            <p className='text-xs text-[var(--secondary-color)] opacity-60'>
+            <p className='text-xs text-(--secondary-color) opacity-60'>
               Wait for characters to reach the target line on the left.
             </p>
           </div>
@@ -149,21 +149,21 @@ export default function KanaWave() {
               playClick();
               setIsPlaying(true);
             }}
-            className='flex items-center gap-3 rounded-2xl bg-[var(--main-color)] px-12 py-5 text-xl font-bold text-white shadow-lg transition-transform hover:scale-105 active:scale-95'
+            className='flex items-center gap-3 rounded-2xl bg-(--main-color) px-12 py-5 text-xl font-bold text-white shadow-lg transition-transform hover:scale-105 active:scale-95'
           >
             <Play fill='currentColor' /> START SESSION
           </button>
         </div>
       ) : (
-        <div className='relative flex-1 overflow-hidden rounded-[3rem] border border-[var(--border-color)] bg-[var(--card-color)] shadow-2xl'>
+        <div className='relative flex-1 overflow-hidden rounded-[3rem] border border-(--border-color) bg-(--card-color) shadow-2xl'>
           {/* LANES */}
           <div className='absolute inset-0 flex flex-col'>
             {LANES.map(l => (
               <div
                 key={l}
                 className={clsx(
-                  'relative flex flex-1 items-center border-b border-[var(--border-color)]/30 transition-colors duration-300',
-                  activeLane === l ? 'bg-[var(--main-color)]/[0.03]' : '',
+                  'relative flex flex-1 items-center border-b border-(--border-color)/30 transition-colors duration-300',
+                  activeLane === l ? 'bg-(--main-color)/[0.03]' : '',
                 )}
                 onClick={() => handleLaneChange(l)}
               >
@@ -171,7 +171,7 @@ export default function KanaWave() {
                 {activeLane === l && (
                   <motion.div
                     layoutId='lane-indicator'
-                    className='absolute left-6 h-12 w-1.5 rounded-full bg-[var(--main-color)] shadow-[0_0_15px_var(--main-color)]'
+                    className='absolute left-6 h-12 w-1.5 rounded-full bg-(--main-color) shadow-[0_0_15px_var(--main-color)]'
                   />
                 )}
               </div>
@@ -179,14 +179,14 @@ export default function KanaWave() {
           </div>
 
           {/* Target Zone */}
-          <div className='pointer-events-none absolute inset-y-0 left-[15%] w-20 border-l-2 border-dashed border-[var(--main-color)]/40 bg-gradient-to-r from-[var(--main-color)]/10 to-transparent' />
+          <div className='pointer-events-none absolute inset-y-0 left-[15%] w-20 border-l-2 border-dashed border-(--main-color)/40 bg-gradient-to-r from-(--main-color)/10 to-transparent' />
 
           {/* Moving Kanas */}
           <AnimatePresence>
             {waveKanas.map(k => (
               <motion.div
                 key={k.id}
-                className='absolute flex flex-col items-center justify-center rounded-2xl border border-[var(--border-color)] bg-[var(--card-color)] p-3 shadow-sm'
+                className='absolute flex flex-col items-center justify-center rounded-2xl border border-(--border-color) bg-(--card-color) p-3 shadow-sm'
                 style={{
                   left: `${k.x}%`,
                   top: `${k.lane * 33.33 + 16.66}%`,
@@ -196,10 +196,10 @@ export default function KanaWave() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 1.5 }}
               >
-                <span className='text-2xl font-bold text-[var(--main-color)]'>
+                <span className='text-2xl font-bold text-(--main-color)'>
                   {k.kana}
                 </span>
-                <span className='font-mono text-[10px] text-[var(--secondary-color)] uppercase'>
+                <span className='font-mono text-[10px] text-(--secondary-color) uppercase'>
                   {k.romaji}
                 </span>
               </motion.div>
@@ -210,7 +210,7 @@ export default function KanaWave() {
           <div className='absolute bottom-8 left-1/2 flex -translate-x-1/2 items-center gap-4'>
             <button
               onPointerDown={checkHit}
-              className='h-20 w-40 rounded-full bg-[var(--main-color)] text-xl font-black text-white shadow-lg transition-transform active:scale-95'
+              className='h-20 w-40 rounded-full bg-(--main-color) text-xl font-black text-white shadow-lg transition-transform active:scale-95'
             >
               HIT!
             </button>

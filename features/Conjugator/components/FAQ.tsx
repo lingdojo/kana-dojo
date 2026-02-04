@@ -57,7 +57,7 @@ export default function FAQ({
     <section
       className={cn(
         'mt-8 rounded-2xl',
-        'border border-[var(--border-color)] bg-[var(--card-color)]',
+        'border border-(--border-color) bg-(--card-color)',
         'p-6 sm:p-8',
       )}
       aria-labelledby='faq-heading'
@@ -68,7 +68,7 @@ export default function FAQ({
       <div className='mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between'>
         <h2
           id='faq-heading'
-          className='text-xl font-bold text-[var(--main-color)] sm:text-2xl'
+          className='text-xl font-bold text-(--main-color) sm:text-2xl'
         >
           Frequently Asked Questions
         </h2>
@@ -79,11 +79,11 @@ export default function FAQ({
             onClick={expandAll}
             className={cn(
               'rounded-lg px-3 py-1.5 text-xs font-medium',
-              'border border-[var(--border-color)]',
-              'text-[var(--secondary-color)]',
-              'hover:bg-[var(--border-color)]/50',
+              'border border-(--border-color)',
+              'text-(--secondary-color)',
+              'hover:bg-(--border-color)/50',
               'transition-colors duration-200',
-              'focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--main-color)]',
+              'focus:outline-none focus-visible:ring-2 focus-visible:ring-(--main-color)',
             )}
             aria-label='Expand all FAQ items'
           >
@@ -93,11 +93,11 @@ export default function FAQ({
             onClick={collapseAll}
             className={cn(
               'rounded-lg px-3 py-1.5 text-xs font-medium',
-              'border border-[var(--border-color)]',
-              'text-[var(--secondary-color)]',
-              'hover:bg-[var(--border-color)]/50',
+              'border border-(--border-color)',
+              'text-(--secondary-color)',
+              'hover:bg-(--border-color)/50',
               'transition-colors duration-200',
-              'focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--main-color)]',
+              'focus:outline-none focus-visible:ring-2 focus-visible:ring-(--main-color)',
             )}
             aria-label='Collapse all FAQ items'
           >
@@ -126,11 +126,11 @@ export default function FAQ({
             onClick={() => setShowAll(!showAll)}
             className={cn(
               'rounded-lg px-4 py-2 text-sm font-medium',
-              'border border-[var(--main-color)]/30',
-              'text-[var(--main-color)]',
-              'hover:bg-[var(--main-color)]/10',
+              'border border-(--main-color)/30',
+              'text-(--main-color)',
+              'hover:bg-(--main-color)/10',
               'transition-colors duration-200',
-              'focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--main-color)]',
+              'focus:outline-none focus-visible:ring-2 focus-visible:ring-(--main-color)',
             )}
             aria-expanded={showAll}
           >
@@ -164,10 +164,10 @@ function FAQItemComponent({
     <div
       className={cn(
         'rounded-xl',
-        'border border-[var(--border-color)]',
+        'border border-(--border-color)',
         'overflow-hidden',
         'transition-colors duration-200',
-        isExpanded && 'bg-[var(--background-color)]',
+        isExpanded && 'bg-(--background-color)',
       )}
       itemScope
       itemProp='mainEntity'
@@ -180,23 +180,23 @@ function FAQItemComponent({
         className={cn(
           'flex w-full items-center justify-between gap-4 p-4',
           'text-left',
-          'hover:bg-[var(--background-color)]',
+          'hover:bg-(--background-color)',
           'transition-colors duration-200',
           'cursor-pointer',
-          'focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--main-color)] focus-visible:ring-inset',
+          'focus:outline-none focus-visible:ring-2 focus-visible:ring-(--main-color) focus-visible:ring-inset',
         )}
         aria-expanded={isExpanded}
         aria-controls={answerId}
       >
         <h3
-          className='text-sm font-medium text-[var(--main-color)] sm:text-base'
+          className='text-sm font-medium text-(--main-color) sm:text-base'
           itemProp='name'
         >
           {item.question}
         </h3>
         <ChevronDown
           className={cn(
-            'h-5 w-5 shrink-0 text-[var(--secondary-color)]',
+            'h-5 w-5 shrink-0 text-(--secondary-color)',
             'transition-transform duration-200',
             isExpanded && 'rotate-180',
           )}
@@ -208,7 +208,7 @@ function FAQItemComponent({
       {isExpanded && (
         <div
           id={answerId}
-          className='border-t border-[var(--border-color)] px-4 py-4'
+          className='border-t border-(--border-color) px-4 py-4'
           itemScope
           itemProp='acceptedAnswer'
           itemType='https://schema.org/Answer'
@@ -216,7 +216,7 @@ function FAQItemComponent({
           aria-label={`Answer to: ${item.question}`}
         >
           <p
-            className='text-sm leading-relaxed text-[var(--secondary-color)]'
+            className='text-sm leading-relaxed text-(--secondary-color)'
             itemProp='text'
           >
             {item.answer}

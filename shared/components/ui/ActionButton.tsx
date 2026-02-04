@@ -2,18 +2,19 @@
 import * as React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/shared/lib/utils';
+import { useThemePreferences } from '@/features/Preferences';
 
 const actionButtonVariants = cva(
   'p-2 text-lg w-full hover:cursor-pointer flex flex-row justify-center items-center gap-2 ',
   {
     variants: {
       colorScheme: {
-        main: 'bg-[var(--main-color)] text-[var(--background-color)]',
-        secondary: 'bg-[var(--secondary-color)] text-[var(--background-color)]',
+        main: 'bg-(--main-color) text-(--background-color)',
+        secondary: 'bg-(--secondary-color) text-(--background-color)',
       },
       borderColorScheme: {
-        main: 'border-[var(--main-color-accent)]',
-        secondary: 'border-[var(--secondary-color-accent)]',
+        main: 'border-(--main-color-accent)',
+        secondary: 'border-(--secondary-color-accent)',
       },
       borderRadius: {
         sm: 'rounded-sm',
@@ -73,9 +74,11 @@ const ActionButton = React.forwardRef<HTMLButtonElement, ActionButtonProps>(
     },
     ref,
   ) => {
+    const { isGlassMode } = useThemePreferences();
+
     const gradientClass = gradientReversed
-      ? 'bg-gradient-to-r from-[var(--secondary-color)] to-[var(--main-color)]'
-      : 'bg-gradient-to-r from-[var(--main-color)] to-[var(--secondary-color)]';
+      ? 'bg-gradient-to-r from-(--secondary-color) to-(--main-color)'
+      : 'bg-gradient-to-r from-(--main-color) to-(--secondary-color)';
 
     // When gradient is enabled, match border color to the left side of the gradient
     const effectiveBorderColorScheme = gradient
@@ -95,7 +98,9 @@ const ActionButton = React.forwardRef<HTMLButtonElement, ActionButtonProps>(
             borderBottomThickness,
             className,
           }),
-          gradient && `${gradientClass} text-[var(--background-color)]`,
+          gradient && `${gradientClass} text-(--background-color)`,
+          isGlassMode &&
+            'opacity-80 transition-opacity duration-200 hover:opacity-90',
         )}
         ref={ref}
         {...props}

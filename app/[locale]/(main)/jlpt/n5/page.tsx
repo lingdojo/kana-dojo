@@ -68,17 +68,17 @@ export default async function JLPTN5Page({
             { name: 'N5', url: `/${locale}/jlpt/n5` },
           ]}
         />
-        <h1 className='mb-4 text-center text-4xl font-bold text-[var(--main-color)]'>
+        <h1 className='mb-4 text-center text-4xl font-bold text-(--main-color)'>
           JLPT N5 Study Guide
         </h1>
-        <p className='mb-8 text-center text-xl text-[var(--secondary-color)]'>
+        <p className='mb-8 text-center text-xl text-(--secondary-color)'>
           Everything you need to pass the JLPT N5 exam
         </p>
 
-        <div className='space-y-8 text-[var(--secondary-color)]'>
+        <div className='space-y-8 text-(--secondary-color)'>
           {/* Overview */}
-          <section className='rounded-lg border-2 border-[var(--border-color)] bg-[var(--card-color)] p-6'>
-            <h2 className='mb-4 text-2xl font-semibold text-[var(--main-color)]'>
+          <section className='rounded-lg border-2 border-(--border-color) bg-(--card-color) p-6'>
+            <h2 className='mb-4 text-2xl font-semibold text-(--main-color)'>
               What is JLPT N5?
             </h2>
             <p className='mb-4'>
@@ -88,7 +88,7 @@ export default async function JLPTN5Page({
             </p>
             <div className='grid gap-4 md:grid-cols-2'>
               <div>
-                <h3 className='mb-2 font-semibold text-[var(--main-color)]'>
+                <h3 className='mb-2 font-semibold text-(--main-color)'>
                   What You Need to Know:
                 </h3>
                 <ul className='list-disc space-y-1 pl-6'>
@@ -99,7 +99,7 @@ export default async function JLPTN5Page({
                 </ul>
               </div>
               <div>
-                <h3 className='mb-2 font-semibold text-[var(--main-color)]'>
+                <h3 className='mb-2 font-semibold text-(--main-color)'>
                   Study Time Needed:
                 </h3>
                 <ul className='list-disc space-y-1 pl-6'>
@@ -113,15 +113,15 @@ export default async function JLPTN5Page({
 
           {/* Kanji Section */}
           <section>
-            <h2 className='mb-4 text-3xl font-semibold text-[var(--main-color)]'>
+            <h2 className='mb-4 text-3xl font-semibold text-(--main-color)'>
               JLPT N5 Kanji (~80 Characters)
             </h2>
             <p className='mb-4'>
               Master the fundamental 80 Kanji characters required for N5. These
               form the foundation for all future Japanese study.
             </p>
-            <div className='rounded-lg border-2 border-[var(--border-color)] bg-[var(--card-color)] p-6'>
-              <h3 className='mb-3 text-xl font-semibold text-[var(--main-color)]'>
+            <div className='rounded-lg border-2 border-(--border-color) bg-(--card-color) p-6'>
+              <h3 className='mb-3 text-xl font-semibold text-(--main-color)'>
                 Essential Kanji Groups:
               </h3>
               <ul className='mb-4 space-y-2'>
@@ -161,7 +161,7 @@ export default async function JLPTN5Page({
               </ul>
               <Link
                 href={`/${locale}/kanji`}
-                className='inline-block rounded-lg bg-[var(--main-color)] px-6 py-3 font-semibold text-[var(--background-color)] transition-all hover:opacity-90'
+                className='inline-block rounded-lg bg-(--main-color) px-6 py-3 font-semibold text-(--background-color) transition-all hover:opacity-90'
               >
                 Practice N5 Kanji Now →
               </Link>
@@ -170,7 +170,7 @@ export default async function JLPTN5Page({
             <div className='mt-4'>
               <Link
                 href={`/${locale}/academy/jlpt-n5-kanji-list`}
-                className='text-[var(--main-color)] underline hover:opacity-80'
+                className='text-(--main-color) underline hover:opacity-80'
               >
                 📖 Read Complete N5 Kanji Guide with All Characters →
               </Link>
@@ -179,15 +179,15 @@ export default async function JLPTN5Page({
 
           {/* Vocabulary Section */}
           <section>
-            <h2 className='mb-4 text-3xl font-semibold text-[var(--main-color)]'>
+            <h2 className='mb-4 text-3xl font-semibold text-(--main-color)'>
               JLPT N5 Vocabulary (~800 Words)
             </h2>
             <p className='mb-4'>
               Build a foundation of essential Japanese vocabulary for everyday
               conversations and basic reading.
             </p>
-            <div className='rounded-lg border-2 border-[var(--border-color)] bg-[var(--card-color)] p-6'>
-              <h3 className='mb-3 text-xl font-semibold text-[var(--main-color)]'>
+            <div className='rounded-lg border-2 border-(--border-color) bg-(--card-color) p-6'>
+              <h3 className='mb-3 text-xl font-semibold text-(--main-color)'>
                 Key Vocabulary Categories:
               </h3>
               <div className='mb-4 grid gap-3 md:grid-cols-2'>
@@ -214,7 +214,7 @@ export default async function JLPTN5Page({
               </div>
               <Link
                 href={`/${locale}/vocabulary`}
-                className='inline-block rounded-lg bg-[var(--main-color)] px-6 py-3 font-semibold text-[var(--background-color)] transition-all hover:opacity-90'
+                className='inline-block rounded-lg bg-(--main-color) px-6 py-3 font-semibold text-(--background-color) transition-all hover:opacity-90'
               >
                 Practice N5 Vocabulary Now →
               </Link>
@@ -223,12 +223,12 @@ export default async function JLPTN5Page({
 
           {/* Study Plan */}
           <section>
-            <h2 className='mb-4 text-3xl font-semibold text-[var(--main-color)]'>
+            <h2 className='mb-4 text-3xl font-semibold text-(--main-color)'>
               3-Month Study Plan
             </h2>
             <div className='space-y-4'>
-              <div className='rounded-lg border-l-4 border-[var(--main-color)] bg-[var(--card-color)] p-4'>
-                <h3 className='mb-2 font-semibold text-[var(--main-color)]'>
+              <div className='rounded-lg border-l-4 border-(--main-color) bg-(--card-color) p-4'>
+                <h3 className='mb-2 font-semibold text-(--main-color)'>
                   Month 1: Foundation
                 </h3>
                 <ul className='list-disc space-y-1 pl-6'>
@@ -239,8 +239,8 @@ export default async function JLPTN5Page({
                 </ul>
               </div>
 
-              <div className='rounded-lg border-l-4 border-[var(--main-color)] bg-[var(--card-color)] p-4'>
-                <h3 className='mb-2 font-semibold text-[var(--main-color)]'>
+              <div className='rounded-lg border-l-4 border-(--main-color) bg-(--card-color) p-4'>
+                <h3 className='mb-2 font-semibold text-(--main-color)'>
                   Month 2: Building
                 </h3>
                 <ul className='list-disc space-y-1 pl-6'>
@@ -251,8 +251,8 @@ export default async function JLPTN5Page({
                 </ul>
               </div>
 
-              <div className='rounded-lg border-l-4 border-[var(--main-color)] bg-[var(--card-color)] p-4'>
-                <h3 className='mb-2 font-semibold text-[var(--main-color)]'>
+              <div className='rounded-lg border-l-4 border-(--main-color) bg-(--card-color) p-4'>
+                <h3 className='mb-2 font-semibold text-(--main-color)'>
                   Month 3: Mastery
                 </h3>
                 <ul className='list-disc space-y-1 pl-6'>
@@ -267,12 +267,12 @@ export default async function JLPTN5Page({
 
           {/* Exam Tips */}
           <section>
-            <h2 className='mb-4 text-3xl font-semibold text-[var(--main-color)]'>
+            <h2 className='mb-4 text-3xl font-semibold text-(--main-color)'>
               N5 Exam Tips
             </h2>
             <div className='grid gap-4 md:grid-cols-2'>
-              <div className='rounded-lg bg-[var(--card-color)] p-4'>
-                <h3 className='mb-2 font-semibold text-[var(--main-color)]'>
+              <div className='rounded-lg bg-(--card-color) p-4'>
+                <h3 className='mb-2 font-semibold text-(--main-color)'>
                   ✅ Do This:
                 </h3>
                 <ul className='list-disc space-y-1 pl-6'>
@@ -284,8 +284,8 @@ export default async function JLPTN5Page({
                 </ul>
               </div>
 
-              <div className='rounded-lg bg-[var(--card-color)] p-4'>
-                <h3 className='mb-2 font-semibold text-[var(--main-color)]'>
+              <div className='rounded-lg bg-(--card-color) p-4'>
+                <h3 className='mb-2 font-semibold text-(--main-color)'>
                   ❌ Avoid This:
                 </h3>
                 <ul className='list-disc space-y-1 pl-6'>
@@ -300,7 +300,7 @@ export default async function JLPTN5Page({
           </section>
 
           {/* Start Now CTA */}
-          <section className='rounded-lg bg-[var(--main-color)] p-8 text-center text-[var(--background-color)]'>
+          <section className='rounded-lg bg-(--main-color) p-8 text-center text-(--background-color)'>
             <h2 className='mb-4 text-3xl font-bold'>
               Start Your N5 Preparation Today
             </h2>
@@ -311,19 +311,19 @@ export default async function JLPTN5Page({
             <div className='flex flex-col gap-4 sm:flex-row sm:justify-center'>
               <Link
                 href={`/${locale}/kana`}
-                className='rounded-lg border-2 border-[var(--background-color)] bg-[var(--background-color)] px-6 py-3 font-semibold text-[var(--main-color)] transition-all hover:opacity-90'
+                className='rounded-lg border-2 border-(--background-color) bg-(--background-color) px-6 py-3 font-semibold text-(--main-color) transition-all hover:opacity-90'
               >
                 Start with Kana
               </Link>
               <Link
                 href={`/${locale}/kanji`}
-                className='rounded-lg border-2 border-[var(--background-color)] px-6 py-3 font-semibold transition-all hover:bg-[var(--background-color)] hover:text-[var(--main-color)]'
+                className='rounded-lg border-2 border-(--background-color) px-6 py-3 font-semibold transition-all hover:bg-(--background-color) hover:text-(--main-color)'
               >
                 Practice N5 Kanji
               </Link>
               <Link
                 href={`/${locale}/vocabulary`}
-                className='rounded-lg border-2 border-[var(--background-color)] px-6 py-3 font-semibold transition-all hover:bg-[var(--background-color)] hover:text-[var(--main-color)]'
+                className='rounded-lg border-2 border-(--background-color) px-6 py-3 font-semibold transition-all hover:bg-(--background-color) hover:text-(--main-color)'
               >
                 Learn N5 Vocabulary
               </Link>
