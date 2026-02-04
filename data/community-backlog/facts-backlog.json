@@ -786,22 +786,25 @@
   {
     "id": 111,
     "fact": "There's a Japanese practice 'ohitori-sama' (お一人様) celebrating doing things alone - solo dining, traveling, and living.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 112,
     "fact": "Japan produces watermelons shaped like hearts and pyramids using special molds - purely for decorative gifting purposes.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 113,
     "fact": "The word 'jibun' (自分) means 'self' but is also used to mean 'I' in many dialects - showing how identity is tied to selfhood.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 114,
     "fact": "Japan has an 'everlasting love' museum in Hokkaido dedicated to sculptor Takeichi Nishimura's 60-year love for his wife.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 115,
