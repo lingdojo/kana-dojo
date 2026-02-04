@@ -1,5 +1,16 @@
 [
   {
+  "question": "What is the name of the traditional Japanese theater featuring puppets?",
+  "difficulty": "hard",
+  "answers": [
+    "Bunraku",
+    "Noh",
+    "Kabuki",
+    "Kyogen"
+  ],
+    "correctIndex": 0
+  },
+  {
     "question": "Which Japanese company is known for making the character Hello Kitty?",
     "difficulty": "hard",
     "answers": ["Sanrio", "Ghibli", "Capcom", "Namco"],
