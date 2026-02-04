@@ -177,12 +177,13 @@
   {
     "id": 34,
     "text": "\"〜ように\" can express purpose, like \"in order to\" or \"so that\".",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 35,
     "text": "\"〜ために\" also means \"for the sake of\" and explains purpose or reason.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 36,
