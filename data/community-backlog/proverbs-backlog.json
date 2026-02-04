@@ -1077,7 +1077,8 @@
     "romaji": "Yanagi ni kaze",
     "english": "Wind in the willow",
     "meaning": "Stay flexible and let problems pass",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 116,
@@ -1094,7 +1095,8 @@
     "romaji": "Yakeishi ni mizu",
     "english": "Water on a hot stone",
     "meaning": "A futile effort",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 118,
@@ -1147,7 +1149,7 @@
     "romaji": "Koukai saki ni tatazu",
     "english": "Regret does not stand before",
     "meaning": "It's too late for regrets",
-    "issued": false
+    "issued": true
   },
   {
     "id": 124,
