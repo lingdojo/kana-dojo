@@ -730,32 +730,37 @@
   {
     "id": 101,
     "fact": "The Japanese concept 'meibutsu' (名物) refers to famous local products - every region has foods and crafts found nowhere else.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 102,
     "fact": "Japan has professional apology agencies where you can hire someone to apologize on your behalf for serious personal matters.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 103,
     "fact": "There's a Japanese word 'kenkyo' (謙虚) for humility so deep it rejects praise - considered one of the highest virtues.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 104,
     "fact": "Japan has train 'pushers' (oshiya) whose job is to physically push passengers into overcrowded trains during rush hour.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 105,
     "fact": "The word 'mendokusai' (面倒くさい) describes something too troublesome to deal with - a very commonly used expression.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 106,
     "fact": "Japan has 'rent-a-family' services where you can hire actors to play relatives at weddings or to visit you as fake parents.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 107,
