@@ -982,7 +982,8 @@
     "romaji": "Issun saki wa yami",
     "english": "An inch ahead is darkness",
     "meaning": "The future is uncertain",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 105,
@@ -1026,7 +1027,7 @@
     "romaji": "Doku wo kurawaba sara made",
     "english": "If you eat poison, eat the plate too",
     "meaning": "If you must do it, go all the way",
-    "issued": false
+    "issued": true
   },
   {
     "id": 110,
