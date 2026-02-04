@@ -616,7 +616,10 @@
     "backgroundColor": "oklch(17.0% 0.035 280.0 / 1)",
     "mainColor": "oklch(68.0% 0.175 30.0 / 1)",
     "secondaryColor": "oklch(78.0% 0.125 45.0 / 1)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "siddhantpallod",
+    "completedPR": 3663
   },
   {
     "id": "izakaya-warm",
