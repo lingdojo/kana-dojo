@@ -198,12 +198,13 @@
   {
     "id": 38,
     "text": "\"〜に違いない\" means \"must be\" or \"no doubt\".",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 39,
     "text": "\"〜かもしれない\" means \"might be\" or \"maybe\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 40,
