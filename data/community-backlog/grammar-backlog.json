@@ -219,17 +219,19 @@
   {
     "id": 42,
     "text": "\"〜ことがある\" means \"sometimes\" when talking about habitual actions.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 43,
     "text": "\"〜にくい\" attaches to verb stems to mean \"hard to do\".",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 44,
     "text": "\"〜やすい\" attaches to verb stems to mean \"easy to do\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 45,
