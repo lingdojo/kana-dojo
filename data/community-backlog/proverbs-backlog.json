@@ -1542,7 +1542,8 @@
     "romaji": "I no naka no kawazu taikai wo shirazu",
     "english": "A frog in a well doesn’t know the ocean",
     "meaning": "Limited experience limits perspective",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 169,
@@ -1550,7 +1551,8 @@
     "romaji": "Kuchi wa wazawai no moto",
     "english": "The mouth is the source of misfortune",
     "meaning": "Careless words cause trouble",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 170,
@@ -1558,7 +1560,7 @@
     "romaji": "Koketsu ni irazunba koji wo ezu",
     "english": "You can’t get the tiger’s cub without entering the lair",
     "meaning": "No reward without risk",
-    "issued": false
+    "issued": true
   },
   {
     "id": 171,
