@@ -122,4 +122,10 @@
     ],
     "correctIndex": 0
   }  
-]
+],
+{
+  "question": "What is the Japanese word for \"goodbye\"?",
+  "answers": ["Sayonara", "Konnichiwa", "Arigatou", "Ohayou"],
+  "correctAnswer": "Sayonara"
+}
+
