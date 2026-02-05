@@ -876,12 +876,13 @@
   {
     "id": 127,
     "fact": "There's a Japanese concept 'on' (恩) - a debt of gratitude so deep it can never truly be repaid, only acknowledged.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 128,
     "fact": "Japan has 'host clubs' where women pay to be flattered and entertained by handsome young men over expensive drinks.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 129,
