@@ -299,12 +299,13 @@
   {
     "id": 57,
     "text": "\"〜わけがない\" means \"there is no way that...\".",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 58,
     "text": "\"〜ようにする\" means \"make an effort to...\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 59,
