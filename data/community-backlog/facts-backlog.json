@@ -922,17 +922,19 @@
   {
     "id": 135,
     "fact": "There's a Japanese concept 'itadakimasu' (いただきます) - said before eating - acknowledging all who contributed to the meal.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 136,
     "fact": "Japan has an island dedicated entirely to art museums - Naoshima, where Tadao Ando's architecture blends with nature.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 137,
     "fact": "The Japanese word 'okashi' (おかしい) means both 'funny' and 'strange' - humor and oddity are deeply connected.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 138,
