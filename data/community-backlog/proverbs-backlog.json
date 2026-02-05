@@ -1568,7 +1568,8 @@
     "romaji": "Ashita wa ashita no kaze ga fuku",
     "english": "Tomorrow’s wind will blow tomorrow",
     "meaning": "Don’t worry too much about the future",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 172,
@@ -1576,7 +1577,8 @@
     "romaji": "Raku areba ku ari",
     "english": "With comfort comes hardship",
     "meaning": "Life has ups and downs",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 173,
@@ -1584,7 +1586,7 @@
     "romaji": "Nen ni wa nen wo ireyo",
     "english": "Put care into care",
     "meaning": "Double-check everything",
-    "issued": false
+    "issued": true
   },
   {
     "id": 174,
