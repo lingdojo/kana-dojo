@@ -539,7 +539,8 @@
       "Shichi-Go-San"
     ],
     "correctIndex": 0,
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 42,
@@ -552,7 +553,7 @@
       "Izakaya"
     ],
     "correctIndex": 0,
-    "issued": false
+    "issued": true
   },
   {
     "id": 43,
