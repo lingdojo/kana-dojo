@@ -267,12 +267,13 @@
   {
     "id": 51,
     "text": "\"〜というより\" means \"rather than\" or \"more like\".",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 52,
     "text": "\"〜おかげで\" expresses gratitude for a cause, \"thanks to\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 53,
