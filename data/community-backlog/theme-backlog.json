@@ -1111,7 +1111,7 @@
     "backgroundColor": "oklch(22.0% 0.042 230.0 / 1)",
     "mainColor": "oklch(75.0% 0.135 225.0 / 1)",
     "secondaryColor": "oklch(82.0% 0.100 215.0 / 1)",
-    "issued": false
+    "issued": true
   },
   {
     "id": "ginkgo-gold",
