@@ -969,17 +969,19 @@
   {
     "id": 144,
     "fact": "Japan has a stone you can lick to predict the weather at Kamigamo Shrine - if it tastes salty, rain is coming.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 145,
     "fact": "The concept 'taisetsu' (大切) means precious or important - often said about relationships and feelings, not objects.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 146,
     "fact": "Japan has a phenomenon called 'Paris Syndrome' - Japanese tourists experiencing severe shock when Paris doesn't match their idealized expectations.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 147,
