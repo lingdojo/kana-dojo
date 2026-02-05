@@ -251,12 +251,13 @@
   {
     "id": 48,
     "text": "\"〜そうだ\" can indicate appearance, like \"it looks like\".",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 49,
     "text": "\"〜ながらも\" means \"even while\" or \"though\" (contrast).",
-    "issued": false
+    "issued": true
   },
   {
     "id": 50,
