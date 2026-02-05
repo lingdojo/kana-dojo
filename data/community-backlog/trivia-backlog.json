@@ -605,7 +605,8 @@
       "Tateyama"
     ],
     "correctIndex": 0,
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 47,
@@ -618,7 +619,7 @@
       "Bering Sea"
     ],
     "correctIndex": 0,
-    "issued": false
+    "issued": true
   },
   {
     "id": 48,
