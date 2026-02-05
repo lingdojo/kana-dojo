@@ -1,9 +1,9 @@
 [
   {
-  "japanese": "毒を食らわば皿まで",
-  "romaji": "Doku wo kurawaba sara made",
-  "english": "If you eat poison, eat the plate too",
-  "meaning": "If you must do it, go all the way"
+    "japanese": "毒を食らわば皿まで",
+    "romaji": "Doku wo kurawaba sara made",
+    "english": "If you eat poison, eat the plate too",
+    "meaning": "If you must do it, go all the way"
   },
   {
     "japanese": "柳に風",
@@ -559,10 +559,10 @@
     "meaning": "Enjoy observing; you don't always need to participate"
   },
   {
-  "japanese": "猫に鰹節",
-  "romaji": "Neko ni katsuobushi",
-  "english": "Dried bonito to a cat",
-  "meaning": "Leave temptation unattended at your own risk"
+    "japanese": "猫に鰹節",
+    "romaji": "Neko ni katsuobushi",
+    "english": "Dried bonito to a cat",
+    "meaning": "Leave temptation unattended at your own risk"
   },
   {
     "japanese": "石の上にも三年",
@@ -587,5 +587,11 @@
     "romaji": "Nakittsura ni hachi",
     "english": "A bee on a crying face",
     "meaning": "Misfortune never comes alone"
+  },
+  {
+    "japanese": "馬子にも衣装",
+    "romaji": "Mago ni mo ishou",
+    "english": "Even a packhorse driver looks good in fine clothes",
+    "meaning": "Clothes make the person"
   }
 ]
