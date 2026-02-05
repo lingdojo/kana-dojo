@@ -206,7 +206,7 @@ export const getKanjiVocabLabels = (sets: string[]) => {
  */
 export const getSelectionLabels = (
   type: 'kana' | 'kanji' | 'vocabulary',
-  selection: any,
+  selection: number[] | string[],
 ) => {
   if (type === 'kana') {
     return getKanaGroupNames(selection as number[]);

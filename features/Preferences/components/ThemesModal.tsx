@@ -3,7 +3,10 @@
 import {
   applyTheme,
   isPremiumThemeId,
+  getWallpaperStyles,
+  getThemeDefaultWallpaperId,
 } from '@/features/Preferences/data/themes';
+import { getWallpaperById } from '@/features/Preferences/data/wallpapers';
 import usePreferencesStore from '@/features/Preferences/store/usePreferencesStore';
 import { useClick } from '@/shared/hooks/useAudio';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
@@ -58,38 +61,44 @@ const CHAOS_THEME_GRADIENT = `linear-gradient(
   oklch(66.0% 0.18 25.0 / 1) 100%
 )`;
 
-const getNeonCityWallpaperStyles = (isHovered: boolean) => ({
-  backgroundImage: "url('/wallpapers/neonretrocarcity.jpg')",
-  backgroundSize: 'cover',
-  backgroundPosition: 'center',
-  backgroundRepeat: 'no-repeat',
-  filter: isHovered ? 'brightness(1)' : 'brightness(0.85)',
-});
-
 const ThemeCard = memo(function ThemeCard({
   theme,
   isSelected,
   onClick,
 }: ThemeCardProps) {
   const [isHovered, setIsHovered] = useState(false);
+  const selectedWallpaperId = usePreferencesStore(
+    state => state.selectedWallpaperId,
+  );
+  const customWallpapers = usePreferencesStore(state => state.customWallpapers);
+
   const themeName = theme.id.replaceAll('-', ' ');
   const isChaosTheme = theme.id === '?';
-  const isNeonCityTheme = theme.id === 'neon-city';
   const isPremiumTheme = isPremiumThemeId(theme.id);
+
+  // Check if theme has a default wallpaper (premium themes)
+  const themeWallpaperId = getThemeDefaultWallpaperId(theme.id);
+  const wallpaperIdToUse = themeWallpaperId || selectedWallpaperId;
+
+  const wallpaper = wallpaperIdToUse
+    ? getWallpaperById(wallpaperIdToUse, customWallpapers)
+    : undefined;
+
   const background = isChaosTheme
     ? CHAOS_THEME_GRADIENT
     : isHovered
       ? theme.cardColor
       : theme.backgroundColor;
-  const neonCityStyles = isNeonCityTheme
-    ? getNeonCityWallpaperStyles(isHovered)
+
+  const wallpaperStyles = wallpaper
+    ? getWallpaperStyles(wallpaper.url, isHovered)
     : {};
 
   return (
     <div
       className='cursor-pointer rounded-lg p-3'
       style={{
-        ...(isNeonCityTheme ? neonCityStyles : { background }),
+        ...(wallpaper ? wallpaperStyles : { background }),
         border: isSelected
           ? `1px solid ${theme.mainColor}`
           : `1px solid ${theme.borderColor}`,

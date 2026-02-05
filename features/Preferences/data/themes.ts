@@ -34,6 +34,7 @@ interface BaseTheme {
   backgroundColor: string;
   mainColor: string;
   secondaryColor: string;
+  wallpaperId?: string; // Optional: default wallpaper for this theme
 }
 
 interface BaseThemeGroup {
@@ -153,6 +154,48 @@ export function getModifiedBorderColor(
   return borderColor;
 }
 
+/**
+ * Get wallpaper styles for a given wallpaper URL
+ * @param wallpaperUrl - Direct URL to wallpaper image
+ * @param isHighlighted - Whether the theme is currently hovered/highlighted
+ * @returns CSS properties for wallpaper background, or empty object if no URL
+ */
+export function getWallpaperStyles(
+  wallpaperUrl: string | undefined,
+  isHighlighted: boolean,
+): React.CSSProperties {
+  if (!wallpaperUrl) return {};
+
+  return {
+    backgroundImage: `url('${wallpaperUrl}')`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    filter: isHighlighted ? 'brightness(1)' : 'brightness(0.85)',
+  };
+}
+
+/**
+ * Get default wallpaper ID for a theme (if any)
+ * Maps premium themes to their default wallpapers
+ */
+export function getThemeDefaultWallpaperId(
+  themeId: string,
+): string | undefined {
+  const themeWallpaperMap: Record<string, string> = {
+    'neon-city': 'neon-city-local',
+    'tokyo-rain': 'tokyo-rain',
+    'cyberpunk-street': 'cyberpunk-street',
+    'neon-signs': 'neon-signs',
+    'sakura-night': 'sakura-night',
+    'mt-fuji-sunset': 'mt-fuji-sunset',
+    'purple-gradient': 'minimal-gradient-purple',
+    'abstract-waves': 'abstract-waves',
+  };
+  return themeWallpaperMap[themeId];
+}
+
+// Deprecated: kept for backwards compatibility, will be removed in future
 export const getNeonCityWallpaperStyles = (isHighlighted: boolean) => ({
   backgroundImage: "url('/wallpapers/neonretrocarcity.jpg')",
   backgroundSize: 'cover',
@@ -273,15 +316,65 @@ function buildThemeGroup(baseGroup: BaseThemeGroup): ThemeGroup {
 // Base theme definitions - only id, backgroundColor, mainColor, secondaryColor
 const baseThemeSets: BaseThemeGroup[] = [
   {
-    name: 'Premium',
+    name: 'Premium (experimental, unstable)',
     icon: Sparkles,
     isLight: false,
     themes: [
       {
         id: 'neon-city',
-        backgroundColor: 'oklch(0% 0 0 / 0.95)', // Fully transparent, as wallpaper will be behind
-        mainColor: 'oklch(100% 0 0)', // High contrast white
-        secondaryColor: 'oklch(90% 0 0)', // Muted light gray
+        backgroundColor: 'oklch(0% 0 0 / 0.95)',
+        mainColor: 'oklch(100% 0 0)',
+        secondaryColor: 'oklch(90% 0 0)',
+        wallpaperId: 'neon-city-local',
+      },
+      {
+        id: 'tokyo-rain',
+        backgroundColor: 'oklch(0% 0 0 / 0.95)',
+        mainColor: 'oklch(100% 0 0)',
+        secondaryColor: 'oklch(90% 0 0)',
+        wallpaperId: 'tokyo-rain',
+      },
+      {
+        id: 'cyberpunk-street',
+        backgroundColor: 'oklch(0% 0 0 / 0.95)',
+        mainColor: 'oklch(100% 0 0)',
+        secondaryColor: 'oklch(90% 0 0)',
+        wallpaperId: 'cyberpunk-street',
+      },
+      {
+        id: 'neon-signs',
+        backgroundColor: 'oklch(0% 0 0 / 0.95)',
+        mainColor: 'oklch(100% 0 0)',
+        secondaryColor: 'oklch(90% 0 0)',
+        wallpaperId: 'neon-signs',
+      },
+      {
+        id: 'sakura-night',
+        backgroundColor: 'oklch(0% 0 0 / 0.95)',
+        mainColor: 'oklch(100% 0 0)',
+        secondaryColor: 'oklch(85% 0 0)',
+        wallpaperId: 'sakura-night',
+      },
+      {
+        id: 'mt-fuji-sunset',
+        backgroundColor: 'oklch(0% 0 0 / 0.95)',
+        mainColor: 'oklch(100% 0 0)',
+        secondaryColor: 'oklch(85% 0 0)',
+        wallpaperId: 'mt-fuji-sunset',
+      },
+      {
+        id: 'purple-gradient',
+        backgroundColor: 'oklch(0% 0 0 / 0.95)',
+        mainColor: 'oklch(100% 0 0)',
+        secondaryColor: 'oklch(90% 0 0)',
+        wallpaperId: 'minimal-gradient-purple',
+      },
+      {
+        id: 'abstract-waves',
+        backgroundColor: 'oklch(0% 0 0 / 0.95)',
+        mainColor: 'oklch(100% 0 0)',
+        secondaryColor: 'oklch(90% 0 0)',
+        wallpaperId: 'abstract-waves',
       },
     ],
   },
@@ -1411,7 +1504,7 @@ const baseThemeSets: BaseThemeGroup[] = [
 
 const premiumThemeIds = new Set(
   baseThemeSets
-    .find(group => group.name === 'Premium')
+    .find(group => group.name.startsWith('Premium'))
     ?.themes.map(theme => theme.id) ?? [],
 );
 
@@ -1523,6 +1616,29 @@ export function applyTheme(themeId: string) {
   }
 
   root.setAttribute('data-theme', resolvedThemeId);
+
+  // Apply wallpaper if theme has one
+  const wallpaperId = getThemeDefaultWallpaperId(resolvedThemeId);
+  if (wallpaperId) {
+    const { getWallpaperById, CURATED_WALLPAPERS } = require('./wallpapers');
+    const customWallpapers = usePreferencesStore.getState().customWallpapers;
+    const wallpaper = getWallpaperById(wallpaperId, customWallpapers);
+
+    if (wallpaper) {
+      document.body.style.backgroundImage = `url('${wallpaper.url}')`;
+      document.body.style.backgroundSize = 'cover';
+      document.body.style.backgroundPosition = 'center';
+      document.body.style.backgroundRepeat = 'no-repeat';
+      document.body.style.backgroundAttachment = 'fixed';
+    }
+  } else {
+    // Clear wallpaper if theme doesn't have one
+    document.body.style.backgroundImage = '';
+    document.body.style.backgroundSize = '';
+    document.body.style.backgroundPosition = '';
+    document.body.style.backgroundRepeat = '';
+    document.body.style.backgroundAttachment = '';
+  }
 }
 
 // Apply a theme object directly (live preview theme)

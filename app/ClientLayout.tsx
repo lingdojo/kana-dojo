@@ -14,7 +14,12 @@ import {
 import {
   applyTheme,
   isPremiumThemeId,
+  getThemeDefaultWallpaperId,
 } from '@/features/Preferences/data/themes';
+import {
+  getWallpaperById,
+  CURATED_WALLPAPERS,
+} from '@/features/Preferences/data/wallpapers';
 import BackToTop from '@/shared/components/navigation/BackToTop';
 import MobileBottomBar from '@/shared/components/layout/BottomBar';
 import { useVisitTracker } from '@/features/Progress/hooks/useVisitTracker';
@@ -141,14 +146,22 @@ export default function ClientLayout({
       style={{
         height: '100dvh',
         overflowY: 'auto',
-        ...(isPremiumThemeId(effectiveTheme)
-          ? {
-              backgroundImage: "url('/wallpapers/neonretrocarcity.jpg')",
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backgroundAttachment: 'fixed',
-            }
-          : {}),
+        ...(() => {
+          if (!isPremiumThemeId(effectiveTheme)) return {};
+
+          const wallpaperId = getThemeDefaultWallpaperId(effectiveTheme);
+          if (!wallpaperId) return {};
+
+          const wallpaper = getWallpaperById(wallpaperId, []);
+          if (!wallpaper) return {};
+
+          return {
+            backgroundImage: `url('${wallpaper.url}')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundAttachment: 'fixed',
+          };
+        })(),
       }}
     >
       <GlobalAudioController />

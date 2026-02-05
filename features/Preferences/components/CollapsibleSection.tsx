@@ -5,7 +5,7 @@ import { useClick } from '@/shared/hooks/useAudio';
 import { ChevronUp } from 'lucide-react';
 
 interface CollapsibleSectionProps {
-  title: string;
+  title: ReactNode;
   icon?: ReactNode;
   children: ReactNode;
   defaultOpen?: boolean;

@@ -616,7 +616,10 @@
     "backgroundColor": "oklch(17.0% 0.035 280.0 / 1)",
     "mainColor": "oklch(68.0% 0.175 30.0 / 1)",
     "secondaryColor": "oklch(78.0% 0.125 45.0 / 1)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "siddhantpallod",
+    "completedPR": 3663
   },
   {
     "id": "izakaya-warm",
@@ -892,7 +895,7 @@
     "backgroundColor": "oklch(92.0% 0.025 145.0 / 1)",
     "mainColor": "oklch(55.0% 0.175 145.0 / 1)",
     "secondaryColor": "oklch(45.0% 0.125 140.0 / 1)",
-    "issued": false
+    "issued": true
   },
   {
     "id": "starry-tanabata",
@@ -961,7 +964,7 @@
     "backgroundColor": "oklch(17.0% 0.045 255.0 / 1)",
     "mainColor": "oklch(62.0% 0.185 220.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.175 15.0 / 1)",
-    "issued": false
+    "issued": true
   },
   {
     "id": "school-uniform",
@@ -970,7 +973,7 @@
     "backgroundColor": "oklch(92.0% 0.015 250.0 / 1)",
     "mainColor": "oklch(40.0% 0.145 255.0 / 1)",
     "secondaryColor": "oklch(60.0% 0.175 20.0 / 1)",
-    "issued": false
+    "issued": true
   },
   {
     "id": "street-lantern",
@@ -991,7 +994,7 @@
     "backgroundColor": "oklch(23.0% 0.045 150.0 / 1)",
     "mainColor": "oklch(60.0% 0.205 25.0 / 1)",
     "secondaryColor": "oklch(72.0% 0.145 145.0 / 1)",
-    "issued": false
+    "issued": true
   },
   {
     "id": "vending-glow",
@@ -1060,7 +1063,7 @@
     "backgroundColor": "oklch(94.0% 0.020 95.0 / 1)",
     "mainColor": "oklch(65.0% 0.180 350.0 / 1)",
     "secondaryColor": "oklch(72.0% 0.145 130.0 / 1)",
-    "issued": false
+    "issued": true
   },
   {
     "id": "shinto-portal",
@@ -1069,7 +1072,7 @@
     "backgroundColor": "oklch(18.0% 0.040 15.0 / 1)",
     "mainColor": "oklch(58.0% 0.210 25.0 / 1)",
     "secondaryColor": "oklch(88.0% 0.055 90.0 / 1)",
-    "issued": false
+    "issued": true
   },
   {
     "id": "sakurajima-ash",
@@ -1078,7 +1081,10 @@
     "backgroundColor": "oklch(22.0% 0.025 270.0 / 1)",
     "mainColor": "oklch(65.0% 0.170 25.0 / 1)",
     "secondaryColor": "oklch(58.0% 0.055 260.0 / 1)",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "luminash18",
+    "completedPR": 3732
   },
   {
     "id": "noh-mask",
@@ -1087,7 +1093,7 @@
     "backgroundColor": "oklch(20.0% 0.028 285.0 / 1)",
     "mainColor": "oklch(88.0% 0.045 90.0 / 1)",
     "secondaryColor": "oklch(65.0% 0.145 20.0 / 1)",
-    "issued": false
+    "issued": true
   },
   {
     "id": "strawberry-daifuku",

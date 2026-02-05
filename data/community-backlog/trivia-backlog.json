@@ -447,7 +447,7 @@
       "Okonomiyaki"
     ],
     "correctIndex": 0,
-    "issued": false
+    "issued": true
   },
   {
     "id": 35,
@@ -460,7 +460,7 @@
       "Romaji"
     ],
     "correctIndex": 0,
-    "issued": false
+    "issued": true
   },
   {
     "id": 36,
@@ -473,7 +473,8 @@
       "Aikido"
     ],
     "correctIndex": 0,
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 37,
@@ -486,7 +487,7 @@
       "Kiku"
     ],
     "correctIndex": 0,
-    "issued": false
+    "issued": true
   },
   {
     "id": 38,
@@ -499,7 +500,7 @@
       "Sendai"
     ],
     "correctIndex": 0,
-    "issued": false
+    "issued": true
   },
   {
     "id": 39,
@@ -512,7 +513,7 @@
       "Mochi"
     ],
     "correctIndex": 0,
-    "issued": false
+    "issued": true
   },
   {
     "id": 40,
@@ -525,7 +526,7 @@
       "Osaka Castle"
     ],
     "correctIndex": 0,
-    "issued": false
+    "issued": true
   },
   {
     "id": 41,
@@ -538,7 +539,8 @@
       "Shichi-Go-San"
     ],
     "correctIndex": 0,
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 42,
@@ -551,7 +553,7 @@
       "Izakaya"
     ],
     "correctIndex": 0,
-    "issued": false
+    "issued": true
   },
   {
     "id": 43,
@@ -564,7 +566,7 @@
       "Shodo"
     ],
     "correctIndex": 0,
-    "issued": false
+    "issued": true
   },
   {
     "id": 44,
@@ -577,7 +579,7 @@
       "Yakitori"
     ],
     "correctIndex": 0,
-    "issued": false
+    "issued": true
   },
   {
     "id": 45,

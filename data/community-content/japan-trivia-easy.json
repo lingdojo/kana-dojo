@@ -35,83 +35,6 @@
     "correctIndex": 2
   },
   {
-    "question": "Which Japanese food is typically made by grilling skewered chicken?",
-    "difficulty": "easy",
-    "answers": ["Yakitori", "Okonomiyaki", "Takoyaki", "Soba"],
-    "correctIndex": 0
-  },
-  {
-    "question": "What is the name of the traditional Japanese poetic form with a 5-7-5 syllable pattern?",
-    "difficulty": "easy",
-    "answers": ["Haiku", "Tanka", "Senryu", "Renga"],
-    "correctIndex": 0
-  },
-  {
-    "question": "Which Japanese island is the largest by area?",
-    "difficulty": "easy",
-    "answers": ["Honshu", "Hokkaido", "Kyushu", "Shikoku"],
-    "correctIndex": 0
-  },
-  {
-    "question": "What is the name of the traditional Japanese summer festival featuring fireworks?",
-    "difficulty": "easy",
-    "answers": ["Seijin Shiki", "Hanabi Taikai", "Setsubun", "Obon"],
-    "correctIndex": 1
-  },
-  {
-    "question": "Which Japanese city is famous for the floating torii gate at Itsukushima Shrine?",
-    "difficulty": "easy",
-    "answers": ["Kyoto", "Hiroshima", "Nagasaki", "Kanazawa"],
-    "correctIndex": 1
-  },
-  {
-    "question": "Which ocean borders Japan to the east?",
-    "difficulty": "easy",
-    "answers": [
-      "Atlantic Ocean",
-      "Indian Ocean",
-      "Pacific Ocean",
-      "Arctic Ocean"
-    ],
-    "correctIndex": 2
-  },
-  {
-    "question": "Which traditional Japanese sport involves wrestling in a ring?",
-    "difficulty": "easy",
-    "answers": ["Sumo", "Kendo", "Judo", "Aikido"],
-    "correctIndex": 0
-  },
-  {
-    "question": "Which mountain is Japan’s highest peak?",
-    "difficulty": "easy",
-    "answers": ["Mount Fuji", "Mount Kita", "Mount Tate", "Mount Haku"],
-    "correctIndex": 0
-  },
-  {
-    "question": "What is the Japanese term for a traditional inn?",
-    "difficulty": "easy",
-    "answers": ["Ryokan", "Minshuku", "Izakaya", "Yatai"],
-    "correctIndex": 0
-  },
-  {
-    "question": "Which city is known for its beef brand Kobe?",
-    "difficulty": "easy",
-    "answers": ["Kobe", "Nagoya", "Kanazawa", "Hiroshima"],
-    "correctIndex": 0
-  },
-  {
-    "question": "Which Japanese dish is made with buckwheat noodles?",
-    "difficulty": "easy",
-    "answers": ["Soba", "Udon", "Ramen", "Somem"],
-    "correctIndex": 0
-  },
-  {
-    "question": "What is the name of the bullet train network in Japan?",
-    "difficulty": "easy",
-    "answers": ["Shinkansen", "Metro Line", "Skyrail", "Kairo"],
-    "correctIndex": 0
-  },
-  {
     "question": "Which Japanese castle is nicknamed the \"White Heron\" for its bright exterior?",
     "difficulty": "easy",
     "answers": [
@@ -121,11 +44,16 @@
       "Nijo Castle"
     ],
     "correctIndex": 0
-  }  
-],
-{
-  "question": "What is the Japanese word for \"goodbye\"?",
-  "answers": ["Sayonara", "Konnichiwa", "Arigatou", "Ohayou"],
-  "correctAnswer": "Sayonara"
-}
-
+  },
+  {
+    "question": "What is the Japanese term for a hot spring?",
+    "difficulty": "easy",
+    "answers": [
+      "Onsen",
+      "Sentou",
+      "Ryokan",
+      "Izakaya"
+    ],
+    "correctIndex": 0
+  }
+]

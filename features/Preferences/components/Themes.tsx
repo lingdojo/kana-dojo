@@ -2,9 +2,11 @@
 import { createElement, useEffect, useRef } from 'react';
 import themeSets, {
   applyTheme,
-  getNeonCityWallpaperStyles,
+  getWallpaperStyles,
+  getThemeDefaultWallpaperId,
   // hexToHsl
 } from '@/features/Preferences/data/themes';
+import { getWallpaperById } from '@/features/Preferences/data/wallpapers';
 import usePreferencesStore from '@/features/Preferences/store/usePreferencesStore';
 import clsx from 'clsx';
 import { useClick, useLong } from '@/shared/hooks/useAudio';
@@ -39,6 +41,10 @@ const Themes = () => {
   const selectedTheme = usePreferencesStore(state => state.theme);
   const setSelectedTheme = usePreferencesStore(state => state.setTheme);
   const themePreview = usePreferencesStore(state => state.themePreview);
+  const selectedWallpaperId = usePreferencesStore(
+    state => state.selectedWallpaperId,
+  );
+  const customWallpapers = usePreferencesStore(state => state.customWallpapers);
 
   // Initialize with first theme to avoid hydration mismatch
   const [randomTheme, setRandomTheme] = useState(themeSets[2].themes[0]);
@@ -150,8 +156,8 @@ const Themes = () => {
           storageKey={`prefs-theme-group-${themeSet.name.toLowerCase()}`}
         >
           {/* <span className='text-sm font-normal text-(--secondary-color)'>
-            ({themeSet.themes.length})
-          </span> */}
+              ({themeSet.themes.length})
+            </span> */}
           <fieldset
             className={clsx(
               'grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4',
@@ -169,17 +175,32 @@ const Themes = () => {
                 )}
                 style={{
                   color: currentTheme.mainColor,
-                  ...(currentTheme.id === 'neon-city'
-                    ? {
-                        ...getNeonCityWallpaperStyles(
+                  ...(() => {
+                    // Check if theme has a default wallpaper (premium themes)
+                    const themeWallpaperId = getThemeDefaultWallpaperId(
+                      currentTheme.id,
+                    );
+                    const wallpaperIdToUse =
+                      themeWallpaperId || selectedWallpaperId;
+
+                    if (wallpaperIdToUse) {
+                      const wallpaper = getWallpaperById(
+                        wallpaperIdToUse,
+                        customWallpapers,
+                      );
+                      if (wallpaper) {
+                        return getWallpaperStyles(
+                          wallpaper.url,
                           isHovered === currentTheme.id,
-                        ),
-                        borderColor: currentTheme.borderColor,
+                        );
                       }
-                    : {
-                        background:
-                          currentTheme.id === '?'
-                            ? `linear-gradient(
+                    }
+
+                    // No wallpaper - use regular theme background
+                    return {
+                      background:
+                        currentTheme.id === '?'
+                          ? `linear-gradient(
                                 142deg,
                                 oklch(66.0% 0.18 25.0 / 1) 0%,
                                 oklch(72.0% 0.22 80.0 / 1) 12%,
@@ -191,11 +212,12 @@ const Themes = () => {
                                 oklch(74.0% 0.20 355.0 / 1) 88%,
                                 oklch(66.0% 0.18 25.0 / 1) 100%
                               )`
-                            : isHovered === currentTheme.id
-                              ? currentTheme.cardColor
-                              : currentTheme.backgroundColor,
-                        borderColor: currentTheme.borderColor,
-                      }),
+                          : isHovered === currentTheme.id
+                            ? currentTheme.cardColor
+                            : currentTheme.backgroundColor,
+                    };
+                  })(),
+                  borderColor: currentTheme.borderColor,
                 }}
                 onMouseEnter={() => {
                   if (isAdding) return;

@@ -840,52 +840,54 @@
   {
     "id": 120,
     "fact": "Japan has more Michelin-starred restaurants than any other country - Tokyo alone has more stars than Paris.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 121,
     "fact": "The concept of 'sumimasen' (すみません) combines 'sorry' and 'thank you' - acknowledging that someone went out of their way.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 122,
     "fact": "Japan has 'anti-lonely death' services that check on elderly living alone and arrange their affairs if they pass away.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 123,
     "fact": "There's a Japanese word 'miryoku' (魅力) for charm or attractiveness that draws people in - the quality that makes things captivating.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 124,
     "fact": "Japan has 'Peko-chan' - a cartoon mascot for Fujiya confectionery since 1950, whose tongue-sticking pose has become an iconic symbol recognized by nearly all Japanese people.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 125,
     "fact": "The word 'yoroshiku' (よろしく) has no direct translation - it's used for introductions, requests, and meaning 'please treat me well'.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 126,
     "fact": "Japan's streets are so safe that children as young as 6 commute alone on public trains to school every day.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 127,
     "fact": "There's a Japanese concept 'on' (恩) - a debt of gratitude so deep it can never truly be repaid, only acknowledged.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 128,
     "fact": "Japan has 'host clubs' where women pay to be flattered and entertained by handsome young men over expensive drinks.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 129,
     "fact": "The Japanese word 'ganbarimasu' (頑張ります) is said before attempting something difficult - a commitment to do your absolute best.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 130,
@@ -898,7 +900,7 @@
   {
     "id": 131,
     "fact": "There's a Japanese practice 'dogeza' (土下座) - bowing with forehead to floor - the deepest apology or request possible.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 132,

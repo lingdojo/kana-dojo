@@ -1077,7 +1077,8 @@
     "romaji": "Yanagi ni kaze",
     "english": "Wind in the willow",
     "meaning": "Stay flexible and let problems pass",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 116,
@@ -1094,7 +1095,8 @@
     "romaji": "Yakeishi ni mizu",
     "english": "Water on a hot stone",
     "meaning": "A futile effort",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 118,
@@ -1147,7 +1149,7 @@
     "romaji": "Koukai saki ni tatazu",
     "english": "Regret does not stand before",
     "meaning": "It's too late for regrets",
-    "issued": false
+    "issued": true
   },
   {
     "id": 124,
@@ -1164,7 +1166,7 @@
     "romaji": "Nakittsura ni hachi",
     "english": "A bee on a crying face",
     "meaning": "Misfortune never comes alone",
-    "issued": false
+    "issued": true
   },
   {
     "id": 126,
@@ -1190,7 +1192,8 @@
     "romaji": "Ki wo mite mori wo mizu",
     "english": "See the trees but not the forest",
     "meaning": "Missing the bigger picture",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 129,
@@ -1207,7 +1210,7 @@
     "romaji": "Zenin zenka",
     "english": "Good causes bring good results",
     "meaning": "Good deeds lead to good outcomes",
-    "issued": false
+    "issued": true
   },
   {
     "id": 131,
@@ -1242,7 +1245,8 @@
     "romaji": "Nodomoto sugireba atsusa wo wasureru",
     "english": "Once it passes your throat, you forget the heat",
     "meaning": "People forget hardships once they are over",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 135,
@@ -1250,7 +1254,8 @@
     "romaji": "Kuchi wa wazawai no moto",
     "english": "The mouth is the source of misfortune",
     "meaning": "Careless words cause trouble",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 136,
@@ -1258,7 +1263,7 @@
     "romaji": "Raku areba ku ari",
     "english": "After ease comes hardship",
     "meaning": "Good times and bad times alternate",
-    "issued": false
+    "issued": true
   },
   {
     "id": 137,
@@ -1302,7 +1307,7 @@
     "romaji": "Nakittsura ni hachi",
     "english": "A bee on a crying face",
     "meaning": "Misfortune never comes alone",
-    "issued": false
+    "issued": true
   },
   {
     "id": 142,
@@ -1364,7 +1369,7 @@
     "romaji": "Deru kugi wa utareru",
     "english": "The nail that sticks out gets hammered down",
     "meaning": "Standing out invites criticism",
-    "issued": false
+    "issued": true
   },
   {
     "id": 149,
@@ -1372,7 +1377,7 @@
     "romaji": "Mago ni mo ishou",
     "english": "Even a packhorse driver looks good in fine clothes",
     "meaning": "Clothes make the person",
-    "issued": false
+    "issued": true
   },
   {
     "id": 150,
@@ -1398,7 +1403,7 @@
     "romaji": "Omoitattaga kichijitsu",
     "english": "The day you decide is a lucky day",
     "meaning": "Start now",
-    "issued": false
+    "issued": true
   },
   {
     "id": 153,
@@ -1406,7 +1411,7 @@
     "romaji": "Shippai wa seikou no moto",
     "english": "Failure is the origin of success",
     "meaning": "Mistakes lead to growth",
-    "issued": false
+    "issued": true
   },
   {
     "id": 154,
