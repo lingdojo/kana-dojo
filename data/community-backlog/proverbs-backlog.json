@@ -1525,7 +1525,8 @@
     "romaji": "Mago ni mo ishou",
     "english": "Even a packhorse driver looks good in fine clothes",
     "meaning": "Clothes make the person",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 167,
@@ -1533,7 +1534,7 @@
     "romaji": "Ni to wo ou mono wa itto wo mo ezu",
     "english": "Chase two rabbits, catch none",
     "meaning": "Focus on one thing",
-    "issued": false
+    "issued": true
   },
   {
     "id": 168,
