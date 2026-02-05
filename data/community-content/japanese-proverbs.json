@@ -577,10 +577,15 @@
     "meaning": "Good times and bad times alternate"
   },
   {
-  "japanese": "千里の道も一歩から",
-  "romaji": "Senri no michi mo ippo kara",
-  "english": "A journey of a thousand miles begins with one step",
-  "meaning": "Start small to reach big goals"
-}
+    "japanese": "千里の道も一歩から",
+    "romaji": "Senri no michi mo ippo kara",
+    "english": "A journey of a thousand miles begins with one step",
+    "meaning": "Start small to reach big goals"
+  },
+  {
+    "japanese": "泣きっ面に蜂",
+    "romaji": "Nakittsura ni hachi",
+    "english": "A bee on a crying face",
+    "meaning": "Misfortune never comes alone"
+  }
 ]
-
