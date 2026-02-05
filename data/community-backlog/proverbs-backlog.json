@@ -1499,7 +1499,8 @@
     "romaji": "Ugo no takenoko",
     "english": "Bamboo shoots after rain",
     "meaning": "Things spring up rapidly",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 164,
@@ -1507,7 +1508,8 @@
     "romaji": "Senri no michi mo ippo kara",
     "english": "A journey of a thousand miles begins with one step",
     "meaning": "Start small",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 165,
@@ -1515,7 +1517,7 @@
     "romaji": "Hayaoki wa sanmon no toku",
     "english": "Early rising brings three coins of benefit",
     "meaning": "Wake early for advantage",
-    "issued": false
+    "issued": true
   },
   {
     "id": 166,
