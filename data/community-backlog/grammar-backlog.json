@@ -315,22 +315,25 @@
   {
     "id": 60,
     "text": "\"〜にしては\" means \"considering...\".",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 61,
     "text": "\"〜にとって\" means \"for / to (someone)\".",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 62,
     "text": "\"〜につれて\" means \"as... changes, ... also changes\".",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 63,
     "text": "\"〜に比べて\" means \"compared to...\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 64,
