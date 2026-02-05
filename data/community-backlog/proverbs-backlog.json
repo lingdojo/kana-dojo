@@ -1419,7 +1419,8 @@
     "romaji": "Naki tsura ni hachi",
     "english": "A bee on a crying face",
     "meaning": "Misfortune piles up",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 155,
@@ -1427,7 +1428,8 @@
     "romaji": "Nou aru taka wa tsume wo kakusu",
     "english": "A skilled hawk hides its talons",
     "meaning": "True skill is modest",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 156,
@@ -1444,7 +1446,8 @@
     "romaji": "Fukusui bon ni kaerazu",
     "english": "Spilled water doesn’t return to the tray",
     "meaning": "What’s done is done",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 158,
@@ -1452,7 +1455,8 @@
     "romaji": "Yake ishi ni mizu",
     "english": "Water on a hot stone",
     "meaning": "A futile effort",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 159,
@@ -1460,7 +1464,8 @@
     "romaji": "Nasake wa hito no tame narazu",
     "english": "Kindness is not for others alone",
     "meaning": "Kindness comes back to you",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 160,
@@ -1486,7 +1491,7 @@
     "romaji": "Warau kado ni wa fuku kitaru",
     "english": "Good fortune comes to a laughing home",
     "meaning": "Happiness invites luck",
-    "issued": false
+    "issued": true
   },
   {
     "id": 163,
