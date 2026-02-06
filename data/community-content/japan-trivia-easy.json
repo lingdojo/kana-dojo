@@ -84,6 +84,17 @@
     "Nagano"
   ],
   "correctIndex": 0
+  },
+  {
+  "question": "What is Japan’s currency called?",
+  "difficulty": "easy",
+  "answers": [
+    "Yen",
+    "Won",
+    "Yuan",
+    "Ringgit"
+  ],
+  "correctIndex": 0
   }
 ]
 
