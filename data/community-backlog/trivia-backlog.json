@@ -723,7 +723,8 @@
       "Hokkaido"
     ],
     "correctIndex": 0,
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 56,
@@ -736,7 +737,7 @@
       "Seaweed"
     ],
     "correctIndex": 0,
-    "issued": false
+    "issued": true
   },
   {
     "id": 57,
