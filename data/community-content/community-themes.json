@@ -172,4 +172,11 @@
   backgroundColor: 'oklch(18.0% 0.028 65.0 / 1)',
   mainColor: 'oklch(72.0% 0.115 65.0 / 1)',
   secondaryColor: 'oklch(60.0% 0.085 25.0 / 1)'
-  }]
+  },
+  {
+  "id": "paper-lantern",
+  "backgroundColor": "oklch(18.0% 0.030 20.0 / 1)",
+  "mainColor": "oklch(82.0% 0.175 35.0 / 1)",
+  "secondaryColor": "oklch(70.0% 0.095 75.0 / 1)"
+}
+]
