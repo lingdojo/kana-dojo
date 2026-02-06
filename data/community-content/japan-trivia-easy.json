@@ -62,5 +62,17 @@
     "difficulty": "easy",
     "answers": ["Fermented soybeans", "Rice flour", "Buckwheat", "Seaweed"],
     "correctIndex": 0
+  },
+  {
+  "question": "Which city is famous for the Peace Memorial Park?",
+  "difficulty": "easy",
+  "answers": [
+    "Hiroshima",
+    "Osaka",
+    "Tokyo",
+    "Fukuoka"
+  ],
+  "correctIndex": 0
   }
 ]
+
