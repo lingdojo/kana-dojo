@@ -1375,7 +1375,7 @@
     "backgroundColor": "oklch(20.0% 0.020 150.0 / 1)",
     "mainColor": "oklch(70.0% 0.105 145.0 / 1)",
     "secondaryColor": "oklch(60.0% 0.055 110.0 / 1)",
-    "issued": false
+    "issued": true
   },
   {
     "id": "midnight-sushi",
@@ -1398,8 +1398,8 @@
     "secondaryColor": "oklch(68.0% 0.085 30.0 / 1)",
     "issued": true,
     "completed": true,
-    "completedBy": "AdemGmati",
-    "completedPR": 3019
+    "completedBy": "luminash18",
+    "completedPR": 3903
   },
   {
     "id": "tsukiji-morning",
@@ -1528,7 +1528,8 @@
     "backgroundColor": "oklch(22.0% 0.018 230.0 / 1)",
     "mainColor": "oklch(80.0% 0.055 215.0 / 1)",
     "secondaryColor": "oklch(62.0% 0.045 240.0 / 1)",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": "matcha-foam",
@@ -1549,7 +1550,10 @@
     "backgroundColor": "oklch(18.0% 0.028 65.0 / 1)",
     "mainColor": "oklch(72.0% 0.115 65.0 / 1)",
     "secondaryColor": "oklch(60.0% 0.085 25.0 / 1)",
-    "issued": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "kartikrautan",
+    "completedPR": 3883
   },
   {
     "id": "fuji-shadow",
@@ -1722,7 +1726,7 @@
     "backgroundColor": "oklch(16.0% 0.018 240.0 / 1)",
     "mainColor": "oklch(82.0% 0.040 230.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.095 260.0 / 1)",
-    "issued": false
+    "issued": true
   },
   {
     "id": "gingko-avenue",
@@ -1731,7 +1735,7 @@
     "backgroundColor": "oklch(23.0% 0.020 75.0 / 1)",
     "mainColor": "oklch(82.0% 0.155 95.0 / 1)",
     "secondaryColor": "oklch(62.0% 0.085 55.0 / 1)",
-    "issued": false
+    "issued": true
   },
   {
     "id": "koi-sunrise",

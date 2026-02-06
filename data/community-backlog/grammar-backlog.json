@@ -338,52 +338,55 @@
   {
     "id": 64,
     "text": "\"〜によると\" means \"according to...\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 65,
     "text": "\"〜に応じて\" means \"depending on...\".",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 66,
     "text": "\"〜に加えて\" means \"in addition to...\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 67,
     "text": "\"〜に向けて\" means \"toward / in preparation for\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 68,
     "text": "\"〜おそれがある\" means \"there is a risk that...\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 69,
     "text": "\"〜ものの\" means \"although...\" with contrast.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 70,
     "text": "\"〜まま\" means \"as-is / while remaining...\".",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 71,
     "text": "\"〜わけにはいかない\" means \"cannot (due to circumstances)\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 72,
     "text": "\"〜て以来\" means \"since (doing)\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 73,
     "text": "\"〜たびに\" means \"every time...\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 74,

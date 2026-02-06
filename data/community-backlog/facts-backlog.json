@@ -986,47 +986,49 @@
   {
     "id": 147,
     "fact": "There's a Japanese word 'tasogare' (黄昏) specifically for the golden hour at dusk when it's hard to recognize faces.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 148,
     "fact": "Japan has 'book-off' stores where you can sell and buy used manga, CDs, games, and electronics at bargain prices.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 149,
     "fact": "The word 'shiawase' (幸せ) for happiness originally meant 'what happens' - suggesting happiness is accepting what comes.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 150,
     "fact": "Japan has 'gravure idols' - models who pose in bikinis and lingerie for magazines, calendars, and trading cards.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 151,
     "fact": "There's a Japanese practice 'osoji' (大掃除) - major house cleaning before New Year to sweep away the old year's bad luck.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 152,
     "fact": "Japan has a 15-meter tall Gundam robot in Yokohama that can actually move its arms, legs, and fingers.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 153,
     "fact": "The word 'kansha' (感謝) describes gratitude so profound it becomes a lifestyle - actively looking for things to be thankful for.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 154,
     "fact": "Japan has 'purikura' photo booths that digitally enlarge eyes, smooth skin, and add sparkles to your photos automatically.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 155,
     "fact": "There's a Japanese concept 'uchi-soto' (内外) - inside/outside - defining who you're close to versus everyone else.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 156,
