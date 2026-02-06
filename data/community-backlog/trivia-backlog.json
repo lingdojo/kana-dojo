@@ -896,7 +896,8 @@
       "Shodo"
     ],
     "correctIndex": 0,
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 69,
@@ -909,7 +910,7 @@
       "Chankonabe"
     ],
     "correctIndex": 0,
-    "issued": false
+    "issued": true
   },
   {
     "id": 70,
