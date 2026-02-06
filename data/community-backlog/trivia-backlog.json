@@ -816,7 +816,8 @@
       "Aoi Matsuri"
     ],
     "correctIndex": 0,
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 63,
@@ -829,7 +830,7 @@
       "Nagano"
     ],
     "correctIndex": 0,
-    "issued": false
+    "issued": true
   },
   {
     "id": 64,
