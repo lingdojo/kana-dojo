@@ -203,5 +203,11 @@
   "backgroundColor": "oklch(20.0% 0.020 150.0 / 1)",
   "mainColor": "oklch(70.0% 0.105 145.0 / 1)",
   "secondaryColor": "oklch(60.0% 0.055 110.0 / 1)"
+},
+{
+  "id": "festival-red",
+  "backgroundColor": "oklch(17.0% 0.055 25.0 / 1)",
+  "mainColor": "oklch(78.0% 0.205 25.0 / 1)",
+  "secondaryColor": "oklch(85.0% 0.085 85.0 / 1)"
 }
 ]
