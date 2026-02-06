@@ -73,6 +73,17 @@
     "Fukuoka"
   ],
   "correctIndex": 0
+  },
+  {
+  "question": "Which city is known for its snow festival and ice sculptures?",
+  "difficulty": "easy",
+  "answers": [
+    "Sapporo",
+    "Aomori",
+    "Toyama",
+    "Nagano"
+  ],
+  "correctIndex": 0
   }
 ]
 
