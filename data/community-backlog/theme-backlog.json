@@ -1550,7 +1550,10 @@
     "backgroundColor": "oklch(18.0% 0.028 65.0 / 1)",
     "mainColor": "oklch(72.0% 0.115 65.0 / 1)",
     "secondaryColor": "oklch(60.0% 0.085 25.0 / 1)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "kartikrautan",
+    "completedPR": 3883
   },
   {
     "id": "fuji-shadow",
