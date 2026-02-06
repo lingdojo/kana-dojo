@@ -168,15 +168,40 @@
   "secondaryColor": "oklch(58.0% 0.055 260.0 / 1)"
   },
   {
-  id: 'taisho-cafe',
-  backgroundColor: 'oklch(18.0% 0.028 65.0 / 1)',
-  mainColor: 'oklch(72.0% 0.115 65.0 / 1)',
-  secondaryColor: 'oklch(60.0% 0.085 25.0 / 1)'
+  "id": "taisho-cafe",
+  "backgroundColor": "oklch(18.0% 0.028 65.0 / 1)",
+  "mainColor": "oklch(72.0% 0.115 65.0 / 1)",
+  "secondaryColor": "oklch(60.0% 0.085 25.0 / 1)"
   },
   {
   "id": "paper-lantern",
   "backgroundColor": "oklch(18.0% 0.030 20.0 / 1)",
   "mainColor": "oklch(82.0% 0.175 35.0 / 1)",
   "secondaryColor": "oklch(70.0% 0.095 75.0 / 1)"
+},
+{
+  "id": "gingko-avenue",
+  "backgroundColor": "oklch(23.0% 0.020 75.0 / 1)",
+  "mainColor": "oklch(82.0% 0.155 95.0 / 1)",
+  "secondaryColor": "oklch(62.0% 0.085 55.0 / 1)"
+},
+{
+  "id": "blooming-ume",
+  "backgroundColor": "oklch(95.0% 0.015 15.0 / 1)",
+  "mainColor": "oklch(62.0% 0.175 350.0 / 1)",
+  "secondaryColor": "oklch(75.0% 0.085 85.0 / 1)"
+},
+
+{
+  "id": "moonlit-bay",
+  "backgroundColor": "oklch(16.0% 0.018 240.0 / 1)",
+  "mainColor": "oklch(82.0% 0.040 230.0 / 1)",
+  "secondaryColor": "oklch(70.0% 0.095 260.0 / 1)"
+},
+{
+  "id": "mountain-cedar",
+  "backgroundColor": "oklch(20.0% 0.020 150.0 / 1)",
+  "mainColor": "oklch(70.0% 0.105 145.0 / 1)",
+  "secondaryColor": "oklch(60.0% 0.055 110.0 / 1)"
 }
 ]
