@@ -48,23 +48,19 @@
   {
     "question": "What is the Japanese term for a hot spring?",
     "difficulty": "easy",
-    "answers": [
-      "Onsen",
-      "Sentou",
-      "Ryokan",
-      "Izakaya"
-    ],
+    "answers": ["Onsen", "Sentou", "Ryokan", "Izakaya"],
     "correctIndex": 0
   },
   {
-  "question": "Which Japanese dish consists of skewered grilled chicken?",
-  "difficulty": "easy",
-  "answers": [
-    "Yakitori",
-    "Sukiyaki",
-    "Tonkatsu",
-    "Oden"
-  ],
-  "correctIndex": 0
- }
+    "question": "Which Japanese dish consists of skewered grilled chicken?",
+    "difficulty": "easy",
+    "answers": ["Yakitori", "Sukiyaki", "Tonkatsu", "Oden"],
+    "correctIndex": 0
+  },
+  {
+    "question": "What is the main ingredient in miso?",
+    "difficulty": "easy",
+    "answers": ["Fermented soybeans", "Rice flour", "Buckwheat", "Seaweed"],
+    "correctIndex": 0
+  }
 ]
