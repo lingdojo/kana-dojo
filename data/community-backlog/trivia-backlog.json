@@ -856,7 +856,8 @@
       "Sencha"
     ],
     "correctIndex": 0,
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 66,
@@ -869,7 +870,7 @@
       "Kanda Matsuri"
     ],
     "correctIndex": 0,
-    "issued": false
+    "issued": true
   },
   {
     "id": 67,
