@@ -1834,7 +1834,10 @@
     "backgroundColor": "oklch(22.0% 0.035 140.0 / 1)",
     "mainColor": "oklch(74.0% 0.145 135.0 / 1)",
     "secondaryColor": "oklch(65.0% 0.085 115.0 / 1)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "afsarzan",
+    "completedPR": 3951
   },
   {
     "id": "tsukimi-night",
