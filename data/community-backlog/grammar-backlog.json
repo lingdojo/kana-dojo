@@ -343,12 +343,13 @@
   {
     "id": 65,
     "text": "\"〜に応じて\" means \"depending on...\".",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 66,
     "text": "\"〜に加えて\" means \"in addition to...\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 67,
