@@ -1354,7 +1354,7 @@
   {
     "id": 215,
     "fact": "Japan’s rail system is so punctual that many train companies issue delay certificates ('chien shoumeisho') for commuters.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 216,
