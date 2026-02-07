@@ -1091,12 +1091,13 @@
   {
     "id": 167,
     "fact": "There's a Japanese concept 'seijitsu' (誠実) meaning sincerity that's shown through actions, not just words.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 168,
     "fact": "Japan has 'yakiniku' restaurants where you grill your own meat at the table - each piece cooked exactly as you like it.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 169,
