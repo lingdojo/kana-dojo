@@ -1369,17 +1369,19 @@
   {
     "id": 218,
     "fact": "The Japanese term 'gacha-gacha' is onomatopoeia for capsule toy machines: the crank sound (gacha) and capsule drop (gacha).",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 219,
     "fact": "Japan has a long-running tradition of summer ghost stories called 'kaidan' (怪談) to create a chilling feeling in hot weather.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 220,
     "fact": "The Japanese word 'senpai' (先輩) and 'kouhai' (後輩) describe a senior-junior relationship that shapes school and workplace culture.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 221,
