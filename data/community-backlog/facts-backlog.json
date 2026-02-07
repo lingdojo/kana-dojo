@@ -1221,12 +1221,13 @@
   {
     "id": 191,
     "fact": "There's a Japanese concept 'meisou' (瞑想) - meditation that focuses on emptying the mind rather than filling it.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 192,
     "fact": "Japan has 'juku' (塾) - cram schools that children attend after regular school, some running until 10pm.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 193,
