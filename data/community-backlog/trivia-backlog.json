@@ -988,7 +988,8 @@
       "Lake Shinji"
     ],
     "correctIndex": 0,
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 76,
@@ -1001,7 +1002,7 @@
       "Somem"
     ],
     "correctIndex": 0,
-    "issued": false
+    "issued": true
   },
   {
     "id": 77,
