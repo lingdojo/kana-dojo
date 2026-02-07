@@ -220,5 +220,11 @@
     "backgroundColor": "oklch(92.0% 0.030 210.0 / 1)",
     "mainColor": "oklch(62.0% 0.145 205.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.105 185.0 / 1)"
-  }
+  },
+   {
+  "id": "citrus-shrine",
+  "backgroundColor": "oklch(20.0% 0.030 70.0 / 1)",
+  "mainColor": "oklch(86.0% 0.155 85.0 / 1)",
+  "secondaryColor": "oklch(75.0% 0.095 60.0 / 1)"
+}
 ]
