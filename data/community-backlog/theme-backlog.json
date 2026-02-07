@@ -1969,7 +1969,10 @@
     "backgroundColor": "oklch(20.0% 0.030 70.0 / 1)",
     "mainColor": "oklch(86.0% 0.155 85.0 / 1)",
     "secondaryColor": "oklch(75.0% 0.095 60.0 / 1)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "yenugantirahul",
+    "completedPR": 4035
   },
   {
     "id": "lantern-blue",
