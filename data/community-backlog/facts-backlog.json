@@ -1364,7 +1364,7 @@
   {
     "id": 217,
     "fact": "Japan has 'omikuji' (おみくじ) fortune slips at shrines; bad fortunes are often tied to a tree or rack to leave them behind.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 218,
