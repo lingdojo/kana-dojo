@@ -1981,7 +1981,10 @@
     "backgroundColor": "oklch(16.0% 0.030 250.0 / 1)",
     "mainColor": "oklch(75.0% 0.115 230.0 / 1)",
     "secondaryColor": "oklch(65.0% 0.085 255.0 / 1)",
-    "issued": true
+    "issued": true,
+    "completed": true,
+    "completedBy": "BalajiReddy1",
+    "completedPR": 4034
   },
   {
     "id": "plum-wood",
