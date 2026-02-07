@@ -2020,7 +2020,7 @@
     "backgroundColor": "oklch(90.0% 0.020 220.0 / 1)",
     "mainColor": "oklch(60.0% 0.090 215.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.060 200.0 / 1)",
-    "issued": false
+    "issued": true
   },
   {
     "id": "sumi-coal",
