@@ -1417,17 +1417,19 @@
   {
     "id": 227,
     "fact": "Japan has a culture of seasonal flavors, like sakura in spring and sweet potato in autumn, across snacks and drinks.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 228,
     "fact": "The Japanese term 'matsuri' (祭り) broadly means festival, and many neighborhoods host their own with portable shrines ('mikoshi').",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 229,
     "fact": "Japan’s 'shrine stamps' called 'goshuin' (御朱印) are calligraphy seals collected in special books by visitors.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 230,
