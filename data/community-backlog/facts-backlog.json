@@ -1331,22 +1331,25 @@
   {
     "id": 211,
     "fact": "Japan has regional mascots called 'yuru-chara' (ゆるキャラ) that promote towns, products, and even government agencies.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 212,
     "fact": "The Japanese word 'arigatai' (ありがたい) originally meant 'rare and precious', which is why it became associated with gratitude.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 213,
     "fact": "Japan has a tradition of exchanging seasonal gifts called 'oseibo' (お歳暮) in December to express thanks.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 214,
     "fact": "In many Japanese cities, you can find public 'koban' (交番) — small neighborhood police boxes that help with directions and lost items.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 215,
