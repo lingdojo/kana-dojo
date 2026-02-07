@@ -1459,7 +1459,7 @@
   {
     "id": 235,
     "fact": "Japan’s 'ekiben' (駅弁) are region-specific boxed lunches sold at train stations, often showcasing local ingredients and specialties.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 236,
