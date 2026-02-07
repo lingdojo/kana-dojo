@@ -876,17 +876,18 @@
   {
     "id": 127,
     "fact": "There's a Japanese concept 'on' (恩) - a debt of gratitude so deep it can never truly be repaid, only acknowledged.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 128,
     "fact": "Japan has 'host clubs' where women pay to be flattered and entertained by handsome young men over expensive drinks.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 129,
     "fact": "The Japanese word 'ganbarimasu' (頑張ります) is said before attempting something difficult - a commitment to do your absolute best.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 130,
@@ -899,197 +900,209 @@
   {
     "id": 131,
     "fact": "There's a Japanese practice 'dogeza' (土下座) - bowing with forehead to floor - the deepest apology or request possible.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 132,
     "fact": "Japan has 'gacha' machines that dispense random collectible toys for 100-500 yen - adults are as obsessed as children.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 133,
     "fact": "The word 'hazukashii' (恥ずかしい) describes embarrassment that's almost physical - you feel it in your body.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 134,
     "fact": "Japan has 'standing sleeping' car handles on trains designed for exhausted commuters to rest their heads during travel.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 135,
     "fact": "There's a Japanese concept 'itadakimasu' (いただきます) - said before eating - acknowledging all who contributed to the meal.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 136,
     "fact": "Japan has an island dedicated entirely to art museums - Naoshima, where Tadao Ando's architecture blends with nature.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 137,
     "fact": "The Japanese word 'okashi' (おかしい) means both 'funny' and 'strange' - humor and oddity are deeply connected.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 138,
     "fact": "Japan has 'para-para' dancing - a synchronized hand-waving dance performed to eurobeat in nightclubs since the 1980s.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 139,
     "fact": "There's a Japanese practice 'sekihan' (赤飯) - eating red rice with beans on celebratory occasions, from birthdays to promotions.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 140,
     "fact": "Japan has smart toilets that analyze your waste and display health metrics on a screen - some even save data to apps.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 141,
     "fact": "The word 'okage-sama de' (おかげさまで) means 'thanks to you' but implies gratitude to unseen forces and luck too.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 142,
     "fact": "Japan has 'chindonya' - walking advertisements with musicians who dress colorfully and parade through streets promoting businesses.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 143,
     "fact": "There's a Japanese word 'giri' (義理) for social obligation - you give gifts and attend events because you must, not because you want to.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 144,
     "fact": "Japan has a stone you can lick to predict the weather at Kamigamo Shrine - if it tastes salty, rain is coming.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 145,
     "fact": "The concept 'taisetsu' (大切) means precious or important - often said about relationships and feelings, not objects.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 146,
     "fact": "Japan has a phenomenon called 'Paris Syndrome' - Japanese tourists experiencing severe shock when Paris doesn't match their idealized expectations.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 147,
     "fact": "There's a Japanese word 'tasogare' (黄昏) specifically for the golden hour at dusk when it's hard to recognize faces.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 148,
     "fact": "Japan has 'book-off' stores where you can sell and buy used manga, CDs, games, and electronics at bargain prices.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 149,
     "fact": "The word 'shiawase' (幸せ) for happiness originally meant 'what happens' - suggesting happiness is accepting what comes.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 150,
     "fact": "Japan has 'gravure idols' - models who pose in bikinis and lingerie for magazines, calendars, and trading cards.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 151,
     "fact": "There's a Japanese practice 'osoji' (大掃除) - major house cleaning before New Year to sweep away the old year's bad luck.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 152,
     "fact": "Japan has a 15-meter tall Gundam robot in Yokohama that can actually move its arms, legs, and fingers.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 153,
     "fact": "The word 'kansha' (感謝) describes gratitude so profound it becomes a lifestyle - actively looking for things to be thankful for.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 154,
     "fact": "Japan has 'purikura' photo booths that digitally enlarge eyes, smooth skin, and add sparkles to your photos automatically.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 155,
     "fact": "There's a Japanese concept 'uchi-soto' (内外) - inside/outside - defining who you're close to versus everyone else.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 156,
     "fact": "Japan has a dish called 'natto' - fermented soybeans so stringy and pungent that even many Japanese can't stand it.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 157,
     "fact": "The word 'oshaberi' (おしゃべり) means chatting - but specifically light, fun conversation without anything heavy.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 158,
     "fact": "Japan has 'melon bread' (melonpan) that contains no melon - it's named for the cookie crust pattern resembling a melon.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 159,
     "fact": "There's a Japanese practice 'natsukashii' (懐かしい) experience parties - rooms designed to trigger nostalgia from specific eras.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 160,
     "fact": "Japan has a dedicated word 'tsukemono' (漬物) for pickled vegetables - over 4,000 varieties exist throughout the country.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 161,
     "fact": "The concept 'doryoku' (努力) means hard work as a core value - success without effort is considered somehow lesser.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 162,
     "fact": "Japan has 'pocky day' on November 11 (11/11) because the date looks like four Pocky sticks standing in a row.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 163,
     "fact": "There's a Japanese word 'komorebi' (木漏れ日) for sunlight filtering through trees - there's no single English word for this.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 164,
     "fact": "Japan has 'namahage' - demons who visit homes on New Year's Eve to scare children into behaving well.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 165,
     "fact": "The word 'ganban' (願番) describes taking turns at a task - cooperation without needing explicit coordination.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 166,
     "fact": "Japan has a shrine in Kyoto where foxes are believed to be divine messengers - thousands of red torii gates lead to it.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 167,
     "fact": "There's a Japanese concept 'seijitsu' (誠実) meaning sincerity that's shown through actions, not just words.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 168,
     "fact": "Japan has 'yakiniku' restaurants where you grill your own meat at the table - each piece cooked exactly as you like it.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 169,
     "fact": "The word 'kimono' (着物) literally means 'thing to wear' - once the generic term for all clothing in Japan.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 170,

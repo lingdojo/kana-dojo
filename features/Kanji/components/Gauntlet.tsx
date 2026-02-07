@@ -36,18 +36,15 @@ const GauntletKanji: React.FC<GauntletKanjiProps> = ({ onCancel }) => {
     renderQuestion: (question, isReverse) =>
       isReverse ? question.meanings[0] : question.kanjiChar,
     checkAnswer: (question, answer, isReverse) => {
-      if (!isReverse) {
-        // Reverse: answer should be the kanji character or kunyomi or onyomi
+      if (isReverse) {
+        // Reverse: showing meaning, answer should be the kanji character or reading
         return (
           answer.trim() === question.kanjiChar ||
           question.kunyomi.some(k => k.split(' ')[0] === answer) ||
-          question.onyomi.some(k => k.split(' ')[0] === answer) ||
-          question.meanings.some(
-            meaning => answer.toLowerCase() === meaning.toLowerCase(),
-          )
+          question.onyomi.some(k => k.split(' ')[0] === answer)
         );
       }
-      // Normal: answer should match any meaning
+      // Normal: showing kanji, answer should match any meaning
       return question.meanings.some(
         meaning => answer.toLowerCase() === meaning.toLowerCase(),
       );
@@ -59,18 +56,31 @@ const GauntletKanji: React.FC<GauntletKanjiProps> = ({ onCancel }) => {
       if (isReverse) {
         // Reverse: options are kanji characters
         const correctAnswer = question.kanjiChar;
+        const seen = new Set([correctAnswer]);
         const incorrectOptions = shuffle(
           items.filter(item => item.kanjiChar !== question.kanjiChar),
         )
+          .filter(item => {
+            if (seen.has(item.kanjiChar)) return false;
+            seen.add(item.kanjiChar);
+            return true;
+          })
           .slice(0, count - 1)
           .map(item => item.kanjiChar);
         return [correctAnswer, ...incorrectOptions];
       }
       // Normal: options are meanings
       const correctAnswer = question.meanings[0];
+      const seen = new Set([correctAnswer]);
       const incorrectOptions = shuffle(
         items.filter(item => item.kanjiChar !== question.kanjiChar),
       )
+        .filter(item => {
+          const meaning = item.meanings[0];
+          if (seen.has(meaning)) return false;
+          seen.add(meaning);
+          return true;
+        })
         .slice(0, count - 1)
         .map(item => item.meanings[0]);
       return [correctAnswer, ...incorrectOptions];

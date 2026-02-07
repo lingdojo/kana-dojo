@@ -1,4 +1,4 @@
-export default {
+const tailwindConfig = {
   content: [
     './app/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
@@ -34,3 +34,5 @@ export default {
   },
   plugins: [],
 };
+
+export default tailwindConfig;

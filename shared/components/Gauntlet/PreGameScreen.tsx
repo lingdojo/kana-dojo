@@ -131,10 +131,7 @@ export default function PreGameScreen({
         <div className='w-full max-w-lg space-y-4'>
           {/* Header */}
           <div className='space-y-3 text-center'>
-            <Swords
-              size={56}
-              className='mx-auto text-(--secondary-color)'
-            />
+            <Swords size={56} className='mx-auto text-(--secondary-color)' />
             <h1 className='text-2xl font-bold text-(--main-color)'>
               {dojoLabel} Gauntlet
             </h1>
@@ -170,9 +167,7 @@ export default function PreGameScreen({
                     true && 'rounded-2xl bg-(--card-color) p-4',
                   )}
                 >
-                  <h3 className='text-sm text-(--main-color)'>
-                    Difficulty
-                  </h3>
+                  <h3 className='text-sm text-(--main-color)'>Difficulty</h3>
                   <div className='flex w-full justify-center gap-3'>
                     {(
                       Object.entries(DIFFICULTY_CONFIG) as [

@@ -7,6 +7,14 @@ import type {
 
 const STORAGE_KEY = 'kanadojo-gauntlet-stats';
 
+interface LifetimeTotals {
+  totalSessions: number;
+  completedSessions: number;
+  totalCorrect: number;
+  totalWrong: number;
+  bestStreak: number;
+}
+
 interface StoredGauntletData {
   version: number;
   sessions: GauntletSessionStats[];
@@ -15,7 +23,21 @@ interface StoredGauntletData {
     kanji: Record<string, number>;
     vocabulary: Record<string, number>;
   };
+  /** Accumulated lifetime totals that persist even when sessions are trimmed */
+  lifetimeTotals: {
+    kana: LifetimeTotals;
+    kanji: LifetimeTotals;
+    vocabulary: LifetimeTotals;
+  };
 }
+
+const getDefaultLifetimeTotals = (): LifetimeTotals => ({
+  totalSessions: 0,
+  completedSessions: 0,
+  totalCorrect: 0,
+  totalWrong: 0,
+  bestStreak: 0,
+});
 
 const getDefaultData = (): StoredGauntletData => ({
   version: 1,
@@ -24,6 +46,11 @@ const getDefaultData = (): StoredGauntletData => ({
     kana: {},
     kanji: {},
     vocabulary: {},
+  },
+  lifetimeTotals: {
+    kana: getDefaultLifetimeTotals(),
+    kanji: getDefaultLifetimeTotals(),
+    vocabulary: getDefaultLifetimeTotals(),
   },
 });
 
@@ -46,6 +73,23 @@ const loadData = async (): Promise<StoredGauntletData> => {
   try {
     const data = await localforage.getItem<StoredGauntletData>(STORAGE_KEY);
     if (data && data.version === 1) {
+      // Migrate: add lifetimeTotals if missing (existing installs)
+      if (!data.lifetimeTotals) {
+        data.lifetimeTotals = {
+          kana: getDefaultLifetimeTotals(),
+          kanji: getDefaultLifetimeTotals(),
+          vocabulary: getDefaultLifetimeTotals(),
+        };
+        // Backfill from existing sessions
+        for (const session of data.sessions) {
+          const totals = data.lifetimeTotals[session.dojoType];
+          totals.totalSessions += 1;
+          if (session.completed) totals.completedSessions += 1;
+          totals.totalCorrect += session.correctAnswers;
+          totals.totalWrong += session.wrongAnswers;
+          totals.bestStreak = Math.max(totals.bestStreak, session.bestStreak);
+        }
+      }
       return data;
     }
     return getDefaultData();
@@ -87,7 +131,15 @@ export const saveSession = async (
     id: generateSessionId(),
   };
 
-  // Add to sessions (keep last 100)
+  // Accumulate lifetime totals (persists even when sessions are trimmed)
+  const totals = data.lifetimeTotals[stats.dojoType];
+  totals.totalSessions += 1;
+  if (stats.completed) totals.completedSessions += 1;
+  totals.totalCorrect += stats.correctAnswers;
+  totals.totalWrong += stats.wrongAnswers;
+  totals.bestStreak = Math.max(totals.bestStreak, stats.bestStreak);
+
+  // Add to sessions (keep last 100 for detailed history)
   data.sessions.unshift(session);
   if (data.sessions.length > 100) {
     data.sessions = data.sessions.slice(0, 100);
@@ -184,31 +236,23 @@ export const getOverallStats = async (
   fastestTime: number | null;
 }> => {
   const data = await loadData();
-  const sessions = data.sessions.filter(s => s.dojoType === dojoType);
+  const totals = data.lifetimeTotals[dojoType];
 
-  if (sessions.length === 0) {
-    return {
-      totalSessions: 0,
-      completedSessions: 0,
-      totalCorrect: 0,
-      totalWrong: 0,
-      bestStreak: 0,
-      fastestTime: null,
-    };
-  }
-
-  const completed = sessions.filter(s => s.completed);
+  // Fastest time still comes from stored sessions (best times are also tracked separately)
+  const completedSessions = data.sessions.filter(
+    s => s.dojoType === dojoType && s.completed,
+  );
   const fastestTime =
-    completed.length > 0
-      ? Math.min(...completed.map(s => s.totalTimeMs))
+    completedSessions.length > 0
+      ? Math.min(...completedSessions.map(s => s.totalTimeMs))
       : null;
 
   return {
-    totalSessions: sessions.length,
-    completedSessions: completed.length,
-    totalCorrect: sessions.reduce((sum, s) => sum + s.correctAnswers, 0),
-    totalWrong: sessions.reduce((sum, s) => sum + s.wrongAnswers, 0),
-    bestStreak: Math.max(...sessions.map(s => s.bestStreak)),
+    totalSessions: totals.totalSessions,
+    completedSessions: totals.completedSessions,
+    totalCorrect: totals.totalCorrect,
+    totalWrong: totals.totalWrong,
+    bestStreak: totals.bestStreak,
     fastestTime,
   };
 };

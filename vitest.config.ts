@@ -12,7 +12,8 @@ const require = createRequire(import.meta.url);
 
 let storybookTest: ((options: { configDir: string }) => PluginOption) | null =
   null;
-let playwright: ((options: Record<string, unknown>) => any) | null = null;
+let playwright: ((options: Record<string, unknown>) => PluginOption) | null =
+  null;
 
 try {
   // Loaded dynamically so TypeScript doesn't require these deps for `npm run check`.
@@ -25,7 +26,7 @@ try {
 try {
   playwright = require('@vitest/browser-playwright').playwright as (
     options: Record<string, unknown>,
-  ) => any;
+  ) => PluginOption;
 } catch {
   playwright = null;
 }
@@ -53,7 +54,7 @@ export default defineConfig({
                 browser: {
                   enabled: true,
                   headless: true,
-                  provider: playwright({}) as any,
+                  provider: playwright({}) as unknown as 'playwright',
                   instances: [
                     {
                       browser: 'chromium',

@@ -1,5 +1,6 @@
 /* prettier-ignore-file */
 import { useCustomThemeStore } from '../store/useCustomThemeStore';
+import { getWallpaperById } from './wallpapers';
 import usePreferencesStore from '../store/usePreferencesStore';
 import {
   Atom,
@@ -34,6 +35,7 @@ interface BaseTheme {
   backgroundColor: string;
   mainColor: string;
   secondaryColor: string;
+  wallpaperId?: string; // Optional: default wallpaper for this theme
 }
 
 interface BaseThemeGroup {
@@ -153,6 +155,50 @@ export function getModifiedBorderColor(
   return borderColor;
 }
 
+/**
+ * Get wallpaper styles for a given wallpaper URL
+ * @param wallpaperUrl - Direct URL to wallpaper image
+ * @param isHighlighted - Whether the theme is currently hovered/highlighted
+ * @returns CSS properties for wallpaper background, or empty object if no URL
+ */
+export function getWallpaperStyles(
+  wallpaperUrl: string | undefined,
+  isHighlighted: boolean,
+): React.CSSProperties {
+  if (!wallpaperUrl) return {};
+
+  return {
+    backgroundImage: `url('${wallpaperUrl}')`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    filter: isHighlighted ? 'brightness(1)' : 'brightness(0.85)',
+  };
+}
+
+/**
+ * Get default wallpaper ID for a theme (if any)
+ * Maps premium themes to their default wallpapers
+ */
+export function getThemeDefaultWallpaperId(
+  themeId: string,
+): string | undefined {
+  const themeWallpaperMap: Record<string, string> = {
+    'neon-city': 'neon-city-local',
+    'tokyo-rain': 'tokyo-rain',
+    'cyberpunk-street': 'cyberpunk-street',
+    'sakura-night': 'sakura-night',
+    'mt-fuji-sunset': 'mt-fuji-sunset',
+    'purple-gradient': 'minimal-gradient-purple',
+    'kyoto-lanterns': 'kyoto-lanterns',
+    'arashiyama-bamboo': 'arashiyama-bamboo',
+    'nara-temple': 'nara-temple',
+    'osaka-riverwalk': 'osaka-riverwalk',
+  };
+  return themeWallpaperMap[themeId];
+}
+
+// Deprecated: kept for backwards compatibility, will be removed in future
 export const getNeonCityWallpaperStyles = (isHighlighted: boolean) => ({
   backgroundImage: "url('/wallpapers/neonretrocarcity.jpg')",
   backgroundSize: 'cover',
@@ -273,15 +319,79 @@ function buildThemeGroup(baseGroup: BaseThemeGroup): ThemeGroup {
 // Base theme definitions - only id, backgroundColor, mainColor, secondaryColor
 const baseThemeSets: BaseThemeGroup[] = [
   {
-    name: 'Premium',
+    name: 'Premium (experimental, unstable)',
     icon: Sparkles,
     isLight: false,
     themes: [
       {
         id: 'neon-city',
-        backgroundColor: 'oklch(0% 0 0 / 0.95)', // Fully transparent, as wallpaper will be behind
-        mainColor: 'oklch(100% 0 0)', // High contrast white
-        secondaryColor: 'oklch(90% 0 0)', // Muted light gray
+        backgroundColor: 'oklch(0% 0 0 / 0.95)',
+        mainColor: 'oklch(100% 0 0)',
+        secondaryColor: 'oklch(90% 0 0)',
+        wallpaperId: 'neon-city-local',
+      },
+      {
+        id: 'tokyo-rain',
+        backgroundColor: 'oklch(0% 0 0 / 0.95)',
+        mainColor: 'oklch(100% 0 0)',
+        secondaryColor: 'oklch(90% 0 0)',
+        wallpaperId: 'tokyo-rain',
+      },
+      {
+        id: 'cyberpunk-street',
+        backgroundColor: 'oklch(0% 0 0 / 0.95)',
+        mainColor: 'oklch(100% 0 0)',
+        secondaryColor: 'oklch(90% 0 0)',
+        wallpaperId: 'cyberpunk-street',
+      },
+      {
+        id: 'sakura-night',
+        backgroundColor: 'oklch(0% 0 0 / 0.95)',
+        mainColor: 'oklch(100% 0 0)',
+        secondaryColor: 'oklch(85% 0 0)',
+        wallpaperId: 'sakura-night',
+      },
+      {
+        id: 'mt-fuji-sunset',
+        backgroundColor: 'oklch(0% 0 0 / 0.95)',
+        mainColor: 'oklch(100% 0 0)',
+        secondaryColor: 'oklch(85% 0 0)',
+        wallpaperId: 'mt-fuji-sunset',
+      },
+      {
+        id: 'purple-gradient',
+        backgroundColor: 'oklch(0% 0 0 / 0.95)',
+        mainColor: 'oklch(100% 0 0)',
+        secondaryColor: 'oklch(90% 0 0)',
+        wallpaperId: 'minimal-gradient-purple',
+      },
+      {
+        id: 'kyoto-lanterns',
+        backgroundColor: 'oklch(0% 0 0 / 0.95)',
+        mainColor: 'oklch(74% 0.25 32 / 1)',
+        secondaryColor: 'oklch(68% 0.18 22 / 1)',
+        wallpaperId: 'kyoto-lanterns',
+      },
+      {
+        id: 'arashiyama-bamboo',
+        backgroundColor: 'oklch(0% 0 0 / 0.95)',
+        mainColor: 'oklch(72% 0.14 140 / 1)',
+        secondaryColor: 'oklch(78% 0.1 115 / 1)',
+        wallpaperId: 'arashiyama-bamboo',
+      },
+      {
+        id: 'nara-temple',
+        backgroundColor: 'oklch(0% 0 0 / 0.95)',
+        mainColor: 'oklch(80% 0.12 70 / 1)',
+        secondaryColor: 'oklch(70% 0.17 45 / 1)',
+        wallpaperId: 'nara-temple',
+      },
+      {
+        id: 'osaka-riverwalk',
+        backgroundColor: 'oklch(0% 0 0 / 0.95)',
+        mainColor: 'oklch(68% 0.21 260 / 1)',
+        secondaryColor: 'oklch(70% 0.18 295 / 1)',
+        wallpaperId: 'osaka-riverwalk',
       },
     ],
   },
@@ -1411,7 +1521,7 @@ const baseThemeSets: BaseThemeGroup[] = [
 
 const premiumThemeIds = new Set(
   baseThemeSets
-    .find(group => group.name === 'Premium')
+    .find(group => group.name.startsWith('Premium'))
     ?.themes.map(theme => theme.id) ?? [],
 );
 
@@ -1523,6 +1633,28 @@ export function applyTheme(themeId: string) {
   }
 
   root.setAttribute('data-theme', resolvedThemeId);
+
+  // Apply wallpaper if theme has one
+  const wallpaperId = getThemeDefaultWallpaperId(resolvedThemeId);
+  if (wallpaperId) {
+    const customWallpapers = usePreferencesStore.getState().customWallpapers;
+    const wallpaper = getWallpaperById(wallpaperId, customWallpapers);
+
+    if (wallpaper) {
+      document.body.style.backgroundImage = `url('${wallpaper.url}')`;
+      document.body.style.backgroundSize = 'cover';
+      document.body.style.backgroundPosition = 'center';
+      document.body.style.backgroundRepeat = 'no-repeat';
+      document.body.style.backgroundAttachment = 'fixed';
+    }
+  } else {
+    // Clear wallpaper if theme doesn't have one
+    document.body.style.backgroundImage = '';
+    document.body.style.backgroundSize = '';
+    document.body.style.backgroundPosition = '';
+    document.body.style.backgroundRepeat = '';
+    document.body.style.backgroundAttachment = '';
+  }
 }
 
 // Apply a theme object directly (live preview theme)

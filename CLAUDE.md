@@ -338,4 +338,4 @@ git add -A && git commit -m "feat(kana): add dakuon character support"
 
 ---
 
-**Last Updated**: January 2025
+**Last Updated**: February 2026 (v0.1.14)

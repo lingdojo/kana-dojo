@@ -50,17 +50,29 @@ const GauntletKana: React.FC<GauntletKanaProps> = ({ onCancel }) => {
     generateOptions: (question, items, count, isReverse) => {
       if (isReverse) {
         const correctAnswer = question.kana;
+        const seen = new Set([correctAnswer]);
         const incorrectOptions = shuffle(
           items.filter(item => item.kana !== correctAnswer),
         )
+          .filter(item => {
+            if (seen.has(item.kana)) return false;
+            seen.add(item.kana);
+            return true;
+          })
           .slice(0, count - 1)
           .map(item => item.kana);
         return [correctAnswer, ...incorrectOptions];
       }
       const correctAnswer = question.romaji;
+      const seen = new Set([correctAnswer]);
       const incorrectOptions = shuffle(
         items.filter(item => item.romaji !== correctAnswer),
       )
+        .filter(item => {
+          if (seen.has(item.romaji)) return false;
+          seen.add(item.romaji);
+          return true;
+        })
         .slice(0, count - 1)
         .map(item => item.romaji);
       return [correctAnswer, ...incorrectOptions];

@@ -5,7 +5,7 @@ import { useClick } from '@/shared/hooks/useAudio';
 import { ChevronUp } from 'lucide-react';
 
 interface CollapsibleSectionProps {
-  title: string;
+  title: ReactNode;
   icon?: ReactNode;
   children: ReactNode;
   defaultOpen?: boolean;
@@ -88,7 +88,7 @@ const CollapsibleSection = ({
           className={clsx(
             'transition-transform duration-300 ease-out',
             'transition-colors delay-200 duration-300',
-            'text-(--secondary-color)',
+            'text-(--main-color)',
             'max-md:group-active:text-(--main-color)',
             'md:group-hover:text-(--main-color)',
             !isOpen && 'rotate-180',

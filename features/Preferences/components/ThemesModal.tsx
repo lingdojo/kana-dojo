@@ -3,7 +3,10 @@
 import {
   applyTheme,
   isPremiumThemeId,
+  getWallpaperStyles,
+  getThemeDefaultWallpaperId,
 } from '@/features/Preferences/data/themes';
+import { getWallpaperById } from '@/features/Preferences/data/wallpapers';
 import usePreferencesStore from '@/features/Preferences/store/usePreferencesStore';
 import { useClick } from '@/shared/hooks/useAudio';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
@@ -58,41 +61,49 @@ const CHAOS_THEME_GRADIENT = `linear-gradient(
   oklch(66.0% 0.18 25.0 / 1) 100%
 )`;
 
-const getNeonCityWallpaperStyles = (isHovered: boolean) => ({
-  backgroundImage: "url('/wallpapers/neonretrocarcity.jpg')",
-  backgroundSize: 'cover',
-  backgroundPosition: 'center',
-  backgroundRepeat: 'no-repeat',
-  filter: isHovered ? 'brightness(1)' : 'brightness(0.85)',
-});
-
 const ThemeCard = memo(function ThemeCard({
   theme,
   isSelected,
   onClick,
 }: ThemeCardProps) {
   const [isHovered, setIsHovered] = useState(false);
+  const selectedWallpaperId = usePreferencesStore(
+    state => state.selectedWallpaperId,
+  );
+  const customWallpapers = usePreferencesStore(state => state.customWallpapers);
+
   const themeName = theme.id.replaceAll('-', ' ');
   const isChaosTheme = theme.id === '?';
-  const isNeonCityTheme = theme.id === 'neon-city';
   const isPremiumTheme = isPremiumThemeId(theme.id);
+
+  // Check if theme has a default wallpaper (premium themes)
+  const themeWallpaperId = getThemeDefaultWallpaperId(theme.id);
+  const wallpaperIdToUse = themeWallpaperId || selectedWallpaperId;
+
+  const wallpaper = wallpaperIdToUse
+    ? getWallpaperById(wallpaperIdToUse, customWallpapers)
+    : undefined;
+
   const background = isChaosTheme
     ? CHAOS_THEME_GRADIENT
     : isHovered
       ? theme.cardColor
       : theme.backgroundColor;
-  const neonCityStyles = isNeonCityTheme
-    ? getNeonCityWallpaperStyles(isHovered)
+
+  const wallpaperStyles = wallpaper
+    ? getWallpaperStyles(wallpaper.url, isHovered)
     : {};
+
+  const borderStyle = isPremiumTheme
+    ? 'none'
+    : `1px solid ${isSelected ? theme.mainColor : theme.borderColor}`;
 
   return (
     <div
       className='cursor-pointer rounded-lg p-3'
       style={{
-        ...(isNeonCityTheme ? neonCityStyles : { background }),
-        border: isSelected
-          ? `1px solid ${theme.mainColor}`
-          : `1px solid ${theme.borderColor}`,
+        ...(wallpaper ? wallpaperStyles : { background }),
+        border: borderStyle,
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -196,11 +207,19 @@ export default function ThemesModal({ open, onOpenChange }: ThemesModalProps) {
                 return (
                   <div key={group.name} className='space-y-3'>
                     <div className='flex items-center gap-2 text-lg font-medium text-(--main-color)'>
-                      <Icon size={20} />
-                      {group.name}
-                      {/* <span className='text-sm font-normal text-(--secondary-color)'>
-                        ({group.themes.length})
-                      </span> */}
+                      <Icon size={20} className='text-(--secondary-color)' />
+                      {group.name === 'Premium' ? (
+                        <span>
+                          <span className='text-(--main-color)'>Premium</span>
+                          <span className='ml-1 text-(--secondary-color)'>
+                            (experimental, unstable)
+                          </span>
+                        </span>
+                      ) : (
+                        <span className='text-(--main-color)'>
+                          {group.name}
+                        </span>
+                      )}
                     </div>
                     <div className='grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4'>
                       {group.themes.map(theme => (

@@ -1,7 +1,8 @@
 import Script from 'next/script';
 
 interface StructuredDataProps {
-  data: Record<string, any>;
+  // Accept schema-dts types and other JSON-LD shapes without forcing index signatures.
+  data: unknown;
 }
 
 export function StructuredData({ data }: StructuredDataProps) {

@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import { useRouter } from '@/core/i18n/routing';
 import { Random } from 'random-js';
 import { useClick, useCorrect, useError } from '@/shared/hooks/useAudio';
+import { shuffle } from '@/shared/lib/shuffle';
 import { saveSession } from '@/shared/lib/gauntletStats';
 import useGauntletSettingsStore from '@/shared/store/useGauntletSettingsStore';
 
@@ -49,7 +50,6 @@ const calculateRegenThreshold = (totalQuestions: number): number => {
 function generateQuestionQueue<T>(
   items: T[],
   repetitions: number,
-  generateQuestion: (items: T[]) => T,
 ): GauntletQuestion<T>[] {
   const queue: GauntletQuestion<T>[] = [];
 
@@ -95,7 +95,7 @@ export default function Gauntlet<T>({ config, onCancel }: GauntletProps<T>) {
     dojoLabel,
     items,
     selectedSets,
-    generateQuestion,
+    generateQuestion: _generateQuestion,
     renderQuestion,
     checkAnswer,
     getCorrectAnswer,
@@ -108,9 +108,7 @@ export default function Gauntlet<T>({ config, onCancel }: GauntletProps<T>) {
   // Game configuration state - initialized from store for all settings
   // The store persists settings across navigation from PreGameScreen to game route
   const [gameMode, setGameModeState] = useState<GauntletGameMode>(() => {
-    // Use store value, fallback to config's initialGameMode, then default to 'Pick'
     const storeMode = gauntletSettings.getGameMode(dojoType);
-    // If store has a value, use it; otherwise use initialGameMode from config
     return storeMode || initialGameMode || 'Pick';
   });
   const [difficulty, setDifficultyState] = useState<GauntletDifficulty>(
@@ -170,21 +168,20 @@ export default function Gauntlet<T>({ config, onCancel }: GauntletProps<T>) {
 
   // Time tracking
   const [startTime, setStartTime] = useState(0);
-  const [elapsedTime, setElapsedTime] = useState(0);
   const [answerTimes, setAnswerTimes] = useState<number[]>([]);
   const lastAnswerTime = useRef(0);
 
   // Answer feedback
-  const [lastAnswerCorrect, setLastAnswerCorrect] = useState<boolean | null>(
+  const [_lastAnswerCorrect, setLastAnswerCorrect] = useState<boolean | null>(
     null,
   );
-  const [lifeJustGained, setLifeJustGained] = useState(false);
-  const [lifeJustLost, setLifeJustLost] = useState(false);
+  const [_lifeJustGained, setLifeJustGained] = useState(false);
+  const [_lifeJustLost, setLifeJustLost] = useState(false);
 
   // Input state
   const [userAnswer, setUserAnswer] = useState('');
   const [shuffledOptions, setShuffledOptions] = useState<string[]>([]);
-  const [wrongSelectedAnswers, setWrongSelectedAnswers] = useState<string[]>(
+  const [_wrongSelectedAnswers, setWrongSelectedAnswers] = useState<string[]>(
     [],
   );
 
@@ -212,37 +209,21 @@ export default function Gauntlet<T>({ config, onCancel }: GauntletProps<T>) {
     statsTracking.recordDojoUsed(dojoType);
   }, [dojoType]);
 
-  // Timer effect
-  useEffect(() => {
-    if (phase !== 'playing' || startTime === 0) return;
-
-    const interval = setInterval(() => {
-      setElapsedTime(Date.now() - startTime);
-    }, 100);
-
-    return () => clearInterval(interval);
-  }, [phase, startTime]);
-
-  // Generate options when question changes (always uses Pick/tile mode now)
-  useEffect(() => {
-    if (currentQuestion && generateOptions && phase === 'playing') {
-      const options = generateOptions(
-        currentQuestion.item,
-        items,
-        4,
-        isReverseActive,
-      );
-      const shuffled = [...options].sort(() => random.real(0, 1) - 0.5);
-      setShuffledOptions(shuffled);
-      setWrongSelectedAnswers([]);
-    }
-  }, [currentQuestion, generateOptions, items, isReverseActive, phase]);
+  // Helper: generate shuffled options for a given question item (Pick mode)
+  const generateShuffledOptions = useCallback(
+    (questionItem: T) => {
+      if (!generateOptions || gameMode !== 'Pick') return;
+      const options = generateOptions(questionItem, items, 4, isReverseActive);
+      setShuffledOptions(shuffle(options));
+    },
+    [generateOptions, gameMode, items, isReverseActive],
+  );
 
   // Handle game start
   const handleStart = useCallback(() => {
     playClick();
 
-    const queue = generateQuestionQueue(items, repetitions, generateQuestion);
+    const queue = generateQuestionQueue(items, repetitions);
     const diffConfig = DIFFICULTY_CONFIG[difficulty];
     const threshold = calculateRegenThreshold(queue.length);
 
@@ -262,7 +243,6 @@ export default function Gauntlet<T>({ config, onCancel }: GauntletProps<T>) {
 
     const now = Date.now();
     setStartTime(now);
-    setElapsedTime(0);
     setAnswerTimes([]);
     lastAnswerTime.current = now;
 
@@ -272,29 +252,13 @@ export default function Gauntlet<T>({ config, onCancel }: GauntletProps<T>) {
     setUserAnswer('');
     setWrongSelectedAnswers([]);
 
-    // Generate initial options for the first question
-    if (queue.length > 0 && generateOptions) {
-      const firstQuestion = queue[0];
-      const options = generateOptions(
-        firstQuestion.item,
-        items,
-        4,
-        isReverseActive,
-      );
-      const shuffled = [...options].sort(() => random.real(0, 1) - 0.5);
-      setShuffledOptions(shuffled);
+    // Generate initial options for the first question (Pick mode only)
+    if (queue.length > 0) {
+      generateShuffledOptions(queue[0].item);
     }
 
     setPhase('playing');
-  }, [
-    items,
-    repetitions,
-    difficulty,
-    generateQuestion,
-    generateOptions,
-    isReverseActive,
-    playClick,
-  ]);
+  }, [items, repetitions, difficulty, generateShuffledOptions, playClick]);
 
   // Get a unique identifier for the current question item
   const getItemId = useCallback((item: T): string => {
@@ -302,7 +266,7 @@ export default function Gauntlet<T>({ config, onCancel }: GauntletProps<T>) {
     if (typeof item === 'object' && item !== null) {
       const obj = item as Record<string, unknown>;
       if ('kana' in obj) return String(obj.kana);
-      if ('kanji' in obj) return String(obj.kanji);
+      if ('kanjiChar' in obj) return String(obj.kanjiChar);
       if ('word' in obj) return String(obj.word);
       if ('id' in obj) return String(obj.id);
     }
@@ -310,8 +274,26 @@ export default function Gauntlet<T>({ config, onCancel }: GauntletProps<T>) {
   }, []);
 
   // End game and calculate stats
+  // Accepts actual values as parameters to avoid stale closure issues,
+  // since React state setters are batched and don't update synchronously.
   const endGame = useCallback(
-    async (completed: boolean) => {
+    async ({
+      completed,
+      actualLives,
+      actualCorrectAnswers,
+      actualWrongAnswers,
+      actualQuestionsCompleted,
+      actualBestStreak,
+      actualCurrentStreak,
+    }: {
+      completed: boolean;
+      actualLives: number;
+      actualCorrectAnswers: number;
+      actualWrongAnswers: number;
+      actualQuestionsCompleted: number;
+      actualBestStreak: number;
+      actualCurrentStreak: number;
+    }) => {
       const totalTimeMs = Date.now() - startTime;
       const validAnswerTimes = answerTimes.filter(t => t > 0);
 
@@ -321,17 +303,17 @@ export default function Gauntlet<T>({ config, onCancel }: GauntletProps<T>) {
         difficulty,
         gameMode,
         totalQuestions,
-        correctAnswers,
-        wrongAnswers,
+        correctAnswers: actualCorrectAnswers,
+        wrongAnswers: actualWrongAnswers,
         accuracy:
-          correctAnswers + wrongAnswers > 0
-            ? correctAnswers / (correctAnswers + wrongAnswers)
+          actualCorrectAnswers + actualWrongAnswers > 0
+            ? actualCorrectAnswers / (actualCorrectAnswers + actualWrongAnswers)
             : 0,
-        bestStreak,
-        currentStreak,
+        bestStreak: actualBestStreak,
+        currentStreak: actualCurrentStreak,
         startingLives: maxLives,
-        livesRemaining: lives,
-        livesLost: maxLives - lives + livesRegenerated,
+        livesRemaining: actualLives,
+        livesLost: maxLives - actualLives + livesRegenerated,
         livesRegenerated,
         totalTimeMs,
         averageTimePerQuestionMs:
@@ -344,7 +326,7 @@ export default function Gauntlet<T>({ config, onCancel }: GauntletProps<T>) {
         slowestAnswerMs:
           validAnswerTimes.length > 0 ? Math.max(...validAnswerTimes) : 0,
         completed,
-        questionsCompleted: currentIndex,
+        questionsCompleted: actualQuestionsCompleted,
         characterStats,
         totalCharacters: items.length,
         repetitionsPerChar: repetitions,
@@ -358,7 +340,7 @@ export default function Gauntlet<T>({ config, onCancel }: GauntletProps<T>) {
       setIsNewBest(newBest);
 
       // Track gauntlet stats for achievements
-      const livesLost = maxLives - lives + livesRegenerated;
+      const livesLost = maxLives - actualLives + livesRegenerated;
       const isPerfect = stats.accuracy === 1 && completed;
       statsTracking.recordGauntletRun({
         completed,
@@ -366,7 +348,7 @@ export default function Gauntlet<T>({ config, onCancel }: GauntletProps<T>) {
         isPerfect,
         livesLost,
         livesRegenerated,
-        bestStreak,
+        bestStreak: actualBestStreak,
       });
 
       setPhase('results');
@@ -378,14 +360,8 @@ export default function Gauntlet<T>({ config, onCancel }: GauntletProps<T>) {
       difficulty,
       gameMode,
       totalQuestions,
-      correctAnswers,
-      wrongAnswers,
-      bestStreak,
-      currentStreak,
       maxLives,
-      lives,
       livesRegenerated,
-      currentIndex,
       characterStats,
       items.length,
       repetitions,
@@ -395,30 +371,109 @@ export default function Gauntlet<T>({ config, onCancel }: GauntletProps<T>) {
 
   const recordAnswerTime = useCallback(() => {
     const now = Date.now();
-    const timeTaken = now - lastAnswerTime.current;
+    // Skip recording if lastAnswerTime hasn't been set yet (shouldn't happen,
+    // but guard against negative/zero times from race conditions)
+    if (lastAnswerTime.current > 0) {
+      const timeTaken = now - lastAnswerTime.current;
+      if (timeTaken > 0) {
+        setAnswerTimes(prev => [...prev, timeTaken]);
+      }
+    }
     lastAnswerTime.current = now;
-    setAnswerTimes(prev => [...prev, timeTaken]);
   }, []);
 
   const advanceToNextQuestion = useCallback(
-    (newLives: number) => {
+    (
+      newLives: number,
+      wasCorrect: boolean,
+      newCorrectAnswers: number,
+      newWrongAnswers: number,
+      questionsCompleted: number,
+      newBestStreak: number,
+      newCurrentStreak: number,
+    ) => {
       setUserAnswer('');
       setWrongSelectedAnswers([]);
       setLastAnswerCorrect(null);
 
       if (newLives <= 0) {
-        endGame(false);
+        endGame({
+          completed: false,
+          actualLives: newLives,
+          actualCorrectAnswers: newCorrectAnswers,
+          actualWrongAnswers: newWrongAnswers,
+          actualQuestionsCompleted: questionsCompleted,
+          actualBestStreak: newBestStreak,
+          actualCurrentStreak: newCurrentStreak,
+        });
         return;
       }
 
-      if (currentIndex + 1 >= totalQuestions) {
-        endGame(true);
-        return;
-      }
+      if (wasCorrect) {
+        // Check if all questions have been answered correctly
+        if (newCorrectAnswers >= totalQuestions) {
+          endGame({
+            completed: true,
+            actualLives: newLives,
+            actualCorrectAnswers: newCorrectAnswers,
+            actualWrongAnswers: newWrongAnswers,
+            actualQuestionsCompleted: questionsCompleted,
+            actualBestStreak: newBestStreak,
+            actualCurrentStreak: newCurrentStreak,
+          });
+          return;
+        }
+        // Move to the next question in the queue and pre-generate options
+        const nextIndex = currentIndex + 1;
+        const nextQuestion = questionQueue[nextIndex];
+        if (nextQuestion) {
+          generateShuffledOptions(nextQuestion.item);
+        }
+        setCurrentIndex(nextIndex);
+      } else {
+        // Wrong answer: re-queue this question at a random later position
+        // so the user must answer it correctly to complete the gauntlet.
+        // Cap re-queuing to prevent unbounded queue growth — if the queue
+        // has already grown beyond 3x the original target, stop re-queuing
+        // (the player is struggling but still has lives due to regen).
+        const maxQueueSize = totalQuestions * 3;
 
-      setCurrentIndex(prev => prev + 1);
+        // Compute the new queue eagerly so we can read the next question
+        // and generate options synchronously (avoiding a stale-render gap).
+        const prevQueue = questionQueue;
+        let newQueue: GauntletQuestion<T>[];
+        if (prevQueue.length >= maxQueueSize) {
+          newQueue = prevQueue;
+        } else {
+          newQueue = [...prevQueue];
+          const failedQuestion = { ...newQueue[currentIndex] };
+          const remainingLength = newQueue.length - (currentIndex + 1);
+          const insertOffset =
+            remainingLength > 0
+              ? random.integer(1, Math.max(1, Math.min(remainingLength, 5)))
+              : 1;
+          const insertPos = currentIndex + insertOffset;
+          newQueue.splice(insertPos, 0, failedQuestion);
+        }
+        setQuestionQueue(newQueue);
+
+        // Generate options for the next question synchronously
+        const nextIndex = currentIndex + 1;
+        const nextQuestion = newQueue[nextIndex];
+        if (nextQuestion) {
+          generateShuffledOptions(nextQuestion.item);
+        }
+        // Still advance past the current slot (the re-queued copy is ahead)
+        setCurrentIndex(nextIndex);
+      }
     },
-    [currentIndex, endGame, totalQuestions],
+    [
+      currentIndex,
+      endGame,
+      totalQuestions,
+      generateShuffledOptions,
+      questionQueue,
+    ],
   );
 
   const submitAnswer = useCallback(
@@ -431,14 +486,13 @@ export default function Gauntlet<T>({ config, onCancel }: GauntletProps<T>) {
         playCorrect();
         setLastAnswerCorrect(true);
 
+        // Compute new streak values inline to avoid stale closure in endGame
+        const newCurrentStreak = currentStreak + 1;
+        const newBestStreak = Math.max(bestStreak, newCurrentStreak);
+
         setCorrectAnswers(prev => prev + 1);
-        setCurrentStreak(prev => {
-          const newStreak = prev + 1;
-          if (newStreak > bestStreak) {
-            setBestStreak(newStreak);
-          }
-          return newStreak;
-        });
+        setCurrentStreak(newCurrentStreak);
+        setBestStreak(newBestStreak);
 
         const charId = getItemId(currentQuestion.item);
         setCharacterStats(prev => ({
@@ -448,6 +502,9 @@ export default function Gauntlet<T>({ config, onCancel }: GauntletProps<T>) {
             wrong: prev[charId]?.wrong || 0,
           },
         }));
+
+        const newCorrectAnswers = correctAnswers + 1;
+        const questionsCompleted = currentIndex + 1;
 
         const canRegen = DIFFICULTY_CONFIG[difficulty].regenerates;
         if (canRegen && lives < maxLives) {
@@ -463,7 +520,15 @@ export default function Gauntlet<T>({ config, onCancel }: GauntletProps<T>) {
           }
         }
 
-        advanceToNextQuestion(lives);
+        advanceToNextQuestion(
+          lives,
+          true,
+          newCorrectAnswers,
+          wrongAnswers,
+          questionsCompleted,
+          newBestStreak,
+          newCurrentStreak,
+        );
         return;
       }
 
@@ -483,17 +548,31 @@ export default function Gauntlet<T>({ config, onCancel }: GauntletProps<T>) {
       }));
 
       const newLives = lives - 1;
+      const newWrongAnswers = wrongAnswers + 1;
+      const questionsCompletedOnWrong = currentIndex + 1;
       setLives(newLives);
       setLifeJustLost(true);
       setTimeout(() => setLifeJustLost(false), 500);
 
-      advanceToNextQuestion(newLives);
+      // On wrong answer, streak resets to 0 — bestStreak stays the same
+      advanceToNextQuestion(
+        newLives,
+        false,
+        correctAnswers,
+        newWrongAnswers,
+        questionsCompletedOnWrong,
+        bestStreak,
+        0,
+      );
     },
     [
       advanceToNextQuestion,
       bestStreak,
+      correctAnswers,
       correctSinceLastRegen,
+      currentIndex,
       currentQuestion,
+      currentStreak,
       difficulty,
       getItemId,
       lives,
@@ -502,35 +581,8 @@ export default function Gauntlet<T>({ config, onCancel }: GauntletProps<T>) {
       playError,
       recordAnswerTime,
       regenThreshold,
+      wrongAnswers,
     ],
-  );
-
-  const handleSubmit = useCallback(() => {
-    if (!currentQuestion) return;
-    const trimmed = userAnswer.trim();
-    if (!trimmed) return;
-
-    const isCorrect = checkAnswer(
-      currentQuestion.item,
-      trimmed,
-      isReverseActive,
-    );
-    submitAnswer(isCorrect);
-  }, [checkAnswer, currentQuestion, isReverseActive, submitAnswer, userAnswer]);
-
-  const handlePickSubmit = useCallback(
-    (selectedOption: string) => {
-      if (!currentQuestion || !getCorrectOption) return;
-
-      const correctOption = getCorrectOption(
-        currentQuestion.item,
-        isReverseActive,
-      );
-      const isCorrect = selectedOption === correctOption;
-
-      submitAnswer(isCorrect);
-    },
-    [currentQuestion, getCorrectOption, isReverseActive, submitAnswer],
   );
 
   // Handle cancel
@@ -604,10 +656,19 @@ export default function Gauntlet<T>({ config, onCancel }: GauntletProps<T>) {
     );
   }
 
+  // Safety check: Pick mode requires getCorrectOption, Type mode requires checkAnswer
+  if (gameMode === 'Pick' && !getCorrectOption) {
+    return <EmptyState dojoType={dojoType} dojoLabel={dojoLabel} />;
+  }
+  if (gameMode === 'Type' && !checkAnswer) {
+    return <EmptyState dojoType={dojoType} dojoLabel={dojoLabel} />;
+  }
+
   return (
     <ActiveGame
       dojoType={dojoType}
-      currentIndex={currentIndex}
+      gameMode={gameMode}
+      currentIndex={correctAnswers}
       totalQuestions={totalQuestions}
       lives={lives}
       maxLives={maxLives}
@@ -618,7 +679,11 @@ export default function Gauntlet<T>({ config, onCancel }: GauntletProps<T>) {
       renderOption={renderOption}
       items={items}
       onSubmit={handleActiveGameSubmit}
-      getCorrectOption={getCorrectOption!}
+      getCorrectOption={getCorrectOption || (() => '')}
+      checkAnswer={checkAnswer}
+      getCorrectAnswer={getCorrectAnswer}
+      userAnswer={userAnswer}
+      setUserAnswer={setUserAnswer}
       onCancel={handleCancel}
       questionKey={questionKey}
     />

@@ -236,202 +236,212 @@
   {
     "id": 45,
     "text": "\"〜ておく\" means \"do in advance\" or \"leave as is\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 46,
     "text": "\"〜にする\" means \"decide on\" a choice or selection.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 47,
     "text": "\"〜に決まっている\" means \"must be\" or \"definitely\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 48,
     "text": "\"〜そうだ\" can indicate appearance, like \"it looks like\".",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 49,
     "text": "\"〜ながらも\" means \"even while\" or \"though\" (contrast).",
-    "issued": false
+    "issued": true
   },
   {
     "id": 50,
     "text": "\"〜わけではない\" means \"not necessarily\" or \"it's not that\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 51,
     "text": "\"〜というより\" means \"rather than\" or \"more like\".",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 52,
     "text": "\"〜おかげで\" expresses gratitude for a cause, \"thanks to\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 53,
     "text": "\"〜せいで\" indicates a negative cause, \"because of\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 54,
     "text": "\"〜ほど\" can express degree, like \"so... that\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 55,
     "text": "\"〜ば〜ほど\" means \"the more... the more...\".",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 56,
     "text": "\"〜に違いない\" expresses strong conviction: \"must be\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 57,
     "text": "\"〜わけがない\" means \"there is no way that...\".",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 58,
     "text": "\"〜ようにする\" means \"make an effort to...\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 59,
     "text": "\"〜てしまう\" can express completion or regret (\"end up doing\").",
-    "issued": false
+    "issued": true
   },
   {
     "id": 60,
     "text": "\"〜にしては\" means \"considering...\".",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 61,
     "text": "\"〜にとって\" means \"for / to (someone)\".",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 62,
     "text": "\"〜につれて\" means \"as... changes, ... also changes\".",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 63,
     "text": "\"〜に比べて\" means \"compared to...\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 64,
     "text": "\"〜によると\" means \"according to...\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 65,
     "text": "\"〜に応じて\" means \"depending on...\".",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 66,
     "text": "\"〜に加えて\" means \"in addition to...\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 67,
     "text": "\"〜に向けて\" means \"toward / in preparation for\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 68,
     "text": "\"〜おそれがある\" means \"there is a risk that...\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 69,
     "text": "\"〜ものの\" means \"although...\" with contrast.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 70,
     "text": "\"〜まま\" means \"as-is / while remaining...\".",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 71,
     "text": "\"〜わけにはいかない\" means \"cannot (due to circumstances)\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 72,
     "text": "\"〜て以来\" means \"since (doing)\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 73,
     "text": "\"〜たびに\" means \"every time...\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 74,
     "text": "\"〜ところ\" can mean \"just did / about to do / in the middle of\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 75,
     "text": "\"〜ことにする\" means \"decide to...\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 76,
     "text": "\"〜ことになっている\" means \"it is decided/arranged that...\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 77,
     "text": "\"〜わりに\" means \"despite / considering...\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 78,
     "text": "\"〜ながら\" can mean \"while\" (simultaneous action).",
-    "issued": false
+    "issued": true
   },
   {
     "id": 79,
     "text": "\"〜にすぎない\" means \"no more than...\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 80,
     "text": "\"〜てはじめて\" means \"only after...\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 81,
     "text": "\"〜に気づく\" means \"to notice / realize...\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 82,
     "text": "\"〜ばかりか\" means \"not only... but also\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 83,
     "text": "\"〜にしたがって\" means \"as / in accordance with...\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 84,
     "text": "\"〜を通して\" means \"through / throughout...\".",
-    "issued": false
+    "issued": true
   },
   {
     "id": 85,

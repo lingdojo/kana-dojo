@@ -1,5 +1,13 @@
 [
   {
+    "version": "0.1.14",
+    "date": "February 5, 2026",
+    "changes": [
+      "Introduced four new Japanese-themed premium wallpapers highlighting Kyoto lanterns, Arashiyama bamboo, Nara temple sunrise, and Osaka riverwalk nights",
+      "Mapped each new wallpaper to matching premium themes for a more immersive, cohesive experience"
+    ]
+  },
+  {
     "version": "0.1.13",
     "date": "January 3, 2026",
     "changes": [
