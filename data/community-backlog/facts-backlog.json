@@ -1249,12 +1249,13 @@
   {
     "id": 196,
     "fact": "Japan has 'shabu shabu' hot pot where you swish thin meat slices in boiling broth - named for the 'sha-sha' sound.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 197,
     "fact": "The concept 'sessha' (拙者) is an extremely humble way to say 'I' - originally used by samurai to show modesty.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 198,
