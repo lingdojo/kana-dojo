@@ -1314,17 +1314,19 @@
   {
     "id": 208,
     "fact": "Japan has an art of wrapping gifts called 'tsutsumi' (包み), where presentation is considered part of the gift.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 209,
     "fact": "The Japanese phrase 'ittekimasu' (行ってきます) is said when leaving home, meaning 'I'll go and come back'.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 210,
     "fact": "Japan’s 'kotatsu' is a low table with a heater underneath and a blanket, creating a cozy heated nook in winter.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 211,
