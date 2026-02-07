@@ -1210,12 +1210,13 @@
   {
     "id": 189,
     "fact": "The word 'utsukushii' (美しい) means beautiful but implies something naturally elegant rather than artificially pretty.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 190,
     "fact": "Japan has 'lucky bags' (fukubukuro) sold on New Year's - sealed bags of discount mystery items worth more than the price.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 191,
