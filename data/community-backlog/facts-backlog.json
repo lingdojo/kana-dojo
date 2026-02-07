@@ -1127,12 +1127,13 @@
   {
     "id": 174,
     "fact": "Japan has 'depachika' - basement food halls in department stores selling luxury foods from around the world.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 175,
     "fact": "There's a Japanese word 'waku-waku' (わくわく) for excited anticipation - the tingly feeling of looking forward to something.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 176,
