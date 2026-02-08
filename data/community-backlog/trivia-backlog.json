@@ -178,7 +178,8 @@
       "Shikoku",
       "Kyushu"
     ],
-    "correctIndex": 3
+    "correctIndex": 3,
+    "completed": true
   },
   {
     "id": 15,
@@ -190,7 +191,8 @@
       "Mount Aso",
       "Mount Tate"
     ],
-    "correctIndex": 1
+    "correctIndex": 1,
+    "issued": true
   },
   {
     "id": 16,
