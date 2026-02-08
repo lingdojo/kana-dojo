@@ -684,14 +684,16 @@
     "japanese": "念には念を入れよ",
     "romaji": "Nen ni wa nen wo ireyo",
     "english": "Put care into care",
-    "meaning": "Double-check; be extra careful"
+    "meaning": "Double-check; be extra careful",
+    "completed": true
   },
   {
     "id": 87,
     "japanese": "後悔先に立たず",
     "romaji": "Koukai saki ni tatazu",
     "english": "Regret does not stand before",
-    "meaning": "It's too late for regrets"
+    "meaning": "It's too late for regrets",
+    "issued": true
   },
   {
     "id": 88,
