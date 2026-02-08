@@ -52,49 +52,56 @@
     "japanese": "継続は力なり",
     "romaji": "Keizoku wa chikara nari",
     "english": "Continuation is power",
-    "meaning": "Persistence leads to strength and success"
+    "meaning": "Persistence leads to strength and success",
+    "completed": true
   },
   {
     "id": 8,
     "japanese": "急がば回れ",
     "romaji": "Isogaba maware",
     "english": "If in a hurry, go around",
-    "meaning": "Taking the safer, longer route is sometimes faster"
+    "meaning": "Taking the safer, longer route is sometimes faster",
+    "completed": true
   },
   {
     "id": 9,
     "japanese": "郷に入っては郷に従え",
     "romaji": "Gou ni itte wa gou ni shitagae",
     "english": "When in a village, follow the village customs",
-    "meaning": "When in Rome, do as the Romans do"
+    "meaning": "When in Rome, do as the Romans do",
+    "completed": true
   },
   {
     "id": 10,
     "japanese": "転ばぬ先の杖",
     "romaji": "Korobanu saki no tsue",
     "english": "A cane before falling",
-    "meaning": "Prevention is better than cure"
+    "meaning": "Prevention is better than cure",
+    "completed": true
   },
   {
     "id": 11,
     "japanese": "時は金なり",
     "romaji": "Toki wa kane nari",
     "english": "Time is money",
-    "meaning": "Time is valuable and should not be wasted"
+    "meaning": "Time is valuable and should not be wasted",
+    "completed": true
   },
   {
     "id": 12,
     "japanese": "二兎を追う者は一兎をも得ず",
     "romaji": "Ni to wo ou mono wa itto wo mo ezu",
     "english": "One who chases two rabbits catches neither",
-    "meaning": "Focus on one thing at a time"
+    "meaning": "Focus on one thing at a time",
+    "completed": true
   },
   {
     "id": 13,
     "japanese": "雨降って地固まる",
     "romaji": "Ame futte ji katamaru",
     "english": "After rain, the ground hardens",
-    "meaning": "Adversity builds strength"
+    "meaning": "Adversity builds strength",
+    "issued": true
   },
   {
     "id": 14,
