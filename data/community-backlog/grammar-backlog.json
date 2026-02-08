@@ -41,15 +41,18 @@
   },
   {
     "id": 9,
-    "text": "\"〜そうです\" can report hearsay (\"I heard that...\")."
+    "text": "\"〜そうです\" can report hearsay (\"I heard that...\").",
+    "completed": true
   },
   {
     "id": 10,
-    "text": "\"〜ようです\" means \"it seems like\" and is based on observation."
+    "text": "\"〜ようです\" means \"it seems like\" and is based on observation.",
+    "completed": true
   },
   {
     "id": 11,
-    "text": "\"〜でしょう\" adds probability or softens statements, like \"probably\"."
+    "text": "\"〜でしょう\" adds probability or softens statements, like \"probably\".",
+    "issued": true
   },
   {
     "id": 12,
