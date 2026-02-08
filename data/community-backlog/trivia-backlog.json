@@ -35,7 +35,8 @@
       "July",
       "October"
     ],
-    "correctIndex": 1
+    "correctIndex": 1,
+    "completed": true
   },
   {
     "id": 4,
@@ -47,7 +48,8 @@
       "Kintsugi",
       "Shodo"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "issued": true
   },
   {
     "id": 5,
