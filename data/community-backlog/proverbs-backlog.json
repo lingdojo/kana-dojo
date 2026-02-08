@@ -828,49 +828,56 @@
     "japanese": "一寸先は闇",
     "romaji": "Issun saki wa yami",
     "english": "An inch ahead is darkness",
-    "meaning": "The future is uncertain"
+    "meaning": "The future is uncertain",
+    "completed": true
   },
   {
     "id": 105,
     "japanese": "急いては事を仕損じる",
     "romaji": "Seite wa koto wo shisonjiru",
     "english": "Haste will spoil things",
-    "meaning": "Rushing leads to mistakes"
+    "meaning": "Rushing leads to mistakes",
+    "completed": true
   },
   {
     "id": 106,
     "japanese": "善は急げ",
     "romaji": "Zen wa isoge",
     "english": "Hurry to do good",
-    "meaning": "Do worthwhile things promptly"
+    "meaning": "Do worthwhile things promptly",
+    "completed": true
   },
   {
     "id": 107,
     "japanese": "月とすっぽん",
     "romaji": "Tsuki to suppon",
     "english": "The moon and a turtle",
-    "meaning": "Vastly different; not comparable"
+    "meaning": "Vastly different; not comparable",
+    "completed": true
   },
   {
     "id": 108,
     "japanese": "石橋を叩いて渡る",
     "romaji": "Ishibashi wo tataite wataru",
     "english": "Tap a stone bridge before crossing",
-    "meaning": "Be very cautious"
+    "meaning": "Be very cautious",
+    "completed": true
   },
   {
     "id": 109,
     "japanese": "毒を食らわば皿まで",
     "romaji": "Doku wo kurawaba sara made",
     "english": "If you eat poison, eat the plate too",
-    "meaning": "If you must do it, go all the way"
+    "meaning": "If you must do it, go all the way",
+    "completed": true
   },
   {
     "id": 110,
     "japanese": "縁は異なもの味なもの",
     "romaji": "En wa inamono aji na mono",
     "english": "Fate is strange yet delightful",
-    "meaning": "Unexpected connections can be good"
+    "meaning": "Unexpected connections can be good",
+    "issued": true
   },
   {
     "id": 111,
