@@ -86,7 +86,8 @@
     "romaji": "Tsugi ni omae wa 'yare yare da ze' to iu!",
     "english": "Next you'll say, 'Good grief!'",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
-    "character": "Joseph Joestar"
+    "character": "Joseph Joestar",
+    "completed": true
   },
   {
     "id": 11,
@@ -94,7 +95,8 @@
     "romaji": "Kisama! Mite iru na!!",
     "english": "You! You're watching me!",
     "anime": "JoJo's Bizarre Adventure: Stone Ocean",
-    "character": "Jolyne Cujoh"
+    "character": "Jolyne Cujoh",
+    "completed": true
   },
   {
     "id": 12,
@@ -102,7 +104,8 @@
     "romaji": "Ore wa ningen o yameru zo! Jojo!!",
     "english": "I'm going to stop being human, JoJo!",
     "anime": "JoJo's Bizarre Adventure: Phantom Blood",
-    "character": "Dio Brando"
+    "character": "Dio Brando",
+    "issued": true
   },
   {
     "id": 13,
