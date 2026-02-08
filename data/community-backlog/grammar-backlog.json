@@ -76,27 +76,33 @@
   },
   {
     "id": 16,
-    "text": "\"〜てもらう\" means \"receive a favor\" from someone."
+    "text": "\"〜てもらう\" means \"receive a favor\" from someone.",
+    "completed": true
   },
   {
     "id": 17,
-    "text": "\"〜てあげる\" shows the speaker does a favor for someone else."
+    "text": "\"〜てあげる\" shows the speaker does a favor for someone else.",
+    "completed": true
   },
   {
     "id": 18,
-    "text": "\"〜ようと思う\" expresses a decision made at the moment of speaking."
+    "text": "\"〜ようと思う\" expresses a decision made at the moment of speaking.",
+    "completed": true
   },
   {
     "id": 19,
-    "text": "\"〜なら\" means \"if\" or \"in the case of\" and often gives advice."
+    "text": "\"〜なら\" means \"if\" or \"in the case of\" and often gives advice.",
+    "completed": true
   },
   {
     "id": 20,
-    "text": "\"〜たら\" is a conditional \"if/when\" that also expresses sequence."
+    "text": "\"〜たら\" is a conditional \"if/when\" that also expresses sequence.",
+    "completed": true
   },
   {
     "id": 21,
-    "text": "\"〜ば\" forms a conditional meaning \"if\" in a general sense."
+    "text": "\"〜ば\" forms a conditional meaning \"if\" in a general sense.",
+    "issued": true
   },
   {
     "id": 22,
