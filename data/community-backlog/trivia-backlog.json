@@ -204,7 +204,8 @@
       "Autumn",
       "Winter"
     ],
-    "correctIndex": 2
+    "correctIndex": 2,
+    "completed": true
   },
   {
     "id": 17,
@@ -216,7 +217,8 @@
       "Ramen-ya",
       "Kissa"
     ],
-    "correctIndex": 1
+    "correctIndex": 1,
+    "completed": true
   },
   {
     "id": 18,
@@ -228,7 +230,8 @@
       "Fukuoka",
       "Okayama"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "issued": true
   },
   {
     "id": 19,
