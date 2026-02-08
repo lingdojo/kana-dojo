@@ -1651,12 +1651,13 @@
   {
     "id": 272,
     "fact": "The phrase 'okagesama de' is used to reply modestly to compliments, similar to saying 'thanks to your support'.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 273,
     "fact": "Japan has 'shuin' stamp books where visitors collect temple seals along with dates and handwritten calligraphy.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 274,
