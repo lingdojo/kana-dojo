@@ -108,140 +108,160 @@
     "japanese": "百聞は一見に如かず",
     "romaji": "Hyakubun wa ikken ni shikazu",
     "english": "Hearing a hundred times is not as good as seeing once",
-    "meaning": "Seeing is believing"
+    "meaning": "Seeing is believing",
+    "completed": true
   },
   {
     "id": 15,
     "japanese": "三人寄れば文殊の知恵",
     "romaji": "Sannin yoreba monju no chie",
     "english": "Three people together have the wisdom of Monju",
-    "meaning": "Two heads are better than one"
+    "meaning": "Two heads are better than one",
+    "completed": true
   },
   {
     "id": 16,
     "japanese": "笑う門には福来る",
     "romaji": "Warau kado ni wa fuku kitaru",
     "english": "Fortune comes to a laughing gate",
-    "meaning": "Happiness and good fortune come to those who smile"
+    "meaning": "Happiness and good fortune come to those who smile",
+    "completed": true
   },
   {
     "id": 17,
     "japanese": "案ずるより産むが易し",
     "romaji": "Anzuru yori umu ga yasushi",
     "english": "Giving birth is easier than worrying",
-    "meaning": "Things are often easier done than worried about"
+    "meaning": "Things are often easier done than worried about",
+    "completed": true
   },
   {
     "id": 18,
     "japanese": "魚心あれば水心",
     "romaji": "Uogokoro areba mizugokoro",
     "english": "If fish has heart, water has heart",
-    "meaning": "Good intentions will be reciprocated"
+    "meaning": "Good intentions will be reciprocated",
+    "completed": true
   },
   {
     "id": 19,
     "japanese": "犬も歩けば棒に当たる",
     "romaji": "Inu mo arukeba bou ni ataru",
     "english": "Even a walking dog will hit a stick",
-    "meaning": "Try anything and you might get lucky (or unlucky)"
+    "meaning": "Try anything and you might get lucky (or unlucky)",
+    "completed": true
   },
   {
     "id": 20,
     "japanese": "知らぬが仏",
     "romaji": "Shiranu ga hotoke",
     "english": "Not knowing is Buddha",
-    "meaning": "Ignorance is bliss"
+    "meaning": "Ignorance is bliss",
+    "completed": true
   },
   {
     "id": 21,
     "japanese": "良薬は口に苦し",
     "romaji": "Ryouyaku wa kuchi ni nigashi",
     "english": "Good medicine tastes bitter",
-    "meaning": "Helpful advice often sounds harsh"
+    "meaning": "Helpful advice often sounds harsh",
+    "completed": true
   },
   {
     "id": 22,
     "japanese": "虎穴に入らずんば虎子を得ず",
     "romaji": "Koketsu ni irazunba koji wo ezu",
     "english": "If you don't enter the tiger's den, you can't get the cub",
-    "meaning": "Nothing ventured, nothing gained"
+    "meaning": "Nothing ventured, nothing gained",
+    "completed": true
   },
   {
     "id": 23,
     "japanese": "蛙の子は蛙",
     "romaji": "Kaeru no ko wa kaeru",
     "english": "A frog's child is a frog",
-    "meaning": "Like father, like son"
+    "meaning": "Like father, like son",
+    "completed": true
   },
   {
     "id": 24,
     "japanese": "馬の耳に念仏",
     "romaji": "Uma no mimi ni nenbutsu",
     "english": "Preaching Buddha to a horse's ear",
-    "meaning": "Wasting good advice on someone who won't listen"
+    "meaning": "Wasting good advice on someone who won't listen",
+    "completed": true
   },
   {
     "id": 25,
     "japanese": "早起きは三文の徳",
     "romaji": "Hayaoki wa sanmon no toku",
     "english": "Early rising is worth three coins",
-    "meaning": "The early bird catches the worm"
+    "meaning": "The early bird catches the worm",
+    "completed": true
   },
   {
     "id": 26,
     "japanese": "猫に小判",
     "romaji": "Neko ni koban",
     "english": "Gold coins to a cat",
-    "meaning": "Giving something valuable to someone who can't appreciate it"
+    "meaning": "Giving something valuable to someone who can't appreciate it",
+    "completed": true
   },
   {
     "id": 27,
     "japanese": "出る杭は打たれる",
     "romaji": "Deru kui wa utareru",
     "english": "The nail that sticks out gets hammered down",
-    "meaning": "Those who stand out may face criticism"
+    "meaning": "Those who stand out may face criticism",
+    "completed": true
   },
   {
     "id": 28,
     "japanese": "七転八倒",
     "romaji": "Shichiten battou",
     "english": "Seven falls, eight struggles",
-    "meaning": "Going through great pain and struggle"
+    "meaning": "Going through great pain and struggle",
+    "completed": true
   },
   {
     "id": 29,
     "japanese": "一期一会",
     "romaji": "Ichi go ichi e",
     "english": "One time, one meeting",
-    "meaning": "Treasure every encounter, for it will never recur"
+    "meaning": "Treasure every encounter, for it will never recur",
+    "completed": true
   },
   {
     "id": 30,
     "japanese": "十人十色",
     "romaji": "Juunin toiro",
     "english": "Ten people, ten colors",
-    "meaning": "Different strokes for different folks"
+    "meaning": "Different strokes for different folks",
+    "completed": true
   },
   {
     "id": 31,
     "japanese": "猿も木から落ちる",
     "romaji": "Saru mo ki kara ochiru",
     "english": "Even monkeys fall from trees",
-    "meaning": "Experts can make mistakes"
+    "meaning": "Experts can make mistakes",
+    "completed": true
   },
   {
     "id": 32,
     "japanese": "覆水盆に返らず",
     "romaji": "Fukusui bon ni kaerazu",
     "english": "Spilled water will not return to the tray",
-    "meaning": "What is done cannot be undone"
+    "meaning": "What is done cannot be undone",
+    "completed": true
   },
   {
     "id": 33,
     "japanese": "情けは人の為ならず",
     "romaji": "Nasake wa hito no tame narazu",
     "english": "Kindness is not for others",
-    "meaning": "A good deed returns to you"
+    "meaning": "A good deed returns to you",
+    "issued": true
   },
   {
     "id": 34,
