@@ -420,105 +420,120 @@
     "japanese": "腹八分目",
     "romaji": "Hara hachibunme",
     "english": "Stomach 80 percent full",
-    "meaning": "Eat in moderation"
+    "meaning": "Eat in moderation",
+    "completed": true
   },
   {
     "id": 54,
     "japanese": "隣の花は赤い",
     "romaji": "Tonari no hana wa akai",
     "english": "The neighbor's flowers are red",
-    "meaning": "The grass is always greener on the other side"
+    "meaning": "The grass is always greener on the other side",
+    "completed": true
   },
   {
     "id": 55,
     "japanese": "犬も歩けば棒に当たる",
     "romaji": "Inu mo arukeba bou ni ataru",
     "english": "Even a walking dog will hit a stick",
-    "meaning": "Acting can lead to luck (or trouble)"
+    "meaning": "Acting can lead to luck (or trouble)",
+    "completed": true
   },
   {
     "id": 56,
     "japanese": "棚からぼた餅",
     "romaji": "Tana kara botamochi",
     "english": "A rice cake falls from the shelf",
-    "meaning": "A windfall; unexpected good luck"
+    "meaning": "A windfall; unexpected good luck",
+    "completed": true
   },
   {
     "id": 57,
     "japanese": "猫の手も借りたい",
     "romaji": "Neko no te mo karitai",
     "english": "I'd even borrow a cat's paw",
-    "meaning": "Extremely busy"
+    "meaning": "Extremely busy",
+    "completed": true
   },
   {
     "id": 58,
     "japanese": "急いては事を仕損じる",
     "romaji": "Seite wa koto wo shisonjiru",
     "english": "Haste will spoil things",
-    "meaning": "Haste makes waste"
+    "meaning": "Haste makes waste",
+    "completed": true
   },
   {
     "id": 59,
     "japanese": "頭隠して尻隠さず",
     "romaji": "Atama kakushite shiri kakusazu",
     "english": "Hide your head, but not your butt",
-    "meaning": "Trying to hide something obvious"
+    "meaning": "Trying to hide something obvious",
+    "completed": true
   },
   {
     "id": 60,
     "japanese": "花は桜木人は武士",
     "romaji": "Hana wa sakuragi hito wa bushi",
     "english": "Among flowers, the cherry blossom; among men, the warrior",
-    "meaning": "The best of each kind"
+    "meaning": "The best of each kind",
+    "completed": true
   },
   {
     "id": 61,
     "japanese": "餅は餅屋",
     "romaji": "Mochi wa mochiya",
     "english": "Mochi should be made by the mochi shop",
-    "meaning": "Leave it to the experts"
+    "meaning": "Leave it to the experts",
+    "completed": true
   },
   {
     "id": 62,
     "japanese": "灯台下暗し",
     "romaji": "Toudai moto kurashi",
     "english": "It's darkest under the lighthouse",
-    "meaning": "The obvious is often overlooked"
+    "meaning": "The obvious is often overlooked",
+    "completed": true
   },
   {
     "id": 63,
     "japanese": "井の中の蛙大海を知らず",
     "romaji": "I no naka no kawazu taikai wo shirazu",
     "english": "A frog in a well does not know the great sea",
-    "meaning": "Limited experience limits perspective"
+    "meaning": "Limited experience limits perspective",
+    "completed": true
   },
   {
     "id": 64,
     "japanese": "木を見て森を見ず",
     "romaji": "Ki wo mite mori wo mizu",
     "english": "See the trees but not the forest",
-    "meaning": "Miss the bigger picture"
+    "meaning": "Miss the bigger picture",
+    "completed": true
   },
   {
     "id": 65,
     "japanese": "毒を食らわば皿まで",
     "romaji": "Doku wo kurawaba sara made",
     "english": "If you eat poison, eat the plate too",
-    "meaning": "If you must do something risky, go all the way"
+    "meaning": "If you must do something risky, go all the way",
+    "completed": true
   },
   {
     "id": 66,
     "japanese": "旅は道連れ世は情け",
     "romaji": "Tabi wa michizure yo wa nasake",
     "english": "Travel needs companions; life needs kindness",
-    "meaning": "Relationships and compassion matter"
+    "meaning": "Relationships and compassion matter",
+    "completed": true
   },
   {
     "id": 67,
     "japanese": "千里の道も一歩から",
     "romaji": "Senri no michi mo ippo kara",
     "english": "A journey of a thousand miles begins with a single step",
-    "meaning": "Start small to reach big goals"
+    "meaning": "Start small to reach big goals",
+    "issued": true
   },
   {
     "id": 68,
