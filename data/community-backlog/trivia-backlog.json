@@ -113,7 +113,8 @@
       "Matsumoto Castle",
       "Nijo Castle"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "completed": true
   },
   {
     "id": 10,
@@ -125,7 +126,8 @@
       "Pacific Ocean",
       "Arctic Ocean"
     ],
-    "correctIndex": 2
+    "correctIndex": 2,
+    "completed": true
   },
   {
     "id": 11,
@@ -137,7 +139,8 @@
       "Ohayou",
       "Sayonara"
     ],
-    "correctIndex": 1
+    "correctIndex": 1,
+    "completed": true
   },
   {
     "id": 12,
@@ -149,7 +152,8 @@
       "Kobe",
       "Nagoya"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "completed": true
   },
   {
     "id": 13,
@@ -161,7 +165,8 @@
       "Hakama",
       "Tabi"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "issued": true
   },
   {
     "id": 14,
