@@ -243,7 +243,8 @@
       "Kendo",
       "Shodo"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "completed": true
   },
   {
     "id": 20,
@@ -255,7 +256,8 @@
       "Noh",
       "Ikebana"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "issued": true
   },
   {
     "id": 21,
