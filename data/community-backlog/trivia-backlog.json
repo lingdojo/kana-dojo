@@ -295,7 +295,8 @@
       "Manhwa",
       "Comique"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "issued": true
   },
   {
     "id": 24,
