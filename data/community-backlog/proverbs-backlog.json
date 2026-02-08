@@ -540,63 +540,72 @@
     "japanese": "笑う門には福来る",
     "romaji": "Warau kado ni wa fuku kitaru",
     "english": "Fortune comes to a laughing gate",
-    "meaning": "Good fortune comes to those who smile"
+    "meaning": "Good fortune comes to those who smile",
+    "completed": true
   },
   {
     "id": 69,
     "japanese": "良薬は口に苦し",
     "romaji": "Ryouyaku wa kuchi ni nigashi",
     "english": "Good medicine tastes bitter",
-    "meaning": "Helpful advice can be hard to hear"
+    "meaning": "Helpful advice can be hard to hear",
+    "completed": true
   },
   {
     "id": 70,
     "japanese": "鶴の一声",
     "romaji": "Tsuru no hitokoe",
     "english": "One cry of the crane",
-    "meaning": "A single influential person settles a matter"
+    "meaning": "A single influential person settles a matter",
+    "completed": true
   },
   {
     "id": 71,
     "japanese": "鬼に金棒",
     "romaji": "Oni ni kanabou",
     "english": "An iron club to an ogre",
-    "meaning": "Making someone strong even stronger"
+    "meaning": "Making someone strong even stronger",
+    "completed": true
   },
   {
     "id": 72,
     "japanese": "焼け石に水",
     "romaji": "Yakeishi ni mizu",
     "english": "Water on a hot stone",
-    "meaning": "A futile effort with little effect"
+    "meaning": "A futile effort with little effect",
+    "completed": true
   },
   {
     "id": 73,
     "japanese": "鬼の居ぬ間に洗濯",
     "romaji": "Oni no inuma ni sentaku",
     "english": "Do laundry while the ogre is away",
-    "meaning": "Take advantage of someone's absence"
+    "meaning": "Take advantage of someone's absence",
+    "completed": true
   },
   {
     "id": 74,
     "japanese": "捕らぬ狸の皮算用",
     "romaji": "Toranu tanuki no kawazan'you",
     "english": "Counting a raccoon dog's skins before catching it",
-    "meaning": "Don't count your chickens before they hatch"
+    "meaning": "Don't count your chickens before they hatch",
+    "completed": true
   },
   {
     "id": 75,
     "japanese": "石の上にも三年",
     "romaji": "Ishi no ue ni mo san nen",
     "english": "Three years on a stone",
-    "meaning": "Perseverance will be rewarded"
+    "meaning": "Perseverance will be rewarded",
+    "completed": true
   },
   {
     "id": 76,
     "japanese": "雨降って地固まる",
     "romaji": "Ame futte ji katamaru",
     "english": "After rain, the ground hardens",
-    "meaning": "Adversity can strengthen relationships"
+    "meaning": "Adversity can strengthen relationships",
+    "issued": true
   },
   {
     "id": 77,
