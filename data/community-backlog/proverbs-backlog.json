@@ -708,105 +708,120 @@
     "japanese": "人のふり見て我がふり直せ",
     "romaji": "Hito no furi mite waga furi naose",
     "english": "Watch others and correct yourself",
-    "meaning": "Learn from others' behavior"
+    "meaning": "Learn from others' behavior",
+    "completed": true
   },
   {
     "id": 90,
     "japanese": "継続は力なり",
     "romaji": "Keizoku wa chikara nari",
     "english": "Continuation is power",
-    "meaning": "Consistency leads to strength"
+    "meaning": "Consistency leads to strength",
+    "completed": true
   },
   {
     "id": 91,
     "japanese": "雨降って地固まる",
     "romaji": "Ame futte ji katamaru",
     "english": "After the rain, the ground hardens",
-    "meaning": "Hard times make relationships stronger"
+    "meaning": "Hard times make relationships stronger",
+    "completed": true
   },
   {
     "id": 92,
     "japanese": "転石苔むさず",
     "romaji": "Tenseki koke musazu",
     "english": "A rolling stone gathers no moss",
-    "meaning": "Constant change prevents stagnation"
+    "meaning": "Constant change prevents stagnation",
+    "completed": true
   },
   {
     "id": 93,
     "japanese": "口は災いの元",
     "romaji": "Kuchi wa wazawai no moto",
     "english": "The mouth is the source of disaster",
-    "meaning": "Careless words cause trouble"
+    "meaning": "Careless words cause trouble",
+    "completed": true
   },
   {
     "id": 94,
     "japanese": "石の上にも三年",
     "romaji": "Ishi no ue ni mo san nen",
     "english": "Three years on a stone",
-    "meaning": "Perseverance brings success"
+    "meaning": "Perseverance brings success",
+    "completed": true
   },
   {
     "id": 95,
     "japanese": "負けるが勝ち",
     "romaji": "Makeru ga kachi",
     "english": "Sometimes losing is winning",
-    "meaning": "Conceding can be the best outcome"
+    "meaning": "Conceding can be the best outcome",
+    "completed": true
   },
   {
     "id": 96,
     "japanese": "井の中の蛙大海を知らず",
     "romaji": "I no naka no kawazu taikai wo shirazu",
     "english": "A frog in a well does not know the great sea",
-    "meaning": "Limited experience limits perspective"
+    "meaning": "Limited experience limits perspective",
+    "completed": true
   },
   {
     "id": 97,
     "japanese": "猿も木から落ちる",
     "romaji": "Saru mo ki kara ochiru",
     "english": "Even monkeys fall from trees",
-    "meaning": "Experts also make mistakes"
+    "meaning": "Experts also make mistakes",
+    "completed": true
   },
   {
     "id": 98,
     "japanese": "棚からぼた餅",
     "romaji": "Tana kara botamochi",
     "english": "A rice cake falls from the shelf",
-    "meaning": "Unexpected good luck"
+    "meaning": "Unexpected good luck",
+    "completed": true
   },
   {
     "id": 99,
     "japanese": "出る杭は打たれる",
     "romaji": "Deru kui wa utareru",
     "english": "The nail that sticks out gets hammered down",
-    "meaning": "Standing out invites criticism"
+    "meaning": "Standing out invites criticism",
+    "completed": true
   },
   {
     "id": 100,
     "japanese": "花より団子",
     "romaji": "Hana yori dango",
     "english": "Dumplings over flowers",
-    "meaning": "Practicality over appearance"
+    "meaning": "Practicality over appearance",
+    "completed": true
   },
   {
     "id": 101,
     "japanese": "早起きは三文の徳",
     "romaji": "Hayaoki wa sanmon no toku",
     "english": "Early rising is worth three coins",
-    "meaning": "Getting up early brings benefits"
+    "meaning": "Getting up early brings benefits",
+    "completed": true
   },
   {
     "id": 102,
     "japanese": "二度あることは三度ある",
     "romaji": "Nido aru koto wa sando aru",
     "english": "What happens twice will happen a third time",
-    "meaning": "Patterns tend to repeat"
+    "meaning": "Patterns tend to repeat",
+    "completed": true
   },
   {
     "id": 103,
     "japanese": "情けは人の為ならず",
     "romaji": "Nasake wa hito no tame narazu",
     "english": "Kindness is not for others",
-    "meaning": "Good deeds return to you"
+    "meaning": "Good deeds return to you",
+    "issued": true
   },
   {
     "id": 104,
