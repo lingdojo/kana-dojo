@@ -612,56 +612,64 @@
     "japanese": "針の穴から天を覗く",
     "romaji": "Hari no ana kara ten wo nozoku",
     "english": "Peek at the sky through a needle's eye",
-    "meaning": "A narrow viewpoint leads to poor judgment"
+    "meaning": "A narrow viewpoint leads to poor judgment",
+    "completed": true
   },
   {
     "id": 78,
     "japanese": "善は急げ",
     "romaji": "Zen wa isoge",
     "english": "Hurry to do good",
-    "meaning": "If it's worth doing, do it at once"
+    "meaning": "If it's worth doing, do it at once",
+    "completed": true
   },
   {
     "id": 79,
     "japanese": "見るは法楽",
     "romaji": "Miru wa houraku",
     "english": "Just watching is a pleasure",
-    "meaning": "Enjoy observing; you don't always need to participate"
+    "meaning": "Enjoy observing; you don't always need to participate",
+    "completed": true
   },
   {
     "id": 80,
     "japanese": "月とすっぽん",
     "romaji": "Tsuki to suppon",
     "english": "The moon and a turtle",
-    "meaning": "Vast difference; not comparable"
+    "meaning": "Vast difference; not comparable",
+    "completed": true
   },
   {
     "id": 81,
     "japanese": "蛙の子は蛙",
     "romaji": "Kaeru no ko wa kaeru",
     "english": "A frog's child is a frog",
-    "meaning": "Children resemble their parents"
+    "meaning": "Children resemble their parents",
+    "completed": true
   },
   {
     "id": 82,
     "japanese": "井戸端会議",
     "romaji": "Idobata kaigi",
     "english": "Well-side conference",
-    "meaning": "Neighborhood gossip"
+    "meaning": "Neighborhood gossip",
+    "completed": true
   },
   {
     "id": 83,
     "japanese": "猫に鰹節",
     "romaji": "Neko ni katsuobushi",
     "english": "Dried bonito to a cat",
-    "meaning": "Leave temptation unattended at your own risk"
+    "meaning": "Leave temptation unattended at your own risk",
+    "completed": true
   },
   {
     "id": 84,
     "japanese": "藪をつついて蛇を出す",
     "romaji": "Yabu wo tsutsuite hebi wo dasu",
     "english": "Poke the bush and bring out a snake",
-    "meaning": "Stir up trouble unnecessarily"
+    "meaning": "Stir up trouble unnecessarily",
+    "issued": true
   },
   {
     "id": 85,
