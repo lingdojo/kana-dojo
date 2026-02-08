@@ -300,105 +300,120 @@
     "japanese": "知らぬが仏",
     "romaji": "Shiranu ga hotoke",
     "english": "Not knowing is Buddha",
-    "meaning": "Ignorance is bliss"
+    "meaning": "Ignorance is bliss",
+    "completed": true
   },
   {
     "id": 39,
     "japanese": "明日は明日の風が吹く",
     "romaji": "Ashita wa ashita no kaze ga fuku",
     "english": "Tomorrow's wind will blow tomorrow",
-    "meaning": "Don't worry too much about the future"
+    "meaning": "Don't worry too much about the future",
+    "completed": true
   },
   {
     "id": 40,
     "japanese": "縁の下の力持ち",
     "romaji": "En no shita no chikaramochi",
     "english": "A strong person under the veranda",
-    "meaning": "An unsung hero who supports behind the scenes"
+    "meaning": "An unsung hero who supports behind the scenes",
+    "completed": true
   },
   {
     "id": 41,
     "japanese": "油断大敵",
     "romaji": "Yudan taiteki",
     "english": "Carelessness is the greatest enemy",
-    "meaning": "Don't let your guard down"
+    "meaning": "Don't let your guard down",
+    "completed": true
   },
   {
     "id": 42,
     "japanese": "怪我の功名",
     "romaji": "Kega no koumyou",
     "english": "Fame from a mistake",
-    "meaning": "A lucky break that comes from an error"
+    "meaning": "A lucky break that comes from an error",
+    "completed": true
   },
   {
     "id": 44,
     "japanese": "雨垂れ石を穿つ",
     "romaji": "Amadare ishi wo ugatsu",
     "english": "Dripping water pierces stone",
-    "meaning": "Persistence can overcome great obstacles"
+    "meaning": "Persistence can overcome great obstacles",
+    "completed": true
   },
   {
     "id": 150,
     "japanese": "七転び八起き",
     "romaji": "Nanakorobi yaoki",
     "english": "Fall seven times, get up eight",
-    "meaning": "Never give up"
+    "meaning": "Never give up",
+    "completed": true
   },
   {
     "id": 45,
     "japanese": "石橋を叩いて渡る",
     "romaji": "Ishibashi wo tataite wataru",
     "english": "Tap a stone bridge before crossing",
-    "meaning": "Be very cautious"
+    "meaning": "Be very cautious",
+    "completed": true
   },
   {
     "id": 46,
     "japanese": "転んでもただでは起きぬ",
     "romaji": "Koronde mo tada de wa okinu",
     "english": "Even if you fall, don't get up empty-handed",
-    "meaning": "Learn something from every setback"
+    "meaning": "Learn something from every setback",
+    "completed": true
   },
   {
     "id": 47,
     "japanese": "馬子にも衣装",
     "romaji": "Mago ni mo ishou",
     "english": "Even a packhorse driver looks good in fine clothes",
-    "meaning": "Clothes make the person"
+    "meaning": "Clothes make the person",
+    "completed": true
   },
   {
     "id": 48,
     "japanese": "三日坊主",
     "romaji": "Mikka bouzu",
     "english": "A three-day monk",
-    "meaning": "Someone who quits quickly"
+    "meaning": "Someone who quits quickly",
+    "completed": true
   },
   {
     "id": 49,
     "japanese": "早起きは三文の得",
     "romaji": "Hayaoki wa sanmon no toku",
     "english": "Early rising is worth three coins",
-    "meaning": "Good things come from getting up early"
+    "meaning": "Good things come from getting up early",
+    "completed": true
   },
   {
     "id": 50,
     "japanese": "案ずるより産むが易し",
     "romaji": "Anzuru yori umu ga yasushi",
     "english": "Giving birth is easier than worrying",
-    "meaning": "Doing is often easier than worrying"
+    "meaning": "Doing is often easier than worrying",
+    "completed": true
   },
   {
     "id": 51,
     "japanese": "二度あることは三度ある",
     "romaji": "Nido aru koto wa sando aru",
     "english": "What happens twice will happen a third time",
-    "meaning": "Patterns tend to repeat"
+    "meaning": "Patterns tend to repeat",
+    "completed": true
   },
   {
     "id": 52,
     "japanese": "縁は異なもの味なもの",
     "romaji": "En wa inamono aji na mono",
     "english": "Fate is strange yet delightful",
-    "meaning": "Chance connections can be surprisingly good"
+    "meaning": "Chance connections can be surprisingly good",
+    "issued": true
   },
   {
     "id": 53,
