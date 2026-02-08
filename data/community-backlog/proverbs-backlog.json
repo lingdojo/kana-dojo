@@ -268,28 +268,32 @@
     "japanese": "弘法にも筆の誤り",
     "romaji": "Koubou ni mo fude no ayamari",
     "english": "Even Kobo makes mistakes with his brush",
-    "meaning": "Even masters make mistakes"
+    "meaning": "Even masters make mistakes",
+    "completed": true
   },
   {
     "id": 35,
     "japanese": "泣きっ面に蜂",
     "romaji": "Nakittsura ni hachi",
     "english": "A bee on a crying face",
-    "meaning": "Misfortune never comes alone"
+    "meaning": "Misfortune never comes alone",
+    "completed": true
   },
   {
     "id": 36,
     "japanese": "口は災いの元",
     "romaji": "Kuchi wa wazawai no moto",
     "english": "The mouth is the source of disaster",
-    "meaning": "Careless speech can cause trouble"
+    "meaning": "Careless speech can cause trouble",
+    "completed": true
   },
   {
     "id": 37,
     "japanese": "出る釘は打たれる",
     "romaji": "Deru kugi wa utareru",
     "english": "The nail that sticks out gets hammered down",
-    "meaning": "Those who stand out may be criticized"
+    "meaning": "Those who stand out may be criticized",
+    "issued": true
   },
   {
     "id": 38,
