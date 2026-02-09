@@ -1764,12 +1764,13 @@
   {
     "id": 294,
     "fact": "The concept of 'mottainai' (もったいない) expresses regret over waste and encourages respect for resources.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 295,
     "fact": "A 'shuincho' (朱印帳) is a stamp book used to collect shrine and temple seals during visits across Japan.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 296,
