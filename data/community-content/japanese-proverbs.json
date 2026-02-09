@@ -631,9 +631,15 @@
     "meaning": "Stir up trouble unnecessarily"
   },
   {
-  "japanese": "情けは人の為ならず",
-  "romaji": "Nasake wa hito no tame narazu",
-  "english": "Kindness is not for others",
-  "meaning": "Good deeds return to you"
+    "japanese": "情けは人の為ならず",
+    "romaji": "Nasake wa hito no tame narazu",
+    "english": "Kindness is not for others",
+    "meaning": "Good deeds return to you"
+  },
+  {
+    "japanese": "笑う門には福来る",
+    "romaji": "Warau kado ni wa fuku kitaru",
+    "english": "Good fortune comes to a laughing home",
+    "meaning": "Happiness invites luck"
   }
 ]
