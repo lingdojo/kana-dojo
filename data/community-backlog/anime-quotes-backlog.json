@@ -194,7 +194,8 @@
     "romaji": "Mada da, mada owaran yo!",
     "english": "Not yet! It's not over yet!",
     "anime": "Mobile Suit Gundam",
-    "character": "Char Aznable"
+    "character": "Char Aznable",
+    "issued": true
   },
   {
     "id": 23,
