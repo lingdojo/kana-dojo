@@ -1188,7 +1188,8 @@
     "japanese": "馬子にも衣装",
     "romaji": "Mago ni mo ishou",
     "english": "Even a packhorse driver looks good in fine clothes",
-    "meaning": "Clothes make the person"
+    "meaning": "Clothes make the person",
+    "completed": true
   },
   {
     "id": 150,
@@ -1202,21 +1203,24 @@
     "japanese": "雨降って地固まる",
     "romaji": "Ame futte ji katamaru",
     "english": "After the rain, the ground hardens",
-    "meaning": "Hard times build resilience"
+    "meaning": "Hard times build resilience",
+    "completed": true
   },
   {
     "id": 152,
     "japanese": "思い立ったが吉日",
     "romaji": "Omoitattaga kichijitsu",
     "english": "The day you decide is a lucky day",
-    "meaning": "Start now"
+    "meaning": "Start now",
+    "completed": true
   },
   {
     "id": 153,
     "japanese": "失敗は成功のもと",
     "romaji": "Shippai wa seikou no moto",
     "english": "Failure is the origin of success",
-    "meaning": "Mistakes lead to growth"
+    "meaning": "Mistakes lead to growth",
+    "issued": true
   },
   {
     "id": 154,
