@@ -126,11 +126,13 @@
   },
   {
     "id": 26,
-    "text": "\"〜まま\" means \"as is\" or \"unchanged\"."
+    "text": "\"〜まま\" means \"as is\" or \"unchanged\".",
+    "completed": true
   },
   {
     "id": 27,
-    "text": "\"〜ばかり\" means \"just\" (in terms of time) or \"only\" depending on context."
+    "text": "\"〜ばかり\" means \"just\" (in terms of time) or \"only\" depending on context.",
+    "issued": true
   },
   {
     "id": 28,
