@@ -221,7 +221,8 @@
     "romaji": "Ore wa Gandamu da!",
     "english": "I am Gundam!",
     "anime": "Mobile Suit Gundam 00",
-    "character": "Setsuna F. Seiei"
+    "character": "Setsuna F. Seiei",
+    "issued": true
   },
   {
     "id": 26,
