@@ -1323,35 +1323,40 @@
     "japanese": "馬子にも衣装",
     "romaji": "Mago ni mo ishou",
     "english": "Even a packhorse driver looks good in fine clothes",
-    "meaning": "Clothes make the person"
+    "meaning": "Clothes make the person",
+    "completed": true
   },
   {
     "id": 167,
     "japanese": "二兎を追う者は一兎をも得ず",
     "romaji": "Ni to wo ou mono wa itto wo mo ezu",
     "english": "Chase two rabbits, catch none",
-    "meaning": "Focus on one thing"
+    "meaning": "Focus on one thing",
+    "completed": true
   },
   {
     "id": 168,
     "japanese": "井の中の蛙大海を知らず",
     "romaji": "I no naka no kawazu taikai wo shirazu",
     "english": "A frog in a well doesn’t know the ocean",
-    "meaning": "Limited experience limits perspective"
+    "meaning": "Limited experience limits perspective",
+    "completed": true
   },
   {
     "id": 169,
     "japanese": "口は禍の元",
     "romaji": "Kuchi wa wazawai no moto",
     "english": "The mouth is the source of misfortune",
-    "meaning": "Careless words cause trouble"
+    "meaning": "Careless words cause trouble",
+    "completed": true
   },
   {
     "id": 170,
     "japanese": "虎穴に入らずんば虎子を得ず",
     "romaji": "Koketsu ni irazunba koji wo ezu",
     "english": "You can’t get the tiger’s cub without entering the lair",
-    "meaning": "No reward without risk"
+    "meaning": "No reward without risk",
+    "issued": true
   },
   {
     "id": 171,
