@@ -334,7 +334,8 @@
       "Sukiyaki",
       "Okonomiyaki"
     ],
-    "correctIndex": 1
+    "correctIndex": 1,
+    "completed": true
   },
   {
     "id": 27,
@@ -346,7 +347,8 @@
       "Awaji",
       "Oki"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "completed": true
   },
   {
     "id": 28,
@@ -358,7 +360,8 @@
       "Shogatsu",
       "Hina Matsuri"
     ],
-    "correctIndex": 1
+    "correctIndex": 1,
+    "issued": true
   },
   {
     "id": 29,
