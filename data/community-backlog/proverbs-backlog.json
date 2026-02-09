@@ -1395,21 +1395,24 @@
     "japanese": "花は桜木人は武士",
     "romaji": "Hana wa sakuragi hito wa bushi",
     "english": "Among flowers, cherry blossoms; among men, warriors",
-    "meaning": "The best of each kind"
+    "meaning": "The best of each kind",
+    "completed": true
   },
   {
     "id": 176,
     "japanese": "餅は餅屋",
     "romaji": "Mochi wa mochiya",
     "english": "Mochi should be made by the mochi shop",
-    "meaning": "Leave it to the experts"
+    "meaning": "Leave it to the experts",
+    "completed": true
   },
   {
     "id": 177,
     "japanese": "灯台下暗し",
     "romaji": "Toudai moto kurashi",
     "english": "It’s darkest under the lighthouse",
-    "meaning": "The obvious is overlooked"
+    "meaning": "The obvious is overlooked",
+    "issued": true
   },
   {
     "id": 178,
