@@ -151,11 +151,13 @@
   },
   {
     "id": 31,
-    "text": "\"〜ところ\" refers to a point in time, like \"about to\", \"in the middle of\", or \"just finished\"."
+    "text": "\"〜ところ\" refers to a point in time, like \"about to\", \"in the middle of\", or \"just finished\".",
+    "completed": true
   },
   {
     "id": 32,
-    "text": "\"〜たり〜たり\" lists representative actions, like \"do things like A and B\"."
+    "text": "\"〜たり〜たり\" lists representative actions, like \"do things like A and B\".",
+    "issued": true
   },
   {
     "id": 33,
