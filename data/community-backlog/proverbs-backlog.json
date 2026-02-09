@@ -1363,28 +1363,32 @@
     "japanese": "明日は明日の風が吹く",
     "romaji": "Ashita wa ashita no kaze ga fuku",
     "english": "Tomorrow’s wind will blow tomorrow",
-    "meaning": "Don’t worry too much about the future"
+    "meaning": "Don’t worry too much about the future",
+    "completed": true
   },
   {
     "id": 172,
     "japanese": "楽あれば苦あり",
     "romaji": "Raku areba ku ari",
     "english": "With comfort comes hardship",
-    "meaning": "Life has ups and downs"
+    "meaning": "Life has ups and downs",
+    "completed": true
   },
   {
     "id": 173,
     "japanese": "念には念を入れよ",
     "romaji": "Nen ni wa nen wo ireyo",
     "english": "Put care into care",
-    "meaning": "Double-check everything"
+    "meaning": "Double-check everything",
+    "completed": true
   },
   {
     "id": 174,
     "japanese": "一日千秋",
     "romaji": "Ichijitsu senshuu",
     "english": "A day feels like a thousand autumns",
-    "meaning": "Waiting makes time feel long"
+    "meaning": "Waiting makes time feel long",
+    "issued": true
   },
   {
     "id": 175,
