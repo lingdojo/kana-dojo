@@ -30,9 +30,14 @@
     "correctIndex": 1
   },
   {
+    "question": "Which Japanese city is known for its historic wooden district, Gion?",
+    "difficulty": "hard",
+    "answers": ["Kyoto", "Yokohama", "Nagoya", "Sendai"],
+    "correctIndex": 0
+  },
+  {
     "question": "What is the name of the Japanese comic and animation style?",
     "difficulty": "hard",
     "answers": ["Manga", "Donghua", "Manhwa", "Comique"],
-    "correctIndex": 0
-  }
+  },
 ]

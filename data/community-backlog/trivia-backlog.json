@@ -386,7 +386,8 @@
       "Kabuki",
       "Kyogen"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "completed": true
   },
   {
     "id": 31,
@@ -398,7 +399,8 @@
       "Sapporo",
       "Fukuoka"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "issued": true
   },
   {
     "id": 32,
