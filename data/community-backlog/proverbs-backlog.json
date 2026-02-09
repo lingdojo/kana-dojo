@@ -1044,126 +1044,144 @@
     "japanese": "石の上にも三年",
     "romaji": "Ishi no ue ni mo san nen",
     "english": "Three years on a stone",
-    "meaning": "Perseverance brings results"
+    "meaning": "Perseverance brings results",
+    "completed": true
   },
   {
     "id": 132,
     "japanese": "急がば回れ",
     "romaji": "Isogaba maware",
     "english": "If in a hurry, go around",
-    "meaning": "The safer path can be faster"
+    "meaning": "The safer path can be faster",
+    "completed": true
   },
   {
     "id": 133,
     "japanese": "三日坊主",
     "romaji": "Mikka bouzu",
     "english": "A three-day monk",
-    "meaning": "Someone who quits quickly"
+    "meaning": "Someone who quits quickly",
+    "completed": true
   },
   {
     "id": 134,
     "japanese": "喉元過ぎれば熱さを忘れる",
     "romaji": "Nodomoto sugireba atsusa wo wasureru",
     "english": "Once it passes your throat, you forget the heat",
-    "meaning": "People forget hardships once they are over"
+    "meaning": "People forget hardships once they are over",
+    "completed": true
   },
   {
     "id": 135,
     "japanese": "口は禍の元",
     "romaji": "Kuchi wa wazawai no moto",
     "english": "The mouth is the source of misfortune",
-    "meaning": "Careless words cause trouble"
+    "meaning": "Careless words cause trouble",
+    "completed": true
   },
   {
     "id": 136,
     "japanese": "楽あれば苦あり",
     "romaji": "Raku areba ku ari",
     "english": "After ease comes hardship",
-    "meaning": "Good times and bad times alternate"
+    "meaning": "Good times and bad times alternate",
+    "completed": true
   },
   {
     "id": 137,
     "japanese": "一石二鳥",
     "romaji": "Isseki nichou",
     "english": "One stone, two birds",
-    "meaning": "Do two things with one action"
+    "meaning": "Do two things with one action",
+    "completed": true
   },
   {
     "id": 138,
     "japanese": "継続は力なり",
     "romaji": "Keizoku wa chikara nari",
     "english": "Continuation is power",
-    "meaning": "Consistency builds strength"
+    "meaning": "Consistency builds strength",
+    "completed": true
   },
   {
     "id": 139,
     "japanese": "覆水盆に返らず",
     "romaji": "Fukusui bon ni kaerazu",
     "english": "Spilled water will not return to the tray",
-    "meaning": "What is done cannot be undone"
+    "meaning": "What is done cannot be undone",
+    "completed": true
   },
   {
     "id": 140,
     "japanese": "棚からぼた餅",
     "romaji": "Tana kara botamochi",
     "english": "A rice cake falls from the shelf",
-    "meaning": "Unexpected good luck"
+    "meaning": "Unexpected good luck",
+    "completed": true
   },
   {
     "id": 141,
     "japanese": "泣きっ面に蜂",
     "romaji": "Nakittsura ni hachi",
     "english": "A bee on a crying face",
-    "meaning": "Misfortune never comes alone"
+    "meaning": "Misfortune never comes alone",
+    "completed": true
   },
   {
     "id": 142,
     "japanese": "知らぬが仏",
     "romaji": "Shiranu ga hotoke",
     "english": "Not knowing is Buddha",
-    "meaning": "Ignorance is bliss"
+    "meaning": "Ignorance is bliss",
+    "completed": true
   },
   {
     "id": 143,
     "japanese": "三人寄れば文殊の知恵",
     "romaji": "Sannin yoreba monju no chie",
     "english": "Three people together have the wisdom of Monju",
-    "meaning": "Two heads are better than one"
+    "meaning": "Two heads are better than one",
+    "completed": true
   },
   {
     "id": 144,
     "japanese": "蛙の子は蛙",
     "romaji": "Kaeru no ko wa kaeru",
     "english": "A frog's child is a frog",
-    "meaning": "Children resemble their parents"
+    "meaning": "Children resemble their parents",
+    "completed": true
   },
   {
     "id": 145,
     "japanese": "転ばぬ先の杖",
     "romaji": "Korobanu saki no tsue",
     "english": "A cane before falling",
-    "meaning": "Prevention is better than cure"
+    "meaning": "Prevention is better than cure",
+    "completed": true
   },
   {
     "id": 146,
     "japanese": "魚心あれば水心",
     "romaji": "Uogokoro areba mizugokoro",
     "english": "If fish has heart, water has heart",
-    "meaning": "Good intentions are reciprocated"
+    "meaning": "Good intentions are reciprocated",
+    "completed": true
   },
   {
     "id": 147,
     "japanese": "二度あることは三度ある",
     "romaji": "Nido aru koto wa sando aru",
     "english": "What happens twice will happen a third time",
-    "meaning": "Patterns tend to repeat"
+    "meaning": "Patterns tend to repeat",
+    "completed": true
   },
   {
     "id": 148,
     "japanese": "出る釘は打たれる",
     "romaji": "Deru kugi wa utareru",
     "english": "The nail that sticks out gets hammered down",
-    "meaning": "Standing out invites criticism"
+    "meaning": "Standing out invites criticism",
+    "issued": true
   },
   {
     "id": 149,
