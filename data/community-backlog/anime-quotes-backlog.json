@@ -203,7 +203,8 @@
     "romaji": "Ore-sama no bigi ni bugiugi",
     "english": "Dance to my beautiful technique!",
     "anime": "The Prince of Tennis",
-    "character": "Keigo Atobe"
+    "character": "Keigo Atobe",
+    "completed": true
   },
   {
     "id": 24,
@@ -211,7 +212,8 @@
     "romaji": "Waraeba ii to omou yo",
     "english": "I think you should just laugh.",
     "anime": "Neon Genesis Evangelion",
-    "character": "Rei Ayanami"
+    "character": "Rei Ayanami",
+    "issued": true
   },
   {
     "id": 25,
