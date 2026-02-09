@@ -1419,20 +1419,23 @@
     "japanese": "木を見て森を見ず",
     "romaji": "Ki wo mite mori wo mizu",
     "english": "See the trees but not the forest",
-    "meaning": "Miss the bigger picture"
+    "meaning": "Miss the bigger picture",
+    "completed": true
   },
   {
     "id": 179,
     "japanese": "旅は道連れ世は情け",
     "romaji": "Tabi wa michizure yo wa nasake",
     "english": "Travel needs companions; life needs kindness",
-    "meaning": "Relationships and compassion matter"
+    "meaning": "Relationships and compassion matter",
+    "completed": true
   },
   {
     "id": 180,
     "japanese": "犬も歩けば棒に当たる",
     "romaji": "Inu mo arukeba bou ni ataru",
     "english": "Even a walking dog will hit a stick",
-    "meaning": "Acting can lead to luck or trouble"
+    "meaning": "Acting can lead to luck or trouble",
+    "completed": true
   }
 ]
