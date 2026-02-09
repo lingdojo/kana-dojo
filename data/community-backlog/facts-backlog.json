@@ -1702,12 +1702,13 @@
   {
     "id": 282,
     "fact": "The word 'utsuroi' (移ろい) describes subtle transitions, like shifting seasons or fading light.",
-    "issued": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 283,
     "fact": "Japan’s 'wagashi' sweets are often designed to match the season, with colors and shapes inspired by flowers or snow.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 284,
