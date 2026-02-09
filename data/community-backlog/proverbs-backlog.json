@@ -884,91 +884,104 @@
     "japanese": "灯台下暗し",
     "romaji": "Toudai moto kurashi",
     "english": "It's darkest under the lighthouse",
-    "meaning": "The obvious is often overlooked"
+    "meaning": "The obvious is often overlooked",
+    "completed": true
   },
   {
     "id": 112,
     "japanese": "千里の道も一歩から",
     "romaji": "Senri no michi mo ippo kara",
     "english": "A journey of a thousand miles begins with one step",
-    "meaning": "Start small to reach big goals"
+    "meaning": "Start small to reach big goals",
+    "completed": true
   },
   {
     "id": 113,
     "japanese": "鬼に金棒",
     "romaji": "Oni ni kanabou",
     "english": "An iron club to an ogre",
-    "meaning": "Adding strength to the strong"
+    "meaning": "Adding strength to the strong",
+    "completed": true
   },
   {
     "id": 114,
     "japanese": "猫に小判",
     "romaji": "Neko ni koban",
     "english": "Gold coins to a cat",
-    "meaning": "Gifts wasted on those who don't appreciate them"
+    "meaning": "Gifts wasted on those who don't appreciate them",
+    "completed": true
   },
   {
     "id": 115,
     "japanese": "柳に風",
     "romaji": "Yanagi ni kaze",
     "english": "Wind in the willow",
-    "meaning": "Stay flexible and let problems pass"
+    "meaning": "Stay flexible and let problems pass",
+    "completed": true
   },
   {
     "id": 116,
     "japanese": "鬼の居ぬ間に洗濯",
     "romaji": "Oni no inuma ni sentaku",
     "english": "Do laundry while the ogre is away",
-    "meaning": "Take advantage of an opportunity"
+    "meaning": "Take advantage of an opportunity",
+    "completed": true
   },
   {
     "id": 117,
     "japanese": "焼け石に水",
     "romaji": "Yakeishi ni mizu",
     "english": "Water on a hot stone",
-    "meaning": "A futile effort"
+    "meaning": "A futile effort",
+    "completed": true
   },
   {
     "id": 118,
     "japanese": "覆水盆に返らず",
     "romaji": "Fukusui bon ni kaerazu",
     "english": "Spilled water will not return to the tray",
-    "meaning": "What is done cannot be undone"
+    "meaning": "What is done cannot be undone",
+    "completed": true
   },
   {
     "id": 119,
     "japanese": "二兎を追う者は一兎をも得ず",
     "romaji": "Ni to wo ou mono wa itto wo mo ezu",
     "english": "One who chases two rabbits catches neither",
-    "meaning": "Focus on one thing at a time"
+    "meaning": "Focus on one thing at a time",
+    "completed": true
   },
   {
     "id": 120,
     "japanese": "笑う門には福来る",
     "romaji": "Warau kado ni wa fuku kitaru",
     "english": "Fortune comes to a laughing gate",
-    "meaning": "Happiness brings good fortune"
+    "meaning": "Happiness brings good fortune",
+    "completed": true
   },
   {
     "id": 121,
     "japanese": "七転び八起き",
     "romaji": "Nanakorobi yaoki",
     "english": "Fall seven times, get up eight",
-    "meaning": "Never give up"
+    "meaning": "Never give up",
+    "completed": true
   },
   {
     "id": 122,
     "japanese": "良薬は口に苦し",
     "romaji": "Ryouyaku wa kuchi ni nigashi",
     "english": "Good medicine tastes bitter",
-    "meaning": "Helpful advice can be harsh"
+    "meaning": "Helpful advice can be harsh",
+    "completed": true
   },
   {
     "id": 123,
     "japanese": "後悔先に立たず",
     "romaji": "Koukai saki ni tatazu",
     "english": "Regret does not stand before",
-    "meaning": "It's too late for regrets"
+    "meaning": "It's too late for regrets",
+    "issued": true
   },
   {
     "id": 124,
