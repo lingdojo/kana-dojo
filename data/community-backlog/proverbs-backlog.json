@@ -988,49 +988,56 @@
     "japanese": "馬の耳に念仏",
     "romaji": "Uma no mimi ni nenbutsu",
     "english": "Preaching Buddha to a horse's ear",
-    "meaning": "Advice is wasted on the unwilling"
+    "meaning": "Advice is wasted on the unwilling",
+    "completed": true
   },
   {
     "id": 125,
     "japanese": "泣きっ面に蜂",
     "romaji": "Nakittsura ni hachi",
     "english": "A bee on a crying face",
-    "meaning": "Misfortune never comes alone"
+    "meaning": "Misfortune never comes alone",
+    "completed": true
   },
   {
     "id": 126,
     "japanese": "猫の手も借りたい",
     "romaji": "Neko no te mo karitai",
     "english": "I'd even borrow a cat's paw",
-    "meaning": "Extremely busy"
+    "meaning": "Extremely busy",
+    "completed": true
   },
   {
     "id": 127,
     "japanese": "人のふり見て我がふり直せ",
     "romaji": "Hito no furi mite waga furi naose",
     "english": "Watch others and correct yourself",
-    "meaning": "Learn from others' behavior"
+    "meaning": "Learn from others' behavior",
+    "completed": true
   },
   {
     "id": 128,
     "japanese": "木を見て森を見ず",
     "romaji": "Ki wo mite mori wo mizu",
     "english": "See the trees but not the forest",
-    "meaning": "Missing the bigger picture"
+    "meaning": "Missing the bigger picture",
+    "completed": true
   },
   {
     "id": 129,
     "japanese": "旅は道連れ世は情け",
     "romaji": "Tabi wa michizure yo wa nasake",
     "english": "Travel needs companions; life needs kindness",
-    "meaning": "Relationships and compassion matter"
+    "meaning": "Relationships and compassion matter",
+    "completed": true
   },
   {
     "id": 130,
     "japanese": "善因善果",
     "romaji": "Zenin zenka",
     "english": "Good causes bring good results",
-    "meaning": "Good deeds lead to good outcomes"
+    "meaning": "Good deeds lead to good outcomes",
+    "issued": true
   },
   {
     "id": 131,
