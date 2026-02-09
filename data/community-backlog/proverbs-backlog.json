@@ -1227,63 +1227,72 @@
     "japanese": "泣きっ面に蜂",
     "romaji": "Naki tsura ni hachi",
     "english": "A bee on a crying face",
-    "meaning": "Misfortune piles up"
+    "meaning": "Misfortune piles up",
+    "completed": true
   },
   {
     "id": 155,
     "japanese": "能ある鷹は爪を隠す",
     "romaji": "Nou aru taka wa tsume wo kakusu",
     "english": "A skilled hawk hides its talons",
-    "meaning": "True skill is modest"
+    "meaning": "True skill is modest",
+    "completed": true
   },
   {
     "id": 156,
     "japanese": "猿も木から落ちる",
     "romaji": "Saru mo ki kara ochiru",
     "english": "Even monkeys fall from trees",
-    "meaning": "Experts make mistakes"
+    "meaning": "Experts make mistakes",
+    "completed": true
   },
   {
     "id": 157,
     "japanese": "覆水盆に返らず",
     "romaji": "Fukusui bon ni kaerazu",
     "english": "Spilled water doesn’t return to the tray",
-    "meaning": "What’s done is done"
+    "meaning": "What’s done is done",
+    "completed": true
   },
   {
     "id": 158,
     "japanese": "焼け石に水",
     "romaji": "Yake ishi ni mizu",
     "english": "Water on a hot stone",
-    "meaning": "A futile effort"
+    "meaning": "A futile effort",
+    "completed": true
   },
   {
     "id": 159,
     "japanese": "情けは人の為ならず",
     "romaji": "Nasake wa hito no tame narazu",
     "english": "Kindness is not for others alone",
-    "meaning": "Kindness comes back to you"
+    "meaning": "Kindness comes back to you",
+    "completed": true
   },
   {
     "id": 160,
     "japanese": "石橋を叩いて渡る",
     "romaji": "Ishibashi wo tataite wataru",
     "english": "Tap a stone bridge before crossing",
-    "meaning": "Be very cautious"
+    "meaning": "Be very cautious",
+    "completed": true
   },
   {
     "id": 161,
     "japanese": "一寸先は闇",
     "romaji": "Issun saki wa yami",
     "english": "An inch ahead is darkness",
-    "meaning": "The future is uncertain"
+    "meaning": "The future is uncertain",
+    "completed": true
   },
   {
     "id": 162,
     "japanese": "笑う門には福来る",
     "romaji": "Warau kado ni wa fuku kitaru",
     "english": "Good fortune comes to a laughing home",
-    "meaning": "Happiness invites luck"
+    "meaning": "Happiness invites luck",
+    "issued": true
   },
   {
     "id": 163,
