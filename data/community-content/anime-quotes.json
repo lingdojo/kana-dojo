@@ -133,17 +133,24 @@
     "character": "Okuyasu Nijimura"
   },
   {
-  "japanese": "まだだ、まだ終わらんよ！",
-  "romaji": "Mada da, mada owaran yo!",
-  "english": "Not yet! It's not over yet!",
-  "anime": "Mobile Suit Gundam",
-  "character": "Char Aznable"
-},
-{
-  "japanese": "笑えばいいと思うよ",
-  "romaji": "Waraeba ii to omou yo",
-  "english": "I think you should just laugh.",
-  "anime": "Neon Genesis Evangelion",
-  "character": "Rei Ayanami"
-}
+    "japanese": "まだだ、まだ終わらんよ！",
+    "romaji": "Mada da, mada owaran yo!",
+    "english": "Not yet! It's not over yet!",
+    "anime": "Mobile Suit Gundam",
+    "character": "Char Aznable"
+  },
+  {
+    "japanese": "笑えばいいと思うよ",
+    "romaji": "Waraeba ii to omou yo",
+    "english": "I think you should just laugh.",
+    "anime": "Neon Genesis Evangelion",
+    "character": "Rei Ayanami"
+  },
+  {
+    "japanese": "俺はガンダムだ！",
+    "romaji": "Ore wa Gandamu da!",
+    "english": "I am Gundam!",
+    "anime": "Mobile Suit Gundam 00",
+    "character": "Setsuna F. Seiei"
+  }
 ]
