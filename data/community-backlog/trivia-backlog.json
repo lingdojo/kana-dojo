@@ -490,7 +490,8 @@
       "Hiroshima",
       "Sendai"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "completed": true
   },
   {
     "id": 39,
@@ -502,7 +503,8 @@
       "Onigiri",
       "Mochi"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "issued": true
   },
   {
     "id": 40,
