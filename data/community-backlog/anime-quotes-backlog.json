@@ -311,7 +311,8 @@
     "romaji": "Itami o tomonawanai kyoukun ni wa imi ga nai",
     "english": "A lesson without pain is meaningless.",
     "anime": "Fullmetal Alchemist: Brotherhood",
-    "character": "Edward Elric"
+    "character": "Edward Elric",
+    "completed": true
   },
   {
     "id": 36,
@@ -319,7 +320,8 @@
     "romaji": "Kuchiku shite yaru! Kono yo kara ippiki nokorazu!",
     "english": "I'll exterminate them! Every last one from this world!",
     "anime": "Attack on Titan",
-    "character": "Eren Yeager"
+    "character": "Eren Yeager",
+    "issued": true
   },
   {
     "id": 37,
