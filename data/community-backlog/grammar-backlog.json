@@ -251,15 +251,18 @@
   },
   {
     "id": 51,
-    "text": "\"〜というより\" means \"rather than\" or \"more like\"."
+    "text": "\"〜というより\" means \"rather than\" or \"more like\".",
+    "completed": true
   },
   {
     "id": 52,
-    "text": "\"〜おかげで\" expresses gratitude for a cause, \"thanks to\"."
+    "text": "\"〜おかげで\" expresses gratitude for a cause, \"thanks to\".",
+    "completed": true
   },
   {
     "id": 53,
-    "text": "\"〜せいで\" indicates a negative cause, \"because of\"."
+    "text": "\"〜せいで\" indicates a negative cause, \"because of\".",
+    "issued": true
   },
   {
     "id": 54,
