@@ -117,6 +117,16 @@
     "Okonomiyaki"
   ],
   "correctIndex": 0
-}
+},
+  {
+    "question": "Wich mountain is Japan's highest Peak?",
+    "difficulty": "easy",
+    "answers": [
+      "Mount Fuji",
+      "Mount Kita",
+      "Mount Tate",
+      "Mount Haku"
+    ],
+    "correctAnswerIndex": 0
+  }
 ]
-
