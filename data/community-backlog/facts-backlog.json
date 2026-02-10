@@ -1806,7 +1806,7 @@
   {
     "id": 302,
     "fact": "The phrase 'itadakimasu' (いただきます) is said before meals to show gratitude for the food and those who prepared it.",
-    "issued": false
+    "issued": true
   },
   {
     "id": 303,
