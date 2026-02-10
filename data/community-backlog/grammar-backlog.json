@@ -226,11 +226,13 @@
   },
   {
     "id": 46,
-    "text": "\"〜にする\" means \"decide on\" a choice or selection."
+    "text": "\"〜にする\" means \"decide on\" a choice or selection.",
+    "completed": true
   },
   {
     "id": 47,
-    "text": "\"〜に決まっている\" means \"must be\" or \"definitely\"."
+    "text": "\"〜に決まっている\" means \"must be\" or \"definitely\".",
+    "issued": true
   },
   {
     "id": 48,
