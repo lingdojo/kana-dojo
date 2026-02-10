@@ -38,6 +38,17 @@
   {
     "question": "What is the name of the Japanese comic and animation style?",
     "difficulty": "hard",
-    "answers": ["Manga", "Donghua", "Manhwa", "Comique"],
+    "answers": ["Manga", "Donghua", "Manhwa", "Comique"]
   },
+  {
+    "question": "Which Japanese castle is known for its black exterior and nickname 'Crow Castle'?",
+    "difficulty": "hard",
+    "answers": [
+      "Matsumoto Castle",
+      "Osaka Castle",
+      "Nijo Castle",
+      "Himeji Castle"
+    ],
+    "correctIndex": 0
+  }
 ]
