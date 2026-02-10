@@ -64,59 +64,39 @@
     "correctIndex": 0
   },
   {
-  "question": "Which city is famous for the Peace Memorial Park?",
-  "difficulty": "easy",
-  "answers": [
-    "Hiroshima",
-    "Osaka",
-    "Tokyo",
-    "Fukuoka"
-  ],
-  "correctIndex": 0
+    "question": "Which city is famous for the Peace Memorial Park?",
+    "difficulty": "easy",
+    "answers": ["Hiroshima", "Osaka", "Tokyo", "Fukuoka"],
+    "correctIndex": 0
   },
   {
-  "question": "Which city is known for its snow festival and ice sculptures?",
-  "difficulty": "easy",
-  "answers": [
-    "Sapporo",
-    "Aomori",
-    "Toyama",
-    "Nagano"
-  ],
-  "correctIndex": 0
+    "question": "Which city is known for its snow festival and ice sculptures?",
+    "difficulty": "easy",
+    "answers": ["Sapporo", "Aomori", "Toyama", "Nagano"],
+    "correctIndex": 0
   },
   {
-  "question": "What is Japan’s currency called?",
-  "difficulty": "easy",
-  "answers": [
-    "Yen",
-    "Won",
-    "Yuan",
-    "Ringgit"
-  ],
-  "correctIndex": 0
+    "question": "What is Japan’s currency called?",
+    "difficulty": "easy",
+    "answers": ["Yen", "Won", "Yuan", "Ringgit"],
+    "correctIndex": 0
   },
   {
-  "question": "Which animal is famously associated with Inari shrines in Japan?",
-  "difficulty": "easy",
-  "answers": [
-    "Fox",
-    "Crane",
-    "Turtle",
-    "Deer"
-  ],
-  "correctIndex": 0
+    "question": "Which animal is famously associated with Inari shrines in Japan?",
+    "difficulty": "easy",
+    "answers": ["Fox", "Crane", "Turtle", "Deer"],
+    "correctIndex": 0
   },
   {
-  "question": "Which Japanese dish is made of raw fish over rice?",
-  "difficulty": "easy",
-  "answers": [
-    "Sushi",
-    "Tempura",
-    "Tonkatsu",
-    "Okonomiyaki"
-  ],
-  "correctIndex": 0
-}
+    "question": "Which Japanese dish is made of raw fish over rice?",
+    "difficulty": "easy",
+    "answers": ["Sushi", "Tempura", "Tonkatsu", "Okonomiyaki"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which mountain is Japan’s highest peak?",
+    "difficulty": "easy",
+    "answers": ["Mount Fuji", "Mount Kita", "Mount Tate", "Mount Haku"],
+    "correctIndex": 0
+  }
 ]
-
