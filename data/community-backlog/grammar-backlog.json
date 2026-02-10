@@ -321,15 +321,18 @@
   },
   {
     "id": 65,
-    "text": "\"〜に応じて\" means \"depending on...\"."
+    "text": "\"〜に応じて\" means \"depending on...\".",
+    "completed": true
   },
   {
     "id": 66,
-    "text": "\"〜に加えて\" means \"in addition to...\"."
+    "text": "\"〜に加えて\" means \"in addition to...\".",
+    "issued": true
   },
   {
     "id": 67,
-    "text": "\"〜に向けて\" means \"toward / in preparation for\"."
+    "text": "\"〜に向けて\" means \"toward / in preparation for\".",
+    "issued": true
   },
   {
     "id": 68,

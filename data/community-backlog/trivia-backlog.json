@@ -789,7 +789,8 @@
       "Tokyo",
       "Fukuoka"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "issued": true
   },
   {
     "id": 62,
@@ -801,7 +802,8 @@
       "Tanabata",
       "Aoi Matsuri"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "completed": true
   },
   {
     "id": 63,
@@ -813,7 +815,8 @@
       "Toyama",
       "Nagano"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "issued": true
   },
   {
     "id": 64,

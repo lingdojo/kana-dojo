@@ -43,6 +43,12 @@ export const GENERATED_WALLPAPERS: GeneratedWallpaper[] = [
     urlWebp: '/wallpapers/bangkok-river-1920w.webp',
   },
   {
+    id: 'bangkok-riverside-night',
+    name: 'Bangkok Riverside Night',
+    url: '/wallpapers/bangkok-riverside-night-1920w.avif',
+    urlWebp: '/wallpapers/bangkok-riverside-night-1920w.webp',
+  },
+  {
     id: 'bangkok-storm',
     name: 'Bangkok Storm',
     url: '/wallpapers/bangkok-storm-1920w.avif',

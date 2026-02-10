@@ -40,15 +40,21 @@ Manual run:
 
 - `workflow_dispatch` is enabled in GitHub Actions.
 
-## Exact Contributor Count
+## Contributor Count
 
-The script uses GitHub's contributors endpoint with pagination to compute an exact count:
+The script uses GitHub's contributors endpoint with pagination to compute the count:
 
-- `GET /repos/{owner}/{repo}/contributors?per_page=1&anon=1`
+- `GET /repos/{owner}/{repo}/contributors?per_page=1`
 - If the `Link` header includes `rel="last"`, the last page number is the total count.
 - If no `Link` header is present, the array length is used (0 or 1).
 
-This is the most reliable and efficient exact-count approach available via the API.
+**Note:** The count may differ by ±1-3 from what's shown on GitHub's website due to:
+
+- Caching delays on GitHub's end
+- Edge cases in how deleted/renamed accounts and bots are handled
+- Anonymous Git contributors (not included in our count to match the website)
+
+This is the most reliable and efficient approach available via the API.
 
 ## Script
 
@@ -70,5 +76,4 @@ If any API call fails or returns invalid data, the script exits cleanly without 
 2. Ensure Actions have `contents: write` permission (repo settings).
 3. If your org blocks `GITHUB_TOKEN` from pushing, create a fine-grained PAT with:
    - `Contents: Read and write`
-   Then add it as a repository secret (e.g. `METRICS_TOKEN`) and update the workflow to use it.
-
+     Then add it as a repository secret (e.g. `METRICS_TOKEN`) and update the workflow to use it.

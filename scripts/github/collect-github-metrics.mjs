@@ -11,7 +11,9 @@ if (!token) {
 }
 
 if (!repoSlug || !repoSlug.includes('/')) {
-  process.stderr.write('Missing or invalid repo slug. Set REPO_SLUG or GITHUB_REPOSITORY.\n');
+  process.stderr.write(
+    'Missing or invalid repo slug. Set REPO_SLUG or GITHUB_REPOSITORY.\n',
+  );
   process.exit(0);
 }
 
@@ -49,7 +51,10 @@ if (typeof stars !== 'number' || typeof forks !== 'number') {
   process.exit(0);
 }
 
-const contributorsUrl = `${apiBase}/repos/${owner}/${repo}/contributors?per_page=1&anon=1`;
+// Note: We omit `anon=1` to match the contributor count shown on GitHub's website.
+// There may be a small discrepancy (±1-3) due to caching or how GitHub handles
+// deleted/renamed accounts and bots. This is expected and acceptable.
+const contributorsUrl = `${apiBase}/repos/${owner}/${repo}/contributors?per_page=1`;
 const contributorsResult = await fetchJson(contributorsUrl);
 if (!contributorsResult) process.exit(0);
 
@@ -60,7 +65,9 @@ if (!contributors) {
   if (Array.isArray(contributorsResult.data)) {
     contributors = contributorsResult.data.length;
   } else {
-    process.stderr.write('Invalid contributors response. Skipping metrics collection.\n');
+    process.stderr.write(
+      'Invalid contributors response. Skipping metrics collection.\n',
+    );
     process.exit(0);
   }
 }
@@ -86,7 +93,8 @@ if (fs.existsSync(absoluteOutputPath)) {
   try {
     const raw = fs.readFileSync(absoluteOutputPath, 'utf8');
     history = raw.trim() ? JSON.parse(raw) : [];
-    if (!Array.isArray(history)) throw new Error('Metrics file is not an array.');
+    if (!Array.isArray(history))
+      throw new Error('Metrics file is not an array.');
   } catch (error) {
     process.stderr.write(`Failed to read metrics file: ${error.message}\n`);
     process.exit(0);
@@ -97,9 +105,14 @@ const lastEntry = history.at(-1);
 if (lastEntry && typeof lastEntry === 'object') {
   entry.diff.stars = entry.stars - (lastEntry.stars ?? entry.stars);
   entry.diff.forks = entry.forks - (lastEntry.forks ?? entry.forks);
-  entry.diff.contributors = entry.contributors - (lastEntry.contributors ?? entry.contributors);
+  entry.diff.contributors =
+    entry.contributors - (lastEntry.contributors ?? entry.contributors);
 }
 
 history.push(entry);
-fs.writeFileSync(absoluteOutputPath, `${JSON.stringify(history, null, 2)}\n`, 'utf8');
+fs.writeFileSync(
+  absoluteOutputPath,
+  `${JSON.stringify(history, null, 2)}\n`,
+  'utf8',
+);
 process.stdout.write('Metrics entry appended.\n');
