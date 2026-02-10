@@ -59,7 +59,7 @@
     "kuroshiro-analyzer-kuromoji": "^1.1.0",
     "localforage": "^1.10.0",
     "lucide-react": "^0.562.0",
-    "next": "15.5.7",
+    "next": "^15.5.12",
     "next-intl": "^4.3.12",
     "next-mdx-remote": "^5.0.0",
     "next-scroll-restoration": "^0.0.4",
