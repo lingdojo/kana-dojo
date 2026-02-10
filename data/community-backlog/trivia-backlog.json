@@ -516,7 +516,8 @@
       "Matsumoto Castle",
       "Osaka Castle"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "completed": true
   },
   {
     "id": 41,
@@ -528,7 +529,8 @@
       "Tanabata",
       "Shichi-Go-San"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "completed": true
   },
   {
     "id": 42,
@@ -540,7 +542,8 @@
       "Ryokan",
       "Izakaya"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "completed": true
   },
   {
     "id": 43,
@@ -552,7 +555,8 @@
       "Ukiyo-e",
       "Shodo"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "issued": true
   },
   {
     "id": 44,
