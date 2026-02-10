@@ -594,7 +594,8 @@
       "Minshuku",
       "Tateyama"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "completed": true
   },
   {
     "id": 47,
@@ -606,7 +607,8 @@
       "Philippine Sea",
       "Bering Sea"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "issued": true
   },
   {
     "id": 48,
