@@ -6,6 +6,8 @@
  *
  * Each entry corresponds to a source image that was processed into
  * AVIF + WebP at 1920w, 2560w, and 3840w sizes in public/wallpapers/.
+ * 
+ * The 2560w size is served by default for optimal quality on modern displays.
  */
 
 export interface GeneratedWallpaper {
@@ -13,9 +15,9 @@ export interface GeneratedWallpaper {
   id: string;
   /** Human-readable display name (auto-generated from filename) */
   name: string;
-  /** Primary AVIF URL (1920w default size) */
+  /** Primary AVIF URL (2560w default size) */
   url: string;
-  /** WebP fallback URL (1920w default size) */
+  /** WebP fallback URL (2560w default size) */
   urlWebp: string;
 }
 
@@ -27,43 +29,43 @@ export const GENERATED_WALLPAPERS: GeneratedWallpaper[] = [
   {
     id: 'bangkok-night',
     name: 'Bangkok Night',
-    url: '/wallpapers/bangkok-night-1920w.avif',
-    urlWebp: '/wallpapers/bangkok-night-1920w.webp',
+    url: '/wallpapers/bangkok-night-2560w.avif',
+    urlWebp: '/wallpapers/bangkok-night-2560w.webp',
   },
   {
     id: 'bangkok-park',
     name: 'Bangkok Park',
-    url: '/wallpapers/bangkok-park-1920w.avif',
-    urlWebp: '/wallpapers/bangkok-park-1920w.webp',
+    url: '/wallpapers/bangkok-park-2560w.avif',
+    urlWebp: '/wallpapers/bangkok-park-2560w.webp',
   },
   {
     id: 'bangkok-river',
     name: 'Bangkok River',
-    url: '/wallpapers/bangkok-river-1920w.avif',
-    urlWebp: '/wallpapers/bangkok-river-1920w.webp',
+    url: '/wallpapers/bangkok-river-2560w.avif',
+    urlWebp: '/wallpapers/bangkok-river-2560w.webp',
   },
   {
     id: 'bangkok-riverside-night',
     name: 'Bangkok Riverside Night',
-    url: '/wallpapers/bangkok-riverside-night-1920w.avif',
-    urlWebp: '/wallpapers/bangkok-riverside-night-1920w.webp',
+    url: '/wallpapers/bangkok-riverside-night-2560w.avif',
+    urlWebp: '/wallpapers/bangkok-riverside-night-2560w.webp',
   },
   {
     id: 'bangkok-storm',
     name: 'Bangkok Storm',
-    url: '/wallpapers/bangkok-storm-1920w.avif',
-    urlWebp: '/wallpapers/bangkok-storm-1920w.webp',
+    url: '/wallpapers/bangkok-storm-2560w.avif',
+    urlWebp: '/wallpapers/bangkok-storm-2560w.webp',
   },
   {
     id: 'bangkok-sunset',
     name: 'Bangkok Sunset',
-    url: '/wallpapers/bangkok-sunset-1920w.avif',
-    urlWebp: '/wallpapers/bangkok-sunset-1920w.webp',
+    url: '/wallpapers/bangkok-sunset-2560w.avif',
+    urlWebp: '/wallpapers/bangkok-sunset-2560w.webp',
   },
   {
     id: 'retro-city',
     name: 'Retro City',
-    url: '/wallpapers/retro-city-1920w.avif',
-    urlWebp: '/wallpapers/retro-city-1920w.webp',
+    url: '/wallpapers/retro-city-2560w.avif',
+    urlWebp: '/wallpapers/retro-city-2560w.webp',
   },
 ];

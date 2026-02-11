@@ -932,7 +932,8 @@
       "Tohoku",
       "Hokuriku"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "issued": true
   },
   {
     "id": 73,
@@ -944,7 +945,8 @@
       "Torii",
       "Goshuin"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "issued": true
   },
   {
     "id": 74,
@@ -956,7 +958,8 @@
       "Nara",
       "Matsue"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "issued": true
   },
   {
     "id": 75,
@@ -968,7 +971,8 @@
       "Lake Ashi",
       "Lake Shinji"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "completed": true
   },
   {
     "id": 76,
@@ -980,7 +984,8 @@
       "Ramen",
       "Somem"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "issued": true
   },
   {
     "id": 77,
@@ -992,7 +997,8 @@
       "Uchiwa",
       "Furoshiki"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "issued": true
   },
   {
     "id": 78,
@@ -1004,7 +1010,8 @@
       "Kanazawa",
       "Matsuyama"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "issued": true
   },
   {
     "id": 79,
@@ -1016,7 +1023,8 @@
       "Yakitori",
       "Sashimi"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "issued": true
   },
   {
     "id": 80,
@@ -1028,6 +1036,7 @@
       "Koto",
       "Fue"
     ],
-    "correctIndex": 0
+    "correctIndex": 0,
+    "issued": true
   }
 ]

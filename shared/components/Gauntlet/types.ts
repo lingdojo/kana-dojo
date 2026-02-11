@@ -142,7 +142,7 @@ export const DIFFICULTY_CONFIG: Record<
   'instant-death': {
     lives: 1,
     regenerates: false,
-    label: 'Instant Death',
+    label: 'YOLO',
     description: "One strike and you're out. For true masters only.",
     icon: '💀',
   },

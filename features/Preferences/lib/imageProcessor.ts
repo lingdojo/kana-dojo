@@ -6,15 +6,31 @@
  *
  * 1. Load image from URL or File
  * 2. Validate dimensions and file size
- * 3. Resize to target width (1920px, matching server script)
- * 4. Encode as AVIF (quality 0.50, matching server's AVIF_OPTIONS { quality: 50 })
- *    — falls back to WebP (quality 0.78, matching server's WEBP_OPTIONS { quality: 78 })
- *    if the browser does not support AVIF encoding
+ * 3. Resize to target width (matching server script)
+ * 4. Encode as AVIF (with WebP fallback if browser doesn't support AVIF encoding)
  * 5. Generate a small thumbnail for theme card preview
  *
- * Supported input formats (mirrors server script's SUPPORTED_EXTENSIONS):
- *   .jpg, .jpeg, .png, .webp, .avif, .gif, .tiff, .bmp
+ * All configuration values are imported from the shared config to ensure
+ * consistency with the CLI pre-processing script.
  */
+
+import {
+  TARGET_WIDTH,
+  THUMBNAIL_WIDTH,
+  CANVAS_AVIF_QUALITY,
+  CANVAS_WEBP_QUALITY,
+  CANVAS_THUMBNAIL_QUALITY,
+  MIN_WIDTH,
+  MAX_FILE_SIZE,
+  MAX_CUSTOM_WALLPAPERS,
+  SUPPORTED_MIME_TYPES,
+  SUPPORTED_FORMATS_DISPLAY,
+  formatBytes,
+  toDisplayName,
+  nameToId,
+  ensureUniqueId,
+  type SupportedMimeType,
+} from '@/features/Preferences/config/imageProcessing';
 
 // ============================================================================
 // Types
@@ -58,55 +74,12 @@ export interface ProcessedImage {
   name: string;
 }
 
-// ============================================================================
-// Configuration (mirrors server script values exactly)
-// ============================================================================
-
-/** Max width for the wallpaper image (matches server WIDTHS[0]) */
-const TARGET_WIDTH = 1920;
-/** Thumbnail width for theme card previews */
-const THUMBNAIL_WIDTH = 320;
-/**
- * AVIF quality — matches server AVIF_OPTIONS { quality: 50 }.
- * Canvas API quality is 0–1, so 50/100 = 0.50.
- */
-const AVIF_QUALITY = 0.5;
-/**
- * WebP quality — matches server WEBP_OPTIONS { quality: 78 }.
- * Used as a fallback when the browser doesn't support AVIF encoding.
- */
-const WEBP_QUALITY = 0.78;
-/** Thumbnail quality (lower for smaller base64 size) */
-const THUMBNAIL_QUALITY = 0.6;
-/** Minimum acceptable width for a wallpaper */
-const MIN_WIDTH = 800;
-/** Maximum file size (50 MB) */
-const MAX_FILE_SIZE = 50 * 1024 * 1024;
-/** Maximum number of custom wallpapers a user can create */
-export const MAX_CUSTOM_WALLPAPERS = 20;
-
-/**
- * MIME types accepted for file input.
- * Mirrors server script's SUPPORTED_EXTENSIONS:
- *   .jpg, .jpeg, .png, .webp, .avif, .gif, .tiff, .bmp
- */
-const SUPPORTED_IMAGE_TYPES = new Set([
-  'image/jpeg',
-  'image/png',
-  'image/webp',
-  'image/avif',
-  'image/gif',
-  'image/tiff',
-  'image/bmp',
-]);
-
-// ============================================================================
-// Name / ID utilities
-// ============================================================================
+// Re-export shared constants and utilities for backwards compatibility
+export { MAX_CUSTOM_WALLPAPERS, formatBytes, nameToId, ensureUniqueId };
 
 /**
  * Extract a display name from a filename or URL.
- * Mirrors the server script's `toDisplayName()` logic.
+ * Delegates to toDisplayName from shared config.
  */
 export function extractDisplayName(source: string): string {
   let name: string;
@@ -124,40 +97,7 @@ export function extractDisplayName(source: string): string {
     name = source.replace(/\.[^.]+$/, '');
   }
 
-  return (
-    name
-      .replace(/[-_]+/g, ' ')
-      .replace(/([a-z])([A-Z])/g, '$1 $2')
-      .replace(/\b\w/g, c => c.toUpperCase())
-      .trim() || 'Custom Wallpaper'
-  );
-}
-
-/**
- * Generate a kebab-case ID from a display name.
- * All custom wallpaper IDs are prefixed with `custom-` for easy identification.
- */
-export function nameToId(name: string): string {
-  return (
-    'custom-' +
-    name
-      .toLowerCase()
-      .replace(/[^a-z0-9]+/g, '-')
-      .replace(/^-+|-+$/g, '')
-  );
-}
-
-/**
- * Ensure a unique ID by appending a numeric suffix if needed.
- */
-export function ensureUniqueId(
-  baseId: string,
-  existingIds: Set<string>,
-): string {
-  if (!existingIds.has(baseId)) return baseId;
-  let suffix = 2;
-  while (existingIds.has(`${baseId}-${suffix}`)) suffix++;
-  return `${baseId}-${suffix}`;
+  return toDisplayName(name);
 }
 
 // ============================================================================
@@ -210,14 +150,18 @@ async function loadImage(
         return;
       }
 
+      // source.type is always a string for File objects, but can be empty.
+      // The `&&` operator ensures we only call .has() if source.type is not an empty string.
       if (
         !source.type.startsWith('image/') ||
-        (source.type && !SUPPORTED_IMAGE_TYPES.has(source.type))
+        (source.type &&
+          !SUPPORTED_MIME_TYPES.has(source.type as SupportedMimeType))
       ) {
         reject(
           new Error(
             `Unsupported file type "${source.type}". Accepted formats: ` +
-              'JPEG, PNG, WebP, AVIF, GIF, TIFF, BMP.',
+              SUPPORTED_FORMATS_DISPLAY +
+              '.',
           ),
         );
         return;
@@ -341,7 +285,7 @@ async function resizeAndConvert(
   // Try AVIF first (matches server's primary format), fall back to WebP
   const useAvif = await isAvifEncodingSupported();
   const mimeType = useAvif ? 'image/avif' : 'image/webp';
-  const quality = useAvif ? AVIF_QUALITY : WEBP_QUALITY;
+  const quality = useAvif ? CANVAS_AVIF_QUALITY : CANVAS_WEBP_QUALITY;
   const formatLabel = useAvif ? 'AVIF' : 'WebP';
 
   if (!isThumbnail) {
@@ -399,7 +343,7 @@ async function generateThumbnail(
   ctx.imageSmoothingQuality = 'high';
   ctx.drawImage(img, 0, 0, width, height);
 
-  return canvas.toDataURL('image/webp', THUMBNAIL_QUALITY);
+  return canvas.toDataURL('image/webp', CANVAS_THUMBNAIL_QUALITY);
 }
 
 // ============================================================================
@@ -472,13 +416,4 @@ export async function processImageForWallpaper(
     });
     throw err;
   }
-}
-
-/**
- * Format bytes to a human-readable string (matches server script's formatBytes).
- */
-export function formatBytes(bytes: number): string {
-  if (bytes < 1024) return `${bytes} B`;
-  if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
-  return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
 }

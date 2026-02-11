@@ -15,29 +15,26 @@
  * Usage:
  *   npm run images:process           # Incremental (skip up-to-date images)
  *   npm run images:process -- --force # Force reprocess all images
+ *
+ * All configuration values are imported from the shared config to ensure
+ * consistency with the browser-side image processor.
  */
 import sharp from 'sharp';
 import { readdir, mkdir, stat, writeFile, unlink } from 'node:fs/promises';
 import { join, parse, extname } from 'node:path';
+import {
+  OUTPUT_WIDTHS,
+  SUPPORTED_EXTENSIONS,
+  SHARP_AVIF_OPTIONS,
+  SHARP_WEBP_OPTIONS,
+  formatBytes,
+  toDisplayName,
+} from '../features/Preferences/config/imageProcessing.js';
 
 // Configuration
 const SOURCE_DIR = 'data/wallpapers-source';
 const OUTPUT_DIR = 'public/wallpapers';
 const MANIFEST_PATH = 'features/Preferences/data/wallpapers.generated.ts';
-const SUPPORTED_EXTENSIONS = new Set([
-  '.jpg',
-  '.jpeg',
-  '.png',
-  '.webp',
-  '.avif',
-  '.gif',
-  '.tiff',
-  '.bmp',
-]);
-const WIDTHS = [1920, 2560, 3840];
-
-const AVIF_OPTIONS: sharp.AvifOptions = { quality: 50, effort: 6 };
-const WEBP_OPTIONS: sharp.WebpOptions = { quality: 78 };
 
 const forceReprocess = process.argv.includes('--force');
 
@@ -49,17 +46,6 @@ interface ProcessResult {
   originalSize: number;
   skipped?: boolean;
   error?: string;
-}
-
-/**
- * Convert kebab-case filename to Title Case display name
- * e.g. "neon-city-nights" → "Neon City Nights"
- */
-function toDisplayName(baseName: string): string {
-  return baseName
-    .split('-')
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(' ');
 }
 
 async function getSourceImages(): Promise<string[]> {
@@ -86,7 +72,7 @@ async function getSourceImages(): Promise<string[]> {
  */
 function getExpectedOutputs(baseName: string): string[] {
   const outputs: string[] = [];
-  for (const width of WIDTHS) {
+  for (const width of OUTPUT_WIDTHS) {
     outputs.push(`${baseName}-${width}w.avif`);
     outputs.push(`${baseName}-${width}w.webp`);
   }
@@ -161,7 +147,7 @@ async function processImage(filename: string): Promise<ProcessResult> {
       `  Processing: ${filename} (${metadata.width}×${metadata.height})`,
     );
 
-    for (const width of WIDTHS) {
+    for (const width of OUTPUT_WIDTHS) {
       // Skip sizes larger than original
       if (width > metadata.width) {
         console.log(
@@ -175,7 +161,7 @@ async function processImage(filename: string): Promise<ProcessResult> {
       const avifPath = join(OUTPUT_DIR, avifName);
       const avifInfo = await sharp(sourcePath)
         .resize(width, undefined, { withoutEnlargement: true })
-        .avif(AVIF_OPTIONS)
+        .avif(SHARP_AVIF_OPTIONS)
         .toFile(avifPath);
 
       result.outputs.push({
@@ -190,7 +176,7 @@ async function processImage(filename: string): Promise<ProcessResult> {
       const webpPath = join(OUTPUT_DIR, webpName);
       const webpInfo = await sharp(sourcePath)
         .resize(width, undefined, { withoutEnlargement: true })
-        .webp(WEBP_OPTIONS)
+        .webp(SHARP_WEBP_OPTIONS)
         .toFile(webpPath);
 
       result.outputs.push({
@@ -207,12 +193,6 @@ async function processImage(filename: string): Promise<ProcessResult> {
   return result;
 }
 
-function formatBytes(bytes: number): string {
-  if (bytes < 1024) return `${bytes} B`;
-  if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
-  return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
-}
-
 /**
  * Generate the TypeScript manifest file that the app imports.
  * This is the single source of truth for which wallpapers exist.
@@ -225,8 +205,8 @@ function generateManifest(results: ProcessResult[]): string {
       return `  {
     id: '${r.baseName}',
     name: '${r.displayName}',
-    url: '/wallpapers/${r.baseName}-1920w.avif',
-    urlWebp: '/wallpapers/${r.baseName}-1920w.webp',
+    url: '/wallpapers/${r.baseName}-2560w.avif',
+    urlWebp: '/wallpapers/${r.baseName}-2560w.webp',
   },`;
     })
     .join('\n');
@@ -239,6 +219,8 @@ function generateManifest(results: ProcessResult[]): string {
  *
  * Each entry corresponds to a source image that was processed into
  * AVIF + WebP at 1920w, 2560w, and 3840w sizes in public/wallpapers/.
+ * 
+ * The 2560w size is served by default for optimal quality on modern displays.
  */
 
 export interface GeneratedWallpaper {
@@ -246,9 +228,9 @@ export interface GeneratedWallpaper {
   id: string;
   /** Human-readable display name (auto-generated from filename) */
   name: string;
-  /** Primary AVIF URL (1920w default size) */
+  /** Primary AVIF URL (2560w default size) */
   url: string;
-  /** WebP fallback URL (1920w default size) */
+  /** WebP fallback URL (2560w default size) */
   urlWebp: string;
 }
 

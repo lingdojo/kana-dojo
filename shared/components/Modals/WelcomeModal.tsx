@@ -16,6 +16,12 @@ import { usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import useOnboardingStore from '@/shared/store/useOnboardingStore';
 import { themeSets, useThemePreferences } from '@/features/Preferences';
+import {
+  isPremiumThemeId,
+  getWallpaperStyles,
+  getThemeDefaultWallpaperId,
+} from '@/features/Preferences/data/themes';
+import { getWallpaperById } from '@/features/Preferences/data/wallpapers';
 import fonts from '@/features/Preferences/data/fonts';
 import { isRecommendedFont } from '@/features/Preferences/data/recommendedFonts';
 import { useClick } from '@/shared/hooks/useAudio';
@@ -58,6 +64,7 @@ const WelcomeModal = () => {
 
   const [localTheme, setLocalTheme] = useState(selectedTheme);
   const [localFont, setLocalFont] = useState(currentFont);
+  const [hoveredTheme, setHoveredTheme] = useState<string | null>(null);
   const recommendedFonts = useMemo(
     () => fonts.filter(fontObj => isRecommendedFont(fontObj.name)),
     [],
@@ -215,7 +222,7 @@ const WelcomeModal = () => {
               <ActionButton
                 className='py-4 text-xl font-semibold tracking-wide uppercase'
                 borderRadius='3xl'
-                borderBottomThickness={8}
+                borderBottomThickness={16}
                 onClick={handleTryDemo}
               >
                 <CircleStar
@@ -416,9 +423,23 @@ const WelcomeModal = () => {
 
                   return (
                     <div key={themeSet.name} className='space-y-3'>
-                      <div className='flex items-center gap-2 text-lg font-medium text-(--main-color)'>
-                        <themeSet.icon size={20} />
-                        {themeSet.name}
+                      <div className='flex items-center gap-2 text-lg font-medium'>
+                        <themeSet.icon
+                          size={20}
+                          className='text-(--secondary-color)'
+                        />
+                        {themeSet.name.startsWith('Premium') ? (
+                          <span>
+                            <span className='text-(--main-color)'>Premium</span>
+                            <span className='ml-1 text-(--secondary-color)'>
+                              (experimental)
+                            </span>
+                          </span>
+                        ) : (
+                          <span className='text-(--main-color)'>
+                            {themeSet.name}
+                          </span>
+                        )}
                         {/* <span className='text-sm font-normal text-(--secondary-color)'>
                       ({themeSet.themes.length})
                     </span> */}
@@ -426,20 +447,47 @@ const WelcomeModal = () => {
                       <div className='grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4'>
                         {filteredThemes.map(theme => {
                           const isChaosTheme = theme.id === '?';
+                          const isPremiumTheme = isPremiumThemeId(theme.id);
+                          const isHovered = hoveredTheme === theme.id;
+
+                          // Get wallpaper for premium themes
+                          const themeWallpaperId = getThemeDefaultWallpaperId(
+                            theme.id,
+                          );
+                          const wallpaper = themeWallpaperId
+                            ? getWallpaperById(themeWallpaperId)
+                            : undefined;
+
+                          // Determine background
                           const background = isChaosTheme
                             ? CHAOS_THEME_GRADIENT
-                            : theme.backgroundColor;
+                            : isPremiumTheme && isHovered
+                              ? theme.cardColor
+                              : theme.backgroundColor;
+
+                          const wallpaperStyles = wallpaper
+                            ? getWallpaperStyles(
+                                wallpaper.url,
+                                isHovered,
+                                wallpaper.urlWebp,
+                              )
+                            : {};
+
                           return (
                             <button
                               key={theme.id}
-                              className='cursor-pointer rounded-lg p-3 transition-all duration-200 hover:opacity-90 active:scale-95'
+                              className='cursor-pointer rounded-lg p-3 transition-all duration-100 hover:opacity-90'
                               style={{
-                                background,
-                                border:
+                                ...(wallpaper
+                                  ? wallpaperStyles
+                                  : { background }),
+                                outline:
                                   localTheme === theme.id
-                                    ? `1px solid ${theme.mainColor}`
-                                    : `1px solid ${theme.borderColor}`,
+                                    ? `3px solid ${theme.secondaryColor}`
+                                    : 'none',
                               }}
+                              onMouseEnter={() => setHoveredTheme(theme.id)}
+                              onMouseLeave={() => setHoveredTheme(null)}
                               onClick={() => {
                                 playClick();
                                 setLocalTheme(theme.id);
@@ -447,7 +495,9 @@ const WelcomeModal = () => {
                               }}
                               title={theme.id}
                             >
-                              <div className='mb-2 text-left'>
+                              <div
+                                className={`mb-2 text-left ${isPremiumTheme ? 'invisible' : ''}`}
+                              >
                                 {isChaosTheme ? (
                                   <span className='relative flex items-center justify-start text-sm text-white capitalize'>
                                     <span
@@ -468,13 +518,12 @@ const WelcomeModal = () => {
                                     className='text-sm capitalize'
                                     style={{ color: theme.mainColor }}
                                   >
-                                    {localTheme === theme.id && '\u2B24 '}
                                     {theme.id.replaceAll('-', ' ')}
                                   </span>
                                 )}
                               </div>
                               <div
-                                className='flex gap-1.5'
+                                className='flex min-h-4 gap-1.5'
                                 style={{
                                   visibility: isChaosTheme
                                     ? 'hidden'
@@ -482,11 +531,11 @@ const WelcomeModal = () => {
                                 }}
                               >
                                 <div
-                                  className='h-4 w-4 rounded-full'
+                                  className={`h-4 w-4 rounded-full ${isPremiumTheme ? 'hidden' : ''}`}
                                   style={{ background: theme.mainColor }}
                                 />
                                 <div
-                                  className='h-4 w-4 rounded-full'
+                                  className={`h-4 w-4 rounded-full ${isPremiumTheme ? 'hidden' : ''}`}
                                   style={{ background: theme.secondaryColor }}
                                 />
                               </div>
@@ -527,11 +576,14 @@ const WelcomeModal = () => {
                     key={fontObj.name}
                     className={clsx(
                       'flex cursor-pointer items-center justify-center overflow-hidden rounded-xl border-0 px-4 py-4 transition-all duration-200 hover:opacity-90 active:scale-95',
-                      localFont === fontObj.name
-                        ? 'border-(--main-color)'
-                        : 'border-(--card-color)',
                     )}
-                    style={{ backgroundColor: 'var(--background-color)' }}
+                    style={{
+                      backgroundColor: 'var(--background-color)',
+                      outline:
+                        localFont === fontObj.name
+                          ? '3px solid var(--secondary-color)'
+                          : 'none',
+                    }}
                     onClick={() => {
                       playClick();
                       setLocalFont(fontObj.name);
@@ -544,9 +596,6 @@ const WelcomeModal = () => {
                         fontObj.font.className,
                       )}
                     >
-                      <span className='text-(--secondary-color)'>
-                        {localFont === fontObj.name ? '\u2B24 ' : ''}
-                      </span>
                       <span className='text-(--main-color)'>
                         {fontObj.name}
                         {fontObj.name === 'Zen Maru Gothic' &&
