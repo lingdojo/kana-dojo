@@ -156,5 +156,16 @@
     "Omikoshi"
   ],
   "correctIndex": 0
+},
+{
+  "question": "What is the Japanese term for a traditional drum?",
+  "difficulty": "medium",
+  "answers": [
+    "Taiko",
+    "Shamisen",
+    "Koto",
+    "Fue"
+  ],
+  "correctIndex": 0
 }
 ]
