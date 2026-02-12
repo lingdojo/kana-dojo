@@ -129,84 +129,84 @@
     "id": 22,
     "fact": "There's a Japanese word 'komorebi' (木漏れ日) specifically for sunlight filtering through leaves - no direct English translation exists.",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 23,
     "fact": "Japanese train conductors point and call out each signal and sign they see - a practice called 'shisa kanko' that reduces errors by up to 85%.",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 24,
     "fact": "The Japanese word 'natsukashii' (懐かしい) describes nostalgic longing that's bittersweet rather than sad - missing something while appreciating the memory.",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 25,
     "fact": "Japan has a museum dedicated to instant ramen in Osaka where visitors can create their own custom Cup Noodles flavor combinations.",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 26,
     "fact": "The concept of 'wabi-sabi' (侘寂) finds beauty in imperfection and impermanence - a cracked bowl is more valuable because of its history.",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 27,
     "fact": "Japanese addresses are based on blocks rather than streets - buildings are numbered by the order they were built, not their location.",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 28,
     "fact": "There are special 'women-only' train cars in Japan during rush hour to prevent groping - marked with pink signs and available on most major lines.",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 29,
     "fact": "Japan's 7-Eleven stores outnumber those in the US despite Japan being 26 times smaller - there's roughly one 7-Eleven for every 2,300 people.",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 30,
     "fact": "The Japanese word 'boketto' (ぼけっと) describes the act of gazing vacantly into the distance without thinking about anything specific.",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 31,
     "fact": "Japan has 'love hotels' (rabuho) with themed rooms ranging from Hello Kitty to medieval dungeons, renting by the hour or night.",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 32,
     "fact": "The practice of 'nemawashi' (根回し) means building consensus before a meeting so decisions appear unanimous - the actual negotiation happens beforehand.",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 33,
     "fact": "Japanese toilet seats often have built-in bidets with heated seats, air dryers, and sound effects to mask embarrassing noises.",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 34,
     "fact": "There's a Japanese festival called 'Hadaka Matsuri' where thousands of nearly naked men compete to catch lucky charms thrown by priests.",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 35,
     "fact": "The word 'hikikomori' (引きこもり) describes people who withdraw completely from society, sometimes staying in their rooms for years.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
