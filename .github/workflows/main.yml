@@ -4,6 +4,33 @@ on:
   push:
     branches:
       - main # Trigger when main branch is updated
+    paths-ignore:
+      - ".agent/**"
+      - ".claude/**"
+      - ".gemini/**"
+      - ".github/**"
+      - ".husky/**"
+      - ".kiro/**"
+      - ".vscode/**"
+      - "data/community-backlog/**"
+      - "data/community-content/**"
+      - "docs/**"
+      - "repo/**"
+      - "scripts/**"
+      - "CHANGELOG.md"
+      - "CODE_OF_CONDUCT.md"
+      - "CONTRIBUTING.md"
+      - "LICENSE.md"
+      - "README.md"
+      - "SECURITY.md"
+      - "SEO_IMPROVEMENTS_SUMMARY.md"
+      - "SOLUTION.md"
+      - "TODO_INDEXNOW_SETUP.md"
+      - "AGENTS.md"
+      - "llms.txt"
+      - ".env.*"
+      - ".env.local"
+      - "tsconfig.tsbuildinfo"
 
 permissions:
   contents: write

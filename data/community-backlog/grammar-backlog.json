@@ -32,49 +32,49 @@
   {
     "id": 6,
     "text": "\"〜ながら\" connects actions to show two things happening at the same time.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 7,
     "text": "\"〜たことがある\" expresses past experience, like \"have done\" something before.",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
     "id": 8,
     "text": "\"〜てしまう\" can show completion or regret about an action.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 9,
     "text": "\"〜そうです\" can report hearsay (\"I heard that...\").",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
     "id": 10,
     "text": "\"〜ようです\" means \"it seems like\" and is based on observation.",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
     "id": 11,
     "text": "\"〜でしょう\" adds probability or softens statements, like \"probably\".",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 12,
     "text": "\"〜つもり\" expresses intent, like \"I plan to\" do something.",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
     "id": 13,
     "text": "\"〜なければならない\" means \"must\" or \"have to\" do something.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

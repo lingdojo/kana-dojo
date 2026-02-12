@@ -473,7 +473,7 @@
     "romaji": "Hara hachibunme",
     "english": "Stomach 80 percent full",
     "meaning": "Eat in moderation",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -482,7 +482,7 @@
     "romaji": "Tonari no hana wa akai",
     "english": "The neighbor's flowers are red",
     "meaning": "The grass is always greener on the other side",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -491,7 +491,7 @@
     "romaji": "Inu mo arukeba bou ni ataru",
     "english": "Even a walking dog will hit a stick",
     "meaning": "Acting can lead to luck (or trouble)",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -500,7 +500,7 @@
     "romaji": "Tana kara botamochi",
     "english": "A rice cake falls from the shelf",
     "meaning": "A windfall; unexpected good luck",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -509,7 +509,7 @@
     "romaji": "Neko no te mo karitai",
     "english": "I'd even borrow a cat's paw",
     "meaning": "Extremely busy",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -518,7 +518,7 @@
     "romaji": "Seite wa koto wo shisonjiru",
     "english": "Haste will spoil things",
     "meaning": "Haste makes waste",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -527,7 +527,7 @@
     "romaji": "Atama kakushite shiri kakusazu",
     "english": "Hide your head, but not your butt",
     "meaning": "Trying to hide something obvious",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -536,7 +536,7 @@
     "romaji": "Hana wa sakuragi hito wa bushi",
     "english": "Among flowers, the cherry blossom; among men, the warrior",
     "meaning": "The best of each kind",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -545,7 +545,7 @@
     "romaji": "Mochi wa mochiya",
     "english": "Mochi should be made by the mochi shop",
     "meaning": "Leave it to the experts",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -554,7 +554,7 @@
     "romaji": "Toudai moto kurashi",
     "english": "It's darkest under the lighthouse",
     "meaning": "The obvious is often overlooked",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -563,7 +563,7 @@
     "romaji": "I no naka no kawazu taikai wo shirazu",
     "english": "A frog in a well does not know the great sea",
     "meaning": "Limited experience limits perspective",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -572,7 +572,7 @@
     "romaji": "Ki wo mite mori wo mizu",
     "english": "See the trees but not the forest",
     "meaning": "Miss the bigger picture",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -581,7 +581,7 @@
     "romaji": "Doku wo kurawaba sara made",
     "english": "If you eat poison, eat the plate too",
     "meaning": "If you must do something risky, go all the way",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -590,7 +590,7 @@
     "romaji": "Tabi wa michizure yo wa nasake",
     "english": "Travel needs companions; life needs kindness",
     "meaning": "Relationships and compassion matter",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -599,7 +599,7 @@
     "romaji": "Senri no michi mo ippo kara",
     "english": "A journey of a thousand miles begins with a single step",
     "meaning": "Start small to reach big goals",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -608,7 +608,7 @@
     "romaji": "Warau kado ni wa fuku kitaru",
     "english": "Fortune comes to a laughing gate",
     "meaning": "Good fortune comes to those who smile",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -617,7 +617,7 @@
     "romaji": "Ryouyaku wa kuchi ni nigashi",
     "english": "Good medicine tastes bitter",
     "meaning": "Helpful advice can be hard to hear",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -626,7 +626,7 @@
     "romaji": "Tsuru no hitokoe",
     "english": "One cry of the crane",
     "meaning": "A single influential person settles a matter",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -635,7 +635,7 @@
     "romaji": "Oni ni kanabou",
     "english": "An iron club to an ogre",
     "meaning": "Making someone strong even stronger",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -644,7 +644,7 @@
     "romaji": "Yakeishi ni mizu",
     "english": "Water on a hot stone",
     "meaning": "A futile effort with little effect",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -653,7 +653,7 @@
     "romaji": "Oni no inuma ni sentaku",
     "english": "Do laundry while the ogre is away",
     "meaning": "Take advantage of someone's absence",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -662,7 +662,7 @@
     "romaji": "Toranu tanuki no kawazan'you",
     "english": "Counting a raccoon dog's skins before catching it",
     "meaning": "Don't count your chickens before they hatch",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -671,7 +671,7 @@
     "romaji": "Ishi no ue ni mo san nen",
     "english": "Three years on a stone",
     "meaning": "Perseverance will be rewarded",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -680,7 +680,7 @@
     "romaji": "Ame futte ji katamaru",
     "english": "After rain, the ground hardens",
     "meaning": "Adversity can strengthen relationships",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -689,7 +689,7 @@
     "romaji": "Hari no ana kara ten wo nozoku",
     "english": "Peek at the sky through a needle's eye",
     "meaning": "A narrow viewpoint leads to poor judgment",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -698,7 +698,7 @@
     "romaji": "Zen wa isoge",
     "english": "Hurry to do good",
     "meaning": "If it's worth doing, do it at once",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -707,7 +707,7 @@
     "romaji": "Miru wa houraku",
     "english": "Just watching is a pleasure",
     "meaning": "Enjoy observing; you don't always need to participate",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -716,7 +716,7 @@
     "romaji": "Tsuki to suppon",
     "english": "The moon and a turtle",
     "meaning": "Vast difference; not comparable",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -725,7 +725,7 @@
     "romaji": "Kaeru no ko wa kaeru",
     "english": "A frog's child is a frog",
     "meaning": "Children resemble their parents",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -734,7 +734,7 @@
     "romaji": "Idobata kaigi",
     "english": "Well-side conference",
     "meaning": "Neighborhood gossip",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -743,7 +743,7 @@
     "romaji": "Neko ni katsuobushi",
     "english": "Dried bonito to a cat",
     "meaning": "Leave temptation unattended at your own risk",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -753,7 +753,7 @@
     "english": "Poke the bush and bring out a snake",
     "meaning": "Stir up trouble unnecessarily",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 85,
@@ -761,7 +761,7 @@
     "romaji": "Neko no hitai",
     "english": "A cat's forehead",
     "meaning": "Very small space",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -770,7 +770,7 @@
     "romaji": "Nen ni wa nen wo ireyo",
     "english": "Put care into care",
     "meaning": "Double-check; be extra careful",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -779,7 +779,7 @@
     "romaji": "Koukai saki ni tatazu",
     "english": "Regret does not stand before",
     "meaning": "It's too late for regrets",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -788,7 +788,7 @@
     "romaji": "Nai sode wa furenu",
     "english": "You can't shake a sleeve you don't have",
     "meaning": "You can't give what you don't have",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

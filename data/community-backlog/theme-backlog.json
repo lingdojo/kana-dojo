@@ -158,8 +158,10 @@
     "backgroundColor": "oklch(19.0% 0.055 255.0 / 1)",
     "mainColor": "oklch(55.0% 0.165 250.0 / 1)",
     "secondaryColor": "oklch(85.0% 0.065 90.0 / 1)",
-    "issued": false,
-    "completed": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "Prasad3Suryavanshi",
+    "completedPR": 4684
   },
   {
     "id": "shinkansen-speed",
@@ -168,8 +170,10 @@
     "backgroundColor": "oklch(22.0% 0.035 240.0 / 1)",
     "mainColor": "oklch(90.0% 0.085 220.0 / 1)",
     "secondaryColor": "oklch(65.0% 0.185 25.0 / 1)",
-    "issued": false,
-    "completed": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "Prasad3Suryavanshi",
+    "completedPR": 4691
   },
   {
     "id": "wisteria-dream",
@@ -178,7 +182,7 @@
     "backgroundColor": "oklch(20.0% 0.048 290.0 / 1)",
     "mainColor": "oklch(72.0% 0.175 295.0 / 1)",
     "secondaryColor": "oklch(80.0% 0.125 320.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -188,7 +192,7 @@
     "backgroundColor": "oklch(88.0% 0.035 85.0 / 1)",
     "mainColor": "oklch(45.0% 0.105 75.0 / 1)",
     "secondaryColor": "oklch(55.0% 0.080 60.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
