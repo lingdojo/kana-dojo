@@ -24,24 +24,6 @@
     "secondaryColor": "oklch(45.0% 0.150 20.0 / 1)"
   },
   {
-    "id": "riverstone-gray",
-    "backgroundColor": "oklch(20.0% 0.010 260.0 / 1)",
-    "mainColor": "oklch(78.0% 0.020 90.0 / 1)",
-    "secondaryColor": "oklch(55.0% 0.035 240.0 / 1)"
-  },
-  {
-    "id": "city-rain",
-    "backgroundColor": "oklch(16.0% 0.030 260.0 / 1)",
-    "mainColor": "oklch(82.0% 0.085 220.0 / 1)",
-    "secondaryColor": "oklch(70.0% 0.145 330.0 / 1)"
-  },
-  {
-    "id": "inkstone-blue",
-    "backgroundColor": "oklch(17.0% 0.020 255.0 / 1)",
-    "mainColor": "oklch(74.0% 0.060 230.0 / 1)",
-    "secondaryColor": "oklch(60.0% 0.085 280.0 / 1)"
-  },
-  {
     "id": "paper-lantern",
     "backgroundColor": "oklch(18.0% 0.030 20.0 / 1)",
     "mainColor": "oklch(82.0% 0.175 35.0 / 1)",
@@ -174,18 +156,6 @@
     "secondaryColor": "oklch(60.0% 0.085 25.0 / 1)"
   },
   {
-    "id": "paper-lantern",
-    "backgroundColor": "oklch(18.0% 0.030 20.0 / 1)",
-    "mainColor": "oklch(82.0% 0.175 35.0 / 1)",
-    "secondaryColor": "oklch(70.0% 0.095 75.0 / 1)"
-  },
-  {
-    "id": "gingko-avenue",
-    "backgroundColor": "oklch(23.0% 0.020 75.0 / 1)",
-    "mainColor": "oklch(82.0% 0.155 95.0 / 1)",
-    "secondaryColor": "oklch(62.0% 0.085 55.0 / 1)"
-  },
-  {
     "id": "blooming-ume",
     "backgroundColor": "oklch(95.0% 0.015 15.0 / 1)",
     "mainColor": "oklch(62.0% 0.175 350.0 / 1)",
@@ -276,9 +246,15 @@
     "secondaryColor": "oklch(65.0% 0.170 15.0 / 1)"
   },
   {
-    "id": "digital-oni",
-    "backgroundColor": "oklch(14.0% 0.075 355.0 / 1)",
-    "mainColor": "oklch(68.0% 0.240 10.0 / 1)",
-    "secondaryColor": "oklch(78.0% 0.195 150.0 / 1)"
+    "id": "indigo-shibori",
+    "backgroundColor": "oklch(19.0% 0.055 255.0 / 1)",
+    "mainColor": "oklch(55.0% 0.165 250.0 / 1)",
+    "secondaryColor": "oklch(85.0% 0.065 90.0 / 1)"
+  },
+  {
+    "id": "tatami-room",
+    "backgroundColor": "oklch(88.0% 0.035 85.0 / 1)",
+    "mainColor": "oklch(45.0% 0.105 75.0 / 1)",
+    "secondaryColor": "oklch(55.0% 0.080 60.0 / 1)"
   }
 ]
