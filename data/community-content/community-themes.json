@@ -268,5 +268,11 @@
     "backgroundColor": "oklch(15.0% 0.065 300.0 / 1)",
     "mainColor": "oklch(80.0% 0.210 180.0 / 1)",
     "secondaryColor": "oklch(85.0% 0.190 320.0 / 1)"
+  },
+  {
+    "id": "rice-field-gold",
+    "backgroundColor": "oklch(24.0% 0.045 80.0 / 1)",
+    "mainColor": "oklch(85.0% 0.155 90.0 / 1)",
+    "secondaryColor": "oklch(70.0% 0.120 95.0 / 1)"
   }
 ]
