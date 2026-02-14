@@ -68,12 +68,7 @@
   {
     "question": "What is the Japanese term for a hot spring?",
     "difficulty": "easy",
-    "answers": [
-      "Onsen",
-      "Sentou",
-      "Ryokan",
-      "Izakaya"
-    ],
+    "answers": ["Onsen", "Sentou", "Ryokan", "Izakaya"],
     "correctIndex": 0
   },
   {
@@ -230,4 +225,15 @@
   ],
   "correctIndex": 0
 }
+]
+=======
+    "answers": ["Yakitori", "Sukiyaki", "Tonkatsu", "Oden"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which Japanese dish is made with buckwheat noodles?",
+    "difficulty": "easy",
+    "answers": ["Soba", "Udon", "Ramen", "Somem"],
+    "correctIndex": 0
+  }
 ]
