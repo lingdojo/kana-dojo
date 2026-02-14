@@ -22,6 +22,8 @@ import { ActionButton } from '@/shared/components/ui/ActionButton';
 import { useStopwatch } from 'react-timer-hook';
 import { useSmartReverseMode } from '@/shared/hooks/useSmartReverseMode';
 import { GameBottomBar } from '@/shared/components/Game/GameBottomBar';
+import { cn } from '@/shared/lib/utils';
+import { useThemePreferences } from '@/features/Preferences';
 
 const random = new Random();
 const adaptiveSelector = getGlobalAdaptiveSelector();
@@ -287,6 +289,8 @@ const WordBuildingGame = ({
       addCorrectAnswerTime: state.addCorrectAnswerTime,
     })),
   );
+
+  const isGlassMode = useThemePreferences().isGlassMode;
 
   const kanaGroupIndices = useKanaStore(state => state.kanaGroupIndices);
 
@@ -610,10 +614,18 @@ const WordBuildingGame = ({
           initial='hidden'
           animate='visible'
           exit='exit'
-          className='flex w-full flex-col items-center gap-6 sm:gap-10'
+          className={cn(
+            'flex w-full flex-col items-center gap-6 sm:gap-10',
+            // 'bg-red-500',
+          )}
         >
           {/* Word Display */}
-          <div className='flex flex-row items-center gap-1'>
+          <div
+            className={cn(
+              'flex flex-row items-center gap-1',
+              isGlassMode && 'rounded-xl bg-(--card-color) px-4 py-2',
+            )}
+          >
             <motion.p
               className={clsx(
                 'sm:text-8xl',
@@ -629,8 +641,15 @@ const WordBuildingGame = ({
           </div>
 
           {/* Answer Row Area */}
-          <div className='flex w-full flex-col items-center'>
-            <div className='flex min-h-[5rem] w-full items-center border-b-2 border-(--border-color) px-2 pb-2 md:w-3/4 lg:w-2/3 xl:w-1/2'>
+          <div
+            className={cn(
+              'flex w-full flex-col items-center ',
+            )}
+          >
+            <div className={cn('flex min-h-[5rem] w-full items-center border-b-2 border-(--border-color) px-2 pb-2 md:w-3/4 lg:w-2/3 xl:w-1/2',
+              
+              // isGlassMode && 'rounded-xl bg-(--card-color) px-4 py-2',
+            )}>
               <motion.div
                 className='flex flex-row flex-wrap justify-start gap-3'
                 variants={celebrationContainerVariants}
@@ -691,7 +710,10 @@ const WordBuildingGame = ({
 
             return (
               <motion.div
-                className='flex flex-col items-center gap-3 sm:gap-4'
+                className={cn(
+                  'flex flex-col items-center gap-3 sm:gap-4',
+                  isGlassMode && 'rounded-xl bg-(--card-color) px-4 py-2',
+                )}
                 variants={tileContainerVariants}
                 initial='hidden'
                 animate='visible'

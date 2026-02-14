@@ -57,18 +57,31 @@ const GauntletVocab: React.FC<GauntletVocabProps> = ({ onCancel }) => {
       if (isReverse) {
         // Reverse: options are Japanese words
         const correctAnswer = question.word;
+        const seen = new Set([correctAnswer]);
         const incorrectOptions = shuffle(
           items.filter(item => item.word !== question.word),
         )
+          .filter(item => {
+            if (seen.has(item.word)) return false;
+            seen.add(item.word);
+            return true;
+          })
           .slice(0, count - 1)
           .map(item => item.word);
         return [correctAnswer, ...incorrectOptions];
       }
       // Normal: options are meanings
       const correctAnswer = question.meanings[0];
+      const seen = new Set([correctAnswer]);
       const incorrectOptions = shuffle(
         items.filter(item => item.word !== question.word),
       )
+        .filter(item => {
+          const meaning = item.meanings[0];
+          if (seen.has(meaning)) return false;
+          seen.add(meaning);
+          return true;
+        })
         .slice(0, count - 1)
         .map(item => item.meanings[0]);
       return [correctAnswer, ...incorrectOptions];

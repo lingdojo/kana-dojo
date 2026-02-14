@@ -110,5 +110,82 @@
     "english": "Lend me your energy!",
     "anime": "Dragon Ball Z",
     "character": "Son Goku"
+  },
+  {
+    "japanese": "やれやれだぜ",
+    "romaji": "Yare yare da ze",
+    "english": "Good grief.",
+    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+    "character": "Jotaro Kujo"
+  },
+  {
+    "japanese": "おまえはもう死んでいる",
+    "romaji": "Omae wa mou shindeiru",
+    "english": "You're already dead.",
+    "anime": "Fist of the North Star",
+    "character": "Kenshiro"
+  },
+  {
+    "japanese": "今日の俺は一味違うぜ！",
+    "romaji": "Kyou no ore wa hitomi chigau ze!",
+    "english": "I'm on a different level today!",
+    "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
+    "character": "Okuyasu Nijimura"
+  },
+  {
+    "japanese": "まだだ、まだ終わらんよ！",
+    "romaji": "Mada da, mada owaran yo!",
+    "english": "Not yet! It's not over yet!",
+    "anime": "Mobile Suit Gundam",
+    "character": "Char Aznable"
+  },
+  {
+    "japanese": "笑えばいいと思うよ",
+    "romaji": "Waraeba ii to omou yo",
+    "english": "I think you should just laugh.",
+    "anime": "Neon Genesis Evangelion",
+    "character": "Rei Ayanami"
+  },
+  {
+    "japanese": "俺はガンダムだ！",
+    "romaji": "Ore wa Gandamu da!",
+    "english": "I am Gundam!",
+    "anime": "Mobile Suit Gundam 00",
+    "character": "Setsuna F. Seiei"
+  },
+  {
+    "japanese": "仲間を大切にしない奴はそれ以上のクズだ",
+    "romaji": "Nakama o taisetsu ni shinai yatsu wa sore ijou no kuzu da",
+    "english": "Those who don't take care of their comrades are worse than scum.",
+    "anime": "Naruto",
+    "character": "Kakashi Hatake"
+  },
+  {
+    "japanese": "撃っていいのは撃たれる覚悟がある奴だけだ",
+    "romaji": "Utte ii no wa uterareru kakugo ga aru yatsu dake da",
+    "english": "Only those prepared to be shot should pull the trigger.",
+    "anime": "Code Geass: Lelouch of the Rebellion",
+    "character": "Lelouch vi Britannia"
+  },
+  {
+    "japanese": "俺は人間をやめるぞ！ジョジョーーッ！！",
+    "romaji": "Ore wa ningen o yameru zo! Jojo!!",
+    "english": "I'm going to stop being human, JoJo!",
+    "anime": "JoJo's Bizarre Adventure: Phantom Blood",
+    "character": "Dio Brando"
+  },
+  {
+    "japanese": "やれやれだぜ…まったく。",
+    "romaji": "Yare yare da ze... mattaku.",
+    "english": "Good grief... honestly.",
+    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+    "character": "Jotaro Kujo"
+  },
+  {
+    "japanese": "逃げるのも勇気だぞ",
+    "romaji": "Nigeru no mo yuuki da zo",
+    "english": "Running away can take courage too.",
+    "anime": "Mob Psycho 100",
+    "character": "Arataka Reigen"
   }
 ]

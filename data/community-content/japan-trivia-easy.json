@@ -2,25 +2,45 @@
   {
     "question": "Which month is traditionally associated with cherry blossom viewing (hanami) in Japan?",
     "difficulty": "easy",
-    "answers": ["January", "April", "July", "October"],
+    "answers": [
+      "January",
+      "April",
+      "July",
+      "October"
+    ],
     "correctIndex": 1
   },
   {
     "question": "Which Japanese city is known for the historic Gion district?",
     "difficulty": "easy",
-    "answers": ["Kyoto", "Osaka", "Sendai", "Saitama"],
+    "answers": [
+      "Kyoto",
+      "Osaka",
+      "Sendai",
+      "Saitama"
+    ],
     "correctIndex": 0
   },
   {
     "question": "What is Japan's high-speed rail network called?",
     "difficulty": "easy",
-    "answers": ["Shinkansen", "Maglev", "JR Loop", "Tsubasa"],
+    "answers": [
+      "Shinkansen",
+      "Maglev",
+      "JR Loop",
+      "Tsubasa"
+    ],
     "correctIndex": 0
   },
   {
     "question": "Which Japanese festival celebrates the return of ancestral spirits in summer?",
     "difficulty": "easy",
-    "answers": ["Obon", "Tanabata", "Setsubun", "Seijin Shiki"],
+    "answers": [
+      "Obon",
+      "Tanabata",
+      "Setsubun",
+      "Seijin Shiki"
+    ],
     "correctIndex": 0
   },
   {

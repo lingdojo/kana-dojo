@@ -119,6 +119,13 @@ KanaDojo uses the following custom domains:
 
 ## Build Configuration
 
+### Ignore Build Step
+
+Vercel uses the `ignoreCommand` defined in `vercel.json` (`bash scripts/vercel-ignore.sh`) to decide if a deployment should be skipped based on changed files.
+
+- Do not override **Project Settings -> Git -> Ignored Build Step** in the Vercel dashboard. If it is set there, Vercel will ignore `vercel.json` and always build.
+- The ignore script logs whether Vercel Git environment variables are present to confirm it is running.
+
 ### Next.js Configuration
 
 ```typescript

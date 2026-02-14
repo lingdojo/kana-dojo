@@ -1,0 +1,86 @@
+name: Backfill PR Authors
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: read
+
+concurrency:
+  group: backfill-pr-authors
+  cancel-in-progress: true
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    if: github.repository == 'lingdojo/kana-dojo'
+
+    steps:
+      - name: Backfill PR authors
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const authorsPath = 'data/community-backlog/pr-authors.json';
+            const authorsSet = new Set();
+
+            let page = 1;
+            while (true) {
+              const { data: prs } = await github.rest.pulls.list({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                state: 'all',
+                per_page: 100,
+                page
+              });
+
+              if (!prs || prs.length === 0) {
+                break;
+              }
+
+              prs.forEach(function(pr) {
+                if (pr.user && pr.user.login) {
+                  authorsSet.add(pr.user.login);
+                }
+              });
+
+              if (prs.length < 100) {
+                break;
+              }
+              page += 1;
+            }
+
+            const authors = Array.from(authorsSet).sort(function(a, b) {
+              return a.localeCompare(b);
+            });
+
+            let existingSha = null;
+            try {
+              const { data: file } = await github.rest.repos.getContent({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                path: authorsPath
+              });
+              if (file && file.sha) {
+                existingSha = file.sha;
+              }
+            } catch (e) {
+              if (e.status !== 404) {
+                throw e;
+              }
+            }
+
+            const payload = Buffer.from(JSON.stringify({ authors }, null, 2) + '\n').toString('base64');
+
+            await github.rest.repos.createOrUpdateFileContents({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              path: authorsPath,
+              message: 'chore(automation): backfill PR authors',
+              content: payload,
+              sha: existingSha || undefined
+            });
+
+            console.log(`Backfilled ${authors.length} PR authors.`);

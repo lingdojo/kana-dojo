@@ -403,6 +403,12 @@
     "meaning": "Take advantage of someone's absence"
   },
   {
+    "japanese": "虎穴に入らずんば虎子を得ず",
+    "romaji": "Koketsu ni irazunba koji wo ezu",
+    "english": "You can’t get the tiger’s cub without entering the lair",
+    "meaning": "No reward without risk"
+  },
+  {
     "japanese": "針の穴から天を覗く",
     "romaji": "Hari no ana kara ten wo nozoku",
     "english": "Peek at the sky through a needle's eye",
@@ -599,5 +605,65 @@
     "romaji": "Omoitattaga kichijitsu",
     "english": "The day you decide is a lucky day",
     "meaning": "Start now"
+  },
+  {
+    "japanese": "二兎を追う者は一兎をも得ず",
+    "romaji": "Ni to wo ou mono wa itto wo mo ezu",
+    "english": "Chase two rabbits, catch none",
+    "meaning": "Focus on one thing"
+  },
+  {
+    "japanese": "念には念を入れよ",
+    "romaji": "Nen ni wa nen wo ireyo",
+    "english": "Put care into care",
+    "meaning": "Double-check everything"
+  },
+  {
+    "japanese": "餅は餅屋",
+    "romaji": "Mochi wa mochiya",
+    "english": "Mochi should be made by the mochi shop",
+    "meaning": "Leave it to the experts"
+  },
+  {
+    "japanese": "花は桜木人は武士",
+    "romaji": "Hana wa sakuragi hito wa bushi",
+    "english": "Among flowers, cherry blossoms; among men, warriors",
+    "meaning": "The best of each kind"
+  },
+  {
+    "japanese": "藪をつついて蛇を出す",
+    "romaji": "Yabu wo tsutsuite hebi wo dasu",
+    "english": "Poke the bush and bring out a snake",
+    "meaning": "Stir up trouble unnecessarily"
+  },
+  {
+    "japanese": "情けは人の為ならず",
+    "romaji": "Nasake wa hito no tame narazu",
+    "english": "Kindness is not for others",
+    "meaning": "Good deeds return to you"
+  },
+  {
+    "japanese": "笑う門には福来る",
+    "romaji": "Warau kado ni wa fuku kitaru",
+    "english": "Good fortune comes to a laughing home",
+    "meaning": "Happiness invites luck"
+  },
+  {
+    "japanese": "出る釘は打たれる",
+    "romaji": "Deru kugi wa utareru",
+    "english": "The nail that sticks out gets hammered down",
+    "meaning": "Those who stand out may be criticized"
+  },
+  {
+  "japanese": "雨降って地固まる",
+  "romaji": "Ame futte ji katamaru",
+  "english": "After rain, the ground hardens",
+  "meaning": "Adversity builds strength"
+  },
+  {  
+  "japanese": "早起きは三文の徳",
+  "romaji": "Hayaoki wa sanmon no toku",
+  "english": "Early rising brings three coins of benefit",
+  "meaning": "Wake early for advantage"
   }
 ]

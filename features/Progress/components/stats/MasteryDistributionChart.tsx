@@ -92,7 +92,14 @@ export default function MasteryDistributionChart({
         config: MASTERY_CONFIG.needsPractice,
       },
     ],
-    [learning, learningPercent, mastered, masteredPercent, needsPractice, needsPracticePercent],
+    [
+      learning,
+      learningPercent,
+      mastered,
+      masteredPercent,
+      needsPractice,
+      needsPracticePercent,
+    ],
   );
 
   return (

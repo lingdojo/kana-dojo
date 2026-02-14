@@ -1,0 +1,1702 @@
+{
+  "archivedAt": "2026-02-08T07:11:26.187Z",
+  "stats": {
+    "theme": {
+      "total": 191,
+      "completed": 135,
+      "issuedPending": 52,
+      "availableBefore": 4,
+      "completionDetails": [
+        {
+          "id": "neon-sakura",
+          "completedBy": "luminash18",
+          "completedPR": 3276,
+          "name": "Neon Sakura"
+        },
+        {
+          "id": "origami-crane",
+          "completedBy": "carolinesholar",
+          "completedPR": 3336,
+          "name": "Origami Crane"
+        },
+        {
+          "id": "matcha-cream",
+          "completedBy": "lorenzotiziani",
+          "completedPR": 3351,
+          "name": "Matcha Cream"
+        },
+        {
+          "id": "shibuya-nights",
+          "completedBy": "sheryyll",
+          "completedPR": 517,
+          "name": "Shibuya Nights"
+        },
+        {
+          "id": "samurai-steel",
+          "completedBy": "DarshanCode2005",
+          "completedPR": 956,
+          "name": "Samurai Steel"
+        },
+        {
+          "id": "plum-blossom",
+          "completedBy": "sene03",
+          "completedPR": 544,
+          "name": "Plum Blossom"
+        },
+        {
+          "id": "autumn-maple",
+          "completedBy": "DarshanCode2005",
+          "completedPR": 773,
+          "name": "Autumn Maple"
+        },
+        {
+          "id": "snow-lantern",
+          "completedBy": "Chidwan3578",
+          "completedPR": 564,
+          "name": "Snow Lantern"
+        },
+        {
+          "id": "digital-oni",
+          "completedBy": "joshua-jacob-abraham",
+          "completedPR": 567,
+          "name": "Digital Oni"
+        },
+        {
+          "id": "indigo-shibori",
+          "completedBy": "joshua-jacob-abraham",
+          "completedPR": 573,
+          "name": "Indigo Shibori"
+        },
+        {
+          "id": "shinkansen-speed",
+          "completedBy": "niveshdandyan",
+          "completedPR": 3399,
+          "name": "Shinkansen Speed"
+        },
+        {
+          "id": "wisteria-dream",
+          "completedBy": "saurabh-xd",
+          "completedPR": 595,
+          "name": "Wisteria Dream"
+        },
+        {
+          "id": "tatami-room",
+          "completedBy": "Minato2004",
+          "completedPR": 827,
+          "name": "Tatami Room"
+        },
+        {
+          "id": "ryokan-evening",
+          "completedBy": "sheryyll",
+          "completedPR": 855,
+          "name": "Ryokan Evening"
+        },
+        {
+          "id": "anime-pop",
+          "completedBy": "tasosbeast",
+          "completedPR": 643,
+          "name": "Anime Pop"
+        },
+        {
+          "id": "moss-temple",
+          "completedBy": "Utkarsh-Singhal-26",
+          "completedPR": 677,
+          "name": "Moss Temple"
+        },
+        {
+          "id": "akihabara-glow",
+          "completedBy": "tasosbeast",
+          "completedPR": 651,
+          "name": "Akihabara Glow"
+        },
+        {
+          "id": "ocean-tofu",
+          "completedBy": "DarshanCode2005",
+          "completedPR": 828,
+          "name": "Ocean Tofu"
+        },
+        {
+          "id": "geisha-grace",
+          "completedBy": "Utkarsh-Singhal-26",
+          "completedPR": 674,
+          "name": "Geisha Grace"
+        },
+        {
+          "id": "firefly-field",
+          "completedBy": "RaiwashiRai",
+          "completedPR": 698,
+          "name": "Firefly Field"
+        },
+        {
+          "id": "sashimi-fresh",
+          "completedBy": "SrikartikMateti",
+          "completedPR": 809,
+          "name": "Sashimi Fresh"
+        },
+        {
+          "id": "okinawa-sea",
+          "completedBy": "DarshanCode2005",
+          "completedPR": 811,
+          "name": "Okinawa Sea"
+        },
+        {
+          "id": "papercraft-white",
+          "completedBy": "tushar743-ui",
+          "completedPR": 707,
+          "name": "Papercraft White"
+        },
+        {
+          "id": "kabuki-drama",
+          "completedBy": "codewithzubair07",
+          "completedPR": 715,
+          "name": "Kabuki Drama"
+        },
+        {
+          "id": "rice-field-gold",
+          "completedBy": "tamjidahmed0",
+          "completedPR": 730,
+          "name": "Rice Field Gold"
+        },
+        {
+          "id": "pixel-retro",
+          "completedBy": "tamjidahmed0",
+          "completedPR": 735,
+          "name": "Pixel Retro"
+        },
+        {
+          "id": "temple-bell",
+          "completedBy": "DarshanCode2005",
+          "completedPR": 770,
+          "name": "Temple Bell"
+        },
+        {
+          "id": "cyber-kitsune",
+          "completedBy": "DarshanCode2005",
+          "completedPR": 772,
+          "name": "Cyber Kitsune"
+        },
+        {
+          "id": "wasabi-punch",
+          "completedBy": "Chidwan3578",
+          "completedPR": 800,
+          "name": "Wasabi Punch"
+        },
+        {
+          "id": "calligraphy-ink",
+          "completedBy": "DhruboRoyPartho",
+          "completedPR": 3414,
+          "name": "Calligraphy Ink"
+        },
+        {
+          "id": "daruma-red",
+          "completedBy": "kaedeek",
+          "completedPR": 931,
+          "name": "Daruma Red"
+        },
+        {
+          "id": "vaporwave-shrine",
+          "completedBy": "apekshagiram",
+          "completedPR": 871,
+          "name": "Vaporwave Shrine"
+        },
+        {
+          "id": "tea-ceremony",
+          "completedBy": "O2sa",
+          "completedPR": 878,
+          "name": "Tea Ceremony"
+        },
+        {
+          "id": "bento-box",
+          "completedBy": "niveshdandyan",
+          "completedPR": 3481,
+          "name": "Bento Box"
+        },
+        {
+          "id": "konbini-light",
+          "completedBy": "DhruboRoyPartho",
+          "completedPR": 3519,
+          "name": "Konbini Light"
+        },
+        {
+          "id": "sumo-strength",
+          "completedBy": "SamuelJoseph23",
+          "completedPR": 949,
+          "name": "Sumo Strength"
+        },
+        {
+          "id": "sakura-storm",
+          "completedBy": "geniusOnCooldown",
+          "completedPR": 1070,
+          "name": "Sakura Storm"
+        },
+        {
+          "id": "ramen-steam",
+          "completedBy": "bpri15",
+          "completedPR": 3533,
+          "name": "Ramen Steam"
+        },
+        {
+          "id": "edo-vintage",
+          "completedBy": "kaedeek",
+          "completedPR": 936,
+          "name": "Edo Vintage"
+        },
+        {
+          "id": "dragon-scale",
+          "completedBy": "fabriciotrinndade",
+          "completedPR": 923,
+          "name": "Dragon Scale"
+        },
+        {
+          "id": "morning-dew",
+          "completedBy": "kaedeek",
+          "completedPR": 934,
+          "name": "Morning Dew"
+        },
+        {
+          "id": "taiko-thunder",
+          "completedBy": "siddhantpallod",
+          "completedPR": 3663,
+          "name": "Taiko Thunder"
+        },
+        {
+          "id": "izakaya-warm",
+          "completedBy": "kaedeek",
+          "completedPR": 994,
+          "name": "Izakaya Warm"
+        },
+        {
+          "id": "crane-flight",
+          "completedBy": "Doc-Entity",
+          "completedPR": 984,
+          "name": "Crane Flight"
+        },
+        {
+          "id": "pearl-wave",
+          "completedBy": "Hellnight2005",
+          "completedPR": 3602,
+          "name": "Pearl Wave"
+        },
+        {
+          "id": "kimono-silk",
+          "completedBy": "maxwellyoung",
+          "completedPR": 1107,
+          "name": "Kimono Silk"
+        },
+        {
+          "id": "lucky-cat",
+          "completedBy": "maxwellyoung",
+          "completedPR": 1106,
+          "name": "Lucky Cat"
+        },
+        {
+          "id": "onsen-steam",
+          "completedBy": "maxwellyoung",
+          "completedPR": 1105,
+          "name": "Onsen Steam"
+        },
+        {
+          "id": "tanuki-mischief",
+          "completedBy": "maxwellyoung",
+          "completedPR": 1104,
+          "name": "Tanuki Mischief"
+        },
+        {
+          "id": "soda-float",
+          "completedBy": "maxwellyoung",
+          "completedPR": 1126,
+          "name": "Soda Float"
+        },
+        {
+          "id": "castle-gate",
+          "completedBy": "maxwellyoung",
+          "completedPR": 1121,
+          "name": "Castle Gate"
+        },
+        {
+          "id": "robot-anime",
+          "completedBy": "ivanvysocinas",
+          "completedPR": 1090,
+          "name": "Robot Anime"
+        },
+        {
+          "id": "bamboo-forest",
+          "completedBy": "maxwellyoung",
+          "completedPR": 1101,
+          "name": "Bamboo Forest"
+        },
+        {
+          "id": "sunset-train",
+          "completedBy": "maxwellyoung",
+          "completedPR": 1100,
+          "name": "Sunset Train"
+        },
+        {
+          "id": "lavender-fields",
+          "completedBy": "maxwellyoung",
+          "completedPR": 1118,
+          "name": "Lavender Fields"
+        },
+        {
+          "id": "festival-mask",
+          "completedBy": "kostas-arte",
+          "completedPR": 1140,
+          "name": "Festival Mask"
+        },
+        {
+          "id": "frozen-lake",
+          "completedBy": "TheRealChrisFot",
+          "completedPR": 1137,
+          "name": "Frozen Lake"
+        },
+        {
+          "id": "sushi-counter",
+          "completedBy": "sheryyll",
+          "completedPR": 1206,
+          "name": "Sushi Counter"
+        },
+        {
+          "id": "holographic-idol",
+          "completedBy": "sheryyll",
+          "completedPR": 1298,
+          "name": "Holographic Idol"
+        },
+        {
+          "id": "umbrella-rain",
+          "completedBy": "Utkarsh-Singhal-26",
+          "completedPR": 1156,
+          "name": "Umbrella Rain"
+        },
+        {
+          "id": "kendo-strike",
+          "completedBy": "carolinesholar",
+          "completedPR": 3635,
+          "name": "Kendo Strike"
+        },
+        {
+          "id": "cherry-cola",
+          "completedBy": "kostas-arte",
+          "completedPR": 1397,
+          "name": "Cherry Cola"
+        },
+        {
+          "id": "starry-tanabata",
+          "completedBy": "Lefteris-Tsahalidis",
+          "completedPR": 1237,
+          "name": "Starry Tanabata"
+        },
+        {
+          "id": "natto-brown",
+          "completedBy": "kostas-arte",
+          "completedPR": 1411,
+          "name": "Natto Brown"
+        },
+        {
+          "id": "thunder-god",
+          "completedBy": "Merlinekaviya",
+          "completedPR": 1356,
+          "name": "Thunder God"
+        },
+        {
+          "id": "wind-god",
+          "completedBy": "kostas-arte",
+          "completedPR": 1286,
+          "name": "Wind God"
+        },
+        {
+          "id": "shaved-ice",
+          "completedBy": "Zouziszzm",
+          "completedPR": 1254,
+          "name": "Shaved Ice"
+        },
+        {
+          "id": "street-lantern",
+          "completedBy": "JeraldPascual",
+          "completedPR": 1291,
+          "name": "Street Lantern"
+        },
+        {
+          "id": "vending-glow",
+          "completedBy": "kaedeek",
+          "completedPR": 1375,
+          "name": "Vending Glow"
+        },
+        {
+          "id": "sunrise-express",
+          "completedBy": "Nani040905",
+          "completedPR": 1320,
+          "name": "Sunrise Express"
+        },
+        {
+          "id": "midnight-ramen",
+          "completedBy": "sakshikirmathe",
+          "completedPR": 1330,
+          "name": "Midnight Ramen"
+        },
+        {
+          "id": "autumn-temple",
+          "completedBy": "awosky",
+          "completedPR": 1351,
+          "name": "Autumn Temple"
+        },
+        {
+          "id": "jpop-energy",
+          "completedBy": "shet6006",
+          "completedPR": 1365,
+          "name": "J-Pop Energy"
+        },
+        {
+          "id": "sakurajima-ash",
+          "completedBy": "luminash18",
+          "completedPR": 3732,
+          "name": "Sakurajima Ash"
+        },
+        {
+          "id": "ginkgo-gold",
+          "completedBy": "Harshith287",
+          "completedPR": 1436,
+          "name": "Ginkgo Gold"
+        },
+        {
+          "id": "yukata-breeze",
+          "completedBy": "tanviphadke22",
+          "completedPR": 1765,
+          "name": "Yukata Breeze"
+        },
+        {
+          "id": "komorebi-green",
+          "completedBy": "Shivanii30",
+          "completedPR": 1478,
+          "name": "Komorebi Green"
+        },
+        {
+          "id": "tsukimi-moon",
+          "completedBy": "Roshan-Singh-07",
+          "completedPR": 1472,
+          "name": "Tsukimi Moon"
+        },
+        {
+          "id": "ramune-fizz",
+          "completedBy": "aaryanraina123",
+          "completedPR": 3994,
+          "name": "Ramune Fizz"
+        },
+        {
+          "id": "sumi-charcoal",
+          "completedBy": "AbbyHumphreys",
+          "completedPR": 1503,
+          "name": "Sumi Charcoal"
+        },
+        {
+          "id": "umami-miso",
+          "completedBy": "Minixlip",
+          "completedPR": 1509,
+          "name": "Umami Miso"
+        },
+        {
+          "id": "hanami-picnic",
+          "completedBy": "sahajshukla",
+          "completedPR": 1520,
+          "name": "Hanami Picnic"
+        },
+        {
+          "id": "coastal-shrine",
+          "completedBy": "VaishnavIUpadyaya",
+          "completedPR": 1636,
+          "name": "Coastal Shrine"
+        },
+        {
+          "id": "sake-glass",
+          "completedBy": "Master-Gamer-glitch",
+          "completedPR": 1561,
+          "name": "Sake Glass"
+        },
+        {
+          "id": "winter-kimono",
+          "completedBy": "Master-Gamer-glitch",
+          "completedPR": 1557,
+          "name": "Winter Kimono"
+        },
+        {
+          "id": "seaside-udon",
+          "completedBy": "ParasSalonia",
+          "completedPR": 1587,
+          "name": "Seaside Udon"
+        },
+        {
+          "id": "neon-arcade",
+          "completedBy": "SaxenaAarohi",
+          "completedPR": 1594,
+          "name": "Neon Arcade"
+        },
+        {
+          "id": "quiet-library",
+          "completedBy": "Riya379",
+          "completedPR": 1620,
+          "name": "Quiet Library"
+        },
+        {
+          "id": "maple-lacquer",
+          "completedBy": "Master-Gamer-glitch",
+          "completedPR": 1603,
+          "name": "Maple Lacquer"
+        },
+        {
+          "id": "plaza-snow",
+          "completedBy": "glenjaysondmello",
+          "completedPR": 1621,
+          "name": "Plaza Snow"
+        },
+        {
+          "id": "karasu-black",
+          "completedBy": "VaishnavIUpadyaya",
+          "completedPR": 1625,
+          "name": "Karasu Black"
+        },
+        {
+          "id": "midnight-sushi",
+          "completedBy": "AathifZahir",
+          "completedPR": 1849,
+          "name": "Midnight Sushi"
+        },
+        {
+          "id": "paper-lantern",
+          "completedBy": "luminash18",
+          "completedPR": 3903,
+          "name": "Paper Lantern"
+        },
+        {
+          "id": "tsukiji-morning",
+          "completedBy": "iamlegendharsh",
+          "completedPR": 1867,
+          "name": "Tsukiji Morning"
+        },
+        {
+          "id": "cedar-incense",
+          "completedBy": "pavitra0",
+          "completedPR": 1884,
+          "name": "Cedar Incense"
+        },
+        {
+          "id": "wavecrest-blue",
+          "completedBy": "SaxenaAarohi",
+          "completedPR": 1896,
+          "name": "Wavecrest Blue"
+        },
+        {
+          "id": "mountain-onsen",
+          "completedBy": "Kushalchavan",
+          "completedPR": 2126,
+          "name": "Mountain Onsen"
+        },
+        {
+          "id": "osaka-neon",
+          "completedBy": "Alenbosh",
+          "completedPR": 2003,
+          "name": "Osaka Neon"
+        },
+        {
+          "id": "ginger-koi",
+          "completedBy": "gouravrayGithub",
+          "completedPR": 1939,
+          "name": "Ginger Koi"
+        },
+        {
+          "id": "sundown-shrine",
+          "completedBy": "Keerthi421",
+          "completedPR": 1996,
+          "name": "Sundown Shrine"
+        },
+        {
+          "id": "spring-bamboo",
+          "completedBy": "AtharvaKathe18",
+          "completedPR": 1995,
+          "name": "Spring Bamboo"
+        },
+        {
+          "id": "plum-ink",
+          "completedBy": "Prasad3Suryavanshi",
+          "completedPR": 2292,
+          "name": "Plum Ink"
+        },
+        {
+          "id": "festival-gold",
+          "completedBy": "Girishvesangi",
+          "completedPR": 2028,
+          "name": "Festival Gold"
+        },
+        {
+          "id": "matcha-foam",
+          "completedBy": "YoungCarti",
+          "completedPR": 2106,
+          "name": "Matcha Foam"
+        },
+        {
+          "id": "taisho-cafe",
+          "completedBy": "kartikrautan",
+          "completedPR": 3883,
+          "name": "Taisho Cafe"
+        },
+        {
+          "id": "fuji-shadow",
+          "completedBy": "EmmanuelChigwende",
+          "completedPR": 2291,
+          "name": "Fuji Shadow"
+        },
+        {
+          "id": "city-rain",
+          "completedBy": "detox-24",
+          "completedPR": 2805,
+          "name": "City Rain"
+        },
+        {
+          "id": "kyoto-kimono",
+          "completedBy": "natanaelmustafa",
+          "completedPR": 2167,
+          "name": "Kyoto Kimono"
+        },
+        {
+          "id": "poppy-udon",
+          "completedBy": "lorenzotiziani",
+          "completedPR": 2179,
+          "name": "Poppy Udon"
+        },
+        {
+          "id": "riverstone-gray",
+          "completedBy": "detox-24",
+          "completedPR": 2799,
+          "name": "Riverstone Gray"
+        },
+        {
+          "id": "temple-mist",
+          "completedBy": "gouravrayGithub",
+          "completedPR": 2206,
+          "name": "Temple Mist"
+        },
+        {
+          "id": "peach-mochi",
+          "completedBy": "TM-SAF1",
+          "completedPR": 2227,
+          "name": "Peach Mochi"
+        },
+        {
+          "id": "sakura-latte",
+          "completedBy": "Prasad3Suryavanshi",
+          "completedPR": 2280,
+          "name": "Sakura Latte"
+        },
+        {
+          "id": "shrine-stone",
+          "completedBy": "EmmanuelChigwende",
+          "completedPR": 2287,
+          "name": "Shrine Stone"
+        },
+        {
+          "id": "tangerine-fizz",
+          "completedBy": "suraj-mandal",
+          "completedPR": 2320,
+          "name": "Tangerine Fizz"
+        },
+        {
+          "id": "bamboo-shadow",
+          "completedBy": "LucasVer17",
+          "completedPR": 2343,
+          "name": "Bamboo Shadow"
+        },
+        {
+          "id": "harajuku-pop",
+          "completedBy": "YoungCarti",
+          "completedPR": 2503,
+          "name": "Harajuku Pop"
+        },
+        {
+          "id": "koi-sunrise",
+          "completedBy": "YoungCarti",
+          "completedPR": 2431,
+          "name": "Koi Sunrise"
+        },
+        {
+          "id": "soba-slate",
+          "completedBy": "gouravrayGithub",
+          "completedPR": 2395,
+          "name": "Soba Slate"
+        },
+        {
+          "id": "ruby-kabuki",
+          "completedBy": "mugiwaraluffy56",
+          "completedPR": 2404,
+          "name": "Ruby Kabuki"
+        },
+        {
+          "id": "morning-fog",
+          "completedBy": "2024si96559-code",
+          "completedPR": 2418,
+          "name": "Morning Fog"
+        },
+        {
+          "id": "river-stone",
+          "completedBy": "natanaelmustafa",
+          "completedPR": 2888,
+          "name": "River Stone"
+        },
+        {
+          "id": "festival-red",
+          "completedBy": "xChiXinB",
+          "completedPR": 3931,
+          "name": "Festival Red"
+        },
+        {
+          "id": "tea-garden",
+          "completedBy": "afsarzan",
+          "completedPR": 3951,
+          "name": "Tea Garden"
+        },
+        {
+          "id": "coastal-breeze",
+          "completedBy": "louisch123",
+          "completedPR": 2983,
+          "name": "Coastal Breeze"
+        },
+        {
+          "id": "hanami-pink",
+          "completedBy": "YakVash",
+          "completedPR": 3007,
+          "name": "Hanami Pink"
+        },
+        {
+          "id": "ink-wash",
+          "completedBy": "SAILESH4406",
+          "completedPR": 3229,
+          "name": "Ink Wash"
+        },
+        {
+          "id": "yukata-blue",
+          "completedBy": "akara184",
+          "completedPR": 3237,
+          "name": "Yukata Blue"
+        },
+        {
+          "id": "citrus-shrine",
+          "completedBy": "yenugantirahul",
+          "completedPR": 4035,
+          "name": "Citrus Shrine"
+        },
+        {
+          "id": "lantern-blue",
+          "completedBy": "BalajiReddy1",
+          "completedPR": 4034,
+          "name": "Lantern Blue"
+        },
+        {
+          "id": "yuzu-mist",
+          "completedBy": "sun-chingwoo",
+          "completedPR": 4087,
+          "name": "Yuzu Mist"
+        }
+      ]
+    },
+    "facts": {
+      "total": 320,
+      "completed": 123,
+      "issuedPending": 77,
+      "availableBefore": 120,
+      "completionDetails": [
+        {
+          "id": 8,
+          "completedBy": "RISHIKA-A-S",
+          "completedPR": 485,
+          "name": "Japan has a dedicated day for curry rice (January 22nd), established because it was first served in school lunches nationwide on that date in 1982."
+        },
+        {
+          "id": 9,
+          "completedBy": "ParasSalonia",
+          "completedPR": 488,
+          "name": "The Japanese concept of 'ma' (間) refers to the meaningful pause or negative space in music, art, and conversation - the beauty of what's not there."
+        },
+        {
+          "id": 10,
+          "completedBy": "rajatk281",
+          "completedPR": 500,
+          "name": "Raw horse meat, called 'basashi' (馬刺し), is a popular delicacy in Kumamoto prefecture, often served frozen or thinly sliced with soy sauce and ginger."
+        },
+        {
+          "id": 11,
+          "completedBy": "2024si96510-a11y",
+          "completedPR": 536,
+          "name": "Japan's postal system has a special service where you can mail a letter to your future self, and they'll deliver it years later on the date you specify."
+        },
+        {
+          "id": 12,
+          "completedBy": "Regyl",
+          "completedPR": 511,
+          "name": "The word 'bakku-shan' (バックシャン) describes someone who looks attractive from behind but not from the front - a uniquely specific observation."
+        },
+        {
+          "id": 13,
+          "completedBy": "DarshanCode2005",
+          "completedPR": 954,
+          "name": "Japanese police use giant futon-like blankets called 'sasumata' to safely pin suspects against walls, a technique dating back to the Edo period."
+        },
+        {
+          "id": 14,
+          "completedBy": "codewithzubair07",
+          "completedPR": 528,
+          "name": "There's a Japanese concept called 'kaizen' (改善) meaning continuous improvement, which became a cornerstone of global manufacturing practices."
+        },
+        {
+          "id": 15,
+          "completedBy": "DarshanCode2005",
+          "completedPR": 952,
+          "name": "The Japanese word 'shoganai' (しょうがない) expresses accepting what cannot be changed - a cultural philosophy of graceful resignation."
+        },
+        {
+          "id": 16,
+          "completedBy": "Chidwan3578",
+          "completedPR": 606,
+          "name": "Japan has 'capsule hotels' where guests sleep in pods roughly the size of a coffin - originally designed for businessmen who missed the last train home."
+        },
+        {
+          "id": 17,
+          "completedBy": "Chidwan3578",
+          "completedPR": 560,
+          "name": "The Japanese practice 'forest bathing' (shinrin-yoku) has been scientifically proven to lower cortisol levels and boost the immune system."
+        },
+        {
+          "id": 18,
+          "completedBy": "joshua-jacob-abraham",
+          "completedPR": 570,
+          "name": "There are cat cafes in Japan where you pay by the hour to pet cats, but there are also owl cafes, hedgehog cafes, snake cafes, and even penguin bars."
+        },
+        {
+          "id": 19,
+          "completedBy": "AadithyaAle",
+          "completedPR": 581,
+          "name": "Japanese convenience stores (konbini) are so advanced that over 70% of bills in Japan are paid there, not at banks."
+        },
+        {
+          "id": 20,
+          "completedBy": "Chidwan3578",
+          "completedPR": 598,
+          "name": "The word 'karoshi' (過労死) meaning 'death from overwork' is so prevalent that it's recognized as a legal cause of death with compensated claims."
+        },
+        {
+          "id": 21,
+          "completedBy": "apekshagiram",
+          "completedPR": 607,
+          "name": "Japan's oldest company, Kongō Gumi, was a construction company that operated continuously for 1,428 years (578-2006 CE) before being absorbed."
+        },
+        {
+          "id": 22,
+          "completedBy": "Zouziszzm",
+          "completedPR": 623,
+          "name": "There's a Japanese word 'komorebi' (木漏れ日) specifically for sunlight filtering through leaves - no direct English translation exists."
+        },
+        {
+          "id": 23,
+          "completedBy": "alvaro-salort",
+          "completedPR": 629,
+          "name": "Japanese train conductors point and call out each signal and sign they see - a practice called 'shisa kanko' that reduces errors by up to 85%."
+        },
+        {
+          "id": 24,
+          "completedBy": "DarshanCode2005",
+          "completedPR": 837,
+          "name": "The Japanese word 'natsukashii' (懐かしい) describes nostalgic longing that's bittersweet rather than sad - missing something while appreciating the memory."
+        },
+        {
+          "id": 25,
+          "completedBy": "DarshanCode2005",
+          "completedPR": 831,
+          "name": "Japan has a museum dedicated to instant ramen in Osaka where visitors can create their own custom Cup Noodles flavor combinations."
+        },
+        {
+          "id": 26,
+          "completedBy": "DarshanCode2005",
+          "completedPR": 830,
+          "name": "The concept of 'wabi-sabi' (侘寂) finds beauty in imperfection and impermanence - a cracked bowl is more valuable because of its history."
+        },
+        {
+          "id": 27,
+          "completedBy": "cnaples79",
+          "completedPR": 794,
+          "name": "Japanese addresses are based on blocks rather than streets - buildings are numbered by the order they were built, not their location."
+        },
+        {
+          "id": 28,
+          "completedBy": "DarshanCode2005",
+          "completedPR": 818,
+          "name": "There are special 'women-only' train cars in Japan during rush hour to prevent groping - marked with pink signs and available on most major lines."
+        },
+        {
+          "id": 29,
+          "completedBy": "Chidwan3578",
+          "completedPR": 716,
+          "name": "Japan's 7-Eleven stores outnumber those in the US despite Japan being 26 times smaller - there's roughly one 7-Eleven for every 2,300 people."
+        },
+        {
+          "id": 30,
+          "completedBy": "DarshanCode2005",
+          "completedPR": 813,
+          "name": "The Japanese word 'boketto' (ぼけっと) describes the act of gazing vacantly into the distance without thinking about anything specific."
+        },
+        {
+          "id": 31,
+          "completedBy": "DarshanCode2005",
+          "completedPR": 810,
+          "name": "Japan has 'love hotels' (rabuho) with themed rooms ranging from Hello Kitty to medieval dungeons, renting by the hour or night."
+        },
+        {
+          "id": 32,
+          "completedBy": "DarshanCode2005",
+          "completedPR": 788,
+          "name": "The practice of 'nemawashi' (根回し) means building consensus before a meeting so decisions appear unanimous - the actual negotiation happens beforehand."
+        },
+        {
+          "id": 33,
+          "completedBy": "DarshanCode2005",
+          "completedPR": 775,
+          "name": "Japanese toilet seats often have built-in bidets with heated seats, air dryers, and sound effects to mask embarrassing noises."
+        },
+        {
+          "id": 34,
+          "completedBy": "Sindhuu-B",
+          "completedPR": 746,
+          "name": "There's a Japanese festival called 'Hadaka Matsuri' where thousands of nearly naked men compete to catch lucky charms thrown by priests."
+        },
+        {
+          "id": 36,
+          "completedBy": "FiercePhoenix7",
+          "completedPR": 759,
+          "name": "Japan has a 'Black Company' award given to employers with the worst working conditions - a form of public shaming for labor violations."
+        },
+        {
+          "id": 37,
+          "completedBy": "DarshanCode2005",
+          "completedPR": 765,
+          "name": "Japanese business cards (meishi) are exchanged with both hands and a bow - placing one in your pocket immediately is considered disrespectful."
+        },
+        {
+          "id": 38,
+          "completedBy": "AbhinavBangar1",
+          "completedPR": 783,
+          "name": "The word 'gaman' (我慢) means enduring the seemingly unbearable with patience and dignity - a core Japanese cultural value."
+        },
+        {
+          "id": 39,
+          "completedBy": "soorya38",
+          "completedPR": 799,
+          "name": "Japan has professional cuddlers you can hire to hold you while you nap - reflecting the country's epidemic of loneliness and touch starvation."
+        },
+        {
+          "id": 40,
+          "completedBy": "sheryyll",
+          "completedPR": 859,
+          "name": "There are over 200 different KitKat flavors created for Japan including sake, wasabi, sweet potato, and cherry blossom."
+        },
+        {
+          "id": 41,
+          "completedBy": "sheryyll",
+          "completedPR": 924,
+          "name": "The Japanese word 'yūgen' (幽玄) describes a profound awareness of the universe that triggers emotional responses too deep for words."
+        },
+        {
+          "id": 42,
+          "completedBy": "Nahidworld",
+          "completedPR": 1241,
+          "name": "Japan's elderly population is so large that adult diapers outsell baby diapers - reflecting one of the world's fastest-aging societies."
+        },
+        {
+          "id": 45,
+          "completedBy": "anujkatare",
+          "completedPR": 895,
+          "name": "The Japanese word 'mono no aware' (物の哀れ) describes the bittersweetness of passing time and the gentle sadness of things."
+        },
+        {
+          "id": 46,
+          "completedBy": "Bhairavi-ancy",
+          "completedPR": 886,
+          "name": "Japan's Shibuya Crossing sees up to 3,000 people cross at once during peak times - making it the busiest pedestrian intersection in the world."
+        },
+        {
+          "id": 47,
+          "completedBy": "Solscriptor",
+          "completedPR": 1292,
+          "name": "There's a Japanese concept called 'ikigai' (生き甲斐) - your reason for being - found at the intersection of what you love, need, and can be paid for."
+        },
+        {
+          "id": 49,
+          "completedBy": "sheryyll",
+          "completedPR": 1425,
+          "name": "The word 'amae' (甘え) describes depending on another's goodwill - a uniquely Japanese concept of presuming on someone's affection."
+        },
+        {
+          "id": 53,
+          "completedBy": "maxwellyoung",
+          "completedPR": 1113,
+          "name": "The Japanese word 'shibui' (渋い) describes a subtle, unobtrusive beauty that grows on you over time - the opposite of flashy."
+        },
+        {
+          "id": 54,
+          "completedBy": "kaedeek",
+          "completedPR": 935,
+          "name": "Japan has a highway that passes directly through a building in Osaka - the Gate Tower Building has floors 5-7 as a tunnel."
+        },
+        {
+          "id": 55,
+          "completedBy": "MehOfficial",
+          "completedPR": 932,
+          "name": "The concept of 'omotenashi' (おもてなし) is Japanese hospitality that anticipates needs before guests even realize them."
+        },
+        {
+          "id": 56,
+          "completedBy": "HpatricioH",
+          "completedPR": 943,
+          "name": "Japan has the world's oldest population - one in three Japanese citizens is over 60 years old, and the ratio is increasing."
+        },
+        {
+          "id": 60,
+          "completedBy": "kaedeek",
+          "completedPR": 993,
+          "name": "Japan has an island called Okunoshima overrun by friendly wild rabbits - formerly a secret chemical weapons manufacturing site."
+        },
+        {
+          "id": 61,
+          "completedBy": "kaedeek",
+          "completedPR": 992,
+          "name": "The Japanese concept 'kintsugi' (金継ぎ) repairs broken pottery with gold, making the piece more valuable by highlighting its history."
+        },
+        {
+          "id": 62,
+          "completedBy": "yamayuki-hub",
+          "completedPR": 998,
+          "name": "Japan's crime rate is so low that police often spend time helping lost tourists and giving directions."
+        },
+        {
+          "id": 63,
+          "completedBy": "wejdenemk",
+          "completedPR": 1071,
+          "name": "There's a Japanese word 'aware' (哀れ) that originally just meant 'ah!' - an exclamation that evolved to represent deep emotion."
+        },
+        {
+          "id": 64,
+          "completedBy": "maxwellyoung",
+          "completedPR": 1110,
+          "name": "Japanese blood donation has such high demand that mobile donation buses give out snacks, drinks, and lottery tickets as thanks."
+        },
+        {
+          "id": 65,
+          "completedBy": "TheCodingAyush",
+          "completedPR": 1082,
+          "name": "The word 'mottainai' (もったいない) expresses deep regret over waste - a concept that sparked modern recycling movements worldwide."
+        },
+        {
+          "id": 66,
+          "completedBy": "maxwellyoung",
+          "completedPR": 1112,
+          "name": "Japan has a museum entirely dedicated to parasites in Tokyo, featuring a 9-meter tapeworm as its star attraction."
+        },
+        {
+          "id": 67,
+          "completedBy": "maxwellyoung",
+          "completedPR": 1124,
+          "name": "There's a Japanese practice called 'kuuki wo yomu' (空気を読む) - reading the air - understanding unspoken social cues."
+        },
+        {
+          "id": 68,
+          "completedBy": "maxwellyoung",
+          "completedPR": 1125,
+          "name": "Japan pioneered the concept of 'mukbang' content but calls it 'tabehoudai' (food challenge) which predates Korean streaming."
+        },
+        {
+          "id": 69,
+          "completedBy": "maxwellyoung",
+          "completedPR": 1111,
+          "name": "The Japanese word 'koi no yokan' (恋の予感) describes knowing you'll inevitably fall in love with someone you just met."
+        },
+        {
+          "id": 70,
+          "completedBy": "maxwellyoung",
+          "completedPR": 1123,
+          "name": "Japan has a shrine where you can pray for better Wi-Fi signal - the Kanda Myojin Shrine in Tokyo blesses electronics."
+        },
+        {
+          "id": 71,
+          "completedBy": "maxwellyoung",
+          "completedPR": 1109,
+          "name": "The concept of 'gambaru' (頑張る) means to persist and give your best - so fundamental that kids learn it before they start school."
+        },
+        {
+          "id": 72,
+          "completedBy": "maxwellyoung",
+          "completedPR": 1108,
+          "name": "Japan has an island where cats outnumber humans 6 to 1 - Tashirojima was once used to farm silkworms, and cats protected them from mice."
+        },
+        {
+          "id": 73,
+          "completedBy": "maxwellyoung",
+          "completedPR": 1122,
+          "name": "There's a Japanese word 'kogarashi' (木枯らし) for the specific cold wind that strips leaves from trees in late autumn."
+        },
+        {
+          "id": 74,
+          "completedBy": "Lefteris-Tsahalidis",
+          "completedPR": 1134,
+          "name": "Japan's vending machines have earthquake sensors that automatically release free drinks during major earthquakes as emergency supplies."
+        },
+        {
+          "id": 75,
+          "completedBy": "kaedeek",
+          "completedPR": 1371,
+          "name": "The word 'enryo' (遠慮) describes polite restraint - like declining seconds even when hungry, to not be a burden."
+        },
+        {
+          "id": 76,
+          "completedBy": "Derek-94",
+          "completedPR": 1346,
+          "name": "Japan has a zero-tolerance policy for drunk driving - any detectable alcohol means immediate arrest and potential prison time."
+        },
+        {
+          "id": 78,
+          "completedBy": "JeraldPascual",
+          "completedPR": 1370,
+          "name": "Japan has the world's shortest escalator - only 5 steps tall (83.4 cm) at More's Department Store in Kawasaki."
+        },
+        {
+          "id": 79,
+          "completedBy": "ManzoorAhmedShaikh",
+          "completedPR": 1159,
+          "name": "The Japanese word 'nomunication' combines 'nomu' (drink) and 'communication' - bonding with colleagues over after-work drinks."
+        },
+        {
+          "id": 80,
+          "completedBy": "awosky",
+          "completedPR": 1348,
+          "name": "Japan has 'midnight service' buses for people who miss the last train, charging premium prices to get workers home."
+        },
+        {
+          "id": 81,
+          "completedBy": "anushac13",
+          "completedPR": 1340,
+          "name": "The concept of 'wa' (和) in Japanese represents harmony - so important that the official name for Japan is 'Wa' (the country of harmony)."
+        },
+        {
+          "id": 82,
+          "completedBy": "Vikash565-dot",
+          "completedPR": 1186,
+          "name": "Japan has 'butler cafes' where women are served by men in formal butler attire who address them as 'Princess' or 'Mistress'."
+        },
+        {
+          "id": 83,
+          "completedBy": "pavitra0",
+          "completedPR": 1225,
+          "name": "There's a Japanese word 'nekojita' (猫舌) meaning 'cat tongue' - someone who can't eat or drink hot things."
+        },
+        {
+          "id": 85,
+          "completedBy": "pavitra0",
+          "completedPR": 1224,
+          "name": "The word 'otsukaresama' (お疲れ様) literally means 'you're tired' but is used to acknowledge someone's hard work."
+        },
+        {
+          "id": 86,
+          "completedBy": "JeraldPascual",
+          "completedPR": 1238,
+          "name": "Japan has had the same family on the Chrysanthemum Throne for over 2,600 years - the world's oldest continuous hereditary monarchy."
+        },
+        {
+          "id": 87,
+          "completedBy": "thehimanshubansal",
+          "completedPR": 1259,
+          "name": "There's a Japanese word 'dokkiri' (ドッキリ) for the heart-pounding shock of surprise - now the name of prank TV shows."
+        },
+        {
+          "id": 88,
+          "completedBy": "striker561",
+          "completedPR": 1258,
+          "name": "Japan has a 'Hotel for the Deceased' where families can spend one more night with loved ones before cremation."
+        },
+        {
+          "id": 89,
+          "completedBy": "youneedgreg",
+          "completedPR": 1270,
+          "name": "The concept of 'kawaisa' (可愛さ) or cuteness is so culturally important that it influences everything from government mascots to warning signs."
+        },
+        {
+          "id": 90,
+          "completedBy": "youneedgreg",
+          "completedPR": 1279,
+          "name": "Japan has vending machines that sell used schoolgirl uniforms - though this practice is now heavily regulated in most areas."
+        },
+        {
+          "id": 93,
+          "completedBy": "kaedeek",
+          "completedPR": 1368,
+          "name": "The Japanese word 'tekito' (適当) means both 'appropriate' and 'whatever/random' depending on context and tone."
+        },
+        {
+          "id": 94,
+          "completedBy": "yashasvisharma-iet",
+          "completedPR": 1333,
+          "name": "Japan has 'salary men insurance' that pays out if you're transferred to a remote location away from your family."
+        },
+        {
+          "id": 114,
+          "completedBy": "rolloerro",
+          "completedPR": 3609,
+          "name": "Japan has an 'everlasting love' museum in Hokkaido dedicated to sculptor Takeichi Nishimura's 60-year love for his wife."
+        },
+        {
+          "id": 130,
+          "completedBy": "sheryyll",
+          "completedPR": 1854,
+          "name": "Japan has a toilet museum in Kitakyushu where you can slide down a giant toilet and learn about sewage history."
+        }
+      ]
+    },
+    "proverbs": {
+      "total": 180,
+      "completed": 137,
+      "issuedPending": 43,
+      "availableBefore": 0,
+      "completionDetails": [
+        {
+          "id": 1,
+          "completedBy": "sheryyll",
+          "completedPR": 538,
+          "name": "一石二鳥"
+        },
+        {
+          "id": 3,
+          "completedBy": "sheryyll",
+          "completedPR": 740,
+          "name": "井の中の蛙大海を知らず"
+        },
+        {
+          "id": 4,
+          "completedBy": "DarshanCode2005",
+          "completedPR": 953,
+          "name": "石の上にも三年"
+        },
+        {
+          "id": 7,
+          "completedBy": "kaedeek",
+          "completedPR": 845,
+          "name": "継続は力なり"
+        },
+        {
+          "id": 8,
+          "completedBy": "kaedeek",
+          "completedPR": 843,
+          "name": "急がば回れ"
+        },
+        {
+          "id": 9,
+          "completedBy": "Chidwan3578",
+          "completedPR": 558,
+          "name": "郷に入っては郷に従え"
+        },
+        {
+          "id": 10,
+          "completedBy": "jaideepkathiresan",
+          "completedPR": 826,
+          "name": "転ばぬ先の杖"
+        },
+        {
+          "id": 11,
+          "completedBy": "villarroelsaad",
+          "completedPR": 608,
+          "name": "時は金なり"
+        },
+        {
+          "id": 12,
+          "completedBy": "VITianYash42",
+          "completedPR": 670,
+          "name": "二兎を追う者は一兎をも得ず"
+        },
+        {
+          "id": 13,
+          "completedBy": "saurabh-xd",
+          "completedPR": 605,
+          "name": "雨降って地固まる"
+        },
+        {
+          "id": 14,
+          "completedBy": "MoriitoDev",
+          "completedPR": 621,
+          "name": "百聞は一見に如かず"
+        },
+        {
+          "id": 15,
+          "completedBy": "RaiwashiRai",
+          "completedPR": 704,
+          "name": "三人寄れば文殊の知恵"
+        },
+        {
+          "id": 16,
+          "completedBy": "DarshanCode2005",
+          "completedPR": 833,
+          "name": "笑う門には福来る"
+        },
+        {
+          "id": 17,
+          "completedBy": "tasosbeast",
+          "completedPR": 655,
+          "name": "案ずるより産むが易し"
+        },
+        {
+          "id": 18,
+          "completedBy": "DarshanCode2005",
+          "completedPR": 829,
+          "name": "魚心あれば水心"
+        },
+        {
+          "id": 19,
+          "completedBy": "DarshanCode2005",
+          "completedPR": 819,
+          "name": "犬も歩けば棒に当たる"
+        },
+        {
+          "id": 20,
+          "completedBy": "Chidwan3578",
+          "completedPR": 673,
+          "name": "知らぬが仏"
+        },
+        {
+          "id": 21,
+          "completedBy": "DarshanCode2005",
+          "completedPR": 814,
+          "name": "良薬は口に苦し"
+        },
+        {
+          "id": 22,
+          "completedBy": "DarshanCode2005",
+          "completedPR": 812,
+          "name": "虎穴に入らずんば虎子を得ず"
+        },
+        {
+          "id": 23,
+          "completedBy": "Pragya321Mehra",
+          "completedPR": 808,
+          "name": "蛙の子は蛙"
+        },
+        {
+          "id": 24,
+          "completedBy": "DarshanCode2005",
+          "completedPR": 787,
+          "name": "馬の耳に念仏"
+        },
+        {
+          "id": 25,
+          "completedBy": "tamjidahmed0",
+          "completedPR": 748,
+          "name": "早起きは三文の徳"
+        },
+        {
+          "id": 26,
+          "completedBy": "tamjidahmed0",
+          "completedPR": 744,
+          "name": "猫に小判"
+        },
+        {
+          "id": 27,
+          "completedBy": "tamjidahmed0",
+          "completedPR": 742,
+          "name": "出る杭は打たれる"
+        },
+        {
+          "id": 28,
+          "completedBy": "Chidwan3578",
+          "completedPR": 761,
+          "name": "七転八倒"
+        },
+        {
+          "id": 29,
+          "completedBy": "DarshanCode2005",
+          "completedPR": 771,
+          "name": "一期一会"
+        },
+        {
+          "id": 30,
+          "completedBy": "kaedeek",
+          "completedPR": 803,
+          "name": "十人十色"
+        },
+        {
+          "id": 32,
+          "completedBy": "anushac13",
+          "completedPR": 1347,
+          "name": "覆水盆に返らず"
+        },
+        {
+          "id": 34,
+          "completedBy": "JeraldPascual",
+          "completedPR": 1233,
+          "name": "弘法にも筆の誤り"
+        },
+        {
+          "id": 39,
+          "completedBy": "youneedgreg",
+          "completedPR": 1274,
+          "name": "明日は明日の風が吹く"
+        },
+        {
+          "id": 41,
+          "completedBy": "youneedgreg",
+          "completedPR": 1282,
+          "name": "油断大敵"
+        },
+        {
+          "id": 42,
+          "completedBy": "iamnikhilranjan",
+          "completedPR": 1677,
+          "name": "怪我の功名"
+        },
+        {
+          "id": 44,
+          "completedBy": "kaedeek",
+          "completedPR": 1369,
+          "name": "雨垂れ石を穿つ"
+        },
+        {
+          "id": 45,
+          "completedBy": "mahatolalit",
+          "completedPR": 1324,
+          "name": "石橋を叩いて渡る"
+        },
+        {
+          "id": 46,
+          "completedBy": "kaedeek",
+          "completedPR": 1364,
+          "name": "転んでもただでは起きぬ"
+        },
+        {
+          "id": 47,
+          "completedBy": "Derek-94",
+          "completedPR": 1358,
+          "name": "馬子にも衣装"
+        }
+      ]
+    },
+    "trivia": {
+      "total": 80,
+      "completed": 17,
+      "issuedPending": 63,
+      "availableBefore": 0,
+      "completionDetails": []
+    },
+    "grammar": {
+      "total": 85,
+      "completed": 24,
+      "issuedPending": 61,
+      "availableBefore": 0,
+      "completionDetails": []
+    },
+    "anime-quotes": {
+      "total": 52,
+      "completed": 35,
+      "issuedPending": 17,
+      "availableBefore": 0,
+      "completionDetails": [
+        {
+          "id": 2,
+          "completedBy": "detox-24",
+          "completedPR": 2772,
+          "name": "イエス！イエス！イエス！イエス！"
+        },
+        {
+          "id": 3,
+          "completedBy": "Matusbh",
+          "completedPR": 1906,
+          "name": "ほう…向かってくるのか"
+        },
+        {
+          "id": 4,
+          "completedBy": "zeno-mac",
+          "completedPR": 1917,
+          "name": "だが断る"
+        },
+        {
+          "id": 5,
+          "completedBy": "gouravrayGithub",
+          "completedPR": 1941,
+          "name": "このジョルノ・ジョバァーナには夢がある！"
+        },
+        {
+          "id": 6,
+          "completedBy": "Alenbosh",
+          "completedPR": 1994,
+          "name": "やれやれだぜ"
+        },
+        {
+          "id": 7,
+          "completedBy": "detox-24",
+          "completedPR": 2783,
+          "name": "無駄無駄無駄無駄無駄！"
+        },
+        {
+          "id": 9,
+          "completedBy": "tchalikanti1705",
+          "completedPR": 2023,
+          "name": "なにィ！？"
+        },
+        {
+          "id": 11,
+          "completedBy": "YakVash",
+          "completedPR": 2823,
+          "name": "貴様ッ！見ているなッ！！"
+        },
+        {
+          "id": 12,
+          "completedBy": "anushac13",
+          "completedPR": 2074,
+          "name": "俺は人間をやめるぞ！ジョジョーーッ！！"
+        },
+        {
+          "id": 13,
+          "completedBy": "suraj-mandal",
+          "completedPR": 2318,
+          "name": "今日の俺は一味違うぜ！"
+        },
+        {
+          "id": 14,
+          "completedBy": "Rakesh-Manthri",
+          "completedPR": 2111,
+          "name": "おれは人間を超越する！"
+        },
+        {
+          "id": 15,
+          "completedBy": "YoungCarti",
+          "completedPR": 2125,
+          "name": "やれやれだぜ…まったく。"
+        },
+        {
+          "id": 16,
+          "completedBy": "YakVash",
+          "completedPR": 2858,
+          "name": "だが…それがいい。"
+        },
+        {
+          "id": 17,
+          "completedBy": "shreeney",
+          "completedPR": 2199,
+          "name": "ブチャラティ、来た！"
+        },
+        {
+          "id": 19,
+          "completedBy": "patrick-ouano",
+          "completedPR": 2193,
+          "name": "何ッ！？"
+        },
+        {
+          "id": 20,
+          "completedBy": "gouravrayGithub",
+          "completedPR": 2205,
+          "name": "俺は海賊王になる！"
+        },
+        {
+          "id": 22,
+          "completedBy": "juztmsd777777",
+          "completedPR": 2245,
+          "name": "まだだ、まだ終わらんよ！"
+        },
+        {
+          "id": 23,
+          "completedBy": "arushi-punhani",
+          "completedPR": 2877,
+          "name": "オレ様の美技にブギウギ"
+        },
+        {
+          "id": 24,
+          "completedBy": "natanaelmustafa",
+          "completedPR": 2268,
+          "name": "笑えばいいと思うよ"
+        },
+        {
+          "id": 25,
+          "completedBy": "EmmanuelChigwende",
+          "completedPR": 2283,
+          "name": "俺はガンダムだ！"
+        },
+        {
+          "id": 26,
+          "completedBy": "anushac13",
+          "completedPR": 2307,
+          "name": "世界は残酷だ…それでも美しい"
+        },
+        {
+          "id": 27,
+          "completedBy": "rolloerro",
+          "completedPR": 2656,
+          "name": "レロレロレロレロ"
+        },
+        {
+          "id": 29,
+          "completedBy": "zacharikf",
+          "completedPR": 2474,
+          "name": "マママママ"
+        },
+        {
+          "id": 31,
+          "completedBy": "nitij-bits",
+          "completedPR": 2424,
+          "name": "グララララ"
+        },
+        {
+          "id": 32,
+          "completedBy": "anushac13",
+          "completedPR": 2443,
+          "name": "ゼハハハハ"
+        },
+        {
+          "id": 35,
+          "completedBy": "wicked2112",
+          "completedPR": 2927,
+          "name": "痛みを伴わない教訓には意味がない"
+        },
+        {
+          "id": 36,
+          "completedBy": "khaoticvs",
+          "completedPR": 2949,
+          "name": "駆逐してやる!この世から一匹残らず!"
+        },
+        {
+          "id": 39,
+          "completedBy": "YakVash",
+          "completedPR": 3008,
+          "name": "大丈夫、僕最強だから"
+        },
+        {
+          "id": 40,
+          "completedBy": "marwa-eltayeb",
+          "completedPR": 3176,
+          "name": "普通の生活がしたいだけなんだ"
+        },
+        {
+          "id": 42,
+          "completedBy": "luminash18",
+          "completedPR": 3044,
+          "name": "俺は趣味でヒーローをやっている者だ"
+        },
+        {
+          "id": 44,
+          "completedBy": "Sujeev-Uthayakumar",
+          "completedPR": 3192,
+          "name": "僕は新世界の神となる"
+        },
+        {
+          "id": 49,
+          "completedBy": "kaigritun",
+          "completedPR": 3347,
+          "name": "仲間を信じることが俺の魔法だ"
+        }
+      ]
+    }
+  },
+  "previousState": {
+    "lastType": "fact",
+    "lastRun": "2026-02-07T13:14:58.045Z",
+    "totalIssuesCreated": 1188,
+    "consecutiveNoIssueRuns": 0,
+    "lastIssueCreatedAt": "2026-02-07T13:14:58.045Z"
+  }
+}

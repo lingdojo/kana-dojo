@@ -2,7 +2,7 @@ name: Create Community Contribution Issue
 
 on:
   schedule:
-    - cron: '*/15 * * * *'
+    - cron: '*/20 * * * *'
   workflow_dispatch:
     inputs:
       force_type:
@@ -15,7 +15,7 @@ on:
         type: boolean
 
 permissions:
-  contents: read
+  contents: write
   issues: write
 
 # Prevent multiple runs from overlapping and causing race conditions
@@ -28,19 +28,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     if: github.repository == 'lingdojo/kana-dojo'
-    env:
-      AUTOMATION_PR_TOKEN: ${{ secrets.AUTOMATION_PR_TOKEN }}
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          persist-credentials: false
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
 
       - name: Create community issue
         id: create-issue
@@ -50,294 +41,68 @@ jobs:
           script: |
             const fs = require('fs');
             const templates = require('./.github/templates/messages.cjs');
+            const emojiBank = require('./.github/templates/emojis.cjs');
             const t = templates.issueCreation;
 
             const forceType = (context.payload.inputs && context.payload.inputs.force_type) ? String(context.payload.inputs.force_type).trim() : '';
             const dryRun = !!(context.payload.inputs && (context.payload.inputs.dry_run === true || context.payload.inputs.dry_run === 'true'));
 
-            const emojiBank = [
-              // Art & Creativity
-              '🎨', '🖌️', '🖍️', '✏️', '📝', '🎭', '🎪', '🎬', '🎤', '🎧',
-              '🎼', '🎹', '🥁', '🎷', '🎺', '🎸', '🎻', '🎲', '🎯', '🎳',
-              '🎮', '🎰', '🧩', '🧸', '🪀', '🪁', '🎠', '🎡', '🎢', '🛝',
-
-              // Nature & Weather
-              '🌸', '🌺', '🌻', '🌼', '🌷', '🌹', '🥀', '🪻', '🪷', '☘️',
-              '🍀', '🌿', '🌱', '🌲', '🌳', '🌴', '🌵', '🌾', '🌰', '🍄',
-              '🍁', '🍂', '🍃', '🌊', '🔥', '💧', '❄️', '☃️', '⛄', '🌬️',
-              '💨', '🌪️', '🌫️', '☀️', '🌤️', '⛅', '🌥️', '☁️', '🌦️', '🌧️',
-              '⛈️', '🌩️', '⚡', '🌈', '☔', '💦', '☂️', '🌙', '🌕', '🌖',
-              '🌗', '🌘', '🌑', '🌒', '🌓', '🌔', '🌚', '🌝', '🌛', '🌜',
-              '⭐', '🌟', '✨', '💫', '☄️', '🌍', '🌎', '🌏', '🌋', '🗻',
-
-              // Food & Drink
-              '🍜', '🍝', '🍕', '🍔', '🍟', '🌭', '🥪', '🌮', '🌯', '🫔',
-              '🥙', '🧆', '🥚', '🍳', '🥘', '🍲', '🫕', '🥣', '🥗', '🍿',
-              '🧈', '🧂', '🥫', '🍱', '🍘', '🍙', '🍚', '🍛', '🍜', '🍝',
-              '🍠', '🍢', '🍣', '🍤', '🍥', '🍡', '🍦', '🍧', '🍨', '🍩',
-              '🍪', '🎂', '🍰', '🧁', '🥧', '🍫', '🍬', '🍭', '🍮', '🍯',
-              '🍼', '🥛', '☕', '🫖', '🍵', '🧃', '🥤', '🧋', '🍶', '🍺',
-              '🍻', '🥂', '🍷', '🥃', '🍸', '🍹', '🧉', '🍾', '🧊', '🥄',
-              '🍴', '🍽️', '🥣', '🥡', '🥢', '🧂', '🍒', '🍑', '🍍', '🥝',
-              '🥑', '🍅', '🍆', '🥒', '🥬', '🥦', '🧄', '🧅', '🍄', '🥜',
-              '🌰', '🍞', '🥐', '🥖', '🥨', '🥯', '🥞', '🧇', '🧀', '🍖',
-              '🍗', '🥩', '🥓', '🍔', '🍟', '🍕', '🌭', '🥪', '🌮', '🌯',
-
-              // Animals
-              '🐶', '🐕', '🦮', '🐕‍🦺', '🐩', '🐺', '🦊', '🦝', '🐱', '🐈',
-              '🐈‍⬛', '🦁', '🐯', '🐅', '🐆', '🐴', '🐎', '🦄', '🦓', '🦌',
-              '🦬', '🐮', '🐂', '🐃', '🐄', '🐷', '🐖', '🐗', '🐽', '🐏',
-              '🐑', '🐐', '🐪', '🐫', '🦙', '🦒', '🐘', '🦣', '🦏', '🦛',
-              '🐭', '🐁', '🐀', '🐹', '🐰', '🐇', '🐿️', '🦫', '🦔', '🦇',
-              '🐻', '🐻‍❄️', '🐨', '🐼', '🦥', '🦦', '🦨', '🦘', '🦡', '🐾',
-              '🦃', '🐔', '🐓', '🐣', '🐤', '🐥', '🐦', '🐧', '🕊️', '🦅',
-              '🦆', '🦢', '🦉', '🦤', '🪶', '🦩', '🦚', '🦜', '🐸', '🐊',
-              '🐢', '🦎', '🐍', '🐲', '🐉', '🦕', '🦖', '🐳', '🐋', '🐬',
-              '🦭', '🐟', '🐠', '🐡', '🦈', '🐙', '🐚', '🪸', '🪼', '🐌',
-              '🦋', '🐛', '🐜', '🐝', '🪲', '🐞', '🦗', '🪳', '🕷️', '🕸️',
-              '🦂', '🦟', '🪰', '🪱', '🦠', '💐', '🌸', '💮', '🏵️', '🌹',
-
-              // Objects & Items
-              '📱', '📲', '☎️', '📞', '📟', '📠', '🔋', '🔌', '💻', '🖥️',
-              '🖨️', '⌨️', '🖱️', '🖲️', '💽', '💾', '💿', '📀', '🧮', '🎥',
-              '🎞️', '📽️', '🎬', '📺', '📷', '📸', '📹', '📼', '🔍', '🔎',
-              '🕯️', '💡', '🔦', '🏮', '🪔', '📔', '📕', '📖', '📗', '📘',
-              '📙', '📚', '📓', '📒', '📃', '📜', '📄', '📰', '🗞️', '📑',
-              '🔖', '🏷️', '💰', '🪙', '💴', '💵', '💶', '💷', '💸', '💳',
-              '🧾', '✉️', '📧', '📨', '📩', '📤', '📥', '📦', '📫', '📪',
-              '📬', '📭', '📮', '🗳️', '✏️', '✒️', '🖋️', '🖊️', '🖌️', '🖍️',
-              '📝', '💼', '📁', '📂', '🗂️', '📅', '📆', '🗒️', '🗓️', '📇',
-              '📈', '📉', '📊', '📋', '📌', '📍', '📎', '🖇️', '📏', '📐',
-              '✂️', '🗃️', '🗄️', '🗑️', '🔒', '🔓', '🔏', '🔐', '🔑', '🗝️',
-              '🔨', '🪓', '⛏️', '⚒️', '🛠️', '🗡️', '⚔️', '🔫', '🪃', '🏹',
-              '🛡️', '🪚', '🔧', '🪛', '🔩', '⚙️', '🗜️', '⚖️', '🦯', '🔗',
-              '⛓️', '🪝', '🧰', '🧲', '🪜', '🧪', '🧫', '🧬', '🔬', '🔭',
-              '📡', '💉', '🩸', '💊', '🩹', '🩼', '🩺', '🌡️', '🧹', '🪠',
-              '🧺', '🧻', '🚽', '🚰', '🚿', '🛁', '🛀', '🧼', '🪥', '🪒',
-              '🧽', '🪣', '🧴', '🛎️', '🔑', '🗝️', '🚪', '🪑', '🛋️', '🛏️',
-              '🛌', '🧸', '🖼️', '🪞', '🪟', '🛍️', '🛒', '🎁', '🎈', '🎏',
-              '🎀', '🪄', '🪅', '🎊', '🎉', '🎎', '🏆', '🎖️', '🏅', '🥇',
-              '🥈', '🥉', '🎗️', '🏵️', '🎫', '🎟️', '🎪', '🤹', '🎭', '🩰',
-              '🎨', '🎬', '🎤', '🎧', '🎼', '🎹', '🥁', '🪘', '🎷', '🎺',
-              '🪗', '🎸', '🪕', '🎻', '🪕', '🎲', '♟️', '🎯', '🎳', '🎮',
-              '🎰', '🧩', '🧸', '🪆', '♠️', '♥️', '♦️', '♣️', '♟️', '🃏',
-              '🀄', '🎴', '🎭', '🖼️', '🎨', '🧵', '🪡', '🧶', '🪢', '👓',
-              '🕶️', '🥽', '🥼', '🦺', '👔', '👕', '👖', '🧣', '🧤', '🧥',
-              '🧦', '👗', '👘', '🥻', '🩱', '🩲', '🩳', '👙', '👚', '👛',
-              '👜', '👝', '🛍️', '🎒', '🩴', '👞', '👟', '🥾', '🥿', '👠',
-              '👡', '🩰', '👢', '👑', '👒', '🎩', '🎓', '🧢', '🪖', '⛑️',
-              '📿', '💄', '💍', '💎', '🔇', '🔈', '🔉', '🔊', '📢', '📣',
-              '📯', '🔔', '🔕', '🎼', '🎵', '🎶', '🎙️', '🎚️', '🎛️', '🎤',
-              '🎧', '📻', '🎷', '🎸', '🎹', '🎺', '🎻', '🪕', '🥁', '🪘',
-
-              // Symbols & Shapes
-              '❤️', '🧡', '💛', '💚', '💙', '💜', '🖤', '🤍', '🤎', '💔',
-              '❣️', '💕', '💞', '💓', '💗', '💖', '💘', '💝', '💟', '☮️',
-              '✝️', '☪️', '🕉️', '☸️', '✡️', '🔯', '🕎', '☯️', '☦️', '🛐',
-              '⛎', '♈', '♉', '♊', '♋', '♌', '♍', '♎', '♏', '♐',
-              '♑', '♒', '♓', '🆔', '⚛️', '🉑', '☢️', '☣️', '📴', '📳',
-              '🈶', '🈚', '🈸', '🈺', '🈷️', '✴️', '🆚', '💮', '🉐', '㊙️',
-              '㊗️', '🈴', '🈵', '🈹', '🈲', '🅰️', '🅱️', '🆎', '🆑', '🅾️',
-              '🆘', '❌', '⭕', '🛑', '⛔', '📛', '🚫', '💯', '💢', '♨️',
-              '🚷', '🚯', '🚳', '🚱', '🔞', '📵', '🚭', '❗', '❕', '❓',
-              '❔', '‼️', '⁉️', '🔅', '🔆', '〽️', '⚠️', '🚸', '🔱', '⚜️',
-              '🔰', '♻️', '✅', '🈯', '💹', '❇️', '✳️', '❎', '🌐', '💠',
-              'Ⓜ️', '🌀', '💤', '🏧', '🚾', '♿', '🅿️', '🈳', '🈂', '🛂',
-              '🛃', '🛄', '🛅', '🛗', '🏧', '🚾', '⚧️', '♂️', '♀️', '⚕️',
-
-              // Transportation & Places
-              '🚗', '🚕', '🚙', '🚌', '🚎', '🏎️', '🚓', '🚑', '🚒', '🚐',
-              '🛻', '🚚', '🚛', '🚜', '🦯', '🦽', '🦼', '🛴', '🚲', '🛵',
-              '🏍️', '🛺', '🚨', '🚔', '🚍', '🚘', '🚖', '🚡', '🚠', '🚟',
-              '🚃', '🚋', '🚞', '🚝', '🚄', '🚅', '🚈', '🚂', '🚆', '🚇',
-              '🚊', '🚉', '✈️', '🛫', '🛬', '🛩️', '💺', '🛰️', '🚀', '🛸',
-              '🚁', '🛶', '⛵', '🚤', '🛥️', '🛳️', '⛴️', '🚢', '⚓', '⛽',
-              '🚧', '🚦', '🚥', '🚏', '🗺️', '🗿', '🗽', '🗼', '🏰', '🏯',
-              '🏟️', '🎡', '🎢', '🎠', '⛲', '⛱️', '🏖️', '🏝️', '🏜️', '🌋',
-              '⛰️', '🏔️', '🗻', '🏕️', '⛺', '🏠', '🏡', '🏘️', '🏚️', '🏗️',
-              '🏭', '🏢', '🏬', '🏣', '🏤', '🏥', '🏦', '🏨', '🏪', '🏫',
-              '🏩', '💒', '🏛️', '⛪', '🕌', '🕍', '🛕', '🕋', '⛩️', '🛤️',
-              '🛣️', '🗾', '🎑', '🏞️', '🌅', '🌄', '🌠', '🎇', '🎆', '🌇',
-              '🌆', '🏙️', '🌃', '🌌', '🌉', '🌁', '⌚', '⏰', '⏱️', '⏲️',
-
-              // Japanese Culture
-              '🎋', '🎌', '🎍', '🎎', '🎏', '🎐', '🎑', '🎴', '🀄', '⛩️',
-              '🗾', '🗻', '🏯', '🏮', '🎋', '🎌', '🎍', '🎎', '🎏', '🎐',
-              '🎑', '🧧', '🥮', '🍡', '🍥', '🍜', '🍣', '🍱', '🍙', '🍘',
-              '🍚', '🍛', '🍢', '🍠', '🥟', '🥢', '🍵', '🫖', '🍶', '🎋',
-              '🎌', '🎍', '🎎', '🎏', '🎐', '🎑', '🎋', '🎌', '🎍', '🎎',
-              '🎏', '🎐', '🎑', '🎋', '🎌', '🎍', '🎎', '🎏', '🎐', '🎑',
-
-              // Fantasy & Magic
-              '🧙', '🧙‍♀️', '🧙‍♂️', '🧚', '🧚‍♀️', '🧚‍♂️', '🧛', '🧛‍♀️', '🧛‍♂️', '🧜',
-              '🧜‍♀️', '🧜‍♂️', '🧝', '🧝‍♀️', '🧝‍♂️', '🧞', '🧞‍♀️', '🧞‍♂️', '🧟', '🧟‍♀️',
-              '🧟‍♂️', '🦄', '🐉', '🐲', '🦕', '🦖', '👻', '💀', '☠️', '👽',
-              '👾', '🤖', '🎃', '😺', '😸', '😹', '😻', '😼', '😽', '🙀',
-              '😿', '😾', '🧌', '🧛', '🧟', '🧞', '🧜', '🧚', '🧙', '🧝',
-
-              // Activities & Sports
-              '⚽', '🏀', '🏈', '⚾', '🥎', '🎾', '🏐', '🏉', '🥏', '🎱',
-              '🪀', '🏓', '🏸', '🏒', '🏑', '🥍', '🏏', '🪃', '🥅', '⛳',
-              '🪁', '🏹', '🎣', '🤿', '🥊', '🥋', '🎽', '🛹', '🛼', '🛷',
-              '⛸️', '🥌', '🎿', '⛷️', '🏂', '🪂', '🏋️', '🏋️‍♀️', '🏋️‍♂️', '🤼',
-              '🤼‍♀️', '🤼‍♂️', '🤸', '🤸‍♀️', '🤸‍♂️', '⛹️', '⛹️‍♀️', '⛹️‍♂️', '🤺', '🤾',
-              '🤾‍♀️', '🤾‍♂️', '🏌️', '🏌️‍♀️', '🏌️‍♂️', '🏇', '🧘', '🧘‍♀️', '🧘‍♂️', '🏄',
-              '🏄‍♀️', '🏄‍♂️', '🏊', '🏊‍♀️', '🏊‍♂️', '🤽', '🤽‍♀️', '🤽‍♂️', '🚣', '🚣‍♀️',
-              '🚣‍♂️', '🧗', '🧗‍♀️', '🧗‍♂️', '🚵', '🚵‍♀️', '🚵‍♂️', '🚴', '🚴‍♀️', '🚴‍♂️',
-              '🏆', '🥇', '🥈', '🥉', '🏅', '🎖️', '🏵️', '🎗️', '🎫', '🎟️',
-              '🎪', '🤹', '🤹‍♀️', '🤹‍♂️', '🎭', '🩰', '🎨', '🎬', '🎤', '🎧',
-              '🎼', '🎹', '🥁', '🪘', '🎷', '🎺', '🪗', '🎸', '🪕', '🎻',
-
-              // Faces & Expressions
-              '😀', '😃', '😄', '😁', '😆', '😅', '🤣', '😂', '🙂', '🙃',
-              '😉', '😊', '😇', '🥰', '😍', '🤩', '😘', '😗', '☺️', '😚',
-              '😙', '🥲', '😋', '😛', '😜', '🤪', '😝', '🤑', '🤗', '🤭',
-              '🤫', '🤔', '🤐', '🤨', '😐', '😑', '😶', '😶‍🌫️', '😏', '😒',
-              '🙄', '😬', '🤥', '😌', '😔', '😪', '🤤', '😴', '😷', '🤒',
-              '🤕', '🤢', '🤮', '🤧', '🥵', '🥶', '🥴', '😵', '😵‍💫', '🤯',
-              '🤠', '🥳', '🥸', '😎', '🤓', '🧐', '😕', '😟', '🙁', '☹️',
-              '😮', '😯', '😲', '😳', '🥺', '😦', '😧', '😨', '😰', '😥',
-              '😢', '😭', '😱', '😖', '😣', '😞', '😓', '😩', '😫', '🥱',
-              '😤', '😡', '😠', '🤬', '😈', '👿', '💀', '☠️', '💩', '🤡',
-              '👹', '👺', '👻', '👽', '👾', '🤖', '🎃', '😺', '😸', '😹',
-              '😻', '😼', '😽', '🙀', '😿', '😾', '💋', '💌', '💘', '💝',
-              '💖', '💗', '💓', '💞', '💕', '💟', '❣️', '💔', '❤️‍🔥', '❤️‍🩹',
-
-              // Hand Gestures
-              '👋', '🤚', '🖐️', '✋', '🖖', '👌', '🤌', '🤏', '✌️', '🤞',
-              '🫰', '🤟', '🤘', '🤙', '👈', '👉', '👆', '🖕', '👇', '☝️',
-              '👍', '👎', '✊', '👊', '🤛', '🤜', '👏', '🙌', '🫶', '👐',
-              '🤲', '🤝', '🙏', '✍️', '💅', '🤳', '💪', '🦾', '🦵', '🦿',
-              '🦶', '👣', '👂', '🦻', '👃', '🫀', '🫁', '🧠', '🦷', '🦴',
-              '👀', '👁️', '👅', '👄', '🫦', '💋', '🩸', '🦾', '🦿', '💪',
-
-              // Time & Clocks
-              '🕐', '🕑', '🕒', '🕓', '🕔', '🕕', '🕖', '🕗', '🕘', '🕙',
-              '🕚', '🕛', '🕜', '🕝', '🕞', '🕟', '🕠', '🕡', '🕢', '🕣',
-              '🕤', '🕥', '🕦', '🕧', '⏰', '⏱️', '⏲️', '🕰️', '⌚', '⌛',
-              '⏳', '📅', '📆', '🗓️', '📇', '🗃️', '🗳️', '🗄️', '📋', '📁',
-
-              // Flags
-              '🏳️', '🏴', '🏴‍☠️', '🏳️‍🌈', '🏳️‍⚧️', '🇺🇳', '🇦🇺', '🇧🇷', '🇨🇦', '🇨🇳',
-              '🇩🇪', '🇪🇸', '🇫🇷', '🇬🇧', '🇮🇳', '🇮🇹', '🇯🇵', '🇰🇷', '🇲🇽', '🇷🇺',
-              '🇺🇸', '🇿🇦', '🎌', '🏁', '🚩', '🎏', '🚩', '🏴', '🏳️', '🎌',
-
-              // Plants & Flowers
-              '💐', '🌸', '💮', '🏵️', '🌹', '🥀', '🌺', '🌻', '🌼', '🌷',
-              '🌱', '🪴', '🌲', '🌳', '🌴', '🌵', '🌾', '🌿', '☘️', '🍀',
-              '🍁', '🍂', '🍃', '🍄', '🌰', '🦀', '🦞', '🦐', '🦑', '🐙',
-
-              // Space & Science
-              '🔭', '🔬', '🧬', '🧪', '🧫', '🌡️', '🧹', '🧺', '🧻', '🚿',
-              '🛁', '🛀', '🧼', '🪥', '🪒', '🧽', '🪣', '🧴', '🛎️', '🔑',
-              '🚀', '🛸', '🛰️', '🌍', '🌎', '🌏', '🌕', '🌖', '🌗', '🌘',
-              '🌑', '🌒', '🌓', '🌔', '🌙', '🌚', '🌝', '🌛', '🌜', '⭐',
-              '🌟', '✨', '💫', '☄️', '☀️', '🌤️', '⛅', '🌥️', '☁️', '🌦️',
-              '🌧️', '⛈️', '🌩️', '⚡', '🔥', '💥', '❄️', '🌨️', '☃️', '⛄',
-              '🌬️', '💨', '🌪️', '🌫️', '🌈', '☔', '💧', '💦', '🌊', '🌋',
-
-              // Music & Arts
-              '🎵', '🎶', '🎼', '🎹', '🥁', '🪘', '🎷', '🎺', '🪗', '🎸',
-              '🪕', '🎻', '🎬', '🎤', '🎧', '🎚️', '🎛️', '🎙️', '📻', '🎞️',
-              '📽️', '🎥', '📺', '📷', '📸', '📹', '📼', '🔍', '🔎', '🕯️',
-              '💡', '🔦', '🏮', '🪔', '🎨', '🖌️', '🖍️', '🧵', '🪡', '🧶',
-              '🪢', '🖼️', '🎭', '🎪', '🤹', '🎠', '🎡', '🎢', '🎣', '🎿',
-
-              // Books & Learning
-              '📚', '📖', '📓', '📔', '📒', '📕', '📗', '📘', '📙', '📑',
-              '📃', '📜', '📄', '📰', '🗞️', '🔖', '🏷️', '💰', '🪙', '💴',
-              '📝', '✏️', '✒️', '🖋️', '🖊️', '🖌️', '🖍️', '💼', '📁', '📂',
-              '🗂️', '📅', '📆', '🗒️', '🗓️', '📇', '📈', '📉', '📊', '📋',
-              '📌', '📍', '📎', '🖇️', '✂️', '🗃️', '🗄️', '🗑️', '🔒', '🔓',
-
-              // Tech & Computers
-              '💻', '🖥️', '🖨️', '⌨️', '🖱️', '🖲️', '💽', '💾', '💿', '📀',
-              '📱', '📲', '☎️', '📞', '📟', '📠', '🔋', '🔌', '📡', '⏰',
-              '⏱️', '⏲️', '🕰️', '⌚', '🔔', '🔕', '📢', '📣', '🔊', '🔉',
-              '🔈', '🔇', '📯', '🔔', '🎙️', '🎚️', '🎛️', '📻', '📺', '📻',
-
-              // Gaming & Fun
-              '🎮', '🎰', '🎲', '🎯', '🎳', '🎪', '🎨', '🎬', '🎤', '🎧',
-              '🎼', '🎹', '🥁', '🎷', '🎺', '🎸', '🎻', '🎲', '♟️', '🎯',
-              '🎳', '🎮', '🎰', '🧩', '🧸', '🪀', '🪁', '🎠', '🎡', '🎢',
-              '🎣', '🎿', '🏆', '🥇', '🥈', '🥉', '🏅', '🎖️', '🏵️', '🎗️',
-
-              // Celestial & Mystical
-              '☀️', '🌙', '⭐', '✨', '💫', '🌟', '☄️', '🌠', '🌌', '🌕',
-              '🌖', '🌗', '🌘', '🌑', '🌒', '🌓', '🌔', '🌚', '🌝', '🌛',
-              '🌜', '🌞', '🪐', '🌍', '🌎', '🌏', '💫', '✨', '⭐', '🌟',
-
-              // Household & Daily
-              '🏠', '🏡', '🏢', '🏣', '🏤', '🏥', '🏦', '🏨', '🏩', '🏪',
-              '🏫', '🏬', '🏭', '🏯', '🏰', '💒', '🗼', '🗽', '⛪', '🕌',
-              '🕍', '🛕', '🕋', '⛩️', '🛤️', '🛣️', '🗾', '🎑', '🏞️', '🌅',
-              '🌄', '🌠', '🎇', '🎆', '🌇', '🌆', '🏙️', '🌃', '🌌', '🌉',
-
-              // Food Categories
-              '🍎', '🍐', '🍊', '🍋', '🍌', '🍉', '🍇', '🍓', '🫐', '🍈',
-              '🍒', '🍑', '🍍', '🥝', '🥭', '🍆', '🥑', '🥦', '🥬', '🥒',
-              '🌶️', '🫑', '🌽', '🥕', '🫒', '🧄', '🧅', '🥔', '🍠', '🫘',
-              '🥐', '🥯', '🍞', '🥖', '🥨', '🧀', '🥚', '🍳', '🧈', '🥞',
-
-              // Drinks
-              '🧃', '🥤', '🧋', '🍶', '🍺', '🍻', '🥂', '🍷', '🥃', '🍸',
-              '🍹', '🧉', '🍾', '🥄', '🍴', '🍽️', '🥣', '🥡', '🥢', '🧂',
-              '☕', '🫖', '🍵', '🧃', '🥤', '🧋', '🍶', '🍼', '🥛', '🫗',
-
-              // Desserts
-              '🍦', '🍧', '🍨', '🍩', '🍪', '🎂', '🍰', '🧁', '🥧', '🍫',
-              '🍬', '🍭', '🍮', '🍯', '🍡', '🍥', '🍘', '🍙', '🍚', '🍛',
-
-              // Asian Cuisine
-              '🍜', '🍝', '🍠', '🍢', '🍣', '🍤', '🍥', '🍡', '🍘', '🍙',
-              '🍚', '🍛', '🍜', '🍝', '🍠', '🍢', '🍣', '🍤', '🍥', '🍡',
-              '🍱', '🍲', '🍳', '🍴', '🍵', '🍶', '🍷', '🍸', '🍹', '🍺',
-
-              // More Nature
-              '🌵', '🎄', '🌲', '🌳', '🌴', '🌱', '🌿', '☘️', '🍀', '🎍',
-              '🪴', '🎋', '🍃', '🍂', '🍁', '🍄', '🌾', '💐', '🌷', '🌹',
-              '🥀', '🌺', '🌸', '🌼', '🌻', '🌞', '🌝', '🌛', '🌜', '🌚',
-
-              // Weather Variations
-              '☀️', '🌤️', '⛅', '🌥️', '☁️', '🌦️', '🌧️', '⛈️', '🌩️', '⚡',
-              '🔥', '💥', '❄️', '🌨️', '☃️', '⛄', '🌬️', '💨', '🌪️', '🌫️',
-              '🌈', '☔', '💧', '💦', '🌊', '🌋', '🌌', '🌠', '⭐', '🌟',
-
-              // Fantasy Creatures
-              '🧙', '🧚', '🧛', '🧜', '🧝', '🧞', '🧟', '🦄', '🐉', '🐲',
-              '🦕', '🦖', '👻', '💀', '☠️', '👽', '👾', '🤖', '🎃', '🧌',
-              '🧛', '🧟', '🧞', '🧜', '🧚', '🧙', '🧝', '🦄', '🐉', '🐲',
-
-              // Sports Equipment
-              '⚽', '🏀', '🏈', '⚾', '🥎', '🎾', '🏐', '🏉', '🥏', '🎱',
-              '🪀', '🏓', '🏸', '🏒', '🏑', '🥍', '🏏', '🪃', '🥅', '⛳',
-              '🪁', '🏹', '🎣', '🤿', '🥊', '🥋', '🎽', '🛹', '🛼', '🛷',
-
-              // Musical Notes
-              '🎵', '🎶', '🎼', '🎹', '🥁', '🪘', '🎷', '🎺', '🪗', '🎸',
-              '🪕', '🎻', '🎙️', '🎚️', '🎛️', '📻', '🎧', '🎤', '📯', '🎬',
-
-              // Building Types
-              '🏠', '🏡', '🏢', '🏣', '🏤', '🏥', '🏦', '🏨', '🏩', '🏪',
-              '🏫', '🏬', '🏭', '🏯', '🏰', '💒', '🗼', '🗽', '⛪', '🕌',
-              '🕍', '🛕', '🕋', '⛩️', '🛤️', '🛣️', '🗾', '🎑', '🏞️', '🌅',
-
-              // Transportation Modes
-              '🚗', '🚕', '🚙', '🚌', '🚎', '🏎️', '🚓', '🚑', '🚒', '🚐',
-              '🛻', '🚚', '🚛', '🚜', '🦯', '🦽', '🦼', '🛴', '🚲', '🛵',
-              '🏍️', '🛺', '🚨', '🚔', '🚍', '🚘', '🚖', '🚡', '🚠', '🚟',
-
-              // More Fun Emojis
-              '🎊', '🎉', '🎁', '🎈', '🎀', '🎄', '🎃', '🎅', '🤶', '🧑‍🎄',
-              '🦌', '🧝', '🧙', '🧚', '🧛', '🧜', '🧝', '🧞', '🧟', '🎭',
-              '🎪', '🎨', '🎬', '🎤', '🎧', '🎼', '🎹', '🥁', '🎷', '🎺',
-              '🎸', '🎻', '🎲', '🎯', '🎳', '🎮', '🎰', '🧩', '🧸', '🪀',
-              '🪁', '🎠', '🎡', '🎢', '🎣', '🎿', '🏆', '🥇', '🥈', '🥉',
-              '🏅', '🎖️', '🏵️', '🎗️', '🎫', '🎟️', '🎪', '🤹', '🎭', '🩰'
-            ];
-
             function pickEmoji() {
               return emojiBank[Math.floor(Math.random() * emojiBank.length)];
+            }
+
+            function pickTwoAdjectives(adjectives) {
+              const fallback = ['helpful', 'friendly', 'quick', 'clear', 'creative'];
+              const pool = Array.isArray(adjectives) && adjectives.length > 0 ? adjectives : fallback;
+              const first = pool[Math.floor(Math.random() * pool.length)];
+              let second = pool[Math.floor(Math.random() * pool.length)];
+
+              if (pool.length > 1) {
+                while (second === first) {
+                  second = pool[Math.floor(Math.random() * pool.length)];
+                }
+              }
+
+              return [first, second];
+            }
+
+            function addTitleAdjectives(title, adjectives) {
+              const [first, second] = pickTwoAdjectives(adjectives);
+              return String(title).replace(' Add ', ` Add ${first}, ${second} `);
+            }
+
+            async function resolveMilestoneNumber() {
+              const configuredMilestoneTitle = t.common.milestoneTitle;
+              const fallbackMilestoneNumber = t.common.milestoneNumber;
+
+              if (!configuredMilestoneTitle) {
+                return fallbackMilestoneNumber;
+              }
+
+              const targetTitle = String(configuredMilestoneTitle).trim().toLowerCase();
+
+              try {
+                const milestones = await github.paginate(github.rest.issues.listMilestones, {
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  state: 'open',
+                  per_page: 100,
+                });
+
+                const matchedMilestone = milestones.find(function(milestone) {
+                  return String(milestone.title || '').trim().toLowerCase() === targetTitle;
+                });
+
+                if (matchedMilestone) {
+                  return matchedMilestone.number;
+                }
+
+                console.log(`Milestone titled "${configuredMilestoneTitle}" was not found among open milestones; falling back to milestone number ${fallbackMilestoneNumber}.`);
+              } catch (e) {
+                console.log(`Could not resolve milestone title "${configuredMilestoneTitle}": ${e.message}. Falling back to milestone number ${fallbackMilestoneNumber}.`);
+              }
+
+              return fallbackMilestoneNumber;
             }
 
             const statePath = 'data/community-backlog/automation-state.json';
@@ -501,7 +266,7 @@ jobs:
               }
               
               // Check for duplicate theme issue
-              const duplicateTheme = await hasOpenIssueForQuery(`"Add New Color Theme:" "${item.name}"`);
+              const duplicateTheme = await hasOpenIssueForQuery(`"Color Theme" "${item.name}"`);
               
               if (duplicateTheme) {
                 console.log(`Issue already exists for theme "${item.name}": Marking as issued and skipping.`);
@@ -518,12 +283,13 @@ jobs:
               issueTitle = tmpl.title
                 .replace('{emoji}', pickEmoji())
                 .replace('{name}', item.name);
+              issueTitle = addTitleAdjectives(issueTitle, tmpl.adjectives);
               
               const instructions = t.buildInstructions(tmpl.file, tmpl.itemType, tmpl.prTitle, { step2: tmpl.step2, step3: tmpl.step3 }).map((instr, i) => `${i + 1}. ${instr.replace(/{name}/g, item.name)}`);
               
               const codeBlock = `\`\`\`typescript\n{\n  id: '${item.id}',\n  backgroundColor: '${item.backgroundColor}',\n  mainColor: '${item.mainColor}',\n  secondaryColor: '${item.secondaryColor}'\n},\n\`\`\``;
               
-              issueBody = `${tmpl.header.replace('{name}', item.name)}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### 🎯 Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.detailsHeader}\n\n| Property | Value |\n|----------|-------|\n| **ID** | \`${item.id}\` |\n| **Background** | \`${item.backgroundColor}\` |\n| **Main Color** | \`${item.mainColor}\` |\n| **Secondary** | \`${item.secondaryColor}\` |\n\n> ${tmpl.vibeLabel} ${item.description}\n\n${common.instructionsHeader}\n\n${instructions[0]}\n${instructions[1]}\n${instructions[2]}\n\n${codeBlock}\n\n${instructions[3]}\n${instructions[4]}\n${instructions[5]}\n${instructions[6]}\n\n---\n\n${common.footer}`;
+              issueBody = `${tmpl.header.replace('{name}', item.name)}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### 🎯 Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.detailsHeader}\n\n| Property | Value |\n|----------|-------|\n| **ID** | \`${item.id}\` |\n| **Background** | \`${item.backgroundColor}\` |\n| **Main Color** | \`${item.mainColor}\` |\n| **Secondary** | \`${item.secondaryColor}\` |\n\n> ${tmpl.vibeLabel} ${item.description}\n\n${common.instructionsHeader}\n\n${instructions.slice(0, 5).join('\n')}\n\n${codeBlock}\n\n${instructions.slice(5).join('\n')}\n\n---\n\n${common.footer}`;
               
               const themeIndex = themes.findIndex(function(th) { return th.id === item.id; });
               themes[themeIndex].issued = true;
@@ -556,7 +322,7 @@ jobs:
               }
               
               // Check for duplicate fact issue
-              const duplicateFact = await hasOpenIssueForQuery(`"Add Japan Fact #${item.id}"`);
+              const duplicateFact = await hasOpenIssueForQuery(`"Fact about Japan" "${item.id}"`);
               
               if (duplicateFact) {
                 console.log(`Issue already exists for fact #${item.id}: Marking as issued and skipping.`);
@@ -573,6 +339,7 @@ jobs:
               issueTitle = tmpl.title
                 .replace('{emoji}', pickEmoji())
                 .replace('{id}', item.id);
+              issueTitle = addTitleAdjectives(issueTitle, tmpl.adjectives);
               
               const instructions = t.buildInstructions(tmpl.file, tmpl.itemType, tmpl.prTitle).map((instr, i) => `${i + 1}. ${instr.replace(/{id}/g, item.id)}`);
               
@@ -616,7 +383,7 @@ jobs:
               }
               
               // Check for duplicate proverb issue
-              const duplicateProverb = await hasOpenIssueForQuery(`"Add Japanese Proverb #${item.id}"`);
+              const duplicateProverb = await hasOpenIssueForQuery(`"Japanese Proverb" "${item.id}"`);
               
               if (duplicateProverb) {
                 console.log(`Issue already exists for proverb #${item.id}: Marking as issued and skipping.`);
@@ -633,12 +400,13 @@ jobs:
               issueTitle = tmpl.title
                 .replace('{emoji}', pickEmoji())
                 .replace('{id}', item.id);
+              issueTitle = addTitleAdjectives(issueTitle, tmpl.adjectives);
               
               const instructions = t.buildInstructions(tmpl.file, tmpl.itemType, tmpl.prTitle).map((instr, i) => `${i + 1}. ${instr.replace(/{id}/g, item.id)}`);
               
               const codeBlock = `\`\`\`json\n{\n  "japanese": "${item.japanese}",\n  "romaji": "${item.romaji}",\n  "english": "${item.english}",\n  "meaning": "${item.meaning}"\n}\n\`\`\``;
               
-              issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### 🎯 Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.proverbHeader}\n\n| Japanese | Reading | English |\n|----------|---------|---------|\n| **${item.japanese}** | ${item.romaji} | ${item.english} |\n\n> 💡 **Meaning:** ${item.meaning}\n\n${common.instructionsHeader}\n\n${instructions[0]}\n${instructions[1]}\n${instructions[2]}\n\n${codeBlock}\n\n${instructions[3]}\n${instructions[4]}\n${instructions[5]}\n${instructions[6]}\n\n---\n\n${common.footer}`;
+              issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### 🎯 Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.proverbHeader}\n\n| Japanese | Reading | English |\n|----------|---------|---------|\n| **${item.japanese}** | ${item.romaji} | ${item.english} |\n\n> 💡 **Meaning:** ${item.meaning}\n\n${common.instructionsHeader}\n\n${instructions.slice(0, 5).join('\n')}\n\n${codeBlock}\n\n${instructions.slice(5).join('\n')}\n\n---\n\n${common.footer}`;
               
               const proverbIndex = proverbs.findIndex(function(p) { return p.id === item.id; });
               proverbs[proverbIndex].issued = true;
@@ -685,7 +453,7 @@ jobs:
                 continue;
               }
 
-              const duplicateTrivia = await hasOpenIssueForQuery(`"Add New Trivia Question #${item.id}"`);
+              const duplicateTrivia = await hasOpenIssueForQuery(`"Trivia Question" "${item.id}"`);
 
               if (duplicateTrivia) {
                 console.log(`Issue already exists for trivia #${item.id}: Marking as issued and skipping.`);
@@ -701,13 +469,14 @@ jobs:
               issueTitle = tmpl.title
                 .replace('{emoji}', pickEmoji())
                 .replace('{id}', item.id);
+              issueTitle = addTitleAdjectives(issueTitle, tmpl.adjectives);
 
               const difficultyFile = triviaSourcePaths[item.difficulty] || triviaSourcePaths.easy;
               const instructions = t.buildInstructions(tmpl.file.replace('{difficultyFile}', difficultyFile), tmpl.itemType, tmpl.prTitle).map((instr, i) => `${i + 1}. ${instr.replace(/{id}/g, item.id)}`);
               const answers = Array.isArray(item.answers) ? item.answers : [];
               const codeBlock = `\`\`\`json\n{\n  "question": "${item.question}",\n  "difficulty": "${item.difficulty}",\n  "answers": [\n    "${answers.join('\",\n    \"')}"\n  ],\n  "correctIndex": ${item.correctIndex}\n}\n\`\`\``;
 
-              issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### 🎯 Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.triviaHeader}\n\n**Question:** ${item.question}\n\n**Answers:**\n${answers.map(function(a, idx) { return `${idx + 1}. ${a}`; }).join('\n')}\n\n**Correct Answer Index:** ${item.correctIndex}\n\n${common.instructionsHeader}\n\n${instructions[0]}\n${instructions[1]}\n${instructions[2]}\n\n${codeBlock}\n\n${instructions[3]}\n${instructions[4]}\n${instructions[5]}\n${instructions[6]}\n\n---\n\n${common.footer}`;
+              issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### 🎯 Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.triviaHeader}\n\n**Question:** ${item.question}\n\n**Answers:**\n${answers.map(function(a, idx) { return `${idx + 1}. ${a}`; }).join('\n')}\n\n**Correct Answer Index:** ${item.correctIndex}\n\n${common.instructionsHeader}\n\n${instructions.slice(0, 5).join('\n')}\n\n${codeBlock}\n\n${instructions.slice(5).join('\n')}\n\n---\n\n${common.footer}`;
 
               const triviaIndex = trivia.findIndex(function(q) { return q.id === item.id; });
               trivia[triviaIndex].issued = true;
@@ -740,7 +509,7 @@ jobs:
                 continue;
               }
 
-              const duplicateGrammar = await hasOpenIssueForQuery(`"Add New Grammar Point #${item.id}"`);
+              const duplicateGrammar = await hasOpenIssueForQuery(`"Grammar Point" "${item.id}"`);
 
               if (duplicateGrammar) {
                 console.log(`Issue already exists for grammar #${item.id}: Marking as issued and skipping.`);
@@ -756,11 +525,12 @@ jobs:
               issueTitle = tmpl.title
                 .replace('{emoji}', pickEmoji())
                 .replace('{id}', item.id);
+              issueTitle = addTitleAdjectives(issueTitle, tmpl.adjectives);
 
               const instructions = t.buildInstructions(tmpl.file, tmpl.itemType, tmpl.prTitle).map((instr, i) => `${i + 1}. ${instr.replace(/{id}/g, item.id)}`);
-              const codeBlock = `\`\`\`json\n"${item.text}"\n\`\`\``;
+              const codeBlock = `\`\`\`json\n${item.text}\n\`\`\``;
 
-              issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### 🎯 Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.grammarHeader}\n\n> ${item.text}\n\n${common.instructionsHeader}\n\n${instructions[0]}\n${instructions[1]}\n${instructions[2]}\n\n${codeBlock}\n\n${instructions[3]}\n${instructions[4]}\n${instructions[5]}\n${instructions[6]}\n\n---\n\n${common.footer}`;
+              issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### 🎯 Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.grammarHeader}\n\n> ${item.text}\n\n${common.instructionsHeader}\n\n${instructions.slice(0, 5).join('\n')}\n\n${codeBlock}\n\n${instructions.slice(5).join('\n')}\n\n---\n\n${common.footer}`;
 
               const grammarIndex = grammar.findIndex(function(g) { return g.id === item.id; });
               grammar[grammarIndex].issued = true;
@@ -806,7 +576,7 @@ jobs:
                 continue;
               }
 
-              const duplicateQuote = await hasOpenIssueForQuery(`"Add Famous Anime Quote #${item.id}"`);
+              const duplicateQuote = await hasOpenIssueForQuery(`"Anime Quote" "${item.id}"`);
 
               if (duplicateQuote) {
                 console.log(`Issue already exists for anime quote #${item.id}: Marking as issued and skipping.`);
@@ -822,11 +592,12 @@ jobs:
               issueTitle = tmpl.title
                 .replace('{emoji}', pickEmoji())
                 .replace('{id}', item.id);
+              issueTitle = addTitleAdjectives(issueTitle, tmpl.adjectives);
 
               const instructions = t.buildInstructions(tmpl.file, tmpl.itemType, tmpl.prTitle).map((instr, i) => `${i + 1}. ${instr.replace(/{id}/g, item.id)}`);
               const codeBlock = `\`\`\`json\n{\n  \"japanese\": \"${item.japanese}\",\n  \"romaji\": \"${item.romaji}\",\n  \"english\": \"${item.english}\",\n  \"anime\": \"${item.anime}\",\n  \"character\": \"${item.character}\"\n}\n\`\`\``;
 
-              issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### 🎯 Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.quoteHeader}\n\n| Japanese | Romaji | English |\n|----------|--------|---------|\n| **${item.japanese}** | ${item.romaji} | ${item.english} |\n\n**Anime:** ${item.anime}  \n**Character:** ${item.character}\n\n${common.instructionsHeader}\n\n${instructions[0]}\n${instructions[1]}\n${instructions[2]}\n\n${codeBlock}\n\n${instructions[3]}\n${instructions[4]}\n${instructions[5]}\n${instructions[6]}\n\n---\n\n${common.footer}`;
+              issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### 🎯 Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.quoteHeader}\n\n| Japanese | Romaji | English |\n|----------|--------|---------|\n| **${item.japanese}** | ${item.romaji} | ${item.english} |\n\n**Anime:** ${item.anime}  \n**Character:** ${item.character}\n\n${common.instructionsHeader}\n\n${instructions.slice(0, 5).join('\n')}\n\n${codeBlock}\n\n${instructions.slice(5).join('\n')}\n\n---\n\n${common.footer}`;
 
               const quoteIndex = animeQuotes.findIndex(function(q) { return q.id === item.id; });
               animeQuotes[quoteIndex].issued = true;
@@ -871,17 +642,55 @@ jobs:
             }
 
             const labels = templates.labels.newIssue;
+            const resolvedMilestoneNumber = await resolveMilestoneNumber();
 
-            const response = await github.rest.issues.create({
+            const createIssuePayload = {
               owner: context.repo.owner,
               repo: context.repo.repo,
               title: issueTitle,
               body: issueBody,
               labels: labels,
               type: 'Task'
-            });
+            };
+
+            if (typeof resolvedMilestoneNumber === 'number') {
+              createIssuePayload.milestone = resolvedMilestoneNumber;
+            }
+
+            const response = await github.rest.issues.create(createIssuePayload);
 
             console.log(`Created issue #${response.data.number}: ${issueTitle}`);
+
+            // Add reaction for engagement signal (boosts sort:reactions ranking)
+            try {
+              await github.rest.reactions.createForIssue({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: response.data.number,
+                content: 'rocket'
+              });
+            } catch (e) {
+              console.log(`Could not add reaction: ${e.message}`);
+            }
+
+            // Add welcome comment for engagement signal (boosts sort:comments ranking)
+            try {
+              const welcomeComment = await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: response.data.number,
+                body: t.common.welcomeComment
+              });
+
+              await github.rest.reactions.createForIssueComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: welcomeComment.data.id,
+                content: t.common.welcomeCommentReaction || 'heart'
+              });
+            } catch (e) {
+              console.log(`Could not add welcome comment: ${e.message}`);
+            }
 
             state.lastType = selectedType;
             state.lastRun = new Date().toISOString();
@@ -900,90 +709,17 @@ jobs:
             core.setOutput('notify_discord', 'false');
 
       - name: Commit backlog updates
-        id: commit-backlog
-        if: steps.create-issue.outputs.should_commit == 'true' && env.AUTOMATION_PR_TOKEN != ''
-        uses: peter-evans/create-pull-request@v6
-        with:
-          token: ${{ secrets.AUTOMATION_PR_TOKEN }}
-          add-paths: |
-            data/community-backlog/
-          commit-message: 'chore(automation): mark item as issued'
-          branch: automation/community-data/hourly-${{ github.run_id }}
-          title: 'chore(automation): update community backlog'
-          body: Automated update to community backlog state.
-          base: main
-          delete-branch: true
-
-      - name: Auto-approve and merge automation PR
-        if: steps.create-issue.outputs.should_commit == 'true' && env.AUTOMATION_PR_TOKEN != ''
-        uses: actions/github-script@v7
-        with:
-          github-token: ${{ secrets.AUTOMATION_PR_TOKEN }}
-          script: |
-            const prNumber = Number(process.env.PR_NUMBER);
-
-            async function sleep(ms) {
-              return new Promise(function(resolve) { setTimeout(resolve, ms); });
-            }
-
-            if (!prNumber) {
-              console.log('No PR was created; nothing to merge');
-              return;
-            }
-
-            const MAX_RETRIES = 10;
-            for (let i = 1; i <= MAX_RETRIES; i += 1) {
-              try {
-                await github.rest.pulls.merge({
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  pull_number: prNumber,
-                  merge_method: 'squash'
-                });
-                console.log(`Merged automation PR #${prNumber}`);
-
-                try {
-                  const { data: pr } = await github.rest.pulls.get({
-                    owner: context.repo.owner,
-                    repo: context.repo.repo,
-                    pull_number: prNumber
-                  });
-                  const ref = pr && pr.head && pr.head.ref;
-                  if (ref) {
-                    await github.rest.git.deleteRef({
-                      owner: context.repo.owner,
-                      repo: context.repo.repo,
-                      ref: `heads/${ref}`
-                    });
-                    console.log(`Deleted automation branch: ${ref}`);
-                  }
-                } catch (deleteErr) {
-                  console.log(`Could not delete automation branch: ${deleteErr.message}`);
-                }
-                return;
-              } catch (e) {
-                console.log(`Merge attempt ${i} failed: ${e.message}`);
-                if (e.status === 409) {
-                  try {
-                    await github.rest.pulls.updateBranch({
-                      owner: context.repo.owner,
-                      repo: context.repo.repo,
-                      pull_number: prNumber
-                    });
-                    console.log(`Requested branch update for PR #${prNumber}`);
-                  } catch (updateErr) {
-                    console.log(`Could not update branch: ${updateErr.message}`);
-                  }
-                }
-                if (i < MAX_RETRIES) {
-                  await sleep(2000);
-                }
-              }
-            }
-
-            throw new Error(`Failed to merge automation PR #${prNumber}`);
-        env:
-          PR_NUMBER: ${{ steps.commit-backlog.outputs.pull-request-number }}
+        if: steps.create-issue.outputs.should_commit == 'true'
+        run: |
+          git add data/community-backlog/
+          if git diff --cached --quiet; then
+            echo "No backlog changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore(automation): mark item as issued"
+          git push
 
       - name: Notify Discord if no issues are being created
         if: steps.create-issue.outputs.notify_discord == 'true'

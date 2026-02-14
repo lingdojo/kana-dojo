@@ -13,5 +13,9 @@
     ["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
     ["cn\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
   ],
-  "typescript.autoClosingTags": false
+  "typescript.autoClosingTags": false,
+  "chat.tools.terminal.autoApprove": {
+    "git add": true,
+    "git commit": true
+  }
 }

@@ -70,9 +70,7 @@ const OptionButton = memo(
         <span
           className={clsx(
             'absolute top-1/2 right-4 hidden h-5 min-w-5 -translate-y-1/2 items-center justify-center rounded-full bg-(--border-color) px-1 text-xs leading-none lg:inline-flex',
-            isWrong
-              ? 'text-(--border-color)'
-              : 'text-(--secondary-color)',
+            isWrong ? 'text-(--border-color)' : 'text-(--secondary-color)',
           )}
         >
           {index + 1}

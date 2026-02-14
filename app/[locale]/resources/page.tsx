@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { routing } from '@/core/i18n/routing';
 import { BreadcrumbSchema } from '@/shared/components/SEO/BreadcrumbSchema';
+import { LearningResourceSchema } from '@/shared/components/SEO/LearningResourceSchema';
 import Script from 'next/script';
 import { ResourcesPageClient } from './ResourcesPageClient';
 import {
@@ -110,6 +111,17 @@ export default async function ResourcesPage({
         id='resources-itemlist-schema'
         type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
+      />
+      <LearningResourceSchema
+        name='Japanese Learning Resources Library'
+        description={`Curated collection of ${resources.length}+ Japanese learning resources including apps, textbooks, YouTube channels, podcasts, games, and JLPT preparation materials.`}
+        url={`https://kanadojo.com/${locale}/resources`}
+        learningResourceType='Course'
+        educationalLevel={['Beginner', 'Intermediate', 'Advanced']}
+        teaches='Japanese Language — Hiragana, Katakana, Kanji, Vocabulary, Grammar'
+        isAccessibleForFree={true}
+        inLanguage={['en', 'ja']}
+        provider={{ name: 'KanaDojo', url: 'https://kanadojo.com' }}
       />
 
       {/* Page Content */}

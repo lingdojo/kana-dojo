@@ -13,6 +13,13 @@ if [[ "$LAST_COMMIT_MESSAGE" == chore\(automation\):* ]]; then
   exit 0
 fi
 
+# Log Vercel Git environment presence for troubleshooting
+if [ -n "${VERCEL_GIT_COMMIT_SHA:-}" ] || [ -n "${VERCEL_GIT_PREVIOUS_SHA:-}" ] || [ -n "${VERCEL_GIT_PULL_REQUEST_BASE_BRANCH:-}" ]; then
+  echo "Vercel Git context detected (env vars present)."
+else
+  echo "Vercel Git context not detected (env vars missing)."
+fi
+
 if [ -n "${VERCEL_GIT_PULL_REQUEST_BASE_BRANCH:-}" ] && [ -n "${VERCEL_GIT_COMMIT_SHA:-}" ]; then
   git fetch origin "${VERCEL_GIT_PULL_REQUEST_BASE_BRANCH}" --depth=1 2>/dev/null
   CHANGED_FILES=$(git diff "origin/${VERCEL_GIT_PULL_REQUEST_BASE_BRANCH}...${VERCEL_GIT_COMMIT_SHA}" --name-only 2>/dev/null)
@@ -33,6 +40,13 @@ fi
 if [ -z "$CHANGED_FILES" ]; then
   echo "🟡 Could not determine changed files via git diff. Proceeding with build."
   exit 1
+fi
+
+# Fast-path: only community data changes should never trigger a build
+ONLY_COMMUNITY_DATA=$(echo "$CHANGED_FILES" | grep -vE '^(data/community-backlog/|data/community-content/|@data/community-backlog/|@data/community-content/)' | grep -v '^$' | wc -l)
+if [ "$ONLY_COMMUNITY_DATA" -eq 0 ]; then
+  echo "Only community data changed. Skipping build."
+  exit 0
 fi
 
 # Patterns to ignore (won't trigger a build)
@@ -130,6 +144,8 @@ IGNORE_PATTERNS=(
   "^data/community-backlog/automation-state\\.json$"
   "^data/community-content/"
   "^data/community-backlog/"
+  "^@data/community-content/"
+  "^@data/community-backlog/"
   "^data/.*\\.json$"
   "^data/"
 )

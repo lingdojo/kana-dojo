@@ -22,6 +22,7 @@ interface ThemesModalProps {
 // Local type definitions for lazy-loaded themes
 interface Theme {
   id: string;
+  displayName?: string;
   backgroundColor: string;
   cardColor: string;
   borderColor: string;
@@ -38,6 +39,7 @@ interface ThemeGroup {
 interface ThemeCardProps {
   theme: {
     id: string;
+    displayName?: string;
     backgroundColor: string;
     cardColor: string;
     borderColor: string;
@@ -70,18 +72,18 @@ const ThemeCard = memo(function ThemeCard({
   const selectedWallpaperId = usePreferencesStore(
     state => state.selectedWallpaperId,
   );
-  const customWallpapers = usePreferencesStore(state => state.customWallpapers);
 
-  const themeName = theme.id.replaceAll('-', ' ');
+  const themeName = theme.displayName ?? theme.id.replaceAll('-', ' ');
   const isChaosTheme = theme.id === '?';
   const isPremiumTheme = isPremiumThemeId(theme.id);
+  const isBigBeautifulTheme = theme.id === 'big-beautiful-theme';
 
   // Check if theme has a default wallpaper (premium themes)
   const themeWallpaperId = getThemeDefaultWallpaperId(theme.id);
   const wallpaperIdToUse = themeWallpaperId || selectedWallpaperId;
 
   const wallpaper = wallpaperIdToUse
-    ? getWallpaperById(wallpaperIdToUse, customWallpapers)
+    ? getWallpaperById(wallpaperIdToUse)
     : undefined;
 
   const background = isChaosTheme
@@ -91,39 +93,44 @@ const ThemeCard = memo(function ThemeCard({
       : theme.backgroundColor;
 
   const wallpaperStyles = wallpaper
-    ? getWallpaperStyles(wallpaper.url, isHovered)
+    ? getWallpaperStyles(wallpaper.url, isHovered, wallpaper.urlWebp)
     : {};
+
+  const borderStyle = isPremiumTheme
+    ? 'none'
+    : `1px solid ${isSelected ? theme.mainColor : theme.borderColor}`;
 
   return (
     <div
-      className='cursor-pointer rounded-lg p-3'
+      className={`cursor-pointer rounded-lg p-3 ${isBigBeautifulTheme ? 'col-span-2 row-span-2 min-h-[11rem]' : ''}`}
       style={{
         ...(wallpaper ? wallpaperStyles : { background }),
-        border: isSelected
-          ? `1px solid ${theme.mainColor}`
-          : `1px solid ${theme.borderColor}`,
+        border: borderStyle,
+        outline: isSelected ? `3px solid ${theme.secondaryColor}` : 'none',
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={() => onClick(theme.id)}
     >
-      <div className='mb-2'>
+      <div
+        className={`mb-2 ${isPremiumTheme ? 'invisible h-8 overflow-hidden text-left' : ''}`}
+      >
         {isChaosTheme ? (
           <span className='relative flex items-center justify-center text-sm text-white capitalize'>
-            <span
+            {/* <span
               className='absolute left-1/2 -translate-x-1/2'
               style={{ color: isSelected ? '#000' : 'transparent' }}
             >
               {'\u2B24'}
-            </span>
+            </span> */}
             <span className='opacity-0'>?</span>
           </span>
         ) : (
           <span
-            className='text-sm capitalize'
+            className={`capitalize ${isBigBeautifulTheme ? 'text-xl font-semibold' : 'text-sm'}`}
             style={{ color: theme.mainColor }}
           >
-            {isSelected && '\u2B24 '}
+            {/* {isSelected && '\u2B24 '} */}
             {themeName}
           </span>
         )}
@@ -204,23 +211,22 @@ export default function ThemesModal({ open, onOpenChange }: ThemesModalProps) {
                 const Icon = group.icon;
                 return (
                   <div key={group.name} className='space-y-3'>
-                    <div className='flex items-center gap-2 text-lg font-medium'>
-                      <Icon size={20} />
+                    <div className='flex items-center gap-2 text-lg font-medium text-(--main-color)'>
+                      <Icon size={20} className='text-(--secondary-color)' />
                       {group.name === 'Premium' ? (
                         <span>
                           <span className='text-(--main-color)'>Premium</span>
                           <span className='ml-1 text-(--secondary-color)'>
-                            (experimental, unstable)
+                            (experimental)
                           </span>
                         </span>
                       ) : (
-                        group.name
+                        <span className='text-(--main-color)'>
+                          {group.name}
+                        </span>
                       )}
-                      {/* <span className='text-sm font-normal text-(--secondary-color)'>
-                        ({group.themes.length})
-                      </span> */}
                     </div>
-                    <div className='grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4'>
+                    <div className='grid grid-flow-row-dense grid-cols-2 gap-3 p-1 sm:grid-cols-3 md:grid-cols-4'>
                       {group.themes.map(theme => (
                         <ThemeCard
                           key={theme.id}

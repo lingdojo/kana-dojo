@@ -21,6 +21,8 @@ import { GameBottomBar } from '@/shared/components/Game/GameBottomBar';
 import FuriganaText from '@/shared/components/text/FuriganaText';
 import AnswerSummary from '@/shared/components/Game/AnswerSummary';
 import { CircleCheck } from 'lucide-react';
+import { cn } from '@/shared/lib/utils';
+import { useThemePreferences } from '@/features/Preferences';
 
 const random = new Random();
 const adaptiveSelector = getGlobalAdaptiveSelector();
@@ -253,6 +255,7 @@ const KanjiWordBuildingGame = ({
   const selectedKanjiCollection = useKanjiStore(
     state => state.selectedKanjiCollection,
   );
+  const isGlassMode = useThemePreferences().isGlassMode;
 
   // Answer timing for speed achievements
   const speedStopwatch = useStopwatch({ autoStart: false });
@@ -591,7 +594,12 @@ const KanjiWordBuildingGame = ({
             className='flex w-full flex-col items-center gap-6 sm:gap-10'
           >
             {/* Question Display - shows kanji in normal mode, meaning in reverse mode */}
-            <div className='flex flex-row items-center gap-1'>
+            <div
+              className={cn(
+                'flex flex-row items-center gap-1',
+                isGlassMode && 'rounded-xl bg-(--card-color) px-4 py-2',
+              )}
+            >
               <motion.div
                 className='flex flex-row items-center gap-2'
                 initial={{ opacity: 0, y: -20 }}
@@ -687,7 +695,10 @@ const KanjiWordBuildingGame = ({
               return (
                 <motion.div
                   key={questionData.kanjiChar}
-                  className='flex flex-col items-center gap-3 sm:gap-4'
+                  className={cn(
+                    'flex flex-col items-center gap-3 sm:gap-4',
+                    isGlassMode && 'rounded-xl bg-(--card-color) px-4 py-2',
+                  )}
                   variants={tileContainerVariants}
                   initial='hidden'
                   animate='visible'

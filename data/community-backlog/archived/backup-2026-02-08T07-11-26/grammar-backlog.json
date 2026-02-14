@@ -1,0 +1,451 @@
+[
+  {
+    "id": 1,
+    "text": "Use \"〜です/〜ます\" for polite statements; it's the standard polite ending for everyday conversation.",
+    "issued": true
+  },
+  {
+    "id": 2,
+    "text": "\"〜ません\" is the polite negative form of verbs, used to say something doesn't happen.",
+    "issued": true
+  },
+  {
+    "id": 3,
+    "text": "\"〜たい\" attaches to a verb stem to express \"want to do\" something.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 4,
+    "text": "\"〜てもいいです\" means \"it's okay to\" and grants permission.",
+    "issued": true
+  },
+  {
+    "id": 5,
+    "text": "\"〜てはいけません\" means \"must not\" and is used for prohibitions.",
+    "issued": true
+  },
+  {
+    "id": 6,
+    "text": "\"〜ながら\" connects actions to show two things happening at the same time.",
+    "issued": true
+  },
+  {
+    "id": 7,
+    "text": "\"〜たことがある\" expresses past experience, like \"have done\" something before.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 8,
+    "text": "\"〜てしまう\" can show completion or regret about an action.",
+    "issued": true
+  },
+  {
+    "id": 9,
+    "text": "\"〜そうです\" can report hearsay (\"I heard that...\").",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 10,
+    "text": "\"〜ようです\" means \"it seems like\" and is based on observation.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 11,
+    "text": "\"〜でしょう\" adds probability or softens statements, like \"probably\".",
+    "issued": true
+  },
+  {
+    "id": 12,
+    "text": "\"〜つもり\" expresses intent, like \"I plan to\" do something.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 13,
+    "text": "\"〜なければならない\" means \"must\" or \"have to\" do something.",
+    "issued": true
+  },
+  {
+    "id": 14,
+    "text": "\"〜なくてもいい\" means \"don't have to\" and lifts an obligation.",
+    "issued": true
+  },
+  {
+    "id": 15,
+    "text": "\"〜てくれる\" indicates someone does a favor for the speaker.",
+    "issued": true
+  },
+  {
+    "id": 16,
+    "text": "\"〜てもらう\" means \"receive a favor\" from someone.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 17,
+    "text": "\"〜てあげる\" shows the speaker does a favor for someone else.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 18,
+    "text": "\"〜ようと思う\" expresses a decision made at the moment of speaking.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 19,
+    "text": "\"〜なら\" means \"if\" or \"in the case of\" and often gives advice.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 20,
+    "text": "\"〜たら\" is a conditional \"if/when\" that also expresses sequence.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 21,
+    "text": "\"〜ば\" forms a conditional meaning \"if\" in a general sense.",
+    "issued": true
+  },
+  {
+    "id": 22,
+    "text": "\"〜ても\" means \"even if\" or \"even though\".",
+    "issued": true
+  },
+  {
+    "id": 23,
+    "text": "\"〜のに\" expresses contrast or regret, similar to \"even though\".",
+    "issued": true
+  },
+  {
+    "id": 24,
+    "text": "\"〜ので\" gives a reason in a polite or softer way than \"から\".",
+    "issued": true
+  },
+  {
+    "id": 25,
+    "text": "\"〜たところ\" can mean \"just did\" something and observed a result.",
+    "issued": true
+  },
+  {
+    "id": 26,
+    "text": "\"〜まま\" means \"as is\" or \"unchanged\".",
+    "issued": true
+  },
+  {
+    "id": 27,
+    "text": "\"〜ばかり\" means \"just\" (in terms of time) or \"only\" depending on context.",
+    "issued": true
+  },
+  {
+    "id": 28,
+    "text": "\"〜すぎる\" attaches to verbs or adjectives to mean \"too much\".",
+    "issued": true
+  },
+  {
+    "id": 29,
+    "text": "\"〜らしい\" can mean \"seems\" or describe a typical characteristic.",
+    "issued": true
+  },
+  {
+    "id": 30,
+    "text": "\"〜おう/〜よう\" is the volitional form, used to say \"let's\" or \"I will\".",
+    "issued": true
+  },
+  {
+    "id": 31,
+    "text": "\"〜ところ\" refers to a point in time, like \"about to\", \"in the middle of\", or \"just finished\".",
+    "issued": true
+  },
+  {
+    "id": 32,
+    "text": "\"〜たり〜たり\" lists representative actions, like \"do things like A and B\".",
+    "issued": true
+  },
+  {
+    "id": 33,
+    "text": "\"〜ていく/〜てくる\" shows direction or change over time, like \"will start\" or \"have been\".",
+    "issued": true
+  },
+  {
+    "id": 34,
+    "text": "\"〜ように\" can express purpose, like \"in order to\" or \"so that\".",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 35,
+    "text": "\"〜ために\" also means \"for the sake of\" and explains purpose or reason.",
+    "issued": true
+  },
+  {
+    "id": 36,
+    "text": "\"〜ことにする\" expresses a decision, like \"decide to\".",
+    "issued": true
+  },
+  {
+    "id": 37,
+    "text": "\"〜ことになる\" indicates something was decided (by others or circumstances).",
+    "issued": true
+  },
+  {
+    "id": 38,
+    "text": "\"〜に違いない\" means \"must be\" or \"no doubt\".",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 39,
+    "text": "\"〜かもしれない\" means \"might be\" or \"maybe\".",
+    "issued": true
+  },
+  {
+    "id": 40,
+    "text": "\"〜うちに\" means \"while\" or \"before\" something changes.",
+    "issued": true
+  },
+  {
+    "id": 41,
+    "text": "\"〜ことができる\" expresses ability, like \"can do\".",
+    "issued": true
+  },
+  {
+    "id": 42,
+    "text": "\"〜ことがある\" means \"sometimes\" when talking about habitual actions.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 43,
+    "text": "\"〜にくい\" attaches to verb stems to mean \"hard to do\".",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 44,
+    "text": "\"〜やすい\" attaches to verb stems to mean \"easy to do\".",
+    "issued": true
+  },
+  {
+    "id": 45,
+    "text": "\"〜ておく\" means \"do in advance\" or \"leave as is\".",
+    "issued": true
+  },
+  {
+    "id": 46,
+    "text": "\"〜にする\" means \"decide on\" a choice or selection.",
+    "issued": true
+  },
+  {
+    "id": 47,
+    "text": "\"〜に決まっている\" means \"must be\" or \"definitely\".",
+    "issued": true
+  },
+  {
+    "id": 48,
+    "text": "\"〜そうだ\" can indicate appearance, like \"it looks like\".",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 49,
+    "text": "\"〜ながらも\" means \"even while\" or \"though\" (contrast).",
+    "issued": true
+  },
+  {
+    "id": 50,
+    "text": "\"〜わけではない\" means \"not necessarily\" or \"it's not that\".",
+    "issued": true
+  },
+  {
+    "id": 51,
+    "text": "\"〜というより\" means \"rather than\" or \"more like\".",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 52,
+    "text": "\"〜おかげで\" expresses gratitude for a cause, \"thanks to\".",
+    "issued": true
+  },
+  {
+    "id": 53,
+    "text": "\"〜せいで\" indicates a negative cause, \"because of\".",
+    "issued": true
+  },
+  {
+    "id": 54,
+    "text": "\"〜ほど\" can express degree, like \"so... that\".",
+    "issued": true
+  },
+  {
+    "id": 55,
+    "text": "\"〜ば〜ほど\" means \"the more... the more...\".",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 56,
+    "text": "\"〜に違いない\" expresses strong conviction: \"must be\".",
+    "issued": true
+  },
+  {
+    "id": 57,
+    "text": "\"〜わけがない\" means \"there is no way that...\".",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 58,
+    "text": "\"〜ようにする\" means \"make an effort to...\".",
+    "issued": true
+  },
+  {
+    "id": 59,
+    "text": "\"〜てしまう\" can express completion or regret (\"end up doing\").",
+    "issued": true
+  },
+  {
+    "id": 60,
+    "text": "\"〜にしては\" means \"considering...\".",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 61,
+    "text": "\"〜にとって\" means \"for / to (someone)\".",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 62,
+    "text": "\"〜につれて\" means \"as... changes, ... also changes\".",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 63,
+    "text": "\"〜に比べて\" means \"compared to...\".",
+    "issued": true
+  },
+  {
+    "id": 64,
+    "text": "\"〜によると\" means \"according to...\".",
+    "issued": true
+  },
+  {
+    "id": 65,
+    "text": "\"〜に応じて\" means \"depending on...\".",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 66,
+    "text": "\"〜に加えて\" means \"in addition to...\".",
+    "issued": true
+  },
+  {
+    "id": 67,
+    "text": "\"〜に向けて\" means \"toward / in preparation for\".",
+    "issued": true
+  },
+  {
+    "id": 68,
+    "text": "\"〜おそれがある\" means \"there is a risk that...\".",
+    "issued": true
+  },
+  {
+    "id": 69,
+    "text": "\"〜ものの\" means \"although...\" with contrast.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 70,
+    "text": "\"〜まま\" means \"as-is / while remaining...\".",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 71,
+    "text": "\"〜わけにはいかない\" means \"cannot (due to circumstances)\".",
+    "issued": true
+  },
+  {
+    "id": 72,
+    "text": "\"〜て以来\" means \"since (doing)\".",
+    "issued": true
+  },
+  {
+    "id": 73,
+    "text": "\"〜たびに\" means \"every time...\".",
+    "issued": true
+  },
+  {
+    "id": 74,
+    "text": "\"〜ところ\" can mean \"just did / about to do / in the middle of\".",
+    "issued": true
+  },
+  {
+    "id": 75,
+    "text": "\"〜ことにする\" means \"decide to...\".",
+    "issued": true
+  },
+  {
+    "id": 76,
+    "text": "\"〜ことになっている\" means \"it is decided/arranged that...\".",
+    "issued": true
+  },
+  {
+    "id": 77,
+    "text": "\"〜わりに\" means \"despite / considering...\".",
+    "issued": true
+  },
+  {
+    "id": 78,
+    "text": "\"〜ながら\" can mean \"while\" (simultaneous action).",
+    "issued": true
+  },
+  {
+    "id": 79,
+    "text": "\"〜にすぎない\" means \"no more than...\".",
+    "issued": true
+  },
+  {
+    "id": 80,
+    "text": "\"〜てはじめて\" means \"only after...\".",
+    "issued": true
+  },
+  {
+    "id": 81,
+    "text": "\"〜に気づく\" means \"to notice / realize...\".",
+    "issued": true
+  },
+  {
+    "id": 82,
+    "text": "\"〜ばかりか\" means \"not only... but also\".",
+    "issued": true
+  },
+  {
+    "id": 83,
+    "text": "\"〜にしたがって\" means \"as / in accordance with...\".",
+    "issued": true
+  },
+  {
+    "id": 84,
+    "text": "\"〜を通して\" means \"through / throughout...\".",
+    "issued": true
+  },
+  {
+    "id": 85,
+    "text": "\"〜に限って\" means \"only / exclusively\".",
+    "issued": true
+  }
+]

@@ -62,9 +62,7 @@ const Backup: React.FC = () => {
           }}
         />
       </div>
-      {message && (
-        <p className='text-sm text-(--secondary-color)'>{message}</p>
-      )}
+      {message && <p className='text-sm text-(--secondary-color)'>{message}</p>}
       <p className='text-xs opacity-70'>
         Exports only preferences and stats. No account data is included.
       </p>

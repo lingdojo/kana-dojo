@@ -29,9 +29,15 @@ const Fonts = () => {
         'flex items-center justify-center',
         buttonBorderStyles,
         'border-1 border-(--card-color) px-4 py-4',
-        'flex-1 overflow-hidden',
-        fontObj.name === currentFont && 'border-(--main-color)',
+        'flex-1',
       )}
+      style={{
+        outline:
+          fontObj.name === currentFont
+            ? '3px solid var(--secondary-color)'
+            : 'none',
+        transition: 'background-color 275ms',
+      }}
       onClick={() => playClick()}
     >
       <input
@@ -43,9 +49,9 @@ const Fonts = () => {
         className='hidden'
       />
       <p className={clsx('text-center text-xl', fontObj.font.className)}>
-        <span className='text-(--secondary-color)'>
+        {/* <span className='text-(--secondary-color)'>
           {fontObj.name === currentFont ? '\u2B24 ' : ''}
-        </span>
+        </span> */}
         <span className=''>{fontObj.name}</span>
         {fontObj.name === 'Zen Maru Gothic' && ' (default)'}
         <span className='ml-2 text-(--secondary-color)'>かな道場</span>
@@ -88,7 +94,7 @@ const Fonts = () => {
       >
         <fieldset
           className={clsx(
-            'grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4',
+            'grid grid-cols-2 gap-4 p-1 md:grid-cols-3 lg:grid-cols-4',
           )}
         >
           {recommendedFonts.map(renderFontCard)}
@@ -105,7 +111,7 @@ const Fonts = () => {
       >
         <fieldset
           className={clsx(
-            'grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4',
+            'grid grid-cols-2 gap-4 p-1 md:grid-cols-3 lg:grid-cols-4',
           )}
         >
           {otherFonts.map(renderFontCard)}

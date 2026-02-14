@@ -10,9 +10,7 @@ const HotkeyReference = ({
         <table className='min-w-full overflow-hidden rounded-lg'>
           <thead className='bg-(--card-color)'>
             <tr>
-              <th className='bg-(--border-color) px-4 py-2 text-left'>
-                Key
-              </th>
+              <th className='bg-(--border-color) px-4 py-2 text-left'>Key</th>
               <th className='bg-(--border-color) px-4 py-2 text-left'>
                 Action
               </th>

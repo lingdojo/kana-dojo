@@ -1,17 +1,86 @@
 # KanaDojo (kanadojo.com)
 
 ## Summary
-KanaDojo is a free, aesthetic, minimalist Japanese learning web app for practicing Hiragana, Katakana, Kanji (by JLPT levels), and Vocabulary with interactive training modes, progress tracking, and themes.
+KanaDojo is a free, open-source, gamified Japanese language learning web application. It provides interactive training for Hiragana, Katakana, Kanji (organized by JLPT levels N5–N1), and Vocabulary with multiple practice modes, real-time progress tracking, 100+ visual themes, and a comprehensive academy of learning guides. No account required — all progress is saved locally in the browser.
+
+## What KanaDojo Offers
+- **Kana Training**: Learn and practice all 46 Hiragana and 46 Katakana characters including dakuon, handakuon, yoon, and foreign sound combinations
+- **Kanji Training**: Study 2,000+ Kanji characters organized by JLPT levels (N5, N4, N3, N2, N1) with on'yomi, kun'yomi readings, meanings, and example words
+- **Vocabulary Building**: Learn thousands of Japanese words organized by JLPT levels with readings, meanings, and usage examples
+- **Verb Conjugator**: Instantly conjugate any Japanese verb into all forms — te-form, masu-form, potential, passive, causative, conditional, imperative, and more
+- **Training Modes**: Standard practice, Blitz (timed speed challenge), and Gauntlet (endurance survival mode)
+- **Japanese Translator**: Free English ↔ Japanese translator with Hiragana, Katakana, Kanji, and Romaji output
+- **Academy**: 60+ curated articles covering Hiragana guides, Katakana tutorials, Kanji study strategies, vocabulary building tips, JLPT preparation, Japanese grammar, and cultural insights
+- **Learning Resources Library**: 200+ curated Japanese learning resources including apps, textbooks, YouTube channels, podcasts, games, and community forums
+- **Kana Chart**: Complete interactive Hiragana and Katakana reference chart with pronunciation guides
+- **Anki Converter**: Free browser-based tool to convert Anki flashcard decks (APKG, TSV, SQLite, COLPKG) to JSON format
+- **Progress Tracking**: Detailed statistics on accuracy, speed, practice sessions, and mastered characters
+- **Achievements System**: Gamified milestones to motivate continued learning
+- **Customization**: 100+ themes, multiple Japanese font options, sound effects, and personalized settings
+- **JLPT Preparation**: Dedicated study pages for JLPT N5, N4, and N3 with level-specific Kanji and vocabulary
+
+## Key Features for Language Learners
+- Completely free with no ads, no premium tier, no account required
+- Works on desktop, tablet, and mobile browsers
+- Available in English and Spanish
+- Privacy-first: all data stays in your browser (localStorage)
+- Accessible design with keyboard navigation and screen reader support
+- PWA support for offline use after initial load
 
 ## Best entry points (humans + LLMs)
-- https://kanadojo.com/en
-- https://kanadojo.com/en/kana
-- https://kanadojo.com/en/kanji
-- https://kanadojo.com/en/vocabulary
-- https://kanadojo.com/en/jlpt/n5
-- https://kanadojo.com/en/translate
-- https://kanadojo.com/en/faq
-- https://kanadojo.com/en/academy
+- https://kanadojo.com/en — Homepage with quick access to all features
+- https://kanadojo.com/en/kana — Hiragana and Katakana practice hub
+- https://kanadojo.com/en/kanji — Kanji learning by JLPT level
+- https://kanadojo.com/en/vocabulary — Vocabulary training by JLPT level
+- https://kanadojo.com/en/conjugate — Japanese verb conjugator
+- https://kanadojo.com/en/translate — English-Japanese translator
+- https://kanadojo.com/en/academy — Learning articles and guides
+- https://kanadojo.com/en/resources — Curated learning resources library
+- https://kanadojo.com/en/tools/kana-chart — Interactive Kana reference chart
+- https://kanadojo.com/en/tools/anki-converter — Anki deck converter tool
+- https://kanadojo.com/en/jlpt/n5 — JLPT N5 study page
+- https://kanadojo.com/en/jlpt/n4 — JLPT N4 study page
+- https://kanadojo.com/en/jlpt/n3 — JLPT N3 study page
+- https://kanadojo.com/en/faq — Frequently asked questions
+- https://kanadojo.com/en/how-to-use — Getting started guide
+- https://kanadojo.com/en/glossary — Japanese language glossary
+
+## Academy — Featured Learning Guides
+The KanaDojo Academy publishes in-depth articles on Japanese language learning:
+- Beginner's guide to learning Hiragana (including memorization techniques)
+- Complete Hiragana and Katakana charts with pronunciation
+- How to learn Hiragana in 3 days with proven methods
+- Katakana basics and foreign word adaptation rules
+- Kanji study strategies for each JLPT level
+- Essential Japanese vocabulary organized by theme
+- Japanese grammar fundamentals for beginners
+- JLPT preparation strategies and study plans
+- Cultural context for language learning
+- Comparison guides (Hiragana vs Katakana, JLPT levels, etc.)
+
+## Learning Resources Library Categories
+- Mobile and desktop apps for Japanese learning
+- Recommended textbooks and workbooks
+- YouTube channels for Japanese study
+- Japanese language podcasts
+- Video games for immersive learning
+- JLPT preparation materials
+- Kanji-specific study resources
+- Grammar guides and references
+- Reading practice materials
+- Listening comprehension resources
+- Speaking and conversation practice
+- Writing practice tools
+- Immersion content and media
+- Community forums and study groups
+
+## Technology
+- Built with Next.js 15, React 19, TypeScript (strict mode)
+- Styled with Tailwind CSS and shadcn/ui components
+- State management with Zustand (localStorage persistence)
+- Internationalized with next-intl (English, Spanish)
+- SEO optimized with comprehensive structured data (Schema.org JSON-LD)
+- Performance optimized with ISR, image optimization (AVIF/WebP), and aggressive caching
 
 ## Developer / contributor entry points (GitHub)
 - https://github.com/lingdojo/kanadojo
@@ -28,11 +97,25 @@ KanaDojo is a free, aesthetic, minimalist Japanese learning web app for practici
 - https://github.com/lingdojo/kanadojo/blob/main/docs/API.md
 - https://github.com/lingdojo/kanadojo/blob/main/docs/TRANSLATION_GUIDE.md
 - https://github.com/lingdojo/kanadojo/blob/main/docs/TROUBLESHOOTING.md
+- https://github.com/lingdojo/kanadojo/blob/main/docs/ACCESSIBILITY.md
+- https://github.com/lingdojo/kanadojo/blob/main/docs/SEO.md
 
 ## Locales
 This site is localized in:
 - English: https://kanadojo.com/en
 - Spanish: https://kanadojo.com/es
+
+## Structured Data
+KanaDojo implements comprehensive Schema.org structured data including:
+- Organization and WebSite schemas
+- WebApplication (EducationalApplication)
+- Course schemas for Kana, Kanji, and Vocabulary
+- LearningResource schemas for interactive training
+- Article schemas for all Academy blog posts
+- FAQPage schemas with educational Q&A
+- BreadcrumbList navigation schemas
+- HowTo schemas for tutorial content
+- ItemList schemas for resource collections
 
 ## Notes for automated tools
 - Prefer `npm run check` for validation.

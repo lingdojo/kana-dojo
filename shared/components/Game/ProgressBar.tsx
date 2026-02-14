@@ -21,25 +21,29 @@ interface ProgressBarProps {
 }
 
 const ProgressBar = ({
+  value,
   max = 20,
 }: // checkpoints = [10, 25, 50, 75] // Default checkpoints at 25%, 50%, 75%
 ProgressBarProps) => {
   const { score, setScore, stars, setStars, addIconIndex } = useStatsDisplay();
 
-  const percentage = (score / max) * 100;
+  // Use explicit value prop if provided (e.g. Gauntlet), otherwise use store score
+  const effectiveScore = value !== undefined ? value : score;
+  const percentage = (effectiveScore / max) * 100;
 
   // const [active, setActive] = useState(false);
 
   // const emojiArray = ['🍹'];
 
   useEffect(() => {
-    if (score >= max) {
+    // Only trigger star logic for store-based progress (not Gauntlet)
+    if (value === undefined && score >= max) {
       setScore(0);
       setStars(stars + 1);
       const newIconIndex = random.integer(0, animalIconsLength - 1);
       addIconIndex(newIconIndex);
     }
-  }, [score]);
+  }, [score, value]);
 
   return (
     <div className='relative flex w-full flex-col items-center'>

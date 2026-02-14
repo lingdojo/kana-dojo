@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import { getBlogPosts, BlogList } from '@/features/Blog';
 import { routing, type Locale } from '@/core/i18n/routing';
 import { generatePageMetadata } from '@/core/i18n/metadata-helpers';
+import { BreadcrumbSchema } from '@/shared/components/SEO/BreadcrumbSchema';
+import { StructuredData } from '@/shared/components/SEO/StructuredData';
 
 export function generateStaticParams() {
   return routing.locales.map(locale => ({ locale }));
@@ -27,8 +29,54 @@ export default async function AcademyPage({ params }: AcademyPageProps) {
   const { locale } = await params;
   const posts = getBlogPosts(locale as Locale);
 
+  // Generate ItemList schema for blog post collection
+  const itemListSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'KanaDojo Academy — Japanese Learning Articles',
+    description:
+      'A curated collection of Japanese learning guides, tutorials, and study tips covering Hiragana, Katakana, Kanji, vocabulary, grammar, and JLPT preparation.',
+    numberOfItems: posts.length,
+    itemListOrder: 'https://schema.org/ItemListOrderDescending',
+    itemListElement: posts.slice(0, 20).map((post, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      url: `https://kanadojo.com/${locale}/academy/${post.slug}`,
+      name: post.title,
+    })),
+  };
+
+  // Generate CollectionPage schema
+  const collectionPageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'KanaDojo Academy',
+    description:
+      'A comprehensive collection of Japanese learning articles, tutorials, and study guides.',
+    url: `https://kanadojo.com/${locale}/academy`,
+    isPartOf: {
+      '@type': 'WebSite',
+      name: 'KanaDojo',
+      url: 'https://kanadojo.com',
+    },
+    about: {
+      '@type': 'Thing',
+      name: 'Japanese Language Learning',
+    },
+    inLanguage: locale === 'es' ? 'es' : 'en',
+  };
+
   return (
     <>
+      {/* Structured Data for SEO */}
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: `https://kanadojo.com/${locale}` },
+          { name: 'Academy', url: `https://kanadojo.com/${locale}/academy` },
+        ]}
+      />
+      <StructuredData data={itemListSchema} />
+      <StructuredData data={collectionPageSchema} />
       <header
         className='relative mb-24 flex flex-col items-start justify-center pt-12'
         data-testid='academy-header'

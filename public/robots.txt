@@ -116,3 +116,7 @@ Host: https://kanadojo.com
 # Sitemaps
 Sitemap: https://kanadojo.com/sitemap.xml
 Sitemap: https://kanadojo.com/sitemap-0.xml
+
+# AI-Friendly Content (GEO)
+# LLMs.txt for AI model consumption
+# https://kanadojo.com/llms.txt

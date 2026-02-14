@@ -8,6 +8,7 @@ import { getVerbInfo } from '@/features/Conjugator/lib/engine';
 import { generateNextMetadata } from '@/features/Conjugator/lib/seo/generateMeta';
 import { generateConjugatorSchema } from '@/features/Conjugator/lib/seo/structuredData';
 import { StructuredData } from '@/shared/components/SEO/StructuredData';
+import { BreadcrumbSchema } from '@/shared/components/SEO/BreadcrumbSchema';
 import { routing } from '@/core/i18n/routing';
 import Loader from '@/shared/components/Skeletons/Loader';
 
@@ -88,6 +89,15 @@ export default async function ConjugatePage({
   return (
     <>
       <StructuredData data={structuredData} />
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: `https://kanadojo.com/${locale}` },
+          {
+            name: 'Verb Conjugator',
+            url: `https://kanadojo.com/${locale}/conjugate`,
+          },
+        ]}
+      />
       <main className='min-h-screen'>
         {/* Skip link for accessibility */}
         <a

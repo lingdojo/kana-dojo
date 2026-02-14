@@ -209,9 +209,7 @@ function MonthGrid({ visits }: { visits: string[]; days: string[] }) {
   return (
     <div className='flex flex-col gap-3'>
       {/* Month title */}
-      <h3 className='text-lg font-semibold text-(--main-color)'>
-        {monthName}
-      </h3>
+      <h3 className='text-lg font-semibold text-(--main-color)'>{monthName}</h3>
 
       <div className='flex gap-2'>
         {/* Day labels on the left */}

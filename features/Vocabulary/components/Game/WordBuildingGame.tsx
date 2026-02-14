@@ -24,6 +24,8 @@ import FuriganaText from '@/shared/components/text/FuriganaText';
 import AnswerSummary from '@/shared/components/Game/AnswerSummary';
 import { CircleCheck } from 'lucide-react';
 import SSRAudioButton from '@/shared/components/audio/SSRAudioButton';
+import { cn } from '@/shared/lib/utils';
+import { useThemePreferences } from '@/features/Preferences';
 
 const random = new Random();
 const adaptiveSelector = getGlobalAdaptiveSelector();
@@ -262,6 +264,7 @@ const VocabWordBuildingGame = ({
   const selectedVocabCollection = useVocabStore(
     state => state.selectedVocabCollection,
   );
+  const isGlassMode = useThemePreferences().isGlassMode;
 
   // Answer timing for speed achievements
   const speedStopwatch = useStopwatch({ autoStart: false });
@@ -708,7 +711,12 @@ const VocabWordBuildingGame = ({
                   : 'What is the reading?'}{' '}
                 {/* reading quiz: always asks for reading */}
               </span>
-              <div className='flex flex-row items-center justify-center gap-1'>
+              <div
+                className={cn(
+                  'flex flex-row items-center justify-center gap-1',
+                  isGlassMode && 'rounded-xl bg-(--card-color) px-4 py-2',
+                )}
+              >
                 <motion.div
                   className='flex flex-row items-center gap-2'
                   initial={{ opacity: 0, y: -20 }}
@@ -834,7 +842,10 @@ const VocabWordBuildingGame = ({
               return (
                 <motion.div
                   key={questionData.word}
-                  className='flex flex-col items-center gap-3 sm:gap-4'
+                  className={cn(
+                    'flex flex-col items-center gap-3 sm:gap-4',
+                    isGlassMode && 'rounded-xl bg-(--card-color) px-4 py-2',
+                  )}
                   variants={tileContainerVariants}
                   initial='hidden'
                   animate='visible'

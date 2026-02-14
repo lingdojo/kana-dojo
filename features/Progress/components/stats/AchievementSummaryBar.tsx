@@ -48,9 +48,7 @@ function StatItem({
         <Icon className='h-6 w-6' />
       </div>
       <div className='flex flex-col'>
-        <span className='text-2xl font-bold text-(--main-color)'>
-          {value}
-        </span>
+        <span className='text-2xl font-bold text-(--main-color)'>{value}</span>
         <span className='text-xs font-medium text-(--secondary-color)'>
           {label}
         </span>

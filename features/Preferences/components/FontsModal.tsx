@@ -32,17 +32,17 @@ const FontCard = memo(function FontCard({
   return (
     <label
       className={clsx(
-        'flex cursor-pointer items-center justify-center overflow-hidden rounded-xl border-0 bg-(--card-color) px-4 py-4',
-        isSelected
-          ? 'border-(--main-color)'
-          : 'border-(--card-color)',
+        'flex cursor-pointer items-center justify-center rounded-xl border-0 bg-(--card-color) px-4 py-4',
       )}
+      style={{
+        outline: isSelected ? '3px solid var(--secondary-color)' : 'none',
+      }}
       onClick={() => onClick(fontName)}
     >
       <p className={clsx('text-center text-xl', fontClassName)}>
-        <span className='text-(--secondary-color)'>
+        {/* <span className='text-(--secondary-color)'>
           {isSelected ? '\u2B24 ' : ''}
-        </span>
+        </span> */}
         <span className='text-(--main-color)'>
           {fontName}
           {isDefault && ' (default)'}
@@ -117,7 +117,7 @@ export default function FontsModal({ open, onOpenChange }: FontsModalProps) {
                 Used in real Japanese textbooks, books & media
               </p>
  */}
-              <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3'>
+              <div className='grid grid-cols-1 gap-4 p-1 sm:grid-cols-2 lg:grid-cols-3'>
                 {recommendedFonts.map(fontObj => (
                   <FontCard
                     key={fontObj.name}
@@ -148,7 +148,7 @@ export default function FontsModal({ open, onOpenChange }: FontsModalProps) {
                 Fun & decorative fonts for entertainment
               </p>
  */}
-              <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3'>
+              <div className='grid grid-cols-1 gap-4 p-1 sm:grid-cols-2 lg:grid-cols-3'>
                 {otherFonts.map(fontObj => (
                   <FontCard
                     key={fontObj.name}

@@ -9,6 +9,7 @@ import FuriganaText from '@/shared/components/text/FuriganaText';
 import { useThemePreferences } from '@/features/Preferences';
 import { ActionButton } from '@/shared/components/ui/ActionButton';
 import { motion } from 'framer-motion';
+import { cn } from '@/shared/lib/utils';
 
 // Premium spring animation config
 const springConfig = {
@@ -244,19 +245,25 @@ const KanjiSummary = ({
   feedback,
   onContinue,
   buttonRef,
+  isGlassMode,
   isEmbedded = false,
 }: {
   payload: IKanjiObj;
   feedback: React.ReactElement;
   onContinue: () => void;
   buttonRef: React.RefObject<HTMLButtonElement | null>;
+  isGlassMode: boolean;
   isEmbedded?: boolean;
 }) => (
   <motion.div
     variants={containerVariants}
     initial='hidden'
     animate='visible'
-    className='flex w-full flex-col items-center justify-start gap-4 py-4 md:w-3/4 lg:w-1/2'
+    className={cn(
+      'flex w-full flex-col items-center justify-start gap-4 py-4 md:w-3/4 lg:w-1/2',
+
+      isGlassMode && 'rounded-xl bg-(--card-color) px-4 py-2',
+    )}
   >
     {!isEmbedded && <FeedbackHeader feedback={feedback} />}
 
@@ -302,12 +309,14 @@ const VocabSummary = ({
   feedback,
   onContinue,
   buttonRef,
+  isGlassMode,
   isEmbedded = false,
 }: {
   payload: IVocabObj;
   feedback: React.ReactElement;
   onContinue: () => void;
   buttonRef: React.RefObject<HTMLButtonElement | null>;
+  isGlassMode: boolean;
   isEmbedded?: boolean;
 }) => {
   const { displayKana: showKana } = useThemePreferences();
@@ -320,7 +329,10 @@ const VocabSummary = ({
       variants={containerVariants}
       initial='hidden'
       animate='visible'
-      className='flex w-full flex-col items-center justify-start gap-4 py-4 md:w-3/4 lg:w-1/2'
+      className={cn(
+        'flex w-full flex-col items-center justify-start gap-4 py-4 md:w-3/4 lg:w-1/2',
+        isGlassMode && 'rounded-xl bg-(--card-color) px-4 py-2',
+      )}
     >
       {!isEmbedded && <FeedbackHeader feedback={feedback} />}
 
@@ -390,6 +402,7 @@ const AnswerSummary = ({
   isEmbedded?: boolean;
 }) => {
   const { playClick } = useClick();
+  const { isGlassMode } = useThemePreferences();
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
@@ -420,6 +433,7 @@ const AnswerSummary = ({
       feedback={feedback}
       onContinue={handleContinue}
       buttonRef={buttonRef}
+      isGlassMode={isGlassMode}
       isEmbedded={isEmbedded}
     />
   ) : (
@@ -429,6 +443,7 @@ const AnswerSummary = ({
       feedback={feedback}
       onContinue={handleContinue}
       buttonRef={buttonRef}
+      isGlassMode={isGlassMode}
       isEmbedded={isEmbedded}
     />
   );

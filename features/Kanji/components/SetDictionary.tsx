@@ -19,7 +19,7 @@ const KanjiSetDictionary = memo(function KanjiSetDictionary({
   const { displayKana: showKana } = useThemePreferences();
 
   return (
-    <div className={clsx('flex flex-col', cardBorderStyles)}>
+    <div className={clsx('flex flex-col')}>
       {words.map((kanjiObj, i) => (
         <div
           key={kanjiObj.id}

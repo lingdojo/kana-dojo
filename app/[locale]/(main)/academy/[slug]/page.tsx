@@ -14,6 +14,7 @@ import {
   mdxComponents,
 } from '@/features/Blog';
 import { StructuredData } from '@/shared/components/SEO/StructuredData';
+import { AuthorSchema } from '@/shared/components/SEO/AuthorSchema';
 import { routing, type Locale as _Locale } from '@/core/i18n/routing';
 import type { Locale as BlogLocale } from '@/features/Blog';
 
@@ -263,6 +264,15 @@ export default async function AcademyPostPage({
       {/* Structured Data for SEO */}
       <StructuredData data={articleSchema} />
       <StructuredData data={breadcrumbSchema} />
+      <AuthorSchema
+        name={post.author || 'KanaDojo Team'}
+        url='https://kanadojo.com'
+        jobTitle='Japanese Language Education Team'
+        affiliation='KanaDojo'
+        expertise='Japanese Language Education, Hiragana, Katakana, Kanji, JLPT Preparation'
+        description='The KanaDojo team creates free, interactive Japanese learning tools and in-depth educational content to help learners at every level.'
+        sameAs={['https://github.com/lingdojo/kanadojo']}
+      />
 
       <BlogPostComponent post={post} relatedPosts={relatedPostsMeta}>
         {/* Render MDX content with custom components */}

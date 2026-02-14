@@ -4,6 +4,7 @@ import themeSets, {
   applyTheme,
   getWallpaperStyles,
   getThemeDefaultWallpaperId,
+  isPremiumThemeId,
   // hexToHsl
 } from '@/features/Preferences/data/themes';
 import { getWallpaperById } from '@/features/Preferences/data/wallpapers';
@@ -16,6 +17,7 @@ import { Dice5 } from 'lucide-react';
 import { Random } from 'random-js';
 import { useCustomThemeStore } from '@/features/Preferences/store/useCustomThemeStore';
 import CollapsibleSection from './CollapsibleSection';
+import CustomWallpaperUpload from './CustomWallpaperUpload';
 
 const random = new Random();
 
@@ -44,7 +46,6 @@ const Themes = () => {
   const selectedWallpaperId = usePreferencesStore(
     state => state.selectedWallpaperId,
   );
-  const customWallpapers = usePreferencesStore(state => state.customWallpapers);
 
   // Initialize with first theme to avoid hydration mismatch
   const [randomTheme, setRandomTheme] = useState(themeSets[2].themes[0]);
@@ -154,7 +155,7 @@ const Themes = () => {
               <span>
                 <span className='text-(--main-color)'>Premium</span>
                 <span className='ml-1 text-(--secondary-color)'>
-                  (experimental, unstable)
+                  (experimental)
                 </span>
               </span>
             ) : (
@@ -171,7 +172,8 @@ const Themes = () => {
             </span> */}
           <fieldset
             className={clsx(
-              'grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4',
+              'grid grid-flow-row-dense grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4',
+              'p-1', // Padding to prevent outline clipping
             )}
           >
             {themeSet.themes.map(currentTheme => (
@@ -179,8 +181,12 @@ const Themes = () => {
                 key={currentTheme.id}
                 className={clsx(
                   currentTheme.id === 'long' && 'col-span-full',
-                  'flex items-center justify-center rounded-xl py-4 duration-275 hover:cursor-pointer',
-                  'flex-1 overflow-hidden',
+                  currentTheme.id === 'big-beautiful-theme' &&
+                    'col-span-2 row-span-2',
+                  'flex items-center justify-center rounded-xl py-4 hover:cursor-pointer',
+                  'flex-1',
+                  isPremiumThemeId(currentTheme.id) && 'h-20 overflow-hidden',
+                  currentTheme.id === 'big-beautiful-theme' && 'min-h-[11rem]',
                   currentTheme.id === selectedTheme &&
                     'border-0 border-(--main-color)',
                 )}
@@ -195,14 +201,12 @@ const Themes = () => {
                       themeWallpaperId || selectedWallpaperId;
 
                     if (wallpaperIdToUse) {
-                      const wallpaper = getWallpaperById(
-                        wallpaperIdToUse,
-                        customWallpapers,
-                      );
+                      const wallpaper = getWallpaperById(wallpaperIdToUse);
                       if (wallpaper) {
                         return getWallpaperStyles(
                           wallpaper.url,
                           isHovered === currentTheme.id,
+                          wallpaper.urlWebp,
                         );
                       }
                     }
@@ -229,6 +233,11 @@ const Themes = () => {
                     };
                   })(),
                   borderColor: currentTheme.borderColor,
+                  outline:
+                    currentTheme.id === selectedTheme
+                      ? `3px solid ${currentTheme.secondaryColor}`
+                      : 'none',
+                  transition: 'background-color 275ms',
                 }}
                 onMouseEnter={() => {
                   if (isAdding) return;
@@ -272,8 +281,13 @@ const Themes = () => {
                   className='hidden'
                 />
                 {currentTheme.id === '?' ? (
-                  <span className='relative flex w-full items-center justify-center text-center text-lg'>
-                    <span
+                  <span
+                    className={clsx(
+                      'relative flex w-full items-center justify-center text-center text-lg',
+                      isPremiumThemeId(currentTheme.id) && 'invisible',
+                    )}
+                  >
+                    {/* <span
                       className={clsx(
                         'absolute left-1/2 -translate-x-1/2',
                         currentTheme.id === selectedTheme
@@ -282,37 +296,51 @@ const Themes = () => {
                       )}
                     >
                       {'\u2B24'}
-                    </span>
+                    </span> */}
                     <span className='opacity-0'>?</span>
                   </span>
                 ) : (
-                  <span className='flex items-center gap-1.5 text-center text-lg'>
-                    <span className='text-(--secondary-color)'>
+                  <span
+                    className={clsx(
+                      'flex items-center gap-1.5 text-center text-lg',
+                      currentTheme.id === 'big-beautiful-theme' &&
+                        'text-5xl font-semibold',
+                      isPremiumThemeId(currentTheme.id) && 'invisible',
+                    )}
+                  >
+                    {/* <span className='text-(--secondary-color)'>
                       {currentTheme.id === selectedTheme ? '\u2B24 ' : ''}
-                    </span>
+                    </span> */}
                     {currentTheme.id === 'long'
                       ? 'long loooooooong theme'
-                      : currentTheme.id.split('-').map((themeNamePart, i) => (
-                          <span
-                            key={`${currentTheme.id}-${i}`}
-                            style={{
-                              color:
-                                process.env.NODE_ENV !== 'production'
-                                  ? i === 0
-                                    ? currentTheme.mainColor
-                                    : currentTheme.secondaryColor
-                                  : undefined,
-                            }}
-                          >
-                            {i > 0 && ' '}
-                            {themeNamePart}
-                          </span>
-                        ))}
+                      : currentTheme.displayName
+                        ? currentTheme.displayName
+                        : currentTheme.id.split('-').map((themeNamePart, i) => (
+                            <span
+                              key={`${currentTheme.id}-${i}`}
+                              style={{
+                                color:
+                                  process.env.NODE_ENV !== 'production'
+                                    ? i === 0
+                                      ? currentTheme.mainColor
+                                      : currentTheme.secondaryColor
+                                    : undefined,
+                              }}
+                            >
+                              {i > 0 && ' '}
+                              {themeNamePart}
+                            </span>
+                          ))}
                   </span>
                 )}
               </label>
             ))}
           </fieldset>
+
+          {/* Custom wallpaper themes — only inside the Premium group */}
+          {themeSet.name === 'Premium (experimental, unstable)' && (
+            <CustomWallpaperUpload />
+          )}
         </CollapsibleSection>
       ))}
 

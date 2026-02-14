@@ -5,7 +5,7 @@ on:
     types: [closed]
 
 permissions:
-  contents: read
+  contents: write
   issues: write
 
 concurrency:
@@ -17,14 +17,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     if: github.repository == 'lingdojo/kana-dojo'
-    env:
-      AUTOMATION_PR_TOKEN: ${{ secrets.AUTOMATION_PR_TOKEN }}
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          persist-credentials: false
 
       - name: Re-enable backlog item from closed issue
         id: reenable
@@ -189,88 +185,15 @@ jobs:
 
             core.setOutput('needs_commit', 'false');
 
-      - name: Create PR for backlog updates
-        id: commit-backlog
-        if: steps.reenable.outputs.needs_commit == 'true' && env.AUTOMATION_PR_TOKEN != ''
-        uses: peter-evans/create-pull-request@v6
-        with:
-          token: ${{ secrets.AUTOMATION_PR_TOKEN }}
-          add-paths: |
-            data/community-backlog/
-          commit-message: 'chore(automation): re-enable closed issue backlog'
-          branch: automation/community-data/closed-${{ github.run_id }}
-          title: 'chore(automation): update community backlog'
-          body: Automated update to community backlog state.
-          base: main
-          delete-branch: true
-
-      - name: Auto-approve and merge automation PR
-        if: steps.reenable.outputs.needs_commit == 'true' && env.AUTOMATION_PR_TOKEN != ''
-        uses: actions/github-script@v7
-        with:
-          github-token: ${{ secrets.AUTOMATION_PR_TOKEN }}
-          script: |
-            const prNumber = Number(process.env.PR_NUMBER);
-
-            async function sleep(ms) {
-              return new Promise(function(resolve) { setTimeout(resolve, ms); });
-            }
-
-            if (!prNumber) {
-              console.log('No PR was created; nothing to merge');
-              return;
-            }
-
-            const MAX_RETRIES = 10;
-            for (let i = 1; i <= MAX_RETRIES; i += 1) {
-              try {
-                await github.rest.pulls.merge({
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  pull_number: prNumber,
-                  merge_method: 'squash'
-                });
-                console.log(`Merged automation PR #${prNumber}`);
-
-                try {
-                  const { data: pr } = await github.rest.pulls.get({
-                    owner: context.repo.owner,
-                    repo: context.repo.repo,
-                    pull_number: prNumber
-                  });
-                  const ref = pr && pr.head && pr.head.ref;
-                  if (ref) {
-                    await github.rest.git.deleteRef({
-                      owner: context.repo.owner,
-                      repo: context.repo.repo,
-                      ref: `heads/${ref}`
-                    });
-                    console.log(`Deleted automation branch: ${ref}`);
-                  }
-                } catch (deleteErr) {
-                  console.log(`Could not delete automation branch: ${deleteErr.message}`);
-                }
-                return;
-              } catch (e) {
-                console.log(`Merge attempt ${i} failed: ${e.message}`);
-                if (e.status === 409) {
-                  try {
-                    await github.rest.pulls.updateBranch({
-                      owner: context.repo.owner,
-                      repo: context.repo.repo,
-                      pull_number: prNumber
-                    });
-                    console.log(`Requested branch update for PR #${prNumber}`);
-                  } catch (updateErr) {
-                    console.log(`Could not update branch: ${updateErr.message}`);
-                  }
-                }
-                if (i < MAX_RETRIES) {
-                  await sleep(2000);
-                }
-              }
-            }
-
-            throw new Error(`Failed to merge automation PR #${prNumber}`);
-        env:
-          PR_NUMBER: ${{ steps.commit-backlog.outputs.pull-request-number }}
+      - name: Commit backlog updates
+        if: steps.reenable.outputs.needs_commit == 'true'
+        run: |
+          git add data/community-backlog/
+          if git diff --cached --quiet; then
+            echo "No backlog changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore(automation): re-enable closed issue backlog"
+          git push

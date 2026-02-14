@@ -44,6 +44,11 @@ dev-output.log
 *.tsbuildinfo
 next-env.d.ts
 
+# Wallpaper source images (only processed versions in public/wallpapers/ are tracked)
+
+
+
+
 # Audio files - WAV kept locally as fallback, only Opus tracked in git
 /public/sounds/**/*.wav
 /public/sounds/click/click9/

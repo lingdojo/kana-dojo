@@ -72,7 +72,13 @@ To maintain readability on top of a photographic background, we apply `backdrop-
 ## 📂 Assets
 
 - **Wallpaper Directory**: `/public/wallpapers/`
-- **Current Wallpaper**: `neonretrocarcity.jpg`
+- **Source Images**: `data/wallpapers-source/` (excluded from git)
+- **Manifest**: `features/Preferences/data/wallpapers.generated.ts` (auto-generated)
+- **Formats**: AVIF (primary) + WebP (fallback)
+- **Sizes**: 1920w, 2560w, 3840w per wallpaper
+- **Processing**: Run `npm run images:process` to regenerate
+- **Caching**: 1-year immutable cache headers via `next.config.ts` and `vercel.json`
+- **Dynamic**: Premium themes are auto-generated from available wallpapers — no code changes needed
 
 ---
 

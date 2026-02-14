@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Good First Issues
+    url: https://github.com/lingdojo/kana-dojo/contribute
+    about: Find beginner-friendly issues to contribute to KanaDojo
+  - name: Community Contributions
+    url: https://github.com/lingdojo/kana-dojo/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22
+    about: Browse all open community contribution opportunities

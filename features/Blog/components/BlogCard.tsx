@@ -3,6 +3,10 @@
 import React from 'react';
 import { Link } from '@/shared/components/navigation/Link';
 import { cn } from '@/shared/lib/utils';
+import {
+  formatLastUpdated,
+  getFreshnessBadge,
+} from '@/shared/lib/content-freshness';
 import type { BlogPostMeta, Category } from '../types/blog';
 
 /**
@@ -101,8 +105,27 @@ export function BlogCard({
       >
         <div className='mb-3 flex items-center gap-3 font-mono text-[10px] tracking-tighter text-(--secondary-color) uppercase opacity-50'>
           <time dateTime={post.publishedAt}>{formattedDate}</time>
+          {post.updatedAt && (
+            <>
+              <span className='h-px w-3 bg-(--border-color)' />
+              <span className='text-(--main-color) opacity-70'>
+                {formatLastUpdated(post.updatedAt)}
+              </span>
+            </>
+          )}
           <span className='h-px w-4 bg-(--border-color)' />
           <span>{post.readingTime} min read</span>
+          {(() => {
+            const badge = getFreshnessBadge(post.updatedAt || post.publishedAt);
+            if (badge.variant === 'fresh') {
+              return (
+                <span className='ml-auto rounded-full bg-emerald-500/15 px-2 py-0.5 text-[9px] font-bold tracking-wider text-emerald-500 normal-case'>
+                  {badge.label}
+                </span>
+              );
+            }
+            return null;
+          })()}
         </div>
 
         <Link

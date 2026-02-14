@@ -1,7 +1,5 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import type { Wallpaper, WallpaperCategory } from '../data/wallpapers';
-import { generateWallpaperId, isValidImageUrl } from '../data/wallpapers';
 
 interface PreferencesState {
   displayKana: boolean;
@@ -45,14 +43,7 @@ interface PreferencesState {
 
   // Wallpaper settings
   selectedWallpaperId: string | null; // Currently active wallpaper
-  customWallpapers: Wallpaper[]; // User-added wallpapers
   setSelectedWallpaper: (id: string | null) => void;
-  addCustomWallpaper: (
-    name: string,
-    url: string,
-    category?: WallpaperCategory,
-  ) => boolean;
-  removeCustomWallpaper: (id: string) => void;
   clearWallpaper: () => void;
 }
 
@@ -61,7 +52,7 @@ const usePreferencesStore = create<PreferencesState>()(
     set => ({
       displayKana: false,
       setDisplayKana: displayKana => set({ displayKana }),
-      theme: 'light',
+      theme: 'sapphire-bloom',
       setTheme: theme => set({ theme }),
       isGlassMode: false,
       setGlassMode: isGlassMode => set({ isGlassMode }),
@@ -91,54 +82,8 @@ const usePreferencesStore = create<PreferencesState>()(
 
       // Wallpaper settings
       selectedWallpaperId: null,
-      customWallpapers: [],
 
       setSelectedWallpaper: id => set({ selectedWallpaperId: id }),
-
-      addCustomWallpaper: (name, url, category = 'custom') => {
-        // Validate URL
-        if (!isValidImageUrl(url)) {
-          console.error('Invalid image URL:', url);
-          return false;
-        }
-
-        const newWallpaper: Wallpaper = {
-          id: generateWallpaperId(),
-          name: name.trim() || 'Custom Wallpaper',
-          url,
-          category,
-          isUserAdded: true,
-          createdAt: Date.now(),
-        };
-
-        set(state => ({
-          customWallpapers: [...state.customWallpapers, newWallpaper],
-        }));
-        return true;
-      },
-
-      removeCustomWallpaper: id => {
-        set(state => {
-          const wallpaper = state.customWallpapers.find(w => w.id === id);
-
-          // Only allow deletion of user-added wallpapers
-          if (!wallpaper || !wallpaper.isUserAdded) {
-            console.warn('Cannot delete base wallpaper');
-            return state;
-          }
-
-          // If deleted wallpaper is currently selected, clear selection
-          const updates: Partial<PreferencesState> = {
-            customWallpapers: state.customWallpapers.filter(w => w.id !== id),
-          };
-
-          if (state.selectedWallpaperId === id) {
-            updates.selectedWallpaperId = null;
-          }
-
-          return updates;
-        });
-      },
 
       clearWallpaper: () => set({ selectedWallpaperId: null }),
     }),

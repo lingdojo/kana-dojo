@@ -77,9 +77,7 @@ function StatItem({
           </p>
           <p className='text-xl font-bold text-(--main-color)'>{value}</p>
           {subValue && (
-            <p className='text-xs text-(--secondary-color)/60'>
-              {subValue}
-            </p>
+            <p className='text-xs text-(--secondary-color)/60'>{subValue}</p>
           )}
         </div>
       </div>
@@ -190,9 +188,7 @@ export default function BlitzStatsPanel({
               <Zap className='h-7 w-7 text-(--main-color)' />
             </motion.div>
             <div>
-              <h3 className='text-2xl font-bold text-(--main-color)'>
-                Blitz
-              </h3>
+              <h3 className='text-2xl font-bold text-(--main-color)'>Blitz</h3>
               <p className='text-sm text-(--secondary-color)/70'>
                 Speed challenge stats
               </p>

@@ -7,7 +7,7 @@ on:
 permissions:
   issues: write
   pull-requests: read
-  contents: read
+  contents: write
 
 # Prevent overlapping runs for the same PR
 concurrency:
@@ -17,15 +17,14 @@ concurrency:
 jobs:
   close-issue:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.merged == true
-    env:
-      AUTOMATION_PR_TOKEN: ${{ secrets.AUTOMATION_PR_TOKEN }}
+    # Skip automation PRs to save GitHub Actions minutes
+    if: |
+      github.event.pull_request.merged == true &&
+      !startsWith(github.event.pull_request.head.ref, 'automation/')
 
     steps:
       - name: Checkout for templates
         uses: actions/checkout@v4
-        with:
-          persist-credentials: false
 
       - name: Find and close related issue
         id: close-issue
@@ -327,88 +326,15 @@ jobs:
 
             core.setOutput('should_commit', needsCommit ? 'true' : 'false');
 
-      - name: Create PR for completion updates
-        id: commit-backlog
-        if: steps.close-issue.outputs.should_commit == 'true' && env.AUTOMATION_PR_TOKEN != ''
-        uses: peter-evans/create-pull-request@v6
-        with:
-          token: ${{ secrets.AUTOMATION_PR_TOKEN }}
-          add-paths: |
-            data/community-backlog/
-          commit-message: 'chore(automation): mark contribution as completed'
-          branch: automation/community-data/completed-${{ github.run_id }}
-          title: 'chore(automation): update community backlog'
-          body: Automated update to community backlog state.
-          base: main
-          delete-branch: true
-
-      - name: Auto-approve and merge automation PR
-        if: steps.close-issue.outputs.should_commit == 'true' && env.AUTOMATION_PR_TOKEN != ''
-        uses: actions/github-script@v7
-        with:
-          github-token: ${{ secrets.AUTOMATION_PR_TOKEN }}
-          script: |
-            const prNumber = Number(process.env.PR_NUMBER);
-
-            async function sleep(ms) {
-              return new Promise(function(resolve) { setTimeout(resolve, ms); });
-            }
-
-            if (!prNumber) {
-              console.log('No PR was created; nothing to merge');
-              return;
-            }
-
-            const MAX_RETRIES = 10;
-            for (let i = 1; i <= MAX_RETRIES; i += 1) {
-              try {
-                await github.rest.pulls.merge({
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  pull_number: prNumber,
-                  merge_method: 'squash'
-                });
-                console.log(`Merged automation PR #${prNumber}`);
-
-                try {
-                  const { data: pr } = await github.rest.pulls.get({
-                    owner: context.repo.owner,
-                    repo: context.repo.repo,
-                    pull_number: prNumber
-                  });
-                  const ref = pr && pr.head && pr.head.ref;
-                  if (ref) {
-                    await github.rest.git.deleteRef({
-                      owner: context.repo.owner,
-                      repo: context.repo.repo,
-                      ref: `heads/${ref}`
-                    });
-                    console.log(`Deleted automation branch: ${ref}`);
-                  }
-                } catch (deleteErr) {
-                  console.log(`Could not delete automation branch: ${deleteErr.message}`);
-                }
-                return;
-              } catch (e) {
-                console.log(`Merge attempt ${i} failed: ${e.message}`);
-                if (e.status === 409) {
-                  try {
-                    await github.rest.pulls.updateBranch({
-                      owner: context.repo.owner,
-                      repo: context.repo.repo,
-                      pull_number: prNumber
-                    });
-                    console.log(`Requested branch update for PR #${prNumber}`);
-                  } catch (updateErr) {
-                    console.log(`Could not update branch: ${updateErr.message}`);
-                  }
-                }
-                if (i < MAX_RETRIES) {
-                  await sleep(2000);
-                }
-              }
-            }
-
-            throw new Error(`Failed to merge automation PR #${prNumber}`);
-        env:
-          PR_NUMBER: ${{ steps.commit-backlog.outputs.pull-request-number }}
+      - name: Commit backlog updates
+        if: steps.close-issue.outputs.should_commit == 'true'
+        run: |
+          git add data/community-backlog/
+          if git diff --cached --quiet; then
+            echo "No backlog changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore(automation): mark contribution as completed"
+          git push

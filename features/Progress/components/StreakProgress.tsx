@@ -45,9 +45,7 @@ export default function StreakProgress() {
   return (
     <div className='space-y-6'>
       <div className='flex items-end justify-between'>
-        <h1 className='text-3xl font-bold text-(--main-color)'>
-          Visit Streak
-        </h1>
+        <h1 className='text-3xl font-bold text-(--main-color)'>Visit Streak</h1>
       </div>
 
       {/* Stats Cards */}

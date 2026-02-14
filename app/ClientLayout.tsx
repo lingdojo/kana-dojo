@@ -16,10 +16,7 @@ import {
   isPremiumThemeId,
   getThemeDefaultWallpaperId,
 } from '@/features/Preferences/data/themes';
-import {
-  getWallpaperById,
-  CURATED_WALLPAPERS,
-} from '@/features/Preferences/data/wallpapers';
+import { getWallpaperById } from '@/features/Preferences/data/wallpapers';
 import BackToTop from '@/shared/components/navigation/BackToTop';
 import MobileBottomBar from '@/shared/components/layout/BottomBar';
 import { useVisitTracker } from '@/features/Progress/hooks/useVisitTracker';
@@ -67,6 +64,7 @@ export default function ClientLayout({
   children: React.ReactNode;
 }>) {
   // Redundant comment for deployment trigger
+  // Trigger redeployment - 2026-02-08
   const { theme, font } = usePreferencesStore(
     useShallow(state => ({ theme: state.theme, font: state.font })),
   );
@@ -152,11 +150,16 @@ export default function ClientLayout({
           const wallpaperId = getThemeDefaultWallpaperId(effectiveTheme);
           if (!wallpaperId) return {};
 
-          const wallpaper = getWallpaperById(wallpaperId, []);
+          const wallpaper = getWallpaperById(wallpaperId);
           if (!wallpaper) return {};
 
+          // Use image-set for AVIF + WebP fallback
+          const backgroundImage = wallpaper.urlWebp
+            ? `image-set(url('${wallpaper.url}') type('image/avif'), url('${wallpaper.urlWebp}') type('image/webp'))`
+            : `url('${wallpaper.url}')`;
+
           return {
-            backgroundImage: `url('${wallpaper.url}')`,
+            backgroundImage,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundAttachment: 'fixed',

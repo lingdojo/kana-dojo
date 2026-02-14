@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { generatePageMetadata } from '@/core/i18n/metadata-helpers';
 import { routing, type Locale } from '@/core/i18n/routing';
 import { Breadcrumbs } from '@/shared/components/Breadcrumbs';
+import { BreadcrumbSchema } from '@/shared/components/SEO/BreadcrumbSchema';
 import FAQSection from './FAQSection';
 import { StructuredData } from '@/shared/components/SEO/StructuredData';
 
@@ -170,6 +171,12 @@ export default async function FAQPage({
   return (
     <>
       <StructuredData data={faqSchema} />
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: `https://kanadojo.com/${locale}` },
+          { name: 'FAQ', url: `https://kanadojo.com/${locale}/faq` },
+        ]}
+      />
 
       <div className='relative overflow-hidden'>
         <div className='pointer-events-none absolute inset-0'>

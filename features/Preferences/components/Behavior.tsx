@@ -75,7 +75,7 @@ const Behavior = () => {
       <h4 className='text-lg'>
         In the character selection menu, for readings, display:
       </h4>
-      <div className='flex flex-row gap-4'>
+      <div className='flex flex-row gap-4 p-1'>
         <button
           className={clsx(
             buttonBorderStyles,
@@ -84,6 +84,9 @@ const Behavior = () => {
             'text-(--secondary-color)',
             'flex-1 overflow-hidden',
           )}
+          style={{
+            outline: !displayKana ? '3px solid var(--secondary-color)' : 'none',
+          }}
           onClick={() => {
             playClick();
             setDisplayKana(false);
@@ -102,6 +105,9 @@ const Behavior = () => {
             'text-(--secondary-color)',
             'flex-1 overflow-hidden',
           )}
+          style={{
+            outline: displayKana ? '3px solid var(--secondary-color)' : 'none',
+          }}
           onClick={() => {
             playClick();
             setDisplayKana(true);
@@ -116,7 +122,7 @@ const Behavior = () => {
       <h4 className='text-lg'>
         Show furigana (reading) above the character/word for kanji/vocabulary:
       </h4>
-      <div className='flex flex-row gap-4'>
+      <div className='flex flex-row gap-4 p-1'>
         <button
           className={clsx(
             buttonBorderStyles,
@@ -126,6 +132,11 @@ const Behavior = () => {
             'text-(--secondary-color)',
             'flex-1 overflow-hidden',
           )}
+          style={{
+            outline: furiganaEnabled
+              ? '3px solid var(--secondary-color)'
+              : 'none',
+          }}
           onClick={() => {
             playClick();
             setFuriganaEnabled(true);
@@ -148,6 +159,11 @@ const Behavior = () => {
             'text-(--secondary-color)',
             'flex-1 overflow-hidden',
           )}
+          style={{
+            outline: !furiganaEnabled
+              ? '3px solid var(--secondary-color)'
+              : 'none',
+          }}
           onClick={() => {
             playClick();
             setFuriganaEnabled(false);
@@ -163,7 +179,7 @@ const Behavior = () => {
       </div>
 
       <h4 className='text-lg'>Play UI + feedback sound effects:</h4>
-      <div className='flex flex-row gap-4'>
+      <div className='flex flex-row gap-4 p-1'>
         <button
           className={clsx(
             buttonBorderStyles,
@@ -173,6 +189,9 @@ const Behavior = () => {
             'text-(--secondary-color)',
             'flex-1 overflow-hidden',
           )}
+          style={{
+            outline: !silentMode ? '3px solid var(--secondary-color)' : 'none',
+          }}
           onClick={() => {
             playClick();
             setSilentMode(false);
@@ -195,6 +214,9 @@ const Behavior = () => {
             'text-(--secondary-color)',
             'flex-1 overflow-hidden',
           )}
+          style={{
+            outline: silentMode ? '3px solid var(--secondary-color)' : 'none',
+          }}
           onClick={() => {
             playClick();
             setSilentMode(true);
@@ -211,7 +233,7 @@ const Behavior = () => {
       </div>
 
       <h4 className='text-lg'>Enable pronunciation audio:</h4>
-      <div className='flex flex-row gap-4'>
+      <div className='flex flex-row gap-4 p-1'>
         <button
           className={clsx(
             buttonBorderStyles,
@@ -221,6 +243,11 @@ const Behavior = () => {
             'text-(--secondary-color)',
             'flex-1 overflow-hidden',
           )}
+          style={{
+            outline: pronunciationEnabled
+              ? '3px solid var(--secondary-color)'
+              : 'none',
+          }}
           onClick={() => {
             playClick();
             setPronunciationEnabled(true);
@@ -243,6 +270,11 @@ const Behavior = () => {
             'text-(--secondary-color)',
             'flex-1 overflow-hidden',
           )}
+          style={{
+            outline: !pronunciationEnabled
+              ? '3px solid var(--secondary-color)'
+              : 'none',
+          }}
           onClick={() => {
             playClick();
             setPronunciationEnabled(false);

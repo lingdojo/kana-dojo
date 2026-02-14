@@ -62,8 +62,7 @@ const OptionButton = memo(
           buttonBorderStyles,
           'text-(--border-color)',
           'border-b-4',
-          isWrong &&
-            'border-(--border-color) hover:bg-(--card-color)',
+          isWrong && 'border-(--border-color) hover:bg-(--card-color)',
           !isWrong &&
             'border-(--secondary-color)/50 text-(--secondary-color) hover:border-(--secondary-color)',
         )}
@@ -85,9 +84,7 @@ const OptionButton = memo(
           className={clsx(
             'hidden rounded-full bg-(--border-color) px-1 text-xs lg:inline',
             isReverse ? '' : 'mr-4',
-            isWrong
-              ? 'text-(--border-color)'
-              : 'text-(--secondary-color)',
+            isWrong ? 'text-(--border-color)' : 'text-(--secondary-color)',
           )}
         >
           {index + 1}

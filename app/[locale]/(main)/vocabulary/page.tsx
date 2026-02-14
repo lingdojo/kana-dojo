@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/core/i18n/metadata-helpers';
 import { CourseSchema } from '@/shared/components/SEO/CourseSchema';
 import { BreadcrumbSchema } from '@/shared/components/SEO/BreadcrumbSchema';
+import { LearningResourceSchema } from '@/shared/components/SEO/LearningResourceSchema';
 import { routing } from '@/core/i18n/routing';
 
 // Generate static pages for all locales at build time
@@ -50,6 +51,23 @@ export default async function VocabularyPage({
         educationalLevel='Beginner to Advanced'
         skillLevel='All Levels'
         learningResourceType='Interactive Exercise and Games'
+      />
+      <LearningResourceSchema
+        name='Japanese Vocabulary Quiz and Flashcards'
+        description='Build your Japanese vocabulary with thousands of words organized by JLPT levels N5 through N1. Learn nouns, verbs, adjectives, and adverbs with readings, meanings, and example sentences.'
+        url={`https://kanadojo.com/${locale}/vocabulary`}
+        learningResourceType='Quiz'
+        educationalLevel={['Beginner', 'Intermediate', 'Advanced']}
+        teaches='Japanese Vocabulary, Word Readings, and Usage'
+        assesses='Vocabulary Recognition and JLPT-level Word Knowledge'
+        timeRequired='PT45M'
+        isAccessibleForFree={true}
+        provider={{ name: 'KanaDojo', url: 'https://kanadojo.com' }}
+        educationalAlignment={{
+          alignmentType: 'educationalLevel',
+          educationalFramework: 'JLPT',
+          targetName: 'N5-N1',
+        }}
       />
       <VocabMenu />
     </>

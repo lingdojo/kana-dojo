@@ -6,6 +6,8 @@ import clsx from 'clsx';
 import { ActionButton } from '@/shared/components/ui/ActionButton';
 import GoalTimersPanel from '@/shared/components/Timer/GoalTimersPanel';
 import { buttonBorderStyles } from '@/shared/lib/styles';
+import { useThemePreferences } from '@/features/Preferences';
+import { cn } from '@/shared/lib/utils';
 import type { BlitzGameMode, GoalTimer, AddGoalFn } from './types';
 
 interface ActiveGameProps<T> {
@@ -95,6 +97,7 @@ export default function ActiveGame<T>({
 }: ActiveGameProps<T>) {
   const inputRef = useRef<HTMLInputElement>(null);
   const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const isGlassMode = useThemePreferences().isGlassMode;
 
   const totalAnswers = stats.correct + stats.wrong;
   const accuracy =
@@ -162,6 +165,7 @@ export default function ActiveGame<T>({
           lastAnswerCorrect={lastAnswerCorrect}
           gameMode={gameMode}
           getCorrectAnswer={getCorrectAnswer}
+          isGlassMode={isGlassMode}
         />
 
         {/* Type mode: Input form */}
@@ -272,6 +276,7 @@ function QuestionDisplay<T>({
   lastAnswerCorrect,
   gameMode,
   getCorrectAnswer,
+  isGlassMode,
 }: {
   currentQuestion: T | null;
   renderQuestion: (question: T, isReverse?: boolean) => React.ReactNode;
@@ -279,22 +284,30 @@ function QuestionDisplay<T>({
   lastAnswerCorrect: boolean | null;
   gameMode: BlitzGameMode;
   getCorrectAnswer: (question: T, isReverse?: boolean) => string;
+  isGlassMode: boolean;
 }) {
   return (
     <div className='space-y-4 text-center'>
       <div className='flex flex-col items-center gap-4'>
         <div
-          className={clsx(
+          className={cn(
             'transition-all duration-200',
-            isReverseActive
-              ? 'text-4xl font-medium md:text-5xl'
-              : 'text-6xl font-semibold md:text-7xl',
-            lastAnswerCorrect === true && 'text-green-500',
-            lastAnswerCorrect === false && 'text-red-500',
-            lastAnswerCorrect === null && 'text-(--main-color)',
+            isGlassMode && 'rounded-xl bg-(--card-color) px-4 py-2',
           )}
         >
-          {currentQuestion && renderQuestion(currentQuestion, isReverseActive)}
+          <div
+            className={clsx(
+              isReverseActive
+                ? 'text-4xl font-medium md:text-5xl'
+                : 'text-6xl font-semibold md:text-7xl',
+              lastAnswerCorrect === true && 'text-green-500',
+              lastAnswerCorrect === false && 'text-red-500',
+              lastAnswerCorrect === null && 'text-(--main-color)',
+            )}
+          >
+            {currentQuestion &&
+              renderQuestion(currentQuestion, isReverseActive)}
+          </div>
         </div>
       </div>
 
@@ -408,8 +421,7 @@ function PickModeOptions<T>({
               'active:scale-95 active:duration-200 md:active:scale-98',
               'text-(--border-color)',
               'border-b-4',
-              isWrong &&
-                'border-(--border-color) hover:bg-(--card-color)',
+              isWrong && 'border-(--border-color) hover:bg-(--card-color)',
               !isWrong &&
                 'border-(--secondary-color)/50 text-(--secondary-color) hover:border-(--secondary-color)',
             )}
@@ -425,9 +437,7 @@ function PickModeOptions<T>({
               className={clsx(
                 'hidden rounded-full bg-(--border-color) px-1 text-xs lg:inline',
                 isReverseActive ? '' : 'mr-4',
-                isWrong
-                  ? 'text-(--border-color)'
-                  : 'text-(--secondary-color)',
+                isWrong ? 'text-(--border-color)' : 'text-(--secondary-color)',
               )}
             >
               {i + 1}

@@ -97,9 +97,14 @@ const MainMenu = () => {
         'flex min-h-[100dvh] max-w-[100dvw] flex-row justify-center',
       )}
     >
-      {isMounted && isLG && !isGlassMode && (
+      {isMounted && isLG && (
         <Suspense fallback={<></>}>
-          <Decorations expandDecorations={expandDecorations} forceShow={true} />
+          {!isGlassMode && (
+            <Decorations
+              expandDecorations={expandDecorations}
+              forceShow={true}
+            />
+          )}
           <Button
             variant='secondary'
             size='icon'

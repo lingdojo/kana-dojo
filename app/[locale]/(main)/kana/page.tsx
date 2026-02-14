@@ -3,6 +3,8 @@ import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/core/i18n/metadata-helpers';
 import { CourseSchema } from '@/shared/components/SEO/CourseSchema';
 import { BreadcrumbSchema } from '@/shared/components/SEO/BreadcrumbSchema';
+import { FAQSchema, hiraganaFAQs } from '@/shared/components/SEO/FAQSchema';
+import { LearningResourceSchema } from '@/shared/components/SEO/LearningResourceSchema';
 import { routing } from '@/core/i18n/routing';
 
 // Generate static pages for all locales at build time
@@ -45,6 +47,19 @@ export default async function KanaPage({
         skillLevel='Beginner'
         learningResourceType='Interactive Exercise and Games'
       />
+      <LearningResourceSchema
+        name='Interactive Kana Practice Games'
+        description='Practice Hiragana and Katakana with interactive quizzes, flashcards, and speed games. Test your recognition of all 46 basic characters plus dakuon and combination characters.'
+        url={`https://kanadojo.com/${locale}/kana`}
+        learningResourceType='Game'
+        educationalLevel={['Beginner', 'Intermediate']}
+        teaches='Japanese Hiragana and Katakana Characters'
+        assesses='Kana Recognition and Reading Speed'
+        timeRequired='PT30M'
+        isAccessibleForFree={true}
+        provider={{ name: 'KanaDojo', url: 'https://kanadojo.com' }}
+      />
+      <FAQSchema faqs={hiraganaFAQs} />
       <KanaMenu />
     </>
   );

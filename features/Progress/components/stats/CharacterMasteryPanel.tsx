@@ -381,9 +381,7 @@ function CharacterRow({
         <div
           className={cn(
             'text-lg font-bold',
-            isMastered
-              ? 'text-(--main-color)'
-              : 'text-(--secondary-color)',
+            isMastered ? 'text-(--main-color)' : 'text-(--secondary-color)',
           )}
         >
           {item.accuracy.toFixed(0)}%

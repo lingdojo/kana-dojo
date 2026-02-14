@@ -103,8 +103,7 @@ export default function OverviewStatsCard({
               transition={{ duration: 0.3, delay: index * 0.08 + 0.4 }}
               className={cn(
                 'flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-bold',
-                trend === 'up' &&
-                  'bg-(--main-color)/10 text-(--main-color)',
+                trend === 'up' && 'bg-(--main-color)/10 text-(--main-color)',
                 trend === 'down' &&
                   'bg-(--secondary-color)/10 text-(--secondary-color)',
               )}
