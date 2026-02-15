@@ -152,5 +152,11 @@
     "difficulty": "easy",
     "answers": ["Soba", "Udon", "Ramen", "Somen"],
     "correctIndex": 0
+  },
+  {
+    "question": "What is the name of Japan's traditional tea ceremony?",
+    "difficulty": "easy",
+    "answers": ["Chanoyu", "Sumo", "Kabuki", "Origami"],
+    "correctIndex": 0
   }
 ]
