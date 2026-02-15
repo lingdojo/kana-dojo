@@ -334,5 +334,11 @@
     "backgroundColor": "oklch(23.0% 0.038 280.0 / 1)",
     "mainColor": "oklch(78.0% 0.130 55.0 / 1)",
     "secondaryColor": "oklch(68.0% 0.095 30.0 / 1)"
+  },
+  {
+    "id": "autumn-maple",
+    "backgroundColor": "oklch(21.0% 0.052 30.0 / 1)",
+    "mainColor": "oklch(72.0% 0.200 35.0 / 1)",
+    "secondaryColor": "oklch(80.0% 0.165 60.0 / 1)"
   }
 ]
