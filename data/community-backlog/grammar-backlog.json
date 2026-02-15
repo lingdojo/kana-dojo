@@ -69,24 +69,24 @@
     "id": 12,
     "text": "\"ã€œã¤ã‚‚ã‚Š\" expresses intent, like \"I plan to\" do something.",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 13,
     "text": "\"ã€œãªã‘ã‚Œã°ãªã‚‰ãªã„\" means \"must\" or \"have to\" do something.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 14,
     "text": "\"ã€œãªãã¦ã‚‚ã„ã„\" means \"don't have to\" and lifts an obligation.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 15,
     "text": "\"ã€œã¦ãã‚Œã‚‹\" indicates someone does a favor for the speaker.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

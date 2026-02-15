@@ -1034,16 +1034,15 @@ export const ACHIEVEMENTS: Achievement[] = [
   {
     id: 'mode_explorer',
     title: 'Mode Explorer',
-    description:
-      'Try all four game modes (Pick, Reverse-Pick, Input, Reverse-Input)',
+    description: 'Try all core game modes (Pick, Input, Reverse-Input)',
     icon: '🧭',
     rarity: 'uncommon',
     points: 100,
     category: 'exploration',
     requirements: {
       type: 'variety',
-      value: 4,
-      additional: { modes: ['pick', 'reverse-pick', 'input', 'reverse-input'] },
+      value: 3,
+      additional: { modes: ['pick', 'type', 'anti-type'] },
     },
   },
   {
@@ -1341,6 +1340,7 @@ interface BlitzStats {
   bestSessionScore: number;
   bestStreak: number;
   totalCorrect: number;
+  totalAnswers?: number;
 }
 
 // All-time stats interface for achievement checking
@@ -1380,6 +1380,24 @@ export interface SessionStats {
   sessionAccuracy?: number;
   currentHour?: number;
 }
+
+const BASIC_HIRAGANA = new Set([
+  '\u3042','\u3044','\u3046','\u3048','\u304A','\u304B','\u304D','\u304F','\u3051','\u3053',
+  '\u3055','\u3057','\u3059','\u305B','\u305D','\u305F','\u3061','\u3064','\u3066','\u3068',
+  '\u306A','\u306B','\u306C','\u306D','\u306E','\u306F','\u3072','\u3075','\u3078','\u307B',
+  '\u307E','\u307F','\u3080','\u3081','\u3082','\u3084','\u3086','\u3088','\u3089','\u308A',
+  '\u308B','\u308C','\u308D','\u308F','\u3092','\u3093',
+]);
+
+const BASIC_KATAKANA = new Set([
+  '\u30A2','\u30A4','\u30A6','\u30A8','\u30AA','\u30AB','\u30AD','\u30AF','\u30B1','\u30B3',
+  '\u30B5','\u30B7','\u30B9','\u30BB','\u30BD','\u30BF','\u30C1','\u30C4','\u30C6','\u30C8',
+  '\u30CA','\u30CB','\u30CC','\u30CD','\u30CE','\u30CF','\u30D2','\u30D5','\u30D8','\u30DB',
+  '\u30DE','\u30DF','\u30E0','\u30E1','\u30E2','\u30E4','\u30E6','\u30E8','\u30E9','\u30EA',
+  '\u30EB','\u30EC','\u30ED','\u30EF','\u30F2','\u30F3',
+]);
+
+const isSingleKanji = (value: string) => /^[\u4E00-\u9FFF]$/.test(value);
 
 // ============================================
 // ACHIEVEMENT REQUIREMENT CHECKERS
@@ -1433,11 +1451,20 @@ function checkContentMastery(
   if (!contentType) return false;
 
   const characterMastery = allTimeStats.characterMastery ?? {};
+  const entries = Object.entries(characterMastery);
 
   // For vocabulary mastery with minAnswers, check unique words mastered
   if (contentType === 'vocabulary' && minAnswers !== undefined) {
+    const relevantEntries = entries.filter(([key]) => {
+      // Vocabulary keys are usually words/phrases. Exclude single-character kana/kanji keys.
+      if (key.length !== 1) return true;
+      if (BASIC_HIRAGANA.has(key) || BASIC_KATAKANA.has(key)) return false;
+      if (isSingleKanji(key)) return false;
+      return true;
+    });
+
     let masteredCount = 0;
-    for (const [, stats] of Object.entries(characterMastery)) {
+    for (const [, stats] of relevantEntries) {
       const total = stats.correct + stats.incorrect;
       if (total > 0) {
         const accuracy = (stats.correct / total) * 100;
@@ -1449,24 +1476,31 @@ function checkContentMastery(
     return masteredCount >= minAnswers;
   }
 
-  // For kana/kanji mastery, check all characters in the set have required accuracy
-  // This is a simplified check - in practice, you'd need to know which characters
-  // belong to each content type
-  const entries = Object.entries(characterMastery);
-  if (entries.length === 0) return false;
+  let relevantEntries: Array<[string, { correct: number; incorrect: number }]>;
+  if (contentType === 'hiragana') {
+    relevantEntries = entries.filter(([key]) => BASIC_HIRAGANA.has(key));
+    if (relevantEntries.length < BASIC_HIRAGANA.size) return false;
+  } else if (contentType === 'katakana') {
+    relevantEntries = entries.filter(([key]) => BASIC_KATAKANA.has(key));
+    if (relevantEntries.length < BASIC_KATAKANA.size) return false;
+  } else if (contentType === 'kanji') {
+    relevantEntries = entries.filter(([key]) => isSingleKanji(key));
+  } else {
+    relevantEntries = entries;
+  }
 
-  // Check if all tracked characters meet the accuracy threshold
-  for (const [, stats] of entries) {
+  if (relevantEntries.length === 0) return false;
+
+  for (const [, stats] of relevantEntries) {
     const total = stats.correct + stats.incorrect;
-    if (total > 0) {
-      const accuracy = (stats.correct / total) * 100;
-      if (accuracy < value) {
-        return false;
-      }
+    if (total === 0) return false;
+    const accuracy = (stats.correct / total) * 100;
+    if (accuracy < value) {
+      return false;
     }
   }
 
-  return entries.length > 0;
+  return true;
 }
 
 /**
@@ -1778,8 +1812,12 @@ function checkRequirement(
       if (gameMode === 'blitz') {
         const blitzStats = allTimeStats.blitzStats;
         if (!blitzStats) return false;
-        // Blitz accuracy would need to be tracked separately
-        // For now, use overall accuracy
+        const blitzTotalAnswers = blitzStats.totalAnswers ?? 0;
+        const blitzAccuracy =
+          blitzTotalAnswers > 0
+            ? (blitzStats.totalCorrect / blitzTotalAnswers) * 100
+            : 0;
+        return blitzTotalAnswers >= minAnswers && blitzAccuracy >= value;
       }
 
       const totalAnswers =
@@ -1926,7 +1964,6 @@ const useAchievementStore = create<AchievementState>()(
       },
 
       checkAchievements: (stats: unknown, sessionStats?: SessionStats) => {
-        const state = get();
         const newlyUnlocked: Achievement[] = [];
 
         // Type guard for stats object
@@ -1936,12 +1973,13 @@ const useAchievementStore = create<AchievementState>()(
         const allTimeStats = typedStats.allTimeStats;
 
         ACHIEVEMENTS.forEach(achievement => {
-          if (state.unlockedAchievements[achievement.id]) return;
+          const currentState = get();
+          if (currentState.unlockedAchievements[achievement.id]) return;
 
           const isUnlocked = checkRequirement(
             achievement,
             allTimeStats,
-            state,
+            currentState,
             sessionStats,
           );
 
@@ -1990,3 +2028,4 @@ const useAchievementStore = create<AchievementState>()(
 );
 
 export default useAchievementStore;
+

@@ -116,7 +116,7 @@
     "english": "I'm going to stop being human, JoJo!",
     "anime": "JoJo's Bizarre Adventure: Phantom Blood",
     "character": "Dio Brando",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -126,7 +126,7 @@
     "english": "I'm on a different level today!",
     "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
     "character": "Okuyasu Nijimura",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -136,7 +136,7 @@
     "english": "I will transcend humanity!",
     "anime": "JoJo's Bizarre Adventure: Battle Tendency",
     "character": "Kars",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

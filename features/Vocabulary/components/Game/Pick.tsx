@@ -9,7 +9,6 @@ import { buttonBorderStyles } from '@/shared/lib/styles';
 // import GameIntel from '@/shared/components/Game/GameIntel';
 import { pickGameKeyMappings } from '@/shared/lib/keyMappings';
 import { useStopwatch } from 'react-timer-hook';
-import useStats from '@/shared/hooks/useStats';
 import { useStatsStore } from '@/features/Progress';
 import { useShallow } from 'zustand/react/shallow';
 import Stars from '@/shared/components/Game/Stars';
@@ -120,6 +119,11 @@ const VocabPickGame = ({ selectedWordObjs, isHidden }: VocabPickGameProps) => {
     recordAnswerTime,
     incrementWrongStreak,
     resetWrongStreak,
+    incrementCorrectAnswers,
+    incrementWrongAnswers,
+    addCharacterToHistory,
+    addCorrectAnswerTime,
+    incrementCharacterScore,
   } = useStatsStore(
     useShallow(state => ({
       score: state.score,
@@ -128,18 +132,15 @@ const VocabPickGame = ({ selectedWordObjs, isHidden }: VocabPickGameProps) => {
       recordAnswerTime: state.recordAnswerTime,
       incrementWrongStreak: state.incrementWrongStreak,
       resetWrongStreak: state.resetWrongStreak,
+      incrementCorrectAnswers: state.incrementCorrectAnswers,
+      incrementWrongAnswers: state.incrementWrongAnswers,
+      addCharacterToHistory: state.addCharacterToHistory,
+      addCorrectAnswerTime: state.addCorrectAnswerTime,
+      incrementCharacterScore: state.incrementCharacterScore,
     })),
   );
 
   const speedStopwatch = useStopwatch({ autoStart: false });
-
-  const {
-    incrementCorrectAnswers,
-    incrementWrongAnswers,
-    addCharacterToHistory,
-    addCorrectAnswerTime,
-    incrementCharacterScore,
-  } = useStats();
 
   const { playCorrect } = useCorrect();
   const { playErrorTwice } = useError();

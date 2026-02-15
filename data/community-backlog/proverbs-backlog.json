@@ -113,7 +113,7 @@
     "romaji": "Ame futte ji katamaru",
     "english": "After rain, the ground hardens",
     "meaning": "Adversity builds strength",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -123,7 +123,7 @@
     "english": "Hearing a hundred times is not as good as seeing once",
     "meaning": "Seeing is believing",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 15,
@@ -132,7 +132,7 @@
     "english": "Three people together have the wisdom of Monju",
     "meaning": "Two heads are better than one",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 16,

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import type { CSSProperties } from 'react';
 import useVisitStore from '../store/useVisitStore';
 import StreakStats from './StreakStats';
 import StreakGrid from './StreakGrid';
@@ -14,6 +15,8 @@ import {
   LucideIcon,
 } from 'lucide-react';
 import { cn } from '@/shared/lib/utils';
+
+const STREAK_TABS_HALO_GAP = 8;
 
 const periodOptions: { value: TimePeriod; label: string; icon: LucideIcon }[] =
   [
@@ -53,42 +56,62 @@ export default function StreakProgress() {
 
       {/* Period Selector */}
       <div className='flex justify-center'>
-        <div className='inline-flex gap-1 rounded-[22px] border border-(--border-color) bg-(--card-color) p-1.5'>
-          {periodOptions.map(option => {
-            const isSelected = period === option.value;
-            const Icon = option.icon;
-            return (
-              <div key={option.value} className='relative'>
-                {/* Smooth sliding background indicator */}
-                {isSelected && (
-                  <motion.div
-                    layoutId='activePeriodTab'
-                    className='absolute inset-0 rounded-2xl border-b-10 border-(--main-color-accent) bg-(--main-color)'
-                    transition={{
-                      type: 'spring',
-                      stiffness: 300,
-                      damping: 30,
-                    }}
-                  />
-                )}
-                <button
-                  onClick={() => {
-                    setPeriod(option.value);
-                    playClick();
-                  }}
-                  className={cn(
-                    'relative z-10 flex cursor-pointer items-center gap-2 rounded-2xl px-5 pt-3 pb-5 text-sm font-semibold transition-colors duration-300',
-                    isSelected
-                      ? 'text-(--background-color)'
-                      : 'text-(--secondary-color) hover:text-(--main-color)',
+        <div
+          className={cn(
+            'rounded-(--streak-tabs-outer-radius) p-(--streak-tabs-halo-gap)',
+          )}
+          style={
+            {
+              '--streak-tabs-halo-gap': `${STREAK_TABS_HALO_GAP}px`,
+              '--streak-tabs-outer-radius':
+                'calc(var(--radius-2xl) + var(--streak-tabs-halo-gap))',
+              '--streak-tabs-shared-radius':
+                'calc(var(--streak-tabs-outer-radius) - var(--streak-tabs-halo-gap))',
+            } as CSSProperties
+          }
+        >
+          <div
+            className={cn(
+              'inline-flex gap-0 overflow-hidden rounded-(--streak-tabs-shared-radius)',
+              'bg-(--card-color) p-0',
+            )}
+          >
+            {periodOptions.map(option => {
+              const isSelected = period === option.value;
+              const Icon = option.icon;
+              return (
+                <div key={option.value} className='relative'>
+                  {/* Smooth sliding background indicator */}
+                  {isSelected && (
+                    <motion.div
+                      layoutId='activePeriodTab'
+                      className='absolute inset-0 rounded-(--streak-tabs-shared-radius) border-b-10 border-(--main-color-accent) bg-(--main-color)'
+                      transition={{
+                        type: 'spring',
+                        stiffness: 300,
+                        damping: 30,
+                      }}
+                    />
                   )}
-                >
-                  <Icon className='h-4 w-4' />
-                  <span>{option.label}</span>
-                </button>
-              </div>
-            );
-          })}
+                  <button
+                    onClick={() => {
+                      setPeriod(option.value);
+                      playClick();
+                    }}
+                    className={cn(
+                      'relative z-10 flex cursor-pointer items-center gap-2 rounded-(--streak-tabs-shared-radius) px-5 pt-3 pb-5 text-sm font-semibold transition-colors duration-300',
+                      isSelected
+                        ? 'text-(--background-color)'
+                        : 'text-(--secondary-color) hover:text-(--main-color)',
+                    )}
+                  >
+                    <Icon className='h-4 w-4' />
+                    <span>{option.label}</span>
+                  </button>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
 
@@ -96,7 +119,7 @@ export default function StreakProgress() {
       <StreakGrid visits={visits} period={period} />
 
       {/* Instructions */}
-      <div className='rounded-2xl border border-(--border-color) bg-(--card-color) p-4'>
+      <div className='rounded-2xl bg-(--card-color) p-4'>
         <h3 className='pb-2 font-semibold text-(--main-color)'>
           How Streak Tracking Works
         </h3>

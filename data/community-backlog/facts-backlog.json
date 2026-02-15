@@ -74,19 +74,19 @@
   {
     "id": 13,
     "fact": "Japanese police use giant futon-like blankets called 'sasumata' to safely pin suspects against walls, a technique dating back to the Edo period.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 14,
     "fact": "There's a Japanese concept called 'kaizen' (æ”¹å–„) meaning continuous improvement, which became a cornerstone of global manufacturing practices.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 15,
     "fact": "The Japanese word 'shoganai' (ã—ã‚‡ã†ãŒãªã„) expresses accepting what cannot be changed - a cultural philosophy of graceful resignation.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

@@ -5,7 +5,7 @@ import { Random } from 'random-js';
 const random = new Random();
 
 interface SmartReverseModeOptions {
-  /** Probability of reverse mode (default: 0.45 = 45%) */
+  /** Probability of reverse mode (default: 0.40 = 40%) */
   reverseProbability?: number;
   /** Force mode switch after N consecutive exercises of the same type (default: 3) */
   forceSwitchAfter?: number;
@@ -15,14 +15,14 @@ interface SmartReverseModeOptions {
  * Algorithm to decide when to use reverse mode in pick games.
  * Uses a flat probability with bidirectional force switch to prevent long streaks.
  *
- * - Base probability: 55% normal mode, 45% reverse mode
+ * - Base probability: 60% normal mode, 40% reverse mode
  * - Forces a mode switch after 3 consecutive exercises of the same type
  * - This works bidirectionally (3 normal → force reverse, 3 reverse → force normal)
  * - Call recordWrongAnswer() on wrong answers to reset streak without changing mode
  * - Call decideNextMode() only on correct answers to advance to next question
  */
 export const useSmartReverseMode = (options: SmartReverseModeOptions = {}) => {
-  const { reverseProbability = 0.45, forceSwitchAfter = 3 } = options;
+  const { reverseProbability = 0.4, forceSwitchAfter = 3 } = options;
 
   const [consecutiveSameMode, setConsecutiveSameMode] = useState(0);
   const [isReverse, setIsReverse] = useState(false);

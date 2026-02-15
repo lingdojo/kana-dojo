@@ -10,13 +10,20 @@ import { useShallow } from 'zustand/react/shallow';
 import Stats from '@/shared/components/Game/Stats';
 
 const Game = () => {
-  const { showStats, resetStats, recordDojoUsed, recordModeUsed } =
+  const {
+    showStats,
+    resetStats,
+    recordDojoUsed,
+    recordModeUsed,
+    recordChallengeModeUsed,
+  } =
     useStatsStore(
       useShallow(state => ({
         showStats: state.showStats,
         resetStats: state.resetStats,
         recordDojoUsed: state.recordDojoUsed,
         recordModeUsed: state.recordModeUsed,
+        recordChallengeModeUsed: state.recordChallengeModeUsed,
       })),
     );
   const gameMode = useKanaStore(state => state.selectedGameModeKana);
@@ -26,6 +33,7 @@ const Game = () => {
     // Track dojo and mode usage for achievements (Requirements 8.1-8.3)
     recordDojoUsed('kana');
     recordModeUsed(gameMode.toLowerCase());
+    recordChallengeModeUsed('classic');
   }, []);
 
   return (

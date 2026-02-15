@@ -79,6 +79,8 @@ const Return = ({ isHidden, href, gameMode }: ReturnProps) => {
 
   const handleExit = () => {
     playClick();
+    totalTimeStopwatch.pause();
+    setNewTotalMilliseconds(totalTimeStopwatch.totalMilliseconds);
     saveSession();
   };
 
