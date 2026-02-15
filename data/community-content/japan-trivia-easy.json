@@ -2,45 +2,25 @@
   {
     "question": "Which month is traditionally associated with cherry blossom viewing (hanami) in Japan?",
     "difficulty": "easy",
-    "answers": [
-      "January",
-      "April",
-      "July",
-      "October"
-    ],
+    "answers": ["January", "April", "July", "October"],
     "correctIndex": 1
   },
   {
     "question": "Which Japanese city is known for the historic Gion district?",
     "difficulty": "easy",
-    "answers": [
-      "Kyoto",
-      "Osaka",
-      "Sendai",
-      "Saitama"
-    ],
+    "answers": ["Kyoto", "Osaka", "Sendai", "Saitama"],
     "correctIndex": 0
   },
   {
     "question": "What is Japan's high-speed rail network called?",
     "difficulty": "easy",
-    "answers": [
-      "Shinkansen",
-      "Maglev",
-      "JR Loop",
-      "Tsubasa"
-    ],
+    "answers": ["Shinkansen", "Maglev", "JR Loop", "Tsubasa"],
     "correctIndex": 0
   },
   {
     "question": "Which Japanese festival celebrates the return of ancestral spirits in summer?",
     "difficulty": "easy",
-    "answers": [
-      "Obon",
-      "Tanabata",
-      "Setsubun",
-      "Seijin Shiki"
-    ],
+    "answers": ["Obon", "Tanabata", "Setsubun", "Seijin Shiki"],
     "correctIndex": 0
   },
   {
@@ -74,159 +54,96 @@
   {
     "question": "Which Japanese dish consists of skewered grilled chicken?",
     "difficulty": "easy",
-    "answers": [
-      "Yakitori",
-      "Sukiyaki",
-      "Tonkatsu",
-      "Oden"
-    ],
+    "answers": ["Yakitori", "Sukiyaki", "Tonkatsu", "Oden"],
     "correctIndex": 0
   },
   {
     "question": "What is the main ingredient in miso?",
     "difficulty": "easy",
-    "answers": [
-      "Fermented soybeans",
-      "Rice flour",
-      "Buckwheat",
-      "Seaweed"
-    ],
+    "answers": ["Fermented soybeans", "Rice flour", "Buckwheat", "Seaweed"],
     "correctIndex": 0
   },
   {
     "question": "Which city is famous for the Peace Memorial Park?",
     "difficulty": "easy",
-    "answers": [
-      "Hiroshima",
-      "Osaka",
-      "Tokyo",
-      "Fukuoka"
-    ],
+    "answers": ["Hiroshima", "Osaka", "Tokyo", "Fukuoka"],
     "correctIndex": 0
   },
   {
     "question": "Which city is known for its snow festival and ice sculptures?",
     "difficulty": "easy",
-    "answers": [
-      "Sapporo",
-      "Aomori",
-      "Toyama",
-      "Nagano"
-    ],
+    "answers": ["Sapporo", "Aomori", "Toyama", "Nagano"],
     "correctIndex": 0
   },
   {
     "question": "What is Japan’s currency called?",
     "difficulty": "easy",
-    "answers": [
-      "Yen",
-      "Won",
-      "Yuan",
-      "Ringgit"
-    ],
+    "answers": ["Yen", "Won", "Yuan", "Ringgit"],
     "correctIndex": 0
   },
   {
     "question": "Which animal is famously associated with Inari shrines in Japan?",
     "difficulty": "easy",
-    "answers": [
-      "Fox",
-      "Crane",
-      "Turtle",
-      "Deer"
-    ],
+    "answers": ["Fox", "Crane", "Turtle", "Deer"],
     "correctIndex": 0
   },
   {
     "question": "Which Japanese dish is made of raw fish over rice?",
     "difficulty": "easy",
-    "answers": [
-      "Sushi",
-      "Tempura",
-      "Tonkatsu",
-      "Okonomiyaki"
-    ],
+    "answers": ["Sushi", "Tempura", "Tonkatsu", "Okonomiyaki"],
     "correctIndex": 0
   },
   {
     "question": "Which mountain is Japan's highest peak?",
     "difficulty": "easy",
-    "answers": [
-      "Mount Fuji",
-      "Mount Kita",
-      "Mount Tate",
-      "Mount Haku"
-    ],
+    "answers": ["Mount Fuji", "Mount Kita", "Mount Tate", "Mount Haku"],
     "correctIndex": 0
   },
   {
     "question": "Which city is known for its snow festival and ice sculptures?",
     "difficulty": "easy",
-    "answers": [
-      "Sapporo",
-      "Aomori",
-      "Toyama",
-      "Nagano"
-    ],
+    "answers": ["Sapporo", "Aomori", "Toyama", "Nagano"],
     "correctIndex": 0
   },
   {
     "question": "Which Japanese food is a savory pancake cooked on a griddle?",
     "difficulty": "easy",
-    "answers": [
-      "Okonomiyaki",
-      "Tempura",
-      "Yakitori",
-      "Sashimi"
-    ],
+    "answers": ["Okonomiyaki", "Tempura", "Yakitori", "Sashimi"],
     "correctIndex": 0
   },
   {
     "question": "Which Japanese city is famous for the floating torii gate at Itsukushima Shrine?",
     "difficulty": "easy",
-    "answers": [
-      "Kyoto",
-      "Hiroshima",
-      "Nagasaki",
-      "Kanazawa"
-    ],
+    "answers": ["Kyoto", "Hiroshima", "Nagasaki", "Kanazawa"],
     "correctIndex": 1
   },
   {
-  "question": "Which city is known for its beef brand Kobe?",
-  "difficulty": "easy",
-  "answers": [
-    "Kobe",
-    "Nagoya",
-    "Kanazawa",
-    "Hiroshima"
-  ],
-  "correctIndex": 0
+    "question": "Which city is known for its beef brand Kobe?",
+    "difficulty": "easy",
+    "answers": ["Kobe", "Nagoya", "Kanazawa", "Hiroshima"],
+    "correctIndex": 0
   },
   {
-  "question": "Which of these is a Japanese noodle dish served in broth?",
-  "difficulty": "easy",
-  "answers": [
-    "Ramen",
-    "Takoyaki",
-    "Gyoza",
-    "Yakitori"
-  ],
-  "correctIndex": 0
+    "question": "Which of these is a Japanese noodle dish served in broth?",
+    "difficulty": "easy",
+    "answers": ["Ramen", "Takoyaki", "Gyoza", "Yakitori"],
+    "correctIndex": 0
   },
   {
-  "question": "What is the Japanese term for a shrine gate?",
-  "difficulty": "easy",
-  "answers": [
-    "Torii",
-    "Tori",
-    "Toriya",
-    "Torin"
-  ],
-  "correctIndex": 0
-}
-]
-=======
+    "question": "What is the Japanese term for a shrine gate?",
+    "difficulty": "easy",
+    "answers": ["Torii", "Tori", "Toriya", "Torin"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which city is known for its large bronze Great Buddha?",
+    "difficulty": "easy",
+    "answers": ["Kamakura", "Kobe", "Kanazawa", "Matsuyama"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which Japanese dish consists of skewered grilled chicken?",
+    "difficulty": "easy",
     "answers": ["Yakitori", "Sukiyaki", "Tonkatsu", "Oden"],
     "correctIndex": 0
   },

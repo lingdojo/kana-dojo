@@ -273,7 +273,9 @@
     "mainColor": "oklch(60.0% 0.210 25.0 / 1)",
     "secondaryColor": "oklch(82.0% 0.145 85.0 / 1)",
     "issued": true,
-    "completed": false
+    "completed": true,
+    "completedBy": "kalinatringas",
+    "completedPR": 5027
   },
   {
     "id": "firefly-field",
@@ -326,8 +328,10 @@
     "backgroundColor": "oklch(15.0% 0.048 25.0 / 1)",
     "mainColor": "oklch(65.0% 0.225 30.0 / 1)",
     "secondaryColor": "oklch(90.0% 0.055 95.0 / 1)",
-    "issued": false,
-    "completed": false
+    "issued": true,
+    "completed": true,
+    "completedBy": "hewiga",
+    "completedPR": 5023
   },
   {
     "id": "rice-field-gold",
@@ -337,7 +341,7 @@
     "mainColor": "oklch(85.0% 0.155 90.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.120 95.0 / 1)",
     "issued": false,
-    "completed": false,
+    "completed": true,
     "completedBy": "Cima9642",
     "completedPR": 4794
   },
@@ -348,7 +352,7 @@
     "backgroundColor": "oklch(14.0% 0.025 280.0 / 1)",
     "mainColor": "oklch(72.0% 0.200 145.0 / 1)",
     "secondaryColor": "oklch(80.0% 0.185 55.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -733,7 +737,9 @@
     "mainColor": "oklch(80.0% 0.175 55.0 / 1)",
     "secondaryColor": "oklch(72.0% 0.195 20.0 / 1)",
     "issued": false,
-    "completed": false
+    "completed": true,
+    "completedBy": "Godson-Ozioma",
+    "completedPR": 5013
   },
   {
     "id": "frozen-lake",
@@ -743,7 +749,9 @@
     "mainColor": "oklch(90.0% 0.075 225.0 / 1)",
     "secondaryColor": "oklch(80.0% 0.055 235.0 / 1)",
     "issued": false,
-    "completed": false
+    "completed": true,
+    "completedBy": "Godson-Ozioma",
+    "completedPR": 5020
   },
   {
     "id": "sushi-counter",
@@ -753,7 +761,9 @@
     "mainColor": "oklch(70.0% 0.145 20.0 / 1)",
     "secondaryColor": "oklch(68.0% 0.095 75.0 / 1)",
     "issued": false,
-    "completed": false
+    "completed": true,
+    "completedBy": "Godson-Ozioma",
+    "completedPR": 5019
   },
   {
     "id": "holographic-idol",
@@ -803,7 +813,9 @@
     "mainColor": "oklch(58.0% 0.195 25.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.145 50.0 / 1)",
     "issued": false,
-    "completed": false
+    "completed": true,
+    "completedBy": "Godson-Ozioma",
+    "completedPR": 5018
   },
   {
     "id": "pagoda-twilight",
@@ -813,7 +825,9 @@
     "mainColor": "oklch(68.0% 0.155 315.0 / 1)",
     "secondaryColor": "oklch(75.0% 0.125 280.0 / 1)",
     "issued": false,
-    "completed": false
+    "completed": true,
+    "completedBy": "Godson-Ozioma",
+    "completedPR": 5017
   },
   {
     "id": "lucky-bamboo",
