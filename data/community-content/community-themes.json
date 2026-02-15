@@ -322,5 +322,11 @@
     "backgroundColor": "oklch(19.0% 0.058 290.0 / 1)",
     "mainColor": "oklch(70.0% 0.165 295.0 / 1)",
     "secondaryColor": "oklch(80.0% 0.125 285.0 / 1)"
+  },
+  {
+  id: 'wisteria-dream',
+  backgroundColor: 'oklch(20.0% 0.048 290.0 / 1)',
+  mainColor: 'oklch(72.0% 0.175 295.0 / 1)',
+  secondaryColor: 'oklch(80.0% 0.125 320.0 / 1)'
   }
 ]
