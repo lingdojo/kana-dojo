@@ -340,6 +340,8 @@
     "backgroundColor": "oklch(21.0% 0.052 30.0 / 1)",
     "mainColor": "oklch(72.0% 0.200 35.0 / 1)",
     "secondaryColor": "oklch(80.0% 0.165 60.0 / 1)"
+  },
+  {
     "id": "okinawa-sea",
     "backgroundColor": "oklch(23.0% 0.055 215.0 / 1)",
     "mainColor": "oklch(82.0% 0.165 195.0 / 1)",
@@ -350,5 +352,11 @@
     "backgroundColor": "oklch(16.0% 0.038 150.0 / 1)",
     "mainColor": "oklch(88.0% 0.175 110.0 / 1)",
     "secondaryColor": "oklch(65.0% 0.125 145.0 / 1)"
+  },
+  {
+    "id": "frozen-lake",
+    "backgroundColor": "oklch(24.0% 0.035 230.0 / 1)",
+    "mainColor": "oklch(90.0% 0.075 225.0 / 1)",
+    "secondaryColor": "oklch(80.0% 0.055 235.0 / 1)"
   }
 ]
