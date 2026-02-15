@@ -154,9 +154,9 @@
     "correctIndex": 0
   },
   {
-    "question": "What is the name of Japan's traditional tea ceremony?",
+    "question": "Which Japanese city is known for the famous bamboo grove?",
     "difficulty": "easy",
-    "answers": ["Chanoyu", "Sumo", "Kabuki", "Origami"],
+    "answers": ["Kyoto", "Tokyo", "Sapporo", "Fukuoka"],
     "correctIndex": 0
   }
 ]
