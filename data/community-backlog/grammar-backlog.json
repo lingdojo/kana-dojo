@@ -32,14 +32,14 @@
   {
     "id": 6,
     "text": "\"ã€œãªãŒã‚‰\" connects actions to show two things happening at the same time.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 7,
     "text": "\"ã€œãŸã“ã¨ãŒã‚ã‚‹\" expresses past experience, like \"have done\" something before.",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 8,

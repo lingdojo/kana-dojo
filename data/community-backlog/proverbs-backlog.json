@@ -50,7 +50,7 @@
     "romaji": "Nou aru taka wa tsume wo kakusu",
     "english": "The talented hawk hides its talons",
     "meaning": "Truly skilled people don't show off their abilities",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -60,7 +60,7 @@
     "english": "Continuation is power",
     "meaning": "Persistence leads to strength and success",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 8,

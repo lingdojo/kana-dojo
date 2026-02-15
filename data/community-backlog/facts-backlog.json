@@ -32,13 +32,13 @@
   {
     "id": 6,
     "fact": "There are over 5.5 million vending machines in Japan - one for every 23 people - selling everything from hot ramen to fresh eggs to underwear.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 7,
     "fact": "Japan has a word 'tarento' (ã‚¿ãƒ¬ãƒ³ãƒˆ) for TV personalities who are famous simply for being on TV - not actors or musicians, just professional celebrities.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
