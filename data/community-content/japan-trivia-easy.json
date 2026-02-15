@@ -233,7 +233,7 @@
   {
     "question": "Which Japanese dish is made with buckwheat noodles?",
     "difficulty": "easy",
-    "answers": ["Soba", "Udon", "Ramen", "Somem"],
+    "answers": ["Soba", "Udon", "Ramen", "Somen"],
     "correctIndex": 0
   }
 ]
