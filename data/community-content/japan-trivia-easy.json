@@ -180,5 +180,16 @@
     "Kobe"
   ],
   "correctIndex": 0
+},
+{
+  "question": "What is the Japanese term for a traditional inn?",
+  "difficulty": "easy",
+  "answers": [
+    "Ryokan",
+    "Minshuku",
+    "Izakaya",
+    "Yatai"
+  ],
+  "correctIndex": 0
 }
 ]
