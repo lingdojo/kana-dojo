@@ -224,16 +224,22 @@
     "Torin"
   ],
   "correctIndex": 0
-}
-]
-=======
-    "answers": ["Yakitori", "Sukiyaki", "Tonkatsu", "Oden"],
-    "correctIndex": 0
-  },
+},
   {
     "question": "Which Japanese dish is made with buckwheat noodles?",
     "difficulty": "easy",
     "answers": ["Soba", "Udon", "Ramen", "Somen"],
     "correctIndex": 0
-  }
+  },
+  {
+  "question": "What is Japanâ€™s currency called?",
+  "difficulty": "easy",
+  "answers": [
+    "Yen",
+    "Won",
+    "Yuan",
+    "Ringgit"
+  ],
+  "correctIndex": 0
+}
 ]
