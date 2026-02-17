@@ -154,13 +154,6 @@
     "character": "Setsuna F. Seiei"
   },
   {
-    "japanese": "仲間を大切にしない奴はそれ以上のクズだ",
-    "romaji": "Nakama o taisetsu ni shinai yatsu wa sore ijou no kuzu da",
-    "english": "Those who don't take care of their comrades are worse than scum.",
-    "anime": "Naruto",
-    "character": "Kakashi Hatake"
-  },
-  {
     "japanese": "撃っていいのは撃たれる覚悟がある奴だけだ",
     "romaji": "Utte ii no wa uterareru kakugo ga aru yatsu dake da",
     "english": "Only those prepared to be shot should pull the trigger.",
@@ -187,20 +180,14 @@
     "english": "Running away can take courage too.",
     "anime": "Mob Psycho 100",
     "character": "Arataka Reigen"
-  },{
-  "japanese": "お前はもう死んでいる",
-  "romaji": "Omae wa mou shindeiru",
-  "english": "You're already dead.",
-  "anime": "Fist of the North Star",
-  "character": "Kenshiro"
-},
+  },
   {
-  "japanese": "ã�‚ã��ã‚‰ã‚�ã�Ÿã‚‰ã��ã�“ã�§è©¦å�ˆçµ‚äº†ã�§ã�™ã‚ˆâ€¦ï¼Ÿ",
-  "romaji": "Akirametara soko de shiai shuuryou desu yo...?",
-  "english": "If you give up, that's the end of the game.",
-  "anime": "Slam Dunk",
-  "character": "Kaede Rukawa"
-},
+    "japanese": "あきらめたらそこで試合終了ですよ…？",
+    "romaji": "Akirametara soko de shiai shuuryou desu yo...?",
+    "english": "If you give up, that's the end of the game.",
+    "anime": "Slam Dunk",
+    "character": "Kaede Rukawa"
+  },
   {
     "japanese": "この世界は残酷だ... そしてとても美しい",
     "romaji": "Kono sekai wa zankoku da... soshite totemo utsukushii",
@@ -214,5 +201,12 @@
     "english": "Ze ha ha ha!",
     "anime": "One Piece",
     "character": "Marshall D. Teach (Blackbeard)"
+  },
+  {
+    "japanese": "仲間を大切にしない奴はそれ以上のクズだ",
+    "romaji": "Nakama o taisetsu ni shinai yatsu wa sore ijou no kuzu da",
+    "english": "Those who don't take care of their comrades are worse than scum.",
+    "anime": "Naruto",
+    "character": "Kakashi Hatake"
   }
 ]
