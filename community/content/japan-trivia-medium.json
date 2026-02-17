@@ -165,15 +165,16 @@
     "answers": ["Rakugo", "Kabuki", "Noh", "Ikebana"],
     "correctIndex": 0
   },
-   {
+  {
     "question": "What ingredient is traditionally the main source of umami flavor in shoyu (Japanese soy sauce)?",
     "difficulty": "easy",
-    "answers": [
-      "Fermented Soybeans", 
-      "Salt", 
-      "Rice Vinegar", 
-      "Brown Sugar"
-    ],
+    "answers": ["Fermented Soybeans", "Salt", "Rice Vinegar", "Brown Sugar"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which city is known for the historic district of Higashiyama?",
+    "difficulty": "medium",
+    "answers": ["Kanazawa", "Kagoshima", "Nara", "Matsue"],
     "correctIndex": 0
   }
 ]

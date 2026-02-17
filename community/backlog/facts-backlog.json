@@ -381,12 +381,12 @@
     "id": 64,
     "fact": "Japanese blood donation has such high demand that mobile donation buses give out snacks, drinks, and lottery tickets as thanks.",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 65,
     "fact": "The word 'mottainai' (ã‚‚ã£ãŸã„ãªã„) expresses deep regret over waste - a concept that sparked modern recycling movements worldwide.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

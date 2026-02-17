@@ -334,7 +334,7 @@ jobs:
               validationType = 'trivia';
               console.log('Validating trivia contribution');
 
-              const triviaFilePattern = /^data\/community-content\/japan-trivia(?:-(easy|medium|hard))?\.json$/;
+              const triviaFilePattern = /^community\/content\/japan-trivia(?:-(easy|medium|hard))?\.json$/;
               const changed = reviewedFiles.map(function(f) { return f.filename; });
               const triviaChanged = changed.filter(function(p) { return triviaFilePattern.test(p); });
               const invalidFiles = changed.filter(function(p) { return !triviaFilePattern.test(p); });
