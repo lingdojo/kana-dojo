@@ -906,7 +906,7 @@
       "Sencha"
     ],
     "correctIndex": 0,
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -920,7 +920,7 @@
       "Kanda Matsuri"
     ],
     "correctIndex": 0,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

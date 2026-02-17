@@ -677,7 +677,9 @@
     "mainColor": "oklch(62.0% 0.175 155.0 / 1)",
     "secondaryColor": "oklch(85.0% 0.095 95.0 / 1)",
     "issued": true,
-    "completed": false
+    "completed": true,
+    "completedBy": "lvntcnylmz",
+    "completedPR": 5156
   },
   {
     "id": "castle-gate",
