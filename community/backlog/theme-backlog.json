@@ -807,7 +807,9 @@
     "mainColor": "oklch(70.0% 0.175 225.0 / 1)",
     "secondaryColor": "oklch(75.0% 0.145 350.0 / 1)",
     "issued": true,
-    "completed": false
+    "completed": true,
+    "completedBy": "ankushchhabra02",
+    "completedPR": 5224
   },
   {
     "id": "kendo-strike",
