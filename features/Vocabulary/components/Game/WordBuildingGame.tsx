@@ -1,11 +1,6 @@
 'use client';
-import { useState, useEffect, useMemo, useCallback, useRef, memo } from 'react';
-import {
-  motion,
-  AnimatePresence,
-  type Variants,
-  type MotionStyle,
-} from 'framer-motion';
+import { useState, useEffect, useMemo, useCallback, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import clsx from 'clsx';
 import useVocabStore, {
   IVocabObj,
@@ -26,6 +21,12 @@ import { CircleCheck } from 'lucide-react';
 import SSRAudioButton from '@/shared/components/audio/SSRAudioButton';
 import { cn } from '@/shared/lib/utils';
 import { useThemePreferences } from '@/features/Preferences';
+import {
+  BottomBarState,
+  gameContentVariants,
+  useWordBuildingActionKey,
+} from '@/shared/components/Game/wordBuildingShared';
+import WordBuildingTilesGrid from '@/shared/components/Game/WordBuildingTilesGrid';
 
 const random = new Random();
 const adaptiveSelector = getGlobalAdaptiveSelector();
@@ -36,194 +37,6 @@ const containsKanji = (text: string): boolean => {
   return /[\u4E00-\u9FAF]/.test(text);
 };
 
-// Duolingo-like spring animation config
-const springConfig = {
-  type: 'spring' as const,
-  stiffness: 400,
-  damping: 30,
-  mass: 0.8,
-};
-
-// Premium entry animation variants for option tiles
-const tileContainerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.08,
-      delayChildren: 0.15,
-    },
-  },
-};
-
-const tileEntryVariants = {
-  hidden: {
-    opacity: 0,
-    scale: 0.7,
-    y: 20,
-    rotateX: -15,
-  },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    y: 0,
-    rotateX: 0,
-    transition: {
-      type: 'spring' as const,
-      stiffness: 350,
-      damping: 25,
-      mass: 0.8,
-    },
-  },
-};
-
-// Duolingo-like slide animation for game content transitions
-const gameContentVariants = {
-  hidden: {
-    opacity: 0,
-    x: 80,
-  },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      x: {
-        type: 'spring' as const,
-        stiffness: 350,
-        damping: 30,
-        mass: 0.7,
-      },
-      opacity: {
-        duration: 0.25,
-        ease: [0.0, 0.0, 0.2, 1] as [number, number, number, number],
-      },
-    },
-  },
-  exit: {
-    opacity: 0,
-    x: -80,
-    transition: {
-      x: {
-        type: 'spring' as const,
-        stiffness: 350,
-        damping: 30,
-        mass: 0.7,
-      },
-      opacity: {
-        duration: 0.25,
-        ease: [0.4, 0.0, 1, 1] as [number, number, number, number],
-      },
-    },
-  },
-};
-
-// Celebration bounce animation for correct answers - Duolingo-style sequential jump
-const celebrationContainerVariants = {
-  idle: {},
-  celebrate: {
-    transition: {
-      staggerChildren: 0.18,
-      delayChildren: 0.08,
-    },
-  },
-};
-
-const celebrationBounceVariants = {
-  idle: {
-    y: 0,
-    scaleX: 1,
-    scaleY: 1,
-    opacity: 1,
-  },
-  celebrate: {
-    y: [0, -32, -35, 0, -10, 0],
-    scaleX: [1, 0.94, 0.96, 1.06, 0.98, 1],
-    scaleY: [1, 1.08, 1.04, 0.92, 1.02, 1],
-    // Use keyframe array to prevent interpolation flicker on last/single tile
-    opacity: [1, 1, 1, 1, 1, 1],
-    transition: {
-      duration: 1,
-      ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
-      times: [0, 0.25, 0.35, 0.6, 0.8, 1],
-    },
-  },
-};
-
-// Tile styles shared between active and blank tiles
-const tileBaseStyles =
-  'relative flex items-center justify-center rounded-3xl px-6 sm:px-8 py-3 border-b-10 transition-all duration-150';
-
-interface TileProps {
-  id: string;
-  char: string;
-  onClick: () => void;
-  isDisabled?: boolean;
-  isJapanese?: boolean;
-  variants?: Variants;
-  motionStyle?: MotionStyle;
-}
-
-// Active tile - uses layoutId for smooth position animations
-const ActiveTile = memo(
-  ({
-    id,
-    char,
-    onClick,
-    isDisabled,
-    isJapanese,
-    variants,
-    motionStyle,
-  }: TileProps) => {
-    return (
-      <motion.button
-        layoutId={id}
-        layout='position'
-        type='button'
-        onClick={onClick}
-        disabled={isDisabled}
-        variants={variants}
-        className={clsx(
-          tileBaseStyles,
-          'cursor-pointer transition-colors',
-          'active:mb-[10px] active:translate-y-[10px] active:border-b-0',
-          'border-(--secondary-color-accent) bg-(--secondary-color) text-(--background-color)',
-          isDisabled && 'cursor-not-allowed opacity-50',
-          // Larger font for Japanese tiles, smaller for meaning tiles
-          isJapanese ? 'text-3xl sm:text-4xl' : 'text-xl sm:text-2xl',
-        )}
-        transition={springConfig}
-        lang={isJapanese ? 'ja' : undefined}
-        style={motionStyle}
-      >
-        {char}
-      </motion.button>
-    );
-  },
-);
-
-ActiveTile.displayName = 'ActiveTile';
-
-// Blank placeholder - no layoutId, just takes up space
-const BlankTile = memo(
-  ({ char, isJapanese }: { char: string; isJapanese?: boolean }) => {
-    return (
-      <div
-        className={clsx(
-          tileBaseStyles,
-          'border-transparent bg-(--border-color)/30',
-          'select-none',
-          isJapanese ? 'text-3xl sm:text-4xl' : 'text-xl sm:text-2xl',
-        )}
-      >
-        <span className='opacity-0'>{char}</span>
-      </div>
-    );
-  },
-);
-
-BlankTile.displayName = 'BlankTile';
-
-// Bottom bar states
-type BottomBarState = 'check' | 'correct' | 'wrong';
 
 interface VocabWordBuildingGameProps {
   selectedWordObjs: IVocabObj[];
@@ -464,20 +277,7 @@ const VocabWordBuildingGame = ({
   }, [isHidden]);
 
   // Keyboard shortcut for Enter/Space to trigger button
-  useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (
-        event.key === 'Enter' ||
-        event.code === 'Space' ||
-        event.key === ' '
-      ) {
-        buttonRef.current?.click();
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, []);
+  useWordBuildingActionKey(buttonRef);
 
   // Handle Check button
   const handleCheck = useCallback(() => {
@@ -766,101 +566,34 @@ const VocabWordBuildingGame = ({
               </div>
             </div>
 
-            {/* Answer Row Area - shows placed tiles */}
-            <div className='flex w-full flex-col items-center'>
-              <div
-                className={clsx(
-                  'flex w-full items-center border-b-2 border-(--border-color) px-2 pb-2 md:w-3/4 lg:w-2/3 xl:w-1/2',
-                  // Use taller min-height when tiles are Japanese (reverse mode OR reading quiz)
-                  isReverse || questionData.quizType === 'reading'
-                    ? 'min-h-[5.5rem]'
-                    : 'min-h-[5rem]',
-                )}
-              >
-                <motion.div
-                  className='flex flex-row flex-wrap justify-start gap-3'
-                  variants={celebrationContainerVariants}
-                  initial='idle'
-                  animate={isCelebrating ? 'celebrate' : 'idle'}
-                >
-                  {/* Render placed tiles in the answer row */}
-                  {placedTiles.map(char => (
-                    <ActiveTile
-                      key={`answer-tile-${char}`}
-                      id={`tile-${char}`}
-                      char={char}
-                      onClick={() => handleTileClick(char)}
-                      isDisabled={isChecking && bottomBarState !== 'wrong'}
-                      isJapanese={
-                        isReverse || questionData.quizType === 'reading'
-                      }
-                      variants={celebrationBounceVariants}
-                      motionStyle={{ transformOrigin: '50% 100%' }}
-                    />
-                  ))}
-                </motion.div>
-              </div>
-            </div>
-
-            {/* Available Tiles - 2 rows */}
-            {(() => {
-              const tilesPerRow = 2;
-              const topRowTiles = questionData.allTiles.slice(0, tilesPerRow);
-              const bottomRowTiles = questionData.allTiles.slice(tilesPerRow);
-
-              const renderTile = (char: string) => {
-                const isPlaced = placedTiles.includes(char);
-                const isJapaneseTile =
-                  isReverse || questionData.quizType === 'reading';
-
-                return (
-                  <motion.div
-                    key={`tile-slot-${char}`}
-                    className='relative'
-                    variants={tileEntryVariants}
-                    style={{ perspective: 1000 }}
-                  >
-                    {/* Blank tile underneath */}
-                    <BlankTile char={char} isJapanese={isJapaneseTile} />
-
-                    {/* Active tile on top when NOT placed */}
-                    {!isPlaced && (
-                      <div className='absolute inset-0 z-10'>
-                        <ActiveTile
-                          id={`tile-${char}`}
-                          char={char}
-                          onClick={() => handleTileClick(char)}
-                          isDisabled={isChecking && bottomBarState !== 'wrong'}
-                          isJapanese={isJapaneseTile}
-                        />
-                      </div>
-                    )}
-                  </motion.div>
-                );
-              };
-
-              return (
-                <motion.div
-                  key={questionData.word}
-                  className={cn(
-                    'flex flex-col items-center gap-3 sm:gap-4',
-                    isGlassMode && 'rounded-xl bg-(--card-color) px-4 py-2',
-                  )}
-                  variants={tileContainerVariants}
-                  initial='hidden'
-                  animate='visible'
-                >
-                  <motion.div className='flex flex-row justify-center gap-3 sm:gap-4'>
-                    {topRowTiles.map(char => renderTile(char))}
-                  </motion.div>
-                  {bottomRowTiles.length > 0 && (
-                    <motion.div className='flex flex-row justify-center gap-3 sm:gap-4'>
-                      {bottomRowTiles.map(char => renderTile(char))}
-                    </motion.div>
-                  )}
-                </motion.div>
-              );
-            })()}
+            <WordBuildingTilesGrid
+              allTiles={questionData.allTiles}
+              placedTiles={placedTiles}
+              onTileClick={handleTileClick}
+              isTileDisabled={isChecking && bottomBarState !== 'wrong'}
+              isCelebrating={isCelebrating}
+              tilesPerRow={2}
+              tileSizeClassName={
+                isReverse || questionData.quizType === 'reading'
+                  ? 'text-3xl sm:text-4xl'
+                  : 'text-xl sm:text-2xl'
+              }
+              tileLang={
+                isReverse || questionData.quizType === 'reading'
+                  ? 'ja'
+                  : undefined
+              }
+              answerRowClassName={clsx(
+                'flex w-full items-center border-b-2 border-(--border-color) px-2 pb-2 md:w-3/4 lg:w-2/3 xl:w-1/2',
+                isReverse || questionData.quizType === 'reading'
+                  ? 'min-h-[5.5rem]'
+                  : 'min-h-[5rem]',
+              )}
+              tilesContainerClassName={
+                isGlassMode ? 'rounded-xl bg-(--card-color) px-4 py-2' : undefined
+              }
+              tilesWrapperKey={questionData.word}
+            />
           </motion.div>
         )}
       </AnimatePresence>

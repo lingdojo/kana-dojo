@@ -57,26 +57,32 @@ export default function OverviewStatsCard({
       }}
       className={cn(
         'group relative overflow-hidden rounded-3xl',
-        'bg-gradient-to-br from-(--card-color) to-(--card-color)',
-        'border border-(--border-color)/50',
+        'bg-linear-to-br from-(--card-color) to-(--card-color)',
         'cursor-pointer p-6',
         'transition-colors duration-300',
-        'hover:border-(--main-color)/30',
         className,
       )}
     >
       {/* Decorative geometric shape - top right corner */}
-      <div className='absolute -top-8 -right-8 h-24 w-24 rounded-full bg-gradient-to-br from-(--main-color)/8 to-(--secondary-color)/5 opacity-60 blur-2xl transition-opacity duration-300 group-hover:opacity-100' />
+      <div className='absolute -top-8 -right-8 h-24 w-24 rounded-full bg-linear-to-br from-(--main-color)/8 to-(--secondary-color)/5 opacity-60 blur-2xl transition-opacity duration-300 group-hover:opacity-100' />
 
       {/* Smooth gradient accent bar - position controlled by USE_TOP_BORDER */}
       <motion.div
         className={cn(
-          'absolute right-0 left-0 h-1.5 bg-gradient-to-r from-(--main-color) via-(--secondary-color) to-(--main-color)',
+          'absolute right-0 left-0 h-1.5 bg-linear-to-r from-(--main-color) via-(--secondary-color) to-(--main-color)',
           USE_TOP_BORDER ? 'top-0 rounded-t-3xl' : 'bottom-0 rounded-b-3xl',
         )}
         initial={{ opacity: 0, scaleX: 0 }}
         animate={{ opacity: 1, scaleX: 1 }}
         transition={{ duration: 0.8, delay: index * 0.08 + 0.3 }}
+      />
+
+      {/* Bottom gradient accent bar */}
+      <motion.div
+        className='absolute right-0 bottom-0 left-0 h-1.5 rounded-b-3xl bg-linear-to-r from-(--main-color) via-(--secondary-color) to-(--main-color)'
+        initial={{ opacity: 0, scaleX: 0 }}
+        animate={{ opacity: 1, scaleX: 1 }}
+        transition={{ duration: 0.8, delay: index * 0.08 + 0.35 }}
       />
 
       <div className='relative z-10 flex flex-col gap-4'>
@@ -85,12 +91,10 @@ export default function OverviewStatsCard({
           <div
             className={cn(
               'flex h-12 w-12 items-center justify-center rounded-2xl',
-              'bg-gradient-to-br from-(--main-color)/10 to-(--secondary-color)/5',
-              'border border-(--border-color)/30',
+              'bg-linear-to-br from-(--main-color)/10 to-(--secondary-color)/5',
               'text-(--main-color)',
               'transition-colors duration-300',
               'group-hover:from-(--main-color)/20 group-hover:to-(--secondary-color)/10',
-              'group-hover:border-(--main-color)/40',
             )}
           >
             {icon}

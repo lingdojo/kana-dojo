@@ -43,6 +43,41 @@ const calculateRegenThreshold = (totalQuestions: number): number => {
   return Math.max(5, Math.min(20, Math.ceil(totalQuestions * 0.1)));
 };
 
+const getQuestionItemId = <T,>(item: T): string => {
+  if (typeof item === 'object' && item !== null) {
+    const obj = item as Record<string, unknown>;
+    if ('kana' in obj) return String(obj.kana);
+    if ('kanjiChar' in obj) return String(obj.kanjiChar);
+    if ('word' in obj) return String(obj.word);
+    if ('id' in obj) return String(obj.id);
+  }
+  return String(item);
+};
+
+function stabilizeQueueNoImmediateRepeats<T>(
+  queue: GauntletQuestion<T>[],
+): GauntletQuestion<T>[] {
+  for (let i = 0; i < queue.length - 1; i++) {
+    const currentId = getQuestionItemId(queue[i].item);
+    const nextId = getQuestionItemId(queue[i + 1].item);
+    if (currentId !== nextId) continue;
+
+    let swapIndex = -1;
+    for (let j = i + 2; j < queue.length; j++) {
+      if (getQuestionItemId(queue[j].item) !== currentId) {
+        swapIndex = j;
+        break;
+      }
+    }
+
+    if (swapIndex !== -1) {
+      [queue[i + 1], queue[swapIndex]] = [queue[swapIndex], queue[i + 1]];
+    }
+  }
+
+  return queue;
+}
+
 /**
  * Generate a shuffled queue of all questions
  * Each character appears `repetitions` times in random order
@@ -69,6 +104,8 @@ function generateQuestionQueue<T>(
     const j = random.integer(0, i);
     [queue[i], queue[j]] = [queue[j], queue[i]];
   }
+
+  stabilizeQueueNoImmediateRepeats(queue);
 
   // Set indices after shuffle
   queue.forEach((q, i) => {
@@ -261,17 +298,44 @@ export default function Gauntlet<T>({ config, onCancel }: GauntletProps<T>) {
   }, [items, repetitions, difficulty, generateShuffledOptions, playClick]);
 
   // Get a unique identifier for the current question item
-  const getItemId = useCallback((item: T): string => {
-    // Try common patterns for getting an identifier
-    if (typeof item === 'object' && item !== null) {
-      const obj = item as Record<string, unknown>;
-      if ('kana' in obj) return String(obj.kana);
-      if ('kanjiChar' in obj) return String(obj.kanjiChar);
-      if ('word' in obj) return String(obj.word);
-      if ('id' in obj) return String(obj.id);
-    }
-    return String(item);
-  }, []);
+  const getItemId = useCallback(
+    (item: T): string => getQuestionItemId(item),
+    [],
+  );
+
+  const ensureNextQuestionIsDifferent = useCallback(
+    (
+      queue: GauntletQuestion<T>[],
+      answeredIndex: number,
+    ): GauntletQuestion<T>[] => {
+      const nextIndex = answeredIndex + 1;
+      if (nextIndex >= queue.length) return queue;
+
+      const currentId = getItemId(queue[answeredIndex].item);
+      const nextId = getItemId(queue[nextIndex].item);
+      if (currentId !== nextId) return queue;
+
+      const workingQueue = [...queue];
+      let swapIndex = -1;
+      for (let i = nextIndex + 1; i < workingQueue.length; i++) {
+        if (getItemId(workingQueue[i].item) !== currentId) {
+          swapIndex = i;
+          break;
+        }
+      }
+
+      if (swapIndex === -1) {
+        return queue;
+      }
+
+      [workingQueue[nextIndex], workingQueue[swapIndex]] = [
+        workingQueue[swapIndex],
+        workingQueue[nextIndex],
+      ];
+      return workingQueue;
+    },
+    [getItemId],
+  );
 
   // End game and calculate stats
   // Accepts actual values as parameters to avoid stale closure issues,
@@ -425,7 +489,14 @@ export default function Gauntlet<T>({ config, onCancel }: GauntletProps<T>) {
         }
         // Move to the next question in the queue and pre-generate options
         const nextIndex = currentIndex + 1;
-        const nextQuestion = questionQueue[nextIndex];
+        const stabilizedQueue = ensureNextQuestionIsDifferent(
+          questionQueue,
+          currentIndex,
+        );
+        if (stabilizedQueue !== questionQueue) {
+          setQuestionQueue(stabilizedQueue);
+        }
+        const nextQuestion = stabilizedQueue[nextIndex];
         if (nextQuestion) {
           generateShuffledOptions(nextQuestion.item);
         }
@@ -441,25 +512,27 @@ export default function Gauntlet<T>({ config, onCancel }: GauntletProps<T>) {
         // Compute the new queue eagerly so we can read the next question
         // and generate options synchronously (avoiding a stale-render gap).
         const prevQueue = questionQueue;
-        let newQueue: GauntletQuestion<T>[];
-        if (prevQueue.length >= maxQueueSize) {
-          newQueue = prevQueue;
-        } else {
-          newQueue = [...prevQueue];
+        const newQueue: GauntletQuestion<T>[] = [...prevQueue];
+        if (prevQueue.length < maxQueueSize) {
           const failedQuestion = { ...newQueue[currentIndex] };
           const remainingLength = newQueue.length - (currentIndex + 1);
+          const minOffset = remainingLength > 1 ? 2 : 1;
+          const maxOffset = Math.max(minOffset, Math.min(remainingLength, 5));
           const insertOffset =
-            remainingLength > 0
-              ? random.integer(1, Math.max(1, Math.min(remainingLength, 5)))
-              : 1;
+            remainingLength > 0 ? random.integer(minOffset, maxOffset) : 1;
           const insertPos = currentIndex + insertOffset;
           newQueue.splice(insertPos, 0, failedQuestion);
         }
-        setQuestionQueue(newQueue);
+
+        const stabilizedQueue = ensureNextQuestionIsDifferent(
+          newQueue,
+          currentIndex,
+        );
+        setQuestionQueue(stabilizedQueue);
 
         // Generate options for the next question synchronously
         const nextIndex = currentIndex + 1;
-        const nextQuestion = newQueue[nextIndex];
+        const nextQuestion = stabilizedQueue[nextIndex];
         if (nextQuestion) {
           generateShuffledOptions(nextQuestion.item);
         }
@@ -470,6 +543,7 @@ export default function Gauntlet<T>({ config, onCancel }: GauntletProps<T>) {
     [
       currentIndex,
       endGame,
+      ensureNextQuestionIsDifferent,
       totalQuestions,
       generateShuffledOptions,
       questionQueue,

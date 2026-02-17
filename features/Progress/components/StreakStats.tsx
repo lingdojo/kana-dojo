@@ -16,7 +16,7 @@ interface StatCardProps {
 
 function StatCard({ title, icon: Icon, value, description }: StatCardProps) {
   return (
-    <div className='rounded-2xl border border-(--border-color) bg-(--card-color) p-4'>
+    <div className='rounded-2xl bg-(--card-color) p-4'>
       <div className='flex flex-row items-center justify-between space-y-0 pb-2'>
         <h3 className='text-sm text-(--secondary-color)'>{title}</h3>
         <Icon className='h-4 w-4 text-(--main-color)' />

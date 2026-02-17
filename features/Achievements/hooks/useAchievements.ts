@@ -28,12 +28,7 @@ export const useAchievements = (): UseAchievementsReturn => {
   // Auto-check achievements when relevant stats change
   useEffect(() => {
     checkForNewAchievements();
-  }, [
-    stats.allTimeStats.totalCorrect,
-    stats.allTimeStats.bestStreak,
-    stats.allTimeStats.totalSessions,
-    checkForNewAchievements,
-  ]);
+  }, [stats.allTimeStats, checkForNewAchievements]);
 
   const unlockedCount = Object.keys(
     achievementStore.unlockedAchievements,

@@ -109,13 +109,13 @@ export default function MasteryDistributionChart({
       transition={{ duration: 0.5, delay: 0.3 }}
       className={cn(
         'group relative overflow-hidden rounded-3xl',
-        'border border-(--border-color)/50 bg-(--card-color)',
+        'bg-(--card-color)',
         'p-6',
         className,
       )}
     >
       {/* Decorative element */}
-      <div className='pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-gradient-to-tr from-(--secondary-color)/5 to-transparent' />
+      <div className='pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-linear-to-tr from-(--secondary-color)/5 to-transparent' />
 
       <div className='relative z-10 flex flex-col gap-6'>
         {/* Header */}
@@ -164,7 +164,7 @@ export default function MasteryDistributionChart({
                       percent > 0 && (
                         <motion.div
                           key={key}
-                          className='relative flex h-full items-center justify-center overflow-hidden bg-gradient-to-r from-(--secondary-color) to-(--main-color)'
+                          className='relative flex h-full items-center justify-center overflow-hidden bg-linear-to-r from-(--secondary-color) to-(--main-color)'
                           initial={{ width: 0 }}
                           animate={{ width: `${percent}%` }}
                           transition={{
@@ -179,7 +179,8 @@ export default function MasteryDistributionChart({
                               initial={{ opacity: 0 }}
                               animate={{ opacity: 1 }}
                               transition={{ delay: 0.8 + idx * 0.1 }}
-                              className='text-sm font-bold text-white/90'
+                              className='text-sm font-bold'
+                              style={{ color: 'var(--background-color)' }}
                             >
                               {percent.toFixed(0)}%
                             </motion.span>

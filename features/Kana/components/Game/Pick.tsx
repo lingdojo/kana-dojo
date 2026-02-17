@@ -115,6 +115,9 @@ const PickGame = ({ isHidden }: PickGameProps) => {
     minConsecutiveForTrigger: FORCE_WORD_BUILDING_MODE ? 0 : 3,
     baseProbability: FORCE_WORD_BUILDING_MODE ? 1.0 : 0.15,
     maxProbability: FORCE_WORD_BUILDING_MODE ? 1.0 : 0.4,
+    enableAdaptiveWordLength: true,
+    minWordLength: 1,
+    maxWordLength: 3,
   });
 
   // Override with forced mode for testing

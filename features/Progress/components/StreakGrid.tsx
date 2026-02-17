@@ -410,7 +410,7 @@ export default function StreakGrid({ visits, period }: StreakGridProps) {
   const days = getDaysInPeriod(period);
 
   return (
-    <div className='rounded-2xl border border-(--border-color) bg-(--card-color) p-5'>
+    <div className='rounded-2xl bg-(--card-color) p-5'>
       {period === 'week' && <WeekGrid visits={visits} days={days} />}
       {period === 'month' && <MonthGrid visits={visits} days={days} />}
       {period === 'year' && <YearGrid visits={visits} days={days} />}

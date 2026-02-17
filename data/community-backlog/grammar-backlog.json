@@ -1,512 +1,842 @@
 [
   {
     "id": 1,
-    "text": "Use \"〜です/〜ます\" for polite statements; it's the standard polite ending for everyday conversation.",
+    "text": "Use \"ã€œã§ã™/ã€œã¾ã™\" for polite statements; it's the standard polite ending for everyday conversation.",
     "issued": true,
     "completed": false
   },
   {
     "id": 2,
-    "text": "\"〜ません\" is the polite negative form of verbs, used to say something doesn't happen.",
+    "text": "\"ã€œã¾ã›ã‚“\" is the polite negative form of verbs, used to say something doesn't happen.",
     "issued": true,
     "completed": false
   },
   {
     "id": 3,
-    "text": "\"〜たい\" attaches to a verb stem to express \"want to do\" something.",
-    "completed": true,
-    "issued": false
+    "text": "\"ã€œãŸã„\" attaches to a verb stem to express \"want to do\" something.",
+    "completed": false,
+    "issued": true
   },
   {
     "id": 4,
-    "text": "\"〜てもいいです\" means \"it's okay to\" and grants permission.",
+    "text": "\"ã€œã¦ã‚‚ã„ã„ã§ã™\" means \"it's okay to\" and grants permission.",
     "issued": true,
     "completed": false
   },
   {
     "id": 5,
-    "text": "\"〜てはいけません\" means \"must not\" and is used for prohibitions.",
+    "text": "\"ã€œã¦ã¯ã„ã‘ã¾ã›ã‚“\" means \"must not\" and is used for prohibitions.",
     "issued": true,
     "completed": false
   },
   {
     "id": 6,
-    "text": "\"〜ながら\" connects actions to show two things happening at the same time.",
+    "text": "\"ã€œãªãŒã‚‰\" connects actions to show two things happening at the same time.",
     "issued": true,
     "completed": false
   },
   {
     "id": 7,
-    "text": "\"〜たことがある\" expresses past experience, like \"have done\" something before.",
-    "completed": true,
-    "issued": false
+    "text": "\"ã€œãŸã“ã¨ãŒã‚ã‚‹\" expresses past experience, like \"have done\" something before.",
+    "completed": false,
+    "issued": true
   },
   {
     "id": 8,
-    "text": "\"〜てしまう\" can show completion or regret about an action.",
+    "text": "\"ã€œã¦ã—ã¾ã†\" can show completion or regret about an action.",
     "issued": true,
     "completed": false
   },
   {
     "id": 9,
-    "text": "\"〜そうです\" can report hearsay (\"I heard that...\").",
-    "completed": true,
-    "issued": false
+    "text": "\"ã€œãã†ã§ã™\" can report hearsay (\"I heard that...\").",
+    "completed": false,
+    "issued": true
   },
   {
     "id": 10,
-    "text": "\"〜ようです\" means \"it seems like\" and is based on observation.",
-    "completed": true,
-    "issued": false
+    "text": "\"ã€œã‚ˆã†ã§ã™\" means \"it seems like\" and is based on observation.",
+    "completed": false,
+    "issued": true
   },
   {
     "id": 11,
-    "text": "\"〜でしょう\" adds probability or softens statements, like \"probably\".",
+    "text": "\"ã€œã§ã—ã‚‡ã†\" adds probability or softens statements, like \"probably\".",
     "issued": true,
     "completed": false
   },
   {
     "id": 12,
-    "text": "\"〜つもり\" expresses intent, like \"I plan to\" do something.",
-    "completed": true,
-    "issued": false
+    "text": "\"ã€œã¤ã‚‚ã‚Š\" expresses intent, like \"I plan to\" do something.",
+    "completed": false,
+    "issued": true
   },
   {
     "id": 13,
-    "text": "\"〜なければならない\" means \"must\" or \"have to\" do something.",
+    "text": "\"ã€œãªã‘ã‚Œã°ãªã‚‰ãªã„\" means \"must\" or \"have to\" do something.",
     "issued": true,
     "completed": false
   },
   {
     "id": 14,
-    "text": "\"〜なくてもいい\" means \"don't have to\" and lifts an obligation.",
+    "text": "\"ã€œãªãã¦ã‚‚ã„ã„\" means \"don't have to\" and lifts an obligation.",
     "issued": true,
     "completed": false
   },
   {
     "id": 15,
-    "text": "\"〜てくれる\" indicates someone does a favor for the speaker.",
+    "text": "\"ã€œã¦ãã‚Œã‚‹\" indicates someone does a favor for the speaker.",
     "issued": true,
     "completed": false
   },
   {
     "id": 16,
-    "text": "\"〜てもらう\" means \"receive a favor\" from someone.",
+    "text": "\"ã€œã¦ã‚‚ã‚‰ã†\" means \"receive a favor\" from someone.",
     "completed": false,
     "issued": true
   },
   {
     "id": 17,
-    "text": "\"〜てあげる\" shows the speaker does a favor for someone else.",
+    "text": "\"ã€œã¦ã‚ã’ã‚‹\" shows the speaker does a favor for someone else.",
     "completed": false,
     "issued": true
   },
   {
     "id": 18,
-    "text": "\"〜ようと思う\" expresses a decision made at the moment of speaking.",
+    "text": "\"ã€œã‚ˆã†ã¨æ€ã†\" expresses a decision made at the moment of speaking.",
     "completed": false,
     "issued": true
   },
   {
     "id": 19,
-    "text": "\"〜なら\" means \"if\" or \"in the case of\" and often gives advice.",
-    "completed": true,
-    "issued": false
+    "text": "\"ã€œãªã‚‰\" means \"if\" or \"in the case of\" and often gives advice.",
+    "completed": false,
+    "issued": true
   },
   {
     "id": 20,
-    "text": "\"〜たら\" is a conditional \"if/when\" that also expresses sequence.",
-    "completed": true,
-    "issued": false
+    "text": "\"ã€œãŸã‚‰\" is a conditional \"if/when\" that also expresses sequence.",
+    "completed": false,
+    "issued": true
   },
   {
     "id": 21,
-    "text": "\"〜ば\" forms a conditional meaning \"if\" in a general sense.",
-    "issued": false,
-    "completed": true
+    "text": "\"ã€œã°\" forms a conditional meaning \"if\" in a general sense.",
+    "issued": true,
+    "completed": false
   },
   {
     "id": 22,
-    "text": "\"〜ても\" means \"even if\" or \"even though\".",
+    "text": "\"ã€œã¦ã‚‚\" means \"even if\" or \"even though\".",
     "issued": true,
     "completed": false
   },
   {
     "id": 23,
-    "text": "\"〜のに\" expresses contrast or regret, similar to \"even though\".",
+    "text": "\"ã€œã®ã«\" expresses contrast or regret, similar to \"even though\".",
     "issued": true,
     "completed": false
   },
   {
     "id": 24,
-    "text": "\"〜ので\" gives a reason in a polite or softer way than \"から\".",
+    "text": "\"ã€œã®ã§\" gives a reason in a polite or softer way than \"ã‹ã‚‰\".",
     "issued": true,
     "completed": false
   },
   {
     "id": 25,
-    "text": "\"〜たところ\" can mean \"just did\" something and observed a result.",
+    "text": "\"ã€œãŸã¨ã“ã‚\" can mean \"just did\" something and observed a result.",
     "issued": true,
     "completed": false
   },
   {
     "id": 26,
-    "text": "\"〜まま\" means \"as is\" or \"unchanged\".",
-    "completed": true,
-    "issued": false
+    "text": "\"ã€œã¾ã¾\" means \"as is\" or \"unchanged\".",
+    "completed": false,
+    "issued": true
   },
   {
     "id": 27,
-    "text": "\"〜ばかり\" means \"just\" (in terms of time) or \"only\" depending on context.",
+    "text": "\"ã€œã°ã‹ã‚Š\" means \"just\" (in terms of time) or \"only\" depending on context.",
     "issued": true,
     "completed": false
   },
   {
     "id": 28,
-    "text": "\"〜すぎる\" attaches to verbs or adjectives to mean \"too much\".",
+    "text": "\"ã€œã™ãŽã‚‹\" attaches to verbs or adjectives to mean \"too much\".",
     "issued": true,
     "completed": false
   },
   {
     "id": 29,
-    "text": "\"〜らしい\" can mean \"seems\" or describe a typical characteristic.",
+    "text": "\"ã€œã‚‰ã—ã„\" can mean \"seems\" or describe a typical characteristic.",
     "issued": true,
     "completed": false
   },
   {
     "id": 30,
-    "text": "\"〜おう/〜よう\" is the volitional form, used to say \"let's\" or \"I will\".",
+    "text": "\"ã€œãŠã†/ã€œã‚ˆã†\" is the volitional form, used to say \"let's\" or \"I will\".",
     "issued": true,
     "completed": false
   },
   {
     "id": 31,
-    "text": "\"〜ところ\" refers to a point in time, like \"about to\", \"in the middle of\", or \"just finished\".",
-    "completed": true,
-    "issued": false
+    "text": "\"ã€œã¨ã“ã‚\" refers to a point in time, like \"about to\", \"in the middle of\", or \"just finished\".",
+    "completed": false,
+    "issued": true
   },
   {
     "id": 32,
-    "text": "\"〜たり〜たり\" lists representative actions, like \"do things like A and B\".",
+    "text": "\"ã€œãŸã‚Šã€œãŸã‚Š\" lists representative actions, like \"do things like A and B\".",
     "issued": true,
     "completed": false
   },
   {
     "id": 33,
-    "text": "\"〜ていく/〜てくる\" shows direction or change over time, like \"will start\" or \"have been\".",
-    "issued": false,
-    "completed": true
+    "text": "\"ã€œã¦ã„ã/ã€œã¦ãã‚‹\" shows direction or change over time, like \"will start\" or \"have been\".",
+    "issued": true,
+    "completed": false
   },
   {
     "id": 34,
-    "text": "\"〜ように\" can express purpose, like \"in order to\" or \"so that\".",
-    "completed": true,
-    "issued": false
+    "text": "\"ã€œã‚ˆã†ã«\" can express purpose, like \"in order to\" or \"so that\".",
+    "completed": false,
+    "issued": true
   },
   {
     "id": 35,
-    "text": "\"〜ために\" also means \"for the sake of\" and explains purpose or reason.",
-    "issued": true,
+    "text": "\"ã€œãŸã‚ã«\" also means \"for the sake of\" and explains purpose or reason.",
+    "issued": false,
     "completed": false
   },
   {
     "id": 36,
-    "text": "\"〜ことにする\" expresses a decision, like \"decide to\".",
-    "issued": true,
+    "text": "\"ã€œã“ã¨ã«ã™ã‚‹\" expresses a decision, like \"decide to\".",
+    "issued": false,
     "completed": false
   },
   {
     "id": 37,
-    "text": "\"〜ことになる\" indicates something was decided (by others or circumstances).",
-    "issued": true,
+    "text": "\"ã€œã“ã¨ã«ãªã‚‹\" indicates something was decided (by others or circumstances).",
+    "issued": false,
     "completed": false
   },
   {
     "id": 38,
-    "text": "\"〜に違いない\" means \"must be\" or \"no doubt\".",
-    "completed": true,
+    "text": "\"ã€œã«é•ã„ãªã„\" means \"must be\" or \"no doubt\".",
+    "completed": false,
     "issued": false
   },
   {
     "id": 39,
-    "text": "\"〜かもしれない\" means \"might be\" or \"maybe\".",
-    "issued": true,
+    "text": "\"ã€œã‹ã‚‚ã—ã‚Œãªã„\" means \"might be\" or \"maybe\".",
+    "issued": false,
     "completed": false
   },
   {
     "id": 40,
-    "text": "\"〜うちに\" means \"while\" or \"before\" something changes.",
-    "issued": true,
+    "text": "\"ã€œã†ã¡ã«\" means \"while\" or \"before\" something changes.",
+    "issued": false,
     "completed": false
   },
   {
     "id": 41,
-    "text": "\"〜ことができる\" expresses ability, like \"can do\".",
-    "issued": true,
+    "text": "\"ã€œã“ã¨ãŒã§ãã‚‹\" expresses ability, like \"can do\".",
+    "issued": false,
     "completed": false
   },
   {
     "id": 42,
-    "text": "\"〜ことがある\" means \"sometimes\" when talking about habitual actions.",
-    "completed": true,
+    "text": "\"ã€œã“ã¨ãŒã‚ã‚‹\" means \"sometimes\" when talking about habitual actions.",
+    "completed": false,
     "issued": false
   },
   {
     "id": 43,
-    "text": "\"〜にくい\" attaches to verb stems to mean \"hard to do\".",
-    "completed": true,
+    "text": "\"ã€œã«ãã„\" attaches to verb stems to mean \"hard to do\".",
+    "completed": false,
     "issued": false
   },
   {
     "id": 44,
-    "text": "\"〜やすい\" attaches to verb stems to mean \"easy to do\".",
+    "text": "\"ã€œã‚„ã™ã„\" attaches to verb stems to mean \"easy to do\".",
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "id": 45,
-    "text": "\"〜ておく\" means \"do in advance\" or \"leave as is\".",
-    "issued": true,
+    "text": "\"ã€œã¦ãŠã\" means \"do in advance\" or \"leave as is\".",
+    "issued": false,
     "completed": false
   },
   {
     "id": 46,
-    "text": "\"〜にする\" means \"decide on\" a choice or selection.",
-    "completed": true,
+    "text": "\"ã€œã«ã™ã‚‹\" means \"decide on\" a choice or selection.",
+    "completed": false,
     "issued": false
   },
   {
     "id": 47,
-    "text": "\"〜に決まっている\" means \"must be\" or \"definitely\".",
-    "issued": true,
+    "text": "\"ã€œã«æ±ºã¾ã£ã¦ã„ã‚‹\" means \"must be\" or \"definitely\".",
+    "issued": false,
     "completed": false
   },
   {
     "id": 48,
-    "text": "\"〜そうだ\" can indicate appearance, like \"it looks like\".",
-    "completed": true,
+    "text": "\"ã€œãã†ã \" can indicate appearance, like \"it looks like\".",
+    "completed": false,
     "issued": false
   },
   {
     "id": 49,
-    "text": "\"〜ながらも\" means \"even while\" or \"though\" (contrast).",
-    "issued": true,
+    "text": "\"ã€œãªãŒã‚‰ã‚‚\" means \"even while\" or \"though\" (contrast).",
+    "issued": false,
     "completed": false
   },
   {
     "id": 50,
-    "text": "\"〜わけではない\" means \"not necessarily\" or \"it's not that\".",
-    "issued": true,
+    "text": "\"ã€œã‚ã‘ã§ã¯ãªã„\" means \"not necessarily\" or \"it's not that\".",
+    "issued": false,
     "completed": false
   },
   {
     "id": 51,
-    "text": "\"〜というより\" means \"rather than\" or \"more like\".",
-    "completed": true,
+    "text": "\"ã€œã¨ã„ã†ã‚ˆã‚Š\" means \"rather than\" or \"more like\".",
+    "completed": false,
     "issued": false
   },
   {
     "id": 52,
-    "text": "\"〜おかげで\" expresses gratitude for a cause, \"thanks to\".",
-    "completed": true,
+    "text": "\"ã€œãŠã‹ã’ã§\" expresses gratitude for a cause, \"thanks to\".",
+    "completed": false,
     "issued": false
   },
   {
     "id": 53,
-    "text": "\"〜せいで\" indicates a negative cause, \"because of\".",
-    "issued": true,
+    "text": "\"ã€œã›ã„ã§\" indicates a negative cause, \"because of\".",
+    "issued": false,
     "completed": false
   },
   {
     "id": 54,
-    "text": "\"〜ほど\" can express degree, like \"so... that\".",
-    "issued": true,
+    "text": "\"ã€œã»ã©\" can express degree, like \"so... that\".",
+    "issued": false,
     "completed": false
   },
   {
     "id": 55,
-    "text": "\"〜ば〜ほど\" means \"the more... the more...\".",
-    "completed": true,
+    "text": "\"ã€œã°ã€œã»ã©\" means \"the more... the more...\".",
+    "completed": false,
     "issued": false
   },
   {
     "id": 56,
-    "text": "\"〜に違いない\" expresses strong conviction: \"must be\".",
-    "completed": true,
+    "text": "\"ã€œã«é•ã„ãªã„\" expresses strong conviction: \"must be\".",
+    "completed": false,
     "issued": false
   },
   {
     "id": 57,
-    "text": "\"〜わけがない\" means \"there is no way that...\".",
-    "completed": true,
+    "text": "\"ã€œã‚ã‘ãŒãªã„\" means \"there is no way that...\".",
+    "completed": false,
     "issued": false
   },
   {
     "id": 58,
-    "text": "\"〜ようにする\" means \"make an effort to...\".",
-    "issued": true,
+    "text": "\"ã€œã‚ˆã†ã«ã™ã‚‹\" means \"make an effort to...\".",
+    "issued": false,
     "completed": false
   },
   {
     "id": 59,
-    "text": "\"〜てしまう\" can express completion or regret (\"end up doing\").",
-    "issued": true,
+    "text": "\"ã€œã¦ã—ã¾ã†\" can express completion or regret (\"end up doing\").",
+    "issued": false,
     "completed": false
   },
   {
     "id": 60,
-    "text": "\"〜にしては\" means \"considering...\".",
-    "completed": true,
+    "text": "\"ã€œã«ã—ã¦ã¯\" means \"considering...\".",
+    "completed": false,
     "issued": false
   },
   {
     "id": 61,
-    "text": "\"〜にとって\" means \"for / to (someone)\".",
-    "completed": true,
+    "text": "\"ã€œã«ã¨ã£ã¦\" means \"for / to (someone)\".",
+    "completed": false,
     "issued": false
   },
   {
     "id": 62,
-    "text": "\"〜につれて\" means \"as... changes, ... also changes\".",
-    "completed": true,
+    "text": "\"ã€œã«ã¤ã‚Œã¦\" means \"as... changes, ... also changes\".",
+    "completed": false,
     "issued": false
   },
   {
     "id": 63,
-    "text": "\"〜に比べて\" means \"compared to...\".",
-    "issued": true,
+    "text": "\"ã€œã«æ¯”ã¹ã¦\" means \"compared to...\".",
+    "issued": false,
     "completed": false
   },
   {
     "id": 64,
-    "text": "\"〜によると\" means \"according to...\".",
-    "issued": true,
+    "text": "\"ã€œã«ã‚ˆã‚‹ã¨\" means \"according to...\".",
+    "issued": false,
     "completed": false
   },
   {
     "id": 65,
-    "text": "\"〜に応じて\" means \"depending on...\".",
-    "completed": true,
+    "text": "\"ã€œã«å¿œã˜ã¦\" means \"depending on...\".",
+    "completed": false,
     "issued": false
   },
   {
     "id": 66,
-    "text": "\"〜に加えて\" means \"in addition to...\".",
-    "issued": true,
+    "text": "\"ã€œã«åŠ ãˆã¦\" means \"in addition to...\".",
+    "issued": false,
     "completed": false
   },
   {
     "id": 67,
-    "text": "\"〜に向けて\" means \"toward / in preparation for\".",
-    "issued": true,
+    "text": "\"ã€œã«å‘ã‘ã¦\" means \"toward / in preparation for\".",
+    "issued": false,
     "completed": false
   },
   {
     "id": 68,
-    "text": "\"〜おそれがある\" means \"there is a risk that...\".",
-    "issued": true,
+    "text": "\"ã€œãŠãã‚ŒãŒã‚ã‚‹\" means \"there is a risk that...\".",
+    "issued": false,
     "completed": false
   },
   {
     "id": 69,
-    "text": "\"〜ものの\" means \"although...\" with contrast.",
-    "completed": true,
+    "text": "\"ã€œã‚‚ã®ã®\" means \"although...\" with contrast.",
+    "completed": false,
     "issued": false
   },
   {
     "id": 70,
-    "text": "\"〜まま\" means \"as-is / while remaining...\".",
-    "completed": true,
+    "text": "\"ã€œã¾ã¾\" means \"as-is / while remaining...\".",
+    "completed": false,
     "issued": false
   },
   {
     "id": 71,
-    "text": "\"〜わけにはいかない\" means \"cannot (due to circumstances)\".",
-    "issued": true,
+    "text": "\"ã€œã‚ã‘ã«ã¯ã„ã‹ãªã„\" means \"cannot (due to circumstances)\".",
+    "issued": false,
     "completed": false
   },
   {
     "id": 72,
-    "text": "\"〜て以来\" means \"since (doing)\".",
-    "completed": true,
+    "text": "\"ã€œã¦ä»¥æ¥\" means \"since (doing)\".",
+    "completed": false,
     "issued": false
   },
   {
     "id": 73,
-    "text": "\"〜たびに\" means \"every time...\".",
-    "issued": true,
+    "text": "\"ã€œãŸã³ã«\" means \"every time...\".",
+    "issued": false,
     "completed": false
   },
   {
     "id": 74,
-    "text": "\"〜ところ\" can mean \"just did / about to do / in the middle of\".",
-    "issued": true,
+    "text": "\"ã€œã¨ã“ã‚\" can mean \"just did / about to do / in the middle of\".",
+    "issued": false,
     "completed": false
   },
   {
     "id": 75,
-    "text": "\"〜ことにする\" means \"decide to...\".",
-    "completed": true,
+    "text": "\"ã€œã“ã¨ã«ã™ã‚‹\" means \"decide to...\".",
+    "completed": false,
     "issued": false
   },
   {
     "id": 76,
-    "text": "\"〜ことになっている\" means \"it is decided/arranged that...\".",
-    "completed": true,
+    "text": "\"ã€œã“ã¨ã«ãªã£ã¦ã„ã‚‹\" means \"it is decided/arranged that...\".",
+    "completed": false,
     "issued": false
   },
   {
     "id": 77,
-    "text": "\"〜わりに\" means \"despite / considering...\".",
-    "issued": true,
+    "text": "\"ã€œã‚ã‚Šã«\" means \"despite / considering...\".",
+    "issued": false,
     "completed": false
   },
   {
     "id": 78,
-    "text": "\"〜ながら\" can mean \"while\" (simultaneous action).",
-    "issued": true,
+    "text": "\"ã€œãªãŒã‚‰\" can mean \"while\" (simultaneous action).",
+    "issued": false,
     "completed": false
   },
   {
     "id": 79,
-    "text": "\"〜にすぎない\" means \"no more than...\".",
-    "completed": true,
+    "text": "\"ã€œã«ã™ãŽãªã„\" means \"no more than...\".",
+    "completed": false,
     "issued": false
   },
   {
     "id": 80,
-    "text": "\"〜てはじめて\" means \"only after...\".",
-    "issued": true,
+    "text": "\"ã€œã¦ã¯ã˜ã‚ã¦\" means \"only after...\".",
+    "issued": false,
     "completed": false
   },
   {
     "id": 81,
-    "text": "\"〜に気づく\" means \"to notice / realize...\".",
-    "issued": true,
+    "text": "\"ã€œã«æ°—ã¥ã\" means \"to notice / realize...\".",
+    "issued": false,
     "completed": false
   },
   {
     "id": 82,
-    "text": "\"〜ばかりか\" means \"not only... but also\".",
-    "issued": true,
+    "text": "\"ã€œã°ã‹ã‚Šã‹\" means \"not only... but also\".",
+    "issued": false,
     "completed": false
   },
   {
     "id": 83,
-    "text": "\"〜にしたがって\" means \"as / in accordance with...\".",
-    "completed": true,
+    "text": "\"ã€œã«ã—ãŸãŒã£ã¦\" means \"as / in accordance with...\".",
+    "completed": false,
     "issued": false
   },
   {
     "id": 84,
-    "text": "\"〜を通して\" means \"through / throughout...\".",
-    "completed": true,
+    "text": "\"ã€œã‚’é€šã—ã¦\" means \"through / throughout...\".",
+    "completed": false,
     "issued": false
   },
   {
     "id": 85,
-    "text": "\"〜に限って\" means \"only / exclusively\".",
+    "text": "\"ã€œã«é™ã£ã¦\" means \"only / exclusively\".",
     "issued": false,
-    "completed": true
+    "completed": false
+  },
+  {
+    "id": 86,
+    "text": "Use \"ã€œã§ã™/ã€œã¾ã™\" for polite statements; it's the standard polite ending for everyday conversation. (practice variation 1)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 87,
+    "text": "\"ã€œã¾ã›ã‚“\" is the polite negative form of verbs, used to say something doesn't happen. (practice variation 2)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 88,
+    "text": "\"ã€œãŸã„\" attaches to a verb stem to express \"want to do\" something. (practice variation 3)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 89,
+    "text": "\"ã€œã¦ã‚‚ã„ã„ã§ã™\" means \"it's okay to\" and grants permission. (practice variation 4)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 90,
+    "text": "\"ã€œã¦ã¯ã„ã‘ã¾ã›ã‚“\" means \"must not\" and is used for prohibitions. (practice variation 5)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 91,
+    "text": "\"ã€œãªãŒã‚‰\" connects actions to show two things happening at the same time. (practice variation 6)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 92,
+    "text": "\"ã€œãŸã“ã¨ãŒã‚ã‚‹\" expresses past experience, like \"have done\" something before. (practice variation 7)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 93,
+    "text": "\"ã€œã¦ã—ã¾ã†\" can show completion or regret about an action. (practice variation 8)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 94,
+    "text": "\"ã€œãã†ã§ã™\" can report hearsay (\"I heard that...\"). (practice variation 9)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 95,
+    "text": "\"ã€œã‚ˆã†ã§ã™\" means \"it seems like\" and is based on observation. (practice variation 10)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 96,
+    "text": "\"ã€œã§ã—ã‚‡ã†\" adds probability or softens statements, like \"probably\". (practice variation 11)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 97,
+    "text": "\"ã€œã¤ã‚‚ã‚Š\" expresses intent, like \"I plan to\" do something. (practice variation 12)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 98,
+    "text": "\"ã€œãªã‘ã‚Œã°ãªã‚‰ãªã„\" means \"must\" or \"have to\" do something. (practice variation 13)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 99,
+    "text": "\"ã€œãªãã¦ã‚‚ã„ã„\" means \"don't have to\" and lifts an obligation. (practice variation 14)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 100,
+    "text": "\"ã€œã¦ãã‚Œã‚‹\" indicates someone does a favor for the speaker. (practice variation 15)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 101,
+    "text": "\"ã€œã¦ã‚‚ã‚‰ã†\" means \"receive a favor\" from someone. (practice variation 16)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 102,
+    "text": "\"ã€œã¦ã‚ã’ã‚‹\" shows the speaker does a favor for someone else. (practice variation 17)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 103,
+    "text": "\"ã€œã‚ˆã†ã¨æ€ã†\" expresses a decision made at the moment of speaking. (practice variation 18)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 104,
+    "text": "\"ã€œãªã‚‰\" means \"if\" or \"in the case of\" and often gives advice. (practice variation 19)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 105,
+    "text": "\"ã€œãŸã‚‰\" is a conditional \"if/when\" that also expresses sequence. (practice variation 20)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 106,
+    "text": "\"ã€œã°\" forms a conditional meaning \"if\" in a general sense. (practice variation 21)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 107,
+    "text": "\"ã€œã¦ã‚‚\" means \"even if\" or \"even though\". (practice variation 22)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 108,
+    "text": "\"ã€œã®ã«\" expresses contrast or regret, similar to \"even though\". (practice variation 23)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 109,
+    "text": "\"ã€œã®ã§\" gives a reason in a polite or softer way than \"ã‹ã‚‰\". (practice variation 24)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 110,
+    "text": "\"ã€œãŸã¨ã“ã‚\" can mean \"just did\" something and observed a result. (practice variation 25)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 111,
+    "text": "\"ã€œã¾ã¾\" means \"as is\" or \"unchanged\". (practice variation 26)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 112,
+    "text": "\"ã€œã°ã‹ã‚Š\" means \"just\" (in terms of time) or \"only\" depending on context. (practice variation 27)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 113,
+    "text": "\"ã€œã™ãŽã‚‹\" attaches to verbs or adjectives to mean \"too much\". (practice variation 28)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 114,
+    "text": "\"ã€œã‚‰ã—ã„\" can mean \"seems\" or describe a typical characteristic. (practice variation 29)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 115,
+    "text": "\"ã€œãŠã†/ã€œã‚ˆã†\" is the volitional form, used to say \"let's\" or \"I will\". (practice variation 30)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 116,
+    "text": "\"ã€œã¨ã“ã‚\" refers to a point in time, like \"about to\", \"in the middle of\", or \"just finished\". (practice variation 31)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 117,
+    "text": "\"ã€œãŸã‚Šã€œãŸã‚Š\" lists representative actions, like \"do things like A and B\". (practice variation 32)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 118,
+    "text": "\"ã€œã¦ã„ã/ã€œã¦ãã‚‹\" shows direction or change over time, like \"will start\" or \"have been\". (practice variation 33)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 119,
+    "text": "\"ã€œã‚ˆã†ã«\" can express purpose, like \"in order to\" or \"so that\". (practice variation 34)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 120,
+    "text": "\"ã€œãŸã‚ã«\" also means \"for the sake of\" and explains purpose or reason. (practice variation 35)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 121,
+    "text": "\"ã€œã“ã¨ã«ã™ã‚‹\" expresses a decision, like \"decide to\". (practice variation 36)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 122,
+    "text": "\"ã€œã“ã¨ã«ãªã‚‹\" indicates something was decided (by others or circumstances). (practice variation 37)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 123,
+    "text": "\"ã€œã«é•ã„ãªã„\" means \"must be\" or \"no doubt\". (practice variation 38)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 124,
+    "text": "\"ã€œã‹ã‚‚ã—ã‚Œãªã„\" means \"might be\" or \"maybe\". (practice variation 39)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 125,
+    "text": "\"ã€œã†ã¡ã«\" means \"while\" or \"before\" something changes. (practice variation 40)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 126,
+    "text": "\"ã€œã“ã¨ãŒã§ãã‚‹\" expresses ability, like \"can do\". (practice variation 41)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 127,
+    "text": "\"ã€œã“ã¨ãŒã‚ã‚‹\" means \"sometimes\" when talking about habitual actions. (practice variation 42)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 128,
+    "text": "\"ã€œã«ãã„\" attaches to verb stems to mean \"hard to do\". (practice variation 43)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 129,
+    "text": "\"ã€œã‚„ã™ã„\" attaches to verb stems to mean \"easy to do\". (practice variation 44)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 130,
+    "text": "\"ã€œã¦ãŠã\" means \"do in advance\" or \"leave as is\". (practice variation 45)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 131,
+    "text": "\"ã€œã«ã™ã‚‹\" means \"decide on\" a choice or selection. (practice variation 46)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 132,
+    "text": "\"ã€œã«æ±ºã¾ã£ã¦ã„ã‚‹\" means \"must be\" or \"definitely\". (practice variation 47)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 133,
+    "text": "\"ã€œãã†ã \" can indicate appearance, like \"it looks like\". (practice variation 48)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 134,
+    "text": "\"ã€œãªãŒã‚‰ã‚‚\" means \"even while\" or \"though\" (contrast). (practice variation 49)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 135,
+    "text": "\"ã€œã‚ã‘ã§ã¯ãªã„\" means \"not necessarily\" or \"it's not that\". (practice variation 50)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 136,
+    "text": "\"ã€œã¨ã„ã†ã‚ˆã‚Š\" means \"rather than\" or \"more like\". (practice variation 51)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 137,
+    "text": "\"ã€œãŠã‹ã’ã§\" expresses gratitude for a cause, \"thanks to\". (practice variation 52)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 138,
+    "text": "\"ã€œã›ã„ã§\" indicates a negative cause, \"because of\". (practice variation 53)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 139,
+    "text": "\"ã€œã»ã©\" can express degree, like \"so... that\". (practice variation 54)",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 140,
+    "text": "\"ã€œã°ã€œã»ã©\" means \"the more... the more...\". (practice variation 55)",
+    "issued": false,
+    "completed": false
   }
 ]

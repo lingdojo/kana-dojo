@@ -2,6 +2,9 @@
 
 import { useEffect } from 'react';
 import useAchievementStore from '../../store/useAchievementStore';
+import { useAchievements } from '../../hooks/useAchievements';
+import { achievementEvents } from '@/shared/events';
+import { useStatsStore } from '@/features/Progress';
 
 /**
  * Component to make achievement store available globally for integration
@@ -9,8 +12,17 @@ import useAchievementStore from '../../store/useAchievementStore';
  */
 const AchievementIntegration = () => {
   const achievementStore = useAchievementStore;
+  useAchievements();
 
   useEffect(() => {
+    const unsubscribe = achievementEvents.subscribe(event => {
+      if (event.type === 'check') {
+        useAchievementStore
+          .getState()
+          .checkAchievements(useStatsStore.getState());
+      }
+    });
+
     // Make achievement store available globally for cross-store communication
     if (typeof window !== 'undefined') {
       (
@@ -23,6 +35,7 @@ const AchievementIntegration = () => {
           window as Window & { __achievementStore?: typeof achievementStore }
         ).__achievementStore;
       }
+      unsubscribe();
     };
   }, [achievementStore]);
 

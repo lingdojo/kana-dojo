@@ -27,6 +27,7 @@ interface BlitzStats {
   bestSessionScore: number;
   bestStreak: number;
   totalCorrect: number;
+  totalAnswers: number;
 }
 
 interface AllTimeStats {
@@ -76,6 +77,7 @@ const defaultBlitzStats: BlitzStats = {
   bestSessionScore: 0,
   bestStreak: 0,
   totalCorrect: 0,
+  totalAnswers: 0,
 };
 
 // Max array sizes to prevent memory exhaustion over extended use
@@ -180,6 +182,7 @@ interface IStatsState {
     score: number;
     streak: number;
     correctAnswers: number;
+    wrongAnswers: number;
   }) => void;
 
   // Time and speed tracking actions (Requirements 6.1-6.5)
@@ -414,6 +417,23 @@ const useStatsStore = create<IStatsState>()(
       },
 
       saveSession: () => {
+        const stateBeforeSave = get();
+        const sessionCorrect = stateBeforeSave.numCorrectAnswers;
+        const sessionWrong = stateBeforeSave.numWrongAnswers;
+        const totalSessionAnswers = sessionCorrect + sessionWrong;
+        const measuredSessionMs = stateBeforeSave.totalMilliseconds;
+        const fallbackSessionMs = Math.round(
+          stateBeforeSave.correctAnswerTimes.reduce((sum, t) => sum + t, 0) *
+            1000,
+        );
+        const sessionTimeMs =
+          measuredSessionMs > 0 ? measuredSessionMs : fallbackSessionMs;
+        const sessionAccuracy =
+          totalSessionAnswers > 0
+            ? (sessionCorrect / totalSessionAnswers) * 100
+            : 0;
+        const sessionHour = new Date().getHours();
+
         set(s => {
           const mastery = { ...s.allTimeStats.characterMastery };
 
@@ -452,9 +472,26 @@ const useStatsStore = create<IStatsState>()(
           setTimeout(() => {
             const win = window as unknown as Record<string, unknown>;
             const store = win.__achievementStore as
-              | { getState: () => { checkAchievements: (s: unknown) => void } }
+              | {
+                  getState: () => {
+                    checkAchievements: (
+                      s: unknown,
+                      sessionStats?: {
+                        sessionCorrect?: number;
+                        sessionTime?: number;
+                        sessionAccuracy?: number;
+                        currentHour?: number;
+                      },
+                    ) => void;
+                  };
+                }
               | undefined;
-            store?.getState().checkAchievements(get());
+            store?.getState().checkAchievements(get(), {
+              sessionCorrect,
+              sessionTime: sessionTimeMs,
+              sessionAccuracy,
+              currentHour: sessionHour,
+            });
           }, 100);
         }
       },
@@ -596,7 +633,7 @@ const useStatsStore = create<IStatsState>()(
         }),
 
       // Blitz-specific tracking actions (Requirements 5.1-5.8)
-      recordBlitzSession: ({ score, streak, correctAnswers }) =>
+      recordBlitzSession: ({ score, streak, correctAnswers, wrongAnswers }) =>
         set(s => {
           const blitzStats = { ...s.allTimeStats.blitzStats };
           blitzStats.totalSessions += 1;
@@ -606,6 +643,7 @@ const useStatsStore = create<IStatsState>()(
           );
           blitzStats.bestStreak = Math.max(blitzStats.bestStreak, streak);
           blitzStats.totalCorrect += correctAnswers;
+          blitzStats.totalAnswers += correctAnswers + wrongAnswers;
 
           return {
             allTimeStats: {

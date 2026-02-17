@@ -187,5 +187,32 @@
     "english": "Running away can take courage too.",
     "anime": "Mob Psycho 100",
     "character": "Arataka Reigen"
+  },{
+  "japanese": "お前はもう死んでいる",
+  "romaji": "Omae wa mou shindeiru",
+  "english": "You're already dead.",
+  "anime": "Fist of the North Star",
+  "character": "Kenshiro"
+},
+  {
+  "japanese": "ã�‚ã��ã‚‰ã‚�ã�Ÿã‚‰ã��ã�“ã�§è©¦å�ˆçµ‚äº†ã�§ã�™ã‚ˆâ€¦ï¼Ÿ",
+  "romaji": "Akirametara soko de shiai shuuryou desu yo...?",
+  "english": "If you give up, that's the end of the game.",
+  "anime": "Slam Dunk",
+  "character": "Kaede Rukawa"
+},
+  {
+    "japanese": "この世界は残酷だ... そしてとても美しい",
+    "romaji": "Kono sekai wa zankoku da... soshite totemo utsukushii",
+    "english": "The world is cruel... but also very beautiful.",
+    "anime": "Attack on Titan",
+    "character": "Mikasa Ackerman"
+  },
+  {
+    "japanese": "ゼハハハハ",
+    "romaji": "Ze hahaha",
+    "english": "Ze ha ha ha!",
+    "anime": "One Piece",
+    "character": "Marshall D. Teach (Blackbeard)"
   }
 ]

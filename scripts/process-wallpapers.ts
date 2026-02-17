@@ -72,9 +72,10 @@ async function getSourceImages(): Promise<string[]> {
  * Get expected output filenames for a given source image base name.
  * Each source image produces AVIF + WebP at each configured width.
  */
-function getExpectedOutputs(baseName: string): string[] {
+function getExpectedOutputs(baseName: string, maxWidth?: number): string[] {
   const outputs: string[] = [];
   for (const width of OUTPUT_WIDTHS) {
+    if (maxWidth && width > maxWidth) continue;
     outputs.push(`${baseName}-${width}w.avif`);
     outputs.push(`${baseName}-${width}w.webp`);
   }
@@ -94,11 +95,12 @@ async function needsProcessing(filename: string): Promise<boolean> {
 
   const sourcePath = join(SOURCE_DIR, filename);
   const baseName = parse(filename).name;
-  const expectedOutputs = getExpectedOutputs(baseName);
 
   try {
     const sourceStat = await stat(sourcePath);
     const sourceMtime = sourceStat.mtimeMs;
+    const metadata = await sharp(sourcePath).metadata();
+    const expectedOutputs = getExpectedOutputs(baseName, metadata.width);
 
     for (const outputFile of expectedOutputs) {
       const outputPath = join(OUTPUT_DIR, outputFile);

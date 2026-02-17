@@ -75,6 +75,12 @@ export const GENERATED_WALLPAPERS: GeneratedWallpaper[] = [
     urlWebp: '/wallpapers/bangkok-sunset-2560w.webp',
   },
   {
+    id: 'chureito-fuji-sunset',
+    name: 'Chureito Fuji Sunset',
+    url: '/wallpapers/chureito-fuji-sunset-1920w.avif',
+    urlWebp: '/wallpapers/chureito-fuji-sunset-1920w.webp',
+  },
+  {
     id: 'retro-city',
     name: 'Retro City',
     url: '/wallpapers/retro-city-1920w.avif',

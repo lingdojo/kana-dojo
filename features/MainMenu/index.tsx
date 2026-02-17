@@ -103,6 +103,7 @@ const MainMenu = () => {
             <Decorations
               expandDecorations={expandDecorations}
               forceShow={true}
+              interactive={true}
             />
           )}
           <Button

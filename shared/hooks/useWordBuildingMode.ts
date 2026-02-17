@@ -15,6 +15,12 @@ interface WordBuildingModeOptions {
   minConsecutiveForTrigger?: number;
   /** Number of characters in the word (default: 3) */
   wordLength?: number;
+  /** Enable adaptive word length progression (default: false) */
+  enableAdaptiveWordLength?: boolean;
+  /** Minimum adaptive word length (default: 1) */
+  minWordLength?: number;
+  /** Maximum adaptive word length (default: 3) */
+  maxWordLength?: number;
   /** Minimum consecutive correct answers in word building before switching back (default: 2) */
   minWordBuildingStreak?: number;
 }
@@ -30,6 +36,10 @@ interface WordBuildingModeState {
   wordBuildingStreak: number;
   /** Current word length */
   wordLength: number;
+  /** Smoothed learner performance score in range [0, 1] */
+  performanceScore: number;
+  /** Consecutive wrong answers */
+  consecutiveWrong: number;
 }
 
 /**
@@ -54,15 +64,71 @@ export const useWordBuildingMode = (options: WordBuildingModeOptions = {}) => {
     maxProbability = 0.4,
     minConsecutiveForTrigger = 3,
     wordLength: initialWordLength = 3,
+    enableAdaptiveWordLength = false,
+    minWordLength = 1,
+    maxWordLength = 3,
     minWordBuildingStreak = 2,
   } = options;
+
+  const clampedMinWordLength = Math.max(1, minWordLength);
+  const clampedMaxWordLength = Math.max(clampedMinWordLength, maxWordLength);
+
+  const getAdaptiveWordLength = useCallback(
+    (
+      performanceScore: number,
+      consecutiveCorrect: number,
+      consecutiveWrong: number,
+      currentLength: number,
+    ): number => {
+      let nextLength = currentLength;
+
+      // Upgrade quickly for strong learners.
+      if (
+        currentLength < 2 &&
+        (performanceScore >= 0.35 || consecutiveCorrect >= 4)
+      ) {
+        nextLength = 2;
+      }
+      if (
+        currentLength < 3 &&
+        (performanceScore >= 0.72 || consecutiveCorrect >= 8)
+      ) {
+        nextLength = 3;
+      }
+
+      // Downgrade when the learner struggles repeatedly.
+      if (currentLength >= 3 && (performanceScore < 0.58 || consecutiveWrong >= 2)) {
+        nextLength = 2;
+      }
+      if (
+        currentLength >= 2 &&
+        performanceScore < 0.22 &&
+        consecutiveWrong >= 2
+      ) {
+        nextLength = 1;
+      }
+
+      return Math.max(
+        clampedMinWordLength,
+        Math.min(clampedMaxWordLength, nextLength),
+      );
+    },
+    [clampedMaxWordLength, clampedMinWordLength],
+  );
 
   const [state, setState] = useState<WordBuildingModeState>({
     isWordBuildingMode: false,
     isWordBuildingReverse: false,
     consecutiveCorrect: 0,
     wordBuildingStreak: 0,
-    wordLength: initialWordLength,
+    wordLength: enableAdaptiveWordLength
+      ? clampedMinWordLength
+      : Math.max(
+          clampedMinWordLength,
+          Math.min(clampedMaxWordLength, initialWordLength),
+        ),
+    performanceScore: 0,
+    consecutiveWrong: 0,
   });
 
   // Call this on wrong answers to reset the streak without changing mode
@@ -71,16 +137,53 @@ export const useWordBuildingMode = (options: WordBuildingModeOptions = {}) => {
       ...prev,
       consecutiveCorrect: 0,
       wordBuildingStreak: 0,
+      consecutiveWrong: prev.consecutiveWrong + 1,
+      performanceScore: Math.max(
+        0,
+        prev.performanceScore -
+          (prev.wordLength >= 3 ? 0.18 : prev.wordLength === 2 ? 0.12 : 0.06),
+      ),
+      wordLength: enableAdaptiveWordLength
+        ? getAdaptiveWordLength(
+            Math.max(
+              0,
+              prev.performanceScore -
+                (prev.wordLength >= 3
+                  ? 0.18
+                  : prev.wordLength === 2
+                    ? 0.12
+                    : 0.06),
+            ),
+            0,
+            prev.consecutiveWrong + 1,
+            prev.wordLength,
+          )
+        : prev.wordLength,
     }));
-  }, []);
+  }, [enableAdaptiveWordLength, getAdaptiveWordLength]);
 
   // Call this only on correct answers to decide the next mode
   const decideNextMode = useCallback(() => {
     setState(prev => {
       const newConsecutive = prev.consecutiveCorrect + 1;
+      const newConsecutiveWrong = 0;
+      const performanceGain =
+        (prev.isWordBuildingMode ? 0.14 : 0.08) + (newConsecutive >= 5 ? 0.04 : 0);
+      const newPerformanceScore = Math.min(
+        1,
+        prev.performanceScore + performanceGain,
+      );
       const newWordBuildingStreak = prev.isWordBuildingMode
         ? prev.wordBuildingStreak + 1
         : 0;
+      const newWordLength = enableAdaptiveWordLength
+        ? getAdaptiveWordLength(
+            newPerformanceScore,
+            newConsecutive,
+            newConsecutiveWrong,
+            prev.wordLength,
+          )
+        : prev.wordLength;
 
       // If currently in word building mode, check if we should exit
       if (prev.isWordBuildingMode) {
@@ -95,6 +198,9 @@ export const useWordBuildingMode = (options: WordBuildingModeOptions = {}) => {
             isWordBuildingReverse: false,
             consecutiveCorrect: newConsecutive,
             wordBuildingStreak: 0,
+            consecutiveWrong: newConsecutiveWrong,
+            performanceScore: newPerformanceScore,
+            wordLength: newWordLength,
           };
         }
         // Stay in word building mode, maybe switch direction
@@ -110,6 +216,9 @@ export const useWordBuildingMode = (options: WordBuildingModeOptions = {}) => {
             : prev.isWordBuildingReverse,
           consecutiveCorrect: newConsecutive,
           wordBuildingStreak: newWordBuildingStreak,
+          consecutiveWrong: newConsecutiveWrong,
+          performanceScore: newPerformanceScore,
+          wordLength: newWordLength,
         };
       }
 
@@ -129,6 +238,9 @@ export const useWordBuildingMode = (options: WordBuildingModeOptions = {}) => {
             isWordBuildingReverse: random.real(0, 1) < 0.5,
             consecutiveCorrect: newConsecutive,
             wordBuildingStreak: 0,
+            consecutiveWrong: newConsecutiveWrong,
+            performanceScore: newPerformanceScore,
+            wordLength: newWordLength,
           };
         }
       }
@@ -137,10 +249,15 @@ export const useWordBuildingMode = (options: WordBuildingModeOptions = {}) => {
       return {
         ...prev,
         consecutiveCorrect: newConsecutive,
+        consecutiveWrong: newConsecutiveWrong,
+        performanceScore: newPerformanceScore,
+        wordLength: newWordLength,
       };
     });
   }, [
     baseProbability,
+    enableAdaptiveWordLength,
+    getAdaptiveWordLength,
     incrementPerCorrect,
     maxProbability,
     minConsecutiveForTrigger,
@@ -161,9 +278,9 @@ export const useWordBuildingMode = (options: WordBuildingModeOptions = {}) => {
   const setWordLength = useCallback((length: number) => {
     setState(prev => ({
       ...prev,
-      wordLength: Math.max(2, Math.min(6, length)), // Clamp between 2-6
+      wordLength: Math.max(clampedMinWordLength, Math.min(clampedMaxWordLength, length)),
     }));
-  }, []);
+  }, [clampedMaxWordLength, clampedMinWordLength]);
 
   return {
     isWordBuildingMode: state.isWordBuildingMode,

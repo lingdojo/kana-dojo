@@ -204,9 +204,10 @@ export default function Blitz<T>({ config }: BlitzProps<T>) {
         score: stats.correct,
         streak: stats.bestStreak,
         correctAnswers: stats.correct,
+        wrongAnswers: stats.wrong,
       });
     }
-  }, [timeLeft, isFinished, stats.correct, stats.bestStreak]);
+  }, [timeLeft, isFinished, stats.correct, stats.wrong, stats.bestStreak]);
 
   // Track challenge mode usage on mount
   useEffect(() => {

@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import type { CSSProperties } from 'react';
 import SimpleProgress from './SimpleProgress';
 import StreakProgress from './StreakProgress';
 import AchievementProgress from '@/features/Achievements/components';
@@ -9,6 +10,8 @@ import { useClick } from '@/shared/hooks/useAudio';
 import { cn } from '@/shared/lib/utils';
 
 type ViewType = 'statistics' | 'streak' | 'achievements';
+
+const PROGRESS_TABS_HALO_GAP = 8;
 
 const viewOptions: { value: ViewType; label: string; icon: React.ReactNode }[] =
   [
@@ -39,44 +42,59 @@ const ProgressTabs = () => {
       <div className='flex justify-center px-2'>
         <div
           className={cn(
-            'inline-flex flex-wrap justify-center gap-1 rounded-[22px]',
-            'border border-(--border-color) bg-(--card-color) p-1.5',
+            'rounded-(--progress-tabs-outer-radius) border-4 border-(--border-color) p-(--progress-tabs-halo-gap)',
           )}
+          style={
+            {
+              '--progress-tabs-halo-gap': `${PROGRESS_TABS_HALO_GAP}px`,
+              '--progress-tabs-outer-radius':
+                'calc(var(--radius-2xl) + var(--progress-tabs-halo-gap))',
+              '--progress-tabs-shared-radius':
+                'calc(var(--progress-tabs-outer-radius) - var(--progress-tabs-halo-gap))',
+            } as CSSProperties
+          }
         >
-          {viewOptions.map(option => {
-            const isSelected = currentView === option.value;
-            return (
-              <div key={option.value} className='relative'>
-                {/* Smooth sliding background indicator */}
-                {isSelected && (
-                  <motion.div
-                    layoutId='activeProgressTab'
-                    className='absolute inset-0 rounded-2xl border-b-10 border-(--main-color-accent) bg-(--main-color)'
-                    transition={{
-                      type: 'spring',
-                      stiffness: 300,
-                      damping: 30,
-                    }}
-                  />
-                )}
-                <button
-                  onClick={() => {
-                    setCurrentView(option.value);
-                    playClick();
-                  }}
-                  className={cn(
-                    'relative z-10 flex cursor-pointer items-center gap-2 rounded-2xl px-6 pt-3 pb-5 text-sm font-semibold transition-colors duration-300',
-                    isSelected
-                      ? 'text-(--background-color)'
-                      : 'text-(--secondary-color) hover:text-(--main-color)',
+          <div
+            className={cn(
+              'inline-flex flex-wrap justify-center gap-0 overflow-hidden rounded-(--progress-tabs-shared-radius)',
+              'bg-(--card-color) p-0',
+            )}
+          >
+            {viewOptions.map(option => {
+              const isSelected = currentView === option.value;
+              return (
+                <div key={option.value} className='relative'>
+                  {/* Smooth sliding background indicator */}
+                  {isSelected && (
+                    <motion.div
+                      layoutId='activeProgressTab'
+                      className='absolute inset-0 rounded-(--progress-tabs-shared-radius) border-b-10 border-(--main-color-accent) bg-(--main-color)'
+                      transition={{
+                        type: 'spring',
+                        stiffness: 300,
+                        damping: 30,
+                      }}
+                    />
                   )}
-                >
-                  {option.icon}
-                  <span className='max-sm:hidden'>{option.label}</span>
-                </button>
-              </div>
-            );
-          })}
+                  <button
+                    onClick={() => {
+                      setCurrentView(option.value);
+                      playClick();
+                    }}
+                    className={cn(
+                      'relative z-10 flex cursor-pointer items-center gap-2 rounded-(--progress-tabs-shared-radius) px-6 pt-3 pb-5 text-sm font-semibold transition-colors duration-300',
+                      isSelected
+                        ? 'text-(--background-color)'
+                        : 'text-(--secondary-color) hover:text-(--main-color)',
+                    )}
+                  >
+                    {option.icon}
+                    <span className='max-sm:hidden'>{option.label}</span>
+                  </button>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
       <div className='w-full'>

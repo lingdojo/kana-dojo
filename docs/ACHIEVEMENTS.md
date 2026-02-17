@@ -591,6 +591,79 @@ features/Achievements/
 
 ---
 
+## Achievement Audit Matrix
+
+This section is the implementation-level audit map for achievement tracking.
+It links each requirement type to:
+
+- source fields in `allTimeStats` / `sessionStats`
+- write/update callsites
+- checker function path
+
+### Requirement-to-Tracking Map
+
+| Requirement Type | Source Fields | Updated By | Checked In |
+| --- | --- | --- | --- |
+| `total_correct` | `allTimeStats.totalCorrect` | `saveSession()` (`features/Progress/store/useStatsStore.ts`) | `checkRequirement()` |
+| `total_incorrect` | `allTimeStats.totalIncorrect` | `saveSession()` | `checkRequirement()` |
+| `streak` | `allTimeStats.bestStreak`, `gauntletStats.bestStreak`, `blitzStats.bestStreak` | `saveSession()`, `recordGauntletRun()`, `recordBlitzSession()` | `checkRequirement()` |
+| `sessions` | `allTimeStats.totalSessions` | `saveSession()` | `checkRequirement()` |
+| `accuracy` | global: `totalCorrect/totalIncorrect`; blitz: `blitzStats.totalCorrect/totalAnswers` | `saveSession()`, `recordBlitzSession()` | `checkRequirement()` |
+| `content_correct` | `hiraganaCorrect`, `katakanaCorrect`, `kanjiCorrectByLevel`, `vocabularyCorrect` | `incrementHiraganaCorrect()`, `incrementKatakanaCorrect()`, `incrementKanjiCorrect()`, `incrementVocabularyCorrect()` | `checkContentCorrect()` |
+| `content_mastery` | `characterMastery` | `saveSession()` (folds `characterScores` into `characterMastery`) | `checkContentMastery()` |
+| `gauntlet_completion` | `gauntletStats.completedRuns` | `recordGauntletRun()` | `checkGauntletRequirement()` |
+| `gauntlet_difficulty` | `gauntletStats.normalCompleted/hardCompleted/instantDeathCompleted` | `recordGauntletRun()` | `checkGauntletRequirement()` |
+| `gauntlet_perfect` | `gauntletStats.perfectRuns` | `recordGauntletRun()` | `checkGauntletRequirement()` |
+| `gauntlet_lives` | `gauntletStats.noDeathRuns/livesRegenerated` | `recordGauntletRun()` | `checkGauntletRequirement()` |
+| `blitz_session` | `blitzStats.totalSessions` | `recordBlitzSession()` | `checkBlitzRequirement()` |
+| `blitz_score` | `blitzStats.bestSessionScore` | `recordBlitzSession()` | `checkBlitzRequirement()` |
+| `speed` | `answerTimesMs`, `fastestAnswerMs`, session payload (`sessionTime`, `sessionAccuracy`) | `recordAnswerTime()`, `saveSession()` (session payload) | `checkSpeedRequirement()` |
+| `variety` | `dojosUsed`, `modesUsed`, `challengeModesUsed` | `recordDojoUsed()`, `recordModeUsed()`, `recordChallengeModeUsed()` | `checkVarietyRequirement()` |
+| `days_trained` | `trainingDays` | `saveSession()` | `checkDaysTrainedRequirement()` |
+| `time_of_day` | session payload `currentHour` (fallback current time) | `saveSession()` (session payload) | `checkTimeOfDayRequirement()` |
+| `wrong_streak` | `maxWrongStreak` | `incrementWrongStreak()` / `resetWrongStreak()` | `checkWrongStreakRequirement()` |
+| `exact_count` | session payload `sessionCorrect` | `saveSession()` (session payload) | `checkExactCountRequirement()` |
+| `achievement_count` | `unlockedAchievements` count | `unlockAchievement()` | `checkAchievementCountRequirement()` |
+| `total_points` | `totalPoints` | `unlockAchievement()` | `checkTotalPointsRequirement()` |
+
+### Achievement ID to Requirement Map
+
+Use this as the canonical list of what each achievement is actually keyed on.
+
+- `first_steps`: `total_correct`
+- `streak_starter`, `hot_streak`, `streak_legend`, `unstoppable`, `streak_warrior`, `century_streak`, `streak_titan`, `streak_immortal`, `streak_god`: `streak`
+- `century_scholar`, `knowledge_seeker`, `master_scholar`, `legendary_master`, `dedicated_scholar`, `grand_master`, `legendary_scholar`: `total_correct`
+- `dedicated_learner`, `persistent_student`, `training_master`, `session_veteran`, `session_legend`, `eternal_student`: `sessions`
+- `precision_novice`, `accuracy_expert`, `perfectionist`, `precision_under_pressure`: `accuracy`
+- `hiragana_apprentice`, `hiragana_adept`, `hiragana_master`, `katakana_apprentice`, `katakana_adept`, `katakana_master`, `n5_explorer`, `n4_explorer`, `n3_explorer`, `n2_explorer`, `n1_explorer`, `word_collector`, `lexicon_builder`, `dictionary_devotee`, `vocabulary_virtuoso`: `content_correct`
+- `hiragana_perfectionist`, `katakana_perfectionist`, `n5_graduate`, `n4_graduate`, `n3_graduate`, `n2_graduate`, `n1_graduate`, `word_wizard`, `linguistic_legend`: `content_mastery`
+- `gauntlet_initiate`, `gauntlet_veteran`, `gauntlet_champion`: `gauntlet_completion`
+- `gauntlet_survivor`, `gauntlet_warrior`, `gauntlet_legend`: `gauntlet_difficulty`
+- `flawless_victory`: `gauntlet_perfect`
+- `untouchable`, `phoenix_rising`: `gauntlet_lives`
+- `gauntlet_streak_master`: `streak` with `gameMode=gauntlet`
+- `speed_demon_initiate`, `speed_addict`, `blitz_master`: `blitz_session`
+- `blitz_warrior`, `blitz_champion`: `blitz_score`
+- `lightning_reflexes`, `blitz_legend`: `streak` with `gameMode=blitz`
+- `quick_draw`, `speed_reader`, `instant_recognition`, `rapid_fire`, `efficient_learner`: `speed`
+- `well_rounded`, `mode_explorer`, `triple_threat`: `variety`
+- `consistent_learner`, `monthly_dedication`, `century_of_learning`, `year_of_mastery`: `days_trained`
+- `point_collector`, `point_hoarder`, `point_master`: `total_points`
+- `learning_from_mistakes`: `total_incorrect`
+- `perseverance`: `wrong_streak`
+- `night_owl`, `early_bird`: `time_of_day`
+- `answer_to_everything`, `perfect_century`: `exact_count`
+- `achievement_hunter`, `achievement_collector`, `achievement_enthusiast`, `completionist`: `achievement_count`
+
+### Current Known Gaps / Follow-ups
+
+1. `content_mastery` for Kanji graduates is currently scoped to tracked single-kanji entries, not an authoritative JLPT-level full roster check.
+2. `trainingDays` is capped (`MAX_TRAINING_DAYS = 400`). This is enough for current thresholds (max 365) but should stay >= max day achievement.
+3. Test execution in some Windows environments may fail due local `spawn EPERM` (esbuild/Vitest startup), so CI coverage remains the source of truth there.
+4. Legacy and facade stat paths both exist; long-term simplification to one path (`statsApi/useGameStats`) would reduce risk of divergence.
+
+---
+
 ## Contributing
 
 When adding new achievements:

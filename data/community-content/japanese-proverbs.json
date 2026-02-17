@@ -1,5 +1,11 @@
 [
   {
+    "japanese": "ä¸ƒè»¢å…«å€’",
+    "romaji": "Shichiten battou",
+    "english": "Seven falls, eight struggles",
+    "meaning": "Going through great pain and struggle"
+  },
+  {
     "japanese": "毒を食らわば皿まで",
     "romaji": "Doku wo kurawaba sara made",
     "english": "If you eat poison, eat the plate too",
@@ -655,15 +661,27 @@
     "meaning": "Those who stand out may be criticized"
   },
   {
-  "japanese": "雨降って地固まる",
-  "romaji": "Ame futte ji katamaru",
-  "english": "After rain, the ground hardens",
-  "meaning": "Adversity builds strength"
+    "japanese": "雨降って地固まる",
+    "romaji": "Ame futte ji katamaru",
+    "english": "After rain, the ground hardens",
+    "meaning": "Adversity builds strength"
   },
-  {  
-  "japanese": "早起きは三文の徳",
-  "romaji": "Hayaoki wa sanmon no toku",
-  "english": "Early rising brings three coins of benefit",
-  "meaning": "Wake early for advantage"
+  {
+    "japanese": "早起きは三文の徳",
+    "romaji": "Hayaoki wa sanmon no toku",
+    "english": "Early rising brings three coins of benefit",
+    "meaning": "Wake early for advantage"
+  },
+  {
+    "japanese": "明日来ぬ間の舟",
+    "romaji": "Ashita konuma no fune",
+    "english": "Boat while tomorrow hasn't come",
+    "meaning": "Don't put off until tomorrow what you can do today"
+  },
+  {
+    "japanese": "äº•ã�®ä¸­ã�®è›™å¤§æµ·ã‚’çŸ¥ã‚‰ã�š",
+    "romaji": "I no naka no kawazu taikai wo shirazu",
+    "english": "A frog in a well does not know the great sea",
+    "meaning": "Those with limited experience cannot understand the bigger picture"
   }
 ]

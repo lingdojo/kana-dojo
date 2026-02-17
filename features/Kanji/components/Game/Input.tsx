@@ -7,7 +7,6 @@ import useKanjiStore, { IKanjiObj } from '@/features/Kanji/store/useKanjiStore';
 import { useClick, useCorrect, useError } from '@/shared/hooks/useAudio';
 // import GameIntel from '@/shared/components/Game/GameIntel';
 import { useStopwatch } from 'react-timer-hook';
-import useStats from '@/shared/hooks/useStats';
 import { useStatsStore } from '@/features/Progress';
 import { useShallow } from 'zustand/react/shallow';
 import Stars from '@/shared/components/Game/Stars';
@@ -47,6 +46,11 @@ const KanjiInputGame = ({
     recordAnswerTime,
     incrementWrongStreak,
     resetWrongStreak,
+    incrementCorrectAnswers,
+    incrementWrongAnswers,
+    addCharacterToHistory,
+    addCorrectAnswerTime,
+    incrementCharacterScore,
   } = useStatsStore(
     useShallow(state => ({
       score: state.score,
@@ -55,18 +59,15 @@ const KanjiInputGame = ({
       recordAnswerTime: state.recordAnswerTime,
       incrementWrongStreak: state.incrementWrongStreak,
       resetWrongStreak: state.resetWrongStreak,
+      incrementCorrectAnswers: state.incrementCorrectAnswers,
+      incrementWrongAnswers: state.incrementWrongAnswers,
+      addCharacterToHistory: state.addCharacterToHistory,
+      addCorrectAnswerTime: state.addCorrectAnswerTime,
+      incrementCharacterScore: state.incrementCharacterScore,
     })),
   );
 
   const speedStopwatch = useStopwatch({ autoStart: false });
-
-  const {
-    incrementCorrectAnswers,
-    incrementWrongAnswers,
-    addCharacterToHistory,
-    addCorrectAnswerTime,
-    incrementCharacterScore,
-  } = useStats();
 
   const { playClick } = useClick();
   const { playCorrect } = useCorrect();
