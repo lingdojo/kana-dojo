@@ -366,7 +366,7 @@
     "secondaryColor": "oklch(90.0% 0.055 95.0 / 1)"
   },
   {
-    "id":" geisha-grace",
+    "id": " geisha-grace",
     "backgroundColor": "oklch(18.0% 0.055 15.0 / 1)",
     "mainColor": "oklch(60.0% 0.210 25.0 / 1)",
     "secondaryColor": "oklch(82.0% 0.145 85.0 / 1)"
@@ -401,4 +401,10 @@
     "mainColor": "oklch(72.0% 0.200 145.0 / 1)",
     "secondaryColor": "oklch(80.0% 0.185 55.0 / 1)"
   },
+  {
+    "id": "bamboo-forest",
+    "backgroundColor": "oklch(21.0% 0.045 155.0 / 1)",
+    "mainColor": "oklch(70.0% 0.145 150.0 / 1)",
+    "secondaryColor": "oklch(78.0% 0.095 140.0 / 1)"
+  }
 ]
