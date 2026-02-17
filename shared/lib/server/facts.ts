@@ -13,8 +13,8 @@ export function getAllFacts(): string[] {
 
   const factsPath = join(
     process.cwd(),
-    'data',
-    'community-content',
+    'community',
+    'content',
     'japan-facts.json',
   );
   const factsData = readFileSync(factsPath, 'utf-8');
