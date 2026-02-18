@@ -442,5 +442,11 @@
   "backgroundColor": "oklch(16.0% 0.042 30.0 / 1)",
   "mainColor": "oklch(78.0% 0.160 45.0 / 1)",
   "secondaryColor": "oklch(85.0% 0.120 85.0 / 1)"
+}, 
+{
+  "id": "autumn-temple",
+  "backgroundColor": "oklch(20.0% 0.048 35.0 / 1)",
+  "mainColor": "oklch(68.0% 0.185 40.0 / 1)",
+  "secondaryColor": "oklch(78.0% 0.135 55.0 / 1)"
 }
 ]
