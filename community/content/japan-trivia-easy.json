@@ -224,5 +224,16 @@
     "Shodo"
   ],
   "correctIndex": 0
+},
+{
+  "question": "Which month is traditionally associated with cherry blossom viewing (hanami) in Japan? (Community variation 3)",
+  "difficulty": "easy",
+  "answers": [
+    "January",
+    "April",
+    "July",
+    "October"
+  ],
+  "correctIndex": 1
 }
 ]
