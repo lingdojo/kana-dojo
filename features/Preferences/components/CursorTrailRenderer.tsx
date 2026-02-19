@@ -68,7 +68,7 @@ export default function CursorTrailRenderer() {
     window.addEventListener('resize', resize);
 
     // ── Throttled mousemove: spawn max 1 particle every 30ms ──────────────
-    const MAX_PARTICLES = 80;
+    const MAX_PARTICLES = 100;
     const SPAWN_THROTTLE_MS = 30;
 
     const onMove = (e: MouseEvent) => {
@@ -88,10 +88,10 @@ export default function CursorTrailRenderer() {
         const p = particles.current.shift()!;
         p.x = e.clientX + (Math.random() - 0.5) * 6;
         p.y = e.clientY + (Math.random() - 0.5) * 6;
-        p.vx = (Math.random() - 0.5) * 0.25;
-        p.vy = Math.random() * 0.25 + 0.08;
+        p.vx = (Math.random() - 0.5) * 0.12;
+        p.vy = Math.random() * 0.15 + 0.04;
         p.life = 1;
-        p.decay = 0.028 + Math.random() * 0.01;
+        p.decay = 0.016 + Math.random() * 0.006;
         p.size = 16;
         p.rotation = (Math.random() - 0.5) * 0.25;
         p.rotationSpeed = (Math.random() - 0.5) * 0.02;
@@ -101,10 +101,10 @@ export default function CursorTrailRenderer() {
         particles.current.push({
           x: e.clientX + (Math.random() - 0.5) * 6,
           y: e.clientY + (Math.random() - 0.5) * 6,
-          vx: (Math.random() - 0.5) * 0.25,
-          vy: Math.random() * 0.25 + 0.08,
+          vx: (Math.random() - 0.5) * 0.12,
+          vy: Math.random() * 0.15 + 0.04,
           life: 1,
-          decay: 0.028 + Math.random() * 0.01, // ~30-35 frame lifespan
+          decay: 0.016 + Math.random() * 0.006, // ~50-60 frame lifespan
           size: 16,
           rotation: (Math.random() - 0.5) * 0.25,
           rotationSpeed: (Math.random() - 0.5) * 0.02,
