@@ -13,8 +13,10 @@ import {
   Blocks,
   Palette,
   Save,
+  Wand2,
   // Target
 } from 'lucide-react';
+import Effects from './Effects';
 
 const Settings = () => {
   return (
@@ -59,6 +61,17 @@ const Settings = () => {
             storageKey='prefs-fonts'
           >
             <Fonts />
+          </CollapsibleSection>
+
+          {/* Effects Subsection */}
+          <CollapsibleSection
+            title='Effects'
+            icon={<Wand2 size={22} />}
+            level='subsection'
+            defaultOpen={true}
+            storageKey='prefs-effects'
+          >
+            <Effects />
           </CollapsibleSection>
         </div>
       </CollapsibleSection>

@@ -374,7 +374,7 @@
   {
     "id": 63,
     "text": "\"ã€œã«æ¯”ã¹ã¦\" means \"compared to...\".",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -554,7 +554,7 @@
   {
     "id": 93,
     "text": "\"ã€œã¦ã—ã¾ã†\" can show completion or regret about an action. (practice variation 8)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -710,7 +710,7 @@
   {
     "id": 119,
     "text": "\"ã€œã‚ˆã†ã«\" can express purpose, like \"in order to\" or \"so that\". (practice variation 34)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

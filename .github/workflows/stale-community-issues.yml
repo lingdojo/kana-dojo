@@ -69,7 +69,7 @@ jobs:
             const now = new Date();
             const WARNING_THRESHOLD_MS = templates.config.staleWarningAfterMs;   // 12 hours
             const CLOSE_THRESHOLD_MS = templates.config.staleCloseAfterMs;       // 18 hours
-            const UNASSIGNED_CLOSE_THRESHOLD_MS = 8 * 60 * 60 * 1000; // 8 hours
+            const UNASSIGNED_CLOSE_THRESHOLD_MS = 6 * 60 * 60 * 1000; // 6 hours
 
             let needsCommit = false;
             let themes = JSON.parse(fs.readFileSync(themeBacklogPath, 'utf8'));
