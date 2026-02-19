@@ -408,10 +408,10 @@
     "secondaryColor": "oklch(75.0% 0.145 350.0 / 1)"
   },
   {
-  "id": "starry-tanabata",
-  "backgroundColor": "oklch(15.0% 0.048 275.0 / 1)",
-  "mainColor": "oklch(88.0% 0.125 255.0 / 1)",
-  "secondaryColor": "oklch(78.0% 0.165 330.0 / 1)"
+    "id": "starry-tanabata",
+    "backgroundColor": "oklch(15.0% 0.048 275.0 / 1)",
+    "mainColor": "oklch(88.0% 0.125 255.0 / 1)",
+    "secondaryColor": "oklch(78.0% 0.165 330.0 / 1)"
   },
   {
     "id": "mochi-pastel",
@@ -420,33 +420,39 @@
     "secondaryColor": "oklch(75.0% 0.125 155.0 / 1)"
   },
   {
-  "id": "wind-god",
-  "backgroundColor": "oklch(19.0% 0.045 175.0 / 1)",
-  "mainColor": "oklch(82.0% 0.155 180.0 / 1)",
-  "secondaryColor": "oklch(72.0% 0.135 165.0 / 1)"
+    "id": "wind-god",
+    "backgroundColor": "oklch(19.0% 0.045 175.0 / 1)",
+    "mainColor": "oklch(82.0% 0.155 180.0 / 1)",
+    "secondaryColor": "oklch(72.0% 0.135 165.0 / 1)"
   },
   {
-  "id": "street-lantern",
-  "backgroundColor": "oklch(19.0% 0.038 40.0 / 1)",
-  "mainColor": "oklch(85.0% 0.135 55.0 / 1)",
-  "secondaryColor": "oklch(68.0% 0.165 30.0 / 1)"
+    "id": "street-lantern",
+    "backgroundColor": "oklch(19.0% 0.038 40.0 / 1)",
+    "mainColor": "oklch(85.0% 0.135 55.0 / 1)",
+    "secondaryColor": "oklch(68.0% 0.165 30.0 / 1)"
   },
   {
-  "id": "vending-glow",
-  "backgroundColor": "oklch(16.0% 0.025 280.0 / 1)",
-  "mainColor": "oklch(85.0% 0.125 220.0 / 1)",
-  "secondaryColor": "oklch(78.0% 0.165 45.0 / 1)"
-},
+    "id": "vending-glow",
+    "backgroundColor": "oklch(16.0% 0.025 280.0 / 1)",
+    "mainColor": "oklch(85.0% 0.125 220.0 / 1)",
+    "secondaryColor": "oklch(78.0% 0.165 45.0 / 1)"
+  },
   {
-  "id": "midnight-ramen",
-  "backgroundColor": "oklch(16.0% 0.042 30.0 / 1)",
-  "mainColor": "oklch(78.0% 0.160 45.0 / 1)",
-  "secondaryColor": "oklch(85.0% 0.120 85.0 / 1)"
-}, 
-{
-  "id": "autumn-temple",
-  "backgroundColor": "oklch(20.0% 0.048 35.0 / 1)",
-  "mainColor": "oklch(68.0% 0.185 40.0 / 1)",
-  "secondaryColor": "oklch(78.0% 0.135 55.0 / 1)"
-}
+    "id": "midnight-ramen",
+    "backgroundColor": "oklch(16.0% 0.042 30.0 / 1)",
+    "mainColor": "oklch(78.0% 0.160 45.0 / 1)",
+    "secondaryColor": "oklch(85.0% 0.120 85.0 / 1)"
+  },
+  {
+    "id": "autumn-temple",
+    "backgroundColor": "oklch(20.0% 0.048 35.0 / 1)",
+    "mainColor": "oklch(68.0% 0.185 40.0 / 1)",
+    "secondaryColor": "oklch(78.0% 0.135 55.0 / 1)"
+  },
+  {
+    "id": "jpop-energy",
+    "backgroundColor": "oklch(15.0% 0.055 310.0 / 1)",
+    "mainColor": "oklch(80.0% 0.210 345.0 / 1)",
+    "secondaryColor": "oklch(85.0% 0.175 180.0 / 1)"
+  }
 ]
