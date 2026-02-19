@@ -472,5 +472,11 @@
     "backgroundColor": "oklch(22.0% 0.030 150.0 / 1)",
     "mainColor": "oklch(78.0% 0.135 145.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.090 110.0 / 1)"
+  },
+  {
+    "id": "sumi-charcoal",
+    "backgroundColor": "oklch(18.0% 0.010 270.0 / 1)",
+    "mainColor": "oklch(78.0% 0.010 90.0 / 1)",
+    "secondaryColor": "oklch(45.0% 0.020 260.0 / 1)"
   }
 ]
