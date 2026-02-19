@@ -217,24 +217,31 @@
     "character": "Sephiroth"
   },
   {
-  "japanese": "?????????",
-  "romaji": "Koko kara ga honban da.",
-  "english": "The real battle starts now.",
-  "game": "Final Fantasy VII",
-  "character": "Sephiroth"
+    "japanese": "?????????",
+    "romaji": "Koko kara ga honban da.",
+    "english": "The real battle starts now.",
+    "game": "Final Fantasy VII",
+    "character": "Sephiroth"
   },
   {
-  "japanese": "??????????",
-  "romaji": "Mirai wa kono te de tsukamu.",
-  "english": "I will seize the future with my own hands.",
-  "game": "Final Fantasy VII",
-  "character": "Sephiroth"
-} ,
+    "japanese": "??????????",
+    "romaji": "Mirai wa kono te de tsukamu.",
+    "english": "I will seize the future with my own hands.",
+    "game": "Final Fantasy VII",
+    "character": "Sephiroth"
+  },
   {
-  "japanese": "????",
-  "romaji": "Ikuzo!",
-  "english": "Let's go!",
-  "game": "Final Fantasy VII",
-  "character": "Sephiroth"
-}
+    "japanese": "????",
+    "romaji": "Ikuzo!",
+    "english": "Let's go!",
+    "game": "Final Fantasy VII",
+    "character": "Sephiroth"
+  },
+  {
+    "japanese": "????????????",
+    "romaji": "Makeru wake ni wa ikanai.",
+    "english": "I can't afford to lose.",
+    "game": "Final Fantasy X",
+    "character": "Tidus"
+  }
 ]
