@@ -45,6 +45,12 @@ interface PreferencesState {
   selectedWallpaperId: string | null; // Currently active wallpaper
   setSelectedWallpaper: (id: string | null) => void;
   clearWallpaper: () => void;
+
+  // Visual effects
+  cursorTrailEffect: string;
+  setCursorTrailEffect: (id: string) => void;
+  clickEffect: string;
+  setClickEffect: (id: string) => void;
 }
 
 const usePreferencesStore = create<PreferencesState>()(
@@ -86,6 +92,12 @@ const usePreferencesStore = create<PreferencesState>()(
       setSelectedWallpaper: id => set({ selectedWallpaperId: id }),
 
       clearWallpaper: () => set({ selectedWallpaperId: null }),
+
+      // Visual effects
+      cursorTrailEffect: 'none',
+      setCursorTrailEffect: id => set({ cursorTrailEffect: id }),
+      clickEffect: 'none',
+      setClickEffect: id => set({ clickEffect: id }),
     }),
 
     {

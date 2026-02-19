@@ -44,12 +44,14 @@
   {
   "question": "Which Japanese city hosted the 1998 Winter Olympics?",
   "difficulty": "hard",
-  "answers": [
-    "Nagano",
-    "Kobe",
-    "Hiroshima",
-    "Naha"
-  ],
+  "answers": ["Nagano", "Kobe", "Hiroshima", "Naha"],
   "correctIndex": 0
-}
+  },
+  {
+    "question": "What is the name of Japan's national currency? (Community variation 21)",
+    "difficulty": "hard",
+    "answers": ["Yuan", "Yen", "Won", "Rupee"],
+    "correctIndex": 1
+  }
+]
 ]
