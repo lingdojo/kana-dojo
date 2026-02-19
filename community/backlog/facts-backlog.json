@@ -602,7 +602,7 @@
   {
     "id": 101,
     "fact": "The Japanese concept 'meibutsu' (åç‰©) refers to famous local products - every region has foods and crafts found nowhere else.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
