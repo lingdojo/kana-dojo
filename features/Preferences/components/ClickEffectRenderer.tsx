@@ -2,6 +2,7 @@
 import { useEffect, useRef } from 'react';
 import usePreferencesStore from '@/features/Preferences/store/usePreferencesStore';
 import { CLICK_EFFECTS } from '@/features/Preferences/data/effectsData';
+import { getEmojiBitmap } from '@/features/Preferences/data/emojiBitmapCache';
 
 // ─── Particle ─────────────────────────────────────────────────────────────────
 
@@ -15,41 +16,7 @@ interface Particle {
   size: number;
   rotation: number;
   rotationSpeed: number;
-  emoji: string;
-}
-
-// ─── Spawn + draw ─────────────────────────────────────────────────────────────
-
-function spawnBurst(x: number, y: number, emoji: string): Particle[] {
-  const count = 8 + Math.floor(Math.random() * 5);
-  return Array.from({ length: count }, (_, i) => {
-    const angle = (i / count) * Math.PI * 2 + Math.random() * 0.4;
-    const speed = Math.random() * 4 + 2;
-    return {
-      x,
-      y,
-      vx: Math.cos(angle) * speed,
-      vy: Math.sin(angle) * speed,
-      life: 1,
-      decay: 0.017 + Math.random() * 0.009,
-      size: Math.random() * 8 + 12,
-      rotation: Math.random() * Math.PI * 2,
-      rotationSpeed: (Math.random() - 0.5) * 0.1,
-      emoji,
-    };
-  });
-}
-
-function drawParticle(ctx: CanvasRenderingContext2D, p: Particle): void {
-  ctx.save();
-  ctx.translate(p.x, p.y);
-  ctx.rotate(p.rotation);
-  ctx.globalAlpha = Math.max(0, p.life);
-  ctx.font = `${p.size}px serif`;
-  ctx.textAlign = 'center';
-  ctx.textBaseline = 'middle';
-  ctx.fillText(p.emoji, 0, 0);
-  ctx.restore();
+  bitmap: CanvasImageSource;
 }
 
 // ─── Component ────────────────────────────────────────────────────────────────
@@ -57,11 +24,13 @@ function drawParticle(ctx: CanvasRenderingContext2D, p: Particle): void {
 export default function ClickEffectRenderer() {
   const effectId = usePreferencesStore(s => s.clickEffect);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const particlesRef = useRef<Particle[]>([]);
+  const particles = useRef<Particle[]>([]);
   const rafRef = useRef<number>(0);
   const mountedRef = useRef(false);
+  const hasParticles = useRef(false); // skip render loop when idle
 
   useEffect(() => {
+    if (typeof window === 'undefined') return;
     if (effectId === 'none') return;
 
     const effectDef = CLICK_EFFECTS.find(e => e.id === effectId);
@@ -69,21 +38,53 @@ export default function ClickEffectRenderer() {
 
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext('2d', { alpha: true });
     if (!ctx) return;
 
     mountedRef.current = true;
     const emoji = effectDef.emoji;
 
+    // Pre-warm bitmap cache
+    getEmojiBitmap(emoji, 22);
+
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
     const resize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      canvas.width = window.innerWidth * dpr;
+      canvas.height = window.innerHeight * dpr;
+      canvas.style.width = `${window.innerWidth}px`;
+      canvas.style.height = `${window.innerHeight}px`;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     };
     resize();
     window.addEventListener('resize', resize);
 
+    // ── Spawn burst ───────────────────────────────────────────────────────────
+    const BURST_COUNT = 7;
+
     const spawnAt = (x: number, y: number) => {
-      particlesRef.current.push(...spawnBurst(x, y, emoji));
+      const bmp = getEmojiBitmap(emoji, 22);
+      if (!bmp) return;
+      for (let i = 0; i < BURST_COUNT; i++) {
+        const angle = (i / BURST_COUNT) * Math.PI * 2 + Math.random() * 0.35;
+        const speed = Math.random() * 3.5 + 1.8;
+        particles.current.push({
+          x,
+          y,
+          vx: Math.cos(angle) * speed,
+          vy: Math.sin(angle) * speed,
+          life: 1,
+          decay: 0.028 + Math.random() * 0.012,
+          size: Math.random() * 6 + 14,
+          rotation: Math.random() * Math.PI * 2,
+          rotationSpeed: (Math.random() - 0.5) * 0.08,
+          bitmap: bmp,
+        });
+      }
+      // Start ticking if idle
+      if (!hasParticles.current) {
+        hasParticles.current = true;
+        rafRef.current = requestAnimationFrame(tick);
+      }
     };
 
     const onClick = (e: MouseEvent) => spawnAt(e.clientX, e.clientY);
@@ -95,22 +96,54 @@ export default function ClickEffectRenderer() {
     window.addEventListener('click', onClick);
     window.addEventListener('touchstart', onTouch, { passive: true });
 
+    // ── Render loop (only runs while particles exist) ─────────────────────────
     const tick = () => {
       if (!mountedRef.current) return;
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      particlesRef.current = particlesRef.current.filter(p => {
+
+      const w = canvas.width / dpr;
+      const h = canvas.height / dpr;
+      ctx.clearRect(0, 0, w, h);
+
+      let writeIdx = 0;
+      const arr = particles.current;
+      for (let i = 0; i < arr.length; i++) {
+        const p = arr[i];
         p.life -= p.decay;
+        if (p.life <= 0) continue;
         p.x += p.vx;
         p.y += p.vy;
-        p.vy += 0.1; // gravity
+        p.vy += 0.08; // gravity
+        p.vx *= 0.99; // air resistance
         p.rotation += p.rotationSpeed;
-        if (p.life <= 0) return false;
-        drawParticle(ctx, p);
-        return true;
-      });
-      rafRef.current = requestAnimationFrame(tick);
+
+        const alpha = p.life;
+        ctx.globalAlpha = alpha;
+        const s = p.size * (0.5 + alpha * 0.5); // shrink to 50%
+        const hs = s * 0.5;
+
+        if (p.rotation !== 0) {
+          ctx.save();
+          ctx.translate(p.x, p.y);
+          ctx.rotate(p.rotation);
+          ctx.drawImage(p.bitmap, -hs, -hs, s, s);
+          ctx.restore();
+        } else {
+          ctx.drawImage(p.bitmap, p.x - hs, p.y - hs, s, s);
+        }
+
+        arr[writeIdx++] = p;
+      }
+      arr.length = writeIdx;
+      ctx.globalAlpha = 1;
+
+      if (writeIdx > 0) {
+        rafRef.current = requestAnimationFrame(tick);
+      } else {
+        // All particles gone — stop the loop to save CPU
+        hasParticles.current = false;
+        ctx.clearRect(0, 0, w, h);
+      }
     };
-    rafRef.current = requestAnimationFrame(tick);
 
     return () => {
       mountedRef.current = false;
@@ -118,7 +151,8 @@ export default function ClickEffectRenderer() {
       window.removeEventListener('touchstart', onTouch);
       window.removeEventListener('resize', resize);
       cancelAnimationFrame(rafRef.current);
-      particlesRef.current = [];
+      particles.current.length = 0;
+      hasParticles.current = false;
     };
   }, [effectId]);
 
