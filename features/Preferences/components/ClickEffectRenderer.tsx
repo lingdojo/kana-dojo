@@ -66,14 +66,14 @@ export default function ClickEffectRenderer() {
       if (!bmp) return;
       for (let i = 0; i < BURST_COUNT; i++) {
         const angle = (i / BURST_COUNT) * Math.PI * 2 + Math.random() * 0.35;
-        const speed = Math.random() * 3.5 + 1.8;
+        const speed = Math.random() * 2.5 + 1.2;
         particles.current.push({
           x,
           y,
           vx: Math.cos(angle) * speed,
           vy: Math.sin(angle) * speed,
           life: 1,
-          decay: 0.028 + Math.random() * 0.012,
+          decay: 0.022 + Math.random() * 0.008,
           size: Math.random() * 6 + 14,
           rotation: Math.random() * Math.PI * 2,
           rotationSpeed: (Math.random() - 0.5) * 0.08,
@@ -112,8 +112,9 @@ export default function ClickEffectRenderer() {
         if (p.life <= 0) continue;
         p.x += p.vx;
         p.y += p.vy;
-        p.vy += 0.08; // gravity
-        p.vx *= 0.99; // air resistance
+        p.vy += 0.05; // softer gravity
+        p.vx *= 0.98; // air resistance
+        p.vy *= 0.98;
         p.rotation += p.rotationSpeed;
 
         const alpha = p.life;
