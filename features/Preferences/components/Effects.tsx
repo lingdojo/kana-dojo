@@ -1,161 +1,20 @@
 'use client';
-import { useEffect, useRef, useCallback } from 'react';
 import clsx from 'clsx';
 import usePreferencesStore from '@/features/Preferences/store/usePreferencesStore';
 import { buttonBorderStyles } from '@/shared/lib/styles';
-import {
-  CURSOR_TRAIL_EFFECTS,
-  CLICK_EFFECTS,
-  KANJI_POOL,
-} from '../data/effectsData';
+import { CURSOR_TRAIL_EFFECTS, CLICK_EFFECTS } from '../data/effectsData';
 import CollapsibleSection from './CollapsibleSection';
 import { MousePointer2, Zap } from 'lucide-react';
-
-// ─── Mini preview canvas ──────────────────────────────────────────────────────
-
-function EffectPreviewCanvas({
-  effectId,
-  emoji,
-  group,
-}: {
-  effectId: string;
-  emoji: string;
-  group: 'cursor-trail' | 'click';
-}) {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const rafRef = useRef<number>(0);
-
-  const draw = useCallback(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
-    const W = canvas.width;
-    const H = canvas.height;
-    const t = Date.now() / 1000;
-    const cx = W / 2;
-    const cy = H / 2;
-
-    ctx.clearRect(0, 0, W, H);
-
-    // "None" — dashed line
-    if (effectId === 'none') {
-      ctx.save();
-      ctx.globalAlpha = 0.3;
-      ctx.strokeStyle = '#888';
-      ctx.lineWidth = 1.5;
-      ctx.setLineDash([4, 4]);
-      ctx.beginPath();
-      ctx.moveTo(W * 0.2, cy);
-      ctx.lineTo(W * 0.8, cy);
-      ctx.stroke();
-      ctx.setLineDash([]);
-      ctx.restore();
-      return;
-    }
-
-    const isKanji = effectId === 'kanji';
-
-    // ── Cursor trail previews ──────────────────────────────────────────────
-    if (group === 'cursor-trail') {
-      const count = 5;
-      for (let i = 0; i < count; i++) {
-        const progress = (t * 0.38 + i / count) % 1;
-        const px = W * 0.1 + progress * W * 0.8;
-        const py = cy + Math.sin(progress * Math.PI * 3.5) * (H * 0.22);
-        const age = 1 - progress;
-        const em = isKanji ? KANJI_POOL[i % KANJI_POOL.length] : emoji;
-        const sz = (10 + Math.sin(i) * 2) * age;
-        ctx.save();
-        ctx.translate(px, py);
-        ctx.rotate((Math.random() - 0.5) * 0.15);
-        ctx.globalAlpha = age;
-        ctx.font = `${Math.max(4, sz)}px serif`;
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'middle';
-        ctx.fillText(em, 0, 0);
-        ctx.restore();
-      }
-      // Cursor arrow
-      const cp = (t * 0.38) % 1;
-      const cursorX = W * 0.1 + cp * W * 0.8;
-      const cursorY = cy + Math.sin(cp * Math.PI * 3.5) * (H * 0.22);
-      ctx.save();
-      ctx.globalAlpha = 0.55;
-      ctx.fillStyle = '#aaa';
-      ctx.beginPath();
-      ctx.moveTo(cursorX, cursorY);
-      ctx.lineTo(cursorX + 4, cursorY + 9);
-      ctx.lineTo(cursorX + 1.5, cursorY + 7.5);
-      ctx.lineTo(cursorX + 1.5, cursorY + 12);
-      ctx.lineTo(cursorX - 1.5, cursorY + 12);
-      ctx.lineTo(cursorX - 1.5, cursorY + 7.5);
-      ctx.lineTo(cursorX - 4, cursorY + 9);
-      ctx.closePath();
-      ctx.fill();
-      ctx.restore();
-    }
-
-    // ── Click effect previews (looping burst) ────────────────────────────────
-    if (group === 'click') {
-      const raw = (t * 0.5) % 1;
-      const burst = raw < 0.7 ? raw / 0.7 : 0;
-      const n = 6;
-      for (let i = 0; i < n; i++) {
-        const a = (i / n) * Math.PI * 2;
-        const dist = burst * 22;
-        const alpha = Math.max(0, 1 - burst * 1.15);
-        const sz = (11 + Math.sin(i) * 2) * alpha;
-        ctx.save();
-        ctx.translate(cx + Math.cos(a) * dist, cy + Math.sin(a) * dist);
-        ctx.rotate(a + t);
-        ctx.globalAlpha = alpha;
-        ctx.font = `${Math.max(4, sz)}px serif`;
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'middle';
-        ctx.fillText(emoji, 0, 0);
-        ctx.restore();
-      }
-    }
-  }, [effectId, emoji, group]);
-
-  useEffect(() => {
-    let mounted = true;
-    const loop = () => {
-      if (!mounted) return;
-      draw();
-      rafRef.current = requestAnimationFrame(loop);
-    };
-    rafRef.current = requestAnimationFrame(loop);
-    return () => {
-      mounted = false;
-      cancelAnimationFrame(rafRef.current);
-    };
-  }, [draw]);
-
-  return (
-    <canvas
-      ref={canvasRef}
-      width={120}
-      height={60}
-      style={{ display: 'block', width: '100%', height: 56 }}
-      aria-hidden='true'
-    />
-  );
-}
 
 // ─── Effect card ─────────────────────────────────────────────────────────────
 
 function EffectCard({
-  id,
   name,
   emoji,
   isSelected,
   onSelect,
   group,
 }: {
-  id: string;
   name: string;
   emoji: string;
   isSelected: boolean;
@@ -165,11 +24,10 @@ function EffectCard({
   return (
     <label
       className={clsx(
-        'relative flex flex-col items-center justify-between gap-2',
+        'flex flex-col items-center justify-center gap-1',
         buttonBorderStyles,
         'border-1 border-(--card-color)',
-        'cursor-pointer px-3 py-3',
-        'overflow-hidden',
+        'cursor-pointer px-3 py-4',
       )}
       style={{
         outline: isSelected ? '3px solid var(--secondary-color)' : 'none',
@@ -183,7 +41,11 @@ function EffectCard({
         onChange={onSelect}
         checked={isSelected}
       />
-      <EffectPreviewCanvas effectId={id} emoji={emoji} group={group} />
+      {emoji ? (
+        <span className='text-3xl leading-none'>{emoji}</span>
+      ) : (
+        <span className='text-lg leading-none text-(--secondary-color)'>—</span>
+      )}
       <span className='text-center text-sm leading-tight'>{name}</span>
     </label>
   );
@@ -218,7 +80,6 @@ const Effects = () => {
           {CURSOR_TRAIL_EFFECTS.map(effect => (
             <EffectCard
               key={effect.id}
-              id={effect.id}
               name={effect.name}
               emoji={effect.emoji}
               isSelected={cursorTrailEffect === effect.id}
@@ -241,7 +102,6 @@ const Effects = () => {
           {CLICK_EFFECTS.map(effect => (
             <EffectCard
               key={effect.id}
-              id={effect.id}
               name={effect.name}
               emoji={effect.emoji}
               isSelected={clickEffect === effect.id}
