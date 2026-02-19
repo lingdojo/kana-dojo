@@ -450,9 +450,9 @@
     "secondaryColor": "oklch(78.0% 0.135 55.0 / 1)"
   },
   {
-    "id": "dango-sweet",
-    "backgroundColor": "oklch(94.0% 0.020 95.0 / 1)",
-    "mainColor": "oklch(65.0% 0.180 350.0 / 1)",
-    "secondaryColor": "oklch(72.0% 0.145 130.0 / 1)"
+    "id": "jpop-energy",
+    "backgroundColor": "oklch(15.0% 0.055 310.0 / 1)",
+    "mainColor": "oklch(80.0% 0.210 345.0 / 1)",
+    "secondaryColor": "oklch(85.0% 0.175 180.0 / 1)"
   }
 ]
