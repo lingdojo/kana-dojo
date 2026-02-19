@@ -71,6 +71,23 @@ jobs:
               return String(title).replace(' Add ', ` Add ${first}, ${second} `);
             }
 
+            function findRandomEligible(items, predicate) {
+              if (!Array.isArray(items) || items.length === 0) {
+                return null;
+              }
+
+              const start = Math.floor(Math.random() * items.length);
+              for (let offset = 0; offset < items.length; offset += 1) {
+                const index = (start + offset) % items.length;
+                const candidate = items[index];
+                if (predicate(candidate, index)) {
+                  return candidate;
+                }
+              }
+
+              return null;
+            }
+
             async function resolveMilestoneNumber() {
               const configuredMilestoneTitle = t.common.milestoneTitle;
               const fallbackMilestoneNumber = t.common.milestoneNumber;
@@ -322,7 +339,7 @@ jobs:
 
               if (nextType === 'theme') {
               // Skip items that are already issued OR completed OR already exist in main
-              item = themes.find(function(th) {
+              item = findRandomEligible(themes, function(th) {
                 if (th.issued || th.completed) {
                   return false;
                 }
@@ -382,7 +399,7 @@ jobs:
               
               } else if (nextType === 'fact') {
               // Skip items that are already issued OR completed OR already exist in main
-              item = facts.find(function(f) {
+              item = findRandomEligible(facts, function(f) {
                 if (f.issued || f.completed) {
                   return false;
                 }
@@ -435,7 +452,7 @@ jobs:
               backlogChanged = true;
               } else if (nextType === 'proverb') {
               // Proverb
-              item = proverbs.find(function(p) {
+              item = findRandomEligible(proverbs, function(p) {
                 if (p.issued || p.completed) {
                   return false;
                 }
@@ -497,7 +514,7 @@ jobs:
               fs.writeFileSync(proverbsBacklogPath, JSON.stringify(proverbs, null, 2));
               backlogChanged = true;
               } else if (nextType === 'trivia') {
-              item = trivia.find(function(q) {
+              item = findRandomEligible(trivia, function(q) {
                 if (q.issued || q.completed) {
                   return false;
                 }
@@ -568,7 +585,7 @@ jobs:
               backlogChanged = true;
               } else if (nextType === 'grammar') {
               // Grammar
-              item = grammar.find(function(g) {
+              item = findRandomEligible(grammar, function(g) {
                 if (g.issued || g.completed) {
                   return false;
                 }
@@ -622,7 +639,7 @@ jobs:
               backlogChanged = true;
               } else if (nextType === 'animeQuote') {
               // Anime Quote
-              item = animeQuotes.find(function(q) {
+              item = findRandomEligible(animeQuotes, function(q) {
                 if (q.issued || q.completed) {
                   return false;
                 }
@@ -688,7 +705,7 @@ jobs:
               fs.writeFileSync(animeQuotesBacklogPath, JSON.stringify(animeQuotes, null, 2));
               backlogChanged = true;
               } else if (nextType === 'videoGameQuote') {
-              item = videoGameQuotes.find(function(q) {
+              item = findRandomEligible(videoGameQuotes, function(q) {
                 if (q.issued || q.completed) {
                   return false;
                 }
@@ -748,7 +765,7 @@ jobs:
               fs.writeFileSync(videoGameQuotesBacklogPath, JSON.stringify(videoGameQuotes, null, 2));
               backlogChanged = true;
               } else if (nextType === 'idiom') {
-              item = idioms.find(function(i) {
+              item = findRandomEligible(idioms, function(i) {
                 if (i.issued || i.completed) {
                   return false;
                 }
@@ -805,7 +822,7 @@ jobs:
               fs.writeFileSync(idiomsBacklogPath, JSON.stringify(idioms, null, 2));
               backlogChanged = true;
               } else if (nextType === 'regionalDialect') {
-              item = regionalDialects.find(function(d) {
+              item = findRandomEligible(regionalDialects, function(d) {
                 if (d.issued || d.completed) {
                   return false;
                 }
@@ -862,7 +879,7 @@ jobs:
               fs.writeFileSync(regionalDialectsBacklogPath, JSON.stringify(regionalDialects, null, 2));
               backlogChanged = true;
             } else if (nextType === 'falseFriend') {
-              item = falseFriends.find(function(f) {
+              item = findRandomEligible(falseFriends, function(f) {
                 if (f.issued || f.completed) {
                   return false;
                 }
@@ -917,7 +934,7 @@ jobs:
               fs.writeFileSync(falseFriendsBacklogPath, JSON.stringify(falseFriends, null, 2));
               backlogChanged = true;
             } else if (nextType === 'culturalEtiquette') {
-              item = culturalEtiquette.find(function(e) {
+              item = findRandomEligible(culturalEtiquette, function(e) {
                 if (e.issued || e.completed) {
                   return false;
                 }
@@ -972,7 +989,7 @@ jobs:
               fs.writeFileSync(culturalEtiquetteBacklogPath, JSON.stringify(culturalEtiquette, null, 2));
               backlogChanged = true;
             } else if (nextType === 'exampleSentence') {
-              item = exampleSentences.find(function(e) {
+              item = findRandomEligible(exampleSentences, function(e) {
                 if (e.issued || e.completed) {
                   return false;
                 }
@@ -1027,7 +1044,7 @@ jobs:
               fs.writeFileSync(exampleSentencesBacklogPath, JSON.stringify(exampleSentences, null, 2));
               backlogChanged = true;
             } else if (nextType === 'commonMistake') {
-              item = commonMistakes.find(function(m) {
+              item = findRandomEligible(commonMistakes, function(m) {
                 if (m.issued || m.completed) {
                   return false;
                 }
