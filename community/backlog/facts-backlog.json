@@ -609,12 +609,12 @@
     "id": 102,
     "fact": "Japan has professional apology agencies where you can hire someone to apologize on your behalf for serious personal matters.",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 103,
     "fact": "There's a Japanese word 'kenkyo' (è¬™è™š) for humility so deep it rejects praise - considered one of the highest virtues.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
