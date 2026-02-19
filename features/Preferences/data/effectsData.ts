@@ -11,7 +11,7 @@ export const CURSOR_TRAIL_EFFECTS: EffectDefinition[] = [
   { id: 'none', name: 'None', emoji: '', description: 'No cursor trail' },
   {
     id: 'sakura',
-    name: 'Sakura',
+    name: 'Sakura Petals',
     emoji: '🌸',
     description: 'Cherry blossom petals drift behind your cursor',
   },
@@ -118,10 +118,16 @@ export const CURSOR_TRAIL_EFFECTS: EffectDefinition[] = [
     description: 'Hibiscus blossoms trail your cursor',
   },
   {
-    id: 'kanji',
-    name: 'Kanji',
-    emoji: '花',
-    description: 'Japanese characters drift behind your cursor',
+    id: 'torii',
+    name: 'Torii',
+    emoji: '⛩️',
+    description: 'Shrine gates drift behind your cursor',
+  },
+  {
+    id: 'dango',
+    name: 'Dango',
+    emoji: '🍡',
+    description: 'Dango skewers trail your movement',
   },
 ];
 
@@ -129,7 +135,7 @@ export const CLICK_EFFECTS: EffectDefinition[] = [
   { id: 'none', name: 'None', emoji: '', description: 'No click effect' },
   {
     id: 'sakura',
-    name: 'Sakura Burst',
+    name: 'Sakura Bloom',
     emoji: '🌸',
     description: 'Cherry blossoms scatter from each click',
   },
@@ -241,22 +247,16 @@ export const CLICK_EFFECTS: EffectDefinition[] = [
     emoji: '🌺',
     description: 'Hibiscus blossoms burst from each click',
   },
-];
-
-// Kanji trail uses a random pool instead of a single emoji
-export const KANJI_POOL = [
-  '花',
-  '道',
-  '愛',
-  '心',
-  '雪',
-  '月',
-  '桜',
-  '平',
-  '和',
-  '風',
-  '夢',
-  '光',
-  '空',
-  '海',
+  {
+    id: 'torii',
+    name: 'Torii',
+    emoji: '⛩️',
+    description: 'Shrine gates burst from each click',
+  },
+  {
+    id: 'dango',
+    name: 'Dango',
+    emoji: '🍡',
+    description: 'Dango skewers scatter from each click',
+  },
 ];

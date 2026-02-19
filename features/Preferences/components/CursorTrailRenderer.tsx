@@ -1,10 +1,7 @@
 'use client';
 import { useEffect, useRef } from 'react';
 import usePreferencesStore from '@/features/Preferences/store/usePreferencesStore';
-import {
-  CURSOR_TRAIL_EFFECTS,
-  KANJI_POOL,
-} from '@/features/Preferences/data/effectsData';
+import { CURSOR_TRAIL_EFFECTS } from '@/features/Preferences/data/effectsData';
 import { getEmojiBitmap } from '@/features/Preferences/data/emojiBitmapCache';
 
 // ─── Particle (flat struct, no strings at draw time) ──────────────────────────
@@ -46,15 +43,10 @@ export default function CursorTrailRenderer() {
     if (!ctx) return;
 
     mountedRef.current = true;
-    const isKanji = effectId === 'kanji';
     const emoji = effectDef.emoji;
 
     // Pre-warm bitmap cache
-    if (isKanji) {
-      KANJI_POOL.forEach(k => getEmojiBitmap(k, 20));
-    } else {
-      getEmojiBitmap(emoji, 20);
-    }
+    getEmojiBitmap(emoji, 20);
 
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     const resize = () => {
@@ -76,11 +68,7 @@ export default function CursorTrailRenderer() {
       if (now - lastSpawn.current < SPAWN_THROTTLE_MS) return;
       lastSpawn.current = now;
 
-      const em = isKanji
-        ? KANJI_POOL[Math.floor(Math.random() * KANJI_POOL.length)]
-        : emoji;
-
-      const bmp = getEmojiBitmap(em, 18);
+      const bmp = getEmojiBitmap(emoji, 18);
       if (!bmp) return;
 
       if (particles.current.length >= MAX_PARTICLES) {
