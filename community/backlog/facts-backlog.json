@@ -621,12 +621,12 @@
     "id": 104,
     "fact": "Japan has train 'pushers' (oshiya) whose job is to physically push passengers into overcrowded trains during rush hour.",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 105,
     "fact": "The word 'mendokusai' (é¢å€’ãã•ã„) describes something too troublesome to deal with - a very commonly used expression.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
