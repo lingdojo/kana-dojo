@@ -1,0 +1,5 @@
+Adds the shimenawa sacred ropes fact to japan-facts.json
+
+This is a good first issue that adds information about Japan's sacred shimenawa ropes.
+
+Closes #5455
