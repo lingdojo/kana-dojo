@@ -1,5 +1,11 @@
 [
   {
+    "question": "What is the name of the traditional Japanese theater featuring puppets? (Community variation 30)",
+    "difficulty": "hard",
+    "answers": ["Bunraku", "Noh", "Kabuki", "Kyogen"],
+    "correctIndex": 0
+  },
+  {
     "question": "What is the name of the traditional Japanese theater featuring puppets?",
     "difficulty": "hard",
     "answers": ["Bunraku", "Noh", "Kabuki", "Kyogen"],
