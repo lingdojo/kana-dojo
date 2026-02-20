@@ -474,9 +474,15 @@
     "secondaryColor": "oklch(70.0% 0.090 110.0 / 1)"
   },
   {
-     "id": "night-market",
-     "backgroundColor": "oklch(16.0% 0.035 35.0 / 1)",
-     "mainColor": "oklch(75.0% 0.165 55.0 / 1)",
-     "secondaryColor": "oklch(62.0% 0.185 20.0 / 1)"
+    "id": "night-market",
+    "backgroundColor": "oklch(16.0% 0.035 35.0 / 1)",
+    "mainColor": "oklch(75.0% 0.165 55.0 / 1)",
+    "secondaryColor": "oklch(62.0% 0.185 20.0 / 1)"
+  },
+  {
+    "id": "quiet-library",
+    "backgroundColor": "oklch(92.0% 0.012 90.0 / 1)",
+    "mainColor": "oklch(35.0% 0.085 255.0 / 1)",
+    "secondaryColor": "oklch(55.0% 0.055 65.0 / 1)"
   }
 ]
