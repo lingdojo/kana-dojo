@@ -52,6 +52,11 @@
     "difficulty": "hard",
     "answers": ["Yuan", "Yen", "Won", "Rupee"],
     "correctIndex": 1
+  },
+  {
+    "question": "What is the name of the Japanese comic and animation style? (Community variation 23)",
+    "difficulty": "hard",
+    "answers": ["Manga", "Donghua", "Manhwa", "Comique"],
+    "correctIndex": 0
   }
-]
 ]
