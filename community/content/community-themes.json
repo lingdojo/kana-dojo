@@ -508,5 +508,11 @@
     "backgroundColor": "oklch(98.0% 0.004 90.0 / 1)",
     "mainColor": "oklch(55.0% 0.035 250.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.015 90.0 / 1)"
+  },
+  {
+    "id": "matcha-foam",
+    "backgroundColor": "oklch(92.0% 0.020 140.0 / 1)",
+    "mainColor": "oklch(58.0% 0.165 140.0 / 1)",
+    "secondaryColor": "oklch(72.0% 0.115 95.0 / 1)"
   }
 ]
