@@ -806,7 +806,7 @@
   {
     "id": 135,
     "fact": "There's a Japanese concept 'itadakimasu' (ã„ãŸã ãã¾ã™) - said before eating - acknowledging all who contributed to the meal.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1784,7 +1784,7 @@
   {
     "id": 298,
     "fact": "The term 'kintsugi' (é‡‘ç¶™ãŽ) refers to repairing ceramics with gold, embracing cracks as part of an objectâ€™s history.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
