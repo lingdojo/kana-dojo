@@ -54,12 +54,6 @@
     "secondaryColor": "oklch(60.0% 0.090 135.0 / 1)"
   },
   {
-    "id": "ink-wash",
-    "backgroundColor": "oklch(96.0% 0.006 90.0 / 1)",
-    "mainColor": "oklch(30.0% 0.015 260.0 / 1)",
-    "secondaryColor": "oklch(55.0% 0.020 260.0 / 1)"
-  },
-  {
     "id": "yukata-blue",
     "backgroundColor": "oklch(19.0% 0.035 250.0 / 1)",
     "mainColor": "oklch(70.0% 0.120 240.0 / 1)",
@@ -520,5 +514,11 @@
   backgroundColor: 'oklch(19.0% 0.015 260.0 / 1)',
   mainColor: 'oklch(72.0% 0.155 35.0 / 1)',
   secondaryColor: 'oklch(58.0% 0.035 240.0 / 1)'
+  },
+  {
+    "id": "ink-wash",
+    "backgroundColor": "oklch(96.0% 0.006 90.0 / 1)",
+    "mainColor": "oklch(30.0% 0.015 260.0 / 1)",
+    "secondaryColor": "oklch(55.0% 0.020 260.0 / 1)"
   }
 ]
