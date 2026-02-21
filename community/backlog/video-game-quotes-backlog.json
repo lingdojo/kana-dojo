@@ -566,7 +566,7 @@
     "english": "Now, let's begin.",
     "game": "Kingdom Hearts",
     "character": "Sora",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1196,7 +1196,7 @@
     "english": "I won't hesitate anymore.",
     "game": "Metal Gear Solid",
     "character": "Otacon",
-    "issued": false,
+    "issued": true,
     "completed": false
   }
 ]
