@@ -12,11 +12,13 @@ export const kana = [
   {
     kana: ['さ', 'し', 'す', 'せ', 'そ'],
     romanji: ['sa', 'shi', 'su', 'se', 'so'],
+    altRomanji: [[], ['si'], [], [], []],
     groupName: 'h.b.s',
   },
   {
     kana: ['た', 'ち', 'つ', 'て', 'と'],
     romanji: ['ta', 'chi', 'tsu', 'te', 'to'],
+    altRomanji: [[], ['ti'], ['tu'], [], []],
     groupName: 'h.b.t',
   },
   {
@@ -27,6 +29,7 @@ export const kana = [
   {
     kana: ['は', 'ひ', 'ふ', 'へ', 'ほ'],
     romanji: ['ha', 'hi', 'fu', 'he', 'ho'],
+    altRomanji: [[], [], ['hu'], [], []],
     groupName: 'h.b.h',
   },
   {
@@ -47,6 +50,7 @@ export const kana = [
   {
     kana: ['わ', 'を', 'ん'],
     romanji: ['wa', 'wo', 'n'],
+    altRomanji: [[], [], ['nn']],
     groupName: 'h.b.w',
   },
   {
@@ -142,11 +146,13 @@ export const kana = [
   {
     kana: ['サ', 'シ', 'ス', 'セ', 'ソ'],
     romanji: ['sa', 'shi', 'su', 'se', 'so'],
+    altRomanji: [[], ['si'], [], [], []],
     groupName: 'k.b.s',
   },
   {
     kana: ['タ', 'チ', 'ツ', 'テ', 'ト'],
     romanji: ['ta', 'chi', 'tsu', 'te', 'to'],
+    altRomanji: [[], ['ti'], ['tu'], [], []],
     groupName: 'k.b.t',
   },
   {
@@ -157,6 +163,7 @@ export const kana = [
   {
     kana: ['ハ', 'ヒ', 'フ', 'ヘ', 'ホ'],
     romanji: ['ha', 'hi', 'fu', 'he', 'ho'],
+    altRomanji: [[], [], ['hu'], [], []],
     groupName: 'k.b.h',
   },
   {

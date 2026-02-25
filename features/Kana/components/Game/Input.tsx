@@ -94,6 +94,23 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
     [kanaGroupIndices],
   );
 
+  // Map: kana → alternative romanji
+  // Example: 'ん' → ['nn']
+  const altRomanjiMap = useMemo(() => {
+    const map = new Map<string, string[]>();
+    kanaGroupIndices.forEach(i => {
+      const group = kana[i];
+      if (group.altRomanji) {
+        group.kana.forEach((k, idx) => {
+          if (group.altRomanji![idx]?.length > 0) {
+            map.set(k, group.altRomanji![idx]);
+          }
+        });
+      }
+    });
+    return map;
+  }, [kanaGroupIndices]);
+
   // Create mapping pairs based on mode
   const selectedPairs = useMemo(
     () =>
@@ -178,10 +195,28 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
     if (inputValue.trim().length === 0) return;
 
     const trimmedInput = inputValue.trim();
-    const isCorrect = isReverse
-      ? trimmedInput === targetChar
-      : trimmedInput.toLowerCase() === targetChar ||
+
+    // Check if answer is correct
+    let isCorrect = false;
+
+    if (isReverse) {
+      // Reverse mode: romanji → kana
+      isCorrect = trimmedInput === targetChar;
+    } else {
+      // Normal mode: kana → romanji
+      // Check main romanji
+      isCorrect =
+        trimmedInput.toLowerCase() === targetChar ||
         trimmedInput === correctChar;
+
+      // If not correct, check alternative romanji (e.g., 'nn' for 'ん')
+      if (!isCorrect && altRomanjiMap.has(correctChar)) {
+        const alternatives = altRomanjiMap.get(correctChar)!;
+        isCorrect = alternatives.some(
+          alt => trimmedInput.toLowerCase() === alt.toLowerCase(),
+        );
+      }
+    }
 
     playClick();
 
