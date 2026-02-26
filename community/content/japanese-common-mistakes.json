@@ -8,5 +8,10 @@
     "wrong": "毎日日本語を勉強していますから上手になります。",
     "correct": "毎日日本語を勉強しているので上手になります。",
     "explanation": "ので is smoother/neutral for reason. (Pattern set 5)"
+  },
+  {
+    "wrong": "日本語を勉強します、上手になります。",
+    "correct": "日本語を勉強すれば上手になります。",
+    "explanation": "If/when condition → ば. (Pattern set 5)"
   }
 ]
