@@ -192,7 +192,12 @@
   {
   "question": "What is the Japanese term for a traditional inn? (Community variation 46)",
   "difficulty": "medium",
-  "answers": ["Ryokan","Izakaya","Minshuku","Tateyama"],
+  "answers": [
+    "Ryokan",
+    "Izakaya",
+    "Minshuku",
+    "Tateyama"
+  ],
   "correctIndex": 0
 }
 ]
