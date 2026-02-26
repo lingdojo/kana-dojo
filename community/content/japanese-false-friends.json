@@ -1,8 +1,32 @@
 [
+    {
+        "termA": "チャレンジ (charenji)",
+        "termB": "challenge (English)",
+        "explanation": "Often means trying something new. (Set 5)",
+        "example": "新しい料理にチャレンジしてみる。"
+    },
   {
-  "termA": "サラリーマン (sarariman)",
-  "termB": "salaryman",
-  "explanation": "Refers broadly to office workers. (Set 3)",
-  "example": "父は都内でサラリーマンをしている。"
+  "termA": "チャレンジ (charenji)",
+  "termB": "challenge (English)",
+  "explanation": "Often means trying something new. (Set 5)",
+  "example": "新しい料理にチャレンジしてみる。"
+},
+{
+  "termA": "リベンジ (ribenji)",
+  "termB": "revenge (English)",
+  "explanation": "Often used as 'try again after failing'. (Set 6)",
+  "example": "去年落ちた試験に今年リベンジする。"
+},
+{
+  "termA": "イメージ (imeeji)",
+  "termB": "image",
+  "explanation": "Often means impression/public image. (Set 5)",
+  "example": "会社のイメージが良くなった。"
+},
+{
+    "termA": "クレーム (kureemu)",
+    "termB": "claim (English)",
+    "explanation": "In Japanese it usually means complaint. (Set 4)",
+    "example": "お客様からクレームが届いた。"
 }
 ]

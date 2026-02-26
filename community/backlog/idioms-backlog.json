@@ -1,1081 +1,1081 @@
 [
   {
+    "japanese": "猫の手も借りたい",
+    "romaji": "Neko no te mo karitai",
+    "english": "I’d even borrow a cat’s paws",
+    "meaning": "Extremely busy and desperate for help. (Set 1)",
     "id": 1,
-    "japanese": "neko no te mo karitai",
-    "romaji": "neko no te mo karitai",
-    "english": "so busy you'd borrow a cat's paw",
-    "meaning": "extremely busy; community batch entry 1",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 2,
-    "japanese": "mimi ni tako ga dekiru",
-    "romaji": "mimi ni tako ga dekiru",
-    "english": "ears grow calluses",
-    "meaning": "to hear something over and over; community batch entry 2",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 3,
-    "japanese": "saru mo ki kara ochiru",
-    "romaji": "saru mo ki kara ochiru",
-    "english": "even monkeys fall from trees",
-    "meaning": "experts make mistakes; community batch entry 3",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 4,
-    "japanese": "nido aru koto wa sando aru",
-    "romaji": "nido aru koto wa sando aru",
-    "english": "what happens twice happens thrice",
-    "meaning": "bad luck repeats; community batch entry 4",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 5,
-    "japanese": "ichi go ichi e",
-    "romaji": "ichi go ichi e",
-    "english": "one time one meeting",
-    "meaning": "treasure each encounter; community batch entry 5",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 6,
-    "japanese": "hana yori dango",
-    "romaji": "hana yori dango",
-    "english": "dumplings over flowers",
-    "meaning": "practical over aesthetic; community batch entry 6",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 7,
-    "japanese": "ame futte ji katamaru",
-    "romaji": "ame futte ji katamaru",
-    "english": "ground hardens after rain",
-    "meaning": "hardship strengthens bonds; community batch entry 7",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 8,
-    "japanese": "deru kugi wa utareru",
-    "romaji": "deru kugi wa utareru",
-    "english": "the protruding nail gets hammered",
-    "meaning": "conformity pressure; community batch entry 8",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 9,
-    "japanese": "ishi no ue ni mo san nen",
-    "romaji": "ishi no ue ni mo san nen",
-    "english": "three years on a stone",
-    "meaning": "perseverance pays off; community batch entry 9",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 10,
-    "japanese": "isogaba maware",
-    "romaji": "isogaba maware",
-    "english": "if in a hurry, go around",
-    "meaning": "slow is smooth, smooth is fast; community batch entry 10",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 11,
-    "japanese": "kuchi wa wazawai no moto",
-    "romaji": "kuchi wa wazawai no moto",
-    "english": "mouth is source of trouble",
-    "meaning": "watch your words; community batch entry 11",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 12,
-    "japanese": "mizu ni nagasu",
-    "romaji": "mizu ni nagasu",
-    "english": "let it flow in water",
-    "meaning": "let bygones be bygones; community batch entry 12",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 13,
-    "japanese": "ushi no mimi ni nenbutsu",
-    "romaji": "ushi no mimi ni nenbutsu",
-    "english": "sutra in a cow's ear",
-    "meaning": "words falling on deaf ears; community batch entry 13",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 14,
-    "japanese": "toranu tanuki no kawa zanyo",
-    "romaji": "toranu tanuki no kawa zanyo",
-    "english": "counting raccoon skins before hunting",
-    "meaning": "don't count chickens before hatch; community batch entry 14",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 15,
-    "japanese": "tana kara botamochi",
-    "romaji": "tana kara botamochi",
-    "english": "rice cake from shelf",
-    "meaning": "a lucky windfall; community batch entry 15",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 16,
-    "japanese": "inu mo arukeba bo ni ataru",
-    "romaji": "inu mo arukeba bo ni ataru",
-    "english": "a dog walking hits a stick",
-    "meaning": "take action, chance appears; community batch entry 16",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 17,
-    "japanese": "neko ni koban",
-    "romaji": "neko ni koban",
-    "english": "gold coin to a cat",
-    "meaning": "pearls before swine; community batch entry 17",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 18,
-    "japanese": "ki ga au",
-    "romaji": "ki ga au",
-    "english": "spirits match",
-    "meaning": "to click with someone; community batch entry 18",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 19,
-    "japanese": "ki ni suru",
-    "romaji": "ki ni suru",
-    "english": "make it into a tree",
-    "meaning": "to worry about something; community batch entry 19",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 20,
-    "japanese": "ki ga kiitenai",
-    "romaji": "ki ga kiitenai",
-    "english": "spirit not working",
-    "meaning": "inconsiderate; community batch entry 20",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 21,
-    "japanese": "neko no te mo karitai",
-    "romaji": "neko no te mo karitai",
-    "english": "so busy you'd borrow a cat's paw",
-    "meaning": "extremely busy; community batch entry 21",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 22,
-    "japanese": "mimi ni tako ga dekiru",
-    "romaji": "mimi ni tako ga dekiru",
-    "english": "ears grow calluses",
-    "meaning": "to hear something over and over; community batch entry 22",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 23,
-    "japanese": "saru mo ki kara ochiru",
-    "romaji": "saru mo ki kara ochiru",
-    "english": "even monkeys fall from trees",
-    "meaning": "experts make mistakes; community batch entry 23",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 24,
-    "japanese": "nido aru koto wa sando aru",
-    "romaji": "nido aru koto wa sando aru",
-    "english": "what happens twice happens thrice",
-    "meaning": "bad luck repeats; community batch entry 24",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 25,
-    "japanese": "ichi go ichi e",
-    "romaji": "ichi go ichi e",
-    "english": "one time one meeting",
-    "meaning": "treasure each encounter; community batch entry 25",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 26,
-    "japanese": "hana yori dango",
-    "romaji": "hana yori dango",
-    "english": "dumplings over flowers",
-    "meaning": "practical over aesthetic; community batch entry 26",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 27,
-    "japanese": "ame futte ji katamaru",
-    "romaji": "ame futte ji katamaru",
-    "english": "ground hardens after rain",
-    "meaning": "hardship strengthens bonds; community batch entry 27",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 28,
-    "japanese": "deru kugi wa utareru",
-    "romaji": "deru kugi wa utareru",
-    "english": "the protruding nail gets hammered",
-    "meaning": "conformity pressure; community batch entry 28",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 29,
-    "japanese": "ishi no ue ni mo san nen",
-    "romaji": "ishi no ue ni mo san nen",
-    "english": "three years on a stone",
-    "meaning": "perseverance pays off; community batch entry 29",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 30,
-    "japanese": "isogaba maware",
-    "romaji": "isogaba maware",
-    "english": "if in a hurry, go around",
-    "meaning": "slow is smooth, smooth is fast; community batch entry 30",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 31,
-    "japanese": "kuchi wa wazawai no moto",
-    "romaji": "kuchi wa wazawai no moto",
-    "english": "mouth is source of trouble",
-    "meaning": "watch your words; community batch entry 31",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 32,
-    "japanese": "mizu ni nagasu",
-    "romaji": "mizu ni nagasu",
-    "english": "let it flow in water",
-    "meaning": "let bygones be bygones; community batch entry 32",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 33,
-    "japanese": "ushi no mimi ni nenbutsu",
-    "romaji": "ushi no mimi ni nenbutsu",
-    "english": "sutra in a cow's ear",
-    "meaning": "words falling on deaf ears; community batch entry 33",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 34,
-    "japanese": "toranu tanuki no kawa zanyo",
-    "romaji": "toranu tanuki no kawa zanyo",
-    "english": "counting raccoon skins before hunting",
-    "meaning": "don't count chickens before hatch; community batch entry 34",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 35,
-    "japanese": "tana kara botamochi",
-    "romaji": "tana kara botamochi",
-    "english": "rice cake from shelf",
-    "meaning": "a lucky windfall; community batch entry 35",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 36,
-    "japanese": "inu mo arukeba bo ni ataru",
-    "romaji": "inu mo arukeba bo ni ataru",
-    "english": "a dog walking hits a stick",
-    "meaning": "take action, chance appears; community batch entry 36",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 37,
-    "japanese": "neko ni koban",
-    "romaji": "neko ni koban",
-    "english": "gold coin to a cat",
-    "meaning": "pearls before swine; community batch entry 37",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 38,
-    "japanese": "ki ga au",
-    "romaji": "ki ga au",
-    "english": "spirits match",
-    "meaning": "to click with someone; community batch entry 38",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 39,
-    "japanese": "ki ni suru",
-    "romaji": "ki ni suru",
-    "english": "make it into a tree",
-    "meaning": "to worry about something; community batch entry 39",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 40,
-    "japanese": "ki ga kiitenai",
-    "romaji": "ki ga kiitenai",
-    "english": "spirit not working",
-    "meaning": "inconsiderate; community batch entry 40",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 41,
-    "japanese": "neko no te mo karitai",
-    "romaji": "neko no te mo karitai",
-    "english": "so busy you'd borrow a cat's paw",
-    "meaning": "extremely busy; community batch entry 41",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 42,
-    "japanese": "mimi ni tako ga dekiru",
-    "romaji": "mimi ni tako ga dekiru",
-    "english": "ears grow calluses",
-    "meaning": "to hear something over and over; community batch entry 42",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 43,
-    "japanese": "saru mo ki kara ochiru",
-    "romaji": "saru mo ki kara ochiru",
-    "english": "even monkeys fall from trees",
-    "meaning": "experts make mistakes; community batch entry 43",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 44,
-    "japanese": "nido aru koto wa sando aru",
-    "romaji": "nido aru koto wa sando aru",
-    "english": "what happens twice happens thrice",
-    "meaning": "bad luck repeats; community batch entry 44",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 45,
-    "japanese": "ichi go ichi e",
-    "romaji": "ichi go ichi e",
-    "english": "one time one meeting",
-    "meaning": "treasure each encounter; community batch entry 45",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 46,
-    "japanese": "hana yori dango",
-    "romaji": "hana yori dango",
-    "english": "dumplings over flowers",
-    "meaning": "practical over aesthetic; community batch entry 46",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 47,
-    "japanese": "ame futte ji katamaru",
-    "romaji": "ame futte ji katamaru",
-    "english": "ground hardens after rain",
-    "meaning": "hardship strengthens bonds; community batch entry 47",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 48,
-    "japanese": "deru kugi wa utareru",
-    "romaji": "deru kugi wa utareru",
-    "english": "the protruding nail gets hammered",
-    "meaning": "conformity pressure; community batch entry 48",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 49,
-    "japanese": "ishi no ue ni mo san nen",
-    "romaji": "ishi no ue ni mo san nen",
-    "english": "three years on a stone",
-    "meaning": "perseverance pays off; community batch entry 49",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 50,
-    "japanese": "isogaba maware",
-    "romaji": "isogaba maware",
-    "english": "if in a hurry, go around",
-    "meaning": "slow is smooth, smooth is fast; community batch entry 50",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 51,
-    "japanese": "kuchi wa wazawai no moto",
-    "romaji": "kuchi wa wazawai no moto",
-    "english": "mouth is source of trouble",
-    "meaning": "watch your words; community batch entry 51",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 52,
-    "japanese": "mizu ni nagasu",
-    "romaji": "mizu ni nagasu",
-    "english": "let it flow in water",
-    "meaning": "let bygones be bygones; community batch entry 52",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 53,
-    "japanese": "ushi no mimi ni nenbutsu",
-    "romaji": "ushi no mimi ni nenbutsu",
-    "english": "sutra in a cow's ear",
-    "meaning": "words falling on deaf ears; community batch entry 53",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 54,
-    "japanese": "toranu tanuki no kawa zanyo",
-    "romaji": "toranu tanuki no kawa zanyo",
-    "english": "counting raccoon skins before hunting",
-    "meaning": "don't count chickens before hatch; community batch entry 54",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 55,
-    "japanese": "tana kara botamochi",
-    "romaji": "tana kara botamochi",
-    "english": "rice cake from shelf",
-    "meaning": "a lucky windfall; community batch entry 55",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 56,
-    "japanese": "inu mo arukeba bo ni ataru",
-    "romaji": "inu mo arukeba bo ni ataru",
-    "english": "a dog walking hits a stick",
-    "meaning": "take action, chance appears; community batch entry 56",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 57,
-    "japanese": "neko ni koban",
-    "romaji": "neko ni koban",
-    "english": "gold coin to a cat",
-    "meaning": "pearls before swine; community batch entry 57",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 58,
-    "japanese": "ki ga au",
-    "romaji": "ki ga au",
-    "english": "spirits match",
-    "meaning": "to click with someone; community batch entry 58",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 59,
-    "japanese": "ki ni suru",
-    "romaji": "ki ni suru",
-    "english": "make it into a tree",
-    "meaning": "to worry about something; community batch entry 59",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 60,
-    "japanese": "ki ga kiitenai",
-    "romaji": "ki ga kiitenai",
-    "english": "spirit not working",
-    "meaning": "inconsiderate; community batch entry 60",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 61,
-    "japanese": "neko no te mo karitai",
-    "romaji": "neko no te mo karitai",
-    "english": "so busy you'd borrow a cat's paw",
-    "meaning": "extremely busy; community batch entry 61",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 62,
-    "japanese": "mimi ni tako ga dekiru",
-    "romaji": "mimi ni tako ga dekiru",
-    "english": "ears grow calluses",
-    "meaning": "to hear something over and over; community batch entry 62",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 63,
-    "japanese": "saru mo ki kara ochiru",
-    "romaji": "saru mo ki kara ochiru",
-    "english": "even monkeys fall from trees",
-    "meaning": "experts make mistakes; community batch entry 63",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 64,
-    "japanese": "nido aru koto wa sando aru",
-    "romaji": "nido aru koto wa sando aru",
-    "english": "what happens twice happens thrice",
-    "meaning": "bad luck repeats; community batch entry 64",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 65,
-    "japanese": "ichi go ichi e",
-    "romaji": "ichi go ichi e",
-    "english": "one time one meeting",
-    "meaning": "treasure each encounter; community batch entry 65",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 66,
-    "japanese": "hana yori dango",
-    "romaji": "hana yori dango",
-    "english": "dumplings over flowers",
-    "meaning": "practical over aesthetic; community batch entry 66",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 67,
-    "japanese": "ame futte ji katamaru",
-    "romaji": "ame futte ji katamaru",
-    "english": "ground hardens after rain",
-    "meaning": "hardship strengthens bonds; community batch entry 67",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 68,
-    "japanese": "deru kugi wa utareru",
-    "romaji": "deru kugi wa utareru",
-    "english": "the protruding nail gets hammered",
-    "meaning": "conformity pressure; community batch entry 68",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 69,
-    "japanese": "ishi no ue ni mo san nen",
-    "romaji": "ishi no ue ni mo san nen",
-    "english": "three years on a stone",
-    "meaning": "perseverance pays off; community batch entry 69",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 70,
-    "japanese": "isogaba maware",
-    "romaji": "isogaba maware",
-    "english": "if in a hurry, go around",
-    "meaning": "slow is smooth, smooth is fast; community batch entry 70",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 71,
-    "japanese": "kuchi wa wazawai no moto",
-    "romaji": "kuchi wa wazawai no moto",
-    "english": "mouth is source of trouble",
-    "meaning": "watch your words; community batch entry 71",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 72,
-    "japanese": "mizu ni nagasu",
-    "romaji": "mizu ni nagasu",
-    "english": "let it flow in water",
-    "meaning": "let bygones be bygones; community batch entry 72",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 73,
-    "japanese": "ushi no mimi ni nenbutsu",
-    "romaji": "ushi no mimi ni nenbutsu",
-    "english": "sutra in a cow's ear",
-    "meaning": "words falling on deaf ears; community batch entry 73",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 74,
-    "japanese": "toranu tanuki no kawa zanyo",
-    "romaji": "toranu tanuki no kawa zanyo",
-    "english": "counting raccoon skins before hunting",
-    "meaning": "don't count chickens before hatch; community batch entry 74",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 75,
-    "japanese": "tana kara botamochi",
-    "romaji": "tana kara botamochi",
-    "english": "rice cake from shelf",
-    "meaning": "a lucky windfall; community batch entry 75",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 76,
-    "japanese": "inu mo arukeba bo ni ataru",
-    "romaji": "inu mo arukeba bo ni ataru",
-    "english": "a dog walking hits a stick",
-    "meaning": "take action, chance appears; community batch entry 76",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 77,
-    "japanese": "neko ni koban",
-    "romaji": "neko ni koban",
-    "english": "gold coin to a cat",
-    "meaning": "pearls before swine; community batch entry 77",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 78,
-    "japanese": "ki ga au",
-    "romaji": "ki ga au",
-    "english": "spirits match",
-    "meaning": "to click with someone; community batch entry 78",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 79,
-    "japanese": "ki ni suru",
-    "romaji": "ki ni suru",
-    "english": "make it into a tree",
-    "meaning": "to worry about something; community batch entry 79",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 80,
-    "japanese": "ki ga kiitenai",
-    "romaji": "ki ga kiitenai",
-    "english": "spirit not working",
-    "meaning": "inconsiderate; community batch entry 80",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 81,
-    "japanese": "neko no te mo karitai",
-    "romaji": "neko no te mo karitai",
-    "english": "so busy you'd borrow a cat's paw",
-    "meaning": "extremely busy; community batch entry 81",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 82,
-    "japanese": "mimi ni tako ga dekiru",
-    "romaji": "mimi ni tako ga dekiru",
-    "english": "ears grow calluses",
-    "meaning": "to hear something over and over; community batch entry 82",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 83,
-    "japanese": "saru mo ki kara ochiru",
-    "romaji": "saru mo ki kara ochiru",
-    "english": "even monkeys fall from trees",
-    "meaning": "experts make mistakes; community batch entry 83",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 84,
-    "japanese": "nido aru koto wa sando aru",
-    "romaji": "nido aru koto wa sando aru",
-    "english": "what happens twice happens thrice",
-    "meaning": "bad luck repeats; community batch entry 84",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 85,
-    "japanese": "ichi go ichi e",
-    "romaji": "ichi go ichi e",
-    "english": "one time one meeting",
-    "meaning": "treasure each encounter; community batch entry 85",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 86,
-    "japanese": "hana yori dango",
-    "romaji": "hana yori dango",
-    "english": "dumplings over flowers",
-    "meaning": "practical over aesthetic; community batch entry 86",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 87,
-    "japanese": "ame futte ji katamaru",
-    "romaji": "ame futte ji katamaru",
-    "english": "ground hardens after rain",
-    "meaning": "hardship strengthens bonds; community batch entry 87",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 88,
-    "japanese": "deru kugi wa utareru",
-    "romaji": "deru kugi wa utareru",
-    "english": "the protruding nail gets hammered",
-    "meaning": "conformity pressure; community batch entry 88",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 89,
-    "japanese": "ishi no ue ni mo san nen",
-    "romaji": "ishi no ue ni mo san nen",
-    "english": "three years on a stone",
-    "meaning": "perseverance pays off; community batch entry 89",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 90,
-    "japanese": "isogaba maware",
-    "romaji": "isogaba maware",
-    "english": "if in a hurry, go around",
-    "meaning": "slow is smooth, smooth is fast; community batch entry 90",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 91,
-    "japanese": "kuchi wa wazawai no moto",
-    "romaji": "kuchi wa wazawai no moto",
-    "english": "mouth is source of trouble",
-    "meaning": "watch your words; community batch entry 91",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 92,
-    "japanese": "mizu ni nagasu",
-    "romaji": "mizu ni nagasu",
-    "english": "let it flow in water",
-    "meaning": "let bygones be bygones; community batch entry 92",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 93,
-    "japanese": "ushi no mimi ni nenbutsu",
-    "romaji": "ushi no mimi ni nenbutsu",
-    "english": "sutra in a cow's ear",
-    "meaning": "words falling on deaf ears; community batch entry 93",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 94,
-    "japanese": "toranu tanuki no kawa zanyo",
-    "romaji": "toranu tanuki no kawa zanyo",
-    "english": "counting raccoon skins before hunting",
-    "meaning": "don't count chickens before hatch; community batch entry 94",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 95,
-    "japanese": "tana kara botamochi",
-    "romaji": "tana kara botamochi",
-    "english": "rice cake from shelf",
-    "meaning": "a lucky windfall; community batch entry 95",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 96,
-    "japanese": "inu mo arukeba bo ni ataru",
-    "romaji": "inu mo arukeba bo ni ataru",
-    "english": "a dog walking hits a stick",
-    "meaning": "take action, chance appears; community batch entry 96",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 97,
-    "japanese": "neko ni koban",
-    "romaji": "neko ni koban",
-    "english": "gold coin to a cat",
-    "meaning": "pearls before swine; community batch entry 97",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 98,
-    "japanese": "ki ga au",
-    "romaji": "ki ga au",
-    "english": "spirits match",
-    "meaning": "to click with someone; community batch entry 98",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 99,
-    "japanese": "ki ni suru",
-    "romaji": "ki ni suru",
-    "english": "make it into a tree",
-    "meaning": "to worry about something; community batch entry 99",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 100,
-    "japanese": "ki ga kiitenai",
-    "romaji": "ki ga kiitenai",
-    "english": "spirit not working",
-    "meaning": "inconsiderate; community batch entry 100",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 101,
-    "japanese": "neko no te mo karitai",
-    "romaji": "neko no te mo karitai",
-    "english": "so busy you'd borrow a cat's paw",
-    "meaning": "extremely busy; community batch entry 101",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 102,
-    "japanese": "mimi ni tako ga dekiru",
-    "romaji": "mimi ni tako ga dekiru",
-    "english": "ears grow calluses",
-    "meaning": "to hear something over and over; community batch entry 102",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 103,
-    "japanese": "saru mo ki kara ochiru",
-    "romaji": "saru mo ki kara ochiru",
-    "english": "even monkeys fall from trees",
-    "meaning": "experts make mistakes; community batch entry 103",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 104,
-    "japanese": "nido aru koto wa sando aru",
-    "romaji": "nido aru koto wa sando aru",
-    "english": "what happens twice happens thrice",
-    "meaning": "bad luck repeats; community batch entry 104",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 105,
-    "japanese": "ichi go ichi e",
-    "romaji": "ichi go ichi e",
-    "english": "one time one meeting",
-    "meaning": "treasure each encounter; community batch entry 105",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 106,
-    "japanese": "hana yori dango",
-    "romaji": "hana yori dango",
-    "english": "dumplings over flowers",
-    "meaning": "practical over aesthetic; community batch entry 106",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 107,
-    "japanese": "ame futte ji katamaru",
-    "romaji": "ame futte ji katamaru",
-    "english": "ground hardens after rain",
-    "meaning": "hardship strengthens bonds; community batch entry 107",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 108,
-    "japanese": "deru kugi wa utareru",
-    "romaji": "deru kugi wa utareru",
-    "english": "the protruding nail gets hammered",
-    "meaning": "conformity pressure; community batch entry 108",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 109,
-    "japanese": "ishi no ue ni mo san nen",
-    "romaji": "ishi no ue ni mo san nen",
-    "english": "three years on a stone",
-    "meaning": "perseverance pays off; community batch entry 109",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 110,
-    "japanese": "isogaba maware",
-    "romaji": "isogaba maware",
-    "english": "if in a hurry, go around",
-    "meaning": "slow is smooth, smooth is fast; community batch entry 110",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 111,
-    "japanese": "kuchi wa wazawai no moto",
-    "romaji": "kuchi wa wazawai no moto",
-    "english": "mouth is source of trouble",
-    "meaning": "watch your words; community batch entry 111",
-    "issued": false,
-    "completed": false
-  },
-  {
-    "id": 112,
-    "japanese": "mizu ni nagasu",
-    "romaji": "mizu ni nagasu",
-    "english": "let it flow in water",
-    "meaning": "let bygones be bygones; community batch entry 112",
     "issued": true,
     "completed": false
   },
   {
+    "japanese": "頭が上がらない",
+    "romaji": "Atama ga agaranai",
+    "english": "Cannot raise one’s head",
+    "meaning": "Feel indebted or unable to oppose someone. (Set 1)",
+    "id": 2,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "腰が重い",
+    "romaji": "Koshi ga omoi",
+    "english": "Heavy hips",
+    "meaning": "Slow to start doing something. (Set 1)",
+    "id": 3,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "顔が広い",
+    "romaji": "Kao ga hiroi",
+    "english": "Wide face",
+    "meaning": "Have many connections. (Set 1)",
+    "id": 4,
+    "issued": true,
+    "completed": false
+  },
+  {
+    "japanese": "口が堅い",
+    "romaji": "Kuchi ga katai",
+    "english": "Tight-lipped",
+    "meaning": "Can keep secrets. (Set 1)",
+    "id": 5,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "気が短い",
+    "romaji": "Ki ga mijikai",
+    "english": "Short-tempered",
+    "meaning": "Impatient temperament. (Set 1)",
+    "id": 6,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "腹が立つ",
+    "romaji": "Hara ga tatsu",
+    "english": "Stomach stands up",
+    "meaning": "Get angry. (Set 1)",
+    "id": 7,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "手を抜く",
+    "romaji": "Te o nuku",
+    "english": "Cut corners",
+    "meaning": "Do less than one should. (Set 1)",
+    "id": 8,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "目がない",
+    "romaji": "Me ga nai",
+    "english": "No eyes",
+    "meaning": "Have a weakness for something. (Set 1)",
+    "id": 9,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "耳が早い",
+    "romaji": "Mimi ga hayai",
+    "english": "Fast ears",
+    "meaning": "Quick to hear news/gossip. (Set 1)",
+    "id": 10,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "足を引っ張る",
+    "romaji": "Ashi o hipparu",
+    "english": "Pull someone back",
+    "meaning": "Hold someone back. (Set 1)",
+    "id": 11,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "骨が折れる",
+    "romaji": "Hone ga oreru",
+    "english": "Bones break",
+    "meaning": "Requires considerable effort. (Set 1)",
+    "id": 12,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "気が進まない",
+    "romaji": "Ki ga susumanai",
+    "english": "Spirit doesn't proceed",
+    "meaning": "Not feel like doing it. (Set 1)",
+    "id": 13,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "胸を張る",
+    "romaji": "Mune o haru",
+    "english": "Expand chest",
+    "meaning": "Be proud/confident. (Set 1)",
+    "id": 14,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "鼻が高い",
+    "romaji": "Hana ga takai",
+    "english": "High nose",
+    "meaning": "Feel proud. (Set 1)",
+    "id": 15,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "首を長くする",
+    "romaji": "Kubi o nagaku suru",
+    "english": "Make neck long",
+    "meaning": "Wait eagerly. (Set 1)",
+    "id": 16,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "水に流す",
+    "romaji": "Mizu ni nagasu",
+    "english": "Let it flow in water",
+    "meaning": "Let bygones be bygones. (Set 1)",
+    "id": 17,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "念には念を入れる",
+    "romaji": "Nen ni wa nen o ireru",
+    "english": "Add caution to caution",
+    "meaning": "Take extra care. (Set 1)",
+    "id": 18,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "立つ鳥跡を濁さず",
+    "romaji": "Tatsu tori ato o nigosazu",
+    "english": "A bird leaves no mess",
+    "meaning": "Leave cleanly without trouble. (Set 1)",
+    "id": 19,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "手に入れる",
+    "romaji": "Te ni ireru",
+    "english": "Put into one’s hand",
+    "meaning": "Obtain something. (Set 1)",
+    "id": 20,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "猫の手も借りたい",
+    "romaji": "Neko no te mo karitai",
+    "english": "I’d even borrow a cat’s paws",
+    "meaning": "Extremely busy and desperate for help. (Set 2)",
+    "id": 21,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "頭が上がらない",
+    "romaji": "Atama ga agaranai",
+    "english": "Cannot raise one’s head",
+    "meaning": "Feel indebted or unable to oppose someone. (Set 2)",
+    "id": 22,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "腰が重い",
+    "romaji": "Koshi ga omoi",
+    "english": "Heavy hips",
+    "meaning": "Slow to start doing something. (Set 2)",
+    "id": 23,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "顔が広い",
+    "romaji": "Kao ga hiroi",
+    "english": "Wide face",
+    "meaning": "Have many connections. (Set 2)",
+    "id": 24,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "口が堅い",
+    "romaji": "Kuchi ga katai",
+    "english": "Tight-lipped",
+    "meaning": "Can keep secrets. (Set 2)",
+    "id": 25,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "気が短い",
+    "romaji": "Ki ga mijikai",
+    "english": "Short-tempered",
+    "meaning": "Impatient temperament. (Set 2)",
+    "id": 26,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "腹が立つ",
+    "romaji": "Hara ga tatsu",
+    "english": "Stomach stands up",
+    "meaning": "Get angry. (Set 2)",
+    "id": 27,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "手を抜く",
+    "romaji": "Te o nuku",
+    "english": "Cut corners",
+    "meaning": "Do less than one should. (Set 2)",
+    "id": 28,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "目がない",
+    "romaji": "Me ga nai",
+    "english": "No eyes",
+    "meaning": "Have a weakness for something. (Set 2)",
+    "id": 29,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "耳が早い",
+    "romaji": "Mimi ga hayai",
+    "english": "Fast ears",
+    "meaning": "Quick to hear news/gossip. (Set 2)",
+    "id": 30,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "足を引っ張る",
+    "romaji": "Ashi o hipparu",
+    "english": "Pull someone back",
+    "meaning": "Hold someone back. (Set 2)",
+    "id": 31,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "骨が折れる",
+    "romaji": "Hone ga oreru",
+    "english": "Bones break",
+    "meaning": "Requires considerable effort. (Set 2)",
+    "id": 32,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "気が進まない",
+    "romaji": "Ki ga susumanai",
+    "english": "Spirit doesn't proceed",
+    "meaning": "Not feel like doing it. (Set 2)",
+    "id": 33,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "胸を張る",
+    "romaji": "Mune o haru",
+    "english": "Expand chest",
+    "meaning": "Be proud/confident. (Set 2)",
+    "id": 34,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "鼻が高い",
+    "romaji": "Hana ga takai",
+    "english": "High nose",
+    "meaning": "Feel proud. (Set 2)",
+    "id": 35,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "首を長くする",
+    "romaji": "Kubi o nagaku suru",
+    "english": "Make neck long",
+    "meaning": "Wait eagerly. (Set 2)",
+    "id": 36,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "水に流す",
+    "romaji": "Mizu ni nagasu",
+    "english": "Let it flow in water",
+    "meaning": "Let bygones be bygones. (Set 2)",
+    "id": 37,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "念には念を入れる",
+    "romaji": "Nen ni wa nen o ireru",
+    "english": "Add caution to caution",
+    "meaning": "Take extra care. (Set 2)",
+    "id": 38,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "立つ鳥跡を濁さず",
+    "romaji": "Tatsu tori ato o nigosazu",
+    "english": "A bird leaves no mess",
+    "meaning": "Leave cleanly without trouble. (Set 2)",
+    "id": 39,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "手に入れる",
+    "romaji": "Te ni ireru",
+    "english": "Put into one’s hand",
+    "meaning": "Obtain something. (Set 2)",
+    "id": 40,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "猫の手も借りたい",
+    "romaji": "Neko no te mo karitai",
+    "english": "I’d even borrow a cat’s paws",
+    "meaning": "Extremely busy and desperate for help. (Set 3)",
+    "id": 41,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "頭が上がらない",
+    "romaji": "Atama ga agaranai",
+    "english": "Cannot raise one’s head",
+    "meaning": "Feel indebted or unable to oppose someone. (Set 3)",
+    "id": 42,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "腰が重い",
+    "romaji": "Koshi ga omoi",
+    "english": "Heavy hips",
+    "meaning": "Slow to start doing something. (Set 3)",
+    "id": 43,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "顔が広い",
+    "romaji": "Kao ga hiroi",
+    "english": "Wide face",
+    "meaning": "Have many connections. (Set 3)",
+    "id": 44,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "口が堅い",
+    "romaji": "Kuchi ga katai",
+    "english": "Tight-lipped",
+    "meaning": "Can keep secrets. (Set 3)",
+    "id": 45,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "気が短い",
+    "romaji": "Ki ga mijikai",
+    "english": "Short-tempered",
+    "meaning": "Impatient temperament. (Set 3)",
+    "id": 46,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "腹が立つ",
+    "romaji": "Hara ga tatsu",
+    "english": "Stomach stands up",
+    "meaning": "Get angry. (Set 3)",
+    "id": 47,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "手を抜く",
+    "romaji": "Te o nuku",
+    "english": "Cut corners",
+    "meaning": "Do less than one should. (Set 3)",
+    "id": 48,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "目がない",
+    "romaji": "Me ga nai",
+    "english": "No eyes",
+    "meaning": "Have a weakness for something. (Set 3)",
+    "id": 49,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "耳が早い",
+    "romaji": "Mimi ga hayai",
+    "english": "Fast ears",
+    "meaning": "Quick to hear news/gossip. (Set 3)",
+    "id": 50,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "足を引っ張る",
+    "romaji": "Ashi o hipparu",
+    "english": "Pull someone back",
+    "meaning": "Hold someone back. (Set 3)",
+    "id": 51,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "骨が折れる",
+    "romaji": "Hone ga oreru",
+    "english": "Bones break",
+    "meaning": "Requires considerable effort. (Set 3)",
+    "id": 52,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "気が進まない",
+    "romaji": "Ki ga susumanai",
+    "english": "Spirit doesn't proceed",
+    "meaning": "Not feel like doing it. (Set 3)",
+    "id": 53,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "胸を張る",
+    "romaji": "Mune o haru",
+    "english": "Expand chest",
+    "meaning": "Be proud/confident. (Set 3)",
+    "id": 54,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "鼻が高い",
+    "romaji": "Hana ga takai",
+    "english": "High nose",
+    "meaning": "Feel proud. (Set 3)",
+    "id": 55,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "首を長くする",
+    "romaji": "Kubi o nagaku suru",
+    "english": "Make neck long",
+    "meaning": "Wait eagerly. (Set 3)",
+    "id": 56,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "水に流す",
+    "romaji": "Mizu ni nagasu",
+    "english": "Let it flow in water",
+    "meaning": "Let bygones be bygones. (Set 3)",
+    "id": 57,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "念には念を入れる",
+    "romaji": "Nen ni wa nen o ireru",
+    "english": "Add caution to caution",
+    "meaning": "Take extra care. (Set 3)",
+    "id": 58,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "立つ鳥跡を濁さず",
+    "romaji": "Tatsu tori ato o nigosazu",
+    "english": "A bird leaves no mess",
+    "meaning": "Leave cleanly without trouble. (Set 3)",
+    "id": 59,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "手に入れる",
+    "romaji": "Te ni ireru",
+    "english": "Put into one’s hand",
+    "meaning": "Obtain something. (Set 3)",
+    "id": 60,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "猫の手も借りたい",
+    "romaji": "Neko no te mo karitai",
+    "english": "I’d even borrow a cat’s paws",
+    "meaning": "Extremely busy and desperate for help. (Set 4)",
+    "id": 61,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "頭が上がらない",
+    "romaji": "Atama ga agaranai",
+    "english": "Cannot raise one’s head",
+    "meaning": "Feel indebted or unable to oppose someone. (Set 4)",
+    "id": 62,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "腰が重い",
+    "romaji": "Koshi ga omoi",
+    "english": "Heavy hips",
+    "meaning": "Slow to start doing something. (Set 4)",
+    "id": 63,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "顔が広い",
+    "romaji": "Kao ga hiroi",
+    "english": "Wide face",
+    "meaning": "Have many connections. (Set 4)",
+    "id": 64,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "口が堅い",
+    "romaji": "Kuchi ga katai",
+    "english": "Tight-lipped",
+    "meaning": "Can keep secrets. (Set 4)",
+    "id": 65,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "気が短い",
+    "romaji": "Ki ga mijikai",
+    "english": "Short-tempered",
+    "meaning": "Impatient temperament. (Set 4)",
+    "id": 66,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "腹が立つ",
+    "romaji": "Hara ga tatsu",
+    "english": "Stomach stands up",
+    "meaning": "Get angry. (Set 4)",
+    "id": 67,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "手を抜く",
+    "romaji": "Te o nuku",
+    "english": "Cut corners",
+    "meaning": "Do less than one should. (Set 4)",
+    "id": 68,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "目がない",
+    "romaji": "Me ga nai",
+    "english": "No eyes",
+    "meaning": "Have a weakness for something. (Set 4)",
+    "id": 69,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "耳が早い",
+    "romaji": "Mimi ga hayai",
+    "english": "Fast ears",
+    "meaning": "Quick to hear news/gossip. (Set 4)",
+    "id": 70,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "足を引っ張る",
+    "romaji": "Ashi o hipparu",
+    "english": "Pull someone back",
+    "meaning": "Hold someone back. (Set 4)",
+    "id": 71,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "骨が折れる",
+    "romaji": "Hone ga oreru",
+    "english": "Bones break",
+    "meaning": "Requires considerable effort. (Set 4)",
+    "id": 72,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "気が進まない",
+    "romaji": "Ki ga susumanai",
+    "english": "Spirit doesn't proceed",
+    "meaning": "Not feel like doing it. (Set 4)",
+    "id": 73,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "胸を張る",
+    "romaji": "Mune o haru",
+    "english": "Expand chest",
+    "meaning": "Be proud/confident. (Set 4)",
+    "id": 74,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "鼻が高い",
+    "romaji": "Hana ga takai",
+    "english": "High nose",
+    "meaning": "Feel proud. (Set 4)",
+    "id": 75,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "首を長くする",
+    "romaji": "Kubi o nagaku suru",
+    "english": "Make neck long",
+    "meaning": "Wait eagerly. (Set 4)",
+    "id": 76,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "水に流す",
+    "romaji": "Mizu ni nagasu",
+    "english": "Let it flow in water",
+    "meaning": "Let bygones be bygones. (Set 4)",
+    "id": 77,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "念には念を入れる",
+    "romaji": "Nen ni wa nen o ireru",
+    "english": "Add caution to caution",
+    "meaning": "Take extra care. (Set 4)",
+    "id": 78,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "立つ鳥跡を濁さず",
+    "romaji": "Tatsu tori ato o nigosazu",
+    "english": "A bird leaves no mess",
+    "meaning": "Leave cleanly without trouble. (Set 4)",
+    "id": 79,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "手に入れる",
+    "romaji": "Te ni ireru",
+    "english": "Put into one’s hand",
+    "meaning": "Obtain something. (Set 4)",
+    "id": 80,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "猫の手も借りたい",
+    "romaji": "Neko no te mo karitai",
+    "english": "I’d even borrow a cat’s paws",
+    "meaning": "Extremely busy and desperate for help. (Set 5)",
+    "id": 81,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "頭が上がらない",
+    "romaji": "Atama ga agaranai",
+    "english": "Cannot raise one’s head",
+    "meaning": "Feel indebted or unable to oppose someone. (Set 5)",
+    "id": 82,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "腰が重い",
+    "romaji": "Koshi ga omoi",
+    "english": "Heavy hips",
+    "meaning": "Slow to start doing something. (Set 5)",
+    "id": 83,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "顔が広い",
+    "romaji": "Kao ga hiroi",
+    "english": "Wide face",
+    "meaning": "Have many connections. (Set 5)",
+    "id": 84,
+    "issued": true,
+    "completed": false
+  },
+  {
+    "japanese": "口が堅い",
+    "romaji": "Kuchi ga katai",
+    "english": "Tight-lipped",
+    "meaning": "Can keep secrets. (Set 5)",
+    "id": 85,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "気が短い",
+    "romaji": "Ki ga mijikai",
+    "english": "Short-tempered",
+    "meaning": "Impatient temperament. (Set 5)",
+    "id": 86,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "腹が立つ",
+    "romaji": "Hara ga tatsu",
+    "english": "Stomach stands up",
+    "meaning": "Get angry. (Set 5)",
+    "id": 87,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "手を抜く",
+    "romaji": "Te o nuku",
+    "english": "Cut corners",
+    "meaning": "Do less than one should. (Set 5)",
+    "id": 88,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "目がない",
+    "romaji": "Me ga nai",
+    "english": "No eyes",
+    "meaning": "Have a weakness for something. (Set 5)",
+    "id": 89,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "耳が早い",
+    "romaji": "Mimi ga hayai",
+    "english": "Fast ears",
+    "meaning": "Quick to hear news/gossip. (Set 5)",
+    "id": 90,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "足を引っ張る",
+    "romaji": "Ashi o hipparu",
+    "english": "Pull someone back",
+    "meaning": "Hold someone back. (Set 5)",
+    "id": 91,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "骨が折れる",
+    "romaji": "Hone ga oreru",
+    "english": "Bones break",
+    "meaning": "Requires considerable effort. (Set 5)",
+    "id": 92,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "気が進まない",
+    "romaji": "Ki ga susumanai",
+    "english": "Spirit doesn't proceed",
+    "meaning": "Not feel like doing it. (Set 5)",
+    "id": 93,
+    "issued": true,
+    "completed": false
+  },
+  {
+    "japanese": "胸を張る",
+    "romaji": "Mune o haru",
+    "english": "Expand chest",
+    "meaning": "Be proud/confident. (Set 5)",
+    "id": 94,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "鼻が高い",
+    "romaji": "Hana ga takai",
+    "english": "High nose",
+    "meaning": "Feel proud. (Set 5)",
+    "id": 95,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "首を長くする",
+    "romaji": "Kubi o nagaku suru",
+    "english": "Make neck long",
+    "meaning": "Wait eagerly. (Set 5)",
+    "id": 96,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "水に流す",
+    "romaji": "Mizu ni nagasu",
+    "english": "Let it flow in water",
+    "meaning": "Let bygones be bygones. (Set 5)",
+    "id": 97,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "念には念を入れる",
+    "romaji": "Nen ni wa nen o ireru",
+    "english": "Add caution to caution",
+    "meaning": "Take extra care. (Set 5)",
+    "id": 98,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "立つ鳥跡を濁さず",
+    "romaji": "Tatsu tori ato o nigosazu",
+    "english": "A bird leaves no mess",
+    "meaning": "Leave cleanly without trouble. (Set 5)",
+    "id": 99,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "手に入れる",
+    "romaji": "Te ni ireru",
+    "english": "Put into one’s hand",
+    "meaning": "Obtain something. (Set 5)",
+    "id": 100,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "猫の手も借りたい",
+    "romaji": "Neko no te mo karitai",
+    "english": "I’d even borrow a cat’s paws",
+    "meaning": "Extremely busy and desperate for help. (Set 6)",
+    "id": 101,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "頭が上がらない",
+    "romaji": "Atama ga agaranai",
+    "english": "Cannot raise one’s head",
+    "meaning": "Feel indebted or unable to oppose someone. (Set 6)",
+    "id": 102,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "腰が重い",
+    "romaji": "Koshi ga omoi",
+    "english": "Heavy hips",
+    "meaning": "Slow to start doing something. (Set 6)",
+    "id": 103,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "顔が広い",
+    "romaji": "Kao ga hiroi",
+    "english": "Wide face",
+    "meaning": "Have many connections. (Set 6)",
+    "id": 104,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "口が堅い",
+    "romaji": "Kuchi ga katai",
+    "english": "Tight-lipped",
+    "meaning": "Can keep secrets. (Set 6)",
+    "id": 105,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "気が短い",
+    "romaji": "Ki ga mijikai",
+    "english": "Short-tempered",
+    "meaning": "Impatient temperament. (Set 6)",
+    "id": 106,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "腹が立つ",
+    "romaji": "Hara ga tatsu",
+    "english": "Stomach stands up",
+    "meaning": "Get angry. (Set 6)",
+    "id": 107,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "手を抜く",
+    "romaji": "Te o nuku",
+    "english": "Cut corners",
+    "meaning": "Do less than one should. (Set 6)",
+    "id": 108,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "目がない",
+    "romaji": "Me ga nai",
+    "english": "No eyes",
+    "meaning": "Have a weakness for something. (Set 6)",
+    "id": 109,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "耳が早い",
+    "romaji": "Mimi ga hayai",
+    "english": "Fast ears",
+    "meaning": "Quick to hear news/gossip. (Set 6)",
+    "id": 110,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "足を引っ張る",
+    "romaji": "Ashi o hipparu",
+    "english": "Pull someone back",
+    "meaning": "Hold someone back. (Set 6)",
+    "id": 111,
+    "issued": false,
+    "completed": false
+  },
+  {
+    "japanese": "骨が折れる",
+    "romaji": "Hone ga oreru",
+    "english": "Bones break",
+    "meaning": "Requires considerable effort. (Set 6)",
+    "id": 112,
+    "issued": true,
+    "completed": false
+  },
+  {
+    "japanese": "気が進まない",
+    "romaji": "Ki ga susumanai",
+    "english": "Spirit doesn't proceed",
+    "meaning": "Not feel like doing it. (Set 6)",
     "id": 113,
-    "japanese": "ushi no mimi ni nenbutsu",
-    "romaji": "ushi no mimi ni nenbutsu",
-    "english": "sutra in a cow's ear",
-    "meaning": "words falling on deaf ears; community batch entry 113",
     "issued": false,
     "completed": false
   },
   {
+    "japanese": "胸を張る",
+    "romaji": "Mune o haru",
+    "english": "Expand chest",
+    "meaning": "Be proud/confident. (Set 6)",
     "id": 114,
-    "japanese": "toranu tanuki no kawa zanyo",
-    "romaji": "toranu tanuki no kawa zanyo",
-    "english": "counting raccoon skins before hunting",
-    "meaning": "don't count chickens before hatch; community batch entry 114",
     "issued": false,
     "completed": false
   },
   {
+    "japanese": "鼻が高い",
+    "romaji": "Hana ga takai",
+    "english": "High nose",
+    "meaning": "Feel proud. (Set 6)",
     "id": 115,
-    "japanese": "tana kara botamochi",
-    "romaji": "tana kara botamochi",
-    "english": "rice cake from shelf",
-    "meaning": "a lucky windfall; community batch entry 115",
     "issued": false,
     "completed": false
   },
   {
+    "japanese": "首を長くする",
+    "romaji": "Kubi o nagaku suru",
+    "english": "Make neck long",
+    "meaning": "Wait eagerly. (Set 6)",
     "id": 116,
-    "japanese": "inu mo arukeba bo ni ataru",
-    "romaji": "inu mo arukeba bo ni ataru",
-    "english": "a dog walking hits a stick",
-    "meaning": "take action, chance appears; community batch entry 116",
     "issued": false,
     "completed": false
   },
   {
+    "japanese": "水に流す",
+    "romaji": "Mizu ni nagasu",
+    "english": "Let it flow in water",
+    "meaning": "Let bygones be bygones. (Set 6)",
     "id": 117,
-    "japanese": "neko ni koban",
-    "romaji": "neko ni koban",
-    "english": "gold coin to a cat",
-    "meaning": "pearls before swine; community batch entry 117",
     "issued": false,
     "completed": false
   },
   {
+    "japanese": "念には念を入れる",
+    "romaji": "Nen ni wa nen o ireru",
+    "english": "Add caution to caution",
+    "meaning": "Take extra care. (Set 6)",
     "id": 118,
-    "japanese": "ki ga au",
-    "romaji": "ki ga au",
-    "english": "spirits match",
-    "meaning": "to click with someone; community batch entry 118",
     "issued": false,
     "completed": false
   },
   {
+    "japanese": "立つ鳥跡を濁さず",
+    "romaji": "Tatsu tori ato o nigosazu",
+    "english": "A bird leaves no mess",
+    "meaning": "Leave cleanly without trouble. (Set 6)",
     "id": 119,
-    "japanese": "ki ni suru",
-    "romaji": "ki ni suru",
-    "english": "make it into a tree",
-    "meaning": "to worry about something; community batch entry 119",
     "issued": false,
     "completed": false
   },
   {
+    "japanese": "手に入れる",
+    "romaji": "Te ni ireru",
+    "english": "Put into one’s hand",
+    "meaning": "Obtain something. (Set 6)",
     "id": 120,
-    "japanese": "ki ga kiitenai",
-    "romaji": "ki ga kiitenai",
-    "english": "spirit not working",
-    "meaning": "inconsiderate; community batch entry 120",
     "issued": false,
     "completed": false
   }

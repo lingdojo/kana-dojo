@@ -304,7 +304,7 @@ jobs:
                   // Prefer extracting theme name from the issue title
                   let themeName = null;
 
-                  const issueThemeMatch = issueTitle.match(/Add (?:New Color )?Theme:\s*(.+?)(?:\s*(?:—|\()|$)/i);
+                  const issueThemeMatch = issueTitle.match(/Add (?:new )?(?:New Color )?Theme:\s*(.+?)(?:\s*(?:—|\()|$)/i);
                   if (issueThemeMatch) {
                     themeName = issueThemeMatch[1].trim();
                   }
@@ -338,7 +338,7 @@ jobs:
                   }
                 } else if (isFactContribution) {
                   const facts = JSON.parse(fs.readFileSync(factsBacklogPath, 'utf8'));
-                  const issueFactMatch = issueTitle.match(/Add Japan Fact\s*#(\d+)/i);
+                  const issueFactMatch = issueTitle.match(/Add (?:new )?Japan Fact\s*#(\d+)/i);
                   const prFactMatch = prTitle.match(/#(\d+)/);
                   const factId = issueFactMatch ? parseInt(issueFactMatch[1]) : (prFactMatch ? parseInt(prFactMatch[1]) : null);
 
@@ -356,7 +356,7 @@ jobs:
                   }
                 } else if (isProverbContribution) {
                   const proverbs = JSON.parse(fs.readFileSync(proverbsBacklogPath, 'utf8'));
-                  const issueProverbMatch = issueTitle.match(/Add Japanese Proverb\s*#(\d+)/i);
+                  const issueProverbMatch = issueTitle.match(/Add (?:new )?Japanese Proverb\s*#(\d+)/i);
                   const prProverbMatch = prTitle.match(/#(\d+)/);
                   const proverbId = issueProverbMatch ? parseInt(issueProverbMatch[1]) : (prProverbMatch ? parseInt(prProverbMatch[1]) : null);
 
@@ -374,7 +374,7 @@ jobs:
                   }
                 } else if (isHaikuContribution) {
                   const haikuItems = JSON.parse(fs.readFileSync(haikuBacklogPath, 'utf8'));
-                  const issueHaikuMatch = issueTitle.match(/Add (?:Classic )?Japanese Haiku\s*#(\d+)/i);
+                  const issueHaikuMatch = issueTitle.match(/Add (?:new )?(?:Classic )?Japanese Haiku\s*#(\d+)/i);
                   const prHaikuMatch = prTitle.match(/#(\d+)/);
                   const haikuId = issueHaikuMatch ? parseInt(issueHaikuMatch[1]) : (prHaikuMatch ? parseInt(prHaikuMatch[1]) : null);
 
@@ -392,7 +392,7 @@ jobs:
                   }
                 } else if (isTriviaContribution) {
                   const trivia = JSON.parse(fs.readFileSync(triviaBacklogPath, 'utf8'));
-                  const issueTriviaMatch = issueTitle.match(/Add (?:New )?Trivia Question\s*#(\d+)/i);
+                  const issueTriviaMatch = issueTitle.match(/Add (?:new )?(?:New )?Trivia Question\s*#(\d+)/i);
                   const prTriviaMatch = prTitle.match(/#(\d+)/);
                   const triviaId = issueTriviaMatch ? parseInt(issueTriviaMatch[1]) : (prTriviaMatch ? parseInt(prTriviaMatch[1]) : null);
 
@@ -410,7 +410,7 @@ jobs:
                   }
                 } else if (isGrammarContribution) {
                   const grammar = JSON.parse(fs.readFileSync(grammarBacklogPath, 'utf8'));
-                  const issueGrammarMatch = issueTitle.match(/Add (?:New )?Grammar Point\s*#(\d+)/i);
+                  const issueGrammarMatch = issueTitle.match(/Add (?:new )?(?:New )?Grammar Point\s*#(\d+)/i);
                   const prGrammarMatch = prTitle.match(/#(\d+)/);
                   const grammarId = issueGrammarMatch ? parseInt(issueGrammarMatch[1]) : (prGrammarMatch ? parseInt(prGrammarMatch[1]) : null);
 
@@ -428,7 +428,7 @@ jobs:
                   }
                 } else if (isAnimeQuoteContribution) {
                   const animeQuotes = JSON.parse(fs.readFileSync(animeQuotesBacklogPath, 'utf8'));
-                  const issueQuoteMatch = issueTitle.match(/Add (?:Famous )?Anime Quote\s*#(\d+)/i);
+                  const issueQuoteMatch = issueTitle.match(/Add (?:new )?(?:Famous )?Anime Quote\s*#(\d+)/i);
                   const prQuoteMatch = prTitle.match(/#(\d+)/);
                   const quoteId = issueQuoteMatch ? parseInt(issueQuoteMatch[1]) : (prQuoteMatch ? parseInt(prQuoteMatch[1]) : null);
 
@@ -446,7 +446,7 @@ jobs:
                   }
                 } else if (isIdiomContribution) {
                   const idioms = JSON.parse(fs.readFileSync(idiomsBacklogPath, 'utf8'));
-                  const issueIdiomMatch = issueTitle.match(/Add (?:New )?Japanese Idiom\s*#(\d+)/i);
+                  const issueIdiomMatch = issueTitle.match(/Add (?:new )?(?:New )?Japanese Idiom\s*#(\d+)/i);
                   const prIdiomMatch = prTitle.match(/#(\d+)/);
                   const idiomId = issueIdiomMatch ? parseInt(issueIdiomMatch[1]) : (prIdiomMatch ? parseInt(prIdiomMatch[1]) : null);
 
@@ -464,7 +464,7 @@ jobs:
                   }
                 } else if (isRegionalDialectContribution) {
                   const regionalDialects = JSON.parse(fs.readFileSync(regionalDialectsBacklogPath, 'utf8'));
-                  const issueDialectMatch = issueTitle.match(/Add (?:Regional )?Dialect Entry\s*#(\d+)/i);
+                  const issueDialectMatch = issueTitle.match(/Add (?:new )?(?:Regional )?Dialect Entry\s*#(\d+)/i);
                   const prDialectMatch = prTitle.match(/#(\d+)/);
                   const dialectId = issueDialectMatch ? parseInt(issueDialectMatch[1]) : (prDialectMatch ? parseInt(prDialectMatch[1]) : null);
 
@@ -482,7 +482,7 @@ jobs:
                   }
                 } else if (isFalseFriendContribution) {
                   const items = JSON.parse(fs.readFileSync(falseFriendsBacklogPath, 'utf8'));
-                  const issueMatch = issueTitle.match(/Add (?:Japanese )?False Friend(?:\s*Pair)?\s*#(\d+)/i);
+                  const issueMatch = issueTitle.match(/Add (?:new )?(?:Japanese )?False Friend(?:\s*Pair)?\s*#(\d+)/i);
                   const prMatch = prTitle.match(/#(\d+)/);
                   const id = issueMatch ? parseInt(issueMatch[1]) : (prMatch ? parseInt(prMatch[1]) : null);
 
@@ -500,7 +500,7 @@ jobs:
                   }
                 } else if (isCulturalEtiquetteContribution) {
                   const items = JSON.parse(fs.readFileSync(culturalEtiquetteBacklogPath, 'utf8'));
-                  const issueMatch = issueTitle.match(/Add (?:Japanese Cultural )?Etiquette Tip\s*#(\d+)/i);
+                  const issueMatch = issueTitle.match(/Add (?:new )?(?:Japanese Cultural )?Etiquette Tip\s*#(\d+)/i);
                   const prMatch = prTitle.match(/#(\d+)/);
                   const id = issueMatch ? parseInt(issueMatch[1]) : (prMatch ? parseInt(prMatch[1]) : null);
 
@@ -518,7 +518,7 @@ jobs:
                   }
                 } else if (isExampleSentenceContribution) {
                   const items = JSON.parse(fs.readFileSync(exampleSentencesBacklogPath, 'utf8'));
-                  const issueMatch = issueTitle.match(/Add (?:Japanese )?Example Sentence\s*#(\d+)/i);
+                  const issueMatch = issueTitle.match(/Add (?:new )?(?:Japanese )?Example Sentence\s*#(\d+)/i);
                   const prMatch = prTitle.match(/#(\d+)/);
                   const id = issueMatch ? parseInt(issueMatch[1]) : (prMatch ? parseInt(prMatch[1]) : null);
 
@@ -536,7 +536,7 @@ jobs:
                   }
                 } else if (isCommonMistakeContribution) {
                   const items = JSON.parse(fs.readFileSync(commonMistakesBacklogPath, 'utf8'));
-                  const issueMatch = issueTitle.match(/Add (?:Common Japanese )?Learner Mistake\s*#(\d+)/i);
+                  const issueMatch = issueTitle.match(/Add (?:new )?(?:Common Japanese )?Learner Mistake\s*#(\d+)/i);
                   const prMatch = prTitle.match(/#(\d+)/);
                   const id = issueMatch ? parseInt(issueMatch[1]) : (prMatch ? parseInt(prMatch[1]) : null);
 
@@ -554,7 +554,7 @@ jobs:
                   }
                 } else if (isVideoGameQuoteContribution) {
                   const items = JSON.parse(fs.readFileSync(videoGameQuotesBacklogPath, 'utf8'));
-                  const issueMatch = issueTitle.match(/Add (?:Famous Japanese )?Video Game Quote\s*#(\d+)/i);
+                  const issueMatch = issueTitle.match(/Add (?:new )?(?:Famous Japanese )?Video Game Quote\s*#(\d+)/i);
                   const prMatch = prTitle.match(/#(\d+)/);
                   const id = issueMatch ? parseInt(issueMatch[1]) : (prMatch ? parseInt(prMatch[1]) : null);
 
@@ -580,56 +580,35 @@ jobs:
 
             core.setOutput('should_commit', needsCommit ? 'true' : 'false');
 
-      - name: Commit backlog updates
-        id: commit-backlog
+      - name: Commit backlog updates directly to main
         if: steps.close-issue.outputs.should_commit == 'true'
-        uses: peter-evans/create-pull-request@v6
-        with:
-          token: ${{ secrets.AUTOMATION_PR_TOKEN }}
-          add-paths: |
-            community/backlog/
-          commit-message: 'chore(automation): mark contribution as completed'
-          branch: automation/community-data/pr-merge-${{ github.run_id }}
-          title: 'chore(automation): update community backlog'
-          body: Automated update to community backlog state.
-          base: main
-          delete-branch: true
-
-      - name: Merge backlog PR
-        if: steps.close-issue.outputs.should_commit == 'true'
-        uses: actions/github-script@v7
-        with:
-          github-token: ${{ secrets.AUTOMATION_PR_TOKEN }}
-          script: |
-            const prNumber = Number(process.env.PR_NUMBER);
-            if (!prNumber) {
-              console.log('No PR was created; nothing to merge');
-              return;
-            }
-            async function sleep(ms) { return new Promise(function(resolve) { setTimeout(resolve, ms); }); }
-            const MAX_RETRIES = 10;
-            for (let i = 1; i <= MAX_RETRIES; i += 1) {
-              try {
-                await github.rest.pulls.merge({
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  pull_number: prNumber,
-                  merge_method: 'squash'
-                });
-                console.log('Merged backlog PR #' + prNumber);
-                return;
-              } catch (e) {
-                console.log('Merge attempt ' + i + ' failed: ' + e.message);
-                if (e.status === 409) {
-                  try {
-                    await github.rest.pulls.updateBranch({ owner: context.repo.owner, repo: context.repo.repo, pull_number: prNumber });
-                  } catch (updateErr) {
-                    console.log('Could not update branch: ' + updateErr.message);
-                  }
-                }
-                if (i < MAX_RETRIES) { await sleep(2000); }
-              }
-            }
-            throw new Error('Failed to merge backlog PR #' + prNumber);
-        env:
-          PR_NUMBER: ${{ steps.commit-backlog.outputs.pull-request-number }}
+        run: |
+          git config user.name "てんとう虫"
+          git config user.email "reservecrate@gmail.com"
+          git add community/backlog/
+          if git diff --cached --quiet; then
+            echo "No backlog changes to commit"
+            exit 0
+          fi
+          commit_msg="chore(automation): mark contribution as completed"
+          max_attempts=5
+          attempt=1
+          while [ "$attempt" -le "$max_attempts" ]; do
+            git commit -m "$commit_msg"
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              echo "Backlog push succeeded on attempt $attempt"
+              exit 0
+            fi
+            echo "Backlog push attempt $attempt failed; retrying..."
+            git rebase --abort || true
+            git fetch origin main
+            git reset --hard origin/main
+            git add community/backlog/
+            if git diff --cached --quiet; then
+              echo "No backlog changes remain after sync"
+              exit 0
+            fi
+            attempt=$((attempt + 1))
+          done
+          echo "Failed to push backlog updates after $max_attempts attempts"
+          exit 1

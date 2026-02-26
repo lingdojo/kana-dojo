@@ -68,6 +68,7 @@ export default function ClientLayout({
 }>) {
   // Redundant comment for deployment trigger
   // Trigger redeployment - 2026-02-08
+  // Redundant no-op comment to force a fresh Vercel deployment
   const { theme, font } = usePreferencesStore(
     useShallow(state => ({ theme: state.theme, font: state.font })),
   );

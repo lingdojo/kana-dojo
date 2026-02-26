@@ -13,6 +13,7 @@ import Stars from '@/shared/components/Game/Stars';
 import { useCrazyModeTrigger } from '@/features/CrazyMode/hooks/useCrazyModeTrigger';
 import { getGlobalAdaptiveSelector } from '@/shared/lib/adaptiveSelection';
 import { GameBottomBar } from '@/shared/components/Game/GameBottomBar';
+import { isKanaInputAnswerCorrect } from '@/features/Kana/lib/isKanaInputAnswerCorrect';
 
 // Get the global adaptive selector for weighted character selection
 const adaptiveSelector = getGlobalAdaptiveSelector();
@@ -93,6 +94,21 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
     () => kanaGroupIndices.map(i => kana[i].romanji).flat(),
     [kanaGroupIndices],
   );
+
+  // Map: kana → alternative romanji
+  // Example: 'ん' → ['nn']
+  const altRomanjiMap = useMemo(() => {
+    const map = new Map<string, string[]>();
+    kanaGroupIndices.forEach(i => {
+      const group = kana[i];
+      group.altRomanji?.forEach((alternatives, idx) => {
+        if (alternatives.length > 0) {
+          map.set(group.kana[idx], alternatives);
+        }
+      });
+    });
+    return map;
+  }, [kanaGroupIndices]);
 
   // Create mapping pairs based on mode
   const selectedPairs = useMemo(
@@ -175,13 +191,16 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
   }, [isReady, isReverse, selectedRomaji, selectedKana, correctChar]);
 
   const handleCheck = () => {
-    if (inputValue.trim().length === 0) return;
-
     const trimmedInput = inputValue.trim();
-    const isCorrect = isReverse
-      ? trimmedInput === targetChar
-      : trimmedInput.toLowerCase() === targetChar ||
-        trimmedInput === correctChar;
+    if (trimmedInput.length === 0) return;
+
+    const isCorrect = isKanaInputAnswerCorrect({
+      inputValue: trimmedInput,
+      correctChar,
+      targetChar,
+      isReverse,
+      altRomanjiMap,
+    });
 
     playClick();
 

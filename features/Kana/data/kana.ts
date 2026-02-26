@@ -1,4 +1,11 @@
-export const kana = [
+export interface KanaGroup {
+  kana: string[];
+  romanji: string[];
+  altRomanji?: string[][];
+  groupName: string;
+}
+
+export const kana: KanaGroup[] = [
   {
     kana: ['あ', 'い', 'う', 'え', 'お'],
     romanji: ['a', 'i', 'u', 'e', 'o'],
@@ -12,11 +19,13 @@ export const kana = [
   {
     kana: ['さ', 'し', 'す', 'せ', 'そ'],
     romanji: ['sa', 'shi', 'su', 'se', 'so'],
+    altRomanji: [[], ['si'], [], [], []],
     groupName: 'h.b.s',
   },
   {
     kana: ['た', 'ち', 'つ', 'て', 'と'],
     romanji: ['ta', 'chi', 'tsu', 'te', 'to'],
+    altRomanji: [[], ['ti'], ['tu'], [], []],
     groupName: 'h.b.t',
   },
   {
@@ -27,6 +36,7 @@ export const kana = [
   {
     kana: ['は', 'ひ', 'ふ', 'へ', 'ほ'],
     romanji: ['ha', 'hi', 'fu', 'he', 'ho'],
+    altRomanji: [[], [], ['hu'], [], []],
     groupName: 'h.b.h',
   },
   {
@@ -47,6 +57,7 @@ export const kana = [
   {
     kana: ['わ', 'を', 'ん'],
     romanji: ['wa', 'wo', 'n'],
+    altRomanji: [[], [], ['nn']],
     groupName: 'h.b.w',
   },
   {
@@ -142,11 +153,13 @@ export const kana = [
   {
     kana: ['サ', 'シ', 'ス', 'セ', 'ソ'],
     romanji: ['sa', 'shi', 'su', 'se', 'so'],
+    altRomanji: [[], ['si'], [], [], []],
     groupName: 'k.b.s',
   },
   {
     kana: ['タ', 'チ', 'ツ', 'テ', 'ト'],
     romanji: ['ta', 'chi', 'tsu', 'te', 'to'],
+    altRomanji: [[], ['ti'], ['tu'], [], []],
     groupName: 'k.b.t',
   },
   {
@@ -157,6 +170,7 @@ export const kana = [
   {
     kana: ['ハ', 'ヒ', 'フ', 'ヘ', 'ホ'],
     romanji: ['ha', 'hi', 'fu', 'he', 'ho'],
+    altRomanji: [[], [], ['hu'], [], []],
     groupName: 'k.b.h',
   },
   {
@@ -177,6 +191,7 @@ export const kana = [
   {
     kana: ['ワ', 'ヲ', 'ン'],
     romanji: ['wa', 'wo', 'n'],
+    altRomanji: [[], [], ['nn']],
     groupName: 'k.b.w',
   },
   {

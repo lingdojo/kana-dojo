@@ -568,5 +568,23 @@
     "backgroundColor": "oklch(23.0% 0.030 85.0 / 1)",
     "mainColor": "oklch(86.0% 0.165 95.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.115 75.0 / 1)"
+  },
+  {
+    "id": "coastal-breeze",
+    "backgroundColor": "oklch(20.0% 0.035 225.0 / 1)",
+    "mainColor": "oklch(80.0% 0.120 210.0 / 1)",
+    "secondaryColor": "oklch(70.0% 0.085 195.0 / 1)"
+  },
+  {
+    "id": "festival-mask",
+    "backgroundColor": "oklch(20.0% 0.042 15.0 / 1)",
+    "mainColor": "oklch(80.0% 0.175 55.0 / 1)",
+    "secondaryColor": "oklch(72.0% 0.195 20.0 / 1)"
+  },
+  {
+    "id": "torii-sunset",
+    "backgroundColor": "oklch(22.0% 0.058 35.0 / 1)",
+    "mainColor": "oklch(75.0% 0.195 40.0 / 1)",
+    "secondaryColor": "oklch(85.0% 0.155 70.0 / 1)"
   }
 ]
