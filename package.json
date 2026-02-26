@@ -112,7 +112,7 @@
     "prettier-plugin-tailwindcss": "^0.7.2",
     "rimraf": "^6.0.1",
     "sharp": "^0.34.5",
-    "storybook": "^10.1.11",
+    "storybook": "^10.2.13",
     "tailwindcss": "^4.1.18",
     "tsx": "^4.20.6",
     "typescript": "^5",
