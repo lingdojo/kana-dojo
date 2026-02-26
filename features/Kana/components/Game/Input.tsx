@@ -13,6 +13,7 @@ import Stars from '@/shared/components/Game/Stars';
 import { useCrazyModeTrigger } from '@/features/CrazyMode/hooks/useCrazyModeTrigger';
 import { getGlobalAdaptiveSelector } from '@/shared/lib/adaptiveSelection';
 import { GameBottomBar } from '@/shared/components/Game/GameBottomBar';
+import { isKanaInputAnswerCorrect } from '@/features/Kana/lib/isKanaInputAnswerCorrect';
 
 // Get the global adaptive selector for weighted character selection
 const adaptiveSelector = getGlobalAdaptiveSelector();
@@ -100,13 +101,11 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
     const map = new Map<string, string[]>();
     kanaGroupIndices.forEach(i => {
       const group = kana[i];
-      if (group.altRomanji) {
-        group.kana.forEach((k, idx) => {
-          if (group.altRomanji![idx]?.length > 0) {
-            map.set(k, group.altRomanji![idx]);
-          }
-        });
-      }
+      group.altRomanji?.forEach((alternatives, idx) => {
+        if (alternatives.length > 0) {
+          map.set(group.kana[idx], alternatives);
+        }
+      });
     });
     return map;
   }, [kanaGroupIndices]);
@@ -192,31 +191,16 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
   }, [isReady, isReverse, selectedRomaji, selectedKana, correctChar]);
 
   const handleCheck = () => {
-    if (inputValue.trim().length === 0) return;
-
     const trimmedInput = inputValue.trim();
+    if (trimmedInput.length === 0) return;
 
-    // Check if answer is correct
-    let isCorrect = false;
-
-    if (isReverse) {
-      // Reverse mode: romanji → kana
-      isCorrect = trimmedInput === targetChar;
-    } else {
-      // Normal mode: kana → romanji
-      // Check main romanji
-      isCorrect =
-        trimmedInput.toLowerCase() === targetChar ||
-        trimmedInput === correctChar;
-
-      // If not correct, check alternative romanji (e.g., 'nn' for 'ん')
-      if (!isCorrect && altRomanjiMap.has(correctChar)) {
-        const alternatives = altRomanjiMap.get(correctChar)!;
-        isCorrect = alternatives.some(
-          alt => trimmedInput.toLowerCase() === alt.toLowerCase(),
-        );
-      }
-    }
+    const isCorrect = isKanaInputAnswerCorrect({
+      inputValue: trimmedInput,
+      correctChar,
+      targetChar,
+      isReverse,
+      altRomanjiMap,
+    });
 
     playClick();
 

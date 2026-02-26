@@ -1,4 +1,11 @@
-export const kana = [
+export interface KanaGroup {
+  kana: string[];
+  romanji: string[];
+  altRomanji?: string[][];
+  groupName: string;
+}
+
+export const kana: KanaGroup[] = [
   {
     kana: ['あ', 'い', 'う', 'え', 'お'],
     romanji: ['a', 'i', 'u', 'e', 'o'],
@@ -184,6 +191,7 @@ export const kana = [
   {
     kana: ['ワ', 'ヲ', 'ン'],
     romanji: ['wa', 'wo', 'n'],
+    altRomanji: [[], [], ['nn']],
     groupName: 'k.b.w',
   },
   {
