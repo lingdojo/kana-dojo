@@ -26,5 +26,12 @@
   "english": "thank you",
   "region": "Okinawa",
   "note": "Okinawan gratitude expression. (Set 2)"
+},
+{
+  "dialect": "なまら",
+  "standardJapanese": "とても",
+  "english": "very",
+  "region": "Hokkaido",
+  "note": "Hokkaido intensifier. (Set 3)"
 }
 ]
