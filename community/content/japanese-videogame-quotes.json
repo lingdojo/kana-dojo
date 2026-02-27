@@ -40,13 +40,19 @@
   "english": "I'll fight to the very end.",
   "game": "Final Fantasy X",
   "character": "Auron"
-}
-,
+},
   {
     "japanese": "まだまだだね",
     "romaji": "Mada mada da ne",
     "english": "You still have a long way to go.",
     "game": "The Prince of Tennis",
     "character": "Ryoma Echizen"
+  },
+  {
+    "japanese": "約束された勝利の剣",
+    "romaji": "Yakusoku sareta shouri no ken",
+    "english": "The Sword of Promised Victory (Excalibur).",
+    "game": "Fate/stay night",
+    "character": "Saber"
   }
 ]
