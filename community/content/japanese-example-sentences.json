@@ -1,8 +1,14 @@
 [
-  {
+{
   "japanese": "分からない単語は辞書で調べてから質問してください。",
   "romaji": "Wakaranai tango wa jisho de shirabete kara shitsumon shite kudasai.",
   "english": "Please look up unknown words before asking.",
   "jlpt": "N4"
 },
+{
+  "japanese": "会議は予定より早く終わりました。",
+  "romaji": "Kaigi wa yotei yori hayaku owarimashita.",
+  "english": "The meeting ended earlier than scheduled.",
+  "jlpt": "N4"
+}
 ]
