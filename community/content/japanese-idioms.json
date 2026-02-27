@@ -6,9 +6,15 @@
     "meaning": "let bygones be bygones; community batch entry 112"
   },
   {
-  "japanese": "骨が折れる",
-  "romaji": "Hone ga oreru",
-  "english": "Bones break",
-  "meaning": "Requires considerable effort. (Set 3)"
+    "japanese": "骨が折れる",
+    "romaji": "Hone ga oreru",
+    "english": "Bones break",
+    "meaning": "Requires considerable effort. (Set 3)"
+  },
+  {
+    "japanese": "腰が重い",
+    "romaji": "Koshi ga omoi",
+    "english": "Heavy hips",
+    "meaning": "Slow to start doing something. (Set 2)"
   }
 ]
