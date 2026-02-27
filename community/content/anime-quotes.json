@@ -84,17 +84,24 @@
     "character": "Mikasa Ackerman"
   },
   {
-  "japanese": "月に代わっておしおきよ!",
-  "romaji": "Tsuki ni kawatte oshioki yo!",
-  "english": "In the name of the moon, I'll punish you! (alt wording 41)",
-  "anime": "Sailor Moon",
-  "character": "Usagi Tsukino"
+    "japanese": "月に代わっておしおきよ!",
+    "romaji": "Tsuki ni kawatte oshioki yo!",
+    "english": "In the name of the moon, I'll punish you! (alt wording 41)",
+    "anime": "Sailor Moon",
+    "character": "Usagi Tsukino"
   },
   {
-  "japanese": "無駄無駄無駄無駄無駄！",
-  "romaji": "Muda muda muda muda muda!",
-  "english": "Useless! Useless! Useless! (alt wording 7)",
-  "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
-  "character": "DIO"
-}
+    "japanese": "無駄無駄無駄無駄無駄！",
+    "romaji": "Muda muda muda muda muda!",
+    "english": "Useless! Useless! Useless! (alt wording 7)",
+    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+    "character": "DIO"
+  },
+  {
+    "japanese": "努力は裏切らない。",
+    "romaji": "doryoku wa uragiranai.",
+    "english": "Effort does not betray you.",
+    "anime": "E2E Test",
+    "character": "Simulator"
+  }
 ]
