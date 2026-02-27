@@ -199,5 +199,16 @@
     "Tateyama"
   ],
   "correctIndex": 0
+  },
+  {
+  "question": "What is the Japanese writing system used for foreign words?",
+  "difficulty": "medium",
+  "answers": [
+    "Katakana",
+    "Hiragana",
+    "Kanji",
+    "Romaji"
+  ],
+  "correctIndex": 0
 }
 ]
