@@ -416,5 +416,16 @@
       "Deer"
     ],
     "correctIndex": 0
-  }
+  },
+  {
+  "question": "Which mountain is Japan’s highest peak?",
+  "difficulty": "easy",
+  "answers": [
+    "Mount Fuji",
+    "Mount Kita",
+    "Mount Tate",
+    "Mount Haku"
+  ],
+  "correctIndex": 0
+}
 ]
