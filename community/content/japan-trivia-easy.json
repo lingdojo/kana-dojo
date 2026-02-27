@@ -405,5 +405,16 @@
       "Torin"
     ],
     "correctIndex": 0
-  }
+  },
+  {
+  "question": "Which animal is famously associated with Inari shrines in Japan? (Community variation 33)",
+  "difficulty": "easy",
+  "answers": [
+    "Fox",
+    "Crane",
+    "Turtle",
+    "Deer"
+  ],
+  "correctIndex": 0
+},
 ]
