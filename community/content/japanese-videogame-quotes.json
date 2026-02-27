@@ -35,10 +35,17 @@
     "character": "Sora"
   },
   {
-  "japanese": "最後まで戦う",
-  "romaji": "Saigo made tatakau.",
-  "english": "I'll fight to the very end.",
-  "game": "Final Fantasy X",
-  "character": "Auron"
-}
+    "japanese": "最後まで戦う",
+    "romaji": "Saigo made tatakau.",
+    "english": "I'll fight to the very end.",
+    "game": "Final Fantasy X",
+    "character": "Auron"
+  },
+  {
+    "japanese": "未来を変えるんだ！",
+    "romaji": "Mirai o kaerun da!",
+    "english": "We're going to change the future!",
+    "game": "Steins;Gate: My Darling's Embrace",
+    "character": "Rintaro Okabe"
+  }
 ]
