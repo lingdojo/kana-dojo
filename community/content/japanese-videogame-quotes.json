@@ -41,4 +41,12 @@
   "game": "Final Fantasy X",
   "character": "Auron"
 }
+,
+  {
+    "japanese": "まだまだだね",
+    "romaji": "Mada mada da ne",
+    "english": "You still have a long way to go.",
+    "game": "The Prince of Tennis",
+    "character": "Ryoma Echizen"
+  }
 ]
