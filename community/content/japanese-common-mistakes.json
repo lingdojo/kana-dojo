@@ -23,5 +23,10 @@
   "wrong": "この漢字は読み方が難しいです。",
   "correct": "この漢字の読み方は難しいです。",
   "explanation": "Prefer noun linkage with の. (Pattern set 4)"
+  },
+  {
+  "wrong": "先生は私を日本語を教えました。",
+  "correct": "先生は私に日本語を教えました。",
+  "explanation": "Recipient takes に with 教える. (Pattern set 4)"
   }
 ]
