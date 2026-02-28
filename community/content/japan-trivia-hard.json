@@ -69,6 +69,17 @@
     "Bering Sea"
   ],
   "correctIndex": 0
+},
+{
+  "question": "Which sea separates Japan from the Korean Peninsula?",
+  "difficulty": "hard",
+  "answers": [
+    "Sea of Japan",
+    "East China Sea",
+    "Philippine Sea",
+    "Bering Sea"
+  ],
+  "correctIndex": 0
 }
 ]
 
