@@ -19,18 +19,26 @@
   "english": "thank you",
   "region": "Kansai",
   "note": "Traditional gratitude expression. (Set 6)"
-},{
+  },
+  {
   "dialect": "なまら",
   "standardJapanese": "とても",
   "english": "very",
   "region": "Hokkaido",
   "note": "Hokkaido intensifier. (Set 3)"
-},
+  },
   {
   "dialect": "〜けん",
   "standardJapanese": "〜から",
   "english": "because",
   "region": "Kyushu",
   "note": "Reason marker in Kyushu. (Set 6)"
-}
+  },
+  {
+  "dialect": "ぶち",
+  "standardJapanese": "とても",
+  "english": "very",
+  "region": "Yamaguchi/Hiroshima",
+  "note": "Regional intensifier. (Set 5)"
+  }
 ]
