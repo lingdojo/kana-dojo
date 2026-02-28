@@ -28,5 +28,10 @@
   "wrong": "先生は私を日本語を教えました。",
   "correct": "先生は私に日本語を教えました。",
   "explanation": "Recipient takes に with 教える. (Pattern set 4)"
-  }
+  },
+  {
+  "wrong": "静かい部屋",
+  "correct": "静かな部屋",
+  "explanation": "な-adjectives require な before nouns. (Pattern set 4)"
+}
 ]
