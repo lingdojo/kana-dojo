@@ -29,11 +29,16 @@
   "english": "Short-tempered",
   "meaning": "Impatient temperament. (Set 3)"
 },
-  
 {
   "japanese": "運命には逆らえない",
   "romaji": "Unmei ni wa sakaraenai",
   "english": "You cannot go against fate",
   "meaning": "Some things are destined and cannot be changed."
+},
+{
+  "japanese": "立つ鳥跡を濁さず",
+  "romaji": "Tatsu tori ato o nigosazu",
+  "english": "A bird leaves no mess",
+  "meaning": "Leave cleanly without trouble. (Set 6)"
 }
 ]
