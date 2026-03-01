@@ -97,10 +97,10 @@
   "game": "Pokemon series",
   "character": "Rival characters"
 },
-  {
-  "japanese": "運命が道を塞いでも、俺が新しい道を作る。",
-  "romaji": "Unmei ga michi o fusaide mo, ore ga atarashii michi o tsukuru.",
-  "english": "Even if fate blocks my path, I'll carve a new one.",
+{
+  "japanese": "絶望の中でも、俺の意志は折れない。",
+  "romaji": "Zetsubou no naka demo, ore no ishi wa orenai.",
+  "english": "Even in the depths of despair, my will shall not break.",
   "game": "Original",
   "character": "Original Character"
 }
