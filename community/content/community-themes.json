@@ -634,5 +634,11 @@
   "backgroundColor": "oklch(18.0% 0.042 325.0 / 1)",
   "mainColor": "oklch(90.0% 0.115 95.0 / 1)",
   "secondaryColor": "oklch(75.0% 0.195 340.0 / 1)"
+  },
+  {
+  "id": "crane-flight",
+  "backgroundColor": "oklch(94.0% 0.015 240.0 / 1)",
+  "mainColor": "oklch(40.0% 0.025 270.0 / 1)",
+  "secondaryColor": "oklch(60.0% 0.175 20.0 / 1)"
   }
 ]
