@@ -61,5 +61,12 @@
     "english": "really",
     "region": "Kansai",
     "note": "Very common in Osaka/Kyoto speech. (Set 6)"
+  },
+  {
+    "dialect": "したっけ",
+    "standardJapanese": "それじゃあ",
+    "english": "well then/see you",
+    "region": "Hokkaido",
+    "note": "Transition/goodbye phrase. (Set 3)"
   }
 ]
