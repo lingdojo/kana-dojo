@@ -25,7 +25,7 @@
 
 KanaDojo, Hiragana, Katakana, Kanji ve kelime bilgisinde ustalaşmayı eğlenceli ve kolay hale getiren etkileşimli bir web tabanlı Japonca öğrenme platformudur. Estetiğe, özelleştirilebilirliğe ve etkili öğrenmeye odaklanılarak tasarlanan KanaDojo, her seviyeden Japonca öğrencisi için kapsamlı bir eğitim ortamı sunar.
 
-İster daha yeni kana hecelerini öğrenmeye başlıyor olun, isterseniz de ileri düzey kanji ve kelimeler ile JLPT sınavlarına hazırlanıyor olun, KanaDojo akıcı, dikkat dağıtıcı öğelerden uzak sizin tercihlerinize ve öğrenme tarzınıza uyum sağlayan bir öğrenme deneyimi sunar.
+İster daha yeni kana hecelerini öğrenmeye başlıyor olun, isterseniz de ileri düzey kanji ve kelimeler ile JLPT sınavlarına hazırlanıyor olun, KanaDojo akıcı, dikkat dağıtıcı öğelerden uzak sizing tercihlerinize ve öğrenme tarzınıza uyum sağlayan bir öğrenme deneyimi sunar.
 
 ### ✨ Öne Çıkan Özellikler
 

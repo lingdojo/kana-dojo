@@ -8,7 +8,7 @@
 
 ![KanaDojo Banner](https://github.com/user-attachments/assets/b7931764-be5e-43c7-b1b3-9d2568b2fecf)
 
-Eine ästhetische, minimalistische und hochgradig anpassbare Plattform zur Beherrschung der japanischen Sprache
+Eine ästhetische, minimalistische und hochgradig anpassbare Platform zur Beherrschung der japanischen Sprache
 
 [![Live Demo](https://img.shields.io/badge/demo-live-success?style=for-the-badge)](https://kanadojo.com)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg?style=for-the-badge)](https://www.gnu.org/licenses/agpl-3.0)
@@ -155,7 +155,7 @@ KanaDojo wurde mit modernen Web-Technologien für optimale Leistung und Entwickl
 ### Zustandsmanagement
 
 - **Zustand** – Leichtgewichtiges Zustandsmanagement mit minimalem Boilerplate.
-- **Zustand Persist** – Lokale Speicherpersistenz für Benutzereinstellungen.
+- **Zustand Persist** – Locale Speicherpersistenz für Benutzereinstellungen.
 
 ### Utilities & Funktionen
 
@@ -211,7 +211,7 @@ npm run dev
 4. **Ihren Browser öffnen**  
    Navigieren Sie zu [http://localhost:3000](http://localhost:3000)
 
-### Erstellung für die Produktion
+### Erstellung für die Production
 
 ```bash
 # Eine optimierte Produktions-Build erstellen
@@ -233,7 +233,7 @@ npm run postbuild
 
 ### Fehlerbehebung
 
-Wenn Sie während der Entwicklung auf Probleme stoßen, versuchen Sie diese Lösungen:
+Wenn Sie während der Entwicklung auf Problem stoßen, versuchen Sie diese Lösungen:
 
 #### Next.js Cache Löschen
 
@@ -320,20 +320,20 @@ Wenn Port 3000 bereits verwendet wird:
 **macOS/Linux:**
 
 ```bash
-# Prozess finden, der Port 3000 verwendet
+# Process finden, der Port 3000 verwendet
 lsof -i :3000
 
-# Prozess beenden (PID durch tatsächliche Prozess-ID ersetzen)
+# Process beenden (PID durch tatsächliche Process-ID ersetzen)
 kill -9 PID
 ```
 
 **Windows (PowerShell/Command Prompt):**
 
 ```cmd
-# Prozess finden, der Port 3000 verwendet
+# Process finden, der Port 3000 verwendet
 netstat -ano | findstr :3000
 
-# Prozess beenden (PID durch tatsächliche Prozess-ID ersetzen)
+# Process beenden (PID durch tatsächliche Process-ID ersetzen)
 taskkill /PID PID /F
 ```
 
@@ -466,7 +466,7 @@ Beiträge sind willkommen! KanaDojo ist ein Open-Source-Projekt, das von der Com
 
 ## 📄 Lizenz
 
-Dieses Projekt ist unter der **AGPL 3.0 Lizenz** lizenziert – Details finden Sie in der Datei [LICENSE.md](LICENSE.md).
+Dieses Projekt ist under der **AGPL 3.0 Lizenz** lizenziert – Details finden Sie in der Datei [LICENSE.md](LICENSE.md).
 
 ---
 

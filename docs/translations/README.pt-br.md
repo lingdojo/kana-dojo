@@ -33,25 +33,25 @@ Seja você apenas começando com os silabários kana básicos ou se preparando p
 #### 🎯 **Três Dojos de Treinamento**
 
 - **Kana Dojo** - Domine os silabários Hiragana e Katakana com grupos base, dakuon, yoon e sons estrangeiros
-- **Kanji Dojo** - Aprenda caracteres kanji essenciais organizados por níveis JLPT (N5, N4, N3, N2)
+- **Kanji Dojo** - Aprenda characters kanji essenciais organizados por níveis JLPT (N5, N4, N3, N2)
 - **Vocabulary Dojo** - Construa seu vocabulário japonês com coleções de palavras selecionadas por nível de proficiência
 
 #### 🎮 **Quatro Modos de Jogo Dinâmicos**
 
 Cada dojo suporta quatro modos de treinamento envolventes para reforçar o aprendizado:
 
-1. **Pick** - Múltipla escolha: Selecione a romanização/tradução correta para o caractere mostrado
-2. **Reverse-Pick** - Múltipla escolha reversa: Selecione o caractere correto para a romanização/tradução dada
+1. **Pick** - Múltipla escolha: Selecione a romanização/tradução correta para o character mostrado
+2. **Reverse-Pick** - Múltipla escolha reversa: Selecione o character correto para a romanização/tradução dada
 3. **Input** - Entrada de texto: Digite a romanização/tradução correta
-4. **Reverse-Input** - Entrada de texto reversa: Digite o caractere correto
+4. **Reverse-Input** - Entrada de texto reversa: Digite o character correto
 
 #### 🎨 **Personalização Extensa**
 
 - **Mais de 100 Temas** - Escolha de uma vasta coleção de belos temas claros e escuros, ou use o recurso de tema aleatório
 - **28 Fontes Japonesas** - Selecione entre uma variedade de tipografias japonesas autênticas para adequar suas preferências estéticas
-- **Efeitos Sonoros** - Desfrute de sons de feedback satisfatórios que podem ser ativados/desativados
+- **Efeitos Sonoros** - Desfrute de sons de feedback satisfatórios que podem set ativados/desativados
 - **Opções de Exibição** - Alterne entre Romaji/Inglês e Kana/Kanji nos menus de seleção
-- **Atalhos de Teclado** - Atalhos de teclado para treinamento eficiente (podem ser desativados)
+- **Atalhos de Teclado** - Atalhos de teclado para treinamento eficiente (podem set desativados)
 
 #### 📊 **Acompanhamento de Progresso**
 
@@ -124,8 +124,8 @@ KanaDojo abraça uma **estética minimalista** combinada com **máxima flexibili
 ### Tipografia Japonesa
 
 - 28 fontes japonesas autênticas cobrindo vários estilos
-- Renderização adequada de caracteres kanji complexos
-- Distinção clara entre caracteres de aparência semelhante
+- Renderização adequada de characters kanji complexos
+- Distinção clara entre characters de aparência semelhante
 - Visualizações de fontes com amostras de texto japonês reais
 
 ---
@@ -145,7 +145,7 @@ KanaDojo é construído com tecnologias web modernas para desempenho ideal e exp
 ### Estilização e UI
 
 - **[Tailwind CSS](https://tailwindcss.com/)** - Framework CSS utility-first
-- **[shadcn/ui](https://ui.shadcn.com/)** - Biblioteca de componentes acessíveis e de alta qualidade
+- **[shadcn/ui](https://ui.shadcn.com/)** - Biblioteca de components acessíveis e de alta qualidade
 - **[Framer Motion](https://www.framer.com/motion/)** - Animações e transições suaves
 - **[Lucide React](https://lucide.dev/)** - Biblioteca de ícones bonita e consistente
 - **[FontAwesome](https://fontawesome.com/)** - Suporte adicional de ícones
@@ -194,7 +194,7 @@ KanaDojo é construído com tecnologias web modernas para desempenho ideal e exp
    cd kanadojo
    ```
 
-2. **Instale as dependências**
+2. **Install as dependências**
 
    ```bash
    npm install
@@ -219,7 +219,7 @@ npm run build
 npm start
 ```
 
-### Outros Comandos
+### Outros Commandos
 
 ```bash
 # Execute o ESLint
@@ -360,16 +360,16 @@ kanadojo/
 │   ├── layout.tsx              # Layout raiz com provedores
 │   └── page.tsx                # Página inicial
 │
-├── components/                 # Componentes React
-│   ├── Dojo/                   # Componentes específicos de treinamento
+├── components/                 # Components React
+│   ├── Dojo/                   # Components específicos de treinamento
 │   │   ├── Kana/               # Seleção e cards de Kana
 │   │   ├── Kanji/              # Seleção e cards de Kanji
 │   │   └── Vocab/              # Seleção e cards de Vocabulário
-│   ├── reusable/               # Componentes compartilhados
-│   │   ├── Menu/               # Componentes de navegação e menu
-│   │   └── ...                 # Outros componentes reutilizáveis
-│   ├── Settings/               # Componentes de preferências
-│   └── ui/                     # Componentes shadcn/ui
+│   ├── reusable/               # Components compartilhados
+│   │   ├── Menu/               # Components de navegação e menu
+│   │   └── ...                 # Outros components reutilizáveis
+│   ├── Settings/               # Components de preferências
+│   └── ui/                     # Components shadcn/ui
 │
 ├── lib/                        # Utilitários e funções auxiliares
 │   ├── hooks/                  # Hooks personalizados do React
@@ -385,12 +385,12 @@ kanadojo/
 │   └── useThemeStore.ts        # Tema e preferências
 │
 ├── static/                     # Dados estáticos e configuração
-│   ├── kana.ts                 # Dados de caracteres Kana
+│   ├── kana.ts                 # Dados de characters Kana
 │   ├── kanji/                  # Dados de Kanji por nível JLPT
 │   ├── vocab/                  # Dados de vocabulário
 │   ├── themes.ts               # Definições de temas
 │   ├── fonts.ts                # Configurações de fontes
-│   └── info.tsx                # Conteúdo informacional
+│   └── info.tsx                # Conteúdo informational
 │
 ├── public/                     # Assets estáticos
 │   ├── sounds/                 # Arquivos de áudio
@@ -406,18 +406,18 @@ kanadojo/
 
 #### Fluxo de Gerenciamento de Estado
 
-1. Usuário seleciona conteúdo nos componentes de menu
+1. Usuário seleciona conteúdo nos components de menu
 2. Seleções armazenadas nas stores Zustand (`useKanaKanjiStore`, `useVocabStore`)
-3. Componentes de treinamento leem das stores para gerar perguntas
+3. Components de treinamento leem das stores para gerar perguntas
 4. Estatísticas rastreadas e persistidas em `useStatsStore`
 5. Preferências do usuário salvas em `useThemeStore` com persistência em localStorage
 
-#### Arquitetura de Componentes
+#### Arquitetura de Components
 
-- **Componentes Dojo**: Lidam com a seleção de caracteres/palavras para cada tipo de conteúdo
-- **Componentes de Treinamento**: Renderizam modos de jogo e lidam com interações do usuário
-- **Componentes Reutilizáveis**: Elementos de UI compartilhados (botões, cards, modais, etc.)
-- **Componentes de Menu**: Navegação, seções de informações e seleção de dojo
+- **Components Dojo**: Lidam com a seleção de characters/palavras para cada tipo de conteúdo
+- **Components de Treinamento**: Renderizam modos de jogo e lidam com interações do usuário
+- **Components Reutilizáveis**: Elementos de UI compartilhados (botões, cards, modais, etc.)
+- **Components de Menu**: Navegação, seções de informações e seleção de dojo
 
 #### Organização de Dados
 
@@ -456,7 +456,7 @@ Contribuições são bem-vindas! KanaDojo é um projeto de código aberto constr
 - Use TypeScript para segurança de tipos
 - Teste suas mudanças completamente
 - Atualize a documentação conforme necessário
-- Mantenha os componentes focados e reutilizáveis
+- Mantenha os components focados e reutilizáveis
 
 ---
 
@@ -472,7 +472,7 @@ Este projeto está licenciado sob a Licença AGPL 3.0 - veja o arquivo [LICENSE.
 
 ## 🙏 Agradecimentos
 
-- Dados do idioma japonês e informações de caracteres
+- Dados do idioma japonês e informações de characters
 - Comunidade de código aberto pelas ferramentas e bibliotecas incríveis
 - Todos os contribuidores que ajudam a tornar o KanaDojo melhor
 
