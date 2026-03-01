@@ -48,5 +48,10 @@
   "wrong": "宿題を忘れないよう、メモします。",
   "correct": "宿題を忘れないように、メモします。",
   "explanation": "Use ように for purpose/prevention. (Pattern set 6)"
+},
+  {
+  "wrong": "私は日本語を話しますです。",
+  "correct": "私は日本語を話します。",
+  "explanation": "Do not stack ます and です in one predicate. (Pattern set 4)"
 }
 ]
