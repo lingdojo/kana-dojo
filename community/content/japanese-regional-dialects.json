@@ -7,45 +7,52 @@
     "note": "Hokkaido intensifier. (Set 6)"
   },
   {
-  "dialect": "〜へん",
-  "standardJapanese": "〜ない",
-  "english": "negative form",
-  "region": "Kansai",
-  "note": "Example: 食べへん = 食べない。 (Set 4)"
+    "dialect": "〜へん",
+    "standardJapanese": "〜ない",
+    "english": "negative form",
+    "region": "Kansai",
+    "note": "Example: 食べへん = 食べない。 (Set 4)"
   },
   {
-  "dialect": "おおきに",
-  "standardJapanese": "ありがとう",
-  "english": "thank you",
-  "region": "Kansai",
-  "note": "Traditional gratitude expression. (Set 6)"
+    "dialect": "おおきに",
+    "standardJapanese": "ありがとう",
+    "english": "thank you",
+    "region": "Kansai",
+    "note": "Traditional gratitude expression. (Set 6)"
   },
   {
-  "dialect": "なまら",
-  "standardJapanese": "とても",
-  "english": "very",
-  "region": "Hokkaido",
-  "note": "Hokkaido intensifier. (Set 3)"
+    "dialect": "なまら",
+    "standardJapanese": "とても",
+    "english": "very",
+    "region": "Hokkaido",
+    "note": "Hokkaido intensifier. (Set 3)"
   },
   {
-  "dialect": "〜けん",
-  "standardJapanese": "〜から",
-  "english": "because",
-  "region": "Kyushu",
-  "note": "Reason marker in Kyushu. (Set 6)"
+    "dialect": "〜けん",
+    "standardJapanese": "〜から",
+    "english": "because",
+    "region": "Kyushu",
+    "note": "Reason marker in Kyushu. (Set 6)"
   },
   {
-  "dialect": "ぶち",
-  "standardJapanese": "とても",
-  "english": "very",
-  "region": "Yamaguchi/Hiroshima",
-  "note": "Regional intensifier. (Set 5)"
+    "dialect": "ぶち",
+    "standardJapanese": "とても",
+    "english": "very",
+    "region": "Yamaguchi/Hiroshima",
+    "note": "Regional intensifier. (Set 5)"
   },
   {
-  "dialect": "〜じゃけぇ",
-  "standardJapanese": "〜だから",
-  "english": "because",
-  "region": "Hiroshima",
-  "note": "Common causal ending. (Set 6)"
+    "dialect": "〜じゃけぇ",
+    "standardJapanese": "〜だから",
+    "english": "because",
+    "region": "Hiroshima",
+    "note": "Common causal ending. (Set 6)"
+  },
+  {
+    "dialect": "なんくるないさ",
+    "standardJapanese": "なんとかなる",
+    "english": "it'll work out",
+    "region": "Okinawa",
+    "note": "Famous Okinawan resilience phrase. (Set 5)"
   }
 ]
