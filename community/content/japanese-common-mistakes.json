@@ -33,5 +33,10 @@
   "wrong": "静かい部屋",
   "correct": "静かな部屋",
   "explanation": "な-adjectives require な before nouns. (Pattern set 4)"
+},
+  {
+  "wrong": "これは私のです本。",
+  "correct": "これは私の本です。",
+  "explanation": "Place の correctly in noun phrase. (Pattern set 1)"
 }
 ]
