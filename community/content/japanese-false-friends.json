@@ -70,5 +70,11 @@
   "termB": "viking (English)",
   "explanation": "Usually means buffet/all-you-can-eat in Japan. (Set 6)",
   "example": "ホテルの朝食はバイキングです。"
-}
+  },
+  {
+  "termA": "ナンバー (nanbaa)",
+  "termB": "number (English)",
+  "explanation": "Can mean ranking position in Japanese usage. (Set 4)",
+  "example": "彼はチームのナンバー1だ。"
+  }
 ]
