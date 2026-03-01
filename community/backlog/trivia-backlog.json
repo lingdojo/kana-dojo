@@ -570,7 +570,7 @@
       "Shichi-Go-San"
     ],
     "correctIndex": 0,
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -640,7 +640,7 @@
       "Tateyama"
     ],
     "correctIndex": 0,
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -668,7 +668,7 @@
       "Oden"
     ],
     "correctIndex": 0,
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -682,7 +682,7 @@
       "Hinamatsuri"
     ],
     "correctIndex": 0,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

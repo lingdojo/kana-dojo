@@ -507,12 +507,12 @@
     "id": 85,
     "text": "\"〜に限って\" means \"only / exclusively\".",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 86,
     "text": "Use \"〜です/〜ます\" for polite statements; it's the standard polite ending for everyday conversation. (practice variation 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
