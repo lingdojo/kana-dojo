@@ -54,5 +54,12 @@
     "english": "it'll work out",
     "region": "Okinawa",
     "note": "Famous Okinawan resilience phrase. (Set 5)"
+  },
+  {
+    "dialect": "ほんま",
+    "standardJapanese": "本当に",
+    "english": "really",
+    "region": "Kansai",
+    "note": "Very common in Osaka/Kyoto speech. (Set 6)"
   }
 ]
