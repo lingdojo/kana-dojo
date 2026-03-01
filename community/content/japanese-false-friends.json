@@ -1,62 +1,68 @@
 [
-   {
-      "termA":"チャレンジ (charenji)",
-      "termB":"challenge (English)",
-      "explanation":"Often means trying something new. (Set 5)",
-      "example":"新しい料理にチャレンジしてみる。"
-   },
-   {
-      "termA":"チャレンジ (charenji)",
-      "termB":"challenge (English)",
-      "explanation":"Often means trying something new. (Set 5)",
-      "example":"新しい料理にチャレンジしてみる。"
-   },
-   {
-      "termA":"リベンジ (ribenji)",
-      "termB":"revenge (English)",
-      "explanation":"Often used as 'try again after failing'. (Set 6)",
-      "example":"去年落ちた試験に今年リベンジする。"
-   },
-   {
-      "termA":"イメージ (imeeji)",
-      "termB":"image",
-      "explanation":"Often means impression/public image. (Set 5)",
-      "example":"会社のイメージが良くなった。"
-   },
-   {
-      "termA":"クレーム (kureemu)",
-      "termB":"claim (English)",
-      "explanation":"In Japanese it usually means complaint. (Set 4)",
-      "example":"お客様からクレームが届いた。"
-   },
-   {
-      "termA":"テンション (tenshon)",
-      "termB":"tension (English)",
-      "explanation":"Often means excitement/energy level in casual Japanese. (Set 5)",
-      "example":"ライブでテンションが上がった。"
-   },
-   {
-      "termA": "ホッチキス (hocchikisu)",
-      "termB": "Hotchkiss (name)",
-      "explanation": "ホッチキス means stapler. (Set 5)",
-      "example": "資料をホッチキスで留めてください。"
-   },
-   {
-  "termA": "カンニング (kanningu)",
-  "termB": "cunning (English)",
-  "explanation": "カンニング means cheating on tests. (Set 2)",
-  "example": "試験でカンニングしてはいけません。"
-},
-   {
-  "termA": "サラリーマン (sarariman)",
-  "termB": "salaryman",
-  "explanation": "Refers broadly to office workers. (Set 1)",
-  "example": "父は都内でサラリーマンをしている。"
-},
-   {
-  "termA": "ハイテンション (haitenshon)",
-  "termB": "high tension (English)",
-  "explanation": "Means very energetic mood. (Set 6)",
-  "example": "試合前はみんなハイテンションだった。"
-}
+  {
+    "termA": "チャレンジ (charenji)",
+    "termB": "challenge (English)",
+    "explanation": "Often means trying something new. (Set 5)",
+    "example": "新しい料理にチャレンジしてみる。"
+  },
+  {
+    "termA": "チャレンジ (charenji)",
+    "termB": "challenge (English)",
+    "explanation": "Often means trying something new. (Set 5)",
+    "example": "新しい料理にチャレンジしてみる。"
+  },
+  {
+    "termA": "リベンジ (ribenji)",
+    "termB": "revenge (English)",
+    "explanation": "Often used as 'try again after failing'. (Set 6)",
+    "example": "去年落ちた試験に今年リベンジする。"
+  },
+  {
+    "termA": "イメージ (imeeji)",
+    "termB": "image",
+    "explanation": "Often means impression/public image. (Set 5)",
+    "example": "会社のイメージが良くなった。"
+  },
+  {
+    "termA": "クレーム (kureemu)",
+    "termB": "claim (English)",
+    "explanation": "In Japanese it usually means complaint. (Set 4)",
+    "example": "お客様からクレームが届いた。"
+  },
+  {
+    "termA": "テンション (tenshon)",
+    "termB": "tension (English)",
+    "explanation": "Often means excitement/energy level in casual Japanese. (Set 5)",
+    "example": "ライブでテンションが上がった。"
+  },
+  {
+    "termA": "ホッチキス (hocchikisu)",
+    "termB": "Hotchkiss (name)",
+    "explanation": "ホッチキス means stapler. (Set 5)",
+    "example": "資料をホッチキスで留めてください。"
+  },
+  {
+    "termA": "カンニング (kanningu)",
+    "termB": "cunning (English)",
+    "explanation": "カンニング means cheating on tests. (Set 2)",
+    "example": "試験でカンニングしてはいけません。"
+  },
+  {
+    "termA": "サラリーマン (sarariman)",
+    "termB": "salaryman",
+    "explanation": "Refers broadly to office workers. (Set 1)",
+    "example": "父は都内でサラリーマンをしている。"
+  },
+  {
+    "termA": "ハイテンション (haitenshon)",
+    "termB": "high tension (English)",
+    "explanation": "Means very energetic mood. (Set 6)",
+    "example": "試合前はみんなハイテンションだった。"
+  },
+  {
+    "termA": "アニメ (anime)",
+    "termB": "anime (English usage)",
+    "explanation": "In Japanese it can refer to animation in general. (Set 2)",
+    "example": "子どものころからアニメが好きだ。"
+  }
 ]
