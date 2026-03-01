@@ -716,7 +716,7 @@
     "game": "Pokemon series",
     "character": "Rival characters",
     "id": 72,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
