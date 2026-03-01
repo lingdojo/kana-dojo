@@ -780,7 +780,7 @@
     "jlpt": "N3",
     "id": 87,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "このアプリは初心者にも使いやすい。",
@@ -789,7 +789,7 @@
     "jlpt": "N3",
     "id": 88,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "日本のニュースを毎日読むようにしています。",
@@ -815,7 +815,7 @@
     "english": "I'm going to join a new project from next month.",
     "jlpt": "N3",
     "id": 91,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

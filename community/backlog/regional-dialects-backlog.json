@@ -656,7 +656,7 @@
     "region": "Hokkaido",
     "note": "Used for severe winter cold. (Set 4)",
     "id": 66,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

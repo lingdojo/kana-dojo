@@ -453,7 +453,7 @@
     "explanation": "Use ように for purpose/prevention. (Pattern set 3)",
     "id": 57,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "wrong": "駅まで十分歩きますかかる。",
@@ -469,14 +469,14 @@
     "explanation": "Prefer noun linkage with の. (Pattern set 3)",
     "id": 59,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "wrong": "私はお金がありませんです。",
     "correct": "私はお金がありません。",
     "explanation": "Negative polite form already complete. (Pattern set 3)",
     "id": 60,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
