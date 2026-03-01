@@ -47,5 +47,12 @@
   "english": "because",
   "region": "Hiroshima",
   "note": "Common causal ending. (Set 6)"
-  }
+  },
+      {
+      "dialect": "なんくるないさ",
+      "standardJapanese": "なんとかなる",
+      "english": "it'll work out",
+      "region": "Okinawa",
+      "note": "Famous Okinawan resilience phrase. (Set 5)"
+    }
 ]
