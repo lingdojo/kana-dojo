@@ -140,7 +140,7 @@
   {
     "id": 24,
     "text": "\"〜ので\" gives a reason in a polite or softer way than \"から\".",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -507,18 +507,18 @@
     "id": 85,
     "text": "\"〜に限って\" means \"only / exclusively\".",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 86,
     "text": "Use \"〜です/〜ます\" for polite statements; it's the standard polite ending for everyday conversation. (practice variation 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 87,
     "text": "\"〜ません\" is the polite negative form of verbs, used to say something doesn't happen. (practice variation 2)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -788,7 +788,7 @@
   {
     "id": 132,
     "text": "\"〜に決まっている\" means \"must be\" or \"definitely\". (practice variation 47)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

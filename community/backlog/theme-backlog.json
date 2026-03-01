@@ -309,7 +309,7 @@
     "mainColor": "oklch(82.0% 0.165 195.0 / 1)",
     "secondaryColor": "oklch(90.0% 0.125 180.0 / 1)",
     "issued": false,
-    "completed": false,
+    "completed": true,
     "completedBy": "saip77",
     "completedPR": 4994
   },
@@ -376,7 +376,7 @@
     "backgroundColor": "oklch(13.0% 0.058 295.0 / 1)",
     "mainColor": "oklch(78.0% 0.195 45.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.220 310.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -386,7 +386,7 @@
     "backgroundColor": "oklch(20.0% 0.048 160.0 / 1)",
     "mainColor": "oklch(72.0% 0.185 145.0 / 1)",
     "secondaryColor": "oklch(82.0% 0.145 130.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -627,7 +627,7 @@
     "mainColor": "oklch(88.0% 0.055 245.0 / 1)",
     "secondaryColor": "oklch(68.0% 0.165 215.0 / 1)",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": "kimono-silk",
@@ -636,7 +636,7 @@
     "backgroundColor": "oklch(19.0% 0.048 320.0 / 1)",
     "mainColor": "oklch(72.0% 0.155 330.0 / 1)",
     "secondaryColor": "oklch(80.0% 0.125 60.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

@@ -55,7 +55,7 @@ export default function StreakProgress() {
       <div className='flex justify-center'>
         <div
           className={cn(
-            'inline-flex gap-0 overflow-hidden rounded-2xl',
+            'inline-flex gap-0 overflow-hidden rounded-3xl p-2',
             'bg-(--card-color)',
           )}
         >

@@ -5,59 +5,45 @@ import clsx from 'clsx';
 import { Trophy } from 'lucide-react';
 import type { CSSProperties } from 'react';
 
-const USE_HALO_STAT_CARD_DESIGN = true;
-
 interface StatCardProps {
   value: number;
   label: string;
   index: number;
-  haloGap: number;
 }
 
 /**
  * Individual stat card displayed in the hero section
  */
-const StatCard = ({ value, label, index, haloGap }: StatCardProps) => (
+const StatCard = ({ value, label, index }: StatCardProps) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ delay: 0.1 * (index + 1) }}
     className={clsx(
-      USE_HALO_STAT_CARD_DESIGN
-        ? 'rounded-(--stat-card-outer-radius) border-4 border-(--border-color) p-(--stat-card-halo-gap)'
-        : 'rounded-xl border border-(--border-color) bg-(--main-color) p-6 text-center',
+      'relative overflow-hidden rounded-3xl p-6 text-center',
+      'bg-linear-to-br from-(--card-color) to-(--card-color)',
     )}
-    style={
-      USE_HALO_STAT_CARD_DESIGN
-        ? ({
-            '--stat-card-halo-gap': `${haloGap}px`,
-            '--stat-card-outer-radius':
-              'calc(var(--radius-xl) + var(--stat-card-halo-gap))',
-            '--stat-card-inner-radius':
-              'calc(var(--stat-card-outer-radius) - var(--stat-card-halo-gap))',
-          } as CSSProperties)
-        : undefined
-    }
   >
-    {USE_HALO_STAT_CARD_DESIGN ? (
-      <div
-        className={clsx(
-          'rounded-(--stat-card-inner-radius) bg-(--card-color) p-6 text-center',
-        )}
-      >
-        <div className='mb-1 text-3xl font-bold text-(--main-color)'>
-          {value}
-        </div>
-        <div className='text-sm text-(--secondary-color)'>{label}</div>
-      </div>
-    ) : (
-      <>
-        <div className='mb-1 text-3xl font-bold text-(--background-color)'>
-          {value}
-        </div>
-        <div className='text-sm text-(--card-color)'>{label}</div>
-      </>
-    )}
+    {/* Top gradient accent bar */}
+    <motion.div
+      className='absolute top-0 right-0 left-0 h-1.5 rounded-t-3xl bg-linear-to-r from-(--main-color) via-(--secondary-color) to-(--main-color)'
+      initial={{ opacity: 0, scaleX: 0 }}
+      animate={{ opacity: 1, scaleX: 1 }}
+      transition={{ duration: 0.8, delay: index * 0.08 + 0.3 }}
+    />
+
+    {/* Bottom gradient accent bar */}
+    <motion.div
+      className='absolute right-0 bottom-0 left-0 h-1.5 rounded-b-3xl bg-linear-to-r from-(--main-color) via-(--secondary-color) to-(--main-color)'
+      initial={{ opacity: 0, scaleX: 0 }}
+      animate={{ opacity: 1, scaleX: 1 }}
+      transition={{ duration: 0.8, delay: index * 0.08 + 0.35 }}
+    />
+
+    <div className='relative z-10'>
+      <div className='mb-1 text-3xl font-bold text-(--main-color)'>{value}</div>
+      <div className='text-sm text-(--secondary-color)'>{label}</div>
+    </div>
   </motion.div>
 );
 
@@ -73,22 +59,22 @@ const ProgressBar = ({ percentage }: ProgressBarProps) => (
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ delay: 0.5 }}
-    className='mx-auto mt-6 max-w-md'
+    className='mx-auto mt-10 max-w-4xl'
   >
-    <div className='mb-2 flex items-center justify-between'>
-      <span className='text-sm font-medium text-(--main-color)'>
+    <div className='mb-3 flex items-center justify-between px-2'>
+      <span className='text-xl font-bold text-(--secondary-color)'>
         Overall Progress
       </span>
-      <span className='text-sm font-bold text-(--main-color)'>
+      <span className='text-2xl font-black text-(--main-color)'>
         {Math.round(percentage)}%
       </span>
     </div>
-    <div className='h-4 w-full rounded-full bg-(--card-color)'>
+    <div className='h-8 w-full overflow-hidden rounded-full bg-(--card-color)'>
       <motion.div
         initial={{ width: 0 }}
         animate={{ width: `${percentage}%` }}
         transition={{ duration: 1.5, ease: 'easeOut' }}
-        className='h-4 rounded-full'
+        className='h-full rounded-full'
         style={{
           background:
             'linear-gradient(to right, var(--secondary-color), var(--main-color))',
@@ -122,7 +108,7 @@ export const HeroSection = ({
   const stats = [
     { value: unlockedCount, label: 'Unlocked' },
     { value: totalCount, label: 'Total' },
-    { value: totalPoints, label: 'Points' },
+    { value: totalPoints, label: 'XP' },
     { value: level, label: 'Level' },
   ];
 
@@ -144,6 +130,9 @@ export const HeroSection = ({
             Track your Japanese learning journey and celebrate your milestones
           </p>
 
+          {/* Overall Progress */}
+          <ProgressBar percentage={completionPercentage} />
+
           {/* Stats Cards */}
           <div className='mx-auto mt-8 grid max-w-4xl grid-cols-1 gap-4 md:grid-cols-4'>
             {stats.map((stat, index) => (
@@ -152,13 +141,9 @@ export const HeroSection = ({
                 value={stat.value}
                 label={stat.label}
                 index={index}
-                haloGap={statCardHaloGap}
               />
             ))}
           </div>
-
-          {/* Overall Progress */}
-          <ProgressBar percentage={completionPercentage} />
         </motion.div>
       </div>
     </div>

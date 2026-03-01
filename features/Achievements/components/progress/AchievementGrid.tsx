@@ -6,10 +6,12 @@ import { memo } from 'react';
 import { type Achievement } from '@/features/Achievements/store/useAchievementStore';
 import { AchievementCard } from './AchievementCard';
 
+import { AchievementProgressData } from './useAchievementProgress';
+
 export interface AchievementGridProps {
   achievements: Achievement[];
   unlockedAchievements: Record<string, Achievement>;
-  getAchievementProgress: (achievementId: string) => number;
+  getAchievementProgress: (achievementId: string) => AchievementProgressData;
   selectedCategory: string;
 }
 
