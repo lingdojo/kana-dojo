@@ -15,38 +15,43 @@
     "explanation": "If/when condition → ば. (Pattern set 5)"
   },
   {
-  "wrong": "会議は三時からで始まります。",
-  "correct": "会議は三時から始まります。",
-  "explanation": "Remove unnecessary particle after から. (Pattern set 2)"
+    "wrong": "会議は三時からで始まります。",
+    "correct": "会議は三時から始まります。",
+    "explanation": "Remove unnecessary particle after から. (Pattern set 2)"
   },
   {
-  "wrong": "この漢字は読み方が難しいです。",
-  "correct": "この漢字の読み方は難しいです。",
-  "explanation": "Prefer noun linkage with の. (Pattern set 4)"
+    "wrong": "この漢字は読み方が難しいです。",
+    "correct": "この漢字の読み方は難しいです。",
+    "explanation": "Prefer noun linkage with の. (Pattern set 4)"
   },
   {
-  "wrong": "先生は私を日本語を教えました。",
-  "correct": "先生は私に日本語を教えました。",
-  "explanation": "Recipient takes に with 教える. (Pattern set 4)"
+    "wrong": "先生は私を日本語を教えました。",
+    "correct": "先生は私に日本語を教えました。",
+    "explanation": "Recipient takes に with 教える. (Pattern set 4)"
   },
   {
-  "wrong": "静かい部屋",
-  "correct": "静かな部屋",
-  "explanation": "な-adjectives require な before nouns. (Pattern set 4)"
-},
+    "wrong": "静かい部屋",
+    "correct": "静かな部屋",
+    "explanation": "な-adjectives require な before nouns. (Pattern set 4)"
+  },
   {
-  "wrong": "これは私のです本。",
-  "correct": "これは私の本です。",
-  "explanation": "Place の correctly in noun phrase. (Pattern set 1)"
-},
+    "wrong": "これは私のです本。",
+    "correct": "これは私の本です。",
+    "explanation": "Place の correctly in noun phrase. (Pattern set 1)"
+  },
   {
-  "wrong": "図書館に本を借りました。",
-  "correct": "図書館で本を借りました。",
-  "explanation": "で marks location of action. (Pattern set 4)"
-},
-{
-  "wrong": "宿題を忘れないよう、メモします。",
-  "correct": "宿題を忘れないように、メモします。",
-  "explanation": "Use ように for purpose/prevention. (Pattern set 6)"
-}
+    "wrong": "図書館に本を借りました。",
+    "correct": "図書館で本を借りました。",
+    "explanation": "で marks location of action. (Pattern set 4)"
+  },
+  {
+    "wrong": "宿題を忘れないよう、メモします。",
+    "correct": "宿題を忘れないように、メモします。",
+    "explanation": "Use ように for purpose/prevention. (Pattern set 6)"
+  },
+  {
+    "wrong": "私は日本語を話しますです。",
+    "correct": "私は日本語を話します。",
+    "explanation": "Do not stack ます and です in one predicate. (Pattern set 4)"
+  }
 ]
