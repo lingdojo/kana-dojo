@@ -32,7 +32,7 @@
     "explanation": "Often means slim/stylish, not necessarily intelligent. (Set 1)",
     "example": "彼はスマートな着こなしをしている。",
     "id": 4,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -285,7 +285,7 @@
     "example": "資料をホッチキスで留めてください。",
     "id": 32,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "termA": "ドンマイ (donmai)",
@@ -303,7 +303,7 @@
     "example": "新しい料理にチャレンジしてみる。",
     "id": 34,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "termA": "ナンバー (nanbaa)",
@@ -356,7 +356,7 @@
     "explanation": "In Japanese it can refer to animation in general. (Set 2)",
     "example": "子どものころからアニメが好きだ。",
     "id": 40,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -563,7 +563,7 @@
     "explanation": "コンセント means electrical outlet. (Set 4)",
     "example": "コンセントが足りないので延長コードを使います。",
     "id": 63,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -950,7 +950,7 @@
     "explanation": "Usually means buffet/all-you-can-eat in Japan. (Set 6)",
     "example": "ホテルの朝食はバイキングです。",
     "id": 106,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1076,7 +1076,7 @@
     "explanation": "In Japanese it can refer to animation in general. (Set 6)",
     "example": "子どものころからアニメが好きだ。",
     "id": 120,
-    "issued": false,
+    "issued": true,
     "completed": false
   }
 ]

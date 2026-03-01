@@ -26,7 +26,7 @@ export const CategoryTabs = ({
   getCategoryStats,
 }: CategoryTabsProps) => {
   return (
-    <div className='mb-8 flex flex-wrap justify-center gap-4'>
+    <div className='mb-8 flex flex-wrap justify-center gap-x-2 gap-y-4 sm:gap-4'>
       {categories.map((category, index) => {
         const categoryStats = getCategoryStats(category.id);
         const CategoryIcon = category.icon;
@@ -45,7 +45,7 @@ export const CategoryTabs = ({
               borderColorScheme={isSelected ? 'main' : 'secondary'}
               borderBottomThickness={10}
               borderRadius='3xl'
-              className='w-auto px-4 py-3 text-base font-medium'
+              className='w-auto px-3 py-2 text-sm font-medium sm:px-4 sm:py-3 sm:text-base'
             >
               <CategoryIcon size={18} className='fill-current' />
               <span>{category.label}</span>

@@ -24,20 +24,23 @@ const Game = () => {
     numWrongAnswers,
     currentStreak,
     stars,
-  } =
-    useStatsStore(
-      useShallow(state => ({
-        showStats: state.showStats,
-        resetStats: state.resetStats,
-        recordDojoUsed: state.recordDojoUsed,
-        recordModeUsed: state.recordModeUsed,
-        recordChallengeModeUsed: state.recordChallengeModeUsed,
-        numCorrectAnswers: state.numCorrectAnswers,
-        numWrongAnswers: state.numWrongAnswers,
-        currentStreak: state.currentStreak,
-        stars: state.stars,
-      })),
-    );
+    totalMilliseconds,
+    correctAnswerTimes,
+  } = useStatsStore(
+    useShallow(state => ({
+      showStats: state.showStats,
+      resetStats: state.resetStats,
+      recordDojoUsed: state.recordDojoUsed,
+      recordModeUsed: state.recordModeUsed,
+      recordChallengeModeUsed: state.recordChallengeModeUsed,
+      numCorrectAnswers: state.numCorrectAnswers,
+      numWrongAnswers: state.numWrongAnswers,
+      currentStreak: state.currentStreak,
+      stars: state.stars,
+      totalMilliseconds: state.totalMilliseconds,
+      correctAnswerTimes: state.correctAnswerTimes,
+    })),
+  );
 
   const gameMode = useKanjiStore(state => state.selectedGameModeKanji);
   const selectedKanjiObjs = useKanjiStore(state => state.selectedKanjiObjs);
@@ -136,6 +139,8 @@ const Game = () => {
           wrong={numWrongAnswers}
           bestStreak={currentStreak}
           stars={stars}
+          totalTimeMs={totalMilliseconds}
+          correctAnswerTimes={correctAnswerTimes}
           onNewSession={handleNewSession}
           onBackToSelection={() => router.push('/kanji')}
         />

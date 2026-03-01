@@ -279,7 +279,7 @@ interface StatItemProps {
 const StatItem = ({ icon: Icon, value }: StatItemProps) => (
   <p className='flex flex-row items-center gap-0.75 text-xl sm:gap-1'>
     <Icon />
-    <span>{value}</span>
+    <span className='text-(--main-color)'>{value}</span>
   </p>
 );
 

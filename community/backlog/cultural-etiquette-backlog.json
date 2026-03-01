@@ -212,7 +212,7 @@
     "dont": "無言で食べ始める",
     "note": "感謝を示す慣習。",
     "id": 24,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -437,7 +437,7 @@
     "dont": "話を遮る",
     "note": "合意形成を重視する文化。",
     "id": 49,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -689,7 +689,7 @@
     "dont": "ゴミを放置する",
     "note": "ゴミ箱が少ない地域がある。",
     "id": 77,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -725,7 +725,7 @@
     "dont": "片手で受け取ってすぐポケットに入れる",
     "note": "商談中は机上に置くのが一般的。",
     "id": 81,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -815,7 +815,7 @@
     "dont": "値段を強調する",
     "note": "謙遜表現が好まれる。",
     "id": 91,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

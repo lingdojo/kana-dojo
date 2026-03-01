@@ -1,13 +1,10 @@
 'use client';
 
-import type { CSSProperties } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { cn } from '@/shared/lib/utils';
 import { Trophy, Star, Award, ChevronRight } from 'lucide-react';
 import type { AchievementSummary } from '../../types/stats';
-
-const ACHIEVEMENT_SUMMARY_HALO_GAP = 8;
 
 /**
  * Props for the AchievementSummaryBar component
@@ -79,94 +76,83 @@ export default function AchievementSummaryBar({
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.1 }}
       className={cn(
-        'rounded-(--achievement-summary-outer-radius) border-4 border-(--border-color) p-(--achievement-summary-halo-gap)',
+        'group relative overflow-hidden rounded-3xl bg-(--card-color) p-6',
         className,
       )}
-      style={
-        {
-          '--achievement-summary-halo-gap': `${ACHIEVEMENT_SUMMARY_HALO_GAP}px`,
-          '--achievement-summary-outer-radius':
-            'calc(var(--radius-3xl) + var(--achievement-summary-halo-gap))',
-          '--achievement-summary-inner-radius':
-            'calc(var(--achievement-summary-outer-radius) - var(--achievement-summary-halo-gap))',
-        } as CSSProperties
-      }
     >
-      <div className='group relative overflow-hidden rounded-(--achievement-summary-inner-radius) bg-(--card-color) p-6'>
-        {/* Decorative trophy glow */}
-        <div className='pointer-events-none absolute -top-10 -right-10 h-40 w-40 rounded-full bg-linear-to-br from-(--main-color)/10 to-transparent blur-3xl' />
+      {/* Decorative trophy glow */}
+      <div className='pointer-events-none absolute -top-10 -right-10 h-40 w-40 rounded-full bg-linear-to-br from-(--main-color)/10 to-transparent blur-3xl' />
 
-        <div className='relative z-10 flex flex-col gap-6'>
-          {/* Header with animated trophy */}
-          <div className='flex items-center justify-between'>
-            <div className='flex items-center gap-4'>
-              <motion.div
-                animate={{ rotate: [0, 5, -5, 0] }}
-                transition={{ duration: 3, repeat: Infinity, repeatDelay: 2 }}
-                className='flex h-14 w-14 items-center justify-center rounded-2xl border border-(--main-color)/20 bg-linear-to-br from-(--main-color)/20 to-(--secondary-color)/10'
-              >
-                <Trophy className='h-7 w-7 text-(--main-color)' />
-              </motion.div>
-              <div>
-                <h3 className='text-2xl font-bold text-(--main-color)'>
-                  Achievements
-                </h3>
-                <p className='text-sm text-(--secondary-color)/70'>
-                  Celebrate your milestones
-                </p>
-              </div>
-            </div>
-            <Link
-              href='/progress'
-              className={cn(
-                'group/link flex cursor-pointer items-center gap-2 rounded-full px-5 py-2.5',
-                'bg-(--background-color)',
-                'border border-(--border-color)/30',
-                'text-sm font-semibold text-(--secondary-color)',
-                'transition-colors duration-300',
-                'hover:border-(--main-color)/30 hover:text-(--main-color)',
-              )}
+      <div className='relative z-10 flex flex-col gap-6'>
+        {/* Header with animated trophy */}
+        <div className='flex items-center justify-between'>
+          <div className='flex items-center gap-4'>
+            <motion.div
+              animate={{ rotate: [0, 5, -5, 0] }}
+              transition={{ duration: 3, repeat: Infinity, repeatDelay: 2 }}
+              className='flex h-14 w-14 items-center justify-center rounded-2xl border border-(--main-color)/20 bg-linear-to-br from-(--main-color)/20 to-(--secondary-color)/10'
             >
-              View All
-              <ChevronRight className='h-4 w-4 transition-colors duration-300' />
-            </Link>
-          </div>
-
-          {/* Stats row */}
-          <div className='flex flex-wrap items-center gap-8 sm:gap-12'>
-            <StatItem
-              icon={Star}
-              label='Points'
-              value={totalPoints.toLocaleString()}
-              index={0}
-            />
-            <StatItem icon={Trophy} label='Level' value={level} index={1} />
-            <StatItem
-              icon={Award}
-              label='Unlocked'
-              value={`${unlockedCount}/${totalAchievements}`}
-              index={2}
-            />
-          </div>
-
-          {/* Progress bar */}
-          <div className='space-y-3'>
-            <div className='relative h-4 overflow-hidden rounded-full bg-(--background-color)'>
-              <motion.div
-                className='absolute inset-y-0 left-0 rounded-full bg-linear-to-r from-(--secondary-color) to-(--main-color)'
-                initial={{ width: 0 }}
-                animate={{ width: `${progressPercent}%` }}
-                transition={{ duration: 1, delay: 0.5, ease: 'easeOut' }}
-              />
+              <Trophy className='h-7 w-7 text-(--main-color)' />
+            </motion.div>
+            <div>
+              <h3 className='text-2xl font-bold text-(--main-color)'>
+                Achievements
+              </h3>
+              <p className='text-sm text-(--secondary-color)/70'>
+                Celebrate your milestones
+              </p>
             </div>
-            <div className='flex items-center justify-between text-sm'>
-              <span className='text-(--secondary-color)/70'>
-                Overall Progress
-              </span>
-              <span className='font-bold text-(--main-color)'>
-                {progressPercent.toFixed(0)}%
-              </span>
-            </div>
+          </div>
+          <Link
+            href='?tab=achievements'
+            className={cn(
+              'group/link flex cursor-pointer items-center gap-2 rounded-full px-5 py-2.5',
+              'bg-(--background-color)',
+              'border border-(--border-color)/30',
+              'text-sm font-semibold text-(--secondary-color)',
+              'transition-colors duration-300',
+              'hover:text-(--main-color)',
+            )}
+          >
+            View All
+            <ChevronRight className='h-4 w-4 transition-colors duration-300' />
+          </Link>
+        </div>
+
+        {/* Stats row */}
+        <div className='flex flex-wrap items-center gap-8 sm:gap-12'>
+          <StatItem
+            icon={Star}
+            label='XP'
+            value={totalPoints.toLocaleString()}
+            index={0}
+          />
+          <StatItem icon={Trophy} label='Level' value={level} index={1} />
+          <StatItem
+            icon={Award}
+            label='Unlocked'
+            value={`${unlockedCount}/${totalAchievements}`}
+            index={2}
+          />
+        </div>
+
+        {/* Progress bar */}
+        <div className='space-y-3'>
+          <div className='relative h-4 overflow-hidden rounded-full bg-(--background-color)'>
+            <motion.div
+              className='absolute inset-y-0 left-0 rounded-full bg-linear-to-r from-(--secondary-color) to-(--main-color)'
+              initial={{ width: 0 }}
+              animate={{ width: `${progressPercent}%` }}
+              transition={{ duration: 1, delay: 0.5, ease: 'easeOut' }}
+            />
+          </div>
+          <div className='flex items-center justify-between text-sm'>
+            <span className='text-(--secondary-color)/70'>
+              Overall Progress
+            </span>
+            <span className='font-bold text-(--main-color)'>
+              {progressPercent.toFixed(0)}%
+            </span>
           </div>
         </div>
       </div>

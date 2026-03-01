@@ -71,6 +71,7 @@
     "react-markdown": "^10.1.0",
     "react-responsive": "^10.0.1",
     "react-timer-hook": "^4.0.5",
+    "recharts": "^3.7.0",
     "remark-gfm": "^4.0.1",
     "sql.js": "^1.13.0",
     "tailwind-merge": "^3.2.0",
@@ -122,4 +123,3 @@
     "@next/swc-win32-x64-msvc": "npm:null@*"
   }
 }
-

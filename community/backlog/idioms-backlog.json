@@ -140,7 +140,7 @@
     "english": "Make neck long",
     "meaning": "Wait eagerly. (Set 1)",
     "id": 16,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -149,7 +149,7 @@
     "english": "Let it flow in water",
     "meaning": "Let bygones be bygones. (Set 1)",
     "id": 17,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -726,7 +726,7 @@
     "meaning": "Extremely busy and desperate for help. (Set 5)",
     "id": 81,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "頭が上がらない",
@@ -734,7 +734,7 @@
     "english": "Cannot raise one’s head",
     "meaning": "Feel indebted or unable to oppose someone. (Set 5)",
     "id": 82,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -815,7 +815,7 @@
     "english": "Pull someone back",
     "meaning": "Hold someone back. (Set 5)",
     "id": 91,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -914,7 +914,7 @@
     "english": "Cannot raise one’s head",
     "meaning": "Feel indebted or unable to oppose someone. (Set 6)",
     "id": 102,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

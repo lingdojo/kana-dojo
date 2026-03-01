@@ -25,6 +25,8 @@ module.exports = {
       'beginner-friendly',
       'starter task',
       'javascript',
+      'documentation',
+      'typescript'
     ],
     // Label for filtering community issues
     community: 'community',
