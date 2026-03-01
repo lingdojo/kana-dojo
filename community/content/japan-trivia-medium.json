@@ -232,5 +232,16 @@
     "Tabi"
   ],
   "correctIndex": 0
-}
+  },
+  {
+    "question": "What is the Japanese term for new year?",
+    "difficulty": "medium",
+    "answers": [
+      "Shogatsu",
+      "Obon",
+      "Tanabata",
+      "Hinamatsuri"
+    ],
+    "correctIndex": 0
+  }
 ]
