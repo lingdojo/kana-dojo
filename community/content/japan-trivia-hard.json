@@ -91,6 +91,17 @@
     "Sendai"
   ],
   "correctIndex": 0
+},
+{
+  "question": "Which Japanese island chain is known for tropical beaches and coral reefs? (Community variation 27)",
+  "difficulty": "hard",
+  "answers": [
+    "Okinawa",
+    "Sado",
+    "Awaji",
+    "Oki"
+  ],
+  "correctIndex": 0
 }
 ]
 
