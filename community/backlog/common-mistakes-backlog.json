@@ -484,7 +484,7 @@
     "correct": "私は日本語を話します。",
     "explanation": "Do not stack ます and です in one predicate. (Pattern set 4)",
     "id": 61,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

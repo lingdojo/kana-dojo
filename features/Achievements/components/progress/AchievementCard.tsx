@@ -31,10 +31,10 @@ export const AchievementCard = ({
   return (
     <div
       className={clsx(
-        'relative overflow-hidden rounded-2xl p-6',
+        'relative flex w-full flex-col overflow-hidden p-6',
         isUnlocked
-          ? 'bg-(--card-color)'
-          : 'border border-(--border-color) bg-(--background-color) opacity-80',
+          ? 'rounded-2xl bg-(--card-color)'
+          : 'rounded-none border-x-0 border-y border-(--border-color) bg-(--background-color) opacity-80',
       )}
     >
       {/* Gradient overlay for unlocked achievements */}
@@ -73,7 +73,7 @@ export const AchievementCard = ({
         </div>
       </div>
 
-      <div className='space-y-4'>
+      <div className='flex flex-1 flex-col space-y-4'>
         {/* Achievement icon and title */}
         <div className='flex items-center gap-4'>
           <div
@@ -146,7 +146,7 @@ export const AchievementCard = ({
         </div>
 
         {/* Footer */}
-        <div className='flex items-center justify-between border-t-2 border-(--border-color)/30 pt-2'>
+        <div className='mt-auto flex items-center justify-between border-t-2 border-(--border-color)/30 pt-2'>
           <div className='flex items-center gap-2'>
             <Trophy
               size={16}
@@ -171,7 +171,7 @@ export const AchievementCard = ({
               Unlocked
             </div>
           ) : (
-            <div className='rounded-full border border-(--border-color) bg-(--background-color) px-2 py-1 text-xs text-(--secondary-color)/70'>
+            <div className='rounded-full  border-(--border-color) bg-(--background-color) px-2 py-1 text-xs text-(--secondary-color)/70'>
               Locked
             </div>
           )}

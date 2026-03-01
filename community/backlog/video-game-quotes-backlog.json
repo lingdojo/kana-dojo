@@ -827,7 +827,7 @@
     "character": "Luke fon Fabre",
     "id": 83,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "未来を変えるんだ！",
@@ -837,7 +837,7 @@
     "character": "Rintaro Okabe",
     "id": 84,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "希望は前に進むんだ！",
@@ -847,7 +847,7 @@
     "character": "Makoto Naegi",
     "id": 85,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "覚悟はいいか？ 俺はできてる。",
@@ -876,7 +876,7 @@
     "game": "Kingdom Hearts series (JP dub)",
     "character": "Sora",
     "id": 88,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
