@@ -2,7 +2,7 @@
   "home": {
     "title": "KanaDojo - Japanisch Hiragana, Katakana, Kanji und Vokabeln Online Lernen",
     "titleShort": "KanaDojo - Japanisch Lernen",
-    "description": "Meistern Sie Japanisch mit KanaDojo - einer ästhetischen, minimalistischen Plattform zum Lernen von Hiragana, Katakana, Kanji und Vokabeln. Üben Sie mit interaktiven Spielen, verfolgen Sie Ihren Fortschritt und personalisieren Sie Ihre Lernerfahrung mit über 100 Themen.",
+    "description": "Meistern Sie Japanisch mit KanaDojo - einer ästhetischen, minimalistischen Platform zum Lernen von Hiragana, Katakana, Kanji und Vokabeln. Üben Sie mit interaktiven Spielen, verfolgen Sie Ihren Fortschritt und personalisieren Sie Ihre Lernerfahrung mit über 100 Themen.",
     "descriptionShort": "Meistern Sie japanische Hiragana, Katakana, Kanji und Vokabeln mit interaktiven Spielen, Fortschrittsverfolgung und schönen Anpassungsoptionen.",
     "keywords": "japanisch lernen, hiragana lernen, katakana lernen, kana lernen, kanji lernen, japanische vokabeln, hiragana übung, katakana übung, kanji übung, japanisch lern app, japanisch online kurs, japanisches schriftsystem, JLPT vorbereitung, japanisch sprachelernen, kana dojo, japanisch lernwerkzeug, kostenlose japanisch kurse"
   },
@@ -87,7 +87,7 @@
   "vocabulary": {
     "title": "Vocabulary Dojo - Japanische Wörter und Vokabeln Nach JLPT Level Lernen",
     "titleShort": "Vocabulary Dojo",
-    "description": "Erweitern Sie Ihren japanischen Wortschatz mit Wörtern organisiert nach JLPT-Levels. Interaktive Übungen, Beispielsätze und Fortschrittsverfolgung.",
+    "description": "Erweitern Sie Ihren japanischen Wortschatz mit Wörtern organisiert nach JLPT-Levels. Interactive Übungen, Beispielsätze und Fortschrittsverfolgung.",
     "keywords": "japanische vokabeln, japanische wörter lernen, JLPT vokabeln, vokabel übung, japanische wortliste, vokabel karteikarten, japanische phrasen, JLPT wort studium, vokabeln nach level, japanische vokabel app"
   },
   "vocabularyJlptN5": {
@@ -165,7 +165,7 @@
   "security": {
     "title": "Sicherheitsrichtlinie - Wie Wir KanaDojo Sicher Halten",
     "titleShort": "Sicherheit",
-    "description": "Erfahren Sie mehr über KanaDojos Sicherheitsmaßnahmen und wie wir unsere Plattform und Benutzer schützen.",
+    "description": "Erfahren Sie mehr über KanaDojos Sicherheitsmaßnahmen und wie wir unsere Platform und Benutzer schützen.",
     "keywords": "sicherheitsrichtlinie, plattformsicherheit, datensicherheit"
   },
   "credits": {
@@ -221,7 +221,7 @@
       "title": "Hiragana Grundzeichen (あ-わ) - Grundlegende Hiragana Lernen | KanaDojo",
       "titleShort": "Hiragana Grundzeichen",
       "description": "Meistern Sie die 46 grundlegenden Hiragana-Zeichen (あいうえお, かきくけこ, さしすせそ, etc.). Vollständiger Referenzleitfaden mit Romanisierung für alle fundamentalen japanischen Hiragana.",
-      "keywords": "hiragana basis, grundlegende hiragana, hiragana tabelle, あいうえお, hiragana referenz, hiragana grundlagen lernen, japanisches alphabet hiragana, hiragana romanisierung"
+      "keywords": "hiragana basis, grundlegende hiragana, hiragana tabelle, あいうえお, hiragana reference, hiragana grundlagen lernen, japanisches alphabet hiragana, hiragana romanisierung"
     },
     "hiraganaDakuon": {
       "title": "Hiragana Dakuon (が-ぽ) - Stimmhafte Hiragana-Zeichen | KanaDojo",
@@ -239,7 +239,7 @@
       "title": "Katakana Grundzeichen (ア-ワ) - Grundlegende Katakana Lernen | KanaDojo",
       "titleShort": "Katakana Grundzeichen",
       "description": "Meistern Sie die 46 grundlegenden Katakana-Zeichen (アイウエオ, カキクケコ, サシスセソ, etc.). Vollständiger Referenzleitfaden mit Romanisierung für alle fundamentalen japanischen Katakana.",
-      "keywords": "katakana basis, grundlegende katakana, katakana tabelle, アイウエオ, katakana referenz, katakana grundlagen lernen, japanisches alphabet katakana, katakana romanisierung"
+      "keywords": "katakana basis, grundlegende katakana, katakana tabelle, アイウエオ, katakana reference, katakana grundlagen lernen, japanisches alphabet katakana, katakana romanisierung"
     },
     "katakanaDakuon": {
       "title": "Katakana Dakuon (ガ-ポ) - Stimmhafte Katakana-Zeichen | KanaDojo",

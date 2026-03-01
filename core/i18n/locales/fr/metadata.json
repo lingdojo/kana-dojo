@@ -9,26 +9,26 @@
   "kana": {
     "title": "Kana Dojo - Apprendre les Hiragana et Katakana Japonais par Niveau",
     "titleShort": "Kana Dojo - Hiragana et Katakana",
-    "description": "Maîtrisez les Hiragana et Katakana avec des jeux et exercices interactifs. Pratiquez les caractères kana japonais par niveau de difficulté avec retour instantané et suivi des progrès.",
+    "description": "Maîtrisez les Hiragana et Katakana avec des jeux et exercises interactifs. Pratiquez les caractères kana japonais par niveau de difficulté avec retour instantané et suivi des progrès.",
     "keywords": "hiragana, katakana, kana japonais, apprendre hiragana, apprendre katakana, pratique kana, alphabet japonais, syllabaire japonais"
   },
   "learnHiragana": {
-    "title": "Apprendre Hiragana - Tableau Complet, Exercices & Pratique | KanaDojo",
+    "title": "Apprendre Hiragana - Tableau Complete, Exercises & Pratique | KanaDojo",
     "titleShort": "Apprendre Hiragana",
-    "description": "Apprenez les Hiragana rapidement avec des exercices interactifs, des cartes kana sélectionnables et une pratique guidée. Maîtrisez le tableau complet, dakuon et yoon avec retour instantané.",
-    "keywords": "apprendre hiragana, tableau hiragana, pratique hiragana, exercices hiragana, quiz hiragana, cartes hiragana, prononciation hiragana, lecture hiragana, caractères hiragana, hiragana dakuon, hiragana yoon, hiragana débutant"
+    "description": "Apprenez les Hiragana rapidement avec des exercises interactifs, des cartes kana sélectionnables et une pratique guidée. Maîtrisez le tableau complete, dakuon et yoon avec retour instantané.",
+    "keywords": "apprendre hiragana, tableau hiragana, pratique hiragana, exercises hiragana, quiz hiragana, cartes hiragana, pronunciation hiragana, lecture hiragana, caractères hiragana, hiragana dakuon, hiragana yoon, hiragana débutant"
   },
   "learnKatakana": {
-    "title": "Apprendre Katakana - Tableau Complet, Exercices & Pratique | KanaDojo",
+    "title": "Apprendre Katakana - Tableau Complete, Exercises & Pratique | KanaDojo",
     "titleShort": "Apprendre Katakana",
-    "description": "Apprenez les Katakana rapidement avec des exercices interactifs, des cartes kana sélectionnables et une pratique guidée. Maîtrisez le tableau complet, dakuon, yoon et sons étrangers avec retour instantané.",
-    "keywords": "apprendre katakana, tableau katakana, pratique katakana, exercices katakana, quiz katakana, cartes katakana, prononciation katakana, lecture katakana, caractères katakana, katakana dakuon, katakana yoon, katakana sons étrangers"
+    "description": "Apprenez les Katakana rapidement avec des exercises interactifs, des cartes kana sélectionnables et une pratique guidée. Maîtrisez le tableau complete, dakuon, yoon et sons étrangers avec retour instantané.",
+    "keywords": "apprendre katakana, tableau katakana, pratique katakana, exercises katakana, quiz katakana, cartes katakana, pronunciation katakana, lecture katakana, caractères katakana, katakana dakuon, katakana yoon, katakana sons étrangers"
   },
   "kanaBlitz": {
     "title": "Kana Blitz - Testez Votre Vitesse en Hiragana et Katakana",
     "titleShort": "Kana Blitz - Test de Vitesse",
-    "description": "Testez votre vitesse de reconnaissance des kana japonais avec Kana Blitz. Défiez-vous avec des exercices chronométrés et suivez vos progrès.",
-    "keywords": "test vitesse kana, vitesse hiragana, vitesse katakana, pratique kana japonais, cartes mémoire kana, lecture rapide kana, quiz kana chronométré, rappel rapide hiragana, reconnaissance rapide katakana, exercice kana"
+    "description": "Testez votre vitesse de reconnaissance des kana japonais avec Kana Blitz. Défiez-vous avec des exercises chronométrés et suivez vos progrès.",
+    "keywords": "test vitesse kana, vitesse hiragana, vitesse katakana, pratique kana japonais, cartes mémoire kana, lecture rapide kana, quiz kana chronométré, rappel rapide hiragana, reconnaissance rapide katakana, exercise kana"
   },
   "kanaGauntlet": {
     "title": "Kana Gauntlet - Maîtriser Tous les Caractères",
@@ -39,44 +39,44 @@
   "kanji": {
     "title": "Kanji Dojo - Apprendre les Caractères Kanji Japonais par Niveau JLPT",
     "titleShort": "Kanji Dojo - Kanji Japonais",
-    "description": "Apprenez les caractères Kanji japonais organisés par niveaux JLPT. Pratiquez avec des exercices interactifs, suivez vos progrès et maîtrisez des milliers de kanji.",
+    "description": "Apprenez les caractères Kanji japonais organisés par niveaux JLPT. Pratiquez avec des exercises interactifs, suivez vos progrès et maîtrisez des milliers de kanji.",
     "keywords": "kanji, apprendre kanji, kanji japonais, kanji JLPT, pratique kanji, kanji par niveau"
   },
   "kanjiJlptN5": {
     "title": "JLPT N5 Kanji - Liste et Pratique | KanaDojo",
     "titleShort": "JLPT N5 Kanji",
-    "description": "Pratiquez les kanji JLPT N5 avec des exercices interactifs, sélection rapide et suivi des progrès.",
+    "description": "Pratiquez les kanji JLPT N5 avec des exercises interactifs, sélection rapide et suivi des progrès.",
     "keywords": "jlpt n5 kanji, kanji n5, liste kanji n5, pratique kanji n5, apprendre kanji n5"
   },
   "kanjiJlptN4": {
     "title": "JLPT N4 Kanji - Liste et Pratique | KanaDojo",
     "titleShort": "JLPT N4 Kanji",
-    "description": "Pratiquez les kanji JLPT N4 avec des exercices interactifs, sélection rapide et suivi des progrès.",
+    "description": "Pratiquez les kanji JLPT N4 avec des exercises interactifs, sélection rapide et suivi des progrès.",
     "keywords": "jlpt n4 kanji, kanji n4, liste kanji n4, pratique kanji n4, apprendre kanji n4"
   },
   "kanjiJlptN3": {
     "title": "JLPT N3 Kanji - Liste et Pratique | KanaDojo",
     "titleShort": "JLPT N3 Kanji",
-    "description": "Pratiquez les kanji JLPT N3 avec des exercices interactifs, sélection rapide et suivi des progrès.",
+    "description": "Pratiquez les kanji JLPT N3 avec des exercises interactifs, sélection rapide et suivi des progrès.",
     "keywords": "jlpt n3 kanji, kanji n3, liste kanji n3, pratique kanji n3, apprendre kanji n3"
   },
   "kanjiJlptN2": {
     "title": "JLPT N2 Kanji - Liste et Pratique | KanaDojo",
     "titleShort": "JLPT N2 Kanji",
-    "description": "Pratiquez les kanji JLPT N2 avec des exercices interactifs, sélection rapide et suivi des progrès.",
+    "description": "Pratiquez les kanji JLPT N2 avec des exercises interactifs, sélection rapide et suivi des progrès.",
     "keywords": "jlpt n2 kanji, kanji n2, liste kanji n2, pratique kanji n2, apprendre kanji n2"
   },
   "kanjiJlptN1": {
     "title": "JLPT N1 Kanji - Liste et Pratique | KanaDojo",
     "titleShort": "JLPT N1 Kanji",
-    "description": "Pratiquez les kanji JLPT N1 avec des exercices interactifs, sélection rapide et suivi des progrès.",
+    "description": "Pratiquez les kanji JLPT N1 avec des exercises interactifs, sélection rapide et suivi des progrès.",
     "keywords": "jlpt n1 kanji, kanji n1, liste kanji n1, pratique kanji n1, apprendre kanji n1"
   },
   "kanjiBlitz": {
     "title": "Kanji Blitz - Testez Votre Vitesse de Reconnaissance des Kanji",
     "titleShort": "Kanji Blitz",
-    "description": "Testez votre vitesse de reconnaissance des kanji japonais avec Kanji Blitz. Exercices rapides pour améliorer vos compétences en kanji.",
-    "keywords": "test vitesse kanji, reconnaissance kanji, pratique kanji rapide, cartes mémoire kanji, exercice kanji, lecture rapide kanji, quiz kanji chronométré, rappel rapide kanji, lecture rapide kanji, pratique kanji JLPT"
+    "description": "Testez votre vitesse de reconnaissance des kanji japonais avec Kanji Blitz. Exercises rapides pour améliorer vos compétences en kanji.",
+    "keywords": "test vitesse kanji, reconnaissance kanji, pratique kanji rapide, cartes mémoire kanji, exercise kanji, lecture rapide kanji, quiz kanji chronométré, rappel rapide kanji, lecture rapide kanji, pratique kanji JLPT"
   },
   "kanjiGauntlet": {
     "title": "Kanji Gauntlet - Maîtriser Tous les Caractères",
@@ -87,55 +87,55 @@
   "vocabulary": {
     "title": "Vocabulary Dojo - Apprendre les Mots et Vocabulaire Japonais par Niveau JLPT",
     "titleShort": "Vocabulary Dojo",
-    "description": "Développez votre vocabulaire japonais avec des mots organisés par niveaux JLPT. Exercices interactifs, phrases exemples et suivi des progrès.",
+    "description": "Développez votre vocabulaire japonais avec des mots organisés par niveaux JLPT. Exercises interactifs, phrases examples et suivi des progrès.",
     "keywords": "vocabulaire japonais, apprendre mots japonais, vocabulaire JLPT, pratique vocabulaire, liste mots japonais, cartes mémoire vocabulaire, phrases japonaises, étude mots JLPT, vocabulaire par niveau, application vocabulaire japonais"
   },
   "vocabularyJlptN5": {
     "title": "Vocabulaire JLPT N5 - Liste et Pratique | KanaDojo",
     "titleShort": "Vocabulaire JLPT N5",
-    "description": "Pratiquez le vocabulaire JLPT N5 avec des exercices interactifs, sélection rapide et suivi des progrès.",
+    "description": "Pratiquez le vocabulaire JLPT N5 avec des exercises interactifs, sélection rapide et suivi des progrès.",
     "keywords": "vocabulaire jlpt n5, liste mots n5, pratique vocabulaire n5, mots japonais n5"
   },
   "vocabularyJlptN4": {
     "title": "Vocabulaire JLPT N4 - Liste et Pratique | KanaDojo",
     "titleShort": "Vocabulaire JLPT N4",
-    "description": "Pratiquez le vocabulaire JLPT N4 avec des exercices interactifs, sélection rapide et suivi des progrès.",
+    "description": "Pratiquez le vocabulaire JLPT N4 avec des exercises interactifs, sélection rapide et suivi des progrès.",
     "keywords": "vocabulaire jlpt n4, liste mots n4, pratique vocabulaire n4, mots japonais n4"
   },
   "vocabularyJlptN3": {
     "title": "Vocabulaire JLPT N3 - Liste et Pratique | KanaDojo",
     "titleShort": "Vocabulaire JLPT N3",
-    "description": "Pratiquez le vocabulaire JLPT N3 avec des exercices interactifs, sélection rapide et suivi des progrès.",
+    "description": "Pratiquez le vocabulaire JLPT N3 avec des exercises interactifs, sélection rapide et suivi des progrès.",
     "keywords": "vocabulaire jlpt n3, liste mots n3, pratique vocabulaire n3, mots japonais n3"
   },
   "vocabularyJlptN2": {
     "title": "Vocabulaire JLPT N2 - Liste et Pratique | KanaDojo",
     "titleShort": "Vocabulaire JLPT N2",
-    "description": "Pratiquez le vocabulaire JLPT N2 avec des exercices interactifs, sélection rapide et suivi des progrès.",
+    "description": "Pratiquez le vocabulaire JLPT N2 avec des exercises interactifs, sélection rapide et suivi des progrès.",
     "keywords": "vocabulaire jlpt n2, liste mots n2, pratique vocabulaire n2, mots japonais n2"
   },
   "vocabularyJlptN1": {
     "title": "Vocabulaire JLPT N1 - Liste et Pratique | KanaDojo",
     "titleShort": "Vocabulaire JLPT N1",
-    "description": "Pratiquez le vocabulaire JLPT N1 avec des exercices interactifs, sélection rapide et suivi des progrès.",
+    "description": "Pratiquez le vocabulaire JLPT N1 avec des exercises interactifs, sélection rapide et suivi des progrès.",
     "keywords": "vocabulaire jlpt n1, liste mots n1, pratique vocabulaire n1, mots japonais n1"
   },
   "vocabularyBlitz": {
     "title": "Vocabulary Blitz - Testez Votre Vitesse en Vocabulaire Japonais",
     "titleShort": "Vocabulary Blitz",
-    "description": "Testez votre vitesse en vocabulaire japonais avec Vocabulary Blitz. Exercices rapides de reconnaissance de mots.",
-    "keywords": "test vitesse vocabulaire, mots japonais, pratique vocabulaire rapide, cartes mémoire vocabulaire, exercice mots, lecture rapide japonais, quiz vocabulaire chronométré, rappel rapide mots, pratique vocabulaire JLPT, reconnaissance mots japonais"
+    "description": "Testez votre vitesse en vocabulaire japonais avec Vocabulary Blitz. Exercises rapides de reconnaissance de mots.",
+    "keywords": "test vitesse vocabulaire, mots japonais, pratique vocabulaire rapide, cartes mémoire vocabulaire, exercise mots, lecture rapide japonais, quiz vocabulaire chronométré, rappel rapide mots, pratique vocabulaire JLPT, reconnaissance mots japonais"
   },
   "vocabularyGauntlet": {
     "title": "Vocabulary Gauntlet - Maîtriser Tous les Mots",
     "titleShort": "Vocabulary Gauntlet",
-    "description": "Maîtrisez le vocabulaire japonais complet avec le Vocabulary Gauntlet. Pratiquez tous les mots JLPT.",
-    "keywords": "maîtrise vocabulaire, vocabulaire complet, tous mots JLPT"
+    "description": "Maîtrisez le vocabulaire japonais complete avec le Vocabulary Gauntlet. Pratiquez tous les mots JLPT.",
+    "keywords": "maîtrise vocabulaire, vocabulaire complete, tous mots JLPT"
   },
   "academy": {
     "title": "Académie - Articles d'Apprentissage du Japonais | KanaDojo",
     "titleShort": "Académie",
-    "description": "Lisez des guides et articles complets sur l'apprentissage du japonais. Conseils, astuces et perspectives pour maîtriser les Hiragana, Katakana, Kanji et le vocabulaire.",
+    "description": "Lisez des guides et articles completes sur l'apprentissage du japonais. Conseils, astuces et perspectives pour maîtriser les Hiragana, Katakana, Kanji et le vocabulaire.",
     "keywords": "guides apprentissage japonais, conseils japonais, guide hiragana, guide katakana, guide kanji"
   },
   "preferences": {
@@ -153,8 +153,8 @@
   "privacy": {
     "title": "Politique de Confidentialité - Protection de Vos Données chez KanaDojo",
     "titleShort": "Confidentialité",
-    "description": "Découvrez comment KanaDojo protège votre vie privée et gère vos données. Notre engagement envers la confidentialité et la sécurité des données.",
-    "keywords": "politique confidentialité, protection données, vie privée utilisateur"
+    "description": "Découvrez comment KanaDojo protège votre via privée et gère vos données. Notre engagement envers la confidentialité et la sécurité des données.",
+    "keywords": "politique confidentialité, protection données, via privée utilisateur"
   },
   "terms": {
     "title": "Conditions d'Utilisation - Directives d'Utilisation de KanaDojo",
@@ -165,7 +165,7 @@
   "security": {
     "title": "Politique de Sécurité - Comment Nous Protégeons KanaDojo",
     "titleShort": "Sécurité",
-    "description": "Découvrez les mesures de sécurité de KanaDojo et comment nous protégeons notre plateforme et nos utilisateurs.",
+    "description": "Découvrez les measures de sécurité de KanaDojo et comment nous protégeons notre plateforme et nos utilisateurs.",
     "keywords": "politique sécurité, sécurité plateforme, sécurité données"
   },
   "credits": {
@@ -195,7 +195,7 @@
   "zen": {
     "title": "Mode Zen - Pratique du Japonais Sans Distraction",
     "titleShort": "Mode Zen",
-    "description": "Pratiquez le japonais dans un environnement minimaliste sans distraction. Concentrez-vous sur votre apprentissage avec le Mode Zen.",
+    "description": "Pratiquez le japonais dans un environment minimaliste sans distraction. Concentrez-vous sur votre apprentissage avec le Mode Zen.",
     "keywords": "mode zen, pratique concentrée, apprentissage minimaliste, sans distraction"
   },
   "kanaTrain": {
@@ -214,49 +214,49 @@
     "title": "Entraînement Vocabulaire - Pratiquez les Mots Japonais",
     "titleShort": "Entraînement Vocabulaire",
     "description": "Entraînez votre vocabulaire japonais avec des sessions de pratique structurées. Apprenez et retenez efficacement les nouveaux mots.",
-    "keywords": "entraînement vocabulaire, pratique mots, apprentissage vocabulaire structuré, exercices vocabulaire japonais"
+    "keywords": "entraînement vocabulaire, pratique mots, apprentissage vocabulaire structuré, exercises vocabulaire japonais"
   },
   "kanaSubset": {
     "hiraganaBase": {
       "title": "Caractères Hiragana de Base (あ-わ) - Apprendre les Hiragana Basiques | KanaDojo",
       "titleShort": "Hiragana de Base",
-      "description": "Maîtrisez les 46 caractères hiragana de base (あいうえお, かきくけこ, さしすせそ, etc.). Guide de référence complet avec romanisation pour tous les hiragana japonais fondamentaux.",
+      "description": "Maîtrisez les 46 caractères hiragana de base (あいうえお, かきくけこ, さしすせそ, etc.). Guide de référence complete avec romanisation pour tous les hiragana japonais fondamentaux.",
       "keywords": "hiragana base, hiragana basique, tableau hiragana, あいうえお, référence hiragana, apprendre hiragana base, alphabet japonais hiragana, romanisation hiragana"
     },
     "hiraganaDakuon": {
       "title": "Hiragana Dakuon (が-ぽ) - Caractères Hiragana Voisés | KanaDojo",
       "titleShort": "Hiragana Dakuon",
-      "description": "Apprenez les caractères voisés Dakuon et Handakuon hiragana (がぎぐげご, ざじずぜぞ, だぢづでど, ばびぶべぼ, ぱぴぷぺぽ). Maîtrisez tous les 25 hiragana voisés avec guide de prononciation.",
+      "description": "Apprenez les caractères voisés Dakuon et Handakuon hiragana (がぎぐげご, ざじずぜぞ, だぢづでど, ばびぶべぼ, ぱぴぷぺぽ). Maîtrisez tous les 25 hiragana voisés avec guide de pronunciation.",
       "keywords": "hiragana dakuon, hiragana voisé, hiragana avec dakuten, がぎぐげご, hiragana handakuon, ばびぶべぼ, ぱぴぷぺぽ, caractères hiragana voisés"
     },
     "hiraganaYoon": {
       "title": "Hiragana Yoon (きゃ-りょ) - Caractères Hiragana Combinés | KanaDojo",
       "titleShort": "Hiragana Yoon",
       "description": "Maîtrisez les caractères combinés Yoon hiragana (きゃきゅきょ, しゃしゅしょ, ちゃちゅちょ, etc.). Apprenez tous les 33 sons combinés hiragana avec romanisation.",
-      "keywords": "hiragana yoon, hiragana combiné, combinaisons hiragana, きゃきゅきょ, しゃしゅしょ, ちゃちゅちょ, digraphes hiragana, yoon hiragana"
+      "keywords": "hiragana yoon, hiragana combiné, combinations hiragana, きゃきゅきょ, しゃしゅしょ, ちゃちゅちょ, digraphes hiragana, yoon hiragana"
     },
     "katakanaBase": {
       "title": "Caractères Katakana de Base (ア-ワ) - Apprendre les Katakana Basiques | KanaDojo",
       "titleShort": "Katakana de Base",
-      "description": "Maîtrisez les 46 caractères katakana de base (アイウエオ, カキクケコ, サシスセソ, etc.). Guide de référence complet avec romanisation pour tous les katakana japonais fondamentaux.",
+      "description": "Maîtrisez les 46 caractères katakana de base (アイウエオ, カキクケコ, サシスセソ, etc.). Guide de référence complete avec romanisation pour tous les katakana japonais fondamentaux.",
       "keywords": "katakana base, katakana basique, tableau katakana, アイウエオ, référence katakana, apprendre katakana base, alphabet japonais katakana, romanisation katakana"
     },
     "katakanaDakuon": {
       "title": "Katakana Dakuon (ガ-ポ) - Caractères Katakana Voisés | KanaDojo",
       "titleShort": "Katakana Dakuon",
-      "description": "Apprenez les caractères voisés Dakuon et Handakuon katakana (ガギグゲゴ, ザジズゼゾ, ダヂヅデド, バビブベボ, パピプペポ). Maîtrisez tous les 25 katakana voisés avec guide de prononciation.",
+      "description": "Apprenez les caractères voisés Dakuon et Handakuon katakana (ガギグゲゴ, ザジズゼゾ, ダヂヅデド, バビブベボ, パピプペポ). Maîtrisez tous les 25 katakana voisés avec guide de pronunciation.",
       "keywords": "katakana dakuon, katakana voisé, katakana avec dakuten, ガギグゲゴ, katakana handakuon, バビブベボ, パピプペポ, caractères katakana voisés"
     },
     "katakanaYoon": {
       "title": "Katakana Yoon (キャ-リョ) - Caractères Katakana Combinés | KanaDojo",
       "titleShort": "Katakana Yoon",
       "description": "Maîtrisez les caractères combinés Yoon katakana (キャキュキョ, シャシュショ, チャチュチョ, etc.). Apprenez tous les 33 sons combinés katakana avec romanisation.",
-      "keywords": "katakana yoon, katakana combiné, combinaisons katakana, キャキュキョ, シャシュショ, チャチュチョ, digraphes katakana, yoon katakana"
+      "keywords": "katakana yoon, katakana combiné, combinations katakana, キャキュキョ, シャシュショ, チャチュチョ, digraphes katakana, yoon katakana"
     },
     "katakanaForeign": {
       "title": "Sons Étrangers Katakana (ファ-ウィ) - Katakana Étendu | KanaDojo",
       "titleShort": "Sons Étrangers Katakana",
-      "description": "Apprenez les caractères katakana étendus pour les mots étrangers (ファ, フィ, ウィ, ウェ, etc.). Maîtrisez les combinaisons spéciales katakana utilisées en japonais moderne.",
+      "description": "Apprenez les caractères katakana étendus pour les mots étrangers (ファ, フィ, ウィ, ウェ, etc.). Maîtrisez les combinations spéciales katakana utilisées en japonais moderne.",
       "keywords": "sons étrangers katakana, katakana étendu, emprunts katakana, ファフィ, ウィウェ, katakana spécial, katakana moderne, katakana mots étrangers"
     }
   }

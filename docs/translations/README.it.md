@@ -101,7 +101,7 @@ KanaDojo adotta un'**estetica minimalista** combinata la massima **flessibilità
 
 ### Minimalismo come Priorità
 
-- Interfacce pulite, prive di elementi superflui
+- Interface pulite, prive di elementi superflui
 - Centralità assoluta dei contenuti didattici
 - Navigazione intuitiva e gerarchia visiva chiara
 - Uso consapevole dello spazio bianco
@@ -439,15 +439,15 @@ KanaDojo usa un'architettura dove ogni funzionalità è indipendente:
 
 1. L'utente seleziona del contenuto dai componenti del menu
 2. Selezioni vengono salvate negli store di Zustand (store specifico della funzionalità)
-3. Componenti di allenamento letti dagli store per generare le domande
+3. Componenti di allenamento letti dagli store per generate le domande
 4. Tracciamento statistiche e salvate in `features/statistics/store`
 5. Salvataggio preferenze utente in `features/themes/store` usando localStorage
 
 #### Architettura dei Componenti
 
 - **Feature Components**: Componenti specifici per ogni funzionalità (kana, kanji, vocabulary)
-- **Componenti Condivisi**: Interfacce utente riutilizzabili tra diverse funzionalità (Game, Modals, AudioButton)
-- **Componenti Layout**: Strutture di navigazione, menu principale, pagina
+- **Componenti Condivisi**: Interface utente riutilizzabili tra diverse funzionalità (Game, Modals, AudioButton)
+- **Componenti Layout**: Structure di navigazione, menu principale, pagina
 
 #### Organizzazione dei Dati
 
@@ -462,7 +462,7 @@ Ogni modalità è una route dinamica (`/[contentType]/train/[gameMode]`) che:
 1. Legge la selezione dallo store apposito
 2. Genera domande casuali dalla selezione
 3. Fornisce feedback immediato
-4. Registra le statistiche (corretto, scorretto, serie)
+4. Registra le statistiche (corretto, scorretto, series)
 
 <a id="contributing"></a>
 
@@ -543,7 +543,7 @@ core/i18n/locales/
 
 #### 🌐 Espansione Linguistica per SEO
 
-Vuoi aiutare KanaDojo ad essere più visibile globalmente?
+Vuoi aiutare KanaDojo ad essere più visible globalmente?
 
 **Infrastruttura**: ✅ Completa
 

@@ -1,6 +1,6 @@
 <div id="top"></div>
 
-<a href="#about-kanadojo">À propos de KanaDojo</a> | <a href="#screenshots">Captures d'écran</a> | <a href="#ui-design-philosophy">Philosophie UI &amp; Design</a> | <a href="#tech-stack">Stack Technique</a> | <a href="#getting-started">Démarrage</a> | <a href="#project-structure">Structure du Projet</a> | <a href="#contributing">Contribuer</a> | <a href="#license">Licence</a> | <a href="#acknowledgments">Remerciements</a> | <a href="#contact-links">Contact &amp; Liens</a>
+<a href="#about-kanadojo">À propos de KanaDojo</a> | <a href="#screenshots">Captures d'écran</a> | <a href="#ui-design-philosophy">Philosophie UI &amp; Design</a> | <a href="#tech-stack">Stack Technique</a> | <a href="#getting-started">Démarrage</a> | <a href="#project-structure">Structure du Project</a> | <a href="#contributing">Contribuer</a> | <a href="#license">Licence</a> | <a href="#acknowledgments">Remerciements</a> | <a href="#contact-links">Contact &amp; Lines</a>
 
 # KanaDojo かな道場
 
@@ -22,7 +22,7 @@
 
 ## 📖 À propos de KanaDojo
 
-KanaDojo est une plateforme web d'apprentissage du japonais qui rend l'apprentissage des Hiragana, Katakana, Kanji et du vocabulaire amusant et intuitif. Construit avec un accent sur l'esthétique, la personnalisation et l'apprentissage efficace, KanaDojo offre un environnement d'entraînement immersif pour les apprenants de la langue japonaise de tous niveaux.
+KanaDojo est une plateforme web d'apprentissage du japonais qui rend l'apprentissage des Hiragana, Katakana, Kanji et du vocabulaire amusant et intuitif. Construit avec un accent sur l'esthétique, la personnalisation et l'apprentissage efficace, KanaDojo offre un environment d'entraînement immersif pour les apprenants de la langue japonaise de tous niveaux.
 
 Que vous commenciez avec les syllabaires kana de base ou que vous vous prépariez aux examens JLPT avec des kanji et du vocabulaire avancés, KanaDojo offre une expérience d'apprentissage rationalisée et sans distraction qui s'adapte à vos préférences et à votre style d'apprentissage.
 
@@ -45,7 +45,7 @@ Chaque dojo propose quatre modes d'entraînement engageants pour renforcer l'app
 
 #### 🎨 **Personnalisation Extensive**
 
-- **100+ Thèmes** - Choisissez parmi une vaste collection de beaux thèmes clairs et sombres, ou utilisez la fonction de thème aléatoire
+- **100+ Thèmes** - Choisissez parmi une vaste collection de beaux thèmes clairs et sombres, ou utilisez la function de thème aléatoire
 - **28 Polices Japonaises** - Sélectionnez parmi une variété de polices japonaises authentiques selon vos préférences esthétiques
 - **Effets Sonores** - Profitez de sons de retour d'interface satisfaisants qui peuvent être activés/désactivés
 - **Options d'Affichage** - Basculez entre les affichages Romaji/Anglais et Kana/Kanji dans les menus de sélection
@@ -60,7 +60,7 @@ Chaque dojo propose quatre modes d'entraînement engageants pour renforcer l'app
 #### 🌐 **Expérience Web Moderne**
 
 - Design totalement responsive qui fonctionne sur ordinateur, tablette et mobile
-- Aucune installation requise - entraînez-vous n'importe où avec une connexion internet
+- Aucune installation requise - entraînez-vous n'importe où avec une connection internet
 - Interface propre et minimaliste qui vous garde concentré sur l'apprentissage
 - Animations et transitions fluides propulsées par Framer Motion
 
@@ -99,13 +99,13 @@ KanaDojo adopte une **esthétique minimaliste** combinée à une **flexibilité 
 - Interfaces épurées avec des distractions minimales
 - Focus sur le contenu d'apprentissage
 - Navigation intuitive et hiérarchie claire de l'information
-- Utilisation réfléchie des espaces blancs
+- Utilisation réfléchie des escapes blancs
 
 ### Personnalisation Esthétique
 
 - Bibliothèque de thèmes extensive (100+ options) allant des pastels doux aux néons vibrants
 - Support des modes clair et sombre
-- Palettes de couleurs soigneusement sélectionnées pour le confort visuel pendant les longues sessions d'étude
+- Palettes de couleurs soigneusement sélectionnées pour le comfort visuel pendant les longues sessions d'étude
 - Transitions de thèmes fluides
 
 ### Expérience Utilisateur
@@ -113,14 +113,14 @@ KanaDojo adopte une **esthétique minimaliste** combinée à une **flexibilité 
 - Animations fluides et micro-interactions pour un retour agréable
 - Design responsive qui s'adapte magnifiquement à toutes les tailles d'écran
 - Retour audio pour les interactions (optionnel)
-- Langage visuel cohérent dans toutes les sections
+- Language visuel cohérent dans toutes les sections
 
 ### Typographie Japonaise
 
 - 28 polices japonaises authentiques couvrant différents styles
 - Rendu approprié des caractères kanji complexes
 - Distinction claire entre les caractères similaires
-- Aperçus des polices avec des exemples de texte japonais réels
+- Aperçus des polices avec des examples de texte japonais réels
 
 <a id="tech-stack"></a>
 
@@ -336,7 +336,7 @@ PORT=3001 npm run dev
 
 <a id="project-structure"></a>
 
-## 📁 Structure du Projet
+## 📁 Structure du Project
 
 ```
 kanadojo/
@@ -363,12 +363,12 @@ kanadojo/
 │   ├── Settings/               # Composants de préférences
 │   └── ui/                     # Composants shadcn/ui
 │
-├── lib/                        # Utilitaires et fonctions helper
+├── lib/                        # Utilitaires et functions helper
 │   ├── hooks/                  # Hooks React personnalisés
 │   │   ├── useAudio.ts         # Hooks de retour audio
 │   │   └── ...
 │   ├── interfaces.ts           # Interfaces TypeScript
-│   └── utils.ts                # Fonctions utilitaires
+│   └── utils.ts                # Functions utilitaires
 │
 ├── store/                      # Gestion d'état Zustand
 │   ├── useKanaKanjiStore.ts    # État de sélection Kana/Kanji
@@ -405,7 +405,7 @@ kanadojo/
 
 ## 🤝 Contribuer
 
-Les contributions sont les bienvenues ! KanaDojo est un projet open-source construit par la communauté, pour la communauté. Consultez [CONTRIBUTING.md](CONTRIBUTING.md) pour plus d'informations détaillées sur la façon de contribuer.
+Les contributions sont les bienvenues ! KanaDojo est un project open-source construit par la communauté, pour la communauté. Consultez [CONTRIBUTING.md](CONTRIBUTING.md) pour plus d'informations détaillées sur la façon de contribuer.
 
 ### Comment Contribuer
 
@@ -427,19 +427,19 @@ Les contributions sont les bienvenues ! KanaDojo est un projet open-source const
 
 ## 📄 Licence
 
-Ce projet est sous licence AGPL 3.0 - voir le fichier [LICENSE.md](LICENSE.md) pour plus de détails.
+Ce project est sous licence AGPL 3.0 - voir le fichier [LICENSE.md](LICENSE.md) pour plus de détails.
 
 <a id="acknowledgments"></a>
 
 ## 🙏 Remerciements
 
-- Données de langue japonaise et informations sur les caractères
+- Données de langue japonaise et information sur les caractères
 - Communauté open-source pour les outils et bibliothèques incroyables
 - Tous les contributeurs qui aident à améliorer KanaDojo
 
 <a id="contact-links"></a>
 
-## 📞 Contact & Liens
+## 📞 Contact & Lines
 
 - **Site Web** : [kanadojo.com](https://kanadojo.com)
 - **Dépôt** : [github.com/lingdojo/kanadojo](https://github.com/lingdojo/kanadojo)

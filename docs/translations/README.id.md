@@ -53,7 +53,7 @@ Baik Anda baru memulai dengan suku kata kana dasar atau mempersiapkan ujian JLPT
 
 #### 🎯 **Tiga Dojo Pelatihan**
 
-- **Dojo Kana** - Kuasai suku kata Hiragana dan Katakana dengan grup dasar, dakuon, yoon, dan bunyi asing
+- **Dojo Kana** - Kuasai suku kata Hiragana dan Katakana dengan group dasar, dakuon, yoon, dan bunyi asing
 - **Dojo Kanji** - Pelajari karakter kanji penting yang diorganisir berdasarkan tingkat JLPT (N5, N4, N3, N2)
 - **Dojo Kosakata** - Bangun kosakata bahasa Jepang Anda dengan koleksi kata yang dikurasi berdasarkan tingkat kemahiran
 
@@ -145,7 +145,7 @@ KanaDojo menganut **estetika minimalis** yang dikombinasikan dengan **fleksibili
 - 28 font Jepang otentik yang mencakup berbagai gaya
 - Rendering yang tepat dari karakter kanji yang kompleks
 - Perbedaan yang jelas antara karakter yang terlihat mirip
-- Pratinjau font dengan sampel teks Jepang asli
+- Pratinjau font dengan sample teks Jepang asli
 
 <a id="teknologi"></a>
 
@@ -174,7 +174,7 @@ KanaDojo dibangun dengan teknologi web modern untuk kinerja optimal dan pengalam
 
 ### Utilitas & Fitur
 
-- **[use-sound](https://www.joshwcomeau.com/react/announcing-use-sound-react-hook/)** - Sistem umpan balik audio
+- **[use-sound](https://www.joshwcomeau.com/react/announcing-use-sound-react-hook/)** - System umpan balik audio
 - **[canvas-confetti](https://www.npmjs.com/package/canvas-confetti)** - Efek perayaan
 - **[react-timer-hook](https://www.npmjs.com/package/react-timer-hook)** - Fungsionalitas timer
 - **[react-markdown](https://github.com/remarkjs/react-markdown)** - Rendering markdown untuk konten edukatif
@@ -199,7 +199,7 @@ KanaDojo mengikuti **arsitektur berbasis fitur** yang mengorganisir kode berdasa
 
 ### Struktur Utama
 
-- **`features/`** - Modul mandiri berdasarkan fungsionalitas (kana, kanji, vocabulary, statistics, achievements, themes, academy, cloze)
+- **`features/`** - Module mandiri berdasarkan fungsionalitas (kana, kanji, vocabulary, statistics, achievements, themes, academy, cloze)
 - **`shared/`** - Komponen, hooks, utilitas, dan tipe yang dapat digunakan kembali di seluruh fitur
 - **`core/`** - Infrastruktur fundamental (i18n, analytics)
 - **`app/`** - Next.js App Router dengan halaman dan layout
@@ -224,7 +224,7 @@ Setiap fitur berisi komponen, store, data, tipe, dan logika bisnis sendiri, memu
    cd kanadojo
    ```
 
-2. **Instal dependensi**
+2. **Install dependensi**
 
    ```bash
    npm install
@@ -288,7 +288,7 @@ rmdir /s /q .next
 npm run dev
 ```
 
-#### Bersihkan Node Modules dan Instal Ulang
+#### Bersihkan Node Modules dan Install Ulang
 
 **macOS/Linux:**
 
@@ -393,7 +393,7 @@ kanadojo/
 │   ├── layout.tsx              # Layout root
 │   └── globals.css             # Gaya global
 │
-├── features/                   # Modul berbasis fitur
+├── features/                   # Module berbasis fitur
 │   ├── kana/                   # Fitur pembelajaran kana
 │   │   ├── components/         # Komponen khusus kana
 │   │   ├── data/               # Data karakter kana
@@ -403,7 +403,7 @@ kanadojo/
 │   ├── kanji/                  # Fitur pembelajaran kanji
 │   ├── vocabulary/             # Fitur pembelajaran kosakata
 │   ├── statistics/             # Fitur pelacakan kemajuan
-│   ├── achievements/           # Sistem pencapaian
+│   ├── achievements/           # System pencapaian
 │   ├── themes/                 # Tema & preferensi
 │   ├── academy/                # Konten edukatif
 │   └── cloze/                  # Fitur tes cloze
@@ -450,7 +450,7 @@ kanadojo/
 KanaDojo menggunakan pola arsitektur modular di mana setiap fungsionalitas bersifat independen:
 
 - **Enkapsulasi**: Setiap fitur berisi semua yang dibutuhkan (komponen, state, data, logika)
-- **Barrel Exports**: Setiap modul mengekspor API publik melalui `index.ts`
+- **Barrel Exports**: Setiap module mengekspor API publik melalui `index.ts`
 - **Type Safety**: TypeScript dengan alias path (`@/features/*`, `@/shared/*`, `@/core/*`)
 - **Separation of Concerns**: Fitur yang terisolasi, kode bersama yang dapat digunakan kembali, inti fundamental
 
@@ -470,7 +470,7 @@ KanaDojo menggunakan pola arsitektur modular di mana setiap fungsionalitas bersi
 
 #### Organisasi Data
 
-- **Kana**: Diorganisir berdasarkan tipe (hiragana/katakana) dan grup (base, dakuon, yoon, foreign)
+- **Kana**: Diorganisir berdasarkan tipe (hiragana/katakana) dan group (base, dakuon, yoon, foreign)
 - **Kanji**: Diorganisir berdasarkan tingkat JLPT (N5-N2), dengan bacaan dan makna
 - **Vocabulary**: Diorganisir berdasarkan tingkat JLPT dan jenis kata (kata benda, kata kerja, dll.)
 
@@ -501,18 +501,18 @@ Kami secara aktif bekerja untuk membuat KanaDojo tersedia dalam berbagai bahasa!
 **Saat ini didukung**: Bahasa Inggris 🇬🇧, Spanyol 🇪🇸, Jepang 🇯🇵
 **Direncanakan**: Portugis, Prancis, Jerman, Italia, Cina, Korea, Rusia, Arab
 
-#### 📊 Status Sistem i18n
+#### 📊 Status System i18n
 
 **Infrastruktur**: ✅ Lengkap (100%)
 
-- Sistem terjemahan berbasis namespace menggunakan next-intl
+- System terjemahan berbasis namespace menggunakan next-intl
 - 9 namespace diorganisir berdasarkan fitur: `common`, `navigation`, `kana`, `kanji`, `vocabulary`, `achievements`, `statistics`, `settings`, `errors`
 - Validasi otomatis dan generasi tipe TypeScript
 - 345 kunci terjemahan di 3 bahasa
 
 **Progress Terjemahan**: 🚧 Sedang Berlangsung (~43%)
 
-- ✅ Elemen UI dasar diterjemahkan (tombol, pesan, navigasi)
+- ✅ Element UI dasar diterjemahkan (tombol, pesan, navigasi)
 - ✅ Metadata fitur inti (halaman kana, kanji, vocabulary)
 - 🚧 Tersisa: ~464 string UI untuk ditambahkan
 - 🚧 Migrasi komponen: 2/90 file menggunakan terjemahan
@@ -534,12 +534,12 @@ function MyComponent() {
 ```
 core/i18n/locales/
 ├── en/  # Bahasa Inggris (bahasa referensi)
-│   ├── common.json        # Tombol, pesan, elemen UI
+│   ├── common.json        # Tombol, pesan, element UI
 │   ├── navigation.json    # Menu, breadcrumbs, footer
 │   ├── kana.json         # Terjemahan fitur kana
 │   ├── kanji.json        # Terjemahan fitur kanji
 │   ├── vocabulary.json   # Terjemahan vocabulary
-│   ├── achievements.json # Sistem pencapaian
+│   ├── achievements.json # System pencapaian
 │   ├── statistics.json   # Pelacakan kemajuan
 │   ├── settings.json     # Preferensi pengguna
 │   └── errors.json       # Pesan error
@@ -566,7 +566,7 @@ Ingin membantu memperluas KanaDojo ke bahasa baru untuk visibilitas SEO global y
 
 **Infrastruktur**: ✅ Lengkap
 
-- Sistem metadata terpusat dengan file spesifik locale
+- System metadata terpusat dengan file spesifik locale
 - Generasi gambar OG otomatis per bahasa
 - Sitemap otomatis dengan tag hreflang
 - Tidak perlu perubahan kode - cukup terjemahkan metadata!
@@ -585,7 +585,7 @@ Ingin membantu memperluas KanaDojo ke bahasa baru untuk visibilitas SEO global y
 2. Buat file metadata: `core/i18n/locales/{locale}/metadata.json`
 3. Terjemahkan semua bagian metadata (lihat contoh Prancis/Jerman)
 4. Tambahkan locale ke `core/i18n/routing.ts`
-5. Uji secara lokal dan kirim PR
+5. Uji secara local dan kirim PR
 
 **Dampak SEO per Bahasa**:
 
