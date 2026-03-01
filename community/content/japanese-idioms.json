@@ -18,57 +18,63 @@
     "meaning": "Slow to start doing something. (Set 2)"
   },
   {
-  "japanese": "猫の手も借りたい",
-  "romaji": "Neko no te mo karitai",
-  "english": "I’d even borrow a cat’s paws",
-  "meaning": "Extremely busy and desperate for help. (Set 6)"
-},
-{
-  "japanese": "気が短い",
-  "romaji": "Ki ga mijikai",
-  "english": "Short-tempered",
-  "meaning": "Impatient temperament. (Set 3)"
-},
-{
-  "japanese": "運命には逆らえない",
-  "romaji": "Unmei ni wa sakaraenai",
-  "english": "You cannot go against fate",
-  "meaning": "Some things are destined and cannot be changed."
-},
-{
-  "japanese": "立つ鳥跡を濁さず",
-  "romaji": "Tatsu tori ato o nigosazu",
-  "english": "A bird leaves no mess",
-  "meaning": "Leave cleanly without trouble. (Set 6)"
-},
-{
-  "japanese": "耳が早い",
-  "romaji": "Mimi ga hayai",
-  "english": "Fast ears",
-  "meaning": "Quick to hear news/gossip. (Set 6)"
-},
-{
-  "japanese": "顔が広い",
-  "romaji": "Kao ga hiroi",
-  "english": "Wide face",
-  "meaning": "Have many connections. (Set 4)"
-},
-{
-  "japanese": "首を長くする",
-  "romaji": "Kubi o nagaku suru",
-  "english": "Make neck long",
-  "meaning": "Wait eagerly. (Set 1)"
-},
-{
-  "japanese": "頭が上がらない",
-  "romaji": "Atama ga agaranai",
-  "english": "Cannot raise one’s head",
-  "meaning": "Feel indebted or unable to oppose someone. (Set 6)"
-},
-{
-  "japanese": "足を引っ張る",
-  "romaji": "Ashi o hipparu",
-  "english": "Pull someone back",
-  "meaning": "Hold someone back. (Set 5)"
-}
+    "japanese": "猫の手も借りたい",
+    "romaji": "Neko no te mo karitai",
+    "english": "I’d even borrow a cat’s paws",
+    "meaning": "Extremely busy and desperate for help. (Set 6)"
+  },
+  {
+    "japanese": "気が短い",
+    "romaji": "Ki ga mijikai",
+    "english": "Short-tempered",
+    "meaning": "Impatient temperament. (Set 3)"
+  },
+  {
+    "japanese": "運命には逆らえない",
+    "romaji": "Unmei ni wa sakaraenai",
+    "english": "You cannot go against fate",
+    "meaning": "Some things are destined and cannot be changed."
+  },
+  {
+    "japanese": "立つ鳥跡を濁さず",
+    "romaji": "Tatsu tori ato o nigosazu",
+    "english": "A bird leaves no mess",
+    "meaning": "Leave cleanly without trouble. (Set 6)"
+  },
+  {
+    "japanese": "耳が早い",
+    "romaji": "Mimi ga hayai",
+    "english": "Fast ears",
+    "meaning": "Quick to hear news/gossip. (Set 6)"
+  },
+  {
+    "japanese": "顔が広い",
+    "romaji": "Kao ga hiroi",
+    "english": "Wide face",
+    "meaning": "Have many connections. (Set 4)"
+  },
+  {
+    "japanese": "首を長くする",
+    "romaji": "Kubi o nagaku suru",
+    "english": "Make neck long",
+    "meaning": "Wait eagerly. (Set 1)"
+  },
+  {
+    "japanese": "頭が上がらない",
+    "romaji": "Atama ga agaranai",
+    "english": "Cannot raise one’s head",
+    "meaning": "Feel indebted or unable to oppose someone. (Set 6)"
+  },
+  {
+    "japanese": "足を引っ張る",
+    "romaji": "Ashi o hipparu",
+    "english": "Pull someone back",
+    "meaning": "Hold someone back. (Set 5)"
+  },
+  {
+    "japanese": "念には念を入れる",
+    "romaji": "Nen ni wa nen o ireru",
+    "english": "Add caution to caution",
+    "meaning": "Take extra care. (Set 5)"
+  }
 ]

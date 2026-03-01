@@ -1,44 +1,50 @@
 [
-{
-  "japanese": "分からない単語は辞書で調べてから質問してください。",
-  "romaji": "Wakaranai tango wa jisho de shirabete kara shitsumon shite kudasai.",
-  "english": "Please look up unknown words before asking.",
-  "jlpt": "N4"
-},
-{
-  "japanese": "会議は予定より早く終わりました。",
-  "romaji": "Kaigi wa yotei yori hayaku owarimashita.",
-  "english": "The meeting ended earlier than scheduled.",
-  "jlpt": "N4"
-},
-{
-  "japanese": "この表現は場面によって失礼に聞こえることがある。",
-  "romaji": "Kono hyougen wa bamen ni yotte shitsurei ni kikoeru koto ga aru.",
-  "english": "This expression can sound rude depending on context.",
-  "jlpt": "N2"
-},
   {
-  "japanese": "提出期限までにレポートを仕上げなければならない。",
-  "romaji": "Teishutsu kigen made ni repooto o shiagenakereba naranai.",
-  "english": "I must finish the report by the deadline.",
-  "jlpt": "N3"
-},
-{
-  "japanese": "漢字の意味を文脈で推測する力が大切だ。",
-  "romaji": "Kanji no imi o bunmyaku de suisoku suru chikara ga taisetsu da.",
-  "english": "Inferring kanji meaning from context is important.",
-  "jlpt": "N2"
-},
+    "japanese": "分からない単語は辞書で調べてから質問してください。",
+    "romaji": "Wakaranai tango wa jisho de shirabete kara shitsumon shite kudasai.",
+    "english": "Please look up unknown words before asking.",
+    "jlpt": "N4"
+  },
   {
-  "japanese": "このアプリは初心者にも使いやすい。",
-  "romaji": "Kono apuri wa shoshinsha ni mo tsukaiyasui.",
-  "english": "This app is easy to use even for beginners.",
-  "jlpt": "N3"
-},
-{
-  "japanese": "来月から新しいプロジェクトに参加することになりました。",
-  "romaji": "Raigetsu kara atarashii purojekuto ni sanka suru koto ni narimashita.",
-  "english": "I'm going to join a new project from next month.",
-  "jlpt": "N3"
-}
+    "japanese": "会議は予定より早く終わりました。",
+    "romaji": "Kaigi wa yotei yori hayaku owarimashita.",
+    "english": "The meeting ended earlier than scheduled.",
+    "jlpt": "N4"
+  },
+  {
+    "japanese": "この表現は場面によって失礼に聞こえることがある。",
+    "romaji": "Kono hyougen wa bamen ni yotte shitsurei ni kikoeru koto ga aru.",
+    "english": "This expression can sound rude depending on context.",
+    "jlpt": "N2"
+  },
+  {
+    "japanese": "提出期限までにレポートを仕上げなければならない。",
+    "romaji": "Teishutsu kigen made ni repooto o shiagenakereba naranai.",
+    "english": "I must finish the report by the deadline.",
+    "jlpt": "N3"
+  },
+  {
+    "japanese": "漢字の意味を文脈で推測する力が大切だ。",
+    "romaji": "Kanji no imi o bunmyaku de suisoku suru chikara ga taisetsu da.",
+    "english": "Inferring kanji meaning from context is important.",
+    "jlpt": "N2"
+  },
+  {
+    "japanese": "このアプリは初心者にも使いやすい。",
+    "romaji": "Kono apuri wa shoshinsha ni mo tsukaiyasui.",
+    "english": "This app is easy to use even for beginners.",
+    "jlpt": "N3"
+  },
+  {
+    "japanese": "来月から新しいプロジェクトに参加することになりました。",
+    "romaji": "Raigetsu kara atarashii purojekuto ni sanka suru koto ni narimashita.",
+    "english": "I'm going to join a new project from next month.",
+    "jlpt": "N3"
+  },
+  {
+    "japanese": "宿題を忘れないように、カレンダーに書いておきます。",
+    "romaji": "Shukudai o wasurenai you ni, karendaa ni kaite okimasu.",
+    "english": "I'll put it in my calendar so I won't forget homework.",
+    "jlpt": "N4"
+  }
 ]

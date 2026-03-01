@@ -14,11 +14,11 @@
     "character": "Riku"
   },
   {
-  "japanese": "まだ終わらない。",
-  "romaji": "Mada owaranai.",
-  "english": "It's not over yet.",
-  "game": "Kingdom Hearts",
-  "character": "Riku"
+    "japanese": "まだ終わらない。",
+    "romaji": "Mada owaranai.",
+    "english": "It's not over yet.",
+    "game": "Kingdom Hearts",
+    "character": "Riku"
   },
   {
     "japanese": "栄誉は浜辺で亡くなった",
@@ -49,59 +49,66 @@
     "character": "Rintaro Okabe"
   },
   {
-  "japanese": "覚悟はいいか？ 俺はできてる。",
-  "romaji": "Kakugo wa ii ka? Ore wa dekiteru.",
-  "english": "Are you prepared? I am.",
-  "game": "JoJo’s Bizarre Adventure: All-Star Battle",
-  "character": "Giorno Giovanna"
+    "japanese": "覚悟はいいか？ 俺はできてる。",
+    "romaji": "Kakugo wa ii ka? Ore wa dekiteru.",
+    "english": "Are you prepared? I am.",
+    "game": "JoJo’s Bizarre Adventure: All-Star Battle",
+    "character": "Giorno Giovanna"
   },
   {
-  "japanese": "覚悟はいいか？ 俺はできてる。",
-  "romaji": "Kakugo wa ii ka? Ore wa dekiteru.",
-  "english": "Are you prepared? I am.",
-  "game": "JoJo’s Bizarre Adventure: All-Star Battle",
-  "character": "Giorno Giovanna"
-},
-{
-  "japanese": "俺は悪くねぇ！",
-  "romaji": "Ore wa warukunee!",
-  "english": "It's not my fault!",
-  "game": "Tales of the Abyss",
-  "character": "Luke fon Fabre"
-},
-{
-  "japanese": "希望は前に進むんだ！",
-  "romaji": "Kibou wa mae ni susumun da!",
-  "english": "Hope moves forward!",
-  "game": "Danganronpa series",
-  "character": "Makoto Naegi"
-},
-{
-  "japanese": "ここからが本番だ",
-  "romaji": "Koko kara ga honban da",
-  "english": "The real challenge starts now.",
-  "game": "Monster Hunter series",
-  "character": "Guild Handler lines"
-},
-{
-  "japanese": "俺たちの物語は、ここからだ",
-  "romaji": "Oretachi no monogatari wa, koko kara da",
-  "english": "Our story starts here.",
-  "game": "Tales series",
-  "character": "Various endings"
-},
-{
-  "japanese": "次はもっと強くなる",
-  "romaji": "Tsugi wa motto tsuyoku naru",
-  "english": "Next time, I'll be stronger.",
-  "game": "Pokemon series",
-  "character": "Rival characters"
-},
-{
-  "japanese": "絶望の中でも、俺の意志は折れない。",
-  "romaji": "Zetsubou no naka demo, ore no ishi wa orenai.",
-  "english": "Even in the depths of despair, my will shall not break.",
-  "game": "Original",
-  "character": "Original Character"
-}
+    "japanese": "覚悟はいいか？ 俺はできてる。",
+    "romaji": "Kakugo wa ii ka? Ore wa dekiteru.",
+    "english": "Are you prepared? I am.",
+    "game": "JoJo’s Bizarre Adventure: All-Star Battle",
+    "character": "Giorno Giovanna"
+  },
+  {
+    "japanese": "俺は悪くねぇ！",
+    "romaji": "Ore wa warukunee!",
+    "english": "It's not my fault!",
+    "game": "Tales of the Abyss",
+    "character": "Luke fon Fabre"
+  },
+  {
+    "japanese": "希望は前に進むんだ！",
+    "romaji": "Kibou wa mae ni susumun da!",
+    "english": "Hope moves forward!",
+    "game": "Danganronpa series",
+    "character": "Makoto Naegi"
+  },
+  {
+    "japanese": "ここからが本番だ",
+    "romaji": "Koko kara ga honban da",
+    "english": "The real challenge starts now.",
+    "game": "Monster Hunter series",
+    "character": "Guild Handler lines"
+  },
+  {
+    "japanese": "俺たちの物語は、ここからだ",
+    "romaji": "Oretachi no monogatari wa, koko kara da",
+    "english": "Our story starts here.",
+    "game": "Tales series",
+    "character": "Various endings"
+  },
+  {
+    "japanese": "次はもっと強くなる",
+    "romaji": "Tsugi wa motto tsuyoku naru",
+    "english": "Next time, I'll be stronger.",
+    "game": "Pokemon series",
+    "character": "Rival characters"
+  },
+  {
+    "japanese": "絶望の中でも、俺の意志は折れない。",
+    "romaji": "Zetsubou no naka demo, ore no ishi wa orenai.",
+    "english": "Even in the depths of despair, my will shall not break.",
+    "game": "Original",
+    "character": "Original Character"
+  },
+  {
+    "japanese": "それもまた一興",
+    "romaji": "Sore mo mata ikkyo",
+    "english": "That too has its charm.",
+    "game": "Onimusha series",
+    "character": "Nobunaga Oda"
+  }
 ]
