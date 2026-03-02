@@ -243,5 +243,16 @@
       "Hinamatsuri"
     ],
     "correctIndex": 0
-  }
+  },
+  {
+  "question": "Which Japanese food is a savory pancake cooked on a griddle? (Community variation 39)",
+  "difficulty": "medium",
+  "answers": [
+    "Okonomiyaki",
+    "Sashimi",
+    "Onigiri",
+    "Mochi"
+  ],
+  "correctIndex": 0
+}
 ]
