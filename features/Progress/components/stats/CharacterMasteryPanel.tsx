@@ -282,7 +282,7 @@ export default function CharacterMasteryPanel({
           </div>
 
           {/* Pill-style filter tabs with smooth sliding animation */}
-          <div className='flex gap-1 rounded-[22px] bg-(--background-color) p-1.5'>
+          <div className='flex gap-0 rounded-2xl bg-(--background-color) p-0'>
             {CONTENT_FILTERS.map(filter => {
               const isSelected = contentFilter === filter.value;
               return (

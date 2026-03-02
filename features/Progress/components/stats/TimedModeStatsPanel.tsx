@@ -196,7 +196,7 @@ export default function BlitzStatsPanel({
           </div>
 
           {/* Pill tabs with smooth sliding animation */}
-          <div className='flex gap-1 rounded-[22px] bg-(--background-color) p-1.5'>
+          <div className='flex gap-0 rounded-2xl bg-(--background-color) p-0'>
             {CONTENT_TABS.map(tab => {
               const isSelected = activeTab === tab.value;
               return (

@@ -24,20 +24,23 @@ const Game = () => {
     numWrongAnswers,
     currentStreak,
     stars,
-  } =
-    useStatsStore(
-      useShallow(state => ({
-        showStats: state.showStats,
-        resetStats: state.resetStats,
-        recordDojoUsed: state.recordDojoUsed,
-        recordModeUsed: state.recordModeUsed,
-        recordChallengeModeUsed: state.recordChallengeModeUsed,
-        numCorrectAnswers: state.numCorrectAnswers,
-        numWrongAnswers: state.numWrongAnswers,
-        currentStreak: state.currentStreak,
-        stars: state.stars,
-      })),
-    );
+    totalMilliseconds,
+    correctAnswerTimes,
+  } = useStatsStore(
+    useShallow(state => ({
+      showStats: state.showStats,
+      resetStats: state.resetStats,
+      recordDojoUsed: state.recordDojoUsed,
+      recordModeUsed: state.recordModeUsed,
+      recordChallengeModeUsed: state.recordChallengeModeUsed,
+      numCorrectAnswers: state.numCorrectAnswers,
+      numWrongAnswers: state.numWrongAnswers,
+      currentStreak: state.currentStreak,
+      stars: state.stars,
+      totalMilliseconds: state.totalMilliseconds,
+      correctAnswerTimes: state.correctAnswerTimes,
+    })),
+  );
 
   const gameMode = useVocabStore(state => state.selectedGameModeVocab);
   const selectedVocabObjs = useVocabStore(state => state.selectedVocabObjs);
@@ -105,11 +108,7 @@ const Game = () => {
         className='flex min-h-[100dvh] max-w-[100dvw] flex-col items-center gap-4 px-4 md:gap-6'
       >
         {showStats && <Stats />}
-        <Return
-          isHidden={showStats}
-          gameMode={gameMode}
-          onQuit={handleQuit}
-        />
+        <Return isHidden={showStats} gameMode={gameMode} onQuit={handleQuit} />
         {gameMode.toLowerCase() === 'pick' ? (
           <WordBuildingGame
             key={`vocab-wordbuilding-${sessionNonce}`}
@@ -135,6 +134,8 @@ const Game = () => {
           wrong={numWrongAnswers}
           bestStreak={currentStreak}
           stars={stars}
+          totalTimeMs={totalMilliseconds}
+          correctAnswerTimes={correctAnswerTimes}
           onNewSession={handleNewSession}
           onBackToSelection={() => router.push('/vocabulary')}
         />

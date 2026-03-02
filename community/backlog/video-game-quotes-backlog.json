@@ -106,7 +106,7 @@
     "game": "Monster Hunter series",
     "character": "Guild Handler lines",
     "id": 11,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -186,7 +186,7 @@
     "game": "Tales series",
     "character": "Various endings",
     "id": 19,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -227,7 +227,7 @@
     "character": "Luke fon Fabre",
     "id": 23,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "未来を変えるんだ！",
@@ -237,7 +237,7 @@
     "character": "Rintaro Okabe",
     "id": 24,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "希望は前に進むんだ！",
@@ -247,7 +247,7 @@
     "character": "Makoto Naegi",
     "id": 25,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "覚悟はいいか？ 俺はできてる。",
@@ -266,7 +266,7 @@
     "game": "Dragon Quest series",
     "character": "Recurring command voice",
     "id": 27,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -346,7 +346,7 @@
     "game": "Fire Emblem series",
     "character": "Various protagonists",
     "id": 35,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -356,7 +356,7 @@
     "game": "Onimusha series",
     "character": "Nobunaga Oda",
     "id": 36,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -637,7 +637,7 @@
     "character": "Rintaro Okabe",
     "id": 64,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "希望は前に進むんだ！",
@@ -647,7 +647,7 @@
     "character": "Makoto Naegi",
     "id": 65,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "覚悟はいいか？ 俺はできてる。",
@@ -657,7 +657,7 @@
     "character": "Giorno Giovanna",
     "id": 66,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "仲間を信じろ",
@@ -666,7 +666,7 @@
     "game": "Dragon Quest series",
     "character": "Recurring command voice",
     "id": 67,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -716,7 +716,7 @@
     "game": "Pokemon series",
     "character": "Rival characters",
     "id": 72,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -827,7 +827,7 @@
     "character": "Luke fon Fabre",
     "id": 83,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "未来を変えるんだ！",
@@ -837,7 +837,7 @@
     "character": "Rintaro Okabe",
     "id": 84,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "希望は前に進むんだ！",
@@ -847,7 +847,7 @@
     "character": "Makoto Naegi",
     "id": 85,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "覚悟はいいか？ 俺はできてる。",
@@ -876,7 +876,7 @@
     "game": "Kingdom Hearts series (JP dub)",
     "character": "Sora",
     "id": 88,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -886,7 +886,7 @@
     "game": "Street Fighter series",
     "character": "Ryu",
     "id": 89,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -896,7 +896,7 @@
     "game": "Dragon Quest XI",
     "character": "Hero / party lines",
     "id": 90,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -907,7 +907,7 @@
     "character": "Guild Handler lines",
     "id": 91,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "次はもっと強くなる",
@@ -917,7 +917,7 @@
     "character": "Rival characters",
     "id": 92,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "運命なんて、変えてみせる！",
@@ -926,7 +926,7 @@
     "game": "Final Fantasy Type-0",
     "character": "Class Zero",
     "id": 93,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -976,7 +976,7 @@
     "game": "The Legend of Zelda: Breath of the Wild (JP)",
     "character": "Revali",
     "id": 98,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1027,7 +1027,7 @@
     "character": "Luke fon Fabre",
     "id": 103,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "未来を変えるんだ！",
@@ -1037,7 +1037,7 @@
     "character": "Rintaro Okabe",
     "id": 104,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "希望は前に進むんだ！",
@@ -1046,7 +1046,7 @@
     "game": "Danganronpa series",
     "character": "Makoto Naegi",
     "id": 105,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1086,7 +1086,7 @@
     "game": "Street Fighter series",
     "character": "Ryu",
     "id": 109,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1146,7 +1146,7 @@
     "game": "Fire Emblem series",
     "character": "Various protagonists",
     "id": 115,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1156,7 +1156,7 @@
     "game": "Onimusha series",
     "character": "Nobunaga Oda",
     "id": 116,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

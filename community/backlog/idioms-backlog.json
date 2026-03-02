@@ -140,7 +140,7 @@
     "english": "Make neck long",
     "meaning": "Wait eagerly. (Set 1)",
     "id": 16,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -149,7 +149,7 @@
     "english": "Let it flow in water",
     "meaning": "Let bygones be bygones. (Set 1)",
     "id": 17,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -311,7 +311,7 @@
     "english": "High nose",
     "meaning": "Feel proud. (Set 2)",
     "id": 35,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -473,7 +473,7 @@
     "english": "Spirit doesn't proceed",
     "meaning": "Not feel like doing it. (Set 3)",
     "id": 53,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -564,7 +564,7 @@
     "meaning": "Slow to start doing something. (Set 4)",
     "id": 63,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "顔が広い",
@@ -572,7 +572,7 @@
     "english": "Wide face",
     "meaning": "Have many connections. (Set 4)",
     "id": 64,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -581,7 +581,7 @@
     "english": "Tight-lipped",
     "meaning": "Can keep secrets. (Set 4)",
     "id": 65,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -599,7 +599,7 @@
     "english": "Stomach stands up",
     "meaning": "Get angry. (Set 4)",
     "id": 67,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -726,7 +726,7 @@
     "meaning": "Extremely busy and desperate for help. (Set 5)",
     "id": 81,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "頭が上がらない",
@@ -734,7 +734,7 @@
     "english": "Cannot raise one’s head",
     "meaning": "Feel indebted or unable to oppose someone. (Set 5)",
     "id": 82,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -806,7 +806,7 @@
     "english": "Fast ears",
     "meaning": "Quick to hear news/gossip. (Set 5)",
     "id": 90,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -815,7 +815,7 @@
     "english": "Pull someone back",
     "meaning": "Hold someone back. (Set 5)",
     "id": 91,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -842,7 +842,7 @@
     "english": "Expand chest",
     "meaning": "Be proud/confident. (Set 5)",
     "id": 94,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -851,7 +851,7 @@
     "english": "High nose",
     "meaning": "Feel proud. (Set 5)",
     "id": 95,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -914,7 +914,7 @@
     "english": "Cannot raise one’s head",
     "meaning": "Feel indebted or unable to oppose someone. (Set 6)",
     "id": 102,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -924,7 +924,7 @@
     "meaning": "Slow to start doing something. (Set 6)",
     "id": 103,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "顔が広い",
@@ -932,7 +932,7 @@
     "english": "Wide face",
     "meaning": "Have many connections. (Set 6)",
     "id": 104,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -986,7 +986,7 @@
     "english": "Fast ears",
     "meaning": "Quick to hear news/gossip. (Set 6)",
     "id": 110,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1067,7 +1067,7 @@
     "english": "A bird leaves no mess",
     "meaning": "Leave cleanly without trouble. (Set 6)",
     "id": 119,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

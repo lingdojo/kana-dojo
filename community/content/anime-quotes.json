@@ -103,5 +103,47 @@
     "english": "Effort does not betray you.",
     "anime": "E2E Test",
     "character": "Simulator"
+  },
+  {
+    "japanese": "生殺与奪の権を他人に握らせるな!",
+    "romaji": "Seisatsu yodatsu no ken o tanin ni nigiraseru na!",
+    "english": "Don't let anyone else take control of your life and death!",
+    "anime": "Demon Slayer: Kimetsu no Yaiba",
+    "character": "Tanjiro Kamado"
+  },
+  {
+    "japanese": "イエス！イエス！イエス！イエス！",
+    "romaji": "Iesu! Iesu! Iesu! Iesu!",
+    "english": "Yes! Yes! Yes! Yes! (alt wording 2) (alt wording 54)",
+    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+    "character": "DIO"
+  },
+  {
+    "japanese": "俺を誰だと思ってやがる!",
+    "romaji": "Ore o dare da to omotte yagaru!",
+    "english": "Who the hell do you think I am!",
+    "anime": "Gurren Lagann",
+    "character": "Kamina"
+  },
+  {
+    "japanese": "俺は人間をやめるぞ！ジョジョーーッ！！",
+    "romaji": "Ore wa ningen o yameru zo! Jojo!!",
+    "english": "I'm going to stop being human, JoJo! (alt wording 12) (alt wording 64)",
+    "anime": "JoJo's Bizarre Adventure: Phantom Blood",
+    "character": "Dio Brando"
+  },
+  {
+    "japanese": "まだだ、まだ終わらんよ！",
+    "romaji": "Mada da, mada owaran yo!",
+    "english": "Not yet! It's not over yet! (alt wording 22)",
+    "anime": "Mobile Suit Gundam",
+    "character": "Char Aznable"
+  },
+  {
+    "japanese": "さらに向こうへ!プルスウルトラ!",
+    "romaji": "Sarani mukou e! Purusu Urutora!",
+    "english": "Go beyond! Plus Ultra!",
+    "anime": "My Hero Academia",
+    "character": "All Might"
   }
 ]

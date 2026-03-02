@@ -288,9 +288,9 @@ const SectionHeader = ({
         className='mt-3 flex w-full cursor-pointer items-center gap-1 px-4 text-xs text-(--main-color) uppercase opacity-70 transition-opacity hover:opacity-100 max-lg:hidden'
       >
         {isExpanded ? (
-          <ChevronDown className='h-3 w-3' />
+          <ChevronDown className='h-3 w-3 text-(--secondary-color)' />
         ) : (
-          <ChevronRight className='h-3 w-3' />
+          <ChevronRight className='h-3 w-3 text-(--secondary-color)' />
         )}
         {title}
       </button>

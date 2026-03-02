@@ -76,7 +76,7 @@
     "english": "Ora ora ora ora ora!",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Jotaro Kujo",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -107,7 +107,7 @@
     "anime": "JoJo's Bizarre Adventure: Stone Ocean",
     "character": "Jolyne Cujoh",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 12,
@@ -116,7 +116,7 @@
     "english": "I'm going to stop being human, JoJo!",
     "anime": "JoJo's Bizarre Adventure: Phantom Blood",
     "character": "Dio Brando",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -357,7 +357,7 @@
     "anime": "Attack on Titan",
     "character": "Eren Yeager",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 37,
@@ -366,7 +366,7 @@
     "english": "Don't let anyone else take control of your life and death!",
     "anime": "Demon Slayer: Kimetsu no Yaiba",
     "character": "Tanjiro Kamado",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -376,7 +376,7 @@
     "english": "Go beyond! Plus Ultra!",
     "anime": "My Hero Academia",
     "character": "All Might",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -456,7 +456,7 @@
     "english": "Who the hell do you think I am!",
     "anime": "Gurren Lagann",
     "character": "Kamina",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -686,7 +686,7 @@
     "english": "Bucciarati is here! (alt wording 17)",
     "anime": "JoJo's Bizarre Adventure: Golden Wind",
     "character": "Narancia Ghirga",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -736,7 +736,7 @@
     "english": "Not yet! It's not over yet! (alt wording 22)",
     "anime": "Mobile Suit Gundam",
     "character": "Char Aznable",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -766,7 +766,7 @@
     "english": "I am Gundam! (alt wording 25)",
     "anime": "Mobile Suit Gundam 00",
     "character": "Setsuna F. Seiei",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -936,7 +936,7 @@
     "english": "I'm just a hero for fun. (alt wording 42)",
     "anime": "One Punch Man",
     "character": "Saitama",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -946,7 +946,7 @@
     "english": "As long as I have something to protect, I won't lose. (alt wording 43)",
     "anime": "Bleach",
     "character": "Ichigo Kurosaki",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1056,7 +1056,7 @@
     "english": "Yes! Yes! Yes! Yes! (alt wording 2) (alt wording 54)",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "DIO",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1156,7 +1156,7 @@
     "english": "I'm going to stop being human, JoJo! (alt wording 12) (alt wording 64)",
     "anime": "JoJo's Bizarre Adventure: Phantom Blood",
     "character": "Dio Brando",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1216,7 +1216,7 @@
     "english": "You're already dead. (alt wording 18) (alt wording 70)",
     "anime": "Fist of the North Star",
     "character": "Kenshiro",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1266,7 +1266,7 @@
     "english": "Dance to my beautiful technique! (alt wording 23) (alt wording 75)",
     "anime": "The Prince of Tennis",
     "character": "Keigo Atobe",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1316,7 +1316,7 @@
     "english": "Fosh fosh fosh fosh. (alt wording 28) (alt wording 80)",
     "anime": "One Piece",
     "character": "Kozuki Sukiyaki",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

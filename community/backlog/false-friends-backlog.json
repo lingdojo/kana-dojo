@@ -14,7 +14,7 @@
     "explanation": "マンション means apartment building in Japanese. (Set 1)",
     "example": "駅前のマンションに住んでいます。",
     "id": 2,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -23,7 +23,7 @@
     "explanation": "コンセント means electrical outlet. (Set 1)",
     "example": "コンセントが足りないので延長コードを使います。",
     "id": 3,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -32,7 +32,7 @@
     "explanation": "Often means slim/stylish, not necessarily intelligent. (Set 1)",
     "example": "彼はスマートな着こなしをしている。",
     "id": 4,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -113,7 +113,7 @@
     "explanation": "Used to comfort someone: 'never mind'. (Set 1)",
     "example": "ミスしてもドンマイ！",
     "id": 13,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -150,7 +150,7 @@
     "example": "会社のイメージが良くなった。",
     "id": 17,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "termA": "サラリーマン (sarariman)",
@@ -158,7 +158,7 @@
     "explanation": "Refers broadly to office workers. (Set 1)",
     "example": "父は都内でサラリーマンをしている。",
     "id": 18,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -185,7 +185,7 @@
     "explanation": "手紙 means physical mail, not alphabet letters. (Set 2)",
     "example": "祖母に手紙を書きました。",
     "id": 21,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -239,7 +239,7 @@
     "explanation": "カンニング means cheating on tests. (Set 2)",
     "example": "試験でカンニングしてはいけません。",
     "id": 27,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -285,7 +285,7 @@
     "example": "資料をホッチキスで留めてください。",
     "id": 32,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "termA": "ドンマイ (donmai)",
@@ -303,7 +303,7 @@
     "example": "新しい料理にチャレンジしてみる。",
     "id": 34,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "termA": "ナンバー (nanbaa)",
@@ -356,7 +356,7 @@
     "explanation": "In Japanese it can refer to animation in general. (Set 2)",
     "example": "子どものころからアニメが好きだ。",
     "id": 40,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -365,7 +365,7 @@
     "explanation": "手紙 means physical mail, not alphabet letters. (Set 3)",
     "example": "祖母に手紙を書きました。",
     "id": 41,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -563,7 +563,7 @@
     "explanation": "コンセント means electrical outlet. (Set 4)",
     "example": "コンセントが足りないので延長コードを使います。",
     "id": 63,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -663,7 +663,7 @@
     "example": "新しい料理にチャレンジしてみる。",
     "id": 74,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "termA": "ナンバー (nanbaa)",
@@ -671,7 +671,7 @@
     "explanation": "Can mean ranking position in Japanese usage. (Set 4)",
     "example": "彼はチームのナンバー1だ。",
     "id": 75,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -815,7 +815,7 @@
     "explanation": "シール usually means sticker/label. (Set 5)",
     "example": "ノートにシールを貼った。",
     "id": 91,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -950,7 +950,7 @@
     "explanation": "Usually means buffet/all-you-can-eat in Japan. (Set 6)",
     "example": "ホテルの朝食はバイキングです。",
     "id": 106,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -978,7 +978,7 @@
     "example": "お客様からクレームが届いた。",
     "id": 109,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "termA": "ナイーブ (naibu)",
@@ -986,7 +986,7 @@
     "explanation": "Often means sensitive/delicate in Japanese. (Set 6)",
     "example": "彼は意外とナイーブな性格だ。",
     "id": 110,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1040,7 +1040,7 @@
     "explanation": "Means very energetic mood. (Set 6)",
     "example": "試合前はみんなハイテンションだった。",
     "id": 116,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1076,7 +1076,7 @@
     "explanation": "In Japanese it can refer to animation in general. (Set 6)",
     "example": "子どものころからアニメが好きだ。",
     "id": 120,
-    "issued": false,
+    "issued": true,
     "completed": false
   }
 ]
