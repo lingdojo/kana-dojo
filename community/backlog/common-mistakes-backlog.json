@@ -45,7 +45,7 @@
     "explanation": "で marks location of action. (Pattern set 1)",
     "id": 6,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "wrong": "私は昨日東京に行きます。",
@@ -68,7 +68,7 @@
     "correct": "友達に会うのを楽しみにしています。",
     "explanation": "Nominalize with の before を. (Pattern set 1)",
     "id": 9,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
