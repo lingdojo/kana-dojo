@@ -83,5 +83,12 @@
   "english": "sentence ending",
   "region": "Fukuoka",
   "note": "Assertive friendly ending. (Set 6)"
-}
+},
+  {
+  "dialect": "しばれる",
+  "standardJapanese": "とても寒い",
+  "english": "freezing cold",
+  "region": "Hokkaido",
+  "note": "Used for severe winter cold. (Set 4)"
+  }
 ]
