@@ -89,5 +89,11 @@
   "termB": "smart (English)",
   "explanation": "Often means slim/stylish, not necessarily intelligent. (Set 6)",
   "example": "彼はスマートな着こなしをしている。"
+},
+{
+  "japanese": "彼女は忙しいはずなのに、いつも丁寧に返信してくれる。",
+  "romaji": "Kanojo wa isogashii hazu na noni, itsumo teinei ni henshin shite kureru.",
+  "english": "Even though she must be busy, she always replies politely.",
+  "jlpt": "N2"
 }
 ]
