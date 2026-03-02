@@ -53,11 +53,15 @@
     "wrong": "私は日本語を話しますです。",
     "correct": "私は日本語を話します。",
     "explanation": "Do not stack ます and です in one predicate. (Pattern set 4)"
-  }
-,
+  },
   {
     "wrong": "東京は人が多いです、きれいです。",
     "correct": "東京は人が多くて、きれいです。",
     "explanation": "Use て-form to connect clauses. (Pattern set 2)"
-  }
+  },
+  {
+    "wrong": "日本語が好きをです。",
+    "correct": "日本語が好きです。",
+    "explanation": "好き takes が, not を. (Pattern set 5)"
+  }  
 ]
