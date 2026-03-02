@@ -90,5 +90,12 @@
   "english": "freezing cold",
   "region": "Hokkaido",
   "note": "Used for severe winter cold. (Set 4)"
+  },
+  {
+    "dialect": "〜だがや",
+    "standardJapanese": "〜だよ",
+    "english": "sentence ending",
+    "region": "Nagoya",
+    "note": "Strong Nagoya marker. (Set 3)"
   }
 ]

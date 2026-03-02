@@ -230,7 +230,7 @@
   {
     "id": 39,
     "text": "\"〜かもしれない\" means \"might be\" or \"maybe\".",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -441,24 +441,24 @@
     "id": 74,
     "text": "\"〜ところ\" can mean \"just did / about to do / in the middle of\".",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 75,
     "text": "\"〜ことにする\" means \"decide to...\".",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
     "id": 76,
     "text": "\"〜ことになっている\" means \"it is decided/arranged that...\".",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
     "id": 77,
     "text": "\"〜わりに\" means \"despite / considering...\".",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

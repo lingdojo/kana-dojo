@@ -348,7 +348,7 @@
     "jlpt": "N3",
     "id": 39,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "彼女は忙しいはずなのに、いつも丁寧に返信してくれる。",
@@ -356,7 +356,7 @@
     "english": "Even though she must be busy, she always replies politely.",
     "jlpt": "N2",
     "id": 40,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

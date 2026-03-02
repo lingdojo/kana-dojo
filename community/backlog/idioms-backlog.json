@@ -492,7 +492,7 @@
     "meaning": "Feel proud. (Set 3)",
     "id": 55,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "首を長くする",
@@ -510,7 +510,7 @@
     "meaning": "Let bygones be bygones. (Set 3)",
     "id": 57,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "念には念を入れる",
@@ -537,7 +537,7 @@
     "meaning": "Obtain something. (Set 3)",
     "id": 60,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "猫の手も借りたい",
@@ -546,7 +546,7 @@
     "meaning": "Extremely busy and desperate for help. (Set 4)",
     "id": 61,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "頭が上がらない",
@@ -555,7 +555,7 @@
     "meaning": "Feel indebted or unable to oppose someone. (Set 4)",
     "id": 62,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "腰が重い",
@@ -591,7 +591,7 @@
     "meaning": "Impatient temperament. (Set 4)",
     "id": 66,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "腹が立つ",
@@ -608,7 +608,7 @@
     "english": "Cut corners",
     "meaning": "Do less than one should. (Set 4)",
     "id": 68,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

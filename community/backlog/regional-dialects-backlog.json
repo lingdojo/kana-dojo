@@ -77,7 +77,7 @@
     "note": "Transition/goodbye phrase. (Set 1)",
     "id": 8,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "〜ばい",
@@ -87,7 +87,7 @@
     "note": "Assertive friendly ending. (Set 1)",
     "id": 9,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "〜けん",
@@ -97,7 +97,7 @@
     "note": "Reason marker in Kyushu. (Set 1)",
     "id": 10,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "よか",
@@ -107,7 +107,7 @@
     "note": "Common Kyushu replacement. (Set 1)",
     "id": 11,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "でら",
@@ -116,7 +116,7 @@
     "region": "Nagoya",
     "note": "Characteristic Nagoya intensifier. (Set 1)",
     "id": 12,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
