@@ -676,5 +676,11 @@
     "backgroundColor": "oklch(16.0% 0.055 270.0 / 1)",
     "mainColor": "oklch(72.0% 0.195 220.0 / 1)",
     "secondaryColor": "oklch(68.0% 0.205 30.0 / 1)"
+  },
+  {
+    "id": "peach-mochi",
+    "backgroundColor": "oklch(96.0% 0.020 25.0 / 1)",
+    "mainColor": "oklch(68.0% 0.165 15.0 / 1)",
+    "secondaryColor": "oklch(78.0% 0.105 85.0 / 1)"
   }
 ]
