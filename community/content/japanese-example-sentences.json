@@ -58,7 +58,13 @@
     "romaji": "Kono kanji no yomikata o oshiete kudasai.",
     "english": "Please tell me how to read this kanji.",
     "jlpt": "N5"
-  }
+  },
+  {
+  "japanese": "電車が遅れていたので、少し遅刻しました。",
+  "romaji": "Densha ga okurete ita node, sukoshi chikoku shimashita.",
+  "english": "The train was delayed, so I was a little late.",
+  "jlpt": "N4"
+}
 ,
   {
     "japanese": "彼は日本で働くためにビジネス日本語を学んでいる。",
