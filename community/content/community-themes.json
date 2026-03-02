@@ -630,16 +630,16 @@
     "secondaryColor": "oklch(60.0% 0.040 230.0 / 1)"
   },
   {
-  "id": "pachinko-hall",
-  "backgroundColor": "oklch(18.0% 0.042 325.0 / 1)",
-  "mainColor": "oklch(90.0% 0.115 95.0 / 1)",
-  "secondaryColor": "oklch(75.0% 0.195 340.0 / 1)"
+    "id": "pachinko-hall",
+    "backgroundColor": "oklch(18.0% 0.042 325.0 / 1)",
+    "mainColor": "oklch(90.0% 0.115 95.0 / 1)",
+    "secondaryColor": "oklch(75.0% 0.195 340.0 / 1)"
   },
   {
-  "id": "crane-flight",
-  "backgroundColor": "oklch(94.0% 0.015 240.0 / 1)",
-  "mainColor": "oklch(40.0% 0.025 270.0 / 1)",
-  "secondaryColor": "oklch(60.0% 0.175 20.0 / 1)"
+    "id": "crane-flight",
+    "backgroundColor": "oklch(94.0% 0.015 240.0 / 1)",
+    "mainColor": "oklch(40.0% 0.025 270.0 / 1)",
+    "secondaryColor": "oklch(60.0% 0.175 20.0 / 1)"
   },
   {
     "id": "edo-vintage",
@@ -648,33 +648,33 @@
     "secondaryColor": "oklch(60.0% 0.065 55.0 / 1)"
   },
   {
-  "id": "sushi-counter",
-  "backgroundColor": "oklch(23.0% 0.028 70.0 / 1)",
-  "mainColor": "oklch(70.0% 0.145 20.0 / 1)",
-  "secondaryColor": "oklch(68.0% 0.095 75.0 / 1)"
-},
-{
-  "id": "cyber-kitsune",
-  "backgroundColor": "oklch(13.0% 0.058 295.0 / 1)",
-  "mainColor": "oklch(78.0% 0.195 45.0 / 1)",
-  "secondaryColor": "oklch(70.0% 0.220 310.0 / 1)"
-},
+    "id": "sushi-counter",
+    "backgroundColor": "oklch(23.0% 0.028 70.0 / 1)",
+    "mainColor": "oklch(70.0% 0.145 20.0 / 1)",
+    "secondaryColor": "oklch(68.0% 0.095 75.0 / 1)"
+  },
   {
-  "id": "inkstone",
-  "backgroundColor": "oklch(15.0% 0.018 260.0 / 1)",
-  "mainColor": "oklch(78.0% 0.040 230.0 / 1)",
-  "secondaryColor": "oklch(50.0% 0.030 255.0 / 1)"
-},
-{
-  "id": "daruma-red",
-  "backgroundColor": "oklch(20.0% 0.045 20.0 / 1)",
-  "mainColor": "oklch(58.0% 0.225 28.0 / 1)",
-  "secondaryColor": "oklch(92.0% 0.045 90.0 / 1)"
-},
-{
-  "id": "robot-anime",
-  "backgroundColor": "oklch(16.0% 0.055 270.0 / 1)",
-  "mainColor": "oklch(72.0% 0.195 220.0 / 1)",
-  "secondaryColor": "oklch(68.0% 0.205 30.0 / 1)"
-},
+    "id": "cyber-kitsune",
+    "backgroundColor": "oklch(13.0% 0.058 295.0 / 1)",
+    "mainColor": "oklch(78.0% 0.195 45.0 / 1)",
+    "secondaryColor": "oklch(70.0% 0.220 310.0 / 1)"
+  },
+  {
+    "id": "inkstone",
+    "backgroundColor": "oklch(15.0% 0.018 260.0 / 1)",
+    "mainColor": "oklch(78.0% 0.040 230.0 / 1)",
+    "secondaryColor": "oklch(50.0% 0.030 255.0 / 1)"
+  },
+  {
+    "id": "daruma-red",
+    "backgroundColor": "oklch(20.0% 0.045 20.0 / 1)",
+    "mainColor": "oklch(58.0% 0.225 28.0 / 1)",
+    "secondaryColor": "oklch(92.0% 0.045 90.0 / 1)"
+  },
+  {
+    "id": "robot-anime",
+    "backgroundColor": "oklch(16.0% 0.055 270.0 / 1)",
+    "mainColor": "oklch(72.0% 0.195 220.0 / 1)",
+    "secondaryColor": "oklch(68.0% 0.205 30.0 / 1)"
+  }
 ]
