@@ -734,7 +734,7 @@
     "dont": "土足で室内に上がる",
     "note": "家庭・旅館では基本マナー。",
     "id": 82,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -770,7 +770,7 @@
     "dont": "ご飯に箸を立てる",
     "note": "立て箸は弔事連想のため避ける。",
     "id": 86,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -986,7 +986,7 @@
     "dont": "割り込む",
     "note": "駅・店頭では順番厳守。",
     "id": 110,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

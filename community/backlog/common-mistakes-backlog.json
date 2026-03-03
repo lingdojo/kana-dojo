@@ -532,7 +532,7 @@
     "correct": "私は昨日東京に行きました。",
     "explanation": "Use past tense for past actions. (Pattern set 4)",
     "id": 67,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -636,7 +636,7 @@
     "correct": "私はお金がありません。",
     "explanation": "Negative polite form already complete. (Pattern set 4)",
     "id": 80,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -885,7 +885,7 @@
     "explanation": "ので is smoother/neutral for reason. (Pattern set 6)",
     "id": 111,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "wrong": "もし雨が降ります、行きません。",
@@ -893,7 +893,7 @@
     "explanation": "Conditional needs たら/なら etc. (Pattern set 6)",
     "id": 112,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "wrong": "これは私のです本。",
@@ -901,7 +901,7 @@
     "explanation": "Place の correctly in noun phrase. (Pattern set 6)",
     "id": 113,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "wrong": "会議は三時からで始まります。",
@@ -909,14 +909,14 @@
     "explanation": "Remove unnecessary particle after から. (Pattern set 6)",
     "id": 114,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "wrong": "日本へ旅行を行きたい。",
     "correct": "日本へ旅行に行きたい。",
     "explanation": "Use に行く for purpose. (Pattern set 6)",
     "id": 115,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

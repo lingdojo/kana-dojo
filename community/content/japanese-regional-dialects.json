@@ -103,5 +103,19 @@
     "english": "thank you",
     "region": "Okinawa",
     "note": "Okinawan gratitude expression. (Set 4)"
+  },
+  {
+    "dialect": "いけん",
+    "standardJapanese": "いけない",
+    "english": "no/cannot",
+    "region": "Chugoku",
+    "note": "Prohibitive nuance. (Set 1)"
+  },
+  {
+    "dialect": "でら",
+    "standardJapanese": "とても",
+    "english": "very",
+    "region": "Nagoya",
+    "note": "Characteristic Nagoya intensifier. (Set 5)"
   }
 ]

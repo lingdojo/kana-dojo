@@ -915,18 +915,18 @@
     "id": 153,
     "fact": "The word 'kansha' (感謝) describes gratitude so profound it becomes a lifestyle - actively looking for things to be thankful for.",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 154,
     "fact": "Japan has 'purikura' photo booths that digitally enlarge eyes, smooth skin, and add sparkles to your photos automatically.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 155,
     "fact": "There's a Japanese concept 'uchi-soto' (内外) - inside/outside - defining who you're close to versus everyone else.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1868,7 +1868,7 @@
   {
     "id": 312,
     "fact": "Japan’s 'shichi-go-san' festival celebrates children at ages 3, 5, and 7 with shrine visits and traditional outfits.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
