@@ -254,5 +254,16 @@
       "Hokuriku"
     ],
     "correctIndex": 0
+  },
+  {
+    "question": "Which Japanese city is known for its deer roaming freely in a large park? (Community variation 12)",
+    "difficulty": "medium",
+    "answers": [
+      "Nara",
+      "Yokohama",
+      "Kobe",
+      "Nagoya"
+    ],
+    "correctIndex": 0
   }
 ]

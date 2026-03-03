@@ -140,5 +140,19 @@
     "english": "Believe in your comrades.",
     "game": "Dragon Quest series",
     "character": "Recurring command voice"
+  },
+  {
+    "japanese": "勝つと思うな、思えば負けよ",
+    "romaji": "Katsu to omou na, omoeba makeyo",
+    "english": "If you only think of winning, you lose.",
+    "game": "Samurai game proverb line",
+    "character": "Musashi reference"
+  },
+  {
+    "japanese": "風が、来る！",
+    "romaji": "Kaze ga, kuru!",
+    "english": "The wind is coming!",
+    "game": "The Legend of Zelda: Breath of the Wild (JP)",
+    "character": "Revali"
   }
 ]

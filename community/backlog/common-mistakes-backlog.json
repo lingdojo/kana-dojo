@@ -532,7 +532,7 @@
     "correct": "私は昨日東京に行きました。",
     "explanation": "Use past tense for past actions. (Pattern set 4)",
     "id": 67,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

@@ -375,7 +375,7 @@
     "example": "駅前のマンションに住んでいます。",
     "id": 42,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "termA": "コンセント (konsento)",
@@ -383,7 +383,7 @@
     "explanation": "コンセント means electrical outlet. (Set 3)",
     "example": "コンセントが足りないので延長コードを使います。",
     "id": 43,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

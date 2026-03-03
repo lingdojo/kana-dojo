@@ -645,7 +645,7 @@
     "jlpt": "N4",
     "id": 72,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "店員さんにおすすめの料理を聞いてみた。",
@@ -654,7 +654,7 @@
     "jlpt": "N4",
     "id": 73,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "この表現は場面によって失礼に聞こえることがある。",
@@ -690,7 +690,7 @@
     "jlpt": "N4",
     "id": 77,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "この問題は思ったより難しくなかった。",
@@ -698,7 +698,7 @@
     "english": "This problem wasn't as hard as I expected.",
     "jlpt": "N3",
     "id": 78,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

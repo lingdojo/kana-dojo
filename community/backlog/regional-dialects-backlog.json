@@ -487,7 +487,7 @@
     "note": "Assertive friendly ending. (Set 3)",
     "id": 49,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "〜けん",
@@ -497,7 +497,7 @@
     "note": "Reason marker in Kyushu. (Set 3)",
     "id": 50,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "よか",
@@ -507,7 +507,7 @@
     "note": "Common Kyushu replacement. (Set 3)",
     "id": 51,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "でら",
@@ -537,7 +537,7 @@
     "note": "Regional intensifier. (Set 3)",
     "id": 54,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "〜じゃけぇ",
@@ -547,7 +547,7 @@
     "note": "Common causal ending. (Set 3)",
     "id": 55,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "いけん",
@@ -557,7 +557,7 @@
     "note": "Prohibitive nuance. (Set 3)",
     "id": 56,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "なんくるないさ",
@@ -567,7 +567,7 @@
     "note": "Famous Okinawan resilience phrase. (Set 3)",
     "id": 57,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "にふぇーでーびる",
@@ -616,7 +616,7 @@
     "region": "Kansai",
     "note": "Classic comedic retort (tsukkomi). (Set 4)",
     "id": 62,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
