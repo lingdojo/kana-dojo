@@ -5,7 +5,7 @@
     "explanation": "手紙 means physical mail, not alphabet letters. (Set 1)",
     "example": "祖母に手紙を書きました。",
     "id": 1,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

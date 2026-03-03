@@ -68,5 +68,10 @@
     "wrong": "日本語をわかります。",
     "correct": "日本語がわかります。",
     "explanation": "わかる takes が. (Pattern set 6)"
+  },
+  {
+    "wrong": "私は昨日東京に行きます。",
+    "correct": "私は昨日東京に行きました。",
+    "explanation": "Use past tense for past actions. (Pattern set 4)"
   }
 ]
