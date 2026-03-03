@@ -418,49 +418,49 @@
     "correctIndex": 0
   },
   {
-  "question": "Which mountain is Japan’s highest peak?",
-  "difficulty": "easy",
-  "answers": [
-    "Mount Fuji",
-    "Mount Kita",
-    "Mount Tate",
-    "Mount Haku"
-  ],
-  "correctIndex": 0
-},
+    "question": "Which mountain is Japan’s highest peak?",
+    "difficulty": "easy",
+    "answers": [
+      "Mount Fuji",
+      "Mount Kita",
+      "Mount Tate",
+      "Mount Haku"
+    ],
+    "correctIndex": 0
+  },
   {
-  "question": "What is the Japanese term for cherry blossoms? (Community variation 37)",
-  "difficulty": "easy",
-  "answers": [
-    "Sakura",
-    "Ume",
-    "Momiji",
-    "Kiku"
-  ],
-  "correctIndex": 0
-},
+    "question": "What is the Japanese term for cherry blossoms? (Community variation 37)",
+    "difficulty": "easy",
+    "answers": [
+      "Sakura",
+      "Ume",
+      "Momiji",
+      "Kiku"
+    ],
+    "correctIndex": 0
+  },
   {
-  "question": "What is the Japanese art of arranging flowers called?",
-  "difficulty": "easy",
-  "answers": [
-    "Ikebana",
-    "Shodo",
-    "Kodo",
-    "Origami"
-  ],
-  "correctIndex": 0
-},
+    "question": "What is the Japanese art of arranging flowers called?",
+    "difficulty": "easy",
+    "answers": [
+      "Ikebana",
+      "Shodo",
+      "Kodo",
+      "Origami"
+    ],
+    "correctIndex": 0
+  },
   {
-  "question": "What is the main ingredient in miso? (Community variation 56)",
-  "difficulty": "easy",
-  "answers": [
-    "Fermented soybeans",
-    "Rice flour",
-    "Buckwheat",
-    "Seaweed"
-  ],
-  "correctIndex": 0
-},
+    "question": "What is the main ingredient in miso? (Community variation 56)",
+    "difficulty": "easy",
+    "answers": [
+      "Fermented soybeans",
+      "Rice flour",
+      "Buckwheat",
+      "Seaweed"
+    ],
+    "correctIndex": 0
+  },
   {
     "question": "What is the Japanese term for a Buddhist temple?",
     "difficulty": "easy",
@@ -469,6 +469,17 @@
       "Jinja",
       "Torii",
       "Goshuin"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which Japanese dish consists of skewered grilled chicken? (Community variation 48)",
+    "difficulty": "easy",
+    "answers": [
+      "Yakitori",
+      "Sukiyaki",
+      "Tonkatsu",
+      "Oden"
     ],
     "correctIndex": 0
   }
