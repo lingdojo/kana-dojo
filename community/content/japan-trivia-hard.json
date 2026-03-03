@@ -163,5 +163,16 @@
       "Takayama"
     ],
     "correctIndex": 0
+  },
+  {
+    "question": "What is the name of the traditional Japanese board game similar to chess?",
+    "difficulty": "hard",
+    "answers": [
+      "Shogi",
+      "Go",
+      "Mahjong",
+      "Reversi"
+    ],
+    "correctIndex": 0
   }
 ]
