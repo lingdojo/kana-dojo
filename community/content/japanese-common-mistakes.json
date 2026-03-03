@@ -73,5 +73,10 @@
     "wrong": "私は昨日東京に行きます。",
     "correct": "私は昨日東京に行きました。",
     "explanation": "Use past tense for past actions. (Pattern set 4)"
+  },
+  {
+  "wrong": "私は昨日東京に行きます。",
+  "correct": "私は昨日東京に行きました。",
+  "explanation": "Use past tense for past actions. (Pattern set 4)"
   }
 ]
