@@ -591,7 +591,7 @@
     "example": "ホテルの朝食はバイキングです。",
     "id": 66,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "termA": "カンニング (kanningu)",
@@ -600,7 +600,7 @@
     "example": "試験でカンニングしてはいけません。",
     "id": 67,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "termA": "リベンジ (ribenji)",
@@ -608,7 +608,7 @@
     "explanation": "Often used as 'try again after failing'. (Set 4)",
     "example": "去年落ちた試験に今年リベンジする。",
     "id": 68,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

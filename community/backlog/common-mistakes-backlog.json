@@ -405,7 +405,7 @@
     "explanation": "ので is smoother/neutral for reason. (Pattern set 3)",
     "id": 51,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "wrong": "もし雨が降ります、行きません。",
@@ -413,7 +413,7 @@
     "explanation": "Conditional needs たら/なら etc. (Pattern set 3)",
     "id": 52,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "wrong": "これは私のです本。",
@@ -429,7 +429,7 @@
     "explanation": "Remove unnecessary particle after から. (Pattern set 3)",
     "id": 54,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "wrong": "日本へ旅行を行きたい。",
@@ -541,14 +541,14 @@
     "explanation": "Use て-form to connect clauses. (Pattern set 4)",
     "id": 68,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "wrong": "友達に会うを楽しみにしています。",
     "correct": "友達に会うのを楽しみにしています。",
     "explanation": "Nominalize with の before を. (Pattern set 4)",
     "id": 69,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
