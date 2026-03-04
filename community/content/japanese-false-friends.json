@@ -82,5 +82,11 @@
     "termB": "consent (English)",
     "explanation": "コンセント means electrical outlet. (Set 5)",
     "example": "コンセントが足りないので延長コードを使います。"
+  },
+  {
+    "termA": "テンション (tenshon)",
+    "termB": "tension (English)",
+    "explanation": "Often means excitement/energy level in casual Japanese. (Set 4)",
+    "example": "ライブでテンションが上がった。"
   }
 ]
