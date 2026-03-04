@@ -60,12 +60,11 @@
     "jlpt": "N5"
   },
   {
-  "japanese": "電車が遅れていたので、少し遅刻しました。",
-  "romaji": "Densha ga okurete ita node, sukoshi chikoku shimashita.",
-  "english": "The train was delayed, so I was a little late.",
-  "jlpt": "N4"
-}
-,
+    "japanese": "電車が遅れていたので、少し遅刻しました。",
+    "romaji": "Densha ga okurete ita node, sukoshi chikoku shimashita.",
+    "english": "The train was delayed, so I was a little late.",
+    "jlpt": "N4"
+  },
   {
     "japanese": "彼は日本で働くためにビジネス日本語を学んでいる。",
     "romaji": "Kare wa Nihon de hataraku tame ni bijinesu nihongo o manande iru.",
@@ -73,11 +72,11 @@
     "jlpt": "N3"
   },
   {
-  "japanese": "彼女は忙しいはずなのに、いつも丁寧に返信してくれる。",
-  "romaji": "Kanojo wa isogashii hazu na noni, itsumo teinei ni henshin shite kureru.",
-  "english": "Even though she must be busy, she always replies politely.",
-  "jlpt": "N2"
-},
+    "japanese": "彼女は忙しいはずなのに、いつも丁寧に返信してくれる。",
+    "romaji": "Kanojo wa isogashii hazu na noni, itsumo teinei ni henshin shite kureru.",
+    "english": "Even though she must be busy, she always replies politely.",
+    "jlpt": "N2"
+  },
   {
     "japanese": "店員さんにおすすめの料理を聞いてみた。",
     "romaji": "Tenin-san ni osusume no ryouri o kiite mita.",
@@ -95,5 +94,11 @@
     "romaji": "Nihongo o benkyou shihajimete sankagetsu desu.",
     "english": "It has been three months since I started studying Japanese.",
     "jlpt": "N5"
+  },
+  {
+    "japanese": "駅の近くに新しいカフェができました。",
+    "romaji": "Eki no chikaku ni atarashii kafe ga dekimashita.",
+    "english": "A new cafe opened near the station.",
+    "jlpt": "N4"
   }
 ]
