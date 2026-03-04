@@ -700,6 +700,11 @@
   "backgroundColor": "oklch(18.0% 0.055 20.0 / 1)",
   "mainColor": "oklch(58.0% 0.195 25.0 / 1)",
   "secondaryColor": "oklch(70.0% 0.145 50.0 / 1)"
-  }
-  
+ },
+{
+  "id": "arcade-classic",
+  "backgroundColor": "oklch(13.0% 0.035 290.0 / 1)",
+  "mainColor": "oklch(88.0% 0.195 115.0 / 1)",
+  "secondaryColor": "oklch(82.0% 0.175 350.0 / 1)"
+}
 ]
