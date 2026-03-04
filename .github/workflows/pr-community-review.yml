@@ -52,6 +52,7 @@ jobs:
             const prTitleLower = prTitle.toLowerCase();
             const prBody = context.payload.pull_request.body || '';
             const prNumber = context.payload.pull_request.number;
+            const prAuthor = context.payload.pull_request.user.login;
 
             let isValid = false;
             let validationType = null;
@@ -815,32 +816,79 @@ jobs:
             });
 
             if (isValid) {
-              try {
-                const labelName = 'community-auto-merge';
-                try {
-                  await github.rest.issues.getLabel({
-                    owner: context.repo.owner,
-                    repo: context.repo.repo,
-                    name: labelName
-                  });
-                } catch (e) {
-                  await github.rest.issues.createLabel({
-                    owner: context.repo.owner,
-                    repo: context.repo.repo,
-                    name: labelName,
-                    color: '0e8a16'
-                  });
-                }
+              const labelName = 'community-auto-merge';
 
-                await github.rest.issues.addLabels({
+              // Check if the label already exists on this PR (e.g. added during the 'opened' event).
+              // If so, skip re-evaluation so a subsequent 'synchronize' push doesn't remove auto-merge eligibility.
+              let labelAlreadyExists = false;
+              try {
+                const { data: prLabels } = await github.rest.issues.listLabelsOnIssue({
                   owner: context.repo.owner,
                   repo: context.repo.repo,
-                  issue_number: prNumber,
-                  labels: [labelName]
+                  issue_number: prNumber
                 });
-
-                console.log(`Marked PR #${prNumber} for merge after checks`);
+                labelAlreadyExists = (prLabels || []).some(function(l) { return l.name === labelName; });
               } catch (e) {
-                console.log(`Could not label PR for merge after checks: ${e.message}`);
+                console.log(`Could not check existing labels: ${e.message}`);
+              }
+
+              if (labelAlreadyExists) {
+                console.log(`PR #${prNumber} already has '${labelName}' label; skipping contributor check.`);
+              } else {
+                // Auto-merge only for first-time contributors (author not yet in pr-authors.json).
+                // Read from the default branch so a contributor cannot game this via their PR head.
+                const authorsPath = 'community/backlog/pr-authors.json';
+                let isNewContributor = true;
+                try {
+                  const { data: authorsFile } = await github.rest.repos.getContent({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    path: authorsPath
+                  });
+                  if (authorsFile && authorsFile.content) {
+                    const parsed = JSON.parse(Buffer.from(authorsFile.content, 'base64').toString('utf8'));
+                    const authors = Array.isArray(parsed.authors) ? parsed.authors : [];
+                    const normalized = new Set(authors.map(function(a) { return String(a).toLowerCase(); }));
+                    if (normalized.has(prAuthor.toLowerCase())) {
+                      isNewContributor = false;
+                    }
+                  }
+                } catch (e) {
+                  if (e.status !== 404) {
+                    console.log(`Could not load pr-authors.json: ${e.message}`);
+                  }
+                }
+
+                if (!isNewContributor) {
+                  console.log(`PR #${prNumber} author @${prAuthor} is a returning contributor; skipping auto-merge — requires manual review.`);
+                } else {
+                  try {
+                    try {
+                      await github.rest.issues.getLabel({
+                        owner: context.repo.owner,
+                        repo: context.repo.repo,
+                        name: labelName
+                      });
+                    } catch (e) {
+                      await github.rest.issues.createLabel({
+                        owner: context.repo.owner,
+                        repo: context.repo.repo,
+                        name: labelName,
+                        color: '0e8a16'
+                      });
+                    }
+
+                    await github.rest.issues.addLabels({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      issue_number: prNumber,
+                      labels: [labelName]
+                    });
+
+                    console.log(`Marked PR #${prNumber} for merge after checks`);
+                  } catch (e) {
+                    console.log(`Could not label PR for merge after checks: ${e.message}`);
+                  }
+                }
               }
             }

@@ -52,5 +52,35 @@
     "termB": "mansion (English)",
     "explanation": "マンション means apartment building in Japanese. (Set 2)",
     "example": "駅前のマンションに住んでいます。"
+  },
+  {
+    "termA": "ドンマイ (donmai)",
+    "termB": "don't mind (English)",
+    "explanation": "Used to comfort someone: 'never mind'. (Set 3)",
+    "example": "ミスしてもドンマイ！"
+  },
+  {
+    "termA": "ホッチキス (hocchikisu)",
+    "termB": "Hotchkiss (name)",
+    "explanation": "ホッチキス means stapler. (Set 3)",
+    "example": "資料をホッチキスで留めてください。"
+  },
+  {
+    "termA": "イメージ (imeeji)",
+    "termB": "image",
+    "explanation": "Often means impression/public image. (Set 4)",
+    "example": "会社のイメージが良くなった。"
+  },
+  {
+    "termA": "手紙 (tegami)",
+    "termB": "letter (English)",
+    "explanation": "手紙 means physical mail, not alphabet letters. (Set 4)",
+    "example": "祖母に手紙を書きました。"
+  },
+  {
+    "termA": "コンセント (konsento)",
+    "termB": "consent (English)",
+    "explanation": "コンセント means electrical outlet. (Set 5)",
+    "example": "コンセントが足りないので延長コードを使います。"
   }
 ]

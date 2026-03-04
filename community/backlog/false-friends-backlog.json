@@ -5,7 +5,7 @@
     "explanation": "手紙 means physical mail, not alphabet letters. (Set 1)",
     "example": "祖母に手紙を書きました。",
     "id": 1,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -132,7 +132,7 @@
     "example": "彼はチームのナンバー1だ。",
     "id": 15,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "termA": "ハイテンション (haitenshon)",
@@ -141,7 +141,7 @@
     "example": "試合前はみんなハイテンションだった。",
     "id": 16,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "termA": "イメージ (imeeji)",
@@ -203,7 +203,7 @@
     "explanation": "コンセント means electrical outlet. (Set 2)",
     "example": "コンセントが足りないので延長コードを使います。",
     "id": 23,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -213,7 +213,7 @@
     "example": "彼はスマートな着こなしをしている。",
     "id": 24,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "termA": "テンション (tenshon)",
@@ -221,7 +221,7 @@
     "explanation": "Often means excitement/energy level in casual Japanese. (Set 2)",
     "example": "ライブでテンションが上がった。",
     "id": 25,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -375,7 +375,7 @@
     "example": "駅前のマンションに住んでいます。",
     "id": 42,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "termA": "コンセント (konsento)",
@@ -383,7 +383,7 @@
     "explanation": "コンセント means electrical outlet. (Set 3)",
     "example": "コンセントが足りないので延長コードを使います。",
     "id": 43,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -393,7 +393,7 @@
     "example": "彼はスマートな着こなしをしている。",
     "id": 44,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "termA": "テンション (tenshon)",
@@ -428,7 +428,7 @@
     "explanation": "Often used as 'try again after failing'. (Set 3)",
     "example": "去年落ちた試験に今年リベンジする。",
     "id": 48,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -482,7 +482,7 @@
     "explanation": "Often means trying something new. (Set 3)",
     "example": "新しい料理にチャレンジしてみる。",
     "id": 54,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -527,7 +527,7 @@
     "explanation": "Common term for plastic drink bottle. (Set 3)",
     "example": "ペットボトルは分別して捨てる。",
     "id": 59,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -545,7 +545,7 @@
     "explanation": "手紙 means physical mail, not alphabet letters. (Set 4)",
     "example": "祖母に手紙を書きました。",
     "id": 61,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -581,7 +581,7 @@
     "explanation": "Often means excitement/energy level in casual Japanese. (Set 4)",
     "example": "ライブでテンションが上がった。",
     "id": 65,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -591,7 +591,7 @@
     "example": "ホテルの朝食はバイキングです。",
     "id": 66,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "termA": "カンニング (kanningu)",
@@ -600,7 +600,7 @@
     "example": "試験でカンニングしてはいけません。",
     "id": 67,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "termA": "リベンジ (ribenji)",
@@ -608,7 +608,7 @@
     "explanation": "Often used as 'try again after failing'. (Set 4)",
     "example": "去年落ちた試験に今年リベンジする。",
     "id": 68,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -627,7 +627,7 @@
     "example": "彼は意外とナイーブな性格だ。",
     "id": 70,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "termA": "シール (shiiru)",
@@ -635,7 +635,7 @@
     "explanation": "シール usually means sticker/label. (Set 4)",
     "example": "ノートにシールを貼った。",
     "id": 71,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -645,7 +645,7 @@
     "example": "資料をホッチキスで留めてください。",
     "id": 72,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "termA": "ドンマイ (donmai)",
@@ -681,7 +681,7 @@
     "example": "試合前はみんなハイテンションだった。",
     "id": 76,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "termA": "イメージ (imeeji)",
@@ -689,7 +689,7 @@
     "explanation": "Often means impression/public image. (Set 4)",
     "example": "会社のイメージが良くなった。",
     "id": 77,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -699,7 +699,7 @@
     "example": "父は都内でサラリーマンをしている。",
     "id": 78,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "termA": "ペットボトル (petto botoru)",
@@ -717,7 +717,7 @@
     "example": "子どものころからアニメが好きだ。",
     "id": 80,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "termA": "手紙 (tegami)",
@@ -726,7 +726,7 @@
     "example": "祖母に手紙を書きました。",
     "id": 81,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "termA": "マンション (manshon)",
@@ -743,7 +743,7 @@
     "explanation": "コンセント means electrical outlet. (Set 5)",
     "example": "コンセントが足りないので延長コードを使います。",
     "id": 83,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -788,7 +788,7 @@
     "explanation": "Often used as 'try again after failing'. (Set 5)",
     "example": "去年落ちた試験に今年リベンジする。",
     "id": 88,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -797,7 +797,7 @@
     "explanation": "In Japanese it usually means complaint. (Set 5)",
     "example": "お客様からクレームが届いた。",
     "id": 89,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -941,7 +941,7 @@
     "explanation": "Often means excitement/energy level in casual Japanese. (Set 6)",
     "example": "ライブでテンションが上がった。",
     "id": 105,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

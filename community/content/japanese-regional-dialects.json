@@ -103,5 +103,40 @@
     "english": "thank you",
     "region": "Okinawa",
     "note": "Okinawan gratitude expression. (Set 4)"
+  },
+  {
+    "dialect": "いけん",
+    "standardJapanese": "いけない",
+    "english": "no/cannot",
+    "region": "Chugoku",
+    "note": "Prohibitive nuance. (Set 1)"
+  },
+  {
+    "dialect": "でら",
+    "standardJapanese": "とても",
+    "english": "very",
+    "region": "Nagoya",
+    "note": "Characteristic Nagoya intensifier. (Set 5)"
+  },
+  {
+    "dialect": "あかん",
+    "standardJapanese": "だめ",
+    "english": "no good",
+    "region": "Kansai",
+    "note": "Used for prohibition/failure. (Set 4)"
+  },
+  {
+    "dialect": "なんでやねん",
+    "standardJapanese": "何でだよ",
+    "english": "What are you talking about?!",
+    "region": "Kansai",
+    "note": "Classic comedic retort (tsukkomi). (Set 5)"
+  },
+  {
+    "dialect": "〜やねん",
+    "standardJapanese": "〜なんだ",
+    "english": "It is that...",
+    "region": "Kansai",
+    "note": "Explanatory ending in conversation. (Set 4)"
   }
 ]
