@@ -174,5 +174,16 @@
       "Reversi"
     ],
     "correctIndex": 0
+  },
+  {
+    "question": "What is the name of the traditional Japanese board game similar to chess? (Community variation 25)",
+    "difficulty": "hard",
+    "answers": [
+      "Shogi",
+      "Go",
+      "Mahjong",
+      "Reversi"
+    ],
+    "correctIndex": 0
   }
 ]
