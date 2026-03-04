@@ -209,7 +209,7 @@
     "anime": "One Piece",
     "character": "Kozuki Sukiyaki"
   },
-    {
+  {
     "japanese": "フォッフォッフォッ",
     "romaji": "Fo fo fo fo",
     "english": "Fosh fosh fosh fosh.",
@@ -243,5 +243,12 @@
     "english": "As long as I have something to protect, I won't lose.",
     "anime": "Bleach",
     "character": "Ichigo Kurosaki"
+  },
+  {
+    "japanese": "グララララ",
+    "romaji": "Gurararara",
+    "english": "Gurararara!",
+    "anime": "One Piece",
+    "character": "Edward Newgate (Whitebeard)"
   }
 ]
