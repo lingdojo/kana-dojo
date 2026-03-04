@@ -276,6 +276,17 @@
     "Sendai"
     ],
   "correctIndex": 0
-  }
+  },
+  {
+  "question": "Which Japanese castle was the seat of the Tokugawa shogunate? (Community variation 40)",
+  "difficulty": "medium",
+  "answers": [
+    "Edo Castle",
+    "Himeji Castle",
+    "Matsumoto Castle",
+    "Osaka Castle"
+  ],
+  "correctIndex": 0
+}
 
 ]
