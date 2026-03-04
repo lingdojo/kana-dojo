@@ -706,5 +706,11 @@
   "backgroundColor": "oklch(13.0% 0.035 290.0 / 1)",
   "mainColor": "oklch(88.0% 0.195 115.0 / 1)",
   "secondaryColor": "oklch(82.0% 0.175 350.0 / 1)"
+},
+{
+  "id": "tea-ceramic",
+  "backgroundColor": "oklch(23.0% 0.020 60.0 / 1)",
+  "mainColor": "oklch(72.0% 0.085 50.0 / 1)",
+  "secondaryColor": "oklch(60.0% 0.060 35.0 / 1)"
 }
 ]
