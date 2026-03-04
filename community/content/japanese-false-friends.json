@@ -70,5 +70,11 @@
     "termB": "image",
     "explanation": "Often means impression/public image. (Set 4)",
     "example": "会社のイメージが良くなった。"
+  },
+  {
+  "termA": "手紙 (tegami)",
+  "termB": "letter (English)",
+  "explanation": "手紙 means physical mail, not alphabet letters. (Set 4)",
+  "example": "祖母に手紙を書きました。"
   }
 ]
