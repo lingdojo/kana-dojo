@@ -90,9 +90,15 @@
     "example": "ライブでテンションが上がった。"
   },
   {
-  "termA": "チャレンジ (charenji)",
-  "termB": "challenge (English)",
-  "explanation": "Often means trying something new. (Set 6)",
-  "example": "新しい料理にチャレンジしてみる。"
+    "termA": "チャレンジ (charenji)",
+    "termB": "challenge (English)",
+    "explanation": "Often means trying something new. (Set 6)",
+    "example": "新しい料理にチャレンジしてみる。"
+  },
+  {
+    "termA": "ペットボトル (petto botoru)",
+    "termB": "PET bottle",
+    "explanation": "Common term for plastic drink bottle. (Set 3)",
+    "example": "ペットボトルは分別して捨てる。"
   }
 ]
