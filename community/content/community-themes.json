@@ -730,5 +730,11 @@
   "backgroundColor": "oklch(18.5% 0.035 140.0 / 1)",
   "mainColor": "oklch(76.0% 0.140 135.0 / 1)",
   "secondaryColor": "oklch(72.0% 0.070 80.0 / 1)"
-  }
+  },
+  {
+  "id"": 'shibuya-haze',
+  "backgroundColor": 'oklch(17.0% 0.055 290.0 / 1)',
+  "mainColor": 'oklch(82.0% 0.195 310.0 / 1)',
+  "secondaryColor": 'oklch(74.0% 0.140 20.0 / 1)'
+},
 ]
