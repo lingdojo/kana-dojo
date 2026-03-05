@@ -83,7 +83,7 @@ const CollapsibleSection = ({
           'hover:cursor-pointer',
           styles.header,
           fullBorder
-            ? 'border-2 border-(--border-color) px-4 py-3 bg-(--card-color)'
+            ? 'border-2 border-(--border-color) bg-(--card-color) px-4 py-3'
             : styles.border,
         )}
         onClick={handleToggle}

@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   auto-respond:
-    if: ${{ !github.event.issue.pull_request && (contains(github.event.issue.labels.*.name, 'community') || contains(github.event.issue.labels.*.name, 'good first issue') || contains(github.event.issue.labels.*.name, 'beginner-friendly') || contains(github.event.issue.labels.*.name, 'first-timers-only') || contains(github.event.issue.labels.*.name, 'up-for-grabs') || contains(github.event.issue.labels.*.name, 'help wanted')) && (github.event_name != 'issue_comment' || github.event.comment.user.login != 'github-actions[bot]') }}
+    if: ${{ !github.event.issue.pull_request && (contains(github.event.issue.labels.*.name, 'community') || contains(github.event.issue.labels.*.name, 'good first issue') || contains(github.event.issue.labels.*.name, 'beginner-friendly') || contains(github.event.issue.labels.*.name, 'first-timers-only') || contains(github.event.issue.labels.*.name, 'up-for-grabs') || contains(github.event.issue.labels.*.name, 'help wanted')) && (github.event_name != 'issue_comment' || (github.event.comment.user.login != 'github-actions[bot]' && github.event.comment.user.login != github.repository_owner)) }}
 
     runs-on: ubuntu-latest
     timeout-minutes: 5
@@ -21,7 +21,7 @@ jobs:
       - name: Check and respond to commenter
         uses: actions/github-script@v7
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.AUTOMATION_PR_TOKEN || secrets.GITHUB_TOKEN }}
           script: |
             const path = '.github/templates/messages.cjs';
             const ref = context.sha;
@@ -57,6 +57,26 @@ jobs:
               }, str);
             }
 
+            const reactionPool = ['+1', 'laugh', 'hooray', 'heart', 'rocket', 'eyes'];
+            function pickRandomReactions(count) {
+              const shuffled = [...reactionPool].sort(() => Math.random() - 0.5);
+              return shuffled.slice(0, Math.min(count, reactionPool.length));
+            }
+            async function reactToComment(commentId, reactions) {
+              for (const content of reactions) {
+                try {
+                  await github.rest.reactions.createForIssueComment({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    comment_id: commentId,
+                    content
+                  });
+                } catch (e) {
+                  console.log(`Reaction ${content} failed: ${e.message}`);
+                }
+              }
+            }
+
             if (context.eventName === 'issues') {
               const assignee = context.payload.assignee?.login;
 
@@ -74,12 +94,13 @@ jobs:
                 return '- ' + fillTemplate(item, { commenter: assignee, issueNumber: issue.number, repoUrl });
               }).join('\n');
 
-              await github.rest.issues.createComment({
+              const reply = await github.rest.issues.createComment({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 issue_number: issue.number,
                 body: `${fillTemplate(msg.greeting, { commenter: assignee, issueNumber: issue.number, repoUrl })}\n\n${fillTemplate(msg.body, { commenter: assignee, issueNumber: issue.number, repoUrl })}\n\n${fillTemplate(msg.nextSteps.title, { commenter: assignee, issueNumber: issue.number, repoUrl })}\n${nextSteps}\n\n${fillTemplate(msg.resources.title, { commenter: assignee, issueNumber: issue.number, repoUrl })}\n${resources}\n\n${fillTemplate(msg.footer, { commenter: assignee, issueNumber: issue.number, repoUrl })}\n\n${fillTemplate(msg.encouragement, { commenter: assignee, issueNumber: issue.number, repoUrl })}`
               });
+              await reactToComment(reply.data.id, pickRandomReactions(3));
 
               console.log(`Posted assignment instructions for issue #${issue.number} to @${assignee}`);
               return;
@@ -87,6 +108,17 @@ jobs:
 
             if (!commenter) {
               console.log('No commenter found in payload; skipping.');
+              return;
+            }
+
+            // Skip repo collaborators (write/admin) — they should never be auto-assigned
+            const { data: perm } = await github.rest.repos.getCollaboratorPermissionLevel({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              username: commenter
+            }).catch(() => ({ data: { permission: 'none' } }));
+            if (['admin', 'write'].includes(perm.permission)) {
+              console.log(`Skipping @${commenter} — has ${perm.permission} access.`);
               return;
             }
 
@@ -111,21 +143,6 @@ jobs:
               issue_number: issue.number,
               assignees: [commenter]
             });
+            await reactToComment(context.payload.comment.id, pickRandomReactions(3));
 
-            const msg = t.assigned;
-            const nextSteps = msg.nextSteps.items.map(function(item, i) {
-              return `${i + 1}. ${fillTemplate(item, { commenter, issueNumber: issue.number, repoUrl })}`;
-            }).join('\n');
-
-            const resources = msg.resources.items.map(function(item) {
-              return '- ' + fillTemplate(item, { commenter, issueNumber: issue.number, repoUrl });
-            }).join('\n');
-
-            await github.rest.issues.createComment({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: issue.number,
-              body: `${fillTemplate(msg.greeting, { commenter, issueNumber: issue.number, repoUrl })}\n\n${fillTemplate(msg.body, { commenter, issueNumber: issue.number, repoUrl })}\n\n${fillTemplate(msg.nextSteps.title, { commenter, issueNumber: issue.number, repoUrl })}\n${nextSteps}\n\n${fillTemplate(msg.resources.title, { commenter, issueNumber: issue.number, repoUrl })}\n${resources}\n\n${fillTemplate(msg.footer, { commenter, issueNumber: issue.number, repoUrl })}\n\n${fillTemplate(msg.encouragement, { commenter, issueNumber: issue.number, repoUrl })}`
-            });
-
-            console.log(`Assigned issue #${issue.number} to @${commenter}`);
+            console.log(`Assigned issue #${issue.number} to @${commenter} — assignment reply will be posted by the issues:assigned event.`);

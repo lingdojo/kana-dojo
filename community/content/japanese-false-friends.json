@@ -58,5 +58,47 @@
     "termB": "don't mind (English)",
     "explanation": "Used to comfort someone: 'never mind'. (Set 3)",
     "example": "ミスしてもドンマイ！"
+  },
+  {
+    "termA": "ホッチキス (hocchikisu)",
+    "termB": "Hotchkiss (name)",
+    "explanation": "ホッチキス means stapler. (Set 3)",
+    "example": "資料をホッチキスで留めてください。"
+  },
+  {
+    "termA": "イメージ (imeeji)",
+    "termB": "image",
+    "explanation": "Often means impression/public image. (Set 4)",
+    "example": "会社のイメージが良くなった。"
+  },
+  {
+    "termA": "手紙 (tegami)",
+    "termB": "letter (English)",
+    "explanation": "手紙 means physical mail, not alphabet letters. (Set 4)",
+    "example": "祖母に手紙を書きました。"
+  },
+  {
+    "termA": "コンセント (konsento)",
+    "termB": "consent (English)",
+    "explanation": "コンセント means electrical outlet. (Set 5)",
+    "example": "コンセントが足りないので延長コードを使います。"
+  },
+  {
+    "termA": "テンション (tenshon)",
+    "termB": "tension (English)",
+    "explanation": "Often means excitement/energy level in casual Japanese. (Set 4)",
+    "example": "ライブでテンションが上がった。"
+  },
+  {
+    "termA": "チャレンジ (charenji)",
+    "termB": "challenge (English)",
+    "explanation": "Often means trying something new. (Set 6)",
+    "example": "新しい料理にチャレンジしてみる。"
+  },
+  {
+    "termA": "ペットボトル (petto botoru)",
+    "termB": "PET bottle",
+    "explanation": "Common term for plastic drink bottle. (Set 3)",
+    "example": "ペットボトルは分別して捨てる。"
   }
 ]

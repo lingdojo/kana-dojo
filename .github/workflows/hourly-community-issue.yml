@@ -35,7 +35,7 @@ jobs:
         id: guard
         uses: actions/github-script@v7
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.AUTOMATION_PR_TOKEN || secrets.GITHUB_TOKEN }}
           script: |
             if (context.eventName !== 'schedule') {
               core.setOutput('should_run', 'true');
@@ -86,7 +86,7 @@ jobs:
         id: create-issue
         uses: actions/github-script@v7
         with:
-          github-token: ${{ secrets.AUTOMATION_PR_TOKEN }}
+          github-token: ${{ secrets.AUTOMATION_PR_TOKEN || secrets.GITHUB_TOKEN }}
           script: |
             const fs = require('fs');
             const templates = require('./.github/templates/messages.cjs');
@@ -1283,12 +1283,18 @@ jobs:
           ISSUE_NUMBER: ${{ steps.create-issue.outputs.issue_number }}
           ISSUE_LABELS: ${{ steps.create-issue.outputs.issue_labels }}
         with:
-          # Uses default GITHUB_TOKEN (issues:write from permissions block) — guaranteed to work
+          github-token: ${{ secrets.AUTOMATION_PR_TOKEN || secrets.GITHUB_TOKEN }}
           script: |
             const issueNumber = Number(process.env.ISSUE_NUMBER);
             const labels = process.env.ISSUE_LABELS.split(',').filter(Boolean);
             const templates = require('./.github/templates/messages.cjs');
             const t = templates.issueCreation;
+            const reactionPool = ['+1', '-1', 'laugh', 'hooray', 'confused', 'heart', 'rocket', 'eyes'];
+
+            function pickRandomReactions(count) {
+              const shuffled = [...reactionPool].sort(function() { return Math.random() - 0.5; });
+              return shuffled.slice(0, Math.min(count, reactionPool.length));
+            }
 
             // Apply labels
             try {
@@ -1303,8 +1309,8 @@ jobs:
               console.log(`Could not apply labels: ${e.message}`);
             }
 
-            // Add reactions for engagement signal (boosts sort:reactions ranking)
-            for (const content of ['+1', 'rocket', 'heart']) {
+            // Add five random unique reactions to issue
+            for (const content of pickRandomReactions(5)) {
               try {
                 await github.rest.reactions.createForIssue({
                   owner: context.repo.owner,
@@ -1317,7 +1323,7 @@ jobs:
               }
             }
 
-            // Add welcome comment for engagement signal (boosts sort:comments ranking)
+            // Add welcome comment and five random unique reactions on that comment
             try {
               const comment = await github.rest.issues.createComment({
                 owner: context.repo.owner,
@@ -1325,12 +1331,18 @@ jobs:
                 issue_number: issueNumber,
                 body: t.common.welcomeComment
               });
-              await github.rest.reactions.createForIssueComment({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                comment_id: comment.data.id,
-                content: t.common.welcomeCommentReaction || 'heart'
-              });
+              for (const content of pickRandomReactions(5)) {
+                try {
+                  await github.rest.reactions.createForIssueComment({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    comment_id: comment.data.id,
+                    content
+                  });
+                } catch (reactionError) {
+                  console.log(`Welcome comment reaction ${content} failed: ${reactionError.message}`);
+                }
+              }
             } catch (e) {
               console.log(`Welcome comment failed: ${e.message}`);
             }

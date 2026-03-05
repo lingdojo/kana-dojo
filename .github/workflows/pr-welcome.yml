@@ -17,7 +17,7 @@ jobs:
       - name: Post welcome comment
         uses: actions/github-script@v7
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.AUTOMATION_PR_TOKEN || secrets.GITHUB_TOKEN }}
           script: |
             const path = '.github/templates/messages.cjs';
             const ref = context.payload.pull_request.head.sha;
@@ -40,6 +40,32 @@ jobs:
             vm.runInNewContext(content, { module, exports: module.exports, require });
             const templates = module.exports;
             const t = templates.prWelcome;
+
+            const reactionPool = ['+1', 'laugh', 'hooray', 'heart', 'rocket', 'eyes'];
+            function pickRandomReactions(count) {
+              const shuffled = [...reactionPool].sort(() => Math.random() - 0.5);
+              return shuffled.slice(0, Math.min(count, reactionPool.length));
+            }
+            async function reactToComment(commentId, reactions) {
+              for (const content of reactions) {
+                try {
+                  await github.rest.reactions.createForIssueComment({
+                    owner: context.repo.owner, repo: context.repo.repo,
+                    comment_id: commentId, content
+                  });
+                } catch (e) { console.log(`Comment reaction ${content} failed: ${e.message}`); }
+              }
+            }
+            async function reactToPR(prNumber, reactions) {
+              for (const content of reactions) {
+                try {
+                  await github.rest.reactions.createForIssue({
+                    owner: context.repo.owner, repo: context.repo.repo,
+                    issue_number: prNumber, content
+                  });
+                } catch (e) { console.log(`PR reaction ${content} failed: ${e.message}`); }
+              }
+            }
 
             const pr = context.payload.pull_request;
             const author = pr.user.login;
@@ -84,12 +110,14 @@ jobs:
               welcomeMessage += `\n\n${t.firstTimeContributor.separator}\n\n${t.firstTimeContributor.title} ${t.firstTimeContributor.body}`;
             }
 
-            await github.rest.issues.createComment({
+            const welcomeComment = await github.rest.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: pr.number,
               body: welcomeMessage
             });
+            await reactToPR(pr.number, pickRandomReactions(3));
+            await reactToComment(welcomeComment.data.id, pickRandomReactions(3));
 
             console.log(`Welcomed PR author @${author} on PR #${pr.number}`);
 

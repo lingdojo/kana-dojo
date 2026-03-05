@@ -482,5 +482,38 @@
       "Oden"
     ],
     "correctIndex": 0
+  },
+  {
+    "question": "What is the Japanese word for \"goodbye\"?",
+    "difficulty": "easy",
+    "answers": [
+      "Sayonara",
+      "Konnichiwa",
+      "Arigatou",
+      "Oyasumi"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which traditional Japanese sport involves wrestling in a ring?",
+    "difficulty": "easy",
+    "answers": [
+      "Sumo",
+      "Kendo",
+      "Judo",
+      "Aikido"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "question": "What is the Japanese term for cherry blossoms?",
+    "difficulty": "easy",
+    "answers": [
+      "Sakura",
+      "Ume",
+      "Momiji",
+      "Kiku"
+    ],
+    "correctIndex": 0
   }
 ]
