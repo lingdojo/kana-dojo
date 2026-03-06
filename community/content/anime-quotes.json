@@ -322,10 +322,31 @@
     "character": "Jolyne Cujoh"
   },
   {
-    "japanese": "レロレロレロレロ",
-    "romaji": "Rero rero rero rero",
-    "english": "Lero lero lero lero. (alt wording 27) (alt wording 79)",
+    "japanese": "ほう…向かってくるのか",
+    "romaji": "Ho... mukatte kuru no ka",
+    "english": "Oh? You're approaching me? (alt wording 3) (alt wording 55)",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
-    "character": "Noriaki Kakyoin"
-  }
+    "character": "DIO"
+  },
+  {
+  "japanese": "フランキーの兄弟をコーティングしてる船大工か！",
+  "romaji": "Franky no kyoudai o coating shiteru funadaiku ka!",
+  "english": "So he's a shipwright who's coating Franky's brother!",
+  "anime": "One Piece",
+  "character": "Monkey D. Luffy"
+},
+{
+"japanese": "無駄無駄無駄無駄無駄！",
+"romaji": "Muda muda muda muda muda!",
+"english": "Useless! Useless! Useless! (alt wording 7) (alt wording 59)",
+"anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+"character": "DIO"
+},
+{
+  "japanese": "ほう…向かってくるのか",
+  "romaji": "Ho... mukatte kuru no ka",
+  "english": "Oh? You're approaching me? (alt wording 3)",
+  "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+  "character": "DIO"
+}
 ]

@@ -1202,8 +1202,10 @@
     "backgroundColor": "oklch(22.0% 0.015 250.0 / 1)",
     "mainColor": "oklch(72.0% 0.105 230.0 / 1)",
     "secondaryColor": "oklch(78.0% 0.025 260.0 / 1)",
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true,
+    "completedBy": "Godson-Ozioma",
+    "completedPR": 7426
   },
   {
     "id": "sake-glass",
@@ -1695,7 +1697,9 @@
     "mainColor": "oklch(78.0% 0.030 220.0 / 1)",
     "secondaryColor": "oklch(65.0% 0.040 260.0 / 1)",
     "issued": false,
-    "completed": false
+    "completed": true,
+    "completedBy": "kiinshuk",
+    "completedPR": 7402
   },
   {
     "id": "river-stone",
