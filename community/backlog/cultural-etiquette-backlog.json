@@ -374,7 +374,7 @@
     "dont": "土足で室内に上がる",
     "note": "家庭・旅館では基本マナー。",
     "id": 42,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -446,7 +446,7 @@
     "dont": "割り込む",
     "note": "駅・店頭では順番厳守。",
     "id": 50,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
