@@ -28,5 +28,10 @@
   "wrong": "私は日本語を話しますです。",
   "correct": "私は日本語を話します。",
   "explanation": "Do not stack ます and です in one predicate. (Pattern set 3)"
+},
+  {
+  "wrong": "もし雨が降ります、行きません。",
+  "correct": "もし雨が降ったら、行きません。",
+  "explanation": "Conditional needs たら/なら etc. (Pattern set 1)"
 }
 ]
