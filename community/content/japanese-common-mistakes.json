@@ -18,5 +18,10 @@
     "wrong": "これはおいしいだ。",
     "correct": "これはおいしい。",
     "explanation": "い-adjectives do not take だ in plain present. (Pattern set 3)"
-  }
+  },
+  {
+  "wrong": "私はお金がありませんです。",
+  "correct": "私はお金がありません。",
+  "explanation": "Negative polite form already complete. (Pattern set 4)"
+}
 ]
