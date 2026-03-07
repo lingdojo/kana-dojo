@@ -39,19 +39,19 @@
     "id": 7,
     "fact": "Japan has a word 'tarento' (タレント) for TV personalities who are famous simply for being on TV - not actors or musicians, just professional celebrities.",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 8,
     "fact": "Japan has a dedicated day for curry rice (January 22nd), established because it was first served in school lunches nationwide on that date in 1982.",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 9,
     "fact": "The Japanese concept of 'ma' (間) refers to the meaningful pause or negative space in music, art, and conversation - the beauty of what's not there.",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 10,
@@ -1898,25 +1898,25 @@
   {
     "id": 317,
     "fact": "'Amanatto' are sweetened azuki beans often served with tea as a small snack.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 318,
     "fact": "The word 'sukiyaki' refers both to the dish and to a style of cooking ingredients at the table.",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 319,
     "fact": "The Japanese term 'shinrin-yoku' (森林浴) translates to \"forest bathing\" and emphasizes mindful time in nature.",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 320,
     "fact": "'Mame' (豆) can mean both \"bean\" and \"diligent\"—so bean-related gifts sometimes imply good health and hard work.",
-    "issued": false,
+    "issued": true,
     "completed": false
   }
 ]
