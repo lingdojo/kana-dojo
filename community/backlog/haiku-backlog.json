@@ -1,7 +1,9 @@
 [
   {
     "id": 1,
-    "japanese": "古池や\n蛙飛びこむ\n水の音",
+    "japanese": "古池や
+蛙飛びこむ
+水の音",
     "romaji": "Furu ike ya / kawazu tobikomu / mizu no oto",
     "english": "An old pond; a frog jumps in; the sound of water.",
     "poet": "Matsuo Basho",
@@ -13,7 +15,9 @@
   },
   {
     "id": 2,
-    "japanese": "夏草や\n兵どもが\n夢の跡",
+    "japanese": "夏草や
+兵どもが
+夢の跡",
     "romaji": "Natsukusa ya / tsuwamono domo ga / yume no ato",
     "english": "Summer grasses; all that remains of warriors' dreams.",
     "poet": "Matsuo Basho",
@@ -25,7 +29,9 @@
   },
   {
     "id": 3,
-    "japanese": "柿くへば\n鐘が鳴るなり\n法隆寺",
+    "japanese": "柿くへば
+鐘が鳴るなり
+法隆寺",
     "romaji": "Kaki kueba / kane ga naru nari / Horyuji",
     "english": "Biting a persimmon, the bell tolls at Horyu-ji.",
     "poet": "Masaoka Shiki",
@@ -37,7 +43,9 @@
   },
   {
     "id": 4,
-    "japanese": "名月を\n取ってくれろと\n泣く子かな",
+    "japanese": "名月を
+取ってくれろと
+泣く子かな",
     "romaji": "Meigetsu o / totte kurero to / naku ko kana",
     "english": "A child cries, asking me to fetch the harvest moon.",
     "poet": "Kobayashi Issa",
@@ -49,7 +57,9 @@
   },
   {
     "id": 5,
-    "japanese": "しばらくは\n花の上なる\n月夜かな",
+    "japanese": "しばらくは
+花の上なる
+月夜かな",
     "romaji": "Shibaraku wa / hana no ue naru / tsukiyo kana",
     "english": "For a while, moonlight rests above the blossoms.",
     "poet": "Matsuo Basho",
@@ -61,7 +71,9 @@
   },
   {
     "id": 6,
-    "japanese": "五月雨を\n集めて早し\n最上川",
+    "japanese": "五月雨を
+集めて早し
+最上川",
     "romaji": "Samidare o / atsume te hayashi / Mogamigawa",
     "english": "Gathering summer rains, the Mogami River rushes on.",
     "poet": "Matsuo Basho",
@@ -73,7 +85,9 @@
   },
   {
     "id": 7,
-    "japanese": "雀の子\nそこのけそこのけ\nお馬が通る",
+    "japanese": "雀の子
+そこのけそこのけ
+お馬が通る",
     "romaji": "Suzume no ko / soko noke soko noke / ouma ga toru",
     "english": "Little sparrows, move aside, the horse is coming through.",
     "poet": "Kobayashi Issa",
@@ -81,11 +95,13 @@
     "kigo": "Sparrow chicks (suzume no ko)",
     "notes": "Playful and warm, characteristic of Issa's tone.",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 8,
-    "japanese": "朝顔に\nつるべ取られて\nもらい水",
+    "japanese": "朝顔に
+つるべ取られて
+もらい水",
     "romaji": "Asagao ni / tsurube torarete / morai mizu",
     "english": "Morning glories took my well-bucket; I asked next door for water.",
     "poet": "Kaga no Chiyo",
@@ -97,7 +113,9 @@
   },
   {
     "id": 9,
-    "japanese": "行く春や\n鳥啜き魚の\n目は泪",
+    "japanese": "行く春や
+鳥啼き魚の
+目は涙",
     "romaji": "Yuku haru ya / tori naki uo no / me wa namida",
     "english": "Spring departs; birds cry, and fish eyes seem tearful.",
     "poet": "Matsuo Basho",
@@ -109,7 +127,9 @@
   },
   {
     "id": 10,
-    "japanese": "痩蛙\n負けるな一茶\nこれにあり",
+    "japanese": "痩蛙
+負けるな一茶
+これにあり",
     "romaji": "Yasegaeru / makeru na Issa / kore ni ari",
     "english": "Skinny frog, don't give up! Issa is here with you.",
     "poet": "Kobayashi Issa",
@@ -121,7 +141,9 @@
   },
   {
     "id": 11,
-    "japanese": "秋深き\n隣は何を\nする人ぞ",
+    "japanese": "秋深き
+隣は何を
+する人ぞ",
     "romaji": "Aki fukaki / tonari wa nani o / suru hito zo",
     "english": "In deep autumn, what kind of person lives next door?",
     "poet": "Matsuo Basho",
@@ -133,7 +155,9 @@
   },
   {
     "id": 12,
-    "japanese": "春の海\nひねもすのたり\nのたりかな",
+    "japanese": "春の海
+ひねもすのたり
+のたりかな",
     "romaji": "Haru no umi / hinemosu notari / notari kana",
     "english": "The spring sea stretches lazily all day, rising and falling.",
     "poet": "Yosa Buson",
