@@ -6,7 +6,7 @@
     "game": "The Prince of Tennis: Sweat & Tears 2",
     "character": "Ryoma Echizen",
     "id": 1,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -16,7 +16,7 @@
     "game": "Fate/stay night [Realta Nua]",
     "character": "Saber",
     "id": 2,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -36,7 +36,7 @@
     "game": "Steins;Gate: My Darling's Embrace",
     "character": "Rintaro Okabe",
     "id": 4,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -56,7 +56,7 @@
     "game": "JoJo’s Bizarre Adventure: All-Star Battle",
     "character": "Giorno Giovanna",
     "id": 6,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -66,7 +66,7 @@
     "game": "Dragon Quest series",
     "character": "Recurring command voice",
     "id": 7,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -76,7 +76,7 @@
     "game": "Kingdom Hearts series (JP dub)",
     "character": "Sora",
     "id": 8,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -86,7 +86,7 @@
     "game": "Street Fighter series",
     "character": "Ryu",
     "id": 9,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -96,7 +96,7 @@
     "game": "Dragon Quest XI",
     "character": "Hero / party lines",
     "id": 10,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -106,7 +106,7 @@
     "game": "Monster Hunter series",
     "character": "Guild Handler lines",
     "id": 11,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -117,7 +117,7 @@
     "character": "Rival characters",
     "id": 12,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "japanese": "運命なんて、変えてみせる！",
@@ -126,7 +126,7 @@
     "game": "Final Fantasy Type-0",
     "character": "Class Zero",
     "id": 13,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -136,8 +136,8 @@
     "game": "Yakuza: Like a Dragon",
     "character": "Ichiban Kasuga",
     "id": 14,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "この戦い、負けられない！",
@@ -147,7 +147,7 @@
     "character": "Various protagonists",
     "id": 15,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "それもまた一興",
@@ -157,7 +157,7 @@
     "character": "Nobunaga Oda",
     "id": 16,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "世界を救うって、そういうことだろ？",
@@ -166,7 +166,7 @@
     "game": "Persona 5 Strikers",
     "character": "Joker",
     "id": 17,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -186,7 +186,7 @@
     "game": "Tales series",
     "character": "Various endings",
     "id": 19,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -216,7 +216,7 @@
     "game": "Fate/stay night [Realta Nua]",
     "character": "Saber",
     "id": 22,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -236,8 +236,8 @@
     "game": "Steins;Gate: My Darling's Embrace",
     "character": "Rintaro Okabe",
     "id": 24,
-    "issued": false,
-    "completed": true
+    "issued": true,
+    "completed": false
   },
   {
     "japanese": "希望は前に進むんだ！",
@@ -247,7 +247,7 @@
     "character": "Makoto Naegi",
     "id": 25,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "japanese": "覚悟はいいか？ 俺はできてる。",
@@ -256,7 +256,7 @@
     "game": "JoJo’s Bizarre Adventure: All-Star Battle",
     "character": "Giorno Giovanna",
     "id": 26,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -266,7 +266,7 @@
     "game": "Dragon Quest series",
     "character": "Recurring command voice",
     "id": 27,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -286,7 +286,7 @@
     "game": "Street Fighter series",
     "character": "Ryu",
     "id": 29,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -346,7 +346,7 @@
     "game": "Fire Emblem series",
     "character": "Various protagonists",
     "id": 35,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -356,7 +356,7 @@
     "game": "Onimusha series",
     "character": "Nobunaga Oda",
     "id": 36,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -406,7 +406,7 @@
     "game": "The Prince of Tennis: Sweat & Tears 2",
     "character": "Ryoma Echizen",
     "id": 41,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -436,7 +436,7 @@
     "game": "Steins;Gate: My Darling's Embrace",
     "character": "Rintaro Okabe",
     "id": 44,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -516,7 +516,7 @@
     "game": "Pokemon series",
     "character": "Rival characters",
     "id": 52,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -546,7 +546,7 @@
     "game": "Fire Emblem series",
     "character": "Various protagonists",
     "id": 55,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -566,7 +566,7 @@
     "game": "Persona 5 Strikers",
     "character": "Joker",
     "id": 57,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -637,7 +637,7 @@
     "character": "Rintaro Okabe",
     "id": 64,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "japanese": "希望は前に進むんだ！",
@@ -647,7 +647,7 @@
     "character": "Makoto Naegi",
     "id": 65,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "japanese": "覚悟はいいか？ 俺はできてる。",
@@ -657,7 +657,7 @@
     "character": "Giorno Giovanna",
     "id": 66,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "japanese": "仲間を信じろ",
@@ -666,7 +666,7 @@
     "game": "Dragon Quest series",
     "character": "Recurring command voice",
     "id": 67,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -676,7 +676,7 @@
     "game": "Kingdom Hearts series (JP dub)",
     "character": "Sora",
     "id": 68,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -696,7 +696,7 @@
     "game": "Dragon Quest XI",
     "character": "Hero / party lines",
     "id": 70,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -716,7 +716,7 @@
     "game": "Pokemon series",
     "character": "Rival characters",
     "id": 72,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -747,7 +747,7 @@
     "character": "Various protagonists",
     "id": 75,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "それもまた一興",
@@ -757,7 +757,7 @@
     "character": "Nobunaga Oda",
     "id": 76,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "世界を救うって、そういうことだろ？",
@@ -766,7 +766,7 @@
     "game": "Persona 5 Strikers",
     "character": "Joker",
     "id": 77,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -827,7 +827,7 @@
     "character": "Luke fon Fabre",
     "id": 83,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "japanese": "未来を変えるんだ！",
@@ -837,7 +837,7 @@
     "character": "Rintaro Okabe",
     "id": 84,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "japanese": "希望は前に進むんだ！",
@@ -846,8 +846,8 @@
     "game": "Danganronpa series",
     "character": "Makoto Naegi",
     "id": 85,
-    "issued": false,
-    "completed": true
+    "issued": true,
+    "completed": false
   },
   {
     "japanese": "覚悟はいいか？ 俺はできてる。",
@@ -856,7 +856,7 @@
     "game": "JoJo’s Bizarre Adventure: All-Star Battle",
     "character": "Giorno Giovanna",
     "id": 86,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -866,7 +866,7 @@
     "game": "Dragon Quest series",
     "character": "Recurring command voice",
     "id": 87,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -876,7 +876,7 @@
     "game": "Kingdom Hearts series (JP dub)",
     "character": "Sora",
     "id": 88,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -886,7 +886,7 @@
     "game": "Street Fighter series",
     "character": "Ryu",
     "id": 89,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -896,7 +896,7 @@
     "game": "Dragon Quest XI",
     "character": "Hero / party lines",
     "id": 90,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -907,7 +907,7 @@
     "character": "Guild Handler lines",
     "id": 91,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "japanese": "次はもっと強くなる",
@@ -917,7 +917,7 @@
     "character": "Rival characters",
     "id": 92,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "japanese": "運命なんて、変えてみせる！",
@@ -926,7 +926,7 @@
     "game": "Final Fantasy Type-0",
     "character": "Class Zero",
     "id": 93,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -976,7 +976,7 @@
     "game": "The Legend of Zelda: Breath of the Wild (JP)",
     "character": "Revali",
     "id": 98,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -997,7 +997,7 @@
     "character": "Musashi reference",
     "id": 100,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "まだまだだね",
@@ -1007,7 +1007,7 @@
     "character": "Ryoma Echizen",
     "id": 101,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "約束された勝利の剣",
@@ -1016,7 +1016,7 @@
     "game": "Fate/stay night [Realta Nua]",
     "character": "Saber",
     "id": 102,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1027,7 +1027,7 @@
     "character": "Luke fon Fabre",
     "id": 103,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "japanese": "未来を変えるんだ！",
@@ -1037,7 +1037,7 @@
     "character": "Rintaro Okabe",
     "id": 104,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "japanese": "希望は前に進むんだ！",
@@ -1046,7 +1046,7 @@
     "game": "Danganronpa series",
     "character": "Makoto Naegi",
     "id": 105,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1057,7 +1057,7 @@
     "character": "Giorno Giovanna",
     "id": 106,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "japanese": "仲間を信じろ",
@@ -1086,7 +1086,7 @@
     "game": "Street Fighter series",
     "character": "Ryu",
     "id": 109,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1096,7 +1096,7 @@
     "game": "Dragon Quest XI",
     "character": "Hero / party lines",
     "id": 110,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1106,7 +1106,7 @@
     "game": "Monster Hunter series",
     "character": "Guild Handler lines",
     "id": 111,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1116,7 +1116,7 @@
     "game": "Pokemon series",
     "character": "Rival characters",
     "id": 112,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1127,7 +1127,7 @@
     "character": "Class Zero",
     "id": 113,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "生きるってのは、戦うってことだ",
@@ -1136,8 +1136,8 @@
     "game": "Yakuza: Like a Dragon",
     "character": "Ichiban Kasuga",
     "id": 114,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "この戦い、負けられない！",
@@ -1146,8 +1146,8 @@
     "game": "Fire Emblem series",
     "character": "Various protagonists",
     "id": 115,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "それもまた一興",
@@ -1166,7 +1166,7 @@
     "game": "Persona 5 Strikers",
     "character": "Joker",
     "id": 117,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

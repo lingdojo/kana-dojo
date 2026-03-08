@@ -232,10 +232,14 @@ export default function GoalTimersPanel({
 
           <div className='flex gap-2'>
             <div className='flex-1'>
-              <label className='mb-1 block text-xs text-(--secondary-color)'>
+              <label
+                htmlFor='goal-timers-minutes'
+                className='mb-1 block text-xs text-(--secondary-color)'
+              >
                 Minutes
               </label>
               <input
+                id='goal-timers-minutes'
                 type='number'
                 min='0'
                 max='59'
@@ -249,10 +253,14 @@ export default function GoalTimersPanel({
               />
             </div>
             <div className='flex-1'>
-              <label className='mb-1 block text-xs text-(--secondary-color)'>
+              <label
+                htmlFor='goal-timers-seconds'
+                className='mb-1 block text-xs text-(--secondary-color)'
+              >
                 Seconds
               </label>
               <input
+                id='goal-timers-seconds'
                 type='number'
                 min='0'
                 max='59'

@@ -51,10 +51,10 @@ if (typeof stars !== 'number' || typeof forks !== 'number') {
   process.exit(0);
 }
 
-// Note: We omit `anon=1` to match the contributor count shown on GitHub's website.
-// There may be a small discrepancy (±1-3) due to caching or how GitHub handles
-// deleted/renamed accounts and bots. This is expected and acceptable.
-const contributorsUrl = `${apiBase}/repos/${owner}/${repo}/contributors?per_page=1`;
+// To match the contributor count shown on GitHub's repository homepage,
+// we MUST include `anon=true`. GitHub's UI explicitly includes anonymous
+// contributors in the total count displayed in the sidebar.
+const contributorsUrl = `${apiBase}/repos/${owner}/${repo}/contributors?per_page=1&anon=true`;
 const contributorsResult = await fetchJson(contributorsUrl);
 if (!contributorsResult) process.exit(0);
 

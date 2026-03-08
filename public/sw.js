@@ -8,7 +8,7 @@
  * It uses cache-first strategy for audio, network-first for translations.
  */
 
-const AUDIO_CACHE_NAME = 'audio-cache-v2';
+const AUDIO_CACHE_NAME = 'audio-cache-v3';
 const API_CACHE_NAME = 'kanadojo-api-v1';
 const STATIC_CACHE_NAME = 'kanadojo-static-v1';
 
@@ -47,10 +47,10 @@ const AUDIO_FILES = [
   '/sounds/correct.opus',
   '/sounds/long.opus',
   '/sounds/error/error1/error1_1.opus',
-  '/sounds/click/click4/click4_11.opus',
-  '/sounds/click/click4/click4_22.opus',
-  '/sounds/click/click4/click4_33.opus',
-  '/sounds/click/click4/click4_44.opus',
+  '/sounds/monkeytype-pack/nk-creams/click4_11.opus',
+  '/sounds/monkeytype-pack/nk-creams/click4_22.opus',
+  '/sounds/monkeytype-pack/nk-creams/click4_33.opus',
+  '/sounds/monkeytype-pack/nk-creams/click4_44.opus',
 ];
 
 // Install event - precache audio files

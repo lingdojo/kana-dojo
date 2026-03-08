@@ -45,15 +45,15 @@
     "explanation": "で marks location of action. (Pattern set 1)",
     "id": 6,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "wrong": "私は昨日東京に行きます。",
     "correct": "私は昨日東京に行きました。",
     "explanation": "Use past tense for past actions. (Pattern set 1)",
     "id": 7,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "wrong": "東京は人が多いです、きれいです。",
@@ -92,7 +92,7 @@
     "correct": "もし雨が降ったら、行きません。",
     "explanation": "Conditional needs たら/なら etc. (Pattern set 1)",
     "id": 12,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -100,7 +100,7 @@
     "correct": "これは私の本です。",
     "explanation": "Place の correctly in noun phrase. (Pattern set 1)",
     "id": 13,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -124,7 +124,7 @@
     "correct": "日本語がわかります。",
     "explanation": "わかる takes が. (Pattern set 1)",
     "id": 16,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -156,7 +156,7 @@
     "correct": "私はお金がありません。",
     "explanation": "Negative polite form already complete. (Pattern set 1)",
     "id": 20,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -165,7 +165,7 @@
     "explanation": "Do not stack ます and です in one predicate. (Pattern set 2)",
     "id": 21,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "wrong": "日本語が好きをです。",
@@ -173,7 +173,7 @@
     "explanation": "好き takes が, not を. (Pattern set 2)",
     "id": 22,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "wrong": "静かい部屋",
@@ -197,7 +197,7 @@
     "explanation": "Recipient takes に with 教える. (Pattern set 2)",
     "id": 25,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "wrong": "図書館に本を借りました。",
@@ -205,14 +205,14 @@
     "explanation": "で marks location of action. (Pattern set 2)",
     "id": 26,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "wrong": "私は昨日東京に行きます。",
     "correct": "私は昨日東京に行きました。",
     "explanation": "Use past tense for past actions. (Pattern set 2)",
     "id": 27,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -220,7 +220,7 @@
     "correct": "東京は人が多くて、きれいです。",
     "explanation": "Use て-form to connect clauses. (Pattern set 2)",
     "id": 28,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -244,7 +244,7 @@
     "correct": "毎日日本語を勉強しているので上手になります。",
     "explanation": "ので is smoother/neutral for reason. (Pattern set 2)",
     "id": 31,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -268,7 +268,7 @@
     "correct": "会議は三時から始まります。",
     "explanation": "Remove unnecessary particle after から. (Pattern set 2)",
     "id": 34,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -284,7 +284,7 @@
     "correct": "日本語がわかります。",
     "explanation": "わかる takes が. (Pattern set 2)",
     "id": 36,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -300,7 +300,7 @@
     "correct": "駅まで歩いて十分かかる。",
     "explanation": "Use natural collocation and order. (Pattern set 2)",
     "id": 38,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -316,15 +316,15 @@
     "correct": "私はお金がありません。",
     "explanation": "Negative polite form already complete. (Pattern set 2)",
     "id": 40,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "wrong": "私は日本語を話しますです。",
     "correct": "私は日本語を話します。",
     "explanation": "Do not stack ます and です in one predicate. (Pattern set 3)",
     "id": 41,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -332,7 +332,7 @@
     "correct": "日本語が好きです。",
     "explanation": "好き takes が, not を. (Pattern set 3)",
     "id": 42,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -388,7 +388,7 @@
     "correct": "友達に会うのを楽しみにしています。",
     "explanation": "Nominalize with の before を. (Pattern set 3)",
     "id": 49,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -420,7 +420,7 @@
     "correct": "これは私の本です。",
     "explanation": "Place の correctly in noun phrase. (Pattern set 3)",
     "id": 53,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -436,7 +436,7 @@
     "correct": "日本へ旅行に行きたい。",
     "explanation": "Use に行く for purpose. (Pattern set 3)",
     "id": 55,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -444,7 +444,7 @@
     "correct": "日本語がわかります。",
     "explanation": "わかる takes が. (Pattern set 3)",
     "id": 56,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -453,14 +453,14 @@
     "explanation": "Use ように for purpose/prevention. (Pattern set 3)",
     "id": 57,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "wrong": "駅まで十分歩きますかかる。",
     "correct": "駅まで歩いて十分かかる。",
     "explanation": "Use natural collocation and order. (Pattern set 3)",
     "id": 58,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -469,14 +469,14 @@
     "explanation": "Prefer noun linkage with の. (Pattern set 3)",
     "id": 59,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "wrong": "私はお金がありませんです。",
     "correct": "私はお金がありません。",
     "explanation": "Negative polite form already complete. (Pattern set 3)",
     "id": 60,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -484,7 +484,7 @@
     "correct": "私は日本語を話します。",
     "explanation": "Do not stack ます and です in one predicate. (Pattern set 4)",
     "id": 61,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -492,7 +492,7 @@
     "correct": "日本語が好きです。",
     "explanation": "好き takes が, not を. (Pattern set 4)",
     "id": 62,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -500,7 +500,7 @@
     "correct": "静かな部屋",
     "explanation": "な-adjectives require な before nouns. (Pattern set 4)",
     "id": 63,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -508,7 +508,7 @@
     "correct": "これはおいしい。",
     "explanation": "い-adjectives do not take だ in plain present. (Pattern set 4)",
     "id": 64,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -516,7 +516,7 @@
     "correct": "先生は私に日本語を教えました。",
     "explanation": "Recipient takes に with 教える. (Pattern set 4)",
     "id": 65,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -524,7 +524,7 @@
     "correct": "図書館で本を借りました。",
     "explanation": "で marks location of action. (Pattern set 4)",
     "id": 66,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -533,14 +533,14 @@
     "explanation": "Use past tense for past actions. (Pattern set 4)",
     "id": 67,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "wrong": "東京は人が多いです、きれいです。",
     "correct": "東京は人が多くて、きれいです。",
     "explanation": "Use て-form to connect clauses. (Pattern set 4)",
     "id": 68,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -548,7 +548,7 @@
     "correct": "友達に会うのを楽しみにしています。",
     "explanation": "Nominalize with の before を. (Pattern set 4)",
     "id": 69,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -556,7 +556,7 @@
     "correct": "私は兄が二人います。",
     "explanation": "Use 兄 for your own older brother. (Pattern set 4)",
     "id": 70,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -573,7 +573,7 @@
     "explanation": "Conditional needs たら/なら etc. (Pattern set 4)",
     "id": 72,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "wrong": "これは私のです本。",
@@ -581,7 +581,7 @@
     "explanation": "Place の correctly in noun phrase. (Pattern set 4)",
     "id": 73,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "wrong": "会議は三時からで始まります。",
@@ -589,14 +589,14 @@
     "explanation": "Remove unnecessary particle after から. (Pattern set 4)",
     "id": 74,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "wrong": "日本へ旅行を行きたい。",
     "correct": "日本へ旅行に行きたい。",
     "explanation": "Use に行く for purpose. (Pattern set 4)",
     "id": 75,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -604,7 +604,7 @@
     "correct": "日本語がわかります。",
     "explanation": "わかる takes が. (Pattern set 4)",
     "id": 76,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -628,7 +628,7 @@
     "correct": "この漢字の読み方は難しいです。",
     "explanation": "Prefer noun linkage with の. (Pattern set 4)",
     "id": 79,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -636,7 +636,7 @@
     "correct": "私はお金がありません。",
     "explanation": "Negative polite form already complete. (Pattern set 4)",
     "id": 80,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -661,14 +661,14 @@
     "explanation": "な-adjectives require な before nouns. (Pattern set 5)",
     "id": 83,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "wrong": "これはおいしいだ。",
     "correct": "これはおいしい。",
     "explanation": "い-adjectives do not take だ in plain present. (Pattern set 5)",
     "id": 84,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -676,7 +676,7 @@
     "correct": "先生は私に日本語を教えました。",
     "explanation": "Recipient takes に with 教える. (Pattern set 5)",
     "id": 85,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -684,7 +684,7 @@
     "correct": "図書館で本を借りました。",
     "explanation": "で marks location of action. (Pattern set 5)",
     "id": 86,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -724,7 +724,7 @@
     "correct": "毎日日本語を勉強しているので上手になります。",
     "explanation": "ので is smoother/neutral for reason. (Pattern set 5)",
     "id": 91,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -796,7 +796,7 @@
     "correct": "私はお金がありません。",
     "explanation": "Negative polite form already complete. (Pattern set 5)",
     "id": 100,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -860,7 +860,7 @@
     "correct": "東京は人が多くて、きれいです。",
     "explanation": "Use て-form to connect clauses. (Pattern set 6)",
     "id": 108,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -868,7 +868,7 @@
     "correct": "友達に会うのを楽しみにしています。",
     "explanation": "Nominalize with の before を. (Pattern set 6)",
     "id": 109,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -876,7 +876,7 @@
     "correct": "私は兄が二人います。",
     "explanation": "Use 兄 for your own older brother. (Pattern set 6)",
     "id": 110,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -932,7 +932,7 @@
     "correct": "宿題を忘れないように、メモします。",
     "explanation": "Use ように for purpose/prevention. (Pattern set 6)",
     "id": 117,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -940,7 +940,7 @@
     "correct": "駅まで歩いて十分かかる。",
     "explanation": "Use natural collocation and order. (Pattern set 6)",
     "id": 118,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -956,7 +956,7 @@
     "correct": "私はお金がありません。",
     "explanation": "Negative polite form already complete. (Pattern set 6)",
     "id": 120,
-    "issued": true,
+    "issued": false,
     "completed": false
   }
 ]

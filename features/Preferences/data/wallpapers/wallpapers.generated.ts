@@ -81,6 +81,30 @@ export const GENERATED_WALLPAPERS: GeneratedWallpaper[] = [
     urlWebp: '/wallpapers/chureito-fuji-sunset-1920w.webp',
   },
   {
+    id: 'crimson-coder',
+    name: 'Crimson Coder',
+    url: '/wallpapers/crimson-coder-2560w.avif',
+    urlWebp: '/wallpapers/crimson-coder-2560w.webp',
+  },
+  {
+    id: 'dawn-pagoda',
+    name: 'Dawn Pagoda',
+    url: '/wallpapers/dawn-pagoda-2560w.avif',
+    urlWebp: '/wallpapers/dawn-pagoda-2560w.webp',
+  },
+  {
+    id: 'moonlit-crossing',
+    name: 'Moonlit Crossing',
+    url: '/wallpapers/moonlit-crossing-2560w.avif',
+    urlWebp: '/wallpapers/moonlit-crossing-2560w.webp',
+  },
+  {
+    id: 'neon-cafe',
+    name: 'Neon Cafe',
+    url: '/wallpapers/neon-cafe-1920w.avif',
+    urlWebp: '/wallpapers/neon-cafe-1920w.webp',
+  },
+  {
     id: 'retro-city',
     name: 'Retro City',
     url: '/wallpapers/retro-city-1920w.avif',

@@ -205,9 +205,9 @@ export default function KanaTrace() {
             </h2>
             <div className='space-y-6'>
               <div>
-                <label className='mb-2 block text-sm text-(--secondary-color)'>
+                <p className='mb-2 block text-sm text-(--secondary-color)'>
                   Brush Color
-                </label>
+                </p>
                 <div className='flex flex-wrap gap-2'>
                   {[
                     '#ff4e50',
@@ -232,10 +232,14 @@ export default function KanaTrace() {
                 </div>
               </div>
               <div>
-                <label className='mb-2 block text-sm text-(--secondary-color)'>
+                <label
+                  htmlFor='kana-trace-brush-size'
+                  className='mb-2 block text-sm text-(--secondary-color)'
+                >
                   Brush Size: {brushSize}px
                 </label>
                 <input
+                  id='kana-trace-brush-size'
                   type='range'
                   min='2'
                   max='20'

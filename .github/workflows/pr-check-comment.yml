@@ -8,7 +8,7 @@ on:
 permissions:
   contents: read
   issues: write
-  pull-requests: read
+  pull-requests: write
 
 concurrency:
   group: pr-quality-check-comment-${{ github.event.workflow_run.id }}-${{ github.event.workflow_run.head_sha }}
@@ -48,6 +48,32 @@ jobs:
             const templates = module.exports;
             const successT = templates.prCheck.success;
             const failureT = templates.prCheck.failure;
+
+            const reactionPool = ['+1', 'laugh', 'hooray', 'heart', 'rocket', 'eyes'];
+            function pickRandomReactions(count) {
+              const shuffled = [...reactionPool].sort(() => Math.random() - 0.5);
+              return shuffled.slice(0, Math.min(count, reactionPool.length));
+            }
+            async function reactToComment(commentId, reactions) {
+              for (const content of reactions) {
+                try {
+                  await github.rest.reactions.createForIssueComment({
+                    owner: context.repo.owner, repo: context.repo.repo,
+                    comment_id: commentId, content
+                  });
+                } catch (e) { console.log(`Comment reaction ${content} failed: ${e.message}`); }
+              }
+            }
+            async function reactToPR(prNumber, reactions) {
+              for (const content of reactions) {
+                try {
+                  await github.rest.reactions.createForIssue({
+                    owner: context.repo.owner, repo: context.repo.repo,
+                    issue_number: prNumber, content
+                  });
+                } catch (e) { console.log(`PR reaction ${content} failed: ${e.message}`); }
+              }
+            }
 
             const headSha = workflowRun.head_sha;
             const conclusion = workflowRun.conclusion;
@@ -113,9 +139,11 @@ jobs:
 
             const body = `${t.title}\n\n${t.body}\n\n${t.footer}\n\n${marker}`;
 
-            await github.rest.issues.createComment({
+            const qualityComment = await github.rest.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: prNumber,
               body: body
             });
+            await reactToPR(prNumber, pickRandomReactions(3));
+            await reactToComment(qualityComment.data.id, pickRandomReactions(3));

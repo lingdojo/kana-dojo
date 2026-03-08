@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { Suspense, useEffect, useRef } from 'react';
 import { useSearchParams } from 'next/navigation';
 import dynamic from 'next/dynamic';
 import { ArrowLeftRight, WifiOff, Languages, Sparkles } from 'lucide-react';
@@ -31,7 +31,7 @@ interface TranslatorPageProps {
   locale?: string;
 }
 
-export default function TranslatorPage({ locale = 'en' }: TranslatorPageProps) {
+function TranslatorPageContent({ locale = 'en' }: TranslatorPageProps) {
   const isEs = locale === 'es';
   const searchParams = useSearchParams();
   const initializedFromUrl = useRef(false);
@@ -264,6 +264,14 @@ export default function TranslatorPage({ locale = 'en' }: TranslatorPageProps) {
       </div>
       <SEOContent locale={locale} />
     </div>
+  );
+}
+
+export default function TranslatorPage(props: TranslatorPageProps) {
+  return (
+    <Suspense fallback={null}>
+      <TranslatorPageContent {...props} />
+    </Suspense>
   );
 }
 

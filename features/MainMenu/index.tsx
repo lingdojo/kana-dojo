@@ -32,6 +32,12 @@ const MainMenu = () => {
 
   const { theme, setTheme, isGlassMode } = useThemePreferences();
 
+  const characterTileClassName = clsx(
+    'inline-flex h-12 w-12 items-center justify-center rounded-xl bg-(--background-color)',
+    ' text-(--secondary-color) ',
+    'transition-colors',
+  );
+
   const { playClick } = useClick();
 
   const expandDecorations = useDecorationsStore(
@@ -90,6 +96,8 @@ const MainMenu = () => {
     { name: 'patch notes', href: '/patch-notes', icon: FileDiff },
     { name: 'credits', href: '/credits', icon: Sparkle },
   ];
+
+  const mobileLabelInset = 'pl-[max(30%,calc(50%-5.5rem))]';
 
   return (
     <div
@@ -255,9 +263,12 @@ const MainMenu = () => {
                 <button
                   className={clsx(
                     'flex h-full w-full text-2xl',
-                    'items-center justify-center gap-1.5 border-(--border-color)',
+                    'items-center gap-3 border-(--border-color)',
+                    'justify-start md:justify-center',
                     'md:border-b-4',
                     'py-8',
+                    mobileLabelInset,
+                    'md:pl-0',
                     'group',
                     i === 0 && 'rounded-tl-2xl rounded-bl-2xl',
                     i === links.length - 1 && 'rounded-tr-2xl rounded-br-2xl',
@@ -266,13 +277,10 @@ const MainMenu = () => {
                   )}
                   onClick={() => playClick()}
                 >
-                  <span
-                    lang='ja'
-                    className='font-normal text-(--secondary-color)'
-                  >
+                  <span lang='ja' className={characterTileClassName}>
                     {link.name_ja}
                   </span>
-                  <span lang='en' className=''>
+                  <span lang='en' className='leading-none'>
                     {link.name_en}
                   </span>
                 </button>
