@@ -40,5 +40,12 @@
     "english": "because",
     "region": "Kyushu",
     "note": "Reason marker in Kyushu. (Set 3)"
-  }
+  },
+  {
+  "dialect": "あかん",
+  "standardJapanese": "だめ",
+  "english": "no good",
+  "region": "Kansai",
+  "note": "Used for prohibition/failure. (Set 4)"
+}
 ]
