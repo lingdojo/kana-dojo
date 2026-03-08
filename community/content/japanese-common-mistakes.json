@@ -20,18 +20,23 @@
     "explanation": "い-adjectives do not take だ in plain present. (Pattern set 3)"
   },
   {
-  "wrong": "私はお金がありませんです。",
-  "correct": "私はお金がありません。",
-  "explanation": "Negative polite form already complete. (Pattern set 4)"
-},
+    "wrong": "私はお金がありませんです。",
+    "correct": "私はお金がありません。",
+    "explanation": "Negative polite form already complete. (Pattern set 4)"
+  },
   {
-  "wrong": "私は日本語を話しますです。",
-  "correct": "私は日本語を話します。",
-  "explanation": "Do not stack ます and です in one predicate. (Pattern set 3)"
-},
+    "wrong": "私は日本語を話しますです。",
+    "correct": "私は日本語を話します。",
+    "explanation": "Do not stack ます and です in one predicate. (Pattern set 3)"
+  },
   {
-  "wrong": "もし雨が降ります、行きません。",
-  "correct": "もし雨が降ったら、行きません。",
-  "explanation": "Conditional needs たら/なら etc. (Pattern set 1)"
-}
+    "wrong": "もし雨が降ります、行きません。",
+    "correct": "もし雨が降ったら、行きません。",
+    "explanation": "Conditional needs たら/なら etc. (Pattern set 1)"
+  },
+  {
+    "wrong": "友達に会うを楽しみにしています。",
+    "correct": "友達に会うのを楽しみにしています。",
+    "explanation": "Nominalize with の before を. (Pattern set 4)"
+  }
 ]
