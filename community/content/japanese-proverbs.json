@@ -186,27 +186,33 @@
     "meaning": "It's too late for regrets"
   },
   {
-  "japanese": "猫の手も借りたい",
-  "romaji": "Neko no te mo karitai",
-  "english": "I'd even borrow a cat's paw",
-  "meaning": "Extremely busy"
+    "japanese": "猫の手も借りたい",
+    "romaji": "Neko no te mo karitai",
+    "english": "I'd even borrow a cat's paw",
+    "meaning": "Extremely busy"
   },
   {
-  "japanese": "三日坊主",
-  "romaji": "Mikka bouzu",
-  "english": "A three-day monk",
-  "meaning": "Someone who quits quickly"
-},
+    "japanese": "三日坊主",
+    "romaji": "Mikka bouzu",
+    "english": "A three-day monk",
+    "meaning": "Someone who quits quickly"
+  },
   {
-  "japanese": "急いては事を仕損じる",
-  "romaji": "Seite wa koto wo shisonjiru",
-  "english": "Haste will spoil things",
-  "meaning": "Rushing leads to mistakes"
-},
+    "japanese": "急いては事を仕損じる",
+    "romaji": "Seite wa koto wo shisonjiru",
+    "english": "Haste will spoil things",
+    "meaning": "Rushing leads to mistakes"
+  },
   {
-  "japanese": "失敗は成功のもと",
-  "romaji": "Shippai wa seikou no moto",
-  "english": "Failure is the origin of success",
-  "meaning": "Mistakes lead to growth"
-}
+    "japanese": "失敗は成功のもと",
+    "romaji": "Shippai wa seikou no moto",
+    "english": "Failure is the origin of success",
+    "meaning": "Mistakes lead to growth"
+  },
+  {
+    "japanese": "早起きは三文の得",
+    "romaji": "Hayaoki wa sanmon no toku",
+    "english": "Early rising is worth three coins",
+    "meaning": "Good things come from getting up early"
+  }
 ]
