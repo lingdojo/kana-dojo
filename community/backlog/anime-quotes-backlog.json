@@ -846,7 +846,7 @@
     "english": "I never give up, believe it! (alt wording 33)",
     "anime": "Naruto",
     "character": "Naruto Uzumaki",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -936,7 +936,7 @@
     "english": "I'm just a hero for fun. (alt wording 42)",
     "anime": "One Punch Man",
     "character": "Saitama",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

@@ -933,7 +933,7 @@
     "example": "彼はスマートな着こなしをしている。",
     "id": 104,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "termA": "テンション (tenshon)",
@@ -942,7 +942,7 @@
     "example": "ライブでテンションが上がった。",
     "id": 105,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "termA": "バイキング (baikingu)",
@@ -950,7 +950,7 @@
     "explanation": "Usually means buffet/all-you-can-eat in Japan. (Set 6)",
     "example": "ホテルの朝食はバイキングです。",
     "id": 106,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

@@ -605,14 +605,14 @@
     "explanation": "わかる takes が. (Pattern set 4)",
     "id": 76,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "wrong": "宿題を忘れないよう、メモします。",
     "correct": "宿題を忘れないように、メモします。",
     "explanation": "Use ように for purpose/prevention. (Pattern set 4)",
     "id": 77,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

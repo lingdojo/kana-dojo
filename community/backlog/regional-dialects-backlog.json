@@ -727,7 +727,7 @@
     "note": "Strong Nagoya marker. (Set 4)",
     "id": 73,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "ぶち",
@@ -736,7 +736,7 @@
     "region": "Yamaguchi/Hiroshima",
     "note": "Regional intensifier. (Set 4)",
     "id": 74,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

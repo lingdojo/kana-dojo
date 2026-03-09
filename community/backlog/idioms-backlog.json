@@ -609,7 +609,7 @@
     "meaning": "Do less than one should. (Set 4)",
     "id": 68,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "目がない",
@@ -617,7 +617,7 @@
     "english": "No eyes",
     "meaning": "Have a weakness for something. (Set 4)",
     "id": 69,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
