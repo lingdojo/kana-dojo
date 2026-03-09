@@ -204,57 +204,63 @@
     "secondaryColor": "oklch(88.0% 0.115 95.0 / 1)"
   },
   {
-  "id": "soba-slate",
-  "backgroundColor": "oklch(18.0% 0.015 250.0 / 1)",
-  "mainColor": "oklch(68.0% 0.085 60.0 / 1)",
-  "secondaryColor": "oklch(58.0% 0.045 70.0 / 1)"
+    "id": "soba-slate",
+    "backgroundColor": "oklch(18.0% 0.015 250.0 / 1)",
+    "mainColor": "oklch(68.0% 0.085 60.0 / 1)",
+    "secondaryColor": "oklch(58.0% 0.045 70.0 / 1)"
   },
   {
-  "id": "morning-fog",
-  "backgroundColor": "oklch(22.0% 0.010 240.0 / 1)",
-  "mainColor": "oklch(78.0% 0.030 220.0 / 1)",
-  "secondaryColor": "oklch(65.0% 0.040 260.0 / 1)"
+    "id": "morning-fog",
+    "backgroundColor": "oklch(22.0% 0.010 240.0 / 1)",
+    "mainColor": "oklch(78.0% 0.030 220.0 / 1)",
+    "secondaryColor": "oklch(65.0% 0.040 260.0 / 1)"
   },
- {
-  "id": "tsuyu-drizzle",
-  "backgroundColor": "oklch(22.0% 0.015 250.0 / 1)",
-  "mainColor": "oklch(72.0% 0.105 230.0 / 1)",
-  "secondaryColor": "oklch(78.0% 0.025 260.0 / 1)"
-},
-{
-  "id": "vaporwave-shrine",
-  "backgroundColor": "oklch(17.0% 0.072 305.0 / 1)",
-  "mainColor": "oklch(75.0% 0.175 195.0 / 1)",
-  "secondaryColor": "oklch(80.0% 0.195 330.0 / 1)"
-},
-{
-  "id": "komorebi-green",
-  "backgroundColor": "oklch(22.0% 0.030 150.0 / 1)",
-  "mainColor": "oklch(78.0% 0.135 145.0 / 1)",
-  "secondaryColor": "oklch(70.0% 0.090 110.0 / 1)"
-},
-{
-  "id": "midnight-ramen",
-  "backgroundColor": "oklch(16.0% 0.042 30.0 / 1)",
-  "mainColor": "oklch(78.0% 0.160 45.0 / 1)",
-  "secondaryColor": "oklch(85.0% 0.120 85.0 / 1)"
-},
-{
-  "id": "harbor-fog",
-  "backgroundColor": "oklch(22.0% 0.018 230.0 / 1)",
-  "mainColor": "oklch(80.0% 0.055 215.0 / 1)",
-  "secondaryColor": "oklch(62.0% 0.045 240.0 / 1)"
-},
-{
-  "id": "harbor-lanterns",
-  "backgroundColor": "oklch(16.5% 0.040 250.0 / 1)",
-  "mainColor": "oklch(78.0% 0.170 45.0 / 1)",
-  "secondaryColor": "oklch(70.0% 0.090 210.0 / 1)"
-},
   {
-  id: 'wisteria-dream',
-  backgroundColor: 'oklch(20.0% 0.048 290.0 / 1)',
-  mainColor: 'oklch(72.0% 0.175 295.0 / 1)',
-  secondaryColor: 'oklch(80.0% 0.125 320.0 / 1)'
-},
+    "id": "tsuyu-drizzle",
+    "backgroundColor": "oklch(22.0% 0.015 250.0 / 1)",
+    "mainColor": "oklch(72.0% 0.105 230.0 / 1)",
+    "secondaryColor": "oklch(78.0% 0.025 260.0 / 1)"
+  },
+  {
+    "id": "vaporwave-shrine",
+    "backgroundColor": "oklch(17.0% 0.072 305.0 / 1)",
+    "mainColor": "oklch(75.0% 0.175 195.0 / 1)",
+    "secondaryColor": "oklch(80.0% 0.195 330.0 / 1)"
+  },
+  {
+    "id": "komorebi-green",
+    "backgroundColor": "oklch(22.0% 0.030 150.0 / 1)",
+    "mainColor": "oklch(78.0% 0.135 145.0 / 1)",
+    "secondaryColor": "oklch(70.0% 0.090 110.0 / 1)"
+  },
+  {
+    "id": "midnight-ramen",
+    "backgroundColor": "oklch(16.0% 0.042 30.0 / 1)",
+    "mainColor": "oklch(78.0% 0.160 45.0 / 1)",
+    "secondaryColor": "oklch(85.0% 0.120 85.0 / 1)"
+  },
+  {
+    "id": "harbor-fog",
+    "backgroundColor": "oklch(22.0% 0.018 230.0 / 1)",
+    "mainColor": "oklch(80.0% 0.055 215.0 / 1)",
+    "secondaryColor": "oklch(62.0% 0.045 240.0 / 1)"
+  },
+  {
+    "id": "harbor-lanterns",
+    "backgroundColor": "oklch(16.5% 0.040 250.0 / 1)",
+    "mainColor": "oklch(78.0% 0.170 45.0 / 1)",
+    "secondaryColor": "oklch(70.0% 0.090 210.0 / 1)"
+  },
+  {
+    "id": "wisteria-dream",
+    "backgroundColor": "oklch(20.0% 0.048 290.0 / 1)",
+    "mainColor": "oklch(72.0% 0.175 295.0 / 1)",
+    "secondaryColor": "oklch(80.0% 0.125 320.0 / 1)"
+  },
+  {
+    "id": "koi-pond",
+    "backgroundColor": "oklch(20.0% 0.048 240.0 / 1)",
+    "mainColor": "oklch(80.0% 0.175 55.0 / 1)",
+    "secondaryColor": "oklch(70.0% 0.130 220.0 / 1)"
+  }
 ]
