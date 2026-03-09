@@ -68,5 +68,11 @@
   {
     "title": "Bowing",
     "content": "Bowing is a traditional Japanese greeting. The deeper the bow, the more respect shown."
-  }
+  },
+  {
+  "situation": "レジ会計 5",
+  "do": "トレーで受け渡す",
+  "dont": "現金を投げるように渡す",
+  "note": "丁寧で非接触な受け渡し。"
+}
 ]
