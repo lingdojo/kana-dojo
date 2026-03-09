@@ -29,7 +29,7 @@ export type ClickSoundId =
   | 'ceramic-kiss'
   | 'rain-glass'
   | 'satin-droplet'
-  | 'starlit-ting'
+  | 'starlit-ting';
 
 export interface ClickSoundOption {
   id: ClickSoundId;
@@ -43,41 +43,8 @@ export const DEFAULT_CLICK_SOUND_ID: ClickSoundId = 'nk-creams';
 
 export const CLICK_SOUND_OPTIONS: ClickSoundOption[] = [
   {
-    id: 'click',
-    label: 'click',
-    monkeytypeId: '1',
-    sourceType: 'file',
-    variants: [
-      'click1_1',
-      'click1_2',
-      'click1_3',
-    ],
-  },
-  {
-    id: 'beep',
-    label: 'beep',
-    monkeytypeId: '2',
-    sourceType: 'file',
-    variants: [
-      'click2_1',
-      'click2_2',
-      'click2_3',
-    ],
-  },
-  {
-    id: 'pop',
-    label: 'pop',
-    monkeytypeId: '3',
-    sourceType: 'file',
-    variants: [
-      'click3_1',
-      'click3_2',
-      'click3_3',
-    ],
-  },
-  {
     id: 'nk-creams',
-    label: 'nk creams',
+    label: 'default',
     monkeytypeId: '4',
     sourceType: 'file',
     variants: [
@@ -94,6 +61,27 @@ export const CLICK_SOUND_OPTIONS: ClickSoundOption[] = [
       'click4_6',
       'click4_66',
     ],
+  },
+  {
+    id: 'click',
+    label: 'click',
+    monkeytypeId: '1',
+    sourceType: 'file',
+    variants: ['click1_1', 'click1_2', 'click1_3'],
+  },
+  {
+    id: 'beep',
+    label: 'beep',
+    monkeytypeId: '2',
+    sourceType: 'file',
+    variants: ['click2_1', 'click2_2', 'click2_3'],
+  },
+  {
+    id: 'pop',
+    label: 'pop',
+    monkeytypeId: '3',
+    sourceType: 'file',
+    variants: ['click3_1', 'click3_2', 'click3_3'],
   },
   {
     id: 'typewriter',
@@ -268,13 +256,7 @@ export const CLICK_SOUND_OPTIONS: ClickSoundOption[] = [
     label: 'rubber keys',
     monkeytypeId: '15',
     sourceType: 'file',
-    variants: [
-      'click15_1',
-      'click15_2',
-      'click15_3',
-      'click15_4',
-      'click15_5',
-    ],
+    variants: ['click15_1', 'click15_2', 'click15_3', 'click15_4', 'click15_5'],
   },
   {
     id: 'fart',
@@ -568,13 +550,18 @@ export const CLICK_SOUND_OPTIONS: ClickSoundOption[] = [
 ];
 
 export const CLICK_SOUND_OPTIONS_BY_ID: Record<ClickSoundId, ClickSoundOption> =
-  CLICK_SOUND_OPTIONS.reduce((acc, option) => {
-    acc[option.id] = option;
-    return acc;
-  }, {} as Record<ClickSoundId, ClickSoundOption>);
+  CLICK_SOUND_OPTIONS.reduce(
+    (acc, option) => {
+      acc[option.id] = option;
+      return acc;
+    },
+    {} as Record<ClickSoundId, ClickSoundOption>,
+  );
 
 export function getClickSoundVariantBaseUrls(id: ClickSoundId): string[] {
   const option = CLICK_SOUND_OPTIONS_BY_ID[id];
   if (!option) return [];
-  return option.variants.map(variant => `/sounds/monkeytype-pack/${option.id}/${variant}`);
+  return option.variants.map(
+    variant => `/sounds/monkeytype-pack/${option.id}/${variant}`,
+  );
 }

@@ -1,563 +1,5 @@
 [
   {
-    "japanese": "七転八倒",
-    "romaji": "Shichiten battou",
-    "english": "Seven falls, eight struggles",
-    "meaning": "Going through great pain and struggle"
-  },
-  {
-    "japanese": "毒を食らわば皿まで",
-    "romaji": "Doku wo kurawaba sara made",
-    "english": "If you eat poison, eat the plate too",
-    "meaning": "If you must do it, go all the way"
-  },
-  {
-    "japanese": "柳に風",
-    "romaji": "Yanagi ni kaze",
-    "english": "Wind in the willow",
-    "meaning": "Stay flexible and let problems pass"
-  },
-  {
-    "japanese": "転石苔むさず",
-    "romaji": "Tenseki koke musazu",
-    "english": "A rolling stone gathers no moss",
-    "meaning": "Constant change prevents stagnation"
-  },
-  {
-    "japanese": "人のふり見て我がふり直せ",
-    "romaji": "Hito no furi mite waga furi naose",
-    "english": "Watch others and correct yourself",
-    "meaning": "Learn from others' behavior"
-  },
-  {
-    "japanese": "井戸端会議",
-    "romaji": "Idobata kaigi",
-    "english": "Well-side conference",
-    "meaning": "Neighborhood gossip"
-  },
-  {
-    "japanese": "善は急げ",
-    "romaji": "Zen wa isoge",
-    "english": "Hurry to do good",
-    "meaning": "If it's worth doing, do it at once"
-  },
-  {
-    "japanese": "覆水盆に返らず",
-    "romaji": "Fukusui bon ni kaerazu",
-    "english": "Spilled water will not return to the tray",
-    "meaning": "What is done cannot be undone"
-  },
-  {
-    "japanese": "石の上にも三年",
-    "romaji": "Ishi no ue ni mo sannen",
-    "english": "Three years on a stone",
-    "meaning": "Perseverance prevails"
-  },
-  {
-    "japanese": "七転び八起き",
-    "romaji": "Nana korobi ya oki",
-    "english": "Fall seven times, stand up eight",
-    "meaning": "Perseverance through failure leads to success"
-  },
-  {
-    "japanese": "猿も木から落ちる",
-    "romaji": "Saru mo ki kara ochiru",
-    "english": "Even monkeys fall from trees",
-    "meaning": "Even experts make mistakes sometimes"
-  },
-  {
-    "japanese": "口は災いの元",
-    "romaji": "Kuchi wa wazawai no moto",
-    "english": "The mouth is the source of disaster",
-    "meaning": "Be careful what you say, words can cause trouble"
-  },
-  {
-    "japanese": "一石二鳥",
-    "romaji": "Isseki nichou",
-    "english": "One stone, two birds",
-    "meaning": "Accomplishing two things with one action"
-  },
-  {
-    "japanese": "郷に入っては郷に従え",
-    "romaji": "Gou ni itte wa gou ni shitagae",
-    "english": "When in a village, follow the village customs",
-    "meaning": "When in Rome, do as the Romans do"
-  },
-  {
-    "japanese": "知らぬが仏",
-    "romaji": "Shiranu ga hotoke",
-    "english": "Not knowing is Buddha",
-    "meaning": "Ignorance is bliss"
-  },
-  {
-    "japanese": "二兎を追う者は一兎をも得ず",
-    "romaji": "Ni to wo ou mono wa itto wo mo ezu",
-    "english": "One who chases two rabbits catches neither",
-    "meaning": "Focus on one thing at a time"
-  },
-  {
-    "japanese": "郷に入っては郷に従え",
-    "romaji": "Gou ni itte wa gou ni shitagae",
-    "english": "When in a village, follow the village customs",
-    "meaning": "When in Rome, do as the Romans do"
-  },
-  {
-    "japanese": "知らぬが仏",
-    "romaji": "Shiranu ga hotoke",
-    "english": "Not knowing is Buddha",
-    "meaning": "Ignorance is bliss"
-  },
-  {
-    "japanese": "二兎を追う者は一兎をも得ず",
-    "romaji": "Ni to wo ou mono wa itto wo mo ezu",
-    "english": "One who chases two rabbits catches neither",
-    "meaning": "Focus on one thing at a time"
-  },
-  {
-    "japanese": "郷に入っては郷に従え",
-    "romaji": "Gou ni itte wa gou ni shitagae",
-    "english": "When in a village, follow the village customs",
-    "meaning": "When in Rome, do as the Romans do"
-  },
-  {
-    "japanese": "知らぬが仏",
-    "romaji": "Shiranu ga hotoke",
-    "english": "Not knowing is Buddha",
-    "meaning": "Ignorance is bliss"
-  },
-  {
-    "japanese": "二兎を追う者は一兎をも得ず",
-    "romaji": "Ni to wo ou mono wa itto wo mo ezu",
-    "english": "One who chases two rabbits catches neither",
-    "meaning": "Focus on one thing at a time"
-  },
-  {
-    "japanese": "時は金なり",
-    "romaji": "Toki wa kane nari",
-    "english": "Time is money",
-    "meaning": "Time is valuable and should not be wasted"
-  },
-  {
-    "japanese": "百聞は一見に如かず",
-    "romaji": "Hyakubun wa ikken ni shikazu",
-    "english": "Hearing a hundred times is not as good as seeing once",
-    "meaning": "Seeing is believing"
-  },
-  {
-    "japanese": "転ばぬ先の杖",
-    "romaji": "Korobanu saki no tsue",
-    "english": "A cane before falling",
-    "meaning": "Prevention is better than cure"
-  },
-  {
-    "japanese": "案ずるより産むが易し",
-    "romaji": "Anzuru yori umu ga yasushi",
-    "english": "Giving birth is easier than worrying",
-    "meaning": "Things are often easier done than worried about"
-  },
-  {
-    "japanese": "三人寄れば文殊の知恵",
-    "romaji": "Sannin yoreba monju no chie",
-    "english": "Three people together have the wisdom of Monju",
-    "meaning": "Two heads are better than one"
-  },
-  {
-    "japanese": "七転八倒",
-    "romaji": "Shichiten battou",
-    "english": "Seven falls, eight struggles",
-    "meaning": "Going through great pain and struggle"
-  },
-  {
-    "japanese": "出る杭は打たれる",
-    "romaji": "Deru kui wa utareru",
-    "english": "The nail that sticks out gets hammered down",
-    "meaning": "Those who stand out may face criticism"
-  },
-  {
-    "japanese": "井の中の蛙大海を知らず",
-    "romaji": "I no naka no kawazu taikai wo shirazu",
-    "english": "A frog in a well does not know the great sea",
-    "meaning": "Those with limited experience cannot understand the bigger picture"
-  },
-  {
-    "japanese": "猫に小判",
-    "romaji": "Neko ni koban",
-    "english": "Gold coins to a cat",
-    "meaning": "Giving something valuable to someone who can't appreciate it"
-  },
-  {
-    "japanese": "早起きは三文の徳",
-    "romaji": "Hayaoki wa sanmon no toku",
-    "english": "Early rising is worth three coins",
-    "meaning": "The early bird catches the worm"
-  },
-  {
-    "japanese": "一期一会",
-    "romaji": "Ichi go ichi e",
-    "english": "One time, one meeting",
-    "meaning": "Treasure every encounter, for it will never recur"
-  },
-  {
-    "japanese": "馬の耳に念仏",
-    "romaji": "Uma no mimi ni nenbutsu",
-    "english": "Preaching Buddha to a horse's ear",
-    "meaning": "Wasting good advice on someone who won't listen"
-  },
-  {
-    "japanese": "十人十色",
-    "romaji": "Juunin toiro",
-    "english": "Ten people, ten colors",
-    "meaning": "Different strokes for different folks"
-  },
-  {
-    "japanese": "蛙の子は蛙",
-    "romaji": "Kaeru no ko wa kaeru",
-    "english": "A frog's child is a frog",
-    "meaning": "Like father, like son"
-  },
-  {
-    "japanese": "犬も歩けば棒に当たる",
-    "romaji": "Inu mo arukeba bou ni ataru",
-    "english": "Even a walking dog will hit a stick",
-    "meaning": "Try anything and you might get lucky (or unlucky)"
-  },
-  {
-    "japanese": "良薬は口に苦し",
-    "romaji": "Ryouyaku wa kuchi ni nigashi",
-    "english": "Good medicine tastes bitter",
-    "meaning": "Helpful advice often sounds harsh"
-  },
-  {
-    "japanese": "虎穴に入らずんば虎子を得ず",
-    "romaji": "Koketsu ni irazunba koji wo ezu",
-    "english": "If you don't enter the tiger's den, you can't get the cub",
-    "meaning": "Nothing ventured, nothing gained"
-  },
-  {
-    "japanese": "蛙の子は蛙",
-    "romaji": "Kaeru no ko wa kaeru",
-    "english": "A frog's child is a frog",
-    "meaning": "Like father, like son"
-  },
-  {
-    "japanese": "笑う門には福来る",
-    "romaji": "Warau kado ni wa fuku kitaru",
-    "english": "Fortune comes to a laughing gate",
-    "meaning": "Happiness and good fortune come to those who smile"
-  },
-  {
-    "japanese": "魚心あれば水心",
-    "romaji": "Uogokoro areba mizugokoro",
-    "english": "If fish has heart, water has heart",
-    "meaning": "Good intentions will be reciprocated"
-  },
-  {
-    "japanese": "転ばぬ先の杖",
-    "romaji": "Korobanu saki no tsue",
-    "english": "A cane before falling",
-    "meaning": "Prevention is better than cure"
-  },
-  {
-    "japanese": "急がば回れ",
-    "romaji": "Isogaba maware",
-    "english": "If in a hurry, go around",
-    "meaning": "Taking the safer, longer route is sometimes faster"
-  },
-  {
-    "japanese": "継続は力なり",
-    "romaji": "Keizoku wa chikara nari",
-    "english": "Continuation is power",
-    "meaning": "Persistence leads to strength and success"
-  },
-  {
-    "japanese": "石の上にも三年",
-    "romaji": "Ishi no ue ni mo san nen",
-    "english": "Three years on a stone",
-    "meaning": "Patience and perseverance will eventually pay off"
-  },
-  {
-    "japanese": "弘法にも筆の誤り",
-    "romaji": "Koubou ni mo fude no ayamari",
-    "english": "Even Kobo makes mistakes with his brush",
-    "meaning": "Even masters make mistakes"
-  },
-  {
-    "japanese": "油断大敵",
-    "romaji": "Yudan taiteki",
-    "english": "Carelessness is the greatest enemy",
-    "meaning": "Don't let your guard down"
-  },
-  {
-    "japanese": "明日は明日の風が吹く",
-    "romaji": "Ashita wa ashita no kaze ga fuku",
-    "english": "Tomorrow's wind will blow tomorrow",
-    "meaning": "Don't worry too much about the future"
-  },
-  {
-    "japanese": "縁の下の力持ち",
-    "romaji": "En no shita no chikaramochi",
-    "english": "A strong person under the veranda",
-    "meaning": "An unsung hero who supports behind the scenes"
-  },
-  {
-    "japanese": "石橋を叩いて渡る",
-    "romaji": "Ishibashi wo tataite wataru",
-    "english": "Tap a stone bridge before crossing",
-    "meaning": "Be very cautious"
-  },
-  {
-    "japanese": "花より団子",
-    "romaji": "Hana yori dango",
-    "english": "Dumplings over flowers",
-    "meaning": "Practical needs are more important than aesthetic pleasures"
-  },
-  {
-    "japanese": "転んでもただでは起きぬ",
-    "romaji": "Koronde mo tada de wa okinu",
-    "english": "Even if you fall, don't get up empty-handed",
-    "meaning": "Learn something from every setback"
-  },
-  {
-    "japanese": "覆水盆に返らず",
-    "romaji": "Fukusui bon ni kaerazu",
-    "english": "Spilled water will not return to the tray",
-    "meaning": "What is done cannot be undone"
-  },
-  {
-    "japanese": "雨垂れ石を穿つ",
-    "romaji": "Amadare ishi wo ugatsu",
-    "english": "Dripping water pierces stone",
-    "meaning": "Persistence can overcome great obstacles"
-  },
-  {
-    "japanese": "三日坊主",
-    "romaji": "Mikka bouzu",
-    "english": "A three-day monk",
-    "meaning": "Someone who quits quickly"
-  },
-  {
-    "japanese": "棚からぼた餅",
-    "romaji": "Tana kara botamochi",
-    "english": "A rice cake falls from the shelf",
-    "meaning": "A windfall; unexpected good luck"
-  },
-  {
-    "japanese": "七転び八起き",
-    "romaji": "Nanakorobi yaoki",
-    "english": "Fall seven times, get up eight",
-    "meaning": "Never give up"
-  },
-  {
-    "japanese": "急いては事を仕損じる",
-    "romaji": "Seite wa koto wo shisonjiru",
-    "english": "Haste will spoil things",
-    "meaning": "Haste makes waste"
-  },
-  {
-    "japanese": "隣の花は赤い",
-    "romaji": "Tonari no hana wa akai",
-    "english": "The neighbor's flowers are red",
-    "meaning": "The grass is always greener on the other side"
-  },
-  {
-    "japanese": "頭隠して尻隠さず",
-    "romaji": "Atama kakushite shiri kakusazu",
-    "english": "Hide your head, but not your butt",
-    "meaning": "Trying to hide something obvious"
-  },
-  {
-    "japanese": "花は桜木人は武士",
-    "romaji": "Hana wa sakuragi hito wa bushi",
-    "english": "Among flowers, the cherry blossom; among men, the warrior",
-    "meaning": "The best of each kind"
-  },
-  {
-    "japanese": "猫の手も借りたい",
-    "romaji": "Neko no te mo karitai",
-    "english": "I'd even borrow a cat's paw",
-    "meaning": "Extremely busy"
-  },
-  {
-    "japanese": "鬼に金棒",
-    "romaji": "Oni ni kanabou",
-    "english": "An iron club to an ogre",
-    "meaning": "Making someone strong even stronger"
-  },
-  {
-    "japanese": "鶴の一声",
-    "romaji": "Tsuru no hitokoe",
-    "english": "One cry of the crane",
-    "meaning": "A single influential person settles a matter"
-  },
-  {
-    "japanese": "旅は道連れ世は情け",
-    "romaji": "Tabi wa michizure yo wa nasake",
-    "english": "Travel needs companions; life needs kindness",
-    "meaning": "Relationships and compassion matter"
-  },
-  {
-    "japanese": "捕らぬ狸の皮算用",
-    "romaji": "Toranu tanuki no kawazan'you",
-    "english": "Counting a raccoon dog's skins before catching it",
-    "meaning": "Don't count your chickens before they hatch"
-  },
-  {
-    "japanese": "鬼の居ぬ間に洗濯",
-    "romaji": "Oni no inuma ni sentaku",
-    "english": "Do laundry while the ogre is away",
-    "meaning": "Take advantage of someone's absence"
-  },
-  {
-    "japanese": "虎穴に入らずんば虎子を得ず",
-    "romaji": "Koketsu ni irazunba koji wo ezu",
-    "english": "You can’t get the tiger’s cub without entering the lair",
-    "meaning": "No reward without risk"
-  },
-  {
-    "japanese": "針の穴から天を覗く",
-    "romaji": "Hari no ana kara ten wo nozoku",
-    "english": "Peek at the sky through a needle's eye",
-    "meaning": "A narrow viewpoint leads to poor judgment"
-  },
-  {
-    "japanese": "月とすっぽん",
-    "romaji": "Tsuki to suppon",
-    "english": "The moon and a turtle",
-    "meaning": "Vast difference; not comparable"
-  },
-  {
-    "japanese": "怪我の功名",
-    "romaji": "Kega no koumyou",
-    "english": "Fame from a mistake",
-    "meaning": "A lucky break that comes from an error"
-  },
-  {
-    "japanese": "負けるが勝ち",
-    "romaji": "Makeru ga kachi",
-    "english": "Sometimes losing is winning",
-    "meaning": "Conceding can be the best outcome"
-  },
-  {
-    "japanese": "雨降って地固まる",
-    "romaji": "Ame futte ji katamaru",
-    "english": "After the rain, the ground hardens",
-    "meaning": "Hard times make relationships stronger"
-  },
-  {
-    "japanese": "一寸先は闇",
-    "romaji": "Issun saki wa yami",
-    "english": "An inch ahead is darkness",
-    "meaning": "The future is uncertain"
-  },
-  {
-    "japanese": "二度あることは三度ある",
-    "romaji": "Nido aru koto wa sando aru",
-    "english": "What happens twice will happen a third time",
-    "meaning": "Patterns tend to repeat"
-  },
-  {
-    "japanese": "灯台下暗し",
-    "romaji": "Toudai moto kurashi",
-    "english": "It's darkest under the lighthouse",
-    "meaning": "The obvious is often overlooked"
-  },
-  {
-    "japanese": "木を見て森を見ず",
-    "romaji": "Ki wo mite mori wo mizu",
-    "english": "See the trees but not the forest",
-    "meaning": "Missing the bigger picture"
-  },
-  {
-    "japanese": "喉元過ぎれば熱さを忘れる",
-    "romaji": "Nodomoto sugireba atsusa wo wasureru",
-    "english": "Once it passes your throat, you forget the heat",
-    "meaning": "People forget hardships once they are over"
-  },
-  {
-    "japanese": "泣きっ面に蜂",
-    "romaji": "Naki tsura ni hachi",
-    "english": "A bee on a crying face",
-    "meaning": "Misfortune piles up"
-  },
-  {
-    "japanese": "能ある鷹は爪を隠す",
-    "romaji": "Nou aru taka wa tsume wo kakusu",
-    "english": "A skilled hawk hides its talons",
-    "meaning": "True skill is modest"
-  },
-  {
-    "japanese": "覆水盆に返らず",
-    "romaji": "Fukusui bon ni kaerazu",
-    "english": "Spilled water doesn’t return to the tray",
-    "meaning": "What’s done is done"
-  },
-  {
-    "japanese": "焼け石に水",
-    "romaji": "Yake ishi ni mizu",
-    "english": "Water on a hot stone",
-    "meaning": "A futile effort"
-  },
-  {
-    "japanese": "情けは人の為ならず",
-    "romaji": "Nasake wa hito no tame narazu",
-    "english": "Kindness is not for others alone",
-    "meaning": "Kindness comes back to you"
-  },
-  {
-    "japanese": "雨後の筍",
-    "romaji": "Ugo no takenoko",
-    "english": "Bamboo shoots after rain",
-    "meaning": "Things spring up rapidly"
-  },
-  {
-    "japanese": "千里の道も一歩から",
-    "romaji": "Senri no michi mo ippo kara",
-    "english": "A journey of a thousand miles begins with one step",
-    "meaning": "Start small"
-  },
-  {
-    "japanese": "井の中の蛙大海を知らず",
-    "romaji": "I no naka no kawazu taikai wo shirazu",
-    "english": "A frog in a well doesn’t know the ocean",
-    "meaning": "Limited experience limits perspective"
-  },
-  {
-    "japanese": "口は禍の元",
-    "romaji": "Kuchi wa wazawai no moto",
-    "english": "The mouth is the source of misfortune",
-    "meaning": "Careless words cause trouble"
-  },
-  {
-    "japanese": "明日は明日の風が吹く",
-    "romaji": "Ashita wa ashita no kaze ga fuku",
-    "english": "Tomorrow’s wind will blow tomorrow",
-    "meaning": "Don’t worry too much about the future"
-  },
-  {
-    "japanese": "楽あれば苦あり",
-    "romaji": "Raku areba ku ari",
-    "english": "With comfort comes hardship",
-    "meaning": "Life has ups and downs"
-  },
-  {
-    "japanese": "見ぬが花",
-    "romaji": "Minu ga hana",
-    "english": "What you imagine is better than reality",
-    "meaning": "Things unseen often seem more beautiful than they really are"
-  },
-  {
-    "japanese": "早起きは三文の得",
-    "romaji": "Hayaoki wa sanmon no toku",
-    "english": "Early rising is worth three coins",
-    "meaning": "Good things come from getting up early"
-  },
-  {
-    "japanese": "腹八分目",
-    "romaji": "Hara hachibunme",
-    "english": "Stomach 80 percent full",
-    "meaning": "Eat in moderation"
-  },
-  {
     "japanese": "焼け石に水",
     "romaji": "Yakeishi ni mizu",
     "english": "Water on a hot stone",
@@ -678,40 +120,28 @@
     "meaning": "Don't put off until tomorrow what you can do today"
   },
   {
-    "japanese": "äº•ã�®ä¸­ã�®è›™å¤§æµ·ã‚’çŸ¥ã‚‰ã�š",
+    "japanese": "井の中の蛙大海を知らず",
     "romaji": "I no naka no kawazu taikai wo shirazu",
     "english": "A frog in a well does not know the great sea",
     "meaning": "Those with limited experience cannot understand the bigger picture"
   },
   {
     "japanese": "七転び八起き",
-    "romaji": "Nanakorobi yaok",
+    "romaji": "Nanakorobi yaoki",
     "english": "Fall seven times, get up eight",
     "meaning": "Never give up"
   },
   {
-    "japanese": "çŸ³æ©‹ã‚’å�©ã�„ã�¦æ¸¡ã‚‹",
+    "japanese": "石橋を叩いて渡る",
     "romaji": "Ishibashi wo tataite wataru",
     "english": "Tap a stone bridge before crossing",
     "meaning": "Be very cautious"
-  },
-  {
-    "japanese": "æ—©èµ·ã��ã�¯ä¸‰æ–‡ã�®å¾—",
-    "romaji": "Hayaoki wa sanmon no toku",
-    "english": "Early rising is worth three coins",
-    "meaning": "Good things come from getting up early"
   },
   {
     "japanese": "縁は異なもの味なもの",
     "romaji": "En wa inamono aji na mono",
     "english": "Fate is strange yet delightful",
     "meaning": "Chance connections can be surprisingly good"
-  },
-  {
-    "japanese": "餅は餅屋",
-    "romaji": "Mochi wa mochiya",
-    "english": "Mochi should be made by the mochi shop",
-    "meaning": "Leave it to the experts"
   },
   {
     "japanese": "蛙の子は蛙",
@@ -742,5 +172,41 @@
     "romaji": "Koukai saki ni tatazu",
     "english": "Regret does not stand before",
     "meaning": "It's too late for regrets"
-  }
+  },
+  {
+    "japanese": "猫の手も借りたい",
+    "romaji": "Neko no te mo karitai",
+    "english": "I'd even borrow a cat's paw",
+    "meaning": "Extremely busy"
+  },
+  {
+    "japanese": "三日坊主",
+    "romaji": "Mikka bouzu",
+    "english": "A three-day monk",
+    "meaning": "Someone who quits quickly"
+  },
+  {
+    "japanese": "急いては事を仕損じる",
+    "romaji": "Seite wa koto wo shisonjiru",
+    "english": "Haste will spoil things",
+    "meaning": "Rushing leads to mistakes"
+  },
+  {
+    "japanese": "失敗は成功のもと",
+    "romaji": "Shippai wa seikou no moto",
+    "english": "Failure is the origin of success",
+    "meaning": "Mistakes lead to growth"
+  },
+  {
+    "japanese": "良薬は口に苦し",
+    "romaji": "Ryouyaku wa kuchi ni nigashi",
+    "english": "Good medicine tastes bitter",
+    "meaning": "Helpful advice can be hard to hear"
+  },
+  {
+  "japanese": "善因善果",
+  "romaji": "Zenin zenka",
+  "english": "Good causes bring good results",
+  "meaning": "Good deeds lead to good outcomes"
+}
 ]

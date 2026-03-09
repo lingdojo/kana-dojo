@@ -48,23 +48,23 @@ const loadAudioBuffer = async (url: string): Promise<AudioBuffer | null> => {
 
   const loadPromise = (async () => {
     try {
-    const ctx = getAudioContext();
-    const response = await fetch(url, { cache: 'force-cache' });
-    if (!response.ok) throw new Error(`Failed to fetch ${url}`);
+      const ctx = getAudioContext();
+      const response = await fetch(url, { cache: 'force-cache' });
+      if (!response.ok) throw new Error(`Failed to fetch ${url}`);
 
-    const arrayBuffer = await response.arrayBuffer();
-    const audioBuffer = await ctx.decodeAudioData(arrayBuffer);
+      const arrayBuffer = await response.arrayBuffer();
+      const audioBuffer = await ctx.decodeAudioData(arrayBuffer);
 
-    // FIFO eviction: delete oldest entry if cache is full
-    if (bufferCache.size >= MAX_CACHE_SIZE) {
-      const firstKey = bufferCache.keys().next().value;
-      if (firstKey) {
-        bufferCache.delete(firstKey);
+      // FIFO eviction: delete oldest entry if cache is full
+      if (bufferCache.size >= MAX_CACHE_SIZE) {
+        const firstKey = bufferCache.keys().next().value;
+        if (firstKey) {
+          bufferCache.delete(firstKey);
+        }
       }
-    }
 
-    bufferCache.set(url, audioBuffer);
-    return audioBuffer;
+      bufferCache.set(url, audioBuffer);
+      return audioBuffer;
     } catch (error) {
       console.warn(`Failed to load audio: ${url}`, error);
       return null;
@@ -176,6 +176,7 @@ const getAudioUrl = (basePath: string, hasOpus: boolean = true): string => {
 const CORRECT_SOUND_BASE = '/sounds/correct';
 const ERROR_SOUND_BASE = '/sounds/error/error1/error1_1';
 const LONG_SOUND_BASE = '/sounds/long';
+const LONG_LOOP_VOLUME = 0.12;
 
 // =============================================================================
 // Preloaded Audio Pools
@@ -185,6 +186,7 @@ const LONG_SOUND_BASE = '/sounds/long';
 let correctPool: ReturnType<typeof createAudioPool> | null = null;
 let errorPool: ReturnType<typeof createAudioPool> | null = null;
 let longPool: ReturnType<typeof createAudioPool> | null = null;
+let longLoopAudio: HTMLAudioElement | null = null;
 const clickPools = new Map<string, ReturnType<typeof createAudioPool>>();
 
 const getCorrectPool = () => {
@@ -209,6 +211,20 @@ const getLongPool = () => {
     longPool = createAudioPool(url, 0.2);
   }
   return longPool;
+};
+
+const getLongLoopAudio = () => {
+  if (typeof window === 'undefined') return null;
+  if (!longLoopAudio) {
+    longLoopAudio = new Audio(getAudioUrl(LONG_SOUND_BASE));
+    longLoopAudio.loop = true;
+    longLoopAudio.volume = LONG_LOOP_VOLUME;
+    longLoopAudio.onerror = () => {
+      console.warn('Failed to load long theme audio');
+    };
+  }
+
+  return longLoopAudio;
 };
 
 const getClickPool = (baseUrl: string) => {
@@ -321,7 +337,33 @@ export const useLong = () => {
     getLongPool().play();
   }, [silentMode]);
 
-  return { playLong };
+  const playLongLoop = useCallback(() => {
+    if (silentMode) return;
+
+    const audio = getLongLoopAudio();
+    if (!audio) return;
+
+    audio.volume = LONG_LOOP_VOLUME;
+    audio.play().catch(() => {
+      // Ignore autoplay errors
+    });
+  }, [silentMode]);
+
+  const stopLongLoop = useCallback(() => {
+    if (!longLoopAudio) return;
+    longLoopAudio.pause();
+    longLoopAudio.currentTime = 0;
+  }, []);
+
+  useEffect(() => {
+    if (!silentMode) return;
+    if (!longLoopAudio) return;
+
+    longLoopAudio.pause();
+    longLoopAudio.currentTime = 0;
+  }, [silentMode]);
+
+  return { playLong, playLongLoop, stopLongLoop };
 };
 
 // =============================================================================

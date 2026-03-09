@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faDiscord,
@@ -12,7 +12,6 @@ import {
   GitBranch,
   Type,
   LucideIcon,
-  Star,
 } from 'lucide-react';
 import clsx from 'clsx';
 import { useClick } from '@/shared/hooks/useAudio';
@@ -59,8 +58,6 @@ const socialLinks: SocialLink[] = [
   // }
 ];
 
-const ENABLE_STATS_DESIGN = false; // Toggle to switch between old and new stats design
-
 const MobileBottomBar = () => {
   const { playClick } = useClick();
   const { theme, font } = useThemePreferences();
@@ -72,22 +69,6 @@ const MobileBottomBar = () => {
   const [isPatchNotesOpen, setIsPatchNotesOpen] = useState(false);
   const [isThemeOpen, setIsThemeOpen] = useState(false);
   const [isFontOpen, setIsFontOpen] = useState(false);
-  const [githubStars, setGithubStars] = useState<number | null>(null);
-  const [discordOnline, setDiscordOnline] = useState<number | null>(null);
-
-  useEffect(() => {
-    if (!ENABLE_STATS_DESIGN) return;
-
-    fetch('/api/community-stats')
-      .then(res => res.json())
-      .then(data => {
-        if (data.githubStars !== undefined) setGithubStars(data.githubStars);
-        if (data.discordOnline !== undefined)
-          setDiscordOnline(data.discordOnline);
-      })
-      .catch(err => console.error('Failed to fetch community stats:', err));
-  }, []);
-
   const handleClick = (url: string) => {
     playClick();
     window.open(url, '_blank', 'noopener');
@@ -155,47 +136,34 @@ const MobileBottomBar = () => {
           return (
             <React.Fragment key={idx}>
               <div className='flex items-center gap-1.5'>
-                {link.type === 'fontawesome' ? (
-                  <FontAwesomeIcon
-                    icon={link.icon as IconDefinition}
-                    size='sm'
-                    className={clsx(
-                      baseIconClasses,
-                      pulseClasses,
-                      isPatreon && 'text-blue-500',
-                    )}
-                    onClick={() => handleClick(link.url)}
-                  />
-                ) : (
-                  <Icon
-                    size={16}
-                    className={clsx(
-                      baseIconClasses,
-                      pulseClasses,
-                      isDonate &&
-                        'fill-current text-red-500 motion-safe:animate-pulse',
-                    )}
-                    onClick={() => handleClick(link.url)}
-                  />
-                )}
-                {ENABLE_STATS_DESIGN &&
-                  link.icon === faGithub &&
-                  githubStars !== null && (
-                    <span className='ml-0.5 flex items-center gap-1 text-sm text-(--secondary-color) select-none'>
-                      <Star
-                        size={12}
-                        className='fill-yellow-400 text-yellow-500'
-                      />
-                      {githubStars.toLocaleString()}
-                    </span>
+                <button
+                  type='button'
+                  onClick={() => handleClick(link.url)}
+                  className='flex items-center'
+                  aria-label={`Open ${link.special === 'donate' ? 'Ko-fi' : link.url}`}
+                >
+                  {link.type === 'fontawesome' ? (
+                    <FontAwesomeIcon
+                      icon={link.icon as IconDefinition}
+                      size='sm'
+                      className={clsx(
+                        baseIconClasses,
+                        pulseClasses,
+                        isPatreon && 'text-blue-500',
+                      )}
+                    />
+                  ) : (
+                    <Icon
+                      size={16}
+                      className={clsx(
+                        baseIconClasses,
+                        pulseClasses,
+                        isDonate &&
+                          'fill-current text-red-500 motion-safe:animate-pulse',
+                      )}
+                    />
                   )}
-                {ENABLE_STATS_DESIGN &&
-                  link.icon === faDiscord &&
-                  discordOnline !== null && (
-                    <span className='ml-0.5 text-sm text-(--secondary-color) select-none'>
-                      {discordOnline.toLocaleString()}
-                    </span>
-                  )}
+                </button>
               </div>
               {idx === 1 && socialLinks.length > 2 && (
                 <span className='text-sm text-(--secondary-color) select-none'>
@@ -208,24 +176,26 @@ const MobileBottomBar = () => {
       </div>
 
       <div className='flex items-center gap-2 text-xs text-(--secondary-color)'>
-        <span
+        <button
+          type='button'
           className='hidden text-xs text-(--secondary-color) hover:cursor-pointer hover:text-(--main-color) lg:inline-block'
           onClick={() => handleClick('https://ko-fi.com/kanadojo')}
         >
           made with ❤️ by the community
-        </span>
+        </button>
         <span className='hidden text-sm text-(--secondary-color) select-none lg:inline-block'>
           ~
         </span>
         {infoItems.map((item, idx) => {
           const content = (
-            <span
+            <button
+              type='button'
               className='flex gap-1 hover:cursor-pointer hover:text-(--main-color)'
               onClick={item.onClick}
             >
               <item.icon size={16} />
               {item.text}
-            </span>
+            </button>
           );
 
           return (

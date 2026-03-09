@@ -138,9 +138,7 @@ jobs:
             let videoGameQuotes = JSON.parse(fs.readFileSync(videoGameQuotesBacklogPath, 'utf8'));
 
             let skippedUnassigned = 0;
-            let warnedAssigned = 0;
-            let closedAssigned = 0;
-            let warnedUnassigned = 0;
+            let skippedAssigned = 0;
             let closedUnassigned = 0;
             let apiFailures = 0;
 
@@ -394,76 +392,13 @@ jobs:
                 continue;
               }
 
-              if (timeSinceActivity >= CLOSE_THRESHOLD_MS) {
-                console.log(`Closing stale issue #${issue.number}: ${issue.title}`);
-                
-                // Unassign the user before closing
-                const assignees = issue.assignees.map(function(a) { return a.login; });
-                if (assignees.length > 0) {
-                  try {
-                    await runGithubApi(`unassign-issue-${issue.number}`, function() {
-                      return github.rest.issues.removeAssignees({
-                        owner: context.repo.owner,
-                        repo: context.repo.repo,
-                        issue_number: issue.number,
-                        assignees: assignees
-                      });
-                    });
-                    console.log(`Unassigned ${assignees.join(', ')} from issue #${issue.number}`);
-                  } catch (error) {
-                    // Continue stale cleanup even if assignee removal races or fails for one issue
-                    apiFailures += 1;
-                    console.log(`Could not unassign issue #${issue.number}: ${error.message}`);
-                  }
-                }
-                try {
-                  await runGithubApi(`close-assigned-issue-${issue.number}`, function() {
-                    return github.rest.issues.update({
-                      owner: context.repo.owner,
-                      repo: context.repo.repo,
-                      issue_number: issue.number,
-                      state: 'closed',
-                      state_reason: 'completed'
-                    });
-                  });
-                  closedAssigned += 1;
-                  reenableBacklogItem(issue.title, 'assigned-stale-close');
-                } catch (error) {
-                  apiFailures += 1;
-                  console.log(`Could not close assigned issue #${issue.number}: ${error.message}`);
-                }
-                
-              } else if (timeSinceActivity >= WARNING_THRESHOLD_MS && !hasWarning) {
-                console.log(`Adding warning to issue #${issue.number}`);
-
-                const warningMsg = t.warning;
-                try {
-                  await runGithubApi(`warn-comment-issue-${issue.number}`, function() {
-                    return github.rest.issues.createComment({
-                      owner: context.repo.owner,
-                      repo: context.repo.repo,
-                      issue_number: issue.number,
-                      body: `${warningMsg.greeting} ${warningMsg.body}\n\n${warningMsg.action}\n\n${warningMsg.consequence}\n\n${warningMsg.footer}`
-                    });
-                  });
-
-                  await runGithubApi(`warn-label-issue-${issue.number}`, function() {
-                    return github.rest.issues.addLabels({
-                      owner: context.repo.owner,
-                      repo: context.repo.repo,
-                      issue_number: issue.number,
-                      labels: [templates.labels.staleWarning]
-                    });
-                  });
-                  warnedAssigned += 1;
-                } catch (error) {
-                  apiFailures += 1;
-                  console.log(`Could not warn issue #${issue.number}: ${error.message}`);
-                }
+              if (timeSinceActivity >= WARNING_THRESHOLD_MS) {
+                skippedAssigned += 1;
+                console.log(`Skipping stale warning/auto-close for assigned issue #${issue.number}: ${issue.title}`);
               }
             }
 
-            console.log(`Stale issue summary: total=${issues.length}, skipped_unassigned=${skippedUnassigned}, warned_assigned=${warnedAssigned}, closed_assigned=${closedAssigned}, warned_unassigned=${warnedUnassigned}, closed_unassigned=${closedUnassigned}, api_failures=${apiFailures}`);
+            console.log(`Stale issue summary: total=${issues.length}, skipped_unassigned=${skippedUnassigned}, skipped_assigned=${skippedAssigned}, closed_unassigned=${closedUnassigned}, api_failures=${apiFailures}`);
 
             if (needsCommit) {
               fs.writeFileSync(themeBacklogPath, JSON.stringify(themes, null, 2));

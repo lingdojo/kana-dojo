@@ -11,6 +11,7 @@ interface CollapsibleSectionProps {
   defaultOpen?: boolean;
   level?: 'section' | 'subsection' | 'subsubsection';
   className?: string;
+  id?: string;
   /** Unique ID for session storage persistence */
   storageKey?: string;
   /** When true, applies a full border to the header instead of just a bottom border */
@@ -19,20 +20,20 @@ interface CollapsibleSectionProps {
 
 const levelStyles = {
   section: {
-    header: 'text-3xl py-4',
-    border: 'border-b-2 border-(--border-color)',
+    header: 'text-3xl py-4 pl-4',
+    border: 'border-l-40 border-(--border-color)',
     chevronSize: 24,
     gap: 'gap-4',
   },
   subsection: {
-    header: 'text-2xl py-3',
-    border: 'border-b-1 border-(--border-color)',
+    header: 'text-2xl py-3 pl-4',
+    border: 'border-l-[20px] border-(--border-color)',
     chevronSize: 22,
     gap: 'gap-3',
   },
   subsubsection: {
-    header: 'text-xl py-2',
-    border: '',
+    header: 'text-xl py-2 pl-4',
+    border: 'border-l-[10px] border-(--border-color)',
     chevronSize: 20,
     gap: 'gap-2',
   },
@@ -45,6 +46,7 @@ const CollapsibleSection = ({
   defaultOpen = true,
   level = 'section',
   className,
+  id,
   storageKey,
   fullBorder = false,
 }: CollapsibleSectionProps) => {
@@ -76,14 +78,20 @@ const CollapsibleSection = ({
   };
 
   return (
-    <div className={clsx('flex flex-col', styles.gap, className)}>
+    <div
+      id={id}
+      className={clsx('flex scroll-mt-28 flex-col', styles.gap, className)}
+    >
       <button
         className={clsx(
           'group flex w-full flex-row items-center gap-2 text-left',
+          'max-md:active:bg-(--card-color)',
+          'max-md:focus-visible:bg-(--card-color)',
+          'md:hover:bg-(--card-color)',
           'hover:cursor-pointer',
           styles.header,
           fullBorder
-            ? 'border-2 border-(--border-color) bg-(--card-color) px-4 py-3'
+            ? 'border-l-40 border-(--border-color) px-4 py-3'
             : styles.border,
         )}
         onClick={handleToggle}
@@ -93,8 +101,9 @@ const CollapsibleSection = ({
           className={clsx(
             'transition-transform duration-300 ease-out',
             'transition-colors delay-200 duration-300',
-            'text-(--main-color)',
-            'max-md:group-active:text-(--main-color)',
+            'text-(--border-color)',
+            'group-active:text-(--main-color)',
+            'group-focus-visible:text-(--main-color)',
             'md:group-hover:text-(--main-color)',
             !isOpen && 'rotate-180',
           )}
@@ -103,7 +112,15 @@ const CollapsibleSection = ({
 
         {/* Optional icon */}
         {icon && (
-          <span className='flex items-center text-(--secondary-color)'>
+          <span
+            className={clsx(
+              'flex h-11 w-11 items-center justify-center rounded-xl bg-(--card-color) text-(--secondary-color)',
+              'transition-colors duration-300',
+              'group-active:bg-(--background-color)',
+              'group-focus-visible:bg-(--background-color)',
+              'md:group-hover:bg-(--background-color)',
+            )}
+          >
             {icon}
           </span>
         )}
@@ -116,7 +133,7 @@ const CollapsibleSection = ({
       <div
         className={clsx(
           'grid overflow-hidden',
-          'transition-[grid-template-rows,opacity] duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]',
+          'transition-[grid-template-rows,opacity] duration-500 ease-in-out',
           isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0',
         )}
       >
