@@ -43,5 +43,10 @@
     "mistake": "Using \"hai\" instead of \"ee\"",
     "correction": "ee (ええ)",
     "explanation": "In casual Japanese, ee is more common than hai."
-  }
+  },
+  {
+  "wrong": "これは私のです本。",
+  "correct": "これは私の本です。",
+  "explanation": "Place の correctly in noun phrase. (Pattern set 2)"
+}
 ]
