@@ -1484,6 +1484,13 @@ function checkContentMastery(
     relevantEntries = entries.filter(([key]) => BASIC_KATAKANA.has(key));
     if (relevantEntries.length < BASIC_KATAKANA.size) return false;
   } else if (contentType === 'kanji') {
+    const jlptLevel = additional?.jlptLevel;
+
+    if (jlptLevel) {
+      const levelCorrect = allTimeStats.kanjiCorrectByLevel?.[jlptLevel] ?? 0;
+      if (levelCorrect === 0) return false;
+    }
+
     relevantEntries = entries.filter(([key]) => isSingleKanji(key));
   } else {
     relevantEntries = entries;

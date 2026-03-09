@@ -1,137 +1,5 @@
 [
   {
-    "question": "What is the name of the traditional Japanese theater featuring puppets? (Community variation 30)",
-    "difficulty": "hard",
-    "answers": [
-      "Bunraku",
-      "Noh",
-      "Kabuki",
-      "Kyogen"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "question": "What is the name of the traditional Japanese theater featuring puppets?",
-    "difficulty": "hard",
-    "answers": [
-      "Bunraku",
-      "Noh",
-      "Kabuki",
-      "Kyogen"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "question": "Which Japanese company is known for making the character Hello Kitty?",
-    "difficulty": "hard",
-    "answers": [
-      "Sanrio",
-      "Ghibli",
-      "Capcom",
-      "Namco"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "question": "Which Japanese island chain is known for tropical beaches and coral reefs?",
-    "difficulty": "hard",
-    "answers": [
-      "Okinawa",
-      "Sado",
-      "Awaji",
-      "Oki"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "question": "Which Japanese food is a grilled eel dish often eaten in summer?",
-    "difficulty": "hard",
-    "answers": [
-      "Tempura",
-      "Unagi",
-      "Sukiyaki",
-      "Okonomiyaki"
-    ],
-    "correctIndex": 1
-  },
-  {
-    "question": "What is the name of Japan's national currency?",
-    "difficulty": "hard",
-    "answers": [
-      "Yuan",
-      "Yen",
-      "Won",
-      "Rupee"
-    ],
-    "correctIndex": 1
-  },
-  {
-    "question": "Which Japanese city is known for its historic wooden district, Gion?",
-    "difficulty": "hard",
-    "answers": [
-      "Kyoto",
-      "Yokohama",
-      "Nagoya",
-      "Sendai"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "question": "What is the name of the Japanese comic and animation style?",
-    "difficulty": "hard",
-    "answers": [
-      "Manga",
-      "Donghua",
-      "Manhwa",
-      "Comique"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "question": "Which Japanese city hosted the 1998 Winter Olympics?",
-    "difficulty": "hard",
-    "answers": [
-      "Nagano",
-      "Kobe",
-      "Hiroshima",
-      "Naha"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "question": "What is the name of Japan's national currency? (Community variation 21)",
-    "difficulty": "hard",
-    "answers": [
-      "Yuan",
-      "Yen",
-      "Won",
-      "Rupee"
-    ],
-    "correctIndex": 1
-  },
-  {
-    "question": "Which sea separates Japan from the Korean Peninsula? (Community variation 47)",
-    "difficulty": "hard",
-    "answers": [
-      "Sea of Japan",
-      "East China Sea",
-      "Philippine Sea",
-      "Bering Sea"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "question": "Which sea separates Japan from the Korean Peninsula?",
-    "difficulty": "hard",
-    "answers": [
-      "Sea of Japan",
-      "East China Sea",
-      "Philippine Sea",
-      "Bering Sea"
-    ],
-    "correctIndex": 0
-  },
-  {
     "question": "Which Japanese city is known for its historic wooden district, Gion? (Community variation 29)",
     "difficulty": "hard",
     "answers": [
@@ -183,6 +51,17 @@
       "Go",
       "Mahjong",
       "Reversi"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "question": "What is the name of the Japanese comic and animation style?",
+    "difficulty": "hard",
+    "answers": [
+      "Manga",
+      "Donghua",
+      "Manhwa",
+      "Comique"
     ],
     "correctIndex": 0
   }

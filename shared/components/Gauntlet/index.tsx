@@ -153,10 +153,10 @@ export default function Gauntlet<T>({ config, onCancel }: GauntletProps<T>) {
     const storeMode = gauntletSettings.getGameMode(dojoType);
     return storeMode || initialGameMode || 'Pick';
   });
-  const [difficulty, setDifficultyState] = useState<GauntletDifficulty>(
+  const [difficulty, setDifficultyState] = useState<GauntletDifficulty>(() =>
     gauntletSettings.getDifficulty(dojoType),
   );
-  const [repetitions, setRepetitionsState] = useState<RepetitionCount>(
+  const [repetitions, setRepetitionsState] = useState<RepetitionCount>(() =>
     gauntletSettings.getRepetitions(dojoType),
   );
 

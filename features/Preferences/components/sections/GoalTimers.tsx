@@ -166,7 +166,7 @@ export default function GoalTimers() {
         <div className='space-y-4'>
           {/* Sound toggle */}
           <div className='flex items-center justify-between'>
-            <label className='text-sm'>Play sound when goal reached</label>
+            <span className='text-sm'>Play sound when goal reached</span>
             <button
               onClick={toggleSound}
               aria-label='Toggle play sound'
@@ -189,7 +189,7 @@ export default function GoalTimers() {
           {/* Volume slider */}
           <div className='space-y-2'>
             <div className='flex items-center justify-between'>
-              <label className='text-sm'>Volume</label>
+              <span className='text-sm'>Volume</span>
               <span className='text-sm text-(--secondary-color)'>
                 {settings.soundVolume}%
               </span>
@@ -231,9 +231,9 @@ export default function GoalTimers() {
         <div className='flex items-center justify-between'>
           <div className='flex items-center gap-2'>
             <Sparkles className='h-5 w-5 text-(--main-color)' />
-            <label className='text-sm text-(--secondary-color)'>
+            <span className='text-sm text-(--secondary-color)'>
               Show confetti animation when goal reached
-            </label>
+            </span>
           </div>
           <button
             onClick={toggleAnimation}

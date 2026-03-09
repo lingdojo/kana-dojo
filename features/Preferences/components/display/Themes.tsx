@@ -23,7 +23,7 @@ const random = new Random();
 
 const Themes = () => {
   const { playClick } = useClick();
-  const { playLong } = useLong();
+  const { playLongLoop, stopLongLoop } = useLong();
   const {
     addTheme: _addTheme,
     removeTheme: _removeTheme,
@@ -105,6 +105,17 @@ const Themes = () => {
       themeSets[2].themes[random.integer(0, themeSets[2].themes.length - 1)],
     );
   }, []);
+
+  useEffect(() => {
+    if (selectedTheme === 'long') {
+      playLongLoop();
+      return;
+    }
+
+    stopLongLoop();
+  }, [playLongLoop, selectedTheme, stopLongLoop]);
+
+  useEffect(() => stopLongLoop, [stopLongLoop]);
 
   const visibleThemeSets = themeSets.filter(
     // Temporarily hide seasonal groups in preferences.
@@ -260,7 +271,6 @@ const Themes = () => {
                 }}
                 onClick={() => {
                   playClick();
-                  if (currentTheme.id === 'long') playLong();
                 }}
               >
                 <input

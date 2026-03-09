@@ -101,8 +101,9 @@ const ThemeCard = memo(function ThemeCard({
     : `1px solid ${isSelected ? theme.mainColor : theme.borderColor}`;
 
   return (
-    <div
-      className={`cursor-pointer rounded-lg p-3 ${isBigBeautifulTheme ? 'col-span-2 row-span-2 min-h-[11rem]' : ''}`}
+    <button
+      type='button'
+      className={`rounded-lg p-3 text-left ${isBigBeautifulTheme ? 'col-span-2 row-span-2 min-h-[11rem]' : ''}`}
       style={{
         ...(wallpaper ? wallpaperStyles : { background }),
         border: borderStyle,
@@ -111,6 +112,8 @@ const ThemeCard = memo(function ThemeCard({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={() => onClick(theme.id)}
+      aria-pressed={isSelected}
+      aria-label={`Select ${themeName} theme`}
     >
       <div
         className={`mb-2 ${isPremiumTheme ? 'invisible h-8 overflow-hidden text-left' : ''}`}
@@ -148,7 +151,7 @@ const ThemeCard = memo(function ThemeCard({
           style={{ background: theme.secondaryColor }}
         />
       </div>
-    </div>
+    </button>
   );
 });
 
