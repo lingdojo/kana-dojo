@@ -280,4 +280,10 @@
     mainColor: 'oklch(72.0% 0.145 345.0 / 1)',
     secondaryColor: 'oklch(75.0% 0.125 155.0 / 1)'
   },
+  {
+  id: 'shibuya-nights',
+  backgroundColor: 'oklch(12.0% 0.045 290.0 / 1)',
+  mainColor: 'oklch(78.0% 0.225 330.0 / 1)',
+  secondaryColor: 'oklch(82.0% 0.180 200.0 / 1)'
+}
 ]
