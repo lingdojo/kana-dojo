@@ -47,5 +47,12 @@
   "english": "no good",
   "region": "Kansai",
   "note": "Used for prohibition/failure. (Set 4)"
+} ,
+  {
+  "dialect": "〜へん",
+  "standardJapanese": "〜ない",
+  "english": "negative form",
+  "region": "Kansai",
+  "note": "Example: 食べへん = 食べない。 (Set 3)"
 }
 ]
