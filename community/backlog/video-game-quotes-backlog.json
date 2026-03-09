@@ -1027,7 +1027,7 @@
     "character": "Luke fon Fabre",
     "id": 103,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "未来を変えるんだ！",
@@ -1037,7 +1037,7 @@
     "character": "Rintaro Okabe",
     "id": 104,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "希望は前に進むんだ！",
@@ -1046,7 +1046,7 @@
     "game": "Danganronpa series",
     "character": "Makoto Naegi",
     "id": 105,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
