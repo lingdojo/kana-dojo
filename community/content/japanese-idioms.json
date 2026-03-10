@@ -53,16 +53,22 @@
   "english": "Heavy hips",
   "meaning": "Slow to start doing something. (Set 4)"
 },
-  {
+{
     "japanese": "頭が上がらない",
   "romaji": "Atama ga agaranai",
   "english": "Cannot raise one’s head",
   "meaning": "Feel indebted or unable to oppose someone. (Set 4)"
 },
-  {
+{
   "japanese": "猿も木から落ちる",
   "romaji": "Saru mo ki kara ochiru",
   "english": "Even monkeys fall from trees",
   "meaning": "Even experts make mistakes"
+},
+{
+  "japanese": "手を貸す",
+  "romaji": "Te o kasu",
+  "english": "Lend a hand",
+  "meaning": "Help someone."
 }
 ]
