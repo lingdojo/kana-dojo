@@ -41,22 +41,28 @@
   "explanation": "Often means slim/stylish, not necessarily intelligent. (Set 5)",
   "example": "彼はスマートな着こなしをしている。"
 },
-  {
+{
   "termA": "シール (shiiru)",
   "termB": "seal (animal)",
   "explanation": "シール usually means sticker/label. (Set 3)",
   "example": "ノートにシールを貼った。"
 },
-  {
+{
   "termA": "サラリーマン (sarariman)",
   "termB": "salaryman",
   "explanation": "Refers broadly to office workers. (Set 5)",
   "example": "父は都内でサラリーマンをしている。"
 },
-  {
+{
   "termA": "ハイテンション (haitenshon)",
   "termB": "high tension (English)",
   "explanation": "Means very energetic mood. (Set 1)",
   "example": "試合前はみんなハイテンションだった。"
+},
+{
+  "termA": "アニメ (anime)",
+  "termB": "anime (English usage)",
+  "explanation": "In Japanese it can refer to animation in general. (Set 4)",
+  "example": "子どものころからアニメが好きだ。"
 }
 ]
