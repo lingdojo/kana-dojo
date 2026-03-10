@@ -61,5 +61,12 @@
   "english": "very",
   "region": "Hokkaido",
   "note": "Hokkaido intensifier. (Set 3)"
+},
+{
+  "dialect": "おおきに",
+  "standardJapanese": "ありがとう",
+  "english": "thank you",
+  "region": "Kansai",
+  "note": "Traditional gratitude expression. (Set 2)"
 }
 ]
