@@ -63,5 +63,10 @@
   "wrong": "これは美味しいだ。",
   "correct": "これは美味しい。",
   "explanation": "い-adjectives do not take だ in plain form."
+},
+{
+  "wrong": "私は兄さんが二人います。",
+  "correct": "私は兄が二人います。",
+  "explanation": "Use 兄 for your own older brother. (Pattern set 3)"
 }
 ]
