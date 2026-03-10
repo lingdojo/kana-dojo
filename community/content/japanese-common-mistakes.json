@@ -53,5 +53,10 @@
     "wrong": "毎日日本語を勉強していますから上手になります。",
     "correct": "毎日日本語を勉強しているので上手になります。",
     "explanation": "ので is smoother/neutral for reason. (Pattern set 1)"
-  }
+  },
+  {
+  "wrong": "私は20歳があります。",
+  "correct": "私は20歳です。",
+  "explanation": "Japanese uses 'です' to state age. Using 'あります' for age is incorrect."
+}
 ]
