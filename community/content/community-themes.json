@@ -275,21 +275,27 @@
     "background": "#001133"
   },
   {
-    id: 'mochi-pastel',
-    backgroundColor: 'oklch(94.0% 0.028 340.0 / 1)',
-    mainColor: 'oklch(72.0% 0.145 345.0 / 1)',
-    secondaryColor: 'oklch(75.0% 0.125 155.0 / 1)'
+    "id": "mochi-pastel",
+    "backgroundColor": "oklch(94.0% 0.028 340.0 / 1)",
+    "mainColor": "oklch(72.0% 0.145 345.0 / 1)",
+    "secondaryColor": "oklch(75.0% 0.125 155.0 / 1)"
   },
   {
-    id: 'shibuya-nights',
-    backgroundColor: 'oklch(12.0% 0.045 290.0 / 1)',
-    mainColor: 'oklch(78.0% 0.225 330.0 / 1)',
-    secondaryColor: 'oklch(82.0% 0.180 200.0 / 1)'
+    "id": "shibuya-nights",
+    "backgroundColor": "oklch(12.0% 0.045 290.0 / 1)",
+    "mainColor": "oklch(78.0% 0.225 330.0 / 1)",
+    "secondaryColor": "oklch(82.0% 0.180 200.0 / 1)"
   },
   {
-    id: 'firefly-field',
-    backgroundColor: 'oklch(16.0% 0.038 150.0 / 1)',
-    mainColor: 'oklch(88.0% 0.175 110.0 / 1)',
-    secondaryColor: 'oklch(65.0% 0.125 145.0 / 1)'
+    "id": "firefly-field",
+    "backgroundColor": "oklch(16.0% 0.038 150.0 / 1)",
+    "mainColor": "oklch(88.0% 0.175 110.0 / 1)",
+    "secondaryColor": "oklch(65.0% 0.125 145.0 / 1)"
   },
+  {
+  "id": "morning-fog",
+  "backgroundColor": "oklch(22.0% 0.010 240.0 / 1)",
+  "mainColor": "oklch(78.0% 0.030 220.0 / 1)",
+  "secondaryColor": "oklch(65.0% 0.040 260.0 / 1)"
+}
 ]
