@@ -99,13 +99,13 @@
     "correctIndex": 0
   },
   {
-    "question": "Which Japanese castle was the seat of the Tokugawa shogunate? (Community variation 40)",
+    "question": "Which Japanese mountain is the highest in the country?",
     "difficulty": "medium",
     "answers": [
-      "Edo Castle",
-      "Himeji Castle",
-      "Matsumoto Castle",
-      "Osaka Castle"
+      "Mount Fuji",
+      "Mount Takao",
+      "Mount Aso",
+      "Mount Tate"
     ],
     "correctIndex": 0
   }
