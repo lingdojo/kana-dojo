@@ -22,6 +22,17 @@
     "correctIndex": 0
   },
   {
+    "question": "Which Japanese island is known for the UNESCO site Shirakami-Sanchi?",
+    "difficulty": "hard",
+    "answers": [
+      "Honshu",
+      "Hokkaido",
+      "Shikoku",
+      "Kyushu"
+    ],
+    "correctIndex": 0
+  },
+  {
     "question": "Which Japanese city is famous for its street food district, Dotonbori? (Community variation 22)",
     "difficulty": "hard",
     "answers": [
