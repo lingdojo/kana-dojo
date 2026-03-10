@@ -58,5 +58,10 @@
   "wrong": "私は20歳があります。",
   "correct": "私は20歳です。",
   "explanation": "In Japanese, age is expressed using 'です', not 'あります'."
+},
+{
+  "wrong": "これは美味しいだ。",
+  "correct": "これは美味しい。",
+  "explanation": "い-adjectives do not take だ in plain form."
 }
 ]
