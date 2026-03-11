@@ -60,27 +60,33 @@
     "jlpt": "N4"
   },
   {
-  "japanese": "毎日少しずつ日本語を勉強しています。",
-  "romaji": "Mainichi sukoshi zutsu nihongo o benkyou shiteimasu.",
-  "english": "I study Japanese little by little every day.",
-  "jlpt": "N5"
-},
- {
-  "japanese": "電車が遅れていたので、少し遅刻しました。",
-  "romaji": "Densha ga okurete ita node, sukoshi chikoku shimashita.",
-  "english": "The train was delayed, so I was a little late.",
-  "jlpt": "N4"
-},
+    "japanese": "毎日少しずつ日本語を勉強しています。",
+    "romaji": "Mainichi sukoshi zutsu nihongo o benkyou shiteimasu.",
+    "english": "I study Japanese little by little every day.",
+    "jlpt": "N5"
+  },
   {
-  "japanese": "提出期限までにレポートを仕上げなければならない。",
-  "romaji": "Teishutsu kigen made ni repooto o shiagenakereba naranai.",
-  "english": "I must finish the report by the deadline.",
-  "jlpt": "N3"
+    "japanese": "電車が遅れていたので、少し遅刻しました。",
+    "romaji": "Densha ga okurete ita node, sukoshi chikoku shimashita.",
+    "english": "The train was delayed, so I was a little late.",
+    "jlpt": "N4"
+  },
+  {
+    "japanese": "提出期限までにレポートを仕上げなければならない。",
+    "romaji": "Teishutsu kigen made ni repooto o shiagenakereba naranai.",
+    "english": "I must finish the report by the deadline.",
+    "jlpt": "N3"
   },
   {
     "japanese": "雨が降ってきたので、傘を持って出かけた。",
     "romaji": "Ame ga futte kita node, kasa o motte dekaketa.",
     "english": "Since it started raining, I went out with an umbrella.",
     "jlpt": "N4"
+  },
+  {
+    "japanese": "漢字の意味を文脈で推測する力が大切だ。",
+    "romaji": "Kanji no imi o bunmyaku de suisoku suru chikara ga taisetsu da.",
+    "english": "Inferring kanji meaning from context is important.",
+    "jlpt": "N2"
   }
 ]
