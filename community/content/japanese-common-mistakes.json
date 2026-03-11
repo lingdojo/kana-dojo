@@ -78,5 +78,10 @@
     "wrong": "宿題を忘れないよう、メモします。",
     "correct": "宿題を忘れないように、メモします。",
     "explanation": "Use ように for purpose/prevention. (Pattern set 1)"
+  },
+  {
+  "wrong": "図書館に本を借りました。",
+  "correct": "図書館で本を借りました。",
+  "explanation": "で marks location of action. (Pattern set 2)"
   }
 ]
