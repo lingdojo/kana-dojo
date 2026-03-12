@@ -93,5 +93,10 @@
     "wrong": "静かい部屋",
     "correct": "静かな部屋",
     "explanation": "な-adjectives require な before nouns. (Pattern set 4)"
+  },
+  {
+  "wrong": "駅まで十分歩きますかかる。",
+  "correct": "駅まで歩いて十分かかる。",
+  "explanation": "Use natural collocation and order. (Pattern set 3)"
   }
 ]
