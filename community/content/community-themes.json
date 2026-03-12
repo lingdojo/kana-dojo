@@ -360,9 +360,9 @@
   "secondaryColor": "oklch(68.0% 0.090 60.0 / 1)"
   },
   {
-  id: 'noh-mask',
-  backgroundColor: 'oklch(20.0% 0.028 285.0 / 1)',
-  mainColor: 'oklch(88.0% 0.045 90.0 / 1)',
-  secondaryColor: 'oklch(65.0% 0.145 20.0 / 1)'
+    "id": "noh-mask",
+    "backgroundColor": "oklch(20.0% 0.028 285.0 / 1)",
+    "mainColor": "oklch(88.0% 0.045 90.0 / 1)",
+    "secondaryColor": "oklch(65.0% 0.145 20.0 / 1)"
   }
 ]
