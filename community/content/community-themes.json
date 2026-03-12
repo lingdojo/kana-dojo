@@ -270,7 +270,7 @@
     "secondaryColor": "oklch(58.0% 0.060 260.0 / 1)"
   },
   {
-    "id": "ocean-blue",
+  "id": "ocean-blue",
   "backgroundColor": "oklch(0.0% 0.0 0 / 1)", 
   "mainColor": "oklch(40.0% 0.050 210.0 / 1)",
   "secondaryColor": "oklch(30.0% 0.030 190.0 / 1)"
@@ -334,5 +334,11 @@
   "backgroundColor": "oklch(19.0% 0.055 165.0 / 1)",
   "mainColor": "oklch(68.0% 0.175 160.0 / 1)",
   "secondaryColor": "oklch(78.0% 0.145 140.0 / 1)"
+  },
+  {
+  "id": "papercraft-white",
+  "backgroundColor": "oklch(98.0% 0.005 90.0 / 1)",
+  "mainColor": "oklch(35.0% 0.165 255.0 / 1)",
+  "secondaryColor": "oklch(55.0% 0.145 200.0 / 1)"
   }
 ]
