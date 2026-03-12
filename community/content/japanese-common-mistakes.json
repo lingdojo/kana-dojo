@@ -83,5 +83,10 @@
   "wrong": "図書館に本を借りました。",
   "correct": "図書館で本を借りました。",
   "explanation": "で marks location of action. (Pattern set 2)"
+  },
+  {
+  "wrong": "この漢字は読み方が難しいです。",
+  "correct": "この漢字の読み方は難しいです。",
+  "explanation": "Prefer noun linkage with の. (Pattern set 5)"
   }
 ]
