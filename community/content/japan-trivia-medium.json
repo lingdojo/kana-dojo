@@ -119,5 +119,16 @@
     "Ikebana"
   ],
   "correctIndex": 0
-}
-]
+  },
+  {
+  "question": "What is the Japanese word for "thank you"? (Community variation 11)",
+  "difficulty": "medium",
+  "answers": [
+    "Sumimasen",
+    "Arigatou",
+    "Ohayou",
+    "Sayonara"
+  ],
+  "correctIndex": 1
+  }
+  ]  
