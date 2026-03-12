@@ -112,5 +112,11 @@
     "romaji": "Kare wa Nihon de hataraku tame ni bijinesu nihongo o manande iru.",
     "english": "He studies business Japanese to work in Japan.",
     "jlpt": "N3"
+  },
+  {
+  "japanese": "分からない単語は辞書で調べてから質問してください。",
+  "romaji": "Wakaranai tango wa jisho de shirabete kara shitsumon shite kudasai.",
+  "english": "Please look up unknown words before asking.",
+  "jlpt": "N4"
   }
 ]
