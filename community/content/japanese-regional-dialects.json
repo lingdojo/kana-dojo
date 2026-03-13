@@ -117,5 +117,12 @@
     "english": "very",
     "region": "Kansai",
     "note": "Now used nationwide. (Set 4)"
-  }
+  },
+  {
+  "dialect": "〜やねん",
+  "standardJapanese": "〜なんだ",
+  "english": "it is that...",
+  "region": "Kansai",
+  "note": "Explanatory ending in conversation. (Set 2)"
+}
 ]
