@@ -899,7 +899,7 @@
     "note": "Reason marker in Kyushu. (Set 5)",
     "id": 90,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "よか",
@@ -908,7 +908,7 @@
     "region": "Kyushu",
     "note": "Common Kyushu replacement. (Set 5)",
     "id": 91,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
