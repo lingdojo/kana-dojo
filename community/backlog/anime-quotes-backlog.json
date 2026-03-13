@@ -307,7 +307,7 @@
     "anime": "One Piece",
     "character": "Edward Newgate (Whitebeard)",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 32,
@@ -336,7 +336,7 @@
     "english": "Those who don't take care of their comrades are worse than scum.",
     "anime": "Naruto",
     "character": "Kakashi Hatake",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

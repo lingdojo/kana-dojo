@@ -1620,7 +1620,9 @@
     "romaji": "Inu mo arukeba bou ni ataru",
     "english": "Even a walking dog will hit a stick",
     "meaning": "Acting can lead to luck or trouble",
-    "completed": false,
-    "issued": true
+    "completed": true,
+    "issued": false,
+    "completedBy": "alton47",
+    "completedPR": 8372
   }
 ]
