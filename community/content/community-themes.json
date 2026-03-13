@@ -370,5 +370,11 @@
     "backgroundColor": "oklch(16.0% 0.030 250.0 / 1)",
     "mainColor": "oklch(75.0% 0.115 230.0 / 1)",
     "secondaryColor": "oklch(65.0% 0.085 255.0 / 1)"
+  },
+  {
+    "id": "spring-bamboo",
+    "backgroundColor": "oklch(93.0% 0.018 150.0 / 1)",
+    "mainColor": "oklch(55.0% 0.145 145.0 / 1)",
+    "secondaryColor": "oklch(70.0% 0.085 120.0 / 1)"
   }
 ]
