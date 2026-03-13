@@ -426,8 +426,10 @@
     "backgroundColor": "oklch(25.0% 0.028 145.0 / 1)",
     "mainColor": "oklch(62.0% 0.115 135.0 / 1)",
     "secondaryColor": "oklch(75.0% 0.075 90.0 / 1)",
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true,
+    "completedBy": "alton47",
+    "completedPR": 8375
   },
   {
     "id": "hanabi-festival",
@@ -970,8 +972,10 @@
     "backgroundColor": "oklch(18.0% 0.040 15.0 / 1)",
     "mainColor": "oklch(58.0% 0.210 25.0 / 1)",
     "secondaryColor": "oklch(88.0% 0.055 90.0 / 1)",
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true,
+    "completedBy": "alton47",
+    "completedPR": 8385
   },
   {
     "id": "sakurajima-ash",
@@ -1342,8 +1346,10 @@
     "backgroundColor": "oklch(18.0% 0.055 330.0 / 1)",
     "mainColor": "oklch(72.0% 0.195 35.0 / 1)",
     "secondaryColor": "oklch(85.0% 0.095 275.0 / 1)",
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true,
+    "completedBy": "alton47",
+    "completedPR": 8378
   },
   {
     "id": "spring-bamboo",
@@ -1392,8 +1398,10 @@
     "backgroundColor": "oklch(92.0% 0.020 140.0 / 1)",
     "mainColor": "oklch(58.0% 0.165 140.0 / 1)",
     "secondaryColor": "oklch(72.0% 0.115 95.0 / 1)",
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true,
+    "completedBy": "alton47",
+    "completedPR": 8394
   },
   {
     "id": "taisho-cafe",
