@@ -152,5 +152,16 @@
     "Kyushu"
   ],
   "correctIndex": 3
-  }
+  },
+  {
+  "question": "What is the Japanese term for a traditional tea ceremony?",
+  "difficulty": "medium",
+  "answers": [
+    "Sado",
+    "Kado",
+    "Budo",
+    "Shodo"
+  ],
+  "correctIndex": 0
+}
   ]  
