@@ -430,5 +430,11 @@
     "backgroundColor": "oklch(95.0% 0.015 85.0 / 1)",
     "mainColor": "oklch(65.0% 0.235 345.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.200 260.0 / 1)"
+  },
+  {
+    "id": "kabuki-drama",
+    "backgroundColor": "oklch(15.0% 0.048 25.0 / 1)",
+    "mainColor": "oklch(65.0% 0.225 30.0 / 1)",
+    "secondaryColor": "oklch(90.0% 0.055 95.0 / 1)"
   }
 ]
