@@ -108,5 +108,16 @@
     "Bering Sea"
   ],
   "correctIndex": 0
+},
+{
+  "question": "Which Japanese food is a grilled eel dish often eaten in summer?",
+  "difficulty": "hard",
+  "answers": [
+    "Tempura",
+    "Unagi",
+    "Sukiyaki",
+    "Okonomiyaki"
+  ],
+  "correctIndex": 1
 }
 ]
