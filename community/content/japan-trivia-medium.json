@@ -111,5 +111,16 @@
     "difficulty": "medium",
     "answers": ["Setsubun", "Obon", "Tanabata", "Shichi-Go-San"],
     "correctIndex": 0
+  },
+  {
+    "question": "Which season is associated with red maple leaves (momiji) in Japan? (Community variation 16)",
+    "difficulty": "medium",
+    "answers": [
+      "Spring",
+      "Summer",
+      "Autumn",
+      "Winter"
+    ],
+    "correctIndex": 2
   }
 ]
