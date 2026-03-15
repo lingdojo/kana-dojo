@@ -291,9 +291,7 @@
   "romaji": "Warau kado ni wa fuku kitaru",
   "english": "Fortune comes to a laughing gate",
   "meaning": "Good fortune comes to those who smile"
-}
-]
-
+},
 {
   "japanese": "明日は明日の風が吹く",
   "romaji": "Ashita wa ashita no kaze ga fuku",
@@ -305,4 +303,11 @@
   "romaji": "Nido aru koto wa sando aru",
   "english": "What happens twice will happen a third time",
   "meaning": "Patterns tend to repeat"
+},
+{
+  "japanese": "虎穴に入らずんば虎子を得ず",
+  "romaji": "Koketsu ni irazunba koji wo ezu",
+  "english": "You can’t get the tiger’s cub without entering the lair",
+  "meaning": "No reward without risk"
 }
+]
