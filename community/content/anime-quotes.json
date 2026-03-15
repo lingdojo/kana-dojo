@@ -131,59 +131,66 @@
     "character": "Monkey D. Luffy"
   },
   {
-  "japanese": "まだだ、まだ終わらんよ！",
-  "romaji": "Mada da, mada owaran yo!",
-  "english": "Not yet! It's not over yet! (alt wording 22) (alt wording 74)",
-  "anime": "Mobile Suit Gundam",
-  "character": "Char Aznable"
-},
-{
-  "japanese": "グララララ",
-  "romaji": "Gurararara",
-  "english": "Gurararara!",
-  "anime": "One Piece",
-  "character": "Edward Newgate (Whitebeard)"
-},
-{
-  "japanese": "シシシシシ",
-  "romaji": "Shishishishi",
-  "english": "Shishishi! (alt wording 30) (alt wording 82)",
-  "anime": "One Piece",
-  "character": "Monkey D. Luffy"
-},
-{
-  "japanese": "ゼハハハハ",
-  "romaji": "Ze hahaha",
-  "english": "Ze ha ha ha! (alt wording 32) (alt wording 84)",
-  "anime": "One Piece",
-  "character": "Marshall D. Teach (Blackbeard)"
-},
-{
-  "japanese": "仲間を大切にしない奴はそれ以上のクズだ",
-  "romaji": "Nakama o taisetsu ni shinai yatsu wa sore ijou no kuzu da",
-  "english": "Those who don't take care of their comrades are worse than scum. (alt wording 34) (alt wording 86)",
-  "anime": "Naruto",
-  "character": "Kakashi Hatake"
-},
-{
-  "japanese": "次にお前は「やれやれだぜ」と言う！",
-  "romaji": "Tsugi ni omae wa 'yare yare da ze' to iu!",
-  "english": "Next you'll say, 'Good grief!'",
-  "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
-  "character": "Joseph Joestar"
-},
+    "japanese": "まだだ、まだ終わらんよ！",
+    "romaji": "Mada da, mada owaran yo!",
+    "english": "Not yet! It's not over yet! (alt wording 22) (alt wording 74)",
+    "anime": "Mobile Suit Gundam",
+    "character": "Char Aznable"
+  },
   {
-  "japanese": "フォッフォッフォッ",
-  "romaji": "Fo fo fo fo",
-  "english": "Fosh fosh fosh fosh.",
-  "anime": "One Piece",
-  "character": "Kozuki Sukiyaki"
-},
+    "japanese": "グララララ",
+    "romaji": "Gurararara",
+    "english": "Gurararara!",
+    "anime": "One Piece",
+    "character": "Edward Newgate (Whitebeard)"
+  },
   {
-  "japanese": "ブチャラティ、来た！",
-  "romaji": "Bucharati, kita!",
-  "english": "Bucciarati is here!",
-  "anime": "JoJo's Bizarre Adventure: Golden Wind",
-  "character": "Narancia Ghirga"
-}
+    "japanese": "シシシシシ",
+    "romaji": "Shishishishi",
+    "english": "Shishishi! (alt wording 30) (alt wording 82)",
+    "anime": "One Piece",
+    "character": "Monkey D. Luffy"
+  },
+  {
+    "japanese": "ゼハハハハ",
+    "romaji": "Ze hahaha",
+    "english": "Ze ha ha ha! (alt wording 32) (alt wording 84)",
+    "anime": "One Piece",
+    "character": "Marshall D. Teach (Blackbeard)"
+  },
+  {
+    "japanese": "仲間を大切にしない奴はそれ以上のクズだ",
+    "romaji": "Nakama o taisetsu ni shinai yatsu wa sore ijou no kuzu da",
+    "english": "Those who don't take care of their comrades are worse than scum. (alt wording 34) (alt wording 86)",
+    "anime": "Naruto",
+    "character": "Kakashi Hatake"
+  },
+  {
+    "japanese": "次にお前は「やれやれだぜ」と言う！",
+    "romaji": "Tsugi ni omae wa 'yare yare da ze' to iu!",
+    "english": "Next you'll say, 'Good grief!'",
+    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+    "character": "Joseph Joestar"
+  },
+  {
+    "japanese": "フォッフォッフォッ",
+    "romaji": "Fo fo fo fo",
+    "english": "Fosh fosh fosh fosh.",
+    "anime": "One Piece",
+    "character": "Kozuki Sukiyaki"
+  },
+  {
+    "japanese": "ブチャラティ、来た！",
+    "romaji": "Bucharati, kita!",
+    "english": "Bucciarati is here!",
+    "anime": "JoJo's Bizarre Adventure: Golden Wind",
+    "character": "Narancia Ghirga"
+  },
+  {
+    "japanese": "俺は海賊王になる！",
+    "romaji": "Ore wa kaizoku ou ni naru!",
+    "english": "I'm gonna be King of the Pirates! (alt wording 20)",
+    "anime": "One Piece",
+    "character": "Monkey D. Luffy"
+  }
 ]
