@@ -408,21 +408,27 @@
     "secondaryColor": "oklch(60.0% 0.125 30.0 / 1)"
   },
   {
-  "id": "harbor-lights",
-  "backgroundColor": "oklch(14.0% 0.045 250.0 / 1)",
-  "mainColor": "oklch(80.0% 0.140 210.0 / 1)",
-  "secondaryColor": "oklch(70.0% 0.120 310.0 / 1)"
-},
+    "id": "harbor-lights",
+    "backgroundColor": "oklch(14.0% 0.045 250.0 / 1)",
+    "mainColor": "oklch(80.0% 0.140 210.0 / 1)",
+    "secondaryColor": "oklch(70.0% 0.120 310.0 / 1)"
+  },
   {
-  "id": "storm-lake",
-  "backgroundColor": "oklch(15.0% 0.050 250.0 / 1)",
-  "mainColor": "oklch(78.0% 0.180 235.0 / 1)",
-  "secondaryColor": "oklch(62.0% 0.130 270.0 / 1)"
-},
+    "id": "storm-lake",
+    "backgroundColor": "oklch(15.0% 0.050 250.0 / 1)",
+    "mainColor": "oklch(78.0% 0.180 235.0 / 1)",
+    "secondaryColor": "oklch(62.0% 0.130 270.0 / 1)"
+  },
   {
-  "id": "blooming-ume",
-  "backgroundColor": "oklch(95.0% 0.015 15.0 / 1)",
-  "mainColor": "oklch(62.0% 0.175 350.0 / 1)",
-  "secondaryColor": "oklch(75.0% 0.085 85.0 / 1)"
-}
+    "id": "blooming-ume",
+    "backgroundColor": "oklch(95.0% 0.015 15.0 / 1)",
+    "mainColor": "oklch(62.0% 0.175 350.0 / 1)",
+    "secondaryColor": "oklch(75.0% 0.085 85.0 / 1)"
+  },
+  {
+    "id": "kabuki-drama",
+    "backgroundColor": "oklch(15.0% 0.048 25.0 / 1)",
+    "mainColor": "oklch(65.0% 0.225 30.0 / 1)",
+    "secondaryColor": "oklch(90.0% 0.055 95.0 / 1)"
+  }
 ]
