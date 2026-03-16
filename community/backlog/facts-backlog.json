@@ -14,7 +14,7 @@
   {
     "id": 3,
     "fact": "Japanese blood types are believed to determine personality, similar to zodiac signs in the West. Type A is organized, B is creative, O is confident, and AB is rational.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -272,7 +272,7 @@
   {
     "id": 46,
     "fact": "Japan's Shibuya Crossing sees up to 3,000 people cross at once during peak times - making it the busiest pedestrian intersection in the world.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -790,7 +790,7 @@
   {
     "id": 132,
     "fact": "Japan has 'gacha' machines that dispense random collectible toys for 100-500 yen - adults are as obsessed as children.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -900,7 +900,7 @@
   {
     "id": 150,
     "fact": "Japan has 'gravure idols' - models who pose in bikinis and lingerie for magazines, calendars, and trading cards.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

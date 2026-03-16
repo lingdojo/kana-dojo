@@ -454,5 +454,11 @@
   "backgroundColor": "oklch(94.0% 0.012 250.0 / 1)",
   "mainColor": "oklch(50.0% 0.145 30.0 / 1)",
   "secondaryColor": "oklch(40.0% 0.110 250.0 / 1)"
+},
+{
+  "id": "yukata-breeze",
+  "backgroundColor": "oklch(93.0% 0.012 240.0 / 1)",
+  "mainColor": "oklch(55.0% 0.165 230.0 / 1)",
+  "secondaryColor": "oklch(70.0% 0.115 185.0 / 1)"
 }
 ]

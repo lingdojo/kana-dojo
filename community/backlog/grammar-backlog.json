@@ -478,7 +478,7 @@
   {
     "id": 80,
     "text": "\"〜てはじめて\" means \"only after...\".",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -508,7 +508,7 @@
   {
     "id": 85,
     "text": "\"〜に限って\" means \"only / exclusively\".",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -520,7 +520,7 @@
   {
     "id": 87,
     "text": "\"〜ません\" is the polite negative form of verbs, used to say something doesn't happen. (practice variation 2)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
