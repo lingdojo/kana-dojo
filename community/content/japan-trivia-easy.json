@@ -250,5 +250,38 @@
     "Matsuyama"
   ],
   "correctIndex": 0
+},
+{
+  "question": "Which Japanese food is a savory pancake cooked on a griddle?",
+  "difficulty": "easy",
+  "answers": [
+    "Okonomiyaki",
+    "Tempura",
+    "Yakitori",
+    "Sashimi"
+  ],
+  "correctIndex": 0
+},
+  {
+  "question": "Which Japanese island is home to the city of Sapporo? (Community variation 5)",
+  "difficulty": "easy",
+  "answers": [
+    "Honshu",
+    "Hokkaido",
+    "Shikoku",
+    "Kyushu"
+  ],
+  "correctIndex": 1
+  },
+  {
+  "question": "Which city is famous for the Gion Matsuri festival?",
+  "difficulty": "easy",
+  "answers": [
+    "Kyoto",
+    "Sendai",
+    "Sapporo",
+    "Kobe"
+  ],
+  "correctIndex": 0
 }
 ]

@@ -371,12 +371,12 @@
     "id": 62,
     "text": "\"〜につれて\" means \"as... changes, ... also changes\".",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 63,
     "text": "\"〜に比べて\" means \"compared to...\".",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -406,7 +406,7 @@
   {
     "id": 68,
     "text": "\"〜おそれがある\" means \"there is a risk that...\".",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -419,37 +419,37 @@
     "id": 70,
     "text": "\"〜まま\" means \"as-is / while remaining...\".",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 71,
     "text": "\"〜わけにはいかない\" means \"cannot (due to circumstances)\".",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 72,
     "text": "\"〜て以来\" means \"since (doing)\".",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 73,
     "text": "\"〜たびに\" means \"every time...\".",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 74,
     "text": "\"〜ところ\" can mean \"just did / about to do / in the middle of\".",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 75,
     "text": "\"〜ことにする\" means \"decide to...\".",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 76,
@@ -460,13 +460,13 @@
   {
     "id": 77,
     "text": "\"〜わりに\" means \"despite / considering...\".",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 78,
     "text": "\"〜ながら\" can mean \"while\" (simultaneous action).",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -478,13 +478,13 @@
   {
     "id": 80,
     "text": "\"〜てはじめて\" means \"only after...\".",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 81,
     "text": "\"〜に気づく\" means \"to notice / realize...\".",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -508,7 +508,7 @@
   {
     "id": 85,
     "text": "\"〜に限って\" means \"only / exclusively\".",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -520,7 +520,7 @@
   {
     "id": 87,
     "text": "\"〜ません\" is the polite negative form of verbs, used to say something doesn't happen. (practice variation 2)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -550,7 +550,7 @@
   {
     "id": 92,
     "text": "\"〜たことがある\" expresses past experience, like \"have done\" something before. (practice variation 7)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -658,14 +658,14 @@
   {
     "id": 110,
     "text": "\"〜たところ\" can mean \"just did\" something and observed a result. (practice variation 25)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 111,
     "text": "\"〜まま\" means \"as is\" or \"unchanged\". (practice variation 26)",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 112,
@@ -682,7 +682,7 @@
   {
     "id": 114,
     "text": "\"〜らしい\" can mean \"seems\" or describe a typical characteristic. (practice variation 29)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

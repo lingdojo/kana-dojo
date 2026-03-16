@@ -14,7 +14,7 @@
   {
     "id": 3,
     "fact": "Japanese blood types are believed to determine personality, similar to zodiac signs in the West. Type A is organized, B is creative, O is confident, and AB is rational.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -56,7 +56,7 @@
   {
     "id": 10,
     "fact": "Raw horse meat, called 'basashi' (馬刺し), is a popular delicacy in Kumamoto prefecture, often served frozen or thinly sliced with soy sauce and ginger.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -230,7 +230,7 @@
   {
     "id": 39,
     "fact": "Japan has professional cuddlers you can hire to hold you while you nap - reflecting the country's epidemic of loneliness and touch starvation.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -242,7 +242,7 @@
   {
     "id": 41,
     "fact": "The Japanese word 'yūgen' (幽玄) describes a profound awareness of the universe that triggers emotional responses too deep for words.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -272,7 +272,7 @@
   {
     "id": 46,
     "fact": "Japan's Shibuya Crossing sees up to 3,000 people cross at once during peak times - making it the busiest pedestrian intersection in the world.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -284,7 +284,7 @@
   {
     "id": 48,
     "fact": "Japan has robots that serve as Buddhist priests conducting funeral ceremonies - complete with chanting and prayer beads.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -380,7 +380,7 @@
   {
     "id": 64,
     "fact": "Japanese blood donation has such high demand that mobile donation buses give out snacks, drinks, and lottery tickets as thanks.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -449,12 +449,12 @@
     "id": 75,
     "fact": "The word 'enryo' (遠慮) describes polite restraint - like declining seconds even when hungry, to not be a burden.",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 76,
     "fact": "Japan has a zero-tolerance policy for drunk driving - any detectable alcohol means immediate arrest and potential prison time.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -520,7 +520,7 @@
   {
     "id": 87,
     "fact": "There's a Japanese word 'dokkiri' (ドッキリ) for the heart-pounding shock of surprise - now the name of prank TV shows.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -640,7 +640,7 @@
   {
     "id": 107,
     "fact": "There's a Japanese concept 'omoiyari' (思いやり) meaning sensitivity to others' feelings - anticipating needs before they're expressed.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -790,7 +790,7 @@
   {
     "id": 132,
     "fact": "Japan has 'gacha' machines that dispense random collectible toys for 100-500 yen - adults are as obsessed as children.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -900,7 +900,7 @@
   {
     "id": 150,
     "fact": "Japan has 'gravure idols' - models who pose in bikinis and lingerie for magazines, calendars, and trading cards.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1374,7 +1374,7 @@
   {
     "id": 229,
     "fact": "Japan’s 'shrine stamps' called 'goshuin' (御朱印) are calligraphy seals collected in special books by visitors.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1398,7 +1398,7 @@
   {
     "id": 233,
     "fact": "Japan has a ceremony called 'kagamibiraki' (鏡開き) where mochi is broken with a wooden mallet to celebrate a fresh start.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1500,7 +1500,7 @@
   {
     "id": 250,
     "fact": "The concept of 'seijaku' (静寂) means profound silence, often used to describe the quiet of temples or deep forests.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1680,7 +1680,7 @@
   {
     "id": 280,
     "fact": "The phrase 'shinpuru' (シンプル) is the Japanese adoption of 'simple', often implying elegant minimalism.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1698,7 +1698,7 @@
   {
     "id": 283,
     "fact": "Japan’s 'wagashi' sweets are often designed to match the season, with colors and shapes inspired by flowers or snow.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1830,7 +1830,7 @@
   {
     "id": 305,
     "fact": "The term 'shibui' (渋い) refers to understated, elegant beauty—often used for subtle flavors or aesthetics.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

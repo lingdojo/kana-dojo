@@ -776,7 +776,7 @@
     "english": "This world is cruel... yet so beautiful. (alt wording 26)",
     "anime": "Attack on Titan",
     "character": "Mikasa Ackerman",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -786,7 +786,7 @@
     "english": "Lero lero lero lero. (alt wording 27)",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Noriaki Kakyoin",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -797,7 +797,7 @@
     "anime": "One Piece",
     "character": "Kozuki Sukiyaki",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 81,

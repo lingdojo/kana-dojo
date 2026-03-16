@@ -321,5 +321,41 @@
   "romaji": "Ashita wa ashita no kaze ga fuku",
   "english": "Tomorrow's wind will blow tomorrow",
   "meaning": "Don't worry too much about the future"
+},
+{
+  "japanese": "月とすっぽん",
+  "romaji": "Tsuki to suppon",
+  "english": "The moon and a turtle",
+  "meaning": "Vast difference; not comparable"
+},
+  {
+  "japanese": "口は災いの元",
+  "romaji": "Kuchi wa wazawai no moto",
+  "english": "The mouth is the source of disaster",
+  "meaning": "Careless words cause trouble"
+},
+{
+  "japanese": "急がば回れ",
+  "romaji": "Isogaba maware",
+  "english": "If in a hurry, go around",
+  "meaning": "The safer path can be faster"
+},
+{
+  "japanese": "猿も木から落ちる",
+  "romaji": "Saru mo ki kara ochiru",
+  "english": "Even monkeys fall from trees",
+  "meaning": "Experts make mistakes"
+},
+{
+  "japanese": "柳に風",
+  "romaji": "Yanagi ni kaze",
+  "english": "Wind in the willow",
+  "meaning": "Stay flexible and let problems pass"
+},
+  {
+  "japanese": "二兎を追う者は一兎をも得ず",
+  "romaji": "Ni to wo ou mono wa itto wo mo ezu",
+  "english": "One who chases two rabbits catches neither",
+  "meaning": "Focus on one thing at a time"
 }
 ]
