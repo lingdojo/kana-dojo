@@ -456,6 +456,12 @@
   "secondaryColor": "oklch(40.0% 0.110 250.0 / 1)"
 },
 {
+  "id": "yakuza-tattoo",
+  "backgroundColor": "oklch(17.0% 0.045 255.0 / 1)",
+  "mainColor": "oklch(62.0% 0.185 220.0 / 1)",
+  "secondaryColor": "oklch(70.0% 0.175 15.0 / 1)"
+  },
+{
   "id": "yukata-breeze",
   "backgroundColor": "oklch(93.0% 0.012 240.0 / 1)",
   "mainColor": "oklch(55.0% 0.165 230.0 / 1)",
@@ -477,7 +483,7 @@
   "id": "yakuza-tattoo",
   "backgroundColor": "oklch(17.0% 0.045 255.0 / 1)",
   "mainColor": "oklch(62.0% 0.185 220.0 / 1)",
-  "secondaryColor": "oklch(70.0% 0.175 15.0 / 1)"
+  "secondaryColor": "oklch(70.0% 0.175 15.0 / 1)",
 },
 {
   "id": "quiet-library",
