@@ -143,8 +143,8 @@ This project is licensed under the AGPL 3.0 License — see [LICENSE.md](./LICEN
 
 ## Contact
 
-- **Discord**: https://discord.gg/CyvBNNrSmb
-- **Email**: dev@kanadojo.com
+- **Discord**: [Join the community](https://discord.gg/CyvBNNrSmb)
+- **Email**: [dev@kanadojo.com](mailto:dev@kanadojo.com)
 
 ---
 

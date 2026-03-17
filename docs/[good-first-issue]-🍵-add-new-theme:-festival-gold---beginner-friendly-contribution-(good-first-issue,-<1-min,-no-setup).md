@@ -12,6 +12,14 @@
 - Added documentation for this feature
 - Followed project guidelines
 
+## Festival Gold Theme
+- **Primary color:** #FFD700
+- **Secondary color:** #FFB347
+- **Accent color:** #FF4500
+- **Background color:** #FFF8DC
+
+This theme gives a warm, festive look suitable for celebrations.
+
 ## Related Issue
 Fixes #8779
 
