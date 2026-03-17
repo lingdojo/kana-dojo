@@ -88,6 +88,9 @@ const Subset = ({ sliceRange, subgroup }: SubsetProps) => {
               <div
                 className='group relative grid min-h-auto w-full place-items-start font-normal hover:cursor-pointer'
                 onTouchStart={() => setFocusedRow(group.groupName)}
+                onFocus={() => setFocusedRow(group.groupName)}
+                onBlur={() => setFocusedRow('')}
+                tabIndex={0}
               >
                 {/* Kana characters */}
                 <span
