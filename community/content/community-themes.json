@@ -426,9 +426,9 @@
   "secondaryColor": "oklch(70.0% 0.145 210.0 / 1)"
 },
 {
-  id: 'koi-glow',
-  backgroundColor: 'oklch(22.0% 0.045 40.0 / 1)',
-  mainColor: 'oklch(82.0% 0.160 55.0 / 1)',
-  secondaryColor: 'oklch(70.0% 0.120 15.0 / 1)'
-}
+  "id": "koi-glow",
+  "backgroundColor": "oklch(22.0% 0.045 40.0 / 1)",
+  "mainColor": "oklch(82.0% 0.160 55.0 / 1)",
+  "secondaryColor": "oklch(70.0% 0.120 15.0 / 1)"
+  }
 ]
