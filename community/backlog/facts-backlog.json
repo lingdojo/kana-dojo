@@ -20,13 +20,13 @@
   {
     "id": 4,
     "fact": "The Japanese word 'age-otori' (上げ劣り) describes the specific experience of looking worse after a haircut - a feeling so common it needed its own word.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 5,
     "fact": "Japan's Aokigahara forest, also called the Sea of Trees, is so dense that GPS devices and compasses often malfunction due to the iron-rich volcanic soil.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -62,19 +62,19 @@
   {
     "id": 11,
     "fact": "Japan's postal system has a special service where you can mail a letter to your future self, and they'll deliver it years later on the date you specify.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 12,
     "fact": "The word 'bakku-shan' (バックシャン) describes someone who looks attractive from behind but not from the front - a uniquely specific observation.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 13,
     "fact": "Japanese police use giant futon-like blankets called 'sasumata' to safely pin suspects against walls, a technique dating back to the Edo period.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -140,7 +140,7 @@
   {
     "id": 24,
     "fact": "The Japanese word 'natsukashii' (懐かしい) describes nostalgic longing that's bittersweet rather than sad - missing something while appreciating the memory.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -332,19 +332,19 @@
   {
     "id": 56,
     "fact": "Japan has the world's oldest population - one in three Japanese citizens is over 60 years old, and the ratio is increasing.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 57,
     "fact": "There's a Japanese word 'tsujigiri' (辻斬り) that historically meant testing a new sword on a random passerby - thankfully outlawed centuries ago.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 58,
     "fact": "Japan's Seikan Tunnel connecting Honshu and Hokkaido is the world's longest undersea tunnel at 53.85 kilometers.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -532,7 +532,7 @@
   {
     "id": 89,
     "fact": "The concept of 'kawaisa' (可愛さ) or cuteness is so culturally important that it influences everything from government mascots to warning signs.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -647,12 +647,12 @@
     "id": 108,
     "fact": "Japan's mobile phones had emoji in 1999 - a full 11 years before the iPhone introduced them to the Western world.",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 109,
     "fact": "The Japanese word 'kuyashii' (悔しい) describes frustration mixed with determination to do better next time - no English equivalent.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -695,24 +695,24 @@
     "id": 116,
     "fact": "Japan has themed trains where the entire interior is decorated for specific anime, seasonal events, or tourist destinations.",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 117,
     "fact": "The Japanese word 'yabai' (やばい) originally meant 'dangerous' but now means anything extreme - amazing or terrible.",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 118,
     "fact": "Japan has 'cuddle therapy' clinics where you can pay to be held, spooned, or simply have physical human contact.",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 119,
     "fact": "There's a Japanese practice 'meshi' (召し) where a boss inviting you for a meal is essentially a command, not a request.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -930,13 +930,13 @@
   {
     "id": 155,
     "fact": "There's a Japanese concept 'uchi-soto' (内外) - inside/outside - defining who you're close to versus everyone else.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 156,
     "fact": "Japan has a dish called 'natto' - fermented soybeans so stringy and pungent that even many Japanese can't stand it.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1507,24 +1507,24 @@
     "id": 251,
     "fact": "Japan has an art of arranging flowers called 'ikebana' (生け花), focusing on balance, line, and space rather than volume.",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 252,
     "fact": "The Japanese word 'kotodama' (言霊) means 'spirit of words' — the belief that words have power and influence outcomes.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 253,
     "fact": "Japan’s 'tachigui' culture means quick standing meals at noodle or sushi counters, especially around busy train stations.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 254,
     "fact": "The term 'ashita no tenki' (明日の天気) is used in small talk, similar to discussing the weather to open conversations.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1548,7 +1548,7 @@
   {
     "id": 258,
     "fact": "The phrase 'shoku no shiki' (食の四季) refers to eating with the seasons — menus change to highlight spring, summer, fall, and winter ingredients.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1746,7 +1746,7 @@
   {
     "id": 291,
     "fact": "Japan’s name for the rainy season, 'tsuyu' (梅雨), literally means \"plum rain\" because it coincides with the ripening of ume plums.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

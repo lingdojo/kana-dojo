@@ -218,7 +218,8 @@
   {
     "japanese": "七転び八起き",
     "romaji": "Nanakorobi yaoki",
-    "english": "Fall seven times, stand up eight."
+    "english": "Fall seven times, stand up eight.",
+    "meaning": "Perseverance leads to success"
   },
   {
     "japanese": "喉元過ぎれば熱さを忘れる",
@@ -275,93 +276,111 @@
     "meaning": "Consistency leads to strength"
   },
   {
-  "japanese": "覆水盆に返らず",
-  "romaji": "Fukusui bon ni kaerazu",
-  "english": "Spilled water will not return to the tray",
-  "meaning": "What is done cannot be undone"
+    "japanese": "覆水盆に返らず",
+    "romaji": "Fukusui bon ni kaerazu",
+    "english": "Spilled water will not return to the tray",
+    "meaning": "What is done cannot be undone"
   },
   {
-  "japanese": "旅は道連れ世は情け",
-  "romaji": "Tabi wa michizure yo wa nasake",
-  "english": "Travel needs companions; life needs kindness",
-  "meaning": "Relationships and compassion matter"
+    "japanese": "旅は道連れ世は情け",
+    "romaji": "Tabi wa michizure yo wa nasake",
+    "english": "Travel needs companions; life needs kindness",
+    "meaning": "Relationships and compassion matter"
   },
   {
-  "japanese": "笑う門には福来る",
-  "romaji": "Warau kado ni wa fuku kitaru",
-  "english": "Fortune comes to a laughing gate",
-  "meaning": "Good fortune comes to those who smile"
-},
-{
-  "japanese": "明日は明日の風が吹く",
-  "romaji": "Ashita wa ashita no kaze ga fuku",
-  "english": "Tomorrow’s wind will blow tomorrow",
-  "meaning": "Don’t worry too much about the future"
-},
-{
-  "japanese": "二度あることは三度ある",
-  "romaji": "Nido aru koto wa sando aru",
-  "english": "What happens twice will happen a third time",
-  "meaning": "Patterns tend to repeat"
-},
-{
-  "japanese": "虎穴に入らずんば虎子を得ず",
-  "romaji": "Koketsu ni irazunba koji wo ezu",
-  "english": "You can’t get the tiger’s cub without entering the lair",
-  "meaning": "No reward without risk"
-},
-{
-  "japanese": "焼け石に水",
-  "romaji": "Yake ishi ni mizu",
-  "english": "Water on a hot stone",
-  "meaning": "A futile effort"
-},
-{
-  "japanese": "明日は明日の風が吹く",
-  "romaji": "Ashita wa ashita no kaze ga fuku",
-  "english": "Tomorrow's wind will blow tomorrow",
-  "meaning": "Don't worry too much about the future"
-},
-{
-  "japanese": "月とすっぽん",
-  "romaji": "Tsuki to suppon",
-  "english": "The moon and a turtle",
-  "meaning": "Vast difference; not comparable"
-},
+    "japanese": "笑う門には福来る",
+    "romaji": "Warau kado ni wa fuku kitaru",
+    "english": "Fortune comes to a laughing gate",
+    "meaning": "Good fortune comes to those who smile"
+  },
   {
-  "japanese": "口は災いの元",
-  "romaji": "Kuchi wa wazawai no moto",
-  "english": "The mouth is the source of disaster",
-  "meaning": "Careless words cause trouble"
-},
-{
-  "japanese": "急がば回れ",
-  "romaji": "Isogaba maware",
-  "english": "If in a hurry, go around",
-  "meaning": "The safer path can be faster"
-},
-{
-  "japanese": "猿も木から落ちる",
-  "romaji": "Saru mo ki kara ochiru",
-  "english": "Even monkeys fall from trees",
-  "meaning": "Experts make mistakes"
-},
-{
-  "japanese": "柳に風",
-  "romaji": "Yanagi ni kaze",
-  "english": "Wind in the willow",
-  "meaning": "Stay flexible and let problems pass"
-},
+    "japanese": "明日は明日の風が吹く",
+    "romaji": "Ashita wa ashita no kaze ga fuku",
+    "english": "Tomorrow’s wind will blow tomorrow",
+    "meaning": "Don’t worry too much about the future"
+  },
   {
-  "japanese": "二兎を追う者は一兎をも得ず",
-  "romaji": "Ni to wo ou mono wa itto wo mo ezu",
-  "english": "One who chases two rabbits catches neither",
-  "meaning": "Focus on one thing at a time"
-},
-{
-  "japanese": "隣の花は赤い",
-  "romaji": "Tonari no hana wa akai",
-  "english": "The neighbor's flowers are red",
-  "meaning": "The grass is always greener on the other side"
+    "japanese": "二度あることは三度ある",
+    "romaji": "Nido aru koto wa sando aru",
+    "english": "What happens twice will happen a third time",
+    "meaning": "Patterns tend to repeat"
+  },
+  {
+    "japanese": "虎穴に入らずんば虎子を得ず",
+    "romaji": "Koketsu ni irazunba koji wo ezu",
+    "english": "You can’t get the tiger’s cub without entering the lair",
+    "meaning": "No reward without risk"
+  },
+  {
+    "japanese": "焼け石に水",
+    "romaji": "Yake ishi ni mizu",
+    "english": "Water on a hot stone",
+    "meaning": "A futile effort"
+  },
+  {
+    "japanese": "明日は明日の風が吹く",
+    "romaji": "Ashita wa ashita no kaze ga fuku",
+    "english": "Tomorrow's wind will blow tomorrow",
+    "meaning": "Don't worry too much about the future"
+  },
+  {
+    "japanese": "月とすっぽん",
+    "romaji": "Tsuki to suppon",
+    "english": "The moon and a turtle",
+    "meaning": "Vast difference; not comparable"
+  },
+  {
+    "japanese": "口は災いの元",
+    "romaji": "Kuchi wa wazawai no moto",
+    "english": "The mouth is the source of disaster",
+    "meaning": "Careless words cause trouble"
+  },
+  {
+    "japanese": "急がば回れ",
+    "romaji": "Isogaba maware",
+    "english": "If in a hurry, go around",
+    "meaning": "The safer path can be faster"
+  },
+  {
+    "japanese": "猿も木から落ちる",
+    "romaji": "Saru mo ki kara ochiru",
+    "english": "Even monkeys fall from trees",
+    "meaning": "Experts make mistakes"
+  },
+  {
+    "japanese": "柳に風",
+    "romaji": "Yanagi ni kaze",
+    "english": "Wind in the willow",
+    "meaning": "Stay flexible and let problems pass"
+  },
+  {
+    "japanese": "二兎を追う者は一兎をも得ず",
+    "romaji": "Ni to wo ou mono wa itto wo mo ezu",
+    "english": "One who chases two rabbits catches neither",
+    "meaning": "Focus on one thing at a time"
+  },
+  {
+    "japanese": "隣の花は赤い",
+    "romaji": "Tonari no hana wa akai",
+    "english": "The neighbor's flowers are red",
+    "meaning": "The grass is always greener on the other side"
+  },
+  {
+    "japanese": "灯台下暗し",
+    "romaji": "Toudai moto kurashi",
+    "english": "It is darkest under the lighthouse",
+    "meaning": "The obvious is often overlooked"
+  },
+  {
+  "japanese": "油断大敵",
+  "romaji": "Yudan taiteki",
+  "english": "Carelessness is the greatest enemy",
+  "meaning": "Don't let your guard down"
+  },
+  {
+  "japanese": "七転八倒",
+  "romaji": "Shichiten battou",
+  "english": "Seven falls, eight struggles",
+  "meaning": "Going through great pain and struggle"
 }
 ]

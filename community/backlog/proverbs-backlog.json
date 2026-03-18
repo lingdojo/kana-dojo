@@ -368,7 +368,7 @@
     "english": "Carelessness is the greatest enemy",
     "meaning": "Don't let your guard down",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 42,
@@ -403,7 +403,7 @@
     "romaji": "Ishibashi wo tataite wataru",
     "english": "Tap a stone bridge before crossing",
     "meaning": "Be very cautious",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -413,7 +413,7 @@
     "english": "Even if you fall, don't get up empty-handed",
     "meaning": "Learn something from every setback",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 47,
@@ -494,7 +494,7 @@
     "english": "Even a walking dog will hit a stick",
     "meaning": "Acting can lead to luck (or trouble)",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 56,
@@ -502,7 +502,7 @@
     "romaji": "Tana kara botamochi",
     "english": "A rice cake falls from the shelf",
     "meaning": "A windfall; unexpected good luck",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -539,7 +539,7 @@
     "english": "Among flowers, the cherry blossom; among men, the warrior",
     "meaning": "The best of each kind",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 61,
@@ -547,7 +547,7 @@
     "romaji": "Mochi wa mochiya",
     "english": "Mochi should be made by the mochi shop",
     "meaning": "Leave it to the experts",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -557,7 +557,7 @@
     "english": "It's darkest under the lighthouse",
     "meaning": "The obvious is often overlooked",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 63,
@@ -729,7 +729,7 @@
     "romaji": "Kaeru no ko wa kaeru",
     "english": "A frog's child is a frog",
     "meaning": "Children resemble their parents",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -739,7 +739,7 @@
     "english": "Well-side conference",
     "meaning": "Neighborhood gossip",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 83,
