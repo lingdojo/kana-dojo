@@ -1,4 +1,4 @@
-# [Good First Issue] 🍵 Add new Theme: Festival Gold - Beginner-Friendly Contribution (good-first-issue, <1 min, no setup)
+# [Good First Issue] 🍵 Add new Theme: Festival Gold - Beginner-Friendly Contribution (good-first-issue, 1 min, no setup)
 
 ## Description
 ## 🟢 Good First Issue: Add Color Theme: Festival Gold — Beginner-Friendly Open Source Contribution
