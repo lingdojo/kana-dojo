@@ -430,8 +430,8 @@
     "backgroundColor": "oklch(15.0% 0.048 25.0 / 1)",
     "mainColor": "oklch(65.0% 0.225 30.0 / 1)",
     "secondaryColor": "oklch(90.0% 0.055 95.0 / 1)"
-  },
-  {
+},
+{
   "id": "konbini-light",
   "backgroundColor": "oklch(96.0% 0.015 210.0 / 1)",
   "mainColor": "oklch(55.0% 0.185 200.0 / 1)",
@@ -485,8 +485,7 @@
   "mainColor": "oklch(35.0% 0.085 255.0 / 1)",
   "secondaryColor": "oklch(55.0% 0.055 65.0 / 1)"
 },
-
-  {
+{
   "id": "fuji-shadow",
   "backgroundColor": "oklch(15.0% 0.015 250.0 / 1)",
   "mainColor": "oklch(78.0% 0.035 230.0 / 1)",
@@ -504,25 +503,25 @@
   "mainColor": "oklch(72.0% 0.225 320.0 / 1)",
   "secondaryColor": "oklch(80.0% 0.195 200.0 / 1)",
 },
-  {
+{
   "id": "lucky-bamboo",
   "backgroundColor": "oklch(92.0% 0.025 145.0 / 1)",
   "mainColor": "oklch(55.0% 0.175 145.0 / 1)",
   "secondaryColor": "oklch(45.0% 0.125 140.0 / 1)"
 },
-  {
+{
   "id": "wind-god",
   "backgroundColor": "oklch(19.0% 0.045 175.0 / 1)",
   "mainColor": "oklch(82.0% 0.155 180.0 / 1)",
   "secondaryColor": "oklch(72.0% 0.135 165.0 / 1)"
 },
-  {
+{
   "id": "shaved-ice",
   "backgroundColor": "oklch(95.0% 0.025 215.0 / 1)",
   "mainColor": "oklch(60.0% 0.195 25.0 / 1)",
   "secondaryColor": "oklch(65.0% 0.175 215.0 / 1)"
 },
-  {
+{
   "id": "jpop-energy",
   "backgroundColor": "oklch(15.0% 0.055 310.0 / 1)",
   "mainColor": "oklch(80.0% 0.210 345.0 / 1)",
@@ -539,5 +538,5 @@
   "backgroundColor": "oklch(94.0% 0.010 95.0 / 1)",
   "mainColor": "oklch(45.0% 0.075 65.0 / 1)",
   "secondaryColor": "oklch(60.0% 0.045 30.0 / 1)"
-}
+},
 ]
