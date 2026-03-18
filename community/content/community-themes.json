@@ -528,10 +528,16 @@
   "mainColor": "oklch(80.0% 0.210 345.0 / 1)",
   "secondaryColor": "oklch(85.0% 0.175 180.0 / 1)"
 },
-  {
-  id: "coastal-shrine",
-  backgroundColor: "oklch(20.0% 0.040 235.0 / 1)",
-  mainColor: "oklch(78.0% 0.205 35.0 / 1)",
-  secondaryColor: "oklch(88.0% 0.065 210.0 / 1)"
+{
+  "id": "coastal-shrine",
+  "backgroundColor": "oklch(20.0% 0.040 235.0 / 1)",
+  "mainColor": "oklch(78.0% 0.205 35.0 / 1)",
+  "secondaryColor": "oklch(88.0% 0.065 210.0 / 1)"
+},
+{
+  "id": "shoji-glow",
+  "backgroundColor": "oklch(94.0% 0.010 95.0 / 1)",
+  "mainColor": "oklch(45.0% 0.075 65.0 / 1)",
+  "secondaryColor": "oklch(60.0% 0.045 30.0 / 1)"
 }
 ]
