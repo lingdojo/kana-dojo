@@ -456,9 +456,15 @@
   "secondaryColor": "oklch(72.0% 0.135 75.0 / 1)"
 },
   {
-  id: 'kimono-silk',
-  backgroundColor: 'oklch(19.0% 0.048 320.0 / 1)',
-  mainColor: 'oklch(72.0% 0.155 330.0 / 1)',
-  secondaryColor: 'oklch(80.0% 0.125 60.0 / 1)'
+  "id": "kimono-silk",
+  "backgroundColor": "oklch(19.0% 0.048 320.0 / 1)",
+  "mainColor": "oklch(72.0% 0.155 330.0 / 1)",
+  "secondaryColor": "oklch(80.0% 0.125 60.0 / 1)"
+},
+{
+  "id": "midnight-sushi",
+  "backgroundColor": "oklch(15.0% 0.028 255.0 / 1)",
+  "mainColor": "oklch(82.0% 0.155 210.0 / 1)",
+  "secondaryColor": "oklch(70.0% 0.145 35.0 / 1)"
 }
 ]
