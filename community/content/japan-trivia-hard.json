@@ -1,4 +1,4 @@
-[
+,[
   {
     "question": "Which Japanese city is known for its historic wooden district, Gion? (Community variation 29)",
     "difficulty": "hard",
@@ -106,6 +106,17 @@
     "Yokohama",
     "Nagoya",
     "Sendai"
+  ],
+  "correctIndex": 0
+},
+  {
+  "question": "Which Japanese city hosted the 1998 Winter Olympics?",
+  "difficulty": "hard",
+  "answers": [
+    "Nagano",
+    "Kobe",
+    "Hiroshima",
+    "Naha"
   ],
   "correctIndex": 0
 }
