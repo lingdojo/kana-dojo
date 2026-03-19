@@ -97,5 +97,16 @@
       "Oki"
     ],
     "correctIndex": 0
-  }
+  },
+  {
+  "question": "Which Japanese city is known for its historic wooden district, Gion?",
+  "difficulty": "hard",
+  "answers": [
+    "Kyoto",
+    "Yokohama",
+    "Nagoya",
+    "Sendai"
+  ],
+  "correctIndex": 0
+}
 ]
