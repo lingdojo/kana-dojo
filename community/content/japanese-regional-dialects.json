@@ -138,5 +138,12 @@
     "english": "good",
     "region": "Kyushu",
     "note": "Common Kyushu replacement. (Set 6)"
-  }
+  },
+  {
+  "dialect": "〜じゃけぇ",
+  "standardJapanese": "〜だから",
+  "english": "because",
+  "region": "Hiroshima",
+  "note": "Common causal ending. (Set 6)"
+}
 ]
