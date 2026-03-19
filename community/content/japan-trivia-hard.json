@@ -44,17 +44,6 @@
     "correctIndex": 0
   },
   {
-    "question": "What is the name of the traditional Japanese board game similar to chess?",
-    "difficulty": "hard",
-    "answers": [
-      "Shogi",
-      "Go",
-      "Mahjong",
-      "Reversi"
-    ],
-    "correctIndex": 0
-  },
-  {
     "question": "What is the name of the traditional Japanese board game similar to chess? (Community variation 25)",
     "difficulty": "hard",
     "answers": [
@@ -87,26 +76,15 @@
     ],
     "correctIndex": 0
   },
-    {
-    "question": "Which Japanese island chain is known for tropical beaches and coral reefs?",
+  {
+    "question": "Which Japanese city hosted the 1998 Winter Olympics?",
     "difficulty": "hard",
     "answers": [
-      "Okinawa",
-      "Sado",
-      "Awaji",
-      "Oki"
+      "Nagano",
+      "Kobe",
+      "Hiroshima",
+      "Naha"
     ],
     "correctIndex": 0
-  },
-  {
-  "question": "Which Japanese city is known for its historic wooden district, Gion?",
-  "difficulty": "hard",
-  "answers": [
-    "Kyoto",
-    "Yokohama",
-    "Nagoya",
-    "Sendai"
-  ],
-  "correctIndex": 0
-}
+  }
 ]
