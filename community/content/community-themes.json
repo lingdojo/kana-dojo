@@ -448,5 +448,11 @@
   "backgroundColor": "oklch(22.0% 0.018 250.0 / 1)",
   "mainColor": "oklch(70.0% 0.175 225.0 / 1)",
   "secondaryColor": "oklch(75.0% 0.145 350.0 / 1)"
+},
+{
+  id: 'ginkgo-gold',
+  backgroundColor: 'oklch(23.0% 0.045 85.0 / 1)',
+  mainColor: 'oklch(88.0% 0.170 95.0 / 1)',
+  secondaryColor: 'oklch(72.0% 0.135 75.0 / 1)'
 }
 ]
