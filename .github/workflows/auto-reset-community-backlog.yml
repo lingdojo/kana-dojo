@@ -51,9 +51,6 @@ jobs:
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.AUTOMATION_PR_TOKEN || secrets.GITHUB_TOKEN }}
-        env:
-          MINIMUM_AVAILABLE: ${{ inputs.minimum_available || github.event.inputs.minimum_available || '5' }}
-          DRY_RUN: ${{ inputs.dry_run || github.event.inputs.dry_run || 'false' }}
           script: |
             const fs = require('fs');
             const path = require('path');
@@ -117,6 +114,9 @@ jobs:
             core.setOutput('changed_files', changedFiles.join(' '));
             core.setOutput('changed_count', String(resetCount));
             core.setOutput('needs_commit', !dryRun && resetCount > 0 ? 'true' : 'false');
+        env:
+          MINIMUM_AVAILABLE: ${{ inputs.minimum_available || github.event.inputs.minimum_available || '5' }}
+          DRY_RUN: ${{ inputs.dry_run || github.event.inputs.dry_run || 'false' }}
 
       - name: Commit backlog resets directly to main
         if: steps.reset.outputs.needs_commit == 'true'

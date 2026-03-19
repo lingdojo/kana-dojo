@@ -14,8 +14,8 @@
     "explanation": "マンション means apartment building in Japanese. (Set 1)",
     "example": "駅前のマンションに住んでいます。",
     "id": 2,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "コンセント (konsento)",
@@ -32,8 +32,8 @@
     "explanation": "Often means slim/stylish, not necessarily intelligent. (Set 1)",
     "example": "彼はスマートな着こなしをしている。",
     "id": 4,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "テンション (tenshon)",
@@ -68,8 +68,8 @@
     "explanation": "Often used as 'try again after failing'. (Set 1)",
     "example": "去年落ちた試験に今年リベンジする。",
     "id": 8,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "クレーム (kureemu)",
@@ -77,8 +77,8 @@
     "explanation": "In Japanese it usually means complaint. (Set 1)",
     "example": "お客様からクレームが届いた。",
     "id": 9,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "ナイーブ (naibu)",
@@ -104,8 +104,8 @@
     "explanation": "ホッチキス means stapler. (Set 1)",
     "example": "資料をホッチキスで留めてください。",
     "id": 12,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "ドンマイ (donmai)",
@@ -113,8 +113,8 @@
     "explanation": "Used to comfort someone: 'never mind'. (Set 1)",
     "example": "ミスしてもドンマイ！",
     "id": 13,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "チャレンジ (charenji)",
@@ -140,8 +140,8 @@
     "explanation": "Means very energetic mood. (Set 1)",
     "example": "試合前はみんなハイテンションだった。",
     "id": 16,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "イメージ (imeeji)",
@@ -230,8 +230,8 @@
     "explanation": "Usually means buffet/all-you-can-eat in Japan. (Set 2)",
     "example": "ホテルの朝食はバイキングです。",
     "id": 26,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "カンニング (kanningu)",
@@ -239,8 +239,8 @@
     "explanation": "カンニング means cheating on tests. (Set 2)",
     "example": "試験でカンニングしてはいけません。",
     "id": 27,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "リベンジ (ribenji)",
@@ -275,8 +275,8 @@
     "explanation": "シール usually means sticker/label. (Set 2)",
     "example": "ノートにシールを貼った。",
     "id": 31,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "ホッチキス (hocchikisu)",
@@ -284,8 +284,8 @@
     "explanation": "ホッチキス means stapler. (Set 2)",
     "example": "資料をホッチキスで留めてください。",
     "id": 32,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "ドンマイ (donmai)",
@@ -311,8 +311,8 @@
     "explanation": "Can mean ranking position in Japanese usage. (Set 2)",
     "example": "彼はチームのナンバー1だ。",
     "id": 35,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "ハイテンション (haitenshon)",
@@ -356,8 +356,8 @@
     "explanation": "In Japanese it can refer to animation in general. (Set 2)",
     "example": "子どものころからアニメが好きだ。",
     "id": 40,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "手紙 (tegami)",
@@ -374,8 +374,8 @@
     "explanation": "マンション means apartment building in Japanese. (Set 3)",
     "example": "駅前のマンションに住んでいます。",
     "id": 42,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "コンセント (konsento)",
@@ -419,8 +419,8 @@
     "explanation": "カンニング means cheating on tests. (Set 3)",
     "example": "試験でカンニングしてはいけません。",
     "id": 47,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "リベンジ (ribenji)",
@@ -428,8 +428,8 @@
     "explanation": "Often used as 'try again after failing'. (Set 3)",
     "example": "去年落ちた試験に今年リベンジする。",
     "id": 48,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "クレーム (kureemu)",
@@ -437,8 +437,8 @@
     "explanation": "In Japanese it usually means complaint. (Set 3)",
     "example": "お客様からクレームが届いた。",
     "id": 49,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "ナイーブ (naibu)",
@@ -455,8 +455,8 @@
     "explanation": "シール usually means sticker/label. (Set 3)",
     "example": "ノートにシールを貼った。",
     "id": 51,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "ホッチキス (hocchikisu)",
@@ -464,8 +464,8 @@
     "explanation": "ホッチキス means stapler. (Set 3)",
     "example": "資料をホッチキスで留めてください。",
     "id": 52,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "ドンマイ (donmai)",
@@ -473,8 +473,8 @@
     "explanation": "Used to comfort someone: 'never mind'. (Set 3)",
     "example": "ミスしてもドンマイ！",
     "id": 53,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "チャレンジ (charenji)",
@@ -509,8 +509,8 @@
     "explanation": "Often means impression/public image. (Set 3)",
     "example": "会社のイメージが良くなった。",
     "id": 57,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "サラリーマン (sarariman)",
@@ -554,8 +554,8 @@
     "explanation": "マンション means apartment building in Japanese. (Set 4)",
     "example": "駅前のマンションに住んでいます。",
     "id": 62,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "コンセント (konsento)",
@@ -590,8 +590,8 @@
     "explanation": "Usually means buffet/all-you-can-eat in Japan. (Set 4)",
     "example": "ホテルの朝食はバイキングです。",
     "id": 66,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "カンニング (kanningu)",
@@ -599,8 +599,8 @@
     "explanation": "カンニング means cheating on tests. (Set 4)",
     "example": "試験でカンニングしてはいけません。",
     "id": 67,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "リベンジ (ribenji)",
@@ -608,8 +608,8 @@
     "explanation": "Often used as 'try again after failing'. (Set 4)",
     "example": "去年落ちた試験に今年リベンジする。",
     "id": 68,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "クレーム (kureemu)",
@@ -617,8 +617,8 @@
     "explanation": "In Japanese it usually means complaint. (Set 4)",
     "example": "お客様からクレームが届いた。",
     "id": 69,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "ナイーブ (naibu)",
@@ -644,8 +644,8 @@
     "explanation": "ホッチキス means stapler. (Set 4)",
     "example": "資料をホッチキスで留めてください。",
     "id": 72,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "ドンマイ (donmai)",
@@ -653,8 +653,8 @@
     "explanation": "Used to comfort someone: 'never mind'. (Set 4)",
     "example": "ミスしてもドンマイ！",
     "id": 73,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "チャレンジ (charenji)",
@@ -716,8 +716,8 @@
     "explanation": "In Japanese it can refer to animation in general. (Set 4)",
     "example": "子どものころからアニメが好きだ。",
     "id": 80,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "手紙 (tegami)",
@@ -734,8 +734,8 @@
     "explanation": "マンション means apartment building in Japanese. (Set 5)",
     "example": "駅前のマンションに住んでいます。",
     "id": 82,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "コンセント (konsento)",
@@ -752,8 +752,8 @@
     "explanation": "Often means slim/stylish, not necessarily intelligent. (Set 5)",
     "example": "彼はスマートな着こなしをしている。",
     "id": 84,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "テンション (tenshon)",
@@ -779,8 +779,8 @@
     "explanation": "カンニング means cheating on tests. (Set 5)",
     "example": "試験でカンニングしてはいけません。",
     "id": 87,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "リベンジ (ribenji)",
@@ -806,8 +806,8 @@
     "explanation": "Often means sensitive/delicate in Japanese. (Set 5)",
     "example": "彼は意外とナイーブな性格だ。",
     "id": 90,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "シール (shiiru)",
@@ -824,8 +824,8 @@
     "explanation": "ホッチキス means stapler. (Set 5)",
     "example": "資料をホッチキスで留めてください。",
     "id": 92,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "ドンマイ (donmai)",
@@ -860,8 +860,8 @@
     "explanation": "Means very energetic mood. (Set 5)",
     "example": "試合前はみんなハイテンションだった。",
     "id": 96,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "イメージ (imeeji)",
@@ -878,8 +878,8 @@
     "explanation": "Refers broadly to office workers. (Set 5)",
     "example": "父は都内でサラリーマンをしている。",
     "id": 98,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "ペットボトル (petto botoru)",
@@ -950,8 +950,8 @@
     "explanation": "Usually means buffet/all-you-can-eat in Japan. (Set 6)",
     "example": "ホテルの朝食はバイキングです。",
     "id": 106,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "カンニング (kanningu)",
@@ -968,8 +968,8 @@
     "explanation": "Often used as 'try again after failing'. (Set 6)",
     "example": "去年落ちた試験に今年リベンジする。",
     "id": 108,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "クレーム (kureemu)",
@@ -1004,8 +1004,8 @@
     "explanation": "ホッチキス means stapler. (Set 6)",
     "example": "資料をホッチキスで留めてください。",
     "id": 112,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "ドンマイ (donmai)",
@@ -1058,8 +1058,8 @@
     "explanation": "Refers broadly to office workers. (Set 6)",
     "example": "父は都内でサラリーマンをしている。",
     "id": 118,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "ペットボトル (petto botoru)",
