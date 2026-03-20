@@ -134,5 +134,16 @@
     "Fue"
   ],
   "correctIndex": 0
-}
+  },
+  {
+  "question": "Which Japanese beverage is made from roasted barley?",
+  "difficulty": "medium",
+  "answers": [
+    "Mugicha",
+    "Matcha",
+    "Genmaicha",
+    "Sencha"
+  ],
+  "correctIndex": 0
+  }
 ]
