@@ -138,5 +138,26 @@
     "english": "good",
     "region": "Kyushu",
     "note": "Common Kyushu replacement. (Set 6)"
-  }
+  },
+  {
+  "dialect": "〜じゃけぇ",
+  "standardJapanese": "〜だから",
+  "english": "because",
+  "region": "Hiroshima",
+  "note": "Common causal ending. (Set 6)"
+},
+  {
+  "dialect": "ぶち",
+  "standardJapanese": "とても",
+  "english": "very",
+  "region": "Yamaguchi/Hiroshima",
+  "note": "Regional intensifier. (Set 1)"
+},
+  {
+  "dialect": "〜ばい",
+  "standardJapanese": "〜だよ",
+  "english": "sentence ending",
+  "region": "Fukuoka",
+  "note": "Assertive friendly ending. (Set 4)"
+}
 ]

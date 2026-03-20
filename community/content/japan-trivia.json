@@ -29,6 +29,17 @@
       "Kagoshima",
       "Takayama"
     ],
-    "correctAnswerIndex": 0
-  }
+    "correctIndex": 0
+  },
+  {
+  "question": "What is the traditional Japanese garment called?",
+  "difficulty": "easy",
+  "answers": [
+    "Kimono",
+    "Hanbok",
+    "Cheongsam",
+    "Sari"
+  ],
+  "correctIndex": 0
+}
 ]

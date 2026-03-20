@@ -18,7 +18,6 @@ import {
 } from '@/shared/lib/unitSets';
 
 import type { IWord } from '@/shared/types/interfaces';
-import CustomDeckManager from '@/features/Vocabulary/components/CustomDeckManager';
 
 const levelOrder: VocabLevel[] = ['n5', 'n4', 'n3', 'n2', 'n1'];
 const WORDS_PER_SET = 10;
@@ -81,10 +80,6 @@ const VocabCards = () => {
     (level: VocabLevel) => VOCAB_LENGTHS[level],
     [],
   );
-
-  if (selectedVocabCollectionName === 'custom') {
-    return <CustomDeckManager />;
-  }
 
   return (
     <LevelSetCards<VocabLevel, IWord>

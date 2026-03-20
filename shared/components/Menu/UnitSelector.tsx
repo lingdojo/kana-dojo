@@ -23,7 +23,6 @@ import { useMemo } from 'react';
 import SelectionStatusBar from '@/shared/components/Menu/SelectionStatusBar';
 
 type CollectionLevel = 'n5' | 'n4' | 'n3' | 'n2' | 'n1';
-type VocabCollectionLevel = CollectionLevel | 'custom';
 type ContentType = 'kanji' | 'vocabulary';
 
 // Calculate number of sets (10 items per set)
@@ -71,7 +70,7 @@ const UnitSelector = () => {
     ? selectedKanjiCollection
     : selectedVocabCollection;
 
-  const handleCollectionSelect = (level: VocabCollectionLevel) => {
+  const handleCollectionSelect = (level: CollectionLevel) => {
     playClick();
     if (isKanji) {
       setSelectedKanjiCollection(level as CollectionLevel);
@@ -104,17 +103,7 @@ const UnitSelector = () => {
       };
     });
 
-    if (isKanji) return baseCollections;
-
-    return [
-      ...baseCollections,
-      {
-        name: 'custom' as const,
-        displayName: 'Custom',
-        subtitle: 'Your decks',
-        jlpt: 'DECKS',
-      },
-    ];
+    return baseCollections;
   }, [isKanji]);
 
   if (useNewUnitSelectorDesign) {

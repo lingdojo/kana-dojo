@@ -172,11 +172,95 @@
   "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
   "character": "Joseph Joestar"
 },
+{
+  "japanese": "フォッフォッフォッ",
+  "romaji": "Fo fo fo fo",
+  "english": "Fosh fosh fosh fosh.",
+  "anime": "One Piece",
+  "character": "Kozuki Sukiyaki"
+},
   {
+  "japanese": "ブチャラティ、来た！",
+  "romaji": "Bucharati, kita!",
+  "english": "Bucciarati is here!",
+  "anime": "JoJo's Bizarre Adventure: Golden Wind",
+  "character": "Narancia Ghirga"
+},
+{
+  "japanese": "痛みを伴わない教訓には意味がない",
+  "romaji": "Itami o tomonawanai kyoukun ni wa imi ga nai",
+  "english": "A lesson without pain is meaningless. (alt wording 35) (alt wording 87)",
+  "anime": "Fullmetal Alchemist: Brotherhood",
+  "character": "Edward Elric"
+},
+{
+  "japanese": "だが…それがいい。",
+  "romaji": "Daga... sore ga ii.",
+  "english": "But... that's what I like.",
+  "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
+  "character": "Yoshikage Kira"
+},
+{
+  "japanese": "貴様ッ！見ているなッ！！",
+  "romaji": "Kisama! Mite iru na!!",
+  "english": "You! You're watching me! (alt wording 11) (alt wording 63)",
+  "anime": "JoJo's Bizarre Adventure: Stone Ocean",
+  "character": "Jolyne Cujoh"
+},
+{
+  "japanese": "駆逐してやる!この世から一匹残らず!",
+  "romaji": "Kuchiku shite yaru! Kono yo kara ippiki nokorazu!",
+  "english": "I'll exterminate them! Every last one from this world! (alt wording 36) (alt wording 88)",
+  "anime": "Attack on Titan",
+  "character": "Eren Yeager"
+},
+  {
+  "japanese": "諦めないってばよ!",
+  "romaji": "Akiramenai tte bayo!",
+  "english": "I never give up, believe it!",
+  "anime": "Naruto",
+  "character": "Naruto Uzumaki"
+},
+  {
+  "japanese": "オレ様の美技にブギウギ",
+  "romaji": "Ore-sama no bigi ni bugiugi",
+  "english": "Dance to my beautiful technique!",
+  "anime": "The Prince of Tennis",
+  "character": "Keigo Atobe"
+},
+{
+  "japanese": "おまえはもう死んでいる",
+  "romaji": "Omae wa mou shindeiru",
+  "english": "You're already dead.",
+  "anime": "Fist of the North Star",
+  "character": "Kenshiro"
+},
+  {
+  "japanese": "普通の生活がしたいだけなんだ",
+  "romaji": "Futsuu no seikatsu ga shitai dake nanda",
+  "english": "All I want is to live a normal life.",
+  "anime": "Chainsaw Man",
+  "character": "Denji"
+},
+{
   "japanese": "世界は残酷だ…それでも美しい",
   "romaji": "Sekai wa zankoku da... soredemo utsukushii",
   "english": "This world is cruel... yet so beautiful. (alt wording 26)",
   "anime": "Attack on Titan",
   "character": "Mikasa Ackerman"
+},
+{
+  "japanese": "ロードローラーだッ！",
+  "romaji": "Rodo rora da!",
+  "english": "Road roller! (alt wording 1) (alt wording 53)",
+  "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+  "character": "DIO"
+},
+{
+  "japanese": "逃げちゃダメだ!",
+  "romaji": "Nigeccha dame da!",
+  "english": "I mustn't run away! (alt wording 48)",
+  "anime": "Neon Genesis Evangelion",
+  "character": "Shinji Ikari"
 }
 ]

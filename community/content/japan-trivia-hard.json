@@ -44,17 +44,6 @@
     "correctIndex": 0
   },
   {
-    "question": "What is the name of the traditional Japanese board game similar to chess?",
-    "difficulty": "hard",
-    "answers": [
-      "Shogi",
-      "Go",
-      "Mahjong",
-      "Reversi"
-    ],
-    "correctIndex": 0
-  },
-  {
     "question": "What is the name of the traditional Japanese board game similar to chess? (Community variation 25)",
     "difficulty": "hard",
     "answers": [
@@ -119,5 +108,27 @@
     "Okonomiyaki"
   ],
   "correctIndex": 1
-}
+},
+{
+    "question": "Which Japanese city hosted the 1998 Winter Olympics?",
+    "difficulty": "hard",
+    "answers": [
+      "Nagano",
+      "Kobe",
+      "Hiroshima",
+      "Naha"
+    ],
+    "correctIndex": 0
+  },
+  {
+  "question": "What is the name of Japan's national currency?",
+  "difficulty": "hard",
+  "answers": [
+    "Yuan",
+    "Yen",
+    "Won",
+    "Rupee"
+  ],
+  "correctIndex": 1
+  }
 ]
