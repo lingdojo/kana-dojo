@@ -113,9 +113,15 @@
     "correctIndex": 0
   },
   {
-  "question": "What is the name of Japan's highest mountain?",
-  "difficulty": "medium",
-  "answers": ["Mount Haku", "Mount Fuji", "Mount Aso", "Mount Tate"],
-  "correctIndex": 1
-}
+    "question": "What is the name of Japan's highest mountain?",
+    "difficulty": "medium",
+    "answers": ["Mount Haku", "Mount Fuji", "Mount Aso", "Mount Tate"],
+    "correctIndex": 1
+  },
+  {
+    "question": "Which Japanese city hosted the 1998 Winter Olympics?",
+    "difficulty": "medium",
+    "answers": ["Nagano", "Sapporo", "Niigata", "Sendai"],
+    "correctIndex": 0
+  }
 ]
