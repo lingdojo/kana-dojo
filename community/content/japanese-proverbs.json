@@ -351,5 +351,17 @@
     "romaji": "Deru kui wa utareru",
     "english": "The nail that sticks out gets hammered down",
     "meaning": "Standing out invites criticism"
-  }
+  },
+  {
+  "japanese": "情けは人の為ならず",
+  "romaji": "Nasake wa hito no tame narazu",
+  "english": "Kindness is not for others alone",
+  "meaning": "Kindness comes back to you"
+  },
+  {
+  "japanese": "急がば回れ",
+  "romaji": "Isogaba maware",
+  "english": "If in a hurry, go around",
+  "meaning": "The safer path can be faster"
+}
 ]

@@ -281,6 +281,15 @@
     "Tempura",
     "Tonkatsu",
     "Okonomiyaki"
+  },
+  {
+  "question": "What is the Japanese term for a traditional inn? (Community variation 52)",
+  "difficulty": "easy",
+  "answers": [
+    "Ryokan",
+    "Minshuku",
+    "Izakaya",
+    "Yatai"
   ],
   "correctIndex": 0
 }
