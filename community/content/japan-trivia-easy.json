@@ -281,6 +281,8 @@
     "Tempura",
     "Tonkatsu",
     "Okonomiyaki"
+  ],
+    "correctIndex": 0
   },
   {
   "question": "What is the Japanese term for a traditional inn? (Community variation 52)",
@@ -294,3 +296,6 @@
   "correctIndex": 0
 }
 ]
+
+
+
