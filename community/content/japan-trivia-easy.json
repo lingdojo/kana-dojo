@@ -250,5 +250,16 @@
     "Matsuyama"
   ],
   "correctIndex": 0
+},
+{
+  "question": "Which ocean borders Japan to the east?",
+  "difficulty": "easy",
+  "answers": [
+    "Atlantic Ocean",
+    "Indian Ocean",
+    "Pacific Ocean",
+    "Arctic Ocean"
+  ],
+  "correctIndex": 2
 }
 ]
