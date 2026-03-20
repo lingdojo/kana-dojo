@@ -241,25 +241,36 @@
     "correctIndex": 0
   },
   {
-  "question": "Which city is known for its large bronze Great Buddha?",
-  "difficulty": "easy",
-  "answers": [
-    "Kamakura",
-    "Kobe",
-    "Kanazawa",
-    "Matsuyama"
-  ],
-  "correctIndex": 0
-},
-{
-  "question": "Which ocean borders Japan to the east?",
-  "difficulty": "easy",
-  "answers": [
-    "Atlantic Ocean",
-    "Indian Ocean",
-    "Pacific Ocean",
-    "Arctic Ocean"
-  ],
-  "correctIndex": 2
-}
+    "question": "Which city is known for its large bronze Great Buddha?",
+    "difficulty": "easy",
+    "answers": [
+      "Kamakura",
+      "Kobe",
+      "Kanazawa",
+      "Matsuyama"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which ocean borders Japan to the east?",
+    "difficulty": "easy",
+    "answers": [
+      "Atlantic Ocean",
+      "Indian Ocean",
+      "Pacific Ocean",
+      "Arctic Ocean"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "question": "What is the Japanese word for \"goodbye\"? (Community variation 32)",
+    "difficulty": "easy",
+    "answers": [
+      "Sayonara",
+      "Konnichiwa",
+      "Arigatou",
+      "Oyasumi"
+    ],
+    "correctIndex": 0
+  }
 ]
