@@ -9,44 +9,9 @@ import { useEffect } from 'react';
 export default function ServiceWorkerRegistration() {
   useEffect(() => {
     if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
-      // TEMPORARY: Aggressively clear all service workers and caches
-      // to resolve /kanji routing issues caused by stale cache
       window.addEventListener('load', () => {
-        const cleanupAndRegister = async () => {
+        const registerServiceWorker = async () => {
           try {
-            // Step 1: Unregister ALL service workers (not just ours)
-            const registrations =
-              await navigator.serviceWorker.getRegistrations();
-            console.log(
-              `Found ${registrations.length} service worker(s) to unregister`,
-            );
-
-            await Promise.all(
-              registrations.map(reg => {
-                console.log(`Unregistering SW: ${reg.scope}`);
-                return reg.unregister();
-              }),
-            );
-
-            // Step 2: Clear ALL caches
-            const cacheNames = await caches.keys();
-            console.log(
-              `Found ${cacheNames.length} cache(s) to clear:`,
-              cacheNames,
-            );
-
-            await Promise.all(
-              cacheNames.map(cacheName => {
-                console.log(`Deleting cache: ${cacheName}`);
-                return caches.delete(cacheName);
-              }),
-            );
-
-            console.log(
-              '✅ All service workers unregistered and caches cleared',
-            );
-
-            // Re-register the audio SW after cache is cleared
             const registration = await navigator.serviceWorker.register(
               '/sw.js',
               {
@@ -63,11 +28,11 @@ export default function ServiceWorkerRegistration() {
               60 * 60 * 1000,
             );
           } catch (error) {
-            console.warn('SW cleanup failed:', error);
+            console.warn('SW registration failed:', error);
           }
         };
 
-        void cleanupAndRegister();
+        void registerServiceWorker();
       });
     }
   }, []);

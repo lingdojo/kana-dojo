@@ -1,145 +1,5 @@
 [
   {
-    "japanese": "もう迷わない。",
-    "romaji": "Mou mayowanai.",
-    "english": "I won't hesitate anymore.",
-    "game": "Final Fantasy X",
-    "character": "Tidus"
-  },
-  {
-    "japanese": "仲間を守る。",
-    "romaji": "Nakama o mamoru.",
-    "english": "I protect my friends.",
-    "game": "Kingdom Hearts",
-    "character": "Riku"
-  },
-  {
-    "japanese": "まだ終わらない。",
-    "romaji": "Mada owaranai.",
-    "english": "It's not over yet.",
-    "game": "Kingdom Hearts",
-    "character": "Riku"
-  },
-  {
-    "japanese": "栄誉は浜辺で亡くなった",
-    "romaji": "Eiyo wa Hamabe de nakunatta",
-    "english": "Honor Died On The Beach.",
-    "game": "Ghost Of Tsushima",
-    "character": "Jin Sakai"
-  },
-  {
-    "japanese": "光はまだ消えていない。",
-    "romaji": "Hikari wa mada kiete inai.",
-    "english": "The light has not gone out.",
-    "game": "Kingdom Hearts",
-    "character": "Sora"
-  },
-  {
-    "japanese": "最後まで戦う",
-    "romaji": "Saigo made tatakau.",
-    "english": "I'll fight to the very end.",
-    "game": "Final Fantasy X",
-    "character": "Auron"
-  },
-  {
-    "japanese": "未来を変えるんだ！",
-    "romaji": "Mirai o kaerun da!",
-    "english": "We're going to change the future!",
-    "game": "Steins;Gate: My Darling's Embrace",
-    "character": "Rintaro Okabe"
-  },
-  {
-    "japanese": "覚悟はいいか？ 俺はできてる。",
-    "romaji": "Kakugo wa ii ka? Ore wa dekiteru.",
-    "english": "Are you prepared? I am.",
-    "game": "JoJo’s Bizarre Adventure: All-Star Battle",
-    "character": "Giorno Giovanna"
-  },
-  {
-    "japanese": "覚悟はいいか？ 俺はできてる。",
-    "romaji": "Kakugo wa ii ka? Ore wa dekiteru.",
-    "english": "Are you prepared? I am.",
-    "game": "JoJo’s Bizarre Adventure: All-Star Battle",
-    "character": "Giorno Giovanna"
-  },
-  {
-    "japanese": "俺は悪くねぇ！",
-    "romaji": "Ore wa warukunee!",
-    "english": "It's not my fault!",
-    "game": "Tales of the Abyss",
-    "character": "Luke fon Fabre"
-  },
-  {
-    "japanese": "希望は前に進むんだ！",
-    "romaji": "Kibou wa mae ni susumun da!",
-    "english": "Hope moves forward!",
-    "game": "Danganronpa series",
-    "character": "Makoto Naegi"
-  },
-  {
-    "japanese": "ここからが本番だ",
-    "romaji": "Koko kara ga honban da",
-    "english": "The real challenge starts now.",
-    "game": "Monster Hunter series",
-    "character": "Guild Handler lines"
-  },
-  {
-    "japanese": "俺たちの物語は、ここからだ",
-    "romaji": "Oretachi no monogatari wa, koko kara da",
-    "english": "Our story starts here.",
-    "game": "Tales series",
-    "character": "Various endings"
-  },
-  {
-    "japanese": "次はもっと強くなる",
-    "romaji": "Tsugi wa motto tsuyoku naru",
-    "english": "Next time, I'll be stronger.",
-    "game": "Pokemon series",
-    "character": "Rival characters"
-  },
-  {
-    "japanese": "絶望の中でも、俺の意志は折れない。",
-    "romaji": "Zetsubou no naka demo, ore no ishi wa orenai.",
-    "english": "Even in the depths of despair, my will shall not break.",
-    "game": "Original",
-    "character": "Original Character"
-  },
-  {
-    "japanese": "それもまた一興",
-    "romaji": "Sore mo mata ikkyo",
-    "english": "That too has its charm.",
-    "game": "Onimusha series",
-    "character": "Nobunaga Oda"
-  },
-  {
-    "japanese": "行くぞ、みんな！",
-    "romaji": "Iku zo, minna!",
-    "english": "Let's go, everyone!",
-    "game": "Kingdom Hearts series (JP dub)",
-    "character": "Sora"
-  },
-  {
-    "japanese": "負ける気がしない",
-    "romaji": "Makeru ki ga shinai",
-    "english": "I don't feel like I can lose.",
-    "game": "Street Fighter series",
-    "character": "Ryu"
-  },
-  {
-    "japanese": "世界を救うって、そういうことだろ？",
-    "romaji": "Sekai o sukuu tte, sou iu koto daro?",
-    "english": "Saving the world means doing this, right?",
-    "game": "Persona 5 Strikers",
-    "character": "Joker"
-  },
-  {
-    "japanese": "仲間を信じろ",
-    "romaji": "Nakama o shinjiro",
-    "english": "Believe in your comrades.",
-    "game": "Dragon Quest series",
-    "character": "Recurring command voice"
-  },
-  {
     "japanese": "勝つと思うな、思えば負けよ",
     "romaji": "Katsu to omou na, omoeba makeyo",
     "english": "If you only think of winning, you lose.",
@@ -174,18 +34,123 @@
     "game": "Yakuza: Like a Dragon",
     "character": "Ichiban Kasuga"
   },
-{
-  "japanese": "まだまだだね",
-  "romaji": "Mada mada da ne",
-  "english": "You still have lots more to work on.",
-  "game": "The Prince of Tennis: Sweat & Tears 2",
-  "character": "Ryoma Echizen"
+  {
+    "japanese": "まだまだだね",
+    "romaji": "Mada mada da ne",
+    "english": "You still have lots more to work on.",
+    "game": "The Prince of Tennis: Sweat & Tears 2",
+    "character": "Ryoma Echizen"
+  },
+  {
+    "japanese": "この戦い、負けられない！",
+    "romaji": "Kono tatakai, makerarenai!",
+    "english": "I can't lose this fight!",
+    "game": "Fire Emblem series",
+    "character": "Various protagonists"
+  },
+  {
+    "japanese": "それもまた一興",
+    "romaji": "Sore mo mata ikkyo",
+    "english": "That too has its charm.",
+    "game": "Onimusha series",
+    "character": "Nobunaga Oda"
+  },
+  {
+    "japanese": "俺は悪くねぇ！",
+    "romaji": "Ore wa warukunee!",
+    "english": "It's not my fault!",
+    "game": "Tales of the Abyss",
+    "character": "Luke fon Fabre"
+  },
+  {
+    "japanese": "未来を変えるんだ！",
+    "romaji": "Mirai o kaerun da!",
+    "english": "We're going to change the future!",
+    "game": "Steins;Gate: My Darling's Embrace",
+    "character": "Rintaro Okabe"
+  },
+  {
+    "japanese": "希望は前に進むんだ！",
+    "romaji": "Kibou wa mae ni susumun da!",
+    "english": "Hope moves forward!",
+    "game": "Danganronpa series",
+    "character": "Makoto Naegi"
+  },
+  {
+    "japanese": "次はもっと強くなる",
+    "romaji": "Tsugi wa motto tsuyoku naru",
+    "english": "Next time, I'll be stronger.",
+    "game": "Pokemon series",
+    "character": "Rival characters"
+  },
+  {
+    "japanese": "約束された勝利の剣",
+    "romaji": "Yakusoku sareta shouri no ken",
+    "english": "The Sword of Promised Victory.",
+    "game": "Fate/stay night [Realta Nua]",
+    "character": "Saber"
+  },
+  {
+    "japanese": "覚悟はいいか？ 俺はできてる。",
+    "romaji": "Kakugo wa ii ka? Ore wa dekiteru.",
+    "english": "Are you prepared? I am.",
+    "game": "JoJo’s Bizarre Adventure: All-Star Battle",
+    "character": "Giorno Giovanna"
+  },
+  {
+    "japanese": "覚悟はいいか？ 俺はできてる。",
+    "romaji": "Kakugo wa ii ka? Ore wa dekiteru.",
+    "english": "Are you prepared? I am.",
+    "game": "JoJo’s Bizarre Adventure: All-Star Battle",
+    "character": "Giorno Giovanna"
+  },
+  {
+    "japanese": "仲間を信じろ",
+    "romaji": "Nakama o shinjiro",
+    "english": "Believe in your comrades.",
+    "game": "Dragon Quest series",
+    "character": "Recurring command voice"
+  },
+  {
+    "japanese": "行くぞ、みんな！",
+    "romaji": "Iku zo, minna!",
+    "english": "Let's go, everyone!",
+    "game": "Kingdom Hearts series (JP dub)",
+    "character": "Sora"
+  },
+  {
+    "japanese": "負ける気がしない",
+    "romaji": "Makeru ki ga shinai",
+    "english": "I don't feel like I can lose.",
+    "game": "Street Fighter series",
+    "character": "Ryu"
+  },
+  {
+    "japanese": "戦争が変わった。時代も変わった。",
+    "romaji": "Sensou ga kawatta. Jidai mo kawatta.",
+    "english": "War has changed. The times have changed too.",
+    "game": "Metal Gear Solid 4: Guns of the Patriots",
+    "character": "Old Snake"
+  },
+  {
+  "japanese": "ここからが本番だ",
+  "romaji": "Koko kara ga honban da",
+  "english": "The real challenge starts now.",
+  "game": "Monster Hunter series",
+  "character": "Guild Handler lines"
+},
+  {
+  "japanese": "世界を救うって、そういうことだろ？",
+  "romaji": "Sekai o sukuu tte, sou iu koto daro?",
+  "english": "Saving the world means doing this, right?",
+  "game": "Persona 5 Strikers",
+  "character": "Joker"
 },
 {
-  "japanese": "この戦い、負けられない！",
-  "romaji": "Kono tatakai, makerarenai!",
-  "english": "I can't lose this fight!",
-  "game": "Fire Emblem series",
-  "character": "Various protagonists"
+  "japanese": "俺たちの物語は、ここからだ",
+  "romaji": "Oretachi no monogatari wa, koko kara da",
+  "english": "Our story starts here.",
+  "game": "Tales series",
+  "character": "Various endings"
 }
 ]

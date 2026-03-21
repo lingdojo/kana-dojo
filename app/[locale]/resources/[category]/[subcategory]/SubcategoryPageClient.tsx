@@ -43,7 +43,9 @@ export function SubcategoryPageClient({
   availableFilters,
 }: SubcategoryPageClientProps) {
   // State
-  const [filters, setFilters] = useState<ActiveFilters>(createEmptyFilters());
+  const [filters, setFilters] = useState<ActiveFilters>(() =>
+    createEmptyFilters(),
+  );
   const [selectedResource, setSelectedResource] = useState<Resource | null>(
     null,
   );

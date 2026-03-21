@@ -82,7 +82,9 @@ export default function TranslationHistory({
   onClearAll,
 }: TranslationHistoryProps) {
   const [clearDialogOpen, setClearDialogOpen] = useState(false);
-  const [filters, setFilters] = useState<HistoryFilters>(getDefaultFilters());
+  const [filters, setFilters] = useState<HistoryFilters>(() =>
+    getDefaultFilters(),
+  );
 
   // Apply filters to entries
   const filteredEntries = useMemo(

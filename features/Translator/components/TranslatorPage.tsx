@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { Suspense, useEffect, useRef } from 'react';
 import { useSearchParams } from 'next/navigation';
 import dynamic from 'next/dynamic';
 import { ArrowLeftRight, WifiOff, Languages, Sparkles } from 'lucide-react';
@@ -31,7 +31,7 @@ interface TranslatorPageProps {
   locale?: string;
 }
 
-export default function TranslatorPage({ locale = 'en' }: TranslatorPageProps) {
+function TranslatorPageContent({ locale = 'en' }: TranslatorPageProps) {
   const isEs = locale === 'es';
   const searchParams = useSearchParams();
   const initializedFromUrl = useRef(false);
@@ -119,7 +119,9 @@ export default function TranslatorPage({ locale = 'en' }: TranslatorPageProps) {
           </h1>
           <p className='mt-1 text-sm text-(--secondary-color) sm:text-base'>
             <strong>Translate English to Japanese</strong> and Japanese to
-            English instantly. Get accurate results with <strong>romaji pronunciation</strong> support.</p>
+            English instantly. Get accurate results with{' '}
+            <strong>romaji pronunciation</strong> support.
+          </p>
         </div>
       </header>
 
@@ -154,7 +156,9 @@ export default function TranslatorPage({ locale = 'en' }: TranslatorPageProps) {
         </div>
         <div>
           <h2 className='text-base font-semibold text-(--main-color)'>
-            {isEs ? 'Ultima actualizacion y cambios' : 'Last updated and changes'}
+            {isEs
+              ? 'Ultima actualizacion y cambios'
+              : 'Last updated and changes'}
           </h2>
           <p className='mt-2 text-sm text-(--secondary-color)'>
             {isEs
@@ -267,3 +271,10 @@ export default function TranslatorPage({ locale = 'en' }: TranslatorPageProps) {
   );
 }
 
+export default function TranslatorPage(props: TranslatorPageProps) {
+  return (
+    <Suspense fallback={null}>
+      <TranslatorPageContent {...props} />
+    </Suspense>
+  );
+}

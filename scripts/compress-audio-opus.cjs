@@ -53,23 +53,19 @@ function findWavFiles(dir) {
 function compressToOpus(wavPath) {
   const opusPath = wavPath.replace('.wav', '.opus');
 
-  if (fs.existsSync(opusPath)) {
-    console.log(`⏭️  Skipping ${path.basename(wavPath)} (Opus already exists)`);
-    return { skipped: true };
-  }
-
   const originalSize = fs.statSync(wavPath).size;
 
   try {
     console.log(`🔄 Converting ${path.basename(wavPath)} to Opus...`);
 
-    // High quality Opus conversion
-    // -c:a libopus: Use Opus codec
-    // -b:a 96k: 96 kbps bitrate (great quality for audio effects)
+    // Aggressive low-bandwidth Opus conversion for short SFX
+    // -ac 1 / -ar 24000: force mono + lower sample rate
+    // -b:a 24k: compact bitrate with good transient retention for clicks
     // -vbr on: Variable bitrate for better quality
-    // -compression_level 10: Max compression effort
+    // -application voip: tuned for speech/transients, works well for micro-SFX
+    // -map_metadata -1: strip metadata to minimize bytes
     execSync(
-      `ffmpeg -i "${wavPath}" -c:a libopus -b:a 96k -vbr on -compression_level 10 "${opusPath}"`,
+      `ffmpeg -y -i "${wavPath}" -ac 1 -ar 24000 -c:a libopus -application voip -b:a 24k -vbr on -compression_level 10 -map_metadata -1 "${opusPath}"`,
       { stdio: 'ignore' },
     );
 
@@ -129,7 +125,7 @@ function main() {
 
   for (const file of wavFiles) {
     const result = compressToOpus(file);
-    if (!result.skipped && !result.error) {
+    if (!result.error) {
       totalOriginal += result.original;
       totalCompressed += result.compressed;
       convertedCount++;

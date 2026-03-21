@@ -1160,7 +1160,7 @@ const baseThemeSets: BaseThemeGroup[] = [
     ],
   },
   {
-    name: 'Extra',
+    name: 'Special',
     icon: Sparkles,
     isLight: false,
     themes: [

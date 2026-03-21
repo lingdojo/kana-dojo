@@ -62,8 +62,6 @@ const WelcomeModal = () => {
     setFont,
   } = useThemePreferences();
 
-  const [localTheme, setLocalTheme] = useState(selectedTheme);
-  const [localFont, setLocalFont] = useState(currentFont);
   const recommendedFonts = useMemo(
     () => fonts.filter(fontObj => isRecommendedFont(fontObj.name)),
     [],
@@ -110,11 +108,6 @@ const WelcomeModal = () => {
       return () => clearTimeout(timer);
     }
   }, [hasSeenWelcome, pathname, setHasSeenWelcome]);
-
-  useEffect(() => {
-    setLocalTheme(selectedTheme);
-    setLocalFont(currentFont);
-  }, [selectedTheme, currentFont]);
 
   useEffect(() => {
     // Reset scroll position when step changes
@@ -485,13 +478,12 @@ const WelcomeModal = () => {
                                   ? undefined
                                   : theme.borderColor,
                                 outline:
-                                  localTheme === theme.id
+                                  selectedTheme === theme.id
                                     ? `3px solid ${theme.secondaryColor}`
                                     : 'none',
                               }}
                               onClick={() => {
                                 playClick();
-                                setLocalTheme(theme.id);
                                 setSelectedTheme(theme.id);
                               }}
                               title={theme.id}
@@ -505,7 +497,7 @@ const WelcomeModal = () => {
                                       className='absolute left-0'
                                       style={{
                                         color:
-                                          localTheme === theme.id
+                                          selectedTheme === theme.id
                                             ? '#000'
                                             : 'transparent',
                                       }}
@@ -581,13 +573,12 @@ const WelcomeModal = () => {
                     style={{
                       backgroundColor: 'var(--background-color)',
                       outline:
-                        localFont === fontObj.name
+                        currentFont === fontObj.name
                           ? '3px solid var(--secondary-color)'
                           : 'none',
                     }}
                     onClick={() => {
                       playClick();
-                      setLocalFont(fontObj.name);
                       setFont(fontObj.name);
                     }}
                   >

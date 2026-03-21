@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useMemo, useState, useEffect, useRef } from 'react';
+import React, { useMemo, useState, useRef } from 'react';
 import { AnimatePresence, motion, type Variants } from 'framer-motion';
 import clsx from 'clsx';
 import { ActionButton } from '@/shared/components/ui/ActionButton';
@@ -55,22 +55,24 @@ function TileButton({
   );
 }
 
-export default function GauntletWordBuildingAnswer({
-  dojoType: _dojoType,
+type SelectableTilesProps = {
+  options: string[];
+  disabledOptions: string[];
+  onSubmit: (option: string) => void;
+  renderOption?: (option: string) => React.ReactNode;
+  isDisabled: boolean;
+  buttonRef: React.RefObject<HTMLButtonElement | null>;
+};
+
+function SelectableTiles({
   options,
   disabledOptions,
   onSubmit,
   renderOption,
-  isDisabled = false,
-}: GauntletWordBuildingAnswerProps) {
+  isDisabled,
+  buttonRef,
+}: SelectableTilesProps) {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
-  const buttonRef = useRef<HTMLButtonElement>(null);
-
-  const optionsKey = useMemo(() => options.join('\n'), [options]);
-
-  useEffect(() => {
-    setSelectedOption(null);
-  }, [optionsKey]);
 
   const canSubmit = !isDisabled && !!selectedOption;
 
@@ -166,5 +168,29 @@ export default function GauntletWordBuildingAnswer({
 
       <div className='h-32' />
     </div>
+  );
+}
+
+export default function GauntletWordBuildingAnswer({
+  dojoType: _dojoType,
+  options,
+  disabledOptions,
+  onSubmit,
+  renderOption,
+  isDisabled = false,
+}: GauntletWordBuildingAnswerProps) {
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const optionsKey = useMemo(() => options.join('\n'), [options]);
+
+  return (
+    <SelectableTiles
+      key={optionsKey}
+      options={options}
+      disabledOptions={disabledOptions}
+      onSubmit={onSubmit}
+      renderOption={renderOption}
+      isDisabled={isDisabled}
+      buttonRef={buttonRef}
+    />
   );
 }

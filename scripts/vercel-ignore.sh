@@ -42,8 +42,8 @@ if [ -z "$CHANGED_FILES" ]; then
   exit 1
 fi
 
-# Fast-path: only community data changes should never trigger a build
-ONLY_COMMUNITY_DATA=$(echo "$CHANGED_FILES" | grep -vE '^(community/backlog/|community/content/|@community/backlog/|@community/content/)' | grep -v '^$' | wc -l)
+# Fast-path: only community data (optionally with package-lock.json) should never trigger a build
+ONLY_COMMUNITY_DATA=$(echo "$CHANGED_FILES" | grep -vE '^(package-lock\.json|community/backlog/|community/content/|@community/backlog/|@community/content/)' | grep -v '^$' | wc -l)
 if [ "$ONLY_COMMUNITY_DATA" -eq 0 ]; then
   echo "Only community data changed. Skipping build."
   exit 0
@@ -131,6 +131,7 @@ IGNORE_PATTERNS=(
   # Config files (non-build-affecting)
   "^next-sitemap\\.config\\.js$"
   "^components\\.json$"
+  "^package-lock\\.json$"
   
   # Data and community content (non-build affecting)
   "^features/Preferences/data/themes\\.ts$"

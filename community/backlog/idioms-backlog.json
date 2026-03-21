@@ -5,8 +5,8 @@
     "english": "I’d even borrow a cat’s paws",
     "meaning": "Extremely busy and desperate for help. (Set 1)",
     "id": 1,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "頭が上がらない",
@@ -32,8 +32,8 @@
     "english": "Wide face",
     "meaning": "Have many connections. (Set 1)",
     "id": 4,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "口が堅い",
@@ -41,8 +41,8 @@
     "english": "Tight-lipped",
     "meaning": "Can keep secrets. (Set 1)",
     "id": 5,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "気が短い",
@@ -59,8 +59,8 @@
     "english": "Stomach stands up",
     "meaning": "Get angry. (Set 1)",
     "id": 7,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "手を抜く",
@@ -113,8 +113,8 @@
     "english": "Spirit doesn't proceed",
     "meaning": "Not feel like doing it. (Set 1)",
     "id": 13,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "胸を張る",
@@ -131,8 +131,8 @@
     "english": "High nose",
     "meaning": "Feel proud. (Set 1)",
     "id": 15,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "首を長くする",
@@ -140,8 +140,8 @@
     "english": "Make neck long",
     "meaning": "Wait eagerly. (Set 1)",
     "id": 16,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "水に流す",
@@ -149,8 +149,8 @@
     "english": "Let it flow in water",
     "meaning": "Let bygones be bygones. (Set 1)",
     "id": 17,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "念には念を入れる",
@@ -176,8 +176,8 @@
     "english": "Put into one’s hand",
     "meaning": "Obtain something. (Set 1)",
     "id": 20,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "猫の手も借りたい",
@@ -203,8 +203,8 @@
     "english": "Heavy hips",
     "meaning": "Slow to start doing something. (Set 2)",
     "id": 23,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "顔が広い",
@@ -230,8 +230,8 @@
     "english": "Short-tempered",
     "meaning": "Impatient temperament. (Set 2)",
     "id": 26,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "腹が立つ",
@@ -293,8 +293,8 @@
     "english": "Spirit doesn't proceed",
     "meaning": "Not feel like doing it. (Set 2)",
     "id": 33,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "胸を張る",
@@ -302,8 +302,8 @@
     "english": "Expand chest",
     "meaning": "Be proud/confident. (Set 2)",
     "id": 34,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "鼻が高い",
@@ -311,8 +311,8 @@
     "english": "High nose",
     "meaning": "Feel proud. (Set 2)",
     "id": 35,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "首を長くする",
@@ -347,8 +347,8 @@
     "english": "A bird leaves no mess",
     "meaning": "Leave cleanly without trouble. (Set 2)",
     "id": 39,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "手に入れる",
@@ -374,8 +374,8 @@
     "english": "Cannot raise one’s head",
     "meaning": "Feel indebted or unable to oppose someone. (Set 3)",
     "id": 42,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "腰が重い",
@@ -410,8 +410,8 @@
     "english": "Short-tempered",
     "meaning": "Impatient temperament. (Set 3)",
     "id": 46,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "腹が立つ",
@@ -419,8 +419,8 @@
     "english": "Stomach stands up",
     "meaning": "Get angry. (Set 3)",
     "id": 47,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "手を抜く",
@@ -464,8 +464,8 @@
     "english": "Bones break",
     "meaning": "Requires considerable effort. (Set 3)",
     "id": 52,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "気が進まない",
@@ -473,8 +473,8 @@
     "english": "Spirit doesn't proceed",
     "meaning": "Not feel like doing it. (Set 3)",
     "id": 53,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "胸を張る",
@@ -482,8 +482,8 @@
     "english": "Expand chest",
     "meaning": "Be proud/confident. (Set 3)",
     "id": 54,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "鼻が高い",
@@ -500,8 +500,8 @@
     "english": "Make neck long",
     "meaning": "Wait eagerly. (Set 3)",
     "id": 56,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "水に流す",
@@ -518,8 +518,8 @@
     "english": "Add caution to caution",
     "meaning": "Take extra care. (Set 3)",
     "id": 58,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "立つ鳥跡を濁さず",
@@ -527,8 +527,8 @@
     "english": "A bird leaves no mess",
     "meaning": "Leave cleanly without trouble. (Set 3)",
     "id": 59,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "手に入れる",
@@ -572,8 +572,8 @@
     "english": "Wide face",
     "meaning": "Have many connections. (Set 4)",
     "id": 64,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "口が堅い",
@@ -581,8 +581,8 @@
     "english": "Tight-lipped",
     "meaning": "Can keep secrets. (Set 4)",
     "id": 65,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "気が短い",
@@ -599,8 +599,8 @@
     "english": "Stomach stands up",
     "meaning": "Get angry. (Set 4)",
     "id": 67,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "手を抜く",
@@ -608,8 +608,8 @@
     "english": "Cut corners",
     "meaning": "Do less than one should. (Set 4)",
     "id": 68,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "目がない",
@@ -617,8 +617,8 @@
     "english": "No eyes",
     "meaning": "Have a weakness for something. (Set 4)",
     "id": 69,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "耳が早い",
@@ -635,8 +635,8 @@
     "english": "Pull someone back",
     "meaning": "Hold someone back. (Set 4)",
     "id": 71,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "骨が折れる",
@@ -734,8 +734,8 @@
     "english": "Cannot raise one’s head",
     "meaning": "Feel indebted or unable to oppose someone. (Set 5)",
     "id": 82,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "腰が重い",
@@ -752,8 +752,8 @@
     "english": "Wide face",
     "meaning": "Have many connections. (Set 5)",
     "id": 84,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "口が堅い",
@@ -806,8 +806,8 @@
     "english": "Fast ears",
     "meaning": "Quick to hear news/gossip. (Set 5)",
     "id": 90,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "足を引っ張る",
@@ -815,8 +815,8 @@
     "english": "Pull someone back",
     "meaning": "Hold someone back. (Set 5)",
     "id": 91,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "骨が折れる",
@@ -833,8 +833,8 @@
     "english": "Spirit doesn't proceed",
     "meaning": "Not feel like doing it. (Set 5)",
     "id": 93,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "胸を張る",
@@ -842,8 +842,8 @@
     "english": "Expand chest",
     "meaning": "Be proud/confident. (Set 5)",
     "id": 94,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "鼻が高い",
@@ -851,8 +851,8 @@
     "english": "High nose",
     "meaning": "Feel proud. (Set 5)",
     "id": 95,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "首を長くする",
@@ -878,8 +878,8 @@
     "english": "Add caution to caution",
     "meaning": "Take extra care. (Set 5)",
     "id": 98,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "立つ鳥跡を濁さず",
@@ -905,8 +905,8 @@
     "english": "I’d even borrow a cat’s paws",
     "meaning": "Extremely busy and desperate for help. (Set 6)",
     "id": 101,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "頭が上がらない",
@@ -914,8 +914,8 @@
     "english": "Cannot raise one’s head",
     "meaning": "Feel indebted or unable to oppose someone. (Set 6)",
     "id": 102,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "腰が重い",
@@ -932,8 +932,8 @@
     "english": "Wide face",
     "meaning": "Have many connections. (Set 6)",
     "id": 104,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "口が堅い",
@@ -941,8 +941,8 @@
     "english": "Tight-lipped",
     "meaning": "Can keep secrets. (Set 6)",
     "id": 105,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "気が短い",
@@ -968,8 +968,8 @@
     "english": "Cut corners",
     "meaning": "Do less than one should. (Set 6)",
     "id": 108,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "目がない",
@@ -977,8 +977,8 @@
     "english": "No eyes",
     "meaning": "Have a weakness for something. (Set 6)",
     "id": 109,
-    "issued": false,
-    "completed": true
+    "issued": true,
+    "completed": false
   },
   {
     "japanese": "耳が早い",
@@ -986,8 +986,8 @@
     "english": "Fast ears",
     "meaning": "Quick to hear news/gossip. (Set 6)",
     "id": 110,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "足を引っ張る",
@@ -1004,8 +1004,8 @@
     "english": "Bones break",
     "meaning": "Requires considerable effort. (Set 6)",
     "id": 112,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "気が進まない",
@@ -1013,8 +1013,8 @@
     "english": "Spirit doesn't proceed",
     "meaning": "Not feel like doing it. (Set 6)",
     "id": 113,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "胸を張る",
@@ -1067,8 +1067,8 @@
     "english": "A bird leaves no mess",
     "meaning": "Leave cleanly without trouble. (Set 6)",
     "id": 119,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "手に入れる",

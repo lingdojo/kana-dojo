@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { Suspense, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import SimpleProgress from './SimpleProgress';
 import StreakProgress from './StreakProgress';
@@ -43,7 +43,7 @@ const viewOptions: { value: ViewType; label: string; icon: React.ReactNode }[] =
     },
   ];
 
-const ProgressTabs = () => {
+const ProgressTabsContent = () => {
   const { playClick } = useClick();
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -184,6 +184,14 @@ const ProgressTabs = () => {
         {currentView === 'achievements' && <AchievementProgress />}
       </div>
     </div>
+  );
+};
+
+const ProgressTabs = () => {
+  return (
+    <Suspense fallback={null}>
+      <ProgressTabsContent />
+    </Suspense>
   );
 };
 

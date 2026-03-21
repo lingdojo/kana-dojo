@@ -5,8 +5,8 @@
     "english": "It has been three months since I started studying Japanese.",
     "jlpt": "N5",
     "id": 1,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "駅の近くに新しいカフェができました。",
@@ -14,8 +14,8 @@
     "english": "A new cafe opened near the station.",
     "jlpt": "N4",
     "id": 2,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "雨が降りそうだから、傘を持って行こう。",
@@ -23,8 +23,8 @@
     "english": "It looks like rain, so let's bring an umbrella.",
     "jlpt": "N4",
     "id": 3,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "この漢字の読み方を教えてください。",
@@ -50,8 +50,8 @@
     "english": "If you have time, would you like to review together?",
     "jlpt": "N3",
     "id": 6,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "提出期限までにレポートを仕上げなければならない。",
@@ -68,8 +68,8 @@
     "english": "This app is easy to use even for beginners.",
     "jlpt": "N3",
     "id": 8,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "日本のニュースを毎日読むようにしています。",
@@ -77,8 +77,8 @@
     "english": "I make a habit of reading Japanese news every day.",
     "jlpt": "N3",
     "id": 9,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "分からない単語は辞書で調べてから質問してください。",
@@ -86,8 +86,8 @@
     "english": "Please look up unknown words before asking.",
     "jlpt": "N4",
     "id": 10,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "来月から新しいプロジェクトに参加することになりました。",
@@ -95,8 +95,8 @@
     "english": "I'm going to join a new project from next month.",
     "jlpt": "N3",
     "id": 11,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "宿題を忘れないように、カレンダーに書いておきます。",
@@ -104,8 +104,8 @@
     "english": "I'll put it in my calendar so I won't forget homework.",
     "jlpt": "N4",
     "id": 12,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "店員さんにおすすめの料理を聞いてみた。",
@@ -113,8 +113,8 @@
     "english": "I asked the staff for recommended dishes.",
     "jlpt": "N4",
     "id": 13,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "この表現は場面によって失礼に聞こえることがある。",
@@ -122,8 +122,8 @@
     "english": "This expression can sound rude depending on context.",
     "jlpt": "N2",
     "id": 14,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "漢字の意味を文脈で推測する力が大切だ。",
@@ -131,8 +131,8 @@
     "english": "Inferring kanji meaning from context is important.",
     "jlpt": "N2",
     "id": 15,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "週末は友達と映画を見に行くつもりです。",
@@ -140,8 +140,8 @@
     "english": "I plan to go to a movie with friends this weekend.",
     "jlpt": "N4",
     "id": 16,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "電車が遅れていたので、少し遅刻しました。",
@@ -149,8 +149,8 @@
     "english": "The train was delayed, so I was a little late.",
     "jlpt": "N4",
     "id": 17,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "この問題は思ったより難しくなかった。",
@@ -203,8 +203,8 @@
     "english": "It looks like rain, so let's bring an umbrella.",
     "jlpt": "N4",
     "id": 23,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "この漢字の読み方を教えてください。",
@@ -212,8 +212,8 @@
     "english": "Please tell me how to read this kanji.",
     "jlpt": "N5",
     "id": 24,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "会議は予定より早く終わりました。",
@@ -221,8 +221,8 @@
     "english": "The meeting ended earlier than scheduled.",
     "jlpt": "N4",
     "id": 25,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "もし時間があれば、一緒に復習しませんか。",
@@ -230,8 +230,8 @@
     "english": "If you have time, would you like to review together?",
     "jlpt": "N3",
     "id": 26,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "提出期限までにレポートを仕上げなければならない。",
@@ -257,8 +257,8 @@
     "english": "I make a habit of reading Japanese news every day.",
     "jlpt": "N3",
     "id": 29,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "分からない単語は辞書で調べてから質問してください。",
@@ -293,8 +293,8 @@
     "english": "I asked the staff for recommended dishes.",
     "jlpt": "N4",
     "id": 33,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "この表現は場面によって失礼に聞こえることがある。",
@@ -320,8 +320,8 @@
     "english": "I plan to go to a movie with friends this weekend.",
     "jlpt": "N4",
     "id": 36,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "電車が遅れていたので、少し遅刻しました。",
@@ -329,8 +329,8 @@
     "english": "The train was delayed, so I was a little late.",
     "jlpt": "N4",
     "id": 37,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "この問題は思ったより難しくなかった。",
@@ -338,8 +338,8 @@
     "english": "This problem wasn't as hard as I expected.",
     "jlpt": "N3",
     "id": 38,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "彼は日本で働くためにビジネス日本語を学んでいる。",
@@ -374,8 +374,8 @@
     "english": "A new cafe opened near the station.",
     "jlpt": "N4",
     "id": 42,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "雨が降りそうだから、傘を持って行こう。",
@@ -383,8 +383,8 @@
     "english": "It looks like rain, so let's bring an umbrella.",
     "jlpt": "N4",
     "id": 43,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "この漢字の読み方を教えてください。",
@@ -410,8 +410,8 @@
     "english": "If you have time, would you like to review together?",
     "jlpt": "N3",
     "id": 46,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "提出期限までにレポートを仕上げなければならない。",
@@ -419,8 +419,8 @@
     "english": "I must finish the report by the deadline.",
     "jlpt": "N3",
     "id": 47,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "このアプリは初心者にも使いやすい。",
@@ -428,8 +428,8 @@
     "english": "This app is easy to use even for beginners.",
     "jlpt": "N3",
     "id": 48,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "日本のニュースを毎日読むようにしています。",
@@ -437,8 +437,8 @@
     "english": "I make a habit of reading Japanese news every day.",
     "jlpt": "N3",
     "id": 49,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "分からない単語は辞書で調べてから質問してください。",
@@ -473,8 +473,8 @@
     "english": "I asked the staff for recommended dishes.",
     "jlpt": "N4",
     "id": 53,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "この表現は場面によって失礼に聞こえることがある。",
@@ -500,8 +500,8 @@
     "english": "I plan to go to a movie with friends this weekend.",
     "jlpt": "N4",
     "id": 56,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "電車が遅れていたので、少し遅刻しました。",
@@ -518,8 +518,8 @@
     "english": "This problem wasn't as hard as I expected.",
     "jlpt": "N3",
     "id": 58,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "彼は日本で働くためにビジネス日本語を学んでいる。",
@@ -545,8 +545,8 @@
     "english": "It has been three months since I started studying Japanese.",
     "jlpt": "N5",
     "id": 61,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "駅の近くに新しいカフェができました。",
@@ -554,8 +554,8 @@
     "english": "A new cafe opened near the station.",
     "jlpt": "N4",
     "id": 62,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "雨が降りそうだから、傘を持って行こう。",
@@ -563,8 +563,8 @@
     "english": "It looks like rain, so let's bring an umbrella.",
     "jlpt": "N4",
     "id": 63,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "この漢字の読み方を教えてください。",
@@ -590,8 +590,8 @@
     "english": "If you have time, would you like to review together?",
     "jlpt": "N3",
     "id": 66,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "提出期限までにレポートを仕上げなければならない。",
@@ -680,8 +680,8 @@
     "english": "I plan to go to a movie with friends this weekend.",
     "jlpt": "N4",
     "id": 76,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "電車が遅れていたので、少し遅刻しました。",
@@ -698,8 +698,8 @@
     "english": "This problem wasn't as hard as I expected.",
     "jlpt": "N3",
     "id": 78,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "彼は日本で働くためにビジネス日本語を学んでいる。",
@@ -707,8 +707,8 @@
     "english": "He studies business Japanese to work in Japan.",
     "jlpt": "N3",
     "id": 79,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "彼女は忙しいはずなのに、いつも丁寧に返信してくれる。",
@@ -743,8 +743,8 @@
     "english": "It looks like rain, so let's bring an umbrella.",
     "jlpt": "N4",
     "id": 83,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "この漢字の読み方を教えてください。",
@@ -752,8 +752,8 @@
     "english": "Please tell me how to read this kanji.",
     "jlpt": "N5",
     "id": 84,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "会議は予定より早く終わりました。",
@@ -770,8 +770,8 @@
     "english": "If you have time, would you like to review together?",
     "jlpt": "N3",
     "id": 86,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "提出期限までにレポートを仕上げなければならない。",
@@ -797,8 +797,8 @@
     "english": "I make a habit of reading Japanese news every day.",
     "jlpt": "N3",
     "id": 89,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "分からない単語は辞書で調べてから質問してください。",
@@ -806,8 +806,8 @@
     "english": "Please look up unknown words before asking.",
     "jlpt": "N4",
     "id": 90,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "来月から新しいプロジェクトに参加することになりました。",
@@ -815,8 +815,8 @@
     "english": "I'm going to join a new project from next month.",
     "jlpt": "N3",
     "id": 91,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "宿題を忘れないように、カレンダーに書いておきます。",
@@ -824,8 +824,8 @@
     "english": "I'll put it in my calendar so I won't forget homework.",
     "jlpt": "N4",
     "id": 92,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "店員さんにおすすめの料理を聞いてみた。",
@@ -860,8 +860,8 @@
     "english": "I plan to go to a movie with friends this weekend.",
     "jlpt": "N4",
     "id": 96,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "電車が遅れていたので、少し遅刻しました。",
@@ -869,8 +869,8 @@
     "english": "The train was delayed, so I was a little late.",
     "jlpt": "N4",
     "id": 97,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "この問題は思ったより難しくなかった。",
@@ -878,8 +878,8 @@
     "english": "This problem wasn't as hard as I expected.",
     "jlpt": "N3",
     "id": 98,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "彼は日本で働くためにビジネス日本語を学んでいる。",
@@ -887,8 +887,8 @@
     "english": "He studies business Japanese to work in Japan.",
     "jlpt": "N3",
     "id": 99,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "彼女は忙しいはずなのに、いつも丁寧に返信してくれる。",
@@ -896,8 +896,8 @@
     "english": "Even though she must be busy, she always replies politely.",
     "jlpt": "N2",
     "id": 100,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "日本語を勉強し始めて三か月です。",
@@ -905,8 +905,8 @@
     "english": "It has been three months since I started studying Japanese.",
     "jlpt": "N5",
     "id": 101,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "駅の近くに新しいカフェができました。",
@@ -914,8 +914,8 @@
     "english": "A new cafe opened near the station.",
     "jlpt": "N4",
     "id": 102,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "雨が降りそうだから、傘を持って行こう。",
@@ -923,8 +923,8 @@
     "english": "It looks like rain, so let's bring an umbrella.",
     "jlpt": "N4",
     "id": 103,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "この漢字の読み方を教えてください。",
@@ -932,8 +932,8 @@
     "english": "Please tell me how to read this kanji.",
     "jlpt": "N5",
     "id": 104,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "会議は予定より早く終わりました。",
@@ -941,8 +941,8 @@
     "english": "The meeting ended earlier than scheduled.",
     "jlpt": "N4",
     "id": 105,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "もし時間があれば、一緒に復習しませんか。",
@@ -950,8 +950,8 @@
     "english": "If you have time, would you like to review together?",
     "jlpt": "N3",
     "id": 106,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "提出期限までにレポートを仕上げなければならない。",
@@ -959,8 +959,8 @@
     "english": "I must finish the report by the deadline.",
     "jlpt": "N3",
     "id": 107,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "このアプリは初心者にも使いやすい。",
@@ -977,8 +977,8 @@
     "english": "I make a habit of reading Japanese news every day.",
     "jlpt": "N3",
     "id": 109,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "分からない単語は辞書で調べてから質問してください。",
@@ -995,8 +995,8 @@
     "english": "I'm going to join a new project from next month.",
     "jlpt": "N3",
     "id": 111,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "宿題を忘れないように、カレンダーに書いておきます。",
@@ -1040,8 +1040,8 @@
     "english": "I plan to go to a movie with friends this weekend.",
     "jlpt": "N4",
     "id": 116,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "電車が遅れていたので、少し遅刻しました。",
@@ -1058,8 +1058,8 @@
     "english": "This problem wasn't as hard as I expected.",
     "jlpt": "N3",
     "id": 118,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "彼は日本で働くためにビジネス日本語を学んでいる。",
@@ -1076,7 +1076,7 @@
     "english": "Even though she must be busy, she always replies politely.",
     "jlpt": "N2",
     "id": 120,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   }
 ]

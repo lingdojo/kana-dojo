@@ -6,8 +6,8 @@
     "region": "Kansai",
     "note": "Very common in Osaka/Kyoto speech. (Set 1)",
     "id": 1,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "なんでやねん",
@@ -26,8 +26,8 @@
     "region": "Kansai",
     "note": "Now used nationwide. (Set 1)",
     "id": 3,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "あかん",
@@ -56,8 +56,8 @@
     "region": "Hokkaido",
     "note": "Used for severe winter cold. (Set 1)",
     "id": 6,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "なまら",
@@ -66,8 +66,8 @@
     "region": "Hokkaido",
     "note": "Hokkaido intensifier. (Set 1)",
     "id": 7,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "したっけ",
@@ -86,8 +86,8 @@
     "region": "Fukuoka",
     "note": "Assertive friendly ending. (Set 1)",
     "id": 9,
-    "issued": false,
-    "completed": true
+    "issued": true,
+    "completed": false
   },
   {
     "dialect": "〜けん",
@@ -116,8 +116,8 @@
     "region": "Nagoya",
     "note": "Characteristic Nagoya intensifier. (Set 1)",
     "id": 12,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "〜だがや",
@@ -136,8 +136,8 @@
     "region": "Yamaguchi/Hiroshima",
     "note": "Regional intensifier. (Set 1)",
     "id": 14,
-    "issued": false,
-    "completed": true
+    "issued": true,
+    "completed": false
   },
   {
     "dialect": "〜じゃけぇ",
@@ -156,8 +156,8 @@
     "region": "Chugoku",
     "note": "Prohibitive nuance. (Set 1)",
     "id": 16,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "なんくるないさ",
@@ -166,8 +166,8 @@
     "region": "Okinawa",
     "note": "Famous Okinawan resilience phrase. (Set 1)",
     "id": 17,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "にふぇーでーびる",
@@ -226,8 +226,8 @@
     "region": "Kansai",
     "note": "Now used nationwide. (Set 2)",
     "id": 23,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "あかん",
@@ -286,8 +286,8 @@
     "region": "Fukuoka",
     "note": "Assertive friendly ending. (Set 2)",
     "id": 29,
-    "issued": false,
-    "completed": true
+    "issued": true,
+    "completed": false
   },
   {
     "dialect": "〜けん",
@@ -326,8 +326,8 @@
     "region": "Nagoya",
     "note": "Strong Nagoya marker. (Set 2)",
     "id": 33,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "ぶち",
@@ -336,8 +336,8 @@
     "region": "Yamaguchi/Hiroshima",
     "note": "Regional intensifier. (Set 2)",
     "id": 34,
-    "issued": false,
-    "completed": true
+    "issued": true,
+    "completed": false
   },
   {
     "dialect": "〜じゃけぇ",
@@ -376,8 +376,8 @@
     "region": "Okinawa",
     "note": "Okinawan gratitude expression. (Set 2)",
     "id": 38,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "〜やねん",
@@ -386,8 +386,8 @@
     "region": "Kansai",
     "note": "Explanatory ending in conversation. (Set 2)",
     "id": 39,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "おおきに",
@@ -406,8 +406,8 @@
     "region": "Kansai",
     "note": "Very common in Osaka/Kyoto speech. (Set 3)",
     "id": 41,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "なんでやねん",
@@ -416,8 +416,8 @@
     "region": "Kansai",
     "note": "Classic comedic retort (tsukkomi). (Set 3)",
     "id": 42,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "めっちゃ",
@@ -426,8 +426,8 @@
     "region": "Kansai",
     "note": "Now used nationwide. (Set 3)",
     "id": 43,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "あかん",
@@ -436,8 +436,8 @@
     "region": "Kansai",
     "note": "Used for prohibition/failure. (Set 3)",
     "id": 44,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "〜へん",
@@ -466,8 +466,8 @@
     "region": "Hokkaido",
     "note": "Hokkaido intensifier. (Set 3)",
     "id": 47,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "したっけ",
@@ -476,8 +476,8 @@
     "region": "Hokkaido",
     "note": "Transition/goodbye phrase. (Set 3)",
     "id": 48,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "〜ばい",
@@ -486,8 +486,8 @@
     "region": "Fukuoka",
     "note": "Assertive friendly ending. (Set 3)",
     "id": 49,
-    "issued": false,
-    "completed": true
+    "issued": true,
+    "completed": false
   },
   {
     "dialect": "〜けん",
@@ -516,8 +516,8 @@
     "region": "Nagoya",
     "note": "Characteristic Nagoya intensifier. (Set 3)",
     "id": 52,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "〜だがや",
@@ -526,8 +526,8 @@
     "region": "Nagoya",
     "note": "Strong Nagoya marker. (Set 3)",
     "id": 53,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "ぶち",
@@ -576,8 +576,8 @@
     "region": "Okinawa",
     "note": "Okinawan gratitude expression. (Set 3)",
     "id": 58,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "〜やねん",
@@ -586,8 +586,8 @@
     "region": "Kansai",
     "note": "Explanatory ending in conversation. (Set 3)",
     "id": 59,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "おおきに",
@@ -606,8 +606,8 @@
     "region": "Kansai",
     "note": "Very common in Osaka/Kyoto speech. (Set 4)",
     "id": 61,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "なんでやねん",
@@ -616,8 +616,8 @@
     "region": "Kansai",
     "note": "Classic comedic retort (tsukkomi). (Set 4)",
     "id": 62,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "めっちゃ",
@@ -626,8 +626,8 @@
     "region": "Kansai",
     "note": "Now used nationwide. (Set 4)",
     "id": 63,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "あかん",
@@ -636,8 +636,8 @@
     "region": "Kansai",
     "note": "Used for prohibition/failure. (Set 4)",
     "id": 64,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "〜へん",
@@ -646,8 +646,8 @@
     "region": "Kansai",
     "note": "Example: 食べへん = 食べない。 (Set 4)",
     "id": 65,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "しばれる",
@@ -656,8 +656,8 @@
     "region": "Hokkaido",
     "note": "Used for severe winter cold. (Set 4)",
     "id": 66,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "なまら",
@@ -686,8 +686,8 @@
     "region": "Fukuoka",
     "note": "Assertive friendly ending. (Set 4)",
     "id": 69,
-    "issued": false,
-    "completed": true
+    "issued": true,
+    "completed": false
   },
   {
     "dialect": "〜けん",
@@ -706,8 +706,8 @@
     "region": "Kyushu",
     "note": "Common Kyushu replacement. (Set 4)",
     "id": 71,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "でら",
@@ -716,8 +716,8 @@
     "region": "Nagoya",
     "note": "Characteristic Nagoya intensifier. (Set 4)",
     "id": 72,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "〜だがや",
@@ -726,8 +726,8 @@
     "region": "Nagoya",
     "note": "Strong Nagoya marker. (Set 4)",
     "id": 73,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "ぶち",
@@ -746,8 +746,8 @@
     "region": "Hiroshima",
     "note": "Common causal ending. (Set 4)",
     "id": 75,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "いけん",
@@ -756,8 +756,8 @@
     "region": "Chugoku",
     "note": "Prohibitive nuance. (Set 4)",
     "id": 76,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "なんくるないさ",
@@ -776,8 +776,8 @@
     "region": "Okinawa",
     "note": "Okinawan gratitude expression. (Set 4)",
     "id": 78,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "〜やねん",
@@ -786,8 +786,8 @@
     "region": "Kansai",
     "note": "Explanatory ending in conversation. (Set 4)",
     "id": 79,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "おおきに",
@@ -816,8 +816,8 @@
     "region": "Kansai",
     "note": "Classic comedic retort (tsukkomi). (Set 5)",
     "id": 82,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "めっちゃ",
@@ -826,8 +826,8 @@
     "region": "Kansai",
     "note": "Now used nationwide. (Set 5)",
     "id": 83,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "あかん",
@@ -836,8 +836,8 @@
     "region": "Kansai",
     "note": "Used for prohibition/failure. (Set 5)",
     "id": 84,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "〜へん",
@@ -906,8 +906,8 @@
     "region": "Kyushu",
     "note": "Common Kyushu replacement. (Set 5)",
     "id": 91,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "でら",
@@ -916,8 +916,8 @@
     "region": "Nagoya",
     "note": "Characteristic Nagoya intensifier. (Set 5)",
     "id": 92,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "〜だがや",
@@ -966,8 +966,8 @@
     "region": "Okinawa",
     "note": "Famous Okinawan resilience phrase. (Set 5)",
     "id": 97,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "にふぇーでーびる",
@@ -996,8 +996,8 @@
     "region": "Kansai",
     "note": "Traditional gratitude expression. (Set 5)",
     "id": 100,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "ほんま",
@@ -1006,8 +1006,8 @@
     "region": "Kansai",
     "note": "Very common in Osaka/Kyoto speech. (Set 6)",
     "id": 101,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "なんでやねん",
@@ -1016,8 +1016,8 @@
     "region": "Kansai",
     "note": "Classic comedic retort (tsukkomi). (Set 6)",
     "id": 102,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "めっちゃ",
@@ -1026,8 +1026,8 @@
     "region": "Kansai",
     "note": "Now used nationwide. (Set 6)",
     "id": 103,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "あかん",
@@ -1036,8 +1036,8 @@
     "region": "Kansai",
     "note": "Used for prohibition/failure. (Set 6)",
     "id": 104,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "〜へん",
@@ -1046,8 +1046,8 @@
     "region": "Kansai",
     "note": "Example: 食べへん = 食べない。 (Set 6)",
     "id": 105,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "しばれる",
@@ -1066,8 +1066,8 @@
     "region": "Hokkaido",
     "note": "Hokkaido intensifier. (Set 6)",
     "id": 107,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "したっけ",
@@ -1096,8 +1096,8 @@
     "region": "Kyushu",
     "note": "Reason marker in Kyushu. (Set 6)",
     "id": 110,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "よか",
@@ -1136,8 +1136,8 @@
     "region": "Yamaguchi/Hiroshima",
     "note": "Regional intensifier. (Set 6)",
     "id": 114,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "〜じゃけぇ",
@@ -1186,8 +1186,8 @@
     "region": "Kansai",
     "note": "Explanatory ending in conversation. (Set 6)",
     "id": 119,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "おおきに",
@@ -1196,7 +1196,7 @@
     "region": "Kansai",
     "note": "Traditional gratitude expression. (Set 6)",
     "id": 120,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   }
 ]

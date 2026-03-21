@@ -38,7 +38,8 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
   const { selectedKanji: selectedKanjiObjs } = useKanjiSelection();
 
   // Vocab store
-  const { selectedVocab: selectedWordObjs } = useVocabSelection();
+  const { selectedVocab: selectedWordObjs, selectedSets: selectedVocabSets } =
+    useVocabSelection();
 
   const isFilled =
     currentDojo === 'kana'
@@ -46,7 +47,7 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
       : currentDojo === 'kanji'
         ? selectedKanjiObjs.length >= 10
         : currentDojo === 'vocabulary'
-          ? selectedWordObjs.length >= 10
+          ? selectedVocabSets.length > 0 || selectedWordObjs.length > 0
           : false;
 
   const buttonRef = useRef<HTMLButtonElement | null>(null);

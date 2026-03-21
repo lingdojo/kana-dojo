@@ -1,0 +1,55 @@
+{
+  "threshold": 0.36,
+  "syntheticCount": 10,
+  "duplicatePairs": [
+    {
+      "a": "amber-pluck",
+      "b": "luna-glint",
+      "d": 0.059731005877977195
+    },
+    {
+      "a": "amber-pluck",
+      "b": "aqua-bloom",
+      "d": 0.13944918554685348
+    },
+    {
+      "a": "silk-chime",
+      "b": "aqua-bloom",
+      "d": 0.14394097900927638
+    },
+    {
+      "a": "ringmod-zap",
+      "b": "velvet-tap",
+      "d": 0.15044215540197092
+    },
+    {
+      "a": "ringmod-zap",
+      "b": "luna-glint",
+      "d": 0.21630619976123477
+    },
+    {
+      "a": "ringmod-zap",
+      "b": "amber-pluck",
+      "d": 0.23399501155696212
+    },
+    {
+      "a": "aqua-bloom",
+      "b": "luna-glint",
+      "d": 0.33812261997019855
+    }
+  ],
+  "keep": [
+    "chaos-burst",
+    "granular-shatter",
+    "reverse-suck",
+    "silk-chime",
+    "subdrop-thud"
+  ],
+  "remove": [
+    "amber-pluck",
+    "aqua-bloom",
+    "luna-glint",
+    "ringmod-zap",
+    "velvet-tap"
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "title": "Bienvenue sur KanaDojo !",
+  "subtitle": "Personnalisons votre expérience d'apprentissage",
+  "steps": {
+    "welcome": {
+      "demoCta": "ESSAYER LA DÉMO"
+    },
+    "behavior": {
+      "title": "Configurer le comportement",
+      "subtitle": "Définissez vos préférences d'affichage et de son",
+      "displayLanguage": {
+        "title": "Langue d'affichage",
+        "description": "Dans le menu de sélection des caractères, pour les lectures, afficher :",
+        "romaji": "Romaji, Traductions 🇫🇷",
+        "kana": "Kana, Kanji 🇯🇵"
+      },
+      "soundEffects": {
+        "title": "Effets sonores",
+        "description": "Jouer les effets sonores de l'interface et du retour :",
+        "on": "Activé",
+        "off": "Désactivé"
+      }
+    },
+    "themes": {
+      "title": "Choisissez votre thème",
+      "subtitle": "Sélectionnez un thème qui correspond à votre style",
+      "randomTheme": "Thème aléatoire",
+      "moreInfo": "Plus de thèmes disponibles dans",
+      "preferences": "Préférences"
+    },
+    "fonts": {
+      "title": "Choisissez votre police",
+      "subtitle": "Choisissez la police idéale pour les caractères",
+      "randomFont": "Police aléatoire",
+      "default": "(par défaut)",
+      "moreInfo": "Plus de polices disponibles dans",
+      "preferences": "Préférences"
+    },
+    "complete": {
+      "title": "C'est prêt !",
+      "subtitle": "Votre KanaDojo est maintenant personnalisé",
+      "canChange": "Vous pouvez modifier ces paramètres à tout moment dans les Préférences.",
+      "happyLearning": "Bon apprentissage !"
+    }
+  },
+  "features": {
+    "behavior": {
+      "title": "Configurer le comportement",
+      "description": "Définir la langue d'affichage et les préférences sonores"
+    },
+    "theme": {
+      "title": "Choisissez votre thème",
+      "description": "Sélectionnez un thème qui correspond à votre style"
+    },
+    "font": {
+      "title": "Sélectionnez votre police",
+      "description": "Choisissez la police idéale pour les caractères"
+    }
+  },
+  "navigation": {
+    "previous": "Précédent",
+    "back": "Retour",
+    "next": "Suivant",
+    "getStarted": "Commencer",
+    "finishSetup": "Terminer la configuration"
+  }
+}

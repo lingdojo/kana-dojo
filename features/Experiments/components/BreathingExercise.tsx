@@ -25,7 +25,7 @@ const BreathingExercise = () => {
   const [isMounted, setIsMounted] = useState(false);
   const [isPlaying, setIsPlaying] = useState(true);
   const [phase, setPhase] = useState<BreathPhase>('inhale');
-  const [currentKana, setCurrentKana] = useState(getRandomKana());
+  const [currentKana, setCurrentKana] = useState(() => getRandomKana());
   const [cycleCount, setCycleCount] = useState(0);
   const { playClick } = useClick();
 

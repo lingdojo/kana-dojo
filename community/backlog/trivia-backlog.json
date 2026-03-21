@@ -10,8 +10,8 @@
       "Kanazawa"
     ],
     "correctIndex": 1,
-    "issued": false,
-    "completed": true
+    "issued": true,
+    "completed": false
   },
   {
     "id": 2,
@@ -24,7 +24,7 @@
       "Kairo"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -38,7 +38,7 @@
       "October"
     ],
     "correctIndex": 1,
-    "completed": true,
+    "completed": false,
     "issued": false
   },
   {
@@ -52,7 +52,7 @@
       "Shodo"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -66,7 +66,7 @@
       "Kyushu"
     ],
     "correctIndex": 1,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -94,7 +94,7 @@
       "Udon"
     ],
     "correctIndex": 1,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -122,7 +122,7 @@
       "Nijo Castle"
     ],
     "correctIndex": 0,
-    "completed": true,
+    "completed": false,
     "issued": false
   },
   {
@@ -136,8 +136,8 @@
       "Arctic Ocean"
     ],
     "correctIndex": 2,
-    "completed": true,
-    "issued": false
+    "completed": false,
+    "issued": true
   },
   {
     "id": 11,
@@ -150,7 +150,7 @@
       "Sayonara"
     ],
     "correctIndex": 1,
-    "completed": true,
+    "completed": false,
     "issued": false
   },
   {
@@ -164,7 +164,7 @@
       "Nagoya"
     ],
     "correctIndex": 0,
-    "completed": true,
+    "completed": false,
     "issued": false
   },
   {
@@ -178,7 +178,7 @@
       "Tabi"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -206,8 +206,8 @@
       "Mount Tate"
     ],
     "correctIndex": 1,
-    "issued": false,
-    "completed": true
+    "issued": true,
+    "completed": false
   },
   {
     "id": 16,
@@ -220,8 +220,8 @@
       "Winter"
     ],
     "correctIndex": 2,
-    "completed": true,
-    "issued": false
+    "completed": false,
+    "issued": true
   },
   {
     "id": 17,
@@ -234,8 +234,8 @@
       "Kissa"
     ],
     "correctIndex": 1,
-    "completed": true,
-    "issued": false
+    "completed": false,
+    "issued": true
   },
   {
     "id": 18,
@@ -248,7 +248,7 @@
       "Okayama"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -262,7 +262,7 @@
       "Shodo"
     ],
     "correctIndex": 0,
-    "completed": true,
+    "completed": false,
     "issued": false
   },
   {
@@ -277,7 +277,7 @@
     ],
     "correctIndex": 0,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "id": 21,
@@ -290,8 +290,8 @@
       "Rupee"
     ],
     "correctIndex": 1,
-    "issued": false,
-    "completed": true
+    "issued": true,
+    "completed": false
   },
   {
     "id": 22,
@@ -304,8 +304,8 @@
       "Takayama"
     ],
     "correctIndex": 0,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 23,
@@ -332,8 +332,8 @@
       "Naha"
     ],
     "correctIndex": 0,
-    "issued": false,
-    "completed": true
+    "issued": true,
+    "completed": false
   },
   {
     "id": 25,
@@ -346,7 +346,7 @@
       "Reversi"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -360,7 +360,7 @@
       "Okonomiyaki"
     ],
     "correctIndex": 1,
-    "completed": true,
+    "completed": false,
     "issued": false
   },
   {
@@ -374,8 +374,8 @@
       "Oki"
     ],
     "correctIndex": 0,
-    "completed": true,
-    "issued": false
+    "completed": false,
+    "issued": true
   },
   {
     "id": 28,
@@ -402,8 +402,8 @@
       "Sendai"
     ],
     "correctIndex": 0,
-    "issued": false,
-    "completed": true
+    "issued": true,
+    "completed": false
   },
   {
     "id": 30,
@@ -416,7 +416,7 @@
       "Kyogen"
     ],
     "correctIndex": 0,
-    "completed": true,
+    "completed": false,
     "issued": false
   },
   {
@@ -430,8 +430,8 @@
       "Fukuoka"
     ],
     "correctIndex": 0,
-    "issued": false,
-    "completed": true
+    "issued": true,
+    "completed": false
   },
   {
     "id": 32,
@@ -444,8 +444,8 @@
       "Oyasumi"
     ],
     "correctIndex": 0,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 33,
@@ -458,8 +458,8 @@
       "Deer"
     ],
     "correctIndex": 0,
-    "issued": false,
-    "completed": true
+    "issued": true,
+    "completed": false
   },
   {
     "id": 34,
@@ -472,8 +472,8 @@
       "Okonomiyaki"
     ],
     "correctIndex": 0,
-    "issued": false,
-    "completed": true
+    "issued": true,
+    "completed": false
   },
   {
     "id": 35,
@@ -486,8 +486,8 @@
       "Romaji"
     ],
     "correctIndex": 0,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 36,
@@ -500,8 +500,8 @@
       "Aikido"
     ],
     "correctIndex": 0,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 37,
@@ -514,8 +514,8 @@
       "Kiku"
     ],
     "correctIndex": 0,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 38,
@@ -528,8 +528,8 @@
       "Sendai"
     ],
     "correctIndex": 0,
-    "completed": true,
-    "issued": false
+    "completed": false,
+    "issued": true
   },
   {
     "id": 39,
@@ -542,8 +542,8 @@
       "Mochi"
     ],
     "correctIndex": 0,
-    "issued": false,
-    "completed": true
+    "issued": true,
+    "completed": false
   },
   {
     "id": 40,
@@ -556,8 +556,8 @@
       "Osaka Castle"
     ],
     "correctIndex": 0,
-    "completed": true,
-    "issued": false
+    "completed": false,
+    "issued": true
   },
   {
     "id": 41,
@@ -570,7 +570,7 @@
       "Shichi-Go-San"
     ],
     "correctIndex": 0,
-    "completed": true,
+    "completed": false,
     "issued": false
   },
   {
@@ -584,7 +584,7 @@
       "Izakaya"
     ],
     "correctIndex": 0,
-    "completed": true,
+    "completed": false,
     "issued": false
   },
   {
@@ -599,7 +599,7 @@
     ],
     "correctIndex": 0,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "id": 44,
@@ -613,7 +613,7 @@
     ],
     "correctIndex": 0,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "id": 45,
@@ -640,7 +640,7 @@
       "Tateyama"
     ],
     "correctIndex": 0,
-    "completed": true,
+    "completed": false,
     "issued": false
   },
   {
@@ -654,7 +654,7 @@
       "Bering Sea"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -668,7 +668,7 @@
       "Oden"
     ],
     "correctIndex": 0,
-    "completed": true,
+    "completed": false,
     "issued": false
   },
   {
@@ -682,7 +682,7 @@
       "Hinamatsuri"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -696,7 +696,7 @@
       "Himeji Castle"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -710,8 +710,8 @@
       "Kobe"
     ],
     "correctIndex": 0,
-    "issued": false,
-    "completed": true
+    "issued": true,
+    "completed": false
   },
   {
     "id": 52,
@@ -725,7 +725,7 @@
     ],
     "correctIndex": 0,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "id": 53,
@@ -738,7 +738,7 @@
       "Mount Haku"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -752,7 +752,7 @@
       "Fuji TV"
     ],
     "correctIndex": 0,
-    "completed": true,
+    "completed": false,
     "issued": false
   },
   {
@@ -766,7 +766,7 @@
       "Hokkaido"
     ],
     "correctIndex": 0,
-    "completed": true,
+    "completed": false,
     "issued": false
   },
   {
@@ -780,8 +780,8 @@
       "Seaweed"
     ],
     "correctIndex": 0,
-    "completed": true,
-    "issued": false
+    "completed": false,
+    "issued": true
   },
   {
     "id": 57,
@@ -794,8 +794,8 @@
       "Sendai"
     ],
     "correctIndex": 0,
-    "completed": true,
-    "issued": false
+    "completed": false,
+    "issued": true
   },
   {
     "id": 58,
@@ -808,7 +808,7 @@
       "Origami"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -823,7 +823,7 @@
     ],
     "correctIndex": 0,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "id": 60,
@@ -837,7 +837,7 @@
     ],
     "correctIndex": 0,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "id": 61,
@@ -851,7 +851,7 @@
     ],
     "correctIndex": 0,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "id": 62,
@@ -864,7 +864,7 @@
       "Aoi Matsuri"
     ],
     "correctIndex": 0,
-    "completed": true,
+    "completed": false,
     "issued": false
   },
   {
@@ -879,7 +879,7 @@
     ],
     "correctIndex": 0,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "id": 64,
@@ -893,7 +893,7 @@
     ],
     "correctIndex": 0,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "id": 65,
@@ -906,8 +906,8 @@
       "Sencha"
     ],
     "correctIndex": 0,
-    "completed": true,
-    "issued": false
+    "completed": false,
+    "issued": true
   },
   {
     "id": 66,
@@ -920,7 +920,7 @@
       "Kanda Matsuri"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -934,7 +934,7 @@
       "Kyushu"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -948,7 +948,7 @@
       "Shodo"
     ],
     "correctIndex": 0,
-    "completed": true,
+    "completed": false,
     "issued": false
   },
   {
@@ -963,7 +963,7 @@
     ],
     "correctIndex": 0,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "id": 70,
@@ -976,7 +976,7 @@
       "Yokohama"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -991,7 +991,7 @@
     ],
     "correctIndex": 0,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "id": 72,
@@ -1004,7 +1004,7 @@
       "Hokuriku"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1018,7 +1018,7 @@
       "Goshuin"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1033,7 +1033,7 @@
     ],
     "correctIndex": 0,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "id": 75,
@@ -1046,7 +1046,7 @@
       "Lake Shinji"
     ],
     "correctIndex": 0,
-    "completed": true,
+    "completed": false,
     "issued": false
   },
   {
@@ -1089,7 +1089,7 @@
     ],
     "correctIndex": 0,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "id": 79,
@@ -1103,7 +1103,7 @@
     ],
     "correctIndex": 0,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "id": 80,
@@ -1117,7 +1117,7 @@
     ],
     "correctIndex": 0,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "id": 81,
@@ -1131,7 +1131,7 @@
     ],
     "correctIndex": 1,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "id": 82,
@@ -1145,7 +1145,7 @@
     ],
     "correctIndex": 0,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "id": 83,
@@ -1158,8 +1158,8 @@
       "October"
     ],
     "correctIndex": 1,
-    "issued": false,
-    "completed": true
+    "issued": true,
+    "completed": false
   },
   {
     "id": 84,
@@ -1173,7 +1173,7 @@
     ],
     "correctIndex": 0,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "id": 85,
@@ -1186,7 +1186,7 @@
       "Kyushu"
     ],
     "correctIndex": 1,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1200,7 +1200,7 @@
       "Bunraku"
     ],
     "correctIndex": 1,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1214,7 +1214,7 @@
       "Udon"
     ],
     "correctIndex": 1,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1228,7 +1228,7 @@
       "Obon"
     ],
     "correctIndex": 1,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1243,7 +1243,7 @@
     ],
     "correctIndex": 0,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "id": 90,
@@ -1256,7 +1256,7 @@
       "Arctic Ocean"
     ],
     "correctIndex": 2,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1270,7 +1270,7 @@
       "Sayonara"
     ],
     "correctIndex": 1,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1284,7 +1284,7 @@
       "Nagoya"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1298,7 +1298,7 @@
       "Tabi"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1312,7 +1312,7 @@
       "Kyushu"
     ],
     "correctIndex": 3,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1326,7 +1326,7 @@
       "Mount Tate"
     ],
     "correctIndex": 1,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1341,7 +1341,7 @@
     ],
     "correctIndex": 2,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "id": 97,
@@ -1354,7 +1354,7 @@
       "Kissa"
     ],
     "correctIndex": 1,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1368,7 +1368,7 @@
       "Okayama"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1382,7 +1382,7 @@
       "Shodo"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1396,7 +1396,7 @@
       "Ikebana"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1410,8 +1410,8 @@
       "Rupee"
     ],
     "correctIndex": 1,
-    "issued": false,
-    "completed": true
+    "issued": true,
+    "completed": false
   },
   {
     "id": 102,
@@ -1424,7 +1424,7 @@
       "Takayama"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1438,7 +1438,7 @@
       "Comique"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1452,7 +1452,7 @@
       "Naha"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1466,7 +1466,7 @@
       "Reversi"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1480,7 +1480,7 @@
       "Okonomiyaki"
     ],
     "correctIndex": 1,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1494,7 +1494,7 @@
       "Oki"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1508,7 +1508,7 @@
       "Hina Matsuri"
     ],
     "correctIndex": 1,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1522,7 +1522,7 @@
       "Sendai"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1537,7 +1537,7 @@
     ],
     "correctIndex": 0,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "id": 111,
@@ -1578,7 +1578,7 @@
       "Deer"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1592,7 +1592,7 @@
       "Okonomiyaki"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1634,8 +1634,8 @@
       "Kiku"
     ],
     "correctIndex": 0,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 118,
@@ -1648,8 +1648,8 @@
       "Sendai"
     ],
     "correctIndex": 0,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "id": 119,
@@ -1690,7 +1690,7 @@
       "Shichi-Go-San"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1705,7 +1705,7 @@
     ],
     "correctIndex": 0,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "id": 123,
@@ -1718,7 +1718,7 @@
       "Shodo"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1732,7 +1732,7 @@
       "Yakitori"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1746,7 +1746,7 @@
       "Hokkaido"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1760,7 +1760,7 @@
       "Tateyama"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1775,7 +1775,7 @@
     ],
     "correctIndex": 0,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "id": 128,
@@ -1788,7 +1788,7 @@
       "Oden"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1816,7 +1816,7 @@
       "Himeji Castle"
     ],
     "correctIndex": 0,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1844,7 +1844,7 @@
       "Yatai"
     ],
     "correctIndex": 0,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1900,7 +1900,7 @@
       "Seaweed"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1914,7 +1914,7 @@
       "Sendai"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1928,7 +1928,7 @@
       "Origami"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1943,7 +1943,7 @@
     ],
     "correctIndex": 0,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "id": 140,
@@ -1957,6 +1957,6 @@
     ],
     "correctIndex": 0,
     "issued": false,
-    "completed": true
+    "completed": false
   }
 ]

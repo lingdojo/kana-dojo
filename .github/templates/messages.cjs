@@ -20,6 +20,7 @@ module.exports = {
     ],
     // Pool — 2-3 randomly selected per issue (adds variety, avoids spam signal)
     secondaryIssuePool: [
+/* 
       'easy',
       'beginner',
       'beginner-friendly',
@@ -27,6 +28,9 @@ module.exports = {
       'javascript',
       'documentation',
       'typescript',
+      'json',
+      'no setup'
+ */
     ],
     // Label for filtering community issues
     community: 'community',
@@ -40,7 +44,7 @@ module.exports = {
   config: {
     // Stale issue timing (in milliseconds)
     staleWarningAfterMs: 12 * 60 * 60 * 1000, // 12 hours
-    staleCloseAfterMs: 18 * 60 * 60 * 1000, // 18 hours
+    staleCloseAfterMs: 24 * 60 * 60 * 1000, // 24 hours
   },
 
   // =============================================================================
@@ -180,7 +184,7 @@ module.exports = {
       body: 'This issue has been inactive for 12 hours.',
       action: "If you're still working on it, please comment to let us know!",
       consequence:
-        'Otherwise, it will be automatically closed in **6 hours** and made available for others to claim.',
+        'Otherwise, it will be automatically closed in **12 hours** and made available for others to claim.',
       footer: 'Need help? Just ask! 🙌',
     },
     unassignedWarning: {
@@ -194,7 +198,7 @@ module.exports = {
     },
     closed: {
       title: '🕐 **This issue has been automatically closed**',
-      reason: 'due to 18 hours of inactivity.',
+      reason: 'due to 8 hours after the stale warning.',
       reassurance:
         "Don't worry—the contribution opportunity will be re-posted for someone else to claim.",
       footer: 'Thanks for your interest in contributing to KanaDojo! 🙏',
@@ -215,11 +219,11 @@ module.exports = {
     // Shared constants and helpers
     common: {
       titleTemplate:
-        '[Good First Issue] {emoji} Add new {issueType} - Beginner-Friendly Contribution (good-first-issue, <1 min)',
+        '[Good First Issue] {emoji} Add new {issueType} - Beginner-Friendly Contribution (good-first-issue, <1 min, no setup)',
       difficulty: 'Easy (good first issue!)',
       instructionsHeader: '### 📝 Instructions',
       footer:
-        "### 🚀 Quick Info\n\n| | |\n|---|---|\n| **Difficulty** | Beginner / Easy |\n| **Time** | < 1 minute |\n| **Language** | TypeScript, JSON |\n| **Framework** | Next.js, React |\n| **Good for** | First-time contributors, Hacktoberfest |\n\n> **No coding experience required!** This is a simple JSON/data file edit — perfect for your first open source contribution.\n\n**Questions?** Comment below and we'll help! 🙌\n\n_This is a beginner-friendly, good first issue for first-time open source contributors. No coding experience needed — just edit a JSON file! See our [Beginner Contributing Guide](../blob/main/docs/CONTRIBUTING-BEGINNERS.md) for step-by-step instructions._",
+        "### 🚀 Quick Info\n\n| | |\n|---|---|\n| **Difficulty** | Beginner / Easy |\n| **Time** | < 1 minute |\n| **Language** | TypeScript, JSON |\n| **Framework** | Next.js, React |\n| **Good for** | First-time contributors, Hacktoberfest |\n\n> **No coding experience required!** This is a simple JSON/data file edit — perfect for your first open source contribution. No setup is required. \n\n**Questions?** Comment below and we'll help! 🙌\n\n_This is a beginner-friendly, good first issue for first-time open source contributors. No coding experience needed — just edit a JSON file! See our [Beginner Contributing Guide](../blob/main/docs/CONTRIBUTING-BEGINNERS.md) for step-by-step instructions._",
       // Welcome comment posted on freshly created issues for engagement signals
       welcomeComment:
         '👋 **This issue is up for grabs!** Comment below to claim it and get auto-assigned.\n\n' +

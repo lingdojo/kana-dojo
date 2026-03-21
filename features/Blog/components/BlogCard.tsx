@@ -1,30 +1,14 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { Link } from '@/shared/components/navigation/Link';
 import { cn } from '@/shared/lib/utils';
 import {
   formatLastUpdated,
   getFreshnessBadge,
 } from '@/shared/lib/content-freshness';
-import type { BlogPostMeta, Category } from '../types/blog';
-
-/**
- * Category badge color mappings
- */
-const categoryColors: Record<Category, string> = {
-  hiragana: 'bg-pink-500/20 text-pink-400 border-pink-500/30',
-  katakana: 'bg-purple-500/20 text-purple-400 border-purple-500/30',
-  kanji: 'bg-blue-500/20 text-blue-400 border-blue-500/30',
-  vocabulary: 'bg-green-500/20 text-green-400 border-green-500/30',
-  grammar: 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30',
-  culture: 'bg-orange-500/20 text-orange-400 border-orange-500/30',
-  comparison: 'bg-cyan-500/20 text-cyan-400 border-cyan-500/30',
-  tutorial: 'bg-indigo-500/20 text-indigo-400 border-indigo-500/30',
-  resources: 'bg-teal-500/20 text-teal-400 border-teal-500/30',
-  'study-tips': 'bg-lime-500/20 text-lime-400 border-lime-500/30',
-  jlpt: 'bg-red-500/20 text-red-400 border-red-500/30',
-};
+import type { BlogPostMeta } from '../types/blog';
 
 interface BlogCardProps {
   /** Blog post metadata to display */
@@ -71,10 +55,12 @@ export function BlogCard({
         )}
       >
         {post.featuredImage ? (
-          <img
+          <Image
             src={post.featuredImage}
             alt={post.title}
-            className='h-full w-full object-cover transition-transform duration-700 group-hover:scale-105'
+            fill
+            sizes={isFeatured ? '(min-width: 1024px) 66vw, (min-width: 768px) 60vw, 100vw' : '(min-width: 768px) 50vw, 100vw'}
+            className='object-cover transition-transform duration-700 group-hover:scale-105'
           />
         ) : (
           <div className='flex h-full w-full items-center justify-center opacity-10'>

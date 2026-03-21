@@ -1,0 +1,33 @@
+{
+  "privacy": {
+    "title": "Politique de confidentialité",
+    "subtitle": "Protection de vos données chez KanaDojo",
+    "lastUpdated": "Dernière mise à jour"
+  },
+  "terms": {
+    "title": "Conditions d'utilisation",
+    "subtitle": "Directives d'utilisation de KanaDojo",
+    "lastUpdated": "Dernière mise à jour"
+  },
+  "security": {
+    "title": "Politique de sécurité",
+    "subtitle": "Comment nous protégeons KanaDojo",
+    "lastUpdated": "Dernière mise à jour"
+  },
+  "credits": {
+    "title": "Crédits",
+    "subtitle": "Contributeurs et supporters",
+    "contributors": {
+      "title": "Contributeurs",
+      "description": "Merci à tous nos formidables contributeurs"
+    },
+    "sponsors": {
+      "title": "Sponsors",
+      "description": "Remerciements spéciaux à nos sponsors"
+    },
+    "openSource": {
+      "title": "Open Source",
+      "description": "Construit avec ces incroyables projets open source"
+    }
+  }
+}
