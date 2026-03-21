@@ -226,8 +226,10 @@
     "english": "Dance to my beautiful technique!",
     "anime": "The Prince of Tennis",
     "character": "Keigo Atobe",
-    "completed": false,
-    "issued": true
+    "completed": true,
+    "issued": false,
+    "completedBy": "FloodExLLC",
+    "completedPR": 9475
   },
   {
     "id": 24,
@@ -407,7 +409,7 @@
     "anime": "Sailor Moon",
     "character": "Usagi Tsukino",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 42,
@@ -786,7 +788,7 @@
     "english": "Lero lero lero lero. (alt wording 27)",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Noriaki Kakyoin",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1036,7 +1038,7 @@
     "english": "Lend me your energy! (alt wording 52)",
     "anime": "Dragon Ball Z",
     "character": "Son Goku",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

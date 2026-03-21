@@ -557,7 +557,7 @@
     "mainColor": "oklch(68.0% 0.175 30.0 / 1)",
     "secondaryColor": "oklch(78.0% 0.125 45.0 / 1)",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": "izakaya-warm",
@@ -566,7 +566,7 @@
     "backgroundColor": "oklch(20.0% 0.045 35.0 / 1)",
     "mainColor": "oklch(70.0% 0.165 30.0 / 1)",
     "secondaryColor": "oklch(80.0% 0.115 65.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -834,7 +834,7 @@
     "backgroundColor": "oklch(14.0% 0.058 290.0 / 1)",
     "mainColor": "oklch(88.0% 0.195 95.0 / 1)",
     "secondaryColor": "oklch(75.0% 0.180 275.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1395,7 +1395,7 @@
     "mainColor": "oklch(58.0% 0.165 140.0 / 1)",
     "secondaryColor": "oklch(72.0% 0.115 95.0 / 1)",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": "taisho-cafe",
@@ -1404,7 +1404,7 @@
     "backgroundColor": "oklch(18.0% 0.028 65.0 / 1)",
     "mainColor": "oklch(72.0% 0.115 65.0 / 1)",
     "secondaryColor": "oklch(60.0% 0.085 25.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

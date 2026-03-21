@@ -457,7 +457,7 @@
     "romaji": "Nido aru koto wa sando aru",
     "english": "What happens twice will happen a third time",
     "meaning": "Patterns tend to repeat",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -467,7 +467,7 @@
     "english": "Fate is strange yet delightful",
     "meaning": "Chance connections can be surprisingly good",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 53,
@@ -476,7 +476,7 @@
     "english": "Stomach 80 percent full",
     "meaning": "Eat in moderation",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 54,
@@ -907,7 +907,7 @@
     "romaji": "Hayaoki wa sanmon no toku",
     "english": "Early rising is worth three coins",
     "meaning": "Getting up early brings benefits",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -916,7 +916,7 @@
     "romaji": "Nido aru koto wa sando aru",
     "english": "What happens twice will happen a third time",
     "meaning": "Patterns tend to repeat",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -926,7 +926,7 @@
     "english": "Kindness is not for others",
     "meaning": "Good deeds return to you",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 104,
@@ -934,7 +934,7 @@
     "romaji": "Issun saki wa yami",
     "english": "An inch ahead is darkness",
     "meaning": "The future is uncertain",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -943,7 +943,7 @@
     "romaji": "Seite wa koto wo shisonjiru",
     "english": "Haste will spoil things",
     "meaning": "Rushing leads to mistakes",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -952,8 +952,10 @@
     "romaji": "Zen wa isoge",
     "english": "Hurry to do good",
     "meaning": "Do worthwhile things promptly",
-    "completed": false,
-    "issued": false
+    "completed": true,
+    "issued": false,
+    "completedBy": "wangwangbobo",
+    "completedPR": 9478
   },
   {
     "id": 107,
@@ -1025,7 +1027,7 @@
     "english": "Gold coins to a cat",
     "meaning": "Gifts wasted on those who don't appreciate them",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 115,

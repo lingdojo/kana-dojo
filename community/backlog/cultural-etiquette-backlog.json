@@ -338,7 +338,7 @@
     "dont": "笑いながら浅く頭を下げる",
     "note": "丁寧さは姿勢で伝わる。",
     "id": 38,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -465,7 +465,7 @@
     "note": "先に謝罪が基本。",
     "id": 52,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "situation": "写真撮影（寺社） 3",
@@ -474,7 +474,7 @@
     "note": "御本尊周辺は撮影不可が多い。",
     "id": 53,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "situation": "年上との会話 3",
@@ -482,7 +482,7 @@
     "dont": "初対面でタメ口を使う",
     "note": "距離感が縮まるまでは敬語が無難。",
     "id": 54,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -663,7 +663,7 @@
     "note": "距離感が縮まるまでは敬語が無難。",
     "id": 74,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "situation": "レジ会計 4",
@@ -671,7 +671,7 @@
     "dont": "現金を投げるように渡す",
     "note": "丁寧で非接触な受け渡し。",
     "id": 75,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

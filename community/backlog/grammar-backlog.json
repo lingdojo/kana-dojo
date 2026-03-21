@@ -20,7 +20,7 @@
   {
     "id": 4,
     "text": "\"〜てもいいです\" means \"it's okay to\" and grants permission.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -290,7 +290,7 @@
   {
     "id": 49,
     "text": "\"〜ながらも\" means \"even while\" or \"though\" (contrast).",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -686,7 +686,7 @@
   {
     "id": 115,
     "text": "\"〜おう/〜よう\" is the volitional form, used to say \"let's\" or \"I will\". (practice variation 30)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

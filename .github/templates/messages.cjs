@@ -198,14 +198,14 @@ module.exports = {
     },
     closed: {
       title: '🕐 **This issue has been automatically closed**',
-      reason: 'due to 8 hours after the stale warning.',
+      reason: 'due to 12 hours after the stale warning.',
       reassurance:
         "Don't worry—the contribution opportunity will be re-posted for someone else to claim.",
       footer: 'Thanks for your interest in contributing to KanaDojo! 🙏',
     },
     unassignedClosed: {
       title: '🕐 **This unassigned issue has been automatically closed**',
-      reason: 'due to 18 hours without activity or a claim.',
+      reason: 'due to 6 hours without activity or a claim.',
       reassurance:
         "Don't worry—this task will be re-posted for someone else to claim.",
       footer: 'Interested in contributing? Keep an eye out for new issues! 🙏',

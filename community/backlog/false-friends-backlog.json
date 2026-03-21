@@ -519,7 +519,9 @@
     "example": "父は都内でサラリーマンをしている。",
     "id": 58,
     "issued": false,
-    "completed": true
+    "completed": true,
+    "completedBy": "22f3000253",
+    "completedPR": 9500
   },
   {
     "termA": "ペットボトル (petto botoru)",

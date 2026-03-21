@@ -350,8 +350,10 @@
   {
     "id": 59,
     "fact": "The word 'sawari' (触り) in Japanese means both 'touch' and 'the most interesting part' - suggesting you save the best for touching.",
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true,
+    "completedBy": "FloodExLLC",
+    "completedPR": 9476
   },
   {
     "id": 60,
@@ -716,7 +718,7 @@
   {
     "id": 120,
     "fact": "Japan has more Michelin-starred restaurants than any other country - Tokyo alone has more stars than Paris.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -728,7 +730,7 @@
   {
     "id": 122,
     "fact": "Japan has 'anti-lonely death' services that check on elderly living alone and arrange their affairs if they pass away.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1209,12 +1211,12 @@
     "id": 202,
     "fact": "In Japan, many shops display realistic food replicas called 'shokuhin sampuru' (食品サンプル) to show menu items.",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 203,
     "fact": "Japan's elementary school students often clean their classrooms themselves in a routine called 'souji' (掃除), teaching responsibility.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

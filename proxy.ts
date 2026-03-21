@@ -5,7 +5,7 @@ import { routing } from './core/i18n/routing';
 // Create intl middleware once at module level (more efficient)
 const intlMiddleware = createMiddleware(routing);
 
-export default function middleware(request: NextRequest) {
+export default function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // Fast path - skip for paths that don't need locale handling
