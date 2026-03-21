@@ -496,5 +496,11 @@
   "backgroundColor": "oklch(25.0% 0.022 210.0 / 1)",
   "mainColor": "oklch(85.0% 0.085 215.0 / 1)",
   "secondaryColor": "oklch(70.0% 0.065 195.0 / 1)"
+  },
+  {
+  "id": "pixel-retro",
+  "backgroundColor": "oklch(14.0% 0.025 280.0 / 1)",
+  "mainColor": "oklch(72.0% 0.200 145.0 / 1)",
+  "secondaryColor": "oklch(80.0% 0.185 55.0 / 1)"
 }
 ]
