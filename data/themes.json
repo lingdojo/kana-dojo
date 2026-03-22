@@ -1,0 +1,11 @@
+{
+  "id": 10,
+  "name": "Golden Kintsugi",
+  "colors": {
+    "primary": "#FFD700",
+    "secondary": "#DAA520",
+    "background": "#FFF8DC",
+    "text": "#000000"
+  },
+  "description": "A theme inspired by the Japanese art of repairing pottery with gold."
+}
