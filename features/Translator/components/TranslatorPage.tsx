@@ -119,7 +119,9 @@ function TranslatorPageContent({ locale = 'en' }: TranslatorPageProps) {
           </h1>
           <p className='mt-1 text-sm text-(--secondary-color) sm:text-base'>
             <strong>Translate English to Japanese</strong> and Japanese to
-            English instantly. Get accurate results with <strong>romaji pronunciation</strong> support.</p>
+            English instantly. Get accurate results with{' '}
+            <strong>romaji pronunciation</strong> support.
+          </p>
         </div>
       </header>
 
@@ -154,7 +156,9 @@ function TranslatorPageContent({ locale = 'en' }: TranslatorPageProps) {
         </div>
         <div>
           <h2 className='text-base font-semibold text-(--main-color)'>
-            {isEs ? 'Ultima actualizacion y cambios' : 'Last updated and changes'}
+            {isEs
+              ? 'Ultima actualizacion y cambios'
+              : 'Last updated and changes'}
           </h2>
           <p className='mt-2 text-sm text-(--secondary-color)'>
             {isEs
@@ -274,4 +278,3 @@ export default function TranslatorPage(props: TranslatorPageProps) {
     </Suspense>
   );
 }
-

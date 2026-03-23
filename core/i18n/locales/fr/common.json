@@ -1,0 +1,67 @@
+{
+  "buttons": {
+    "submit": "Valider",
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "delete": "Supprimer",
+    "confirm": "Confirmer",
+    "close": "Fermer",
+    "back": "Retour",
+    "next": "Suivant",
+    "finish": "Terminer",
+    "start": "Commencer",
+    "pause": "Pause",
+    "resume": "Reprendre",
+    "reset": "Réinitialiser",
+    "clear": "Effacer",
+    "apply": "Appliquer",
+    "done": "Terminé",
+    "ok": "OK",
+    "yes": "Oui",
+    "no": "Non"
+  },
+  "messages": {
+    "loading": "Chargement...",
+    "saving": "Enregistrement...",
+    "success": "Réussi !",
+    "error": "Une erreur est survenue",
+    "saved": "Enregistré avec succès",
+    "deleted": "Supprimé avec succès",
+    "updated": "Mis à jour avec succès",
+    "noData": "Aucune donnée disponible",
+    "tryAgain": "Veuillez réessayer",
+    "confirmDelete": "Êtes-vous sûr de vouloir supprimer ceci ?"
+  },
+  "validation": {
+    "required": "Ce champ est obligatoire",
+    "invalid": "Valeur invalide",
+    "tooShort": "Trop court",
+    "tooLong": "Trop long",
+    "email": "Adresse e-mail invalide",
+    "number": "Doit être un nombre"
+  },
+  "time": {
+    "seconds": "secondes",
+    "minutes": "minutes",
+    "hours": "heures",
+    "days": "jours",
+    "second": "seconde",
+    "minute": "minute",
+    "hour": "heure",
+    "day": "jour"
+  },
+  "actions": {
+    "edit": "Modifier",
+    "view": "Voir",
+    "download": "Télécharger",
+    "upload": "Importer",
+    "search": "Rechercher",
+    "filter": "Filtrer",
+    "sort": "Trier",
+    "refresh": "Actualiser",
+    "share": "Partager",
+    "copy": "Copier",
+    "paste": "Coller",
+    "backToTop": "Retour en haut"
+  }
+}

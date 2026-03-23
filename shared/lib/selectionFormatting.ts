@@ -183,6 +183,15 @@ export const getKanjiVocabLabels = (sets: string[]) => {
     };
   }
 
+  const allAreNumberedSets = sets.every(set => /^Set \d+$/.test(set));
+
+  if (!allAreNumberedSets) {
+    return {
+      full: sets.join(', '),
+      compact: sets.join(', '),
+    };
+  }
+
   const sortedSets = [...sets].sort((a, b) => {
     const numA = parseInt(a.replace('Set ', ''));
     const numB = parseInt(b.replace('Set ', ''));

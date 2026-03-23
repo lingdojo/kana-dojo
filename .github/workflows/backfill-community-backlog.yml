@@ -60,6 +60,8 @@ jobs:
             const exampleSentencesBacklogPath = 'community/backlog/example-sentences-backlog.json';
             const commonMistakesBacklogPath = 'community/backlog/common-mistakes-backlog.json';
             const videoGameQuotesBacklogPath = 'community/backlog/video-game-quotes-backlog.json';
+            const wallpaperUrlsBacklogPath = 'community/backlog/wallpaper-urls-backlog.json';
+            const communityNotesBacklogPath = 'community/backlog/community-notes-backlog.json';
 
             const themes = JSON.parse(fs.readFileSync(themeBacklogPath, 'utf8'));
             const facts = JSON.parse(fs.readFileSync(factsBacklogPath, 'utf8'));
@@ -75,6 +77,8 @@ jobs:
             const exampleSentences = JSON.parse(fs.readFileSync(exampleSentencesBacklogPath, 'utf8'));
             const commonMistakes = JSON.parse(fs.readFileSync(commonMistakesBacklogPath, 'utf8'));
             const videoGameQuotes = JSON.parse(fs.readFileSync(videoGameQuotesBacklogPath, 'utf8'));
+            const wallpaperUrls = JSON.parse(fs.readFileSync(wallpaperUrlsBacklogPath, 'utf8'));
+            const communityNotes = JSON.parse(fs.readFileSync(communityNotesBacklogPath, 'utf8'));
 
             let needsCommit = false;
             let page = 1;
@@ -277,6 +281,36 @@ jobs:
                 return;
               }
 
+              if (title.includes('Add Wallpaper URL #') || title.includes('Add new Wallpaper URL #')) {
+                const idMatch = title.match(/#(\d+)/);
+                if (idMatch) {
+                  const id = parseInt(idMatch[1]);
+                  const idx = wallpaperUrls.findIndex(function(i) { return i.id === id; });
+                  if (idx !== -1 && !wallpaperUrls[idx].completed && wallpaperUrls[idx].issued) {
+                    wallpaperUrls[idx].issued = false;
+                    needsCommit = true;
+                    reenabled += 1;
+                    console.log(`Re-enabled wallpaper URL #${id}`);
+                  }
+                }
+                return;
+              }
+
+              if (title.includes('Add Community Note Line #') || title.includes('Add new Community Note Line #')) {
+                const idMatch = title.match(/#(\d+)/);
+                if (idMatch) {
+                  const id = parseInt(idMatch[1]);
+                  const idx = communityNotes.findIndex(function(i) { return i.id === id; });
+                  if (idx !== -1 && !communityNotes[idx].completed && communityNotes[idx].issued) {
+                    communityNotes[idx].issued = false;
+                    needsCommit = true;
+                    reenabled += 1;
+                    console.log(`Re-enabled community note #${id}`);
+                  }
+                }
+                return;
+              }
+
               if (title.includes('Add Famous Anime Quote #') || title.includes('Add Anime Quote #') || title.includes('Add new Anime Quote #')) {
                 const quoteIdMatch = title.match(/#(\d+)/);
                 if (quoteIdMatch) {
@@ -348,6 +382,8 @@ jobs:
               fs.writeFileSync(exampleSentencesBacklogPath, JSON.stringify(exampleSentences, null, 2));
               fs.writeFileSync(commonMistakesBacklogPath, JSON.stringify(commonMistakes, null, 2));
               fs.writeFileSync(videoGameQuotesBacklogPath, JSON.stringify(videoGameQuotes, null, 2));
+              fs.writeFileSync(wallpaperUrlsBacklogPath, JSON.stringify(wallpaperUrls, null, 2));
+              fs.writeFileSync(communityNotesBacklogPath, JSON.stringify(communityNotes, null, 2));
               core.setOutput('needs_commit', 'true');
             } else {
               core.setOutput('needs_commit', 'false');

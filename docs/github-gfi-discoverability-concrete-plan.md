@@ -1,6 +1,7 @@
 # Concrete Implementation Plan: Improve KanaDojo Good-First-Issue Discoverability (High Certainty)
 
 Date: 2026-02-25
+Local verification edit: 2026-03-18 (uncommitted)
 Goal: Concrete improvements only, with high confidence and immediate impact.
 
 ## Phase 1: Reliability fixes (must do first)

@@ -93,11 +93,6 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: isDev,
   },
 
-  // Skip ESLint during dev builds
-  eslint: {
-    ignoreDuringBuilds: isDev,
-  },
-
   webpack: (config, { isServer }) => {
     if (!isServer) {
       config.resolve.fallback = {

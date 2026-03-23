@@ -1,5 +1,5 @@
 'use client';
-import { ReactNode } from 'react';
+import React, { ReactNode, useEffect, useState } from 'react';
 import {
   CircleCheck,
   CircleX,
@@ -54,6 +54,19 @@ export const GameBottomBar = ({
       : '';
   const displayTitle = feedbackTitle || defaultTitle;
 
+  // Keep feedback tied to the most recently checked question.
+  // This prevents the next question's answer from flashing during transition.
+  const [frozenTitle, setFrozenTitle] = useState(displayTitle);
+  const [frozenFeedbackContent, setFrozenFeedbackContent] =
+    useState<ReactNode>(feedbackContent);
+
+  useEffect(() => {
+    if (state !== 'check') {
+      setFrozenTitle(displayTitle);
+      setFrozenFeedbackContent(feedbackContent);
+    }
+  }, [state, displayTitle, feedbackContent]);
+
   return (
     <div
       className={clsx(
@@ -87,10 +100,10 @@ export const GameBottomBar = ({
           )}
           <div className='flex flex-col'>
             <span className='text-lg text-(--secondary-color) sm:text-xl'>
-              {displayTitle}
+              {frozenTitle}
             </span>
             <span className='text-sm text-(--main-color) sm:text-lg'>
-              {feedbackContent}
+              {frozenFeedbackContent}
             </span>
           </div>
         </div>

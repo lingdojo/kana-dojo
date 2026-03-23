@@ -69,21 +69,19 @@ const UnitSelector = () => {
   const selectedCollection = isKanji
     ? selectedKanjiCollection
     : selectedVocabCollection;
-  const setSelectedCollection = isKanji
-    ? setSelectedKanjiCollection
-    : setSelectedVocabCollection;
-  const sets = isKanji ? KANJI_SETS : VOCAB_SETS;
 
   const handleCollectionSelect = (level: CollectionLevel) => {
     playClick();
-    setSelectedCollection(level);
     if (isKanji) {
+      setSelectedKanjiCollection(level as CollectionLevel);
       kanjiSelection.clearKanji();
       kanjiSelection.clearSets();
-    } else {
-      vocabSelection.clearVocab();
-      vocabSelection.clearSets();
+      return;
     }
+
+    setSelectedVocabCollection(level);
+    vocabSelection.clearVocab();
+    vocabSelection.clearSets();
   };
 
   // Generate collection data with cumulative set ranges
@@ -91,8 +89,8 @@ const UnitSelector = () => {
     const levels: CollectionLevel[] = ['n5', 'n4', 'n3', 'n2', 'n1'];
     let cumulativeSets = 0;
 
-    return levels.map((level, index) => {
-      const setCount = sets[level];
+    const baseCollections = levels.map((level, index) => {
+      const setCount = isKanji ? KANJI_SETS[level] : VOCAB_SETS[level];
       const startSet = cumulativeSets + 1;
       const endSet = cumulativeSets + setCount;
       cumulativeSets = endSet;
@@ -104,7 +102,9 @@ const UnitSelector = () => {
         jlpt: level.toUpperCase(),
       };
     });
-  }, [sets]);
+
+    return baseCollections;
+  }, [isKanji]);
 
   if (useNewUnitSelectorDesign) {
     // New design: All units as equal ActionButtons (matching PreGameScreen)

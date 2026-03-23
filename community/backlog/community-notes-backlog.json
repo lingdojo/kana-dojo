@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "file": "docs/community-notes/contribution-notes-1.md",
+    "position": "bottom",
+    "text": "- Community note: this file is used for lightweight contribution practice.",
+    "issued": true,
+    "completed": false
+  },
+  {
+    "id": 2,
+    "file": "docs/community-notes/contribution-notes-2.md",
+    "position": "top",
+    "text": "> Community note: this page intentionally accepts tiny formatting-safe edits.",
+    "issued": true,
+    "completed": false
+  },
+  {
+    "id": 3,
+    "file": "docs/community-notes/maintenance-observations.md",
+    "position": "bottom",
+    "text": "Routine note: small non-blocking documentation edits may appear here.",
+    "issued": true,
+    "completed": false
+  },
+  {
+    "id": 4,
+    "file": "docs/community-notes/workflow-snippets.md",
+    "position": "top",
+    "text": "_Community note: this markdown file is safe for tiny redundant edits._",
+    "issued": true,
+    "completed": false
+  },
+  {
+    "id": 5,
+    "file": "docs/community-notes/archival-notes.md",
+    "position": "bottom",
+    "text": "- Additional community note preserved for documentation housekeeping.",
+    "issued": true,
+    "completed": false
+  }
+]

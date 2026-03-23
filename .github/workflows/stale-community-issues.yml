@@ -97,6 +97,8 @@ jobs:
             const exampleSentencesBacklogPath = 'community/backlog/example-sentences-backlog.json';
             const commonMistakesBacklogPath = 'community/backlog/common-mistakes-backlog.json';
             const videoGameQuotesBacklogPath = 'community/backlog/video-game-quotes-backlog.json';
+            const wallpaperUrlsBacklogPath = 'community/backlog/wallpaper-urls-backlog.json';
+            const communityNotesBacklogPath = 'community/backlog/community-notes-backlog.json';
 
             let issues = [];
             let page = 1;
@@ -118,8 +120,9 @@ jobs:
 
             const now = new Date();
             const WARNING_THRESHOLD_MS = templates.config.staleWarningAfterMs;   // 12 hours
-            const CLOSE_THRESHOLD_MS = templates.config.staleCloseAfterMs;       // 18 hours
-            const UNASSIGNED_CLOSE_THRESHOLD_MS = 8 * 60 * 60 * 1000; // 8 hours
+            const CLOSE_THRESHOLD_MS = templates.config.staleCloseAfterMs;       // 24 hours
+            const ASSIGNED_CLOSE_AFTER_WARNING_MS = 12 * 60 * 60 * 1000; // 12 hours
+            const UNASSIGNED_CLOSE_THRESHOLD_MS = 6 * 60 * 60 * 1000; // 6 hours
 
             let needsCommit = false;
             let themes = JSON.parse(fs.readFileSync(themeBacklogPath, 'utf8'));
@@ -136,10 +139,14 @@ jobs:
             let exampleSentences = JSON.parse(fs.readFileSync(exampleSentencesBacklogPath, 'utf8'));
             let commonMistakes = JSON.parse(fs.readFileSync(commonMistakesBacklogPath, 'utf8'));
             let videoGameQuotes = JSON.parse(fs.readFileSync(videoGameQuotesBacklogPath, 'utf8'));
+            let wallpaperUrls = JSON.parse(fs.readFileSync(wallpaperUrlsBacklogPath, 'utf8'));
+            let communityNotes = JSON.parse(fs.readFileSync(communityNotesBacklogPath, 'utf8'));
 
             let skippedUnassigned = 0;
             let skippedAssigned = 0;
             let closedUnassigned = 0;
+            let warnedAssigned = 0;
+            let closedAssigned = 0;
             let apiFailures = 0;
 
             function isTransientGithubError(error) {
@@ -359,6 +366,32 @@ jobs:
                     console.log(`Video game quote #${id} is already completed, not re-enabling`);
                   }
                 }
+              } else if (title.includes('Add Wallpaper URL #') || title.includes('Add new Wallpaper URL #')) {
+                const idMatch = title.match(/#(\d+)/);
+                if (idMatch) {
+                  const id = parseInt(idMatch[1]);
+                  const idx = wallpaperUrls.findIndex(function(i) { return i.id === id; });
+                  if (idx !== -1 && !wallpaperUrls[idx].completed) {
+                    wallpaperUrls[idx].issued = false;
+                    needsCommit = true;
+                    console.log(`Re-enabled wallpaper URL #${id}${sourceTag}`);
+                  } else if (idx !== -1 && wallpaperUrls[idx].completed) {
+                    console.log(`Wallpaper URL #${id} is already completed, not re-enabling`);
+                  }
+                }
+              } else if (title.includes('Add Community Note Line #') || title.includes('Add new Community Note Line #')) {
+                const idMatch = title.match(/#(\d+)/);
+                if (idMatch) {
+                  const id = parseInt(idMatch[1]);
+                  const idx = communityNotes.findIndex(function(i) { return i.id === id; });
+                  if (idx !== -1 && !communityNotes[idx].completed) {
+                    communityNotes[idx].issued = false;
+                    needsCommit = true;
+                    console.log(`Re-enabled community note #${id}${sourceTag}`);
+                  } else if (idx !== -1 && communityNotes[idx].completed) {
+                    console.log(`Community note #${id} is already completed, not re-enabling`);
+                  }
+                }
               }
             }
 
@@ -393,12 +426,81 @@ jobs:
               }
 
               if (timeSinceActivity >= WARNING_THRESHOLD_MS) {
-                skippedAssigned += 1;
-                console.log(`Skipping stale warning/auto-close for assigned issue #${issue.number}: ${issue.title}`);
+                const assigneeMentions = issue.assignees
+                  .map(function(assignee) { return `@${assignee.login}`; })
+                  .join(' ');
+
+                if (hasWarning && timeSinceActivity >= ASSIGNED_CLOSE_AFTER_WARNING_MS) {
+                  console.log(`Closing stale assigned issue #${issue.number}: ${issue.title}`);
+                  const closedTemplate = templates.staleIssues.closed;
+                  const closeBody =
+                    `${closedTemplate.title}\n\n` +
+                    `${assigneeMentions ? `${assigneeMentions} ` : ''}${closedTemplate.reason}\n\n` +
+                    `${closedTemplate.reassurance}\n\n` +
+                    `${closedTemplate.footer}`;
+                  try {
+                    await runGithubApi(`close-assigned-issue-${issue.number}`, function() {
+                      return github.rest.issues.createComment({
+                        owner: context.repo.owner,
+                        repo: context.repo.repo,
+                        issue_number: issue.number,
+                        body: closeBody
+                      });
+                    });
+                    await runGithubApi(`close-assigned-issue-state-${issue.number}`, function() {
+                      return github.rest.issues.update({
+                        owner: context.repo.owner,
+                        repo: context.repo.repo,
+                        issue_number: issue.number,
+                        state: 'closed',
+                        state_reason: 'not_planned'
+                      });
+                    });
+                    closedAssigned += 1;
+                  } catch (error) {
+                    apiFailures += 1;
+                    console.log(`Could not close assigned issue #${issue.number}: ${error.message}`);
+                  }
+                  continue;
+                }
+
+                if (!hasWarning) {
+                  const warningTemplate = templates.staleIssues.warning;
+                  const warningBody =
+                    `${warningTemplate.greeting}\n\n` +
+                    `${assigneeMentions ? `${assigneeMentions} ` : ''}${warningTemplate.body}\n\n` +
+                    `${warningTemplate.action}\n\n` +
+                    `${warningTemplate.consequence}\n\n` +
+                    `${warningTemplate.footer}`;
+                  try {
+                    await runGithubApi(`warn-assigned-issue-${issue.number}`, function() {
+                      return github.rest.issues.createComment({
+                        owner: context.repo.owner,
+                        repo: context.repo.repo,
+                        issue_number: issue.number,
+                        body: warningBody
+                      });
+                    });
+                    await runGithubApi(`label-assigned-issue-warning-${issue.number}`, function() {
+                      return github.rest.issues.addLabels({
+                        owner: context.repo.owner,
+                        repo: context.repo.repo,
+                        issue_number: issue.number,
+                        labels: [templates.labels.staleWarning]
+                      });
+                    });
+                    warnedAssigned += 1;
+                  } catch (error) {
+                    apiFailures += 1;
+                    console.log(`Could not add warning for assigned issue #${issue.number}: ${error.message}`);
+                  }
+                } else {
+                  skippedAssigned += 1;
+                }
               }
             }
 
-            console.log(`Stale issue summary: total=${issues.length}, skipped_unassigned=${skippedUnassigned}, skipped_assigned=${skippedAssigned}, closed_unassigned=${closedUnassigned}, api_failures=${apiFailures}`);
+            console.log(`Stale issue summary: total=${issues.length}, skipped_unassigned=${skippedUnassigned}, skipped_assigned=${skippedAssigned}, warned_assigned=${warnedAssigned}, closed_unassigned=${closedUnassigned}, closed_assigned=${closedAssigned}, api_failures=${apiFailures}`);
 
             if (needsCommit) {
               fs.writeFileSync(themeBacklogPath, JSON.stringify(themes, null, 2));
@@ -415,6 +517,8 @@ jobs:
               fs.writeFileSync(exampleSentencesBacklogPath, JSON.stringify(exampleSentences, null, 2));
               fs.writeFileSync(commonMistakesBacklogPath, JSON.stringify(commonMistakes, null, 2));
               fs.writeFileSync(videoGameQuotesBacklogPath, JSON.stringify(videoGameQuotes, null, 2));
+              fs.writeFileSync(wallpaperUrlsBacklogPath, JSON.stringify(wallpaperUrls, null, 2));
+              fs.writeFileSync(communityNotesBacklogPath, JSON.stringify(communityNotes, null, 2));
               core.setOutput('needs_commit', 'true');
             } else {
               core.setOutput('needs_commit', 'false');

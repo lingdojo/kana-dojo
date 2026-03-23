@@ -204,53 +204,53 @@
     "secondaryColor": "oklch(88.0% 0.115 95.0 / 1)"
   },
   {
-  "id": "soba-slate",
-  "backgroundColor": "oklch(18.0% 0.015 250.0 / 1)",
-  "mainColor": "oklch(68.0% 0.085 60.0 / 1)",
-  "secondaryColor": "oklch(58.0% 0.045 70.0 / 1)"
+    "id": "soba-slate",
+    "backgroundColor": "oklch(18.0% 0.015 250.0 / 1)",
+    "mainColor": "oklch(68.0% 0.085 60.0 / 1)",
+    "secondaryColor": "oklch(58.0% 0.045 70.0 / 1)"
   },
   {
-  "id": "morning-fog",
-  "backgroundColor": "oklch(22.0% 0.010 240.0 / 1)",
-  "mainColor": "oklch(78.0% 0.030 220.0 / 1)",
-  "secondaryColor": "oklch(65.0% 0.040 260.0 / 1)"
+    "id": "morning-fog",
+    "backgroundColor": "oklch(22.0% 0.010 240.0 / 1)",
+    "mainColor": "oklch(78.0% 0.030 220.0 / 1)",
+    "secondaryColor": "oklch(65.0% 0.040 260.0 / 1)"
   },
- {
-  "id": "tsuyu-drizzle",
-  "backgroundColor": "oklch(22.0% 0.015 250.0 / 1)",
-  "mainColor": "oklch(72.0% 0.105 230.0 / 1)",
-  "secondaryColor": "oklch(78.0% 0.025 260.0 / 1)"
-},
-{
-  "id": "vaporwave-shrine",
-  "backgroundColor": "oklch(17.0% 0.072 305.0 / 1)",
-  "mainColor": "oklch(75.0% 0.175 195.0 / 1)",
-  "secondaryColor": "oklch(80.0% 0.195 330.0 / 1)"
-},
-{
-  "id": "komorebi-green",
-  "backgroundColor": "oklch(22.0% 0.030 150.0 / 1)",
-  "mainColor": "oklch(78.0% 0.135 145.0 / 1)",
-  "secondaryColor": "oklch(70.0% 0.090 110.0 / 1)"
-},
-{
-  "id": "midnight-ramen",
-  "backgroundColor": "oklch(16.0% 0.042 30.0 / 1)",
-  "mainColor": "oklch(78.0% 0.160 45.0 / 1)",
-  "secondaryColor": "oklch(85.0% 0.120 85.0 / 1)"
-},
-{
-  "id": "harbor-fog",
-  "backgroundColor": "oklch(22.0% 0.018 230.0 / 1)",
-  "mainColor": "oklch(80.0% 0.055 215.0 / 1)",
-  "secondaryColor": "oklch(62.0% 0.045 240.0 / 1)"
-},
-{
-  "id": "harbor-lanterns",
-  "backgroundColor": "oklch(16.5% 0.040 250.0 / 1)",
-  "mainColor": "oklch(78.0% 0.170 45.0 / 1)",
-  "secondaryColor": "oklch(70.0% 0.090 210.0 / 1)"
-},
+  {
+    "id": "tsuyu-drizzle",
+    "backgroundColor": "oklch(22.0% 0.015 250.0 / 1)",
+    "mainColor": "oklch(72.0% 0.105 230.0 / 1)",
+    "secondaryColor": "oklch(78.0% 0.025 260.0 / 1)"
+  },
+  {
+    "id": "vaporwave-shrine",
+    "backgroundColor": "oklch(17.0% 0.072 305.0 / 1)",
+    "mainColor": "oklch(75.0% 0.175 195.0 / 1)",
+    "secondaryColor": "oklch(80.0% 0.195 330.0 / 1)"
+  },
+  {
+    "id": "komorebi-green",
+    "backgroundColor": "oklch(22.0% 0.030 150.0 / 1)",
+    "mainColor": "oklch(78.0% 0.135 145.0 / 1)",
+    "secondaryColor": "oklch(70.0% 0.090 110.0 / 1)"
+  },
+  {
+    "id": "midnight-ramen",
+    "backgroundColor": "oklch(16.0% 0.042 30.0 / 1)",
+    "mainColor": "oklch(78.0% 0.160 45.0 / 1)",
+    "secondaryColor": "oklch(85.0% 0.120 85.0 / 1)"
+  },
+  {
+    "id": "harbor-fog",
+    "backgroundColor": "oklch(22.0% 0.018 230.0 / 1)",
+    "mainColor": "oklch(80.0% 0.055 215.0 / 1)",
+    "secondaryColor": "oklch(62.0% 0.045 240.0 / 1)"
+  },
+  {
+    "id": "harbor-lanterns",
+    "backgroundColor": "oklch(16.5% 0.040 250.0 / 1)",
+    "mainColor": "oklch(78.0% 0.170 45.0 / 1)",
+    "secondaryColor": "oklch(70.0% 0.090 210.0 / 1)"
+  },
   {
     "id": "wisteria-dream",
     "backgroundColor": "oklch(20.0% 0.048 290.0 / 1)",
@@ -264,9 +264,339 @@
     "secondaryColor": "oklch(72.0% 0.145 130.0 / 1)"
   },
   {
-    "id": "sumi-ink",
-    "backgroundColor": "oklch(14.0% 0.010 260.0 / 1)",
-    "mainColor": "oklch(90.0% 0.015 95.0 / 1)",
-    "secondaryColor": "oklch(58.0% 0.060 260.0 / 1)"
+    "id": "ocean-blue",
+    "backgroundColor": "oklch(0.0% 0.0 0 / 1)",
+    "mainColor": "oklch(40.0% 0.050 210.0 / 1)",
+    "secondaryColor": "oklch(30.0% 0.030 190.0 / 1)"
+  },
+  {
+    "id": "mochi-pastel",
+    "backgroundColor": "oklch(94.0% 0.028 340.0 / 1)",
+    "mainColor": "oklch(72.0% 0.145 345.0 / 1)",
+    "secondaryColor": "oklch(75.0% 0.125 155.0 / 1)"
+  },
+  {
+    "id": "shibuya-nights",
+    "backgroundColor": "oklch(12.0% 0.045 290.0 / 1)",
+    "mainColor": "oklch(78.0% 0.225 330.0 / 1)",
+    "secondaryColor": "oklch(82.0% 0.180 200.0 / 1)"
+  },
+  {
+    "id": "firefly-field",
+    "backgroundColor": "oklch(16.0% 0.038 150.0 / 1)",
+    "mainColor": "oklch(88.0% 0.175 110.0 / 1)",
+    "secondaryColor": "oklch(65.0% 0.125 145.0 / 1)"
+  },
+  {
+    "id": "citrus-shrine",
+    "backgroundColor": "oklch(20.0% 0.030 70.0 / 1)",
+    "mainColor": "oklch(86.0% 0.155 85.0 / 1)",
+    "secondaryColor": "oklch(75.0% 0.095 60.0 / 1)"
+  },
+  {
+    "id": "taiko-thunder",
+    "backgroundColor": "oklch(17.0% 0.035 280.0 / 1)",
+    "mainColor": "oklch(68.0% 0.175 30.0 / 1)",
+    "secondaryColor": "oklch(78.0% 0.125 45.0 / 1)"
+  },
+  {
+    "id": "calligraphy-ink",
+    "backgroundColor": "oklch(96.0% 0.008 85.0 / 1)",
+    "mainColor": "oklch(20.0% 0.015 270.0 / 1)",
+    "secondaryColor": "oklch(45.0% 0.025 260.0 / 1)"
+  },
+  {
+    "id": "matcha-cream",
+    "backgroundColor": "oklch(92.0% 0.025 140.0 / 1)",
+    "mainColor": "oklch(55.0% 0.180 140.0 / 1)",
+    "secondaryColor": "oklch(70.0% 0.120 80.0 / 1)"
+  },
+  {
+    "id": "neon-sakura",
+    "backgroundColor": "oklch(18.5% 0.055 320.0 / 1)",
+    "mainColor": "oklch(82.0% 0.210 340.0 / 1)",
+    "secondaryColor": "oklch(72.0% 0.165 285.0 / 1)"
+  },
+  {
+    "id": "okinawa-sea",
+    "backgroundColor": "oklch(23.0% 0.055 215.0 / 1)",
+    "mainColor": "oklch(82.0% 0.165 195.0 / 1)",
+    "secondaryColor": "oklch(90.0% 0.125 180.0 / 1)"
+  },
+  {
+    "id": "dragon-scale",
+    "backgroundColor": "oklch(19.0% 0.055 165.0 / 1)",
+    "mainColor": "oklch(68.0% 0.175 160.0 / 1)",
+    "secondaryColor": "oklch(78.0% 0.145 140.0 / 1)"
+  },
+  {
+    "id": "papercraft-white",
+    "backgroundColor": "oklch(98.0% 0.005 90.0 / 1)",
+    "mainColor": "oklch(35.0% 0.165 255.0 / 1)",
+    "secondaryColor": "oklch(55.0% 0.145 200.0 / 1)"
+  },
+  {
+    "id": "shinkansen-speed",
+    "backgroundColor": "oklch(22.0% 0.035 240.0 / 1)",
+    "mainColor": "oklch(90.0% 0.085 220.0 / 1)",
+    "secondaryColor": "oklch(65.0% 0.185 25.0 / 1)"
+  },
+  {
+    "id": "plum-blossom",
+    "backgroundColor": "oklch(23.0% 0.042 340.0 / 1)",
+    "mainColor": "oklch(78.0% 0.165 350.0 / 1)",
+    "secondaryColor": "oklch(88.0% 0.095 85.0 / 1)"
+  },
+  {
+    "id": "kintsugi-gold",
+    "backgroundColor": "oklch(22.0% 0.025 95.0 / 1)",
+    "mainColor": "oklch(84.0% 0.120 95.0 / 1)",
+    "secondaryColor": "oklch(68.0% 0.090 60.0 / 1)"
+  },
+  {
+    "id": "matcha-foam",
+    "backgroundColor": "oklch(92.0% 0.020 140.0 / 1)",
+    "mainColor": "oklch(58.0% 0.165 140.0 / 1)",
+    "secondaryColor": "oklch(72.0% 0.115 95.0 / 1)"
+  },
+  {
+    "id": "lantern-blue",
+    "backgroundColor": "oklch(16.0% 0.030 250.0 / 1)",
+    "mainColor": "oklch(75.0% 0.115 230.0 / 1)",
+    "secondaryColor": "oklch(65.0% 0.085 255.0 / 1)"
+  },
+  {
+    "id": "spring-bamboo",
+    "backgroundColor": "oklch(93.0% 0.018 150.0 / 1)",
+    "mainColor": "oklch(55.0% 0.145 145.0 / 1)",
+    "secondaryColor": "oklch(70.0% 0.085 120.0 / 1)"
+  },
+  {
+    "id": "ryokan-evening",
+    "backgroundColor": "oklch(23.0% 0.038 280.0 / 1)",
+    "mainColor": "oklch(78.0% 0.130 55.0 / 1)",
+    "secondaryColor": "oklch(68.0% 0.095 30.0 / 1)"
+  },
+  {
+    "id": "bento-sage",
+    "backgroundColor": "oklch(20.0% 0.030 145.0 / 1)",
+    "mainColor": "oklch(70.0% 0.115 135.0 / 1)",
+    "secondaryColor": "oklch(58.0% 0.085 160.0 / 1)"
+  },
+  {
+    "id": "driftwood-brown",
+    "backgroundColor": "oklch(22.0% 0.020 55.0 / 1)",
+    "mainColor": "oklch(68.0% 0.085 65.0 / 1)",
+    "secondaryColor": "oklch(58.0% 0.060 45.0 / 1)"
+  },
+  {
+    "id": "umami-miso",
+    "backgroundColor": "oklch(22.0% 0.028 55.0 / 1)",
+    "mainColor": "oklch(72.0% 0.095 65.0 / 1)",
+    "secondaryColor": "oklch(60.0% 0.125 30.0 / 1)"
+  },
+  {
+    "id": "harbor-lights",
+    "backgroundColor": "oklch(14.0% 0.045 250.0 / 1)",
+    "mainColor": "oklch(80.0% 0.140 210.0 / 1)",
+    "secondaryColor": "oklch(70.0% 0.120 310.0 / 1)"
+  },
+  {
+    "id": "storm-lake",
+    "backgroundColor": "oklch(15.0% 0.050 250.0 / 1)",
+    "mainColor": "oklch(78.0% 0.180 235.0 / 1)",
+    "secondaryColor": "oklch(62.0% 0.130 270.0 / 1)"
+  },
+  {
+    "id": "wavecrest-blue",
+    "backgroundColor": "oklch(17.0% 0.030 245.0 / 1)",
+    "mainColor": "oklch(88.0% 0.055 230.0 / 1)",
+    "secondaryColor": "oklch(70.0% 0.145 210.0 / 1)"
+  },
+  {
+    "id": "koi-glow",
+    "backgroundColor": "oklch(22.0% 0.045 40.0 / 1)",
+    "mainColor": "oklch(82.0% 0.160 55.0 / 1)",
+    "secondaryColor": "oklch(70.0% 0.120 15.0 / 1)"
+  },
+  {
+    "id": "osaka-neon",
+    "backgroundColor": "oklch(14.0% 0.060 300.0 / 1)",
+    "mainColor": "oklch(78.0% 0.220 330.0 / 1)",
+    "secondaryColor": "oklch(85.0% 0.175 190.0 / 1)"
+  },
+  {
+    "id": "gingko-avenue",
+    "backgroundColor": "oklch(23.0% 0.020 75.0 / 1)",
+    "mainColor": "oklch(82.0% 0.155 95.0 / 1)",
+    "secondaryColor": "oklch(62.0% 0.085 55.0 / 1)"
+  },
+  {
+    "id": "umbrella-rain",
+    "backgroundColor": "oklch(22.0% 0.018 250.0 / 1)",
+    "mainColor": "oklch(70.0% 0.175 225.0 / 1)",
+    "secondaryColor": "oklch(75.0% 0.145 350.0 / 1)"
+  },
+  {
+    "id": "ginkgo-gold",
+    "backgroundColor": "oklch(23.0% 0.045 85.0 / 1)",
+    "mainColor": "oklch(88.0% 0.170 95.0 / 1)",
+    "secondaryColor": "oklch(72.0% 0.135 75.0 / 1)"
+  },
+  {
+    "id": "kimono-silk",
+    "backgroundColor": "oklch(19.0% 0.048 320.0 / 1)",
+    "mainColor": "oklch(72.0% 0.155 330.0 / 1)",
+    "secondaryColor": "oklch(80.0% 0.125 60.0 / 1)"
+  },
+  {
+    "id": "shogun-gold",
+    "backgroundColor": "oklch(18.0% 0.035 80.0 / 1)",
+    "mainColor": "oklch(82.0% 0.155 85.0 / 1)",
+    "secondaryColor": "oklch(65.0% 0.180 30.0 / 1)"
+  },
+  {
+    "id": "street-lantern",
+    "backgroundColor": "oklch(19.0% 0.038 40.0 / 1)",
+    "mainColor": "oklch(85.0% 0.135 55.0 / 1)",
+    "secondaryColor": "oklch(68.0% 0.165 30.0 / 1)"
+  },
+  {
+    "id": "sashimi-fresh",
+    "backgroundColor": "oklch(17.0% 0.028 280.0 / 1)",
+    "mainColor": "oklch(75.0% 0.145 5.0 / 1)",
+    "secondaryColor": "oklch(85.0% 0.095 350.0 / 1)"
+  },
+  {
+    "id": "festival-red",
+    "backgroundColor": "oklch(17.0% 0.055 25.0 / 1)",
+    "mainColor": "oklch(78.0% 0.205 25.0 / 1)",
+    "secondaryColor": "oklch(85.0% 0.085 85.0 / 1)"
+  },
+  {
+    "id": "holographic-idol",
+    "backgroundColor": "oklch(14.0% 0.065 300.0 / 1)",
+    "mainColor": "oklch(82.0% 0.185 200.0 / 1)",
+    "secondaryColor": "oklch(78.0% 0.210 330.0 / 1)"
+  },
+  {
+    "id": "autumn-temple",
+    "backgroundColor": "oklch(20.0% 0.048 35.0 / 1)",
+    "mainColor": "oklch(68.0% 0.185 40.0 / 1)",
+    "secondaryColor": "oklch(78.0% 0.135 55.0 / 1)"
+  },
+  {
+    "id": "shinto-portal",
+    "backgroundColor": "oklch(18.0% 0.040 15.0 / 1)",
+    "mainColor": "oklch(58.0% 0.210 25.0 / 1)",
+    "secondaryColor": "oklch(88.0% 0.055 90.0 / 1)"
+  },
+  {
+    "id": "onsen-steam",
+    "backgroundColor": "oklch(25.0% 0.022 210.0 / 1)",
+    "mainColor": "oklch(85.0% 0.085 215.0 / 1)",
+    "secondaryColor": "oklch(70.0% 0.065 195.0 / 1)"
+  },
+  {
+    "id": "pixel-retro",
+    "backgroundColor": "oklch(14.0% 0.025 280.0 / 1)",
+    "mainColor": "oklch(72.0% 0.200 145.0 / 1)",
+    "secondaryColor": "oklch(80.0% 0.185 55.0 / 1)"
+  },
+  {
+    "id": "ninja-shadow",
+    "backgroundColor": "oklch(12.0% 0.015 280.0 / 1)",
+    "mainColor": "oklch(65.0% 0.025 270.0 / 1)",
+    "secondaryColor": "oklch(55.0% 0.175 15.0 / 1)"
+  },
+  {
+    "id": "kabuki-drama",
+    "backgroundColor": "oklch(15.0% 0.048 25.0 / 1)",
+    "mainColor": "oklch(65.0% 0.225 30.0 / 1)",
+    "secondaryColor": "oklch(90.0% 0.055 95.0 / 1)"
+  },
+  {
+    "id": "moss-temple",
+    "backgroundColor": "oklch(22.0% 0.045 145.0 / 1)",
+    "mainColor": "oklch(65.0% 0.155 140.0 / 1)",
+    "secondaryColor": "oklch(55.0% 0.100 120.0 / 1)"
+  },
+  {
+    "id": "ruby-kabuki",
+    "backgroundColor": "oklch(16.0% 0.040 20.0 / 1)",
+    "mainColor": "oklch(70.0% 0.215 25.0 / 1)",
+    "secondaryColor": "oklch(85.0% 0.055 95.0 / 1)"
+  },
+  {
+    "id": "vending-glow",
+    "backgroundColor": "oklch(16.0% 0.025 280.0 / 1)",
+    "mainColor": "oklch(85.0% 0.125 220.0 / 1)",
+    "secondaryColor": "oklch(78.0% 0.165 45.0 / 1)"
+  },
+  {
+    "id": "school-uniform",
+    "backgroundColor": "oklch(92.0% 0.015 250.0 / 1)",
+    "mainColor": "oklch(40.0% 0.145 255.0 / 1)",
+    "secondaryColor": "oklch(60.0% 0.175 20.0 / 1)"
+  },
+  {
+    "id": "plum-ink",
+    "backgroundColor": "oklch(16.0% 0.030 280.0 / 1)",
+    "mainColor": "oklch(72.0% 0.145 330.0 / 1)",
+    "secondaryColor": "oklch(60.0% 0.075 260.0 / 1)"
+  },
+  {
+    "id": "mountain-cedar",
+    "backgroundColor": "oklch(20.0% 0.020 150.0 / 1)",
+    "mainColor": "oklch(70.0% 0.105 145.0 / 1)",
+    "secondaryColor": "oklch(60.0% 0.055 110.0 / 1)"
+  },
+  {
+    "id": "ginkgo-gold",
+    "backgroundColor": "oklch(23.0% 0.045 85.0 / 1)",
+    "mainColor": "oklch(88.0% 0.170 95.0 / 1)",
+    "secondaryColor": "oklch(72.0% 0.135 75.0 / 1)"
+  },
+  {
+    "id": "kendo-strike",
+    "backgroundColor": "oklch(16.0% 0.028 265.0 / 1)",
+    "mainColor": "oklch(65.0% 0.025 270.0 / 1)",
+    "secondaryColor": "oklch(72.0% 0.165 25.0 / 1)"
+  },
+  {
+    "id": "pearl-wave",
+    "backgroundColor": "oklch(21.0% 0.045 235.0 / 1)",
+    "mainColor": "oklch(88.0% 0.055 245.0 / 1)",
+    "secondaryColor": "oklch(68.0% 0.165 215.0 / 1)"
+  },
+  {
+    "id": "akihabara-glow",
+    "backgroundColor": "oklch(15.0% 0.065 300.0 / 1)",
+    "mainColor": "oklch(80.0% 0.210 180.0 / 1)",
+    "secondaryColor": "oklch(85.0% 0.190 320.0 / 1)"
+  },
+  {
+    "id": "snow-lantern",
+    "backgroundColor": "oklch(94.0% 0.012 250.0 / 1)",
+    "mainColor": "oklch(50.0% 0.145 30.0 / 1)",
+    "secondaryColor": "oklch(40.0% 0.110 250.0 / 1)"
+  },
+  {
+    "id": "konbini-light",
+    "backgroundColor": "oklch(96.0% 0.015 210.0 / 1)",
+    "mainColor": "oklch(55.0% 0.185 200.0 / 1)",
+    "secondaryColor": "oklch(60.0% 0.155 25.0 / 1)"
+  },
+  {
+    "id": "bamboo-mist",
+    "backgroundColor": "oklch(24.0% 0.032 150.0 / 1)",
+    "mainColor": "oklch(78.0% 0.145 145.0 / 1)",
+    "secondaryColor": "oklch(68.0% 0.085 130.0 / 1)"
+  },
+  {
+    "id": "bamboo-mist",
+    "backgroundColor": "oklch(24.0% 0.032 150.0 / 1)",
+    "mainColor": "oklch(78.0% 0.145 145.0 / 1)",
+    "secondaryColor": "oklch(68.0% 0.085 130.0 / 1)"
   }
 ]

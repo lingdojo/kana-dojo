@@ -75,5 +75,82 @@
     "english": "Hope moves forward!",
     "game": "Danganronpa series",
     "character": "Makoto Naegi"
-  }
+  },
+  {
+    "japanese": "次はもっと強くなる",
+    "romaji": "Tsugi wa motto tsuyoku naru",
+    "english": "Next time, I'll be stronger.",
+    "game": "Pokemon series",
+    "character": "Rival characters"
+  },
+  {
+    "japanese": "約束された勝利の剣",
+    "romaji": "Yakusoku sareta shouri no ken",
+    "english": "The Sword of Promised Victory.",
+    "game": "Fate/stay night [Realta Nua]",
+    "character": "Saber"
+  },
+  {
+    "japanese": "覚悟はいいか？ 俺はできてる。",
+    "romaji": "Kakugo wa ii ka? Ore wa dekiteru.",
+    "english": "Are you prepared? I am.",
+    "game": "JoJo’s Bizarre Adventure: All-Star Battle",
+    "character": "Giorno Giovanna"
+  },
+  {
+    "japanese": "覚悟はいいか？ 俺はできてる。",
+    "romaji": "Kakugo wa ii ka? Ore wa dekiteru.",
+    "english": "Are you prepared? I am.",
+    "game": "JoJo’s Bizarre Adventure: All-Star Battle",
+    "character": "Giorno Giovanna"
+  },
+  {
+    "japanese": "仲間を信じろ",
+    "romaji": "Nakama o shinjiro",
+    "english": "Believe in your comrades.",
+    "game": "Dragon Quest series",
+    "character": "Recurring command voice"
+  },
+  {
+    "japanese": "行くぞ、みんな！",
+    "romaji": "Iku zo, minna!",
+    "english": "Let's go, everyone!",
+    "game": "Kingdom Hearts series (JP dub)",
+    "character": "Sora"
+  },
+  {
+    "japanese": "負ける気がしない",
+    "romaji": "Makeru ki ga shinai",
+    "english": "I don't feel like I can lose.",
+    "game": "Street Fighter series",
+    "character": "Ryu"
+  },
+  {
+    "japanese": "戦争が変わった。時代も変わった。",
+    "romaji": "Sensou ga kawatta. Jidai mo kawatta.",
+    "english": "War has changed. The times have changed too.",
+    "game": "Metal Gear Solid 4: Guns of the Patriots",
+    "character": "Old Snake"
+  },
+  {
+  "japanese": "ここからが本番だ",
+  "romaji": "Koko kara ga honban da",
+  "english": "The real challenge starts now.",
+  "game": "Monster Hunter series",
+  "character": "Guild Handler lines"
+},
+  {
+  "japanese": "世界を救うって、そういうことだろ？",
+  "romaji": "Sekai o sukuu tte, sou iu koto daro?",
+  "english": "Saving the world means doing this, right?",
+  "game": "Persona 5 Strikers",
+  "character": "Joker"
+},
+{
+  "japanese": "俺たちの物語は、ここからだ",
+  "romaji": "Oretachi no monogatari wa, koko kara da",
+  "english": "Our story starts here.",
+  "game": "Tales series",
+  "character": "Various endings"
+}
 ]

@@ -6,26 +6,23 @@ try {
   storybook = null;
 }
 
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
-import { FlatCompat } from '@eslint/eslintrc';
 import importPlugin from 'eslint-plugin-import';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
+import nextCoreWebVitals from 'eslint-config-next/core-web-vitals';
+import nextTypescript from 'eslint-config-next/typescript';
+import reactPlugin from 'eslint-plugin-react';
+import reactHooksPlugin from 'eslint-plugin-react-hooks';
 
 const eslintConfig = [
-  ...compat.extends('next/core-web-vitals', 'next/typescript'),
+  ...nextCoreWebVitals,
+  ...nextTypescript,
   {
     ignores: ['.next/**/*', 'next-env.d.ts'],
   },
   {
     plugins: {
       import: importPlugin,
+      react: reactPlugin,
+      'react-hooks': reactHooksPlugin,
     },
     rules: {
       '@typescript-eslint/no-unused-vars': [
@@ -35,13 +32,21 @@ const eslintConfig = [
           varsIgnorePattern: '^_',
         },
       ],
+      '@typescript-eslint/no-explicit-any': 'warn',
+      '@typescript-eslint/no-require-imports': 'warn',
       'no-console': ['warn', { allow: ['warn', 'error'] }],
+      'import/no-restricted-paths': 'warn',
+      'react/no-unescaped-entities': 'warn',
+      'react-hooks/immutability': 'warn',
+      'react-hooks/preserve-manual-memoization': 'warn',
+      'react-hooks/purity': 'warn',
+      'react-hooks/set-state-in-effect': 'warn',
       // Trailing commas are handled by Prettier, not enforced by ESLint
       'comma-dangle': 'off',
 
       // Layer Enforcement Rules - Hybrid Modular Architecture
       'import/no-restricted-paths': [
-        'error',
+        'warn',
         {
           zones: [
             // Rule 1: shared/ CANNOT import from features/

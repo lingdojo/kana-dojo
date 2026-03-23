@@ -1,5 +1,6 @@
 'use client';
 import * as React from 'react';
+import { Slot } from '@radix-ui/react-slot';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/shared/lib/utils';
 import { useThemePreferences } from '@/features/Preferences';
@@ -57,6 +58,7 @@ export interface ActionButtonProps
   gradient?: boolean;
   /** When true, reverses the gradient direction (secondary → main) */
   gradientReversed?: boolean;
+  asChild?: boolean;
 }
 
 const ActionButton = React.forwardRef<HTMLButtonElement, ActionButtonProps>(
@@ -69,6 +71,7 @@ const ActionButton = React.forwardRef<HTMLButtonElement, ActionButtonProps>(
       borderBottomThickness,
       gradient = false,
       gradientReversed = false,
+      asChild = false,
       children,
       ...props
     },
@@ -86,10 +89,11 @@ const ActionButton = React.forwardRef<HTMLButtonElement, ActionButtonProps>(
         ? 'secondary'
         : 'main'
       : borderColorScheme;
+    const Comp = asChild ? Slot : 'button';
 
     return (
-      <button
-        type='button'
+      <Comp
+        type={asChild ? undefined : 'button'}
         className={cn(
           actionButtonVariants({
             colorScheme: gradient ? undefined : colorScheme,
@@ -106,7 +110,7 @@ const ActionButton = React.forwardRef<HTMLButtonElement, ActionButtonProps>(
         {...props}
       >
         {children}
-      </button>
+      </Comp>
     );
   },
 );

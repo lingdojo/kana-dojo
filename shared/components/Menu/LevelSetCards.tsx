@@ -387,7 +387,7 @@ const LevelSetCards = <TLevel extends string, TItem>({
             key={`row-${rowIndex}`}
             className={clsx('flex flex-col gap-4 py-4', cardBorderStyles)}
           >
-            <h3>
+            <h3 className='w-full'>
               <button
                 type='button'
                 onClick={() => {
@@ -399,7 +399,7 @@ const LevelSetCards = <TLevel extends string, TItem>({
                   );
                 }}
                 className={clsx(
-                  'group ml-4 flex flex-row items-center gap-2 rounded-xl text-3xl hover:cursor-pointer',
+                  'group ml-4 flex w-full flex-row items-center gap-2 rounded-xl text-3xl hover:cursor-pointer',
                   collapsedRows.includes(rowIndex) && 'mb-1.5',
                 )}
                 aria-expanded={!collapsedRows.includes(rowIndex)}
