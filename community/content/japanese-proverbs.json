@@ -12,6 +12,12 @@
     "meaning": "Enjoy observing; you don't always need to participate"
   },
   {
+    "japanese": "月とすっぽん",
+    "romaji": "Tsuki to suppon",
+    "english": "The moon and a turtle",
+    "meaning": "Vastly different; not comparable"
+  },
+  {
     "japanese": "猫に鰹節",
     "romaji": "Neko ni katsuobushi",
     "english": "Dried bonito to a cat",
@@ -418,4 +424,50 @@
   "english": "Early rising is worth three coins",
   "meaning": "Good things come from getting up early"
 }
+
+,
+{
+  "japanese": "月とすっぽん",
+  "romaji": "Tsuki to suppon",
+  "english": "The moon and a turtle",
+  "meaning": "Vastly different; not comparable"
+},
+  {
+  "japanese": "無い袖は振れぬ",
+  "romaji": "Nai sode wa furenu",
+  "english": "You can't shake a sleeve you don't have",
+  "meaning": "You can't give what you don't have"
+},
+  {
+  "japanese": "転ばぬ先の杖",
+  "romaji": "Korobanu saki no tsue",
+  "english": "A cane before falling",
+  "meaning": "Prevention is better than cure"
+},
+  {
+  "japanese": "三人寄れば文殊の知恵",
+  "romaji": "Sannin yoreba monju no chie",
+  "english": "Three people together have the wisdom of Monju",
+  "meaning": "Two heads are better than one"
+},
+
+{
+  "japanese": "犬も歩けば棒に当たる",
+  "romaji": "Inu mo arukeba bou ni ataru",
+  "english": "Even a walking dog will hit a stick",
+  "meaning": "Acting can lead to luck or trouble"
+},
+  {
+  "japanese": "虎穴に入らずんば虎子を得ず",
+  "romaji": "Koketsu ni irazunba koji wo ezu",
+  "english": "If you don't enter the tiger's den, you can't get the cub",
+  "meaning": "Nothing ventured, nothing gained"
+},
+{
+  "japanese": "馬の耳に念仏",
+  "romaji": "Uma no mimi ni nenbutsu",
+  "english": "Preaching Buddha to a horse's ear",
+  "meaning": "Wasting good advice on someone who won't listen"
+}
+
 ]

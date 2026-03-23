@@ -338,6 +338,17 @@
     "Kairo"
   ],
   "correctIndex": 0
+},
+{
+  "question": "What is the name of Japan's traditional theatre known for stylized performances and masks? (Community variation 6)",
+  "difficulty": "easy",
+  "answers": [
+    "Kabuki",
+    "Noh",
+    "Rakugo",
+    "Bunraku"
+  ],
+  "correctIndex": 1
 }
 ]
 
