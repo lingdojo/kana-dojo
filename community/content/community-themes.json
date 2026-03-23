@@ -610,5 +610,11 @@
     "backgroundColor": "oklch(95.0% 0.008 90.0 / 1)",
     "mainColor": "oklch(55.0% 0.220 25.0 / 1)",
     "secondaryColor": "oklch(45.0% 0.150 20.0 / 1)"
+  },
+  {
+    "id": "lucky-bamboo",
+    "backgroundColor": "oklch(92.0% 0.025 145.0 / 1)",
+    "mainColor": "oklch(55.0% 0.175 145.0 / 1)",
+    "secondaryColor": "oklch(45.0% 0.125 140.0 / 1)"
   }
 ]
