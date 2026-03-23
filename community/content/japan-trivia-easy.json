@@ -404,5 +404,16 @@
       "Kanda Matsuri"
     ],
     "correctAnswerIndex": 0
+  },
+  {
+    "question": "What is the Japanese term for \"new year\"?",
+    "difficulty": "easy",
+    "answers": [
+      "Shogatsu",
+      "Obon",
+      "Tanabata",
+      "Hinamatsuri"
+    ],
+    "correctAnswerIndex": 0
   }
 ]
