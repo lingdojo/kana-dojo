@@ -582,9 +582,15 @@
     "secondaryColor": "oklch(40.0% 0.110 250.0 / 1)"
   },
   {
-  "id": "konbini-light",
-  "backgroundColor": "oklch(96.0% 0.015 210.0 / 1)",
-  "mainColor": "oklch(55.0% 0.185 200.0 / 1)",
-  "secondaryColor": "oklch(60.0% 0.155 25.0 / 1)"
-}
+    "id": "konbini-light",
+    "backgroundColor": "oklch(96.0% 0.015 210.0 / 1)",
+    "mainColor": "oklch(55.0% 0.185 200.0 / 1)",
+    "secondaryColor": "oklch(60.0% 0.155 25.0 / 1)"
+  },
+  {
+    "id": "bamboo-mist",
+    "backgroundColor": "oklch(24.0% 0.032 150.0 / 1)",
+    "mainColor": "oklch(78.0% 0.145 145.0 / 1)",
+    "secondaryColor": "oklch(68.0% 0.085 130.0 / 1)"
+  }
 ]
