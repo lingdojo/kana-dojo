@@ -359,115 +359,118 @@
     "meaning": "Standing out invites criticism"
   },
   {
-  "japanese": "情けは人の為ならず",
-  "romaji": "Nasake wa hito no tame narazu",
-  "english": "Kindness is not for others alone",
-  "meaning": "Kindness comes back to you"
+    "japanese": "情けは人の為ならず",
+    "romaji": "Nasake wa hito no tame narazu",
+    "english": "Kindness is not for others alone",
+    "meaning": "Kindness comes back to you"
   },
   {
-  "japanese": "急がば回れ",
-  "romaji": "Isogaba maware",
-  "english": "If in a hurry, go around",
-  "meaning": "The safer path can be faster"
+    "japanese": "急がば回れ",
+    "romaji": "Isogaba maware",
+    "english": "If in a hurry, go around",
+    "meaning": "The safer path can be faster"
   },
   {
-  "japanese": "一石二鳥",
-  "romaji": "Isseki nichou",
-  "english": "One stone, two birds",
-  "meaning": "Do two things with one action"
+    "japanese": "一石二鳥",
+    "romaji": "Isseki nichou",
+    "english": "One stone, two birds",
+    "meaning": "Do two things with one action"
   },
   {
-  "japanese": "頭隠して尻隠さず",
-  "romaji": "Atama kakushite shiri kakusazu",
-  "english": "Hide your head, but not your butt",
-  "meaning": "Trying to hide something obvious"
-},
+    "japanese": "頭隠して尻隠さず",
+    "romaji": "Atama kakushite shiri kakusazu",
+    "english": "Hide your head, but not your butt",
+    "meaning": "Trying to hide something obvious"
+  },
   {
-  "japanese": "案ずるより産むが易し",
-  "romaji": "Anzuru yori umu ga yasushi",
-  "english": "Giving birth is easier than worrying",
-  "meaning": "Things are often easier done than worried about"
-},
+    "japanese": "案ずるより産むが易し",
+    "romaji": "Anzuru yori umu ga yasushi",
+    "english": "Giving birth is easier than worrying",
+    "meaning": "Things are often easier done than worried about"
+  },
   {
-  "japanese": "猿も木から落ちる",
-  "romaji": "Saru mo ki kara ochiru",
-  "english": "Even monkeys fall from trees",
-  "meaning": "Experts can make mistakes"
-},
+    "japanese": "猿も木から落ちる",
+    "romaji": "Saru mo ki kara ochiru",
+    "english": "Even monkeys fall from trees",
+    "meaning": "Experts can make mistakes"
+  },
   {
-  "japanese": "善は急げ",
-  "romaji": "Zen wa isoge",
-  "english": "Hurry to do good",
-  "meaning": "Do worthwhile things promptly"
-},
+    "japanese": "善は急げ",
+    "romaji": "Zen wa isoge",
+    "english": "Hurry to do good",
+    "meaning": "Do worthwhile things promptly"
+  },
   {
-  "japanese": "猫に小判",
-  "romaji": "Neko ni koban",
-  "english": "Gold coins to a cat",
-  "meaning": "Gifts wasted on those who don't appreciate them"
-},
+    "japanese": "猫に小判",
+    "romaji": "Neko ni koban",
+    "english": "Gold coins to a cat",
+    "meaning": "Gifts wasted on those who don't appreciate them"
+  },
   {
-  "japanese": "怪我の功名",
-  "romaji": "Kega no koumyou",
-  "english": "Fame from a mistake",
-  "meaning": "A lucky break that comes from an error"
-},
-{
-  "japanese": "魚心あれば水心",
-  "romaji": "Uogokoro areba mizugokoro",
-  "english": "If fish has heart, water has heart",
-  "meaning": "Good intentions will be reciprocated"
-},
-{
-  "japanese": "早起きは三文の得",
-  "romaji": "Hayaoki wa sanmon no toku",
-  "english": "Early rising is worth three coins",
-  "meaning": "Good things come from getting up early"
-}
+    "japanese": "怪我の功名",
+    "romaji": "Kega no koumyou",
+    "english": "Fame from a mistake",
+    "meaning": "A lucky break that comes from an error"
+  },
+  {
+    "japanese": "魚心あれば水心",
+    "romaji": "Uogokoro areba mizugokoro",
+    "english": "If fish has heart, water has heart",
+    "meaning": "Good intentions will be reciprocated"
+  },
+  {
+    "japanese": "早起きは三文の得",
+    "romaji": "Hayaoki wa sanmon no toku",
+    "english": "Early rising is worth three coins",
+    "meaning": "Good things come from getting up early"
+  },
+  {
+    "japanese": "月とすっぽん",
+    "romaji": "Tsuki to suppon",
+    "english": "The moon and a turtle",
+    "meaning": "Vastly different; not comparable"
+  },
+  {
+    "japanese": "無い袖は振れぬ",
+    "romaji": "Nai sode wa furenu",
+    "english": "You can't shake a sleeve you don't have",
+    "meaning": "You can't give what you don't have"
+  },
+  {
+    "japanese": "転ばぬ先の杖",
+    "romaji": "Korobanu saki no tsue",
+    "english": "A cane before falling",
+    "meaning": "Prevention is better than cure"
+  },
+  {
+    "japanese": "三人寄れば文殊の知恵",
+    "romaji": "Sannin yoreba monju no chie",
+    "english": "Three people together have the wisdom of Monju",
+    "meaning": "Two heads are better than one"
+  },
 
-,
-{
-  "japanese": "月とすっぽん",
-  "romaji": "Tsuki to suppon",
-  "english": "The moon and a turtle",
-  "meaning": "Vastly different; not comparable"
-},
   {
-  "japanese": "無い袖は振れぬ",
-  "romaji": "Nai sode wa furenu",
-  "english": "You can't shake a sleeve you don't have",
-  "meaning": "You can't give what you don't have"
-},
+    "japanese": "犬も歩けば棒に当たる",
+    "romaji": "Inu mo arukeba bou ni ataru",
+    "english": "Even a walking dog will hit a stick",
+    "meaning": "Acting can lead to luck or trouble"
+  },
   {
-  "japanese": "転ばぬ先の杖",
-  "romaji": "Korobanu saki no tsue",
-  "english": "A cane before falling",
-  "meaning": "Prevention is better than cure"
-},
+    "japanese": "虎穴に入らずんば虎子を得ず",
+    "romaji": "Koketsu ni irazunba koji wo ezu",
+    "english": "If you don't enter the tiger's den, you can't get the cub",
+    "meaning": "Nothing ventured, nothing gained"
+  },
   {
-  "japanese": "三人寄れば文殊の知恵",
-  "romaji": "Sannin yoreba monju no chie",
-  "english": "Three people together have the wisdom of Monju",
-  "meaning": "Two heads are better than one"
-},
-
-{
-  "japanese": "犬も歩けば棒に当たる",
-  "romaji": "Inu mo arukeba bou ni ataru",
-  "english": "Even a walking dog will hit a stick",
-  "meaning": "Acting can lead to luck or trouble"
-},
+    "japanese": "馬の耳に念仏",
+    "romaji": "Uma no mimi ni nenbutsu",
+    "english": "Preaching Buddha to a horse's ear",
+    "meaning": "Wasting good advice on someone who won't listen"
+  },
   {
-  "japanese": "虎穴に入らずんば虎子を得ず",
-  "romaji": "Koketsu ni irazunba koji wo ezu",
-  "english": "If you don't enter the tiger's den, you can't get the cub",
-  "meaning": "Nothing ventured, nothing gained"
-},
-{
-  "japanese": "馬の耳に念仏",
-  "romaji": "Uma no mimi ni nenbutsu",
-  "english": "Preaching Buddha to a horse's ear",
-  "meaning": "Wasting good advice on someone who won't listen"
-}
-
+    "japanese": "時は金なり",
+    "romaji": "Toki wa kane nari",
+    "english": "Time is money",
+    "meaning": "Time is valuable and should not be wasted"
+  }
 ]
