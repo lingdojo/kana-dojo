@@ -616,5 +616,11 @@
     "backgroundColor": "oklch(92.0% 0.025 145.0 / 1)",
     "mainColor": "oklch(55.0% 0.175 145.0 / 1)",
     "secondaryColor": "oklch(45.0% 0.125 140.0 / 1)"
+  },
+  {
+    "id": "pagoda-twilight",
+    "backgroundColor": "oklch(20.0% 0.045 290.0 / 1)",
+    "mainColor": "oklch(68.0% 0.155 315.0 / 1)",
+    "secondaryColor": "oklch(75.0% 0.125 280.0 / 1)"
   }
 ]
