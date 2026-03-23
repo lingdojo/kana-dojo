@@ -125,58 +125,39 @@
     "correctIndex": 0
   },
   {
-  "question": "What is the Japanese term for a traditional drum?",
-  "difficulty": "medium",
-  "answers": [
-    "Taiko",
-    "Shamisen",
-    "Koto",
-    "Fue"
-  ],
-  "correctIndex": 0
+    "question": "What is the Japanese term for a traditional drum?",
+    "difficulty": "medium",
+    "answers": ["Taiko", "Shamisen", "Koto", "Fue"],
+    "correctIndex": 0
   },
   {
-  "question": "Which Japanese beverage is made from roasted barley?",
-  "difficulty": "medium",
-  "answers": [
-    "Mugicha",
-    "Matcha",
-    "Genmaicha",
-    "Sencha"
-  ],
-  "correctIndex": 0
+    "question": "Which Japanese beverage is made from roasted barley?",
+    "difficulty": "medium",
+    "answers": ["Mugicha", "Matcha", "Genmaicha", "Sencha"],
+    "correctIndex": 0
   },
   {
-  "question": "Which Japanese festival features floating lanterns on water?",
-  "difficulty": "medium",
-  "answers": [
-    "Toro Nagashi",
-    "Setsubun",
-    "Tanabata",
-    "Aoi Matsuri"
-  ],
-  "correctIndex": 0
+    "question": "Which Japanese festival features floating lanterns on water?",
+    "difficulty": "medium",
+    "answers": ["Toro Nagashi", "Setsubun", "Tanabata", "Aoi Matsuri"],
+    "correctIndex": 0
   },
   {
-  "question": "Which Japanese festival features people throwing beans to drive away evil spirits?",
-  "difficulty": "medium",
-  "answers": [
-    "Setsubun",
-    "Obon",
-    "Tanabata",
-    "Shichi-Go-San"
-  ],
-  "correctIndex": 0
+    "question": "Which Japanese festival features people throwing beans to drive away evil spirits?",
+    "difficulty": "medium",
+    "answers": ["Setsubun", "Obon", "Tanabata", "Shichi-Go-San"],
+    "correctIndex": 0
   },
   {
-  "question": "Which dish is a Japanese hot pot with thinly sliced beef?",
-  "difficulty": "medium",
-  "answers": [
-    "Sukiyaki",
-    "Okonomiyaki",
-    "Takoyaki",
-    "Chankonabe"
-  ],
-  "correctIndex": 0
+    "question": "Which dish is a Japanese hot pot with thinly sliced beef?",
+    "difficulty": "medium",
+    "answers": ["Sukiyaki", "Okonomiyaki", "Takoyaki", "Chankonabe"],
+    "correctIndex": 0
+  },
+  {
+    "question": "What is the traditional Japanese tea ceremony called?",
+    "difficulty": "medium",
+    "answers": ["Sado", "Judo", "Kendo", "Shodo"],
+    "correctIndex": 0
   }
 ]
