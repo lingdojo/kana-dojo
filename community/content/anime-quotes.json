@@ -299,59 +299,66 @@
     "character": "Keigo Atobe"
   },
   {
-  "japanese": "やれやれだぜ…まったく。",
-  "romaji": "Yare yare da ze... mattaku.",
-  "english": "Good grief... honestly.",
-  "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
-  "character": "Jotaro Kujo"
-},
-{
-  "japanese": "痛みを伴わない教訓には意味がない",
-  "romaji": "Itami o tomonawanai kyoukun ni wa imi ga nai",
-  "english": "A lesson without pain is meaningless.",
-  "anime": "Fullmetal Alchemist: Brotherhood",
-  "character": "Edward Elric"
-},
-{
-  "japanese": "なにィ！？",
-  "romaji": "Nanii!?",
-  "english": "What?! (alt wording 9) (alt wording 61)",
-  "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
-  "character": "Joseph Joestar"
-},
+    "japanese": "やれやれだぜ…まったく。",
+    "romaji": "Yare yare da ze... mattaku.",
+    "english": "Good grief... honestly.",
+    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+    "character": "Jotaro Kujo"
+  },
   {
-  "japanese": "シシシシシ",
-  "romaji": "Shishishishi",
-  "english": "Shishishi!",
-  "anime": "One Piece",
-  "character": "Monkey D. Luffy"
-},
+    "japanese": "痛みを伴わない教訓には意味がない",
+    "romaji": "Itami o tomonawanai kyoukun ni wa imi ga nai",
+    "english": "A lesson without pain is meaningless.",
+    "anime": "Fullmetal Alchemist: Brotherhood",
+    "character": "Edward Elric"
+  },
   {
-  "japanese": "おまえはもう死んでいる",
-  "romaji": "Omae wa mou shindeiru",
-  "english": "You're already dead. (alt wording 18)",
-  "anime": "Fist of the North Star",
-  "character": "Kenshiro"
-},
+    "japanese": "なにィ！？",
+    "romaji": "Nanii!?",
+    "english": "What?! (alt wording 9) (alt wording 61)",
+    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+    "character": "Joseph Joestar"
+  },
   {
-  "japanese": "諦めるという言葉は俺の辞書にない",
-  "romaji": "Akirameru to iu kotoba wa ore no jisho ni nai",
-  "english": "The word 'give up' isn't in my dictionary. (alt wording 50)",
-  "anime": "Black Clover",
-  "character": "Asta"
-},
+    "japanese": "シシシシシ",
+    "romaji": "Shishishishi",
+    "english": "Shishishi!",
+    "anime": "One Piece",
+    "character": "Monkey D. Luffy"
+  },
   {
-  "japanese": "笑えばいいと思うよ",
-  "romaji": "Waraeba ii to omou yo",
-  "english": "I think you should just laugh.",
-  "anime": "Neon Genesis Evangelion",
-  "character": "Rei Ayanami"
-},
+    "japanese": "おまえはもう死んでいる",
+    "romaji": "Omae wa mou shindeiru",
+    "english": "You're already dead. (alt wording 18)",
+    "anime": "Fist of the North Star",
+    "character": "Kenshiro"
+  },
   {
-  "japanese": "オラに元気を分けてくれ!",
-  "romaji": "Ora ni genki o wakete kure!",
-  "english": "Lend me your energy!",
-  "anime": "Dragon Ball Z",
-  "character": "Son Goku"
-}
+    "japanese": "諦めるという言葉は俺の辞書にない",
+    "romaji": "Akirameru to iu kotoba wa ore no jisho ni nai",
+    "english": "The word 'give up' isn't in my dictionary. (alt wording 50)",
+    "anime": "Black Clover",
+    "character": "Asta"
+  },
+  {
+    "japanese": "笑えばいいと思うよ",
+    "romaji": "Waraeba ii to omou yo",
+    "english": "I think you should just laugh.",
+    "anime": "Neon Genesis Evangelion",
+    "character": "Rei Ayanami"
+  },
+  {
+    "japanese": "オラに元気を分けてくれ!",
+    "romaji": "Ora ni genki o wakete kure!",
+    "english": "Lend me your energy!",
+    "anime": "Dragon Ball Z",
+    "character": "Son Goku"
+  },
+  {
+    "japanese": "駆逐してやる!この世から一匹残らず!",
+    "romaji": "Kuchiku shite yaru! Kono yo kara ippiki nokorazu!",
+    "english": "I'll exterminate them! Every last one from this world!",
+    "anime": "Attack on Titan",
+    "character": "Eren Yeager"
+  }
 ]
