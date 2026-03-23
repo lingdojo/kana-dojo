@@ -448,7 +448,6 @@
     "english": "Three people together have the wisdom of Monju",
     "meaning": "Two heads are better than one"
   },
-
   {
     "japanese": "犬も歩けば棒に当たる",
     "romaji": "Inu mo arukeba bou ni ataru",
@@ -480,15 +479,21 @@
     "meaning": "The grass is always greener on the other side"
   },
   {
-  "japanese": "二兎を追う者は一兎をも得ず",
-  "romaji": "Ni to wo ou mono wa itto wo mo ezu",
-  "english": "One who chases two rabbits catches neither",
-  "meaning": "Focus on one thing at a time"
+    "japanese": "二兎を追う者は一兎をも得ず",
+    "romaji": "Ni to wo ou mono wa itto wo mo ezu",
+    "english": "One who chases two rabbits catches neither",
+    "meaning": "Focus on one thing at a time"
   },
   {
-  "japanese": "雨垂れ石を穿つ",
-  "romaji": "Amadare ishi wo ugatsu",
-  "english": "Dripping water pierces stone",
-  "meaning": "Persistence can overcome great obstacles"
-}
+    "japanese": "雨垂れ石を穿つ",
+    "romaji": "Amadare ishi wo ugatsu",
+    "english": "Dripping water pierces stone",
+    "meaning": "Persistence can overcome great obstacles"
+  },
+  {
+    "japanese": "雨垂れ石を穿つ",
+    "romaji": "Amadare ishi wo ugatsu",
+    "english": "Dripping water pierces stone",
+    "meaning": "Persistence can overcome great obstacles"
+  }
 ]
