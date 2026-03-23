@@ -628,5 +628,11 @@
     "backgroundColor": "oklch(16.0% 0.065 280.0 / 1)",
     "mainColor": "oklch(85.0% 0.185 260.0 / 1)",
     "secondaryColor": "oklch(75.0% 0.145 290.0 / 1)"
+  },
+  {
+    "id": "hanami-pink",
+    "backgroundColor": "oklch(92.0% 0.028 345.0 / 1)",
+    "mainColor": "oklch(70.0% 0.165 350.0 / 1)",
+    "secondaryColor": "oklch(78.0% 0.110 25.0 / 1)"
   }
 ]
