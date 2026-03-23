@@ -1,6 +1,7 @@
 import type { NextConfig } from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
 import bundleAnalyzer from '@next/bundle-analyzer';
+import withPWA from 'next-pwa';
 
 const withNextIntl = createNextIntlPlugin('./core/i18n/request.ts');
 const withBundleAnalyzer = bundleAnalyzer({
@@ -8,6 +9,19 @@ const withBundleAnalyzer = bundleAnalyzer({
 });
 
 const isDev = process.env.NODE_ENV !== 'production';
+
+// PWA configuration
+const pwaConfig = withPWA({
+  dest: 'public',
+  register: true,
+  skipWaiting: true,
+  disable: isDev,
+  fallbacks: {
+    document: '/offline',
+  },
+  cacheOnFrontEndNav: true,
+  reloadOnOnline: true,
+});
 
 const posthogHost = process.env.NEXT_PUBLIC_POSTHOG_HOST;
 const cspConnectSrc = [
@@ -213,4 +227,5 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default withBundleAnalyzer(withNextIntl(nextConfig));
+// Wrap with PWA, then bundle analyzer, then next-intl
+export default pwaConfig(withBundleAnalyzer(withNextIntl(nextConfig)));
