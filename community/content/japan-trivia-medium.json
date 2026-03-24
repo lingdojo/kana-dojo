@@ -1,5 +1,16 @@
 [
   {
+  "question": "Which Japanese island is known for its active volcano Mount Aso?",
+  "difficulty": "medium",
+  "answers": [
+    "Kyushu",
+    "Honshu",
+    "Shikoku",
+    "Hokkaido"
+  ],
+  "correctIndex": 0
+}
+  {
     "question": "What is the Japanese term for a traditional inn? (Community variation 46)",
     "difficulty": "medium",
     "answers": ["Ryokan", "Izakaya", "Minshuku", "Tateyama"],
