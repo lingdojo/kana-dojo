@@ -1,5 +1,11 @@
 [
   {
+  "id": "sumi-coal",
+  "backgroundColor": "oklch(13.0% 0.015 260.0 / 1)",
+  "mainColor": "oklch(68.0% 0.035 220.0 / 1)",
+  "secondaryColor": "oklch(45.0% 0.025 260.0 / 1)"
+}
+  {
     "id": "gingko-gold",
     "backgroundColor": "oklch(23.0% 0.030 85.0 / 1)",
     "mainColor": "oklch(86.0% 0.165 95.0 / 1)",
