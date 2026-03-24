@@ -27,6 +27,7 @@ import AuroraText from '@/shared/components/ui/magicui/AuroraText';
 
 const SIDEBAR_SECTION_STORAGE_PREFIX = 'sidebar-collapsible-';
 const SIDEBAR_DESKTOP_COLLAPSED_STORAGE_KEY = 'sidebar-desktop-collapsed';
+const SIDEBAR_PREFERENCES_VISITED_STORAGE_KEY = 'sidebar-preferences-visited';
 
 // ============================================================================
 // Types
@@ -119,6 +120,8 @@ type NavLinkProps = {
   useSlidingIndicator?: boolean;
   /** Whether desktop sidebar is collapsed */
   isDesktopCollapsed?: boolean;
+  /** Overrides whether the icon should bounce while inactive */
+  animateIconWhenInactive?: boolean;
 };
 
 const NavLink = memo(
@@ -129,6 +132,7 @@ const NavLink = memo(
     variant,
     useSlidingIndicator = false,
     isDesktopCollapsed = false,
+    animateIconWhenInactive,
   }: NavLinkProps) => {
     const Icon = item.icon;
     const isMain = variant === 'main';
@@ -156,7 +160,7 @@ const NavLink = memo(
           <Icon
             className={clsx(
               'shrink-0',
-              item.animateWhenInactive &&
+              (animateIconWhenInactive ?? item.animateWhenInactive) &&
                 !isActive &&
                 !(isDesktopCollapsed && isMain) &&
                 'motion-safe:animate-bounce',
@@ -360,6 +364,13 @@ const Sidebar = () => {
       sessionStorage.getItem(SIDEBAR_DESKTOP_COLLAPSED_STORAGE_KEY) === 'true'
     );
   });
+  const [hasVisitedPreferences, setHasVisitedPreferences] = useState(() => {
+    if (typeof window === 'undefined') return false;
+
+    return (
+      localStorage.getItem(SIDEBAR_PREFERENCES_VISITED_STORAGE_KEY) === 'true'
+    );
+  });
 
   // Collapse state for all collapsible sections
   const [isAcademyExpanded, setIsAcademyExpanded] = useState(() => {
@@ -484,6 +495,14 @@ const Sidebar = () => {
       String(isDesktopSidebarCollapsed),
     );
   }, [isDesktopSidebarCollapsed]);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    if (pathWithoutLocale !== '/preferences' || hasVisitedPreferences) return;
+
+    localStorage.setItem(SIDEBAR_PREFERENCES_VISITED_STORAGE_KEY, 'true');
+    setHasVisitedPreferences(true);
+  }, [hasVisitedPreferences, pathWithoutLocale]);
 
   useEffect(() => {
     if (pathWithoutLocale.startsWith('/experiments')) {
@@ -615,6 +634,9 @@ const Sidebar = () => {
             variant='main'
             useSlidingIndicator={true}
             isDesktopCollapsed={isDesktopSidebarCollapsed}
+            animateIconWhenInactive={
+              !hasVisitedPreferences && item.href === '/preferences'
+            }
           />
         ))}
       </div>

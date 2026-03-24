@@ -8,6 +8,11 @@ on:
         required: false
         default: '5'
         type: string
+      full_reset:
+        description: 'Reset every backlog item regardless of current availability'
+        required: false
+        default: false
+        type: boolean
       dry_run:
         description: 'Do not write changes; only report what would be reset'
         required: false
@@ -20,6 +25,10 @@ on:
         required: false
         default: '5'
         type: string
+      full_reset:
+        description: 'Reset every backlog item regardless of current availability'
+        required: false
+        type: boolean
       dry_run:
         description: 'Do not write changes; only report what would be reset'
         required: false
@@ -58,6 +67,7 @@ jobs:
             const backlogDir = 'community/backlog';
             const minimumAvailable = Number(process.env.MINIMUM_AVAILABLE || 5);
             const dryRun = String(process.env.DRY_RUN || 'false') === 'true';
+            const fullReset = String(process.env.FULL_RESET || 'false') === 'true';
             const backlogFiles = [
               ['theme', 'theme-backlog.json'],
               ['fact', 'facts-backlog.json'],
@@ -83,6 +93,7 @@ jobs:
 
             const changedFiles = [];
             let resetCount = 0;
+            let filesConsidered = 0;
 
             for (const [type, file] of backlogFiles) {
               const filePath = path.join(backlogDir, file);
@@ -90,8 +101,9 @@ jobs:
               const available = items.filter(function(item) {
                 return !item.issued && !item.completed;
               }).length;
+              filesConsidered += 1;
 
-              if (available > minimumAvailable) {
+              if (!fullReset && available > minimumAvailable) {
                 console.log(`Skipping ${type}: available=${available}`);
                 continue;
               }
@@ -112,12 +124,14 @@ jobs:
               }
             }
 
-            console.log(`Backlog auto-reset summary: changed=${resetCount}, minimum_available=${minimumAvailable}, dry_run=${dryRun}`);
+            console.log(`Backlog auto-reset summary: changed=${resetCount}, considered=${filesConsidered}, minimum_available=${minimumAvailable}, full_reset=${fullReset}, dry_run=${dryRun}`);
             core.setOutput('changed_files', changedFiles.join(' '));
             core.setOutput('changed_count', String(resetCount));
             core.setOutput('needs_commit', !dryRun && resetCount > 0 ? 'true' : 'false');
+            core.setOutput('mode', fullReset ? 'full_reset' : 'threshold_reset');
         env:
           MINIMUM_AVAILABLE: ${{ inputs.minimum_available || github.event.inputs.minimum_available || '5' }}
+          FULL_RESET: ${{ inputs.full_reset || github.event.inputs.full_reset || 'false' }}
           DRY_RUN: ${{ inputs.dry_run || github.event.inputs.dry_run || 'false' }}
 
       - name: Commit backlog resets directly to main
@@ -130,7 +144,12 @@ jobs:
             echo "No backlog reset changes to commit"
             exit 0
           fi
-          commit_msg="chore(automation): auto reset community backlog"
+          mode="${{ steps.reset.outputs.mode }}"
+          if [ "$mode" = "full_reset" ]; then
+            commit_msg="chore(automation): full reset community backlog"
+          else
+            commit_msg="chore(automation): auto reset community backlog"
+          fi
           max_attempts=5
           attempt=1
           while [ "$attempt" -le "$max_attempts" ]; do
