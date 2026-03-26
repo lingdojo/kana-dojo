@@ -15,6 +15,7 @@ export { default as KanaGame } from './components/Game';
 export { default as KanaCards } from './components/KanaCards';
 export { default as KanaBlitz } from './components/Blitz';
 export { default as KanaGauntlet } from './components/Gauntlet';
+export { default as KanaRush } from './components/Rush';
 export { default as SubsetDictionary } from './components/SubsetDictionary';
 
 // Types (read-only data types)

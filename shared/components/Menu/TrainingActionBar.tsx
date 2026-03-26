@@ -6,7 +6,7 @@ import { KanjiGauntlet, useKanjiSelection } from '@/features/Kanji';
 import { useVocabSelection, VocabGauntlet } from '@/features/Vocabulary';
 import { useInputPreferences } from '@/features/Preferences';
 import { useClick } from '@/shared/hooks/useAudio';
-import { Play, Zap, Swords } from 'lucide-react';
+import { Play, Zap, Swords, Timer } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 import GameModes from '@/shared/components/Menu/GameModes';
 
@@ -27,7 +27,7 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
   // Modal state
   const [showGameModesModal, setShowGameModesModal] = useState(false);
   const [gameModesMode, setGameModesMode] = useState<
-    'train' | 'blitz' | 'gauntlet'
+    'train' | 'blitz' | 'gauntlet' | 'rush'
   >('train');
   const [showGauntletModal, setShowGauntletModal] = useState(false);
 
@@ -211,6 +211,18 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
                   colorScheme: 'secondary' as const,
                   onClick: () => {
                     setGameModesMode('blitz');
+                    setShowGameModesModal(true);
+                  },
+                },
+                {
+                  id: 'rush',
+                  label: 'Rush',
+                  Icon: Timer,
+                  iconClassName: 'fill-current',
+                  show: showBlitz,
+                  colorScheme: 'secondary' as const,
+                  onClick: () => {
+                    setGameModesMode('rush');
                     setShowGameModesModal(true);
                   },
                 },

@@ -11,6 +11,7 @@ import {
   ArrowLeft,
   CheckCircle2,
   Zap,
+  Timer,
 } from 'lucide-react';
 import clsx from 'clsx';
 import { useClick } from '@/shared/hooks/useAudio';
@@ -22,7 +23,7 @@ interface GameModesProps {
   isOpen: boolean;
   onClose: () => void;
   currentDojo: string;
-  mode?: 'train' | 'blitz' | 'gauntlet';
+  mode?: 'train' | 'blitz' | 'gauntlet' | 'rush';
 }
 
 const GameModes = ({
@@ -41,9 +42,23 @@ const GameModes = ({
         ? 'blitzKanjiDuration'
         : 'blitzVocabDuration';
 
+  const rushDifficultyStorageKey =
+    currentDojo === 'kana'
+      ? 'rushKanaDifficulty'
+      : currentDojo === 'kanji'
+        ? 'rushKanjiDifficulty'
+        : 'rushVocabDifficulty';
+
   const DURATION_OPTIONS = [30, 60, 90, 120, 180];
+  const RUSH_DIFFICULTY_OPTIONS = [
+    { id: 'easy', label: 'Easy', time: '60s' },
+    { id: 'medium', label: 'Medium', time: '45s' },
+    { id: 'hard', label: 'Hard', time: '30s' },
+    { id: 'extreme', label: 'Extreme', time: '15s' },
+  ];
 
   const [challengeDuration, setChallengeDuration] = useState<number>(60);
+  const [rushDifficulty, setRushDifficulty] = useState<string>('medium');
 
   const persistDuration = useCallback(
     (duration: number) => {
@@ -53,14 +68,33 @@ const GameModes = ({
     [durationStorageKey],
   );
 
+  const persistRushDifficulty = useCallback(
+    (difficulty: string) => {
+      if (typeof window === 'undefined') return;
+      localStorage.setItem(rushDifficultyStorageKey, difficulty);
+    },
+    [rushDifficultyStorageKey],
+  );
+
   useEffect(() => {
-    if (!isOpen || mode !== 'blitz') return;
+    if (!isOpen || (mode !== 'blitz' && mode !== 'rush')) return;
     if (typeof window === 'undefined') return;
 
-    const saved = localStorage.getItem(durationStorageKey);
-    const parsed = saved ? parseInt(saved) : NaN;
-    setChallengeDuration(Number.isFinite(parsed) ? parsed : 60);
-  }, [isOpen, mode, durationStorageKey, persistDuration]);
+    if (mode === 'blitz') {
+      const saved = localStorage.getItem(durationStorageKey);
+      const parsed = saved ? parseInt(saved) : NaN;
+      setChallengeDuration(Number.isFinite(parsed) ? parsed : 60);
+    }
+
+    if (mode === 'rush') {
+      const saved = localStorage.getItem(rushDifficultyStorageKey);
+      if (saved && RUSH_DIFFICULTY_OPTIONS.some(opt => opt.id === saved)) {
+        setRushDifficulty(saved);
+      } else {
+        setRushDifficulty('medium');
+      }
+    }
+  }, [isOpen, mode, durationStorageKey, rushDifficultyStorageKey, persistDuration, persistRushDifficulty]);
 
   const kanaSelection = useKanaSelection();
   const kanjiSelection = useKanjiSelection();
@@ -120,12 +154,17 @@ const GameModes = ({
         if (mode === 'blitz') {
           persistDuration(challengeDuration);
         }
+        if (mode === 'rush') {
+          persistRushDifficulty(rushDifficulty);
+        }
         const route =
           mode === 'blitz'
             ? `/${currentDojo}/blitz`
             : mode === 'gauntlet'
               ? `/${currentDojo}/gauntlet`
-              : `/${currentDojo}/train`;
+              : mode === 'rush'
+                ? `/${currentDojo}/rush`
+                : `/${currentDojo}/train`;
         router.push(route);
       }
     };
@@ -148,7 +187,9 @@ const GameModes = ({
     router,
     mode,
     challengeDuration,
+    rushDifficulty,
     persistDuration,
+    persistRushDifficulty,
   ]);
 
   const gameModes = [
@@ -187,6 +228,12 @@ const GameModes = ({
                 className='mx-auto text-(--secondary-color)'
               />
             )}
+            {mode === 'rush' && (
+              <Timer
+                size={56}
+                className='mx-auto text-(--secondary-color)'
+              />
+            )}
             {mode === 'train' && (
               <Play
                 size={56}
@@ -199,12 +246,16 @@ const GameModes = ({
                 ? 'Blitz'
                 : mode === 'gauntlet'
                   ? 'Gauntlet'
-                  : 'Training'}
+                  : mode === 'rush'
+                    ? 'Rush'
+                    : 'Training'}
             </h1>
             <p className='text-(--secondary-color)'>
               {mode === 'blitz'
                 ? 'Practice in a fast-paced, time-limited way'
-                : 'Practice in a classic, endless way'}
+                : mode === 'rush'
+                  ? 'Race against time, build combos for bonus points!'
+                  : 'Practice in a classic, endless way'}
             </p>
           </div>
 
@@ -334,6 +385,43 @@ const GameModes = ({
             </div>
           )}
 
+          {mode === 'rush' && (
+            <div className='space-y-3 rounded-lg bg-(--card-color) p-4'>
+              <p className='text-sm font-medium text-(--secondary-color)'>
+                Difficulty:
+              </p>
+              <div className='flex flex-wrap justify-center gap-2'>
+                {RUSH_DIFFICULTY_OPTIONS.map(diff => (
+                  <ActionButton
+                    key={diff.id}
+                    onClick={() => {
+                      playClick();
+                      setRushDifficulty(diff.id);
+                      persistRushDifficulty(diff.id);
+                    }}
+                    colorScheme={
+                      rushDifficulty === diff.id ? 'main' : 'secondary'
+                    }
+                    borderColorScheme={
+                      rushDifficulty === diff.id ? 'main' : 'secondary'
+                    }
+                    borderBottomThickness={8}
+                    borderRadius='3xl'
+                    className={clsx(
+                      'w-auto px-4 py-2',
+                      rushDifficulty !== diff.id && 'opacity-60',
+                    )}
+                  >
+                    <span className='flex flex-col items-center'>
+                      <span>{diff.label}</span>
+                      <span className='text-xs opacity-70'>{diff.time}</span>
+                    </span>
+                  </ActionButton>
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* Action Buttons */}
           <div className='mx-auto flex w-full max-w-4xl flex-row items-center justify-center gap-2 md:gap-4'>
             <button
@@ -360,7 +448,9 @@ const GameModes = ({
                   ? `/${currentDojo}/blitz`
                   : mode === 'gauntlet'
                     ? `/${currentDojo}/gauntlet`
-                    : `/${currentDojo}/train`
+                    : mode === 'rush'
+                      ? `/${currentDojo}/rush`
+                      : `/${currentDojo}/train`
               }
               className='w-1/2'
               onClick={e => {
@@ -371,6 +461,9 @@ const GameModes = ({
                 playClick();
                 if (mode === 'blitz') {
                   persistDuration(challengeDuration);
+                }
+                if (mode === 'rush') {
+                  persistRushDifficulty(rushDifficulty);
                 }
               }}
             >
@@ -395,7 +488,9 @@ const GameModes = ({
                     ? 'Start Blitz'
                     : mode === 'gauntlet'
                       ? 'Start Gauntlet'
-                      : 'Start Training'}
+                      : mode === 'rush'
+                        ? 'Start Rush'
+                        : 'Start Training'}
                 </span>
               </button>
             </Link>

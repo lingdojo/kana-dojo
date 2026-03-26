@@ -1,6 +1,6 @@
 import localforage from 'localforage';
 
-export type SessionType = 'classic' | 'blitz' | 'gauntlet';
+export type SessionType = 'classic' | 'blitz' | 'gauntlet' | 'rush';
 export type DojoType = 'kana' | 'kanji' | 'vocabulary';
 export type EndedReason =
   | 'completed'
