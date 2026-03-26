@@ -437,16 +437,27 @@
       "Bento"
     ],
     "correctIndex": 0
+  },
+  {
+    "question": "Which Japanese island is home to the city of Sapporo? (Community variation 5)",
+    "difficulty": "easy",
+    "answers": [
+      "Honshu",
+      "Hokkaido",
+      "Shikoku",
+      "Kyushu"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "question": "Which Japanese dish consists of skewered grilled chicken? (Community variation 48)",
+    "difficulty": "easy",
+    "answers": [
+      "Yakitori",
+      "Sukiyaki",
+      "Tonkatsu",
+      "Oden"
+    ],
+    "correctIndex": 0
   }
-],
-{
-  "question": "Which Japanese island is home to the city of Sapporo? (Community variation 5)",
-  "difficulty": "easy",
-  "answers": [
-    "Honshu",
-    "Hokkaido",
-    "Shikoku",
-    "Kyushu"
-  ],
-  "correctIndex": 1
-}
+]
