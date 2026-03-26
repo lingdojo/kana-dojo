@@ -57,7 +57,7 @@ const OptionButton = memo(
         type='button'
         disabled={isWrong}
         className={clsx(
-          'relative flex w-full flex-row items-center justify-center gap-1 pt-3 pb-6 text-5xl font-semibold sm:w-1/5',
+          'relative flex w-full flex-row items-center justify-center gap-1 pt-3 pb-5 text-4xl font-semibold sm:w-1/5 sm:pb-6 sm:text-5xl',
           buttonBorderStyles,
           'border-b-4',
           isWrong &&
@@ -70,7 +70,7 @@ const OptionButton = memo(
         <span>{variantChar}</span>
         <span
           className={clsx(
-            'absolute top-1/2 right-4 hidden h-5 min-w-5 -translate-y-1/2 items-center justify-center rounded-full bg-(--border-color) px-1 text-xs leading-none lg:inline-flex',
+            'absolute top-1/2 right-2 hidden h-5 min-w-5 -translate-y-1/2 items-center justify-center rounded-full bg-(--border-color) px-1 text-xs leading-none md:right-4 md:inline-flex',
             isWrong ? 'text-(--border-color)' : 'text-(--secondary-color)',
           )}
         >

@@ -56,9 +56,9 @@ const OptionButton = memo(
         disabled={isWrong}
         className={clsx(
           isReverse
-            ? 'w-1/3 justify-center text-5xl md:w-1/4 lg:w-1/5'
-            : 'w-full justify-start pl-8 text-3xl md:w-1/2 md:text-4xl',
-          'flex flex-row items-center gap-1.5 rounded-xl py-5',
+            ? 'w-1/3 justify-center text-4xl md:w-1/4 md:text-5xl lg:w-1/5'
+            : 'w-full justify-start pl-6 text-2xl md:w-1/2 md:pl-8 md:text-3xl lg:text-4xl',
+          'flex flex-row items-center gap-1.5 rounded-xl py-4 md:py-5',
           buttonBorderStyles,
           'text-(--border-color)',
           'border-b-4',
@@ -82,8 +82,8 @@ const OptionButton = memo(
         </span>
         <span
           className={clsx(
-            'hidden rounded-full bg-(--border-color) px-1 text-xs lg:inline',
-            isReverse ? '' : 'mr-4',
+            'hidden rounded-full bg-(--border-color) px-1 text-xs md:inline',
+            isReverse ? '' : 'mr-3 md:mr-4',
             isWrong ? 'text-(--border-color)' : 'text-(--secondary-color)',
           )}
         >
