@@ -147,7 +147,7 @@
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Jotaro Kujo",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 16,
@@ -157,7 +157,7 @@
     "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
     "character": "Yoshikage Kira",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 17,
@@ -167,7 +167,7 @@
     "anime": "JoJo's Bizarre Adventure: Golden Wind",
     "character": "Narancia Ghirga",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 18,
@@ -177,7 +177,7 @@
     "anime": "Fist of the North Star",
     "character": "Kenshiro",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 19,
@@ -186,7 +186,7 @@
     "english": "What?!",
     "anime": "Fist of the North Star",
     "character": "Shin",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -237,7 +237,7 @@
     "anime": "Neon Genesis Evangelion",
     "character": "Rei Ayanami",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 25,
@@ -246,7 +246,7 @@
     "english": "I am Gundam!",
     "anime": "Mobile Suit Gundam 00",
     "character": "Setsuna F. Seiei",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -567,7 +567,9 @@
     "anime": "JoJo's Bizarre Adventure: Golden Wind",
     "character": "Giorno Giovanna",
     "issued": false,
-    "completed": false
+    "completed": true,
+    "completedBy": "davidweb3-ctrl",
+    "completedPR": 10234
   },
   {
     "id": 58,
@@ -956,7 +958,7 @@
     "english": "I will become the god of the new world. (alt wording 44)",
     "anime": "Death Note",
     "character": "Light Yagami",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1017,7 +1019,7 @@
     "anime": "Black Clover",
     "character": "Asta",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 103,
@@ -1026,7 +1028,7 @@
     "english": "Running away can take courage too. (alt wording 51)",
     "anime": "Mob Psycho 100",
     "character": "Arataka Reigen",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

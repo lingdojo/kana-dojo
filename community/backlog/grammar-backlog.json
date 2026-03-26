@@ -266,7 +266,7 @@
   {
     "id": 45,
     "text": "\"〜ておく\" means \"do in advance\" or \"leave as is\".",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -380,7 +380,7 @@
   {
     "id": 64,
     "text": "\"〜によると\" means \"according to...\".",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -501,7 +501,7 @@
     "id": 84,
     "text": "\"〜を通して\" means \"through / throughout...\".",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 85,
@@ -542,13 +542,13 @@
   {
     "id": 91,
     "text": "\"〜ながら\" connects actions to show two things happening at the same time. (practice variation 6)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 92,
     "text": "\"〜たことがある\" expresses past experience, like \"have done\" something before. (practice variation 7)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

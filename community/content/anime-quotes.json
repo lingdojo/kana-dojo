@@ -91,7 +91,9 @@
     "character": "Denji"
   },
   {
-    "quote": "I wanna be the very best.",
+    "japanese": "チャンピオンに、俺はなる！",
+    "romaji": "Chanpion ni, ore wa naru!",
+    "english": "I wanna be the very best.",
     "anime": "Pokemon",
     "character": "Ash Ketchum"
   },
@@ -446,52 +448,73 @@
     "character": "Eren Yeager"
   },
   {
-  "japanese": "イエス！イエス！イエス！イエス！",
-  "romaji": "Iesu! Iesu! Iesu! Iesu!",
-  "english": "Yes! Yes! Yes! Yes! (alt wording 2) (alt wording 54)",
-  "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
-  "character": "DIO"
+    "japanese": "イエス！イエス！イエス！イエス！",
+    "romaji": "Iesu! Iesu! Iesu! Iesu!",
+    "english": "Yes! Yes! Yes! Yes! (alt wording 2) (alt wording 54)",
+    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+    "character": "DIO"
   },
   {
-  "japanese": "ほう…向かってくるのか",
-  "romaji": "Ho... mukatte kuru no ka",
-  "english": "Oh? You're approaching me? (alt wording 3) (alt wording 55)",
-  "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
-  "character": "DIO"
+    "japanese": "ほう…向かってくるのか",
+    "romaji": "Ho... mukatte kuru no ka",
+    "english": "Oh? You're approaching me? (alt wording 3) (alt wording 55)",
+    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+    "character": "DIO"
   },
   {
-  "japanese": "イエス！イエス！イエス！イエス！",
-  "romaji": "Iesu! Iesu! Iesu! Iesu!",
-  "english": "Yes! Yes! Yes! Yes! (alt wording 2) (alt wording 54)",
-  "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
-  "character": "DIO"
+    "japanese": "イエス！イエス！イエス！イエス！",
+    "romaji": "Iesu! Iesu! Iesu! Iesu!",
+    "english": "Yes! Yes! Yes! Yes! (alt wording 2) (alt wording 54)",
+    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+    "character": "DIO"
   },
   {
-  "japanese": "月に代わっておしおきよ!",
-  "romaji": "Tsuki ni kawatte oshioki yo!",
-  "english": "In the name of the moon, I'll punish you! (alt wording 41)",
-  "anime": "Sailor Moon",
-  "character": "Usagi Tsukino"
+    "japanese": "月に代わっておしおきよ!",
+    "romaji": "Tsuki ni kawatte oshioki yo!",
+    "english": "In the name of the moon, I'll punish you! (alt wording 41)",
+    "anime": "Sailor Moon",
+    "character": "Usagi Tsukino"
   },
   {
-  "japanese": "守るものがある限り、俺は負けない",
-  "romaji": "Mamoru mono ga aru kagiri, ore wa makenai",
-  "english": "As long as I have something to protect, I won't lose. (alt wording 43)",
-  "anime": "Bleach",
-  "character": "Ichigo Kurosaki"
+    "japanese": "守るものがある限り、俺は負けない",
+    "romaji": "Mamoru mono ga aru kagiri, ore wa makenai",
+    "english": "As long as I have something to protect, I won't lose. (alt wording 43)",
+    "anime": "Bleach",
+    "character": "Ichigo Kurosaki"
   },
   {
-  "japanese": "背中の傷は剣士の恥だ",
-  "romaji": "Senaka no kizu wa kenshi no haji da",
-  "english": "Scars on the back are a swordsman's shame.",
-  "anime": "One Piece",
-  "character": "Roronoa Zoro"
+    "japanese": "背中の傷は剣士の恥だ",
+    "romaji": "Senaka no kizu wa kenshi no haji da",
+    "english": "Scars on the back are a swordsman's shame.",
+    "anime": "One Piece",
+    "character": "Roronoa Zoro"
   },
   {
-  "japanese": "だが…それがいい。",
-  "romaji": "Daga... sore ga ii.",
-  "english": "But... that's what I like. (alt wording 16) (alt wording 68)",
-  "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
-  "character": "Yoshikage Kira"
+    "japanese": "だが…それがいい。",
+    "romaji": "Daga... sore ga ii.",
+    "english": "But... that's what I like. (alt wording 16) (alt wording 68)",
+    "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
+    "character": "Yoshikage Kira"
+  },
+  {
+    "japanese": "何ッ！？",
+    "romaji": "Nani!?",
+    "english": "What?! (alt wording 19)",
+    "anime": "Fist of the North Star",
+    "character": "Shin"
+  },
+  {
+    "japanese": "俺はガンダムだ！",
+    "romaji": "Ore wa Gandamu da!",
+    "english": "I am Gundam!",
+    "anime": "Mobile Suit Gundam 00",
+    "character": "Setsuna F. Seiei"
+  },
+  {
+    "japanese": "このジョルノ・ジョバァーナには夢がある！",
+    "romaji": "Kono Joruno Jobana ni wa yume ga aru!",
+    "english": "I, Giorno Giovanna, have a dream! (alt wording 5)",
+    "anime": "JoJo's Bizarre Adventure: Golden Wind",
+    "character": "Giorno Giovanna"
   }
 ]

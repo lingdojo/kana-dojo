@@ -96,7 +96,7 @@
     "english": "Time is money",
     "meaning": "Time is valuable and should not be wasted",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 12,
@@ -834,7 +834,7 @@
     "english": "The mouth is the source of disaster",
     "meaning": "Careless words cause trouble",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 94,
@@ -897,7 +897,7 @@
     "english": "Dumplings over flowers",
     "meaning": "Practicality over appearance",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 101,
@@ -1193,7 +1193,7 @@
     "romaji": "Mikka bouzu",
     "english": "A three-day monk",
     "meaning": "Someone who quits quickly",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -1202,7 +1202,7 @@
     "romaji": "Nodomoto sugireba atsusa wo wasureru",
     "english": "Once it passes your throat, you forget the heat",
     "meaning": "People forget hardships once they are over",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -1212,7 +1212,7 @@
     "english": "The mouth is the source of misfortune",
     "meaning": "Careless words cause trouble",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 136,
@@ -1319,7 +1319,7 @@
     "romaji": "Nido aru koto wa sando aru",
     "english": "What happens twice will happen a third time",
     "meaning": "Patterns tend to repeat",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -1329,7 +1329,7 @@
     "english": "The nail that sticks out gets hammered down",
     "meaning": "Standing out invites criticism",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 149,
@@ -1337,7 +1337,7 @@
     "romaji": "Mago ni mo ishou",
     "english": "Even a packhorse driver looks good in fine clothes",
     "meaning": "Clothes make the person",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -1355,7 +1355,7 @@
     "romaji": "Ame futte ji katamaru",
     "english": "After the rain, the ground hardens",
     "meaning": "Hard times build resilience",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -1364,7 +1364,7 @@
     "romaji": "Omoitattaga kichijitsu",
     "english": "The day you decide is a lucky day",
     "meaning": "Start now",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -1374,7 +1374,7 @@
     "english": "Failure is the origin of success",
     "meaning": "Mistakes lead to growth",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 154,
@@ -1383,7 +1383,7 @@
     "english": "A bee on a crying face",
     "meaning": "Misfortune piles up",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 155,

@@ -426,5 +426,27 @@
     "Yakitori"
   ],
   "correctIndex": 0
+  },
+  {
+    "question": "What is the Japanese term for a traditional tea ceremony?",
+    "difficulty": "easy",
+    "answers": [
+      "Sado",
+      "Ikebana",
+      "Kaiseki",
+      "Bento"
+    ],
+    "correctIndex": 0
   }
-]
+],
+{
+  "question": "Which Japanese island is home to the city of Sapporo? (Community variation 5)",
+  "difficulty": "easy",
+  "answers": [
+    "Honshu",
+    "Hokkaido",
+    "Shikoku",
+    "Kyushu"
+  ],
+  "correctIndex": 1
+}

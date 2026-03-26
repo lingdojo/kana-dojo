@@ -962,7 +962,7 @@
       "Chankonabe"
     ],
     "correctIndex": 0,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1117,7 +1117,7 @@
     ],
     "correctIndex": 0,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 81,
@@ -1131,7 +1131,7 @@
     ],
     "correctIndex": 1,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 82,
@@ -1145,7 +1145,7 @@
     ],
     "correctIndex": 0,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 83,
@@ -1159,7 +1159,7 @@
     ],
     "correctIndex": 1,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 84,
@@ -1173,7 +1173,7 @@
     ],
     "correctIndex": 0,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 85,
@@ -1186,7 +1186,7 @@
       "Kyushu"
     ],
     "correctIndex": 1,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1257,7 +1257,7 @@
     ],
     "correctIndex": 2,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 91,
@@ -1271,7 +1271,7 @@
     ],
     "correctIndex": 1,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 92,
@@ -1285,7 +1285,7 @@
     ],
     "correctIndex": 0,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 93,
@@ -1298,7 +1298,7 @@
       "Tabi"
     ],
     "correctIndex": 0,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1326,7 +1326,7 @@
       "Mount Tate"
     ],
     "correctIndex": 1,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1592,7 +1592,7 @@
       "Okonomiyaki"
     ],
     "correctIndex": 0,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

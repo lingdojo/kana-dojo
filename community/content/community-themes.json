@@ -22,5 +22,11 @@
     "backgroundColor": "oklch(94.0% 0.025 345.0 / 1)",
     "mainColor": "oklch(68.0% 0.160 350.0 / 1)",
     "secondaryColor": "oklch(72.0% 0.110 210.0 / 1)"
+  },
+  {
+    "id": "fuji-shadow",
+    "backgroundColor": "oklch(15.0% 0.015 250.0 / 1)",
+    "mainColor": "oklch(78.0% 0.035 230.0 / 1)",
+    "secondaryColor": "oklch(65.0% 0.105 300.0 / 1)"
   }
 ]

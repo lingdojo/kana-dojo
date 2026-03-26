@@ -255,7 +255,7 @@
     "Furoshiki"
   ],
   "correctIndex": 0
-}
+},
   {
   "question": "What is the Japanese term for a traditional paper umbrella?",
   "difficulty": "medium",
@@ -267,4 +267,26 @@
   ],
   "correctIndex": 0
 },
+{
+  "question": "Which dish is a Japanese hot pot with thinly sliced beef?",
+  "difficulty": "medium",
+  "answers": [
+      "Sukiyaki",
+      "Okonomiyaki",
+      "Takoyaki",
+      "Chankonabe"
+    ],
+    "correctIndex": 0
+  },
+{
+  "question": "What is the name of Japan's highest mountain? (Community variation 15)",
+  "difficulty": "medium",
+  "answers": [
+    "Mount Haku",
+    "Mount Fuji",
+    "Mount Aso",
+    "Mount Tate"
+  ],
+  "correctIndex": 1
+}
 ]

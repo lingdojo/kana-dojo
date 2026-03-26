@@ -75,12 +75,12 @@
     "id": 13,
     "fact": "Japanese police use giant futon-like blankets called 'sasumata' to safely pin suspects against walls, a technique dating back to the Edo period.",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 14,
     "fact": "There's a Japanese concept called 'kaizen' (改善) meaning continuous improvement, which became a cornerstone of global manufacturing practices.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -188,7 +188,7 @@
   {
     "id": 32,
     "fact": "The practice of 'nemawashi' (根回し) means building consensus before a meeting so decisions appear unanimous - the actual negotiation happens beforehand.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -896,7 +896,7 @@
   {
     "id": 150,
     "fact": "Japan has 'gravure idols' - models who pose in bikinis and lingerie for magazines, calendars, and trading cards.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1017,12 +1017,12 @@
     "id": 170,
     "fact": "Japan has 'death cafes' where people gather to discuss mortality over tea and cake in a relaxed setting.",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 171,
     "fact": "There's a Japanese practice 'kashikomarimashita' (かしこまりました) - the ultra-polite way service staff say 'understood.'",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1574,7 +1574,7 @@
   {
     "id": 263,
     "fact": "Japan has 'chiiki matsuri' — neighborhood festivals run by local committees where residents carry portable shrines together.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
