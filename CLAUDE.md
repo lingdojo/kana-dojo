@@ -33,7 +33,7 @@ This file provides comprehensive guidance for AI coding assistants (GitHub Copil
 
 ---
 
-## Architecture â€” feature-based (short)
+## Architecture - feature-based (short)
 
 KanaDojo is organized by feature: app/, features/, shared/, core/. Keep business logic inside features and avoid cross-feature internal imports.
 
@@ -41,7 +41,7 @@ KanaDojo is organized by feature: app/, features/, shared/, core/. Keep business
 
 ---
 
-## Code style & state â€” quick rules
+## Code style & state - quick rules
 
 - Imports: use path aliases (`@/...`), avoid cross-feature relative imports.
 - TypeScript: strict mode; fix errors; prefer `interface` for public APIs.
