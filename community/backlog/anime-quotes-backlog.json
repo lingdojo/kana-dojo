@@ -167,7 +167,7 @@
     "anime": "JoJo's Bizarre Adventure: Golden Wind",
     "character": "Narancia Ghirga",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 18,
@@ -177,7 +177,7 @@
     "anime": "Fist of the North Star",
     "character": "Kenshiro",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 19,
@@ -186,7 +186,7 @@
     "english": "What?!",
     "anime": "Fist of the North Star",
     "character": "Shin",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -446,7 +446,7 @@
     "english": "Only those prepared to be shot should pull the trigger.",
     "anime": "Code Geass: Lelouch of the Rebellion",
     "character": "Lelouch vi Britannia",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -467,7 +467,7 @@
     "anime": "Hunter x Hunter",
     "character": "Gon Freecss",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 48,
@@ -616,7 +616,7 @@
     "english": "Next you'll say, 'Good grief!' (alt wording 10)",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Joseph Joestar",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -626,7 +626,7 @@
     "english": "You! You're watching me! (alt wording 11)",
     "anime": "JoJo's Bizarre Adventure: Stone Ocean",
     "character": "Jolyne Cujoh",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -707,7 +707,7 @@
     "anime": "Fist of the North Star",
     "character": "Shin",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 72,
@@ -716,7 +716,7 @@
     "english": "I'm gonna be King of the Pirates! (alt wording 20)",
     "anime": "One Piece",
     "character": "Monkey D. Luffy",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -786,7 +786,7 @@
     "english": "Lero lero lero lero. (alt wording 27)",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Noriaki Kakyoin",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -797,7 +797,7 @@
     "anime": "One Piece",
     "character": "Kozuki Sukiyaki",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 81,
@@ -807,7 +807,7 @@
     "anime": "One Piece",
     "character": "Charlotte Linlin (Big Mom)",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 82,
@@ -817,7 +817,7 @@
     "anime": "One Piece",
     "character": "Monkey D. Luffy",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 83,
@@ -826,7 +826,7 @@
     "english": "Gurararara! (alt wording 31)",
     "anime": "One Piece",
     "character": "Edward Newgate (Whitebeard)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1346,7 +1346,7 @@
     "english": "Gurararara! (alt wording 31) (alt wording 83)",
     "anime": "One Piece",
     "character": "Edward Newgate (Whitebeard)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

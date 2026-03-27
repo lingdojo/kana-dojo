@@ -523,5 +523,26 @@
     "english": "I have no enemies",
     "anime": "Vinland Saga",
     "character": "Thorfinn"
-  }
+  },
+  { 
+  "japanese": "貴様ッ！見ているなッ！！", 
+  "romaji": "Kisama! Mite iru na!!", 
+  "english": "You! You're watching me! (alt wording 11)", 
+  "anime": "JoJo's Bizarre Adventure: Stone Ocean", 
+  "character": "Jolyne Cujoh" 
+},
+  {
+  "japanese": "計画通り",
+  "romaji": "Keikaku doori",
+  "english": "Just as planned.",
+  "anime": "Death Note",
+  "character": "Light Yagami"
+},
+  {
+  "japanese": "レロレロレロレロ",
+  "romaji": "Rero rero rero rero",
+  "english": "Lero lero lero lero. (alt wording 27)",
+  "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+  "character": "Noriaki Kakyoin"
+}
 ]

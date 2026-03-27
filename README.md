@@ -124,8 +124,13 @@ npm run check
 | [All Documentation](./docs/)                              | Complete documentation index                   |
 
 ## Tech Stack
-
-Next.js 15 · React 19 · TypeScript · Tailwind CSS · shadcn/ui · Zustand · Framer Motion
+- [Next.js](https://nextjs.org/) 15  
+- [React](https://react.dev/) 19  
+- [TypeScript](https://www.typescriptlang.org/)  
+- [Tailwind CSS](https://tailwindcss.com/)  
+- [shadcn/ui](https://ui.shadcn.com/)  
+- [Zustand](https://github.com/pmndrs/zustand)  
+- [Framer Motion](https://www.framer.com/motion/)
 
 > See [Architecture docs](./docs/ARCHITECTURE.md) for full technical details.
 

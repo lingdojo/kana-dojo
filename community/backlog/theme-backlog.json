@@ -318,7 +318,7 @@
     "backgroundColor": "oklch(24.0% 0.045 80.0 / 1)",
     "mainColor": "oklch(85.0% 0.155 90.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.120 95.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -918,7 +918,7 @@
     "backgroundColor": "oklch(20.0% 0.048 35.0 / 1)",
     "mainColor": "oklch(68.0% 0.185 40.0 / 1)",
     "secondaryColor": "oklch(78.0% 0.135 55.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -968,7 +968,7 @@
     "backgroundColor": "oklch(20.0% 0.028 285.0 / 1)",
     "mainColor": "oklch(88.0% 0.045 90.0 / 1)",
     "secondaryColor": "oklch(65.0% 0.145 20.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -998,7 +998,7 @@
     "backgroundColor": "oklch(23.0% 0.045 85.0 / 1)",
     "mainColor": "oklch(88.0% 0.170 95.0 / 1)",
     "secondaryColor": "oklch(72.0% 0.135 75.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1378,7 +1378,7 @@
     "backgroundColor": "oklch(18.0% 0.028 65.0 / 1)",
     "mainColor": "oklch(72.0% 0.115 65.0 / 1)",
     "secondaryColor": "oklch(60.0% 0.085 25.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1408,7 +1408,7 @@
     "backgroundColor": "oklch(16.0% 0.030 260.0 / 1)",
     "mainColor": "oklch(82.0% 0.085 220.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.145 330.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1648,7 +1648,7 @@
     "backgroundColor": "oklch(20.0% 0.035 225.0 / 1)",
     "mainColor": "oklch(80.0% 0.120 210.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.085 195.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1828,7 +1828,7 @@
     "backgroundColor": "oklch(23.0% 0.020 60.0 / 1)",
     "mainColor": "oklch(72.0% 0.085 50.0 / 1)",
     "secondaryColor": "oklch(60.0% 0.060 35.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
