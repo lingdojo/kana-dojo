@@ -321,5 +321,16 @@
     "Ikebana"
   ],
   "correctIndex": 0
+},
+{
+  "question": "Which of these is a Japanese traditional storytelling art? (Community variation 20)",
+  "difficulty": "medium",
+  "answers": [
+    "Rakugo",
+    "Kabuki",
+    "Noh",
+    "Ikebana"
+  ],
+  "correctIndex": 0
 }
 ]
