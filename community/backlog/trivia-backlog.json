@@ -976,8 +976,10 @@
       "Yokohama"
     ],
     "correctIndex": 0,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true,
+    "completedBy": "23f1002867",
+    "completedPR": 10427
   },
   {
     "id": 71,
@@ -1256,7 +1258,7 @@
       "Arctic Ocean"
     ],
     "correctIndex": 2,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
