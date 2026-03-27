@@ -275,7 +275,7 @@
     "romaji": "Saru mo ki kara ochiru",
     "english": "Even monkeys fall from trees",
     "meaning": "Experts can make mistakes",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -284,7 +284,7 @@
     "romaji": "Fukusui bon ni kaerazu",
     "english": "Spilled water will not return to the tray",
     "meaning": "What is done cannot be undone",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -330,7 +330,7 @@
     "english": "The nail that sticks out gets hammered down",
     "meaning": "Those who stand out may be criticized",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 38,
@@ -338,7 +338,7 @@
     "romaji": "Shiranu ga hotoke",
     "english": "Not knowing is Buddha",
     "meaning": "Ignorance is bliss",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -347,7 +347,7 @@
     "romaji": "Ashita wa ashita no kaze ga fuku",
     "english": "Tomorrow's wind will blow tomorrow",
     "meaning": "Don't worry too much about the future",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -356,7 +356,7 @@
     "romaji": "En no shita no chikaramochi",
     "english": "A strong person under the veranda",
     "meaning": "An unsung hero who supports behind the scenes",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -365,7 +365,7 @@
     "romaji": "Yudan taiteki",
     "english": "Carelessness is the greatest enemy",
     "meaning": "Don't let your guard down",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -545,7 +545,7 @@
     "romaji": "Mochi wa mochiya",
     "english": "Mochi should be made by the mochi shop",
     "meaning": "Leave it to the experts",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -554,7 +554,7 @@
     "romaji": "Toudai moto kurashi",
     "english": "It's darkest under the lighthouse",
     "meaning": "The obvious is often overlooked",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -563,7 +563,7 @@
     "romaji": "I no naka no kawazu taikai wo shirazu",
     "english": "A frog in a well does not know the great sea",
     "meaning": "Limited experience limits perspective",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -572,7 +572,7 @@
     "romaji": "Ki wo mite mori wo mizu",
     "english": "See the trees but not the forest",
     "meaning": "Miss the bigger picture",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -581,7 +581,7 @@
     "romaji": "Doku wo kurawaba sara made",
     "english": "If you eat poison, eat the plate too",
     "meaning": "If you must do something risky, go all the way",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -590,7 +590,7 @@
     "romaji": "Tabi wa michizure yo wa nasake",
     "english": "Travel needs companions; life needs kindness",
     "meaning": "Relationships and compassion matter",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -599,7 +599,7 @@
     "romaji": "Senri no michi mo ippo kara",
     "english": "A journey of a thousand miles begins with a single step",
     "meaning": "Start small to reach big goals",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -608,7 +608,7 @@
     "romaji": "Warau kado ni wa fuku kitaru",
     "english": "Fortune comes to a laughing gate",
     "meaning": "Good fortune comes to those who smile",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -617,7 +617,7 @@
     "romaji": "Ryouyaku wa kuchi ni nigashi",
     "english": "Good medicine tastes bitter",
     "meaning": "Helpful advice can be hard to hear",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -627,7 +627,7 @@
     "english": "One cry of the crane",
     "meaning": "A single influential person settles a matter",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 71,
@@ -797,7 +797,7 @@
     "romaji": "Hito no furi mite waga furi naose",
     "english": "Watch others and correct yourself",
     "meaning": "Learn from others' behavior",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -806,7 +806,7 @@
     "romaji": "Keizoku wa chikara nari",
     "english": "Continuation is power",
     "meaning": "Consistency leads to strength",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -815,7 +815,7 @@
     "romaji": "Ame futte ji katamaru",
     "english": "After the rain, the ground hardens",
     "meaning": "Hard times make relationships stronger",
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -825,7 +825,7 @@
     "english": "A rolling stone gathers no moss",
     "meaning": "Constant change prevents stagnation",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 93,

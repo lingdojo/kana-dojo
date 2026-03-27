@@ -131,7 +131,7 @@
     "dont": "現金を投げるように渡す",
     "note": "丁寧で非接触な受け渡し。",
     "id": 15,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -194,7 +194,7 @@
     "dont": "土足で室内に上がる",
     "note": "家庭・旅館では基本マナー。",
     "id": 22,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -852,7 +852,7 @@
     "note": "丁寧で非接触な受け渡し。",
     "id": 95,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "situation": "乾杯 5",
@@ -861,7 +861,7 @@
     "note": "場の一体感を重視。",
     "id": 96,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "situation": "公共スペース 5",
@@ -870,7 +870,7 @@
     "note": "ゴミ箱が少ない地域がある。",
     "id": 97,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "situation": "お辞儀 5",
@@ -879,7 +879,7 @@
     "note": "丁寧さは姿勢で伝わる。",
     "id": 98,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "situation": "エスカレーター 5",
@@ -887,7 +887,7 @@
     "dont": "両側を塞ぐ",
     "note": "地域差に注意。",
     "id": 99,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
