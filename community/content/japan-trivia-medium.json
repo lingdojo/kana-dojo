@@ -299,5 +299,16 @@
     "Winter"
   ],
   "correctIndex": 2
+},
+{
+  "question": "What is the Japanese word for \"thank you\"?",
+  "difficulty": "medium",
+  "answers": [
+    "Sumimasen",
+    "Arigatou",
+    "Ohayou",
+    "Sayonara"
+  ],
+  "correctIndex": 1
 }
 ]
