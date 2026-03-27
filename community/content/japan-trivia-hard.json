@@ -113,5 +113,16 @@
     "Yokohama"
   ],
   "correctIndex": 0
+},
+{
+  "question": "What is the Japanese term for the art of paper folding? (Community variation 90)",
+  "difficulty": "hard",
+  "answers": [
+    "Ikebana",
+    "Origami",
+    "Bonsai",
+    "Sumi-e"
+  ],
+  "correctIndex": 1
 }
 ]
