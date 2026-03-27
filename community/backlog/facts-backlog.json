@@ -128,7 +128,7 @@
   {
     "id": 22,
     "fact": "There's a Japanese word 'komorebi' (木漏れ日) specifically for sunlight filtering through leaves - no direct English translation exists.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -566,7 +566,7 @@
   {
     "id": 95,
     "fact": "There's a Japanese practice called 'goraiko' (御来光) - watching the sunrise from a mountain peak, especially on New Year's Day.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1268,7 +1268,7 @@
   {
     "id": 212,
     "fact": "The Japanese word 'arigatai' (ありがたい) originally meant 'rare and precious', which is why it became associated with gratitude.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

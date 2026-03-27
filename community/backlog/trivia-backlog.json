@@ -935,7 +935,7 @@
     ],
     "correctIndex": 0,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 68,
@@ -948,7 +948,7 @@
       "Shodo"
     ],
     "correctIndex": 0,
-    "completed": false,
+    "completed": true,
     "issued": false
   },
   {
@@ -963,7 +963,7 @@
     ],
     "correctIndex": 0,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 70,
@@ -977,7 +977,9 @@
     ],
     "correctIndex": 0,
     "issued": false,
-    "completed": false
+    "completed": true,
+    "completedBy": "23f1002867",
+    "completedPR": 10427
   },
   {
     "id": 71,
@@ -1256,7 +1258,7 @@
       "Arctic Ocean"
     ],
     "correctIndex": 2,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1523,7 +1525,7 @@
     ],
     "correctIndex": 0,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 110,
@@ -1536,7 +1538,7 @@
       "Kyogen"
     ],
     "correctIndex": 0,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
