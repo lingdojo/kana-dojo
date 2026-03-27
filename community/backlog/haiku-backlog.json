@@ -21,7 +21,7 @@
     "kigo": "Summer grasses (natsukusa)",
     "notes": "Reflects impermanence through a historical battlefield image.",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 3,
@@ -32,7 +32,7 @@
     "season": "Autumn",
     "kigo": "Persimmon (kaki)",
     "notes": "A modern-classic haiku blending everyday life with temple atmosphere.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -68,7 +68,7 @@
     "season": "Summer",
     "kigo": "Summer rain (samidare)",
     "notes": "A dynamic river image with strong seasonal presence.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -81,7 +81,7 @@
     "kigo": "Sparrow chicks (suzume no ko)",
     "notes": "Playful and warm, characteristic of Issa's tone.",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 8,
@@ -92,7 +92,7 @@
     "season": "Summer",
     "kigo": "Morning glory (asagao)",
     "notes": "Famous for gentle empathy toward nature.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -117,7 +117,7 @@
     "kigo": "Frog (kaeru)",
     "notes": "Humorous encouragement and compassion in Issa's voice.",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 11,

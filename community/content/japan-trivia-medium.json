@@ -299,5 +299,16 @@
     "Winter"
   ],
   "correctIndex": 2
+},
+{
+  "question": "What is the name of the Japanese tea ceremony? (Community variation 90)",
+  "difficulty": "medium",
+  "answers": [
+    "Ikebana",
+    "Chado",
+    "Kendo",
+    "Shodo"
+  ],
+  "correctIndex": 1
 }
 ]
