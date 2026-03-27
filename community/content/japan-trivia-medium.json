@@ -299,5 +299,16 @@
     "Winter"
   ],
   "correctIndex": 2
+},
+{
+  "question": "What is the traditional Japanese art of paper folding called? (Community variation 70)",
+  "difficulty": "medium",
+  "answers": [
+    "Ikebana",
+    "Origami",
+    "Bonsai",
+    "Sumi-e"
+  ],
+  "correctIndex": 1
 }
 ]
