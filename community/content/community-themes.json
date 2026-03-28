@@ -1,5 +1,11 @@
 [
   {
+  id: 'cyber-kitsune',
+  backgroundColor: 'oklch(13.0% 0.058 295.0 / 1)',
+  mainColor: 'oklch(78.0% 0.195 45.0 / 1)',
+  secondaryColor: 'oklch(70.0% 0.220 310.0 / 1)'
+  },
+  {
     "id": "morning-fog",
     "backgroundColor": "oklch(22.0% 0.010 240.0 / 1)",
     "mainColor": "oklch(78.0% 0.030 220.0 / 1)",
