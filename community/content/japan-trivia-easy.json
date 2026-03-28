@@ -417,6 +417,17 @@
     "correctAnswerIndex": 0
   },
   {
+  "question": "What is the Japanese art of the traditional tea ceremony called (also known as Chanoyu)?",
+  "difficulty": "easy",
+  "answers": [
+    "Sado",
+    "Ikebana",
+    "Kaiseki",
+    "Bento"
+    ],
+    "correctIndex": 0
+  },
+  {
   "question": "Which of these is a Japanese noodle dish served in broth?",
   "difficulty": "easy",
   "answers": [
