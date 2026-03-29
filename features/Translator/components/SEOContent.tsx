@@ -1,50 +1,57 @@
 'use client';
 
 import Link from 'next/link';
-import { useTranslations } from 'next-intl';
 import { cn } from '@/shared/lib/utils';
 
-interface SEOContentProps {
-  locale?: string;
-}
+const steps = [
+  'Paste English or Japanese text into the main translator.',
+  'Translate once for a quick answer and confirm the language direction.',
+  'Open the direction-specific page if you need examples or extra guidance.',
+  'Use romaji for pronunciation support, not as a substitute for kana or kanji.',
+  'Double-check names, slang, and important wording before reusing the result.',
+];
 
-export default function SEOContent({ locale: _locale = 'en' }: SEOContentProps) {
-  const t = useTranslations('translator');
+const faqItems = [
+  {
+    q: 'What is the main translator page for?',
+    a: 'The hub is best for quick two-way translation and for sending users to the exact page that matches their intent.',
+  },
+  {
+    q: 'Should I use the hub or a child page?',
+    a: 'Use the hub for general translation. Use the direction-specific page when your exact task is English to Japanese, Japanese to English, or romaji support.',
+  },
+  {
+    q: 'Can machine translation handle names and slang perfectly?',
+    a: 'Not always. Proper names, slang, honorifics, and context-heavy lines still need manual review.',
+  },
+  {
+    q: 'Why is romaji included?',
+    a: 'Romaji helps with pronunciation and quick reading support, especially for beginners who are still learning kana.',
+  },
+];
 
-  const steps = [
-    t('seo.howToUse.steps.step1'),
-    t('seo.howToUse.steps.step2'),
-    t('seo.howToUse.steps.step3'),
-    t('seo.howToUse.steps.step4'),
-    t('seo.howToUse.steps.step5'),
-  ];
+const exampleRows = [
+  {
+    useCase: 'Travel phrase',
+    route: '/translate/english-to-japanese',
+    bestPage: 'English to Japanese',
+    example: 'Where is the station?',
+  },
+  {
+    useCase: 'Subtitle meaning',
+    route: '/translate/japanese-to-english',
+    bestPage: 'Japanese to English',
+    example: 'アニメの字幕を読みたい',
+  },
+  {
+    useCase: 'Pronunciation support',
+    route: '/translate/romaji',
+    bestPage: 'Romaji guide',
+    example: 'こんにちは -> konnichiwa',
+  },
+];
 
-  const faqItems = [
-    {
-      q: t('seo.faq.isFree.question'),
-      a: t('seo.faq.isFree.answer'),
-    },
-    {
-      q: t('seo.faq.accuracy.question'),
-      a: t('seo.faq.accuracy.answer'),
-    },
-    {
-      q: t('seo.faq.romanization.question'),
-      a: t('seo.faq.romanization.answer'),
-    },
-    {
-      q: t('seo.faq.historySaved.question'),
-      a: t('seo.faq.historySaved.answer'),
-    },
-    {
-      q: t('seo.faq.maxLength.question'),
-      a: t('seo.faq.maxLength.answer'),
-    },
-    {
-      q: 'Are there usage limits?',
-      a: 'Yes. We apply fair-use rate limits during high demand to keep the translator reliable for everyone.',
-    },
-  ];
+export default function SEOContent() {
 
   return (
     <section
@@ -55,19 +62,22 @@ export default function SEOContent({ locale: _locale = 'en' }: SEOContentProps) 
     >
       <header>
         <h2 className='text-2xl font-bold text-(--main-color)'>
-          {t('seo.guideTitle')}
+          How to use this Japanese translator
         </h2>
         <p className='mt-2 text-sm text-(--secondary-color)'>
-          Translate English and Japanese text, review romaji, and use linked study tools to keep learning.
+          The hub works best when you want a fast answer first and a
+          direction-specific page second. Use it as the front door for English
+          to Japanese, Japanese to English, and romaji-focused workflows.
         </p>
       </header>
 
       <div className='rounded-xl border border-(--border-color) bg-(--background-color) p-4'>
         <h3 className='mb-2 text-lg font-semibold text-(--main-color)'>
-          {t('seo.howToUse.title')}
+          Quick start
         </h3>
         <p className='mb-3 text-sm text-(--secondary-color)'>
-          {t('seo.howToUse.intro')}
+          Use the main translator for fast checks, then switch to the most
+          relevant route for better examples and more focused guidance.
         </p>
         <ol className='space-y-2 text-sm text-(--secondary-color)'>
           {steps.map((step, index) => (
@@ -80,24 +90,52 @@ export default function SEOContent({ locale: _locale = 'en' }: SEOContentProps) 
           ))}
         </ol>
         <p className='mt-3 text-sm text-(--secondary-color)'>
-          {t('seo.howToUse.proTip')}
+          Pro tip: if the wording matters, compare more than one phrasing and
+          confirm the script before copying the final line.
         </p>
       </div>
 
       <div className='rounded-xl border border-(--border-color) bg-(--background-color) p-4'>
         <h3 className='mb-2 text-lg font-semibold text-(--main-color)'>
-          Search-focused translator pages
+          Choose the best translator route
         </h3>
-        <div className='grid gap-3 sm:grid-cols-3'>
-          <Link href='/translate/english-to-japanese' className='rounded-lg border border-(--border-color) p-3 text-sm font-medium text-(--main-color) hover:bg-(--card-color)'>English to Japanese</Link>
-          <Link href='/translate/japanese-to-english' className='rounded-lg border border-(--border-color) p-3 text-sm font-medium text-(--main-color) hover:bg-(--card-color)'>Japanese to English</Link>
-          <Link href='/translate/romaji' className='rounded-lg border border-(--border-color) p-3 text-sm font-medium text-(--main-color) hover:bg-(--card-color)'>Japanese Romaji Guide</Link>
+        <div className='grid gap-3 md:grid-cols-3'>
+          {exampleRows.map(row => (
+            <Link
+              key={row.bestPage}
+              href={row.route}
+              className='rounded-lg border border-(--border-color) p-3 text-sm text-(--secondary-color) hover:bg-(--card-color)'
+            >
+              <span className='block font-medium text-(--main-color)'>
+                {row.bestPage}
+              </span>
+              <span className='mt-1 block'>{row.useCase}</span>
+              <span className='mt-2 block text-xs'>{row.example}</span>
+            </Link>
+          ))}
         </div>
       </div>
 
       <div className='rounded-xl border border-(--border-color) bg-(--background-color) p-4'>
         <h3 className='mb-3 text-lg font-semibold text-(--main-color)'>
-          {t('seo.faq.title')}
+          Common translation tasks
+        </h3>
+        <div className='space-y-3 text-sm text-(--secondary-color)'>
+          <p>
+            Use the hub when you are not sure which translation direction is the
+            right one yet. It is the fastest way to test a phrase, compare the
+            two directions, and then move into the more specific page.
+          </p>
+          <p>
+            It is especially useful for short notes, names, travel questions,
+            study prompts, subtitle checks, and quick pronunciation support.
+          </p>
+        </div>
+      </div>
+
+      <div className='rounded-xl border border-(--border-color) bg-(--background-color) p-4'>
+        <h3 className='mb-3 text-lg font-semibold text-(--main-color)'>
+          FAQ
         </h3>
         <div className='space-y-3'>
           {faqItems.map(item => (
@@ -133,7 +171,7 @@ export default function SEOContent({ locale: _locale = 'en' }: SEOContentProps) 
         </ul>
       </div>
 
-      <div className='grid gap-3 sm:grid-cols-2'>
+      <div className='grid gap-3 sm:grid-cols-3'>
         <Link href='/kana' className='rounded-xl border border-(--border-color) p-4 text-sm text-(--secondary-color) hover:bg-(--background-color)'>
           <span className='block font-semibold text-(--main-color)'>Hiragana & Katakana practice</span>
           Build reading speed and recognition.
@@ -141,6 +179,10 @@ export default function SEOContent({ locale: _locale = 'en' }: SEOContentProps) 
         <Link href='/kanji' className='rounded-xl border border-(--border-color) p-4 text-sm text-(--secondary-color) hover:bg-(--background-color)'>
           <span className='block font-semibold text-(--main-color)'>Kanji study by JLPT level</span>
           Verify translation context and meaning.
+        </Link>
+        <Link href='/academy/japanese-pronunciation-guide-beginners' className='rounded-xl border border-(--border-color) p-4 text-sm text-(--secondary-color) hover:bg-(--background-color)'>
+          <span className='block font-semibold text-(--main-color)'>Pronunciation guide</span>
+          Pair romaji with better speaking habits.
         </Link>
       </div>
     </section>

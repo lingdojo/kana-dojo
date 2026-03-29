@@ -15,8 +15,8 @@ import {
 
 import { chunkArray } from '@/shared/lib/helperFunctions';
 import { cardBorderStyles } from '@/shared/lib/styles';
-import useGridColumns from '@/shared/hooks/useGridColumns';
-import { useClick } from '@/shared/hooks/useAudio';
+import useGridColumns from '@/shared/hooks/generic/useGridColumns';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 import { ActionButton } from '@/shared/components/ui/ActionButton';
 import QuickSelectModal from '@/shared/components/Modals/QuickSelectModal';
 import { cn } from '@/shared/lib/utils';
@@ -387,7 +387,7 @@ const LevelSetCards = <TLevel extends string, TItem>({
             key={`row-${rowIndex}`}
             className={clsx('flex flex-col gap-4 py-4', cardBorderStyles)}
           >
-            <h3>
+            <h3 className='w-full'>
               <button
                 type='button'
                 onClick={() => {
@@ -399,7 +399,7 @@ const LevelSetCards = <TLevel extends string, TItem>({
                   );
                 }}
                 className={clsx(
-                  'group ml-4 flex flex-row items-center gap-2 rounded-xl text-3xl hover:cursor-pointer',
+                  'group ml-4 flex w-full flex-row items-center gap-2 rounded-xl text-3xl hover:cursor-pointer',
                   collapsedRows.includes(rowIndex) && 'mb-1.5',
                 )}
                 aria-expanded={!collapsedRows.includes(rowIndex)}

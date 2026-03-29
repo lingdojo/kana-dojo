@@ -133,6 +133,20 @@
     "note": "Characteristic Nagoya intensifier. (Set 1)"
   },
   {
+    "dialect": "にふぇーでーびる",
+    "standardJapanese": "ありがとうございます",
+    "english": "thank you",
+    "region": "Okinawa",
+    "note": "Okinawan gratitude expression. (Set 4)"
+  },
+  {
+    "dialect": "いけん",
+    "standardJapanese": "いけない",
+    "english": "no/cannot",
+    "region": "Chugoku",
+    "note": "Prohibitive nuance. (Set 1)"
+  },
+  {
     "dialect": "よか",
     "standardJapanese": "いい",
     "english": "good",
@@ -140,24 +154,31 @@
     "note": "Common Kyushu replacement. (Set 6)"
   },
   {
-  "dialect": "〜じゃけぇ",
-  "standardJapanese": "〜だから",
-  "english": "because",
-  "region": "Hiroshima",
-  "note": "Common causal ending. (Set 6)"
-},
+    "dialect": "〜じゃけぇ",
+    "standardJapanese": "〜だから",
+    "english": "because",
+    "region": "Hiroshima",
+    "note": "Common causal ending. (Set 6)"
+  },
   {
-  "dialect": "ぶち",
-  "standardJapanese": "とても",
-  "english": "very",
-  "region": "Yamaguchi/Hiroshima",
-  "note": "Regional intensifier. (Set 1)"
-},
+    "dialect": "ぶち",
+    "standardJapanese": "とても",
+    "english": "very",
+    "region": "Yamaguchi/Hiroshima",
+    "note": "Regional intensifier. (Set 1)"
+  },
   {
-  "dialect": "〜ばい",
-  "standardJapanese": "〜だよ",
-  "english": "sentence ending",
-  "region": "Fukuoka",
-  "note": "Assertive friendly ending. (Set 4)"
-}
+    "dialect": "〜ばい",
+    "standardJapanese": "〜だよ",
+    "english": "sentence ending",
+    "region": "Fukuoka",
+    "note": "Assertive friendly ending. (Set 4)"
+  },
+  {
+    "dialect": "あかん",
+    "standardJapanese": "だめ",
+    "english": "no good",
+    "region": "Kansai",
+    "note": "Used for prohibition/failure. (Set 2)"
+  }
 ]

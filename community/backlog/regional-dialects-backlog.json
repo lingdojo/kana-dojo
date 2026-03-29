@@ -86,8 +86,8 @@
     "region": "Fukuoka",
     "note": "Assertive friendly ending. (Set 1)",
     "id": 9,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "〜けん",
@@ -136,8 +136,8 @@
     "region": "Yamaguchi/Hiroshima",
     "note": "Regional intensifier. (Set 1)",
     "id": 14,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "〜じゃけぇ",
@@ -286,8 +286,8 @@
     "region": "Fukuoka",
     "note": "Assertive friendly ending. (Set 2)",
     "id": 29,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "〜けん",
@@ -336,8 +336,8 @@
     "region": "Yamaguchi/Hiroshima",
     "note": "Regional intensifier. (Set 2)",
     "id": 34,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "〜じゃけぇ",
@@ -486,8 +486,8 @@
     "region": "Fukuoka",
     "note": "Assertive friendly ending. (Set 3)",
     "id": 49,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "〜けん",
@@ -686,8 +686,8 @@
     "region": "Fukuoka",
     "note": "Assertive friendly ending. (Set 4)",
     "id": 69,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "〜けん",
@@ -736,8 +736,8 @@
     "region": "Yamaguchi/Hiroshima",
     "note": "Regional intensifier. (Set 4)",
     "id": 74,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "〜じゃけぇ",
@@ -886,8 +886,8 @@
     "region": "Fukuoka",
     "note": "Assertive friendly ending. (Set 5)",
     "id": 89,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "〜けん",
@@ -936,8 +936,8 @@
     "region": "Yamaguchi/Hiroshima",
     "note": "Regional intensifier. (Set 5)",
     "id": 94,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "〜じゃけぇ",
@@ -1086,8 +1086,8 @@
     "region": "Fukuoka",
     "note": "Assertive friendly ending. (Set 6)",
     "id": 109,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "〜けん",
@@ -1146,8 +1146,8 @@
     "region": "Hiroshima",
     "note": "Common causal ending. (Set 6)",
     "id": 115,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "いけん",

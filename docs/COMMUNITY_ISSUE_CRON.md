@@ -92,6 +92,24 @@ matching the original GitHub Actions schedule.
 
 ---
 
+## Additional cronjob.org endpoints
+
+In addition to `/api/trigger-community-issue`, cronjob.org can trigger:
+
+- `POST /api/trigger-community-backlog-reset`
+  - Dispatches `.github/workflows/auto-reset-community-backlog.yml`
+  - Uses workflow inputs: `full_reset=true`, `dry_run=false`
+- `POST /api/trigger-thanos-community-content`
+  - Dispatches `.github/workflows/thanos-community-content.yml`
+  - Uses workflow inputs: `minimum_entries=100`, `prune_mode=contributors_only`, `dry_run=false`
+
+Both endpoints use the same auth model:
+
+- `Authorization: Bearer <CRON_SECRET>`
+- `GITHUB_PAT` for GitHub workflow dispatch access
+
+---
+
 ## Concurrency note
 
 The GitHub Actions workflow has `concurrency.cancel-in-progress: false`, so

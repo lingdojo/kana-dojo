@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "url": "https://cdn.example-media.com/backgrounds/tokyo-neon-rain-3840x2160.jpg",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 2,
+    "url": "https://images.samplehost.net/wallpapers/misty-kyoto-street-2560x1440.webp",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 3,
+    "url": "https://assets.wallpapers.example.org/japan/moonlit-shrine-path-4k.avif",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 4,
+    "url": "https://media.examplecdn.dev/scenery/fuji-at-blue-hour-3840x2160.jpg",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 5,
+    "url": "https://static.backgrounds.example.com/panoramas/autumn-temple-garden-3440x1440.png",
+    "issued": false,
+    "completed": true
+  }
+]

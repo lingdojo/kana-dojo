@@ -9,7 +9,6 @@ permissions:
   pull-requests: write
   issues: write
 
-# Prevent multiple reviews from overlapping on the same PR
 concurrency:
   group: pr-community-review-${{ github.event.pull_request.number }}
   cancel-in-progress: true
@@ -18,10 +17,48 @@ jobs:
   validate-and-merge:
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    # Skip automation PRs to save GitHub Actions minutes - only review external contributor PRs
     if: |
       !startsWith(github.event.pull_request.head.ref, 'automation/') &&
-      (contains(github.event.pull_request.title, 'theme') || contains(github.event.pull_request.title, 'fact') || contains(github.event.pull_request.title, 'Theme') || contains(github.event.pull_request.title, 'Fact') || contains(github.event.pull_request.title, 'proverb') || contains(github.event.pull_request.title, 'Proverb') || contains(github.event.pull_request.title, 'haiku') || contains(github.event.pull_request.title, 'Haiku') || contains(github.event.pull_request.title, 'trivia') || contains(github.event.pull_request.title, 'Trivia') || contains(github.event.pull_request.title, 'grammar') || contains(github.event.pull_request.title, 'Grammar') || contains(github.event.pull_request.title, 'anime quote') || contains(github.event.pull_request.title, 'Anime Quote') || contains(github.event.pull_request.title, 'anime-quote') || contains(github.event.pull_request.title, 'Anime-Quote') || contains(github.event.pull_request.title, 'idiom') || contains(github.event.pull_request.title, 'Idiom') || contains(github.event.pull_request.title, 'regional dialect') || contains(github.event.pull_request.title, 'Regional Dialect') || contains(github.event.pull_request.title, 'regional-dialect') || contains(github.event.pull_request.title, 'Regional-Dialect') || contains(github.event.pull_request.title, 'false friend') || contains(github.event.pull_request.title, 'False Friend') || contains(github.event.pull_request.title, 'cultural etiquette') || contains(github.event.pull_request.title, 'Cultural Etiquette') || contains(github.event.pull_request.title, 'example sentence') || contains(github.event.pull_request.title, 'Example Sentence') || contains(github.event.pull_request.title, 'common mistake') || contains(github.event.pull_request.title, 'Common Mistake') || contains(github.event.pull_request.title, 'video game quote') || contains(github.event.pull_request.title, 'Video Game Quote') || contains(github.event.pull_request.title, 'videogame quote') || contains(github.event.pull_request.title, 'Videogame Quote'))
+      (
+        contains(github.event.pull_request.title, 'theme') ||
+        contains(github.event.pull_request.title, 'fact') ||
+        contains(github.event.pull_request.title, 'Theme') ||
+        contains(github.event.pull_request.title, 'Fact') ||
+        contains(github.event.pull_request.title, 'proverb') ||
+        contains(github.event.pull_request.title, 'Proverb') ||
+        contains(github.event.pull_request.title, 'haiku') ||
+        contains(github.event.pull_request.title, 'Haiku') ||
+        contains(github.event.pull_request.title, 'trivia') ||
+        contains(github.event.pull_request.title, 'Trivia') ||
+        contains(github.event.pull_request.title, 'grammar') ||
+        contains(github.event.pull_request.title, 'Grammar') ||
+        contains(github.event.pull_request.title, 'anime quote') ||
+        contains(github.event.pull_request.title, 'Anime Quote') ||
+        contains(github.event.pull_request.title, 'anime-quote') ||
+        contains(github.event.pull_request.title, 'Anime-Quote') ||
+        contains(github.event.pull_request.title, 'idiom') ||
+        contains(github.event.pull_request.title, 'Idiom') ||
+        contains(github.event.pull_request.title, 'regional dialect') ||
+        contains(github.event.pull_request.title, 'Regional Dialect') ||
+        contains(github.event.pull_request.title, 'regional-dialect') ||
+        contains(github.event.pull_request.title, 'Regional-Dialect') ||
+        contains(github.event.pull_request.title, 'false friend') ||
+        contains(github.event.pull_request.title, 'False Friend') ||
+        contains(github.event.pull_request.title, 'cultural etiquette') ||
+        contains(github.event.pull_request.title, 'Cultural Etiquette') ||
+        contains(github.event.pull_request.title, 'example sentence') ||
+        contains(github.event.pull_request.title, 'Example Sentence') ||
+        contains(github.event.pull_request.title, 'common mistake') ||
+        contains(github.event.pull_request.title, 'Common Mistake') ||
+        contains(github.event.pull_request.title, 'video game quote') ||
+        contains(github.event.pull_request.title, 'Video Game Quote') ||
+        contains(github.event.pull_request.title, 'videogame quote') ||
+        contains(github.event.pull_request.title, 'Videogame Quote') ||
+        contains(github.event.pull_request.title, 'wallpaper url') ||
+        contains(github.event.pull_request.title, 'Wallpaper URL') ||
+        contains(github.event.pull_request.title, 'community note line') ||
+        contains(github.event.pull_request.title, 'Community Note Line')
+      )
 
     steps:
       - name: Checkout base branch
@@ -45,6 +82,7 @@ jobs:
           github-token: ${{ secrets.AUTOMATION_PR_TOKEN || secrets.GITHUB_TOKEN }}
           script: |
             const fs = require('fs');
+            const path = require('path');
             const templates = require('./.github/templates/messages.cjs');
             const t = templates.communityReview;
 
@@ -54,12 +92,10 @@ jobs:
             const prNumber = context.payload.pull_request.number;
             const prAuthor = context.payload.pull_request.user.login;
 
-            let isValid = false;
-            let validationType = null;
-            let errors = [];
-            let warnings = [];
-            let linkedIssue = null;
+            const errors = [];
+            const warnings = [];
             let foundIssue = null;
+            let linkedIssue = null;
 
             async function listAllPrFiles() {
               let files = [];
@@ -70,7 +106,7 @@ jobs:
                   repo: context.repo.repo,
                   pull_number: prNumber,
                   per_page: 100,
-                  page: page
+                  page,
                 });
                 files = files.concat(pageItems);
                 if (!pageItems || pageItems.length < 100) {
@@ -79,6 +115,135 @@ jobs:
                 page += 1;
               }
               return files;
+            }
+
+            function classifyTitle(titleLower) {
+              if (titleLower.includes('wallpaper url')) {
+                return 'wallpaper url';
+              }
+              if (titleLower.includes('community note line')) {
+                return 'community note';
+              }
+              if (titleLower.includes('anime quote') || titleLower.includes('anime-quote') || titleLower.includes('animequote')) {
+                return 'anime quote';
+              }
+              if (titleLower.includes('video game quote') || titleLower.includes('videogame quote') || titleLower.includes('video-game-quote')) {
+                return 'video game quote';
+              }
+              if (titleLower.includes('regional dialect') || titleLower.includes('regional-dialect') || titleLower.includes('regionaldialect')) {
+                return 'regional dialect';
+              }
+              if (titleLower.includes('false friend') || titleLower.includes('false-friend')) {
+                return 'false friend';
+              }
+              if (titleLower.includes('cultural etiquette') || titleLower.includes('cultural-etiquette')) {
+                return 'cultural etiquette';
+              }
+              if (titleLower.includes('example sentence') || titleLower.includes('example-sentence')) {
+                return 'example sentence';
+              }
+              if (titleLower.includes('common mistake') || titleLower.includes('common-mistake')) {
+                return 'common mistake';
+              }
+              if (titleLower.includes('theme')) {
+                return 'theme';
+              }
+              if (titleLower.includes('fact') && !titleLower.includes('proverb')) {
+                return 'fact';
+              }
+              if (titleLower.includes('proverb')) {
+                return 'proverb';
+              }
+              if (titleLower.includes('haiku')) {
+                return 'haiku';
+              }
+              if (titleLower.includes('trivia')) {
+                return 'trivia';
+              }
+              if (titleLower.includes('grammar')) {
+                return 'grammar';
+              }
+              if (titleLower.includes('idiom')) {
+                return 'idiom';
+              }
+              return 'community content';
+            }
+
+            async function searchOpenCommunityIssues(query) {
+              const q = `${query} repo:${context.repo.owner}/${context.repo.repo} is:issue is:open label:${templates.labels.community}`;
+              const res = await github.rest.search.issuesAndPullRequests({
+                q,
+                per_page: 10,
+              });
+              return res.data.items || [];
+            }
+
+            async function findMatchingIssue(validationType) {
+              const issueMatch = prBody.match(/[Cc]loses?\s*#(\d+)|[Ff]ixes?\s*#(\d+)|[Rr]esolves?\s*#(\d+)/);
+              if (issueMatch) {
+                linkedIssue = parseInt(issueMatch[1] || issueMatch[2] || issueMatch[3], 10);
+                return linkedIssue;
+              }
+
+              if (validationType === 'theme') {
+                let themeName = null;
+                const patterns = [
+                  /add\s+(.+?)\s+theme/i,
+                  /theme[:\s]+(.+)/i,
+                  /feat\(theme\)[:\s]+add\s+(.+)/i,
+                ];
+                for (const pattern of patterns) {
+                  const match = prTitle.match(pattern);
+                  if (match) {
+                    themeName = match[1].trim().replace(/theme$/i, '').trim();
+                    break;
+                  }
+                }
+                if (themeName) {
+                  const matches = await searchOpenCommunityIssues(`"Add Theme:" "${themeName}"`);
+                  if (matches.length > 0) {
+                    return matches[0].number;
+                  }
+                  const oldMatches = await searchOpenCommunityIssues(`"Add New Color Theme:" "${themeName}"`);
+                  if (oldMatches.length > 0) {
+                    return oldMatches[0].number;
+                  }
+                }
+                return null;
+              }
+
+              const idMatch = prTitle.match(/#(\d+)/);
+              const id = idMatch ? idMatch[1] : null;
+              if (!id) {
+                return null;
+              }
+
+              const queriesByType = {
+                fact: [`"Add Japan Fact #${id}"`, `"Add new Japan Fact #${id}"`],
+                proverb: [`"Add Japanese Proverb #${id}"`, `"Add new Japanese Proverb #${id}"`],
+                haiku: [`"Add Japanese Haiku #${id}"`, `"Add Classic Japanese Haiku #${id}"`, `"Add new Japanese Haiku #${id}"`],
+                trivia: [`"Add Trivia Question #${id}"`, `"Add New Trivia Question #${id}"`, `"Add new Trivia Question #${id}"`],
+                grammar: [`"Add Grammar Point #${id}"`, `"Add New Grammar Point #${id}"`, `"Add new Grammar Point #${id}"`],
+                'anime quote': [`"Add Anime Quote #${id}"`, `"Add Famous Anime Quote #${id}"`, `"Add new Anime Quote #${id}"`],
+                idiom: [`"Add Japanese Idiom #${id}"`, `"Add New Japanese Idiom #${id}"`, `"Add new Japanese Idiom #${id}"`],
+                'regional dialect': [`"Add Dialect Entry #${id}"`, `"Add Regional Dialect Entry #${id}"`, `"Add new Dialect Entry #${id}"`],
+                'false friend': [`"Add False Friend Pair #${id}"`, `"Add Japanese False Friend #${id}"`, `"Add new False Friend Pair #${id}"`],
+                'cultural etiquette': [`"Add Etiquette Tip #${id}"`, `"Add Japanese Cultural Etiquette Tip #${id}"`, `"Add new Etiquette Tip #${id}"`],
+                'example sentence': [`"Add Example Sentence #${id}"`, `"Add Japanese Example Sentence #${id}"`, `"Add new Example Sentence #${id}"`],
+                'common mistake': [`"Add Learner Mistake #${id}"`, `"Add Common Japanese Learner Mistake #${id}"`, `"Add new Learner Mistake #${id}"`],
+                'video game quote': [`"Add Video Game Quote #${id}"`, `"Add Famous Japanese Video Game Quote #${id}"`, `"Add new Video Game Quote #${id}"`],
+                'wallpaper url': [`"Add Wallpaper URL #${id}"`, `"Add new Wallpaper URL #${id}"`],
+                'community note': [`"Add Community Note Line #${id}"`, `"Add new Community Note Line #${id}"`],
+              };
+
+              const queries = queriesByType[validationType] || [];
+              for (const query of queries) {
+                const matches = await searchOpenCommunityIssues(query);
+                if (matches.length > 0) {
+                  return matches[0].number;
+                }
+              }
+              return null;
             }
 
             let prFiles = [];
@@ -92,706 +257,101 @@ jobs:
             const reviewedFiles = prFiles.filter(function(file) {
               return !ignoredFiles.includes(file.filename);
             });
+            const changedPaths = reviewedFiles.map(function(file) { return file.filename; });
+            const docsPaths = changedPaths.filter(function(file) {
+              return file.startsWith('docs/community-notes/');
+            });
+            const contentPaths = changedPaths.filter(function(file) {
+              return file.startsWith('community/content/');
+            });
 
-            const isThemeContribution = prTitleLower.includes('theme');
-            const isFactContribution = prTitleLower.includes('fact') && !prTitleLower.includes('proverb');
-            const isProverbContribution = prTitleLower.includes('proverb');
-            const isHaikuContribution = prTitleLower.includes('haiku');
-            const isTriviaContribution = prTitleLower.includes('trivia');
-            const isGrammarContribution = prTitleLower.includes('grammar');
-            const isAnimeQuoteContribution = prTitleLower.includes('anime quote') || prTitleLower.includes('anime-quote') || prTitleLower.includes('animequote');
-            const isIdiomContribution = prTitleLower.includes('idiom');
-            const isRegionalDialectContribution = prTitleLower.includes('regional dialect') || prTitleLower.includes('regional-dialect') || prTitleLower.includes('regionaldialect');
-            const isFalseFriendContribution = prTitleLower.includes('false friend') || prTitleLower.includes('false-friend');
-            const isCulturalEtiquetteContribution = prTitleLower.includes('cultural etiquette') || prTitleLower.includes('cultural-etiquette');
-            const isExampleSentenceContribution = prTitleLower.includes('example sentence') || prTitleLower.includes('example-sentence');
-            const isCommonMistakeContribution = prTitleLower.includes('common mistake') || prTitleLower.includes('common-mistake');
-            const isVideoGameQuoteContribution = prTitleLower.includes('video game quote') || prTitleLower.includes('videogame quote') || prTitleLower.includes('video-game-quote');
-
-            if (!isThemeContribution && !isFactContribution && !isProverbContribution && !isHaikuContribution && !isTriviaContribution && !isGrammarContribution && !isAnimeQuoteContribution && !isIdiomContribution && !isRegionalDialectContribution && !isFalseFriendContribution && !isCulturalEtiquetteContribution && !isExampleSentenceContribution && !isCommonMistakeContribution && !isVideoGameQuoteContribution) {
-              console.log('Not a community contribution PR');
+            if (changedPaths.length === 0) {
+              console.log('No relevant files changed');
               return;
             }
 
-            const issueMatch = prBody.match(/[Cc]loses?\s*#(\d+)|[Ff]ixes?\s*#(\d+)|[Rr]esolves?\s*#(\d+)/);
-            if (issueMatch) {
-              linkedIssue = parseInt(issueMatch[1] || issueMatch[2] || issueMatch[3]);
-              console.log(`Issue already linked: #${linkedIssue}`);
+            const isCommunityNoteContribution = docsPaths.length > 0;
+            const isWallpaperContribution = changedPaths.includes('community/content/community-wallpaper-urls.json') || prTitleLower.includes('wallpaper url');
+
+            let validationType = classifyTitle(prTitleLower);
+            if (isCommunityNoteContribution) {
+              validationType = 'community note';
+            } else if (isWallpaperContribution) {
+              validationType = 'wallpaper url';
+            } else if (contentPaths.length > 0 && validationType === 'community content') {
+              validationType = 'community content';
             }
 
-            if (!linkedIssue) {
-              console.log('No issue linked, searching for matching issue...');
+            if (isCommunityNoteContribution) {
+              const invalidFiles = changedPaths.filter(function(file) {
+                return !file.startsWith('docs/community-notes/');
+              });
+              if (invalidFiles.length > 0) {
+                errors.push('Community note PRs must modify only files in docs/community-notes/');
+              }
+              if (docsPaths.length !== 1) {
+                errors.push('Community note PRs must modify exactly one file in docs/community-notes/');
+              }
+            } else {
+              const invalidFiles = changedPaths.filter(function(file) {
+                return !file.startsWith('community/content/');
+              });
+              if (invalidFiles.length > 0) {
+                errors.push('Community content PRs must modify only files in community/content/');
+              }
+              if (contentPaths.length === 0) {
+                errors.push('Community content PRs must modify at least one file in community/content/');
+              }
+              if (isWallpaperContribution && !changedPaths.every(function(file) { return file === 'community/content/community-wallpaper-urls.json'; })) {
+                errors.push('Wallpaper URL PRs must modify only community/content/community-wallpaper-urls.json');
+              }
+            }
 
-              async function searchOpenCommunityIssues(query) {
-                const q = `${query} repo:${context.repo.owner}/${context.repo.repo} is:issue is:open label:${templates.labels.community}`;
-                const res = await github.rest.search.issuesAndPullRequests({
-                  q: q,
-                  per_page: 10
-                });
-                return res.data.items || [];
+            for (const file of contentPaths.filter(function(file) { return file.endsWith('.json'); })) {
+              const filePath = path.join('pr-head', file);
+              if (!fs.existsSync(filePath)) {
+                errors.push(`${file} was not found in the PR checkout`);
+                continue;
               }
-              
-              if (isThemeContribution) {
-                let themeName = null;
-                const patterns = [
-                  /add\s+(.+?)\s+theme/i,
-                  /theme[:\s]+(.+)/i,
-                  /feat\(theme\)[:\s]+add\s+(.+)/i
-                ];
-                
-                for (const pattern of patterns) {
-                  const match = prTitle.match(pattern);
-                  if (match) {
-                    themeName = match[1].trim().replace(/theme$/i, '').trim();
-                    break;
-                  }
-                }
-                
-                if (themeName) {
-                  console.log(`Looking for theme issue: ${themeName}`);
-                  const matches = await searchOpenCommunityIssues(`"Add New Color Theme:" "${themeName}"`);
-                  if (matches.length > 0) {
-                    foundIssue = matches[0].number;
-                    console.log(`Found matching theme issue: #${foundIssue}`);
-                  }
-                }
-              } else if (isFactContribution) {
-                const factIdMatch = prTitle.match(/#(\d+)/);
-                if (factIdMatch) {
-                  const factId = factIdMatch[1];
-                  console.log(`Looking for fact issue: #${factId}`);
-                  const matches = await searchOpenCommunityIssues(`"Add Japan Fact #${factId}"`);
-                  if (matches.length > 0) {
-                    foundIssue = matches[0].number;
-                    console.log(`Found matching fact issue: #${foundIssue}`);
-                  }
-                }
-              } else if (isProverbContribution) {
-                const proverbIdMatch = prTitle.match(/#(\d+)/);
-                if (proverbIdMatch) {
-                  const proverbId = proverbIdMatch[1];
-                  console.log(`Looking for proverb issue: #${proverbId}`);
-                  const matches = await searchOpenCommunityIssues(`"Add Japanese Proverb #${proverbId}"`);
-                  if (matches.length > 0) {
-                    foundIssue = matches[0].number;
-                    console.log(`Found matching proverb issue: #${foundIssue}`);
-                  }
-                }
-              } else if (isHaikuContribution) {
-                const haikuIdMatch = prTitle.match(/#(\d+)/);
-                if (haikuIdMatch) {
-                  const haikuId = haikuIdMatch[1];
-                  const matches = await searchOpenCommunityIssues(`"Add Classic Japanese Haiku #${haikuId}"`);
-                  if (matches.length > 0) {
-                    foundIssue = matches[0].number;
-                  }
-                }
-              } else if (isTriviaContribution) {
-                const triviaIdMatch = prTitle.match(/#(\d+)/);
-                if (triviaIdMatch) {
-                  const triviaId = triviaIdMatch[1];
-                  console.log(`Looking for trivia issue: #${triviaId}`);
-                  const matches = await searchOpenCommunityIssues(`"Add New Trivia Question #${triviaId}"`);
-                  if (matches.length > 0) {
-                    foundIssue = matches[0].number;
-                    console.log(`Found matching trivia issue: #${foundIssue}`);
-                  }
-                }
-              } else if (isGrammarContribution) {
-                const grammarIdMatch = prTitle.match(/#(\d+)/);
-                if (grammarIdMatch) {
-                  const grammarId = grammarIdMatch[1];
-                  console.log(`Looking for grammar issue: #${grammarId}`);
-                  const matches = await searchOpenCommunityIssues(`"Add New Grammar Point #${grammarId}"`);
-                  if (matches.length > 0) {
-                    foundIssue = matches[0].number;
-                    console.log(`Found matching grammar issue: #${foundIssue}`);
-                  }
-                }
-              } else if (isAnimeQuoteContribution) {
-                const quoteIdMatch = prTitle.match(/#(\d+)/);
-                if (quoteIdMatch) {
-                  const quoteId = quoteIdMatch[1];
-                  console.log(`Looking for anime quote issue: #${quoteId}`);
-                  const matches = await searchOpenCommunityIssues(`"Add Famous Anime Quote #${quoteId}"`);
-                  if (matches.length > 0) {
-                    foundIssue = matches[0].number;
-                    console.log(`Found matching anime quote issue: #${foundIssue}`);
-                  }
-                }
-              } else if (isIdiomContribution) {
-                const idiomIdMatch = prTitle.match(/#(\d+)/);
-                if (idiomIdMatch) {
-                  const idiomId = idiomIdMatch[1];
-                  console.log(`Looking for idiom issue: #${idiomId}`);
-                  const matches = await searchOpenCommunityIssues(`"Add New Japanese Idiom #${idiomId}"`);
-                  if (matches.length > 0) {
-                    foundIssue = matches[0].number;
-                    console.log(`Found matching idiom issue: #${foundIssue}`);
-                  }
-                }
-              } else if (isRegionalDialectContribution) {
-                const dialectIdMatch = prTitle.match(/#(\d+)/);
-                if (dialectIdMatch) {
-                  const dialectId = dialectIdMatch[1];
-                  console.log(`Looking for regional dialect issue: #${dialectId}`);
-                  const matches = await searchOpenCommunityIssues(`"Add Regional Dialect Entry #${dialectId}"`);
-                  if (matches.length > 0) {
-                    foundIssue = matches[0].number;
-                    console.log(`Found matching regional dialect issue: #${foundIssue}`);
-                  }
-                }
-              } else if (isFalseFriendContribution) {
-                const idMatch = prTitle.match(/#(\d+)/);
-                if (idMatch) {
-                  const id = idMatch[1];
-                  const matches = await searchOpenCommunityIssues(`"Add Japanese False Friend #${id}"`);
-                  if (matches.length > 0) {
-                    foundIssue = matches[0].number;
-                  }
-                }
-              } else if (isCulturalEtiquetteContribution) {
-                const idMatch = prTitle.match(/#(\d+)/);
-                if (idMatch) {
-                  const id = idMatch[1];
-                  const matches = await searchOpenCommunityIssues(`"Add Japanese Cultural Etiquette Tip #${id}"`);
-                  if (matches.length > 0) {
-                    foundIssue = matches[0].number;
-                  }
-                }
-              } else if (isExampleSentenceContribution) {
-                const idMatch = prTitle.match(/#(\d+)/);
-                if (idMatch) {
-                  const id = idMatch[1];
-                  const matches = await searchOpenCommunityIssues(`"Add Japanese Example Sentence #${id}"`);
-                  if (matches.length > 0) {
-                    foundIssue = matches[0].number;
-                  }
-                }
-              } else if (isCommonMistakeContribution) {
-                const idMatch = prTitle.match(/#(\d+)/);
-                if (idMatch) {
-                  const id = idMatch[1];
-                  const matches = await searchOpenCommunityIssues(`"Add Common Japanese Learner Mistake #${id}"`);
-                  if (matches.length > 0) {
-                    foundIssue = matches[0].number;
-                  }
-                }
-              } else if (isVideoGameQuoteContribution) {
-                const idMatch = prTitle.match(/#(\d+)/);
-                if (idMatch) {
-                  const id = idMatch[1];
-                  const matches = await searchOpenCommunityIssues(`"Add Famous Japanese Video Game Quote #${id}"`);
-                  if (matches.length > 0) {
-                    foundIssue = matches[0].number;
-                  }
-                }
+              try {
+                JSON.parse(fs.readFileSync(filePath, 'utf8'));
+              } catch (e) {
+                errors.push(`Invalid JSON in ${file}: ${e.message}`);
               }
+            }
+
+            try {
+              foundIssue = await findMatchingIssue(validationType);
+            } catch (e) {
+              warnings.push(`Could not search for a matching issue: ${e.message}`);
             }
 
             const targetIssue = linkedIssue || foundIssue;
-
-            if (isThemeContribution) {
-              validationType = 'theme';
-              console.log('Validating theme contribution');
-
-              const allowed = ['community/content/community-themes.json'];
-              const changed = reviewedFiles.map(function(f) { return f.filename; });
-              const invalidFiles = changed.filter(function(p) { return !allowed.includes(p); });
-              if (changed.length !== 1 || invalidFiles.length > 0) {
-                errors.push('Theme PRs must modify only community/content/community-themes.json');
-              }
-              
-              try {
-                const themesPath = 'pr-head/community/content/community-themes.json';
-                if (!fs.existsSync(themesPath)) {
-                  errors.push('community-themes.json file not found in PR');
-                } else {
-                  const content = fs.readFileSync(themesPath, 'utf8');
-                  try {
-                    const themes = JSON.parse(content);
-                    if (!Array.isArray(themes)) {
-                      errors.push('community-themes.json should be an array');
-                    } else {
-                      const invalidThemes = themes.filter(function(theme) {
-                        return !theme.id || !theme.backgroundColor || !theme.mainColor || !theme.secondaryColor;
-                      });
-                      if (invalidThemes.length > 0) {
-                        errors.push('Each theme must include id, backgroundColor, mainColor, and secondaryColor');
-                      }
-                    }
-                  } catch (parseErr) {
-                    errors.push(`Invalid JSON: ${parseErr.message}`);
-                  }
-                  
-                  if (!targetIssue) {
-                    warnings.push('Could not find a matching community issue for this theme');
-                  }
-                }
-              } catch (e) {
-                errors.push(`Error reading themes file: ${e.message}`);
-              }
-              
-            } else if (isFactContribution) {
-              validationType = 'fact';
-              console.log('Validating fact contribution');
-
-              const allowed = ['community/content/japan-facts.json'];
-              const changed = reviewedFiles.map(function(f) { return f.filename; });
-              const invalidFiles = changed.filter(function(p) { return !allowed.includes(p); });
-              if (changed.length !== 1 || invalidFiles.length > 0) {
-                errors.push('Fact PRs must modify only community/content/japan-facts.json');
-              }
-              
-              try {
-                const factsPath = 'pr-head/community/content/japan-facts.json';
-                if (!fs.existsSync(factsPath)) {
-                  errors.push('japan-facts.json file not found in PR');
-                } else {
-                  const content = fs.readFileSync(factsPath, 'utf8');
-                  
-                  try {
-                    const facts = JSON.parse(content);
-                    
-                    if (!Array.isArray(facts)) {
-                      errors.push('japan-facts.json should be an array');
-                    } else {
-                      const nonStrings = facts.filter(function(f) { return typeof f !== 'string'; });
-                      if (nonStrings.length > 0) {
-                        errors.push('All facts should be strings');
-                      }
-                    }
-                  } catch (parseErr) {
-                    errors.push(`Invalid JSON: ${parseErr.message}`);
-                  }
-                  
-                  if (!targetIssue) {
-                    warnings.push('Could not find a matching community issue for this fact');
-                  }
-                }
-              } catch (e) {
-                errors.push(`Error reading facts file: ${e.message}`);
-              }
-            } else if (isProverbContribution) {
-              validationType = 'proverb';
-              console.log('Validating proverb contribution');
-
-              const allowed = ['community/content/japanese-proverbs.json'];
-              const changed = reviewedFiles.map(function(f) { return f.filename; });
-              const invalidFiles = changed.filter(function(p) { return !allowed.includes(p); });
-              if (changed.length !== 1 || invalidFiles.length > 0) {
-                errors.push('Proverb PRs must modify only community/content/japanese-proverbs.json');
-              }
-              
-              try {
-                const proverbsPath = 'pr-head/community/content/japanese-proverbs.json';
-                if (!fs.existsSync(proverbsPath)) {
-                  errors.push('japanese-proverbs.json file not found in PR');
-                } else {
-                  const content = fs.readFileSync(proverbsPath, 'utf8');
-                  
-                  try {
-                    const proverbs = JSON.parse(content);
-                    
-                    if (!Array.isArray(proverbs)) {
-                      errors.push('japanese-proverbs.json should be an array');
-                    } else {
-                      // Check each proverb has required fields
-                      const invalidProverbs = proverbs.filter(function(p) {
-                        return !p.japanese || !p.romaji || !p.english || !p.meaning;
-                      });
-                      if (invalidProverbs.length > 0) {
-                        errors.push('Each proverb must have japanese, romaji, english, and meaning fields');
-                      }
-                    }
-                  } catch (parseErr) {
-                    errors.push(`Invalid JSON: ${parseErr.message}`);
-                  }
-                  
-                  if (!targetIssue) {
-                    warnings.push('Could not find a matching community issue for this proverb');
-                  }
-                }
-              } catch (e) {
-                errors.push(`Error reading proverbs file: ${e.message}`);
-              }
-            } else if (isHaikuContribution) {
-              validationType = 'haiku';
-              console.log('Validating haiku contribution');
-
-              const allowed = ['community/content/japanese-haiku.json'];
-              const changed = reviewedFiles.map(function(f) { return f.filename; });
-              if (changed.length === 0 || changed.some(function(path) { return !allowed.includes(path); })) {
-                errors.push('Haiku PRs must modify only community/content/japanese-haiku.json');
-              } else {
-                const fp = 'pr-head/community/content/japanese-haiku.json';
-                if (!fs.existsSync(fp)) {
-                  errors.push('japanese-haiku.json file not found in PR');
-                } else {
-                  const content = fs.readFileSync(fp, 'utf8');
-                  try {
-                    const items = JSON.parse(content);
-                    if (!Array.isArray(items)) {
-                      errors.push('japanese-haiku.json should be an array');
-                    } else {
-                      const invalid = items.filter(function(h) {
-                        return !h || typeof h !== 'object' || !h.japanese || !h.romaji || !h.english || !h.poet || !h.season || !h.kigo || !h.notes;
-                      });
-                      if (invalid.length > 0) {
-                        errors.push('Each haiku must include japanese, romaji, english, poet, season, kigo, and notes fields');
-                      }
-                    }
-                  } catch (e) {
-                    errors.push(`Invalid JSON format in japanese-haiku.json: ${e.message}`);
-                  }
-                }
-                if (!targetIssue) {
-                  warnings.push('Could not find a matching community issue for this haiku');
-                }
-              }
-            } else if (isTriviaContribution) {
-              validationType = 'trivia';
-              console.log('Validating trivia contribution');
-
-              const triviaFilePattern = /^community\/content\/japan-trivia(?:-(easy|medium|hard))?\.json$/;
-              const changed = reviewedFiles.map(function(f) { return f.filename; });
-              const triviaChanged = changed.filter(function(p) { return triviaFilePattern.test(p); });
-              const invalidFiles = changed.filter(function(p) { return !triviaFilePattern.test(p); });
-              if (triviaChanged.length !== 1 || invalidFiles.length > 0) {
-                errors.push('Trivia PRs must modify exactly one trivia JSON file in community/content (easy/medium/hard).');
-              }
-
-              try {
-                const triviaPath = triviaChanged.length > 0 ? `pr-head/${triviaChanged[0]}` : null;
-                if (!triviaPath || !fs.existsSync(triviaPath)) {
-                  errors.push('Trivia JSON file not found in PR');
-                } else {
-                  const content = fs.readFileSync(triviaPath, 'utf8');
-
-                  try {
-                    const trivia = JSON.parse(content);
-
-                    if (!Array.isArray(trivia)) {
-                      errors.push('Trivia JSON should be an array');
-                    } else {
-                      const invalidTrivia = trivia.filter(function(q) {
-                        return !q.question || !Array.isArray(q.answers) || q.answers.length !== 4 || typeof q.correctIndex !== 'number';
-                      });
-                      if (invalidTrivia.length > 0) {
-                        errors.push('Each trivia entry must include a question, 4 answers, and a numeric correctIndex');
-                      }
-                    }
-                  } catch (parseErr) {
-                    errors.push(`Invalid JSON: ${parseErr.message}`);
-                  }
-
-                  if (!targetIssue) {
-                    warnings.push('Could not find a matching community issue for this trivia question');
-                  }
-                }
-              } catch (e) {
-                errors.push(`Error reading trivia file: ${e.message}`);
-              }
-            } else if (isGrammarContribution) {
-              validationType = 'grammar';
-              console.log('Validating grammar contribution');
-
-              const allowed = ['community/content/japanese-grammar.json'];
-              const changed = reviewedFiles.map(function(f) { return f.filename; });
-              const invalidFiles = changed.filter(function(p) { return !allowed.includes(p); });
-              if (changed.length !== 1 || invalidFiles.length > 0) {
-                errors.push('Grammar PRs must modify only community/content/japanese-grammar.json');
-              }
-
-              try {
-                const grammarPath = 'pr-head/community/content/japanese-grammar.json';
-                if (!fs.existsSync(grammarPath)) {
-                  errors.push('japanese-grammar.json file not found in PR');
-                } else {
-                  const content = fs.readFileSync(grammarPath, 'utf8');
-
-                  try {
-                    const grammar = JSON.parse(content);
-
-                    if (!Array.isArray(grammar)) {
-                      errors.push('japanese-grammar.json should be an array');
-                    } else {
-                      const nonStrings = grammar.filter(function(g) { return typeof g !== 'string'; });
-                      if (nonStrings.length > 0) {
-                        errors.push('All grammar points should be strings');
-                      }
-                    }
-                  } catch (parseErr) {
-                    errors.push(`Invalid JSON: ${parseErr.message}`);
-                  }
-
-                  if (!targetIssue) {
-                    warnings.push('Could not find a matching community issue for this grammar point');
-                  }
-                }
-              } catch (e) {
-                errors.push(`Error reading grammar file: ${e.message}`);
-              }
-            } else if (isAnimeQuoteContribution) {
-              validationType = 'anime quote';
-              console.log('Validating anime quote contribution');
-
-              const allowed = ['community/content/anime-quotes.json'];
-              const changed = reviewedFiles.map(function(f) { return f.filename; });
-              const invalidFiles = changed.filter(function(p) { return !allowed.includes(p); });
-              if (changed.length !== 1 || invalidFiles.length > 0) {
-                errors.push('Anime quote PRs must modify only community/content/anime-quotes.json');
-              }
-
-              try {
-                const quotesPath = 'pr-head/community/content/anime-quotes.json';
-                if (!fs.existsSync(quotesPath)) {
-                  errors.push('anime-quotes.json file not found in PR');
-                } else {
-                  const content = fs.readFileSync(quotesPath, 'utf8');
-
-                  try {
-                    const quotes = JSON.parse(content);
-
-                    if (!Array.isArray(quotes)) {
-                      errors.push('anime-quotes.json should be an array');
-                    } else {
-                      const invalidQuotes = quotes.filter(function(q) {
-                        return !q.japanese || !q.romaji || !q.english || !q.anime || !q.character;
-                      });
-                      if (invalidQuotes.length > 0) {
-                        errors.push('Each anime quote must have japanese, romaji, english, anime, and character fields');
-                      }
-                    }
-                  } catch (parseErr) {
-                    errors.push(`Invalid JSON: ${parseErr.message}`);
-                  }
-
-                  if (!targetIssue) {
-                    warnings.push('Could not find a matching community issue for this anime quote');
-                  }
-                }
-              } catch (e) {
-                errors.push(`Error reading anime quotes file: ${e.message}`);
-              }
-            } else if (isIdiomContribution) {
-              validationType = 'idiom';
-              console.log('Validating idiom contribution');
-
-              const allowed = ['community/content/japanese-idioms.json'];
-              const changed = reviewedFiles.map(function(f) { return f.filename; });
-              const invalidFiles = changed.filter(function(p) { return !allowed.includes(p); });
-              if (changed.length !== 1 || invalidFiles.length > 0) {
-                errors.push('Idiom PRs must modify only community/content/japanese-idioms.json');
-              }
-
-              try {
-                const idiomsPath = 'pr-head/community/content/japanese-idioms.json';
-                if (!fs.existsSync(idiomsPath)) {
-                  errors.push('japanese-idioms.json file not found in PR');
-                } else {
-                  const content = fs.readFileSync(idiomsPath, 'utf8');
-
-                  try {
-                    const idioms = JSON.parse(content);
-
-                    if (!Array.isArray(idioms)) {
-                      errors.push('japanese-idioms.json should be an array');
-                    } else {
-                      const invalidIdioms = idioms.filter(function(i) {
-                        return !i.japanese || !i.romaji || !i.english || !i.meaning;
-                      });
-                      if (invalidIdioms.length > 0) {
-                        errors.push('Each idiom must have japanese, romaji, english, and meaning fields');
-                      }
-                    }
-                  } catch (parseErr) {
-                    errors.push(`Invalid JSON: ${parseErr.message}`);
-                  }
-
-                  if (!targetIssue) {
-                    warnings.push('Could not find a matching community issue for this idiom');
-                  }
-                }
-              } catch (e) {
-                errors.push(`Error reading idioms file: ${e.message}`);
-              }
-            } else if (isRegionalDialectContribution) {
-              validationType = 'regional dialect';
-              console.log('Validating regional dialect contribution');
-
-              const allowed = ['community/content/japanese-regional-dialects.json'];
-              const changed = reviewedFiles.map(function(f) { return f.filename; });
-              const invalidFiles = changed.filter(function(p) { return !allowed.includes(p); });
-              if (changed.length !== 1 || invalidFiles.length > 0) {
-                errors.push('Regional dialect PRs must modify only community/content/japanese-regional-dialects.json');
-              }
-
-              try {
-                const dialectPath = 'pr-head/community/content/japanese-regional-dialects.json';
-                if (!fs.existsSync(dialectPath)) {
-                  errors.push('japanese-regional-dialects.json file not found in PR');
-                } else {
-                  const content = fs.readFileSync(dialectPath, 'utf8');
-
-                  try {
-                    const dialects = JSON.parse(content);
-
-                    if (!Array.isArray(dialects)) {
-                      errors.push('japanese-regional-dialects.json should be an array');
-                    } else {
-                      const invalidDialects = dialects.filter(function(d) {
-                        return !d.dialect || !d.standardJapanese || !d.english || !d.region || !d.note;
-                      });
-                      if (invalidDialects.length > 0) {
-                        errors.push('Each regional dialect entry must have dialect, standardJapanese, english, region, and note fields');
-                      }
-                    }
-                  } catch (parseErr) {
-                    errors.push(`Invalid JSON: ${parseErr.message}`);
-                  }
-
-                  if (!targetIssue) {
-                    warnings.push('Could not find a matching community issue for this regional dialect entry');
-                  }
-                }
-              } catch (e) {
-                errors.push(`Error reading regional dialects file: ${e.message}`);
-              }
-            } else if (isFalseFriendContribution) {
-              validationType = 'false friend';
-              const allowed = ['community/content/japanese-false-friends.json'];
-              const changed = reviewedFiles.map(function(f) { return f.filename; });
-              const invalidFiles = changed.filter(function(p) { return !allowed.includes(p); });
-              if (changed.length !== 1 || invalidFiles.length > 0) {
-                errors.push('False friend PRs must modify only community/content/japanese-false-friends.json');
-              }
-              try {
-                const fp = 'pr-head/community/content/japanese-false-friends.json';
-                if (!fs.existsSync(fp)) {
-                  errors.push('japanese-false-friends.json file not found in PR');
-                } else {
-                  const items = JSON.parse(fs.readFileSync(fp, 'utf8'));
-                  if (!Array.isArray(items)) {
-                    errors.push('japanese-false-friends.json should be an array');
-                  } else if (items.some(function(i) { return !i.termA || !i.termB || !i.explanation || !i.example; })) {
-                    errors.push('Each false friend must have termA, termB, explanation, and example fields');
-                  }
-                }
-              } catch (e) {
-                errors.push(`Error reading false friends file: ${e.message}`);
-              }
-            } else if (isCulturalEtiquetteContribution) {
-              validationType = 'cultural etiquette';
-              const allowed = ['community/content/japanese-cultural-etiquette.json'];
-              const changed = reviewedFiles.map(function(f) { return f.filename; });
-              const invalidFiles = changed.filter(function(p) { return !allowed.includes(p); });
-              if (changed.length !== 1 || invalidFiles.length > 0) {
-                errors.push('Cultural etiquette PRs must modify only community/content/japanese-cultural-etiquette.json');
-              }
-              try {
-                const fp = 'pr-head/community/content/japanese-cultural-etiquette.json';
-                if (!fs.existsSync(fp)) {
-                  errors.push('japanese-cultural-etiquette.json file not found in PR');
-                } else {
-                  const items = JSON.parse(fs.readFileSync(fp, 'utf8'));
-                  if (!Array.isArray(items)) {
-                    errors.push('japanese-cultural-etiquette.json should be an array');
-                  } else if (items.some(function(i) { return !i.situation || !i.do || !i.dont || !i.note; })) {
-                    errors.push('Each etiquette item must have situation, do, dont, and note fields');
-                  }
-                }
-              } catch (e) {
-                errors.push(`Error reading cultural etiquette file: ${e.message}`);
-              }
-            } else if (isExampleSentenceContribution) {
-              validationType = 'example sentence';
-              const allowed = ['community/content/japanese-example-sentences.json'];
-              const changed = reviewedFiles.map(function(f) { return f.filename; });
-              const invalidFiles = changed.filter(function(p) { return !allowed.includes(p); });
-              if (changed.length !== 1 || invalidFiles.length > 0) {
-                errors.push('Example sentence PRs must modify only community/content/japanese-example-sentences.json');
-              }
-              try {
-                const fp = 'pr-head/community/content/japanese-example-sentences.json';
-                if (!fs.existsSync(fp)) {
-                  errors.push('japanese-example-sentences.json file not found in PR');
-                } else {
-                  const items = JSON.parse(fs.readFileSync(fp, 'utf8'));
-                  if (!Array.isArray(items)) {
-                    errors.push('japanese-example-sentences.json should be an array');
-                  } else if (items.some(function(i) { return !i.japanese || !i.romaji || !i.english || !i.jlpt; })) {
-                    errors.push('Each example sentence must have japanese, romaji, english, and jlpt fields');
-                  }
-                }
-              } catch (e) {
-                errors.push(`Error reading example sentences file: ${e.message}`);
-              }
-            } else if (isCommonMistakeContribution) {
-              validationType = 'common mistake';
-              const allowed = ['community/content/japanese-common-mistakes.json'];
-              const changed = reviewedFiles.map(function(f) { return f.filename; });
-              const invalidFiles = changed.filter(function(p) { return !allowed.includes(p); });
-              if (changed.length !== 1 || invalidFiles.length > 0) {
-                errors.push('Common mistake PRs must modify only community/content/japanese-common-mistakes.json');
-              }
-              try {
-                const fp = 'pr-head/community/content/japanese-common-mistakes.json';
-                if (!fs.existsSync(fp)) {
-                  errors.push('japanese-common-mistakes.json file not found in PR');
-                } else {
-                  const items = JSON.parse(fs.readFileSync(fp, 'utf8'));
-                  if (!Array.isArray(items)) {
-                    errors.push('japanese-common-mistakes.json should be an array');
-                  } else if (items.some(function(i) { return !i.wrong || !i.correct || !i.explanation; })) {
-                    errors.push('Each common mistake must have wrong, correct, and explanation fields');
-                  }
-                }
-              } catch (e) {
-                errors.push(`Error reading common mistakes file: ${e.message}`);
-              }
-            } else if (isVideoGameQuoteContribution) {
-              validationType = 'video game quote';
-              const allowed = ['community/content/japanese-videogame-quotes.json'];
-              const changed = reviewedFiles.map(function(f) { return f.filename; });
-              const invalidFiles = changed.filter(function(p) { return !allowed.includes(p); });
-              if (changed.length !== 1 || invalidFiles.length > 0) {
-                errors.push('Video game quote PRs must modify only community/content/japanese-videogame-quotes.json');
-              }
-              try {
-                const fp = 'pr-head/community/content/japanese-videogame-quotes.json';
-                if (!fs.existsSync(fp)) {
-                  errors.push('japanese-videogame-quotes.json file not found in PR');
-                } else {
-                  const items = JSON.parse(fs.readFileSync(fp, 'utf8'));
-                  if (!Array.isArray(items)) {
-                    errors.push('japanese-videogame-quotes.json should be an array');
-                  } else if (items.some(function(i) { return !i.japanese || !i.romaji || !i.english || !i.game || !i.character; })) {
-                    errors.push('Each video game quote must have japanese, romaji, english, game, and character fields');
-                  }
-                }
-              } catch (e) {
-                errors.push(`Error reading video game quotes file: ${e.message}`);
-              }
+            if (!targetIssue) {
+              warnings.push('Could not find a matching community issue for this PR');
             }
 
-            isValid = errors.length === 0;
+            const isValid = errors.length === 0;
 
             if (foundIssue && !linkedIssue) {
-              const newBody = `${prBody}\n\n---\n🤖 **Auto-linked:** Closes #${foundIssue}`;
+              const autoLinkLine = `🤖 **Auto-linked:** Closes #${foundIssue}`;
+              const newBody = prBody.includes(autoLinkLine)
+                ? prBody
+                : `${prBody}\n\n---\n${autoLinkLine}`.trim();
               await github.rest.pulls.update({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 pull_number: prNumber,
-                body: newBody
+                body: newBody,
               });
               console.log(`Updated PR body to link issue #${foundIssue}`);
             }
 
-            let commentBody;
             const warningList = warnings.length > 0
               ? `\n\n**Warnings:**\n${warnings.map(function(w) { return '- ⚠️ ' + w; }).join('\n')}`
               : '';
+
+            let commentBody;
             if (isValid) {
               let issueNote = '';
               if (foundIssue && !linkedIssue) {
@@ -799,9 +359,8 @@ jobs:
               } else if (linkedIssue) {
                 issueNote = '\n\n' + t.passed.linkedIssue.replace('{issue}', linkedIssue);
               }
-              
+
               const checks = t.passed.checks.map(function(c) { return '- ✅ ' + c; }).join('\n');
-              
               commentBody = `${t.passed.title}\n\n${t.passed.body.replace('{type}', validationType)}\n\n**Checks passed:**\n${checks}${issueNote}${warningList}\n\n${t.passed.footer}`;
             } else {
               const errorList = errors.map(function(e) { return '- ❌ ' + e; }).join('\n');
@@ -812,83 +371,11 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: prNumber,
-              body: commentBody
+              body: commentBody,
             });
 
-            if (isValid) {
-              const labelName = 'community-auto-merge';
-
-              // Check if the label already exists on this PR (e.g. added during the 'opened' event).
-              // If so, skip re-evaluation so a subsequent 'synchronize' push doesn't remove auto-merge eligibility.
-              let labelAlreadyExists = false;
-              try {
-                const { data: prLabels } = await github.rest.issues.listLabelsOnIssue({
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  issue_number: prNumber
-                });
-                labelAlreadyExists = (prLabels || []).some(function(l) { return l.name === labelName; });
-              } catch (e) {
-                console.log(`Could not check existing labels: ${e.message}`);
-              }
-
-              if (labelAlreadyExists) {
-                console.log(`PR #${prNumber} already has '${labelName}' label; skipping contributor check.`);
-              } else {
-                // Auto-merge only for first-time contributors (author not yet in pr-authors.json).
-                // Read from the default branch so a contributor cannot game this via their PR head.
-                const authorsPath = 'community/backlog/pr-authors.json';
-                let isNewContributor = true;
-                try {
-                  const { data: authorsFile } = await github.rest.repos.getContent({
-                    owner: context.repo.owner,
-                    repo: context.repo.repo,
-                    path: authorsPath
-                  });
-                  if (authorsFile && authorsFile.content) {
-                    const parsed = JSON.parse(Buffer.from(authorsFile.content, 'base64').toString('utf8'));
-                    const authors = Array.isArray(parsed.authors) ? parsed.authors : [];
-                    const normalized = new Set(authors.map(function(a) { return String(a).toLowerCase(); }));
-                    if (normalized.has(prAuthor.toLowerCase())) {
-                      isNewContributor = false;
-                    }
-                  }
-                } catch (e) {
-                  if (e.status !== 404) {
-                    console.log(`Could not load pr-authors.json: ${e.message}`);
-                  }
-                }
-
-                if (!isNewContributor) {
-                  console.log(`PR #${prNumber} author @${prAuthor} is a returning contributor; skipping auto-merge — requires manual review.`);
-                } else {
-                  try {
-                    try {
-                      await github.rest.issues.getLabel({
-                        owner: context.repo.owner,
-                        repo: context.repo.repo,
-                        name: labelName
-                      });
-                    } catch (e) {
-                      await github.rest.issues.createLabel({
-                        owner: context.repo.owner,
-                        repo: context.repo.repo,
-                        name: labelName,
-                        color: '0e8a16'
-                      });
-                    }
-
-                    await github.rest.issues.addLabels({
-                      owner: context.repo.owner,
-                      repo: context.repo.repo,
-                      issue_number: prNumber,
-                      labels: [labelName]
-                    });
-
-                    console.log(`Marked PR #${prNumber} for merge after checks`);
-                  } catch (e) {
-                    console.log(`Could not label PR for merge after checks: ${e.message}`);
-                  }
-                }
-              }
+            if (!isValid) {
+              return;
             }
+
+            console.log(`Auto-merge disabled for PR #${prNumber}; leaving review output only.`);

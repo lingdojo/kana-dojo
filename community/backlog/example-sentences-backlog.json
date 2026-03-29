@@ -356,8 +356,8 @@
     "english": "Even though she must be busy, she always replies politely.",
     "jlpt": "N2",
     "id": 40,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "日本語を勉強し始めて三か月です。",

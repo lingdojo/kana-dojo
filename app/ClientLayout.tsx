@@ -1,6 +1,6 @@
 'use client';
 import clsx from 'clsx';
-import { useState, useEffect, startTransition, useMemo, useRef } from 'react';
+import { useState, useEffect, startTransition, useMemo } from 'react';
 import usePreferencesStore from '@/features/Preferences/store/usePreferencesStore';
 import { useCrazyMode } from '@/features/CrazyMode';
 import { useShallow } from 'zustand/react/shallow';
@@ -24,7 +24,7 @@ import MobileBottomBar from '@/shared/components/layout/BottomBar';
 import { useVisitTracker } from '@/features/Progress/hooks/useVisitTracker';
 import { getGlobalAdaptiveSelector } from '@/shared/lib/adaptiveSelection';
 import GlobalAudioController from '@/shared/components/layout/GlobalAudioController';
-import { useClick } from '@/shared/hooks/useAudio';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 import ServiceWorkerRegistration from '@/shared/components/ServiceWorkerRegistration';
 import CursorTrailRenderer from '@/features/Preferences/components/renderers/CursorTrailRenderer';
 import ClickEffectRenderer from '@/features/Preferences/components/renderers/ClickEffectRenderer';
@@ -92,7 +92,6 @@ export default function ClientLayout({
   // 3. Create state to hold the fonts module
   const [fontsModule, setFontsModule] = useState<FontObject[] | null>(null);
   const [isDonationModalOpen, setIsDonationModalOpen] = useState(false);
-  const previousPathnameRef = useRef<string | null>(null);
   const hasSeenWelcome = useOnboardingStore(state => state.hasSeenWelcome);
 
   // Memoize fontClassName calculation to prevent recalculation on every render (5-10ms savings)
@@ -114,49 +113,61 @@ export default function ClientLayout({
     const isTargetRoute = /\/(kana|kanji|vocabulary)(\/|$)/.test(pathname);
     const isPreferencesRoute = /\/preferences(\/|$)/.test(pathname);
     const isBaseRoute = pathname === '/' || pathname === '/en' || pathname === '/ja';
-    const donationSessionKey = 'donation-modal-seen';
-    const donationEligibleKey = 'donation-modal-eligible';
-    const previousPathname = previousPathnameRef.current;
+    const donationLastPathKey = 'donation-modal-last-pathname';
+    const donationCycleCountKey = 'donation-modal-cycle-count';
+    const previousPathname =
+      typeof window !== 'undefined'
+        ? sessionStorage.getItem(donationLastPathKey)
+        : null;
 
     if (isBaseRoute) {
       if (typeof window !== 'undefined') {
-        sessionStorage.removeItem(donationEligibleKey);
+        sessionStorage.setItem(donationLastPathKey, pathname);
       }
       setIsDonationModalOpen(false);
-      previousPathnameRef.current = pathname;
       return;
     }
 
-    if (isTargetRoute && previousPathname && (previousPathname === '/' || previousPathname === '/en' || previousPathname === '/ja')) {
-      if (
-        typeof window !== 'undefined' &&
-        sessionStorage.getItem(donationEligibleKey) !== 'true'
-      ) {
-        sessionStorage.setItem(donationEligibleKey, 'true');
-      }
-    }
-
     if ((isDev || isPreviewDeployment) && isPreferencesRoute) {
-      const timer = setTimeout(() => {
-        setIsDonationModalOpen(true);
-      }, 500);
-      previousPathnameRef.current = pathname;
-      return () => clearTimeout(timer);
-    }
-
-    const shouldShowInProduction =
-      hasSeenWelcome &&
-      sessionStorage.getItem(donationEligibleKey) === 'true' &&
-      sessionStorage.getItem(donationSessionKey) !== 'true';
-
-    if (shouldShowInProduction) {
-      sessionStorage.setItem(donationSessionKey, 'true');
+      if (typeof window !== 'undefined') {
+        sessionStorage.setItem(donationLastPathKey, pathname);
+      }
       const timer = setTimeout(() => {
         setIsDonationModalOpen(true);
       }, 500);
       return () => clearTimeout(timer);
     }
-    previousPathnameRef.current = pathname;
+
+    const cameFromHome =
+      previousPathname === '/' ||
+      previousPathname === '/en' ||
+      previousPathname === '/ja';
+
+    if (hasSeenWelcome && isTargetRoute && cameFromHome) {
+      const nextCount =
+        Number(
+          typeof window !== 'undefined'
+            ? sessionStorage.getItem(donationCycleCountKey)
+            : null,
+        ) + 1;
+
+      if (typeof window !== 'undefined') {
+        sessionStorage.setItem(donationCycleCountKey, String(nextCount));
+        sessionStorage.setItem(donationLastPathKey, pathname);
+      }
+
+      if (nextCount % 2 === 0) {
+        const timer = setTimeout(() => {
+          setIsDonationModalOpen(true);
+        }, 500);
+        return () => clearTimeout(timer);
+      }
+      return;
+    }
+
+    if (typeof window !== 'undefined') {
+      sessionStorage.setItem(donationLastPathKey, pathname);
+    }
   }, [hasSeenWelcome, pathname]);
 
   useEffect(() => {

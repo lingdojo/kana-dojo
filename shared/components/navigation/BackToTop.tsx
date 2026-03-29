@@ -3,7 +3,7 @@ import { useCallback, useEffect, useRef, useState, type CSSProperties } from 're
 import { ChevronsUp } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
-import { useClick } from '@/shared/hooks/useAudio';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 
 const animationKeyframes = `
 @keyframes explode-btt {
@@ -177,11 +177,9 @@ export default function BackToTop() {
       onClick={handleClick}
       className={clsx(
         'fixed top-[calc(var(--stable-vh)/2)] right-2 z-[60] -translate-y-1/2 md:top-1/2 lg:right-3',
-        'border-(--border-color) max-md:border-2',
         'inline-flex items-center justify-center rounded-full',
         'p-2 transition-all duration-200 md:p-3',
-        'bg-(--card-color) text-(--main-color)',
-        'hover:bg-(--main-color) hover:text-(--background-color)',
+        'bg-(--main-color) text-(--background-color) md:bg-(--secondary-color) md:hover:bg-(--main-color)',
         animState === 'idle' && 'hover:cursor-pointer',
       )}
       style={{ '--stable-vh': stableVh, ...getAnimationStyle() } as CSSProperties}

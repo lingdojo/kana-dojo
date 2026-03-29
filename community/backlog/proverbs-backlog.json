@@ -32,7 +32,7 @@
     "romaji": "Ishi no ue ni mo san nen",
     "english": "Three years on a stone",
     "meaning": "Patience and perseverance will eventually pay off",
-    "completed": true,
+    "completed": false,
     "issued": false
   },
   {
@@ -41,7 +41,7 @@
     "romaji": "Chiri mo tsumoreba yama to naru",
     "english": "Even dust, if piled up, becomes a mountain",
     "meaning": "Small efforts accumulate into great achievements",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -78,7 +78,7 @@
     "english": "When in a village, follow the village customs",
     "meaning": "When in Rome, do as the Romans do",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 10,
@@ -87,7 +87,7 @@
     "english": "A cane before falling",
     "meaning": "Prevention is better than cure",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 11,
@@ -123,7 +123,7 @@
     "english": "Hearing a hundred times is not as good as seeing once",
     "meaning": "Seeing is believing",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 15,
@@ -293,7 +293,7 @@
     "romaji": "Nasake wa hito no tame narazu",
     "english": "Kindness is not for others",
     "meaning": "A good deed returns to you",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -302,10 +302,8 @@
     "romaji": "Koubou ni mo fude no ayamari",
     "english": "Even Kobo makes mistakes with his brush",
     "meaning": "Even masters make mistakes",
-    "completed": true,
-    "issued": false,
-    "completedBy": "Deepak8858",
-    "completedPR": 9145
+    "completed": false,
+    "issued": false
   },
   {
     "id": 35,
@@ -349,7 +347,7 @@
     "romaji": "Ashita wa ashita no kaze ga fuku",
     "english": "Tomorrow's wind will blow tomorrow",
     "meaning": "Don't worry too much about the future",
-    "completed": true,
+    "completed": false,
     "issued": false
   },
   {
@@ -359,7 +357,7 @@
     "english": "A strong person under the veranda",
     "meaning": "An unsung hero who supports behind the scenes",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 41,
@@ -394,7 +392,7 @@
     "romaji": "Nanakorobi yaoki",
     "english": "Fall seven times, get up eight",
     "meaning": "Never give up",
-    "completed": true,
+    "completed": false,
     "issued": false
   },
   {
@@ -431,7 +429,7 @@
     "english": "A three-day monk",
     "meaning": "Someone who quits quickly",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 49,
@@ -656,7 +654,7 @@
     "english": "Do laundry while the ogre is away",
     "meaning": "Take advantage of someone's absence",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 74,
@@ -683,7 +681,7 @@
     "english": "After rain, the ground hardens",
     "meaning": "Adversity can strengthen relationships",
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "id": 77,
@@ -691,7 +689,7 @@
     "romaji": "Hari no ana kara ten wo nozoku",
     "english": "Peek at the sky through a needle's eye",
     "meaning": "A narrow viewpoint leads to poor judgment",
-    "completed": true,
+    "completed": false,
     "issued": false
   },
   {
@@ -701,7 +699,7 @@
     "english": "Hurry to do good",
     "meaning": "If it's worth doing, do it at once",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 79,
@@ -854,7 +852,7 @@
     "english": "Sometimes losing is winning",
     "meaning": "Conceding can be the best outcome",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 96,
@@ -881,7 +879,7 @@
     "english": "A rice cake falls from the shelf",
     "meaning": "Unexpected good luck",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 99,
@@ -998,7 +996,7 @@
     "english": "It's darkest under the lighthouse",
     "meaning": "The obvious is often overlooked",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 112,
@@ -1079,7 +1077,7 @@
     "english": "Fortune comes to a laughing gate",
     "meaning": "Happiness brings good fortune",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 121,
@@ -1087,7 +1085,7 @@
     "romaji": "Nanakorobi yaoki",
     "english": "Fall seven times, get up eight",
     "meaning": "Never give up",
-    "completed": true,
+    "completed": false,
     "issued": false
   },
   {
@@ -1096,7 +1094,7 @@
     "romaji": "Ryouyaku wa kuchi ni nigashi",
     "english": "Good medicine tastes bitter",
     "meaning": "Helpful advice can be harsh",
-    "completed": true,
+    "completed": false,
     "issued": false
   },
   {
@@ -1106,7 +1104,7 @@
     "english": "Regret does not stand before",
     "meaning": "It's too late for regrets",
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "id": 124,
@@ -1115,7 +1113,7 @@
     "english": "Preaching Buddha to a horse's ear",
     "meaning": "Advice is wasted on the unwilling",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 125,
@@ -1204,7 +1202,7 @@
     "romaji": "Nodomoto sugireba atsusa wo wasureru",
     "english": "Once it passes your throat, you forget the heat",
     "meaning": "People forget hardships once they are over",
-    "completed": true,
+    "completed": false,
     "issued": false
   },
   {
@@ -1339,7 +1337,7 @@
     "romaji": "Mago ni mo ishou",
     "english": "Even a packhorse driver looks good in fine clothes",
     "meaning": "Clothes make the person",
-    "completed": true,
+    "completed": false,
     "issued": false
   },
   {
@@ -1358,7 +1356,7 @@
     "english": "After the rain, the ground hardens",
     "meaning": "Hard times build resilience",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 152,
@@ -1474,7 +1472,7 @@
     "romaji": "Senri no michi mo ippo kara",
     "english": "A journey of a thousand miles begins with one step",
     "meaning": "Start small",
-    "completed": true,
+    "completed": false,
     "issued": false
   },
   {
@@ -1484,7 +1482,7 @@
     "english": "Early rising brings three coins of benefit",
     "meaning": "Wake early for advantage",
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "id": 166,
@@ -1492,7 +1490,7 @@
     "romaji": "Mago ni mo ishou",
     "english": "Even a packhorse driver looks good in fine clothes",
     "meaning": "Clothes make the person",
-    "completed": true,
+    "completed": false,
     "issued": false
   },
   {
@@ -1501,7 +1499,7 @@
     "romaji": "Ni to wo ou mono wa itto wo mo ezu",
     "english": "Chase two rabbits, catch none",
     "meaning": "Focus on one thing",
-    "completed": true,
+    "completed": false,
     "issued": false
   },
   {
@@ -1511,7 +1509,7 @@
     "english": "A frog in a well doesn’t know the ocean",
     "meaning": "Limited experience limits perspective",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 169,
@@ -1520,7 +1518,7 @@
     "english": "The mouth is the source of misfortune",
     "meaning": "Careless words cause trouble",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 170,

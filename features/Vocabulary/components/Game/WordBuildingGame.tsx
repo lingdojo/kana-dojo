@@ -6,14 +6,14 @@ import useVocabStore, {
   IVocabObj,
 } from '@/features/Vocabulary/store/useVocabStore';
 import { Random } from 'random-js';
-import { useCorrect, useError, useClick } from '@/shared/hooks/useAudio';
+import { useCorrect, useError, useClick } from '@/shared/hooks/generic/useAudio';
 import { getGlobalAdaptiveSelector } from '@/shared/lib/adaptiveSelection';
 import Stars from '@/shared/components/Game/Stars';
 import { useCrazyModeTrigger } from '@/features/CrazyMode/hooks/useCrazyModeTrigger';
 import { useStatsStore } from '@/features/Progress';
 import { useShallow } from 'zustand/react/shallow';
 import { useStopwatch } from 'react-timer-hook';
-import { useSmartReverseMode } from '@/shared/hooks/useSmartReverseMode';
+import { useSmartReverseMode } from '@/shared/hooks/game/useSmartReverseMode';
 import { GameBottomBar } from '@/shared/components/Game/GameBottomBar';
 import FuriganaText from '@/shared/components/text/FuriganaText';
 import AnswerSummary from '@/shared/components/Game/AnswerSummary';

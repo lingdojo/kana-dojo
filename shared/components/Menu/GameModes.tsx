@@ -13,7 +13,7 @@ import {
   Zap,
 } from 'lucide-react';
 import clsx from 'clsx';
-import { useClick } from '@/shared/hooks/useAudio';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 import { Link, useRouter } from '@/core/i18n/routing';
 
 import { ActionButton } from '@/shared/components/ui/ActionButton';

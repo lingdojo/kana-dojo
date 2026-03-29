@@ -22,7 +22,7 @@ import {
 } from '@/shared/components/Game/GameBottomBar';
 import Stars from '@/shared/components/Game/Stars';
 import ProgressBar from '@/shared/components/Game/ProgressBar';
-import { useClick } from '@/shared/hooks/useAudio';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 import { cn } from '@/shared/lib/utils';
 import { useThemePreferences } from '@/features/Preferences';
 import type { GauntletGameMode } from './types';

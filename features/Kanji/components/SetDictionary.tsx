@@ -5,7 +5,7 @@ import { cardBorderStyles } from '@/shared/lib/styles';
 import type { IKanjiObj } from '@/features/Kanji/store/useKanjiStore';
 import { useThemePreferences } from '@/features/Preferences';
 import FuriganaText from '@/shared/components/text/FuriganaText';
-import { useClick } from '@/shared/hooks/useAudio';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 import { memo } from 'react';
 
 type KanjiSetDictionaryProps = {

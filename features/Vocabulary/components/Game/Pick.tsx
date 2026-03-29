@@ -4,7 +4,7 @@ import { useState, useEffect, useRef, useMemo, memo } from 'react';
 import { CircleCheck, CircleX } from 'lucide-react';
 import { Random } from 'random-js';
 import { IVocabObj } from '@/features/Vocabulary/store/useVocabStore';
-import { useCorrect, useError } from '@/shared/hooks/useAudio';
+import { useCorrect, useError } from '@/shared/hooks/generic/useAudio';
 import { buttonBorderStyles } from '@/shared/lib/styles';
 // import GameIntel from '@/shared/components/Game/GameIntel';
 import { pickGameKeyMappings } from '@/shared/lib/keyMappings';
@@ -17,7 +17,7 @@ import SSRAudioButton from '@/shared/components/audio/SSRAudioButton';
 import FuriganaText from '@/shared/components/text/FuriganaText';
 import { useCrazyModeTrigger } from '@/features/CrazyMode/hooks/useCrazyModeTrigger';
 import { getGlobalAdaptiveSelector } from '@/shared/lib/adaptiveSelection';
-import { useSmartReverseMode } from '@/shared/hooks/useSmartReverseMode';
+import { useSmartReverseMode } from '@/shared/hooks/game/useSmartReverseMode';
 
 const random = new Random();
 

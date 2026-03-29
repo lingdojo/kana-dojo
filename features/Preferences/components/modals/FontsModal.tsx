@@ -3,7 +3,7 @@
 import fonts from '@/features/Preferences/data/fonts/fonts';
 import { isRecommendedFont } from '@/features/Preferences/data/fonts/recommendedFonts';
 import usePreferencesStore from '@/features/Preferences/store/usePreferencesStore';
-import { useClick } from '@/shared/hooks/useAudio';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { X, BookOpen, Sparkles } from 'lucide-react';
 import { memo, useCallback, useMemo } from 'react';

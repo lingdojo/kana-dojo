@@ -1,6 +1,6 @@
 'use client';
 
-import { useClick } from '@/shared/hooks/useAudio';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 import { ChevronsLeft } from 'lucide-react';
 import { Link } from '@/core/i18n/routing';
 import clsx from 'clsx';

@@ -241,13 +241,255 @@
     "correctIndex": 0
   },
   {
-  "question": "Which city is known for its large bronze Great Buddha?",
+    "question": "Which city is known for its large bronze Great Buddha?",
+    "difficulty": "easy",
+    "answers": [
+      "Kamakura",
+      "Kobe",
+      "Kanazawa",
+      "Matsuyama"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which ocean borders Japan to the east?",
+    "difficulty": "easy",
+    "answers": [
+      "Atlantic Ocean",
+      "Indian Ocean",
+      "Pacific Ocean",
+      "Arctic Ocean"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "question": "What is the Japanese word for \"goodbye\"? (Community variation 32)",
+    "difficulty": "easy",
+    "answers": [
+      "Sayonara",
+      "Konnichiwa",
+      "Arigatou",
+      "Oyasumi"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which Japanese dish is made of raw fish over rice?",
+    "difficulty": "easy",
+    "answers": [
+      "Sushi",
+      "Tempura",
+      "Tonkatsu",
+      "Okonomiyaki"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "question": "What is the Japanese term for a traditional inn? (Community variation 52)",
+    "difficulty": "easy",
+    "answers": [
+      "Ryokan",
+      "Minshuku",
+      "Izakaya",
+      "Yatai"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which Japanese dish is made of raw fish over rice?",
+    "difficulty": "easy",
+    "answers": [
+      "Sushi",
+      "Tempura",
+      "Tonkatsu",
+      "Okonomiyaki"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which month is traditionally associated with cherry blossom viewing (hanami) in Japan? (Community variation 3)",
+    "difficulty": "easy",
+    "answers": [
+      "January",
+      "April",
+      "July",
+      "October"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "question": "Which mountain is Japan’s highest peak? (Community variation 53)",
+    "difficulty": "easy",
+    "answers": [
+      "Mount Fuji",
+      "Mount Kita",
+      "Mount Tate",
+      "Mount Haku"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "question": "What is the name of the bullet train network in Japan? (Community variation 2)",
+    "difficulty": "easy",
+    "answers": [
+      "Shinkansen",
+      "Metro Line",
+      "Skyrail",
+      "Kairo"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "question": "What is the name of Japan's traditional theatre known for stylized performances and masks? (Community variation 6)",
+    "difficulty": "easy",
+    "answers": [
+      "Kabuki",
+      "Noh",
+      "Rakugo",
+      "Bunraku"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "question": "What is the Japanese term for a hot spring?",
+    "difficulty": "easy",
+    "answers": [
+      "Onsen",
+      "Sentou",
+      "Ryokan",
+      "Izakaya"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which Japanese food is a savory pancake cooked on a griddle?",
+    "difficulty": "easy",
+    "answers": [
+      "Okonomiyaki",
+      "Tempura",
+      "Yakitori",
+      "Sashimi"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which Japanese food is made from fermented soybeans and has a sticky texture? (Community variation 7)",
+    "difficulty": "easy",
+    "answers": [
+      "Miso",
+      "Natto",
+      "Tofu",
+      "Udon"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "question": "What is the Japanese term for a summer fireworks festival?",
+    "difficulty": "easy",
+    "answers": [
+      "Hanabi Taikai",
+      "Bon Odori",
+      "Kagura",
+      "Kanda Matsuri"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "question": "What is the Japanese term for a summer fireworks festival?",
+    "difficulty": "easy",
+    "answers": [
+      "Hanabi Taikai",
+      "Bon Odori",
+      "Kagura",
+      "Kanda Matsuri"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "What is the Japanese term for \"new year\"?",
+    "difficulty": "easy",
+    "answers": [
+      "Shogatsu",
+      "Obon",
+      "Tanabata",
+      "Hinamatsuri"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+  "question": "What is the Japanese art of the traditional tea ceremony called (also known as Chanoyu)?",
   "difficulty": "easy",
   "answers": [
-    "Kamakura",
-    "Kobe",
-    "Kanazawa",
-    "Matsuyama"
+    "Sado",
+    "Ikebana",
+    "Kaiseki",
+    "Bento"
+    ],
+    "correctIndex": 0
+  },
+  {
+  "question": "Which of these is a Japanese noodle dish served in broth?",
+  "difficulty": "easy",
+  "answers": [
+    "Ramen",
+    "Takoyaki",
+    "Gyoza",
+    "Yakitori"
+  ],
+  "correctIndex": 0
+  },
+  {
+    "question": "What is the Japanese term for a traditional tea ceremony?",
+    "difficulty": "easy",
+    "answers": [
+      "Sado",
+      "Ikebana",
+      "Kaiseki",
+      "Bento"
+    ],
+    "correctIndex": 0
+  },
+  {
+  "question": "Which Japanese island is home to the city of Sapporo? (Community variation 5)",
+  "difficulty": "easy",
+  "answers": [
+    "Honshu",
+    "Hokkaido",
+    "Shikoku",
+    "Kyushu"
+  ],
+  "correctIndex": 1
+},
+{
+  "question": "What is the Japanese term for a traditional wooden sandal?",
+  "difficulty": "easy",
+  "answers": [
+    "Geta",
+    "Zori",
+    "Waraji",
+    "Tabi"
+  ],
+  "correctIndex": 0
+},
+  {
+  "question": "Which city is famous for the Peace Memorial Park?",
+  "difficulty": "easy",
+  "answers": [
+    "Hiroshima",
+    "Osaka",
+    "Tokyo",
+    "Fukuoka"
+  ],
+  "correctIndex": 0
+},
+  {
+  "question": "What is the Japanese term for a traditional inn?",
+  "difficulty": "easy",
+  "answers": [
+    "Ryokan",
+    "Minshuku",
+    "Izakaya",
+    "Yatai"
   ],
   "correctIndex": 0
 }

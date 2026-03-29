@@ -77,8 +77,8 @@
     "english": "No eyes",
     "meaning": "Have a weakness for something. (Set 1)",
     "id": 9,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "耳が早い",
@@ -797,8 +797,8 @@
     "english": "No eyes",
     "meaning": "Have a weakness for something. (Set 5)",
     "id": 89,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "耳が早い",
@@ -977,8 +977,8 @@
     "english": "No eyes",
     "meaning": "Have a weakness for something. (Set 6)",
     "id": 109,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "japanese": "耳が早い",

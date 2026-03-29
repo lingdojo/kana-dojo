@@ -5,7 +5,7 @@ import { KanaGauntlet, useKanaSelection } from '@/features/Kana';
 import { KanjiGauntlet, useKanjiSelection } from '@/features/Kanji';
 import { useVocabSelection, VocabGauntlet } from '@/features/Vocabulary';
 import { useInputPreferences } from '@/features/Preferences';
-import { useClick } from '@/shared/hooks/useAudio';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 import { Play, Zap, Swords } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 import GameModes from '@/shared/components/Menu/GameModes';

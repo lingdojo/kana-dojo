@@ -8,7 +8,7 @@
     "season": "Spring",
     "kigo": "Frog (kawazu)",
     "notes": "A foundational haiku focused on stillness and sudden movement.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -44,7 +44,7 @@
     "season": "Autumn",
     "kigo": "Harvest moon (meigetsu)",
     "notes": "Captures innocent longing through a domestic scene.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -68,7 +68,7 @@
     "season": "Summer",
     "kigo": "Summer rain (samidare)",
     "notes": "A dynamic river image with strong seasonal presence.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {

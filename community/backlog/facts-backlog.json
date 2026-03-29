@@ -44,7 +44,7 @@
   {
     "id": 8,
     "fact": "Japan has a dedicated day for curry rice (January 22nd), established because it was first served in school lunches nationwide on that date in 1982.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -146,7 +146,7 @@
   {
     "id": 25,
     "fact": "Japan has a museum dedicated to instant ramen in Osaka where visitors can create their own custom Cup Noodles flavor combinations.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -272,7 +272,7 @@
   {
     "id": 46,
     "fact": "Japan's Shibuya Crossing sees up to 3,000 people cross at once during peak times - making it the busiest pedestrian intersection in the world.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -350,7 +350,7 @@
   {
     "id": 59,
     "fact": "The word 'sawari' (触り) in Japanese means both 'touch' and 'the most interesting part' - suggesting you save the best for touching.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -386,7 +386,7 @@
   {
     "id": 65,
     "fact": "The word 'mottainai' (もったいない) expresses deep regret over waste - a concept that sparked modern recycling movements worldwide.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -410,7 +410,7 @@
   {
     "id": 69,
     "fact": "The Japanese word 'koi no yokan' (恋の予感) describes knowing you'll inevitably fall in love with someone you just met.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -542,7 +542,7 @@
   {
     "id": 91,
     "fact": "There's a Japanese word 'shinpai' (心配) that describes worry with a sense of caring - unlike English, it's not purely negative.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -638,13 +638,13 @@
   {
     "id": 107,
     "fact": "There's a Japanese concept 'omoiyari' (思いやり) meaning sensitivity to others' feelings - anticipating needs before they're expressed.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
     "id": 108,
     "fact": "Japan's mobile phones had emoji in 1999 - a full 11 years before the iPhone introduced them to the Western world.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -656,7 +656,7 @@
   {
     "id": 110,
     "fact": "Japan has 'maid cafes' where waitresses in maid costumes call customers 'Master' and draw cute pictures on their food.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -699,24 +699,24 @@
     "id": 117,
     "fact": "The Japanese word 'yabai' (やばい) originally meant 'dangerous' but now means anything extreme - amazing or terrible.",
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "id": 118,
     "fact": "Japan has 'cuddle therapy' clinics where you can pay to be held, spooned, or simply have physical human contact.",
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "id": 119,
     "fact": "There's a Japanese practice 'meshi' (召し) where a boss inviting you for a meal is essentially a command, not a request.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
     "id": 120,
     "fact": "Japan has more Michelin-starred restaurants than any other country - Tokyo alone has more stars than Paris.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -909,12 +909,12 @@
     "id": 152,
     "fact": "Japan has a 15-meter tall Gundam robot in Yokohama that can actually move its arms, legs, and fingers.",
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "id": 153,
     "fact": "The word 'kansha' (感謝) describes gratitude so profound it becomes a lifestyle - actively looking for things to be thankful for.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1040,7 +1040,7 @@
   {
     "id": 174,
     "fact": "Japan has 'depachika' - basement food halls in department stores selling luxury foods from around the world.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1160,7 +1160,7 @@
   {
     "id": 194,
     "fact": "Japan has a festival where runners dressed as demons chase and catch women to bless them with good marriage luck.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1292,7 +1292,7 @@
   {
     "id": 216,
     "fact": "The Japanese term 'shuudan ishiki' (集団意識) refers to strong group consciousness — prioritizing harmony within the group.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1322,7 +1322,7 @@
   {
     "id": 221,
     "fact": "Japan has 'shuumatsu okashi' trends where limited-edition sweets appear for a season and then disappear, making them collectible.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1592,7 +1592,7 @@
   {
     "id": 266,
     "fact": "The phrase 'okage-sama' (おかげさま) expresses gratitude for unseen support — like thanking the people behind your success.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1700,7 +1700,7 @@
   {
     "id": 284,
     "fact": "The term 'shokunin' (職人) refers to artisans who dedicate their lives to mastering a craft.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1808,7 +1808,7 @@
   {
     "id": 302,
     "fact": "The phrase 'itadakimasu' (いただきます) is said before meals to show gratitude for the food and those who prepared it.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1838,7 +1838,7 @@
   {
     "id": 307,
     "fact": "Japan’s 'tanabata' festival celebrates star-crossed lovers with colorful paper wishes tied to bamboo branches.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1874,7 +1874,7 @@
   {
     "id": 313,
     "fact": "The phrase 'yoroshiku onegaishimasu' (よろしくお願いします) is a versatile expression for \"please take care of me.\"",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

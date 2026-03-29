@@ -8,7 +8,7 @@ import {
 } from '@/features/Preferences/data/themes/themes';
 import { getWallpaperById } from '@/features/Preferences/data/wallpapers/wallpapers';
 import usePreferencesStore from '@/features/Preferences/store/usePreferencesStore';
-import { useClick } from '@/shared/hooks/useAudio';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { X } from 'lucide-react';
 import { memo, useCallback, useState, useEffect } from 'react';

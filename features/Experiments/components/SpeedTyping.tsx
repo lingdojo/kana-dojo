@@ -2,7 +2,7 @@
 import { useEffect, useState, useCallback, useRef } from 'react';
 import { RotateCcw, Play } from 'lucide-react';
 import clsx from 'clsx';
-import { useClick, useCorrect, useError } from '@/shared/hooks/useAudio';
+import { useClick, useCorrect, useError } from '@/shared/hooks/generic/useAudio';
 import { allKana } from '../data/kanaData';
 
 type GameState = 'idle' | 'playing' | 'finished';

@@ -26,7 +26,7 @@
     "english": "Oh? You're approaching me?",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "DIO",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -46,7 +46,7 @@
     "english": "I, Giorno Giovanna, have a dream!",
     "anime": "JoJo's Bizarre Adventure: Golden Wind",
     "character": "Giorno Giovanna",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -56,7 +56,7 @@
     "english": "Good grief.",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Jotaro Kujo",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -156,7 +156,7 @@
     "english": "But... that's what I like.",
     "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
     "character": "Yoshikage Kira",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -186,7 +186,7 @@
     "english": "What?!",
     "anime": "Fist of the North Star",
     "character": "Shin",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -216,7 +216,7 @@
     "english": "Not yet! It's not over yet!",
     "anime": "Mobile Suit Gundam",
     "character": "Char Aznable",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -227,7 +227,7 @@
     "anime": "The Prince of Tennis",
     "character": "Keigo Atobe",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 24,
@@ -327,7 +327,7 @@
     "anime": "Naruto",
     "character": "Naruto Uzumaki",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 34,
@@ -806,7 +806,7 @@
     "english": "Mama mama mama. (alt wording 29)",
     "anime": "One Piece",
     "character": "Charlotte Linlin (Big Mom)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -826,7 +826,7 @@
     "english": "Gurararara! (alt wording 31)",
     "anime": "One Piece",
     "character": "Edward Newgate (Whitebeard)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -846,7 +846,7 @@
     "english": "I never give up, believe it! (alt wording 33)",
     "anime": "Naruto",
     "character": "Naruto Uzumaki",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -856,7 +856,7 @@
     "english": "Those who don't take care of their comrades are worse than scum. (alt wording 34)",
     "anime": "Naruto",
     "character": "Kakashi Hatake",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -896,7 +896,7 @@
     "english": "Go beyond! Plus Ultra! (alt wording 38)",
     "anime": "My Hero Academia",
     "character": "All Might",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -916,7 +916,7 @@
     "english": "All I want is to live a normal life. (alt wording 40)",
     "anime": "Chainsaw Man",
     "character": "Denji",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1006,7 +1006,7 @@
     "english": "Believing in my friends is my magic. (alt wording 49)",
     "anime": "Fairy Tail",
     "character": "Natsu Dragneel",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1096,7 +1096,7 @@
     "english": "Good grief. (alt wording 6) (alt wording 58)",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Jotaro Kujo",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1146,7 +1146,7 @@
     "english": "You! You're watching me! (alt wording 11) (alt wording 63)",
     "anime": "JoJo's Bizarre Adventure: Stone Ocean",
     "character": "Jolyne Cujoh",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1216,7 +1216,7 @@
     "english": "You're already dead. (alt wording 18) (alt wording 70)",
     "anime": "Fist of the North Star",
     "character": "Kenshiro",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1357,7 +1357,7 @@
     "anime": "One Piece",
     "character": "Marshall D. Teach (Blackbeard)",
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "id": 137,
@@ -1367,7 +1367,7 @@
     "anime": "Naruto",
     "character": "Naruto Uzumaki",
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "id": 138,
@@ -1377,7 +1377,7 @@
     "anime": "Naruto",
     "character": "Kakashi Hatake",
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "id": 139,
@@ -1386,7 +1386,7 @@
     "english": "A lesson without pain is meaningless. (alt wording 35) (alt wording 87)",
     "anime": "Fullmetal Alchemist: Brotherhood",
     "character": "Edward Elric",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1396,7 +1396,7 @@
     "english": "I'll exterminate them! Every last one from this world! (alt wording 36) (alt wording 88)",
     "anime": "Attack on Titan",
     "character": "Eren Yeager",
-    "issued": true,
+    "issued": false,
     "completed": false
   }
 ]

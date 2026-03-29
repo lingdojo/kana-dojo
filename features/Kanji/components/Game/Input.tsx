@@ -4,7 +4,7 @@ import { CircleCheck } from 'lucide-react';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import useKanjiStore, { IKanjiObj } from '@/features/Kanji/store/useKanjiStore';
-import { useClick, useCorrect, useError } from '@/shared/hooks/useAudio';
+import { useClick, useCorrect, useError } from '@/shared/hooks/generic/useAudio';
 // import GameIntel from '@/shared/components/Game/GameIntel';
 import { useStopwatch } from 'react-timer-hook';
 import { useStatsStore } from '@/features/Progress';

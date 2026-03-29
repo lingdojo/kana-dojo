@@ -2,7 +2,7 @@
 
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
-import { useClick } from '@/shared/hooks/useAudio';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 import { cn } from '@/shared/lib/utils';
 import {
   CalendarDays,

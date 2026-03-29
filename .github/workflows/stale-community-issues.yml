@@ -97,6 +97,8 @@ jobs:
             const exampleSentencesBacklogPath = 'community/backlog/example-sentences-backlog.json';
             const commonMistakesBacklogPath = 'community/backlog/common-mistakes-backlog.json';
             const videoGameQuotesBacklogPath = 'community/backlog/video-game-quotes-backlog.json';
+            const wallpaperUrlsBacklogPath = 'community/backlog/wallpaper-urls-backlog.json';
+            const communityNotesBacklogPath = 'community/backlog/community-notes-backlog.json';
 
             let issues = [];
             let page = 1;
@@ -119,8 +121,8 @@ jobs:
             const now = new Date();
             const WARNING_THRESHOLD_MS = templates.config.staleWarningAfterMs;   // 12 hours
             const CLOSE_THRESHOLD_MS = templates.config.staleCloseAfterMs;       // 24 hours
-            const ASSIGNED_CLOSE_AFTER_WARNING_MS = 8 * 60 * 60 * 1000; // 8 hours
-            const UNASSIGNED_CLOSE_THRESHOLD_MS = 8 * 60 * 60 * 1000; // 8 hours
+            const ASSIGNED_CLOSE_AFTER_WARNING_MS = 12 * 60 * 60 * 1000; // 12 hours
+            const UNASSIGNED_CLOSE_THRESHOLD_MS = 6 * 60 * 60 * 1000; // 6 hours
 
             let needsCommit = false;
             let themes = JSON.parse(fs.readFileSync(themeBacklogPath, 'utf8'));
@@ -137,6 +139,8 @@ jobs:
             let exampleSentences = JSON.parse(fs.readFileSync(exampleSentencesBacklogPath, 'utf8'));
             let commonMistakes = JSON.parse(fs.readFileSync(commonMistakesBacklogPath, 'utf8'));
             let videoGameQuotes = JSON.parse(fs.readFileSync(videoGameQuotesBacklogPath, 'utf8'));
+            let wallpaperUrls = JSON.parse(fs.readFileSync(wallpaperUrlsBacklogPath, 'utf8'));
+            let communityNotes = JSON.parse(fs.readFileSync(communityNotesBacklogPath, 'utf8'));
 
             let skippedUnassigned = 0;
             let skippedAssigned = 0;
@@ -185,12 +189,10 @@ jobs:
                 if (themeMatch) {
                   const themeName = themeMatch[1].trim();
                   const themeIndex = themes.findIndex(function(t) { return t.name === themeName; });
-                  if (themeIndex !== -1 && !themes[themeIndex].completed) {
+                  if (themeIndex !== -1) {
                     themes[themeIndex].issued = false;
                     needsCommit = true;
                     console.log(`Re-enabled theme: ${themeName}${sourceTag}`);
-                  } else if (themeIndex !== -1 && themes[themeIndex].completed) {
-                    console.log(`Theme "${themeName}" is already completed, not re-enabling`);
                   }
                 }
               } else if (title.includes('Add Japan Fact #') || title.includes('Add new Japan Fact #')) {
@@ -198,12 +200,10 @@ jobs:
                 if (factIdMatch) {
                   const factId = parseInt(factIdMatch[1]);
                   const factIndex = facts.findIndex(function(f) { return f.id === factId; });
-                  if (factIndex !== -1 && !facts[factIndex].completed) {
+                  if (factIndex !== -1) {
                     facts[factIndex].issued = false;
                     needsCommit = true;
                     console.log(`Re-enabled fact #${factId}${sourceTag}`);
-                  } else if (factIndex !== -1 && facts[factIndex].completed) {
-                    console.log(`Fact #${factId} is already completed, not re-enabling`);
                   }
                 }
               } else if (title.includes('Add Japanese Proverb #') || title.includes('Add new Japanese Proverb #')) {
@@ -211,12 +211,10 @@ jobs:
                 if (proverbIdMatch) {
                   const proverbId = parseInt(proverbIdMatch[1]);
                   const proverbIndex = proverbs.findIndex(function(p) { return p.id === proverbId; });
-                  if (proverbIndex !== -1 && !proverbs[proverbIndex].completed) {
+                  if (proverbIndex !== -1) {
                     proverbs[proverbIndex].issued = false;
                     needsCommit = true;
                     console.log(`Re-enabled proverb #${proverbId}${sourceTag}`);
-                  } else if (proverbIndex !== -1 && proverbs[proverbIndex].completed) {
-                    console.log(`Proverb #${proverbId} is already completed, not re-enabling`);
                   }
                 }
               } else if (title.includes('Add Classic Japanese Haiku #') || title.includes('Add Japanese Haiku #') || title.includes('Add new Japanese Haiku #')) {
@@ -224,12 +222,10 @@ jobs:
                 if (haikuIdMatch) {
                   const haikuId = parseInt(haikuIdMatch[1]);
                   const haikuIndex = haiku.findIndex(function(h) { return h.id === haikuId; });
-                  if (haikuIndex !== -1 && !haiku[haikuIndex].completed) {
+                  if (haikuIndex !== -1) {
                     haiku[haikuIndex].issued = false;
                     needsCommit = true;
                     console.log(`Re-enabled haiku #${haikuId}${sourceTag}`);
-                  } else if (haikuIndex !== -1 && haiku[haikuIndex].completed) {
-                    console.log(`Haiku #${haikuId} is already completed, not re-enabling`);
                   }
                 }
               } else if (title.includes('Add New Trivia Question #') || title.includes('Add Trivia Question #') || title.includes('Add new Trivia Question #')) {
@@ -237,12 +233,10 @@ jobs:
                 if (triviaIdMatch) {
                   const triviaId = parseInt(triviaIdMatch[1]);
                   const triviaIndex = trivia.findIndex(function(q) { return q.id === triviaId; });
-                  if (triviaIndex !== -1 && !trivia[triviaIndex].completed) {
+                  if (triviaIndex !== -1) {
                     trivia[triviaIndex].issued = false;
                     needsCommit = true;
                     console.log(`Re-enabled trivia #${triviaId}${sourceTag}`);
-                  } else if (triviaIndex !== -1 && trivia[triviaIndex].completed) {
-                    console.log(`Trivia #${triviaId} is already completed, not re-enabling`);
                   }
                 }
               } else if (title.includes('Add New Grammar Point #') || title.includes('Add Grammar Point #') || title.includes('Add new Grammar Point #')) {
@@ -250,12 +244,10 @@ jobs:
                 if (grammarIdMatch) {
                   const grammarId = parseInt(grammarIdMatch[1]);
                   const grammarIndex = grammar.findIndex(function(g) { return g.id === grammarId; });
-                  if (grammarIndex !== -1 && !grammar[grammarIndex].completed) {
+                  if (grammarIndex !== -1) {
                     grammar[grammarIndex].issued = false;
                     needsCommit = true;
                     console.log(`Re-enabled grammar #${grammarId}${sourceTag}`);
-                  } else if (grammarIndex !== -1 && grammar[grammarIndex].completed) {
-                    console.log(`Grammar #${grammarId} is already completed, not re-enabling`);
                   }
                 }
               } else if (title.includes('Add Famous Anime Quote #') || title.includes('Add Anime Quote #') || title.includes('Add new Anime Quote #')) {
@@ -263,12 +255,10 @@ jobs:
                 if (quoteIdMatch) {
                   const quoteId = parseInt(quoteIdMatch[1]);
                   const quoteIndex = animeQuotes.findIndex(function(q) { return q.id === quoteId; });
-                  if (quoteIndex !== -1 && !animeQuotes[quoteIndex].completed) {
+                  if (quoteIndex !== -1) {
                     animeQuotes[quoteIndex].issued = false;
                     needsCommit = true;
                     console.log(`Re-enabled anime quote #${quoteId}${sourceTag}`);
-                  } else if (quoteIndex !== -1 && animeQuotes[quoteIndex].completed) {
-                    console.log(`Anime quote #${quoteId} is already completed, not re-enabling`);
                   }
                 }
               } else if (title.includes('Add New Japanese Idiom #') || title.includes('Add Japanese Idiom #') || title.includes('Add new Japanese Idiom #')) {
@@ -276,12 +266,10 @@ jobs:
                 if (idiomIdMatch) {
                   const idiomId = parseInt(idiomIdMatch[1]);
                   const idiomIndex = idioms.findIndex(function(i) { return i.id === idiomId; });
-                  if (idiomIndex !== -1 && !idioms[idiomIndex].completed) {
+                  if (idiomIndex !== -1) {
                     idioms[idiomIndex].issued = false;
                     needsCommit = true;
                     console.log(`Re-enabled idiom #${idiomId}${sourceTag}`);
-                  } else if (idiomIndex !== -1 && idioms[idiomIndex].completed) {
-                    console.log(`Idiom #${idiomId} is already completed, not re-enabling`);
                   }
                 }
               } else if (title.includes('Add Regional Dialect Entry #') || title.includes('Add Dialect Entry #') || title.includes('Add new Dialect Entry #')) {
@@ -289,12 +277,10 @@ jobs:
                 if (dialectIdMatch) {
                   const dialectId = parseInt(dialectIdMatch[1]);
                   const dialectIndex = regionalDialects.findIndex(function(d) { return d.id === dialectId; });
-                  if (dialectIndex !== -1 && !regionalDialects[dialectIndex].completed) {
+                  if (dialectIndex !== -1) {
                     regionalDialects[dialectIndex].issued = false;
                     needsCommit = true;
                     console.log(`Re-enabled regional dialect #${dialectId}${sourceTag}`);
-                  } else if (dialectIndex !== -1 && regionalDialects[dialectIndex].completed) {
-                    console.log(`Regional dialect #${dialectId} is already completed, not re-enabling`);
                   }
                 }
               } else if (title.includes('Add Japanese False Friend #') || title.includes('Add False Friend Pair #') || title.includes('Add new False Friend Pair #')) {
@@ -302,12 +288,10 @@ jobs:
                 if (idMatch) {
                   const id = parseInt(idMatch[1]);
                   const idx = falseFriends.findIndex(function(i) { return i.id === id; });
-                  if (idx !== -1 && !falseFriends[idx].completed) {
+                  if (idx !== -1) {
                     falseFriends[idx].issued = false;
                     needsCommit = true;
                     console.log(`Re-enabled false friend #${id}${sourceTag}`);
-                  } else if (idx !== -1 && falseFriends[idx].completed) {
-                    console.log(`False friend #${id} is already completed, not re-enabling`);
                   }
                 }
               } else if (title.includes('Add Japanese Cultural Etiquette Tip #') || title.includes('Add Etiquette Tip #') || title.includes('Add new Etiquette Tip #')) {
@@ -315,12 +299,10 @@ jobs:
                 if (idMatch) {
                   const id = parseInt(idMatch[1]);
                   const idx = culturalEtiquette.findIndex(function(i) { return i.id === id; });
-                  if (idx !== -1 && !culturalEtiquette[idx].completed) {
+                  if (idx !== -1) {
                     culturalEtiquette[idx].issued = false;
                     needsCommit = true;
                     console.log(`Re-enabled cultural etiquette #${id}${sourceTag}`);
-                  } else if (idx !== -1 && culturalEtiquette[idx].completed) {
-                    console.log(`Cultural etiquette #${id} is already completed, not re-enabling`);
                   }
                 }
               } else if (title.includes('Add Japanese Example Sentence #') || title.includes('Add Example Sentence #') || title.includes('Add new Example Sentence #')) {
@@ -328,12 +310,10 @@ jobs:
                 if (idMatch) {
                   const id = parseInt(idMatch[1]);
                   const idx = exampleSentences.findIndex(function(i) { return i.id === id; });
-                  if (idx !== -1 && !exampleSentences[idx].completed) {
+                  if (idx !== -1) {
                     exampleSentences[idx].issued = false;
                     needsCommit = true;
                     console.log(`Re-enabled example sentence #${id}${sourceTag}`);
-                  } else if (idx !== -1 && exampleSentences[idx].completed) {
-                    console.log(`Example sentence #${id} is already completed, not re-enabling`);
                   }
                 }
               } else if (title.includes('Add Common Japanese Learner Mistake #') || title.includes('Add Learner Mistake #') || title.includes('Add new Learner Mistake #')) {
@@ -341,12 +321,10 @@ jobs:
                 if (idMatch) {
                   const id = parseInt(idMatch[1]);
                   const idx = commonMistakes.findIndex(function(i) { return i.id === id; });
-                  if (idx !== -1 && !commonMistakes[idx].completed) {
+                  if (idx !== -1) {
                     commonMistakes[idx].issued = false;
                     needsCommit = true;
                     console.log(`Re-enabled common mistake #${id}${sourceTag}`);
-                  } else if (idx !== -1 && commonMistakes[idx].completed) {
-                    console.log(`Common mistake #${id} is already completed, not re-enabling`);
                   }
                 }
               } else if (title.includes('Add Famous Japanese Video Game Quote #') || title.includes('Add Video Game Quote #') || title.includes('Add new Video Game Quote #')) {
@@ -354,12 +332,32 @@ jobs:
                 if (idMatch) {
                   const id = parseInt(idMatch[1]);
                   const idx = videoGameQuotes.findIndex(function(i) { return i.id === id; });
-                  if (idx !== -1 && !videoGameQuotes[idx].completed) {
+                  if (idx !== -1) {
                     videoGameQuotes[idx].issued = false;
                     needsCommit = true;
                     console.log(`Re-enabled video game quote #${id}${sourceTag}`);
-                  } else if (idx !== -1 && videoGameQuotes[idx].completed) {
-                    console.log(`Video game quote #${id} is already completed, not re-enabling`);
+                  }
+                }
+              } else if (title.includes('Add Wallpaper URL #') || title.includes('Add new Wallpaper URL #')) {
+                const idMatch = title.match(/#(\d+)/);
+                if (idMatch) {
+                  const id = parseInt(idMatch[1]);
+                  const idx = wallpaperUrls.findIndex(function(i) { return i.id === id; });
+                  if (idx !== -1) {
+                    wallpaperUrls[idx].issued = false;
+                    needsCommit = true;
+                    console.log(`Re-enabled wallpaper URL #${id}${sourceTag}`);
+                  }
+                }
+              } else if (title.includes('Add Community Note Line #') || title.includes('Add new Community Note Line #')) {
+                const idMatch = title.match(/#(\d+)/);
+                if (idMatch) {
+                  const id = parseInt(idMatch[1]);
+                  const idx = communityNotes.findIndex(function(i) { return i.id === id; });
+                  if (idx !== -1) {
+                    communityNotes[idx].issued = false;
+                    needsCommit = true;
+                    console.log(`Re-enabled community note #${id}${sourceTag}`);
                   }
                 }
               }
@@ -487,6 +485,8 @@ jobs:
               fs.writeFileSync(exampleSentencesBacklogPath, JSON.stringify(exampleSentences, null, 2));
               fs.writeFileSync(commonMistakesBacklogPath, JSON.stringify(commonMistakes, null, 2));
               fs.writeFileSync(videoGameQuotesBacklogPath, JSON.stringify(videoGameQuotes, null, 2));
+              fs.writeFileSync(wallpaperUrlsBacklogPath, JSON.stringify(wallpaperUrls, null, 2));
+              fs.writeFileSync(communityNotesBacklogPath, JSON.stringify(communityNotes, null, 2));
               core.setOutput('needs_commit', 'true');
             } else {
               core.setOutput('needs_commit', 'false');

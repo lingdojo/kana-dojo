@@ -1,7 +1,7 @@
 'use client';
 import clsx from 'clsx';
 import { useState, useMemo } from 'react';
-import { useClick } from '@/shared/hooks/useAudio';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 import usePreferencesStore from '@/features/Preferences/store/usePreferencesStore';
 import { buttonBorderStyles } from '@/shared/lib/styles';
 import fonts from '../../data/fonts/fonts';
@@ -9,7 +9,11 @@ import { isRecommendedFont } from '../../data/fonts/recommendedFonts';
 import { Star, Type } from 'lucide-react';
 import CollapsibleSection from '../shared/CollapsibleSection';
 
-const Fonts = () => {
+type FontsProps = {
+  useNewIconDesign?: boolean;
+};
+
+const Fonts = ({ useNewIconDesign = false }: FontsProps) => {
   const { playClick } = useClick();
 
   const currentFont = usePreferencesStore(state => state.font);
@@ -116,6 +120,7 @@ const Fonts = () => {
       <CollapsibleSection
         title='Recommended'
         icon={<Star size={18} />}
+        useNewIconDesign={useNewIconDesign}
         level='subsubsection'
         defaultOpen={true}
         storageKey='prefs-fonts-recommended'
@@ -133,6 +138,7 @@ const Fonts = () => {
       <CollapsibleSection
         title='Other'
         icon={<Type size={18} />}
+        useNewIconDesign={useNewIconDesign}
         level='subsubsection'
         defaultOpen={true}
         storageKey='prefs-fonts-other'

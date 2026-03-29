@@ -5,7 +5,7 @@ import SimpleProgress from './SimpleProgress';
 import StreakProgress from './StreakProgress';
 import AchievementProgress from '@/features/Achievements/components';
 import { TrendingUp, Flame, Trophy } from 'lucide-react';
-import { useClick } from '@/shared/hooks/useAudio';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 import { cn } from '@/shared/lib/utils';
 import dynamic from 'next/dynamic';
 import { useSearchParams, useRouter, usePathname } from 'next/navigation';

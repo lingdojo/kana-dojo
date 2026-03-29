@@ -268,8 +268,8 @@
     "correct": "会議は三時から始まります。",
     "explanation": "Remove unnecessary particle after から. (Pattern set 2)",
     "id": 34,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "wrong": "日本へ旅行を行きたい。",
@@ -748,8 +748,8 @@
     "correct": "会議は三時から始まります。",
     "explanation": "Remove unnecessary particle after から. (Pattern set 5)",
     "id": 94,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "wrong": "日本へ旅行を行きたい。",
@@ -908,8 +908,8 @@
     "correct": "会議は三時から始まります。",
     "explanation": "Remove unnecessary particle after から. (Pattern set 6)",
     "id": 114,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "wrong": "日本へ旅行を行きたい。",

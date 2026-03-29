@@ -2,7 +2,7 @@ import { useMemo, useState, useCallback, memo } from 'react';
 import clsx from 'clsx';
 import { X, CircleCheck, Circle, Trash2, Dices } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { useClick } from '@/shared/hooks/useAudio';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 import { ActionButton } from '@/shared/components/ui/ActionButton';
 import { cn } from '@/shared/lib/utils';
 
