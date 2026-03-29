@@ -20,7 +20,7 @@
     "file": "docs/community-notes/maintenance-observations.md",
     "position": "bottom",
     "text": "Routine note: small non-blocking documentation edits may appear here.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
