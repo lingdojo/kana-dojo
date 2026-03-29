@@ -9,5 +9,16 @@
   "season": "Spring",
   "kigo": "Frog (kawazu)",
   "notes": "A foundational haiku focused on stillness and sudden movement."
+},
+{
+  "japanese": "名月を
+取ってくれろと
+泣く子かな",
+  "romaji": "Meigetsu o / totte kurero to / naku ko kana",
+  "english": "A child cries, asking me to fetch the harvest moon.",
+  "poet": "Kobayashi Issa",
+  "season": "Autumn",
+  "kigo": "Harvest moon (meigetsu)",
+  "notes": "Captures innocent longing through a domestic scene."
 }
 ]
