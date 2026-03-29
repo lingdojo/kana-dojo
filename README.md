@@ -142,7 +142,7 @@ npm run check
 
 </div>
 
-## License
+## Licence
 
 This project is licensed under the AGPL 3.0 License — see [LICENSE.md](./LICENSE.md) for details.
 
