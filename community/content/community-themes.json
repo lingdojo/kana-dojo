@@ -106,5 +106,11 @@
   "backgroundColor": "oklch(95.0% 0.025 215.0 / 1)",
   "mainColor": "oklch(60.0% 0.195 25.0 / 1)",
   "secondaryColor": "oklch(65.0% 0.175 215.0 / 1)"
+},
+  {
+  "id": "garden-bridge",
+  "backgroundColor": "oklch(23.0% 0.045 150.0 / 1)",
+  "mainColor": "oklch(60.0% 0.205 25.0 / 1)",
+  "secondaryColor": "oklch(72.0% 0.145 145.0 / 1)"
 }
 ]

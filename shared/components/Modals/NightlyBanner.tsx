@@ -8,22 +8,22 @@ const NightlyBanner = ({
   onDismiss: () => void;
 }) => {
   const [isVisible, setIsVisible] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
+  const [isDismissed, setIsDismissed] = useState(false);
 
   useEffect(() => {
-    setIsMounted(true);
-    setTimeout(() => setIsVisible(true), 100);
+    const timer = setTimeout(() => setIsVisible(true), 100);
+    return () => clearTimeout(timer);
   }, []);
 
   const handleDismiss = () => {
     setIsVisible(false);
     setTimeout(() => {
       if (onDismiss) onDismiss();
-      setIsMounted(false);
+      setIsDismissed(true);
     }, 300);
   };
 
-  if (!isMounted) return null;
+  if (isDismissed) return null;
 
   return (
     <div
@@ -68,14 +68,15 @@ const NightlyBanner = ({
             Dismiss
           </button>
 
-          <button
+          <a
+            href='https://nightly.kanadojo.com'
+            target='_blank'
+            rel='noopener noreferrer'
             onClick={onSwitch}
             className='rounded-lg bg-(--border-color) px-4 py-2 text-sm font-medium text-(--secondary-color) shadow-sm transition-colors hover:opacity-90'
           >
-            <a href='https://nightly.kanadojo.com' target='_blank'>
-              Switch to Nightly
-            </a>
-          </button>
+            Switch to Nightly
+          </a>
         </div>
       </div>
     </div>

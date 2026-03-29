@@ -879,7 +879,9 @@
     "mainColor": "oklch(60.0% 0.205 25.0 / 1)",
     "secondaryColor": "oklch(72.0% 0.145 145.0 / 1)",
     "issued": false,
-    "completed": false
+    "completed": false,
+    "completedBy": "24f2007364",
+    "completedPR": 10807
   },
   {
     "id": "vending-glow",
