@@ -492,5 +492,15 @@
     "Yatai"
   ],
   "correctIndex": 0
+},{
+  "question": "Which Japanese art form involves arranging flowers? (Community variation 43)",
+  "difficulty": "easy",
+  "answers": [
+    "Ikebana",
+    "Origami",
+    "Ukiyo-e",
+    "Shodo"
+  ],
+  "correctIndex": 0
 }
 ]
