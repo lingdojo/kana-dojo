@@ -502,5 +502,15 @@
     "Shodo"
   ],
   "correctIndex": 0
+},{
+  "question": "Which Japanese castle is nicknamed the \"White Heron\" for its bright exterior? (Community variation 9)",
+  "difficulty": "easy",
+  "answers": [
+    "Himeji Castle",
+    "Osaka Castle",
+    "Matsumoto Castle",
+    "Nijo Castle"
+  ],
+  "correctIndex": 0
 }
 ]
