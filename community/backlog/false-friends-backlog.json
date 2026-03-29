@@ -311,7 +311,7 @@
     "explanation": "Can mean ranking position in Japanese usage. (Set 2)",
     "example": "彼はチームのナンバー1だ。",
     "id": 35,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
