@@ -332,10 +332,16 @@
   "english": "A three-day monk",
   "meaning": "Someone who quits quickly"
 },
-  {
+{
   "japanese": "口は禍の元",
   "romaji": "Kuchi wa wazawai no moto",
   "english": "The mouth is the source of misfortune",
   "meaning": "Careless words cause trouble"
-  }
+},
+{
+  "japanese": "覆水盆に返らず",
+  "romaji": "Fukusui bon ni kaerazu",
+  "english": "Spilled water will not return to the tray",
+  "meaning": "What is done cannot be undone"
+}
 ]

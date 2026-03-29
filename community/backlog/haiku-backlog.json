@@ -9,7 +9,9 @@
     "kigo": "Frog (kawazu)",
     "notes": "A foundational haiku focused on stillness and sudden movement.",
     "issued": false,
-    "completed": false
+    "completed": false,
+    "completedBy": "23f2003806",
+    "completedPR": 10793
   },
   {
     "id": 2,

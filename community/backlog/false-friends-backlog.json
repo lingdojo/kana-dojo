@@ -230,7 +230,7 @@
     "explanation": "Usually means buffet/all-you-can-eat in Japan. (Set 2)",
     "example": "ホテルの朝食はバイキングです。",
     "id": 26,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -519,7 +519,9 @@
     "example": "父は都内でサラリーマンをしている。",
     "id": 58,
     "issued": false,
-    "completed": true
+    "completed": true,
+    "completedBy": "24F1002074",
+    "completedPR": 10790
   },
   {
     "termA": "ペットボトル (petto botoru)",
@@ -690,7 +692,7 @@
     "example": "会社のイメージが良くなった。",
     "id": 77,
     "issued": true,
-    "completed": false
+    "completed": true
   },
   {
     "termA": "サラリーマン (sarariman)",
