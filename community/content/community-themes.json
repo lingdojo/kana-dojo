@@ -100,5 +100,11 @@
     "backgroundColor": "oklch(17.0% 0.055 290.0 / 1)",
     "mainColor": "oklch(82.0% 0.195 310.0 / 1)",
     "secondaryColor": "oklch(74.0% 0.140 20.0 / 1)"
-  }
+  },
+  {
+  "id": "shaved-ice",
+  "backgroundColor": "oklch(95.0% 0.025 215.0 / 1)",
+  "mainColor": "oklch(60.0% 0.195 25.0 / 1)",
+  "secondaryColor": "oklch(65.0% 0.175 215.0 / 1)"
+}
 ]
