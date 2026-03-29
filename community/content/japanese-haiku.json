@@ -63,5 +63,14 @@
     "season": "Autumn",
     "kigo": "Deep autumn (aki fukaki)",
     "notes": "Evokes solitude and curiosity."
-  }
+  },
+  {
+  "japanese": "古池や 蛙飛びこむ 水の音",
+  "romaji": "Furu ike ya / kawazu tobikomu / mizu no oto",
+  "english": "An old pond; a frog jumps in; the sound of water.",
+  "poet": "Matsuo Basho",
+  "season": "Spring",
+  "kigo": "Frog (kawazu)",
+  "notes": "A foundational haiku focused on stillness and sudden movement."
+}
 ]
