@@ -94,5 +94,29 @@
     "backgroundColor": "oklch(20.0% 0.010 260.0 / 1)",
     "mainColor": "oklch(78.0% 0.020 90.0 / 1)",
     "secondaryColor": "oklch(55.0% 0.035 240.0 / 1)"
-  }
+  },
+  {
+    "id": "shibuya-haze",
+    "backgroundColor": "oklch(17.0% 0.055 290.0 / 1)",
+    "mainColor": "oklch(82.0% 0.195 310.0 / 1)",
+    "secondaryColor": "oklch(74.0% 0.140 20.0 / 1)"
+  },
+  {
+  "id": "shaved-ice",
+  "backgroundColor": "oklch(95.0% 0.025 215.0 / 1)",
+  "mainColor": "oklch(60.0% 0.195 25.0 / 1)",
+  "secondaryColor": "oklch(65.0% 0.175 215.0 / 1)"
+},
+  {
+  "id": "garden-bridge",
+  "backgroundColor": "oklch(23.0% 0.045 150.0 / 1)",
+  "mainColor": "oklch(60.0% 0.205 25.0 / 1)",
+  "secondaryColor": "oklch(72.0% 0.145 145.0 / 1)"
+},
+  {
+  "id": "sunset-train",
+  "backgroundColor": "oklch(22.0% 0.052 45.0 / 1)",
+  "mainColor": "oklch(88.0% 0.165 65.0 / 1)",
+  "secondaryColor": "oklch(72.0% 0.185 35.0 / 1)"
+}
 ]

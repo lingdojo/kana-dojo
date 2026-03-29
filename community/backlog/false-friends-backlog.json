@@ -42,7 +42,7 @@
     "example": "ライブでテンションが上がった。",
     "id": 5,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "termA": "バイキング (baikingu)",
@@ -51,7 +51,7 @@
     "example": "ホテルの朝食はバイキングです。",
     "id": 6,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "termA": "カンニング (kanningu)",
@@ -132,7 +132,7 @@
     "example": "彼はチームのナンバー1だ。",
     "id": 15,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "termA": "ハイテンション (haitenshon)",
@@ -222,7 +222,7 @@
     "example": "ライブでテンションが上がった。",
     "id": 25,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "termA": "バイキング (baikingu)",
@@ -230,7 +230,7 @@
     "explanation": "Usually means buffet/all-you-can-eat in Japan. (Set 2)",
     "example": "ホテルの朝食はバイキングです。",
     "id": 26,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -401,7 +401,7 @@
     "explanation": "Often means excitement/energy level in casual Japanese. (Set 3)",
     "example": "ライブでテンションが上がった。",
     "id": 45,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -411,7 +411,7 @@
     "example": "ホテルの朝食はバイキングです。",
     "id": 46,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "termA": "カンニング (kanningu)",
@@ -419,7 +419,7 @@
     "explanation": "カンニング means cheating on tests. (Set 3)",
     "example": "試験でカンニングしてはいけません。",
     "id": 47,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -492,7 +492,7 @@
     "example": "彼はチームのナンバー1だ。",
     "id": 55,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "termA": "ハイテンション (haitenshon)",
@@ -519,7 +519,9 @@
     "example": "父は都内でサラリーマンをしている。",
     "id": 58,
     "issued": false,
-    "completed": true
+    "completed": true,
+    "completedBy": "24F1002074",
+    "completedPR": 10790
   },
   {
     "termA": "ペットボトル (petto botoru)",
@@ -582,7 +584,7 @@
     "example": "ライブでテンションが上がった。",
     "id": 65,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "termA": "バイキング (baikingu)",
@@ -591,7 +593,7 @@
     "example": "ホテルの朝食はバイキングです。",
     "id": 66,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "termA": "カンニング (kanningu)",
@@ -672,7 +674,7 @@
     "example": "彼はチームのナンバー1だ。",
     "id": 75,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "termA": "ハイテンション (haitenshon)",
@@ -689,8 +691,8 @@
     "explanation": "Often means impression/public image. (Set 4)",
     "example": "会社のイメージが良くなった。",
     "id": 77,
-    "issued": false,
-    "completed": false
+    "issued": true,
+    "completed": true
   },
   {
     "termA": "サラリーマン (sarariman)",
@@ -762,7 +764,7 @@
     "example": "ライブでテンションが上がった。",
     "id": 85,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "termA": "バイキング (baikingu)",
@@ -771,7 +773,7 @@
     "example": "ホテルの朝食はバイキングです。",
     "id": 86,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "termA": "カンニング (kanningu)",
@@ -852,7 +854,7 @@
     "example": "彼はチームのナンバー1だ。",
     "id": 95,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "termA": "ハイテンション (haitenshon)",
@@ -942,7 +944,7 @@
     "example": "ライブでテンションが上がった。",
     "id": 105,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "termA": "バイキング (baikingu)",
@@ -951,7 +953,7 @@
     "example": "ホテルの朝食はバイキングです。",
     "id": 106,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "termA": "カンニング (kanningu)",
@@ -1032,7 +1034,7 @@
     "example": "彼はチームのナンバー1だ。",
     "id": 115,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "termA": "ハイテンション (haitenshon)",

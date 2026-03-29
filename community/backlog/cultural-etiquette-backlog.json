@@ -365,7 +365,7 @@
     "dont": "片手で受け取ってすぐポケットに入れる",
     "note": "商談中は机上に置くのが一般的。",
     "id": 41,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -428,7 +428,7 @@
     "dont": "タオルを湯船に入れる",
     "note": "共同浴場の基本ルール。",
     "id": 48,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -527,7 +527,7 @@
     "dont": "両側を塞ぐ",
     "note": "地域差に注意。",
     "id": 59,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1085,7 +1085,7 @@
     "dont": "大声で会話する",
     "note": "日本の公共交通では静かにすることが大切です。",
     "id": 121,
-    "issued": false,
+    "issued": true,
     "completed": false
   }
 ]

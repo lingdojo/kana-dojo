@@ -16,5 +16,23 @@
   "termB": "number (English)",
   "explanation": "Can mean ranking position in Japanese usage. (Set 2)",
   "example": "彼はチームのナンバー1だ。"
-  }
+  },
+  {
+  "termA": "テンション (tenshon)",
+  "termB": "tension (English)",
+  "explanation": "Often means excitement/energy level in casual Japanese. (Set 3)",
+  "example": "ライブでテンションが上がった。"
+},
+  {
+  "termA": "バイキング (baikingu)",
+  "termB": "viking (English)",
+  "explanation": "Usually means buffet/all-you-can-eat in Japan. (Set 2)",
+  "example": "ホテルの朝食はバイキングです。"
+},
+  {
+  "termA": "カンニング (kanningu)",
+  "termB": "cunning (English)",
+  "explanation": "カンニング means cheating on tests. (Set 3)",
+  "example": "試験でカンニングしてはいけません。"
+}
 ]

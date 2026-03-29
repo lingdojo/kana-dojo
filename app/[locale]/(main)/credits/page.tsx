@@ -122,7 +122,7 @@ export default function CreditsPage() {
         </h1>
         <p className='text-lg text-(--secondary-color)'>
           KanaDojo is built on trusted Japanese language data sources and
-          open-source technologies. We're grateful to the maintainers and
+          open-source technologies. We&apos;re grateful to the maintainers and
           contributors who make these resources available.
         </p>
       </header>
@@ -217,7 +217,7 @@ export default function CreditsPage() {
             We also thank the broader open-source community for creating and
             maintaining the libraries and tools that power modern web
             applications. Without their contributions, projects like KanaDojo
-            wouldn't be possible.
+            wouldn&apos;t be possible.
           </p>
         </div>
       </section>
@@ -243,7 +243,7 @@ export default function CreditsPage() {
               respective licenses (MIT, Apache 2.0, etc.).
             </li>
             <li>
-              KanaDojo's original code and content are created by the
+              KanaDojo&apos;s original code and content are created by the
               development team and released under our own license terms.
             </li>
           </ul>

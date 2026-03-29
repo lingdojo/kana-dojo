@@ -416,7 +416,7 @@
     "game": "Fate/stay night [Realta Nua]",
     "character": "Saber",
     "id": 42,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -476,7 +476,7 @@
     "game": "Kingdom Hearts series (JP dub)",
     "character": "Sora",
     "id": 48,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -986,7 +986,7 @@
     "game": "Tales series",
     "character": "Various endings",
     "id": 99,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1116,7 +1116,7 @@
     "game": "Pokemon series",
     "character": "Rival characters",
     "id": 112,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

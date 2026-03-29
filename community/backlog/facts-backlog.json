@@ -194,7 +194,7 @@
   {
     "id": 33,
     "fact": "Japanese toilet seats often have built-in bidets with heated seats, air dryers, and sound effects to mask embarrassing noises.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -350,7 +350,7 @@
   {
     "id": 59,
     "fact": "The word 'sawari' (触り) in Japanese means both 'touch' and 'the most interesting part' - suggesting you save the best for touching.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1640,7 +1640,7 @@
   {
     "id": 274,
     "fact": "The word 'yuigahama' appears in coastal place names, referencing a long, gently sloping beach.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1874,7 +1874,7 @@
   {
     "id": 313,
     "fact": "The phrase 'yoroshiku onegaishimasu' (よろしくお願いします) is a versatile expression for \"please take care of me.\"",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
