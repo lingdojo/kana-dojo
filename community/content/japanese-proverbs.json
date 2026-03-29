@@ -315,39 +315,46 @@
     "meaning": "Unexpected good luck"
   },
   {
-  "japanese": "情けは人の為ならず",
-  "romaji": "Nasake wa hito no tame narazu",
-  "english": "Kindness is not for others",
-  "meaning": "A good deed returns to you"
-},
+    "japanese": "情けは人の為ならず",
+    "romaji": "Nasake wa hito no tame narazu",
+    "english": "Kindness is not for others",
+    "meaning": "A good deed returns to you"
+  },
   {
-  "japanese": "知らぬが仏",
-  "romaji": "Shiranu ga hotoke",
-  "english": "Not knowing is Buddha",
-  "meaning": "Ignorance is bliss"
-},
-{
-  "japanese": "三日坊主",
-  "romaji": "Mikka bouzu",
-  "english": "A three-day monk",
-  "meaning": "Someone who quits quickly"
-},
-{
-  "japanese": "口は禍の元",
-  "romaji": "Kuchi wa wazawai no moto",
-  "english": "The mouth is the source of misfortune",
-  "meaning": "Careless words cause trouble"
-},
-{
-  "japanese": "覆水盆に返らず",
-  "romaji": "Fukusui bon ni kaerazu",
-  "english": "Spilled water will not return to the tray",
-  "meaning": "What is done cannot be undone"
-},{
-  "japanese": "弘法にも筆の誤り",
-  "romaji": "Koubou ni mo fude no ayamari",
-  "english": "Even Kobo makes mistakes with his brush",
-  "meaning": "Even masters make mistakes"
-}
+    "japanese": "知らぬが仏",
+    "romaji": "Shiranu ga hotoke",
+    "english": "Not knowing is Buddha",
+    "meaning": "Ignorance is bliss"
+  },
+  {
+    "japanese": "三日坊主",
+    "romaji": "Mikka bouzu",
+    "english": "A three-day monk",
+    "meaning": "Someone who quits quickly"
+  },
+  {
+    "japanese": "口は禍の元",
+    "romaji": "Kuchi wa wazawai no moto",
+    "english": "The mouth is the source of misfortune",
+    "meaning": "Careless words cause trouble"
+  },
+  {
+    "japanese": "覆水盆に返らず",
+    "romaji": "Fukusui bon ni kaerazu",
+    "english": "Spilled water will not return to the tray",
+    "meaning": "What is done cannot be undone"
+  },
+  {
+    "japanese": "弘法にも筆の誤り",
+    "romaji": "Koubou ni mo fude no ayamari",
+    "english": "Even Kobo makes mistakes with his brush",
+    "meaning": "Even masters make mistakes"
+  },
+  {
+    "japanese": "蛙の子は蛙",
+    "romaji": "Kaeru no ko wa kaeru",
+    "english": "A frog's child is a frog",
+    "meaning": "Like father, like son"
+  }
 ]
 
