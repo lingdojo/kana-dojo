@@ -411,7 +411,7 @@
     "id": 69,
     "text": "\"〜ものの\" means \"although...\" with contrast.",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 70,
@@ -674,7 +674,7 @@
   {
     "id": 113,
     "text": "\"〜すぎる\" attaches to verbs or adjectives to mean \"too much\". (practice variation 28)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

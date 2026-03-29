@@ -644,7 +644,7 @@
   {
     "id": 108,
     "fact": "Japan's mobile phones had emoji in 1999 - a full 11 years before the iPhone introduced them to the Western world.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1700,7 +1700,7 @@
   {
     "id": 284,
     "fact": "The term 'shokunin' (職人) refers to artisans who dedicate their lives to mastering a craft.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

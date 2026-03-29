@@ -37,6 +37,8 @@
     "position": "bottom",
     "text": "- Additional community note preserved for documentation housekeeping.",
     "issued": false,
-    "completed": false
+    "completed": false,
+    "completedBy": "ArshVermaGit",
+    "completedPR": 10743
   }
 ]
