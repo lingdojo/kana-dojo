@@ -1085,7 +1085,7 @@
     "dont": "大声で会話する",
     "note": "日本の公共交通では静かにすることが大切です。",
     "id": 121,
-    "issued": false,
+    "issued": true,
     "completed": false
   }
 ]
