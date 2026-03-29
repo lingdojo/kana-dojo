@@ -82,6 +82,11 @@
   "backgroundColor": "oklch(96.0% 0.035 40.0 / 1)",
   "mainColor": "oklch(62.0% 0.20 20.0 / 1)",
   "secondaryColor": "oklch(68.0% 0.16 200.0 / 1)"
-  }
-  
+  },
+  {
+  "id": "wavecrest-blue",
+  "backgroundColor": "oklch(17.0% 0.030 245.0 / 1)",
+  "mainColor": "oklch(88.0% 0.055 230.0 / 1)",
+  "secondaryColor": "oklch(70.0% 0.145 210.0 / 1)"
+  },
 ]
