@@ -16,5 +16,11 @@
   "termB": "number (English)",
   "explanation": "Can mean ranking position in Japanese usage. (Set 2)",
   "example": "彼はチームのナンバー1だ。"
-  }
+  },
+  {
+  "termA": "スマート (sumaato)",
+  "termB": "smart (English)",
+  "explanation": "Often means slim or stylish in Japanese, not intelligent.",
+  "example": "彼はとてもスマートな人です。"
+}
 ]
