@@ -366,8 +366,10 @@
     "backgroundColor": "oklch(96.0% 0.008 85.0 / 1)",
     "mainColor": "oklch(20.0% 0.015 270.0 / 1)",
     "secondaryColor": "oklch(45.0% 0.025 260.0 / 1)",
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": false,
+    "completedBy": "Surya-prakash-pareek",
+    "completedPR": 10893
   },
   {
     "id": "daruma-red",
