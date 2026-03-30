@@ -29,7 +29,7 @@ This file provides comprehensive guidance for AI coding assistants (GitHub Copil
 | i18n      | next-intl (namespace-based)              |
 | Testing   | Vitest with jsdom                        |
 
-**URLs**: [kanadojo.com](https://kanadojo.com) Â· [GitHub](https://github.com/lingdojo/kanadojo)
+**URLs**: [kanadojo.com](https://kanadojo.com) · [GitHub](https://github.com/lingdojo/kanadojo)
 
 ---
 
@@ -63,8 +63,8 @@ KanaDojo is organized by feature: app/, features/, shared/, core/. Keep business
 
 ### Do's / Don'ts (short)
 
-- âœ… Use TypeScript types, path aliases, and translations.
-- âŒ Donâ€™t add business logic to `app/` or create circular deps.
+- ✅ Use TypeScript types, path aliases, and translations.
+- ❌ Don’t add business logic to `app/` or create circular deps.
 
 ### Common tasks
 

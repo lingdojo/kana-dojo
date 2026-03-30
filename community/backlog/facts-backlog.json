@@ -14,7 +14,7 @@
   {
     "id": 3,
     "fact": "Japanese blood types are believed to determine personality, similar to zodiac signs in the West. Type A is organized, B is creative, O is confident, and AB is rational.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1454,7 +1454,7 @@
   {
     "id": 243,
     "fact": "Japan has a practice called 'teinei' (丁寧), meaning careful, polite attention — prized in customer service and crafts.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1796,7 +1796,7 @@
   {
     "id": 300,
     "fact": "A 'hikimono' (引き物) is a small parting gift given at weddings, often a set of sweets or tea.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

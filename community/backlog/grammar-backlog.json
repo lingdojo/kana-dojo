@@ -26,7 +26,7 @@
   {
     "id": 5,
     "text": "\"〜てはいけません\" means \"must not\" and is used for prohibitions.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -201,7 +201,7 @@
     "id": 34,
     "text": "\"〜ように\" can express purpose, like \"in order to\" or \"so that\".",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 35,
@@ -620,7 +620,7 @@
   {
     "id": 104,
     "text": "\"〜なら\" means \"if\" or \"in the case of\" and often gives advice. (practice variation 19)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

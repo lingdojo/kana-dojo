@@ -296,7 +296,7 @@
     "game": "Dragon Quest XI",
     "character": "Hero / party lines",
     "id": 30,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -616,7 +616,7 @@
     "game": "Fate/stay night [Realta Nua]",
     "character": "Saber",
     "id": 62,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
