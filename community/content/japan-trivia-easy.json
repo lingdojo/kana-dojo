@@ -512,5 +512,16 @@
     "Nijo Castle"
   ],
   "correctIndex": 0
+},
+{
+  "question": "What is the Japanese word for \"goodbye\"? (Community variation 32)",
+  "difficulty": "easy",
+  "answers": [
+    "Sayonara",
+    "Konnichiwa",
+    "Arigatou",
+    "Oyasumi"
+  ],
+  "correctIndex": 0
 }
 ]
