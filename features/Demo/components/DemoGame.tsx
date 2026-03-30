@@ -8,7 +8,7 @@ import {
 } from 'framer-motion';
 import clsx from 'clsx';
 import { Random } from 'random-js';
-import { useCorrect, useError, useClick } from '@/shared/hooks/useAudio';
+import { useCorrect, useError, useClick } from '@/shared/hooks/generic/useAudio';
 import Stars from '@/shared/components/Game/Stars';
 import { useCrazyModeTrigger } from '@/features/CrazyMode/hooks/useCrazyModeTrigger';
 import { useStopwatch } from 'react-timer-hook';

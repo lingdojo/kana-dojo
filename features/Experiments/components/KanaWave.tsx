@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useClick, useCorrect, useError } from '@/shared/hooks/useAudio';
+import { useClick, useCorrect, useError } from '@/shared/hooks/generic/useAudio';
 import { allKana } from '../data/kanaData';
 import clsx from 'clsx';
 import { Music, Activity, Play } from 'lucide-react';

@@ -24,7 +24,7 @@ import {
 } from '@/features/Preferences/lib/imageProcessor';
 import usePreferencesStore from '@/features/Preferences/store/usePreferencesStore';
 import { applyTheme } from '@/features/Preferences/data/themes/themes';
-import { useClick } from '@/shared/hooks/useAudio';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 
 // ============================================================================
 // Sub-components

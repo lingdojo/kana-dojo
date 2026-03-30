@@ -87,7 +87,7 @@ export function useGoalTimers(
   const playGoalSound = useCallback(() => {
     if (typeof window !== 'undefined') {
       // Use the audio system's playCorrectSound which handles format detection
-      import('@/shared/hooks/useAudio').then(({ playCorrectSound }) => {
+      import('@/shared/hooks/generic/useAudio').then(({ playCorrectSound }) => {
         playCorrectSound(settings.soundVolume / 100);
       });
     }

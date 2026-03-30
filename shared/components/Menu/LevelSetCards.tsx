@@ -15,8 +15,8 @@ import {
 
 import { chunkArray } from '@/shared/lib/helperFunctions';
 import { cardBorderStyles } from '@/shared/lib/styles';
-import useGridColumns from '@/shared/hooks/useGridColumns';
-import { useClick } from '@/shared/hooks/useAudio';
+import useGridColumns from '@/shared/hooks/generic/useGridColumns';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 import { ActionButton } from '@/shared/components/ui/ActionButton';
 import QuickSelectModal from '@/shared/components/Modals/QuickSelectModal';
 import { cn } from '@/shared/lib/utils';

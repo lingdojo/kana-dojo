@@ -11,7 +11,7 @@ import {
 } from 'lucide-react';
 import { Link } from '@/core/i18n/routing';
 import clsx from 'clsx';
-import { useClick } from '@/shared/hooks/useAudio';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 import type { GoalTimer } from './types';
 
 interface ResultsScreenProps {

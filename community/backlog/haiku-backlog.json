@@ -8,8 +8,10 @@
     "season": "Spring",
     "kigo": "Frog (kawazu)",
     "notes": "A foundational haiku focused on stillness and sudden movement.",
-    "issued": false,
-    "completed": false
+    "issued": true,
+    "completed": false,
+    "completedBy": "23f2003806",
+    "completedPR": 10793
   },
   {
     "id": 2,
@@ -20,7 +22,7 @@
     "season": "Summer",
     "kigo": "Summer grasses (natsukusa)",
     "notes": "Reflects impermanence through a historical battlefield image.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -32,7 +34,7 @@
     "season": "Autumn",
     "kigo": "Persimmon (kaki)",
     "notes": "A modern-classic haiku blending everyday life with temple atmosphere.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -44,7 +46,7 @@
     "season": "Autumn",
     "kigo": "Harvest moon (meigetsu)",
     "notes": "Captures innocent longing through a domestic scene.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -56,7 +58,7 @@
     "season": "Spring",
     "kigo": "Blossoms (hana)",
     "notes": "A quiet scene balancing moonlight and cherry blossoms.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -68,7 +70,7 @@
     "season": "Summer",
     "kigo": "Summer rain (samidare)",
     "notes": "A dynamic river image with strong seasonal presence.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -104,7 +106,7 @@
     "season": "Spring",
     "kigo": "Departing spring (yuku haru)",
     "notes": "A classic expression of seasonal transition and sadness.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -116,7 +118,7 @@
     "season": "Spring",
     "kigo": "Frog (kaeru)",
     "notes": "Humorous encouragement and compassion in Issa's voice.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -128,7 +130,7 @@
     "season": "Autumn",
     "kigo": "Deep autumn (aki fukaki)",
     "notes": "Evokes solitude and curiosity.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -140,7 +142,7 @@
     "season": "Spring",
     "kigo": "Spring sea (haru no umi)",
     "notes": "Known for musical phrasing and calm motion.",
-    "issued": false,
+    "issued": true,
     "completed": false
   }
 ]

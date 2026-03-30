@@ -1,5 +1,6 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
+@import '../shared/styles/animations.css' layer(utilities);
 @tailwind utilities;
 
 @theme {

@@ -1,9 +1,19 @@
 import createMiddleware from 'next-intl/middleware';
 import { NextRequest, NextResponse } from 'next/server';
 import { routing } from './core/i18n/routing';
+import {
+  getCanonicalNoPrefixPath,
+  hasLocalePrefix,
+  isTranslatorPath,
+} from './shared/lib/translator-routing';
 
 // Create intl middleware once at module level (more efficient)
 const intlMiddleware = createMiddleware(routing);
+const translatorMiddleware = createMiddleware({
+  ...routing,
+  localeDetection: false,
+  alternateLinks: false,
+});
 
 export default function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
@@ -18,6 +28,18 @@ export default function proxy(request: NextRequest) {
     pathname.includes('.')
   ) {
     return NextResponse.next();
+  }
+
+  if (hasLocalePrefix(pathname)) {
+    const redirectUrl = request.nextUrl.clone();
+    redirectUrl.pathname = getCanonicalNoPrefixPath(pathname);
+    return NextResponse.redirect(redirectUrl, 308);
+  }
+
+  if (isTranslatorPath(pathname)) {
+    const response = translatorMiddleware(request);
+    response.headers.set('x-locale', 'en');
+    return response;
   }
 
   // Locale prefix is disabled; derive locale from cookie, then Accept-Language.

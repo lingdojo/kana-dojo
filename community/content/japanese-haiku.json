@@ -1,20 +1,20 @@
 [
   {
-    "japanese": "春の海ひねもすのたりのたりかな",
-    "romaji": "Haru no umi / hinemosu notari / notari kana",
-    "english": "The spring sea stretches lazily all day, rising and falling.",
-    "poet": "Yosa Buson",
+    "japanese": "古池や 蛙飛びこむ 水の音",
+    "romaji": "Furu ike ya / kawazu tobikomu / mizu no oto",
+    "english": "An old pond; a frog jumps in; the sound of water.",
+    "poet": "Matsuo Basho",
     "season": "Spring",
-    "kigo": "Spring sea (haru no umi)",
-    "notes": "Known for musical phrasing and calm motion."
+    "kigo": "Frog (kawazu)",
+    "notes": "A foundational haiku focused on stillness and sudden movement."
   },
   {
-    "japanese": "雀の子\\nそこのけそこのけ\\nお馬が通る",
-    "romaji": "Suzume no ko / soko noke soko noke / ouma ga toru",
-    "english": "Little sparrows, move aside, the horse is coming through.",
+    "japanese": "名月を 取ってくれろと 泣く子かな",
+    "romaji": "Meigetsu o / totte kurero to / naku ko kana",
+    "english": "A child cries, asking me to fetch the harvest moon.",
     "poet": "Kobayashi Issa",
-    "season": "Spring",
-    "kigo": "Sparrow chicks (suzume no ko)",
-    "notes": "Playful and warm, characteristic of Issa's tone."
+    "season": "Autumn",
+    "kigo": "Harvest moon (meigetsu)",
+    "notes": "Captures innocent longing through a domestic scene."
   }
 ]

@@ -4,7 +4,7 @@
     "file": "docs/community-notes/contribution-notes-1.md",
     "position": "bottom",
     "text": "- Community note: this file is used for lightweight contribution practice.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -28,7 +28,7 @@
     "file": "docs/community-notes/workflow-snippets.md",
     "position": "top",
     "text": "_Community note: this markdown file is safe for tiny redundant edits._",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -36,7 +36,9 @@
     "file": "docs/community-notes/archival-notes.md",
     "position": "bottom",
     "text": "- Additional community note preserved for documentation housekeeping.",
-    "issued": false,
-    "completed": false
+    "issued": true,
+    "completed": false,
+    "completedBy": "ArshVermaGit",
+    "completedPR": 10743
   }
 ]

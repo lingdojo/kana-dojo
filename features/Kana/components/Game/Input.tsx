@@ -4,7 +4,7 @@ import { kana } from '@/features/Kana/data/kana';
 import useKanaStore from '@/features/Kana/store/useKanaStore';
 import { motion } from 'framer-motion';
 import clsx from 'clsx';
-import { useClick, useCorrect, useError } from '@/shared/hooks/useAudio';
+import { useClick, useCorrect, useError } from '@/shared/hooks/generic/useAudio';
 // import GameIntel from '@/shared/components/Game/GameIntel';
 import { useStopwatch } from 'react-timer-hook';
 import { useStatsStore } from '@/features/Progress';
@@ -15,6 +15,7 @@ import { getGlobalAdaptiveSelector } from '@/shared/lib/adaptiveSelection';
 import { GameBottomBar } from '@/shared/components/Game/GameBottomBar';
 import { isKanaInputAnswerCorrect } from '@/features/Kana/lib/isKanaInputAnswerCorrect';
 import useClassicSessionStore from '@/shared/store/useClassicSessionStore';
+import { useAdaptiveTargetLength } from '@/shared/hooks/game/useAdaptiveTargetLength';
 
 // Get the global adaptive selector for weighted character selection
 const adaptiveSelector = getGlobalAdaptiveSelector();
@@ -81,6 +82,16 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
 
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const {
+    targetLength,
+    recordCorrect: recordTargetLengthCorrect,
+    recordWrong: recordTargetLengthWrong,
+  } = useAdaptiveTargetLength({
+    minLength: 1,
+    maxLength: 3,
+    correctsPerLevel: 3,
+    wrongsToDecrease: 2,
+  });
 
   const [inputValue, setInputValue] = useState('');
   const [bottomBarState, setBottomBarState] = useState<BottomBarState>('check');
@@ -123,22 +134,30 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
     [isReverse, selectedRomaji, selectedKana],
   );
 
-  // State for characters - uses weighted selection for adaptive learning
-  const [correctChar, setCorrectChar] = useState(() => {
-    if (isReverse) {
-      if (selectedRomaji.length === 0) return '';
-      const selected = adaptiveSelector.selectWeightedCharacter(selectedRomaji);
-      adaptiveSelector.markCharacterSeen(selected);
-      return selected;
-    } else {
-      if (selectedKana.length === 0) return '';
-      const selected = adaptiveSelector.selectWeightedCharacter(selectedKana);
-      adaptiveSelector.markCharacterSeen(selected);
-      return selected;
-    }
-  });
+  const buildTargetPair = useCallback(() => {
+    const sourceArray = isReverse ? selectedRomaji : selectedKana;
+    if (sourceArray.length === 0) return { correctChar: '', targetChar: '' };
 
-  const targetChar = selectedPairs[correctChar];
+    const used = new Set<string>();
+    const promptParts: string[] = [];
+    const answerParts: string[] = [];
+
+    for (let i = 0; i < targetLength; i++) {
+      const available = sourceArray.filter(char => !used.has(char));
+      if (available.length === 0) break;
+      const selected = adaptiveSelector.selectWeightedCharacter(available);
+      used.add(selected);
+      adaptiveSelector.markCharacterSeen(selected);
+      promptParts.push(selected);
+      answerParts.push(selectedPairs[selected]);
+    }
+
+    return { correctChar: promptParts.join(''), targetChar: answerParts.join('') };
+  }, [isReverse, selectedRomaji, selectedKana, targetLength, selectedPairs]);
+
+  const [pairData, setPairData] = useState(() => buildTargetPair());
+  const correctChar = pairData.correctChar;
+  const targetChar = pairData.targetChar;
 
   const hasKana = selectedKana.length > 0;
   const hasRomaji = selectedRomaji.length > 0;
@@ -180,17 +199,16 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
     if (isHidden) speedStopwatch.pause();
   }, [isHidden, speedStopwatch]);
 
+  useEffect(() => {
+    if (isReady) {
+      setPairData(buildTargetPair());
+    }
+  }, [buildTargetPair, isReady]);
+
   const generateNewCharacter = useCallback(() => {
     if (!isReady) return;
-    const sourceArray = isReverse ? selectedRomaji : selectedKana;
-    // Use weighted selection - prioritizes characters user struggles with
-    const newChar = adaptiveSelector.selectWeightedCharacter(
-      sourceArray,
-      correctChar,
-    );
-    adaptiveSelector.markCharacterSeen(newChar);
-    setCorrectChar(newChar);
-  }, [isReady, isReverse, selectedRomaji, selectedKana, correctChar]);
+    setPairData(buildTargetPair());
+  }, [isReady, buildTargetPair]);
 
   const handleCheck = () => {
     const trimmedInput = inputValue.trim();
@@ -227,16 +245,14 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
     setScore(score + 1);
 
     triggerCrazyMode();
-    // Update adaptive weight system - reduces probability of mastered characters
-    adaptiveSelector.updateCharacterWeight(correctChar, true);
-    // Track content-specific stats for achievements (Requirements 1.1-1.8)
-    if (isHiragana(correctChar)) {
-      incrementHiraganaCorrect();
-    } else if (isKatakana(correctChar)) {
-      incrementKatakanaCorrect();
-    }
+    correctChar.split('').forEach(char => {
+      adaptiveSelector.updateCharacterWeight(char, true);
+      if (isHiragana(char)) incrementHiraganaCorrect();
+      else if (isKatakana(char)) incrementKatakanaCorrect();
+    });
     // Reset wrong streak on correct answer (Requirement 10.2)
     resetWrongStreak();
+    recordTargetLengthCorrect();
     setBottomBarState('correct');
     logAttempt({
       questionId: correctChar,
@@ -263,10 +279,11 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
       setScore(score - 1);
     }
     triggerCrazyMode();
-    // Update adaptive weight system - increases probability of difficult characters
-    adaptiveSelector.updateCharacterWeight(correctChar, false);
-    // Track wrong streak for achievements (Requirement 10.2)
+    correctChar.split('').forEach(char =>
+      adaptiveSelector.updateCharacterWeight(char, false),
+    );
     incrementWrongStreak();
+    recordTargetLengthWrong();
     setBottomBarState('wrong');
     logAttempt({
       questionId: correctChar,

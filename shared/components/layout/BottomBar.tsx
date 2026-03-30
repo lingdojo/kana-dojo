@@ -14,7 +14,7 @@ import {
   LucideIcon,
 } from 'lucide-react';
 import clsx from 'clsx';
-import { useClick } from '@/shared/hooks/useAudio';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 import {
   useThemePreferences,
   ThemesModal,

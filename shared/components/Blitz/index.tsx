@@ -2,9 +2,9 @@
 
 import { useEffect, useState, useRef, useCallback } from 'react';
 import { usePathname } from 'next/navigation';
-import { useChallengeTimer } from '@/shared/hooks/useTimer';
-import { useGoalTimers } from '@/shared/hooks/useGoalTimers';
-import { useClick, useCorrect, useError } from '@/shared/hooks/useAudio';
+import { useChallengeTimer } from '@/shared/hooks/game/useChallengeTimer';
+import { useGoalTimers } from '@/shared/hooks/game/useGoalTimers';
+import { useClick, useCorrect, useError } from '@/shared/hooks/generic/useAudio';
 import { shuffle } from '@/shared/lib/shuffle';
 import confetti from 'canvas-confetti';
 import { statsTracking } from '@/features/Progress';

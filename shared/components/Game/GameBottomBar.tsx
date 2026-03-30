@@ -1,5 +1,5 @@
 'use client';
-import { ReactNode, useEffect, useState } from 'react';
+import React, { ReactNode, useEffect, useState } from 'react';
 import {
   CircleCheck,
   CircleX,
@@ -128,6 +128,7 @@ export const GameBottomBar = ({
                 !showContinue &&
                 !showRetryButton &&
                 'cursor-default opacity-60',
+              (canCheck || showNextButton) && 'animate-float [--float-distance:-4.5px]'
             )}
             onClick={onAction}
           >

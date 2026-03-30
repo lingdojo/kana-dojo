@@ -19,7 +19,7 @@ import {
 } from 'lucide-react';
 import { useStatsDisplay } from '@/features/Progress';
 import { findHighestCounts } from '@/shared/lib/helperFunctions';
-import { useClick } from '@/shared/hooks/useAudio';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 
 interface StatItem {
   label: string;

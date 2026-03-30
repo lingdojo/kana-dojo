@@ -19,7 +19,7 @@
 
 ![Training](https://github.com/user-attachments/assets/d491708f-2ad3-41c7-9717-dec8a90afd03)
 
-**An aesthetic, minimalist and highly customizable platform for mastering Japanese inspired by Duolingo and Monkeytype. Built with Next.js and sponsored by Vercel**
+**An aesthetic, minimalist, and highly customizable platform for mastering Japanese, inspired by Duolingo and Monkeytype. Built with Next.js and sponsored by Vercel.**
 
 [![Vercel OSS Program](https://img.shields.io/badge/Vercel-OSS%20Program-black?style=for-the-badge&logo=vercel)](https://vercel.com/oss)
 [![Sponsored by Vercel](https://img.shields.io/badge/Sponsored%20by-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/oss)
@@ -49,7 +49,7 @@ This README is available in multiple languages:
 
 ## About
 
-KanaDojo is an engaging and user-friendly web-based Japanese learning platform that makes mastering Hiragana, Katakana, Kanji, and Vocabulary fun and intuitive. Built with a focus on aesthetics, customization, and effective learning, it provides an immersive and engaging training environment for Japanese language learners at all levels.
+KanaDojo is an engaging and user-friendly web-based Japanese learning platform that makes mastering Hiragana, Katakana, Kanji, and vocabulary fun and intuitive. Built with a focus on aesthetics, customization, and effective learning, it provides an immersive training environment for Japanese language learners at all levels.
 
 ## Contributing
 
@@ -124,8 +124,13 @@ npm run check
 | [All Documentation](./docs/)                              | Complete documentation index                   |
 
 ## Tech Stack
-
-Next.js 15 · React 19 · TypeScript · Tailwind CSS · shadcn/ui · Zustand · Framer Motion
+- [Next.js](https://nextjs.org/) 15  
+- [React](https://react.dev/) 19  
+- [TypeScript](https://www.typescriptlang.org/)  
+- [Tailwind CSS](https://tailwindcss.com/)  
+- [shadcn/ui](https://ui.shadcn.com/)  
+- [Zustand](https://github.com/pmndrs/zustand)  
+- [Framer Motion](https://www.framer.com/motion/)
 
 > See [Architecture docs](./docs/ARCHITECTURE.md) for full technical details.
 
@@ -137,7 +142,7 @@ Next.js 15 · React 19 · TypeScript · Tailwind CSS · shadcn/ui · Zustand · 
 
 </div>
 
-## License
+## Licence
 
 This project is licensed under the AGPL 3.0 License — see [LICENSE.md](./LICENSE.md) for details.
 

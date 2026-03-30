@@ -24,7 +24,7 @@ import MobileBottomBar from '@/shared/components/layout/BottomBar';
 import { useVisitTracker } from '@/features/Progress/hooks/useVisitTracker';
 import { getGlobalAdaptiveSelector } from '@/shared/lib/adaptiveSelection';
 import GlobalAudioController from '@/shared/components/layout/GlobalAudioController';
-import { useClick } from '@/shared/hooks/useAudio';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 import ServiceWorkerRegistration from '@/shared/components/ServiceWorkerRegistration';
 import CursorTrailRenderer from '@/features/Preferences/components/renderers/CursorTrailRenderer';
 import ClickEffectRenderer from '@/features/Preferences/components/renderers/ClickEffectRenderer';

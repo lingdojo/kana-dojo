@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useRef } from 'react';
 import clsx from 'clsx';
-import { useClick } from '@/shared/hooks/useAudio';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 import { useStopwatch } from 'react-timer-hook';
 import { useStatsDisplay } from '@/features/Progress';
 import {
@@ -117,7 +117,7 @@ const Return = ({ isHidden, gameMode, onQuit }: ReturnProps) => {
         {/* Stats button - visible only on small screens */}
         <ActionButton
           borderRadius='xl'
-          className='w-auto px-3 py-1 text-xl sm:hidden'
+          className='w-auto px-3 py-1 text-xl sm:hidden animate-float [--float-distance:-2px]'
           onClick={handleShowStats}
         >
           <ChartSpline size={24} />
@@ -149,7 +149,7 @@ const Return = ({ isHidden, gameMode, onQuit }: ReturnProps) => {
           <ActionButton
             borderRadius='3xl'
             borderBottomThickness={8}
-            className='hidden w-auto p-2 text-xl sm:flex md:px-6'
+            className='hidden w-auto p-2 text-xl sm:flex md:px-6 animate-float [--float-distance:-6px]'
             onClick={handleShowStats}
           >
             <ChartSpline size={24} />

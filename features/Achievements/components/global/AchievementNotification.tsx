@@ -7,7 +7,7 @@ import { Trophy, X } from 'lucide-react';
 import useAchievementStore, {
   type AchievementNotification as NotificationType,
 } from '../../store/useAchievementStore';
-import { useClick } from '@/shared/hooks/useAudio';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 import { cardBorderStyles } from '@/shared/lib/styles';
 
 interface AchievementNotificationProps {

@@ -17,7 +17,7 @@ import {
   N2VocabLength,
   N1VocabLength,
 } from '@/shared/lib/unitSets';
-import { useClick } from '@/shared/hooks/useAudio';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 import { ActionButton } from '@/shared/components/ui/ActionButton';
 import { useMemo } from 'react';
 import SelectionStatusBar from '@/shared/components/Menu/SelectionStatusBar';

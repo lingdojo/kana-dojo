@@ -17,7 +17,7 @@ import { mdxComponents } from './mdx';
 import { ActionButton } from '@/shared/components/ui/ActionButton';
 import { Link } from '@/core/i18n/routing';
 import { ArrowLeft, BookOpen } from 'lucide-react';
-import { useClick } from '@/shared/hooks/useAudio';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 
 /**
  * Category badge color mappings

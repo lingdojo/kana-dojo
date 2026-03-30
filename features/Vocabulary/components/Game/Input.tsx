@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { toHiragana } from 'wanakana';
 import { IVocabObj } from '@/features/Vocabulary/store/useVocabStore';
-import { useClick, useCorrect, useError } from '@/shared/hooks/useAudio';
+import { useClick, useCorrect, useError } from '@/shared/hooks/generic/useAudio';
 import { useStopwatch } from 'react-timer-hook';
 import { useGameStats, useStatsDisplay } from '@/features/Progress';
 import Stars from '@/shared/components/Game/Stars';

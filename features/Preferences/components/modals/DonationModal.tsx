@@ -4,7 +4,7 @@ import { ActionButton } from '@/shared/components/ui/ActionButton';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { Heart, X } from 'lucide-react';
 import { useCallback } from 'react';
-import { useClick } from '@/shared/hooks/useAudio';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 
 interface DonationModalProps {
   open: boolean;

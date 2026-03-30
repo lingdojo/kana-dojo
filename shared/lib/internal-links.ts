@@ -98,8 +98,8 @@ export const mainLinks = {
   },
   translate: {
     href: '/translate',
-    text: 'Translator',
-    title: 'Free Japanese to English Translator',
+    text: 'Japanese Translator',
+    title: 'Japanese Translator with Romaji',
   },
   academy: {
     href: '/academy',
@@ -262,9 +262,15 @@ export function getContextualLink(keyword: string): InternalLink | null {
 
   // Translator
   if (
-    ['translator', 'translate', 'translation', 'japanese translator'].includes(
-      keywordLower,
-    )
+    [
+      'translator',
+      'translate',
+      'translation',
+      'japanese translator',
+      'english to japanese',
+      'japanese to english',
+      'romaji translator',
+    ].includes(keywordLower)
   ) {
     return mainLinks.translate;
   }

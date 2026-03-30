@@ -1,7 +1,7 @@
 'use client';
 import clsx from 'clsx';
 import { useState, useEffect, ReactNode } from 'react';
-import { useClick } from '@/shared/hooks/useAudio';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 import { ChevronUp } from 'lucide-react';
 
 interface CollapsibleSectionProps {
@@ -16,6 +16,8 @@ interface CollapsibleSectionProps {
   storageKey?: string;
   /** When true, applies a full border to the header instead of just a bottom border */
   fullBorder?: boolean;
+  /** Toggle between original icon style and new badge style */
+  useNewIconDesign?: boolean;
 }
 
 const levelStyles = {
@@ -39,6 +41,15 @@ const levelStyles = {
   },
 };
 
+const newIconClassesByLevel = {
+  section:
+    'flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border-b-6 border-(--secondary-color-accent) bg-(--secondary-color) leading-none text-(--background-color) motion-safe:animate-float [--float-distance:-4px] [&>svg]:h-7 [&>svg]:w-7',
+  subsection:
+    'flex h-9 w-9 shrink-0 items-center justify-center rounded-2xl border-b-6 border-(--secondary-color-accent) bg-(--secondary-color) leading-none text-(--background-color) motion-safe:animate-float [--float-distance:-3.25px] [&>svg]:h-4 [&>svg]:w-4',
+  subsubsection:
+    'flex h-7 w-7 shrink-0 items-center justify-center rounded-2xl border-b-6 border-(--secondary-color-accent) bg-(--secondary-color) leading-none text-(--background-color) motion-safe:animate-float [--float-distance:-2.5px] [&>svg]:h-3.5 [&>svg]:w-3.5',
+} as const;
+
 const CollapsibleSection = ({
   title,
   icon,
@@ -49,6 +60,7 @@ const CollapsibleSection = ({
   id,
   storageKey,
   fullBorder = false,
+  useNewIconDesign = false,
 }: CollapsibleSectionProps) => {
   const { playClick } = useClick();
 
@@ -114,11 +126,13 @@ const CollapsibleSection = ({
         {icon && (
           <span
             className={clsx(
-              'flex h-11 w-11 items-center justify-center rounded-xl bg-(--card-color) text-(--secondary-color)',
-              'transition-colors duration-300',
-              'group-active:bg-(--background-color)',
-              'group-focus-visible:bg-(--background-color)',
-              'md:group-hover:bg-(--background-color)',
+              useNewIconDesign
+                ? newIconClassesByLevel[level]
+                : 'flex h-11 w-11 items-center justify-center rounded-xl bg-(--card-color) text-(--secondary-color)',
+              !useNewIconDesign && 'transition-colors duration-300',
+              !useNewIconDesign && 'group-active:bg-(--background-color)',
+              !useNewIconDesign && 'group-focus-visible:bg-(--background-color)',
+              !useNewIconDesign && 'md:group-hover:bg-(--background-color)',
             )}
           >
             {icon}

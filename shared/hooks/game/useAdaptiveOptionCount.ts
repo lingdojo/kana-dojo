@@ -1,7 +1,7 @@
 'use client';
 import { useState, useCallback, useMemo } from 'react';
 
-interface ProgressiveDifficultyOptions {
+interface AdaptiveOptionCountOptions {
   /** Minimum number of options (default: 3) */
   minOptions?: number;
   /** Maximum number of options (default: 6) */
@@ -12,7 +12,7 @@ interface ProgressiveDifficultyOptions {
   wrongsToDecrease?: number;
 }
 
-interface ProgressiveDifficultyState {
+interface AdaptiveOptionCountState {
   /** Current number of answer options to display */
   optionCount: number;
   /** Current difficulty level (0 = easiest) */
@@ -34,14 +34,14 @@ interface ProgressiveDifficultyState {
  * - Tracks performance to adaptively adjust difficulty
  *
  * @example
- * const { optionCount, recordCorrect, recordWrong, difficultyLevel } = useProgressiveDifficulty();
+ * const { optionCount, recordCorrect, recordWrong, difficultyLevel } = useAdaptiveOptionCount();
  * // optionCount starts at 3
  * // After 3 correct answers: optionCount becomes 4
  * // After 6 correct answers: optionCount becomes 5
  * // After 9 correct answers: optionCount becomes 6 (max)
  */
-export const useProgressiveDifficulty = (
-  options: ProgressiveDifficultyOptions = {},
+export const useAdaptiveOptionCount = (
+  options: AdaptiveOptionCountOptions = {},
 ) => {
   const {
     minOptions = 3,
@@ -50,7 +50,7 @@ export const useProgressiveDifficulty = (
     wrongsToDecrease = 2,
   } = options;
 
-  const [state, setState] = useState<ProgressiveDifficultyState>({
+  const [state, setState] = useState<AdaptiveOptionCountState>({
     optionCount: minOptions,
     difficultyLevel: 0,
     levelStreak: 0,
@@ -140,4 +140,4 @@ export const useProgressiveDifficulty = (
   };
 };
 
-export default useProgressiveDifficulty;
+export default useAdaptiveOptionCount;

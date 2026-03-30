@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useState, useMemo, useCallback, useRef, memo } from 'react';
 import { themeSets } from '@/features/Preferences';
-import { useClick } from '@/shared/hooks/useAudio';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 import clsx from 'clsx';
 
 // Animation keyframes for interactive mode only

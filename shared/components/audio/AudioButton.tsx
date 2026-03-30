@@ -1,5 +1,5 @@
 'use client';
-import { useJapaneseTTS } from '@/shared/hooks/useJapaneseTTS';
+import { useJapaneseTTS } from '@/features/Preferences/hooks/useJapaneseTTS';
 import { Volume2, Loader2 } from 'lucide-react';
 import { useCallback, useEffect, useRef } from 'react';
 import clsx from 'clsx';
