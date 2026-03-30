@@ -808,7 +808,7 @@
     "explanation": "Often means sensitive/delicate in Japanese. (Set 5)",
     "example": "彼は意外とナイーブな性格だ。",
     "id": 90,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1078,7 +1078,7 @@
     "explanation": "In Japanese it can refer to animation in general. (Set 6)",
     "example": "子どものころからアニメが好きだ。",
     "id": 120,
-    "issued": false,
+    "issued": true,
     "completed": false
   }
 ]
