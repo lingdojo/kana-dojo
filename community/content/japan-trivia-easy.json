@@ -417,6 +417,17 @@
     "correctAnswerIndex": 0
   },
   {
+  "question": "What is the Japanese art of the traditional tea ceremony called (also known as Chanoyu)?",
+  "difficulty": "easy",
+  "answers": [
+    "Sado",
+    "Ikebana",
+    "Kaiseki",
+    "Bento"
+    ],
+    "correctIndex": 0
+  },
+  {
   "question": "Which of these is a Japanese noodle dish served in broth?",
   "difficulty": "easy",
   "answers": [
@@ -457,6 +468,38 @@
     "Zori",
     "Waraji",
     "Tabi"
+  ],
+  "correctIndex": 0
+},
+  {
+  "question": "Which city is famous for the Peace Memorial Park?",
+  "difficulty": "easy",
+  "answers": [
+    "Hiroshima",
+    "Osaka",
+    "Tokyo",
+    "Fukuoka"
+  ],
+  "correctIndex": 0
+},
+  {
+  "question": "What is the Japanese term for a traditional inn?",
+  "difficulty": "easy",
+  "answers": [
+    "Ryokan",
+    "Minshuku",
+    "Izakaya",
+    "Yatai"
+  ],
+  "correctIndex": 0
+},{
+  "question": "Which Japanese art form involves arranging flowers? (Community variation 43)",
+  "difficulty": "easy",
+  "answers": [
+    "Ikebana",
+    "Origami",
+    "Ukiyo-e",
+    "Shodo"
   ],
   "correctIndex": 0
 }

@@ -105,16 +105,14 @@ jobs:
                 return null;
               }
 
-              const start = Math.floor(Math.random() * items.length);
-              for (let offset = 0; offset < items.length; offset += 1) {
-                const index = (start + offset) % items.length;
-                const candidate = items[index];
-                if (predicate(candidate, index)) {
-                  return candidate;
-                }
+              const eligible = items.filter(predicate);
+
+              if (eligible.length === 0) {
+                return null;
               }
 
-              return null;
+              const randomIndex = Math.floor(Math.random() * eligible.length);
+              return eligible[randomIndex];
             }
 
             async function resolveMilestoneNumber() {
@@ -395,20 +393,8 @@ jobs:
               if (nextType === 'theme') {
               // Skip items that are already issued OR completed OR already exist in main
               item = findRandomEligible(themes, function(th) {
-                if (th.issued || th.completed) {
+                if (th.issued) {
                   return false;
-                }
-                if (themesSourceContent) {
-                  const hasId = th.id && existingThemes.some(function(theme) { return theme.id === th.id; });
-                  const hasName = th.name && existingThemes.some(function(theme) {
-                    return (theme.name || '').toLowerCase() === th.name.toLowerCase();
-                  });
-                  if (hasId || hasName) {
-                    const themeIdx = themes.findIndex(function(ti) { return ti.id === th.id; });
-                    themes[themeIdx].completed = true;
-                    backlogChanged = true;
-                    return false;
-                  }
                 }
                 return true;
               });
@@ -450,15 +436,8 @@ jobs:
               backlogChanged = true;
               
               } else if (nextType === 'fact') {
-              // Skip items that are already issued OR completed OR already exist in main
               item = findRandomEligible(facts, function(f) {
-                if (f.issued || f.completed) {
-                  return false;
-                }
-                if (Array.isArray(existingFacts) && existingFacts.includes(f.fact)) {
-                  const factIdx = facts.findIndex(function(fi) { return fi.id === f.id; });
-                  facts[factIdx].completed = true;
-                  backlogChanged = true;
+                if (f.issued) {
                   return false;
                 }
                 return true;
@@ -502,22 +481,8 @@ jobs:
               } else if (nextType === 'proverb') {
               // Proverb
               item = findRandomEligible(proverbs, function(p) {
-                if (p.issued || p.completed) {
+                if (p.issued) {
                   return false;
-                }
-                if (Array.isArray(existingProverbs)) {
-                  const exists = existingProverbs.some(function(ep) {
-                    if (!ep || typeof ep !== 'object') {
-                      return false;
-                    }
-                    return ep.japanese === p.japanese && ep.romaji === p.romaji && ep.english === p.english;
-                  });
-                  if (exists) {
-                    const proverbIdx = proverbs.findIndex(function(pi) { return pi.id === p.id; });
-                    proverbs[proverbIdx].completed = true;
-                    backlogChanged = true;
-                    return false;
-                  }
                 }
                 return true;
               });
@@ -561,22 +526,8 @@ jobs:
               backlogChanged = true;
               } else if (nextType === 'haiku') {
               item = findRandomEligible(haiku, function(h) {
-                if (h.issued || h.completed) {
+                if (h.issued) {
                   return false;
-                }
-                if (Array.isArray(existingHaiku)) {
-                  const exists = existingHaiku.some(function(eh) {
-                    if (!eh || typeof eh !== 'object') {
-                      return false;
-                    }
-                    return eh.japanese === h.japanese && eh.romaji === h.romaji && eh.english === h.english;
-                  });
-                  if (exists) {
-                    const haikuIdx = haiku.findIndex(function(hi) { return hi.id === h.id; });
-                    haiku[haikuIdx].completed = true;
-                    backlogChanged = true;
-                    return false;
-                  }
                 }
                 return true;
               });
@@ -614,29 +565,8 @@ jobs:
               backlogChanged = true;
               } else if (nextType === 'trivia') {
               item = findRandomEligible(trivia, function(q) {
-                if (q.issued || q.completed) {
+                if (q.issued) {
                   return false;
-                }
-                if (Array.isArray(existingTrivia)) {
-                  const exists = existingTrivia.some(function(eq) {
-                    if (!eq || typeof eq !== 'object') {
-                      return false;
-                    }
-                    if (eq.question !== q.question) {
-                      return false;
-                    }
-                    const eqAnswers = Array.isArray(eq.answers) ? eq.answers : [];
-                    const qAnswers = Array.isArray(q.answers) ? q.answers : [];
-                    return eqAnswers.length === qAnswers.length && eqAnswers.every(function(ans, idx) {
-                      return ans === qAnswers[idx];
-                    });
-                  });
-                  if (exists) {
-                    const triviaIdx = trivia.findIndex(function(ti) { return ti.id === q.id; });
-                    trivia[triviaIdx].completed = true;
-                    backlogChanged = true;
-                    return false;
-                  }
                 }
                 return true;
               });
@@ -682,13 +612,7 @@ jobs:
               } else if (nextType === 'grammar') {
               // Grammar
               item = findRandomEligible(grammar, function(g) {
-                if (g.issued || g.completed) {
-                  return false;
-                }
-                if (Array.isArray(existingGrammar) && existingGrammar.includes(g.text)) {
-                  const grammarIdx = grammar.findIndex(function(gi) { return gi.id === g.id; });
-                  grammar[grammarIdx].completed = true;
-                  backlogChanged = true;
+                if (g.issued) {
                   return false;
                 }
                 return true;
@@ -733,26 +657,8 @@ jobs:
               } else if (nextType === 'animeQuote') {
               // Anime Quote
               item = findRandomEligible(animeQuotes, function(q) {
-                if (q.issued || q.completed) {
+                if (q.issued) {
                   return false;
-                }
-                if (Array.isArray(existingAnimeQuotes)) {
-                  const exists = existingAnimeQuotes.some(function(eq) {
-                    if (!eq || typeof eq !== 'object') {
-                      return false;
-                    }
-                    return eq.japanese === q.japanese
-                      && eq.romaji === q.romaji
-                      && eq.english === q.english
-                      && eq.anime === q.anime
-                      && eq.character === q.character;
-                  });
-                  if (exists) {
-                    const quoteIdx = animeQuotes.findIndex(function(qi) { return qi.id === q.id; });
-                    animeQuotes[quoteIdx].completed = true;
-                    backlogChanged = true;
-                    return false;
-                  }
                 }
                 return true;
               });
@@ -796,26 +702,8 @@ jobs:
               backlogChanged = true;
               } else if (nextType === 'videoGameQuote') {
               item = findRandomEligible(videoGameQuotes, function(q) {
-                if (q.issued || q.completed) {
+                if (q.issued) {
                   return false;
-                }
-                if (Array.isArray(existingVideoGameQuotes)) {
-                  const exists = existingVideoGameQuotes.some(function(eq) {
-                    if (!eq || typeof eq !== 'object') {
-                      return false;
-                    }
-                    return eq.japanese === q.japanese
-                      && eq.romaji === q.romaji
-                      && eq.english === q.english
-                      && eq.game === q.game
-                      && eq.character === q.character;
-                  });
-                  if (exists) {
-                    const quoteIdx = videoGameQuotes.findIndex(function(qi) { return qi.id === q.id; });
-                    videoGameQuotes[quoteIdx].completed = true;
-                    backlogChanged = true;
-                    return false;
-                  }
                 }
                 return true;
               });
@@ -1069,14 +957,14 @@ jobs:
                   return false;
                 }
                 if (Array.isArray(existingExampleSentences)) {
-                  const exists = existingExampleSentences.some(function(es) {
-                    if (!es || typeof es !== 'object') {
+                  const exists = existingExampleSentences.some(function(ee) {
+                    if (!ee || typeof ee !== 'object') {
                       return false;
                     }
-                    return es.japanese === e.japanese && es.romaji === e.romaji && es.english === e.english;
+                    return ee.japanese === e.japanese && ee.romaji === e.romaji && ee.english === e.english;
                   });
                   if (exists) {
-                    const sentenceIdx = exampleSentences.findIndex(function(si) { return si.id === e.id; });
+                    const sentenceIdx = exampleSentences.findIndex(function(ei) { return ei.id === e.id; });
                     exampleSentences[sentenceIdx].completed = true;
                     backlogChanged = true;
                     return false;
@@ -1200,11 +1088,7 @@ jobs:
 
               const tmpl = t.wallpaperUrl;
               const common = t.common;
-              issueTitle = common.shortTitleTemplate
-                .replace('{emoji}', pickEmoji())
-                .replace('{issueType}', 'Wallpaper URL')
-                .replace('{id}', item.id)
-                .trim();
+              issueTitle = t.buildIssueTitle(pickEmoji(), tmpl.title.replace('{id}', item.id));
               const instructions = [
                 '1. Star our repo ⭐',
                 '2. Fork our repo 🍴',
@@ -1245,11 +1129,7 @@ jobs:
 
               const tmpl = t.communityNote;
               const common = t.common;
-              issueTitle = common.shortTitleTemplate
-                .replace('{emoji}', pickEmoji())
-                .replace('{issueType}', 'Community Note Line')
-                .replace('{id}', item.id)
-                .trim();
+              issueTitle = t.buildIssueTitle(pickEmoji(), tmpl.title.replace('{id}', item.id));
               const instructions = [
                 '1. Star our repo ⭐',
                 '2. Fork our repo 🍴',

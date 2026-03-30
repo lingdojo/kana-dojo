@@ -1,11 +1,15 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/shared/lib/utils';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 import { Joystick, Palette, Wand2 } from 'lucide-react';
 
-const SECTION_OFFSET = 112;
+const ACTIVE_SECTION_OFFSET = 156;
+const NAV_CLICK_SUPPRESSION_MS = 3000;
+const SCROLL_TIMEOUT_MS = 350;
+const SCROLL_CONTAINER_SELECTOR = '[data-scroll-restoration-id="container"]';
 
 type SectionId = 'behavior' | 'display' | 'effects';
 
@@ -33,58 +37,118 @@ const sections: SectionItem[] = [
   },
 ];
 
+const getSectionElements = () =>
+  sections
+    .map(section => document.getElementById(section.id))
+    .filter((element): element is HTMLElement => Boolean(element));
+
+const getScrollContainer = () =>
+  document.querySelector(SCROLL_CONTAINER_SELECTOR) as HTMLElement | null;
+
 const PreferencesSectionNav = () => {
   const [activeSection, setActiveSection] = useState<SectionId>('behavior');
+  const { playClick } = useClick();
+  const suppressedSectionRef = useRef<SectionId | null>(null);
+  const suppressionTimeoutRef = useRef<number | null>(null);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
-    const sectionElements = sections
-      .map(section => document.getElementById(section.id))
-      .filter((element): element is HTMLElement => Boolean(element));
+    const scrollContainer = getScrollContainer();
+    if (!scrollContainer) return;
 
-    if (sectionElements.length === 0) return;
+    const updateActiveSection = () => {
+      const sectionElements = getSectionElements();
+      if (sectionElements.length === 0) return;
 
-    const observer = new IntersectionObserver(
-      entries => {
-        const visibleEntries = entries
-          .filter(entry => entry.isIntersecting)
-          .sort(
-            (a, b) =>
-              Math.abs(a.boundingClientRect.top) -
-              Math.abs(b.boundingClientRect.top),
-          );
+      if (suppressedSectionRef.current) {
+        const suppressedSection = suppressedSectionRef.current;
+        setActiveSection(currentSection =>
+          currentSection === suppressedSection
+            ? currentSection
+            : suppressedSection,
+        );
+        return;
+      }
 
-        if (visibleEntries.length === 0) return;
+      const triggerLine =
+        scrollContainer.getBoundingClientRect().top + ACTIVE_SECTION_OFFSET;
 
-        const nextId = visibleEntries[0].target.id as SectionId;
-        setActiveSection(nextId);
-      },
-      {
-        rootMargin: '-96px 0px -55% 0px',
-        threshold: [0.1, 0.25, 0.5],
-      },
-    );
+      const crossedSections = sectionElements.filter(
+        sectionElement =>
+          sectionElement.getBoundingClientRect().top <= triggerLine,
+      );
 
-    sectionElements.forEach(element => observer.observe(element));
+      const nextActiveSection: SectionId =
+        crossedSections.length > 0
+          ? (crossedSections[crossedSections.length - 1].id as SectionId)
+          : (sectionElements[0].id as SectionId);
 
-    return () => observer.disconnect();
+      setActiveSection(currentSection =>
+        currentSection === nextActiveSection
+          ? currentSection
+          : nextActiveSection,
+      );
+    };
+
+    updateActiveSection();
+    scrollContainer.addEventListener('scroll', updateActiveSection, {
+      passive: true,
+    });
+    window.addEventListener('resize', updateActiveSection);
+
+    return () => {
+      if (suppressionTimeoutRef.current) {
+        window.clearTimeout(suppressionTimeoutRef.current);
+      }
+      scrollContainer.removeEventListener('scroll', updateActiveSection);
+      window.removeEventListener('resize', updateActiveSection);
+    };
   }, []);
 
-  const scrollToSection = (sectionId: SectionId) => {
-    const section = document.getElementById(sectionId);
-    if (!section) return;
+  const handleNavigate = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+    sectionId: SectionId,
+  ) => {
+    event.preventDefault();
+    playClick();
 
+    const section = document.getElementById(sectionId);
+    const scrollContainer = getScrollContainer();
+    if (!section || !scrollContainer) return;
+
+    if (suppressionTimeoutRef.current) {
+      window.clearTimeout(suppressionTimeoutRef.current);
+    }
+
+    suppressedSectionRef.current = sectionId;
     setActiveSection(sectionId);
 
-    const top =
-      section.getBoundingClientRect().top + window.scrollY - SECTION_OFFSET;
-    window.scrollTo({ top, behavior: 'smooth' });
+    const containerRect = scrollContainer.getBoundingClientRect();
+    const sectionRect = section.getBoundingClientRect();
+    const targetTop =
+      scrollContainer.scrollTop +
+      (sectionRect.top - containerRect.top) -
+      ACTIVE_SECTION_OFFSET;
+
+    scrollContainer.scrollTo({
+      top: Math.max(0, targetTop),
+      behavior: 'smooth',
+    });
+
+    suppressionTimeoutRef.current = window.setTimeout(() => {
+      suppressedSectionRef.current = null;
+      suppressionTimeoutRef.current = null;
+    }, NAV_CLICK_SUPPRESSION_MS);
+
+    window.setTimeout(() => {
+      window.history.replaceState(null, '', `#${sectionId}`);
+    }, SCROLL_TIMEOUT_MS);
   };
 
   return (
     <div className='sticky top-2 z-40'>
-      <div className='mx-auto w-full max-w-fit rounded-2xl border border-(--main-color)/15 bg-(--background-color)/88 p-1 shadow-[0_12px_40px_rgba(0,0,0,0.18)] backdrop-blur-xl'>
+      <div className='mx-auto w-full max-w-fit rounded-2xl border-1 border-(--border-color) bg-(--background-color) p-1 shadow-[0_12px_40px_rgba(0,0,0,0.18)] backdrop-blur-xl'>
         <div className='flex w-full gap-0 rounded-2xl bg-(--card-color) p-0'>
           {sections.map(section => {
             const isSelected = activeSection === section.id;
@@ -103,21 +167,21 @@ const PreferencesSectionNav = () => {
                     }}
                   />
                 )}
-                <button
-                  type='button'
-                  onClick={() => scrollToSection(section.id)}
+                <a
+                  href={`#${section.id}`}
+                  onClick={event => handleNavigate(event, section.id)}
                   className={cn(
-                    'relative z-10 flex w-full cursor-pointer items-center justify-center gap-2 rounded-2xl px-3 pt-2 pb-4 text-sm font-semibold transition-colors duration-300 sm:px-5',
+                    'relative z-10 flex w-full cursor-pointer items-center justify-center gap-2 rounded-2xl px-5 pt-2 pb-4 text-sm font-semibold no-underline transition-colors duration-300 sm:px-5',
                     isSelected
                       ? 'text-(--background-color)'
                       : 'text-(--secondary-color)/70 hover:text-(--main-color)',
                   )}
                   aria-label={section.label}
-                  aria-current={isSelected ? 'true' : undefined}
+                  aria-current={isSelected ? 'location' : undefined}
                 >
                   <Icon className='h-5 w-5 shrink-0' />
                   <span className='hidden sm:inline'>{section.label}</span>
-                </button>
+                </a>
               </div>
             );
           })}

@@ -36,9 +36,9 @@
     "file": "docs/community-notes/archival-notes.md",
     "position": "bottom",
     "text": "- Additional community note preserved for documentation housekeeping.",
-    "issued": false,
-    "completed": true,
-    "completedBy": "XiaoPengMei",
-    "completedPR": 10336
+    "issued": true,
+    "completed": false,
+    "completedBy": "ArshVermaGit",
+    "completedPR": 10743
   }
 ]

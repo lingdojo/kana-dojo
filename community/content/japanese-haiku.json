@@ -1,65 +1,20 @@
 [
   {
-    "japanese": "春の海\nひねもすのたり\nのたりかな",
-    "romaji": "Haru no umi / hinemosu notari / notari kana",
-    "english": "The spring sea stretches lazily all day, rising and falling.",
-    "poet": "Yosa Buson",
+    "japanese": "古池や 蛙飛びこむ 水の音",
+    "romaji": "Furu ike ya / kawazu tobikomu / mizu no oto",
+    "english": "An old pond; a frog jumps in; the sound of water.",
+    "poet": "Matsuo Basho",
     "season": "Spring",
-    "kigo": "Spring sea (haru no umi)",
-    "notes": "Known for musical phrasing and calm motion."
+    "kigo": "Frog (kawazu)",
+    "notes": "A foundational haiku focused on stillness and sudden movement."
   },
   {
-    "japanese": "雀の子\nそこのけそこのけ\nお馬が通る",
-    "romaji": "Suzume no ko / soko noke soko noke / ouma ga toru",
-    "english": "Little sparrows, move aside, the horse is coming through.",
+    "japanese": "名月を 取ってくれろと 泣く子かな",
+    "romaji": "Meigetsu o / totte kurero to / naku ko kana",
+    "english": "A child cries, asking me to fetch the harvest moon.",
     "poet": "Kobayashi Issa",
-    "season": "Spring",
-    "kigo": "Sparrow chicks (suzume no ko)",
-    "notes": "Playful and warm, characteristic of Issa's tone."
-  },
-  {
-    "japanese": "春の海\nひねもすのたり\nのたりかな",
-    "romaji": "Haru no umi / hinemosu notari / notari kana",
-    "english": "The spring sea stretches lazily all day, rising and falling.",
-    "poet": "Yosa Buson",
-    "season": "Spring",
-    "kigo": "Spring sea (haru no umi)",
-    "notes": "Known for musical phrasing and calm motion."
-  },
-  {
-  "japanese": "夏草や\n兵どもが\n夢の跡",
-  "romaji": "Natsukusa ya / tsuwamono domo ga / yume no ato",
-  "english": "Summer grasses; all that remains of warriors' dreams.",
-  "poet": "Matsuo Basho",
-  "season": "Summer",
-  "kigo": "Summer grasses (natsukusa)",
-  "notes": "Reflects impermanence through a historical battlefield image."
-  },
-  {
-  "japanese": "痩蛙\n負けるな一茶\nこれにあり",
-  "romaji": "Yasegaeru / makeru na Issa / kore ni ari",
-  "english": "Skinny frog, don't give up! Issa is here with you.",
-  "poet": "Kobayashi Issa",
-  "season": "Spring",
-  "kigo": "Frog (kaeru)",
-  "notes": "Humorous encouragement and compassion in Issa's voice."
-  },
-  {
-  "japanese": "五月雨を 集めて早し 最上川",
-  "romaji": "Samidare o / atsume te hayashi / Mogamigawa",
-  "english": "Gathering summer rains, the Mogami River rushes on.",
-  "poet": "Matsuo Basho",
-  "season": "Summer",
-  "kigo": "Summer rain (samidare)",
-  "notes": "A dynamic river image with strong seasonal presence."
-  },
-  {
-  "japanese": "秋深き 隣は何を する人ぞ",
-  "romaji": "Aki fukaki / tonari wa nani o / suru hito zo",
-  "english": "In deep autumn, what kind of person lives next door?",
-  "poet": "Matsuo Basho",
-  "season": "Autumn",
-  "kigo": "Deep autumn (aki fukaki)",
-  "notes": "Evokes solitude and curiosity."
+    "season": "Autumn",
+    "kigo": "Harvest moon (meigetsu)",
+    "notes": "Captures innocent longing through a domestic scene."
   }
 ]

@@ -6,7 +6,7 @@
     "example": "祖母に手紙を書きました。",
     "id": 1,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "マンション (manshon)",
@@ -15,7 +15,7 @@
     "example": "駅前のマンションに住んでいます。",
     "id": 2,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "コンセント (konsento)",
@@ -23,8 +23,8 @@
     "explanation": "コンセント means electrical outlet. (Set 1)",
     "example": "コンセントが足りないので延長コードを使います。",
     "id": 3,
-    "issued": false,
-    "completed": true
+    "issued": true,
+    "completed": false
   },
   {
     "termA": "スマート (sumaato)",
@@ -32,8 +32,8 @@
     "explanation": "Often means slim/stylish, not necessarily intelligent. (Set 1)",
     "example": "彼はスマートな着こなしをしている。",
     "id": 4,
-    "issued": false,
-    "completed": true
+    "issued": true,
+    "completed": false
   },
   {
     "termA": "テンション (tenshon)",
@@ -69,7 +69,7 @@
     "example": "去年落ちた試験に今年リベンジする。",
     "id": 8,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "クレーム (kureemu)",
@@ -78,7 +78,7 @@
     "example": "お客様からクレームが届いた。",
     "id": 9,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "ナイーブ (naibu)",
@@ -87,7 +87,7 @@
     "example": "彼は意外とナイーブな性格だ。",
     "id": 10,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "シール (shiiru)",
@@ -105,7 +105,7 @@
     "example": "資料をホッチキスで留めてください。",
     "id": 12,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "ドンマイ (donmai)",
@@ -114,7 +114,7 @@
     "example": "ミスしてもドンマイ！",
     "id": 13,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "チャレンジ (charenji)",
@@ -123,7 +123,7 @@
     "example": "新しい料理にチャレンジしてみる。",
     "id": 14,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "ナンバー (nanbaa)",
@@ -141,7 +141,7 @@
     "example": "試合前はみんなハイテンションだった。",
     "id": 16,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "イメージ (imeeji)",
@@ -150,7 +150,7 @@
     "example": "会社のイメージが良くなった。",
     "id": 17,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "サラリーマン (sarariman)",
@@ -168,7 +168,7 @@
     "example": "ペットボトルは分別して捨てる。",
     "id": 19,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "アニメ (anime)",
@@ -177,7 +177,7 @@
     "example": "子どものころからアニメが好きだ。",
     "id": 20,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "手紙 (tegami)",
@@ -186,7 +186,7 @@
     "example": "祖母に手紙を書きました。",
     "id": 21,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "マンション (manshon)",
@@ -195,7 +195,7 @@
     "example": "駅前のマンションに住んでいます。",
     "id": 22,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "コンセント (konsento)",
@@ -204,7 +204,7 @@
     "example": "コンセントが足りないので延長コードを使います。",
     "id": 23,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "スマート (sumaato)",
@@ -213,7 +213,7 @@
     "example": "彼はスマートな着こなしをしている。",
     "id": 24,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "テンション (tenshon)",
@@ -230,8 +230,8 @@
     "explanation": "Usually means buffet/all-you-can-eat in Japan. (Set 2)",
     "example": "ホテルの朝食はバイキングです。",
     "id": 26,
-    "issued": false,
-    "completed": true
+    "issued": true,
+    "completed": false
   },
   {
     "termA": "カンニング (kanningu)",
@@ -249,7 +249,7 @@
     "example": "去年落ちた試験に今年リベンジする。",
     "id": 28,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "クレーム (kureemu)",
@@ -258,7 +258,7 @@
     "example": "お客様からクレームが届いた。",
     "id": 29,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "ナイーブ (naibu)",
@@ -267,7 +267,7 @@
     "example": "彼は意外とナイーブな性格だ。",
     "id": 30,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "シール (shiiru)",
@@ -285,7 +285,7 @@
     "example": "資料をホッチキスで留めてください。",
     "id": 32,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "ドンマイ (donmai)",
@@ -294,7 +294,7 @@
     "example": "ミスしてもドンマイ！",
     "id": 33,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "チャレンジ (charenji)",
@@ -303,7 +303,7 @@
     "example": "新しい料理にチャレンジしてみる。",
     "id": 34,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "ナンバー (nanbaa)",
@@ -311,8 +311,8 @@
     "explanation": "Can mean ranking position in Japanese usage. (Set 2)",
     "example": "彼はチームのナンバー1だ。",
     "id": 35,
-    "issued": false,
-    "completed": true
+    "issued": true,
+    "completed": false
   },
   {
     "termA": "ハイテンション (haitenshon)",
@@ -321,7 +321,7 @@
     "example": "試合前はみんなハイテンションだった。",
     "id": 36,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "イメージ (imeeji)",
@@ -330,7 +330,7 @@
     "example": "会社のイメージが良くなった。",
     "id": 37,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "サラリーマン (sarariman)",
@@ -348,7 +348,7 @@
     "example": "ペットボトルは分別して捨てる。",
     "id": 39,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "アニメ (anime)",
@@ -357,7 +357,7 @@
     "example": "子どものころからアニメが好きだ。",
     "id": 40,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "手紙 (tegami)",
@@ -366,7 +366,7 @@
     "example": "祖母に手紙を書きました。",
     "id": 41,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "マンション (manshon)",
@@ -375,7 +375,7 @@
     "example": "駅前のマンションに住んでいます。",
     "id": 42,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "コンセント (konsento)",
@@ -384,7 +384,7 @@
     "example": "コンセントが足りないので延長コードを使います。",
     "id": 43,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "スマート (sumaato)",
@@ -393,7 +393,7 @@
     "example": "彼はスマートな着こなしをしている。",
     "id": 44,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "テンション (tenshon)",
@@ -401,8 +401,8 @@
     "explanation": "Often means excitement/energy level in casual Japanese. (Set 3)",
     "example": "ライブでテンションが上がった。",
     "id": 45,
-    "issued": false,
-    "completed": true
+    "issued": true,
+    "completed": false
   },
   {
     "termA": "バイキング (baikingu)",
@@ -419,8 +419,8 @@
     "explanation": "カンニング means cheating on tests. (Set 3)",
     "example": "試験でカンニングしてはいけません。",
     "id": 47,
-    "issued": false,
-    "completed": true
+    "issued": true,
+    "completed": false
   },
   {
     "termA": "リベンジ (ribenji)",
@@ -429,7 +429,7 @@
     "example": "去年落ちた試験に今年リベンジする。",
     "id": 48,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "クレーム (kureemu)",
@@ -438,7 +438,7 @@
     "example": "お客様からクレームが届いた。",
     "id": 49,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "ナイーブ (naibu)",
@@ -447,7 +447,7 @@
     "example": "彼は意外とナイーブな性格だ。",
     "id": 50,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "シール (shiiru)",
@@ -465,7 +465,7 @@
     "example": "資料をホッチキスで留めてください。",
     "id": 52,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "ドンマイ (donmai)",
@@ -474,7 +474,7 @@
     "example": "ミスしてもドンマイ！",
     "id": 53,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "チャレンジ (charenji)",
@@ -482,8 +482,8 @@
     "explanation": "Often means trying something new. (Set 3)",
     "example": "新しい料理にチャレンジしてみる。",
     "id": 54,
-    "issued": false,
-    "completed": true
+    "issued": true,
+    "completed": false
   },
   {
     "termA": "ナンバー (nanbaa)",
@@ -501,7 +501,7 @@
     "example": "試合前はみんなハイテンションだった。",
     "id": 56,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "イメージ (imeeji)",
@@ -510,7 +510,7 @@
     "example": "会社のイメージが良くなった。",
     "id": 57,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "サラリーマン (sarariman)",
@@ -519,7 +519,9 @@
     "example": "父は都内でサラリーマンをしている。",
     "id": 58,
     "issued": false,
-    "completed": true
+    "completed": true,
+    "completedBy": "24F1002074",
+    "completedPR": 10790
   },
   {
     "termA": "ペットボトル (petto botoru)",
@@ -528,7 +530,7 @@
     "example": "ペットボトルは分別して捨てる。",
     "id": 59,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "アニメ (anime)",
@@ -537,7 +539,7 @@
     "example": "子どものころからアニメが好きだ。",
     "id": 60,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "手紙 (tegami)",
@@ -546,7 +548,7 @@
     "example": "祖母に手紙を書きました。",
     "id": 61,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "マンション (manshon)",
@@ -555,7 +557,7 @@
     "example": "駅前のマンションに住んでいます。",
     "id": 62,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "コンセント (konsento)",
@@ -564,7 +566,7 @@
     "example": "コンセントが足りないので延長コードを使います。",
     "id": 63,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "スマート (sumaato)",
@@ -573,7 +575,7 @@
     "example": "彼はスマートな着こなしをしている。",
     "id": 64,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "テンション (tenshon)",
@@ -609,7 +611,7 @@
     "example": "去年落ちた試験に今年リベンジする。",
     "id": 68,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "クレーム (kureemu)",
@@ -618,7 +620,7 @@
     "example": "お客様からクレームが届いた。",
     "id": 69,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "ナイーブ (naibu)",
@@ -627,7 +629,7 @@
     "example": "彼は意外とナイーブな性格だ。",
     "id": 70,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "シール (shiiru)",
@@ -645,7 +647,7 @@
     "example": "資料をホッチキスで留めてください。",
     "id": 72,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "ドンマイ (donmai)",
@@ -653,8 +655,8 @@
     "explanation": "Used to comfort someone: 'never mind'. (Set 4)",
     "example": "ミスしてもドンマイ！",
     "id": 73,
-    "issued": false,
-    "completed": true
+    "issued": true,
+    "completed": false
   },
   {
     "termA": "チャレンジ (charenji)",
@@ -662,8 +664,8 @@
     "explanation": "Often means trying something new. (Set 4)",
     "example": "新しい料理にチャレンジしてみる。",
     "id": 74,
-    "issued": false,
-    "completed": true
+    "issued": true,
+    "completed": false
   },
   {
     "termA": "ナンバー (nanbaa)",
@@ -680,10 +682,8 @@
     "explanation": "Means very energetic mood. (Set 4)",
     "example": "試合前はみんなハイテンションだった。",
     "id": 76,
-    "issued": false,
-    "completed": true,
-    "completedBy": "22f3000216",
-    "completedPR": 10527
+    "issued": true,
+    "completed": false
   },
   {
     "termA": "イメージ (imeeji)",
@@ -691,7 +691,7 @@
     "explanation": "Often means impression/public image. (Set 4)",
     "example": "会社のイメージが良くなった。",
     "id": 77,
-    "issued": false,
+    "issued": true,
     "completed": true
   },
   {
@@ -710,7 +710,7 @@
     "example": "ペットボトルは分別して捨てる。",
     "id": 79,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "アニメ (anime)",
@@ -719,7 +719,7 @@
     "example": "子どものころからアニメが好きだ。",
     "id": 80,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "手紙 (tegami)",
@@ -728,7 +728,7 @@
     "example": "祖母に手紙を書きました。",
     "id": 81,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "マンション (manshon)",
@@ -737,7 +737,7 @@
     "example": "駅前のマンションに住んでいます。",
     "id": 82,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "コンセント (konsento)",
@@ -746,7 +746,7 @@
     "example": "コンセントが足りないので延長コードを使います。",
     "id": 83,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "スマート (sumaato)",
@@ -755,7 +755,7 @@
     "example": "彼はスマートな着こなしをしている。",
     "id": 84,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "テンション (tenshon)",
@@ -791,7 +791,7 @@
     "example": "去年落ちた試験に今年リベンジする。",
     "id": 88,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "クレーム (kureemu)",
@@ -800,7 +800,7 @@
     "example": "お客様からクレームが届いた。",
     "id": 89,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "ナイーブ (naibu)",
@@ -808,8 +808,8 @@
     "explanation": "Often means sensitive/delicate in Japanese. (Set 5)",
     "example": "彼は意外とナイーブな性格だ。",
     "id": 90,
-    "issued": false,
-    "completed": true
+    "issued": true,
+    "completed": false
   },
   {
     "termA": "シール (shiiru)",
@@ -827,7 +827,7 @@
     "example": "資料をホッチキスで留めてください。",
     "id": 92,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "ドンマイ (donmai)",
@@ -836,7 +836,7 @@
     "example": "ミスしてもドンマイ！",
     "id": 93,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "チャレンジ (charenji)",
@@ -845,7 +845,7 @@
     "example": "新しい料理にチャレンジしてみる。",
     "id": 94,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "ナンバー (nanbaa)",
@@ -863,7 +863,7 @@
     "example": "試合前はみんなハイテンションだった。",
     "id": 96,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "イメージ (imeeji)",
@@ -872,7 +872,7 @@
     "example": "会社のイメージが良くなった。",
     "id": 97,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "サラリーマン (sarariman)",
@@ -890,7 +890,7 @@
     "example": "ペットボトルは分別して捨てる。",
     "id": 99,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "アニメ (anime)",
@@ -899,7 +899,7 @@
     "example": "子どものころからアニメが好きだ。",
     "id": 100,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "手紙 (tegami)",
@@ -908,7 +908,7 @@
     "example": "祖母に手紙を書きました。",
     "id": 101,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "マンション (manshon)",
@@ -917,7 +917,7 @@
     "example": "駅前のマンションに住んでいます。",
     "id": 102,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "コンセント (konsento)",
@@ -926,7 +926,7 @@
     "example": "コンセントが足りないので延長コードを使います。",
     "id": 103,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "スマート (sumaato)",
@@ -935,7 +935,7 @@
     "example": "彼はスマートな着こなしをしている。",
     "id": 104,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "テンション (tenshon)",
@@ -971,7 +971,7 @@
     "example": "去年落ちた試験に今年リベンジする。",
     "id": 108,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "クレーム (kureemu)",
@@ -980,7 +980,7 @@
     "example": "お客様からクレームが届いた。",
     "id": 109,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "ナイーブ (naibu)",
@@ -989,7 +989,7 @@
     "example": "彼は意外とナイーブな性格だ。",
     "id": 110,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "シール (shiiru)",
@@ -1007,7 +1007,7 @@
     "example": "資料をホッチキスで留めてください。",
     "id": 112,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "ドンマイ (donmai)",
@@ -1016,7 +1016,7 @@
     "example": "ミスしてもドンマイ！",
     "id": 113,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "チャレンジ (charenji)",
@@ -1025,7 +1025,7 @@
     "example": "新しい料理にチャレンジしてみる。",
     "id": 114,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "ナンバー (nanbaa)",
@@ -1042,8 +1042,8 @@
     "explanation": "Means very energetic mood. (Set 6)",
     "example": "試合前はみんなハイテンションだった。",
     "id": 116,
-    "issued": false,
-    "completed": true
+    "issued": true,
+    "completed": false
   },
   {
     "termA": "イメージ (imeeji)",
@@ -1052,7 +1052,7 @@
     "example": "会社のイメージが良くなった。",
     "id": 117,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "サラリーマン (sarariman)",
@@ -1070,7 +1070,7 @@
     "example": "ペットボトルは分別して捨てる。",
     "id": 119,
     "issued": false,
-    "completed": true
+    "completed": false
   },
   {
     "termA": "アニメ (anime)",
@@ -1078,7 +1078,7 @@
     "explanation": "In Japanese it can refer to animation in general. (Set 6)",
     "example": "子どものころからアニメが好きだ。",
     "id": 120,
-    "issued": false,
-    "completed": true
+    "issued": true,
+    "completed": false
   }
 ]

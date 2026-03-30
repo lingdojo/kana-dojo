@@ -17,6 +17,12 @@ const Banner = () => {
   const isKanjiRoute = pathWithoutLocale.startsWith('/kanji');
   const isVocabRoute = pathWithoutLocale.startsWith('/vocabulary');
   const isPreferencesRoute = pathWithoutLocale === '/preferences';
+  const shouldShowBanner =
+    isKanaRoute || isKanjiRoute || isVocabRoute || isPreferencesRoute;
+
+  if (!shouldShowBanner) {
+    return null;
+  }
 
   const subheading = isKanaRoute
     ? 'Kana あ'

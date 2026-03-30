@@ -579,5 +579,61 @@
     "english": "Don't let anyone else take control of your life and death! (alt wording 37)",
     "anime": "Demon Slayer: Kimetsu no Yaiba",
     "character": "Tanjiro Kamado"
-  }
+  },
+  {
+  "japanese": "生殺与奪の権を他人に握らせるな!",
+  "romaji": "Seisatsu yodatsu no ken o tanin ni nigiraseru na!",
+  "english": "Don't let anyone else take control of your life and death!",
+  "anime": "Demon Slayer: Kimetsu no Yaiba",
+  "character": "Tanjiro Kamado"
+  },
+  {
+  "japanese": "あきらめたらそこで試合終了ですよ…？",
+  "romaji": "Akirametara soko de shiai shuuryou desu yo...?",
+  "english": "If you give up, that's the end of the game.",
+  "anime": "Slam Dunk",
+  "character": "Kaede Rukawa"
+},
+  {
+  "japanese": "僕は新世界の神となる",
+  "romaji": "Boku wa shin sekai no kami to naru",
+  "english": "I will become the god of the new world. (alt wording 44)",
+  "anime": "Death Note",
+  "character": "Light Yagami"
+},
+  {
+  "japanese": "僕は新世界の神となる",
+  "romaji": "Boku wa shin sekai no kami to naru",
+  "english": "I will become the god of the new world. (alt wording 44)",
+  "anime": "Death Note",
+  "character": "Light Yagami"
+},
+{
+  "japanese": "おれは人間を超越する！",
+  "romaji": "Ore wa ningen o chouetsu suru!",
+  "english": "I will transcend humanity!",
+  "anime": "JoJo's Bizarre Adventure: Battle Tendency",
+  "character": "Kars"
+},
+  {
+  "japanese": "等価交換。何かを得るには、同等の代価が必要だ",
+  "romaji": "Toukatsu koukan. Nani ka o eru ni wa, doutou no daika ga hitsuyou da",
+  "english": "Equivalent exchange. To obtain, something of equal value must be lost.",
+  "anime": "Fullmetal Alchemist: Brotherhood",
+  "character": "Edward Elric"
+},
+  {
+  "japanese": "何ッ！？",
+  "romaji": "Nani!?",
+  "english": "What?!",
+  "anime": "Fist of the North Star",
+  "character": "Shin"
+},
+  {
+  "japanese": "まだだ、まだ終わらんよ！",
+  "romaji": "Mada da, mada owaran yo!",
+  "english": "Not yet! It's not over yet! (alt wording 22)",
+  "anime": "Mobile Suit Gundam",
+  "character": "Char Aznable"
+}
 ]

@@ -47,7 +47,8 @@ export default function AboutPage() {
           About KanaDojo
         </h1>
         <p className='text-xl text-(--secondary-color)'>
-          A modern, free platform for learning Japanese characters and vocabulary
+          A modern, free platform for learning Japanese characters and
+          vocabulary
         </p>
       </header>
 
@@ -59,7 +60,7 @@ export default function AboutPage() {
         <p className='text-lg leading-relaxed text-(--secondary-color)'>
           KanaDojo was created to make learning Japanese writing systems and
           vocabulary accessible, effective, and free for everyone. We believe
-          that mastering Hiragana, Katakana, and Kanji shouldn't be a
+          that mastering Hiragana, Katakana, and Kanji shouldn&apos;t be a
           frustrating experience, but an engaging journey supported by modern
           technology and proven learning techniques.
         </p>
@@ -218,7 +219,9 @@ export default function AboutPage() {
             <div className='text-sm text-(--secondary-color)'>Type Safety</div>
           </div>
           <div className='rounded-lg border border-(--border-color) bg-(--card-color) p-4 text-center'>
-            <div className='font-semibold text-(--main-color)'>Tailwind CSS</div>
+            <div className='font-semibold text-(--main-color)'>
+              Tailwind CSS
+            </div>
             <div className='text-sm text-(--secondary-color)'>Styling</div>
           </div>
         </div>
