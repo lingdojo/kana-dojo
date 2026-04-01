@@ -429,12 +429,18 @@
   "romaji": "Issun saki wa yami",
   "english": "An inch ahead is darkness",
   "meaning": "The future is uncertain"
-}
+},
 {
   "japanese": "鬼の居ぬ間に洗濯",
   "romaji": "Oni no inuma ni sentaku",
   "english": "Do laundry while the ogre is away",
   "meaning": "Take advantage of an opportunity"
+},
+{
+  "japanese": "知らぬが仏",
+  "romaji": "Shiranu ga hotoke",
+  "english": "Not knowing is Buddha",
+  "meaning": "Ignorance is bliss"
 }
 ]
 
