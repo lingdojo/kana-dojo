@@ -610,7 +610,18 @@
     "Minshuku",
     "Izakaya",
     "Yatai"
-  ],
-  "correctIndex": 0
-}
+    ],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which traditional Japanese sport involves wrestling in a ring? (Community variation 36)",
+    "difficulty": "easy",
+    "answers": [
+      "Sumo",
+      "Kendo",
+      "Judo",
+      "Aikido"
+    ],
+    "correctIndex": 0
+  }
 ]
