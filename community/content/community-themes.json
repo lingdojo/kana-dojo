@@ -268,5 +268,11 @@
   "backgroundColor": "oklch(14.0% 0.030 260.0 / 1)",
   "mainColor": "oklch(88.0% 0.050 230.0 / 1)",
   "secondaryColor": "oklch(68.0% 0.075 260.0 / 1)"
+},
+{
+  "id": "torii-sunset",
+  "backgroundColor": "oklch(22.0% 0.058 35.0 / 1)",
+  "mainColor": "oklch(75.0% 0.195 40.0 / 1)",
+  "secondaryColor": "oklch(85.0% 0.155 70.0 / 1)"
 }
 ]
