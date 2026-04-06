@@ -16,7 +16,7 @@
     "english": "Yes! Yes! Yes! Yes!",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "DIO",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -316,7 +316,7 @@
     "english": "Ze ha ha ha!",
     "anime": "One Piece",
     "character": "Marshall D. Teach (Blackbeard)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -336,7 +336,7 @@
     "english": "Those who don't take care of their comrades are worse than scum.",
     "anime": "Naruto",
     "character": "Kakashi Hatake",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -397,7 +397,7 @@
     "anime": "Chainsaw Man",
     "character": "Denji",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 41,
@@ -446,7 +446,7 @@
     "english": "Only those prepared to be shot should pull the trigger.",
     "anime": "Code Geass: Lelouch of the Rebellion",
     "character": "Lelouch vi Britannia",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -566,7 +566,7 @@
     "english": "I, Giorno Giovanna, have a dream! (alt wording 5)",
     "anime": "JoJo's Bizarre Adventure: Golden Wind",
     "character": "Giorno Giovanna",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -968,7 +968,7 @@
     "english": "Only those prepared to be shot should pull the trigger. (alt wording 45)",
     "anime": "Code Geass: Lelouch of the Rebellion",
     "character": "Lelouch vi Britannia",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1028,7 +1028,7 @@
     "english": "Running away can take courage too. (alt wording 51)",
     "anime": "Mob Psycho 100",
     "character": "Arataka Reigen",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1058,7 +1058,7 @@
     "english": "Yes! Yes! Yes! Yes! (alt wording 2) (alt wording 54)",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "DIO",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1178,7 +1178,7 @@
     "english": "I will transcend humanity! (alt wording 14) (alt wording 66)",
     "anime": "JoJo's Bizarre Adventure: Battle Tendency",
     "character": "Kars",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1398,7 +1398,7 @@
     "english": "I'll exterminate them! Every last one from this world! (alt wording 36) (alt wording 88)",
     "anime": "Attack on Titan",
     "character": "Eren Yeager",
-    "issued": false,
+    "issued": true,
     "completed": false
   }
 ]

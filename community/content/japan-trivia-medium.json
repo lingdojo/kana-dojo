@@ -363,5 +363,16 @@
     "difficulty": "medium",
     "answers": ["Spring", "Summer", "Autumn", "Winter"],
     "correctIndex": 2
+  },
+  {
+    "question": "What is the Japanese writing system used for foreign words? (Community variation 35)",
+    "difficulty": "medium",
+    "answers": [
+      "Katakana",
+      "Hiragana",
+      "Kanji",
+      "Romaji"
+    ],
+    "correctIndex": 0
   }
 ]

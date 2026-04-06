@@ -382,7 +382,7 @@
     "backgroundColor": "oklch(20.0% 0.045 20.0 / 1)",
     "mainColor": "oklch(58.0% 0.225 28.0 / 1)",
     "secondaryColor": "oklch(92.0% 0.045 90.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -402,7 +402,7 @@
     "backgroundColor": "oklch(17.0% 0.072 305.0 / 1)",
     "mainColor": "oklch(75.0% 0.175 195.0 / 1)",
     "secondaryColor": "oklch(80.0% 0.195 330.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -412,7 +412,7 @@
     "backgroundColor": "oklch(25.0% 0.028 145.0 / 1)",
     "mainColor": "oklch(62.0% 0.115 135.0 / 1)",
     "secondaryColor": "oklch(75.0% 0.075 90.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -532,8 +532,10 @@
     "backgroundColor": "oklch(18.0% 0.042 325.0 / 1)",
     "mainColor": "oklch(90.0% 0.115 95.0 / 1)",
     "secondaryColor": "oklch(75.0% 0.195 340.0 / 1)",
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": false,
+    "completedBy": "HarisK03",
+    "completedPR": 11977
   },
   {
     "id": "fuji-sunrise",
@@ -653,7 +655,9 @@
     "mainColor": "oklch(70.0% 0.055 80.0 / 1)",
     "secondaryColor": "oklch(60.0% 0.145 25.0 / 1)",
     "issued": false,
-    "completed": false
+    "completed": false,
+    "completedBy": "zulkiflidev",
+    "completedPR": 12020
   },
   {
     "id": "robot-anime",
@@ -692,7 +696,7 @@
     "backgroundColor": "oklch(19.0% 0.058 290.0 / 1)",
     "mainColor": "oklch(70.0% 0.165 295.0 / 1)",
     "secondaryColor": "oklch(80.0% 0.125 285.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -712,7 +716,7 @@
     "backgroundColor": "oklch(24.0% 0.035 230.0 / 1)",
     "mainColor": "oklch(90.0% 0.075 225.0 / 1)",
     "secondaryColor": "oklch(80.0% 0.055 235.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -833,7 +837,9 @@
     "mainColor": "oklch(82.0% 0.155 180.0 / 1)",
     "secondaryColor": "oklch(72.0% 0.135 165.0 / 1)",
     "issued": false,
-    "completed": false
+    "completed": false,
+    "completedBy": "Kumari040",
+    "completedPR": 12083
   },
   {
     "id": "shaved-ice",
@@ -1028,7 +1034,7 @@
     "backgroundColor": "oklch(22.0% 0.030 150.0 / 1)",
     "mainColor": "oklch(78.0% 0.135 145.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.090 110.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1130,7 +1136,7 @@
     "backgroundColor": "oklch(98.0% 0.004 90.0 / 1)",
     "mainColor": "oklch(55.0% 0.035 250.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.015 90.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1640,7 +1646,7 @@
     "backgroundColor": "oklch(22.0% 0.035 140.0 / 1)",
     "mainColor": "oklch(74.0% 0.145 135.0 / 1)",
     "secondaryColor": "oklch(65.0% 0.085 115.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1662,7 +1668,7 @@
     "backgroundColor": "oklch(23.0% 0.030 85.0 / 1)",
     "mainColor": "oklch(86.0% 0.165 95.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.115 75.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1756,7 +1762,7 @@
     "backgroundColor": "oklch(20.0% 0.030 70.0 / 1)",
     "mainColor": "oklch(86.0% 0.155 85.0 / 1)",
     "secondaryColor": "oklch(75.0% 0.095 60.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

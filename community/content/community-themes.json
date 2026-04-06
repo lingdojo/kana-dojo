@@ -258,15 +258,27 @@
     "secondaryColor": "oklch(58.0% 0.055 260.0 / 1)"
   },
   {
-  "id": "snow-pine",
-  "backgroundColor": "oklch(94.0% 0.010 210.0 / 1)",
-  "mainColor": "oklch(45.0% 0.080 155.0 / 1)",
-  "secondaryColor": "oklch(60.0% 0.040 200.0 / 1)"
-},
-{
-  "id": "tsukimi-night",
-  "backgroundColor": "oklch(14.0% 0.030 260.0 / 1)",
-  "mainColor": "oklch(88.0% 0.050 230.0 / 1)",
-  "secondaryColor": "oklch(68.0% 0.075 260.0 / 1)"
-}
+    "id": "snow-pine",
+    "backgroundColor": "oklch(94.0% 0.010 210.0 / 1)",
+    "mainColor": "oklch(45.0% 0.080 155.0 / 1)",
+    "secondaryColor": "oklch(60.0% 0.040 200.0 / 1)"
+  },
+  {
+    "id": "tsukimi-night",
+    "backgroundColor": "oklch(14.0% 0.030 260.0 / 1)",
+    "mainColor": "oklch(88.0% 0.050 230.0 / 1)",
+    "secondaryColor": "oklch(68.0% 0.075 260.0 / 1)"
+  },
+  {
+    "id": "pachinko-hall",
+    "backgroundColor": "oklch(18.0% 0.042 325.0 / 1)",
+    "mainColor": "oklch(90.0% 0.115 95.0 / 1)",
+    "secondaryColor": "oklch(75.0% 0.195 340.0 / 1)"
+  },
+  {
+    "id": "castle-gate",
+    "backgroundColor": "oklch(23.0% 0.018 75.0 / 1)",
+    "mainColor": "oklch(70.0% 0.055 80.0 / 1)",
+    "secondaryColor": "oklch(60.0% 0.145 25.0 / 1)"
+  }
 ]

@@ -429,7 +429,7 @@
     "english": "A three-day monk",
     "meaning": "Someone who quits quickly",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 49,
@@ -464,7 +464,7 @@
     "romaji": "En wa inamono aji na mono",
     "english": "Fate is strange yet delightful",
     "meaning": "Chance connections can be surprisingly good",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -555,7 +555,7 @@
     "english": "It's darkest under the lighthouse",
     "meaning": "The obvious is often overlooked",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 63,
@@ -609,7 +609,7 @@
     "english": "Fortune comes to a laughing gate",
     "meaning": "Good fortune comes to those who smile",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 69,
@@ -618,7 +618,7 @@
     "english": "Good medicine tastes bitter",
     "meaning": "Helpful advice can be hard to hear",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 70,
@@ -654,7 +654,7 @@
     "english": "Do laundry while the ogre is away",
     "meaning": "Take advantage of someone's absence",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 74,
@@ -933,7 +933,7 @@
     "english": "An inch ahead is darkness",
     "meaning": "The future is uncertain",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 105,
@@ -1248,7 +1248,7 @@
     "english": "Spilled water will not return to the tray",
     "meaning": "What is done cannot be undone",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 140,
@@ -1266,7 +1266,7 @@
     "english": "A bee on a crying face",
     "meaning": "Misfortune never comes alone",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 142,
@@ -1356,7 +1356,9 @@
     "english": "After the rain, the ground hardens",
     "meaning": "Hard times build resilience",
     "completed": false,
-    "issued": false
+    "issued": false,
+    "completedBy": "Luca12341234",
+    "completedPR": 12103
   },
   {
     "id": 152,
@@ -1428,7 +1430,7 @@
     "english": "Kindness is not for others alone",
     "meaning": "Kindness comes back to you",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 160,
@@ -1481,7 +1483,7 @@
     "romaji": "Hayaoki wa sanmon no toku",
     "english": "Early rising brings three coins of benefit",
     "meaning": "Wake early for advantage",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

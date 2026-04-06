@@ -77,7 +77,7 @@
     "dont": "話を遮る",
     "note": "合意形成を重視する文化。",
     "id": 9,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -122,7 +122,7 @@
     "dont": "初対面でタメ口を使う",
     "note": "距離感が縮まるまでは敬語が無難。",
     "id": 14,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -149,7 +149,7 @@
     "dont": "ゴミを放置する",
     "note": "ゴミ箱が少ない地域がある。",
     "id": 17,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -185,7 +185,7 @@
     "dont": "片手で受け取ってすぐポケットに入れる",
     "note": "商談中は机上に置くのが一般的。",
     "id": 21,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -392,7 +392,7 @@
     "dont": "無言で食べ始める",
     "note": "感謝を示す慣習。",
     "id": 44,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -401,7 +401,7 @@
     "dont": "食べ終わってすぐ席を立つ",
     "note": "店でも家庭でも使える。",
     "id": 45,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -572,7 +572,7 @@
     "dont": "無言で食べ始める",
     "note": "感謝を示す慣習。",
     "id": 64,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -590,7 +590,7 @@
     "dont": "ご飯に箸を立てる",
     "note": "立て箸は弔事連想のため避ける。",
     "id": 66,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -653,7 +653,7 @@
     "dont": "禁止場所で撮影する",
     "note": "御本尊周辺は撮影不可が多い。",
     "id": 73,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -761,7 +761,7 @@
     "dont": "食べ終わってすぐ席を立つ",
     "note": "店でも家庭でも使える。",
     "id": 85,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -770,7 +770,7 @@
     "dont": "ご飯に箸を立てる",
     "note": "立て箸は弔事連想のため避ける。",
     "id": 86,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -995,7 +995,7 @@
     "dont": "値段を強調する",
     "note": "謙遜表現が好まれる。",
     "id": 111,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
