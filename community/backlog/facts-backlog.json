@@ -56,7 +56,7 @@
   {
     "id": 10,
     "fact": "Raw horse meat, called 'basashi' (馬刺し), is a popular delicacy in Kumamoto prefecture, often served frozen or thinly sliced with soy sauce and ginger.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -158,7 +158,7 @@
   {
     "id": 27,
     "fact": "Japanese addresses are based on blocks rather than streets - buildings are numbered by the order they were built, not their location.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -356,13 +356,13 @@
   {
     "id": 60,
     "fact": "Japan has an island called Okunoshima overrun by friendly wild rabbits - formerly a secret chemical weapons manufacturing site.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 61,
     "fact": "The Japanese concept 'kintsugi' (金継ぎ) repairs broken pottery with gold, making the piece more valuable by highlighting its history.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -434,7 +434,7 @@
   {
     "id": 73,
     "fact": "There's a Japanese word 'kogarashi' (木枯らし) for the specific cold wind that strips leaves from trees in late autumn.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -836,7 +836,7 @@
   {
     "id": 140,
     "fact": "Japan has smart toilets that analyze your waste and display health metrics on a screen - some even save data to apps.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -860,7 +860,7 @@
   {
     "id": 144,
     "fact": "Japan has a stone you can lick to predict the weather at Kamigamo Shrine - if it tastes salty, rain is coming.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -956,7 +956,7 @@
   {
     "id": 160,
     "fact": "Japan has a dedicated word 'tsukemono' (漬物) for pickled vegetables - over 4,000 varieties exist throughout the country.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1304,7 +1304,7 @@
   {
     "id": 218,
     "fact": "The Japanese term 'gacha-gacha' is onomatopoeia for capsule toy machines: the crank sound (gacha) and capsule drop (gacha).",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1322,7 +1322,7 @@
   {
     "id": 221,
     "fact": "Japan has 'shuumatsu okashi' trends where limited-edition sweets appear for a season and then disappear, making them collectible.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1370,7 +1370,7 @@
   {
     "id": 229,
     "fact": "Japan’s 'shrine stamps' called 'goshuin' (御朱印) are calligraphy seals collected in special books by visitors.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1874,7 +1874,7 @@
   {
     "id": 313,
     "fact": "The phrase 'yoroshiku onegaishimasu' (よろしくお願いします) is a versatile expression for \"please take care of me.\"",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
