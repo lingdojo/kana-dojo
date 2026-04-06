@@ -32,7 +32,7 @@
   {
     "id": 6,
     "text": "\"〜ながら\" connects actions to show two things happening at the same time.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -57,7 +57,7 @@
     "id": 10,
     "text": "\"〜ようです\" means \"it seems like\" and is based on observation.",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 11,
@@ -170,7 +170,7 @@
   {
     "id": 29,
     "text": "\"〜らしい\" can mean \"seems\" or describe a typical characteristic.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -249,7 +249,7 @@
     "id": 42,
     "text": "\"〜ことがある\" means \"sometimes\" when talking about habitual actions.",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 43,
@@ -260,7 +260,7 @@
   {
     "id": 44,
     "text": "\"〜やすい\" attaches to verb stems to mean \"easy to do\".",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -278,7 +278,7 @@
   {
     "id": 47,
     "text": "\"〜に決まっている\" means \"must be\" or \"definitely\".",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -290,7 +290,7 @@
   {
     "id": 49,
     "text": "\"〜ながらも\" means \"even while\" or \"though\" (contrast).",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -327,7 +327,7 @@
     "id": 55,
     "text": "\"〜ば〜ほど\" means \"the more... the more...\".",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 56,
@@ -387,7 +387,7 @@
     "id": 65,
     "text": "\"〜に応じて\" means \"depending on...\".",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 66,
@@ -608,7 +608,7 @@
   {
     "id": 102,
     "text": "\"〜てあげる\" shows the speaker does a favor for someone else. (practice variation 17)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -644,7 +644,7 @@
   {
     "id": 108,
     "text": "\"〜のに\" expresses contrast or regret, similar to \"even though\". (practice variation 23)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -824,7 +824,7 @@
   {
     "id": 138,
     "text": "\"〜せいで\" indicates a negative cause, \"because of\". (practice variation 53)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

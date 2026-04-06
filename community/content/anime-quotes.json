@@ -107,7 +107,7 @@
   {
     "japanese": "駆逐してやる!この世から一匹残らず!",
     "romaji": "Kuchiku shite yaru! Kono yo kara ippiki nokorazu!",
-    "english": "I'll exterminate them! Every last one from this world! (alt wording 36)",
+    "english": "I'll exterminate them! Every last one from this world! (alt wording 36) (alt wording 88)",
     "anime": "Attack on Titan",
     "character": "Eren Yeager"
   },
@@ -418,10 +418,24 @@
     "character": "Eren Yeager"
   },
   {
-  "japanese": "オレ様の美技にブギウギ",
-  "romaji": "Ore-sama no bigi ni bugiugi",
-  "english": "Dance to my beautiful technique!",
-  "anime": "The Prince of Tennis",
-  "character": "Keigo Atobe"
-}
+    "japanese": "オレ様の美技にブギウギ",
+    "romaji": "Ore-sama no bigi ni bugiugi",
+    "english": "Dance to my beautiful technique!",
+    "anime": "The Prince of Tennis",
+    "character": "Keigo Atobe"
+  },
+  {
+    "japanese": "我々一人ひとりに与えられている魂は一つだけです。大切になさい",
+    "romaji": "Wareware hitorihitori ni ataerarete iru tamashii wa hitotsu dake desu. Taisetsu ni nasai.",
+    "english": "Each of us is only given one soul. Take good care of yours.",
+    "anime": "Bleach",
+    "character": "Kisuke Urahara"
+  },
+  {
+    "japanese": "このジョルノ・ジョバァーナには夢がある！",
+    "romaji": "Kono Joruno Jobana ni wa yume ga aru!",
+    "english": "I, Giorno Giovanna, have a dream! (alt wording 5)",
+    "anime": "JoJo's Bizarre Adventure: Golden Wind",
+    "character": "Giorno Giovanna"
+  }
 ]

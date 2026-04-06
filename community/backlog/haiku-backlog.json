@@ -80,7 +80,7 @@
     "season": "Spring",
     "kigo": "Sparrow chicks (suzume no ko)",
     "notes": "Playful and warm, characteristic of Issa's tone.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -92,7 +92,7 @@
     "season": "Summer",
     "kigo": "Morning glory (asagao)",
     "notes": "Famous for gentle empathy toward nature.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
