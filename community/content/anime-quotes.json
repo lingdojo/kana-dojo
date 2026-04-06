@@ -6,13 +6,13 @@
     "anime": "Neon Genesis Evangelion",
     "character": "Rei Ayanami"
   },
-{
-  "japanese": "負ける気がしない",
-  "romaji": "Makeru ki ga shinai",
-  "english": "I don't feel like I can lose.",
-  "game": "Street Fighter series",
-  "character": "Ryu"
-},
+  {
+    "japanese": "負ける気がしない",
+    "romaji": "Makeru ki ga shinai",
+    "english": "I don't feel like I can lose.",
+    "game": "Street Fighter series",
+    "character": "Ryu"
+  },
   {
     "japanese": "オラに元気を分けてくれ!",
     "romaji": "Ora ni genki o wakete kure!",
@@ -362,52 +362,59 @@
     "character": "Keigo Atobe"
   },
   {
-  "japanese": "痛みを伴わない教訓には意味がない",
-  "romaji": "Itami o tomonawanai kyoukun ni wa imi ga nai",
-  "english": "A lesson without pain is meaningless. (alt wording 35) (alt wording 87)",
-  "anime": "Fullmetal Alchemist: Brotherhood",
-  "character": "Edward Elric"
+    "japanese": "痛みを伴わない教訓には意味がない",
+    "romaji": "Itami o tomonawanai kyoukun ni wa imi ga nai",
+    "english": "A lesson without pain is meaningless. (alt wording 35) (alt wording 87)",
+    "anime": "Fullmetal Alchemist: Brotherhood",
+    "character": "Edward Elric"
   },
   {
-  "japanese": "明日の問題は明日の俺に任せる",
-  "romaji": "Ashita no mondai wa ashita no ore ni makaseru",
-  "english": "I'll leave tomorrow's problems to tomorrow's me.",
-  "anime": "One Punch Man",
-  "character": "Saitama"
+    "japanese": "明日の問題は明日の俺に任せる",
+    "romaji": "Ashita no mondai wa ashita no ore ni makaseru",
+    "english": "I'll leave tomorrow's problems to tomorrow's me.",
+    "anime": "One Punch Man",
+    "character": "Saitama"
   },
   {
-  "japanese": "オラオラオラオラオラ！",
-  "romaji": "Ora ora ora ora ora!",
-  "english": "Ora ora ora ora ora! (alt wording 8) (alt wording 60)",
-  "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
-  "character": "Jotaro Kujo"
-},
+    "japanese": "オラオラオラオラオラ！",
+    "romaji": "Ora ora ora ora ora!",
+    "english": "Ora ora ora ora ora! (alt wording 8) (alt wording 60)",
+    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+    "character": "Jotaro Kujo"
+  },
   {
-  "japanese": "シシシシシ",
-  "romaji": "Shishishishi",
-  "english": "Shishishi! (alt wording 30)",
-  "anime": "One Piece",
-  "character": "Monkey D. Luffy"
-},
+    "japanese": "シシシシシ",
+    "romaji": "Shishishishi",
+    "english": "Shishishi! (alt wording 30)",
+    "anime": "One Piece",
+    "character": "Monkey D. Luffy"
+  },
   {
-  "japanese": "さらに向こうへ!プルスウルトラ!",
-  "romaji": "Sarani mukou e! Purusu Urutora!",
-  "english": "Go beyond! Plus Ultra! (alt wording 38)",
-  "anime": "My Hero Academia",
-  "character": "All Might"
-},
+    "japanese": "さらに向こうへ!プルスウルトラ!",
+    "romaji": "Sarani mukou e! Purusu Urutora!",
+    "english": "Go beyond! Plus Ultra! (alt wording 38)",
+    "anime": "My Hero Academia",
+    "character": "All Might"
+  },
   {
-  "japanese": "笑えばいいと思うよ",
-  "romaji": "Waraeba ii to omou yo",
-  "english": "I think you should just laugh. (alt wording 24)",
-  "anime": "Neon Genesis Evangelion",
-  "character": "Rei Ayanami"
-},
+    "japanese": "笑えばいいと思うよ",
+    "romaji": "Waraeba ii to omou yo",
+    "english": "I think you should just laugh. (alt wording 24)",
+    "anime": "Neon Genesis Evangelion",
+    "character": "Rei Ayanami"
+  },
   {
-  "japanese": "あきらめたらそこで試合終了ですよ…？",
-  "romaji": "Akirametara soko de shiai shuuryou desu yo...?",
-  "english": "If you give up, that's the end of the game. (alt wording 21)",
-  "anime": "Slam Dunk",
-  "character": "Kaede Rukawa"
-}
+    "japanese": "あきらめたらそこで試合終了ですよ…？",
+    "romaji": "Akirametara soko de shiai shuuryou desu yo...?",
+    "english": "If you give up, that's the end of the game. (alt wording 21)",
+    "anime": "Slam Dunk",
+    "character": "Kaede Rukawa"
+  },
+  {
+    "japanese": "このジョルノ・ジョバァーナには夢がある！",
+    "romaji": "Kono Joruno Jobana ni wa yume ga aru!",
+    "english": "I, Giorno Giovanna, have a dream! (alt wording 5)",
+    "anime": "JoJo's Bizarre Adventure: Golden Wind",
+    "character": "Giorno Giovanna"
+  }
 ]
