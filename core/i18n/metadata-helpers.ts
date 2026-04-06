@@ -1,5 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
+import { routing } from '@/core/i18n/routing';
 
 const DEFAULT_BASE_URL = 'https://kanadojo.com';
 
@@ -15,15 +16,52 @@ interface GeneratePageMetadataOptions {
 
 function joinUrl(
   baseUrl: string,
-  _locale: string | undefined,
+  locale: string | undefined,
   pathname: string,
 ) {
   const normalizedBaseUrl = baseUrl.replace(/\/$/, '');
   const normalizedPathname = pathname.startsWith('/')
     ? pathname
     : `/${pathname}`;
+  const path = normalizedPathname === '/' ? '' : normalizedPathname;
+  if (routing.localePrefix === 'never') {
+    return `${normalizedBaseUrl}${path}`;
+  }
 
-  return `${normalizedBaseUrl}${normalizedPathname === '/' ? '' : normalizedPathname}`;
+  const normalizedLocale =
+    locale && routing.locales.includes(locale as never)
+      ? locale
+      : routing.defaultLocale;
+  return `${normalizedBaseUrl}/${normalizedLocale}${path}`;
+}
+
+function getLanguageAlternates(baseUrl: string, pathname: string) {
+  const normalizedBaseUrl = baseUrl.replace(/\/$/, '');
+  const normalizedPathname = pathname.startsWith('/')
+    ? pathname
+    : `/${pathname}`;
+  const path = normalizedPathname === '/' ? '' : normalizedPathname;
+
+  if (routing.localePrefix === 'never') {
+    const canonicalPath = `${normalizedBaseUrl}${path}`;
+    const languages = Object.fromEntries(
+      routing.locales.map(locale => [locale, canonicalPath]),
+    );
+
+    return {
+      ...languages,
+      'x-default': canonicalPath,
+    };
+  }
+
+  const languages = Object.fromEntries(
+    routing.locales.map(locale => [locale, `${normalizedBaseUrl}/${locale}${path}`]),
+  );
+
+  return {
+    ...languages,
+    'x-default': `${normalizedBaseUrl}/${routing.defaultLocale}${path}`,
+  };
 }
 
 /**
@@ -93,6 +131,7 @@ export async function generatePageMetadata(
     },
     alternates: {
       canonical: canonicalUrl,
+      languages: getLanguageAlternates(baseUrl, pathname),
     },
   };
 }

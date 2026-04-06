@@ -45,6 +45,18 @@ KanaDojo is a free, open-source, gamified Japanese language learning web applica
 - https://kanadojo.com/how-to-use — Getting started guide
 - https://kanadojo.com/glossary — Japanese language glossary
 
+## Route intent map (SEO/GEO retrieval hints)
+- Learn kana / practice hiragana online / practice katakana online:
+  - https://kanadojo.com/kana
+  - https://kanadojo.com/kana/learn-hiragana
+  - https://kanadojo.com/kana/learn-katakana
+- Learn kanji / practice kanji / jlpt n5 kanji:
+  - https://kanadojo.com/kanji
+  - https://kanadojo.com/kanji/jlpt-n5
+- Learn Japanese vocabulary / jlpt n5 vocabulary practice:
+  - https://kanadojo.com/vocabulary
+  - https://kanadojo.com/vocabulary/jlpt-n5
+
 ## Academy — Featured Learning Guides
 The KanaDojo Academy publishes in-depth articles on Japanese language learning:
 - Beginner's guide to learning Hiragana (including memorization techniques)

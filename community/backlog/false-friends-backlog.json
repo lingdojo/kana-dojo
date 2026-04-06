@@ -122,8 +122,8 @@
     "explanation": "Often means trying something new. (Set 1)",
     "example": "新しい料理にチャレンジしてみる。",
     "id": 14,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "ナンバー (nanbaa)",
@@ -149,8 +149,8 @@
     "explanation": "Often means impression/public image. (Set 1)",
     "example": "会社のイメージが良くなった。",
     "id": 17,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "サラリーマン (sarariman)",
@@ -302,8 +302,8 @@
     "explanation": "Often means trying something new. (Set 2)",
     "example": "新しい料理にチャレンジしてみる。",
     "id": 34,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "ナンバー (nanbaa)",
@@ -329,8 +329,8 @@
     "explanation": "Often means impression/public image. (Set 2)",
     "example": "会社のイメージが良くなった。",
     "id": 37,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "サラリーマン (sarariman)",
@@ -482,8 +482,8 @@
     "explanation": "Often means trying something new. (Set 3)",
     "example": "新しい料理にチャレンジしてみる。",
     "id": 54,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "ナンバー (nanbaa)",
@@ -563,8 +563,8 @@
     "explanation": "コンセント means electrical outlet. (Set 4)",
     "example": "コンセントが足りないので延長コードを使います。",
     "id": 63,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "スマート (sumaato)",
@@ -662,8 +662,8 @@
     "explanation": "Often means trying something new. (Set 4)",
     "example": "新しい料理にチャレンジしてみる。",
     "id": 74,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "ナンバー (nanbaa)",
@@ -689,8 +689,8 @@
     "explanation": "Often means impression/public image. (Set 4)",
     "example": "会社のイメージが良くなった。",
     "id": 77,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "サラリーマン (sarariman)",
@@ -842,8 +842,8 @@
     "explanation": "Often means trying something new. (Set 5)",
     "example": "新しい料理にチャレンジしてみる。",
     "id": 94,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "ナンバー (nanbaa)",
@@ -923,8 +923,8 @@
     "explanation": "コンセント means electrical outlet. (Set 6)",
     "example": "コンセントが足りないので延長コードを使います。",
     "id": 103,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "スマート (sumaato)",
@@ -1049,8 +1049,8 @@
     "explanation": "Often means impression/public image. (Set 6)",
     "example": "会社のイメージが良くなった。",
     "id": 117,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "サラリーマン (sarariman)",

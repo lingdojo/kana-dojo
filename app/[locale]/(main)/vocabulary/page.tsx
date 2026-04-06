@@ -8,6 +8,7 @@ import {
   commonKanaDOJOFAQs,
 } from '@/shared/components/SEO/FAQSchema';
 import { LearningResourceSchema } from '@/shared/components/SEO/LearningResourceSchema';
+import { DojoRouteSchema } from '@/shared/components/SEO/DojoRouteSchema';
 import { routing } from '@/core/i18n/routing';
 
 // Generate static pages for all locales at build time
@@ -67,6 +68,20 @@ export default async function VocabularyPage({
         timeRequired='PT45M'
         isAccessibleForFree={true}
         provider={{ name: 'KanaDojo', url: 'https://kanadojo.com' }}
+        educationalAlignment={{
+          alignmentType: 'educationalLevel',
+          educationalFramework: 'JLPT',
+          targetName: 'N5-N1',
+        }}
+      />
+      <DojoRouteSchema
+        routeKey='vocabulary'
+        locale={locale}
+        title='Vocabulary Dojo - Learn Japanese Words & Vocabulary by JLPT Level'
+        description='Build Japanese vocabulary by JLPT level with interactive set drills, quizzes, and fast review. Practice meanings, readings, and usage from N5 to N1.'
+        canonicalPath='/vocabulary'
+        teaches='Japanese vocabulary, word readings, meanings, and usage'
+        assesses='Vocabulary recognition, recall speed, and JLPT-level word knowledge'
         educationalAlignment={{
           alignmentType: 'educationalLevel',
           educationalFramework: 'JLPT',

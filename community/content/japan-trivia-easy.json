@@ -624,5 +624,38 @@
             "Shodo"
         ],
         "correctIndex": 0
-    }
+    },
+    {
+        "question": "What is the main ingredient in miso?",
+        "difficulty": "easy",
+        "answers": [
+            "Fermented soybeans",
+            "Rice flour",
+            "Buckwheat",
+            "Seaweed"
+        ],
+        "correctIndex": 0
+    },
+    {
+      "question": "Which traditional Japanese sport involves wrestling in a ring?",
+      "difficulty": "easy",
+      "answers": [
+        "Sumo",
+        "Kendo",
+        "Judo",
+        "Aikido"
+      ],
+     "correctIndex": 0
+   },
+   {
+     "question": "What is Japan’s currency called?",
+     "difficulty": "easy",
+     "answers": [
+       "Yen",
+       "Won",
+       "Yuan",
+       "Ringgit"
+     ],
+  "correctIndex": 0
+  }
 ]

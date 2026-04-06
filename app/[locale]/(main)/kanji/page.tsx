@@ -5,6 +5,7 @@ import { CourseSchema } from '@/shared/components/SEO/CourseSchema';
 import { BreadcrumbSchema } from '@/shared/components/SEO/BreadcrumbSchema';
 import { FAQSchema, kanjiFAQs } from '@/shared/components/SEO/FAQSchema';
 import { LearningResourceSchema } from '@/shared/components/SEO/LearningResourceSchema';
+import { DojoRouteSchema } from '@/shared/components/SEO/DojoRouteSchema';
 import { routing } from '@/core/i18n/routing';
 
 // Generate static pages for all locales at build time
@@ -58,6 +59,20 @@ export default async function KanjiPage({
         timeRequired='PT1H'
         isAccessibleForFree={true}
         provider={{ name: 'KanaDojo', url: 'https://kanadojo.com' }}
+        educationalAlignment={{
+          alignmentType: 'educationalLevel',
+          educationalFramework: 'JLPT',
+          targetName: 'N5-N1',
+        }}
+      />
+      <DojoRouteSchema
+        routeKey='kanji'
+        locale={locale}
+        title='Kanji Dojo - Learn Japanese Kanji Characters by JLPT Level'
+        description='Learn Japanese kanji organized by JLPT levels N5 to N1. Practice readings and meanings with interactive exercises, quick set selection, and progress tracking.'
+        canonicalPath='/kanji'
+        teaches='Japanese Kanji Characters, Readings, and Meanings'
+        assesses='Kanji recognition, onyomi and kunyomi recall, and meaning comprehension'
         educationalAlignment={{
           alignmentType: 'educationalLevel',
           educationalFramework: 'JLPT',

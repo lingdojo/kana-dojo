@@ -8,7 +8,7 @@
     {
         "japanese": "虎穴に入らずんば虎子を得ず",
         "romaji": "Koketsu ni irazunba koji wo ezu",
-        "english": "You can’t get the tiger’s cub without entering the lair",
+        "english": "You can't get the tiger's cub without entering the lair",
         "meaning": "No reward without risk"
     },
     {
@@ -274,5 +274,35 @@
         "romaji": "Saru mo ki kara ochiru",
         "english": "Even monkeys fall from trees",
         "meaning": "Even experts make mistakes sometimes"
+    },
+    {
+        "japanese": "餅は餅屋",
+        "romaji": "Mochi wa mochiya",
+        "english": "Mochi should be made by the mochi shop",
+        "meaning": "Leave it to the experts"
+    },
+    {
+       "japanese": "石橋を叩いて渡る",
+       "romaji": "Ishibashi wo tataite wataru",
+       "english": "Tap a stone bridge before crossing",
+       "meaning": "Be very cautious"
+   },
+   {
+        "japanese": "雨降って地固まる",
+        "romaji": "Ame futte ji katamaru",
+        "english": "After rain, the ground hardens",
+        "meaning": "Adversity builds strength"
+   },
+   {
+        "japanese": "石橋を叩いて渡る",
+        "romaji": "Ishibashi wo tataite wataru",
+        "english": "Tap a stone bridge before crossing",
+        "meaning": "Be very cautious"
+    },
+    {
+        "japanese": "七転び八起き",
+        "romaji": "Nanakorobi yaoki",
+        "english": "Fall seven times, get up eight",
+        "meaning": "Never give up"
     }
 ]
