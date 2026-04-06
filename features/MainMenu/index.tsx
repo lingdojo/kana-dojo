@@ -23,7 +23,7 @@ import { useThemePreferences } from '@/features/Preferences';
 import useDecorationsStore from '@/shared/store/useDecorationsStore';
 import { useMediaQuery } from 'react-responsive';
 import { buttonBorderStyles } from '@/shared/lib/styles';
-import { Button } from '@/shared/components/ui/button';
+import { Button } from '@/shared/components/ui/Button/button';
 
 const Decorations = lazy(() => import('./Decorations'));
 

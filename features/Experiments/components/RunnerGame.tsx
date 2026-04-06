@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useRef, useState, useCallback } from 'react';
-import { Button } from '@/shared/components/ui/button';
+import { Button } from '@/shared/components/ui/Button/button';
 import { RefreshCcw, Play, Volume2, VolumeX } from 'lucide-react';
 import clsx from 'clsx';
 import { useGameAudio } from '../hooks/useGameAudio';
@@ -472,8 +472,8 @@ export const RunnerGame = () => {
         if (
           obstaclesRef.current.length === 0 ||
           CANVAS_WIDTH -
-            obstaclesRef.current[obstaclesRef.current.length - 1].x >
-            200
+          obstaclesRef.current[obstaclesRef.current.length - 1].x >
+          200
         ) {
           const typeRoll = Math.random();
           let type: Obstacle['type'] = 'DARUMA';

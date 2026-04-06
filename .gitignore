@@ -63,3 +63,6 @@ next-env.d.ts
 # Audio files - WAV kept locally as fallback, only Opus tracked in git
 /public/sounds/**/*.wav
 /public/sounds/click/click9/
+
+*storybook.log
+storybook-static

@@ -1,6 +1,6 @@
 'use client';
 
-import { Button } from '@/shared/components/ui/button';
+import { Button } from '@/shared/components/ui/Button/button';
 import { AlertTriangle, RefreshCw, Home } from 'lucide-react';
 import { Link } from '@/core/i18n/routing';
 

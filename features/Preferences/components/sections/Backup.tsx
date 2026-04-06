@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { Button } from '@/shared/components/ui/button';
+import { Button } from '@/shared/components/ui/Button/button';
 import {
   applyBackup,
   createBackup,

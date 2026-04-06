@@ -81,7 +81,11 @@ const FloatingKanji = memo(
           '--float-distance': '-10px',
         }}
       >
-        {useButtonStyle ? <span className='text-(--background-color)'>{char}</span> : char}
+        {useButtonStyle ? (
+          <span className='text-(--background-color)'>{char}</span>
+        ) : (
+          char
+        )}
       </motion.button>
     );
   },

@@ -12,7 +12,7 @@
 
 import { useState, useCallback, useRef } from 'react';
 import { cn } from '@/shared/lib/utils';
-import { Button } from '@/shared/components/ui/button';
+import { Button } from '@/shared/components/ui/Button/button';
 import { useConversionWorker } from '../hooks/useConversionWorker';
 import {
   getAcceptString,
