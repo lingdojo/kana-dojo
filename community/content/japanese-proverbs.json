@@ -304,5 +304,16 @@
         "romaji": "Nanakorobi yaoki",
         "english": "Fall seven times, get up eight",
         "meaning": "Never give up"
-    }
+    },
+    {
+        "japanese": "縁は異なもの味なもの",
+        "romaji": "En wa inamono aji na mono",
+        "english": "Fate is strange yet delightful",
+        "meaning": "Chance connections can be surprisingly good"
+    },{
+    "japanese": "雨降って地固まる",
+    "romaji": "Ame futte ji katamaru",
+    "english": "After the rain, the ground hardens",
+    "meaning": "Hard times build resilience"
+  }
 ]
