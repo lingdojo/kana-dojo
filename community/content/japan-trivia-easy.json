@@ -656,5 +656,15 @@
       "Kanazawa"
     ],
     "correctIndex": 1
+  },
+  {
+    "question": "What is the name of the bullet train network in Japan?",
+    "answers": [
+      "Shinkansen",
+      "Metro Line",
+      "Skyrail",
+      "Kairo"
+    ],
+    "correctIndex": 0
   }
 ]
