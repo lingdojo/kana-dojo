@@ -8,6 +8,11 @@ import { useClick } from '@/shared/hooks/generic/useAudio';
 // Toggle between styles: true = floating Japanese char style, false = current style
 const USE_FLOATING_STYLE = true;
 
+// Toggle explosion animation on click: true = explosion effect, false = no explosion
+const USE_EXPLOSION_ANIMATION = true;
+
+type AnimState = 'idle' | 'exploding' | 'hidden' | 'fading-in';
+
 const animationKeyframes = `
 @keyframes scaleIn-btt {
   0% {
@@ -33,6 +38,30 @@ const animationKeyframes = `
     opacity: 0;
   }
 }
+
+@keyframes explode-btt {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(2.4);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn-btt {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 `;
 
 export default function BackToTop() {
@@ -43,11 +72,13 @@ export default function BackToTop() {
   const [stableVh, setStableVh] = useState('100dvh');
   const [isEntering, setIsEntering] = useState(false);
   const [isExiting, setIsExiting] = useState(false);
+  const [animState, setAnimState] = useState<AnimState>('idle');
 
   const pathname = usePathname();
   const container = useRef<HTMLElement | null>(null);
   const scrollTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
   const stableVhRef = useRef<number | null>(null);
+  const isAnimating = useRef(false);
 
   const getViewportHeight = () => {
     if (typeof window === 'undefined') return null;
@@ -84,17 +115,21 @@ export default function BackToTop() {
         const shouldBeVisible = container.current.scrollTop > 300;
 
         if (shouldBeVisible && !visibleRef.current) {
-          // Entry
-          setVisible(true);
-          setIsEntering(true);
-          setTimeout(() => setIsEntering(false), 500);
+          // Entry - only if not animating explosion
+          if (!isAnimating.current) {
+            setVisible(true);
+            setIsEntering(true);
+            setTimeout(() => setIsEntering(false), 500);
+          }
         } else if (!shouldBeVisible && visibleRef.current) {
-          // Exit
-          setIsExiting(true);
-          setTimeout(() => {
-            setVisible(false);
-            setIsExiting(false);
-          }, 300);
+          // Exit - only if not animating explosion
+          if (!isAnimating.current) {
+            setIsExiting(true);
+            setTimeout(() => {
+              setVisible(false);
+              setIsExiting(false);
+            }, 300);
+          }
         }
       }
       scrollTimeout.current = null;
@@ -159,11 +194,28 @@ export default function BackToTop() {
 
   const handleClick = () => {
     if (typeof window !== 'undefined') {
+      if (isAnimating.current) return;
+
       playClick();
       container.current?.scrollTo({ top: 0, behavior: 'smooth' });
       setTimeout(() => {
         (document.body as HTMLElement)?.focus?.();
       }, 300);
+
+      if (USE_EXPLOSION_ANIMATION) {
+        isAnimating.current = true;
+
+        setAnimState('exploding');
+
+        setTimeout(() => {
+          setAnimState('hidden');
+          setVisible(false); // Hide the button completely
+          setTimeout(() => {
+            setAnimState('idle');
+            isAnimating.current = false;
+          }, 100);
+        }, 300);
+      }
     }
   };
 
@@ -175,7 +227,7 @@ export default function BackToTop() {
     'transition-colors duration-200',
     'active:border-b-0',
     'hover:cursor-pointer',
-    'animate-float [--float-distance:-7px]'
+    'animate-float [--float-distance:-7px]',
   );
 
   // Current style classes
@@ -198,17 +250,43 @@ export default function BackToTop() {
         }
       : {};
 
+  const getExplosionStyle = (): React.CSSProperties => {
+    if (!USE_EXPLOSION_ANIMATION) return {};
+
+    switch (animState) {
+      case 'exploding':
+        return {
+          animation: 'explode-btt 300ms ease-out forwards',
+          pointerEvents: 'none',
+        };
+      case 'hidden':
+        return { opacity: 0, pointerEvents: 'none' };
+      case 'fading-in':
+        return {
+          animation: 'fadeIn-btt 500ms ease-in forwards',
+          pointerEvents: 'none',
+        };
+      default:
+        return {};
+    }
+  };
+
   return (
     <button
       onClick={handleClick}
       className={clsx(
         'fixed top-[calc(var(--stable-vh)/2)] right-2 z-60 -translate-y-1/2 md:top-1/2 lg:right-3',
         USE_FLOATING_STYLE ? floatingStyleClasses : currentStyleClasses,
+        USE_EXPLOSION_ANIMATION &&
+          animState === 'idle' &&
+          'hover:cursor-pointer',
+        !USE_EXPLOSION_ANIMATION && 'hover:cursor-pointer',
       )}
       style={
         {
           '--stable-vh': stableVh,
           ...animationStyle,
+          ...getExplosionStyle(),
         } as unknown as React.CSSProperties
       }
     >

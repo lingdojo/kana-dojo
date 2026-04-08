@@ -1,8 +1,4 @@
 const privacyPolicy = `
-# Privacy Policy
-
-Last Updated: December 12, 2025
-
 **PikaPikaGems Pte Ltd** operates kanadojo.com (the "Site"). This Privacy Policy explains how we handle information related to your use of the Site.
 
 
