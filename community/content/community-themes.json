@@ -1,45 +1,22 @@
+
 [
   {
-    "id": "morning-fog",
-    "backgroundColor": "oklch(22.0% 0.010 240.0 / 1)",
-    "mainColor": "oklch(78.0% 0.030 220.0 / 1)",
-    "secondaryColor": "oklch(65.0% 0.040 260.0 / 1)"
+    "id": "blooming-ume",
+    "backgroundColor": "oklch(95.0% 0.015 15.0 / 1)",
+    "mainColor": "oklch(62.0% 0.175 350.0 / 1)",
+    "secondaryColor": "oklch(75.0% 0.085 85.0 / 1)"
   },
   {
-    "id": "soba-slate",
-    "backgroundColor": "oklch(18.0% 0.015 250.0 / 1)",
-    "mainColor": "oklch(68.0% 0.085 60.0 / 1)",
-    "secondaryColor": "oklch(58.0% 0.045 70.0 / 1)"
+    "id": "ink-wash",
+    "backgroundColor": "oklch(96.0% 0.006 90.0 / 1)",
+    "mainColor": "oklch(30.0% 0.015 260.0 / 1)",
+    "secondaryColor": "oklch(55.0% 0.020 260.0 / 1)"
   },
   {
-    "id": "konbini-light",
-    "backgroundColor": "oklch(96.0% 0.015 210.0 / 1)",
-    "mainColor": "oklch(55.0% 0.185 200.0 / 1)",
-    "secondaryColor": "oklch(60.0% 0.155 25.0 / 1)"
-  },
-  {
-    "id": "sakura-soda",
-    "backgroundColor": "oklch(94.0% 0.025 345.0 / 1)",
-    "mainColor": "oklch(68.0% 0.160 350.0 / 1)",
-    "secondaryColor": "oklch(72.0% 0.110 210.0 / 1)"
-  },
-  {
-    "id": "fuji-shadow",
-    "backgroundColor": "oklch(15.0% 0.015 250.0 / 1)",
-    "mainColor": "oklch(78.0% 0.035 230.0 / 1)",
-    "secondaryColor": "oklch(65.0% 0.105 300.0 / 1)"
-  },
-  {
-    "id": "taisho-cafe",
-    "backgroundColor": "oklch(18.0% 0.028 65.0 / 1)",
-    "mainColor": "oklch(72.0% 0.115 65.0 / 1)",
-    "secondaryColor": "oklch(60.0% 0.085 25.0 / 1)"
-  },
-  {
-    "id": "anime-pop",
-    "backgroundColor": "oklch(95.0% 0.015 85.0 / 1)",
-    "mainColor": "oklch(65.0% 0.235 345.0 / 1)",
-    "secondaryColor": "oklch(70.0% 0.200 260.0 / 1)"
+    "id": "samurai-steel",
+    "backgroundColor": "oklch(18.0% 0.022 250.0 / 1)",
+    "mainColor": "oklch(80.0% 0.055 240.0 / 1)",
+    "secondaryColor": "oklch(65.0% 0.170 15.0 / 1)"
   },
   {
     "id": "coastal-breeze",
@@ -94,18 +71,6 @@
     "backgroundColor": "oklch(20.0% 0.010 260.0 / 1)",
     "mainColor": "oklch(78.0% 0.020 90.0 / 1)",
     "secondaryColor": "oklch(55.0% 0.035 240.0 / 1)"
-  },
-  {
-    "id": "shibuya-haze",
-    "backgroundColor": "oklch(17.0% 0.055 290.0 / 1)",
-    "mainColor": "oklch(82.0% 0.195 310.0 / 1)",
-    "secondaryColor": "oklch(74.0% 0.140 20.0 / 1)"
-  },
-  {
-    "id": "shaved-ice",
-    "backgroundColor": "oklch(95.0% 0.025 215.0 / 1)",
-    "mainColor": "oklch(60.0% 0.195 25.0 / 1)",
-    "secondaryColor": "oklch(65.0% 0.175 215.0 / 1)"
   },
   {
     "id": "garden-bridge",
@@ -174,18 +139,6 @@
     "secondaryColor": "oklch(82.0% 0.090 95.0 / 1)"
   },
   {
-    "id": "kintsugi-gold",
-    "backgroundColor": "oklch(22.0% 0.025 95.0 / 1)",
-    "mainColor": "oklch(84.0% 0.120 95.0 / 1)",
-    "secondaryColor": "oklch(68.0% 0.090 60.0 / 1)"
-  },
-  {
-    "id": "calligraphy-ink",
-    "backgroundColor": "oklch(96.0% 0.008 85.0 / 1)",
-    "mainColor": "oklch(20.0% 0.015 270.0 / 1)",
-    "secondaryColor": "oklch(45.0% 0.025 260.0 / 1)"
-  },
-  {
     "id": "tsukimi-night",
     "backgroundColor": "oklch(14.0% 0.030 260.0 / 1)",
     "mainColor": "oklch(88.0% 0.050 230.0 / 1)",
@@ -216,12 +169,6 @@
     "secondaryColor": "oklch(65.0% 0.045 230.0 / 1)"
   },
   {
-    "id": "anime-pop",
-    "backgroundColor": "oklch(95.0% 0.015 85.0 / 1)",
-    "mainColor": "oklch(65.0% 0.235 345.0 / 1)",
-    "secondaryColor": "oklch(70.0% 0.200 260.0 / 1)"
-  },
-  {
     "id": "mountain-onsen",
     "backgroundColor": "oklch(20.0% 0.018 210.0 / 1)",
     "mainColor": "oklch(80.0% 0.085 200.0 / 1)",
@@ -238,12 +185,6 @@
     "backgroundColor": "oklch(94.0% 0.010 95.0 / 1)",
     "mainColor": "oklch(45.0% 0.075 65.0 / 1)",
     "secondaryColor": "oklch(60.0% 0.045 30.0 / 1)"
-  },
-  {
-    "id": "ginkgo-gold",
-    "backgroundColor": "oklch(23.0% 0.045 85.0 / 1)",
-    "mainColor": "oklch(88.0% 0.170 95.0 / 1)",
-    "secondaryColor": "oklch(72.0% 0.135 75.0 / 1)"
   },
   {
     "id": "harbor-fog",
@@ -264,12 +205,6 @@
     "secondaryColor": "oklch(60.0% 0.040 200.0 / 1)"
   },
   {
-    "id": "tsukimi-night",
-    "backgroundColor": "oklch(14.0% 0.030 260.0 / 1)",
-    "mainColor": "oklch(88.0% 0.050 230.0 / 1)",
-    "secondaryColor": "oklch(68.0% 0.075 260.0 / 1)"
-  },
-  {
     "id": "pachinko-hall",
     "backgroundColor": "oklch(18.0% 0.042 325.0 / 1)",
     "mainColor": "oklch(90.0% 0.115 95.0 / 1)",
@@ -282,26 +217,9 @@
     "secondaryColor": "oklch(60.0% 0.145 25.0 / 1)"
   },
   {
-  "id": "anime-pop",
-  "backgroundColor": "oklch(95.0% 0.015 85.0 / 1)",
-  "mainColor": "oklch(65.0% 0.235 345.0 / 1)",
-  "secondaryColor": "oklch(70.0% 0.200 260.0 / 1)"
-  {
-    "id": "blooming-ume",
-    "backgroundColor": "oklch(95.0% 0.015 15.0 / 1)",
-    "mainColor": "oklch(62.0% 0.175 350.0 / 1)",
-    "secondaryColor": "oklch(75.0% 0.085 85.0 / 1)"
-  },
-  {
-    "id": "ink-wash",
-    "backgroundColor": "oklch(96.0% 0.006 90.0 / 1)",
-    "mainColor": "oklch(30.0% 0.015 260.0 / 1)",
-    "secondaryColor": "oklch(55.0% 0.020 260.0 / 1)"
-  },
-  {
-    "id": "samurai-steel",
-    "backgroundColor": "oklch(18.0% 0.022 250.0 / 1)",
-    "mainColor": "oklch(80.0% 0.055 240.0 / 1)",
-    "secondaryColor": "oklch(65.0% 0.170 15.0 / 1)"
+    "id": "anime-pop",
+    "backgroundColor": "oklch(95.0% 0.015 85.0 / 1)",
+    "mainColor": "oklch(65.0% 0.235 345.0 / 1)",
+    "secondaryColor": "oklch(70.0% 0.200 260.0 / 1)"
   }
 ]
