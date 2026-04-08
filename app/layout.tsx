@@ -135,6 +135,21 @@ export default async function RootLayout({ children }: RootLayoutProps) {
     <html lang={locale} suppressHydrationWarning>
       <head>
         <StructuredData data={kanaDojoSchema} />
+        <link rel='apple-touch-icon' href='/favicon.ico' />
+
+        {/* iOS splash screen và status bar */}
+        <meta name='apple-mobile-web-app-capable' content='yes' />
+        <meta
+          name='apple-mobile-web-app-status-bar-style'
+          content='black-translucent'
+        />
+
+        {/* Android và các thiết bị khác */}
+        <meta name='mobile-web-app-capable' content='yes' />
+        <meta name='theme-color' content='#4f46e5' />
+
+        {/* Manifest đã có trong metadata, nhưng thêm link để chắc chắn */}
+        <link rel='manifest' href='/manifest.json' />
         <Script id='audio-sw-migration' strategy='beforeInteractive'>
           {`try {
   if ('serviceWorker' in navigator) {
