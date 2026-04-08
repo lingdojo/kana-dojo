@@ -1,7 +1,7 @@
 const termsOfService = `
 # Terms of Service
 
-**Effective Date:** 04/03/2025 (March 4th, 2025)
+Effective Date: 04/03/2025 (March 4th, 2025)
 
 Welcome to **KanaDojo** (the "Website"). By accessing or using our Website, you automatically agree to comply with and be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, please do not use our Website.
 

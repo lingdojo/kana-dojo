@@ -111,4 +111,24 @@
   "game": "Steins;Gate: My Darling's Embrace",
   "character": "Rintaro Okabe"
   }
+    "japanese": "なかなかやるな",
+    "romaji": "Nakanaka yaru na",
+    "english": "You're pretty good.",
+    "game": "Metal Gear Solid 3: Snake Eater",
+    "character": "Ocelot"
+  },
+  {
+  "japanese": "俺たちの物語は、ここからだ",
+  "romaji": "Oretachi no monogatari wa, koko kara da",
+  "english": "Our story starts here.",
+  "game": "Tales series",
+  "character": "Various endings"
+ },
+  {
+  "japanese": "それもまた一興",
+  "romaji": "Sore mo mata ikkyo",
+  "english": "That too has its charm.",
+  "game": "Onimusha series",
+  "character": "Nobunaga Oda"
+}
 ]
