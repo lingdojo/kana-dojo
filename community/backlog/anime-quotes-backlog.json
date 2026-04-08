@@ -126,7 +126,7 @@
     "english": "I'm on a different level today!",
     "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
     "character": "Okuyasu Nijimura",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -216,7 +216,7 @@
     "english": "Not yet! It's not over yet!",
     "anime": "Mobile Suit Gundam",
     "character": "Char Aznable",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -487,7 +487,7 @@
     "anime": "Fairy Tail",
     "character": "Natsu Dragneel",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 50,
@@ -606,7 +606,7 @@
     "english": "What?! (alt wording 9)",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Joseph Joestar",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -696,7 +696,7 @@
     "english": "You're already dead. (alt wording 18)",
     "anime": "Fist of the North Star",
     "character": "Kenshiro",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -716,7 +716,7 @@
     "english": "I'm gonna be King of the Pirates! (alt wording 20)",
     "anime": "One Piece",
     "character": "Monkey D. Luffy",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -766,7 +766,7 @@
     "english": "I am Gundam! (alt wording 25)",
     "anime": "Mobile Suit Gundam 00",
     "character": "Setsuna F. Seiei",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -806,7 +806,7 @@
     "english": "Mama mama mama. (alt wording 29)",
     "anime": "One Piece",
     "character": "Charlotte Linlin (Big Mom)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -836,7 +836,7 @@
     "english": "Ze ha ha ha! (alt wording 32)",
     "anime": "One Piece",
     "character": "Marshall D. Teach (Blackbeard)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1008,7 +1008,7 @@
     "english": "Believing in my friends is my magic. (alt wording 49)",
     "anime": "Fairy Tail",
     "character": "Natsu Dragneel",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1038,7 +1038,7 @@
     "english": "Lend me your energy! (alt wording 52)",
     "anime": "Dragon Ball Z",
     "character": "Son Goku",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1228,7 +1228,7 @@
     "english": "What?! (alt wording 19) (alt wording 71)",
     "anime": "Fist of the North Star",
     "character": "Shin",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

@@ -80,7 +80,7 @@
   {
     "id": 14,
     "fact": "There's a Japanese concept called 'kaizen' (改善) meaning continuous improvement, which became a cornerstone of global manufacturing practices.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -242,7 +242,7 @@
   {
     "id": 41,
     "fact": "The Japanese word 'yūgen' (幽玄) describes a profound awareness of the universe that triggers emotional responses too deep for words.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -272,13 +272,13 @@
   {
     "id": 46,
     "fact": "Japan's Shibuya Crossing sees up to 3,000 people cross at once during peak times - making it the busiest pedestrian intersection in the world.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 47,
     "fact": "There's a Japanese concept called 'ikigai' (生き甲斐) - your reason for being - found at the intersection of what you love, need, and can be paid for.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -476,7 +476,7 @@
   {
     "id": 80,
     "fact": "Japan has 'midnight service' buses for people who miss the last train, charging premium prices to get workers home.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -536,7 +536,7 @@
   {
     "id": 90,
     "fact": "Japan has vending machines that sell used schoolgirl uniforms - though this practice is now heavily regulated in most areas.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -974,7 +974,7 @@
   {
     "id": 163,
     "fact": "There's a Japanese word 'komorebi' (木漏れ日) for sunlight filtering through trees - there's no single English word for this.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1130,7 +1130,7 @@
   {
     "id": 189,
     "fact": "The word 'utsukushii' (美しい) means beautiful but implies something naturally elegant rather than artificially pretty.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1286,7 +1286,7 @@
   {
     "id": 215,
     "fact": "Japan’s rail system is so punctual that many train companies issue delay certificates ('chien shoumeisho') for commuters.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1580,7 +1580,7 @@
   {
     "id": 264,
     "fact": "The word 'kawaigaru' (可愛がる) means to dote on or cherish, often used for pets or younger relatives.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1694,7 +1694,7 @@
   {
     "id": 283,
     "fact": "Japan’s 'wagashi' sweets are often designed to match the season, with colors and shapes inspired by flowers or snow.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1748,7 +1748,7 @@
   {
     "id": 292,
     "fact": "The term 'komorebi' (木漏れ日) describes sunlight filtering through leaves—so common it has a single word.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
