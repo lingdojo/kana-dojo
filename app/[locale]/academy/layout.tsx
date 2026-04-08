@@ -10,7 +10,7 @@ export default function AcademyLayout({
   return (
     <div className='min-h-dvh bg-(--background-color)'>
       <TopBar />
-      <main className='mx-auto max-w-7xl px-4 pt-20 pb-16 md:px-6'>
+      <main className='mx-auto max-w-7xl px-4 pt-24 pb-16 md:px-6'>
         {children}
       </main>
     </div>

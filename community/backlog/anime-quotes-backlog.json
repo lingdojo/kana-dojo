@@ -786,7 +786,7 @@
     "english": "Lero lero lero lero. (alt wording 27)",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Noriaki Kakyoin",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1018,7 +1018,7 @@
     "english": "The word 'give up' isn't in my dictionary. (alt wording 50)",
     "anime": "Black Clover",
     "character": "Asta",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

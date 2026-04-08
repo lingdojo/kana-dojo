@@ -9,7 +9,7 @@ import { useClick } from '@/shared/hooks/generic/useAudio';
 const USE_FLOATING_STYLE = true;
 
 // Toggle explosion animation on click: true = explosion effect, false = no explosion
-const USE_EXPLOSION_ANIMATION = true;
+const USE_EXPLOSION_ANIMATION = false;
 
 type AnimState = 'idle' | 'exploding' | 'hidden' | 'fading-in';
 

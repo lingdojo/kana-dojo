@@ -148,8 +148,10 @@
     "backgroundColor": "oklch(14.0% 0.075 355.0 / 1)",
     "mainColor": "oklch(68.0% 0.240 10.0 / 1)",
     "secondaryColor": "oklch(78.0% 0.195 150.0 / 1)",
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": false,
+    "completedBy": "linxingmingg-lab",
+    "completedPR": 12349
   },
   {
     "id": "indigo-shibori",
@@ -1724,7 +1726,7 @@
     "backgroundColor": "oklch(19.0% 0.035 250.0 / 1)",
     "mainColor": "oklch(70.0% 0.120 240.0 / 1)",
     "secondaryColor": "oklch(75.0% 0.070 200.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

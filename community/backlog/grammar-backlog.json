@@ -2,7 +2,7 @@
   {
     "id": 1,
     "text": "Use \"〜です/〜ます\" for polite statements; it's the standard polite ending for everyday conversation.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -453,7 +453,7 @@
     "id": 76,
     "text": "\"〜ことになっている\" means \"it is decided/arranged that...\".",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 77,
