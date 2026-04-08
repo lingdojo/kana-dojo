@@ -425,6 +425,13 @@
     "character": "Keigo Atobe"
   },
   {
+    "japanese": "イエス！イエス！イエス！イエス！",
+    "romaji": "Iesu! Iesu! Iesu! Iesu!",
+    "english": "Yes! Yes! Yes! Yes! (alt wording 2)",
+    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+    "character": "DIO"
+  },
+  {
     "japanese": "我々一人ひとりに与えられている魂は一つだけです。大切になさい",
     "romaji": "Wareware hitorihitori ni ataerarete iru tamashii wa hitotsu dake desu. Taisetsu ni nasai.",
     "english": "Each of us is only given one soul. Take good care of yours.",
@@ -439,9 +446,10 @@
     "character": "Giorno Giovanna"
   },
   {
-     "japanese": "お前に必要なものは勇気だ",
-     "romaji": "Omae ni hitsuyou na mono wa yuuki da",
-     "english": "What you need is courage",
-     "anime": "Yu Yu Hakusho",
-     "character": "Yusuke Urameshi"
-   }]
+    "japanese": "マママママ",
+    "romaji": "Mama mama mama",
+    "english": "Mama mama mama. (alt wording 29)",
+    "anime": "One Piece",
+    "character": "Charlotte Linlin (Big Mom)"
+  }
+]
