@@ -1,7 +1,7 @@
 const securityPolicy = `
 # Security Policy
 
-**Effective Date:** 04/03/2025 (March 4th, 2025)
+Effective Date: 04/03/2025 (March 4th, 2025)
 
 At **KanaDojo**, we take security seriously and strive to protect our website and users from potential threats. Although our website does not collect personal user data directly, we implement security measures to safeguard our platform.
 
