@@ -126,5 +126,197 @@
     "Kyogen"
   ],
   "correctIndex": 0
+  },
+  {
+  "question": "Which Japanese island chain is known for tropical beaches and coral reefs?",
+  "difficulty": "hard",
+  "answers": [
+    "Okinawa",
+    "Sado",
+    "Awaji",
+    "Oki"
+  ],
+  "correctIndex": 0
+},
+  {
+    "question": "What was the original name of Tokyo before it was renamed in 1868?",
+    "difficulty": "hard",
+    "answers": ["Edo", "Heian", "Nara", "Kamakura"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which Japanese period is known for over 250 years of relative peace under the Tokugawa shogunate?",
+    "difficulty": "hard",
+    "answers": ["Edo period", "Meiji period", "Taisho period", "Heisei period"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which daimyo unified Japan before the rise of Tokugawa Ieyasu?",
+    "difficulty": "hard",
+    "answers": ["Toyotomi Hideyoshi", "Oda Nobunaga", "Date Masamune", "Uesugi Kenshin"],
+    "correctIndex": 0
+  },
+  {
+    "question": "What is the name of Japan’s oldest extant chronicle, completed in 712?",
+    "difficulty": "hard",
+    "answers": ["Kojiki", "Nihon Shoki", "Man'yoshu", "Genji Monogatari"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which sacred mountain is traditionally climbed during pilgrimage season in Japan?",
+    "difficulty": "hard",
+    "answers": ["Mount Fuji", "Mount Hiei", "Mount Aso", "Mount Tate"],
+    "correctIndex": 0
+  },
+  {
+    "question": "What is the highest rank in professional sumo wrestling?",
+    "difficulty": "hard",
+    "answers": ["Yokozuna", "Ozeki", "Sekiwake", "Komusubi"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which Japanese writing system is primarily used for foreign loanwords?",
+    "difficulty": "hard",
+    "answers": ["Katakana", "Hiragana", "Kanji", "Romaji"],
+    "correctIndex": 0
+  },
+  {
+    "question": "What is the traditional Japanese garment worn during formal occasions?",
+    "difficulty": "hard",
+    "answers": ["Kimono", "Yukata", "Hakama", "Jinbei"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which battle in 1600 led to the establishment of the Tokugawa shogunate?",
+    "difficulty": "hard",
+    "answers": ["Battle of Sekigahara", "Battle of Nagashino", "Battle of Okehazama", "Battle of Osaka"],
+    "correctIndex": 0
+  },
+  {
+    "question": "What is the name of the Japanese bullet train network?",
+    "difficulty": "hard",
+    "answers": ["Shinkansen", "JR Express", "Rapid Line", "Metro Rail"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which Japanese religion focuses on kami spirits?",
+    "difficulty": "hard",
+    "answers": ["Shinto", "Buddhism", "Confucianism", "Taoism"],
+    "correctIndex": 0
+  },
+  {
+    "question": "What is the Japanese term for a traditional tea ceremony?",
+    "difficulty": "hard",
+    "answers": ["Chanoyu", "Ikebana", "Kendo", "Shodo"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which Japanese era began in 2019 under Emperor Naruhito?",
+    "difficulty": "hard",
+    "answers": ["Reiwa", "Heisei", "Showa", "Taisho"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which castle is considered Japan’s most famous and is located in Hyogo Prefecture?",
+    "difficulty": "hard",
+    "answers": ["Himeji Castle", "Osaka Castle", "Matsumoto Castle", "Nagoya Castle"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which art form involves arranging flowers in a disciplined style?",
+    "difficulty": "hard",
+    "answers": ["Ikebana", "Origami", "Sumi-e", "Bonsai"],
+    "correctIndex": 0
+  },
+  {
+    "question": "What is the traditional Japanese method of paper folding called?",
+    "difficulty": "hard",
+    "answers": ["Origami", "Kirigami", "Washi", "Shodo"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which Japanese city was the imperial capital before Kyoto?",
+    "difficulty": "hard",
+    "answers": ["Nara", "Osaka", "Edo", "Kamakura"],
+    "correctIndex": 0
+  },
+  {
+    "question": "What is the Japanese term for a feudal lord?",
+    "difficulty": "hard",
+    "answers": ["Daimyo", "Samurai", "Shogun", "Ronin"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which Japanese poet wrote the famous haiku about an old pond and a frog?",
+    "difficulty": "hard",
+    "answers": ["Matsuo Basho", "Yosa Buson", "Kobayashi Issa", "Masaoka Shiki"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which Japanese island is the smallest of the four main islands?",
+    "difficulty": "hard",
+    "answers": ["Shikoku", "Kyushu", "Honshu", "Hokkaido"],
+    "correctIndex": 0
+  },
+  {
+    "question": "What is the name of the Japanese art of calligraphy?",
+    "difficulty": "hard",
+    "answers": ["Shodo", "Ikebana", "Kabuki", "Kendo"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which Japanese city is known as the 'Kitchen of Japan'?",
+    "difficulty": "hard",
+    "answers": ["Osaka", "Tokyo", "Kyoto", "Fukuoka"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which fish is traditionally used in sushi and can be poisonous if prepared incorrectly?",
+    "difficulty": "hard",
+    "answers": ["Fugu", "Tuna", "Salmon", "Mackerel"],
+    "correctIndex": 0
+  },
+  {
+    "question": "What is the traditional Japanese martial art of swordsmanship?",
+    "difficulty": "hard",
+    "answers": ["Kendo", "Judo", "Karate", "Aikido"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which Japanese festival celebrates the stars Vega and Altair?",
+    "difficulty": "hard",
+    "answers": ["Tanabata", "Obon", "Setsubun", "Gion Matsuri"],
+    "correctIndex": 0
+  },
+  {
+    "question": "What is the Japanese term for a wandering samurai with no master?",
+    "difficulty": "hard",
+    "answers": ["Ronin", "Daimyo", "Shogun", "Ashigaru"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which Japanese island is the largest by area?",
+    "difficulty": "hard",
+    "answers": ["Honshu", "Hokkaido", "Kyushu", "Shikoku"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which Japanese literary work is often considered the world's first novel?",
+    "difficulty": "hard",
+    "answers": ["The Tale of Genji", "The Pillow Book", "Heike Monogatari", "Manyoshu"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which Japanese emperor was in power during World War II?",
+    "difficulty": "hard",
+    "answers": ["Hirohito", "Akihito", "Meiji", "Taisho"],
+    "correctIndex": 0
+  },
+  {
+    "question": "What is the Japanese word for cherry blossom viewing?",
+    "difficulty": "hard",
+    "answers": ["Hanami", "Matsuri", "Sakura", "Ikebana"],
+    "correctIndex": 0
   }
+
 ]
