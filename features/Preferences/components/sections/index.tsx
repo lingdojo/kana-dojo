@@ -19,7 +19,7 @@ import {
 } from 'lucide-react';
 import Effects from '../display/Effects';
 
-const USE_NEW_PREFERENCES_ICON_DESIGN = false;
+const USE_NEW_PREFERENCES_ICON_DESIGN = true;
 
 const Settings = () => {
   return (
@@ -92,19 +92,7 @@ const Settings = () => {
         <Effects useNewIconDesign={USE_NEW_PREFERENCES_ICON_DESIGN} />
       </CollapsibleSection>
 
-      {/* Goal Timers section - commented out
-      <CollapsibleSection
-        title='Goal Timers'
-        icon={<Target size={28} />}
-        level='section'
-        defaultOpen={true}
-        storageKey='prefs-goal-timers'
-      >
-        <GoalTimers />
-      </CollapsibleSection>
-      */}
 
-      {/* Backup Section - not collapsible since it's short */}
       <CollapsibleSection
         title='Backup'
         fullBorder
