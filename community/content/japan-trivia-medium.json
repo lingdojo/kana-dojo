@@ -374,11 +374,33 @@
       "Romaji"
     ],
     "correctIndex": 0
-  }
+  },
   {
     "question": "What is the name of Japan's highest mountain? (Community variation 15)",
     "difficulty": "medium",
     "answers": ["Mount Haku", "Mount Fuji", "Mount Aso", "Mount Tate"],
     "correctIndex": 1
-  } 
+  },
+  {
+    "question": "What is the Japanese term for a convenience store?",
+    "difficulty": "medium",
+    "answers": [
+      "Depato",
+      "Konbini",
+      "Ramen-ya",
+      "Kissa"
+    ],
+    "correctIndex": 1
+  },
+  {
+  "question": "What is the Japanese word for 'thank you'? (Community variation 11)",
+  "difficulty": "medium",
+  "answers": [
+    "Sumimasen",
+    "Arigatou",
+    "Ohayou",
+    "Sayonara"
+  ],
+  "correctIndex": 1
+}
 ]

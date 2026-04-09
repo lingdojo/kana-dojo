@@ -1,12 +1,12 @@
 import PostWrapper from '@/shared/components/layout/PostWrapper';
 import securityPolicy from '@/shared/lib/legal/securityPolicy';
-import ContentLayout from '@/shared/components/layout/ContentLayout';
+import LegalLayout from '@/shared/components/layout/LegalLayout';
 
 const SecurityPolicy = () => {
   return (
-    <ContentLayout>
+    <LegalLayout>
       <PostWrapper textContent={securityPolicy} />
-    </ContentLayout>
+    </LegalLayout>
   );
 };
 

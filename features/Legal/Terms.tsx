@@ -1,12 +1,12 @@
-import ContentLayout from '@/shared/components/layout/ContentLayout';
+import LegalLayout from '@/shared/components/layout/LegalLayout';
 import PostWrapper from '@/shared/components/layout/PostWrapper';
 import termsOfService from '@/shared/lib/legal/termsOfService';
 
 const TermsOfService = () => {
   return (
-    <ContentLayout>
+    <LegalLayout>
       <PostWrapper textContent={termsOfService} />
-    </ContentLayout>
+    </LegalLayout>
   );
 };
 
