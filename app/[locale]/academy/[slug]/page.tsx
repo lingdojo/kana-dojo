@@ -70,7 +70,7 @@ const components = {
   // Standard HTML element styling with editorial refinement
   h2: ({ children }: { children: React.ReactNode }) => (
     <h2
-      className='premium-serif mt-14 mb-5 text-4xl font-black tracking-tight text-(--main-color)'
+      className='premium-serif mt-16 mb-6 text-[2.75rem] leading-tight font-black tracking-tight text-(--main-color)'
       id={generateHeadingId(String(children))}
     >
       {children}
@@ -78,7 +78,7 @@ const components = {
   ),
   h3: ({ children }: { children: React.ReactNode }) => (
     <h3
-      className='premium-serif mt-10 mb-4 text-2xl font-bold text-(--main-color) italic'
+      className='premium-serif mt-12 mb-5 text-[2rem] leading-snug font-bold text-(--main-color) italic'
       id={generateHeadingId(String(children))}
     >
       {children}
@@ -86,21 +86,21 @@ const components = {
   ),
   h4: ({ children }: { children: React.ReactNode }) => (
     <h4
-      className='mt-8 mb-3 text-xl font-bold tracking-tight text-(--main-color)'
+      className='mt-10 mb-4 text-[1.375rem] leading-snug font-bold tracking-tight text-(--main-color)'
       id={generateHeadingId(String(children))}
     >
       {children}
     </h4>
   ),
   p: ({ children }: { children: React.ReactNode }) => (
-    <p className='mb-6 text-lg leading-[1.85] text-(--secondary-color) opacity-90'>
+    <p className='mb-6 text-lg leading-[1.8] text-(--secondary-color) opacity-90'>
       {children}
     </p>
   ),
   ul: ({ children }: { children: React.ReactNode }) => {
     const items = normalizeListItems(children);
     return (
-      <ul className='mb-7 list-none space-y-3 pl-0 text-(--secondary-color)'>
+      <ul className='mb-8 list-none space-y-4 pl-0 text-(--secondary-color)'>
         {items.map((child, index) => (
           <li key={index} className='flex items-start gap-4'>
             <span className='mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-(--main-color) opacity-25' />
@@ -113,7 +113,7 @@ const components = {
   ol: ({ children }: { children: React.ReactNode }) => {
     const items = normalizeListItems(children);
     return (
-      <ol className='mb-7 list-none space-y-3 pl-0 text-(--secondary-color)'>
+      <ol className='mb-8 list-none space-y-4 pl-0 text-(--secondary-color)'>
         {items.map((child, index) => (
           <li key={index} className='flex items-start gap-4'>
             <span className='mt-1.5 font-mono text-[10px] font-black opacity-25'>
@@ -139,7 +139,7 @@ const components = {
     </a>
   ),
   blockquote: ({ children }: { children: React.ReactNode }) => (
-    <blockquote className='premium-serif my-12 border-l-[3px] border-(--main-color) pl-10 text-3xl leading-[1.6] font-light text-(--main-color) italic opacity-90'>
+    <blockquote className='premium-serif my-14 border-l-[3px] border-(--main-color) pl-10 text-3xl leading-[1.6] font-light text-(--main-color) italic opacity-90'>
       {children}
     </blockquote>
   ),
@@ -165,13 +165,13 @@ const components = {
     );
   },
   pre: ({ children }: { children: React.ReactNode }) => (
-    <pre className='my-10 overflow-x-auto rounded-sm border border-(--border-color) bg-(--card-color) p-0'>
+    <pre className='my-8 overflow-x-auto rounded-sm border border-(--border-color) bg-(--card-color) p-0'>
       {children}
     </pre>
   ),
-  hr: () => <hr className='my-20 border-(--border-color) opacity-50' />,
+  hr: () => <hr className='my-16 border-(--border-color) opacity-50' />,
   table: ({ children }: { children: React.ReactNode }) => (
-    <div className='my-12 overflow-x-auto rounded-xl border border-(--border-color) bg-(--card-color)/60 p-2 shadow-[0_20px_45px_-40px_rgba(0,0,0,0.45)]'>
+    <div className='my-10 overflow-x-auto rounded-xl border border-(--border-color) bg-(--card-color)/60 p-2 shadow-[0_20px_45px_-40px_rgba(0,0,0,0.45)]'>
       <table className='w-full min-w-[640px] border-separate border-spacing-0 text-left text-base'>
         {children}
       </table>
