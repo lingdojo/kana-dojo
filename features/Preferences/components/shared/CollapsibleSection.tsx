@@ -45,9 +45,9 @@ const newIconClassesByLevel = {
   section:
     'flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border-b-6 border-(--secondary-color-accent) bg-(--secondary-color) leading-none text-(--background-color) motion-safe:animate-float [--float-distance:-4px] [&>svg]:h-7 [&>svg]:w-7',
   subsection:
-    'flex h-9 w-9 shrink-0 items-center justify-center rounded-2xl border-b-6 border-(--secondary-color-accent) bg-(--secondary-color) leading-none text-(--background-color) motion-safe:animate-float [--float-distance:-3.25px] [&>svg]:h-4 [&>svg]:w-4',
+    'flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border-b-4 border-(--secondary-color-accent) bg-(--secondary-color) leading-none text-(--background-color) motion-safe:animate-float [--float-distance:-3px] [&>svg]:h-4 [&>svg]:w-4',
   subsubsection:
-    'flex h-7 w-7 shrink-0 items-center justify-center rounded-2xl border-b-6 border-(--secondary-color-accent) bg-(--secondary-color) leading-none text-(--background-color) motion-safe:animate-float [--float-distance:-2.5px] [&>svg]:h-3.5 [&>svg]:w-3.5',
+    'flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border-b-4 border-(--secondary-color-accent) bg-(--secondary-color) leading-none text-(--background-color) motion-safe:animate-float [--float-distance:-2px] [&>svg]:h-3.5 [&>svg]:w-3.5',
 } as const;
 
 const CollapsibleSection = ({
@@ -131,7 +131,8 @@ const CollapsibleSection = ({
                 : 'flex h-11 w-11 items-center justify-center rounded-xl bg-(--card-color) text-(--secondary-color)',
               !useNewIconDesign && 'transition-colors duration-300',
               !useNewIconDesign && 'group-active:bg-(--background-color)',
-              !useNewIconDesign && 'group-focus-visible:bg-(--background-color)',
+              !useNewIconDesign &&
+                'group-focus-visible:bg-(--background-color)',
               !useNewIconDesign && 'md:group-hover:bg-(--background-color)',
             )}
           >

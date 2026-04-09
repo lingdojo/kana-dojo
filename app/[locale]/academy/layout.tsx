@@ -2,11 +2,11 @@
 
 import TopBar from '@/shared/components/navigation/TopBar';
 
-interface ResourcesLayoutProps {
+export default function AcademyLayout({
+  children,
+}: {
   children: React.ReactNode;
-}
-
-export default function ResourcesLayout({ children }: ResourcesLayoutProps) {
+}) {
   return (
     <div className='min-h-dvh bg-(--background-color)'>
       <TopBar />
