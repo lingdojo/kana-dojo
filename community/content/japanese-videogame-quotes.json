@@ -63,32 +63,11 @@
     "character": "Luke fon Fabre"
   },
   {
-    "japanese": "冒険の始まりだ！",
-    "romaji": "Bouken no hajimari da!",
-    "english": "This is the beginning of the adventure!",
-    "game": "Dragon Quest XI",
-    "character": "Hero / party lines"
-  },
-  {
     "japanese": "俺たちの物語は、ここからだ",
     "romaji": "Oretachi no monogatari wa, koko kara da",
     "english": "Our story starts here.",
     "game": "Tales series",
     "character": "Various endings"
-  },
-  {
-    "japanese": "覚悟はいいか？ 俺はできてる。",
-    "romaji": "Kakugo wa ii ka? Ore wa dekiteru.",
-    "english": "Are you prepared? I am.",
-    "game": "JoJo’s Bizarre Adventure: All-Star Battle",
-    "character": "Giorno Giovanna"
-  },
-  {
-    "japanese": "それもまた一興",
-    "romaji": "Sore mo mata ikkyo",
-    "english": "That too has its charm.",
-    "game": "Onimusha series",
-    "character": "Nobunaga Oda"
   },
   {
     "japanese": "覚悟はいいか？ 俺はできてる。",
@@ -112,12 +91,12 @@
     "character": "Ocelot"
   },
   {
-  "japanese": "俺たちの物語は、ここからだ",
-  "romaji": "Oretachi no monogatari wa, koko kara da",
-  "english": "Our story starts here.",
-  "game": "Tales series",
-  "character": "Various endings"
- },
+  "japanese": "ここからが本番だ",
+  "romaji": "Koko kara ga honban da",
+  "english": "The real challenge starts now.",
+  "game": "Monster Hunter series",
+  "character": "Guild Handler lines"
+  },
   {
   "japanese": "それもまた一興",
   "romaji": "Sore mo mata ikkyo",
@@ -132,4 +111,12 @@
   "game": "Steins;Gate: My Darling's Embrace",
   "character": "Rintaro Okabe"
 }
+  },
+  {
+    "japanese": "次はもっと強くなる",
+    "romaji": "Tsugi wa motto tsuyoku naru",
+    "english": "Next time, I'll be stronger.",
+    "game": "Pokemon series",
+    "character": "Rival characters"
+  }
 ]

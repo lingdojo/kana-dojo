@@ -10,7 +10,7 @@ import { getWallpaperById } from '@/features/Preferences/data/wallpapers/wallpap
 import usePreferencesStore from '@/features/Preferences/store/usePreferencesStore';
 import { useClick } from '@/shared/hooks/generic/useAudio';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
-import { X } from 'lucide-react';
+import { X, Palette } from 'lucide-react';
 import { memo, useCallback, useState, useEffect } from 'react';
 import type { LucideIcon } from 'lucide-react';
 
@@ -206,7 +206,10 @@ export default function ThemesModal({ open, onOpenChange }: ThemesModalProps) {
           onOpenAutoFocus={e => e.preventDefault()}
         >
           <div className='sticky top-0 z-10 flex flex-row items-center justify-between rounded-t-2xl border-b border-(--border-color) bg-(--background-color) px-6 pt-6 pb-4'>
-            <DialogPrimitive.Title className='text-2xl font-semibold text-(--main-color)'>
+            <DialogPrimitive.Title className='flex items-center gap-2 text-2xl font-semibold text-(--main-color)'>
+              <span className='motion-safe:animate-float flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border-b-6 border-(--secondary-color-accent) bg-(--secondary-color) leading-none text-(--background-color) [--float-distance:-4px]'>
+                <Palette size={22} />
+              </span>
               Themes
             </DialogPrimitive.Title>
             <button
@@ -223,7 +226,9 @@ export default function ThemesModal({ open, onOpenChange }: ThemesModalProps) {
                 return (
                   <div key={group.name} className='space-y-3'>
                     <div className='flex items-center gap-2 text-lg font-medium text-(--main-color)'>
-                      <Icon size={20} className='text-(--secondary-color)' />
+                      <span className='motion-safe:animate-float flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border-b-4 border-(--secondary-color-accent) bg-(--secondary-color) leading-none text-(--background-color) [--float-distance:-3px]'>
+                        <Icon size={16} />
+                      </span>
                       {group.name === 'Premium' ? (
                         <span>
                           <span className='text-(--main-color)'>Premium</span>

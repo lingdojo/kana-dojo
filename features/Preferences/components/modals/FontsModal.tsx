@@ -5,7 +5,7 @@ import { isRecommendedFont } from '@/features/Preferences/data/fonts/recommended
 import usePreferencesStore from '@/features/Preferences/store/usePreferencesStore';
 import { useClick } from '@/shared/hooks/generic/useAudio';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
-import { X, BookOpen, Sparkles } from 'lucide-react';
+import { X, BookOpen, Sparkles, Type } from 'lucide-react';
 import { memo, useCallback, useMemo } from 'react';
 import clsx from 'clsx';
 
@@ -111,7 +111,10 @@ export default function FontsModal({ open, onOpenChange }: FontsModalProps) {
           onOpenAutoFocus={e => e.preventDefault()}
         >
           <div className='sticky top-0 z-10 flex flex-row items-center justify-between rounded-t-2xl border-b border-(--border-color) bg-(--background-color) px-6 pt-6 pb-4'>
-            <DialogPrimitive.Title className='text-2xl font-semibold text-(--main-color)'>
+            <DialogPrimitive.Title className='flex items-center gap-2 text-2xl font-semibold text-(--main-color)'>
+              <span className='motion-safe:animate-float flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border-b-6 border-(--secondary-color-accent) bg-(--secondary-color) leading-none text-(--background-color) [--float-distance:-4px]'>
+                <Type size={22} />
+              </span>
               Fonts
             </DialogPrimitive.Title>
             <button
@@ -125,14 +128,12 @@ export default function FontsModal({ open, onOpenChange }: FontsModalProps) {
             {/* Recommended Fonts Section */}
             <div className='mb-6'>
               <div className='mb-3 flex items-center gap-2'>
+                <span className='motion-safe:animate-float flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border-b-4 border-(--secondary-color-accent) bg-(--secondary-color) leading-none text-(--background-color) [--float-distance:-3px]'>
+                  <Sparkles size={16} />
+                </span>
                 <h3 className='text-lg font-medium text-(--main-color)'>
                   Recommended
                 </h3>
-                {/* 
-                <span className='text-sm text-(--secondary-color)'>
-                  ({recommendedFonts.length})
-                </span>
- */}
               </div>
               {/* 
               <p className='mb-4 text-sm text-(--secondary-color)'>
@@ -156,14 +157,12 @@ export default function FontsModal({ open, onOpenChange }: FontsModalProps) {
             {/* Other Fonts Section */}
             <div>
               <div className='mb-3 flex items-center gap-2'>
+                <span className='motion-safe:animate-float flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border-b-4 border-(--secondary-color-accent) bg-(--secondary-color) leading-none text-(--background-color) [--float-distance:-3px]'>
+                  <BookOpen size={16} />
+                </span>
                 <h3 className='text-lg font-medium text-(--main-color)'>
                   Other
                 </h3>
-                {/* 
-                <span className='text-sm text-(--secondary-color)'>
-                  ({otherFonts.length})
-                </span>
- */}
               </div>
               {/* 
               <p className='mb-4 text-sm text-(--secondary-color)'>
