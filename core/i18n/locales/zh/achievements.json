@@ -1,0 +1,33 @@
+{
+  "title": "成就",
+  "description": "追踪您的进度并获得成就",
+  "unlocked": "已解锁",
+  "locked": "未解锁",
+  "progress": "进度：{{current}}/{{total}}",
+  "earnedOn": "获得于{{date}}",
+  "categories": {
+    "all": "全部",
+    "kana": "假名",
+    "kanji": "汉字",
+    "vocabulary": "词汇",
+    "general": "常规",
+    "special": "特殊"
+  },
+  "rarity": {
+    "common": "普通",
+    "rare": "稀有",
+    "epic": "史诗",
+    "legendary": "传说"
+  },
+  "notifications": {
+    "achievementUnlocked": "成就解锁！",
+    "congratulations": "恭喜！",
+    "youEarned": "您获得了"
+  },
+  "stats": {
+    "totalAchievements": "总成就数",
+    "unlockedAchievements": "已解锁",
+    "completionRate": "完成率",
+    "recentAchievements": "最近成就"
+  }
+}

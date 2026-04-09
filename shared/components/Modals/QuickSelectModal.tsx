@@ -2,7 +2,7 @@ import { useMemo, useState, useCallback, memo } from 'react';
 import clsx from 'clsx';
 import { X, CircleCheck, Circle, Trash2, Dices } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { useClick } from '@/shared/hooks/useAudio';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 import { ActionButton } from '@/shared/components/ui/ActionButton';
 import { cn } from '@/shared/lib/utils';
 
@@ -11,7 +11,6 @@ type SetData = {
   start: number;
   end: number;
   id: string;
-  isMastered: boolean;
 };
 
 type QuickSelectModalProps = {
@@ -73,9 +72,6 @@ const SetCard = memo(function SetCard({
         <span className='text-center text-xs font-medium sm:text-sm'>
           {set.name.replace('Set ', 'Level ')}
         </span>
-        {set.isMastered && (
-          <span className='text-[10px] opacity-70 sm:text-xs'>Mastered</span>
-        )}
       </ActionButton>
     </motion.div>
   );

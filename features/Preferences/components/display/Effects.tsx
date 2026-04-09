@@ -2,12 +2,12 @@
 import clsx from 'clsx';
 import usePreferencesStore from '@/features/Preferences/store/usePreferencesStore';
 import { buttonBorderStyles } from '@/shared/lib/styles';
-import { useHasFinePointer } from '@/shared/hooks/useHasFinePointer';
+import { useHasFinePointer } from '@/shared/hooks/generic/useHasFinePointer';
 import { EFFECTS, CLICK_EFFECTS } from '../../data/effects/effectsData';
 import { CLICK_SOUND_OPTIONS } from '../../data/audio/clickSounds';
 import CollapsibleSection from '../shared/CollapsibleSection';
 import { MousePointer2, Volume2, Zap } from 'lucide-react';
-import { useClick } from '@/shared/hooks/useAudio';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 
 function EffectCard({
   name,
@@ -98,7 +98,11 @@ function SoundEffectCard({
   );
 }
 
-const Effects = () => {
+type EffectsProps = {
+  useNewIconDesign?: boolean;
+};
+
+const Effects = ({ useNewIconDesign = false }: EffectsProps) => {
   const hasFinePointer = useHasFinePointer();
   const { playClickById } = useClick();
   const cursorTrailEffect = usePreferencesStore(s => s.cursorTrailEffect);
@@ -113,6 +117,7 @@ const Effects = () => {
       <CollapsibleSection
         title='Sound Effects'
         icon={<Volume2 size={18} />}
+        useNewIconDesign={useNewIconDesign}
         level='subsection'
         defaultOpen={true}
         storageKey='prefs-effects-click-sounds'
@@ -139,6 +144,7 @@ const Effects = () => {
         <CollapsibleSection
           title='Cursor Trail'
           icon={<MousePointer2 size={18} />}
+          useNewIconDesign={useNewIconDesign}
           level='subsection'
           defaultOpen={true}
           storageKey='prefs-effects-cursor'
@@ -161,6 +167,7 @@ const Effects = () => {
       <CollapsibleSection
         title='Click Effects'
         icon={<Zap size={18} />}
+        useNewIconDesign={useNewIconDesign}
         level='subsection'
         defaultOpen={true}
         storageKey='prefs-effects-click'

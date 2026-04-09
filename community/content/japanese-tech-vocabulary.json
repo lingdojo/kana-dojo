@@ -1,0 +1,702 @@
+[
+  {
+    "japanese": "プログラミング",
+    "kana": "ぷろぐらみんぐ",
+    "chinese": "编程",
+    "english": "programming",
+    "category": "基础"
+  },
+  {
+    "japanese": "コード",
+    "kana": "こーど",
+    "chinese": "代码",
+    "english": "code",
+    "category": "基础"
+  },
+  {
+    "japanese": "関数",
+    "kana": "かんすう",
+    "chinese": "函数",
+    "english": "function",
+    "category": "编程"
+  },
+  {
+    "japanese": "変数",
+    "kana": "へんすう",
+    "chinese": "变量",
+    "english": "variable",
+    "category": "编程"
+  },
+  {
+    "japanese": "配列",
+    "kana": "はいれつ",
+    "chinese": "数组",
+    "english": "array",
+    "category": "编程"
+  },
+  {
+    "japanese": "文字列",
+    "kana": "もじれつ",
+    "chinese": "字符串",
+    "english": "string",
+    "category": "编程"
+  },
+  {
+    "japanese": "条件分岐",
+    "kana": "じょうけんぶんき",
+    "chinese": "条件分支",
+    "english": "conditional branch",
+    "category": "编程"
+  },
+  {
+    "japanese": "繰り返し",
+    "kana": "くりかえし",
+    "chinese": "循环",
+    "english": "loop",
+    "category": "编程"
+  },
+  {
+    "japanese": "クラス",
+    "kana": "くらす",
+    "chinese": "类",
+    "english": "class",
+    "category": "编程"
+  },
+  {
+    "japanese": "オブジェクト",
+    "kana": "おぶじぇくと",
+    "chinese": "对象",
+    "english": "object",
+    "category": "编程"
+  },
+  {
+    "japanese": "インスタンス",
+    "kana": "いんすたんす",
+    "chinese": "实例",
+    "english": "instance",
+    "category": "编程"
+  },
+  {
+    "japanese": "メソッド",
+    "kana": "めそっど",
+    "chinese": "方法",
+    "english": "method",
+    "category": "编程"
+  },
+  {
+    "japanese": "引数",
+    "kana": "ひきすう",
+    "chinese": "参数",
+    "english": "argument",
+    "category": "编程"
+  },
+  {
+    "japanese": "戻り値",
+    "kana": "もどりち",
+    "chinese": "返回值",
+    "english": "return value",
+    "category": "编程"
+  },
+  {
+    "japanese": "デバッグ",
+    "kana": "でばっぐ",
+    "chinese": "调试",
+    "english": "debugging",
+    "category": "开发"
+  },
+  {
+    "japanese": "バグ",
+    "kana": "ばぐ",
+    "chinese": "漏洞、错误",
+    "english": "bug",
+    "category": "开发"
+  },
+  {
+    "japanese": "エラー",
+    "kana": "えらー",
+    "chinese": "错误",
+    "english": "error",
+    "category": "开发"
+  },
+  {
+    "japanese": "例外",
+    "kana": "れいがい",
+    "chinese": "异常",
+    "english": "exception",
+    "category": "开发"
+  },
+  {
+    "japanese": "コンパイル",
+    "kana": "こんぱいる",
+    "chinese": "编译",
+    "english": "compile",
+    "category": "开发"
+  },
+  {
+    "japanese": "実行",
+    "kana": "じっこう",
+    "chinese": "执行、运行",
+    "english": "execution",
+    "category": "开发"
+  },
+  {
+    "japanese": "テスト",
+    "kana": "てすと",
+    "chinese": "测试",
+    "english": "test",
+    "category": "开发"
+  },
+  {
+    "japanese": "単体テスト",
+    "kana": "たんたいてすと",
+    "chinese": "单元测试",
+    "english": "unit test",
+    "category": "开发"
+  },
+  {
+    "japanese": "統合テスト",
+    "kana": "とうごうてすと",
+    "chinese": "集成测试",
+    "english": "integration test",
+    "category": "开发"
+  },
+  {
+    "japanese": "バージョン",
+    "kana": "ばーじょん",
+    "chinese": "版本",
+    "english": "version",
+    "category": "开发"
+  },
+  {
+    "japanese": "リリース",
+    "kana": "りりーす",
+    "chinese": "发布",
+    "english": "release",
+    "category": "开发"
+  },
+  {
+    "japanese": "コンピュータ",
+    "kana": "こんぴゅーた",
+    "chinese": "计算机",
+    "english": "computer",
+    "category": "硬件"
+  },
+  {
+    "japanese": "サーバー",
+    "kana": "さーばー",
+    "chinese": "服务器",
+    "english": "server",
+    "category": "基础设施"
+  },
+  {
+    "japanese": "クライアント",
+    "kana": "くらいあんと",
+    "chinese": "客户端",
+    "english": "client",
+    "category": "基础设施"
+  },
+  {
+    "japanese": "データベース",
+    "kana": "でーたべーす",
+    "chinese": "数据库",
+    "english": "database",
+    "category": "数据"
+  },
+  {
+    "japanese": "テーブル",
+    "kana": "てーぶる",
+    "chinese": "表",
+    "english": "table",
+    "category": "数据"
+  },
+  {
+    "japanese": "クエリ",
+    "kana": "くえり",
+    "chinese": "查询",
+    "english": "query",
+    "category": "数据"
+  },
+  {
+    "japanese": "データ",
+    "kana": "でーた",
+    "chinese": "数据",
+    "english": "data",
+    "category": "数据"
+  },
+  {
+    "japanese": "ファイル",
+    "kana": "ふぁいる",
+    "chinese": "文件",
+    "english": "file",
+    "category": "基础"
+  },
+  {
+    "japanese": "フォルダ",
+    "kana": "ふぉるだ",
+    "chinese": "文件夹",
+    "english": "folder",
+    "category": "基础"
+  },
+  {
+    "japanese": "ディレクトリ",
+    "kana": "でぃれくとり",
+    "chinese": "目录",
+    "english": "directory",
+    "category": "基础"
+  },
+  {
+    "japanese": "ネットワーク",
+    "kana": "ねっとわーく",
+    "chinese": "网络",
+    "english": "network",
+    "category": "网络"
+  },
+  {
+    "japanese": "インターネット",
+    "kana": "いんたーねっと",
+    "chinese": "互联网",
+    "english": "internet",
+    "category": "网络"
+  },
+  {
+    "japanese": "ウェブサイト",
+    "kana": "うぇぶさいと",
+    "chinese": "网站",
+    "english": "website",
+    "category": "网络"
+  },
+  {
+    "japanese": "アプリケーション",
+    "kana": "あぷりけーしょん",
+    "chinese": "应用程序",
+    "english": "application",
+    "category": "软件"
+  },
+  {
+    "japanese": "アプリ",
+    "kana": "あぷり",
+    "chinese": "应用",
+    "english": "app",
+    "category": "软件"
+  },
+  {
+    "japanese": "インターフェース",
+    "kana": "いんたーふぇーす",
+    "chinese": "接口、界面",
+    "english": "interface",
+    "category": "设计"
+  },
+  {
+    "japanese": "ユーザー",
+    "kana": "ゆーざー",
+    "chinese": "用户",
+    "english": "user",
+    "category": "设计"
+  },
+  {
+    "japanese": "ログイン",
+    "kana": "ろぐいん",
+    "chinese": "登录",
+    "english": "login",
+    "category": "安全"
+  },
+  {
+    "japanese": "ログアウト",
+    "kana": "ろぐあうと",
+    "chinese": "登出",
+    "english": "logout",
+    "category": "安全"
+  },
+  {
+    "japanese": "パスワード",
+    "kana": "ぱすわーど",
+    "chinese": "密码",
+    "english": "password",
+    "category": "安全"
+  },
+  {
+    "japanese": "セキュリティ",
+    "kana": "せきゅりてぃ",
+    "chinese": "安全",
+    "english": "security",
+    "category": "安全"
+  },
+  {
+    "japanese": "暗号化",
+    "kana": "あんごうか",
+    "chinese": "加密",
+    "english": "encryption",
+    "category": "安全"
+  },
+  {
+    "japanese": "API",
+    "kana": "えーぴーあい",
+    "chinese": "应用程序接口",
+    "english": "Application Programming Interface",
+    "category": "开发"
+  },
+  {
+    "japanese": "ライブラリ",
+    "kana": "らいぶらり",
+    "chinese": "库",
+    "english": "library",
+    "category": "开发"
+  },
+  {
+    "japanese": "フレームワーク",
+    "kana": "ふれーむわーく",
+    "chinese": "框架",
+    "english": "framework",
+    "category": "开发"
+  },
+  {
+    "japanese": "アルゴリズム",
+    "kana": "あるごりずむ",
+    "chinese": "算法",
+    "english": "algorithm",
+    "category": "编程"
+  },
+  {
+    "japanese": "再帰",
+    "kana": "さいき",
+    "chinese": "递归",
+    "english": "recursion",
+    "category": "编程"
+  },
+  {
+    "japanese": "ソースコード",
+    "kana": "そーすこーど",
+    "chinese": "源代码",
+    "english": "source code",
+    "category": "基础"
+  },
+  {
+    "japanese": "コメント",
+    "kana": "こめんと",
+    "chinese": "注释",
+    "english": "comment",
+    "category": "编程"
+  },
+  {
+    "japanese": "開発者",
+    "kana": "かいはつしゃ",
+    "chinese": "开发者",
+    "english": "developer",
+    "category": "职业"
+  },
+  {
+    "japanese": "エンジニア",
+    "kana": "えんじにあ",
+    "chinese": "工程师",
+    "english": "engineer",
+    "category": "职业"
+  },
+  {
+    "japanese": "プログラマー",
+    "kana": "ぷろぐらまー",
+    "chinese": "程序员",
+    "english": "programmer",
+    "category": "职业"
+  },
+  {
+    "japanese": "設計",
+    "kana": "せっけい",
+    "chinese": "设计",
+    "english": "design",
+    "category": "开发"
+  },
+  {
+    "japanese": "実装",
+    "kana": "じっそう",
+    "chinese": "实现",
+    "english": "implementation",
+    "category": "开发"
+  },
+  {
+    "japanese": "修正",
+    "kana": "しゅうせい",
+    "chinese": "修正、修改",
+    "english": "fix",
+    "category": "开发"
+  },
+  {
+    "japanese": "更新",
+    "kana": "こうしん",
+    "chinese": "更新",
+    "english": "update",
+    "category": "开发"
+  },
+  {
+    "japanese": "削除",
+    "kana": "さくじょ",
+    "chinese": "删除",
+    "english": "delete",
+    "category": "基础"
+  },
+  {
+    "japanese": "追加",
+    "kana": "ついか",
+    "chinese": "添加",
+    "english": "add",
+    "category": "基础"
+  },
+  {
+    "japanese": "保存",
+    "kana": "ほぞん",
+    "chinese": "保存",
+    "english": "save",
+    "category": "基础"
+  },
+  {
+    "japanese": "読み込み",
+    "kana": "よみこみ",
+    "chinese": "加载、读取",
+    "english": "load",
+    "category": "基础"
+  },
+  {
+    "japanese": "書き出し",
+    "kana": "かきだし",
+    "chinese": "导出",
+    "english": "export",
+    "category": "基础"
+  },
+  {
+    "japanese": "読み取り",
+    "kana": "よみとり",
+    "chinese": "读取",
+    "english": "read",
+    "category": "基础"
+  },
+  {
+    "japanese": "書き込み",
+    "kana": "かきこみ",
+    "chinese": "写入",
+    "english": "write",
+    "category": "基础"
+  },
+  {
+    "japanese": "入力",
+    "kana": "にゅうりょく",
+    "chinese": "输入",
+    "english": "input",
+    "category": "基础"
+  },
+  {
+    "japanese": "出力",
+    "kana": "しゅつりょく",
+    "chinese": "输出",
+    "english": "output",
+    "category": "基础"
+  },
+  {
+    "japanese": "メモリ",
+    "kana": "めもり",
+    "chinese": "内存",
+    "english": "memory",
+    "category": "硬件"
+  },
+  {
+    "japanese": "ストレージ",
+    "kana": "すとれーじ",
+    "chinese": "存储",
+    "english": "storage",
+    "category": "硬件"
+  },
+  {
+    "japanese": "CPU",
+    "kana": "しーぴーゆー",
+    "chinese": "中央处理器",
+    "english": "Central Processing Unit",
+    "category": "硬件"
+  },
+  {
+    "japanese": "クラウド",
+    "kana": "くらうど",
+    "chinese": "云",
+    "english": "cloud",
+    "category": "基础设施"
+  },
+  {
+    "japanese": "仮想化",
+    "kana": "かそうか",
+    "chinese": "虚拟化",
+    "english": "virtualization",
+    "category": "基础设施"
+  },
+  {
+    "japanese": "コンテナ",
+    "kana": "こんてな",
+    "chinese": "容器",
+    "english": "container",
+    "category": "基础设施"
+  },
+  {
+    "japanese": "オープンソース",
+    "kana": "おーぷんそーす",
+    "chinese": "开源",
+    "english": "open source",
+    "category": "开发"
+  },
+  {
+    "japanese": "リポジトリ",
+    "kana": "りぽじとり",
+    "chinese": "仓库",
+    "english": "repository",
+    "category": "开发"
+  },
+  {
+    "japanese": "コミット",
+    "kana": "こみっと",
+    "chinese": "提交",
+    "english": "commit",
+    "category": "开发"
+  },
+  {
+    "japanese": "プルリクエスト",
+    "kana": "ぷるりくえすと",
+    "chinese": "合并请求",
+    "english": "pull request",
+    "category": "开发"
+  },
+  {
+    "japanese": "マージ",
+    "kana": "まーじ",
+    "chinese": "合并",
+    "english": "merge",
+    "category": "开发"
+  },
+  {
+    "japanese": "ブランチ",
+    "kana": "ぶらんち",
+    "chinese": "分支",
+    "english": "branch",
+    "category": "开发"
+  },
+  {
+    "japanese": "フロントエンド",
+    "kana": "ふろんとえんど",
+    "chinese": "前端",
+    "english": "front-end",
+    "category": "开发"
+  },
+  {
+    "japanese": "バックエンド",
+    "kana": "ばっくえんど",
+    "chinese": "后端",
+    "english": "back-end",
+    "category": "开发"
+  },
+  {
+    "japanese": "フルスタック",
+    "kana": "ふるすたっく",
+    "chinese": "全栈",
+    "english": "full-stack",
+    "category": "开发"
+  },
+  {
+    "japanese": "型",
+    "kana": "かた",
+    "chinese": "类型",
+    "english": "type",
+    "category": "编程"
+  },
+  {
+    "japanese": "整数",
+    "kana": "せいすう",
+    "chinese": "整数",
+    "english": "integer",
+    "category": "编程"
+  },
+  {
+    "japanese": "小数",
+    "kana": "しょうすう",
+    "chinese": "小数",
+    "english": "decimal",
+    "category": "编程"
+  },
+  {
+    "japanese": "真偽値",
+    "kana": "しんぎち",
+    "chinese": "布尔值",
+    "english": "boolean",
+    "category": "编程"
+  },
+  {
+    "japanese": " Null",
+    "kana": "ぬる",
+    "chinese": "空值",
+    "english": "null",
+    "category": "编程"
+  },
+  {
+    "japanese": "継承",
+    "kana": "けいしょう",
+    "chinese": "继承",
+    "english": "inheritance",
+    "category": "编程"
+  },
+  {
+    "japanese": "ポリモーフィズム",
+    "kana": "ぽりもーふぃずむ",
+    "chinese": "多态",
+    "english": "polymorphism",
+    "category": "编程"
+  },
+  {
+    "japanese": "カプセル化",
+    "kana": "かぷせるか",
+    "chinese": "封装",
+    "english": "encapsulation",
+    "category": "编程"
+  },
+  {
+    "japanese": "非同期",
+    "kana": "ひどうき",
+    "chinese": "异步",
+    "english": "asynchronous",
+    "category": "编程"
+  },
+  {
+    "japanese": "同期",
+    "kana": "どうき",
+    "chinese": "同步",
+    "english": "synchronous",
+    "category": "编程"
+  },
+  {
+    "japanese": "スレッド",
+    "kana": "すれっど",
+    "chinese": "线程",
+    "english": "thread",
+    "category": "编程"
+  },
+  {
+    "japanese": "プロセス",
+    "kana": "ぷろせす",
+    "chinese": "进程",
+    "english": "process",
+    "category": "编程"
+  },
+  {
+    "japanese": "パフォーマンス",
+    "kana": "ぱふぉーまんす",
+    "chinese": "性能",
+    "english": "performance",
+    "category": "开发"
+  },
+  {
+    "japanese": "最適化",
+    "kana": "さいてきか",
+    "chinese": "优化",
+    "english": "optimization",
+    "category": "开发"
+  },
+  {
+    "japanese": "リファクタリング",
+    "kana": "りふぁくたりんぐ",
+    "chinese": "重构",
+    "english": "refactoring",
+    "category": "开发"
+  }
+]

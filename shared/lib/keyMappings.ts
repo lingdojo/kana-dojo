@@ -1,4 +1,4 @@
-export const pickGameKeyMappings: Record<string, number> = {
+export const mcqKeyMappings: Record<string, number> = {
   Digit1: 0,
   Numpad1: 0,
   Digit2: 1,
@@ -12,3 +12,6 @@ export const pickGameKeyMappings: Record<string, number> = {
   Digit6: 5,
   Numpad6: 5,
 };
+
+// Temporary compatibility export while legacy imports are migrated.
+export const pickGameKeyMappings = mcqKeyMappings;

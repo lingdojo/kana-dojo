@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import { RotateCcw } from 'lucide-react';
 import useAchievementStore from '@/features/Achievements/store/useAchievementStore';
 import { useStatsStore } from '@/features/Progress';
-import { useClick } from '@/shared/hooks/useAudio';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 import { cardBorderStyles, buttonBorderStyles } from '@/shared/lib/styles';
 
 /**
@@ -25,10 +25,7 @@ export const AchievementManagement = () => {
     <div className='mx-auto mt-12 max-w-4xl'>
       {/* Management Header */}
       <div
-        className={clsx(
-          'border border-(--border-color) p-6',
-          cardBorderStyles,
-        )}
+        className={clsx('border border-(--border-color) p-6', cardBorderStyles)}
       >
         <div className='mb-4 flex items-center gap-3'>
           <RotateCcw className='text-(--main-color)' size={24} />

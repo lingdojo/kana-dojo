@@ -1,0 +1,71 @@
+{
+  "title": "词汇训练",
+  "description": "扩展您的日语词汇量",
+  "selection": {
+    "title": "选择词汇",
+    "byLevel": "按JLPT级别",
+    "byCategory": "按类别",
+    "selectAll": "全选",
+    "deselectAll": "取消全选",
+    "levels": {
+      "n5": "JLPT N5",
+      "n4": "JLPT N4",
+      "n3": "JLPT N3",
+      "n2": "JLPT N2",
+      "n1": "JLPT N1"
+    },
+    "categories": {
+      "all": "全部",
+      "nouns": "名词",
+      "verbs": "动词",
+      "adjectives": "形容词",
+      "adverbs": "副词",
+      "expressions": "表达"
+    }
+  },
+  "game": {
+    "title": "词汇游戏",
+    "start": "开始游戏",
+    "pause": "暂停",
+    "resume": "继续",
+    "finish": "完成",
+    "nextQuestion": "下一题",
+    "submit": "提交答案",
+    "score": "得分：{{points}}",
+    "timeLeft": "剩余时间：{{seconds}}秒",
+    "streak": "连击：{{count}}",
+    "correct": "正确！",
+    "incorrect": "错误",
+    "showAnswer": "显示答案"
+  },
+  "modes": {
+    "pick": "选择模式",
+    "reversePick": "反向选择",
+    "input": "输入模式",
+    "reverseInput": "反向输入",
+    "description": {
+      "pick": "看单词，选择意思",
+      "reversePick": "看意思，选择单词",
+      "input": "看单词，输入意思",
+      "reverseInput": "看意思，输入单词"
+    }
+  },
+  "results": {
+    "title": "结果",
+    "congratulations": "恭喜！",
+    "correct": "正确：{{count}}",
+    "incorrect": "错误：{{count}}",
+    "accuracy": "准确率：{{percentage}}%",
+    "timeSpent": "用时：{{time}}",
+    "playAgain": "再玩一次",
+    "backToMenu": "返回菜单"
+  },
+  "details": {
+    "word": "单词",
+    "reading": "读音",
+    "meaning": "意思",
+    "examples": "例句",
+    "type": "词性",
+    "jlptLevel": "JLPT级别"
+  }
+}

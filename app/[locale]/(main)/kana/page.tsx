@@ -5,6 +5,7 @@ import { CourseSchema } from '@/shared/components/SEO/CourseSchema';
 import { BreadcrumbSchema } from '@/shared/components/SEO/BreadcrumbSchema';
 import { FAQSchema, hiraganaFAQs } from '@/shared/components/SEO/FAQSchema';
 import { LearningResourceSchema } from '@/shared/components/SEO/LearningResourceSchema';
+import { DojoRouteSchema } from '@/shared/components/SEO/DojoRouteSchema';
 import { routing } from '@/core/i18n/routing';
 
 // Generate static pages for all locales at build time
@@ -58,6 +59,15 @@ export default async function KanaPage({
         timeRequired='PT30M'
         isAccessibleForFree={true}
         provider={{ name: 'KanaDojo', url: 'https://kanadojo.com' }}
+      />
+      <DojoRouteSchema
+        routeKey='kana'
+        locale={locale}
+        title='Kana Dojo - Learn Japanese Hiragana & Katakana by Level'
+        description='Master Hiragana and Katakana with interactive games, quizzes, and drills. Practice Japanese kana characters by level with instant feedback, progress tracking, and beginner-friendly study flows.'
+        canonicalPath='/kana'
+        teaches='Japanese Hiragana and Katakana reading, recognition, and pronunciation'
+        assesses='Kana recognition accuracy, recall speed, and reading fluency'
       />
       <FAQSchema faqs={hiraganaFAQs} />
       <KanaMenu />

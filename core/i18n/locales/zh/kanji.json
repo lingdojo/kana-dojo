@@ -1,0 +1,66 @@
+{
+  "title": "汉字训练",
+  "description": "掌握日语汉字",
+  "selection": {
+    "title": "选择汉字",
+    "byLevel": "按JLPT级别",
+    "byCategory": "按类别",
+    "selectAll": "全选",
+    "deselectAll": "取消全选",
+    "levels": {
+      "n5": "JLPT N5",
+      "n4": "JLPT N4",
+      "n3": "JLPT N3",
+      "n2": "JLPT N2",
+      "n1": "JLPT N1"
+    }
+  },
+  "game": {
+    "title": "汉字游戏",
+    "start": "开始游戏",
+    "pause": "暂停",
+    "resume": "继续",
+    "finish": "完成",
+    "nextQuestion": "下一题",
+    "submit": "提交答案",
+    "score": "得分：{{points}}",
+    "timeLeft": "剩余时间：{{seconds}}秒",
+    "streak": "连击：{{count}}",
+    "correct": "正确！",
+    "incorrect": "错误",
+    "showAnswer": "显示答案",
+    "hint": "提示"
+  },
+  "modes": {
+    "pick": "选择模式",
+    "reversePick": "反向选择",
+    "input": "输入模式",
+    "reverseInput": "反向输入",
+    "description": {
+      "pick": "看汉字，选择意思",
+      "reversePick": "看意思，选择汉字",
+      "input": "看汉字，输入意思",
+      "reverseInput": "看意思，输入汉字"
+    }
+  },
+  "results": {
+    "title": "结果",
+    "congratulations": "恭喜！",
+    "correct": "正确：{{count}}",
+    "incorrect": "错误：{{count}}",
+    "accuracy": "准确率：{{percentage}}%",
+    "timeSpent": "用时：{{time}}",
+    "playAgain": "再玩一次",
+    "backToMenu": "返回菜单"
+  },
+  "details": {
+    "meaning": "意思",
+    "readings": "读音",
+    "onyomi": "音读",
+    "kunyomi": "训读",
+    "examples": "例词",
+    "strokes": "笔画",
+    "radical": "部首",
+    "jlptLevel": "JLPT级别"
+  }
+}

@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import clsx from 'clsx';
 import { Trophy } from 'lucide-react';
 import { useAchievements } from '../../hooks/useAchievements';
-import { useClick } from '@/shared/hooks/useAudio';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 
 interface AchievementBadgeProps {
   onClick?: () => void;

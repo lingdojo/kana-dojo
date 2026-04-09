@@ -1,0 +1,33 @@
+{
+  "general": {
+    "unknownError": "发生未知错误",
+    "networkError": "网络错误，请检查您的连接。",
+    "serverError": "服务器错误，请稍后再试。",
+    "notFound": "未找到",
+    "unauthorized": "未授权访问",
+    "forbidden": "禁止访问",
+    "timeout": "请求超时"
+  },
+  "validation": {
+    "required": "此字段为必填项",
+    "invalidFormat": "格式无效",
+    "tooShort": "输入太短",
+    "tooLong": "输入太长",
+    "invalidEmail": "无效的邮箱地址",
+    "invalidNumber": "必须是数字",
+    "outOfRange": "值超出范围"
+  },
+  "game": {
+    "noSelection": "请至少选择一项开始",
+    "loadFailed": "加载游戏数据失败",
+    "saveFailed": "保存进度失败",
+    "invalidAnswer": "答案格式无效"
+  },
+  "data": {
+    "loadFailed": "加载数据失败",
+    "saveFailed": "保存数据失败",
+    "exportFailed": "导出数据失败",
+    "importFailed": "导入数据失败",
+    "invalidData": "数据格式无效"
+  }
+}

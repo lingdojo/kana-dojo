@@ -6,7 +6,7 @@ import SelectionStatusBar from '@/shared/components/Menu/SelectionStatusBar';
 import { ActionButton } from '@/shared/components/ui/ActionButton';
 import { MousePointer } from 'lucide-react';
 import { cn } from '@/shared/lib/utils';
-import { useClick } from '@/shared/hooks/useAudio';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 import { KanaCards, useKanaContent, useKanaSelection } from '@/features/Kana';
 
 type KanaMenuFilter = 'all' | 'hiragana' | 'katakana';

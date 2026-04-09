@@ -1,0 +1,52 @@
+{
+  "title": "常见问题",
+  "description": "查找关于使用 KanaDojo 的常见问题答案",
+  "questions": {
+    "whatIsKanaDojo": {
+      "question": "什么是 KanaDojo？",
+      "answer": "KanaDojo 是一个免费在线平台，帮助您学习日语平假名、片假名、汉字和词汇。它提供互动游戏、进度追踪和可自定义的学习体验。"
+    },
+    "howToStart": {
+      "question": "如何开始学习？",
+      "answer": "只需在首页选择一个道场（假名、汉字或词汇），选择您想练习的内容，然后开始游戏！无需创建账户。"
+    },
+    "isFree": {
+      "question": "KanaDojo 是免费的吗？",
+      "answer": "是的，KanaDojo 完全免费使用。无需付费或订阅。"
+    },
+    "progressSaved": {
+      "question": "我的进度会保存吗？",
+      "answer": "是的，您的进度会自动保存在您的浏览器本地存储中。无需账户。如果您清除浏览器数据，进度将被重置。"
+    },
+    "jlpLevels": {
+      "question": "什么是JLPT级别？",
+      "answer": "JLPT（日语能力测试）分为N5（初学者）到N1（高级）五个级别。我们按这些级别组织汉字和词汇，帮助您循序渐进地学习。"
+    },
+    "modesDifference": {
+      "question": "不同的游戏模式有什么区别？",
+      "answer": "选择模式：看字符选答案。输入模式：看字符输入答案。反向模式：看意思选/输入字符。每种模式帮助您以不同方式练习识别和回忆。"
+    },
+    "mobileSupport": {
+      "question": "支持手机使用吗？",
+      "answer": "是的，KanaDojo 在桌面和移动设备上都能很好地运行。只需在手机浏览器中访问网站即可。"
+    },
+    "resetProgress": {
+      "question": "如何重置进度？",
+      "answer": "进入设置 → 数据 → 重置进度。请注意，此操作无法撤销。"
+    },
+    "themes": {
+      "question": "如何更改主题？",
+      "answer": "进入偏好设置，您可以选择多种颜色主题和日文字体来自定义您的学习体验。"
+    },
+    "contact": {
+      "question": "如何联系支持？",
+      "answer": "您可以通过 GitHub issues 提交问题或建议，或发送邮件至 dev@kanadojo.com。"
+    }
+  },
+  "categories": {
+    "general": "常规",
+    "learning": "学习",
+    "technical": "技术",
+    "account": "账户"
+  }
+}

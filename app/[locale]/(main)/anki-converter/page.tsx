@@ -24,8 +24,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const ogLocale = locale === 'es' ? 'es_ES' : 'en_US';
-  const title =
-    'Free Anki Deck to JSON Converter | Convert APKG, TSV, SQLite Files Online';
+  const title = 'Anki to JSON Converter | Free APKG Converter | KanaDojo';
   const description =
     'Convert Anki flashcard decks to JSON format instantly. Supports APKG, TSV, SQLite, and COLPKG files. Free, fast, and completely private - all processing happens in your browser.';
 
@@ -243,7 +242,7 @@ export default function AnkiConverterPage() {
         {/* Main Heading */}
         <header className='mb-8 text-center'>
           <h1 className='mb-4 text-4xl font-bold text-(--main-color)'>
-            Anki Deck to JSON Converter
+            Anki to JSON Converter
           </h1>
           <p className='mx-auto max-w-2xl text-lg text-(--secondary-color)'>
             Convert your Anki flashcard decks to clean, structured JSON format.
@@ -555,27 +554,37 @@ npm run anki:convert -- --help`}
             </p>
             <div className='grid gap-4 sm:grid-cols-2 lg:grid-cols-3'>
               <Link
-                href='/translate'
+                href='/translate/english-to-japanese'
                 className='block rounded-lg border border-(--border-color) bg-(--card-color) p-4 transition-colors hover:border-(--main-color)'
               >
                 <h3 className='mb-1 font-semibold text-(--main-color)'>
-                  Japanese Translator
+                  English → Japanese Translator
                 </h3>
                 <p className='text-sm'>
-                  Translate between English and Japanese with Hiragana,
-                  Katakana, and Romaji output.
+                  Translate English to Japanese with romaji pronunciation
+                  support.
                 </p>
               </Link>
               <Link
-                href='/kana'
+                href='/conjugate'
                 className='block rounded-lg border border-(--border-color) bg-(--card-color) p-4 transition-colors hover:border-(--main-color)'
               >
                 <h3 className='mb-1 font-semibold text-(--main-color)'>
-                  Kana Practice
+                  Verb Conjugator
                 </h3>
                 <p className='text-sm'>
-                  Learn Hiragana and Katakana with interactive games and
-                  quizzes.
+                  Get all Japanese verb conjugation forms instantly.
+                </p>
+              </Link>
+              <Link
+                href='/kana-chart'
+                className='block rounded-lg border border-(--border-color) bg-(--card-color) p-4 transition-colors hover:border-(--main-color)'
+              >
+                <h3 className='mb-1 font-semibold text-(--main-color)'>
+                  Kana Chart
+                </h3>
+                <p className='text-sm'>
+                  Complete Hiragana and Katakana reference chart.
                 </p>
               </Link>
               <Link
@@ -599,17 +608,6 @@ npm run anki:convert -- --help`}
                 <p className='text-sm'>
                   Build your Japanese vocabulary with thousands of words by JLPT
                   level.
-                </p>
-              </Link>
-              <Link
-                href='/conjugate'
-                className='block rounded-lg border border-(--border-color) bg-(--card-color) p-4 transition-colors hover:border-(--main-color)'
-              >
-                <h3 className='mb-1 font-semibold text-(--main-color)'>
-                  Verb Conjugator
-                </h3>
-                <p className='text-sm'>
-                  Practice Japanese verb conjugations with all forms and tenses.
                 </p>
               </Link>
               <Link
@@ -644,4 +642,3 @@ npm run anki:convert -- --help`}
     </>
   );
 }
-

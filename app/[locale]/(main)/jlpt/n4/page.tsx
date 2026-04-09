@@ -98,9 +98,7 @@ export default async function JLPTN4Page({
                 <h3 className='mb-2 font-semibold text-(--main-color)'>
                   Vocabulary
                 </h3>
-                <p className='text-2xl font-bold text-(--main-color)'>
-                  ~1,500
-                </p>
+                <p className='text-2xl font-bold text-(--main-color)'>~1,500</p>
                 <p className='text-sm'>Total words needed</p>
               </div>
               <div>

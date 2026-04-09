@@ -171,7 +171,7 @@ export const AchievementCard = ({
               Unlocked
             </div>
           ) : (
-            <div className='rounded-full  border-(--border-color) bg-(--background-color) px-2 py-1 text-xs text-(--secondary-color)/70'>
+            <div className='rounded-full border-(--border-color) bg-(--background-color) px-2 py-1 text-xs text-(--secondary-color)/70'>
               Locked
             </div>
           )}

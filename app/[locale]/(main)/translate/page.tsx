@@ -1,11 +1,14 @@
 import type { Metadata } from 'next';
 import TranslatorPage from '@/features/Translator/components/TranslatorPage';
+import {
+  buildTranslatorMetadata,
+  buildTranslatorSchema,
+  type TranslatorFaqEntry,
+} from '@/features/Translator/lib/seo';
 import { StructuredData } from '@/shared/components/SEO/StructuredData';
-import { generatePageMetadata } from '@/core/i18n/metadata-helpers';
-import { routing } from '@/core/i18n/routing';
 
 export function generateStaticParams() {
-  return routing.locales.map(locale => ({ locale }));
+  return [{ locale: 'en' }];
 }
 
 export const revalidate = 3600;
@@ -14,115 +17,65 @@ interface TranslatePageProps {
   params: Promise<{ locale: string }>;
 }
 
-function getSchemaFaqEntries(locale: string) {
-  const isEs = locale === 'es';
-  return [
-    {
-      question: isEs
-        ? 'El traductor es gratuito?'
-        : 'Is this translator free to use?',
-      answer: isEs
-        ? 'Si. El traductor es gratuito y no requiere registro.'
-        : 'Yes. The translator is free to use and does not require registration.',
-    },
-    {
-      question: isEs ? 'Existe un limite de uso?' : 'Are there usage limits?',
-      answer: isEs
-        ? 'Si. Se aplican limites de uso para mantener la estabilidad del servicio durante alta demanda.'
-        : 'Yes. Usage limits apply to keep the service stable during high demand.',
-    },
-    {
-      question: isEs
-        ? 'Cual es la longitud maxima por traduccion?'
-        : 'What is the maximum text length per translation?',
-      answer: isEs
-        ? 'Puedes traducir hasta 5,000 caracteres por solicitud.'
-        : 'You can translate up to 5,000 characters per request.',
-    },
-  ];
-}
+const metadataConfig = {
+  pathname: '/translate',
+  title: 'Japanese Translator | English ⇄ Japanese with Romaji | KanaDojo',
+  description:
+    'Free Japanese translator for English to Japanese and Japanese to English text. Translate quickly, review romaji support, and jump into direction-specific pages for better context.',
+  keywords: [
+    'japanese translator',
+    'english to japanese translator',
+    'japanese to english translator',
+    'japanese translator with romaji',
+    'free japanese translator',
+    'translate japanese text',
+    'translate english to japanese online',
+  ],
+  schemaName: 'Japanese Translator with Romaji',
+  breadcrumbName: 'Japanese Translator',
+  includeSoftwareApplication: true,
+};
 
-function getTranslatorSchema(locale: string) {
-  const isEs = locale === 'es';
-  const schemaFaqEntries = getSchemaFaqEntries(locale);
+const schemaFaqEntries: TranslatorFaqEntry[] = [
+  {
+    question: 'Is this Japanese translator free to use?',
+    answer:
+      'Yes. The translator is free to use and does not require registration.',
+  },
+  {
+    question: 'What can I use this page for?',
+    answer:
+      'Use the main translator as a hub for quick two-way translation, then open the direction-specific pages when you need examples or more focused guidance.',
+  },
+  {
+    question: 'What is the maximum text length per translation?',
+    answer: 'You can translate up to 5,000 characters per request.',
+  },
+  {
+    question: 'Are there usage limits?',
+    answer:
+      'Yes. Fair-use limits apply during high demand to keep the service stable.',
+  },
+];
 
-  const appName = isEs
-    ? 'Traductor Japones de KanaDojo'
-    : 'KanaDojo Japanese Translator';
-  const pageName = isEs
-    ? 'Traductor de Ingles a Japones'
-    : 'English to Japanese Translator';
-  const pageDescription = isEs
-    ? 'Traduce texto entre ingles y japones con soporte de romaji y guia de aprendizaje.'
-    : 'Translate text between English and Japanese with romaji support and learner-focused guidance.';
-
-  return {
-    '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': 'WebPage',
-        '@id': 'https://kanadojo.com/translate#webpage',
-        url: 'https://kanadojo.com/translate',
-        name: pageName,
-        inLanguage: locale,
-        description: pageDescription,
-      },
-      {
-        '@type': 'SoftwareApplication',
-        '@id': 'https://kanadojo.com/translate#software',
-        name: appName,
-        applicationCategory: 'EducationalApplication',
-        operatingSystem: 'Web',
-        url: 'https://kanadojo.com/translate',
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'USD',
-        },
-        isAccessibleForFree: true,
-        inLanguage: ['en', 'es'],
-        featureList: [
-          'English to Japanese translation',
-          'Japanese to English translation',
-          'Romaji pronunciation support',
-          'Translation history in browser storage',
-        ],
-      },
-      {
-        '@type': 'FAQPage',
-        '@id': 'https://kanadojo.com/translate#faq',
-        inLanguage: locale,
-        mainEntity: schemaFaqEntries.map(item => ({
-          '@type': 'Question',
-          name: item.question,
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: item.answer,
-          },
-        })),
-      },
-    ],
-  };
-}
-
-export async function generateMetadata({
-  params,
-}: TranslatePageProps): Promise<Metadata> {
-  const { locale } = await params;
-  return await generatePageMetadata('translate', {
-    locale,
-    pathname: '/translate',
+export async function generateMetadata(
+  _: TranslatePageProps,
+): Promise<Metadata> {
+  return buildTranslatorMetadata({
+    ...metadataConfig,
+    faq: schemaFaqEntries,
   });
 }
 
-export default async function TranslatePage({ params }: TranslatePageProps) {
-  const { locale } = await params;
-  const isEs = locale === 'es';
-  const schemaFaqEntries = getSchemaFaqEntries(locale);
-
+export default async function TranslatePage(_: TranslatePageProps) {
   return (
     <>
-      <StructuredData data={getTranslatorSchema(locale)} />
+      <StructuredData
+        data={buildTranslatorSchema({
+          ...metadataConfig,
+          faq: schemaFaqEntries,
+        })}
+      />
       <main className='min-h-screen'>
         <a
           href='#translator'
@@ -136,13 +89,16 @@ export default async function TranslatePage({ params }: TranslatePageProps) {
           id='translator'
         >
           <meta itemProp='name' content='KanaDojo Japanese Translator' />
-          <meta itemProp='applicationCategory' content='EducationalApplication' />
+          <meta
+            itemProp='applicationCategory'
+            content='EducationalApplication'
+          />
           <meta itemProp='operatingSystem' content='Any' />
           <meta
             itemProp='description'
             content='Translate English and Japanese text with romaji support and learner-focused context.'
           />
-          <TranslatorPage locale={locale} />
+          <TranslatorPage locale='en' />
           <section
             className='mx-auto mt-8 w-full max-w-6xl rounded-2xl border border-(--border-color) bg-(--card-color) p-4 sm:p-6'
             aria-labelledby='translate-quick-faq'
@@ -151,7 +107,7 @@ export default async function TranslatePage({ params }: TranslatePageProps) {
               id='translate-quick-faq'
               className='text-xl font-semibold text-(--main-color)'
             >
-              {isEs ? 'Preguntas frecuentes rapidas' : 'Quick FAQ'}
+              Quick FAQ
             </h2>
             <div className='mt-4 space-y-4'>
               {schemaFaqEntries.map(item => (

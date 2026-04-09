@@ -26,7 +26,7 @@ import {
   AlertDialogTitle,
 } from '@/shared/components/ui/alert-dialog';
 import { ActionButton } from '@/shared/components/ui/ActionButton';
-import { useClick } from '@/shared/hooks/useAudio';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 import useStatsStore from '../../store/useStatsStore';
 import { useStatsAggregator } from '../../hooks/useStatsAggregator';
 import OverviewStatsCard from './OverviewStatsCard';

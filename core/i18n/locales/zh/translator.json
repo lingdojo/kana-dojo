@@ -1,0 +1,40 @@
+{
+  "title": "翻译器",
+  "description": "日语 ↔ 英语翻译，支持罗马字显示",
+  "input": {
+    "placeholder": "输入要翻译的文本...",
+    "from": "源语言",
+    "to": "目标语言"
+  },
+  "languages": {
+    "japanese": "日语",
+    "english": "英语",
+    "auto": "自动检测"
+  },
+  "actions": {
+    "translate": "翻译",
+    "swap": "交换语言",
+    "copy": "复制结果",
+    "clear": "清除"
+  },
+  "results": {
+    "translation": "翻译结果",
+    "romaji": "罗马字",
+    "reading": "读音",
+    "noResults": "未找到翻译结果"
+  },
+  "features": {
+    "title": "功能特点",
+    "romajiSupport": "罗马字支持",
+    "romajiDescription": "显示日语文本的罗马字读音",
+    "instantTranslation": "即时翻译",
+    "instantDescription": "快速获取翻译结果",
+    "multipleInputs": "多种输入",
+    "multipleDescription": "支持日语和英语输入"
+  },
+  "errors": {
+    "emptyInput": "请输入要翻译的文本",
+    "translationFailed": "翻译失败，请重试",
+    "languageNotSupported": "不支持的语言"
+  }
+}

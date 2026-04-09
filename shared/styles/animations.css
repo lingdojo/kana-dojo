@@ -1,0 +1,49 @@
+/* Floating Animations - Vertical Only */
+/* All animations use vertical (Y-axis) movement only for smooth, subtle floating effects */
+/* All animations are 5s or slower for a calm, dreamy aesthetic */
+
+/* Float (primary) - Uses CSS variable --float-distance for customizable movement */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(var(--float-distance, -6.5px));
+  }
+}
+
+/* Slow float - 10px upward movement, 6s cycle (symmetric, dreamy) */
+/* @keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+} */
+
+/* Levitate - 8px upward movement, 5s cycle (symmetric, medium pace) */
+/* @keyframes levitate {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+} */
+
+@theme {
+  /* Floating animations - vertical only, slow and subtle */
+  --animate-float: float 5.5s ease-in-out infinite;
+  /* --animate-float-slow: float-slow 6s ease-in-out infinite; */
+  /* --animate-levitate: levitate 5s ease-in-out infinite; */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .motion-safe\:animate-float {
+    animation: none !important;
+    transform: none !important;
+  }
+}

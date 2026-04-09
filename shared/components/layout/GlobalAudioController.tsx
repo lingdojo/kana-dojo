@@ -1,7 +1,7 @@
 'use client';
 import { usePathname } from 'next/navigation';
 import { useEffect } from 'react';
-import { useChristmas } from '@/shared/hooks/useAudio';
+import { useChristmas } from '@/shared/hooks/generic/useAudio';
 import { useThemePreferences } from '@/features/Preferences';
 
 export default function GlobalAudioController() {

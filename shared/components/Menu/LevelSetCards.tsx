@@ -7,31 +7,23 @@ import {
   ChevronUp,
   Circle,
   CircleCheck,
-  Filter,
-  FilterX,
   Loader2,
   MousePointer,
 } from 'lucide-react';
 
 import { chunkArray } from '@/shared/lib/helperFunctions';
 import { cardBorderStyles } from '@/shared/lib/styles';
-import useGridColumns from '@/shared/hooks/useGridColumns';
-import { useClick } from '@/shared/hooks/useAudio';
+import useGridColumns from '@/shared/hooks/generic/useGridColumns';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 import { ActionButton } from '@/shared/components/ui/ActionButton';
 import QuickSelectModal from '@/shared/components/Modals/QuickSelectModal';
 import { cn } from '@/shared/lib/utils';
-
-type MasteryStats = {
-  correct: number;
-  incorrect: number;
-};
 
 export type LevelSetCardsSet = {
   name: string;
   start: number;
   end: number;
   id: string;
-  isMastered: boolean;
 };
 
 type LevelSetCardsProps<TLevel extends string, TItem> = {
@@ -52,17 +44,15 @@ type LevelSetCardsProps<TLevel extends string, TItem> = {
     updater: number[] | ((prev: number[]) => number[]),
   ) => void;
 
-  masteryByKey: Record<string, MasteryStats>;
-  getMasteryKey: (item: TItem) => string;
-
   renderSetDictionary: (items: TItem[]) => React.ReactNode;
 
   loadingText: string;
-  tipText: React.ReactNode;
 };
 
 const INITIAL_ROWS = 5;
 const ROWS_PER_LOAD = 5;
+const LEVEL_SET_SELECTED_FLOAT_CLASSES =
+  'motion-safe:animate-float [--float-distance:-3px] delay-1000ms';
 
 const LevelSetCards = <TLevel extends string, TItem>({
   levelOrder,
@@ -77,16 +67,12 @@ const LevelSetCards = <TLevel extends string, TItem>({
   toggleItems,
   collapsedRows,
   setCollapsedRows,
-  masteryByKey,
-  getMasteryKey,
   renderSetDictionary,
   loadingText,
-  tipText,
 }: LevelSetCardsProps<TLevel, TItem>) => {
   const { playClick } = useClick();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [hideMastered, setHideMastered] = useState(false);
 
   const [collections, setCollections] = useState<
     Partial<Record<TLevel, { data: TItem[]; name: string; prevLength: number }>>
@@ -140,74 +126,36 @@ const LevelSetCards = <TLevel extends string, TItem>({
 
   const selectedCollection = collections[selectedUnitName];
 
-  const masteredKeys = useMemo(() => {
-    const mastered = new Set<string>();
-    Object.entries(masteryByKey).forEach(([key, stats]) => {
-      const total = stats.correct + stats.incorrect;
-      const accuracy = total > 0 ? stats.correct / total : 0;
-      if (total >= 10 && accuracy >= 0.9) mastered.add(key);
-    });
-    return mastered;
-  }, [masteryByKey]);
-
-  const isSetMastered = useCallback(
-    (setStart: number, setEnd: number) => {
-      if (!selectedCollection) return false;
-      const itemsInSet = selectedCollection.data.slice(
-        setStart * itemsPerSet,
-        setEnd * itemsPerSet,
-      );
-      return itemsInSet.every(item => masteredKeys.has(getMasteryKey(item)));
-    },
-    [getMasteryKey, itemsPerSet, masteredKeys, selectedCollection],
-  );
-
   const numColumns = useGridColumns();
 
-  const { setsTemp, filteredSets, masteredCount, allRows, totalRows } =
-    useMemo(() => {
-      if (!selectedCollection) {
-        return {
-          setsTemp: [] as LevelSetCardsSet[],
-          filteredSets: [] as LevelSetCardsSet[],
-          masteredCount: 0,
-          allRows: [] as LevelSetCardsSet[][],
-          totalRows: 0,
-        };
-      }
-
-      const sets: LevelSetCardsSet[] = new Array(
-        Math.ceil(selectedCollection.data.length / itemsPerSet),
-      )
-        .fill({})
-        .map((_, i) => ({
-          name: `Set ${selectedCollection.prevLength + i + 1}`,
-          start: i,
-          end: i + 1,
-          id: `Set ${i + 1}`,
-          isMastered: isSetMastered(i, i + 1),
-        }));
-
-      const filtered = hideMastered
-        ? sets.filter(set => !set.isMastered)
-        : sets;
-
-      const rows = chunkArray(filtered, numColumns);
-
+  const { setsTemp, allRows, totalRows } = useMemo(() => {
+    if (!selectedCollection) {
       return {
-        setsTemp: sets,
-        filteredSets: filtered,
-        masteredCount: sets.filter(set => set.isMastered).length,
-        allRows: rows,
-        totalRows: rows.length,
+        setsTemp: [] as LevelSetCardsSet[],
+        allRows: [] as LevelSetCardsSet[][],
+        totalRows: 0,
       };
-    }, [
-      hideMastered,
-      isSetMastered,
-      itemsPerSet,
-      numColumns,
-      selectedCollection,
-    ]);
+    }
+
+    const sets: LevelSetCardsSet[] = new Array(
+      Math.ceil(selectedCollection.data.length / itemsPerSet),
+    )
+      .fill({})
+      .map((_, i) => ({
+        name: `Set ${selectedCollection.prevLength + i + 1}`,
+        start: i,
+        end: i + 1,
+        id: `Set ${i + 1}`,
+      }));
+
+    const rows = chunkArray(sets, numColumns);
+
+    return {
+      setsTemp: sets,
+      allRows: rows,
+      totalRows: rows.length,
+    };
+  }, [itemsPerSet, numColumns, selectedCollection]);
 
   const [visibleRowCount, setVisibleRowCount] = useState(INITIAL_ROWS);
   const [isLoadingMore, setIsLoadingMore] = useState(false);
@@ -215,7 +163,7 @@ const LevelSetCards = <TLevel extends string, TItem>({
 
   useEffect(() => {
     setVisibleRowCount(INITIAL_ROWS);
-  }, [hideMastered, selectedUnitName]);
+  }, [selectedUnitName]);
 
   const visibleRows = allRows.slice(0, visibleRowCount);
   const hasMoreRows = visibleRowCount < totalRows;
@@ -246,11 +194,6 @@ const LevelSetCards = <TLevel extends string, TItem>({
     return () => observer.disconnect();
   }, [hasMoreRows, isLoadingMore, loadMoreRows]);
 
-  const hasProgressData = useMemo(
-    () => Object.keys(masteryByKey).length > 0,
-    [masteryByKey],
-  );
-
   const handleToggleSet = (setName: string) => {
     const set = setsTemp.find(s => s.name === setName);
     if (!set || !selectedCollection) return;
@@ -270,7 +213,7 @@ const LevelSetCards = <TLevel extends string, TItem>({
   };
 
   const handleSelectAll = () => {
-    const allSetNames = filteredSets.map(set => set.name);
+    const allSetNames = setsTemp.map(set => set.name);
     setSelectedSets(allSetNames);
     if (selectedCollection) toggleItems(selectedCollection.data);
   };
@@ -280,7 +223,7 @@ const LevelSetCards = <TLevel extends string, TItem>({
   };
 
   const handleSelectRandom = (count: number) => {
-    const shuffled = [...filteredSets].sort(() => Math.random() - 0.5);
+    const shuffled = [...setsTemp].sort(() => Math.random() - 0.5);
     const randomSets = shuffled.slice(0, Math.min(count, shuffled.length));
     const randomSetNames = randomSets.map(set => set.name);
 
@@ -309,12 +252,6 @@ const LevelSetCards = <TLevel extends string, TItem>({
 
   return (
     <div className='flex w-full flex-col gap-4'>
-      {!hasProgressData && (
-        <div className='mx-4 rounded-xl border-2 border-(--border-color) bg-(--card-color) px-4 py-3'>
-          <p className='text-sm text-(--secondary-color)'>{tipText}</p>
-        </div>
-      )}
-
       <ActionButton
         onClick={() => {
           playClick();
@@ -333,7 +270,7 @@ const LevelSetCards = <TLevel extends string, TItem>({
       <QuickSelectModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        sets={filteredSets}
+        sets={setsTemp}
         selectedSets={selectedSets}
         onToggleSet={handleToggleSet}
         onSelectAll={handleSelectAll}
@@ -341,41 +278,6 @@ const LevelSetCards = <TLevel extends string, TItem>({
         onSelectRandom={handleSelectRandom}
         unitName={selectedUnitName}
       />
-
-      {masteredCount > 0 && (
-        <div className='flex justify-end px-4'>
-          <button
-            onClick={() => {
-              playClick();
-              setHideMastered(prev => !prev);
-            }}
-            className={clsx(
-              'flex items-center gap-2 rounded-xl px-4 py-2',
-              'transition-all duration-250 ease-in-out',
-              'border-2 border-(--border-color)',
-              'hover:bg-(--card-color)',
-              hideMastered &&
-                'border-(--main-color) bg-(--card-color)',
-            )}
-          >
-            {hideMastered ? (
-              <>
-                <FilterX size={20} className='text-(--main-color)' />
-                <span className='text-(--main-color)'>
-                  Show All Sets ({masteredCount} mastered hidden)
-                </span>
-              </>
-            ) : (
-              <>
-                <Filter size={20} className='text-(--secondary-color)' />
-                <span className='text-(--secondary-color)'>
-                  Hide Mastered Sets ({masteredCount})
-                </span>
-              </>
-            )}
-          </button>
-        </div>
-      )}
 
       {visibleRows.map((rowSets, rowIndex) => {
         const firstSetNumber = rowSets[0]?.name.match(/\d+/)?.[0] || '1';
@@ -445,14 +347,15 @@ const LevelSetCards = <TLevel extends string, TItem>({
                       )}
                     >
                       <button
-                        className={clsx(
-                          'group flex items-center justify-center gap-2 text-2xl',
-                          'rounded-3xl hover:cursor-pointer',
-                          'transition-all duration-250 ease-in-out',
-                          'border-b-10 px-2 py-3 max-md:mx-4',
-                          isSelected
-                            ? 'border-(--secondary-color-accent) bg-(--secondary-color) text-(--background-color)'
-                            : 'border-(--border-color) bg-(--background-color) hover:border-(--main-color)/70',
+                      className={clsx(
+                        'group flex items-center justify-center gap-2 text-2xl',
+                        'rounded-3xl hover:cursor-pointer',
+                        'transition-all duration-250 ease-in-out',
+                        'border-b-10 px-2 py-3 max-md:mx-4',
+                        isSelected && LEVEL_SET_SELECTED_FLOAT_CLASSES,
+                        isSelected
+                          ? 'border-(--secondary-color-accent) bg-(--secondary-color) text-(--background-color)'
+                          : 'border-(--border-color) bg-(--background-color) hover:border-(--main-color)/70',
                         )}
                         onClick={e => {
                           e.currentTarget.blur();

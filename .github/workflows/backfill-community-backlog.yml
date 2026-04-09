@@ -91,7 +91,7 @@ jobs:
                 if (themeMatch) {
                   const themeName = themeMatch[1].trim();
                   const themeIndex = themes.findIndex(function(t) { return t.name === themeName; });
-                  if (themeIndex !== -1 && !themes[themeIndex].completed && themes[themeIndex].issued) {
+                  if (themeIndex !== -1 && themes[themeIndex].issued) {
                     themes[themeIndex].issued = false;
                     needsCommit = true;
                     reenabled += 1;
@@ -106,7 +106,7 @@ jobs:
                 if (factIdMatch) {
                   const factId = parseInt(factIdMatch[1]);
                   const factIndex = facts.findIndex(function(f) { return f.id === factId; });
-                  if (factIndex !== -1 && !facts[factIndex].completed && facts[factIndex].issued) {
+                  if (factIndex !== -1 && facts[factIndex].issued) {
                     facts[factIndex].issued = false;
                     needsCommit = true;
                     reenabled += 1;
@@ -121,7 +121,7 @@ jobs:
                 if (proverbIdMatch) {
                   const proverbId = parseInt(proverbIdMatch[1]);
                   const proverbIndex = proverbs.findIndex(function(p) { return p.id === proverbId; });
-                  if (proverbIndex !== -1 && !proverbs[proverbIndex].completed && proverbs[proverbIndex].issued) {
+                  if (proverbIndex !== -1 && proverbs[proverbIndex].issued) {
                     proverbs[proverbIndex].issued = false;
                     needsCommit = true;
                     reenabled += 1;
@@ -136,7 +136,7 @@ jobs:
                 if (haikuIdMatch) {
                   const haikuId = parseInt(haikuIdMatch[1]);
                   const haikuIndex = haiku.findIndex(function(h) { return h.id === haikuId; });
-                  if (haikuIndex !== -1 && !haiku[haikuIndex].completed && haiku[haikuIndex].issued) {
+                  if (haikuIndex !== -1 && haiku[haikuIndex].issued) {
                     haiku[haikuIndex].issued = false;
                     needsCommit = true;
                     reenabled += 1;
@@ -151,7 +151,7 @@ jobs:
                 if (triviaIdMatch) {
                   const triviaId = parseInt(triviaIdMatch[1]);
                   const triviaIndex = trivia.findIndex(function(q) { return q.id === triviaId; });
-                  if (triviaIndex !== -1 && !trivia[triviaIndex].completed && trivia[triviaIndex].issued) {
+                  if (triviaIndex !== -1 && trivia[triviaIndex].issued) {
                     trivia[triviaIndex].issued = false;
                     needsCommit = true;
                     reenabled += 1;
@@ -166,7 +166,7 @@ jobs:
                 if (grammarIdMatch) {
                   const grammarId = parseInt(grammarIdMatch[1]);
                   const grammarIndex = grammar.findIndex(function(g) { return g.id === grammarId; });
-                  if (grammarIndex !== -1 && !grammar[grammarIndex].completed && grammar[grammarIndex].issued) {
+                  if (grammarIndex !== -1 && grammar[grammarIndex].issued) {
                     grammar[grammarIndex].issued = false;
                     needsCommit = true;
                     reenabled += 1;
@@ -181,7 +181,7 @@ jobs:
                 if (idiomIdMatch) {
                   const idiomId = parseInt(idiomIdMatch[1]);
                   const idiomIndex = idioms.findIndex(function(i) { return i.id === idiomId; });
-                  if (idiomIndex !== -1 && !idioms[idiomIndex].completed && idioms[idiomIndex].issued) {
+                  if (idiomIndex !== -1 && idioms[idiomIndex].issued) {
                     idioms[idiomIndex].issued = false;
                     needsCommit = true;
                     reenabled += 1;
@@ -196,7 +196,7 @@ jobs:
                 if (dialectIdMatch) {
                   const dialectId = parseInt(dialectIdMatch[1]);
                   const dialectIndex = regionalDialects.findIndex(function(d) { return d.id === dialectId; });
-                  if (dialectIndex !== -1 && !regionalDialects[dialectIndex].completed && regionalDialects[dialectIndex].issued) {
+                  if (dialectIndex !== -1 && regionalDialects[dialectIndex].issued) {
                     regionalDialects[dialectIndex].issued = false;
                     needsCommit = true;
                     reenabled += 1;
@@ -211,7 +211,7 @@ jobs:
                 if (idMatch) {
                   const id = parseInt(idMatch[1]);
                   const idx = falseFriends.findIndex(function(i) { return i.id === id; });
-                  if (idx !== -1 && !falseFriends[idx].completed && falseFriends[idx].issued) {
+                  if (idx !== -1 && falseFriends[idx].issued) {
                     falseFriends[idx].issued = false;
                     needsCommit = true;
                     reenabled += 1;
@@ -226,7 +226,7 @@ jobs:
                 if (idMatch) {
                   const id = parseInt(idMatch[1]);
                   const idx = culturalEtiquette.findIndex(function(i) { return i.id === id; });
-                  if (idx !== -1 && !culturalEtiquette[idx].completed && culturalEtiquette[idx].issued) {
+                  if (idx !== -1 && culturalEtiquette[idx].issued) {
                     culturalEtiquette[idx].issued = false;
                     needsCommit = true;
                     reenabled += 1;
@@ -241,7 +241,7 @@ jobs:
                 if (idMatch) {
                   const id = parseInt(idMatch[1]);
                   const idx = exampleSentences.findIndex(function(i) { return i.id === id; });
-                  if (idx !== -1 && !exampleSentences[idx].completed && exampleSentences[idx].issued) {
+                  if (idx !== -1 && exampleSentences[idx].issued) {
                     exampleSentences[idx].issued = false;
                     needsCommit = true;
                     reenabled += 1;
@@ -256,7 +256,7 @@ jobs:
                 if (idMatch) {
                   const id = parseInt(idMatch[1]);
                   const idx = commonMistakes.findIndex(function(i) { return i.id === id; });
-                  if (idx !== -1 && !commonMistakes[idx].completed && commonMistakes[idx].issued) {
+                  if (idx !== -1 && commonMistakes[idx].issued) {
                     commonMistakes[idx].issued = false;
                     needsCommit = true;
                     reenabled += 1;
@@ -271,7 +271,7 @@ jobs:
                 if (idMatch) {
                   const id = parseInt(idMatch[1]);
                   const idx = videoGameQuotes.findIndex(function(i) { return i.id === id; });
-                  if (idx !== -1 && !videoGameQuotes[idx].completed && videoGameQuotes[idx].issued) {
+                  if (idx !== -1 && videoGameQuotes[idx].issued) {
                     videoGameQuotes[idx].issued = false;
                     needsCommit = true;
                     reenabled += 1;
@@ -286,7 +286,7 @@ jobs:
                 if (idMatch) {
                   const id = parseInt(idMatch[1]);
                   const idx = wallpaperUrls.findIndex(function(i) { return i.id === id; });
-                  if (idx !== -1 && !wallpaperUrls[idx].completed && wallpaperUrls[idx].issued) {
+                  if (idx !== -1 && wallpaperUrls[idx].issued) {
                     wallpaperUrls[idx].issued = false;
                     needsCommit = true;
                     reenabled += 1;
@@ -301,7 +301,7 @@ jobs:
                 if (idMatch) {
                   const id = parseInt(idMatch[1]);
                   const idx = communityNotes.findIndex(function(i) { return i.id === id; });
-                  if (idx !== -1 && !communityNotes[idx].completed && communityNotes[idx].issued) {
+                  if (idx !== -1 && communityNotes[idx].issued) {
                     communityNotes[idx].issued = false;
                     needsCommit = true;
                     reenabled += 1;
@@ -316,7 +316,7 @@ jobs:
                 if (quoteIdMatch) {
                   const quoteId = parseInt(quoteIdMatch[1]);
                   const quoteIndex = animeQuotes.findIndex(function(q) { return q.id === quoteId; });
-                  if (quoteIndex !== -1 && !animeQuotes[quoteIndex].completed && animeQuotes[quoteIndex].issued) {
+                  if (quoteIndex !== -1 && animeQuotes[quoteIndex].issued) {
                     animeQuotes[quoteIndex].issued = false;
                     needsCommit = true;
                     reenabled += 1;

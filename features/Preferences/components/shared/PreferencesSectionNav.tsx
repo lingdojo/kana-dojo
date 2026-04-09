@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/shared/lib/utils';
-import { useClick } from '@/shared/hooks/useAudio';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 import { Joystick, Palette, Wand2 } from 'lucide-react';
 
 const ACTIVE_SECTION_OFFSET = 156;

@@ -1,4 +1,6 @@
-// Single source of truth for app version
-// Update this when releasing new versions
-export const APP_VERSION = '0.1.15';
+import packageJson from '../../package.json';
+
+// Single source of truth for app version is package.json
+// No need to manually update this file - version is imported directly
+export const APP_VERSION = packageJson.version;
 export const APP_VERSION_DISPLAY = `${APP_VERSION} (alpha)`;

@@ -20,7 +20,7 @@ import {
 import confetti from 'canvas-confetti';
 import { DIFFICULTY_CONFIG, type GauntletSessionStats } from './types';
 import { formatTime, getBestTime } from '@/shared/lib/gauntletStats';
-import { useClick } from '@/shared/hooks/useAudio';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 
 interface ResultsScreenProps {
   dojoType: 'kana' | 'kanji' | 'vocabulary';

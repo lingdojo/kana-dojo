@@ -1,0 +1,56 @@
+{
+  "title": "学习资源",
+  "description": "精选日语学习资源",
+  "categories": {
+    "all": "全部",
+    "learning": "学习",
+    "tools": "工具",
+    "reference": "参考",
+    "culture": "文化"
+  },
+  "featured": {
+    "title": "推荐资源",
+    "description": "我们推荐的高质量日语学习资源"
+  },
+  "learning": {
+    "title": "学习资源",
+    "description": "综合日语课程和学习材料",
+    "items": {
+      "textbooks": "教材",
+      "apps": "应用程序",
+      "websites": "网站",
+      "youtube": "YouTube频道"
+    }
+  },
+  "tools": {
+    "title": "学习工具",
+    "description": "辅助日语学习的工具",
+    "items": {
+      "dictionaries": "词典",
+      "anki": "Anki记忆卡片",
+      "imputMethods": "输入法"
+    }
+  },
+  "reference": {
+    "title": "参考资料",
+    "description": "日语语法和词汇参考",
+    "items": {
+      "grammar": "语法指南",
+      "jlpt": "JLPT资源",
+      "kanji": "汉字字典"
+    }
+  },
+  "culture": {
+    "title": "日本文化",
+    "description": "了解日本文化和习俗",
+    "items": {
+      "etiquette": "礼仪",
+      "media": "媒体",
+      "travel": "旅行"
+    }
+  },
+  "links": {
+    "visit": "访问网站",
+    "learnMore": "了解更多"
+  }
+}

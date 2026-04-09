@@ -1,11 +1,5 @@
 const privacyPolicy = `
-# Privacy Policy
-
-**Effective Date:** 04/03/2025 (March 4th, 2025)
-
-Welcome to KanaDojo ("Website", "we", "us", "our").
-
-The following document outlines the privacy policy for our Website. By using our Website, you automatically agree to the terms of this policy.
+**PikaPikaGems Pte Ltd** operates kanadojo.com (the "Site"). This Privacy Policy explains how we handle information related to your use of the Site.
 
 
 ## 1. Information We Collect

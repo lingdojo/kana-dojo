@@ -8,6 +8,11 @@ on:
         required: false
         default: '100'
         type: string
+      prune_mode:
+        description: 'contributors_only trims canonical contributor files; all_json trims every JSON file in community/content'
+        required: false
+        default: 'contributors_only'
+        type: string
       dry_run:
         description: 'Do not write changes; only report what would be trimmed'
         required: false
@@ -20,6 +25,14 @@ on:
         required: false
         default: '100'
         type: string
+      prune_mode:
+        description: 'contributors_only trims canonical contributor files; all_json trims every JSON file in community/content'
+        required: false
+        default: 'contributors_only'
+        type: choice
+        options:
+          - contributors_only
+          - all_json
       dry_run:
         description: 'Do not write changes; only report what would be trimmed'
         required: false
@@ -51,6 +64,7 @@ jobs:
         uses: actions/github-script@v7
         env:
           MINIMUM_ENTRIES: ${{ inputs.minimum_entries || github.event.inputs.minimum_entries || '100' }}
+          PRUNE_MODE: ${{ inputs.prune_mode || github.event.inputs.prune_mode || 'contributors_only' }}
           DRY_RUN: ${{ inputs.dry_run || github.event.inputs.dry_run || 'false' }}
         with:
           github-token: ${{ secrets.AUTOMATION_PR_TOKEN || secrets.GITHUB_TOKEN }}
@@ -60,20 +74,60 @@ jobs:
 
             const contentDir = 'community/content';
             const minimumEntries = Number(process.env.MINIMUM_ENTRIES || 100);
+            const pruneMode = String(process.env.PRUNE_MODE || 'contributors_only');
             const dryRun = String(process.env.DRY_RUN || 'false') === 'true';
 
             if (!Number.isInteger(minimumEntries) || minimumEntries <= 0) {
               throw new Error(`Invalid minimum_entries input: ${context.payload.inputs && context.payload.inputs.minimum_entries}`);
             }
+            if (pruneMode !== 'contributors_only' && pruneMode !== 'all_json') {
+              throw new Error(`Invalid prune_mode input: ${pruneMode}`);
+            }
+
+            const contributorFiles = new Set([
+              'anime-quotes.json',
+              'community-themes.json',
+              'community-wallpaper-urls.json',
+              'japan-facts.json',
+              'japan-trivia-easy.json',
+              'japan-trivia-medium.json',
+              'japan-trivia-hard.json',
+              'japanese-proverbs.json',
+              'japanese-haiku.json',
+              'japanese-grammar.json',
+              'japanese-videogame-quotes.json',
+              'japanese-idioms.json',
+              'japanese-regional-dialects.json',
+              'japanese-false-friends.json',
+              'japanese-cultural-etiquette.json',
+              'japanese-example-sentences.json',
+              'japanese-common-mistakes.json',
+            ]);
 
             const changedFiles = [];
             const skippedFiles = [];
             let prunedCount = 0;
+            let scannedCount = 0;
 
-            for (const file of fs.readdirSync(contentDir).filter(function(name) { return name.endsWith('.json'); }).sort()) {
+            for (const file of fs
+              .readdirSync(contentDir)
+              .filter(function(name) { return name.endsWith('.json'); })
+              .sort()) {
+              if (pruneMode === 'contributors_only' && !contributorFiles.has(file)) {
+                skippedFiles.push(`${file} (excluded by prune_mode)`);
+                continue;
+              }
               const filePath = path.join(contentDir, file);
               const raw = fs.readFileSync(filePath, 'utf8');
-              const data = JSON.parse(raw);
+              let data;
+              try {
+                data = JSON.parse(raw);
+              } catch (error) {
+                const detail = error instanceof Error ? error.message : String(error);
+                skippedFiles.push(`${file} (invalid JSON: ${detail})`);
+                continue;
+              }
+              scannedCount += 1;
 
               if (!Array.isArray(data)) {
                 skippedFiles.push(`${file} (not an array)`);
@@ -96,7 +150,7 @@ jobs:
               }
             }
 
-            console.log(`Content prune summary: changed=${prunedCount}, minimum_entries=${minimumEntries}, dry_run=${dryRun}`);
+            console.log(`Content prune summary: changed=${prunedCount}, scanned=${scannedCount}, minimum_entries=${minimumEntries}, prune_mode=${pruneMode}, dry_run=${dryRun}`);
             if (skippedFiles.length > 0) {
               console.log(`Skipped files: ${skippedFiles.join(', ')}`);
             }
@@ -105,6 +159,7 @@ jobs:
             core.setOutput('changed_files', changedFiles.join(' '));
             core.setOutput('changed_count', String(prunedCount));
             core.setOutput('needs_commit', !dryRun && prunedCount > 0 ? 'true' : 'false');
+            core.setOutput('prune_mode', pruneMode);
 
       - name: Commit content prune directly to main
         if: steps.prune.outputs.needs_commit == 'true'
@@ -116,7 +171,8 @@ jobs:
             echo "No content changes to commit"
             exit 0
           fi
-          commit_msg="chore(automation): thanos community content"
+          mode="${{ steps.prune.outputs.prune_mode }}"
+          commit_msg="chore(automation): thanos community content (${mode})"
           max_attempts=5
           attempt=1
           while [ "$attempt" -le "$max_attempts" ]; do

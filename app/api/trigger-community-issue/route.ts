@@ -35,7 +35,10 @@ export async function POST(request: Request) {
   const githubPat = process.env.GITHUB_PAT;
 
   if (!githubPat) {
-    return NextResponse.json({ error: 'GITHUB_PAT not configured' }, { status: 500 });
+    return NextResponse.json(
+      { error: 'GITHUB_PAT not configured' },
+      { status: 500 },
+    );
   }
 
   const url = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/actions/workflows/${WORKFLOW_FILE}/dispatches`;
@@ -55,7 +58,9 @@ export async function POST(request: Request) {
     });
   } catch (error) {
     const detail = error instanceof Error ? error.message : String(error);
-    console.error(`[trigger-community-issue] GitHub dispatch request failed: ${detail}`);
+    console.error(
+      `[trigger-community-issue] GitHub dispatch request failed: ${detail}`,
+    );
     return NextResponse.json(
       { error: 'GitHub dispatch request failed', detail },
       { status: 504 },
@@ -64,9 +69,15 @@ export async function POST(request: Request) {
 
   if (!response.ok) {
     const body = await response.text().catch(() => '');
-    console.error(`[trigger-community-issue] GitHub API error ${response.status}: ${body}`);
+    console.error(
+      `[trigger-community-issue] GitHub API error ${response.status}: ${body}`,
+    );
     return NextResponse.json(
-      { error: 'GitHub API error', githubStatus: response.status, githubBody: body },
+      {
+        error: 'GitHub API error',
+        githubStatus: response.status,
+        githubBody: body,
+      },
       { status: 502 },
     );
   }

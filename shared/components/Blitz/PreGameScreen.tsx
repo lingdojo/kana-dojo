@@ -14,7 +14,7 @@ import { Link } from '@/core/i18n/routing';
 import clsx from 'clsx';
 import GoalTimersPanel from '@/shared/components/Timer/GoalTimersPanel';
 import { ActionButton } from '@/shared/components/ui/ActionButton';
-import { useClick } from '@/shared/hooks/useAudio';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 import type { BlitzGameMode, GoalTimer, AddGoalFn } from './types';
 
 interface PreGameScreenProps {

@@ -7,7 +7,7 @@ import { X, Trophy, Star, Zap, Crown, Gem } from 'lucide-react';
 import { LucideProps } from 'lucide-react'; //
 import confetti from 'canvas-confetti';
 import type { Achievement, AchievementRarity } from '@/features/Achievements';
-import { useClick } from '@/shared/hooks/useAudio';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 import { cardBorderStyles, buttonBorderStyles } from '@/shared/lib/styles';
 
 const rarityConfig: Record<

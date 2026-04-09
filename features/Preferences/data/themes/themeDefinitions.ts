@@ -8,7 +8,6 @@
  */
 import {
   Atom,
-  Sun,
   Moon,
   LucideIcon,
   CloudLightning,
@@ -157,6 +156,7 @@ const baseThemeSets: BaseThemeGroup[] = [
         mainColor: 'oklch(82.0% 0.040 230.0 / 1)',
         secondaryColor: 'oklch(70.0% 0.095 260.0 / 1)',
       },
+
       {
         id: 'fuji-shadow',
         backgroundColor: 'oklch(15.0% 0.015 250.0 / 1)',

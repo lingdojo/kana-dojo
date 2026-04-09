@@ -10,11 +10,24 @@ on:
         required: false
         default: '100'
         type: string
+      prune_mode:
+        description: 'contributors_only trims canonical contributor files; all_json trims every JSON file in community/content'
+        required: false
+        default: 'contributors_only'
+        type: choice
+        options:
+          - contributors_only
+          - all_json
       minimum_available:
         description: 'Reset a backlog when available items are at or below this count'
         required: false
         default: '5'
         type: string
+      full_reset:
+        description: 'Reset every backlog item regardless of current availability'
+        required: false
+        default: false
+        type: boolean
       dry_run:
         description: 'Run both maintenance workflows in reporting mode only'
         required: false
@@ -35,6 +48,7 @@ jobs:
     uses: ./.github/workflows/thanos-community-content.yml
     with:
       minimum_entries: ${{ github.event.inputs.minimum_entries || '100' }}
+      prune_mode: ${{ github.event.inputs.prune_mode || 'contributors_only' }}
       dry_run: ${{ github.event.inputs.dry_run == 'true' }}
     secrets: inherit
 
@@ -44,5 +58,6 @@ jobs:
     uses: ./.github/workflows/auto-reset-community-backlog.yml
     with:
       minimum_available: ${{ github.event.inputs.minimum_available || '5' }}
+      full_reset: ${{ github.event.inputs.full_reset == 'true' }}
       dry_run: ${{ github.event.inputs.dry_run == 'true' }}
     secrets: inherit

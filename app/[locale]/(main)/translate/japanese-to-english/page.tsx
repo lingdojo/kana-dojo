@@ -1,104 +1,191 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { generatePageMetadata } from '@/core/i18n/metadata-helpers';
-import { routing } from '@/core/i18n/routing';
+import {
+  buildTranslatorMetadata,
+  buildTranslatorSchema,
+  type TranslatorFaqEntry,
+} from '@/features/Translator/lib/seo';
+import { StructuredData } from '@/shared/components/SEO/StructuredData';
 
 export function generateStaticParams() {
-  return routing.locales.map(locale => ({ locale }));
+  return [{ locale: 'en' }];
 }
 
 interface PageProps {
   params: Promise<{ locale: string }>;
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { locale } = await params;
-  const isEs = locale === 'es';
-  const base = await generatePageMetadata('translate', {
-    locale,
-    pathname: '/translate/japanese-to-english',
-  });
+const metadataConfig = {
+  pathname: '/translate/japanese-to-english',
+  title: 'Japanese to English Translator | with Romaji Support | KanaDojo',
+  description:
+    'Translate Japanese to English online for free. Use this page to understand hiragana, katakana, kanji, subtitles, messages, and mixed Japanese text more clearly.',
+  keywords: [
+    'japanese to english translator',
+    'translate japanese to english',
+    'hiragana to english',
+    'kanji to english translator',
+    'japanese text translator online',
+  ],
+  schemaName: 'Japanese to English Translator',
+  breadcrumbName: 'Japanese to English',
+};
 
-  return {
-    ...base,
-    title: isEs
-      ? 'Traductor Online de Japones a Ingles | KanaDojo'
-      : 'Japanese to English Translator Online | KanaDojo',
-    description: isEs
-      ? 'Traduce de japones a ingles online gratis. Funciona con hiragana, katakana y kanji para revision rapida.'
-      : 'Translate Japanese to English online for free. Works with hiragana, katakana, and kanji for quick comprehension checks.',
-  };
+const faqItems: TranslatorFaqEntry[] = [
+  {
+    question: 'What is this page best for?',
+    answer:
+      'This page is best for understanding Japanese text, subtitles, notes, names, and mixed script input that includes hiragana, katakana, and kanji.',
+  },
+  {
+    question: 'Can it handle mixed Japanese scripts?',
+    answer:
+      'Yes. It works with hiragana, katakana, kanji, and combinations of all three in one request.',
+  },
+  {
+    question: 'What should I double-check after translating?',
+    answer:
+      'Double-check names, slang, honorifics, and context-heavy lines because machine translation can miss nuance.',
+  },
+];
+
+export async function generateMetadata(_: PageProps): Promise<Metadata> {
+  return buildTranslatorMetadata({
+    ...metadataConfig,
+    faq: faqItems,
+  });
 }
 
-export default async function JapaneseToEnglishPage({ params }: PageProps) {
-  const { locale } = await params;
-  const isEs = locale === 'es';
+export default async function JapaneseToEnglishPage(_: PageProps) {
   const examples = [
     ['おはようございます', 'Good morning', 'Ohayo gozaimasu'],
-    ['よろしくお願いします', 'Please treat me favorably', 'Yoroshiku onegaishimasu'],
+    [
+      'よろしくお願いします',
+      'Please treat me favorably',
+      'Yoroshiku onegaishimasu',
+    ],
     ['本日は晴天なり', 'Today is clear weather', 'Honjitsu wa seiten nari'],
     ['この漢字は難しい', 'This kanji is difficult', 'Kono kanji wa muzukashii'],
     ['電車が遅れています', 'The train is delayed', 'Densha ga okurete imasu'],
-    ['明日の予定を教えてください', 'Please tell me tomorrow’s plan', 'Ashita no yotei o oshiete kudasai'],
+    [
+      '明日の予定を教えてください',
+      'Please tell me tomorrow’s plan',
+      'Ashita no yotei o oshiete kudasai',
+    ],
     ['今何時ですか', 'What time is it now?', 'Ima nanji desu ka'],
-    ['ここで写真を撮ってもいいですか', 'May I take a photo here?', 'Koko de shashin o totte mo ii desu ka'],
-    ['すみません、道に迷いました', 'Excuse me, I am lost', 'Sumimasen, michi ni mayoimashita'],
-    ['会議は三時から始まります', 'The meeting starts at three', 'Kaigi wa sanji kara hajimarimasu'],
-    ['アニメの字幕を翻訳したい', 'I want to translate anime subtitles', 'Anime no jimaku o honyaku shitai'],
-    ['この名前の読み方は何ですか', 'How do you read this name?', 'Kono namae no yomikata wa nan desu ka'],
+    [
+      'ここで写真を撮ってもいいですか',
+      'May I take a photo here?',
+      'Koko de shashin o totte mo ii desu ka',
+    ],
   ];
 
   return (
-    <main className='mx-auto max-w-4xl px-4 py-10'>
-      <h1 className='text-3xl font-bold text-(--main-color)'>
-        {isEs ? 'Traductor Online de Japones a Ingles' : 'Japanese to English Translator Online'}
-      </h1>
-      <p className='mt-4 text-(--secondary-color)'>
-        {isEs
-          ? 'Traduce hiragana, katakana y kanji a ingles para revisar significado, contexto y comprension general.'
-          : 'Translate hiragana, katakana, and kanji into English to validate meaning, context, and overall comprehension.'}
-      </p>
-      <ul className='mt-6 list-disc space-y-2 pl-5 text-(--secondary-color)'>
-        <li>{isEs ? 'Ideal para subtitulos, notas de estudio y lectura.' : 'Useful for subtitles, study notes, and reading practice.'}</li>
-        <li>{isEs ? 'Manejo de texto mixto en todos los sistemas de escritura japoneses.' : 'Handles mixed Japanese scripts in one request.'}</li>
-        <li>{isEs ? 'Incluye limites de uso para mantener estabilidad del servicio.' : 'Includes fair-use rate limits to keep service stable.'}</li>
-      </ul>
-      <section className='mt-8 rounded-xl border border-(--border-color) bg-(--card-color) p-4'>
-        <h2 className='text-xl font-semibold text-(--main-color)'>
-          {isEs ? 'Frases de ejemplo (Japones a Ingles)' : 'Example phrases (Japanese to English)'}
-        </h2>
-        <div className='mt-3 overflow-x-auto'>
-          <table className='w-full text-left text-sm'>
-            <thead>
-              <tr className='border-b border-(--border-color) text-(--main-color)'>
-                <th className='px-2 py-2'>{isEs ? 'Japones' : 'Japanese'}</th>
-                <th className='px-2 py-2'>{isEs ? 'Ingles' : 'English'}</th>
-                <th className='px-2 py-2'>Romaji</th>
-              </tr>
-            </thead>
-            <tbody className='text-(--secondary-color)'>
-              {examples.map(row => (
-                <tr key={row[0]} className='border-b border-(--border-color)/60'>
-                  <td className='px-2 py-2'>{row[0]}</td>
-                  <td className='px-2 py-2'>{row[1]}</td>
-                  <td className='px-2 py-2 italic'>{row[2]}</td>
+    <>
+      <StructuredData
+        data={buildTranslatorSchema({
+          ...metadataConfig,
+          faq: faqItems,
+        })}
+      />
+      <main className='mx-auto max-w-4xl px-4 py-10'>
+        <h1 className='text-3xl font-bold text-(--main-color)'>
+          Japanese → English
+        </h1>
+        <p className='mt-4 text-(--secondary-color)'>
+          Use this page when your goal is to understand Japanese input. It is
+          ideal for hiragana, katakana, kanji, subtitle checks, messages, short
+          notes, and quick reading support when you want meaning first.
+        </p>
+        <ul className='mt-6 list-disc space-y-2 pl-5 text-(--secondary-color)'>
+          <li>
+            Useful for subtitles, study notes, names, and reading practice.
+          </li>
+          <li>Handles mixed Japanese scripts in one request.</li>
+          <li>
+            Best when you want comprehension support, not polished Japanese
+            output.
+          </li>
+        </ul>
+        <section className='mt-8 rounded-xl border border-(--border-color) bg-(--card-color) p-4'>
+          <h2 className='text-xl font-semibold text-(--main-color)'>
+            How to use this page well
+          </h2>
+          <div className='mt-3 space-y-3 text-sm text-(--secondary-color)'>
+            <p>
+              This route is built for interpretation. If you are reading
+              Japanese and want to check the meaning quickly, paste the line
+              here first before you decide whether you need a deeper dictionary
+              or grammar breakdown.
+            </p>
+            <p>
+              Translation quality drops when a line depends heavily on tone,
+              omitted subjects, jokes, or cultural references, so treat tricky
+              lines as a first-pass explanation rather than a final answer.
+            </p>
+          </div>
+        </section>
+        <section className='mt-8 rounded-xl border border-(--border-color) bg-(--card-color) p-4'>
+          <h2 className='text-xl font-semibold text-(--main-color)'>
+            Example phrases (Japanese to English)
+          </h2>
+          <div className='mt-3 overflow-x-auto'>
+            <table className='w-full text-left text-sm'>
+              <thead>
+                <tr className='border-b border-(--border-color) text-(--main-color)'>
+                  <th className='px-2 py-2'>Japanese</th>
+                  <th className='px-2 py-2'>English</th>
+                  <th className='px-2 py-2'>Romaji</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody className='text-(--secondary-color)'>
+                {examples.map(row => (
+                  <tr
+                    key={row[0]}
+                    className='border-b border-(--border-color)/60'
+                  >
+                    <td className='px-2 py-2'>{row[0]}</td>
+                    <td className='px-2 py-2'>{row[1]}</td>
+                    <td className='px-2 py-2 italic'>{row[2]}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section className='mt-8 rounded-xl border border-(--border-color) bg-(--card-color) p-4'>
+          <h2 className='text-xl font-semibold text-(--main-color)'>
+            Common limitations to keep in mind
+          </h2>
+          <ul className='mt-3 list-disc space-y-2 pl-5 text-sm text-(--secondary-color)'>
+            <li>Names can have multiple valid readings and translations.</li>
+            <li>Anime-style phrasing and slang often need extra context.</li>
+            <li>
+              Honorific nuance and omitted subjects may not translate cleanly.
+            </li>
+          </ul>
+        </section>
+        <div className='mt-8 flex flex-wrap gap-3'>
+          <Link
+            href='/translate'
+            className='rounded-lg border border-(--border-color) px-4 py-2 font-medium text-(--main-color)'
+          >
+            Open translator hub
+          </Link>
+          <Link
+            href='/translate/english-to-japanese'
+            className='rounded-lg border border-(--border-color) px-4 py-2 font-medium text-(--main-color)'
+          >
+            English to Japanese
+          </Link>
+          <Link
+            href='/translate/romaji'
+            className='rounded-lg border border-(--border-color) px-4 py-2 font-medium text-(--main-color)'
+          >
+            Romaji guide
+          </Link>
         </div>
-      </section>
-      <div className='mt-8 flex flex-wrap gap-3'>
-        <Link href='/translate' className='rounded-lg border border-(--border-color) px-4 py-2 font-medium text-(--main-color)'>
-          {isEs ? 'Abrir traductor principal' : 'Open main translator'}
-        </Link>
-        <Link href='/translate/english-to-japanese' className='rounded-lg border border-(--border-color) px-4 py-2 font-medium text-(--main-color)'>
-          {isEs ? 'Ingles a Japones' : 'English to Japanese'}
-        </Link>
-        <Link href='/translate/romaji' className='rounded-lg border border-(--border-color) px-4 py-2 font-medium text-(--main-color)'>
-          {isEs ? 'Guia de Romaji' : 'Romaji guide'}
-        </Link>
-      </div>
-    </main>
+      </main>
+    </>
   );
 }

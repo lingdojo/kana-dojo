@@ -102,12 +102,10 @@ jobs:
                 if (themeMatch) {
                   const themeName = themeMatch[1].trim();
                   const themeIndex = themes.findIndex(function(t) { return t.name === themeName; });
-                  if (themeIndex !== -1 && !themes[themeIndex].completed) {
+                  if (themeIndex !== -1) {
                     themes[themeIndex].issued = false;
                     needsCommit = true;
                     console.log(`Re-enabled theme: ${themeName}`);
-                  } else if (themeIndex !== -1 && themes[themeIndex].completed) {
-                    console.log(`Theme "${themeName}" is already completed, not re-enabling`);
                   }
                 }
                 return;
@@ -118,12 +116,10 @@ jobs:
                 if (factIdMatch) {
                   const factId = parseInt(factIdMatch[1]);
                   const factIndex = facts.findIndex(function(f) { return f.id === factId; });
-                  if (factIndex !== -1 && !facts[factIndex].completed) {
+                  if (factIndex !== -1) {
                     facts[factIndex].issued = false;
                     needsCommit = true;
                     console.log(`Re-enabled fact #${factId}`);
-                  } else if (factIndex !== -1 && facts[factIndex].completed) {
-                    console.log(`Fact #${factId} is already completed, not re-enabling`);
                   }
                 }
                 return;
@@ -134,12 +130,10 @@ jobs:
                 if (proverbIdMatch) {
                   const proverbId = parseInt(proverbIdMatch[1]);
                   const proverbIndex = proverbs.findIndex(function(p) { return p.id === proverbId; });
-                  if (proverbIndex !== -1 && !proverbs[proverbIndex].completed) {
+                  if (proverbIndex !== -1) {
                     proverbs[proverbIndex].issued = false;
                     needsCommit = true;
                     console.log(`Re-enabled proverb #${proverbId}`);
-                  } else if (proverbIndex !== -1 && proverbs[proverbIndex].completed) {
-                    console.log(`Proverb #${proverbId} is already completed, not re-enabling`);
                   }
                 }
                 return;
@@ -150,12 +144,10 @@ jobs:
                 if (haikuIdMatch) {
                   const haikuId = parseInt(haikuIdMatch[1]);
                   const haikuIndex = haiku.findIndex(function(h) { return h.id === haikuId; });
-                  if (haikuIndex !== -1 && !haiku[haikuIndex].completed) {
+                  if (haikuIndex !== -1) {
                     haiku[haikuIndex].issued = false;
                     needsCommit = true;
                     console.log(`Re-enabled haiku #${haikuId}`);
-                  } else if (haikuIndex !== -1 && haiku[haikuIndex].completed) {
-                    console.log(`Haiku #${haikuId} is already completed, not re-enabling`);
                   }
                 }
                 return;
@@ -166,12 +158,10 @@ jobs:
                 if (triviaIdMatch) {
                   const triviaId = parseInt(triviaIdMatch[1]);
                   const triviaIndex = trivia.findIndex(function(q) { return q.id === triviaId; });
-                  if (triviaIndex !== -1 && !trivia[triviaIndex].completed) {
+                  if (triviaIndex !== -1) {
                     trivia[triviaIndex].issued = false;
                     needsCommit = true;
                     console.log(`Re-enabled trivia #${triviaId}`);
-                  } else if (triviaIndex !== -1 && trivia[triviaIndex].completed) {
-                    console.log(`Trivia #${triviaId} is already completed, not re-enabling`);
                   }
                 }
                 return;
@@ -182,12 +172,10 @@ jobs:
                 if (grammarIdMatch) {
                   const grammarId = parseInt(grammarIdMatch[1]);
                   const grammarIndex = grammar.findIndex(function(g) { return g.id === grammarId; });
-                  if (grammarIndex !== -1 && !grammar[grammarIndex].completed) {
+                  if (grammarIndex !== -1) {
                     grammar[grammarIndex].issued = false;
                     needsCommit = true;
                     console.log(`Re-enabled grammar #${grammarId}`);
-                  } else if (grammarIndex !== -1 && grammar[grammarIndex].completed) {
-                    console.log(`Grammar #${grammarId} is already completed, not re-enabling`);
                   }
                 }
                 return;
@@ -198,12 +186,10 @@ jobs:
                 if (quoteIdMatch) {
                   const quoteId = parseInt(quoteIdMatch[1]);
                   const quoteIndex = animeQuotes.findIndex(function(q) { return q.id === quoteId; });
-                  if (quoteIndex !== -1 && !animeQuotes[quoteIndex].completed) {
+                  if (quoteIndex !== -1) {
                     animeQuotes[quoteIndex].issued = false;
                     needsCommit = true;
                     console.log(`Re-enabled anime quote #${quoteId}`);
-                  } else if (quoteIndex !== -1 && animeQuotes[quoteIndex].completed) {
-                    console.log(`Anime quote #${quoteId} is already completed, not re-enabling`);
                   }
                 }
                 return;
@@ -214,7 +200,7 @@ jobs:
                 if (idMatch) {
                   const id = parseInt(idMatch[1]);
                   const idx = idioms.findIndex(function(i) { return i.id === id; });
-                  if (idx !== -1 && !idioms[idx].completed) {
+                  if (idx !== -1) {
                     idioms[idx].issued = false;
                     needsCommit = true;
                     console.log(`Re-enabled idiom #${id}`);
@@ -228,7 +214,7 @@ jobs:
                 if (idMatch) {
                   const id = parseInt(idMatch[1]);
                   const idx = regionalDialects.findIndex(function(i) { return i.id === id; });
-                  if (idx !== -1 && !regionalDialects[idx].completed) {
+                  if (idx !== -1) {
                     regionalDialects[idx].issued = false;
                     needsCommit = true;
                     console.log(`Re-enabled regional dialect #${id}`);
@@ -242,7 +228,7 @@ jobs:
                 if (idMatch) {
                   const id = parseInt(idMatch[1]);
                   const idx = falseFriends.findIndex(function(i) { return i.id === id; });
-                  if (idx !== -1 && !falseFriends[idx].completed) {
+                  if (idx !== -1) {
                     falseFriends[idx].issued = false;
                     needsCommit = true;
                     console.log(`Re-enabled false friend #${id}`);
@@ -256,7 +242,7 @@ jobs:
                 if (idMatch) {
                   const id = parseInt(idMatch[1]);
                   const idx = culturalEtiquette.findIndex(function(i) { return i.id === id; });
-                  if (idx !== -1 && !culturalEtiquette[idx].completed) {
+                  if (idx !== -1) {
                     culturalEtiquette[idx].issued = false;
                     needsCommit = true;
                     console.log(`Re-enabled cultural etiquette #${id}`);
@@ -270,7 +256,7 @@ jobs:
                 if (idMatch) {
                   const id = parseInt(idMatch[1]);
                   const idx = exampleSentences.findIndex(function(i) { return i.id === id; });
-                  if (idx !== -1 && !exampleSentences[idx].completed) {
+                  if (idx !== -1) {
                     exampleSentences[idx].issued = false;
                     needsCommit = true;
                     console.log(`Re-enabled example sentence #${id}`);
@@ -284,7 +270,7 @@ jobs:
                 if (idMatch) {
                   const id = parseInt(idMatch[1]);
                   const idx = commonMistakes.findIndex(function(i) { return i.id === id; });
-                  if (idx !== -1 && !commonMistakes[idx].completed) {
+                  if (idx !== -1) {
                     commonMistakes[idx].issued = false;
                     needsCommit = true;
                     console.log(`Re-enabled common mistake #${id}`);
@@ -298,7 +284,7 @@ jobs:
                 if (idMatch) {
                   const id = parseInt(idMatch[1]);
                   const idx = videoGameQuotes.findIndex(function(i) { return i.id === id; });
-                  if (idx !== -1 && !videoGameQuotes[idx].completed) {
+                  if (idx !== -1) {
                     videoGameQuotes[idx].issued = false;
                     needsCommit = true;
                     console.log(`Re-enabled video game quote #${id}`);
@@ -312,7 +298,7 @@ jobs:
                 if (idMatch) {
                   const id = parseInt(idMatch[1]);
                   const idx = wallpaperUrls.findIndex(function(i) { return i.id === id; });
-                  if (idx !== -1 && !wallpaperUrls[idx].completed) {
+                  if (idx !== -1) {
                     wallpaperUrls[idx].issued = false;
                     needsCommit = true;
                     console.log(`Re-enabled wallpaper URL #${id}`);
@@ -326,7 +312,7 @@ jobs:
                 if (idMatch) {
                   const id = parseInt(idMatch[1]);
                   const idx = communityNotes.findIndex(function(i) { return i.id === id; });
-                  if (idx !== -1 && !communityNotes[idx].completed) {
+                  if (idx !== -1) {
                     communityNotes[idx].issued = false;
                     needsCommit = true;
                     console.log(`Re-enabled community note #${id}`);

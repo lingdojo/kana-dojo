@@ -14,7 +14,7 @@ import {
   LucideIcon,
 } from 'lucide-react';
 import clsx from 'clsx';
-import { useClick } from '@/shared/hooks/useAudio';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 import {
   useThemePreferences,
   ThemesModal,
@@ -166,7 +166,7 @@ const MobileBottomBar = () => {
                 </button>
               </div>
               {idx === 1 && socialLinks.length > 2 && (
-                <span className='text-sm text-(--secondary-color) select-none'>
+                <span className='text-sm text-(--main-color) select-none'>
                   ~
                 </span>
               )}
@@ -183,7 +183,7 @@ const MobileBottomBar = () => {
         >
           made with ❤️ by the community
         </button>
-        <span className='hidden text-sm text-(--secondary-color) select-none lg:inline-block'>
+        <span className='hidden text-sm text-(--main-color) select-none lg:inline-block'>
           ~
         </span>
         {infoItems.map((item, idx) => {
@@ -202,7 +202,7 @@ const MobileBottomBar = () => {
             <React.Fragment key={idx}>
               {content}
               {idx < infoItems.length - 1 && (
-                <span className='text-sm text-(--secondary-color) select-none'>
+                  <span className='text-sm text-(--main-color) select-none'>
                   ~
                 </span>
               )}
