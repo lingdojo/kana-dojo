@@ -112,9 +112,9 @@ const UnitSelector = () => {
   if (useNewUnitSelectorDesign) {
     // New design: All units as equal ActionButtons (matching PreGameScreen)
     return (
-      <div className='flex flex-col'>
+      <div className='flex flex-col '>
         {/* Unit Selector - ActionButton style matching PreGameScreen */}
-        <div className='flex flex-col gap-4 md:flex-row'>
+        <div className='flex flex-col gap-4 md:flex-row '>
           {collections.map(collection => {
             const isSelected = collection.name === selectedCollection;
 
@@ -131,7 +131,7 @@ const UnitSelector = () => {
                   !isSelected && 'opacity-60',
                 )}
               >
-                <div className='flex items-center gap-2'>
+                <div className='flex items-center gap-2 '>
                   <span className='text-xl'>{collection.displayName}</span>
                   <span
                     className={clsx(
@@ -167,9 +167,9 @@ const UnitSelector = () => {
 
   // Old design: Card background with sliding indicator animation
   return (
-    <div className='flex flex-col'>
+    <div className='flex flex-col '>
       {/* Modern Toggle-Style Unit Selector */}
-      <div className='flex flex-col gap-2 rounded-[2rem] bg-(--card-color) p-2 md:flex-row'>
+      <div className='flex flex-col gap-2 rounded-4xl bg-(--card-color) p-2 md:flex-row border-0 border-(--border-color)'>
         {collections.map(collection => {
           const isSelected = collection.name === selectedCollection;
 

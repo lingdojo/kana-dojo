@@ -22,8 +22,6 @@ import { useClick } from '@/shared/hooks/generic/useAudio';
 import { useThemePreferences } from '@/features/Preferences';
 import useDecorationsStore from '@/shared/store/useDecorationsStore';
 import { useMediaQuery } from 'react-responsive';
-import { buttonBorderStyles } from '@/shared/lib/styles';
-import { Button } from '@/shared/components/ui/button';
 
 const Decorations = lazy(() => import('./Decorations'));
 
@@ -122,14 +120,17 @@ const MainMenu = () => {
               interactive={true}
             />
           )}
-          <Button
-            variant='secondary'
-            size='icon'
+          <button
             className={clsx(
-              'fixed top-4 right-8 z-50',
+              'fixed top-4 right-4 z-50 hover:cursor-pointer',
+              'inline-flex h-12 w-12 items-center justify-center rounded-2xl',
+              'bg-(--main-color) text-(--background-color)',
+              'border-b-8 border-(--main-color-accent)',
+              'transition-all duration-200',
+              'active:mb-[6px] active:translate-y-[6px] active:border-b-0',
+              'motion-safe:animate-float [--float-distance:-4px]',
+              '[animation-delay:400ms]',
               !isGlassMode && 'opacity-90',
-              buttonBorderStyles,
-              'transition-transform duration-250 active:scale-95',
             )}
             onClick={() => {
               playClick();
@@ -137,7 +138,7 @@ const MainMenu = () => {
             }}
           >
             <Sparkle />
-          </Button>
+          </button>
 
           {/* <Button
             variant='secondary'

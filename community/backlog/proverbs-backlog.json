@@ -69,7 +69,7 @@
     "english": "If in a hurry, go around",
     "meaning": "Taking the safer, longer route is sometimes faster",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 9,
@@ -150,7 +150,7 @@
     "english": "Giving birth is easier than worrying",
     "meaning": "Things are often easier done than worried about",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 18,
@@ -195,7 +195,7 @@
     "english": "If you don't enter the tiger's den, you can't get the cub",
     "meaning": "Nothing ventured, nothing gained",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 23,
@@ -231,7 +231,7 @@
     "english": "Gold coins to a cat",
     "meaning": "Giving something valuable to someone who can't appreciate it",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 27,
@@ -258,7 +258,7 @@
     "english": "One time, one meeting",
     "meaning": "Treasure every encounter, for it will never recur",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 30,
@@ -285,7 +285,7 @@
     "english": "Spilled water will not return to the tray",
     "meaning": "What is done cannot be undone",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 33,
@@ -366,7 +366,9 @@
     "english": "Carelessness is the greatest enemy",
     "meaning": "Don't let your guard down",
     "completed": false,
-    "issued": true
+    "issued": false,
+    "completedBy": "baltasarblanco",
+    "completedPR": 12282
   },
   {
     "id": 42,
@@ -456,7 +458,7 @@
     "english": "What happens twice will happen a third time",
     "meaning": "Patterns tend to repeat",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 52,
@@ -564,7 +566,7 @@
     "english": "A frog in a well does not know the great sea",
     "meaning": "Limited experience limits perspective",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 64,
@@ -636,7 +638,7 @@
     "english": "An iron club to an ogre",
     "meaning": "Making someone strong even stronger",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 72,
@@ -690,7 +692,7 @@
     "english": "Peek at the sky through a needle's eye",
     "meaning": "A narrow viewpoint leads to poor judgment",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 78,
@@ -708,7 +710,7 @@
     "english": "Just watching is a pleasure",
     "meaning": "Enjoy observing; you don't always need to participate",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 80,
@@ -726,7 +728,7 @@
     "english": "A frog's child is a frog",
     "meaning": "Children resemble their parents",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 82,
@@ -761,7 +763,7 @@
     "romaji": "Neko no hitai",
     "english": "A cat's forehead",
     "meaning": "Very small space",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -816,7 +818,7 @@
     "english": "After the rain, the ground hardens",
     "meaning": "Hard times make relationships stronger",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 92,
@@ -852,7 +854,7 @@
     "english": "Sometimes losing is winning",
     "meaning": "Conceding can be the best outcome",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 96,
@@ -986,7 +988,7 @@
     "romaji": "En wa inamono aji na mono",
     "english": "Fate is strange yet delightful",
     "meaning": "Unexpected connections can be good",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1103,7 +1105,7 @@
     "romaji": "Koukai saki ni tatazu",
     "english": "Regret does not stand before",
     "meaning": "It's too late for regrets",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1140,7 +1142,7 @@
     "english": "Watch others and correct yourself",
     "meaning": "Learn from others' behavior",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 128,
@@ -1212,7 +1214,7 @@
     "english": "The mouth is the source of misfortune",
     "meaning": "Careless words cause trouble",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 136,
@@ -1230,7 +1232,7 @@
     "english": "One stone, two birds",
     "meaning": "Do two things with one action",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 138,
@@ -1520,7 +1522,7 @@
     "english": "The mouth is the source of misfortune",
     "meaning": "Careless words cause trouble",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 170,
@@ -1619,6 +1621,6 @@
     "english": "Even a walking dog will hit a stick",
     "meaning": "Acting can lead to luck or trouble",
     "completed": false,
-    "issued": false
+    "issued": true
   }
 ]

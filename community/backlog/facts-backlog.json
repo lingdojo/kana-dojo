@@ -14,7 +14,7 @@
   {
     "id": 3,
     "fact": "Japanese blood types are believed to determine personality, similar to zodiac signs in the West. Type A is organized, B is creative, O is confident, and AB is rational.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -80,7 +80,7 @@
   {
     "id": 14,
     "fact": "There's a Japanese concept called 'kaizen' (改善) meaning continuous improvement, which became a cornerstone of global manufacturing practices.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -140,7 +140,7 @@
   {
     "id": 24,
     "fact": "The Japanese word 'natsukashii' (懐かしい) describes nostalgic longing that's bittersweet rather than sad - missing something while appreciating the memory.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -242,7 +242,7 @@
   {
     "id": 41,
     "fact": "The Japanese word 'yūgen' (幽玄) describes a profound awareness of the universe that triggers emotional responses too deep for words.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -272,13 +272,13 @@
   {
     "id": 46,
     "fact": "Japan's Shibuya Crossing sees up to 3,000 people cross at once during peak times - making it the busiest pedestrian intersection in the world.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 47,
     "fact": "There's a Japanese concept called 'ikigai' (生き甲斐) - your reason for being - found at the intersection of what you love, need, and can be paid for.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -374,7 +374,7 @@
   {
     "id": 63,
     "fact": "There's a Japanese word 'aware' (哀れ) that originally just meant 'ah!' - an exclamation that evolved to represent deep emotion.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -476,7 +476,7 @@
   {
     "id": 80,
     "fact": "Japan has 'midnight service' buses for people who miss the last train, charging premium prices to get workers home.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -536,7 +536,7 @@
   {
     "id": 90,
     "fact": "Japan has vending machines that sell used schoolgirl uniforms - though this practice is now heavily regulated in most areas.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -848,7 +848,7 @@
   {
     "id": 142,
     "fact": "Japan has 'chindonya' - walking advertisements with musicians who dress colorfully and parade through streets promoting businesses.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -974,7 +974,7 @@
   {
     "id": 163,
     "fact": "There's a Japanese word 'komorebi' (木漏れ日) for sunlight filtering through trees - there's no single English word for this.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1046,7 +1046,7 @@
   {
     "id": 175,
     "fact": "There's a Japanese word 'waku-waku' (わくわく) for excited anticipation - the tingly feeling of looking forward to something.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1058,7 +1058,7 @@
   {
     "id": 177,
     "fact": "The word 'tadaima' (ただいま) means 'I'm home' and is always answered with 'okaeri' (お帰り) - 'welcome back.'",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1100,7 +1100,7 @@
   {
     "id": 184,
     "fact": "Japan has 'manga kissa' - internet cafes with private cubicles, free drinks, and vast manga libraries for overnight stays.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1130,7 +1130,7 @@
   {
     "id": 189,
     "fact": "The word 'utsukushii' (美しい) means beautiful but implies something naturally elegant rather than artificially pretty.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1160,7 +1160,7 @@
   {
     "id": 194,
     "fact": "Japan has a festival where runners dressed as demons chase and catch women to bless them with good marriage luck.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1286,7 +1286,7 @@
   {
     "id": 215,
     "fact": "Japan’s rail system is so punctual that many train companies issue delay certificates ('chien shoumeisho') for commuters.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1352,7 +1352,7 @@
   {
     "id": 226,
     "fact": "In Japan, umbrellas are so commonly shared and lost that many convenience stores sell inexpensive clear umbrellas as a standard item.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1538,7 +1538,7 @@
   {
     "id": 257,
     "fact": "Japan’s 'shugendo' (修験道) is a mountain ascetic tradition combining Shinto, Buddhism, and folk practices.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1580,7 +1580,7 @@
   {
     "id": 264,
     "fact": "The word 'kawaigaru' (可愛がる) means to dote on or cherish, often used for pets or younger relatives.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1604,7 +1604,7 @@
   {
     "id": 268,
     "fact": "The word 'komachi' (小町) is used in place names to reference elegance, inspired by the legendary beauty Ono no Komachi.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1670,7 +1670,7 @@
   {
     "id": 279,
     "fact": "Japan’s 'norens' are split fabric curtains hung at shop entrances; colors and symbols often indicate the specialty inside.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1694,7 +1694,7 @@
   {
     "id": 283,
     "fact": "Japan’s 'wagashi' sweets are often designed to match the season, with colors and shapes inspired by flowers or snow.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1748,7 +1748,7 @@
   {
     "id": 292,
     "fact": "The term 'komorebi' (木漏れ日) describes sunlight filtering through leaves—so common it has a single word.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
