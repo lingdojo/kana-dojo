@@ -1,25 +1,18 @@
-import type { Metadata } from 'next';
-import SidebarLayout from '@/shared/components/layout/SidebarLayout';
+'use client';
 
-// Default metadata for resources section
-export const metadata: Metadata = {
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
-};
+import TopBar from '@/shared/components/navigation/TopBar';
 
 interface ResourcesLayoutProps {
   children: React.ReactNode;
 }
 
 export default function ResourcesLayout({ children }: ResourcesLayoutProps) {
-  return <SidebarLayout>{children}</SidebarLayout>;
+  return (
+    <div className='min-h-dvh bg-(--background-color)'>
+      <TopBar />
+      <main className='mx-auto max-w-7xl px-4 pt-24 pb-16 md:px-6'>
+        {children}
+      </main>
+    </div>
+  );
 }

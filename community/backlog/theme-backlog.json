@@ -76,7 +76,7 @@
     "backgroundColor": "oklch(12.0% 0.045 290.0 / 1)",
     "mainColor": "oklch(78.0% 0.225 330.0 / 1)",
     "secondaryColor": "oklch(82.0% 0.180 200.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -148,8 +148,10 @@
     "backgroundColor": "oklch(14.0% 0.075 355.0 / 1)",
     "mainColor": "oklch(68.0% 0.240 10.0 / 1)",
     "secondaryColor": "oklch(78.0% 0.195 150.0 / 1)",
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": false,
+    "completedBy": "linxingmingg-lab",
+    "completedPR": 12349
   },
   {
     "id": "indigo-shibori",
@@ -394,7 +396,7 @@
     "backgroundColor": "oklch(18.0% 0.035 80.0 / 1)",
     "mainColor": "oklch(82.0% 0.155 85.0 / 1)",
     "secondaryColor": "oklch(65.0% 0.180 30.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -818,7 +820,7 @@
     "backgroundColor": "oklch(22.0% 0.032 60.0 / 1)",
     "mainColor": "oklch(58.0% 0.095 65.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.075 55.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -941,7 +943,9 @@
     "mainColor": "oklch(80.0% 0.210 345.0 / 1)",
     "secondaryColor": "oklch(85.0% 0.175 180.0 / 1)",
     "issued": false,
-    "completed": false
+    "completed": false,
+    "completedBy": "HarisK03",
+    "completedPR": 12400
   },
   {
     "id": "dango-sweet",
@@ -1322,7 +1326,7 @@
     "backgroundColor": "oklch(14.0% 0.060 300.0 / 1)",
     "mainColor": "oklch(78.0% 0.220 330.0 / 1)",
     "secondaryColor": "oklch(85.0% 0.175 190.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false,
     "completedBy": "MotanOfficial",
     "completedPR": 11514
@@ -1724,7 +1728,7 @@
     "backgroundColor": "oklch(19.0% 0.035 250.0 / 1)",
     "mainColor": "oklch(70.0% 0.120 240.0 / 1)",
     "secondaryColor": "oklch(75.0% 0.070 200.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
