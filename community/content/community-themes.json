@@ -226,5 +226,11 @@
     "backgroundColor": "oklch(94.0% 0.025 85.0 / 1)",
     "mainColor": "oklch(60.0% 0.195 25.0 / 1)",
     "secondaryColor": "oklch(88.0% 0.145 90.0 / 1)"
+  },
+  {
+    "id": "hanafuda-night",
+    "backgroundColor": "oklch(14.0% 0.020 20.0 / 1)",
+    "mainColor": "oklch(60.0% 0.180 25.0 / 1)",
+    "secondaryColor": "oklch(85.0% 0.120 75.0 / 1)"
   }
 ]
