@@ -334,5 +334,11 @@
     "backgroundColor": "oklch(17.0% 0.030 245.0 / 1)",
     "mainColor": "oklch(88.0% 0.055 230.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.145 210.0 / 1)"
+  },
+  {
+    "id": "hanami-picnic",
+    "backgroundColor": "oklch(96.0% 0.018 20.0 / 1)",
+    "mainColor": "oklch(70.0% 0.165 350.0 / 1)",
+    "secondaryColor": "oklch(78.0% 0.120 135.0 / 1)"
   }
 ]
