@@ -3,7 +3,10 @@ import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/core/i18n/metadata-helpers';
 import { CourseSchema } from '@/shared/components/SEO/CourseSchema';
 import { BreadcrumbSchema } from '@/shared/components/SEO/BreadcrumbSchema';
-import { FAQSchema, commonKanaDOJOFAQs } from '@/shared/components/SEO/FAQSchema';
+import {
+  FAQSchema,
+  commonKanaDOJOFAQs,
+} from '@/shared/components/SEO/FAQSchema';
 import { LearningResourceSchema } from '@/shared/components/SEO/LearningResourceSchema';
 import { routing } from '@/core/i18n/routing';
 
@@ -37,8 +40,14 @@ export default async function VocabularyJlptN1Page({
       <BreadcrumbSchema
         items={[
           { name: 'Home', url: `https://kanadojo.com/${locale}` },
-          { name: 'Vocabulary', url: `https://kanadojo.com/${locale}/vocabulary` },
-          { name: 'JLPT N1', url: `https://kanadojo.com/${locale}/vocabulary/jlpt-n1` },
+          {
+            name: 'Vocabulary',
+            url: `https://kanadojo.com/${locale}/vocabulary`,
+          },
+          {
+            name: 'JLPT N1',
+            url: `https://kanadojo.com/${locale}/vocabulary/jlpt-n1`,
+          },
         ]}
       />
       <CourseSchema

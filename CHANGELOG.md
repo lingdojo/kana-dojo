@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.16] - 2026-03-30
+
+### Added
+
+- Three beautiful community-created themes: Calligraphy Ink, Ginkgo Gold, and Sunset Train
+- Expanded learning content including new trivia questions, Japanese proverbs, video game quotes, anime quotes, and false friends
+- New Japan facts and haiku content
+
+### Fixed
+
+- Theme card cursor now shows pointer on hover for better UX
+
 ## [0.1.15] - 2026-02-21
 
 ### Added

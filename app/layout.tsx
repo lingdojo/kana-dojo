@@ -165,7 +165,10 @@ export default async function RootLayout({ children }: RootLayoutProps) {
             <link rel='dns-prefetch' href='https://www.googletagmanager.com' />
             <link rel='dns-prefetch' href='https://www.clarity.ms' />
             <link rel='dns-prefetch' href='https://vercel-analytics.com' />
-            <link rel='dns-prefetch' href='https://vitals.vercel-insights.com' />
+            <link
+              rel='dns-prefetch'
+              href='https://vitals.vercel-insights.com'
+            />
           </>
         )}
         <link rel='dns-prefetch' href='https://translation.googleapis.com' />

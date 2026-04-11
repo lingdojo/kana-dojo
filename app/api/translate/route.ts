@@ -4,10 +4,7 @@ import {
   getClientIP,
   createRateLimitHeaders,
 } from '@/shared/lib/rateLimit';
-import {
-  getRedisCachedJson,
-  setRedisCachedJson,
-} from '@/shared/lib/apiCache';
+import { getRedisCachedJson, setRedisCachedJson } from '@/shared/lib/apiCache';
 
 // Simple in-memory cache for translations (reduces API calls)
 const translationCache = new Map<

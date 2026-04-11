@@ -457,9 +457,7 @@ export function ConverterInterface({
                 <span className='font-mono text-sm text-(--main-color)'>
                   {ext}
                 </span>
-                <span className='text-xs text-(--text-color)/50'>
-                  {name}
-                </span>
+                <span className='text-xs text-(--text-color)/50'>{name}</span>
               </div>
             ))}
           </div>

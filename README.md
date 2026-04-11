@@ -19,7 +19,7 @@
 
 ![Training](https://github.com/user-attachments/assets/d491708f-2ad3-41c7-9717-dec8a90afd03)
 
-**An aesthetic, minimalist and highly customizable platform for mastering Japanese inspired by Duolingo and Monkeytype. Built with Next.js and sponsored by Vercel**
+**An aesthetic, minimalist, and highly customizable platform for mastering Japanese, inspired by Duolingo and Monkeytype. Built with Next.js and sponsored by Vercel.**
 
 [![Vercel OSS Program](https://img.shields.io/badge/Vercel-OSS%20Program-black?style=for-the-badge&logo=vercel)](https://vercel.com/oss)
 [![Sponsored by Vercel](https://img.shields.io/badge/Sponsored%20by-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/oss)
@@ -49,7 +49,7 @@ This README is available in multiple languages:
 
 ## About
 
-KanaDojo is an engaging and user-friendly web-based Japanese learning platform that makes mastering Hiragana, Katakana, Kanji, and Vocabulary fun and intuitive. Built with a focus on aesthetics, customization, and effective learning, it provides an immersive and engaging training environment for Japanese language learners at all levels.
+KanaDojo is an engaging and user-friendly web-based Japanese learning platform that makes mastering Hiragana, Katakana, Kanji, and vocabulary fun and intuitive. Built with a focus on aesthetics, customization, and effective learning, it provides an immersive training environment for Japanese language learners at all levels.
 
 ## Contributing
 
@@ -57,7 +57,7 @@ KanaDojo is an engaging and user-friendly web-based Japanese learning platform t
 
 Start with the [Beginner's Contribution Guide](./docs/CONTRIBUTING-BEGINNERS.md) for a step-by-step walkthrough that explains everything from creating a GitHub account to opening your first PR.
 
-### Not a beginner?
+### Not a Beginner?
 
 All contributions are welcome! Whether you're fixing bugs, adding features, improving documentation, or translating — check out [CONTRIBUTING.md](./CONTRIBUTING.md) to get started.
 
@@ -124,10 +124,45 @@ npm run check
 | [All Documentation](./docs/)                              | Complete documentation index                   |
 
 ## Tech Stack
-
-Next.js 15 · React 19 · TypeScript · Tailwind CSS · shadcn/ui · Zustand · Framer Motion
+- [Next.js](https://nextjs.org/) 15  
+- [React](https://react.dev/) 19  
+- [TypeScript](https://www.typescriptlang.org/)  
+- [Tailwind CSS](https://tailwindcss.com/)  
+- [shadcn/ui](https://ui.shadcn.com/)  
+- [Zustand](https://github.com/pmndrs/zustand)  
+- [Framer Motion](https://www.framer.com/motion/)
 
 > See [Architecture docs](./docs/ARCHITECTURE.md) for full technical details.
+
+## Credits
+
+### Logo
+
+- [Brandon Haupt](https://www.instagram.com/talorash/) — creator of the KanaDojo logo.
+
+### Sponsor
+
+- [Vercel](https://vercel.com/) — KanaDojo is sponsored by Vercel.
+- [Vercel Open Source Program](https://vercel.com/open-source-program) — part of the broader OSS ecosystem we’re grateful to be part of.
+
+### Inspiration
+
+- [Duolingo](https://www.duolingo.com/) — main inspiration.
+- [Monkeytype](https://monkeytype.com/) — UI and design inspiration.
+- [Monkeytype GitHub repository](https://github.com/monkeytypegame/monkeytype)
+
+### Japanese Language Libraries
+
+- [Kuroshiro](https://github.com/hexenq/kuroshiro) — Japanese text conversion and romanization.
+- [Kuromoji](https://github.com/takuyaa/kuromoji.js) — Japanese tokenizer used for text analysis.
+- [Wanakana](https://github.com/WaniKani/WanaKana) — kana and romaji transliteration helpers.
+
+### Data Sources
+
+- [JMdict](https://www.edrdg.org/jmdict/j_jmdict.html) — Japanese-English dictionary data.
+- [KANJIDIC](http://www.edrdg.org/wiki/index.php/KANJIDIC_Project) — kanji readings and meanings database.
+- [Jonathan Waller's JLPT Resources](https://japanesetest4you.com/) — JLPT study references.
+- [jlptsensei.com](https://jlptsensei.com/) — JLPT vocabulary and study material.
 
 ## Star History
 
@@ -150,7 +185,7 @@ This project is licensed under the AGPL 3.0 License — see [LICENSE.md](./LICEN
 
 <div align="center">
 
-**Made with ❤️ for Japanese language learners worldwide**
+**Made with ❤️ by the open-source community for Japanese language learners worldwide**
 
 がんばって！ (Ganbatte! — Do your best!)
 

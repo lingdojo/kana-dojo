@@ -38,7 +38,10 @@ export default async function KanjiJlptN5Page({
         items={[
           { name: 'Home', url: `https://kanadojo.com/${locale}` },
           { name: 'Kanji', url: `https://kanadojo.com/${locale}/kanji` },
-          { name: 'JLPT N5', url: `https://kanadojo.com/${locale}/kanji/jlpt-n5` },
+          {
+            name: 'JLPT N5',
+            url: `https://kanadojo.com/${locale}/kanji/jlpt-n5`,
+          },
         ]}
       />
       <CourseSchema

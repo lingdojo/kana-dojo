@@ -5,7 +5,7 @@ import { MousePointer } from 'lucide-react';
 import { kana } from '@/features/Kana/data/kana';
 import useKanaStore from '@/features/Kana/store/useKanaStore';
 import usePreferencesStore from '@/features/Preferences/store/usePreferencesStore';
-import { useClick } from '@/shared/hooks/useAudio';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 import { ActionButton } from '@/shared/components/ui/ActionButton';
 import { cn } from '@/shared/lib/utils';
 

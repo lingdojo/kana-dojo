@@ -4,7 +4,7 @@ import type { IKanjiObj } from '@/features/Kanji';
 import type { IVocabObj } from '@/features/Vocabulary';
 import { CircleArrowRight } from 'lucide-react';
 import { Dispatch, SetStateAction, useRef, useEffect } from 'react';
-import { useClick } from '@/shared/hooks/useAudio';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 import FuriganaText from '@/shared/components/text/FuriganaText';
 import { useThemePreferences } from '@/features/Preferences';
 import { ActionButton } from '@/shared/components/ui/ActionButton';

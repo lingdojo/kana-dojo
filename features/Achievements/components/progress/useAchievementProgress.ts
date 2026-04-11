@@ -3,7 +3,7 @@ import useAchievementStore, {
   ACHIEVEMENTS,
 } from '@/features/Achievements/store/useAchievementStore';
 import { useStatsStore } from '@/features/Progress';
-import { useClick } from '@/shared/hooks/useAudio';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 import { useShallow } from 'zustand/react/shallow';
 import { CategoryId } from './constants';
 

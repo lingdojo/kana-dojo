@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { toHiragana } from 'wanakana';
 import { IVocabObj } from '@/features/Vocabulary/store/useVocabStore';
-import { useClick, useCorrect, useError } from '@/shared/hooks/useAudio';
+import { useClick, useCorrect, useError } from '@/shared/hooks/generic/useAudio';
 import { useStopwatch } from 'react-timer-hook';
 import { useGameStats, useStatsDisplay } from '@/features/Progress';
 import Stars from '@/shared/components/Game/Stars';
@@ -15,6 +15,8 @@ import { useCrazyModeTrigger } from '@/features/CrazyMode/hooks/useCrazyModeTrig
 import { getGlobalAdaptiveSelector } from '@/shared/lib/adaptiveSelection';
 import { GameBottomBar } from '@/shared/components/Game/GameBottomBar';
 import useClassicSessionStore from '@/shared/store/useClassicSessionStore';
+import { useThemePreferences } from '@/features/Preferences';
+import { cn } from '@/shared/lib/utils';
 
 // Get the global adaptive selector for weighted character selection
 const adaptiveSelector = getGlobalAdaptiveSelector();
@@ -36,6 +38,8 @@ const VocabInputGame = ({
   const logAttempt = useClassicSessionStore(state => state.logAttempt);
   const { score, setScore } = useStatsDisplay();
   const gameStats = useGameStats();
+
+  const isGlassMode = useThemePreferences().isGlassMode;
 
   const speedStopwatch = useStopwatch({ autoStart: false });
 
@@ -293,10 +297,15 @@ const VocabInputGame = ({
                   : 'What is the meaning?'
                 : 'What is the reading?'}
             </span>
-            <div className='flex flex-row items-center gap-1'>
+            <div
+              className={cn(
+                'flex flex-row items-center gap-1',
+                isGlassMode && 'rounded-xl bg-(--card-color) px-4 py-2',
+              )}
+            >
               <motion.div
-                initial={{ opacity: 0, y: -30, scale: 0.95 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
+                initial={{ opacity: 0, x: 30, scale: 0.95 }}
+                animate={{ opacity: 1, x: 0, scale: 1 }}
                 transition={{
                   type: 'spring',
                   stiffness: 150,

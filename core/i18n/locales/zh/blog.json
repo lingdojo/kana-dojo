@@ -1,0 +1,34 @@
+{
+  "pageTitle": "博客",
+  "pageDescription": "探索我们的日语学习文章集合，涵盖平假名、片假名、汉字、词汇、语法和日本文化。",
+  "metaTitle": "博客 - 日语学习文章 | KanaDojo",
+  "metaDescription": "探索我们的日语学习文章集合，涵盖平假名、片假名、汉字、词汇、语法和日本文化。适合各级别的免费教育内容。",
+  "categories": {
+    "all": "全部",
+    "hiragana": "平假名",
+    "katakana": "片假名",
+    "kanji": "汉字",
+    "vocabulary": "词汇",
+    "grammar": "语法",
+    "culture": "文化"
+  },
+  "filter": {
+    "label": "按类别筛选文章",
+    "noResults": "此类别暂无文章。"
+  },
+  "card": {
+    "readMore": "阅读更多关于{title}"
+  },
+  "post": {
+    "by": "作者：{author}",
+    "updated": "更新于：{date}",
+    "readingTime": "阅读时长：{minutes}分钟",
+    "tableOfContents": "目录",
+    "relatedPosts": "相关文章"
+  },
+  "difficulty": {
+    "beginner": "初级",
+    "intermediate": "中级",
+    "advanced": "高级"
+  }
+}

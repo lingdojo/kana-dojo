@@ -102,10 +102,10 @@
     "jlpt": "N3"
   },
   {
-  "japanese": "この問題は思ったより難しくなかった。",
-  "romaji": "Kono mondai wa omotta yori muzukashiku nakatta.",
-  "english": "This problem wasn't as hard as I expected.",
-  "jlpt": "N3"
+    "japanese": "この問題は思ったより難しくなかった。",
+    "romaji": "Kono mondai wa omotta yori muzukashiku nakatta.",
+    "english": "This problem wasn't as hard as I expected.",
+    "jlpt": "N3"
   },
   {
     "japanese": "彼は日本で働くためにビジネス日本語を学んでいる。",
@@ -114,27 +114,33 @@
     "jlpt": "N3"
   },
   {
-  "japanese": "分からない単語は辞書で調べてから質問してください。",
-  "romaji": "Wakaranai tango wa jisho de shirabete kara shitsumon shite kudasai.",
-  "english": "Please look up unknown words before asking.",
-  "jlpt": "N4"
+    "japanese": "分からない単語は辞書で調べてから質問してください。",
+    "romaji": "Wakaranai tango wa jisho de shirabete kara shitsumon shite kudasai.",
+    "english": "Please look up unknown words before asking.",
+    "jlpt": "N4"
   },
   {
-  "japanese": "宿題を忘れないように、カレンダーに書いておきます。",
-  "romaji": "Shukudai o wasurenai you ni, karendaa ni kaite okimasu.",
-  "english": "I'll put it in my calendar so I won't forget homework.",
-  "jlpt": "N4"
-  }, 
-  {
-  "japanese": "店員さんにおすすめの料理を聞いてみた。",
-  "romaji": "Tenin-san ni osusume no ryouri o kiite mita.",
-  "english": "I asked the staff for recommended dishes.",
-  "jlpt": "N4"
+    "japanese": "宿題を忘れないように、カレンダーに書いておきます。",
+    "romaji": "Shukudai o wasurenai you ni, karendaa ni kaite okimasu.",
+    "english": "I'll put it in my calendar so I won't forget homework.",
+    "jlpt": "N4"
   },
   {
-  "japanese": "彼女は忙しいはずなのに、いつも丁寧に返信してくれる。",
-  "romaji": "Kanojo wa isogashii hazu na noni, itsumo teinei ni henshin shite kureru.",
-  "english": "Even though she must be busy, she always replies politely.",
-  "jlpt": "N2"
+    "japanese": "店員さんにおすすめの料理を聞いてみた。",
+    "romaji": "Tenin-san ni osusume no ryouri o kiite mita.",
+    "english": "I asked the staff for recommended dishes.",
+    "jlpt": "N4"
+  },
+  {
+    "japanese": "彼女は忙しいはずなのに、いつも丁寧に返信してくれる。",
+    "romaji": "Kanojo wa isogashii hazu na noni, itsumo teinei ni henshin shite kureru.",
+    "english": "Even though she must be busy, she always replies politely.",
+    "jlpt": "N2"
+  },
+  {
+    "japanese": "もし時間があれば、一緒に復習しませんか。",
+    "romaji": "Moshi jikan ga areba, issho ni fukushuu shimasen ka.",
+    "english": "If you have time, would you like to review together?",
+    "jlpt": "N3"
   }
 ]

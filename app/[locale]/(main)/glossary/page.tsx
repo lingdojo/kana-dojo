@@ -263,9 +263,7 @@ export default async function GlossaryPage({
           className='mb-8 rounded-lg border-2 border-(--border-color) bg-(--card-color) p-4'
           aria-label='Glossary quick navigation'
         >
-          <div className='mb-2 font-semibold text-(--main-color)'>
-            Jump to:
-          </div>
+          <div className='mb-2 font-semibold text-(--main-color)'>Jump to:</div>
           <div className='flex flex-wrap gap-2'>
             {letters.map(letter => (
               <a

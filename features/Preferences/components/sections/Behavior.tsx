@@ -1,8 +1,8 @@
 'use client';
 import usePreferencesStore from '@/features/Preferences/store/usePreferencesStore';
-import { useClick } from '@/shared/hooks/useAudio';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 import { AudioLines, VolumeX, Volume2 } from 'lucide-react';
-import { useJapaneseTTS } from '@/shared/hooks/useJapaneseTTS';
+import { useJapaneseTTS } from '@/features/Preferences/hooks/useJapaneseTTS';
 import { ActionButton } from '@/shared/components/ui/ActionButton';
 // import{Command, KeyboardOff} from 'lucide-react'
 // import HotkeyReference from './HotkeyReference';

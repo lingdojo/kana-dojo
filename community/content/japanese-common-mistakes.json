@@ -113,5 +113,10 @@
   "wrong": "会議は三時からで始まります。",
   "correct": "会議は三時から始まります。",
   "explanation": "Remove unnecessary particle after から. (Pattern set 6)"
+  },
+  {
+    "wrong": "静かい部屋",
+    "correct": "静かな部屋",
+    "explanation": "な-adjectives require な before nouns. (Pattern set 5)"
   }
 ]

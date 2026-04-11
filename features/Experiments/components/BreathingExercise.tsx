@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import { Play, Pause } from 'lucide-react';
 import clsx from 'clsx';
-import { useClick } from '@/shared/hooks/useAudio';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 import { getRandomKana } from '../data/kanaData';
 
 type BreathPhase = 'inhale' | 'hold' | 'exhale' | 'rest';

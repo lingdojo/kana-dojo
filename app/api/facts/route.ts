@@ -12,6 +12,9 @@ export async function GET() {
     return response;
   } catch (error) {
     console.error('Failed to load Japan facts:', error);
-    return NextResponse.json({ error: 'Failed to load facts' }, { status: 500 });
+    return NextResponse.json(
+      { error: 'Failed to load facts' },
+      { status: 500 },
+    );
   }
 }

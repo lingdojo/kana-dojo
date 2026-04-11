@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { statsApi, statsEvents } from '@/shared/events';
 import type { StatEvent } from '@/shared/events';
 import useStatsStore from '../store/useStatsStore';
+import { useAchievementPrompts } from '@/features/Achievements/hooks/useAchievementPrompts';
 
 /**
  * Game Stats Facade - Public API for stat tracking
@@ -37,6 +38,7 @@ export interface GameStatsActions {
  */
 export function useGameStats(): GameStatsActions {
   const store = useStatsStore();
+  const { checkForAchievementProgress } = useAchievementPrompts();
 
   // Subscribe to stat events and update store
   useEffect(() => {
@@ -49,6 +51,10 @@ export function useGameStats(): GameStatsActions {
           store.addCharacterToHistory(event.character);
           store.incrementCharacterScore(event.character, 'correct');
         }
+
+        // Trigger achievement progress check for correct answers
+        const contentType = event.contentType || 'general';
+        checkForAchievementProgress(contentType, true);
       },
     );
 

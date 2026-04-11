@@ -2,7 +2,7 @@
 import { useEffect, useState, useCallback } from 'react';
 import { RotateCcw, Star } from 'lucide-react';
 import clsx from 'clsx';
-import { useClick, useCorrect, useError } from '@/shared/hooks/useAudio';
+import { useClick, useCorrect, useError } from '@/shared/hooks/generic/useAudio';
 import { hiraganaOnly } from '../data/kanaData';
 
 interface ConstellationPoint {

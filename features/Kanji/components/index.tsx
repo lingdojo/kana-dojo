@@ -2,7 +2,6 @@
 
 import { useCallback, useMemo } from 'react';
 import useKanjiStore from '@/features/Kanji/store/useKanjiStore';
-import { useStatsStore } from '@/features/Progress';
 import KanjiSetDictionary from '@/features/Kanji/components/SetDictionary';
 
 import type { IKanjiObj } from '@/features/Kanji/store/useKanjiStore';
@@ -44,8 +43,6 @@ const KanjiCards = () => {
   const setCollapsedRowsForUnit = useKanjiStore(
     state => state.setCollapsedRowsForUnit,
   );
-  const allTimeStats = useStatsStore(state => state.allTimeStats);
-
   // Get collapsed rows for current unit from store
   const collapsedRows = useMemo(
     () => collapsedRowsByUnit[selectedKanjiCollectionName] || [],
@@ -90,17 +87,8 @@ const KanjiCards = () => {
       toggleItems={items => addKanjiObjs(items)}
       collapsedRows={collapsedRows}
       setCollapsedRows={setCollapsedRows}
-      masteryByKey={allTimeStats.characterMastery}
-      getMasteryKey={item => item.kanjiChar}
       renderSetDictionary={items => <KanjiSetDictionary words={items} />}
       loadingText='Loading kanji sets...'
-      tipText={
-        <>
-          💡 <strong>Tip:</strong> Complete some practice sessions to unlock the
-          &ldquo;Hide Mastered Sets&rdquo; filter. Sets become mastered when you
-          achieve 90%+ accuracy with 10+ attempts per character.
-        </>
-      }
     />
   );
 };

@@ -47,7 +47,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Validate URLs belong to our domain
-    const validUrls = urlList.filter((u) => {
+    const validUrls = urlList.filter(u => {
       try {
         const parsed = new URL(u);
         return parsed.hostname === 'kanadojo.com';

@@ -49,12 +49,14 @@ const StatCard = ({ value, label, index }: StatCardProps) => (
 
 interface ProgressBarProps {
   percentage: number;
+  current: number;
+  total: number;
 }
 
 /**
  * Overall progress bar component
  */
-const ProgressBar = ({ percentage }: ProgressBarProps) => (
+const ProgressBar = ({ percentage, current, total }: ProgressBarProps) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
@@ -66,7 +68,7 @@ const ProgressBar = ({ percentage }: ProgressBarProps) => (
         Overall Progress
       </span>
       <span className='text-2xl font-black text-(--main-color)'>
-        {Math.round(percentage)}%
+        {current}/{total}
       </span>
     </div>
     <div className='h-8 w-full overflow-hidden rounded-full bg-(--card-color)'>
@@ -131,7 +133,11 @@ export const HeroSection = ({
           </p>
 
           {/* Overall Progress */}
-          <ProgressBar percentage={completionPercentage} />
+          <ProgressBar
+            percentage={completionPercentage}
+            current={unlockedCount}
+            total={totalCount}
+          />
 
           {/* Stats Cards */}
           <div className='mx-auto mt-8 grid max-w-4xl grid-cols-1 gap-4 md:grid-cols-4'>

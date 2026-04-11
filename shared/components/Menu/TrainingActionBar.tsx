@@ -5,13 +5,16 @@ import { KanaGauntlet, useKanaSelection } from '@/features/Kana';
 import { KanjiGauntlet, useKanjiSelection } from '@/features/Kanji';
 import { useVocabSelection, VocabGauntlet } from '@/features/Vocabulary';
 import { useInputPreferences } from '@/features/Preferences';
-import { useClick } from '@/shared/hooks/useAudio';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 import { Play, Zap, Swords } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 import GameModes from '@/shared/components/Menu/GameModes';
 
 // Gauntlet components with onCancel prop support
 import { cn } from '@/shared/lib/utils';
+
+const TRAINING_ACTION_CLASSIC_FLOAT_CLASSES =
+  'motion-safe:animate-float [--float-distance:-3px] delay-200ms';
 
 interface ITopBarProps {
   currentDojo: string;
@@ -254,6 +257,7 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
                       disabled={id === 'classic' && !isFilled}
                       className={cn(
                         'flex flex-row items-center justify-center gap-2 py-3',
+                        id === 'classic' && isFilled && TRAINING_ACTION_CLASSIC_FLOAT_CLASSES,
                         // Mobile: fixed widths (25% for Blitz/Gauntlet, 50% for Classic), no x-padding
                         // Desktop (sm+): flex-based sizing with padding
                         id === 'classic'

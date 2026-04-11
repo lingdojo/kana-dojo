@@ -47,6 +47,7 @@ jobs:
             const issue = context.payload.issue;
             const commenter = context.payload.comment?.user?.login;
             const repoUrl = `https://github.com/${context.repo.owner}/${context.repo.repo}`;
+            const excludedUsers = new Set(['github-actions[bot]', context.repo.owner, 'tentoumushii']);
 
             function fillTemplate(str, vars) {
               return Object.entries(vars).reduce((acc, [key, value]) => {
@@ -75,6 +76,18 @@ jobs:
                   console.log(`Reaction ${content} failed: ${e.message}`);
                 }
               }
+            }
+            async function hasAlreadyAssignedNoticePostedForUser(username) {
+              const marker = `<!-- already-assigned-notice:${username} -->`;
+              const comments = await github.paginate(github.rest.issues.listComments, {
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                per_page: 100
+              });
+              return comments.some((comment) => {
+                return comment.user?.login === 'github-actions[bot]' && typeof comment.body === 'string' && comment.body.includes(marker);
+              });
             }
 
             if (context.eventName === 'issues') {
@@ -111,6 +124,11 @@ jobs:
               return;
             }
 
+            if (excludedUsers.has(commenter)) {
+              console.log(`Skipping @${commenter} — excluded user.`);
+              return;
+            }
+
             // Skip repo collaborators (write/admin) — they should never be auto-assigned
             const { data: perm } = await github.rest.repos.getCollaboratorPermissionLevel({
               owner: context.repo.owner,
@@ -126,12 +144,16 @@ jobs:
               const assignee = issue.assignees[0].login;
               
               if (assignee !== commenter) {
+                if (await hasAlreadyAssignedNoticePostedForUser(commenter)) {
+                  console.log(`Skipping duplicate already-assigned reply for @${commenter} on issue #${issue.number}.`);
+                  return;
+                }
                 const msg = t.alreadyAssigned;
                 await github.rest.issues.createComment({
                   owner: context.repo.owner,
                   repo: context.repo.repo,
                   issue_number: issue.number,
-                  body: `${fillTemplate(msg.greeting, { commenter, assignee, issueNumber: issue.number, repoUrl })}\n\n${fillTemplate(msg.body, { commenter, assignee, issueNumber: issue.number, repoUrl })}\n\n${fillTemplate(msg.suggestion, { commenter, assignee, issueNumber: issue.number, repoUrl })}\n\n${fillTemplate(msg.encouragement, { commenter, assignee, issueNumber: issue.number, repoUrl })}`
+                  body: `<!-- already-assigned-notice:${commenter} -->\n${fillTemplate(msg.greeting, { commenter, assignee, issueNumber: issue.number, repoUrl })}\n\n${fillTemplate(msg.body, { commenter, assignee, issueNumber: issue.number, repoUrl })}\n\n${fillTemplate(msg.suggestion, { commenter, assignee, issueNumber: issue.number, repoUrl })}\n\n${fillTemplate(msg.encouragement, { commenter, assignee, issueNumber: issue.number, repoUrl })}`
                 });
               }
               return;

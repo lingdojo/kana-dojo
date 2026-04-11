@@ -1,7 +1,7 @@
 'use client';
 import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { useClick } from '@/shared/hooks/useAudio';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 import { allKana } from '../data/kanaData';
 import { Eraser, Download, Palette, Undo, Type } from 'lucide-react';
 import clsx from 'clsx';

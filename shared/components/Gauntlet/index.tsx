@@ -4,7 +4,7 @@ import { useEffect, useState, useRef, useCallback } from 'react';
 import { usePathname } from 'next/navigation';
 import { useRouter } from '@/core/i18n/routing';
 import { Random } from 'random-js';
-import { useClick, useCorrect, useError } from '@/shared/hooks/useAudio';
+import { useClick, useCorrect, useError } from '@/shared/hooks/generic/useAudio';
 import { shuffle } from '@/shared/lib/shuffle';
 import { saveSession } from '@/shared/lib/gauntletStats';
 import useGauntletSettingsStore from '@/shared/store/useGauntletSettingsStore';

@@ -14,7 +14,7 @@ import {
   Skull,
   Zap,
 } from 'lucide-react';
-import { useClick } from '@/shared/hooks/useAudio';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 import {
   DIFFICULTY_CONFIG,
   REPETITION_OPTIONS,

@@ -1,7 +1,7 @@
 'use client';
 
 import PostWrapper from '@/shared/components/layout/PostWrapper';
-import { useClick } from '@/shared/hooks/useAudio';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { X } from 'lucide-react';
 import { useCallback } from 'react';

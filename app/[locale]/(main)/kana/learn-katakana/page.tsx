@@ -4,7 +4,10 @@ import { generatePageMetadata } from '@/core/i18n/metadata-helpers';
 import { CourseSchema } from '@/shared/components/SEO/CourseSchema';
 import { BreadcrumbSchema } from '@/shared/components/SEO/BreadcrumbSchema';
 import { LearningResourceSchema } from '@/shared/components/SEO/LearningResourceSchema';
-import { FAQSchema, commonKanaDOJOFAQs } from '@/shared/components/SEO/FAQSchema';
+import {
+  FAQSchema,
+  commonKanaDOJOFAQs,
+} from '@/shared/components/SEO/FAQSchema';
 import { routing } from '@/core/i18n/routing';
 
 export function generateStaticParams() {

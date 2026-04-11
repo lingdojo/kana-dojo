@@ -1,0 +1,27 @@
+{
+  "menu": {
+    "home": "首页",
+    "kana": "假名",
+    "kanji": "汉字",
+    "vocabulary": "词汇",
+    "academy": "学院",
+    "achievements": "成就",
+    "statistics": "统计",
+    "progress": "进度",
+    "settings": "设置",
+    "preferences": "偏好设置",
+    "about": "关于",
+    "help": "帮助",
+    "logout": "退出登录"
+  },
+  "breadcrumbs": {
+    "home": "首页",
+    "back": "返回{{name}}"
+  },
+  "footer": {
+    "copyright": "© {{year}} KanaDojo。保留所有权利。",
+    "privacy": "隐私政策",
+    "terms": "服务条款",
+    "contact": "联系我们"
+  }
+}

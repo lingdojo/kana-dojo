@@ -1,17 +1,21 @@
 'use client';
 import { useEffect, useState } from 'react';
 import Return from '@/shared/components/Game/ReturnFromGame';
-import Pick from './Pick';
+import MCQ from './MCQ';
 import Input from './Input';
-import WordBuildingGame from './WordBuildingGame';
+import TilesMode from './TilesMode';
 import useKanjiStore from '@/features/Kanji/store/useKanjiStore';
 import { useStatsStore } from '@/features/Progress';
 import { useShallow } from 'zustand/react/shallow';
 import Stats from '@/shared/components/Game/Stats';
 import ClassicSessionSummary from '@/shared/components/Game/ClassicSessionSummary';
+import StreakMilestoneOverlay from '@/shared/components/Game/StreakMilestoneOverlay';
 import { useRouter } from '@/core/i18n/routing';
 import { finalizeSession, startSession } from '@/shared/lib/sessionHistory';
 import useClassicSessionStore from '@/shared/store/useClassicSessionStore';
+import {
+  shouldShowStreakMilestoneOverlay,
+} from '@/shared/lib/game/streakMilestones';
 
 const Game = () => {
   const {
@@ -46,6 +50,7 @@ const Game = () => {
   const selectedKanjiObjs = useKanjiStore(state => state.selectedKanjiObjs);
   const router = useRouter();
   const [view, setView] = useState<'playing' | 'summary'>('playing');
+  const [activeMilestone, setActiveMilestone] = useState<number | null>(null);
   const [sessionId, setSessionId] = useState<string | null>(null);
   const [sessionNonce, setSessionNonce] = useState(0);
   const setActiveSessionId = useClassicSessionStore(
@@ -53,7 +58,15 @@ const Game = () => {
   );
 
   useEffect(() => {
+    if (view !== 'playing') return;
+    if (shouldShowStreakMilestoneOverlay(currentStreak)) {
+      setActiveMilestone(currentStreak);
+    }
+  }, [currentStreak, view]);
+
+  useEffect(() => {
     resetStats();
+    setActiveMilestone(null);
     // Track dojo and mode usage for achievements (Requirements 8.1-8.3)
     recordDojoUsed('kanji');
     recordModeUsed(gameMode.toLowerCase());
@@ -110,7 +123,12 @@ const Game = () => {
         {showStats && <Stats />}
         <Return isHidden={showStats} gameMode={gameMode} onQuit={handleQuit} />
         {gameMode.toLowerCase() === 'pick' ? (
-          <Pick
+          <TilesMode
+            selectedKanjiObjs={selectedKanjiObjs}
+            isHidden={showStats || view !== 'playing'}
+          />
+        ) : gameMode.toLowerCase() === 'mcq' ? (
+          <MCQ
             selectedKanjiObjs={selectedKanjiObjs}
             isHidden={showStats || view !== 'playing'}
           />
@@ -125,14 +143,19 @@ const Game = () => {
             isHidden={showStats || view !== 'playing'}
             isReverse={true}
           />
-        ) : gameMode.toLowerCase() === 'word-building' ? (
-          <WordBuildingGame
-            key={`kanji-wordbuilding-${sessionNonce}`}
+        ) : gameMode.toLowerCase() === 'word-building' ||
+          gameMode.toLowerCase() === 'tiles' ? (
+          <TilesMode
+            key={`kanji-tiles-${sessionNonce}`}
             selectedKanjiObjs={selectedKanjiObjs}
             isHidden={showStats || view !== 'playing'}
           />
         ) : null}
       </div>
+      <StreakMilestoneOverlay
+        milestone={activeMilestone}
+        onDismiss={() => setActiveMilestone(null)}
+      />
       {view === 'summary' && (
         <ClassicSessionSummary
           correct={numCorrectAnswers}

@@ -254,7 +254,7 @@ export default async function FAQPage({
                 {t('links.glossary')}
               </Link>
               <Link
-                href={`/${locale}/translate`}
+                href='/translate'
                 className='rounded-full border border-(--border-color) bg-[color-mix(in_oklab,var(--card-color),transparent_0%)] px-4 py-2 text-sm font-semibold text-(--main-color) shadow-[0_1px_0_rgba(0,0,0,0.05)] transition-colors hover:bg-[color-mix(in_oklab,var(--card-color),var(--main-color)_6%)]'
               >
                 {t('links.translator')}

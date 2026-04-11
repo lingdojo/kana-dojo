@@ -75,9 +75,6 @@ export function createAdaptiveSelector(storageKey?: string) {
             );
             characterWeights.set(char, weight);
           });
-          console.log(
-            `[AdaptiveSelection] Loaded ${characterWeights.size} character weights from storage`,
-          );
         }
       } catch (error) {
         console.warn('[AdaptiveSelection] Failed to load from storage:', error);
@@ -333,7 +330,6 @@ export function createAdaptiveSelector(storageKey?: string) {
     characterWeights.clear();
     try {
       await localforage.removeItem(persistKey);
-      console.log('[AdaptiveSelection] Cleared all weights from storage');
     } catch (error) {
       console.warn('[AdaptiveSelection] Failed to clear storage:', error);
     }

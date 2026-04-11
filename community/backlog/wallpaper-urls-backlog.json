@@ -26,7 +26,7 @@
   {
     "id": 5,
     "url": "https://static.backgrounds.example.com/panoramas/autumn-temple-garden-3440x1440.png",
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   }
 ]

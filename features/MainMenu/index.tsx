@@ -1,7 +1,7 @@
-﻿'use client';
+'use client';
 import { Fragment, lazy, Suspense, useState, useEffect } from 'react';
 import { Link } from '@/core/i18n/routing';
-import Banner from './Banner';
+import KanaDojoBanner from './KanaDojoBanner';
 import Info from '@/shared/components/Menu/Info';
 import NightlyBanner from '@/shared/components/Modals/NightlyBanner';
 import {
@@ -13,16 +13,15 @@ import {
   Heart,
   Sparkle,
   FileDiff,
+  CircleHelp,
 } from 'lucide-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDiscord, faGithub } from '@fortawesome/free-brands-svg-icons';
 import clsx from 'clsx';
-import { useClick } from '@/shared/hooks/useAudio';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 import { useThemePreferences } from '@/features/Preferences';
 import useDecorationsStore from '@/shared/store/useDecorationsStore';
 import { useMediaQuery } from 'react-responsive';
-import { buttonBorderStyles } from '@/shared/lib/styles';
-import { Button } from '@/shared/components/ui/button';
 
 const Decorations = lazy(() => import('./Decorations'));
 
@@ -32,13 +31,17 @@ const MainMenu = () => {
 
   const { theme, setTheme, isGlassMode } = useThemePreferences();
 
-  const characterTileClassName = clsx(
-    'inline-flex h-12 w-12 items-center justify-center rounded-2xl',
-    'bg-(--secondary-color) group-hover:bg-(--main-color) text-(--background-color)',
-    'border-b-8 border-(--secondary-color-accent) group-hover:border-(--main-color-accent)',
-    'transition-all duration-200',
-    'active:border-b-0 active:translate-y-[6px] active:mb-[6px]',
-  );
+  const characterTileClassName = (delay?: string, floatDistance?: string) =>
+    clsx(
+      'inline-flex h-12 w-12 items-center justify-center rounded-2xl',
+      'bg-(--secondary-color) group-hover:bg-(--main-color) text-(--background-color)',
+      'border-b-8 border-(--secondary-color-accent) group-hover:border-(--main-color-accent)',
+      'transition-all duration-200',
+      'active:border-b-0 active:translate-y-[6px] active:mb-[6px]',
+      'motion-safe:animate-float',
+      delay,
+      `[--float-distance:${floatDistance}]`,
+    );
 
   const { playClick } = useClick();
 
@@ -97,6 +100,7 @@ const MainMenu = () => {
     { name: 'security', href: '/security', icon: FileLock2 },
     { name: 'patch notes', href: '/patch-notes', icon: FileDiff },
     { name: 'credits', href: '/credits', icon: Sparkle },
+    { name: 'about', href: '/about', icon: CircleHelp },
   ];
 
   const mobileLabelInset = 'pl-[max(30%,calc(50%-5.5rem))]';
@@ -116,14 +120,17 @@ const MainMenu = () => {
               interactive={true}
             />
           )}
-          <Button
-            variant='secondary'
-            size='icon'
+          <button
             className={clsx(
-              'fixed top-4 right-8 z-50',
+              'fixed top-4 right-4 z-50 hover:cursor-pointer',
+              'inline-flex h-12 w-12 items-center justify-center rounded-2xl',
+              'bg-(--main-color) text-(--background-color)',
+              'border-b-8 border-(--main-color-accent)',
+              'transition-all duration-200',
+              'active:mb-[6px] active:translate-y-[6px] active:border-b-0',
+              'motion-safe:animate-float [--float-distance:-4px]',
+              '[animation-delay:400ms]',
               !isGlassMode && 'opacity-90',
-              buttonBorderStyles,
-              'transition-transform duration-250 active:scale-95',
             )}
             onClick={() => {
               playClick();
@@ -131,7 +138,7 @@ const MainMenu = () => {
             }}
           >
             <Sparkle />
-          </Button>
+          </button>
 
           {/* <Button
             variant='secondary'
@@ -161,7 +168,7 @@ const MainMenu = () => {
         )}
       >
         <div className='flex w-full flex-row items-center justify-between gap-2 px-1'>
-          <Banner />
+          <KanaDojoBanner />
           <div className='flex w-1/2 flex-row justify-end gap-2 md:w-1/3'>
             {theme === 'dark' ? (
               <Moon
@@ -190,17 +197,6 @@ const MainMenu = () => {
                 )}
               />
             )}
-            {/* <Settings
-              size={32}
-              className={clsx(
-                'hover:cursor-pointer duration-250 hover:scale-120',
-                'active:scale-100 active:duration-225'
-              )}
-              onClick={() => {
-                playClick();
-                window.open('/settings', '_self');
-              }}
-            /> */}
 
             <FontAwesomeIcon
               icon={faDiscord}
@@ -260,7 +256,7 @@ const MainMenu = () => {
               <Link
                 href={link.href}
                 prefetch
-                className={clsx('w-full overflow-hidden group')}
+                className={clsx('group w-full overflow-hidden')}
               >
                 <button
                   className={clsx(
@@ -279,7 +275,17 @@ const MainMenu = () => {
                   )}
                   onClick={() => playClick()}
                 >
-                  <span lang='ja' className={characterTileClassName}>
+                  <span
+                    lang='ja'
+                    className={characterTileClassName(
+                      i === 0
+                        ? '[animation-delay:0ms]'
+                        : i === 1
+                          ? '[animation-delay:800ms]'
+                          : '[animation-delay:1600ms]',
+                      // i === 0 ? '-10px' : i === 1 ? '-7px' : '-5px'
+                    )}
+                  >
                     {link.name_ja}
                   </span>
                   <span lang='en' className='leading-none'>

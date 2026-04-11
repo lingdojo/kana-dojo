@@ -16,9 +16,7 @@ export default function RunnerPage() {
           </Link>
         </Button>
         <div>
-          <h1 className='text-3xl font-bold text-(--main-color)'>
-            Yokai Run
-          </h1>
+          <h1 className='text-3xl font-bold text-(--main-color)'>Yokai Run</h1>
           <p className='text-(--secondary-color)'>
             Avoid the obstacles and run as far as you can!
           </p>
