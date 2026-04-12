@@ -430,5 +430,16 @@
     "Ikebana"
   ],
   "correctIndex": 0
-  }
+  },
+  {
+  "question": "What is the name of Japan's highest mountain? (Community variation 15)",
+  "difficulty": "medium",
+  "answers": [
+    "Mount Haku",
+    "Mount Fuji",
+    "Mount Aso",
+    "Mount Tate"
+  ],
+  "correctIndex": 1
+}
 ]

@@ -1022,8 +1022,8 @@
     "explanation": "Often means trying something new. (Set 6)",
     "example": "新しい料理にチャレンジしてみる。",
     "id": 114,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "termA": "ナンバー (nanbaa)",

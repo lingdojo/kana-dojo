@@ -8,7 +8,7 @@
     "season": "Spring",
     "kigo": "Frog (kawazu)",
     "notes": "A foundational haiku focused on stillness and sudden movement.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -44,7 +44,7 @@
     "season": "Autumn",
     "kigo": "Harvest moon (meigetsu)",
     "notes": "Captures innocent longing through a domestic scene.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -68,7 +68,7 @@
     "season": "Summer",
     "kigo": "Summer rain (samidare)",
     "notes": "A dynamic river image with strong seasonal presence.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -80,7 +80,7 @@
     "season": "Spring",
     "kigo": "Sparrow chicks (suzume no ko)",
     "notes": "Playful and warm, characteristic of Issa's tone.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -92,7 +92,7 @@
     "season": "Summer",
     "kigo": "Morning glory (asagao)",
     "notes": "Famous for gentle empathy toward nature.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -116,7 +116,7 @@
     "season": "Spring",
     "kigo": "Frog (kaeru)",
     "notes": "Humorous encouragement and compassion in Issa's voice.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
