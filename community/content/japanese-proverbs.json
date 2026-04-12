@@ -335,7 +335,6 @@
     "english": "A frog in a well doesn’t know the ocean",
     "meaning": "Limited experience limits perspective"
   },
-  
   {
     "japanese": "七転び八起き",
     "romaji": "Nana korobi ya oki",
@@ -947,6 +946,18 @@
     "romaji": "Hachiku no ikioi",
     "english": "The force of splitting bamboo",
     "meaning": "Unstoppable momentum — once started, it keeps going. Understanding how to build and sustain momentum is one of the most valuable skills in any large undertaking."
+  },
+  {
+    "japanese": "雨降って地固まる",
+    "romaji": "Ame futte ji katamaru",
+    "english": "After rain, the ground hardens",
+    "meaning": "Adversity can strengthen relationships"
   }
-
+,
+  {
+    "japanese": "二兎を追う者は一兎をも得ず",
+    "romaji": "Ni to wo ou mono wa itto wo mo ezu",
+    "english": "One who chases two rabbits catches neither",
+    "meaning": "Focus on one thing at a time"
+  }
 ]
