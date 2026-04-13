@@ -117,5 +117,19 @@
     "english": "Let's go, everyone!",
     "game": "Kingdom Hearts series (JP dub)",
     "character": "Sora"
-  }
-]
+  },
+  {
+  "japanese": "俺たちの物語は、ここからだ",
+  "romaji": "Oretachi no monogatari wa, koko kara da",
+  "english": "Our story starts here.",
+  "game": "Tales series",
+  "character": "Various endings"
+}
+],
+{
+  "japanese": "一人で行くのは危険だ！これを持っていけ！",
+  "romaji": "Hitori de iku no wa kiken da! Kore o motte ike!",
+  "english": "It's dangerous to go alone! Take this.",
+  "game": "The Legend of Zelda",
+  "character": "Old Man"
+}

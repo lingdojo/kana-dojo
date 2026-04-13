@@ -318,7 +318,7 @@
     "correctIndex": 1
   },
   {
-    "question": "Which mountain is Japan’s highest peak? (Community variation 53)",
+    "question": "Which mountain is Japan\u2019s highest peak? (Community variation 53)",
     "difficulty": "easy",
     "answers": [
       "Mount Fuji",
@@ -538,7 +538,7 @@
     "correctIndex": 0
   },
   {
-    "question": "Which mountain is Japan’s highest peak?",
+    "question": "Which mountain is Japan\u2019s highest peak?",
     "difficulty": "easy",
     "answers": [
       "Mount Fuji",
@@ -648,7 +648,7 @@
     "correctIndex": 0
   },
   {
-    "question": "What is Japan’s currency called?",
+    "question": "What is Japan\u2019s currency called?",
     "difficulty": "easy",
     "answers": [
       "Yen",
@@ -699,6 +699,17 @@
       "Sukiyaki",
       "Tonkatsu",
       "Oden"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "question": "What is the Japanese term for a traditional inn?",
+    "difficulty": "easy",
+    "answers": [
+      "Ryokan",
+      "Minshuku",
+      "Izakaya",
+      "Yatai"
     ],
     "correctIndex": 0
   }
