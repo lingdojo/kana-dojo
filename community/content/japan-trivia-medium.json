@@ -452,5 +452,16 @@
     "Kissa"
   ],
   "correctIndex": 1
+},
+{
+  "question": "Which Japanese island is known for its active volcano Mount Aso?",
+  "difficulty": "medium",
+  "answers": [
+    "Kyushu",
+    "Honshu",
+    "Shikoku",
+    "Hokkaido"
+  ],
+  "correctIndex": 0
 }
 ]
