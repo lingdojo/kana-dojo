@@ -119,10 +119,17 @@
     "character": "Sora"
   },
   {
-  "japanese": "この戦い、負けられない！",
-  "romaji": "Kono tatakai, makerarenai!",
-  "english": "I can't lose this fight!",
-  "game": "Fire Emblem series",
-  "character": "Various protagonists"
+  "japanese": "俺たちの物語は、ここからだ",
+  "romaji": "Oretachi no monogatari wa, koko kara da",
+  "english": "Our story starts here.",
+  "game": "Tales series",
+  "character": "Various endings"
 }
-]
+],
+{
+  "japanese": "一人で行くのは危険だ！これを持っていけ！",
+  "romaji": "Hitori de iku no wa kiken da! Kore o motte ike!",
+  "english": "It's dangerous to go alone! Take this.",
+  "game": "The Legend of Zelda",
+  "character": "Old Man"
+}
