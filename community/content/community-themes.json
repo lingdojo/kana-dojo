@@ -358,11 +358,17 @@
     "backgroundColor": "oklch(92.0% 0.025 145.0 / 1)",
     "mainColor": "oklch(55.0% 0.175 145.0 / 1)",
     "secondaryColor": "oklch(45.0% 0.125 140.0 / 1)"
-},
-{
-  "id": "fuji-shadow",
-  "backgroundColor": "oklch(15.0% 0.015 250.0 / 1)",
-  "mainColor": "oklch(78.0% 0.035 230.0 / 1)",
-  "secondaryColor": "oklch(65.0% 0.105 300.0 / 1)"
-}
+  },
+  {
+    "id": "fuji-shadow",
+    "backgroundColor": "oklch(15.0% 0.015 250.0 / 1)",
+    "mainColor": "oklch(78.0% 0.035 230.0 / 1)",
+    "secondaryColor": "oklch(65.0% 0.105 300.0 / 1)"
+  },
+  {
+    "id": "spring-bamboo",
+    "backgroundColor": "oklch(93.0% 0.018 150.0 / 1)",
+    "mainColor": "oklch(55.0% 0.145 145.0 / 1)",
+    "secondaryColor": "oklch(70.0% 0.085 120.0 / 1)"
+  }
 ]
