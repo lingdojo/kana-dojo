@@ -463,5 +463,16 @@
     "Bonsai"
   ],
   "correctIndex": 1
+  },
+  {
+    "question": "What is the name of the traditional Japanese garment often worn at festivals?",
+    "difficulty": "medium",
+    "answers": [
+      "Yukata",
+      "Haori",
+      "Hakama",
+      "Tabi"
+    ],
+    "correctIndex": 0
   }
 ]
