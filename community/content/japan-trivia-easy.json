@@ -318,7 +318,7 @@
     "correctIndex": 1
   },
   {
-    "question": "Which mountain is Japan\u2019s highest peak? (Community variation 53)",
+    "question": "Which mountain is Japan’s highest peak? (Community variation 53)",
     "difficulty": "easy",
     "answers": [
       "Mount Fuji",
@@ -538,7 +538,7 @@
     "correctIndex": 0
   },
   {
-    "question": "Which mountain is Japan\u2019s highest peak?",
+    "question": "Which mountain is Japan’s highest peak?",
     "difficulty": "easy",
     "answers": [
       "Mount Fuji",
@@ -648,7 +648,7 @@
     "correctIndex": 0
   },
   {
-    "question": "What is Japan\u2019s currency called?",
+    "question": "What is Japan’s currency called?",
     "difficulty": "easy",
     "answers": [
       "Yen",
@@ -710,6 +710,17 @@
       "Minshuku",
       "Izakaya",
       "Yatai"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which city is known for its beef brand Kobe? (Community variation 59)",
+    "difficulty": "easy",
+    "answers": [
+      "Kobe",
+      "Nagoya",
+      "Kanazawa",
+      "Hiroshima"
     ],
     "correctIndex": 0
   }
