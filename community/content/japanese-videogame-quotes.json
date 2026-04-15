@@ -119,31 +119,38 @@
     "character": "Sora"
   },
   {
-  "japanese": "俺たちの物語は、ここからだ",
-  "romaji": "Oretachi no monogatari wa, koko kara da",
-  "english": "Our story starts here.",
-  "game": "Tales series",
-  "character": "Various endings"
-},
+    "japanese": "俺たちの物語は、ここからだ",
+    "romaji": "Oretachi no monogatari wa, koko kara da",
+    "english": "Our story starts here.",
+    "game": "Tales series",
+    "character": "Various endings"
+  },
   {
-  "japanese": "負ける気がしない",
-  "romaji": "Makeru ki ga shinai",
-  "english": "I don't feel like I can lose.",
-  "game": "Street Fighter series",
-  "character": "Ryu"
-},
+    "japanese": "負ける気がしない",
+    "romaji": "Makeru ki ga shinai",
+    "english": "I don't feel like I can lose.",
+    "game": "Street Fighter series",
+    "character": "Ryu"
+  },
   {
-  "japanese": "一人で行くのは危険だ！これを持っていけ！",
-  "romaji": "Hitori de iku no wa kiken da! Kore o motte ike!",
-  "english": "It's dangerous to go alone! Take this.",
-  "game": "The Legend of Zelda",
-  "character": "Old Man"
-},
-{
-  "japanese": "風が、来る！",
-  "romaji": "Kaze ga, kuru!",
-  "english": "The wind is coming!",
-  "game": "The Legend of Zelda: Breath of the Wild (JP)",
-  "character": "Revali"
-}
+    "japanese": "一人で行くのは危険だ！これを持っていけ！",
+    "romaji": "Hitori de iku no wa kiken da! Kore o motte ike!",
+    "english": "It's dangerous to go alone! Take this.",
+    "game": "The Legend of Zelda",
+    "character": "Old Man"
+  },
+  {
+    "japanese": "風が、来る！",
+    "romaji": "Kaze ga, kuru!",
+    "english": "The wind is coming!",
+    "game": "The Legend of Zelda: Breath of the Wild (JP)",
+    "character": "Revali"
+  },
+  {
+    "japanese": "負ける気がしない",
+    "romaji": "Makeru ki ga shinai",
+    "english": "I don't feel like I can lose.",
+    "game": "Street Fighter series",
+    "character": "Ryu"
+  }
 ]
