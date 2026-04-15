@@ -382,5 +382,11 @@
   "backgroundColor": "oklch(15.0% 0.055 310.0 / 1)",
   "mainColor": "oklch(80.0% 0.210 345.0 / 1)",
   "secondaryColor": "oklch(85.0% 0.175 180.0 / 1)"
+},
+{
+  "id": "temple-bell",
+  "backgroundColor": "oklch(22.0% 0.032 60.0 / 1)",
+  "mainColor": "oklch(68.0% 0.095 70.0 / 1)",
+  "secondaryColor": "oklch(58.0% 0.075 55.0 / 1)"
 }
 ]
