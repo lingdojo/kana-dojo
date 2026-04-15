@@ -713,4 +713,16 @@
     ],
     "correctIndex": 0
   }
+,
+  {
+    "question": "Which city is known for its beef brand Kobe?",
+    "difficulty": "easy",
+    "answers": [
+      "Kobe",
+      "Nagoya",
+      "Kanazawa",
+      "Hiroshima"
+    ],
+    "correctIndex": 0
+  }
 ]
