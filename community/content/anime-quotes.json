@@ -508,32 +508,40 @@
   "anime": "Fist of the North Star",
   "character": "Kenshiro"
 },
-  {
-  "japanese": "おれは人間を超越する！",
-  "romaji": "Ore wa ningen o chouetsu suru!",
-  "english": "I will transcend humanity!",
-  "anime": "JoJo's Bizarre Adventure: Battle Tendency",
-  "character": "Kars"
-}
-  {
+{
   "japanese": "おれは人間を超越する！",
   "romaji": "Ore wa ningen o chouetsu suru!",
   "english": "I will transcend humanity!",
   "anime": "JoJo's Bizarre Adventure: Battle Tendency",
   "character": "Kars"
 },
-  {
-    "japanese": "オラに元気を分けてくれ!",
-    "romaji": "Ora ni genki o wakete kure!",
-    "english": "Lend me your energy! (alt wording 52)",
-    "anime": "Dragon Ball Z",
-    "character": "Son Goku"
-  },
-  {
+{
+  "japanese": "おれは人間を超越する！",
+  "romaji": "Ore wa ningen o chouetsu suru!",
+  "english": "I will transcend humanity!",
+  "anime": "JoJo's Bizarre Adventure: Battle Tendency",
+  "character": "Kars"
+},
+{
+  "japanese": "オラに元気を分けてくれ!",
+  "romaji": "Ora ni genki o wakete kure!",
+  "english": "Lend me your energy! (alt wording 52)",
+  "anime": "Dragon Ball Z",
+  "character": "Son Goku"
+},
+{
   "japanese": "やれやれだぜ。",
   "romaji": "Yare yare da ze.",
   "english": "Good grief.",
   "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
   "character": "Jotaro Kujo"
+},
+{
+  "japanese": "まだだ、まだ終わらんよ！",
+  "romaji": "Mada da, mada owaran yo!",
+  "english": "Not yet! It's not over yet!",
+  "anime": "Mobile Suit Gundam",
+  "character": "Char Aznable"
 }
+
 ]
