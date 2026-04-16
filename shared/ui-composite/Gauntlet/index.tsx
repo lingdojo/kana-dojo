@@ -16,9 +16,8 @@ import {
   startSession,
 } from '@/shared/utils/sessionHistory';
 import EmptyState from './EmptyState';
-import PreGameScreen from './PreGameScreen';
 import ActiveGame from './ActiveGame';
-import ResultsScreen from './ResultsScreen';
+import SessionSummaryScreen from '@/shared/ui-composite/Game/SessionSummaryScreen';
 import {
   DIFFICULTY_CONFIG,
   type GauntletConfig,
@@ -149,40 +148,15 @@ export default function Gauntlet<T>({ config, onCancel }: GauntletProps<T>) {
 
   // Game configuration state - initialized from store for all settings
   // The store persists settings across navigation from PreGameScreen to game route
-  const [gameMode, setGameModeState] = useState<GauntletGameMode>(() => {
+  const [gameMode] = useState<GauntletGameMode>(() => {
     const storeMode = gauntletSettings.getGameMode(dojoType);
     return storeMode || initialGameMode || 'Pick';
   });
-  const [difficulty, setDifficultyState] = useState<GauntletDifficulty>(() =>
+  const [difficulty] = useState<GauntletDifficulty>(() =>
     gauntletSettings.getDifficulty(dojoType),
   );
-  const [repetitions, setRepetitionsState] = useState<RepetitionCount>(() =>
+  const [repetitions] = useState<RepetitionCount>(() =>
     gauntletSettings.getRepetitions(dojoType),
-  );
-
-  // Wrapper setters that also sync to store for persistence across navigation
-  const setGameMode = useCallback(
-    (mode: GauntletGameMode) => {
-      setGameModeState(mode);
-      gauntletSettings.setGameMode(dojoType, mode);
-    },
-    [dojoType, gauntletSettings],
-  );
-
-  const setDifficulty = useCallback(
-    (diff: GauntletDifficulty) => {
-      setDifficultyState(diff);
-      gauntletSettings.setDifficulty(dojoType, diff);
-    },
-    [dojoType, gauntletSettings],
-  );
-
-  const setRepetitions = useCallback(
-    (reps: RepetitionCount) => {
-      setRepetitionsState(reps);
-      gauntletSettings.setRepetitions(dojoType, reps);
-    },
-    [dojoType, gauntletSettings],
   );
 
   // Game phase state
@@ -240,7 +214,6 @@ export default function Gauntlet<T>({ config, onCancel }: GauntletProps<T>) {
   const sessionStartPromiseRef = useRef<Promise<string> | null>(null);
   const finalizedRef = useRef(false);
 
-  const pickModeSupported = !!(generateOptions && getCorrectOption);
   // Gauntlet mode always uses normal mode (never reverse)
   const isReverseActive = false;
 
@@ -798,7 +771,11 @@ export default function Gauntlet<T>({ config, onCancel }: GauntletProps<T>) {
     if (isGauntletRoute) {
       router.push(`/${dojoType}`);
     } else {
-      setPhase('pregame');
+      if (onCancel) {
+        onCancel();
+        return;
+      }
+      router.push(`/${dojoType}`);
     }
   }, [
     playClick,
@@ -813,6 +790,7 @@ export default function Gauntlet<T>({ config, onCancel }: GauntletProps<T>) {
     isGauntletRoute,
     router,
     dojoType,
+    onCancel,
   ]);
 
   // Handler for new ActiveGame component - receives selected option and result directly
@@ -828,16 +806,15 @@ export default function Gauntlet<T>({ config, onCancel }: GauntletProps<T>) {
     ? `${getItemId(currentQuestion.item)}-${currentQuestion.index}`
     : '';
 
-  // Auto-start when accessed via route (like Blitz)
+  // Auto-start when accessed (setup is centralized in ModeSetupMenu)
   useEffect(() => {
-    if (!isGauntletRoute) return;
     if (hasAutoStarted) return;
     if (phase !== 'pregame') return;
     if (items.length === 0) return;
 
     setHasAutoStarted(true);
     handleStart();
-  }, [isGauntletRoute, hasAutoStarted, phase, items.length, handleStart]);
+  }, [hasAutoStarted, phase, items.length, handleStart]);
 
   // Render states
   if (items.length === 0) {
@@ -845,34 +822,21 @@ export default function Gauntlet<T>({ config, onCancel }: GauntletProps<T>) {
   }
 
   if (phase === 'pregame') {
-    return (
-      <PreGameScreen
-        dojoType={dojoType}
-        dojoLabel={dojoLabel}
-        itemsCount={items.length}
-        selectedSets={selectedSets || []}
-        gameMode={gameMode}
-        setGameMode={setGameMode}
-        difficulty={difficulty}
-        setDifficulty={setDifficulty}
-        repetitions={repetitions}
-        setRepetitions={setRepetitions}
-        pickModeSupported={pickModeSupported}
-        onStart={handleStart}
-        onCancel={onCancel}
-      />
-    );
+    return null;
   }
 
   if (phase === 'results' && sessionStats) {
     return (
-      <ResultsScreen
+      <SessionSummaryScreen
+        mode='gauntlet'
         dojoType={dojoType}
         stats={sessionStats}
         isNewBest={isNewBest}
         endedReason={endedReason}
-        onRestart={handleStart}
-        onChangeSettings={() => setPhase('pregame')}
+        onNewSession={handleStart}
+        onBackToSelection={() => {
+          router.push(`/${dojoType}`);
+        }}
       />
     );
   }

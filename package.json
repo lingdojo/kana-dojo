@@ -20,7 +20,7 @@
     "i18n:generate-types": "node scripts/i18n/generate-types.js",
     "i18n:config:check": "node scripts/i18n/validate-config.js",
     "i18n:check": "npm run i18n:config:check && npm run i18n:validate && npm run i18n:generate-types",
-    "check": "tsc --noEmit --pretty && eslint .",
+    "check": "tsc --noEmit --incremental --pretty && eslint . --cache",
     "generate:constants": "tsx scripts/generateConstants.ts",
     "anki:convert": "tsx scripts/anki-converter.ts",
     "images:process": "tsx scripts/process-wallpapers.ts",

@@ -12,7 +12,7 @@ type UseScrollVisibilityOptions = {
 export const useScrollVisibility = ({
   topShowThreshold = 10,
   hideAfterScrollY = 80,
-  minScrollDelta = 12,
+  minScrollDelta = 8,
   debounceMs = 180,
 }: UseScrollVisibilityOptions = {}) => {
   const [isVisible, setIsVisible] = useState(true);

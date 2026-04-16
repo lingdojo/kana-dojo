@@ -1067,14 +1067,25 @@
     }
   },
   {
-    "collectedAt": "2026-04-15T20:12:56.748Z",
-    "stars": 2255,
-    "forks": 1716,
-    "contributors": 1412,
+    "collectedAt": "2026-04-15T23:00:37.479Z",
+    "stars": 2256,
+    "forks": 1717,
+    "contributors": 1413,
     "diff": {
-      "stars": 5,
-      "forks": 2,
-      "contributors": 3
+      "stars": 6,
+      "forks": 3,
+      "contributors": 4
+    }
+  },
+  {
+    "collectedAt": "2026-04-16T11:00:46.534Z",
+    "stars": 2070,
+    "forks": 1602,
+    "contributors": 1421,
+    "diff": {
+      "stars": -186,
+      "forks": -115,
+      "contributors": 8
     }
   }
 ]

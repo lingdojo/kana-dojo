@@ -1,14 +1,14 @@
 'use client';
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import clsx from 'clsx';
-import { KanaGauntlet, useKanaSelection } from '@/features/Kana';
-import { KanjiGauntlet, useKanjiSelection } from '@/features/Kanji';
-import { useVocabSelection, VocabGauntlet } from '@/features/Vocabulary';
+import { useKanaSelection } from '@/features/Kana';
+import { useKanjiSelection } from '@/features/Kanji';
+import { useVocabSelection } from '@/features/Vocabulary';
 import { useInputPreferences } from '@/features/Preferences';
 import { useClick } from '@/shared/hooks/generic/useAudio';
 import { Play, Zap, Swords } from 'lucide-react';
 import { motion } from 'framer-motion';
-import GameModes from '@/shared/ui-composite/Menu/GameModes';
+import ModeSetupMenu from '@/shared/ui-composite/Menu/ModeSetupMenu';
 
 // Gauntlet components with onCancel prop support
 import { cn } from '@/shared/utils/utils';
@@ -35,7 +35,6 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
   const [gameModesMode, setGameModesMode] = useState<
     'train' | 'blitz' | 'gauntlet'
   >('train');
-  const [showGauntletModal, setShowGauntletModal] = useState(false);
 
   // Kana store
   const { selectedGroupIndices: kanaGroupIndices } = useKanaSelection();
@@ -294,7 +293,10 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
                   iconClassName: 'fill-current',
                   show: showBlitz,
                   colorScheme: 'secondary' as const,
-                  onClick: () => setShowGauntletModal(true),
+                  onClick: () => {
+                    setGameModesMode('gauntlet');
+                    setShowGameModesModal(true);
+                  },
                 },
                 {
                   id: 'classic',
@@ -366,27 +368,12 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
       </motion.div>
 
       {/* Game Modes Interstitial */}
-      <GameModes
+      <ModeSetupMenu
         isOpen={showGameModesModal}
         onClose={() => setShowGameModesModal(false)}
         currentDojo={currentDojo}
         mode={gameModesMode}
       />
-
-      {/* Gauntlet Modal - shows Gauntlet component without route change */}
-      {showGauntletModal && (
-        <div className='fixed inset-0 z-[80] bg-(--background-color)'>
-          {currentDojo === 'kana' && (
-            <KanaGauntlet onCancel={() => setShowGauntletModal(false)} />
-          )}
-          {currentDojo === 'kanji' && (
-            <KanjiGauntlet onCancel={() => setShowGauntletModal(false)} />
-          )}
-          {currentDojo === 'vocabulary' && (
-            <VocabGauntlet onCancel={() => setShowGauntletModal(false)} />
-          )}
-        </div>
-      )}
     </>
   );
 };

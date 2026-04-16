@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useRef, useCallback } from 'react';
 import { usePathname } from 'next/navigation';
+import { useRouter } from '@/core/i18n/routing';
 import { useChallengeTimer } from '@/shared/hooks/game/useChallengeTimer';
 import { useGoalTimers } from '@/shared/hooks/game/useGoalTimers';
 import { useClick, useCorrect, useError } from '@/shared/hooks/generic/useAudio';
@@ -15,9 +16,8 @@ import {
 } from '@/shared/utils/sessionHistory';
 
 import EmptyState from './EmptyState';
-import PreGameScreen from './PreGameScreen';
 import ActiveGame from './ActiveGame';
-import ResultsScreen from './ResultsScreen';
+import SessionSummaryScreen from '@/shared/ui-composite/Game/SessionSummaryScreen';
 import type { BlitzGameMode, BlitzConfig } from './types';
 
 // Re-export types for external use
@@ -29,7 +29,7 @@ interface BlitzProps<T> {
 
 export default function Blitz<T>({ config }: BlitzProps<T>) {
   const pathname = usePathname();
-  const isBlitzRoute = pathname?.includes('/blitz') ?? false;
+  const router = useRouter();
 
   const { playClick } = useClick();
   const { playCorrect } = useCorrect();
@@ -55,7 +55,7 @@ export default function Blitz<T>({ config }: BlitzProps<T>) {
   } = config;
 
   // Game mode state - use initialGameMode if provided (from store), otherwise use localStorage
-  const [gameMode, setGameMode] = useState<BlitzGameMode>(() => {
+  const [gameMode] = useState<BlitzGameMode>(() => {
     if (initialGameMode) {
       return initialGameMode;
     }
@@ -72,10 +72,8 @@ export default function Blitz<T>({ config }: BlitzProps<T>) {
     }
   }, [gameMode, localStorageKey]);
 
-  const pickModeSupported = !!(generateOptions && getCorrectOption);
-
   // Challenge duration
-  const [challengeDuration, setChallengeDuration] = useState(() => {
+  const [challengeDuration] = useState(() => {
     if (typeof window !== 'undefined') {
       const saved = localStorage.getItem(localStorageKey);
       return saved ? parseInt(saved) : 60;
@@ -103,13 +101,13 @@ export default function Blitz<T>({ config }: BlitzProps<T>) {
   const [lastAnswerCorrect, setLastAnswerCorrect] = useState<boolean | null>(
     null,
   );
-  const [showGoalTimers, setShowGoalTimers] = useState(false);
+  const [showGoalTimers] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const sessionIdRef = useRef<string | null>(null);
   const sessionStartPromiseRef = useRef<Promise<string> | null>(null);
   const finalizedRef = useRef(false);
 
-  const [isBlitzBooting, setIsBlitzBooting] = useState(() => isBlitzRoute);
+  const [isBlitzBooting, setIsBlitzBooting] = useState(true);
   const hasAutoStartedBlitz = useRef(false);
 
   // Pick mode state
@@ -146,12 +144,8 @@ export default function Blitz<T>({ config }: BlitzProps<T>) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [items]);
 
-  // Blitz pages should not show the PreGameScreen at all; auto-start once when ready.
+  // Auto-start once when ready.
   useEffect(() => {
-    if (!isBlitzRoute) {
-      setIsBlitzBooting(false);
-      return;
-    }
     if (hasAutoStartedBlitz.current) return;
     if (isRunning || isFinished) return;
     if (items.length === 0) {
@@ -190,7 +184,6 @@ export default function Blitz<T>({ config }: BlitzProps<T>) {
     dojoType,
     gameMode,
     pathname,
-    isBlitzRoute,
     isFinished,
     isRunning,
     items.length,
@@ -467,38 +460,14 @@ export default function Blitz<T>({ config }: BlitzProps<T>) {
     return <EmptyState dojoType={dojoType} dojoLabel={dojoLabel} />;
   }
 
-  if (isBlitzRoute && isBlitzBooting) {
+  if (isBlitzBooting) {
     return null;
-  }
-
-  if (!isBlitzRoute && !isRunning && !isFinished) {
-    return (
-      <PreGameScreen
-        dojoType={dojoType}
-        dojoLabel={dojoLabel}
-        itemsCount={items.length}
-        selectedSets={selectedSets}
-        gameMode={gameMode}
-        setGameMode={setGameMode}
-        pickModeSupported={pickModeSupported}
-        challengeDuration={challengeDuration}
-        setChallengeDuration={setChallengeDuration}
-        showGoalTimers={showGoalTimers}
-        setShowGoalTimers={setShowGoalTimers}
-        goalTimers={{
-          goals: goalTimers.goals,
-          addGoal: goalTimers.addGoal,
-          removeGoal: goalTimers.removeGoal,
-          clearGoals: goalTimers.clearGoals,
-        }}
-        onStart={handleStart}
-      />
-    );
   }
 
   if (isFinished) {
     return (
-      <ResultsScreen
+      <SessionSummaryScreen
+        mode='blitz'
         dojoType={dojoType}
         challengeDuration={challengeDuration}
         stats={{
@@ -508,7 +477,8 @@ export default function Blitz<T>({ config }: BlitzProps<T>) {
         }}
         showGoalTimers={showGoalTimers}
         goals={goalTimers.goals}
-        onRestart={handleStart}
+        onNewSession={handleStart}
+        onBackToSelection={() => router.push(`/${dojoType}`)}
         endedReason={endedReason}
       />
     );

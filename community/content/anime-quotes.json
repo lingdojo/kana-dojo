@@ -514,8 +514,8 @@
   "english": "I will transcend humanity!",
   "anime": "JoJo's Bizarre Adventure: Battle Tendency",
   "character": "Kars"
-}
-  {
+},
+{
   "japanese": "おれは人間を超越する！",
   "romaji": "Ore wa ningen o chouetsu suru!",
   "english": "I will transcend humanity!",
@@ -535,5 +535,26 @@
   "english": "Good grief.",
   "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
   "character": "Jotaro Kujo"
+},
+{
+  "japanese": "俺を誰だと思ってやがる!",
+  "romaji": "Ore o dare da to omotte yagaru!",
+  "english": "Who the hell do you think I am! (alt wording 46)",
+  "anime": "Gurren Lagann",
+  "character": "Kamina"
+},
+{
+  "japanese": "やれやれだぜ",
+  "romaji": "Yare yare da ze",
+  "english": "Good grief. (alt wording 6)",
+  "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+  "character": "Jotaro Kujo"
+},
+  {
+  "japanese": "僕はもう逃げない!",
+  "romaji": "Boku wa mou nigenai!",
+  "english": "I won't run away anymore! (alt wording 47)",
+  "anime": "Hunter x Hunter",
+  "character": "Gon Freecss"
 }
 ]

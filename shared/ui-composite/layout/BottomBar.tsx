@@ -8,6 +8,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import {
   Coffee,
+  Bug,
   Palette,
   GitBranch,
   Type,
@@ -44,6 +45,11 @@ const socialLinks: SocialLink[] = [
     icon: faGithub,
     url: 'https://github.com/lingdojo/kana-dojo',
     type: 'fontawesome',
+  },
+  {
+    icon: Bug,
+    url: 'https://tally.so/r/2E4rB9',
+    type: 'lucide',
   },
   {
     icon: Coffee,
@@ -165,7 +171,7 @@ const MobileBottomBar = () => {
                   )}
                 </button>
               </div>
-              {idx === 1 && socialLinks.length > 2 && (
+              {(idx === 1 || idx === 2) && socialLinks.length > 2 && (
                 <span className='text-sm text-(--main-color) select-none'>
                   ~
                 </span>
