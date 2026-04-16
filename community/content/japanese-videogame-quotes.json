@@ -119,59 +119,17 @@
     "character": "Sora"
   },
   {
-  "japanese": "俺たちの物語は、ここからだ",
-  "romaji": "Oretachi no monogatari wa, koko kara da",
-  "english": "Our story starts here.",
-  "game": "Tales series",
-  "character": "Various endings"
-},
+    "japanese": "一人で行くのは危険だ！これを持っていけ！",
+    "romaji": "Hitori de iku no wa kiken da! Kore o motte ike!",
+    "english": "It's dangerous to go alone! Take this.",
+    "game": "The Legend of Zelda",
+    "character": "Old Man"
+  },
   {
-  "japanese": "負ける気がしない",
-  "romaji": "Makeru ki ga shinai",
-  "english": "I don't feel like I can lose.",
-  "game": "Street Fighter series",
-  "character": "Ryu"
-},
-  {
-  "japanese": "一人で行くのは危険だ！これを持っていけ！",
-  "romaji": "Hitori de iku no wa kiken da! Kore o motte ike!",
-  "english": "It's dangerous to go alone! Take this.",
-  "game": "The Legend of Zelda",
-  "character": "Old Man"
-},
-{
-  "japanese": "風が、来る！",
-  "romaji": "Kaze ga, kuru!",
-  "english": "The wind is coming!",
-  "game": "The Legend of Zelda: Breath of the Wild (JP)",
-  "character": "Revali"
-},
-{
-  "japanese": "まだまだだね",
-  "romaji": "Mada mada da ne",
-  "english": "You still have lots more to work on.",
-  "game": "The Prince of Tennis: Sweat & Tears 2",
-  "character": "Ryoma Echizen"
-},
-{
-  "japanese": "俺たちの物語は、ここからだ",
-  "romaji": "Oretachi no monogatari wa, koko kara da",
-  "english": "Our story starts here.",
-  "game": "Tales series",
-  "character": "Various endings"
-},
-{
-  "japanese": "それもまた一興",
-  "romaji": "Sore mo mata ikkyo",
-  "english": "That too has its charm.",
-  "game": "Onimusha series",
-  "character": "Nobunaga Oda"
-},
-{
-  "japanese": "それでも、守りたい世界があるんだ！",
-  "romaji": "Soredemo, mamoritai sekai ga arunda!",
-  "english": "Even so, there is a world I want to protect!",
-  "game": "Final Fantasy IX",
-  "character": "Garnet Til Alexandros XVII"
-}
+    "japanese": "仲間を信じろ",
+    "romaji": "Nakama o shinjiro",
+    "english": "Believe in your comrades.",
+    "game": "Dragon Quest series",
+    "character": "Recurring command voice"
+  }
 ]
