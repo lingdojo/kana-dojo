@@ -514,7 +514,7 @@
   "english": "I will transcend humanity!",
   "anime": "JoJo's Bizarre Adventure: Battle Tendency",
   "character": "Kars"
-}
+},
   {
   "japanese": "おれは人間を超越する！",
   "romaji": "Ore wa ningen o chouetsu suru!",
@@ -535,5 +535,12 @@
   "english": "Good grief.",
   "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
   "character": "Jotaro Kujo"
-}
+},
+  {
+    "japanese": "オラオラオラオラオラ！",
+    "romaji": "Ora ora ora ora ora!",
+    "english": "Ora ora ora ora ora! (alt wording 8) (alt wording 60)",
+    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+    "character": "Jotaro Kujo"
+  }
 ]
