@@ -6,7 +6,6 @@ import { motion } from 'framer-motion';
 import clsx from 'clsx';
 import { useClick, useCorrect, useError } from '@/shared/hooks/generic/useAudio';
 // import GameIntel from '@/shared/ui-composite/Game/GameIntel';
-import { useStopwatch } from 'react-timer-hook';
 import { useStatsStore } from '@/features/Progress';
 import { useShallow } from 'zustand/react/shallow';
 import Stars from '@/shared/ui-composite/Game/Stars';
@@ -14,6 +13,7 @@ import { useCrazyModeTrigger } from '@/features/CrazyMode/hooks/useCrazyModeTrig
 import { getGlobalAdaptiveSelector } from '@/shared/utils/adaptiveSelection';
 import { GameBottomBar } from '@/shared/ui-composite/Game/GameBottomBar';
 import { isKanaInputAnswerCorrect } from '@/features/Kana/lib/isKanaInputAnswerCorrect';
+import { evaluateKanaAdaptivePositions } from '@/features/Kana/lib/evaluateKanaAdaptivePositions';
 import useClassicSessionStore from '@/shared/store/useClassicSessionStore';
 import { useAdaptiveTargetLength } from '@/shared/hooks/game/useAdaptiveTargetLength';
 import { useThemePreferences } from '@/features/Preferences';
@@ -77,7 +77,8 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
 
   const isGlassMode = useThemePreferences().isGlassMode;
 
-  const speedStopwatch = useStopwatch({ autoStart: false });
+  const answerStartTimeRef = useRef<number | null>(null);
+  const elapsedTimeMsRef = useRef(0);
 
   const { playClick } = useClick();
   const { playCorrect } = useCorrect();
@@ -135,7 +136,9 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
 
   const buildTargetPair = useCallback(() => {
     const sourceArray = isReverse ? selectedRomaji : selectedKana;
-    if (sourceArray.length === 0) return { correctChar: '', targetChar: '' };
+    if (sourceArray.length === 0) {
+      return { correctChar: '', targetChar: '', promptParts: [], answerParts: [] };
+    }
 
     const used = new Set<string>();
     const promptParts: string[] = [];
@@ -151,12 +154,39 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
       answerParts.push(selectedPairs[selected]);
     }
 
-    return { correctChar: promptParts.join(''), targetChar: answerParts.join('') };
+    return {
+      correctChar: promptParts.join(''),
+      targetChar: answerParts.join(''),
+      promptParts,
+      answerParts,
+    };
   }, [isReverse, selectedRomaji, selectedKana, targetLength, selectedPairs]);
 
   const [pairData, setPairData] = useState(() => buildTargetPair());
   const correctChar = pairData.correctChar;
   const targetChar = pairData.targetChar;
+  const promptParts = pairData.promptParts;
+  const answerParts = pairData.answerParts;
+  const pauseTimer = useCallback(() => {
+    if (answerStartTimeRef.current !== null) {
+      elapsedTimeMsRef.current += performance.now() - answerStartTimeRef.current;
+      answerStartTimeRef.current = null;
+    }
+  }, []);
+  const getElapsedTimeMs = useCallback(() => {
+    if (answerStartTimeRef.current !== null) {
+      return elapsedTimeMsRef.current + (performance.now() - answerStartTimeRef.current);
+    }
+    return elapsedTimeMsRef.current;
+  }, []);
+  const resetTimer = useCallback(() => {
+    answerStartTimeRef.current = null;
+    elapsedTimeMsRef.current = 0;
+  }, []);
+  const startTimer = useCallback(() => {
+    answerStartTimeRef.current = performance.now();
+    elapsedTimeMsRef.current = 0;
+  }, []);
 
   const hasKana = selectedKana.length > 0;
   const hasRomaji = selectedRomaji.length > 0;
@@ -195,8 +225,8 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
   }, [bottomBarState]);
 
   useEffect(() => {
-    if (isHidden) speedStopwatch.pause();
-  }, [isHidden, speedStopwatch]);
+    if (isHidden) pauseTimer();
+  }, [isHidden, pauseTimer]);
 
   useEffect(() => {
     if (isReady) {
@@ -231,12 +261,12 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
   };
 
   const handleCorrectAnswer = () => {
-    speedStopwatch.pause();
-    const answerTimeMs = speedStopwatch.totalMilliseconds;
+    pauseTimer();
+    const answerTimeMs = getElapsedTimeMs();
     addCorrectAnswerTime(answerTimeMs / 1000);
     // Track answer time for speed achievements (Requirements 6.1-6.5)
     recordAnswerTime(answerTimeMs);
-    speedStopwatch.reset();
+    resetTimer();
     playCorrect();
     addCharacterToHistory(correctChar);
     incrementCharacterScore(correctChar, 'correct');
@@ -244,7 +274,7 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
     setScore(score + 1);
 
     triggerCrazyMode();
-    correctChar.split('').forEach(char => {
+    promptParts.forEach(char => {
       adaptiveSelector.updateCharacterWeight(char, true);
       if (isHiragana(char)) incrementHiraganaCorrect();
       else if (isKatakana(char)) incrementKatakanaCorrect();
@@ -278,9 +308,16 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
       setScore(score - 1);
     }
     triggerCrazyMode();
-    correctChar.split('').forEach(char =>
-      adaptiveSelector.updateCharacterWeight(char, false),
-    );
+    const positionResults = evaluateKanaAdaptivePositions({
+      promptChars: promptParts,
+      answerParts,
+      inputValue: wrongInput,
+      isReverse,
+      altRomanjiMap,
+    });
+    promptParts.forEach((char, index) => {
+      adaptiveSelector.updateCharacterWeight(char, positionResults[index]);
+    });
     incrementWrongStreak();
     recordTargetLengthWrong();
     setBottomBarState('wrong');
@@ -300,9 +337,8 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
     setInputValue('');
     generateNewCharacter();
     setBottomBarState('check');
-    speedStopwatch.reset();
-    speedStopwatch.start();
-  }, [playClick, generateNewCharacter, speedStopwatch]);
+    startTimer();
+  }, [playClick, generateNewCharacter, startTimer]);
 
   const _gameMode = isReverse ? 'reverse input' : 'input';
   const canCheck = inputValue.trim().length > 0 && bottomBarState !== 'correct';

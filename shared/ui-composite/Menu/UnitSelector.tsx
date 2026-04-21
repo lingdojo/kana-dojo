@@ -169,7 +169,8 @@ const UnitSelector = () => {
   return (
     <div className='flex flex-col '>
       {/* Modern Toggle-Style Unit Selector */}
-      <div className='flex flex-col gap-2 rounded-4xl bg-(--card-color) p-2 md:flex-row border-0 border-(--border-color)'>
+      <div className='flex flex-col gap-2 rounded-4xl border-1 border-(--border-color) bg-(--background-color) p-1 shadow-[0_12px_40px_rgba(0,0,0,0.12)] backdrop-blur-xl md:flex-row'>
+        <div className='flex w-full flex-col gap-2 rounded-[28px] bg-(--card-color) p-2 md:flex-row'>
         {collections.map(collection => {
           const isSelected = collection.name === selectedCollection;
 
@@ -233,6 +234,7 @@ const UnitSelector = () => {
             </div>
           );
         })}
+        </div>
       </div>
 
       {/* Selection Status Bar - Fixed at top */}

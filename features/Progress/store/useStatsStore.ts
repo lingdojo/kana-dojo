@@ -1,5 +1,8 @@
+'use client';
+
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
+import useSetProgressStore from '@/features/Progress/store/useSetProgressStore';
 
 // Types
 interface CharacterScore {
@@ -496,7 +499,8 @@ const useStatsStore = create<IStatsState>()(
         }
       },
 
-      clearAllProgress: () =>
+      clearAllProgress: () => {
+        void useSetProgressStore.getState().clearSetProgress();
         set({
           allTimeStats: {
             totalSessions: 0,
@@ -526,7 +530,8 @@ const useStatsStore = create<IStatsState>()(
             currentWrongStreak: 0,
             maxWrongStreak: 0,
           },
-        }),
+        });
+      },
 
       resetStats: () =>
         set({

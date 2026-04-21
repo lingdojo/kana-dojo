@@ -12,7 +12,6 @@ import Stars from '@/shared/ui-composite/Game/Stars';
 import { useCrazyModeTrigger } from '@/features/CrazyMode/hooks/useCrazyModeTrigger';
 import { useStatsStore } from '@/features/Progress';
 import { useShallow } from 'zustand/react/shallow';
-import { useStopwatch } from 'react-timer-hook';
 import { useSmartReverseMode } from '@/shared/hooks/game/useSmartReverseMode';
 import { useTilesMode } from '@/shared/hooks/game/useTilesMode';
 import { GameBottomBar } from '@/shared/ui-composite/Game/GameBottomBar';
@@ -29,6 +28,14 @@ import {
 } from '@/shared/ui-composite/Game/TilesModeShared';
 import TilesModeGrid from '@/shared/ui-composite/Game/TilesModeGrid';
 import useClassicSessionStore from '@/shared/store/useClassicSessionStore';
+import {
+  formatKeyToQuizType,
+  getAvailableQuestionFormats,
+  getQuestionFormatKey,
+  type VocabQuestionFormat,
+  type VocabQuizType,
+} from '@/features/Vocabulary/components/Game/vocabFormatLock';
+import useSetProgressStore from '@/features/Progress/store/useSetProgressStore';
 
 const random = new Random();
 const adaptiveSelector = getGlobalAdaptiveSelector();
@@ -67,6 +74,9 @@ const VocabTilesMode = ({
   onWrong: externalOnWrong,
 }: VocabTilesModeProps) => {
   const logAttempt = useClassicSessionStore(state => state.logAttempt);
+  const recordVocabularyProgress = useSetProgressStore(
+    state => state.recordVocabularyProgress,
+  );
   // Smart reverse mode - used when not controlled externally
   const {
     isReverse: internalIsReverse,
@@ -97,7 +107,26 @@ const VocabTilesMode = ({
   const isGlassMode = useThemePreferences().isGlassMode;
 
   // Answer timing for speed achievements
-  const speedStopwatch = useStopwatch({ autoStart: false });
+  const answerStartTimeRef = useRef<number | null>(null);
+  const answerElapsedMsRef = useRef(0);
+  const startAnswerTimer = useCallback(() => {
+    answerElapsedMsRef.current = 0;
+    answerStartTimeRef.current = performance.now();
+  }, []);
+  const pauseAnswerTimer = useCallback(() => {
+    if (answerStartTimeRef.current !== null) {
+      answerElapsedMsRef.current += performance.now() - answerStartTimeRef.current;
+      answerStartTimeRef.current = null;
+    }
+  }, []);
+  const getAnswerTimeMs = useCallback(() => {
+    if (answerStartTimeRef.current === null) return answerElapsedMsRef.current;
+    return answerElapsedMsRef.current + (performance.now() - answerStartTimeRef.current);
+  }, []);
+  const resetAnswerTimer = useCallback(() => {
+    answerStartTimeRef.current = null;
+    answerElapsedMsRef.current = 0;
+  }, []);
   const { playCorrect } = useCorrect();
   const { playErrorTwice } = useError();
   const { playClick } = useClick();
@@ -178,9 +207,18 @@ const VocabTilesMode = ({
 
       // Adjust quiz type based on the selected word
       // Skip reading quiz for kana-only words since reading === word (pointless exercise)
-      let effectiveQuizType = currentQuizType;
+      let effectiveQuizType: VocabQuizType = currentQuizType;
       if (currentQuizType === 'reading' && !containsKanji(selectedWord)) {
         effectiveQuizType = 'meaning';
+      }
+      const lockedFormat = adaptiveSelector.getPreferredLockedFormat(
+        selectedWord,
+        getAvailableQuestionFormats(selectedWord, isReverse),
+      );
+      if (lockedFormat) {
+        effectiveQuizType = formatKeyToQuizType(
+          lockedFormat as VocabQuestionFormat,
+        );
       }
 
       // Determine correct answer based on quiz type and mode
@@ -293,10 +331,9 @@ const VocabTilesMode = ({
       setBottomBarState('check');
       setDisplayAnswerSummary(false);
       // Start timing for the new question
-      speedStopwatch.reset();
-      speedStopwatch.start();
+      startAnswerTimer();
     },
-    [generateQuestion, quizType],
+    [generateQuestion, quizType, startAnswerTimer],
   );
 
   // Only reset game on isReverse change if we're NOT showing the answer summary
@@ -307,12 +344,12 @@ const VocabTilesMode = ({
     }
   }, [isReverse, resetGame, displayAnswerSummary]);
 
-  // Pause stopwatch when game is hidden
+  // Pause timer when game is hidden
   useEffect(() => {
     if (isHidden) {
-      speedStopwatch.pause();
+      pauseAnswerTimer();
     }
-  }, [isHidden]);
+  }, [isHidden, pauseAnswerTimer]);
 
   // Keyboard shortcut for Enter/Space to trigger button
   useTilesModeActionKey(buttonRef);
@@ -327,8 +364,8 @@ const VocabTilesMode = ({
     lastActionTimeRef.current = now;
 
     // Stop timing and record answer time
-    speedStopwatch.pause();
-    const answerTimeMs = speedStopwatch.totalMilliseconds;
+    pauseAnswerTimer();
+    const answerTimeMs = getAnswerTimeMs();
 
     playClick();
     setIsChecking(true);
@@ -346,7 +383,7 @@ const VocabTilesMode = ({
       // Record answer time for speed achievements
       addCorrectAnswerTime(answerTimeMs / 1000);
       recordAnswerTime(answerTimeMs);
-      speedStopwatch.reset();
+      resetAnswerTimer();
 
       playCorrect();
       triggerCrazyMode();
@@ -355,7 +392,13 @@ const VocabTilesMode = ({
       // Track stats for the word
       addCharacterToHistory(questionData.word);
       incrementCharacterScore(questionData.word, 'correct');
+      void recordVocabularyProgress(questionData.word, questionData.quizType);
       adaptiveSelector.updateCharacterWeight(questionData.word, true);
+      adaptiveSelector.registerQuestionFormatResult(
+        questionData.word,
+        getQuestionFormatKey(questionData.quizType, isReverse),
+        true,
+      );
       incrementVocabularyCorrect();
 
       incrementCorrectAnswers();
@@ -395,10 +438,16 @@ const VocabTilesMode = ({
         isCorrect: true,
         timeTakenMs: answerTimeMs,
         optionsShown: Array.from(questionData.allTiles.values()),
-        extra: { isReverse, quizType: questionData.quizType },
+        extra: {
+          contentType: 'vocabulary',
+          canonicalItemKey: questionData.word,
+          questionType: questionData.quizType,
+          isReverse,
+          quizType: questionData.quizType,
+        },
       });
     } else {
-      speedStopwatch.reset();
+      resetAnswerTimer();
       playErrorTwice();
       triggerCrazyMode();
       incrementWrongStreak();
@@ -406,6 +455,11 @@ const VocabTilesMode = ({
 
       incrementCharacterScore(questionData.word, 'wrong');
       adaptiveSelector.updateCharacterWeight(questionData.word, false);
+      adaptiveSelector.registerQuestionFormatResult(
+        questionData.word,
+        getQuestionFormatKey(questionData.quizType, isReverse),
+        false,
+      );
 
       if (score - 1 >= 0) {
         setScore(score - 1);
@@ -431,7 +485,13 @@ const VocabTilesMode = ({
         inputKind: 'word_building',
         isCorrect: false,
         optionsShown: Array.from(questionData.allTiles.values()),
-        extra: { isReverse, quizType: questionData.quizType },
+        extra: {
+          contentType: 'vocabulary',
+          canonicalItemKey: questionData.word,
+          questionType: questionData.quizType,
+          isReverse,
+          quizType: questionData.quizType,
+        },
       });
     }
   }, [
@@ -460,6 +520,9 @@ const VocabTilesMode = ({
     recordAnswerTime,
     isReverse,
     quizType,
+    pauseAnswerTimer,
+    getAnswerTimeMs,
+    resetAnswerTimer,
   ]);
 
   // Handle Continue button (only for correct answers)
@@ -478,7 +541,17 @@ const VocabTilesMode = ({
     externalOnCorrect?.([questionData.word]);
 
     // Determine next quiz type based on word content
-    const nextType = getNextQuizType(questionData.word, quizType);
+    const baseNextType: VocabQuizType = getNextQuizType(
+      questionData.word,
+      quizType,
+    );
+    const lockedFormat = adaptiveSelector.getPreferredLockedFormat(
+      questionData.word,
+      getAvailableQuestionFormats(questionData.word, isReverse),
+    );
+    const nextType = lockedFormat
+      ? formatKeyToQuizType(lockedFormat as VocabQuestionFormat)
+      : baseNextType;
     setQuizType(nextType);
     resetGame(nextType);
   }, [
@@ -504,9 +577,8 @@ const VocabTilesMode = ({
     setPlacedTileIds([]);
     setIsChecking(false);
     setBottomBarState('check');
-    speedStopwatch.reset();
-    speedStopwatch.start();
-  }, [playClick]);
+    startAnswerTimer();
+  }, [playClick, startAnswerTimer]);
 
   // Handle tile click - add or remove from placed tiles
   const handleTileClick = useCallback(
@@ -519,8 +591,7 @@ const VocabTilesMode = ({
       if (bottomBarState === 'wrong') {
         setIsChecking(false);
         setBottomBarState('check');
-        speedStopwatch.reset();
-        speedStopwatch.start();
+        startAnswerTimer();
       }
 
       setPlacedTileIds(prevIds =>
@@ -529,7 +600,7 @@ const VocabTilesMode = ({
           : [...prevIds, id],
       );
     },
-    [isChecking, bottomBarState, playClick],
+    [isChecking, bottomBarState, playClick, startAnswerTimer],
   );
 
   // Not enough words

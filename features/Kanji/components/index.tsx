@@ -10,6 +10,9 @@ import {
   KanjiLevel,
 } from '@/features/Kanji/services/kanjiDataService';
 import LevelSetCards from '@/shared/ui-composite/Menu/LevelSetCards';
+import useSetProgressHydration from '@/features/Progress/hooks/useSetProgress';
+import useSetProgressStore from '@/features/Progress/store/useSetProgressStore';
+import { calculateKanjiSetProgress } from '@/features/Progress/lib/setProgress';
 import {
   N1KanjiLength,
   N2KanjiLength,
@@ -69,6 +72,17 @@ const KanjiCards = () => {
     (level: KanjiLevel) => KANJI_LENGTHS[level],
     [],
   );
+  useSetProgressHydration();
+  const kanjiProgress = useSetProgressStore(state => state.data.kanji);
+  const getSetProgress = useCallback(
+    (items: IKanjiObj[]) =>
+      calculateKanjiSetProgress(
+        items.map(item => ({
+          correct: kanjiProgress[item.kanjiChar]?.correct ?? 0,
+        })),
+      ),
+    [kanjiProgress],
+  );
 
   return (
     <LevelSetCards<KanjiLevel, IKanjiObj>
@@ -88,6 +102,7 @@ const KanjiCards = () => {
       collapsedRows={collapsedRows}
       setCollapsedRows={setCollapsedRows}
       renderSetDictionary={items => <KanjiSetDictionary words={items} />}
+      getSetProgress={getSetProgress}
       loadingText='Loading kanji sets...'
     />
   );

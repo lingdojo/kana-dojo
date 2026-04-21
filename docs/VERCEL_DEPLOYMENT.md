@@ -126,9 +126,11 @@ Vercel uses the `ignoreCommand` defined in `vercel.json` (`bash scripts/vercel-i
 - In **Project Settings -> Git -> Ignored Build Step**, select **Run my bash script**.
 - Set the command to `bash scripts/vercel-ignore.sh`.
 - Do not keep a separate custom diff command there. The repo script is the single source of truth.
-- The script skips deploys for changes that only touch `community/**`, `*.md`, `*.MD`, `package.json`, or `package-lock.json`, even when those categories are combined in the same commit.
-- The script is merge-aware and explicitly handles merge-commit file detection so community-only PR merges do not trigger redeploys.
-- The ignore script logs whether Vercel Git environment variables are present to confirm it is running.
+- The script preserves and enforces all non-production skip categories (including community content, markdown/docs, tooling/config files, generated artifacts, package manifests, and other explicitly allowlisted paths).
+- The script is merge-safe: merge commits are classified using **first-parent diff** (`<merge>^1..<merge>`) so second-parent history cannot cause false production-file detection.
+- Merge PR commits that resolve to non-production-only file sets are hard-skipped for both Preview and Production.
+- The ignore script logs diff source strategy and decision reason to simplify incident triage.
+- Regression coverage is available via `npm run vercel:ignore:test` (deterministic injected file sets; no live git history required).
 
 ### Next.js Configuration
 

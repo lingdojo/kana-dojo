@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
+import { useState, useEffect, useRef, useCallback, useMemo, type ReactNode } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import clsx from 'clsx';
 import {
@@ -40,6 +40,47 @@ const CHAOS_THEME_GRADIENT = `linear-gradient(
   oklch(74.0% 0.20 355.0 / 1) 88%,
   oklch(66.0% 0.18 25.0 / 1) 100%
 )`;
+
+const floatingIconClassesBySize = {
+  lg: 'flex h-12 w-12 shrink-0 items-center justify-center rounded-xl sm:rounded-2xl border-b-4 sm:border-b-6 leading-none text-(--background-color) [--float-distance:-4px] [&>svg]:h-7 [&>svg]:w-7',
+  md: 'flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border-b-4 leading-none text-(--background-color) [--float-distance:-3px] [&>svg]:h-5 [&>svg]:w-5',
+  sm: 'flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border-b-4 leading-none text-(--background-color) [--float-distance:-2px] [&>svg]:h-4 [&>svg]:w-4',
+} as const;
+
+const floatingIconToneClasses = {
+  secondary: 'border-(--secondary-color-accent) bg-(--secondary-color)',
+  main: 'border-(--main-color-accent) bg-(--main-color)',
+} as const;
+
+function FloatingIcon({
+  children,
+  size = 'md',
+  tone = 'secondary',
+  animated = true,
+  animationDelayClass,
+  className,
+}: {
+  children: ReactNode;
+  size?: keyof typeof floatingIconClassesBySize;
+  tone?: keyof typeof floatingIconToneClasses;
+  animated?: boolean;
+  animationDelayClass?: string;
+  className?: string;
+}) {
+  return (
+    <span
+      className={clsx(
+        floatingIconClassesBySize[size],
+        floatingIconToneClasses[tone],
+        animated && 'motion-safe:animate-float',
+        animationDelayClass,
+        className,
+      )}
+    >
+      {children}
+    </span>
+  );
+}
 
 const WelcomeModal = () => {
   const t = useTranslations('welcome');
@@ -185,10 +226,12 @@ const WelcomeModal = () => {
 
             <div className='space-y-4 text-left'>
               <div className='flex items-center gap-3 rounded-lg bg-(--background-color) p-3'>
-                <Palette
-                  className='flex-shrink-0 text-(--main-color)'
-                  size={24}
-                />
+                <FloatingIcon
+                  size='md'
+                  tone='main'
+                >
+                  <Palette />
+                </FloatingIcon>
                 <div>
                   <h3 className='font-semibold text-(--main-color)'>
                     {t('features.theme.title')}
@@ -200,7 +243,13 @@ const WelcomeModal = () => {
               </div>
 
               <div className='flex items-center gap-3 rounded-lg bg-(--background-color) p-3'>
-                <Type className='flex-shrink-0 text-(--main-color)' size={24} />
+                <FloatingIcon
+                  size='md'
+                  tone='main'
+                  animationDelayClass='[animation-delay:120ms]'
+                >
+                  <Type />
+                </FloatingIcon>
                 <div>
                   <h3 className='font-semibold text-(--main-color)'>
                     {t('features.font.title')}
@@ -366,7 +415,9 @@ const WelcomeModal = () => {
           <div className='space-y-6'>
             <div className='space-y-2 text-center'>
               <h2 className='flex items-center justify-center gap-2 text-2xl font-bold text-(--main-color)'>
-                <Palette size={28} />
+                <FloatingIcon size='lg'>
+                  <Palette />
+                </FloatingIcon>
                 {t('steps.themes.title')}
               </h2>
               <p className='text-(--secondary-color)'>
@@ -382,7 +433,7 @@ const WelcomeModal = () => {
                     themeSet.name === 'Dark' ||
                     themeSet.name.startsWith('Premium'),
                 )
-                .map(themeSet => {
+                .map((themeSet, themeSetIndex) => {
                   let filteredThemes = themeSet.themes;
 
                   // Only filter Dark themes - show all Base themes
@@ -416,10 +467,15 @@ const WelcomeModal = () => {
                   return (
                     <div key={themeSet.name} className='space-y-3'>
                       <div className='flex items-center gap-2 text-lg font-medium'>
-                        <themeSet.icon
-                          size={20}
-                          className='text-(--secondary-color)'
-                        />
+                        <FloatingIcon
+                          size='sm'
+                          animated={false}
+                          animationDelayClass={
+                            themeSetIndex % 2 === 1 ? '[animation-delay:120ms]' : undefined
+                          }
+                        >
+                          <themeSet.icon />
+                        </FloatingIcon>
                         {themeSet.name.startsWith('Premium') ? (
                           <span>
                             <span className='text-(--main-color)'>Premium</span>
@@ -554,7 +610,9 @@ const WelcomeModal = () => {
           <div className='space-y-6'>
             <div className='space-y-2 text-center'>
               <h2 className='flex items-center justify-center gap-2 text-2xl font-bold text-(--main-color)'>
-                <Type size={28} />
+                <FloatingIcon size='lg'>
+                  <Type />
+                </FloatingIcon>
                 {t('steps.fonts.title')}
               </h2>
               <p className='text-(--secondary-color)'>
@@ -702,7 +760,7 @@ const WelcomeModal = () => {
               <button
                 onClick={handleClose}
                 className={clsx(
-                  'cursor-pointer rounded-lg p-2 transition-colors duration-200',
+                  'cursor-pointer rounded-lg p-2 transition-colors duration-50',
                   'hover:bg-(--background-color)',
                   'text-(--secondary-color) hover:text-(--main-color)',
                 )}
@@ -730,13 +788,16 @@ const WelcomeModal = () => {
                 <button
                   onClick={handlePrevious}
                   className={clsx(
-                    'flex cursor-pointer items-center justify-center gap-2 rounded-xl px-4 py-2 sm:px-6 sm:py-3',
+                    'group flex cursor-pointer items-center justify-center gap-2 rounded-xl px-4 py-2 sm:px-6 sm:py-3',
                     'text-(--secondary-color) hover:text-(--main-color)',
-                    'transition-all duration-100 hover:bg-(--background-color)',
+                    'transition-all duration-50 hover:bg-(--background-color)',
                     'text-sm sm:text-base',
                   )}
                 >
-                  <ChevronLeft size={16} className='sm:h-[18px] sm:w-[18px]' />
+                  <ChevronLeft
+                    size={18}
+                    className='shrink-0 text-(--main-color) group-hover:text-(--secondary-color) sm:h-[20px] sm:w-[20px]'
+                  />
                   <span className='hidden sm:inline'>
                     {t('navigation.previous')}
                   </span>
@@ -746,14 +807,14 @@ const WelcomeModal = () => {
                 <div />
               )}
 
-              <button
-                onClick={handleNext}
-                className={clsx(
-                  'flex cursor-pointer items-center justify-center gap-2 rounded-xl px-6 py-2 sm:px-8 sm:py-3',
-                  'text-sm font-medium text-(--main-color) sm:text-base',
-                  'transition-all duration-100 hover:bg-(--background-color) active:scale-98',
-                )}
-              >
+                <button
+                  onClick={handleNext}
+                  className={clsx(
+                    'group flex cursor-pointer items-center justify-center gap-2 rounded-xl px-6 py-2 sm:px-8 sm:py-3',
+                    'text-sm font-medium text-(--main-color) sm:text-base',
+                    'transition-all duration-50 hover:bg-(--background-color) active:scale-98',
+                  )}
+                >
                 <span>
                   {step === 'welcome'
                     ? t('navigation.getStarted')
@@ -761,7 +822,10 @@ const WelcomeModal = () => {
                       ? t('navigation.finishSetup')
                       : t('navigation.next')}
                 </span>
-                <ChevronRight size={16} className='sm:h-[18px] sm:w-[18px]' />
+                <ChevronRight
+                  size={18}
+                  className='shrink-0 text-(--secondary-color) sm:h-[20px] sm:w-[20px]'
+                />
               </button>
             </div>
           </div>
@@ -772,4 +836,5 @@ const WelcomeModal = () => {
 };
 
 export default WelcomeModal;
+
 

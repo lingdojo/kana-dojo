@@ -8,7 +8,6 @@ import { useCorrect, useError } from '@/shared/hooks/generic/useAudio';
 import { buttonBorderStyles } from '@/shared/utils/styles';
 // import GameIntel from '@/shared/ui-composite/Game/GameIntel';
 import { mcqKeyMappings } from '@/shared/utils/keyMappings';
-import { useStopwatch } from 'react-timer-hook';
 import { useStatsStore } from '@/features/Progress';
 import { useShallow } from 'zustand/react/shallow';
 import Stars from '@/shared/ui-composite/Game/Stars';
@@ -19,6 +18,7 @@ import { useCrazyModeTrigger } from '@/features/CrazyMode/hooks/useCrazyModeTrig
 import { getGlobalAdaptiveSelector } from '@/shared/utils/adaptiveSelection';
 import { useSmartReverseMode } from '@/shared/hooks/game/useSmartReverseMode';
 import useClassicSessionStore from '@/shared/store/useClassicSessionStore';
+import useSetProgressStore from '@/features/Progress/store/useSetProgressStore';
 
 const random = new Random();
 
@@ -101,6 +101,9 @@ interface KanjiMCQProps {
 
 const KanjiMCQ = ({ selectedKanjiObjs, isHidden }: KanjiMCQProps) => {
   const logAttempt = useClassicSessionStore(state => state.logAttempt);
+  const recordKanjiProgress = useSetProgressStore(
+    state => state.recordKanjiProgress,
+  );
   const { isReverse, decideNextMode, recordWrongAnswer } =
     useSmartReverseMode();
 
@@ -113,31 +116,25 @@ const KanjiMCQ = ({ selectedKanjiObjs, isHidden }: KanjiMCQProps) => {
     score,
     setScore,
     incrementKanjiCorrect,
-    recordAnswerTime,
     incrementWrongStreak,
     resetWrongStreak,
     incrementCorrectAnswers,
     incrementWrongAnswers,
     addCharacterToHistory,
-    addCorrectAnswerTime,
     incrementCharacterScore,
   } = useStatsStore(
     useShallow(state => ({
       score: state.score,
       setScore: state.setScore,
       incrementKanjiCorrect: state.incrementKanjiCorrect,
-      recordAnswerTime: state.recordAnswerTime,
       incrementWrongStreak: state.incrementWrongStreak,
       resetWrongStreak: state.resetWrongStreak,
       incrementCorrectAnswers: state.incrementCorrectAnswers,
       incrementWrongAnswers: state.incrementWrongAnswers,
       addCharacterToHistory: state.addCharacterToHistory,
-      addCorrectAnswerTime: state.addCorrectAnswerTime,
       incrementCharacterScore: state.incrementCharacterScore,
     })),
   );
-
-  const speedStopwatch = useStopwatch({ autoStart: false });
 
   const { playCorrect } = useCorrect();
   const { playErrorTwice } = useError();
@@ -238,10 +235,6 @@ const KanjiMCQ = ({ selectedKanjiObjs, isHidden }: KanjiMCQProps) => {
     };
   }, [shuffledOptions.length]);
 
-  useEffect(() => {
-    if (isHidden) speedStopwatch.pause();
-  }, [isHidden]);
-
   if (!selectedKanjiObjs || selectedKanjiObjs.length === 0) {
     return null;
   }
@@ -270,18 +263,13 @@ const KanjiMCQ = ({ selectedKanjiObjs, isHidden }: KanjiMCQProps) => {
   };
 
   const handleCorrectAnswer = () => {
-    speedStopwatch.pause();
-    const answerTimeMs = speedStopwatch.totalMilliseconds;
-    addCorrectAnswerTime(answerTimeMs / 1000);
-    // Track answer time for speed achievements (Requirements 6.1-6.5)
-    recordAnswerTime(answerTimeMs);
-    speedStopwatch.reset();
     playCorrect();
     setCurrentKanjiObj(correctKanjiObj as IKanjiObj);
 
     addCharacterToHistory(correctChar);
     incrementCharacterScore(correctChar, 'correct');
     incrementCorrectAnswers();
+    void recordKanjiProgress(correctChar);
     setScore(score + 1);
     setWrongSelectedAnswers([]);
     triggerCrazyMode();
@@ -300,9 +288,12 @@ const KanjiMCQ = ({ selectedKanjiObjs, isHidden }: KanjiMCQProps) => {
       userAnswer: String(targetChar),
       inputKind: 'pick',
       isCorrect: true,
-      timeTakenMs: answerTimeMs,
       optionsShown: shuffledOptions,
-      extra: { isReverse },
+      extra: {
+        contentType: 'kanji',
+        canonicalItemKey: correctChar,
+        isReverse,
+      },
     });
   };
 
@@ -331,7 +322,11 @@ const KanjiMCQ = ({ selectedKanjiObjs, isHidden }: KanjiMCQProps) => {
       inputKind: 'pick',
       isCorrect: false,
       optionsShown: shuffledOptions,
-      extra: { isReverse },
+      extra: {
+        contentType: 'kanji',
+        canonicalItemKey: correctChar,
+        isReverse,
+      },
     });
   };
 

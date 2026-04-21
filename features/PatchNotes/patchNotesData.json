@@ -1,5 +1,13 @@
 [
   {
+    "version": "0.1.17",
+    "date": "April 21, 2026",
+    "changes": [
+      "Refined the Difficulty selector for a smoother, more polished feel",
+      "Updated the Unit selector with a cleaner framed presentation"
+    ]
+  },
+  {
     "version": "0.1.16",
     "date": "March 30, 2026",
     "changes": [

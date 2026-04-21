@@ -492,9 +492,39 @@
     "meaning": "Acting can lead to luck (or trouble)"
   },
   {
-  "japanese": "七転び八起き",
-  "romaji": "Nanakorobi yaoki",
-  "english": "Fall seven times, get up eight",
-  "meaning": "Never give up"
+    "japanese": "七転び八起き",
+    "romaji": "Nanakorobi yaoki",
+    "english": "Fall seven times, get up eight",
+    "meaning": "Never give up"
+  },
+  {
+    "japanese": "縁は異なもの味なもの",
+    "romaji": "En wa inamono aji na mono",
+    "english": "Fate is strange yet delightful",
+    "meaning": "Unexpected connections can be good"
+  },
+  {
+    "japanese": "後悔先に立たず",
+    "romaji": "Koukai saki ni tatazu",
+    "english": "Regret does not stand before",
+    "meaning": "It's too late for regrets"
+  },
+  {
+    "japanese": "後悔先に立たず",
+    "romaji": "Koukai saki ni tatazu",
+    "english": "Regret does not stand before",
+    "meaning": "It's too late for regrets"
+  },
+  {
+    "japanese": "泣きっ面に蜂",
+    "romaji": "Nakittsura ni hachi",
+    "english": "A bee on a crying face",
+    "meaning": "Misfortune never comes alone"
+  },
+  {
+  "japanese": "口は災いの元",
+  "romaji": "Kuchi wa wazawai no moto",
+  "english": "The mouth is the source of disaster",
+  "meaning": "Careless words cause trouble"
   }
 ]

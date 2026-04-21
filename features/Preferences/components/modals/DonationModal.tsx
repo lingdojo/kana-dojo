@@ -80,7 +80,7 @@ export default function DonationModal({
                 <p className='text-base leading-7'>
                   We appreciate you more than we can properly express, and thank
                   you again for being part of this project and for any support
-                  you can offer, in any form.
+                  you can offer.
                 </p>
               </div>
             </div>

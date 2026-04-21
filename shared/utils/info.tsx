@@ -1,6 +1,3 @@
-import DevNotice from '@/shared/ui-composite/misc/DevNotice';
-import RandomFact from '@/shared/ui-composite/misc/RandomFact';
-
 // import { Link } from '@/i18n/routing';
 
 // Updated to receive translations as a parameter instead of using hook
@@ -35,8 +32,6 @@ export default function translationGen(t: (key: string) => string) {
           </Link>{' '}
           - thank you!
         </p> */}
-          <DevNotice />
-          <RandomFact />
         </>
       ),
     },

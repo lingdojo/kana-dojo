@@ -9,6 +9,8 @@ import { motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 import { removeLocaleFromPath } from '@/shared/utils/pathUtils';
 import { useTranslations } from 'next-intl';
+import DevNotice from '@/shared/ui-composite/misc/DevNotice';
+import RandomFact from '@/shared/ui-composite/misc/RandomFact';
 
 const Info = () => {
   const pathname = usePathname();
@@ -94,6 +96,12 @@ const Info = () => {
         transition={{ duration: 0.8, ease: 'linear' }}
       >
         {content}
+        {normalizedPath === '/' && (
+          <>
+            <DevNotice />
+            <RandomFact />
+          </>
+        )}
       </motion.div>
     </div>
   );

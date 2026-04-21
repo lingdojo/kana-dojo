@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 import { toHiragana } from 'wanakana';
 import { IVocabObj } from '@/features/Vocabulary/store/useVocabStore';
 import { useClick, useCorrect, useError } from '@/shared/hooks/generic/useAudio';
-import { useStopwatch } from 'react-timer-hook';
 import { useGameStats, useStatsDisplay } from '@/features/Progress';
 import Stars from '@/shared/ui-composite/Game/Stars';
 import AnswerSummary from '@/shared/ui-composite/Game/AnswerSummary';
@@ -17,6 +16,14 @@ import { GameBottomBar } from '@/shared/ui-composite/Game/GameBottomBar';
 import useClassicSessionStore from '@/shared/store/useClassicSessionStore';
 import { useThemePreferences } from '@/features/Preferences';
 import { cn } from '@/shared/utils/utils';
+import {
+  formatKeyToQuizType,
+  getAvailableQuestionFormats,
+  getQuestionFormatKey,
+  type VocabQuestionFormat,
+  type VocabQuizType,
+} from '@/features/Vocabulary/components/Game/vocabFormatLock';
+import useSetProgressStore from '@/features/Progress/store/useSetProgressStore';
 
 // Get the global adaptive selector for weighted character selection
 const adaptiveSelector = getGlobalAdaptiveSelector();
@@ -36,12 +43,16 @@ const VocabInputGame = ({
   isReverse = false,
 }: VocabInputGameProps) => {
   const logAttempt = useClassicSessionStore(state => state.logAttempt);
+  const recordVocabularyProgress = useSetProgressStore(
+    state => state.recordVocabularyProgress,
+  );
   const { score, setScore } = useStatsDisplay();
   const gameStats = useGameStats();
 
   const isGlassMode = useThemePreferences().isGlassMode;
 
-  const speedStopwatch = useStopwatch({ autoStart: false });
+  const answerStartTimeRef = useRef<number | null>(null);
+  const elapsedTimeMsRef = useRef(0);
 
   const { playClick } = useClick();
   const { playCorrect } = useCorrect();
@@ -57,21 +68,16 @@ const VocabInputGame = ({
   // Quiz type: 'meaning' or 'reading'
   const [quizType, setQuizType] = useState<'meaning' | 'reading'>('meaning');
 
-  // State management based on mode - uses weighted selection for adaptive learning
+  // State management uses word-level adaptive keys in both normal and reverse mode.
   const [correctChar, setCorrectChar] = useState(() => {
     if (selectedWordObjs.length === 0) return '';
-    const sourceArray = isReverse
-      ? selectedWordObjs.map(obj => obj.meanings[0])
-      : selectedWordObjs.map(obj => obj.word);
+    const sourceArray = selectedWordObjs.map(obj => obj.word);
     const selected = adaptiveSelector.selectWeightedCharacter(sourceArray);
     adaptiveSelector.markCharacterSeen(selected);
     return selected;
   });
 
-  // Find the target character/meaning based on mode
-  const correctWordObj = isReverse
-    ? selectedWordObjs.find(obj => obj.meanings[0] === correctChar)
-    : selectedWordObjs.find(obj => obj.word === correctChar);
+  const correctWordObj = selectedWordObjs.find(obj => obj.word === correctChar);
 
   const [currentWordObj, setCurrentWordObj] = useState<IVocabObj>(
     correctWordObj as IVocabObj,
@@ -84,15 +90,37 @@ const VocabInputGame = ({
         ? correctWordObj?.word
         : correctWordObj?.meanings
       : correctWordObj?.reading;
+  const questionPrompt =
+    quizType === 'meaning' && isReverse
+      ? correctWordObj?.meanings[0] ?? ''
+      : correctChar;
 
   const [displayAnswerSummary, setDisplayAnswerSummary] = useState(false);
   const [promptSequence, setPromptSequence] = useState(0);
+  const pauseTimer = useCallback(() => {
+    if (answerStartTimeRef.current !== null) {
+      elapsedTimeMsRef.current += performance.now() - answerStartTimeRef.current;
+      answerStartTimeRef.current = null;
+    }
+  }, []);
+  const getElapsedTimeMs = useCallback(() => {
+    if (answerStartTimeRef.current !== null) {
+      return elapsedTimeMsRef.current + (performance.now() - answerStartTimeRef.current);
+    }
+    return elapsedTimeMsRef.current;
+  }, []);
+  const resetTimer = useCallback(() => {
+    answerStartTimeRef.current = null;
+    elapsedTimeMsRef.current = 0;
+  }, []);
+  const startTimer = useCallback(() => {
+    answerStartTimeRef.current = performance.now();
+    elapsedTimeMsRef.current = 0;
+  }, []);
 
   // Generate new character - defined before useCallback that uses it
   const generateNewCharacter = useCallback(() => {
-    const sourceArray = isReverse
-      ? selectedWordObjs.map(obj => obj.meanings[0])
-      : selectedWordObjs.map(obj => obj.word);
+    const sourceArray = selectedWordObjs.map(obj => obj.word);
 
     const newChar = adaptiveSelector.selectWeightedCharacter(
       sourceArray,
@@ -101,9 +129,20 @@ const VocabInputGame = ({
     adaptiveSelector.markCharacterSeen(newChar);
     setCorrectChar(newChar);
 
-    // Toggle quiz type for the next question
-    setQuizType(prev => (prev === 'meaning' ? 'reading' : 'meaning'));
-  }, [isReverse, selectedWordObjs, correctChar]);
+    const baseQuizType: VocabQuizType =
+      /[\u4E00-\u9FAF]/.test(newChar) && quizType === 'meaning'
+        ? 'reading'
+        : 'meaning';
+    const lockedFormat = adaptiveSelector.getPreferredLockedFormat(
+      newChar,
+      getAvailableQuestionFormats(newChar, isReverse),
+    );
+    setQuizType(
+      lockedFormat
+        ? formatKeyToQuizType(lockedFormat as VocabQuestionFormat)
+        : baseQuizType,
+    );
+  }, [isReverse, selectedWordObjs, correctChar, quizType]);
 
   const handleContinue = useCallback(() => {
     playClick();
@@ -112,9 +151,8 @@ const VocabInputGame = ({
     generateNewCharacter();
     setPromptSequence(prev => prev + 1);
     setBottomBarState('check');
-    speedStopwatch.reset();
-    speedStopwatch.start();
-  }, [playClick, generateNewCharacter, speedStopwatch]);
+    startTimer();
+  }, [playClick, generateNewCharacter, startTimer]);
 
   useEffect(() => {
     if (inputRef.current && bottomBarState === 'check') {
@@ -148,9 +186,8 @@ const VocabInputGame = ({
   }, [bottomBarState]);
 
   useEffect(() => {
-    if (isHidden) speedStopwatch.pause();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isHidden]);
+    if (isHidden) pauseTimer();
+  }, [isHidden, pauseTimer]);
 
   if (!selectedWordObjs || selectedWordObjs.length === 0) {
     return null;
@@ -187,24 +224,30 @@ const VocabInputGame = ({
   };
 
   const handleCorrectAnswer = () => {
-    speedStopwatch.pause();
-    const answerTimeMs = speedStopwatch.totalMilliseconds;
-    speedStopwatch.reset();
+    pauseTimer();
+    const answerTimeMs = getElapsedTimeMs();
+    resetTimer();
     setCurrentWordObj(correctWordObj as IVocabObj);
 
     playCorrect();
     gameStats.recordCorrect('vocabulary', correctChar, {
       timeTaken: answerTimeMs,
     });
+    void recordVocabularyProgress(correctChar, quizType);
     setScore(score + 1);
 
     triggerCrazyMode();
     adaptiveSelector.updateCharacterWeight(correctChar, true);
+    adaptiveSelector.registerQuestionFormatResult(
+      correctChar,
+      getQuestionFormatKey(quizType, isReverse),
+      true,
+    );
     setBottomBarState('correct');
     setDisplayAnswerSummary(true);
     logAttempt({
       questionId: correctChar,
-      questionPrompt: correctChar,
+      questionPrompt,
       expectedAnswers: Array.isArray(targetChar)
         ? targetChar.map(v => String(v))
         : [String(targetChar)],
@@ -212,7 +255,13 @@ const VocabInputGame = ({
       inputKind: 'type',
       isCorrect: true,
       timeTakenMs: answerTimeMs,
-      extra: { isReverse, quizType },
+      extra: {
+        contentType: 'vocabulary',
+        canonicalItemKey: correctChar,
+        questionType: quizType,
+        isReverse,
+        quizType,
+      },
     });
   };
 
@@ -236,17 +285,28 @@ const VocabInputGame = ({
     }
     triggerCrazyMode();
     adaptiveSelector.updateCharacterWeight(correctChar, false);
+    adaptiveSelector.registerQuestionFormatResult(
+      correctChar,
+      getQuestionFormatKey(quizType, isReverse),
+      false,
+    );
     setBottomBarState('wrong');
     logAttempt({
       questionId: correctChar,
-      questionPrompt: correctChar,
+      questionPrompt,
       expectedAnswers: Array.isArray(targetChar)
         ? targetChar.map(v => String(v))
         : [String(targetChar)],
       userAnswer: inputValue.trim(),
       inputKind: 'type',
       isCorrect: false,
-      extra: { isReverse, quizType },
+      extra: {
+        contentType: 'vocabulary',
+        canonicalItemKey: correctChar,
+        questionType: quizType,
+        isReverse,
+        quizType,
+      },
     });
   };
 
@@ -317,7 +377,7 @@ const VocabInputGame = ({
                 className='flex flex-row items-center gap-1'
               >
                 <FuriganaText
-                  text={correctChar}
+                  text={questionPrompt}
                   reading={
                     !isReverse && quizType === 'meaning'
                       ? correctWordObj?.reading

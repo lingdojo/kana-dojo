@@ -1,5 +1,6 @@
 'use client';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { lazy, Suspense, useCallback, useEffect, useMemo, useState } from 'react';
+import { motion } from 'framer-motion';
 import { useKanaSelection } from '@/features/Kana';
 import { useKanjiSelection } from '@/features/Kanji';
 import { useVocabSelection } from '@/features/Vocabulary';
@@ -27,6 +28,8 @@ import {
 
 import { ActionButton } from '@/shared/ui/components/ActionButton';
 
+const Decorations = lazy(() => import('@/shared/ui-composite/Decorations/Decorations'));
+
 interface ModeSetupMenuProps {
   isOpen: boolean;
   onClose: () => void;
@@ -49,6 +52,7 @@ const difficultyIcons: Record<GauntletDifficulty, React.ReactNode> = {
 const USE_NEW_GAME_MODE_ICON_STYLE = true;
 const GAME_MODE_ICON_SIZE = 22;
 const GAME_MODE_ICON_FLOAT_DELAY_CLASS = '[animation-delay:180ms]';
+const USE_FLUSH_DIFFICULTY_TABS = false;
 const gameModeIconStyle = {
   base: 'motion-safe:animate-float flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border-b-6 transition-colors [--float-distance:-2px]',
   selected:
@@ -235,12 +239,23 @@ const ModeSetupMenu = ({
   if (!isOpen) return null;
 
   return (
-    <div className='fixed inset-0 z-[70] bg-(--background-color)'>
-      <div className='flex min-h-[100dvh] flex-col items-center justify-center p-4'>
-        <div className='w-full max-w-lg space-y-4'>
+    <div className='fixed inset-0 z-[70]'>
+      <div className='absolute inset-0 -z-20 bg-(--background-color)' />
+      <div className='absolute inset-0 -z-10'>
+        <Suspense fallback={<></>}>
+          <Decorations
+            expandDecorations={false}
+            interactive={true}
+            context='mode-setup'
+          />
+        </Suspense>
+      </div>
+      <div className='h-full w-full overflow-x-hidden overflow-y-auto overscroll-y-contain'>
+        <div className='mx-auto flex min-h-[100dvh] w-full max-w-lg flex-col justify-center p-4'>
+          <div className='w-full space-y-4'>
           {/* Header */}
           <div className='space-y-3 text-center'>
-            <span className='motion-safe:animate-float mx-auto flex h-20 w-20 items-center justify-center rounded-3xl border-b-14 border-(--secondary-color-accent) bg-(--secondary-color) text-(--background-color) [--float-distance:-5px]'>
+            <span className='motion-safe:animate-float mx-auto flex h-20 w-20 items-center justify-center rounded-4xl border-b-14 border-(--secondary-color-accent) bg-(--secondary-color) text-(--background-color) [--float-distance:-5px]'>
               <ModeIcon size={40} className='fill-current' />
             </span>
             <h1 className='text-2xl font-bold text-(--main-color)'>
@@ -315,37 +330,63 @@ const ModeSetupMenu = ({
             <>
               <div className='space-y-3'>
                 <h3 className='text-sm text-(--main-color)'>Difficulty</h3>
-                <div className='flex w-full justify-center gap-1 rounded-[22px] bg-(--card-color) p-1.5'>
-                  {(
-                    Object.entries(DIFFICULTY_CONFIG) as [
-                      GauntletDifficulty,
-                      (typeof DIFFICULTY_CONFIG)[GauntletDifficulty],
-                    ][]
-                  ).map(([key, config]) => {
-                    const isSelected = key === gauntletDifficulty;
-                    return (
-                      <button
-                        key={key}
-                        onClick={() => {
-                          playClick();
-                          setGauntletDifficulty(key);
-                          gauntletSettings.setDifficulty(
-                            dojoType,
-                            key,
-                          );
-                        }}
-                        className={clsx(
-                          'flex flex-1 cursor-pointer items-center justify-center gap-1.5 rounded-2xl px-4 pt-3 pb-5 text-sm font-semibold transition-colors duration-300',
-                          isSelected
-                            ? 'border-b-10 border-(--main-color-accent) bg-(--main-color) text-(--background-color)'
-                            : 'bg-transparent text-(--secondary-color) hover:text-(--main-color)',
-                        )}
-                      >
-                        {difficultyIcons[key]}
-                        <span>{config.label}</span>
-                      </button>
-                    );
-                  })}
+                <div className='mx-auto w-full rounded-2xl border-1 border-(--border-color) bg-(--background-color) p-1 shadow-[0_12px_40px_rgba(0,0,0,0.12)] backdrop-blur-xl'>
+                  <div
+                    className={clsx(
+                      'flex w-full gap-0 bg-(--card-color)',
+                      USE_FLUSH_DIFFICULTY_TABS
+                        ? 'rounded-[22px] p-0'
+                        : 'rounded-[22px] p-1.5',
+                    )}
+                  >
+                    {(
+                      Object.entries(DIFFICULTY_CONFIG) as [
+                        GauntletDifficulty,
+                        (typeof DIFFICULTY_CONFIG)[GauntletDifficulty],
+                      ][]
+                    ).map(([key, config]) => {
+                      const isSelected = key === gauntletDifficulty;
+                      return (
+                        <div key={key} className='relative flex-1'>
+                          {isSelected && (
+                            <motion.div
+                              layoutId='activeDifficultyTab'
+                              className={clsx(
+                                'absolute inset-0 border-b-10 border-(--main-color-accent) bg-(--main-color)',
+                                USE_FLUSH_DIFFICULTY_TABS
+                                  ? 'rounded-[22px]'
+                                  : 'rounded-2xl',
+                              )}
+                              transition={{
+                                type: 'spring',
+                                stiffness: 300,
+                                damping: 30,
+                              }}
+                            />
+                          )}
+                          <button
+                            onClick={() => {
+                              playClick();
+                              setGauntletDifficulty(key);
+                              gauntletSettings.setDifficulty(dojoType, key);
+                            }}
+                            className={clsx(
+                              'relative z-10 flex w-full cursor-pointer items-center justify-center gap-1.5 px-4 pt-3 pb-5 text-sm font-semibold transition-colors duration-300',
+                              USE_FLUSH_DIFFICULTY_TABS
+                                ? 'rounded-[22px]'
+                                : 'rounded-2xl',
+                              isSelected
+                                ? 'text-(--background-color)'
+                                : 'bg-transparent text-(--secondary-color) hover:text-(--main-color)',
+                            )}
+                          >
+                            {difficultyIcons[key]}
+                            <span>{config.label}</span>
+                          </button>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
                 <p className='text-center text-xs text-(--secondary-color)'>
                   {DIFFICULTY_CONFIG[gauntletDifficulty].description}
@@ -396,8 +437,8 @@ const ModeSetupMenu = ({
             </>
           )}
 
-          {/* Action Buttons */}
-          <div className='mx-auto flex w-full max-w-4xl flex-row items-center justify-center gap-2 md:gap-4'>
+            {/* Action Buttons */}
+            <div className='mx-auto flex w-full max-w-4xl flex-row items-center justify-center gap-2 md:gap-4'>
             <button
               className={clsx(
                 'flex w-1/2 flex-row items-center justify-center gap-2 px-2 py-3 sm:px-6',
@@ -461,6 +502,7 @@ const ModeSetupMenu = ({
                 </span>
               </button>
             </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -494,7 +536,7 @@ function GameModeCards({
             }}
             className={clsx(
               'w-full rounded-2xl p-5 text-left hover:cursor-pointer',
-              'flex items-center gap-4 border-2 bg-(--card-color)',
+              'flex items-center gap-4 border-4 bg-(--card-color)',
               isSelected ? 'border-(--main-color)' : 'border-(--border-color)',
             )}
           >
@@ -573,10 +615,21 @@ function SelectedLevelsCard({
     <div className='rounded-xl bg-(--card-color) p-4'>
       <div className='flex flex-col gap-2'>
         <div className='flex flex-row items-center gap-2'>
-          <CheckCircle2
-            className='shrink-0 text-(--secondary-color)'
-            size={20}
-          />
+          <div className='flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 border-(--secondary-color) bg-(--secondary-color)'>
+            <svg
+              className='h-3 w-3 text-(--background-color)'
+              fill='none'
+              viewBox='0 0 24 24'
+              stroke='currentColor'
+            >
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth={3}
+                d='M5 13l4 4L19 7'
+              />
+            </svg>
+          </div>
           <span className='text-sm'>
             {isKana ? 'Selected Groups:' : 'Selected Levels:'}
           </span>

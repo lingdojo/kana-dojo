@@ -4,15 +4,13 @@ import localforage from 'localforage';
 /**
  * Adaptive Weighted Selection System
  *
- * This system prioritizes characters the user struggles with while ensuring
- * a balanced learning experience. Key features:
+ * This selector is intentionally time-free.
  *
- * 1. Sigmoid-based weight calculation for smooth, bounded adjustments
- * 2. Recency tracking - recently missed characters get priority that decays
- * 3. Streak awareness - consecutive misses compound weight with diminishing returns
- * 4. Minimum floor - mastered characters still appear occasionally
- * 5. Exploration factor - ensures variety even among difficult characters
- * 6. Persistent storage using localforage (IndexedDB) for large datasets
+ * It prioritizes each key using:
+ * 1. Historical accuracy (persisted)
+ * 2. Current-session accuracy (resets per session)
+ * 3. Session recency measured as "selection events back"
+ * 4. Session frequency balancing (under-shown keys are boosted)
  */
 
 const random = new Random();
@@ -21,19 +19,41 @@ const random = new Random();
 const STORAGE_KEY = 'kanadojo-adaptive-weights';
 
 export interface CharacterWeight {
+  historicalCorrect: number;
+  historicalWrong: number;
+  sessionCorrect: number;
+  sessionWrong: number;
+  seenCountInSession: number;
+  lastSeenSelectionIndex: number | null;
+}
+
+interface FormatPerformance {
   correct: number;
   wrong: number;
-  recentMisses: number[]; // timestamps of recent misses
-  lastSeen: number; // timestamp when last shown
-  consecutiveCorrect: number;
-  consecutiveWrong: number;
+  pendingWrong: boolean;
+}
+
+interface PersistedCharacterWeight {
+  correct: number;
+  wrong: number;
 }
 
 // Serializable format for storage
 interface StoredWeights {
   version: number;
-  lastUpdated: number;
-  weights: Record<string, CharacterWeight>;
+  weights: Record<string, PersistedCharacterWeight>;
+}
+
+// Legacy v1 payload support
+interface LegacyStoredWeights {
+  version?: number;
+  weights?: Record<
+    string,
+    {
+      correct?: number;
+      wrong?: number;
+    }
+  >;
 }
 
 /**
@@ -42,18 +62,121 @@ interface StoredWeights {
  * game modes to have independent tracking.
  */
 export function createAdaptiveSelector(storageKey?: string) {
-  // Session-based weight tracking
+  // Combined historical + session tracking
   const characterWeights: Map<string, CharacterWeight> = new Map();
   let isLoaded = false;
   let loadPromise: Promise<void> | null = null;
   const persistKey = storageKey ? `${STORAGE_KEY}-${storageKey}` : STORAGE_KEY;
+  let currentSessionToken: string | null = null;
 
-  // Track the last selected character to prevent repeating the same exercise
+  // Track a selection event counter for session recency/frequency.
+  let sessionSelectionIndex = 0;
+
+  // Track how many answers have been submitted in the current session.
+  let sessionAnswerCount = 0;
+
+  // Track total shown items in this session (for expected frequency balancing).
+  let totalSelectionsInSession = 0;
+
+  // Prevent immediate duplicates.
   let lastSelectedCharacter: string | null = null;
+  const sessionFormatPerformance: Map<string, Map<string, FormatPerformance>> =
+    new Map();
 
-  // Debounced save to avoid excessive writes
-  let saveTimeout: ReturnType<typeof setTimeout> | null = null;
-  const SAVE_DEBOUNCE_MS = 2000; // Save at most every 2 seconds
+  // Coalesced persistence without timers.
+  let persistInFlight: Promise<void> | null = null;
+  let persistQueued = false;
+
+  const clamp = (value: number, min: number, max: number): number =>
+    Math.max(min, Math.min(max, value));
+
+  const createEmptyWeight = (): CharacterWeight => ({
+    historicalCorrect: 0,
+    historicalWrong: 0,
+    sessionCorrect: 0,
+    sessionWrong: 0,
+    seenCountInSession: 0,
+    lastSeenSelectionIndex: null,
+  });
+
+  const getOrCreateWeight = (char: string): CharacterWeight => {
+    const existing = characterWeights.get(char);
+    if (existing) return existing;
+    const initial = createEmptyWeight();
+    characterWeights.set(char, initial);
+    return initial;
+  };
+
+  const resetSessionState = (): void => {
+    sessionSelectionIndex = 0;
+    sessionAnswerCount = 0;
+    totalSelectionsInSession = 0;
+    lastSelectedCharacter = null;
+
+    characterWeights.forEach(weight => {
+      weight.sessionCorrect = 0;
+      weight.sessionWrong = 0;
+      weight.seenCountInSession = 0;
+      weight.lastSeenSelectionIndex = null;
+    });
+    sessionFormatPerformance.clear();
+  };
+
+  const getOrCreateFormatPerformance = (
+    word: string,
+    format: string,
+  ): FormatPerformance => {
+    const normalizedWord = word.trim();
+    const normalizedFormat = format.trim();
+    if (!normalizedWord || !normalizedFormat) {
+      return { correct: 0, wrong: 0, pendingWrong: false };
+    }
+
+    let formatMap = sessionFormatPerformance.get(normalizedWord);
+    if (!formatMap) {
+      formatMap = new Map();
+      sessionFormatPerformance.set(normalizedWord, formatMap);
+    }
+
+    const existing = formatMap.get(normalizedFormat);
+    if (existing) return existing;
+
+    const initial: FormatPerformance = { correct: 0, wrong: 0, pendingWrong: false };
+    formatMap.set(normalizedFormat, initial);
+    return initial;
+  };
+
+  const persistHistorical = async (): Promise<void> => {
+    if (persistInFlight) {
+      persistQueued = true;
+      return;
+    }
+
+    do {
+      persistQueued = false;
+      const stored: StoredWeights = {
+        version: 2,
+        weights: Object.fromEntries(
+          Array.from(characterWeights.entries()).map(([char, weight]) => [
+            char,
+            {
+              correct: weight.historicalCorrect,
+              wrong: weight.historicalWrong,
+            },
+          ]),
+        ),
+      };
+
+      persistInFlight = localforage
+        .setItem(persistKey, stored)
+        .then(() => undefined)
+        .catch(error => {
+          console.warn('[AdaptiveSelection] Failed to save to storage:', error);
+        });
+      await persistInFlight;
+      persistInFlight = null;
+    } while (persistQueued);
+  };
 
   /**
    * Load weights from persistent storage
@@ -64,16 +187,20 @@ export function createAdaptiveSelector(storageKey?: string) {
 
     loadPromise = (async () => {
       try {
-        const stored = await localforage.getItem<StoredWeights>(persistKey);
-        if (stored && stored.weights) {
-          // Convert stored object back to Map
-          Object.entries(stored.weights).forEach(([char, weight]) => {
-            // Filter out stale recentMisses (older than 2 minutes)
-            const now = Date.now();
-            weight.recentMisses = weight.recentMisses.filter(
-              t => now - t < 120000,
-            );
-            characterWeights.set(char, weight);
+        const stored = await localforage.getItem<
+          StoredWeights | LegacyStoredWeights
+        >(persistKey);
+
+        if (stored && typeof stored === 'object' && stored.weights) {
+          Object.entries(stored.weights).forEach(([char, raw]) => {
+            const correct = Math.max(0, raw?.correct ?? 0);
+            const wrong = Math.max(0, raw?.wrong ?? 0);
+
+            characterWeights.set(char, {
+              ...createEmptyWeight(),
+              historicalCorrect: correct,
+              historicalWrong: wrong,
+            });
           });
         }
       } catch (error) {
@@ -85,42 +212,34 @@ export function createAdaptiveSelector(storageKey?: string) {
     return loadPromise;
   };
 
-  /**
-   * Save weights to persistent storage (debounced)
-   */
-  const saveToStorage = (): void => {
-    // Debounce saves to avoid excessive writes
-    if (saveTimeout) {
-      clearTimeout(saveTimeout);
-    }
-
-    saveTimeout = setTimeout(async () => {
-      try {
-        const stored: StoredWeights = {
-          version: 1,
-          lastUpdated: Date.now(),
-          weights: Object.fromEntries(characterWeights),
-        };
-        await localforage.setItem(persistKey, stored);
-      } catch (error) {
-        console.warn('[AdaptiveSelection] Failed to save to storage:', error);
-      }
-    }, SAVE_DEBOUNCE_MS);
-  };
-
-  // Sigmoid function for smooth, bounded transformations
-  const sigmoid = (
-    x: number,
-    steepness: number = 1,
-    midpoint: number = 0,
+  const toAccuracyWeight = (
+    correct: number,
+    wrong: number,
+    {
+      minWeight,
+      maxWeight,
+      priorCorrect,
+      priorWrong,
+      scale,
+      neutralAccuracy,
+    }: {
+      minWeight: number;
+      maxWeight: number;
+      priorCorrect: number;
+      priorWrong: number;
+      scale: number;
+      neutralAccuracy: number;
+    },
   ): number => {
-    return 1 / (1 + Math.exp(-steepness * (x - midpoint)));
+    const attempts = correct + wrong;
+    const accuracy =
+      (correct + priorCorrect) / (attempts + priorCorrect + priorWrong);
+    return clamp(1 + (neutralAccuracy - accuracy) * scale, minWeight, maxWeight);
   };
 
   // Calculate adaptive weight for a character
   const calculateWeight = (char: string, allChars: string[]): number => {
     const weight = characterWeights.get(char);
-    const now = Date.now();
 
     // Base weight for new/unseen characters
     if (!weight) {
@@ -128,64 +247,69 @@ export function createAdaptiveSelector(storageKey?: string) {
     }
 
     const {
-      correct,
-      wrong,
-      recentMisses,
-      lastSeen,
-      consecutiveCorrect,
-      consecutiveWrong,
+      historicalCorrect,
+      historicalWrong,
+      sessionCorrect,
+      sessionWrong,
+      seenCountInSession,
+      lastSeenSelectionIndex,
     } = weight;
-    const totalAttempts = correct + wrong;
 
-    // Factor 1: Accuracy-based weight (inverted - lower accuracy = higher weight)
-    // Uses sigmoid to create smooth curve: 0% accuracy → ~2.5x, 50% accuracy → ~1.5x, 100% accuracy → ~0.3x
-    const accuracy = totalAttempts > 0 ? correct / totalAttempts : 0.5;
-    const accuracyWeight = 2.5 * sigmoid(0.5 - accuracy, 6, 0);
+    // Factor 1: Historical difficulty (persisted all-time signal)
+    const historicalWeight = toAccuracyWeight(historicalCorrect, historicalWrong, {
+      minWeight: 0.65,
+      maxWeight: 2.0,
+      priorCorrect: 2,
+      priorWrong: 2,
+      scale: 1.4,
+      neutralAccuracy: 0.74,
+    });
 
-    // Factor 2: Recency boost for recent misses (decays over time)
-    // Misses within last 30 seconds get full boost, decaying to 0 over 2 minutes
-    const recentMissWeight = recentMisses.reduce((acc, missTime) => {
-      const ageSeconds = (now - missTime) / 1000;
-      if (ageSeconds < 30) return acc + 0.5; // Full boost
-      if (ageSeconds < 120) return acc + 0.5 * (1 - (ageSeconds - 30) / 90); // Decay
-      return acc;
-    }, 0);
+    // Factor 2: Session difficulty (short-term adaptation signal)
+    const sessionAttempts = sessionCorrect + sessionWrong;
+    const sessionRawWeight = toAccuracyWeight(sessionCorrect, sessionWrong, {
+      minWeight: 0.6,
+      maxWeight: 2.4,
+      priorCorrect: 1,
+      priorWrong: 1,
+      scale: 2.0,
+      neutralAccuracy: 0.72,
+    });
+    const sessionConfidence = sessionAttempts / (sessionAttempts + 4);
+    const sessionWeight = 1 + (sessionRawWeight - 1) * sessionConfidence;
 
-    // Factor 3: Consecutive wrong answers (compound with diminishing returns)
-    // Uses sqrt for diminishing returns: 1 miss → 1.2x, 3 misses → 1.35x, 9 misses → 1.6x
-    const streakPenalty =
-      consecutiveWrong > 0 ? 1 + 0.2 * Math.sqrt(consecutiveWrong) : 1;
+    // Factor 3: Recency by selection-events-back (not wall-clock time)
+    const recencyWeight = (() => {
+      if (lastSeenSelectionIndex === null) return 1.35;
 
-    // Factor 4: Mastery cooldown (reduce weight for well-known characters)
-    // Characters answered correctly 3+ times in a row get reduced priority
-    const masteryCooldown =
-      consecutiveCorrect >= 3
-        ? Math.max(0.15, 1 - 0.15 * Math.min(consecutiveCorrect - 2, 5))
-        : 1;
+      const selectionsBack = sessionSelectionIndex - lastSeenSelectionIndex;
+      if (selectionsBack <= 0) return 0.2;
+      if (selectionsBack === 1) return 0.35;
+      if (selectionsBack === 2) return 0.55;
+      if (selectionsBack <= 4) return 0.8;
+      if (selectionsBack <= 8) return 1.0;
+      if (selectionsBack <= 16) return 1.15;
+      return 1.3;
+    })();
 
-    // Factor 5: Time since last seen (slight boost for characters not shown recently)
-    // Prevents the same character from appearing twice in quick succession
-    const timeSinceLastSeen = (now - lastSeen) / 1000;
-    const freshnessBoost = timeSinceLastSeen < 5 ? 0.3 : 1; // Suppress if shown in last 5 seconds
+    // Factor 4: Session frequency balancing (coverage/fairness)
+    const expectedSeenCount =
+      totalSelectionsInSession / Math.max(1, allChars.length);
+    const frequencyGap = expectedSeenCount - seenCountInSession;
+    const frequencyWeight = clamp(1 + frequencyGap * 0.45, 0.55, 2.2);
 
-    // Factor 6: Exploration factor based on character pool size
-    // Larger pools need more exploration; smaller pools focus more on problem areas
-    const explorationFactor =
-      allChars.length > 20
-        ? 0.9 + 0.1 * random.real(0, 1) // More focused
-        : 0.8 + 0.2 * random.real(0, 1); // More exploration
+    // Factor 5: Exploration noise (small, symmetric jitter)
+    const explorationWeight = 0.94 + 0.12 * random.real(0, 1);
 
-    // Combine all factors
     const finalWeight =
-      accuracyWeight *
-      (1 + recentMissWeight) *
-      streakPenalty *
-      masteryCooldown *
-      freshnessBoost *
-      explorationFactor;
+      historicalWeight *
+      sessionWeight *
+      recencyWeight *
+      frequencyWeight *
+      explorationWeight;
 
-    // Clamp to reasonable bounds: minimum 0.1 (never fully exclude), maximum 5.0
-    return Math.max(0.1, Math.min(5.0, finalWeight));
+    // Keep every key selectable while allowing strong prioritization.
+    return clamp(finalWeight, 0.08, 6.0);
   };
 
   /**
@@ -202,9 +326,12 @@ export function createAdaptiveSelector(storageKey?: string) {
     chars: string[],
     excludeChar?: string,
   ): string => {
+    const uniqueChars = Array.from(new Set(chars));
+    if (uniqueChars.length === 0) return '';
+
     // Exclude both the explicit excludeChar and the last selected character
     // to prevent the same exercise from appearing twice in a row
-    let availableChars = chars;
+    let availableChars = uniqueChars;
 
     if (excludeChar) {
       availableChars = availableChars.filter(c => c !== excludeChar);
@@ -217,7 +344,7 @@ export function createAdaptiveSelector(storageKey?: string) {
 
     if (availableChars.length === 0) {
       // Fallback: if all filtered out, use original chars
-      const selected = chars[0];
+      const selected = uniqueChars[0];
       lastSelectedCharacter = selected;
       return selected;
     }
@@ -231,7 +358,7 @@ export function createAdaptiveSelector(storageKey?: string) {
     // Calculate weights for all available characters
     const weights = availableChars.map(char => ({
       char,
-      weight: calculateWeight(char, chars),
+      weight: calculateWeight(char, uniqueChars),
     }));
 
     // Calculate total weight
@@ -262,39 +389,17 @@ export function createAdaptiveSelector(storageKey?: string) {
    * @param isCorrect - Whether the answer was correct
    */
   const updateCharacterWeight = (char: string, isCorrect: boolean): void => {
-    const now = Date.now();
-    const existing = characterWeights.get(char);
-
-    if (!existing) {
-      characterWeights.set(char, {
-        correct: isCorrect ? 1 : 0,
-        wrong: isCorrect ? 0 : 1,
-        recentMisses: isCorrect ? [] : [now],
-        lastSeen: now,
-        consecutiveCorrect: isCorrect ? 1 : 0,
-        consecutiveWrong: isCorrect ? 0 : 1,
-      });
+    if (!char) return;
+    const entry = getOrCreateWeight(char);
+    if (isCorrect) {
+      entry.historicalCorrect += 1;
+      entry.sessionCorrect += 1;
     } else {
-      // Update stats
-      if (isCorrect) {
-        existing.correct += 1;
-        existing.consecutiveCorrect += 1;
-        existing.consecutiveWrong = 0;
-      } else {
-        existing.wrong += 1;
-        existing.consecutiveWrong += 1;
-        existing.consecutiveCorrect = 0;
-        existing.recentMisses.push(now);
-        // Keep only misses from last 2 minutes
-        existing.recentMisses = existing.recentMisses.filter(
-          t => now - t < 120000,
-        );
-      }
-      existing.lastSeen = now;
+      entry.historicalWrong += 1;
+      entry.sessionWrong += 1;
     }
-
-    // Trigger debounced save to persistent storage
-    saveToStorage();
+    sessionAnswerCount += 1;
+    void persistHistorical();
   };
 
   /**
@@ -304,22 +409,12 @@ export function createAdaptiveSelector(storageKey?: string) {
    * @param char - The character being displayed
    */
   const markCharacterSeen = (char: string): void => {
-    const now = Date.now();
-    const existing = characterWeights.get(char);
-    if (existing) {
-      existing.lastSeen = now;
-    } else {
-      characterWeights.set(char, {
-        correct: 0,
-        wrong: 0,
-        recentMisses: [],
-        lastSeen: now,
-        consecutiveCorrect: 0,
-        consecutiveWrong: 0,
-      });
-    }
-    // Note: We don't save on markCharacterSeen to reduce writes
-    // Updates will be saved when updateCharacterWeight is called
+    if (!char) return;
+    const entry = getOrCreateWeight(char);
+    entry.seenCountInSession += 1;
+    entry.lastSeenSelectionIndex = sessionSelectionIndex;
+    sessionSelectionIndex += 1;
+    totalSelectionsInSession += 1;
   };
 
   /**
@@ -328,6 +423,8 @@ export function createAdaptiveSelector(storageKey?: string) {
    */
   const reset = async (): Promise<void> => {
     characterWeights.clear();
+    resetSessionState();
+    currentSessionToken = null;
     try {
       await localforage.removeItem(persistKey);
     } catch (error) {
@@ -350,17 +447,40 @@ export function createAdaptiveSelector(storageKey?: string) {
    */
   const getStats = () => {
     const entries = Array.from(characterWeights.entries());
-    const totalCorrect = entries.reduce((sum, [, w]) => sum + w.correct, 0);
-    const totalWrong = entries.reduce((sum, [, w]) => sum + w.wrong, 0);
+    const totalHistoricalCorrect = entries.reduce(
+      (sum, [, w]) => sum + w.historicalCorrect,
+      0,
+    );
+    const totalHistoricalWrong = entries.reduce(
+      (sum, [, w]) => sum + w.historicalWrong,
+      0,
+    );
+    const totalSessionCorrect = entries.reduce(
+      (sum, [, w]) => sum + w.sessionCorrect,
+      0,
+    );
+    const totalSessionWrong = entries.reduce(
+      (sum, [, w]) => sum + w.sessionWrong,
+      0,
+    );
 
     return {
       totalCharacters: characterWeights.size,
-      totalCorrect,
-      totalWrong,
-      accuracy:
-        totalCorrect + totalWrong > 0
-          ? totalCorrect / (totalCorrect + totalWrong)
+      totalHistoricalCorrect,
+      totalHistoricalWrong,
+      historicalAccuracy:
+        totalHistoricalCorrect + totalHistoricalWrong > 0
+          ? totalHistoricalCorrect /
+            (totalHistoricalCorrect + totalHistoricalWrong)
           : 0,
+      totalSessionCorrect,
+      totalSessionWrong,
+      sessionAccuracy:
+        totalSessionCorrect + totalSessionWrong > 0
+          ? totalSessionCorrect / (totalSessionCorrect + totalSessionWrong)
+          : 0,
+      sessionAnswerCount,
+      totalSelectionsInSession,
     };
   };
 
@@ -376,20 +496,64 @@ export function createAdaptiveSelector(storageKey?: string) {
    * Force an immediate save to storage.
    */
   const forceSave = async (): Promise<void> => {
-    if (saveTimeout) {
-      clearTimeout(saveTimeout);
-      saveTimeout = null;
+    await persistHistorical();
+  };
+
+  /**
+   * Start or switch to a new session token.
+   * This resets only session-scoped adaptation signals and keeps historical stats.
+   */
+  const startSession = (sessionToken?: string): void => {
+    const normalizedToken = sessionToken ?? null;
+    if (currentSessionToken === normalizedToken) return;
+    currentSessionToken = normalizedToken;
+    resetSessionState();
+  };
+
+  const registerQuestionFormatResult = (
+    word: string,
+    format: string,
+    isCorrect: boolean,
+  ): void => {
+    if (!word || !format) return;
+    const performance = getOrCreateFormatPerformance(word, format);
+    if (isCorrect) {
+      performance.correct += 1;
+      performance.pendingWrong = false;
+      return;
     }
-    try {
-      const stored: StoredWeights = {
-        version: 1,
-        lastUpdated: Date.now(),
-        weights: Object.fromEntries(characterWeights),
-      };
-      await localforage.setItem(persistKey, stored);
-    } catch (error) {
-      console.warn('[AdaptiveSelection] Failed to force save:', error);
-    }
+
+    performance.wrong += 1;
+    performance.pendingWrong = true;
+  };
+
+  const getPreferredLockedFormat = (
+    word: string,
+    candidateFormats: string[],
+  ): string | null => {
+    if (!word || candidateFormats.length === 0) return null;
+    const formatMap = sessionFormatPerformance.get(word);
+    if (!formatMap) return null;
+
+    const scored = candidateFormats
+      .map((format, index) => {
+        const perf = formatMap.get(format);
+        if (!perf || !perf.pendingWrong) return null;
+        const attempts = perf.correct + perf.wrong;
+        const accuracy = attempts > 0 ? perf.correct / attempts : 1;
+        return { format, index, accuracy, wrong: perf.wrong };
+      })
+      .filter((entry): entry is NonNullable<typeof entry> => entry !== null);
+
+    if (scored.length === 0) return null;
+
+    scored.sort((a, b) => {
+      if (a.accuracy !== b.accuracy) return a.accuracy - b.accuracy;
+      if (a.wrong !== b.wrong) return b.wrong - a.wrong;
+      return a.index - b.index;
+    });
+
+    return scored[0].format;
   };
 
   return {
@@ -401,6 +565,9 @@ export function createAdaptiveSelector(storageKey?: string) {
     getStats,
     ensureLoaded,
     forceSave,
+    startSession,
+    registerQuestionFormatResult,
+    getPreferredLockedFormat,
   };
 }
 

@@ -14,6 +14,7 @@ import {
   Sparkle,
   FileDiff,
   CircleHelp,
+  Bug,
 } from 'lucide-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDiscord, faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -23,7 +24,7 @@ import { useThemePreferences } from '@/features/Preferences';
 import useDecorationsStore from '@/shared/store/useDecorationsStore';
 import { useMediaQuery } from 'react-responsive';
 
-const Decorations = lazy(() => import('./Decorations'));
+const Decorations = lazy(() => import('@/shared/ui-composite/Decorations/Decorations'));
 
 const MainMenu = () => {
   const [isMounted, setIsMounted] = useState(false);
@@ -170,39 +171,44 @@ const MainMenu = () => {
         <div className='flex w-full flex-row items-center justify-between gap-2 px-1'>
           <KanaDojoBanner />
           <div className='flex w-1/2 flex-row justify-end gap-2 md:w-1/3'>
-            {theme === 'dark' ? (
-              <Moon
-                size={32}
-                onClick={() => {
-                  playClick();
-                  setTheme('light');
-                }}
-                className={clsx(
-                  'duration-250 hover:cursor-pointer',
-                  'active:scale-100 active:duration-225',
-                  'text-(--secondary-color) hover:text-(--main-color)',
-                )}
-              />
-            ) : (
-              <Sun
-                size={32}
-                onClick={() => {
-                  playClick();
-                  setTheme('dark');
-                }}
-                className={clsx(
-                  'duration-250 hover:cursor-pointer',
-                  'active:scale-100 active:duration-225',
-                  'text-(--secondary-color) hover:text-(--main-color)',
-                )}
-              />
-            )}
+            <button
+              type='button'
+              onClick={() => {
+                playClick();
+                window.open('https://tally.so/r/2E4rB9', '_blank', 'noopener');
+              }}
+              className={clsx(
+                'inline-flex sm:hidden',
+                'duration-250 hover:cursor-pointer hover:scale-105',
+                'active:scale-100 active:duration-225',
+                'fill-current text-(--secondary-color) hover:text-(--main-color)',
+              )}
+              aria-label='Report a bug'
+            >
+              <Bug size={32} fill='currentColor' />
+            </button>
+            <button
+              type='button'
+              onClick={() => {
+                playClick();
+                setTheme(theme === 'dark' ? 'light' : 'dark');
+              }}
+              className={clsx(
+                'hidden sm:inline-flex',
+                'duration-250 hover:cursor-pointer',
+                'active:scale-100 active:duration-225',
+                'text-(--secondary-color) hover:text-(--main-color)',
+              )}
+              aria-label='Toggle theme'
+            >
+              {theme === 'dark' ? <Moon size={32} /> : <Sun size={32} />}
+            </button>
 
             <FontAwesomeIcon
               icon={faDiscord}
               size='2x'
               className={clsx(
-                'duration-250 hover:cursor-pointer',
+                'duration-250 hover:cursor-pointer hover:scale-105',
                 'active:scale-100 active:duration-225',
                 'md:hidden',
                 'text-(--secondary-color) hover:text-(--main-color)',
@@ -216,7 +222,7 @@ const MainMenu = () => {
               icon={faGithub}
               size='2x'
               className={clsx(
-                'duration-250 hover:cursor-pointer',
+                'duration-250 hover:cursor-pointer hover:scale-105',
                 'active:scale-100 active:duration-225',
                 'text-(--secondary-color) hover:text-(--main-color)',
               )}
@@ -225,10 +231,26 @@ const MainMenu = () => {
                 window.open('https://github.com/lingdojo/kana-dojo', '_blank');
               }}
             />
+            <button
+              type='button'
+              onClick={() => {
+                playClick();
+                window.open('https://tally.so/r/2E4rB9', '_blank', 'noopener');
+              }}
+              className={clsx(
+                'hidden sm:inline-flex',
+                'duration-250 hover:cursor-pointer hover:scale-105',
+                'active:scale-100 active:duration-225',
+                ' text-(--secondary-color) hover:text-(--main-color)',
+              )}
+              aria-label='Report a bug'
+            >
+              <Bug size={32}  />
+            </button>
             <Heart
               size={32}
               className={clsx(
-                'duration-250 hover:cursor-pointer',
+                'duration-250 hover:cursor-pointer hover:scale-105',
                 'active:scale-100 active:duration-225',
                 'animate-bounce fill-current text-red-500',
               )}
@@ -325,7 +347,7 @@ const MainMenu = () => {
               key={i}
               className={clsx(
                 'flex flex-row items-center gap-1 text-(--secondary-color) hover:cursor-pointer hover:text-(--main-color)',
-                link.name === 'credits' && 'hidden lg:flex',
+                (link.name === 'credits' || link.name === 'about') && 'hidden sm:flex',
               )}
               onClick={() => playClick()}
             >

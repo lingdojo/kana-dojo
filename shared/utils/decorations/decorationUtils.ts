@@ -85,7 +85,9 @@ const loadDecorationFonts = async (
   if (fontsCache) return fontsCache;
   if (fontsLoadingPromise) return fontsLoadingPromise;
 
-  fontsLoadingPromise = import('@/features/MainMenu/decorationFonts').then(
+  fontsLoadingPromise = import(
+    '@/shared/ui-composite/Decorations/decorationFonts'
+  ).then(
     module => {
       fontsCache = module.decorationFonts;
       fontsLoadingPromise = null;

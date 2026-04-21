@@ -6,7 +6,6 @@ import { motion } from 'framer-motion';
 import useKanjiStore, { IKanjiObj } from '@/features/Kanji/store/useKanjiStore';
 import { useClick, useCorrect, useError } from '@/shared/hooks/generic/useAudio';
 // import GameIntel from '@/shared/ui-composite/Game/GameIntel';
-import { useStopwatch } from 'react-timer-hook';
 import { useStatsStore } from '@/features/Progress';
 import { useShallow } from 'zustand/react/shallow';
 import Stars from '@/shared/ui-composite/Game/Stars';
@@ -19,6 +18,7 @@ import { GameBottomBar } from '@/shared/ui-composite/Game/GameBottomBar';
 import useClassicSessionStore from '@/shared/store/useClassicSessionStore';
 import { useThemePreferences } from '@/features/Preferences';
 import { cn } from '@/shared/utils/utils';
+import useSetProgressStore from '@/features/Progress/store/useSetProgressStore';
 
 // Get the global adaptive selector for weighted character selection
 const adaptiveSelector = getGlobalAdaptiveSelector();
@@ -38,6 +38,9 @@ const KanjiInputGame = ({
   isReverse = false,
 }: KanjiInputGameProps) => {
   const logAttempt = useClassicSessionStore(state => state.logAttempt);
+  const recordKanjiProgress = useSetProgressStore(
+    state => state.recordKanjiProgress,
+  );
   // Get the current JLPT level from the Kanji store
   const selectedKanjiCollection = useKanjiStore(
     state => state.selectedKanjiCollection,
@@ -73,7 +76,8 @@ const KanjiInputGame = ({
 
   const isGlassMode = useThemePreferences().isGlassMode;
 
-  const speedStopwatch = useStopwatch({ autoStart: false });
+  const answerStartTimeRef = useRef<number | null>(null);
+  const elapsedTimeMsRef = useRef(0);
 
   const { playClick } = useClick();
   const { playCorrect } = useCorrect();
@@ -118,6 +122,26 @@ const KanjiInputGame = ({
 
   const [displayAnswerSummary, setDisplayAnswerSummary] = useState(false);
   const [promptSequence, setPromptSequence] = useState(0);
+  const pauseTimer = () => {
+    if (answerStartTimeRef.current !== null) {
+      elapsedTimeMsRef.current += performance.now() - answerStartTimeRef.current;
+      answerStartTimeRef.current = null;
+    }
+  };
+  const getElapsedTimeMs = () => {
+    if (answerStartTimeRef.current !== null) {
+      return elapsedTimeMsRef.current + (performance.now() - answerStartTimeRef.current);
+    }
+    return elapsedTimeMsRef.current;
+  };
+  const resetTimer = () => {
+    answerStartTimeRef.current = null;
+    elapsedTimeMsRef.current = 0;
+  };
+  const startTimer = () => {
+    answerStartTimeRef.current = performance.now();
+    elapsedTimeMsRef.current = 0;
+  };
   const [feedback, setFeedback] = useState<React.ReactElement>(
     <>{'feedback ~'}</>,
   );
@@ -159,8 +183,8 @@ const KanjiInputGame = ({
   }, [bottomBarState]);
 
   useEffect(() => {
-    if (isHidden) speedStopwatch.pause();
-  }, [isHidden, speedStopwatch]);
+    if (isHidden) pauseTimer();
+  }, [isHidden]);
 
   if (!selectedKanjiObjs || selectedKanjiObjs.length === 0) {
     return null;
@@ -201,17 +225,19 @@ const KanjiInputGame = ({
   };
 
   const handleCorrectAnswer = (userInput: string) => {
-    speedStopwatch.pause();
-    const answerTimeMs = speedStopwatch.totalMilliseconds;
+    pauseTimer();
+    const answerTimeMs = getElapsedTimeMs();
     addCorrectAnswerTime(answerTimeMs / 1000);
     recordAnswerTime(answerTimeMs);
-    speedStopwatch.reset();
+    resetTimer();
     setCurrentKanjiObj(correctKanjiObj as IKanjiObj);
+    const canonicalKanjiChar = correctKanjiObj?.kanjiChar ?? correctChar;
 
     playCorrect();
-    addCharacterToHistory(correctChar);
-    incrementCharacterScore(correctChar, 'correct');
+    addCharacterToHistory(canonicalKanjiChar);
+    incrementCharacterScore(canonicalKanjiChar, 'correct');
     incrementCorrectAnswers();
+    void recordKanjiProgress(canonicalKanjiChar);
     setScore(score + 1);
 
     triggerCrazyMode();
@@ -237,7 +263,7 @@ const KanjiInputGame = ({
       </>,
     );
     logAttempt({
-      questionId: correctChar,
+      questionId: canonicalKanjiChar,
       questionPrompt: correctChar,
       expectedAnswers: Array.isArray(targetChar)
         ? targetChar.map(v => String(v))
@@ -246,15 +272,20 @@ const KanjiInputGame = ({
       inputKind: 'type',
       isCorrect: true,
       timeTakenMs: answerTimeMs,
-      extra: { isReverse },
+      extra: {
+        contentType: 'kanji',
+        canonicalItemKey: canonicalKanjiChar,
+        isReverse,
+      },
     });
   };
 
   const handleWrongAnswer = () => {
+    const canonicalKanjiChar = correctKanjiObj?.kanjiChar ?? correctChar;
     setInputValue('');
     playErrorTwice();
 
-    incrementCharacterScore(correctChar, 'wrong');
+    incrementCharacterScore(canonicalKanjiChar, 'wrong');
     incrementWrongAnswers();
     if (score - 1 < 0) {
       setScore(0);
@@ -266,7 +297,7 @@ const KanjiInputGame = ({
     incrementWrongStreak();
     setBottomBarState('wrong');
     logAttempt({
-      questionId: correctChar,
+      questionId: canonicalKanjiChar,
       questionPrompt: correctChar,
       expectedAnswers: Array.isArray(targetChar)
         ? targetChar.map(v => String(v))
@@ -274,7 +305,11 @@ const KanjiInputGame = ({
       userAnswer: inputValue.trim(),
       inputKind: 'type',
       isCorrect: false,
-      extra: { isReverse },
+      extra: {
+        contentType: 'kanji',
+        canonicalItemKey: canonicalKanjiChar,
+        isReverse,
+      },
     });
   };
 
@@ -298,8 +333,7 @@ const KanjiInputGame = ({
     generateNewCharacter();
     setPromptSequence(prev => prev + 1);
     setBottomBarState('check');
-    speedStopwatch.reset();
-    speedStopwatch.start();
+    startTimer();
   };
 
   const gameMode = isReverse ? 'reverse input' : 'input';

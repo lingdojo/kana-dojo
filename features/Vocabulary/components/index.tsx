@@ -8,6 +8,9 @@ import {
   VocabLevel,
 } from '@/features/Vocabulary/services/vocabDataService';
 import LevelSetCards from '@/shared/ui-composite/Menu/LevelSetCards';
+import useSetProgressHydration from '@/features/Progress/hooks/useSetProgress';
+import useSetProgressStore from '@/features/Progress/store/useSetProgressStore';
+import { calculateVocabularySetProgress } from '@/features/Progress/lib/setProgress';
 import {
   N1VocabLength,
   N2VocabLength,
@@ -77,6 +80,20 @@ const VocabCards = () => {
     (level: VocabLevel) => VOCAB_LENGTHS[level],
     [],
   );
+  useSetProgressHydration();
+  const vocabularyProgress = useSetProgressStore(
+    state => state.data.vocabulary,
+  );
+  const getSetProgress = useCallback(
+    (items: IWord[]) =>
+      calculateVocabularySetProgress(
+        items.map(item => ({
+          meaningCorrect: vocabularyProgress[item.word]?.meaningCorrect ?? 0,
+          readingCorrect: vocabularyProgress[item.word]?.readingCorrect ?? 0,
+        })),
+      ),
+    [vocabularyProgress],
+  );
 
   return (
     <LevelSetCards<VocabLevel, IWord>
@@ -96,6 +113,7 @@ const VocabCards = () => {
       collapsedRows={collapsedRows}
       setCollapsedRows={setCollapsedRows}
       renderSetDictionary={items => <VocabSetDictionary words={items} />}
+      getSetProgress={getSetProgress}
       loadingText='Loading vocabulary sets...'
     />
   );

@@ -2,6 +2,10 @@
 import { useState, useEffect } from 'react';
 import { Lightbulb } from 'lucide-react';
 import { Random } from 'random-js';
+import clsx from 'clsx';
+
+const lightbulbIconClasses =
+  'flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border-b-4 border-(--main-color-accent) bg-(--main-color) text-(--background-color) motion-safe:animate-float [--float-distance:-2px] [&>svg]:h-4 [&>svg]:w-4';
 
 // Module-level cache for facts - prevents refetching on every mount
 let factsCache: string[] | null = null;
@@ -61,7 +65,9 @@ const RandomFact = () => {
   return (
     <div className='mt-3 border-t border-(--border-color) pt-3'>
       <div className='flex items-start gap-2'>
-        <Lightbulb className='size-4 flex-shrink-0 text-(--main-color)' />
+        <span className={clsx(lightbulbIconClasses)}>
+          <Lightbulb />
+        </span>
         <p className='text-xs text-(--secondary-color) italic md:text-sm'>
           {fact}
         </p>

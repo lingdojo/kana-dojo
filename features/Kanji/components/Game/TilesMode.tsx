@@ -10,7 +10,6 @@ import Stars from '@/shared/ui-composite/Game/Stars';
 import { useCrazyModeTrigger } from '@/features/CrazyMode/hooks/useCrazyModeTrigger';
 import { useStatsStore } from '@/features/Progress';
 import { useShallow } from 'zustand/react/shallow';
-import { useStopwatch } from 'react-timer-hook';
 import { useSmartReverseMode } from '@/shared/hooks/game/useSmartReverseMode';
 import { useTilesMode } from '@/shared/hooks/game/useTilesMode';
 import { GameBottomBar } from '@/shared/ui-composite/Game/GameBottomBar';
@@ -26,6 +25,7 @@ import {
 } from '@/shared/ui-composite/Game/TilesModeShared';
 import TilesModeGrid from '@/shared/ui-composite/Game/TilesModeGrid';
 import useClassicSessionStore from '@/shared/store/useClassicSessionStore';
+import useSetProgressStore from '@/features/Progress/store/useSetProgressStore';
 
 const random = new Random();
 const adaptiveSelector = getGlobalAdaptiveSelector();
@@ -53,6 +53,9 @@ const KanjiTilesMode = ({
   onWrong: externalOnWrong,
 }: KanjiTilesModeProps) => {
   const logAttempt = useClassicSessionStore(state => state.logAttempt);
+  const recordKanjiProgress = useSetProgressStore(
+    state => state.recordKanjiProgress,
+  );
   // Smart reverse mode - used when not controlled externally
   const {
     isReverse: internalIsReverse,
@@ -83,7 +86,26 @@ const KanjiTilesMode = ({
   const isGlassMode = useThemePreferences().isGlassMode;
 
   // Answer timing for speed achievements
-  const speedStopwatch = useStopwatch({ autoStart: false });
+  const answerStartTimeRef = useRef<number | null>(null);
+  const answerElapsedMsRef = useRef(0);
+  const startAnswerTimer = useCallback(() => {
+    answerElapsedMsRef.current = 0;
+    answerStartTimeRef.current = performance.now();
+  }, []);
+  const pauseAnswerTimer = useCallback(() => {
+    if (answerStartTimeRef.current !== null) {
+      answerElapsedMsRef.current += performance.now() - answerStartTimeRef.current;
+      answerStartTimeRef.current = null;
+    }
+  }, []);
+  const getAnswerTimeMs = useCallback(() => {
+    if (answerStartTimeRef.current === null) return answerElapsedMsRef.current;
+    return answerElapsedMsRef.current + (performance.now() - answerStartTimeRef.current);
+  }, []);
+  const resetAnswerTimer = useCallback(() => {
+    answerStartTimeRef.current = null;
+    answerElapsedMsRef.current = 0;
+  }, []);
   const { playCorrect } = useCorrect();
   const { playErrorTwice } = useError();
   const { playClick } = useClick();
@@ -198,20 +220,19 @@ const KanjiTilesMode = ({
     setBottomBarState('check');
     setDisplayAnswerSummary(false);
     // Start timing for the new question
-    speedStopwatch.reset();
-    speedStopwatch.start();
-  }, [generateQuestion]);
+    startAnswerTimer();
+  }, [generateQuestion, startAnswerTimer]);
 
   useEffect(() => {
     resetGame();
   }, [isReverse, resetGame]);
 
-  // Pause stopwatch when game is hidden
+  // Pause timer when game is hidden
   useEffect(() => {
     if (isHidden) {
-      speedStopwatch.pause();
+      pauseAnswerTimer();
     }
-  }, [isHidden]);
+  }, [isHidden, pauseAnswerTimer]);
 
   // Keyboard shortcut for Enter/Space to trigger button
   useTilesModeActionKey(buttonRef);
@@ -221,8 +242,8 @@ const KanjiTilesMode = ({
     if (placedTileIds.length === 0) return;
 
     // Stop timing and record answer time
-    speedStopwatch.pause();
-    const answerTimeMs = speedStopwatch.totalMilliseconds;
+    pauseAnswerTimer();
+    const answerTimeMs = getAnswerTimeMs();
 
     playClick();
     setIsChecking(true);
@@ -237,7 +258,7 @@ const KanjiTilesMode = ({
       // Record answer time for speed achievements
       addCorrectAnswerTime(answerTimeMs / 1000);
       recordAnswerTime(answerTimeMs);
-      speedStopwatch.reset();
+      resetAnswerTimer();
 
       playCorrect();
       triggerCrazyMode();
@@ -246,6 +267,7 @@ const KanjiTilesMode = ({
       // Track stats for the kanji
       addCharacterToHistory(questionData.kanjiChar);
       incrementCharacterScore(questionData.kanjiChar, 'correct');
+      void recordKanjiProgress(questionData.kanjiChar);
       adaptiveSelector.updateCharacterWeight(questionData.kanjiChar, true);
       incrementKanjiCorrect(selectedKanjiCollection.toUpperCase());
 
@@ -275,10 +297,14 @@ const KanjiTilesMode = ({
         isCorrect: true,
         timeTakenMs: answerTimeMs,
         optionsShown: Array.from(questionData.allTiles.values()),
-        extra: { isReverse },
+        extra: {
+          contentType: 'kanji',
+          canonicalItemKey: questionData.kanjiChar,
+          isReverse,
+        },
       });
     } else {
-      speedStopwatch.reset();
+      resetAnswerTimer();
       playErrorTwice();
       triggerCrazyMode();
       incrementWrongStreak();
@@ -307,7 +333,11 @@ const KanjiTilesMode = ({
         inputKind: 'word_building',
         isCorrect: false,
         optionsShown: Array.from(questionData.allTiles.values()),
-        extra: { isReverse },
+        extra: {
+          contentType: 'kanji',
+          canonicalItemKey: questionData.kanjiChar,
+          isReverse,
+        },
       });
     }
   }, [
@@ -335,6 +365,9 @@ const KanjiTilesMode = ({
     isReverse,
     addCorrectAnswerTime,
     recordAnswerTime,
+    pauseAnswerTimer,
+    getAnswerTimeMs,
+    resetAnswerTimer,
   ]);
 
   // Handle Continue button (only for correct answers)
@@ -363,9 +396,8 @@ const KanjiTilesMode = ({
     setPlacedTileIds([]);
     setIsChecking(false);
     setBottomBarState('check');
-    speedStopwatch.reset();
-    speedStopwatch.start();
-  }, [playClick]);
+    startAnswerTimer();
+  }, [playClick, startAnswerTimer]);
 
   // Handle tile click - add or remove from placed tiles
   const handleTileClick = useCallback(
@@ -378,8 +410,7 @@ const KanjiTilesMode = ({
       if (bottomBarState === 'wrong') {
         setIsChecking(false);
         setBottomBarState('check');
-        speedStopwatch.reset();
-        speedStopwatch.start();
+        startAnswerTimer();
       }
 
       setPlacedTileIds(prevIds =>
@@ -388,7 +419,7 @@ const KanjiTilesMode = ({
           : [...prevIds, id],
       );
     },
-    [isChecking, bottomBarState, playClick],
+    [isChecking, bottomBarState, playClick, startAnswerTimer],
   );
 
   // Not enough characters

@@ -27,6 +27,7 @@ Welcome to the KanaDojo documentation. This index provides quick access to all p
 | --------------------------------- | ------------------------------------------------------- |
 | [Achievements](./ACHIEVEMENTS.md) | Achievement system with 80+ badges across 12 categories |
 | [SEO](./SEO.md)                   | SEO implementation, metadata, and structured data       |
+| [Release Process](./RELEASE.md)   | How app versions and GitHub releases are created         |
 
 ## Internationalization (i18n)
 

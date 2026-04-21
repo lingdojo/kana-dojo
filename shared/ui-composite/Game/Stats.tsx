@@ -1,68 +1,62 @@
 'use client';
 import { useEffect, useMemo } from 'react';
-import clsx from 'clsx';
 import {
+  CircleArrowLeft,
   Hourglass,
   SquareCheck,
   SquareX,
   Target,
   Timer,
-  Clover,
-  HeartCrack,
   Flame,
   Shapes,
   TrendingUp,
   Clock,
   Activity,
-  ChevronsLeft,
   LucideIcon,
 } from 'lucide-react';
 import { useStatsDisplay } from '@/features/Progress';
-import { findHighestCounts } from '@/shared/utils/helperFunctions';
 import { useClick } from '@/shared/hooks/generic/useAudio';
 
-interface StatItem {
-  label: string;
-  value: string;
+interface BentoTileProps {
   Icon: LucideIcon;
+  label: string;
+  value: string | number;
+  description?: string;
+  className?: string;
+  valueClassName?: string;
 }
 
-interface StatCardProps {
-  title: string;
-  stats: StatItem[];
-}
-
-const StatCard: React.FC<StatCardProps> = ({ title, stats }) => (
-  <div className='w-full rounded-lg border-(--border-color) bg-(--bg-color) p-6'>
-    <h3 className='mb-6 border-b-2 border-(--border-color) pb-3 text-2xl font-bold text-(--secondary-color)'>
-      {title}
-    </h3>
-    <div className='space-y-4'>
-      {stats.map(({ label, value, Icon }: StatItem, i: number) => (
-        <div
-          key={label}
-          className={clsx(
-            'flex items-center justify-between gap-4 pb-4',
-            i < stats.length - 1 && 'border-b border-(--border-color)/70',
-          )}
-        >
-          <div className='flex min-w-0 flex-1 items-center gap-2'>
-            <Icon
-              size={20}
-              className='flex-shrink-0 text-(--secondary-color)'
-            />
-            <span className='truncate text-sm text-(--text-color)/80 md:text-base'>
-              {label}
-            </span>
-          </div>
-          <span className='text-base font-semibold whitespace-nowrap md:text-lg'>
-            {value}
-          </span>
-        </div>
-      ))}
+function BentoTile({
+  Icon,
+  label,
+  value,
+  description,
+  className = '',
+  valueClassName = '',
+}: BentoTileProps) {
+  return (
+    <div
+      className={`flex min-w-0 flex-col justify-between overflow-hidden rounded-[2rem] border-2 border-(--secondary-color)/10 bg-(--background-color) p-5 sm:p-6 ${className}`}
+    >
+      <div className='mb-2 flex min-w-0 items-center gap-2'>
+        <Icon className='h-4 w-4 shrink-0 text-(--secondary-color) opacity-60' />
+        <span className='block min-w-0 break-all text-[11px] leading-tight font-bold tracking-wider text-(--secondary-color) uppercase opacity-60 sm:text-xs'>
+          {label}
+        </span>
+      </div>
+      <div
+        className={`min-w-0 overflow-hidden break-words text-2xl font-black tracking-tighter text-(--main-color) sm:text-3xl ${valueClassName}`}
+      >
+        {value}
+      </div>
+      {description ? (
+        <p className='mt-2 text-sm text-(--secondary-color) lowercase opacity-60'>
+          {description}
+        </p>
+      ) : null}
     </div>
-  </div>
-);
+  );
+}
 
 const Stats: React.FC = () => {
   const { playClick } = useClick();
@@ -88,14 +82,13 @@ const Stats: React.FC = () => {
   const characterHistory = statsData.characterHistory;
   const totalMilliseconds = statsData.totalMilliseconds;
   const correctAnswerTimes = statsData.correctAnswerTimes;
-  const characterScores = statsData.characterScores;
 
   // Memoized stat calculations
   const stats = useMemo(() => {
     // Calculate time
     const totalMinutes = Math.floor(totalMilliseconds / 60000);
-    const seconds = ((totalMilliseconds / 1000) % 60).toFixed(0);
-    const timeDisplay = `${totalMinutes}m ${seconds}s`;
+    const seconds = Math.floor((totalMilliseconds / 1000) % 60);
+    const timeDisplay = `${totalMinutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
 
     // Calculate accuracy metrics
     const totalAnswers = numCorrectAnswers + numWrongAnswers;
@@ -123,14 +116,7 @@ const Stats: React.FC = () => {
       ? Math.max(...correctAnswerTimes).toFixed(2)
       : null;
 
-    // Calculate character metrics
     const uniqueChars = [...new Set(characterHistory)].length;
-    const {
-      highestCorrectChars,
-      highestCorrectCharsValue,
-      highestWrongChars,
-      highestWrongCharsValue,
-    } = findHighestCounts(characterScores);
 
     return {
       totalMinutes,
@@ -144,10 +130,6 @@ const Stats: React.FC = () => {
       fastestTime,
       slowestTime,
       uniqueChars,
-      highestCorrectChars,
-      highestCorrectCharsValue,
-      highestWrongChars,
-      highestWrongCharsValue,
     };
   }, [
     totalMilliseconds,
@@ -155,7 +137,6 @@ const Stats: React.FC = () => {
     numWrongAnswers,
     correctAnswerTimes,
     characterHistory,
-    characterScores,
   ]);
 
   const formatValue = (
@@ -167,105 +148,128 @@ const Stats: React.FC = () => {
     return `${value}${suffix}`;
   };
 
-  const generalStats: StatItem[] = [
-    { label: 'Training Time', value: stats.timeDisplay, Icon: Hourglass },
-    {
-      label: 'Correct Answers',
-      value: formatValue(numCorrectAnswers),
-      Icon: SquareCheck,
-    },
-    {
-      label: 'Wrong Answers',
-      value: formatValue(numWrongAnswers),
-      Icon: SquareX,
-    },
-    {
-      label: 'Accuracy',
-      value: formatValue(stats.accuracy.toFixed(1), '%'),
-      Icon: Target,
-    },
-  ];
-
-  const answerStats: StatItem[] = [
-    {
-      label: 'Average Time',
-      value: formatValue(stats.avgTime, 's'),
-      Icon: Timer,
-    },
-    {
-      label: 'Fastest Answer',
-      value: formatValue(stats.fastestTime, 's'),
-      Icon: Flame,
-    },
-    {
-      label: 'Slowest Answer',
-      value: formatValue(stats.slowestTime, 's'),
-      Icon: Clock,
-    },
-    {
-      label: 'Correct/Incorrect Ratio',
-      value: formatValue(
-        stats.ciRatio === Infinity ? '∞' : stats.ciRatio.toFixed(2),
-      ),
-      Icon: TrendingUp,
-    },
-  ];
-
-  const characterStats: StatItem[] = [
-    {
-      label: 'Characters Played',
-      value: formatValue(characterHistory.length),
-      Icon: Activity,
-    },
-    {
-      label: 'Unique Characters',
-      value: formatValue(stats.uniqueChars),
-      Icon: Shapes,
-    },
-    {
-      label: 'Easiest Characters',
-      value:
-        stats.highestCorrectChars.length > 0
-          ? `${stats.highestCorrectChars.join(', ')} (${stats.highestCorrectCharsValue})`
-          : '~',
-      Icon: Clover,
-    },
-    {
-      label: 'Hardest Characters',
-      value:
-        stats.highestWrongChars.length > 0
-          ? `${stats.highestWrongChars.join(', ')} (${stats.highestWrongCharsValue})`
-          : '~',
-      Icon: HeartCrack,
-    },
-  ];
-
   return (
-    <div className='flex min-h-screen w-full items-center justify-center bg-(--bg-color) px-4 py-8 md:py-12'>
-      <div className='mx-auto w-full max-w-7xl'>
-        {/* Header */}
-        <button
-          onClick={() => {
-            playClick();
-            toggleStats();
-          }}
-          className='group flex w-full items-center justify-center gap-3 hover:cursor-pointer'
-        >
-          <ChevronsLeft
-            size={32}
-            className='text-(--border-color) hover:text-(--secondary-color)'
-          />
-          <h2 className='flex items-center justify-center gap-3 text-3xl font-bold md:text-4xl'>
-            Statistics
-            <Activity size={32} className='text-(--secondary-color)' />
-          </h2>
-        </button>
+    <div className='fixed inset-0 z-50 flex h-full w-full flex-col overflow-x-hidden overflow-y-auto bg-(--background-color)'>
+      <div className='mx-auto flex min-h-full w-full max-w-7xl flex-1 flex-col justify-start px-4 py-8 sm:min-h-[100dvh] sm:justify-center sm:px-8 sm:py-20 lg:px-12 lg:py-16'>
+        <div className='mb-8 flex flex-col items-center gap-1 text-center select-none sm:mb-12 sm:items-start sm:text-left lg:mb-16'>
+          <h1 className='text-3xl font-black tracking-tighter text-(--main-color) lowercase sm:text-5xl lg:text-6xl'>
+            statistics
+          </h1>
+          <p className='text-base font-medium tracking-tight text-(--secondary-color) lowercase opacity-60 sm:text-xl'>
+            track your performance across all sessions.
+          </p>
+        </div>
 
-        {/* Stats Grid */}
-        <div className='grid grid-cols-1 gap-6 md:gap-8 lg:grid-cols-3'>
-          <StatCard title='General' stats={generalStats} />
-          <StatCard title='Answers' stats={answerStats} />
-          <StatCard title='Characters' stats={characterStats} />
+        <div className='mb-8 flex flex-col gap-4 sm:mb-12 sm:gap-6 lg:mb-16'>
+          <div className='grid grid-cols-1 auto-rows-[minmax(140px,auto)] gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-6'>
+            <div className='relative flex flex-col items-center justify-center rounded-[2.5rem] border-2 border-(--main-color)/20 bg-(--background-color) p-6 sm:col-span-2 sm:flex-row sm:gap-10 sm:p-8 lg:col-span-3 lg:row-span-2'>
+              <div className='relative flex aspect-square w-full max-w-36 flex-col items-center justify-center sm:max-w-44'>
+                <div
+                  className='h-full w-full rounded-full'
+                  style={{
+                    background: `conic-gradient(var(--main-color) 0deg ${stats.accuracy * 3.6}deg, var(--border-color) ${stats.accuracy * 3.6}deg 360deg)`,
+                  }}
+                />
+                <div className='absolute inset-[12%] rounded-full bg-(--background-color)' />
+                <div className='absolute inset-0 flex flex-col items-center justify-center'>
+                  <span className='text-4xl font-black tracking-tighter text-(--main-color) sm:text-5xl'>
+                    {Math.round(stats.accuracy)}%
+                  </span>
+                </div>
+              </div>
+
+              <div className='mt-6 flex flex-col items-center text-center sm:mt-0 sm:items-start sm:text-left'>
+                <div className='mb-1 flex items-center gap-2'>
+                  <Target className='h-5 w-5 text-(--main-color)' />
+                  <span className='text-sm leading-none font-bold tracking-wider text-(--secondary-color) uppercase opacity-60'>
+                    accuracy
+                  </span>
+                </div>
+                <div className='text-3xl font-black tracking-tighter text-(--main-color) sm:text-5xl'>
+                  {formatValue(numCorrectAnswers)} / {formatValue(stats.totalAnswers)}
+                </div>
+                <p className='mt-2 text-sm text-(--secondary-color) lowercase opacity-60 sm:text-base'>
+                  out of {stats.totalAnswers} attempts, you answered {numCorrectAnswers} correctly.
+                </p>
+              </div>
+            </div>
+
+            <BentoTile
+              Icon={Hourglass}
+              label='training time'
+              value={stats.timeDisplay}
+              className='lg:col-span-2'
+              valueClassName='text-4xl sm:text-5xl'
+            />
+            <BentoTile
+              Icon={Activity}
+              label='answers'
+              value={stats.totalAnswers}
+              className='lg:col-span-1'
+              valueClassName='text-4xl sm:text-5xl'
+            />
+            <BentoTile
+              Icon={SquareCheck}
+              label='correct'
+              value={numCorrectAnswers}
+              className='lg:col-span-1'
+            />
+            <BentoTile
+              Icon={SquareX}
+              label='wrong'
+              value={numWrongAnswers}
+              className='lg:col-span-1'
+            />
+            <BentoTile
+              Icon={TrendingUp}
+              label='correct/incorrect'
+              value={formatValue(
+                stats.ciRatio === Infinity ? '∞' : stats.ciRatio.toFixed(2),
+              )}
+              className='lg:col-span-1'
+              valueClassName='break-all text-xl sm:text-2xl'
+            />
+            <BentoTile
+              Icon={Shapes}
+              label='unique chars'
+              value={stats.uniqueChars}
+              className='lg:col-span-1'
+            />
+            <BentoTile
+              Icon={Timer}
+              label='average time'
+              value={formatValue(stats.avgTime, 's')}
+              className='lg:col-span-2'
+            />
+            <BentoTile
+              Icon={Flame}
+              label='fastest answer'
+              value={formatValue(stats.fastestTime, 's')}
+              className='lg:col-span-1'
+            />
+            <BentoTile
+              Icon={Clock}
+              label='slowest answer'
+              value={formatValue(stats.slowestTime, 's')}
+              className='lg:col-span-1'
+            />
+          </div>
+        </div>
+
+        <div className='sticky bottom-0 z-10 -mx-4 mt-auto flex w-auto items-center justify-center gap-3 border-t-2 border-(--border-color) bg-(--background-color) py-4 px-4 select-none sm:static sm:mx-0 sm:w-full sm:justify-start sm:gap-5 sm:border-0 sm:bg-transparent sm:px-0 sm:py-0'>
+          <button
+            onClick={() => {
+              playClick();
+              toggleStats();
+            }}
+            className='group flex h-14 flex-1 cursor-pointer items-center justify-center gap-3 rounded-xl bg-(--secondary-color) px-4 text-lg font-bold text-(--background-color) lowercase outline-hidden transition-all duration-150 sm:px-10 sm:text-xl md:flex-none'
+          >
+            <CircleArrowLeft
+              className='h-5 w-5 group-hover:animate-none sm:h-6 sm:w-6'
+              strokeWidth={2.5}
+            />
+            <span className='leading-none'>back</span>
+          </button>
         </div>
       </div>
     </div>

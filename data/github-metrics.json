@@ -1065,5 +1065,126 @@
       "forks": 8,
       "contributors": 5
     }
+  },
+  {
+    "collectedAt": "2026-04-15T23:00:37.479Z",
+    "stars": 2256,
+    "forks": 1717,
+    "contributors": 1413,
+    "diff": {
+      "stars": 6,
+      "forks": 3,
+      "contributors": 4
+    }
+  },
+  {
+    "collectedAt": "2026-04-16T11:00:46.534Z",
+    "stars": 2070,
+    "forks": 1602,
+    "contributors": 1421,
+    "diff": {
+      "stars": -186,
+      "forks": -115,
+      "contributors": 8
+    }
+  },
+  {
+    "collectedAt": "2026-04-16T23:00:44.008Z",
+    "stars": 2072,
+    "forks": 1607,
+    "contributors": 1428,
+    "diff": {
+      "stars": 2,
+      "forks": 5,
+      "contributors": 7
+    }
+  },
+  {
+    "collectedAt": "2026-04-17T11:00:46.143Z",
+    "stars": 2076,
+    "forks": 1612,
+    "contributors": 1431,
+    "diff": {
+      "stars": 4,
+      "forks": 5,
+      "contributors": 3
+    }
+  },
+  {
+    "collectedAt": "2026-04-17T23:00:44.481Z",
+    "stars": 2080,
+    "forks": 1620,
+    "contributors": 1441,
+    "diff": {
+      "stars": 4,
+      "forks": 8,
+      "contributors": 10
+    }
+  },
+  {
+    "collectedAt": "2026-04-18T11:00:42.725Z",
+    "stars": 2086,
+    "forks": 1627,
+    "contributors": 1450,
+    "diff": {
+      "stars": 6,
+      "forks": 7,
+      "contributors": 9
+    }
+  },
+  {
+    "collectedAt": "2026-04-18T23:00:44.133Z",
+    "stars": 2093,
+    "forks": 1633,
+    "contributors": 1451,
+    "diff": {
+      "stars": 7,
+      "forks": 6,
+      "contributors": 1
+    }
+  },
+  {
+    "collectedAt": "2026-04-19T11:00:46.052Z",
+    "stars": 2101,
+    "forks": 1641,
+    "contributors": 1462,
+    "diff": {
+      "stars": 8,
+      "forks": 8,
+      "contributors": 11
+    }
+  },
+  {
+    "collectedAt": "2026-04-19T23:00:43.437Z",
+    "stars": 2102,
+    "forks": 1648,
+    "contributors": 1465,
+    "diff": {
+      "stars": 1,
+      "forks": 7,
+      "contributors": 3
+    }
+  },
+  {
+    "collectedAt": "2026-04-20T11:00:49.532Z",
+    "stars": 2103,
+    "forks": 1650,
+    "contributors": 1466,
+    "diff": {
+      "stars": 1,
+      "forks": 2,
+      "contributors": 1
+    }
+  },
+  {
+    "collectedAt": "2026-04-21T11:00:52.230Z",
+    "stars": 2117,
+    "forks": 1666,
+    "contributors": 1480,
+    "diff": {
+      "stars": 14,
+      "forks": 16,
+      "contributors": 14
+    }
   }
 ]
