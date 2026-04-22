@@ -64,7 +64,7 @@
     "localforage": "^1.10.0",
     "lucide-react": "^0.562.0",
     "next": "^16.2.4",
-    "next-intl": "^4.3.12",
+    "next-intl": "^4.9.1",
     "next-mdx-remote": "^6.0.0",
     "next-scroll-restoration": "^0.0.4",
     "next-sitemap": "^4.2.3",
