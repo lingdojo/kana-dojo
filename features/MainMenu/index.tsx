@@ -26,7 +26,7 @@ import { useMediaQuery } from 'react-responsive';
 
 const Decorations = lazy(() => import('@/shared/ui-composite/Decorations/Decorations'));
 
-const MainMenu = () => {
+const   MainMenu = () => {
   const [isMounted, setIsMounted] = useState(false);
   const isLG = useMediaQuery({ minWidth: 1024 });
 
@@ -40,6 +40,12 @@ const MainMenu = () => {
       'transition-all duration-200',
       'active:border-b-0 active:translate-y-[6px] active:mb-[6px]',
       'motion-safe:animate-float',
+      'group-hover:scale-110',
+'group-hover:rotate-6',
+'transition-all duration-300 ease-out',
+'hover:-translate-y-1',
+  'hover:shadow-lg',
+  'hover:shadow-cyan-400/30',
       delay,
       `[--float-distance:${floatDistance}]`,
     );
@@ -290,6 +296,11 @@ const MainMenu = () => {
                     mobileLabelInset,
                     'md:pl-0',
                     'group',
+                    'transition-all duration-300 ease-out',
+'transform hover:scale-105 hover:-translate-y-2',
+'hover:shadow-2xl hover:shadow-cyan-500/20',
+'hover:z-10',
+                    
                     i === 0 && 'rounded-tl-2xl rounded-bl-2xl',
                     i === links.length - 1 && 'rounded-tr-2xl rounded-br-2xl',
                     'hover:cursor-pointer md:hover:border-(--main-color)/80',
