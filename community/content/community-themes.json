@@ -197,5 +197,11 @@
   "backgroundColor": "oklch(17.0% 0.020 255.0 / 1)",
   "mainColor": "oklch(74.0% 0.060 230.0 / 1)",
   "secondaryColor": "oklch(60.0% 0.085 280.0 / 1)"
+},
+  {
+  "id": "fuji-sunrise",
+  "backgroundColor": "oklch(23.0% 0.048 40.0 / 1)",
+  "mainColor": "oklch(85.0% 0.155 55.0 / 1)",
+  "secondaryColor": "oklch(72.0% 0.175 25.0 / 1)"
 }
 ]
