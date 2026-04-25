@@ -214,5 +214,11 @@
         "backgroundColor":  "oklch(23.0% 0.028 70.0 / 1)",
         "mainColor":  "oklch(70.0% 0.145 20.0 / 1)",
         "secondaryColor":  "oklch(68.0% 0.095 75.0 / 1)"
+    },
+    {
+        "id": "midnight-sushi",
+        "backgroundColor": "oklch(15.0% 0.028 255.0 / 1)",
+        "mainColor": "oklch(82.0% 0.155 210.0 / 1)",
+        "secondaryColor": "oklch(70.0% 0.145 35.0 / 1)"
     }
 ]
