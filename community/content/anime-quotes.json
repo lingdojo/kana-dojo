@@ -537,41 +537,41 @@
     "character": "Son Goku"
   },
   {
-  "japanese": "やれやれだぜ。",
-  "romaji": "Yare yare da ze.",
-  "english": "Good grief.",
-  "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
-  "character": "Jotaro Kujo"
-},
-{
-  "japanese": "俺を誰だと思ってやがる!",
-  "romaji": "Ore o dare da to omotte yagaru!",
-  "english": "Who the hell do you think I am! (alt wording 46)",
-  "anime": "Gurren Lagann",
-  "character": "Kamina"
-},
-{
-  "japanese": "やれやれだぜ",
-  "romaji": "Yare yare da ze",
-  "english": "Good grief. (alt wording 6)",
-  "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
-  "character": "Jotaro Kujo"
-},
+    "japanese": "やれやれだぜ。",
+    "romaji": "Yare yare da ze.",
+    "english": "Good grief.",
+    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+    "character": "Jotaro Kujo"
+  },
   {
-  "japanese": "僕はもう逃げない!",
-  "romaji": "Boku wa mou nigenai!",
-  "english": "I won't run away anymore! (alt wording 47)",
-  "anime": "Hunter x Hunter",
-  "character": "Gon Freecss"
-}, 
+    "japanese": "俺を誰だと思ってやがる!",
+    "romaji": "Ore o dare da to omotte yagaru!",
+    "english": "Who the hell do you think I am! (alt wording 46)",
+    "anime": "Gurren Lagann",
+    "character": "Kamina"
+  },
   {
-  "japanese": "シシシシシ",
-  "romaji": "Shishishishi",
-  "english": "Shishishi! (alt wording 30) (alt wording 82)",
-  "anime": "One Piece",
-  "character": "Monkey D. Luffy"
-},
-{
+    "japanese": "やれやれだぜ",
+    "romaji": "Yare yare da ze",
+    "english": "Good grief. (alt wording 6)",
+    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+    "character": "Jotaro Kujo"
+  },
+  {
+    "japanese": "僕はもう逃げない!",
+    "romaji": "Boku wa mou nigenai!",
+    "english": "I won't run away anymore! (alt wording 47)",
+    "anime": "Hunter x Hunter",
+    "character": "Gon Freecss"
+  },
+  {
+    "japanese": "シシシシシ",
+    "romaji": "Shishishishi",
+    "english": "Shishishi! (alt wording 30) (alt wording 82)",
+    "anime": "One Piece",
+    "character": "Monkey D. Luffy"
+  },
+  {
     "japanese": "やれやれだぜ。",
     "romaji": "Yare yare da ze.",
     "english": "Good grief.",
@@ -642,11 +642,11 @@
     "character": "Shinji Ikari"
   },
   {
-  "japanese": "孤独は辛い…でもその孤独にも慣れた",
-  "romaji": "Kodoku wa tsurai... demo sono kodoku ni mo nareta",
-  "english": "Loneliness is painful... but I've gotten used to it.",
-  "anime": "Naruto",
-  "character": "Sasuke Uchiha"
+    "japanese": "孤独は辛い…でもその孤独にも慣れた",
+    "romaji": "Kodoku wa tsurai... demo sono kodoku ni mo nareta",
+    "english": "Loneliness is painful... but I've gotten used to it.",
+    "anime": "Naruto",
+    "character": "Sasuke Uchiha"
   },
   {
     "japanese": "笑えばいいと思うよ",
@@ -656,18 +656,18 @@
     "character": "Rei Ayanami"
   },
   {
-  "japanese": "仲間を大切にしない奴はそれ以上のクズだ",
-  "romaji": "Nakama o taisetsu ni shinai yatsu wa sore ijou no kuzu da",
-  "english": "Those who don't take care of their comrades are worse than scum.",
-  "anime": "Naruto",
-  "character": "Kakashi Hatake"
+    "japanese": "仲間を大切にしない奴はそれ以上のクズだ",
+    "romaji": "Nakama o taisetsu ni shinai yatsu wa sore ijou no kuzu da",
+    "english": "Those who don't take care of their comrades are worse than scum.",
+    "anime": "Naruto",
+    "character": "Kakashi Hatake"
   },
   {
-  "japanese": "笑えばいいと思うよ",
-  "romaji": "Waraeba ii to omou yo",
-  "english": "I think you should just laugh. (alt wording 24) (alt wording 76)",
-  "anime": "Neon Genesis Evangelion",
-  "character": "Rei Ayanami"
+    "japanese": "笑えばいいと思うよ",
+    "romaji": "Waraeba ii to omou yo",
+    "english": "I think you should just laugh. (alt wording 24) (alt wording 76)",
+    "anime": "Neon Genesis Evangelion",
+    "character": "Rei Ayanami"
   },
   {
     "japanese": "レロレロレロレロ",
@@ -677,17 +677,21 @@
     "character": "Noriaki Kakyoin"
   },
   {
-  "japanese": "お前は弱い、なぜなら…憎しみが足りない",
-  "romaji": "Omae wa yowai, nazenara... nikushimi ga tarinai",
-  "english": "You are weak. Why? Because you lack hatred.",
-  "anime": "Naruto",
-  "character": "Itachi Uchiha"
+    "japanese": "お前は弱い、なぜなら…憎しみが足りない",
+    "romaji": "Omae wa yowai, nazenara... nikushimi ga tarinai",
+    "english": "You are weak. Why? Because you lack hatred.",
+    "anime": "Naruto",
+    "character": "Itachi Uchiha"
   },
   {
-  "japanese": "マママママ",
-  "romaji": "Mama mama mama",
-  "english": "Mama mama mama.",
-  "anime": "One Piece",
-  "character": "Charlotte Linlin (Big Mom)"
-}
+    "japanese": "マママママ",
+    "romaji": "Mama mama mama",
+    "english": "Mama mama mama.",
+    "anime": "One Piece",
+    "character": "Charlotte Linlin (Big Mom)"
+  },
+  {
+    "_added_by": "bounty-bot",
+    "timestamp": "2026-04-27T01:20:46.233847"
+  }
 ]
