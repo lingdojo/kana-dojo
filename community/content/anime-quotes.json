@@ -677,10 +677,17 @@
     "character": "Noriaki Kakyoin"
   },
   {
-  "japanese": "お前は弱い、なぜなら…憎しみが足りない",
-  "romaji": "Omae wa yowai, nazenara... nikushimi ga tarinai",
-  "english": "You are weak. Why? Because you lack hatred.",
-  "anime": "Naruto",
-  "character": "Itachi Uchiha"
-}
+    "japanese": "お前は弱い、なぜなら…憎しみが足りない",
+    "romaji": "Omae wa yowai, nazenara... nikushimi ga tarinai",
+    "english": "You are weak. Why? Because you lack hatred.",
+    "anime": "Naruto",
+    "character": "Itachi Uchiha"
+  },
+  {
+    "japanese": "このジョルノ・ジョバァーナには夢がある！",
+    "romaji": "Kono Joruno Jobana ni wa yume ga aru!",
+    "english": "I, Giorno Giovanna, have a dream! (alt wording 5) (alt wording 57)",
+    "anime": "JoJo's Bizarre Adventure: Golden Wind",
+    "character": "Giorno Giovanna"
+  }
 ]
