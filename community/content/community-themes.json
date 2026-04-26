@@ -220,5 +220,11 @@
     "backgroundColor": "oklch(16.5% 0.040 250.0 / 1)",
     "mainColor": "oklch(78.0% 0.170 45.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.090 210.0 / 1)"
+  },
+  {
+    "id": "samurai-steel",
+    "backgroundColor": "oklch(18.0% 0.022 250.0 / 1)",
+    "mainColor": "oklch(80.0% 0.055 240.0 / 1)",
+    "secondaryColor": "oklch(65.0% 0.170 15.0 / 1)"
   }
 ]
