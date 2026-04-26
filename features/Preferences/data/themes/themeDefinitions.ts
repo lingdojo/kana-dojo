@@ -9,6 +9,7 @@
 import {
   Atom,
   Moon,
+  Sun,
   LucideIcon,
   CloudLightning,
   TreePine,
@@ -81,12 +82,12 @@ const baseThemeSets: BaseThemeGroup[] = [
     ],
   },
 
-  /*
   {
     name: 'Light',
     icon: Sun,
     isLight: true,
     themes: [
+      /*
       {
         id: 'long',
         backgroundColor: 'oklch(84.00% 0.055 6.93 / 1)',
@@ -130,9 +131,15 @@ const baseThemeSets: BaseThemeGroup[] = [
         mainColor: 'oklch(70.0% 0.165 350.0 / 1)',
         secondaryColor: 'oklch(78.0% 0.120 135.0 / 1)',
       },
+      */
+      {
+        id: 'matcha',
+        backgroundColor: 'oklch(94.30% 0.0480 118.00 / 1)',
+        mainColor: 'oklch(27.50% 0.0300 132.00 / 1)',
+        secondaryColor: 'oklch(48.50% 0.1180 136.00 / 1)',
+      },
     ],
   },
-  */
   {
     name: 'Dark',
     icon: Moon,
