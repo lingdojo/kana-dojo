@@ -689,5 +689,33 @@
     "english": "Mama mama mama.",
     "anime": "One Piece",
     "character": "Charlotte Linlin (Big Mom)"
+  },
+  {
+    "japanese": "俺はガンダムだ！",
+    "romaji": "Ore wa Gandamu da!",
+    "english": "I am Gundam! (alt wording 25)",
+    "anime": "Mobile Suit Gundam 00",
+    "character": "Setsuna F. Seiei"
+  },
+  {
+    "japanese": "このジョルノ・ジョバァーナには夢がある！",
+    "romaji": "Kono Joruno Jobana ni wa yume ga aru!",
+    "english": "I, Giorno Giovanna, have a dream! (alt wording 5)",
+    "anime": "JoJo's Bizarre Adventure: Golden Wind",
+    "character": "Giorno Giovanna"
+  },
+  {
+    "japanese": "あきらめたらそこで試合終了ですよ…？",
+    "romaji": "Akirametara soko de shiai shuuryou desu yo...?",
+    "english": "If you give up, that's the end of the game.",
+    "anime": "Slam Dunk",
+    "character": "Kaede Rukawa"
+  },
+  {
+    "japanese": "だが…それがいい。",
+    "romaji": "Daga... sore ga ii.",
+    "english": "But... that's what I like. (alt wording 16)",
+    "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
+    "character": "Yoshikage Kira"
   }
 ]
