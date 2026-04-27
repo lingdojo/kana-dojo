@@ -371,11 +371,17 @@
   "english": "Peek at the sky through a needle's eye",
   "meaning": "A narrow viewpoint leads to poor judgment"
 },
-    {
-  "japanese": "念には念を入れよ",
-  "romaji": "Nen ni wa nen wo ireyo",
-  "english": "Put care into care",
-  "meaning": "Double-check; be extra careful"
+  {
+    "japanese": "念には念を入れよ",
+    "romaji": "Nen ni wa nen wo ireyo",
+    "english": "Put care into care",
+    "meaning": "Double-check; be extra careful"
+  },
+  {
+    "japanese": "七転び八起き",
+    "romaji": "Nana korobi ya ori",
+    "english": "Fall seven times, stand up eight",
+    "meaning": "Never give up — resilience in the face of adversity"
   }
 ]
 
