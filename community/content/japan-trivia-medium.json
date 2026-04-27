@@ -356,13 +356,13 @@
     "timestamp": "2026-04-27T00:52:26.468101"
   },
   {
-    "question": "What is the Japanese writing system used for foreign words?",
+    "question": "What is the name of اليابان's high-speed bullet train network?",
     "difficulty": "medium",
     "answers": [
-      "Katakana",
-      "Hiragana",
-      "Kanji",
-      "Romaji"
+      "Shinkansen",
+      "Yamanote",
+      "Keikyu",
+      "Monorail"
     ],
     "correctIndex": 0
   }
