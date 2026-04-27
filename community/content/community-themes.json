@@ -220,5 +220,17 @@
     "backgroundColor": "oklch(16.5% 0.040 250.0 / 1)",
     "mainColor": "oklch(78.0% 0.170 45.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.090 210.0 / 1)"
+  },
+  {
+    "id": "ramen-shop",
+    "backgroundColor": "oklch(94.0% 0.025 85.0 / 1)",
+    "mainColor": "oklch(60.0% 0.195 25.0 / 1)",
+    "secondaryColor": "oklch(88.0% 0.145 90.0 / 1)"
+  },
+  {
+    "id": "koi-pond",
+    "backgroundColor": "oklch(20.0% 0.048 240.0 / 1)",
+    "mainColor": "oklch(80.0% 0.175 55.0 / 1)",
+    "secondaryColor": "oklch(70.0% 0.130 220.0 / 1)"
   }
 ]

@@ -61,9 +61,12 @@ const VocabInputGame = ({
 
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const justAnsweredRef = useRef(false);
 
   const [inputValue, setInputValue] = useState('');
   const [bottomBarState, setBottomBarState] = useState<BottomBarState>('check');
+  const [clearWrongFeedbackSignal, setClearWrongFeedbackSignal] = useState(0);
+  const [wrongFeedbackSignal, setWrongFeedbackSignal] = useState(0);
 
   // Quiz type: 'meaning' or 'reading'
   const [quizType, setQuizType] = useState<'meaning' | 'reading'>('meaning');
@@ -167,6 +170,10 @@ const VocabInputGame = ({
       const isSpace = event.code === 'Space' || event.key === ' ';
 
       if (isEnter) {
+        if (justAnsweredRef.current) {
+          event.preventDefault();
+          return;
+        }
         // Allow Enter to trigger Next button when correct
         if (bottomBarState === 'correct') {
           event.preventDefault();
@@ -244,6 +251,10 @@ const VocabInputGame = ({
       true,
     );
     setBottomBarState('correct');
+    justAnsweredRef.current = true;
+    setTimeout(() => {
+      justAnsweredRef.current = false;
+    }, 300);
     setDisplayAnswerSummary(true);
     logAttempt({
       questionId: correctChar,
@@ -267,6 +278,7 @@ const VocabInputGame = ({
 
   const handleWrongAnswer = () => {
     setInputValue('');
+    setWrongFeedbackSignal(prev => prev + 1);
     playErrorTwice();
 
     const correctAnswer = Array.isArray(targetChar)
@@ -325,6 +337,11 @@ const VocabInputGame = ({
   const textSize = isReverse ? 'text-5xl sm:text-7xl' : 'text-5xl md:text-8xl';
   const canCheck = inputValue.trim().length > 0 && bottomBarState !== 'correct';
   const showContinue = bottomBarState === 'correct';
+  const clearWrongFeedback = () => {
+    if (bottomBarState === 'wrong') {
+      setClearWrongFeedbackSignal(prev => prev + 1);
+    }
+  };
 
   // For Bottom Bar feedback
   const feedbackText = isReverse
@@ -403,21 +420,25 @@ const VocabInputGame = ({
           <textarea
             ref={inputRef}
             value={inputValue}
-            placeholder='Type your answer...'
+            placeholder='type your answer...'
             disabled={showContinue}
             rows={4}
             className={clsx(
               'w-full max-w-xs sm:max-w-sm md:max-w-md',
-              'rounded-2xl px-5 py-4',
-              'rounded-2xl border border-(--border-color) bg-(--card-color)',
+              'rounded-3xl px-5 py-4',
+              'border-4 border-(--border-color) bg-(--card-color)',
               'text-top text-left text-lg font-medium lg:text-xl',
               'text-(--secondary-color) placeholder:text-base placeholder:font-normal placeholder:text-(--secondary-color)/40',
-              'game-input resize-none focus:outline-none',
+              'game-input resize-none focus:border-(--secondary-color)/70 focus:outline-none',
               'transition-colors duration-200 ease-out',
               showContinue && 'cursor-not-allowed opacity-60',
             )}
             autoFocus
-            onChange={e => setInputValue(e.target.value)}
+            onChange={e => {
+              setInputValue(e.target.value);
+              clearWrongFeedback();
+            }}
+            onFocus={clearWrongFeedback}
             onKeyDown={e => {
               if (e.key === 'Enter') {
                 e.preventDefault();
@@ -438,6 +459,8 @@ const VocabInputGame = ({
         feedbackContent={feedbackText}
         buttonRef={buttonRef}
         hideRetry
+        clearWrongFeedbackSignal={clearWrongFeedbackSignal}
+        wrongFeedbackSignal={wrongFeedbackSignal}
       />
 
       <div className='h-32' />

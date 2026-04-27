@@ -1,5 +1,5 @@
 'use client';
-import React, { ReactNode, useEffect, useState } from 'react';
+import React, { ReactNode, useEffect, useRef, useState } from 'react';
 import { CircleCheck, RotateCcw, Flag } from 'lucide-react';
 import clsx from 'clsx';
 import { ActionButton } from '@/shared/ui/components/ActionButton';
@@ -22,6 +22,10 @@ interface GameBottomBarProps {
   className?: string;
   /** When true, shows "Check" button instead of "Try Again" on wrong answers (for Input/Type mode) */
   hideRetry?: boolean;
+  /** Increment this value to hide wrong-answer feedback until the next check */
+  clearWrongFeedbackSignal?: number;
+  /** Increment this value on each wrong submission to show wrong-answer feedback again */
+  wrongFeedbackSignal?: number;
 }
 
 export const GameBottomBar = ({
@@ -35,12 +39,16 @@ export const GameBottomBar = ({
   buttonRef,
   className,
   hideRetry = false,
+  clearWrongFeedbackSignal,
+  wrongFeedbackSignal,
 }: GameBottomBarProps) => {
   const { playClick } = useClick();
 
   const isCorrect = state === 'correct';
   const isWrong = state === 'wrong';
-  const showFeedback = state !== 'check';
+  const [hideWrongFeedback, setHideWrongFeedback] = useState(false);
+  const lastClearSignalRef = useRef<number | undefined>(clearWrongFeedbackSignal);
+  const showFeedback = state !== 'check' && !(isWrong && hideWrongFeedback);
   const showContinue = isCorrect;
   // When hideRetry is true, treat wrong state like check state for button display
   const showRetryButton = isWrong && !hideRetry;
@@ -67,6 +75,28 @@ export const GameBottomBar = ({
       setFrozenFeedbackContent(feedbackContent);
     }
   }, [state, displayTitle, feedbackContent]);
+
+  useEffect(() => {
+    if (state !== 'wrong') {
+      setHideWrongFeedback(false);
+    }
+  }, [state]);
+
+  useEffect(() => {
+    if (state === 'wrong') {
+      setHideWrongFeedback(false);
+    }
+  }, [state, wrongFeedbackSignal]);
+
+  useEffect(() => {
+    const didClearSignalChange =
+      lastClearSignalRef.current !== clearWrongFeedbackSignal;
+    lastClearSignalRef.current = clearWrongFeedbackSignal;
+
+    if (state === 'wrong' && didClearSignalChange) {
+      setHideWrongFeedback(true);
+    }
+  }, [state, clearWrongFeedbackSignal]);
 
   return (
     <div

@@ -87,6 +87,7 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
 
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const justAnsweredRef = useRef(false);
   const {
     targetLength,
     recordCorrect: recordTargetLengthCorrect,
@@ -96,6 +97,8 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
   const [inputValue, setInputValue] = useState('');
   const [bottomBarState, setBottomBarState] = useState<BottomBarState>('check');
   const [_lastWrongInput, setLastWrongInput] = useState('');
+  const [clearWrongFeedbackSignal, setClearWrongFeedbackSignal] = useState(0);
+  const [wrongFeedbackSignal, setWrongFeedbackSignal] = useState(0);
 
   const kanaGroupIndices = useKanaStore(state => state.kanaGroupIndices);
 
@@ -205,6 +208,10 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
       const isSpace = event.code === 'Space' || event.key === ' ';
 
       if (isEnter) {
+        if (justAnsweredRef.current) {
+          event.preventDefault();
+          return;
+        }
         // Allow Enter to trigger Next button when correct
         if (bottomBarState === 'correct') {
           event.preventDefault();
@@ -283,6 +290,10 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
     resetWrongStreak();
     recordTargetLengthCorrect();
     setBottomBarState('correct');
+    justAnsweredRef.current = true;
+    setTimeout(() => {
+      justAnsweredRef.current = false;
+    }, 300);
     logAttempt({
       questionId: correctChar,
       questionPrompt: correctChar,
@@ -298,6 +309,7 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
   const handleWrongAnswer = (wrongInput: string) => {
     setLastWrongInput(wrongInput);
     setInputValue('');
+    setWrongFeedbackSignal(prev => prev + 1);
     playErrorTwice();
 
     incrementCharacterScore(correctChar, 'wrong');
@@ -344,6 +356,11 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
   const canCheck = inputValue.trim().length > 0 && bottomBarState !== 'correct';
   const showContinue = bottomBarState === 'correct';
   const _showFeedback = bottomBarState !== 'check';
+  const clearWrongFeedback = () => {
+    if (bottomBarState === 'wrong') {
+      setClearWrongFeedbackSignal(prev => prev + 1);
+    }
+  };
 
   if (!isReady) {
     return null;
@@ -382,21 +399,25 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
       <textarea
         ref={inputRef}
         value={inputValue}
-        placeholder='Type your answer...'
+        placeholder='type your answer...'
         disabled={showContinue}
         rows={4}
         className={clsx(
           'w-full max-w-xs sm:max-w-sm md:max-w-md',
-          'rounded-2xl px-5 py-4',
-          'rounded-2xl border-1 border-(--border-color) bg-(--card-color)',
+          'rounded-3xl px-5 py-4',
+          'border-4 border-(--border-color) bg-(--card-color)',
           'text-top text-left text-lg font-medium lg:text-xl',
           'text-(--secondary-color) placeholder:text-base placeholder:font-normal placeholder:text-(--secondary-color)/40',
-          'game-input resize-none focus:outline-none',
+          'game-input resize-none focus:border-(--secondary-color)/70 focus:outline-none',
           'transition-colors duration-200 ease-out',
           showContinue && 'cursor-not-allowed opacity-60',
         )}
         autoFocus
-        onChange={e => setInputValue(e.target.value)}
+        onChange={e => {
+          setInputValue(e.target.value);
+          clearWrongFeedback();
+        }}
+        onFocus={clearWrongFeedback}
         onKeyDown={e => {
           if (e.key === 'Enter') {
             e.preventDefault();
@@ -415,6 +436,8 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
         feedbackContent={targetChar}
         buttonRef={buttonRef}
         hideRetry
+        clearWrongFeedbackSignal={clearWrongFeedbackSignal}
+        wrongFeedbackSignal={wrongFeedbackSignal}
       />
 
       {/* Spacer */}

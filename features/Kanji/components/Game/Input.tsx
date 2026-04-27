@@ -91,6 +91,8 @@ const KanjiInputGame = ({
 
   const [inputValue, setInputValue] = useState('');
   const [bottomBarState, setBottomBarState] = useState<BottomBarState>('check');
+  const [clearWrongFeedbackSignal, setClearWrongFeedbackSignal] = useState(0);
+  const [wrongFeedbackSignal, setWrongFeedbackSignal] = useState(0);
 
   // State management based on mode - uses weighted selection for adaptive learning
   const [correctChar, setCorrectChar] = useState(() => {
@@ -283,6 +285,7 @@ const KanjiInputGame = ({
   const handleWrongAnswer = () => {
     const canonicalKanjiChar = correctKanjiObj?.kanjiChar ?? correctChar;
     setInputValue('');
+    setWrongFeedbackSignal(prev => prev + 1);
     playErrorTwice();
 
     incrementCharacterScore(canonicalKanjiChar, 'wrong');
@@ -344,6 +347,11 @@ const KanjiInputGame = ({
   const canCheck = inputValue.trim().length > 0 && bottomBarState !== 'correct';
   const showContinue = bottomBarState === 'correct';
   const showFeedback = bottomBarState !== 'check';
+  const clearWrongFeedback = () => {
+    if (bottomBarState === 'wrong') {
+      setClearWrongFeedbackSignal(prev => prev + 1);
+    }
+  };
 
   // For Bottom Bar feedback
   const feedbackText = isReverse
@@ -416,21 +424,25 @@ const KanjiInputGame = ({
           <textarea
             ref={inputRef}
             value={inputValue}
-            placeholder='Type your answer...'
+            placeholder='type your answer...'
             disabled={showContinue}
             rows={4}
             className={clsx(
               'w-full max-w-xs sm:max-w-sm md:max-w-md',
-              'rounded-2xl px-5 py-4',
-              'rounded-2xl border-1 border-(--border-color) bg-(--card-color)',
+              'rounded-3xl px-5 py-4',
+              'border-4 border-(--border-color) bg-(--card-color)',
               'text-top text-left text-lg font-medium lg:text-xl',
               'text-(--secondary-color) placeholder:text-base placeholder:font-normal placeholder:text-(--secondary-color)/40',
-              'game-input resize-none focus:outline-none',
+              'game-input resize-none focus:border-(--secondary-color)/70 focus:outline-none',
               'transition-colors duration-200 ease-out',
               showContinue && 'cursor-not-allowed opacity-60',
             )}
             autoFocus
-            onChange={e => setInputValue(e.target.value)}
+            onChange={e => {
+              setInputValue(e.target.value);
+              clearWrongFeedback();
+            }}
+            onFocus={clearWrongFeedback}
             onKeyDown={e => {
               if (e.key === 'Enter') {
                 e.preventDefault();
@@ -451,6 +463,8 @@ const KanjiInputGame = ({
         feedbackContent={feedbackText}
         buttonRef={buttonRef}
         hideRetry
+        clearWrongFeedbackSignal={clearWrongFeedbackSignal}
+        wrongFeedbackSignal={wrongFeedbackSignal}
       />
 
       <div className='h-32' />

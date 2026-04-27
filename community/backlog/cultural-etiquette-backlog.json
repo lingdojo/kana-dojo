@@ -221,7 +221,7 @@
     "dont": "食べ終わってすぐ席を立つ",
     "note": "店でも家庭でも使える。",
     "id": 25,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -248,7 +248,7 @@
     "dont": "タオルを湯船に入れる",
     "note": "共同浴場の基本ルール。",
     "id": 28,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -267,7 +267,7 @@
     "note": "駅・店頭では順番厳守。",
     "id": 30,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "situation": "贈り物 2",
@@ -510,7 +510,7 @@
     "note": "ゴミ箱が少ない地域がある。",
     "id": 57,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "situation": "お辞儀 3",
@@ -528,7 +528,7 @@
     "note": "地域差に注意。",
     "id": 59,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "situation": "訪問手土産 3",
@@ -645,7 +645,7 @@
     "note": "先に謝罪が基本。",
     "id": 72,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "situation": "写真撮影（寺社） 4",
@@ -734,7 +734,7 @@
     "dont": "土足で室内に上がる",
     "note": "家庭・旅館では基本マナー。",
     "id": 82,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -788,7 +788,7 @@
     "dont": "タオルを湯船に入れる",
     "note": "共同浴場の基本ルール。",
     "id": 88,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -815,7 +815,7 @@
     "dont": "値段を強調する",
     "note": "謙遜表現が好まれる。",
     "id": 91,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -870,7 +870,7 @@
     "note": "ゴミ箱が少ない地域がある。",
     "id": 97,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "situation": "お辞儀 5",
@@ -896,7 +896,7 @@
     "dont": "匂いの強いものを持参する",
     "note": "分けやすさが好まれる。",
     "id": 100,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -905,7 +905,7 @@
     "dont": "片手で受け取ってすぐポケットに入れる",
     "note": "商談中は机上に置くのが一般的。",
     "id": 101,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -977,7 +977,7 @@
     "dont": "話を遮る",
     "note": "合意形成を重視する文化。",
     "id": 109,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -995,7 +995,7 @@
     "dont": "値段を強調する",
     "note": "謙遜表現が好まれる。",
     "id": 111,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1004,7 +1004,7 @@
     "dont": "無連絡で遅れて言い訳を続ける",
     "note": "先に謝罪が基本。",
     "id": 112,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

@@ -340,5 +340,29 @@
         "romaji":  "Hara hachibunme",
         "english":  "Stomach 80 percent full",
         "meaning":  "Eat in moderation"
-    }
+    },
+  {
+    "japanese": "自業自得",
+    "romaji": "Jigō jitoku",
+    "english": "what goes around comes around",
+    "meaning":"You reap what you sow"
+  },
+  {
+    "japanese": "喉元過ぎれば熱さを忘れる",
+    "romaji": "Nodomoto sugireba atsusa wo wasureru",
+    "english": "Once it passes your throat, you forget the heat",
+    "meaning": "People forget hardships once they are over"
+  },
+  {
+    "japanese": "二兎を追う者は一兎をも得ず",
+    "romaji": "Ni to wo ou mono wa itto wo mo ezu",
+    "english": "One who chases two rabbits catches neither",
+    "meaning": "Focus on one thing at a time"
+  },
+  {
+  "japanese": "千里の道も一歩から",
+  "romaji": "Senri no michi mo ippo kara",
+  "english": "A journey of a thousand miles begins with one step",
+  "meaning": "Start small"
+  }
 ]
