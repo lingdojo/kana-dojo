@@ -106,8 +106,9 @@ input[type='checkbox']:focus-visible {
 }
 
 /* Global focus-visible styles for better accessibility */
-/* These provide a consistent focus indicator across all interactive elements */
-:focus-visible {
+/* These provide a consistent focus indicator across interactive elements,
+   except game text inputs which use custom border-only focus styling. */
+:focus-visible:not(.game-input) {
   outline: 2px solid var(--main-color);
   outline-offset: 2px;
 }
@@ -119,7 +120,22 @@ input[type='checkbox']:focus-visible {
 
 /* Game inputs override outline color to secondary */
 .game-input:focus-visible {
-  outline-color: var(--secondary-color) !important;
+  outline: 0 !important;
+  outline-offset: 0 !important;
+  box-shadow: none !important;
+  -webkit-focus-ring-color: transparent !important;
+}
+
+.game-input:focus {
+  outline: 0 !important;
+  outline-offset: 0 !important;
+  box-shadow: none !important;
+  -webkit-focus-ring-color: transparent !important;
+  border-color: color-mix(
+    in srgb,
+    var(--secondary-color) 70%,
+    transparent
+  ) !important;
 }
 
 :root {
