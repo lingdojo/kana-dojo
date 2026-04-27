@@ -375,7 +375,7 @@
     "english": "Fame from a mistake",
     "meaning": "A lucky break that comes from an error",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 44,
@@ -393,7 +393,7 @@
     "english": "Fall seven times, get up eight",
     "meaning": "Never give up",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 45,
@@ -537,7 +537,7 @@
     "english": "Among flowers, the cherry blossom; among men, the warrior",
     "meaning": "The best of each kind",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 61,
@@ -690,7 +690,7 @@
     "english": "Peek at the sky through a needle's eye",
     "meaning": "A narrow viewpoint leads to poor judgment",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 78,
@@ -771,7 +771,7 @@
     "english": "Put care into care",
     "meaning": "Double-check; be extra careful",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 87,
@@ -879,7 +879,7 @@
     "english": "A rice cake falls from the shelf",
     "meaning": "Unexpected good luck",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 99,
@@ -915,7 +915,7 @@
     "english": "What happens twice will happen a third time",
     "meaning": "Patterns tend to repeat",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 103,
@@ -1464,7 +1464,7 @@
     "english": "Bamboo shoots after rain",
     "meaning": "Things spring up rapidly",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 164,
@@ -1526,7 +1526,7 @@
     "romaji": "Koketsu ni irazunba koji wo ezu",
     "english": "You can’t get the tiger’s cub without entering the lair",
     "meaning": "No reward without risk",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

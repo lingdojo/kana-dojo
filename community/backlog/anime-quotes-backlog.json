@@ -206,7 +206,7 @@
     "english": "If you give up, that's the end of the game.",
     "anime": "Slam Dunk",
     "character": "Kaede Rukawa",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -316,7 +316,7 @@
     "english": "Ze ha ha ha!",
     "anime": "One Piece",
     "character": "Marshall D. Teach (Blackbeard)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -517,7 +517,7 @@
     "anime": "Dragon Ball Z",
     "character": "Son Goku",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 53,
@@ -566,7 +566,7 @@
     "english": "I, Giorno Giovanna, have a dream! (alt wording 5)",
     "anime": "JoJo's Bizarre Adventure: Golden Wind",
     "character": "Giorno Giovanna",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -596,7 +596,7 @@
     "english": "Ora ora ora ora ora! (alt wording 8)",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Jotaro Kujo",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -676,7 +676,7 @@
     "english": "But... that's what I like. (alt wording 16)",
     "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
     "character": "Yoshikage Kira",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -736,7 +736,7 @@
     "english": "Not yet! It's not over yet! (alt wording 22)",
     "anime": "Mobile Suit Gundam",
     "character": "Char Aznable",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -766,7 +766,7 @@
     "english": "I am Gundam! (alt wording 25)",
     "anime": "Mobile Suit Gundam 00",
     "character": "Setsuna F. Seiei",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1236,7 +1236,7 @@
     "english": "I'm gonna be King of the Pirates! (alt wording 20) (alt wording 72)",
     "anime": "One Piece",
     "character": "Monkey D. Luffy",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

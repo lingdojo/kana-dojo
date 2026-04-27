@@ -242,7 +242,7 @@
   {
     "id": 41,
     "text": "\"〜ことができる\" expresses ability, like \"can do\".",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -327,7 +327,7 @@
     "id": 55,
     "text": "\"〜ば〜ほど\" means \"the more... the more...\".",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 56,
@@ -363,7 +363,7 @@
     "id": 61,
     "text": "\"〜にとって\" means \"for / to (someone)\".",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 62,
@@ -554,7 +554,7 @@
   {
     "id": 93,
     "text": "\"〜てしまう\" can show completion or regret about an action. (practice variation 8)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -662,7 +662,7 @@
   {
     "id": 111,
     "text": "\"〜まま\" means \"as is\" or \"unchanged\". (practice variation 26)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -710,7 +710,7 @@
   {
     "id": 119,
     "text": "\"〜ように\" can express purpose, like \"in order to\" or \"so that\". (practice variation 34)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -782,13 +782,13 @@
   {
     "id": 131,
     "text": "\"〜にする\" means \"decide on\" a choice or selection. (practice variation 46)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 132,
     "text": "\"〜に決まっている\" means \"must be\" or \"definitely\". (practice variation 47)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -812,7 +812,7 @@
   {
     "id": 136,
     "text": "\"〜というより\" means \"rather than\" or \"more like\". (practice variation 51)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

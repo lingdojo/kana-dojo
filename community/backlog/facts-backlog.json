@@ -56,7 +56,7 @@
   {
     "id": 10,
     "fact": "Raw horse meat, called 'basashi' (馬刺し), is a popular delicacy in Kumamoto prefecture, often served frozen or thinly sliced with soy sauce and ginger.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -380,7 +380,7 @@
   {
     "id": 64,
     "fact": "Japanese blood donation has such high demand that mobile donation buses give out snacks, drinks, and lottery tickets as thanks.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -410,7 +410,7 @@
   {
     "id": 69,
     "fact": "The Japanese word 'koi no yokan' (恋の予感) describes knowing you'll inevitably fall in love with someone you just met.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -476,7 +476,7 @@
   {
     "id": 80,
     "fact": "Japan has 'midnight service' buses for people who miss the last train, charging premium prices to get workers home.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1460,7 +1460,7 @@
   {
     "id": 244,
     "fact": "The term 'machiya' (町家) refers to traditional wooden townhouses with storefronts on the first floor and living spaces above.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1514,7 +1514,7 @@
   {
     "id": 253,
     "fact": "Japan’s 'tachigui' culture means quick standing meals at noodle or sushi counters, especially around busy train stations.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1700,7 +1700,7 @@
   {
     "id": 284,
     "fact": "The term 'shokunin' (職人) refers to artisans who dedicate their lives to mastering a craft.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1868,7 +1868,7 @@
   {
     "id": 312,
     "fact": "Japan’s 'shichi-go-san' festival celebrates children at ages 3, 5, and 7 with shrine visits and traditional outfits.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1916,7 +1916,7 @@
   {
     "id": 320,
     "fact": "'Mame' (豆) can mean both \"bean\" and \"diligent\"—so bean-related gifts sometimes imply good health and hard work.",
-    "issued": false,
+    "issued": true,
     "completed": false
   }
 ]

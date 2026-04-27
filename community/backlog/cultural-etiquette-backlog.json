@@ -86,7 +86,7 @@
     "dont": "割り込む",
     "note": "駅・店頭では順番厳守。",
     "id": 10,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -104,7 +104,7 @@
     "dont": "無連絡で遅れて言い訳を続ける",
     "note": "先に謝罪が基本。",
     "id": 12,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -185,7 +185,7 @@
     "dont": "片手で受け取ってすぐポケットに入れる",
     "note": "商談中は机上に置くのが一般的。",
     "id": 21,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -734,7 +734,7 @@
     "dont": "土足で室内に上がる",
     "note": "家庭・旅館では基本マナー。",
     "id": 82,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -743,7 +743,7 @@
     "dont": "通話を続ける",
     "note": "混雑時は特に配慮する。",
     "id": 83,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -887,7 +887,7 @@
     "dont": "両側を塞ぐ",
     "note": "地域差に注意。",
     "id": 99,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -986,7 +986,7 @@
     "dont": "割り込む",
     "note": "駅・店頭では順番厳守。",
     "id": 110,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1031,7 +1031,7 @@
     "dont": "現金を投げるように渡す",
     "note": "丁寧で非接触な受け渡し。",
     "id": 115,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1049,7 +1049,7 @@
     "dont": "ゴミを放置する",
     "note": "ゴミ箱が少ない地域がある。",
     "id": 117,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
