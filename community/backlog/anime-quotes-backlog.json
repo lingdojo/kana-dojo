@@ -327,7 +327,7 @@
     "anime": "Naruto",
     "character": "Naruto Uzumaki",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 34,
@@ -986,7 +986,7 @@
     "english": "I won't run away anymore! (alt wording 47)",
     "anime": "Hunter x Hunter",
     "character": "Gon Freecss",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

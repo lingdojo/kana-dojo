@@ -357,7 +357,7 @@
     "english": "A strong person under the veranda",
     "meaning": "An unsung hero who supports behind the scenes",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 41,
@@ -1176,7 +1176,7 @@
     "english": "Three years on a stone",
     "meaning": "Perseverance brings results",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 132,
