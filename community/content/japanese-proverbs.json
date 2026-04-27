@@ -371,11 +371,17 @@
   "english": "Peek at the sky through a needle's eye",
   "meaning": "A narrow viewpoint leads to poor judgment"
 },
-    {
-  "japanese": "念には念を入れよ",
-  "romaji": "Nen ni wa nen wo ireyo",
-  "english": "Put care into care",
-  "meaning": "Double-check; be extra careful"
+  {
+    "japanese": "念には念を入れよ",
+    "romaji": "Nen ni wa nen wo ireyo",
+    "english": "Put care into care",
+    "meaning": "Double-check; be extra careful"
+  },
+  {
+    "japanese": "井の中の蛙大海を知らず",
+    "romaji": "I no naka no kawazu taikai wo shirazu",
+    "english": "A frog in a well cannot conceive of the ocean",
+    "meaning": "Those with limited experience cannot understand the bigger picture"
   }
 ]
 
