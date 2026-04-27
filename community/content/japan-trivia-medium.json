@@ -354,5 +354,16 @@
   {
     "_added_by": "bounty-bot",
     "timestamp": "2026-04-27T00:52:26.468101"
+  },
+  {
+    "question": "What is the Japanese writing system used for foreign words?",
+    "difficulty": "medium",
+    "answers": [
+      "Katakana",
+      "Hiragana",
+      "Kanji",
+      "Romaji"
+    ],
+    "correctIndex": 0
   }
 ]
