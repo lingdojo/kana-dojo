@@ -906,7 +906,7 @@
     "note": "商談中は机上に置くのが一般的。",
     "id": 101,
     "issued": true,
-    "completed": false
+    "completed": true
   },
   {
     "situation": "訪問時の玄関 6",
