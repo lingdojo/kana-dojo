@@ -915,7 +915,7 @@
     "note": "家庭・旅館では基本マナー。",
     "id": 102,
     "issued": true,
-    "completed": true
+    "completed": false
   },
   {
     "situation": "電車内 6",
@@ -978,7 +978,7 @@
     "note": "合意形成を重視する文化。",
     "id": 109,
     "issued": true,
-    "completed": true
+    "completed": false
   },
   {
     "situation": "列に並ぶ時 6",
@@ -1005,7 +1005,7 @@
     "note": "先に謝罪が基本。",
     "id": 112,
     "issued": true,
-    "completed": true
+    "completed": false
   },
   {
     "situation": "写真撮影（寺社） 6",
@@ -1050,7 +1050,7 @@
     "note": "ゴミ箱が少ない地域がある。",
     "id": 117,
     "issued": true,
-    "completed": true
+    "completed": false
   },
   {
     "situation": "お辞儀 6",
@@ -1086,6 +1086,6 @@
     "note": "日本の公共交通では静かにすることが大切です。",
     "id": 121,
     "issued": true,
-    "completed": true
+    "completed": false
   }
 ]
