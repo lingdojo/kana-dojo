@@ -1005,7 +1005,7 @@
     "note": "先に謝罪が基本。",
     "id": 112,
     "issued": true,
-    "completed": true
+    "completed": false
   },
   {
     "situation": "写真撮影（寺社） 6",
@@ -1050,7 +1050,7 @@
     "note": "ゴミ箱が少ない地域がある。",
     "id": 117,
     "issued": true,
-    "completed": true
+    "completed": false
   },
   {
     "situation": "お辞儀 6",
