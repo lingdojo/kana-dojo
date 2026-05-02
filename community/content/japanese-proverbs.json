@@ -460,5 +460,35 @@
   "romaji": "Yabu wo tsutsuite hebi wo dasu",
   "english": "Poke the bush and bring out a snake",
   "meaning": "Stir up trouble unnecessarily"
+},
+  {
+  "japanese": "備えあれば憂いなし",
+  "romaji": "Sonae areba urei nashi",
+  "english": "If you are prepared, there is no worry",
+  "meaning": "Adequate preparation prevents anxiety. Having a backup or a plan in place ensures that when challenges arise, you can handle them calmly."
+},
+  {
+  "japanese": "聞くは一時の恥、聞かぬは一生の恥",
+  "romaji": "Kiku wa isshonoji no haji, kikanu wa isshō no haji",
+  "english": "To ask is a moment's shame; not to ask is a lifetime's shame",
+  "meaning": "It is better to admit ignorance and learn something new than to pretend to know and remain ignorant forever."
+},
+{
+  "japanese": "継続は力なり",
+  "romaji": "Keizoku wa chikara nari",
+  "english": "Continuance is power",
+  "meaning": "Consistency is the key to mastery. Even small efforts, when repeated daily, accumulate into a formidable strength that cannot be easily broken."
+},
+  {
+  "japanese": "言わぬが花",
+  "romaji": "Iwanu ga hana",
+  "english": "Not speaking is the flower",
+  "meaning": "Some things are better left unsaid. Silence can be more beautiful, effective, or sophisticated than over-explaining or stating the obvious."
+},
+  {
+  "japanese": "明日は明日の風が吹く",
+  "romaji": "Ashita wa ashita no kaze ga fuku",
+  "english": "Tomorrow's wind will blow tomorrow",
+  "meaning": "Don't worry too much about the future or things you cannot control right now. Tomorrow will bring its own solutions and circumstances."
 }
 ]
