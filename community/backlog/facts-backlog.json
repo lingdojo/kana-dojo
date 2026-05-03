@@ -494,7 +494,7 @@
   {
     "id": 83,
     "fact": "There's a Japanese word 'nekojita' (猫舌) meaning 'cat tongue' - someone who can't eat or drink hot things.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -728,7 +728,7 @@
   {
     "id": 122,
     "fact": "Japan has 'anti-lonely death' services that check on elderly living alone and arrange their affairs if they pass away.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -818,7 +818,7 @@
   {
     "id": 137,
     "fact": "The Japanese word 'okashi' (おかしい) means both 'funny' and 'strange' - humor and oddity are deeply connected.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1058,7 +1058,7 @@
   {
     "id": 177,
     "fact": "The word 'tadaima' (ただいま) means 'I'm home' and is always answered with 'okaeri' (お帰り) - 'welcome back.'",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1682,7 +1682,7 @@
   {
     "id": 281,
     "fact": "Japan has 'kominka' farmhouses that are renovated into cafes, inns, and galleries while keeping original beams and hearths.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

@@ -50,7 +50,7 @@
     "dont": "ご飯に箸を立てる",
     "note": "立て箸は弔事連想のため避ける。",
     "id": 6,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -122,7 +122,7 @@
     "dont": "初対面でタメ口を使う",
     "note": "距離感が縮まるまでは敬語が無難。",
     "id": 14,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -149,7 +149,7 @@
     "dont": "ゴミを放置する",
     "note": "ゴミ箱が少ない地域がある。",
     "id": 17,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -842,7 +842,7 @@
     "dont": "初対面でタメ口を使う",
     "note": "距離感が縮まるまでは敬語が無難。",
     "id": 94,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -860,7 +860,7 @@
     "dont": "先に一人で飲み始める",
     "note": "場の一体感を重視。",
     "id": 96,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

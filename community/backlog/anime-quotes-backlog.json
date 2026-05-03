@@ -216,7 +216,7 @@
     "english": "Not yet! It's not over yet!",
     "anime": "Mobile Suit Gundam",
     "character": "Char Aznable",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -356,7 +356,7 @@
     "english": "I'll exterminate them! Every last one from this world!",
     "anime": "Attack on Titan",
     "character": "Eren Yeager",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -376,7 +376,7 @@
     "english": "Go beyond! Plus Ultra!",
     "anime": "My Hero Academia",
     "character": "All Might",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -756,7 +756,7 @@
     "english": "I think you should just laugh. (alt wording 24)",
     "anime": "Neon Genesis Evangelion",
     "character": "Rei Ayanami",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1276,7 +1276,7 @@
     "english": "I think you should just laugh. (alt wording 24) (alt wording 76)",
     "anime": "Neon Genesis Evangelion",
     "character": "Rei Ayanami",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

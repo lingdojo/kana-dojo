@@ -213,7 +213,7 @@
     "english": "Preaching Buddha to a horse's ear",
     "meaning": "Wasting good advice on someone who won't listen",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 25,
@@ -312,7 +312,7 @@
     "english": "A bee on a crying face",
     "meaning": "Misfortune never comes alone",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 36,
@@ -609,7 +609,7 @@
     "english": "Fortune comes to a laughing gate",
     "meaning": "Good fortune comes to those who smile",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 69,
@@ -717,7 +717,7 @@
     "english": "The moon and a turtle",
     "meaning": "Vast difference; not comparable",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 81,
@@ -1257,7 +1257,7 @@
     "english": "A rice cake falls from the shelf",
     "meaning": "Unexpected good luck",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 141,

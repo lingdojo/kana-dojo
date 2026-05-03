@@ -86,7 +86,7 @@
   {
     "id": 15,
     "text": "\"〜てくれる\" indicates someone does a favor for the speaker.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -339,7 +339,7 @@
     "id": 57,
     "text": "\"〜わけがない\" means \"there is no way that...\".",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 58,
@@ -380,7 +380,7 @@
   {
     "id": 64,
     "text": "\"〜によると\" means \"according to...\".",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -680,7 +680,7 @@
   {
     "id": 114,
     "text": "\"〜らしい\" can mean \"seems\" or describe a typical characteristic. (practice variation 29)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -764,7 +764,7 @@
   {
     "id": 128,
     "text": "\"〜にくい\" attaches to verb stems to mean \"hard to do\". (practice variation 43)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

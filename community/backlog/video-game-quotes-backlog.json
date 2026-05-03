@@ -246,7 +246,7 @@
     "game": "Danganronpa series",
     "character": "Makoto Naegi",
     "id": 25,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -708,7 +708,7 @@
     "game": "Monster Hunter series",
     "character": "Guild Handler lines",
     "id": 71,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -878,7 +878,7 @@
     "game": "Kingdom Hearts series (JP dub)",
     "character": "Sora",
     "id": 88,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -948,7 +948,7 @@
     "game": "Fire Emblem series",
     "character": "Various protagonists",
     "id": 95,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1168,7 +1168,7 @@
     "game": "Persona 5 Strikers",
     "character": "Joker",
     "id": 117,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
