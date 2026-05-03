@@ -490,5 +490,23 @@
   "romaji": "Kiku wa isshonoji no haji, kikanu wa isshō no haji",
   "english": "To ask is a moment's shame; not to ask is a lifetime's shame",
   "meaning": "It is better to admit ignorance and learn something new than to pretend to know and remain ignorant forever."
+},
+  {
+  "japanese": "木を見て森を見ず",
+  "romaji": "Ki wo mite mori wo mizu",
+  "english": "See the trees but not the forest",
+  "meaning": "Missing the bigger picture"
+},
+{
+  "japanese": "焼け石に水",
+  "romaji": "Yakeishi ni mizu",
+  "english": "Water on a hot stone",
+  "meaning": "A futile effort with little effect"
+},
+  {
+  "japanese": "井の中の蛙大海を知らず",
+  "romaji": "I no naka no kawazu taikai wo shirazu",
+  "english": "A frog in a well doesn’t know the ocean",
+  "meaning": "Limited experience limits perspective"
 }
 ]

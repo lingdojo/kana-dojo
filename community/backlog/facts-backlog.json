@@ -92,7 +92,7 @@
   {
     "id": 16,
     "fact": "Japan has 'capsule hotels' where guests sleep in pods roughly the size of a coffin - originally designed for businessmen who missed the last train home.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -230,7 +230,7 @@
   {
     "id": 39,
     "fact": "Japan has professional cuddlers you can hire to hold you while you nap - reflecting the country's epidemic of loneliness and touch starvation.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -458,7 +458,7 @@
   {
     "id": 77,
     "fact": "There's a Japanese concept 'shuhari' (守破離) - follow the rules, break the rules, transcend the rules - the path to mastery.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -638,7 +638,7 @@
   {
     "id": 107,
     "fact": "There's a Japanese concept 'omoiyari' (思いやり) meaning sensitivity to others' feelings - anticipating needs before they're expressed.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -764,7 +764,7 @@
   {
     "id": 128,
     "fact": "Japan has 'host clubs' where women pay to be flattered and entertained by handsome young men over expensive drinks.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -776,7 +776,7 @@
   {
     "id": 130,
     "fact": "Japan has a toilet museum in Kitakyushu where you can slide down a giant toilet and learn about sewage history.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -818,7 +818,7 @@
   {
     "id": 137,
     "fact": "The Japanese word 'okashi' (おかしい) means both 'funny' and 'strange' - humor and oddity are deeply connected.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -872,7 +872,7 @@
   {
     "id": 146,
     "fact": "Japan has a phenomenon called 'Paris Syndrome' - Japanese tourists experiencing severe shock when Paris doesn't match their idealized expectations.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1040,7 +1040,7 @@
   {
     "id": 174,
     "fact": "Japan has 'depachika' - basement food halls in department stores selling luxury foods from around the world.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1502,7 +1502,7 @@
   {
     "id": 251,
     "fact": "Japan has an art of arranging flowers called 'ikebana' (生け花), focusing on balance, line, and space rather than volume.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1628,7 +1628,7 @@
   {
     "id": 272,
     "fact": "The phrase 'okagesama de' is used to reply modestly to compliments, similar to saying 'thanks to your support'.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

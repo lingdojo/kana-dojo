@@ -76,7 +76,7 @@
     "english": "Ora ora ora ora ora!",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Jotaro Kujo",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -116,7 +116,7 @@
     "english": "I'm going to stop being human, JoJo!",
     "anime": "JoJo's Bizarre Adventure: Phantom Blood",
     "character": "Dio Brando",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -376,7 +376,7 @@
     "english": "Go beyond! Plus Ultra!",
     "anime": "My Hero Academia",
     "character": "All Might",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -906,7 +906,7 @@
     "english": "Relax, I'm the strongest. (alt wording 39)",
     "anime": "Jujutsu Kaisen",
     "character": "Satoru Gojo",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -916,7 +916,7 @@
     "english": "All I want is to live a normal life. (alt wording 40)",
     "anime": "Chainsaw Man",
     "character": "Denji",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -956,7 +956,7 @@
     "english": "I will become the god of the new world. (alt wording 44)",
     "anime": "Death Note",
     "character": "Light Yagami",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -976,7 +976,7 @@
     "english": "Who the hell do you think I am! (alt wording 46)",
     "anime": "Gurren Lagann",
     "character": "Kamina",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1006,7 +1006,7 @@
     "english": "Believing in my friends is my magic. (alt wording 49)",
     "anime": "Fairy Tail",
     "character": "Natsu Dragneel",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1156,7 +1156,7 @@
     "english": "I'm going to stop being human, JoJo! (alt wording 12) (alt wording 64)",
     "anime": "JoJo's Bizarre Adventure: Phantom Blood",
     "character": "Dio Brando",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1376,7 +1376,7 @@
     "english": "Those who don't take care of their comrades are worse than scum. (alt wording 34) (alt wording 86)",
     "anime": "Naruto",
     "character": "Kakashi Hatake",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

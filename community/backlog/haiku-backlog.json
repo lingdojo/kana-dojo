@@ -20,7 +20,7 @@
     "season": "Summer",
     "kigo": "Summer grasses (natsukusa)",
     "notes": "Reflects impermanence through a historical battlefield image.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -44,7 +44,7 @@
     "season": "Autumn",
     "kigo": "Harvest moon (meigetsu)",
     "notes": "Captures innocent longing through a domestic scene.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -92,7 +92,7 @@
     "season": "Summer",
     "kigo": "Morning glory (asagao)",
     "notes": "Famous for gentle empathy toward nature.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -116,7 +116,7 @@
     "season": "Spring",
     "kigo": "Frog (kaeru)",
     "notes": "Humorous encouragement and compassion in Issa's voice.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
