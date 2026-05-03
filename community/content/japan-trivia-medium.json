@@ -190,5 +190,11 @@
     "difficulty": "medium",
     "answers": ["Sado", "Chado", "Ikebana", "Kado"],
     "correctIndex": 1
-  }
+  },
+  {
+  "question": "Which Japanese festival features people throwing beans to drive away evil spirits? (Community variation 41)",
+  "difficulty": "medium",
+  "answers": ["Setsubun", "Obon", "Tanabata", "Shichi-Go-San"],
+  "correctIndex": 0
+  },
 ]
