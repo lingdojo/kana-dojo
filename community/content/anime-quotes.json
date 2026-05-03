@@ -391,4 +391,32 @@
   "anime": "Fullmetal Alchemist: Brotherhood",
   "character": "Edward Elric"
 },
+{
+  "japanese": "オレ様の美技にブギウギ",
+  "romaji": "Ore-sama no bigi ni bugiugi",
+  "english": "Dance to my beautiful technique! (alt wording 23) (alt wording 75)",
+  "anime": "The Prince of Tennis",
+  "character": "Keigo Atobe"
+},
+{
+  "japanese": "守るものがある限り、俺は負けない",
+  "romaji": "Mamoru mono ga aru kagiri, ore wa makenai",
+  "english": "As long as I have something to protect, I won't lose. (alt wording 43)",
+  "anime": "Bleach",
+  "character": "Ichigo Kurosaki"
+},
+{
+  "japanese": "まだだ、まだ終わらんよ！",
+  "romaji": "Mada da, mada owaran yo!",
+  "english": "Not yet! It's not over yet! (alt wording 22) (alt wording 74)",
+  "anime": "Mobile Suit Gundam",
+  "character": "Char Aznable"
+},
+  {
+  "japanese": "マママママ",
+  "romaji": "Mama mama mama",
+  "english": "Mama mama mama. (alt wording 29)",
+  "anime": "One Piece",
+  "character": "Charlotte Linlin (Big Mom)"
+}
 ]

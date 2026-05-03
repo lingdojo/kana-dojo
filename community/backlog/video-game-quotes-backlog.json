@@ -206,7 +206,7 @@
     "game": "The Prince of Tennis: Sweat & Tears 2",
     "character": "Ryoma Echizen",
     "id": 21,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -246,7 +246,7 @@
     "game": "Danganronpa series",
     "character": "Makoto Naegi",
     "id": 25,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -286,7 +286,7 @@
     "game": "Street Fighter series",
     "character": "Ryu",
     "id": 29,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -336,7 +336,7 @@
     "game": "Yakuza: Like a Dragon",
     "character": "Ichiban Kasuga",
     "id": 34,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -426,7 +426,7 @@
     "game": "Tales of the Abyss",
     "character": "Luke fon Fabre",
     "id": 43,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -466,7 +466,7 @@
     "game": "Dragon Quest series",
     "character": "Recurring command voice",
     "id": 47,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -536,7 +536,7 @@
     "game": "Yakuza: Like a Dragon",
     "character": "Ichiban Kasuga",
     "id": 54,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -568,7 +568,7 @@
     "game": "Persona 5 Strikers",
     "character": "Joker",
     "id": 57,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -658,7 +658,7 @@
     "game": "JoJo’s Bizarre Adventure: All-Star Battle",
     "character": "Giorno Giovanna",
     "id": 66,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -708,7 +708,7 @@
     "game": "Monster Hunter series",
     "character": "Guild Handler lines",
     "id": 71,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -948,7 +948,7 @@
     "game": "Fire Emblem series",
     "character": "Various protagonists",
     "id": 95,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -968,7 +968,7 @@
     "game": "Persona 5 Strikers",
     "character": "Joker",
     "id": 97,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -988,7 +988,7 @@
     "game": "Tales series",
     "character": "Various endings",
     "id": 99,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1058,7 +1058,7 @@
     "game": "JoJo’s Bizarre Adventure: All-Star Battle",
     "character": "Giorno Giovanna",
     "id": 106,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1168,7 +1168,7 @@
     "game": "Persona 5 Strikers",
     "character": "Joker",
     "id": 117,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

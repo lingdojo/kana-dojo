@@ -145,5 +145,33 @@
     "english": "Next time, I'll be stronger.",
     "game": "Pokemon series",
     "character": "Rival characters"
+  },
+  {
+    "japanese": "また会おう、相棒",
+    "romaji": "Mata aou, aibou",
+    "english": "See you again, partner.",
+    "game": "Metal Gear Solid 3: Snake Eater",
+    "character": "Big Boss / Snake"
+  },
+  {
+    "japanese": "行くぞ！ここからが本当の戦いだ！",
+    "romaji": "Iku zo! Koko kara ga hontou no tatakai da!",
+    "english": "Let's go! This is where the real battle begins!",
+    "game": "Generic JRPG battle trope",
+    "character": "Hero archetype"
+  },
+  {
+    "japanese": "まだ終わってない！ここからだ！",
+    "romaji": "Mada owatte nai! Koko kara da!",
+    "english": "It's not over! It starts now!",
+    "game": "Pokémon series",
+    "character": "Rival characters"
+  },
+  {
+    "japanese": "一人じゃない、みんながいる！",
+    "romaji": "Hitori janai, minna ga iru!",
+    "english": "You're not alone, everyone is with you!",
+    "game": "JRPG trope",
+    "character": "Party leader"
   }
 ]

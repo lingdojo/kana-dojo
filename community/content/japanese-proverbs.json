@@ -1,351 +1,351 @@
 [
-    {
-        "japanese":  "磨けば光る",
-        "romaji":  "Migakeba hikaru",
-        "english":  "If polished, it will shine",
-        "meaning":  "Every person has latent potential that practice and discipline can reveal. The difference between ordinary and extraordinary is often simply the willingness to refine relentlessly."
-    },
-    {
-        "japanese":  "一寸先は闇",
-        "romaji":  "Isshun saki wa yami",
-        "english":  "An inch ahead is darkness",
-        "meaning":  "The future is uncertain. This is cause for humility about predictions — adaptability is more valuable than overconfident forecasting in an unknowable world."
-    },
-    {
-        "japanese":  "物の哀れ",
-        "romaji":  "Mono no aware",
-        "english":  "The pathos of things",
-        "meaning":  "A Japanese aesthetic sensibility — finding beauty in transience and gentle sadness. This emotional literacy enriches life and deepens human connection beyond pure utility."
-    },
-    {
-        "japanese":  "以心伝心",
-        "romaji":  "Ishin denshin",
-        "english":  "Heart to heart communication",
-        "meaning":  "Deep mutual understanding that transcends words. Building trust where much goes unsaid — yet is understood — is the hallmark of great partnerships and teams."
-    },
-    {
-        "japanese":  "人は見た目が九割",
-        "romaji":  "Hito wa mitame ga kyūwari",
-        "english":  "Ninety percent of a person is appearance",
-        "meaning":  "First impressions and presentation matter enormously. Understanding this is not vanity — it is social realism that shapes how leaders and communicators are received."
-    },
-    {
-        "japanese":  "敵を知り己を知れば百戦殆うからず",
-        "romaji":  "Teki wo shiri onore wo shireba hyakusen ayaūkarazu",
-        "english":  "Know the enemy and know yourself; in a hundred battles you will never be defeated",
-        "meaning":  "Self-knowledge and situational awareness together make you undefeatable. Neither alone is enough — strategic superiority requires both simultaneously."
-    },
-    {
-        "japanese":  "剣より強し",
-        "romaji":  "Pen wa ken yori tsuyoshi",
-        "english":  "The pen is mightier than the sword",
-        "meaning":  "Ideas, language, and communication ultimately shape reality more powerfully than force. Those who can articulate and persuade reshape the world more durably than those who only coerce."
-    },
-    {
-        "japanese":  "窮鼠猫を噛む",
-        "romaji":  "Kyūso neko wo kamu",
-        "english":  "A cornered rat will bite the cat",
-        "meaning":  "Even the weakest will fight when left no option. Never back adversaries into corners — leave a dignified exit to prevent desperate, costly confrontation."
-    },
-    {
-        "japanese":  "春夏秋冬",
-        "romaji":  "Shunka shūtō",
-        "english":  "Spring, summer, autumn, winter",
-        "meaning":  "All of life moves in cycles. Success and failure, energy and rest, growth and decline are natural phases. Working with cycles — not against them — is a mark of wisdom."
-    },
-    {
-        "japanese":  "一を聞いて十を知る",
-        "romaji":  "Ichi wo kiite jū wo shiru",
-        "english":  "Hear one, understand ten",
-        "meaning":  "True intelligence involves pattern recognition and inference — extracting far more than what is literally stated. The ability to extrapolate and connect distinguishes brilliant thinkers."
-    },
-    {
-        "japanese":  "無知の知",
-        "romaji":  "Muchi no chi",
-        "english":  "Knowing that you don\u0027t know",
-        "meaning":  "The Socratic insight absorbed into Japanese wisdom. Awareness of one\u0027s own ignorance is the beginning of true knowledge. Intellectual arrogance is the enemy of learning."
-    },
-    {
-        "japanese":  "自業自得",
-        "romaji":  "Jigō jitoku",
-        "english":  "You reap what you sow",
-        "meaning":  "Actions return to their origin. Recognizing that our present circumstances are largely the product of past choices is empowering — it means we can shape what comes next."
-    },
-    {
-        "japanese":  "縁起",
-        "romaji":  "Engi",
-        "english":  "Dependent origination",
-        "meaning":  "Nothing arises independently — everything is the result of conditions and interconnections. The philosophical basis of systems thinking: no element can be understood in isolation."
-    },
-    {
-        "japanese":  "思いやり",
-        "romaji":  "Omoiyari",
-        "english":  "Empathy and consideration for others",
-        "meaning":  "The capacity to imagine another\u0027s experience and act accordingly. Omoiyari underlies trust, cooperation, and the highest forms of communication — both cognitive and behavioral."
-    },
-    {
-        "japanese":  "必要は発明の母",
-        "romaji":  "Hitsuyō wa hatsumei no haha",
-        "english":  "Necessity is the mother of invention",
-        "meaning":  "Constraints and pressures are the engines of creativity. The most innovative solutions emerge from scarcity — why diverse, resource-limited teams often out-innovate well-funded ones."
-    },
-    {
-        "japanese":  "学問に王道なし",
-        "romaji":  "Gakumon ni ōdō nashi",
-        "english":  "There is no royal road to learning",
-        "meaning":  "No shortcut exists to genuine knowledge. Everyone — regardless of status or intelligence — must put in the work. This democratic principle is both humbling and equalizing."
-    },
-    {
-        "japanese":  "桃栗三年柿八年",
-        "romaji":  "Momo kuri sannen kaki hachinen",
-        "english":  "Peaches and chestnuts in three years; persimmons in eight",
-        "meaning":  "Different goals require different time horizons. Strategic patience means matching your expectations to the natural rhythm of what you are cultivating."
-    },
-    {
-        "japanese":  "道は近くにあり",
-        "romaji":  "Michi wa chikaku ni ari",
-        "english":  "The way is close at hand",
-        "meaning":  "The solution we seek is often not distant or exotic but right before us. This counters the tendency to seek complex answers to problems that have simple, nearby solutions."
-    },
-    {
-        "japanese":  "実るほど頭を垂れる稲穂かな",
-        "romaji":  "Minoru hodo atama wo tareru inaho kana",
-        "english":  "The more the rice ripens, the more it bows its head",
-        "meaning":  "The more truly accomplished a person becomes, the more humble they are. Genuine mastery brings a deep awareness of how much remains unknown — arrogance marks incompleteness."
-    },
-    {
-        "japanese":  "猫の手も借りたい",
-        "romaji":  "Neko no te mo karitai",
-        "english":  "I\u0027d even borrow a cat\u0027s paw",
-        "meaning":  "Extremely busy — so overwhelmed with work that any help, even from a cat, would be welcome. A vivid reminder that resource planning matters before crises hit."
-    },
-    {
-        "japanese":  "蓼食う虫も好き好き",
-        "romaji":  "Tade kuu mushi mo sukizuki",
-        "english":  "Even insects that eat bitter knotweed have their preferences",
-        "meaning":  "There is no accounting for taste — everyone has their own preferences. Accepting diversity of preference is foundational to inclusive leadership and market design."
-    },
-    {
-        "japanese":  "一難去ってまた一難",
-        "romaji":  "Ichiman satte mata ichinan",
-        "english":  "No sooner is one crisis over than another begins",
-        "meaning":  "Problems do not end — they evolve. Resilient organizations and individuals build systems for continuous challenge management, not just one-time problem solving."
-    },
-    {
-        "japanese":  "口に蜜あり腹に剣あり",
-        "romaji":  "Kuchi ni mitsu ari hara ni ken ari",
-        "english":  "Honey in the mouth, a sword in the belly",
-        "meaning":  "Beware those who speak sweetly but harbor harmful intent. Discernment between genuine and performed warmth is essential in leadership and relationships."
-    },
-    {
-        "japanese":  "七歩の才",
-        "romaji":  "Nanapo no sai",
-        "english":  "The talent to compose in seven steps",
-        "meaning":  "Refers to exceptional creative speed and fluency. True mastery looks effortless — but it is built on thousands of hours of invisible preparation."
-    },
-    {
-        "japanese":  "因果応報",
-        "romaji":  "Inga ōhō",
-        "english":  "Karma — cause and effect",
-        "meaning":  "Every action generates a consequence. Moral accountability is not just ethical — it is mechanistic. Understanding causality deeply is the basis of both scientific and ethical reasoning."
-    },
-    {
-        "japanese":  "七転び八起き",
-        "romaji":  "Nana korobi ya oki",
-        "english":  "Fall seven, rise eight",
-        "meaning":  "The count of rising is always one more than falling. Resilience is mathematically simple — just get up one more time than you fall. The arithmetic of persistence."
-    },
-    {
-        "japanese":  "一刀両断",
-        "romaji":  "Ittō ryōdan",
-        "english":  "Cut through with a single stroke",
-        "meaning":  "Decisive action that resolves a complex problem cleanly. Great leaders develop the judgment to cut through ambiguity rather than endlessly deliberate on what is already clear."
-    },
-    {
-        "japanese":  "破竹の勢い",
-        "romaji":  "Hachiku no ikioi",
-        "english":  "The force of splitting bamboo",
-        "meaning":  "Unstoppable momentum — once started, it keeps going. Understanding how to build and sustain momentum is one of the most valuable skills in any large undertaking."
-    },
-    {
-        "japanese":  "焼け石に水",
-        "romaji":  "Yakeishi ni mizu",
-        "english":  "Water on a hot stone",
-        "meaning":  "A futile effort"
-    },
-    {
-        "japanese":  "出る杭は打たれる",
-        "romaji":  "Deru kui wa utareru",
-        "english":  "The nail that sticks out gets hammered down",
-        "meaning":  "Standing out invites criticism"
-    },
-    {
-        "japanese":  "犬も歩けば棒に当たる",
-        "romaji":  "Inu mo arukeba bou ni ataru",
-        "english":  "Even a walking dog will hit a stick",
-        "meaning":  "Acting can lead to luck (or trouble)"
-    },
-    {
-        "japanese":  "七転び八起き",
-        "romaji":  "Nanakorobi yaoki",
-        "english":  "Fall seven times, get up eight",
-        "meaning":  "Never give up"
-    },
-    {
-        "japanese":  "縁は異なもの味なもの",
-        "romaji":  "En wa inamono aji na mono",
-        "english":  "Fate is strange yet delightful",
-        "meaning":  "Unexpected connections can be good"
-    },
-    {
-        "japanese":  "後悔先に立たず",
-        "romaji":  "Koukai saki ni tatazu",
-        "english":  "Regret does not stand before",
-        "meaning":  "It\u0027s too late for regrets"
-    },
-    {
-        "japanese":  "後悔先に立たず",
-        "romaji":  "Koukai saki ni tatazu",
-        "english":  "Regret does not stand before",
-        "meaning":  "It\u0027s too late for regrets"
-    },
-    {
-        "japanese":  "泣きっ面に蜂",
-        "romaji":  "Nakittsura ni hachi",
-        "english":  "A bee on a crying face",
-        "meaning":  "Misfortune never comes alone"
-    },
-    {
-        "japanese":  "口は災いの元",
-        "romaji":  "Kuchi wa wazawai no moto",
-        "english":  "The mouth is the source of disaster",
-        "meaning":  "Careless words cause trouble"
-    },
-    {
-        "japanese":  "石の上にも三年",
-        "romaji":  "Ishi no ue ni mo sannen",
-        "english":  "Three years on a stone",
-        "meaning":  "Perseverance prevails"
-    },
-    {
-        "japanese":  "猿も木から落ちる",
-        "romaji":  "Saru mo ki kara ochiru",
-        "english":  "Even monkeys fall from trees",
-        "meaning":  "Even experts can make mistakes"
-    },
-    {
-        "japanese":  "二度あることは三度ある",
-        "romaji":  "Nido aru koto wa sando aru",
-        "english":  "What happens twice will happen a third time",
-        "meaning":  "Patterns tend to repeat"
-    },
-    {
-        "japanese":  "楽あれば苦あり",
-        "romaji":  "Raku areba ku ari",
-        "english":  "After ease comes hardship",
-        "meaning":  "Good times and bad times alternate"
-    },
-    {
-        "japanese":  "善因善果",
-        "romaji":  "Zenin zenka",
-        "english":  "Good causes bring good results",
-        "meaning":  "Good deeds lead to good outcomes"
-    },
-    {
-        "japanese":  "良薬は口に苦し",
-        "romaji":  "Ryouyaku wa kuchi ni nigashi",
-        "english":  "Good medicine tastes bitter",
-        "meaning":  "Helpful advice often sounds harsh"
-    },
-    {
-        "japanese":  "蛙の子は蛙",
-        "romaji":  "Kaeru no ko wa kaeru",
-        "english":  "A frog\u0027s child is a frog",
-        "meaning":  "Children resemble their parents"
-    },
-    {
-        "japanese":  "馬子にも衣装",
-        "romaji":  "Mago ni mo ishou",
-        "english":  "Even a packhorse driver looks good in fine clothes",
-        "meaning":  "Clothes make the person"
-    },
-    {
-        "japanese":  "人のふり見て我がふり直せ",
-        "romaji":  "Hito no furi mite waga furi naose",
-        "english":  "Watch others and correct yourself",
-        "meaning":  "Learn from others\u0027 behavior"
-    },
-    {
-        "japanese":  "善は急げ",
-        "romaji":  "Zen wa isoge",
-        "english":  "Hurry to do good",
-        "meaning":  "Do worthwhile things promptly"
-    },
-    {
-        "japanese":  "急いては事を仕損じる",
-        "romaji":  "Seite wa koto wo shisonjiru",
-        "english":  "Haste will spoil things",
-        "meaning":  "Haste makes waste"
-    },
-    {
-        "japanese":  "井の中の蛙大海を知らず",
-        "romaji":  "I no naka no kawazu taikai wo shirazu",
-        "english":  "A frog in a well does not know the great sea",
-        "meaning":  "Limited experience limits perspective"
-    },
-    {
-        "japanese":  "七転び八起き",
-        "romaji":  "Nanakorobi yaoki",
-        "english":  "Fall seven times, get up eight",
-        "meaning":  "Never give up"
-    },
-    {
-        "japanese":  "捕らぬ狸の皮算用",
-        "romaji":  "Toranu tanuki no kawazan\u0027you",
-        "english":  "Counting a raccoon dog\u0027s skins before catching it",
-        "meaning":  "Don\u0027t count your chickens before they hatch"
-    },
-    {
-        "japanese":  "七転八倒",
-        "romaji":  "Shichiten battou",
-        "english":  "Seven falls, eight struggles",
-        "meaning":  "Going through great pain and struggle"
-    },
-    {
-        "japanese":  "月とすっぽん",
-        "romaji":  "Tsuki to suppon",
-        "english":  "The moon and a turtle",
-        "meaning":  "Vast difference; not comparable"
-    },
-    {
-        "japanese":  "良薬は口に苦し",
-        "romaji":  "Ryouyaku wa kuchi ni nigashi",
-        "english":  "Good medicine tastes bitter",
-        "meaning":  "Helpful advice can be hard to hear"
-    },
-    {
-        "japanese":  "猫の額",
-        "romaji":  "Neko no hitai",
-        "english":  "A cat\u0027s forehead",
-        "meaning":  "Very small space"
-    },
-    {
-        "japanese":  "油断大敵",
-        "romaji":  "Yudan taiteki",
-        "english":  "Carelessness is the greatest enemy",
-        "meaning":  "Don\u0027t let your guard down"
-    },
-    {
-        "japanese":  "腹八分目",
-        "romaji":  "Hara hachibunme",
-        "english":  "Stomach 80 percent full",
-        "meaning":  "Eat in moderation"
-    },
+  {
+    "japanese": "磨けば光る",
+    "romaji": "Migakeba hikaru",
+    "english": "If polished, it will shine",
+    "meaning": "Every person has latent potential that practice and discipline can reveal. The difference between ordinary and extraordinary is often simply the willingness to refine relentlessly."
+  },
+  {
+    "japanese": "一寸先は闇",
+    "romaji": "Isshun saki wa yami",
+    "english": "An inch ahead is darkness",
+    "meaning": "The future is uncertain. This is cause for humility about predictions — adaptability is more valuable than overconfident forecasting in an unknowable world."
+  },
+  {
+    "japanese": "物の哀れ",
+    "romaji": "Mono no aware",
+    "english": "The pathos of things",
+    "meaning": "A Japanese aesthetic sensibility — finding beauty in transience and gentle sadness. This emotional literacy enriches life and deepens human connection beyond pure utility."
+  },
+  {
+    "japanese": "以心伝心",
+    "romaji": "Ishin denshin",
+    "english": "Heart to heart communication",
+    "meaning": "Deep mutual understanding that transcends words. Building trust where much goes unsaid — yet is understood — is the hallmark of great partnerships and teams."
+  },
+  {
+    "japanese": "人は見た目が九割",
+    "romaji": "Hito wa mitame ga kyūwari",
+    "english": "Ninety percent of a person is appearance",
+    "meaning": "First impressions and presentation matter enormously. Understanding this is not vanity — it is social realism that shapes how leaders and communicators are received."
+  },
+  {
+    "japanese": "敵を知り己を知れば百戦殆うからず",
+    "romaji": "Teki wo shiri onore wo shireba hyakusen ayaūkarazu",
+    "english": "Know the enemy and know yourself; in a hundred battles you will never be defeated",
+    "meaning": "Self-knowledge and situational awareness together make you undefeatable. Neither alone is enough — strategic superiority requires both simultaneously."
+  },
+  {
+    "japanese": "剣より強し",
+    "romaji": "Pen wa ken yori tsuyoshi",
+    "english": "The pen is mightier than the sword",
+    "meaning": "Ideas, language, and communication ultimately shape reality more powerfully than force. Those who can articulate and persuade reshape the world more durably than those who only coerce."
+  },
+  {
+    "japanese": "窮鼠猫を噛む",
+    "romaji": "Kyūso neko wo kamu",
+    "english": "A cornered rat will bite the cat",
+    "meaning": "Even the weakest will fight when left no option. Never back adversaries into corners — leave a dignified exit to prevent desperate, costly confrontation."
+  },
+  {
+    "japanese": "春夏秋冬",
+    "romaji": "Shunka shūtō",
+    "english": "Spring, summer, autumn, winter",
+    "meaning": "All of life moves in cycles. Success and failure, energy and rest, growth and decline are natural phases. Working with cycles — not against them — is a mark of wisdom."
+  },
+  {
+    "japanese": "一を聞いて十を知る",
+    "romaji": "Ichi wo kiite jū wo shiru",
+    "english": "Hear one, understand ten",
+    "meaning": "True intelligence involves pattern recognition and inference — extracting far more than what is literally stated. The ability to extrapolate and connect distinguishes brilliant thinkers."
+  },
+  {
+    "japanese": "無知の知",
+    "romaji": "Muchi no chi",
+    "english": "Knowing that you don\u0027t know",
+    "meaning": "The Socratic insight absorbed into Japanese wisdom. Awareness of one\u0027s own ignorance is the beginning of true knowledge. Intellectual arrogance is the enemy of learning."
+  },
+  {
+    "japanese": "自業自得",
+    "romaji": "Jigō jitoku",
+    "english": "You reap what you sow",
+    "meaning": "Actions return to their origin. Recognizing that our present circumstances are largely the product of past choices is empowering — it means we can shape what comes next."
+  },
+  {
+    "japanese": "縁起",
+    "romaji": "Engi",
+    "english": "Dependent origination",
+    "meaning": "Nothing arises independently — everything is the result of conditions and interconnections. The philosophical basis of systems thinking: no element can be understood in isolation."
+  },
+  {
+    "japanese": "思いやり",
+    "romaji": "Omoiyari",
+    "english": "Empathy and consideration for others",
+    "meaning": "The capacity to imagine another\u0027s experience and act accordingly. Omoiyari underlies trust, cooperation, and the highest forms of communication — both cognitive and behavioral."
+  },
+  {
+    "japanese": "必要は発明の母",
+    "romaji": "Hitsuyō wa hatsumei no haha",
+    "english": "Necessity is the mother of invention",
+    "meaning": "Constraints and pressures are the engines of creativity. The most innovative solutions emerge from scarcity — why diverse, resource-limited teams often out-innovate well-funded ones."
+  },
+  {
+    "japanese": "学問に王道なし",
+    "romaji": "Gakumon ni ōdō nashi",
+    "english": "There is no royal road to learning",
+    "meaning": "No shortcut exists to genuine knowledge. Everyone — regardless of status or intelligence — must put in the work. This democratic principle is both humbling and equalizing."
+  },
+  {
+    "japanese": "桃栗三年柿八年",
+    "romaji": "Momo kuri sannen kaki hachinen",
+    "english": "Peaches and chestnuts in three years; persimmons in eight",
+    "meaning": "Different goals require different time horizons. Strategic patience means matching your expectations to the natural rhythm of what you are cultivating."
+  },
+  {
+    "japanese": "道は近くにあり",
+    "romaji": "Michi wa chikaku ni ari",
+    "english": "The way is close at hand",
+    "meaning": "The solution we seek is often not distant or exotic but right before us. This counters the tendency to seek complex answers to problems that have simple, nearby solutions."
+  },
+  {
+    "japanese": "実るほど頭を垂れる稲穂かな",
+    "romaji": "Minoru hodo atama wo tareru inaho kana",
+    "english": "The more the rice ripens, the more it bows its head",
+    "meaning": "The more truly accomplished a person becomes, the more humble they are. Genuine mastery brings a deep awareness of how much remains unknown — arrogance marks incompleteness."
+  },
+  {
+    "japanese": "猫の手も借りたい",
+    "romaji": "Neko no te mo karitai",
+    "english": "I\u0027d even borrow a cat\u0027s paw",
+    "meaning": "Extremely busy — so overwhelmed with work that any help, even from a cat, would be welcome. A vivid reminder that resource planning matters before crises hit."
+  },
+  {
+    "japanese": "蓼食う虫も好き好き",
+    "romaji": "Tade kuu mushi mo sukizuki",
+    "english": "Even insects that eat bitter knotweed have their preferences",
+    "meaning": "There is no accounting for taste — everyone has their own preferences. Accepting diversity of preference is foundational to inclusive leadership and market design."
+  },
+  {
+    "japanese": "一難去ってまた一難",
+    "romaji": "Ichiman satte mata ichinan",
+    "english": "No sooner is one crisis over than another begins",
+    "meaning": "Problems do not end — they evolve. Resilient organizations and individuals build systems for continuous challenge management, not just one-time problem solving."
+  },
+  {
+    "japanese": "口に蜜あり腹に剣あり",
+    "romaji": "Kuchi ni mitsu ari hara ni ken ari",
+    "english": "Honey in the mouth, a sword in the belly",
+    "meaning": "Beware those who speak sweetly but harbor harmful intent. Discernment between genuine and performed warmth is essential in leadership and relationships."
+  },
+  {
+    "japanese": "七歩の才",
+    "romaji": "Nanapo no sai",
+    "english": "The talent to compose in seven steps",
+    "meaning": "Refers to exceptional creative speed and fluency. True mastery looks effortless — but it is built on thousands of hours of invisible preparation."
+  },
+  {
+    "japanese": "因果応報",
+    "romaji": "Inga ōhō",
+    "english": "Karma — cause and effect",
+    "meaning": "Every action generates a consequence. Moral accountability is not just ethical — it is mechanistic. Understanding causality deeply is the basis of both scientific and ethical reasoning."
+  },
+  {
+    "japanese": "七転び八起き",
+    "romaji": "Nana korobi ya oki",
+    "english": "Fall seven, rise eight",
+    "meaning": "The count of rising is always one more than falling. Resilience is mathematically simple — just get up one more time than you fall. The arithmetic of persistence."
+  },
+  {
+    "japanese": "一刀両断",
+    "romaji": "Ittō ryōdan",
+    "english": "Cut through with a single stroke",
+    "meaning": "Decisive action that resolves a complex problem cleanly. Great leaders develop the judgment to cut through ambiguity rather than endlessly deliberate on what is already clear."
+  },
+  {
+    "japanese": "破竹の勢い",
+    "romaji": "Hachiku no ikioi",
+    "english": "The force of splitting bamboo",
+    "meaning": "Unstoppable momentum — once started, it keeps going. Understanding how to build and sustain momentum is one of the most valuable skills in any large undertaking."
+  },
+  {
+    "japanese": "焼け石に水",
+    "romaji": "Yakeishi ni mizu",
+    "english": "Water on a hot stone",
+    "meaning": "A futile effort"
+  },
+  {
+    "japanese": "出る杭は打たれる",
+    "romaji": "Deru kui wa utareru",
+    "english": "The nail that sticks out gets hammered down",
+    "meaning": "Standing out invites criticism"
+  },
+  {
+    "japanese": "犬も歩けば棒に当たる",
+    "romaji": "Inu mo arukeba bou ni ataru",
+    "english": "Even a walking dog will hit a stick",
+    "meaning": "Acting can lead to luck (or trouble)"
+  },
+  {
+    "japanese": "七転び八起き",
+    "romaji": "Nanakorobi yaoki",
+    "english": "Fall seven times, get up eight",
+    "meaning": "Never give up"
+  },
+  {
+    "japanese": "縁は異なもの味なもの",
+    "romaji": "En wa inamono aji na mono",
+    "english": "Fate is strange yet delightful",
+    "meaning": "Unexpected connections can be good"
+  },
+  {
+    "japanese": "後悔先に立たず",
+    "romaji": "Koukai saki ni tatazu",
+    "english": "Regret does not stand before",
+    "meaning": "It\u0027s too late for regrets"
+  },
+  {
+    "japanese": "後悔先に立たず",
+    "romaji": "Koukai saki ni tatazu",
+    "english": "Regret does not stand before",
+    "meaning": "It\u0027s too late for regrets"
+  },
+  {
+    "japanese": "泣きっ面に蜂",
+    "romaji": "Nakittsura ni hachi",
+    "english": "A bee on a crying face",
+    "meaning": "Misfortune never comes alone"
+  },
+  {
+    "japanese": "口は災いの元",
+    "romaji": "Kuchi wa wazawai no moto",
+    "english": "The mouth is the source of disaster",
+    "meaning": "Careless words cause trouble"
+  },
+  {
+    "japanese": "石の上にも三年",
+    "romaji": "Ishi no ue ni mo sannen",
+    "english": "Three years on a stone",
+    "meaning": "Perseverance prevails"
+  },
+  {
+    "japanese": "猿も木から落ちる",
+    "romaji": "Saru mo ki kara ochiru",
+    "english": "Even monkeys fall from trees",
+    "meaning": "Even experts can make mistakes"
+  },
+  {
+    "japanese": "二度あることは三度ある",
+    "romaji": "Nido aru koto wa sando aru",
+    "english": "What happens twice will happen a third time",
+    "meaning": "Patterns tend to repeat"
+  },
+  {
+    "japanese": "楽あれば苦あり",
+    "romaji": "Raku areba ku ari",
+    "english": "After ease comes hardship",
+    "meaning": "Good times and bad times alternate"
+  },
+  {
+    "japanese": "善因善果",
+    "romaji": "Zenin zenka",
+    "english": "Good causes bring good results",
+    "meaning": "Good deeds lead to good outcomes"
+  },
+  {
+    "japanese": "良薬は口に苦し",
+    "romaji": "Ryouyaku wa kuchi ni nigashi",
+    "english": "Good medicine tastes bitter",
+    "meaning": "Helpful advice often sounds harsh"
+  },
+  {
+    "japanese": "蛙の子は蛙",
+    "romaji": "Kaeru no ko wa kaeru",
+    "english": "A frog\u0027s child is a frog",
+    "meaning": "Children resemble their parents"
+  },
+  {
+    "japanese": "馬子にも衣装",
+    "romaji": "Mago ni mo ishou",
+    "english": "Even a packhorse driver looks good in fine clothes",
+    "meaning": "Clothes make the person"
+  },
+  {
+    "japanese": "人のふり見て我がふり直せ",
+    "romaji": "Hito no furi mite waga furi naose",
+    "english": "Watch others and correct yourself",
+    "meaning": "Learn from others\u0027 behavior"
+  },
+  {
+    "japanese": "善は急げ",
+    "romaji": "Zen wa isoge",
+    "english": "Hurry to do good",
+    "meaning": "Do worthwhile things promptly"
+  },
+  {
+    "japanese": "急いては事を仕損じる",
+    "romaji": "Seite wa koto wo shisonjiru",
+    "english": "Haste will spoil things",
+    "meaning": "Haste makes waste"
+  },
+  {
+    "japanese": "井の中の蛙大海を知らず",
+    "romaji": "I no naka no kawazu taikai wo shirazu",
+    "english": "A frog in a well does not know the great sea",
+    "meaning": "Limited experience limits perspective"
+  },
+  {
+    "japanese": "七転び八起き",
+    "romaji": "Nanakorobi yaoki",
+    "english": "Fall seven times, get up eight",
+    "meaning": "Never give up"
+  },
+  {
+    "japanese": "捕らぬ狸の皮算用",
+    "romaji": "Toranu tanuki no kawazan\u0027you",
+    "english": "Counting a raccoon dog\u0027s skins before catching it",
+    "meaning": "Don\u0027t count your chickens before they hatch"
+  },
+  {
+    "japanese": "七転八倒",
+    "romaji": "Shichiten battou",
+    "english": "Seven falls, eight struggles",
+    "meaning": "Going through great pain and struggle"
+  },
+  {
+    "japanese": "月とすっぽん",
+    "romaji": "Tsuki to suppon",
+    "english": "The moon and a turtle",
+    "meaning": "Vast difference; not comparable"
+  },
+  {
+    "japanese": "良薬は口に苦し",
+    "romaji": "Ryouyaku wa kuchi ni nigashi",
+    "english": "Good medicine tastes bitter",
+    "meaning": "Helpful advice can be hard to hear"
+  },
+  {
+    "japanese": "猫の額",
+    "romaji": "Neko no hitai",
+    "english": "A cat\u0027s forehead",
+    "meaning": "Very small space"
+  },
+  {
+    "japanese": "油断大敵",
+    "romaji": "Yudan taiteki",
+    "english": "Carelessness is the greatest enemy",
+    "meaning": "Don\u0027t let your guard down"
+  },
+  {
+    "japanese": "腹八分目",
+    "romaji": "Hara hachibunme",
+    "english": "Stomach 80 percent full",
+    "meaning": "Eat in moderation"
+  },
   {
     "japanese": "自業自得",
     "romaji": "Jigō jitoku",
     "english": "what goes around comes around",
-    "meaning":"You reap what you sow"
+    "meaning": "You reap what you sow"
   },
   {
     "japanese": "喉元過ぎれば熱さを忘れる",
@@ -360,89 +360,89 @@
     "meaning": "Focus on one thing at a time"
   },
   {
-  "japanese": "千里の道も一歩から",
-  "romaji": "Senri no michi mo ippo kara",
-  "english": "A journey of a thousand miles begins with one step",
-  "meaning": "Start small"
+    "japanese": "千里の道も一歩から",
+    "romaji": "Senri no michi mo ippo kara",
+    "english": "A journey of a thousand miles begins with one step",
+    "meaning": "Start small"
   },
   {
-  "japanese": "針の穴から天を覗く",
-  "romaji": "Hari no ana kara ten wo nozoku",
-  "english": "Peek at the sky through a needle's eye",
-  "meaning": "A narrow viewpoint leads to poor judgment"
-},
-    {
-  "japanese": "念には念を入れよ",
-  "romaji": "Nen ni wa nen wo ireyo",
-  "english": "Put care into care",
-  "meaning": "Double-check; be extra careful"
+    "japanese": "針の穴から天を覗く",
+    "romaji": "Hari no ana kara ten wo nozoku",
+    "english": "Peek at the sky through a needle's eye",
+    "meaning": "A narrow viewpoint leads to poor judgment"
   },
   {
-  "japanese": "頭隠して尻隠さず",
-  "romaji": "Atama kakushite shiri kakusazu",
-  "english": "Hide your head, but not your butt",
-  "meaning": "Trying to hide something obvious"
-},
-{
-  "japanese": "猿も木から落ちる",
-  "romaji": "Saru mo ki kara ochiru",
-  "english": "Even monkeys fall from trees",
-  "meaning": "Experts also make mistakes"
-},
+    "japanese": "念には念を入れよ",
+    "romaji": "Nen ni wa nen wo ireyo",
+    "english": "Put care into care",
+    "meaning": "Double-check; be extra careful"
+  },
   {
-  "japanese": "楽あれば苦あり",
-  "romaji": "Raku areba ku ari",
-  "english": "With comfort comes hardship",
-  "meaning": "Life has ups and downs"
-},
+    "japanese": "頭隠して尻隠さず",
+    "romaji": "Atama kakushite shiri kakusazu",
+    "english": "Hide your head, but not your butt",
+    "meaning": "Trying to hide something obvious"
+  },
   {
-  "japanese": "縁は異なもの味なもの",
-  "romaji": "En wa inamono aji na mono",
-  "english": "Fate is strange yet delightful",
-  "meaning": "Unexpected connections can be good"
-},
-{
-  "japanese": "雨降って地固まる",
-  "romaji": "Ame futte ji katamaru",
-  "english": "After rain, the ground hardens",
-  "meaning": "Difficult situations strengthen relationships or foundations"
-},
-{
-  "japanese": "犬も歩けば棒に当たる",
-  "romaji": "Inu mo arukeba bou ni ataru",
-  "english": "Even a walking dog will hit a stick",
-  "meaning": "Try anything and you might get lucky (or unlucky)"
-},
-{
-  "japanese": "灯台下暗し",
-  "romaji": "Toudai moto kurashi",
-  "english": "It's darkest under the lighthouse",
-  "meaning": "The obvious is often overlooked"
-},
-{
-  "japanese": "良薬は口に苦し",
-  "romaji": "Ryouyaku wa kuchi ni nigashi",
-  "english": "Good medicine tastes bitter",
-  "meaning": "Helpful advice often sounds harsh"
-},
-{
-  "japanese": "楽あれば苦あり",
-  "romaji": "Raku areba ku ari",
-  "english": "After ease comes hardship",
-  "meaning": "Good times and bad times alternate"
-},
-{
+    "japanese": "猿も木から落ちる",
+    "romaji": "Saru mo ki kara ochiru",
+    "english": "Even monkeys fall from trees",
+    "meaning": "Experts also make mistakes"
+  },
+  {
+    "japanese": "楽あれば苦あり",
+    "romaji": "Raku areba ku ari",
+    "english": "With comfort comes hardship",
+    "meaning": "Life has ups and downs"
+  },
+  {
+    "japanese": "縁は異なもの味なもの",
+    "romaji": "En wa inamono aji na mono",
+    "english": "Fate is strange yet delightful",
+    "meaning": "Unexpected connections can be good"
+  },
+  {
+    "japanese": "雨降って地固まる",
+    "romaji": "Ame futte ji katamaru",
+    "english": "After rain, the ground hardens",
+    "meaning": "Difficult situations strengthen relationships or foundations"
+  },
+  {
+    "japanese": "犬も歩けば棒に当たる",
+    "romaji": "Inu mo arukeba bou ni ataru",
+    "english": "Even a walking dog will hit a stick",
+    "meaning": "Try anything and you might get lucky (or unlucky)"
+  },
+  {
+    "japanese": "灯台下暗し",
+    "romaji": "Toudai moto kurashi",
+    "english": "It's darkest under the lighthouse",
+    "meaning": "The obvious is often overlooked"
+  },
+  {
+    "japanese": "良薬は口に苦し",
+    "romaji": "Ryouyaku wa kuchi ni nigashi",
+    "english": "Good medicine tastes bitter",
+    "meaning": "Helpful advice often sounds harsh"
+  },
+  {
+    "japanese": "楽あれば苦あり",
+    "romaji": "Raku areba ku ari",
+    "english": "After ease comes hardship",
+    "meaning": "Good times and bad times alternate"
+  },
+  {
     "japanese": "三人寄れば文殊の知恵",
     "romaji": "Sannin yoreba monju no chie",
     "english": "Three people together have the wisdom of Monju",
     "meaning": "Two heads are better than one"
-},
+  },
   {
-  "japanese": "笑う門には福来る",
-  "romaji": "Warau kado ni wa fuku kitaru",
-  "english": "Fortune comes to a laughing gate",
-  "meaning": "Happiness and good fortune come to those who smile"
-},
+    "japanese": "笑う門には福来る",
+    "romaji": "Warau kado ni wa fuku kitaru",
+    "english": "Fortune comes to a laughing gate",
+    "meaning": "Happiness and good fortune come to those who smile"
+  },
   {
     "japanese": "石橋を叩いて渡る",
     "romaji": "Ishibashi wo tataite wataru",
@@ -454,7 +454,45 @@
   "romaji": "Zen wa isoge",
   "english": "Hurry to do good",
   "meaning": "If it's worth doing, do it at once"
+    "japanese": "善は急げ",
+    "romaji": "Zen wa isoge",
+    "english": "Hurry to do good",
+    "meaning": "If it's worth doing, do it at once"
+  },
+  {
+  "japanese": "藪をつついて蛇を出す",
+  "romaji": "Yabu wo tsutsuite hebi wo dasu",
+  "english": "Poke the bush and bring out a snake",
+  "meaning": "Stir up trouble unnecessarily"
+  },
+  {
+  "japanese": "笑う門には福来る",
+  "romaji": "Warau kado ni wa fuku kitaru",
+  "english": "Fortune comes to a laughing gate",
+  "meaning": "Good fortune comes to those who smile"
+},
+{
+  "japanese": "明日は明日の風が吹く",
+  "romaji": "Ashita wa ashita no kaze ga fuku",
+  "english": "Tomorrow's wind will blow tomorrow",
+  "meaning": "Don't worry too much about the future or things you cannot control right now. Tomorrow will bring its own solutions and circumstances."
+},
+  {
+  "japanese": "言わぬが花",
+  "romaji": "Iwanu ga hana",
+  "english": "Not speaking is the flower",
+  "meaning": "Some things are better left unsaid. Silence can be more beautiful, effective, or sophisticated than over-explaining or stating the obvious."
+},
+  {
+  "japanese": "継続は力なり",
+  "romaji": "Keizoku wa chikara nari",
+  "english": "Continuance is power",
+  "meaning": "Consistency is the key to mastery. Even small efforts, when repeated daily, accumulate into a formidable strength that cannot be easily broken."
+},
+  {
+  "japanese": "聞くは一時の恥、聞かぬは一生の恥",
+  "romaji": "Kiku wa isshonoji no haji, kikanu wa isshō no haji",
+  "english": "To ask is a moment's shame; not to ask is a lifetime's shame",
+  "meaning": "It is better to admit ignorance and learn something new than to pretend to know and remain ignorant forever."
 }
 ]
-
-
