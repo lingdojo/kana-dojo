@@ -418,5 +418,32 @@
   "english": "Mama mama mama. (alt wording 29)",
   "anime": "One Piece",
   "character": "Charlotte Linlin (Big Mom)"
+},
+  {
+  "japanese": "俺を誰だと思ってやがる!",
+  "romaji": "Ore o dare da to omotte yagaru!",
+  "english": "Who the hell do you think I am! (alt wording 46)",
+  "anime": "Gurren Lagann",
+  "character": "Kamina"
+}, {
+  "japanese": "俺を誰だと思ってやがる!",
+  "romaji": "Ore o dare da to omotte yagaru!",
+  "english": "Who the hell do you think I am! (alt wording 46)",
+  "anime": "Gurren Lagann",
+  "character": "Kamina"
+},
+  {
+       "japanese": "仲間を信じることが俺の魔法だ",
+       "romaji": "Nakama o shinjiru koto ga ore no mahou da",
+       "english": "Believing in my friends is my magic. (alt wording 49)",
+       "anime": "Fairy Tail",
+       "character": "Natsu Dragneel"
+     },
+{
+  "japanese": "僕は新世界の神となる",
+  "romaji": "Boku wa shin sekai no kami to naru",
+  "english": "I will become the god of the new world. (alt wording 44)",
+  "anime": "Death Note",
+  "character": "Light Yagami"
 }
 ]

@@ -118,5 +118,38 @@
     "difficulty": "easy",
     "answers": ["Sushi", "Tempura", "Tonkatsu", "Okonomiyaki"],
     "correctIndex": 0
+  },
+  {
+  "question": "Which Japanese food is made from fermented soybeans and has a sticky texture? (Community variation 7)",
+  "difficulty": "easy",
+  "answers": [
+    "Miso",
+    "Natto",
+    "Tofu",
+    "Udon"
+  ],
+  "correctIndex": 1
+  },
+  {
+  "question": "Which Japanese castle is nicknamed the \"White Heron\" for its bright exterior? (Community variation 9)",
+  "difficulty": "easy",
+  "answers": [
+    "Himeji Castle",
+    "Osaka Castle",
+    "Matsumoto Castle",
+    "Nijo Castle"
+  ],
+  {
+  "question": "What is the Japanese term for a hot spring?",
+  "difficulty": "easy",
+  "answers": [
+    "Onsen",
+    "Sentou",
+    "Ryokan",
+    "Izakaya"
+  ],
+  "correctIndex": 0
+}
+  "correctIndex": 0
   }
 ]
