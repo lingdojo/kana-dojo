@@ -138,18 +138,16 @@
     "Osaka Castle",
     "Matsumoto Castle",
     "Nijo Castle"
-  ],
+  ]},
   {
-  "question": "What is the Japanese term for a hot spring?",
+  "question": "What is the Japanese art of arranging flowers called? (Community variation 58)",
   "difficulty": "easy",
   "answers": [
-    "Onsen",
-    "Sentou",
-    "Ryokan",
-    "Izakaya"
+    "Ikebana",
+    "Shodo",
+    "Kodo",
+    "Origami"
   ],
   "correctIndex": 0
 }
-  "correctIndex": 0
-  }
 ]
