@@ -6,6 +6,7 @@ import SelectionStatusBar from '@/shared/ui-composite/Menu/SelectionStatusBar';
 import { ActionButton } from '@/shared/ui/components/ActionButton';
 import { MousePointer } from 'lucide-react';
 import { cn } from '@/shared/utils/utils';
+import { useTranslations } from 'next-intl';
 import { useClick } from '@/shared/hooks/generic/useAudio';
 import { KanaCards, useKanaContent, useKanaSelection } from '@/features/Kana';
 
@@ -13,6 +14,7 @@ type KanaMenuFilter = 'all' | 'hiragana' | 'katakana';
 
 const KanaMenu = ({ filter = 'all' }: { filter?: KanaMenuFilter }) => {
   const { playClick } = useClick();
+  const tCommon = useTranslations('common.buttons');
   const { addGroups: addKanaGroupIndices } = useKanaSelection();
   const { allGroups: kana } = useKanaContent();
 
@@ -40,7 +42,7 @@ const KanaMenu = ({ filter = 'all' }: { filter?: KanaMenuFilter }) => {
           borderRadius='3xl'
         >
           <MousePointer className={cn('fill-current')} />
-          Select All Kana
+          {tCommon('selectAllKana')}
         </ActionButton>
         <KanaCards filter={filter} />
         <SelectionStatusBar />
@@ -51,4 +53,3 @@ const KanaMenu = ({ filter = 'all' }: { filter?: KanaMenuFilter }) => {
 };
 
 export default KanaMenu;
-

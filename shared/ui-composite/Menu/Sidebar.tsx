@@ -21,10 +21,12 @@ import { motion } from 'framer-motion';
 import { useClick } from '@/shared/hooks/generic/useAudio';
 import { useScrollVisibility } from '@/shared/hooks/generic/useScrollVisibility';
 import { ReactNode, useEffect, useRef, memo, useState } from 'react';
+import { useTranslations } from 'next-intl';
 import { useInputPreferences } from '@/features/Preferences';
 import { removeLocaleFromPath } from '@/shared/utils/pathUtils';
 import type { Experiment } from '@/shared/data/experiments';
 import AuroraText from '@/shared/ui/components/magicui/AuroraText';
+import { LanguageSelector } from '@/shared/ui-composite/navigation/LanguageSelector';
 
 const SIDEBAR_SECTION_STORAGE_PREFIX = 'sidebar-collapsible-';
 const SIDEBAR_DESKTOP_COLLAPSED_STORAGE_KEY = 'sidebar-desktop-collapsed';
@@ -39,6 +41,7 @@ const SIDEBAR_ACTIVE_FLOAT_CLASSES =
 type NavItem = {
   href: string;
   label: string;
+  labelKey?: string;
   icon?: LucideIcon | null;
   /** Japanese character to use as icon (e.g., あ, 語, 字) */
   charIcon?: string;
@@ -50,6 +53,7 @@ type NavItem = {
 
 type NavSection = {
   title: string;
+  titleKey?: string;
   items: NavItem[];
   collapsible?: boolean;
 };
@@ -59,14 +63,20 @@ type NavSection = {
 // ============================================================================
 
 const mainNavItems: NavItem[] = [
-  { href: '/', label: 'Home', icon: House },
-  { href: '/progress', label: 'Progress', icon: Star },
-  { href: '/kana', label: 'Kana', charIcon: 'あ' },
-  { href: '/vocabulary', label: ' Vocabulary', charIcon: '語' },
-  { href: '/kanji', label: ' Kanji', charIcon: '字' },
+  { href: '/', label: 'Home', labelKey: 'home', icon: House },
+  { href: '/progress', label: 'Progress', labelKey: 'progress', icon: Star },
+  { href: '/kana', label: 'Kana', labelKey: 'kana', charIcon: 'あ' },
+  {
+    href: '/vocabulary',
+    label: 'Vocabulary',
+    labelKey: 'vocabulary',
+    charIcon: '語',
+  },
+  { href: '/kanji', label: 'Kanji', labelKey: 'kanji', charIcon: '字' },
   {
     href: '/preferences',
     label: 'Preferences',
+    labelKey: 'preferences',
     icon: Sparkles,
     animateWhenInactive: true,
   },
@@ -76,18 +86,40 @@ const mainNavItems: NavItem[] = [
 const staticSecondaryNavSections: NavSection[] = [
   {
     title: 'Academy',
+    titleKey: 'academy',
     items: [
-      { href: '/academy', label: 'Guides', icon: BookOpen },
-      { href: '/resources', label: 'Resources', icon: Library },
+      { href: '/academy', label: 'Guides', labelKey: 'guides', icon: BookOpen },
+      {
+        href: '/resources',
+        label: 'Resources',
+        labelKey: 'resources',
+        icon: Library,
+      },
     ],
     collapsible: true,
   },
   {
     title: 'Tools',
+    titleKey: 'tools',
     items: [
-      { href: '/translate', label: 'Translate', icon: Languages },
-      { href: '/conjugate', label: 'Conjugate', icon: Repeat },
-      { href: '/anki-converter', label: 'Converter', icon: Package },
+      {
+        href: '/translate',
+        label: 'Translate',
+        labelKey: 'translate',
+        icon: Languages,
+      },
+      {
+        href: '/conjugate',
+        label: 'Conjugate',
+        labelKey: 'conjugate',
+        icon: Repeat,
+      },
+      {
+        href: '/anki-converter',
+        label: 'Converter',
+        labelKey: 'converter',
+        icon: Package,
+      },
     ],
     collapsible: true,
   },
@@ -96,6 +128,7 @@ const staticSecondaryNavSections: NavSection[] = [
 // Base experiments section (without dynamic experiments)
 const baseExperimentsSection: NavSection = {
   title: 'Experiments',
+  titleKey: 'experiments',
   // items: [{ href: '/experiments', label: 'All Experiments', icon: Sparkles }],
   items: [],
   collapsible: true,
@@ -112,6 +145,7 @@ const USE_NEW_SIDEBAR_ICON_BADGES = false;
 
 type NavLinkProps = {
   item: NavItem;
+  label: string;
   isActive: boolean;
   onClick: () => void;
   variant: 'main' | 'secondary';
@@ -126,6 +160,7 @@ type NavLinkProps = {
 const NavLink = memo(
   ({
     item,
+    label,
     isActive,
     onClick,
     variant,
@@ -256,7 +291,7 @@ const NavLink = memo(
                 isMain && isDesktopCollapsed && 'lg:hidden',
               )}
             >
-              {item.label}
+              {label}
             </span>
           </Link>
         </div>
@@ -345,6 +380,7 @@ const Sidebar = () => {
   const router = useRouter();
   const pathname = usePathname();
   const pathWithoutLocale = removeLocaleFromPath(pathname);
+  const tNav = useTranslations('navigation.menu');
 
   const { hotkeysOn } = useInputPreferences();
   const { playClick } = useClick();
@@ -583,6 +619,12 @@ const Sidebar = () => {
     setIsDesktopSidebarCollapsed(prev => !prev);
   };
 
+  const getNavLabel = (item: NavItem) =>
+    item.labelKey ? tNav(item.labelKey) : item.label;
+
+  const getSectionTitle = (section: NavSection) =>
+    section.titleKey ? tNav(section.titleKey) : section.title;
+
   return (
     <motion.aside
       id='main-sidebar'
@@ -621,22 +663,31 @@ const Sidebar = () => {
         }}
         transition={{ duration: 0.3, ease: 'easeInOut' }}
       >
-        <h1 className='max-3xl:flex-col max-3xl:items-start flex items-center gap-1.5 pl-4 text-3xl'>
-          {USE_AURORA_SIDEBAR_HEADING ? (
-            <>
-              <AuroraText className='font-bold'>KanaDojo</AuroraText>
-              <AuroraText className='font-normal'>かな道場️</AuroraText>
-            </>
-          ) : (
-            <>
-              <span className='font-bold'>KanaDojo</span>
-              <span className='font-normal text-(--secondary-color)'>
-                かな道場️
-              </span>
-            </>
-          )}
+        <h1 className='max-3xl:flex-col max-3xl:items-start flex items-start gap-3 pl-4 text-3xl'>
+          <span className='max-3xl:flex-col max-3xl:items-start flex items-center gap-1.5'>
+            {USE_AURORA_SIDEBAR_HEADING ? (
+              <>
+                <AuroraText className='font-bold'>KanaDojo</AuroraText>
+                <AuroraText className='font-normal'>かな道場️</AuroraText>
+              </>
+            ) : (
+              <>
+                <span className='font-bold'>KanaDojo</span>
+                <span className='font-normal text-(--secondary-color)'>
+                  かな道場️
+                </span>
+              </>
+            )}
+          </span>
+          <LanguageSelector className='mt-1 h-10 w-10 rounded-xl border-b-6' />
         </h1>
       </motion.div>
+
+      {isDesktopSidebarCollapsed && (
+        <div className='mb-3 hidden w-full justify-center lg:flex'>
+          <LanguageSelector className='shrink-0' />
+        </div>
+      )}
 
       {/* Main Navigation - with sliding indicator */}
       <div
@@ -649,6 +700,7 @@ const Sidebar = () => {
           <NavLink
             key={item.href}
             item={item}
+            label={getNavLabel(item)}
             isActive={isActive(item.href)}
             onClick={playClick}
             variant='main'
@@ -681,7 +733,7 @@ const Sidebar = () => {
           return (
             <div key={section.title} className='contents'>
               <SectionHeader
-                title={section.title}
+                title={getSectionTitle(section)}
                 icon={
                   section.title === 'Academy'
                     ? BookOpen
@@ -701,6 +753,7 @@ const Sidebar = () => {
                       <NavLink
                         key={item.href}
                         item={item}
+                        label={getNavLabel(item)}
                         isActive={isActive(item.href)}
                         onClick={playClick}
                         variant='secondary'

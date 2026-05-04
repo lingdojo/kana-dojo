@@ -1,7 +1,7 @@
 'use client';
 import clsx from 'clsx';
 import { useState, useEffect, startTransition, useMemo } from 'react';
-import usePreferencesStore from '@/features/Preferences/store/usePreferencesStore';
+import { usePreferencesStore } from '@/features/Preferences';
 import { useCrazyMode } from '@/features/CrazyMode';
 import { useShallow } from 'zustand/react/shallow';
 import { usePathname } from 'next/navigation';
@@ -128,7 +128,6 @@ export default function ClientLayout({
       if (typeof window !== 'undefined') {
         sessionStorage.setItem(donationLastPathKey, pathname);
       }
-      setIsDonationModalOpen(false);
       return;
     }
 
@@ -333,4 +332,3 @@ export default function ClientLayout({
     </div>
   );
 }
-

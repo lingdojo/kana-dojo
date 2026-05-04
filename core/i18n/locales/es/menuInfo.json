@@ -1,5 +1,16 @@
 {
   "greeting": "¡Bienvenido a KanaDojo!",
   "description": "KanaDojo es una aplicación web gratuita y de código abierto diseñada para ayudarte a aprender hiragana, katakana, kanji y vocabulario japonés a través de práctica interactiva y gamificación.",
-  "instructions": "Para empezar, elige uno de los tres dojos en el menú superior, configura tu sesión de práctica, ¡y comienza a aprender!"
+  "instructions": "Para empezar, elige uno de los tres dojos en el menú superior, configura tu sesión de práctica, ¡y comienza a aprender!",
+  "kanaHeader": "¡Bienvenido al dojo de kana (hiragana y katakana)!",
+  "kanaDescription": "Este es el lugar donde puedes aprender y practicar los dos silabarios principales del japonés: hiragana y katakana.",
+  "kanaInstructions": "Para empezar, selecciona al menos 1 grupo de caracteres, elige o cambia el modo de entrenamiento y pulsa ¡Vamos! abajo para entrenar.",
+  "kanjiHeader": "¡Bienvenido al dojo de kanji!",
+  "kanjiDescription": "Este es el lugar donde puedes aprender y practicar el componente principal del sistema de escritura japonés: los kanji.",
+  "kanjiInstructions": "Para empezar, selecciona al menos 1 nivel, elige tu modo de entrenamiento y pulsa ¡Vamos! abajo para entrenar.",
+  "kanjiNew": "Nuevo: haz clic en un kanji para ver más información en Kanji Heatmap.",
+  "vocabularyHeader": "¡Bienvenido al dojo de vocabulario!",
+  "vocabularyDescription": "Este es el lugar donde puedes aprender y practicar las palabras más comunes del japonés cotidiano.",
+  "vocabularyInstructions": "Para empezar, selecciona al menos 1 nivel, elige tu modo de entrenamiento y pulsa ¡Vamos! abajo para entrenar.",
+  "vocabularyNew": "Nuevo: haz clic en una palabra para ver más información en Jisho."
 }

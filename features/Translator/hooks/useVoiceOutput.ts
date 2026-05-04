@@ -30,17 +30,11 @@ export function useVoiceOutput({
 }: UseVoiceOutputOptions): UseVoiceOutputReturn {
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
-  const [isSupported, setIsSupported] = useState(false);
+  const isSupported =
+    typeof window !== 'undefined' && 'speechSynthesis' in window;
   const [error, setError] = useState<string | null>(null);
 
   const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
-
-  // Check if Web Speech API is supported
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setIsSupported('speechSynthesis' in window);
-    }
-  }, []);
 
   // Cleanup on unmount
   useEffect(() => {

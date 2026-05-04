@@ -25,6 +25,7 @@ import {
   AccordionItem,
 } from '@/shared/ui/components/accordion';
 import { useMemo } from 'react';
+import { useTranslations } from 'next-intl';
 import SelectionStatusBar from '@/shared/ui-composite/Menu/SelectionStatusBar';
 import SubunitSelector from '@/shared/ui-composite/Menu/SubunitSelector';
 import {
@@ -60,6 +61,7 @@ const VOCAB_SETS = {
 
 const UnitSelector = () => {
   const { playClick } = useClick();
+  const tCommon = useTranslations('common.buttons');
   const pathname = usePathname();
   const pathWithoutLocale = removeLocaleFromPath(pathname);
   const contentType = pathWithoutLocale.split('/')[1] as ContentType;
@@ -181,7 +183,11 @@ const UnitSelector = () => {
                 )}
               >
                 <div className='flex items-center gap-2'>
-                  <span className='text-xl'>{collection.displayName}</span>
+                  <span className='text-xl'>
+                    {tCommon('unit', {
+                      number: collections.indexOf(collection) + 1,
+                    })}
+                  </span>
                   <span
                     className={clsx(
                       'rounded px-1.5 py-0.5 text-xs',
@@ -201,7 +207,10 @@ const UnitSelector = () => {
                       : 'text-(--background-color)/80',
                   )}
                 >
-                  {collection.subtitle}
+                  {tCommon('levelsRange', {
+                    start: collection.startLevel,
+                    end: collection.endLevel,
+                  })}
                 </span>
               </ActionButton>
             );
@@ -260,7 +269,11 @@ const UnitSelector = () => {
                     )}
                   >
                     <div className='flex items-center gap-2'>
-                      <span className='text-xl'>{collection.displayName}</span>
+                      <span className='text-xl'>
+                        {tCommon('unit', {
+                          number: collections.indexOf(collection) + 1,
+                        })}
+                      </span>
                       <span
                         className={clsx(
                           'rounded px-1.5 py-0.5 text-xs',
@@ -278,7 +291,10 @@ const UnitSelector = () => {
                           : 'text-(--secondary-color)/80',
                       )}
                     >
-                      {collection.subtitle}
+                      {tCommon('levelsRange', {
+                        start: collection.startLevel,
+                        end: collection.endLevel,
+                      })}
                     </span>
                   </ActionButton>
                 </div>

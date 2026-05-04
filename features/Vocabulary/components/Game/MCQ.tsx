@@ -25,7 +25,7 @@ import {
   type VocabQuizType,
 } from '@/features/Vocabulary/components/Game/vocabFormatLock';
 import useClassicSessionStore from '@/shared/store/useClassicSessionStore';
-import useSetProgressStore from '@/features/Progress/store/useSetProgressStore';
+import { useSetProgressStore } from '@/features/Progress';
 
 const random = new Random();
 
@@ -207,12 +207,13 @@ const VocabMCQ = ({ selectedWordObjs, isHidden }: VocabMCQProps) => {
     return []; // Fallback in case quizType is neither 'meaning' nor 'reading'
   };
 
-  const randomIncorrectOptions = getIncorrectOptions();
-
-  const [shuffledOptions, setShuffledOptions] = useState(
-    [targetChar ?? '', ...randomIncorrectOptions].sort(
-      () => random.real(0, 1) - 0.5,
-    ) as string[],
+  const shuffledOptions = useMemo(
+    () =>
+      [targetChar ?? '', ...getIncorrectOptions()].sort(
+        () => random.real(0, 1) - 0.5,
+      ) as string[],
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [correctChar, selectedWordObjs, targetChar],
   );
 
   const [displayAnswerSummary, setDisplayAnswerSummary] = useState(false);
@@ -221,17 +222,6 @@ const VocabMCQ = ({ selectedWordObjs, isHidden }: VocabMCQProps) => {
   const [wrongSelectedAnswers, setWrongSelectedAnswers] = useState<string[]>(
     [],
   );
-
-  // Update shuffled options when correctChar or isReverse changes
-  useEffect(() => {
-    if (!hasWords) return;
-    setShuffledOptions(
-      [targetChar ?? '', ...getIncorrectOptions()].sort(
-        () => random.real(0, 1) - 0.5,
-      ) as string[],
-    );
-    setWrongSelectedAnswers([]);
-  }, [correctChar, hasWords, isReverse, quizType]);
 
   const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
@@ -476,4 +466,3 @@ const VocabMCQ = ({ selectedWordObjs, isHidden }: VocabMCQProps) => {
 };
 
 export default VocabMCQ;
-

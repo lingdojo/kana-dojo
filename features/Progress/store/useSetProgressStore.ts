@@ -7,13 +7,16 @@ import {
   KANJI_SET_PROGRESS_TARGET,
   VOCAB_MEANING_PROGRESS_TARGET,
   VOCAB_READING_PROGRESS_TARGET,
-} from '@/features/Progress/lib/setProgress';
+} from '@/features/Progress';
 
 export interface AllTimeSetProgress {
   version: 1;
   updatedAt: number;
   kanji: Record<string, { correct: number }>;
-  vocabulary: Record<string, { meaningCorrect: number; readingCorrect: number }>;
+  vocabulary: Record<
+    string,
+    { meaningCorrect: number; readingCorrect: number }
+  >;
 }
 
 interface SetProgressState {
@@ -44,7 +47,8 @@ const createDefaultSetProgress = (): AllTimeSetProgress => ({
 
 async function loadPersistedSetProgress(): Promise<AllTimeSetProgress> {
   try {
-    const data = await setProgressStore.getItem<AllTimeSetProgress>(STORAGE_KEY);
+    const data =
+      await setProgressStore.getItem<AllTimeSetProgress>(STORAGE_KEY);
     if (!data || data.version !== 1) {
       return createDefaultSetProgress();
     }

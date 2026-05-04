@@ -1,9 +1,9 @@
 'use client';
-import { Fragment, lazy, Suspense, useState, useEffect } from 'react';
+import { Fragment, lazy, Suspense } from 'react';
+import { useTranslations } from 'next-intl';
 import { Link } from '@/core/i18n/routing';
 import KanaDojoBanner from './KanaDojoBanner';
 import Info from '@/shared/ui-composite/Menu/Info';
-import NightlyBanner from '@/shared/ui-composite/Modals/NightlyBanner';
 import {
   ScrollText,
   FileLock2,
@@ -23,12 +23,15 @@ import { useClick } from '@/shared/hooks/generic/useAudio';
 import { useThemePreferences } from '@/features/Preferences';
 import useDecorationsStore from '@/shared/store/useDecorationsStore';
 import { useMediaQuery } from 'react-responsive';
+import { LanguageSelector } from '@/shared/ui-composite/navigation/LanguageSelector';
 
-const Decorations = lazy(() => import('@/shared/ui-composite/Decorations/Decorations'));
+const Decorations = lazy(
+  () => import('@/shared/ui-composite/Decorations/Decorations'),
+);
 
 const MainMenu = () => {
-  const [isMounted, setIsMounted] = useState(false);
   const isLG = useMediaQuery({ minWidth: 1024 });
+  const tNav = useTranslations('navigation.menu');
 
   const { theme, setTheme, isGlassMode } = useThemePreferences();
 
@@ -53,37 +56,19 @@ const MainMenu = () => {
     state => state.toggleExpandDecorations,
   );
 
-  const [showBanner, setShowBanner] = useState(false);
-
-  useEffect(() => {
-    // 1. Check if the user has already dismissed the banner
-    const hasDismissed = localStorage.getItem('nightly_banner_dismissed');
-
-    // Only show if they haven't dismissed it yet
-    if (!hasDismissed) {
-      setShowBanner(true);
-    }
-  }, []);
-
-  const handleDismiss = () => {
-    localStorage.setItem('nightly_banner_dismissed', 'true');
-  };
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
   const links = [
     {
-      name_en: 'Kana',
+      label: tNav('kana'),
       name_ja: 'あ',
       href: '/kana',
     },
     {
-      name_en: 'Vocab',
+      label: tNav('vocabulary'),
       name_ja: '語',
       href: '/vocabulary',
     },
     {
-      name_en: 'Kanji',
+      label: tNav('kanji'),
       name_ja: '字',
       href: '/kanji',
     },
@@ -112,7 +97,7 @@ const MainMenu = () => {
         'flex min-h-[100dvh] max-w-[100dvw] flex-row justify-center',
       )}
     >
-      {isMounted && isLG && (
+      {isLG && (
         <Suspense fallback={<></>}>
           {!isGlassMode && (
             <Decorations
@@ -121,25 +106,27 @@ const MainMenu = () => {
               interactive={true}
             />
           )}
-          <button
-            className={clsx(
-              'fixed top-4 right-4 z-50 hover:cursor-pointer',
-              'inline-flex h-12 w-12 items-center justify-center rounded-2xl',
-              'bg-(--main-color) text-(--background-color)',
-              'border-b-8 border-(--main-color-accent)',
-              'transition-all duration-200',
-              'active:mb-[6px] active:translate-y-[6px] active:border-b-0',
-              'motion-safe:animate-float [--float-distance:-3px]',
-              '[animation-delay:400ms]',
-              !isGlassMode && 'opacity-90',
-            )}
-            onClick={() => {
-              playClick();
-              toggleExpandDecorations();
-            }}
-          >
-            <Sparkle />
-          </button>
+          <div className='fixed top-4 right-4 z-50 flex items-center gap-2'>
+            <LanguageSelector />
+            <button
+              className={clsx(
+                'inline-flex h-12 w-12 items-center justify-center rounded-2xl hover:cursor-pointer',
+                'bg-(--main-color) text-(--background-color)',
+                'border-b-8 border-(--main-color-accent)',
+                'transition-all duration-200',
+                'active:mb-[6px] active:translate-y-[6px] active:border-b-0',
+                'motion-safe:animate-float [--float-distance:-3px]',
+                '[animation-delay:400ms]',
+                !isGlassMode && 'opacity-90',
+              )}
+              onClick={() => {
+                playClick();
+                toggleExpandDecorations();
+              }}
+            >
+              <Sparkle />
+            </button>
+          </div>
 
           {/* <Button
             variant='secondary'
@@ -179,7 +166,7 @@ const MainMenu = () => {
               }}
               className={clsx(
                 'inline-flex sm:hidden',
-                'duration-250 hover:cursor-pointer hover:scale-105',
+                'duration-250 hover:scale-105 hover:cursor-pointer',
                 'active:scale-100 active:duration-225',
                 'fill-current text-(--secondary-color) hover:text-(--main-color)',
               )}
@@ -208,7 +195,7 @@ const MainMenu = () => {
               icon={faDiscord}
               size='2x'
               className={clsx(
-                'duration-250 hover:cursor-pointer hover:scale-105',
+                'duration-250 hover:scale-105 hover:cursor-pointer',
                 'active:scale-100 active:duration-225',
                 'md:hidden',
                 'text-(--secondary-color) hover:text-(--main-color)',
@@ -222,7 +209,7 @@ const MainMenu = () => {
               icon={faGithub}
               size='2x'
               className={clsx(
-                'duration-250 hover:cursor-pointer hover:scale-105',
+                'duration-250 hover:scale-105 hover:cursor-pointer',
                 'active:scale-100 active:duration-225',
                 'text-(--secondary-color) hover:text-(--main-color)',
               )}
@@ -239,18 +226,18 @@ const MainMenu = () => {
               }}
               className={clsx(
                 'hidden sm:inline-flex',
-                'duration-250 hover:cursor-pointer hover:scale-105',
+                'duration-250 hover:scale-105 hover:cursor-pointer',
                 'active:scale-100 active:duration-225',
-                ' text-(--secondary-color) hover:text-(--main-color)',
+                'text-(--secondary-color) hover:text-(--main-color)',
               )}
               aria-label='Report a bug'
             >
-              <Bug size={32}  />
+              <Bug size={32} />
             </button>
             <Heart
               size={32}
               className={clsx(
-                'duration-250 hover:cursor-pointer hover:scale-105',
+                'duration-250 hover:scale-105 hover:cursor-pointer',
                 'active:scale-100 active:duration-225',
                 'animate-bounce fill-current text-red-500',
               )}
@@ -272,60 +259,58 @@ const MainMenu = () => {
               'w-full',
             )}
           >
-          {links.map((link, i) => (
-            <Fragment key={i}>
-              <Link
-                href={link.href}
-                prefetch
-                className={clsx('group w-full overflow-hidden')}
-              >
-                <button
-                  className={clsx(
-                    'flex h-full w-full text-2xl',
-                    'items-center gap-3 border-(--border-color)',
-                    'justify-start md:justify-center',
-                    'md:border-b-4',
-                    'py-8',
-                    mobileLabelInset,
-                    'md:pl-0',
-                    'group',
-                    i === 0 && 'rounded-tl-2xl rounded-bl-2xl',
-                    i === links.length - 1 && 'rounded-tr-2xl rounded-br-2xl',
-                    'hover:cursor-pointer md:hover:border-(--main-color)/80',
-                    'hover:bg-(--border-color)',
-                  )}
-                  onClick={() => playClick()}
+            {links.map((link, i) => (
+              <Fragment key={i}>
+                <Link
+                  href={link.href}
+                  prefetch
+                  className={clsx('group w-full overflow-hidden')}
                 >
-                  <span
-                    lang='ja'
-                    className={characterTileClassName(
-                      i === 0
-                        ? '[animation-delay:0ms]'
-                        : i === 1
-                          ? '[animation-delay:800ms]'
-                          : '[animation-delay:1600ms]',
-                      // i === 0 ? '-10px' : i === 1 ? '-7px' : '-5px'
+                  <button
+                    className={clsx(
+                      'flex h-full w-full text-2xl',
+                      'items-center gap-3 border-(--border-color)',
+                      'justify-start md:justify-center',
+                      'md:border-b-4',
+                      'py-8',
+                      mobileLabelInset,
+                      'md:pl-0',
+                      'group',
+                      i === 0 && 'rounded-tl-2xl rounded-bl-2xl',
+                      i === links.length - 1 && 'rounded-tr-2xl rounded-br-2xl',
+                      'hover:cursor-pointer md:hover:border-(--main-color)/80',
+                      'hover:bg-(--border-color)',
                     )}
+                    onClick={() => playClick()}
                   >
-                    {link.name_ja}
-                  </span>
-                  <span lang='en' className='leading-none'>
-                    {link.name_en}
-                  </span>
-                </button>
-              </Link>
+                    <span
+                      lang='ja'
+                      className={characterTileClassName(
+                        i === 0
+                          ? '[animation-delay:0ms]'
+                          : i === 1
+                            ? '[animation-delay:800ms]'
+                            : '[animation-delay:1600ms]',
+                        // i === 0 ? '-10px' : i === 1 ? '-7px' : '-5px'
+                      )}
+                    >
+                      {link.name_ja}
+                    </span>
+                    <span className='leading-none'>{link.label}</span>
+                  </button>
+                </Link>
 
-              {i < links.length - 1 && (
-                <div
-                  className={clsx(
-                    'md:h-auto md:w-0 md:border-l-1',
-                    'border-(--border-color)',
-                    'w-full border-t-1 border-(--border-color)',
-                  )}
-                />
-              )}
-            </Fragment>
-          ))}
+                {i < links.length - 1 && (
+                  <div
+                    className={clsx(
+                      'md:h-auto md:w-0 md:border-l-1',
+                      'border-(--border-color)',
+                      'w-full border-t-1 border-(--border-color)',
+                    )}
+                  />
+                )}
+              </Fragment>
+            ))}
           </div>
         </div>
       </div>
@@ -347,7 +332,8 @@ const MainMenu = () => {
               key={i}
               className={clsx(
                 'flex flex-row items-center gap-1 text-(--secondary-color) hover:cursor-pointer hover:text-(--main-color)',
-                (link.name === 'credits' || link.name === 'about') && 'hidden sm:flex',
+                (link.name === 'credits' || link.name === 'about') &&
+                  'hidden sm:flex',
               )}
               onClick={() => playClick()}
             >
@@ -378,4 +364,3 @@ const MainMenu = () => {
 };
 
 export default MainMenu;
-

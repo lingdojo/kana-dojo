@@ -9,8 +9,8 @@ import {
 } from '@/features/Vocabulary/services/vocabDataService';
 import LevelSetCards from '@/shared/ui-composite/Menu/LevelSetCards';
 import useSetProgressHydration from '@/features/Progress/hooks/useSetProgress';
-import useSetProgressStore from '@/features/Progress/store/useSetProgressStore';
-import { calculateVocabularySetProgress } from '@/features/Progress/lib/setProgress';
+import { useSetProgressStore } from '@/features/Progress';
+import { calculateVocabularySetProgress } from '@/features/Progress';
 import {
   N1VocabLength,
   N2VocabLength,

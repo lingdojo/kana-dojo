@@ -2,6 +2,7 @@
 
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 import { ActionButton } from '@/shared/ui/components/ActionButton';
 import type { SubunitSummary } from '@/shared/ui-composite/Menu/lib/unitSubunits';
 
@@ -19,6 +20,8 @@ const SubunitSelector = ({
   selectedSubunitId,
   onSelect,
 }: SubunitSelectorProps) => {
+  const tCommon = useTranslations('common.buttons');
+
   if (subunits.length <= 1) {
     return null;
   }
@@ -62,7 +65,10 @@ const SubunitSelector = ({
               )}
             >
               <span className='hidden sm:inline'>
-                Levels <span className='whitespace-nowrap'>{shortLabel}</span>
+                {tCommon('levelsRange', {
+                  start: subunit.startLevel,
+                  end: subunit.endLevel,
+                })}
               </span>
               <span className='inline sm:hidden'>{shortLabel}</span>
             </ActionButton>

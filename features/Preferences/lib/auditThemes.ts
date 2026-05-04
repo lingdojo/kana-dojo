@@ -40,33 +40,33 @@ export function auditAllThemes() {
   const results = allThemes.map(validateTheme);
   const summary = getValidationSummary(results);
 
-  console.log('='.repeat(60));
-  console.log('WCAG THEME ACCESSIBILITY AUDIT REPORT');
-  console.log('='.repeat(60));
-  console.log(`\nTotal themes: ${summary.total}`);
-  console.log(`Valid (WCAG AA compliant): ${summary.valid}`);
-  console.log(`Invalid (needs improvement): ${summary.invalid}`);
-  console.log(`With warnings: ${summary.withWarnings}`);
+  console.warn('='.repeat(60));
+  console.warn('WCAG THEME ACCESSIBILITY AUDIT REPORT');
+  console.warn('='.repeat(60));
+  console.warn(`\nTotal themes: ${summary.total}`);
+  console.warn(`Valid (WCAG AA compliant): ${summary.valid}`);
+  console.warn(`Invalid (needs improvement): ${summary.invalid}`);
+  console.warn(`With warnings: ${summary.withWarnings}`);
 
-  console.log('\n--- Issues by Type ---');
+  console.warn('\n--- Issues by Type ---');
   Object.entries(summary.issuesByType)
     .sort((a, b) => b[1] - a[1])
     .forEach(([type, count]) => {
-      console.log(`  ${type}: ${count} themes`);
+      console.warn(`  ${type}: ${count} themes`);
     });
 
-  console.log('\n--- Failed Themes ---');
+  console.warn('\n--- Failed Themes ---');
   results
     .filter(r => !r.isValid)
     .forEach(result => {
-      console.log('\n' + formatValidationResult(result));
+      console.warn('\n' + formatValidationResult(result));
     });
 
-  console.log('\n--- Themes with Warnings ---');
+  console.warn('\n--- Themes with Warnings ---');
   results
     .filter(r => r.isValid && r.warnings.length > 0)
     .forEach(result => {
-      console.log('\n' + formatValidationResult(result));
+      console.warn('\n' + formatValidationResult(result));
     });
 
   return { results, summary };

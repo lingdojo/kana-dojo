@@ -81,7 +81,16 @@ export { classifyCharacter } from './lib/classifyCharacter';
 export { detectContentType } from './lib/detectContentType';
 export { calculateAccuracy } from './lib/calculateAccuracy';
 
+export { default } from './store/useSetProgressStore';
 export { default as useStatsStore } from './store/useStatsStore';
+export { default as useSetProgressStore } from './store/useSetProgressStore';
+export {
+  KANJI_SET_PROGRESS_TARGET,
+  VOCAB_MEANING_PROGRESS_TARGET,
+  VOCAB_READING_PROGRESS_TARGET,
+  calculateKanjiSetProgress,
+  calculateVocabularySetProgress,
+} from './lib/setProgress';
 
 // ============================================================================
 // PRIVATE - DO NOT IMPORT DIRECTLY

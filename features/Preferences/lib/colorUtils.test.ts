@@ -183,24 +183,24 @@ describe('Theme Audit - All Existing Themes', () => {
     const validCount = results.filter(r => r.isValid).length;
     const invalidCount = results.filter(r => !r.isValid).length;
 
-    console.log('\n========================================');
-    console.log('WCAG THEME AUDIT RESULTS');
-    console.log('========================================');
-    console.log(`Total themes: ${results.length}`);
-    console.log(`WCAG AA Compliant: ${validCount}`);
-    console.log(`Needs Improvement: ${invalidCount}`);
-    console.log('========================================\n');
+    console.warn('\n========================================');
+    console.warn('WCAG THEME AUDIT RESULTS');
+    console.warn('========================================');
+    console.warn(`Total themes: ${results.length}`);
+    console.warn(`WCAG AA Compliant: ${validCount}`);
+    console.warn(`Needs Improvement: ${invalidCount}`);
+    console.warn('========================================\n');
 
     // Log themes that need improvement
     if (invalidCount > 0) {
-      console.log('THEMES NEEDING IMPROVEMENT:');
-      console.log('----------------------------');
+      console.warn('THEMES NEEDING IMPROVEMENT:');
+      console.warn('----------------------------');
       results
         .filter(r => !r.isValid)
         .forEach(r => {
-          console.log(`\n${r.themeId}:`);
+          console.warn(`\n${r.themeId}:`);
           r.issues.forEach(issue => {
-            console.log(
+            console.warn(
               `  - ${issue.property} on ${issue.background}: ${issue.actualRatio}:1 (need ${issue.requiredRatio}:1)`,
             );
           });
@@ -217,9 +217,9 @@ describe('Theme Audit - All Existing Themes', () => {
       const result = validateTheme(theme);
       // Log issues for failing themes
       if (!result.isValid) {
-        console.log(`\n[FAIL] ${theme.id}:`);
+        console.warn(`\n[FAIL] ${theme.id}:`);
         result.issues.forEach(issue => {
-          console.log(
+          console.warn(
             `  ${issue.property} on ${issue.background}: ${issue.actualRatio}:1 < ${issue.requiredRatio}:1`,
           );
         });

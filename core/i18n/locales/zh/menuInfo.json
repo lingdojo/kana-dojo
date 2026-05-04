@@ -1,5 +1,16 @@
 {
-  "greeting": "欢迎使用 KanaDojo！",
-  "description": "KanaDojo 是一个美观、社区驱动的日语学习平台，灵感来自 Duolingo 和 Monkeytype。",
-  "instructions": "开始之前，请在下方选择一个道场，立即开始训练！"
+  "greeting": "欢迎来到 KanaDojo！",
+  "description": "KanaDojo 是一个美观、由社区共创的日语学习平台，灵感来自 Duolingo 和 Monkeytype。",
+  "instructions": "开始之前，请先选择下面的道场，马上开始练习吧。",
+  "kanaHeader": "欢迎来到假名道场！",
+  "kanaDescription": "在这里，你可以学习并练习日语的两套核心音节文字：平假名和片假名。",
+  "kanaInstructions": "开始前，请至少选择一组字符，再选择或调整练习模式，然后点击下方的“开始”进行训练。",
+  "kanjiHeader": "欢迎来到汉字道场！",
+  "kanjiDescription": "在这里，你可以学习并练习日语书写系统中的重要组成部分：汉字。",
+  "kanjiInstructions": "开始前，请至少选择一个关卡，再选择练习模式，然后点击下方的“开始”进行训练。",
+  "kanjiNew": "提示：点击汉字字符，可以在 Kanji Heatmap 上查看更多信息。",
+  "vocabularyHeader": "欢迎来到词汇道场！",
+  "vocabularyDescription": "在这里，你可以学习并练习日常日语中最常见的词汇。",
+  "vocabularyInstructions": "开始前，请至少选择一个关卡，再选择练习模式，然后点击下方的“开始”进行训练。",
+  "vocabularyNew": "提示：点击单词，可以在 Jisho 上查看更多信息。"
 }

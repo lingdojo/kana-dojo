@@ -51,7 +51,7 @@ if (typeof window !== 'undefined' && !sessionStorage.getItem(RELOAD_FLAG)) {
   });
 }
 if (process.env.NODE_ENV === 'development') {
-  console.log('PostHog client instrumentation disabled in development mode.');
+  console.warn('PostHog client instrumentation disabled in development mode.');
 } else if (
   process.env.NODE_ENV === 'production' &&
   process.env.NEXT_PUBLIC_VERCEL_ENV === 'production'

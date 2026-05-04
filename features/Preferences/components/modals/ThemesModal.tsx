@@ -7,7 +7,7 @@ import {
   getThemeDefaultWallpaperId,
 } from '@/features/Preferences/data/themes/themes';
 import { getWallpaperById } from '@/features/Preferences/data/wallpapers/wallpapers';
-import usePreferencesStore from '@/features/Preferences/store/usePreferencesStore';
+import { usePreferencesStore } from '@/features/Preferences';
 import { useClick } from '@/shared/hooks/generic/useAudio';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { X, Palette } from 'lucide-react';

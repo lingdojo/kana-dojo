@@ -22,7 +22,7 @@ import {
   type ProcessingProgress,
   type ProcessingStatus,
 } from '@/features/Preferences/lib/imageProcessor';
-import usePreferencesStore from '@/features/Preferences/store/usePreferencesStore';
+import { usePreferencesStore } from '@/features/Preferences';
 import { applyTheme } from '@/features/Preferences/data/themes/themes';
 import { useClick } from '@/shared/hooks/generic/useAudio';
 

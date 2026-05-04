@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { useClick } from '@/shared/hooks/generic/useAudio';
 import { ActionButton } from '@/shared/ui/components/ActionButton';
 import { cn } from '@/shared/utils/utils';
+import { useTranslations } from 'next-intl';
 
 type SetData = {
   name: string;
@@ -44,6 +45,8 @@ const SetCard = memo(function SetCard({
   isSelected,
   onToggle,
 }: SetCardProps) {
+  const tCommon = useTranslations('common.buttons');
+  const levelNumber = set.name.match(/\d+/)?.[0] || '';
   return (
     <motion.div
       layout
@@ -71,7 +74,7 @@ const SetCard = memo(function SetCard({
           <Circle size={18} className='shrink-0 text-(--background-color)' />
         )}
         <span className='text-center text-xs font-medium sm:text-sm'>
-          {set.name.replace('Set ', 'Level ')}
+          {tCommon('level', { number: levelNumber })}
         </span>
       </ActionButton>
     </motion.div>
@@ -91,6 +94,7 @@ const QuickSelectModal = ({
   scopeLabel,
 }: QuickSelectModalProps) => {
   const { playClick } = useClick();
+  const tCommon = useTranslations('common.buttons');
   const [searchLevel, setSearchLevel] = useState('');
 
   const filteredSets = useMemo(() => {
@@ -175,7 +179,7 @@ const QuickSelectModal = ({
   const actionButtons = useMemo(
     () => [
       {
-        label: 'Select All',
+        label: tCommon('selectAllKana'),
         onClick: handleSelectAll,
         icon: CircleCheck,
         iconOnly: false,
@@ -183,7 +187,7 @@ const QuickSelectModal = ({
         borderColorScheme: 'main' as const,
       },
       {
-        label: 'Clear All',
+        label: tCommon('clear'),
         onClick: handleClearAll,
         icon: Trash2,
         iconOnly: true,
@@ -221,6 +225,7 @@ const QuickSelectModal = ({
       handleRandom3,
       handleRandom5,
       handleRandom10,
+      tCommon,
     ],
   );
 
@@ -238,11 +243,10 @@ const QuickSelectModal = ({
         <div className='flex shrink-0 items-center justify-between border-b border-(--border-color) p-4 sm:p-6'>
           <div>
             <h2 className='text-xl font-bold text-(--main-color) sm:text-2xl'>
-              Quick Select - {unitName.toUpperCase()}
+              {tCommon('quickSelect')} - {unitName.toUpperCase()}
             </h2>
             <p className='mt-1 text-xs text-(--secondary-color) sm:text-sm'>
-              {scopeLabel} · {selectedSets.length} of {sets.length} levels
-              selected
+              {scopeLabel} · {selectedSets.length} / {sets.length}
             </p>
           </div>
           <button
@@ -290,7 +294,7 @@ const QuickSelectModal = ({
             inputMode='numeric'
             pattern='[0-9]*'
             onChange={handleSearchChange}
-            placeholder='search for a level...'
+            placeholder={tCommon('level', { number: '' })}
             className={clsx(
               'rounded-2xl border px-3 py-2 text-sm transition-all sm:px-4',
               'border-(--border-color) hover:bg-(--card-color)',
@@ -304,9 +308,10 @@ const QuickSelectModal = ({
           {filteredSets.length === 0 ? (
             <div className='flex h-full items-center justify-center'>
               <p className='text-sm text-(--secondary-color)'>
-                No level found. Available levels:{' '}
-                {sets[0]?.name.match(/\d+/)?.[0]} -{' '}
-                {sets[sets.length - 1]?.name.match(/\d+/)?.[0]}
+                {tCommon('levelsRange', {
+                  start: sets[0]?.name.match(/\d+/)?.[0] ?? '',
+                  end: sets[sets.length - 1]?.name.match(/\d+/)?.[0] ?? '',
+                })}
               </p>
             </div>
           ) : (
@@ -333,7 +338,7 @@ const QuickSelectModal = ({
             className='w-auto px-5 py-2.5 text-sm font-medium sm:px-6 sm:py-3 sm:text-base'
           >
             <CircleCheck size={24} />
-            Done
+            {tCommon('done')}
           </ActionButton>
         </div>
       </div>

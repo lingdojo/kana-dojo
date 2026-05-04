@@ -1,6 +1,6 @@
 {
   "title": "设置",
-  "description": "自定义您的学习体验",
+  "description": "自定义你的学习体验",
   "general": {
     "title": "常规",
     "language": "语言",
@@ -29,8 +29,8 @@
     "soundEffects": "音效",
     "volume": "音量",
     "clickSound": "点击音效",
-    "correctSound": "正确音效",
-    "incorrectSound": "错误音效"
+    "correctSound": "答对音效",
+    "incorrectSound": "答错音效"
   },
   "preferences": {
     "title": "偏好设置",
@@ -54,5 +54,23 @@
     "custom": "自定义",
     "presets": "预设主题",
     "createCustom": "创建自定义主题"
+  },
+  "sections": {
+    "behavior": "行为设置",
+    "display": "显示设置",
+    "effects": "视觉效果",
+    "backup": "备份",
+    "themes": "主题",
+    "fonts": "字体",
+    "comingSoon": "敬请期待..."
+  },
+  "behaviorOptions": {
+    "displayReadings": "在字符选择菜单中，读音显示为：",
+    "showFurigana": "在汉字/词汇上方显示振假名读音：",
+    "soundEffects": "播放界面与反馈音效：",
+    "pronunciationAudio": "启用发音音频：",
+    "autoPlayPronunciation": "遇到新题目时自动播放发音：",
+    "on": "开启",
+    "off": "关闭"
   }
 }

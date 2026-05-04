@@ -18,7 +18,16 @@
     "done": "Done",
     "ok": "OK",
     "yes": "Yes",
-    "no": "No"
+    "no": "No",
+    "selectAllKana": "Select All Kana",
+    "selectAllSubset": "Select all {name}",
+    "quickSelect": "Quick Select",
+    "unit": "Unit {number}",
+    "level": "Level {number}",
+    "levelsRange": "Levels {start}-{end}",
+    "selectedGroups": "Selected Groups:",
+    "selectedLevels": "Selected Levels:",
+    "madeByCommunity": "made with ❤️ by the community"
   },
   "messages": {
     "loading": "Loading...",
@@ -49,6 +58,15 @@
     "minute": "minute",
     "hour": "hour",
     "day": "day"
+  },
+  "donation": {
+    "title": "A small favor, if you can",
+    "paragraph1": "Thank you so much for spending your time with KanaDojo. We are truly honored to be a part of your Japanese learning journey.",
+    "paragraph2": "If KanaDojo has been helpful to you, we would be incredibly grateful if you ever felt able to support it with a donation.",
+    "paragraph3": "From day one, we have cared deeply about keeping this a fully free, open-source and ad-free learning resource for everyone — a respectful alternative to Duolingo — and we are wholeheartedly committed to keeping it that way forever.",
+    "paragraph4": "We appreciate you more than we can properly express, and thank you again for being part of this project and for any support you can offer.",
+    "donate": "Donate on Ko-fi",
+    "later": "Maybe later"
   },
   "actions": {
     "edit": "Edit",

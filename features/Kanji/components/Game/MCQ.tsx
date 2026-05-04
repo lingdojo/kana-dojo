@@ -18,7 +18,7 @@ import { useCrazyModeTrigger } from '@/features/CrazyMode/hooks/useCrazyModeTrig
 import { getGlobalAdaptiveSelector } from '@/shared/utils/adaptiveSelection';
 import { useSmartReverseMode } from '@/shared/hooks/game/useSmartReverseMode';
 import useClassicSessionStore from '@/shared/store/useClassicSessionStore';
-import useSetProgressStore from '@/features/Progress/store/useSetProgressStore';
+import { useSetProgressStore } from '@/features/Progress';
 
 const random = new Random();
 
@@ -195,10 +195,12 @@ const KanjiMCQ = ({ selectedKanjiObjs, isHidden }: KanjiMCQProps) => {
 
   const randomIncorrectOptions = getIncorrectOptions();
 
-  const [shuffledOptions, setShuffledOptions] = useState(
-    [targetChar, ...randomIncorrectOptions].sort(
-      () => random.real(0, 1) - 0.5,
-    ) as string[],
+  const shuffledOptions = useMemo(
+    () =>
+      [targetChar, ...randomIncorrectOptions].sort(
+        () => random.real(0, 1) - 0.5,
+      ) as string[],
+    [targetChar, randomIncorrectOptions],
   );
 
   const [displayAnswerSummary, setDisplayAnswerSummary] = useState(false);
@@ -207,16 +209,6 @@ const KanjiMCQ = ({ selectedKanjiObjs, isHidden }: KanjiMCQProps) => {
   const [wrongSelectedAnswers, setWrongSelectedAnswers] = useState<string[]>(
     [],
   );
-
-  // Update shuffled options when correctChar or isReverse changes
-  useEffect(() => {
-    setShuffledOptions(
-      [targetChar, ...getIncorrectOptions()].sort(
-        () => random.real(0, 1) - 0.5,
-      ) as string[],
-    );
-    setWrongSelectedAnswers([]);
-  }, [correctChar, isReverse]);
 
   const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
@@ -419,4 +411,3 @@ const KanjiMCQ = ({ selectedKanjiObjs, isHidden }: KanjiMCQProps) => {
 };
 
 export default KanjiMCQ;
-

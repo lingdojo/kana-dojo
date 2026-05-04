@@ -1,8 +1,8 @@
 'use client';
 import clsx from 'clsx';
-import { useState, useMemo } from 'react';
+import { useMemo } from 'react';
 import { useClick } from '@/shared/hooks/generic/useAudio';
-import usePreferencesStore from '@/features/Preferences/store/usePreferencesStore';
+import { usePreferencesStore } from '@/features/Preferences';
 import { buttonBorderStyles } from '@/shared/utils/styles';
 import fonts from '../../data/fonts/fonts';
 import { isRecommendedFont } from '../../data/fonts/recommendedFonts';
@@ -182,4 +182,3 @@ const Fonts = ({ useNewIconDesign = false }: FontsProps) => {
 };
 
 export default Fonts;
-

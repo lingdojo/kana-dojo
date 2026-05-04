@@ -1,25 +1,18 @@
 'use client';
-import { createElement, useEffect, useRef } from 'react';
+import { createElement, useEffect, useRef, useState } from 'react';
 import themeSets, {
   applyTheme,
   getWallpaperStyles,
   getThemeDefaultWallpaperId,
   isPremiumThemeId,
-  // hexToHsl
 } from '@/features/Preferences/data/themes/themes';
 import { getWallpaperById } from '@/features/Preferences/data/wallpapers/wallpapers';
-import usePreferencesStore from '@/features/Preferences/store/usePreferencesStore';
+import { usePreferencesStore } from '@/features/Preferences';
 import clsx from 'clsx';
 import { useClick, useLong } from '@/shared/hooks/generic/useAudio';
-import { buttonBorderStyles } from '@/shared/utils/styles';
-import { useState } from 'react';
-import { Dice5 } from 'lucide-react';
-import { Random } from 'random-js';
 import { useCustomThemeStore } from '@/features/Preferences/store/useCustomThemeStore';
 import CollapsibleSection from '../shared/CollapsibleSection';
 import CustomWallpaperUpload from './CustomWallpaperUpload';
-
-const random = new Random();
 
 type ThemesProps = {
   useNewIconDesign?: boolean;
@@ -28,11 +21,7 @@ type ThemesProps = {
 const Themes = ({ useNewIconDesign = false }: ThemesProps) => {
   const { playClick } = useClick();
   const { playLongLoop, stopLongLoop } = useLong();
-  const {
-    addTheme: _addTheme,
-    removeTheme: _removeTheme,
-    themes: _themes,
-  } = useCustomThemeStore();
+  useCustomThemeStore();
 
   const [isAdding, _setIsAdding] = useState(true);
   const [_customTheme, _setCustomTheme] = useState({
@@ -50,12 +39,6 @@ const Themes = ({ useNewIconDesign = false }: ThemesProps) => {
   const selectedWallpaperId = usePreferencesStore(
     state => state.selectedWallpaperId,
   );
-
-  // Initialize with first theme to avoid hydration mismatch
-  const [randomTheme, setRandomTheme] = useState(themeSets[2].themes[0]);
-
-  // Set random theme only on client side after mount
-  const [_isMounted, setIsMounted] = useState(false);
 
   const [isHovered, setIsHovered] = useState('');
 
@@ -103,12 +86,7 @@ const Themes = ({ useNewIconDesign = false }: ThemesProps) => {
     }
   };
  */
-  useEffect(() => {
-    setIsMounted(true);
-    setRandomTheme(
-      themeSets[2].themes[random.integer(0, themeSets[2].themes.length - 1)],
-    );
-  }, []);
+  useEffect(() => {}, []);
 
   useEffect(() => {
     if (selectedTheme === 'long') {
@@ -694,4 +672,3 @@ const Themes = ({ useNewIconDesign = false }: ThemesProps) => {
 };
 
 export default Themes;
-

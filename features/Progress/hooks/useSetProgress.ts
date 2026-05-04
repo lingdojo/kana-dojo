@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 
-import useSetProgressStore from '@/features/Progress/store/useSetProgressStore';
+import { useSetProgressStore } from '@/features/Progress';
 
 export function useSetProgressHydration(): boolean {
   const hydrate = useSetProgressStore(state => state.hydrate);

@@ -21,7 +21,7 @@ vi.mock('localforage', () => {
 });
 
 import useStatsStore from '@/features/Progress/store/useStatsStore';
-import useSetProgressStore from '@/features/Progress/store/useSetProgressStore';
+import { useSetProgressStore } from '@/features/Progress';
 
 const emptyProgress = {
   version: 1 as const,

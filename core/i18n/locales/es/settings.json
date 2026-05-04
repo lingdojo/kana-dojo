@@ -54,5 +54,23 @@
     "custom": "Personalizado",
     "presets": "Temas Preestablecidos",
     "createCustom": "Crear Tema Personalizado"
+  },
+  "sections": {
+    "behavior": "Comportamiento",
+    "display": "Visualización",
+    "effects": "Efectos",
+    "backup": "Copia de seguridad",
+    "themes": "Temas",
+    "fonts": "Fuentes",
+    "comingSoon": "Próximamente..."
+  },
+  "behaviorOptions": {
+    "displayReadings": "En el menú de selección de caracteres, mostrar las lecturas como:",
+    "showFurigana": "Mostrar furigana (lectura) sobre el carácter/palabra para kanji/vocabulario:",
+    "soundEffects": "Reproducir efectos de sonido de la interfaz y feedback:",
+    "pronunciationAudio": "Activar audio de pronunciación:",
+    "autoPlayPronunciation": "Reproducir pronunciación automáticamente para nuevas preguntas:",
+    "on": "on",
+    "off": "off"
   }
 }

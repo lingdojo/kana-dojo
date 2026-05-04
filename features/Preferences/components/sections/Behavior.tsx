@@ -1,14 +1,15 @@
 'use client';
-import usePreferencesStore from '@/features/Preferences/store/usePreferencesStore';
+import { usePreferencesStore } from '@/features/Preferences';
 import { useClick } from '@/shared/hooks/generic/useAudio';
 import { AudioLines, VolumeX, Volume2 } from 'lucide-react';
-import { useJapaneseTTS } from '@/features/Preferences/hooks/useJapaneseTTS';
 import { ActionButton } from '@/shared/ui/components/ActionButton';
+import { useTranslations } from 'next-intl';
 // import{Command, KeyboardOff} from 'lucide-react'
 // import HotkeyReference from './HotkeyReference';
 
 const Behavior = () => {
   const { playClick } = useClick();
+  const tBehavior = useTranslations('settings.behaviorOptions');
 
   const displayKana = usePreferencesStore(state => state.displayKana);
   const setDisplayKana = usePreferencesStore(state => state.setDisplayKana);
@@ -31,16 +32,6 @@ const Behavior = () => {
     state => state.setFuriganaEnabled,
   );
 
-  // Unused but kept for future TTS voice panel
-  const {
-    availableVoices,
-    currentVoice,
-    setVoice,
-    speak,
-    refreshVoices,
-    hasJapaneseVoices,
-  } = useJapaneseTTS();
-
   /*   const hotkeysOn = useThemeStore(state => state.hotkeysOn);
   const setHotkeys = useThemeStore(state => state.setHotkeys);
   const hotkeys = [
@@ -52,7 +43,7 @@ const Behavior = () => {
 
   const options = [
     {
-      label: 'In the character selection menu, for readings, display:',
+      label: tBehavior('displayReadings'),
       value: displayKana,
       choices: [
         {
@@ -68,14 +59,13 @@ const Behavior = () => {
       ],
     },
     {
-      label:
-        'Show furigana (reading) above the character/word for kanji/vocabulary:',
+      label: tBehavior('showFurigana'),
       value: furiganaEnabled,
       choices: [
         {
           label: (
             <>
-              <span>on</span>
+              <span>{tBehavior('on')}</span>
               <span className='mb-0.5 text-sm'>ふり</span>
             </>
           ),
@@ -83,14 +73,14 @@ const Behavior = () => {
           onClick: () => setFuriganaEnabled(true),
         },
         {
-          label: <span>off</span>,
+          label: <span>{tBehavior('off')}</span>,
           selectedWhen: false,
           onClick: () => setFuriganaEnabled(false),
         },
       ],
     },
     {
-      label: 'Play UI + feedback sound effects:',
+      label: tBehavior('soundEffects'),
       value: silentMode,
       choices: [
         {
@@ -106,7 +96,7 @@ const Behavior = () => {
         {
           label: (
             <>
-              <span>off</span>
+              <span>{tBehavior('off')}</span>
               <VolumeX size={20} className='mb-0.5' />
             </>
           ),
@@ -116,7 +106,7 @@ const Behavior = () => {
       ],
     },
     {
-      label: 'Enable pronunciation audio:',
+      label: tBehavior('pronunciationAudio'),
       value: pronunciationEnabled,
       choices: [
         {
@@ -142,7 +132,7 @@ const Behavior = () => {
       ],
     },
     {
-      label: 'Auto-play pronunciation for new prompts:',
+      label: tBehavior('autoPlayPronunciation'),
       value: pronunciationAutoPlay,
       choices: [
         {
@@ -211,4 +201,3 @@ const Behavior = () => {
 };
 
 export default Behavior;
-

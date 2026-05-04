@@ -12,7 +12,15 @@
     "preferences": "Preferencias",
     "about": "Acerca de",
     "help": "Ayuda",
-    "logout": "Cerrar sesión"
+    "logout": "Cerrar sesión",
+    "guides": "Guías",
+    "resources": "Recursos",
+    "tools": "Herramientas",
+    "translate": "Traducir",
+    "conjugate": "Conjugar",
+    "converter": "Conversor",
+    "experiments": "Experimentos",
+    "language": "Idioma"
   },
   "breadcrumbs": {
     "home": "Inicio",

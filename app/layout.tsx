@@ -10,7 +10,7 @@ import {
 } from '@/shared/ui-composite/SEO/StructuredData';
 import { Metadata, Viewport } from 'next';
 import Script from 'next/script';
-import { headers } from 'next/headers';
+import { headers, cookies } from 'next/headers';
 import SessionPrefetch from '@/shared/ui-composite/Performance/SessionPrefetch';
 
 const googleVerificationToken = process.env.GOOGLE_VERIFICATION_TOKEN || '';
@@ -129,7 +129,11 @@ export default async function RootLayout({ children }: RootLayoutProps) {
   // Trigger rebuild: 2025-12-31
   // Get locale from middleware header
   const headersList = await headers();
-  const locale = headersList.get('x-locale') || 'en';
+  const cookieStore = await cookies();
+  const locale =
+    headersList.get('x-locale') ||
+    cookieStore.get('NEXT_LOCALE')?.value ||
+    'en';
 
   return (
     <html lang={locale} suppressHydrationWarning>
@@ -208,4 +212,3 @@ export default async function RootLayout({ children }: RootLayoutProps) {
     </html>
   );
 }
-

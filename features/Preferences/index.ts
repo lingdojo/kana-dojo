@@ -20,6 +20,11 @@ export type {
   CustomThemeStoreState,
 } from './facade';
 
+// Legacy store export for internal Preferences feature and existing consumers.
+// Prefer focused facades for new cross-feature code.
+export { default } from './store/usePreferencesStore';
+export { default as usePreferencesStore } from './store/usePreferencesStore';
+
 // Components (page-level)
 export { default as ThemesModal } from './components/modals/ThemesModal';
 export { default as FontsModal } from './components/modals/FontsModal';

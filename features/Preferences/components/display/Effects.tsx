@@ -1,6 +1,6 @@
 'use client';
 import clsx from 'clsx';
-import usePreferencesStore from '@/features/Preferences/store/usePreferencesStore';
+import { usePreferencesStore } from '@/features/Preferences';
 import { buttonBorderStyles } from '@/shared/utils/styles';
 import { useHasFinePointer } from '@/shared/hooks/generic/useHasFinePointer';
 import { EFFECTS, CLICK_EFFECTS } from '../../data/effects/effectsData';
@@ -190,4 +190,3 @@ const Effects = ({ useNewIconDesign = false }: EffectsProps) => {
 };
 
 export default Effects;
-

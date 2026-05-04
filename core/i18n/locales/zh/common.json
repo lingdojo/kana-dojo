@@ -18,7 +18,16 @@
     "done": "完成",
     "ok": "确定",
     "yes": "是",
-    "no": "否"
+    "no": "否",
+    "selectAllKana": "选择全部假名",
+    "selectAllSubset": "选择全部{name}",
+    "quickSelect": "快速选择",
+    "unit": "单元 {number}",
+    "level": "关卡 {number}",
+    "levelsRange": "关卡 {start}-{end}",
+    "selectedGroups": "已选分组：",
+    "selectedLevels": "已选关卡：",
+    "madeByCommunity": "由社区用心共创"
   },
   "messages": {
     "loading": "加载中...",
@@ -49,6 +58,15 @@
     "minute": "分钟",
     "hour": "小时",
     "day": "天"
+  },
+  "donation": {
+    "title": "如果可以，想请你帮个小忙",
+    "paragraph1": "非常感谢你愿意把时间花在 KanaDojo 上。能陪伴你的日语学习旅程，我们真的很荣幸。",
+    "paragraph2": "如果 KanaDojo 对你有帮助，并且你愿意支持这个项目，我们会非常感激。",
+    "paragraph3": "从第一天起，我们就希望把它做成一个完全免费、开源、无广告的学习资源，让所有人都能安心使用；它也会一直保持这种方式。",
+    "paragraph4": "感谢你成为这个项目的一部分，也感谢你愿意给予的任何支持。",
+    "donate": "在 Ko-fi 上支持",
+    "later": "稍后再说"
   },
   "actions": {
     "edit": "编辑",
