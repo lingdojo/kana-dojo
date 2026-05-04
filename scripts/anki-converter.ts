@@ -12,7 +12,6 @@
 
 import { Command } from 'commander';
 import { readFile, writeFile } from 'fs/promises';
-import { basename } from 'path';
 import { createConversionPipeline } from '../features/AnkiConverter/lib/conversionPipeline.js';
 import type {
   ConversionOptions,
@@ -81,14 +80,14 @@ function displayError(error: ConversionError | Error): void {
  * Display success message with statistics
  */
 function displaySuccess(result: ConversionResult, outputPath: string): void {
-  console.log('\n\n✅ Conversion successful!');
-  console.log(`   Output: ${outputPath}`);
-  console.log(`   Decks: ${result.metadata.totalDecks}`);
-  console.log(`   Cards: ${result.metadata.totalCards}`);
-  console.log(
+  console.warn('\n\n✅ Conversion successful!');
+  console.warn(`   Output: ${outputPath}`);
+  console.warn(`   Decks: ${result.metadata.totalDecks}`);
+  console.warn(`   Cards: ${result.metadata.totalCards}`);
+  console.warn(
     `   Processing time: ${(result.metadata.processingTime / 1000).toFixed(2)}s`,
   );
-  console.log('');
+  console.warn('');
 }
 
 /**
@@ -145,7 +144,7 @@ Privacy:
 
   try {
     // Read input file
-    console.log(`📖 Reading file: ${options.input}`);
+    console.warn(`📖 Reading file: ${options.input}`);
     const buffer = await readFile(options.input);
 
     // Create conversion options
@@ -168,7 +167,7 @@ Privacy:
     });
 
     // Convert
-    console.log('🔄 Starting conversion...\n');
+    console.warn('🔄 Starting conversion...\n');
     const result = await pipeline.convert(
       buffer.buffer as ArrayBuffer,
       conversionOptions,
@@ -176,7 +175,7 @@ Privacy:
 
     // Write output
     clearLine();
-    console.log('\n💾 Writing output file...');
+    console.warn('\n💾 Writing output file...');
     const jsonOutput = JSON.stringify(result, null, 2);
     await writeFile(options.output, jsonOutput, 'utf-8');
 

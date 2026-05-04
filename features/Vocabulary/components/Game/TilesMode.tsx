@@ -2,11 +2,13 @@
 import { useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import clsx from 'clsx';
-import useVocabStore, {
-  IVocabObj,
-} from '@/features/Vocabulary/store/useVocabStore';
+import { IVocabObj } from '@/features/Vocabulary/store/useVocabStore';
 import { Random } from 'random-js';
-import { useCorrect, useError, useClick } from '@/shared/hooks/generic/useAudio';
+import {
+  useCorrect,
+  useError,
+  useClick,
+} from '@/shared/hooks/generic/useAudio';
 import { getGlobalAdaptiveSelector } from '@/shared/utils/adaptiveSelection';
 import Stars from '@/shared/ui-composite/Game/Stars';
 import { useCrazyModeTrigger } from '@/features/CrazyMode/hooks/useCrazyModeTrigger';
@@ -37,7 +39,7 @@ import {
   type VocabQuestionFormat,
   type VocabQuizType,
 } from '@/features/Vocabulary/components/Game/vocabFormatLock';
-import useSetProgressStore from '@/features/Progress/store/useSetProgressStore';
+import { useSetProgressStore } from '@/features/Progress';
 
 const random = new Random();
 const adaptiveSelector = getGlobalAdaptiveSelector();
@@ -102,14 +104,14 @@ const VocabTilesMode = ({
     selectedWordObjs.length - 1,
   );
 
-  // Get the current vocabulary collection from the Vocab store
-  const selectedVocabCollection = useVocabStore(
-    state => state.selectedVocabCollection,
-  );
   const isGlassMode = useThemePreferences().isGlassMode;
 
-  const { startAnswerTimer, pauseAnswerTimer, getAnswerTimeMs, resetAnswerTimer } =
-    useAnswerTimer();
+  const {
+    startAnswerTimer,
+    pauseAnswerTimer,
+    getAnswerTimeMs,
+    resetAnswerTimer,
+  } = useAnswerTimer();
   const { playCorrect } = useCorrect();
   const { playErrorTwice } = useError();
   const { playClick } = useClick();
@@ -269,9 +271,6 @@ const VocabTilesMode = ({
     [isReverse, selectedWordObjs, distractorCount, wordObjMap],
   );
 
-  const [questionData, setQuestionData] = useState(() =>
-    generateQuestion(quizType),
-  );
   const [promptSequence, setPromptSequence] = useState(0);
   const [displayAnswerSummary, setDisplayAnswerSummary] = useState(false);
   const [currentWordObjForSummary, setCurrentWordObjForSummary] =
@@ -307,11 +306,15 @@ const VocabTilesMode = ({
     [],
   );
 
+  const [, setQuestionNonce] = useState(0);
+
   const resetGame = useCallback(
     (nextQuizType?: 'meaning' | 'reading') => {
       const typeToUse = nextQuizType ?? quizType;
-      const newQuestion = generateQuestion(typeToUse);
-      setQuestionData(newQuestion);
+      if (typeToUse !== quizType) {
+        setQuizType(typeToUse);
+      }
+      setQuestionNonce(prev => prev + 1);
       setPromptSequence(prev => prev + 1);
       setPlacedTileIds([]);
       setIsChecking(false);
@@ -322,7 +325,6 @@ const VocabTilesMode = ({
       startAnswerTimer();
     },
     [
-      generateQuestion,
       quizType,
       startAnswerTimer,
       setPlacedTileIds,
@@ -332,13 +334,10 @@ const VocabTilesMode = ({
     ],
   );
 
-  // Only reset game on isReverse change if we're NOT showing the answer summary
-  // This prevents the summary from being hidden when smart reverse mode changes after a correct answer
-  useEffect(() => {
-    if (!displayAnswerSummary) {
-      resetGame();
-    }
-  }, [isReverse, resetGame, displayAnswerSummary]);
+  const questionData = useMemo(
+    () => generateQuestion(quizType),
+    [generateQuestion, quizType],
+  );
 
   // Pause timer when game is hidden
   useEffect(() => {
@@ -425,7 +424,7 @@ const VocabTilesMode = ({
         questionId: questionData.word,
         questionPrompt: String(
           questionData.quizType === 'meaning' && isReverse
-            ? questionData.wordObj?.meanings?.[0] ?? questionData.word
+            ? (questionData.wordObj?.meanings?.[0] ?? questionData.word)
             : questionData.word,
         ),
         expectedAnswers: [questionData.correctAnswer],
@@ -473,7 +472,7 @@ const VocabTilesMode = ({
         questionId: questionData.word,
         questionPrompt: String(
           questionData.quizType === 'meaning' && isReverse
-            ? questionData.wordObj?.meanings?.[0] ?? questionData.word
+            ? (questionData.wordObj?.meanings?.[0] ?? questionData.word)
             : questionData.word,
         ),
         expectedAnswers: [questionData.correctAnswer],
@@ -508,7 +507,6 @@ const VocabTilesMode = ({
     setScore,
     externalOnWrong,
     externalIsReverse,
-    decideNextReverseMode,
     recordReverseModeWrong,
     logAttempt,
     isReverse,
@@ -563,6 +561,7 @@ const VocabTilesMode = ({
     resetGame,
     getNextQuizType,
     quizType,
+    isReverse,
   ]);
 
   const handleTryAgain = useCallback(() => {

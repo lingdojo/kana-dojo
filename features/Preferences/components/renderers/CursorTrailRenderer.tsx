@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useRef } from 'react';
-import usePreferencesStore from '@/features/Preferences/store/usePreferencesStore';
+import { usePreferencesStore } from '@/features/Preferences';
 import { CURSOR_TRAIL_EFFECTS } from '@/features/Preferences/data/effects/effectsData';
 import { getEmojiBitmap } from '@/features/Preferences/data/effects/emojiBitmapCache';
 import { useHasFinePointer } from '@/shared/hooks/generic/useHasFinePointer';
@@ -74,19 +74,19 @@ export default function CursorTrailRenderer() {
       if (!bmp) return;
 
       if (particles.current.length >= MAX_PARTICLES) {
-        // Reuse the oldest particle instead of allocating
-        const p = particles.current.shift()!;
-        p.x = e.clientX + (Math.random() - 0.5) * 6;
-        p.y = e.clientY + (Math.random() - 0.5) * 6;
-        p.vx = (Math.random() - 0.5) * 0.12;
-        p.vy = Math.random() * 0.15 + 0.04;
-        p.life = 1;
-        p.decay = 0.004 + Math.random() * 0.0015;
-        p.size = 40;
-        p.rotation = (Math.random() - 0.5) * 0.25;
-        p.rotationSpeed = (Math.random() - 0.5) * 0.02;
-        p.bitmap = bmp;
-        particles.current.push(p);
+        const oldest = particles.current.shift();
+        if (!oldest) return;
+        oldest.x = e.clientX + (Math.random() - 0.5) * 6;
+        oldest.y = e.clientY + (Math.random() - 0.5) * 6;
+        oldest.vx = (Math.random() - 0.5) * 0.12;
+        oldest.vy = Math.random() * 0.15 + 0.04;
+        oldest.life = 1;
+        oldest.decay = 0.004 + Math.random() * 0.0015;
+        oldest.size = 40;
+        oldest.rotation = (Math.random() - 0.5) * 0.25;
+        oldest.rotationSpeed = (Math.random() - 0.5) * 0.02;
+        oldest.bitmap = bmp;
+        particles.current.push(oldest);
       } else {
         particles.current.push({
           x: e.clientX + (Math.random() - 0.5) * 6,
@@ -94,7 +94,7 @@ export default function CursorTrailRenderer() {
           vx: (Math.random() - 0.5) * 0.12,
           vy: Math.random() * 0.15 + 0.04,
           life: 1,
-          decay: 0.004 + Math.random() * 0.0015, // ~200-250 frame lifespan (~3.5-4s)
+          decay: 0.004 + Math.random() * 0.0015,
           size: 40,
           rotation: (Math.random() - 0.5) * 0.25,
           rotationSpeed: (Math.random() - 0.5) * 0.02,
@@ -146,12 +146,14 @@ export default function CursorTrailRenderer() {
     };
     rafRef.current = requestAnimationFrame(tick);
 
+    const particleList = particles.current;
+
     return () => {
       mountedRef.current = false;
       window.removeEventListener('mousemove', onMove);
       window.removeEventListener('resize', resize);
       cancelAnimationFrame(rafRef.current);
-      particles.current.length = 0;
+      particleList.length = 0;
     };
   }, [effectId, hasFinePointer]);
 

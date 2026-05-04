@@ -1,5 +1,5 @@
 'use client';
-import usePreferencesStore from '@/features/Preferences/store/usePreferencesStore';
+import { usePreferencesStore } from '@/features/Preferences';
 import { useClick } from '@/shared/hooks/generic/useAudio';
 import { AudioLines, VolumeX, Volume2 } from 'lucide-react';
 import { ActionButton } from '@/shared/ui/components/ActionButton';

@@ -15,7 +15,7 @@ const maxTotalKb = Number(process.env.BUNDLE_TOTAL_KB || 0);
 const maxChunkKb = Number(process.env.BUNDLE_MAX_CHUNK_KB || 0);
 
 if (!fs.existsSync(chunksDir)) {
-  console.log('ℹ️  .next/static/chunks not found. Run `npm run build` first.');
+  console.warn('ℹ️  .next/static/chunks not found. Run `npm run build` first.');
   process.exit(0);
 }
 
@@ -44,17 +44,23 @@ for (const file of files) {
 const totalKb = Math.round(totalBytes / 1024);
 const maxChunkKbActual = Math.round(maxChunk.bytes / 1024);
 
-console.log(`Total JS chunk size: ${totalKb} KB`);
-console.log(`Largest chunk: ${maxChunkKbActual} KB (${path.relative(projectRoot, maxChunk.file)})`);
+console.warn(`Total JS chunk size: ${totalKb} KB`);
+console.warn(
+  `Largest chunk: ${maxChunkKbActual} KB (${path.relative(projectRoot, maxChunk.file)})`,
+);
 
 if (maxTotalKb > 0 && totalKb > maxTotalKb) {
-  console.error(`❌ Total JS size exceeds limit: ${totalKb} KB > ${maxTotalKb} KB`);
+  console.error(
+    `❌ Total JS size exceeds limit: ${totalKb} KB > ${maxTotalKb} KB`,
+  );
   process.exit(1);
 }
 
 if (maxChunkKb > 0 && maxChunkKbActual > maxChunkKb) {
-  console.error(`❌ Largest chunk exceeds limit: ${maxChunkKbActual} KB > ${maxChunkKb} KB`);
+  console.error(
+    `❌ Largest chunk exceeds limit: ${maxChunkKbActual} KB > ${maxChunkKb} KB`,
+  );
   process.exit(1);
 }
 
-console.log('✅ Bundle size check passed');
+console.warn('✅ Bundle size check passed');

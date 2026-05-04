@@ -4,7 +4,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import clsx from 'clsx';
 import useKanjiStore, { IKanjiObj } from '@/features/Kanji/store/useKanjiStore';
 import { Random } from 'random-js';
-import { useCorrect, useError, useClick } from '@/shared/hooks/generic/useAudio';
+import {
+  useCorrect,
+  useError,
+  useClick,
+} from '@/shared/hooks/generic/useAudio';
 import { getGlobalAdaptiveSelector } from '@/shared/utils/adaptiveSelection';
 import Stars from '@/shared/ui-composite/Game/Stars';
 import { useCrazyModeTrigger } from '@/features/CrazyMode/hooks/useCrazyModeTrigger';
@@ -27,11 +31,10 @@ import {
 } from '@/shared/ui-composite/Game/TilesModeShared';
 import TilesModeGrid from '@/shared/ui-composite/Game/TilesModeGrid';
 import useClassicSessionStore from '@/shared/store/useClassicSessionStore';
-import useSetProgressStore from '@/features/Progress/store/useSetProgressStore';
+import { useSetProgressStore } from '@/features/Progress';
 
 const random = new Random();
 const adaptiveSelector = getGlobalAdaptiveSelector();
-
 
 interface KanjiTilesModeProps {
   selectedKanjiObjs: IKanjiObj[];
@@ -87,8 +90,12 @@ const KanjiTilesMode = ({
   );
   const isGlassMode = useThemePreferences().isGlassMode;
 
-  const { startAnswerTimer, pauseAnswerTimer, getAnswerTimeMs, resetAnswerTimer } =
-    useAnswerTimer();
+  const {
+    startAnswerTimer,
+    pauseAnswerTimer,
+    getAnswerTimeMs,
+    resetAnswerTimer,
+  } = useAnswerTimer();
   const { playCorrect } = useCorrect();
   const { playErrorTwice } = useError();
   const { playClick } = useClick();
@@ -178,10 +185,11 @@ const KanjiTilesMode = ({
       correctAnswer,
       allTiles,
       displayChar: isReverse ? selectedKanjiObj.meanings[0] : selectedKanji,
+      kanjiObj: selectedKanjiObj,
     };
   }, [isReverse, selectedKanjiObjs, distractorCount, kanjiObjMap]);
 
-  const [questionData, setQuestionData] = useState(() => generateQuestion());
+  const questionData = useMemo(() => generateQuestion(), [generateQuestion]);
   const [displayAnswerSummary, setDisplayAnswerSummary] = useState(false);
   const [currentKanjiObjForSummary, setCurrentKanjiObjForSummary] =
     useState<IKanjiObj | null>(null);
@@ -199,27 +207,19 @@ const KanjiTilesMode = ({
   });
 
   const resetGame = useCallback(() => {
-    const newQuestion = generateQuestion();
-    setQuestionData(newQuestion);
     setPlacedTileIds([]);
     setIsChecking(false);
     setIsCelebrating(false);
     setBottomBarState('check');
     setDisplayAnswerSummary(false);
-    // Start timing for the new question
     startAnswerTimer();
   }, [
-    generateQuestion,
     startAnswerTimer,
     setPlacedTileIds,
     setIsChecking,
     setIsCelebrating,
     setBottomBarState,
   ]);
-
-  useEffect(() => {
-    resetGame();
-  }, [isReverse, resetGame]);
 
   // Pause timer when game is hidden
   useEffect(() => {
@@ -271,10 +271,10 @@ const KanjiTilesMode = ({
       setIsCelebrating(true);
       setDisplayAnswerSummary(true);
       // Store the current kanji object for summary display
-      setCurrentKanjiObjForSummary(selectedKanjiObj || null);
+      setCurrentKanjiObjForSummary(questionData.kanjiObj ?? null);
       // Set feedback for the summary
       const displayText = isReverse
-        ? selectedKanjiObj?.meanings[0]
+        ? questionData.kanjiObj?.meanings[0]
         : questionData.kanjiChar;
       setFeedback(
         <>
@@ -284,7 +284,9 @@ const KanjiTilesMode = ({
       );
       logAttempt({
         questionId: questionData.kanjiChar,
-        questionPrompt: String(questionData.displayChar ?? questionData.kanjiChar),
+        questionPrompt: String(
+          questionData.displayChar ?? questionData.kanjiChar,
+        ),
         expectedAnswers: [questionData.correctAnswer],
         userAnswer: String(selectedTileChar ?? ''),
         inputKind: 'word_building',
@@ -321,7 +323,9 @@ const KanjiTilesMode = ({
       externalOnWrong?.();
       logAttempt({
         questionId: questionData.kanjiChar,
-        questionPrompt: String(questionData.displayChar ?? questionData.kanjiChar),
+        questionPrompt: String(
+          questionData.displayChar ?? questionData.kanjiChar,
+        ),
         expectedAnswers: [questionData.correctAnswer],
         userAnswer: String(selectedTileChar ?? ''),
         inputKind: 'word_building',
@@ -353,7 +357,6 @@ const KanjiTilesMode = ({
     setScore,
     externalOnWrong,
     externalIsReverse,
-    decideNextReverseMode,
     recordReverseModeWrong,
     logAttempt,
     isReverse,
@@ -362,6 +365,7 @@ const KanjiTilesMode = ({
     pauseAnswerTimer,
     getAnswerTimeMs,
     resetAnswerTimer,
+    recordKanjiProgress,
     setIsChecking,
     setBottomBarState,
     setIsCelebrating,
@@ -400,9 +404,6 @@ const KanjiTilesMode = ({
 
   // Get the kanji object for display
   const currentKanjiObj = kanjiObjMap.get(questionData.kanjiChar);
-
-  // Get the selected kanji object for correct answer handling
-  const selectedKanjiObj = kanjiObjMap.get(questionData.kanjiChar);
 
   return (
     <div
@@ -479,7 +480,9 @@ const KanjiTilesMode = ({
                 isReverse ? '5.5rem' : '5rem',
               )}
               tilesContainerClassName={
-                isGlassMode ? 'rounded-xl bg-(--card-color) px-4 py-2' : undefined
+                isGlassMode
+                  ? 'rounded-xl bg-(--card-color) px-4 py-2'
+                  : undefined
               }
               tilesWrapperKey={questionData.kanjiChar}
             />

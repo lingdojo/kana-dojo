@@ -2,7 +2,7 @@
 
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import useSetProgressStore from '@/features/Progress/store/useSetProgressStore';
+import { useSetProgressStore } from '@/features/Progress';
 
 // Types
 interface CharacterScore {

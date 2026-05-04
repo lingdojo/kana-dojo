@@ -27,20 +27,13 @@ export function useVoiceInput({
   onError,
 }: UseVoiceInputOptions): UseVoiceInputReturn {
   const [isListening, setIsListening] = useState(false);
-  const [isSupported, setIsSupported] = useState(false);
+  const isSupported =
+    typeof window !== 'undefined' &&
+    Boolean(window.SpeechRecognition || window.webkitSpeechRecognition);
   const [error, setError] = useState<string | null>(null);
   const [transcript, setTranscript] = useState('');
 
   const recognitionRef = useRef<SpeechRecognition | null>(null);
-
-  // Check if Web Speech API is supported
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const SpeechRecognition =
-        window.SpeechRecognition || window.webkitSpeechRecognition;
-      setIsSupported(!!SpeechRecognition);
-    }
-  }, []);
 
   // Initialize speech recognition
   useEffect(() => {

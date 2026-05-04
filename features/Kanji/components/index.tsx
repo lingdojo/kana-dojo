@@ -11,8 +11,8 @@ import {
 } from '@/features/Kanji/services/kanjiDataService';
 import LevelSetCards from '@/shared/ui-composite/Menu/LevelSetCards';
 import useSetProgressHydration from '@/features/Progress/hooks/useSetProgress';
-import useSetProgressStore from '@/features/Progress/store/useSetProgressStore';
-import { calculateKanjiSetProgress } from '@/features/Progress/lib/setProgress';
+import { useSetProgressStore } from '@/features/Progress';
+import { calculateKanjiSetProgress } from '@/features/Progress';
 import {
   N1KanjiLength,
   N2KanjiLength,

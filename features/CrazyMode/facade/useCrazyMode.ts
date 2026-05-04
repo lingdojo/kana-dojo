@@ -2,7 +2,7 @@
 
 import { useMemo } from 'react';
 import useCrazyModeStore, { KYOKI_THEME_ID } from '../store/useCrazyModeStore';
-import usePreferencesStore from '@/features/Preferences/store/usePreferencesStore';
+import { usePreferencesStore } from '@/features/Preferences';
 
 export { KYOKI_THEME_ID };
 
@@ -30,8 +30,8 @@ export function useCrazyMode(): CrazyModeState & CrazyModeActions {
       isCrazyMode,
       activeThemeId,
       activeFontName,
-      randomize
+      randomize,
     }),
-    [isCrazyMode, activeThemeId, activeFontName, randomize]
+    [isCrazyMode, activeThemeId, activeFontName, randomize],
   );
 }

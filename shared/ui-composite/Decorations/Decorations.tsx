@@ -75,6 +75,12 @@ const DIMMED_OPACITY_CLASS = 'opacity-25';
 const ENABLE_MODE_SETUP_DECORATIONS = false;
 const ENABLE_STREAK_MILESTONE_DECORATIONS = true;
 
+const isDecorationsContextDisabled = (
+  context: 'main-menu' | 'mode-setup' | 'streak-milestone',
+): boolean =>
+  (context === 'mode-setup' && !ENABLE_MODE_SETUP_DECORATIONS) ||
+  (context === 'streak-milestone' && !ENABLE_STREAK_MILESTONE_DECORATIONS);
+
 const getBreakpointKey = (width: number): BreakpointKey => {
   if (width >= 1280) return 'xl';
   if (width >= 1024) return 'lg';
@@ -340,12 +346,7 @@ const Decorations = ({
   interactive?: boolean;
   context?: 'main-menu' | 'mode-setup' | 'streak-milestone';
 }) => {
-  if (
-    (context === 'mode-setup' && !ENABLE_MODE_SETUP_DECORATIONS) ||
-    (context === 'streak-milestone' && !ENABLE_STREAK_MILESTONE_DECORATIONS)
-  ) {
-    return null;
-  }
+  const isDisabled = isDecorationsContextDisabled(context);
 
   const [styles, setStyles] = useState<CharacterStyle[]>([]);
   const [visibleCount, setVisibleCount] = useState<number>(() =>
@@ -452,12 +453,16 @@ const Decorations = ({
     } else {
       // Static mode: simple display, no animations
       return styles.map((style, index) => (
-        <StaticChar key={index} style={style} intrinsicSize={layoutConfig.cellSize} />
+        <StaticChar
+          key={index}
+          style={style}
+          intrinsicSize={layoutConfig.cellSize}
+        />
       ));
     }
   }, [styles, interactive, handleExplode, layoutConfig.cellSize]);
 
-  if (styles.length === 0) return null;
+  if (isDisabled || styles.length === 0) return null;
 
   return (
     <>
@@ -469,10 +474,7 @@ const Decorations = ({
         )}
       >
         <div
-          className={clsx(
-            'grid h-full w-full gap-0.5 p-2',
-            GRID_COL_CLASSES,
-          )}
+          className={clsx('grid h-full w-full gap-0.5 p-2', GRID_COL_CLASSES)}
         >
           {gridContent}
         </div>

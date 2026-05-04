@@ -39,11 +39,7 @@ export const useJapaneseTTS = () => {
   }, [state.currentVoice]);
 
   // SSR-safe check for browser environment
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
+  const isClient = typeof window !== 'undefined';
 
   // Detect Firefox for special handling
   const isFirefox = useRef(false);

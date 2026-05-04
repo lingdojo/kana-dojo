@@ -5,7 +5,11 @@ import { usePathname } from 'next/navigation';
 import { useRouter } from '@/core/i18n/routing';
 import { useChallengeTimer } from '@/shared/hooks/game/useChallengeTimer';
 import { useGoalTimers } from '@/shared/hooks/game/useGoalTimers';
-import { useClick, useCorrect, useError } from '@/shared/hooks/generic/useAudio';
+import {
+  useClick,
+  useCorrect,
+  useError,
+} from '@/shared/hooks/generic/useAudio';
 import { shuffle } from '@/shared/utils/shuffle';
 import confetti from 'canvas-confetti';
 import { statsTracking } from '@/features/Progress';
@@ -125,7 +129,7 @@ export default function Blitz<T>({ config }: BlitzProps<T>) {
     saveToHistory: true,
     context: goalTimerContext,
     onGoalReached: goal => {
-      console.log(`🎯 Goal reached: ${goal.label} at ${elapsedTime}s`);
+      console.warn(`🎯 Goal reached: ${goal.label} at ${elapsedTime}s`);
     },
   });
 
@@ -294,7 +298,9 @@ export default function Blitz<T>({ config }: BlitzProps<T>) {
   const toQuestionPrompt = useCallback(
     (question: T) => {
       const rendered = renderQuestion(question, isReverseActive);
-      return typeof rendered === 'string' ? rendered : getCorrectAnswer(question);
+      return typeof rendered === 'string'
+        ? rendered
+        : getCorrectAnswer(question);
     },
     [renderQuestion, getCorrectAnswer, isReverseActive],
   );
@@ -333,7 +339,18 @@ export default function Blitz<T>({ config }: BlitzProps<T>) {
         });
       }
     }, 100);
-  }, [items, gameMode, dojoType, pathname, selectedSets, goalTimers, playClick, resetTimer, startTimer, stats]);
+  }, [
+    items,
+    gameMode,
+    dojoType,
+    pathname,
+    selectedSets,
+    goalTimers,
+    playClick,
+    resetTimer,
+    startTimer,
+    stats,
+  ]);
 
   const handleCancel = async () => {
     playClick();
@@ -524,4 +541,3 @@ export default function Blitz<T>({ config }: BlitzProps<T>) {
     />
   );
 }
-
