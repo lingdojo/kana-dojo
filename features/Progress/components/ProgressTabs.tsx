@@ -9,6 +9,7 @@ import { useClick } from '@/shared/hooks/generic/useAudio';
 import { cn } from '@/shared/utils/utils';
 import dynamic from 'next/dynamic';
 import { useSearchParams, useRouter, usePathname } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 
 const isDevOrPreview =
   process.env.NODE_ENV === 'development' ||
@@ -24,43 +25,40 @@ const DevAchievementPreview = isDevOrPreview
 
 type ViewType = 'statistics' | 'streak' | 'achievements';
 
-const viewOptions: { value: ViewType; label: string; icon: React.ReactNode }[] =
-  [
-    {
-      value: 'statistics',
-      label: 'Stats',
-      icon: <TrendingUp className='h-5 w-5' />,
-    },
-    {
-      value: 'streak',
-      label: 'Streak',
-      icon: <Flame className='h-5 w-5' />,
-    },
-    {
-      value: 'achievements',
-      label: 'Achievements',
-      icon: <Trophy className='h-5 w-5' />,
-    },
-  ];
+const viewOptions: {
+  value: ViewType;
+  labelKey: 'stats' | 'streak' | 'achievements';
+  icon: React.ReactNode;
+}[] = [
+  {
+    value: 'statistics',
+    labelKey: 'stats',
+    icon: <TrendingUp className='h-5 w-5' />,
+  },
+  {
+    value: 'streak',
+    labelKey: 'streak',
+    icon: <Flame className='h-5 w-5' />,
+  },
+  {
+    value: 'achievements',
+    labelKey: 'achievements',
+    icon: <Trophy className='h-5 w-5' />,
+  },
+];
 
 const ProgressTabsContent = () => {
   const { playClick } = useClick();
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
+  const tStats = useTranslations('statistics.progressPage.tabs');
 
   const tabParam = searchParams.get('tab') as ViewType | null;
-
-  const [currentView, setCurrentView] = useState<ViewType>('statistics');
-
-  useEffect(() => {
-    if (
-      tabParam &&
-      ['statistics', 'streak', 'achievements'].includes(tabParam)
-    ) {
-      setCurrentView(tabParam);
-    }
-  }, [tabParam]);
+  const currentView: ViewType =
+    tabParam && ['statistics', 'streak', 'achievements'].includes(tabParam)
+      ? tabParam
+      : 'statistics';
 
   const [layout, setLayout] = useState<{
     top: number;
@@ -143,7 +141,6 @@ const ProgressTabsContent = () => {
             <button
               key={option.value}
               onClick={() => {
-                setCurrentView(option.value);
                 router.replace(`${pathname}?tab=${option.value}`, {
                   scroll: false,
                 });
@@ -157,7 +154,7 @@ const ProgressTabsContent = () => {
               )}
             >
               {option.icon}
-              <span className='max-sm:hidden'>{option.label}</span>
+              <span className='max-sm:hidden'>{tStats(option.labelKey)}</span>
 
               {isSelected && (
                 <motion.div
@@ -196,4 +193,3 @@ const ProgressTabs = () => {
 };
 
 export default ProgressTabs;
-

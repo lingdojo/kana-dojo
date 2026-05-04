@@ -18,6 +18,7 @@ import { useClick } from '@/shared/hooks/generic/useAudio';
 import { ActionButton } from '@/shared/ui/components/ActionButton';
 import QuickSelectModal from '@/shared/ui-composite/Modals/QuickSelectModal';
 import { cn } from '@/shared/utils/utils';
+import { useTranslations } from 'next-intl';
 
 export type LevelSetCardsSet = {
   name: string;
@@ -94,6 +95,7 @@ const VisibleRowsSection = <TItem,>({
   renderSetDictionary,
 }: VisibleRowsSectionProps<TItem>) => {
   const { playClick } = useClick();
+  const tCommon = useTranslations('common.buttons');
   const [visibleRowCount, setVisibleRowCount] = useState(INITIAL_ROWS);
   const [isLoadingMore, setIsLoadingMore] = useState(false);
   const loaderRef = useRef<HTMLDivElement>(null);
@@ -167,10 +169,16 @@ const VisibleRowsSection = <TItem,>({
                   size={28}
                 />
                 <span className='max-lg:hidden'>
-                  {isSingleLevel ? 'Level' : 'Levels'} {firstSetNumber}
-                  {!isSingleLevel && `-${lastSetNumber}`}
+                  {isSingleLevel
+                    ? tCommon('level', { number: firstSetNumber })
+                    : tCommon('levelsRange', {
+                        start: firstSetNumber,
+                        end: lastSetNumber,
+                      })}
                 </span>
-                <span className='lg:hidden'>Level {firstSetNumber}</span>
+                <span className='lg:hidden'>
+                  {tCommon('level', { number: firstSetNumber })}
+                </span>
               </button>
             </h3>
 
@@ -189,7 +197,9 @@ const VisibleRowsSection = <TItem,>({
                   setTemp.end * itemsPerSet,
                 );
                 const isSelected = selectedSets.includes(setTemp.name);
-                const progressPercent = Math.round(getSetProgress(setItems) * 100);
+                const progressPercent = Math.round(
+                  getSetProgress(setItems) * 100,
+                );
 
                 return (
                   <div
@@ -244,7 +254,7 @@ const VisibleRowsSection = <TItem,>({
                       ) : (
                         <Circle className='mt-0.5 text-(--border-color) duration-250' />
                       )}
-                      {setTemp.name.replace('Set ', 'Level ')}
+                      {tCommon('level', { number: setTemp.levelNumber })}
                     </button>
 
                     <div
@@ -256,7 +266,9 @@ const VisibleRowsSection = <TItem,>({
                           : 'grid-rows-[1fr] opacity-100',
                       )}
                     >
-                      <div className='min-h-0'>{renderSetDictionary(setItems)}</div>
+                      <div className='min-h-0'>
+                        {renderSetDictionary(setItems)}
+                      </div>
                     </div>
                   </div>
                 );
@@ -302,6 +314,7 @@ const LevelSetCards = <TLevel extends string, TItem>({
   activeSubunitRange,
 }: LevelSetCardsProps<TLevel, TItem>) => {
   const { playClick } = useClick();
+  const tCommon = useTranslations('common.buttons');
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -477,7 +490,7 @@ const LevelSetCards = <TLevel extends string, TItem>({
         borderColorScheme='secondary'
       >
         <MousePointer className={cn('fill-current')} />
-        Quick Select
+        {tCommon('quickSelect')}
       </ActionButton>
 
       <QuickSelectModal

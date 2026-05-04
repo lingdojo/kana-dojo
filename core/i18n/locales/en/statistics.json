@@ -43,5 +43,29 @@
     "fastestTime": "Fastest Time",
     "longestSession": "Longest Session",
     "mostImproved": "Most Improved"
+  },
+  "progressPage": {
+    "title": "Your Progress",
+    "description": "Track your Japanese learning journey",
+    "emptyTitle": "No Progress Yet",
+    "emptyDescription": "Start practicing to see your statistics here. Complete training sessions to track your progress and character mastery.",
+    "tabs": {
+      "stats": "Stats",
+      "streak": "Streak",
+      "achievements": "Achievements"
+    },
+    "cards": {
+      "totalSessions": "Total Sessions",
+      "accuracy": "Accuracy",
+      "bestStreak": "Best Streak",
+      "characters": "Characters",
+      "correct": "Correct",
+      "incorrect": "Incorrect"
+    },
+    "reset": {
+      "title": "Reset All Progress?",
+      "description": "This will permanently delete all your progress data, including sessions, accuracy stats, and character mastery. This action cannot be undone.",
+      "confirm": "Reset Progress"
+    }
   }
 }

@@ -4,42 +4,68 @@
   "overview": {
     "title": "概览",
     "totalStudyTime": "总学习时间",
-    "totalSessions": "总学习次数",
-    "totalQuestions": "总题目数",
-    "averageAccuracy": "平均准确率",
+    "questionsAnswered": "已回答题数",
+    "accuracy": "总体正确率",
     "currentStreak": "当前连续天数",
     "longestStreak": "最长连续天数"
   },
   "charts": {
     "dailyActivity": "每日活动",
-    "weeklyProgress": "每周进度",
-    "monthlyProgress": "每月进度",
-    "accuracyByType": "按类型准确率"
+    "accuracyOverTime": "正确率变化",
+    "progressByLevel": "按关卡查看进度",
+    "timeByDojo": "按道场查看时间"
   },
   "kana": {
     "title": "假名统计",
-    "hiragana": "平假名",
-    "katakana": "片假名",
     "mastered": "已掌握",
     "learning": "学习中",
-    "needsPractice": "需要练习"
+    "notStarted": "未开始",
+    "hiraganaProgress": "平假名进度",
+    "katakanaProgress": "片假名进度"
   },
   "kanji": {
     "title": "汉字统计",
-    "byLevel": "按级别",
     "mastered": "已掌握",
-    "learning": "学习中"
+    "learning": "学习中",
+    "notStarted": "未开始",
+    "byLevel": "按 JLPT 关卡"
   },
   "vocabulary": {
     "title": "词汇统计",
-    "byLevel": "按级别",
+    "wordsLearned": "已学习词汇",
     "mastered": "已掌握",
-    "learning": "学习中"
+    "learning": "学习中",
+    "byLevel": "按 JLPT 关卡"
   },
-  "time": {
-    "today": "今天",
-    "thisWeek": "本周",
-    "thisMonth": "本月",
-    "allTime": "全部时间"
+  "performance": {
+    "title": "表现",
+    "bestAccuracy": "最高正确率",
+    "fastestTime": "最快用时",
+    "longestSession": "最长练习",
+    "mostImproved": "进步最大"
+  },
+  "progressPage": {
+    "title": "学习进度",
+    "description": "追踪你的日语学习旅程",
+    "emptyTitle": "还没有学习记录",
+    "emptyDescription": "开始练习后，你的统计数据会显示在这里。完成训练即可追踪进度和字符掌握情况。",
+    "tabs": {
+      "stats": "统计",
+      "streak": "连续学习",
+      "achievements": "成就"
+    },
+    "cards": {
+      "totalSessions": "练习次数",
+      "accuracy": "正确率",
+      "bestStreak": "最佳连续记录",
+      "characters": "已学字符",
+      "correct": "答对",
+      "incorrect": "答错"
+    },
+    "reset": {
+      "title": "重置全部进度？",
+      "description": "这将永久删除你的所有进度数据，包括练习记录、正确率统计和字符掌握情况。此操作无法撤销。",
+      "confirm": "重置进度"
+    }
   }
 }

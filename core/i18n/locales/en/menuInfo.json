@@ -1,5 +1,16 @@
 {
   "greeting": "Welcome to KanaDojo!",
   "description": "KanaDojo is an aesthetic, community-made platform for learning Japanese inspired by Duolingo and Monkeytype.",
-  "instructions": "To begin, pick a dojo below and start training now!"
+  "instructions": "To begin, pick a dojo below and start training now!",
+  "kanaHeader": "Welcome to the kana (hiragana and katakana) dojo!",
+  "kanaDescription": "This is the place where you can learn and practice the two core syllabaries of Japanese - Hiragana and Katakana.",
+  "kanaInstructions": "To begin, select at least 1 set of characters, select or change the training mode, then hit Go! below and start training now!",
+  "kanjiHeader": "Welcome to the kanji dojo!",
+  "kanjiDescription": "This is the place where you can learn and practice the main component of the Japanese writing system - the kanji characters.",
+  "kanjiInstructions": "To begin, select at least 1 level, select your training mode, then hit Go! below and start training!",
+  "kanjiNew": "New: click on a kanji character to find out more about it on Kanji Heatmap!",
+  "vocabularyHeader": "Welcome to the vocabulary dojo!",
+  "vocabularyDescription": "This is the place where you can learn and practice the most common words used in day-to-day Japanese.",
+  "vocabularyInstructions": "To begin, select at least 1 level, select your training mode, then hit Go! below and start training!",
+  "vocabularyNew": "New: click on a word to find out more about it on Jisho!"
 }

@@ -1,5 +1,6 @@
 'use client';
 import React, { useState } from 'react';
+import { useTranslations } from 'next-intl';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faDiscord,
@@ -66,6 +67,7 @@ const socialLinks: SocialLink[] = [
 
 const MobileBottomBar = () => {
   const { playClick } = useClick();
+  const tCommon = useTranslations('common.buttons');
   const { theme, font } = useThemePreferences();
   const { isCrazyMode, activeThemeId } = useCrazyMode();
   const expandDecorations = useDecorationsStore(
@@ -187,7 +189,7 @@ const MobileBottomBar = () => {
           className='hidden text-xs text-(--secondary-color) hover:cursor-pointer hover:text-(--main-color) lg:inline-block'
           onClick={() => handleClick('https://ko-fi.com/kanadojo')}
         >
-          made with ❤️ by the community
+          {tCommon('madeByCommunity')}
         </button>
         <span className='hidden text-sm text-(--main-color) select-none lg:inline-block'>
           ~
@@ -208,7 +210,7 @@ const MobileBottomBar = () => {
             <React.Fragment key={idx}>
               {content}
               {idx < infoItems.length - 1 && (
-                  <span className='text-sm text-(--main-color) select-none'>
+                <span className='text-sm text-(--main-color) select-none'>
                   ~
                 </span>
               )}

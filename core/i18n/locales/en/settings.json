@@ -54,5 +54,23 @@
     "custom": "Custom",
     "presets": "Theme Presets",
     "createCustom": "Create Custom Theme"
+  },
+  "sections": {
+    "behavior": "Behavior",
+    "display": "Display",
+    "effects": "Effects",
+    "backup": "Backup",
+    "themes": "Themes",
+    "fonts": "Fonts",
+    "comingSoon": "Coming Soon..."
+  },
+  "behaviorOptions": {
+    "displayReadings": "In the character selection menu, for readings, display:",
+    "showFurigana": "Show furigana (reading) above the character/word for kanji/vocabulary:",
+    "soundEffects": "Play UI + feedback sound effects:",
+    "pronunciationAudio": "Enable pronunciation audio:",
+    "autoPlayPronunciation": "Auto-play pronunciation for new prompts:",
+    "on": "on",
+    "off": "off"
   }
 }

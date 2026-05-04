@@ -1,6 +1,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
+import { useTranslations } from 'next-intl';
 import { useShallow } from 'zustand/react/shallow';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/shared/utils/utils';
@@ -11,7 +12,6 @@ import {
   Users,
   CheckCircle,
   XCircle,
-  Trash,
   AlertTriangle,
   ChartColumn,
 } from 'lucide-react';
@@ -25,8 +25,6 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from '@/shared/ui/components/alert-dialog';
-import { ActionButton } from '@/shared/ui/components/ActionButton';
-import { useClick } from '@/shared/hooks/generic/useAudio';
 import useStatsStore from '../../store/useStatsStore';
 import { useStatsAggregator } from '../../hooks/useStatsAggregator';
 import OverviewStatsCard from './OverviewStatsCard';
@@ -48,6 +46,8 @@ export interface StatsPageProps {
  * Empty state with premium styling
  */
 function EmptyState() {
+  const tStats = useTranslations('statistics.progressPage');
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -68,7 +68,7 @@ function EmptyState() {
         transition={{ delay: 0.3 }}
         className='mb-3 text-3xl font-bold text-(--main-color)'
       >
-        No Progress Yet
+        {tStats('emptyTitle')}
       </motion.h2>
       <motion.p
         initial={{ opacity: 0, y: 10 }}
@@ -76,8 +76,7 @@ function EmptyState() {
         transition={{ delay: 0.4 }}
         className='max-w-md text-(--secondary-color)'
       >
-        Start practicing to see your statistics here. Complete training sessions
-        to track your progress and character mastery.
+        {tStats('emptyDescription')}
       </motion.p>
     </motion.div>
   );
@@ -90,7 +89,9 @@ function EmptyState() {
  * and cohesive visual design.
  */
 export default function StatsPage({ className }: StatsPageProps) {
-  const { playClick } = useClick();
+  const tStats = useTranslations('statistics.progressPage');
+  const tCards = useTranslations('statistics.progressPage.cards');
+  const tCommon = useTranslations('common.buttons');
   const { clearAllProgress } = useStatsStore(
     useShallow(state => ({ clearAllProgress: state.clearAllProgress })),
   );
@@ -98,11 +99,6 @@ export default function StatsPage({ className }: StatsPageProps) {
   const [showResetModal, setShowResetModal] = useState(false);
 
   const hasData = stats.totalSessions > 0 || stats.uniqueCharactersLearned > 0;
-
-  const handleResetClick = () => {
-    playClick();
-    setShowResetModal(true);
-  };
 
   const handleConfirmReset = () => {
     clearAllProgress();
@@ -112,33 +108,33 @@ export default function StatsPage({ className }: StatsPageProps) {
   const overviewStats = useMemo(
     () => [
       {
-        title: 'Total Sessions',
+        title: tCards('totalSessions'),
         value: stats.totalSessions,
         icon: <TrendingUp className='h-5 w-5' />,
       },
       {
-        title: 'Accuracy',
+        title: tCards('accuracy'),
         value: `${stats.overallAccuracy.toFixed(0)}%`,
         subtitle: `${stats.totalCorrect}/${stats.totalCorrect + stats.totalIncorrect}`,
         icon: <Target className='h-5 w-5' />,
       },
       {
-        title: 'Best Streak',
+        title: tCards('bestStreak'),
         value: stats.bestStreak,
         icon: <Trophy className='h-5 w-5' />,
       },
       {
-        title: 'Characters',
+        title: tCards('characters'),
         value: stats.uniqueCharactersLearned,
         icon: <Users className='h-5 w-5' />,
       },
       {
-        title: 'Correct',
+        title: tCards('correct'),
         value: stats.totalCorrect,
         icon: <CheckCircle className='h-5 w-5' />,
       },
       {
-        title: 'Incorrect',
+        title: tCards('incorrect'),
         value: stats.totalIncorrect,
         icon: <XCircle className='h-5 w-5' />,
       },
@@ -150,6 +146,7 @@ export default function StatsPage({ className }: StatsPageProps) {
       stats.totalIncorrect,
       stats.totalSessions,
       stats.uniqueCharactersLearned,
+      tCards,
     ],
   );
 
@@ -174,10 +171,10 @@ export default function StatsPage({ className }: StatsPageProps) {
       >
         <div className='space-y-2'>
           <h1 className='text-4xl font-bold tracking-tight text-(--main-color)'>
-            Your Progress
+            {tStats('title')}
           </h1>
           <p className='text-lg text-(--secondary-color)/70'>
-            Track your Japanese learning journey
+            {tStats('description')}
           </p>
         </div>
         {/* <ActionButton
@@ -202,24 +199,22 @@ export default function StatsPage({ className }: StatsPageProps) {
                 <AlertTriangle className='h-7 w-7 text-(--secondary-color)' />
               </div>
               <AlertDialogTitle className='text-2xl font-bold text-(--main-color)'>
-                Reset All Progress?
+                {tStats('reset.title')}
               </AlertDialogTitle>
             </div>
             <AlertDialogDescription className='text-base leading-relaxed text-(--secondary-color)'>
-              This will permanently delete all your progress data, including
-              sessions, accuracy stats, and character mastery. This action
-              cannot be undone.
+              {tStats('reset.description')}
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter className='gap-3'>
             <AlertDialogCancel className='cursor-pointer rounded-full border-(--border-color) px-6 text-(--main-color) transition-colors duration-300 hover:bg-(--background-color)'>
-              Cancel
+              {tCommon('cancel')}
             </AlertDialogCancel>
             <AlertDialogAction
               onClick={handleConfirmReset}
               className='cursor-pointer rounded-full bg-(--secondary-color) px-6 transition-colors duration-300 hover:bg-(--secondary-color)/80'
             >
-              Reset Progress
+              {tStats('reset.confirm')}
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
@@ -309,4 +304,3 @@ export function getStatsOverviewDisplayValues(stats: {
     hasAllMetrics: true,
   };
 }
-

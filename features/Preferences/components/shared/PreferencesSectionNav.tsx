@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { cn } from '@/shared/utils/utils';
 import { useClick } from '@/shared/hooks/generic/useAudio';
 import { Joystick, Palette, Wand2 } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 const ACTIVE_SECTION_OFFSET = 156;
 const NAV_CLICK_SUPPRESSION_MS = 3000;
@@ -15,24 +16,24 @@ type SectionId = 'behavior' | 'display' | 'effects';
 
 interface SectionItem {
   id: SectionId;
-  label: string;
+  labelKey: 'behavior' | 'display' | 'effects';
   icon: typeof Joystick;
 }
 
 const sections: SectionItem[] = [
   {
     id: 'behavior',
-    label: 'Behavior',
+    labelKey: 'behavior',
     icon: Joystick,
   },
   {
     id: 'display',
-    label: 'Display',
+    labelKey: 'display',
     icon: Palette,
   },
   {
     id: 'effects',
-    label: 'Effects',
+    labelKey: 'effects',
     icon: Wand2,
   },
 ];
@@ -48,6 +49,7 @@ const getScrollContainer = () =>
 const PreferencesSectionNav = () => {
   const [activeSection, setActiveSection] = useState<SectionId>('behavior');
   const { playClick } = useClick();
+  const tSettings = useTranslations('settings.sections');
   const suppressedSectionRef = useRef<SectionId | null>(null);
   const suppressionTimeoutRef = useRef<number | null>(null);
 
@@ -176,11 +178,13 @@ const PreferencesSectionNav = () => {
                       ? 'text-(--background-color)'
                       : 'text-(--secondary-color)/70 hover:text-(--main-color)',
                   )}
-                  aria-label={section.label}
+                  aria-label={tSettings(section.labelKey)}
                   aria-current={isSelected ? 'location' : undefined}
                 >
                   <Icon className='h-5 w-5 shrink-0' />
-                  <span className='hidden sm:inline'>{section.label}</span>
+                  <span className='hidden sm:inline'>
+                    {tSettings(section.labelKey)}
+                  </span>
                 </a>
               </div>
             );
@@ -192,4 +196,3 @@ const PreferencesSectionNav = () => {
 };
 
 export default PreferencesSectionNav;
-

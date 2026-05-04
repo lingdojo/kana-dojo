@@ -1,47 +1,71 @@
 {
   "title": "Estadísticas",
-  "description": "Tu progreso de aprendizaje y estadísticas",
+  "description": "Tu progreso y estadísticas de aprendizaje",
   "overview": {
     "title": "Resumen",
-    "totalStudyTime": "Tiempo Total de Estudio",
-    "questionsAnswered": "Preguntas Respondidas",
-    "accuracy": "Precisión General",
-    "currentStreak": "Racha Actual",
-    "longestStreak": "Racha Más Larga"
+    "totalStudyTime": "Tiempo total de estudio",
+    "questionsAnswered": "Preguntas respondidas",
+    "accuracy": "Precisión general",
+    "currentStreak": "Racha actual",
+    "longestStreak": "Racha más larga"
   },
   "charts": {
-    "dailyActivity": "Actividad Diaria",
-    "accuracyOverTime": "Precisión a lo Largo del Tiempo",
-    "progressByLevel": "Progreso por Nivel",
-    "timeByDojo": "Tiempo por Dojo"
+    "dailyActivity": "Actividad diaria",
+    "accuracyOverTime": "Precisión a lo largo del tiempo",
+    "progressByLevel": "Progreso por nivel",
+    "timeByDojo": "Tiempo por dojo"
   },
   "kana": {
-    "title": "Estadísticas de Kana",
-    "mastered": "Dominados",
+    "title": "Estadísticas de kana",
+    "mastered": "Dominado",
     "learning": "Aprendiendo",
-    "notStarted": "No Iniciados",
-    "hiraganaProgress": "Progreso de Hiragana",
-    "katakanaProgress": "Progreso de Katakana"
+    "notStarted": "No iniciado",
+    "hiraganaProgress": "Progreso de hiragana",
+    "katakanaProgress": "Progreso de katakana"
   },
   "kanji": {
-    "title": "Estadísticas de Kanji",
-    "mastered": "Dominados",
+    "title": "Estadísticas de kanji",
+    "mastered": "Dominado",
     "learning": "Aprendiendo",
-    "notStarted": "No Iniciados",
-    "byLevel": "Por Nivel JLPT"
+    "notStarted": "No iniciado",
+    "byLevel": "Por nivel JLPT"
   },
   "vocabulary": {
-    "title": "Estadísticas de Vocabulario",
-    "wordsLearned": "Palabras Aprendidas",
-    "mastered": "Dominadas",
+    "title": "Estadísticas de vocabulario",
+    "wordsLearned": "Palabras aprendidas",
+    "mastered": "Dominado",
     "learning": "Aprendiendo",
-    "byLevel": "Por Nivel JLPT"
+    "byLevel": "Por nivel JLPT"
   },
   "performance": {
     "title": "Rendimiento",
-    "bestAccuracy": "Mejor Precisión",
-    "fastestTime": "Tiempo Más Rápido",
-    "longestSession": "Sesión Más Larga",
-    "mostImproved": "Mayor Mejora"
+    "bestAccuracy": "Mejor precisión",
+    "fastestTime": "Tiempo más rápido",
+    "longestSession": "Sesión más larga",
+    "mostImproved": "Mayor mejora"
+  },
+  "progressPage": {
+    "title": "Tu progreso",
+    "description": "Sigue tu viaje de aprendizaje del japonés",
+    "emptyTitle": "Aún no hay progreso",
+    "emptyDescription": "Empieza a practicar para ver tus estadísticas aquí. Completa sesiones de entrenamiento para seguir tu progreso y dominio de caracteres.",
+    "tabs": {
+      "stats": "Estadísticas",
+      "streak": "Racha",
+      "achievements": "Logros"
+    },
+    "cards": {
+      "totalSessions": "Sesiones totales",
+      "accuracy": "Precisión",
+      "bestStreak": "Mejor racha",
+      "characters": "Caracteres",
+      "correct": "Correctas",
+      "incorrect": "Incorrectas"
+    },
+    "reset": {
+      "title": "¿Restablecer todo el progreso?",
+      "description": "Esto eliminará permanentemente todos tus datos de progreso, incluidas sesiones, estadísticas de precisión y dominio de caracteres. Esta acción no se puede deshacer.",
+      "confirm": "Restablecer progreso"
+    }
   }
 }

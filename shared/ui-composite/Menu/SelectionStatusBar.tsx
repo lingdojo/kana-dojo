@@ -9,10 +9,11 @@ import { usePathname } from 'next/navigation';
 import { removeLocaleFromPath } from '@/shared/utils/pathUtils';
 import { useClick } from '@/shared/hooks/generic/useAudio';
 import { useScrollVisibility } from '@/shared/hooks/generic/useScrollVisibility';
-import { CircleCheck, Trash } from 'lucide-react';
+import { Trash } from 'lucide-react';
 import { ActionButton } from '@/shared/ui/components/ActionButton';
 import { AnimatePresence, motion } from 'framer-motion';
 import { cn } from '@/shared/utils/utils';
+import { useTranslations } from 'next-intl';
 
 type ContentType = 'kana' | 'kanji' | 'vocabulary';
 const ACTIVATION_SCROLL_DELAY_MS = 180;
@@ -36,6 +37,7 @@ const renderLabelWithDotSeparator = (label: string) => {
 
 const SelectionStatusBar = () => {
   const { playClick } = useClick();
+  const tCommon = useTranslations('common.buttons');
   const pathname = usePathname();
   const pathWithoutLocale = removeLocaleFromPath(pathname);
   const contentType = pathWithoutLocale.split('/')[1] as ContentType;
@@ -106,17 +108,20 @@ const SelectionStatusBar = () => {
   const activationScrollYRef = useRef(0);
 
   useEffect(() => {
-    if (!hasSelection) {
-      setIsActivationLocked(false);
-      setCanUnlockOnScroll(false);
-      return;
-    }
-
-    setIsActivationLocked(true);
-    setCanUnlockOnScroll(false);
     const timeoutId = window.setTimeout(() => {
-      setCanUnlockOnScroll(true);
-    }, ACTIVATION_SCROLL_DELAY_MS);
+      if (!hasSelection) {
+        setIsActivationLocked(false);
+        setCanUnlockOnScroll(false);
+        return;
+      }
+
+      setIsActivationLocked(true);
+      setCanUnlockOnScroll(false);
+
+      window.setTimeout(() => {
+        setCanUnlockOnScroll(true);
+      }, ACTIVATION_SCROLL_DELAY_MS);
+    }, 0);
 
     return () => {
       window.clearTimeout(timeoutId);
@@ -199,7 +204,9 @@ const SelectionStatusBar = () => {
   }, []);
 
   // Label text
-  const selectionLabel = isKana ? 'Selected Groups:' : 'Selected Levels:';
+  const selectionLabel = isKana
+    ? tCommon('selectedGroups')
+    : tCommon('selectedLevels');
 
   return (
     <AnimatePresence>
@@ -280,7 +287,7 @@ const SelectionStatusBar = () => {
               borderColorScheme='main'
               borderRadius='3xl'
               borderBottomThickness={10}
-              className='w-auto bg-(--main-color)/80 px-4 py-3 lg:px-6 motion-safe:animate-float [--float-distance:-3px] sm:[--float-distance:-5px]'
+              className='motion-safe:animate-float w-auto bg-(--main-color)/80 px-4 py-3 [--float-distance:-3px] sm:[--float-distance:-5px] lg:px-6'
               onClick={handleClear}
               aria-label='Clear selected levels'
             >

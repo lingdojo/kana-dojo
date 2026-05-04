@@ -1,10 +1,11 @@
 'use client';
 import clsx from 'clsx';
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 import { MousePointer } from 'lucide-react';
 import { kana } from '@/features/Kana/data/kana';
 import useKanaStore from '@/features/Kana/store/useKanaStore';
-import usePreferencesStore from '@/features/Preferences/store/usePreferencesStore';
+import { useInputPreferences } from '@/features/Preferences';
 import { useClick } from '@/shared/hooks/generic/useAudio';
 import { ActionButton } from '@/shared/ui/components/ActionButton';
 import { cn } from '@/shared/utils/utils';
@@ -17,13 +18,14 @@ interface SubsetProps {
 
 const Subset = ({ sliceRange, subgroup }: SubsetProps) => {
   const { playClick } = useClick();
+  const tCommon = useTranslations('common.buttons');
   const [focusedRow, setFocusedRow] = useState('');
 
   const kanaGroups = kana.slice(sliceRange[0], sliceRange[1]);
   const kanaGroupIndices = useKanaStore(state => state.kanaGroupIndices);
   const addKanaGroupIndex = useKanaStore(state => state.addKanaGroupIndex);
   const addKanaGroupIndices = useKanaStore(state => state.addKanaGroupIndices);
-  const displayKana = usePreferencesStore(state => state.displayKana);
+  const { displayKana } = useInputPreferences();
 
   const getGlobalIndex = (localIndex: number) => localIndex + sliceRange[0];
 
@@ -146,7 +148,11 @@ const Subset = ({ sliceRange, subgroup }: SubsetProps) => {
           borderBottomThickness={12}
         >
           <MousePointer size={22} className={cn('fill-current')} />
-          <span>select all {subgroup.slice(1).toLowerCase()}</span>
+          <span>
+            {tCommon('selectAllSubset', {
+              name: subgroup.slice(1).toLowerCase(),
+            })}
+          </span>
         </ActionButton>
       </div>
     </fieldset>

@@ -6,6 +6,8 @@ import usePreferencesStore from '../store/usePreferencesStore';
 export interface InputPreferences {
   hotkeysOn: boolean;
   setHotkeys: (hotkeys: boolean) => void;
+  displayKana: boolean;
+  setDisplayKana: (displayKana: boolean) => void;
 }
 
 /**
@@ -16,12 +18,16 @@ export interface InputPreferences {
 export function useInputPreferences(): InputPreferences {
   const hotkeysOn = usePreferencesStore(state => state.hotkeysOn);
   const setHotkeys = usePreferencesStore(state => state.setHotkeys);
+  const displayKana = usePreferencesStore(state => state.displayKana);
+  const setDisplayKana = usePreferencesStore(state => state.setDisplayKana);
 
   return useMemo<InputPreferences>(
     () => ({
       hotkeysOn,
       setHotkeys,
+      displayKana,
+      setDisplayKana,
     }),
-    [hotkeysOn, setHotkeys],
+    [displayKana, hotkeysOn, setDisplayKana, setHotkeys],
   );
 }

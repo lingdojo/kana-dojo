@@ -27,7 +27,8 @@ interface AcademyPageProps {
 
 export default async function AcademyPage({ params }: AcademyPageProps) {
   const { locale } = await params;
-  const posts = getBlogPosts(locale as Locale);
+  const blogLocale: Locale = locale === 'es' ? 'es' : 'en';
+  const posts = getBlogPosts(blogLocale);
 
   // Generate ItemList schema for blog post collection
   const itemListSchema = {
@@ -112,4 +113,3 @@ export default async function AcademyPage({ params }: AcademyPageProps) {
     </>
   );
 }
-

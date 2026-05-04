@@ -36,67 +36,59 @@ export default function translationGen(t: (key: string) => string) {
       ),
     },
     '/kana': {
-      header: <span>Welcome to the kana (hiragana and katakana) dojo!</span>,
+      header: <span>{t('kanaHeader')}</span>,
       content: (
         <>
           <p className='text-lg text-(--secondary-color)'>
-            This is the place where you can learn and practice the two core
-            syllabaries of Japanese - Hiragana and Katakana.
+            {t('kanaDescription')}
           </p>
           <p className='text-lg text-(--secondary-color)'>
-            To begin, select at least 1 set of characters, select or change the
-            training mode, then hit <b>Go!</b> below and start training now!
+            {t('kanaInstructions')}
           </p>
         </>
       ),
     },
     '/kanji': {
-      header: <span>Welcome to the kanji dojo!</span>,
+      header: <span>{t('kanjiHeader')}</span>,
       content: (
         <>
           <p className='text-lg text-(--secondary-color)'>
-            This is the place where you can learn and practice the main
-            component of the Japanese writing system - the kanji characters.
+            {t('kanjiDescription')}
           </p>
           <p className='text-lg text-(--secondary-color)'>
-            To begin, select at least 1 level, select your training mode, then
-            hit <b>Go!</b> below and start training!
+            {t('kanjiInstructions')}
           </p>
           <p className='text-lg italic'>
-            New: click on a kanji character to find out more about it on{' '}
             <a
               href='http://kanjiheatmap.com/'
               className='hover:underline'
               rel='noopener'
               target='_blank'
             >
-              Kanji Heatmap!
+              {t('kanjiNew')}
             </a>
           </p>
         </>
       ),
     },
     '/vocabulary': {
-      header: <span>Welcome to the vocabulary dojo!</span>,
+      header: <span>{t('vocabularyHeader')}</span>,
       content: (
         <>
           <p className='text-lg text-(--secondary-color)'>
-            This is the place where you can learn and practice the most common
-            words used in day-to-day Japanese.
+            {t('vocabularyDescription')}
           </p>
           <p className='text-lg text-(--secondary-color)'>
-            To begin, select at least 1 level, select your training mode, then
-            hit <b>Go!</b> below and start training!
+            {t('vocabularyInstructions')}
           </p>
           <p className='text-lg italic'>
-            New: click on a word to find out more about it on{' '}
             <a
               href='https://jisho.org/'
               className='hover:underline'
               rel='noopener'
               target='_blank'
             >
-              Jisho!
+              {t('vocabularyNew')}
             </a>
           </p>
         </>
@@ -163,4 +155,3 @@ export default function translationGen(t: (key: string) => string) {
 
   return info;
 }
-
