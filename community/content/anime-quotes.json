@@ -391,4 +391,80 @@
   "anime": "Fullmetal Alchemist: Brotherhood",
   "character": "Edward Elric"
 },
+{
+  "japanese": "オレ様の美技にブギウギ",
+  "romaji": "Ore-sama no bigi ni bugiugi",
+  "english": "Dance to my beautiful technique! (alt wording 23) (alt wording 75)",
+  "anime": "The Prince of Tennis",
+  "character": "Keigo Atobe"
+},
+{
+  "japanese": "守るものがある限り、俺は負けない",
+  "romaji": "Mamoru mono ga aru kagiri, ore wa makenai",
+  "english": "As long as I have something to protect, I won't lose. (alt wording 43)",
+  "anime": "Bleach",
+  "character": "Ichigo Kurosaki"
+},
+{
+  "japanese": "まだだ、まだ終わらんよ！",
+  "romaji": "Mada da, mada owaran yo!",
+  "english": "Not yet! It's not over yet! (alt wording 22) (alt wording 74)",
+  "anime": "Mobile Suit Gundam",
+  "character": "Char Aznable"
+},
+  {
+  "japanese": "マママママ",
+  "romaji": "Mama mama mama",
+  "english": "Mama mama mama. (alt wording 29)",
+  "anime": "One Piece",
+  "character": "Charlotte Linlin (Big Mom)"
+},
+  {
+  "japanese": "俺を誰だと思ってやがる!",
+  "romaji": "Ore o dare da to omotte yagaru!",
+  "english": "Who the hell do you think I am! (alt wording 46)",
+  "anime": "Gurren Lagann",
+  "character": "Kamina"
+}, {
+  "japanese": "俺を誰だと思ってやがる!",
+  "romaji": "Ore o dare da to omotte yagaru!",
+  "english": "Who the hell do you think I am! (alt wording 46)",
+  "anime": "Gurren Lagann",
+  "character": "Kamina"
+},
+  {
+       "japanese": "仲間を信じることが俺の魔法だ",
+       "romaji": "Nakama o shinjiru koto ga ore no mahou da",
+       "english": "Believing in my friends is my magic. (alt wording 49)",
+       "anime": "Fairy Tail",
+       "character": "Natsu Dragneel"
+     },
+{
+  "japanese": "僕は新世界の神となる",
+  "romaji": "Boku wa shin sekai no kami to naru",
+  "english": "I will become the god of the new world. (alt wording 44)",
+  "anime": "Death Note",
+  "character": "Light Yagami"
+},
+{
+  "japanese": "仲間を大切にしない奴はそれ以上のクズだ",
+  "romaji": "Nakama o taisetsu ni shinai yatsu wa sore ijou no kuzu da",
+  "english": "Those who don't take care of their comrades are worse than scum. (alt wording 34) (alt wording 86)",
+  "anime": "Naruto",
+  "character": "Kakashi Hatake"
+},
+{
+  "japanese": "ロードローラーだッ！",
+  "romaji": "Rodo rora da!",
+  "english": "Road roller! (alt wording 1) (alt wording 53)",
+  "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+  "character": "DIO"
+},
+  {
+    "japanese": "シシシシシ",
+    "romaji": "Shishishishi",
+    "english": "Shishishi! (alt wording 30)",
+    "anime": "One Piece",
+    "character": "Monkey D. Luffy"
+  }
 ]

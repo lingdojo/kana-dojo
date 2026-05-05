@@ -77,13 +77,6 @@
     "character": "Giorno Giovanna"
   },
   {
-    "japanese": "世界を救うって、そういうことだろ？",
-    "romaji": "Sekai o sukuu tte, sou iu koto daro?",
-    "english": "Saving the world means doing this, right?",
-    "game": "Persona 5 Strikers",
-    "character": "Joker"
-  },
-  {
     "japanese": "なかなかやるな",
     "romaji": "Nakanaka yaru na",
     "english": "You're pretty good.",
@@ -145,5 +138,68 @@
     "english": "Next time, I'll be stronger.",
     "game": "Pokemon series",
     "character": "Rival characters"
+  },
+  {
+    "japanese": "また会おう、相棒",
+    "romaji": "Mata aou, aibou",
+    "english": "See you again, partner.",
+    "game": "Metal Gear Solid 3: Snake Eater",
+    "character": "Big Boss / Snake"
+  },
+  {
+    "japanese": "行くぞ！ここからが本当の戦いだ！",
+    "romaji": "Iku zo! Koko kara ga hontou no tatakai da!",
+    "english": "Let's go! This is where the real battle begins!",
+    "game": "Generic JRPG battle trope",
+    "character": "Hero archetype"
+  },
+  {
+    "japanese": "まだ終わってない！ここからだ！",
+    "romaji": "Mada owatte nai! Koko kara da!",
+    "english": "It's not over! It starts now!",
+    "game": "Pokémon series",
+    "character": "Rival characters"
+  },
+  {
+    "japanese": "一人じゃない、みんながいる！",
+    "romaji": "Hitori janai, minna ga iru!",
+    "english": "You're not alone, everyone is with you!",
+    "game": "JRPG trope",
+    "character": "Party leader"
+  },
+  {
+    "japanese": "俺が必ずお前を救ってみせる！",
+    "romaji": "Ore ga kanarazu omae o sukutte miseru!",
+    "english": "I’ll definitely save you!",
+    "game": "Re:ZERO -Starting Life in Another World",
+    "character": "Subaru Natsuki"
+  },
+  {
+    "japanese": "約束された勝利の剣",
+    "romaji": "Yakusoku sareta shouri no ken",
+    "english": "The Sword of Promised Victory.",
+    "game": "Fate/stay night [Realta Nua]",
+    "character": "Saber"
+  },
+  {
+    "japanese": "世界を救うって、そういうことだろ？",
+    "romaji": "Sekai o sukuu tte, sou iu koto daro?",
+    "english": "Saving the world means doing this, right?",
+    "game": "Persona 5 Strikers",
+    "character": "Joker"
+  },
+  {
+    "japanese": "次はもっと強くなる",
+    "romaji": "Tsugi wa motto tsuyoku naru",
+    "english": "Next time, I'll be stronger.",
+    "game": "Pokemon series",
+    "character": "Rival characters"
+  },
+  {
+    "japanese": "勝つと思うな、思えば負けよ",
+    "romaji": "Katsu to omou na, omoeba makeyo",
+    "english": "If you only think of winning, you lose.",
+    "game": "Samurai game proverb line",
+    "character": "Musashi reference"
   }
 ]
