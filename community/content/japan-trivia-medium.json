@@ -190,5 +190,16 @@
     "difficulty": "medium",
     "answers": ["Sado", "Chado", "Ikebana", "Kado"],
     "correctIndex": 1
+  },
+  {
+    "question": "What is the Japanese term for new year?",
+    "difficulty": "medium",
+    "answers": [
+      "Shogatsu",
+      "Obon",
+      "Tanabata",
+      "Hinamatsuri"
+    ],
+    "correctIndex": 0
   }
 ]

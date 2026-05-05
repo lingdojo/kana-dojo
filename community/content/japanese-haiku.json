@@ -1,38 +1,9 @@
-[
-  {
-    "japanese": "古池や 蛙飛びこむ 水の音",
-    "romaji": "Furu ike ya / kawazu tobikomu / mizu no oto",
-    "english": "An old pond; a frog jumps in; the sound of water.",
-    "poet": "Matsuo Basho",
-    "season": "Spring",
-    "kigo": "Frog (kawazu)",
-    "notes": "A foundational haiku focused on stillness and sudden movement."
-  },
-  {
-    "japanese": "名月を 取ってくれろと 泣く子かな",
-    "romaji": "Meigetsu o / totte kurero to / naku ko kana",
-    "english": "A child cries, asking me to fetch the harvest moon.",
+{
+    "japanese": "痩蛙 負けるな一茶 これにあり",
+    "romaji": "Yasegaeru / makeru na Issa / kore ni ari",
+    "english": "Skinny frog, don't give up! Issa is here with you.",
     "poet": "Kobayashi Issa",
-    "season": "Autumn",
-    "kigo": "Harvest moon (meigetsu)",
-    "notes": "Captures innocent longing through a domestic scene."
-  },
-  {
-  "japanese": "秋深き 隣は何を する人ぞ",
-  "romaji": "Aki fukaki / tonari wa nani o / suru hito zo",
-  "english": "In deep autumn, what kind of person lives next door?",
-  "poet": "Matsuo Basho",
-  "season": "Autumn",
-  "kigo": "Deep autumn (aki fukaki)",
-  "notes": "Evokes solitude and curiosity."
-  },
-  {
-  "japanese": "春の海 ひねもすのたり のたりかな",
-  "romaji": "Haru no umi / hinemosu notari / notari kana",
-  "english": "The spring sea stretches lazily all day, rising and falling.",
-  "poet": "Yosa Buson",
-  "season": "Spring",
-  "kigo": "Spring sea (haru no umi)",
-  "notes": "Known for musical phrasing and calm motion."
+    "season": "Spring",
+    "kigo": "Frog (kaeru)",
+    "notes": "Humorous encouragement and compassion in Issa's voice."
   }
-]

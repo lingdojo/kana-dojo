@@ -41,7 +41,8 @@ const MainMenu = () => {
       'active:border-b-0 active:translate-y-[6px] active:mb-[6px]',
       'motion-safe:animate-float',
       delay,
-      `[--float-distance:${floatDistance}]`,
+      // `[--float-distance:${floatDistance}]`,
+      `[--float-distance:-4px]`,
     );
 
   const { playClick } = useClick();

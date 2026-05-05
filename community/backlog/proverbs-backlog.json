@@ -41,7 +41,7 @@
     "romaji": "Chiri mo tsumoreba yama to naru",
     "english": "Even dust, if piled up, becomes a mountain",
     "meaning": "Small efforts accumulate into great achievements",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -195,7 +195,7 @@
     "english": "If you don't enter the tiger's den, you can't get the cub",
     "meaning": "Nothing ventured, nothing gained",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 23,
@@ -339,7 +339,7 @@
     "english": "Not knowing is Buddha",
     "meaning": "Ignorance is bliss",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 39,
@@ -420,7 +420,7 @@
     "english": "Even a packhorse driver looks good in fine clothes",
     "meaning": "Clothes make the person",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 48,
@@ -429,7 +429,7 @@
     "english": "A three-day monk",
     "meaning": "Someone who quits quickly",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 49,
@@ -464,7 +464,7 @@
     "romaji": "En wa inamono aji na mono",
     "english": "Fate is strange yet delightful",
     "meaning": "Chance connections can be surprisingly good",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -474,7 +474,7 @@
     "english": "Stomach 80 percent full",
     "meaning": "Eat in moderation",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 54,
@@ -564,7 +564,7 @@
     "english": "A frog in a well does not know the great sea",
     "meaning": "Limited experience limits perspective",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 64,
@@ -573,7 +573,7 @@
     "english": "See the trees but not the forest",
     "meaning": "Miss the bigger picture",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 65,
@@ -591,7 +591,9 @@
     "english": "Travel needs companions; life needs kindness",
     "meaning": "Relationships and compassion matter",
     "completed": false,
-    "issued": false
+    "issued": true,
+    "completedBy": "taorugui",
+    "completedPR": 15638
   },
   {
     "id": 67,
@@ -744,7 +746,7 @@
     "english": "Dried bonito to a cat",
     "meaning": "Leave temptation unattended at your own risk",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 84,
@@ -798,7 +800,7 @@
     "english": "Watch others and correct yourself",
     "meaning": "Learn from others' behavior",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 90,
@@ -852,7 +854,7 @@
     "english": "Sometimes losing is winning",
     "meaning": "Conceding can be the best outcome",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 96,
@@ -1032,7 +1034,7 @@
     "english": "Wind in the willow",
     "meaning": "Stay flexible and let problems pass",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 116,
@@ -1041,7 +1043,7 @@
     "english": "Do laundry while the ogre is away",
     "meaning": "Take advantage of an opportunity",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 117,
@@ -1113,7 +1115,7 @@
     "english": "Preaching Buddha to a horse's ear",
     "meaning": "Advice is wasted on the unwilling",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 125,
@@ -1166,7 +1168,7 @@
     "romaji": "Zenin zenka",
     "english": "Good causes bring good results",
     "meaning": "Good deeds lead to good outcomes",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1266,7 +1268,7 @@
     "english": "A bee on a crying face",
     "meaning": "Misfortune never comes alone",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 142,
@@ -1293,7 +1295,7 @@
     "english": "A frog's child is a frog",
     "meaning": "Children resemble their parents",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 145,
@@ -1328,7 +1330,7 @@
     "romaji": "Deru kugi wa utareru",
     "english": "The nail that sticks out gets hammered down",
     "meaning": "Standing out invites criticism",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1410,7 +1412,7 @@
     "english": "Spilled water doesn’t return to the tray",
     "meaning": "What’s done is done",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 158,
@@ -1491,7 +1493,7 @@
     "english": "Even a packhorse driver looks good in fine clothes",
     "meaning": "Clothes make the person",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 167,
@@ -1536,7 +1538,7 @@
     "english": "Tomorrow’s wind will blow tomorrow",
     "meaning": "Don’t worry too much about the future",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 172,
@@ -1572,7 +1574,7 @@
     "english": "Among flowers, cherry blossoms; among men, warriors",
     "meaning": "The best of each kind",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 176,
