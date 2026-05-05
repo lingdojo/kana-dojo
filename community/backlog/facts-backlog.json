@@ -8,7 +8,7 @@
   {
     "id": 2,
     "fact": "There's a Japanese practice called 'inemuri' (居眠り) - sleeping while present - where napping in public or at work is seen as a sign of dedication rather than laziness.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -20,7 +20,7 @@
   {
     "id": 4,
     "fact": "The Japanese word 'age-otori' (上げ劣り) describes the specific experience of looking worse after a haircut - a feeling so common it needed its own word.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -122,7 +122,7 @@
   {
     "id": 21,
     "fact": "Japan's oldest company, Kongō Gumi, was a construction company that operated continuously for 1,428 years (578-2006 CE) before being absorbed.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -200,7 +200,7 @@
   {
     "id": 34,
     "fact": "There's a Japanese festival called 'Hadaka Matsuri' where thousands of nearly naked men compete to catch lucky charms thrown by priests.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -278,7 +278,7 @@
   {
     "id": 47,
     "fact": "There's a Japanese concept called 'ikigai' (生き甲斐) - your reason for being - found at the intersection of what you love, need, and can be paid for.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -362,7 +362,7 @@
   {
     "id": 61,
     "fact": "The Japanese concept 'kintsugi' (金継ぎ) repairs broken pottery with gold, making the piece more valuable by highlighting its history.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -422,7 +422,7 @@
   {
     "id": 71,
     "fact": "The concept of 'gambaru' (頑張る) means to persist and give your best - so fundamental that kids learn it before they start school.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -548,7 +548,7 @@
   {
     "id": 92,
     "fact": "Japan's National Apology Day falls on August 15th, when the nation reflects on World War II and its aftermath.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -566,7 +566,7 @@
   {
     "id": 95,
     "fact": "There's a Japanese practice called 'goraiko' (御来光) - watching the sunrise from a mountain peak, especially on New Year's Day.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -626,7 +626,7 @@
   {
     "id": 105,
     "fact": "The word 'mendokusai' (面倒くさい) describes something too troublesome to deal with - a very commonly used expression.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -758,7 +758,7 @@
   {
     "id": 127,
     "fact": "There's a Japanese concept 'on' (恩) - a debt of gratitude so deep it can never truly be repaid, only acknowledged.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -854,7 +854,7 @@
   {
     "id": 143,
     "fact": "There's a Japanese word 'giri' (義理) for social obligation - you give gifts and attend events because you must, not because you want to.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -884,7 +884,7 @@
   {
     "id": 148,
     "fact": "Japan has 'book-off' stores where you can sell and buy used manga, CDs, games, and electronics at bargain prices.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -926,7 +926,7 @@
   {
     "id": 155,
     "fact": "There's a Japanese concept 'uchi-soto' (内外) - inside/outside - defining who you're close to versus everyone else.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -962,7 +962,7 @@
   {
     "id": 161,
     "fact": "The concept 'doryoku' (努力) means hard work as a core value - success without effort is considered somehow lesser.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -974,7 +974,7 @@
   {
     "id": 163,
     "fact": "There's a Japanese word 'komorebi' (木漏れ日) for sunlight filtering through trees - there's no single English word for this.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1016,7 +1016,7 @@
   {
     "id": 170,
     "fact": "Japan has 'death cafes' where people gather to discuss mortality over tea and cake in a relaxed setting.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1124,7 +1124,7 @@
   {
     "id": 188,
     "fact": "Japan has the world's longest-running comic book series - 'Kochira Katsushika-ku Kameari Kōen Mae Hashutsujo' ran for 40 years.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1142,7 +1142,7 @@
   {
     "id": 191,
     "fact": "There's a Japanese concept 'meisou' (瞑想) - meditation that focuses on emptying the mind rather than filling it.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1166,7 +1166,7 @@
   {
     "id": 195,
     "fact": "There's a Japanese practice 'chinmoku' (沈黙) - meaningful silence in conversation that's comfortable, not awkward.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1220,7 +1220,7 @@
   {
     "id": 204,
     "fact": "The Japanese word 'yorimichi' (寄り道) means taking a pleasant detour on the way home just because.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1712,7 +1712,7 @@
   {
     "id": 286,
     "fact": "The phrase 'osusowake' (お裾分け) means sharing a portion of something received, like produce or gifts.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1730,7 +1730,7 @@
   {
     "id": 289,
     "fact": "Japan has 'sento' public bathhouses that predate modern plumbing and still serve as neighborhood gathering spots.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1802,13 +1802,13 @@
   {
     "id": 301,
     "fact": "Japan’s New Year custom 'hatsumode' (初詣) involves visiting a shrine or temple for the year’s first prayer.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 302,
     "fact": "The phrase 'itadakimasu' (いただきます) is said before meals to show gratitude for the food and those who prepared it.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1910,7 +1910,7 @@
   {
     "id": 319,
     "fact": "The Japanese term 'shinrin-yoku' (森林浴) translates to \"forest bathing\" and emphasizes mindful time in nature.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
