@@ -385,9 +385,9 @@
   "secondaryColor": "oklch(85.0% 0.120 85.0 / 1)"
   },
   {
-  id: 'blooming-ume',
-  backgroundColor: 'oklch(95.0% 0.015 15.0 / 1)',
-  mainColor: 'oklch(62.0% 0.175 350.0 / 1)',
-  secondaryColor: 'oklch(75.0% 0.085 85.0 / 1)'
+  "id": "blooming-ume",
+  "backgroundColor": "oklch(95.0% 0.015 15.0 / 1)",
+  "mainColor": "oklch(62.0% 0.175 350.0 / 1)",
+  "secondaryColor": "oklch(75.0% 0.085 85.0 / 1)"
   }
 ]
