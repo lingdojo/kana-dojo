@@ -166,6 +166,13 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
     };
   }, [isReverse, selectedRomaji, selectedKana, targetLength, selectedPairs]);
 
+  const buildTargetPairRef = useRef(buildTargetPair);
+  const selectionSignature = useMemo(
+    () =>
+      `${isReverse ? 'reverse' : 'normal'}::${selectedKana.join('|')}::${selectedRomaji.join('|')}`,
+    [isReverse, selectedKana, selectedRomaji],
+  );
+
   const [pairData, setPairData] = useState(() => buildTargetPair());
   const correctChar = pairData.correctChar;
   const targetChar = pairData.targetChar;
@@ -201,6 +208,10 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
       inputRef.current.focus();
     }
   }, [bottomBarState]);
+
+  useEffect(() => {
+    buildTargetPairRef.current = buildTargetPair;
+  }, [buildTargetPair]);
 
   // Keyboard shortcut for Enter/Space to trigger button
   useEffect(() => {
@@ -247,14 +258,16 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
 
   useEffect(() => {
     if (isReady) {
-      setPairData(buildTargetPair());
+      // Keep the current solved prompt frozen even if adaptive difficulty changes.
+      // The next prompt should only be generated after explicit continue.
+      setPairData(buildTargetPairRef.current());
     }
-  }, [buildTargetPair, isReady]);
+  }, [isReady, selectionSignature]);
 
   const generateNewCharacter = useCallback(() => {
     if (!isReady) return;
-    setPairData(buildTargetPair());
-  }, [isReady, buildTargetPair]);
+    setPairData(buildTargetPairRef.current());
+  }, [isReady]);
 
   const handleCheck = () => {
     const trimmedInput = inputValue.trim();

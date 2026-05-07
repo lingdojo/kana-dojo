@@ -73,6 +73,7 @@ type LevelSetCardsProps<TLevel extends string, TItem> = {
 
   loadingText: string;
   activeSubunitRange: ActiveSubunitRange;
+  collapseScopeKey: string;
 };
 
 const INITIAL_ROWS = 5;
@@ -134,6 +135,12 @@ const VisibleRowsSection = <TItem,>({
         const lastSetNumber =
           rowSets[rowSets.length - 1]?.name.match(/\d+/)?.[0] || firstSetNumber;
         const isSingleLevel = firstSetNumber === lastSetNumber;
+        const rowSetItems = rowSets.map(set =>
+          selectedCollectionData.slice(
+            set.start * itemsPerSet,
+            set.end * itemsPerSet,
+          ),
+        );
         const isRowCollapsed = collapsedRows.includes(rowIndex);
 
         return (
@@ -184,10 +191,7 @@ const VisibleRowsSection = <TItem,>({
               )}
             >
               {rowSets.map((setTemp, i) => {
-                const setItems = selectedCollectionData.slice(
-                  setTemp.start * itemsPerSet,
-                  setTemp.end * itemsPerSet,
-                );
+                const setItems = rowSetItems[i];
                 const isSelected = selectedSets.includes(setTemp.name);
                 const progressPercent = Math.round(getSetProgress(setItems) * 100);
 
@@ -300,6 +304,7 @@ const LevelSetCards = <TLevel extends string, TItem>({
   getSetProgress,
   loadingText,
   activeSubunitRange,
+  collapseScopeKey,
 }: LevelSetCardsProps<TLevel, TItem>) => {
   const { playClick } = useClick();
 
@@ -397,6 +402,39 @@ const LevelSetCards = <TLevel extends string, TItem>({
     itemsPerSet,
     numColumns,
     selectedCollection,
+  ]);
+
+  useEffect(() => {
+    if (!selectedCollection) return;
+
+    const initializedKey = `level-set-initial-collapse:${collapseScopeKey}`;
+    if (sessionStorage.getItem(initializedKey) === 'true') return;
+
+    const masteredRows = allRows.reduce<number[]>((acc, rowSets, rowIndex) => {
+      const isRowMastered = rowSets.every(set => {
+        const setItems = selectedCollection.data.slice(
+          set.start * itemsPerSet,
+          set.end * itemsPerSet,
+        );
+        return Math.round(getSetProgress(setItems) * 100) >= 100;
+      });
+
+      if (isRowMastered) acc.push(rowIndex);
+      return acc;
+    }, []);
+
+    if (masteredRows.length > 0) {
+      setCollapsedRows(prev => Array.from(new Set(prev.concat(masteredRows))));
+    }
+
+    sessionStorage.setItem(initializedKey, 'true');
+  }, [
+    allRows,
+    collapseScopeKey,
+    getSetProgress,
+    itemsPerSet,
+    selectedCollection,
+    setCollapsedRows,
   ]);
 
   const handleToggleSet = (setName: string) => {

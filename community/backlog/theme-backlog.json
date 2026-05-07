@@ -453,7 +453,9 @@
     "mainColor": "oklch(55.0% 0.185 200.0 / 1)",
     "secondaryColor": "oklch(60.0% 0.155 25.0 / 1)",
     "issued": true,
-    "completed": false
+    "completed": false,
+    "completedBy": "diegoferrari129",
+    "completedPR": 15968
   },
   {
     "id": "sumo-strength",
@@ -552,7 +554,7 @@
     "backgroundColor": "oklch(17.0% 0.035 280.0 / 1)",
     "mainColor": "oklch(68.0% 0.175 30.0 / 1)",
     "secondaryColor": "oklch(78.0% 0.125 45.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -864,7 +866,7 @@
     "backgroundColor": "oklch(17.0% 0.045 255.0 / 1)",
     "mainColor": "oklch(62.0% 0.185 220.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.175 15.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1242,7 +1244,7 @@
     "backgroundColor": "oklch(19.0% 0.030 35.0 / 1)",
     "mainColor": "oklch(78.0% 0.185 45.0 / 1)",
     "secondaryColor": "oklch(88.0% 0.115 95.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1609,7 +1611,9 @@
     "mainColor": "oklch(70.0% 0.215 25.0 / 1)",
     "secondaryColor": "oklch(85.0% 0.055 95.0 / 1)",
     "issued": false,
-    "completed": false
+    "completed": false,
+    "completedBy": "miloce",
+    "completedPR": 16016
   },
   {
     "id": "morning-fog",
@@ -1714,7 +1718,7 @@
     "backgroundColor": "oklch(21.0% 0.040 55.0 / 1)",
     "mainColor": "oklch(78.0% 0.160 60.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.095 40.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1886,7 +1890,7 @@
     "backgroundColor": "oklch(22.0% 0.020 55.0 / 1)",
     "mainColor": "oklch(68.0% 0.085 65.0 / 1)",
     "secondaryColor": "oklch(58.0% 0.060 45.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

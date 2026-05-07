@@ -208,8 +208,16 @@ BlankTile.displayName = 'BlankTile';
 
 export type BottomBarState = 'check' | 'correct' | 'wrong';
 
+const answerRowMinHeightClassNames = {
+  // border-b-4 reduces the available content box by 2px versus the previous
+  // border-b-2. The 5rem row needs those 2px back so the desktop kana tile
+  // can enter without expanding the row and moving the underline.
+  '5rem': 'min-h-[5.125rem]',
+  '5.5rem': 'min-h-[5.5rem]',
+} as const;
+
 export const getAnswerRowClassName = (minHeight: '5rem' | '5.5rem' = '5rem') =>
-  `flex min-h-[${minHeight}] w-full items-center border-b-4 border-(--border-color) px-2 pb-2 md:w-3/4 lg:w-2/3 xl:w-1/2`;
+  `flex ${answerRowMinHeightClassNames[minHeight]} w-full items-center border-b-4 border-(--border-color) px-2 pb-2 md:w-3/4 lg:w-2/3 xl:w-1/2`;
 
 export const getGlassModeClassName = (
   baseClassName: string,

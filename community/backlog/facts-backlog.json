@@ -134,7 +134,7 @@
   {
     "id": 23,
     "fact": "Japanese train conductors point and call out each signal and sign they see - a practice called 'shisa kanko' that reduces errors by up to 85%.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -164,7 +164,7 @@
   {
     "id": 28,
     "fact": "There are special 'women-only' train cars in Japan during rush hour to prevent groping - marked with pink signs and available on most major lines.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -788,7 +788,7 @@
   {
     "id": 132,
     "fact": "Japan has 'gacha' machines that dispense random collectible toys for 100-500 yen - adults are as obsessed as children.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -986,7 +986,7 @@
   {
     "id": 165,
     "fact": "The word 'ganban' (願番) describes taking turns at a task - cooperation without needing explicit coordination.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1280,7 +1280,7 @@
   {
     "id": 214,
     "fact": "In many Japanese cities, you can find public 'koban' (交番) — small neighborhood police boxes that help with directions and lost items.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1748,7 +1748,7 @@
   {
     "id": 292,
     "fact": "The term 'komorebi' (木漏れ日) describes sunlight filtering through leaves—so common it has a single word.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1880,7 +1880,7 @@
   {
     "id": 314,
     "fact": "'Wabi-sabi' is the appreciation of beauty in imperfection and the natural aging of materials.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

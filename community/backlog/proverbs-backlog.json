@@ -492,7 +492,7 @@
     "english": "Even a walking dog will hit a stick",
     "meaning": "Acting can lead to luck (or trouble)",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 56,
@@ -944,7 +944,7 @@
     "english": "Haste will spoil things",
     "meaning": "Rushing leads to mistakes",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 106,
@@ -971,7 +971,7 @@
     "english": "Tap a stone bridge before crossing",
     "meaning": "Be very cautious",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 109,
@@ -1160,7 +1160,7 @@
     "english": "Travel needs companions; life needs kindness",
     "meaning": "Relationships and compassion matter",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 130,
@@ -1232,7 +1232,7 @@
     "english": "One stone, two birds",
     "meaning": "Do two things with one action",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 138,
@@ -1250,7 +1250,7 @@
     "english": "Spilled water will not return to the tray",
     "meaning": "What is done cannot be undone",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 140,
@@ -1322,7 +1322,7 @@
     "english": "What happens twice will happen a third time",
     "meaning": "Patterns tend to repeat",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 148,
@@ -1340,7 +1340,7 @@
     "english": "Even a packhorse driver looks good in fine clothes",
     "meaning": "Clothes make the person",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 150,

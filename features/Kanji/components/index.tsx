@@ -27,6 +27,7 @@ import {
 
 const levelOrder: KanjiLevel[] = ['n5', 'n4', 'n3', 'n2', 'n1'];
 const KANJI_PER_SET = 10;
+const KANJI_COLLAPSED_ROWS_SESSION_KEY = 'kanji-collapsed-rows-by-unit';
 const KANJI_LENGTHS: Record<KanjiLevel, number> = {
   n5: N5KanjiLength,
   n4: N4KanjiLength,
@@ -127,6 +128,36 @@ const KanjiCards = () => {
     [collapsedRows, collapsedRowsKey, setCollapsedRowsForUnit],
   );
 
+  useEffect(() => {
+    const stored = sessionStorage.getItem(KANJI_COLLAPSED_ROWS_SESSION_KEY);
+    if (!stored) return;
+    try {
+      const parsed = JSON.parse(stored) as Record<string, number[]>;
+      setCollapsedRowsForUnit(collapsedRowsKey, parsed[collapsedRowsKey] ?? []);
+    } catch {
+      setCollapsedRowsForUnit(collapsedRowsKey, []);
+    }
+  }, [collapsedRowsKey, setCollapsedRowsForUnit]);
+
+  useEffect(() => {
+    const stored = sessionStorage.getItem(KANJI_COLLAPSED_ROWS_SESSION_KEY);
+    let parsed: Record<string, number[]> = {};
+
+    if (stored) {
+      try {
+        parsed = JSON.parse(stored) as Record<string, number[]>;
+      } catch {
+        parsed = {};
+      }
+    }
+
+    parsed[collapsedRowsKey] = collapsedRows;
+    sessionStorage.setItem(
+      KANJI_COLLAPSED_ROWS_SESSION_KEY,
+      JSON.stringify(parsed),
+    );
+  }, [collapsedRows, collapsedRowsKey]);
+
   useSetProgressHydration();
   const kanjiProgress = useSetProgressStore(state => state.data.kanji);
   const getSetProgress = useCallback(
@@ -160,6 +191,7 @@ const KanjiCards = () => {
       getSetProgress={getSetProgress}
       loadingText='Loading kanji sets...'
       activeSubunitRange={activeSubunitRange}
+      collapseScopeKey={collapsedRowsKey}
     />
   );
 };
