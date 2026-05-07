@@ -244,5 +244,11 @@
     "backgroundColor": "oklch(25.0% 0.015 260.0 / 1)",
     "mainColor": "oklch(75.0% 0.035 90.0 / 1)",
     "secondaryColor": "oklch(60.0% 0.025 80.0 / 1)"
-  }
+  },
+  {
+  id: 'calligraphy-ink',
+  backgroundColor: 'oklch(96.0% 0.008 85.0 / 1)',
+  mainColor: 'oklch(20.0% 0.015 270.0 / 1)',
+  secondaryColor: 'oklch(45.0% 0.025 260.0 / 1)'
+}
 ]
