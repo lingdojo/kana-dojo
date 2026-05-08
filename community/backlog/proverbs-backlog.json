@@ -15,7 +15,7 @@
     "english": "Dumplings over flowers",
     "meaning": "Practical things are more valuable than aesthetic ones",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 3,
@@ -204,7 +204,7 @@
     "english": "A frog's child is a frog",
     "meaning": "Like father, like son",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 24,
@@ -240,7 +240,7 @@
     "english": "The nail that sticks out gets hammered down",
     "meaning": "Those who stand out may face criticism",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 28,
@@ -267,7 +267,7 @@
     "english": "Ten people, ten colors",
     "meaning": "Different strokes for different folks",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 31,
@@ -293,7 +293,7 @@
     "romaji": "Nasake wa hito no tame narazu",
     "english": "Kindness is not for others",
     "meaning": "A good deed returns to you",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -438,7 +438,7 @@
     "english": "Early rising is worth three coins",
     "meaning": "Good things come from getting up early",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 50,
@@ -447,7 +447,7 @@
     "english": "Giving birth is easier than worrying",
     "meaning": "Doing is often easier than worrying",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 51,
@@ -519,7 +519,7 @@
     "english": "Haste will spoil things",
     "meaning": "Haste makes waste",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 59,
@@ -665,7 +665,7 @@
     "english": "Counting a raccoon dog's skins before catching it",
     "meaning": "Don't count your chickens before they hatch",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 75,
@@ -710,7 +710,7 @@
     "english": "Just watching is a pleasure",
     "meaning": "Enjoy observing; you don't always need to participate",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 80,
@@ -836,7 +836,7 @@
     "english": "The mouth is the source of disaster",
     "meaning": "Careless words cause trouble",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 94,
@@ -845,7 +845,7 @@
     "english": "Three years on a stone",
     "meaning": "Perseverance brings success",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 95,
@@ -899,7 +899,7 @@
     "english": "Dumplings over flowers",
     "meaning": "Practicality over appearance",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 101,
@@ -1025,7 +1025,7 @@
     "english": "Gold coins to a cat",
     "meaning": "Gifts wasted on those who don't appreciate them",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 115,
@@ -1105,7 +1105,7 @@
     "romaji": "Koukai saki ni tatazu",
     "english": "Regret does not stand before",
     "meaning": "It's too late for regrets",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1142,7 +1142,7 @@
     "english": "Watch others and correct yourself",
     "meaning": "Learn from others' behavior",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 128,
@@ -1313,7 +1313,7 @@
     "english": "If fish has heart, water has heart",
     "meaning": "Good intentions are reciprocated",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 147,
@@ -1430,7 +1430,7 @@
     "english": "Kindness is not for others alone",
     "meaning": "Kindness comes back to you",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 160,
@@ -1483,7 +1483,7 @@
     "romaji": "Hayaoki wa sanmon no toku",
     "english": "Early rising brings three coins of benefit",
     "meaning": "Wake early for advantage",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1583,7 +1583,7 @@
     "english": "Mochi should be made by the mochi shop",
     "meaning": "Leave it to the experts",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 177,
@@ -1601,7 +1601,7 @@
     "english": "See the trees but not the forest",
     "meaning": "Miss the bigger picture",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 179,

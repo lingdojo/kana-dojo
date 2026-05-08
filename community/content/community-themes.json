@@ -228,52 +228,33 @@
     "secondaryColor": "oklch(70.0% 0.130 220.0 / 1)"
   },
   {
-    "id": "vaporwave-shrine",
-    "backgroundColor": "oklch(17.0% 0.072 305.0 / 1)",
-    "mainColor": "oklch(75.0% 0.175 195.0 / 1)",
-    "secondaryColor": "oklch(80.0% 0.195 330.0 / 1)"
-  },
-
-  {
-    "id": "digital-oni",
-    "backgroundColor": "oklch(14.0% 0.075 355.0 / 1)",
-    "mainColor": "oklch(68.0% 0.240 10.0 / 1)",
-    "secondaryColor": "oklch(78.0% 0.195 150.0 / 1)"
+    "id": "konbini-light",
+    "backgroundColor": "oklch(96.0% 0.015 210.0 / 1)",
+    "mainColor": "oklch(55.0% 0.185 200.0 / 1)",
+    "secondaryColor": "oklch(60.0% 0.155 25.0 / 1)"
   },
   {
-    "id": "festival-red",
-    "backgroundColor": "oklch(17.0% 0.055 25.0 / 1)",
-    "mainColor": "oklch(78.0% 0.205 25.0 / 1)",
-    "secondaryColor": "oklch(85.0% 0.085 85.0 / 1)"
+    "id": "ginkgo-gold",
+    "backgroundColor": "oklch(23.0% 0.045 85.0 / 1)",
+    "mainColor": "oklch(88.0% 0.170 95.0 / 1)",
+    "secondaryColor": "oklch(72.0% 0.135 75.0 / 1)"
   },
   {
-    "id": "kyoto-kimono",
-    "backgroundColor": "oklch(19.0% 0.050 20.0 / 1)",
-    "mainColor": "oklch(65.0% 0.195 25.0 / 1)",
-    "secondaryColor": "oklch(78.0% 0.105 85.0 / 1)"
+    "id": "zen-stone",
+    "backgroundColor": "oklch(25.0% 0.015 260.0 / 1)",
+    "mainColor": "oklch(75.0% 0.035 90.0 / 1)",
+    "secondaryColor": "oklch(60.0% 0.025 80.0 / 1)"
   },
   {
-    "id": "coastal-shrine",
-    "backgroundColor": "oklch(20.0% 0.040 235.0 / 1)",
-    "mainColor": "oklch(78.0% 0.205 35.0 / 1)",
-    "secondaryColor": "oklch(88.0% 0.065 210.0 / 1)"
+    "id": "sumo-strength",
+    "backgroundColor": "oklch(20.0% 0.022 35.0 / 1)",
+    "mainColor": "oklch(72.0% 0.065 75.0 / 1)",
+    "secondaryColor": "oklch(60.0% 0.185 20.0 / 1)"
   },
   {
-    "id": "harajuku-pop",
-    "backgroundColor": "oklch(96.0% 0.025 85.0 / 1)",
-    "mainColor": "oklch(72.0% 0.225 320.0 / 1)",
-    "secondaryColor": "oklch(80.0% 0.195 200.0 / 1)"
-  },
-  {
-    "id": "papercraft-white",
-    "backgroundColor": "oklch(98.0% 0.005 90.0 / 1)",
-    "mainColor": "oklch(35.0% 0.165 255.0 / 1)",
-    "secondaryColor": "oklch(55.0% 0.145 200.0 / 1)"
-  },
-  {
-    "id": "koi-sunrise",
-    "backgroundColor": "oklch(20.0% 0.035 35.0 / 1)",
-    "mainColor": "oklch(80.0% 0.170 45.0 / 1)",
+    "id": "bamboo-forest",
+    "backgroundColor": "oklch(21.0% 0.045 155.0 / 1)",
+    "mainColor": "oklch(70.0% 0.145 150.0 / 1)",
     "secondaryColor": "oklch(78.0% 0.095 140.0 / 1)"
   },
   {
