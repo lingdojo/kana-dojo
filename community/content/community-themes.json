@@ -412,5 +412,11 @@
     "backgroundColor": "oklch(15.0% 0.048 25.0 / 1)",
     "mainColor": "oklch(65.0% 0.225 30.0 / 1)",
     "secondaryColor": "oklch(90.0% 0.055 95.0 / 1)"
-  }
+  },
+  {
+  id: 'soda-float',
+  backgroundColor: 'oklch(93.0% 0.032 150.0 / 1)',
+  mainColor: 'oklch(62.0% 0.175 155.0 / 1)',
+  secondaryColor: 'oklch(85.0% 0.095 95.0 / 1)'
+}
 ]
