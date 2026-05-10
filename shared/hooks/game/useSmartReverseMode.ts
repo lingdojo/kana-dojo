@@ -22,7 +22,7 @@ interface SmartReverseModeOptions {
  * - Call decideNextMode() only on correct answers to advance to next question
  */
 export const useSmartReverseMode = (options: SmartReverseModeOptions = {}) => {
-  const { reverseProbability = 0.25, forceSwitchAfter = 4 } = options;
+  const { reverseProbability = 0.25, forceSwitchAfter = 3 } = options;
 
   const [consecutiveSameMode, setConsecutiveSameMode] = useState(0);
   const [isReverse, setIsReverse] = useState(false);

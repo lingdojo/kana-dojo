@@ -354,16 +354,16 @@
     "secondaryColor": "oklch(75.0% 0.125 280.0 / 1)"
   },
   {
-  "id": "wavecrest-blue",
-  "backgroundColor": "oklch(17.0% 0.030 245.0 / 1)",
-  "mainColor": "oklch(88.0% 0.055 230.0 / 1)",
-  "secondaryColor": "oklch(70.0% 0.145 210.0 / 1)"
+    "id": "wavecrest-blue",
+    "backgroundColor": "oklch(17.0% 0.030 245.0 / 1)",
+    "mainColor": "oklch(88.0% 0.055 230.0 / 1)",
+    "secondaryColor": "oklch(70.0% 0.145 210.0 / 1)"
   },
   {
-  "id": "midnight-ramen",
-  "backgroundColor": "oklch(16.0% 0.042 30.0 / 1)",
-  "mainColor": "oklch(78.0% 0.160 45.0 / 1)",
-  "secondaryColor": "oklch(85.0% 0.120 85.0 / 1)"
+    "id": "midnight-ramen",
+    "backgroundColor": "oklch(16.0% 0.042 30.0 / 1)",
+    "mainColor": "oklch(78.0% 0.160 45.0 / 1)",
+    "secondaryColor": "oklch(85.0% 0.120 85.0 / 1)"
   },
   {
     "id": "tea-garden",
@@ -372,10 +372,10 @@
     "secondaryColor": "oklch(65.0% 0.085 115.0 / 1)"
   },
   {
-  "id": "blooming-ume",
-  "backgroundColor": "oklch(95.0% 0.015 15.0 / 1)",
-  "mainColor": "oklch(62.0% 0.175 350.0 / 1)",
-  "secondaryColor": "oklch(75.0% 0.085 85.0 / 1)"
+    "id": "blooming-ume",
+    "backgroundColor": "oklch(95.0% 0.015 15.0 / 1)",
+    "mainColor": "oklch(62.0% 0.175 350.0 / 1)",
+    "secondaryColor": "oklch(75.0% 0.085 85.0 / 1)"
   },
   {
     "id": "ocean-tofu",
@@ -388,5 +388,46 @@
   "backgroundColor": "oklch(17.0% 0.055 25.0 / 1)",
   "mainColor": "oklch(78.0% 0.205 25.0 / 1)",
   "secondaryColor": "oklch(85.0% 0.085 85.0 / 1)"
-}
+},
+    "id": "tsukiji-morning",
+    "backgroundColor": "oklch(22.0% 0.020 235.0 / 1)",
+    "mainColor": "oklch(78.0% 0.135 215.0 / 1)",
+    "secondaryColor": "oklch(85.0% 0.155 90.0 / 1)"
+  },
+  {
+    "id": "sumo-strength",
+    "backgroundColor": "oklch(20.0% 0.022 35.0 / 1)",
+    "mainColor": "oklch(72.0% 0.065 75.0 / 1)",
+    "secondaryColor": "oklch(60.0% 0.185 20.0 / 1)"
+  },
+  {
+    "id": "tsukiji-morning",
+    "backgroundColor": "oklch(22.0% 0.020 235.0 / 1)",
+    "mainColor": "oklch(78.0% 0.135 215.0 / 1)",
+    "secondaryColor": "oklch(85.0% 0.155 90.0 / 1)"
+  },
+  {
+    "id": "neon-sakura",
+    "backgroundColor": "oklch(18.5% 0.055 320.0 / 1)",
+    "mainColor": "oklch(82.0% 0.210 340.0 / 1)",
+    "secondaryColor": "oklch(72.0% 0.165 285.0 / 1)"
+  },
+  {
+    "id": "castle-gate",
+    "backgroundColor": "oklch(23.0% 0.018 75.0 / 1)",
+    "mainColor": "oklch(70.0% 0.055 80.0 / 1)",
+    "secondaryColor": "oklch(60.0% 0.145 25.0 / 1)"
+  },
+  {
+    "id": "kabuki-drama",
+    "backgroundColor": "oklch(15.0% 0.048 25.0 / 1)",
+    "mainColor": "oklch(65.0% 0.225 30.0 / 1)",
+    "secondaryColor": "oklch(90.0% 0.055 95.0 / 1)"
+  },
+  {
+    "id": "tsukiji-morning",
+    "backgroundColor": "oklch(22.0% 0.020 235.0 / 1)",
+    "mainColor": "oklch(78.0% 0.135 215.0 / 1)",
+    "secondaryColor": "oklch(85.0% 0.155 90.0 / 1)"
+  }
 ]

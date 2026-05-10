@@ -358,12 +358,7 @@
   "english": "Tap a stone bridge before crossing",
   "meaning": "Be very cautious"
 },
-  {
-  "japanese": "二度あることは三度ある",
-  "romaji": "Nido aru koto wa sando aru",
-  "english": "What happens twice will happen a third time",
-  "meaning": "Patterns tend to repeat"
-  },
+  
   {
   "japanese": "見るは法楽",
   "romaji": "Miru wa houraku",
@@ -375,5 +370,11 @@
   "romaji": "Nanakorobi yaoki",
   "english": "Fall seven times, get up eight",
   "meaning": "Never give up"
+},
+  {
+  "japanese": "二度あることは三度ある",
+  "romaji": "Nido aru koto wa sando aru",
+  "english": "What happens twice will happen a third time",
+  "meaning": "Patterns tend to repeat"
 }
 ]
