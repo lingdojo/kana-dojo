@@ -430,5 +430,17 @@
     "backgroundColor": "oklch(96.0% 0.018 20.0 / 1)",
     "mainColor": "oklch(70.0% 0.165 350.0 / 1)",
     "secondaryColor": "oklch(78.0% 0.120 135.0 / 1)"
+  },
+  {
+    "id": "moonlit-bay",
+    "name": "Moonlit Bay",
+    "primaryColor": "#1a365d",
+    "secondaryColor": "#4a90d9",
+    "accentColor": "#90cdf4",
+    "backgroundGradient": "linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%)",
+    "cardBackground": "rgba(26, 54, 93, 0.85)",
+    "textColor": "#e2e8f0",
+    "textColorMuted": "#94a3b8",
+    "borderColor": "rgba(74, 144, 217, 0.3)"
   }
 ]

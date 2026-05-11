@@ -306,17 +306,18 @@
     "meaning": "Students can surpass their teachers."
   },
   {
-  "japanese": "木を見て森を見ず",
-  "romaji": "Ki wo mite mori wo mizu",
-  "english": "See the trees but not the forest",
-  "meaning": "Miss the bigger picture"
+    "japanese": "木を見て森を見ず",
+    "romaji": "Ki wo mite mori wo mizu",
+    "english": "See the trees but not the forest",
+    "meaning": "Miss the bigger picture"
   },
   {
-  "japanese": "馬子にも衣装",
-  "romaji": "Mago ni mo ishou",
-  "english": "Even a packhorse driver looks good in fine clothes",
-  "meaning": "Clothes make the person"
-}, {
+    "japanese": "馬子にも衣装",
+    "romaji": "Mago ni mo ishou",
+    "english": "Even a packhorse driver looks good in fine clothes",
+    "meaning": "Clothes make the person"
+  },
+  {
     "japanese": "花より団子",
     "romaji": "Hana yori dango",
     "english": "Dumplings over flowers",
@@ -341,46 +342,51 @@
     "meaning": "If you must do it, go all the way"
   },
   {
-  "japanese": "鬼の居ぬ間に洗濯",
-  "romaji": "Oni no inuma ni sentaku",
-  "english": "Do laundry while the ogre is away",
-  "meaning": "Take advantage of someone's absence"
-},
+    "japanese": "鬼の居ぬ間に洗濯",
+    "romaji": "Oni no inuma ni sentaku",
+    "english": "Do laundry while the ogre is away",
+    "meaning": "Take advantage of someone's absence"
+  },
   {
-  "japanese": "出る杭は打たれる",
-  "romaji": "Deru kui wa utareru",
-  "english": "The nail that sticks out gets hammered down",
-  "meaning": "Standing out invites criticism"
-},
+    "japanese": "出る杭は打たれる",
+    "romaji": "Deru kui wa utareru",
+    "english": "The nail that sticks out gets hammered down",
+    "meaning": "Standing out invites criticism"
+  },
   {
-  "japanese": "石橋を叩いて渡る",
-  "romaji": "Ishibashi wo tataite wataru",
-  "english": "Tap a stone bridge before crossing",
-  "meaning": "Be very cautious"
-},
-  
+    "japanese": "石橋を叩いて渡る",
+    "romaji": "Ishibashi wo tataite wataru",
+    "english": "Tap a stone bridge before crossing",
+    "meaning": "Be very cautious"
+  },
   {
-  "japanese": "見るは法楽",
-  "romaji": "Miru wa houraku",
-  "english": "Just watching is a pleasure",
-  "meaning": "Enjoy observing; you don't always need to participate"
-},
+    "japanese": "見るは法楽",
+    "romaji": "Miru wa houraku",
+    "english": "Just watching is a pleasure",
+    "meaning": "Enjoy observing; you don't always need to participate"
+  },
   {
-  "japanese": "七転び八起き",
-  "romaji": "Nanakorobi yaoki",
-  "english": "Fall seven times, get up eight",
-  "meaning": "Never give up"
-},
+    "japanese": "七転び八起き",
+    "romaji": "Nanakorobi yaoki",
+    "english": "Fall seven times, get up eight",
+    "meaning": "Never give up"
+  },
   {
-  "japanese": "二度あることは三度ある",
-  "romaji": "Nido aru koto wa sando aru",
-  "english": "What happens twice will happen a third time",
-  "meaning": "Patterns tend to repeat"
-},
+    "japanese": "二度あることは三度ある",
+    "romaji": "Nido aru koto wa sando aru",
+    "english": "What happens twice will happen a third time",
+    "meaning": "Patterns tend to repeat"
+  },
   {
     "japanese": "知らぬが仏",
     "romaji": "Shiranu ga hotoke",
     "english": "Not knowing is Buddha",
     "meaning": "Ignorance is bliss"
+  },
+  {
+    "japanese": "花より団子",
+    "romaji": "Hana yori dango",
+    "english": "Dumplings over flowers",
+    "meaning": "Substance over style; practical matters over aesthetics"
   }
 ]
