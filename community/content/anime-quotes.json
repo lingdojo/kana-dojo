@@ -357,149 +357,155 @@
     "character": "DIO"
   },
   {
-  "japanese": "駆逐してやる!この世から一匹残らず!",
-  "romaji": "Kuchiku shite yaru! Kono yo kara ippiki nokorazu!",
-  "english": "I'll exterminate them! Every last one from this world! (alt wording 36) (alt wording 88)",
-  "anime": "Attack on Titan",
-  "character": "Eren Yeager"
-},
-{
-  "japanese": "おれは人間を超越する！",
-  "romaji": "Ore wa ningen o chouetsu suru!",
-  "english": "I will transcend humanity! (alt wording 14)",
-  "anime": "JoJo's Bizarre Adventure: Battle Tendency",
-  "character": "Kars"
-},
-{
-  "japanese": "グララララ",
-  "romaji": "Gurararara",
-  "english": "Gurararara! (alt wording 31) (alt wording 83)",
-  "anime": "One Piece",
-  "character": "Edward Newgate (Whitebeard)"
-},
-{
-  "japanese": "月に代わっておしおきよ!",
-  "romaji": "Tsuki ni kawatte oshioki yo!",
-  "english": "In the name of the moon, I'll punish you! (alt wording 41)",
-  "anime": "Sailor Moon",
-  "character": "Usagi Tsukino"
-},
- {
-  "japanese": "痛みを伴わない教訓には意味がない",
-  "romaji": "Itami o tomonawanai kyoukun ni wa imi ga nai",
-  "english": "A lesson without pain is meaningless.",
-  "anime": "Fullmetal Alchemist: Brotherhood",
-  "character": "Edward Elric"
-},
-{
-  "japanese": "オレ様の美技にブギウギ",
-  "romaji": "Ore-sama no bigi ni bugiugi",
-  "english": "Dance to my beautiful technique! (alt wording 23) (alt wording 75)",
-  "anime": "The Prince of Tennis",
-  "character": "Keigo Atobe"
-},
-{
-  "japanese": "守るものがある限り、俺は負けない",
-  "romaji": "Mamoru mono ga aru kagiri, ore wa makenai",
-  "english": "As long as I have something to protect, I won't lose. (alt wording 43)",
-  "anime": "Bleach",
-  "character": "Ichigo Kurosaki"
-},
-{
-  "japanese": "まだだ、まだ終わらんよ！",
-  "romaji": "Mada da, mada owaran yo!",
-  "english": "Not yet! It's not over yet! (alt wording 22) (alt wording 74)",
-  "anime": "Mobile Suit Gundam",
-  "character": "Char Aznable"
-},
+    "japanese": "駆逐してやる!この世から一匹残らず!",
+    "romaji": "Kuchiku shite yaru! Kono yo kara ippiki nokorazu!",
+    "english": "I'll exterminate them! Every last one from this world! (alt wording 36) (alt wording 88)",
+    "anime": "Attack on Titan",
+    "character": "Eren Yeager"
+  },
   {
-  "japanese": "マママママ",
-  "romaji": "Mama mama mama",
-  "english": "Mama mama mama. (alt wording 29)",
-  "anime": "One Piece",
-  "character": "Charlotte Linlin (Big Mom)"
-},
+    "japanese": "おれは人間を超越する！",
+    "romaji": "Ore wa ningen o chouetsu suru!",
+    "english": "I will transcend humanity! (alt wording 14)",
+    "anime": "JoJo's Bizarre Adventure: Battle Tendency",
+    "character": "Kars"
+  },
   {
-  "japanese": "俺を誰だと思ってやがる!",
-  "romaji": "Ore o dare da to omotte yagaru!",
-  "english": "Who the hell do you think I am! (alt wording 46)",
-  "anime": "Gurren Lagann",
-  "character": "Kamina"
-}, {
-  "japanese": "俺を誰だと思ってやがる!",
-  "romaji": "Ore o dare da to omotte yagaru!",
-  "english": "Who the hell do you think I am! (alt wording 46)",
-  "anime": "Gurren Lagann",
-  "character": "Kamina"
-},
+    "japanese": "グララララ",
+    "romaji": "Gurararara",
+    "english": "Gurararara! (alt wording 31) (alt wording 83)",
+    "anime": "One Piece",
+    "character": "Edward Newgate (Whitebeard)"
+  },
   {
-       "japanese": "仲間を信じることが俺の魔法だ",
-       "romaji": "Nakama o shinjiru koto ga ore no mahou da",
-       "english": "Believing in my friends is my magic. (alt wording 49)",
-       "anime": "Fairy Tail",
-       "character": "Natsu Dragneel"
-     },
-{
-  "japanese": "僕は新世界の神となる",
-  "romaji": "Boku wa shin sekai no kami to naru",
-  "english": "I will become the god of the new world. (alt wording 44)",
-  "anime": "Death Note",
-  "character": "Light Yagami"
-},
-{
-  "japanese": "仲間を大切にしない奴はそれ以上のクズだ",
-  "romaji": "Nakama o taisetsu ni shinai yatsu wa sore ijou no kuzu da",
-  "english": "Those who don't take care of their comrades are worse than scum. (alt wording 34) (alt wording 86)",
-  "anime": "Naruto",
-  "character": "Kakashi Hatake"
-},
-{
-  "japanese": "ロードローラーだッ！",
-  "romaji": "Rodo rora da!",
-  "english": "Road roller! (alt wording 1) (alt wording 53)",
-  "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
-  "character": "DIO"
-},
-{
+    "japanese": "月に代わっておしおきよ!",
+    "romaji": "Tsuki ni kawatte oshioki yo!",
+    "english": "In the name of the moon, I'll punish you! (alt wording 41)",
+    "anime": "Sailor Moon",
+    "character": "Usagi Tsukino"
+  },
+  {
+    "japanese": "痛みを伴わない教訓には意味がない",
+    "romaji": "Itami o tomonawanai kyoukun ni wa imi ga nai",
+    "english": "A lesson without pain is meaningless.",
+    "anime": "Fullmetal Alchemist: Brotherhood",
+    "character": "Edward Elric"
+  },
+  {
+    "japanese": "オレ様の美技にブギウギ",
+    "romaji": "Ore-sama no bigi ni bugiugi",
+    "english": "Dance to my beautiful technique! (alt wording 23) (alt wording 75)",
+    "anime": "The Prince of Tennis",
+    "character": "Keigo Atobe"
+  },
+  {
+    "japanese": "守るものがある限り、俺は負けない",
+    "romaji": "Mamoru mono ga aru kagiri, ore wa makenai",
+    "english": "As long as I have something to protect, I won't lose. (alt wording 43)",
+    "anime": "Bleach",
+    "character": "Ichigo Kurosaki"
+  },
+  {
+    "japanese": "まだだ、まだ終わらんよ！",
+    "romaji": "Mada da, mada owaran yo!",
+    "english": "Not yet! It's not over yet! (alt wording 22) (alt wording 74)",
+    "anime": "Mobile Suit Gundam",
+    "character": "Char Aznable"
+  },
+  {
+    "japanese": "マママママ",
+    "romaji": "Mama mama mama",
+    "english": "Mama mama mama. (alt wording 29)",
+    "anime": "One Piece",
+    "character": "Charlotte Linlin (Big Mom)"
+  },
+  {
+    "japanese": "俺を誰だと思ってやがる!",
+    "romaji": "Ore o dare da to omotte yagaru!",
+    "english": "Who the hell do you think I am! (alt wording 46)",
+    "anime": "Gurren Lagann",
+    "character": "Kamina"
+  },
+  {
+    "japanese": "俺を誰だと思ってやがる!",
+    "romaji": "Ore o dare da to omotte yagaru!",
+    "english": "Who the hell do you think I am! (alt wording 46)",
+    "anime": "Gurren Lagann",
+    "character": "Kamina"
+  },
+  {
+    "japanese": "仲間を信じることが俺の魔法だ",
+    "romaji": "Nakama o shinjiru koto ga ore no mahou da",
+    "english": "Believing in my friends is my magic. (alt wording 49)",
+    "anime": "Fairy Tail",
+    "character": "Natsu Dragneel"
+  },
+  {
+    "japanese": "僕は新世界の神となる",
+    "romaji": "Boku wa shin sekai no kami to naru",
+    "english": "I will become the god of the new world. (alt wording 44)",
+    "anime": "Death Note",
+    "character": "Light Yagami"
+  },
+  {
+    "japanese": "仲間を大切にしない奴はそれ以上のクズだ",
+    "romaji": "Nakama o taisetsu ni shinai yatsu wa sore ijou no kuzu da",
+    "english": "Those who don't take care of their comrades are worse than scum. (alt wording 34) (alt wording 86)",
+    "anime": "Naruto",
+    "character": "Kakashi Hatake"
+  },
+  {
+    "japanese": "ロードローラーだッ！",
+    "romaji": "Rodo rora da!",
+    "english": "Road roller! (alt wording 1) (alt wording 53)",
+    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+    "character": "DIO"
+  },
+  {
     "japanese": "シシシシシ",
     "romaji": "Shishishishi",
     "english": "Shishishi! (alt wording 30)",
     "anime": "One Piece",
     "character": "Monkey D. Luffy"
-},
-{
-  "japanese": "オラに元気を分けてくれ!",
-  "romaji": "Ora ni genki o wakete kure!",
-  "english": "Lend me your energy! (alt wording 52)",
-  "anime": "Dragon Ball Z",
-  "character": "Son Goku"
-},
-{
-  "japanese": "だが…それがいい。",
-  "romaji": "Daga... sore ga ii.",
-  "english": "But... that's what I like. (alt wording 16) (alt wording 68)",
-  "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
-  "character": "Yoshikage Kira"
-},
-{
-  "japanese": "だが…それがいい。",
-  "romaji": "Daga... sore ga ii.",
-  "english": "But... that's what I like. (alt wording 16) (alt wording 68)",
-  "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
-  "character": "Yoshikage Kira"
-},
-{
-  "japanese": "撃っていいのは撃たれる覚悟がある奴だけだ",
-  "romaji": "Utte ii no wa uterareru kakugo ga aru yatsu dake da",
-  "english": "Only those prepared to be shot should pull the trigger. (alt wording 45)",
-  "anime": "Code Geass: Lelouch of the Rebellion",
-  "character": "Lelouch vi Britannia"
-},
-{
-  "japanese": "笑えばいいと思うよ",
-  "romaji": "Waraeba ii to omou yo",
-  "english": "I think you should just laugh.",
-  "anime": "Neon Genesis Evangelion",
-  "character": "Rei Ayanami"
-}
+  },
+  {
+    "japanese": "オラに元気を分けてくれ!",
+    "romaji": "Ora ni genki o wakete kure!",
+    "english": "Lend me your energy! (alt wording 52)",
+    "anime": "Dragon Ball Z",
+    "character": "Son Goku"
+  },
+  {
+    "japanese": "だが…それがいい。",
+    "romaji": "Daga... sore ga ii.",
+    "english": "But... that's what I like. (alt wording 16) (alt wording 68)",
+    "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
+    "character": "Yoshikage Kira"
+  },
+  {
+    "japanese": "だが…それがいい。",
+    "romaji": "Daga... sore ga ii.",
+    "english": "But... that's what I like. (alt wording 16) (alt wording 68)",
+    "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
+    "character": "Yoshikage Kira"
+  },
+  {
+    "japanese": "撃っていいのは撃たれる覚悟がある奴だけだ",
+    "romaji": "Utte ii no wa uterareru kakugo ga aru yatsu dake da",
+    "english": "Only those prepared to be shot should pull the trigger. (alt wording 45)",
+    "anime": "Code Geass: Lelouch of the Rebellion",
+    "character": "Lelouch vi Britannia"
+  },
+  {
+    "japanese": "笑えばいいと思うよ",
+    "romaji": "Waraeba ii to omou yo",
+    "english": "I think you should just laugh.",
+    "anime": "Neon Genesis Evangelion",
+    "character": "Rei Ayanami"
+  },
+  {
+    "quote": "The world isn't perfect. But it's there for us, doing the best it can. That's what makes it so beautiful.",
+    "character": "Roy Mustang",
+    "anime": "Fullmetal Alchemist"
+  }
 ]

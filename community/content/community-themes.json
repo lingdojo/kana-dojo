@@ -430,5 +430,17 @@
     "backgroundColor": "oklch(96.0% 0.018 20.0 / 1)",
     "mainColor": "oklch(70.0% 0.165 350.0 / 1)",
     "secondaryColor": "oklch(78.0% 0.120 135.0 / 1)"
+  },
+  {
+    "id": "morning-fog",
+    "name": "Morning Fog",
+    "primaryColor": "oklch(75.0% 0.040 180.0)",
+    "backgroundColor": "oklch(90.0% 0.020 180.0 / 0.95)",
+    "surfaceColor": "oklch(95.0% 0.010 180.0 / 0.9)",
+    "textColor": "oklch(25.0% 0.020 180.0)",
+    "textMutedColor": "oklch(50.0% 0.030 180.0)",
+    "accentColor": "oklch(60.0% 0.100 160.0)",
+    "borderColor": "oklch(80.0% 0.030 180.0 / 0.5)",
+    "secondaryColor": "oklch(70.0% 0.060 200.0)"
   }
 ]
