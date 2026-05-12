@@ -119,13 +119,7 @@ jobs:
               }
 
               if (changelogSection) {
-                releaseNotes += `---
-
-## Detailed Changelog
-
-${changelogSection}
-
-`;
+                releaseNotes += '---\n\n## Detailed Changelog\n\n' + changelogSection + '\n\n';
               }
 
               releaseNotes += `---
