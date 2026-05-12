@@ -474,5 +474,11 @@
   "backgroundColor": "oklch(23.0% 0.045 85.0 / 1)",
   "mainColor": "oklch(88.0% 0.170 95.0 / 1)",
   "secondaryColor": "oklch(72.0% 0.135 75.0 / 1)"
-}
+},
+  {
+  "id": "ryokan-evening",
+  "backgroundColor": "oklch(23.0% 0.038 280.0 / 1)",
+  "mainColor" : "oklch(78.0% 0.130 55.0 / 1)",
+  "secondaryColor" : "oklch(68.0% 0.095 30.0 / 1)"
+},
 ]
