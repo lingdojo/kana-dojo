@@ -79,7 +79,7 @@ const BASE_KEYWORDS = [
  * Requirements: 13.1
  */
 export const BASE_META: ConjugatorMeta = {
-  title: 'Japanese Verb Conjugator - Free Online Tool | KanaDojo',
+  title: 'Japanese Verb Conjugator | All Conjugation Forms | KanaDojo',
   titleShort: 'Japanese Verb Conjugator',
   description:
     'Free Japanese verb conjugator with all conjugation forms. Conjugate any Japanese verb instantly - Godan, Ichidan, irregular verbs. Get te-form, masu-form, potential, passive, causative and more.',

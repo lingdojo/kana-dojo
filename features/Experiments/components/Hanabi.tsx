@@ -1,7 +1,7 @@
 'use client';
 import { useState, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useClick, useCorrect } from '@/shared/hooks/useAudio';
+import { useClick, useCorrect } from '@/shared/hooks/generic/useAudio';
 import { allKana } from '../data/kanaData';
 import clsx from 'clsx';
 import { Sparkles, Moon } from 'lucide-react';

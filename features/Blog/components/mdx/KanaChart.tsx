@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { cn } from '@/shared/lib/utils';
+import { cn } from '@/shared/utils/utils';
 
 /**
  * Base hiragana characters (46 characters)
@@ -250,3 +250,4 @@ export function KanaChart({
 }
 
 export default KanaChart;
+

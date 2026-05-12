@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useClick } from '@/shared/hooks/useAudio';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 import { allKana } from '../data/kanaData';
 import { Telescope, Rocket } from 'lucide-react';
 
@@ -40,6 +40,19 @@ export default function KanaNebula() {
 
     const interval = setInterval(spawnStar, 400);
     return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const handleMouseMove = (event: MouseEvent) => {
+      document.documentElement.style.setProperty('--mouse-x', `${event.clientX}px`);
+      document.documentElement.style.setProperty('--mouse-y', `${event.clientY}px`);
+    };
+
+    document.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+    };
   }, []);
 
   return (
@@ -131,18 +144,6 @@ export default function KanaNebula() {
           <Rocket className='rotate-[-45deg] text-white' size={20} />
         </div>
       </motion.div>
-
-      {/* Mouse Tracker Script */}
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-        document.addEventListener('mousemove', (e) => {
-          document.documentElement.style.setProperty('--mouse-x', e.clientX + 'px');
-          document.documentElement.style.setProperty('--mouse-y', e.clientY + 'px');
-        });
-      `,
-        }}
-      />
 
       <div className='absolute right-10 bottom-10 z-20 font-mono text-[10px] tracking-widest text-indigo-400 uppercase opacity-20'>
         Sector {Math.floor(idCounter.current / 10)}-Alpha

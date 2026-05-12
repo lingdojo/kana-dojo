@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { cn } from '@/shared/lib/utils';
+import { cn } from '@/shared/utils/utils';
 import type { Category } from '../types/blog';
 import { VALID_CATEGORIES } from '../types/blog';
 
@@ -113,3 +113,4 @@ export function CategoryFilter({
 }
 
 export default CategoryFilter;
+

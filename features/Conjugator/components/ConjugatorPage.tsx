@@ -1,9 +1,9 @@
 'use client';
 
-import { useEffect, useRef, useCallback, useState } from 'react';
+import { Suspense, useEffect, useRef, useCallback, useState } from 'react';
 import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import { Languages, Share2, Check } from 'lucide-react';
-import { cn } from '@/shared/lib/utils';
+import { cn } from '@/shared/utils/utils';
 
 import useConjugatorStore from '../store/useConjugatorStore';
 import ConjugatorInput from './ConjugatorInput';
@@ -18,7 +18,7 @@ interface ConjugatorPageProps {
 /**
  * ConjugatorPage - Main page component for the Japanese Verb Conjugator
  */
-export default function ConjugatorPage({ locale = 'en' }: ConjugatorPageProps) {
+function ConjugatorPageContent({ locale: _locale = 'en' }: ConjugatorPageProps) {
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
@@ -173,3 +173,12 @@ export default function ConjugatorPage({ locale = 'en' }: ConjugatorPageProps) {
     </div>
   );
 }
+
+export default function ConjugatorPage(props: ConjugatorPageProps) {
+  return (
+    <Suspense fallback={null}>
+      <ConjugatorPageContent {...props} />
+    </Suspense>
+  );
+}
+

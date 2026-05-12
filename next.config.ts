@@ -64,9 +64,11 @@ const nextConfig: NextConfig = {
   turbopack: {
     // Resolve aliases for faster module resolution
     resolveAlias: {
+      '@/entities': './entities',
       '@/features': './features',
-      '@/shared': './shared',
       '@/core': './core',
+      '@/shared': './shared',
+      '@/widgets': './widgets',
     },
   },
 
@@ -91,11 +93,6 @@ const nextConfig: NextConfig = {
   // Skip type checking during dev (run separately with `npm run check`)
   typescript: {
     ignoreBuildErrors: isDev,
-  },
-
-  // Skip ESLint during dev builds
-  eslint: {
-    ignoreDuringBuilds: isDev,
   },
 
   webpack: (config, { isServer }) => {

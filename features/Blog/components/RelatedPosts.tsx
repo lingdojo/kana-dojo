@@ -1,8 +1,8 @@
 'use client';
 
 import React from 'react';
-import { Link } from '@/shared/components/navigation/Link';
-import { cn } from '@/shared/lib/utils';
+import { Link } from '@/shared/ui-composite/navigation/Link';
+import { cn } from '@/shared/utils/utils';
 import type { BlogPostMeta } from '../types/blog';
 
 interface RelatedPostsProps {
@@ -56,3 +56,4 @@ export function RelatedPosts({ posts, className }: RelatedPostsProps) {
 }
 
 export default RelatedPosts;
+

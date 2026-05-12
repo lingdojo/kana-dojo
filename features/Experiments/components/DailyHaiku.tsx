@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import { RefreshCw } from 'lucide-react';
 import clsx from 'clsx';
-import { useClick } from '@/shared/hooks/useAudio';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 import { getDailyHaiku, getRandomHaiku, Haiku } from '../data/haiku';
 
 const DailyHaiku = () => {

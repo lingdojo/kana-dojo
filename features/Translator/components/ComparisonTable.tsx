@@ -1,7 +1,7 @@
 'use client';
 
 import { Check, X } from 'lucide-react';
-import { cn } from '@/shared/lib/utils';
+import { cn } from '@/shared/utils/utils';
 
 interface Feature {
   name: string;
@@ -212,3 +212,4 @@ export default function ComparisonTable() {
     </div>
   );
 }
+

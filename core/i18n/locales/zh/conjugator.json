@@ -1,0 +1,239 @@
+{
+  "meta": {
+    "title": "日语动词活用器 - 免费在线工具 | KanaDojo",
+    "titleWithVerb": "{verb}（{romaji}）活用 - 所有日语动词形式 | KanaDojo",
+    "description": "免费日语动词活用器，支持所有活用形式。即时活用任何日语动词——五段动词、一段动词、不规则动词。获取て形、ます形、可能态、被动态、使役态等。",
+    "descriptionWithVerb": "{verb}（{romaji}）的完整活用。查看所有形式，包括て形、ます形、可能态、被动态、使役态等。免费日语动词活用器。"
+  },
+  "header": {
+    "title": "日语动词活用器",
+    "subtitle": "即时活用任何日语动词。获取所有形式，包括て形、ます形、可能态、被动态、使役态等。"
+  },
+  "input": {
+    "title": "输入日语动词",
+    "hint": "字典形（如：食べる、行く、する）",
+    "placeholder": "输入日语动词...",
+    "conjugateButton": "活用",
+    "conjugating": "活用中...",
+    "clearButton": "清除输入",
+    "keyboardHint": "按 {enter} 活用，按 {escape} 清除"
+  },
+  "results": {
+    "loading": "活用动词中...",
+    "empty": {
+      "title": "输入动词以查看活用形式",
+      "hint": "试试食べる、行く或する"
+    },
+    "statusMessage": "{verb}活用完成。{formCount}个形式，分布在{categoryCount}个类别中。",
+    "expandAll": "全部展开",
+    "collapseAll": "全部折叠",
+    "copyAll": "复制全部",
+    "copied": "已复制！",
+    "copiedMessage": "所有活用形式已复制到剪贴板。",
+    "formCount": "{categories}个类别，共{count}个活用形式"
+  },
+  "verbInfo": {
+    "type": "类型",
+    "stem": "词干",
+    "ending": "词尾",
+    "compoundPrefix": "复合动词前缀：",
+    "conjugationRules": "活用规则"
+  },
+  "verbTypes": {
+    "godan": {
+      "label": "五段动词",
+      "description": "五段动词（也叫u动词或第一类动词）在五个元音之间变化。词尾假名根据活用形式而变化。",
+      "rules": [
+        "词干根据元音段变化（a、i、u、e、o）",
+        "て形根据词尾有音变（って、んで、いて等）",
+        "否定形使用a段词干 + ない",
+        "ます形使用i段词干 + ます"
+      ]
+    },
+    "ichidan": {
+      "label": "一段动词",
+      "description": "一段动词（也叫ru动词或第二类动词）有更简单的活用模式。る词尾被适当的词尾替换。",
+      "rules": [
+        "去掉る，加上活用词尾",
+        "て形：词干 + て",
+        "否定形：词干 + ない",
+        "ます形：词干 + ます",
+        "可能态有传统形式（-られる）和口语形式（-れる）"
+      ]
+    },
+    "irregular": {
+      "label": "不规则动词",
+      "description": "此动词有不规则的活用模式，需要单独记忆。",
+      "rules": ["活用模式不遵循标准规则"]
+    },
+    "suru": {
+      "label": "する动词",
+      "description": "する（做）是日语中两个主要不规则动词之一，有独特的活用模式。",
+      "rules": [
+        "て形：して",
+        "否定形：しない",
+        "ます形：します",
+        "可能态：できる（独立动词）",
+        "被动态：される",
+        "使役态：させる"
+      ]
+    },
+    "kuru": {
+      "label": "来る动词",
+      "description": "来る（来）是两个主要不规则动词之一。读音根据形式在く和こ之间变化。",
+      "rules": [
+        "て形：来て（きて）",
+        "否定形：来ない（こない）",
+        "ます形：来ます（きます）",
+        "可能态：来られる（こられる）",
+        "过去形：来た（きた）"
+      ]
+    },
+    "iku": {
+      "label": "行く动词",
+      "description": "行く（去）基本规则，但て形不规则。",
+      "rules": [
+        "て形：行って（不是行いて）",
+        "过去形：行った（不是行いた）",
+        "其他形式遵循五段动词规则"
+      ]
+    },
+    "honorific": {
+      "label": "敬语动词",
+      "description": "敬语动词（くださる、なさる、いらっしゃる、おっしゃる、ござる）有不规则的ます形。",
+      "rules": [
+        "ます形使用ます而不是ります",
+        "例：くださる → くださいます（不是くださります）",
+        "其他形式遵循五段动词规则"
+      ]
+    },
+    "unknown": {
+      "label": "未知",
+      "description": "无法确定动词类型。",
+      "rules": []
+    }
+  },
+  "categories": {
+    "basic": {
+      "name": "基本形",
+      "nameJa": "基本形"
+    },
+    "polite": {
+      "name": "礼貌形",
+      "nameJa": "丁寧形"
+    },
+    "negative": {
+      "name": "否定形",
+      "nameJa": "否定形"
+    },
+    "past": {
+      "name": "过去形",
+      "nameJa": "過去形"
+    },
+    "volitional": {
+      "name": "意向形",
+      "nameJa": "意向形"
+    },
+    "potential": {
+      "name": "可能形",
+      "nameJa": "可能形"
+    },
+    "passive": {
+      "name": "被动形",
+      "nameJa": "受身形"
+    },
+    "causative": {
+      "name": "使役形",
+      "nameJa": "使役形"
+    },
+    "causative-passive": {
+      "name": "使役被动形",
+      "nameJa": "使役受身形"
+    },
+    "imperative": {
+      "name": "命令形",
+      "nameJa": "命令形"
+    },
+    "conditional": {
+      "name": "条件形",
+      "nameJa": "条件形"
+    },
+    "tai-form": {
+      "name": "愿望形",
+      "nameJa": "たい形"
+    },
+    "progressive": {
+      "name": "进行形",
+      "nameJa": "進行形"
+    },
+    "honorific": {
+      "name": "敬语形",
+      "nameJa": "敬語"
+    }
+  },
+  "forms": {
+    "polite": "礼貌",
+    "form": "形",
+    "forms": "形式",
+    "reading": "读音",
+    "romaji": "罗马字",
+    "expand": "展开",
+    "collapse": "折叠",
+    "copy": "复制",
+    "copyForm": "复制{form}：{kanji}"
+  },
+  "history": {
+    "title": "最近动词",
+    "empty": {
+      "title": "暂无历史记录",
+      "hint": "您活用过的动词将显示在这里"
+    },
+    "verbCount": "历史记录中有{count}个动词",
+    "verbCountPlural": "历史记录中有{count}个动词",
+    "clearButton": "清除",
+    "clearDialog": {
+      "title": "清除历史记录？",
+      "description": "这将永久删除所有活用历史记录。此操作无法撤销。",
+      "cancel": "取消",
+      "confirm": "全部清除"
+    },
+    "removeEntry": "从历史记录中移除{verb}",
+    "timeAgo": {
+      "now": "刚刚",
+      "minutes": "{count}分钟前",
+      "hours": "{count}小时前",
+      "days": "{count}天前"
+    }
+  },
+  "share": {
+    "button": "分享",
+    "copied": "已复制！",
+    "error": "复制失败",
+    "title": "{verb}活用 - KanaDojo",
+    "text": "查看{verb}（{romaji}）的活用形式"
+  },
+  "errors": {
+    "emptyInput": "请输入日语动词",
+    "invalidCharacters": "请使用平假名、片假名或汉字输入有效的日语动词",
+    "unknownVerb": "无法识别此动词。请检查拼写或尝试使用字典形",
+    "ambiguousVerb": "此输入可能是多个动词，请更具体",
+    "conjugationFailed": "发生意外错误"
+  },
+  "accessibility": {
+    "mainRegion": "日语动词活用器",
+    "inputRegion": "日语动词活用输入",
+    "resultsRegion": "活用结果",
+    "historyRegion": "活用历史",
+    "historySidebar": "活用历史侧边栏",
+    "categoryToggle": "{category}（{categoryJa}），{count}个形式。点击{action}",
+    "categoryTogglePlural": "{category}（{categoryJa}），{count}个形式。点击{action}",
+    "categoryForms": "{count}个{category}形式",
+    "verbInfoRegion": "{verb}的动词信息",
+    "classificationDetails": "动词分类详情",
+    "rulesExplanation": "活用规则说明",
+    "showRules": "显示{verbType}动词的活用规则",
+    "hideRules": "隐藏{verbType}动词的活用规则",
+    "resultActions": "活用结果操作",
+    "keyboardShortcuts": "键盘快捷键：在输入框中按Enter活用。按Escape清除输入。使用Tab在元素之间导航。"
+  }
+}

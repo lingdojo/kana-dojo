@@ -1,10 +1,13 @@
-import VocabMenu from '@/shared/components/Menu/VocabMenu';
+import { VocabMenu } from '@/widgets';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/core/i18n/metadata-helpers';
-import { CourseSchema } from '@/shared/components/SEO/CourseSchema';
-import { BreadcrumbSchema } from '@/shared/components/SEO/BreadcrumbSchema';
-import { FAQSchema, commonKanaDOJOFAQs } from '@/shared/components/SEO/FAQSchema';
-import { LearningResourceSchema } from '@/shared/components/SEO/LearningResourceSchema';
+import { CourseSchema } from '@/shared/ui-composite/SEO/CourseSchema';
+import { BreadcrumbSchema } from '@/shared/ui-composite/SEO/BreadcrumbSchema';
+import {
+  FAQSchema,
+  commonKanaDOJOFAQs,
+} from '@/shared/ui-composite/SEO/FAQSchema';
+import { LearningResourceSchema } from '@/shared/ui-composite/SEO/LearningResourceSchema';
 import { routing } from '@/core/i18n/routing';
 
 export function generateStaticParams() {
@@ -37,8 +40,14 @@ export default async function VocabularyJlptN1Page({
       <BreadcrumbSchema
         items={[
           { name: 'Home', url: `https://kanadojo.com/${locale}` },
-          { name: 'Vocabulary', url: `https://kanadojo.com/${locale}/vocabulary` },
-          { name: 'JLPT N1', url: `https://kanadojo.com/${locale}/vocabulary/jlpt-n1` },
+          {
+            name: 'Vocabulary',
+            url: `https://kanadojo.com/${locale}/vocabulary`,
+          },
+          {
+            name: 'JLPT N1',
+            url: `https://kanadojo.com/${locale}/vocabulary/jlpt-n1`,
+          },
         ]}
       />
       <CourseSchema
@@ -71,3 +80,4 @@ export default async function VocabularyJlptN1Page({
     </>
   );
 }
+

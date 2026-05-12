@@ -2,7 +2,7 @@ name: PR Quality Check
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened]
+    types: [opened, synchronize, reopened, ready_for_review]
 
 permissions:
   contents: read
@@ -58,20 +58,93 @@ jobs:
             const allowedFiles = new Set(['package-lock.json']);
 
             const outsideFiles = files
-              .map(file => file.filename)
-              .filter(filename => {
+              .map(function(file) { return file.filename; })
+              .filter(function(filename) {
                 if (allowedFiles.has(filename)) return false;
                 return !allowedPrefixes.some(prefix => filename.startsWith(prefix));
               });
 
+            const invalidOps = files
+              .filter(function(file) {
+                if (!file.filename.startsWith('community/content/')) {
+                  return false;
+                }
+                return file.status === 'removed' || file.status === 'renamed';
+              })
+              .map(function(file) { return `${file.filename} (${file.status})`; });
+
+            const touchedCommunityJsonFiles = files
+              .filter(function(file) {
+                return file.filename.startsWith('community/content/') &&
+                       file.filename.endsWith('.json') &&
+                       file.status !== 'removed' &&
+                       file.status !== 'renamed';
+              })
+              .map(function(file) { return file.filename; });
+
             const isCommunityOnly = outsideFiles.length === 0;
             core.setOutput('is_community_only', isCommunityOnly ? 'true' : 'false');
+            core.setOutput('has_invalid_ops', invalidOps.length > 0 ? 'true' : 'false');
+            core.setOutput('invalid_ops', invalidOps.join('\n'));
+            core.setOutput('community_json_files', JSON.stringify(touchedCommunityJsonFiles));
 
             if (isCommunityOnly) {
               console.log('PR only touches community/content (and optionally package-lock.json); skipping checks.');
             } else if (outsideFiles.length > 0) {
               console.log(`PR touches non-community files; running full checks. Examples: ${outsideFiles.slice(0, 5).join(', ')}`);
             }
+
+            if (invalidOps.length > 0) {
+              console.log(`Community content rename/delete operations are not allowed: ${invalidOps.join(', ')}`);
+            }
+
+      - name: Checkout PR head for community validation
+        if: steps.pr_state.outputs.should_run == 'true' && steps.community_only.outputs.is_community_only == 'true'
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: Validate community-only file operations
+        if: steps.pr_state.outputs.should_run == 'true' && steps.community_only.outputs.is_community_only == 'true'
+        uses: actions/github-script@v7
+        env:
+          INVALID_OPS: ${{ steps.community_only.outputs.invalid_ops }}
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            if ('${{ steps.community_only.outputs.has_invalid_ops }}' === 'true') {
+              const invalidOps = process.env.INVALID_OPS || '';
+              throw new Error(`Community-only PR contains disallowed file operations (rename/delete):\n${invalidOps}`);
+            }
+
+      - name: Validate touched community JSON syntax
+        if: steps.pr_state.outputs.should_run == 'true' && steps.community_only.outputs.is_community_only == 'true'
+        uses: actions/github-script@v7
+        env:
+          COMMUNITY_JSON_FILES: ${{ steps.community_only.outputs.community_json_files }}
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const raw = process.env.COMMUNITY_JSON_FILES || '[]';
+            let files = [];
+
+            try {
+              files = JSON.parse(raw);
+            } catch (error) {
+              throw new Error(`Failed to parse COMMUNITY_JSON_FILES output: ${error.message}`);
+            }
+
+            for (const filePath of files) {
+              const content = fs.readFileSync(filePath, 'utf8');
+              try {
+                JSON.parse(content);
+              } catch (error) {
+                throw new Error(`Invalid JSON in ${filePath}: ${error.message}`);
+              }
+            }
+
+            console.log(`Validated JSON syntax for ${files.length} file(s).`);
 
       - name: Checkout code
         if: steps.pr_state.outputs.should_run == 'true' && steps.community_only.outputs.is_community_only != 'true'
@@ -94,4 +167,4 @@ jobs:
 
       - name: Community-only PR passes
         if: steps.pr_state.outputs.should_run == 'true' && steps.community_only.outputs.is_community_only == 'true'
-        run: echo "Community-content-only PR; skipping npm checks."
+        run: echo "Community-content-only PR passed file-operation and JSON syntax validation."

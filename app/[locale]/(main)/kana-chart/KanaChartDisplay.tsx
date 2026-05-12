@@ -148,9 +148,7 @@ export default function KanaChartDisplay() {
             Ctrl+P
           </kbd>{' '}
           or{' '}
-          <kbd className='rounded bg-(--card-color) px-2 py-1 text-xs'>
-            ⌘+P
-          </kbd>{' '}
+          <kbd className='rounded bg-(--card-color) px-2 py-1 text-xs'>⌘+P</kbd>{' '}
           to print or save this chart as PDF
         </p>
       </div>

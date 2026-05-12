@@ -179,7 +179,7 @@ The audio service worker (`/public/sw.js`) provides:
 import {
   cacheAudioFile,
   clearAudioCache,
-} from '@/shared/components/ServiceWorkerRegistration';
+} from '@/shared/ui-composite/ServiceWorkerRegistration';
 
 // Cache a specific audio file
 cacheAudioFile('/sounds/custom.opus');
@@ -217,3 +217,4 @@ shared/components/ServiceWorkerRegistration.tsx - SW registration
 public/sw.js                       - Service worker for caching
 scripts/compress-audio-opus.js     - Opus conversion script
 ```
+

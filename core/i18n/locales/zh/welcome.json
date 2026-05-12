@@ -1,0 +1,67 @@
+{
+  "title": "欢迎使用 KanaDojo！",
+  "subtitle": "让我们来个性化您的学习体验",
+  "steps": {
+    "welcome": {
+      "demoCta": "试一试"
+    },
+    "behavior": {
+      "title": "配置行为",
+      "subtitle": "设置显示和声音偏好",
+      "displayLanguage": {
+        "title": "显示语言",
+        "description": "在角色选择菜单中，显示：",
+        "romaji": "罗马字，翻译 🇺🇸",
+        "kana": "假名，汉字 🇯🇵"
+      },
+      "soundEffects": {
+        "title": "音效",
+        "description": "播放界面和反馈音效：",
+        "on": "开启",
+        "off": "关闭"
+      }
+    },
+    "themes": {
+      "title": "选择主题",
+      "subtitle": "选择一个适合您风格的主题",
+      "randomTheme": "随机主题",
+      "moreInfo": "更多主题请前往",
+      "preferences": "偏好设置"
+    },
+    "fonts": {
+      "title": "选择字体",
+      "subtitle": "为角色选择完美的字体",
+      "randomFont": "随机字体",
+      "default": "（默认）",
+      "moreInfo": "更多字体请前往",
+      "preferences": "偏好设置"
+    },
+    "complete": {
+      "title": "设置完成！",
+      "subtitle": "您的 KanaDojo 已个性化设置",
+      "canChange": "您可以随时在偏好设置中更改这些设置。",
+      "happyLearning": "祝学习愉快！"
+    }
+  },
+  "features": {
+    "behavior": {
+      "title": "配置行为",
+      "description": "设置显示语言和声音偏好"
+    },
+    "theme": {
+      "title": "选择主题",
+      "description": "选择一个适合您风格的主题"
+    },
+    "font": {
+      "title": "选择字体",
+      "description": "为角色选择完美的字体"
+    }
+  },
+  "navigation": {
+    "previous": "上一步",
+    "back": "返回",
+    "next": "下一步",
+    "getStarted": "开始使用",
+    "finishSetup": "完成设置"
+  }
+}

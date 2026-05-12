@@ -1,4 +1,4 @@
-import SubsetDictionary from '@/features/Kana/components/SubsetDictionary';
+import { SubsetDictionary } from '@/features/Kana';
 import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 

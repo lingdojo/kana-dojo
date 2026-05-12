@@ -1,7 +1,6 @@
-import type { IKanjiObj } from '@/features/Kanji/store/useKanjiStore';
+import type { IKanjiObj, KanjiLevel } from '@/entities/kanji';
 import {
   useKanjiCacheStore,
-  type KanjiLevel,
 } from '@/features/Kanji/store/useKanjiCacheStore';
 
 type RawKanjiEntry = {

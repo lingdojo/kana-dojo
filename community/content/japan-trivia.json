@@ -1,73 +1,56 @@
 [
   {
-    "question": "Which Japanese city is known for the historic Gion district?",
-    "difficulty": "easy",
-    "answers": ["Kyoto", "Osaka", "Sendai", "Saitama"],
-    "correctIndex": 0
-  },
-  {
-    "question": "What is Japan's high-speed rail network called?",
-    "difficulty": "easy",
-    "answers": ["Shinkansen", "Maglev", "JR Loop", "Tsubasa"],
-    "correctIndex": 0
-  },
-  {
-    "question": "Which Japanese festival celebrates the return of ancestral spirits in summer?",
-    "difficulty": "easy",
-    "answers": ["Obon", "Tanabata", "Setsubun", "Seijin Shiki"],
-    "correctIndex": 0
-  },
-  {
-    "question": "Which Japanese food is typically made by grilling skewered chicken?",
-    "difficulty": "easy",
-    "answers": ["Yakitori", "Okonomiyaki", "Takoyaki", "Soba"],
-    "correctIndex": 0
-  },
-  {
-    "question": "What is the name of the traditional Japanese poetic form with a 5-7-5 syllable pattern?",
-    "difficulty": "easy",
-    "answers": ["Haiku", "Tanka", "Senryu", "Renga"],
-    "correctIndex": 0
-  },
-  {
-    "question": "Which Japanese island is the largest by area?",
-    "difficulty": "easy",
-    "answers": ["Honshu", "Hokkaido", "Kyushu", "Shikoku"],
-    "correctIndex": 0
-  },
-  {
-    "question": "What is the name of Japan's national airline?",
-    "difficulty": "medium",
+    "question": "Which Japanese company is known for making the character Hello Kitty?",
+    "difficulty": "hard",
     "answers": [
-      "Japan Airlines",
-      "All Nippon Express",
-      "Tokyo Air",
-      "Nippon Sky"
+      "Sanrio",
+      "Ghibli",
+      "Capcom",
+      "Namco"
     ],
     "correctIndex": 0
   },
   {
-    "question": "Which Japanese city is famous for its ramen street, \"Ramen Yokocho\"?",
-    "difficulty": "medium",
-    "answers": ["Sapporo", "Nagoya", "Utsunomiya", "Naha"],
+    "question": "What is the currency of Japan?",
+    "difficulty": "easy",
+    "answers": [
+      "Yen",
+      "Won",
+      "Dollar",
+      "Rupee"
+    ],
     "correctIndex": 0
   },
   {
-    "question": "Which traditional Japanese sport features a ring called a dohyo?",
-    "difficulty": "medium",
-    "answers": ["Sumo", "Kendo", "Karate", "Kyudo"],
+    "question": "Which Japanese city is famous for its street food district, Dotonbori?",
+    "answers": [
+      "Osaka",
+      "Niigata",
+      "Kagoshima",
+      "Takayama"
+    ],
     "correctIndex": 0
   },
   {
-  "question": "Which Japanese company is known for making the character Hello Kitty?",
-  "difficulty": "hard",
-  "answers": ["Sanrio", "Ghibli", "Capcom", "Namco"],
-  "correctIndex": 0
-},
+    "question": "What is the traditional Japanese garment called?",
+    "difficulty": "easy",
+    "answers": [
+      "Kimono",
+      "Hanbok",
+      "Cheongsam",
+      "Sari"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "question": "What is the name of Japan's highest mountain?",
+    "answer": "Mount Fuji (富士山), standing at 3,776 meters. It is an active volcano and a UNESCO World Heritage Site.",
+    "difficulty": "easy"
+  }
+,
 {
-  "question": "What is the currency of Japan?",
-  "difficulty": "easy",
-  "answers": ["Yen", "Won", "Dollar", "Rupee"],
-  "correctIndex": 0
+  "question": "What is the oldest existing company in the world, located in Japan?",
+  "answer": "Kongō Gumi, a construction company founded in 578 AD that built temples for over 1,400 years.",
+  "difficulty": "medium"
 }
 ]

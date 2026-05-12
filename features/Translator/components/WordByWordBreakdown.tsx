@@ -1,13 +1,13 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { cn } from '@/shared/lib/utils';
+import { cn } from '@/shared/utils/utils';
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from '@/shared/components/ui/tooltip';
+} from '@/shared/ui/components/tooltip';
 import {
   analyzeText,
   needsAnalysis,
@@ -88,9 +88,7 @@ export default function WordByWordBreakdown({
   // Show error state
   if (error) {
     return (
-      <div
-        className={cn('py-2 text-sm text-(--secondary-color)', className)}
-      >
+      <div className={cn('py-2 text-sm text-(--secondary-color)', className)}>
         {error}
       </div>
     );
@@ -98,9 +96,7 @@ export default function WordByWordBreakdown({
 
   // If no tokens (not Japanese text), show regular text
   if (tokens.length === 0) {
-    return (
-      <div className={cn('text-(--main-color)', className)}>{text}</div>
-    );
+    return <div className={cn('text-(--main-color)', className)}>{text}</div>;
   }
 
   // Render tokens with tooltips
@@ -150,9 +146,7 @@ export default function WordByWordBreakdown({
                     <span className='min-w-[60px] font-medium text-(--secondary-color)'>
                       Reading:
                     </span>
-                    <span className='text-(--main-color)'>
-                      {token.reading}
-                    </span>
+                    <span className='text-(--main-color)'>{token.reading}</span>
                   </div>
                 )}
 
@@ -218,3 +212,4 @@ export default function WordByWordBreakdown({
     </TooltipProvider>
   );
 }
+

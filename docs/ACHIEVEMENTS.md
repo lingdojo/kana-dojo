@@ -602,29 +602,29 @@ It links each requirement type to:
 
 ### Requirement-to-Tracking Map
 
-| Requirement Type | Source Fields | Updated By | Checked In |
-| --- | --- | --- | --- |
-| `total_correct` | `allTimeStats.totalCorrect` | `saveSession()` (`features/Progress/store/useStatsStore.ts`) | `checkRequirement()` |
-| `total_incorrect` | `allTimeStats.totalIncorrect` | `saveSession()` | `checkRequirement()` |
-| `streak` | `allTimeStats.bestStreak`, `gauntletStats.bestStreak`, `blitzStats.bestStreak` | `saveSession()`, `recordGauntletRun()`, `recordBlitzSession()` | `checkRequirement()` |
-| `sessions` | `allTimeStats.totalSessions` | `saveSession()` | `checkRequirement()` |
-| `accuracy` | global: `totalCorrect/totalIncorrect`; blitz: `blitzStats.totalCorrect/totalAnswers` | `saveSession()`, `recordBlitzSession()` | `checkRequirement()` |
-| `content_correct` | `hiraganaCorrect`, `katakanaCorrect`, `kanjiCorrectByLevel`, `vocabularyCorrect` | `incrementHiraganaCorrect()`, `incrementKatakanaCorrect()`, `incrementKanjiCorrect()`, `incrementVocabularyCorrect()` | `checkContentCorrect()` |
-| `content_mastery` | `characterMastery` | `saveSession()` (folds `characterScores` into `characterMastery`) | `checkContentMastery()` |
-| `gauntlet_completion` | `gauntletStats.completedRuns` | `recordGauntletRun()` | `checkGauntletRequirement()` |
-| `gauntlet_difficulty` | `gauntletStats.normalCompleted/hardCompleted/instantDeathCompleted` | `recordGauntletRun()` | `checkGauntletRequirement()` |
-| `gauntlet_perfect` | `gauntletStats.perfectRuns` | `recordGauntletRun()` | `checkGauntletRequirement()` |
-| `gauntlet_lives` | `gauntletStats.noDeathRuns/livesRegenerated` | `recordGauntletRun()` | `checkGauntletRequirement()` |
-| `blitz_session` | `blitzStats.totalSessions` | `recordBlitzSession()` | `checkBlitzRequirement()` |
-| `blitz_score` | `blitzStats.bestSessionScore` | `recordBlitzSession()` | `checkBlitzRequirement()` |
-| `speed` | `answerTimesMs`, `fastestAnswerMs`, session payload (`sessionTime`, `sessionAccuracy`) | `recordAnswerTime()`, `saveSession()` (session payload) | `checkSpeedRequirement()` |
-| `variety` | `dojosUsed`, `modesUsed`, `challengeModesUsed` | `recordDojoUsed()`, `recordModeUsed()`, `recordChallengeModeUsed()` | `checkVarietyRequirement()` |
-| `days_trained` | `trainingDays` | `saveSession()` | `checkDaysTrainedRequirement()` |
-| `time_of_day` | session payload `currentHour` (fallback current time) | `saveSession()` (session payload) | `checkTimeOfDayRequirement()` |
-| `wrong_streak` | `maxWrongStreak` | `incrementWrongStreak()` / `resetWrongStreak()` | `checkWrongStreakRequirement()` |
-| `exact_count` | session payload `sessionCorrect` | `saveSession()` (session payload) | `checkExactCountRequirement()` |
-| `achievement_count` | `unlockedAchievements` count | `unlockAchievement()` | `checkAchievementCountRequirement()` |
-| `total_points` | `totalPoints` | `unlockAchievement()` | `checkTotalPointsRequirement()` |
+| Requirement Type      | Source Fields                                                                          | Updated By                                                                                                            | Checked In                           |
+| --------------------- | -------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | ------------------------------------ |
+| `total_correct`       | `allTimeStats.totalCorrect`                                                            | `saveSession()` (`features/Progress/store/useStatsStore.ts`)                                                          | `checkRequirement()`                 |
+| `total_incorrect`     | `allTimeStats.totalIncorrect`                                                          | `saveSession()`                                                                                                       | `checkRequirement()`                 |
+| `streak`              | `allTimeStats.bestStreak`, `gauntletStats.bestStreak`, `blitzStats.bestStreak`         | `saveSession()`, `recordGauntletRun()`, `recordBlitzSession()`                                                        | `checkRequirement()`                 |
+| `sessions`            | `allTimeStats.totalSessions`                                                           | `saveSession()`                                                                                                       | `checkRequirement()`                 |
+| `accuracy`            | global: `totalCorrect/totalIncorrect`; blitz: `blitzStats.totalCorrect/totalAnswers`   | `saveSession()`, `recordBlitzSession()`                                                                               | `checkRequirement()`                 |
+| `content_correct`     | `hiraganaCorrect`, `katakanaCorrect`, `kanjiCorrectByLevel`, `vocabularyCorrect`       | `incrementHiraganaCorrect()`, `incrementKatakanaCorrect()`, `incrementKanjiCorrect()`, `incrementVocabularyCorrect()` | `checkContentCorrect()`              |
+| `content_mastery`     | `characterMastery`                                                                     | `saveSession()` (folds `characterScores` into `characterMastery`)                                                     | `checkContentMastery()`              |
+| `gauntlet_completion` | `gauntletStats.completedRuns`                                                          | `recordGauntletRun()`                                                                                                 | `checkGauntletRequirement()`         |
+| `gauntlet_difficulty` | `gauntletStats.normalCompleted/hardCompleted/instantDeathCompleted`                    | `recordGauntletRun()`                                                                                                 | `checkGauntletRequirement()`         |
+| `gauntlet_perfect`    | `gauntletStats.perfectRuns`                                                            | `recordGauntletRun()`                                                                                                 | `checkGauntletRequirement()`         |
+| `gauntlet_lives`      | `gauntletStats.noDeathRuns/livesRegenerated`                                           | `recordGauntletRun()`                                                                                                 | `checkGauntletRequirement()`         |
+| `blitz_session`       | `blitzStats.totalSessions`                                                             | `recordBlitzSession()`                                                                                                | `checkBlitzRequirement()`            |
+| `blitz_score`         | `blitzStats.bestSessionScore`                                                          | `recordBlitzSession()`                                                                                                | `checkBlitzRequirement()`            |
+| `speed`               | `answerTimesMs`, `fastestAnswerMs`, session payload (`sessionTime`, `sessionAccuracy`) | `recordAnswerTime()`, `saveSession()` (session payload)                                                               | `checkSpeedRequirement()`            |
+| `variety`             | `dojosUsed`, `modesUsed`, `challengeModesUsed`                                         | `recordDojoUsed()`, `recordModeUsed()`, `recordChallengeModeUsed()`                                                   | `checkVarietyRequirement()`          |
+| `days_trained`        | `trainingDays`                                                                         | `saveSession()`                                                                                                       | `checkDaysTrainedRequirement()`      |
+| `time_of_day`         | session payload `currentHour` (fallback current time)                                  | `saveSession()` (session payload)                                                                                     | `checkTimeOfDayRequirement()`        |
+| `wrong_streak`        | `maxWrongStreak`                                                                       | `incrementWrongStreak()` / `resetWrongStreak()`                                                                       | `checkWrongStreakRequirement()`      |
+| `exact_count`         | session payload `sessionCorrect`                                                       | `saveSession()` (session payload)                                                                                     | `checkExactCountRequirement()`       |
+| `achievement_count`   | `unlockedAchievements` count                                                           | `unlockAchievement()`                                                                                                 | `checkAchievementCountRequirement()` |
+| `total_points`        | `totalPoints`                                                                          | `unlockAchievement()`                                                                                                 | `checkTotalPointsRequirement()`      |
 
 ### Achievement ID to Requirement Map
 

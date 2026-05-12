@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { cn } from '@/shared/lib/utils';
+import { cn } from '@/shared/utils/utils';
 import {
   Swords,
   Target,
@@ -260,3 +260,4 @@ export function getGauntletDisplayValues(stats: GauntletOverallStats): {
     accuracy: `${stats.accuracy.toFixed(1)}%`,
   };
 }
+

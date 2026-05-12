@@ -18,7 +18,7 @@ export { default as KanaGauntlet } from './components/Gauntlet';
 export { default as SubsetDictionary } from './components/SubsetDictionary';
 
 // Types (read-only data types)
-export type { KanaCharacter } from './lib/flattenKanaGroup';
+export type { KanaCharacter, KanaGroup } from '@/entities/kana';
 
 // ============================================================================
 // PRIVATE - DO NOT IMPORT DIRECTLY

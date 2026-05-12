@@ -41,7 +41,9 @@ export function CategoryPageClient({
   availableFilters,
 }: CategoryPageClientProps) {
   // State
-  const [filters, setFilters] = useState<ActiveFilters>(createEmptyFilters());
+  const [filters, setFilters] = useState<ActiveFilters>(() =>
+    createEmptyFilters(),
+  );
   const [selectedResource, setSelectedResource] = useState<Resource | null>(
     null,
   );

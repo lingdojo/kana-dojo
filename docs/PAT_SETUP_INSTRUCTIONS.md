@@ -27,12 +27,12 @@ Check if `AUTOMATION_PR_TOKEN` already exists at:
 ## Step 1 — Create a Personal Access Token (Fine-Grained)
 
 1. Go to: **https://github.com/settings/personal-access-tokens/new**  
-   *(Or: Profile Photo → Settings → Developer settings → Personal access tokens → Fine-grained tokens → Generate new token)*
+   _(Or: Profile Photo → Settings → Developer settings → Personal access tokens → Fine-grained tokens → Generate new token)_
 
 2. Fill in the form:
    - **Token name:** anything (e.g. `kana-dojo automation`)
-   - **Expiration:** `No expiration` *(or 1 year — set a reminder if so)*
-   - **Resource owner:** `lingdojo` *(your organization)*
+   - **Expiration:** `No expiration` _(or 1 year — set a reminder if so)_
+   - **Resource owner:** `lingdojo` _(your organization)_
    - **Repository access:** `Only select repositories` → choose **`kana-dojo`**
 
 3. Under **Repository permissions**, set the following:
@@ -56,7 +56,7 @@ Check if `AUTOMATION_PR_TOKEN` already exists at:
 2. Click **New repository secret**.
 
 3. Fill in:
-   - **Name:** `AUTOMATION_PR_TOKEN`  ← must be exactly this
+   - **Name:** `AUTOMATION_PR_TOKEN` ← must be exactly this
    - **Secret:** paste the token you copied in Step 1
 
 4. Click **Add secret**.
@@ -66,6 +66,7 @@ Check if `AUTOMATION_PR_TOKEN` already exists at:
 ## Verification
 
 After deploying, verify it's working by:
+
 1. Manually triggering the `hourly-community-issue` workflow in the **Actions** tab
 2. Checking that the newly created issue shows **your username** as the author (not `github-actions[bot]`)
 3. Checking that a PR titled `chore(automation): update community backlog` was created and auto-merged by your account
@@ -75,4 +76,3 @@ After deploying, verify it's working by:
 ## Token Expiry Reminder
 
 If you chose an expiration date, set a calendar reminder before it expires. When it expires, generate a new token and update the secret value at the same URL (the name stays the same).
-

@@ -1,0 +1,65 @@
+{
+  "metadata": {
+    "title": "KanaDojo：假名",
+    "description": "假名道场是您可以学习和练习日语两个核心音节表——平假名和片假名的地方。"
+  },
+  "title": "假名训练",
+  "description": "掌握平假名和片假名",
+  "selection": {
+    "title": "选择假名组",
+    "hiragana": "平假名",
+    "katakana": "片假名",
+    "selectAll": "全选",
+    "deselectAll": "取消全选",
+    "groups": {
+      "basic": "基本",
+      "dakuon": "浊音",
+      "combo": "组合",
+      "yoon": "拗音"
+    }
+  },
+  "game": {
+    "title": "假名游戏",
+    "start": "开始游戏",
+    "pause": "暂停",
+    "resume": "继续",
+    "finish": "完成",
+    "nextQuestion": "下一题",
+    "submit": "提交答案",
+    "score": "得分：{{points}}",
+    "timeLeft": "剩余时间：{{seconds}}秒",
+    "streak": "连击：{{count}}",
+    "correct": "正确！",
+    "incorrect": "错误",
+    "tryAgain": "再试一次"
+  },
+  "modes": {
+    "pick": "选择模式",
+    "reversePick": "反向选择",
+    "input": "输入模式",
+    "reverseInput": "反向输入",
+    "description": {
+      "pick": "看假名，选择读音",
+      "reversePick": "看读音，选择假名",
+      "input": "看假名，输入读音",
+      "reverseInput": "看读音，输入假名"
+    }
+  },
+  "results": {
+    "title": "结果",
+    "congratulations": "恭喜！",
+    "correct": "正确：{{count}}",
+    "incorrect": "错误：{{count}}",
+    "accuracy": "准确率：{{percentage}}%",
+    "timeSpent": "用时：{{time}}",
+    "playAgain": "再玩一次",
+    "backToMenu": "返回菜单"
+  },
+  "dictionary": {
+    "title": "假名字典",
+    "search": "搜索假名...",
+    "character": "字符",
+    "romaji": "罗马字",
+    "type": "类型"
+  }
+}

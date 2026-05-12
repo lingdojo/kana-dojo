@@ -7,11 +7,11 @@ import MSClarity from '@/core/analytics/MSClarity';
 import {
   StructuredData,
   kanaDojoSchema,
-} from '@/shared/components/SEO/StructuredData';
+} from '@/shared/ui-composite/SEO/StructuredData';
 import { Metadata, Viewport } from 'next';
 import Script from 'next/script';
 import { headers } from 'next/headers';
-import SessionPrefetch from '@/shared/components/Performance/SessionPrefetch';
+import SessionPrefetch from '@/shared/ui-composite/Performance/SessionPrefetch';
 
 const googleVerificationToken = process.env.GOOGLE_VERIFICATION_TOKEN || '';
 const msVerificationToken = process.env.MS_VERIFICATION_TOKEN || '';
@@ -135,37 +135,16 @@ export default async function RootLayout({ children }: RootLayoutProps) {
     <html lang={locale} suppressHydrationWarning>
       <head>
         <StructuredData data={kanaDojoSchema} />
-        <Script id='audio-sw-migration' strategy='beforeInteractive'>
-          {`try {
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker
-      .getRegistrations()
-      .then(function (registrations) {
-        return Promise.all(
-          registrations
-            .filter(function (reg) {
-              return (
-                reg.active &&
-                reg.active.scriptURL.endsWith('/sw.js') &&
-                new URL(reg.scope).pathname === '/'
-              );
-            })
-            .map(function (reg) {
-              return reg.unregister();
-            })
-        );
-      })
-      .catch(function () {});
-  }
-} catch (_) {}`}
-        </Script>
         {/* DNS prefetch for external domains - resolve DNS early */}
         {isAnalyticsEnabled && (
           <>
             <link rel='dns-prefetch' href='https://www.googletagmanager.com' />
             <link rel='dns-prefetch' href='https://www.clarity.ms' />
             <link rel='dns-prefetch' href='https://vercel-analytics.com' />
-            <link rel='dns-prefetch' href='https://vitals.vercel-insights.com' />
+            <link
+              rel='dns-prefetch'
+              href='https://vitals.vercel-insights.com'
+            />
           </>
         )}
         <link rel='dns-prefetch' href='https://translation.googleapis.com' />
@@ -191,6 +170,30 @@ export default async function RootLayout({ children }: RootLayoutProps) {
         />
       </head>
       <body>
+        <Script id='audio-sw-migration' strategy='afterInteractive'>
+          {`try {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+      .getRegistrations()
+      .then(function (registrations) {
+        return Promise.all(
+          registrations
+            .filter(function (reg) {
+              return (
+                reg.active &&
+                reg.active.scriptURL.endsWith('/sw.js') &&
+                new URL(reg.scope).pathname === '/'
+              );
+            })
+            .map(function (reg) {
+              return reg.unregister();
+            })
+        );
+      })
+      .catch(function () {});
+  }
+} catch (_) {}`}
+        </Script>
         <SessionPrefetch />
         {isAnalyticsEnabled && (
           <>
@@ -205,3 +208,4 @@ export default async function RootLayout({ children }: RootLayoutProps) {
     </html>
   );
 }
+

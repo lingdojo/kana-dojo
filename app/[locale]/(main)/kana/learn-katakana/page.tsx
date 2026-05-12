@@ -1,10 +1,13 @@
-import KanaMenu from '@/shared/components/Menu/KanaMenu';
+import { KanaMenu } from '@/widgets';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/core/i18n/metadata-helpers';
-import { CourseSchema } from '@/shared/components/SEO/CourseSchema';
-import { BreadcrumbSchema } from '@/shared/components/SEO/BreadcrumbSchema';
-import { LearningResourceSchema } from '@/shared/components/SEO/LearningResourceSchema';
-import { FAQSchema, commonKanaDOJOFAQs } from '@/shared/components/SEO/FAQSchema';
+import { CourseSchema } from '@/shared/ui-composite/SEO/CourseSchema';
+import { BreadcrumbSchema } from '@/shared/ui-composite/SEO/BreadcrumbSchema';
+import { LearningResourceSchema } from '@/shared/ui-composite/SEO/LearningResourceSchema';
+import {
+  FAQSchema,
+  commonKanaDOJOFAQs,
+} from '@/shared/ui-composite/SEO/FAQSchema';
 import { routing } from '@/core/i18n/routing';
 
 export function generateStaticParams() {
@@ -69,3 +72,4 @@ export default async function LearnKatakanaPage({
     </>
   );
 }
+

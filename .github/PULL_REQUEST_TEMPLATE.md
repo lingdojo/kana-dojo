@@ -6,6 +6,15 @@
 
 Closes #
 
+## ✅ Pre-Submission Checklist
+
+- [ ] I have starred the repo ⭐
+- [ ] My code follows the project's code style and uses `cn()` utility where needed
+- [ ] I have run `npm run check` locally and there are no TypeScript/ESLint errors 🐞
+- [ ] My commit messages follow the [Conventional Commits](https://www.conventionalcommits.org/) format
+- [ ] I have updated the documentation (if applicable) 📖
+- [ ] This PR is against the `main` branch 
+
 ## 🎯 Type of Change
 
 - [ ] `fix`: Bug fix (non-breaking change which fixes an issue)
@@ -24,6 +33,7 @@ Closes #
 1.  ...
 2.  ...
 
+<!--
 **Manual Test Checklist:**
 
 - [ ] Tested in **Kana** dojo
@@ -31,18 +41,10 @@ Closes #
 - [ ] Tested in **Vocabulary** dojo
 - [ ] Tested all 4 game modes (Pick, Reverse-Pick, Input, Reverse-Input)
 - [ ] ... (add any other specific tests)
-
+-->
 ## 📸 Screenshots/Videos (if applicable)
 
 ...
-
-## ✅ Pre-Submission Checklist
-
-- [ ] My code follows the project's code style and uses `cn()` utility where needed.
-- [ ] I have run `npm run check` locally and there are no TypeScript/ESLint errors.
-- [ ] My commit messages follow the [Conventional Commits](https://www.conventionalcommits.org/) format.
-- [ ] I have updated the documentation (if applicable).
-- [ ] This PR is against the `main` branch.
 
 **Helpful links:** [Contributing](../blob/main/CONTRIBUTING.md) · [Troubleshooting](../blob/main/docs/TROUBLESHOOTING.md)
 

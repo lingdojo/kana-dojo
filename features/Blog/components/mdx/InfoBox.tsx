@@ -1,7 +1,7 @@
 'use client';
 
 import React, { ReactNode } from 'react';
-import { cn } from '@/shared/lib/utils';
+import { cn } from '@/shared/utils/utils';
 
 /** Supported InfoBox types */
 export type InfoBoxType = 'tip' | 'warning' | 'note' | 'success';
@@ -114,3 +114,4 @@ export function InfoBox({ type, children, title, className }: InfoBoxProps) {
 }
 
 export default InfoBox;
+

@@ -1,8 +1,8 @@
 'use client';
 
 import React from 'react';
-import { Breadcrumbs } from '@/shared/components/Breadcrumbs/Breadcrumbs';
-import type { BreadcrumbItem } from '@/shared/components/SEO/BreadcrumbSchema';
+import { Breadcrumbs } from '@/shared/ui-composite/Breadcrumbs/Breadcrumbs';
+import type { BreadcrumbItem } from '@/shared/ui-composite/SEO/BreadcrumbSchema';
 import type { Category, Subcategory } from '../types';
 
 export interface ResourceBreadcrumbsProps {
@@ -74,3 +74,4 @@ export function ResourceBreadcrumbs({
     />
   );
 }
+

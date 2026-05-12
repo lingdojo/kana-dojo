@@ -259,5 +259,29 @@
       "description": "Apprenez les caractères katakana étendus pour les mots étrangers (ファ, フィ, ウィ, ウェ, etc.). Maîtrisez les combinaisons spéciales katakana utilisées en japonais moderne.",
       "keywords": "sons étrangers katakana, katakana étendu, emprunts katakana, ファフィ, ウィウェ, katakana spécial, katakana moderne, katakana mots étrangers"
     }
+  },
+  "faq": {
+    "title": "Foire Aux Questions - Aide et Support KanaDojo",
+    "titleShort": "FAQ - Aide et Support",
+    "description": "FAQ KanaDojo : réponses claires sur l'apprentissage des Hiragana, Katakana, Kanji et du vocabulaire JLPT en ligne. Découvrez le fonctionnement du suivi de progression, les modes de pratique, la confidentialité des données et le meilleur parcours d'apprentissage.",
+    "keywords": "kanadojo faq, faq apprentissage japonais, apprendre hiragana faq, apprendre katakana faq, apprendre kanji faq, questions pratique kana, questions pratique kanji, faq préparation JLPT, plan étude jlpt n5, pratique vocabulaire japonais, comment apprendre le japonais en ligne, aide application apprentissage japonais, comment utiliser kanadojo, pratique cartes kana, pratique saisie kana, reconnaissance vs rappel, suivi progression étude japonais, stockage local navigateur, apprentissage japonais sans compte, site apprentissage japonais gratuit, dépannage étude japonais"
+  },
+  "hiraganaPractice": {
+    "title": "Pratique Hiragana - Apprendre les Hiragana Rapidement | KanaDojo",
+    "titleShort": "Pratique Hiragana",
+    "description": "Pratiquez les Hiragana japonais avec des exercices et jeux interactifs. Apprenez le tableau hiragana, améliorez votre vitesse de lecture et progressez en confiance avec un retour instantané.",
+    "keywords": "pratique hiragana, pratiquer hiragana, apprendre hiragana, tableau hiragana, exercices hiragana, quiz hiragana, jeux hiragana, hiragana japonais"
+  },
+  "katakanaPractice": {
+    "title": "Pratique Katakana - Apprendre les Katakana Rapidement | KanaDojo",
+    "titleShort": "Pratique Katakana",
+    "description": "Pratiquez les Katakana japonais avec des exercices et jeux interactifs. Maîtrisez les katakana rapidement avec un retour instantané et un suivi des progrès.",
+    "keywords": "pratique katakana, pratiquer katakana, apprendre katakana, tableau katakana, exercices katakana, quiz katakana, jeux katakana, katakana japonais"
+  },
+  "kanjiPractice": {
+    "title": "Pratique Kanji - Apprendre les Kanji par Niveau JLPT | KanaDojo",
+    "titleShort": "Pratique Kanji",
+    "description": "Pratiquez les Kanji japonais par niveau JLPT avec des exercices interactifs. Améliorez la reconnaissance, les lectures et la rétention avec des exercices rapides et un suivi des progrès.",
+    "keywords": "pratique kanji, pratiquer kanji, apprendre kanji, kanji jlpt, kanji par niveau, exercices kanji, quiz kanji, kanji japonais"
   }
 }

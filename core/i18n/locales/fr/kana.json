@@ -1,0 +1,65 @@
+{
+  "metadata": {
+    "title": "KanaDojo : Kana",
+    "description": "Le dojo kana est l'endroit où vous pouvez apprendre et pratiquer les deux syllabaires fondamentaux du japonais - les Hiragana et les Katakana."
+  },
+  "title": "Entraînement Kana",
+  "description": "Maîtrisez les Hiragana et Katakana",
+  "selection": {
+    "title": "Sélectionnez les groupes de Kana",
+    "hiragana": "Hiragana",
+    "katakana": "Katakana",
+    "selectAll": "Tout sélectionner",
+    "deselectAll": "Tout désélectionner",
+    "groups": {
+      "basic": "Base",
+      "dakuon": "Dakuon",
+      "combo": "Combinaisons",
+      "yoon": "Yōon"
+    }
+  },
+  "game": {
+    "title": "Jeu Kana",
+    "start": "Commencer",
+    "pause": "Pause",
+    "resume": "Reprendre",
+    "finish": "Terminer",
+    "nextQuestion": "Question suivante",
+    "submit": "Valider la réponse",
+    "score": "Score : {{points}}",
+    "timeLeft": "Temps restant : {{seconds}}s",
+    "streak": "Série : {{count}}",
+    "correct": "Correct !",
+    "incorrect": "Incorrect",
+    "tryAgain": "Réessayer"
+  },
+  "modes": {
+    "pick": "Mode choix",
+    "reversePick": "Choix inversé",
+    "input": "Mode saisie",
+    "reverseInput": "Saisie inversée",
+    "description": {
+      "pick": "Voir le kana, choisir la lecture",
+      "reversePick": "Voir la lecture, choisir le kana",
+      "input": "Voir le kana, taper la lecture",
+      "reverseInput": "Voir la lecture, taper le kana"
+    }
+  },
+  "results": {
+    "title": "Résultats",
+    "congratulations": "Félicitations !",
+    "correct": "Correct : {{count}}",
+    "incorrect": "Incorrect : {{count}}",
+    "accuracy": "Précision : {{percentage}}%",
+    "timeSpent": "Temps passé : {{time}}",
+    "playAgain": "Rejouer",
+    "backToMenu": "Retour au menu"
+  },
+  "dictionary": {
+    "title": "Dictionnaire Kana",
+    "search": "Rechercher un kana...",
+    "character": "Caractère",
+    "romaji": "Romaji",
+    "type": "Type"
+  }
+}

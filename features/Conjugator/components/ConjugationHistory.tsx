@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import { Trash2, Clock, X, History } from 'lucide-react';
-import { cn } from '@/shared/lib/utils';
-import { ActionButton } from '@/shared/components/ui/ActionButton';
+import { cn } from '@/shared/utils/utils';
+import { ActionButton } from '@/shared/ui/components/ActionButton';
 import {
   AlertDialog,
   AlertDialogContent,
@@ -12,7 +12,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from '@/shared/components/ui/alert-dialog';
+} from '@/shared/ui/components/alert-dialog';
 import type { HistoryEntry, VerbType } from '../types';
 
 interface ConjugationHistoryProps {
@@ -269,3 +269,4 @@ function getVerbTypeInfo(type: VerbType): {
       };
   }
 }
+

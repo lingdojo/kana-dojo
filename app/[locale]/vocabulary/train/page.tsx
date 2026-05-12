@@ -1,8 +1,8 @@
-import VocabGame from '@/features/Vocabulary/components/Game';
+import { VocabularyGame } from '@/features/Vocabulary';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/core/i18n/metadata-helpers';
-import { CourseSchema } from '@/shared/components/SEO/CourseSchema';
-import { BreadcrumbSchema } from '@/shared/components/SEO/BreadcrumbSchema';
+import { CourseSchema } from '@/shared/ui-composite/SEO/CourseSchema';
+import { BreadcrumbSchema } from '@/shared/ui-composite/SEO/BreadcrumbSchema';
 import { routing } from '@/core/i18n/routing';
 
 export function generateStaticParams() {
@@ -40,7 +40,8 @@ export default function Train() {
         skillLevel='Beginner to Advanced'
         learningResourceType='Interactive Vocabulary Training'
       />
-      <VocabGame />
+      <VocabularyGame />
     </>
   );
 }
+

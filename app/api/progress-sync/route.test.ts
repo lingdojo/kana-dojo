@@ -12,13 +12,13 @@ const mockRedisGetJson = vi.fn();
 const mockRedisPipeline = vi.fn();
 const mockCheckProgressSyncRateLimit = vi.fn();
 
-vi.mock('@/shared/lib/redis', () => ({
+vi.mock('@/shared/infra/server/redis', () => ({
   hasRedisConfig: () => mockHasRedisConfig(),
   redisGetJson: (...args: unknown[]) => mockRedisGetJson(...args),
   redisPipeline: (...args: unknown[]) => mockRedisPipeline(...args),
 }));
 
-vi.mock('@/shared/lib/rateLimit', () => ({
+vi.mock('@/shared/infra/server/rateLimit', () => ({
   checkProgressSyncRateLimit: (...args: unknown[]) =>
     mockCheckProgressSyncRateLimit(...args),
   createRateLimitHeaders: (result: {

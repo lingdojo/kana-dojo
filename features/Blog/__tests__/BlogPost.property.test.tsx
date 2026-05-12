@@ -18,7 +18,7 @@ import {
 import { BlogPost } from '../components/BlogPost';
 
 // Mock next-intl Link component
-vi.mock('@/shared/components/navigation/Link', () => ({
+vi.mock('@/shared/ui-composite/navigation/Link', () => ({
   Link: ({
     children,
     href,
@@ -135,7 +135,7 @@ const validHeadingsArb: fc.Arbitrary<Heading[]> = fc
   .map(headings => {
     // Ensure no skipped levels in the hierarchy
     // Track the minimum level we've seen so far
-    let minLevel = 2;
+    const minLevel = 2;
     return headings.map((heading, index) => {
       // First heading should be h2
       if (index === 0) {
@@ -361,3 +361,4 @@ describe('Property 19: Heading Hierarchy Maintained', () => {
     );
   });
 });
+

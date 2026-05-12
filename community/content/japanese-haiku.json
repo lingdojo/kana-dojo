@@ -1,19 +1,9 @@
-[{
-  "japanese": "痩蛙 負けるな一茶 これにあり",
-  "romaji": "Yasegaeru / makeru na Issa / kore ni ari",
-  "english": "Skinny frog, don't give up! Issa is here with you.",
-  "poet": "Kobayashi Issa",
-  "season": "Spring",
-  "kigo": "Frog (kaeru)",
-  "notes": "Humorous encouragement and compassion in Issa's voice."
-}, 
 {
-  "japanese": "春の海ひねもすのたりのたりかな",
-  "romaji": "Haru no umi / hinemosu notari / notari kana",
-  "english": "The spring sea stretches lazily all day, rising and falling.",
-  "poet": "Yosa Buson",
-  "season": "Spring",
-  "kigo": "Spring sea (haru no umi)",
-  "notes": "Known for musical phrasing and calm motion."
-}
-]
+    "japanese": "痩蛙 負けるな一茶 これにあり",
+    "romaji": "Yasegaeru / makeru na Issa / kore ni ari",
+    "english": "Skinny frog, don't give up! Issa is here with you.",
+    "poet": "Kobayashi Issa",
+    "season": "Spring",
+    "kigo": "Frog (kaeru)",
+    "notes": "Humorous encouragement and compassion in Issa's voice."
+  }

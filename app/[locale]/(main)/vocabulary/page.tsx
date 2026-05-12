@@ -1,10 +1,14 @@
-import VocabMenu from '@/shared/components/Menu/VocabMenu';
+import { VocabMenu } from '@/widgets';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/core/i18n/metadata-helpers';
-import { CourseSchema } from '@/shared/components/SEO/CourseSchema';
-import { BreadcrumbSchema } from '@/shared/components/SEO/BreadcrumbSchema';
-import { FAQSchema, commonKanaDOJOFAQs } from '@/shared/components/SEO/FAQSchema';
-import { LearningResourceSchema } from '@/shared/components/SEO/LearningResourceSchema';
+import { CourseSchema } from '@/shared/ui-composite/SEO/CourseSchema';
+import { BreadcrumbSchema } from '@/shared/ui-composite/SEO/BreadcrumbSchema';
+import {
+  FAQSchema,
+  commonKanaDOJOFAQs,
+} from '@/shared/ui-composite/SEO/FAQSchema';
+import { LearningResourceSchema } from '@/shared/ui-composite/SEO/LearningResourceSchema';
+import { DojoRouteSchema } from '@/shared/ui-composite/SEO/DojoRouteSchema';
 import { routing } from '@/core/i18n/routing';
 
 // Generate static pages for all locales at build time
@@ -70,8 +74,23 @@ export default async function VocabularyPage({
           targetName: 'N5-N1',
         }}
       />
+      <DojoRouteSchema
+        routeKey='vocabulary'
+        locale={locale}
+        title='Vocabulary Dojo - Learn Japanese Words & Vocabulary by JLPT Level'
+        description='Build Japanese vocabulary by JLPT level with interactive set drills, quizzes, and fast review. Practice meanings, readings, and usage from N5 to N1.'
+        canonicalPath='/vocabulary'
+        teaches='Japanese vocabulary, word readings, meanings, and usage'
+        assesses='Vocabulary recognition, recall speed, and JLPT-level word knowledge'
+        educationalAlignment={{
+          alignmentType: 'educationalLevel',
+          educationalFramework: 'JLPT',
+          targetName: 'N5-N1',
+        }}
+      />
       <FAQSchema faqs={commonKanaDOJOFAQs} />
       <VocabMenu />
     </>
   );
 }
+

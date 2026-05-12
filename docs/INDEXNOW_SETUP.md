@@ -64,7 +64,10 @@ It should return your key as plain text.
 Call the utility functions when content changes:
 
 ```typescript
-import { notifyPageUpdate, notifyPageUpdateAllLocales } from '@/shared/lib/indexnow';
+import {
+  notifyPageUpdate,
+  notifyPageUpdateAllLocales,
+} from '@/shared/utils/indexnow';
 
 // When publishing a new blog post
 await notifyPageUpdateAllLocales('/academy/new-post-slug');
@@ -121,18 +124,21 @@ Track IndexNow submissions:
 ## Troubleshooting
 
 ### Key File Not Accessible
+
 - Ensure the file is in `public/` directory
 - Check that the filename exactly matches your key
 - Verify the file is deployed to production
 - Check there are no extra file extensions (.txt.txt)
 
 ### Submissions Failing
+
 - Verify `INDEXNOW_KEY` environment variable is set in production
 - Check that URLs are using `https://kanadojo.com` domain
 - Ensure the key matches the public key file
 - Review API error responses in logs
 
 ### Not Seeing Results in Bing
+
 - IndexNow notifies search engines but doesn't guarantee immediate indexing
 - Typically takes 1-24 hours for Bing to crawl and index
 - Check Bing Webmaster Tools for crawl errors
@@ -143,3 +149,4 @@ Track IndexNow submissions:
 - [IndexNow Official Documentation](https://www.indexnow.org/)
 - [Bing IndexNow Guide](https://www.bing.com/indexnow)
 - [IndexNow API Specification](https://www.indexnow.org/documentation)
+

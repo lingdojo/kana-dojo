@@ -41,13 +41,15 @@ const AchievementProgress = () => {
       />
 
       {/* Category Tabs & Achievement Grid */}
-      <div className='px-6 py-6'>
+      <div className='py-6 sm:px-6'>
         <div className='mx-auto max-w-6xl'>
-          <CategoryTabs
-            selectedCategory={selectedCategory}
-            onCategorySelect={handleCategorySelect}
-            getCategoryStats={getCategoryStats}
-          />
+          <div className='px-4 sm:px-0'>
+            <CategoryTabs
+              selectedCategory={selectedCategory}
+              onCategorySelect={handleCategorySelect}
+              getCategoryStats={getCategoryStats}
+            />
+          </div>
 
           <AchievementGrid
             achievements={filteredAchievements}
@@ -58,7 +60,9 @@ const AchievementProgress = () => {
         </div>
 
         {/* Achievement Management Section */}
-        <AchievementManagement />
+        <div className='mt-8 px-4 sm:px-0'>
+          <AchievementManagement />
+        </div>
       </div>
     </div>
   );

@@ -102,7 +102,7 @@ export const buttonBorderStyles = clsx(
 **Usage:**
 
 ```tsx
-import { buttonBorderStyles } from '@/shared/lib/styles';
+import { buttonBorderStyles } from '@/shared/utils/styles';
 
 <button className={buttonBorderStyles}>Click me</button>;
 ```
@@ -694,7 +694,7 @@ const buttonVariants = cva(
 )} />
 
 // Extract repeated patterns to shared/lib/styles.ts
-import { buttonBorderStyles } from '@/shared/lib/styles';
+import { buttonBorderStyles } from '@/shared/utils/styles';
 
 // Use responsive prefixes consistently
 <div className="flex flex-col md:flex-row lg:gap-8" />
@@ -852,7 +852,7 @@ interface KanaCharacter {} // Already in lib/interfaces.ts
 'use client';
 
 import { cn } from '@/lib/utils';
-import { cardBorderStyles } from '@/shared/lib/styles';
+import { cardBorderStyles } from '@/shared/utils/styles';
 
 interface CardProps {
   title: string;
@@ -886,7 +886,7 @@ export default Card;
 'use client';
 
 import { cn } from '@/lib/utils';
-import { buttonBorderStyles } from '@/shared/lib/styles';
+import { buttonBorderStyles } from '@/shared/utils/styles';
 import { useClick } from '@/lib/hooks/useAudio';
 import { Check } from 'lucide-react';
 
@@ -982,7 +982,7 @@ const Modal = ({ isOpen, onClose, title, children }: ModalProps) => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             className={cn(
-              'fixed top-1/2 left-1/2 z-50 -translate-x-1/2 -translate-y-1/2',
+              'fixed left-1/2 top-1/2 z-50 -translate-x-1/2 -translate-y-1/2',
               'max-h-[85vh] w-full max-w-md overflow-y-auto',
               'rounded-2xl bg-[var(--background-color)] shadow-2xl',
               'p-6',
@@ -1156,3 +1156,4 @@ This document should be updated whenever:
 
 **Questions or Suggestions?**  
 Please open an issue or discussion on GitHub to improve this documentation.
+

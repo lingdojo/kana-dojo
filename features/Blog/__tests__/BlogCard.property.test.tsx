@@ -11,7 +11,7 @@ import {
 import { BlogCard } from '../components/BlogCard';
 
 // Mock next-intl Link component
-vi.mock('@/shared/components/navigation/Link', () => ({
+vi.mock('@/shared/ui-composite/navigation/Link', () => ({
   Link: ({
     children,
     href,
@@ -225,3 +225,4 @@ describe('Property 5: Blog Card Contains Required Fields', () => {
     );
   });
 });
+

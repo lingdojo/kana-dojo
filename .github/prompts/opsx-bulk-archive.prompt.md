@@ -30,16 +30,16 @@ This skill allows you to batch-archive changes, handling spec conflicts intellig
    For each selected change, collect:
 
    a. **Artifact status** - Run `openspec status --change "<name>" --json`
-      - Parse `schemaName` and `artifacts` list
-      - Note which artifacts are `done` vs other states
+   - Parse `schemaName` and `artifacts` list
+   - Note which artifacts are `done` vs other states
 
    b. **Task completion** - Read `openspec/changes/<name>/tasks.md`
-      - Count `- [ ]` (incomplete) vs `- [x]` (complete)
-      - If no tasks file exists, note as "No tasks"
+   - Count `- [ ]` (incomplete) vs `- [x]` (complete)
+   - If no tasks file exists, note as "No tasks"
 
    c. **Delta specs** - Check `openspec/changes/<name>/specs/` directory
-      - List which capability specs exist
-      - For each, extract requirement names (lines matching `### Requirement: <name>`)
+   - List which capability specs exist
+   - For each, extract requirement names (lines matching `### Requirement: <name>`)
 
 4. **Detect spec conflicts**
 
@@ -59,18 +59,18 @@ This skill allows you to batch-archive changes, handling spec conflicts intellig
    a. **Read the delta specs** from each conflicting change to understand what each claims to add/modify
 
    b. **Search the codebase** for implementation evidence:
-      - Look for code implementing requirements from each delta spec
-      - Check for related files, functions, or tests
+   - Look for code implementing requirements from each delta spec
+   - Check for related files, functions, or tests
 
    c. **Determine resolution**:
-      - If only one change is actually implemented -> sync that one's specs
-      - If both implemented -> apply in chronological order (older first, newer overwrites)
-      - If neither implemented -> skip spec sync, warn user
+   - If only one change is actually implemented -> sync that one's specs
+   - If both implemented -> apply in chronological order (older first, newer overwrites)
+   - If neither implemented -> skip spec sync, warn user
 
    d. **Record resolution** for each conflict:
-      - Which change's specs to apply
-      - In what order (if both)
-      - Rationale (what was found in codebase)
+   - Which change's specs to apply
+   - In what order (if both)
+   - Rationale (what was found in codebase)
 
 6. **Show consolidated status table**
 
@@ -86,12 +86,14 @@ This skill allows you to batch-archive changes, handling spec conflicts intellig
    ```
 
    For conflicts, show the resolution:
+
    ```
    * Conflict resolution:
      - auth spec: Will apply add-oauth then add-jwt (both implemented, chronological order)
    ```
 
    For incomplete changes, show warnings:
+
    ```
    Warnings:
    - add-verify-skill: 1 incomplete artifact, 3 incomplete tasks
@@ -100,7 +102,6 @@ This skill allows you to batch-archive changes, handling spec conflicts intellig
 7. **Confirm batch operation**
 
    Use **AskUserQuestion tool** with a single confirmation:
-
    - "Archive N changes?" with options based on status
    - Options might include:
      - "Archive all N changes"
@@ -114,20 +115,21 @@ This skill allows you to batch-archive changes, handling spec conflicts intellig
    Process changes in the determined order (respecting conflict resolution):
 
    a. **Sync specs** if delta specs exist:
-      - Use the openspec-sync-specs approach (agent-driven intelligent merge)
-      - For conflicts, apply in resolved order
-      - Track if sync was done
+   - Use the openspec-sync-specs approach (agent-driven intelligent merge)
+   - For conflicts, apply in resolved order
+   - Track if sync was done
 
    b. **Perform the archive**:
-      ```bash
-      mkdir -p openspec/changes/archive
-      mv openspec/changes/<name> openspec/changes/archive/YYYY-MM-DD-<name>
-      ```
+
+   ```bash
+   mkdir -p openspec/changes/archive
+   mv openspec/changes/<name> openspec/changes/archive/YYYY-MM-DD-<name>
+   ```
 
    c. **Track outcome** for each change:
-      - Success: archived successfully
-      - Failed: error during archive (record error)
-      - Skipped: user chose not to archive (if applicable)
+   - Success: archived successfully
+   - Failed: error during archive (record error)
+   - Skipped: user chose not to archive (if applicable)
 
 9. **Display summary**
 
@@ -150,6 +152,7 @@ This skill allows you to batch-archive changes, handling spec conflicts intellig
    ```
 
    If any failures:
+
    ```
    Failed 1 change:
    - some-change: Archive directory already exists
@@ -158,6 +161,7 @@ This skill allows you to batch-archive changes, handling spec conflicts intellig
 **Conflict Resolution Examples**
 
 Example 1: Only one implemented
+
 ```
 Conflict: specs/auth/spec.md touched by [add-oauth, add-jwt]
 
@@ -173,6 +177,7 @@ Resolution: Only add-oauth is implemented. Will sync add-oauth specs only.
 ```
 
 Example 2: Both implemented
+
 ```
 Conflict: specs/api/spec.md touched by [add-rest-api, add-graphql]
 
@@ -226,6 +231,7 @@ No active changes found. Use `/opsx:new` to create a new change.
 ```
 
 **Guardrails**
+
 - Allow any number of changes (1+ is fine, 2+ is the typical use case)
 - Always prompt for selection, never auto-select
 - Detect spec conflicts early and resolve by checking codebase

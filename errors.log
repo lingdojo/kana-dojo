@@ -1,0 +1,35 @@
+
+> kanadojo@0.1.16 check
+> tsc --noEmit --pretty && eslint .
+
+[96mfeatures/Kana/components/Game/TilesMode.tsx[0m:[93m25[0m:[93m8[0m - [91merror[0m[90m TS1261: [0mAlready included file name 'D:/github/kana-dojo/shared/components/Game/TilesModeShared.tsx' differs from file name 'D:/github/kana-dojo/shared/components/Game/tilesModeShared.tsx' only in casing.
+  The file is in the program because:
+    Imported via '@/shared/components/Game/TilesModeShared' from file 'D:/github/kana-dojo/features/Kana/components/Game/TilesMode.tsx'
+    Imported via '@/shared/components/Game/TilesModeShared' from file 'D:/github/kana-dojo/shared/components/Game/TilesModeGrid.tsx'
+    Imported via '@/shared/components/Game/TilesModeShared' from file 'D:/github/kana-dojo/features/Vocabulary/components/Game/TilesMode.tsx'
+    Imported via '@/shared/components/Game/TilesModeShared' from file 'D:/github/kana-dojo/features/Kanji/components/Game/TilesMode.tsx'
+    Matched by include pattern '**/*.tsx' in 'D:/github/kana-dojo/tsconfig.json'
+
+[7m25[0m } from '@/shared/components/Game/TilesModeShared';
+[7m  [0m [91m       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  [96mshared/components/Game/TilesModeGrid.tsx[0m:[93m12[0m:[93m8[0m
+    [7m12[0m } from '@/shared/components/Game/TilesModeShared';
+    [7m  [0m [96m       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    File is included via import here.
+  [96mfeatures/Vocabulary/components/Game/TilesMode.tsx[0m:[93m29[0m:[93m8[0m
+    [7m29[0m } from '@/shared/components/Game/TilesModeShared';
+    [7m  [0m [96m       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    File is included via import here.
+  [96mfeatures/Kanji/components/Game/TilesMode.tsx[0m:[93m26[0m:[93m8[0m
+    [7m26[0m } from '@/shared/components/Game/TilesModeShared';
+    [7m  [0m [96m       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    File is included via import here.
+  [96mtsconfig.json[0m:[93m46[0m:[93m5[0m
+    [7m46[0m     "**/*.tsx",
+    [7m  [0m [96m    ~~~~~~~~~~[0m
+    File is matched by include pattern specified here.
+
+
+Found 1 error in features/Kana/components/Game/TilesMode.tsx[90m:25[0m
+

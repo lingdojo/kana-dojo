@@ -40,6 +40,7 @@ under **Production** (and optionally Preview/Development).
 A random secret shared between Vercel and the API route.
 
 **Generate one:**
+
 ```bash
 openssl rand -hex 32
 ```
@@ -57,6 +58,7 @@ A GitHub **fine-grained personal access token** with permission to dispatch
 workflows on this repository.
 
 **Steps:**
+
 1. Go to **GitHub → Settings → Developer settings → Personal access tokens → Fine-grained tokens**
 2. Click **Generate new token**
 3. Set **Resource owner** to `lingdojo`
@@ -89,6 +91,24 @@ matching the original GitHub Actions schedule.
 > Vercel Cron Jobs require a **Pro plan or above**. On the Hobby plan crons
 > are limited to one per day. Check your plan at
 > <https://vercel.com/lingdojo/kanadojo/settings/billing>.
+
+---
+
+## Additional cronjob.org endpoints
+
+In addition to `/api/trigger-community-issue`, cronjob.org can trigger:
+
+- `POST /api/trigger-community-backlog-reset`
+  - Dispatches `.github/workflows/auto-reset-community-backlog.yml`
+  - Uses workflow inputs: `full_reset=true`, `dry_run=false`
+- `POST /api/trigger-thanos-community-content`
+  - Dispatches `.github/workflows/thanos-community-content.yml`
+  - Uses workflow inputs: `minimum_entries=100`, `prune_mode=contributors_only`, `dry_run=false`
+
+Both endpoints use the same auth model:
+
+- `Authorization: Bearer <CRON_SECRET>`
+- `GITHUB_PAT` for GitHub workflow dispatch access
 
 ---
 

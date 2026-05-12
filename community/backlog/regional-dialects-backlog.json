@@ -7,7 +7,7 @@
     "note": "Very common in Osaka/Kyoto speech. (Set 1)",
     "id": 1,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "なんでやねん",
@@ -17,7 +17,7 @@
     "note": "Classic comedic retort (tsukkomi). (Set 1)",
     "id": 2,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "めっちゃ",
@@ -27,7 +27,7 @@
     "note": "Now used nationwide. (Set 1)",
     "id": 3,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "あかん",
@@ -37,7 +37,7 @@
     "note": "Used for prohibition/failure. (Set 1)",
     "id": 4,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "〜へん",
@@ -47,7 +47,7 @@
     "note": "Example: 食べへん = 食べない。 (Set 1)",
     "id": 5,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "しばれる",
@@ -57,7 +57,7 @@
     "note": "Used for severe winter cold. (Set 1)",
     "id": 6,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "なまら",
@@ -67,7 +67,7 @@
     "note": "Hokkaido intensifier. (Set 1)",
     "id": 7,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "したっけ",
@@ -77,7 +77,7 @@
     "note": "Transition/goodbye phrase. (Set 1)",
     "id": 8,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "〜ばい",
@@ -87,7 +87,7 @@
     "note": "Assertive friendly ending. (Set 1)",
     "id": 9,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "〜けん",
@@ -97,7 +97,7 @@
     "note": "Reason marker in Kyushu. (Set 1)",
     "id": 10,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "よか",
@@ -107,7 +107,7 @@
     "note": "Common Kyushu replacement. (Set 1)",
     "id": 11,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "でら",
@@ -117,7 +117,7 @@
     "note": "Characteristic Nagoya intensifier. (Set 1)",
     "id": 12,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "〜だがや",
@@ -127,7 +127,7 @@
     "note": "Strong Nagoya marker. (Set 1)",
     "id": 13,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "ぶち",
@@ -137,7 +137,7 @@
     "note": "Regional intensifier. (Set 1)",
     "id": 14,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "〜じゃけぇ",
@@ -147,7 +147,7 @@
     "note": "Common causal ending. (Set 1)",
     "id": 15,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "いけん",
@@ -157,7 +157,7 @@
     "note": "Prohibitive nuance. (Set 1)",
     "id": 16,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "なんくるないさ",
@@ -167,7 +167,7 @@
     "note": "Famous Okinawan resilience phrase. (Set 1)",
     "id": 17,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "にふぇーでーびる",
@@ -177,7 +177,7 @@
     "note": "Okinawan gratitude expression. (Set 1)",
     "id": 18,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "〜やねん",
@@ -187,7 +187,7 @@
     "note": "Explanatory ending in conversation. (Set 1)",
     "id": 19,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "おおきに",
@@ -197,7 +197,7 @@
     "note": "Traditional gratitude expression. (Set 1)",
     "id": 20,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "ほんま",
@@ -207,7 +207,7 @@
     "note": "Very common in Osaka/Kyoto speech. (Set 2)",
     "id": 21,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "なんでやねん",
@@ -217,7 +217,7 @@
     "note": "Classic comedic retort (tsukkomi). (Set 2)",
     "id": 22,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "めっちゃ",
@@ -227,7 +227,7 @@
     "note": "Now used nationwide. (Set 2)",
     "id": 23,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "あかん",
@@ -237,7 +237,7 @@
     "note": "Used for prohibition/failure. (Set 2)",
     "id": 24,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "〜へん",
@@ -247,7 +247,7 @@
     "note": "Example: 食べへん = 食べない。 (Set 2)",
     "id": 25,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "しばれる",
@@ -257,7 +257,7 @@
     "note": "Used for severe winter cold. (Set 2)",
     "id": 26,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "なまら",
@@ -267,7 +267,7 @@
     "note": "Hokkaido intensifier. (Set 2)",
     "id": 27,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "したっけ",
@@ -277,7 +277,7 @@
     "note": "Transition/goodbye phrase. (Set 2)",
     "id": 28,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "〜ばい",
@@ -287,7 +287,7 @@
     "note": "Assertive friendly ending. (Set 2)",
     "id": 29,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "〜けん",
@@ -297,7 +297,7 @@
     "note": "Reason marker in Kyushu. (Set 2)",
     "id": 30,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "よか",
@@ -307,7 +307,7 @@
     "note": "Common Kyushu replacement. (Set 2)",
     "id": 31,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "でら",
@@ -317,7 +317,7 @@
     "note": "Characteristic Nagoya intensifier. (Set 2)",
     "id": 32,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "〜だがや",
@@ -327,7 +327,7 @@
     "note": "Strong Nagoya marker. (Set 2)",
     "id": 33,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "ぶち",
@@ -337,7 +337,7 @@
     "note": "Regional intensifier. (Set 2)",
     "id": 34,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "〜じゃけぇ",
@@ -347,7 +347,7 @@
     "note": "Common causal ending. (Set 2)",
     "id": 35,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "いけん",
@@ -357,7 +357,7 @@
     "note": "Prohibitive nuance. (Set 2)",
     "id": 36,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "なんくるないさ",
@@ -367,7 +367,7 @@
     "note": "Famous Okinawan resilience phrase. (Set 2)",
     "id": 37,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "にふぇーでーびる",
@@ -377,7 +377,7 @@
     "note": "Okinawan gratitude expression. (Set 2)",
     "id": 38,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "〜やねん",
@@ -387,7 +387,7 @@
     "note": "Explanatory ending in conversation. (Set 2)",
     "id": 39,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "おおきに",
@@ -397,7 +397,7 @@
     "note": "Traditional gratitude expression. (Set 2)",
     "id": 40,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "ほんま",
@@ -407,7 +407,7 @@
     "note": "Very common in Osaka/Kyoto speech. (Set 3)",
     "id": 41,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "なんでやねん",
@@ -417,7 +417,7 @@
     "note": "Classic comedic retort (tsukkomi). (Set 3)",
     "id": 42,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "めっちゃ",
@@ -427,7 +427,7 @@
     "note": "Now used nationwide. (Set 3)",
     "id": 43,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "あかん",
@@ -437,7 +437,7 @@
     "note": "Used for prohibition/failure. (Set 3)",
     "id": 44,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "〜へん",
@@ -447,7 +447,7 @@
     "note": "Example: 食べへん = 食べない。 (Set 3)",
     "id": 45,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "しばれる",
@@ -457,7 +457,7 @@
     "note": "Used for severe winter cold. (Set 3)",
     "id": 46,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "なまら",
@@ -467,7 +467,7 @@
     "note": "Hokkaido intensifier. (Set 3)",
     "id": 47,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "したっけ",
@@ -477,7 +477,7 @@
     "note": "Transition/goodbye phrase. (Set 3)",
     "id": 48,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "〜ばい",
@@ -487,7 +487,7 @@
     "note": "Assertive friendly ending. (Set 3)",
     "id": 49,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "〜けん",
@@ -497,7 +497,7 @@
     "note": "Reason marker in Kyushu. (Set 3)",
     "id": 50,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "よか",
@@ -507,7 +507,7 @@
     "note": "Common Kyushu replacement. (Set 3)",
     "id": 51,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "でら",
@@ -517,7 +517,7 @@
     "note": "Characteristic Nagoya intensifier. (Set 3)",
     "id": 52,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "〜だがや",
@@ -527,7 +527,7 @@
     "note": "Strong Nagoya marker. (Set 3)",
     "id": 53,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "ぶち",
@@ -537,7 +537,7 @@
     "note": "Regional intensifier. (Set 3)",
     "id": 54,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "〜じゃけぇ",
@@ -547,7 +547,7 @@
     "note": "Common causal ending. (Set 3)",
     "id": 55,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "いけん",
@@ -557,7 +557,7 @@
     "note": "Prohibitive nuance. (Set 3)",
     "id": 56,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "なんくるないさ",
@@ -567,7 +567,7 @@
     "note": "Famous Okinawan resilience phrase. (Set 3)",
     "id": 57,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "にふぇーでーびる",
@@ -577,7 +577,7 @@
     "note": "Okinawan gratitude expression. (Set 3)",
     "id": 58,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "〜やねん",
@@ -587,7 +587,7 @@
     "note": "Explanatory ending in conversation. (Set 3)",
     "id": 59,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "おおきに",
@@ -597,7 +597,7 @@
     "note": "Traditional gratitude expression. (Set 3)",
     "id": 60,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "ほんま",
@@ -607,7 +607,7 @@
     "note": "Very common in Osaka/Kyoto speech. (Set 4)",
     "id": 61,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "なんでやねん",
@@ -617,7 +617,7 @@
     "note": "Classic comedic retort (tsukkomi). (Set 4)",
     "id": 62,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "めっちゃ",
@@ -627,7 +627,7 @@
     "note": "Now used nationwide. (Set 4)",
     "id": 63,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "あかん",
@@ -637,7 +637,7 @@
     "note": "Used for prohibition/failure. (Set 4)",
     "id": 64,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "〜へん",
@@ -647,7 +647,7 @@
     "note": "Example: 食べへん = 食べない。 (Set 4)",
     "id": 65,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "しばれる",
@@ -657,7 +657,7 @@
     "note": "Used for severe winter cold. (Set 4)",
     "id": 66,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "なまら",
@@ -667,7 +667,7 @@
     "note": "Hokkaido intensifier. (Set 4)",
     "id": 67,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "したっけ",
@@ -677,7 +677,7 @@
     "note": "Transition/goodbye phrase. (Set 4)",
     "id": 68,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "〜ばい",
@@ -687,7 +687,7 @@
     "note": "Assertive friendly ending. (Set 4)",
     "id": 69,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "〜けん",
@@ -697,7 +697,7 @@
     "note": "Reason marker in Kyushu. (Set 4)",
     "id": 70,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "よか",
@@ -707,7 +707,7 @@
     "note": "Common Kyushu replacement. (Set 4)",
     "id": 71,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "でら",
@@ -717,7 +717,7 @@
     "note": "Characteristic Nagoya intensifier. (Set 4)",
     "id": 72,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "〜だがや",
@@ -727,7 +727,7 @@
     "note": "Strong Nagoya marker. (Set 4)",
     "id": 73,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "ぶち",
@@ -737,7 +737,7 @@
     "note": "Regional intensifier. (Set 4)",
     "id": 74,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "〜じゃけぇ",
@@ -747,7 +747,7 @@
     "note": "Common causal ending. (Set 4)",
     "id": 75,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "いけん",
@@ -757,7 +757,7 @@
     "note": "Prohibitive nuance. (Set 4)",
     "id": 76,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "なんくるないさ",
@@ -767,7 +767,7 @@
     "note": "Famous Okinawan resilience phrase. (Set 4)",
     "id": 77,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "にふぇーでーびる",
@@ -777,7 +777,7 @@
     "note": "Okinawan gratitude expression. (Set 4)",
     "id": 78,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "〜やねん",
@@ -787,7 +787,7 @@
     "note": "Explanatory ending in conversation. (Set 4)",
     "id": 79,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "おおきに",
@@ -797,7 +797,7 @@
     "note": "Traditional gratitude expression. (Set 4)",
     "id": 80,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "ほんま",
@@ -807,7 +807,7 @@
     "note": "Very common in Osaka/Kyoto speech. (Set 5)",
     "id": 81,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "なんでやねん",
@@ -817,7 +817,7 @@
     "note": "Classic comedic retort (tsukkomi). (Set 5)",
     "id": 82,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "めっちゃ",
@@ -827,7 +827,7 @@
     "note": "Now used nationwide. (Set 5)",
     "id": 83,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "あかん",
@@ -837,7 +837,7 @@
     "note": "Used for prohibition/failure. (Set 5)",
     "id": 84,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "〜へん",
@@ -847,7 +847,7 @@
     "note": "Example: 食べへん = 食べない。 (Set 5)",
     "id": 85,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "しばれる",
@@ -857,7 +857,7 @@
     "note": "Used for severe winter cold. (Set 5)",
     "id": 86,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "なまら",
@@ -867,7 +867,7 @@
     "note": "Hokkaido intensifier. (Set 5)",
     "id": 87,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "したっけ",
@@ -877,7 +877,7 @@
     "note": "Transition/goodbye phrase. (Set 5)",
     "id": 88,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "〜ばい",
@@ -887,7 +887,7 @@
     "note": "Assertive friendly ending. (Set 5)",
     "id": 89,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "〜けん",
@@ -897,7 +897,7 @@
     "note": "Reason marker in Kyushu. (Set 5)",
     "id": 90,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "よか",
@@ -907,7 +907,7 @@
     "note": "Common Kyushu replacement. (Set 5)",
     "id": 91,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "でら",
@@ -917,7 +917,7 @@
     "note": "Characteristic Nagoya intensifier. (Set 5)",
     "id": 92,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "〜だがや",
@@ -927,7 +927,7 @@
     "note": "Strong Nagoya marker. (Set 5)",
     "id": 93,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "ぶち",
@@ -937,7 +937,7 @@
     "note": "Regional intensifier. (Set 5)",
     "id": 94,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "〜じゃけぇ",
@@ -947,7 +947,7 @@
     "note": "Common causal ending. (Set 5)",
     "id": 95,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "いけん",
@@ -957,7 +957,7 @@
     "note": "Prohibitive nuance. (Set 5)",
     "id": 96,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "なんくるないさ",
@@ -967,7 +967,7 @@
     "note": "Famous Okinawan resilience phrase. (Set 5)",
     "id": 97,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "にふぇーでーびる",
@@ -977,7 +977,7 @@
     "note": "Okinawan gratitude expression. (Set 5)",
     "id": 98,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "〜やねん",
@@ -987,7 +987,7 @@
     "note": "Explanatory ending in conversation. (Set 5)",
     "id": 99,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "おおきに",
@@ -996,8 +996,8 @@
     "region": "Kansai",
     "note": "Traditional gratitude expression. (Set 5)",
     "id": 100,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "ほんま",
@@ -1007,7 +1007,7 @@
     "note": "Very common in Osaka/Kyoto speech. (Set 6)",
     "id": 101,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "なんでやねん",
@@ -1017,7 +1017,7 @@
     "note": "Classic comedic retort (tsukkomi). (Set 6)",
     "id": 102,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "めっちゃ",
@@ -1027,7 +1027,7 @@
     "note": "Now used nationwide. (Set 6)",
     "id": 103,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "あかん",
@@ -1037,7 +1037,7 @@
     "note": "Used for prohibition/failure. (Set 6)",
     "id": 104,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "〜へん",
@@ -1047,7 +1047,7 @@
     "note": "Example: 食べへん = 食べない。 (Set 6)",
     "id": 105,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "しばれる",
@@ -1057,7 +1057,7 @@
     "note": "Used for severe winter cold. (Set 6)",
     "id": 106,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "なまら",
@@ -1066,8 +1066,8 @@
     "region": "Hokkaido",
     "note": "Hokkaido intensifier. (Set 6)",
     "id": 107,
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": true
   },
   {
     "dialect": "したっけ",
@@ -1077,7 +1077,7 @@
     "note": "Transition/goodbye phrase. (Set 6)",
     "id": 108,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "〜ばい",
@@ -1087,7 +1087,7 @@
     "note": "Assertive friendly ending. (Set 6)",
     "id": 109,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "〜けん",
@@ -1097,7 +1097,7 @@
     "note": "Reason marker in Kyushu. (Set 6)",
     "id": 110,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "よか",
@@ -1107,7 +1107,7 @@
     "note": "Common Kyushu replacement. (Set 6)",
     "id": 111,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "でら",
@@ -1117,7 +1117,7 @@
     "note": "Characteristic Nagoya intensifier. (Set 6)",
     "id": 112,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "〜だがや",
@@ -1127,7 +1127,7 @@
     "note": "Strong Nagoya marker. (Set 6)",
     "id": 113,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "ぶち",
@@ -1137,7 +1137,7 @@
     "note": "Regional intensifier. (Set 6)",
     "id": 114,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "〜じゃけぇ",
@@ -1147,7 +1147,7 @@
     "note": "Common causal ending. (Set 6)",
     "id": 115,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "いけん",
@@ -1157,7 +1157,7 @@
     "note": "Prohibitive nuance. (Set 6)",
     "id": 116,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "なんくるないさ",
@@ -1167,7 +1167,7 @@
     "note": "Famous Okinawan resilience phrase. (Set 6)",
     "id": 117,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "にふぇーでーびる",
@@ -1177,7 +1177,7 @@
     "note": "Okinawan gratitude expression. (Set 6)",
     "id": 118,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "〜やねん",
@@ -1187,7 +1187,7 @@
     "note": "Explanatory ending in conversation. (Set 6)",
     "id": 119,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "dialect": "おおきに",
@@ -1197,6 +1197,6 @@
     "note": "Traditional gratitude expression. (Set 6)",
     "id": 120,
     "issued": false,
-    "completed": false
+    "completed": true
   }
 ]

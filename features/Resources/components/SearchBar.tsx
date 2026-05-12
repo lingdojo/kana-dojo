@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useRef, useId } from 'react';
-import { cn } from '@/shared/lib/utils';
+import { cn } from '@/shared/utils/utils';
 import { Search, X } from 'lucide-react';
 
 // ============================================================================
@@ -127,3 +127,4 @@ export function SearchBar({
 }
 
 export default SearchBar;
+

@@ -11,8 +11,8 @@
 'use client';
 
 import { useState, useCallback, useRef } from 'react';
-import { cn } from '@/shared/lib/utils';
-import { Button } from '@/shared/components/ui/button';
+import { cn } from '@/shared/utils/utils';
+import { Button } from '@/shared/ui/components/button';
 import { useConversionWorker } from '../hooks/useConversionWorker';
 import {
   getAcceptString,
@@ -457,9 +457,7 @@ export function ConverterInterface({
                 <span className='font-mono text-sm text-(--main-color)'>
                   {ext}
                 </span>
-                <span className='text-xs text-(--text-color)/50'>
-                  {name}
-                </span>
+                <span className='text-xs text-(--text-color)/50'>{name}</span>
               </div>
             ))}
           </div>
@@ -477,3 +475,4 @@ export function ConverterInterface({
     </div>
   );
 }
+

@@ -1,0 +1,126 @@
+{
+  "meta": {
+    "title": "Traducteur japonais - Traduire anglais-japonais et japonais-anglais | KanaDojo",
+    "description": "Traducteur japonais gratuit en ligne. Traduisez de l'anglais vers le japonais ou du japonais vers l'anglais instantanément. Inclut la romanisation (romaji), l'historique de traduction et des traductions précises propulsées par Google Translate."
+  },
+  "header": {
+    "title": "Traducteur japonais"
+  },
+  "languages": {
+    "english": "Anglais",
+    "japanese": "日本語",
+    "en": "EN",
+    "ja": "JA"
+  },
+  "input": {
+    "placeholder": {
+      "en": "Entrez le texte à traduire...",
+      "ja": "テキストを入力してください..."
+    },
+    "clearButton": "Effacer la saisie",
+    "characterCount": "{count} / {max}",
+    "keyboardHint": "Appuyez sur Ctrl+Entrée (⌘+Entrée sur Mac) pour traduire",
+    "characterLimitWarning": "Le texte dépasse la longueur maximale de {max} caractères"
+  },
+  "output": {
+    "placeholder": {
+      "en": "La traduction apparaîtra ici...",
+      "ja": "翻訳がここに表示されます..."
+    },
+    "copyButton": "Copier la traduction",
+    "copied": "Copié !",
+    "copiedMessage": "Copié dans le presse-papiers !",
+    "romanization": "Romanisation (Romaji)"
+  },
+  "actions": {
+    "translate": "Traduire",
+    "translating": "Traduction en cours...",
+    "swapLanguages": "Inverser les langues"
+  },
+  "history": {
+    "title": "Historique",
+    "empty": "Aucun historique de traduction",
+    "emptyHint": "Vos traductions apparaîtront ici",
+    "clearAll": "Tout effacer",
+    "deleteEntry": "Supprimer l'entrée",
+    "clearDialog": {
+      "title": "Effacer l'historique de traduction ?",
+      "description": "Ceci supprimera définitivement tout votre historique de traduction. Cette action est irréversible.",
+      "cancel": "Annuler",
+      "confirm": "Tout effacer"
+    },
+    "timeAgo": {
+      "justNow": "À l'instant",
+      "minutesAgo": "Il y a {count}min",
+      "hoursAgo": "Il y a {count}h",
+      "daysAgo": "Il y a {count}j"
+    }
+  },
+  "offline": {
+    "message": "Vous êtes hors ligne. La traduction est indisponible jusqu'à ce que vous vous reconnectiez."
+  },
+  "errors": {
+    "networkError": "Connexion impossible. Veuillez vérifier votre connexion internet.",
+    "rateLimit": "Trop de requêtes. Veuillez patienter un instant et réessayer.",
+    "invalidInput": "Veuillez entrer un texte valide à traduire.",
+    "emptyInput": "Veuillez entrer un texte à traduire",
+    "serverError": "Le service de traduction est temporairement indisponible.",
+    "authError": "Erreur de configuration du service de traduction.",
+    "unknownError": "Une erreur est survenue lors de la traduction. Veuillez réessayer."
+  },
+  "seo": {
+    "guideTitle": "Guide de traduction japonaise",
+    "howToUse": {
+      "title": "Comment utiliser le traducteur japonais",
+      "intro": "Notre traducteur japonais gratuit facilite la traduction de texte entre l'anglais et le japonais. Voici comment commencer :",
+      "steps": {
+        "step1": "Entrez votre texte dans le champ de saisie à gauche",
+        "step2": "Sélectionnez votre langue source (anglais ou japonais)",
+        "step3": "Cliquez sur le bouton traduire ou appuyez sur Ctrl+Entrée",
+        "step4": "Consultez votre traduction avec la romanisation (romaji) pour le texte japonais",
+        "step5": "Copiez la traduction ou enregistrez-la dans votre historique"
+      },
+      "proTip": "Astuce : utilisez le bouton d'inversion pour inverser rapidement la direction de traduction et retraduire le résultat."
+    },
+    "writingSystems": {
+      "title": "À propos des systèmes d'écriture japonais",
+      "intro": "Le japonais utilise trois systèmes d'écriture principaux, souvent combinés dans le même texte :",
+      "hiragana": {
+        "name": "Hiragana (ひらがな)",
+        "description": "Un syllabaire phonétique utilisé pour les mots japonais natifs, les éléments grammaticaux et les lectures furigana"
+      },
+      "katakana": {
+        "name": "Katakana (カタカナ)",
+        "description": "Un syllabaire phonétique principalement utilisé pour les mots empruntés aux langues étrangères, les onomatopées et l'accentuation"
+      },
+      "kanji": {
+        "name": "Kanji (漢字)",
+        "description": "Des caractères chinois adaptés au japonais, représentant des significations et des concepts. Il existe plus de 2 000 kanji couramment utilisés"
+      },
+      "outro": "Notre traducteur gère les trois systèmes d'écriture et fournit la romanisation (romaji) pour vous aider à lire le texte japonais en utilisant l'alphabet latin."
+    },
+    "faq": {
+      "title": "Foire aux questions",
+      "isFree": {
+        "question": "Ce traducteur japonais est-il gratuit ?",
+        "answer": "Oui ! Notre traducteur japonais est entièrement gratuit et sans inscription requise. Traduisez autant de texte que vous le souhaitez."
+      },
+      "accuracy": {
+        "question": "Quelle est la précision de la traduction ?",
+        "answer": "Notre traducteur utilise l'API Google Cloud Translation, l'un des services de traduction automatique les plus précis disponibles. Bien qu'aucune traduction automatique ne soit parfaite, il fournit des traductions de haute qualité pour la plupart des usages courants."
+      },
+      "romanization": {
+        "question": "Qu'est-ce que la romanisation (romaji) ?",
+        "answer": "La romanisation, ou romaji, est la représentation du texte japonais à l'aide de l'alphabet latin. Elle aide les non-japonophones à lire et prononcer les mots japonais. Notre traducteur fournit automatiquement la romanisation pour le texte japonais."
+      },
+      "historySaved": {
+        "question": "Mon historique de traduction est-il sauvegardé ?",
+        "answer": "Oui, votre historique de traduction est sauvegardé localement dans votre navigateur. Cela signifie que vos traductions sont privées et accessibles uniquement sur votre appareil. Vous pouvez effacer votre historique à tout moment."
+      },
+      "maxLength": {
+        "question": "Quelle est la longueur maximale du texte ?",
+        "answer": "Vous pouvez traduire jusqu'à 5 000 caractères à la fois. Pour les textes plus longs, nous recommandons de les diviser en sections plus courtes."
+      }
+    }
+  }
+}

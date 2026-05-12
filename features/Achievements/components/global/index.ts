@@ -4,3 +4,6 @@ export {
   default as AchievementNotification,
   AchievementNotificationContainer,
 } from './AchievementNotification';
+export {
+  AchievementPromptsContainer
+} from './AchievementPrompts';

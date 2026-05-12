@@ -8,7 +8,6 @@
  */
 import {
   Atom,
-  Sun,
   Moon,
   LucideIcon,
   CloudLightning,
@@ -66,6 +65,13 @@ const baseThemeSets: BaseThemeGroup[] = [
     icon: Atom,
     isLight: false,
     themes: [
+      {
+        id: 'sapphire-bloom',
+        displayName: 'sapphire bloom',
+        backgroundColor: 'oklch(23.44% 0.0432 267.85 / 1)',
+        mainColor: 'oklch(79.09% 0.1242 299.66 / 1)',
+        secondaryColor: 'oklch(89.39% 0.1672 171.49 / 1)',
+      },
       {
         id: 'light',
         isLight: true,
@@ -140,12 +146,6 @@ const baseThemeSets: BaseThemeGroup[] = [
     isLight: false,
     themes: [
       {
-        id: 'sapphire-bloom',
-        backgroundColor: 'oklch(23.44% 0.0432 267.85 / 1)',
-        mainColor: 'oklch(79.09% 0.1242 299.66 / 1)',
-        secondaryColor: 'oklch(89.39% 0.1672 171.49 / 1)',
-      },
-      {
         id: 'monkeytype',
         backgroundColor: 'oklch(33.94% 0.0062 248.01 / 1)',
         mainColor: 'oklch(81.03% 0.1625 94.11 / 1)',
@@ -157,6 +157,7 @@ const baseThemeSets: BaseThemeGroup[] = [
         mainColor: 'oklch(82.0% 0.040 230.0 / 1)',
         secondaryColor: 'oklch(70.0% 0.095 260.0 / 1)',
       },
+
       {
         id: 'fuji-shadow',
         backgroundColor: 'oklch(15.0% 0.015 250.0 / 1)',
@@ -177,7 +178,7 @@ const baseThemeSets: BaseThemeGroup[] = [
       },
       {
         id: 'tsukimi-night',
-        displayName: 'Tsukimi Night',
+        displayName: 'tsukimi night',
         backgroundColor: 'oklch(14.0% 0.030 260.0 / 1)',
         mainColor: 'oklch(88.0% 0.050 230.0 / 1)',
         secondaryColor: 'oklch(68.0% 0.075 260.0 / 1)',
@@ -386,7 +387,7 @@ const baseThemeSets: BaseThemeGroup[] = [
         secondaryColor: 'oklch(79.5% 0.205 28.0 / 1)', // deep coral
       },
       {
-        id: 'yumemizu-deepdream',
+        id: 'deepdream',
         backgroundColor: 'oklch(20.5% 0.012 288.7 / 1)',
         mainColor: 'oklch(90.4% 0.216 274.7 / 1)',
         secondaryColor: 'oklch(92.6% 0.173 338.0 / 1)',
@@ -1160,7 +1161,7 @@ const baseThemeSets: BaseThemeGroup[] = [
     ],
   },
   {
-    name: 'Extra',
+    name: 'Special',
     icon: Sparkles,
     isLight: false,
     themes: [

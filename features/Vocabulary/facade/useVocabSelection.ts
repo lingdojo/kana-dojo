@@ -1,8 +1,8 @@
 'use client';
 
 import { useMemo } from 'react';
+import type { IVocabObj } from '@/entities/vocabulary';
 import useVocabStore from '../store/useVocabStore';
-import type { IVocabObj } from '../store/useVocabStore';
 
 /**
  * Vocabulary Selection Facade - Public API for selection state
@@ -14,6 +14,7 @@ export interface VocabSelection {
   selectedVocab: IVocabObj[];
   selectedSets: string[];
   selectedCollection: string;
+  selectedSubunitByUnit: Partial<Record<string, string>>;
   totalSelected: number;
   isEmpty: boolean;
   gameMode: string;
@@ -26,6 +27,7 @@ export interface VocabSelectionActions {
   setCollection: (collection: string) => void;
   setSets: (sets: string[]) => void;
   clearSets: () => void;
+  setSubunitForUnit: (unit: string, subunitId: string) => void;
   setGameMode: (mode: string) => void;
 }
 
@@ -34,6 +36,9 @@ export function useVocabSelection(): VocabSelection & VocabSelectionActions {
   const selectedSets = useVocabStore(state => state.selectedVocabSets);
   const selectedCollection = useVocabStore(
     state => state.selectedVocabCollection,
+  );
+  const selectedSubunitByUnit = useVocabStore(
+    state => state.selectedSubunitByUnit,
   );
   const gameMode = useVocabStore(state => state.selectedGameModeVocab);
   const addVocab = useVocabStore(state => state.addVocabObj);
@@ -44,6 +49,9 @@ export function useVocabSelection(): VocabSelection & VocabSelectionActions {
   );
   const setSets = useVocabStore(state => state.setSelectedVocabSets);
   const clearSets = useVocabStore(state => state.clearVocabSets);
+  const setSubunitForUnit = useVocabStore(
+    state => state.setSelectedSubunitForUnit,
+  );
   const setGameMode = useVocabStore(state => state.setSelectedGameModeVocab);
 
   return useMemo(
@@ -52,6 +60,7 @@ export function useVocabSelection(): VocabSelection & VocabSelectionActions {
       selectedVocab,
       selectedSets,
       selectedCollection,
+      selectedSubunitByUnit,
       totalSelected: selectedVocab.length,
       isEmpty: selectedVocab.length === 0,
       gameMode,
@@ -63,12 +72,14 @@ export function useVocabSelection(): VocabSelection & VocabSelectionActions {
       setCollection,
       setSets,
       clearSets,
+      setSubunitForUnit,
       setGameMode,
     }),
     [
       selectedVocab,
       selectedSets,
       selectedCollection,
+      selectedSubunitByUnit,
       gameMode,
       addVocab,
       addVocabList,
@@ -76,6 +87,7 @@ export function useVocabSelection(): VocabSelection & VocabSelectionActions {
       setCollection,
       setSets,
       clearSets,
+      setSubunitForUnit,
       setGameMode,
     ],
   );

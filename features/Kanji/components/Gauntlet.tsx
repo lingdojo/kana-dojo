@@ -4,9 +4,9 @@ import React from 'react';
 import useKanjiStore, {
   type IKanjiObj,
 } from '@/features/Kanji/store/useKanjiStore';
-import Gauntlet, { type GauntletConfig } from '@/shared/components/Gauntlet';
-import { getSelectionLabels } from '@/shared/lib/selectionFormatting';
-import { shuffle, pickOne } from '@/shared/lib/shuffle';
+import Gauntlet, { type GauntletConfig } from '@/shared/ui-composite/Gauntlet';
+import { getSelectionLabels } from '@/shared/utils/selectionFormatting';
+import { shuffle, pickOne } from '@/shared/utils/shuffle';
 
 interface GauntletKanjiProps {
   onCancel?: () => void;
@@ -94,3 +94,4 @@ const GauntletKanji: React.FC<GauntletKanjiProps> = ({ onCancel }) => {
 };
 
 export default GauntletKanji;
+

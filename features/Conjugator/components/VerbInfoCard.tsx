@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { ChevronDown, ChevronUp, BookOpen, Info } from 'lucide-react';
-import { cn } from '@/shared/lib/utils';
+import { cn } from '@/shared/utils/utils';
 import type { VerbInfo, VerbType, IrregularType } from '../types';
 
 interface VerbInfoCardProps {
@@ -308,3 +308,4 @@ function getIrregularTypeInfo(irregularType: IrregularType): {
       };
   }
 }
+

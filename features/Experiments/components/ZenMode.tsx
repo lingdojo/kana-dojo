@@ -3,9 +3,9 @@ import { useEffect, useState } from 'react';
 import { Home } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import clsx from 'clsx';
-import { useClick } from '@/shared/hooks/useAudio';
+import { useClick } from '@/shared/hooks/generic/useAudio';
 import useDecorationsStore from '@/shared/store/useDecorationsStore';
-import Decorations from '@/features/MainMenu/Decorations';
+import Decorations from '@/shared/ui-composite/Decorations/Decorations';
 
 const ZenMode = () => {
   const [isMounted, setIsMounted] = useState(false);

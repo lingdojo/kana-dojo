@@ -2,9 +2,9 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { cn } from '@/shared/lib/utils';
+import { cn } from '@/shared/utils/utils';
 import { Clock, Target, Zap, Trophy, Timer } from 'lucide-react';
-import { ActionButton } from '@/shared/components/ui/ActionButton';
+import { ActionButton } from '@/shared/ui/components/ActionButton';
 import type { TimedModeStats, ContentType } from '../../types/stats';
 
 /**
@@ -196,11 +196,11 @@ export default function BlitzStatsPanel({
           </div>
 
           {/* Pill tabs with smooth sliding animation */}
-          <div className='flex gap-1 rounded-[22px] bg-(--background-color) p-1.5'>
+          <div className='flex w-full gap-0 rounded-2xl bg-(--background-color) p-0 sm:w-auto'>
             {CONTENT_TABS.map(tab => {
               const isSelected = activeTab === tab.value;
               return (
-                <div key={tab.value} className='relative'>
+                <div key={tab.value} className='relative flex-1'>
                   {/* Smooth sliding background indicator */}
                   {isSelected && (
                     <motion.div
@@ -216,7 +216,7 @@ export default function BlitzStatsPanel({
                   <button
                     onClick={() => setActiveTab(tab.value)}
                     className={cn(
-                      'relative z-10 cursor-pointer rounded-2xl px-5 pt-2 pb-4 text-sm font-semibold transition-colors duration-300',
+                      'relative z-10 w-full cursor-pointer rounded-2xl px-5 pt-2 pb-4 text-sm font-semibold transition-colors duration-300',
                       isSelected
                         ? 'text-(--background-color)'
                         : 'text-(--secondary-color)/70 hover:text-(--main-color)',
@@ -267,3 +267,4 @@ export function getTimedModeDisplayValues(stats: TimedModeStats): {
     total: stats.correct + stats.wrong,
   };
 }
+

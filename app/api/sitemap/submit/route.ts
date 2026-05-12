@@ -71,7 +71,7 @@ export async function POST(request: NextRequest) {
       });
     }
 
-    const allSuccess = results.every((r) => r.success);
+    const allSuccess = results.every(r => r.success);
 
     return NextResponse.json(
       {

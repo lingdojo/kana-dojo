@@ -4,13 +4,15 @@ This file provides comprehensive guidance for AI coding assistants (GitHub Copil
 
 ---
 
-**Never use `npm run build` for verification** â€” it takes 1-2 minutes and adds no validation value.
+**Never use `npm run build` for verification** — it takes 1-2 minutes and adds no validation value.
 
 ---
 
 ## Shell Environment
 
-**Windows PowerShell**: use `;` â€” **Linux/macOS/WSL**: use `&&`.
+**Windows PowerShell**: use `;` 
+
+**Linux/macOS/WSL**: use `&&`
 
 <!-- examples commented out: `npm run lint; npm run test` -->
 
@@ -29,19 +31,19 @@ This file provides comprehensive guidance for AI coding assistants (GitHub Copil
 | i18n      | next-intl (namespace-based)              |
 | Testing   | Vitest with jsdom                        |
 
-**URLs**: [kanadojo.com](https://kanadojo.com) Â· [GitHub](https://github.com/lingdojo/kanadojo)
+**URLs**: [kanadojo.com](https://kanadojo.com) · [GitHub](https://github.com/lingdojo/kanadojo)
 
 ---
 
-## Architecture â€” feature-based (short)
+## Architecture — feature-based (short)
 
-KanaDojo is organized by feature: app/, features/, shared/, core/. Keep business logic inside features and avoid cross-feature internal imports.
-
----
+KanaDojo is organised by feature: app/, features/, shared/, core/. Keep business logic inside features and avoid cross-feature internal imports.
 
 ---
 
-## Code style & state â€” quick rules
+---
+
+## Code style & state — quick rules
 
 - Imports: use path aliases (`@/...`), avoid cross-feature relative imports.
 - TypeScript: strict mode; fix errors; prefer `interface` for public APIs.
@@ -63,8 +65,8 @@ KanaDojo is organized by feature: app/, features/, shared/, core/. Keep business
 
 ### Do's / Don'ts (short)
 
-- âœ… Use TypeScript types, path aliases, and translations.
-- âŒ Donâ€™t add business logic to `app/` or create circular deps.
+- ✅ Use TypeScript types, path aliases, and translations.
+- ❌ Don't add business logic to `app/` or create circular deps.
 
 ### Common tasks
 

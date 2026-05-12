@@ -12,6 +12,7 @@ export {
   AchievementIntegration,
   AchievementNotification,
   AchievementNotificationContainer,
+  AchievementPromptsContainer,
 } from './global';
 
 // Progress page components

@@ -1,4 +1,4 @@
-import SidebarLayout from '@/shared/components/layout/SidebarLayout';
+import SidebarLayout from '@/shared/ui-composite/layout/SidebarLayout';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/core/i18n/metadata-helpers';
 
@@ -21,3 +21,4 @@ export default function ExperimentsLayout({
 }) {
   return <SidebarLayout showBanner={false}>{children}</SidebarLayout>;
 }
+

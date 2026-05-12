@@ -3,13 +3,16 @@
 <br/>
 <br/>
 <a href="https://vercel.com/oss">
-  <img alt="Vercel OSS Program" src="https://vercel.com/oss/program-badge.svg" />
+  <img alt="Vercel OSS Program" src="https://vercel.com/oss/program-badge-2026.svg" />
 </a>
 <br/>
 <br/>
+<a href="https://cossistant.com/open-source-program">
+  <img alt="Cossistant OSS Program" src="https://cdn.cossistant.com/oss/oss-friends.svg" />
+</a>
 </p>
 
-<div id="top"></div>
+<!--<div id="top"></div>-->
 
 # KanaDojo かな道場
 
@@ -19,10 +22,11 @@
 
 ![Training](https://github.com/user-attachments/assets/d491708f-2ad3-41c7-9717-dec8a90afd03)
 
-**An aesthetic, minimalist and highly customizable platform for mastering Japanese inspired by Duolingo and Monkeytype. Built with Next.js and sponsored by Vercel**
+**An aesthetic, minimalist, and highly customizable platform for mastering Japanese, inspired by Duolingo and Monkeytype. Built with Next.js and sponsored by Vercel.**
 
-[![Vercel OSS Program](https://img.shields.io/badge/Vercel-OSS%20Program-black?style=for-the-badge&logo=vercel)](https://vercel.com/oss)
+[![Vercel OSS Program](https://img.shields.io/badge/Vercel-OSS%20Program-black?style=for-the-badge&logo=vercel)](https://vercel.com/open-source-program)
 [![Sponsored by Vercel](https://img.shields.io/badge/Sponsored%20by-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/oss)
+<!--[![Sponsored by Cossistant](https://cdn.cossistant.com/oss/oss-friends.svg)](https://cossistant.com/open-source-program)-->
 [![Live Demo](https://img.shields.io/badge/demo-kanadojo.com-blue?style=for-the-badge)](https://kanadojo.com)
 [![DeepWiki](https://img.shields.io/badge/docs-DeepWiki-purple?style=for-the-badge)](https://deepwiki.com/lingdojo/kana-dojo)
 [![Good First Issues](https://img.shields.io/github/issues-search/lingdojo/kana-dojo?query=is%3Aissue+is%3Aopen+label%3A%22good%20first%20issue%22&style=for-the-badge&label=good%20first%20issues&color=brightgreen)](https://github.com/lingdojo/kana-dojo/issues?q=is%3Aissue+is%3Aopen+label%3A%22good%20first%20issue%22)
@@ -49,7 +53,7 @@ This README is available in multiple languages:
 
 ## About
 
-KanaDojo is an engaging web-based Japanese learning platform that makes mastering Hiragana, Katakana, Kanji, and Vocabulary fun and intuitive. Built with a focus on aesthetics, customization, and effective learning, it provides an immersive training environment for Japanese language learners at all levels.
+KanaDojo is an engaging and user-friendly web-based Japanese learning platform that makes mastering Hiragana, Katakana, Kanji, and vocabulary fun and intuitive. Built with a focus on aesthetics, customization, and effective learning, it provides an immersive training environment for Japanese language learners at all levels.
 
 ## Contributing
 
@@ -57,7 +61,7 @@ KanaDojo is an engaging web-based Japanese learning platform that makes masterin
 
 Start with the [Beginner's Contribution Guide](./docs/CONTRIBUTING-BEGINNERS.md) for a step-by-step walkthrough that explains everything from creating a GitHub account to opening your first PR.
 
-### Not a beginner?
+### Not a Beginner?
 
 All contributions are welcome! Whether you're fixing bugs, adding features, improving documentation, or translating — check out [CONTRIBUTING.md](./CONTRIBUTING.md) to get started.
 
@@ -124,10 +128,44 @@ npm run check
 | [All Documentation](./docs/)                              | Complete documentation index                   |
 
 ## Tech Stack
-
-Next.js 15 · React 19 · TypeScript · Tailwind CSS · shadcn/ui · Zustand · Framer Motion
+- [Next.js](https://nextjs.org/) 15  
+- [React](https://react.dev/) 19  
+- [TypeScript](https://www.typescriptlang.org/)  
+- [Tailwind CSS](https://tailwindcss.com/)  
+- [shadcn/ui](https://ui.shadcn.com/)  
+- [Zustand](https://github.com/pmndrs/zustand)  
+- [Framer Motion](https://www.framer.com/motion/)
 
 > See [Architecture docs](./docs/ARCHITECTURE.md) for full technical details.
+
+## Credits
+
+### Logo
+
+- [Brandon Haupt](https://www.instagram.com/talorash/) — creator of the KanaDojo logo.
+
+### Sponsors
+
+- [Vercel](https://vercel.com/oss) — part of Vercel's Open-source Software Sponsorship Program.
+- [Cossistant](https://cossistant.com/) — part of Cossistant's Open-source Program.
+
+### Inspiration
+
+- [Duolingo](https://www.duolingo.com/) — main inspiration.
+- [Monkeytype](https://github.com/monkeytypegame/monkeytype) — UI and design inspiration.
+
+### Japanese Language Libraries
+
+- [Kuroshiro](https://github.com/hexenq/kuroshiro) — Japanese text conversion and romanization.
+- [Kuromoji](https://github.com/takuyaa/kuromoji.js) — Japanese tokenizer used for text analysis.
+- [Wanakana](https://github.com/WaniKani/WanaKana) — kana and romaji transliteration helpers.
+
+### Data Sources
+
+- [JMdict](https://www.edrdg.org/jmdict/j_jmdict.html) — Japanese-English dictionary data.
+- [KANJIDIC](http://www.edrdg.org/wiki/index.php/KANJIDIC_Project) — kanji readings and meanings database.
+- [Jonathan Waller's JLPT Resources](https://japanesetest4you.com/) — JLPT study references.
+- [jlptsensei.com](https://jlptsensei.com/) — JLPT vocabulary and study material.
 
 ## Star History
 
@@ -150,7 +188,7 @@ This project is licensed under the AGPL 3.0 License — see [LICENSE.md](./LICEN
 
 <div align="center">
 
-**Made with ❤️ for Japanese language learners worldwide**
+**Made with ❤️ by the open-source community for Japanese language learners worldwide**
 
 がんばって！ (Ganbatte! — Do your best!)
 

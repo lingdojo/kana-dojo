@@ -1,0 +1,30 @@
+{
+  "title": "实验功能",
+  "description": "探索测试中的新功能和替代学习方法",
+  "warning": {
+    "title": "实验性功能",
+    "description": "这些功能正在测试中，可能会发生变化或被移除。"
+  },
+  "features": {
+    "zen": {
+      "title": "禅模式",
+      "description": "无干扰的专注学习环境",
+      "status": "测试中"
+    },
+    "spacedRepetition": {
+      "title": "间隔重复",
+      "description": "智能复习提醒系统",
+      "status": "开发中"
+    },
+    "voiceInput": {
+      "title": "语音输入",
+      "description": "使用语音回答问题",
+      "status": "计划中"
+    }
+  },
+  "feedback": {
+    "title": "反馈",
+    "description": "帮助我们改进这些功能",
+    "submit": "提交反馈"
+  }
+}

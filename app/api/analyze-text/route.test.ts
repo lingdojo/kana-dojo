@@ -8,7 +8,7 @@ const mockSetRedisCachedJson = vi.fn();
 const mockAnalyzerInit = vi.fn();
 const mockAnalyzerParse = vi.fn();
 
-vi.mock('@/shared/lib/rateLimit', () => ({
+vi.mock('@/shared/infra/server/rateLimit', () => ({
   checkAnalyzeRateLimit: (...args: unknown[]) =>
     mockCheckAnalyzeRateLimit(...args),
   createRateLimitHeaders: () => {
@@ -23,7 +23,7 @@ vi.mock('@/shared/lib/rateLimit', () => ({
   getClientIP: () => '127.0.0.1',
 }));
 
-vi.mock('@/shared/lib/apiCache', () => ({
+vi.mock('@/shared/infra/client/apiCache', () => ({
   getRedisCachedJson: (...args: unknown[]) => mockGetRedisCachedJson(...args),
   setRedisCachedJson: (...args: unknown[]) => mockSetRedisCachedJson(...args),
 }));

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { cn } from '@/shared/lib/utils';
+import { cn } from '@/shared/utils/utils';
 import { CheckCircle2, Circle, Lightbulb, Loader2 } from 'lucide-react';
 import {
   analyzeText,
@@ -313,3 +313,4 @@ export default function TranslationAlternatives({
     </div>
   );
 }
+

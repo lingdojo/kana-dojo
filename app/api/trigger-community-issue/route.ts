@@ -2,7 +2,10 @@ import { NextResponse } from 'next/server';
 
 const WORKFLOW_FILE = 'hourly-community-issue.yml';
 const REPO_OWNER = 'lingdojo';
-const REPO_NAME = 'kanadojo';
+const REPO_NAME = 'kana-dojo';
+const GITHUB_DISPATCH_TIMEOUT_MS = 8000;
+
+export const runtime = 'edge';
 
 /**
  * POST /api/trigger-community-issue
@@ -32,27 +35,49 @@ export async function POST(request: Request) {
   const githubPat = process.env.GITHUB_PAT;
 
   if (!githubPat) {
-    return NextResponse.json({ error: 'GITHUB_PAT not configured' }, { status: 500 });
+    return NextResponse.json(
+      { error: 'GITHUB_PAT not configured' },
+      { status: 500 },
+    );
   }
 
   const url = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/actions/workflows/${WORKFLOW_FILE}/dispatches`;
 
-  const response = await fetch(url, {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${githubPat}`,
-      Accept: 'application/vnd.github+json',
-      'X-GitHub-Api-Version': '2022-11-28',
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ ref: 'main' }),
-  });
+  let response: Response;
+  try {
+    response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${githubPat}`,
+        Accept: 'application/vnd.github+json',
+        'X-GitHub-Api-Version': '2022-11-28',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ ref: 'main' }),
+      signal: AbortSignal.timeout(GITHUB_DISPATCH_TIMEOUT_MS),
+    });
+  } catch (error) {
+    const detail = error instanceof Error ? error.message : String(error);
+    console.error(
+      `[trigger-community-issue] GitHub dispatch request failed: ${detail}`,
+    );
+    return NextResponse.json(
+      { error: 'GitHub dispatch request failed', detail },
+      { status: 504 },
+    );
+  }
 
   if (!response.ok) {
     const body = await response.text().catch(() => '');
-    console.error(`[trigger-community-issue] GitHub API error ${response.status}: ${body}`);
+    console.error(
+      `[trigger-community-issue] GitHub API error ${response.status}: ${body}`,
+    );
     return NextResponse.json(
-      { error: 'GitHub API error', status: response.status },
+      {
+        error: 'GitHub API error',
+        githubStatus: response.status,
+        githubBody: body,
+      },
       { status: 502 },
     );
   }

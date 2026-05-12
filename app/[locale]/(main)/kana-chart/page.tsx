@@ -1,7 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import KanaChartDisplay from './KanaChartDisplay';
 import { routing } from '@/core/i18n/routing';
-import { BreadcrumbSchema } from '@/shared/components/SEO/BreadcrumbSchema';
+import { BreadcrumbSchema } from '@/shared/ui-composite/SEO/BreadcrumbSchema';
 
 export function generateStaticParams() {
   return routing.locales.map(locale => ({ locale }));
@@ -11,7 +11,7 @@ export const revalidate = 3600;
 
 export async function generateMetadata() {
   return {
-    title: 'Hiragana & Katakana Chart - Complete Kana Reference | KanaDojo',
+    title: 'Kana Chart | Hiragana Katakana Reference | KanaDojo',
     description:
       'Complete Hiragana and Katakana chart with all characters, romanization, and pronunciation guide. Free interactive Japanese kana reference table for learners.',
     keywords:

@@ -6,7 +6,7 @@ import useVisitStore from '../store/useVisitStore';
 import useAchievementStore, {
   ACHIEVEMENTS,
 } from '@/features/Achievements/store/useAchievementStore';
-import { getOverallStats } from '@/shared/lib/gauntletStats';
+import { getOverallStats } from '@/shared/utils/gauntletStats';
 import { classifyCharacter } from '../lib/classifyCharacter';
 import { detectContentType } from '../lib/detectContentType';
 import { calculateAccuracy } from '../lib/calculateAccuracy';
@@ -428,3 +428,4 @@ export function getTopMasteredCharacters(
 }
 
 export default useStatsAggregator;
+

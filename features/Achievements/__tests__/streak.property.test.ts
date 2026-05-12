@@ -261,8 +261,6 @@ describe('Property 4: Streak Achievement Unlocking', () => {
         fc.constantFrom(...streakAchievements),
         fc.integer({ min: 0, max: 500 }),
         (achievement: Achievement, additionalStreak: number) => {
-          const { value } = achievement.requirements;
-
           // If threshold is met, any higher value should also unlock
           const statsAtThreshold = createStatsForStreakAchievement(
             achievement,

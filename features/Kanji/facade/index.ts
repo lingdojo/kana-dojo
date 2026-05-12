@@ -5,4 +5,4 @@ export type {
 } from './useKanjiSelection';
 
 // Re-export types for convenience
-export type { IKanjiObj } from '../store/useKanjiStore';
+export type { IKanjiObj } from '@/entities/kanji';

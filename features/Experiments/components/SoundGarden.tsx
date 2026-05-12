@@ -2,7 +2,7 @@
 import { useEffect, useState, useCallback } from 'react';
 import { Volume2 } from 'lucide-react';
 import clsx from 'clsx';
-import { useCorrect } from '@/shared/hooks/useAudio';
+import { useCorrect } from '@/shared/hooks/generic/useAudio';
 import { hiraganaOnly } from '../data/kanaData';
 
 interface GardenTile {

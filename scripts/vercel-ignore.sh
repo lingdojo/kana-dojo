@@ -4,48 +4,145 @@
 # Exit 0 = Skip build (ignore)
 # Exit 1 = Proceed with build
 
-# Get list of changed files
-CHANGED_FILES=""
+set -o pipefail
 
-LAST_COMMIT_MESSAGE=$(git log -1 --pretty=%s 2>/dev/null)
+is_skip_file() {
+  case "$1" in
+    community/*)
+      return 0
+      ;;
+    @community/*)
+      return 0
+      ;;
+    *.md|*.MD)
+      return 0
+      ;;
+    package.json|package-lock.json)
+      return 0
+      ;;
+    *)
+      return 1
+      ;;
+  esac
+}
+
+is_merge_commit() {
+  local commit_sha="$1"
+  local parent_count=""
+  parent_count=$(git rev-list --parents -n 1 "$commit_sha" 2>/dev/null | awk '{print NF-1}')
+  [ "${parent_count:-0}" -gt 1 ]
+}
+
+get_changed_files() {
+  local files=""
+  local all_files=""
+  local had_nonempty=0
+  local commit_sha="${VERCEL_GIT_COMMIT_SHA:-HEAD}"
+
+  append_files() {
+    local candidate="$1"
+    candidate="$(printf '%s\n' "$candidate" | tr -d '\r' | sed '/^$/d')"
+    if [ -n "$candidate" ]; then
+      had_nonempty=1
+      all_files="$(printf '%s\n%s\n' "$all_files" "$candidate")"
+    fi
+  }
+
+  append_with_label() {
+    local label="$1"
+    local candidate="$2"
+    local count=0
+    count=$(printf '%s\n' "$candidate" | tr -d '\r' | sed '/^$/d' | wc -l | tr -d ' ')
+    if [ "${count:-0}" -gt 0 ]; then
+      echo "Diff source: ${label} (${count} files)" >&2
+      append_files "$candidate"
+    fi
+  }
+
+  # Canonical source for normal commits in Vercel.
+  if [ -n "${VERCEL_GIT_PREVIOUS_SHA:-}" ] && [ -n "${VERCEL_GIT_COMMIT_SHA:-}" ]; then
+    files=$(git diff "${VERCEL_GIT_PREVIOUS_SHA}..${VERCEL_GIT_COMMIT_SHA}" --name-only 2>/dev/null || true)
+    append_with_label "previous..current" "$files"
+  fi
+
+  # Merge commits must use first-parent diff only, otherwise second-parent history
+  # can introduce false positives and trigger unnecessary deployments.
+  if [ -n "${VERCEL_GIT_COMMIT_SHA:-}" ] && is_merge_commit "${VERCEL_GIT_COMMIT_SHA}"; then
+    files=$(git diff "${VERCEL_GIT_COMMIT_SHA}^1..${VERCEL_GIT_COMMIT_SHA}" --name-only 2>/dev/null || true)
+    append_with_label "merge-first-parent" "$files"
+  elif [ -n "${VERCEL_GIT_COMMIT_SHA:-}" ]; then
+    files=$(git show --name-only --pretty="" "${VERCEL_GIT_COMMIT_SHA}" 2>/dev/null || true)
+    append_with_label "commit-show" "$files"
+  fi
+
+  # Local fallbacks (non-Vercel or missing metadata contexts).
+  if [ "$had_nonempty" -eq 0 ]; then
+    files=$(git diff HEAD~1 HEAD --name-only 2>/dev/null || true)
+    append_with_label "local-head-diff" "$files"
+  fi
+
+  if [ "$had_nonempty" -eq 0 ]; then
+    files=$(git show --name-only --pretty="" HEAD 2>/dev/null || true)
+    append_with_label "local-head-show" "$files"
+  fi
+
+  if [ "$had_nonempty" -eq 1 ]; then
+    printf '%s\n' "$all_files" | sed '/^$/d' | sort -u
+    return 0
+  fi
+
+  printf ''
+}
+
+LAST_COMMIT_MESSAGE="${VERCEL_IGNORE_TEST_COMMIT_MESSAGE:-$(git log -1 --pretty=%s "${VERCEL_GIT_COMMIT_SHA:-HEAD}" 2>/dev/null || true)}"
 if [[ "$LAST_COMMIT_MESSAGE" == chore\(automation\):* ]]; then
   echo "🔵 Automation commit detected; skipping build."
   exit 0
 fi
 
-# Log Vercel Git environment presence for troubleshooting
 if [ -n "${VERCEL_GIT_COMMIT_SHA:-}" ] || [ -n "${VERCEL_GIT_PREVIOUS_SHA:-}" ] || [ -n "${VERCEL_GIT_PULL_REQUEST_BASE_BRANCH:-}" ]; then
   echo "Vercel Git context detected (env vars present)."
 else
   echo "Vercel Git context not detected (env vars missing)."
 fi
 
-if [ -n "${VERCEL_GIT_PULL_REQUEST_BASE_BRANCH:-}" ] && [ -n "${VERCEL_GIT_COMMIT_SHA:-}" ]; then
-  git fetch origin "${VERCEL_GIT_PULL_REQUEST_BASE_BRANCH}" --depth=1 2>/dev/null
-  CHANGED_FILES=$(git diff "origin/${VERCEL_GIT_PULL_REQUEST_BASE_BRANCH}...${VERCEL_GIT_COMMIT_SHA}" --name-only 2>/dev/null)
-fi
-
-if [ -z "$CHANGED_FILES" ] && [ -n "${VERCEL_GIT_PREVIOUS_SHA:-}" ] && [ -n "${VERCEL_GIT_COMMIT_SHA:-}" ]; then
-  CHANGED_FILES=$(git diff "${VERCEL_GIT_PREVIOUS_SHA}...${VERCEL_GIT_COMMIT_SHA}" --name-only 2>/dev/null)
-fi
-
-if [ -z "$CHANGED_FILES" ]; then
-  CHANGED_FILES=$(git diff HEAD~1 HEAD --name-only 2>/dev/null)
+if [ -n "${VERCEL_IGNORE_TEST_CHANGED_FILES:-}" ]; then
+  echo "Using injected changed files for evaluation (test mode)."
+  CHANGED_FILES="$(printf '%b' "${VERCEL_IGNORE_TEST_CHANGED_FILES}" | tr -d '\r' | sed '/^$/d')"
+else
+  CHANGED_FILES="$(get_changed_files | tr -d '\r' | sed '/^$/d')"
 fi
 
 if [ -z "$CHANGED_FILES" ]; then
-  CHANGED_FILES=$(git show --name-only --pretty="" HEAD 2>/dev/null)
-fi
-
-if [ -z "$CHANGED_FILES" ]; then
+  if [[ "$LAST_COMMIT_MESSAGE" =~ ^Merge\ pull\ request\ #[0-9]+ ]]; then
+    echo "🟡 Could not determine changed files for merge commit; conservatively skipping build."
+    exit 0
+  fi
   echo "🟡 Could not determine changed files via git diff. Proceeding with build."
   exit 1
 fi
 
-# Fast-path: only community data changes should never trigger a build
-ONLY_COMMUNITY_DATA=$(echo "$CHANGED_FILES" | grep -vE '^(community/backlog/|community/content/|@community/backlog/|@community/content/)' | grep -v '^$' | wc -l)
-if [ "$ONLY_COMMUNITY_DATA" -eq 0 ]; then
-  echo "Only community data changed. Skipping build."
+REMAINING_FILES=""
+while IFS= read -r file; do
+  [ -z "$file" ] && continue
+  normalized_file=$(printf '%s' "$file" | tr '\\' '/' | sed 's|^\./||')
+  if is_skip_file "$normalized_file"; then
+    echo "Skipping non-production file: $normalized_file"
+    continue
+  fi
+  REMAINING_FILES="${REMAINING_FILES}${normalized_file}"$'\n'
+done <<EOF
+$CHANGED_FILES
+EOF
+
+REMAINING_FILES="$(printf '%s' "$REMAINING_FILES" | sed '/^$/d')"
+
+if [ -z "$REMAINING_FILES" ]; then
+  if [[ "$LAST_COMMIT_MESSAGE" =~ ^Merge\ pull\ request\ #[0-9]+ ]]; then
+    echo "INFO: Merge PR contains only non-production files. Skipping build."
+    exit 0
+  fi
+  echo "Only community, markdown, or package manifest files changed. Skipping build."
   exit 0
 fi
 
@@ -131,6 +228,7 @@ IGNORE_PATTERNS=(
   # Config files (non-build-affecting)
   "^next-sitemap\\.config\\.js$"
   "^components\\.json$"
+  "^package-lock\\.json$"
   
   # Data and community content (non-build affecting)
   "^features/Preferences/data/themes\\.ts$"
@@ -154,9 +252,13 @@ IGNORE_PATTERNS=(
 COMBINED_PATTERN=$(IFS="|"; echo "${IGNORE_PATTERNS[*]}")
 
 # Filter out ignored files and count remaining
-REMAINING=$(echo "$CHANGED_FILES" | grep -vE "$COMBINED_PATTERN" | grep -v '^$' | wc -l)
+REMAINING=$(printf '%s\n' "$REMAINING_FILES" | grep -vE "$COMBINED_PATTERN" | grep -v '^$' | wc -l)
 
 if [ "$REMAINING" -eq 0 ]; then
+  if [[ "$LAST_COMMIT_MESSAGE" =~ ^Merge\ pull\ request\ #[0-9]+ ]]; then
+    echo "INFO: Merge PR contains only ignored non-production paths. Skipping build."
+    exit 0
+  fi
   echo "🔵 Only non-production files changed. Skipping build."
   exit 0
 else

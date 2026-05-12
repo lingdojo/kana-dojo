@@ -1,0 +1,33 @@
+{
+  "title": "Succès",
+  "description": "Suivez votre progression et débloquez des succès",
+  "unlocked": "Débloqué",
+  "locked": "Verrouillé",
+  "progress": "Progression : {{current}}/{{total}}",
+  "earnedOn": "Obtenu le {{date}}",
+  "categories": {
+    "all": "Tout",
+    "kana": "Kana",
+    "kanji": "Kanji",
+    "vocabulary": "Vocabulaire",
+    "general": "Général",
+    "special": "Spécial"
+  },
+  "rarity": {
+    "common": "Commun",
+    "rare": "Rare",
+    "epic": "Épique",
+    "legendary": "Légendaire"
+  },
+  "notifications": {
+    "achievementUnlocked": "Succès débloqué !",
+    "congratulations": "Félicitations !",
+    "youEarned": "Vous avez obtenu"
+  },
+  "stats": {
+    "totalAchievements": "Total des succès",
+    "unlockedAchievements": "Débloqués",
+    "completionRate": "Taux de complétion",
+    "recentAchievements": "Succès récents"
+  }
+}

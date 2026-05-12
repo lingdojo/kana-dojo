@@ -1,0 +1,34 @@
+{
+  "pageTitle": "Blog",
+  "pageDescription": "Explorez notre collection d'articles sur l'apprentissage du japonais couvrant les Hiragana, Katakana, Kanji, le vocabulaire, la grammaire et la culture japonaise.",
+  "metaTitle": "Blog - Articles sur l'apprentissage du japonais | KanaDojo",
+  "metaDescription": "Explorez notre collection d'articles sur l'apprentissage du japonais couvrant les Hiragana, Katakana, Kanji, le vocabulaire, la grammaire et la culture japonaise. Contenu éducatif gratuit pour tous les niveaux.",
+  "categories": {
+    "all": "Tout",
+    "hiragana": "Hiragana",
+    "katakana": "Katakana",
+    "kanji": "Kanji",
+    "vocabulary": "Vocabulaire",
+    "grammar": "Grammaire",
+    "culture": "Culture"
+  },
+  "filter": {
+    "label": "Filtrer les articles par catégorie",
+    "noResults": "Aucun article trouvé dans cette catégorie."
+  },
+  "card": {
+    "readMore": "En savoir plus sur {title}"
+  },
+  "post": {
+    "by": "Par {author}",
+    "updated": "Mis à jour : {date}",
+    "readingTime": "{minutes} min de lecture",
+    "tableOfContents": "Sur cette page",
+    "relatedPosts": "Articles similaires"
+  },
+  "difficulty": {
+    "beginner": "Débutant",
+    "intermediate": "Intermédiaire",
+    "advanced": "Avancé"
+  }
+}

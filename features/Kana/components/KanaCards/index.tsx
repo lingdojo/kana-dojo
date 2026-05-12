@@ -2,11 +2,12 @@
 import { Fragment, useState } from 'react';
 import clsx from 'clsx';
 import Subset from './Subset';
-import { useClick } from '@/shared/hooks/useAudio';
-import { cardBorderStyles } from '@/shared/lib/styles';
+import { useClick } from '@/shared/hooks/generic/useAudio';
+import { cardBorderStyles } from '@/shared/utils/styles';
 import { ChevronUp } from 'lucide-react';
 
 const STORAGE_KEY = 'kana-hidden-subsets';
+const USE_NEW_KANA_BADGE_DESIGN = true;
 
 type KanaCardsFilter = 'all' | 'hiragana' | 'katakana';
 
@@ -15,6 +16,28 @@ const DEFAULT_SHOWN_SUBSETS: Record<KanaCardsFilter, string[]> = {
   hiragana: ['hiragana ひらがな', 'hbase'],
   katakana: ['katakana カタカナ', 'kbase'],
 };
+
+const groupKanaBadgeByName: Record<string, string> = {
+  'Hiragana ひらがな': 'あ',
+  'Katakana カタカナ': 'ア',
+};
+
+const subsetKanaBadgeByName: Record<string, string> = {
+  HBase: 'か',
+  HDakuon: 'が',
+  HYoon: 'ゃ',
+  KBase: 'カ',
+  KDakuon: 'ガ',
+  KYoon: 'ャ',
+  'KForeign Sounds': 'フ',
+};
+
+const headingBadgeClasses = {
+  group:
+    'flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border-b-4 border-(--secondary-color-accent) bg-(--secondary-color) text-base leading-none text-(--background-color) transition-colors duration-300 group-hover:border-(--main-color) group-hover:border-b-(--main-color-accent) group-hover:bg-(--main-color)',
+  subset:
+    'flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border-b-4 border-(--secondary-color-accent) bg-(--secondary-color) text-sm leading-none text-(--background-color) transition-colors duration-300 group-hover:border-(--main-color) group-hover:border-b-(--main-color-accent) group-hover:bg-(--main-color)',
+} as const;
 
 const kanaGroups = [
   {
@@ -149,13 +172,21 @@ const KanaCards = ({ filter = 'all' }: { filter?: KanaCardsFilter }) => {
             >
               {/* Group Header */}
               <legend
-                className='group flex flex-row items-center gap-1 text-2xl hover:cursor-pointer'
+                className={clsx(
+                  'group flex flex-row items-center hover:cursor-pointer',
+                  USE_NEW_KANA_BADGE_DESIGN ? 'gap-2 text-[1.9rem]' : 'gap-1 text-2xl',
+                )}
                 onClick={() => toggleVisibility(group.name)}
               >
                 <ChevronUp className={chevronClasses(groupHidden)} />
+                {USE_NEW_KANA_BADGE_DESIGN && (
+                  <span className={headingBadgeClasses.group}>
+                    {groupKanaBadgeByName[group.name] ?? 'あ'}
+                  </span>
+                )}
                 <h3 className='flex items-center gap-2'>
                   <span>{mainTitle}</span>
-                  <span className='text-(--secondary-color)'>
+                  <span className='hidden text-(--secondary-color) xl:inline'>
                     {japaneseTitle}
                   </span>
                 </h3>
@@ -175,13 +206,23 @@ const KanaCards = ({ filter = 'all' }: { filter?: KanaCardsFilter }) => {
                       <div>
                         {/* Subset Header */}
                         <h4
-                          className='group flex flex-row items-center gap-1 text-xl hover:cursor-pointer'
+                          className={clsx(
+                            'group flex flex-row items-center hover:cursor-pointer',
+                            USE_NEW_KANA_BADGE_DESIGN
+                              ? 'gap-2 text-[1.5rem]'
+                              : 'gap-1 text-xl',
+                          )}
                           onClick={() => toggleVisibility(subset.name)}
                         >
                           <ChevronUp
                             className={chevronClasses(subsetHidden)}
                             size={24}
                           />
+                          {USE_NEW_KANA_BADGE_DESIGN && (
+                            <span className={headingBadgeClasses.subset}>
+                              {subsetKanaBadgeByName[subset.name] ?? 'あ'}
+                            </span>
+                          )}
                           <span>{subset.name.slice(1)}</span>
                         </h4>
 
@@ -211,3 +252,4 @@ const KanaCards = ({ filter = 'all' }: { filter?: KanaCardsFilter }) => {
 };
 
 export default KanaCards;
+

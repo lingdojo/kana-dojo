@@ -1,5 +1,23 @@
 [
   {
+    "version": "0.1.17",
+    "date": "April 21, 2026",
+    "changes": [
+      "Refined the Difficulty selector for a smoother, more polished feel",
+      "Updated the Unit selector with a cleaner framed presentation"
+    ]
+  },
+  {
+    "version": "0.1.16",
+    "date": "March 30, 2026",
+    "changes": [
+      "Three stunning new community themes: Calligraphy Ink, Ginkgo Gold, and Sunset Train",
+      "Expanded Japanese learning library with new trivia questions, proverbs, video game quotes, and anime quotes",
+      "Added more false friends (words that look similar but mean different things) to help avoid common mistakes",
+      "Enhanced theme selection with pointer cursor on hover"
+    ]
+  },
+  {
     "version": "0.1.15",
     "date": "February 21, 2026",
     "changes": [

@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { routing } from '@/core/i18n/routing';
-import { BreadcrumbSchema } from '@/shared/components/SEO/BreadcrumbSchema';
-import { Breadcrumbs } from '@/shared/components/Breadcrumbs';
+import { BreadcrumbSchema } from '@/shared/ui-composite/SEO/BreadcrumbSchema';
+import { Breadcrumbs } from '@/shared/ui-composite/Breadcrumbs';
 
 export function generateStaticParams() {
   return routing.locales.map(locale => ({ locale }));
@@ -98,9 +98,7 @@ export default async function JLPTN4Page({
                 <h3 className='mb-2 font-semibold text-(--main-color)'>
                   Vocabulary
                 </h3>
-                <p className='text-2xl font-bold text-(--main-color)'>
-                  ~1,500
-                </p>
+                <p className='text-2xl font-bold text-(--main-color)'>~1,500</p>
                 <p className='text-sm'>Total words needed</p>
               </div>
               <div>
@@ -264,3 +262,4 @@ export default async function JLPTN4Page({
     </>
   );
 }
+

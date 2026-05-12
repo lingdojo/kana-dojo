@@ -123,8 +123,14 @@ KanaDojo uses the following custom domains:
 
 Vercel uses the `ignoreCommand` defined in `vercel.json` (`bash scripts/vercel-ignore.sh`) to decide if a deployment should be skipped based on changed files.
 
-- Do not override **Project Settings -> Git -> Ignored Build Step** in the Vercel dashboard. If it is set there, Vercel will ignore `vercel.json` and always build.
-- The ignore script logs whether Vercel Git environment variables are present to confirm it is running.
+- In **Project Settings -> Git -> Ignored Build Step**, select **Run my bash script**.
+- Set the command to `bash scripts/vercel-ignore.sh`.
+- Do not keep a separate custom diff command there. The repo script is the single source of truth.
+- The script preserves and enforces all non-production skip categories (including community content, markdown/docs, tooling/config files, generated artifacts, package manifests, and other explicitly allowlisted paths).
+- The script is merge-safe: merge commits are classified using **first-parent diff** (`<merge>^1..<merge>`) so second-parent history cannot cause false production-file detection.
+- Merge PR commits that resolve to non-production-only file sets are hard-skipped for both Preview and Production.
+- The ignore script logs diff source strategy and decision reason to simplify incident triage.
+- Regression coverage is available via `npm run vercel:ignore:test` (deterministic injected file sets; no live git history required).
 
 ### Next.js Configuration
 

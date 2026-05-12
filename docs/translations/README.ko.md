@@ -73,9 +73,11 @@ npm run check
 <div align="center">
 
 ### 홈 페이지
+
 <!--
 ![Home](https://github.com/user-attachments/assets/cac78e72-4d31-43e8-8160-104c431e55be)
 -->
+
 ### 훈련 화면
 
 ![Training](https://github.com/user-attachments/assets/d491708f-2ad3-41c7-9717-dec8a90afd03)
@@ -88,14 +90,14 @@ npm run check
 
 ## 문서
 
-| 문서                                                  | 설명                                    |
-| ----------------------------------------------------- | --------------------------------------- |
-| [아키텍처](../ARCHITECTURE.md)                        | 프로젝트 구조, 패턴, 컨벤션             |
-| [UI 디자인](../UI_DESIGN.md)                          | 테마, 스타일링, 컴포넌트 가이드라인     |
-| [번역 가이드](../TRANSLATION_GUIDE.md)                | 앱 번역 방법                             |
-| [문제 해결](../TROUBLESHOOTING.md)                    | 일반적인 문제와 해결 방법                |
-| [초보자 기여 가이드](../CONTRIBUTING-BEGINNERS.md)     | 처음 기여하는 분들을 위한 단계별 가이드  |
-| [전체 문서](../)                                      | 전체 문서 인덱스                         |
+| 문서                                               | 설명                                    |
+| -------------------------------------------------- | --------------------------------------- |
+| [아키텍처](../ARCHITECTURE.md)                     | 프로젝트 구조, 패턴, 컨벤션             |
+| [UI 디자인](../UI_DESIGN.md)                       | 테마, 스타일링, 컴포넌트 가이드라인     |
+| [번역 가이드](../TRANSLATION_GUIDE.md)             | 앱 번역 방법                            |
+| [문제 해결](../TROUBLESHOOTING.md)                 | 일반적인 문제와 해결 방법               |
+| [초보자 기여 가이드](../CONTRIBUTING-BEGINNERS.md) | 처음 기여하는 분들을 위한 단계별 가이드 |
+| [전체 문서](../)                                   | 전체 문서 인덱스                        |
 
 ## 기술 스택
 

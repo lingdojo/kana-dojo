@@ -1,5 +1,7 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
+import { DEFAULT_CLICK_SOUND_ID } from '@/features/Preferences/data/audio/clickSounds';
+import type { ClickSoundId } from '@/features/Preferences/data/audio/clickSounds';
 
 interface PreferencesState {
   displayKana: boolean;
@@ -54,6 +56,9 @@ interface PreferencesState {
   setCursorTrailEffect: (id: string) => void;
   clickEffect: string;
   setClickEffect: (id: string) => void;
+
+  clickSoundId: ClickSoundId;
+  setClickSoundId: (id: ClickSoundId) => void;
 }
 
 const usePreferencesStore = create<PreferencesState>()(
@@ -104,6 +109,8 @@ const usePreferencesStore = create<PreferencesState>()(
       setCursorTrailEffect: id => set({ cursorTrailEffect: id }),
       clickEffect: 'none',
       setClickEffect: id => set({ clickEffect: id }),
+      clickSoundId: DEFAULT_CLICK_SOUND_ID,
+      setClickSoundId: id => set({ clickSoundId: id }),
     }),
 
     {

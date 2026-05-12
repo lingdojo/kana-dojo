@@ -2,8 +2,8 @@ import { NextResponse } from 'next/server';
 import {
   getAnalyzeRateLimiter,
   getTranslateRateLimiter,
-} from '@/shared/lib/rateLimit';
-import { hasRedisConfig } from '@/shared/lib/redis';
+} from '@/shared/infra/server/rateLimit';
+import { hasRedisConfig } from '@/shared/infra/server/redis';
 
 export async function GET(request: Request) {
   const secret = process.env.HEALTHCHECK_SECRET;

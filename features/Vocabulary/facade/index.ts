@@ -5,4 +5,4 @@ export type {
 } from './useVocabSelection';
 
 // Re-export types for convenience
-export type { IVocabObj } from '../store/useVocabStore';
+export type { IVocabObj } from '@/entities/vocabulary';

@@ -1,4 +1,3 @@
-
 <div id="top"></div>
 
 # KanaDojo かな道場
@@ -94,13 +93,13 @@ npm run check
 
 ## Tài liệu
 
-| Tài liệu                                         | Mô tả                                        |
-| ------------------------------------------------ | -------------------------------------------- |
-| [Kiến trúc](./docs/ARCHITECTURE.md)              | Cấu trúc dự án, mẫu thiết kế và quy ước      |
-| [Thiết kế UI](./docs/UI_DESIGN.md)               | Chủ đề, kiểu dáng và hướng dẫn về component  |
-| [Hướng dẫn Dịch thuật](./docs/TRANSLATION_GUIDE.md) | Cách dịch ứng dụng                        |
-| [Khắc phục sự cố](./docs/TROUBLESHOOTING.md)     | Các vấn đề thường gặp và giải pháp           |
-| [Tất cả Tài liệu](./docs/)                       | Mục lục tài liệu đầy đủ                      |
+| Tài liệu                                            | Mô tả                                       |
+| --------------------------------------------------- | ------------------------------------------- |
+| [Kiến trúc](./docs/ARCHITECTURE.md)                 | Cấu trúc dự án, mẫu thiết kế và quy ước     |
+| [Thiết kế UI](./docs/UI_DESIGN.md)                  | Chủ đề, kiểu dáng và hướng dẫn về component |
+| [Hướng dẫn Dịch thuật](./docs/TRANSLATION_GUIDE.md) | Cách dịch ứng dụng                          |
+| [Khắc phục sự cố](./docs/TROUBLESHOOTING.md)        | Các vấn đề thường gặp và giải pháp          |
+| [Tất cả Tài liệu](./docs/)                          | Mục lục tài liệu đầy đủ                     |
 
 ## Công nghệ sử dụng
 

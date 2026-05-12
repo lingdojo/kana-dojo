@@ -1,0 +1,59 @@
+{
+  "privacy": {
+    "title": "隐私政策",
+    "lastUpdated": "最后更新：{{date}}",
+    "introduction": "我们重视您的隐私，并致力于保护您的个人信息。",
+    "sections": {
+      "dataCollection": {
+        "title": "数据收集",
+        "content": "我们收集的数据仅用于改善您的学习体验。进度数据存储在您的浏览器本地存储中。"
+      },
+      "cookies": {
+        "title": "Cookie",
+        "content": "我们使用Cookie来保存您的偏好设置和学习进度。"
+      },
+      "thirdParty": {
+        "title": "第三方服务",
+        "content": "我们可能使用第三方分析服务来了解网站使用情况。"
+      },
+      "yourRights": {
+        "title": "您的权利",
+        "content": "您可以随时清除浏览器数据来删除您的进度信息。"
+      }
+    }
+  },
+  "terms": {
+    "title": "服务条款",
+    "lastUpdated": "最后更新：{{date}}",
+    "introduction": "使用本网站即表示您同意以下条款。",
+    "sections": {
+      "usage": {
+        "title": "使用条款",
+        "content": "本网站仅供个人学习和教育目的使用。"
+      },
+      "intellectualProperty": {
+        "title": "知识产权",
+        "content": "网站内容受版权保护。未经许可不得复制或分发。"
+      },
+      "disclaimer": {
+        "title": "免责声明",
+        "content": "本网站按现状提供服务，不提供任何明示或暗示的保证。"
+      }
+    }
+  },
+  "security": {
+    "title": "安全政策",
+    "lastUpdated": "最后更新：{{date}}",
+    "introduction": "我们重视您数据的安全。",
+    "sections": {
+      "dataSecurity": {
+        "title": "数据安全",
+        "content": "您的学习进度存储在本地浏览器中，不会传输到服务器。"
+      },
+      "https": {
+        "title": "安全连接",
+        "content": "本网站使用HTTPS加密所有通信。"
+      }
+    }
+  }
+}

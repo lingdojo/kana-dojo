@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useMemo } from 'react';
-import { cn } from '@/shared/lib/utils';
+import { cn } from '@/shared/utils/utils';
 import type { BlogPostMeta, Category } from '../types/blog';
 import { BlogCard } from './BlogCard';
 import { CategoryFilter } from './CategoryFilter';
@@ -109,3 +109,4 @@ export function BlogList({
 }
 
 export default BlogList;
+

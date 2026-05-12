@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { cn } from '@/shared/lib/utils';
+import { cn } from '@/shared/utils/utils';
 import type { Category, CategoryWithCount } from '../types';
 
 export interface CategoryHeaderProps {
@@ -73,3 +73,4 @@ export function CategoryHeader({
     </header>
   );
 }
+

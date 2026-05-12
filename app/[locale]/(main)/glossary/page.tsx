@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { routing } from '@/core/i18n/routing';
-import { Breadcrumbs } from '@/shared/components/Breadcrumbs';
-import { BreadcrumbSchema } from '@/shared/components/SEO/BreadcrumbSchema';
+import { Breadcrumbs } from '@/shared/ui-composite/Breadcrumbs';
+import { BreadcrumbSchema } from '@/shared/ui-composite/SEO/BreadcrumbSchema';
 
 export function generateStaticParams() {
   return routing.locales.map(locale => ({ locale }));
@@ -263,9 +263,7 @@ export default async function GlossaryPage({
           className='mb-8 rounded-lg border-2 border-(--border-color) bg-(--card-color) p-4'
           aria-label='Glossary quick navigation'
         >
-          <div className='mb-2 font-semibold text-(--main-color)'>
-            Jump to:
-          </div>
+          <div className='mb-2 font-semibold text-(--main-color)'>Jump to:</div>
           <div className='flex flex-wrap gap-2'>
             {letters.map(letter => (
               <a
@@ -387,3 +385,4 @@ export default async function GlossaryPage({
     </>
   );
 }
+

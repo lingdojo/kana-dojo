@@ -2,14 +2,59 @@ name: Github Metrics Snapshot
 
 on:
   schedule:
-    - cron: '0 19 * * *'
+    - cron: '30 19 * * *'
   workflow_dispatch: {}
 
 permissions:
+  actions: read
   contents: write
 
 jobs:
+  backup-guard:
+    runs-on: ubuntu-latest
+    outputs:
+      should_run: ${{ steps.guard.outputs.should_run }}
+    steps:
+      - name: Decide whether backup run is needed
+        id: guard
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            if (context.eventName !== 'schedule') {
+              core.setOutput('should_run', 'true');
+              return;
+            }
+
+            const maxAgeMs = 36 * 60 * 60 * 1000;
+            const workflowId = 'github-metrics.yml';
+            const now = Date.now();
+            const runs = await github.paginate(github.rest.actions.listWorkflowRuns, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: workflowId,
+              event: 'workflow_dispatch',
+              branch: 'main',
+              per_page: 100,
+            });
+            const recentSuccess = runs.find(function(run) {
+              if (run.status !== 'completed' || run.conclusion !== 'success') {
+                return false;
+              }
+              return (now - Date.parse(run.created_at)) <= maxAgeMs;
+            });
+
+            const shouldRun = recentSuccess ? 'false' : 'true';
+            console.log(
+              recentSuccess
+                ? `Recent workflow_dispatch success found at ${recentSuccess.created_at}; skipping scheduled backup run.`
+                : 'No recent workflow_dispatch success found; running scheduled backup.',
+            );
+            core.setOutput('should_run', shouldRun);
+
   collect-metrics:
+    needs: backup-guard
+    if: needs.backup-guard.outputs.should_run == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

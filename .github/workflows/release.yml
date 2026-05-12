@@ -1,0 +1,164 @@
+name: Create GitHub Release
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - features/PatchNotes/patchNotesData.json
+
+permissions:
+  contents: write
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Create GitHub Release
+        run: |
+          node << 'EOF'
+          const fs = require('fs');
+          const https = require('https');
+          const { execSync } = require('child_process');
+
+          async function createRelease() {
+            try {
+              // Read patch notes
+              const patchNotes = JSON.parse(
+                fs.readFileSync('./features/PatchNotes/patchNotesData.json', 'utf8')
+              );
+
+              if (!patchNotes || patchNotes.length === 0) {
+                console.log('📭 No patch notes found');
+                process.exit(0);
+              }
+
+              const latest = patchNotes[0];
+              const version = latest.version;
+              const tagName = `v${version}`;
+
+              // Check if tag already exists
+              try {
+                execSync(`git rev-parse ${tagName}`, { stdio: 'pipe' });
+                console.log(`✓ Tag ${tagName} already exists, skipping release creation`);
+                process.exit(0);
+              } catch (e) {
+                console.log(`Creating new release for ${tagName}...`);
+              }
+
+              // Read CHANGELOG to get categorized changes
+              const changelog = fs.readFileSync('./CHANGELOG.md', 'utf8');
+              const versionRegex = new RegExp(`## \\[${version.replace('.', '\\.')}\\].*?\\n([\\s\\S]*?)(?=\\n## \\[|$)`);
+              const match = changelog.match(versionRegex);
+              let changelogSection = '';
+
+              if (match && match[1]) {
+                changelogSection = match[1].trim();
+              }
+
+              // Categorize changes from patch notes
+              const categorized = {
+                features: [],
+                improvements: [],
+                fixes: [],
+                other: []
+              };
+
+              latest.changes.forEach(change => {
+                const lower = change.toLowerCase();
+                if (lower.includes('new ') || lower.includes('added ') || lower.includes('introduced ')) {
+                  categorized.features.push(change);
+                } else if (lower.includes('improve') || lower.includes('enhanced') || lower.includes('polished') || lower.includes('expand')) {
+                  categorized.improvements.push(change);
+                } else if (lower.includes('fix') || lower.includes('fixed') || lower.includes('resolved')) {
+                  categorized.fixes.push(change);
+                } else {
+                  categorized.other.push(change);
+                }
+              });
+
+              // Build release notes
+              let releaseNotes = `## 🎌 What's New in v${version}\n\n`;
+
+              if (categorized.features.length) {
+                releaseNotes += '### ✨ New Features\n';
+                categorized.features.forEach(f => {
+                  releaseNotes += `- ${f}\n`;
+                });
+                releaseNotes += '\n';
+              }
+
+              if (categorized.improvements.length) {
+                releaseNotes += '### ⚡ Improvements\n';
+                categorized.improvements.forEach(i => {
+                  releaseNotes += `- ${i}\n`;
+                });
+                releaseNotes += '\n';
+              }
+
+              if (categorized.fixes.length) {
+                releaseNotes += '### 🐛 Bug Fixes\n';
+                categorized.fixes.forEach(f => {
+                  releaseNotes += `- ${f}\n`;
+                });
+                releaseNotes += '\n';
+              }
+
+              if (categorized.other.length) {
+                releaseNotes += '### 📝 Other Changes\n';
+                categorized.other.forEach(o => {
+                  releaseNotes += `- ${o}\n`;
+                });
+                releaseNotes += '\n';
+              }
+
+              if (changelogSection) {
+                releaseNotes += `---
+
+## Detailed Changelog
+
+${changelogSection}
+
+`;
+              }
+
+              releaseNotes += `---
+
+**Full Changelog**: https://github.com/lingdojo/kanadojo/blob/main/CHANGELOG.md`;
+
+              // Create annotated tag
+              const tagMessage = `Release v${version}: ${latest.changes[0] || 'New release'}`;
+              execSync(`git tag -a ${tagName} -m "${tagMessage}"`, { stdio: 'inherit' });
+
+              // Push tag
+              execSync(`git push origin ${tagName}`, { stdio: 'inherit' });
+
+              // Create GitHub Release using gh CLI
+              const notesFile = '/tmp/release-notes.md';
+              fs.writeFileSync(notesFile, releaseNotes);
+
+              execSync(
+                `gh release create ${tagName} --title "KanaDojo v${version}" --notes-file ${notesFile}`,
+                { stdio: 'inherit' }
+              );
+
+              console.log(`✓ GitHub Release v${version} created successfully!`);
+              console.log(`  Version: ${version}`);
+              console.log(`  Date: ${latest.date}`);
+              console.log(`  Changes: ${latest.changes.length} items`);
+            } catch (error) {
+              console.error('Error creating release:', error.message);
+              process.exit(1);
+            }
+          }
+
+          createRelease();
+          EOF
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

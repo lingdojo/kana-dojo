@@ -40,7 +40,7 @@ async function parseAPKGFixture(buffer: Buffer): Promise<ParsedAnkiData> {
   // Extract database from ZIP
   const zip = await JSZip.loadAsync(buffer);
 
-  let dbFile = zip.file('collection.anki21') || zip.file('collection.anki2');
+  const dbFile = zip.file('collection.anki21') || zip.file('collection.anki2');
   if (!dbFile) {
     throw new Error('No database found in APKG');
   }

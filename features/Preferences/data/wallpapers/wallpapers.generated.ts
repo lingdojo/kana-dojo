@@ -27,6 +27,12 @@ export interface GeneratedWallpaper {
  */
 export const GENERATED_WALLPAPERS: GeneratedWallpaper[] = [
   {
+    id: 'alpine-stars',
+    name: 'Alpine Stars',
+    url: '/wallpapers/alpine-stars-2560w.avif',
+    urlWebp: '/wallpapers/alpine-stars-2560w.webp',
+  },
+  {
     id: 'bangkok-grand-palace-fireworks',
     name: 'Bangkok Grand Palace Fireworks',
     url: '/wallpapers/bangkok-grand-palace-fireworks-2560w.avif',
@@ -81,9 +87,57 @@ export const GENERATED_WALLPAPERS: GeneratedWallpaper[] = [
     urlWebp: '/wallpapers/chureito-fuji-sunset-1920w.webp',
   },
   {
+    id: 'crimson-coder',
+    name: 'Crimson Coder',
+    url: '/wallpapers/crimson-coder-2560w.avif',
+    urlWebp: '/wallpapers/crimson-coder-2560w.webp',
+  },
+  {
+    id: 'dawn-pagoda',
+    name: 'Dawn Pagoda',
+    url: '/wallpapers/dawn-pagoda-2560w.avif',
+    urlWebp: '/wallpapers/dawn-pagoda-2560w.webp',
+  },
+  {
+    id: 'dubai-skyline',
+    name: 'Dubai Skyline',
+    url: '/wallpapers/dubai-skyline-2560w.avif',
+    urlWebp: '/wallpapers/dubai-skyline-2560w.webp',
+  },
+  {
+    id: 'island-night',
+    name: 'Island Night',
+    url: '/wallpapers/island-night-2560w.avif',
+    urlWebp: '/wallpapers/island-night-2560w.webp',
+  },
+  {
+    id: 'marina-sunset',
+    name: 'Marina Sunset',
+    url: '/wallpapers/marina-sunset-2560w.avif',
+    urlWebp: '/wallpapers/marina-sunset-2560w.webp',
+  },
+  {
+    id: 'moonlit-crossing',
+    name: 'Moonlit Crossing',
+    url: '/wallpapers/moonlit-crossing-2560w.avif',
+    urlWebp: '/wallpapers/moonlit-crossing-2560w.webp',
+  },
+  {
+    id: 'neon-cafe',
+    name: 'Neon Cafe',
+    url: '/wallpapers/neon-cafe-1920w.avif',
+    urlWebp: '/wallpapers/neon-cafe-1920w.webp',
+  },
+  {
     id: 'retro-city',
     name: 'Retro City',
     url: '/wallpapers/retro-city-1920w.avif',
     urlWebp: '/wallpapers/retro-city-1920w.webp',
+  },
+  {
+    id: 'tokyo-tower',
+    name: 'Tokyo Tower',
+    url: '/wallpapers/tokyo-tower-2560w.avif',
+    urlWebp: '/wallpapers/tokyo-tower-2560w.webp',
   },
 ];

@@ -3,8 +3,11 @@ import {
   checkAnalyzeRateLimit,
   getClientIP,
   createRateLimitHeaders,
-} from '@/shared/lib/rateLimit';
-import { getRedisCachedJson, setRedisCachedJson } from '@/shared/lib/apiCache';
+} from '@/shared/infra/server/rateLimit';
+import {
+  getRedisCachedJson,
+  setRedisCachedJson,
+} from '@/shared/infra/client/apiCache';
 import type { ApiErrorResponse } from '@/shared/types/api';
 import type KuromojiAnalyzer from 'kuroshiro-analyzer-kuromoji';
 import type { KuromojiToken } from 'kuroshiro-analyzer-kuromoji';

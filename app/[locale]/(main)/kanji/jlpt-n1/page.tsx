@@ -1,10 +1,10 @@
-import KanjiMenu from '@/shared/components/Menu/KanjiMenu';
+import { KanjiMenu } from '@/widgets';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/core/i18n/metadata-helpers';
-import { CourseSchema } from '@/shared/components/SEO/CourseSchema';
-import { BreadcrumbSchema } from '@/shared/components/SEO/BreadcrumbSchema';
-import { FAQSchema, kanjiFAQs } from '@/shared/components/SEO/FAQSchema';
-import { LearningResourceSchema } from '@/shared/components/SEO/LearningResourceSchema';
+import { CourseSchema } from '@/shared/ui-composite/SEO/CourseSchema';
+import { BreadcrumbSchema } from '@/shared/ui-composite/SEO/BreadcrumbSchema';
+import { FAQSchema, kanjiFAQs } from '@/shared/ui-composite/SEO/FAQSchema';
+import { LearningResourceSchema } from '@/shared/ui-composite/SEO/LearningResourceSchema';
 import { routing } from '@/core/i18n/routing';
 
 export function generateStaticParams() {
@@ -38,7 +38,10 @@ export default async function KanjiJlptN1Page({
         items={[
           { name: 'Home', url: `https://kanadojo.com/${locale}` },
           { name: 'Kanji', url: `https://kanadojo.com/${locale}/kanji` },
-          { name: 'JLPT N1', url: `https://kanadojo.com/${locale}/kanji/jlpt-n1` },
+          {
+            name: 'JLPT N1',
+            url: `https://kanadojo.com/${locale}/kanji/jlpt-n1`,
+          },
         ]}
       />
       <CourseSchema
@@ -71,3 +74,4 @@ export default async function KanjiJlptN1Page({
     </>
   );
 }
+

@@ -1,0 +1,45 @@
+{
+  "title": "统计",
+  "description": "查看您的学习进度",
+  "overview": {
+    "title": "概览",
+    "totalStudyTime": "总学习时间",
+    "totalSessions": "总学习次数",
+    "totalQuestions": "总题目数",
+    "averageAccuracy": "平均准确率",
+    "currentStreak": "当前连续天数",
+    "longestStreak": "最长连续天数"
+  },
+  "charts": {
+    "dailyActivity": "每日活动",
+    "weeklyProgress": "每周进度",
+    "monthlyProgress": "每月进度",
+    "accuracyByType": "按类型准确率"
+  },
+  "kana": {
+    "title": "假名统计",
+    "hiragana": "平假名",
+    "katakana": "片假名",
+    "mastered": "已掌握",
+    "learning": "学习中",
+    "needsPractice": "需要练习"
+  },
+  "kanji": {
+    "title": "汉字统计",
+    "byLevel": "按级别",
+    "mastered": "已掌握",
+    "learning": "学习中"
+  },
+  "vocabulary": {
+    "title": "词汇统计",
+    "byLevel": "按级别",
+    "mastered": "已掌握",
+    "learning": "学习中"
+  },
+  "time": {
+    "today": "今天",
+    "thisWeek": "本周",
+    "thisMonth": "本月",
+    "allTime": "全部时间"
+  }
+}

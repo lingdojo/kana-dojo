@@ -1,7 +1,7 @@
 'use client';
 
 import { RunnerGame } from '@/features/Experiments/components/RunnerGame';
-import { Button } from '@/shared/components/ui/button';
+import { Button } from '@/shared/ui/components/button';
 import { ArrowLeft } from 'lucide-react';
 import { Link } from '@/core/i18n/routing';
 
@@ -16,9 +16,7 @@ export default function RunnerPage() {
           </Link>
         </Button>
         <div>
-          <h1 className='text-3xl font-bold text-(--main-color)'>
-            Yokai Run
-          </h1>
+          <h1 className='text-3xl font-bold text-(--main-color)'>Yokai Run</h1>
           <p className='text-(--secondary-color)'>
             Avoid the obstacles and run as far as you can!
           </p>
@@ -32,3 +30,4 @@ export default function RunnerPage() {
     </div>
   );
 }
+

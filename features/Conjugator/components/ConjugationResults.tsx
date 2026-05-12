@@ -2,7 +2,7 @@
 
 import { useState, useMemo, useCallback, useRef, useEffect } from 'react';
 import { Copy, Check, Loader2 } from 'lucide-react';
-import { cn } from '@/shared/lib/utils';
+import { cn } from '@/shared/utils/utils';
 import type {
   ConjugationResult,
   ConjugationCategory as CategoryType,
@@ -130,3 +130,4 @@ export default function ConjugationResults({
     </div>
   );
 }
+

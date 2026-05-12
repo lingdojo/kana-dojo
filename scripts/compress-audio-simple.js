@@ -13,7 +13,55 @@ const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 const https = require('https');
-const { pipeline } = require('stream/promises');
+
+// Japanese language messages
+const messages = {
+  title: 'Audio Compression Script',
+  titleJP: 'Audio Compression Script',
+  settingUpFFmpeg: 'Setting up portable ffmpeg...',
+  settingUpFFmpegJP: 'Setting up portable ffmpeg...',
+  downloading: 'Downloading ffmpeg (this may take a minute)...',
+  downloadingJP: 'Downloading ffmpeg (this may take a minute)...',
+  extracting: 'Extracting...',
+  extractingJP: 'Extracting...',
+  ffmpegReady: 'ffmpeg ready!',
+  ffmpegReadyJP: 'ffmpeg ready!',
+  ffmpegSetupFailed: 'Failed to setup ffmpeg:',
+  ffmpegSetupFailedJP: 'Failed to setup ffmpeg:',
+  using: 'Using:',
+  usingJP: 'Using:',
+  foundWavFiles: 'Found',
+  foundWavFilesJP: 'Found',
+  wavFiles: 'WAV file(s)',
+  wavFilesJP: 'WAV file(s)',
+  noWavFiles: 'No WAV files found in public/sounds/',
+  noWavFilesJP: 'No WAV files found in public/sounds/',
+  converting: 'Converting',
+  convertingJP: 'Converting',
+  skipping: 'Skipping',
+  skippingJP: 'Skipping',
+  mp3Exists: '(MP3 already exists)',
+  mp3ExistsJP: '(MP3 already exists)',
+  compressionComplete: 'Compression complete!',
+  compressionCompleteJP: 'Compression complete!',
+  nextSteps: 'Next steps:',
+  nextStepsJP: 'Next steps:',
+  step1: 'Update useAudio.ts to use .mp3 instead of .wav',
+  step1JP: 'Update useAudio.ts to use .mp3 instead of .wav',
+  step2: 'Test the audio playback',
+  step2JP: 'Test the audio playback',
+  step3: 'Delete the original .wav files if everything works',
+  step3JP: 'Delete the original .wav files if everything works',
+  ffmpegNotFound: 'Could not find ffmpeg after setup',
+  ffmpegNotFoundJP: 'Could not find ffmpeg after setup',
+  convertFailed: 'Failed to convert',
+  convertFailedJP: 'Failed to convert',
+  kanaDojo: 'KanaDojo',
+  hiragana: 'Hiragana',
+  katakana: 'Katakana',
+  kanji: 'Kanji',
+  vocabulary: 'Vocabulary'
+};
 
 const SOUNDS_DIR = path.join(__dirname, '../public/sounds');
 const FFMPEG_DIR = path.join(__dirname, 'ffmpeg-portable');
@@ -38,22 +86,22 @@ async function downloadFile(url, dest) {
         });
       })
       .on('error', err => {
-        fs.unlink(dest, () => {});
+        fs.unlink(dest, () => { });
         reject(err);
       });
   });
 }
 
 async function setupFFmpeg() {
-  console.log('📦 Setting up portable ffmpeg...\n');
+  console.log(`${messages.kanaDojo} ${messages.settingUpFFmpegJP}\n`);
 
   const zipPath = path.join(__dirname, 'ffmpeg.zip');
 
   try {
-    console.log('⬇️  Downloading ffmpeg (this may take a minute)...');
+    console.log(`${messages.kanaDojo} ${messages.downloadingJP}`);
     await downloadFile(FFMPEG_URL, zipPath);
 
-    console.log('📂 Extracting...');
+    console.log(`${messages.kanaDojo} ${messages.extractingJP}`);
 
     // Use PowerShell to extract on Windows
     execSync(
@@ -62,9 +110,9 @@ async function setupFFmpeg() {
     );
 
     fs.unlinkSync(zipPath);
-    console.log('✅ ffmpeg ready!\n');
+    console.log(`${messages.kanaDojo} ${messages.ffmpegReadyJP}\n`);
   } catch (error) {
-    console.error('❌ Failed to setup ffmpeg:', error.message);
+    console.error(`${messages.kanaDojo} ${messages.ffmpegSetupFailedJP}`, error.message);
     process.exit(1);
   }
 }
@@ -107,14 +155,14 @@ function compressFile(wavPath, ffmpegPath) {
   const mp3Path = wavPath.replace('.wav', '.mp3');
 
   if (fs.existsSync(mp3Path)) {
-    console.log(`⏭️  Skipping ${path.basename(wavPath)} (MP3 already exists)`);
+    console.log(` ${messages.kanaDojo} ${messages.skippingJP} ${path.basename(wavPath)} ${messages.mp3ExistsJP}`);
     return;
   }
 
   const originalSize = fs.statSync(wavPath).size;
 
   try {
-    console.log(`🔄 Converting ${path.basename(wavPath)}...`);
+    console.log(` ${messages.kanaDojo} ${messages.convertingJP} ${path.basename(wavPath)}...`);
 
     execSync(
       `"${ffmpegPath}" -i "${wavPath}" -codec:a libmp3lame -qscale:a 2 "${mp3Path}" -y`,
@@ -125,20 +173,23 @@ function compressFile(wavPath, ffmpegPath) {
     const savings = ((1 - newSize / originalSize) * 100).toFixed(1);
 
     console.log(
-      `✅ ${path.basename(wavPath)}: ${(originalSize / 1024).toFixed(1)}KB → ${(
+      ` ${messages.kanaDojo} ${path.basename(wavPath)}: ${(originalSize / 1024).toFixed(1)}KB -> ${(
         newSize / 1024
       ).toFixed(1)}KB (${savings}% smaller)`,
     );
   } catch (error) {
     console.error(
-      `❌ Failed to convert ${path.basename(wavPath)}:`,
+      `${messages.kanaDojo} ${messages.convertFailedJP} ${path.basename(wavPath)}:`,
       error.message,
     );
   }
 }
 
 async function main() {
-  console.log('🎵 Audio Compression Script\n');
+  // console.log(' Audio Compression Script\n');
+  // console.log('🎵 Audio Compression Script\n');
+  console.log(` ${messages.kanaDojo} ${messages.titleJP}\n`);
+  console.log(` ${messages.hiragana} | ${messages.katakana} | ${messages.kanji} | ${messages.vocabulary}\n`);
 
   let ffmpegPath = findFFmpegExe();
 
@@ -147,31 +198,31 @@ async function main() {
     ffmpegPath = findFFmpegExe();
 
     if (!ffmpegPath) {
-      console.error('❌ Could not find ffmpeg after setup');
+      console.error(`${messages.kanaDojo} ${messages.ffmpegNotFoundJP}`);
       process.exit(1);
     }
   }
 
-  console.log(`Using: ${ffmpegPath}\n`);
+  console.log(`${messages.kanaDojo} ${messages.usingJP} ${ffmpegPath}\n`);
 
   const wavFiles = findWavFiles(SOUNDS_DIR);
 
   if (wavFiles.length === 0) {
-    console.log('No WAV files found in public/sounds/');
+    console.log(`${messages.kanaDojo} ${messages.noWavFilesJP}`);
     return;
   }
 
-  console.log(`Found ${wavFiles.length} WAV file(s)\n`);
+  console.log(`${messages.kanaDojo} ${messages.foundWavFilesJP} ${wavFiles.length} ${messages.wavFilesJP}\n`);
 
   for (const file of wavFiles) {
     compressFile(file, ffmpegPath);
   }
 
-  console.log('\n✨ Compression complete!');
-  console.log('\n📝 Next steps:');
-  console.log('  1. Update useAudio.ts to use .mp3 instead of .wav');
-  console.log('  2. Test the audio playback');
-  console.log('  3. Delete the original .wav files if everything works');
+  console.log(`\n ${messages.kanaDojo} ${messages.compressionCompleteJP}`);
+  console.log(`\n ${messages.kanaDojo} ${messages.nextStepsJP}`);
+  console.log(`  1. ${messages.step1JP}`);
+  console.log(`  2. ${messages.step2JP}`);
+  console.log(`  3. ${messages.step3JP}`);
 }
 
 main().catch(console.error);

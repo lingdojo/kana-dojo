@@ -220,8 +220,8 @@ export const generateAssets = (): GameAssets => {
   fCtx.beginPath();
   fCtx.moveTo(400, 50); // Peak
   // Right side zigzag down
-  let rX = 400;
-  let rY = 50;
+  const rX = 400;
+  const rY = 50;
   // Approximating slope points for zigzags
   fCtx.lineTo(430, 100);
   fCtx.lineTo(410, 110);

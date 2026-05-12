@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useCallback } from 'react';
-import { cn } from '@/shared/lib/utils';
+import { cn } from '@/shared/utils/utils';
 
 interface QuizQuestionProps {
   /** The question text to display */
@@ -166,3 +166,4 @@ export function QuizQuestion({
 }
 
 export default QuizQuestion;
+

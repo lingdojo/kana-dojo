@@ -1,13 +1,19 @@
-import ContentLayout from '@/shared/components/layout/ContentLayout';
-import PostWrapper from '@/shared/components/layout/PostWrapper';
-import termsOfService from '@/shared/lib/legal/termsOfService';
+import LegalLayout from '@/shared/ui-composite/layout/LegalLayout';
+import PostWrapper from '@/shared/ui-composite/layout/PostWrapper';
+import termsOfService from '@/shared/utils/legal/termsOfService';
+import { ScrollText } from 'lucide-react';
 
 const TermsOfService = () => {
   return (
-    <ContentLayout>
+    <LegalLayout
+      icon={<ScrollText className='size-6' />}
+      title='Terms of Service'
+      lastUpdated='April 8, 2026'
+    >
       <PostWrapper textContent={termsOfService} />
-    </ContentLayout>
+    </LegalLayout>
   );
 };
 
 export default TermsOfService;
+

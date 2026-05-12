@@ -1,0 +1,58 @@
+{
+  "title": "设置",
+  "description": "自定义您的学习体验",
+  "general": {
+    "title": "常规",
+    "language": "语言",
+    "theme": "主题",
+    "sound": "音效",
+    "notifications": "通知"
+  },
+  "appearance": {
+    "title": "外观",
+    "colorTheme": "颜色主题",
+    "font": "日文字体",
+    "fontSize": "字体大小",
+    "darkMode": "深色模式",
+    "customTheme": "自定义主题"
+  },
+  "game": {
+    "title": "游戏设置",
+    "timeLimit": "时间限制",
+    "questionsPerSession": "每轮题目数",
+    "difficulty": "难度",
+    "autoNext": "自动下一题",
+    "showHints": "显示提示"
+  },
+  "audio": {
+    "title": "音频",
+    "soundEffects": "音效",
+    "volume": "音量",
+    "clickSound": "点击音效",
+    "correctSound": "正确音效",
+    "incorrectSound": "错误音效"
+  },
+  "preferences": {
+    "title": "偏好设置",
+    "showRomaji": "显示罗马字",
+    "showFurigana": "显示振假名",
+    "inputMethod": "输入方式",
+    "keyboardShortcuts": "键盘快捷键"
+  },
+  "data": {
+    "title": "数据",
+    "exportData": "导出数据",
+    "importData": "导入数据",
+    "resetProgress": "重置进度",
+    "clearCache": "清除缓存",
+    "confirmReset": "确定要重置所有进度吗？此操作无法撤销。"
+  },
+  "themes": {
+    "light": "浅色",
+    "dark": "深色",
+    "system": "跟随系统",
+    "custom": "自定义",
+    "presets": "预设主题",
+    "createCustom": "创建自定义主题"
+  }
+}

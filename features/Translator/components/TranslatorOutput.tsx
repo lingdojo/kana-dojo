@@ -12,7 +12,7 @@ import {
   Play,
   Info,
 } from 'lucide-react';
-import { cn } from '@/shared/lib/utils';
+import { cn } from '@/shared/utils/utils';
 import type { Language } from '../types';
 import { useVoiceOutput } from '../hooks/useVoiceOutput';
 import WordByWordBreakdown from './WordByWordBreakdown';
@@ -306,10 +306,7 @@ export default function TranslatorOutput({
         ) : (
           <div className='flex h-full min-h-[188px] flex-col items-center justify-center gap-3'>
             <div
-              className={cn(
-                'rounded-full p-4',
-                'bg-(--secondary-color)/10',
-              )}
+              className={cn('rounded-full p-4', 'bg-(--secondary-color)/10')}
             >
               <FileText className='h-8 w-8 text-(--secondary-color)/50' />
             </div>
@@ -339,3 +336,4 @@ export default function TranslatorOutput({
     </div>
   );
 }
+

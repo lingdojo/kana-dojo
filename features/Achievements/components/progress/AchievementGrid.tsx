@@ -6,10 +6,12 @@ import { memo } from 'react';
 import { type Achievement } from '@/features/Achievements/store/useAchievementStore';
 import { AchievementCard } from './AchievementCard';
 
+import { AchievementProgressData } from './useAchievementProgress';
+
 export interface AchievementGridProps {
   achievements: Achievement[];
   unlockedAchievements: Record<string, Achievement>;
-  getAchievementProgress: (achievementId: string) => number;
+  getAchievementProgress: (achievementId: string) => AchievementProgressData;
   selectedCategory: string;
 }
 
@@ -56,6 +58,7 @@ const AchievementGridComponent = ({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.05 * index }}
+            className='flex'
           >
             <AchievementCard
               achievement={achievement}

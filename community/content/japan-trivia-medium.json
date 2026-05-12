@@ -1,92 +1,63 @@
 [
   {
-    "question": "Which season is associated with red maple leaves (momiji) in Japan? (Community variation 16)",
-    "difficulty": "medium",
-    "answers": ["Spring", "Summer", "Autumn", "Winter"],
-    "correctIndex": 2
-  },
-  {
-    "question": "Which Japanese festival features people throwing beans to drive away evil spirits?",
-    "difficulty": "medium",
-    "answers": ["Setsubun", "Obon", "Tanabata", "Shichi-Go-San"],
-    "correctIndex": 0
-  },
-  {
-    "question": "What is the name of Japan's national airline?",
-    "difficulty": "medium",
-    "answers": [
-      "Japan Airlines",
-      "All Nippon Express",
-      "Tokyo Air",
-      "Nippon Sky"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "question": "Which Japanese city is famous for its ramen street, \"Ramen Yokocho\"?",
-    "difficulty": "medium",
-    "answers": ["Sapporo", "Nagoya", "Utsunomiya", "Naha"],
-    "correctIndex": 0
-  },
-  {
-    "question": "Which traditional Japanese sport features a ring called a dohyo?",
-    "difficulty": "medium",
-    "answers": ["Sumo", "Kendo", "Karate", "Kyudo"],
-    "correctIndex": 0
-  },
-  {
-    "question": "What is the Japanese word for \"thank you\"?",
-    "difficulty": "medium",
-    "answers": ["Sumimasen", "Arigatou", "Ohayou", "Sayonara"],
-    "correctIndex": 1
-  },
-  {
-    "question": "Which Japanese city is known for its deer roaming freely in a large park?",
-    "difficulty": "medium",
-    "answers": ["Nara", "Yokohama", "Kobe", "Nagoya"],
-    "correctIndex": 0
-  },
-  {
-    "question": "What is the Japanese term for a traditional inn?",
+    "question": "What is the Japanese term for a traditional inn? (Community variation 46)",
     "difficulty": "medium",
     "answers": ["Ryokan", "Izakaya", "Minshuku", "Tateyama"],
     "correctIndex": 0
   },
   {
-    "question": "What is the name of Japan's national public broadcaster?",
+    "question": "What is the Japanese writing system used for foreign words?",
     "difficulty": "medium",
-    "answers": ["NHK", "NHK World Japan", "Asahi", "Fuji TV"],
+    "answers": ["Katakana", "Hiragana", "Kanji", "Romaji"],
     "correctIndex": 0
   },
   {
-    "question": "Which Japanese island is known for its active volcano Mount Aso?",
-    "difficulty": "medium",
-    "answers": ["Kyushu", "Honshu", "Shikoku", "Hokkaido"],
-    "correctIndex": 0
-  },
-  {
-    "question": "Which Japanese festival features floating lanterns on water?",
-    "difficulty": "medium",
-    "answers": ["Toro Nagashi", "Setsubun", "Tanabata", "Aoi Matsuri"],
-    "correctIndex": 0
-  },
-  {
-    "question": "Which Japanese beverage is made from roasted barley?",
-    "difficulty": "medium",
-    "answers": ["Mugicha", "Matcha", "Genmaicha", "Sencha"],
-    "correctIndex": 0
-  },
-  {
-    "question": "Which Japanese city hosted the 1998 Winter Olympics?",
+    "question": "Which Japanese city hosted the 1998 Winter Olympics? (Community variation 57)",
     "difficulty": "medium",
     "answers": ["Nagano", "Sapporo", "Niigata", "Sendai"],
     "correctIndex": 0
   },
   {
-    "question": "What is the Japanese term for a traditional tea ceremony?",
+    "question": "What is the name of the traditional Japanese garment often worn at festivals?",
     "difficulty": "medium",
-    "answers": ["Sado", "Kado", "Budo", "Shodo"],
+    "answers": ["Yukata", "Haori", "Hakama", "Tabi"],
     "correctIndex": 0
+  },
+  {
+    "question": "What is the Japanese term for New Year?",
+    "difficulty": "medium",
+    "answers": ["Shogatsu", "Obon", "Tanabata", "Hinamatsuri"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which region is famous for green tea production in Japan?",
+    "difficulty": "medium",
+    "answers": ["Shizuoka", "Okinawa", "Tohoku", "Hokuriku"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which Japanese castle was the seat of the Tokugawa shogunate? (Community variation 40)",
+    "difficulty": "medium",
+    "answers": ["Edo Castle", "Himeji Castle", "Matsumoto Castle", "Osaka Castle"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which Japanese mountain is the highest in the country?",
+    "difficulty": "medium",
+    "answers": ["Mount Fuji", "Mount Takao", "Mount Aso", "Mount Tate"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which of these is a Japanese traditional storytelling art?",
+    "difficulty": "medium",
+    "answers": ["Rakugo", "Kabuki", "Noh", "Ikebana"],
+    "correctIndex": 0
+  },
+  {
+    "question": "What is the Japanese word for 'thank you'? (Community variation 11)",
+    "difficulty": "medium",
+    "answers": ["Sumimasen", "Arigatou", "Ohayou", "Sayonara"],
+    "correctIndex": 1
   },
   {
     "question": "What is the name of Japan’s largest lake?",
@@ -101,62 +72,33 @@
     "correctIndex": 3
   },
   {
-    "question": "Which season is associated with red maple leaves (momiji) in Japan?",
+    "question": "What is the Japanese term for a traditional tea ceremony?",
     "difficulty": "medium",
-    "answers": ["Spring", "Summer", "Autumn", "Winter"],
-    "correctIndex": 2
-  },
-  {
-    "question": "What is the Japanese term for a convenience store?",
-    "difficulty": "medium",
-    "answers": ["Depato", "Konbini", "Ramen-ya", "Kissa"],
-    "correctIndex": 1
-  },
-  {
-    "question": "What is the traditional Japanese tea ceremony called?",
-    "difficulty": "medium",
-    "answers": ["Sado", "Judo", "Kendo", "Shodo"],
+    "answers": ["Sado", "Kado", "Budo", "Shodo"],
     "correctIndex": 0
   },
   {
-    "question": "Which Japanese city is famous for the Gion Matsuri festival?",
+    "question": "Which Japanese city is famous for its snow festival featuring ice sculptures? (Community variation 18)",
     "difficulty": "medium",
-    "answers": ["Kyoto", "Nagoya", "Hiroshima", "Sendai"],
+    "answers": ["Sapporo", "Sendai", "Fukuoka", "Okayama"],
     "correctIndex": 0
   },
   {
-    "question": "Which Japanese castle was the seat of the Tokugawa shogunate?",
+    "question": "Which Japanese festival features people throwing beans to drive away evil spirits? (Community variation 41)",
     "difficulty": "medium",
-    "answers": [
-      "Edo Castle",
-      "Himeji Castle",
-      "Matsumoto Castle",
-      "Osaka Castle"
-    ],
+    "answers": ["Setsubun", "Obon", "Tanabata", "Shichi-Go-San"],
     "correctIndex": 0
   },
   {
-    "question": "What is the name of Japan’s national public broadcaster?",
+    "question": "Which Japanese beverage is made from roasted barley?",
     "difficulty": "medium",
-    "answers": ["NHK", "NHK World Japan", "Asahi", "Fuji TV"],
+    "answers": ["Mugicha", "Matcha", "Genmaicha", "Sencha"],
     "correctIndex": 0
   },
   {
-    "question": "What is the name of Japan's highest mountain?",
+    "question": "Which Japanese festival features floating lanterns on water?",
     "difficulty": "medium",
-    "answers": ["Mount Haku", "Mount Fuji", "Mount Aso", "Mount Tate"],
-    "correctIndex": 1
-  },
-  {
-    "question": "What is the Japanese term for a portable shrine?",
-    "difficulty": "medium",
-    "answers": ["Mikoshi", "Torii", "Kagura", "Omikoshi"],
-    "correctIndex": 0
-  },
-  {
-    "question": "What is the Japanese term for a traditional drum?",
-    "difficulty": "medium",
-    "answers": ["Taiko", "Shamisen", "Koto", "Fue"],
+    "answers": ["Toro Nagashi", "Setsubun", "Tanabata", "Aoi Matsuri"],
     "correctIndex": 0
   },
   {
@@ -166,15 +108,51 @@
     "correctIndex": 0
   },
   {
-    "question": "Which of these is a Japanese traditional storytelling art?",
+    "question": "What is the name of Japan’s national public broadcaster? (Community variation 54)",
     "difficulty": "medium",
-    "answers": ["Rakugo", "Kabuki", "Noh", "Ikebana"],
+    "answers": ["NHK", "NHK World Japan", "Asahi", "Fuji TV"],
     "correctIndex": 0
   },
   {
-    "question": "What ingredient is traditionally the main source of umami flavor in shoyu (Japanese soy sauce)?",
-    "difficulty": "easy",
-    "answers": ["Fermented Soybeans", "Salt", "Rice Vinegar", "Brown Sugar"],
+    "question": "Which Japanese island is known for its active volcano Mount Aso? (Community variation 55)",
+    "difficulty": "medium",
+    "answers": ["Kyushu", "Honshu", "Shikoku", "Hokkaido"],
+    "correctIndex": 0
+  },
+  {
+    "question": "What is the Japanese term for a portable shrine?",
+    "difficulty": "medium",
+    "answers": ["Mikoshi", "Torii", "Kagura", "Omikoshi"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which season is associated with red maple leaves (momiji) in Japan?",
+    "difficulty": "medium",
+    "answers": ["Spring", "Summer", "Autumn", "Winter"],
+    "correctIndex": 2
+  },
+  {
+    "question": "What is the Japanese term for a traditional paper umbrella?",
+    "difficulty": "medium",
+    "answers": ["Wagasa", "Sensu", "Uchiwa", "Furoshiki"],
+    "correctIndex": 0
+  },
+  {
+    "question": "What is the name of the Japanese tea ceremony? (Community variation 90)",
+    "difficulty": "medium",
+    "answers": ["Ikebana", "Chado", "Kendo", "Shodo"],
+    "correctIndex": 1
+  },
+  {
+    "question": "Which Japanese city is famous for the Gion Matsuri festival?",
+    "difficulty": "medium",
+    "answers": ["Kyoto", "Nagoya", "Hiroshima", "Sendai"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which Japanese food is a savory pancake cooked on a griddle? (Community variation 39)",
+    "difficulty": "medium",
+    "answers": ["Okonomiyaki", "Sashimi", "Onigiri", "Mochi"],
     "correctIndex": 0
   },
   {
@@ -184,9 +162,55 @@
     "correctIndex": 0
   },
   {
-    "question": "Which Japanese food is a savory pancake cooked on a griddle?",
+    "question": "What is the Japanese term for a convenience store?",
     "difficulty": "medium",
-    "answers": ["Okonomiyaki", "Sashimi", "Onigiri", "Mochi"],
+    "answers": ["Depato", "Konbini", "Ramen-ya", "Kissa"],
+    "correctIndex": 1
+  },
+  {
+    "question": "Which traditional Japanese art involves arranging flowers?",
+    "difficulty": "medium",
+    "answers": ["Origami", "Ikebana", "Calligraphy", "Bonsai"],
+    "correctIndex": 1
+  },
+  {
+    "question": "What is the Japanese term for a traditional drum?",
+    "difficulty": "medium",
+    "answers": ["Taiko", "Shamisen", "Koto", "Fue"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which Japanese city is known for its deer park? (Community variation 12)",
+    "difficulty": "medium",
+    "answers": ["Nara", "Yokohama", "Kobe", "Nagoya"],
+    "correctIndex": 0
+  },
+  {
+    "question": "What is the Japanese term for a tea ceremony?",
+    "difficulty": "medium",
+    "answers": ["Sado", "Chado", "Ikebana", "Kado"],
+    "correctIndex": 1
+  },
+  {
+    "question": "What is the Japanese term for new year?",
+    "difficulty": "medium",
+    "answers": [
+      "Shogatsu",
+      "Obon",
+      "Tanabata",
+      "Hinamatsuri"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "question": "What is the Japanese term for a traditional tea ceremony?",
+    "difficulty": "medium",
+    "answers": [
+      "Sado",
+      "Kado",
+      "Budo",
+      "Shodo"
+    ],
     "correctIndex": 0
   }
 ]

@@ -35,6 +35,7 @@
 KanaDojo has built an impressive automated community contribution pipeline: 14 content types, every-15-minute issue creation, auto-assignment, stale management, and auto-merge. You're already doing many things right. This report identifies **every conceivable optimization** to further game GitHub's recommendation algorithm for maximum "good first issue" visibility.
 
 **Key findings:**
+
 - You're using **15 labels per issue** — this is excessive and may dilute signal / trigger spam heuristics
 - Your cron schedule (`7,22,37,52 * * * *`) is good but can be optimized for peak traffic
 - Issues are created by `github-actions[bot]` — **switching to a PAT is strongly recommended**
@@ -52,6 +53,7 @@ KanaDojo has built an impressive automated community contribution pipeline: 14 c
 GitHub's official docs state: _"GitHub uses an algorithm to determine the most approachable issues in each repository and surface them in various places on GitHub."_
 
 Issues with `good first issue` label appear in:
+
 - **`/contribute` page** — `github.com/{owner}/{repo}/contribute` shows curated good first issues
 - **Explore → "Good first issues"** — personalized recommendations based on user's language preferences, stars, and activity
 - **Topic pages** — `github.com/topics/{topic}` lists repos with matching topics
@@ -63,28 +65,28 @@ Issues with `good first issue` label appear in:
 
 Based on observation of GitHub's behavior, the algorithm likely weighs:
 
-| Signal | Weight | Evidence |
-|--------|--------|----------|
-| **`good first issue` label** | Critical | Documented by GitHub; required for `/contribute` page |
-| **`help wanted` label** | High | Second canonical label GitHub explicitly recognizes |
-| **Repository stars** | High | More stars = more visibility in Explore recommendations |
-| **Repository activity (recent pushes)** | High | Stale repos are deprioritized; last push date matters |
-| **Issue recency (created_at)** | High | Newer issues rank higher in default sort |
-| **Issue freshness (updated_at)** | Medium-High | Recently updated issues rank higher |
-| **Repository language match** | High | Users see issues matching their language preferences |
-| **Repository topics** | High | Topics drive discovery via `/topics/` pages |
-| **Issue comment count** | Medium | More comments = more "engagement" signal |
-| **Issue reaction count** | Medium | Reactions (👍, 🚀, ❤️) are engagement signals |
-| **Repository fork count** | Medium | High forks signal an active contributor community |
-| **Repository contributor count** | Medium | More unique contributors = healthier project |
-| **Issue body length/quality** | Medium | Well-described issues are more "approachable" |
-| **Issue milestone assignment** | Low-Medium | Milestones signal organization and planning |
-| **Issue assignee status** | Medium | Unassigned issues are more "available" |
-| **Repository has CONTRIBUTING.md** | Low-Medium | Health signal for contributor-friendliness |
-| **Repository description quality** | Medium | Keywords in description affect search ranking |
-| **Actor identity (bot vs. human)** | Unknown/Medium | See Section 8 for detailed analysis |
-| **Closed issue ratio** | Medium | Repos that close issues quickly signal good maintenance |
-| **PR merge time** | Low-Medium | Fast PR merges signal responsive maintainers |
+| Signal                                  | Weight         | Evidence                                                |
+| --------------------------------------- | -------------- | ------------------------------------------------------- |
+| **`good first issue` label**            | Critical       | Documented by GitHub; required for `/contribute` page   |
+| **`help wanted` label**                 | High           | Second canonical label GitHub explicitly recognizes     |
+| **Repository stars**                    | High           | More stars = more visibility in Explore recommendations |
+| **Repository activity (recent pushes)** | High           | Stale repos are deprioritized; last push date matters   |
+| **Issue recency (created_at)**          | High           | Newer issues rank higher in default sort                |
+| **Issue freshness (updated_at)**        | Medium-High    | Recently updated issues rank higher                     |
+| **Repository language match**           | High           | Users see issues matching their language preferences    |
+| **Repository topics**                   | High           | Topics drive discovery via `/topics/` pages             |
+| **Issue comment count**                 | Medium         | More comments = more "engagement" signal                |
+| **Issue reaction count**                | Medium         | Reactions (👍, 🚀, ❤️) are engagement signals           |
+| **Repository fork count**               | Medium         | High forks signal an active contributor community       |
+| **Repository contributor count**        | Medium         | More unique contributors = healthier project            |
+| **Issue body length/quality**           | Medium         | Well-described issues are more "approachable"           |
+| **Issue milestone assignment**          | Low-Medium     | Milestones signal organization and planning             |
+| **Issue assignee status**               | Medium         | Unassigned issues are more "available"                  |
+| **Repository has CONTRIBUTING.md**      | Low-Medium     | Health signal for contributor-friendliness              |
+| **Repository description quality**      | Medium         | Keywords in description affect search ranking           |
+| **Actor identity (bot vs. human)**      | Unknown/Medium | See Section 8 for detailed analysis                     |
+| **Closed issue ratio**                  | Medium         | Repos that close issues quickly signal good maintenance |
+| **PR merge time**                       | Low-Medium     | Fast PR merges signal responsive maintainers            |
 
 ### 2.3 Where Issues Get Surfaced
 
@@ -102,39 +104,39 @@ Based on observation of GitHub's behavior, the algorithm likely weighs:
 
 ### 3.1 What You're Doing RIGHT ✅
 
-| Aspect | Current Implementation | Assessment |
-|--------|----------------------|------------|
-| **Issue creation frequency** | Every 15 min (`7,22,37,52 * * * *`) | ✅ Excellent — keeps fresh issues flowing |
-| **`good first issue` label** | Applied to every issue | ✅ Critical for algorithm |
-| **`help wanted` label** | Applied to every issue | ✅ Second most important label |
-| **`hacktoberfest` label** | Applied year-round | ✅ Good for Hacktoberfest season; harmless off-season |
-| **Repository topics** | 20 well-chosen topics | ✅ Excellent topic coverage |
-| **Milestone assignment** | Issues get milestone #1 | ✅ Good organization signal |
-| **Welcome comment + reaction** | Auto-posted on each issue | ✅ Engagement signal boosting |
-| **Issue reaction (🚀)** | Auto-added on creation | ✅ Good engagement signal |
-| **Stale management** | 12h warning, 18h close | ✅ Keeps issues fresh and available |
-| **Issue body quality** | Well-structured with tables, code blocks, instructions | ✅ Clear, approachable |
-| **Content variety** | 14 different content types | ✅ Great variety |
-| **CONTRIBUTING.md** | Present with beginner guide | ✅ Health signal |
-| **Issue templates** | Bug report + feature request | ✅ Good |
-| **Concurrency guards** | All workflows have concurrency groups | ✅ Prevents race conditions |
-| **Repo description** | Keywords: "beginner-friendly", "good first issues" | ✅ Search-optimized |
-| **`type: 'Task'`** | New issue types API used | ✅ Forward-looking |
+| Aspect                         | Current Implementation                                 | Assessment                                            |
+| ------------------------------ | ------------------------------------------------------ | ----------------------------------------------------- |
+| **Issue creation frequency**   | Every 15 min (`7,22,37,52 * * * *`)                    | ✅ Excellent — keeps fresh issues flowing             |
+| **`good first issue` label**   | Applied to every issue                                 | ✅ Critical for algorithm                             |
+| **`help wanted` label**        | Applied to every issue                                 | ✅ Second most important label                        |
+| **`hacktoberfest` label**      | Applied year-round                                     | ✅ Good for Hacktoberfest season; harmless off-season |
+| **Repository topics**          | 20 well-chosen topics                                  | ✅ Excellent topic coverage                           |
+| **Milestone assignment**       | Issues get milestone #1                                | ✅ Good organization signal                           |
+| **Welcome comment + reaction** | Auto-posted on each issue                              | ✅ Engagement signal boosting                         |
+| **Issue reaction (🚀)**        | Auto-added on creation                                 | ✅ Good engagement signal                             |
+| **Stale management**           | 12h warning, 18h close                                 | ✅ Keeps issues fresh and available                   |
+| **Issue body quality**         | Well-structured with tables, code blocks, instructions | ✅ Clear, approachable                                |
+| **Content variety**            | 14 different content types                             | ✅ Great variety                                      |
+| **CONTRIBUTING.md**            | Present with beginner guide                            | ✅ Health signal                                      |
+| **Issue templates**            | Bug report + feature request                           | ✅ Good                                               |
+| **Concurrency guards**         | All workflows have concurrency groups                  | ✅ Prevents race conditions                           |
+| **Repo description**           | Keywords: "beginner-friendly", "good first issues"     | ✅ Search-optimized                                   |
+| **`type: 'Task'`**             | New issue types API used                               | ✅ Forward-looking                                    |
 
 ### 3.2 What Needs Optimization ⚠️
 
-| Aspect | Current State | Issue | Impact |
-|--------|--------------|-------|--------|
-| **Label count** | 15 labels per issue | Too many; dilutes signal, risks spam heuristics | 🔴 High |
-| **Issue creator** | `github-actions[bot]` | Bot-created issues may be deprioritized | 🔴 High |
-| **Backlog commits** | `github-actions[bot]` | Bot commits don't count toward contribution graph | 🟡 Medium |
-| **Cron timing** | Even distribution (`:07,:22,:37,:52`) | Not optimized for peak GitHub traffic | 🟡 Medium |
-| **Open issue count** | ~19 at any time | Could be slightly higher for more surface area | 🟡 Medium |
-| **Issue title SEO** | Long, adjective-heavy titles | Search engines prefer concise titles | 🟡 Medium |
-| **Missing labels** | No language-specific labels like `typescript` | TypeScript users can't filter by language | 🟡 Medium |
-| **External aggregators** | Not registered on goodfirstissue.dev, up-for-grabs.net | Missing discovery channels | 🟡 Medium |
-| **Comment content** | Welcome comment is generic | Could include more SEO keywords | 🟢 Low |
-| **Issue pinning** | No pinned issues | Missing prime visibility real estate | 🟡 Medium |
+| Aspect                   | Current State                                          | Issue                                             | Impact    |
+| ------------------------ | ------------------------------------------------------ | ------------------------------------------------- | --------- |
+| **Label count**          | 15 labels per issue                                    | Too many; dilutes signal, risks spam heuristics   | 🔴 High   |
+| **Issue creator**        | `github-actions[bot]`                                  | Bot-created issues may be deprioritized           | 🔴 High   |
+| **Backlog commits**      | `github-actions[bot]`                                  | Bot commits don't count toward contribution graph | 🟡 Medium |
+| **Cron timing**          | Even distribution (`:07,:22,:37,:52`)                  | Not optimized for peak GitHub traffic             | 🟡 Medium |
+| **Open issue count**     | ~19 at any time                                        | Could be slightly higher for more surface area    | 🟡 Medium |
+| **Issue title SEO**      | Long, adjective-heavy titles                           | Search engines prefer concise titles              | 🟡 Medium |
+| **Missing labels**       | No language-specific labels like `typescript`          | TypeScript users can't filter by language         | 🟡 Medium |
+| **External aggregators** | Not registered on goodfirstissue.dev, up-for-grabs.net | Missing discovery channels                        | 🟡 Medium |
+| **Comment content**      | Welcome comment is generic                             | Could include more SEO keywords                   | 🟢 Low    |
+| **Issue pinning**        | No pinned issues                                       | Missing prime visibility real estate              | 🟡 Medium |
 
 ---
 
@@ -166,19 +168,23 @@ beginner, low hanging fruit, starter task, documentation, frontend, javascript
 ### 4.3 Recommended Label Strategy
 
 **Tier 1 — Algorithm-Critical (keep always):**
+
 - `good first issue` — GitHub's canonical label; drives `/contribute` page, Explore recommendations
 - `help wanted` — GitHub's second canonical label; used in search filters
 
 **Tier 2 — High-Value Discovery (keep):**
+
 - `hacktoberfest` — Drives Hacktoberfest discovery (massive October traffic)
 - `up-for-grabs` — Used by up-for-grabs.net aggregator
 - `first-timers-only` — Used by firsttimersonly.com aggregator
 
 **Tier 3 — Content-Type Specific (add per issue type):**
+
 - `community` — Your internal tracking label (keep)
 - Per-type label: `theme`, `content`, `data`, `trivia`, `translation` (add one per issue type for filtering)
 
 **Tier 4 — Remove:**
+
 - ~~`easy`~~ — redundant with `good first issue`
 - ~~`beginner`~~ — redundant with `good first issue`
 - ~~`beginner-friendly`~~ — redundant with `good first issue`
@@ -218,11 +224,13 @@ This creates issues at `:07`, `:22`, `:37`, and `:52` past every hour — 96 iss
 ### 5.2 GitHub Traffic Patterns
 
 GitHub's global traffic peaks at:
+
 - **13:00–18:00 UTC** (US business hours overlap with European evening)
 - **Secondary peak: 01:00–05:00 UTC** (Asian business hours, US late night coding)
 - **Lowest traffic: 06:00–10:00 UTC** (overnight in Americas, early morning in Europe)
 
 For contributor discovery specifically:
+
 - **Weekday evenings (US time) and weekends** — when hobbyist/student contributors browse
 - **October** — Hacktoberfest drives massive traffic to good first issues
 - **January** — New Year's resolutions drive "learn to contribute" traffic
@@ -257,6 +265,7 @@ Your current `:07,:22,:37,:52` is fine. The key insight is: **issue freshness ma
 ### 5.4 Final Recommendation on Timing
 
 **Keep your current `'7,22,37,52 * * * *'` schedule.** It's already well-optimized:
+
 - 15-minute intervals keep a steady stream of fresh issues
 - Non-standard minutes (`:07` etc.) avoid collision with other bots
 - 96 issues/day with 18h stale close = ~19 open at any time (good ratio)
@@ -270,6 +279,7 @@ Your current `:07,:22,:37,:52` is fine. The key insight is: **issue freshness ma
 ### 6.1 Current State
 
 Your issue bodies are well-structured with:
+
 - Clear headers and sections
 - Tables for data
 - Code blocks with exact content to paste
@@ -284,11 +294,13 @@ Your issue bodies are well-structured with:
 GitHub's search indexes issue bodies. Put the most discoverable keywords in the first 160 characters (which become the search snippet):
 
 **Current first line:**
+
 ```
 ## 🎋 Add New Japan Fact
 ```
 
 **Optimized first line:**
+
 ```
 ## 🎋 Good First Issue: Add a Japan Fact — Beginner-Friendly Open Source Contribution
 ```
@@ -350,6 +362,7 @@ Your current bodies are ~800-1200 characters. This is a good length — long eno
 **Too many open issues (> 50):** Can signal poor maintenance. Also, with 50+ nearly-identical "add JSON entry" issues, the list looks spammy and contributors may feel the issues aren't valuable.
 
 **Sweet spot: 15-30 open issues.** This provides:
+
 - Enough variety across content types
 - Multiple options on `/contribute` page
 - Doesn't look spammy or unmanaged
@@ -360,6 +373,7 @@ Your current bodies are ~800-1200 characters. This is a good length — long eno
 Your current ~19 open issues is **in the sweet spot**. The stale management workflow keeps the count naturally bounded. No change needed here.
 
 **One consideration:** If you want to increase to ~25-30, you could:
+
 - Extend unassigned close threshold from 6h to 8h
 - This keeps more issues visible for longer
 - Trade-off: slightly staler issue pool
@@ -383,12 +397,14 @@ Currently, **all community issues are created by `github-actions[bot]`** using `
 ### 8.2 Backlog Commit Impact
 
 Currently, all backlog updates are committed as:
+
 ```
 git config user.name "github-actions[bot]"
 git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 ```
 
 These commits:
+
 - ❌ Don't count toward your contribution graph
 - ❌ Don't signal "active human maintainer" to GitHub's algorithm
 - ❌ Don't show up in your profile activity
@@ -410,6 +426,7 @@ github-token: ${{ secrets.COMMUNITY_PAT }}
 Where `COMMUNITY_PAT` is a fine-grained PAT with `issues: write` and `contents: write` permissions, scoped to the `lingdojo/kana-dojo` repository.
 
 **Benefits:**
+
 - Issues appear as created by a human maintainer
 - Likely gets better algorithmic treatment
 - Contribution graph shows active maintenance
@@ -437,21 +454,22 @@ And use the PAT for the `actions/checkout@v4` step:
 ```
 
 **Benefits:**
+
 - Commits count toward your contribution graph (green squares!)
 - Signals active human maintenance to algorithm
 - Makes repo look more actively maintained
 
 ### 8.4 Which Workflows to Switch
 
-| Workflow | Currently Uses | Switch to PAT? | Reason |
-|----------|---------------|----------------|--------|
-| `hourly-community-issue.yml` | `GITHUB_TOKEN` | **YES** 🔴 | Issue creation = most important |
-| `stale-community-issues.yml` | `GITHUB_TOKEN` | **YES** | Comments and closes = activity signals |
-| `issue-auto-respond.yml` | `GITHUB_TOKEN` | Maybe | Auto-responses from maintainer feel more personal |
-| `issue-closed-community-backlog.yml` | `GITHUB_TOKEN` | **YES** | Commits to backlog |
-| `pr-merge-close-issue.yml` | `GITHUB_TOKEN` | **YES** | Commits to backlog |
-| `backfill-community-backlog.yml` | `GITHUB_TOKEN` | **YES** | Commits to backlog |
-| `github-metrics.yml` | `GITHUB_TOKEN` | Optional | Low impact |
+| Workflow                             | Currently Uses | Switch to PAT? | Reason                                            |
+| ------------------------------------ | -------------- | -------------- | ------------------------------------------------- |
+| `hourly-community-issue.yml`         | `GITHUB_TOKEN` | **YES** 🔴     | Issue creation = most important                   |
+| `stale-community-issues.yml`         | `GITHUB_TOKEN` | **YES**        | Comments and closes = activity signals            |
+| `issue-auto-respond.yml`             | `GITHUB_TOKEN` | Maybe          | Auto-responses from maintainer feel more personal |
+| `issue-closed-community-backlog.yml` | `GITHUB_TOKEN` | **YES**        | Commits to backlog                                |
+| `pr-merge-close-issue.yml`           | `GITHUB_TOKEN` | **YES**        | Commits to backlog                                |
+| `backfill-community-backlog.yml`     | `GITHUB_TOKEN` | **YES**        | Commits to backlog                                |
+| `github-metrics.yml`                 | `GITHUB_TOKEN` | Optional       | Low impact                                        |
 
 ### 8.5 PAT Security Considerations
 
@@ -464,6 +482,7 @@ And use the PAT for the `actions/checkout@v4` step:
 ### 8.6 Alternative: GitHub App
 
 Instead of a personal PAT, you could create a **GitHub App** with a custom identity (e.g., "KanaDojo Bot"). This:
+
 - Has its own identity (not `github-actions[bot]`)
 - Can have specific permissions
 - Doesn't use your personal account
@@ -489,6 +508,7 @@ language-learning, learn-japanese, nextjs, open-source, react, up-for-grabs
 GitHub allows up to 20 topics. You're using all 20, which is good for maximum surface area. However, some topics could be optimized:
 
 **High-value topics (keep):**
+
 - `good-first-issue` — canonical topic for discoverability
 - `hacktoberfest` — drives Hacktoberfest traffic
 - `beginner-friendly` — popular search term
@@ -503,6 +523,7 @@ GitHub allows up to 20 topics. You're using all 20, which is good for maximum su
 - `learn-japanese` — long-tail search term
 
 **Redundant topics (consider replacing):**
+
 - `beginner` — covered by `beginner-friendly`
 - `contribute` — covered by `contributions-welcome`
 - `contribution` — covered by `contributions-welcome`
@@ -514,6 +535,7 @@ GitHub allows up to 20 topics. You're using all 20, which is good for maximum su
 ### 9.3 Recommended Topic Changes
 
 **Remove (7):**
+
 - `beginner` (redundant)
 - `contribute` (redundant)
 - `contribution` (redundant)
@@ -523,6 +545,7 @@ GitHub allows up to 20 topics. You're using all 20, which is good for maximum su
 - `japanese-language` (redundant with `japanese` + `language-learning`)
 
 **Add (7):**
+
 - `typescript` — your actual language; TypeScript is extremely popular
 - `education` — education topic is huge and drives traffic
 - `javascript` — because TypeScript IS JavaScript; many search for JS
@@ -548,6 +571,7 @@ duolingo-alternative
 ### 10.1 Current Engagement Signals
 
 You're already doing:
+
 - ✅ Adding 🚀 reaction to each new issue
 - ✅ Posting a welcome comment on each issue
 - ✅ Adding ❤️ reaction to the welcome comment
@@ -567,7 +591,7 @@ for (const reaction of reactions) {
       owner: context.repo.owner,
       repo: context.repo.repo,
       issue_number: response.data.number,
-      content: reaction
+      content: reaction,
     });
   } catch (e) {
     console.log(`Could not add ${reaction} reaction: ${e.message}`);
@@ -597,12 +621,14 @@ If you have a GitHub Projects board, adding issues to it creates additional enga
 Your welcome comment is good but could be more engaging:
 
 **Current:**
+
 ```
 👋 **This issue is up for grabs!** Comment below to claim it and get assigned.
 No coding experience needed — just a simple JSON file edit...
 ```
 
 **Enhanced:**
+
 ```
 👋 **This issue is up for grabs!** Comment below to claim it and get assigned.
 
@@ -635,10 +661,11 @@ Your repository is likely already being picked up by some aggregators due to you
 This is one of the most popular "good first issue" aggregators. You need to add your repo to their YAML config.
 
 **Action:** Submit a PR to `deepsourcelabs/good-first-issue` adding:
+
 ```yaml
 - name: kana-dojo
   owner: lingdojo
-  description: "Aesthetic, minimalist platform for learning Japanese."
+  description: 'Aesthetic, minimalist platform for learning Japanese.'
   tags:
     - TypeScript
     - React
@@ -693,20 +720,20 @@ While not directly related to the GitHub algorithm, creating awareness drives tr
 
 ### 12.1 Current Health
 
-| Signal | Status | Notes |
-|--------|--------|-------|
-| README.md | ✅ | Present and comprehensive |
-| CONTRIBUTING.md | ✅ | Present in both root and .github |
-| CODE_OF_CONDUCT.md | ✅ | Present |
-| SECURITY.md | ✅ | Present |
-| LICENSE | ✅ | AGPL-3.0 |
-| Issue templates | ✅ | Bug report + feature request |
-| PR template | ✅ | Present |
-| FUNDING.yml | ✅ | Ko-fi + Patreon |
-| Discussions | ✅ | Enabled |
-| Wiki | ✅ | Enabled |
-| Description | ✅ | Well-optimized |
-| Homepage URL | ✅ | kanadojo.com |
+| Signal             | Status | Notes                            |
+| ------------------ | ------ | -------------------------------- |
+| README.md          | ✅     | Present and comprehensive        |
+| CONTRIBUTING.md    | ✅     | Present in both root and .github |
+| CODE_OF_CONDUCT.md | ✅     | Present                          |
+| SECURITY.md        | ✅     | Present                          |
+| LICENSE            | ✅     | AGPL-3.0                         |
+| Issue templates    | ✅     | Bug report + feature request     |
+| PR template        | ✅     | Present                          |
+| FUNDING.yml        | ✅     | Ko-fi + Patreon                  |
+| Discussions        | ✅     | Enabled                          |
+| Wiki               | ✅     | Enabled                          |
+| Description        | ✅     | Well-optimized                   |
+| Homepage URL       | ✅     | kanadojo.com                     |
 
 ### 12.2 Missing Health Signals
 
@@ -755,7 +782,7 @@ Currently, stale unassigned issues are closed with `state_reason: 'completed'`:
 ```javascript
 await github.rest.issues.update({
   state: 'closed',
-  state_reason: 'completed'
+  state_reason: 'completed',
 });
 ```
 
@@ -775,7 +802,7 @@ if (issue.state_reason !== 'not_planned') {
 ```javascript
 await github.rest.issues.update({
   state: 'closed',
-  state_reason: 'not_planned'  // was: 'completed'
+  state_reason: 'not_planned', // was: 'completed'
 });
 ```
 
@@ -792,6 +819,7 @@ await github.rest.issues.update({
 ```
 
 Example:
+
 ```
 [Good First Issue] 🍶 Add fun, engaging Famous Japanese Video Game Quote 93 (good-first-issue, <1 min)
 ```
@@ -843,22 +871,22 @@ The `addTitleAdjectives` function inserts two random adjectives like "fun, engag
 
 ### 14.4 Content-Type-Specific Short Names
 
-| Current | Recommended Short |
-|---------|-------------------|
-| `Interesting, Cultural Fact about Japan` | `Japan Fact` |
-| `Famous Japanese Video Game Quote` | `Video Game Quote` |
-| `Famous Anime Quote` | `Anime Quote` |
-| `Classic Japanese Haiku` | `Haiku` |
-| `New Japanese Proverb` | `Proverb` |
-| `New Trivia Question` | `Trivia Question` |
-| `New Grammar Point` | `Grammar Point` |
-| `New Color Theme` | `Theme` |
-| `New Japanese Idiom` | `Idiom` |
-| `Regional Dialect Entry` | `Dialect Entry` |
-| `Japanese False Friend` | `False Friend` |
-| `Japanese Cultural Etiquette Tip` | `Etiquette Tip` |
-| `Japanese Example Sentence` | `Example Sentence` |
-| `Common Japanese Learner Mistake` | `Learner Mistake` |
+| Current                                  | Recommended Short  |
+| ---------------------------------------- | ------------------ |
+| `Interesting, Cultural Fact about Japan` | `Japan Fact`       |
+| `Famous Japanese Video Game Quote`       | `Video Game Quote` |
+| `Famous Anime Quote`                     | `Anime Quote`      |
+| `Classic Japanese Haiku`                 | `Haiku`            |
+| `New Japanese Proverb`                   | `Proverb`          |
+| `New Trivia Question`                    | `Trivia Question`  |
+| `New Grammar Point`                      | `Grammar Point`    |
+| `New Color Theme`                        | `Theme`            |
+| `New Japanese Idiom`                     | `Idiom`            |
+| `Regional Dialect Entry`                 | `Dialect Entry`    |
+| `Japanese False Friend`                  | `False Friend`     |
+| `Japanese Cultural Etiquette Tip`        | `Etiquette Tip`    |
+| `Japanese Example Sentence`              | `Example Sentence` |
+| `Common Japanese Learner Mistake`        | `Learner Mistake`  |
 
 ---
 
@@ -954,6 +982,7 @@ These are theories based on observation, not documented behavior. Test at your o
 **Risk:** Creating 96 nearly-identical issues per day, all with the same labels, all by the same bot, all following the same template — GitHub's anti-spam systems may flag this pattern.
 
 **Mitigation strategies:**
+
 1. **Switch to PAT** (human identity)
 2. **Vary issue content** (you already have 14 types — good)
 3. **Reduce label count** (15 identical labels per issue is a red flag)
@@ -994,38 +1023,38 @@ These are theories based on observation, not documented behavior. Test at your o
 
 ### 🔴 High Priority (Do First)
 
-| # | Action | Effort | Impact |
-|---|--------|--------|--------|
-| 1 | **Switch to PAT for issue creation** | Medium | High — human identity for all issue/comment/commit actions |
-| 2 | **Reduce labels from 15 to 6-7** | Low | High — removes spam signal, keeps discovery labels |
-| 3 | **Fix stale close reason bug** | Low | High — unassigned stale issues should close as `not_planned`, not `completed`, to properly re-enable backlog items |
-| 4 | **Register on goodfirstissue.dev** | Low | Medium-High — new discovery channel |
-| 5 | **Register on up-for-grabs.net** | Low | Medium-High — new discovery channel |
+| #   | Action                               | Effort | Impact                                                                                                             |
+| --- | ------------------------------------ | ------ | ------------------------------------------------------------------------------------------------------------------ |
+| 1   | **Switch to PAT for issue creation** | Medium | High — human identity for all issue/comment/commit actions                                                         |
+| 2   | **Reduce labels from 15 to 6-7**     | Low    | High — removes spam signal, keeps discovery labels                                                                 |
+| 3   | **Fix stale close reason bug**       | Low    | High — unassigned stale issues should close as `not_planned`, not `completed`, to properly re-enable backlog items |
+| 4   | **Register on goodfirstissue.dev**   | Low    | Medium-High — new discovery channel                                                                                |
+| 5   | **Register on up-for-grabs.net**     | Low    | Medium-High — new discovery channel                                                                                |
 
 ### 🟡 Medium Priority (Do Next)
 
-| # | Action | Effort | Impact |
-|---|--------|--------|--------|
-| 6 | **Simplify issue titles** (remove adjectives, shorten) | Low | Medium — cleaner appearance, less truncation |
-| 7 | **Optimize repo topics** (replace redundant with new) | Low | Medium — better topic page discovery |
-| 8 | **Add multiple reactions** (👍, 🚀, ❤️) | Low | Medium — stronger engagement signal |
-| 9 | **Pin 3 diverse issues** | Low | Medium — prime visibility on repo page |
-| 10 | **Add `typescript` label** | Low | Medium — language-specific discovery |
-| 11 | **Extend unassigned stale from 6h to 8h** | Low | Low-Medium — more timezone coverage |
-| 12 | **Register on CodeTriage** | Low | Medium — email-based discovery |
+| #   | Action                                                 | Effort | Impact                                       |
+| --- | ------------------------------------------------------ | ------ | -------------------------------------------- |
+| 6   | **Simplify issue titles** (remove adjectives, shorten) | Low    | Medium — cleaner appearance, less truncation |
+| 7   | **Optimize repo topics** (replace redundant with new)  | Low    | Medium — better topic page discovery         |
+| 8   | **Add multiple reactions** (👍, 🚀, ❤️)                | Low    | Medium — stronger engagement signal          |
+| 9   | **Pin 3 diverse issues**                               | Low    | Medium — prime visibility on repo page       |
+| 10  | **Add `typescript` label**                             | Low    | Medium — language-specific discovery         |
+| 11  | **Extend unassigned stale from 6h to 8h**              | Low    | Low-Medium — more timezone coverage          |
+| 12  | **Register on CodeTriage**                             | Low    | Medium — email-based discovery               |
 
 ### 🟢 Low Priority (Nice to Have)
 
-| # | Action | Effort | Impact |
-|---|--------|--------|--------|
-| 13 | **Add badges to issue body** (time, difficulty) | Low | Low — visual appeal |
-| 14 | **Enhance welcome comment** (phone-friendly, contributor list mention) | Low | Low — human behavior, not algorithm |
-| 15 | **Create seasonal milestones** | Low | Low — organizational signal |
-| 16 | **Submit to awesome-first-pr-opportunities** | Low | Low — one-time discovery |
-| 17 | **Create GitHub Releases/tags** | Low | Low — repo health signal |
-| 18 | **Post on Discussions periodically** | Medium | Low — organic engagement |
-| 19 | **Write external blog post** | Medium | Low-Medium — drives external traffic |
-| 20 | **Vary issue creation frequency by time of day** | High | Low — marginal gain |
+| #   | Action                                                                 | Effort | Impact                               |
+| --- | ---------------------------------------------------------------------- | ------ | ------------------------------------ |
+| 13  | **Add badges to issue body** (time, difficulty)                        | Low    | Low — visual appeal                  |
+| 14  | **Enhance welcome comment** (phone-friendly, contributor list mention) | Low    | Low — human behavior, not algorithm  |
+| 15  | **Create seasonal milestones**                                         | Low    | Low — organizational signal          |
+| 16  | **Submit to awesome-first-pr-opportunities**                           | Low    | Low — one-time discovery             |
+| 17  | **Create GitHub Releases/tags**                                        | Low    | Low — repo health signal             |
+| 18  | **Post on Discussions periodically**                                   | Medium | Low — organic engagement             |
+| 19  | **Write external blog post**                                           | Medium | Low-Medium — drives external traffic |
+| 20  | **Vary issue creation frequency by time of day**                       | High   | Low — marginal gain                  |
 
 ---
 
@@ -1038,6 +1067,7 @@ These are theories based on observation, not documented behavior. Test at your o
 **Current exposure:** 96 bot-created issues/day, all with 15 identical labels, same template structure.
 
 **Mitigation:**
+
 1. Switch to PAT (removes "bot" identity)
 2. Reduce label count (removes label-farming signal)
 3. Your 14 content types already provide good variety
@@ -1048,6 +1078,7 @@ These are theories based on observation, not documented behavior. Test at your o
 **Risk level:** Low (with proper scoping)
 
 **Mitigation:**
+
 - Fine-grained PAT scoped to single repo
 - Minimal permissions (issues + contents only)
 - Annual rotation
@@ -1078,18 +1109,19 @@ Everything else is for third-party aggregators or internal organization.
 
 ## Appendix B: Third-Party Aggregator Label Requirements
 
-| Aggregator | Required Label | Status |
-|-----------|---------------|--------|
-| goodfirstissue.dev | `good first issue` | ✅ Have it |
-| up-for-grabs.net | `up-for-grabs` | ✅ Have it |
-| firsttimersonly.com | `first-timers-only` | ✅ Have it |
-| CodeTriage | Any | ✅ Repo just needs to be registered |
-| awesome-first-pr | `good first issue` | ✅ Have it |
-| GitHub Copilot Chat | `good first issue`, `help wanted` | ✅ Have both |
+| Aggregator          | Required Label                    | Status                              |
+| ------------------- | --------------------------------- | ----------------------------------- |
+| goodfirstissue.dev  | `good first issue`                | ✅ Have it                          |
+| up-for-grabs.net    | `up-for-grabs`                    | ✅ Have it                          |
+| firsttimersonly.com | `first-timers-only`               | ✅ Have it                          |
+| CodeTriage          | Any                               | ✅ Repo just needs to be registered |
+| awesome-first-pr    | `good first issue`                | ✅ Have it                          |
+| GitHub Copilot Chat | `good first issue`, `help wanted` | ✅ Have both                        |
 
 ## Appendix C: Current vs. Recommended Configuration Diff
 
 ### Labels
+
 ```diff
 - good first issue, community, hacktoberfest, help wanted, easy,
 - up-for-grabs, first-timers-only, beginner-friendly, enhancement,
@@ -1099,6 +1131,7 @@ Everything else is for third-party aggregators or internal organization.
 ```
 
 ### Topics
+
 ```diff
 - beginner, beginner-friendly, contribute, contribution, contributions-welcome,
 - first-contributions, first-timers-only, good-first-contribution, good-first-issue,
@@ -1112,6 +1145,7 @@ Everything else is for third-party aggregators or internal organization.
 ```
 
 ### Issue Title
+
 ```diff
 - [Good First Issue] {emoji} Add {adj1}, {adj2} {LongContentType} {id} (good-first-issue, <1 min)
 + {emoji} Add {ShortContentType} #{id} — Good First Issue (<1 min)
@@ -1119,4 +1153,4 @@ Everything else is for third-party aggregators or internal organization.
 
 ---
 
-*This report was generated through analysis of the KanaDojo repository's GitHub Actions workflows, issue configuration, repository metadata, and research into GitHub's recommendation algorithm behavior.*
+_This report was generated through analysis of the KanaDojo repository's GitHub Actions workflows, issue configuration, repository metadata, and research into GitHub's recommendation algorithm behavior._

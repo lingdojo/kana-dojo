@@ -34,7 +34,8 @@ import {
 // Configuration
 const SOURCE_DIR = 'data/wallpapers-source';
 const OUTPUT_DIR = 'public/wallpapers';
-const MANIFEST_PATH = 'features/Preferences/data/wallpapers.generated.ts';
+const MANIFEST_PATH =
+  'features/Preferences/data/wallpapers/wallpapers.generated.ts';
 
 const forceReprocess = process.argv.includes('--force');
 

@@ -374,4 +374,3 @@ describe('Anki Converter SEO Elements', () => {
     });
   });
 });
-

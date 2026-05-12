@@ -234,6 +234,21 @@ async function checkMetaTags(path: string): Promise<void> {
       log({ page, status: 'warn', message: 'Missing canonical URL' });
     }
 
+    // Canonical URL quality check
+    const canonicalMatch = html.match(
+      /<link[^>]*rel=["']canonical["'][^>]*href=["']([^"']+)["']/i,
+    );
+    if (canonicalMatch && canonicalMatch[1]) {
+      const canonicalHref = canonicalMatch[1];
+      if (!canonicalHref.startsWith('https://kanadojo.com/')) {
+        log({
+          page,
+          status: 'warn',
+          message: `Canonical not on expected host: ${canonicalHref}`,
+        });
+      }
+    }
+
     // Check structured data
     const jsonLdMatches = html.match(
       /<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi,
@@ -272,11 +287,21 @@ async function checkMetaTags(path: string): Promise<void> {
       html.includes('hreflang="en"') || html.includes("hreflang='en'");
     const hreflangEs =
       html.includes('hreflang="es"') || html.includes("hreflang='es'");
+    const hreflangXDefault =
+      html.includes('hreflang="x-default"') ||
+      html.includes("hreflang='x-default'");
     if (!hreflangEn || !hreflangEs) {
       log({
         page,
         status: 'warn',
         message: 'Missing hreflang tags for all locales',
+      });
+    }
+    if (!hreflangXDefault) {
+      log({
+        page,
+        status: 'warn',
+        message: 'Missing hreflang x-default tag',
       });
     }
   } catch (error) {
@@ -375,11 +400,21 @@ async function checkLlmsTxt(): Promise<void> {
     if (response.ok) {
       const text = await response.text();
       const sections = (text.match(/^## /gm) || []).length;
+      const hasKanaRoute = text.includes('https://kanadojo.com/kana');
+      const hasKanjiRoute = text.includes('https://kanadojo.com/kanji');
+      const hasVocabularyRoute = text.includes('https://kanadojo.com/vocabulary');
       log({
         page: 'llms.txt',
         status: 'pass',
         message: `llms.txt accessible with ${sections} sections (GEO ready)`,
       });
+      if (!hasKanaRoute || !hasKanjiRoute || !hasVocabularyRoute) {
+        log({
+          page: 'llms.txt',
+          status: 'warn',
+          message: 'Core dojo routes missing from llms.txt route map',
+        });
+      }
     } else {
       log({
         page: 'llms.txt',

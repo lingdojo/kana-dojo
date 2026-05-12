@@ -1,0 +1,58 @@
+{
+  "title": "Paramètres",
+  "description": "Personnalisez votre expérience d'apprentissage",
+  "general": {
+    "title": "Général",
+    "language": "Langue",
+    "theme": "Thème",
+    "sound": "Effets sonores",
+    "notifications": "Notifications"
+  },
+  "appearance": {
+    "title": "Apparence",
+    "colorTheme": "Thème de couleur",
+    "font": "Police japonaise",
+    "fontSize": "Taille de police",
+    "darkMode": "Mode sombre",
+    "customTheme": "Thème personnalisé"
+  },
+  "game": {
+    "title": "Paramètres de jeu",
+    "timeLimit": "Limite de temps",
+    "questionsPerSession": "Questions par session",
+    "difficulty": "Difficulté",
+    "autoNext": "Question suivante automatique",
+    "showHints": "Afficher les indices"
+  },
+  "audio": {
+    "title": "Audio",
+    "soundEffects": "Effets sonores",
+    "volume": "Volume",
+    "clickSound": "Son de clic",
+    "correctSound": "Son de bonne réponse",
+    "incorrectSound": "Son de mauvaise réponse"
+  },
+  "preferences": {
+    "title": "Préférences",
+    "showRomaji": "Afficher les romaji",
+    "showFurigana": "Afficher les furigana",
+    "inputMethod": "Méthode de saisie",
+    "keyboardShortcuts": "Raccourcis clavier"
+  },
+  "data": {
+    "title": "Données",
+    "exportData": "Exporter les données",
+    "importData": "Importer les données",
+    "resetProgress": "Réinitialiser la progression",
+    "clearCache": "Vider le cache",
+    "confirmReset": "Êtes-vous sûr de vouloir réinitialiser toute votre progression ? Cette action est irréversible."
+  },
+  "themes": {
+    "light": "Clair",
+    "dark": "Sombre",
+    "system": "Système",
+    "custom": "Personnalisé",
+    "presets": "Thèmes prédéfinis",
+    "createCustom": "Créer un thème personnalisé"
+  }
+}

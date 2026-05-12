@@ -2,10 +2,10 @@ import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 import { generatePageMetadata } from '@/core/i18n/metadata-helpers';
 import { routing, type Locale } from '@/core/i18n/routing';
-import { Breadcrumbs } from '@/shared/components/Breadcrumbs';
-import { BreadcrumbSchema } from '@/shared/components/SEO/BreadcrumbSchema';
+import { Breadcrumbs } from '@/shared/ui-composite/Breadcrumbs';
+import { BreadcrumbSchema } from '@/shared/ui-composite/SEO/BreadcrumbSchema';
 import FAQSection from './FAQSection';
-import { StructuredData } from '@/shared/components/SEO/StructuredData';
+import { StructuredData } from '@/shared/ui-composite/SEO/StructuredData';
 
 export function generateStaticParams() {
   return routing.locales.map(locale => ({ locale }));
@@ -254,7 +254,7 @@ export default async function FAQPage({
                 {t('links.glossary')}
               </Link>
               <Link
-                href={`/${locale}/translate`}
+                href='/translate'
                 className='rounded-full border border-(--border-color) bg-[color-mix(in_oklab,var(--card-color),transparent_0%)] px-4 py-2 text-sm font-semibold text-(--main-color) shadow-[0_1px_0_rgba(0,0,0,0.05)] transition-colors hover:bg-[color-mix(in_oklab,var(--card-color),var(--main-color)_6%)]'
               >
                 {t('links.translator')}
@@ -377,3 +377,4 @@ export default async function FAQPage({
     </>
   );
 }
+

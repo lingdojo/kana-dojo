@@ -1,8 +1,8 @@
 import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
-import type { IKanjiObj } from '@/features/Kanji/store/useKanjiStore';
+import type { IKanjiObj, KanjiLevel } from '@/entities/kanji';
 
-export type KanjiLevel = 'n5' | 'n4' | 'n3' | 'n2' | 'n1';
+export type { KanjiLevel } from '@/entities/kanji';
 
 type KanjiCacheState = {
   cachedByLevel: Partial<Record<KanjiLevel, IKanjiObj[]>>;

@@ -3,9 +3,9 @@
 import clsx from 'clsx';
 import { toKana, toRomaji } from 'wanakana';
 import { IWord } from '@/shared/types/interfaces';
-import { cardBorderStyles } from '@/shared/lib/styles';
+import { cardBorderStyles } from '@/shared/utils/styles';
 import { useThemePreferences } from '@/features/Preferences';
-import FuriganaText from '@/shared/components/text/FuriganaText';
+import FuriganaText from '@/shared/ui-composite/text/FuriganaText';
 import { memo } from 'react';
 
 type SetDictionaryProps = {
@@ -73,3 +73,4 @@ const SetDictionary = memo(function SetDictionary({
 });
 
 export default SetDictionary;
+

@@ -2,11 +2,11 @@ name: Create Community Contribution Issue
 
 on:
   schedule:
-    - cron: '*/20 * * * *'
+    - cron: '*/30 * * * *'
   workflow_dispatch:
     inputs:
       force_type:
-        description: 'Force issue type: theme | fact | proverb | haiku | trivia | grammar | animeQuote | videoGameQuote | idiom | regionalDialect | falseFriend | culturalEtiquette | exampleSentence | commonMistake'
+        description: 'Force issue type: theme | fact | proverb | haiku | trivia | grammar | animeQuote | videoGameQuote | idiom | regionalDialect | falseFriend | culturalEtiquette | exampleSentence | commonMistake | wallpaperUrl | communityNote'
         required: false
         type: string
       dry_run:
@@ -15,6 +15,7 @@ on:
         type: boolean
 
 permissions:
+  actions: read
   contents: write
   issues: write
   pull-requests: write
@@ -25,10 +26,53 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  backup-guard:
+    runs-on: ubuntu-24.04
+    outputs:
+      should_run: ${{ steps.guard.outputs.should_run }}
+    steps:
+      - name: Decide whether backup run is needed
+        id: guard
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.AUTOMATION_PR_TOKEN || secrets.GITHUB_TOKEN }}
+          script: |
+            if (context.eventName !== 'schedule') {
+              core.setOutput('should_run', 'true');
+              return;
+            }
+
+            const maxAgeMs = 45 * 60 * 1000;
+            const workflowId = 'hourly-community-issue.yml';
+            const now = Date.now();
+            const runs = await github.paginate(github.rest.actions.listWorkflowRuns, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: workflowId,
+              event: 'workflow_dispatch',
+              branch: 'main',
+              per_page: 100,
+            });
+            const recentSuccess = runs.find(function(run) {
+              if (run.status !== 'completed' || run.conclusion !== 'success') {
+                return false;
+              }
+              return (now - Date.parse(run.created_at)) <= maxAgeMs;
+            });
+
+            const shouldRun = recentSuccess ? 'false' : 'true';
+            console.log(
+              recentSuccess
+                ? `Recent workflow_dispatch success found at ${recentSuccess.created_at}; skipping scheduled backup run.`
+                : 'No recent workflow_dispatch success found; running scheduled backup.',
+            );
+            core.setOutput('should_run', shouldRun);
+
   create-issue:
+    needs: backup-guard
     runs-on: ubuntu-24.04
     timeout-minutes: 2
-    if: github.repository == 'lingdojo/kana-dojo'
+    if: github.repository == 'lingdojo/kana-dojo' && needs.backup-guard.outputs.should_run == 'true'
 
     steps:
       - name: Checkout repository
@@ -42,7 +86,7 @@ jobs:
         id: create-issue
         uses: actions/github-script@v7
         with:
-          github-token: ${{ secrets.AUTOMATION_PR_TOKEN }}
+          github-token: ${{ secrets.AUTOMATION_PR_TOKEN || secrets.GITHUB_TOKEN }}
           script: |
             const fs = require('fs');
             const templates = require('./.github/templates/messages.cjs');
@@ -61,16 +105,14 @@ jobs:
                 return null;
               }
 
-              const start = Math.floor(Math.random() * items.length);
-              for (let offset = 0; offset < items.length; offset += 1) {
-                const index = (start + offset) % items.length;
-                const candidate = items[index];
-                if (predicate(candidate, index)) {
-                  return candidate;
-                }
+              const eligible = items.filter(predicate);
+
+              if (eligible.length === 0) {
+                return null;
               }
 
-              return null;
+              const randomIndex = Math.floor(Math.random() * eligible.length);
+              return eligible[randomIndex];
             }
 
             async function resolveMilestoneNumber() {
@@ -122,6 +164,8 @@ jobs:
             const exampleSentencesBacklogPath = 'community/backlog/example-sentences-backlog.json';
             const commonMistakesBacklogPath = 'community/backlog/common-mistakes-backlog.json';
             const videoGameQuotesBacklogPath = 'community/backlog/video-game-quotes-backlog.json';
+            const wallpaperUrlsBacklogPath = 'community/backlog/wallpaper-urls-backlog.json';
+            const communityNotesBacklogPath = 'community/backlog/community-notes-backlog.json';
 
             const themesSourcePath = 'community/content/community-themes.json';
             const factsSourcePath = 'community/content/japan-facts.json';
@@ -142,6 +186,7 @@ jobs:
             const exampleSentencesSourcePath = 'community/content/japanese-example-sentences.json';
             const commonMistakesSourcePath = 'community/content/japanese-common-mistakes.json';
             const videoGameQuotesSourcePath = 'community/content/japanese-videogame-quotes.json';
+            const wallpaperUrlsSourcePath = 'community/content/community-wallpaper-urls.json';
 
             let state = JSON.parse(fs.readFileSync(statePath, 'utf8'));
             const themes = JSON.parse(fs.readFileSync(themeBacklogPath, 'utf8'));
@@ -158,6 +203,8 @@ jobs:
             const exampleSentences = JSON.parse(fs.readFileSync(exampleSentencesBacklogPath, 'utf8'));
             const commonMistakes = JSON.parse(fs.readFileSync(commonMistakesBacklogPath, 'utf8'));
             const videoGameQuotes = JSON.parse(fs.readFileSync(videoGameQuotesBacklogPath, 'utf8'));
+            const wallpaperUrls = JSON.parse(fs.readFileSync(wallpaperUrlsBacklogPath, 'utf8'));
+            const communityNotes = JSON.parse(fs.readFileSync(communityNotesBacklogPath, 'utf8'));
 
             if (typeof state.consecutiveNoIssueRuns !== 'number') {
               state.consecutiveNoIssueRuns = 0;
@@ -291,6 +338,15 @@ jobs:
               }
             }
 
+            let existingWallpaperUrls = [];
+            if (fs.existsSync(wallpaperUrlsSourcePath)) {
+              try {
+                existingWallpaperUrls = JSON.parse(fs.readFileSync(wallpaperUrlsSourcePath, 'utf8'));
+              } catch (e) {
+                console.log(`Could not parse ${wallpaperUrlsSourcePath}: ${e.message}`);
+              }
+            }
+
             let themesSourceContent = '';
             let existingThemes = [];
             if (fs.existsSync(themesSourcePath)) {
@@ -319,7 +375,7 @@ jobs:
               }
             }
 
-            const defaultOrder = ['theme', 'fact', 'proverb', 'haiku', 'trivia', 'grammar', 'animeQuote', 'videoGameQuote', 'idiom', 'regionalDialect', 'falseFriend', 'culturalEtiquette', 'exampleSentence', 'commonMistake'];
+            const defaultOrder = ['theme', 'fact', 'proverb', 'haiku', 'trivia', 'grammar', 'animeQuote', 'videoGameQuote', 'idiom', 'regionalDialect', 'falseFriend', 'culturalEtiquette', 'exampleSentence', 'commonMistake', 'wallpaperUrl', 'communityNote'];
             const typeOrder = forceType && defaultOrder.includes(forceType)
               ? [forceType]
               : defaultOrder;
@@ -337,20 +393,8 @@ jobs:
               if (nextType === 'theme') {
               // Skip items that are already issued OR completed OR already exist in main
               item = findRandomEligible(themes, function(th) {
-                if (th.issued || th.completed) {
+                if (th.issued) {
                   return false;
-                }
-                if (themesSourceContent) {
-                  const hasId = th.id && existingThemes.some(function(theme) { return theme.id === th.id; });
-                  const hasName = th.name && existingThemes.some(function(theme) {
-                    return (theme.name || '').toLowerCase() === th.name.toLowerCase();
-                  });
-                  if (hasId || hasName) {
-                    const themeIdx = themes.findIndex(function(ti) { return ti.id === th.id; });
-                    themes[themeIdx].completed = true;
-                    backlogChanged = true;
-                    return false;
-                  }
                 }
                 return true;
               });
@@ -392,15 +436,8 @@ jobs:
               backlogChanged = true;
               
               } else if (nextType === 'fact') {
-              // Skip items that are already issued OR completed OR already exist in main
               item = findRandomEligible(facts, function(f) {
-                if (f.issued || f.completed) {
-                  return false;
-                }
-                if (Array.isArray(existingFacts) && existingFacts.includes(f.fact)) {
-                  const factIdx = facts.findIndex(function(fi) { return fi.id === f.id; });
-                  facts[factIdx].completed = true;
-                  backlogChanged = true;
+                if (f.issued) {
                   return false;
                 }
                 return true;
@@ -444,22 +481,8 @@ jobs:
               } else if (nextType === 'proverb') {
               // Proverb
               item = findRandomEligible(proverbs, function(p) {
-                if (p.issued || p.completed) {
+                if (p.issued) {
                   return false;
-                }
-                if (Array.isArray(existingProverbs)) {
-                  const exists = existingProverbs.some(function(ep) {
-                    if (!ep || typeof ep !== 'object') {
-                      return false;
-                    }
-                    return ep.japanese === p.japanese && ep.romaji === p.romaji && ep.english === p.english;
-                  });
-                  if (exists) {
-                    const proverbIdx = proverbs.findIndex(function(pi) { return pi.id === p.id; });
-                    proverbs[proverbIdx].completed = true;
-                    backlogChanged = true;
-                    return false;
-                  }
                 }
                 return true;
               });
@@ -503,22 +526,8 @@ jobs:
               backlogChanged = true;
               } else if (nextType === 'haiku') {
               item = findRandomEligible(haiku, function(h) {
-                if (h.issued || h.completed) {
+                if (h.issued) {
                   return false;
-                }
-                if (Array.isArray(existingHaiku)) {
-                  const exists = existingHaiku.some(function(eh) {
-                    if (!eh || typeof eh !== 'object') {
-                      return false;
-                    }
-                    return eh.japanese === h.japanese && eh.romaji === h.romaji && eh.english === h.english;
-                  });
-                  if (exists) {
-                    const haikuIdx = haiku.findIndex(function(hi) { return hi.id === h.id; });
-                    haiku[haikuIdx].completed = true;
-                    backlogChanged = true;
-                    return false;
-                  }
                 }
                 return true;
               });
@@ -556,29 +565,8 @@ jobs:
               backlogChanged = true;
               } else if (nextType === 'trivia') {
               item = findRandomEligible(trivia, function(q) {
-                if (q.issued || q.completed) {
+                if (q.issued) {
                   return false;
-                }
-                if (Array.isArray(existingTrivia)) {
-                  const exists = existingTrivia.some(function(eq) {
-                    if (!eq || typeof eq !== 'object') {
-                      return false;
-                    }
-                    if (eq.question !== q.question) {
-                      return false;
-                    }
-                    const eqAnswers = Array.isArray(eq.answers) ? eq.answers : [];
-                    const qAnswers = Array.isArray(q.answers) ? q.answers : [];
-                    return eqAnswers.length === qAnswers.length && eqAnswers.every(function(ans, idx) {
-                      return ans === qAnswers[idx];
-                    });
-                  });
-                  if (exists) {
-                    const triviaIdx = trivia.findIndex(function(ti) { return ti.id === q.id; });
-                    trivia[triviaIdx].completed = true;
-                    backlogChanged = true;
-                    return false;
-                  }
                 }
                 return true;
               });
@@ -624,13 +612,7 @@ jobs:
               } else if (nextType === 'grammar') {
               // Grammar
               item = findRandomEligible(grammar, function(g) {
-                if (g.issued || g.completed) {
-                  return false;
-                }
-                if (Array.isArray(existingGrammar) && existingGrammar.includes(g.text)) {
-                  const grammarIdx = grammar.findIndex(function(gi) { return gi.id === g.id; });
-                  grammar[grammarIdx].completed = true;
-                  backlogChanged = true;
+                if (g.issued) {
                   return false;
                 }
                 return true;
@@ -675,26 +657,8 @@ jobs:
               } else if (nextType === 'animeQuote') {
               // Anime Quote
               item = findRandomEligible(animeQuotes, function(q) {
-                if (q.issued || q.completed) {
+                if (q.issued) {
                   return false;
-                }
-                if (Array.isArray(existingAnimeQuotes)) {
-                  const exists = existingAnimeQuotes.some(function(eq) {
-                    if (!eq || typeof eq !== 'object') {
-                      return false;
-                    }
-                    return eq.japanese === q.japanese
-                      && eq.romaji === q.romaji
-                      && eq.english === q.english
-                      && eq.anime === q.anime
-                      && eq.character === q.character;
-                  });
-                  if (exists) {
-                    const quoteIdx = animeQuotes.findIndex(function(qi) { return qi.id === q.id; });
-                    animeQuotes[quoteIdx].completed = true;
-                    backlogChanged = true;
-                    return false;
-                  }
                 }
                 return true;
               });
@@ -738,26 +702,8 @@ jobs:
               backlogChanged = true;
               } else if (nextType === 'videoGameQuote') {
               item = findRandomEligible(videoGameQuotes, function(q) {
-                if (q.issued || q.completed) {
+                if (q.issued) {
                   return false;
-                }
-                if (Array.isArray(existingVideoGameQuotes)) {
-                  const exists = existingVideoGameQuotes.some(function(eq) {
-                    if (!eq || typeof eq !== 'object') {
-                      return false;
-                    }
-                    return eq.japanese === q.japanese
-                      && eq.romaji === q.romaji
-                      && eq.english === q.english
-                      && eq.game === q.game
-                      && eq.character === q.character;
-                  });
-                  if (exists) {
-                    const quoteIdx = videoGameQuotes.findIndex(function(qi) { return qi.id === q.id; });
-                    videoGameQuotes[quoteIdx].completed = true;
-                    backlogChanged = true;
-                    return false;
-                  }
                 }
                 return true;
               });
@@ -1011,14 +957,14 @@ jobs:
                   return false;
                 }
                 if (Array.isArray(existingExampleSentences)) {
-                  const exists = existingExampleSentences.some(function(es) {
-                    if (!es || typeof es !== 'object') {
+                  const exists = existingExampleSentences.some(function(ee) {
+                    if (!ee || typeof ee !== 'object') {
                       return false;
                     }
-                    return es.japanese === e.japanese && es.romaji === e.romaji && es.english === e.english;
+                    return ee.japanese === e.japanese && ee.romaji === e.romaji && ee.english === e.english;
                   });
                   if (exists) {
-                    const sentenceIdx = exampleSentences.findIndex(function(si) { return si.id === e.id; });
+                    const sentenceIdx = exampleSentences.findIndex(function(ei) { return ei.id === e.id; });
                     exampleSentences[sentenceIdx].completed = true;
                     backlogChanged = true;
                     return false;
@@ -1109,6 +1055,99 @@ jobs:
               commonMistakes[mistakeIndex].issued = true;
               fs.writeFileSync(commonMistakesBacklogPath, JSON.stringify(commonMistakes, null, 2));
               backlogChanged = true;
+            } else if (nextType === 'wallpaperUrl') {
+              item = findRandomEligible(wallpaperUrls, function(entry) {
+                if (entry.issued || entry.completed) {
+                  return false;
+                }
+                if (Array.isArray(existingWallpaperUrls) && existingWallpaperUrls.includes(entry.url)) {
+                  const urlIdx = wallpaperUrls.findIndex(function(ui) { return ui.id === entry.id; });
+                  wallpaperUrls[urlIdx].completed = true;
+                  backlogChanged = true;
+                  return false;
+                }
+                return true;
+              });
+
+              if (!item) {
+                console.log('No more wallpaper URLs available in backlog.');
+                if (backlogChanged) {
+                  fs.writeFileSync(wallpaperUrlsBacklogPath, JSON.stringify(wallpaperUrls, null, 2));
+                }
+                continue;
+              }
+
+              const duplicateWallpaperUrl = await hasOpenIssueForQuery(`"Wallpaper URL #${item.id}"`);
+              if (duplicateWallpaperUrl) {
+                const urlIdx = wallpaperUrls.findIndex(function(entry) { return entry.id === item.id; });
+                wallpaperUrls[urlIdx].issued = true;
+                fs.writeFileSync(wallpaperUrlsBacklogPath, JSON.stringify(wallpaperUrls, null, 2));
+                backlogChanged = true;
+                continue;
+              }
+
+              const tmpl = t.wallpaperUrl;
+              const common = t.common;
+              issueTitle = t.buildIssueTitle(pickEmoji(), tmpl.title.replace('{id}', item.id));
+              const instructions = [
+                '1. Star our repo ⭐',
+                '2. Fork our repo 🍴',
+                `3. Open [\`${tmpl.file}\`](../blob/main/${tmpl.file}) in your browser`,
+                '4. Paste the following JSON string just before the closing `]`',
+                '5. Add a comma after the previous last entry if needed so the JSON stays valid',
+                '6. Save the file and commit the changes',
+                `7. Submit a Pull Request with title: \`${tmpl.prTitle.replace('{id}', item.id)}\``,
+                '8. Link this issue using `Closes #<issue_number>`',
+                '9. Wait for review!',
+              ];
+              const codeBlock = `\`\`\`json\n"${item.url}"\n\`\`\``;
+
+              issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.urlHeader}\n\n${codeBlock}\n\n${common.instructionsHeader}\n\n${instructions.join('\n')}\n\n---\n\n${common.footer}`;
+
+              const wallpaperIndex = wallpaperUrls.findIndex(function(entry) { return entry.id === item.id; });
+              wallpaperUrls[wallpaperIndex].issued = true;
+              fs.writeFileSync(wallpaperUrlsBacklogPath, JSON.stringify(wallpaperUrls, null, 2));
+              backlogChanged = true;
+            } else if (nextType === 'communityNote') {
+              item = findRandomEligible(communityNotes, function(entry) {
+                return !entry.issued && !entry.completed;
+              });
+
+              if (!item) {
+                console.log('No more community note items available in backlog.');
+                continue;
+              }
+
+              const duplicateCommunityNote = await hasOpenIssueForQuery(`"Community Note Line #${item.id}"`);
+              if (duplicateCommunityNote) {
+                const noteIdx = communityNotes.findIndex(function(entry) { return entry.id === item.id; });
+                communityNotes[noteIdx].issued = true;
+                fs.writeFileSync(communityNotesBacklogPath, JSON.stringify(communityNotes, null, 2));
+                backlogChanged = true;
+                continue;
+              }
+
+              const tmpl = t.communityNote;
+              const common = t.common;
+              issueTitle = t.buildIssueTitle(pickEmoji(), tmpl.title.replace('{id}', item.id));
+              const instructions = [
+                '1. Star our repo ⭐',
+                '2. Fork our repo 🍴',
+                `3. Open [\`${item.file}\`](../blob/main/${item.file}) in your browser`,
+                `4. Add the following line to the ${item.position} of the file`,
+                '5. Save the file and commit the changes',
+                `6. Submit a Pull Request with title: \`${tmpl.prTitle.replace('{id}', item.id)}\``,
+                '7. Link this issue using `Closes #<issue_number>`',
+                '8. Wait for review!',
+              ];
+              const codeBlock = `\`\`\`md\n${item.text}\n\`\`\``;
+
+              issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.noteHeader}\n\n**File:** \`${item.file}\`  \n**Position:** ${item.position}\n\n${codeBlock}\n\n${common.instructionsHeader}\n\n${instructions.join('\n')}\n\n---\n\n${common.footer}`;
+
+              const noteIndex = communityNotes.findIndex(function(entry) { return entry.id === item.id; });
+              communityNotes[noteIndex].issued = true;
+              fs.writeFileSync(communityNotesBacklogPath, JSON.stringify(communityNotes, null, 2));
+              backlogChanged = true;
             }
 
               if (issueTitle && issueBody && item) {
@@ -1132,6 +1171,8 @@ jobs:
               exampleSentence: exampleSentencesBacklogPath,
               commonMistake: commonMistakesBacklogPath,
               videoGameQuote: videoGameQuotesBacklogPath,
+              wallpaperUrl: wallpaperUrlsBacklogPath,
+              communityNote: communityNotesBacklogPath,
             };
 
             if (!selectedType) {
@@ -1173,6 +1214,9 @@ jobs:
             const secondaryCount = 2 + Math.floor(Math.random() * 2); // 2 or 3
             const selectedSecondary = pickRandomLabels(templates.labels.secondaryIssuePool, secondaryCount);
             const labels = [...templates.labels.coreIssue, ...selectedSecondary];
+            if (selectedType === 'wallpaperUrl' || selectedType === 'communityNote') {
+              labels.push('documentation');
+            }
 
             // Prepend body preamble (§6.2.1–6.2.4: H1 header, badges, callout, metadata)
             const preambleLabelMap = {
@@ -1190,6 +1234,8 @@ jobs:
               culturalEtiquette: 'Etiquette Tip',
               exampleSentence: 'Example Sentence',
               commonMistake: 'Learner Mistake',
+              wallpaperUrl: 'Wallpaper URL',
+              communityNote: 'Community Note Line',
             };
             const preambleLabel = preambleLabelMap[selectedType] || selectedType;
             const preambleId = selectedType !== 'theme' ? (item && item.id) : null;
@@ -1239,12 +1285,18 @@ jobs:
           ISSUE_NUMBER: ${{ steps.create-issue.outputs.issue_number }}
           ISSUE_LABELS: ${{ steps.create-issue.outputs.issue_labels }}
         with:
-          # Uses default GITHUB_TOKEN (issues:write from permissions block) — guaranteed to work
+          github-token: ${{ secrets.AUTOMATION_PR_TOKEN || secrets.GITHUB_TOKEN }}
           script: |
             const issueNumber = Number(process.env.ISSUE_NUMBER);
             const labels = process.env.ISSUE_LABELS.split(',').filter(Boolean);
             const templates = require('./.github/templates/messages.cjs');
             const t = templates.issueCreation;
+            const reactionPool = ['+1', '-1', 'laugh', 'hooray', 'confused', 'heart', 'rocket', 'eyes'];
+
+            function pickRandomReactions(count) {
+              const shuffled = [...reactionPool].sort(function() { return Math.random() - 0.5; });
+              return shuffled.slice(0, Math.min(count, reactionPool.length));
+            }
 
             // Apply labels
             try {
@@ -1259,8 +1311,8 @@ jobs:
               console.log(`Could not apply labels: ${e.message}`);
             }
 
-            // Add reactions for engagement signal (boosts sort:reactions ranking)
-            for (const content of ['+1', 'rocket', 'heart']) {
+            // Add five random unique reactions to issue
+            for (const content of pickRandomReactions(5)) {
               try {
                 await github.rest.reactions.createForIssue({
                   owner: context.repo.owner,
@@ -1273,7 +1325,7 @@ jobs:
               }
             }
 
-            // Add welcome comment for engagement signal (boosts sort:comments ranking)
+            // Add welcome comment and five random unique reactions on that comment
             try {
               const comment = await github.rest.issues.createComment({
                 owner: context.repo.owner,
@@ -1281,12 +1333,18 @@ jobs:
                 issue_number: issueNumber,
                 body: t.common.welcomeComment
               });
-              await github.rest.reactions.createForIssueComment({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                comment_id: comment.data.id,
-                content: t.common.welcomeCommentReaction || 'heart'
-              });
+              for (const content of pickRandomReactions(5)) {
+                try {
+                  await github.rest.reactions.createForIssueComment({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    comment_id: comment.data.id,
+                    content
+                  });
+                } catch (reactionError) {
+                  console.log(`Welcome comment reaction ${content} failed: ${reactionError.message}`);
+                }
+              }
             } catch (e) {
               console.log(`Welcome comment failed: ${e.message}`);
             }

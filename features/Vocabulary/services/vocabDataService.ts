@@ -1,7 +1,6 @@
-import { IWord } from '@/shared/types/interfaces';
+import type { IVocabObj, VocabLevel } from '@/entities/vocabulary';
 import {
   useVocabCacheStore,
-  type VocabLevel,
 } from '@/features/Vocabulary/store/useVocabCacheStore';
 
 type RawVocabEntry = {
@@ -11,7 +10,7 @@ type RawVocabEntry = {
   waller_definition: string;
 };
 
-const toWordObj = (entry: RawVocabEntry): IWord => {
+const toWordObj = (entry: RawVocabEntry): IVocabObj => {
   const definitionPieces = entry.waller_definition
     .split(/[;,]/)
     .map(piece => piece.trim())
@@ -25,8 +24,8 @@ const toWordObj = (entry: RawVocabEntry): IWord => {
 };
 
 // Module-level cache - persists across component mounts
-const vocabCache: Partial<Record<VocabLevel, IWord[]>> = {};
-const pendingRequests: Partial<Record<VocabLevel, Promise<IWord[]>>> = {};
+const vocabCache: Partial<Record<VocabLevel, IVocabObj[]>> = {};
+const pendingRequests: Partial<Record<VocabLevel, Promise<IVocabObj[]>>> = {};
 
 const getCachedLevel = (level: VocabLevel) => {
   const sessionCache = useVocabCacheStore.getState().cachedByLevel[level];
@@ -34,7 +33,7 @@ const getCachedLevel = (level: VocabLevel) => {
   return vocabCache[level];
 };
 
-const setCachedLevel = (level: VocabLevel, items: IWord[]) => {
+const setCachedLevel = (level: VocabLevel, items: IVocabObj[]) => {
   vocabCache[level] = items;
   useVocabCacheStore.getState().setCachedLevel(level, items);
 };
@@ -44,7 +43,7 @@ export const vocabDataService = {
    * Get vocab data for a specific level. Returns cached data if available,
    * otherwise fetches and caches it.
    */
-  async getVocabByLevel(level: VocabLevel): Promise<IWord[]> {
+  async getVocabByLevel(level: VocabLevel): Promise<IVocabObj[]> {
     // Return cached data immediately if available
     const cached = getCachedLevel(level);
     if (cached) return cached;
@@ -89,7 +88,7 @@ export const vocabDataService = {
   /**
    * Get all cached data (for components that need all levels)
    */
-  getAllCached(): Partial<Record<VocabLevel, IWord[]>> {
+  getAllCached(): Partial<Record<VocabLevel, IVocabObj[]>> {
     return { ...useVocabCacheStore.getState().cachedByLevel, ...vocabCache };
   },
 

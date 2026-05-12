@@ -8,7 +8,7 @@ import {
 } from '../types/blog';
 
 // Mock next-intl Link component before importing BlogList
-vi.mock('@/shared/components/navigation/Link', () => ({
+vi.mock('@/shared/ui-composite/navigation/Link', () => ({
   Link: ({ children }: { children: React.ReactNode }) => children,
   default: ({ children }: { children: React.ReactNode }) => children,
 }));
@@ -222,3 +222,4 @@ describe('Property 6: Category Filter Returns Only Matching Posts', () => {
     );
   });
 });
+
