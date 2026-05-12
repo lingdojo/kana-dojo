@@ -125,6 +125,10 @@ jobs:
 
               releaseNotes += '-' + '--\n\n**Full Changelog**: https://github.com/lingdojo/kanadojo/blob/main/CHANGELOG.md';
 
+              // Configure git identity for the runner
+              execSync('git config user.email "github-actions[bot]@users.noreply.github.com"', { stdio: 'inherit' });
+              execSync('git config user.name "github-actions[bot]"', { stdio: 'inherit' });
+
               // Create annotated tag
               const tagMessage = `Release v${version}: ${latest.changes[0] || 'New release'}`;
               execSync(`git tag -a ${tagName} -m "${tagMessage}"`, { stdio: 'inherit' });
