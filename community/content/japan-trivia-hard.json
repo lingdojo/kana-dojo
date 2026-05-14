@@ -669,5 +669,16 @@
     "Okonomiyaki"
   ],
   "correctIndex": 1
-}
+},
+  {
+    "question": "Which Japanese castle is known for its black exterior and nickname \"Crow Castle\"? (Community variation 50)",
+    "difficulty": "hard",
+    "answers": [
+      "Matsumoto Castle",
+      "Osaka Castle",
+      "Nijo Castle",
+      "Himeji Castle"
+    ],
+    "correctIndex": 0
+  }
 ]
