@@ -261,8 +261,22 @@
   {
     "japanese": "興味ないね",
     "romaji": "Kyōmi nai ne",
-    "english": "I don't care.
+    "english": "I don't care.",
     "game": "Final Fantasy VII",
     "character": "Cloud Strife"
-  }
+  },
+  {
+    "japanese": "ここからが本番だ",
+    "romaji": "Koko kara ga honban da",
+    "english": "The real challenge starts now.",
+    "game": "Monster Hunter series",
+    "character": "Guild Handler lines"
+  },
+  {
+  "japanese": "立てよ、ド三流",
+  "romaji": "Tate yo, do sannyuu",
+  "english": "Get up, you third-rate warrior.",
+  "game": "Dragon Ball Z: Kakarot",
+  "character": "Vegeta"
+}
 ]
