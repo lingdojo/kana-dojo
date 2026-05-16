@@ -461,7 +461,7 @@
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "DIO"
   },
-    {
+  {
     "japanese": "シシシシシ",
     "romaji": "Shishishishi",
     "english": "Shishishi! (alt wording 30)",
@@ -549,5 +549,12 @@
     "english": "Lend me your energy! (alt wording 52)",
     "anime": "Dragon Ball Z",
     "character": "Son Goku"
+  },
+  {
+    "japanese": "逃げるのも勇気だぞ",
+    "romaji": "Nigeru no mo yuuki da zo",
+    "english": "Running away can take courage too. (alt wording 51)",
+    "anime": "Mob Psycho 100",
+    "character": "Arataka Reigen"
   }
 ]
