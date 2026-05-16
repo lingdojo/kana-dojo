@@ -212,5 +212,38 @@
     "difficulty": "medium",
     "answers": ["Spring", "Summer", "Autumn", "Winter"],
     "correctIndex": 2
+  },
+  {
+    "question": "What is the name of the traditional Japanese garment often worn at festivals? (Community variation 13)",
+    "difficulty": "medium",
+    "answers": [
+      "Yukata",
+      "Haori",
+      "Hakama",
+      "Tabi"
+    ],
+    "correctIndex": 0
+  },
+  {
+  "question": "Which of these is a Japanese traditional storytelling art?",
+  "difficulty": "medium",
+  "answers": [
+    "Rakugo",
+    "Kabuki",
+    "Noh",
+    "Ikebana"
+  ],
+  "correctIndex": 0
+  },
+  {
+    "question": "What is the Japanese writing system used for foreign words? (Community variation 35)",
+    "difficulty": "medium",
+    "answers": [
+      "Katakana",
+      "Hiragana",
+      "Kanji",
+      "Romaji"
+    ],
+    "correctIndex": 0
   }
 ]

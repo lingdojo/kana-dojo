@@ -15,7 +15,7 @@
     "english": "Dumplings over flowers",
     "meaning": "Practical things are more valuable than aesthetic ones",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 3,
@@ -141,7 +141,7 @@
     "english": "Fortune comes to a laughing gate",
     "meaning": "Happiness and good fortune come to those who smile",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 17,
@@ -375,7 +375,7 @@
     "english": "Fame from a mistake",
     "meaning": "A lucky break that comes from an error",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 44,
@@ -438,7 +438,7 @@
     "english": "Early rising is worth three coins",
     "meaning": "Good things come from getting up early",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 50,
@@ -528,7 +528,7 @@
     "english": "Hide your head, but not your butt",
     "meaning": "Trying to hide something obvious",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 60,
@@ -546,7 +546,7 @@
     "english": "Mochi should be made by the mochi shop",
     "meaning": "Leave it to the experts",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 62,
@@ -564,7 +564,7 @@
     "english": "A frog in a well does not know the great sea",
     "meaning": "Limited experience limits perspective",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 64,
@@ -779,7 +779,7 @@
     "romaji": "Koukai saki ni tatazu",
     "english": "Regret does not stand before",
     "meaning": "It's too late for regrets",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -807,7 +807,7 @@
     "english": "Continuation is power",
     "meaning": "Consistency leads to strength",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 91,
@@ -816,7 +816,7 @@
     "english": "After the rain, the ground hardens",
     "meaning": "Hard times make relationships stronger",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 92,
@@ -942,7 +942,7 @@
     "english": "Haste will spoil things",
     "meaning": "Rushing leads to mistakes",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 106,
@@ -996,7 +996,7 @@
     "english": "It's darkest under the lighthouse",
     "meaning": "The obvious is often overlooked",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 112,
@@ -1059,7 +1059,7 @@
     "english": "Spilled water will not return to the tray",
     "meaning": "What is done cannot be undone",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 119,
@@ -1068,7 +1068,7 @@
     "english": "One who chases two rabbits catches neither",
     "meaning": "Focus on one thing at a time",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 120,
@@ -1122,7 +1122,7 @@
     "english": "A bee on a crying face",
     "meaning": "Misfortune never comes alone",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 126,
@@ -1131,7 +1131,7 @@
     "english": "I'd even borrow a cat's paw",
     "meaning": "Extremely busy",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 127,
@@ -1277,7 +1277,7 @@
     "english": "Not knowing is Buddha",
     "meaning": "Ignorance is bliss",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 143,
@@ -1295,7 +1295,7 @@
     "english": "A frog's child is a frog",
     "meaning": "Children resemble their parents",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 145,
@@ -1340,7 +1340,7 @@
     "english": "Even a packhorse driver looks good in fine clothes",
     "meaning": "Clothes make the person",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 150,
@@ -1367,7 +1367,7 @@
     "english": "The day you decide is a lucky day",
     "meaning": "Start now",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 153,
@@ -1448,7 +1448,7 @@
     "english": "An inch ahead is darkness",
     "meaning": "The future is uncertain",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 162,
@@ -1511,7 +1511,7 @@
     "english": "A frog in a well doesn’t know the ocean",
     "meaning": "Limited experience limits perspective",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 169,
@@ -1556,7 +1556,7 @@
     "english": "Put care into care",
     "meaning": "Double-check everything",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 174,
@@ -1591,7 +1591,7 @@
     "romaji": "Toudai moto kurashi",
     "english": "It’s darkest under the lighthouse",
     "meaning": "The obvious is overlooked",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1619,6 +1619,6 @@
     "english": "Even a walking dog will hit a stick",
     "meaning": "Acting can lead to luck or trouble",
     "completed": false,
-    "issued": false
+    "issued": true
   }
 ]

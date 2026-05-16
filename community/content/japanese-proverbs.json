@@ -487,5 +487,41 @@
     "romaji": "Isogaba maware",
     "english": "If in a hurry, go around",
     "meaning": "The safer path can be faster"
-  }
+  },
+  {
+  "japanese": "井の中の蛙大海を知らず",
+  "romaji": "I no naka no kawazu taikai wo shirazu",
+  "english": "A frog in a well does not know the great sea",
+  "meaning": "Limited experience limits perspective"
+  },
+  {
+    "japanese": "後悔先に立たず",
+    "romaji": "Koukai saki ni tatazu",
+    "english": "Regret does not stand before",
+    "meaning": "It's too late for regrets"
+  },
+  {
+    "japanese": "怪我の功名",
+    "romaji": "Kega no koumyou",
+    "english": "Fame from a mistake",
+    "meaning": "A lucky break that comes from an error"
+  },
+  {
+  "japanese": "思い立ったが吉日",
+  "romaji": "Omoitattaga kichijitsu",
+  "english": "The day you decide is a lucky day",
+  "meaning": "Start now"
+  },
+  {
+  "japanese": "知らぬが仏",
+  "romaji": "Shiranu ga hotoke",
+  "english": "Not knowing is Buddha",
+  "meaning": "Ignorance is bliss"
+},
+  {
+  "japanese": "覆水盆に返らず",
+  "romaji": "Fukusui bon ni kaerazu",
+  "english": "Spilled water will not return to the tray",
+  "meaning": "What is done cannot be undone"
+}
 ]
