@@ -388,15 +388,13 @@
     "romaji": "Ishi no ue ni mo sannen",
     "english": "Three years on a stone",
     "meaning": "Perseverance leads to success; even a cold stone warms up if you sit on it long enough"
-  }
-,
-{
+  },
+  {
   "japanese": "猿も木から落ちる",
   "romaji": "Saru mo ki kara ochiru",
   "english": "Even monkeys fall from trees",
   "meaning": "Even experts make mistakes"
-}
-,
+},
 {
   "japanese": "泣きっ面に蜂",
   "romaji": "Naki tsura ni hachi",
@@ -500,6 +498,7 @@
     "english": "Fortune comes to a laughing gate",
     "meaning": "Happiness and good fortune come to those who smile"
   },
+  {
     "japanese": "後悔先に立たず",
     "romaji": "Koukai saki ni tatazu",
     "english": "Regret does not stand before",
@@ -528,5 +527,5 @@
   "romaji": "Fukusui bon ni kaerazu",
   "english": "Spilled water will not return to the tray",
   "meaning": "What is done cannot be undone"
-}
+  }
 ]
