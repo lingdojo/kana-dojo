@@ -953,7 +953,7 @@
     "romaji": "Mago ni mo ishou",
     "english": "Even a packhorse driver looks good in fine clothes",
     "meaning": "Clothes make the person"
-  }
+  },
   {
     "japanese": "馬子にも衣装",
     "romaji": "Mago ni mo ishou",
@@ -965,5 +965,11 @@
     "romaji": "Uma no mimi ni nenbutsu",
     "english": "Praying to a horse's ear",
     "meaning": "Falling on deaf ears, advice going unheeded"
-  }
+  },
+  {
+  "japanese": "一寸先は闇",
+  "romaji": "Issun saki wa yami",
+  "english": "An inch ahead is darkness",
+  "meaning": "The future is uncertain"
+  } 
 ]

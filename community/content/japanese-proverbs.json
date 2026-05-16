@@ -499,5 +499,34 @@
     "romaji": "Warau kado ni wa fuku kitaru",
     "english": "Fortune comes to a laughing gate",
     "meaning": "Happiness and good fortune come to those who smile"
-  }
+  },
+    "japanese": "後悔先に立たず",
+    "romaji": "Koukai saki ni tatazu",
+    "english": "Regret does not stand before",
+    "meaning": "It's too late for regrets"
+  },
+  {
+    "japanese": "怪我の功名",
+    "romaji": "Kega no koumyou",
+    "english": "Fame from a mistake",
+    "meaning": "A lucky break that comes from an error"
+  },
+  {
+  "japanese": "思い立ったが吉日",
+  "romaji": "Omoitattaga kichijitsu",
+  "english": "The day you decide is a lucky day",
+  "meaning": "Start now"
+  },
+  {
+  "japanese": "知らぬが仏",
+  "romaji": "Shiranu ga hotoke",
+  "english": "Not knowing is Buddha",
+  "meaning": "Ignorance is bliss"
+},
+  {
+  "japanese": "覆水盆に返らず",
+  "romaji": "Fukusui bon ni kaerazu",
+  "english": "Spilled water will not return to the tray",
+  "meaning": "What is done cannot be undone"
+}
 ]

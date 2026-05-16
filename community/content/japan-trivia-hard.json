@@ -669,5 +669,16 @@
     "Okonomiyaki"
   ],
   "correctIndex": 1
-}
+},
+  {
+  "question": "Which Japanese city is famous for its street food district, Dotonbori? (Community variation 22)",
+  "difficulty": "hard",
+  "answers": [
+    "Osaka",
+    "Niigata",
+    "Kagoshima",
+    "Takayama"
+  ],
+  "correctIndex": 0
+  }
 ]
