@@ -461,7 +461,7 @@
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "DIO"
   },
-    {
+  {
     "japanese": "シシシシシ",
     "romaji": "Shishishishi",
     "english": "Shishishi! (alt wording 30)",
@@ -551,26 +551,25 @@
     "character": "Son Goku"
   },
   {
-  "japanese": "やれやれだぜ…まったく。",
-  "romaji": "Yare yare da ze... mattaku.",
-  "english": "Good grief... honestly. (alt wording 15) (alt wording 67)",
-  "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
-  "character": "Jotaro Kujo"
+    "japanese": "やれやれだぜ…まったく。",
+    "romaji": "Yare yare da ze... mattaku.",
+    "english": "Good grief... honestly. (alt wording 15) (alt wording 67)",
+    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+    "character": "Jotaro Kujo"
   },
   {
-  "japanese": "駆逐してやる!この世から一匹残らず!",
-  "romaji": "Kuchiku shite yaru! Kono yo kara ippiki nokorazu!",
-  "english": "I'll exterminate them! Every last one from this world! (alt wording 36) (alt wording 88)",
-  "anime": "Attack on Titan",
-  "character": "Eren Yeager"
+    "japanese": "駆逐してやる!この世から一匹残らず!",
+    "romaji": "Kuchiku shite yaru! Kono yo kara ippiki nokorazu!",
+    "english": "I'll exterminate them! Every last one from this world! (alt wording 36) (alt wording 88)",
+    "anime": "Attack on Titan",
+    "character": "Eren Yeager"
   },
   {
-
-  "japanese": "マママママ",
-  "romaji": "Mama mama mama",
-  "english": "Mama mama mama.",
-  "anime": "One Piece",
-  "character": "Charlotte Linlin (Big Mom)"
+    "japanese": "マママママ",
+    "romaji": "Mama mama mama",
+    "english": "Mama mama mama.",
+    "anime": "One Piece",
+    "character": "Charlotte Linlin (Big Mom)"
   },
   {
     "japanese": "貴様ッ！見ているなッ！！",
@@ -585,5 +584,19 @@
     "english": "The word 'give up' isn't in my dictionary. (alt wording 50)",
     "anime": "Black Clover",
     "character": "Asta"
-  }
+  },
+  {
+    "japanese": "仲間を大切にしない奴はそれ以上のクズだ",
+    "romaji": "Nakama o taisetsu ni shinai yatsu wa sore ijou no kuzu da",
+    "english": "Those who don't take care of their comrades are worse than scum. (alt wording 34)",
+    "anime": "Naruto",
+    "character": "Kakashi Hatake"
+  },
+  {
+  "japanese": "俺は趣味でヒーローをやっている者だ",
+  "romaji": "Ore wa shumi de hiiroo o yatte iru mono da",
+  "english": "I'm just a hero for fun.",
+  "anime": "One Punch Man",
+  "character": "Saitama"
+}
 ]
