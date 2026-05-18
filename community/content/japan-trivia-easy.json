@@ -185,8 +185,8 @@
     "Arctic Ocean"
   ],
   "correctIndex": 2
-  }
-]
+  },
+
 {
   "question": "Which traditional Japanese sport involves wrestling in a ring? (Community variation 36)",
   "difficulty": "easy",
@@ -197,4 +197,17 @@
     "Aikido"
   ],
   "correctIndex": 0
+},
+{
+  "question": "Which city is famous for the Gion Matsuri festival? (Community variation 51)",
+  "difficulty": "easy",
+  "answers": [
+    "Kyoto",
+    "Sendai",
+    "Sapporo",
+    "Kobe"
+  ],
+  "correctIndex": 0
 }
+
+]
