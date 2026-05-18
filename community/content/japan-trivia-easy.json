@@ -207,5 +207,16 @@
     "Aikido"
   ],
   "correctIndex": 0
+  },
+  {
+  "question": "What is the Japanese word for \"goodbye\"?",
+  "difficulty": "easy",
+  "answers": [
+    "Sayonara",
+    "Konnichiwa",
+    "Arigatou",
+    "Oyasumi"
+  ],
+  "correctIndex": 0
   }
 ]
