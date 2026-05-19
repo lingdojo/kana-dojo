@@ -1,0 +1,3 @@
+- [x] Read current content file
+- [x] Append new JSON entry with correct formatting
+- [x] Validate JSON syntax
