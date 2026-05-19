@@ -593,11 +593,11 @@
     "character": "Kakashi Hatake"
   },
   {
-  "japanese": "俺は趣味でヒーローをやっている者だ",
-  "romaji": "Ore wa shumi de hiiroo o yatte iru mono da",
-  "english": "I'm just a hero for fun.",
-  "anime": "One Punch Man",
-  "character": "Saitama"
+    "japanese": "俺は趣味でヒーローをやっている者だ",
+    "romaji": "Ore wa shumi de hiiroo o yatte iru mono da",
+    "english": "I'm just a hero for fun.",
+    "anime": "One Punch Man",
+    "character": "Saitama"
   },
   {
     "japanese": "イエス！イエス！イエス！イエス！",
@@ -612,5 +612,12 @@
     "english": "I will transcend humanity! (alt wording 14)",
     "anime": "JoJo's Bizarre Adventure: Battle Tendency",
     "character": "Kars"
+  },
+  {
+    "japanese": "さらに向こうへ!プルスウルトラ!",
+    "romaji": "Sarani mukou e! Purusu Urutora!",
+    "english": "Go beyond! Plus Ultra!",
+    "anime": "My Hero Academia",
+    "character": "All Might"
   }
 ]
