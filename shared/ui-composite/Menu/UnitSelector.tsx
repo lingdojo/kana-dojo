@@ -35,6 +35,7 @@ import {
 
 type CollectionLevel = 'n5' | 'n4' | 'n3' | 'n2' | 'n1';
 type ContentType = 'kanji' | 'vocabulary';
+const VOCAB_UNIT_WITH_FEWER_SUBUNITS: CollectionLevel = 'n2';
 
 const UNIT_SELECTOR_ACTIVE_FLOAT_CLASSES =
   'motion-safe:animate-float [--float-distance:-3px] delay-500ms';
@@ -56,6 +57,32 @@ const VOCAB_SETS = {
   n3: calculateSets(N3VocabLength),
   n2: calculateSets(N2VocabLength),
   n1: calculateSets(N1VocabLength),
+};
+
+const getCollectionSubunits = (
+  collection: {
+    name: CollectionLevel;
+    startLevel: number;
+    levelCount: number;
+  },
+  isKanji: boolean,
+) => {
+  const defaultSubunits = buildSubunitsForUnit(
+    collection.startLevel,
+    collection.levelCount,
+  );
+
+  if (
+    isKanji ||
+    collection.name !== VOCAB_UNIT_WITH_FEWER_SUBUNITS ||
+    defaultSubunits.length <= 1
+  ) {
+    return defaultSubunits;
+  }
+
+  return buildSubunitsForUnit(collection.startLevel, collection.levelCount, {
+    desiredSubunitCount: defaultSubunits.length - 1,
+  });
 };
 
 const UnitSelector = () => {
@@ -97,10 +124,7 @@ const UnitSelector = () => {
       collection => collection.name === level,
     );
     const firstSubunitId = selectedUnit
-      ? buildSubunitsForUnit(
-          selectedUnit.startLevel,
-          selectedUnit.levelCount,
-        )[0]?.id
+      ? getCollectionSubunits(selectedUnit, isKanji)[0]?.id
       : undefined;
 
     if (isKanji) {
@@ -125,10 +149,7 @@ const UnitSelector = () => {
     collection => collection.name === selectedCollection,
   );
   const activeSubunits = activeCollection
-    ? buildSubunitsForUnit(
-        activeCollection.startLevel,
-        activeCollection.levelCount,
-      )
+    ? getCollectionSubunits(activeCollection, isKanji)
     : [];
   const selectedSubunitId = isKanji
     ? kanjiSelection.selectedSubunitByUnit[

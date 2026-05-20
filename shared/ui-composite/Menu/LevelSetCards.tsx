@@ -511,8 +511,8 @@ const LevelSetCards = <TLevel extends string, TItem>({
         className='px-2 py-3 opacity-90'
         borderRadius='3xl'
         borderBottomThickness={14}
-        colorScheme='secondary'
-        borderColorScheme='secondary'
+        colorScheme='main'
+        borderColorScheme='main'
       >
         <MousePointer className={cn('fill-current')} />
         Quick Select

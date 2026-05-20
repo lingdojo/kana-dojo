@@ -66,7 +66,7 @@
     "game": "Dragon Quest series",
     "character": "Recurring command voice",
     "id": 7,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -86,7 +86,7 @@
     "game": "Street Fighter series",
     "character": "Ryu",
     "id": 9,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -106,7 +106,7 @@
     "game": "Monster Hunter series",
     "character": "Guild Handler lines",
     "id": 11,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -406,7 +406,7 @@
     "game": "The Prince of Tennis: Sweat & Tears 2",
     "character": "Ryoma Echizen",
     "id": 41,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -436,7 +436,7 @@
     "game": "Steins;Gate: My Darling's Embrace",
     "character": "Rintaro Okabe",
     "id": 44,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -646,7 +646,7 @@
     "game": "Danganronpa series",
     "character": "Makoto Naegi",
     "id": 65,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -666,7 +666,7 @@
     "game": "Dragon Quest series",
     "character": "Recurring command voice",
     "id": 67,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -776,7 +776,7 @@
     "game": "The Legend of Zelda: Breath of the Wild (JP)",
     "character": "Revali",
     "id": 78,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -856,7 +856,7 @@
     "game": "JoJo’s Bizarre Adventure: All-Star Battle",
     "character": "Giorno Giovanna",
     "id": 86,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -906,7 +906,7 @@
     "game": "Monster Hunter series",
     "character": "Guild Handler lines",
     "id": 91,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -936,7 +936,7 @@
     "game": "Yakuza: Like a Dragon",
     "character": "Ichiban Kasuga",
     "id": 94,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -976,7 +976,7 @@
     "game": "The Legend of Zelda: Breath of the Wild (JP)",
     "character": "Revali",
     "id": 98,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1146,7 +1146,7 @@
     "game": "Fire Emblem series",
     "character": "Various protagonists",
     "id": 115,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1196,7 +1196,7 @@
     "game": "Samurai game proverb line",
     "character": "Musashi reference",
     "id": 120,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

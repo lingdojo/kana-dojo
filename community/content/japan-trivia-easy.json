@@ -185,9 +185,19 @@
     "Arctic Ocean"
   ],
   "correctIndex": 2
-  }
-]
-{
+  },
+  {
+  "question": "Which Japanese train is famous for its high-speed travel?",
+  "difficulty": "easy",
+  "answers": [
+    "Shinkansen",
+    "Yamanote",
+    "Keikyu",
+    "Monorail"
+  ],
+  "correctIndex": 0
+  },
+  {
   "question": "Which traditional Japanese sport involves wrestling in a ring? (Community variation 36)",
   "difficulty": "easy",
   "answers": [
@@ -197,4 +207,22 @@
     "Aikido"
   ],
   "correctIndex": 0
-}
+  },
+  {
+  "question": "Which Japanese dish consists of skewered grilled chicken? (Community variation 48)",
+  "difficulty": "easy",
+  "answers": [
+    "Yakitori",
+    "Sukiyaki",
+    "Tonkatsu",
+    "Oden"
+  ],
+  "correctIndex": 0
+  },
+  {
+    "question": "What is the Japanese term for cherry blossoms? (Community variation 37)",
+    "difficulty": "easy",
+    "answers": ["Sakura", "Ume", "Momiji", "Kiku"],
+    "correctIndex": 0
+  }
+]

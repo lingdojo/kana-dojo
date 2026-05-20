@@ -26,7 +26,7 @@
   {
     "id": 5,
     "text": "\"〜てはいけません\" means \"must not\" and is used for prohibitions.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -39,7 +39,7 @@
     "id": 7,
     "text": "\"〜たことがある\" expresses past experience, like \"have done\" something before.",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 8,
@@ -99,7 +99,7 @@
     "id": 17,
     "text": "\"〜てあげる\" shows the speaker does a favor for someone else.",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 18,
@@ -117,7 +117,7 @@
     "id": 20,
     "text": "\"〜たら\" is a conditional \"if/when\" that also expresses sequence.",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 21,
@@ -158,7 +158,7 @@
   {
     "id": 27,
     "text": "\"〜ばかり\" means \"just\" (in terms of time) or \"only\" depending on context.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -206,19 +206,19 @@
   {
     "id": 35,
     "text": "\"〜ために\" also means \"for the sake of\" and explains purpose or reason.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 36,
     "text": "\"〜ことにする\" expresses a decision, like \"decide to\".",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 37,
     "text": "\"〜ことになる\" indicates something was decided (by others or circumstances).",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -255,7 +255,7 @@
     "id": 43,
     "text": "\"〜にくい\" attaches to verb stems to mean \"hard to do\".",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 44,
@@ -273,19 +273,19 @@
     "id": 46,
     "text": "\"〜にする\" means \"decide on\" a choice or selection.",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 47,
     "text": "\"〜に決まっている\" means \"must be\" or \"definitely\".",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 48,
     "text": "\"〜そうだ\" can indicate appearance, like \"it looks like\".",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 49,
@@ -303,13 +303,13 @@
     "id": 51,
     "text": "\"〜というより\" means \"rather than\" or \"more like\".",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 52,
     "text": "\"〜おかげで\" expresses gratitude for a cause, \"thanks to\".",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 53,
@@ -357,13 +357,13 @@
     "id": 60,
     "text": "\"〜にしては\" means \"considering...\".",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 61,
     "text": "\"〜にとって\" means \"for / to (someone)\".",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 62,
@@ -374,7 +374,7 @@
   {
     "id": 63,
     "text": "\"〜に比べて\" means \"compared to...\".",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -392,7 +392,7 @@
   {
     "id": 66,
     "text": "\"〜に加えて\" means \"in addition to...\".",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -453,7 +453,7 @@
     "id": 76,
     "text": "\"〜ことになっている\" means \"it is decided/arranged that...\".",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 77,
@@ -482,13 +482,13 @@
   {
     "id": 81,
     "text": "\"〜に気づく\" means \"to notice / realize...\".",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 82,
     "text": "\"〜ばかりか\" means \"not only... but also\".",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -501,7 +501,7 @@
     "id": 84,
     "text": "\"〜を通して\" means \"through / throughout...\".",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 85,
@@ -518,13 +518,13 @@
   {
     "id": 87,
     "text": "\"〜ません\" is the polite negative form of verbs, used to say something doesn't happen. (practice variation 2)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 88,
     "text": "\"〜たい\" attaches to a verb stem to express \"want to do\" something. (practice variation 3)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -542,7 +542,7 @@
   {
     "id": 91,
     "text": "\"〜ながら\" connects actions to show two things happening at the same time. (practice variation 6)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -572,13 +572,13 @@
   {
     "id": 96,
     "text": "\"〜でしょう\" adds probability or softens statements, like \"probably\". (practice variation 11)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 97,
     "text": "\"〜つもり\" expresses intent, like \"I plan to\" do something. (practice variation 12)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -590,7 +590,7 @@
   {
     "id": 99,
     "text": "\"〜なくてもいい\" means \"don't have to\" and lifts an obligation. (practice variation 14)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -662,7 +662,7 @@
   {
     "id": 111,
     "text": "\"〜まま\" means \"as is\" or \"unchanged\". (practice variation 26)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -692,7 +692,7 @@
   {
     "id": 116,
     "text": "\"〜ところ\" refers to a point in time, like \"about to\", \"in the middle of\", or \"just finished\". (practice variation 31)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -782,7 +782,7 @@
   {
     "id": 131,
     "text": "\"〜にする\" means \"decide on\" a choice or selection. (practice variation 46)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -806,7 +806,7 @@
   {
     "id": 135,
     "text": "\"〜わけではない\" means \"not necessarily\" or \"it's not that\". (practice variation 50)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

@@ -46,7 +46,7 @@
     "english": "I, Giorno Giovanna, have a dream!",
     "anime": "JoJo's Bizarre Adventure: Golden Wind",
     "character": "Giorno Giovanna",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -76,7 +76,7 @@
     "english": "Ora ora ora ora ora!",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Jotaro Kujo",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -86,7 +86,7 @@
     "english": "What?!",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Joseph Joestar",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -136,7 +136,7 @@
     "english": "I will transcend humanity!",
     "anime": "JoJo's Bizarre Adventure: Battle Tendency",
     "character": "Kars",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -156,7 +156,7 @@
     "english": "But... that's what I like.",
     "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
     "character": "Yoshikage Kira",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -186,7 +186,7 @@
     "english": "What?!",
     "anime": "Fist of the North Star",
     "character": "Shin",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -296,7 +296,7 @@
     "english": "Shishishi!",
     "anime": "One Piece",
     "character": "Monkey D. Luffy",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -336,7 +336,7 @@
     "english": "Those who don't take care of their comrades are worse than scum.",
     "anime": "Naruto",
     "character": "Kakashi Hatake",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -366,7 +366,7 @@
     "english": "Don't let anyone else take control of your life and death!",
     "anime": "Demon Slayer: Kimetsu no Yaiba",
     "character": "Tanjiro Kamado",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -376,7 +376,7 @@
     "english": "Go beyond! Plus Ultra!",
     "anime": "My Hero Academia",
     "character": "All Might",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -417,7 +417,7 @@
     "anime": "One Punch Man",
     "character": "Saitama",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 43,
@@ -506,7 +506,7 @@
     "english": "Running away can take courage too.",
     "anime": "Mob Psycho 100",
     "character": "Arataka Reigen",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -536,7 +536,7 @@
     "english": "Yes! Yes! Yes! Yes! (alt wording 2)",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "DIO",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -556,7 +556,7 @@
     "english": "But I refuse. (alt wording 4)",
     "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
     "character": "Rohan Kishibe",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -576,7 +576,7 @@
     "english": "Good grief. (alt wording 6)",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Jotaro Kujo",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -586,7 +586,7 @@
     "english": "Useless! Useless! Useless! (alt wording 7)",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "DIO",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -606,7 +606,7 @@
     "english": "What?! (alt wording 9)",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Joseph Joestar",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -656,7 +656,7 @@
     "english": "I will transcend humanity! (alt wording 14)",
     "anime": "JoJo's Bizarre Adventure: Battle Tendency",
     "character": "Kars",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -716,7 +716,7 @@
     "english": "I'm gonna be King of the Pirates! (alt wording 20)",
     "anime": "One Piece",
     "character": "Monkey D. Luffy",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -746,7 +746,7 @@
     "english": "Dance to my beautiful technique! (alt wording 23)",
     "anime": "The Prince of Tennis",
     "character": "Keigo Atobe",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -856,7 +856,7 @@
     "english": "Those who don't take care of their comrades are worse than scum. (alt wording 34)",
     "anime": "Naruto",
     "character": "Kakashi Hatake",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -876,7 +876,7 @@
     "english": "I'll exterminate them! Every last one from this world! (alt wording 36)",
     "anime": "Attack on Titan",
     "character": "Eren Yeager",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -936,7 +936,7 @@
     "english": "I'm just a hero for fun. (alt wording 42)",
     "anime": "One Punch Man",
     "character": "Saitama",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -986,7 +986,7 @@
     "english": "I won't run away anymore! (alt wording 47)",
     "anime": "Hunter x Hunter",
     "character": "Gon Freecss",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1066,7 +1066,7 @@
     "english": "Oh? You're approaching me? (alt wording 3) (alt wording 55)",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "DIO",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1076,7 +1076,7 @@
     "english": "But I refuse. (alt wording 4) (alt wording 56)",
     "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
     "character": "Rohan Kishibe",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1106,7 +1106,7 @@
     "english": "Useless! Useless! Useless! (alt wording 7) (alt wording 59)",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "DIO",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1226,7 +1226,7 @@
     "english": "What?! (alt wording 19) (alt wording 71)",
     "anime": "Fist of the North Star",
     "character": "Shin",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1236,7 +1236,7 @@
     "english": "I'm gonna be King of the Pirates! (alt wording 20) (alt wording 72)",
     "anime": "One Piece",
     "character": "Monkey D. Luffy",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1246,7 +1246,7 @@
     "english": "If you give up, that's the end of the game. (alt wording 21) (alt wording 73)",
     "anime": "Slam Dunk",
     "character": "Kaede Rukawa",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1286,7 +1286,7 @@
     "english": "I am Gundam! (alt wording 25) (alt wording 77)",
     "anime": "Mobile Suit Gundam 00",
     "character": "Setsuna F. Seiei",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1356,7 +1356,7 @@
     "english": "Ze ha ha ha! (alt wording 32) (alt wording 84)",
     "anime": "One Piece",
     "character": "Marshall D. Teach (Blackbeard)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1366,7 +1366,7 @@
     "english": "I never give up, believe it! (alt wording 33) (alt wording 85)",
     "anime": "Naruto",
     "character": "Naruto Uzumaki",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
