@@ -388,34 +388,31 @@
     "romaji": "Ishi no ue ni mo sannen",
     "english": "Three years on a stone",
     "meaning": "Perseverance leads to success; even a cold stone warms up if you sit on it long enough"
-  }
-,
-{
-  "japanese": "猿も木から落ちる",
-  "romaji": "Saru mo ki kara ochiru",
-  "english": "Even monkeys fall from trees",
-  "meaning": "Even experts make mistakes"
-}
-,
-{
-  "japanese": "泣きっ面に蜂",
-  "romaji": "Naki tsura ni hachi",
-  "english": "A bee on a crying face",
-  "meaning": "Misfortune piles up"
-},
-{
-  "japanese": "二度あることは三度ある",
-  "romaji": "Nido aru koto wa sando aru",
-  "english": "What happens twice will happen a third time",
-  "meaning": "Patterns tend to repeat"
-}
-,
-{
-  "japanese": "失敗は成功のもと",
-  "romaji": "Shippai wa seikou no moto",
-  "english": "Failure is the origin of success",
-  "meaning": "Mistakes lead to growth"
-},
+  },
+  {
+    "japanese": "猿も木から落ちる",
+    "romaji": "Saru mo ki kara ochiru",
+    "english": "Even monkeys fall from trees",
+    "meaning": "Even experts make mistakes"
+  },
+  {
+    "japanese": "泣きっ面に蜂",
+    "romaji": "Naki tsura ni hachi",
+    "english": "A bee on a crying face",
+    "meaning": "Misfortune piles up"
+  },
+  {
+    "japanese": "二度あることは三度ある",
+    "romaji": "Nido aru koto wa sando aru",
+    "english": "What happens twice will happen a third time",
+    "meaning": "Patterns tend to repeat"
+  },
+  {
+    "japanese": "失敗は成功のもと",
+    "romaji": "Shippai wa seikou no moto",
+    "english": "Failure is the origin of success",
+    "meaning": "Mistakes lead to growth"
+  },
   {
     "japanese": "可愛い子には旅をさせよ",
     "romaji": "Kawaii ko ni wa tabi wo saseyo",
@@ -447,10 +444,10 @@
     "meaning": "Treasure every encounter, for it may never happen again; once-in-a-lifetime opportunity."
   },
   {
-  "japanese": "早起きは三文の徳",
-  "romaji": "Hayaoki wa sanmon no toku",
-  "english": "Early rising is worth three coins",
-  "meaning": "Getting up early brings benefits"
+    "japanese": "早起きは三文の徳",
+    "romaji": "Hayaoki wa sanmon no toku",
+    "english": "Early rising is worth three coins",
+    "meaning": "Getting up early brings benefits"
   },
   {
     "japanese": "自画自賛",
