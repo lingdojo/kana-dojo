@@ -576,21 +576,27 @@
     "meaning": "Kindness comes back to you"
   },
   {
-  "japanese": "木を見て森を見ず",
-  "romaji": "Ki wo mite mori wo mizu",
-  "english": "See the trees but not the forest",
-  "meaning": "Missing the bigger picture"
-},
+    "japanese": "木を見て森を見ず",
+    "romaji": "Ki wo mite mori wo mizu",
+    "english": "See the trees but not the forest",
+    "meaning": "Missing the bigger picture"
+  },
   {
-  "japanese": "木を見て森を見ず",
-  "romaji": "Ki wo mite mori wo mizu",
-  "english": "See the trees but not the forest",
-  "meaning": "Missing the bigger picture"
-},
+    "japanese": "木を見て森を見ず",
+    "romaji": "Ki wo mite mori wo mizu",
+    "english": "See the trees but not the forest",
+    "meaning": "Missing the bigger picture"
+  },
   {
-  "japanese": "泣きっ面に蜂",
-  "romaji": "Nakittsura ni hachi",
-  "english": "A bee on a crying face",
-  "meaning": "Misfortune never comes alone"
-}
+    "japanese": "泣きっ面に蜂",
+    "romaji": "Nakittsura ni hachi",
+    "english": "A bee on a crying face",
+    "meaning": "Misfortune never comes alone"
+  },
+  {
+    "japanese": "能ある鷹は爪を隠す",
+    "romaji": "Nou aru taka wa tsume wo kakusu",
+    "english": "A skilled hawk hides its talons",
+    "meaning": "True skill is modest"
+  }
 ]
