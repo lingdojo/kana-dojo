@@ -283,6 +283,7 @@
   },
   {
     "id": "karasu-black",
+    "name": "Karasu Black",
     "backgroundColor": "oklch(14.0% 0.010 270.0 / 1)",
     "mainColor": "oklch(72.0% 0.055 200.0 / 1)",
     "secondaryColor": "oklch(62.0% 0.095 320.0 / 1)"
@@ -478,13 +479,6 @@
     "backgroundColor": "oklch(19.0% 0.038 40.0 / 1)",
     "mainColor": "oklch(85.0% 0.135 55.0 / 1)",
     "secondaryColor": "oklch(68.0% 0.165 30.0 / 1)"
-  },
-  {
-    "id": "karasu-black",
-    "backgroundColor": "oklch(14.0% 0.010 270.0 / 1)",
-    "mainColor": "oklch(72.0% 0.055 200.0 / 1)",
-    "secondaryColor": "oklch(62.0% 0.095 320.0 / 1)",
-    "name": "Karasu Black"
   },
   {
     "id": "hanami-pink",
