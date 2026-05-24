@@ -52,5 +52,14 @@
     "season": "Winter",
     "kigo": "Snow (yuki)",
     "notes": "Reflects acceptance and resilience in the face of harsh conditions and loss."
+  },
+  {
+    "japanese": "菜の花や 月は東に 日は西に",
+    "romaji": "Na no hana ya / tsuki wa higashi ni / hi wa nishi ni",
+    "english": "Canola flowers / the moon rises in the east / the sun sets in the west.",
+    "poet": "Yosa Buson",
+    "season": "Spring",
+    "kigo": "Canola flowers (na no hana)",
+    "notes": "A vivid landscape painting in words."
   }
 ]
