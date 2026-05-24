@@ -52,5 +52,14 @@
     "season": "Winter",
     "kigo": "Snow (yuki)",
     "notes": "Reflects acceptance and resilience in the face of harsh conditions and loss."
+  },
+  {
+    "japanese": "閑さや 岩にしみ入る 蝉の声",
+    "romaji": "Shizukasa ya / iwa ni shimiiru / semi no koe",
+    "english": "Stillness / seeping into the rocks / cicada cries.",
+    "poet": "Matsuo Basho",
+    "season": "Summer",
+    "kigo": "Cicada (semi)",
+    "notes": "The silence is so deep that cicada cries seem to penetrate the stones."
   }
 ]
