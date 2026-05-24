@@ -31,4 +31,16 @@ describe('community-themes.json', () => {
     const tsukijiCount = themes.filter(t => t.id === 'tsukiji-morning').length;
     expect(tsukijiCount).toBe(1);
   });
+
+  it('should contain the sea-glass theme with correct colors', () => {
+    const theme = themes.find(t => t.id === 'sea-glass');
+    expect(theme).toBeDefined();
+    expect(theme).toHaveProperty('backgroundColor', 'oklch(96.0% 0.015 210.0 / 1)');
+    expect(theme).toHaveProperty('mainColor', 'oklch(60.0% 0.135 200.0 / 1)');
+    expect(theme).toHaveProperty('secondaryColor', 'oklch(78.0% 0.065 100.0 / 1)');
+  });
+
+  it('sea-glass should have a unique id among themes', () => {
+    expect(themes.filter(t => t.id === 'sea-glass').length).toBe(1);
+  });
 });

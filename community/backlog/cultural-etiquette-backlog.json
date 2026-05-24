@@ -41,7 +41,7 @@
     "dont": "食べ終わってすぐ席を立つ",
     "note": "店でも家庭でも使える。",
     "id": 5,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -131,7 +131,7 @@
     "dont": "現金を投げるように渡す",
     "note": "丁寧で非接触な受け渡し。",
     "id": 15,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -186,7 +186,7 @@
     "note": "商談中は机上に置くのが一般的。",
     "id": 21,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "situation": "訪問時の玄関 2",
@@ -293,7 +293,7 @@
     "dont": "禁止場所で撮影する",
     "note": "御本尊周辺は撮影不可が多い。",
     "id": 33,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -302,7 +302,7 @@
     "dont": "初対面でタメ口を使う",
     "note": "距離感が縮まるまでは敬語が無難。",
     "id": 34,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -312,7 +312,7 @@
     "note": "丁寧で非接触な受け渡し。",
     "id": 35,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "situation": "乾杯 2",
@@ -320,7 +320,7 @@
     "dont": "先に一人で飲み始める",
     "note": "場の一体感を重視。",
     "id": 36,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -393,7 +393,7 @@
     "note": "感謝を示す慣習。",
     "id": 44,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "situation": "食事後 3",
@@ -402,7 +402,7 @@
     "note": "店でも家庭でも使える。",
     "id": 45,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "situation": "箸の作法 3",
@@ -410,7 +410,7 @@
     "dont": "ご飯に箸を立てる",
     "note": "立て箸は弔事連想のため避ける。",
     "id": 46,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -473,7 +473,7 @@
     "dont": "禁止場所で撮影する",
     "note": "御本尊周辺は撮影不可が多い。",
     "id": 53,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -492,7 +492,7 @@
     "note": "丁寧で非接触な受け渡し。",
     "id": 55,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "situation": "乾杯 3",
@@ -555,7 +555,7 @@
     "note": "家庭・旅館では基本マナー。",
     "id": 62,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "situation": "電車内 4",
@@ -590,7 +590,7 @@
     "dont": "ご飯に箸を立てる",
     "note": "立て箸は弔事連想のため避ける。",
     "id": 66,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -654,7 +654,7 @@
     "note": "御本尊周辺は撮影不可が多い。",
     "id": 73,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "situation": "年上との会話 4",
@@ -753,7 +753,7 @@
     "note": "感謝を示す慣習。",
     "id": 84,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "situation": "食事後 5",
@@ -771,7 +771,7 @@
     "note": "立て箸は弔事連想のため避ける。",
     "id": 86,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "situation": "神社参拝 5",
@@ -860,7 +860,7 @@
     "dont": "先に一人で飲み始める",
     "note": "場の一体感を重視。",
     "id": 96,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -941,7 +941,7 @@
     "dont": "食べ終わってすぐ席を立つ",
     "note": "店でも家庭でも使える。",
     "id": 105,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -969,7 +969,7 @@
     "note": "共同浴場の基本ルール。",
     "id": 108,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "situation": "会議 6",
@@ -1005,7 +1005,7 @@
     "note": "先に謝罪が基本。",
     "id": 112,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "situation": "写真撮影（寺社） 6",
@@ -1040,7 +1040,7 @@
     "dont": "先に一人で飲み始める",
     "note": "場の一体感を重視。",
     "id": 116,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

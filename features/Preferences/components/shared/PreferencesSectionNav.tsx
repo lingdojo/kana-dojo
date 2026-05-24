@@ -147,8 +147,8 @@ const PreferencesSectionNav = () => {
   };
 
   return (
-    <div className='sticky top-2 z-40'>
-      <div className='mx-auto w-full max-w-fit rounded-2xl border-1 border-(--border-color) bg-(--background-color) p-1 shadow-[0_12px_40px_rgba(0,0,0,0.18)] backdrop-blur-xl'>
+    <div className='sticky top-4 z-40'>
+      <div className='mx-auto w-full max-w-fit rounded-2xl border-1 border-(--border-color) bg-(--background-color) p-1 backdrop-blur-xl'>
         <div className='flex w-full gap-0 rounded-2xl bg-(--card-color) p-0'>
           {sections.map(section => {
             const isSelected = activeSection === section.id;

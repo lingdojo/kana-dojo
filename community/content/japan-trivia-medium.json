@@ -245,5 +245,60 @@
       "Romaji"
     ],
     "correctIndex": 0
-  }
+  },
+  {
+  "question": "Which Japanese beverage is made from roasted barley?",
+  "difficulty": "medium",
+  "answers": [
+    "Mugicha",
+    "Matcha",
+    "Genmaicha",
+    "Sencha"
+  ],
+  "correctIndex": 0
+  },
+  {
+  "question": "Which Japanese city is known for its deer roaming freely in a large park?",
+  "difficulty": "medium",
+  "answers": [
+    "Nara",
+    "Yokohama",
+    "Kobe",
+    "Nagoya"
+  ],
+  "correctIndex": 0
+},
+  {
+  "question": "Which Japanese castle was the seat of the Tokugawa shogunate? (Community variation 40)",
+  "difficulty": "medium",
+  "answers": [
+    "Edo Castle",
+    "Himeji Castle",
+    "Matsumoto Castle",
+    "Osaka Castle"
+  ],
+  "correctIndex": 0
+},
+  {
+  "question": "Which Japanese beverage is made from roasted barley?",
+  "difficulty": "medium",
+  "answers": [
+    "Mugicha",
+    "Matcha",
+    "Genmaicha",
+    "Sencha"
+  ],
+  "correctIndex": 0
+},
+  {
+  "question": "Which season is associated with red maple leaves (momiji) in Japan? (Community variation 16)",
+  "difficulty": "medium",
+  "answers": [
+    "Spring",
+    "Summer",
+    "Autumn",
+    "Winter"
+  ],
+  "correctIndex": 2
+}
 ]

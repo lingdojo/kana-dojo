@@ -18,6 +18,10 @@ export interface SubunitSummary {
   levelCount: number;
 }
 
+interface BuildSubunitsOptions {
+  desiredSubunitCount?: number;
+}
+
 const SUBUNIT_THRESHOLD = 12;
 
 const getPreferredChunkSize = (levelCount: number) => {
@@ -69,6 +73,7 @@ export const buildUnitSummaries = <TLevel extends string>(
 export const buildSubunitsForUnit = (
   startLevel: number,
   levelCount: number,
+  options?: BuildSubunitsOptions,
 ): SubunitSummary[] => {
   if (levelCount <= SUBUNIT_THRESHOLD) {
     return [
@@ -82,7 +87,11 @@ export const buildSubunitsForUnit = (
     ];
   }
 
-  let chunkSize = getPreferredChunkSize(levelCount);
+  const desiredSubunitCount = options?.desiredSubunitCount;
+  let chunkSize =
+    desiredSubunitCount && desiredSubunitCount > 1
+      ? Math.ceil(levelCount / desiredSubunitCount)
+      : getPreferredChunkSize(levelCount);
 
   while (chunkSize > 1 && !isValidChunkSize(levelCount, chunkSize)) {
     chunkSize -= 1;

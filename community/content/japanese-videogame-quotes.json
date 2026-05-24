@@ -320,5 +320,47 @@
     "english": "Next time, I'll be stronger.",
     "game": "Pokemon series",
     "character": "Rival characters"
-  }
+  },
+  {
+    "japanese": "未来を変えるんだ！",
+    "romaji": "Mirai o kaerun da!",
+    "english": "We're going to change the future!",
+    "game": "Steins;Gate: My Darling's Embrace",
+    "character": "Rintaro Okabe"
+  },
+  {
+  "japanese": "ここからが本番だ",
+  "romaji": "Koko kara ga honban da",
+  "english": "The real challenge starts now.",
+  "game": "Monster Hunter series",
+  "character": "Guild Handler lines"
+  },
+  {
+  "japanese": "仲間を信じろ",
+  "romaji": "Nakama o shinjiro",
+  "english": "Believe in your comrades.",
+  "game": "Dragon Quest series",
+  "character": "Recurring command voice"
+  },
+  {
+  "japanese": "それもまた一興",
+  "romaji": "Sore mo mata ikkyo",
+  "english": "That too has its charm.",
+  "game": "Onimusha series",
+  "character": "Nobunaga Oda"
+  },
+  {
+    "japanese":"サマンサが困ったことになっている。それもこれも、すべて私のピザのせいだ。",
+    "romaji":"Samansa ga komatta koto ni natte iru. Sore mo kore mo, subete watashi no piza no seida.",
+    "english":"Samantha's in trouble, and it's all because of my pizza.",
+    "game":"Yakuza 0",
+    "character":"Kazuma Kiryu"
+  },
+  {
+  "japanese": "冒険の始まりだ！",
+  "romaji": "Bouken no hajimari da!",
+  "english": "This is the beginning of the adventure!",
+  "game": "Dragon Quest XI",
+  "character": "Hero / party lines"
+}
 ]

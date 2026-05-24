@@ -691,5 +691,16 @@
     "Kyogen"
   ],
   "correctIndex": 0
-  }
+  },
+  {
+  "question": "Which Japanese city hosted the 1998 Winter Olympics? (Community variation 24)",
+  "difficulty": "hard",
+  "answers": [
+    "Nagano",
+    "Kobe",
+    "Hiroshima",
+    "Naha"
+  ],
+  "correctIndex": 0
+}
 ]

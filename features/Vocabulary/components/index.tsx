@@ -28,6 +28,7 @@ import type { IWord } from '@/shared/types/interfaces';
 const levelOrder: VocabLevel[] = ['n5', 'n4', 'n3', 'n2', 'n1'];
 const WORDS_PER_SET = 10;
 const VOCAB_COLLAPSED_ROWS_SESSION_KEY = 'vocab-collapsed-rows-by-unit';
+const VOCAB_UNIT_WITH_FEWER_SUBUNITS: VocabLevel = 'n2';
 const VOCAB_LENGTHS: Record<VocabLevel, number> = {
   n5: N5VocabLength,
   n4: N4VocabLength,
@@ -96,12 +97,31 @@ const VocabCards = () => {
     [selectedVocabCollectionName, unitSummaries],
   );
   const subunits = useMemo(
-    () =>
-      buildSubunitsForUnit(
+    () => {
+      const defaultSubunits = buildSubunitsForUnit(
         activeUnitSummary.startLevel,
         activeUnitSummary.levelCount,
-      ),
-    [activeUnitSummary.levelCount, activeUnitSummary.startLevel],
+      );
+      if (
+        activeUnitSummary.name !== VOCAB_UNIT_WITH_FEWER_SUBUNITS ||
+        defaultSubunits.length <= 1
+      ) {
+        return defaultSubunits;
+      }
+
+      return buildSubunitsForUnit(
+        activeUnitSummary.startLevel,
+        activeUnitSummary.levelCount,
+        {
+          desiredSubunitCount: defaultSubunits.length - 1,
+        },
+      );
+    },
+    [
+      activeUnitSummary.levelCount,
+      activeUnitSummary.name,
+      activeUnitSummary.startLevel,
+    ],
   );
   const selectedSubunitId =
     selectedSubunitByUnit[selectedVocabCollectionName] ?? subunits[0]?.id;
