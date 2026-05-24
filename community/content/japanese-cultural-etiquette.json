@@ -323,12 +323,12 @@
     "dont": "無言で食べ始める",
     "note": "感謝を示す慣習。"
   },
-    {
-   "situation": "箸の作法 5",
-  "do": "箸置きを使う",
-  "dont": "ご飯に箸を立てる",
-  "note": "立て箸は弔事連想のため避ける。"
-    },
+  {
+    "situation": "箸の作法 5",
+    "do": "箸置きを使う",
+    "dont": "ご飯に箸を立てる",
+    "note": "立て箸は弔事連想のため避ける。"
+  },
   {
     "situation": "レジ会計 3",
     "do": "トレーで受け渡す",
@@ -346,5 +346,11 @@
     "do": "トレーで受け渡す",
     "dont": "現金を投げるように渡す",
     "note": "丁寧で非接触な受け渡し。"
+  },
+  {
+    "situation": "Entering a Japanese home",
+    "do": "Remove your shoes at the genkan (entryway) and use the provided slippers.",
+    "dont": "Walk on tatami mats with slippers or shoes.",
+    "note": "There are separate slippers for the toilet area."
   }
 ]
