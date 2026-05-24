@@ -370,7 +370,7 @@
     "romaji": "Nanakorobi yaoki",
     "english": "Fall seven times, get up eight",
     "meaning": "Never give up"
-  },,
+  },
   {
     "japanese": "二度あることは三度ある",
     "romaji": "Nido aru koto wa sando aru",
@@ -598,7 +598,7 @@
   "romaji": "Nanakorobi yaoki",
   "english": "Fall seven times, get up eight",
   "meaning": "Never give up"
-},,
+},
   {
     "japanese": "十人十色",
     "romaji": "Juunin toiro",
@@ -622,5 +622,11 @@
     "romaji": "Ishi no ue ni mo sannen",
     "english": "Three years even on a stone",
     "meaning": "Perseverance pays off / Steady efforts will eventually be rewarded"
-  }
+  },
+  {
+  "japanese": "泣きっ面に蜂",
+  "romaji": "Nakittsura ni hachi",
+  "english": "A bee on a crying face",
+  "meaning": "Misfortune never comes alone"
+}
 ]
