@@ -52,5 +52,14 @@
     "season": "Winter",
     "kigo": "Snow (yuki)",
     "notes": "Reflects acceptance and resilience in the face of harsh conditions and loss."
+  },
+  {
+    "japanese": "五月雨や 大河を前に 家二軒",
+    "romaji": "Samidare ya / taikawa o mae ni / ie niken",
+    "english": "Early summer rains / in front of the great river / just two humble houses.",
+    "poet": "Matsuo Basho",
+    "season": "Summer",
+    "kigo": "Early summer rain (samidare)",
+    "notes": "Contrast between nature's power and human smallness."
   }
 ]
