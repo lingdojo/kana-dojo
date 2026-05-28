@@ -1,154 +1,125 @@
 {
-  "title": "翻译器",
-  "description": "日语 ↔ 英语翻译，支持罗马字显示",
-  "input": {
-    "placeholder": "输入要翻译的文本...",
-    "from": "源语言",
-    "to": "目标语言",
-    "clearButton": "清除输入",
-    "characterCount": "{count} / {max}",
-    "keyboardHint": "Press Ctrl+Enter (⌘+Enter on Mac) to translate",
-    "characterLimitWarning": "Text exceeds maximum length of {max} characters"
-  },
-  "languages": {
-    "japanese": "日语",
-    "english": "英语",
-    "auto": "自动检测",
-    "en": "英语",
-    "ja": "日语"
-  },
-  "actions": {
-    "translate": "翻译",
-    "swap": "交换语言",
-    "copy": "复制结果",
-    "clear": "清除",
-    "translating": "Translating...",
-    "swapLanguages": "Swap languages"
-  },
-  "results": {
-    "translation": "翻译结果",
-    "romaji": "罗马字",
-    "reading": "读音",
-    "noResults": "未找到翻译结果"
-  },
-  "features": {
-    "title": "功能特点",
-    "romajiSupport": "罗马字支持",
-    "romajiDescription": "显示日语文本的罗马字读音",
-    "instantTranslation": "即时翻译",
-    "instantDescription": "快速获取翻译结果",
-    "multipleInputs": "多种输入",
-    "multipleDescription": "支持日语和英语输入"
-  },
-  "errors": {
-    "emptyInput": "请输入要翻译的文本",
-    "translationFailed": "翻译失败，请重试",
-    "languageNotSupported": "不支持的语言",
-    "networkError": "Unable to connect. Please check your internet connection.",
-    "rateLimit": "Too many requests. Please wait a moment and try again.",
-    "invalidInput": "Please enter valid text to translate.",
-    "serverError": "Translation service is temporarily unavailable.",
-    "authError": "Translation service configuration error.",
-    "unknownError": "An error occurred during translation. Please try again."
-  },
   "meta": {
     "title": "日语翻译器 - 英日互译 | KanaDojo",
     "description": "免费的日语翻译工具，支持英语和日语之间的翻译，包含罗马字注音"
   },
   "header": {
-    "title": "日语翻译器",
-    "subtitle": "在英语和日语之间快速翻译"
+    "title": "日语翻译器"
+  },
+  "languages": {
+    "english": "英语",
+    "japanese": "日语",
+    "en": "英语",
+    "ja": "日语"
+  },
+  "input": {
+    "placeholder": {
+      "en": "输入要翻译的文本...",
+      "ja": "テキストを入力してください..."
+    },
+    "clearButton": "清除输入",
+    "characterCount": "{count} / {max}",
+    "keyboardHint": "按 Ctrl+Enter（Mac 上为 ⌘+Enter）翻译",
+    "characterLimitWarning": "文本超过最大长度 {max} 个字符"
+  },
+  "output": {
+    "placeholder": {
+      "en": "翻译将显示在这里...",
+      "ja": "翻译将显示在这里..."
+    },
+    "copyButton": "复制翻译",
+    "copied": "已复制！",
+    "copiedMessage": "已复制到剪贴板！",
+    "romanization": "罗马字注音"
+  },
+  "actions": {
+    "translate": "翻译",
+    "translating": "翻译中...",
+    "swapLanguages": "交换语言"
   },
   "history": {
     "title": "翻译历史",
-    "clear": "清除历史",
     "empty": "暂无翻译记录",
-    "emptyHint": "Your translations will appear here",
-    "clearAll": "Clear All",
-    "deleteEntry": "Delete entry",
+    "emptyHint": "您的翻译将显示在这里",
+    "clearAll": "全部清除",
+    "deleteEntry": "删除条目",
     "clearDialog": {
-      "title": "Clear Translation History?",
-      "description": "This will permanently delete all your translation history. This action cannot be undone.",
-      "cancel": "Cancel",
-      "confirm": "Clear All"
+      "title": "清除翻译历史？",
+      "description": "这将永久删除所有翻译历史。此操作无法撤销。",
+      "cancel": "取消",
+      "confirm": "全部清除"
     },
     "timeAgo": {
-      "justNow": "Just now",
-      "minutesAgo": "{count}m ago",
-      "hoursAgo": "{count}h ago",
-      "daysAgo": "{count}d ago"
+      "justNow": "刚刚",
+      "minutesAgo": "{count} 分钟前",
+      "hoursAgo": "{count} 小时前",
+      "daysAgo": "{count} 天前"
     }
   },
-  "output": {
-    "copy": "复制",
-    "copied": "已复制！",
-    "speak": "朗读",
-    "romaji": "罗马字",
-    "placeholder": {
-      "en": "Translation will appear here...",
-      "ja": "翻訳がここに表示されます..."
-    },
-    "copyButton": "Copy translation",
-    "copiedMessage": "Copied to clipboard!",
-    "romanization": "Romanization (Romaji)"
-  },
   "offline": {
-    "title": "离线模式",
-    "description": "在没有网络连接时使用基本翻译功能",
-    "message": "You are offline. Translation is unavailable until you reconnect."
+    "message": "您处于离线状态。重新连接前翻译不可用。"
+  },
+  "errors": {
+    "networkError": "无法连接。请检查您的网络连接。",
+    "rateLimit": "请求过多。请稍后再试。",
+    "invalidInput": "请输入有效的文本进行翻译。",
+    "emptyInput": "请输入要翻译的文本",
+    "serverError": "翻译服务暂时不可用。",
+    "authError": "翻译服务配置错误。",
+    "unknownError": "翻译过程中发生错误。请重试。"
   },
   "seo": {
-    "guideTitle": "Japanese Translation Guide",
+    "guideTitle": "日语翻译指南",
     "howToUse": {
-      "title": "How to Use the Japanese Translator",
-      "intro": "Our free Japanese translator makes it easy to translate text between English and Japanese. Here's how to get started:",
+      "title": "如何使用日语翻译器",
+      "intro": "我们的免费日语翻译器可以轻松翻译英语和日语文本。以下是入门方法：",
       "steps": {
-        "step1": "Enter your text in the input field on the left",
-        "step2": "Select your source language (English or Japanese)",
-        "step3": "Click the translate button or press Ctrl+Enter",
-        "step4": "View your translation with romanization (romaji) for Japanese text",
-        "step5": "Copy the translation or save it to your history"
+        "step1": "在左侧输入框中输入文本",
+        "step2": "选择源语言（英语或日语）",
+        "step3": "点击翻译按钮或按 Ctrl+Enter",
+        "step4": "查看翻译结果，日语文本带有罗马字注音",
+        "step5": "复制翻译或保存到历史记录"
       },
-      "proTip": "Pro tip: Use the swap button to quickly reverse the translation direction and translate the output back."
+      "proTip": "专业提示：使用交换按钮快速反转翻译方向，将输出翻译回原文。"
     },
     "writingSystems": {
-      "title": "About Japanese Writing Systems",
-      "intro": "Japanese uses three main writing systems, often combined in the same text:",
+      "title": "关于日语书写系统",
+      "intro": "日语使用三种主要书写系统，通常在同一文本中混合使用：",
       "hiragana": {
-        "name": "Hiragana (ひらがな)",
-        "description": "A phonetic syllabary used for native Japanese words, grammatical elements, and furigana readings"
+        "name": "平假名（ひらがな）",
+        "description": "用于日语原生词汇、语法元素和注音的音节文字"
       },
       "katakana": {
-        "name": "Katakana (カタカナ)",
-        "description": "A phonetic syllabary primarily used for foreign loanwords, onomatopoeia, and emphasis"
+        "name": "片假名（カタカナ）",
+        "description": "主要用于外来语、拟声词和强调的音节文字"
       },
       "kanji": {
-        "name": "Kanji (漢字)",
-        "description": "Chinese characters adapted for Japanese, representing meanings and concepts. There are over 2,000 commonly used kanji"
+        "name": "汉字（漢字）",
+        "description": "用于日语的汉字，代表含义和概念。常用汉字超过 2000 个"
       },
-      "outro": "Our translator handles all three writing systems and provides romanization (romaji) to help you read Japanese text using the Latin alphabet."
+      "outro": "我们的翻译器处理所有三种书写系统，并提供罗马字注音，帮助您使用拉丁字母阅读日语文本。"
     },
     "faq": {
-      "title": "Frequently Asked Questions",
+      "title": "常见问题",
       "isFree": {
-        "question": "Is this Japanese translator free?",
-        "answer": "Yes! Our Japanese translator is completely free to use with no registration required. Translate as much text as you need."
+        "question": "这个日语翻译器是免费的吗？",
+        "answer": "是的！我们的日语翻译器完全免费使用，无需注册。您可以翻译任意数量的文本。"
       },
       "accuracy": {
-        "question": "How accurate is the translation?",
-        "answer": "Our translator uses Google Cloud Translation API, one of the most accurate machine translation services available. While no machine translation is perfect, it provides high-quality translations for most everyday use cases."
+        "question": "翻译有多准确？",
+        "answer": "我们的翻译器使用 Google Cloud Translation API，这是最准确的机器翻译服务之一。虽然没有机器翻译是完美的，但它为大多数日常使用场景提供高质量的翻译。"
       },
       "romanization": {
-        "question": "What is romanization (romaji)?",
-        "answer": "Romanization, or romaji, is the representation of Japanese text using the Latin alphabet. It helps non-Japanese speakers read and pronounce Japanese words. Our translator automatically provides romanization for Japanese text."
+        "question": "什么是罗马字注音？",
+        "answer": "罗马字注音是使用拉丁字母表示日语文本的方式。它帮助非日语使用者阅读和发音日语单词。我们的翻译器自动为日语文本提供罗马字注音。"
       },
       "historySaved": {
-        "question": "Is my translation history saved?",
-        "answer": "Yes, your translation history is saved locally in your browser. This means your translations are private and only accessible on your device. You can clear your history at any time."
+        "question": "我的翻译历史会保存吗？",
+        "answer": "是的，您的翻译历史保存在浏览器本地。这意味着您的翻译是私密的，只能在您的设备上访问。您可以随时清除历史记录。"
       },
       "maxLength": {
-        "question": "What is the maximum text length?",
-        "answer": "You can translate up to 5,000 characters at a time. For longer texts, we recommend breaking them into smaller sections."
+        "question": "最大文本长度是多少？",
+        "answer": "您一次最多可以翻译 5000 个字符。对于较长的文本，我们建议将其分成较小的部分。"
       }
     }
   }

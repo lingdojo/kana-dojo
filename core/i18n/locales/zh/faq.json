@@ -55,27 +55,27 @@
     "howToUse": "如何使用 KanaDojo",
     "glossary": "日语术语表",
     "contact": "联系我们",
-    "translator": "English ↔ Japanese translator",
-    "academy": "Learning guides",
-    "privacy": "Privacy policy",
-    "terms": "Terms of service"
+    "translator": "英语 ↔ 日语翻译器",
+    "academy": "学习指南",
+    "privacy": "隐私政策",
+    "terms": "服务条款"
   },
   "nav": {
     "back": "返回",
     "next": "下一个",
     "previous": "上一个",
-    "title": "Jump to",
-    "backToTop": "Top",
-    "aria": "FAQ section navigation",
-    "note": "Tip: Use the Glossary if you see a term like ‘dakuon’, ‘yoon’, ‘onyomi’, or ‘kunyomi’."
+    "title": "跳转到",
+    "backToTop": "顶部",
+    "aria": "常见问题导航",
+    "note": "提示：如果您看到 '浊音'、'拗音'、'音读' 或 '训读' 等术语，请使用术语表。"
   },
   "cta": {
     "title": "准备好开始学习了吗？",
     "button": "开始训练",
     "subtitle": "免费开始您的日语学习之旅",
-    "hiragana": "Start Hiragana practice",
-    "katakana": "Start Katakana practice",
-    "kanji": "Start Kanji practice"
+    "hiragana": "开始平假名练习",
+    "katakana": "开始片假名练习",
+    "kanji": "开始汉字练习"
   },
   "sections": {
     "gettingStarted": "入门指南",
@@ -83,67 +83,67 @@
     "account": "账户相关",
     "technical": "技术支持",
     "learningPath": {
-      "title": "Learning path",
-      "description": "A practical order to learn Japanese reading fundamentals.",
+      "title": "学习路径",
+      "description": "学习日语阅读基础的实用顺序",
       "q1": {
-        "question": "Should I learn Hiragana or Katakana first?",
-        "answer": "Most learners start with Hiragana, then move to Katakana. Once you can read kana comfortably, start beginner Kanji and vocabulary together for faster real-world comprehension."
+        "question": "应该先学平假名还是片假名？",
+        "answer": "大多数学习者从平假名开始，然后学习片假名。一旦您能流畅阅读假名，就可以同时开始学习初级汉字和词汇，以加快实际理解能力。"
       },
       "q2": {
-        "question": "How long does it take to learn Hiragana and Katakana?",
-        "answer": "With consistent daily practice, many learners memorize each kana set in 1–2 weeks and become comfortable reading within a month. Speed and accuracy improve with short, frequent sessions."
+        "question": "学习平假名和片假名需要多长时间？",
+        "answer": "通过持续的每日练习，许多学习者在 1-2 周内记住每套假名，一个月内能流畅阅读。短时间频繁练习可以提高速度和准确性。"
       },
       "q3": {
-        "question": "When should I start Kanji?",
-        "answer": "After you know kana well enough to read basic words (even slowly), start Kanji—ideally by JLPT level (N5 → N4 → N3 → N2 → N1). Learning Kanji alongside vocabulary helps retention."
+        "question": "什么时候应该开始学汉字？",
+        "answer": "当您足够熟悉假名，能够阅读基础词汇（即使很慢）时，就可以开始学习汉字——最好按 JLPT 级别（N5 → N4 → N3 → N2 → N1）。将汉字与词汇一起学习有助于记忆。"
       }
     },
     "privacy": {
-      "title": "Privacy & data",
-      "description": "What’s stored, where it’s stored, and what that means for you.",
+      "title": "隐私与数据",
+      "description": "存储什么、存储在哪里，以及这对您意味着什么",
       "q1": {
-        "question": "Where is my progress saved?",
-        "answer": "Your progress is saved locally in your browser (on your device). This keeps your stats private and lets you start instantly without signup."
+        "question": "我的进度保存在哪里？",
+        "answer": "您的进度保存在浏览器本地（您的设备上）。这使您的统计数据保持私密，无需注册即可立即开始。"
       },
       "q2": {
-        "question": "Will my progress sync across devices?",
-        "answer": "Not automatically. Because progress is stored locally, switching browsers/devices won’t carry progress unless you manually move data."
+        "question": "我的进度会在设备间同步吗？",
+        "answer": "不会自动同步。因为进度存储在本地，除非您手动移动数据，否则切换浏览器/设备不会保留进度。"
       },
       "q3": {
-        "question": "Does KanaDojo work offline?",
-        "answer": "KanaDojo can work offline for core practice once assets are cached, but the best experience is with an internet connection—especially the first load."
+        "question": "KanaDojo 可以离线使用吗？",
+        "answer": "一旦资源缓存，KanaDojo 可以离线进行核心练习，但最佳体验需要网络连接——尤其是首次加载。"
       }
     },
     "jlpt": {
-      "title": "JLPT preparation",
-      "description": "How KanaDojo fits into a JLPT study plan.",
+      "title": "JLPT 备考",
+      "description": "KanaDojo 如何融入 JLPT 学习计划",
       "q1": {
-        "question": "Does KanaDojo help with JLPT?",
-        "answer": "Yes. KanaDojo organizes Kanji and vocabulary by JLPT level (N5–N1), which makes it easy to focus your practice for a target exam level."
+        "question": "KanaDojo 对 JLPT 有帮助吗？",
+        "answer": "是的。KanaDojo 按 JLPT 级别（N5-N1）组织汉字和词汇，方便您针对目标考试级别进行练习。"
       },
       "q2": {
-        "question": "Is KanaDojo enough to pass JLPT?",
-        "answer": "It’s a strong practice tool for recognition, recall, and speed—but JLPT also tests listening, reading comprehension, and grammar in context. Pair KanaDojo with graded reading/listening and a grammar resource."
+        "question": "KanaDojo 足以通过 JLPT 吗？",
+        "answer": "它是练习识别、回忆和速度的强大工具——但 JLPT 还测试听力、阅读理解和语境中的语法。将 KanaDojo 与分级阅读/听力和语法资源结合使用。"
       },
       "q3": {
-        "question": "What should I study for JLPT N5 first?",
-        "answer": "Start with Hiragana + Katakana, then N5 Kanji and core vocabulary. Short daily sessions beat occasional cramming—aim for consistency and review your weak items often."
+        "question": "JLPT N5 应该先学什么？",
+        "answer": "从平假名 + 片假名开始，然后是 N5 汉字和核心词汇。每日短时间学习胜过偶尔的突击学习——保持一致性，经常复习薄弱项目。"
       }
     },
     "troubleshooting": {
-      "title": "Troubleshooting",
-      "description": "Fix the most common ‘why am I not improving?’ problems.",
+      "title": "故障排除",
+      "description": "解决最常见的 '为什么我没有进步？' 问题",
       "q1": {
-        "question": "I keep mixing up similar characters. What should I do?",
-        "answer": "Reduce your active set, drill recognition first, and add short recall sessions. For kana, practice minimal pairs and focus on the distinguishing strokes (e.g., さ vs ち, シ vs ツ)."
+        "question": "我总是混淆相似的字符。该怎么办？",
+        "answer": "减少活跃集，先练习识别，再增加短暂的回忆练习。对于假名，练习最小对立体，专注于区分笔画（例如，さ vs ち，シ vs ツ）。"
       },
       "q2": {
-        "question": "My accuracy is fine but I’m slow.",
-        "answer": "Add timed practice (Blitz) with a small set. Speed usually improves after accuracy becomes stable."
+        "question": "我的准确率不错但速度慢。",
+        "answer": "添加计时练习（闪电模式），使用小集合。速度通常在准确率稳定后提高。"
       },
       "q3": {
-        "question": "My progress looks reset. Did I lose everything?",
-        "answer": "Progress is stored locally. Clearing browser data, using incognito mode, or switching devices/browsers can make it look reset. Check you’re in the same browser profile and that site data isn’t being cleared automatically."
+        "question": "我的进度看起来被重置了。我失去所有数据了吗？",
+        "answer": "进度存储在本地。清除浏览器数据、使用隐身模式或切换设备/浏览器可能会让它看起来被重置。检查您是否在同一个浏览器配置文件中，以及站点数据是否没有被自动清除。"
       }
     }
   },

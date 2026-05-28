@@ -245,43 +245,43 @@
       "title": "平假名基础字符",
       "description": "学习平假名的基础字符，包括清音和浊音",
       "titleShort": "平假名基础字符",
-      "keywords": "hiragana base, basic hiragana, hiragana chart, あいうえお, hiragana reference, learn hiragana basics, japanese alphabet hiragana, hiragana romanization"
+      "keywords": "平假名基础, 基础平假名, 平假名表, あいうえお, 平假名参考, 学习平假名基础, 日语字母平假名, 平假名罗马字"
     },
     "katakanaBase": {
       "title": "片假名基础字符",
       "description": "学习片假名的基础字符，包括清音和浊音",
       "titleShort": "片假名基础字符",
-      "keywords": "katakana base, basic katakana, katakana chart, アイウエオ, katakana reference, learn katakana basics, japanese alphabet katakana, katakana romanization"
+      "keywords": "片假名基础, 基础片假名, 片假名表, アイウエオ, 片假名参考, 学习片假名基础, 日语字母片假名, 片假名罗马字"
     },
     "hiraganaDakuon": {
-      "title": "Hiragana Dakuon (が-ぽ) - Voiced Hiragana Characters | KanaDojo",
-      "titleShort": "Hiragana Dakuon Characters",
-      "description": "Learn Hiragana Dakuon and Handakuon voiced characters (がぎぐげご, ざじずぜぞ, だぢづでど, ばびぶべぼ, ぱぴぷぺぽ). Master all 25 voiced hiragana with pronunciation guide.",
-      "keywords": "hiragana dakuon, voiced hiragana, hiragana with dakuten, がぎぐげご, hiragana handakuon, ばびぶべぼ, ぱぴぷぺぽ, hiragana voiced characters"
+      "title": "平假名浊音（が-ぽ）- 带浊音的平假名 | KanaDojo",
+      "titleShort": "平假名浊音字符",
+      "description": "学习平假名浊音和半浊音字符（がぎぐげご, ざじずぜぞ, だぢづでど, ばびぶべぼ, ぱぴぷぺぽ）。掌握所有 25 个带浊音的平假名及发音指南。",
+      "keywords": "平假名浊音, 带浊音平假名, 平假名浊音字符, がぎぐげご, 平假名半浊音, ばびぶべぼ, ぱぴぷぺぽ, 平假名浊音字符"
     },
     "hiraganaYoon": {
-      "title": "Hiragana Yoon (きゃ-りょ) - Combined Hiragana Characters | KanaDojo",
-      "titleShort": "Hiragana Yoon Characters",
-      "description": "Master Hiragana Yoon combination characters (きゃきゅきょ, しゃしゅしょ, ちゃちゅちょ, etc.). Learn all 33 combined hiragana sounds with romanization.",
-      "keywords": "hiragana yoon, combined hiragana, hiragana combinations, きゃきゅきょ, しゃしゅしょ, ちゃちゅちょ, hiragana digraphs, yoon hiragana"
+      "title": "平假名拗音（きゃ-りょ）- 组合平假名 | KanaDojo",
+      "titleShort": "平假名拗音字符",
+      "description": "掌握平假名拗音组合字符（きゃきゅきょ, しゃしゅしょ, ちゃちゅちょ 等）。学习所有 33 个组合平假名发音及罗马字。",
+      "keywords": "平假名拗音, 组合平假名, 平假名组合, きゃきゅきょ, しゃしゅしょ, ちゃちゅちょ, 平假名二合假名, 拗音平假名"
     },
     "katakanaDakuon": {
-      "title": "Katakana Dakuon (ガ-ポ) - Voiced Katakana Characters | KanaDojo",
-      "titleShort": "Katakana Dakuon Characters",
-      "description": "Learn Katakana Dakuon and Handakuon voiced characters (ガギグゲゴ, ザジズゼゾ, ダヂヅデド, バビブベボ, パピプペポ). Master all 25 voiced katakana with pronunciation guide.",
-      "keywords": "katakana dakuon, voiced katakana, katakana with dakuten, ガギグゲゴ, katakana handakuon, バビブベボ, パピプペポ, katakana voiced characters"
+      "title": "片假名浊音（ガ-ポ）- 带浊音的片假名 | KanaDojo",
+      "titleShort": "片假名浊音字符",
+      "description": "学习片假名浊音和半浊音字符（ガギグゲゴ, ザジズゼゾ, ダヂヅデド, バビブベボ, パピプペポ）。掌握所有 25 个带浊音的片假名及发音指南。",
+      "keywords": "片假名浊音, 带浊音片假名, 片假名浊音字符, ガギグゲゴ, 片假名半浊音, バビブベボ, パピプペポ, 片假名浊音字符"
     },
     "katakanaYoon": {
-      "title": "Katakana Yoon (キャ-リョ) - Combined Katakana Characters | KanaDojo",
-      "titleShort": "Katakana Yoon Characters",
-      "description": "Master Katakana Yoon combination characters (キャキュキョ, シャシュショ, チャチュチョ, etc.). Learn all 33 combined katakana sounds with romanization.",
-      "keywords": "katakana yoon, combined katakana, katakana combinations, キャキュキョ, シャシュショ, チャチュチョ, katakana digraphs, yoon katakana"
+      "title": "片假名拗音（キャ-リョ）- 组合片假名 | KanaDojo",
+      "titleShort": "片假名拗音字符",
+      "description": "掌握片假名拗音组合字符（キャキュキョ, シャシュショ, チャチュチョ 等）。学习所有 33 个组合片假名发音及罗马字。",
+      "keywords": "片假名拗音, 组合片假名, 片假名组合, キャキュキョ, シャシュショ, チャチュチョ, 片假名二合假名, 拗音片假名"
     },
     "katakanaForeign": {
-      "title": "Katakana Foreign Sounds (ファ-ウィ) - Extended Katakana | KanaDojo",
-      "titleShort": "Katakana Foreign Sounds",
-      "description": "Learn extended Katakana characters for foreign loanwords (ファ, フィ, ウィ, ウェ, etc.). Master special katakana combinations used in modern Japanese.",
-      "keywords": "katakana foreign sounds, extended katakana, katakana loanwords, ファフィ, ウィウェ, special katakana, modern katakana, foreign word katakana"
+      "title": "片假名外来语发音（ファ-ウィ）- 扩展片假名 | KanaDojo",
+      "titleShort": "片假名外来语发音",
+      "description": "学习用于外来语的扩展片假名字符（ファ, フィ, ウィ, ウェ 等）。掌握现代日语中使用的特殊片假名组合。",
+      "keywords": "片假名外来语发音, 扩展片假名, 片假名外来语, ファフィ, ウィウェ, 特殊片假名, 现代片假名, 外来语片假名"
     }
   }
 }
