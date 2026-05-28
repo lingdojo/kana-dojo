@@ -8,13 +8,22 @@
     "totalQuestions": "总题目数",
     "averageAccuracy": "平均准确率",
     "currentStreak": "当前连续天数",
-    "longestStreak": "最长连续天数"
+    "longestStreak": "最长连续天数",
+    "questionsAnswered": "已回答问题",
+    "accuracy": "总体准确率",
+    "streak": "连续天数",
+    "timeSpent": "学习时间"
   },
   "charts": {
     "dailyActivity": "每日活动",
     "weeklyProgress": "每周进度",
     "monthlyProgress": "每月进度",
-    "accuracyByType": "按类型准确率"
+    "accuracyByType": "按类型准确率",
+    "accuracyOverTime": "准确率趋势",
+    "questionsOverTime": "问题数量趋势",
+    "streakOverTime": "连续天数趋势",
+    "progressByLevel": "Progress by Level",
+    "timeByDojo": "Time by Dojo"
   },
   "kana": {
     "title": "假名统计",
@@ -22,24 +31,40 @@
     "katakana": "片假名",
     "mastered": "已掌握",
     "learning": "学习中",
-    "needsPractice": "需要练习"
+    "needsPractice": "需要练习",
+    "notStarted": "Not Started",
+    "hiraganaProgress": "Hiragana Progress",
+    "katakanaProgress": "Katakana Progress"
   },
   "kanji": {
     "title": "汉字统计",
     "byLevel": "按级别",
     "mastered": "已掌握",
-    "learning": "学习中"
+    "learning": "学习中",
+    "notStarted": "Not Started"
   },
   "vocabulary": {
     "title": "词汇统计",
     "byLevel": "按级别",
     "mastered": "已掌握",
-    "learning": "学习中"
+    "learning": "学习中",
+    "wordsLearned": "Words Learned"
   },
   "time": {
     "today": "今天",
     "thisWeek": "本周",
     "thisMonth": "本月",
     "allTime": "全部时间"
+  },
+  "performance": {
+    "title": "表现分析",
+    "subtitle": "查看您的学习进展和表现",
+    "bestCategory": "最佳类别",
+    "needsWork": "需要加强",
+    "improvement": "提升空间",
+    "bestAccuracy": "Best Accuracy",
+    "fastestTime": "Fastest Time",
+    "longestSession": "Longest Session",
+    "mostImproved": "Most Improved"
   }
 }

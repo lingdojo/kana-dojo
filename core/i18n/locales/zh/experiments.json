@@ -26,5 +26,50 @@
     "title": "反馈",
     "description": "帮助我们改进这些功能",
     "submit": "提交反馈"
+  },
+  "zenMode": {
+    "title": "禅模式",
+    "description": "极简主义练习模式，专注于纯粹的学习体验",
+    "settings": "禅模式设置"
+  },
+  "breathing": {
+    "title": "呼吸练习",
+    "description": "将呼吸与练习节奏结合，创造冥想式学习体验",
+    "settings": "呼吸设置"
+  },
+  "ambient": {
+    "title": "环境模式",
+    "description": "在环境声音和视觉效果中练习，营造沉浸式学习氛围",
+    "settings": "环境设置"
+  },
+  "rain": {
+    "title": "雨声模式",
+    "description": "在雨声背景中练习，创造平静专注的学习环境",
+    "settings": "雨声设置"
+  },
+  "haiku": {
+    "title": "俳句模式",
+    "description": "通过俳句诗歌学习日语，体验日本文化之美",
+    "settings": "俳句设置"
+  },
+  "constellation": {
+    "title": "星座模式",
+    "description": "在星空背景中练习，将学习与宇宙之美结合",
+    "settings": "星座设置"
+  },
+  "memory": {
+    "title": "记忆模式",
+    "description": "专注于记忆强化的练习模式，帮助长期记忆",
+    "settings": "记忆设置"
+  },
+  "typing": {
+    "title": "打字模式",
+    "description": "通过打字练习提高日语输入速度和准确性",
+    "settings": "打字设置"
+  },
+  "sound": {
+    "title": "声音模式",
+    "description": "通过声音反馈增强学习体验，提高听力和发音",
+    "settings": "声音设置"
   }
 }

@@ -4,18 +4,26 @@
   "input": {
     "placeholder": "输入要翻译的文本...",
     "from": "源语言",
-    "to": "目标语言"
+    "to": "目标语言",
+    "clearButton": "清除输入",
+    "characterCount": "{count} / {max}",
+    "keyboardHint": "Press Ctrl+Enter (⌘+Enter on Mac) to translate",
+    "characterLimitWarning": "Text exceeds maximum length of {max} characters"
   },
   "languages": {
     "japanese": "日语",
     "english": "英语",
-    "auto": "自动检测"
+    "auto": "自动检测",
+    "en": "英语",
+    "ja": "日语"
   },
   "actions": {
     "translate": "翻译",
     "swap": "交换语言",
     "copy": "复制结果",
-    "clear": "清除"
+    "clear": "清除",
+    "translating": "Translating...",
+    "swapLanguages": "Swap languages"
   },
   "results": {
     "translation": "翻译结果",
@@ -35,6 +43,113 @@
   "errors": {
     "emptyInput": "请输入要翻译的文本",
     "translationFailed": "翻译失败，请重试",
-    "languageNotSupported": "不支持的语言"
+    "languageNotSupported": "不支持的语言",
+    "networkError": "Unable to connect. Please check your internet connection.",
+    "rateLimit": "Too many requests. Please wait a moment and try again.",
+    "invalidInput": "Please enter valid text to translate.",
+    "serverError": "Translation service is temporarily unavailable.",
+    "authError": "Translation service configuration error.",
+    "unknownError": "An error occurred during translation. Please try again."
+  },
+  "meta": {
+    "title": "日语翻译器 - 英日互译 | KanaDojo",
+    "description": "免费的日语翻译工具，支持英语和日语之间的翻译，包含罗马字注音"
+  },
+  "header": {
+    "title": "日语翻译器",
+    "subtitle": "在英语和日语之间快速翻译"
+  },
+  "history": {
+    "title": "翻译历史",
+    "clear": "清除历史",
+    "empty": "暂无翻译记录",
+    "emptyHint": "Your translations will appear here",
+    "clearAll": "Clear All",
+    "deleteEntry": "Delete entry",
+    "clearDialog": {
+      "title": "Clear Translation History?",
+      "description": "This will permanently delete all your translation history. This action cannot be undone.",
+      "cancel": "Cancel",
+      "confirm": "Clear All"
+    },
+    "timeAgo": {
+      "justNow": "Just now",
+      "minutesAgo": "{count}m ago",
+      "hoursAgo": "{count}h ago",
+      "daysAgo": "{count}d ago"
+    }
+  },
+  "output": {
+    "copy": "复制",
+    "copied": "已复制！",
+    "speak": "朗读",
+    "romaji": "罗马字",
+    "placeholder": {
+      "en": "Translation will appear here...",
+      "ja": "翻訳がここに表示されます..."
+    },
+    "copyButton": "Copy translation",
+    "copiedMessage": "Copied to clipboard!",
+    "romanization": "Romanization (Romaji)"
+  },
+  "offline": {
+    "title": "离线模式",
+    "description": "在没有网络连接时使用基本翻译功能",
+    "message": "You are offline. Translation is unavailable until you reconnect."
+  },
+  "seo": {
+    "guideTitle": "Japanese Translation Guide",
+    "howToUse": {
+      "title": "How to Use the Japanese Translator",
+      "intro": "Our free Japanese translator makes it easy to translate text between English and Japanese. Here's how to get started:",
+      "steps": {
+        "step1": "Enter your text in the input field on the left",
+        "step2": "Select your source language (English or Japanese)",
+        "step3": "Click the translate button or press Ctrl+Enter",
+        "step4": "View your translation with romanization (romaji) for Japanese text",
+        "step5": "Copy the translation or save it to your history"
+      },
+      "proTip": "Pro tip: Use the swap button to quickly reverse the translation direction and translate the output back."
+    },
+    "writingSystems": {
+      "title": "About Japanese Writing Systems",
+      "intro": "Japanese uses three main writing systems, often combined in the same text:",
+      "hiragana": {
+        "name": "Hiragana (ひらがな)",
+        "description": "A phonetic syllabary used for native Japanese words, grammatical elements, and furigana readings"
+      },
+      "katakana": {
+        "name": "Katakana (カタカナ)",
+        "description": "A phonetic syllabary primarily used for foreign loanwords, onomatopoeia, and emphasis"
+      },
+      "kanji": {
+        "name": "Kanji (漢字)",
+        "description": "Chinese characters adapted for Japanese, representing meanings and concepts. There are over 2,000 commonly used kanji"
+      },
+      "outro": "Our translator handles all three writing systems and provides romanization (romaji) to help you read Japanese text using the Latin alphabet."
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "isFree": {
+        "question": "Is this Japanese translator free?",
+        "answer": "Yes! Our Japanese translator is completely free to use with no registration required. Translate as much text as you need."
+      },
+      "accuracy": {
+        "question": "How accurate is the translation?",
+        "answer": "Our translator uses Google Cloud Translation API, one of the most accurate machine translation services available. While no machine translation is perfect, it provides high-quality translations for most everyday use cases."
+      },
+      "romanization": {
+        "question": "What is romanization (romaji)?",
+        "answer": "Romanization, or romaji, is the representation of Japanese text using the Latin alphabet. It helps non-Japanese speakers read and pronounce Japanese words. Our translator automatically provides romanization for Japanese text."
+      },
+      "historySaved": {
+        "question": "Is my translation history saved?",
+        "answer": "Yes, your translation history is saved locally in your browser. This means your translations are private and only accessible on your device. You can clear your history at any time."
+      },
+      "maxLength": {
+        "question": "What is the maximum text length?",
+        "answer": "You can translate up to 5,000 characters at a time. For longer texts, we recommend breaking them into smaller sections."
+      }
+    }
   }
 }

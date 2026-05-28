@@ -20,7 +20,8 @@
         "title": "您的权利",
         "content": "您可以随时清除浏览器数据来删除您的进度信息。"
       }
-    }
+    },
+    "subtitle": "KanaDojo 的数据保护措施"
   },
   "terms": {
     "title": "服务条款",
@@ -39,7 +40,8 @@
         "title": "免责声明",
         "content": "本网站按现状提供服务，不提供任何明示或暗示的保证。"
       }
-    }
+    },
+    "subtitle": "KanaDojo 使用指南"
   },
   "security": {
     "title": "安全政策",
@@ -54,6 +56,23 @@
         "title": "安全连接",
         "content": "本网站使用HTTPS加密所有通信。"
       }
+    },
+    "subtitle": "我们如何保护 KanaDojo 的安全"
+  },
+  "credits": {
+    "title": "致谢",
+    "subtitle": "感谢所有为 KanaDojo 做出贡献的人",
+    "contributors": {
+      "title": "Contributors",
+      "description": "Thank you to all our amazing contributors"
+    },
+    "sponsors": {
+      "title": "Sponsors",
+      "description": "Special thanks to our sponsors"
+    },
+    "openSource": {
+      "title": "Open Source",
+      "description": "Built with these amazing open source projects"
     }
   }
 }

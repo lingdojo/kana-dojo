@@ -239,5 +239,49 @@
     "titleShort": "汉字练习",
     "description": "通过互动训练按JLPT级别练习日语汉字。通过快速练习和进度追踪提高识别、读音和记忆。",
     "keywords": "汉字练习, 练习汉字, 学习汉字, JLPT汉字, 按级别学习汉字, 汉字练习, 汉字测验, 日语汉字"
+  },
+  "kanaSubset": {
+    "hiraganaBase": {
+      "title": "平假名基础字符",
+      "description": "学习平假名的基础字符，包括清音和浊音",
+      "titleShort": "平假名基础字符",
+      "keywords": "hiragana base, basic hiragana, hiragana chart, あいうえお, hiragana reference, learn hiragana basics, japanese alphabet hiragana, hiragana romanization"
+    },
+    "katakanaBase": {
+      "title": "片假名基础字符",
+      "description": "学习片假名的基础字符，包括清音和浊音",
+      "titleShort": "片假名基础字符",
+      "keywords": "katakana base, basic katakana, katakana chart, アイウエオ, katakana reference, learn katakana basics, japanese alphabet katakana, katakana romanization"
+    },
+    "hiraganaDakuon": {
+      "title": "Hiragana Dakuon (が-ぽ) - Voiced Hiragana Characters | KanaDojo",
+      "titleShort": "Hiragana Dakuon Characters",
+      "description": "Learn Hiragana Dakuon and Handakuon voiced characters (がぎぐげご, ざじずぜぞ, だぢづでど, ばびぶべぼ, ぱぴぷぺぽ). Master all 25 voiced hiragana with pronunciation guide.",
+      "keywords": "hiragana dakuon, voiced hiragana, hiragana with dakuten, がぎぐげご, hiragana handakuon, ばびぶべぼ, ぱぴぷぺぽ, hiragana voiced characters"
+    },
+    "hiraganaYoon": {
+      "title": "Hiragana Yoon (きゃ-りょ) - Combined Hiragana Characters | KanaDojo",
+      "titleShort": "Hiragana Yoon Characters",
+      "description": "Master Hiragana Yoon combination characters (きゃきゅきょ, しゃしゅしょ, ちゃちゅちょ, etc.). Learn all 33 combined hiragana sounds with romanization.",
+      "keywords": "hiragana yoon, combined hiragana, hiragana combinations, きゃきゅきょ, しゃしゅしょ, ちゃちゅちょ, hiragana digraphs, yoon hiragana"
+    },
+    "katakanaDakuon": {
+      "title": "Katakana Dakuon (ガ-ポ) - Voiced Katakana Characters | KanaDojo",
+      "titleShort": "Katakana Dakuon Characters",
+      "description": "Learn Katakana Dakuon and Handakuon voiced characters (ガギグゲゴ, ザジズゼゾ, ダヂヅデド, バビブベボ, パピプペポ). Master all 25 voiced katakana with pronunciation guide.",
+      "keywords": "katakana dakuon, voiced katakana, katakana with dakuten, ガギグゲゴ, katakana handakuon, バビブベボ, パピプペポ, katakana voiced characters"
+    },
+    "katakanaYoon": {
+      "title": "Katakana Yoon (キャ-リョ) - Combined Katakana Characters | KanaDojo",
+      "titleShort": "Katakana Yoon Characters",
+      "description": "Master Katakana Yoon combination characters (キャキュキョ, シャシュショ, チャチュチョ, etc.). Learn all 33 combined katakana sounds with romanization.",
+      "keywords": "katakana yoon, combined katakana, katakana combinations, キャキュキョ, シャシュショ, チャチュチョ, katakana digraphs, yoon katakana"
+    },
+    "katakanaForeign": {
+      "title": "Katakana Foreign Sounds (ファ-ウィ) - Extended Katakana | KanaDojo",
+      "titleShort": "Katakana Foreign Sounds",
+      "description": "Learn extended Katakana characters for foreign loanwords (ファ, フィ, ウィ, ウェ, etc.). Master special katakana combinations used in modern Japanese.",
+      "keywords": "katakana foreign sounds, extended katakana, katakana loanwords, ファフィ, ウィウェ, special katakana, modern katakana, foreign word katakana"
+    }
   }
 }
