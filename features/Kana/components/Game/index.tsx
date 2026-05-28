@@ -67,7 +67,6 @@ const Game = () => {
 
   useEffect(() => {
     resetStats();
-    resetKanaSelection();
     setActiveMilestone(null);
     // Track dojo and mode usage for achievements (Requirements 8.1-8.3)
     recordDojoUsed('kana');
@@ -110,6 +109,7 @@ const Game = () => {
 
   const handleNewSession = () => {
     resetStats();
+    resetKanaSelection();
     setSessionId(null);
     setActiveSessionId(null);
     setView('playing');

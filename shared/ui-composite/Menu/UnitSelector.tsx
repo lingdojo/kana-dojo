@@ -117,11 +117,6 @@ const UnitSelector = () => {
   const selectedVocabCollection = vocabSelection.selectedCollection;
   const setSelectedVocabCollection = vocabSelection.setCollection;
 
-  // Current content type values
-  const selectedCollection = isKanji
-    ? selectedKanjiCollection
-    : selectedVocabCollection;
-
   const collections = useMemo(() => {
     const levels: CollectionLevel[] = ['n5', 'n4', 'n3', 'n2', 'n1'];
     const sizes = isKanji ? KANJI_SETS : VOCAB_SETS;
@@ -129,43 +124,52 @@ const UnitSelector = () => {
     return buildUnitSummaries(levels, level => sizes[level]);
   }, [isKanji]);
 
+  const persistedCollectionExists = collections.some(
+    collection =>
+      collection.name === persistedCollectionSelection.selectedCollection,
+  );
+  const selectedCollection = persistedCollectionExists
+    ? persistedCollectionSelection.selectedCollection
+    : 'n5';
+
   useEffect(() => {
-    const storedCollection = persistedCollectionSelection.selectedCollection;
-    if (!collections.some(collection => collection.name === storedCollection)) {
+    if (!persistedCollectionExists) {
       return;
     }
 
     const storedSubunit =
-      persistedCollectionSelection.selectedSubunitByUnit[storedCollection];
+      persistedCollectionSelection.selectedSubunitByUnit[selectedCollection];
 
     if (isKanji) {
-      if (selectedKanjiCollection !== storedCollection) {
-        setSelectedKanjiCollection(storedCollection);
+      if (selectedKanjiCollection !== selectedCollection) {
+        setSelectedKanjiCollection(selectedCollection);
       }
       if (
         storedSubunit &&
-        kanjiSelection.selectedSubunitByUnit[storedCollection] !== storedSubunit
+        kanjiSelection.selectedSubunitByUnit[selectedCollection] !==
+          storedSubunit
       ) {
-        kanjiSelection.setSubunitForUnit(storedCollection, storedSubunit);
+        kanjiSelection.setSubunitForUnit(selectedCollection, storedSubunit);
       }
       return;
     }
 
-    if (selectedVocabCollection !== storedCollection) {
-      setSelectedVocabCollection(storedCollection);
+    if (selectedVocabCollection !== selectedCollection) {
+      setSelectedVocabCollection(selectedCollection);
     }
     if (
       storedSubunit &&
-      vocabSelection.selectedSubunitByUnit[storedCollection] !== storedSubunit
+      vocabSelection.selectedSubunitByUnit[selectedCollection] !== storedSubunit
     ) {
-      vocabSelection.setSubunitForUnit(storedCollection, storedSubunit);
+      vocabSelection.setSubunitForUnit(selectedCollection, storedSubunit);
     }
   }, [
-    collections,
     isKanji,
     kanjiSelection,
     kanjiSelection.selectedSubunitByUnit,
+    persistedCollectionExists,
     persistedCollectionSelection,
+    selectedCollection,
     selectedKanjiCollection,
     selectedVocabCollection,
     setSelectedKanjiCollection,
@@ -221,16 +225,51 @@ const UnitSelector = () => {
   const activeSubunits = activeCollection
     ? getCollectionSubunits(activeCollection, isKanji)
     : [];
-  const selectedSubunitId = isKanji
-    ? kanjiSelection.selectedSubunitByUnit[
-        selectedCollection as CollectionLevel
-      ]
-    : vocabSelection.selectedSubunitByUnit[selectedCollection];
+  const selectedSubunitId =
+    persistedCollectionSelection.selectedSubunitByUnit[selectedCollection];
+  const selectedSubunitExists = activeSubunits.some(
+    subunit => subunit.id === selectedSubunitId,
+  );
   const resolvedSelectedSubunitId =
-    selectedSubunitId || activeSubunits[0]?.id || '';
+    selectedSubunitExists && selectedSubunitId
+      ? selectedSubunitId
+      : activeSubunits[0]?.id || '';
   const showSubunitSelector = Boolean(
     activeCollection && shouldShowSubunitSelector(activeCollection.levelCount),
   );
+
+  useEffect(() => {
+    if (!resolvedSelectedSubunitId) return;
+    if (selectedSubunitId === resolvedSelectedSubunitId) return;
+
+    setPersistedCollectionSubunit(
+      storageContentType,
+      selectedCollection,
+      resolvedSelectedSubunitId,
+    );
+
+    if (isKanji) {
+      kanjiSelection.setSubunitForUnit(
+        selectedCollection,
+        resolvedSelectedSubunitId,
+      );
+      return;
+    }
+
+    vocabSelection.setSubunitForUnit(
+      selectedCollection,
+      resolvedSelectedSubunitId,
+    );
+  }, [
+    isKanji,
+    kanjiSelection,
+    resolvedSelectedSubunitId,
+    selectedCollection,
+    selectedSubunitId,
+    setPersistedCollectionSubunit,
+    storageContentType,
+    vocabSelection,
+  ]);
 
   const handleSubunitSelect = (subunitId: string) => {
     playClick();

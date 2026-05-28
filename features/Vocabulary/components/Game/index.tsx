@@ -75,9 +75,6 @@ const Game = () => {
 
   useEffect(() => {
     resetStats();
-    resetCollectionSelection('vocabulary');
-    setSelectedVocabCollection('n5');
-    setSelectedVocabSubunitForUnit('n5', '1-10');
     setActiveMilestone(null);
     // Track dojo and mode usage for achievements (Requirements 8.1-8.3)
     recordDojoUsed('vocabulary');
@@ -120,6 +117,9 @@ const Game = () => {
 
   const handleNewSession = () => {
     resetStats();
+    resetCollectionSelection('vocabulary');
+    setSelectedVocabCollection('n5');
+    setSelectedVocabSubunitForUnit('n5', '1-10');
     setSessionId(null);
     setActiveSessionId(null);
     setView('playing');

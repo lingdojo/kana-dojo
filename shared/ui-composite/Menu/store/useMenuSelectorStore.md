@@ -22,10 +22,15 @@ menu location a user was browsing before starting or leaving a session.
 - Kanji starts at Unit 1 / N5, subunit `1-10`.
 - Vocabulary starts at Unit 1 / N5, subunit `1-10`.
 
-## Reset Boundary
+## Summary Navigation
 
-Classic training session start is the reset boundary. When a user starts a new
-classic session:
+Returning from `SessionSummaryScreen` to the menu preserves the selector state
+used to launch the completed or quit session. For example, a user who launched
+Kana training from Katakana Dakuon should land back on Katakana Dakuon when
+choosing the summary screen's menu action.
+
+The explicit summary-screen "new session" / "try again" action is the reset
+boundary. When a user starts a new classic session from the summary screen:
 
 - Kana calls `resetKanaSelection()`.
 - Kanji calls `resetCollectionSelection('kanji')`.
