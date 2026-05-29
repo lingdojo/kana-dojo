@@ -63,5 +63,11 @@
     "difficulty": "hard",
     "answers": ["Sanrio", "Ghibli", "Capcom", "Namco"],
     "correctIndex": 0
+  },
+  {
+    "question": "What is the traditional Japanese art of folding paper into decorative shapes called?",
+    "difficulty": "easy",
+    "answers": ["Origami", "Ikebana", "Calligraphy", "Sumi-e"],
+    "correctIndex": 0
   }
 ]
