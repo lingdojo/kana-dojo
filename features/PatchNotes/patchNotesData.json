@@ -1,5 +1,19 @@
 [
   {
+    "version": "0.1.18",
+    "date": "May 27, 2026",
+    "changes": [
+      "Polished the game area with larger answer summaries and better spacing for a more comfortable experience",
+      "Redesigned Next and Check buttons with a fresh new icon style",
+      "Smoothed out input focus styling across all game modes for cleaner interactions",
+      "Refined reverse mode difficulty for a more balanced learning curve",
+      "Fixed kanji and vocabulary answer matching to work correctly in all game modes",
+      "Fixed Blitz mode to properly enforce kanji meaning answers in normal mode",
+      "Prevented the game from advancing prematurely after dismissing a milestone",
+      "Improved kana separators and game icons, and turned off float animations for a cleaner UI"
+    ]
+  },
+  {
     "version": "0.1.17",
     "date": "April 21, 2026",
     "changes": [

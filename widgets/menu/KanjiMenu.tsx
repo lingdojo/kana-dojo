@@ -6,6 +6,7 @@ import TrainingActionBar from '@/shared/ui-composite/Menu/TrainingActionBar';
 import UnitSelector from '@/shared/ui-composite/Menu/UnitSelector';
 import { KanjiCards, useKanjiSelection } from '@/features/Kanji';
 import { kanjiDataService } from '@/features/Kanji/services/kanjiDataService';
+import { useMenuSelectorStore } from '@/shared/ui-composite/Menu/store/useMenuSelectorStore';
 
 const PRELOAD_FLAG = 'kanji-preload-complete';
 
@@ -19,6 +20,13 @@ const KanjiMenu = ({
   hideUnitSelector = false,
 }: KanjiMenuProps) => {
   const kanjiSelection = useKanjiSelection();
+  const selectedKanjiCollection = kanjiSelection.selectedCollection;
+  const setKanjiCollection = kanjiSelection.setCollection;
+  const clearKanji = kanjiSelection.clearKanji;
+  const clearKanjiSets = kanjiSelection.clearSets;
+  const setPersistedCollectionSelection = useMenuSelectorStore(
+    state => state.setCollectionSelection,
+  );
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -30,12 +38,16 @@ const KanjiMenu = ({
 
   useEffect(() => {
     if (!fixedCollection) return;
-    if (kanjiSelection.selectedCollection === fixedCollection) return;
+    if (selectedKanjiCollection === fixedCollection) return;
 
-    kanjiSelection.setCollection(fixedCollection);
-    kanjiSelection.clearKanji();
-    kanjiSelection.clearSets();
-  }, [fixedCollection, kanjiSelection]);
+    setKanjiCollection(fixedCollection);
+    clearKanji();
+    clearKanjiSets();
+    setPersistedCollectionSelection('kanji', {
+      selectedCollection: fixedCollection,
+      selectedSubunitByUnit: {},
+    });
+  }, [fixedCollection, selectedKanjiCollection, setKanjiCollection, clearKanji, clearKanjiSets, setPersistedCollectionSelection]);
 
   return (
     <>

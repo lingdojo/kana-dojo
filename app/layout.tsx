@@ -135,30 +135,6 @@ export default async function RootLayout({ children }: RootLayoutProps) {
     <html lang={locale} suppressHydrationWarning>
       <head>
         <StructuredData data={kanaDojoSchema} />
-        <Script id='audio-sw-migration' strategy='beforeInteractive'>
-          {`try {
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker
-      .getRegistrations()
-      .then(function (registrations) {
-        return Promise.all(
-          registrations
-            .filter(function (reg) {
-              return (
-                reg.active &&
-                reg.active.scriptURL.endsWith('/sw.js') &&
-                new URL(reg.scope).pathname === '/'
-              );
-            })
-            .map(function (reg) {
-              return reg.unregister();
-            })
-        );
-      })
-      .catch(function () {});
-  }
-} catch (_) {}`}
-        </Script>
         {/* DNS prefetch for external domains - resolve DNS early */}
         {isAnalyticsEnabled && (
           <>
@@ -194,6 +170,30 @@ export default async function RootLayout({ children }: RootLayoutProps) {
         />
       </head>
       <body>
+        <Script id='audio-sw-migration' strategy='afterInteractive'>
+          {`try {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+      .getRegistrations()
+      .then(function (registrations) {
+        return Promise.all(
+          registrations
+            .filter(function (reg) {
+              return (
+                reg.active &&
+                reg.active.scriptURL.endsWith('/sw.js') &&
+                new URL(reg.scope).pathname === '/'
+              );
+            })
+            .map(function (reg) {
+              return reg.unregister();
+            })
+        );
+      })
+      .catch(function () {});
+  }
+} catch (_) {}`}
+        </Script>
         <SessionPrefetch />
         {isAnalyticsEnabled && (
           <>

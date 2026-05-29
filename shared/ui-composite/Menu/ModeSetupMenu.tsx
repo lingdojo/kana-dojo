@@ -25,6 +25,7 @@ import {
   REPETITION_OPTIONS,
   type GauntletDifficulty,
 } from '@/shared/ui-composite/Gauntlet/types';
+import { SelectedLevelsCard } from '@/shared/ui-composite/Menu/SelectedLevelsCard';
 
 import { ActionButton } from '@/shared/ui/components/ActionButton';
 
@@ -53,6 +54,7 @@ const USE_NEW_GAME_MODE_ICON_STYLE = true;
 const GAME_MODE_ICON_SIZE = 22;
 const GAME_MODE_ICON_FLOAT_DELAY_CLASS = '[animation-delay:180ms]';
 const USE_FLUSH_DIFFICULTY_TABS = false;
+const USE_TILDE_SEPARATOR = false;
 const gameModeIconStyle = {
   base: 'motion-safe:animate-float flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border-b-6 transition-colors [--float-distance:-2px]',
   selected:
@@ -280,6 +282,7 @@ const ModeSetupMenu = ({
             currentDojo={currentDojo}
             fullLabel={kanaGroupNamesFull}
             compactLabel={kanaGroupNamesCompact}
+            useTildeSeparator={USE_TILDE_SEPARATOR}
           />
 
           {mode !== 'gauntlet' && (
@@ -595,52 +598,6 @@ function GameModeCards({
           </button>
         );
       })}
-    </div>
-  );
-}
-
-// Sub-component for displaying selected levels/groups
-function SelectedLevelsCard({
-  currentDojo,
-  fullLabel,
-  compactLabel,
-}: {
-  currentDojo: string;
-  fullLabel: string;
-  compactLabel: string;
-}) {
-  const isKana = currentDojo === 'kana';
-
-  return (
-    <div className='rounded-xl bg-(--card-color) p-4'>
-      <div className='flex flex-col gap-2'>
-        <div className='flex flex-row items-center gap-2'>
-          <div className='flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 border-(--secondary-color) bg-(--secondary-color)'>
-            <svg
-              className='h-3 w-3 text-(--background-color)'
-              fill='none'
-              viewBox='0 0 24 24'
-              stroke='currentColor'
-            >
-              <path
-                strokeLinecap='round'
-                strokeLinejoin='round'
-                strokeWidth={3}
-                d='M5 13l4 4L19 7'
-              />
-            </svg>
-          </div>
-          <span className='text-sm'>
-            {isKana ? 'Selected Groups:' : 'Selected Levels:'}
-          </span>
-        </div>
-        <span className='text-sm break-words text-(--secondary-color) md:hidden'>
-          {compactLabel}
-        </span>
-        <span className='hidden text-sm break-words text-(--secondary-color) md:inline'>
-          {fullLabel}
-        </span>
-      </div>
     </div>
   );
 }

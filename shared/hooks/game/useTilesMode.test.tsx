@@ -44,26 +44,26 @@ describe('useTilesMode', () => {
     });
   });
 
-  it('increases word length by 1 after every 5 consecutive correct answers', () => {
+  it('increases word length by 1 after every 7 consecutive correct answers', () => {
     const { result } = renderHook(() =>
       useTilesMode({
         enableAdaptiveWordLength: true,
         minWordLength: 1,
         maxWordLength: 3,
-        correctAnswersPerLengthStep: 5,
+        correctAnswersPerLengthStep: 7,
       }),
     );
 
     expect(result.current.wordLength).toBe(1);
 
-    for (let i = 0; i < 5; i += 1) {
+    for (let i = 0; i < 7; i += 1) {
       act(() => {
         result.current.decideNextMode();
       });
     }
     expect(result.current.wordLength).toBe(2);
 
-    for (let i = 0; i < 5; i += 1) {
+    for (let i = 0; i < 7; i += 1) {
       act(() => {
         result.current.decideNextMode();
       });
@@ -77,11 +77,11 @@ describe('useTilesMode', () => {
         enableAdaptiveWordLength: true,
         minWordLength: 1,
         maxWordLength: 3,
-        correctAnswersPerLengthStep: 5,
+        correctAnswersPerLengthStep: 7,
       }),
     );
 
-    for (let i = 0; i < 10; i += 1) {
+    for (let i = 0; i < 14; i += 1) {
       act(() => {
         result.current.decideNextMode();
       });

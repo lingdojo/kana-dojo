@@ -24,6 +24,7 @@ import {
 import { getWallpaperById } from '@/features/Preferences/data/wallpapers/wallpapers';
 import fonts from '@/features/Preferences/data/fonts/fonts';
 import { isRecommendedFont } from '@/features/Preferences/data/fonts/recommendedFonts';
+import CollapsibleSection from '@/features/Preferences/components/shared/CollapsibleSection';
 import { useClick } from '@/shared/hooks/generic/useAudio';
 import { cardBorderStyles } from '@/shared/utils/styles';
 import { ActionButton } from '@/shared/ui/components/ActionButton';
@@ -105,6 +106,10 @@ const WelcomeModal = () => {
 
   const recommendedFonts = useMemo(
     () => fonts.filter(fontObj => isRecommendedFont(fontObj.name)),
+    [],
+  );
+  const otherFonts = useMemo(
+    () => fonts.filter(fontObj => !isRecommendedFont(fontObj.name)),
     [],
   );
 
@@ -225,7 +230,7 @@ const WelcomeModal = () => {
             </div>
 
             <div className='space-y-4 text-left'>
-              <div className='flex items-center gap-3 rounded-lg bg-(--background-color) p-3'>
+              <div className='flex items-center gap-3 rounded-lg bg-(--card-color) p-3'>
                 <FloatingIcon
                   size='md'
                   tone='main'
@@ -242,7 +247,7 @@ const WelcomeModal = () => {
                 </div>
               </div>
 
-              <div className='flex items-center gap-3 rounded-lg bg-(--background-color) p-3'>
+              <div className='flex items-center gap-3 rounded-lg bg-(--card-color) p-3'>
                 <FloatingIcon
                   size='md'
                   tone='main'
@@ -433,7 +438,7 @@ const WelcomeModal = () => {
                     themeSet.name === 'Dark' ||
                     themeSet.name.startsWith('Premium'),
                 )
-                .map((themeSet, themeSetIndex) => {
+                .map(themeSet => {
                   let filteredThemes = themeSet.themes;
 
                   // Only filter Dark themes - show all Base themes
@@ -447,7 +452,6 @@ const WelcomeModal = () => {
                       'fuji',
                       'moonlit-waterfall',
                       'luminous-tide',
-                      'sapphire-bloom',
                       'oboro',
                       'midnight-fjord',
                       'coral-abyss',
@@ -461,38 +465,62 @@ const WelcomeModal = () => {
                     );
                   }
 
+                  // Filter Premium themes
+                  if (themeSet.name.startsWith('Premium')) {
+                    const allowedPremiumThemes = [
+                      'alpine-stars',
+                      'bangkok-grand-palace-fireworks',
+                      // 'bangkok-night',
+                      // 'bangkok-night-pool',
+                      // 'bangkok-park',
+                      'bangkok-river',
+                      // 'bangkok-riverside-night',
+                      // 'bangkok-storm',
+                      // 'bangkok-sunset',
+                      'chureito-fuji-sunset',
+                      'crimson-coder',
+                      'dawn-pagoda',
+                      'dubai-skyline',
+                      'island-night',
+                      'marina-sunset',
+                      'moonlit-crossing',
+                      'neon-cafe',
+                      // 'retro-city',
+                      'tokyo-tower',
+                    ];
+                    filteredThemes = themeSet.themes.filter(theme =>
+                      allowedPremiumThemes.includes(theme.id),
+                    );
+                  }
+
                   // Don't render the theme group if it has no themes to display
                   if (filteredThemes.length === 0) return null;
 
                   return (
-                    <div key={themeSet.name} className='space-y-3'>
-                      <div className='flex items-center gap-2 text-lg font-medium'>
-                        <FloatingIcon
-                          size='sm'
-                          animated={false}
-                          animationDelayClass={
-                            themeSetIndex % 2 === 1 ? '[animation-delay:120ms]' : undefined
-                          }
-                        >
-                          <themeSet.icon />
-                        </FloatingIcon>
-                        {themeSet.name.startsWith('Premium') ? (
+                    <CollapsibleSection
+                      key={themeSet.name}
+                      title={
+                        themeSet.name.startsWith('Premium') ? (
                           <span>
                             <span className='text-(--main-color)'>Premium</span>
                             <span className='ml-1 text-(--secondary-color)'>
-                              (experimental)
+                              {/*(experimental)*/}
                             </span>
                           </span>
                         ) : (
                           <span className='text-(--main-color)'>
                             {themeSet.name}
                           </span>
-                        )}
-                        {/* <span className='text-sm font-normal text-(--secondary-color)'>
-                      ({themeSet.themes.length})
-                    </span> */}
-                      </div>
-                      <div className='grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4'>
+                        )
+                      }
+                      icon={<themeSet.icon size={16} />}
+                      useNewIconDesign
+                      level='subsection'
+                      defaultOpen={true}
+                      storageKey={`welcome-themes-${themeSet.name.toLowerCase().replace(/\s+/g, '-')}`}
+                      className='gap-3'
+                    >
+                      <div className='grid grid-cols-2 gap-3 p-1 sm:grid-cols-3 md:grid-cols-4'>
                         {filteredThemes.map(theme => {
                           const isChaosTheme = theme.id === '?';
                           const isPremiumTheme = isPremiumThemeId(theme.id);
@@ -567,7 +595,8 @@ const WelcomeModal = () => {
                                     className='block truncate text-sm whitespace-nowrap capitalize'
                                     style={{ color: theme.mainColor }}
                                   >
-                                    {theme.id.replaceAll('-', ' ')}
+                                    {theme.displayName ??
+                                      theme.id.replaceAll('-', ' ')}
                                   </span>
                                 )}
                               </div>
@@ -592,7 +621,7 @@ const WelcomeModal = () => {
                           );
                         })}
                       </div>
-                    </div>
+                    </CollapsibleSection>
                   );
                 })}
             </div>
@@ -620,44 +649,101 @@ const WelcomeModal = () => {
               </p>
             </div>
 
-            <div className='scrollbar-thin scrollbar-thumb-(--border-color) scrollbar-track-transparent max-h-80 space-y-4 overflow-y-auto p-1 pr-2'>
-              <div className='grid grid-cols-1 gap-4 sm:grid-cols-2'>
-                {recommendedFonts.map(fontObj => (
-                  <button
-                    key={fontObj.name}
-                    className={clsx(
-                      'flex cursor-pointer items-center justify-center overflow-hidden rounded-xl border-0 px-4 py-4 transition-all duration-200 hover:opacity-90 active:scale-95',
-                    )}
-                    style={{
-                      backgroundColor: 'var(--background-color)',
-                      outline:
-                        currentFont === fontObj.name
-                          ? '3px solid var(--secondary-color)'
-                          : 'none',
-                    }}
-                    onClick={() => {
-                      playClick();
-                      setFont(fontObj.name);
-                    }}
-                  >
-                    <p
+            <div className='scrollbar-thin scrollbar-thumb-(--border-color) scrollbar-track-transparent max-h-80 space-y-6 overflow-y-auto p-1 pr-2'>
+              <CollapsibleSection
+                title={<span className='text-(--main-color)'>Recommended</span>}
+                icon={<Palette size={16} />}
+                useNewIconDesign
+                level='subsection'
+                defaultOpen={true}
+                storageKey='welcome-fonts-recommended'
+                className='gap-3'
+              >
+                <div className='grid grid-cols-1 gap-4 p-1 sm:grid-cols-2'>
+                  {recommendedFonts.map(fontObj => (
+                    <button
+                      key={fontObj.name}
                       className={clsx(
-                        'text-center text-xl',
-                        fontObj.font.className,
+                        'flex cursor-pointer items-center justify-center overflow-hidden rounded-xl border-0 px-4 py-4 transition-all duration-200 hover:opacity-90 active:scale-95',
                       )}
+                      style={{
+                        backgroundColor: 'var(--background-color)',
+                        outline:
+                          currentFont === fontObj.name
+                            ? '3px solid var(--secondary-color)'
+                            : 'none',
+                      }}
+                      onClick={() => {
+                        playClick();
+                        setFont(fontObj.name);
+                      }}
                     >
-                      <span className='text-(--main-color)'>
-                        {fontObj.name}
-                        {fontObj.name === 'Zen Maru Gothic' &&
-                          ` ${t('steps.fonts.default')}`}
-                      </span>
-                      <span className='ml-2 text-(--secondary-color)'>
-                        かな道場
-                      </span>
-                    </p>
-                  </button>
-                ))}
-              </div>
+                      <p
+                        className={clsx(
+                          'text-center text-xl',
+                          fontObj.font.className,
+                        )}
+                      >
+                        <span className='text-(--main-color)'>
+                          {fontObj.name}
+                          {fontObj.name === 'Zen Maru Gothic' &&
+                            ` ${t('steps.fonts.default')}`}
+                        </span>
+                        <span className='ml-2 text-(--secondary-color)'>
+                          かな道場
+                        </span>
+                      </p>
+                    </button>
+                  ))}
+                </div>
+              </CollapsibleSection>
+              <CollapsibleSection
+                title={<span className='text-(--main-color)'>Other</span>}
+                icon={<Type size={16} />}
+                useNewIconDesign
+                level='subsection'
+                defaultOpen={true}
+                storageKey='welcome-fonts-other'
+                className='gap-3'
+              >
+                <div className='grid grid-cols-1 gap-4 p-1 sm:grid-cols-2'>
+                  {otherFonts.map(fontObj => (
+                    <button
+                      key={fontObj.name}
+                      className={clsx(
+                        'flex cursor-pointer items-center justify-center overflow-hidden rounded-xl border-0 px-4 py-4 transition-all duration-200 hover:opacity-90 active:scale-95',
+                      )}
+                      style={{
+                        backgroundColor: 'var(--background-color)',
+                        outline:
+                          currentFont === fontObj.name
+                            ? '3px solid var(--secondary-color)'
+                            : 'none',
+                      }}
+                      onClick={() => {
+                        playClick();
+                        setFont(fontObj.name);
+                      }}
+                    >
+                      <p
+                        className={clsx(
+                          'text-center text-xl',
+                          fontObj.font.className,
+                        )}
+                      >
+                        <span className='text-(--main-color)'>
+                          {fontObj.name}
+                          {fontObj.name === 'Zen Maru Gothic' &&
+                            ` ${t('steps.fonts.default')}`}
+                        </span>
+                        <span className='ml-2 text-(--secondary-color)'>
+                          かな道場
+                        </span>
+                      </p>
+                    </button>
+                  ))}
+                </div>
+              </CollapsibleSection>
               <div className='mt-4 rounded-lg bg-(--secondary-color) p-3 text-center'>
                 <p className='text-sm text-(--background-color)'>
                   {t('steps.fonts.moreInfo')}{' '}
@@ -704,7 +790,7 @@ const WelcomeModal = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className='fixed inset-0 z-[9999] flex items-center justify-center overscroll-none bg-black/40 p-2 backdrop-blur-sm sm:p-4'
+        className='fixed inset-0 z-[9999] flex items-center justify-center overscroll-none bg-black/40 p-1 backdrop-blur-sm sm:p-4'
         onClick={e => {
           if (e.target === e.currentTarget) {
             handleClose();
@@ -719,15 +805,15 @@ const WelcomeModal = () => {
           animate={{ scale: 1, opacity: 1, y: 0 }}
           exit={{ scale: 0.9, opacity: 0, y: 20 }}
           className={clsx(
-            'flex max-h-[85vh] w-full flex-col overflow-hidden md:w-4/5 lg:w-3/5',
-            'm-3 rounded-2xl bg-(--card-color)',
+            'flex max-h-[90vh] w-full flex-col overflow-hidden md:w-4/5 lg:w-3/5',
+             'm-1.5 rounded-2xl bg-(--background-color)',
             'shadow-2xl shadow-black/20',
             cardBorderStyles,
           )}
           onClick={e => e.stopPropagation()}
         >
           {/* Header */}
-          <div className='sticky top-0 z-10 border-b border-(--border-color)/30 bg-(--card-color) p-3 sm:p-5'>
+          <div className='sticky top-0 z-10 border-b border-(--border-color)/30 bg-(--background-color) p-2 sm:p-5'>
             <div className='flex items-center justify-between'>
               <div className='flex items-center gap-2'>
                 <div
@@ -761,7 +847,7 @@ const WelcomeModal = () => {
                 onClick={handleClose}
                 className={clsx(
                   'cursor-pointer rounded-lg p-2 transition-colors duration-50',
-                  'hover:bg-(--background-color)',
+                  'hover:bg-(--card-color)',
                   'text-(--secondary-color) hover:text-(--main-color)',
                 )}
               >
@@ -774,7 +860,7 @@ const WelcomeModal = () => {
           <div
             ref={contentRef}
             className={clsx(
-              'min-h-0 p-3 pb-2 sm:p-5',
+              'min-h-0 p-2 pb-2 sm:p-5',
               step === 'welcome' ? 'overflow-y-auto' : 'overflow-hidden',
             )}
           >
@@ -782,7 +868,7 @@ const WelcomeModal = () => {
           </div>
 
           {/* Actions */}
-          <div className='sticky bottom-0 border-t border-(--border-color)/30 bg-(--card-color) p-3 pt-3 sm:p-5'>
+          <div className='sticky bottom-0 border-t border-(--border-color)/30 bg-(--background-color) p-2 pt-2 sm:p-5'>
             <div className='flex items-center justify-between'>
               {step !== 'welcome' ? (
                 <button
@@ -790,7 +876,7 @@ const WelcomeModal = () => {
                   className={clsx(
                     'group flex cursor-pointer items-center justify-center gap-2 rounded-xl px-4 py-2 sm:px-6 sm:py-3',
                     'text-(--secondary-color) hover:text-(--main-color)',
-                    'transition-all duration-50 hover:bg-(--background-color)',
+                    'transition-all duration-50 hover:bg-(--card-color)',
                     'text-sm sm:text-base',
                   )}
                 >
@@ -812,7 +898,7 @@ const WelcomeModal = () => {
                   className={clsx(
                     'group flex cursor-pointer items-center justify-center gap-2 rounded-xl px-6 py-2 sm:px-8 sm:py-3',
                     'text-sm font-medium text-(--main-color) sm:text-base',
-                    'transition-all duration-50 hover:bg-(--background-color) active:scale-98',
+                    'transition-all duration-50 hover:bg-(--card-color) active:scale-98',
                   )}
                 >
                 <span>

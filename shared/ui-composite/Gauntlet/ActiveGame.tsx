@@ -21,7 +21,7 @@ import {
   type BottomBarState,
 } from '@/shared/ui-composite/Game/GameBottomBar';
 import Stars from '@/shared/ui-composite/Game/Stars';
-import ProgressBar from '@/shared/ui-composite/Game/ProgressBar';
+import GameScoreBar from '@/shared/ui-composite/Game/GameScoreBar';
 import { useClick } from '@/shared/hooks/generic/useAudio';
 import { cn } from '@/shared/utils/utils';
 import { useThemePreferences } from '@/features/Preferences';
@@ -522,7 +522,7 @@ export default function ActiveGame<T>({
 
       {/* Progress Bar */}
       <div className='mt-4 w-full md:w-2/3 lg:w-1/2'>
-        <ProgressBar value={currentIndex} max={totalQuestions} />
+        <GameScoreBar value={currentIndex} max={totalQuestions} />
       </div>
 
       {/* Main Game Area - EXACTLY matching the TilesMode implementations */}

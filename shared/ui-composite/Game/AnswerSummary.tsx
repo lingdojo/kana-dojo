@@ -2,11 +2,12 @@ import clsx from 'clsx';
 import { toKana, toRomaji } from 'wanakana';
 import type { IKanjiObj } from '@/features/Kanji';
 import type { IVocabObj } from '@/features/Vocabulary';
-import { CircleArrowRight } from 'lucide-react';
-import { Dispatch, SetStateAction, useRef, useEffect } from 'react';
+import { CircleArrowRight, Volume2 } from 'lucide-react';
+import { Dispatch, SetStateAction, useRef, useEffect, useCallback } from 'react';
 import { useClick } from '@/shared/hooks/generic/useAudio';
 import FuriganaText from '@/shared/ui-composite/text/FuriganaText';
-import { useThemePreferences } from '@/features/Preferences';
+import { useAudioPreferences, useThemePreferences } from '@/features/Preferences';
+import { useJapaneseTTS } from '@/features/Preferences/hooks/useJapaneseTTS';
 import { ActionButton } from '@/shared/ui/components/ActionButton';
 import { motion } from 'framer-motion';
 import { cn } from '@/shared/utils/utils';
@@ -201,10 +202,14 @@ const KanjiDisplay = ({ payload }: { payload: IKanjiObj }) => (
 const ReadingsList = ({
   readings,
   isHidden,
+  canPlayPronunciation,
+  onPlayPronunciation,
   delay = 0,
 }: {
   readings: string[];
   isHidden: boolean;
+  canPlayPronunciation: boolean;
+  onPlayPronunciation: (reading: string) => void;
   delay?: number;
 }) => {
   if (isHidden) return null;
@@ -216,8 +221,13 @@ const ReadingsList = ({
       className='flex h-1/2 flex-row gap-2 rounded-2xl bg-(--card-color)'
     >
       {readings.slice(0, 2).map((reading, i) => (
-        <motion.span
+        <motion.button
+          type='button'
           key={reading}
+          onClick={() => {
+            onPlayPronunciation(reading.split(' ')[1] || reading);
+          }}
+          disabled={!canPlayPronunciation || !reading.trim()}
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{
@@ -227,14 +237,24 @@ const ReadingsList = ({
             delay: delay + i * 0.08,
           }}
           className={clsx(
-            'flex flex-row items-center justify-center px-2 py-1 text-sm md:text-lg',
+            'group flex flex-row items-center justify-center px-2 py-1 text-sm md:text-lg',
             'w-full text-(--secondary-color)',
+            canPlayPronunciation &&
+              reading.trim() &&
+              'hover:cursor-pointer md:hover:text-(--main-color)',
+            (!canPlayPronunciation || !reading.trim()) &&
+              'cursor-not-allowed opacity-70',
             i < readings.slice(0, 2).length - 1 &&
               'border-r-1 border-(--border-color)',
           )}
         >
-          {reading}
-        </motion.span>
+          <span className='flex items-center gap-1.5'>
+            <span>{reading}</span>
+            <span className='flex h-7 w-7 items-center justify-center rounded-full bg-(--background-color) text-(--main-color) transition-colors duration-200 max-md:group-active:bg-(--main-color)/15 md:group-hover:bg-(--main-color)/15'>
+              <Volume2 size={15} className='fill-current' />
+            </span>
+          </span>
+        </motion.button>
       ))}
     </motion.div>
   );
@@ -246,6 +266,8 @@ const KanjiSummary = ({
   onContinue,
   buttonRef,
   isGlassMode,
+  canPlayPronunciation,
+  onPlayPronunciation,
   isEmbedded = false,
 }: {
   payload: IKanjiObj;
@@ -253,6 +275,8 @@ const KanjiSummary = ({
   onContinue: () => void;
   buttonRef: React.RefObject<HTMLButtonElement | null>;
   isGlassMode: boolean;
+  canPlayPronunciation: boolean;
+  onPlayPronunciation: (reading: string) => void;
   isEmbedded?: boolean;
 }) => (
   <motion.div
@@ -277,11 +301,15 @@ const KanjiSummary = ({
         <ReadingsList
           readings={payload.onyomi}
           isHidden={!payload.onyomi[0] || payload.onyomi.length === 0}
+          canPlayPronunciation={canPlayPronunciation}
+          onPlayPronunciation={onPlayPronunciation}
           delay={0.2}
         />
         <ReadingsList
           readings={payload.kunyomi}
           isHidden={!payload.kunyomi[0] || payload.kunyomi.length === 0}
+          canPlayPronunciation={canPlayPronunciation}
+          onPlayPronunciation={onPlayPronunciation}
           delay={0.3}
         />
       </motion.div>
@@ -310,6 +338,8 @@ const VocabSummary = ({
   onContinue,
   buttonRef,
   isGlassMode,
+  canPlayPronunciation,
+  onPlayPronunciation,
   isEmbedded = false,
 }: {
   payload: IVocabObj;
@@ -317,6 +347,8 @@ const VocabSummary = ({
   onContinue: () => void;
   buttonRef: React.RefObject<HTMLButtonElement | null>;
   isGlassMode: boolean;
+  canPlayPronunciation: boolean;
+  onPlayPronunciation: (reading: string) => void;
   isEmbedded?: boolean;
 }) => {
   const { displayKana: showKana } = useThemePreferences();
@@ -360,16 +392,30 @@ const VocabSummary = ({
         variants={containerVariants}
         className='flex w-full flex-col items-start gap-2'
       >
-        <motion.span
+        <motion.button
+          type='button'
+          onClick={() => {
+            onPlayPronunciation(baseReading);
+          }}
+          disabled={!canPlayPronunciation || !baseReading.trim()}
           variants={readingVariants}
           className={clsx(
-            'flex flex-row items-center rounded-xl px-2 py-1',
+            'group flex flex-row items-center gap-1.5 rounded-xl px-2 py-1',
             'bg-(--card-color) text-xl',
             'text-(--secondary-color)',
+            canPlayPronunciation &&
+              baseReading.trim() &&
+              'hover:cursor-pointer md:hover:text-(--main-color)',
+            (!canPlayPronunciation || !baseReading.trim()) &&
+              'cursor-not-allowed opacity-70',
           )}
+          aria-label={`Play pronunciation for ${payload.word}`}
         >
-          {displayReading}
-        </motion.span>
+          <span>{displayReading}</span>
+          <span className='flex h-7 w-7 items-center justify-center rounded-full bg-(--background-color) text-(--main-color) transition-colors duration-200 max-md:group-active:bg-(--main-color)/15 md:group-hover:bg-(--main-color)/15'>
+            <Volume2 size={15} className='fill-current' />
+          </span>
+        </motion.button>
         <motion.p
           variants={meaningVariants}
           className='text-2xl text-(--secondary-color) md:text-3xl'
@@ -403,7 +449,37 @@ const AnswerSummary = ({
 }) => {
   const { playClick } = useClick();
   const { isGlassMode } = useThemePreferences();
+  const { pronunciationEnabled, pronunciationSpeed, pronunciationPitch } =
+    useAudioPreferences();
+  const { speak, refreshVoices } = useJapaneseTTS();
   const buttonRef = useRef<HTMLButtonElement>(null);
+
+  const playReadingPronunciation = useCallback(
+    async (reading: string) => {
+      const normalizedReading = reading.trim();
+      if (!pronunciationEnabled || !normalizedReading) return;
+
+      if (typeof window !== 'undefined') {
+        refreshVoices();
+        const isFirefox = /Firefox/i.test(navigator.userAgent);
+        const delay = isFirefox ? 300 : 100;
+        await new Promise(resolve => setTimeout(resolve, delay));
+      }
+
+      await speak(normalizedReading, {
+        rate: pronunciationSpeed,
+        pitch: pronunciationPitch,
+        volume: 0.8,
+      });
+    },
+    [
+      pronunciationEnabled,
+      pronunciationPitch,
+      pronunciationSpeed,
+      refreshVoices,
+      speak,
+    ],
+  );
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -434,6 +510,10 @@ const AnswerSummary = ({
       onContinue={handleContinue}
       buttonRef={buttonRef}
       isGlassMode={isGlassMode}
+      canPlayPronunciation={pronunciationEnabled}
+      onPlayPronunciation={reading => {
+        void playReadingPronunciation(reading);
+      }}
       isEmbedded={isEmbedded}
     />
   ) : (
@@ -444,6 +524,10 @@ const AnswerSummary = ({
       onContinue={handleContinue}
       buttonRef={buttonRef}
       isGlassMode={isGlassMode}
+      canPlayPronunciation={pronunciationEnabled}
+      onPlayPronunciation={reading => {
+        void playReadingPronunciation(reading);
+      }}
       isEmbedded={isEmbedded}
     />
   );

@@ -14,12 +14,14 @@ function EffectCard({
   emoji,
   isSelected,
   onSelect,
+  onClick,
   group,
 }: {
   name: string;
   emoji: string;
   isSelected: boolean;
   onSelect: () => void;
+  onClick: () => void;
   group: 'cursor-trail' | 'click';
 }) {
   return (
@@ -31,6 +33,7 @@ function EffectCard({
         'border border-(--card-color)',
         'cursor-pointer px-2 py-2.5',
       )}
+      onClick={onClick}
       style={{
         backgroundColor: isSelected ? 'var(--secondary-color)' : undefined,
         transition: 'background-color 275ms',
@@ -59,10 +62,12 @@ function SoundEffectCard({
   name,
   isSelected,
   onSelect,
+  onClick,
 }: {
   name: string;
   isSelected: boolean;
   onSelect: () => void;
+  onClick: () => void;
 }) {
   return (
     <label
@@ -72,6 +77,7 @@ function SoundEffectCard({
         'rounded-3xl border border-(--card-color) px-3 py-4',
         'cursor-pointer',
       )}
+      onClick={onClick}
       style={{
         backgroundColor: isSelected ? 'var(--secondary-color)' : undefined,
         transition: 'background-color 275ms',
@@ -104,7 +110,7 @@ type EffectsProps = {
 
 const Effects = ({ useNewIconDesign = false }: EffectsProps) => {
   const hasFinePointer = useHasFinePointer();
-  const { playClickById } = useClick();
+  const { playClick, playClickById } = useClick();
   const cursorTrailEffect = usePreferencesStore(s => s.cursorTrailEffect);
   const setCursorTrailEffect = usePreferencesStore(s => s.setCursorTrailEffect);
   const clickEffect = usePreferencesStore(s => s.clickEffect);
@@ -130,10 +136,8 @@ const Effects = ({ useNewIconDesign = false }: EffectsProps) => {
                 key={option.id}
                 name={option.label}
                 isSelected={isSelected}
-                onSelect={() => {
-                  setClickSoundId(option.id);
-                  playClickById(option.id);
-                }}
+                onSelect={() => setClickSoundId(option.id)}
+                onClick={() => playClickById(option.id)}
               />
             );
           })}
@@ -157,6 +161,7 @@ const Effects = ({ useNewIconDesign = false }: EffectsProps) => {
                 emoji={effect.emoji}
                 isSelected={cursorTrailEffect === effect.id}
                 onSelect={() => setCursorTrailEffect(effect.id)}
+                onClick={() => playClick()}
                 group='cursor-trail'
               />
             ))}
@@ -179,8 +184,9 @@ const Effects = ({ useNewIconDesign = false }: EffectsProps) => {
               name={effect.name}
               emoji={effect.emoji}
               isSelected={clickEffect === effect.id}
-              onSelect={() => setClickEffect(effect.id)}
-              group='click'
+                onSelect={() => setClickEffect(effect.id)}
+                onClick={() => playClick()}
+                group='click'
             />
           ))}
         </fieldset>

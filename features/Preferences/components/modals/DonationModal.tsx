@@ -44,7 +44,7 @@ export default function DonationModal({
             </div>
             <button
               onClick={handleClose}
-              className='shrink-0 rounded-xl p-2 hover:cursor-pointer hover:bg-(--border-color)'
+              className='shrink-0 rounded-xl p-2 hover:cursor-pointer hover:bg-(--card-color)'
             >
               <X size={24} className='text-(--secondary-color)' />
             </button>
@@ -54,8 +54,11 @@ export default function DonationModal({
             <div className='min-h-0 flex-1 overflow-y-auto px-4 py-3 sm:px-6 sm:py-5'>
               <div className='space-y-4 text-(--secondary-color)'>
                 <p className='text-base leading-7'>
-                  Thank you so much for spending your time with KanaDojo. We are
+                  Thank you for spending your time with KanaDojo.
+                  {/*
+                  We are
                   truly honored to be a part of your Japanese learning journey.
+                  */}
                 </p>
                 <p className='text-base leading-7'>
                   If KanaDojo has been helpful to you, we would be incredibly
@@ -68,7 +71,7 @@ export default function DonationModal({
                 <p className='text-base leading-7'>
                   From day one, we have cared deeply about keeping this a fully
                   free, open-source and ad-free learning resource for everyone
-                  — a respectful alternative to Duolingo — and we are
+                  — and we are
                   wholeheartedly committed to keeping it that way forever.
                   {/* 
                   Thank
@@ -94,7 +97,7 @@ export default function DonationModal({
                   borderBottomThickness={16}
                   asChild
                   className={cn(
-                    'motion-safe:animate-float px-5 py-4 text-lg font-semibold [--float-distance:-3.5px] [animation-delay:600ms] sm:w-auto',
+                    'motion-safe:animate-float px-5 py-4 text-lg font-semibold [--float-distance:-2.5px] [animation-delay:600ms] sm:w-auto',
                   )}
                 >
                   <a

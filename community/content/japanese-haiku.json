@@ -1,38 +1,56 @@
 [
   {
-    "japanese": "古池や 蛙飛びこむ 水の音",
+    "japanese": "痩蛙 負けるな一茶 これにあり",
+    "romaji": "Yasegaeru / makeru na Issa / kore ni ari",
+    "english": "Skinny frog, don't give up! Issa is here with you.",
+    "poet": "Kobayashi Issa",
+    "season": "Spring",
+    "kigo": "Frog (kaeru)",
+    "notes": "Humorous encouragement and compassion in Issa's voice."
+  },
+  {
+    "japanese": "夏草や\n兵どもが\n夢の跡",
+    "romaji": "Natsukusa ya / tsuwamono domo ga / yume no ato",
+    "english": "Summer grasses; all that remains of warriors' dreams.",
+    "poet": "Matsuo Basho",
+    "season": "Summer",
+    "kigo": "Summer grasses (natsukusa)",
+    "notes": "Reflects impermanence through a historical battlefield image."
+  },
+  {
+    "japanese": "古池や\n蛙飛び込む\n水の音",
     "romaji": "Furu ike ya / kawazu tobikomu / mizu no oto",
-    "english": "An old pond; a frog jumps in; the sound of water.",
+    "english": "The old pond; a frog jumps in — the sound of water.",
     "poet": "Matsuo Basho",
     "season": "Spring",
     "kigo": "Frog (kawazu)",
-    "notes": "A foundational haiku focused on stillness and sudden movement."
+    "notes": "The most famous haiku worldwide, capturing sudden movement within eternal stillness."
   },
   {
-    "japanese": "名月を 取ってくれろと 泣く子かな",
-    "romaji": "Meigetsu o / totte kurero to / naku ko kana",
-    "english": "A child cries, asking me to fetch the harvest moon.",
-    "poet": "Kobayashi Issa",
+    "japanese": "菜の花や\n月は東に\n日は西に",
+    "romaji": "Na no hana ya / tsuki wa higashi ni / hi wa nishi ni",
+    "english": "Mustard flowers; the moon in the east, the sun in the west.",
+    "poet": "Yosa Buson",
+    "season": "Spring",
+    "kigo": "Mustard flowers (na no hana)",
+    "notes": "A breathtaking landscape painting in words, capturing a perfect moment at twilight."
+  },
+  {
+    "japanese": "枯枝に\n烏のとまりけり\n秋の暮",
+    "romaji": "Kare eda ni / karasu no tomari keri / aki de no kure",
+    "english": "On a withered branch, a crow has settled — autumn nightfall.",
+    "poet": "Matsuo Basho",
     "season": "Autumn",
-    "kigo": "Harvest moon (meigetsu)",
-    "notes": "Captures innocent longing through a domestic scene."
+    "kigo": "Withered branch (kare eda)",
+    "notes": "Evokes a powerful mood of monochrome bleakness and quiet contemplation."
   },
   {
-  "japanese": "秋深き 隣は何を する人ぞ",
-  "romaji": "Aki fukaki / tonari wa nani o / suru hito zo",
-  "english": "In deep autumn, what kind of person lives next door?",
-  "poet": "Matsuo Basho",
-  "season": "Autumn",
-  "kigo": "Deep autumn (aki fukaki)",
-  "notes": "Evokes solitude and curiosity."
-  },
-  {
-  "japanese": "春の海 ひねもすのたり のたりかな",
-  "romaji": "Haru no umi / hinemosu notari / notari kana",
-  "english": "The spring sea stretches lazily all day, rising and falling.",
-  "poet": "Yosa Buson",
-  "season": "Spring",
-  "kigo": "Spring sea (haru no umi)",
-  "notes": "Known for musical phrasing and calm motion."
+    "japanese": "これがまあ\n終の栖か\n雪五尺",
+    "romaji": "Kore ga maa / tsui no sumika ka / yuki go-shaku",
+    "english": "Is this, then, my final dwelling place? Five feet of snow.",
+    "poet": "Kobayashi Issa",
+    "season": "Winter",
+    "kigo": "Snow (yuki)",
+    "notes": "Reflects acceptance and resilience in the face of harsh conditions and loss."
   }
 ]

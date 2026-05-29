@@ -17,7 +17,7 @@ const loadFacts = async (): Promise<string[]> => {
 
   factsLoadingPromise = (async () => {
     try {
-      const response = await fetch('/api/facts');
+      const response = await fetch('/api/facts', { cache: 'force-cache' });
       if (!response.ok) {
         throw new Error(`Facts request failed: ${response.status}`);
       }

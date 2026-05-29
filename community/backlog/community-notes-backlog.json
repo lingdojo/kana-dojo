@@ -5,9 +5,7 @@
     "position": "bottom",
     "text": "- Community note: this file is used for lightweight contribution practice.",
     "issued": true,
-    "completed": false,
-    "completedBy": "vedparkasharya",
-    "completedPR": 14531
+    "completed": false
   },
   {
     "id": 2,
@@ -15,7 +13,9 @@
     "position": "top",
     "text": "> Community note: this page intentionally accepts tiny formatting-safe edits.",
     "issued": true,
-    "completed": false
+    "completed": false,
+    "completedBy": "jtkline1205",
+    "completedPR": 18228
   },
   {
     "id": 3,
@@ -39,6 +39,8 @@
     "position": "bottom",
     "text": "- Additional community note preserved for documentation housekeeping.",
     "issued": true,
-    "completed": false
+    "completed": false,
+    "completedBy": "karishma9142",
+    "completedPR": 18096
   }
 ]

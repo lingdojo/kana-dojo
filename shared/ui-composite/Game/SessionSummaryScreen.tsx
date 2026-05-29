@@ -3,6 +3,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import {
   CircleArrowLeft,
+  ArrowLeft,
   RotateCcw,
   Timer,
   Zap,
@@ -25,6 +26,14 @@ import type { GoalTimer } from '@/shared/ui-composite/Blitz/types';
 
 type DojoType = 'kana' | 'kanji' | 'vocabulary';
 type GauntletStats = Omit<GauntletSessionStats, 'id'>;
+
+const sessionStatIconBadgeStyle = {
+  base: 'flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border-b-4 [--float-distance:-0px]',
+  selected:
+    'border-(--main-color-accent) bg-(--main-color) text-(--background-color)',
+  unselected:
+    'border-(--secondary-color-accent) bg-(--secondary-color) text-(--background-color) opacity-85',
+} as const;
 
 interface ClassicSessionSummaryProps {
   mode?: 'classic';
@@ -208,7 +217,11 @@ function BlitzSummary({
           <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6'>
             <div className='flex flex-col rounded-[2rem] border-2 border-(--secondary-color)/10 bg-(--background-color) p-5 sm:p-6'>
               <div className='mb-2 flex items-center gap-2'>
-                <CheckCircle2 className='h-4 w-4 text-(--main-color)' />
+                <span
+                  className={`${sessionStatIconBadgeStyle.base} ${sessionStatIconBadgeStyle.selected}`}
+                >
+                  <CheckCircle2 className='h-5 w-5 fill-current' />
+                </span>
                 <span className='text-xs leading-none font-bold tracking-widest text-(--secondary-color) uppercase opacity-60'>
                   reached ({reached.length})
                 </span>
@@ -223,7 +236,11 @@ function BlitzSummary({
             </div>
             <div className='flex flex-col rounded-[2rem] border-2 border-(--secondary-color)/10 bg-(--background-color) p-5 sm:p-6'>
               <div className='mb-2 flex items-center gap-2'>
-                <XCircle className='h-4 w-4 text-(--secondary-color) opacity-60' />
+                <span
+                  className={`${sessionStatIconBadgeStyle.base} ${sessionStatIconBadgeStyle.unselected}`}
+                >
+                  <XCircle className='h-5 w-5 fill-current' />
+                </span>
                 <span className='text-xs leading-none font-bold tracking-widest text-(--secondary-color) uppercase opacity-60'>
                   missed ({missed.length})
                 </span>
@@ -252,19 +269,9 @@ function GauntletSummary({
   onNewSession,
 }: GauntletSessionSummaryProps) {
   const { playClick } = useClick();
-  const [showCharacterBreakdown, setShowCharacterBreakdown] = useState(false);
   const [previousBest, setPreviousBest] = useState<number | null>(null);
   const total = stats.correctAnswers + stats.wrongAnswers;
   const accuracy = total > 0 ? Math.round((stats.correctAnswers / total) * 100) : 0;
-  const breakdown = Object.entries(stats.characterStats)
-    .map(([char, data]) => ({
-      char,
-      correct: data.correct,
-      wrong: data.wrong,
-      accuracy:
-        data.correct + data.wrong > 0 ? data.correct / (data.correct + data.wrong) : 0,
-    }))
-    .sort((a, b) => a.accuracy - b.accuracy);
 
   useEffect(() => {
     if (isNewBest) {
@@ -318,47 +325,22 @@ function GauntletSummary({
         <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6'>
           <div className='flex flex-col rounded-[2rem] border-2 border-(--secondary-color)/10 bg-(--background-color) p-5 sm:p-6'>
             <div className='mb-2 flex items-center gap-2'>
-              <Flame className='h-4 w-4 text-(--secondary-color) opacity-60' />
+              <span
+                className={`${sessionStatIconBadgeStyle.base} ${sessionStatIconBadgeStyle.unselected}`}
+              >
+                <Flame className='h-5 w-5 fill-current' />
+              </span>
               <span className='text-xs leading-none font-bold tracking-widest text-(--secondary-color) uppercase opacity-60'>
                 difficulty
               </span>
             </div>
             <div className='text-xl font-black tracking-tighter text-(--main-color) sm:text-2xl'>
-              {DIFFICULTY_CONFIG[stats.difficulty].icon} {DIFFICULTY_CONFIG[stats.difficulty].label} • {stats.gameMode}
+              {DIFFICULTY_CONFIG[stats.difficulty].label} • {stats.gameMode}
             </div>
             {(isNewBest || previousBest) && (
               <p className='mt-2 text-sm text-(--secondary-color) lowercase opacity-60'>
                 {isNewBest ? 'new personal best!' : `best: ${formatGauntletTime(previousBest!)}`}
               </p>
-            )}
-          </div>
-
-          <div className='flex flex-col rounded-[2rem] border-2 border-(--secondary-color)/10 bg-(--background-color) p-5 sm:p-6'>
-            <button
-              onClick={() => {
-                playClick();
-                setShowCharacterBreakdown(prev => !prev);
-              }}
-              className='mb-2 flex items-center gap-2 text-left'
-            >
-              <Heart className='h-4 w-4 text-(--secondary-color) opacity-60' />
-              <span className='text-xs leading-none font-bold tracking-widest text-(--secondary-color) uppercase opacity-60'>
-                character breakdown
-              </span>
-            </button>
-            {showCharacterBreakdown ? (
-              <div className='max-h-44 space-y-2 overflow-y-auto'>
-                {breakdown.map(item => (
-                  <div key={item.char} className='flex items-center justify-between rounded-xl border border-(--border-color) p-2'>
-                    <span className='text-lg font-bold text-(--main-color)'>{item.char}</span>
-                    <span className='text-sm text-(--secondary-color)'>
-                      {item.correct}✓ {item.wrong}✗ {Math.round(item.accuracy * 100)}%
-                    </span>
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <p className='text-sm text-(--secondary-color) lowercase opacity-60'>tap to view weakest characters first.</p>
             )}
           </div>
         </div>
@@ -396,8 +378,8 @@ interface SummaryLayoutProps {
 function SummaryLayout({
   title,
   subtitle,
-  total,
-  correct,
+  total: _total,
+  correct: _correct,
   accuracy,
   heroValue,
   heroDescription,
@@ -422,7 +404,7 @@ function SummaryLayout({
 
   return (
     <div className='fixed inset-0 z-50 flex h-full w-full flex-col overflow-x-hidden overflow-y-auto bg-(--background-color)'>
-      <div className='mx-auto flex min-h-full w-full max-w-7xl flex-1 flex-col justify-start px-4 py-8 sm:min-h-[100dvh] sm:justify-center sm:px-8 sm:py-20 lg:px-12 lg:py-16'>
+      <div className='mx-auto flex w-full max-w-7xl flex-col px-4 py-8 pb-24 sm:px-8 sm:py-12 sm:pb-32 lg:px-12 lg:py-16 lg:pb-40'>
         <div className='mb-8 flex flex-col items-center gap-1 text-center select-none sm:mb-12 sm:items-start sm:text-left lg:mb-16'>
           <h1 className='text-3xl font-black tracking-tighter text-(--main-color) lowercase sm:text-5xl lg:text-6xl'>{title}</h1>
           <p className='text-base font-medium tracking-tight text-(--secondary-color) lowercase opacity-60 sm:text-xl'>{subtitle}</p>
@@ -440,7 +422,11 @@ function SummaryLayout({
               </div>
               <div className='mt-6 flex flex-col items-center text-center sm:mt-0 sm:items-start sm:text-left'>
                 <div className='mb-1 flex items-center gap-2'>
-                  <Target className='h-5 w-5 text-(--main-color)' />
+                  <span
+                    className={`${sessionStatIconBadgeStyle.base} ${sessionStatIconBadgeStyle.selected}`}
+                  >
+                  <Target className='h-5 w-5' />
+                  </span>
                   <span className='text-sm leading-none font-bold tracking-wider text-(--secondary-color) uppercase opacity-60'>accuracy</span>
                 </div>
                 <div className='text-3xl font-black tracking-tighter text-(--main-color) sm:text-5xl'>{heroValue}</div>
@@ -450,7 +436,11 @@ function SummaryLayout({
 
             <div className='flex flex-col justify-between rounded-[2.5rem] border-2 border-(--main-color)/20 bg-(--background-color) p-6 sm:p-8'>
               <div className='mb-auto flex items-center gap-2'>
-                <Timer className='h-5 w-5 text-(--main-color)' />
+                <span
+                  className={`${sessionStatIconBadgeStyle.base} ${sessionStatIconBadgeStyle.selected}`}
+                >
+                  <Timer className='h-5 w-5' />
+                </span>
                 <span className='text-xs leading-none font-bold tracking-widest text-(--secondary-color) uppercase opacity-60'>time spent</span>
               </div>
               <div className='mt-4 text-4xl font-black tracking-tighter text-(--main-color) sm:text-5xl'>{timeValue}</div>
@@ -458,18 +448,22 @@ function SummaryLayout({
 
             <div className='flex flex-col justify-between rounded-[2.5rem] border-2 border-(--main-color)/20 bg-(--background-color) p-6 sm:p-8'>
               <div className='mb-auto flex items-center gap-2'>
-                <Star className='h-5 w-5 text-(--main-color)' />
+                <span
+                  className={`${sessionStatIconBadgeStyle.base} ${sessionStatIconBadgeStyle.selected}`}
+                >
+                  <Star className='h-5 w-5 fill-current' />
+                </span>
                 <span className='text-xs leading-none font-bold tracking-widest text-(--secondary-color) uppercase opacity-60'>{topRightLabel}</span>
               </div>
               <div className='mt-4 text-4xl font-black tracking-tighter text-(--main-color) sm:text-5xl'>{topRightValue}</div>
             </div>
           </div>
 
-          <div className='grid grid-cols-2 gap-4 sm:grid-cols-4 sm:gap-6'>
-            <MiniStat icon={<Trophy className='h-4 w-4 text-(--secondary-color) opacity-60' />} label={firstStatLabel} value={firstStatValue} />
-            <MiniStat icon={<Zap className='h-4 w-4 text-(--secondary-color) opacity-60' />} label={secondStatLabel} value={secondStatValue} />
-            <MiniStat icon={<Activity className='h-4 w-4 text-(--secondary-color) opacity-60' />} label={thirdStatLabel} value={thirdStatValue} />
-            <MiniStat icon={<Zap className='h-4 w-4 text-(--secondary-color) opacity-60' />} label={fourthStatLabel} value={fourthStatValue} />
+          <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4'>
+            <MiniStat icon={<Trophy className='fill-current' />} label={firstStatLabel} value={firstStatValue} />
+            <MiniStat icon={<Zap className='fill-current' />} label={secondStatLabel} value={secondStatValue} />
+            <MiniStat icon={<Activity />} label={thirdStatLabel} value={thirdStatValue} />
+            <MiniStat icon={<Zap className='fill-current' />} label={fourthStatLabel} value={fourthStatValue} />
           </div>
 
           {extraContent}
@@ -477,11 +471,15 @@ function SummaryLayout({
 
         <div className='sticky bottom-0 z-10 -mx-4 mt-auto flex w-auto items-center justify-center gap-3 border-t-2 border-(--border-color) bg-(--background-color) py-4 px-4 select-none sm:static sm:mx-0 sm:w-full sm:justify-start sm:gap-5 sm:border-0 sm:bg-transparent sm:px-0 sm:py-0'>
           <button onClick={() => { playClick(); onBackToSelection(); }} className='group flex h-14 flex-1 cursor-pointer items-center justify-center gap-3 rounded-xl bg-(--secondary-color) px-4 text-lg font-bold text-(--background-color) lowercase outline-hidden transition-all duration-150 sm:px-10 sm:text-xl md:flex-none'>
-            <CircleArrowLeft className='h-5 w-5 group-hover:animate-none sm:h-6 sm:w-6' strokeWidth={2.5} />
+            <span className='flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-(--background-color) bg-(--background-color) text-(--secondary-color)'>
+              <ArrowLeft className='h-5 w-5 group-hover:animate-none sm:h-6 sm:w-6' strokeWidth={2.5} />
+            </span>
             <span className='leading-none'>menu</span>
           </button>
           <button onClick={() => { playClick(); onNewSession(); }} className='group flex h-14 flex-1 cursor-pointer items-center justify-center gap-3 rounded-xl bg-(--main-color) px-4 text-lg font-bold text-(--background-color) lowercase outline-hidden transition-all duration-150 sm:px-12 sm:text-xl md:flex-none'>
-            <RotateCcw className='h-5 w-5 group-hover:animate-none sm:h-6 sm:w-6' strokeWidth={2.5} />
+            <span className='flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-(--background-color) bg-(--background-color) text-(--main-color)'>
+              <RotateCcw className='h-5 w-5 group-hover:animate-none sm:h-6 sm:w-6' strokeWidth={2.5} />
+            </span>
             <span className='leading-none sm:hidden'>{mobilePrimaryAction}</span>
             <span className='hidden leading-none sm:inline'>{primaryAction}</span>
           </button>
@@ -503,10 +501,15 @@ function MiniStat({
   return (
     <div className='flex flex-col rounded-[2rem] border-2 border-(--secondary-color)/10 bg-(--background-color) p-5 sm:p-6'>
       <div className='mb-2 flex items-center gap-2'>
-        {icon}
-        <span className='text-xs leading-none font-bold tracking-widest text-(--secondary-color) uppercase opacity-60'>{label}</span>
+        <span
+          className={`${sessionStatIconBadgeStyle.base} ${sessionStatIconBadgeStyle.unselected}`}
+        >
+          {icon}
+        </span>
+        <span className='text-[0.65rem] leading-tight font-bold tracking-widest text-(--secondary-color) uppercase opacity-60 sm:text-xs sm:leading-none'>{label}</span>
       </div>
       <div className='text-2xl font-black tracking-tighter text-(--main-color) sm:text-3xl'>{value}</div>
     </div>
   );
 }
+

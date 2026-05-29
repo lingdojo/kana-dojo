@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo } from 'react';
 import useKanjiStore from '@/features/Kanji/store/useKanjiStore';
 import KanjiSetDictionary from '@/features/Kanji/components/SetDictionary';
+import { useMenuSelectorStore } from '@/shared/ui-composite/Menu/store/useMenuSelectorStore';
 
 import type { IKanjiObj } from '@/features/Kanji/store/useKanjiStore';
 import {
@@ -12,7 +13,7 @@ import {
 import LevelSetCards from '@/shared/ui-composite/Menu/LevelSetCards';
 import useSetProgressHydration from '@/features/Progress/hooks/useSetProgress';
 import useSetProgressStore from '@/features/Progress/store/useSetProgressStore';
-import { calculateKanjiSetProgress } from '@/features/Progress/lib/setProgress';
+import { calculateKanjiSetProgressAndStars } from '@/features/Progress/lib/setProgress';
 import {
   N1KanjiLength,
   N2KanjiLength,
@@ -27,6 +28,7 @@ import {
 
 const levelOrder: KanjiLevel[] = ['n5', 'n4', 'n3', 'n2', 'n1'];
 const KANJI_PER_SET = 10;
+const KANJI_COLLAPSED_ROWS_SESSION_KEY = 'kanji-collapsed-rows-by-unit';
 const KANJI_LENGTHS: Record<KanjiLevel, number> = {
   n5: N5KanjiLength,
   n4: N4KanjiLength,
@@ -43,9 +45,13 @@ const KANJI_SET_COUNTS: Record<KanjiLevel, number> = {
 };
 
 const KanjiCards = () => {
-  const selectedKanjiCollectionName = useKanjiStore(
-    state => state.selectedKanjiCollection,
+  const persistedKanjiSelector = useMenuSelectorStore(
+    state => state.collections.kanji,
   );
+  const selectedKanjiCollectionName =
+    persistedKanjiSelector.selectedCollection;
+  const selectedSubunitByUnit =
+    persistedKanjiSelector.selectedSubunitByUnit;
   const selectedKanjiSets = useKanjiStore(state => state.selectedKanjiSets);
   const setSelectedKanjiSets = useKanjiStore(
     state => state.setSelectedKanjiSets,
@@ -55,12 +61,6 @@ const KanjiCards = () => {
   const collapsedRowsByUnit = useKanjiStore(state => state.collapsedRowsByUnit);
   const setCollapsedRowsForUnit = useKanjiStore(
     state => state.setCollapsedRowsForUnit,
-  );
-  const selectedSubunitByUnit = useKanjiStore(
-    state => state.selectedSubunitByUnit,
-  );
-  const setSelectedSubunitForUnit = useKanjiStore(
-    state => state.setSelectedSubunitForUnit,
   );
 
   const getCollectionName = useCallback(
@@ -103,17 +103,6 @@ const KanjiCards = () => {
   );
   const collapsedRowsKey = `${selectedKanjiCollectionName}:${activeSubunitRange.id}`;
 
-  useEffect(() => {
-    if (!selectedSubunitId && subunits[0]) {
-      setSelectedSubunitForUnit(selectedKanjiCollectionName, subunits[0].id);
-    }
-  }, [
-    selectedKanjiCollectionName,
-    selectedSubunitId,
-    setSelectedSubunitForUnit,
-    subunits,
-  ]);
-
   const collapsedRows = useMemo(
     () => collapsedRowsByUnit[collapsedRowsKey] || [],
     [collapsedRowsByUnit, collapsedRowsKey],
@@ -127,15 +116,54 @@ const KanjiCards = () => {
     [collapsedRows, collapsedRowsKey, setCollapsedRowsForUnit],
   );
 
+  useEffect(() => {
+    const stored = sessionStorage.getItem(KANJI_COLLAPSED_ROWS_SESSION_KEY);
+    if (!stored) return;
+    try {
+      const parsed = JSON.parse(stored) as Record<string, number[]>;
+      setCollapsedRowsForUnit(collapsedRowsKey, parsed[collapsedRowsKey] ?? []);
+    } catch {
+      setCollapsedRowsForUnit(collapsedRowsKey, []);
+    }
+  }, [collapsedRowsKey, setCollapsedRowsForUnit]);
+
+  useEffect(() => {
+    const stored = sessionStorage.getItem(KANJI_COLLAPSED_ROWS_SESSION_KEY);
+    let parsed: Record<string, number[]> = {};
+
+    if (stored) {
+      try {
+        parsed = JSON.parse(stored) as Record<string, number[]>;
+      } catch {
+        parsed = {};
+      }
+    }
+
+    parsed[collapsedRowsKey] = collapsedRows;
+    sessionStorage.setItem(
+      KANJI_COLLAPSED_ROWS_SESSION_KEY,
+      JSON.stringify(parsed),
+    );
+  }, [collapsedRows, collapsedRowsKey]);
+
   useSetProgressHydration();
   const kanjiProgress = useSetProgressStore(state => state.data.kanji);
   const getSetProgress = useCallback(
     (items: IKanjiObj[]) =>
-      calculateKanjiSetProgress(
+      calculateKanjiSetProgressAndStars(
         items.map(item => ({
           correct: kanjiProgress[item.kanjiChar]?.correct ?? 0,
         })),
-      ),
+      ).progress,
+    [kanjiProgress],
+  );
+  const getSetStars = useCallback(
+    (items: IKanjiObj[]) =>
+      calculateKanjiSetProgressAndStars(
+        items.map(item => ({
+          correct: kanjiProgress[item.kanjiChar]?.correct ?? 0,
+        })),
+      ).stars,
     [kanjiProgress],
   );
 
@@ -158,8 +186,10 @@ const KanjiCards = () => {
       setCollapsedRows={setCollapsedRows}
       renderSetDictionary={items => <KanjiSetDictionary words={items} />}
       getSetProgress={getSetProgress}
+      getSetStars={getSetStars}
       loadingText='Loading kanji sets...'
       activeSubunitRange={activeSubunitRange}
+      collapseScopeKey={collapsedRowsKey}
     />
   );
 };
