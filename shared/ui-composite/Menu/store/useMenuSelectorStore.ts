@@ -16,6 +16,7 @@ interface MenuSelectorState {
   kana: {
     selected: KanaSelectorUnit;
     selectedSubset: string;
+    selectedSubsetByUnit: Partial<Record<KanaSelectorUnit, string>>;
   };
   collections: Record<CollectionSelectorContentType, CollectionSelectorState>;
   setKanaSelection: (selection: {
@@ -57,20 +58,29 @@ export const useMenuSelectorStore = create<MenuSelectorState>()(
       kana: {
         selected: 'hiragana',
         selectedSubset: 'base',
+        selectedSubsetByUnit: {},
       },
       collections: {
         kanji: createDefaultCollectionSelectorState(),
         vocabulary: createDefaultCollectionSelectorState(),
       },
       setKanaSelection: selection =>
-        set({
-          kana: selection,
-        }),
+        set(state => ({
+          kana: {
+            selected: selection.selected,
+            selectedSubset: selection.selectedSubset,
+            selectedSubsetByUnit: {
+              ...state.kana.selectedSubsetByUnit,
+              [selection.selected]: selection.selectedSubset,
+            },
+          },
+        })),
       resetKanaSelection: () =>
         set({
           kana: {
             selected: 'hiragana',
             selectedSubset: 'base',
+            selectedSubsetByUnit: {},
           },
         }),
       setCollectionSelection: (contentType, selection) =>

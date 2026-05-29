@@ -224,9 +224,11 @@ const KanaCards = ({ filter = 'all', viewMode }: KanaCardsProps) => {
             selected={filterOverride}
             onSelect={type => {
               if (shouldUsePersistedSelection) {
+                const savedSubset =
+                  persistedKanaSelection.selectedSubsetByUnit[type];
                 setPersistedKanaSelection({
                   selected: type,
-                  selectedSubset: 'base',
+                  selectedSubset: savedSubset ?? 'base',
                 });
                 return;
               }

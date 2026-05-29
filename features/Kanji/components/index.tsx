@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo } from 'react';
 import useKanjiStore from '@/features/Kanji/store/useKanjiStore';
 import KanjiSetDictionary from '@/features/Kanji/components/SetDictionary';
+import { useMenuSelectorStore } from '@/shared/ui-composite/Menu/store/useMenuSelectorStore';
 
 import type { IKanjiObj } from '@/features/Kanji/store/useKanjiStore';
 import {
@@ -44,9 +45,13 @@ const KANJI_SET_COUNTS: Record<KanjiLevel, number> = {
 };
 
 const KanjiCards = () => {
-  const selectedKanjiCollectionName = useKanjiStore(
-    state => state.selectedKanjiCollection,
+  const persistedKanjiSelector = useMenuSelectorStore(
+    state => state.collections.kanji,
   );
+  const selectedKanjiCollectionName =
+    persistedKanjiSelector.selectedCollection;
+  const selectedSubunitByUnit =
+    persistedKanjiSelector.selectedSubunitByUnit;
   const selectedKanjiSets = useKanjiStore(state => state.selectedKanjiSets);
   const setSelectedKanjiSets = useKanjiStore(
     state => state.setSelectedKanjiSets,
@@ -56,12 +61,6 @@ const KanjiCards = () => {
   const collapsedRowsByUnit = useKanjiStore(state => state.collapsedRowsByUnit);
   const setCollapsedRowsForUnit = useKanjiStore(
     state => state.setCollapsedRowsForUnit,
-  );
-  const selectedSubunitByUnit = useKanjiStore(
-    state => state.selectedSubunitByUnit,
-  );
-  const setSelectedSubunitForUnit = useKanjiStore(
-    state => state.setSelectedSubunitForUnit,
   );
 
   const getCollectionName = useCallback(
@@ -103,17 +102,6 @@ const KanjiCards = () => {
     [selectedSubunitId, subunits],
   );
   const collapsedRowsKey = `${selectedKanjiCollectionName}:${activeSubunitRange.id}`;
-
-  useEffect(() => {
-    if (!selectedSubunitId && subunits[0]) {
-      setSelectedSubunitForUnit(selectedKanjiCollectionName, subunits[0].id);
-    }
-  }, [
-    selectedKanjiCollectionName,
-    selectedSubunitId,
-    setSelectedSubunitForUnit,
-    subunits,
-  ]);
 
   const collapsedRows = useMemo(
     () => collapsedRowsByUnit[collapsedRowsKey] || [],

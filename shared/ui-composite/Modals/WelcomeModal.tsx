@@ -230,7 +230,7 @@ const WelcomeModal = () => {
             </div>
 
             <div className='space-y-4 text-left'>
-              <div className='flex items-center gap-3 rounded-lg bg-(--background-color) p-3'>
+              <div className='flex items-center gap-3 rounded-lg bg-(--card-color) p-3'>
                 <FloatingIcon
                   size='md'
                   tone='main'
@@ -247,7 +247,7 @@ const WelcomeModal = () => {
                 </div>
               </div>
 
-              <div className='flex items-center gap-3 rounded-lg bg-(--background-color) p-3'>
+              <div className='flex items-center gap-3 rounded-lg bg-(--card-color) p-3'>
                 <FloatingIcon
                   size='md'
                   tone='main'
@@ -806,14 +806,14 @@ const WelcomeModal = () => {
           exit={{ scale: 0.9, opacity: 0, y: 20 }}
           className={clsx(
             'flex max-h-[90vh] w-full flex-col overflow-hidden md:w-4/5 lg:w-3/5',
-            'm-1.5 rounded-2xl bg-(--card-color)',
+             'm-1.5 rounded-2xl bg-(--background-color)',
             'shadow-2xl shadow-black/20',
             cardBorderStyles,
           )}
           onClick={e => e.stopPropagation()}
         >
           {/* Header */}
-          <div className='sticky top-0 z-10 border-b border-(--border-color)/30 bg-(--card-color) p-2 sm:p-5'>
+          <div className='sticky top-0 z-10 border-b border-(--border-color)/30 bg-(--background-color) p-2 sm:p-5'>
             <div className='flex items-center justify-between'>
               <div className='flex items-center gap-2'>
                 <div
@@ -847,7 +847,7 @@ const WelcomeModal = () => {
                 onClick={handleClose}
                 className={clsx(
                   'cursor-pointer rounded-lg p-2 transition-colors duration-50',
-                  'hover:bg-(--background-color)',
+                  'hover:bg-(--card-color)',
                   'text-(--secondary-color) hover:text-(--main-color)',
                 )}
               >
@@ -868,7 +868,7 @@ const WelcomeModal = () => {
           </div>
 
           {/* Actions */}
-          <div className='sticky bottom-0 border-t border-(--border-color)/30 bg-(--card-color) p-2 pt-2 sm:p-5'>
+          <div className='sticky bottom-0 border-t border-(--border-color)/30 bg-(--background-color) p-2 pt-2 sm:p-5'>
             <div className='flex items-center justify-between'>
               {step !== 'welcome' ? (
                 <button
@@ -876,7 +876,7 @@ const WelcomeModal = () => {
                   className={clsx(
                     'group flex cursor-pointer items-center justify-center gap-2 rounded-xl px-4 py-2 sm:px-6 sm:py-3',
                     'text-(--secondary-color) hover:text-(--main-color)',
-                    'transition-all duration-50 hover:bg-(--background-color)',
+                    'transition-all duration-50 hover:bg-(--card-color)',
                     'text-sm sm:text-base',
                   )}
                 >
@@ -898,7 +898,7 @@ const WelcomeModal = () => {
                   className={clsx(
                     'group flex cursor-pointer items-center justify-center gap-2 rounded-xl px-6 py-2 sm:px-8 sm:py-3',
                     'text-sm font-medium text-(--main-color) sm:text-base',
-                    'transition-all duration-50 hover:bg-(--background-color) active:scale-98',
+                    'transition-all duration-50 hover:bg-(--card-color) active:scale-98',
                   )}
                 >
                 <span>

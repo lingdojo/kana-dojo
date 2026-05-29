@@ -113,9 +113,7 @@ const useVocabStore = create<IFormState>()(
       partialize: state => ({
         selectedGameModeVocab: state.selectedGameModeVocab,
         selectedVocabObjs: state.selectedVocabObjs,
-        selectedVocabCollection: state.selectedVocabCollection,
         selectedVocabSets: state.selectedVocabSets,
-        selectedSubunitByUnit: state.selectedSubunitByUnit,
       }),
       merge: (persistedState, currentState) => ({
         ...currentState,

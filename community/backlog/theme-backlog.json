@@ -686,7 +686,7 @@
     "backgroundColor": "oklch(22.0% 0.052 45.0 / 1)",
     "mainColor": "oklch(88.0% 0.165 65.0 / 1)",
     "secondaryColor": "oklch(72.0% 0.185 35.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false,
     "completedBy": "Kevin-soup",
     "completedPR": 18270
@@ -990,7 +990,7 @@
     "backgroundColor": "oklch(96.0% 0.018 340.0 / 1)",
     "mainColor": "oklch(62.0% 0.195 10.0 / 1)",
     "secondaryColor": "oklch(78.0% 0.095 350.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1384,7 +1384,7 @@
     "backgroundColor": "oklch(92.0% 0.020 140.0 / 1)",
     "mainColor": "oklch(58.0% 0.165 140.0 / 1)",
     "secondaryColor": "oklch(72.0% 0.115 95.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1414,7 +1414,7 @@
     "backgroundColor": "oklch(96.0% 0.015 210.0 / 1)",
     "mainColor": "oklch(60.0% 0.135 200.0 / 1)",
     "secondaryColor": "oklch(78.0% 0.065 100.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1925,7 +1925,9 @@
     "mainColor": "oklch(76.0% 0.140 135.0 / 1)",
     "secondaryColor": "oklch(72.0% 0.070 80.0 / 1)",
     "issued": false,
-    "completed": false
+    "completed": false,
+    "completedBy": "ELITE-DEV-22",
+    "completedPR": 18672
   },
   {
     "id": "shibuya-haze",

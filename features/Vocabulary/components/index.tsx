@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo } from 'react';
 import useVocabStore from '@/features/Vocabulary/store/useVocabStore';
 import VocabSetDictionary from '@/features/Vocabulary/components/SetDictionary';
+import { useMenuSelectorStore } from '@/shared/ui-composite/Menu/store/useMenuSelectorStore';
 import {
   vocabDataService,
   VocabLevel,
@@ -53,9 +54,13 @@ const vocabCollectionNames: Record<VocabLevel, string> = {
 };
 
 const VocabCards = () => {
-  const selectedVocabCollectionName = useVocabStore(
-    state => state.selectedVocabCollection,
+  const persistedVocabSelector = useMenuSelectorStore(
+    state => state.collections.vocabulary,
   );
+  const selectedVocabCollectionName =
+    persistedVocabSelector.selectedCollection;
+  const selectedSubunitByUnit =
+    persistedVocabSelector.selectedSubunitByUnit;
   const selectedVocabSets = useVocabStore(state => state.selectedVocabSets);
   const setSelectedVocabSets = useVocabStore(
     state => state.setSelectedVocabSets,
@@ -65,12 +70,6 @@ const VocabCards = () => {
   const collapsedRowsByUnit = useVocabStore(state => state.collapsedRowsByUnit);
   const setCollapsedRowsForUnit = useVocabStore(
     state => state.setCollapsedRowsForUnit,
-  );
-  const selectedSubunitByUnit = useVocabStore(
-    state => state.selectedSubunitByUnit,
-  );
-  const setSelectedSubunitForUnit = useVocabStore(
-    state => state.setSelectedSubunitForUnit,
   );
 
   const getCollectionName = useCallback(
@@ -131,17 +130,6 @@ const VocabCards = () => {
     [selectedSubunitId, subunits],
   );
   const collapsedRowsKey = `${selectedVocabCollectionName}:${activeSubunitRange.id}`;
-
-  useEffect(() => {
-    if (!selectedSubunitId && subunits[0]) {
-      setSelectedSubunitForUnit(selectedVocabCollectionName, subunits[0].id);
-    }
-  }, [
-    selectedSubunitId,
-    selectedVocabCollectionName,
-    setSelectedSubunitForUnit,
-    subunits,
-  ]);
 
   const collapsedRows = useMemo(
     () => collapsedRowsByUnit[collapsedRowsKey] || [],

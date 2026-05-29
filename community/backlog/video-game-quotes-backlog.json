@@ -26,7 +26,7 @@
     "game": "Tales of the Abyss",
     "character": "Luke fon Fabre",
     "id": 3,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -536,7 +536,7 @@
     "game": "Yakuza: Like a Dragon",
     "character": "Ichiban Kasuga",
     "id": 54,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -556,7 +556,7 @@
     "game": "Onimusha series",
     "character": "Nobunaga Oda",
     "id": 56,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -616,7 +616,7 @@
     "game": "Fate/stay night [Realta Nua]",
     "character": "Saber",
     "id": 62,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -636,7 +636,7 @@
     "game": "Steins;Gate: My Darling's Embrace",
     "character": "Rintaro Okabe",
     "id": 64,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -646,7 +646,7 @@
     "game": "Danganronpa series",
     "character": "Makoto Naegi",
     "id": 65,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

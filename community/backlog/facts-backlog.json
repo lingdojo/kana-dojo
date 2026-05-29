@@ -134,7 +134,7 @@
   {
     "id": 23,
     "fact": "Japanese train conductors point and call out each signal and sign they see - a practice called 'shisa kanko' that reduces errors by up to 85%.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1202,7 +1202,7 @@
   {
     "id": 201,
     "fact": "Japan has a word 'tsundoku' (積ん読) for buying books and letting them pile up unread.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1286,7 +1286,7 @@
   {
     "id": 215,
     "fact": "Japan’s rail system is so punctual that many train companies issue delay certificates ('chien shoumeisho') for commuters.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1340,7 +1340,7 @@
   {
     "id": 224,
     "fact": "The Japanese word 'mijikai' (短い) means short, but 'mijikai hanashi' can refer to a concise story — valued in polite conversation.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1688,7 +1688,7 @@
   {
     "id": 282,
     "fact": "The word 'utsuroi' (移ろい) describes subtle transitions, like shifting seasons or fading light.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

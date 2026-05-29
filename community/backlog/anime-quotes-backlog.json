@@ -146,7 +146,7 @@
     "english": "I reject my humanity, JoJo!",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Joseph Joestar",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -646,7 +646,7 @@
     "english": "I'm on a different level today! (alt wording 13)",
     "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
     "character": "Okuyasu Nijimura",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -776,7 +776,7 @@
     "english": "This world is cruel... yet so beautiful. (alt wording 26)",
     "anime": "Attack on Titan",
     "character": "Mikasa Ackerman",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -826,7 +826,7 @@
     "english": "Gurararara! (alt wording 31)",
     "anime": "One Piece",
     "character": "Edward Newgate (Whitebeard)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1136,7 +1136,7 @@
     "english": "Next you'll say, 'Good grief!' (alt wording 10) (alt wording 62)",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Joseph Joestar",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1276,7 +1276,7 @@
     "english": "I think you should just laugh. (alt wording 24) (alt wording 76)",
     "anime": "Neon Genesis Evangelion",
     "character": "Rei Ayanami",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

@@ -110,6 +110,7 @@ interface IStatsState {
   showStats: boolean;
   toggleStats: () => void;
 
+
   // Timing
   correctAnswerTimes: number[];
   addCorrectAnswerTime: (time: number) => void;
@@ -276,6 +277,7 @@ const useStatsStore = create<IStatsState>()(
       // UI state
       showStats: false,
       toggleStats: () => set(s => ({ showStats: !s.showStats })),
+
 
       // Timing
       correctAnswerTimes: [],

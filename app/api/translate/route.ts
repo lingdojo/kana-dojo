@@ -7,7 +7,7 @@ import {
 import {
   getRedisCachedJson,
   setRedisCachedJson,
-} from '@/shared/infra/client/apiCache';
+} from '@/shared/infra/server/apiCache';
 
 // Simple in-memory cache for translations (reduces API calls)
 const translationCache = new Map<

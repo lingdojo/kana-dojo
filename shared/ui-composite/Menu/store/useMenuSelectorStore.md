@@ -8,7 +8,7 @@ so selector state is remembered only for the current browser tab session.
 
 This store persists selector UI state, not training content:
 
-- Kana: selected script and subset.
+- Kana: selected script and selected subset per script (Hiragana/Katakana each remember their last subset).
 - Kanji: selected JLPT unit and selected subunit per unit.
 - Vocabulary: selected JLPT unit and selected subunit per unit.
 

@@ -5,7 +5,7 @@
     "dont": "片手で受け取ってすぐポケットに入れる",
     "note": "商談中は机上に置くのが一般的。",
     "id": 1,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -437,7 +437,7 @@
     "dont": "話を遮る",
     "note": "合意形成を重視する文化。",
     "id": 49,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -464,7 +464,7 @@
     "dont": "無連絡で遅れて言い訳を続ける",
     "note": "先に謝罪が基本。",
     "id": 52,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -590,7 +590,7 @@
     "dont": "ご飯に箸を立てる",
     "note": "立て箸は弔事連想のため避ける。",
     "id": 66,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -986,7 +986,7 @@
     "dont": "割り込む",
     "note": "駅・店頭では順番厳守。",
     "id": 110,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1076,7 +1076,7 @@
     "dont": "匂いの強いものを持参する",
     "note": "分けやすさが好まれる。",
     "id": 120,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

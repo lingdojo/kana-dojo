@@ -60,7 +60,7 @@
     "english": "Continuation is power",
     "meaning": "Persistence leads to strength and success",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 8,
@@ -771,7 +771,7 @@
     "english": "Put care into care",
     "meaning": "Double-check; be extra careful",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 87,
@@ -1014,7 +1014,7 @@
     "english": "An iron club to an ogre",
     "meaning": "Adding strength to the strong",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 114,
@@ -1050,7 +1050,7 @@
     "english": "Water on a hot stone",
     "meaning": "A futile effort",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 118,
@@ -1095,7 +1095,7 @@
     "english": "Good medicine tastes bitter",
     "meaning": "Helpful advice can be harsh",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 123,
@@ -1185,7 +1185,7 @@
     "english": "If in a hurry, go around",
     "meaning": "The safer path can be faster",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 133,

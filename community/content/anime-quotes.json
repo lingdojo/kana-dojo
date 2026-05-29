@@ -525,24 +525,31 @@
     "character": "Son Goku"
   },
   {
-  "japanese": "貴様ッ！見ているなッ！！",
-  "romaji": "Kisama! Mite iru na!!",
-  "english": "You! You're watching me! (alt wording 11)",
-  "anime": "JoJo's Bizarre Adventure: Stone Ocean",
-  "character": "Jolyne Cujoh"
+    "japanese": "貴様ッ！見ているなッ！！",
+    "romaji": "Kisama! Mite iru na!!",
+    "english": "You! You're watching me! (alt wording 11)",
+    "anime": "JoJo's Bizarre Adventure: Stone Ocean",
+    "character": "Jolyne Cujoh"
   },
   {
-  "japanese": "月に代わっておしおきよ!",
-  "romaji": "Tsuki ni kawatte oshioki yo!",
-  "english": "In the name of the moon, I'll punish you!",
-  "anime": "Sailor Moon",
-  "character": "Usagi Tsukino"
+    "japanese": "月に代わっておしおきよ!",
+    "romaji": "Tsuki ni kawatte oshioki yo!",
+    "english": "In the name of the moon, I'll punish you!",
+    "anime": "Sailor Moon",
+    "character": "Usagi Tsukino"
   },
   {
-  "japanese": "月に代わっておしおきよ!",
-  "romaji": "Tsuki ni kawatte oshioki yo!",
-  "english": "In the name of the moon, I'll punish you! (alt wording 41)",
-  "anime": "Sailor Moon",
-  "character": "Usagi Tsukino"
-}
+    "japanese": "月に代わっておしおきよ!",
+    "romaji": "Tsuki ni kawatte oshioki yo!",
+    "english": "In the name of the moon, I'll punish you! (alt wording 41)",
+    "anime": "Sailor Moon",
+    "character": "Usagi Tsukino"
+  },
+  {
+    "japanese": "グララララ",
+    "romaji": "Gurararara",
+    "english": "Gurararara! (alt wording 31)",
+    "anime": "One Piece",
+    "character": "Edward Newgate (Whitebeard)"
+  }
 ]

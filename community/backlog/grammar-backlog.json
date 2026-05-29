@@ -339,7 +339,7 @@
     "id": 57,
     "text": "\"〜わけがない\" means \"there is no way that...\".",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 58,
@@ -488,7 +488,7 @@
   {
     "id": 82,
     "text": "\"〜ばかりか\" means \"not only... but also\".",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -518,13 +518,13 @@
   {
     "id": 87,
     "text": "\"〜ません\" is the polite negative form of verbs, used to say something doesn't happen. (practice variation 2)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 88,
     "text": "\"〜たい\" attaches to a verb stem to express \"want to do\" something. (practice variation 3)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -692,7 +692,7 @@
   {
     "id": 116,
     "text": "\"〜ところ\" refers to a point in time, like \"about to\", \"in the middle of\", or \"just finished\". (practice variation 31)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -746,7 +746,7 @@
   {
     "id": 125,
     "text": "\"〜うちに\" means \"while\" or \"before\" something changes. (practice variation 40)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
