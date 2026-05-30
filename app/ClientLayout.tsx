@@ -115,6 +115,7 @@ export default function ClientLayout({
       process.env.NEXT_PUBLIC_VERCEL_ENV !== 'production';
     const isTargetRoute = /\/(kana|kanji|vocabulary)(\/|$)/.test(pathname);
     const isPreferencesRoute = /\/preferences(\/|$)/.test(pathname);
+    const isProgressRoute = /\/progress(\/|$)/.test(pathname);
     const isBaseRoute =
       pathname === '/' || pathname === '/en' || pathname === '/ja';
     const donationLastPathKey = 'donation-modal-last-pathname';
@@ -132,22 +133,27 @@ export default function ClientLayout({
       return;
     }
 
-    if ((isDev || isPreviewDeployment) && isPreferencesRoute) {
-      if (typeof window !== 'undefined') {
-        sessionStorage.setItem(donationLastPathKey, pathname);
-      }
-      const timer = setTimeout(() => {
-        setIsDonationModalOpen(true);
-      }, 500);
-      return () => clearTimeout(timer);
-    }
+    // TEMPORARILY COMMENTED OUT: auto-show on preferences in dev/preview
+    // if ((isDev || isPreviewDeployment) && isPreferencesRoute) {
+    //   if (typeof window !== 'undefined') {
+    //     sessionStorage.setItem(donationLastPathKey, pathname);
+    //   }
+    //   const timer = setTimeout(() => {
+    //     setIsDonationModalOpen(true);
+    //   }, 500);
+    //   return () => clearTimeout(timer);
+    // }
 
     const cameFromHome =
       previousPathname === '/' ||
       previousPathname === '/en' ||
       previousPathname === '/ja';
 
-    if (hasSeenWelcome && isTargetRoute && cameFromHome) {
+    const shouldCycle =
+      (hasSeenWelcome && isTargetRoute && cameFromHome) ||
+      (hasSeenWelcome && (isPreferencesRoute || isProgressRoute));
+
+    if (shouldCycle) {
       const nextCount =
         Number(
           typeof window !== 'undefined'

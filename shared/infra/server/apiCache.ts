@@ -1,5 +1,5 @@
 import { createHash } from 'crypto';
-import { hasRedisConfig, redisGetJson, redisSetJson } from '@/shared/infra/server/redis';
+import { hasRedisConfig, redisGetJson, redisSetJson } from './redis';
 
 export function buildHashedCacheKey(prefix: string, rawKey: string): string {
   const hash = createHash('sha256').update(rawKey).digest('hex');
@@ -37,4 +37,3 @@ export async function setRedisCachedJson(
     // Ignore Redis failures and allow in-memory fallback.
   }
 }
-

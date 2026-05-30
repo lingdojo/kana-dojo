@@ -501,15 +501,103 @@
     "secondaryColor": "oklch(78.0% 0.110 25.0 / 1)"
   },
   {
-  "id": "thunder-god",
-  "backgroundColor": "oklch(14.0% 0.058 290.0 / 1)",
-  "mainColor": "oklch(88.0% 0.195 95.0 / 1)",
-  "secondaryColor": "oklch(75.0% 0.180 275.0 / 1)"
+    "id": "thunder-god",
+    "backgroundColor": "oklch(14.0% 0.058 290.0 / 1)",
+    "mainColor": "oklch(88.0% 0.195 95.0 / 1)",
+    "secondaryColor": "oklch(75.0% 0.180 275.0 / 1)"
   },
   {
     "id": "osaka-neon",
     "backgroundColor": "oklch(14.0% 0.060 300.0 / 1)",
     "mainColor": "oklch(78.0% 0.220 330.0 / 1)",
     "secondaryColor": "oklch(85.0% 0.175 190.0 / 1)"
-  }
+  },
+  {
+    "id": "dragon-fly",
+    "name": "Dragon Fly",
+    "description": "Evening mist over still water — a cool, tranquil theme with serene blue undertones",
+    "backgroundColor": "oklch(18.0% 0.035 280.0 / 1)",
+    "mainColor": "oklch(78.0% 0.140 200.0 / 1)",
+    "secondaryColor": "oklch(65.0% 0.100 160.0 / 1)"
+  },
+  {
+    "id": "sakura-dawn",
+    "name": "Sakura Dawn",
+    "description": "Cherry blossoms at sunrise — a soft, romantic theme with gentle pink and lavender hues",
+    "backgroundColor": "oklch(20.0% 0.040 350.0 / 1)",
+    "mainColor": "oklch(80.0% 0.150 15.0 / 1)",
+    "secondaryColor": "oklch(68.0% 0.110 320.0 / 1)"
+  },
+  {
+    "id": "sunset-train",
+    "backgroundColor": "oklch(22.0% 0.052 45.0 / 1)",
+    "mainColor": "oklch(88.0% 0.165 65.0 / 1)",
+    "secondaryColor": "oklch(72.0% 0.185 35.0 / 1)"
+  },
+  {
+    "id": "sashimi-fresh",
+    "backgroundColor": "oklch(17.0% 0.028 280.0 / 1)",
+    "mainColor": "oklch(75.0% 0.145 5.0 / 1)",
+    "secondaryColor": "oklch(85.0% 0.095 350.0 / 1)"
+  },
+  {
+    "id": "autumn-maple",
+    "backgroundColor": "oklch(21.0% 0.052 30.0 / 1)",
+    "mainColor": "oklch(72.0% 0.200 35.0 / 1)",
+    "secondaryColor": "oklch(80.0% 0.165 60.0 / 1)"
+  },
+  {
+    "id": "tokyo-metro",
+    "backgroundColor": "oklch(20.0% 0.025 260.0 / 1)",
+    "mainColor": "oklch(70.0% 0.180 145.0 / 1)",
+    "secondaryColor": "oklch(80.0% 0.120 50.0 / 1)"
+  },
+  {
+    "id": "pearl-wave",
+    "backgroundColor": "oklch(21.0% 0.045 235.0 / 1)",
+    "mainColor": "oklch(88.0% 0.055 245.0 / 1)",
+    "secondaryColor": "oklch(68.0% 0.165 215.0 / 1)"
+  },
+  {
+    "id": "sunrise-express",
+    "backgroundColor": "oklch(21.0% 0.048 50.0 / 1)",
+    "mainColor": "oklch(90.0% 0.145 70.0 / 1)",
+    "secondaryColor": "oklch(78.0% 0.175 40.0 / 1)"
+  },
+  {
+    "id": "winter-kimono",
+    "backgroundColor": "oklch(16.0% 0.040 260.0 / 1)",
+    "mainColor": "oklch(88.0% 0.020 240.0 / 1)",
+    "secondaryColor": "oklch(68.0% 0.110 310.0 / 1)"
+  },
+  {
+  "id": "golden-kintsugi",
+  "backgroundColor": "oklch(20.0% 0.020 70.0 / 1)",
+  "mainColor": "oklch(85.0% 0.155 85.0 / 1)",
+  "secondaryColor": "oklch(60.0% 0.085 25.0 / 1)"
+},
+  {
+  "id": "matcha-drift",
+  "backgroundColor": "oklch(18.5% 0.035 140.0 / 1)",
+  "mainColor": "oklch(76.0% 0.140 135.0 / 1)",
+  "secondaryColor": "oklch(72.0% 0.070 80.0 / 1)"
+},
+{
+  "id": "kumo-sky",
+  "backgroundColor": "oklch(90.0% 0.020 220.0 / 1)",
+  "mainColor": "oklch(60.0% 0.090 215.0 / 1)",
+  "secondaryColor": "oklch(70.0% 0.060 200.0 / 1)"
+},
+{
+  "id": "bento-box",
+  "backgroundColor": "oklch(22.0% 0.025 45.0 / 1)",
+  "mainColor": "oklch(70.0% 0.175 20.0 / 1)",
+  "secondaryColor": "oklch(75.0% 0.165 145.0 / 1)"
+},
+{
+  "id": "crane-flight",
+  "backgroundColor": "oklch(94.0% 0.015 240.0 / 1)",
+  "mainColor": "oklch(40.0% 0.025 270.0 / 1)",
+  "secondaryColor": "oklch(60.0% 0.175 20.0 / 1)"
+}
 ]

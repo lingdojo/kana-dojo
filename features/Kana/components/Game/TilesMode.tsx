@@ -16,6 +16,7 @@ import { useAnswerTimer } from '@/shared/hooks/game/useAnswerTimer';
 import { useGameStats } from '@/shared/hooks/game/useGameStats';
 import { useTilesModeHandlers } from '@/shared/hooks/game/useTilesModeHandlers';
 import { useTilesModeState } from '@/shared/hooks/game/useTilesModeState';
+import { getKanaTilesQuestionShape } from '@/features/Kana/lib/getKanaTilesQuestionShape';
 
 import { GameBottomBar } from '@/shared/ui-composite/Game/GameBottomBar';
 import { cn } from '@/shared/utils/utils';
@@ -183,10 +184,14 @@ const KanaTilesMode = ({
       romajiToKana,
     } = generateWordDeps;
     const sourceChars = isReverse ? selectedRomaji : selectedKana;
-    const totalTileCount = wordLength <= 1 ? 3 : wordLength === 2 ? 4 : 5;
-    if (sourceChars.length < totalTileCount) {
+    const questionShape = getKanaTilesQuestionShape({
+      wordLength,
+      availableCharacterCount: sourceChars.length,
+    });
+    if (!questionShape.canGenerate) {
       return { wordChars: [], answerChars: [], allTiles: new Map() };
     }
+    const totalTileCount = questionShape.tileCount;
 
     const wordChars: string[] = [];
     const usedChars = new Set<string>();
@@ -414,6 +419,9 @@ const KanaTilesMode = ({
     incrementWrongAnswers,
     score,
     setScore,
+    setBottomBarState,
+    setIsCelebrating,
+    setIsChecking,
     externalOnWrong,
     externalIsReverse,
     recordReverseModeWrong,
@@ -452,11 +460,11 @@ const KanaTilesMode = ({
   ]);
 
   // Not enough characters for tiles mode
-  const requiredTileCount = wordLength <= 1 ? 3 : wordLength === 2 ? 4 : 5;
-  if (
-    selectedKana.length < requiredTileCount ||
-    wordData.wordChars.length === 0
-  ) {
+  const questionShape = getKanaTilesQuestionShape({
+    wordLength,
+    availableCharacterCount: selectedKana.length,
+  });
+  if (!questionShape.canGenerate || wordData.wordChars.length === 0) {
     return null;
   }
 

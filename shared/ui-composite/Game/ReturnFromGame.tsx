@@ -27,7 +27,7 @@ import {
   Check,
   type LucideIcon,
 } from 'lucide-react';
-import ProgressBar from './ProgressBar';
+import GameScoreBar from './GameScoreBar';
 import { ActionButton } from '@/shared/ui/components/ActionButton';
 
 // Game mode icon configuration
@@ -202,7 +202,7 @@ const Return = ({ isHidden, gameMode, onQuit }: ReturnProps) => {
             className='text-(--border-color) duration-250 hover:scale-125 hover:cursor-pointer hover:text-(--secondary-color)'
           />
         </button>
-        <ProgressBar />
+        <GameScoreBar />
         {/* Stats button - visible only on small screens */}
         <ActionButton
           borderRadius='xl'

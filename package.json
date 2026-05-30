@@ -1,6 +1,6 @@
 {
   "name": "kanadojo",
-  "version": "0.1.17",
+  "version": "0.1.18",
   "private": true,
   "scripts": {
     "prepare": "husky",
@@ -116,7 +116,7 @@
     "jsdom": "^27.0.1",
     "lint-staged": "^16.2.7",
     "playwright": "^1.57.0",
-    "postcss": "^8.5.3",
+    "postcss": "^8.5.10",
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.7.2",
     "rimraf": "^6.0.1",
@@ -129,5 +129,8 @@
   },
   "optionalDependencies": {
     "@next/swc-win32-x64-msvc": "npm:null@*"
+  },
+  "overrides": {
+    "postcss": "^8.5.10"
   }
 }

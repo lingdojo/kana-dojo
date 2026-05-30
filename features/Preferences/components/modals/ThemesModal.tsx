@@ -215,7 +215,7 @@ export default function ThemesModal({ open, onOpenChange }: ThemesModalProps) {
             </DialogPrimitive.Title>
             <button
               onClick={handleClose}
-              className='shrink-0 rounded-xl p-2 hover:cursor-pointer hover:bg-(--border-color) '
+              className='shrink-0 rounded-xl p-2 hover:cursor-pointer hover:bg-(--card-color) '
             >
               <X size={24} className='text-(--secondary-color) hover:text-(--secondary-color)' />
             </button>

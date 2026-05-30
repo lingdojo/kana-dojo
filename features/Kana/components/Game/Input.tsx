@@ -298,8 +298,10 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
     recordAnswerTime(answerTimeMs);
     resetTimer();
     playCorrect();
-    addCharacterToHistory(correctChar);
-    incrementCharacterScore(correctChar, 'correct');
+    promptParts.forEach(char => {
+      addCharacterToHistory(char);
+      incrementCharacterScore(char, 'correct');
+    });
     incrementCorrectAnswers();
     setScore(score + 1);
 
@@ -335,7 +337,9 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
     setWrongFeedbackSignal(prev => prev + 1);
     playErrorTwice();
 
-    incrementCharacterScore(correctChar, 'wrong');
+    promptParts.forEach(char => {
+      incrementCharacterScore(char, 'wrong');
+    });
     incrementWrongAnswers();
     if (score - 1 < 0) {
       setScore(0);

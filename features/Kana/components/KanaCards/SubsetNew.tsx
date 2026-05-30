@@ -7,6 +7,7 @@ import useKanaStore from '@/features/Kana/store/useKanaStore';
 import useStatsStore from '@/features/Progress/store/useStatsStore';
 import { useClick } from '@/shared/hooks/generic/useAudio';
 import { ActionButton } from '@/shared/ui/components/ActionButton';
+import MasteryBar from '@/shared/ui/components/MasteryBar';
 import { cn } from '@/shared/utils/utils';
 
 /**
@@ -14,7 +15,9 @@ import { cn } from '@/shared/utils/utils';
  * to count as fully mastered (progress bar = 100% for that character).
  * Averaging across all characters in the row gives the row's overall progress.
  */
-export const KANA_ROW_MASTERY_TARGET = 75;
+export const KANA_ROW_MASTERY_TARGET = 25;
+const KANA_MAX_STARS = 3;
+const KANA_ROW_MASTERY_CAP = KANA_ROW_MASTERY_TARGET * KANA_MAX_STARS;
 
 interface SubsetProps {
   sliceRange: number[];
@@ -54,13 +57,28 @@ const SubsetNew = ({ sliceRange, subgroup }: SubsetProps) => {
    * The row progress is the average of all character fractions.
    * With 0 attempts the fraction is exactly 0.
    */
-  const getRowProgressFraction = (rowKana: string[]): number => {
-    if (rowKana.length === 0) return 0;
+  const getRowProgressAndStars = (
+    rowKana: string[],
+  ): { progress: number; stars: number } => {
+    if (rowKana.length === 0) return { progress: 0, stars: 0 };
+
     const total = rowKana.reduce((sum, char) => {
       const correct = characterMastery[char]?.correct ?? 0;
-      return sum + Math.min(correct, KANA_ROW_MASTERY_TARGET) / KANA_ROW_MASTERY_TARGET;
+      return sum + Math.min(correct, KANA_ROW_MASTERY_CAP);
     }, 0);
-    return total / rowKana.length;
+
+    const cycleTarget = rowKana.length * KANA_ROW_MASTERY_TARGET;
+    const cappedTotal = Math.min(total, cycleTarget * KANA_MAX_STARS);
+    const stars = Math.min(
+      Math.floor(cappedTotal / cycleTarget),
+      KANA_MAX_STARS,
+    );
+    const progress =
+      stars < KANA_MAX_STARS
+        ? (cappedTotal - stars * cycleTarget) / cycleTarget
+        : 1;
+
+    return { progress, stars };
   };
 
   const renderSeparatedText = (items: string[], separatorClassName: string) =>
@@ -78,7 +96,8 @@ const SubsetNew = ({ sliceRange, subgroup }: SubsetProps) => {
   return (
     <fieldset className='flex w-full flex-col items-stretch gap-0'>
       {kanaGroups.map((group, i) => {
-        const progressFraction = getRowProgressFraction(group.kana);
+        const { progress: progressFraction, stars } =
+          getRowProgressAndStars(group.kana);
         const progressPercent = Math.round(progressFraction * 100);
 
         const selected = isChecked(i);
@@ -99,19 +118,12 @@ const SubsetNew = ({ sliceRange, subgroup }: SubsetProps) => {
               !isLastInSubset && 'border-b border-(--border-color)',
             )}
           >
-            {/* Progress Bar */}
-            <div className='w-full'>
-              <div className='h-7 w-full overflow-hidden rounded-[1rem] bg-(--background-color)'>
-                <div
-                  className='h-full rounded-[1rem] transition-all duration-500'
-                  style={{
-                    width: `${progressPercent}%`,
-                    background:
-                      'linear-gradient(to right, var(--secondary-color), var(--main-color))',
-                  }}
-                />
-              </div>
-            </div>
+            <MasteryBar
+              percent={progressPercent}
+              stars={stars}
+              height='h-7'
+              rounded='rounded-[1rem]'
+            />
 
             {/* Select Button — mirrors LevelSetCards select button */}
             <button
