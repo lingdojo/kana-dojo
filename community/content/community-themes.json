@@ -599,5 +599,11 @@
   "backgroundColor": "oklch(94.0% 0.015 240.0 / 1)",
   "mainColor": "oklch(40.0% 0.025 270.0 / 1)",
   "secondaryColor": "oklch(60.0% 0.175 20.0 / 1)"
+},
+{
+  "id": "vaporwave-shrine",
+  "backgroundColor": "oklch(17.0% 0.072 305.0 / 1)",
+  "mainColor": "oklch(75.0% 0.175 195.0 / 1)",
+  "secondaryColor": "oklch(80.0% 0.195 330.0 / 1)"
 }
 ]
