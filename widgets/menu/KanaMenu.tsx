@@ -58,7 +58,7 @@ const KanaMenu = ({ filter = 'all' }: { filter?: KanaMenuFilter }) => {
 
   const kanaTypeLabel = KANA_TYPE_LABELS[filterOverride];
   const subsetLabel = SUBSET_LABELS[filterOverride]?.[selectedSubset];
-  const selectAllLabel = `Select All ${kanaTypeLabel} ${subsetLabel}`;
+  const selectAllLabel = `Select  ${kanaTypeLabel} ${subsetLabel}`;
 
   return (
     <>
@@ -123,7 +123,7 @@ const KanaMenu = ({ filter = 'all' }: { filter?: KanaMenuFilter }) => {
                 addKanaGroupIndices(indices);
               }
             }}
-            className='flex-1 px-2 py-3'
+            className='flex-1 px-2 py-2 sm:py-3'
             borderBottomThickness={14}
             borderRadius='3xl'
           >
@@ -135,7 +135,7 @@ const KanaMenu = ({ filter = 'all' }: { filter?: KanaMenuFilter }) => {
               playClick();
               setViewMode(v => v === 'full' ? 'compact' : 'full');
             }}
-            className='w-auto self-stretch px-8 py-3'
+            className='w-auto self-stretch px-4 sm:px-8 py-2 sm:py-3'
             borderBottomThickness={14}
             borderRadius='3xl'
             colorScheme='secondary'
