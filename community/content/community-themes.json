@@ -593,5 +593,29 @@
   "backgroundColor": "oklch(22.0% 0.025 45.0 / 1)",
   "mainColor": "oklch(70.0% 0.175 20.0 / 1)",
   "secondaryColor": "oklch(75.0% 0.165 145.0 / 1)"
-}
+},
+{
+    "id": "wabi-sabi-clay",
+    "backgroundColor": "oklch(24.0% 0.015 45.0 / 1)",
+    "mainColor": "oklch(76.0% 0.065 50.0 / 1)",
+    "secondaryColor": "oklch(62.0% 0.035 70.0 / 1)"
+  },
+  {
+    "id": "shisho-mint",
+    "backgroundColor": "oklch(96.0% 0.025 155.0 / 1)",
+    "mainColor": "oklch(52.0% 0.165 165.0 / 1)",
+    "secondaryColor": "oklch(68.0% 0.110 140.0 / 1)"
+  },
+  {
+    "id": "hokkaido-lavender",
+    "backgroundColor": "oklch(15.0% 0.045 295.0 / 1)",
+    "mainColor": "oklch(74.0% 0.125 290.0 / 1)",
+    "secondaryColor": "oklch(60.0% 0.080 270.0 / 1)"
+  },
+  {
+    "id": "yuzu-fizzy",
+    "backgroundColor": "oklch(97.0% 0.045 95.0 / 1)",
+    "mainColor": "oklch(65.0% 0.215 85.0 / 1)",
+    "secondaryColor": "oklch(55.0% 0.190 40.0 / 1)"
+  }
 ]
