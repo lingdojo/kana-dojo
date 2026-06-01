@@ -966,7 +966,7 @@
     "game": "Persona 5 Strikers",
     "character": "Joker",
     "id": 97,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
