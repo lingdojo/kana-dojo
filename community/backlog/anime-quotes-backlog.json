@@ -746,7 +746,7 @@
     "english": "Dance to my beautiful technique! (alt wording 23)",
     "anime": "The Prince of Tennis",
     "character": "Keigo Atobe",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1298,7 +1298,7 @@
     "english": "This world is cruel... yet so beautiful. (alt wording 26) (alt wording 78)",
     "anime": "Attack on Titan",
     "character": "Mikasa Ackerman",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

@@ -464,7 +464,7 @@
     "dont": "無連絡で遅れて言い訳を続ける",
     "note": "先に謝罪が基本。",
     "id": 52,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -725,7 +725,7 @@
     "dont": "片手で受け取ってすぐポケットに入れる",
     "note": "商談中は机上に置くのが一般的。",
     "id": 81,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

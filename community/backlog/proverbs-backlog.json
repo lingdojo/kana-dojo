@@ -231,7 +231,7 @@
     "english": "Gold coins to a cat",
     "meaning": "Giving something valuable to someone who can't appreciate it",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 27,
@@ -1149,7 +1149,7 @@
     "english": "See the trees but not the forest",
     "meaning": "Missing the bigger picture",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 129,

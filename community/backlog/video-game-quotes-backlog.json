@@ -656,7 +656,7 @@
     "game": "JoJo’s Bizarre Adventure: All-Star Battle",
     "character": "Giorno Giovanna",
     "id": 66,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -816,7 +816,7 @@
     "game": "Fate/stay night [Realta Nua]",
     "character": "Saber",
     "id": 82,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

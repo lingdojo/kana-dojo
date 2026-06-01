@@ -284,7 +284,7 @@
   {
     "id": 48,
     "fact": "Japan has robots that serve as Buddhist priests conducting funeral ceremonies - complete with chanting and prayer beads.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -866,7 +866,7 @@
   {
     "id": 145,
     "fact": "The concept 'taisetsu' (大切) means precious or important - often said about relationships and feelings, not objects.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
