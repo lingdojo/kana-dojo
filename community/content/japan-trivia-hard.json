@@ -746,5 +746,11 @@
       "Sendai"
     ],
     "correctIndex": 0
+  },
+  {
+    "question": "Which Japanese island is known for its active volcano, Sakurajima? (Community variation 45)",
+    "difficulty": "hard",
+    "answers": ["Kyushu", "Honshu", "Shikoku", "Hokkaido"],
+    "correctIndex": 0
   }
 ]
