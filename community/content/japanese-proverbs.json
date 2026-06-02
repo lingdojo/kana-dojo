@@ -396,9 +396,15 @@
     "meaning": "Practicality over appearance"
   },
   {
-  "japanese": "知らぬが仏",
-  "romaji": "Shiranu ga hotoke",
-  "english": "Not knowing is Buddha",
-  "meaning": "Ignorance is bliss"
-}
+    "japanese": "知らぬが仏",
+    "romaji": "Shiranu ga hotoke",
+    "english": "Not knowing is Buddha",
+    "meaning": "Ignorance is bliss"
+  },
+  {
+    "japanese": "七転び八起き",
+    "romaji": "Nanakorobi yaoki",
+    "english": "Fall seven times, get up eight",
+    "meaning": "Never give up"
+  }
 ]
