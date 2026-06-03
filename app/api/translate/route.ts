@@ -1,8 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 import {
+  checkTranslateUsageLimit,
   checkTranslateRateLimit,
   getClientIP,
   createRateLimitHeaders,
+  createTranslateUsageHeaders,
 } from '@/shared/infra/server/rateLimit';
 import {
   getRedisCachedJson,
@@ -68,6 +70,8 @@ interface TranslationRequestBody {
   text: string;
   sourceLanguage: 'en' | 'ja';
   targetLanguage: 'en' | 'ja';
+  verificationToken?: string;
+  requestContext?: 'manual' | 'url-prefill';
 }
 
 interface GoogleTranslateResponse {
@@ -158,49 +162,65 @@ async function generateRomanization(japaneseText: string): Promise<string> {
 const ERROR_CODES = {
   INVALID_INPUT: 'INVALID_INPUT',
   RATE_LIMIT: 'RATE_LIMIT',
+  VERIFICATION_REQUIRED: 'VERIFICATION_REQUIRED',
   API_ERROR: 'API_ERROR',
   AUTH_ERROR: 'AUTH_ERROR',
   NETWORK_ERROR: 'NETWORK_ERROR',
 } as const;
+
+const BOT_USER_AGENT_PATTERN =
+  /bot|crawler|spider|crawling|preview|facebookexternalhit|slurp|bingpreview|whatsapp|telegram|discord|headless/i;
+const URL_AUTOTRANSLATE_CHAR_LIMIT = 300;
+
+function isLikelyBot(request: NextRequest): boolean {
+  const userAgent = request.headers.get('user-agent') || '';
+  return BOT_USER_AGENT_PATTERN.test(userAgent);
+}
+
+async function verifyTurnstileToken(
+  token: string | undefined,
+  request: NextRequest,
+): Promise<boolean> {
+  const secret = process.env.TURNSTILE_SECRET_KEY;
+  if (!secret || !token) {
+    return false;
+  }
+
+  try {
+    const response = await fetch(
+      'https://challenges.cloudflare.com/turnstile/v0/siteverify',
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          secret,
+          response: token,
+          remoteip: getClientIP(request),
+        }),
+      },
+    );
+    const data = (await response.json()) as { success?: boolean };
+    return Boolean(data.success);
+  } catch (error) {
+    console.error('Turnstile verification error:', error);
+    return false;
+  }
+}
 
 /**
  * POST /api/translate
  * Translates text between English and Japanese using Google Cloud Translation API
  */
 export async function POST(request: NextRequest) {
-  // Rate limiting check - protect against abuse
-  const clientIP = getClientIP(request);
-  const rateLimitResult = await checkTranslateRateLimit(clientIP);
-
-  if (!rateLimitResult.allowed) {
-    const headers = createRateLimitHeaders(rateLimitResult);
-
-    // Provide specific error message based on reason
-    let message: string;
-    if (rateLimitResult.reason === 'daily_quota') {
-      message = 'Daily translation limit reached. Please try again tomorrow.';
-    } else if (rateLimitResult.reason === 'global_limit') {
-      message =
-        'Service is experiencing high demand. Please try again in a moment.';
-    } else {
-      message = `Too many requests. Please wait ${rateLimitResult.retryAfter} seconds.`;
-    }
-
-    return NextResponse.json(
-      {
-        code: ERROR_CODES.RATE_LIMIT,
-        message,
-        error: message,
-        status: 429,
-        retryAfter: rateLimitResult.retryAfter,
-      },
-      { status: 429, headers },
-    );
-  }
-
   try {
     const body = (await request.json()) as TranslationRequestBody;
-    const { text, sourceLanguage, targetLanguage } = body;
+    const {
+      text,
+      sourceLanguage,
+      targetLanguage,
+      verificationToken,
+      requestContext = 'manual',
+    } = body;
 
     // Validate input
     if (!text || typeof text !== 'string') {
@@ -256,31 +276,43 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    if (sourceLanguage === targetLanguage) {
+      return NextResponse.json(
+        {
+          code: ERROR_CODES.INVALID_INPUT,
+          message: 'Please choose different source and target languages.',
+          error: 'Please choose different source and target languages.',
+          status: 400,
+        },
+        { status: 400 },
+      );
+    }
+
     // Check cache first to reduce API calls
-    const cacheKey = getCacheKey(text.trim(), sourceLanguage, targetLanguage);
+    const normalizedText = text.trim();
+    const cacheKey = getCacheKey(
+      normalizedText,
+      sourceLanguage,
+      targetLanguage,
+    );
     const redisCached = await getRedisCachedJson<{
       translatedText: string;
       romanization?: string;
     }>('translate', cacheKey);
     if (redisCached) {
       cacheHits++;
-      const rateLimitHeaders = createRateLimitHeaders(rateLimitResult);
       const response = NextResponse.json({
         translatedText: redisCached.translatedText,
         romanization: redisCached.romanization,
         cached: true,
       });
       response.headers.set('Cache-Control', 'private, max-age=3600');
-      rateLimitHeaders.forEach((value, key) => {
-        response.headers.set(key, value);
-      });
       return response;
     }
 
     const cached = translationCache.get(cacheKey);
     if (cached && Date.now() - cached.timestamp < CACHE_TTL) {
       cacheHits++;
-      const rateLimitHeaders = createRateLimitHeaders(rateLimitResult);
       const response = NextResponse.json({
         translatedText: cached.translatedText,
         romanization: cached.romanization,
@@ -288,11 +320,105 @@ export async function POST(request: NextRequest) {
       });
       // Allow browser to cache translation results for 1 hour
       response.headers.set('Cache-Control', 'private, max-age=3600');
-      // Include rate limit info
-      rateLimitHeaders.forEach((value, key) => {
-        response.headers.set(key, value);
-      });
       return response;
+    }
+
+    if (isLikelyBot(request)) {
+      return NextResponse.json(
+        {
+          code: ERROR_CODES.RATE_LIMIT,
+          message: 'Translation is unavailable for automated requests.',
+          error: 'Translation is unavailable for automated requests.',
+          status: 429,
+        },
+        { status: 429 },
+      );
+    }
+
+    if (
+      requestContext === 'url-prefill' &&
+      normalizedText.length > URL_AUTOTRANSLATE_CHAR_LIMIT
+    ) {
+      return NextResponse.json(
+        {
+          code: ERROR_CODES.VERIFICATION_REQUIRED,
+          message: 'Please use the translate button for longer text.',
+          error: 'Please use the translate button for longer text.',
+          status: 403,
+        },
+        { status: 403 },
+      );
+    }
+
+    const clientIP = getClientIP(request);
+    const rateLimitResult = await checkTranslateRateLimit(clientIP);
+
+    if (!rateLimitResult.allowed) {
+      const headers = createRateLimitHeaders(rateLimitResult);
+
+      // Provide specific error message based on reason
+      let message: string;
+      if (rateLimitResult.reason === 'daily_quota') {
+        message = 'Daily translation limit reached. Please try again tomorrow.';
+      } else if (rateLimitResult.reason === 'global_limit') {
+        message =
+          'Service is experiencing high demand. Please try again in a moment.';
+      } else {
+        message = `Too many requests. Please wait ${rateLimitResult.retryAfter} seconds.`;
+      }
+
+      return NextResponse.json(
+        {
+          code: ERROR_CODES.RATE_LIMIT,
+          message,
+          error: message,
+          status: 429,
+          retryAfter: rateLimitResult.retryAfter,
+        },
+        { status: 429, headers },
+      );
+    }
+
+    const verified = await verifyTurnstileToken(verificationToken, request);
+    const usageResult = await checkTranslateUsageLimit(
+      clientIP,
+      normalizedText.length,
+      { verified },
+    );
+    const usageHeaders = createTranslateUsageHeaders(usageResult);
+
+    if (!usageResult.allowed) {
+      const message =
+        usageResult.reason === 'global_monthly_char_quota'
+          ? 'Service is experiencing high demand. Please try again later.'
+          : 'Daily translation limit reached. Please try again later.';
+
+      return NextResponse.json(
+        {
+          code: ERROR_CODES.RATE_LIMIT,
+          message,
+          error: message,
+          status: 429,
+          retryAfter: usageResult.retryAfter,
+        },
+        { status: 429, headers: usageHeaders },
+      );
+    }
+
+    if (
+      usageResult.requiresVerification &&
+      process.env.TURNSTILE_SECRET_KEY &&
+      process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY
+    ) {
+      return NextResponse.json(
+        {
+          code: ERROR_CODES.VERIFICATION_REQUIRED,
+          message: 'Please verify before translating more text.',
+          error: 'Please verify before translating more text.',
+          status: 403,
+        },
+        { status: 403, headers: usageHeaders },
+      );
     }
 
     // Cache miss - will call Google API
@@ -322,7 +448,7 @@ export async function POST(request: NextRequest) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        q: text,
+        q: normalizedText,
         source: sourceLanguage,
         target: targetLanguage,
         format: 'text',
@@ -425,6 +551,9 @@ export async function POST(request: NextRequest) {
     response.headers.set('Cache-Control', 'private, max-age=3600');
     // Include rate limit info
     rateLimitHeaders.forEach((value, key) => {
+      response.headers.set(key, value);
+    });
+    usageHeaders.forEach((value, key) => {
       response.headers.set(key, value);
     });
     return response;

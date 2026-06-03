@@ -41,6 +41,8 @@ export interface TranslatorState {
   isLoading: boolean;
   error: string | null;
   isOffline: boolean;
+  verificationRequired: boolean;
+  verificationToken: string | null;
 
   // Auto detection
   autoDetect: boolean;
@@ -55,7 +57,10 @@ export interface TranslatorState {
   setTargetLanguage: (lang: Language) => void;
   toggleAutoDetect: () => void;
   swapLanguages: () => void;
-  translate: () => Promise<void>;
+  translate: (
+    requestContext?: TranslationRequest['requestContext'],
+  ) => Promise<void>;
+  setVerificationToken: (token: string | null) => void;
   clearInput: () => void;
   loadHistory: () => Promise<void>;
   addToHistory: (entry: TranslationEntry) => Promise<void>;
@@ -95,6 +100,8 @@ export interface TranslationRequest {
   text: string;
   sourceLanguage: Language;
   targetLanguage: Language;
+  verificationToken?: string;
+  requestContext?: 'manual' | 'url-prefill';
 }
 
 /**

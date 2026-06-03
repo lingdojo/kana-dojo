@@ -396,9 +396,34 @@
     "meaning": "Practicality over appearance"
   },
   {
-  "japanese": "知らぬが仏",
-  "romaji": "Shiranu ga hotoke",
-  "english": "Not knowing is Buddha",
-  "meaning": "Ignorance is bliss"
+    "japanese": "知らぬが仏",
+    "romaji": "Shiranu ga hotoke",
+    "english": "Not knowing is Buddha",
+    "meaning": "Ignorance is bliss"
+  },
+  {
+    "japanese": "百聞は一見に如かず",
+    "romaji": "Hyakubun wa ikken ni shikazu",
+    "english": "Hearing a hundred times is not as good as seeing once",
+    "meaning": "Seeing is believing"
+  },
+  {
+    "japanese": "餅は餅屋",
+    "romaji": "Mochi wa mochiya",
+    "english": "Mochi should be made by the mochi shop",
+    "meaning": "Leave it to the experts"
+  },
+  {
+    "japanese": "猫に鰹節",
+    "romaji": "Neko ni katsuobushi",
+    "english": "Dried bonito to a cat",
+    "meaning": "Leave temptation unattended at your own risk"
+  },
+  {
+  "japanese": "笑う門には福来る",
+  "romaji": "Warau kado ni wa fuku kitaru",
+  "english": "Fortune comes to a laughing gate",
+  "meaning": "Happiness and good fortune come to those who smile"
 }
+
 ]
