@@ -501,7 +501,7 @@ const ModeSetupMenu = ({
                     ? 'Start Blitz'
                     : mode === 'gauntlet'
                       ? 'Start Gauntlet'
-                      : 'Start Training'}
+                      : 'Go'}
                 </span>
               </button>
             </Link>

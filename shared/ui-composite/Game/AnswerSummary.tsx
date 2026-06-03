@@ -5,6 +5,7 @@ import type { IVocabObj } from '@/features/Vocabulary';
 import { CircleArrowRight, Volume2 } from 'lucide-react';
 import { Dispatch, SetStateAction, useRef, useEffect, useCallback } from 'react';
 import { useClick } from '@/shared/hooks/generic/useAudio';
+import { removeVerbDuplicates } from '@/shared/utils/meanings';
 import FuriganaText from '@/shared/ui-composite/text/FuriganaText';
 import { useAudioPreferences, useThemePreferences } from '@/features/Preferences';
 import { useJapaneseTTS } from '@/features/Preferences/hooks/useJapaneseTTS';
@@ -420,7 +421,7 @@ const VocabSummary = ({
           variants={meaningVariants}
           className='text-2xl text-(--secondary-color) md:text-3xl'
         >
-          {payload.meanings.join(', ')}
+          {removeVerbDuplicates(payload.meanings).join(', ')}
         </motion.p>
       </motion.div>
 

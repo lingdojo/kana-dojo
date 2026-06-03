@@ -14,17 +14,17 @@ interface Checkpoint {
 
 type CheckpointInput = number | Checkpoint;
 
-interface ProgressBarProps {
+interface GameScoreBarProps {
   value?: number;
   max?: number;
   checkpoints?: CheckpointInput[];
 }
 
-const ProgressBar = ({
+const GameScoreBar = ({
   value,
   max = 20,
 }: // checkpoints = [10, 25, 50, 75] // Default checkpoints at 25%, 50%, 75%
-ProgressBarProps) => {
+GameScoreBarProps) => {
   const { score, setScore, stars, setStars, addIconIndex } = useStatsDisplay();
 
   // Use explicit value prop if provided (e.g. Gauntlet), otherwise use store score
@@ -102,5 +102,5 @@ ProgressBarProps) => {
   );
 };
 
-export default ProgressBar;
+export default GameScoreBar;
 

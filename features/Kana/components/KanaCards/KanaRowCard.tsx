@@ -99,7 +99,7 @@ const KanaRowCard = ({ kanaGroup, globalIndex }: KanaRowCardProps) => {
       {/* Kana row (large) + Romaji row (smaller) */}
       <div className='flex flex-col items-start gap-1 w-full'>
         <div
-          className='text-[2.25rem] sm:text-[2.5rem] font-normal text-(--main-color) tracking-wide'
+          className='text-[2.1rem] sm:text-[2.5rem] font-normal text-(--main-color) tracking-wide'
           lang='ja'
         >
           {renderSeparatedText(kanaGroup.kana, 'text-(--border-color)')}

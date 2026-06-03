@@ -228,5 +228,55 @@
   "difficulty": "easy",
   "answers": ["Okonomiyaki", "Tempura", "Yakitori", "Sashimi"],
   "correctIndex": 0
+  },
+  {
+  "question": "What is the main ingredient in miso? (Community variation 56)",
+  "difficulty": "easy",
+  "answers": [ "Fermented soybeans",  "Rice flour",  "Buckwheat", "Seaweed"],
+  "correctIndex": 0
+  },
+  {
+    "question": "Which ocean borders Japan to the east?",
+    "difficulty": "easy",
+    "answers": [
+      "Atlantic Ocean",
+      "Indian Ocean",
+      "Pacific Ocean",
+      "Arctic Ocean"
+    ],
+    "correctIndex": 2
+  },
+  {
+  "question": "What is the Japanese term for a traditional inn? (Community variation 52)",
+  "difficulty": "easy",
+  "answers": [
+    "Ryokan",
+    "Minshuku",
+    "Izakaya",
+    "Yatai"
+  ],
+  "correctIndex": 0
+  },
+  {
+    "question": "Which animal is famously associated with Inari shrines in Japan? (Community variation 33)",
+    "difficulty": "easy",
+    "answers": [
+      "Fox",
+      "Crane",
+      "Turtle",
+      "Deer"
+    ],
+    "correctIndex": 0
+  },
+  {
+  "question": "Which Japanese city is known for the famous bamboo grove? (Community variation 31)",
+  "difficulty": "easy",
+  "answers": [
+    "Kyoto",
+    "Tokyo",
+    "Sapporo",
+    "Fukuoka"
+  ],
+  "correctIndex": 0
   }
 ]

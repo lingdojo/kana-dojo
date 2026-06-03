@@ -6,6 +6,7 @@ import TrainingActionBar from '@/shared/ui-composite/Menu/TrainingActionBar';
 import UnitSelector from '@/shared/ui-composite/Menu/UnitSelector';
 import { VocabCards, useVocabSelection } from '@/features/Vocabulary';
 import { vocabDataService } from '@/features/Vocabulary/services/vocabDataService';
+import { useMenuSelectorStore } from '@/shared/ui-composite/Menu/store/useMenuSelectorStore';
 
 const PRELOAD_FLAG = 'vocab-preload-complete';
 
@@ -19,6 +20,13 @@ const VocabMenu = ({
   hideUnitSelector = false,
 }: VocabMenuProps) => {
   const vocabSelection = useVocabSelection();
+  const selectedVocabCollection = vocabSelection.selectedCollection;
+  const setVocabCollection = vocabSelection.setCollection;
+  const clearVocab = vocabSelection.clearVocab;
+  const clearVocabSets = vocabSelection.clearSets;
+  const setPersistedCollectionSelection = useMenuSelectorStore(
+    state => state.setCollectionSelection,
+  );
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -30,12 +38,16 @@ const VocabMenu = ({
 
   useEffect(() => {
     if (!fixedCollection) return;
-    if (vocabSelection.selectedCollection === fixedCollection) return;
+    if (selectedVocabCollection === fixedCollection) return;
 
-    vocabSelection.setCollection(fixedCollection);
-    vocabSelection.clearVocab();
-    vocabSelection.clearSets();
-  }, [fixedCollection, vocabSelection]);
+    setVocabCollection(fixedCollection);
+    clearVocab();
+    clearVocabSets();
+    setPersistedCollectionSelection('vocabulary', {
+      selectedCollection: fixedCollection,
+      selectedSubunitByUnit: {},
+    });
+  }, [fixedCollection, selectedVocabCollection, setVocabCollection, clearVocab, clearVocabSets, setPersistedCollectionSelection]);
 
   return (
     <>

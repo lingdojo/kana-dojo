@@ -16,6 +16,7 @@ import { cardBorderStyles } from '@/shared/utils/styles';
 import useGridColumns from '@/shared/hooks/generic/useGridColumns';
 import { useClick } from '@/shared/hooks/generic/useAudio';
 import { ActionButton } from '@/shared/ui/components/ActionButton';
+import MasteryBar from '@/shared/ui/components/MasteryBar';
 import QuickSelectModal from '@/shared/ui-composite/Modals/QuickSelectModal';
 import { cn } from '@/shared/utils/utils';
 
@@ -47,6 +48,7 @@ type VisibleRowsSectionProps<TItem> = {
   setSelectedSets: (sets: string[]) => void;
   toggleItems: (items: TItem[]) => void;
   getSetProgress: (items: TItem[]) => number;
+  getSetStars?: (items: TItem[]) => number;
   renderSetDictionary: (items: TItem[]) => React.ReactNode;
 };
 
@@ -70,6 +72,7 @@ type LevelSetCardsProps<TLevel extends string, TItem> = {
 
   renderSetDictionary: (items: TItem[]) => React.ReactNode;
   getSetProgress: (items: TItem[]) => number;
+  getSetStars?: (items: TItem[]) => number;
 
   loadingText: string;
   activeSubunitRange: ActiveSubunitRange;
@@ -92,6 +95,7 @@ const VisibleRowsSection = <TItem,>({
   setSelectedSets,
   toggleItems,
   getSetProgress,
+  getSetStars,
   renderSetDictionary,
 }: VisibleRowsSectionProps<TItem>) => {
   const { playClick } = useClick();
@@ -204,18 +208,17 @@ const VisibleRowsSection = <TItem,>({
                       i < rowSets.length - 1 && 'md:border-r-1',
                     )}
                   >
-                    <div className='mb-4 w-full max-md:mx-4 max-md:w-[calc(100%-2rem)]'>
-                      <div className='h-9 w-full overflow-hidden rounded-2xl bg-(--background-color)'>
-                        <div
-                          className='h-full rounded-2xl transition-all duration-500'
-                          style={{
-                            width: `${progressPercent}%`,
-                            background:
-                              'linear-gradient(to right, var(--secondary-color), var(--main-color))',
-                          }}
-                        />
-                      </div>
-                    </div>
+                    <MasteryBar
+                      percent={progressPercent}
+                      stars={
+                        process.env.NODE_ENV === 'development' &&
+                        setTemp.levelNumber >= 1 &&
+                        setTemp.levelNumber <= 3
+                          ? setTemp.levelNumber
+                          : getSetStars?.(setItems) ?? 0
+                      }
+                      className='mb-4 max-md:mx-4 max-md:w-[calc(100%-2rem)]'
+                    />
 
                     <button
                       className={clsx(
@@ -302,6 +305,7 @@ const LevelSetCards = <TLevel extends string, TItem>({
   setCollapsedRows,
   renderSetDictionary,
   getSetProgress,
+  getSetStars,
   loadingText,
   activeSubunitRange,
   collapseScopeKey,
@@ -543,6 +547,7 @@ const LevelSetCards = <TLevel extends string, TItem>({
         setSelectedSets={setSelectedSets}
         toggleItems={toggleItems}
         getSetProgress={getSetProgress}
+        getSetStars={getSetStars}
         renderSetDictionary={renderSetDictionary}
       />
     </div>
