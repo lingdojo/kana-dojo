@@ -273,7 +273,7 @@
     "id": 46,
     "text": "\"〜にする\" means \"decide on\" a choice or selection.",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 47,
@@ -363,13 +363,13 @@
     "id": 61,
     "text": "\"〜にとって\" means \"for / to (someone)\".",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 62,
     "text": "\"〜につれて\" means \"as... changes, ... also changes\".",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 63,
@@ -404,7 +404,7 @@
   {
     "id": 68,
     "text": "\"〜おそれがある\" means \"there is a risk that...\".",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -429,7 +429,7 @@
     "id": 72,
     "text": "\"〜て以来\" means \"since (doing)\".",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 73,
@@ -447,7 +447,7 @@
     "id": 75,
     "text": "\"〜ことにする\" means \"decide to...\".",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 76,
@@ -566,7 +566,7 @@
   {
     "id": 95,
     "text": "\"〜ようです\" means \"it seems like\" and is based on observation. (practice variation 10)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -578,7 +578,7 @@
   {
     "id": 97,
     "text": "\"〜つもり\" expresses intent, like \"I plan to\" do something. (practice variation 12)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -632,7 +632,7 @@
   {
     "id": 106,
     "text": "\"〜ば\" forms a conditional meaning \"if\" in a general sense. (practice variation 21)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -674,7 +674,7 @@
   {
     "id": 113,
     "text": "\"〜すぎる\" attaches to verbs or adjectives to mean \"too much\". (practice variation 28)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -800,7 +800,7 @@
   {
     "id": 134,
     "text": "\"〜ながらも\" means \"even while\" or \"though\" (contrast). (practice variation 49)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

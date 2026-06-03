@@ -6,7 +6,7 @@
     "english": "One stone, two birds",
     "meaning": "Accomplishing two things with one action",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 2,
@@ -105,7 +105,7 @@
     "english": "One who chases two rabbits catches neither",
     "meaning": "Focus on one thing at a time",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 13,
@@ -141,7 +141,7 @@
     "english": "Fortune comes to a laughing gate",
     "meaning": "Happiness and good fortune come to those who smile",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 17,
@@ -222,7 +222,7 @@
     "english": "Early rising is worth three coins",
     "meaning": "The early bird catches the worm",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 26,
@@ -329,7 +329,7 @@
     "romaji": "Deru kugi wa utareru",
     "english": "The nail that sticks out gets hammered down",
     "meaning": "Those who stand out may be criticized",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -339,7 +339,7 @@
     "english": "Not knowing is Buddha",
     "meaning": "Ignorance is bliss",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 39,
@@ -348,7 +348,7 @@
     "english": "Tomorrow's wind will blow tomorrow",
     "meaning": "Don't worry too much about the future",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 40,
@@ -1023,7 +1023,7 @@
     "english": "Gold coins to a cat",
     "meaning": "Gifts wasted on those who don't appreciate them",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 115,
@@ -1266,7 +1266,7 @@
     "english": "A bee on a crying face",
     "meaning": "Misfortune never comes alone",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 142,
@@ -1302,7 +1302,7 @@
     "english": "A cane before falling",
     "meaning": "Prevention is better than cure",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 146,
@@ -1500,7 +1500,7 @@
     "english": "Chase two rabbits, catch none",
     "meaning": "Focus on one thing",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 168,
