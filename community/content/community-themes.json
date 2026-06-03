@@ -334,5 +334,11 @@
     "backgroundColor": "oklch(22.0% 0.030 150.0 / 1)",
     "mainColor": "oklch(78.0% 0.135 145.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.090 110.0 / 1)"
-  }
+  },
+{
+  "id": "sundown-shrine",
+  "backgroundColor": "oklch(18.0% 0.055 330.0 / 1)",
+  "mainColor": "oklch(72.0% 0.195 35.0 / 1)",
+  "secondaryColor": "oklch(85.0% 0.095 275.0 / 1)"
+}
 ]
