@@ -122,7 +122,7 @@
   {
     "id": 21,
     "fact": "Japan's oldest company, Kongō Gumi, was a construction company that operated continuously for 1,428 years (578-2006 CE) before being absorbed.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -344,7 +344,7 @@
   {
     "id": 58,
     "fact": "Japan's Seikan Tunnel connecting Honshu and Hokkaido is the world's longest undersea tunnel at 53.85 kilometers.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1868,7 +1868,7 @@
   {
     "id": 312,
     "fact": "Japan’s 'shichi-go-san' festival celebrates children at ages 3, 5, and 7 with shrine visits and traditional outfits.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
