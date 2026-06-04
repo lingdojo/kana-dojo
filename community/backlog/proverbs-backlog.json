@@ -6,7 +6,7 @@
     "english": "One stone, two birds",
     "meaning": "Accomplishing two things with one action",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "english": "Dumplings over flowers",
     "meaning": "Practical things are more valuable than aesthetic ones",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 3,
@@ -96,7 +96,7 @@
     "english": "Time is money",
     "meaning": "Time is valuable and should not be wasted",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 12,
@@ -105,7 +105,7 @@
     "english": "One who chases two rabbits catches neither",
     "meaning": "Focus on one thing at a time",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 13,
@@ -141,7 +141,7 @@
     "english": "Fortune comes to a laughing gate",
     "meaning": "Happiness and good fortune come to those who smile",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 17,
@@ -150,7 +150,7 @@
     "english": "Giving birth is easier than worrying",
     "meaning": "Things are often easier done than worried about",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 18,
@@ -159,7 +159,7 @@
     "english": "If fish has heart, water has heart",
     "meaning": "Good intentions will be reciprocated",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 19,
@@ -222,7 +222,7 @@
     "english": "Early rising is worth three coins",
     "meaning": "The early bird catches the worm",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 26,
@@ -258,7 +258,7 @@
     "english": "One time, one meeting",
     "meaning": "Treasure every encounter, for it will never recur",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 30,
@@ -339,7 +339,7 @@
     "english": "Not knowing is Buddha",
     "meaning": "Ignorance is bliss",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 39,
@@ -680,7 +680,7 @@
     "romaji": "Ame futte ji katamaru",
     "english": "After rain, the ground hardens",
     "meaning": "Adversity can strengthen relationships",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -735,7 +735,7 @@
     "english": "Well-side conference",
     "meaning": "Neighborhood gossip",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 83,
@@ -761,7 +761,7 @@
     "romaji": "Neko no hitai",
     "english": "A cat's forehead",
     "meaning": "Very small space",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -870,7 +870,7 @@
     "english": "Even monkeys fall from trees",
     "meaning": "Experts also make mistakes",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 98,
@@ -986,7 +986,7 @@
     "romaji": "En wa inamono aji na mono",
     "english": "Fate is strange yet delightful",
     "meaning": "Unexpected connections can be good",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1221,7 +1221,7 @@
     "english": "After ease comes hardship",
     "meaning": "Good times and bad times alternate",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 137,
@@ -1266,7 +1266,7 @@
     "english": "A bee on a crying face",
     "meaning": "Misfortune never comes alone",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 142,
@@ -1302,7 +1302,7 @@
     "english": "A cane before falling",
     "meaning": "Prevention is better than cure",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 146,
@@ -1392,7 +1392,7 @@
     "english": "A skilled hawk hides its talons",
     "meaning": "True skill is modest",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 156,
@@ -1419,7 +1419,7 @@
     "english": "Water on a hot stone",
     "meaning": "A futile effort",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 159,
@@ -1437,7 +1437,7 @@
     "english": "Tap a stone bridge before crossing",
     "meaning": "Be very cautious",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 161,
@@ -1454,7 +1454,7 @@
     "romaji": "Warau kado ni wa fuku kitaru",
     "english": "Good fortune comes to a laughing home",
     "meaning": "Happiness invites luck",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1599,7 +1599,7 @@
     "english": "See the trees but not the forest",
     "meaning": "Miss the bigger picture",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 179,

@@ -117,12 +117,12 @@
     "id": 20,
     "text": "\"〜たら\" is a conditional \"if/when\" that also expresses sequence.",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 21,
     "text": "\"〜ば\" forms a conditional meaning \"if\" in a general sense.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -201,7 +201,7 @@
     "id": 34,
     "text": "\"〜ように\" can express purpose, like \"in order to\" or \"so that\".",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 35,
@@ -273,7 +273,7 @@
     "id": 46,
     "text": "\"〜にする\" means \"decide on\" a choice or selection.",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 47,
@@ -314,7 +314,7 @@
   {
     "id": 53,
     "text": "\"〜せいで\" indicates a negative cause, \"because of\".",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -363,13 +363,13 @@
     "id": 61,
     "text": "\"〜にとって\" means \"for / to (someone)\".",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 62,
     "text": "\"〜につれて\" means \"as... changes, ... also changes\".",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 63,
@@ -429,7 +429,7 @@
     "id": 72,
     "text": "\"〜て以来\" means \"since (doing)\".",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 73,
@@ -506,7 +506,7 @@
   {
     "id": 85,
     "text": "\"〜に限って\" means \"only / exclusively\".",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -578,13 +578,13 @@
   {
     "id": 97,
     "text": "\"〜つもり\" expresses intent, like \"I plan to\" do something. (practice variation 12)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 98,
     "text": "\"〜なければならない\" means \"must\" or \"have to\" do something. (practice variation 13)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -674,7 +674,7 @@
   {
     "id": 113,
     "text": "\"〜すぎる\" attaches to verbs or adjectives to mean \"too much\". (practice variation 28)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -764,7 +764,7 @@
   {
     "id": 128,
     "text": "\"〜にくい\" attaches to verb stems to mean \"hard to do\". (practice variation 43)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -800,7 +800,7 @@
   {
     "id": 134,
     "text": "\"〜ながらも\" means \"even while\" or \"though\" (contrast). (practice variation 49)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

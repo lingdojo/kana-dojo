@@ -2,7 +2,7 @@
   {
     "id": 1,
     "fact": "Japan has a word 'kuchisabishii' (口寂しい) that literally means 'lonely mouth' - the feeling of eating when you're not hungry, just because your mouth wants something to do.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -44,7 +44,7 @@
   {
     "id": 8,
     "fact": "Japan has a dedicated day for curry rice (January 22nd), established because it was first served in school lunches nationwide on that date in 1982.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -122,7 +122,7 @@
   {
     "id": 21,
     "fact": "Japan's oldest company, Kongō Gumi, was a construction company that operated continuously for 1,428 years (578-2006 CE) before being absorbed.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -158,7 +158,7 @@
   {
     "id": 27,
     "fact": "Japanese addresses are based on blocks rather than streets - buildings are numbered by the order they were built, not their location.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -344,7 +344,7 @@
   {
     "id": 58,
     "fact": "Japan's Seikan Tunnel connecting Honshu and Hokkaido is the world's longest undersea tunnel at 53.85 kilometers.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -368,7 +368,7 @@
   {
     "id": 62,
     "fact": "Japan's crime rate is so low that police often spend time helping lost tourists and giving directions.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -392,7 +392,7 @@
   {
     "id": 66,
     "fact": "Japan has a museum entirely dedicated to parasites in Tokyo, featuring a 9-meter tapeworm as its star attraction.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -440,7 +440,7 @@
   {
     "id": 74,
     "fact": "Japan's vending machines have earthquake sensors that automatically release free drinks during major earthquakes as emergency supplies.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -452,7 +452,7 @@
   {
     "id": 76,
     "fact": "Japan has a zero-tolerance policy for drunk driving - any detectable alcohol means immediate arrest and potential prison time.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -518,7 +518,7 @@
   {
     "id": 87,
     "fact": "There's a Japanese word 'dokkiri' (ドッキリ) for the heart-pounding shock of surprise - now the name of prank TV shows.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -704,7 +704,7 @@
   {
     "id": 118,
     "fact": "Japan has 'cuddle therapy' clinics where you can pay to be held, spooned, or simply have physical human contact.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -812,7 +812,7 @@
   {
     "id": 136,
     "fact": "Japan has an island dedicated entirely to art museums - Naoshima, where Tadao Ando's architecture blends with nature.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -902,7 +902,7 @@
   {
     "id": 151,
     "fact": "There's a Japanese practice 'osoji' (大掃除) - major house cleaning before New Year to sweep away the old year's bad luck.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -962,7 +962,7 @@
   {
     "id": 161,
     "fact": "The concept 'doryoku' (努力) means hard work as a core value - success without effort is considered somehow lesser.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1016,7 +1016,7 @@
   {
     "id": 170,
     "fact": "Japan has 'death cafes' where people gather to discuss mortality over tea and cake in a relaxed setting.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1388,7 +1388,7 @@
   {
     "id": 232,
     "fact": "The Japanese word 'tsubame' (燕) means swallow, and many shops put up nesting boxes because swallows are believed to bring good fortune.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1562,7 +1562,7 @@
   {
     "id": 261,
     "fact": "Japan’s 'machi-nami hozon' movement preserves historic townscapes, protecting old streets so locals can still live and work there.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1592,7 +1592,7 @@
   {
     "id": 266,
     "fact": "The phrase 'okage-sama' (おかげさま) expresses gratitude for unseen support — like thanking the people behind your success.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1622,7 +1622,7 @@
   {
     "id": 271,
     "fact": "Japan’s 'yatai' food stalls are famous for ramen, yakitori, and oden, especially during festivals and late nights.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1820,7 +1820,7 @@
   {
     "id": 304,
     "fact": "Japan’s 'hanami' tradition often includes picnic mats, bento boxes, and seasonal sweets under the cherry trees.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1868,7 +1868,7 @@
   {
     "id": 312,
     "fact": "Japan’s 'shichi-go-san' festival celebrates children at ages 3, 5, and 7 with shrine visits and traditional outfits.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1880,7 +1880,7 @@
   {
     "id": 314,
     "fact": "'Wabi-sabi' is the appreciation of beauty in imperfection and the natural aging of materials.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
