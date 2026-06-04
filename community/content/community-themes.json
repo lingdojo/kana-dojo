@@ -346,5 +346,11 @@
     "backgroundColor": "oklch(94.0% 0.012 250.0 / 1)",
     "mainColor": "oklch(50.0% 0.145 30.0 / 1)",
     "secondaryColor": "oklch(40.0% 0.110 250.0 / 1)"
+  },
+  {
+    "id": "tea-ceremony",
+    "backgroundColor": "oklch(25.0% 0.028 145.0 / 1)",
+    "mainColor": "oklch(62.0% 0.115 135.0 / 1)",
+    "secondaryColor": "oklch(75.0% 0.075 90.0 / 1)"
   }
 ]
