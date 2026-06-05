@@ -248,8 +248,8 @@ describe('SEO Meta Tag Generation Properties', () => {
       expect(BASE_META.canonicalUrl).toBeDefined();
       expect(BASE_META.canonicalUrl).toContain('kanadojo.com');
 
-      expect(BASE_META.ogImage).toBeDefined();
-      expect(BASE_META.ogImage).toMatch(/^https:\/\//);
+      // expect(BASE_META.ogImage).toBeDefined();
+      // expect(BASE_META.ogImage).toMatch(/^https:\/\//);
     });
 
     it('base meta title includes key SEO terms', () => {

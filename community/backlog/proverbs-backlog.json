@@ -186,7 +186,7 @@
     "english": "Good medicine tastes bitter",
     "meaning": "Helpful advice often sounds harsh",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 22,
@@ -429,7 +429,7 @@
     "english": "A three-day monk",
     "meaning": "Someone who quits quickly",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 49,
@@ -474,7 +474,7 @@
     "english": "Stomach 80 percent full",
     "meaning": "Eat in moderation",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 54,
@@ -519,7 +519,7 @@
     "english": "Haste will spoil things",
     "meaning": "Haste makes waste",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 59,
@@ -573,7 +573,7 @@
     "english": "See the trees but not the forest",
     "meaning": "Miss the bigger picture",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 65,
@@ -582,7 +582,7 @@
     "english": "If you eat poison, eat the plate too",
     "meaning": "If you must do something risky, go all the way",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 66,
@@ -591,7 +591,7 @@
     "english": "Travel needs companions; life needs kindness",
     "meaning": "Relationships and compassion matter",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 67,
@@ -717,7 +717,7 @@
     "english": "The moon and a turtle",
     "meaning": "Vast difference; not comparable",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 81,
@@ -726,7 +726,7 @@
     "english": "A frog's child is a frog",
     "meaning": "Children resemble their parents",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 82,
@@ -788,7 +788,7 @@
     "romaji": "Nai sode wa furenu",
     "english": "You can't shake a sleeve you don't have",
     "meaning": "You can't give what you don't have",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -852,7 +852,7 @@
     "english": "Sometimes losing is winning",
     "meaning": "Conceding can be the best outcome",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 96,
@@ -942,7 +942,7 @@
     "english": "Haste will spoil things",
     "meaning": "Rushing leads to mistakes",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 106,
@@ -1158,7 +1158,7 @@
     "english": "Travel needs companions; life needs kindness",
     "meaning": "Relationships and compassion matter",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 130,
@@ -1166,7 +1166,7 @@
     "romaji": "Zenin zenka",
     "english": "Good causes bring good results",
     "meaning": "Good deeds lead to good outcomes",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1203,7 +1203,7 @@
     "english": "Once it passes your throat, you forget the heat",
     "meaning": "People forget hardships once they are over",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 135,
@@ -1212,7 +1212,7 @@
     "english": "The mouth is the source of misfortune",
     "meaning": "Careless words cause trouble",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 136,
@@ -1230,7 +1230,7 @@
     "english": "One stone, two birds",
     "meaning": "Do two things with one action",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 138,
@@ -1257,7 +1257,7 @@
     "english": "A rice cake falls from the shelf",
     "meaning": "Unexpected good luck",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 141,
@@ -1284,7 +1284,7 @@
     "english": "Three people together have the wisdom of Monju",
     "meaning": "Two heads are better than one",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 144,
@@ -1311,7 +1311,7 @@
     "english": "If fish has heart, water has heart",
     "meaning": "Good intentions are reciprocated",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 147,
@@ -1383,7 +1383,7 @@
     "english": "A bee on a crying face",
     "meaning": "Misfortune piles up",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 155,
@@ -1464,7 +1464,7 @@
     "english": "Bamboo shoots after rain",
     "meaning": "Things spring up rapidly",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 164,
@@ -1617,6 +1617,6 @@
     "english": "Even a walking dog will hit a stick",
     "meaning": "Acting can lead to luck or trouble",
     "completed": false,
-    "issued": false
+    "issued": true
   }
 ]
