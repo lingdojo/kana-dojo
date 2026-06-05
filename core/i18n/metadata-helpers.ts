@@ -93,16 +93,16 @@ export async function generatePageMetadata(
   const keywords = t(`${key}.keywords`);
 
   // Determine OG image type based on key
-  const getImageType = (key: string): string => {
-    if (key.includes('kana')) return 'kana';
-    if (key.includes('kanji')) return 'kanji';
-    if (key.includes('vocabulary')) return 'vocabulary';
-    if (key.includes('academy')) return 'academy';
-    return 'default';
-  };
+  // const getImageType = (key: string): string => {
+  //   if (key.includes('kana')) return 'kana';
+  //   if (key.includes('kanji')) return 'kanji';
+  //   if (key.includes('vocabulary')) return 'vocabulary';
+  //   if (key.includes('academy')) return 'academy';
+  //   return 'default';
+  // };
 
-  const imageType = getImageType(key);
-  const ogImageUrl = `https://kanadojo.com/api/og?title=${encodeURIComponent(titleShort)}&description=${encodeURIComponent(description.slice(0, 100))}&type=${imageType}`;
+  // const imageType = getImageType(key);
+  // const ogImageUrl = `https://kanadojo.com/api/og?title=${encodeURIComponent(titleShort)}&description=${encodeURIComponent(description.slice(0, 100))}&type=${imageType}`;
 
   const canonicalUrl = joinUrl(baseUrl, locale, pathname);
   return {
@@ -114,20 +114,20 @@ export async function generatePageMetadata(
       description,
       url: canonicalUrl,
       type: 'website',
-      images: [
+      /* images: [
         {
           url: ogImageUrl,
           width: 1200,
           height: 630,
           alt: titleShort,
         },
-      ],
+      ], */
     },
     twitter: {
       card: 'summary_large_image',
       title: titleShort,
       description,
-      images: [ogImageUrl],
+      /* images: [ogImageUrl], */
     },
     alternates: {
       canonical: canonicalUrl,

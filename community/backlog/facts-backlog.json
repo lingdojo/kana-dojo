@@ -140,7 +140,7 @@
   {
     "id": 24,
     "fact": "The Japanese word 'natsukashii' (懐かしい) describes nostalgic longing that's bittersweet rather than sad - missing something while appreciating the memory.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -218,7 +218,7 @@
   {
     "id": 37,
     "fact": "Japanese business cards (meishi) are exchanged with both hands and a bow - placing one in your pocket immediately is considered disrespectful.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -386,7 +386,7 @@
   {
     "id": 65,
     "fact": "The word 'mottainai' (もったいない) expresses deep regret over waste - a concept that sparked modern recycling movements worldwide.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -410,7 +410,7 @@
   {
     "id": 69,
     "fact": "The Japanese word 'koi no yokan' (恋の予感) describes knowing you'll inevitably fall in love with someone you just met.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -476,7 +476,7 @@
   {
     "id": 80,
     "fact": "Japan has 'midnight service' buses for people who miss the last train, charging premium prices to get workers home.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -560,7 +560,7 @@
   {
     "id": 94,
     "fact": "Japan has 'salary men insurance' that pays out if you're transferred to a remote location away from your family.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -878,7 +878,7 @@
   {
     "id": 147,
     "fact": "There's a Japanese word 'tasogare' (黄昏) specifically for the golden hour at dusk when it's hard to recognize faces.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -926,7 +926,7 @@
   {
     "id": 155,
     "fact": "There's a Japanese concept 'uchi-soto' (内外) - inside/outside - defining who you're close to versus everyone else.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1010,7 +1010,7 @@
   {
     "id": 169,
     "fact": "The word 'kimono' (着物) literally means 'thing to wear' - once the generic term for all clothing in Japan.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1070,7 +1070,7 @@
   {
     "id": 179,
     "fact": "There's a Japanese concept 'ningensei' (人間性) meaning humanity or human nature - the qualities that make us human.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1088,7 +1088,7 @@
   {
     "id": 182,
     "fact": "Japan has over 1,500 earthquakes per year, though most are too small to feel - the country sits on four tectonic plates.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1154,7 +1154,7 @@
   {
     "id": 193,
     "fact": "The word 'kawai-sou' (可哀想) means pitiable but with genuine sympathy - you feel sorry for someone's circumstances.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1184,7 +1184,7 @@
   {
     "id": 198,
     "fact": "Japan has a tradition where couples who break up must return or destroy any gifts received - nothing of the ex remains.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1262,7 +1262,7 @@
   {
     "id": 211,
     "fact": "Japan has regional mascots called 'yuru-chara' (ゆるキャラ) that promote towns, products, and even government agencies.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1316,7 +1316,7 @@
   {
     "id": 220,
     "fact": "The Japanese word 'senpai' (先輩) and 'kouhai' (後輩) describe a senior-junior relationship that shapes school and workplace culture.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1328,7 +1328,7 @@
   {
     "id": 222,
     "fact": "Japanese New Year’s cards ('nengajou', 年賀状) are traditionally delivered all at once on January 1st.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1346,7 +1346,7 @@
   {
     "id": 225,
     "fact": "Japan has a concept 'yakudoshi' (厄年) — unlucky ages — where people often visit shrines for purification blessings.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1478,7 +1478,7 @@
   {
     "id": 247,
     "fact": "Japan’s 'michi-no-eki' (道の駅) are highway rest stops that double as local farmers’ markets and souvenir hubs.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1610,7 +1610,7 @@
   {
     "id": 269,
     "fact": "Japan has 'yukidaruma' (雪だるま) snowman festivals where entire parks fill with glowing snow lanterns.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1778,13 +1778,13 @@
   {
     "id": 297,
     "fact": "Japan’s 'eki-ben' (駅弁) are region-specific boxed meals sold at train stations, often featuring local specialties.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 298,
     "fact": "The term 'kintsugi' (金継ぎ) refers to repairing ceramics with gold, embracing cracks as part of an object’s history.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1850,7 +1850,7 @@
   {
     "id": 309,
     "fact": "Japan has a word 'tsundoku' (積ん読) for buying books and letting them pile up unread.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
