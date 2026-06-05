@@ -420,20 +420,27 @@
     "meaning": "Leave temptation unattended at your own risk"
   },
   {
-  "japanese": "笑う門には福来る",
-  "romaji": "Warau kado ni wa fuku kitaru",
-  "english": "Fortune comes to a laughing gate",
-  "meaning": "Happiness and good fortune come to those who smile"
-},{
-  "japanese": "転ばぬ先の杖",
-  "romaji": "Korobanu saki no tsue",
-  "english": "A cane before falling",
-  "meaning": "Prevention is better than cure"
-},
-{
-  "japanese": "案ずるより産むが易し",
-  "romaji": "Anzuru yori umu ga yasushi",
-  "english": "Giving birth is easier than worrying",
-  "meaning": "Things are often easier done than worried about"
-}
+    "japanese": "笑う門には福来る",
+    "romaji": "Warau kado ni wa fuku kitaru",
+    "english": "Fortune comes to a laughing gate",
+    "meaning": "Happiness and good fortune come to those who smile"
+  },
+  {
+    "japanese": "転ばぬ先の杖",
+    "romaji": "Korobanu saki no tsue",
+    "english": "A cane before falling",
+    "meaning": "Prevention is better than cure"
+  },
+  {
+    "japanese": "案ずるより産むが易し",
+    "romaji": "Anzuru yori umu ga yasushi",
+    "english": "Giving birth is easier than worrying",
+    "meaning": "Things are often easier done than worried about"
+  },
+  {
+    "japanese": "一期一会",
+    "romaji": "Ichi go ichi e",
+    "english": "One time, one meeting",
+    "meaning": "Treasure every encounter, for it will never recur"
+  }
 ]
