@@ -438,7 +438,7 @@
     "backgroundColor": "oklch(22.0% 0.025 45.0 / 1)",
     "mainColor": "oklch(70.0% 0.175 20.0 / 1)",
     "secondaryColor": "oklch(75.0% 0.165 145.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false,
     "completedBy": "WBhlietue",
     "completedPR": 18828
@@ -686,7 +686,7 @@
     "backgroundColor": "oklch(21.0% 0.045 155.0 / 1)",
     "mainColor": "oklch(70.0% 0.145 150.0 / 1)",
     "secondaryColor": "oklch(78.0% 0.095 140.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1292,7 +1292,7 @@
     "backgroundColor": "oklch(22.0% 0.020 235.0 / 1)",
     "mainColor": "oklch(78.0% 0.135 215.0 / 1)",
     "secondaryColor": "oklch(85.0% 0.155 90.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1322,7 +1322,7 @@
     "backgroundColor": "oklch(20.0% 0.018 210.0 / 1)",
     "mainColor": "oklch(80.0% 0.085 200.0 / 1)",
     "secondaryColor": "oklch(68.0% 0.105 160.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false,
     "completedBy": "Gamferno",
     "completedPR": 19524
@@ -1376,8 +1376,10 @@
     "backgroundColor": "oklch(16.0% 0.030 280.0 / 1)",
     "mainColor": "oklch(72.0% 0.145 330.0 / 1)",
     "secondaryColor": "oklch(60.0% 0.075 260.0 / 1)",
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": false,
+    "completedBy": "bleir",
+    "completedPR": 19648
   },
   {
     "id": "festival-gold",
@@ -1397,7 +1399,9 @@
     "mainColor": "oklch(80.0% 0.055 215.0 / 1)",
     "secondaryColor": "oklch(62.0% 0.045 240.0 / 1)",
     "issued": false,
-    "completed": false
+    "completed": false,
+    "completedBy": "veeresh4520",
+    "completedPR": 19653
   },
   {
     "id": "matcha-foam",
@@ -1772,7 +1776,7 @@
     "backgroundColor": "oklch(20.0% 0.030 70.0 / 1)",
     "mainColor": "oklch(86.0% 0.155 85.0 / 1)",
     "secondaryColor": "oklch(75.0% 0.095 60.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1976,7 +1980,7 @@
     "backgroundColor": "oklch(22.0% 0.025 95.0 / 1)",
     "mainColor": "oklch(84.0% 0.120 95.0 / 1)",
     "secondaryColor": "oklch(68.0% 0.090 60.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1986,7 +1990,7 @@
     "backgroundColor": "oklch(94.0% 0.025 85.0 / 1)",
     "mainColor": "oklch(60.0% 0.195 25.0 / 1)",
     "secondaryColor": "oklch(88.0% 0.145 90.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false,
     "completedBy": "praneetware",
     "completedPR": 19161

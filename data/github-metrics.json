@@ -1967,5 +1967,16 @@
       "forks": 3,
       "contributors": 2
     }
+  },
+  {
+    "collectedAt": "2026-06-05T11:00:54.756Z",
+    "stars": 2570,
+    "forks": 2199,
+    "contributors": 2012,
+    "diff": {
+      "stars": 7,
+      "forks": 10,
+      "contributors": 7
+    }
   }
 ]
