@@ -95,6 +95,7 @@ describe('POST /api/translate', () => {
     mockCheckTranslateUsageLimit.mockReset();
     mockGetRedisCachedJson.mockReset();
     mockSetRedisCachedJson.mockReset();
+    vi.stubEnv('AZURE_TRANSLATOR_KEY', 'azure-test-key');
     vi.stubEnv('GOOGLE_TRANSLATE_API_KEY', 'test-key');
     vi.stubEnv('TURNSTILE_SECRET_KEY', '');
 
@@ -106,11 +107,11 @@ describe('POST /api/translate', () => {
       vi.fn().mockResolvedValue({
         ok: true,
         status: 200,
-        json: async () => ({
-          data: {
-            translations: [{ translatedText: 'hello' }],
+        json: async () => [
+          {
+            translations: [{ text: 'hello', to: 'en' }],
           },
-        }),
+        ],
       }),
     );
   });
@@ -134,7 +135,7 @@ describe('POST /api/translate', () => {
     expect(fetch).not.toHaveBeenCalled();
   });
 
-  it('blocks obvious bot user agents before Google is called', async () => {
+  it('blocks obvious bot user agents before translation providers are called', async () => {
     const response = await callPost(
       {
         text: 'こんにちは',
@@ -149,7 +150,7 @@ describe('POST /api/translate', () => {
     expect(fetch).not.toHaveBeenCalled();
   });
 
-  it('blocks over-budget uncached requests before Google is called', async () => {
+  it('blocks over-budget uncached requests before translation providers are called', async () => {
     mockCheckTranslateUsageLimit.mockResolvedValue({
       allowed: false,
       requiresVerification: false,
@@ -188,7 +189,7 @@ describe('POST /api/translate', () => {
     expect(fetch).not.toHaveBeenCalled();
   });
 
-  it('calls Google and records usage for normal uncached requests', async () => {
+  it('calls Azure first and records usage for normal uncached requests', async () => {
     const response = await callPost({
       text: 'こんにちは',
       sourceLanguage: 'ja',
@@ -196,6 +197,8 @@ describe('POST /api/translate', () => {
     });
 
     expect(response.status).toBe(200);
+    const data = (await response.json()) as { provider: string };
+    expect(data.provider).toBe('azure');
     expect(mockCheckTranslateRateLimit).toHaveBeenCalledWith('127.0.0.1');
     expect(mockCheckTranslateUsageLimit).toHaveBeenCalledWith(
       '127.0.0.1',
@@ -203,6 +206,57 @@ describe('POST /api/translate', () => {
       { verified: false },
     );
     expect(fetch).toHaveBeenCalledTimes(1);
+    expect(String(vi.mocked(fetch).mock.calls[0][0])).toContain(
+      'api.cognitive.microsofttranslator.com/translate',
+    );
     expect(mockSetRedisCachedJson).toHaveBeenCalledTimes(1);
+  });
+
+  it('falls back to Google when Azure translation fails', async () => {
+    vi.stubGlobal(
+      'fetch',
+      vi
+        .fn()
+        .mockResolvedValueOnce({
+          ok: false,
+          status: 503,
+          json: async () => ({}),
+        })
+        .mockResolvedValueOnce({
+          ok: true,
+          status: 200,
+          json: async () => ({
+            data: {
+              translations: [{ translatedText: 'hello from google' }],
+            },
+          }),
+        }),
+    );
+
+    const errorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
+    try {
+      const response = await callPost({
+        text: 'こんにちは',
+        sourceLanguage: 'ja',
+        targetLanguage: 'en',
+      });
+
+      expect(response.status).toBe(200);
+      const data = (await response.json()) as {
+        translatedText: string;
+        provider: string;
+      };
+      expect(data.translatedText).toBe('hello from google');
+      expect(data.provider).toBe('google');
+      expect(fetch).toHaveBeenCalledTimes(2);
+      expect(String(vi.mocked(fetch).mock.calls[0][0])).toContain(
+        'api.cognitive.microsofttranslator.com/translate',
+      );
+      expect(String(vi.mocked(fetch).mock.calls[1][0])).toContain(
+        'translation.googleapis.com',
+      );
+    } finally {
+      errorSpy.mockRestore();
+    }
   });
 });

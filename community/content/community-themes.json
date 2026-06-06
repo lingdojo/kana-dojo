@@ -342,59 +342,22 @@
     "secondaryColor": "oklch(85.0% 0.095 275.0 / 1)"
   },
   {
-    "id": "snow-lantern",
-    "backgroundColor": "oklch(94.0% 0.012 250.0 / 1)",
-    "mainColor": "oklch(50.0% 0.145 30.0 / 1)",
-    "secondaryColor": "oklch(40.0% 0.110 250.0 / 1)"
-  },
-  [
-  {
-    "id": "night-market",
-    "backgroundColor": "oklch(16.0% 0.035 35.0 / 1)",
-    "mainColor": "oklch(75.0% 0.165 55.0 / 1)",
-    "secondaryColor": "oklch(62.0% 0.185 20.0 / 1)"
+    "id": "edo-vintage",
+    "backgroundColor": "oklch(24.0% 0.028 65.0 / 1)",
+    "mainColor": "oklch(72.0% 0.085 70.0 / 1)",
+    "secondaryColor": "oklch(60.0% 0.065 55.0 / 1)"
   },
   {
-    "id": "tsukimi-moon",
-    "backgroundColor": "oklch(18.0% 0.028 255.0 / 1)",
-    "mainColor": "oklch(92.0% 0.020 95.0 / 1)",
-    "secondaryColor": "oklch(65.0% 0.105 270.0 / 1)"
+    "id": "citrus-shrine",
+    "backgroundColor": "oklch(20.0% 0.030 70.0 / 1)",
+    "mainColor": "oklch(86.0% 0.155 85.0 / 1)",
+    "secondaryColor": "oklch(75.0% 0.095 60.0 / 1)"
   },
   {
-    "id": "matcha-drift",
-    "backgroundColor": "oklch(18.5% 0.035 140.0 / 1)",
-    "mainColor": "oklch(76.0% 0.140 135.0 / 1)",
-    "secondaryColor": "oklch(72.0% 0.070 80.0 / 1)"
-  },
-  {
-    "id": "hanami-picnic",
-    "backgroundColor": "oklch(96.0% 0.018 20.0 / 1)",
-    "mainColor": "oklch(70.0% 0.165 350.0 / 1)",
-    "secondaryColor": "oklch(78.0% 0.120 135.0 / 1)"
-  },
-  {
-    "id": "pagoda-twilight",
-    "backgroundColor": "oklch(20.0% 0.045 290.0 / 1)",
-    "mainColor": "oklch(68.0% 0.155 315.0 / 1)",
-    "secondaryColor": "oklch(75.0% 0.125 280.0 / 1)"
-  },
-  {
-    "id": "midnight-ramen",
-    "backgroundColor": "oklch(16.0% 0.042 30.0 / 1)",
-    "mainColor": "oklch(78.0% 0.160 45.0 / 1)",
-    "secondaryColor": "oklch(85.0% 0.120 85.0 / 1)"
-  },
-  {
-    "id": "tea-garden",
-    "backgroundColor": "oklch(22.0% 0.035 140.0 / 1)",
-    "mainColor": "oklch(74.0% 0.145 135.0 / 1)",
-    "secondaryColor": "oklch(65.0% 0.085 115.0 / 1)"
-  },
-  {
-    "id": "blooming-ume",
-    "backgroundColor": "oklch(95.0% 0.015 15.0 / 1)",
-    "mainColor": "oklch(62.0% 0.175 350.0 / 1)",
-    "secondaryColor": "oklch(75.0% 0.085 85.0 / 1)"
+    "id": "ryokan-evening",
+    "backgroundColor": "oklch(23.0% 0.038 280.0 / 1)",
+    "mainColor": "oklch(78.0% 0.130 55.0 / 1)",
+    "secondaryColor": "oklch(68.0% 0.095 30.0 / 1)"
   },
   {
     "id": "ocean-tofu",
@@ -719,7 +682,9 @@
     "backgroundColor": "oklch(15.0% 0.048 25.0 / 1)",
     "mainColor": "oklch(65.0% 0.225 30.0 / 1)",
     "secondaryColor": "oklch(90.0% 0.055 95.0 / 1)"
+    "id": "ramen-steam",
+    "backgroundColor": "oklch(21.0% 0.038 50.0 / 1)",
+    "mainColor": "oklch(82.0% 0.135 85.0 / 1)",
+    "secondaryColor": "oklch(65.0% 0.165 40.0 / 1)"
   }
-]
-
 ]
