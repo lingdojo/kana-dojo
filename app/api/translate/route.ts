@@ -83,6 +83,35 @@ interface GoogleTranslateResponse {
   };
 }
 
+interface AzureTranslateResponseItem {
+  detectedLanguage?: {
+    language: string;
+    score: number;
+  };
+  translations: Array<{
+    text: string;
+    to: string;
+  }>;
+}
+
+interface TranslationProviderResult {
+  translatedText: string;
+  detectedSourceLanguage?: string;
+  provider: 'azure' | 'google';
+}
+
+class TranslationProviderError extends Error {
+  constructor(
+    message: string,
+    readonly provider: 'azure' | 'google',
+    readonly status?: number,
+    readonly authError = false,
+  ) {
+    super(message);
+    this.name = 'TranslationProviderError';
+  }
+}
+
 // Type for kuroshiro instance (using type assertion since it's dynamically imported)
 type KuroshiroInstance = {
   convert: (
@@ -207,9 +236,160 @@ async function verifyTurnstileToken(
   }
 }
 
+async function translateWithAzure({
+  text,
+  sourceLanguage,
+  targetLanguage,
+}: {
+  text: string;
+  sourceLanguage: 'en' | 'ja';
+  targetLanguage: 'en' | 'ja';
+}): Promise<TranslationProviderResult> {
+  const apiKey = process.env.AZURE_TRANSLATOR_KEY;
+  if (!apiKey) {
+    throw new TranslationProviderError(
+      'AZURE_TRANSLATOR_KEY is not configured',
+      'azure',
+      500,
+      true,
+    );
+  }
+
+  const endpoint =
+    process.env.AZURE_TRANSLATOR_ENDPOINT ||
+    'https://api.cognitive.microsofttranslator.com';
+  const region = process.env.AZURE_TRANSLATOR_REGION;
+  const azureApiUrl = new URL('/translate', endpoint);
+  azureApiUrl.searchParams.set('api-version', '3.0');
+  azureApiUrl.searchParams.set('from', sourceLanguage);
+  azureApiUrl.searchParams.set('to', targetLanguage);
+  azureApiUrl.searchParams.set('textType', 'plain');
+
+  const headers: Record<string, string> = {
+    'Content-Type': 'application/json',
+    'Ocp-Apim-Subscription-Key': apiKey,
+  };
+  if (region) {
+    headers['Ocp-Apim-Subscription-Region'] = region;
+  }
+
+  const azureResponse = await fetch(azureApiUrl, {
+    method: 'POST',
+    headers,
+    body: JSON.stringify([{ Text: text }]),
+  });
+
+  if (!azureResponse.ok) {
+    throw new TranslationProviderError(
+      `Azure Translator error: ${azureResponse.status}`,
+      'azure',
+      azureResponse.status,
+      azureResponse.status === 401 || azureResponse.status === 403,
+    );
+  }
+
+  const data = (await azureResponse.json()) as AzureTranslateResponseItem[];
+  const translation = data[0]?.translations[0];
+  if (!translation?.text) {
+    throw new TranslationProviderError(
+      'Azure Translator returned an empty translation',
+      'azure',
+      502,
+    );
+  }
+
+  return {
+    translatedText: translation.text,
+    detectedSourceLanguage: data[0]?.detectedLanguage?.language,
+    provider: 'azure',
+  };
+}
+
+async function translateWithGoogle({
+  text,
+  sourceLanguage,
+  targetLanguage,
+}: {
+  text: string;
+  sourceLanguage: 'en' | 'ja';
+  targetLanguage: 'en' | 'ja';
+}): Promise<TranslationProviderResult> {
+  const apiKey = process.env.GOOGLE_TRANSLATE_API_KEY;
+  if (!apiKey) {
+    throw new TranslationProviderError(
+      'GOOGLE_TRANSLATE_API_KEY is not configured',
+      'google',
+      500,
+      true,
+    );
+  }
+
+  const googleApiUrl = `https://translation.googleapis.com/language/translate/v2?key=${apiKey}`;
+
+  const googleResponse = await fetch(googleApiUrl, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      q: text,
+      source: sourceLanguage,
+      target: targetLanguage,
+      format: 'text',
+    }),
+  });
+
+  if (!googleResponse.ok) {
+    throw new TranslationProviderError(
+      `Google Translate error: ${googleResponse.status}`,
+      'google',
+      googleResponse.status,
+      googleResponse.status === 401 || googleResponse.status === 403,
+    );
+  }
+
+  const data = (await googleResponse.json()) as GoogleTranslateResponse;
+  const translation = data.data.translations[0];
+  if (!translation?.translatedText) {
+    throw new TranslationProviderError(
+      'Google Translate returned an empty translation',
+      'google',
+      502,
+    );
+  }
+
+  return {
+    translatedText: translation.translatedText,
+    detectedSourceLanguage: translation.detectedSourceLanguage,
+    provider: 'google',
+  };
+}
+
+async function translateWithFallback({
+  text,
+  sourceLanguage,
+  targetLanguage,
+}: {
+  text: string;
+  sourceLanguage: 'en' | 'ja';
+  targetLanguage: 'en' | 'ja';
+}): Promise<TranslationProviderResult> {
+  try {
+    return await translateWithAzure({ text, sourceLanguage, targetLanguage });
+  } catch (azureError) {
+    const status =
+      azureError instanceof TranslationProviderError
+        ? azureError.status
+        : undefined;
+    console.error('Azure Translator failed, falling back to Google:', status);
+    return translateWithGoogle({ text, sourceLanguage, targetLanguage });
+  }
+}
+
 /**
  * POST /api/translate
- * Translates text between English and Japanese using Google Cloud Translation API
+ * Translates text between English and Japanese using Azure Translator first,
+ * with Google Cloud Translation as a secondary fallback.
  */
 export async function POST(request: NextRequest) {
   try {
@@ -421,83 +601,57 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Cache miss - will call Google API
+    // Cache miss - will call the translation provider.
     cacheMisses++;
 
-    // Get API key from environment
-    const apiKey = process.env.GOOGLE_TRANSLATE_API_KEY;
-    if (!apiKey) {
-      console.error('GOOGLE_TRANSLATE_API_KEY is not configured');
-      return NextResponse.json(
-        {
-          code: ERROR_CODES.AUTH_ERROR,
-          message: 'Translation service configuration error.',
-          error: 'Translation service configuration error.',
-          status: 500,
-        },
-        { status: 500 },
-      );
-    }
+    let translation: TranslationProviderResult;
+    try {
+      translation = await translateWithFallback({
+        text: normalizedText,
+        sourceLanguage,
+        targetLanguage,
+      });
+    } catch (error) {
+      const providerError =
+        error instanceof TranslationProviderError ? error : null;
+      const status = providerError?.status || 500;
 
-    // Call Google Cloud Translation API
-    const googleApiUrl = `https://translation.googleapis.com/language/translate/v2?key=${apiKey}`;
+      if (providerError?.status === 429) {
+        return NextResponse.json(
+          {
+            code: ERROR_CODES.RATE_LIMIT,
+            message: 'Too many requests. Please wait a moment and try again.',
+            error: 'Too many requests. Please wait a moment and try again.',
+            status: 429,
+          },
+          { status: 429 },
+        );
+      }
 
-    const googleResponse = await fetch(googleApiUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        q: normalizedText,
-        source: sourceLanguage,
-        target: targetLanguage,
-        format: 'text',
-      }),
-    });
+      if (providerError?.authError) {
+        console.error('Translation provider authentication error:', status);
+        return NextResponse.json(
+          {
+            code: ERROR_CODES.AUTH_ERROR,
+            message: 'Translation service configuration error.',
+            error: 'Translation service configuration error.',
+            status,
+          },
+          { status },
+        );
+      }
 
-    // Handle rate limiting
-    if (googleResponse.status === 429) {
-      return NextResponse.json(
-        {
-          code: ERROR_CODES.RATE_LIMIT,
-          message: 'Too many requests. Please wait a moment and try again.',
-          error: 'Too many requests. Please wait a moment and try again.',
-          status: 429,
-        },
-        { status: 429 },
-      );
-    }
-
-    // Handle auth errors
-    if (googleResponse.status === 401 || googleResponse.status === 403) {
-      console.error('Google API authentication error:', googleResponse.status);
-      return NextResponse.json(
-        {
-          code: ERROR_CODES.AUTH_ERROR,
-          message: 'Translation service configuration error.',
-          error: 'Translation service configuration error.',
-          status: googleResponse.status,
-        },
-        { status: googleResponse.status },
-      );
-    }
-
-    // Handle other errors
-    if (!googleResponse.ok) {
-      console.error('Google API error:', googleResponse.status);
+      console.error('Translation provider error:', status);
       return NextResponse.json(
         {
           code: ERROR_CODES.API_ERROR,
           message: 'Translation service is temporarily unavailable.',
           error: 'Translation service is temporarily unavailable.',
-          status: googleResponse.status,
+          status,
         },
-        { status: googleResponse.status },
+        { status },
       );
     }
-
-    const data = (await googleResponse.json()) as GoogleTranslateResponse;
-    const translation = data.data.translations[0];
 
     // Generate romanization when translating TO Japanese
     let romanization: string | undefined;
@@ -546,6 +700,7 @@ export async function POST(request: NextRequest) {
       translatedText: translation.translatedText,
       detectedSourceLanguage: translation.detectedSourceLanguage,
       romanization,
+      provider: translation.provider,
     });
     // Allow browser to cache translation results for 1 hour
     response.headers.set('Cache-Control', 'private, max-age=3600');
