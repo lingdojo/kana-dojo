@@ -8,6 +8,7 @@ This feature contains the user-facing translator experience and the client-side 
 - Longer shared text still pre-fills the input, but requires an intentional user action.
 - The store now carries optional verification state so suspicious requests can be challenged without changing the normal path.
 - Client requests include a request context so the server can distinguish manual use from URL-driven traffic.
+- The server route uses Azure Translator by default and falls back to Google Cloud Translation if Azure fails.
 
 ## SEO note
 
