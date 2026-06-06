@@ -38,12 +38,10 @@ interface TranslateUsageConfig {
   monthlyCharLimit: number;
   globalMonthlyCharLimit: number;
   verificationDailyCharThreshold: number;
-  verificationDailyRequestThreshold: number;
 }
 
 interface TranslateUsageRecord {
   dailyChars: number;
-  dailyRequests: number;
   monthlyChars: number;
   monthlyResetAt: number;
   dailyResetAt: number;
@@ -81,24 +79,26 @@ export function getTranslateUsageConfig(): TranslateUsageConfig {
     ),
     globalMonthlyCharLimit: readPositiveIntEnv(
       'TRANSLATE_GLOBAL_MONTHLY_CHAR_LIMIT',
-      450_000,
+      3_000_000,
     ),
     verificationDailyCharThreshold: readPositiveIntEnv(
       'TRANSLATE_VERIFICATION_DAILY_CHAR_THRESHOLD',
       10_000,
-    ),
-    verificationDailyRequestThreshold: readPositiveIntEnv(
-      'TRANSLATE_VERIFICATION_DAILY_REQUEST_THRESHOLD',
-      20,
     ),
   };
 }
 
 // Default configuration for translation API
 export const TRANSLATE_RATE_LIMIT_CONFIG: RateLimitConfig = {
-  maxRequests: 10, // 10 requests per minute per IP
+  maxRequests: 120, // High ceiling; character budgets are the real cost control.
   windowMs: 60 * 1000, // 1 minute window
-  dailyLimit: 200, // 200 requests per day per IP
+  dailyLimit: 5000, // High backstop for pathological automation.
+  maxTrackedIPs: 10000, // Track up to 10k unique IPs
+};
+
+export const TRANSLATE_BURST_RATE_LIMIT_CONFIG: RateLimitConfig = {
+  maxRequests: 20, // Short-window guard against machine-speed bursts.
+  windowMs: 10 * 1000,
   maxTrackedIPs: 10000, // Track up to 10k unique IPs
 };
 
@@ -120,7 +120,7 @@ export const PROGRESS_SYNC_RATE_LIMIT_CONFIG: RateLimitConfig = {
 
 // Global rate limiting (fallback when IP tracking fails)
 export const GLOBAL_RATE_LIMIT_CONFIG: RateLimitConfig = {
-  maxRequests: 100, // 100 total requests per minute globally
+  maxRequests: 1000, // Total requests per minute globally per endpoint limiter.
   windowMs: 60 * 1000,
 };
 
@@ -478,6 +478,7 @@ async function checkRateLimitWithFallback(
 
 // Singleton instances for each API endpoint
 let translateRateLimiter: RateLimiter | null = null;
+let translateBurstRateLimiter: RateLimiter | null = null;
 let analyzeRateLimiter: RateLimiter | null = null;
 let progressSyncRateLimiter: RateLimiter | null = null;
 const translateUsageRecords: Map<string, TranslateUsageRecord> = new Map();
@@ -490,6 +491,15 @@ export function getTranslateRateLimiter(): RateLimiter {
     translateRateLimiter = new RateLimiter(TRANSLATE_RATE_LIMIT_CONFIG);
   }
   return translateRateLimiter;
+}
+
+export function getTranslateBurstRateLimiter(): RateLimiter {
+  if (!translateBurstRateLimiter) {
+    translateBurstRateLimiter = new RateLimiter(
+      TRANSLATE_BURST_RATE_LIMIT_CONFIG,
+    );
+  }
+  return translateBurstRateLimiter;
 }
 
 /**
@@ -516,6 +526,18 @@ export async function checkTranslateRateLimit(
   identifier: string,
 ): Promise<RateLimitResult> {
   const limiter = getTranslateRateLimiter();
+  const burstLimiter = getTranslateBurstRateLimiter();
+  const burstResult = await checkRateLimitWithFallback(
+    identifier,
+    TRANSLATE_BURST_RATE_LIMIT_CONFIG,
+    'translate-burst',
+    burstLimiter,
+  );
+
+  if (!burstResult.allowed) {
+    return burstResult;
+  }
+
   return checkRateLimitWithFallback(
     identifier,
     TRANSLATE_RATE_LIMIT_CONFIG,
@@ -547,13 +569,11 @@ export async function checkTranslateUsageLimit(
     const dayId = getDayIdUTC(now);
     const monthId = getMonthIdUTC(now);
     const dailyCharsKey = `translate:usage:ip:${identifier}:chars:${dayId}`;
-    const dailyRequestsKey = `translate:usage:ip:${identifier}:requests:${dayId}`;
     const monthlyCharsKey = `translate:usage:ip:${identifier}:chars:${monthId}`;
     const globalMonthlyCharsKey = `translate:usage:global:chars:${monthId}`;
 
     const existingResults = await redisPipeline([
       ['GET', dailyCharsKey],
-      ['GET', dailyRequestsKey],
       ['GET', monthlyCharsKey],
       ['GET', globalMonthlyCharsKey],
     ]);
@@ -561,9 +581,8 @@ export async function checkTranslateUsageLimit(
     const projectedResult = buildTranslateUsageResult({
       config,
       dailyChars: Number(existingResults[0]?.result ?? 0) + chars,
-      dailyRequests: Number(existingResults[1]?.result ?? 0) + 1,
-      monthlyChars: Number(existingResults[2]?.result ?? 0) + chars,
-      globalMonthlyChars: Number(existingResults[3]?.result ?? 0) + chars,
+      monthlyChars: Number(existingResults[1]?.result ?? 0) + chars,
+      globalMonthlyChars: Number(existingResults[2]?.result ?? 0) + chars,
       dailyResetAt,
       monthlyResetAt,
       verified: Boolean(options.verified),
@@ -576,8 +595,6 @@ export async function checkTranslateUsageLimit(
     const results = await redisPipeline([
       ['INCRBY', dailyCharsKey, chars],
       ['EXPIRE', dailyCharsKey, 86400],
-      ['INCR', dailyRequestsKey],
-      ['EXPIRE', dailyRequestsKey, 86400],
       ['INCRBY', monthlyCharsKey, chars],
       ['EXPIRE', monthlyCharsKey, 2678400],
       ['INCRBY', globalMonthlyCharsKey, chars],
@@ -585,14 +602,12 @@ export async function checkTranslateUsageLimit(
     ]);
 
     const dailyChars = Number(results[0]?.result ?? 0);
-    const dailyRequests = Number(results[2]?.result ?? 0);
-    const monthlyChars = Number(results[4]?.result ?? 0);
-    const globalMonthlyChars = Number(results[6]?.result ?? 0);
+    const monthlyChars = Number(results[2]?.result ?? 0);
+    const globalMonthlyChars = Number(results[4]?.result ?? 0);
 
     return buildTranslateUsageResult({
       config,
       dailyChars,
-      dailyRequests,
       monthlyChars,
       globalMonthlyChars,
       dailyResetAt,
@@ -604,7 +619,6 @@ export async function checkTranslateUsageLimit(
     if (!record || now >= record.monthlyResetAt) {
       record = {
         dailyChars: 0,
-        dailyRequests: 0,
         monthlyChars: 0,
         dailyResetAt,
         monthlyResetAt,
@@ -614,14 +628,12 @@ export async function checkTranslateUsageLimit(
 
     if (now >= record.dailyResetAt) {
       record.dailyChars = 0;
-      record.dailyRequests = 0;
       record.dailyResetAt = dailyResetAt;
     }
 
     const projectedResult = buildTranslateUsageResult({
       config,
       dailyChars: record.dailyChars + chars,
-      dailyRequests: record.dailyRequests + 1,
       monthlyChars: record.monthlyChars + chars,
       globalMonthlyChars: record.monthlyChars + chars,
       dailyResetAt: record.dailyResetAt,
@@ -634,7 +646,6 @@ export async function checkTranslateUsageLimit(
     }
 
     record.dailyChars += chars;
-    record.dailyRequests += 1;
     record.monthlyChars += chars;
 
     return projectedResult;
@@ -644,7 +655,6 @@ export async function checkTranslateUsageLimit(
 function buildTranslateUsageResult({
   config,
   dailyChars,
-  dailyRequests,
   monthlyChars,
   globalMonthlyChars,
   dailyResetAt,
@@ -653,7 +663,6 @@ function buildTranslateUsageResult({
 }: {
   config: TranslateUsageConfig;
   dailyChars: number;
-  dailyRequests: number;
   monthlyChars: number;
   globalMonthlyChars: number;
   dailyResetAt: number;
@@ -710,9 +719,7 @@ function buildTranslateUsageResult({
   }
 
   const requiresVerification =
-    !verified &&
-    (dailyChars > config.verificationDailyCharThreshold ||
-      dailyRequests > config.verificationDailyRequestThreshold);
+    !verified && dailyChars > config.verificationDailyCharThreshold;
 
   return {
     allowed: true,
