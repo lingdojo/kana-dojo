@@ -1978,5 +1978,16 @@
       "forks": 10,
       "contributors": 7
     }
+  },
+  {
+    "collectedAt": "2026-06-05T23:00:48.604Z",
+    "stars": 2574,
+    "forks": 2207,
+    "contributors": 2020,
+    "diff": {
+      "stars": 4,
+      "forks": 8,
+      "contributors": 8
+    }
   }
 ]
