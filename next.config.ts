@@ -10,6 +10,8 @@ const withBundleAnalyzer = bundleAnalyzer({
 const isDev = process.env.NODE_ENV !== 'production';
 
 const posthogHost = process.env.NEXT_PUBLIC_POSTHOG_HOST;
+const posthogServerHost =
+  process.env.POSTHOG_HOST ?? process.env.NEXT_PUBLIC_POSTHOG_HOST;
 const cspConnectSrc = [
   "'self'",
   'https://www.googletagmanager.com',
@@ -23,6 +25,9 @@ const cspConnectSrc = [
 
 if (posthogHost) {
   cspConnectSrc.push(posthogHost);
+}
+if (posthogServerHost && posthogServerHost !== posthogHost) {
+  cspConnectSrc.push(posthogServerHost);
 }
 
 const cspEnforced =

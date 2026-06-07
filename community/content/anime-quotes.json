@@ -691,5 +691,26 @@
     "english": "But... that's what I like. (alt wording 16) (alt wording 68)",
     "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
     "character": "Yoshikage Kira"
-  }
+  },
+  {
+  "japanese": "これがシュタインズ・ゲートの選択だ。",
+  "romaji": "Kore ga Shutainzu Gēto no sentaku da.",
+  "english": "This is the choice of Steins Gate.",
+  "anime": "Steins;Gate",
+  "character": "Rintaro Okabe"
+  },
+  {
+  "japanese": "何でもは知らないわよ。知ってることだけ。",
+  "romaji": "Nandemo wa shiranai wa yo. Shitteru koto dake.",
+  "english": "I don't know everything. I only know what I know.",
+  "anime": "Bakemonogatari",
+  "character": "Hitagi Senjougahara"
+  },
+  {
+  "japanese": "駆逐してやる!この世から一匹残らず!",
+  "romaji": "Kuchiku shite yaru! Kono yo kara ippiki nokorazu!",
+  "english": "I'll exterminate them! Every last one from this world! (alt wording 36) (alt wording 88)",
+  "anime": "Attack on Titan",
+  "character": "Eren Yeager"
+}
 ]

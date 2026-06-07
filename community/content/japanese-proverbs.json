@@ -54,10 +54,10 @@
     "meaning": "Enjoy observing; you don't always need to participate"
   },
   {
-    "japanese": "七転び八起き",
-    "romaji": "Nanakorobi yaoki",
-    "english": "Fall seven times, get up eight",
-    "meaning": "Never give up"
+  "japanese": "七転び八起き",
+  "romaji": "Nanakorobi yaoki",
+  "english": "Fall seven times, get up eight",
+  "meaning": "Never give up"
   },
   {
     "japanese": "二度あることは三度ある",
@@ -442,5 +442,30 @@
     "romaji": "Nai sode wa furenu",
     "english": "You can't shake a sleeve you don't have",
     "meaning": "You can't give what you don't have"
+  },
+  {
+  "japanese": "三人寄れば文殊の知恵",
+  "romaji": "Sannin yoreba monju no chie",
+  "english": "Three people together have the wisdom of Monju",
+  "meaning": "Two heads are better than one; collective wisdom is powerful"
+  },
+  {
+  "japanese": "見るは法楽",
+  "romaji": "Miru wa houraku",
+  "english": "Just watching is a pleasure",
+  "meaning": "Enjoy observing; you don't always need to participate"
+  },
+  {
+  "japanese": "七転び八起き",
+  "romaji": "Nanakorobi yaoki",
+  "english": "Fall seven times, get up eight",
+  "meaning": "Never give up"
+  },
+  {
+    "japanese": "二度あることは三度ある",
+    "romaji": "Nido aru koto wa sando aru",
+    "english": "What happens twice will happen a third time",
+    "meaning": "Patterns tend to repeat"
   }
+  
 ]

@@ -71,6 +71,7 @@
     "next-scroll-restoration": "^0.0.4",
     "next-sitemap": "^4.2.3",
     "posthog-js": "^1.294.0",
+    "posthog-node": "^5.36.3",
     "random-js": "^2.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

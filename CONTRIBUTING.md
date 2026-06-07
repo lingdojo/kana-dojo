@@ -137,6 +137,19 @@ Here’s how to keep things tidy:
 
 If your change affects visuals (themes, fonts, UI), take a quick screenshot or GIF for your PR. Reviewers will love you for it.
 
+### Editing JSON content safely
+
+Many community contributions update JSON files such as `community/content/japan-facts.json`.
+If the text itself contains quotation marks, escape inner double quotes so the JSON stays valid.
+
+```json
+{
+  "fact": "The phrase 'yoroshiku onegaishimasu' (よろしくお願いします) is a versatile expression for \"please take care of me.\""
+}
+```
+
+Quick rule: keep JSON keys and values wrapped in double quotes, and write embedded double quotes as `\"`.
+
 ## 🌐 Translating the App
 
 KanaDojo is available in English, Spanish, and Japanese — and we're always looking to add more languages! If you're interested in translating the app, see our [**Translation Guide**](./docs/TRANSLATION_GUIDE.md) for detailed instructions on:

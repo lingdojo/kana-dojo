@@ -10,6 +10,19 @@ import {
   getRedisCachedJson,
   setRedisCachedJson,
 } from '@/shared/infra/server/apiCache';
+import { captureServerEvent } from '@/shared/analytics/posthog-server';
+
+// Per-route kill switch for translate-route PostHog events.
+// Currently disabled to stay under the PostHog free plan event quota.
+// Flip to `true` to re-enable all events emitted by this route.
+// Other server-side PostHog callers are unaffected.
+const TRANSLATE_ANALYTICS_ENABLED = false;
+const trackTranslate: (
+  event: string,
+  properties?: Record<string, unknown>,
+) => void = TRANSLATE_ANALYTICS_ENABLED
+  ? captureServerEvent
+  : () => {};
 
 // Simple in-memory cache for translations (reduces API calls)
 const translationCache = new Map<
@@ -81,6 +94,35 @@ interface GoogleTranslateResponse {
       detectedSourceLanguage?: string;
     }>;
   };
+}
+
+interface AzureTranslateResponseItem {
+  detectedLanguage?: {
+    language: string;
+    score: number;
+  };
+  translations: Array<{
+    text: string;
+    to: string;
+  }>;
+}
+
+interface TranslationProviderResult {
+  translatedText: string;
+  detectedSourceLanguage?: string;
+  provider: 'azure' | 'google';
+}
+
+class TranslationProviderError extends Error {
+  constructor(
+    message: string,
+    readonly provider: 'azure' | 'google',
+    readonly status?: number,
+    readonly authError = false,
+  ) {
+    super(message);
+    this.name = 'TranslationProviderError';
+  }
 }
 
 // Type for kuroshiro instance (using type assertion since it's dynamically imported)
@@ -207,11 +249,163 @@ async function verifyTurnstileToken(
   }
 }
 
+async function translateWithAzure({
+  text,
+  sourceLanguage,
+  targetLanguage,
+}: {
+  text: string;
+  sourceLanguage: 'en' | 'ja';
+  targetLanguage: 'en' | 'ja';
+}): Promise<TranslationProviderResult> {
+  const apiKey = process.env.AZURE_TRANSLATOR_KEY;
+  if (!apiKey) {
+    throw new TranslationProviderError(
+      'AZURE_TRANSLATOR_KEY is not configured',
+      'azure',
+      500,
+      true,
+    );
+  }
+
+  const endpoint =
+    process.env.AZURE_TRANSLATOR_ENDPOINT ||
+    'https://api.cognitive.microsofttranslator.com';
+  const region = process.env.AZURE_TRANSLATOR_REGION;
+  const azureApiUrl = new URL('/translate', endpoint);
+  azureApiUrl.searchParams.set('api-version', '3.0');
+  azureApiUrl.searchParams.set('from', sourceLanguage);
+  azureApiUrl.searchParams.set('to', targetLanguage);
+  azureApiUrl.searchParams.set('textType', 'plain');
+
+  const headers: Record<string, string> = {
+    'Content-Type': 'application/json',
+    'Ocp-Apim-Subscription-Key': apiKey,
+  };
+  if (region) {
+    headers['Ocp-Apim-Subscription-Region'] = region;
+  }
+
+  const azureResponse = await fetch(azureApiUrl, {
+    method: 'POST',
+    headers,
+    body: JSON.stringify([{ Text: text }]),
+  });
+
+  if (!azureResponse.ok) {
+    throw new TranslationProviderError(
+      `Azure Translator error: ${azureResponse.status}`,
+      'azure',
+      azureResponse.status,
+      azureResponse.status === 401 || azureResponse.status === 403,
+    );
+  }
+
+  const data = (await azureResponse.json()) as AzureTranslateResponseItem[];
+  const translation = data[0]?.translations[0];
+  if (!translation?.text) {
+    throw new TranslationProviderError(
+      'Azure Translator returned an empty translation',
+      'azure',
+      502,
+    );
+  }
+
+  return {
+    translatedText: translation.text,
+    detectedSourceLanguage: data[0]?.detectedLanguage?.language,
+    provider: 'azure',
+  };
+}
+
+async function translateWithGoogle({
+  text,
+  sourceLanguage,
+  targetLanguage,
+}: {
+  text: string;
+  sourceLanguage: 'en' | 'ja';
+  targetLanguage: 'en' | 'ja';
+}): Promise<TranslationProviderResult> {
+  const apiKey = process.env.GOOGLE_TRANSLATE_API_KEY;
+  if (!apiKey) {
+    throw new TranslationProviderError(
+      'GOOGLE_TRANSLATE_API_KEY is not configured',
+      'google',
+      500,
+      true,
+    );
+  }
+
+  const googleApiUrl = `https://translation.googleapis.com/language/translate/v2?key=${apiKey}`;
+
+  const googleResponse = await fetch(googleApiUrl, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      q: text,
+      source: sourceLanguage,
+      target: targetLanguage,
+      format: 'text',
+    }),
+  });
+
+  if (!googleResponse.ok) {
+    throw new TranslationProviderError(
+      `Google Translate error: ${googleResponse.status}`,
+      'google',
+      googleResponse.status,
+      googleResponse.status === 401 || googleResponse.status === 403,
+    );
+  }
+
+  const data = (await googleResponse.json()) as GoogleTranslateResponse;
+  const translation = data.data.translations[0];
+  if (!translation?.translatedText) {
+    throw new TranslationProviderError(
+      'Google Translate returned an empty translation',
+      'google',
+      502,
+    );
+  }
+
+  return {
+    translatedText: translation.translatedText,
+    detectedSourceLanguage: translation.detectedSourceLanguage,
+    provider: 'google',
+  };
+}
+
+async function translateWithFallback({
+  text,
+  sourceLanguage,
+  targetLanguage,
+}: {
+  text: string;
+  sourceLanguage: 'en' | 'ja';
+  targetLanguage: 'en' | 'ja';
+}): Promise<TranslationProviderResult> {
+  try {
+    return await translateWithAzure({ text, sourceLanguage, targetLanguage });
+  } catch (azureError) {
+    const status =
+      azureError instanceof TranslationProviderError
+        ? azureError.status
+        : undefined;
+    console.error('Azure Translator failed, falling back to Google:', status);
+    return translateWithGoogle({ text, sourceLanguage, targetLanguage });
+  }
+}
+
 /**
  * POST /api/translate
- * Translates text between English and Japanese using Google Cloud Translation API
+ * Translates text between English and Japanese using Azure Translator first,
+ * with Google Cloud Translation as a secondary fallback.
  */
 export async function POST(request: NextRequest) {
+  const startTime = Date.now();
   try {
     const body = (await request.json()) as TranslationRequestBody;
     const {
@@ -224,6 +418,11 @@ export async function POST(request: NextRequest) {
 
     // Validate input
     if (!text || typeof text !== 'string') {
+      trackTranslate('translate_rejected', {
+        reason: 'invalid_input',
+        status: 400,
+        char_count: 0,
+      });
       return NextResponse.json(
         {
           code: ERROR_CODES.INVALID_INPUT,
@@ -236,6 +435,13 @@ export async function POST(request: NextRequest) {
     }
 
     if (text.trim().length === 0) {
+      trackTranslate('translate_rejected', {
+        reason: 'invalid_input',
+        status: 400,
+        source: sourceLanguage,
+        target: targetLanguage,
+        char_count: 0,
+      });
       return NextResponse.json(
         {
           code: ERROR_CODES.INVALID_INPUT,
@@ -248,6 +454,13 @@ export async function POST(request: NextRequest) {
     }
 
     if (text.length > 5000) {
+      trackTranslate('translate_rejected', {
+        reason: 'invalid_input',
+        status: 400,
+        source: sourceLanguage,
+        target: targetLanguage,
+        char_count: text.length,
+      });
       return NextResponse.json(
         {
           code: ERROR_CODES.INVALID_INPUT,
@@ -265,6 +478,13 @@ export async function POST(request: NextRequest) {
       !validLanguages.includes(sourceLanguage) ||
       !validLanguages.includes(targetLanguage)
     ) {
+      trackTranslate('translate_rejected', {
+        reason: 'invalid_input',
+        status: 400,
+        source: sourceLanguage,
+        target: targetLanguage,
+        char_count: text.length,
+      });
       return NextResponse.json(
         {
           code: ERROR_CODES.INVALID_INPUT,
@@ -277,6 +497,13 @@ export async function POST(request: NextRequest) {
     }
 
     if (sourceLanguage === targetLanguage) {
+      trackTranslate('translate_rejected', {
+        reason: 'invalid_input',
+        status: 400,
+        source: sourceLanguage,
+        target: targetLanguage,
+        char_count: text.length,
+      });
       return NextResponse.json(
         {
           code: ERROR_CODES.INVALID_INPUT,
@@ -301,6 +528,13 @@ export async function POST(request: NextRequest) {
     }>('translate', cacheKey);
     if (redisCached) {
       cacheHits++;
+      trackTranslate('translate_cache_hit', {
+        cache_layer: 'redis',
+        source: sourceLanguage,
+        target: targetLanguage,
+        char_count: normalizedText.length,
+        request_context: requestContext,
+      });
       const response = NextResponse.json({
         translatedText: redisCached.translatedText,
         romanization: redisCached.romanization,
@@ -313,6 +547,13 @@ export async function POST(request: NextRequest) {
     const cached = translationCache.get(cacheKey);
     if (cached && Date.now() - cached.timestamp < CACHE_TTL) {
       cacheHits++;
+      trackTranslate('translate_cache_hit', {
+        cache_layer: 'memory',
+        source: sourceLanguage,
+        target: targetLanguage,
+        char_count: normalizedText.length,
+        request_context: requestContext,
+      });
       const response = NextResponse.json({
         translatedText: cached.translatedText,
         romanization: cached.romanization,
@@ -324,6 +565,14 @@ export async function POST(request: NextRequest) {
     }
 
     if (isLikelyBot(request)) {
+      trackTranslate('translate_rejected', {
+        reason: 'bot',
+        status: 429,
+        source: sourceLanguage,
+        target: targetLanguage,
+        char_count: normalizedText.length,
+        request_context: requestContext,
+      });
       return NextResponse.json(
         {
           code: ERROR_CODES.RATE_LIMIT,
@@ -339,6 +588,14 @@ export async function POST(request: NextRequest) {
       requestContext === 'url-prefill' &&
       normalizedText.length > URL_AUTOTRANSLATE_CHAR_LIMIT
     ) {
+      trackTranslate('translate_rejected', {
+        reason: 'verification_required',
+        status: 403,
+        source: sourceLanguage,
+        target: targetLanguage,
+        char_count: normalizedText.length,
+        request_context: requestContext,
+      });
       return NextResponse.json(
         {
           code: ERROR_CODES.VERIFICATION_REQUIRED,
@@ -367,6 +624,15 @@ export async function POST(request: NextRequest) {
         message = `Too many requests. Please wait ${rateLimitResult.retryAfter} seconds.`;
       }
 
+      trackTranslate('translate_rejected', {
+        reason: 'rate_limit',
+        status: 429,
+        source: sourceLanguage,
+        target: targetLanguage,
+        char_count: normalizedText.length,
+        request_context: requestContext,
+        rate_limit_reason: rateLimitResult.reason,
+      });
       return NextResponse.json(
         {
           code: ERROR_CODES.RATE_LIMIT,
@@ -393,6 +659,15 @@ export async function POST(request: NextRequest) {
           ? 'Service is experiencing high demand. Please try again later.'
           : 'Daily translation limit reached. Please try again later.';
 
+      trackTranslate('translate_rejected', {
+        reason: 'usage_limit',
+        status: 429,
+        source: sourceLanguage,
+        target: targetLanguage,
+        char_count: normalizedText.length,
+        request_context: requestContext,
+        rate_limit_reason: usageResult.reason,
+      });
       return NextResponse.json(
         {
           code: ERROR_CODES.RATE_LIMIT,
@@ -410,6 +685,14 @@ export async function POST(request: NextRequest) {
       process.env.TURNSTILE_SECRET_KEY &&
       process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY
     ) {
+      trackTranslate('translate_rejected', {
+        reason: 'verification_required',
+        status: 403,
+        source: sourceLanguage,
+        target: targetLanguage,
+        char_count: normalizedText.length,
+        request_context: requestContext,
+      });
       return NextResponse.json(
         {
           code: ERROR_CODES.VERIFICATION_REQUIRED,
@@ -421,83 +704,72 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Cache miss - will call Google API
+    // Cache miss - will call the translation provider.
     cacheMisses++;
 
-    // Get API key from environment
-    const apiKey = process.env.GOOGLE_TRANSLATE_API_KEY;
-    if (!apiKey) {
-      console.error('GOOGLE_TRANSLATE_API_KEY is not configured');
-      return NextResponse.json(
-        {
-          code: ERROR_CODES.AUTH_ERROR,
-          message: 'Translation service configuration error.',
-          error: 'Translation service configuration error.',
-          status: 500,
-        },
-        { status: 500 },
-      );
-    }
+    let translation: TranslationProviderResult;
+    try {
+      translation = await translateWithFallback({
+        text: normalizedText,
+        sourceLanguage,
+        targetLanguage,
+      });
+    } catch (error) {
+      const providerError =
+        error instanceof TranslationProviderError ? error : null;
+      const status = providerError?.status || 500;
+      const errorCategory = providerError?.authError
+        ? 'auth'
+        : providerError?.status === 429
+          ? 'rate_limit'
+          : 'api';
 
-    // Call Google Cloud Translation API
-    const googleApiUrl = `https://translation.googleapis.com/language/translate/v2?key=${apiKey}`;
-
-    const googleResponse = await fetch(googleApiUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        q: normalizedText,
+      trackTranslate('translate_provider_error', {
+        error_category: errorCategory,
+        status,
+        latency_ms: Date.now() - startTime,
         source: sourceLanguage,
         target: targetLanguage,
-        format: 'text',
-      }),
-    });
+        char_count: normalizedText.length,
+        request_context: requestContext,
+      });
 
-    // Handle rate limiting
-    if (googleResponse.status === 429) {
-      return NextResponse.json(
-        {
-          code: ERROR_CODES.RATE_LIMIT,
-          message: 'Too many requests. Please wait a moment and try again.',
-          error: 'Too many requests. Please wait a moment and try again.',
-          status: 429,
-        },
-        { status: 429 },
-      );
-    }
+      if (providerError?.status === 429) {
+        return NextResponse.json(
+          {
+            code: ERROR_CODES.RATE_LIMIT,
+            message: 'Too many requests. Please wait a moment and try again.',
+            error: 'Too many requests. Please wait a moment and try again.',
+            status: 429,
+          },
+          { status: 429 },
+        );
+      }
 
-    // Handle auth errors
-    if (googleResponse.status === 401 || googleResponse.status === 403) {
-      console.error('Google API authentication error:', googleResponse.status);
-      return NextResponse.json(
-        {
-          code: ERROR_CODES.AUTH_ERROR,
-          message: 'Translation service configuration error.',
-          error: 'Translation service configuration error.',
-          status: googleResponse.status,
-        },
-        { status: googleResponse.status },
-      );
-    }
+      if (providerError?.authError) {
+        console.error('Translation provider authentication error:', status);
+        return NextResponse.json(
+          {
+            code: ERROR_CODES.AUTH_ERROR,
+            message: 'Translation service configuration error.',
+            error: 'Translation service configuration error.',
+            status,
+          },
+          { status },
+        );
+      }
 
-    // Handle other errors
-    if (!googleResponse.ok) {
-      console.error('Google API error:', googleResponse.status);
+      console.error('Translation provider error:', status);
       return NextResponse.json(
         {
           code: ERROR_CODES.API_ERROR,
           message: 'Translation service is temporarily unavailable.',
           error: 'Translation service is temporarily unavailable.',
-          status: googleResponse.status,
+          status,
         },
-        { status: googleResponse.status },
+        { status },
       );
     }
-
-    const data = (await googleResponse.json()) as GoogleTranslateResponse;
-    const translation = data.data.translations[0];
 
     // Generate romanization when translating TO Japanese
     let romanization: string | undefined;
@@ -541,11 +813,21 @@ export async function POST(request: NextRequest) {
 
     cleanupCache();
 
+    trackTranslate('translate_success', {
+      provider: translation.provider,
+      latency_ms: Date.now() - startTime,
+      source: sourceLanguage,
+      target: targetLanguage,
+      char_count: normalizedText.length,
+      request_context: requestContext,
+    });
+
     const rateLimitHeaders = createRateLimitHeaders(rateLimitResult);
     const response = NextResponse.json({
       translatedText: translation.translatedText,
       detectedSourceLanguage: translation.detectedSourceLanguage,
       romanization,
+      provider: translation.provider,
     });
     // Allow browser to cache translation results for 1 hour
     response.headers.set('Cache-Control', 'private, max-age=3600');
@@ -560,8 +842,17 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error('Translation API error:', error);
 
+    const isNetworkError =
+      error instanceof TypeError && error.message.includes('fetch');
+
+    trackTranslate('translate_unhandled_error', {
+      error_category: isNetworkError ? 'network' : 'unknown',
+      status: isNetworkError ? 503 : 500,
+      latency_ms: Date.now() - startTime,
+    });
+
     // Check if it's a network error
-    if (error instanceof TypeError && error.message.includes('fetch')) {
+    if (isNetworkError) {
       return NextResponse.json(
         {
           code: ERROR_CODES.NETWORK_ERROR,
