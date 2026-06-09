@@ -222,7 +222,7 @@
     "english": "Early rising is worth three coins",
     "meaning": "The early bird catches the worm",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 26,
@@ -564,7 +564,7 @@
     "english": "A frog in a well does not know the great sea",
     "meaning": "Limited experience limits perspective",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 64,
@@ -573,7 +573,7 @@
     "english": "See the trees but not the forest",
     "meaning": "Miss the bigger picture",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 65,
@@ -582,7 +582,7 @@
     "english": "If you eat poison, eat the plate too",
     "meaning": "If you must do something risky, go all the way",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 66,
@@ -690,7 +690,7 @@
     "english": "Peek at the sky through a needle's eye",
     "meaning": "A narrow viewpoint leads to poor judgment",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 78,
@@ -816,7 +816,7 @@
     "english": "After the rain, the ground hardens",
     "meaning": "Hard times make relationships stronger",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 92,
@@ -923,7 +923,7 @@
     "romaji": "Nasake wa hito no tame narazu",
     "english": "Kindness is not for others",
     "meaning": "Good deeds return to you",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1113,7 +1113,7 @@
     "english": "Preaching Buddha to a horse's ear",
     "meaning": "Advice is wasted on the unwilling",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 125,
@@ -1158,7 +1158,7 @@
     "english": "Travel needs companions; life needs kindness",
     "meaning": "Relationships and compassion matter",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 130,
@@ -1302,7 +1302,7 @@
     "english": "A cane before falling",
     "meaning": "Prevention is better than cure",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 146,

@@ -16,7 +16,7 @@
     "game": "Fate/stay night [Realta Nua]",
     "character": "Saber",
     "id": 2,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -186,7 +186,7 @@
     "game": "Tales series",
     "character": "Various endings",
     "id": 19,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -246,7 +246,7 @@
     "game": "Danganronpa series",
     "character": "Makoto Naegi",
     "id": 25,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -286,7 +286,7 @@
     "game": "Street Fighter series",
     "character": "Ryu",
     "id": 29,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -296,7 +296,7 @@
     "game": "Dragon Quest XI",
     "character": "Hero / party lines",
     "id": 30,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -526,7 +526,7 @@
     "game": "Final Fantasy Type-0",
     "character": "Class Zero",
     "id": 53,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -546,7 +546,7 @@
     "game": "Fire Emblem series",
     "character": "Various protagonists",
     "id": 55,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -746,7 +746,7 @@
     "game": "Fire Emblem series",
     "character": "Various protagonists",
     "id": 75,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -856,7 +856,7 @@
     "game": "JoJo’s Bizarre Adventure: All-Star Battle",
     "character": "Giorno Giovanna",
     "id": 86,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1026,7 +1026,7 @@
     "game": "Tales of the Abyss",
     "character": "Luke fon Fabre",
     "id": 103,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

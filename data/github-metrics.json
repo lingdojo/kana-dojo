@@ -2022,5 +2022,16 @@
       "forks": 1,
       "contributors": 1
     }
+  },
+  {
+    "collectedAt": "2026-06-09T11:00:48.397Z",
+    "stars": 2599,
+    "forks": 2236,
+    "contributors": 2044,
+    "diff": {
+      "stars": 13,
+      "forks": 10,
+      "contributors": 7
+    }
   }
 ]
