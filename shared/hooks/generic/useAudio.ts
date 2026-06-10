@@ -1,7 +1,7 @@
 'use client';
 import { useCallback, useEffect } from 'react';
 import { Random } from 'random-js';
-import { useAudioPreferences } from '@/features/Preferences';
+import { useAudioPreferences } from '@/features/Preferences/facade';
 import {
   DEFAULT_CLICK_SOUND_ID,
   getClickSoundVariantBaseUrls,

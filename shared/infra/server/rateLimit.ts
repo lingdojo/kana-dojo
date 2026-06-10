@@ -33,11 +33,72 @@ interface RateLimitResult {
   reason?: 'rate_limit' | 'daily_quota' | 'global_limit';
 }
 
+interface TranslateUsageConfig {
+  dailyCharLimit: number;
+  monthlyCharLimit: number;
+  globalMonthlyCharLimit: number;
+  verificationDailyCharThreshold: number;
+}
+
+interface TranslateUsageRecord {
+  dailyChars: number;
+  monthlyChars: number;
+  monthlyResetAt: number;
+  dailyResetAt: number;
+}
+
+interface TranslateUsageResult {
+  allowed: boolean;
+  requiresVerification: boolean;
+  remainingDailyChars: number;
+  remainingMonthlyChars: number;
+  remainingGlobalMonthlyChars: number;
+  resetAt: number;
+  retryAfter?: number;
+  reason?: 'daily_char_quota' | 'monthly_char_quota' | 'global_monthly_char_quota';
+}
+
+interface TranslateUsageStats {
+  redisEnabled: boolean;
+  globalMonthlyChars: number;
+  globalMonthlyLimit: number;
+  monthlyResetAt: number;
+}
+
+function readPositiveIntEnv(name: string, fallback: number): number {
+  const value = Number(process.env[name]);
+  return Number.isFinite(value) && value > 0 ? Math.floor(value) : fallback;
+}
+
+export function getTranslateUsageConfig(): TranslateUsageConfig {
+  return {
+    dailyCharLimit: readPositiveIntEnv('TRANSLATE_DAILY_CHAR_LIMIT', 20_000),
+    monthlyCharLimit: readPositiveIntEnv(
+      'TRANSLATE_MONTHLY_CHAR_LIMIT',
+      100_000,
+    ),
+    globalMonthlyCharLimit: readPositiveIntEnv(
+      'TRANSLATE_GLOBAL_MONTHLY_CHAR_LIMIT',
+      3_000_000,
+    ),
+    verificationDailyCharThreshold: readPositiveIntEnv(
+      'TRANSLATE_VERIFICATION_DAILY_CHAR_THRESHOLD',
+      10_000,
+    ),
+  };
+}
+
 // Default configuration for translation API
 export const TRANSLATE_RATE_LIMIT_CONFIG: RateLimitConfig = {
-  maxRequests: 10, // 10 requests per minute per IP
+  maxRequests: 120, // High ceiling; character budgets are the real cost control.
   windowMs: 60 * 1000, // 1 minute window
-  dailyLimit: 200, // 200 requests per day per IP
+  dailyLimit: 5000, // High backstop for pathological automation.
+  maxTrackedIPs: 10000, // Track up to 10k unique IPs
+};
+
+export const TRANSLATE_BURST_RATE_LIMIT_CONFIG: RateLimitConfig = {
+  maxRequests: 20, // Short-window guard against machine-speed bursts.
+  windowMs: 10 * 1000,
   maxTrackedIPs: 10000, // Track up to 10k unique IPs
 };
 
@@ -59,7 +120,7 @@ export const PROGRESS_SYNC_RATE_LIMIT_CONFIG: RateLimitConfig = {
 
 // Global rate limiting (fallback when IP tracking fails)
 export const GLOBAL_RATE_LIMIT_CONFIG: RateLimitConfig = {
-  maxRequests: 100, // 100 total requests per minute globally
+  maxRequests: 1000, // Total requests per minute globally per endpoint limiter.
   windowMs: 60 * 1000,
 };
 
@@ -310,6 +371,20 @@ function getDayIdUTC(now: number): string {
   return `${y}${m}${d}`;
 }
 
+function getMonthIdUTC(now: number): string {
+  const date = new Date(now);
+  const y = date.getUTCFullYear();
+  const m = String(date.getUTCMonth() + 1).padStart(2, '0');
+  return `${y}${m}`;
+}
+
+function getNextMonthUTC(now: number): number {
+  const date = new Date(now);
+  date.setUTCMonth(date.getUTCMonth() + 1, 1);
+  date.setUTCHours(0, 0, 0, 0);
+  return date.getTime();
+}
+
 async function checkRateLimitRedis(
   identifier: string,
   config: RateLimitConfig,
@@ -403,8 +478,10 @@ async function checkRateLimitWithFallback(
 
 // Singleton instances for each API endpoint
 let translateRateLimiter: RateLimiter | null = null;
+let translateBurstRateLimiter: RateLimiter | null = null;
 let analyzeRateLimiter: RateLimiter | null = null;
 let progressSyncRateLimiter: RateLimiter | null = null;
+const translateUsageRecords: Map<string, TranslateUsageRecord> = new Map();
 
 /**
  * Get the rate limiter for translate API
@@ -414,6 +491,15 @@ export function getTranslateRateLimiter(): RateLimiter {
     translateRateLimiter = new RateLimiter(TRANSLATE_RATE_LIMIT_CONFIG);
   }
   return translateRateLimiter;
+}
+
+export function getTranslateBurstRateLimiter(): RateLimiter {
+  if (!translateBurstRateLimiter) {
+    translateBurstRateLimiter = new RateLimiter(
+      TRANSLATE_BURST_RATE_LIMIT_CONFIG,
+    );
+  }
+  return translateBurstRateLimiter;
 }
 
 /**
@@ -440,12 +526,271 @@ export async function checkTranslateRateLimit(
   identifier: string,
 ): Promise<RateLimitResult> {
   const limiter = getTranslateRateLimiter();
+  const burstLimiter = getTranslateBurstRateLimiter();
+  const burstResult = await checkRateLimitWithFallback(
+    identifier,
+    TRANSLATE_BURST_RATE_LIMIT_CONFIG,
+    'translate-burst',
+    burstLimiter,
+  );
+
+  if (!burstResult.allowed) {
+    return burstResult;
+  }
+
   return checkRateLimitWithFallback(
     identifier,
     TRANSLATE_RATE_LIMIT_CONFIG,
     'translate',
     limiter,
   );
+}
+
+export async function checkTranslateUsageLimit(
+  identifier: string,
+  charCount: number,
+  options: { verified?: boolean } = {},
+): Promise<TranslateUsageResult> {
+  const config = getTranslateUsageConfig();
+  const chars = Math.max(0, Math.floor(charCount));
+  const now = Date.now();
+  const dailyResetAt = getNextMidnightUTC(now);
+  const monthlyResetAt = getNextMonthUTC(now);
+
+  try {
+    const { hasRedisConfig, redisPipeline } = await import(
+      '@/shared/infra/server/redis'
+    );
+
+    if (!hasRedisConfig()) {
+      throw new Error('Redis not configured.');
+    }
+
+    const dayId = getDayIdUTC(now);
+    const monthId = getMonthIdUTC(now);
+    const dailyCharsKey = `translate:usage:ip:${identifier}:chars:${dayId}`;
+    const monthlyCharsKey = `translate:usage:ip:${identifier}:chars:${monthId}`;
+    const globalMonthlyCharsKey = `translate:usage:global:chars:${monthId}`;
+
+    const existingResults = await redisPipeline([
+      ['GET', dailyCharsKey],
+      ['GET', monthlyCharsKey],
+      ['GET', globalMonthlyCharsKey],
+    ]);
+
+    const projectedResult = buildTranslateUsageResult({
+      config,
+      dailyChars: Number(existingResults[0]?.result ?? 0) + chars,
+      monthlyChars: Number(existingResults[1]?.result ?? 0) + chars,
+      globalMonthlyChars: Number(existingResults[2]?.result ?? 0) + chars,
+      dailyResetAt,
+      monthlyResetAt,
+      verified: Boolean(options.verified),
+    });
+
+    if (!projectedResult.allowed || projectedResult.requiresVerification) {
+      return projectedResult;
+    }
+
+    const results = await redisPipeline([
+      ['INCRBY', dailyCharsKey, chars],
+      ['EXPIRE', dailyCharsKey, 86400],
+      ['INCRBY', monthlyCharsKey, chars],
+      ['EXPIRE', monthlyCharsKey, 2678400],
+      ['INCRBY', globalMonthlyCharsKey, chars],
+      ['EXPIRE', globalMonthlyCharsKey, 2678400],
+    ]);
+
+    const dailyChars = Number(results[0]?.result ?? 0);
+    const monthlyChars = Number(results[2]?.result ?? 0);
+    const globalMonthlyChars = Number(results[4]?.result ?? 0);
+
+    return buildTranslateUsageResult({
+      config,
+      dailyChars,
+      monthlyChars,
+      globalMonthlyChars,
+      dailyResetAt,
+      monthlyResetAt,
+      verified: Boolean(options.verified),
+    });
+  } catch {
+    let record = translateUsageRecords.get(identifier);
+    if (!record || now >= record.monthlyResetAt) {
+      record = {
+        dailyChars: 0,
+        monthlyChars: 0,
+        dailyResetAt,
+        monthlyResetAt,
+      };
+      translateUsageRecords.set(identifier, record);
+    }
+
+    if (now >= record.dailyResetAt) {
+      record.dailyChars = 0;
+      record.dailyResetAt = dailyResetAt;
+    }
+
+    const projectedResult = buildTranslateUsageResult({
+      config,
+      dailyChars: record.dailyChars + chars,
+      monthlyChars: record.monthlyChars + chars,
+      globalMonthlyChars: record.monthlyChars + chars,
+      dailyResetAt: record.dailyResetAt,
+      monthlyResetAt: record.monthlyResetAt,
+      verified: Boolean(options.verified),
+    });
+
+    if (!projectedResult.allowed || projectedResult.requiresVerification) {
+      return projectedResult;
+    }
+
+    record.dailyChars += chars;
+    record.monthlyChars += chars;
+
+    return projectedResult;
+  }
+}
+
+function buildTranslateUsageResult({
+  config,
+  dailyChars,
+  monthlyChars,
+  globalMonthlyChars,
+  dailyResetAt,
+  monthlyResetAt,
+  verified,
+}: {
+  config: TranslateUsageConfig;
+  dailyChars: number;
+  monthlyChars: number;
+  globalMonthlyChars: number;
+  dailyResetAt: number;
+  monthlyResetAt: number;
+  verified: boolean;
+}): TranslateUsageResult {
+  const remainingDailyChars = Math.max(0, config.dailyCharLimit - dailyChars);
+  const remainingMonthlyChars = Math.max(
+    0,
+    config.monthlyCharLimit - monthlyChars,
+  );
+  const remainingGlobalMonthlyChars = Math.max(
+    0,
+    config.globalMonthlyCharLimit - globalMonthlyChars,
+  );
+
+  if (dailyChars > config.dailyCharLimit) {
+    return {
+      allowed: false,
+      requiresVerification: false,
+      remainingDailyChars,
+      remainingMonthlyChars,
+      remainingGlobalMonthlyChars,
+      resetAt: dailyResetAt,
+      retryAfter: Math.ceil((dailyResetAt - Date.now()) / 1000),
+      reason: 'daily_char_quota',
+    };
+  }
+
+  if (monthlyChars > config.monthlyCharLimit) {
+    return {
+      allowed: false,
+      requiresVerification: false,
+      remainingDailyChars,
+      remainingMonthlyChars,
+      remainingGlobalMonthlyChars,
+      resetAt: monthlyResetAt,
+      retryAfter: Math.ceil((monthlyResetAt - Date.now()) / 1000),
+      reason: 'monthly_char_quota',
+    };
+  }
+
+  if (globalMonthlyChars > config.globalMonthlyCharLimit) {
+    return {
+      allowed: false,
+      requiresVerification: false,
+      remainingDailyChars,
+      remainingMonthlyChars,
+      remainingGlobalMonthlyChars,
+      resetAt: monthlyResetAt,
+      retryAfter: Math.ceil((monthlyResetAt - Date.now()) / 1000),
+      reason: 'global_monthly_char_quota',
+    };
+  }
+
+  const requiresVerification =
+    !verified && dailyChars > config.verificationDailyCharThreshold;
+
+  return {
+    allowed: true,
+    requiresVerification,
+    remainingDailyChars,
+    remainingMonthlyChars,
+    remainingGlobalMonthlyChars,
+    resetAt: dailyResetAt,
+  };
+}
+
+export function createTranslateUsageHeaders(
+  result: TranslateUsageResult,
+): Headers {
+  const headers = new Headers();
+  headers.set(
+    'X-Translate-CharLimit-Remaining',
+    String(result.remainingDailyChars),
+  );
+  headers.set(
+    'X-Translate-Monthly-Remaining',
+    String(result.remainingMonthlyChars),
+  );
+  headers.set(
+    'X-Translate-Global-Monthly-Remaining',
+    String(result.remainingGlobalMonthlyChars),
+  );
+  if (result.retryAfter) {
+    headers.set('Retry-After', String(result.retryAfter));
+  }
+  return headers;
+}
+
+export async function getTranslateUsageStats(): Promise<TranslateUsageStats> {
+  const config = getTranslateUsageConfig();
+  const now = Date.now();
+  const monthlyResetAt = getNextMonthUTC(now);
+
+  try {
+    const { hasRedisConfig, redisPipeline } = await import(
+      '@/shared/infra/server/redis'
+    );
+    if (!hasRedisConfig()) {
+      throw new Error('Redis not configured.');
+    }
+
+    const monthId = getMonthIdUTC(now);
+    const results = await redisPipeline([
+      ['GET', `translate:usage:global:chars:${monthId}`],
+    ]);
+
+    return {
+      redisEnabled: true,
+      globalMonthlyChars: Number(results[0]?.result ?? 0),
+      globalMonthlyLimit: config.globalMonthlyCharLimit,
+      monthlyResetAt,
+    };
+  } catch {
+    let globalMonthlyChars = 0;
+    for (const record of translateUsageRecords.values()) {
+      if (record.monthlyResetAt === monthlyResetAt) {
+        globalMonthlyChars += record.monthlyChars;
+      }
+    }
+    return {
+      redisEnabled: false,
+      globalMonthlyChars,
+      globalMonthlyLimit: config.globalMonthlyCharLimit,
+      monthlyResetAt,
+    };
+  }
 }
 
 export async function checkAnalyzeRateLimit(

@@ -93,7 +93,7 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
     targetLength,
     recordCorrect: recordTargetLengthCorrect,
     recordWrong: recordTargetLengthWrong,
-  } = useAdaptiveTargetLength();
+  } = useAdaptiveTargetLength({ correctsPerLevel: 10 });
 
   const [inputValue, setInputValue] = useState('');
   const [bottomBarState, setBottomBarState] = useState<BottomBarState>('check');
@@ -166,6 +166,13 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
     };
   }, [isReverse, selectedRomaji, selectedKana, targetLength, selectedPairs]);
 
+  const buildTargetPairRef = useRef(buildTargetPair);
+  const selectionSignature = useMemo(
+    () =>
+      `${isReverse ? 'reverse' : 'normal'}::${selectedKana.join('|')}::${selectedRomaji.join('|')}`,
+    [isReverse, selectedKana, selectedRomaji],
+  );
+
   const [pairData, setPairData] = useState(() => buildTargetPair());
   const correctChar = pairData.correctChar;
   const targetChar = pairData.targetChar;
@@ -201,6 +208,10 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
       inputRef.current.focus();
     }
   }, [bottomBarState]);
+
+  useEffect(() => {
+    buildTargetPairRef.current = buildTargetPair;
+  }, [buildTargetPair]);
 
   // Keyboard shortcut for Enter/Space to trigger button
   useEffect(() => {
@@ -247,14 +258,16 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
 
   useEffect(() => {
     if (isReady) {
-      setPairData(buildTargetPair());
+      // Keep the current solved prompt frozen even if adaptive difficulty changes.
+      // The next prompt should only be generated after explicit continue.
+      setPairData(buildTargetPairRef.current());
     }
-  }, [buildTargetPair, isReady]);
+  }, [isReady, selectionSignature]);
 
   const generateNewCharacter = useCallback(() => {
     if (!isReady) return;
-    setPairData(buildTargetPair());
-  }, [isReady, buildTargetPair]);
+    setPairData(buildTargetPairRef.current());
+  }, [isReady]);
 
   const handleCheck = () => {
     const trimmedInput = inputValue.trim();
@@ -285,8 +298,10 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
     recordAnswerTime(answerTimeMs);
     resetTimer();
     playCorrect();
-    addCharacterToHistory(correctChar);
-    incrementCharacterScore(correctChar, 'correct');
+    promptParts.forEach(char => {
+      addCharacterToHistory(char);
+      incrementCharacterScore(char, 'correct');
+    });
     incrementCorrectAnswers();
     setScore(score + 1);
 
@@ -322,7 +337,9 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
     setWrongFeedbackSignal(prev => prev + 1);
     playErrorTwice();
 
-    incrementCharacterScore(correctChar, 'wrong');
+    promptParts.forEach(char => {
+      incrementCharacterScore(char, 'wrong');
+    });
     incrementWrongAnswers();
     if (score - 1 < 0) {
       setScore(0);
@@ -418,7 +435,7 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
           'border-4 border-(--border-color) bg-(--card-color)',
           'text-top text-left text-lg font-medium lg:text-xl',
           'text-(--secondary-color) placeholder:text-base placeholder:font-normal placeholder:text-(--secondary-color)/40',
-          'game-input resize-none focus:border-(--secondary-color)/70 focus:outline-none',
+          'game-input resize-none focus:border-(--secondary-color)/70 focus:text-(--main-color) focus:outline-none',
           'transition-colors duration-200 ease-out',
           showContinue && 'cursor-not-allowed opacity-60',
         )}

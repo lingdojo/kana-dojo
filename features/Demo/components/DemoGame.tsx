@@ -706,4 +706,3 @@ const DemoGame = () => {
 };
 
 export default DemoGame;
-

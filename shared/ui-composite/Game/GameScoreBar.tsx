@@ -1,5 +1,5 @@
 'use client';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useStatsDisplay } from '@/features/Progress';
 // import useIndefiniteConfetti from '@/lib/hooks/useInfiniteConfetti';
 import { Random } from 'random-js';
@@ -14,21 +14,50 @@ interface Checkpoint {
 
 type CheckpointInput = number | Checkpoint;
 
-interface ProgressBarProps {
+interface GameScoreBarProps {
   value?: number;
   max?: number;
   checkpoints?: CheckpointInput[];
 }
 
-const ProgressBar = ({
+const GameScoreBar = ({
   value,
   max = 20,
 }: // checkpoints = [10, 25, 50, 75] // Default checkpoints at 25%, 50%, 75%
-ProgressBarProps) => {
+GameScoreBarProps) => {
   const { score, setScore, stars, setStars, addIconIndex } = useStatsDisplay();
 
   // Use explicit value prop if provided (e.g. Gauntlet), otherwise use store score
   const effectiveScore = value !== undefined ? value : score;
+
+  // Track color cycle separately - only changes on correct answers (score increase)
+  const [colorCycle, setColorCycle] = useState(3);
+  const [prevScore, setPrevScore] = useState(effectiveScore);
+
+  useEffect(() => {
+    if (effectiveScore > prevScore) {
+      setColorCycle(prev => (prev + 1) % 4);
+      setPrevScore(effectiveScore);
+    } else if (effectiveScore < prevScore) {
+      setPrevScore(effectiveScore);
+    }
+  }, [effectiveScore, prevScore]);
+  
+  const getBackground = () => {
+    switch (colorCycle) {
+      case 0:
+        return 'var(--secondary-color)';
+      case 1:
+        return 'linear-gradient(to right, var(--secondary-color), var(--main-color))';
+      case 2:
+        return 'var(--main-color)';
+      case 3:
+        return 'linear-gradient(to right, var(--main-color), var(--secondary-color))';
+      default:
+        return 'var(--secondary-color)';
+    }
+  };
+
   const percentage = (effectiveScore / max) * 100;
 
   // const [active, setActive] = useState(false);
@@ -55,16 +84,16 @@ ProgressBarProps) => {
           style={{
             width: `${percentage}%`,
             background:
-              'linear-gradient(to right, var(--secondary-color), var(--main-color))',
+              getBackground(),
           }}
         />
         {/* Checkpoints */}
-        {[25, 50, 75].map(cp => (
+        {[50].map(cp => (
           <div
             key={cp}
             className='absolute top-0 z-0 h-4 w-0 bg-(--border-color)'
             style={{
-              left: `calc(${cp}% - 2px)`, // Adjust for marker width
+              left: `calc(${cp}% - 1px)`,
             }}
           />
         ))}
@@ -73,5 +102,5 @@ ProgressBarProps) => {
   );
 };
 
-export default ProgressBar;
+export default GameScoreBar;
 

@@ -8,19 +8,21 @@ import { useCorrect, useError, useClick } from '@/shared/hooks/generic/useAudio'
 import { getGlobalAdaptiveSelector } from '@/shared/utils/adaptiveSelection';
 import Stars from '@/shared/ui-composite/Game/Stars';
 import { useCrazyModeTrigger } from '@/features/CrazyMode/hooks/useCrazyModeTrigger';
-import { useStatsStore } from '@/features/Progress';
-import { useShallow } from 'zustand/react/shallow';
+import { useAnswerTimer } from '@/shared/hooks/game/useAnswerTimer';
+import { useGameStats } from '@/shared/hooks/game/useGameStats';
 import { useSmartReverseMode } from '@/shared/hooks/game/useSmartReverseMode';
 import { useTilesMode } from '@/shared/hooks/game/useTilesMode';
+import { useTilesModeHandlers } from '@/shared/hooks/game/useTilesModeHandlers';
+import { useTilesModeState } from '@/shared/hooks/game/useTilesModeState';
 import { GameBottomBar } from '@/shared/ui-composite/Game/GameBottomBar';
 import FuriganaText from '@/shared/ui-composite/text/FuriganaText';
 import AnswerSummary from '@/shared/ui-composite/Game/AnswerSummary';
 import { CircleCheck } from 'lucide-react';
-import { cn } from '@/shared/utils/utils';
 import { useThemePreferences } from '@/features/Preferences';
 import {
-  BottomBarState,
   gameContentVariants,
+  getAnswerRowClassName,
+  getGlassModeClassName,
   useTilesModeActionKey,
 } from '@/shared/ui-composite/Game/TilesModeShared';
 import TilesModeGrid from '@/shared/ui-composite/Game/TilesModeGrid';
@@ -85,37 +87,18 @@ const KanjiTilesMode = ({
   );
   const isGlassMode = useThemePreferences().isGlassMode;
 
-  // Answer timing for speed achievements
-  const answerStartTimeRef = useRef<number | null>(null);
-  const answerElapsedMsRef = useRef(0);
-  const startAnswerTimer = useCallback(() => {
-    answerElapsedMsRef.current = 0;
-    answerStartTimeRef.current = performance.now();
-  }, []);
-  const pauseAnswerTimer = useCallback(() => {
-    if (answerStartTimeRef.current !== null) {
-      answerElapsedMsRef.current += performance.now() - answerStartTimeRef.current;
-      answerStartTimeRef.current = null;
-    }
-  }, []);
-  const getAnswerTimeMs = useCallback(() => {
-    if (answerStartTimeRef.current === null) return answerElapsedMsRef.current;
-    return answerElapsedMsRef.current + (performance.now() - answerStartTimeRef.current);
-  }, []);
-  const resetAnswerTimer = useCallback(() => {
-    answerStartTimeRef.current = null;
-    answerElapsedMsRef.current = 0;
-  }, []);
+  const { startAnswerTimer, pauseAnswerTimer, getAnswerTimeMs, resetAnswerTimer } =
+    useAnswerTimer();
   const { playCorrect } = useCorrect();
   const { playErrorTwice } = useError();
   const { playClick } = useClick();
   const { trigger: triggerCrazyMode } = useCrazyModeTrigger();
   const buttonRef = useRef<HTMLButtonElement>(null);
 
+  const stats = useGameStats('kanji');
+  const { score, setScore } = stats;
+  const incrementKanjiCorrect = stats.incrementKanjiCorrect!;
   const {
-    score,
-    setScore,
-    incrementKanjiCorrect,
     incrementWrongStreak,
     resetWrongStreak,
     recordAnswerTime,
@@ -124,21 +107,7 @@ const KanjiTilesMode = ({
     addCharacterToHistory,
     incrementCharacterScore,
     addCorrectAnswerTime,
-  } = useStatsStore(
-    useShallow(state => ({
-      score: state.score,
-      setScore: state.setScore,
-      incrementKanjiCorrect: state.incrementKanjiCorrect,
-      incrementWrongStreak: state.incrementWrongStreak,
-      resetWrongStreak: state.resetWrongStreak,
-      recordAnswerTime: state.recordAnswerTime,
-      incrementCorrectAnswers: state.incrementCorrectAnswers,
-      incrementWrongAnswers: state.incrementWrongAnswers,
-      addCharacterToHistory: state.addCharacterToHistory,
-      incrementCharacterScore: state.incrementCharacterScore,
-      addCorrectAnswerTime: state.addCorrectAnswerTime,
-    })),
-  );
+  } = stats;
 
   // Create Map for O(1) lookups
   const kanjiObjMap = useMemo(
@@ -146,7 +115,19 @@ const KanjiTilesMode = ({
     [selectedKanjiObjs],
   );
 
-  const [bottomBarState, setBottomBarState] = useState<BottomBarState>('check');
+  const {
+    bottomBarState,
+    setBottomBarState,
+    placedTileIds,
+    setPlacedTileIds,
+    isChecking,
+    setIsChecking,
+    isCelebrating,
+    setIsCelebrating,
+    canCheck,
+    showContinue,
+    showTryAgain,
+  } = useTilesModeState();
 
   // Generate question: 1 kanji with multiple answer options
   const generateQuestion = useCallback(() => {
@@ -201,15 +182,21 @@ const KanjiTilesMode = ({
   }, [isReverse, selectedKanjiObjs, distractorCount, kanjiObjMap]);
 
   const [questionData, setQuestionData] = useState(() => generateQuestion());
-  const [placedTileIds, setPlacedTileIds] = useState<number[]>([]);
-  const [isChecking, setIsChecking] = useState(false);
-  const [isCelebrating, setIsCelebrating] = useState(false);
   const [displayAnswerSummary, setDisplayAnswerSummary] = useState(false);
   const [currentKanjiObjForSummary, setCurrentKanjiObjForSummary] =
     useState<IKanjiObj | null>(null);
   const [feedback, setFeedback] = useState<React.ReactElement>(
     <>{'feedback ~'}</>,
   );
+  const { handleTileClick, handleTryAgain } = useTilesModeHandlers({
+    isChecking,
+    bottomBarState,
+    setPlacedTileIds,
+    setIsChecking,
+    setBottomBarState,
+    startAnswerTimer,
+    playClick,
+  });
 
   const resetGame = useCallback(() => {
     const newQuestion = generateQuestion();
@@ -221,7 +208,14 @@ const KanjiTilesMode = ({
     setDisplayAnswerSummary(false);
     // Start timing for the new question
     startAnswerTimer();
-  }, [generateQuestion, startAnswerTimer]);
+  }, [
+    generateQuestion,
+    startAnswerTimer,
+    setPlacedTileIds,
+    setIsChecking,
+    setIsCelebrating,
+    setBottomBarState,
+  ]);
 
   useEffect(() => {
     resetGame();
@@ -368,6 +362,9 @@ const KanjiTilesMode = ({
     pauseAnswerTimer,
     getAnswerTimeMs,
     resetAnswerTimer,
+    setIsChecking,
+    setBottomBarState,
+    setIsCelebrating,
   ]);
 
   // Handle Continue button (only for correct answers)
@@ -390,46 +387,10 @@ const KanjiTilesMode = ({
     resetGame,
   ]);
 
-  // Handle Try Again button (for wrong answers)
-  const handleTryAgain = useCallback(() => {
-    playClick();
-    setPlacedTileIds([]);
-    setIsChecking(false);
-    setBottomBarState('check');
-    startAnswerTimer();
-  }, [playClick, startAnswerTimer]);
-
-  // Handle tile click - add or remove from placed tiles
-  const handleTileClick = useCallback(
-    (id: number, _char: string) => {
-      if (isChecking && bottomBarState !== 'wrong') return;
-
-      playClick();
-
-      // If in wrong state, reset to check state and continue with normal tile logic
-      if (bottomBarState === 'wrong') {
-        setIsChecking(false);
-        setBottomBarState('check');
-        startAnswerTimer();
-      }
-
-      setPlacedTileIds(prevIds =>
-        prevIds.includes(id)
-          ? prevIds.filter(tileId => tileId !== id)
-          : [...prevIds, id],
-      );
-    },
-    [isChecking, bottomBarState, playClick, startAnswerTimer],
-  );
-
   // Not enough characters
   if (selectedKanjiObjs.length < 2 || !questionData.kanjiChar) {
     return null;
   }
-
-  const canCheck = placedTileIds.length > 0 && !isChecking;
-  const showContinue = bottomBarState === 'correct';
-  const showTryAgain = bottomBarState === 'wrong';
 
   // Helper to get reading for a kanji tile
   const getKanjiReading = (kanjiChar: string) => {
@@ -473,9 +434,9 @@ const KanjiTilesMode = ({
           >
             {/* Question Display - shows kanji in normal mode, meaning in reverse mode */}
             <div
-              className={cn(
+              className={getGlassModeClassName(
                 'flex flex-row items-center gap-1',
-                isGlassMode && 'rounded-xl bg-(--card-color) px-4 py-2',
+                isGlassMode,
               )}
             >
               <motion.div
@@ -514,9 +475,8 @@ const KanjiTilesMode = ({
                 isReverse ? 'text-3xl sm:text-4xl' : 'text-xl sm:text-2xl'
               }
               tileLang={isReverse ? 'ja' : undefined}
-              answerRowClassName={clsx(
-                'flex w-full items-center border-b-2 border-(--border-color) px-2 pb-2 md:w-3/4 lg:w-2/3 xl:w-1/2',
-                isReverse ? 'min-h-[5.5rem]' : 'min-h-[5rem]',
+              answerRowClassName={getAnswerRowClassName(
+                isReverse ? '5.5rem' : '5rem',
               )}
               tilesContainerClassName={
                 isGlassMode ? 'rounded-xl bg-(--card-color) px-4 py-2' : undefined
@@ -550,5 +510,3 @@ const KanjiTilesMode = ({
 };
 
 export default KanjiTilesMode;
-
-

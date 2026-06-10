@@ -110,6 +110,16 @@ const useVocabStore = create<IFormState>()(
         typeof window !== 'undefined'
           ? createJSONStorage(() => localStorage)
           : undefined,
+      partialize: state => ({
+        selectedGameModeVocab: state.selectedGameModeVocab,
+        selectedVocabObjs: state.selectedVocabObjs,
+        selectedVocabSets: state.selectedVocabSets,
+      }),
+      merge: (persistedState, currentState) => ({
+        ...currentState,
+        ...(persistedState as Partial<IFormState>),
+        collapsedRowsByUnit: {},
+      }),
     },
   ),
 );

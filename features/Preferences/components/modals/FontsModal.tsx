@@ -8,6 +8,7 @@ import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { X, BookOpen, Sparkles, Type } from 'lucide-react';
 import { memo, useCallback, useMemo } from 'react';
 import clsx from 'clsx';
+import CollapsibleSection from '@/features/Preferences/components/shared/CollapsibleSection';
 
 interface FontsModalProps {
   open: boolean;
@@ -125,62 +126,52 @@ export default function FontsModal({ open, onOpenChange }: FontsModalProps) {
             </button>
           </div>
           <div id='modal-scroll' className='flex-1 overflow-y-auto px-6 py-6'>
-            {/* Recommended Fonts Section */}
-            <div className='mb-6'>
-              <div className='mb-3 flex items-center gap-2'>
-                <span className='motion-safe:animate-float flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border-b-4 border-(--secondary-color-accent) bg-(--secondary-color) leading-none text-(--background-color) [--float-distance:-3px]'>
-                  <Sparkles size={16} />
-                </span>
-                <h3 className='text-lg font-medium text-(--main-color)'>
-                  Recommended
-                </h3>
-              </div>
-              {/* 
-              <p className='mb-4 text-sm text-(--secondary-color)'>
-                Used in real Japanese textbooks, books & media
-              </p>
- */}
-              <div className='grid grid-cols-1 gap-4 p-1 sm:grid-cols-2 lg:grid-cols-3'>
-                {recommendedFonts.map(fontObj => (
-                  <FontCard
-                    key={fontObj.name}
-                    fontName={fontObj.name}
-                    fontClassName={fontObj.font.className}
-                    isSelected={selectedFont === fontObj.name}
-                    isDefault={fontObj.name === 'Zen Maru Gothic'}
-                    onClick={handleFontClick}
-                  />
-                ))}
-              </div>
-            </div>
+            <div className='space-y-6'>
+              <CollapsibleSection
+                title={<span className='text-(--main-color)'>Recommended</span>}
+                icon={<Sparkles size={16} />}
+                useNewIconDesign
+                level='subsection'
+                defaultOpen={true}
+                storageKey='fonts-modal-recommended'
+                className='gap-3'
+              >
+                <div className='grid grid-cols-1 gap-4 p-1 sm:grid-cols-2 lg:grid-cols-3'>
+                  {recommendedFonts.map(fontObj => (
+                    <FontCard
+                      key={fontObj.name}
+                      fontName={fontObj.name}
+                      fontClassName={fontObj.font.className}
+                      isSelected={selectedFont === fontObj.name}
+                      isDefault={fontObj.name === 'Zen Maru Gothic'}
+                      onClick={handleFontClick}
+                    />
+                  ))}
+                </div>
+              </CollapsibleSection>
 
-            {/* Other Fonts Section */}
-            <div>
-              <div className='mb-3 flex items-center gap-2'>
-                <span className='motion-safe:animate-float flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border-b-4 border-(--secondary-color-accent) bg-(--secondary-color) leading-none text-(--background-color) [--float-distance:-3px]'>
-                  <BookOpen size={16} />
-                </span>
-                <h3 className='text-lg font-medium text-(--main-color)'>
-                  Other
-                </h3>
-              </div>
-              {/* 
-              <p className='mb-4 text-sm text-(--secondary-color)'>
-                Fun & decorative fonts for entertainment
-              </p>
- */}
-              <div className='grid grid-cols-1 gap-4 p-1 sm:grid-cols-2 lg:grid-cols-3'>
-                {otherFonts.map(fontObj => (
-                  <FontCard
-                    key={fontObj.name}
-                    fontName={fontObj.name}
-                    fontClassName={fontObj.font.className}
-                    isSelected={selectedFont === fontObj.name}
-                    isDefault={fontObj.name === 'Zen Maru Gothic'}
-                    onClick={handleFontClick}
-                  />
-                ))}
-              </div>
+              <CollapsibleSection
+                title={<span className='text-(--main-color)'>Other</span>}
+                icon={<BookOpen size={16} />}
+                useNewIconDesign
+                level='subsection'
+                defaultOpen={true}
+                storageKey='fonts-modal-other'
+                className='gap-3'
+              >
+                <div className='grid grid-cols-1 gap-4 p-1 sm:grid-cols-2 lg:grid-cols-3'>
+                  {otherFonts.map(fontObj => (
+                    <FontCard
+                      key={fontObj.name}
+                      fontName={fontObj.name}
+                      fontClassName={fontObj.font.className}
+                      isSelected={selectedFont === fontObj.name}
+                      isDefault={fontObj.name === 'Zen Maru Gothic'}
+                      onClick={handleFontClick}
+                    />
+                  ))}
+                </div>
+              </CollapsibleSection>
             </div>
           </div>
         </DialogPrimitive.Content>

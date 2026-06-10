@@ -29,7 +29,9 @@ export { default as Settings } from './components/sections';
 // Data (read-only) - Note: Import defaults, not named exports
 export { default as themeSets } from './data/themes/themes';
 // export { default as themes } from './data/themes/themes';
-export { default as fonts } from './data/fonts/fonts';
+// NOTE: Do not export fonts from the main barrel.
+// Fonts rely on next/font/google and can trigger SSR build-time side effects.
+// Import fonts from '@/features/Preferences/fonts' only at explicit font-consumer call-sites.
 
 // ============================================================================
 // PRIVATE - DO NOT IMPORT DIRECTLY

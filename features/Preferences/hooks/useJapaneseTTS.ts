@@ -32,6 +32,7 @@ export const useJapaneseTTS = () => {
 
   // Use ref to store current voice for access in callbacks without stale closures
   const currentVoiceRef = useRef<JapaneseVoice | null>(null);
+  const speakRequestIdRef = useRef(0);
 
   // Update ref whenever currentVoice changes
   useEffect(() => {
@@ -179,12 +180,22 @@ export const useJapaneseTTS = () => {
       // TTS is always supported in modern browsers
 
       return new Promise<void>(resolve => {
-        // Stop any currently playing speech
-        speechSynthesis.cancel();
+        const requestId = ++speakRequestIdRef.current;
+
+        const stopCurrentSpeech = () => {
+          if (speechSynthesis.speaking || speechSynthesis.pending) {
+            speechSynthesis.cancel();
+          }
+        };
 
         // Firefox needs voices to be loaded before creating utterance
         const attemptSpeak = (retries = 0) => {
           try {
+            if (requestId !== speakRequestIdRef.current) {
+              resolve();
+              return;
+            }
+
             // Get current voices (Firefox requires this to be fresh)
             const voices = speechSynthesis.getVoices();
 
@@ -294,23 +305,40 @@ export const useJapaneseTTS = () => {
 
             // Event handlers
             utterance.onstart = () => {
+              if (requestId !== speakRequestIdRef.current) return;
               setState((prev: TTSState) => ({ ...prev, isPlaying: true }));
             };
 
             utterance.onend = () => {
+              if (requestId !== speakRequestIdRef.current) return;
               setState((prev: TTSState) => ({ ...prev, isPlaying: false }));
               resolve();
             };
 
             utterance.onerror = event => {
-              console.warn('TTS Error:', event.error);
+              if (requestId !== speakRequestIdRef.current) {
+                resolve();
+                return;
+              }
+
+              if (event.error !== 'interrupted') {
+                console.warn('TTS Error:', event.error);
+              }
               setState((prev: TTSState) => ({ ...prev, isPlaying: false }));
               resolve();
             };
 
             // Speak only if we have a voice set
             if (utterance.voice) {
-              speechSynthesis.speak(utterance);
+              stopCurrentSpeech();
+              setTimeout(() => {
+                if (requestId !== speakRequestIdRef.current) {
+                  resolve();
+                  return;
+                }
+
+                speechSynthesis.speak(utterance);
+              }, 50);
             } else {
               console.warn('Could not set voice for speech synthesis');
               setState((prev: TTSState) => ({ ...prev, isPlaying: false }));

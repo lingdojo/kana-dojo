@@ -79,7 +79,9 @@ For each pull request:
 | ------------------------------- | -------------------------------- | --------------------------------------------------------- |
 | `GOOGLE_TRANSLATE_API_KEY`      | Google Cloud Translation API key | [Google Cloud Console](https://console.cloud.google.com/) |
 | `NEXT_PUBLIC_GA_ID`             | Google Analytics measurement ID  | [Google Analytics](https://analytics.google.com/)         |
-| `NEXT_PUBLIC_POSTHOG_KEY`       | PostHog API key                  | [PostHog](https://posthog.com/)                           |
+| `NEXT_PUBLIC_POSTHOG_KEY`       | PostHog API key (client)         | [PostHog](https://posthog.com/)                           |
+| `POSTHOG_API_KEY`               | PostHog API key (server, optional; falls back to `NEXT_PUBLIC_POSTHOG_KEY`) | [PostHog](https://posthog.com/)                 |
+| `POSTHOG_HOST`                  | PostHog host (optional; falls back to `NEXT_PUBLIC_POSTHOG_HOST`) | [PostHog](https://posthog.com/)                           |
 | `NEXT_PUBLIC_SUPABASE_URL`      | Supabase project URL             | [Supabase](https://supabase.com/)                         |
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase anonymous key           | [Supabase](https://supabase.com/)                         |
 

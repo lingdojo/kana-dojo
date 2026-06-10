@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo } from 'react';
 import useVocabStore from '@/features/Vocabulary/store/useVocabStore';
 import VocabSetDictionary from '@/features/Vocabulary/components/SetDictionary';
+import { useMenuSelectorStore } from '@/shared/ui-composite/Menu/store/useMenuSelectorStore';
 import {
   vocabDataService,
   VocabLevel,
@@ -10,7 +11,7 @@ import {
 import LevelSetCards from '@/shared/ui-composite/Menu/LevelSetCards';
 import useSetProgressHydration from '@/features/Progress/hooks/useSetProgress';
 import useSetProgressStore from '@/features/Progress/store/useSetProgressStore';
-import { calculateVocabularySetProgress } from '@/features/Progress/lib/setProgress';
+import { calculateVocabularySetProgressAndStars } from '@/features/Progress/lib/setProgress';
 import {
   N1VocabLength,
   N2VocabLength,
@@ -27,6 +28,8 @@ import type { IWord } from '@/shared/types/interfaces';
 
 const levelOrder: VocabLevel[] = ['n5', 'n4', 'n3', 'n2', 'n1'];
 const WORDS_PER_SET = 10;
+const VOCAB_COLLAPSED_ROWS_SESSION_KEY = 'vocab-collapsed-rows-by-unit';
+const VOCAB_UNIT_WITH_FEWER_SUBUNITS: VocabLevel = 'n2';
 const VOCAB_LENGTHS: Record<VocabLevel, number> = {
   n5: N5VocabLength,
   n4: N4VocabLength,
@@ -51,9 +54,13 @@ const vocabCollectionNames: Record<VocabLevel, string> = {
 };
 
 const VocabCards = () => {
-  const selectedVocabCollectionName = useVocabStore(
-    state => state.selectedVocabCollection,
+  const persistedVocabSelector = useMenuSelectorStore(
+    state => state.collections.vocabulary,
   );
+  const selectedVocabCollectionName =
+    persistedVocabSelector.selectedCollection;
+  const selectedSubunitByUnit =
+    persistedVocabSelector.selectedSubunitByUnit;
   const selectedVocabSets = useVocabStore(state => state.selectedVocabSets);
   const setSelectedVocabSets = useVocabStore(
     state => state.setSelectedVocabSets,
@@ -63,12 +70,6 @@ const VocabCards = () => {
   const collapsedRowsByUnit = useVocabStore(state => state.collapsedRowsByUnit);
   const setCollapsedRowsForUnit = useVocabStore(
     state => state.setCollapsedRowsForUnit,
-  );
-  const selectedSubunitByUnit = useVocabStore(
-    state => state.selectedSubunitByUnit,
-  );
-  const setSelectedSubunitForUnit = useVocabStore(
-    state => state.setSelectedSubunitForUnit,
   );
 
   const getCollectionName = useCallback(
@@ -95,12 +96,31 @@ const VocabCards = () => {
     [selectedVocabCollectionName, unitSummaries],
   );
   const subunits = useMemo(
-    () =>
-      buildSubunitsForUnit(
+    () => {
+      const defaultSubunits = buildSubunitsForUnit(
         activeUnitSummary.startLevel,
         activeUnitSummary.levelCount,
-      ),
-    [activeUnitSummary.levelCount, activeUnitSummary.startLevel],
+      );
+      if (
+        activeUnitSummary.name !== VOCAB_UNIT_WITH_FEWER_SUBUNITS ||
+        defaultSubunits.length <= 1
+      ) {
+        return defaultSubunits;
+      }
+
+      return buildSubunitsForUnit(
+        activeUnitSummary.startLevel,
+        activeUnitSummary.levelCount,
+        {
+          desiredSubunitCount: defaultSubunits.length - 1,
+        },
+      );
+    },
+    [
+      activeUnitSummary.levelCount,
+      activeUnitSummary.name,
+      activeUnitSummary.startLevel,
+    ],
   );
   const selectedSubunitId =
     selectedSubunitByUnit[selectedVocabCollectionName] ?? subunits[0]?.id;
@@ -110,17 +130,6 @@ const VocabCards = () => {
     [selectedSubunitId, subunits],
   );
   const collapsedRowsKey = `${selectedVocabCollectionName}:${activeSubunitRange.id}`;
-
-  useEffect(() => {
-    if (!selectedSubunitId && subunits[0]) {
-      setSelectedSubunitForUnit(selectedVocabCollectionName, subunits[0].id);
-    }
-  }, [
-    selectedSubunitId,
-    selectedVocabCollectionName,
-    setSelectedSubunitForUnit,
-    subunits,
-  ]);
 
   const collapsedRows = useMemo(
     () => collapsedRowsByUnit[collapsedRowsKey] || [],
@@ -135,18 +144,58 @@ const VocabCards = () => {
     [collapsedRows, collapsedRowsKey, setCollapsedRowsForUnit],
   );
 
+  useEffect(() => {
+    const stored = sessionStorage.getItem(VOCAB_COLLAPSED_ROWS_SESSION_KEY);
+    if (!stored) return;
+    try {
+      const parsed = JSON.parse(stored) as Record<string, number[]>;
+      setCollapsedRowsForUnit(collapsedRowsKey, parsed[collapsedRowsKey] ?? []);
+    } catch {
+      setCollapsedRowsForUnit(collapsedRowsKey, []);
+    }
+  }, [collapsedRowsKey, setCollapsedRowsForUnit]);
+
+  useEffect(() => {
+    const stored = sessionStorage.getItem(VOCAB_COLLAPSED_ROWS_SESSION_KEY);
+    let parsed: Record<string, number[]> = {};
+
+    if (stored) {
+      try {
+        parsed = JSON.parse(stored) as Record<string, number[]>;
+      } catch {
+        parsed = {};
+      }
+    }
+
+    parsed[collapsedRowsKey] = collapsedRows;
+    sessionStorage.setItem(
+      VOCAB_COLLAPSED_ROWS_SESSION_KEY,
+      JSON.stringify(parsed),
+    );
+  }, [collapsedRows, collapsedRowsKey]);
+
   useSetProgressHydration();
   const vocabularyProgress = useSetProgressStore(
     state => state.data.vocabulary,
   );
   const getSetProgress = useCallback(
     (items: IWord[]) =>
-      calculateVocabularySetProgress(
+      calculateVocabularySetProgressAndStars(
         items.map(item => ({
           meaningCorrect: vocabularyProgress[item.word]?.meaningCorrect ?? 0,
           readingCorrect: vocabularyProgress[item.word]?.readingCorrect ?? 0,
         })),
-      ),
+      ).progress,
+    [vocabularyProgress],
+  );
+  const getSetStars = useCallback(
+    (items: IWord[]) =>
+      calculateVocabularySetProgressAndStars(
+        items.map(item => ({
+          meaningCorrect: vocabularyProgress[item.word]?.meaningCorrect ?? 0,
+          readingCorrect: vocabularyProgress[item.word]?.readingCorrect ?? 0,
+        })),
+      ).stars,
     [vocabularyProgress],
   );
 
@@ -169,8 +218,10 @@ const VocabCards = () => {
       setCollapsedRows={setCollapsedRows}
       renderSetDictionary={items => <VocabSetDictionary words={items} />}
       getSetProgress={getSetProgress}
+      getSetStars={getSetStars}
       loadingText='Loading vocabulary sets...'
       activeSubunitRange={activeSubunitRange}
+      collapseScopeKey={collapsedRowsKey}
     />
   );
 };

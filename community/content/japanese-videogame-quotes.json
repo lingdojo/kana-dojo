@@ -35,13 +35,6 @@
     "character": "Ichiban Kasuga"
   },
   {
-    "japanese": "まだまだだね",
-    "romaji": "Mada mada da ne",
-    "english": "You still have lots more to work on.",
-    "game": "The Prince of Tennis: Sweat & Tears 2",
-    "character": "Ryoma Echizen"
-  },
-  {
     "japanese": "この戦い、負けられない！",
     "romaji": "Kono tatakai, makerarenai!",
     "english": "I can't lose this fight!",
@@ -49,18 +42,12 @@
     "character": "Various protagonists"
   },
   {
-    "japanese": "それもまた一興",
-    "romaji": "Sore mo mata ikkyo",
-    "english": "That too has its charm.",
-    "game": "Onimusha series",
-    "character": "Nobunaga Oda"
-  },
-  {
     "japanese": "俺は悪くねぇ！",
     "romaji": "Ore wa warukunee!",
     "english": "It's not my fault!",
     "game": "Tales of the Abyss",
     "character": "Luke fon Fabre"
+
   },
   {
     "japanese": "俺たちの物語は、ここからだ",
@@ -220,4 +207,6 @@
   "game": "Kingdom Hearts series (JP dub)",
   "character": "Sora"
 }
+
+  
 ]

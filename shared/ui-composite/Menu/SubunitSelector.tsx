@@ -30,7 +30,7 @@ const SubunitSelector = ({
         const shortLabel = subunit.label.replace('Levels ', '');
 
         return (
-          <div key={subunit.id} className='relative'>
+          <div key={subunit.id} className='relative flex'>
             {isSelected && (
               <motion.div
                 layoutId='subunit-selector-indicator'
@@ -54,7 +54,7 @@ const SubunitSelector = ({
               borderBottomThickness={0}
               borderRadius='2xl'
               className={clsx(
-                'relative z-10 w-full px-4 pt-3 pb-5 text-center text-sm',
+                'relative z-10 flex h-full w-full items-center justify-center px-4 pt-3 pb-4 text-center text-sm',
                 isSelected && SUBUNIT_SELECTOR_ACTIVE_FLOAT_CLASSES,
                 isSelected
                   ? 'bg-transparent text-(--background-color)'

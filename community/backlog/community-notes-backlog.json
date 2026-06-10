@@ -5,9 +5,7 @@
     "position": "bottom",
     "text": "- Community note: this file is used for lightweight contribution practice.",
     "issued": true,
-    "completed": false,
-    "completedBy": "vedparkasharya",
-    "completedPR": 14531
+    "completed": false
   },
   {
     "id": 2,
@@ -15,7 +13,9 @@
     "position": "top",
     "text": "> Community note: this page intentionally accepts tiny formatting-safe edits.",
     "issued": true,
-    "completed": false
+    "completed": false,
+    "completedBy": "Rahulchaube1",
+    "completedPR": 19932
   },
   {
     "id": 3,
@@ -40,5 +40,11 @@
     "text": "- Additional community note preserved for documentation housekeeping.",
     "issued": true,
     "completed": false
+  },
+  {
+    "id": 4,
+    "author": "Jota e João",
+    "note": "Aprender os Kanas primeiro e evitar focar no Romaji acelera muito a compreensão do idioma!",
+    "dateAdded": "2026-06-08"
   }
 ]

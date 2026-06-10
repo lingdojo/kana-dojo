@@ -1,5 +1,6 @@
 import { create } from 'zustand';
-import { themeSets, fonts } from '@/features/Preferences';
+import { themeSets } from '@/features/Preferences';
+import { fonts } from '@/features/Preferences/fonts';
 import { Random } from 'random-js';
 
 // The special theme ID that triggers crazy mode ("?" theme)

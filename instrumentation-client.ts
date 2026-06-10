@@ -57,19 +57,32 @@ if (process.env.NODE_ENV === 'development') {
   process.env.NEXT_PUBLIC_VERCEL_ENV === 'production'
 ) {
   // Dynamically import PostHog only in actual production deployments (not previews)
-  import('posthog-js').then(module => {
-    const posthog = module.default;
-    const posthogKey = process.env.NEXT_PUBLIC_POSTHOG_KEY;
+  import('posthog-js')
+    .then(module => {
+      const posthog = module?.default;
+      if (typeof posthog?.init !== 'function') {
+        console.warn('[PostHog] Loaded module has no init(); skipping.');
+        return;
+      }
 
-    if (posthogKey) {
-      posthog.init(posthogKey, {
-        api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST,
-        defaults: '2025-05-24',
-      });
-    } else {
-      console.warn(
-        'NEXT_PUBLIC_POSTHOG_KEY is not set; PostHog will not be initialized.',
-      );
-    }
-  });
+      const posthogKey = process.env.NEXT_PUBLIC_POSTHOG_KEY;
+      if (!posthogKey) {
+        console.warn(
+          'NEXT_PUBLIC_POSTHOG_KEY is not set; PostHog will not be initialized.',
+        );
+        return;
+      }
+
+      try {
+        posthog.init(posthogKey, {
+          api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST,
+          defaults: '2025-05-24',
+        });
+      } catch (err) {
+        console.error('[PostHog] init() failed:', err);
+      }
+    })
+    .catch(err => {
+      console.error('[PostHog] Failed to load posthog-js:', err);
+    });
 }

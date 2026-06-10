@@ -10,16 +10,22 @@ import { useCorrect, useError, useClick } from '@/shared/hooks/generic/useAudio'
 import { getGlobalAdaptiveSelector } from '@/shared/utils/adaptiveSelection';
 import Stars from '@/shared/ui-composite/Game/Stars';
 import { useCrazyModeTrigger } from '@/features/CrazyMode/hooks/useCrazyModeTrigger';
-import { useStatsStore } from '@/features/Progress';
-import { useShallow } from 'zustand/react/shallow';
 import { useSmartReverseMode } from '@/shared/hooks/game/useSmartReverseMode';
 import { useTilesMode } from '@/shared/hooks/game/useTilesMode';
+import { useAnswerTimer } from '@/shared/hooks/game/useAnswerTimer';
+import { useGameStats } from '@/shared/hooks/game/useGameStats';
+import { useTilesModeHandlers } from '@/shared/hooks/game/useTilesModeHandlers';
+import { useTilesModeState } from '@/shared/hooks/game/useTilesModeState';
+import { getKanaTilesQuestionShape } from '@/features/Kana/lib/getKanaTilesQuestionShape';
+
 import { GameBottomBar } from '@/shared/ui-composite/Game/GameBottomBar';
 import { cn } from '@/shared/utils/utils';
 import { useThemePreferences } from '@/features/Preferences';
 import {
-  BottomBarState,
   gameContentVariants,
+  getAnswerRowClassName,
+  getGlassModeClassName,
+
   useTilesModeActionKey,
 } from '@/shared/ui-composite/Game/TilesModeShared';
 import TilesModeGrid from '@/shared/ui-composite/Game/TilesModeGrid';
@@ -84,38 +90,19 @@ const KanaTilesMode = ({
   });
   const wordLength = isWordLengthControlled ? externalWordLength : internalWordLength;
 
-  // Answer timing for speed achievements
-  const answerStartTimeRef = useRef<number | null>(null);
-  const answerElapsedMsRef = useRef(0);
-  const startAnswerTimer = useCallback(() => {
-    answerElapsedMsRef.current = 0;
-    answerStartTimeRef.current = performance.now();
-  }, []);
-  const pauseAnswerTimer = useCallback(() => {
-    if (answerStartTimeRef.current !== null) {
-      answerElapsedMsRef.current += performance.now() - answerStartTimeRef.current;
-      answerStartTimeRef.current = null;
-    }
-  }, []);
-  const getAnswerTimeMs = useCallback(() => {
-    if (answerStartTimeRef.current === null) return answerElapsedMsRef.current;
-    return answerElapsedMsRef.current + (performance.now() - answerStartTimeRef.current);
-  }, []);
-  const resetAnswerTimer = useCallback(() => {
-    answerStartTimeRef.current = null;
-    answerElapsedMsRef.current = 0;
-  }, []);
+  const { startAnswerTimer, pauseAnswerTimer, getAnswerTimeMs, resetAnswerTimer } =
+    useAnswerTimer();
   const { playCorrect } = useCorrect();
   const { playErrorTwice } = useError();
   const { playClick } = useClick();
   const { trigger: triggerCrazyMode } = useCrazyModeTrigger();
   const buttonRef = useRef<HTMLButtonElement>(null);
 
+  const stats = useGameStats('kana');
+  const { score, setScore } = stats;
+  const incrementHiraganaCorrect = stats.incrementHiraganaCorrect!;
+  const incrementKatakanaCorrect = stats.incrementKatakanaCorrect!;
   const {
-    score,
-    setScore,
-    incrementHiraganaCorrect,
-    incrementKatakanaCorrect,
     incrementWrongStreak,
     resetWrongStreak,
     recordAnswerTime,
@@ -124,22 +111,7 @@ const KanaTilesMode = ({
     addCharacterToHistory,
     incrementCharacterScore,
     addCorrectAnswerTime,
-  } = useStatsStore(
-    useShallow(state => ({
-      score: state.score,
-      setScore: state.setScore,
-      incrementHiraganaCorrect: state.incrementHiraganaCorrect,
-      incrementKatakanaCorrect: state.incrementKatakanaCorrect,
-      incrementWrongStreak: state.incrementWrongStreak,
-      resetWrongStreak: state.resetWrongStreak,
-      recordAnswerTime: state.recordAnswerTime,
-      incrementCorrectAnswers: state.incrementCorrectAnswers,
-      incrementWrongAnswers: state.incrementWrongAnswers,
-      addCharacterToHistory: state.addCharacterToHistory,
-      incrementCharacterScore: state.incrementCharacterScore,
-      addCorrectAnswerTime: state.addCorrectAnswerTime,
-    })),
-  );
+  } = stats;
 
   const isGlassMode = useThemePreferences().isGlassMode;
 
@@ -167,7 +139,19 @@ const KanaTilesMode = ({
       };
     }, [kanaGroupIndices]);
 
-  const [bottomBarState, setBottomBarState] = useState<BottomBarState>('check');
+  const {
+    bottomBarState,
+    setBottomBarState,
+    placedTileIds,
+    setPlacedTileIds,
+    isChecking,
+    setIsChecking,
+    isCelebrating,
+    setIsCelebrating,
+    canCheck,
+    showContinue,
+    showTryAgain,
+  } = useTilesModeState();
 
   // Memoize dependencies for generateWord to reduce re-renders
   const generateWordDeps = useMemo(
@@ -200,17 +184,20 @@ const KanaTilesMode = ({
       romajiToKana,
     } = generateWordDeps;
     const sourceChars = isReverse ? selectedRomaji : selectedKana;
-    const totalTileCount = wordLength <= 1 ? 3 : wordLength === 2 ? 4 : 5;
-    if (sourceChars.length < totalTileCount) {
+    const questionShape = getKanaTilesQuestionShape({
+      wordLength,
+      availableCharacterCount: sourceChars.length,
+    });
+    if (!questionShape.canGenerate) {
       return { wordChars: [], answerChars: [], allTiles: new Map() };
     }
+    const totalTileCount = questionShape.tileCount;
 
     const wordChars: string[] = [];
     const usedChars = new Set<string>();
     for (let i = 0; i < wordLength; i++) {
       const available = sourceChars.filter(c => !usedChars.has(c));
       if (available.length === 0) break;
-
       const selected = adaptiveSelector.selectWeightedCharacter(available);
       wordChars.push(selected);
       usedChars.add(selected);
@@ -225,7 +212,6 @@ const KanaTilesMode = ({
     const distractorSource = isReverse ? selectedKana : selectedRomaji;
     const distractors: string[] = [];
     const usedAnswers = new Set(answerChars);
-
     for (let i = 0; i < distractorCount; i++) {
       const available = distractorSource.filter(
         c => !usedAnswers.has(c) && !distractors.includes(c),
@@ -248,12 +234,19 @@ const KanaTilesMode = ({
   }, [generateWordDeps]);
 
   const [wordData, setWordData] = useState(() => generateWord());
-  const [placedTileIds, setPlacedTileIds] = useState<number[]>([]);
-  const [isChecking, setIsChecking] = useState(false);
-  const [isCelebrating, setIsCelebrating] = useState(false);
   const hasInitializedResetRef = useRef(false);
   const previousWordLengthRef = useRef(wordLength);
   const skipNextWordLengthResetRef = useRef(false);
+
+  const { handleTileClick, handleTryAgain } = useTilesModeHandlers({
+    isChecking,
+    bottomBarState,
+    setPlacedTileIds,
+    setIsChecking,
+    setBottomBarState,
+    startAnswerTimer,
+    playClick,
+  });
 
   const resetGame = useCallback(() => {
     const newWord = generateWord();
@@ -264,7 +257,14 @@ const KanaTilesMode = ({
     setBottomBarState('check');
     // Start timing for the new question
     startAnswerTimer();
-  }, [generateWord, startAnswerTimer]);
+  }, [
+    generateWord,
+    startAnswerTimer,
+    setPlacedTileIds,
+    setIsChecking,
+    setIsCelebrating,
+    setBottomBarState,
+  ]);
 
   useEffect(() => {
     if (!hasInitializedResetRef.current) {
@@ -419,6 +419,9 @@ const KanaTilesMode = ({
     incrementWrongAnswers,
     score,
     setScore,
+    setBottomBarState,
+    setIsCelebrating,
+    setIsChecking,
     externalOnWrong,
     externalIsReverse,
     recordReverseModeWrong,
@@ -456,54 +459,15 @@ const KanaTilesMode = ({
     resetGame,
   ]);
 
-  // Handle Try Again button (for wrong answers)
-  const handleTryAgain = useCallback(() => {
-    playClick();
-    // Clear placed tiles and reset to check state, but keep the same word
-    setPlacedTileIds([]);
-    setIsChecking(false);
-    setBottomBarState('check');
-    // Restart timing for the retry
-    startAnswerTimer();
-  }, [playClick, startAnswerTimer]);
-
-  // Handle tile click - add or remove
-  const handleTileClick = useCallback(
-    (id: number, _char: string) => {
-      if (isChecking && bottomBarState !== 'wrong') return;
-
-      playClick();
-
-      // If in wrong state, reset to check state and continue with normal tile logic
-      if (bottomBarState === 'wrong') {
-        setIsChecking(false);
-        setBottomBarState('check');
-        // Restart timing for the retry
-        startAnswerTimer();
-      }
-
-      // Normal tile add/remove logic
-      setPlacedTileIds(prevIds =>
-        prevIds.includes(id)
-          ? prevIds.filter(tileId => tileId !== id)
-          : [...prevIds, id],
-      );
-    },
-    [isChecking, bottomBarState, playClick, startAnswerTimer],
-  );
-
   // Not enough characters for tiles mode
-  const requiredTileCount = wordLength <= 1 ? 3 : wordLength === 2 ? 4 : 5;
-  if (
-    selectedKana.length < requiredTileCount ||
-    wordData.wordChars.length === 0
-  ) {
+  const questionShape = getKanaTilesQuestionShape({
+    wordLength,
+    availableCharacterCount: selectedKana.length,
+  });
+  if (!questionShape.canGenerate || wordData.wordChars.length === 0) {
     return null;
   }
 
-  const canCheck = placedTileIds.length > 0 && !isChecking;
-  const showContinue = bottomBarState === 'correct';
-  const showTryAgain = bottomBarState === 'wrong';
   return (
     <div
       className={clsx(
@@ -526,12 +490,12 @@ const KanaTilesMode = ({
           )}
         >
           {/* Word Display */}
-          <div
-            className={cn(
-              'flex flex-row items-center gap-1',
-              isGlassMode && 'rounded-xl bg-(--card-color) px-4 py-2',
-            )}
-          >
+            <div
+              className={getGlassModeClassName(
+                'flex flex-row items-center gap-1',
+                isGlassMode,
+              )}
+            >
             <motion.p
               className={clsx(
                 'sm:text-8xl',
@@ -555,7 +519,7 @@ const KanaTilesMode = ({
             celebrationMode={nextCelebrationMode}
             tilesPerRow={3}
             tileSizeClassName='text-2xl sm:text-3xl'
-            answerRowClassName='flex min-h-[5rem] w-full items-center border-b-2 border-(--border-color) px-2 pb-2 md:w-3/4 lg:w-2/3 xl:w-1/2'
+            answerRowClassName={getAnswerRowClassName()}
             tilesContainerClassName={
               isGlassMode ? 'rounded-xl bg-(--card-color) px-4 py-2' : undefined
             }

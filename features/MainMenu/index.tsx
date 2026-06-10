@@ -26,6 +26,8 @@ import { useMediaQuery } from 'react-responsive';
 
 const Decorations = lazy(() => import('@/shared/ui-composite/Decorations/Decorations'));
 
+const USE_NEW_DESIGN = false;
+
 const MainMenu = () => {
   const [isMounted, setIsMounted] = useState(false);
   const isLG = useMediaQuery({ minWidth: 1024 });
@@ -41,7 +43,8 @@ const MainMenu = () => {
       'active:border-b-0 active:translate-y-[6px] active:mb-[6px]',
       'motion-safe:animate-float',
       delay,
-      `[--float-distance:${floatDistance}]`,
+      // `[--float-distance:${floatDistance}]`,
+      `[--float-distance:-4px]`,
     );
 
   const { playClick } = useClick();
@@ -129,7 +132,7 @@ const MainMenu = () => {
               'border-b-8 border-(--main-color-accent)',
               'transition-all duration-200',
               'active:mb-[6px] active:translate-y-[6px] active:border-b-0',
-              'motion-safe:animate-float [--float-distance:-4px]',
+              'motion-safe:animate-float [--float-distance:-3px]',
               '[animation-delay:400ms]',
               !isGlassMode && 'opacity-90',
             )}
@@ -262,38 +265,40 @@ const MainMenu = () => {
           </div>
         </div>
         <Info />
-        <div
-          className={clsx(
-            'rounded-2xl bg-(--card-color)',
-            'duration-250',
-            'transition-all ease-in-out',
-            'flex flex-col md:flex-row',
-            'w-full',
-            'max-md:border-b-4 max-md:border-(--border-color)',
-            // 'backdrop-blur-xl',
-          )}
-        >
+        <div className={clsx(
+          'w-full rounded-2xl',
+          USE_NEW_DESIGN
+            ? 'border-4 border-(--border-color) bg-(--card-color) overflow-hidden'
+            : 'border-1 border-(--border-color) bg-(--background-color) p-1'
+        )}>
+          <div className={clsx(
+            'rounded-2xl w-full',
+            USE_NEW_DESIGN
+              ? 'flex flex-col md:flex-row'
+              : 'bg-(--card-color) flex flex-col md:flex-row duration-250 transition-all ease-in-out'
+          )}>
           {links.map((link, i) => (
             <Fragment key={i}>
               <Link
                 href={link.href}
                 prefetch
-                className={clsx('group w-full overflow-hidden')}
+                className={clsx('group w-full', !USE_NEW_DESIGN && 'overflow-hidden')}
               >
                 <button
                   className={clsx(
                     'flex h-full w-full text-2xl',
-                    'items-center gap-3 border-(--border-color)',
+                    'items-center gap-3',
                     'justify-start md:justify-center',
-                    'md:border-b-4',
                     'py-8',
                     mobileLabelInset,
                     'md:pl-0',
                     'group',
-                    i === 0 && 'rounded-tl-2xl rounded-bl-2xl',
-                    i === links.length - 1 && 'rounded-tr-2xl rounded-br-2xl',
-                    'hover:cursor-pointer md:hover:border-(--main-color)/80',
-                    'hover:bg-(--border-color)',
+                    'hover:cursor-pointer',
+                    USE_NEW_DESIGN
+                      ? 'hover:bg-(--border-color)'
+                      : 'border-(--border-color) md:border-b-4 md:hover:border-(--main-color)/80 hover:bg-(--border-color)',
+                    !USE_NEW_DESIGN && i === 0 && 'rounded-tl-2xl rounded-bl-2xl',
+                    !USE_NEW_DESIGN && i === links.length - 1 && 'rounded-tr-2xl rounded-br-2xl',
                   )}
                   onClick={() => playClick()}
                 >
@@ -305,7 +310,6 @@ const MainMenu = () => {
                         : i === 1
                           ? '[animation-delay:800ms]'
                           : '[animation-delay:1600ms]',
-                      // i === 0 ? '-10px' : i === 1 ? '-7px' : '-5px'
                     )}
                   >
                     {link.name_ja}
@@ -327,6 +331,7 @@ const MainMenu = () => {
               )}
             </Fragment>
           ))}
+          </div>
         </div>
       </div>
       <div

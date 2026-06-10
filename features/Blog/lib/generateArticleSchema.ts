@@ -85,7 +85,7 @@ export function generateArticleSchema(
       '@type': 'Person',
       name: post.author,
       url: `${baseUrl}/academy?author=${encodeURIComponent(post.author)}`,
-      image: `${baseUrl}/api/og?title=${encodeURIComponent(post.author)}&type=academy`,
+      // image: `${baseUrl}/api/og?title=${encodeURIComponent(post.author)}&type=academy`,
     },
     publisher: {
       '@type': 'Organization',

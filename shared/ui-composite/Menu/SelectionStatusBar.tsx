@@ -18,6 +18,22 @@ type ContentType = 'kana' | 'kanji' | 'vocabulary';
 const ACTIVATION_SCROLL_DELAY_MS = 180;
 const ACTIVATION_SCROLL_DELTA_PX = 6;
 
+const renderLabelWithDotSeparator = (label: string) => {
+  const parts = label.split(', ');
+  if (parts.length === 1) return label;
+
+  return parts.map((part, index) => (
+    <span key={`${part}-${index}`} className='inline'>
+      {part}
+      {index < parts.length - 1 && (
+        <span aria-hidden='true' className='mx-1 text-(--main-color)'>
+          ・
+        </span>
+      )}
+    </span>
+  ));
+};
+
 const SelectionStatusBar = () => {
   const { playClick } = useClick();
   const pathname = usePathname();
@@ -250,11 +266,11 @@ const SelectionStatusBar = () => {
               </span>
               {/* Compact form on small screens: "1, 2, 3" */}
               <span className='text-sm break-words text-(--secondary-color) md:hidden'>
-                {formattedSelectionCompact}
+                {renderLabelWithDotSeparator(formattedSelectionCompact)}
               </span>
               {/* Full form on medium+ screens: "Level 1, Level 2" */}
               <span className='hidden text-base break-words text-(--secondary-color) md:inline'>
-                {formattedSelectionFull}
+                {renderLabelWithDotSeparator(formattedSelectionFull)}
               </span>
             </div>
 

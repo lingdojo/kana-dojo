@@ -28,6 +28,8 @@ import PatchNotesModal from '@/features/PatchNotes/components/PatchNotesModal';
 
 import { APP_VERSION_DISPLAY } from '@/shared/config/constants';
 
+const USE_BADGE_STYLE = false;
+
 type SocialLink = {
   icon: IconDefinition | LucideIcon;
   url: string;
@@ -75,6 +77,7 @@ const MobileBottomBar = () => {
   const [isPatchNotesOpen, setIsPatchNotesOpen] = useState(false);
   const [isThemeOpen, setIsThemeOpen] = useState(false);
   const [isFontOpen, setIsFontOpen] = useState(false);
+  const [useBadgeStyle, setUseBadgeStyle] = useState(true);
   const handleClick = (url: string) => {
     playClick();
     window.open(url, '_blank', 'noopener');
@@ -145,7 +148,11 @@ const MobileBottomBar = () => {
                 <button
                   type='button'
                   onClick={() => handleClick(link.url)}
-                  className='flex items-center'
+                  className={clsx(
+                    isDonate && USE_BADGE_STYLE
+                      ? 'inline-flex h-8 w-8 items-center justify-center rounded-xl  text-(--background-color) border-b-4  bg-(--main-color) border-(--main-color-accent) transition-all duration-200 hover:cursor-pointer'
+                      : 'flex items-center',
+                  )}
                   aria-label={`Open ${link.special === 'donate' ? 'Ko-fi' : link.url}`}
                 >
                   {link.type === 'fontawesome' ? (
@@ -156,16 +163,17 @@ const MobileBottomBar = () => {
                         baseIconClasses,
                         pulseClasses,
                         isPatreon && 'text-blue-500',
+                        isDonate && USE_BADGE_STYLE && '!text-(--background-color)',
                       )}
                     />
                   ) : (
                     <Icon
                       size={16}
                       className={clsx(
-                        baseIconClasses,
-                        pulseClasses,
-                        isDonate &&
-                          'fill-current text-red-500 motion-safe:animate-pulse',
+                        (!isDonate || !USE_BADGE_STYLE) && baseIconClasses,
+                        (!isDonate || !USE_BADGE_STYLE) && pulseClasses,
+                        isDonate && USE_BADGE_STYLE && 'fill-current',
+                        isDonate && !USE_BADGE_STYLE && 'fill-current text-red-500',
                       )}
                     />
                   )}
