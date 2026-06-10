@@ -341,15 +341,23 @@
     "secondaryColor": "oklch(80.0% 0.115 65.0 / 1)"
   },
   {
-  "id": "midnight-ramen",
-  "backgroundColor": "oklch(16.0% 0.042 30.0 / 1)",
-  "mainColor": "oklch(78.0% 0.160 45.0 / 1)",
-  "secondaryColor": "oklch(85.0% 0.120 85.0 / 1)"
+    "id": "midnight-ramen",
+    "backgroundColor": "oklch(16.0% 0.042 30.0 / 1)",
+    "mainColor": "oklch(78.0% 0.160 45.0 / 1)",
+    "secondaryColor": "oklch(85.0% 0.120 85.0 / 1)"
   },
   {
-  "id": "golden-kintsugi",
-  "backgroundColor": "oklch(20.0% 0.020 70.0 / 1)",
-  "mainColor": "oklch(85.0% 0.155 85.0 / 1)",
-  "secondaryColor": "oklch(60.0% 0.085 25.0 / 1)"
+    "id": "golden-kintsugi",
+    "backgroundColor": "oklch(20.0% 0.020 70.0 / 1)",
+    "mainColor": "oklch(85.0% 0.155 85.0 / 1)",
+    "secondaryColor": "oklch(60.0% 0.085 25.0 / 1)"
+  },
+  {
+    "name": "Tea Garden",
+    "primary": "#4A7C59",
+    "secondary": "#8DB6A0",
+    "background": "#F0F7F2",
+    "text": "#2A2A2A",
+    "accent": "#6DA37D"
   }
 ]
