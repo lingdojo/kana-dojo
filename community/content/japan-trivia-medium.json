@@ -515,5 +515,16 @@
     "Shichi-Go-San"
   ],
   "correctIndex": 0
+},
+  {
+  "question": "What is the Japanese term for a convenience store? (Community variation 17)",
+  "difficulty": "medium",
+  "answers": [
+    "Depato",
+    "Konbini",
+    "Ramen-ya",
+    "Kissa"
+  ],
+  "correctIndex": 1
 }
 ]
