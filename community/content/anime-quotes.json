@@ -364,10 +364,17 @@
     "character": "Various endings"
   },
   {
-  "japanese": "レロレロレロレロ",
-  "romaji": "Rero rero rero rero",
-  "english": "Lero lero lero lero. (alt wording 27)",
-  "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
-  "character": "Noriaki Kakyoin"
-}
+    "japanese": "レロレロレロレロ",
+    "romaji": "Rero rero rero rero",
+    "english": "Lero lero lero lero. (alt wording 27)",
+    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+    "character": "Noriaki Kakyoin"
+  },
+  {
+    "japanese": "この世から一匹残らず!",
+    "romaji": "Kono yo kara ippiki norazu!",
+    "english": "Exterminate them all!",
+    "anime": "Demon Slayer",
+    "character": "Tanjiro Kamado"
+  }
 ]
