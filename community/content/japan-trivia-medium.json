@@ -506,14 +506,18 @@
     "correctIndex": 0
   },
   {
-  "question": "Which Japanese festival features people throwing beans to drive away evil spirits? (Community variation 41)",
-  "difficulty": "medium",
-  "answers": [
-    "Setsubun",
-    "Obon",
-    "Tanabata",
-    "Shichi-Go-San"
-  ],
-  "correctIndex": 0
-}
+    "question": "Which Japanese festival features people throwing beans to drive away evil spirits? (Community variation 41)",
+    "difficulty": "medium",
+    "answers": [
+      "Setsubun",
+      "Obon",
+      "Tanabata",
+      "Shichi-Go-San"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "question": "What is Shichi-Go-San?",
+    "answer": "A traditional festival for children ages 3, 5, and 7."
+  }
 ]
