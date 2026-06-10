@@ -370,7 +370,7 @@
     "backgroundColor": "oklch(20.0% 0.045 35.0 / 1)",
     "mainColor": "oklch(70.0% 0.165 30.0 / 1)",
     "secondaryColor": "oklch(80.0% 0.115 65.0 / 1)"
-  }, 
+  },
   {
     "id": "karasu-black",
     "backgroundColor": "oklch(14.0% 0.010 270.0 / 1)",
@@ -378,9 +378,15 @@
     "secondaryColor": "oklch(62.0% 0.095 320.0 / 1)"
   },
   {
-  "id: 'midnight-ramen',"
-  "backgroundColor: 'oklch(16.0% 0.042 30.0 / 1)",
-  "mainColor: 'oklch(78.0% 0.160 45.0 / 1)",
-  "secondaryColor: 'oklch(85.0% 0.120 85.0 / 1)"
+    "id": "midnight-ramen",
+    "backgroundColor": "oklch(16.0% 0.042 30.0 / 1)",
+    "mainColor": "oklch(78.0% 0.160 45.0 / 1)",
+    "secondaryColor": "oklch(85.0% 0.120 85.0 / 1)"
   },
+  {
+    "id": "pagoda-twilight",
+    "backgroundColor": "oklch(20.0% 0.045 290.0 / 1)",
+    "mainColor": "oklch(68.0% 0.155 315.0 / 1)",
+    "secondaryColor": "oklch(75.0% 0.125 280.0 / 1)"
+  }
 ]
