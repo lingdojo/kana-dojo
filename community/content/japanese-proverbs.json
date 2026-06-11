@@ -6,12 +6,6 @@
     "meaning": "Ignorance is bliss"
   },
   {
-    "japanese": "馬子にも衣装",
-    "romaji": "Mago ni mo ishou",
-    "english": "Even a packhorse driver looks good in fine clothes",
-    "meaning": "Clothes make the person"
-  },
-  {
     "japanese": "花より団子",
     "romaji": "Hana yori dango",
     "english": "Dumplings over flowers",
@@ -124,5 +118,11 @@
     "romaji": "Nido aru koto wa sando aru",
     "english": "What happens twice will happen a third time",
     "meaning": "Patterns tend to repeat"
+  },
+  {
+    "japanese": "馬子にも衣装",
+    "romaji": "Mago ni mo ishou",
+    "english": "Even a packhorse driver looks good in fine clothes",
+    "meaning": "Clothes make the person"
   }
 ]
