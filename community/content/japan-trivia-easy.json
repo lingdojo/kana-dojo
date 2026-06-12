@@ -324,5 +324,16 @@
     "Oyasumi"
   ],
   "correctIndex": 0
+},
+  {
+  "question": "What is the Japanese term for a summer fireworks festival?",
+  "difficulty": "easy",
+  "answers": [
+    "Hanabi Taikai",
+    "Bon Odori",
+    "Kagura",
+    "Kanda Matsuri"
+  ],
+  "correctIndex": 0
 }
 ]
