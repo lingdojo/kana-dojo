@@ -74,5 +74,10 @@
   "The concept of 'wabi-sabi' (侘寂) finds beauty in imperfection and impermanence - a cracked bowl is more valuable because of its history.",
   "Japan has 'para-para' dancing - a synchronized hand-waving dance performed to eurobeat in nightclubs since the 1980s.",
   "The Japanese word 'tsubame' (燕) means swallow, and many shops put up nesting boxes because swallows are believed to bring good fortune.",
-  "Japan has 'gokon' (合コン) - organized group blind dates where equal numbers of men and women meet at izakayas."
+  "Japan has 'gokon' (合コン) - organized group blind dates where equal numbers of men and women meet at izakayas.",
+  {
+    "fact": "Japan has more than 6,800 islands, though only about 430 are inhabited.",
+    "category": "Geography",
+    "source": "Japan Meteorological Agency"
+  }
 ]
