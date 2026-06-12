@@ -496,5 +496,11 @@
   "romaji": "Ashita wa ashita no kaze ga fuku",
   "english": "Tomorrow's wind will blow tomorrow",
   "meaning": "Don't worry too much about the future"
-}
+},
+  {
+    "proverb": "七転び八起き",
+    "romaji": "Nana korobi ya oki",
+    "meaning": "Fall seven times, stand up eight.",
+    "context": "Used to encourage resilience after repeated setbacks."
+  }
 ]
