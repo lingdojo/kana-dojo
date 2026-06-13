@@ -1,0 +1,11 @@
+---
+description: Apply before changing Vercel config or deploy CI workflows
+globs:
+  - vercel.json
+  - .github/workflows/**
+alwaysApply: false
+---
+
+Before editing these files, read `.viberaven/agent-context.md` and `.viberaven/mission-map.md`.
+
+Do NOT add production env vars only to the Vercel dashboard without updating `.env.example` in the repo.

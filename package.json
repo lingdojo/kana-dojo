@@ -32,7 +32,10 @@
     "bundle:check": "node scripts/bundle/check-bundle-size.js",
     "vercel:ignore:test": "bash scripts/vercel-ignore-regression.sh",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "viberaven:gate": "npx -y viberaven --agent-mode",
+    "viberaven:verify": "npx -y viberaven --verify",
+    "viberaven:strict": "npx -y viberaven --strict"
   },
   "type": "module",
   "dependencies": {

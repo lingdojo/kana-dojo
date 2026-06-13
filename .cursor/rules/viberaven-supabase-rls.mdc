@@ -1,0 +1,10 @@
+---
+description: Apply when editing Supabase migrations, RLS policies, or auth SQL
+globs:
+  - supabase/**
+alwaysApply: false
+---
+
+Before editing these files, read `.viberaven/agent-context.md` and `.viberaven/mission-map.md`.
+
+Do NOT enable RLS on only one table while leaving related tables open; INSTEAD read `.viberaven/mission-map.md` before migration edits.

@@ -1,0 +1,12 @@
+---
+description: Apply when editing Stripe, Polar, or payment webhook handlers
+globs:
+  - "**/*webhook*"
+  - "**/*stripe*"
+  - "**/*polar*"
+alwaysApply: false
+---
+
+Before editing these files, read `.viberaven/agent-context.md` and `.viberaven/mission-map.md`.
+
+Do NOT ship webhook handlers without signature verification; INSTEAD run `npx -y viberaven --agent-mode` after webhook edits.
