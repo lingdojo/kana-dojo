@@ -364,10 +364,45 @@
     "character": "Various endings"
   },
   {
-  "japanese": "レロレロレロレロ",
-  "romaji": "Rero rero rero rero",
-  "english": "Lero lero lero lero. (alt wording 27)",
-  "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
-  "character": "Noriaki Kakyoin"
+    "japanese": "レロレロレロレロ",
+    "romaji": "Rero rero rero rero",
+    "english": "Lero lero lero lero. (alt wording 27)",
+    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+    "character": "Noriaki Kakyoin"
+  },
+  {
+    "japanese": "諦めないってばよ!",
+    "romaji": "Akiramenai tte bayo!",
+    "english": "I never give up, believe it! (alt wording 33)",
+    "anime": "Naruto",
+    "character": "Naruto Uzumaki"
+  },
+  {
+    "japanese": "だが断る",
+    "romaji": "Daga kotowaru",
+    "english": "But I refuse. (alt wording 4) (alt wording 56)",
+    "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
+    "character": "Rohan Kishibe"
+  },
+  {
+    "japanese": "シシシシシ",
+    "romaji": "Shishishishi",
+    "english": "Shishishi! (alt wording 30)",
+    "anime": "One Piece",
+    "character": "Monkey D. Luffy"
+  },
+  {
+  "japanese": "シシシシシ",
+  "romaji": "Shishishishi",
+  "english": "Shishishi! (alt wording 30)",
+  "anime": "One Piece",
+  "character": "Monkey D. Luffy"
+},
+{
+  "japanese": "何ッ！？",
+  "romaji": "Nani!?",
+  "english": "What?! (alt wording 19) (alt wording 71)",
+  "anime": "Fist of the North Star",
+  "character": "Shin"
 }
 ]

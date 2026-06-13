@@ -16,7 +16,7 @@
     "game": "Fate/stay night [Realta Nua]",
     "character": "Saber",
     "id": 2,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -96,7 +96,7 @@
     "game": "Dragon Quest XI",
     "character": "Hero / party lines",
     "id": 10,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -186,7 +186,7 @@
     "game": "Tales series",
     "character": "Various endings",
     "id": 19,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -226,7 +226,7 @@
     "game": "Tales of the Abyss",
     "character": "Luke fon Fabre",
     "id": 23,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -246,7 +246,7 @@
     "game": "Danganronpa series",
     "character": "Makoto Naegi",
     "id": 25,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -286,7 +286,7 @@
     "game": "Street Fighter series",
     "character": "Ryu",
     "id": 29,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -296,7 +296,7 @@
     "game": "Dragon Quest XI",
     "character": "Hero / party lines",
     "id": 30,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -316,7 +316,7 @@
     "game": "Pokemon series",
     "character": "Rival characters",
     "id": 32,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -356,7 +356,7 @@
     "game": "Onimusha series",
     "character": "Nobunaga Oda",
     "id": 36,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -386,7 +386,7 @@
     "game": "Tales series",
     "character": "Various endings",
     "id": 39,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -396,7 +396,7 @@
     "game": "Samurai game proverb line",
     "character": "Musashi reference",
     "id": 40,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -476,7 +476,7 @@
     "game": "Kingdom Hearts series (JP dub)",
     "character": "Sora",
     "id": 48,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -496,7 +496,7 @@
     "game": "Dragon Quest XI",
     "character": "Hero / party lines",
     "id": 50,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -526,7 +526,7 @@
     "game": "Final Fantasy Type-0",
     "character": "Class Zero",
     "id": 53,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -546,7 +546,7 @@
     "game": "Fire Emblem series",
     "character": "Various protagonists",
     "id": 55,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -596,7 +596,7 @@
     "game": "Samurai game proverb line",
     "character": "Musashi reference",
     "id": 60,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -616,7 +616,7 @@
     "game": "Fate/stay night [Realta Nua]",
     "character": "Saber",
     "id": 62,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -636,7 +636,7 @@
     "game": "Steins;Gate: My Darling's Embrace",
     "character": "Rintaro Okabe",
     "id": 64,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -746,7 +746,7 @@
     "game": "Fire Emblem series",
     "character": "Various protagonists",
     "id": 75,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -856,7 +856,7 @@
     "game": "JoJo’s Bizarre Adventure: All-Star Battle",
     "character": "Giorno Giovanna",
     "id": 86,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1026,7 +1026,7 @@
     "game": "Tales of the Abyss",
     "character": "Luke fon Fabre",
     "id": 103,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1126,7 +1126,7 @@
     "game": "Final Fantasy Type-0",
     "character": "Class Zero",
     "id": 113,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1146,7 +1146,7 @@
     "game": "Fire Emblem series",
     "character": "Various protagonists",
     "id": 115,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {

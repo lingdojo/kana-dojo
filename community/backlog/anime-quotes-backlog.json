@@ -56,7 +56,7 @@
     "english": "Good grief.",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Jotaro Kujo",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -156,7 +156,7 @@
     "english": "But... that's what I like.",
     "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
     "character": "Yoshikage Kira",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -216,7 +216,7 @@
     "english": "Not yet! It's not over yet!",
     "anime": "Mobile Suit Gundam",
     "character": "Char Aznable",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -266,7 +266,7 @@
     "english": "Lero lero lero lero.",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Noriaki Kakyoin",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -327,7 +327,7 @@
     "anime": "Naruto",
     "character": "Naruto Uzumaki",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 34,
@@ -356,7 +356,7 @@
     "english": "I'll exterminate them! Every last one from this world!",
     "anime": "Attack on Titan",
     "character": "Eren Yeager",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -387,7 +387,7 @@
     "anime": "Jujutsu Kaisen",
     "character": "Satoru Gojo",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 40,
@@ -476,7 +476,7 @@
     "english": "I mustn't run away!",
     "anime": "Neon Genesis Evangelion",
     "character": "Shinji Ikari",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -526,7 +526,7 @@
     "english": "Road roller! (alt wording 1)",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "DIO",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -586,7 +586,7 @@
     "english": "Useless! Useless! Useless! (alt wording 7)",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "DIO",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -656,7 +656,7 @@
     "english": "I will transcend humanity! (alt wording 14)",
     "anime": "JoJo's Bizarre Adventure: Battle Tendency",
     "character": "Kars",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -736,7 +736,7 @@
     "english": "Not yet! It's not over yet! (alt wording 22)",
     "anime": "Mobile Suit Gundam",
     "character": "Char Aznable",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -786,7 +786,7 @@
     "english": "Lero lero lero lero. (alt wording 27)",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Noriaki Kakyoin",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -876,7 +876,7 @@
     "english": "I'll exterminate them! Every last one from this world! (alt wording 36)",
     "anime": "Attack on Titan",
     "character": "Eren Yeager",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -886,7 +886,7 @@
     "english": "Don't let anyone else take control of your life and death! (alt wording 37)",
     "anime": "Demon Slayer: Kimetsu no Yaiba",
     "character": "Tanjiro Kamado",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -936,7 +936,7 @@
     "english": "I'm just a hero for fun. (alt wording 42)",
     "anime": "One Punch Man",
     "character": "Saitama",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1086,7 +1086,7 @@
     "english": "I, Giorno Giovanna, have a dream! (alt wording 5) (alt wording 57)",
     "anime": "JoJo's Bizarre Adventure: Golden Wind",
     "character": "Giorno Giovanna",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1096,7 +1096,7 @@
     "english": "Good grief. (alt wording 6) (alt wording 58)",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Jotaro Kujo",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1156,7 +1156,7 @@
     "english": "I'm going to stop being human, JoJo! (alt wording 12) (alt wording 64)",
     "anime": "JoJo's Bizarre Adventure: Phantom Blood",
     "character": "Dio Brando",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1226,7 +1226,7 @@
     "english": "What?! (alt wording 19) (alt wording 71)",
     "anime": "Fist of the North Star",
     "character": "Shin",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1296,7 +1296,7 @@
     "english": "This world is cruel... yet so beautiful. (alt wording 26) (alt wording 78)",
     "anime": "Attack on Titan",
     "character": "Mikasa Ackerman",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1386,7 +1386,7 @@
     "english": "A lesson without pain is meaningless. (alt wording 35) (alt wording 87)",
     "anime": "Fullmetal Alchemist: Brotherhood",
     "character": "Edward Elric",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {

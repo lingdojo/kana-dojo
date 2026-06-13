@@ -2044,5 +2044,71 @@
       "forks": 10,
       "contributors": 14
     }
+  },
+  {
+    "collectedAt": "2026-06-10T11:00:49.423Z",
+    "stars": 2616,
+    "forks": 2256,
+    "contributors": 2065,
+    "diff": {
+      "stars": 8,
+      "forks": 10,
+      "contributors": 7
+    }
+  },
+  {
+    "collectedAt": "2026-06-10T23:00:48.993Z",
+    "stars": 2616,
+    "forks": 2259,
+    "contributors": 2067,
+    "diff": {
+      "stars": 0,
+      "forks": 3,
+      "contributors": 2
+    }
+  },
+  {
+    "collectedAt": "2026-06-11T11:00:53.232Z",
+    "stars": 2625,
+    "forks": 2277,
+    "contributors": 2079,
+    "diff": {
+      "stars": 9,
+      "forks": 18,
+      "contributors": 12
+    }
+  },
+  {
+    "collectedAt": "2026-06-11T23:00:46.572Z",
+    "stars": 2629,
+    "forks": 2281,
+    "contributors": 2085,
+    "diff": {
+      "stars": 4,
+      "forks": 4,
+      "contributors": 6
+    }
+  },
+  {
+    "collectedAt": "2026-06-12T11:00:53.744Z",
+    "stars": 2633,
+    "forks": 2288,
+    "contributors": 2093,
+    "diff": {
+      "stars": 4,
+      "forks": 7,
+      "contributors": 8
+    }
+  },
+  {
+    "collectedAt": "2026-06-12T23:00:49.623Z",
+    "stars": 2642,
+    "forks": 2302,
+    "contributors": 2102,
+    "diff": {
+      "stars": 9,
+      "forks": 14,
+      "contributors": 9
+    }
   }
 ]
