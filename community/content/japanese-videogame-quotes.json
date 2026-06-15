@@ -427,12 +427,10 @@
     "character": "GLaDOS"
   },
   {
-    "id": 109,
-    "game": "The Legend of Zelda: Ocarina of Time",
-    "character": "Sheik",
     "japanese": "時の流れは残酷なもの…",
     "romaji": "Toki no nagare wa zankoku na mono...",
-    "translation": "O fluxo do tempo é sempre cruel...",
-    "difficulty": "Medium"
+    "english": "The flow of time is a cruel thing...",
+    "game": "The Legend of Zelda: Ocarina of Time",
+    "character": "Sheik"
   }
 ]
