@@ -288,20 +288,16 @@
     "answers": ["Sapporo", "Aomori", "Toyama", "Nagano"],
     "correctIndex": 0
   },
-
   {
-    "id": 63,
-    "question": "Qual é a montanha mais alta do Japão?",
-    "options": ["Monte Aso", "Monte Kita", "Monte Fuji", "Monte Yari"],
-    "correctAnswer": "Monte Fuji",
-    "explanation": "O Monte Fuji é a montanha mais alta do Japão, com 3.776 metros de altitude."
+    "question": "What is the tallest mountain in Japan?",
+    "difficulty": "easy",
+    "answers": ["Mount Aso", "Mount Kita", "Mount Fuji", "Mount Yari"],
+    "correctIndex": 2
   },
-
   {
-    "id": 22,
-    "question": "Como se chamava a cidade de Tóquio antes de 1868?",
-    "options": ["Kyoto", "Edo", "Osaka", "Nara"],
-    "correctAnswer": "Edo",
-    "explanation": "A cidade era conhecida como Edo até a Restauração Meiji."
+    "question": "What was Tokyo called before 1868?",
+    "difficulty": "easy",
+    "answers": ["Kyoto", "Edo", "Osaka", "Nara"],
+    "correctIndex": 1
   }
 ]
