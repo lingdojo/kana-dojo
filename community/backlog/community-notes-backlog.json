@@ -40,9 +40,11 @@
     "completed": false
   },
   {
-    "id": 4,
-    "author": "Jota e João",
-    "note": "Aprender os Kanas primeiro e evitar focar no Romaji acelera muito a compreensão do idioma!",
-    "dateAdded": "2026-06-08"
+    "id": 6,
+    "file": "docs/community-notes/learning-tips.md",
+    "position": "bottom",
+    "text": "- Tip: learning Kana first and avoiding a focus on Romaji can significantly speed up language comprehension.",
+    "issued": false,
+    "completed": false
   }
 ]
