@@ -72,10 +72,12 @@
     "notes": "A dynamic river image with strong seasonal presence."
   },
   {
-    "id": 1,
-    "japanese": "古池や\n蛙飛び込む\n水の音",
-    "romaji": "Furuike ya\nKawazu tobikomu\nMizu no oto",
-    "translation": "Um velho lago,\nUm sapo pula dentro,\nO som da água.",
-    "author": "Matsuo Bashō"
+    "japanese": "閑かさや\n岩にしみ入る\n蝉の声",
+    "romaji": "Shizukasa ya / iwa ni shimiiru / semi no koe",
+    "english": "Such stillness — the cries of the cicadas sink into the rocks.",
+    "poet": "Matsuo Basho",
+    "season": "Summer",
+    "kigo": "Cicada (semi)",
+    "notes": "Composed at Ryushaku-ji temple; the profound silence is pierced only by the cry of the cicadas."
   }
 ]
