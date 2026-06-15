@@ -90,18 +90,5 @@
   "\"〜ながらも\" means \"even while\" or \"though\" (contrast).",
   "\"〜おかげで\" expresses gratitude for a cause, \"thanks to\".",
   "\"〜まま\" means \"as is\" or \"unchanged\". (practice variation 26)",
-  {
-    "id": 52,
-    "title": "Forma ～てください (Por favor, faça...)",
-    "jlptLevel": "N5",
-    "structure": "Verbo na forma Te (～て) + ください",
-    "explanation": "Usado para fazer um pedido educado ou dar uma instrução.",
-    "examples": [
-      {
-        "japanese": "ちょっと待ってください。",
-        "romaji": "Chotto matte kudasai.",
-        "translation": "Por favor, espere um momento."
-      }
-    ]
-  }
+  "\"〜てください\" means \"please do (something)\" and is used to make a polite request or give an instruction, e.g. \"ちょっと待ってください\" (Please wait a moment)."
 ]
