@@ -377,5 +377,11 @@
     "backgroundColor": "oklch(93.2% 0.030 73.9 / 1)",
     "mainColor": "oklch(40.0% 0.164 29.2 / 1)",
     "secondaryColor": "oklch(78.6% 0.064 74.6 / 1)"
+  },
+  {
+    "id": "driftwood-brown",
+    "backgroundColor": "oklch(22.0% 0.020 55.0 / 1)",
+    "mainColor": "oklch(68.0% 0.085 65.0 / 1)",
+    "secondaryColor": "oklch(58.0% 0.060 45.0 / 1)"
   }
 ]
