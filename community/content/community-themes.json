@@ -436,5 +436,11 @@
   backgroundColor: 'oklch(92.0% 0.025 90.0 / 1)',
   mainColor: 'oklch(65.0% 0.195 40.0 / 1)',
   secondaryColor: 'oklch(75.0% 0.145 85.0 / 1)'
-}
+  },
+  {
+  id: 'sakura-latte',
+  backgroundColor: 'oklch(95.0% 0.020 15.0 / 1)',
+  mainColor: 'oklch(70.0% 0.155 350.0 / 1)',
+  secondaryColor: 'oklch(82.0% 0.090 95.0 / 1)'
+  },
 ]
