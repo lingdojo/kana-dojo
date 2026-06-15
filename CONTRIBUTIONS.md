@@ -1,92 +1,131 @@
-# Contribuições — Branch `entrega-projeto`
+# Documentação de Contribuições — KanaDojo
 
-> Autor: Jota (alexandrejotaxd@gmail.com)  
-> Repositório upstream: [lingdojo/kana-dojo](https://github.com/lingdojo/kana-dojo)  
-> Fork: [Jota-github/kana-dojoBJ](https://github.com/Jota-github/kana-dojoBJ)  
-> Branch de entrega: `entrega-projeto`
-
----
-
-## Resumo
-
-| Categoria         | Quantidade |
-|-------------------|-----------|
-| Correções de bugs | 6         |
-| Conteúdo novo     | 14        |
-| **Total de commits** | **20** |
+**Projeto:** KanaDojo — plataforma de aprendizado de japonês (Next.js 15, React 19, TypeScript)  
+**Repositório upstream:** [lingdojo/kana-dojo](https://github.com/lingdojo/kana-dojo)  
+**Fork:** [Jota-github/kana-dojoBJ](https://github.com/Jota-github/kana-dojoBJ)  
+**Branch de entrega:** `entrega-projeto`  
+**Total de commits:** 21  
 
 ---
 
-## Commits de Correção (bug fixes)
+## O que é o KanaDojo?
 
-Esses commits corrigem problemas de schema, duplicatas e formato nos arquivos de conteúdo da comunidade.
+KanaDojo é uma plataforma open source de aprendizado de japonês. Ela funciona como um jogo — o usuário pratica hiragana, katakana, kanji, vocabulário e cultura japonesa. O projeto é construído com Next.js e aceita contribuições da comunidade principalmente via arquivos JSON na pasta `community/content/`, onde ficam os dados que alimentam os quizzes, temas visuais e curiosidades do app.
 
-| Hash | Descrição |
-|------|-----------|
-| `c43c19ec7` | Corrige ID duplicado na nota da comunidade (id 4 → id 6) em `community-notes-backlog.json` |
-| `eda93ba9c` | Corrige schema da quote do Sheik (#109) em `japanese-videogame-quotes.json` |
-| `60e115790` | Converte entrada id:52 de objeto para string em `japanese-grammar.json` |
-| `73abfa2f5` | Converte tema "Sumo Strength" de hex para oklch em `community-themes.json` |
-| `2d81cf3b2` | Corrige schema de 2 perguntas (#63 e #22) em `japan-trivia-easy.json` |
-| `195a4f4cf` | Substitui haiku duplicado por novo haiku de Bashō em `japanese-haiku.json` |
+Todas as nossas contribuições foram feitas nessa pasta de conteúdo comunitário.
 
 ---
 
-## Commits de Conteúdo (features / issues)
+## Fase 1 — Adição de conteúdo inicial (8 commits)
 
-Esses commits adicionam conteúdo novo resolvendo issues abertas no repositório upstream.
-
-### Sessão 1 — Issues iniciais
-
-| Hash | Issue | Arquivo | Conteúdo adicionado |
-|------|-------|---------|---------------------|
-| `e325db82e` | — | `community-themes.json` | Tema "Sumo Strength" |
-| `92555217e` | — | `japanese-grammar.json` | Ponto gramatical 〜てください |
-| `04279d63c` | — | `japanese-videogame-quotes.json` | Quote do Zelda (Link) |
-| `2bfbc3486` | — | `community-notes-backlog.json` | Community note linha 4 |
-
-### Sessão 2 — Issues #207xx
-
-| Hash | Issue | Arquivo | Conteúdo adicionado |
-|------|-------|---------|---------------------|
-| `4cb09bff8` | [#20754](https://github.com/lingdojo/kana-dojo/issues/20754) | `japanese-grammar.json` | Ponto gramatical 〜ことがある |
-| `2e609da28` | [#20768](https://github.com/lingdojo/kana-dojo/issues/20768) | `community-themes.json` | Tema "Driftwood Brown" |
-| `865aece84` | [#20763](https://github.com/lingdojo/kana-dojo/issues/20763) | `japanese-cultural-etiquette.json` | Etiqueta sobre filas |
-| `be9aefc5d` | [#20771](https://github.com/lingdojo/kana-dojo/issues/20771) | `japan-trivia-medium.json` | Trivia sobre a NHK |
-| `c45fbe4c9` | [#20752](https://github.com/lingdojo/kana-dojo/issues/20752) | `japan-trivia-medium.json` | Trivia sobre veados de Nara |
-
-### Sessão 3 — Issues #208xx
-
-| Hash | Issue | Arquivo | Conteúdo adicionado |
-|------|-------|---------|---------------------|
-| `f84849495` | [#20816](https://github.com/lingdojo/kana-dojo/issues/20816) | `community-themes.json` | Tema "Umbrella Rain" |
-| `b8dc9b0a9` | [#20815](https://github.com/lingdojo/kana-dojo/issues/20815) | `japanese-cultural-etiquette.json` | Etiqueta sobre tirar sapatos |
-| `a86227ea3` | [#20813](https://github.com/lingdojo/kana-dojo/issues/20813) | `japanese-grammar.json` | Ponto gramatical 〜のに |
-| `6f91faee0` | [#20810](https://github.com/lingdojo/kana-dojo/issues/20810) | `japan-facts.json` | Fato sobre kotodama (言霊) |
-| `e4f811eee` | [#20808](https://github.com/lingdojo/kana-dojo/issues/20808) | `japanese-cultural-etiquette.json` | Etiqueta em escadas rolantes |
+Esses foram os primeiros commits feitos no fork. Adicionamos conteúdo novo ao projeto seguindo as instruções de cada issue.
 
 ---
 
-## Arquivos Modificados
+### Commit 1 — Trivia fácil: Mount Fuji
+**Hash:** `fbc8871a2`  
+**Arquivo:** `community/content/japan-trivia-easy.json`
 
-| Arquivo | Tipo de mudança |
-|---------|----------------|
-| `community/content/community-notes-backlog.json` | Correção de schema |
-| `community/content/japanese-videogame-quotes.json` | Correção + nova entrada |
-| `community/content/japanese-grammar.json` | Correção + 2 novas entradas |
-| `community/content/community-themes.json` | Correção + 3 novos temas |
-| `community/content/japan-trivia-easy.json` | Correção de schema |
-| `community/content/japanese-haiku.json` | Substituição de duplicata |
-| `community/content/japanese-cultural-etiquette.json` | 3 novas entradas |
-| `community/content/japan-trivia-medium.json` | 2 novas entradas |
-| `community/content/japan-facts.json` | 1 nova entrada |
+**O que era o problema?**  
+O repositório tinha uma issue pedindo para adicionar uma pergunta de trivia (quiz) de nível fácil sobre o Monte Fuji ao banco de perguntas da plataforma.
+
+**O que fizemos?**  
+Adicionamos a seguinte pergunta ao arquivo de trivia fácil:
+
+> "What is the name of Japan's highest mountain?"  
+> Respostas: Mount Fuji, Mount Aso, Mount Koya, Mount Ibuki  
+> Resposta correta: Mount Fuji (índice 0)
 
 ---
 
-## Como aplicar
+### Commit 2 — Haiku de Matsuo Bashō
+**Hash:** `f63a7726c`  
+**Arquivo:** `community/content/japanese-haiku.json`
 
-```bash
-git push origin entrega-projeto
+**O que era o problema?**  
+O arquivo de haikus estava vazio ou incompleto. A issue pedia para adicionar o famoso haiku de Matsuo Bashō sobre o sapo e o lago.
+
+**O que fizemos?**  
+Adicionamos o haiku mais famoso da literatura japonesa:
+
+- **Japonês:** 古池や蛙飛び込む水の音  
+- **Romaji:** Furuike ya kawazu tobikomu mizu no oto  
+- **Tradução:** An old silent pond... A frog jumps into the pond. Splash! Silence again.  
+- **Poeta:** Matsuo Bashō | **Estação:** Spring | **Kigo:** kawazu (frog)
+
+---
+
+### Commit 3 — Trivia fácil: nome antigo de Tokyo
+**Hash:** `9d6386858`  
+**Arquivo:** `community/content/japan-trivia-easy.json`
+
+**O que era o problema?**  
+Issue pedindo uma pergunta sobre a história de Tokyo.
+
+**O que fizemos?**  
+Adicionamos:
+
+> "What was the old name of Tokyo before it became the capital?"  
+> Respostas: Edo, Kyoto, Osaka, Nara  
+> Resposta correta: Edo (índice 0)
+
+---
+
+### Commit 4 — Tema visual: Sumo Strength
+**Hash:** `e325db82e`  
+**Arquivo:** `community/content/community-themes.json`
+
+**O que era o problema?**  
+Issue pedindo a adição de um novo tema visual chamado "Sumo Strength" para personalização da interface do KanaDojo. O arquivo de temas controla as cores da plataforma.
+
+**O que fizemos?**  
+Adicionamos o tema com as cores em formato oklch (formato de cor moderno usado pelo Tailwind CSS v4):
+
+```json
+{
+  "id": "sumo-strength",
+  "backgroundColor": "oklch(20.0% 0.025 30.0 / 1)",
+  "mainColor": "oklch(65.0% 0.180 25.0 / 1)",
+  "secondaryColor": "oklch(55.0% 0.140 15.0 / 1)"
+}
 ```
 
-Para abrir Pull Requests individuais para cada issue, referenciar o hash do commit correspondente e usar `Closes #<número>` na descrição do PR.
+---
+
+### Commit 5 — Ponto gramatical: 〜てください
+**Hash:** `92555217e`  
+**Arquivo:** `community/content/japanese-grammar.json`
+
+**O que era o problema?**  
+Issue pedindo adição de uma explicação sobre a forma 〜てください (te kudasai), que significa "por favor, faça X".
+
+**O que fizemos?**  
+Adicionamos a string explicativa:
+
+> `"〜てください (te kudasai) is used to make polite requests, meaning 'please do ~'."`
+
+---
+
+### Commit 6 — Quote de video game: Zelda (Link)
+**Hash:** `04279d63c`  
+**Arquivo:** `community/content/japanese-videogame-quotes.json`
+
+**O que era o problema?**  
+Issue pedindo a adição de uma frase icônica de video game japonês para que os usuários aprendam japonês através da cultura gamer.
+
+**O que fizemos?**  
+Adicionamos a quote do Link em The Legend of Zelda:
+
+```json
+{
+  "japanese": "それは危険だ。これを持っていけ",
+  "romaji": "Sore wa kiken da. Kore wo motte ike",
+  "english": "It's dangerous to go alone! Take this.",
+  "game": "The Legend of Zelda",
+  "character": "Old Man"
+}
+```
+
+---
+
+### Commit 7 — Community 
