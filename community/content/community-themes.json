@@ -374,13 +374,8 @@
   {
     "id": "sumo-strength",
     "name": "Sumo Strength",
-    "author": "Jota e Dupla",
-    "colors": {
-      "background": "#F5E6D3",
-      "primary": "#8B0000",
-      "secondary": "#D2B48C",
-      "text": "#2C1E16",
-      "accent": "#FF4500"
-    }
+    "backgroundColor": "oklch(93.2% 0.030 73.9 / 1)",
+    "mainColor": "oklch(40.0% 0.164 29.2 / 1)",
+    "secondaryColor": "oklch(78.6% 0.064 74.6 / 1)"
   }
 ]
