@@ -5,7 +5,7 @@
   "scripts": {
     "prepare": "husky",
     "dev": "next dev --turbo",
-    "build": "next build",
+    "build": "node scripts/generate-commit-info.mjs && next build",
     "test": "vitest run",
     "test:watch": "vitest",
     "postbuild": "next-sitemap",

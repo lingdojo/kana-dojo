@@ -12,8 +12,10 @@ import {
 } from '@/features/Kanji/services/kanjiDataService';
 import LevelSetCards from '@/shared/ui-composite/Menu/LevelSetCards';
 import useSetProgressHydration from '@/features/Progress/hooks/useSetProgress';
-import useSetProgressStore from '@/features/Progress/store/useSetProgressStore';
-import { calculateKanjiSetProgressAndStars } from '@/features/Progress/lib/setProgress';
+import {
+  calculateKanjiSetProgressAndStars,
+  useSetProgressStore,
+} from '@/features/Progress';
 import {
   N1KanjiLength,
   N2KanjiLength,
@@ -148,24 +150,41 @@ const KanjiCards = () => {
 
   useSetProgressHydration();
   const kanjiProgress = useSetProgressStore(state => state.data.kanji);
-  const getSetProgress = useCallback(
+  const getSetProgressSummary = useCallback(
     (items: IKanjiObj[]) =>
       calculateKanjiSetProgressAndStars(
         items.map(item => ({
           correct: kanjiProgress[item.kanjiChar]?.correct ?? 0,
         })),
-      ).progress,
+      ),
     [kanjiProgress],
   );
-  const getSetStars = useCallback(
-    (items: IKanjiObj[]) =>
-      calculateKanjiSetProgressAndStars(
-        items.map(item => ({
-          correct: kanjiProgress[item.kanjiChar]?.correct ?? 0,
-        })),
-      ).stars,
-    [kanjiProgress],
-  );
+  const initialCollections = useMemo(() => {
+    const cached = kanjiDataService.getAllCached();
+
+    return Object.fromEntries(
+      unitSummaries
+        .map(unit => {
+          const data = cached[unit.name];
+          if (!data) return null;
+
+          return [
+            unit.name,
+            {
+              data,
+              name: getCollectionName(unit.name),
+              prevLength: unit.startLevel - 1,
+            },
+          ] as const;
+        })
+        .filter(entry => entry !== null),
+    ) as Partial<
+      Record<
+        KanjiLevel,
+        { data: IKanjiObj[]; name: string; prevLength: number }
+      >
+    >;
+  }, [getCollectionName, unitSummaries]);
 
   return (
     <LevelSetCards<KanjiLevel, IKanjiObj>
@@ -185,11 +204,11 @@ const KanjiCards = () => {
       collapsedRows={collapsedRows}
       setCollapsedRows={setCollapsedRows}
       renderSetDictionary={items => <KanjiSetDictionary words={items} />}
-      getSetProgress={getSetProgress}
-      getSetStars={getSetStars}
+      getSetProgressSummary={getSetProgressSummary}
       loadingText='Loading kanji sets...'
       activeSubunitRange={activeSubunitRange}
       collapseScopeKey={collapsedRowsKey}
+      initialCollections={initialCollections}
     />
   );
 };

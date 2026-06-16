@@ -27,6 +27,9 @@
 .DS_Store
 *.pem
 
+# Generated build-time data
+/shared/data/commitInfo.json
+
 # AI tooling state
 /.agent/
 /.agents/

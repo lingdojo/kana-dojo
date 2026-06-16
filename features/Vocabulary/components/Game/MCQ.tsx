@@ -25,7 +25,7 @@ import {
   type VocabQuizType,
 } from '@/features/Vocabulary/components/Game/vocabFormatLock';
 import useClassicSessionStore from '@/shared/store/useClassicSessionStore';
-import useSetProgressStore from '@/features/Progress/store/useSetProgressStore';
+import { useSetProgressStore } from '@/features/Progress';
 
 const random = new Random();
 

@@ -3,8 +3,14 @@
 import PostWrapper from '@/shared/ui-composite/layout/PostWrapper';
 import { useClick } from '@/shared/hooks/generic/useAudio';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
-import { X } from 'lucide-react';
+import { X, CircleHelp } from 'lucide-react';
 import { useCallback } from 'react';
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from '@/shared/ui/components/popover';
+import commitInfo from '@/shared/data/commitInfo.json';
 import patchNotesData from '../patchNotesData.json';
 
 interface PatchNotesModalProps {
@@ -23,6 +29,10 @@ export default function PatchNotesModal({
     onOpenChange(false);
   }, [playClick, onOpenChange]);
 
+  const isProduction =
+    process.env.NODE_ENV === 'production' &&
+    process.env.NEXT_PUBLIC_VERCEL_ENV === 'production';
+
   if (!open) return null;
 
   return (
@@ -34,9 +44,77 @@ export default function PatchNotesModal({
           onOpenAutoFocus={e => e.preventDefault()}
         >
           <div className='sticky top-0 z-10 flex flex-row items-center justify-between rounded-t-2xl border-b border-(--border-color) bg-(--background-color) px-6 pt-6 pb-4'>
-            <DialogPrimitive.Title className='text-2xl font-semibold text-(--main-color)'>
-              Patch Notes
-            </DialogPrimitive.Title>
+            <div className='flex flex-row items-center gap-2'>
+              <DialogPrimitive.Title className='text-2xl font-semibold text-(--main-color)'>
+                Patch Notes
+              </DialogPrimitive.Title>
+              {!isProduction && (
+                <Popover>
+                  <PopoverTrigger asChild>
+                    <button
+                      type='button'
+                      aria-label='View commit details'
+                      className='rounded-full hover:cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--main-color)'
+                    >
+                      <CircleHelp
+                        size={18}
+                        className='text-(--secondary-color) hover:text-(--main-color)'
+                      />
+                    </button>
+                  </PopoverTrigger>
+                  <PopoverContent
+                    side='bottom'
+                    align='start'
+                    className='w-72 border border-(--border-color) bg-(--background-color) p-4 text-(--main-color)'
+                  >
+                    <div className='space-y-2 text-sm'>
+                      <div>
+                        <span className='text-(--secondary-color) text-xs font-medium uppercase tracking-wide'>
+                          Commit
+                        </span>
+                        <p className='mt-0.5 font-mono text-xs text-(--main-color) break-all'>
+                          {commitInfo.hash}
+                        </p>
+                      </div>
+                      <div>
+                        <span className='text-(--secondary-color) text-xs font-medium uppercase tracking-wide'>
+                          Date
+                        </span>
+                        <p className='mt-0.5 text-(--main-color)'>
+                          {new Date(commitInfo.date).toLocaleString('en-US', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric',
+                            hour: '2-digit',
+                            minute: '2-digit',
+                            second: '2-digit',
+                            timeZoneName: 'short',
+                          })}
+                        </p>
+                      </div>
+                      <div>
+                        <span className='text-(--secondary-color) text-xs font-medium uppercase tracking-wide'>
+                          Subject
+                        </span>
+                        <p className='mt-0.5 text-(--main-color)'>
+                          {commitInfo.subject}
+                        </p>
+                      </div>
+                      {commitInfo.body && (
+                        <div>
+                          <span className='text-(--secondary-color) text-xs font-medium uppercase tracking-wide'>
+                            Description
+                          </span>
+                          <p className='mt-0.5 whitespace-pre-wrap text-(--main-color)'>
+                            {commitInfo.body}
+                          </p>
+                        </div>
+                      )}
+                    </div>
+                  </PopoverContent>
+                </Popover>
+              )}
+            </div>
             <button
               onClick={handleClose}
               className='shrink-0 rounded-xl p-2 hover:cursor-pointer hover:bg-(--card-color)'

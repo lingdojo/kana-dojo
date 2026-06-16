@@ -4,7 +4,7 @@
     "file": "docs/community-notes/contribution-notes-1.md",
     "position": "bottom",
     "text": "- Community note: this file is used for lightweight contribution practice.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -12,7 +12,7 @@
     "file": "docs/community-notes/contribution-notes-2.md",
     "position": "top",
     "text": "> Community note: this page intentionally accepts tiny formatting-safe edits.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -40,10 +40,17 @@
     "completed": false
   },
   {
+<<<<<<< HEAD
     "id": 6,
     "file": "docs/community-notes/learning-tips.md",
     "position": "bottom",
     "text": "- Tip: learning Kana first and avoiding a focus on Romaji can significantly speed up language comprehension.",
+=======
+    "id": 4,
+    "author": "Jota e João",
+    "note": "Aprender os Kanas primeiro e evitar focar no Romaji acelera muito a compreensão do idioma!",
+    "dateAdded": "2026-06-08",
+>>>>>>> upstream/main
     "issued": false,
     "completed": false
   }

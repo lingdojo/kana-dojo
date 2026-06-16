@@ -2,7 +2,7 @@
 import { useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import clsx from 'clsx';
-import useKanjiStore, { IKanjiObj } from '@/features/Kanji/store/useKanjiStore';
+import type { IKanjiObj } from '@/features/Kanji/store/useKanjiStore';
 import { Random } from 'random-js';
 import { useCorrect, useError, useClick } from '@/shared/hooks/generic/useAudio';
 import { getGlobalAdaptiveSelector } from '@/shared/utils/adaptiveSelection';
@@ -27,7 +27,8 @@ import {
 } from '@/shared/ui-composite/Game/TilesModeShared';
 import TilesModeGrid from '@/shared/ui-composite/Game/TilesModeGrid';
 import useClassicSessionStore from '@/shared/store/useClassicSessionStore';
-import useSetProgressStore from '@/features/Progress/store/useSetProgressStore';
+import { useSetProgressStore } from '@/features/Progress';
+import { useMenuSelectorStore } from '@/shared/ui-composite/Menu/store/useMenuSelectorStore';
 
 const random = new Random();
 const adaptiveSelector = getGlobalAdaptiveSelector();
@@ -81,9 +82,8 @@ const KanjiTilesMode = ({
     selectedKanjiObjs.length - 1,
   );
 
-  // Get the current JLPT level from the Kanji store
-  const selectedKanjiCollection = useKanjiStore(
-    state => state.selectedKanjiCollection,
+  const selectedKanjiCollection = useMenuSelectorStore(
+    state => state.collections.kanji.selectedCollection,
   );
   const isGlassMode = useThemePreferences().isGlassMode;
 

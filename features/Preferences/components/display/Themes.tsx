@@ -276,6 +276,13 @@ const Themes = ({ useNewIconDesign = false }: ThemesProps) => {
                 }}
                 onClick={() => {
                   playClick();
+                  if (currentTheme.id === 'chuugi') {
+                    window.open(
+                      'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+                      '_blank',
+                      'noopener,noreferrer',
+                    );
+                  }
                 }}
               >
                 <input

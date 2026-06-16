@@ -168,6 +168,12 @@ export default async function RootLayout({ children }: RootLayoutProps) {
           href='https://translation.googleapis.com'
           crossOrigin='anonymous'
         />
+        <Script
+          async
+          src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4838010337597054'
+          crossOrigin='anonymous'
+          strategy='afterInteractive'
+        />
       </head>
       <body>
         <Script id='audio-sw-migration' strategy='afterInteractive'>
