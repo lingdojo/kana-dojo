@@ -17,7 +17,6 @@
     "mainColor": "oklch(80.0% 0.180 100.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.140 80.0 / 1)"
   },
-
   {
     "id": "tsukimi-moon",
     "backgroundColor": "oklch(18.0% 0.028 255.0 / 1)",
@@ -175,19 +174,36 @@
     "secondaryColor": "oklch(68.0% 0.105 160.0 / 1)"
   },
   {
-    "id": "cedar-incense",
-    "backgroundColor": "oklch(19.0% 0.020 70.0 / 1)",
-    "mainColor": "oklch(72.0% 0.095 75.0 / 1)",
-    "secondaryColor": "oklch(58.0% 0.065 55.0 / 1)"
-  },
-  {
     "id": "cedar-moss",
     "backgroundColor": "oklch(20.0% 0.030 150.0 / 1)",
     "mainColor": "oklch(66.0% 0.115 135.0 / 1)",
     "secondaryColor": "oklch(55.0% 0.070 155.0 / 1)"
   },
   {
-<<<<<<< HEAD
+    "id": "ramune-fizz",
+    "backgroundColor": "oklch(95.0% 0.020 210.0 / 1)",
+    "mainColor": "oklch(70.0% 0.170 205.0 / 1)",
+    "secondaryColor": "oklch(80.0% 0.135 95.0 / 1)"
+  },
+  {
+    "id": "sakura-storm",
+    "backgroundColor": "oklch(90.0% 0.032 340.0 / 1)",
+    "mainColor": "oklch(70.0% 0.185 345.0 / 1)",
+    "secondaryColor": "oklch(55.0% 0.145 350.0 / 1)"
+  },
+  {
+    "id": "golden-kintsugi",
+    "backgroundColor": "oklch(20.0% 0.020 70.0 / 1)",
+    "mainColor": "oklch(85.0% 0.155 85.0 / 1)",
+    "secondaryColor": "oklch(60.0% 0.085 25.0 / 1)"
+  },
+  {
+    "id": "dango-sweet",
+    "backgroundColor": "oklch(94.0% 0.020 95.0 / 1)",
+    "mainColor": "oklch(65.0% 0.180 350.0 / 1)",
+    "secondaryColor": "oklch(72.0% 0.145 130.0 / 1)"
+  },
+  {
     "id": "street-lantern",
     "backgroundColor": "oklch(19.0% 0.038 40.0 / 1)",
     "mainColor": "oklch(85.0% 0.135 55.0 / 1)",
@@ -201,23 +217,10 @@
     "name": "Karasu Black"
   },
   {
-    "id": "river-stone",
-    "name": "River Stone",
-    "backgroundColor": "oklch(21.0% 0.012 235.0 / 1)",
-    "mainColor": "oklch(74.0% 0.045 200.0 / 1)",
-    "secondaryColor": "oklch(58.0% 0.035 230.0 / 1)"
-  },
-  {
     "id": "hanami-pink",
     "backgroundColor": "oklch(92.0% 0.028 345.0 / 1)",
     "mainColor": "oklch(70.0% 0.165 350.0 / 1)",
     "secondaryColor": "oklch(78.0% 0.110 25.0 / 1)"
-  },
-  {
-    "id": "thunder-god",
-    "backgroundColor": "oklch(14.0% 0.058 290.0 / 1)",
-    "mainColor": "oklch(88.0% 0.195 95.0 / 1)",
-    "secondaryColor": "oklch(75.0% 0.180 275.0 / 1)"
   },
   {
     "id": "osaka-neon",
@@ -284,18 +287,6 @@
     "secondaryColor": "oklch(68.0% 0.110 310.0 / 1)"
   },
   {
-    "id": "golden-kintsugi",
-    "backgroundColor": "oklch(20.0% 0.020 70.0 / 1)",
-    "mainColor": "oklch(85.0% 0.155 85.0 / 1)",
-    "secondaryColor": "oklch(60.0% 0.085 25.0 / 1)"
-  },
-  {
-    "id": "matcha-drift",
-    "backgroundColor": "oklch(18.5% 0.035 140.0 / 1)",
-    "mainColor": "oklch(76.0% 0.140 135.0 / 1)",
-    "secondaryColor": "oklch(72.0% 0.070 80.0 / 1)"
-  },
-  {
     "id": "kumo-sky",
     "backgroundColor": "oklch(90.0% 0.020 220.0 / 1)",
     "mainColor": "oklch(60.0% 0.090 215.0 / 1)",
@@ -336,12 +327,6 @@
     "backgroundColor": "oklch(20.0% 0.048 35.0 / 1)",
     "mainColor": "oklch(68.0% 0.185 40.0 / 1)",
     "secondaryColor": "oklch(78.0% 0.135 55.0 / 1)"
-  },
-  {
-    "id": "vaporwave-shrine",
-    "backgroundColor": "oklch(17.0% 0.072 305.0 / 1)",
-    "mainColor": "oklch(75.0% 0.175 195.0 / 1)",
-    "secondaryColor": "oklch(80.0% 0.195 330.0 / 1)"
   },
   {
     "id": "komorebi-green",
@@ -403,11 +388,5 @@
     "backgroundColor": "oklch(22.0% 0.018 250.0 / 1)",
     "mainColor": "oklch(70.0% 0.175 225.0 / 1)",
     "secondaryColor": "oklch(75.0% 0.145 350.0 / 1)"
-=======
-    "id": "ramune-fizz",
-    "backgroundColor": "oklch(95.0% 0.020 210.0 / 1)",
-    "mainColor": "oklch(70.0% 0.170 205.0 / 1)",
-    "secondaryColor": "oklch(80.0% 0.135 95.0 / 1)"
->>>>>>> upstream/main
   }
 ]

@@ -72,7 +72,33 @@
     "notes": "A dynamic river image with strong seasonal presence."
   },
   {
-<<<<<<< HEAD
+    "japanese": "しばらくは\n花の上なる\n月夜かな",
+    "romaji": "Shibaraku wa / hana no ue naru / tsukiyo kana",
+    "english": "For a while, moonlight rests above the blossoms.",
+    "poet": "Matsuo Basho",
+    "season": "Spring",
+    "kigo": "Blossoms (hana)",
+    "notes": "A quiet scene balancing moonlight and cherry blossoms."
+  },
+  {
+    "japanese": "秋深き\n隣は何を\nする人ぞ",
+    "romaji": "Aki fukaki / tonari wa nani o / suru hito zo",
+    "english": "In deep autumn, what kind of person lives next door?",
+    "poet": "Matsuo Basho",
+    "season": "Autumn",
+    "kigo": "Deep autumn (aki fukaki)",
+    "notes": "Evokes solitude and curiosity."
+  },
+  {
+    "japanese": "春の海\nひねもすのたり\nのたりかな",
+    "romaji": "Haru no umi / hinemosu notari / notari kana",
+    "english": "The spring sea stretches lazily all day, rising and falling.",
+    "poet": "Yosa Buson",
+    "season": "Spring",
+    "kigo": "Spring sea (haru no umi)",
+    "notes": "Known for musical phrasing and calm motion."
+  },
+  {
     "japanese": "閑かさや\n岩にしみ入る\n蝉の声",
     "romaji": "Shizukasa ya / iwa ni shimiiru / semi no koe",
     "english": "Such stillness — the cries of the cicadas sink into the rocks.",
@@ -81,34 +107,4 @@
     "kigo": "Cicada (semi)",
     "notes": "Composed at Ryushaku-ji temple; the profound silence is pierced only by the cry of the cicadas."
   }
-=======
-  "japanese": "しばらくは\n花の上なる\n月夜かな",
-  "romaji": "Shibaraku wa / hana no ue naru / tsukiyo kana",
-  "english": "For a while, moonlight rests above the blossoms.",
-  "poet": "Matsuo Basho",
-  "season": "Spring",
-  "kigo": "Blossoms (hana)",
-  "notes": "A quiet scene balancing moonlight and cherry blossoms."
-},
-{
-  "japanese": "秋深き\n隣は何を\nする人ぞ",
-  "romaji": "Aki fukaki / tonari wa nani o / suru hito zo",
-  "english": "In deep autumn, what kind of person lives next door?",
-  "poet": "Matsuo Basho",
-  "season": "Autumn",
-  "kigo": "Deep autumn (aki fukaki)",
-  "notes": "Evokes solitude and curiosity."
-},
-  {
-  "japanese": "春の海
-ひねもすのたり
-のたりかな",
-  "romaji": "Haru no umi / hinemosu notari / notari kana",
-  "english": "The spring sea stretches lazily all day, rising and falling.",
-  "poet": "Yosa Buson",
-  "season": "Spring",
-  "kigo": "Spring sea (haru no umi)",
-  "notes": "Known for musical phrasing and calm motion."
-}
->>>>>>> upstream/main
 ]

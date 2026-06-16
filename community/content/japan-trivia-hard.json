@@ -187,17 +187,6 @@
     "correctIndex": 0
   },
   {
-    "question": "What is the name of the traditional Japanese theater featuring puppets?",
-    "difficulty": "hard",
-    "answers": [
-      "Bunraku",
-      "Noh",
-      "Kabuki",
-      "Kyogen"
-    ],
-    "correctIndex": 0
-  },
-  {
     "question": "Which Japanese island chain is known for tropical beaches and coral reefs?",
     "difficulty": "hard",
     "answers": [
@@ -547,7 +536,8 @@
       "Nijo Castle",
       "Himeji Castle"
     ],
-    "correctAnswerIndex": 0
+    "correctAnswerIndex": 0,
+    "correctIndex": 0
   },
   {
     "question": "Which Japanese food is a grilled eel dish often eaten in summer?",
@@ -559,50 +549,6 @@
       "Okonomiyaki"
     ],
     "correctIndex": 1
-  },
-  {
-    "question": "What is the name of the Japanese comic and animation style?",
-    "difficulty": "hard",
-    "answers": [
-      "Manga",
-      "Donghua",
-      "Manhwa",
-      "Comique"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "question": "Which Japanese city is famous for its street food district, Dotonbori? (Community variation 22)",
-    "difficulty": "hard",
-    "answers": [
-      "Osaka",
-      "Niigata",
-      "Kagoshima",
-      "Takayama"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "question": "Which Japanese city is known for the floating garden observatory?",
-    "difficulty": "hard",
-    "answers": [
-      "Osaka",
-      "Nagoya",
-      "Kobe",
-      "Yokohama"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "question": "Which Japanese city is known for the floating garden observatory?",
-    "difficulty": "hard",
-    "answers": [
-      "Osaka",
-      "Nagoya",
-      "Kobe",
-      "Yokohama"
-    ],
-    "correctIndex": 0
   },
   {
     "question": "Which Japanese island is known for its active volcano, Sakurajima?",
@@ -627,83 +573,6 @@
     "correctIndex": 0
   },
   {
-    "question": "Which Japanese city is known for the floating garden observatory?",
-    "difficulty": "hard",
-    "answers": [
-      "Osaka",
-      "Nagoya",
-      "Kobe",
-      "Yokohama"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "question": "Which Japanese city hosted the 1998 Winter Olympics?",
-    "difficulty": "hard",
-    "answers": [
-      "Nagano",
-      "Kobe",
-      "Hiroshima",
-      "Naha"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "question": "Which Japanese island chain is known for tropical beaches and coral reefs?",
-    "difficulty": "hard",
-    "answers": [
-      "Okinawa",
-      "Sado",
-      "Awaji",
-      "Oki"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "question": "Which Japanese food is a grilled eel dish often eaten in summer? (Community variation 26)",
-    "difficulty": "hard",
-    "answers": [
-      "Tempura",
-      "Unagi",
-      "Sukiyaki",
-      "Okonomiyaki"
-    ],
-    "correctIndex": 1
-  },
-  {
-    "question": "Which Japanese city is famous for its street food district, Dotonbori? (Community variation 22)",
-    "difficulty": "hard",
-    "answers": [
-      "Osaka",
-      "Niigata",
-      "Kagoshima",
-      "Takayama"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "question": "What is the name of the traditional Japanese theater featuring puppets?",
-    "difficulty": "hard",
-    "answers": [
-      "Bunraku",
-      "Noh",
-      "Kabuki",
-      "Kyogen"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "question": "Which Japanese city hosted the 1998 Winter Olympics? (Community variation 24)",
-    "difficulty": "hard",
-    "answers": [
-      "Nagano",
-      "Kobe",
-      "Hiroshima",
-      "Naha"
-    ],
-    "correctIndex": 0
-  },
-  {
     "question": "Which Japanese castle is known for its black exterior and nickname \"Crow Castle\"? (Community variation 50)",
     "difficulty": "hard",
     "answers": [
@@ -711,17 +580,6 @@
       "Osaka Castle",
       "Nijo Castle",
       "Himeji Castle"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "question": "Which sea separates Japan from the Korean Peninsula? (Community variation 47)",
-    "difficulty": "hard",
-    "answers": [
-      "Sea of Japan",
-      "East China Sea",
-      "Philippine Sea",
-      "Bering Sea"
     ],
     "correctIndex": 0
   },
@@ -748,68 +606,14 @@
     "correctIndex": 0
   },
   {
-  "question": "What is the Japanese name for the autumn moon-viewing festival?",
-  "difficulty": "hard",
-  "answers": [
-    "Tanabata",
-    "Tsukimi",
-    "Shogatsu",
-    "Hina Matsuri"
-  ],
-  "correctIndex": 1
-},{
-  "question": "Which Japanese city is famous for its street food district, Dotonbori?",
-  "difficulty": "hard",
-  "answers": [
-    "Osaka",
-    "Niigata",
-    "Kagoshima",
-    "Takayama"
-  ],
-  "correctIndex": 0
-},
-  {
-  "question": "Which Japanese castle is known for its black exterior and nickname 'Crow Castle'?",
-  "difficulty": "hard",
-  "answers": [
-    "Matsumoto Castle",
-    "Osaka Castle",
-    "Nijo Castle",
-    "Himeji Castle"
-  ],
-  "correctIndex": 0
-},
-  {
-    "question": "Which Japanese city is known for its historic wooden district, Gion?",
+    "question": "Which Japanese city is famous for its street food district, Dotonbori?",
     "difficulty": "hard",
     "answers": [
-            "Kyoto",
-            "Yokohama",
-            "Nagoya",
-            "Sendai"
+      "Osaka",
+      "Niigata",
+      "Kagoshima",
+      "Takayama"
     ],
     "correctIndex": 0
-},
-  {
-  "question": "Which Japanese island is known for its active volcano, Sakurajima?",
-  "difficulty": "hard",
-  "answers": [
-    "Kyushu",
-    "Honshu",
-    "Shikoku",
-    "Hokkaido"
-  ],
-  "correctIndex": 0
-},
-  {
-  "question": "What is the name of the Japanese comic and animation style?",
-  "difficulty": "hard",
-  "answers": [
-    "Manga",
-    "Donghua",
-    "Manhwa",
-    "Comique"
-  ],
-  "correctIndex": 0
-}
+  }
 ]

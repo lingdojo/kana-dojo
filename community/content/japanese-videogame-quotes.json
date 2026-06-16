@@ -56,20 +56,6 @@
     "character": "Recurring command voice"
   },
   {
-    "japanese": "勝つと思うな、思えば負けよ",
-    "romaji": "Katsu to omou na, omoeba makeyo",
-    "english": "If you only think of winning, you lose.",
-    "game": "Samurai game proverb line",
-    "character": "Musashi reference"
-  },
-  {
-<<<<<<< HEAD
-    "japanese": "時の流れは残酷なもの…",
-    "romaji": "Toki no nagare wa zankoku na mono...",
-    "english": "The flow of time is a cruel thing...",
-    "game": "The Legend of Zelda: Ocarina of Time",
-    "character": "Sheik"
-=======
     "japanese": "俺たちの物語は、ここからだ",
     "romaji": "Oretachi no monogatari wa, koko kara da",
     "english": "Our story starts here.",
@@ -103,6 +89,173 @@
     "english": "I don't feel like I can lose.",
     "game": "Street Fighter series",
     "character": "Ryu"
->>>>>>> upstream/main
+  },
+  {
+    "japanese": "それもまた一興",
+    "romaji": "Sore mo mata ikkyo",
+    "english": "That too has its charm.",
+    "game": "Onimusha series",
+    "character": "Nobunaga Oda"
+  },
+  {
+    "japanese": "覚悟はいいか？ 俺はできてる。",
+    "romaji": "Kakugo wa ii ka? Ore wa dekiteru.",
+    "english": "Are you prepared? I am.",
+    "game": "JoJo’s Bizarre Adventure: All-Star Battle",
+    "character": "Giorno Giovanna"
+  },
+  {
+    "japanese": "なかなかやるな",
+    "romaji": "Nakanaka yaru na",
+    "english": "You're pretty good.",
+    "game": "Metal Gear Solid 3: Snake Eater",
+    "character": "Ocelot"
+  },
+  {
+    "japanese": "約束された勝利の剣",
+    "romaji": "Yakusoku sareta shouri no ken",
+    "english": "The Sword of Promised Victory.",
+    "game": "Fate/stay night [Realta Nua]",
+    "character": "Saber"
+  },
+  {
+    "japanese": "お前はもう死んでいる",
+    "romaji": "Omae wa mou shindeiru",
+    "english": "You are already dead.",
+    "game": "Hokuto no Ken (Fist of the North Star)",
+    "character": "Kenshiro"
+  },
+  {
+    "japanese": "行くぞ、みんな！",
+    "romaji": "Iku zo, minna!",
+    "english": "Let's go, everyone!",
+    "game": "Kingdom Hearts series (JP dub)",
+    "character": "Sora"
+  },
+  {
+    "japanese": "一人で行くのは危険だ！これを持っていけ！",
+    "romaji": "Hitori de iku no wa kiken da! Kore o motte ike!",
+    "english": "It's dangerous to go alone! Take this.",
+    "game": "The Legend of Zelda",
+    "character": "Old Man"
+  },
+  {
+    "japanese": "それでも、守りたい世界があるんだ！",
+    "romaji": "Soredemo, mamoritai sekai ga arunda!",
+    "english": "Even so, there is a world I want to protect!",
+    "game": "Final Fantasy IX",
+    "character": "Garnet Til Alexandros XVII"
+  },
+  {
+    "japanese": "また会おう、相棒",
+    "romaji": "Mata aou, aibou",
+    "english": "See you again, partner.",
+    "game": "Metal Gear Solid 3: Snake Eater",
+    "character": "Big Boss / Snake"
+  },
+  {
+    "japanese": "行くぞ！ここからが本当の戦いだ！",
+    "romaji": "Iku zo! Koko kara ga hontou no tatakai da!",
+    "english": "Let's go! This is where the real battle begins!",
+    "game": "Generic JRPG battle trope",
+    "character": "Hero archetype"
+  },
+  {
+    "japanese": "まだ終わってない！ここからだ！",
+    "romaji": "Mada owatte nai! Koko kara da!",
+    "english": "It's not over! It starts now!",
+    "game": "Pokémon series",
+    "character": "Rival characters"
+  },
+  {
+    "japanese": "一人じゃない、みんながいる！",
+    "romaji": "Hitori janai, minna ga iru!",
+    "english": "You're not alone, everyone is with you!",
+    "game": "JRPG trope",
+    "character": "Party leader"
+  },
+  {
+    "japanese": "俺が必ずお前を救ってみせる！",
+    "romaji": "Ore ga kanarazu omae o sukutte miseru!",
+    "english": "I’ll definitely save you!",
+    "game": "Re:ZERO -Starting Life in Another World",
+    "character": "Subaru Natsuki"
+  },
+  {
+    "japanese": "世界を救うって、そういうことだろ？",
+    "romaji": "Sekai o sukuu tte, sou iu koto daro?",
+    "english": "Saving the world means doing this, right?",
+    "game": "Persona 5 Strikers",
+    "character": "Joker"
+  },
+  {
+    "japanese": "undefined",
+    "romaji": "undefined",
+    "english": "undefined",
+    "game": "Portal",
+    "character": "GLaDOS"
+  },
+  {
+    "japanese": "希望は前に進むんだ！",
+    "romaji": "Kibou wa mae ni susumun da!",
+    "english": "Hope moves forward!",
+    "game": "Danganronpa series",
+    "character": "Makoto Naegi"
+  },
+  {
+    "japanese": "迷えば、敗れる",
+    "romaji": "Mayoeba, yabureru",
+    "english": "Hesitation is defeat.",
+    "game": "Sekiro: Shadows Die Twice",
+    "character": "Isshin Ashina"
+  },
+  {
+    "japanese": "興味ないね",
+    "romaji": "Kyōmi nai ne",
+    "english": "I don't care.",
+    "game": "Final Fantasy VII",
+    "character": "Cloud Strife"
+  },
+  {
+    "japanese": "ここからが本番だ",
+    "romaji": "Koko kara ga honban da",
+    "english": "The real challenge starts now.",
+    "game": "Monster Hunter series",
+    "character": "Guild Handler lines"
+  },
+  {
+    "japanese": "立てよ、ド三流",
+    "romaji": "Tate yo, do sannyuu",
+    "english": "Get up, you third-rate warrior.",
+    "game": "Dragon Ball Z: Kakarot",
+    "character": "Vegeta"
+  },
+  {
+    "japanese": "サマンサが困ったことになっている。それもこれも、すべて私のピザのせいだ。",
+    "romaji": "Samansa ga komatta koto ni natte iru. Sore mo kore mo, subete watashi no piza no seida.",
+    "english": "Samantha's in trouble, and it's all because of my pizza.",
+    "game": "Yakuza 0",
+    "character": "Kazuma Kiryu"
+  },
+  {
+    "japanese": "あなたは実験体です。感情は計算に含まれていません。",
+    "romaji": "Anata wa jikkentai desu. Kanjou wa keisan ni fukumarete imasen.",
+    "english": "You are a test subject. Emotions are not part of the calculation.",
+    "game": "Portal",
+    "character": "GLaDOS"
+  },
+  {
+    "japanese": "ケーキは嘘だ",
+    "romaji": "Kēki wa uso da",
+    "english": "The cake is a lie",
+    "game": "Portal",
+    "character": "GLaDOS"
+  },
+  {
+    "japanese": "時の流れは残酷なもの…",
+    "romaji": "Toki no nagare wa zankoku na mono...",
+    "english": "The flow of time is a cruel thing...",
+    "game": "The Legend of Zelda: Ocarina of Time",
+    "character": "Sheik"
   }
 ]

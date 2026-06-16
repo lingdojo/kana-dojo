@@ -352,17 +352,6 @@
     "correctIndex": 0
   },
   {
-    "question": "What is the Japanese term for a traditional tea ceremony?",
-    "difficulty": "medium",
-    "answers": [
-      "Sado",
-      "Kado",
-      "Budo",
-      "Shodo"
-    ],
-    "correctIndex": 0
-  },
-  {
     "question": "Which season is associated with red maple leaves (momiji) in Japan?",
     "difficulty": "medium",
     "answers": [
@@ -385,17 +374,6 @@
     "correctIndex": 0
   },
   {
-    "question": "Which of these is a Japanese traditional storytelling art?",
-    "difficulty": "medium",
-    "answers": [
-      "Rakugo",
-      "Kabuki",
-      "Noh",
-      "Ikebana"
-    ],
-    "correctIndex": 0
-  },
-  {
     "question": "What is the Japanese writing system used for foreign words? (Community variation 35)",
     "difficulty": "medium",
     "answers": [
@@ -407,17 +385,6 @@
     "correctIndex": 0
   },
   {
-    "question": "Which Japanese beverage is made from roasted barley?",
-    "difficulty": "medium",
-    "answers": [
-      "Mugicha",
-      "Matcha",
-      "Genmaicha",
-      "Sencha"
-    ],
-    "correctIndex": 0
-  },
-  {
     "question": "Which Japanese city is known for its deer roaming freely in a large park?",
     "difficulty": "medium",
     "answers": [
@@ -425,28 +392,6 @@
       "Yokohama",
       "Kobe",
       "Nagoya"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "question": "Which Japanese castle was the seat of the Tokugawa shogunate? (Community variation 40)",
-    "difficulty": "medium",
-    "answers": [
-      "Edo Castle",
-      "Himeji Castle",
-      "Matsumoto Castle",
-      "Osaka Castle"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "question": "Which Japanese beverage is made from roasted barley?",
-    "difficulty": "medium",
-    "answers": [
-      "Mugicha",
-      "Matcha",
-      "Genmaicha",
-      "Sencha"
     ],
     "correctIndex": 0
   },
@@ -473,28 +418,6 @@
     "correctIndex": 0
   },
   {
-    "question": "What is the Japanese term for a traditional tea ceremony?",
-    "difficulty": "medium",
-    "answers": [
-      "Sado",
-      "Kado",
-      "Budo",
-      "Shodo"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "question": "What is the name of Japan’s largest lake?",
-    "difficulty": "medium",
-    "answers": [
-      "Lake Biwa",
-      "Lake Towada",
-      "Lake Ashi",
-      "Lake Shinji"
-    ],
-    "correctIndex": 0
-  },
-  {
     "question": "What is the traditional Japanese tea ceremony called? (Community variation 19)",
     "difficulty": "medium",
     "answers": [
@@ -506,14 +429,13 @@
     "correctIndex": 0
   },
   {
-<<<<<<< HEAD
-    "question": "Which Japanese festival features people throwing beans to drive away evil spirits? (Community variation 41)",
+    "question": "Which Japanese castle was the seat of the Tokugawa shogunate?",
     "difficulty": "medium",
     "answers": [
-      "Setsubun",
-      "Obon",
-      "Tanabata",
-      "Shichi-Go-San"
+      "Edo Castle",
+      "Himeji Castle",
+      "Matsumoto Castle",
+      "Osaka Castle"
     ],
     "correctIndex": 0
   },
@@ -539,27 +461,4 @@
     ],
     "correctIndex": 0
   }
-=======
-  "question": "Which Japanese festival features people throwing beans to drive away evil spirits? (Community variation 41)",
-  "difficulty": "medium",
-  "answers": [
-    "Setsubun",
-    "Obon",
-    "Tanabata",
-    "Shichi-Go-San"
-  ],
-  "correctIndex": 0
-},
-{
-  "question": "Which Japanese castle was the seat of the Tokugawa shogunate?",
-  "difficulty": "medium",
-  "answers": [
-    "Edo Castle",
-    "Himeji Castle",
-    "Matsumoto Castle",
-    "Osaka Castle"
-  ],
-  "correctIndex": 0
-}
->>>>>>> upstream/main
 ]
