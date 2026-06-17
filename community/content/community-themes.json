@@ -310,5 +310,11 @@
     "backgroundColor": "oklch(96.0% 0.025 85.0 / 1)",
     "mainColor": "oklch(72.0% 0.225 320.0 / 1)",
     "secondaryColor": "oklch(80.0% 0.195 200.0 / 1)"
+  },
+  {
+    "id": "castle-gate",
+    "backgroundColor": "oklch(23.0% 0.018 75.0 / 1)",
+    "mainColor": "oklch(70.0% 0.055 80.0 / 1)",
+    "secondaryColor": "oklch(60.0% 0.145 25.0 / 1)"
   }
 ]
