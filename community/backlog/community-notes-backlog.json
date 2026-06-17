@@ -20,8 +20,10 @@
     "file": "docs/community-notes/maintenance-observations.md",
     "position": "bottom",
     "text": "Routine note: small non-blocking documentation edits may appear here.",
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": false,
+    "completedBy": "sanketpatel32",
+    "completedPR": 20972
   },
   {
     "id": 4,

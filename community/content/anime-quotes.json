@@ -224,14 +224,6 @@
     "character": "Hitagi Senjougahara"
   },
   {
-    "japanese": "俺たちの物語は、ここからだ",
-    "romaji": "Oretachi no monogatari wa, koko kara da",
-    "english": "Our story starts here.",
-    "game": "Tales series",
-    "character": "Various endings",
-    "anime": "Unknown"
-  },
-  {
     "japanese": "諦めないってばよ!",
     "romaji": "Akiramenai tte bayo!",
     "english": "I never give up, believe it! (alt wording 33)",
@@ -279,5 +271,12 @@
     "english": "The night doesn't end by waiting for the light. Dawn begins when you take the first step yourself.",
     "anime": "Original",
     "character": "Original Character"
+  },
+  {
+    "japanese": "あきらめたらそこで試合終了ですよ…？",
+    "romaji": "Akirametara soko de shiai shuuryou desu yo...?",
+    "english": "If you give up, that's the end of the game. (alt wording 21)",
+    "anime": "Slam Dunk",
+    "character": "Kaede Rukawa"
   }
 ]
