@@ -165,6 +165,10 @@ jobs:
         if: steps.pr_state.outputs.should_run == 'true' && steps.community_only.outputs.is_community_only != 'true'
         run: npm run check
 
+      - name: Run community content validator
+        if: steps.pr_state.outputs.should_run == 'true' && steps.community_only.outputs.is_community_only == 'true'
+        run: node scripts/validate-community-content.mjs
+
       - name: Community-only PR passes
         if: steps.pr_state.outputs.should_run == 'true' && steps.community_only.outputs.is_community_only == 'true'
-        run: echo "Community-content-only PR passed file-operation and JSON syntax validation."
+        run: echo "Community-content-only PR passed file-operation, JSON syntax, and content validation."
