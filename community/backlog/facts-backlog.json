@@ -20,7 +20,7 @@
   {
     "id": 4,
     "fact": "The Japanese word 'age-otori' (上げ劣り) describes the specific experience of looking worse after a haircut - a feeling so common it needed its own word.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -92,7 +92,7 @@
   {
     "id": 16,
     "fact": "Japan has 'capsule hotels' where guests sleep in pods roughly the size of a coffin - originally designed for businessmen who missed the last train home.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -128,7 +128,7 @@
   {
     "id": 22,
     "fact": "There's a Japanese word 'komorebi' (木漏れ日) specifically for sunlight filtering through leaves - no direct English translation exists.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -146,7 +146,7 @@
   {
     "id": 25,
     "fact": "Japan has a museum dedicated to instant ramen in Osaka where visitors can create their own custom Cup Noodles flavor combinations.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -158,7 +158,7 @@
   {
     "id": 27,
     "fact": "Japanese addresses are based on blocks rather than streets - buildings are numbered by the order they were built, not their location.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -170,7 +170,7 @@
   {
     "id": 29,
     "fact": "Japan's 7-Eleven stores outnumber those in the US despite Japan being 26 times smaller - there's roughly one 7-Eleven for every 2,300 people.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -230,7 +230,7 @@
   {
     "id": 39,
     "fact": "Japan has professional cuddlers you can hire to hold you while you nap - reflecting the country's epidemic of loneliness and touch starvation.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -320,7 +320,7 @@
   {
     "id": 54,
     "fact": "Japan has a highway that passes directly through a building in Osaka - the Gate Tower Building has floors 5-7 as a tunnel.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -362,7 +362,7 @@
   {
     "id": 61,
     "fact": "The Japanese concept 'kintsugi' (金継ぎ) repairs broken pottery with gold, making the piece more valuable by highlighting its history.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -410,7 +410,7 @@
   {
     "id": 69,
     "fact": "The Japanese word 'koi no yokan' (恋の予感) describes knowing you'll inevitably fall in love with someone you just met.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -614,7 +614,7 @@
   {
     "id": 103,
     "fact": "There's a Japanese word 'kenkyo' (謙虚) for humility so deep it rejects praise - considered one of the highest virtues.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -650,13 +650,13 @@
   {
     "id": 109,
     "fact": "The Japanese word 'kuyashii' (悔しい) describes frustration mixed with determination to do better next time - no English equivalent.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
     "id": 110,
     "fact": "Japan has 'maid cafes' where waitresses in maid costumes call customers 'Master' and draw cute pictures on their food.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -764,7 +764,7 @@
   {
     "id": 128,
     "fact": "Japan has 'host clubs' where women pay to be flattered and entertained by handsome young men over expensive drinks.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -776,7 +776,7 @@
   {
     "id": 130,
     "fact": "Japan has a toilet museum in Kitakyushu where you can slide down a giant toilet and learn about sewage history.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -812,7 +812,7 @@
   {
     "id": 136,
     "fact": "Japan has an island dedicated entirely to art museums - Naoshima, where Tadao Ando's architecture blends with nature.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -878,7 +878,7 @@
   {
     "id": 147,
     "fact": "There's a Japanese word 'tasogare' (黄昏) specifically for the golden hour at dusk when it's hard to recognize faces.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -902,7 +902,7 @@
   {
     "id": 151,
     "fact": "There's a Japanese practice 'osoji' (大掃除) - major house cleaning before New Year to sweep away the old year's bad luck.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1022,13 +1022,13 @@
   {
     "id": 171,
     "fact": "There's a Japanese practice 'kashikomarimashita' (かしこまりました) - the ultra-polite way service staff say 'understood.'",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
     "id": 172,
     "fact": "Japan has a museum dedicated to salt, explaining its 5,000-year production history and cultural significance.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1070,7 +1070,7 @@
   {
     "id": 179,
     "fact": "There's a Japanese concept 'ningensei' (人間性) meaning humanity or human nature - the qualities that make us human.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1208,7 +1208,7 @@
   {
     "id": 202,
     "fact": "In Japan, many shops display realistic food replicas called 'shokuhin sampuru' (食品サンプル) to show menu items.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1250,7 +1250,7 @@
   {
     "id": 209,
     "fact": "The Japanese phrase 'ittekimasu' (行ってきます) is said when leaving home, meaning 'I'll go and come back'.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1292,7 +1292,7 @@
   {
     "id": 216,
     "fact": "The Japanese term 'shuudan ishiki' (集団意識) refers to strong group consciousness — prioritizing harmony within the group.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1310,7 +1310,7 @@
   {
     "id": 219,
     "fact": "Japan has a long-running tradition of summer ghost stories called 'kaidan' (怪談) to create a chilling feeling in hot weather.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1346,7 +1346,7 @@
   {
     "id": 225,
     "fact": "Japan has a concept 'yakudoshi' (厄年) — unlucky ages — where people often visit shrines for purification blessings.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1358,7 +1358,7 @@
   {
     "id": 227,
     "fact": "Japan has a culture of seasonal flavors, like sakura in spring and sweet potato in autumn, across snacks and drinks.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1490,7 +1490,7 @@
   {
     "id": 249,
     "fact": "Japan’s traditional nighttime street games are called 'yomise' — pop-up stalls offering goldfish scooping, darts, and sweets.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1514,7 +1514,7 @@
   {
     "id": 253,
     "fact": "Japan’s 'tachigui' culture means quick standing meals at noodle or sushi counters, especially around busy train stations.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1658,7 +1658,7 @@
   {
     "id": 277,
     "fact": "Japan’s 'pocket tissues' are commonly handed out on streets as tiny promotional giveaways for shops or services.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1682,7 +1682,7 @@
   {
     "id": 281,
     "fact": "Japan has 'kominka' farmhouses that are renovated into cafes, inns, and galleries while keeping original beams and hearths.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1760,7 +1760,7 @@
   {
     "id": 294,
     "fact": "The concept of 'mottainai' (もったいない) expresses regret over waste and encourages respect for resources.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1796,13 +1796,13 @@
   {
     "id": 300,
     "fact": "A 'hikimono' (引き物) is a small parting gift given at weddings, often a set of sweets or tea.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
     "id": 301,
     "fact": "Japan’s New Year custom 'hatsumode' (初詣) involves visiting a shrine or temple for the year’s first prayer.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1814,7 +1814,7 @@
   {
     "id": 303,
     "fact": "'Natsukashii' (懐かしい) describes a warm, nostalgic feeling when recalling the past.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1856,7 +1856,7 @@
   {
     "id": 310,
     "fact": "The term 'okagesama' (おかげさまで) expresses humility, meaning \"thanks to you\" or \"thanks to circumstances.\"",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {

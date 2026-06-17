@@ -102,6 +102,7 @@ export type {
 } from './lib/setProgress';
 
 export { default as useStatsStore } from './store/useStatsStore';
+export { default as useSetProgressStore } from './store/useSetProgressStore';
 
 // ============================================================================
 // PRIVATE - DO NOT IMPORT DIRECTLY

@@ -188,5 +188,11 @@
     "difficulty": "easy",
     "answers": ["Kyoto", "Tokyo", "Sapporo", "Fukuoka"],
     "correctIndex": 0
+  },
+  {
+    "question": "Which of these is a Japanese noodle dish served in broth? (Community variation 44)",
+    "difficulty": "easy",
+    "answers": ["Ramen", "Takoyaki", "Gyoza", "Yakitori"],
+    "correctIndex": 0
   }
 ]

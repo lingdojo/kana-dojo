@@ -126,45 +126,15 @@
     "meaning": "Patterns tend to repeat"
   },
   {
-    "japanese": "月とすっぽん",
-    "romaji": "Tsuki to suppon",
-    "english": "The moon and a turtle",
-    "meaning": "Vast difference; not comparable"
-  },
+  "japanese": "月とすっぽん",
+  "romaji": "Tsuki to suppon",
+  "english": "The moon and a turtle",
+  "meaning": "Vast difference; not comparable"
+},
   {
-    "japanese": "急いては事を仕損じる",
-    "romaji": "Seite wa koto wo shisonjiru",
-    "english": "Haste will spoil things",
-    "meaning": "Haste makes waste"
-  },
-  {
-    "japanese": "千里の道も一歩から",
-    "romaji": "Senri no michi mo ippo kara",
-    "english": "A journey of a thousand miles begins with one step",
-    "meaning": "Start small"
-  },
-  {
-    "japanese": "弘法にも筆の誤り",
-    "romaji": "Koubou ni mo fude no ayamari",
-    "english": "Even Kobo makes mistakes with his brush",
-    "meaning": "Even masters make mistakes"
-  },
-  {
-    "japanese": "十人十色",
-    "romaji": "Juunin toiro",
-    "english": "Ten people, ten colors",
-    "meaning": "Different strokes for different folks"
-  },
-  {
-    "japanese": "出る杭は打たれる",
-    "romaji": "Deru kui wa utareru",
-    "english": "The nail that sticks out gets hammered down",
-    "meaning": "Standing out invites criticism"
-  },
-  {
-  "japanese": "縁は異なもの味なもの",
-  "romaji": "En wa inamono aji na mono",
-  "english": "Fate is strange yet delightful",
-  "meaning": "Unexpected connections can be good"
+  "japanese": "善は急げ",
+  "romaji": "Zen wa isoge",
+  "english": "Hurry to do good",
+  "meaning": "If it's worth doing, do it at once"
 }
 ]

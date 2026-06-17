@@ -2,7 +2,7 @@ name: Create Community Contribution Issue
 
 on:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '*/17 * * * *'
   workflow_dispatch:
     inputs:
       force_type:
@@ -42,7 +42,7 @@ jobs:
               return;
             }
 
-            const maxAgeMs = 45 * 60 * 1000;
+            const maxAgeMs = 25 * 60 * 1000;
             const workflowId = 'hourly-community-issue.yml';
             const now = Date.now();
             const runs = await github.paginate(github.rest.actions.listWorkflowRuns, {

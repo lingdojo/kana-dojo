@@ -2,9 +2,7 @@
 import { useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import clsx from 'clsx';
-import useVocabStore, {
-  IVocabObj,
-} from '@/features/Vocabulary/store/useVocabStore';
+import type { IVocabObj } from '@/features/Vocabulary/store/useVocabStore';
 import { Random } from 'random-js';
 import { useCorrect, useError, useClick } from '@/shared/hooks/generic/useAudio';
 import { getGlobalAdaptiveSelector } from '@/shared/utils/adaptiveSelection';
@@ -37,7 +35,7 @@ import {
   type VocabQuestionFormat,
   type VocabQuizType,
 } from '@/features/Vocabulary/components/Game/vocabFormatLock';
-import useSetProgressStore from '@/features/Progress/store/useSetProgressStore';
+import { useSetProgressStore } from '@/features/Progress';
 
 const random = new Random();
 const adaptiveSelector = getGlobalAdaptiveSelector();
@@ -102,10 +100,6 @@ const VocabTilesMode = ({
     selectedWordObjs.length - 1,
   );
 
-  // Get the current vocabulary collection from the Vocab store
-  const selectedVocabCollection = useVocabStore(
-    state => state.selectedVocabCollection,
-  );
   const isGlassMode = useThemePreferences().isGlassMode;
 
   const { startAnswerTimer, pauseAnswerTimer, getAnswerTimeMs, resetAnswerTimer } =
