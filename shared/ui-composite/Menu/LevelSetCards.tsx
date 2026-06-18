@@ -35,21 +35,36 @@ type ActiveSubunitRange = {
   endLevel: number;
 };
 
+type SetProgressSummary = {
+  progress: number;
+  stars: number;
+};
+
+type LevelSetCardsCollection<TItem> = {
+  data: TItem[];
+  name: string;
+  prevLength: number;
+};
+
+type VisibleSet<TItem> = LevelSetCardsSet & {
+  items: TItem[];
+  progress: number;
+  stars: number;
+  isSelected: boolean;
+};
+
 type VisibleRowsSectionProps<TItem> = {
-  allRows: LevelSetCardsSet[][];
+  allRows: VisibleSet<TItem>[][];
   totalRows: number;
   collapsedRows: number[];
   setCollapsedRows: (
     updater: number[] | ((prev: number[]) => number[]),
   ) => void;
-  selectedCollectionData: TItem[];
-  itemsPerSet: number;
-  selectedSets: string[];
   setSelectedSets: (sets: string[]) => void;
   toggleItems: (items: TItem[]) => void;
-  getSetProgress: (items: TItem[]) => number;
-  getSetStars?: (items: TItem[]) => number;
   renderSetDictionary: (items: TItem[]) => React.ReactNode;
+  collapseScopeKey: string;
+  selectedSets: string[];
 };
 
 type LevelSetCardsProps<TLevel extends string, TItem> = {
@@ -71,12 +86,14 @@ type LevelSetCardsProps<TLevel extends string, TItem> = {
   ) => void;
 
   renderSetDictionary: (items: TItem[]) => React.ReactNode;
-  getSetProgress: (items: TItem[]) => number;
-  getSetStars?: (items: TItem[]) => number;
+  getSetProgressSummary: (items: TItem[]) => SetProgressSummary;
 
   loadingText: string;
   activeSubunitRange: ActiveSubunitRange;
   collapseScopeKey: string;
+  initialCollections?: Partial<
+    Record<TLevel, LevelSetCardsCollection<TItem>>
+  >;
 };
 
 const INITIAL_ROWS = 5;
@@ -84,19 +101,24 @@ const ROWS_PER_LOAD = 5;
 const LEVEL_SET_SELECTED_FLOAT_CLASSES = '';
 // 'motion-safe:animate-float [--float-distance:-3px] delay-1000ms';
 
+type IdleWindow = Window & {
+  requestIdleCallback?: (
+    callback: IdleRequestCallback,
+    options?: IdleRequestOptions,
+  ) => number;
+  cancelIdleCallback?: (handle: number) => void;
+};
+
 const VisibleRowsSection = <TItem,>({
   allRows,
   totalRows,
   collapsedRows,
   setCollapsedRows,
-  selectedCollectionData,
-  itemsPerSet,
-  selectedSets,
   setSelectedSets,
   toggleItems,
-  getSetProgress,
-  getSetStars,
   renderSetDictionary,
+  collapseScopeKey,
+  selectedSets,
 }: VisibleRowsSectionProps<TItem>) => {
   const { playClick } = useClick();
   const [visibleRowCount, setVisibleRowCount] = useState(INITIAL_ROWS);
@@ -105,6 +127,17 @@ const VisibleRowsSection = <TItem,>({
 
   const visibleRows = allRows.slice(0, visibleRowCount);
   const hasMoreRows = visibleRowCount < totalRows;
+
+  useEffect(() => {
+    const resetFrameId = window.requestAnimationFrame(() => {
+      setVisibleRowCount(INITIAL_ROWS);
+      setIsLoadingMore(false);
+    });
+
+    return () => {
+      window.cancelAnimationFrame(resetFrameId);
+    };
+  }, [collapseScopeKey]);
 
   const loadMoreRows = useCallback(() => {
     if (isLoadingMore || !hasMoreRows) return;
@@ -139,12 +172,6 @@ const VisibleRowsSection = <TItem,>({
         const lastSetNumber =
           rowSets[rowSets.length - 1]?.name.match(/\d+/)?.[0] || firstSetNumber;
         const isSingleLevel = firstSetNumber === lastSetNumber;
-        const rowSetItems = rowSets.map(set =>
-          selectedCollectionData.slice(
-            set.start * itemsPerSet,
-            set.end * itemsPerSet,
-          ),
-        );
         const isRowCollapsed = collapsedRows.includes(rowIndex);
 
         return (
@@ -195,9 +222,7 @@ const VisibleRowsSection = <TItem,>({
               )}
             >
               {rowSets.map((setTemp, i) => {
-                const setItems = rowSetItems[i];
-                const isSelected = selectedSets.includes(setTemp.name);
-                const progressPercent = Math.round(getSetProgress(setItems) * 100);
+                const progressPercent = Math.round(setTemp.progress * 100);
 
                 return (
                   <div
@@ -215,7 +240,7 @@ const VisibleRowsSection = <TItem,>({
                         setTemp.levelNumber >= 1 &&
                         setTemp.levelNumber <= 3
                           ? setTemp.levelNumber
-                          : getSetStars?.(setItems) ?? 0
+                          : setTemp.stars
                       }
                       className='mb-4 max-md:mx-4 max-md:w-[calc(100%-2rem)]'
                     />
@@ -226,15 +251,15 @@ const VisibleRowsSection = <TItem,>({
                         'rounded-3xl hover:cursor-pointer',
                         'transition-all duration-250 ease-in-out',
                         'border-b-10 px-2 py-3 max-md:mx-4',
-                        isSelected && LEVEL_SET_SELECTED_FLOAT_CLASSES,
-                        isSelected
+                        setTemp.isSelected && LEVEL_SET_SELECTED_FLOAT_CLASSES,
+                        setTemp.isSelected
                           ? 'border-(--secondary-color-accent) bg-(--secondary-color) text-(--background-color)'
                           : 'border-(--border-color) bg-(--background-color) hover:border-(--main-color)/70',
                       )}
                       onClick={e => {
                         e.currentTarget.blur();
                         playClick();
-                        if (isSelected) {
+                        if (setTemp.isSelected) {
                           setSelectedSets(
                             selectedSets.filter(set => set !== setTemp.name),
                           );
@@ -243,10 +268,10 @@ const VisibleRowsSection = <TItem,>({
                             ...new Set(selectedSets.concat(setTemp.name)),
                           ]);
                         }
-                        toggleItems(setItems);
+                        toggleItems(setTemp.items);
                       }}
                     >
-                      {isSelected ? (
+                      {setTemp.isSelected ? (
                         <CircleCheck className='mt-0.5 fill-current text-(--background-color) duration-250' />
                       ) : (
                         <Circle className='mt-0.5 text-(--border-color) duration-250' />
@@ -263,7 +288,9 @@ const VisibleRowsSection = <TItem,>({
                           : 'grid-rows-[1fr] opacity-100',
                       )}
                     >
-                      <div className='min-h-0'>{renderSetDictionary(setItems)}</div>
+                      <div className='min-h-0'>
+                        {renderSetDictionary(setTemp.items)}
+                      </div>
                     </div>
                   </div>
                 );
@@ -304,19 +331,19 @@ const LevelSetCards = <TLevel extends string, TItem>({
   collapsedRows,
   setCollapsedRows,
   renderSetDictionary,
-  getSetProgress,
-  getSetStars,
+  getSetProgressSummary,
   loadingText,
   activeSubunitRange,
   collapseScopeKey,
+  initialCollections,
 }: LevelSetCardsProps<TLevel, TItem>) => {
   const { playClick } = useClick();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const [collections, setCollections] = useState<
-    Partial<Record<TLevel, { data: TItem[]; name: string; prevLength: number }>>
-  >({});
+    Partial<Record<TLevel, LevelSetCardsCollection<TItem>>>
+  >(() => initialCollections ?? {});
 
   const cumulativeCounts = useMemo(() => {
     const counts = {} as Record<TLevel, number>;
@@ -372,7 +399,7 @@ const LevelSetCards = <TLevel extends string, TItem>({
     if (!selectedCollection) {
       return {
         setsTemp: [] as LevelSetCardsSet[],
-        allRows: [] as LevelSetCardsSet[][],
+        allRows: [] as VisibleSet<TItem>[][],
         totalRows: 0,
       };
     }
@@ -388,12 +415,28 @@ const LevelSetCards = <TLevel extends string, TItem>({
       }),
     );
 
-    const visibleSets = sets.filter(
-      set =>
-        set.levelNumber >= activeSubunitRange.startLevel &&
-        set.levelNumber <= activeSubunitRange.endLevel,
-    );
-    const rows: LevelSetCardsSet[][] = chunkArray(visibleSets, numColumns);
+    const visibleSets = sets
+      .filter(
+        set =>
+          set.levelNumber >= activeSubunitRange.startLevel &&
+          set.levelNumber <= activeSubunitRange.endLevel,
+      )
+      .map(set => {
+        const items = selectedCollection.data.slice(
+          set.start * itemsPerSet,
+          set.end * itemsPerSet,
+        );
+        const progressSummary = getSetProgressSummary(items);
+
+        return {
+          ...set,
+          items,
+          progress: progressSummary.progress,
+          stars: progressSummary.stars,
+          isSelected: selectedSets.includes(set.name),
+        };
+      });
+    const rows: VisibleSet<TItem>[][] = chunkArray(visibleSets, numColumns);
 
     return {
       setsTemp: visibleSets,
@@ -403,9 +446,11 @@ const LevelSetCards = <TLevel extends string, TItem>({
   }, [
     activeSubunitRange.endLevel,
     activeSubunitRange.startLevel,
+    getSetProgressSummary,
     itemsPerSet,
     numColumns,
     selectedCollection,
+    selectedSets,
   ]);
 
   useEffect(() => {
@@ -414,29 +459,44 @@ const LevelSetCards = <TLevel extends string, TItem>({
     const initializedKey = `level-set-initial-collapse:${collapseScopeKey}`;
     if (sessionStorage.getItem(initializedKey) === 'true') return;
 
-    const masteredRows = allRows.reduce<number[]>((acc, rowSets, rowIndex) => {
-      const isRowMastered = rowSets.every(set => {
-        const setItems = selectedCollection.data.slice(
-          set.start * itemsPerSet,
-          set.end * itemsPerSet,
+    const calculateMasteredRows = () => {
+      const masteredRows = allRows.reduce<number[]>((acc, rowSets, rowIndex) => {
+        const isRowMastered = rowSets.every(
+          set => Math.round(set.progress * 100) >= 100,
         );
-        return Math.round(getSetProgress(setItems) * 100) >= 100;
+
+        if (isRowMastered) acc.push(rowIndex);
+        return acc;
+      }, []);
+
+      if (masteredRows.length > 0) {
+        setCollapsedRows(prev =>
+          Array.from(new Set(prev.concat(masteredRows))),
+        );
+      }
+
+      sessionStorage.setItem(initializedKey, 'true');
+    };
+
+    const idleWindow = window as IdleWindow;
+
+    if (idleWindow.requestIdleCallback && idleWindow.cancelIdleCallback) {
+      const idleId = idleWindow.requestIdleCallback(calculateMasteredRows, {
+        timeout: 750,
       });
 
-      if (isRowMastered) acc.push(rowIndex);
-      return acc;
-    }, []);
-
-    if (masteredRows.length > 0) {
-      setCollapsedRows(prev => Array.from(new Set(prev.concat(masteredRows))));
+      return () => {
+        idleWindow.cancelIdleCallback?.(idleId);
+      };
     }
 
-    sessionStorage.setItem(initializedKey, 'true');
+    const timeoutId = window.setTimeout(calculateMasteredRows, 250);
+    return () => {
+      window.clearTimeout(timeoutId);
+    };
   }, [
     allRows,
     collapseScopeKey,
-    getSetProgress,
-    itemsPerSet,
     selectedCollection,
     setCollapsedRows,
   ]);
@@ -536,19 +596,15 @@ const LevelSetCards = <TLevel extends string, TItem>({
       />
 
       <VisibleRowsSection
-        key={`${selectedUnitName}:${activeSubunitRange.id}`}
         allRows={allRows}
         totalRows={totalRows}
         collapsedRows={collapsedRows}
         setCollapsedRows={setCollapsedRows}
-        selectedCollectionData={selectedCollection.data}
-        itemsPerSet={itemsPerSet}
-        selectedSets={selectedSets}
         setSelectedSets={setSelectedSets}
         toggleItems={toggleItems}
-        getSetProgress={getSetProgress}
-        getSetStars={getSetStars}
         renderSetDictionary={renderSetDictionary}
+        collapseScopeKey={collapseScopeKey}
+        selectedSets={selectedSets}
       />
     </div>
   );

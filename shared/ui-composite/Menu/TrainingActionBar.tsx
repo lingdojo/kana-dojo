@@ -263,7 +263,7 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
           'fixed z-40',
           'bg-(--background-color)',
           'border-t-2 border-(--border-color)',
-          'px-2 py-3',
+          'px-4 py-3',
           !isFilled && 'pointer-events-none',
         )}
       >
@@ -274,33 +274,33 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
               )}
             >
               {[
-                {
-                  id: 'blitz',
-                  label: 'Blitz',
-                  Icon: Zap,
-                  iconClassName: 'fill-current motion-safe:animate-none',
-                  show: showBlitz,
-                  colorScheme: 'secondary' as const,
-                  onClick: () => {
-                    setGameModesMode('blitz');
-                    setShowGameModesModal(true);
-                  },
-                },
-                {
-                  id: 'gauntlet',
-                  label: 'Gauntlet',
-                  Icon: Swords,
-                  iconClassName: 'fill-current',
-                  show: showBlitz,
-                  colorScheme: 'secondary' as const,
-                  onClick: () => {
-                    setGameModesMode('gauntlet');
-                    setShowGameModesModal(true);
-                  },
-                },
+                // {
+                //   id: 'blitz',
+                //   label: 'Blitz',
+                //   Icon: Zap,
+                //   iconClassName: 'fill-current motion-safe:animate-none',
+                //   show: showBlitz,
+                //   colorScheme: 'secondary' as const,
+                //   onClick: () => {
+                //     setGameModesMode('blitz');
+                //     setShowGameModesModal(true);
+                //   },
+                // },
+                // {
+                //   id: 'gauntlet',
+                //   label: 'Gauntlet',
+                //   Icon: Swords,
+                //   iconClassName: 'fill-current',
+                //   show: showBlitz,
+                //   colorScheme: 'secondary' as const,
+                //   onClick: () => {
+                //     setGameModesMode('gauntlet');
+                //     setShowGameModesModal(true);
+                //   },
+                // },
                 {
                   id: 'classic',
-                  label: 'Classic',
+                  label: 'Go',
                   Icon: Play,
                   iconClassName: isFilled ? 'fill-current' : '',
                   show: true,
@@ -333,13 +333,11 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
                         // Mobile: fixed widths (25% for Blitz/Gauntlet, 50% for Classic), no x-padding
                         // Desktop (sm+): flex-based sizing with padding
                         id === 'classic'
-                          ? 'w-1/2 sm:w-auto sm:max-w-sm sm:flex-2 sm:px-6'
+                          ? 'w-full sm:w-3/4 md:w-3/5 xl:w-1/2 md:px-6'
                           : 'w-1/4 sm:w-auto sm:max-w-sm sm:flex-1 sm:px-6',
                         'rounded-3xl transition-colors duration-200',
-                        'border-b-10',
+                        'border-b-16',
                         'hover:cursor-pointer',
-                        colorScheme === 'secondary' &&
-                          'border-(--secondary-color-accent) bg-(--secondary-color)/90 text-(--background-color)',
                         colorScheme === 'primary' &&
                           (isFilled
                             ? 'border-(--main-color-accent) bg-(--main-color) text-(--background-color)'
@@ -352,15 +350,14 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
                       }}
                     >
                       <Icon
-                        size={20}
+                        size={36}
                         className={cn(
                           iconClassName,
-                          id === 'classic' && 'animate-bounce',
                         )}
                       />
-                      <span className='hidden whitespace-nowrap sm:inline'>
+                      {/* <span className='whitespace-nowrap text-lg font-medium sm:text-xl'>
                         {label}
-                      </span>
+                      </span> */}
                     </button>
                   ),
                 )}

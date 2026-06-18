@@ -5,6 +5,12 @@
   "buildCommand": "npm run clean:all && npm run build",
   "ignoreCommand": "bash scripts/vercel-ignore.sh",
   "functions": {
+    "app/api/process-bug-reports/route.ts": {
+      "maxDuration": 60
+    },
+    "app/api/webhooks/tally/bug-report/route.ts": {
+      "maxDuration": 30
+    },
     "app/api/**/*.ts": {
       "maxDuration": 10
     }
@@ -13,6 +19,10 @@
     {
       "path": "/api/trigger-community-issue",
       "schedule": "7,22,37,52 * * * *"
+    },
+    {
+      "path": "/api/process-bug-reports",
+      "schedule": "*/5 * * * *"
     }
   ],
   "headers": [

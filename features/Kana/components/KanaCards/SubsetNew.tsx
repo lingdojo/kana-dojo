@@ -5,19 +5,15 @@ import { MousePointer, Circle, CircleCheck } from 'lucide-react';
 import { kana } from '@/features/Kana/data/kana';
 import useKanaStore from '@/features/Kana/store/useKanaStore';
 import useStatsStore from '@/features/Progress/store/useStatsStore';
+import {
+  KANA_ROW_MASTERY_TARGET,
+  KANA_MAX_STARS,
+  KANA_ROW_MASTERY_CAP,
+} from '@/features/Progress/lib/setProgress';
 import { useClick } from '@/shared/hooks/generic/useAudio';
 import { ActionButton } from '@/shared/ui/components/ActionButton';
 import MasteryBar from '@/shared/ui/components/MasteryBar';
 import { cn } from '@/shared/utils/utils';
-
-/**
- * The number of correct answers required for a single kana character
- * to count as fully mastered (progress bar = 100% for that character).
- * Averaging across all characters in the row gives the row's overall progress.
- */
-export const KANA_ROW_MASTERY_TARGET = 25;
-const KANA_MAX_STARS = 3;
-const KANA_ROW_MASTERY_CAP = KANA_ROW_MASTERY_TARGET * KANA_MAX_STARS;
 
 interface SubsetProps {
   sliceRange: number[];

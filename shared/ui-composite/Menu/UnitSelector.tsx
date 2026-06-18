@@ -1,8 +1,6 @@
 'use client';
 import clsx from 'clsx';
-import { motion } from 'framer-motion';
-import { useKanjiSelection } from '@/features/Kanji';
-import { useVocabSelection } from '@/features/Vocabulary';
+import { LayoutGroup, motion } from 'framer-motion';
 import useKanjiStore from '@/features/Kanji/store/useKanjiStore';
 import useVocabStore from '@/features/Vocabulary/store/useVocabStore';
 import { usePathname } from 'next/navigation';
@@ -21,27 +19,19 @@ import {
 } from '@/shared/utils/unitSets';
 import { useClick } from '@/shared/hooks/generic/useAudio';
 import { ActionButton } from '@/shared/ui/components/ActionButton';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-} from '@/shared/ui/components/accordion';
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import SelectionStatusBar from '@/shared/ui-composite/Menu/SelectionStatusBar';
-import SubunitSelector from '@/shared/ui-composite/Menu/SubunitSelector';
 import {
   buildSubunitsForUnit,
   buildUnitSummaries,
   shouldShowSubunitSelector,
+  type SubunitSummary,
 } from '@/shared/ui-composite/Menu/lib/unitSubunits';
 import { useMenuSelectorStore } from '@/shared/ui-composite/Menu/store/useMenuSelectorStore';
 
 type CollectionLevel = 'n5' | 'n4' | 'n3' | 'n2' | 'n1';
 type ContentType = 'kanji' | 'vocabulary';
 const VOCAB_UNIT_WITH_FEWER_SUBUNITS: CollectionLevel = 'n2';
-
-const UNIT_SELECTOR_ACTIVE_FLOAT_CLASSES =
-  'motion-safe:animate-float [--float-distance:-3px] delay-500ms';
 
 // Calculate number of sets (10 items per set)
 const calculateSets = (length: number) => Math.ceil(length / 10);
@@ -88,6 +78,65 @@ const getCollectionSubunits = (
   });
 };
 
+type SubunitSelectorProps = {
+  subunits: SubunitSummary[];
+  selectedSubunitId: string;
+  onSelect: (subunitId: string) => void;
+};
+
+const SubunitSelector = ({
+  subunits,
+  selectedSubunitId,
+  onSelect,
+}: SubunitSelectorProps) => {
+  if (subunits.length <= 1) {
+    return null;
+  }
+
+  return (
+    <div className='grid grid-cols-2 gap-2 sm:grid-cols-[repeat(auto-fit,minmax(120px,1fr))]'>
+      {subunits.map(subunit => {
+        const isSelected = subunit.id === selectedSubunitId;
+        const shortLabel = subunit.label.replace('Levels ', '');
+
+        return (
+          <div key={subunit.id} className='relative flex'>
+            {isSelected && (
+              <motion.div
+                layoutId='subunit-selector-indicator'
+                className='absolute inset-0 rounded-2xl'
+                transition={{
+                  type: 'spring',
+                  stiffness: 300,
+                  damping: 30,
+                }}
+              >
+                <div className='h-full w-full rounded-2xl border-b-6 border-(--secondary-color-accent) bg-(--secondary-color)' />
+              </motion.div>
+            )}
+            <ActionButton
+              onClick={() => onSelect(subunit.id)}
+              borderBottomThickness={0}
+              borderRadius='2xl'
+              className={clsx(
+                'relative z-10 flex h-full w-full items-center justify-center px-4 pt-3 pb-4 text-center text-sm',
+                isSelected
+                  ? 'bg-transparent text-(--background-color)'
+                  : 'bg-transparent text-(--main-color) hover:bg-(--border-color)/50',
+              )}
+            >
+              <span className='hidden sm:inline'>
+                Levels <span className='whitespace-nowrap'>{shortLabel}</span>
+              </span>
+              <span className='inline sm:hidden'>{shortLabel}</span>
+            </ActionButton>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
 const UnitSelector = () => {
   const { playClick } = useClick();
   const pathname = usePathname();
@@ -109,27 +158,10 @@ const UnitSelector = () => {
   // Toggle between old (sliding indicator) and new (action buttons) design
   const useNewUnitSelectorDesign = false;
 
-  // Kanji store
-  const kanjiSelection = useKanjiSelection();
-  const selectedKanjiCollection = kanjiSelection.selectedCollection;
-  const setSelectedKanjiCollection = kanjiSelection.setCollection;
-  const kanjiSelectedSubunitByUnit = useKanjiStore(
-    state => state.selectedSubunitByUnit,
-  );
-  const setKanjiSubunitForUnit = useKanjiStore(
-    state => state.setSelectedSubunitForUnit,
-  );
-
-  // Vocab store
-  const vocabSelection = useVocabSelection();
-  const selectedVocabCollection = vocabSelection.selectedCollection;
-  const setSelectedVocabCollection = vocabSelection.setCollection;
-  const vocabSelectedSubunitByUnit = useVocabStore(
-    state => state.selectedSubunitByUnit,
-  );
-  const setVocabSubunitForUnit = useVocabStore(
-    state => state.setSelectedSubunitForUnit,
-  );
+  const clearKanji = useKanjiStore(state => state.clearKanjiObjs);
+  const clearKanjiSets = useKanjiStore(state => state.clearKanjiSets);
+  const clearVocab = useVocabStore(state => state.clearVocabObjs);
+  const clearVocabSets = useVocabStore(state => state.clearVocabSets);
 
   const collections = useMemo(() => {
     const levels: CollectionLevel[] = ['n5', 'n4', 'n3', 'n2', 'n1'];
@@ -145,50 +177,24 @@ const UnitSelector = () => {
   const selectedCollection = persistedCollectionExists
     ? persistedCollectionSelection.selectedCollection
     : 'n5';
+  const [visualCollection, setVisualCollection] =
+    useState<CollectionLevel>(selectedCollection);
+  const [visualSubunitByUnit, setVisualSubunitByUnit] = useState<
+    Partial<Record<CollectionLevel, string>>
+  >(persistedCollectionSelection.selectedSubunitByUnit);
 
   useEffect(() => {
-    if (!persistedCollectionExists) {
-      return;
-    }
+    const syncFrameId = window.requestAnimationFrame(() => {
+      setVisualCollection(selectedCollection);
+      setVisualSubunitByUnit(persistedCollectionSelection.selectedSubunitByUnit);
+    });
 
-    const storedSubunit =
-      persistedCollectionSelection.selectedSubunitByUnit[selectedCollection];
-
-    if (isKanji) {
-      if (selectedKanjiCollection !== selectedCollection) {
-        setSelectedKanjiCollection(selectedCollection);
-      }
-      if (
-        storedSubunit &&
-        kanjiSelectedSubunitByUnit[selectedCollection] !== storedSubunit
-      ) {
-        setKanjiSubunitForUnit(selectedCollection, storedSubunit);
-      }
-      return;
-    }
-
-    if (selectedVocabCollection !== selectedCollection) {
-      setSelectedVocabCollection(selectedCollection);
-    }
-    if (
-      storedSubunit &&
-      vocabSelectedSubunitByUnit[selectedCollection] !== storedSubunit
-    ) {
-      setVocabSubunitForUnit(selectedCollection, storedSubunit);
-    }
+    return () => {
+      window.cancelAnimationFrame(syncFrameId);
+    };
   }, [
-    isKanji,
-    kanjiSelectedSubunitByUnit,
-    persistedCollectionExists,
-    persistedCollectionSelection,
+    persistedCollectionSelection.selectedSubunitByUnit,
     selectedCollection,
-    selectedKanjiCollection,
-    selectedVocabCollection,
-    setKanjiSubunitForUnit,
-    setSelectedKanjiCollection,
-    setSelectedVocabCollection,
-    setVocabSubunitForUnit,
-    vocabSelectedSubunitByUnit,
   ]);
 
   const handleCollectionSelect = (level: CollectionLevel) => {
@@ -200,8 +206,7 @@ const UnitSelector = () => {
       ? getCollectionSubunits(selectedUnit, isKanji)
       : [];
     const firstSubunitId = subunitsForLevel[0]?.id;
-    const savedSubunitForLevel =
-      persistedCollectionSelection.selectedSubunitByUnit[level];
+    const savedSubunitForLevel = visualSubunitByUnit[level];
     const savedSubunitExists = subunitsForLevel.some(
       s => s.id === savedSubunitForLevel,
     );
@@ -209,47 +214,40 @@ const UnitSelector = () => {
       savedSubunitExists && savedSubunitForLevel
         ? savedSubunitForLevel
         : firstSubunitId;
+    const nextSubunitByUnit = {
+      ...visualSubunitByUnit,
+      ...(subunitToRestore ? { [level]: subunitToRestore } : {}),
+    };
+
+    setVisualCollection(level);
+    setVisualSubunitByUnit(nextSubunitByUnit);
 
     if (isKanji) {
-      setSelectedKanjiCollection(level as CollectionLevel);
-      kanjiSelection.clearKanji();
-      kanjiSelection.clearSets();
-      if (subunitToRestore) {
-        setKanjiSubunitForUnit(level, subunitToRestore);
-      }
+      clearKanji();
+      clearKanjiSets();
       setPersistedCollectionSelection('kanji', {
         selectedCollection: level,
-        selectedSubunitByUnit: {
-          ...persistedCollectionSelection.selectedSubunitByUnit,
-          ...(subunitToRestore ? { [level]: subunitToRestore } : {}),
-        },
+        selectedSubunitByUnit: nextSubunitByUnit,
       });
       return;
     }
 
-    setSelectedVocabCollection(level);
-    vocabSelection.clearVocab();
-    vocabSelection.clearSets();
-    if (subunitToRestore) {
-      setVocabSubunitForUnit(level, subunitToRestore);
-    }
+    clearVocab();
+    clearVocabSets();
     setPersistedCollectionSelection('vocabulary', {
       selectedCollection: level,
-      selectedSubunitByUnit: {
-        ...persistedCollectionSelection.selectedSubunitByUnit,
-        ...(subunitToRestore ? { [level]: subunitToRestore } : {}),
-      },
+      selectedSubunitByUnit: nextSubunitByUnit,
     });
   };
 
   const activeCollection = collections.find(
-    collection => collection.name === selectedCollection,
+    collection => collection.name === visualCollection,
   );
   const activeSubunits = activeCollection
     ? getCollectionSubunits(activeCollection, isKanji)
     : [];
   const selectedSubunitId =
-    persistedCollectionSelection.selectedSubunitByUnit[selectedCollection];
+    visualSubunitByUnit[visualCollection];
   const selectedSubunitExists = activeSubunits.some(
     subunit => subunit.id === selectedSubunitId,
   );
@@ -263,29 +261,22 @@ const UnitSelector = () => {
 
   const handleSubunitSelect = (subunitId: string) => {
     playClick();
+    const nextSubunitByUnit = {
+      ...visualSubunitByUnit,
+      [visualCollection]: subunitId,
+    };
+    setVisualSubunitByUnit(nextSubunitByUnit);
+
     if (isKanji) {
-      kanjiSelection.clearKanji();
-      kanjiSelection.clearSets();
-      setKanjiSubunitForUnit(
-        selectedCollection as CollectionLevel,
-        subunitId,
-      );
-      setPersistedCollectionSubunit(
-        'kanji',
-        selectedCollection as CollectionLevel,
-        subunitId,
-      );
+      clearKanji();
+      clearKanjiSets();
+      setPersistedCollectionSubunit('kanji', visualCollection, subunitId);
       return;
     }
 
-    vocabSelection.clearVocab();
-    vocabSelection.clearSets();
-    setVocabSubunitForUnit(selectedCollection, subunitId);
-    setPersistedCollectionSubunit(
-      'vocabulary',
-      selectedCollection as CollectionLevel,
-      subunitId,
-    );
+    clearVocab();
+    clearVocabSets();
+    setPersistedCollectionSubunit('vocabulary', visualCollection, subunitId);
   };
 
   if (useNewUnitSelectorDesign) {
@@ -295,7 +286,7 @@ const UnitSelector = () => {
         {/* Unit Selector - ActionButton style matching PreGameScreen */}
         <div className='flex flex-col gap-4 md:flex-row'>
           {collections.map(collection => {
-            const isSelected = collection.name === selectedCollection;
+            const isSelected = collection.name === visualCollection;
 
             return (
               <ActionButton
@@ -348,95 +339,84 @@ const UnitSelector = () => {
   return (
     <div className='flex flex-col'>
       {/* Modern Toggle-Style Unit Selector */}
-      <motion.div className='flex flex-col rounded-4xl border-1 border-(--border-color) bg-(--background-color) p-1 shadow-[0_12px_40px_rgba(0,0,0,0.12)] backdrop-blur-xl'>
-        <div className='flex w-full flex-col rounded-[28px] bg-(--card-color) p-2'>
-          <div className='flex flex-col gap-2 md:flex-row'>
-            {collections.map(collection => {
-              const isSelected = collection.name === selectedCollection;
+      <LayoutGroup id={`${storageContentType}-unit-selector`}>
+        <motion.div className='flex flex-col rounded-4xl border-1 border-(--border-color) bg-(--background-color) p-1 shadow-[0_12px_40px_rgba(0,0,0,0.12)] backdrop-blur-xl'>
+          <div className='flex w-full flex-col rounded-[28px] bg-(--card-color) p-2'>
+            <div className='flex flex-col gap-2 md:flex-row'>
+              {collections.map(collection => {
+                const isSelected = collection.name === visualCollection;
 
-              return (
-                <div key={collection.name} className='relative flex-1'>
-                  {/* Sliding indicator - smooth animation matching Stats page */}
-                  {isSelected && (
-                    <motion.div
-                      layoutId='collection-selector-indicator'
-                      className='absolute inset-0 rounded-3xl'
-                      transition={{
-                        type: 'spring',
-                        stiffness: 300,
-                        damping: 30,
-                      }}
-                    >
-                      <div
-                        className={clsx(
-                          'h-full w-full rounded-3xl border-b-10 border-(--main-color-accent) bg-(--main-color)',
-                          UNIT_SELECTOR_ACTIVE_FLOAT_CLASSES,
-                        )}
-                      />
-                    </motion.div>
-                  )}
-                  <ActionButton
-                    onClick={() => handleCollectionSelect(collection.name)}
-                    colorScheme={isSelected ? undefined : undefined}
-                    borderColorScheme={isSelected ? undefined : undefined}
-                    borderBottomThickness={0}
-                    borderRadius='3xl'
-                    className={clsx(
-                      'relative z-10 w-full flex-col gap-1 px-4 pt-4 pb-6',
-                      isSelected && UNIT_SELECTOR_ACTIVE_FLOAT_CLASSES,
-                      isSelected
-                        ? 'bg-transparent text-(--background-color)'
-                        : 'bg-transparent text-(--main-color) hover:bg-(--border-color)/50',
-                    )}
-                  >
-                    <div className='flex items-center gap-2'>
-                      <span className='text-xl'>{collection.displayName}</span>
-                      <span
-                        className={clsx(
-                          'rounded px-1.5 py-0.5 text-xs',
-                          'bg-(--border-color) text-(--secondary-color)',
-                        )}
+                return (
+                  <div key={collection.name} className='relative flex-1'>
+                    {/* Sliding indicator - smooth animation matching Kana selector */}
+                    {isSelected && (
+                      <motion.div
+                        layoutId='collection-selector-indicator'
+                        className='absolute inset-0 rounded-3xl'
+                        transition={{
+                          type: 'spring',
+                          stiffness: 300,
+                          damping: 30,
+                        }}
                       >
-                        {collection.jlpt}
-                      </span>
-                    </div>
-                    <span
+                        <div className='h-full w-full rounded-3xl border-b-10 border-(--main-color-accent) bg-(--main-color)' />
+                      </motion.div>
+                    )}
+                    <ActionButton
+                      onClick={() => handleCollectionSelect(collection.name)}
+                      colorScheme={isSelected ? undefined : undefined}
+                      borderColorScheme={isSelected ? undefined : undefined}
+                      borderBottomThickness={0}
+                      borderRadius='3xl'
                       className={clsx(
-                        'text-xs',
+                        'relative z-10 w-full flex-col gap-1 px-4 pt-4 pb-6',
                         isSelected
-                          ? 'text-(--background-color)/80'
-                          : 'text-(--secondary-color)/80',
+                          ? 'bg-transparent text-(--background-color)'
+                          : 'bg-transparent text-(--main-color) hover:bg-(--border-color)/50',
                       )}
                     >
-                      {collection.subtitle}
-                    </span>
-                  </ActionButton>
-                </div>
-              );
-            })}
-          </div>
+                      <div className='flex items-center gap-2'>
+                        <span className='text-xl'>{collection.displayName}</span>
+                        <span
+                          className={clsx(
+                            'rounded px-1.5 py-0.5 text-xs',
+                            'bg-(--border-color) text-(--secondary-color)',
+                          )}
+                        >
+                          {collection.jlpt}
+                        </span>
+                      </div>
+                      <span
+                        className={clsx(
+                          'text-xs',
+                          isSelected
+                            ? 'text-(--background-color)/80'
+                            : 'text-(--secondary-color)/80',
+                        )}
+                      >
+                        {collection.subtitle}
+                      </span>
+                    </ActionButton>
+                  </div>
+                );
+              })}
+            </div>
 
-          <Accordion
-            className='-mx-2'
-            type='single'
-            collapsible
-            value={showSubunitSelector ? 'subunits' : undefined}
-          >
-            <AccordionItem value='subunits' className='border-none'>
-              <AccordionContent className='pb-1'>
-                <div className='px-2'>
-                  <div className='-mx-2 my-3 h-0.5 bg-(--border-color)' />
+            {showSubunitSelector && (
+              <>
+                <div className='-mx-2 my-3 h-0.5 bg-(--border-color)' />
+                <div className='px-2 pb-1'>
                   <SubunitSelector
                     subunits={activeSubunits}
                     selectedSubunitId={resolvedSelectedSubunitId}
                     onSelect={handleSubunitSelect}
                   />
                 </div>
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-        </div>
-      </motion.div>
+              </>
+            )}
+          </div>
+        </motion.div>
+      </LayoutGroup>
 
       {/* Selection Status Bar - Fixed at top */}
       <SelectionStatusBar />

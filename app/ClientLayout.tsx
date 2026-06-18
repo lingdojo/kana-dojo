@@ -32,6 +32,7 @@ import ClickEffectRenderer from '@/features/Preferences/components/renderers/Cli
 
 // Initialize adaptive selector early to load persisted weights from IndexedDB
 // This runs once at module load time, ensuring weights are ready before games start
+// Deployment marker: refresh production after server-only bug report pipeline setup.
 if (typeof window !== 'undefined') {
   const selector = getGlobalAdaptiveSelector();
   selector.ensureLoaded().catch(console.error);

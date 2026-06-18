@@ -10,8 +10,10 @@ import {
 } from '@/features/Vocabulary/services/vocabDataService';
 import LevelSetCards from '@/shared/ui-composite/Menu/LevelSetCards';
 import useSetProgressHydration from '@/features/Progress/hooks/useSetProgress';
-import useSetProgressStore from '@/features/Progress/store/useSetProgressStore';
-import { calculateVocabularySetProgressAndStars } from '@/features/Progress/lib/setProgress';
+import {
+  calculateVocabularySetProgressAndStars,
+  useSetProgressStore,
+} from '@/features/Progress';
 import {
   N1VocabLength,
   N2VocabLength,
@@ -178,26 +180,39 @@ const VocabCards = () => {
   const vocabularyProgress = useSetProgressStore(
     state => state.data.vocabulary,
   );
-  const getSetProgress = useCallback(
+  const getSetProgressSummary = useCallback(
     (items: IWord[]) =>
       calculateVocabularySetProgressAndStars(
         items.map(item => ({
           meaningCorrect: vocabularyProgress[item.word]?.meaningCorrect ?? 0,
           readingCorrect: vocabularyProgress[item.word]?.readingCorrect ?? 0,
         })),
-      ).progress,
+      ),
     [vocabularyProgress],
   );
-  const getSetStars = useCallback(
-    (items: IWord[]) =>
-      calculateVocabularySetProgressAndStars(
-        items.map(item => ({
-          meaningCorrect: vocabularyProgress[item.word]?.meaningCorrect ?? 0,
-          readingCorrect: vocabularyProgress[item.word]?.readingCorrect ?? 0,
-        })),
-      ).stars,
-    [vocabularyProgress],
-  );
+  const initialCollections = useMemo(() => {
+    const cached = vocabDataService.getAllCached();
+
+    return Object.fromEntries(
+      unitSummaries
+        .map(unit => {
+          const data = cached[unit.name];
+          if (!data) return null;
+
+          return [
+            unit.name,
+            {
+              data,
+              name: getCollectionName(unit.name),
+              prevLength: unit.startLevel - 1,
+            },
+          ] as const;
+        })
+        .filter(entry => entry !== null),
+    ) as Partial<
+      Record<VocabLevel, { data: IWord[]; name: string; prevLength: number }>
+    >;
+  }, [getCollectionName, unitSummaries]);
 
   return (
     <LevelSetCards<VocabLevel, IWord>
@@ -217,11 +232,11 @@ const VocabCards = () => {
       collapsedRows={collapsedRows}
       setCollapsedRows={setCollapsedRows}
       renderSetDictionary={items => <VocabSetDictionary words={items} />}
-      getSetProgress={getSetProgress}
-      getSetStars={getSetStars}
+      getSetProgressSummary={getSetProgressSummary}
       loadingText='Loading vocabulary sets...'
       activeSubunitRange={activeSubunitRange}
       collapseScopeKey={collapsedRowsKey}
+      initialCollections={initialCollections}
     />
   );
 };

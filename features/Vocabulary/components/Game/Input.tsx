@@ -23,7 +23,7 @@ import {
   type VocabQuestionFormat,
   type VocabQuizType,
 } from '@/features/Vocabulary/components/Game/vocabFormatLock';
-import useSetProgressStore from '@/features/Progress/store/useSetProgressStore';
+import { useSetProgressStore } from '@/features/Progress';
 import { shouldSuppressContinueKeyboardShortcut } from '@/shared/utils/game/continueShortcutGuard';
 
 // Get the global adaptive selector for weighted character selection

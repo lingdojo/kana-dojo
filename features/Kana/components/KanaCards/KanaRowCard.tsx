@@ -6,7 +6,7 @@ import { type KanaGroup } from '@/features/Kana/data/kana';
 import useKanaStore from '@/features/Kana/store/useKanaStore';
 import { useStatsStore } from '@/features/Progress';
 import { useClick } from '@/shared/hooks/generic/useAudio';
-import { KANA_ROW_MASTERY_TARGET } from './SubsetNew';
+import { KANA_ROW_MASTERY_TARGET } from '@/features/Progress/lib/setProgress';
 import { cardBorderStyles } from '@/shared/utils/styles';
 
 interface KanaRowCardProps {

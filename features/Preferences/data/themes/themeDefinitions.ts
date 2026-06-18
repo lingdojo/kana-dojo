@@ -1181,6 +1181,13 @@ const baseThemeSets: BaseThemeGroup[] = [
         mainColor: 'oklch(95.0% 0.180 320.0 / 1)', // bright magenta-pink
         secondaryColor: 'oklch(90.0% 0.200 180.0 / 1)', // vivid cyan
       },
+      {
+        // "chuugi" (忠義) means "loyalty" in Japanese — dark theme with a surprise
+        id: 'chuugi',
+        backgroundColor: 'oklch(16.0% 0.035 260.0 / 1)', // deep navy
+        mainColor: 'oklch(80.0% 0.155 200.0 / 1)', // bright cyan
+        secondaryColor: 'oklch(85.0% 0.140 145.0 / 1)', // vivid emerald
+      },
     ],
   },
 ];

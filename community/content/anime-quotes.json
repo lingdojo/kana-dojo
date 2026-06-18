@@ -362,5 +362,124 @@
     "english": "Our story starts here.",
     "game": "Tales series",
     "character": "Various endings"
-  }
+  },
+  {
+    "japanese": "レロレロレロレロ",
+    "romaji": "Rero rero rero rero",
+    "english": "Lero lero lero lero. (alt wording 27)",
+    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+    "character": "Noriaki Kakyoin"
+  },
+  {
+    "japanese": "諦めないってばよ!",
+    "romaji": "Akiramenai tte bayo!",
+    "english": "I never give up, believe it! (alt wording 33)",
+    "anime": "Naruto",
+    "character": "Naruto Uzumaki"
+  },
+  {
+    "japanese": "だが断る",
+    "romaji": "Daga kotowaru",
+    "english": "But I refuse. (alt wording 4) (alt wording 56)",
+    "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
+    "character": "Rohan Kishibe"
+  },
+  {
+    "japanese": "シシシシシ",
+    "romaji": "Shishishishi",
+    "english": "Shishishi! (alt wording 30)",
+    "anime": "One Piece",
+    "character": "Monkey D. Luffy"
+  },
+  {
+    "japanese": "シシシシシ",
+    "romaji": "Shishishishi",
+    "english": "Shishishi! (alt wording 30)",
+    "anime": "One Piece",
+    "character": "Monkey D. Luffy"
+  },
+  {
+    "japanese": "何ッ！？",
+    "romaji": "Nani!?",
+    "english": "What?! (alt wording 19) (alt wording 71)",
+    "anime": "Fist of the North Star",
+    "character": "Shin"
+  },
+  {
+    "japanese": "仲間を信じることが俺の魔法だ",
+    "romaji": "Nakama o shinjiru koto ga ore no mahou da",
+    "english": "Believing in my friends is my magic.",
+    "anime": "Fairy Tail",
+    "character": "Natsu Dragneel"
+  },
+  {
+    "japanese": "俺は海賊王になる！",
+    "romaji": "Ore wa kaizoku ou ni naru!",
+    "english": "I'm gonna be King of the Pirates! (alt wording 20)",
+    "anime": "One Piece",
+    "character": "Monkey D. Luffy"
+  },
+  {
+    "japanese": "月に代わっておしおきよ!",
+    "romaji": "Tsuki ni kawatte oshioki yo!",
+    "english": "In the name of the moon, I'll punish you! (alt wording 41)",
+    "anime": "Sailor Moon",
+    "character": "Usagi Tsukino"
+  },
+  {
+    "japanese": "まだだ、まだ終わらんよ！",
+    "romaji": "Mada da, mada owaran yo!",
+    "english": "Not yet! It's not over yet! (alt wording 22) (alt wording 74)",
+    "anime": "Mobile Suit Gundam",
+    "character": "Char Aznable"
+  },
+  {
+    "japanese": "なにィ！？",
+    "romaji": "Nanii!?",
+    "english": "What?! (alt wording 9) (alt wording 61)",
+    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+    "character": "Joseph Joestar"
+  },
+  {
+  "japanese": "次にお前は「やれやれだぜ」と言う！",
+  "romaji": "Tsugi ni omae wa 'yare yare da ze' to iu!",
+  "english": "Next you'll say, 'Good grief!'",
+  "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+  "character": "Joseph Joestar"
+  },
+  {
+  "japanese": "このジョルノ・ジョバァーナには夢がある！",
+  "romaji": "Kono Joruno Jobana ni wa yume ga aru!",
+  "english": "I, Giorno Giovanna, have a dream! (alt wording 5) (alt wording 57)",
+  "anime": "JoJo's Bizarre Adventure: Golden Wind",
+  "character": "Giorno Giovanna"
+  },
+ {
+  "japanese": "だが断る",
+  "romaji": "Daga kotowaru",
+  "english": "But I refuse. (alt wording 4) (alt wording 56)",
+  "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
+  "character": "Rohan Kishibe"
+ },
+ {
+"japanese": "光を待つだけでは夜は終わらない。自分で一歩踏み出した時、朝は始まる。",
+"romaji": "Hikari o matsu dake de wa yoru wa owaranai. Jibun de ippo fumidashita toki, asa wa hajimaru.",
+"english": "The night doesn't end by waiting for the light. Dawn begins when you take the first step yourself.",
+"anime": "Original",
+"character": "Original Character"
+},
+{
+  "japanese": "あきらめたらそこで試合終了ですよ…？",
+  "romaji": "Akirametara soko de shiai shuuryou desu yo...?",
+  "english": "If you give up, that's the end of the game. (alt wording 21)",
+  "anime": "Slam Dunk",
+  "character": "Kaede Rukawa"
+},
+{
+  "japanese": "何ッ！？",
+  "romaji": "Nani!?",
+  "english": "What?! (alt wording 19)",
+  "anime": "Fist of the North Star",
+  "character": "Shin"
+}
 ]

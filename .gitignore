@@ -27,6 +27,9 @@
 .DS_Store
 *.pem
 
+# Generated build-time data
+/shared/data/commitInfo.json
+
 # AI tooling state
 /.agent/
 /.agents/
@@ -65,3 +68,4 @@ next-env.d.ts
 # Audio files - WAV kept locally as fallback, only Opus tracked in git
 /public/sounds/**/*.wav
 /public/sounds/click/click9/
+.env*.local

@@ -9,37 +9,37 @@ import {
 } from './setProgress';
 
 describe('setProgress', () => {
-  it('caps kanji progress at 200', () => {
-    expect(getCappedKanjiProgress(250)).toBe(200);
+  it('caps kanji progress at 5', () => {
+    expect(getCappedKanjiProgress(250)).toBe(5);
   });
 
-  it('caps vocabulary meaning progress at 100', () => {
-    expect(getCappedVocabularyMeaningProgress(150)).toBe(100);
+  it('caps vocabulary meaning progress at 5', () => {
+    expect(getCappedVocabularyMeaningProgress(150)).toBe(5);
   });
 
-  it('caps vocabulary reading progress at 100', () => {
-    expect(getCappedVocabularyReadingProgress(175)).toBe(100);
+  it('caps vocabulary reading progress at 5', () => {
+    expect(getCappedVocabularyReadingProgress(175)).toBe(5);
   });
 
   it('calculates partial kanji set progress from capped totals', () => {
     expect(
-      calculateKanjiSetProgress([{ correct: 50 }, { correct: 210 }]),
-    ).toBe(0.625);
+      calculateKanjiSetProgress([{ correct: 3 }, { correct: 5 }]),
+    ).toBe(0.8);
   });
 
   it('calculates partial vocabulary set progress from separate meaning and reading caps', () => {
     expect(
       calculateVocabularySetProgress([
-        { meaningCorrect: 40, readingCorrect: 90 },
-        { meaningCorrect: 120, readingCorrect: 30 },
+        { meaningCorrect: 3, readingCorrect: 5 },
+        { meaningCorrect: 5, readingCorrect: 2 },
       ]),
-    ).toBe(0.65);
+    ).toBe(0.75);
   });
 
   it('returns 1 for a fully capped final short set', () => {
     expect(
       calculateVocabularySetProgress([
-        { meaningCorrect: 100, readingCorrect: 100 },
+        { meaningCorrect: 5, readingCorrect: 5 },
       ]),
     ).toBe(1);
   });
