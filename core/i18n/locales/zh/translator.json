@@ -1,40 +1,126 @@
 {
-  "title": "翻译器",
-  "description": "日语 ↔ 英语翻译，支持罗马字显示",
-  "input": {
-    "placeholder": "输入要翻译的文本...",
-    "from": "源语言",
-    "to": "目标语言"
+  "meta": {
+    "title": "日语翻译器 - 英日互译 | KanaDojo",
+    "description": "免费的日语翻译工具，支持英语和日语之间的翻译，包含罗马字注音"
+  },
+  "header": {
+    "title": "日语翻译器"
   },
   "languages": {
-    "japanese": "日语",
     "english": "英语",
-    "auto": "自动检测"
+    "japanese": "日语",
+    "en": "英语",
+    "ja": "日语"
+  },
+  "input": {
+    "placeholder": {
+      "en": "输入要翻译的文本...",
+      "ja": "テキストを入力してください..."
+    },
+    "clearButton": "清除输入",
+    "characterCount": "{count} / {max}",
+    "keyboardHint": "按 Ctrl+Enter（Mac 上为 ⌘+Enter）翻译",
+    "characterLimitWarning": "文本超过最大长度 {max} 个字符"
+  },
+  "output": {
+    "placeholder": {
+      "en": "翻译将显示在这里...",
+      "ja": "翻译将显示在这里..."
+    },
+    "copyButton": "复制翻译",
+    "copied": "已复制！",
+    "copiedMessage": "已复制到剪贴板！",
+    "romanization": "罗马字注音"
   },
   "actions": {
     "translate": "翻译",
-    "swap": "交换语言",
-    "copy": "复制结果",
-    "clear": "清除"
+    "translating": "翻译中...",
+    "swapLanguages": "交换语言"
   },
-  "results": {
-    "translation": "翻译结果",
-    "romaji": "罗马字",
-    "reading": "读音",
-    "noResults": "未找到翻译结果"
+  "history": {
+    "title": "翻译历史",
+    "empty": "暂无翻译记录",
+    "emptyHint": "您的翻译将显示在这里",
+    "clearAll": "全部清除",
+    "deleteEntry": "删除条目",
+    "clearDialog": {
+      "title": "清除翻译历史？",
+      "description": "这将永久删除所有翻译历史。此操作无法撤销。",
+      "cancel": "取消",
+      "confirm": "全部清除"
+    },
+    "timeAgo": {
+      "justNow": "刚刚",
+      "minutesAgo": "{count} 分钟前",
+      "hoursAgo": "{count} 小时前",
+      "daysAgo": "{count} 天前"
+    }
   },
-  "features": {
-    "title": "功能特点",
-    "romajiSupport": "罗马字支持",
-    "romajiDescription": "显示日语文本的罗马字读音",
-    "instantTranslation": "即时翻译",
-    "instantDescription": "快速获取翻译结果",
-    "multipleInputs": "多种输入",
-    "multipleDescription": "支持日语和英语输入"
+  "offline": {
+    "message": "您处于离线状态。重新连接前翻译不可用。"
   },
   "errors": {
+    "networkError": "无法连接。请检查您的网络连接。",
+    "rateLimit": "请求过多。请稍后再试。",
+    "invalidInput": "请输入有效的文本进行翻译。",
     "emptyInput": "请输入要翻译的文本",
-    "translationFailed": "翻译失败，请重试",
-    "languageNotSupported": "不支持的语言"
+    "serverError": "翻译服务暂时不可用。",
+    "authError": "翻译服务配置错误。",
+    "unknownError": "翻译过程中发生错误。请重试。"
+  },
+  "seo": {
+    "guideTitle": "日语翻译指南",
+    "howToUse": {
+      "title": "如何使用日语翻译器",
+      "intro": "我们的免费日语翻译器可以轻松翻译英语和日语文本。以下是入门方法：",
+      "steps": {
+        "step1": "在左侧输入框中输入文本",
+        "step2": "选择源语言（英语或日语）",
+        "step3": "点击翻译按钮或按 Ctrl+Enter",
+        "step4": "查看翻译结果，日语文本带有罗马字注音",
+        "step5": "复制翻译或保存到历史记录"
+      },
+      "proTip": "专业提示：使用交换按钮快速反转翻译方向，将输出翻译回原文。"
+    },
+    "writingSystems": {
+      "title": "关于日语书写系统",
+      "intro": "日语使用三种主要书写系统，通常在同一文本中混合使用：",
+      "hiragana": {
+        "name": "平假名（ひらがな）",
+        "description": "用于日语原生词汇、语法元素和注音的音节文字"
+      },
+      "katakana": {
+        "name": "片假名（カタカナ）",
+        "description": "主要用于外来语、拟声词和强调的音节文字"
+      },
+      "kanji": {
+        "name": "汉字（漢字）",
+        "description": "用于日语的汉字，代表含义和概念。常用汉字超过 2000 个"
+      },
+      "outro": "我们的翻译器处理所有三种书写系统，并提供罗马字注音，帮助您使用拉丁字母阅读日语文本。"
+    },
+    "faq": {
+      "title": "常见问题",
+      "isFree": {
+        "question": "这个日语翻译器是免费的吗？",
+        "answer": "是的！我们的日语翻译器完全免费使用，无需注册。您可以翻译任意数量的文本。"
+      },
+      "accuracy": {
+        "question": "翻译有多准确？",
+        "answer": "我们的翻译器使用 Google Cloud Translation API，这是最准确的机器翻译服务之一。虽然没有机器翻译是完美的，但它为大多数日常使用场景提供高质量的翻译。"
+      },
+      "romanization": {
+        "question": "什么是罗马字注音？",
+        "answer": "罗马字注音是使用拉丁字母表示日语文本的方式。它帮助非日语使用者阅读和发音日语单词。我们的翻译器自动为日语文本提供罗马字注音。"
+      },
+      "historySaved": {
+        "question": "我的翻译历史会保存吗？",
+        "answer": "是的，您的翻译历史保存在浏览器本地。这意味着您的翻译是私密的，只能在您的设备上访问。您可以随时清除历史记录。"
+      },
+      "maxLength": {
+        "question": "最大文本长度是多少？",
+        "answer": "您一次最多可以翻译 5000 个字符。对于较长的文本，我们建议将其分成较小的部分。"
+      }
+    }
   }
 }
