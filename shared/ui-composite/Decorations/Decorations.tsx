@@ -340,13 +340,6 @@ const Decorations = ({
   interactive?: boolean;
   context?: 'main-menu' | 'mode-setup' | 'streak-milestone';
 }) => {
-  if (
-    (context === 'mode-setup' && !ENABLE_MODE_SETUP_DECORATIONS) ||
-    (context === 'streak-milestone' && !ENABLE_STREAK_MILESTONE_DECORATIONS)
-  ) {
-    return null;
-  }
-
   const [styles, setStyles] = useState<CharacterStyle[]>([]);
   const [visibleCount, setVisibleCount] = useState<number>(() =>
     calculateVisibleCount(),
@@ -456,6 +449,13 @@ const Decorations = ({
       ));
     }
   }, [styles, interactive, handleExplode, layoutConfig.cellSize]);
+
+  if (
+    (context === 'mode-setup' && !ENABLE_MODE_SETUP_DECORATIONS) ||
+    (context === 'streak-milestone' && !ENABLE_STREAK_MILESTONE_DECORATIONS)
+  ) {
+    return null;
+  }
 
   if (styles.length === 0) return null;
 
