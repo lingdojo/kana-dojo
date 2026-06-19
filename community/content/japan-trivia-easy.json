@@ -224,16 +224,16 @@
     "correctIndex": 0
   },
   {
-  "question": "Which Japanese food is a savory pancake cooked on a griddle?",
-  "difficulty": "easy",
-  "answers": ["Okonomiyaki", "Tempura", "Yakitori", "Sashimi"],
-  "correctIndex": 0
+    "question": "Which Japanese food is a savory pancake cooked on a griddle?",
+    "difficulty": "easy",
+    "answers": ["Okonomiyaki", "Tempura", "Yakitori", "Sashimi"],
+    "correctIndex": 0
   },
   {
-  "question": "What is the main ingredient in miso? (Community variation 56)",
-  "difficulty": "easy",
-  "answers": [ "Fermented soybeans",  "Rice flour",  "Buckwheat", "Seaweed"],
-  "correctIndex": 0
+    "question": "What is the main ingredient in miso? (Community variation 56)",
+    "difficulty": "easy",
+    "answers": ["Fermented soybeans", "Rice flour", "Buckwheat", "Seaweed"],
+    "correctIndex": 0
   },
   {
     "question": "Which ocean borders Japan to the east?",
@@ -245,5 +245,11 @@
       "Arctic Ocean"
     ],
     "correctIndex": 2
+  },
+  {
+    "question": "Which of these is a Japanese noodle dish served in broth? (Community variation 44)",
+    "difficulty": "easy",
+    "answers": ["Ramen", "Takoyaki", "Gyoza", "Yakitori"],
+    "correctIndex": 0
   }
 ]
