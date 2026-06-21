@@ -126,69 +126,81 @@
     "meaning": "Patterns tend to repeat"
   },
   {
-  "japanese": "月とすっぽん",
-  "romaji": "Tsuki to suppon",
-  "english": "The moon and a turtle",
-  "meaning": "Vast difference; not comparable"
-},
+    "japanese": "月とすっぽん",
+    "romaji": "Tsuki to suppon",
+    "english": "The moon and a turtle",
+    "meaning": "Vast difference; not comparable"
+  },
   {
-  "japanese": "善は急げ",
-  "romaji": "Zen wa isoge",
-  "english": "Hurry to do good",
-  "meaning": "If it's worth doing, do it at once"
-},
-{
-  "japanese": "継続は力なり",
-  "romaji": "Keizoku wa chikara nari",
-  "english": "Continuity becomes strength",
-  "meaning": "Consistent effort over time leads to success"
-},
-{
-  "japanese": "塵も積もれば山となる",
-  "romaji": "Chiri mo tsumoreba yama to naru",
-  "english": "Even dust, when piled up, becomes a mountain",
-  "meaning": "Small efforts accumulate into great achievements"
-},
-{
-  "japanese": "継続は力なり",
-  "romaji": "Keizoku wa chikara nari",
-  "english": "Continuity becomes strength",
-  "meaning": "Consistent effort over time leads to success"
-},
-{
-  "japanese": "石橋を叩いて渡る",
-  "romaji": "Ishibashi wo tataite wataru",
-  "english": "Tap a stone bridge before crossing",
-  "meaning": "Be very cautious"
-},
-{
-  "japanese": "旅は道連れ世は情け",
-  "romaji": "Tabi wa michizure yo wa nasake",
-  "english": "Travel needs companions; life needs kindness",
-  "meaning": "Relationships and compassion matter"
-},
-{
-  "japanese": "良薬は口に苦し",
-  "romaji": "Ryouyaku wa kuchi ni nigashi",
-  "english": "Good medicine tastes bitter",
-  "meaning": "Helpful advice often sounds harsh"
-},
+    "japanese": "善は急げ",
+    "romaji": "Zen wa isoge",
+    "english": "Hurry to do good",
+    "meaning": "If it's worth doing, do it at once"
+  },
   {
-  "japanese": "犬も歩けば棒に当たる",
-  "romaji": "Inu mo arukeba bou ni ataru",
-  "english": "Even a walking dog will hit a stick",
-  "meaning": "Acting can lead to luck or trouble"
-},
-{
-  "japanese": "縁の下の力持ち",
-  "romaji": "En no shita no chikaramochi",
-  "english": "A strong person under the veranda",
-  "meaning": "An unsung hero who supports behind the scenes"
-},
-{
-  "japanese": "藪をつついて蛇を出す",
-  "romaji": "Yabu wo tsutsuite hebi wo dasu",
-  "english": "Poke the bush and bring out a snake",
-  "meaning": "Stir up trouble unnecessarily"
-}
+    "japanese": "継続は力なり",
+    "romaji": "Keizoku wa chikara nari",
+    "english": "Continuity becomes strength",
+    "meaning": "Consistent effort over time leads to success"
+  },
+  {
+    "japanese": "塵も積もれば山となる",
+    "romaji": "Chiri mo tsumoreba yama to naru",
+    "english": "Even dust, when piled up, becomes a mountain",
+    "meaning": "Small efforts accumulate into great achievements"
+  },
+  {
+    "japanese": "継続は力なり",
+    "romaji": "Keizoku wa chikara nari",
+    "english": "Continuity becomes strength",
+    "meaning": "Consistent effort over time leads to success"
+  },
+  {
+    "japanese": "石橋を叩いて渡る",
+    "romaji": "Ishibashi wo tataite wataru",
+    "english": "Tap a stone bridge before crossing",
+    "meaning": "Be very cautious"
+  },
+  {
+    "japanese": "旅は道連れ世は情け",
+    "romaji": "Tabi wa michizure yo wa nasake",
+    "english": "Travel needs companions; life needs kindness",
+    "meaning": "Relationships and compassion matter"
+  },
+  {
+    "japanese": "良薬は口に苦し",
+    "romaji": "Ryouyaku wa kuchi ni nigashi",
+    "english": "Good medicine tastes bitter",
+    "meaning": "Helpful advice often sounds harsh"
+  },
+  {
+    "japanese": "犬も歩けば棒に当たる",
+    "romaji": "Inu mo arukeba bou ni ataru",
+    "english": "Even a walking dog will hit a stick",
+    "meaning": "Acting can lead to luck or trouble"
+  },
+  {
+    "japanese": "縁の下の力持ち",
+    "romaji": "En no shita no chikaramochi",
+    "english": "A strong person under the veranda",
+    "meaning": "An unsung hero who supports behind the scenes"
+  },
+  {
+    "japanese": "藪をつついて蛇を出す",
+    "romaji": "Yabu wo tsutsuite hebi wo dasu",
+    "english": "Poke the bush and bring out a snake",
+    "meaning": "Stir up trouble unnecessarily"
+  },
+  {
+    "japanese": "井の中の蛙大海を知らず",
+    "romaji": "I no naka no kawazu taikai wo shirazu",
+    "english": "A frog in a well does not know the great sea",
+    "meaning": "Limited experience limits perspective"
+  },
+  {
+    "japanese": "毒を食らわば皿まで",
+    "romaji": "Doku wo kurawaba sara made",
+    "english": "If you eat poison, eat the plate too",
+    "meaning": "If you must do something risky, go all the way"
+  }
 ]
