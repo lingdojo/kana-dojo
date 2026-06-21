@@ -180,5 +180,12 @@
     "english": "no good",
     "region": "Kansai",
     "note": "Used for prohibition/failure. (Set 2)"
-  }
+  },
+  {
+  "dialect": "〜たいぎい",
+  "standardJapanese": "めんどくさい",
+  "english": "troublesome / annoying",
+  "region": "Hiroshima",
+  "note": "Common Hiroshima dialect expression used when something feels bothersome or tiring. (Set 7)"
+}
 ]
