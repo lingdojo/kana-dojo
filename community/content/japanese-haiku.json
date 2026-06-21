@@ -106,5 +106,14 @@
   "season": "Autumn",
   "kigo": "Harvest moon (meigetsu)",
   "notes": "Captures Basho's admiration for the autumn moon and the quiet beauty of nighttime reflection."
+},
+{
+  "japanese": "春の海\nひねもすのたり\nのたりかな",
+  "romaji": "Haru no umi / hinemosu notari / notari kana",
+  "english": "The spring sea stretches lazily all day, rising and falling.",
+  "poet": "Yosa Buson",
+  "season": "Spring",
+  "kigo": "Spring sea (haru no umi)",
+  "notes": "Known for musical phrasing and calm motion."
 }
 ]
