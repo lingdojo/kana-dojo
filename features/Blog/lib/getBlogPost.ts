@@ -5,10 +5,10 @@
 
 import fs from 'fs';
 import path from 'path';
-import matter from 'gray-matter';
 import { calculateReadingTime } from './calculateReadingTime';
 import { validateFrontmatter } from './validateFrontmatter';
 import { extractHeadings } from './extractHeadings';
+import { parseMdxFrontmatter } from './parseMdxFrontmatter';
 import type { BlogPost, BlogPostMeta, Locale, Category } from '../types/blog';
 
 // Re-export for backwards compatibility
@@ -70,7 +70,7 @@ function findPostPath(locale: Locale, slug: string): string | null {
 function parsePostFile(filePath: string, locale: Locale): BlogPost | null {
   try {
     const fileContent = fs.readFileSync(filePath, 'utf-8');
-    const { data: frontmatter, content } = matter(fileContent);
+    const { data: frontmatter, content } = parseMdxFrontmatter(fileContent);
 
     // Validate frontmatter
     const validation = validateFrontmatter(frontmatter);

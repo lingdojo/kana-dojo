@@ -5,8 +5,8 @@
 
 import fs from 'fs';
 import path from 'path';
-import matter from 'gray-matter';
 import { calculateReadingTime } from './calculateReadingTime';
+import { parseMdxFrontmatter } from './parseMdxFrontmatter';
 import { validateFrontmatter } from './validateFrontmatter';
 import type { BlogPostMeta, Locale, Category } from '../types/blog';
 
@@ -59,7 +59,7 @@ function collectMdxFiles(directory: string): string[] {
 function parsePostFile(filePath: string, locale: Locale): BlogPostMeta | null {
   try {
     const fileContent = fs.readFileSync(filePath, 'utf-8');
-    const { data: frontmatter, content } = matter(fileContent);
+    const { data: frontmatter, content } = parseMdxFrontmatter(fileContent);
 
     // Validate frontmatter
     const validation = validateFrontmatter(frontmatter);
