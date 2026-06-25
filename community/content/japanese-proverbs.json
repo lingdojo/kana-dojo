@@ -202,5 +202,29 @@
     "romaji": "Doku wo kurawaba sara made",
     "english": "If you eat poison, eat the plate too",
     "meaning": "If you must do something risky, go all the way"
-  }
+  },
+  {
+    "japanese": "急がば回れ",
+    "romaji": "Isogaba maware",
+    "english": "If in a hurry, go around",
+    "meaning": "The safer path can be faster"
+  },
+  {
+  "japanese": "良薬は口に苦し",
+  "romaji": "Ryouyaku wa kuchi ni nigashi",
+  "english": "Good medicine tastes bitter",
+  "meaning": "Helpful advice can be harsh"
+  },
+{
+  "japanese": "笑う門には福来る",
+  "romaji": "Warau kado ni wa fuku kitaru",
+  "english": "Good fortune comes to a laughing home",
+  "meaning": "Happiness invites luck"
+},
+{
+  "japanese": "三人寄れば文殊の知恵",
+  "romaji": "Sannin yoreba monju no chie",
+  "english": "Three people together have the wisdom of Monju",
+  "meaning": "Two heads are better than one"
+}
 ]

@@ -128,7 +128,7 @@
   {
     "id": 22,
     "fact": "There's a Japanese word 'komorebi' (木漏れ日) specifically for sunlight filtering through leaves - no direct English translation exists.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -200,7 +200,7 @@
   {
     "id": 34,
     "fact": "There's a Japanese festival called 'Hadaka Matsuri' where thousands of nearly naked men compete to catch lucky charms thrown by priests.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -344,7 +344,7 @@
   {
     "id": 58,
     "fact": "Japan's Seikan Tunnel connecting Honshu and Hokkaido is the world's longest undersea tunnel at 53.85 kilometers.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -380,7 +380,7 @@
   {
     "id": 64,
     "fact": "Japanese blood donation has such high demand that mobile donation buses give out snacks, drinks, and lottery tickets as thanks.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -428,7 +428,7 @@
   {
     "id": 72,
     "fact": "Japan has an island where cats outnumber humans 6 to 1 - Tashirojima was once used to farm silkworms, and cats protected them from mice.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -458,7 +458,7 @@
   {
     "id": 77,
     "fact": "There's a Japanese concept 'shuhari' (守破離) - follow the rules, break the rules, transcend the rules - the path to mastery.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -470,7 +470,7 @@
   {
     "id": 79,
     "fact": "The Japanese word 'nomunication' combines 'nomu' (drink) and 'communication' - bonding with colleagues over after-work drinks.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -500,7 +500,7 @@
   {
     "id": 84,
     "fact": "Japan has 'crying rooms' in some theaters where parents can watch movies with babies without disturbing other viewers.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -554,7 +554,7 @@
   {
     "id": 93,
     "fact": "The Japanese word 'tekito' (適当) means both 'appropriate' and 'whatever/random' depending on context and tone.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -620,7 +620,7 @@
   {
     "id": 104,
     "fact": "Japan has train 'pushers' (oshiya) whose job is to physically push passengers into overcrowded trains during rush hour.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -974,13 +974,13 @@
   {
     "id": 163,
     "fact": "There's a Japanese word 'komorebi' (木漏れ日) for sunlight filtering through trees - there's no single English word for this.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 164,
     "fact": "Japan has 'namahage' - demons who visit homes on New Year's Eve to scare children into behaving well.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1340,7 +1340,7 @@
   {
     "id": 224,
     "fact": "The Japanese word 'mijikai' (短い) means short, but 'mijikai hanashi' can refer to a concise story — valued in polite conversation.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1352,7 +1352,7 @@
   {
     "id": 226,
     "fact": "In Japan, umbrellas are so commonly shared and lost that many convenience stores sell inexpensive clear umbrellas as a standard item.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1514,7 +1514,7 @@
   {
     "id": 253,
     "fact": "Japan’s 'tachigui' culture means quick standing meals at noodle or sushi counters, especially around busy train stations.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1574,7 +1574,7 @@
   {
     "id": 263,
     "fact": "Japan has 'chiiki matsuri' — neighborhood festivals run by local committees where residents carry portable shrines together.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1622,7 +1622,7 @@
   {
     "id": 271,
     "fact": "Japan’s 'yatai' food stalls are famous for ramen, yakitori, and oden, especially during festivals and late nights.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1700,7 +1700,7 @@
   {
     "id": 284,
     "fact": "The term 'shokunin' (職人) refers to artisans who dedicate their lives to mastering a craft.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1742,7 +1742,7 @@
   {
     "id": 291,
     "fact": "Japan’s name for the rainy season, 'tsuyu' (梅雨), literally means 'plum rain' because it coincides with the ripening of ume plums.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1820,7 +1820,7 @@
   {
     "id": 304,
     "fact": "Japan’s 'hanami' tradition often includes picnic mats, bento boxes, and seasonal sweets under the cherry trees.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {

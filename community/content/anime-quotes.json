@@ -126,11 +126,11 @@
     "character": "Yoshikage Kira"
   },
   {
-    "japanese": "だが…それがいい。",
-    "romaji": "Daga... sore ga ii.",
-    "english": "But... that's what I like. (alt wording 16) (alt wording 68)",
-    "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
-    "character": "Yoshikage Kira"
+    "japanese": "新しいquote #106",
+    "romaji": "Atarashii quote #106",
+    "english": "New quote #106",
+    "anime": "New Anime",
+    "character": "New Character"
   },
   {
     "japanese": "撃っていいのは撃たれる覚悟がある奴だけだ",
@@ -441,52 +441,80 @@
     "character": "Joseph Joestar"
   },
   {
-  "japanese": "次にお前は「やれやれだぜ」と言う！",
-  "romaji": "Tsugi ni omae wa 'yare yare da ze' to iu!",
-  "english": "Next you'll say, 'Good grief!'",
-  "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
-  "character": "Joseph Joestar"
+    "japanese": "次にお前は「やれやれだぜ」と言う！",
+    "romaji": "Tsugi ni omae wa 'yare yare da ze' to iu!",
+    "english": "Next you'll say, 'Good grief!'",
+    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+    "character": "Joseph Joestar"
   },
   {
-  "japanese": "このジョルノ・ジョバァーナには夢がある！",
-  "romaji": "Kono Joruno Jobana ni wa yume ga aru!",
-  "english": "I, Giorno Giovanna, have a dream! (alt wording 5) (alt wording 57)",
-  "anime": "JoJo's Bizarre Adventure: Golden Wind",
-  "character": "Giorno Giovanna"
+    "japanese": "このジョルノ・ジョバァーナには夢がある！",
+    "romaji": "Kono Joruno Jobana ni wa yume ga aru!",
+    "english": "I, Giorno Giovanna, have a dream! (alt wording 5) (alt wording 57)",
+    "anime": "JoJo's Bizarre Adventure: Golden Wind",
+    "character": "Giorno Giovanna"
   },
- {
-  "japanese": "だが断る",
-  "romaji": "Daga kotowaru",
-  "english": "But I refuse. (alt wording 4) (alt wording 56)",
-  "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
-  "character": "Rohan Kishibe"
- },
- {
-"japanese": "光を待つだけでは夜は終わらない。自分で一歩踏み出した時、朝は始まる。",
-"romaji": "Hikari o matsu dake de wa yoru wa owaranai. Jibun de ippo fumidashita toki, asa wa hajimaru.",
-"english": "The night doesn't end by waiting for the light. Dawn begins when you take the first step yourself.",
-"anime": "Original",
-"character": "Original Character"
-},
-{
-  "japanese": "あきらめたらそこで試合終了ですよ…？",
-  "romaji": "Akirametara soko de shiai shuuryou desu yo...?",
-  "english": "If you give up, that's the end of the game. (alt wording 21)",
-  "anime": "Slam Dunk",
-  "character": "Kaede Rukawa"
-},
-{
-  "japanese": "何ッ！？",
-  "romaji": "Nani!?",
-  "english": "What?! (alt wording 19)",
-  "anime": "Fist of the North Star",
-  "character": "Shin"
-},
   {
-  "japanese": "このジョルノ・ジョバァーナには夢がある！",
-  "romaji": "Kono Joruno Jobana ni wa yume ga aru!",
-  "english": "I, Giorno Giovanna, have a dream! (alt wording 5)",
-  "anime": "JoJo's Bizarre Adventure: Golden Wind",
-  "character": "Giorno Giovanna"
-}
+    "japanese": "だが断る",
+    "romaji": "Daga kotowaru",
+    "english": "But I refuse. (alt wording 4) (alt wording 56)",
+    "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
+    "character": "Rohan Kishibe"
+  },
+  {
+    "japanese": "光を待つだけでは夜は終わらない。自分で一歩踏み出した時、朝は始まる。",
+    "romaji": "Hikari o matsu dake de wa yoru wa owaranai. Jibun de ippo fumidashita toki, asa wa hajimaru.",
+    "english": "The night doesn't end by waiting for the light. Dawn begins when you take the first step yourself.",
+    "anime": "Original",
+    "character": "Original Character"
+  },
+  {
+    "japanese": "あきらめたらそこで試合終了ですよ…？",
+    "romaji": "Akirametara soko de shiai shuuryou desu yo...?",
+    "english": "If you give up, that's the end of the game. (alt wording 21)",
+    "anime": "Slam Dunk",
+    "character": "Kaede Rukawa"
+  },
+  {
+    "japanese": "何ッ！？",
+    "romaji": "Nani!?",
+    "english": "What?! (alt wording 19)",
+    "anime": "Fist of the North Star",
+    "character": "Shin"
+  },
+  {
+    "japanese": "このジョルノ・ジョバァーナには夢がある！",
+    "romaji": "Kono Joruno Jobana ni wa yume ga aru!",
+    "english": "I, Giorno Giovanna, have a dream! (alt wording 5)",
+    "anime": "JoJo's Bizarre Adventure: Golden Wind",
+    "character": "Giorno Giovanna"
+  },
+  {
+    "japanese": "このジョルノ・ジョバァーナには夢がある！",
+    "romaji": "Kono Joruno Jobana ni wa yume ga aru!",
+    "english": "I, Giorno Giovanna, have a dream! (alt wording 5) (alt wording 57)",
+    "anime": "JoJo's Bizarre Adventure: Golden Wind",
+    "character": "Giorno Giovanna"
+  },
+  {
+    "japanese": "ロードローラーだッ！",
+    "romaji": "Rodo rora da!",
+    "english": "Road roller! (alt wording 1)",
+    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+    "character": "DIO"
+  },
+  {
+    "japanese": "だが…それがいい。",
+    "romaji": "Daga... sore ga ii.",
+    "english": "But... that's what I like.",
+    "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
+    "character": "Yoshikage Kira"
+  },
+  {
+    "japanese": "一人では弱くても、仲間となら強くなれる",
+    "romaji": "Hitori de wa yowakute mo, nakama to nara tsuyoku nareru",
+    "english": "Even if you're weak alone, you can become strong with your friends.",
+    "anime": "Naruto",
+    "character": "Naruto Uzumaki"
+  }
 ]
