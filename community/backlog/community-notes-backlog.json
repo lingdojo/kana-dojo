@@ -29,7 +29,9 @@
     "position": "top",
     "text": "_Community note: this markdown file is safe for tiny redundant edits._",
     "issued": true,
-    "completed": false
+    "completed": false,
+    "completedBy": "Sufiyan-MSA",
+    "completedPR": 22065
   },
   {
     "id": 5,
