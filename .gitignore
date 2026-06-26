@@ -71,3 +71,6 @@ next-env.d.ts
 /public/sounds/**/*.wav
 /public/sounds/click/click9/
 .env*.local
+
+# Sentry Config File
+.env.sentry-build-plugin

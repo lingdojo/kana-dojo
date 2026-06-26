@@ -1,4 +1,17 @@
 // instrumentation-client.ts
+import * as Sentry from '@sentry/nextjs';
+
+Sentry.init({
+  dsn: 'https://a6f82883d78e424ee7b578556b78743d@o4511608063197184.ingest.us.sentry.io/4511608067981312',
+  integrations: [Sentry.replayIntegration()],
+  tracesSampleRate: 1,
+  enableLogs: true,
+  replaysSessionSampleRate: 0.1,
+  replaysOnErrorSampleRate: 1.0,
+  sendDefaultPii: true,
+});
+
+export const onRouterTransitionStart = Sentry.captureRouterTransitionStart;
 
 /**
  * Global Chunk Load Error Handler

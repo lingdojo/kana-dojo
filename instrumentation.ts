@@ -1,11 +1,13 @@
 // instrumentation.ts
+import * as Sentry from '@sentry/nextjs';
 
 /**
  * Next.js server-side instrumentation entry point.
  *
- * Runs once per server boot on production deployments. Initializes a single
- * server-side PostHog client (using `posthog-node`) and stashes it on
- * `globalThis` so it survives Next.js dev HMR reloads.
+ * Runs once per server boot on production deployments. Initializes Sentry for
+ * Next.js request/error capture, then initializes a single server-side PostHog
+ * client (using `posthog-node`) and stashes it on `globalThis` so it survives
+ * Next.js dev HMR reloads.
  *
  * The actual capture helpers live in `@/shared/analytics/posthog-server` so
  * consumers never need to import `posthog-node` directly.
@@ -16,6 +18,14 @@ declare global {
 }
 
 export async function register(): Promise<void> {
+  if (process.env.NEXT_RUNTIME === 'nodejs') {
+    await import('./sentry.server.config');
+  }
+
+  if (process.env.NEXT_RUNTIME === 'edge') {
+    await import('./sentry.edge.config');
+  }
+
   if (process.env.NEXT_RUNTIME !== 'nodejs') {
     return;
   }
@@ -51,3 +61,5 @@ export async function register(): Promise<void> {
     console.error('[PostHog:server] Failed to initialize:', err);
   }
 }
+
+export const onRequestError = Sentry.captureRequestError;

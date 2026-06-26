@@ -17,12 +17,8 @@
   },
   "crons": [
     {
-      "path": "/api/trigger-community-issue",
-      "schedule": "7,22,37,52 * * * *"
-    },
-    {
       "path": "/api/process-bug-reports",
-      "schedule": "*/5 * * * *"
+      "schedule": "*/20 * * * *"
     }
   ],
   "headers": [
