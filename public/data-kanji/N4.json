@@ -552,10 +552,12 @@
     "id": 35,
     "kanjiChar": "度",
     "onyomi": [
-      "do ド, taku タク"
+      "do ド",
+      "taku タク"
     ],
     "kunyomi": [
-      "tabi たび, ta(i) た(い)"
+      "tabi たび",
+      "ta(i) た(い)"
     ],
     "meanings": [
       "degrees",
@@ -568,7 +570,8 @@
     "id": 36,
     "kanjiChar": "強",
     "onyomi": [
-      "kyou キョウ, gou ゴウ"
+      "kyou キョウ",
+      "gou ゴウ"
     ],
     "kunyomi": [
       "tsuyo(i) つよ(い)"
@@ -1167,7 +1170,8 @@
     "id": 74,
     "kanjiChar": "台",
     "onyomi": [
-      "dai ダイ, tai タイ"
+      "dai ダイ",
+      "tai タイ"
     ],
     "kunyomi": [
       "utena うてな"
@@ -2483,7 +2487,8 @@
     "id": 159,
     "kanjiChar": "茶",
     "onyomi": [
-      "cha チャ, sa サ"
+      "cha チャ",
+      "sa サ"
     ],
     "kunyomi": [
       ""

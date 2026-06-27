@@ -4,8 +4,10 @@
   "private": true,
   "scripts": {
     "prepare": "husky",
+    "predev": "node scripts/generate-commit-info.mjs",
     "dev": "next dev --turbo",
     "build": "node scripts/generate-commit-info.mjs && next build",
+    "precheck": "node scripts/generate-commit-info.mjs",
     "test": "vitest run",
     "test:watch": "vitest",
     "postbuild": "next-sitemap",
