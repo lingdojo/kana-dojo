@@ -590,7 +590,7 @@
   {
     "id": 99,
     "fact": "There's a Japanese word 'takumi' (匠) for master craftsmen who dedicate their lives to perfecting a single skill.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
