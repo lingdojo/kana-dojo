@@ -140,7 +140,7 @@
     "season": "Spring",
     "kigo": "Spring sea (haru no umi)",
     "notes": "Known for musical phrasing and calm motion.",
-    "issued": false,
+    "issued": true,
     "completed": false
   }
 ]
