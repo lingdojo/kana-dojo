@@ -300,6 +300,16 @@
     "Fukuoka"
   ],
   "correctIndex": 0
+},
+  {
+  "question": "What is the Japanese word for 'forest'?",
+  "difficulty": "easy",
+  "answers": [
+    "Mori",
+    "Sora",
+    "Hana",
+    "Mizu"
+  ],
+  "correctIndex": 0
 }
-  
 ]
