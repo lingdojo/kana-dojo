@@ -690,7 +690,7 @@
     "english": "Peek at the sky through a needle's eye",
     "meaning": "A narrow viewpoint leads to poor judgment",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 78,
@@ -852,7 +852,7 @@
     "english": "Sometimes losing is winning",
     "meaning": "Conceding can be the best outcome",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 96,
@@ -1509,7 +1509,7 @@
     "english": "A frog in a well doesn’t know the ocean",
     "meaning": "Limited experience limits perspective",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 169,

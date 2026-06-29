@@ -298,5 +298,191 @@
   "romaji": "Zenin zenka",
   "english": "Good causes bring good results",
   "meaning": "Good deeds lead to good outcomes"
+},
+  {
+  "japanese": "負けるが勝ち",
+  "romaji": "Makeru ga kachi",
+  "english": "Sometimes losing is winning",
+  "meaning": "Conceding can be the best outcome"
+},
+{
+"japanese": "早起きは三文の徳",
+"romaji": "Hayaoki wa sanmon no toku",
+"english": "Waking up early brings three coins of benefit",
+"meaning": "The early bird catches the worm"
+},
+{
+"japanese": "口は災いの元",
+"romaji": "Kuchi wa wazawai no moto",
+"english": "The mouth is the source of disaster",
+"meaning": "Careless words can cause trouble"
+},
+{
+"japanese": "弘法にも筆の誤り",
+"romaji": "Koubou ni mo fude no ayamari",
+"english": "Even Kobo makes mistakes with his brush",
+"meaning": "Even masters make mistakes"
+},
+{
+"japanese": "灯台下暗し",
+"romaji": "Toudai moto kurashi",
+"english": "It is dark beneath the lighthouse",
+"meaning": "People often overlook what is right in front of them"
+},
+{
+"japanese": "隣の芝生は青い",
+"romaji": "Tonari no shibafu wa aoi",
+"english": "The neighbor's lawn is green",
+"meaning": "The grass is always greener on the other side"
+},
+{
+"japanese": "能ある鷹は爪を隠す",
+"romaji": "Nou aru taka wa tsume wo kakusu",
+"english": "A capable hawk hides its claws",
+"meaning": "Truly skilled people do not show off"
+},
+{
+"japanese": "一期一会",
+"romaji": "Ichigo ichie",
+"english": "One time, one meeting",
+"meaning": "Treasure every encounter because it may never happen again"
+},
+{
+"japanese": "雨降って地固まる",
+"romaji": "Ame futte ji katamaru",
+"english": "After rain, the ground hardens",
+"meaning": "Difficulties can make relationships or situations stronger"
+},
+{
+"japanese": "案ずるより産むが易し",
+"romaji": "Anzuru yori umu ga yasushi",
+"english": "Giving birth is easier than worrying about it",
+"meaning": "Doing something is often easier than worrying about it"
+},
+{
+"japanese": "住めば都",
+"romaji": "Sumeba miyako",
+"english": "If you live there, it becomes the capital",
+"meaning": "Any place can become comfortable once you get used to it"
+},
+{
+"japanese": "郷に入っては郷に従え",
+"romaji": "Gou ni itte wa gou ni shitagae",
+"english": "When entering a village, follow its customs",
+"meaning": "When in Rome, do as the Romans do"
+},
+{
+"japanese": "魚心あれば水心",
+"romaji": "Uogokoro areba mizugokoro",
+"english": "If the fish has a heart, the water has a heart too",
+"meaning": "Goodwill is often returned with goodwill"
+},
+{
+"japanese": "団栗の背比べ",
+"romaji": "Donguri no seikurabe",
+"english": "Acorns comparing their height",
+"meaning": "There is little difference between similar things"
+},
+{
+"japanese": "飼い犬に手を噛まれる",
+"romaji": "Kaiinu ni te wo kamareru",
+"english": "Being bitten by the dog you raised",
+"meaning": "Being betrayed by someone you helped or trusted"
+},
+{
+"japanese": "虎穴に入らずんば虎子を得ず",
+"romaji": "Koketsu ni irazunba koji wo ezu",
+"english": "Without entering the tiger's cave, you cannot get its cub",
+"meaning": "Nothing ventured, nothing gained"
+},
+{
+"japanese": "人の振り見て我が振り直せ",
+"romaji": "Hito no furi mite waga furi naose",
+"english": "Look at others' behavior and correct your own",
+"meaning": "Learn from other people's mistakes"
+},
+{
+"japanese": "立つ鳥跡を濁さず",
+"romaji": "Tatsu tori ato wo nigosazu",
+"english": "A bird leaving does not muddy the water behind",
+"meaning": "Leave things clean and proper when you depart"
+},
+{
+"japanese": "聞くは一時の恥、聞かぬは一生の恥",
+"romaji": "Kiku wa ittoki no haji, kikanu wa isshou no haji",
+"english": "Asking is a moment of shame; not asking is a lifetime of shame",
+"meaning": "It is better to ask and learn than to remain ignorant"
+},
+{
+"japanese": "初心忘るべからず",
+"romaji": "Shoshin wasuru bekarazu",
+"english": "Do not forget your beginner's mind",
+"meaning": "Remember your original purpose and humility"
+},
+{
+"japanese": "果報は寝て待て",
+"romaji": "Kahou wa nete mate",
+"english": "Wait for good fortune while sleeping",
+"meaning": "After doing your best, wait patiently for the result"
+},
+{
+"japanese": "好きこそ物の上手なれ",
+"romaji": "Suki koso mono no jouzu nare",
+"english": "Liking something makes you good at it",
+"meaning": "Passion helps people improve"
+},
+{
+"japanese": "初心者にも五分の魂",
+"romaji": "Shoshinsha ni mo gobu no tamashii",
+"english": "Even a beginner has a measure of spirit",
+"meaning": "Everyone deserves respect, no matter their level"
+},
+{
+"japanese": "明日は明日の風が吹く",
+"romaji": "Ashita wa ashita no kaze ga fuku",
+"english": "Tomorrow, tomorrow's wind will blow",
+"meaning": "Do not worry too much about tomorrow"
+},
+{
+"japanese": "門前の小僧習わぬ経を読む",
+"romaji": "Monzen no kozou narawanu kyou wo yomu",
+"english": "A child near the temple gate recites sutras without being taught",
+"meaning": "People naturally learn from the environment around them"
+},
+{
+"japanese": "腹八分目に医者いらず",
+"romaji": "Hara hachibunme ni isha irazu",
+"english": "Eating until eighty percent full keeps the doctor away",
+"meaning": "Moderation is good for health"
+},
+{
+"japanese": "金の切れ目が縁の切れ目",
+"romaji": "Kane no kireme ga en no kireme",
+"english": "The end of money is the end of relationships",
+"meaning": "Some relationships depend on financial benefit"
+},
+{
+"japanese": "仏の顔も三度まで",
+"romaji": "Hotoke no kao mo sando made",
+"english": "Even Buddha's face only lasts three times",
+"meaning": "Even a patient person has limits"
+},
+{
+"japanese": "山椒は小粒でもぴりりと辛い",
+"romaji": "Sanshou wa kotsubu demo piriri to karai",
+"english": "A peppercorn is small but sharply spicy",
+"meaning": "Small things or people can still be powerful"
+},
+{
+"japanese": "知らぬ間に時は過ぎる",
+"romaji": "Shiranu ma ni toki wa sugiru",
+"english": "Time passes before you know it",
+"meaning": "Time moves quickly, so use it wisely"
+},
+{
+"japanese": "一寸先は闇",
+"romaji": "Issun saki wa yami",
+"english": "One inch ahead is darkness",
+"meaning": "The future is uncertain"
 }
 ]

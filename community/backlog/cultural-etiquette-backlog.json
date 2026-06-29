@@ -275,7 +275,7 @@
     "dont": "値段を強調する",
     "note": "謙遜表現が好まれる。",
     "id": 31,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1004,7 +1004,7 @@
     "dont": "無連絡で遅れて言い訳を続ける",
     "note": "先に謝罪が基本。",
     "id": 112,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

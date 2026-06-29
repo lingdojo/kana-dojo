@@ -674,7 +674,7 @@
   {
     "id": 113,
     "fact": "The word 'jibun' (自分) means 'self' but is also used to mean 'I' in many dialects - showing how identity is tied to selfhood.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -788,7 +788,7 @@
   {
     "id": 132,
     "fact": "Japan has 'gacha' machines that dispense random collectible toys for 100-500 yen - adults are as obsessed as children.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

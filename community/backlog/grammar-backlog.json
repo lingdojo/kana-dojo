@@ -453,7 +453,9 @@
     "id": 76,
     "text": "\"〜ことになっている\" means \"it is decided/arranged that...\".",
     "completed": false,
-    "issued": false
+    "issued": false,
+    "completedBy": "amiteshx08",
+    "completedPR": 22428
   },
   {
     "id": 77,
@@ -566,7 +568,7 @@
   {
     "id": 95,
     "text": "\"〜ようです\" means \"it seems like\" and is based on observation. (practice variation 10)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
