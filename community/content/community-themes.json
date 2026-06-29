@@ -425,10 +425,17 @@
   "mainColor": "oklch(82.0% 0.155 95.0 / 1)",
   "secondaryColor": "oklch(62.0% 0.085 55.0 / 1)"
 },
-  {
+{
   id: 'bento-sage',
   backgroundColor: 'oklch(20.0% 0.030 145.0 / 1)',
   mainColor: 'oklch(70.0% 0.115 135.0 / 1)',
   secondaryColor: 'oklch(58.0% 0.085 160.0 / 1)'
 },
+{
+  id: 'konbini-light',
+  backgroundColor: 'oklch(96.0% 0.015 210.0 / 1)',
+  mainColor: 'oklch(55.0% 0.185 200.0 / 1)',
+  secondaryColor: 'oklch(60.0% 0.155 25.0 / 1)'
+},
+  
 ]
