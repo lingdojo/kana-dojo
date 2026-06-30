@@ -214,102 +214,63 @@
     "correctIndex": 0
   },
   {
-  "question": "Which animal is famously associated with Inari shrines in Japan? (Community variation 33)",
-  "difficulty": "easy",
-  "answers": [
-    "Fox",
-    "Crane",
-    "Turtle",
-    "Deer"
-  ],
-  "correctIndex": 0
-},
-{
-  "question": "Which Japanese art form involves arranging flowers?",
-  "difficulty": "easy",
-  "answers": [
-    "Ikebana",
-    "Origami",
-    "Ukiyo-e",
-    "Shodo"
-  ],
-  "correctIndex": 0
-},
-{
-  "question": "Which Japanese dish is made of raw fish over rice? (Community variation 34)",
-  "difficulty": "easy",
-  "answers": [
-    "Sushi",
-    "Tempura",
-    "Tonkatsu",
-    "Okonomiyaki"
-  ],
-  "correctIndex": 0
-},
-{
-  "question": "Which Japanese dish is made with buckwheat noodles?",
-  "difficulty": "easy",
-  "answers": [
-    "Soba",
-    "Udon",
-    "Ramen",
-    "Somem"
-  ],
-  "correctIndex": 0
-},
+    "question": "Which animal is famously associated with Inari shrines in Japan? (Community variation 33)",
+    "difficulty": "easy",
+    "answers": ["Fox", "Crane", "Turtle", "Deer"],
+    "correctIndex": 0
+  },
   {
-  "question": "What is the main ingredient in miso?",
-  "difficulty": "easy",
-  "answers": [
-    "Fermented soybeans",
-    "Rice flour",
-    "Buckwheat",
-    "Seaweed"
-  ],
-  "correctIndex": 0
-},
+    "question": "Which Japanese art form involves arranging flowers?",
+    "difficulty": "easy",
+    "answers": ["Ikebana", "Origami", "Ukiyo-e", "Shodo"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which Japanese dish is made of raw fish over rice? (Community variation 34)",
+    "difficulty": "easy",
+    "answers": ["Sushi", "Tempura", "Tonkatsu", "Okonomiyaki"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which Japanese dish is made with buckwheat noodles?",
+    "difficulty": "easy",
+    "answers": ["Soba", "Udon", "Ramen", "Somem"],
+    "correctIndex": 0
+  },
+  {
+    "question": "What is the main ingredient in miso?",
+    "difficulty": "easy",
+    "answers": ["Fermented soybeans", "Rice flour", "Buckwheat", "Seaweed"],
+    "correctIndex": 0
+  },
   {
     "question": "Which Japanese food is a savory pancake cooked on a griddle?",
     "difficulty": "easy",
-    "answers": [
-      "Okonomiyaki",
-      "Tempura",
-      "Yakitori",
-      "Sashimi"
-    ],
+    "answers": ["Okonomiyaki", "Tempura", "Yakitori", "Sashimi"],
     "correctIndex": 0
   },
   {
     "question": "Which month is traditionally associated with cherry blossom viewing (hanami) in Japan? (Community variation 3)",
     "difficulty": "easy",
-    "answers": [
-      "January",
-      "April",
-      "July",
-      "October"
-    ],
+    "answers": ["January", "April", "July", "October"],
     "correctIndex": 1
   },
   {
-  "question": "Which Japanese city is known for the famous bamboo grove? (Community variation 31)",
-  "difficulty": "easy",
-  "answers": [
-    "Kyoto",
-    "Tokyo",
-    "Sapporo",
-    "Fukuoka"
-  ],
-  "correctIndex": 0
-},
+    "question": "Which Japanese city is known for the famous bamboo grove? (Community variation 31)",
+    "difficulty": "easy",
+    "answers": ["Kyoto", "Tokyo", "Sapporo", "Fukuoka"],
+    "correctIndex": 0
+  },
   {
-  "question": "What is the Japanese word for 'forest'?",
-  "difficulty": "easy",
-  "answers": [
-    "Mori",
-    "Sora",
-    "Hana",
-    "Mizu"
-  ],
-  "correctIndex": 0
-}
+    "question": "What is the Japanese word for 'forest'?",
+    "difficulty": "easy",
+    "answers": ["Mori", "Sora", "Hana", "Mizu"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which traditional Japanese sport involves wrestling in a ring? (Community variation 36)",
+    "difficulty": "easy",
+    "answers": ["Sumo", "Kendo", "Judo", "Aikido"],
+    "correctIndex": 0
+  }
 ]
