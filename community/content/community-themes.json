@@ -455,4 +455,10 @@
   "mainColor": "oklch(55.0% 0.035 250.0 / 1)",
   "secondaryColor": "oklch(70.0% 0.015 90.0 / 1)"
 }
+{
+  id: 'ramen-shop',
+  backgroundColor: 'oklch(94.0% 0.025 85.0 / 1)',
+  mainColor: 'oklch(60.0% 0.195 25.0 / 1)',
+  secondaryColor: 'oklch(88.0% 0.145 90.0 / 1)'
+},
 ]
