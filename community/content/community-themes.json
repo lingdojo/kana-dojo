@@ -414,63 +414,69 @@
     "secondaryColor": "oklch(80.0% 0.120 50.0 / 1)"
   },
   {
-  "id": "strawberry-daifuku",
-  "backgroundColor": "oklch(96.0% 0.018 340.0 / 1)",
-  "mainColor": "oklch(62.0% 0.195 10.0 / 1)",
-  "secondaryColor": "oklch(78.0% 0.095 350.0 / 1)"
-},
-{
-  "id": "gingko-avenue",
-  "backgroundColor": "oklch(23.0% 0.020 75.0 / 1)",
-  "mainColor": "oklch(82.0% 0.155 95.0 / 1)",
-  "secondaryColor": "oklch(62.0% 0.085 55.0 / 1)"
-},
-{
-  "id": "pagoda-twilight",
-  "backgroundColor": "oklch(20.0% 0.045 290.0 / 1)",
-  "mainColor": "oklch(68.0% 0.155 315.0 / 1)",
-  "secondaryColor": "oklch(75.0% 0.125 280.0 / 1)"
-},
-{
-  "id": "bento-sage",
-  "backgroundColor": "oklch(20.0% 0.030 145.0 / 1)",
-  "mainColor": "oklch(70.0% 0.115 135.0 / 1)",
-  "secondaryColor": "oklch(58.0% 0.085 160.0 / 1)"
-},
-{
-  "id": "konbini-light",
-  "backgroundColor": "oklch(96.0% 0.015 210.0 / 1)",
-  "mainColor": "oklch(55.0% 0.185 200.0 / 1)",
-  "secondaryColor": "oklch(60.0% 0.155 25.0 / 1)"
-},
-{
-  "id": "festival-red",
-  "backgroundColor": "oklch(17.0% 0.055 25.0 / 1)",
-  "mainColor": "oklch(78.0% 0.205 25.0 / 1)",
-  "secondaryColor": "oklch(85.0% 0.085 85.0 / 1)"
-},
-{
-  "id": "sake-glass",
-  "backgroundColor": "oklch(98.0% 0.004 90.0 / 1)",
-  "mainColor": "oklch(55.0% 0.035 250.0 / 1)",
-  "secondaryColor": "oklch(70.0% 0.015 90.0 / 1)"
-},
-{
-  "id": "ramen-shop",
-  "backgroundColor": "oklch(94.0% 0.025 85.0 / 1)",
-  "mainColor": "oklch(60.0% 0.195 25.0 / 1)",
-  "secondaryColor": "oklch(88.0% 0.145 90.0 / 1)"
-},
-{
-  "id": "shinkansen-speed",
-  "backgroundColor": "oklch(22.0% 0.035 240.0 / 1)",
-  "mainColor": "oklch(90.0% 0.085 220.0 / 1)",
-  "secondaryColor": "oklch(65.0% 0.185 25.0 / 1)"
-},
-{
-  "id": "street-lantern",
-  "backgroundColor": "oklch(19.0% 0.038 40.0 / 1)",
-  "mainColor": "oklch(85.0% 0.135 55.0 / 1)",
-  "secondaryColor": "oklch(68.0% 0.165 30.0 / 1)"
-}
+    "id": "strawberry-daifuku",
+    "backgroundColor": "oklch(96.0% 0.018 340.0 / 1)",
+    "mainColor": "oklch(62.0% 0.195 10.0 / 1)",
+    "secondaryColor": "oklch(78.0% 0.095 350.0 / 1)"
+  },
+  {
+    "id": "gingko-avenue",
+    "backgroundColor": "oklch(23.0% 0.020 75.0 / 1)",
+    "mainColor": "oklch(82.0% 0.155 95.0 / 1)",
+    "secondaryColor": "oklch(62.0% 0.085 55.0 / 1)"
+  },
+  {
+    "id": "pagoda-twilight",
+    "backgroundColor": "oklch(20.0% 0.045 290.0 / 1)",
+    "mainColor": "oklch(68.0% 0.155 315.0 / 1)",
+    "secondaryColor": "oklch(75.0% 0.125 280.0 / 1)"
+  },
+  {
+    "id": "bento-sage",
+    "backgroundColor": "oklch(20.0% 0.030 145.0 / 1)",
+    "mainColor": "oklch(70.0% 0.115 135.0 / 1)",
+    "secondaryColor": "oklch(58.0% 0.085 160.0 / 1)"
+  },
+  {
+    "id": "konbini-light",
+    "backgroundColor": "oklch(96.0% 0.015 210.0 / 1)",
+    "mainColor": "oklch(55.0% 0.185 200.0 / 1)",
+    "secondaryColor": "oklch(60.0% 0.155 25.0 / 1)"
+  },
+  {
+    "id": "festival-red",
+    "backgroundColor": "oklch(17.0% 0.055 25.0 / 1)",
+    "mainColor": "oklch(78.0% 0.205 25.0 / 1)",
+    "secondaryColor": "oklch(85.0% 0.085 85.0 / 1)"
+  },
+  {
+    "id": "sake-glass",
+    "backgroundColor": "oklch(98.0% 0.004 90.0 / 1)",
+    "mainColor": "oklch(55.0% 0.035 250.0 / 1)",
+    "secondaryColor": "oklch(70.0% 0.015 90.0 / 1)"
+  },
+  {
+    "id": "ramen-shop",
+    "backgroundColor": "oklch(94.0% 0.025 85.0 / 1)",
+    "mainColor": "oklch(60.0% 0.195 25.0 / 1)",
+    "secondaryColor": "oklch(88.0% 0.145 90.0 / 1)"
+  },
+  {
+    "id": "shinkansen-speed",
+    "backgroundColor": "oklch(22.0% 0.035 240.0 / 1)",
+    "mainColor": "oklch(90.0% 0.085 220.0 / 1)",
+    "secondaryColor": "oklch(65.0% 0.185 25.0 / 1)"
+  },
+  {
+    "id": "street-lantern",
+    "backgroundColor": "oklch(19.0% 0.038 40.0 / 1)",
+    "mainColor": "oklch(85.0% 0.135 55.0 / 1)",
+    "secondaryColor": "oklch(68.0% 0.165 30.0 / 1)"
+  },
+  {
+    "id": "yakuza-tattoo",
+    "backgroundColor": "oklch(17.0% 0.045 255.0 / 1)",
+    "mainColor": "oklch(62.0% 0.185 220.0 / 1)",
+    "secondaryColor": "oklch(70.0% 0.175 15.0 / 1)"
+  }
 ]
