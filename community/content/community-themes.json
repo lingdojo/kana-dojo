@@ -466,5 +466,11 @@
   "backgroundColor": "oklch(22.0% 0.035 240.0 / 1)",
   "mainColor": "oklch(90.0% 0.085 220.0 / 1)",
   "secondaryColor": "oklch(65.0% 0.185 25.0 / 1)"
+},
+{
+  "id": "street-lantern",
+  "backgroundColor": "oklch(19.0% 0.038 40.0 / 1)",
+  "mainColor": "oklch(85.0% 0.135 55.0 / 1)",
+  "secondaryColor": "oklch(68.0% 0.165 30.0 / 1)"
 }
 ]
