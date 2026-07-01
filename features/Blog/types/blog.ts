@@ -27,7 +27,7 @@ export type Difficulty = 'beginner' | 'intermediate' | 'advanced';
 /**
  * Supported locales for blog content
  */
-export type Locale = 'en' | 'es';
+export type Locale = 'en' | 'es' | 'fa';
 
 /**
  * Heading extracted from MDX content for table of contents

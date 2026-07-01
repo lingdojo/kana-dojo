@@ -885,4 +885,5 @@ export type Locale =
   | 'zh'
   | 'ko'
   | 'ru'
-  | 'ar';
+  | 'ar'
+  | 'fa';
