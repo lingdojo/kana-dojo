@@ -1,0 +1,71 @@
+{
+  "title": "تمرین واژگان",
+  "description": "واژگان ژاپنی‌ات رو گسترش بده",
+  "selection": {
+    "title": "انتخاب واژگان",
+    "byLevel": "بر اساس سطح JLPT",
+    "byCategory": "بر اساس دسته‌بندی",
+    "selectAll": "انتخاب همه",
+    "deselectAll": "لغو انتخاب همه",
+    "levels": {
+      "n5": "JLPT N5",
+      "n4": "JLPT N4",
+      "n3": "JLPT N3",
+      "n2": "JLPT N2",
+      "n1": "JLPT N1"
+    },
+    "categories": {
+      "all": "همه",
+      "nouns": "اسم‌ها",
+      "verbs": "فعل‌ها",
+      "adjectives": "صفت‌ها",
+      "adverbs": "قیدها",
+      "expressions": "اصطلاحات"
+    }
+  },
+  "game": {
+    "title": "بازی واژگان",
+    "start": "شروع بازی",
+    "pause": "توقف",
+    "resume": "ادامه",
+    "finish": "پایان",
+    "nextQuestion": "سوال بعدی",
+    "submit": "ثبت پاسخ",
+    "score": "امتیاز: {{points}}",
+    "timeLeft": "زمان باقی‌مانده: {{seconds}}ثانیه",
+    "streak": "رکورد پیاپی: {{count}}",
+    "correct": "درست!",
+    "incorrect": "نادرست",
+    "showAnswer": "نمایش پاسخ"
+  },
+  "modes": {
+    "pick": "حالت انتخاب",
+    "reversePick": "انتخاب معکوس",
+    "input": "حالت ورودی",
+    "reverseInput": "ورودی معکوس",
+    "description": {
+      "pick": "کلمه رو ببین، معنی رو انتخاب کن",
+      "reversePick": "معنی رو ببین، کلمه رو انتخاب کن",
+      "input": "کلمه رو ببین، معنی رو تایپ کن",
+      "reverseInput": "معنی رو ببین، کلمه رو تایپ کن"
+    }
+  },
+  "results": {
+    "title": "نتایج",
+    "congratulations": "آفرین!",
+    "correct": "درست: {{count}}",
+    "incorrect": "نادرست: {{count}}",
+    "accuracy": "دقت: {{percentage}}%",
+    "timeSpent": "زمان صرف‌شده: {{time}}",
+    "playAgain": "دوباره بازی کن",
+    "backToMenu": "برگشت به منو"
+  },
+  "details": {
+    "word": "کلمه",
+    "reading": "خوانش",
+    "meaning": "معنی",
+    "examples": "جملات نمونه",
+    "type": "نوع",
+    "jlptLevel": "سطح JLPT"
+  }
+}

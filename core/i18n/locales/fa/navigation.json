@@ -1,0 +1,27 @@
+{
+  "menu": {
+    "home": "خانه",
+    "kana": "کانا",
+    "kanji": "کانجی",
+    "vocabulary": "واژگان",
+    "academy": "آکادمی",
+    "achievements": "دستاوردها",
+    "statistics": "آمار",
+    "progress": "پیشرفت",
+    "settings": "تنظیمات",
+    "preferences": "ترجیحات",
+    "about": "درباره ما",
+    "help": "راهنما",
+    "logout": "خروج"
+  },
+  "breadcrumbs": {
+    "home": "خانه",
+    "back": "برگشت به {{name}}"
+  },
+  "footer": {
+    "copyright": "© {{year}} KanaDojo. تمامی حقوق محفوظ است.",
+    "privacy": "سیاست حفظ حریم خصوصی",
+    "terms": "شرایط استفاده",
+    "contact": "تماس با ما"
+  }
+}

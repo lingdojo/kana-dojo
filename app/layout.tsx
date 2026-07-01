@@ -89,7 +89,7 @@ export const metadata: Metadata = {
     siteName: 'KanaDojo',
     type: 'website',
     locale: 'en_US',
-    alternateLocale: ['es_ES'],
+    alternateLocale: ['es_ES','fa_IR'],
   },
   twitter: {
     card: 'summary',

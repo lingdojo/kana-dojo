@@ -1,0 +1,66 @@
+{
+  "title": "تمرین کانجی",
+  "description": "کاراکترهای کانجی ژاپنی رو مسلط شو",
+  "selection": {
+    "title": "انتخاب کانجی",
+    "byLevel": "بر اساس سطح JLPT",
+    "byCategory": "بر اساس دسته‌بندی",
+    "selectAll": "انتخاب همه",
+    "deselectAll": "لغو انتخاب همه",
+    "levels": {
+      "n5": "JLPT N5",
+      "n4": "JLPT N4",
+      "n3": "JLPT N3",
+      "n2": "JLPT N2",
+      "n1": "JLPT N1"
+    }
+  },
+  "game": {
+    "title": "بازی کانجی",
+    "start": "شروع بازی",
+    "pause": "توقف",
+    "resume": "ادامه",
+    "finish": "پایان",
+    "nextQuestion": "سوال بعدی",
+    "submit": "ثبت پاسخ",
+    "score": "امتیاز: {{points}}",
+    "timeLeft": "زمان باقی‌مانده: {{seconds}}ثانیه",
+    "streak": "رکورد پیاپی: {{count}}",
+    "correct": "درست!",
+    "incorrect": "نادرست",
+    "showAnswer": "نمایش پاسخ",
+    "hint": "راهنمایی"
+  },
+  "modes": {
+    "pick": "حالت انتخاب",
+    "reversePick": "انتخاب معکوس",
+    "input": "حالت ورودی",
+    "reverseInput": "ورودی معکوس",
+    "description": {
+      "pick": "کانجی رو ببین، معنی رو انتخاب کن",
+      "reversePick": "معنی رو ببین، کانجی رو انتخاب کن",
+      "input": "کانجی رو ببین، معنی رو تایپ کن",
+      "reverseInput": "معنی رو ببین، کانجی رو تایپ کن"
+    }
+  },
+  "results": {
+    "title": "نتایج",
+    "congratulations": "آفرین!",
+    "correct": "درست: {{count}}",
+    "incorrect": "نادرست: {{count}}",
+    "accuracy": "دقت: {{percentage}}%",
+    "timeSpent": "زمان صرف‌شده: {{time}}",
+    "playAgain": "دوباره بازی کن",
+    "backToMenu": "برگشت به منو"
+  },
+  "details": {
+    "meaning": "معنی",
+    "readings": "خوانش‌ها",
+    "onyomi": "اونیومی",
+    "kunyomi": "کونیومی",
+    "examples": "مثال‌ها",
+    "strokes": "خطوط",
+    "radical": "رادیکال",
+    "jlptLevel": "سطح JLPT"
+  }
+}

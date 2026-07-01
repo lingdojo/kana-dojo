@@ -1,0 +1,65 @@
+{
+  "metadata": {
+    "title": "KanaDojo: کانا",
+    "description": "دوجوی کانا جاییه که می‌تونی دو هجایی اصلی ژاپنی - هیراگانا و کاتاکانا - رو یاد بگیری و تمرین کنی."
+  },
+  "title": "تمرین کانا",
+  "description": "هیراگانا و کاتاکانا رو مسلط شو",
+  "selection": {
+    "title": "گروه‌های کانا رو انتخاب کن",
+    "hiragana": "هیراگانا",
+    "katakana": "کاتاکانا",
+    "selectAll": "انتخاب همه",
+    "deselectAll": "لغو انتخاب همه",
+    "groups": {
+      "basic": "پایه",
+      "dakuon": "داکواون",
+      "combo": "ترکیبی",
+      "yoon": "یواون"
+    }
+  },
+  "game": {
+    "title": "بازی کانا",
+    "start": "شروع بازی",
+    "pause": "توقف",
+    "resume": "ادامه",
+    "finish": "پایان",
+    "nextQuestion": "سوال بعدی",
+    "submit": "ثبت پاسخ",
+    "score": "امتیاز: {{points}}",
+    "timeLeft": "زمان باقی‌مانده: {{seconds}}ثانیه",
+    "streak": "رکورد پیاپی: {{count}}",
+    "correct": "درست!",
+    "incorrect": "نادرست",
+    "tryAgain": "دوباره امتحان کن"
+  },
+  "modes": {
+    "pick": "حالت انتخاب",
+    "reversePick": "انتخاب معکوس",
+    "input": "حالت ورودی",
+    "reverseInput": "ورودی معکوس",
+    "description": {
+      "pick": "کانا رو ببین، خوندنش رو انتخاب کن",
+      "reversePick": "خوندن رو ببین، کانا رو انتخاب کن",
+      "input": "کانا رو ببین، خوندنش رو تایپ کن",
+      "reverseInput": "خوندن رو ببین، کانا رو تایپ کن"
+    }
+  },
+  "results": {
+    "title": "نتایج",
+    "congratulations": "آفرین!",
+    "correct": "درست: {{count}}",
+    "incorrect": "نادرست: {{count}}",
+    "accuracy": "دقت: {{percentage}}%",
+    "timeSpent": "زمان صرف‌شده: {{time}}",
+    "playAgain": "دوباره بازی کن",
+    "backToMenu": "برگشت به منو"
+  },
+  "dictionary": {
+    "title": "دیکشنری کانا",
+    "search": "جستجوی کانا...",
+    "character": "کاراکتر",
+    "romaji": "روماجی",
+    "type": "نوع"
+  }
+}

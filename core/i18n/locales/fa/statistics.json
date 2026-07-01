@@ -1,0 +1,47 @@
+{
+  "title": "آمار",
+  "description": "پیشرفت و آمار یادگیری‌ات",
+  "overview": {
+    "title": "نمای کلی",
+    "totalStudyTime": "کل زمان مطالعه",
+    "questionsAnswered": "سوالات پاسخ‌داده‌شده",
+    "accuracy": "دقت کلی",
+    "currentStreak": "رکورد پیاپی فعلی",
+    "longestStreak": "طولانی‌ترین رکورد پیاپی"
+  },
+  "charts": {
+    "dailyActivity": "فعالیت روزانه",
+    "accuracyOverTime": "دقت در طول زمان",
+    "progressByLevel": "پیشرفت بر اساس سطح",
+    "timeByDojo": "زمان بر اساس دوجو"
+  },
+  "kana": {
+    "title": "آمار کانا",
+    "mastered": "مسلط‌شده",
+    "learning": "در حال یادگیری",
+    "notStarted": "شروع‌نشده",
+    "hiraganaProgress": "پیشرفت هیراگانا",
+    "katakanaProgress": "پیشرفت کاتاکانا"
+  },
+  "kanji": {
+    "title": "آمار کانجی",
+    "mastered": "مسلط‌شده",
+    "learning": "در حال یادگیری",
+    "notStarted": "شروع‌نشده",
+    "byLevel": "بر اساس سطح JLPT"
+  },
+  "vocabulary": {
+    "title": "آمار واژگان",
+    "wordsLearned": "کلمات یادگرفته‌شده",
+    "mastered": "مسلط‌شده",
+    "learning": "در حال یادگیری",
+    "byLevel": "بر اساس سطح JLPT"
+  },
+  "performance": {
+    "title": "عملکرد",
+    "bestAccuracy": "بهترین دقت",
+    "fastestTime": "سریع‌ترین زمان",
+    "longestSession": "طولانی‌ترین جلسه",
+    "mostImproved": "بیشترین بهبود"
+  }
+}

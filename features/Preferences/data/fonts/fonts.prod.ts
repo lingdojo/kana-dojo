@@ -35,6 +35,7 @@
   Kaisei_Opti,
   BIZ_UDMincho,
   Shippori_Antique,
+  Vazirmatn,
 } from 'next/font/google';
 
 const notoSansJP = Noto_Sans_JP({
@@ -316,6 +317,15 @@ const shipporiAntique = Shippori_Antique({
   fallback: ['system-ui', 'sans-serif'],
 });
 
+export const vazirmatn = Vazirmatn({
+  weight: ['400'],
+  subsets: ["arabic"],
+  display: "swap",
+  preload: false,
+  variable: "--font-vazir",
+  fallback: ['system-ui' , "sans-serif"],
+});
+
 const fonts = [
   {
     name: 'Zen Maru Gothic',
@@ -459,6 +469,10 @@ const fonts = [
     name: 'Shippori Antique',
     font: shipporiAntique,
   },
+  {
+  name: "Vazirmatn",
+  font: vazirmatn,
+},
 ];
 
 export default fonts;

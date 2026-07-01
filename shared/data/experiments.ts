@@ -36,6 +36,7 @@ import {
   Dna,
   Hand,
   SquareAsterisk,
+  Pencil,
 } from 'lucide-react';
 
 export type Experiment = {
@@ -303,5 +304,12 @@ export const experiments: Experiment[] = [
     href: '/experiments/runner',
     icon: Ghost,
     color: 'text-slate-200',
+  },
+  {
+    name: 'Stroke Trainer',
+    description: 'Master the art of writing kana',
+    href: '/experiments/stroke-trainer',
+    icon: Pencil,
+    color: 'text-indigo-400',
   },
 ];

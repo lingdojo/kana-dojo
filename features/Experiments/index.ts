@@ -36,3 +36,4 @@ export { default as KanaSlot } from './components/KanaSlot';
 export { default as KanaDNA } from './components/KanaDNA';
 export { default as KanaCatch } from './components/KanaCatch';
 export { default as KanaWordle } from './components/KanaWordle';
+export { default as StrokeTrainer } from './components/StrokeTrainer';

@@ -1,0 +1,58 @@
+{
+  "title": "تنظیمات",
+  "description": "تجربه یادگیریت رو شخصی‌سازی کن",
+  "general": {
+    "title": "عمومی",
+    "language": "زبان",
+    "theme": "تم",
+    "sound": "جلوه‌های صوتی",
+    "notifications": "اعلان‌ها"
+  },
+  "appearance": {
+    "title": "ظاهر",
+    "colorTheme": "تم رنگی",
+    "font": "فونت ژاپنی",
+    "fontSize": "سایز فونت",
+    "darkMode": "حالت تاریک",
+    "customTheme": "تم سفارشی"
+  },
+  "game": {
+    "title": "تنظیمات بازی",
+    "timeLimit": "محدودیت زمانی",
+    "questionsPerSession": "تعداد سوالات در هر جلسه",
+    "difficulty": "سختی",
+    "autoNext": "رفتن خودکار به سوال بعد",
+    "showHints": "نمایش راهنمایی‌ها"
+  },
+  "audio": {
+    "title": "صدا",
+    "soundEffects": "جلوه‌های صوتی",
+    "volume": "میزان صدا",
+    "clickSound": "صدای کلیک",
+    "correctSound": "صدای پاسخ درست",
+    "incorrectSound": "صدای پاسخ نادرست"
+  },
+  "preferences": {
+    "title": "ترجیحات",
+    "showRomaji": "نمایش روماجی",
+    "showFurigana": "نمایش فوریگانا",
+    "inputMethod": "روش ورودی",
+    "keyboardShortcuts": "میانبرهای کیبورد"
+  },
+  "data": {
+    "title": "داده‌ها",
+    "exportData": "خروجی گرفتن داده‌ها",
+    "importData": "وارد کردن داده‌ها",
+    "resetProgress": "بازنشانی پیشرفت",
+    "clearCache": "پاک کردن کش",
+    "confirmReset": "مطمئنی می‌خوای تمام پیشرفت رو بازنشانی کنی؟ این کار قابل برگشت نیست."
+  },
+  "themes": {
+    "light": "روشن",
+    "dark": "تاریک",
+    "system": "سیستم",
+    "custom": "سفارشی",
+    "presets": "تم‌های پیش‌فرض",
+    "createCustom": "ساخت تم سفارشی"
+  }
+}

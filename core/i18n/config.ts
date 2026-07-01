@@ -1,5 +1,5 @@
 // All possible locales (for type definitions and metadata)
-export const allLocales = ['en', 'es', 'fr', 'zh'] as const;
+export const allLocales = ['en', 'es', 'fr', 'zh','fa'] as const;
 export type AllLocale = (typeof allLocales)[number];
 
 // Active locales (TEMP: Single locale for dev performance)
@@ -14,6 +14,7 @@ export const localeNames: Record<AllLocale, string> = {
   es: 'Español',
   fr: 'Français',
   zh: '简体中文',
+  fa: 'فارسی',
 };
 
 export const localeLabels: Record<AllLocale, string> = {
@@ -21,4 +22,5 @@ export const localeLabels: Record<AllLocale, string> = {
   es: 'ES',
   fr: 'FR',
   zh: '中文',
+  fa: 'FA',
 };
