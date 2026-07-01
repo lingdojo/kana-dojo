@@ -639,6 +639,17 @@
     "correctIndex": 0
   },
   {
+  "question": "What is the name of Japan's highest mountain?",
+  "difficulty": "medium",
+  "answers": [
+    "Mount Haku",
+    "Mount Fuji",
+    "Mount Aso",
+    "Mount Tate"
+  ],
+  "correctIndex": 1
+},
+{
   "question": "Which Japanese castle was the seat of the Tokugawa shogunate? (Community variation 40)",
   "difficulty": "medium",
   "answers": [

@@ -20,7 +20,7 @@
     "season": "Summer",
     "kigo": "Summer grasses (natsukusa)",
     "notes": "Reflects impermanence through a historical battlefield image.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -140,7 +140,7 @@
     "season": "Spring",
     "kigo": "Spring sea (haru no umi)",
     "notes": "Known for musical phrasing and calm motion.",
-    "issued": true,
+    "issued": false,
     "completed": false
   }
 ]
