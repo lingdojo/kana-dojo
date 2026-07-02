@@ -1,0 +1,51 @@
+name: Backlog Validation
+
+# Triggers:
+# - PR (any state change) when community/backlog/** is touched
+# - Push to main when community/backlog/** is touched
+# - Daily schedule to catch drift from direct commits
+#
+# Top-level permissions: contents: read only. The job does not post PR
+# comments or annotations; failures surface in GitHub's PR checks UI.
+# Placing `permissions:` at the workflow level (NOT inside the job) ensures
+# the schedule event token scope is also restricted.
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    paths:
+      - 'community/backlog/**'
+  push:
+    branches: [main]
+    paths:
+      - 'community/backlog/**'
+  schedule:
+    - cron: '17 6 * * *'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: backlog-validation-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate-backlog:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate backlog
+        run: npm run backlog:validate

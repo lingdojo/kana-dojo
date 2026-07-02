@@ -91,6 +91,7 @@ jobs:
             const fs = require('fs');
             const templates = require('./.github/templates/messages.cjs');
             const emojiBank = require('./.github/templates/emojis.cjs');
+            const { jsonEscape } = require('./.github/templates/json-escape.cjs');
             const t = templates.issueCreation;
 
             const forceType = (context.payload.inputs && context.payload.inputs.force_type) ? String(context.payload.inputs.force_type).trim() : '';
@@ -471,7 +472,7 @@ jobs:
               issueTitle = t.buildIssueTitle(pickEmoji(), tmpl.title.replace('{id}', item.id));
               
               const instructions = t.buildInstructions(tmpl.file, tmpl.itemType, tmpl.prTitle).map((instr, i) => `${i + 1}. ${instr.replace(/{id}/g, item.id)}`);
-              const codeBlock = `\`\`\`json\n"${item.fact}"\n\`\`\``;
+              const codeBlock = `\`\`\`json\n"${jsonEscape(item.fact)}"\n\`\`\``;
               issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### 🎯 Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.factHeader}\n\n> ${item.fact}\n\n${common.instructionsHeader}\n\n${instructions.slice(0, 4).join('\n')}\n\n${codeBlock}\n\n${instructions.slice(4).join('\n')}\n\n---\n\n${common.footer}`;
               
               const factIndex = facts.findIndex(function(f) { return f.id === item.id; });
@@ -516,7 +517,7 @@ jobs:
               
               const instructions = t.buildInstructions(tmpl.file, tmpl.itemType, tmpl.prTitle).map((instr, i) => `${i + 1}. ${instr.replace(/{id}/g, item.id)}`);
               
-              const codeBlock = `\`\`\`json\n{\n  "japanese": "${item.japanese}",\n  "romaji": "${item.romaji}",\n  "english": "${item.english}",\n  "meaning": "${item.meaning}"\n}\n\`\`\``;
+              const codeBlock = `\`\`\`json\n{\n  "japanese": "${jsonEscape(item.japanese)}",\n  "romaji": "${jsonEscape(item.romaji)}",\n  "english": "${jsonEscape(item.english)}",\n  "meaning": "${jsonEscape(item.meaning)}"\n}\n\`\`\``;
               
               issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### 🎯 Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.proverbHeader}\n\n| Japanese | Reading | English |\n|----------|---------|---------|\n| **${item.japanese}** | ${item.romaji} | ${item.english} |\n\n> 💡 **Meaning:** ${item.meaning}\n\n${common.instructionsHeader}\n\n${instructions.slice(0, 4).join('\n')}\n\n${codeBlock}\n\n${instructions.slice(4).join('\n')}\n\n---\n\n${common.footer}`;
               
@@ -555,7 +556,7 @@ jobs:
               issueTitle = t.buildIssueTitle(pickEmoji(), tmpl.title.replace('{id}', item.id));
 
               const instructions = t.buildInstructions(tmpl.file, tmpl.itemType, tmpl.prTitle).map((instr, i) => `${i + 1}. ${instr.replace(/{id}/g, item.id)}`);
-              const codeBlock = `\`\`\`json\n{\n  "japanese": "${item.japanese}",\n  "romaji": "${item.romaji}",\n  "english": "${item.english}",\n  "poet": "${item.poet}",\n  "season": "${item.season}",\n  "kigo": "${item.kigo}",\n  "notes": "${item.notes}"\n}\n\`\`\``;
+              const codeBlock = `\`\`\`json\n{\n  "japanese": "${jsonEscape(item.japanese)}",\n  "romaji": "${jsonEscape(item.romaji)}",\n  "english": "${jsonEscape(item.english)}",\n  "poet": "${jsonEscape(item.poet)}",\n  "season": "${jsonEscape(item.season)}",\n  "kigo": "${jsonEscape(item.kigo)}",\n  "notes": "${jsonEscape(item.notes)}"\n}\n\`\`\``;
 
               issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.haikuHeader}\n\n> ${item.japanese.replace(/\n/g, '\n> ')}\n\n**Romaji:** ${item.romaji}  \n**English:** ${item.english}  \n**Poet:** ${item.poet}  \n**Season:** ${item.season}  \n**Kigo:** ${item.kigo}  \n**Notes:** ${item.notes}\n\n${common.instructionsHeader}\n\n${instructions.slice(0, 4).join('\n')}\n\n${codeBlock}\n\n${instructions.slice(4).join('\n')}\n\n---\n\n${common.footer}`;
 
@@ -601,7 +602,7 @@ jobs:
               const difficultyFile = triviaSourcePaths[item.difficulty] || triviaSourcePaths.easy;
               const instructions = t.buildInstructions(tmpl.file.replace('{difficultyFile}', difficultyFile), tmpl.itemType, tmpl.prTitle).map((instr, i) => `${i + 1}. ${instr.replace(/{id}/g, item.id)}`);
               const answers = Array.isArray(item.answers) ? item.answers : [];
-              const codeBlock = `\`\`\`json\n{\n  "question": "${item.question}",\n  "difficulty": "${item.difficulty}",\n  "answers": [\n    "${answers.join('\",\n    \"')}"\n  ],\n  "correctIndex": ${item.correctIndex}\n}\n\`\`\``;
+              const codeBlock = `\`\`\`json\n{\n  "question": "${jsonEscape(item.question)}",\n  "difficulty": "${jsonEscape(item.difficulty)}",\n  "answers": [\n    "${answers.map(jsonEscape).join('\",\n    \"')}"\n  ],\n  "correctIndex": ${item.correctIndex}\n}\n\`\`\``;
 
               issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### 🎯 Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.triviaHeader}\n\n**Question:** ${item.question}\n\n**Answers:**\n${answers.map(function(a, idx) { return `${idx + 1}. ${a}`; }).join('\n')}\n\n**Correct Answer Index:** ${item.correctIndex}\n\n${common.instructionsHeader}\n\n${instructions.slice(0, 4).join('\n')}\n\n${codeBlock}\n\n${instructions.slice(4).join('\n')}\n\n---\n\n${common.footer}`;
 
@@ -646,7 +647,7 @@ jobs:
               issueTitle = t.buildIssueTitle(pickEmoji(), tmpl.title.replace('{id}', item.id));
 
               const instructions = t.buildInstructions(tmpl.file, tmpl.itemType, tmpl.prTitle).map((instr, i) => `${i + 1}. ${instr.replace(/{id}/g, item.id)}`);
-              const codeBlock = `\`\`\`json\n"${item.text}"\n\`\`\``;
+              const codeBlock = `\`\`\`json\n"${jsonEscape(item.text)}"\n\`\`\``;
 
               issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### 🎯 Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.grammarHeader}\n\n> ${item.text}\n\n${common.instructionsHeader}\n\n${instructions.slice(0, 4).join('\n')}\n\n${codeBlock}\n\n${instructions.slice(4).join('\n')}\n\n---\n\n${common.footer}`;
 
@@ -692,7 +693,7 @@ jobs:
               issueTitle = t.buildIssueTitle(pickEmoji(), tmpl.title.replace('{id}', item.id));
 
               const instructions = t.buildInstructions(tmpl.file, tmpl.itemType, tmpl.prTitle).map((instr, i) => `${i + 1}. ${instr.replace(/{id}/g, item.id)}`);
-              const codeBlock = `\`\`\`json\n{\n  \"japanese\": \"${item.japanese}\",\n  \"romaji\": \"${item.romaji}\",\n  \"english\": \"${item.english}\",\n  \"anime\": \"${item.anime}\",\n  \"character\": \"${item.character}\"\n}\n\`\`\``;
+              const codeBlock = `\`\`\`json\n{\n  \"japanese\": \"${jsonEscape(item.japanese)}\",\n  \"romaji\": \"${jsonEscape(item.romaji)}\",\n  \"english\": \"${jsonEscape(item.english)}\",\n  \"anime\": \"${jsonEscape(item.anime)}\",\n  \"character\": \"${jsonEscape(item.character)}\"\n}\n\`\`\``;
 
               issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### 🎯 Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.quoteHeader}\n\n| Japanese | Romaji | English |\n|----------|--------|---------|\n| **${item.japanese}** | ${item.romaji} | ${item.english} |\n\n**Anime:** ${item.anime}  \n**Character:** ${item.character}\n\n${common.instructionsHeader}\n\n${instructions.slice(0, 4).join('\n')}\n\n${codeBlock}\n\n${instructions.slice(4).join('\n')}\n\n---\n\n${common.footer}`;
 
@@ -731,7 +732,7 @@ jobs:
               issueTitle = t.buildIssueTitle(pickEmoji(), tmpl.title.replace('{id}', item.id));
 
               const instructions = t.buildInstructions(tmpl.file, tmpl.itemType, tmpl.prTitle).map((instr, i) => `${i + 1}. ${instr.replace(/{id}/g, item.id)}`);
-              const codeBlock = `\`\`\`json\n{\n  "japanese": "${item.japanese}",\n  "romaji": "${item.romaji}",\n  "english": "${item.english}",\n  "game": "${item.game}",\n  "character": "${item.character}"\n}\n\`\`\``;
+              const codeBlock = `\`\`\`json\n{\n  "japanese": "${jsonEscape(item.japanese)}",\n  "romaji": "${jsonEscape(item.romaji)}",\n  "english": "${jsonEscape(item.english)}",\n  "game": "${jsonEscape(item.game)}",\n  "character": "${jsonEscape(item.character)}"\n}\n\`\`\``;
 
               issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.gameQuoteHeader}\n\n| Japanese | Romaji | English |\n|----------|--------|---------|\n| **${item.japanese}** | ${item.romaji} | ${item.english} |\n\n**Game:** ${item.game}  \n**Character:** ${item.character}\n\n${common.instructionsHeader}\n\n${instructions.slice(0, 4).join('\n')}\n\n${codeBlock}\n\n${instructions.slice(4).join('\n')}\n\n---\n\n${common.footer}`;
 
@@ -785,7 +786,7 @@ jobs:
               issueTitle = t.buildIssueTitle(pickEmoji(), tmpl.title.replace('{id}', item.id));
 
               const instructions = t.buildInstructions(tmpl.file, tmpl.itemType, tmpl.prTitle).map((instr, i) => `${i + 1}. ${instr.replace(/{id}/g, item.id)}`);
-              const codeBlock = `\`\`\`json\n{\n  "japanese": "${item.japanese}",\n  "romaji": "${item.romaji}",\n  "english": "${item.english}",\n  "meaning": "${item.meaning}"\n}\n\`\`\``;
+              const codeBlock = `\`\`\`json\n{\n  "japanese": "${jsonEscape(item.japanese)}",\n  "romaji": "${jsonEscape(item.romaji)}",\n  "english": "${jsonEscape(item.english)}",\n  "meaning": "${jsonEscape(item.meaning)}"\n}\n\`\`\``;
 
               issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.idiomHeader}\n\n| Japanese | Romaji | English |\n|----------|--------|---------|\n| **${item.japanese}** | ${item.romaji} | ${item.english} |\n\n> **Meaning:** ${item.meaning}\n\n${common.instructionsHeader}\n\n${instructions.slice(0, 4).join('\n')}\n\n${codeBlock}\n\n${instructions.slice(4).join('\n')}\n\n---\n\n${common.footer}`;
 
@@ -839,7 +840,7 @@ jobs:
               issueTitle = t.buildIssueTitle(pickEmoji(), tmpl.title.replace('{id}', item.id));
 
               const instructions = t.buildInstructions(tmpl.file, tmpl.itemType, tmpl.prTitle).map((instr, i) => `${i + 1}. ${instr.replace(/{id}/g, item.id)}`);
-              const codeBlock = `\`\`\`json\n{\n  "dialect": "${item.dialect}",\n  "standardJapanese": "${item.standardJapanese}",\n  "english": "${item.english}",\n  "region": "${item.region}",\n  "note": "${item.note}"\n}\n\`\`\``;
+              const codeBlock = `\`\`\`json\n{\n  "dialect": "${jsonEscape(item.dialect)}",\n  "standardJapanese": "${jsonEscape(item.standardJapanese)}",\n  "english": "${jsonEscape(item.english)}",\n  "region": "${jsonEscape(item.region)}",\n  "note": "${jsonEscape(item.note)}"\n}\n\`\`\``;
 
               issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.dialectHeader}\n\n| Dialect | Standard Japanese | English | Region |\n|---------|-------------------|---------|--------|\n| **${item.dialect}** | ${item.standardJapanese} | ${item.english} | ${item.region} |\n\n> **Note:** ${item.note}\n\n${common.instructionsHeader}\n\n${instructions.slice(0, 4).join('\n')}\n\n${codeBlock}\n\n${instructions.slice(4).join('\n')}\n\n---\n\n${common.footer}`;
 
@@ -891,7 +892,7 @@ jobs:
               issueTitle = t.buildIssueTitle(pickEmoji(), tmpl.title.replace('{id}', item.id));
 
               const instructions = t.buildInstructions(tmpl.file, tmpl.itemType, tmpl.prTitle).map((instr, i) => `${i + 1}. ${instr.replace(/{id}/g, item.id)}`);
-              const codeBlock = `\`\`\`json\n{\n  "termA": "${item.termA}",\n  "termB": "${item.termB}",\n  "explanation": "${item.explanation}",\n  "example": "${item.example}"\n}\n\`\`\``;
+              const codeBlock = `\`\`\`json\n{\n  "termA": "${jsonEscape(item.termA)}",\n  "termB": "${jsonEscape(item.termB)}",\n  "explanation": "${jsonEscape(item.explanation)}",\n  "example": "${jsonEscape(item.example)}"\n}\n\`\`\``;
 
               issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.falseFriendHeader}\n\n**Term A:** ${item.termA}  \n**Term B:** ${item.termB}\n\n> **Explanation:** ${item.explanation}\n> **Example:** ${item.example}\n\n${common.instructionsHeader}\n\n${instructions.slice(0, 4).join('\n')}\n\n${codeBlock}\n\n${instructions.slice(4).join('\n')}\n\n---\n\n${common.footer}`;
 
@@ -943,7 +944,7 @@ jobs:
               issueTitle = t.buildIssueTitle(pickEmoji(), tmpl.title.replace('{id}', item.id));
 
               const instructions = t.buildInstructions(tmpl.file, tmpl.itemType, tmpl.prTitle).map((instr, i) => `${i + 1}. ${instr.replace(/{id}/g, item.id)}`);
-              const codeBlock = `\`\`\`json\n{\n  "situation": "${item.situation}",\n  "do": "${item.do}",\n  "dont": "${item.dont}",\n  "note": "${item.note}"\n}\n\`\`\``;
+              const codeBlock = `\`\`\`json\n{\n  "situation": "${jsonEscape(item.situation)}",\n  "do": "${jsonEscape(item.do)}",\n  "dont": "${jsonEscape(item.dont)}",\n  "note": "${jsonEscape(item.note)}"\n}\n\`\`\``;
 
               issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.etiquetteHeader}\n\n**Situation:** ${item.situation}\n\n- Do: ${item.do}\n- Avoid: ${item.dont}\n\n> **Note:** ${item.note}\n\n${common.instructionsHeader}\n\n${instructions.slice(0, 4).join('\n')}\n\n${codeBlock}\n\n${instructions.slice(4).join('\n')}\n\n---\n\n${common.footer}`;
 
@@ -995,7 +996,7 @@ jobs:
               issueTitle = t.buildIssueTitle(pickEmoji(), tmpl.title.replace('{id}', item.id));
 
               const instructions = t.buildInstructions(tmpl.file, tmpl.itemType, tmpl.prTitle).map((instr, i) => `${i + 1}. ${instr.replace(/{id}/g, item.id)}`);
-              const codeBlock = `\`\`\`json\n{\n  "japanese": "${item.japanese}",\n  "romaji": "${item.romaji}",\n  "english": "${item.english}",\n  "jlpt": "${item.jlpt}"\n}\n\`\`\``;
+              const codeBlock = `\`\`\`json\n{\n  "japanese": "${jsonEscape(item.japanese)}",\n  "romaji": "${jsonEscape(item.romaji)}",\n  "english": "${jsonEscape(item.english)}",\n  "jlpt": "${jsonEscape(item.jlpt)}"\n}\n\`\`\``;
 
               issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.sentenceHeader}\n\n| Japanese | Romaji | English | JLPT |\n|----------|--------|---------|------|\n| **${item.japanese}** | ${item.romaji} | ${item.english} | ${item.jlpt} |\n\n${common.instructionsHeader}\n\n${instructions.slice(0, 4).join('\n')}\n\n${codeBlock}\n\n${instructions.slice(4).join('\n')}\n\n---\n\n${common.footer}`;
 
@@ -1047,7 +1048,7 @@ jobs:
               issueTitle = t.buildIssueTitle(pickEmoji(), tmpl.title.replace('{id}', item.id));
 
               const instructions = t.buildInstructions(tmpl.file, tmpl.itemType, tmpl.prTitle).map((instr, i) => `${i + 1}. ${instr.replace(/{id}/g, item.id)}`);
-              const codeBlock = `\`\`\`json\n{\n  "wrong": "${item.wrong}",\n  "correct": "${item.correct}",\n  "explanation": "${item.explanation}"\n}\n\`\`\``;
+              const codeBlock = `\`\`\`json\n{\n  "wrong": "${jsonEscape(item.wrong)}",\n  "correct": "${jsonEscape(item.correct)}",\n  "explanation": "${jsonEscape(item.explanation)}"\n}\n\`\`\``;
 
               issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.mistakeHeader}\n\n**Wrong:** ${item.wrong}\n\n**Correct:** ${item.correct}\n\n> **Why:** ${item.explanation}\n\n${common.instructionsHeader}\n\n${instructions.slice(0, 4).join('\n')}\n\n${codeBlock}\n\n${instructions.slice(4).join('\n')}\n\n---\n\n${common.footer}`;
 
@@ -1100,7 +1101,7 @@ jobs:
                 '8. Link this issue using `Closes #<issue_number>`',
                 '9. Wait for review!',
               ];
-              const codeBlock = `\`\`\`json\n"${item.url}"\n\`\`\``;
+              const codeBlock = `\`\`\`json\n"${jsonEscape(item.url)}"\n\`\`\``;
 
               issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.urlHeader}\n\n${codeBlock}\n\n${common.instructionsHeader}\n\n${instructions.join('\n')}\n\n---\n\n${common.footer}`;
 
