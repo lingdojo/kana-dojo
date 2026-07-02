@@ -681,6 +681,16 @@
     "Sendai"
   ],
   "correctIndex": 0
+},
+{
+  "question": "Which Japanese city is famous for the Gion Matsuri festival? (Community variation 38)",
+  "difficulty": "medium",
+  "answers": [
+    "Kyoto",
+    "Nagoya",
+    "Hiroshima",
+    "Sendai"
+  ],
+  "correctIndex": 0
 }
-
 ]
