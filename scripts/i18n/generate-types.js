@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/* eslint-disable no-console */
 /**
  * Generate TypeScript types from translation files
  *
@@ -29,7 +30,16 @@ const NAMESPACES = [
   'errors',
   'menuInfo',
   'blog',
+  'translator',
+  'metadata',
+  'faq',
+  'practiceLanding',
+  'welcome',
+  'experiments',
+  'legal',
+  'kanaChart',
   'conjugator',
+  'resources',
 ];
 
 /**
