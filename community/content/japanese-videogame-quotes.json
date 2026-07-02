@@ -231,10 +231,17 @@
     "character": "Solid Snake"
   },
   {
-  "japanese": "勝つと思うな、思えば負けよ",
-  "romaji": "Katsu to omou na, omoeba makeyo",
-  "english": "If you only think of winning, you lose.",
-  "game": "Samurai game proverb line",
-  "character": "Musashi reference"
-}
+    "japanese": "勝つと思うな、思えば負けよ",
+    "romaji": "Katsu to omou na, omoeba makeyo",
+    "english": "If you only think of winning, you lose.",
+    "game": "Samurai game proverb line",
+    "character": "Musashi reference"
+  },
+  {
+    "japanese": "それもまた一興",
+    "romaji": "Sore mo mata ikkyo",
+    "english": "That too has its charm.",
+    "game": "Onimusha series",
+    "character": "Nobunaga Oda"
+  }
 ]
