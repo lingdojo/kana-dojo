@@ -410,7 +410,7 @@
     "dont": "ご飯に箸を立てる",
     "note": "立て箸は弔事連想のため避ける。",
     "id": 46,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
