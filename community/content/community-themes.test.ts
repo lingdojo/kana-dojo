@@ -43,4 +43,10 @@ describe('community-themes.json', () => {
   it('sea-glass should have a unique id among themes', () => {
     expect(themes.filter(t => t.id === 'sea-glass').length).toBe(1);
   });
+
+  it('all theme ids should be unique', () => {
+    const ids = themes.map(t => t.id);
+    const duplicates = [...new Set(ids.filter((id, i) => ids.indexOf(id) !== i))];
+    expect(duplicates).toEqual([]);
+  });
 });
