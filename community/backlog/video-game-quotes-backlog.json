@@ -166,7 +166,7 @@
     "game": "Persona 5 Strikers",
     "character": "Joker",
     "id": 17,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -246,7 +246,7 @@
     "game": "Danganronpa series",
     "character": "Makoto Naegi",
     "id": 25,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -346,7 +346,7 @@
     "game": "Fire Emblem series",
     "character": "Various protagonists",
     "id": 35,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -366,7 +366,7 @@
     "game": "Persona 5 Strikers",
     "character": "Joker",
     "id": 37,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -466,7 +466,7 @@
     "game": "Dragon Quest series",
     "character": "Recurring command voice",
     "id": 47,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -526,7 +526,7 @@
     "game": "Final Fantasy Type-0",
     "character": "Class Zero",
     "id": 53,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -616,7 +616,7 @@
     "game": "Fate/stay night [Realta Nua]",
     "character": "Saber",
     "id": 62,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -676,7 +676,7 @@
     "game": "Kingdom Hearts series (JP dub)",
     "character": "Sora",
     "id": 68,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -716,7 +716,7 @@
     "game": "Pokemon series",
     "character": "Rival characters",
     "id": 72,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -766,7 +766,7 @@
     "game": "Persona 5 Strikers",
     "character": "Joker",
     "id": 77,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -916,7 +916,7 @@
     "game": "Pokemon series",
     "character": "Rival characters",
     "id": 92,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -926,7 +926,7 @@
     "game": "Final Fantasy Type-0",
     "character": "Class Zero",
     "id": 93,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1016,7 +1016,7 @@
     "game": "Fate/stay night [Realta Nua]",
     "character": "Saber",
     "id": 102,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1026,7 +1026,7 @@
     "game": "Tales of the Abyss",
     "character": "Luke fon Fabre",
     "id": 103,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

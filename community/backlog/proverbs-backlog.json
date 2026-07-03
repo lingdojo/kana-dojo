@@ -69,7 +69,7 @@
     "english": "If in a hurry, go around",
     "meaning": "Taking the safer, longer route is sometimes faster",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 9,
@@ -87,7 +87,7 @@
     "english": "A cane before falling",
     "meaning": "Prevention is better than cure",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 11,
@@ -168,7 +168,7 @@
     "english": "Even a walking dog will hit a stick",
     "meaning": "Try anything and you might get lucky (or unlucky)",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 20,
@@ -195,7 +195,7 @@
     "english": "If you don't enter the tiger's den, you can't get the cub",
     "meaning": "Nothing ventured, nothing gained",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 23,
@@ -321,7 +321,7 @@
     "english": "The mouth is the source of disaster",
     "meaning": "Careless speech can cause trouble",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 37,
@@ -393,7 +393,7 @@
     "english": "Fall seven times, get up eight",
     "meaning": "Never give up",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 45,
@@ -411,7 +411,7 @@
     "english": "Even if you fall, don't get up empty-handed",
     "meaning": "Learn something from every setback",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 47,
@@ -492,7 +492,7 @@
     "english": "Even a walking dog will hit a stick",
     "meaning": "Acting can lead to luck (or trouble)",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 56,
@@ -1014,7 +1014,7 @@
     "english": "An iron club to an ogre",
     "meaning": "Adding strength to the strong",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 114,
@@ -1068,7 +1068,7 @@
     "english": "One who chases two rabbits catches neither",
     "meaning": "Focus on one thing at a time",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 120,
@@ -1122,7 +1122,7 @@
     "english": "A bee on a crying face",
     "meaning": "Misfortune never comes alone",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 126,
@@ -1284,7 +1284,7 @@
     "english": "Three people together have the wisdom of Monju",
     "meaning": "Two heads are better than one",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 144,
@@ -1356,7 +1356,7 @@
     "english": "After the rain, the ground hardens",
     "meaning": "Hard times build resilience",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 152,
@@ -1599,7 +1599,7 @@
     "english": "See the trees but not the forest",
     "meaning": "Miss the bigger picture",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 179,

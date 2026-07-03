@@ -158,7 +158,7 @@
   {
     "id": 27,
     "fact": "Japanese addresses are based on blocks rather than streets - buildings are numbered by the order they were built, not their location.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -320,7 +320,7 @@
   {
     "id": 54,
     "fact": "Japan has a highway that passes directly through a building in Osaka - the Gate Tower Building has floors 5-7 as a tunnel.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -446,7 +446,7 @@
   {
     "id": 75,
     "fact": "The word 'enryo' (遠慮) describes polite restraint - like declining seconds even when hungry, to not be a burden.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -530,7 +530,7 @@
   {
     "id": 89,
     "fact": "The concept of 'kawaisa' (可愛さ) or cuteness is so culturally important that it influences everything from government mascots to warning signs.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -578,7 +578,7 @@
   {
     "id": 97,
     "fact": "The word 'majime' (真面目) describes someone earnest and sincere - a highly valued personality trait in Japanese culture.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -728,7 +728,7 @@
   {
     "id": 122,
     "fact": "Japan has 'anti-lonely death' services that check on elderly living alone and arrange their affairs if they pass away.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -746,7 +746,7 @@
   {
     "id": 125,
     "fact": "The word 'yoroshiku' (よろしく) has no direct translation - it's used for introductions, requests, and meaning 'please treat me well'.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -812,7 +812,7 @@
   {
     "id": 136,
     "fact": "Japan has an island dedicated entirely to art museums - Naoshima, where Tadao Ando's architecture blends with nature.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -860,7 +860,7 @@
   {
     "id": 144,
     "fact": "Japan has a stone you can lick to predict the weather at Kamigamo Shrine - if it tastes salty, rain is coming.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -890,7 +890,7 @@
   {
     "id": 149,
     "fact": "The word 'shiawase' (幸せ) for happiness originally meant 'what happens' - suggesting happiness is accepting what comes.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -986,7 +986,7 @@
   {
     "id": 165,
     "fact": "The word 'ganban' (願番) describes taking turns at a task - cooperation without needing explicit coordination.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1256,7 +1256,7 @@
   {
     "id": 210,
     "fact": "Japan’s 'kotatsu' is a low table with a heater underneath and a blanket, creating a cozy heated nook in winter.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1556,7 +1556,7 @@
   {
     "id": 260,
     "fact": "The Japanese word 'shitsurai' (設え) means arranging a space thoughtfully — from seasonal decor to the placement of tea utensils.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1580,7 +1580,7 @@
   {
     "id": 264,
     "fact": "The word 'kawaigaru' (可愛がる) means to dote on or cherish, often used for pets or younger relatives.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1904,7 +1904,7 @@
   {
     "id": 318,
     "fact": "The word 'sukiyaki' refers both to the dish and to a style of cooking ingredients at the table.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

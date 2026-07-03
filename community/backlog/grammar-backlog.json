@@ -15,7 +15,7 @@
     "id": 3,
     "text": "\"〜たい\" attaches to a verb stem to express \"want to do\" something.",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 4,
@@ -51,7 +51,7 @@
     "id": 9,
     "text": "\"〜そうです\" can report hearsay (\"I heard that...\").",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 10,
@@ -74,13 +74,13 @@
   {
     "id": 13,
     "text": "\"〜なければならない\" means \"must\" or \"have to\" do something.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 14,
     "text": "\"〜なくてもいい\" means \"don't have to\" and lifts an obligation.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -153,7 +153,7 @@
     "id": 26,
     "text": "\"〜まま\" means \"as is\" or \"unchanged\".",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 27,
@@ -212,7 +212,7 @@
   {
     "id": 36,
     "text": "\"〜ことにする\" expresses a decision, like \"decide to\".",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -242,7 +242,7 @@
   {
     "id": 41,
     "text": "\"〜ことができる\" expresses ability, like \"can do\".",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -453,7 +453,7 @@
     "id": 76,
     "text": "\"〜ことになっている\" means \"it is decided/arranged that...\".",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 77,
@@ -495,7 +495,7 @@
     "id": 83,
     "text": "\"〜にしたがって\" means \"as / in accordance with...\".",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 84,
@@ -572,7 +572,7 @@
   {
     "id": 96,
     "text": "\"〜でしょう\" adds probability or softens statements, like \"probably\". (practice variation 11)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -608,7 +608,7 @@
   {
     "id": 102,
     "text": "\"〜てあげる\" shows the speaker does a favor for someone else. (practice variation 17)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -626,7 +626,7 @@
   {
     "id": 105,
     "text": "\"〜たら\" is a conditional \"if/when\" that also expresses sequence. (practice variation 20)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -770,7 +770,7 @@
   {
     "id": 129,
     "text": "\"〜やすい\" attaches to verb stems to mean \"easy to do\". (practice variation 44)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -824,7 +824,7 @@
   {
     "id": 138,
     "text": "\"〜せいで\" indicates a negative cause, \"because of\". (practice variation 53)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

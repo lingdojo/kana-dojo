@@ -136,7 +136,7 @@
     "english": "I will transcend humanity!",
     "anime": "JoJo's Bizarre Adventure: Battle Tendency",
     "character": "Kars",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -216,7 +216,7 @@
     "english": "Not yet! It's not over yet!",
     "anime": "Mobile Suit Gundam",
     "character": "Char Aznable",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -446,7 +446,7 @@
     "english": "Only those prepared to be shot should pull the trigger.",
     "anime": "Code Geass: Lelouch of the Rebellion",
     "character": "Lelouch vi Britannia",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -496,7 +496,7 @@
     "english": "The word 'give up' isn't in my dictionary.",
     "anime": "Black Clover",
     "character": "Asta",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -506,7 +506,7 @@
     "english": "Running away can take courage too.",
     "anime": "Mob Psycho 100",
     "character": "Arataka Reigen",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -546,7 +546,7 @@
     "english": "Oh? You're approaching me? (alt wording 3)",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "DIO",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -596,7 +596,7 @@
     "english": "Ora ora ora ora ora! (alt wording 8)",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Jotaro Kujo",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -626,7 +626,7 @@
     "english": "You! You're watching me! (alt wording 11)",
     "anime": "JoJo's Bizarre Adventure: Stone Ocean",
     "character": "Jolyne Cujoh",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -676,7 +676,7 @@
     "english": "But... that's what I like. (alt wording 16)",
     "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
     "character": "Yoshikage Kira",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -956,7 +956,7 @@
     "english": "I will become the god of the new world. (alt wording 44)",
     "anime": "Death Note",
     "character": "Light Yagami",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1006,7 +1006,7 @@
     "english": "Believing in my friends is my magic. (alt wording 49)",
     "anime": "Fairy Tail",
     "character": "Natsu Dragneel",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1046,7 +1046,7 @@
     "english": "Road roller! (alt wording 1) (alt wording 53)",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "DIO",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1166,7 +1166,7 @@
     "english": "I'm on a different level today! (alt wording 13) (alt wording 65)",
     "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
     "character": "Okuyasu Nijimura",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1396,7 +1396,7 @@
     "english": "I'll exterminate them! Every last one from this world! (alt wording 36) (alt wording 88)",
     "anime": "Attack on Titan",
     "character": "Eren Yeager",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
