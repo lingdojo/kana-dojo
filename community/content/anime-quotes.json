@@ -553,73 +553,80 @@
     "character": "Rei Ayanami"
   },
   {
-  "japanese": "やれやれだぜ",
-  "romaji": "Yare yare da ze",
-  "english": "Good grief. (alt wording 6)",
-  "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
-  "character": "Jotaro Kujo"
-},
-{
-  "japanese": "オレ様の美技にブギウギ",
-  "romaji": "Ore-sama no bigi ni bugiugi",
-  "english": "Dance to my beautiful technique!",
-  "anime": "The Prince of Tennis",
-  "character": "Keigo Atobe"
-}, 
-{
-  "japanese": "グララララ",
-  "romaji": "Gurararara",
-  "english": "Gurararara! (alt wording 31) (alt wording 83)",
-  "anime": "One Piece",
-  "character": "Edward Newgate (Whitebeard)"
-},
+    "japanese": "やれやれだぜ",
+    "romaji": "Yare yare da ze",
+    "english": "Good grief. (alt wording 6)",
+    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+    "character": "Jotaro Kujo"
+  },
   {
-  "japanese": "このジョルノ・ジョバァーナには夢がある！",
-  "romaji": "Kono Joruno Jobana ni wa yume ga aru!",
-  "english": "I, Giorno Giovanna, have a dream! (alt wording 5) (alt wording 57)",
-  "anime": "JoJo's Bizarre Adventure: Golden Wind",
-  "character": "Giorno Giovanna"
-},
-{
-  "japanese": "だが断る",
-  "romaji": "Daga kotowaru",
-  "english": "But I refuse. (alt wording 4)",
-  "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
-  "character": "Rohan Kishibe"
-},
-{
-  "japanese": "マママママ",
-  "romaji": "Mama mama mama",
-  "english": "Mama mama mama. (alt wording 29) (alt wording 81)",
-  "anime": "One Piece",
-  "character": "Charlotte Linlin (Big Mom)"
-},
-{
-  "japanese": "無駄無駄無駄無駄無駄！",
-  "romaji": "Muda muda muda muda muda!",
-  "english": "Useless! Useless! Useless! (alt wording 7)",
-  "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
-  "character": "DIO"
-},
-{
-  "japanese": "諦めるという言葉は俺の辞書にない",
-  "romaji": "Akirameru to iu kotoba wa ore no jisho ni nai",
-  "english": "The word 'give up' isn't in my dictionary.",
-  "anime": "Black Clover",
-  "character": "Asta"
-},
-{
-  "japanese": "痛みを伴わない教訓には意味がない",
-  "romaji": "Itami o tomonawanai kyoukun ni wa imi ga nai",
-  "english": "A lesson without pain is meaningless. (alt wording 35)",
-  "anime": "Fullmetal Alchemist: Brotherhood",
-  "character": "Edward Elric"
-},
-{
-  "japanese": "世界は残酷だ…それでも美しい",
-  "romaji": "Sekai wa zankoku da... soredemo utsukushii",
-  "english": "This world is cruel... yet so beautiful. (alt wording 26) (alt wording 78)",
-  "anime": "Attack on Titan",
-  "character": "Mikasa Ackerman"
-}
+    "japanese": "オレ様の美技にブギウギ",
+    "romaji": "Ore-sama no bigi ni bugiugi",
+    "english": "Dance to my beautiful technique!",
+    "anime": "The Prince of Tennis",
+    "character": "Keigo Atobe"
+  },
+  {
+    "japanese": "グララララ",
+    "romaji": "Gurararara",
+    "english": "Gurararara! (alt wording 31) (alt wording 83)",
+    "anime": "One Piece",
+    "character": "Edward Newgate (Whitebeard)"
+  },
+  {
+    "japanese": "このジョルノ・ジョバァーナには夢がある！",
+    "romaji": "Kono Joruno Jobana ni wa yume ga aru!",
+    "english": "I, Giorno Giovanna, have a dream! (alt wording 5) (alt wording 57)",
+    "anime": "JoJo's Bizarre Adventure: Golden Wind",
+    "character": "Giorno Giovanna"
+  },
+  {
+    "japanese": "だが断る",
+    "romaji": "Daga kotowaru",
+    "english": "But I refuse. (alt wording 4)",
+    "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
+    "character": "Rohan Kishibe"
+  },
+  {
+    "japanese": "マママママ",
+    "romaji": "Mama mama mama",
+    "english": "Mama mama mama. (alt wording 29) (alt wording 81)",
+    "anime": "One Piece",
+    "character": "Charlotte Linlin (Big Mom)"
+  },
+  {
+    "japanese": "無駄無駄無駄無駄無駄！",
+    "romaji": "Muda muda muda muda muda!",
+    "english": "Useless! Useless! Useless! (alt wording 7)",
+    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+    "character": "DIO"
+  },
+  {
+    "japanese": "諦めるという言葉は俺の辞書にない",
+    "romaji": "Akirameru to iu kotoba wa ore no jisho ni nai",
+    "english": "The word 'give up' isn't in my dictionary.",
+    "anime": "Black Clover",
+    "character": "Asta"
+  },
+  {
+    "japanese": "痛みを伴わない教訓には意味がない",
+    "romaji": "Itami o tomonawanai kyoukun ni wa imi ga nai",
+    "english": "A lesson without pain is meaningless. (alt wording 35)",
+    "anime": "Fullmetal Alchemist: Brotherhood",
+    "character": "Edward Elric"
+  },
+  {
+    "japanese": "世界は残酷だ…それでも美しい",
+    "romaji": "Sekai wa zankoku da... soredemo utsukushii",
+    "english": "This world is cruel... yet so beautiful. (alt wording 26) (alt wording 78)",
+    "anime": "Attack on Titan",
+    "character": "Mikasa Ackerman"
+  },
+  {
+    "japanese": "ほう…向かってくるのか",
+    "romaji": "Ho... mukatte kuru no ka",
+    "english": "Oh? You're approaching me? (alt wording 3)",
+    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+    "character": "DIO"
+  }
 ]
