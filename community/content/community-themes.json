@@ -480,33 +480,39 @@
     "secondaryColor": "oklch(70.0% 0.175 15.0 / 1)"
   },
   {
-  "id": "sundown-shrine",
-  "backgroundColor": "oklch(18.0% 0.055 330.0 / 1)",
-  "mainColor": "oklch(72.0% 0.195 35.0 / 1)",
-  "secondaryColor": "oklch(85.0% 0.095 275.0 / 1)"
-},
-{
-  "id": "garden-bridge",
-  "backgroundColor": "oklch(23.0% 0.045 150.0 / 1)",
-  "mainColor": "oklch(60.0% 0.205 25.0 / 1)",
-  "secondaryColor": "oklch(72.0% 0.145 145.0 / 1)"
-},
+    "id": "sundown-shrine",
+    "backgroundColor": "oklch(18.0% 0.055 330.0 / 1)",
+    "mainColor": "oklch(72.0% 0.195 35.0 / 1)",
+    "secondaryColor": "oklch(85.0% 0.095 275.0 / 1)"
+  },
   {
-  "id": "strawberry-daifuku",
-  "backgroundColor": "oklch(96.0% 0.018 340.0 / 1)",
-  "mainColor": "oklch(62.0% 0.195 10.0 / 1)",
-  "secondaryColor": "oklch(78.0% 0.095 350.0 / 1)"
-},
+    "id": "garden-bridge",
+    "backgroundColor": "oklch(23.0% 0.045 150.0 / 1)",
+    "mainColor": "oklch(60.0% 0.205 25.0 / 1)",
+    "secondaryColor": "oklch(72.0% 0.145 145.0 / 1)"
+  },
   {
-  "id": "coastal-shrine",
-  "backgroundColor": "oklch(20.0% 0.040 235.0 / 1)",
-  "mainColor": "oklch(78.0% 0.205 35.0 / 1)']",
-  "secondaryColor": "oklch(88.0% 0.065 210.0 / 1)"
-},
+    "id": "strawberry-daifuku",
+    "backgroundColor": "oklch(96.0% 0.018 340.0 / 1)",
+    "mainColor": "oklch(62.0% 0.195 10.0 / 1)",
+    "secondaryColor": "oklch(78.0% 0.095 350.0 / 1)"
+  },
+  {
+    "id": "coastal-shrine",
+    "backgroundColor": "oklch(20.0% 0.040 235.0 / 1)",
+    "mainColor": "oklch(78.0% 0.205 35.0 / 1)']",
+    "secondaryColor": "oklch(88.0% 0.065 210.0 / 1)"
+  },
   {
     "id": "pixel-retro",
     "backgroundColor": "oklch(14.0% 0.025 280.0 / 1)",
     "mainColor": "oklch(72.0% 0.200 145.0 / 1)",
     "secondaryColor": "oklch(80.0% 0.185 55.0 / 1)"
+  },
+  {
+    "id": "samurai-steel",
+    "backgroundColor": "oklch(18.0% 0.022 250.0 / 1)",
+    "mainColor": "oklch(80.0% 0.055 240.0 / 1)",
+    "secondaryColor": "oklch(65.0% 0.170 15.0 / 1)"
   }
 ]
