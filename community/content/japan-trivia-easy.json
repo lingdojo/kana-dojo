@@ -273,4 +273,15 @@
     "answers": ["Sumo", "Kendo", "Judo", "Aikido"],
     "correctIndex": 0
   }
+  ,{
+  "question": "What is the Japanese term for a hot spring? (Community variation 42)",
+  "difficulty": "easy",
+  "answers": [
+    "Onsen",
+    "Sentou",
+    "Ryokan",
+    "Izakaya"
+  ],
+  "correctIndex": 0
+}
 ]
