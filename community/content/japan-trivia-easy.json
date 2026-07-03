@@ -276,7 +276,11 @@
   {
   "question": "Which city is known for its large bronze Great Buddha?",
   "difficulty": "easy",
-  "answers": ["Kamakura", "Kobe", "Kanazawa", "Matsuyama"],
+  "answers": [
+    "Kamakura", 
+    "Kobe", 
+    "Kanazawa", 
+    "Matsuyama"],
   "correctIndex": 0
 }
 ]
