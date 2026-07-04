@@ -500,7 +500,7 @@
   {
     "id": "coastal-shrine",
     "backgroundColor": "oklch(20.0% 0.040 235.0 / 1)",
-    "mainColor": "oklch(78.0% 0.205 35.0 / 1)']",
+    "mainColor": "oklch(78.0% 0.205 35.0 / 1)",
     "secondaryColor": "oklch(88.0% 0.065 210.0 / 1)"
   },
   {
@@ -514,5 +514,11 @@
     "backgroundColor": "oklch(18.0% 0.022 250.0 / 1)",
     "mainColor": "oklch(80.0% 0.055 240.0 / 1)",
     "secondaryColor": "oklch(65.0% 0.170 15.0 / 1)"
+  },
+  {
+   "id": "wasabi-punch",
+  "backgroundColor": "oklch(20.0% 0.048 160.0 / 1)",
+  "mainColor": "oklch(72.0% 0.185 145.0 / 1)",
+  "secondaryColor": "oklch(82.0% 0.145 130.0 / 1)"
   }
 ]
