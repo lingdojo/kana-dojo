@@ -132,7 +132,7 @@
     "english": "Three people together have the wisdom of Monju",
     "meaning": "Two heads are better than one",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 16,
@@ -1158,7 +1158,7 @@
     "english": "Travel needs companions; life needs kindness",
     "meaning": "Relationships and compassion matter",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 130,
@@ -1383,7 +1383,7 @@
     "english": "A bee on a crying face",
     "meaning": "Misfortune piles up",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 155,

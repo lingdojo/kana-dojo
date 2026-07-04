@@ -126,7 +126,7 @@
     "game": "Final Fantasy Type-0",
     "character": "Class Zero",
     "id": 13,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -406,7 +406,7 @@
     "game": "The Prince of Tennis: Sweat & Tears 2",
     "character": "Ryoma Echizen",
     "id": 41,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -996,7 +996,7 @@
     "game": "Samurai game proverb line",
     "character": "Musashi reference",
     "id": 100,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

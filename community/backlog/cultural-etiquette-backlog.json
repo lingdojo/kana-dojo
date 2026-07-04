@@ -761,7 +761,7 @@
     "dont": "食べ終わってすぐ席を立つ",
     "note": "店でも家庭でも使える。",
     "id": 85,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -923,7 +923,7 @@
     "dont": "通話を続ける",
     "note": "混雑時は特に配慮する。",
     "id": 103,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -986,7 +986,7 @@
     "dont": "割り込む",
     "note": "駅・店頭では順番厳守。",
     "id": 110,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

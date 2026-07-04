@@ -488,7 +488,7 @@
   {
     "id": 82,
     "text": "\"〜ばかりか\" means \"not only... but also\".",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -602,7 +602,7 @@
   {
     "id": 101,
     "text": "\"〜てもらう\" means \"receive a favor\" from someone. (practice variation 16)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -680,7 +680,7 @@
   {
     "id": 114,
     "text": "\"〜らしい\" can mean \"seems\" or describe a typical characteristic. (practice variation 29)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

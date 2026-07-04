@@ -949,7 +949,7 @@
     ],
     "correctIndex": 0,
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 69,
@@ -1172,7 +1172,7 @@
       "Shodo"
     ],
     "correctIndex": 0,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1354,7 +1354,7 @@
       "Kissa"
     ],
     "correctIndex": 1,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
