@@ -124,6 +124,7 @@ function ClassicSummary({
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.repeat) return;
       if (event.key === 'Escape') {
         event.preventDefault();
         playClick();

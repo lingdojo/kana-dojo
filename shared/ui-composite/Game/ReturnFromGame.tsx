@@ -119,11 +119,11 @@ const Return = ({ isHidden, gameMode, onQuit }: ReturnProps) => {
   // Keyboard shortcuts
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') buttonRef.current?.click();
+      if (!isHidden && e.key === 'Escape') buttonRef.current?.click();
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, []);
+  }, [isHidden]);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
