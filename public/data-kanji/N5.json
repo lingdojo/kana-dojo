@@ -53,7 +53,7 @@
     "kanjiChar": "人",
     "onyomi": [
       "jin ジン",
-      "nin るン"
+      "nin ニン"
     ],
     "kunyomi": [
       "hito ひと"
@@ -67,7 +67,7 @@
     "id": 5,
     "kanjiChar": "年",
     "onyomi": [
-      "nen れン"
+      "nen ネン"
     ],
     "kunyomi": [
       "toshi とし"
@@ -82,7 +82,7 @@
     "kanjiChar": "大",
     "onyomi": [
       "dai ダイ",
-      "tai テイ"
+      "tai タイ"
     ],
     "kunyomi": [
       "oo おお",
@@ -113,7 +113,7 @@
     "kanjiChar": "二",
     "onyomi": [
       "ni ニ",
-      "ji ビ"
+      "ji ジ"
     ],
     "kunyomi": [
       "futa ふた",
@@ -240,7 +240,7 @@
     "kunyomi": [
       "i い",
       "yu ゆ",
-      "okona わこな"
+      "okona おこな"
     ],
     "meanings": [
       "going",
@@ -318,8 +318,8 @@
       "kou コウ"
     ],
     "kunyomi": [
-      "nochi わち",
-      "ushi ゆし",
+      "nochi のち",
+      "ushi うし",
       "ato あと"
     ],
     "meanings": [
@@ -419,7 +419,7 @@
     "id": 25,
     "kanjiChar": "東",
     "onyomi": [
-      "tou ゆう"
+      "tou トウ"
     ],
     "kunyomi": [
       "higashi ひがし"
@@ -531,7 +531,7 @@
     "id": 32,
     "kanjiChar": "高",
     "onyomi": [
-      "kou ゴウ"
+      "kou コウ"
     ],
     "kunyomi": [
       "taka(i) たか(い)"
@@ -578,15 +578,14 @@
     "id": 35,
     "kanjiChar": "外",
     "onyomi": [
-      "gai ゴイ",
+      "gai ガイ",
       "ge ゲ"
     ],
     "kunyomi": [
       "soto そと",
       "hoka ほか",
-      "hazu- ず(す)",
-      "to- と-",
-      "hokan ほう(ん)"
+      "hazu- はず(す)",
+      "to- と-"
     ],
     "meanings": [
       "outside"
@@ -651,7 +650,7 @@
     "kanjiChar": "来",
     "onyomi": [
       "rai ライ",
-      "tai テイ"
+      "tai タイ"
     ],
     "kunyomi": [
       "kuru く.る",
@@ -757,7 +756,7 @@
       "jo ジョ"
     ],
     "kunyomi": [
-      "onnna わんな",
+      "onna おんな",
       "me め"
     ],
     "meanings": [
@@ -785,7 +784,7 @@
       "go ゴ"
     ],
     "kunyomi": [
-      "uma むー"
+      "uma うま"
     ],
     "meanings": [
       "noon",
@@ -888,10 +887,10 @@
     "id": 54,
     "kanjiChar": "水",
     "onyomi": [
-      "sui サイ"
+      "sui スイ"
     ],
     "kunyomi": [
-      "mizu むず"
+      "mizu みず"
     ],
     "meanings": [
       "water"
@@ -922,8 +921,8 @@
       "nan ナン"
     ],
     "kunyomi": [
-      "otoko わたく",
-      "o わ"
+      "otoko おとこ",
+      "o お"
     ],
     "meanings": [
       "male",
@@ -938,7 +937,7 @@
       "sai サイ"
     ],
     "kunyomi": [
-      "nishi わし"
+      "nishi にし"
     ],
     "meanings": [
       "west"
@@ -1062,8 +1061,7 @@
     "id": 65,
     "kanjiChar": "車",
     "onyomi": [
-      "sha シャ",
-      "kuruma カルマ"
+      "sha シャ"
     ],
     "kunyomi": [
       "kuruma くるま"
