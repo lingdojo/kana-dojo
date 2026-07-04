@@ -340,12 +340,10 @@ const Decorations = ({
   interactive?: boolean;
   context?: 'main-menu' | 'mode-setup' | 'streak-milestone';
 }) => {
-  if (
+  const shouldRender = !(
     (context === 'mode-setup' && !ENABLE_MODE_SETUP_DECORATIONS) ||
     (context === 'streak-milestone' && !ENABLE_STREAK_MILESTONE_DECORATIONS)
-  ) {
-    return null;
-  }
+  );
 
   const [styles, setStyles] = useState<CharacterStyle[]>([]);
   const [visibleCount, setVisibleCount] = useState<number>(() =>
@@ -452,12 +450,16 @@ const Decorations = ({
     } else {
       // Static mode: simple display, no animations
       return styles.map((style, index) => (
-        <StaticChar key={index} style={style} intrinsicSize={layoutConfig.cellSize} />
+        <StaticChar
+          key={index}
+          style={style}
+          intrinsicSize={layoutConfig.cellSize}
+        />
       ));
     }
   }, [styles, interactive, handleExplode, layoutConfig.cellSize]);
 
-  if (styles.length === 0) return null;
+  if (!shouldRender || styles.length === 0) return null;
 
   return (
     <>
@@ -469,10 +471,7 @@ const Decorations = ({
         )}
       >
         <div
-          className={clsx(
-            'grid h-full w-full gap-0.5 p-2',
-            GRID_COL_CLASSES,
-          )}
+          className={clsx('grid h-full w-full gap-0.5 p-2', GRID_COL_CLASSES)}
         >
           {gridContent}
         </div>

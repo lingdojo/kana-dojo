@@ -7,7 +7,7 @@
  * @module features/AnkiConverter/hooks/useConversionWorker
  */
 
-import { useState, useCallback, useEffect, useRef } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import type {
   ConversionOptions,
   ConversionResult,
@@ -71,16 +71,16 @@ const initialState: ConversionState = {
  */
 export function useConversionWorker(): UseConversionWorkerReturn {
   const [state, setState] = useState<ConversionState>(initialState);
-  const workerManager = useRef(getWorkerManager());
-  const isWorkerSupported = workerManager.current.isSupported();
+  const [workerManager] = useState(() => getWorkerManager());
+  const [isWorkerSupported] = useState(() => workerManager.isSupported());
 
   // Cleanup on unmount
   useEffect(() => {
     return () => {
       // Cleanup worker memory when component unmounts
-      workerManager.current.cleanup();
+      workerManager.cleanup();
     };
-  }, []);
+  }, [workerManager]);
 
   /**
    * Handle progress updates
@@ -116,11 +116,7 @@ export function useConversionWorker(): UseConversionWorkerReturn {
       };
 
       try {
-        const result = await workerManager.current.convert(
-          file,
-          options,
-          callbacks,
-        );
+        const result = await workerManager.convert(file, options, callbacks);
 
         setState(prev => ({
           ...prev,
@@ -142,7 +138,7 @@ export function useConversionWorker(): UseConversionWorkerReturn {
         }
       }
     },
-    [handleProgress, handleError],
+    [handleProgress, handleError, workerManager],
   );
 
   /**
@@ -210,8 +206,8 @@ export function useConversionWorker(): UseConversionWorkerReturn {
   const reset = useCallback(() => {
     setState(initialState);
     // Cleanup worker memory
-    workerManager.current.cleanup();
-  }, []);
+    workerManager.cleanup();
+  }, [workerManager]);
 
   return {
     state,
