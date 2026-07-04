@@ -703,5 +703,16 @@
     "Shodo"
   ],
   "correctIndex": 0
+},
+  {
+  "question": "Which city is known for the historic district of Higashiyama?",
+  "difficulty": "medium",
+  "answers": [
+    "Kanazawa",
+    "Kagoshima",
+    "Nara",
+    "Matsue"
+  ],
+  "correctIndex": 0
 }
 ]
