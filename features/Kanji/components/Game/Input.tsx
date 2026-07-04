@@ -4,7 +4,11 @@ import { CircleCheck } from 'lucide-react';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import type { IKanjiObj } from '@/features/Kanji/store/useKanjiStore';
-import { useClick, useCorrect, useError } from '@/shared/hooks/generic/useAudio';
+import {
+  useClick,
+  useCorrect,
+  useError,
+} from '@/shared/hooks/generic/useAudio';
 // import GameIntel from '@/shared/ui-composite/Game/GameIntel';
 import { useStatsStore } from '@/features/Progress';
 import { useShallow } from 'zustand/react/shallow';
@@ -88,6 +92,10 @@ const KanjiInputGame = ({
   // Guard to prevent Enter key repeat from immediately triggering continue after correct answer
   const justAnsweredRef = useRef(false);
 
+  // Debounce ref to prevent rapid key presses from causing race conditions
+  const lastActionTimeRef = useRef<number>(0);
+  const DEBOUNCE_MS = 300; // Minimum time between actions
+
   const [inputValue, setInputValue] = useState('');
   const [bottomBarState, setBottomBarState] = useState<BottomBarState>('check');
   const [clearWrongFeedbackSignal, setClearWrongFeedbackSignal] = useState(0);
@@ -125,13 +133,17 @@ const KanjiInputGame = ({
   const [promptSequence, setPromptSequence] = useState(0);
   const pauseTimer = () => {
     if (answerStartTimeRef.current !== null) {
-      elapsedTimeMsRef.current += performance.now() - answerStartTimeRef.current;
+      elapsedTimeMsRef.current +=
+        performance.now() - answerStartTimeRef.current;
       answerStartTimeRef.current = null;
     }
   };
   const getElapsedTimeMs = () => {
     if (answerStartTimeRef.current !== null) {
-      return elapsedTimeMsRef.current + (performance.now() - answerStartTimeRef.current);
+      return (
+        elapsedTimeMsRef.current +
+        (performance.now() - answerStartTimeRef.current)
+      );
     }
     return elapsedTimeMsRef.current;
   };
@@ -160,10 +172,7 @@ const KanjiInputGame = ({
       const isSpace = event.code === 'Space' || event.key === ' ';
       const isContinueShortcut = isEnter || isSpace;
 
-      if (
-        isContinueShortcut &&
-        shouldSuppressContinueKeyboardShortcut()
-      ) {
+      if (isContinueShortcut && shouldSuppressContinueKeyboardShortcut()) {
         event.preventDefault();
         return;
       }
@@ -221,12 +230,19 @@ const KanjiInputGame = ({
         targetChar.some(answer => normalizeAnswer(answer) === normalizedInput)
       );
     } else {
-      const reverseTargetChar = typeof targetChar === 'string' ? targetChar : '';
+      const reverseTargetChar =
+        typeof targetChar === 'string' ? targetChar : '';
       return normalizedInput === normalizeAnswer(reverseTargetChar);
     }
   };
 
   const handleCheck = () => {
+    // Debounce: prevent rapid button presses
+    // eslint-disable-next-line react-hooks/purity
+    const now = performance.now();
+    if (now - lastActionTimeRef.current < DEBOUNCE_MS) return;
+    lastActionTimeRef.current = now;
+
     if (inputValue.trim().length === 0) return;
     const trimmedInput = inputValue.trim();
 
@@ -344,6 +360,12 @@ const KanjiInputGame = ({
   };
 
   const handleContinue = () => {
+    // Debounce: prevent rapid button presses
+     
+    const now = performance.now();
+    if (now - lastActionTimeRef.current < DEBOUNCE_MS) return;
+    lastActionTimeRef.current = now;
+
     playClick();
     setInputValue('');
     setDisplayAnswerSummary(false);
@@ -485,4 +507,3 @@ const KanjiInputGame = ({
 };
 
 export default KanjiInputGame;
-

@@ -4,8 +4,16 @@ import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { toHiragana } from 'wanakana';
 import { IVocabObj } from '@/features/Vocabulary/store/useVocabStore';
-import { useClick, useCorrect, useError } from '@/shared/hooks/generic/useAudio';
-import { useGameStats, useStatsDisplay, useStatsStore } from '@/features/Progress';
+import {
+  useClick,
+  useCorrect,
+  useError,
+} from '@/shared/hooks/generic/useAudio';
+import {
+  useGameStats,
+  useStatsDisplay,
+  useStatsStore,
+} from '@/features/Progress';
 import Stars from '@/shared/ui-composite/Game/Stars';
 import AnswerSummary from '@/shared/ui-composite/Game/AnswerSummary';
 import SSRAudioButton from '@/shared/ui-composite/audio/SSRAudioButton';
@@ -64,6 +72,10 @@ const VocabInputGame = ({
   const buttonRef = useRef<HTMLButtonElement>(null);
   const justAnsweredRef = useRef(false);
 
+  // Debounce ref to prevent rapid key presses from causing race conditions
+  const lastActionTimeRef = useRef<number>(0);
+  const DEBOUNCE_MS = 300; // Minimum time between actions
+
   const [inputValue, setInputValue] = useState('');
   const [bottomBarState, setBottomBarState] = useState<BottomBarState>('check');
   const [clearWrongFeedbackSignal, setClearWrongFeedbackSignal] = useState(0);
@@ -96,20 +108,24 @@ const VocabInputGame = ({
       : correctWordObj?.reading;
   const questionPrompt =
     quizType === 'meaning' && isReverse
-      ? correctWordObj?.meanings[0] ?? ''
+      ? (correctWordObj?.meanings[0] ?? '')
       : correctChar;
 
   const [displayAnswerSummary, setDisplayAnswerSummary] = useState(false);
   const [promptSequence, setPromptSequence] = useState(0);
   const pauseTimer = useCallback(() => {
     if (answerStartTimeRef.current !== null) {
-      elapsedTimeMsRef.current += performance.now() - answerStartTimeRef.current;
+      elapsedTimeMsRef.current +=
+        performance.now() - answerStartTimeRef.current;
       answerStartTimeRef.current = null;
     }
   }, []);
   const getElapsedTimeMs = useCallback(() => {
     if (answerStartTimeRef.current !== null) {
-      return elapsedTimeMsRef.current + (performance.now() - answerStartTimeRef.current);
+      return (
+        elapsedTimeMsRef.current +
+        (performance.now() - answerStartTimeRef.current)
+      );
     }
     return elapsedTimeMsRef.current;
   }, []);
@@ -149,6 +165,12 @@ const VocabInputGame = ({
   }, [isReverse, selectedWordObjs, correctChar, quizType]);
 
   const handleContinue = useCallback(() => {
+    // Debounce: prevent rapid button presses
+     
+    const now = performance.now();
+    if (now - lastActionTimeRef.current < DEBOUNCE_MS) return;
+    lastActionTimeRef.current = now;
+
     playClick();
     setInputValue('');
     setDisplayAnswerSummary(false);
@@ -171,10 +193,7 @@ const VocabInputGame = ({
       const isSpace = event.code === 'Space' || event.key === ' ';
       const isContinueShortcut = isEnter || isSpace;
 
-      if (
-        isContinueShortcut &&
-        shouldSuppressContinueKeyboardShortcut()
-      ) {
+      if (isContinueShortcut && shouldSuppressContinueKeyboardShortcut()) {
         event.preventDefault();
         return;
       }
@@ -217,10 +236,13 @@ const VocabInputGame = ({
       if (!isReverse) {
         return (
           Array.isArray(targetChar) &&
-          targetChar.some(answer => normalizeAnswer(answer) === normalizeAnswer(input))
+          targetChar.some(
+            answer => normalizeAnswer(answer) === normalizeAnswer(input),
+          )
         );
       } else {
-        const reverseTargetChar = typeof targetChar === 'string' ? targetChar : '';
+        const reverseTargetChar =
+          typeof targetChar === 'string' ? targetChar : '';
         return normalizeAnswer(input) === normalizeAnswer(reverseTargetChar);
       }
     } else {
@@ -232,6 +254,12 @@ const VocabInputGame = ({
   };
 
   const handleCheck = () => {
+    // Debounce: prevent rapid button presses
+    // eslint-disable-next-line react-hooks/purity
+    const now = performance.now();
+    if (now - lastActionTimeRef.current < DEBOUNCE_MS) return;
+    lastActionTimeRef.current = now;
+
     if (inputValue.trim().length === 0) return;
     const trimmedInput = inputValue.trim();
 
@@ -484,4 +512,3 @@ const VocabInputGame = ({
 };
 
 export default VocabInputGame;
-

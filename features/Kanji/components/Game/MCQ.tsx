@@ -1,6 +1,6 @@
 'use client';
 import clsx from 'clsx';
-import { useState, useEffect, useRef, useMemo, memo } from 'react';
+import { useState, useEffect, useRef, useMemo, memo, useCallback } from 'react';
 import { CircleCheck, CircleX } from 'lucide-react';
 import { Random } from 'random-js';
 import type { IKanjiObj } from '@/features/Kanji/store/useKanjiStore';
@@ -140,6 +140,10 @@ const KanjiMCQ = ({ selectedKanjiObjs, isHidden }: KanjiMCQProps) => {
   const { playErrorTwice } = useError();
   const { trigger: triggerCrazyMode } = useCrazyModeTrigger();
 
+  // Debounce ref to prevent rapid key presses from causing race conditions
+  const lastActionTimeRef = useRef<number>(0);
+  const DEBOUNCE_MS = 300; // Minimum time between actions
+
   // State management - correctChar always stores the kanji character
   // This ensures consistency when isReverse changes dynamically
   const [correctChar, setCorrectChar] = useState(() => {
@@ -172,7 +176,7 @@ const KanjiMCQ = ({ selectedKanjiObjs, isHidden }: KanjiMCQProps) => {
     : correctKanjiObj?.meanings?.[0]; // normal: show kanji, answer is meaning
 
   // Get incorrect options based on mode
-  const getIncorrectOptions = () => {
+  const getIncorrectOptions = useCallback(() => {
     // Filter out the current kanji
     const incorrectKanjiObjs = selectedKanjiObjs.filter(
       obj => obj.kanjiChar !== correctChar,
@@ -191,7 +195,7 @@ const KanjiMCQ = ({ selectedKanjiObjs, isHidden }: KanjiMCQProps) => {
         .sort(() => random.real(0, 1) - 0.5)
         .slice(0, 2);
     }
-  };
+  }, [selectedKanjiObjs, correctChar, isReverse]);
 
   const randomIncorrectOptions = getIncorrectOptions();
 
@@ -216,7 +220,7 @@ const KanjiMCQ = ({ selectedKanjiObjs, isHidden }: KanjiMCQProps) => {
       ) as string[],
     );
     setWrongSelectedAnswers([]);
-  }, [correctChar, isReverse]);
+  }, [correctChar, isReverse, getIncorrectOptions, targetChar]);
 
   const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
@@ -241,6 +245,12 @@ const KanjiMCQ = ({ selectedKanjiObjs, isHidden }: KanjiMCQProps) => {
 
   // Handle tiles mode correct answer
   const handleOptionClick = (selectedOption: string) => {
+    // Debounce: prevent rapid button presses
+    // eslint-disable-next-line react-hooks/purity
+    const now = performance.now();
+    if (now - lastActionTimeRef.current < DEBOUNCE_MS) return;
+    lastActionTimeRef.current = now;
+
     if (selectedOption === targetChar) {
       setDisplayAnswerSummary(true);
       handleCorrectAnswer();
@@ -419,4 +429,3 @@ const KanjiMCQ = ({ selectedKanjiObjs, isHidden }: KanjiMCQProps) => {
 };
 
 export default KanjiMCQ;
-

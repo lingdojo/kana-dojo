@@ -130,6 +130,10 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
 
   const kanaGroupIndices = useKanaStore(state => state.kanaGroupIndices);
 
+  // Debounce ref to prevent rapid key presses from causing race conditions
+  const lastActionTimeRef = useRef<number>(0);
+  const DEBOUNCE_MS = 300; // Minimum time between actions
+
   const selectedKana = useMemo(
     () => kanaGroupIndices.map(i => kana[i].kana).flat(),
     [kanaGroupIndices],
@@ -316,10 +320,10 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
       resetWrongStreak();
       logAttempt({
         questionId: correctChar,
-        questionPrompt: isReverse
-          ? correctRomajiCharReverse
-          : correctKanaChar,
-        expectedAnswers: [isReverse ? correctKanaCharReverse : correctRomajiChar],
+        questionPrompt: isReverse ? correctRomajiCharReverse : correctKanaChar,
+        expectedAnswers: [
+          isReverse ? correctKanaCharReverse : correctRomajiChar,
+        ],
         userAnswer: isReverse ? correctKanaCharReverse : correctRomajiChar,
         inputKind: 'pick',
         isCorrect: true,
@@ -376,7 +380,9 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
       logAttempt({
         questionId: isReverse ? correctRomajiCharReverse : correctKanaChar,
         questionPrompt: isReverse ? correctRomajiCharReverse : correctKanaChar,
-        expectedAnswers: [isReverse ? correctKanaCharReverse : correctRomajiChar],
+        expectedAnswers: [
+          isReverse ? correctKanaCharReverse : correctRomajiChar,
+        ],
         userAnswer: selectedChar,
         inputKind: 'pick',
         isCorrect: false,
@@ -407,6 +413,12 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
 
   const handleOptionClick = useCallback(
     (selectedChar: string) => {
+      // Debounce: prevent rapid button presses
+       
+      const now = performance.now();
+      if (now - lastActionTimeRef.current < DEBOUNCE_MS) return;
+      lastActionTimeRef.current = now;
+
       if (!isReverse) {
         // Normal pick mode logic
         if (selectedChar === correctRomajiChar) {
@@ -508,4 +520,3 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
 };
 
 export default KanaMCQ;
-
