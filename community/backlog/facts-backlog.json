@@ -104,7 +104,7 @@
   {
     "id": 18,
     "fact": "There are cat cafes in Japan where you pay by the hour to pet cats, but there are also owl cafes, hedgehog cafes, snake cafes, and even penguin bars.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -134,7 +134,7 @@
   {
     "id": 23,
     "fact": "Japanese train conductors point and call out each signal and sign they see - a practice called 'shisa kanko' that reduces errors by up to 85%.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -158,13 +158,13 @@
   {
     "id": 27,
     "fact": "Japanese addresses are based on blocks rather than streets - buildings are numbered by the order they were built, not their location.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
     "id": 28,
     "fact": "There are special 'women-only' train cars in Japan during rush hour to prevent groping - marked with pink signs and available on most major lines.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -182,7 +182,7 @@
   {
     "id": 31,
     "fact": "Japan has 'love hotels' (rabuho) with themed rooms ranging from Hello Kitty to medieval dungeons, renting by the hour or night.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -230,7 +230,7 @@
   {
     "id": 39,
     "fact": "Japan has professional cuddlers you can hire to hold you while you nap - reflecting the country's epidemic of loneliness and touch starvation.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -302,7 +302,7 @@
   {
     "id": 51,
     "fact": "There's a Japanese practice of 'honne and tatemae' - your true feelings (honne) versus your public facade (tatemae) - both are considered valid.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -320,7 +320,7 @@
   {
     "id": 54,
     "fact": "Japan has a highway that passes directly through a building in Osaka - the Gate Tower Building has floors 5-7 as a tunnel.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -440,13 +440,13 @@
   {
     "id": 74,
     "fact": "Japan's vending machines have earthquake sensors that automatically release free drinks during major earthquakes as emergency supplies.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
     "id": 75,
     "fact": "The word 'enryo' (遠慮) describes polite restraint - like declining seconds even when hungry, to not be a burden.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -506,7 +506,7 @@
   {
     "id": 85,
     "fact": "The word 'otsukaresama' (お疲れ様) literally means 'you're tired' but is used to acknowledge someone's hard work.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -530,7 +530,7 @@
   {
     "id": 89,
     "fact": "The concept of 'kawaisa' (可愛さ) or cuteness is so culturally important that it influences everything from government mascots to warning signs.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -578,7 +578,7 @@
   {
     "id": 97,
     "fact": "The word 'majime' (真面目) describes someone earnest and sincere - a highly valued personality trait in Japanese culture.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -596,7 +596,7 @@
   {
     "id": 100,
     "fact": "Japan's Shinkansen (bullet train) has a cleaning crew that fully cleans each car in exactly 7 minutes between arrivals and departures.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -608,7 +608,7 @@
   {
     "id": 102,
     "fact": "Japan has professional apology agencies where you can hire someone to apologize on your behalf for serious personal matters.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -620,7 +620,7 @@
   {
     "id": 104,
     "fact": "Japan has train 'pushers' (oshiya) whose job is to physically push passengers into overcrowded trains during rush hour.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -680,7 +680,7 @@
   {
     "id": 114,
     "fact": "Japan has an 'everlasting love' museum in Hokkaido dedicated to sculptor Takeichi Nishimura's 60-year love for his wife.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -728,7 +728,7 @@
   {
     "id": 122,
     "fact": "Japan has 'anti-lonely death' services that check on elderly living alone and arrange their affairs if they pass away.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -746,7 +746,7 @@
   {
     "id": 125,
     "fact": "The word 'yoroshiku' (よろしく) has no direct translation - it's used for introductions, requests, and meaning 'please treat me well'.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -788,7 +788,7 @@
   {
     "id": 132,
     "fact": "Japan has 'gacha' machines that dispense random collectible toys for 100-500 yen - adults are as obsessed as children.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -812,7 +812,7 @@
   {
     "id": 136,
     "fact": "Japan has an island dedicated entirely to art museums - Naoshima, where Tadao Ando's architecture blends with nature.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -860,7 +860,7 @@
   {
     "id": 144,
     "fact": "Japan has a stone you can lick to predict the weather at Kamigamo Shrine - if it tastes salty, rain is coming.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -890,7 +890,7 @@
   {
     "id": 149,
     "fact": "The word 'shiawase' (幸せ) for happiness originally meant 'what happens' - suggesting happiness is accepting what comes.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -926,7 +926,7 @@
   {
     "id": 155,
     "fact": "There's a Japanese concept 'uchi-soto' (内外) - inside/outside - defining who you're close to versus everyone else.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -974,7 +974,7 @@
   {
     "id": 163,
     "fact": "There's a Japanese word 'komorebi' (木漏れ日) for sunlight filtering through trees - there's no single English word for this.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -986,7 +986,7 @@
   {
     "id": 165,
     "fact": "The word 'ganban' (願番) describes taking turns at a task - cooperation without needing explicit coordination.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1022,7 +1022,7 @@
   {
     "id": 171,
     "fact": "There's a Japanese practice 'kashikomarimashita' (かしこまりました) - the ultra-polite way service staff say 'understood.'",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1046,7 +1046,7 @@
   {
     "id": 175,
     "fact": "There's a Japanese word 'waku-waku' (わくわく) for excited anticipation - the tingly feeling of looking forward to something.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1088,19 +1088,19 @@
   {
     "id": 182,
     "fact": "Japan has over 1,500 earthquakes per year, though most are too small to feel - the country sits on four tectonic plates.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
     "id": 183,
     "fact": "There's a Japanese word 'nakama' (仲間) for companions who are closer than friends but not quite family - a chosen tribe.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
     "id": 184,
     "fact": "Japan has 'manga kissa' - internet cafes with private cubicles, free drinks, and vast manga libraries for overnight stays.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1256,7 +1256,7 @@
   {
     "id": 210,
     "fact": "Japan’s 'kotatsu' is a low table with a heater underneath and a blanket, creating a cozy heated nook in winter.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1280,7 +1280,7 @@
   {
     "id": 214,
     "fact": "In many Japanese cities, you can find public 'koban' (交番) — small neighborhood police boxes that help with directions and lost items.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1526,7 +1526,7 @@
   {
     "id": 255,
     "fact": "Japan’s traditional towel, the 'tenugui' (手ぬぐい), is used for drying hands, wrapping gifts, and decorating homes.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1538,13 +1538,13 @@
   {
     "id": 257,
     "fact": "Japan’s 'shugendo' (修験道) is a mountain ascetic tradition combining Shinto, Buddhism, and folk practices.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
     "id": 258,
     "fact": "The phrase 'shoku no shiki' (食の四季) refers to eating with the seasons — menus change to highlight spring, summer, fall, and winter ingredients.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1556,7 +1556,7 @@
   {
     "id": 260,
     "fact": "The Japanese word 'shitsurai' (設え) means arranging a space thoughtfully — from seasonal decor to the placement of tea utensils.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1568,7 +1568,7 @@
   {
     "id": 262,
     "fact": "The term 'yuyake' (夕焼け) means sunset glow, and many schools have songs that reference it as a symbol of going home.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1580,7 +1580,7 @@
   {
     "id": 264,
     "fact": "The word 'kawaigaru' (可愛がる) means to dote on or cherish, often used for pets or younger relatives.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1598,7 +1598,7 @@
   {
     "id": 267,
     "fact": "Japan’s 'hitokoto omikuji' are single-phrase fortune slips meant for quick inspiration or encouragement.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1610,7 +1610,7 @@
   {
     "id": 269,
     "fact": "Japan has 'yukidaruma' (雪だるま) snowman festivals where entire parks fill with glowing snow lanterns.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1646,7 +1646,7 @@
   {
     "id": 275,
     "fact": "Japan’s 'mame maki' Setsubun ritual involves throwing roasted soybeans while shouting 'Oni wa soto! Fuku wa uchi!'.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1670,7 +1670,7 @@
   {
     "id": 279,
     "fact": "Japan’s 'norens' are split fabric curtains hung at shop entrances; colors and symbols often indicate the specialty inside.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1682,7 +1682,7 @@
   {
     "id": 281,
     "fact": "Japan has 'kominka' farmhouses that are renovated into cafes, inns, and galleries while keeping original beams and hearths.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1784,7 +1784,7 @@
   {
     "id": 298,
     "fact": "The term 'kintsugi' (金継ぎ) refers to repairing ceramics with gold, embracing cracks as part of an object’s history.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1802,7 +1802,7 @@
   {
     "id": 301,
     "fact": "Japan’s New Year custom 'hatsumode' (初詣) involves visiting a shrine or temple for the year’s first prayer.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1814,7 +1814,7 @@
   {
     "id": 303,
     "fact": "'Natsukashii' (懐かしい) describes a warm, nostalgic feeling when recalling the past.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1826,7 +1826,7 @@
   {
     "id": 305,
     "fact": "The term 'shibui' (渋い) refers to understated, elegant beauty—often used for subtle flavors or aesthetics.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1904,7 +1904,7 @@
   {
     "id": 318,
     "fact": "The word 'sukiyaki' refers both to the dish and to a style of cooking ingredients at the table.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
