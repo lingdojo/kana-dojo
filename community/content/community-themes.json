@@ -516,16 +516,16 @@
     "secondaryColor": "oklch(65.0% 0.170 15.0 / 1)"
   },
   {
-   "id": "wasabi-punch",
-  "backgroundColor": "oklch(20.0% 0.048 160.0 / 1)",
-  "mainColor": "oklch(72.0% 0.185 145.0 / 1)",
-  "secondaryColor": "oklch(82.0% 0.145 130.0 / 1)"
+    "id": "wasabi-punch",
+    "backgroundColor": "oklch(20.0% 0.048 160.0 / 1)",
+    "mainColor": "oklch(72.0% 0.185 145.0 / 1)",
+    "secondaryColor": "oklch(82.0% 0.145 130.0 / 1)"
   },
   {
-  "id": "kimono-silk",
-  "backgroundColor": "oklch(19.0% 0.048 320.0 / 1)",
-  "mainColor": "oklch(72.0% 0.155 330.0 / 1)",
-  "secondaryColor": "oklch(80.0% 0.125 60.0 / 1)"
+    "id": "kimono-silk",
+    "backgroundColor": "oklch(19.0% 0.048 320.0 / 1)",
+    "mainColor": "oklch(72.0% 0.155 330.0 / 1)",
+    "secondaryColor": "oklch(80.0% 0.125 60.0 / 1)"
   },
   {
     "id": "paper-lantern",
@@ -534,15 +534,21 @@
     "secondaryColor": "oklch(68.0% 0.085 30.0 / 1)"
   },
   {
-  "id": "sea-glass",
-  "backgroundColor": "oklch(96.0% 0.015 210.0 / 1)",
-  "mainColor": "oklch(60.0% 0.135 200.0 / 1)",
-  "secondaryColor": "oklch(78.0% 0.065 100.0 / 1)"
-},
-{
-  "id": "hanabi-festival",
-  "backgroundColor": "oklch(14.0% 0.055 275.0 / 1)",
-  "mainColor": "oklch(85.0% 0.200 35.0 / 1)",
-  "secondaryColor": "oklch(78.0% 0.215 310.0 / 1)"
-}
-  ]
+    "id": "sea-glass",
+    "backgroundColor": "oklch(96.0% 0.015 210.0 / 1)",
+    "mainColor": "oklch(60.0% 0.135 200.0 / 1)",
+    "secondaryColor": "oklch(78.0% 0.065 100.0 / 1)"
+  },
+  {
+    "id": "hanabi-festival",
+    "backgroundColor": "oklch(14.0% 0.055 275.0 / 1)",
+    "mainColor": "oklch(85.0% 0.200 35.0 / 1)",
+    "secondaryColor": "oklch(78.0% 0.215 310.0 / 1)"
+  },
+  {
+    "id": "driftwood-brown",
+    "backgroundColor": "oklch(22.0% 0.020 55.0 / 1)",
+    "mainColor": "oklch(68.0% 0.085 65.0 / 1)",
+    "secondaryColor": "oklch(58.0% 0.060 45.0 / 1)"
+  }
+]
