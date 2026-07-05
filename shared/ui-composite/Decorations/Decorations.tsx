@@ -329,17 +329,31 @@ StaticChar.displayName = 'StaticChar';
 // MAIN COMPONENT
 // ============================================================================
 
-const Decorations = ({
-  expandDecorations,
-  forceShow = false,
-  interactive = false,
-  context = 'main-menu',
-}: {
+interface DecorationsProps {
   expandDecorations: boolean;
   forceShow?: boolean;
   interactive?: boolean;
   context?: 'main-menu' | 'mode-setup' | 'streak-milestone';
-}) => {
+}
+
+const Decorations = (props: DecorationsProps) => {
+  const isDisabledForContext =
+    (props.context === 'mode-setup' && !ENABLE_MODE_SETUP_DECORATIONS) ||
+    (props.context === 'streak-milestone' &&
+      !ENABLE_STREAK_MILESTONE_DECORATIONS);
+
+  if (isDisabledForContext) {
+    return null;
+  }
+
+  return <DecorationsInner {...props} />;
+};
+
+const DecorationsInner = ({
+  expandDecorations,
+  forceShow = false,
+  interactive = false,
+}: DecorationsProps) => {
   const [styles, setStyles] = useState<CharacterStyle[]>([]);
   const [visibleCount, setVisibleCount] = useState<number>(() =>
     calculateVisibleCount(),
@@ -409,6 +423,8 @@ const Decorations = ({
 
   // Inject animation keyframes once when component mounts (for interactive mode only)
   useEffect(() => {
+    if (!interactive) return;
+
     const styleId = 'decorations-animation-keyframes';
     // Only inject if not already present
     if (document.getElementById(styleId)) return;
@@ -425,7 +441,7 @@ const Decorations = ({
         existingStyle.remove();
       }
     };
-  }, []);
+  }, [interactive]);
 
   // Memoize grid content - using separate components for interactive vs static
   const gridContent = useMemo(() => {
@@ -453,13 +469,6 @@ const Decorations = ({
       ));
     }
   }, [styles, interactive, handleExplode, layoutConfig.cellSize]);
-
-  if (
-    (context === 'mode-setup' && !ENABLE_MODE_SETUP_DECORATIONS) ||
-    (context === 'streak-milestone' && !ENABLE_STREAK_MILESTONE_DECORATIONS)
-  ) {
-    return null;
-  }
 
   if (styles.length === 0) return null;
 
