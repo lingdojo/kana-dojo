@@ -538,5 +538,11 @@
   "backgroundColor": "oklch(96.0% 0.015 210.0 / 1)",
   "mainColor": "oklch(60.0% 0.135 200.0 / 1)",
   "secondaryColor": "oklch(78.0% 0.065 100.0 / 1)"
+},
+{
+  "id": "hanabi-festival",
+  "backgroundColor": "oklch(14.0% 0.055 275.0 / 1)",
+  "mainColor": "oklch(85.0% 0.200 35.0 / 1)",
+  "secondaryColor": "oklch(78.0% 0.215 310.0 / 1)"
 }
   ]
