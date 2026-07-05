@@ -534,45 +534,51 @@
     "meaning": "Two heads are better than one"
   },
   {
-  "japanese": "虎穴に入らずんば虎子を得ず",
-  "romaji": "Koketsu ni irazunba koji wo ezu",
-  "english": "If you don't enter the tiger's den, you can't get the cub",
-  "meaning": "Nothing ventured, nothing gained"
-},
+    "japanese": "虎穴に入らずんば虎子を得ず",
+    "romaji": "Koketsu ni irazunba koji wo ezu",
+    "english": "If you don't enter the tiger's den, you can't get the cub",
+    "meaning": "Nothing ventured, nothing gained"
+  },
   {
-  "japanese": "口は災いの元",
-  "romaji": "Kuchi wa wazawai no moto",
-  "english": "The mouth is the source of disaster",
-  "meaning": "Careless speech can cause trouble"
-},
+    "japanese": "口は災いの元",
+    "romaji": "Kuchi wa wazawai no moto",
+    "english": "The mouth is the source of disaster",
+    "meaning": "Careless speech can cause trouble"
+  },
   {
-  "japanese": "七転び八起き",
-  "romaji": "Nanakorobi yaoki",
-  "english": "Fall seven times, get up eight",
-  "meaning": "Never give up"
-},
-{
-  "japanese": "泣きっ面に蜂",
-  "romaji": "Naki tsura ni hachi",
-  "english": "A bee on a crying face",
-  "meaning": "Misfortune piles up"
-},
-{
-  "japanese": "三人寄れば文殊の知恵",
-  "romaji": "Sannin yoreba monju no chie",
-  "english": "Three people together have the wisdom of Monju",
-  "meaning": "Two heads are better than one"
-},
-{
-  "japanese": "為せば成る",
-  "romaji": "Naseba naru",
-  "english": "If you try, you can achieve it",
-  "meaning": "Anything is possible if you believe in yourself and take action"
-},
-{
-  "japanese": "十人十色",
-  "romaji": "Junin toiro",
-  "english": "Ten people, ten colors",
-  "meaning": "To each their own; different people have different tastes"
-}
+    "japanese": "七転び八起き",
+    "romaji": "Nanakorobi yaoki",
+    "english": "Fall seven times, get up eight",
+    "meaning": "Never give up"
+  },
+  {
+    "japanese": "泣きっ面に蜂",
+    "romaji": "Naki tsura ni hachi",
+    "english": "A bee on a crying face",
+    "meaning": "Misfortune piles up"
+  },
+  {
+    "japanese": "三人寄れば文殊の知恵",
+    "romaji": "Sannin yoreba monju no chie",
+    "english": "Three people together have the wisdom of Monju",
+    "meaning": "Two heads are better than one"
+  },
+  {
+    "japanese": "為せば成る",
+    "romaji": "Naseba naru",
+    "english": "If you try, you can achieve it",
+    "meaning": "Anything is possible if you believe in yourself and take action"
+  },
+  {
+    "japanese": "十人十色",
+    "romaji": "Junin toiro",
+    "english": "Ten people, ten colors",
+    "meaning": "To each their own; different people have different tastes"
+  },
+  {
+    "japanese": "虎穴に入らずんば虎子を得ず",
+    "romaji": "Koketsu ni irazunba koji wo ezu",
+    "english": "You can’t get the tiger’s cub without entering the lair",
+    "meaning": "No reward without risk"
+  }
 ]

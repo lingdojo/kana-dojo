@@ -122,7 +122,7 @@
   {
     "id": 21,
     "fact": "Japan's oldest company, Kongō Gumi, was a construction company that operated continuously for 1,428 years (578-2006 CE) before being absorbed.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -182,7 +182,7 @@
   {
     "id": 31,
     "fact": "Japan has 'love hotels' (rabuho) with themed rooms ranging from Hello Kitty to medieval dungeons, renting by the hour or night.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -248,7 +248,7 @@
   {
     "id": 42,
     "fact": "Japan's elderly population is so large that adult diapers outsell baby diapers - reflecting one of the world's fastest-aging societies.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -326,7 +326,7 @@
   {
     "id": 55,
     "fact": "The concept of 'omotenashi' (おもてなし) is Japanese hospitality that anticipates needs before guests even realize them.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -494,7 +494,7 @@
   {
     "id": 83,
     "fact": "There's a Japanese word 'nekojita' (猫舌) meaning 'cat tongue' - someone who can't eat or drink hot things.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -548,7 +548,7 @@
   {
     "id": 92,
     "fact": "Japan's National Apology Day falls on August 15th, when the nation reflects on World War II and its aftermath.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -686,7 +686,7 @@
   {
     "id": 115,
     "fact": "There's a Japanese concept 'mujo' (無常) - impermanence - reminding that nothing lasts, making each moment precious.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1154,7 +1154,7 @@
   {
     "id": 193,
     "fact": "The word 'kawai-sou' (可哀想) means pitiable but with genuine sympathy - you feel sorry for someone's circumstances.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1226,7 +1226,7 @@
   {
     "id": 205,
     "fact": "Japan has 'eki-stamps' (駅スタンプ) — collectible rubber stamps at train stations that travelers gather like a passport.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1682,13 +1682,13 @@
   {
     "id": 281,
     "fact": "Japan has 'kominka' farmhouses that are renovated into cafes, inns, and galleries while keeping original beams and hearths.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 282,
     "fact": "The word 'utsuroi' (移ろい) describes subtle transitions, like shifting seasons or fading light.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1730,7 +1730,7 @@
   {
     "id": 289,
     "fact": "Japan has 'sento' public bathhouses that predate modern plumbing and still serve as neighborhood gathering spots.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1754,7 +1754,7 @@
   {
     "id": 293,
     "fact": "Japan has a tradition called 'hajimete no omiyage' where travelers bring their first souvenir to share with family or coworkers.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

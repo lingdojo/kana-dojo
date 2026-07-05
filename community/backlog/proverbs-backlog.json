@@ -132,7 +132,7 @@
     "english": "Three people together have the wisdom of Monju",
     "meaning": "Two heads are better than one",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 16,
@@ -168,7 +168,7 @@
     "english": "Even a walking dog will hit a stick",
     "meaning": "Try anything and you might get lucky (or unlucky)",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 20,
@@ -258,7 +258,7 @@
     "english": "One time, one meeting",
     "meaning": "Treasure every encounter, for it will never recur",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 30,
@@ -636,7 +636,7 @@
     "english": "An iron club to an ogre",
     "meaning": "Making someone strong even stronger",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 72,
@@ -654,7 +654,7 @@
     "english": "Do laundry while the ogre is away",
     "meaning": "Take advantage of someone's absence",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 74,
@@ -717,7 +717,7 @@
     "english": "The moon and a turtle",
     "meaning": "Vast difference; not comparable",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 81,
@@ -771,7 +771,7 @@
     "english": "Put care into care",
     "meaning": "Double-check; be extra careful",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 87,
@@ -1185,7 +1185,7 @@
     "english": "If in a hurry, go around",
     "meaning": "The safer path can be faster",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 133,
@@ -1284,7 +1284,7 @@
     "english": "Three people together have the wisdom of Monju",
     "meaning": "Two heads are better than one",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 144,
@@ -1356,7 +1356,7 @@
     "english": "After the rain, the ground hardens",
     "meaning": "Hard times build resilience",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 152,
@@ -1401,7 +1401,7 @@
     "english": "Even monkeys fall from trees",
     "meaning": "Experts make mistakes",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 157,
@@ -1410,7 +1410,7 @@
     "english": "Spilled water doesn’t return to the tray",
     "meaning": "What’s done is done",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 158,
@@ -1581,7 +1581,7 @@
     "english": "Mochi should be made by the mochi shop",
     "meaning": "Leave it to the experts",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 177,

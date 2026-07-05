@@ -39,7 +39,7 @@
     "id": 7,
     "text": "\"〜たことがある\" expresses past experience, like \"have done\" something before.",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 8,
@@ -146,7 +146,7 @@
   {
     "id": 25,
     "text": "\"〜たところ\" can mean \"just did\" something and observed a result.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -225,7 +225,7 @@
     "id": 38,
     "text": "\"〜に違いない\" means \"must be\" or \"no doubt\".",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 39,
@@ -290,7 +290,7 @@
   {
     "id": 49,
     "text": "\"〜ながらも\" means \"even while\" or \"though\" (contrast).",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -327,7 +327,7 @@
     "id": 55,
     "text": "\"〜ば〜ほど\" means \"the more... the more...\".",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 56,
@@ -374,7 +374,7 @@
   {
     "id": 63,
     "text": "\"〜に比べて\" means \"compared to...\".",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -387,7 +387,7 @@
     "id": 65,
     "text": "\"〜に応じて\" means \"depending on...\".",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 66,
@@ -512,7 +512,7 @@
   {
     "id": 86,
     "text": "Use \"〜です/〜ます\" for polite statements; it's the standard polite ending for everyday conversation. (practice variation 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -536,7 +536,7 @@
   {
     "id": 90,
     "text": "\"〜てはいけません\" means \"must not\" and is used for prohibitions. (practice variation 5)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -704,7 +704,7 @@
   {
     "id": 118,
     "text": "\"〜ていく/〜てくる\" shows direction or change over time, like \"will start\" or \"have been\". (practice variation 33)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -794,13 +794,13 @@
   {
     "id": 133,
     "text": "\"〜そうだ\" can indicate appearance, like \"it looks like\". (practice variation 48)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 134,
     "text": "\"〜ながらも\" means \"even while\" or \"though\" (contrast). (practice variation 49)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

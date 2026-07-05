@@ -136,7 +136,7 @@
     "english": "I will transcend humanity!",
     "anime": "JoJo's Bizarre Adventure: Battle Tendency",
     "character": "Kars",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -286,7 +286,7 @@
     "english": "Mama mama mama.",
     "anime": "One Piece",
     "character": "Charlotte Linlin (Big Mom)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -586,7 +586,7 @@
     "english": "Useless! Useless! Useless! (alt wording 7)",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "DIO",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -756,7 +756,7 @@
     "english": "I think you should just laugh. (alt wording 24)",
     "anime": "Neon Genesis Evangelion",
     "character": "Rei Ayanami",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -936,7 +936,7 @@
     "english": "I'm just a hero for fun. (alt wording 42)",
     "anime": "One Punch Man",
     "character": "Saitama",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -956,7 +956,7 @@
     "english": "I will become the god of the new world. (alt wording 44)",
     "anime": "Death Note",
     "character": "Light Yagami",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -966,7 +966,7 @@
     "english": "Only those prepared to be shot should pull the trigger. (alt wording 45)",
     "anime": "Code Geass: Lelouch of the Rebellion",
     "character": "Lelouch vi Britannia",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -976,7 +976,7 @@
     "english": "Who the hell do you think I am! (alt wording 46)",
     "anime": "Gurren Lagann",
     "character": "Kamina",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -996,7 +996,7 @@
     "english": "I mustn't run away! (alt wording 48)",
     "anime": "Neon Genesis Evangelion",
     "character": "Shinji Ikari",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1146,7 +1146,7 @@
     "english": "You! You're watching me! (alt wording 11) (alt wording 63)",
     "anime": "JoJo's Bizarre Adventure: Stone Ocean",
     "character": "Jolyne Cujoh",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1156,7 +1156,7 @@
     "english": "I'm going to stop being human, JoJo! (alt wording 12) (alt wording 64)",
     "anime": "JoJo's Bizarre Adventure: Phantom Blood",
     "character": "Dio Brando",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1346,7 +1346,7 @@
     "english": "Gurararara! (alt wording 31) (alt wording 83)",
     "anime": "One Piece",
     "character": "Edward Newgate (Whitebeard)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

@@ -664,11 +664,25 @@
   "anime": "My Teen Romantic Comedy SNAFU",
   "character": "Hikigaya Hachiman"
 },
+  {
+  "japanese": "僕は新世界の神となる",
+  "romaji": "Boku wa shin sekai no kami to naru",
+  "english": "I will become the god of the new world. (alt wording 44)",
+  "anime": "Death Note",
+  "character": "Light Yagami"
+},
  {
-  "japanese": "人の夢は終わらねぇ！",
-  "romaji": "Hito no yume wa owaranē!",
-  "english": "People's dreams never end!",
-  "anime": "One Piece",
-  "character": "Marshall D. Teach (Blackbeard)"
- }
+  "japanese": "撃っていいのは撃たれる覚悟がある奴だけだ",
+  "romaji": "Utte ii no wa uterareru kakugo ga aru yatsu dake da",
+  "english": "Only those prepared to be shot should pull the trigger. (alt wording 45)",
+  "anime": "Code Geass: Lelouch of the Rebellion",
+  "character": "Lelouch vi Britannia"
+},
+  {
+  "japanese": "おれは人間を超越する！",
+  "romaji": "Ore wa ningen o chouetsu suru!",
+  "english": "I will transcend humanity!",
+  "anime": "JoJo's Bizarre Adventure: Battle Tendency",
+  "character": "Kars"
+}
 ]
