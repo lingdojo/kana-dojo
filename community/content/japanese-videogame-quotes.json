@@ -327,5 +327,12 @@
     "english": "It's too soon to give up.",
     "game": "Original composition (fan-made, not tied to a specific title)",
     "character": "Narrator"
+  },
+  {
+  "japanese": "勝つと思うな、思えば負けよ",
+  "romaji": "Katsu to omou na, omoeba makeyo",
+  "english": "If you only think of winning, you lose.",
+  "game": "Samurai game proverb line",
+  "character": "Musashi reference"
   }
 ]
