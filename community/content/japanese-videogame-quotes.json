@@ -280,47 +280,47 @@
     "character": "Makoto Naegi"
   },
   {
-  "japanese": "この戦い、負けられない！",
-  "romaji": "Kono tatakai, makerarenai!",
-  "english": "I can't lose this fight!",
-  "game": "Fire Emblem series",
-  "character": "Various protagonists"
-},
-{
-  "japanese": "運命なんて、変えてみせる！",
-  "romaji": "Unmei nante, kaete miseru!",
-  "english": "I'll change destiny!",
-  "game": "Final Fantasy Type-0",
-  "character": "Class Zero"
-},
+    "japanese": "この戦い、負けられない！",
+    "romaji": "Kono tatakai, makerarenai!",
+    "english": "I can't lose this fight!",
+    "game": "Fire Emblem series",
+    "character": "Various protagonists"
+  },
   {
-  "japanese": "この戦い、負けられない！",
-  "romaji": "Kono tatakai, makerarenai!",
-  "english": "I can't lose this fight!",
-  "game": "Fire Emblem series",
-  "character": "Various protagonists"
-}, 
-{
-  "japanese": "それもまた一興",
-  "romaji": "Sore mo mata ikkyo",
-  "english": "That too has its charm.",
-  "game": "Onimusha series",
-  "character": "Nobunaga Oda"
-},
+    "japanese": "運命なんて、変えてみせる！",
+    "romaji": "Unmei nante, kaete miseru!",
+    "english": "I'll change destiny!",
+    "game": "Final Fantasy Type-0",
+    "character": "Class Zero"
+  },
   {
-  "japanese": "行くぞ、みんな！",
-  "romaji": "Iku zo, minna!",
-  "english": "Let's go, everyone!",
-  "game": "Kingdom Hearts series (JP dub)",
-  "character": "Sora"
-},
+    "japanese": "この戦い、負けられない！",
+    "romaji": "Kono tatakai, makerarenai!",
+    "english": "I can't lose this fight!",
+    "game": "Fire Emblem series",
+    "character": "Various protagonists"
+  },
   {
-  "japanese": "運命なんて、変えてみせる！",
-  "romaji": "Unmei nante, kaete miseru!",
-  "english": "I'll change destiny!",
-  "game": "Final Fantasy Type-0",
-  "character": "Class Zero"
-},
+    "japanese": "それもまた一興",
+    "romaji": "Sore mo mata ikkyo",
+    "english": "That too has its charm.",
+    "game": "Onimusha series",
+    "character": "Nobunaga Oda"
+  },
+  {
+    "japanese": "行くぞ、みんな！",
+    "romaji": "Iku zo, minna!",
+    "english": "Let's go, everyone!",
+    "game": "Kingdom Hearts series (JP dub)",
+    "character": "Sora"
+  },
+  {
+    "japanese": "運命なんて、変えてみせる！",
+    "romaji": "Unmei nante, kaete miseru!",
+    "english": "I'll change destiny!",
+    "game": "Final Fantasy Type-0",
+    "character": "Class Zero"
+  },
   {
     "japanese": "諦めるのはまだ早い",
     "romaji": "Akirameru no wa mada hayai",
@@ -329,10 +329,17 @@
     "character": "Narrator"
   },
   {
-  "japanese": "勝つと思うな、思えば負けよ",
-  "romaji": "Katsu to omou na, omoeba makeyo",
-  "english": "If you only think of winning, you lose.",
-  "game": "Samurai game proverb line",
-  "character": "Musashi reference"
+    "japanese": "勝つと思うな、思えば負けよ",
+    "romaji": "Katsu to omou na, omoeba makeyo",
+    "english": "If you only think of winning, you lose.",
+    "game": "Samurai game proverb line",
+    "character": "Musashi reference"
+  },
+  {
+    "japanese": "世界を救うって、そういうことだろ？",
+    "romaji": "Sekai o sukuu tte, sou iu koto daro?",
+    "english": "Saving the world means doing this, right?",
+    "game": "Persona 5 Strikers",
+    "character": "Joker"
   }
 ]
