@@ -2,8 +2,8 @@
 export const allLocales = ['en', 'es', 'fr', 'zh'] as const;
 export type AllLocale = (typeof allLocales)[number];
 
-// Active locales (TEMP: Single locale for dev performance)
-export const locales = ['en'] as const; // Change to allLocales for full i18n
+// Active locales
+export const locales = ['en', 'es'] as const;
 export type Locale = (typeof locales)[number];
 
 export const defaultLocale: Locale = 'en';
