@@ -38,7 +38,7 @@
   {
     "id": 7,
     "fact": "Japan has a word 'tarento' (タレント) for TV personalities who are famous simply for being on TV - not actors or musicians, just professional celebrities.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -848,7 +848,7 @@
   {
     "id": 142,
     "fact": "Japan has 'chindonya' - walking advertisements with musicians who dress colorfully and parade through streets promoting businesses.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1052,7 +1052,7 @@
   {
     "id": 176,
     "fact": "Japan has 'gokon' (合コン) - organized group blind dates where equal numbers of men and women meet at izakayas.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1070,7 +1070,7 @@
   {
     "id": 179,
     "fact": "There's a Japanese concept 'ningensei' (人間性) meaning humanity or human nature - the qualities that make us human.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

@@ -298,7 +298,7 @@
     "backgroundColor": "oklch(98.0% 0.005 90.0 / 1)",
     "mainColor": "oklch(35.0% 0.165 255.0 / 1)",
     "secondaryColor": "oklch(55.0% 0.145 200.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -540,7 +540,7 @@
     "backgroundColor": "oklch(23.0% 0.048 40.0 / 1)",
     "mainColor": "oklch(85.0% 0.155 55.0 / 1)",
     "secondaryColor": "oklch(72.0% 0.175 25.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -660,8 +660,10 @@
     "backgroundColor": "oklch(16.0% 0.055 270.0 / 1)",
     "mainColor": "oklch(72.0% 0.195 220.0 / 1)",
     "secondaryColor": "oklch(68.0% 0.205 30.0 / 1)",
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": false,
+    "completedBy": "ka1031",
+    "completedPR": 23423
   },
   {
     "id": "bamboo-forest",
@@ -1582,7 +1584,7 @@
     "backgroundColor": "oklch(22.0% 0.010 240.0 / 1)",
     "mainColor": "oklch(78.0% 0.030 220.0 / 1)",
     "secondaryColor": "oklch(65.0% 0.040 260.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

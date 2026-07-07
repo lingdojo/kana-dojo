@@ -128,7 +128,7 @@
   {
     "id": 22,
     "text": "\"〜ても\" means \"even if\" or \"even though\".",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -471,7 +471,7 @@
     "id": 79,
     "text": "\"〜にすぎない\" means \"no more than...\".",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 80,
@@ -501,7 +501,7 @@
     "id": 84,
     "text": "\"〜を通して\" means \"through / throughout...\".",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 85,
@@ -548,7 +548,7 @@
   {
     "id": 92,
     "text": "\"〜たことがある\" expresses past experience, like \"have done\" something before. (practice variation 7)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

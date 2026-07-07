@@ -248,7 +248,7 @@
     "dont": "タオルを湯船に入れる",
     "note": "共同浴場の基本ルール。",
     "id": 28,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -662,7 +662,7 @@
     "dont": "初対面でタメ口を使う",
     "note": "距離感が縮まるまでは敬語が無難。",
     "id": 74,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -698,7 +698,7 @@
     "dont": "笑いながら浅く頭を下げる",
     "note": "丁寧さは姿勢で伝わる。",
     "id": 78,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

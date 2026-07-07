@@ -46,7 +46,7 @@
     "english": "I, Giorno Giovanna, have a dream!",
     "anime": "JoJo's Bizarre Adventure: Golden Wind",
     "character": "Giorno Giovanna",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -256,7 +256,7 @@
     "english": "This world is cruel... yet so beautiful.",
     "anime": "Attack on Titan",
     "character": "Mikasa Ackerman",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -736,7 +736,7 @@
     "english": "Not yet! It's not over yet! (alt wording 22)",
     "anime": "Mobile Suit Gundam",
     "character": "Char Aznable",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

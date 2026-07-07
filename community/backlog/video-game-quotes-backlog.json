@@ -76,7 +76,7 @@
     "game": "Kingdom Hearts series (JP dub)",
     "character": "Sora",
     "id": 8,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -556,7 +556,7 @@
     "game": "Onimusha series",
     "character": "Nobunaga Oda",
     "id": 56,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1036,7 +1036,7 @@
     "game": "Steins;Gate: My Darling's Embrace",
     "character": "Rintaro Okabe",
     "id": 104,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
