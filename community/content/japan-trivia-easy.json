@@ -315,5 +315,16 @@
     "Kobe"
   ],
   "correctIndex": 0
+},
+  {
+  "question": "Which Japanese food is made from fermented soybeans and has a sticky texture? (Community variation 7)",
+  "difficulty": "easy",
+  "answers": [
+    "Miso",
+    "Natto",
+    "Tofu",
+    "Udon"
+  ],
+  "correctIndex": 1
 }
 ]
