@@ -293,5 +293,38 @@
     "Oyasumi"
   ],
   "correctIndex": 0
+},
+{
+  "question": "What is Japan’s currency called?",
+  "difficulty": "easy",
+  "answers": [
+    "Yen",
+    "Won",
+    "Yuan",
+    "Ringgit"
+  ],
+  "correctIndex": 0
+},
+  {
+  "question": "Which city is famous for the Gion Matsuri festival?",
+  "difficulty": "easy",
+  "answers": [
+    "Kyoto",
+    "Sendai",
+    "Sapporo",
+    "Kobe"
+  ],
+  "correctIndex": 0
+},
+  {
+  "question": "Which Japanese food is made from fermented soybeans and has a sticky texture? (Community variation 7)",
+  "difficulty": "easy",
+  "answers": [
+    "Miso",
+    "Natto",
+    "Tofu",
+    "Udon"
+  ],
+  "correctIndex": 1
 }
 ]
