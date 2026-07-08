@@ -95,7 +95,7 @@
     "dont": "値段を強調する",
     "note": "謙遜表現が好まれる。",
     "id": 11,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -140,7 +140,7 @@
     "dont": "先に一人で飲み始める",
     "note": "場の一体感を重視。",
     "id": 16,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -194,7 +194,7 @@
     "dont": "土足で室内に上がる",
     "note": "家庭・旅館では基本マナー。",
     "id": 22,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -248,7 +248,7 @@
     "dont": "タオルを湯船に入れる",
     "note": "共同浴場の基本ルール。",
     "id": 28,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -284,7 +284,7 @@
     "dont": "無連絡で遅れて言い訳を続ける",
     "note": "先に謝罪が基本。",
     "id": 32,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -329,7 +329,7 @@
     "dont": "ゴミを放置する",
     "note": "ゴミ箱が少ない地域がある。",
     "id": 37,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -356,7 +356,7 @@
     "dont": "匂いの強いものを持参する",
     "note": "分けやすさが好まれる。",
     "id": 40,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -671,7 +671,7 @@
     "dont": "現金を投げるように渡す",
     "note": "丁寧で非接触な受け渡し。",
     "id": 75,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -770,7 +770,7 @@
     "dont": "ご飯に箸を立てる",
     "note": "立て箸は弔事連想のため避ける。",
     "id": 86,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -806,7 +806,7 @@
     "dont": "割り込む",
     "note": "駅・店頭では順番厳守。",
     "id": 90,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1049,7 +1049,7 @@
     "dont": "ゴミを放置する",
     "note": "ゴミ箱が少ない地域がある。",
     "id": 117,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
