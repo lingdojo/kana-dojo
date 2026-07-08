@@ -341,5 +341,33 @@
     "english": "Saving the world means doing this, right?",
     "game": "Persona 5 Strikers",
     "character": "Joker"
+  },
+  {
+    "japanese": "仲間を信じろ",
+    "romaji": "Nakama o shinjiro",
+    "english": "Believe in your comrades.",
+    "game": "Dragon Quest series",
+    "character": "Recurring command voice"
+  },
+  {
+    "japanese": "戦争は変わった",
+    "romaji": "Sensou wa kawatta",
+    "english": "War has changed.",
+    "game": "Metal Gear Solid 4: Guns of the Patriots",
+    "character": "Solid Snake"
+  },
+  {
+  "japanese": "冒険の始まりだ！",
+  "romaji": "Bouken no hajimari da!",
+  "english": "This is the beginning of the adventure!",
+  "game": "Dragon Quest XI",
+  "character": "Hero / party lines"
+},
+  {
+  "japanese": "まだまだだね",
+  "romaji": "Mada mada da ne",
+  "english": "You still have lots more to work on.",
+  "game": "The Prince of Tennis: Sweat & Tears 2",
+  "character": "Ryoma Echizen"
   }
 ]
