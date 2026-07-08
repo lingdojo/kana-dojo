@@ -592,5 +592,10 @@
   "backgroundColor": "oklch(15.0% 0.055 310.0 / 1)",
   "mainColor": "oklch(80.0% 0.210 345.0 / 1)",
   "secondaryColor": "oklch(85.0% 0.175 180.0 / 1)"
+  },
+  { "id": "umami-miso",
+  "backgroundColor": "oklch(22.0% 0.028 55.0 / 1)",
+  "mainColor": "oklch(72.0% 0.095 65.0 / 1)", 
+  "secondaryColor": "oklch(60.0% 0.125 30.0 / 1)"
   }
 ]
