@@ -553,143 +553,150 @@
     "character": "Rei Ayanami"
   },
   {
-  "japanese": "やれやれだぜ",
-  "romaji": "Yare yare da ze",
-  "english": "Good grief. (alt wording 6)",
-  "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
-  "character": "Jotaro Kujo"
-},
-{
-  "japanese": "オレ様の美技にブギウギ",
-  "romaji": "Ore-sama no bigi ni bugiugi",
-  "english": "Dance to my beautiful technique!",
-  "anime": "The Prince of Tennis",
-  "character": "Keigo Atobe"
-}, 
-{
-  "japanese": "グララララ",
-  "romaji": "Gurararara",
-  "english": "Gurararara! (alt wording 31) (alt wording 83)",
-  "anime": "One Piece",
-  "character": "Edward Newgate (Whitebeard)"
-},
+    "japanese": "やれやれだぜ",
+    "romaji": "Yare yare da ze",
+    "english": "Good grief. (alt wording 6)",
+    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+    "character": "Jotaro Kujo"
+  },
   {
-  "japanese": "このジョルノ・ジョバァーナには夢がある！",
-  "romaji": "Kono Joruno Jobana ni wa yume ga aru!",
-  "english": "I, Giorno Giovanna, have a dream! (alt wording 5) (alt wording 57)",
-  "anime": "JoJo's Bizarre Adventure: Golden Wind",
-  "character": "Giorno Giovanna"
-},
-{
-  "japanese": "だが断る",
-  "romaji": "Daga kotowaru",
-  "english": "But I refuse. (alt wording 4)",
-  "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
-  "character": "Rohan Kishibe"
-},
-{
-  "japanese": "マママママ",
-  "romaji": "Mama mama mama",
-  "english": "Mama mama mama. (alt wording 29) (alt wording 81)",
-  "anime": "One Piece",
-  "character": "Charlotte Linlin (Big Mom)"
-},
-{
-  "japanese": "無駄無駄無駄無駄無駄！",
-  "romaji": "Muda muda muda muda muda!",
-  "english": "Useless! Useless! Useless! (alt wording 7)",
-  "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
-  "character": "DIO"
-},
-{
-  "japanese": "諦めるという言葉は俺の辞書にない",
-  "romaji": "Akirameru to iu kotoba wa ore no jisho ni nai",
-  "english": "The word 'give up' isn't in my dictionary.",
-  "anime": "Black Clover",
-  "character": "Asta"
-},
-{
-  "japanese": "痛みを伴わない教訓には意味がない",
-  "romaji": "Itami o tomonawanai kyoukun ni wa imi ga nai",
-  "english": "A lesson without pain is meaningless. (alt wording 35)",
-  "anime": "Fullmetal Alchemist: Brotherhood",
-  "character": "Edward Elric"
-},
-{
-  "japanese": "世界は残酷だ…それでも美しい",
-  "romaji": "Sekai wa zankoku da... soredemo utsukushii",
-  "english": "This world is cruel... yet so beautiful. (alt wording 26) (alt wording 78)",
-  "anime": "Attack on Titan",
-  "character": "Mikasa Ackerman"
-},
-{
-  "japanese": "私、面白いでしょ！？",
-  "romaji": "Watashi, omoshiroi desho!?",
-  "english": "I'm Charming, Aren't I?!",
-  "anime": "Chainsaw Man",
-  "character": "Asa"
-},
-{
-  "japanese": "君たちにとって『人間』ってなんだ？",
-  "romaji": "Kimitachi ni totte 'ningen' tte nan da?",
-  "english": "What is human to you people?",
-  "anime": "Darling In The Franxx",
-  "character": "Zero Two"
-},
+    "japanese": "オレ様の美技にブギウギ",
+    "romaji": "Ore-sama no bigi ni bugiugi",
+    "english": "Dance to my beautiful technique!",
+    "anime": "The Prince of Tennis",
+    "character": "Keigo Atobe"
+  },
   {
-  "japanese": "撃っていいのは撃たれる覚悟がある奴だけだ",
-  "romaji": "Utte ii no wa uterareru kakugo ga aru yatsu dake da",
-  "english": "Only those prepared to be shot should pull the trigger.",
-  "anime": "Code Geass: Lelouch of the Rebellion",
-  "character": "Lelouch vi Britannia"
-},
+    "japanese": "グララララ",
+    "romaji": "Gurararara",
+    "english": "Gurararara! (alt wording 31) (alt wording 83)",
+    "anime": "One Piece",
+    "character": "Edward Newgate (Whitebeard)"
+  },
   {
-  "japanese": "守るものがある限り、俺は負けない",
-  "romaji": "Mamoru mono ga aru kagiri, ore wa makenai",
-  "english": "As long as I have something to protect, I won't lose. (alt wording 43)",
-  "anime": "Bleach",
-  "character": "Ichigo Kurosaki"
-},
+    "japanese": "このジョルノ・ジョバァーナには夢がある！",
+    "romaji": "Kono Joruno Jobana ni wa yume ga aru!",
+    "english": "I, Giorno Giovanna, have a dream! (alt wording 5) (alt wording 57)",
+    "anime": "JoJo's Bizarre Adventure: Golden Wind",
+    "character": "Giorno Giovanna"
+  },
   {
-  "japanese": "守るものがある限り、俺は負けない",
-  "romaji": "Mamoru mono ga aru kagiri, ore wa makenai",
-  "english": "As long as I have something to protect, I won't lose.",
-  "anime": "Bleach",
-  "character": "Ichigo Kurosaki"
-},
+    "japanese": "だが断る",
+    "romaji": "Daga kotowaru",
+    "english": "But I refuse. (alt wording 4)",
+    "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
+    "character": "Rohan Kishibe"
+  },
   {
-  "japanese": "真実を語ることが残酷であるならば、嘘をつくことは間違いなく優しさの行為に違いない。つまり、優しさとは嘘なのだ。",
-  "romaji": "Shinjitsu o kataru koto ga zankokudearunaraba, usowotsuku koto wa machigainaku yasashi-sa no kōi ni chigainai. Tsumari, yasashi Sato wa usona noda.",
-  "english": "If to be truthful is to be cruel, then lying must surely be an act of kindness. And so, kindness is a lie.",
-  "anime": "My Teen Romantic Comedy SNAFU",
-  "character": "Hikigaya Hachiman"
-},
+    "japanese": "マママママ",
+    "romaji": "Mama mama mama",
+    "english": "Mama mama mama. (alt wording 29) (alt wording 81)",
+    "anime": "One Piece",
+    "character": "Charlotte Linlin (Big Mom)"
+  },
   {
-  "japanese": "僕は新世界の神となる",
-  "romaji": "Boku wa shin sekai no kami to naru",
-  "english": "I will become the god of the new world. (alt wording 44)",
-  "anime": "Death Note",
-  "character": "Light Yagami"
-},
- {
-  "japanese": "撃っていいのは撃たれる覚悟がある奴だけだ",
-  "romaji": "Utte ii no wa uterareru kakugo ga aru yatsu dake da",
-  "english": "Only those prepared to be shot should pull the trigger. (alt wording 45)",
-  "anime": "Code Geass: Lelouch of the Rebellion",
-  "character": "Lelouch vi Britannia"
-},
+    "japanese": "無駄無駄無駄無駄無駄！",
+    "romaji": "Muda muda muda muda muda!",
+    "english": "Useless! Useless! Useless! (alt wording 7)",
+    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+    "character": "DIO"
+  },
   {
-  "japanese": "おれは人間を超越する！",
-  "romaji": "Ore wa ningen o chouetsu suru!",
-  "english": "I will transcend humanity!",
-  "anime": "JoJo's Bizarre Adventure: Battle Tendency",
-  "character": "Kars"
-},
-{
-  "japanese": "グララララ",
-  "romaji": "Gurararara",
-  "english": "Gurararara!",
-  "anime": "One Piece",
-  "character": "Edward Newgate (Whitebeard)"
-}
+    "japanese": "諦めるという言葉は俺の辞書にない",
+    "romaji": "Akirameru to iu kotoba wa ore no jisho ni nai",
+    "english": "The word 'give up' isn't in my dictionary.",
+    "anime": "Black Clover",
+    "character": "Asta"
+  },
+  {
+    "japanese": "痛みを伴わない教訓には意味がない",
+    "romaji": "Itami o tomonawanai kyoukun ni wa imi ga nai",
+    "english": "A lesson without pain is meaningless. (alt wording 35)",
+    "anime": "Fullmetal Alchemist: Brotherhood",
+    "character": "Edward Elric"
+  },
+  {
+    "japanese": "世界は残酷だ…それでも美しい",
+    "romaji": "Sekai wa zankoku da... soredemo utsukushii",
+    "english": "This world is cruel... yet so beautiful. (alt wording 26) (alt wording 78)",
+    "anime": "Attack on Titan",
+    "character": "Mikasa Ackerman"
+  },
+  {
+    "japanese": "私、面白いでしょ！？",
+    "romaji": "Watashi, omoshiroi desho!?",
+    "english": "I'm Charming, Aren't I?!",
+    "anime": "Chainsaw Man",
+    "character": "Asa"
+  },
+  {
+    "japanese": "君たちにとって『人間』ってなんだ？",
+    "romaji": "Kimitachi ni totte 'ningen' tte nan da?",
+    "english": "What is human to you people?",
+    "anime": "Darling In The Franxx",
+    "character": "Zero Two"
+  },
+  {
+    "japanese": "撃っていいのは撃たれる覚悟がある奴だけだ",
+    "romaji": "Utte ii no wa uterareru kakugo ga aru yatsu dake da",
+    "english": "Only those prepared to be shot should pull the trigger.",
+    "anime": "Code Geass: Lelouch of the Rebellion",
+    "character": "Lelouch vi Britannia"
+  },
+  {
+    "japanese": "守るものがある限り、俺は負けない",
+    "romaji": "Mamoru mono ga aru kagiri, ore wa makenai",
+    "english": "As long as I have something to protect, I won't lose. (alt wording 43)",
+    "anime": "Bleach",
+    "character": "Ichigo Kurosaki"
+  },
+  {
+    "japanese": "守るものがある限り、俺は負けない",
+    "romaji": "Mamoru mono ga aru kagiri, ore wa makenai",
+    "english": "As long as I have something to protect, I won't lose.",
+    "anime": "Bleach",
+    "character": "Ichigo Kurosaki"
+  },
+  {
+    "japanese": "真実を語ることが残酷であるならば、嘘をつくことは間違いなく優しさの行為に違いない。つまり、優しさとは嘘なのだ。",
+    "romaji": "Shinjitsu o kataru koto ga zankokudearunaraba, usowotsuku koto wa machigainaku yasashi-sa no kōi ni chigainai. Tsumari, yasashi Sato wa usona noda.",
+    "english": "If to be truthful is to be cruel, then lying must surely be an act of kindness. And so, kindness is a lie.",
+    "anime": "My Teen Romantic Comedy SNAFU",
+    "character": "Hikigaya Hachiman"
+  },
+  {
+    "japanese": "僕は新世界の神となる",
+    "romaji": "Boku wa shin sekai no kami to naru",
+    "english": "I will become the god of the new world. (alt wording 44)",
+    "anime": "Death Note",
+    "character": "Light Yagami"
+  },
+  {
+    "japanese": "撃っていいのは撃たれる覚悟がある奴だけだ",
+    "romaji": "Utte ii no wa uterareru kakugo ga aru yatsu dake da",
+    "english": "Only those prepared to be shot should pull the trigger. (alt wording 45)",
+    "anime": "Code Geass: Lelouch of the Rebellion",
+    "character": "Lelouch vi Britannia"
+  },
+  {
+    "japanese": "おれは人間を超越する！",
+    "romaji": "Ore wa ningen o chouetsu suru!",
+    "english": "I will transcend humanity!",
+    "anime": "JoJo's Bizarre Adventure: Battle Tendency",
+    "character": "Kars"
+  },
+  {
+    "japanese": "グララララ",
+    "romaji": "Gurararara",
+    "english": "Gurararara!",
+    "anime": "One Piece",
+    "character": "Edward Newgate (Whitebeard)"
+  },
+  {
+    "japanese": "ブチャラティ、来た！",
+    "romaji": "Bucharati, kita!",
+    "english": "Bucciarati is here!",
+    "anime": "JoJo's Bizarre Adventure: Golden Wind",
+    "character": "Narancia Ghirga"
+  }
 ]
