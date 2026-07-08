@@ -686,10 +686,17 @@
   "character": "Kars"
 },
 {
-  "japanese": "グララララ",
-  "romaji": "Gurararara",
-  "english": "Gurararara!",
-  "anime": "One Piece",
-  "character": "Edward Newgate (Whitebeard)"
+   "japanese": "グララララ",
+   "romaji": "Gurararara",
+   "english": "Gurararara!",
+   "anime": "One Piece",
+   "character": "Edward Newgate (Whitebeard)"
+},
+{
+  "japanese": "あきらめたらそこで試合終了ですよ…？",
+  "romaji": "Akirametara soko de shiai shuuryou desu yo...?",
+  "english": "If you give up, that's the end of the game.",
+  "anime": "Slam Dunk",
+  "character": "Kaede Rukawa"
 }
 ]
