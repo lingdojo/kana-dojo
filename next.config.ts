@@ -31,14 +31,11 @@ if (posthogServerHost && posthogServerHost !== posthogHost) {
   cspConnectSrc.push(posthogServerHost);
 }
 
-const cspEnforced =
-  "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: blob: https: https://assets.kanadojo.com; font-src 'self' data: https:; connect-src 'self' https:; frame-src 'self' https:; object-src 'none'; base-uri 'self';";
-
-const cspReportOnly = [
+const cspEnforced = [
   "default-src 'self'",
   "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://www.clarity.ms https://challenges.cloudflare.com",
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-  "img-src 'self' data: blob: https: https://assets.kanadojo.com",
+  "img-src 'self' data: blob: https://assets.kanadojo.com",
   "font-src 'self' data: https://fonts.gstatic.com",
   `connect-src ${cspConnectSrc.join(' ')}`,
   "frame-src 'self' https://www.googletagmanager.com https://challenges.cloudflare.com",
@@ -53,7 +50,6 @@ const nextConfig: NextConfig = {
   poweredByHeader: false, // Remove X-Powered-By header for security
   generateEtags: true, // Generate ETags for better caching
 
-  // Disable instrumentation in development
   // instrumentationHook: !isDev,
 
   // Compiler optimizations
@@ -146,10 +142,6 @@ const nextConfig: NextConfig = {
             value: cspEnforced,
           },
           {
-            key: 'Content-Security-Policy-Report-Only',
-            value: cspReportOnly,
-          },
-          {
             key: 'Cross-Origin-Opener-Policy',
             value: 'same-origin-allow-popups',
           },
@@ -221,9 +213,9 @@ export default withSentryConfig(withBundleAnalyzer(withNextIntl(nextConfig)), {
   // For all available options, see:
   // https://www.npmjs.com/package/@sentry/webpack-plugin#options
 
-  org: "zephyr-software",
+  org: 'zephyr-software',
 
-  project: "javascript-nextjs",
+  project: 'javascript-nextjs',
 
   // Only print logs for uploading source maps in CI
   silent: !process.env.CI,
@@ -238,7 +230,7 @@ export default withSentryConfig(withBundleAnalyzer(withNextIntl(nextConfig)), {
   // This can increase your server load as well as your hosting bill.
   // Note: Check that the configured route will not match with your Next.js middleware, otherwise reporting of client-
   // side errors will fail.
-  tunnelRoute: "/monitoring",
+  tunnelRoute: '/monitoring',
 
   webpack: {
     // Enables automatic instrumentation of Vercel Cron Monitors. (Does not yet work with App Router route handlers.)

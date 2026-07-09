@@ -2,13 +2,12 @@
 import * as Sentry from '@sentry/nextjs';
 
 Sentry.init({
-  dsn: 'https://a6f82883d78e424ee7b578556b78743d@o4511608063197184.ingest.us.sentry.io/4511608067981312',
+  dsn: process.env.NEXT_PUBLIC_SENTRY_DSN || process.env.SENTRY_DSN,
   integrations: [Sentry.replayIntegration()],
-  tracesSampleRate: 1,
+  tracesSampleRate: process.env.NODE_ENV === 'production' ? 0.2 : 0,
   enableLogs: true,
   replaysSessionSampleRate: 0.1,
   replaysOnErrorSampleRate: 1.0,
-  sendDefaultPii: true,
 });
 
 export const onRouterTransitionStart = Sentry.captureRouterTransitionStart;
@@ -64,7 +63,7 @@ if (typeof window !== 'undefined' && !sessionStorage.getItem(RELOAD_FLAG)) {
   });
 }
 if (process.env.NODE_ENV === 'development') {
-  console.log('PostHog client instrumentation disabled in development mode.');
+  console.warn('PostHog client instrumentation disabled in development mode.');
 } else if (
   process.env.NODE_ENV === 'production' &&
   process.env.NEXT_PUBLIC_VERCEL_ENV === 'production'

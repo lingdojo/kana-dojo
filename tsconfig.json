@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES2017",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -23,24 +19,12 @@
       }
     ],
     "paths": {
-      "@/*": [
-        "./*"
-      ],
-      "@/entities/*": [
-        "./entities/*"
-      ],
-      "@/features/*": [
-        "./features/*"
-      ],
-      "@/widgets/*": [
-        "./widgets/*"
-      ],
-      "@/shared/*": [
-        "./shared/*"
-      ],
-      "@/core/*": [
-        "./core/*"
-      ]
+      "@/*": ["./*"],
+      "@/entities/*": ["./entities/*"],
+      "@/features/*": ["./features/*"],
+      "@/widgets/*": ["./widgets/*"],
+      "@/shared/*": ["./shared/*"],
+      "@/core/*": ["./core/*"]
     },
     // Performance optimizations
     "assumeChangesOnlyAffectDirectDependencies": true,
@@ -53,7 +37,7 @@
     ".next/types/**/*.ts",
     "tailwind.config.js",
     ".next/dev/types/**/*.ts",
-    ".next/dev/dev/types/**/*.ts"
+    ".next/dev/types/**/*.ts"
   ],
   "exclude": [
     "node_modules",
