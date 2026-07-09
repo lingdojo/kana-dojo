@@ -6,7 +6,7 @@
     "english": "Road roller!",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "DIO",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -46,7 +46,7 @@
     "english": "I, Giorno Giovanna, have a dream!",
     "anime": "JoJo's Bizarre Adventure: Golden Wind",
     "character": "Giorno Giovanna",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -66,7 +66,7 @@
     "english": "Useless! Useless! Useless!",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "DIO",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -76,7 +76,7 @@
     "english": "Ora ora ora ora ora!",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Jotaro Kujo",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -156,7 +156,7 @@
     "english": "But... that's what I like.",
     "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
     "character": "Yoshikage Kira",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -227,7 +227,7 @@
     "anime": "The Prince of Tennis",
     "character": "Keigo Atobe",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 24,
@@ -236,7 +236,7 @@
     "english": "I think you should just laugh.",
     "anime": "Neon Genesis Evangelion",
     "character": "Rei Ayanami",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -366,7 +366,7 @@
     "english": "Don't let anyone else take control of your life and death!",
     "anime": "Demon Slayer: Kimetsu no Yaiba",
     "character": "Tanjiro Kamado",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -407,7 +407,7 @@
     "anime": "Sailor Moon",
     "character": "Usagi Tsukino",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 42,
@@ -417,7 +417,7 @@
     "anime": "One Punch Man",
     "character": "Saitama",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 43,
@@ -427,7 +427,7 @@
     "anime": "Bleach",
     "character": "Ichigo Kurosaki",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 44,
@@ -456,7 +456,7 @@
     "english": "Who the hell do you think I am!",
     "anime": "Gurren Lagann",
     "character": "Kamina",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -496,7 +496,7 @@
     "english": "The word 'give up' isn't in my dictionary.",
     "anime": "Black Clover",
     "character": "Asta",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -526,7 +526,7 @@
     "english": "Road roller! (alt wording 1)",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "DIO",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -556,7 +556,7 @@
     "english": "But I refuse. (alt wording 4)",
     "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
     "character": "Rohan Kishibe",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -576,7 +576,7 @@
     "english": "Good grief. (alt wording 6)",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Jotaro Kujo",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -586,7 +586,7 @@
     "english": "Useless! Useless! Useless! (alt wording 7)",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "DIO",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -616,7 +616,7 @@
     "english": "Next you'll say, 'Good grief!' (alt wording 10)",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Joseph Joestar",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -726,7 +726,7 @@
     "english": "If you give up, that's the end of the game. (alt wording 21)",
     "anime": "Slam Dunk",
     "character": "Kaede Rukawa",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -746,7 +746,7 @@
     "english": "Dance to my beautiful technique! (alt wording 23)",
     "anime": "The Prince of Tennis",
     "character": "Keigo Atobe",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -826,7 +826,7 @@
     "english": "Gurararara! (alt wording 31)",
     "anime": "One Piece",
     "character": "Edward Newgate (Whitebeard)",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -836,7 +836,7 @@
     "english": "Ze ha ha ha! (alt wording 32)",
     "anime": "One Piece",
     "character": "Marshall D. Teach (Blackbeard)",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -866,7 +866,7 @@
     "english": "A lesson without pain is meaningless. (alt wording 35)",
     "anime": "Fullmetal Alchemist: Brotherhood",
     "character": "Edward Elric",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -886,7 +886,7 @@
     "english": "Don't let anyone else take control of your life and death! (alt wording 37)",
     "anime": "Demon Slayer: Kimetsu no Yaiba",
     "character": "Tanjiro Kamado",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1086,7 +1086,7 @@
     "english": "I, Giorno Giovanna, have a dream! (alt wording 5) (alt wording 57)",
     "anime": "JoJo's Bizarre Adventure: Golden Wind",
     "character": "Giorno Giovanna",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1116,7 +1116,7 @@
     "english": "Ora ora ora ora ora! (alt wording 8) (alt wording 60)",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Jotaro Kujo",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1176,7 +1176,7 @@
     "english": "I will transcend humanity! (alt wording 14) (alt wording 66)",
     "anime": "JoJo's Bizarre Adventure: Battle Tendency",
     "character": "Kars",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1216,7 +1216,7 @@
     "english": "You're already dead. (alt wording 18) (alt wording 70)",
     "anime": "Fist of the North Star",
     "character": "Kenshiro",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1276,7 +1276,7 @@
     "english": "I think you should just laugh. (alt wording 24) (alt wording 76)",
     "anime": "Neon Genesis Evangelion",
     "character": "Rei Ayanami",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1286,7 +1286,7 @@
     "english": "I am Gundam! (alt wording 25) (alt wording 77)",
     "anime": "Mobile Suit Gundam 00",
     "character": "Setsuna F. Seiei",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1346,7 +1346,7 @@
     "english": "Gurararara! (alt wording 31) (alt wording 83)",
     "anime": "One Piece",
     "character": "Edward Newgate (Whitebeard)",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {

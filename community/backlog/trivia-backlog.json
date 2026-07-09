@@ -80,7 +80,7 @@
       "Bunraku"
     ],
     "correctIndex": 1,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -137,7 +137,7 @@
     ],
     "correctIndex": 2,
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 11,
@@ -248,7 +248,7 @@
       "Okayama"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -276,7 +276,7 @@
       "Ikebana"
     ],
     "correctIndex": 0,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -332,7 +332,7 @@
       "Naha"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -361,7 +361,7 @@
     ],
     "correctIndex": 1,
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 27,
@@ -458,7 +458,7 @@
       "Deer"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -654,7 +654,7 @@
       "Bering Sea"
     ],
     "correctIndex": 0,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -724,7 +724,7 @@
       "Yatai"
     ],
     "correctIndex": 0,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -738,7 +738,7 @@
       "Mount Haku"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -753,7 +753,7 @@
     ],
     "correctIndex": 0,
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 55,
@@ -781,7 +781,7 @@
     ],
     "correctIndex": 0,
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 57,
@@ -865,7 +865,7 @@
     ],
     "correctIndex": 0,
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 63,
@@ -878,7 +878,7 @@
       "Nagano"
     ],
     "correctIndex": 0,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -920,7 +920,7 @@
       "Kanda Matsuri"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -934,7 +934,7 @@
       "Kyushu"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -949,7 +949,7 @@
     ],
     "correctIndex": 0,
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 69,
@@ -1018,7 +1018,7 @@
       "Goshuin"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1088,7 +1088,7 @@
       "Matsuyama"
     ],
     "correctIndex": 0,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1172,7 +1172,7 @@
       "Shodo"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1284,7 +1284,7 @@
       "Nagoya"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1326,7 +1326,7 @@
       "Mount Tate"
     ],
     "correctIndex": 1,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1424,7 +1424,7 @@
       "Takayama"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1466,7 +1466,7 @@
       "Reversi"
     ],
     "correctIndex": 0,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1620,7 +1620,7 @@
       "Aikido"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1634,7 +1634,7 @@
       "Kiku"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1928,7 +1928,7 @@
       "Origami"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {

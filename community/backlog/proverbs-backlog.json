@@ -24,7 +24,7 @@
     "english": "A frog in a well does not know the great sea",
     "meaning": "Those with limited experience cannot understand the bigger picture",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 4,
@@ -132,7 +132,7 @@
     "english": "Three people together have the wisdom of Monju",
     "meaning": "Two heads are better than one",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 16,
@@ -150,7 +150,7 @@
     "english": "Giving birth is easier than worrying",
     "meaning": "Things are often easier done than worried about",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 18,
@@ -249,7 +249,7 @@
     "english": "Seven falls, eight struggles",
     "meaning": "Going through great pain and struggle",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 29,
@@ -321,7 +321,7 @@
     "english": "The mouth is the source of disaster",
     "meaning": "Careless speech can cause trouble",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 37,
@@ -329,7 +329,7 @@
     "romaji": "Deru kugi wa utareru",
     "english": "The nail that sticks out gets hammered down",
     "meaning": "Those who stand out may be criticized",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -393,7 +393,7 @@
     "english": "Fall seven times, get up eight",
     "meaning": "Never give up",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 45,
@@ -438,7 +438,7 @@
     "english": "Early rising is worth three coins",
     "meaning": "Good things come from getting up early",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 50,
@@ -456,7 +456,7 @@
     "english": "What happens twice will happen a third time",
     "meaning": "Patterns tend to repeat",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 52,
@@ -528,7 +528,7 @@
     "english": "Hide your head, but not your butt",
     "meaning": "Trying to hide something obvious",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 60,
@@ -690,7 +690,7 @@
     "english": "Peek at the sky through a needle's eye",
     "meaning": "A narrow viewpoint leads to poor judgment",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 78,
@@ -726,7 +726,7 @@
     "english": "A frog's child is a frog",
     "meaning": "Children resemble their parents",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 82,
@@ -761,7 +761,7 @@
     "romaji": "Neko no hitai",
     "english": "A cat's forehead",
     "meaning": "Very small space",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -852,7 +852,7 @@
     "english": "Sometimes losing is winning",
     "meaning": "Conceding can be the best outcome",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 96,
@@ -879,7 +879,7 @@
     "english": "A rice cake falls from the shelf",
     "meaning": "Unexpected good luck",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 99,
@@ -906,7 +906,7 @@
     "english": "Early rising is worth three coins",
     "meaning": "Getting up early brings benefits",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 102,
@@ -915,7 +915,7 @@
     "english": "What happens twice will happen a third time",
     "meaning": "Patterns tend to repeat",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 103,
@@ -933,7 +933,7 @@
     "english": "An inch ahead is darkness",
     "meaning": "The future is uncertain",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 105,
@@ -986,7 +986,7 @@
     "romaji": "En wa inamono aji na mono",
     "english": "Fate is strange yet delightful",
     "meaning": "Unexpected connections can be good",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -996,7 +996,7 @@
     "english": "It's darkest under the lighthouse",
     "meaning": "The obvious is often overlooked",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 112,
@@ -1014,7 +1014,7 @@
     "english": "An iron club to an ogre",
     "meaning": "Adding strength to the strong",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 114,
@@ -1050,7 +1050,7 @@
     "english": "Water on a hot stone",
     "meaning": "A futile effort",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 118,
@@ -1059,7 +1059,7 @@
     "english": "Spilled water will not return to the tray",
     "meaning": "What is done cannot be undone",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 119,
@@ -1068,7 +1068,7 @@
     "english": "One who chases two rabbits catches neither",
     "meaning": "Focus on one thing at a time",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 120,
@@ -1166,7 +1166,7 @@
     "romaji": "Zenin zenka",
     "english": "Good causes bring good results",
     "meaning": "Good deeds lead to good outcomes",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1203,7 +1203,7 @@
     "english": "Once it passes your throat, you forget the heat",
     "meaning": "People forget hardships once they are over",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 135,
@@ -1212,7 +1212,7 @@
     "english": "The mouth is the source of misfortune",
     "meaning": "Careless words cause trouble",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 136,
@@ -1266,7 +1266,7 @@
     "english": "A bee on a crying face",
     "meaning": "Misfortune never comes alone",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 142,
@@ -1401,7 +1401,7 @@
     "english": "Even monkeys fall from trees",
     "meaning": "Experts make mistakes",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 157,
@@ -1464,7 +1464,7 @@
     "english": "Bamboo shoots after rain",
     "meaning": "Things spring up rapidly",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 164,
@@ -1481,7 +1481,7 @@
     "romaji": "Hayaoki wa sanmon no toku",
     "english": "Early rising brings three coins of benefit",
     "meaning": "Wake early for advantage",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1509,7 +1509,7 @@
     "english": "A frog in a well doesn’t know the ocean",
     "meaning": "Limited experience limits perspective",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 169,
@@ -1526,7 +1526,7 @@
     "romaji": "Koketsu ni irazunba koji wo ezu",
     "english": "You can’t get the tiger’s cub without entering the lair",
     "meaning": "No reward without risk",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

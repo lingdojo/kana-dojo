@@ -32,7 +32,7 @@
   {
     "id": 6,
     "fact": "There are over 5.5 million vending machines in Japan - one for every 23 people - selling everything from hot ramen to fresh eggs to underwear.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -86,7 +86,7 @@
   {
     "id": 15,
     "fact": "The Japanese word 'shoganai' (しょうがない) expresses accepting what cannot be changed - a cultural philosophy of graceful resignation.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -98,13 +98,13 @@
   {
     "id": 17,
     "fact": "The Japanese practice 'forest bathing' (shinrin-yoku) has been scientifically proven to lower cortisol levels and boost the immune system.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
     "id": 18,
     "fact": "There are cat cafes in Japan where you pay by the hour to pet cats, but there are also owl cafes, hedgehog cafes, snake cafes, and even penguin bars.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -296,7 +296,7 @@
   {
     "id": 50,
     "fact": "Japanese farmers grow cubic watermelons in glass boxes - not for taste but because they're easier to stack and refrigerate.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -392,7 +392,7 @@
   {
     "id": 66,
     "fact": "Japan has a museum entirely dedicated to parasites in Tokyo, featuring a 9-meter tapeworm as its star attraction.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -434,13 +434,13 @@
   {
     "id": 73,
     "fact": "There's a Japanese word 'kogarashi' (木枯らし) for the specific cold wind that strips leaves from trees in late autumn.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
     "id": 74,
     "fact": "Japan's vending machines have earthquake sensors that automatically release free drinks during major earthquakes as emergency supplies.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -506,7 +506,7 @@
   {
     "id": 85,
     "fact": "The word 'otsukaresama' (お疲れ様) literally means 'you're tired' but is used to acknowledge someone's hard work.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -590,7 +590,7 @@
   {
     "id": 99,
     "fact": "There's a Japanese word 'takumi' (匠) for master craftsmen who dedicate their lives to perfecting a single skill.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -626,7 +626,7 @@
   {
     "id": 105,
     "fact": "The word 'mendokusai' (面倒くさい) describes something too troublesome to deal with - a very commonly used expression.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -674,7 +674,7 @@
   {
     "id": 113,
     "fact": "The word 'jibun' (自分) means 'self' but is also used to mean 'I' in many dialects - showing how identity is tied to selfhood.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -704,7 +704,7 @@
   {
     "id": 118,
     "fact": "Japan has 'cuddle therapy' clinics where you can pay to be held, spooned, or simply have physical human contact.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -788,7 +788,7 @@
   {
     "id": 132,
     "fact": "Japan has 'gacha' machines that dispense random collectible toys for 100-500 yen - adults are as obsessed as children.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -800,7 +800,7 @@
   {
     "id": 134,
     "fact": "Japan has 'standing sleeping' car handles on trains designed for exhausted commuters to rest their heads during travel.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -866,7 +866,7 @@
   {
     "id": 145,
     "fact": "The concept 'taisetsu' (大切) means precious or important - often said about relationships and feelings, not objects.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -884,7 +884,7 @@
   {
     "id": 148,
     "fact": "Japan has 'book-off' stores where you can sell and buy used manga, CDs, games, and electronics at bargain prices.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -932,7 +932,7 @@
   {
     "id": 156,
     "fact": "Japan has a dish called 'natto' - fermented soybeans so stringy and pungent that even many Japanese can't stand it.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1016,13 +1016,13 @@
   {
     "id": 170,
     "fact": "Japan has 'death cafes' where people gather to discuss mortality over tea and cake in a relaxed setting.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 171,
     "fact": "There's a Japanese practice 'kashikomarimashita' (かしこまりました) - the ultra-polite way service staff say 'understood.'",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1160,7 +1160,7 @@
   {
     "id": 194,
     "fact": "Japan has a festival where runners dressed as demons chase and catch women to bless them with good marriage luck.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1184,7 +1184,7 @@
   {
     "id": 198,
     "fact": "Japan has a tradition where couples who break up must return or destroy any gifts received - nothing of the ex remains.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1208,7 +1208,7 @@
   {
     "id": 202,
     "fact": "In Japan, many shops display realistic food replicas called 'shokuhin sampuru' (食品サンプル) to show menu items.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1244,7 +1244,7 @@
   {
     "id": 208,
     "fact": "Japan has an art of wrapping gifts called 'tsutsumi' (包み), where presentation is considered part of the gift.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1268,7 +1268,7 @@
   {
     "id": 212,
     "fact": "The Japanese word 'arigatai' (ありがたい) originally meant 'rare and precious', which is why it became associated with gratitude.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1298,7 +1298,7 @@
   {
     "id": 217,
     "fact": "Japan has 'omikuji' (おみくじ) fortune slips at shrines; bad fortunes are often tied to a tree or rack to leave them behind.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1460,19 +1460,19 @@
   {
     "id": 244,
     "fact": "The term 'machiya' (町家) refers to traditional wooden townhouses with storefronts on the first floor and living spaces above.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
     "id": 245,
     "fact": "Japan’s 'furoshiki' (風呂敷) are reusable cloth wraps that can be folded into bags for groceries or gifts.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 246,
     "fact": "The Japanese word 'nureta' (濡れた) means wet, but 'nureta yuugure' is used poetically for rain-soaked sunsets.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1586,13 +1586,13 @@
   {
     "id": 265,
     "fact": "Japan’s 'shimenawa' (注連縄) sacred ropes are hung at shrines and homes to mark purified, protected spaces.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 266,
     "fact": "The phrase 'okage-sama' (おかげさま) expresses gratitude for unseen support — like thanking the people behind your success.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1604,7 +1604,7 @@
   {
     "id": 268,
     "fact": "The word 'komachi' (小町) is used in place names to reference elegance, inspired by the legendary beauty Ono no Komachi.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1736,7 +1736,7 @@
   {
     "id": 290,
     "fact": "The term 'kigatsuku' (気がつく) means to notice or realize, and is often associated with considerate awareness.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
