@@ -692,5 +692,49 @@
     "Sendai"
   ],
   "correctIndex": 0
+},
+  {
+  "question": "What is the Japanese term for a traditional tea ceremony?",
+  "difficulty": "medium",
+  "answers": [
+    "Sado",
+    "Kado",
+    "Budo",
+    "Shodo"
+  ],
+  "correctIndex": 0
+},
+  {
+  "question": "Which city is known for the historic district of Higashiyama?",
+  "difficulty": "medium",
+  "answers": [
+    "Kanazawa",
+    "Kagoshima",
+    "Nara",
+    "Matsue"
+  ],
+  "correctIndex": 0
+},
+  {
+  "question": "What is the Japanese term for \"new year\"? (Community variation 49)",
+  "difficulty": "medium",
+  "answers": [
+    "Shogatsu",
+    "Obon",
+    "Tanabata",
+    "Hinamatsuri"
+  ],
+  "correctIndex": 0
+},
+  {
+  "question": "Which Japanese island is the southernmost of the four main islands?",
+  "difficulty": "medium",
+  "answers": [
+    "Honshu",
+    "Hokkaido",
+    "Shikoku",
+    "Kyushu"
+  ],
+  "correctIndex": 3
 }
 ]

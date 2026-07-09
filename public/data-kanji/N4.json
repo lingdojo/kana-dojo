@@ -282,7 +282,7 @@
     "id": 19,
     "kanjiChar": "代",
     "onyomi": [
-      "dai ドイ"
+      "dai ダイ"
     ],
     "kunyomi": [
       "ka(wari) か(わり)"
@@ -450,8 +450,8 @@
       "shu シュ"
     ],
     "kunyomi": [
-      "nushi わし",
-      "omo も"
+      "nushi ぬし",
+      "omo おも"
     ],
     "meanings": [
       "lord",
@@ -1124,7 +1124,7 @@
     "id": 71,
     "kanjiChar": "朝",
     "onyomi": [
-      "chou ショウ"
+      "chou チョウ"
     ],
     "kunyomi": [
       "asa あさ"
@@ -1376,7 +1376,7 @@
       "kara から",
       "a(ku) あ(く)",
       "su(ku) す(く)",
-      "muna(shii) (な(しい)"
+      "muna(shii) むな(しい)"
     ],
     "meanings": [
       "empty",
@@ -1956,7 +1956,7 @@
       "ka カ"
     ],
     "kunyomi": [
-      "uta うた ",
+      "uta うた",
       "uta(u) うた(う)"
     ],
     "meanings": [
@@ -2392,7 +2392,7 @@
     ],
     "kunyomi": [
       "ka(su) か(す)",
-      "kashi か(す)"
+      "kashi かし"
     ],
     "meanings": [
       "lend",

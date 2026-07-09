@@ -31,7 +31,7 @@ import type { IWord } from '@/shared/types/interfaces';
 const levelOrder: VocabLevel[] = ['n5', 'n4', 'n3', 'n2', 'n1'];
 const WORDS_PER_SET = 10;
 const VOCAB_COLLAPSED_ROWS_SESSION_KEY = 'vocab-collapsed-rows-by-unit';
-const VOCAB_UNIT_WITH_FEWER_SUBUNITS: VocabLevel = 'n2';
+const VOCAB_EIGHT_SUBUNIT_UNITS: VocabLevel[] = ['n3', 'n2', 'n1'];
 const VOCAB_LENGTHS: Record<VocabLevel, number> = {
   n5: N5VocabLength,
   n4: N4VocabLength,
@@ -104,7 +104,7 @@ const VocabCards = () => {
         activeUnitSummary.levelCount,
       );
       if (
-        activeUnitSummary.name !== VOCAB_UNIT_WITH_FEWER_SUBUNITS ||
+        !VOCAB_EIGHT_SUBUNIT_UNITS.includes(activeUnitSummary.name) ||
         defaultSubunits.length <= 1
       ) {
         return defaultSubunits;
@@ -114,7 +114,7 @@ const VocabCards = () => {
         activeUnitSummary.startLevel,
         activeUnitSummary.levelCount,
         {
-          desiredSubunitCount: defaultSubunits.length - 1,
+          desiredSubunitCount: 8,
         },
       );
     },

@@ -24,7 +24,7 @@
     "english": "A frog in a well does not know the great sea",
     "meaning": "Those with limited experience cannot understand the bigger picture",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 4,
@@ -96,7 +96,7 @@
     "english": "Time is money",
     "meaning": "Time is valuable and should not be wasted",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 12,
@@ -141,7 +141,7 @@
     "english": "Fortune comes to a laughing gate",
     "meaning": "Happiness and good fortune come to those who smile",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 17,
@@ -177,7 +177,7 @@
     "english": "Not knowing is Buddha",
     "meaning": "Ignorance is bliss",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 21,
@@ -258,7 +258,7 @@
     "english": "One time, one meeting",
     "meaning": "Treasure every encounter, for it will never recur",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 30,
@@ -321,7 +321,7 @@
     "english": "The mouth is the source of disaster",
     "meaning": "Careless speech can cause trouble",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 37,
@@ -339,7 +339,7 @@
     "english": "Not knowing is Buddha",
     "meaning": "Ignorance is bliss",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 39,
@@ -366,7 +366,7 @@
     "english": "Carelessness is the greatest enemy",
     "meaning": "Don't let your guard down",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 42,
@@ -438,7 +438,7 @@
     "english": "Early rising is worth three coins",
     "meaning": "Good things come from getting up early",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 50,
@@ -456,7 +456,7 @@
     "english": "What happens twice will happen a third time",
     "meaning": "Patterns tend to repeat",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 52,
@@ -474,7 +474,7 @@
     "english": "Stomach 80 percent full",
     "meaning": "Eat in moderation",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 54,
@@ -528,7 +528,7 @@
     "english": "Hide your head, but not your butt",
     "meaning": "Trying to hide something obvious",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 60,
@@ -582,7 +582,7 @@
     "english": "If you eat poison, eat the plate too",
     "meaning": "If you must do something risky, go all the way",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 66,
@@ -672,7 +672,7 @@
     "english": "Three years on a stone",
     "meaning": "Perseverance will be rewarded",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 76,
@@ -771,7 +771,7 @@
     "english": "Put care into care",
     "meaning": "Double-check; be extra careful",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 87,
@@ -923,7 +923,7 @@
     "romaji": "Nasake wa hito no tame narazu",
     "english": "Kindness is not for others",
     "meaning": "Good deeds return to you",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -942,7 +942,7 @@
     "english": "Haste will spoil things",
     "meaning": "Rushing leads to mistakes",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 106,
@@ -986,7 +986,7 @@
     "romaji": "En wa inamono aji na mono",
     "english": "Fate is strange yet delightful",
     "meaning": "Unexpected connections can be good",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -996,7 +996,7 @@
     "english": "It's darkest under the lighthouse",
     "meaning": "The obvious is often overlooked",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 112,
@@ -1077,7 +1077,7 @@
     "english": "Fortune comes to a laughing gate",
     "meaning": "Happiness brings good fortune",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 121,
@@ -1203,7 +1203,7 @@
     "english": "Once it passes your throat, you forget the heat",
     "meaning": "People forget hardships once they are over",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 135,
@@ -1302,7 +1302,7 @@
     "english": "A cane before falling",
     "meaning": "Prevention is better than cure",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 146,
@@ -1392,7 +1392,7 @@
     "english": "A skilled hawk hides its talons",
     "meaning": "True skill is modest",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 156,
@@ -1401,7 +1401,7 @@
     "english": "Even monkeys fall from trees",
     "meaning": "Experts make mistakes",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 157,
@@ -1419,7 +1419,7 @@
     "english": "Water on a hot stone",
     "meaning": "A futile effort",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 159,
@@ -1446,7 +1446,7 @@
     "english": "An inch ahead is darkness",
     "meaning": "The future is uncertain",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 162,
@@ -1518,7 +1518,7 @@
     "english": "The mouth is the source of misfortune",
     "meaning": "Careless words cause trouble",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 170,
@@ -1526,7 +1526,7 @@
     "romaji": "Koketsu ni irazunba koji wo ezu",
     "english": "You can’t get the tiger’s cub without entering the lair",
     "meaning": "No reward without risk",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1581,7 +1581,7 @@
     "english": "Mochi should be made by the mochi shop",
     "meaning": "Leave it to the experts",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 177,
@@ -1617,6 +1617,6 @@
     "english": "Even a walking dog will hit a stick",
     "meaning": "Acting can lead to luck or trouble",
     "completed": false,
-    "issued": true
+    "issued": false
   }
 ]
