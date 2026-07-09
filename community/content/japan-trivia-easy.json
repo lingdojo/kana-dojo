@@ -326,5 +326,16 @@
     "Udon"
   ],
   "correctIndex": 1
+},
+  {
+  "question": "Which Japanese city is famous for the floating torii gate at Itsukushima Shrine? (Community variation 1)",
+  "difficulty": "easy",
+  "answers": [
+    "Kyoto",
+    "Hiroshima",
+    "Nagasaki",
+    "Kanazawa"
+  ],
+  "correctIndex": 1
 }
 ]
