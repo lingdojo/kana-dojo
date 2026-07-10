@@ -316,5 +316,11 @@
   "backgroundColor": "oklch(19.0% 0.035 250.0 / 1)",
   "mainColor": "oklch(70.0% 0.120 240.0 / 1)",
   "secondaryColor": "oklch(75.0% 0.070 200.0 / 1)"
+ },
+  {
+  "id": "night-market",
+  "backgroundColor": "oklch(16.0% 0.035 35.0 / 1)",
+  "mainColor": "oklch(75.0% 0.165 55.0 / 1)",
+  "secondaryColor": "oklch(62.0% 0.185 20.0 / 1)"
 }
 ]

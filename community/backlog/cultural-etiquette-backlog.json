@@ -95,7 +95,7 @@
     "dont": "値段を強調する",
     "note": "謙遜表現が好まれる。",
     "id": 11,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -401,7 +401,7 @@
     "dont": "食べ終わってすぐ席を立つ",
     "note": "店でも家庭でも使える。",
     "id": 45,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -590,7 +590,7 @@
     "dont": "ご飯に箸を立てる",
     "note": "立て箸は弔事連想のため避ける。",
     "id": 66,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -761,7 +761,7 @@
     "dont": "食べ終わってすぐ席を立つ",
     "note": "店でも家庭でも使える。",
     "id": 85,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -806,7 +806,7 @@
     "dont": "割り込む",
     "note": "駅・店頭では順番厳守。",
     "id": 90,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -878,7 +878,7 @@
     "dont": "笑いながら浅く頭を下げる",
     "note": "丁寧さは姿勢で伝わる。",
     "id": 98,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -986,7 +986,7 @@
     "dont": "割り込む",
     "note": "駅・店頭では順番厳守。",
     "id": 110,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -995,7 +995,7 @@
     "dont": "値段を強調する",
     "note": "謙遜表現が好まれる。",
     "id": 111,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1040,7 +1040,7 @@
     "dont": "先に一人で飲み始める",
     "note": "場の一体感を重視。",
     "id": 116,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

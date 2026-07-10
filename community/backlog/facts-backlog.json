@@ -32,7 +32,7 @@
   {
     "id": 6,
     "fact": "There are over 5.5 million vending machines in Japan - one for every 23 people - selling everything from hot ramen to fresh eggs to underwear.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -308,7 +308,7 @@
   {
     "id": 52,
     "fact": "Japan's Nakizumo festival has sumo wrestlers compete to make babies cry first - crying is believed to ward off evil spirits.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -734,7 +734,7 @@
   {
     "id": 123,
     "fact": "There's a Japanese word 'miryoku' (魅力) for charm or attractiveness that draws people in - the quality that makes things captivating.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -920,7 +920,7 @@
   {
     "id": 154,
     "fact": "Japan has 'purikura' photo booths that digitally enlarge eyes, smooth skin, and add sparkles to your photos automatically.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -932,7 +932,7 @@
   {
     "id": 156,
     "fact": "Japan has a dish called 'natto' - fermented soybeans so stringy and pungent that even many Japanese can't stand it.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -950,7 +950,7 @@
   {
     "id": 159,
     "fact": "There's a Japanese practice 'natsukashii' (懐かしい) experience parties - rooms designed to trigger nostalgia from specific eras.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1118,7 +1118,7 @@
   {
     "id": 187,
     "fact": "There's a Japanese practice 'teineisa' (丁寧さ) meaning politeness shown through meticulous attention to detail.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1706,7 +1706,7 @@
   {
     "id": 285,
     "fact": "Japan’s 'hashioki' are chopstick rests, and many restaurants choose seasonal or themed designs.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1850,7 +1850,7 @@
   {
     "id": 309,
     "fact": "Japan has a word 'tsundoku' (積ん読) for buying books and letting them pile up unread.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
