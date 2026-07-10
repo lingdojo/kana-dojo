@@ -36,7 +36,7 @@
     "game": "Steins;Gate: My Darling's Embrace",
     "character": "Rintaro Okabe",
     "id": 4,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -46,7 +46,7 @@
     "game": "Danganronpa series",
     "character": "Makoto Naegi",
     "id": 5,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -56,7 +56,7 @@
     "game": "JoJo’s Bizarre Adventure: All-Star Battle",
     "character": "Giorno Giovanna",
     "id": 6,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -76,7 +76,7 @@
     "game": "Kingdom Hearts series (JP dub)",
     "character": "Sora",
     "id": 8,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -156,7 +156,7 @@
     "game": "Onimusha series",
     "character": "Nobunaga Oda",
     "id": 16,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -176,7 +176,7 @@
     "game": "The Legend of Zelda: Breath of the Wild (JP)",
     "character": "Revali",
     "id": 18,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -196,7 +196,7 @@
     "game": "Samurai game proverb line",
     "character": "Musashi reference",
     "id": 20,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -226,7 +226,7 @@
     "game": "Tales of the Abyss",
     "character": "Luke fon Fabre",
     "id": 23,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -266,7 +266,7 @@
     "game": "Dragon Quest series",
     "character": "Recurring command voice",
     "id": 27,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -296,7 +296,7 @@
     "game": "Dragon Quest XI",
     "character": "Hero / party lines",
     "id": 30,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -316,7 +316,7 @@
     "game": "Pokemon series",
     "character": "Rival characters",
     "id": 32,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -386,7 +386,7 @@
     "game": "Tales series",
     "character": "Various endings",
     "id": 39,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -426,7 +426,7 @@
     "game": "Tales of the Abyss",
     "character": "Luke fon Fabre",
     "id": 43,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -436,7 +436,7 @@
     "game": "Steins;Gate: My Darling's Embrace",
     "character": "Rintaro Okabe",
     "id": 44,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -456,7 +456,7 @@
     "game": "JoJo’s Bizarre Adventure: All-Star Battle",
     "character": "Giorno Giovanna",
     "id": 46,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -526,7 +526,7 @@
     "game": "Final Fantasy Type-0",
     "character": "Class Zero",
     "id": 53,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -536,7 +536,7 @@
     "game": "Yakuza: Like a Dragon",
     "character": "Ichiban Kasuga",
     "id": 54,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -546,7 +546,7 @@
     "game": "Fire Emblem series",
     "character": "Various protagonists",
     "id": 55,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -556,7 +556,7 @@
     "game": "Onimusha series",
     "character": "Nobunaga Oda",
     "id": 56,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -566,7 +566,7 @@
     "game": "Persona 5 Strikers",
     "character": "Joker",
     "id": 57,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -656,7 +656,7 @@
     "game": "JoJo’s Bizarre Adventure: All-Star Battle",
     "character": "Giorno Giovanna",
     "id": 66,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -706,7 +706,7 @@
     "game": "Monster Hunter series",
     "character": "Guild Handler lines",
     "id": 71,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -786,7 +786,7 @@
     "game": "Tales series",
     "character": "Various endings",
     "id": 79,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -806,7 +806,7 @@
     "game": "The Prince of Tennis: Sweat & Tears 2",
     "character": "Ryoma Echizen",
     "id": 81,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -846,7 +846,7 @@
     "game": "Danganronpa series",
     "character": "Makoto Naegi",
     "id": 85,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -856,7 +856,7 @@
     "game": "JoJo’s Bizarre Adventure: All-Star Battle",
     "character": "Giorno Giovanna",
     "id": 86,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -896,7 +896,7 @@
     "game": "Dragon Quest XI",
     "character": "Hero / party lines",
     "id": 90,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -926,7 +926,7 @@
     "game": "Final Fantasy Type-0",
     "character": "Class Zero",
     "id": 93,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1036,7 +1036,7 @@
     "game": "Steins;Gate: My Darling's Embrace",
     "character": "Rintaro Okabe",
     "id": 104,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1066,7 +1066,7 @@
     "game": "Dragon Quest series",
     "character": "Recurring command voice",
     "id": 107,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1076,7 +1076,7 @@
     "game": "Kingdom Hearts series (JP dub)",
     "character": "Sora",
     "id": 108,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1086,7 +1086,7 @@
     "game": "Street Fighter series",
     "character": "Ryu",
     "id": 109,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1096,7 +1096,7 @@
     "game": "Dragon Quest XI",
     "character": "Hero / party lines",
     "id": 110,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1136,7 +1136,7 @@
     "game": "Yakuza: Like a Dragon",
     "character": "Ichiban Kasuga",
     "id": 114,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1146,7 +1146,7 @@
     "game": "Fire Emblem series",
     "character": "Various protagonists",
     "id": 115,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
