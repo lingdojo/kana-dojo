@@ -2,7 +2,7 @@
   {
     "id": 1,
     "fact": "Japan has a word 'kuchisabishii' (口寂しい) that literally means 'lonely mouth' - the feeling of eating when you're not hungry, just because your mouth wants something to do.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -32,13 +32,13 @@
   {
     "id": 6,
     "fact": "There are over 5.5 million vending machines in Japan - one for every 23 people - selling everything from hot ramen to fresh eggs to underwear.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 7,
     "fact": "Japan has a word 'tarento' (タレント) for TV personalities who are famous simply for being on TV - not actors or musicians, just professional celebrities.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -86,7 +86,7 @@
   {
     "id": 15,
     "fact": "The Japanese word 'shoganai' (しょうがない) expresses accepting what cannot be changed - a cultural philosophy of graceful resignation.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -122,7 +122,7 @@
   {
     "id": 21,
     "fact": "Japan's oldest company, Kongō Gumi, was a construction company that operated continuously for 1,428 years (578-2006 CE) before being absorbed.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -188,7 +188,7 @@
   {
     "id": 32,
     "fact": "The practice of 'nemawashi' (根回し) means building consensus before a meeting so decisions appear unanimous - the actual negotiation happens beforehand.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -212,7 +212,7 @@
   {
     "id": 36,
     "fact": "Japan has a 'Black Company' award given to employers with the worst working conditions - a form of public shaming for labor violations.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -236,7 +236,7 @@
   {
     "id": 40,
     "fact": "There are over 200 different KitKat flavors created for Japan including sake, wasabi, sweet potato, and cherry blossom.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -248,7 +248,7 @@
   {
     "id": 42,
     "fact": "Japan's elderly population is so large that adult diapers outsell baby diapers - reflecting one of the world's fastest-aging societies.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -296,7 +296,7 @@
   {
     "id": 50,
     "fact": "Japanese farmers grow cubic watermelons in glass boxes - not for taste but because they're easier to stack and refrigerate.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -308,7 +308,7 @@
   {
     "id": 52,
     "fact": "Japan's Nakizumo festival has sumo wrestlers compete to make babies cry first - crying is believed to ward off evil spirits.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -326,7 +326,7 @@
   {
     "id": 55,
     "fact": "The concept of 'omotenashi' (おもてなし) is Japanese hospitality that anticipates needs before guests even realize them.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -392,7 +392,7 @@
   {
     "id": 66,
     "fact": "Japan has a museum entirely dedicated to parasites in Tokyo, featuring a 9-meter tapeworm as its star attraction.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -416,7 +416,7 @@
   {
     "id": 70,
     "fact": "Japan has a shrine where you can pray for better Wi-Fi signal - the Kanda Myojin Shrine in Tokyo blesses electronics.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -470,7 +470,7 @@
   {
     "id": 79,
     "fact": "The Japanese word 'nomunication' combines 'nomu' (drink) and 'communication' - bonding with colleagues over after-work drinks.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -494,13 +494,13 @@
   {
     "id": 83,
     "fact": "There's a Japanese word 'nekojita' (猫舌) meaning 'cat tongue' - someone who can't eat or drink hot things.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
     "id": 84,
     "fact": "Japan has 'crying rooms' in some theaters where parents can watch movies with babies without disturbing other viewers.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -548,7 +548,7 @@
   {
     "id": 92,
     "fact": "Japan's National Apology Day falls on August 15th, when the nation reflects on World War II and its aftermath.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -686,7 +686,7 @@
   {
     "id": 115,
     "fact": "There's a Japanese concept 'mujo' (無常) - impermanence - reminding that nothing lasts, making each moment precious.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -704,7 +704,7 @@
   {
     "id": 118,
     "fact": "Japan has 'cuddle therapy' clinics where you can pay to be held, spooned, or simply have physical human contact.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -728,13 +728,13 @@
   {
     "id": 122,
     "fact": "Japan has 'anti-lonely death' services that check on elderly living alone and arrange their affairs if they pass away.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
     "id": 123,
     "fact": "There's a Japanese word 'miryoku' (魅力) for charm or attractiveness that draws people in - the quality that makes things captivating.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -824,7 +824,7 @@
   {
     "id": 138,
     "fact": "Japan has 'para-para' dancing - a synchronized hand-waving dance performed to eurobeat in nightclubs since the 1980s.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -848,13 +848,13 @@
   {
     "id": 142,
     "fact": "Japan has 'chindonya' - walking advertisements with musicians who dress colorfully and parade through streets promoting businesses.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
     "id": 143,
     "fact": "There's a Japanese word 'giri' (義理) for social obligation - you give gifts and attend events because you must, not because you want to.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -884,7 +884,7 @@
   {
     "id": 148,
     "fact": "Japan has 'book-off' stores where you can sell and buy used manga, CDs, games, and electronics at bargain prices.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -920,7 +920,7 @@
   {
     "id": 154,
     "fact": "Japan has 'purikura' photo booths that digitally enlarge eyes, smooth skin, and add sparkles to your photos automatically.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -932,7 +932,7 @@
   {
     "id": 156,
     "fact": "Japan has a dish called 'natto' - fermented soybeans so stringy and pungent that even many Japanese can't stand it.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1016,7 +1016,7 @@
   {
     "id": 170,
     "fact": "Japan has 'death cafes' where people gather to discuss mortality over tea and cake in a relaxed setting.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1052,7 +1052,7 @@
   {
     "id": 176,
     "fact": "Japan has 'gokon' (合コン) - organized group blind dates where equal numbers of men and women meet at izakayas.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1070,7 +1070,7 @@
   {
     "id": 179,
     "fact": "There's a Japanese concept 'ningensei' (人間性) meaning humanity or human nature - the qualities that make us human.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1088,7 +1088,7 @@
   {
     "id": 182,
     "fact": "Japan has over 1,500 earthquakes per year, though most are too small to feel - the country sits on four tectonic plates.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1118,7 +1118,7 @@
   {
     "id": 187,
     "fact": "There's a Japanese practice 'teineisa' (丁寧さ) meaning politeness shown through meticulous attention to detail.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1142,7 +1142,7 @@
   {
     "id": 191,
     "fact": "There's a Japanese concept 'meisou' (瞑想) - meditation that focuses on emptying the mind rather than filling it.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1154,19 +1154,19 @@
   {
     "id": 193,
     "fact": "The word 'kawai-sou' (可哀想) means pitiable but with genuine sympathy - you feel sorry for someone's circumstances.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
     "id": 194,
     "fact": "Japan has a festival where runners dressed as demons chase and catch women to bless them with good marriage luck.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 195,
     "fact": "There's a Japanese practice 'chinmoku' (沈黙) - meaningful silence in conversation that's comfortable, not awkward.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1190,7 +1190,7 @@
   {
     "id": 199,
     "fact": "There's a Japanese word 'furusato' (故郷) for hometown - but with deep emotional weight of roots, identity, and belonging.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1214,7 +1214,7 @@
   {
     "id": 203,
     "fact": "Japan's elementary school students often clean their classrooms themselves in a routine called 'souji' (掃除), teaching responsibility.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1262,7 +1262,7 @@
   {
     "id": 211,
     "fact": "Japan has regional mascots called 'yuru-chara' (ゆるキャラ) that promote towns, products, and even government agencies.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1298,7 +1298,7 @@
   {
     "id": 217,
     "fact": "Japan has 'omikuji' (おみくじ) fortune slips at shrines; bad fortunes are often tied to a tree or rack to leave them behind.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1412,7 +1412,7 @@
   {
     "id": 236,
     "fact": "The concept of 'yoin' (余韻) refers to the lingering aftertaste or feeling, and is used for everything from tea to music performances.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1448,7 +1448,7 @@
   {
     "id": 242,
     "fact": "The Japanese word 'tokimeki' (ときめき) describes the fluttery excitement of a moment — like hearing a favorite song live.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1460,13 +1460,13 @@
   {
     "id": 244,
     "fact": "The term 'machiya' (町家) refers to traditional wooden townhouses with storefronts on the first floor and living spaces above.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
     "id": 245,
     "fact": "Japan’s 'furoshiki' (風呂敷) are reusable cloth wraps that can be folded into bags for groceries or gifts.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1586,7 +1586,7 @@
   {
     "id": 265,
     "fact": "Japan’s 'shimenawa' (注連縄) sacred ropes are hung at shrines and homes to mark purified, protected spaces.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1598,7 +1598,7 @@
   {
     "id": 267,
     "fact": "Japan’s 'hitokoto omikuji' are single-phrase fortune slips meant for quick inspiration or encouragement.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1682,13 +1682,13 @@
   {
     "id": 281,
     "fact": "Japan has 'kominka' farmhouses that are renovated into cafes, inns, and galleries while keeping original beams and hearths.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
     "id": 282,
     "fact": "The word 'utsuroi' (移ろい) describes subtle transitions, like shifting seasons or fading light.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1706,7 +1706,7 @@
   {
     "id": 285,
     "fact": "Japan’s 'hashioki' are chopstick rests, and many restaurants choose seasonal or themed designs.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1730,7 +1730,7 @@
   {
     "id": 289,
     "fact": "Japan has 'sento' public bathhouses that predate modern plumbing and still serve as neighborhood gathering spots.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1742,7 +1742,7 @@
   {
     "id": 291,
     "fact": "Japan’s name for the rainy season, 'tsuyu' (梅雨), literally means 'plum rain' because it coincides with the ripening of ume plums.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1754,7 +1754,7 @@
   {
     "id": 293,
     "fact": "Japan has a tradition called 'hajimete no omiyage' where travelers bring their first souvenir to share with family or coworkers.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1784,7 +1784,7 @@
   {
     "id": 298,
     "fact": "The term 'kintsugi' (金継ぎ) refers to repairing ceramics with gold, embracing cracks as part of an object’s history.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1796,7 +1796,7 @@
   {
     "id": 300,
     "fact": "A 'hikimono' (引き物) is a small parting gift given at weddings, often a set of sweets or tea.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1838,7 +1838,7 @@
   {
     "id": 307,
     "fact": "Japan’s 'tanabata' festival celebrates star-crossed lovers with colorful paper wishes tied to bamboo branches.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1850,7 +1850,7 @@
   {
     "id": 309,
     "fact": "Japan has a word 'tsundoku' (積ん読) for buying books and letting them pile up unread.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1892,7 +1892,7 @@
   {
     "id": 316,
     "fact": "The term 'shinnen' (信念) means conviction or strongly held belief, often tied to personal principles.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {

@@ -24,7 +24,7 @@
     "english": "A frog in a well does not know the great sea",
     "meaning": "Those with limited experience cannot understand the bigger picture",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 4,
@@ -41,7 +41,7 @@
     "romaji": "Chiri mo tsumoreba yama to naru",
     "english": "Even dust, if piled up, becomes a mountain",
     "meaning": "Small efforts accumulate into great achievements",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -123,7 +123,7 @@
     "english": "Hearing a hundred times is not as good as seeing once",
     "meaning": "Seeing is believing",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 15,
@@ -168,7 +168,7 @@
     "english": "Even a walking dog will hit a stick",
     "meaning": "Try anything and you might get lucky (or unlucky)",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 20,
@@ -249,7 +249,7 @@
     "english": "Seven falls, eight struggles",
     "meaning": "Going through great pain and struggle",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 29,
@@ -258,7 +258,7 @@
     "english": "One time, one meeting",
     "meaning": "Treasure every encounter, for it will never recur",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 30,
@@ -276,7 +276,7 @@
     "english": "Even monkeys fall from trees",
     "meaning": "Experts can make mistakes",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 32,
@@ -321,7 +321,7 @@
     "english": "The mouth is the source of disaster",
     "meaning": "Careless speech can cause trouble",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 37,
@@ -438,7 +438,7 @@
     "english": "Early rising is worth three coins",
     "meaning": "Good things come from getting up early",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 50,
@@ -456,7 +456,7 @@
     "english": "What happens twice will happen a third time",
     "meaning": "Patterns tend to repeat",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 52,
@@ -464,7 +464,7 @@
     "romaji": "En wa inamono aji na mono",
     "english": "Fate is strange yet delightful",
     "meaning": "Chance connections can be surprisingly good",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -474,7 +474,7 @@
     "english": "Stomach 80 percent full",
     "meaning": "Eat in moderation",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 54,
@@ -528,7 +528,7 @@
     "english": "Hide your head, but not your butt",
     "meaning": "Trying to hide something obvious",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 60,
@@ -555,7 +555,7 @@
     "english": "It's darkest under the lighthouse",
     "meaning": "The obvious is often overlooked",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 63,
@@ -564,7 +564,7 @@
     "english": "A frog in a well does not know the great sea",
     "meaning": "Limited experience limits perspective",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 64,
@@ -573,7 +573,7 @@
     "english": "See the trees but not the forest",
     "meaning": "Miss the bigger picture",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 65,
@@ -591,7 +591,7 @@
     "english": "Travel needs companions; life needs kindness",
     "meaning": "Relationships and compassion matter",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 67,
@@ -636,7 +636,7 @@
     "english": "An iron club to an ogre",
     "meaning": "Making someone strong even stronger",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 72,
@@ -663,7 +663,7 @@
     "english": "Counting a raccoon dog's skins before catching it",
     "meaning": "Don't count your chickens before they hatch",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 75,
@@ -717,7 +717,7 @@
     "english": "The moon and a turtle",
     "meaning": "Vast difference; not comparable",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 81,
@@ -726,7 +726,7 @@
     "english": "A frog's child is a frog",
     "meaning": "Children resemble their parents",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 82,
@@ -761,7 +761,7 @@
     "romaji": "Neko no hitai",
     "english": "A cat's forehead",
     "meaning": "Very small space",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -771,7 +771,7 @@
     "english": "Put care into care",
     "meaning": "Double-check; be extra careful",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 87,
@@ -788,7 +788,7 @@
     "romaji": "Nai sode wa furenu",
     "english": "You can't shake a sleeve you don't have",
     "meaning": "You can't give what you don't have",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -798,7 +798,7 @@
     "english": "Watch others and correct yourself",
     "meaning": "Learn from others' behavior",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 90,
@@ -843,7 +843,7 @@
     "english": "Three years on a stone",
     "meaning": "Perseverance brings success",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 95,
@@ -986,7 +986,7 @@
     "romaji": "En wa inamono aji na mono",
     "english": "Fate is strange yet delightful",
     "meaning": "Unexpected connections can be good",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -996,7 +996,7 @@
     "english": "It's darkest under the lighthouse",
     "meaning": "The obvious is often overlooked",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 112,
@@ -1005,7 +1005,7 @@
     "english": "A journey of a thousand miles begins with one step",
     "meaning": "Start small to reach big goals",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 113,
@@ -1014,7 +1014,7 @@
     "english": "An iron club to an ogre",
     "meaning": "Adding strength to the strong",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 114,
@@ -1149,7 +1149,7 @@
     "english": "See the trees but not the forest",
     "meaning": "Missing the bigger picture",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 129,
@@ -1176,7 +1176,7 @@
     "english": "Three years on a stone",
     "meaning": "Perseverance brings results",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 132,
@@ -1185,7 +1185,7 @@
     "english": "If in a hurry, go around",
     "meaning": "The safer path can be faster",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 133,
@@ -1212,7 +1212,7 @@
     "english": "The mouth is the source of misfortune",
     "meaning": "Careless words cause trouble",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 136,
@@ -1230,7 +1230,7 @@
     "english": "One stone, two birds",
     "meaning": "Do two things with one action",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 138,
@@ -1257,7 +1257,7 @@
     "english": "A rice cake falls from the shelf",
     "meaning": "Unexpected good luck",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 141,
@@ -1284,7 +1284,7 @@
     "english": "Three people together have the wisdom of Monju",
     "meaning": "Two heads are better than one",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 144,
@@ -1320,7 +1320,7 @@
     "english": "What happens twice will happen a third time",
     "meaning": "Patterns tend to repeat",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 148,
@@ -1356,7 +1356,7 @@
     "english": "After the rain, the ground hardens",
     "meaning": "Hard times build resilience",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 152,
@@ -1410,7 +1410,7 @@
     "english": "Spilled water doesn’t return to the tray",
     "meaning": "What’s done is done",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 158,
@@ -1473,7 +1473,7 @@
     "english": "A journey of a thousand miles begins with one step",
     "meaning": "Start small",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 165,
@@ -1500,7 +1500,7 @@
     "english": "Chase two rabbits, catch none",
     "meaning": "Focus on one thing",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 168,
@@ -1509,7 +1509,7 @@
     "english": "A frog in a well doesn’t know the ocean",
     "meaning": "Limited experience limits perspective",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 169,
@@ -1526,7 +1526,7 @@
     "romaji": "Koketsu ni irazunba koji wo ezu",
     "english": "You can’t get the tiger’s cub without entering the lair",
     "meaning": "No reward without risk",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1554,7 +1554,7 @@
     "english": "Put care into care",
     "meaning": "Double-check everything",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 174,
@@ -1562,7 +1562,7 @@
     "romaji": "Ichijitsu senshuu",
     "english": "A day feels like a thousand autumns",
     "meaning": "Waiting makes time feel long",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
