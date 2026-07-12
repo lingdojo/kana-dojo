@@ -21,7 +21,8 @@ export type AchievementCategory =
   | 'gauntlet'
   | 'blitz'
   | 'speed'
-  | 'fun';
+  | 'fun'
+  | 'crazy';
 
 // Extended requirement types for the expanded achievement system
 export type AchievementRequirementType =
@@ -54,7 +55,9 @@ export type AchievementRequirementType =
   | 'wrong_streak'
   | 'exact_count'
   | 'achievement_count'
-  | 'total_points';
+  | 'total_points'
+  // CrazyMode-specific types
+  | 'crazy_streak';
 
 // Additional requirement parameters for complex achievement conditions
 export interface AchievementRequirementAdditional {
@@ -1315,6 +1318,40 @@ export const ACHIEVEMENTS: Achievement[] = [
     requirements: { type: 'achievement_count', value: -1 }, // -1 means all
     hidden: true,
   },
+
+  // ============================================
+  // CRAZY MODE STREAK ACHIEVEMENTS
+  // ============================================
+  {
+    id: 'crazy_streak_10',
+    title: 'Crazy Streak Initiate',
+    description: 'Achieve a 10-answer streak in Crazy Mode',
+    icon: '🎪',
+    rarity: 'uncommon',
+    points: 75,
+    category: 'crazy',
+    requirements: { type: 'crazy_streak', value: 10 },
+  },
+  {
+    id: 'crazy_streak_25',
+    title: 'Crazy Streak Master',
+    description: 'Achieve a 25-answer streak in Crazy Mode',
+    icon: '🤹',
+    rarity: 'rare',
+    points: 200,
+    category: 'crazy',
+    requirements: { type: 'crazy_streak', value: 25 },
+  },
+  {
+    id: 'crazy_streak_50',
+    title: 'Crazy Streak Legend',
+    description: 'Achieve a 50-answer streak in Crazy Mode',
+    icon: '🤡',
+    rarity: 'epic',
+    points: 500,
+    category: 'crazy',
+    requirements: { type: 'crazy_streak', value: 50 },
+  },
 ];
 
 // ============================================
@@ -1969,6 +2006,24 @@ function checkRequirement(
     // Total points type (6.12)
     case 'total_points':
       return checkTotalPointsRequirement(achievement, state);
+
+    // CrazyMode streak type
+    case 'crazy_streak': {
+      // Import from CrazyMode streak store
+      const crazyStreakState = (() => {
+        try {
+          // Access the persisted localStorage data
+          if (typeof window === 'undefined') return 0;
+          const stored = window.localStorage.getItem('kanadojo-crazy-streak');
+          if (!stored) return 0;
+          const parsed = JSON.parse(stored);
+          return parsed?.state?.bestStreak ?? 0;
+        } catch {
+          return 0;
+        }
+      })();
+      return crazyStreakState >= value;
+    }
 
     default:
       return false;

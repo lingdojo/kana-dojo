@@ -15,6 +15,11 @@ import AnswerSummary from '@/shared/ui-composite/Game/AnswerSummary';
 import SSRAudioButton from '@/shared/ui-composite/audio/SSRAudioButton';
 import FuriganaText from '@/shared/ui-composite/text/FuriganaText';
 import { useCrazyModeTrigger } from '@/features/CrazyMode/hooks/useCrazyModeTrigger';
+import {
+  useCrazyMode,
+  useCrazyModeStreak,
+} from '@/features/CrazyMode/facade';
+import { CrazyModeStreakBadge } from '@/features/CrazyMode/components/CrazyModeStreakBadge';
 import { getGlobalAdaptiveSelector } from '@/shared/utils/adaptiveSelection';
 import { useSmartReverseMode } from '@/shared/hooks/game/useSmartReverseMode';
 import {
@@ -148,6 +153,9 @@ const VocabMCQ = ({ selectedWordObjs, isHidden }: VocabMCQProps) => {
   const { playCorrect } = useCorrect();
   const { playErrorTwice } = useError();
   const { trigger: triggerCrazyMode } = useCrazyModeTrigger();
+  const { isCrazyMode } = useCrazyMode();
+  const { recordCorrect: recordCrazyStreakCorrect, recordWrong: recordCrazyStreakWrong } =
+    useCrazyModeStreak();
 
   // Quiz type: 'meaning' or 'reading'
   const [quizType, setQuizType] = useState<'meaning' | 'reading'>('meaning');
@@ -326,6 +334,10 @@ const VocabMCQ = ({ selectedWordObjs, isHidden }: VocabMCQProps) => {
     incrementVocabularyCorrect();
     // Reset wrong streak on correct answer (Requirement 10.2)
     resetWrongStreak();
+    // Track CrazyMode streak
+    if (isCrazyMode) {
+      recordCrazyStreakCorrect();
+    }
   };
 
   const handleWrongAnswer = (selectedOption: string) => {
@@ -350,6 +362,10 @@ const VocabMCQ = ({ selectedWordObjs, isHidden }: VocabMCQProps) => {
     recordWrongAnswer();
     // Track wrong streak for achievements (Requirement 10.2)
     incrementWrongStreak();
+    // Reset CrazyMode streak on wrong answer
+    if (isCrazyMode) {
+      recordCrazyStreakWrong();
+    }
   };
 
   const generateNewCharacter = () => {
@@ -468,7 +484,10 @@ const VocabMCQ = ({ selectedWordObjs, isHidden }: VocabMCQProps) => {
             ))}
           </div>
 
-          <Stars />
+          <div className='flex items-center gap-3'>
+            {isCrazyMode && <CrazyModeStreakBadge threshold={3} />}
+            <Stars />
+          </div>
         </>
       )}
     </div>

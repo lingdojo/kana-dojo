@@ -10,6 +10,11 @@ import { useStatsStore } from '@/features/Progress';
 import { useShallow } from 'zustand/react/shallow';
 import Stars from '@/shared/ui-composite/Game/Stars';
 import { useCrazyModeTrigger } from '@/features/CrazyMode/hooks/useCrazyModeTrigger';
+import {
+  useCrazyMode,
+  useCrazyModeStreak,
+} from '@/features/CrazyMode/facade';
+import { CrazyModeStreakBadge } from '@/features/CrazyMode/components/CrazyModeStreakBadge';
 import { getGlobalAdaptiveSelector } from '@/shared/utils/adaptiveSelection';
 import { GameBottomBar } from '@/shared/ui-composite/Game/GameBottomBar';
 import { isKanaInputAnswerCorrect } from '@/features/Kana/lib/isKanaInputAnswerCorrect';
@@ -85,6 +90,9 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
   const { playCorrect } = useCorrect();
   const { playErrorTwice } = useError();
   const { trigger: triggerCrazyMode } = useCrazyModeTrigger();
+  const { isCrazyMode } = useCrazyMode();
+  const { recordCorrect: recordCrazyStreakCorrect, recordWrong: recordCrazyStreakWrong } =
+    useCrazyModeStreak();
 
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -313,6 +321,10 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
     });
     // Reset wrong streak on correct answer (Requirement 10.2)
     resetWrongStreak();
+    // Track CrazyMode streak
+    if (isCrazyMode) {
+      recordCrazyStreakCorrect();
+    }
     recordTargetLengthCorrect();
     setBottomBarState('correct');
     justAnsweredRef.current = true;
@@ -358,6 +370,10 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
       adaptiveSelector.updateCharacterWeight(char, positionResults[index]);
     });
     incrementWrongStreak();
+    // Reset CrazyMode streak on wrong answer
+    if (isCrazyMode) {
+      recordCrazyStreakWrong();
+    }
     recordTargetLengthWrong();
     setBottomBarState('wrong');
     logAttempt({
@@ -454,7 +470,10 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
           }
         }}
       />
-      <Stars />
+      <div className='flex items-center gap-3'>
+        {isCrazyMode && <CrazyModeStreakBadge threshold={3} />}
+        <Stars />
+      </div>
 
       <GameBottomBar
         state={bottomBarState}

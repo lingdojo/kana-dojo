@@ -15,6 +15,11 @@ import AnswerSummary from '@/shared/ui-composite/Game/AnswerSummary';
 import SSRAudioButton from '@/shared/ui-composite/audio/SSRAudioButton';
 import FuriganaText from '@/shared/ui-composite/text/FuriganaText';
 import { useCrazyModeTrigger } from '@/features/CrazyMode/hooks/useCrazyModeTrigger';
+import {
+  useCrazyMode,
+  useCrazyModeStreak,
+} from '@/features/CrazyMode/facade';
+import { CrazyModeStreakBadge } from '@/features/CrazyMode/components/CrazyModeStreakBadge';
 import { getGlobalAdaptiveSelector } from '@/shared/utils/adaptiveSelection';
 import { useSmartReverseMode } from '@/shared/hooks/game/useSmartReverseMode';
 import useClassicSessionStore from '@/shared/store/useClassicSessionStore';
@@ -139,6 +144,9 @@ const KanjiMCQ = ({ selectedKanjiObjs, isHidden }: KanjiMCQProps) => {
   const { playCorrect } = useCorrect();
   const { playErrorTwice } = useError();
   const { trigger: triggerCrazyMode } = useCrazyModeTrigger();
+  const { isCrazyMode } = useCrazyMode();
+  const { recordCorrect: recordCrazyStreakCorrect, recordWrong: recordCrazyStreakWrong } =
+    useCrazyModeStreak();
 
   // State management - correctChar always stores the kanji character
   // This ensures consistency when isReverse changes dynamically
@@ -281,6 +289,10 @@ const KanjiMCQ = ({ selectedKanjiObjs, isHidden }: KanjiMCQProps) => {
     incrementKanjiCorrect(selectedKanjiCollection.toUpperCase());
     // Reset wrong streak on correct answer (Requirement 10.2)
     resetWrongStreak();
+    // Track CrazyMode streak
+    if (isCrazyMode) {
+      recordCrazyStreakCorrect();
+    }
     logAttempt({
       questionId: correctChar,
       questionPrompt: String(displayChar),
@@ -314,6 +326,10 @@ const KanjiMCQ = ({ selectedKanjiObjs, isHidden }: KanjiMCQProps) => {
     recordWrongAnswer();
     // Track wrong streak for achievements (Requirement 10.2)
     incrementWrongStreak();
+    // Reset CrazyMode streak on wrong answer
+    if (isCrazyMode) {
+      recordCrazyStreakWrong();
+    }
     logAttempt({
       questionId: correctChar,
       questionPrompt: String(displayChar),
@@ -411,7 +427,10 @@ const KanjiMCQ = ({ selectedKanjiObjs, isHidden }: KanjiMCQProps) => {
             ))}
           </div>
 
-          <Stars />
+          <div className='flex items-center gap-3'>
+            {isCrazyMode && <CrazyModeStreakBadge threshold={3} />}
+            <Stars />
+          </div>
         </>
       )}
     </div>

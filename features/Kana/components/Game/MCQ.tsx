@@ -12,6 +12,11 @@ import { useStatsStore } from '@/features/Progress';
 import { useShallow } from 'zustand/react/shallow';
 import Stars from '@/shared/ui-composite/Game/Stars';
 import { useCrazyModeTrigger } from '@/features/CrazyMode/hooks/useCrazyModeTrigger';
+import {
+  useCrazyMode,
+  useCrazyModeStreak,
+} from '@/features/CrazyMode/facade';
+import { CrazyModeStreakBadge } from '@/features/CrazyMode/components/CrazyModeStreakBadge';
 import { getGlobalAdaptiveSelector } from '@/shared/utils/adaptiveSelection';
 import { useSmartReverseMode } from '@/shared/hooks/game/useSmartReverseMode';
 import { useAdaptiveOptionCount } from '@/shared/hooks/game/useAdaptiveOptionCount';
@@ -127,6 +132,9 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
   const { playCorrect } = useCorrect();
   const { playErrorTwice } = useError();
   const { trigger: triggerCrazyMode } = useCrazyModeTrigger();
+  const { isCrazyMode } = useCrazyMode();
+  const { recordCorrect: recordCrazyStreakCorrect, recordWrong: recordCrazyStreakWrong } =
+    useCrazyModeStreak();
 
   const kanaGroupIndices = useKanaStore(state => state.kanaGroupIndices);
 
@@ -314,6 +322,10 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
       }
       // Reset wrong streak on correct answer (Requirement 10.2)
       resetWrongStreak();
+      // Track CrazyMode streak
+      if (isCrazyMode) {
+        recordCrazyStreakCorrect();
+      }
       logAttempt({
         questionId: correctChar,
         questionPrompt: isReverse
@@ -347,6 +359,8 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
       correctRomajiCharReverse,
       shuffledVariants,
       isReverse,
+      isCrazyMode,
+      recordCrazyStreakCorrect,
     ],
   );
 
@@ -373,6 +387,10 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
       recordDifficultyWrong();
       // Track wrong streak for achievements (Requirement 10.2)
       incrementWrongStreak();
+      // Reset CrazyMode streak on wrong answer
+      if (isCrazyMode) {
+        recordCrazyStreakWrong();
+      }
       logAttempt({
         questionId: isReverse ? correctRomajiCharReverse : correctKanaChar,
         questionPrompt: isReverse ? correctRomajiCharReverse : correctKanaChar,
@@ -400,8 +418,10 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
       incrementWrongStreak,
       logAttempt,
       correctKanaCharReverse,
-      correctRomajiChar,
+      correctRomaji,
       shuffledVariants,
+      isCrazyMode,
+      recordCrazyStreakWrong,
     ],
   );
 
@@ -502,7 +522,10 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
           ))}
         </div>
       )}
-      <Stars />
+      <div className='flex items-center gap-3'>
+        {isCrazyMode && <CrazyModeStreakBadge threshold={3} />}
+        <Stars />
+      </div>
     </div>
   );
 };

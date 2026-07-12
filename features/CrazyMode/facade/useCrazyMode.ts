@@ -2,6 +2,7 @@
 
 import { useMemo } from 'react';
 import useCrazyModeStore, { KYOKI_THEME_ID } from '../store/useCrazyModeStore';
+import useCrazyModeStreakStore from '../store/useCrazyModeStreakStore';
 import usePreferencesStore from '@/features/Preferences/store/usePreferencesStore';
 
 export { KYOKI_THEME_ID };
@@ -16,8 +17,18 @@ export interface CrazyModeActions {
   randomize: () => void;
 }
 
+export interface CrazyModeStreakState {
+  currentStreak: number;
+  bestStreak: number;
+}
+
+export interface CrazyModeStreakActions {
+  recordCorrect: () => void;
+  recordWrong: () => void;
+  reset: () => void;
+}
+
 export function useCrazyMode(): CrazyModeState & CrazyModeActions {
-  // Crazy mode is now derived from whether the kyoki theme is selected
   const selectedTheme = usePreferencesStore(state => state.theme);
   const isCrazyMode = selectedTheme === KYOKI_THEME_ID;
 
@@ -30,8 +41,28 @@ export function useCrazyMode(): CrazyModeState & CrazyModeActions {
       isCrazyMode,
       activeThemeId,
       activeFontName,
-      randomize
+      randomize,
     }),
-    [isCrazyMode, activeThemeId, activeFontName, randomize]
+    [isCrazyMode, activeThemeId, activeFontName, randomize],
+  );
+}
+
+export function useCrazyModeStreak(): CrazyModeStreakState &
+  CrazyModeStreakActions {
+  const currentStreak = useCrazyModeStreakStore(s => s.currentStreak);
+  const bestStreak = useCrazyModeStreakStore(s => s.bestStreak);
+  const recordCorrect = useCrazyModeStreakStore(s => s.recordCorrect);
+  const recordWrong = useCrazyModeStreakStore(s => s.recordWrong);
+  const reset = useCrazyModeStreakStore(s => s.reset);
+
+  return useMemo(
+    () => ({
+      currentStreak,
+      bestStreak,
+      recordCorrect,
+      recordWrong,
+      reset,
+    }),
+    [currentStreak, bestStreak, recordCorrect, recordWrong, reset],
   );
 }
