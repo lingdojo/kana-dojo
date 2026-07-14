@@ -424,5 +424,11 @@
   "backgroundColor": "oklch(22.0% 0.020 235.0 / 1)",
   "mainColor": "oklch(78.0% 0.135 215.0 / 1)",
   "secondaryColor": "oklch(85.0% 0.155 90.0 / 1)"
+},
+  {
+  "id": "wind-god",
+  "backgroundColor": "oklch(19.0% 0.045 175.0 / 1)",
+  "mainColor": "oklch(82.0% 0.155 180.0 / 1)",
+  "secondaryColor": "oklch(72.0% 0.135 165.0 / 1)"
 }
 ]
