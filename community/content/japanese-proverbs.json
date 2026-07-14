@@ -420,9 +420,27 @@
   "meaning": "Good things come from getting up early"
 },
   {
-  "japanese": "弘法にも筆の誤り",
-  "romaji": "Koubou ni mo fude no ayamari",
-  "english": "Even Kobo makes mistakes with his brush",
-  "meaning": "Even masters make mistakes"
+  "japanese": "七転び八起き",
+  "romaji": "Nanakorobi yaoki",
+  "english": "Fall seven times, get up eight",
+  "meaning": "Never give up"
+},
+{
+  "japanese": "二兎を追う者は一兎をも得ず",
+  "romaji": "Ni to wo ou mono wa itto wo mo ezu",
+  "english": "Chase two rabbits, catch none",
+  "meaning": "Focus on one thing"
+},
+  {
+  "japanese": "石橋を叩いて渡る",
+  "romaji": "Ishibashi wo tataite wataru",
+  "english": "Tap a stone bridge before crossing",
+  "meaning": "Be very cautious"
+},
+  {
+  "japanese": "七転び八起き",
+  "romaji": "Nanakorobi yaoki",
+  "english": "Fall seven times, get up eight",
+  "meaning": "Never give up"
 }
 ]

@@ -599,5 +599,27 @@
     "Bering Sea"
   ],
   "correctIndex": 0
+},
+  {
+  "question": "What is the name of the traditional Japanese board game similar to chess? (Community variation 25)",
+  "difficulty": "hard",
+  "answers": [
+    "Shogi",
+    "Go",
+    "Mahjong",
+    "Reversi"
+  ],
+  "correctIndex": 0
+},
+  {
+  "question": "Which Japanese city hosted the 1998 Winter Olympics?",
+  "difficulty": "hard",
+  "answers": [
+    "Nagano",
+    "Kobe",
+    "Hiroshima",
+    "Naha"
+  ],
+  "correctIndex": 0
 }
 ]

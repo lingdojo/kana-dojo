@@ -849,7 +849,9 @@
     "mainColor": "oklch(62.0% 0.185 220.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.175 15.0 / 1)",
     "issued": false,
-    "completed": false
+    "completed": false,
+    "completedBy": "Krishika711",
+    "completedPR": 24473
   },
   {
     "id": "school-uniform",
@@ -1039,7 +1041,9 @@
     "mainColor": "oklch(70.0% 0.170 205.0 / 1)",
     "secondaryColor": "oklch(80.0% 0.135 95.0 / 1)",
     "issued": false,
-    "completed": false
+    "completed": false,
+    "completedBy": "sanjana0709",
+    "completedPR": 24487
   },
   {
     "id": "night-market",
@@ -1129,7 +1133,9 @@
     "mainColor": "oklch(88.0% 0.020 240.0 / 1)",
     "secondaryColor": "oklch(68.0% 0.110 310.0 / 1)",
     "issued": false,
-    "completed": false
+    "completed": false,
+    "completedBy": "xthreehao",
+    "completedPR": 24451
   },
   {
     "id": "golden-kintsugi",
@@ -1652,7 +1658,7 @@
     "backgroundColor": "oklch(20.0% 0.035 225.0 / 1)",
     "mainColor": "oklch(80.0% 0.120 210.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.085 195.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1918,7 +1924,7 @@
     "backgroundColor": "oklch(18.5% 0.035 140.0 / 1)",
     "mainColor": "oklch(76.0% 0.140 135.0 / 1)",
     "secondaryColor": "oklch(72.0% 0.070 80.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
