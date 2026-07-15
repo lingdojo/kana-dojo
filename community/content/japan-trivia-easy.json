@@ -465,6 +465,17 @@
     "Kanazawa"
   ],
   "correctIndex": 1
+},
+  {
+  "question": "Which Japanese art form involves arranging flowers?",
+  "difficulty": "easy",
+  "answers": [
+    "Ikebana",
+    "Origami",
+    "Ukiyo-e",
+    "Shodo"
+  ],
+  "correctIndex": 0
 }
 ]
 
