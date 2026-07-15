@@ -621,5 +621,16 @@
     "Naha"
   ],
   "correctIndex": 0
+},
+  {
+  "question": "Which Japanese food is a grilled eel dish often eaten in summer? (Community variation 26)",
+  "difficulty": "hard",
+  "answers": [
+    "Tempura",
+    "Unagi",
+    "Sukiyaki",
+    "Okonomiyaki"
+  ],
+  "correctIndex": 1
 }
 ]
