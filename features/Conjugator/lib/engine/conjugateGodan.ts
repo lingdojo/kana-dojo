@@ -67,21 +67,29 @@ function isIkuVerb(verb: VerbInfo): boolean {
 }
 
 /**
- * Special handling for the う音便 (u-euphony) verbs 問う, 請う, 乞う
- * (and their kana readings とう, こう).
+ * Dictionary forms with the う音便 (u-euphony) te/ta form.
  *
- * These are the exceptions to the regular う → って change: their te-form
- * ends in うて and their ta-form in うた, e.g. 問う → 問うて / 問うた
- * (not 問って / 問った). Regular う-verbs such as 買う → 買って are unaffected.
+ * This is a lexical exception to the regular う → って/った sound change.
+ * Both kanji and kana inputs must be listed because classifyVerb preserves the
+ * user's input rather than normalizing it to a reading.
  */
+const U_ONBIN_DICTIONARY_FORMS = new Set([
+  '問う',
+  '訪う',
+  'とう',
+  '請う',
+  '乞う',
+  '恋う',
+  'こう',
+  '給う',
+  '賜う',
+  'たまう',
+  '厭う',
+  'いとう',
+]);
+
 function isUOnbinVerb(verb: VerbInfo): boolean {
-  return (
-    verb.dictionaryForm === '問う' ||
-    verb.dictionaryForm === 'とう' ||
-    verb.dictionaryForm === '請う' ||
-    verb.dictionaryForm === '乞う' ||
-    verb.dictionaryForm === 'こう'
-  );
+  return U_ONBIN_DICTIONARY_FORMS.has(verb.dictionaryForm);
 }
 
 /**
