@@ -99,6 +99,16 @@ const KU_ENDING_VERBS = [
 const IKU_VERB = { verb: '行く', teForm: '行って', taForm: '行った' };
 
 /**
+ * う音便 exception verbs (問う, 請う, 乞う): te-form うて / ta-form うた,
+ * not the regular って / った.
+ */
+const U_ONBIN_VERBS = [
+  { verb: '問う', teForm: '問うて', taForm: '問うた' },
+  { verb: '請う', teForm: '請うて', taForm: '請うた' },
+  { verb: '乞う', teForm: '乞うて', taForm: '乞うた' },
+];
+
+/**
  * Godan verbs ending in ぐ (Requirements: 4.5)
  * Te-form: ぐ → いで
  */
@@ -239,6 +249,16 @@ describe('Te-form Sound Changes Properties', () => {
       expect(teForm.endsWith('いて')).toBe(false);
     });
 
+    it('問う/請う/乞う produce うて te-form, not って (う音便)', () => {
+      U_ONBIN_VERBS.forEach(verbData => {
+        const verbInfo = classifyVerb(verbData.verb);
+        const teForm = getGodanTeForm(verbInfo);
+        expect(teForm).toBe(verbData.teForm);
+        // Must NOT collapse to the regular って form (e.g. 問って)
+        expect(teForm.endsWith('って')).toBe(false);
+      });
+    });
+
     it('ぐ-ending verbs produce いで te-form (Requirements: 4.5)', () => {
       fc.assert(
         fc.property(fc.constantFrom(...GU_ENDING_VERBS), verbData => {
@@ -272,6 +292,15 @@ describe('Te-form Sound Changes Properties', () => {
         }),
         { numRuns: 100 },
       );
+    });
+
+    it('問う/請う/乞う produce うた ta-form, not った (う音便)', () => {
+      U_ONBIN_VERBS.forEach(verbData => {
+        const verbInfo = classifyVerb(verbData.verb);
+        const taForm = getGodanTaForm(verbInfo);
+        expect(taForm).toBe(verbData.taForm);
+        expect(taForm.endsWith('った')).toBe(false);
+      });
     });
 
     it('te-form preserves verb stem', () => {
