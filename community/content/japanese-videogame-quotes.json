@@ -545,7 +545,7 @@
   "game": "The Prince of Tennis: Sweat & Tears 2",
   "character": "Ryoma Echizen"
 },
-{
+  {
   "japanese": "この戦い、負けられない！",
   "romaji": "Kono tatakai, makerarenai!",
   "english": "I can't lose this fight!",
@@ -572,7 +572,7 @@
     "english": "I'll change destiny!",
     "game": "Final Fantasy Type-0",
     "character": "Class Zero"
-  },
+},
   {
   "japanese": "仲間を信じろ",
   "romaji": "Nakama o shinjiro",
@@ -586,5 +586,12 @@
   "english": "This is the beginning of the adventure!",
   "game": "Dragon Quest XI",
   "character": "Hero / party lines"
-  }
+},
+  {
+  "japanese": "生きるってのは、戦うってことだ",
+  "romaji": "Ikiru tte no wa, tatakau tte koto da",
+  "english": "To live is to fight.",
+  "game": "Yakuza: Like a Dragon",
+  "character": "Ichiban Kasuga"
+}
 ]
