@@ -180,5 +180,14 @@
   "season": "Spring",
   "kigo": "Spring sea (haru no umi)",
   "notes": "Known for musical phrasing and calm motion."
+},
+  {
+  "japanese": "秋深き\n隣は何を\nする人ぞ",
+  "romaji": "Aki fukaki / tonari wa nani o / suru hito zo",
+  "english": "In deep autumn, what kind of person lives next door?",
+  "poet": "Matsuo Basho",
+  "season": "Autumn",
+  "kigo": "Deep autumn (aki fukaki)",
+  "notes": "Evokes solitude and curiosity."
 }
 ]
