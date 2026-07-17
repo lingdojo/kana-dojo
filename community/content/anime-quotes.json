@@ -628,4 +628,19 @@
   "english": "Bucciarati is here!",
   "anime": "JoJo's Bizarre Adventure: Golden Wind",
   "character": "Narancia Ghirga"
-}]
+},
+{
+  "japanese": "貴様ッ！見ているなッ！！",
+  "romaji": "Kisama! Mite iru na!!",
+  "english": "You! You're watching me!",
+  "anime": "JoJo's Bizarre Adventure: Stone Ocean",
+  "character": "Jolyne Cujoh"
+},
+  {
+  "japanese": "お前はもう死んでいる",
+  "romaji": "Omae wa mou shindeiru",
+  "english": "You are already dead",
+  "anime": "Fist of the North Star",
+  "character": "Kenshiro"
+}
+]

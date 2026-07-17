@@ -67,6 +67,32 @@ function isIkuVerb(verb: VerbInfo): boolean {
 }
 
 /**
+ * Dictionary forms with the う音便 (u-euphony) te/ta form.
+ *
+ * This is a lexical exception to the regular う → って/った sound change.
+ * Both kanji and kana inputs must be listed because classifyVerb preserves the
+ * user's input rather than normalizing it to a reading.
+ */
+const U_ONBIN_DICTIONARY_FORMS = new Set([
+  '問う',
+  '訪う',
+  'とう',
+  '請う',
+  '乞う',
+  '恋う',
+  'こう',
+  '給う',
+  '賜う',
+  'たまう',
+  '厭う',
+  'いとう',
+]);
+
+function isUOnbinVerb(verb: VerbInfo): boolean {
+  return U_ONBIN_DICTIONARY_FORMS.has(verb.dictionaryForm);
+}
+
+/**
  * Get te-form for a Godan verb with proper sound changes
  *
  * Requirements: 4.1-4.6
@@ -75,11 +101,17 @@ function isIkuVerb(verb: VerbInfo): boolean {
  * - く → いて (except 行く → 行って)
  * - ぐ → いで
  * - す → して
+ * - 問う/請う/乞う → 問うて/請うて/乞うて (う音便 exception)
  */
 export function getGodanTeForm(verb: VerbInfo): string {
   // Special case for 行く
   if (isIkuVerb(verb)) {
     return verb.stem + 'って';
+  }
+
+  // Special case for the う音便 verbs (問う, 請う, 乞う)
+  if (isUOnbinVerb(verb)) {
+    return verb.stem + 'うて';
   }
 
   return getGodanStem(verb, 'te');
@@ -93,6 +125,11 @@ export function getGodanTaForm(verb: VerbInfo): string {
   // Special case for 行く
   if (isIkuVerb(verb)) {
     return verb.stem + 'った';
+  }
+
+  // Special case for the う音便 verbs (問う, 請う, 乞う)
+  if (isUOnbinVerb(verb)) {
+    return verb.stem + 'うた';
   }
 
   return getGodanStem(verb, 'ta');

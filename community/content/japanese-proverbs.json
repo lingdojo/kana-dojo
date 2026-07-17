@@ -484,5 +484,24 @@
   "romaji": "Tabi wa michizure yo wa nasake",
   "english": "Travel needs companions; life needs kindness",
   "meaning": "Relationships and compassion matter"
+},
+  {
+    "japanese": "Example",
+    "romaji": "Example",
+    "english": "Example",
+    "meaning": "Example"
+  },
+  {
+  "japanese": "失敗は成功のもと",
+  "romaji": "Shippai wa seikou no moto",
+  "english": "Failure is the origin of success",
+  "meaning": "Mistakes lead to growth"
+},
+{
+  "japanese": "急がば回れ",
+  "romaji": "Isogaba maware",
+  "english": "If in a hurry, go around",
+  "meaning": "The safer path can be faster"
 }
+
 ]
