@@ -665,5 +665,16 @@
     "Rupee"
   ],
   "correctIndex": 1
+},
+{
+  "question": "What is the name of Japan's national currency?",
+  "difficulty": "hard",
+  "answers": [
+    "Yuan",
+    "Yen",
+    "Won",
+    "Rupee"
+  ],
+  "correctIndex": 1
 }
 ]
