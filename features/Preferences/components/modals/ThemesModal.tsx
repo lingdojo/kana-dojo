@@ -6,7 +6,10 @@ import {
   getWallpaperStyles,
   getThemeDefaultWallpaperId,
 } from '@/features/Preferences/data/themes/themes';
-import { getWallpaperById } from '@/features/Preferences/data/wallpapers/wallpapers';
+import {
+  getWallpaperById,
+  getWallpaperPreviewUrls,
+} from '@/features/Preferences/data/wallpapers/wallpapers';
 import usePreferencesStore from '@/features/Preferences/store/usePreferencesStore';
 import { useClick } from '@/shared/hooks/generic/useAudio';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
@@ -70,9 +73,6 @@ const ThemeCard = memo(function ThemeCard({
   onClick,
 }: ThemeCardProps) {
   const [isHovered, setIsHovered] = useState(false);
-  const selectedWallpaperId = usePreferencesStore(
-    state => state.selectedWallpaperId,
-  );
 
   const themeName = theme.displayName ?? theme.id.replaceAll('-', ' ');
   const isChaosTheme = theme.id === '?';
@@ -81,10 +81,8 @@ const ThemeCard = memo(function ThemeCard({
 
   // Check if theme has a default wallpaper (premium themes)
   const themeWallpaperId = getThemeDefaultWallpaperId(theme.id);
-  const wallpaperIdToUse = themeWallpaperId || selectedWallpaperId;
-
-  const wallpaper = wallpaperIdToUse
-    ? getWallpaperById(wallpaperIdToUse)
+  const wallpaper = themeWallpaperId
+    ? getWallpaperById(themeWallpaperId)
     : undefined;
 
   const background = isChaosTheme
@@ -94,7 +92,11 @@ const ThemeCard = memo(function ThemeCard({
       : theme.backgroundColor;
 
   const wallpaperStyles = wallpaper
-    ? getWallpaperStyles(wallpaper.url, isHovered, wallpaper.urlWebp)
+    ? getWallpaperStyles(
+        getWallpaperPreviewUrls(wallpaper).url,
+        isHovered,
+        getWallpaperPreviewUrls(wallpaper).urlWebp,
+      )
     : {};
 
   const borderStyle = isPremiumTheme

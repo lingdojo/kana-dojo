@@ -636,11 +636,32 @@
   "anime": "JoJo's Bizarre Adventure: Stone Ocean",
   "character": "Jolyne Cujoh"
 },
-  {
+{
+  "japanese": "オレ様の美技にブギウギ",
+  "romaji": "Ore-sama no bigi ni bugiugi",
+  "english": "Dance to my beautiful technique! (alt wording 23) (alt wording 75)",
+  "anime": "The Prince of Tennis",
+  "character": "Keigo Atobe"
+},
+{
   "japanese": "お前はもう死んでいる",
   "romaji": "Omae wa mou shindeiru",
   "english": "You are already dead",
   "anime": "Fist of the North Star",
   "character": "Kenshiro"
+},
+  {
+  "japanese": "俺を誰だと思ってやがる!",
+  "romaji": "Ore o dare da to omotte yagaru!",
+  "english": "Who the hell do you think I am!",
+  "anime": "Gurren Lagann",
+  "character": "Kamina"
+},
+  {
+  "japanese": "俺は海賊王になる！",
+  "romaji": "Ore wa kaizoku ou ni naru!",
+  "english": "I'm gonna be King of the Pirates!",
+  "anime": "One Piece",
+  "character": "Monkey D. Luffy"
 }
 ]

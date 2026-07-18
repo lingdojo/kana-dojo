@@ -654,5 +654,16 @@
     "Kyushu"
   ],
   "correctIndex": 0
+},
+{
+  "question": "What is the name of Japan's national currency? (Community variation 21)",
+  "difficulty": "hard",
+  "answers": [
+    "Yuan",
+    "Yen",
+    "Won",
+    "Rupee"
+  ],
+  "correctIndex": 1
 }
 ]
