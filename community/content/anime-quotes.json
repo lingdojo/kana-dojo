@@ -656,5 +656,26 @@
   "english": "Who the hell do you think I am!",
   "anime": "Gurren Lagann",
   "character": "Kamina"
+},
+  {
+  "japanese": "俺は海賊王になる！",
+  "romaji": "Ore wa kaizoku ou ni naru!",
+  "english": "I'm gonna be King of the Pirates!",
+  "anime": "One Piece",
+  "character": "Monkey D. Luffy"
+},
+  {
+  "japanese": "イエス！イエス！イエス！イエス！",
+  "romaji": "Iesu! Iesu! Iesu! Iesu!",
+  "english": "Yes! Yes! Yes! Yes! (alt wording 2)",
+  "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+  "character": "DIO"
+},
+  {
+  "japanese": "撃っていいのは撃たれる覚悟がある奴だけだ",
+  "romaji": "Utte ii no wa uterareru kakugo ga aru yatsu dake da",
+  "english": "Only those prepared to be shot should pull the trigger. (alt wording 45)",
+  "anime": "Code Geass: Lelouch of the Rebellion",
+  "character": "Lelouch vi Britannia"
 }
 ]
