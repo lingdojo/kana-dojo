@@ -2,7 +2,7 @@
   {
     "id": 1,
     "text": "Use \"〜です/〜ます\" for polite statements; it's the standard polite ending for everyday conversation.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -32,7 +32,7 @@
   {
     "id": 6,
     "text": "\"〜ながら\" connects actions to show two things happening at the same time.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -80,7 +80,7 @@
   {
     "id": 14,
     "text": "\"〜なくてもいい\" means \"don't have to\" and lifts an obligation.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -93,7 +93,7 @@
     "id": 16,
     "text": "\"〜てもらう\" means \"receive a favor\" from someone.",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 17,
@@ -105,7 +105,7 @@
     "id": 18,
     "text": "\"〜ようと思う\" expresses a decision made at the moment of speaking.",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 19,
@@ -146,7 +146,7 @@
   {
     "id": 25,
     "text": "\"〜たところ\" can mean \"just did\" something and observed a result.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -158,43 +158,43 @@
   {
     "id": 27,
     "text": "\"〜ばかり\" means \"just\" (in terms of time) or \"only\" depending on context.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
     "id": 28,
     "text": "\"〜すぎる\" attaches to verbs or adjectives to mean \"too much\".",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 29,
     "text": "\"〜らしい\" can mean \"seems\" or describe a typical characteristic.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 30,
     "text": "\"〜おう/〜よう\" is the volitional form, used to say \"let's\" or \"I will\".",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
     "id": 31,
     "text": "\"〜ところ\" refers to a point in time, like \"about to\", \"in the middle of\", or \"just finished\".",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 32,
     "text": "\"〜たり〜たり\" lists representative actions, like \"do things like A and B\".",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
     "id": 33,
     "text": "\"〜ていく/〜てくる\" shows direction or change over time, like \"will start\" or \"have been\".",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -206,7 +206,7 @@
   {
     "id": 35,
     "text": "\"〜ために\" also means \"for the sake of\" and explains purpose or reason.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -249,24 +249,24 @@
     "id": 42,
     "text": "\"〜ことがある\" means \"sometimes\" when talking about habitual actions.",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 43,
     "text": "\"〜にくい\" attaches to verb stems to mean \"hard to do\".",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 44,
     "text": "\"〜やすい\" attaches to verb stems to mean \"easy to do\".",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
     "id": 45,
     "text": "\"〜ておく\" means \"do in advance\" or \"leave as is\".",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -285,12 +285,12 @@
     "id": 48,
     "text": "\"〜そうだ\" can indicate appearance, like \"it looks like\".",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 49,
     "text": "\"〜ながらも\" means \"even while\" or \"though\" (contrast).",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -303,7 +303,7 @@
     "id": 51,
     "text": "\"〜というより\" means \"rather than\" or \"more like\".",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 52,
@@ -314,7 +314,7 @@
   {
     "id": 53,
     "text": "\"〜せいで\" indicates a negative cause, \"because of\".",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -350,20 +350,20 @@
   {
     "id": 59,
     "text": "\"〜てしまう\" can express completion or regret (\"end up doing\").",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
     "id": 60,
     "text": "\"〜にしては\" means \"considering...\".",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 61,
     "text": "\"〜にとって\" means \"for / to (someone)\".",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 62,
@@ -387,12 +387,12 @@
     "id": 65,
     "text": "\"〜に応じて\" means \"depending on...\".",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 66,
     "text": "\"〜に加えて\" means \"in addition to...\".",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -411,13 +411,13 @@
     "id": 69,
     "text": "\"〜ものの\" means \"although...\" with contrast.",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 70,
     "text": "\"〜まま\" means \"as-is / while remaining...\".",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 71,
@@ -434,7 +434,7 @@
   {
     "id": 73,
     "text": "\"〜たびに\" means \"every time...\".",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -453,18 +453,18 @@
     "id": 76,
     "text": "\"〜ことになっている\" means \"it is decided/arranged that...\".",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 77,
     "text": "\"〜わりに\" means \"despite / considering...\".",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
     "id": 78,
     "text": "\"〜ながら\" can mean \"while\" (simultaneous action).",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -488,7 +488,7 @@
   {
     "id": 82,
     "text": "\"〜ばかりか\" means \"not only... but also\".",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -518,7 +518,7 @@
   {
     "id": 87,
     "text": "\"〜ません\" is the polite negative form of verbs, used to say something doesn't happen. (practice variation 2)",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -554,13 +554,13 @@
   {
     "id": 93,
     "text": "\"〜てしまう\" can show completion or regret about an action. (practice variation 8)",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
     "id": 94,
     "text": "\"〜そうです\" can report hearsay (\"I heard that...\"). (practice variation 9)",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -572,19 +572,19 @@
   {
     "id": 96,
     "text": "\"〜でしょう\" adds probability or softens statements, like \"probably\". (practice variation 11)",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
     "id": 97,
     "text": "\"〜つもり\" expresses intent, like \"I plan to\" do something. (practice variation 12)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 98,
     "text": "\"〜なければならない\" means \"must\" or \"have to\" do something. (practice variation 13)",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -632,7 +632,7 @@
   {
     "id": 106,
     "text": "\"〜ば\" forms a conditional meaning \"if\" in a general sense. (practice variation 21)",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -650,31 +650,31 @@
   {
     "id": 109,
     "text": "\"〜ので\" gives a reason in a polite or softer way than \"から\". (practice variation 24)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 110,
     "text": "\"〜たところ\" can mean \"just did\" something and observed a result. (practice variation 25)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 111,
     "text": "\"〜まま\" means \"as is\" or \"unchanged\". (practice variation 26)",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
     "id": 112,
     "text": "\"〜ばかり\" means \"just\" (in terms of time) or \"only\" depending on context. (practice variation 27)",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
     "id": 113,
     "text": "\"〜すぎる\" attaches to verbs or adjectives to mean \"too much\". (practice variation 28)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -704,7 +704,7 @@
   {
     "id": 118,
     "text": "\"〜ていく/〜てくる\" shows direction or change over time, like \"will start\" or \"have been\". (practice variation 33)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -728,19 +728,19 @@
   {
     "id": 122,
     "text": "\"〜ことになる\" indicates something was decided (by others or circumstances). (practice variation 37)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 123,
     "text": "\"〜に違いない\" means \"must be\" or \"no doubt\". (practice variation 38)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
     "id": 124,
     "text": "\"〜かもしれない\" means \"might be\" or \"maybe\". (practice variation 39)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -752,7 +752,7 @@
   {
     "id": 126,
     "text": "\"〜ことができる\" expresses ability, like \"can do\". (practice variation 41)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -764,19 +764,19 @@
   {
     "id": 128,
     "text": "\"〜にくい\" attaches to verb stems to mean \"hard to do\". (practice variation 43)",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
     "id": 129,
     "text": "\"〜やすい\" attaches to verb stems to mean \"easy to do\". (practice variation 44)",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
     "id": 130,
     "text": "\"〜ておく\" means \"do in advance\" or \"leave as is\". (practice variation 45)",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -788,13 +788,13 @@
   {
     "id": 132,
     "text": "\"〜に決まっている\" means \"must be\" or \"definitely\". (practice variation 47)",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
     "id": 133,
     "text": "\"〜そうだ\" can indicate appearance, like \"it looks like\". (practice variation 48)",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -812,25 +812,25 @@
   {
     "id": 136,
     "text": "\"〜というより\" means \"rather than\" or \"more like\". (practice variation 51)",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
     "id": 137,
     "text": "\"〜おかげで\" expresses gratitude for a cause, \"thanks to\". (practice variation 52)",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
     "id": 138,
     "text": "\"〜せいで\" indicates a negative cause, \"because of\". (practice variation 53)",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
     "id": 139,
     "text": "\"〜ほど\" can express degree, like \"so... that\". (practice variation 54)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
