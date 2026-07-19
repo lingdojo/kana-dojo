@@ -3,13 +3,13 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import './globals.css';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import GoogleAnalytics from '@/core/analytics/GoogleAnalytics';
-import MSClarity from '@/core/analytics/MSClarity';
+// Performance rescue: Microsoft Clarity is intentionally disabled for now.
+// import MSClarity from '@/core/analytics/MSClarity';
 import {
   StructuredData,
   kanaDojoSchema,
 } from '@/shared/ui-composite/SEO/StructuredData';
 import { Metadata, Viewport } from 'next';
-import Script from 'next/script';
 import { headers } from 'next/headers';
 import SessionPrefetch from '@/shared/ui-composite/Performance/SessionPrefetch';
 
@@ -168,43 +168,13 @@ export default async function RootLayout({ children }: RootLayoutProps) {
           href='https://translation.googleapis.com'
           crossOrigin='anonymous'
         />
-        <Script
-          async
-          src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4838010337597054'
-          crossOrigin='anonymous'
-          strategy='afterInteractive'
-        />
       </head>
       <body>
-        <Script id='audio-sw-migration' strategy='afterInteractive'>
-          {`try {
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker
-      .getRegistrations()
-      .then(function (registrations) {
-        return Promise.all(
-          registrations
-            .filter(function (reg) {
-              return (
-                reg.active &&
-                reg.active.scriptURL.endsWith('/sw.js') &&
-                new URL(reg.scope).pathname === '/'
-              );
-            })
-            .map(function (reg) {
-              return reg.unregister();
-            })
-        );
-      })
-      .catch(function () {});
-  }
-} catch (_) {}`}
-        </Script>
         <SessionPrefetch />
         {isAnalyticsEnabled && (
           <>
             <GoogleAnalytics />
-            <MSClarity />
+            {/* <MSClarity /> */}
             <Analytics />
             <SpeedInsights />
           </>

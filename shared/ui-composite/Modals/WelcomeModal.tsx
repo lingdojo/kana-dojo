@@ -1,6 +1,13 @@
 'use client';
 
-import { useState, useEffect, useRef, useCallback, useMemo, type ReactNode } from 'react';
+import {
+  useState,
+  useEffect,
+  useRef,
+  useCallback,
+  useMemo,
+  type ReactNode,
+} from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import clsx from 'clsx';
 import {
@@ -53,6 +60,41 @@ const floatingIconToneClasses = {
   main: 'border-(--main-color-accent) bg-(--main-color)',
 } as const;
 
+type FontOption = (typeof fonts)[number];
+
+function FontOptionButton({
+  fontObj,
+  isSelected,
+  onSelect,
+}: {
+  fontObj: FontOption;
+  isSelected: boolean;
+  onSelect: () => void;
+}) {
+  const t = useTranslations('welcome');
+
+  return (
+    <button
+      className={clsx(
+        'flex cursor-pointer items-center justify-center overflow-hidden rounded-xl border-0 px-4 py-4 transition-all duration-200 hover:opacity-90 active:scale-95',
+      )}
+      style={{
+        backgroundColor: 'var(--background-color)',
+        outline: isSelected ? '3px solid var(--secondary-color)' : 'none',
+      }}
+      onClick={onSelect}
+    >
+      <p className={clsx('text-center text-xl', fontObj.font.className)}>
+        <span className='text-(--main-color)'>
+          {fontObj.name}
+          {fontObj.name === 'Zen Maru Gothic' && ` ${t('steps.fonts.default')}`}
+        </span>
+        <span className='ml-2 text-(--secondary-color)'>かな道場</span>
+      </p>
+    </button>
+  );
+}
+
 function FloatingIcon({
   children,
   size = 'md',
@@ -96,6 +138,8 @@ const WelcomeModal = () => {
 
   const [step, setStep] = useState<'welcome' | 'themes' | 'fonts'>('welcome');
   const [isVisible, setIsVisible] = useState(false);
+  const isDemoRoute = pathname === '/demo' || pathname.endsWith('/demo');
+  const shouldShowModal = isVisible && !isDemoRoute;
 
   const {
     theme: selectedTheme,
@@ -122,7 +166,6 @@ const WelcomeModal = () => {
       process.env.NEXT_PUBLIC_VERCEL_ENV !== 'production';
     const isBaseRoute =
       pathname === '/' || pathname === '/en' || pathname === '/ja';
-    const isDemoRoute = pathname === '/demo' || pathname.endsWith('/demo');
     const shouldShowAfterDemo =
       typeof window !== 'undefined' &&
       sessionStorage.getItem('welcome-return-from-demo') === 'true';
@@ -131,7 +174,6 @@ const WelcomeModal = () => {
       if (typeof window !== 'undefined') {
         sessionStorage.setItem('welcome-return-from-demo', 'true');
       }
-      setIsVisible(false);
       return;
     }
 
@@ -153,7 +195,7 @@ const WelcomeModal = () => {
       }, 500);
       return () => clearTimeout(timer);
     }
-  }, [hasSeenWelcome, pathname, setHasSeenWelcome]);
+  }, [hasSeenWelcome, isDemoRoute, pathname, setHasSeenWelcome]);
 
   useEffect(() => {
     // Reset scroll position when step changes
@@ -170,14 +212,14 @@ const WelcomeModal = () => {
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && isVisible) {
+      if (e.key === 'Escape' && shouldShowModal) {
         handleClose();
       }
     };
 
     document.addEventListener('keydown', handleKeyDown);
     return () => document.removeEventListener('keydown', handleKeyDown);
-  }, [handleClose, isVisible]);
+  }, [handleClose, shouldShowModal]);
 
   const handleTryDemo = () => {
     playClick();
@@ -231,10 +273,7 @@ const WelcomeModal = () => {
 
             <div className='space-y-4 text-left'>
               <div className='flex items-center gap-3 rounded-lg bg-(--background-color) p-3'>
-                <FloatingIcon
-                  size='md'
-                  tone='main'
-                >
+                <FloatingIcon size='md' tone='main'>
                   <Palette />
                 </FloatingIcon>
                 <div>
@@ -661,39 +700,15 @@ const WelcomeModal = () => {
               >
                 <div className='grid grid-cols-1 gap-4 p-1 sm:grid-cols-2'>
                   {recommendedFonts.map(fontObj => (
-                    <button
+                    <FontOptionButton
                       key={fontObj.name}
-                      className={clsx(
-                        'flex cursor-pointer items-center justify-center overflow-hidden rounded-xl border-0 px-4 py-4 transition-all duration-200 hover:opacity-90 active:scale-95',
-                      )}
-                      style={{
-                        backgroundColor: 'var(--background-color)',
-                        outline:
-                          currentFont === fontObj.name
-                            ? '3px solid var(--secondary-color)'
-                            : 'none',
-                      }}
-                      onClick={() => {
+                      fontObj={fontObj}
+                      isSelected={currentFont === fontObj.name}
+                      onSelect={() => {
                         playClick();
                         setFont(fontObj.name);
                       }}
-                    >
-                      <p
-                        className={clsx(
-                          'text-center text-xl',
-                          fontObj.font.className,
-                        )}
-                      >
-                        <span className='text-(--main-color)'>
-                          {fontObj.name}
-                          {fontObj.name === 'Zen Maru Gothic' &&
-                            ` ${t('steps.fonts.default')}`}
-                        </span>
-                        <span className='ml-2 text-(--secondary-color)'>
-                          かな道場
-                        </span>
-                      </p>
-                    </button>
+                    />
                   ))}
                 </div>
               </CollapsibleSection>
@@ -708,39 +723,15 @@ const WelcomeModal = () => {
               >
                 <div className='grid grid-cols-1 gap-4 p-1 sm:grid-cols-2'>
                   {otherFonts.map(fontObj => (
-                    <button
+                    <FontOptionButton
                       key={fontObj.name}
-                      className={clsx(
-                        'flex cursor-pointer items-center justify-center overflow-hidden rounded-xl border-0 px-4 py-4 transition-all duration-200 hover:opacity-90 active:scale-95',
-                      )}
-                      style={{
-                        backgroundColor: 'var(--background-color)',
-                        outline:
-                          currentFont === fontObj.name
-                            ? '3px solid var(--secondary-color)'
-                            : 'none',
-                      }}
-                      onClick={() => {
+                      fontObj={fontObj}
+                      isSelected={currentFont === fontObj.name}
+                      onSelect={() => {
                         playClick();
                         setFont(fontObj.name);
                       }}
-                    >
-                      <p
-                        className={clsx(
-                          'text-center text-xl',
-                          fontObj.font.className,
-                        )}
-                      >
-                        <span className='text-(--main-color)'>
-                          {fontObj.name}
-                          {fontObj.name === 'Zen Maru Gothic' &&
-                            ` ${t('steps.fonts.default')}`}
-                        </span>
-                        <span className='ml-2 text-(--secondary-color)'>
-                          かな道場
-                        </span>
-                      </p>
-                    </button>
+                    />
                   ))}
                 </div>
               </CollapsibleSection>
@@ -782,7 +773,7 @@ const WelcomeModal = () => {
     }
   };
 
-  if (!isVisible) return null;
+  if (!shouldShowModal) return null;
 
   return (
     <AnimatePresence>
@@ -790,7 +781,7 @@ const WelcomeModal = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className='fixed inset-0 z-[9999] flex items-center justify-center overscroll-none bg-black/40 p-1 backdrop-blur-sm sm:p-4'
+        className='fixed inset-0 z-9999 flex items-center justify-center overscroll-none bg-black/40 p-1 backdrop-blur-sm sm:p-4'
         onClick={e => {
           if (e.target === e.currentTarget) {
             handleClose();
@@ -882,7 +873,7 @@ const WelcomeModal = () => {
                 >
                   <ChevronLeft
                     size={18}
-                    className='shrink-0 text-(--main-color) group-hover:text-(--secondary-color) sm:h-[20px] sm:w-[20px]'
+                    className='shrink-0 text-(--main-color) group-hover:text-(--secondary-color) sm:h-5 sm:w-5'
                   />
                   <span className='hidden sm:inline'>
                     {t('navigation.previous')}
@@ -893,14 +884,14 @@ const WelcomeModal = () => {
                 <div />
               )}
 
-                <button
-                  onClick={handleNext}
-                  className={clsx(
-                    'group flex cursor-pointer items-center justify-center gap-2 rounded-xl px-6 py-2 sm:px-8 sm:py-3',
-                    'text-sm font-medium text-(--main-color) sm:text-base',
-                    'transition-all duration-50 hover:bg-(--background-color) active:scale-98',
-                  )}
-                >
+              <button
+                onClick={handleNext}
+                className={clsx(
+                  'group flex cursor-pointer items-center justify-center gap-2 rounded-xl px-6 py-2 sm:px-8 sm:py-3',
+                  'text-sm font-medium text-(--main-color) sm:text-base',
+                  'transition-all duration-50 hover:bg-(--background-color) active:scale-98',
+                )}
+              >
                 <span>
                   {step === 'welcome'
                     ? t('navigation.getStarted')
@@ -910,7 +901,7 @@ const WelcomeModal = () => {
                 </span>
                 <ChevronRight
                   size={18}
-                  className='shrink-0 text-(--secondary-color) sm:h-[20px] sm:w-[20px]'
+                  className='shrink-0 text-(--secondary-color) sm:h-5 sm:w-5'
                 />
               </button>
             </div>
@@ -922,5 +913,3 @@ const WelcomeModal = () => {
 };
 
 export default WelcomeModal;
-
-
