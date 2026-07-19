@@ -194,7 +194,7 @@
   {
     "id": 33,
     "text": "\"〜ていく/〜てくる\" shows direction or change over time, like \"will start\" or \"have been\".",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -266,7 +266,7 @@
   {
     "id": 45,
     "text": "\"〜ておく\" means \"do in advance\" or \"leave as is\".",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

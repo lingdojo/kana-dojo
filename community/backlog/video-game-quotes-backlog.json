@@ -176,7 +176,7 @@
     "game": "The Legend of Zelda: Breath of the Wild (JP)",
     "character": "Revali",
     "id": 18,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -386,7 +386,7 @@
     "game": "Tales series",
     "character": "Various endings",
     "id": 39,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -776,7 +776,7 @@
     "game": "The Legend of Zelda: Breath of the Wild (JP)",
     "character": "Revali",
     "id": 78,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

@@ -426,7 +426,7 @@
     "Seaweed"
   ],
   "correctIndex": 0
-},
+  },
   {
   "question": "Which city is known for its beef brand Kobe? (Community variation 59)",
   "difficulty": "easy",
@@ -437,6 +437,17 @@
     "Hiroshima"
   ],
   "correctIndex": 0
-}
+  },
+  {
+  "question": "What is the name of Japan's traditional theatre known for stylized performances and masks? (Community variation 6)",
+  "difficulty": "easy",
+  "answers": [
+    "Kabuki",
+    "Noh",
+    "Rakugo",
+    "Bunraku"
+  ],
+  "correctIndex": 1
+  }
 ]
 

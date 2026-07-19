@@ -474,17 +474,17 @@
     "meaning": "Children resemble their parents"
   },
   {
-  "japanese": "楽あれば苦あり",
-  "romaji": "Raku areba ku ari",
-  "english": "After ease comes hardship",
-  "meaning": "Good times and bad times alternate"
-},
+    "japanese": "楽あれば苦あり",
+    "romaji": "Raku areba ku ari",
+    "english": "After ease comes hardship",
+    "meaning": "Good times and bad times alternate"
+  },
   {
-  "japanese": "旅は道連れ世は情け",
-  "romaji": "Tabi wa michizure yo wa nasake",
-  "english": "Travel needs companions; life needs kindness",
-  "meaning": "Relationships and compassion matter"
-},
+    "japanese": "旅は道連れ世は情け",
+    "romaji": "Tabi wa michizure yo wa nasake",
+    "english": "Travel needs companions; life needs kindness",
+    "meaning": "Relationships and compassion matter"
+  },
   {
     "japanese": "Example",
     "romaji": "Example",
@@ -492,6 +492,35 @@
     "meaning": "Example"
   },
   {
+    "japanese": "失敗は成功のもと",
+    "romaji": "Shippai wa seikou no moto",
+    "english": "Failure is the origin of success",
+    "meaning": "Mistakes lead to growth"
+  },
+  {
+    "japanese": "急がば回れ",
+    "romaji": "Isogaba maware",
+    "english": "If in a hurry, go around",
+    "meaning": "The safer path can be faster"
+  },
+  {
+    "japanese": "木を見て森を見ず",
+    "romaji": "Ki wo mite mori wo mizu",
+    "english": "See the trees but not the forest",
+    "meaning": "Miss the bigger picture"
+  },
+  {
+    "japanese": "餅は餅屋",
+    "romaji": "Mochi wa mochiya",
+    "english": "Mochi should be made by the mochi shop",
+    "meaning": "Leave it to the experts"
+  },
+  {
+    "japanese": "棚からぼた餅",
+    "romaji": "Tana kara botamochi",
+    "english": "A rice cake falls from the shelf",
+    "meaning": "Unexpected good luck"
+  }
   "japanese": "失敗は成功のもと",
   "romaji": "Shippai wa seikou no moto",
   "english": "Failure is the origin of success",

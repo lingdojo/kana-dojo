@@ -482,7 +482,7 @@
   {
     "id": 81,
     "fact": "The concept of 'wa' (和) in Japanese represents harmony - so important that the official name for Japan is 'Wa' (the country of harmony).",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -536,7 +536,7 @@
   {
     "id": 90,
     "fact": "Japan has vending machines that sell used schoolgirl uniforms - though this practice is now heavily regulated in most areas.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1370,7 +1370,7 @@
   {
     "id": 229,
     "fact": "Japan’s 'shrine stamps' called 'goshuin' (御朱印) are calligraphy seals collected in special books by visitors.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

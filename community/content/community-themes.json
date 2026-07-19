@@ -450,11 +450,17 @@
   "secondaryColor": "oklch(88.0% 0.055 90.0 / 1)"
 },
 {
+  "id": "temple-mist",
+  "backgroundColor": "oklch(21.0% 0.020 200.0 / 1)",
+  "mainColor": "oklch(78.0% 0.085 195.0 / 1)",
+  "secondaryColor": "oklch(65.0% 0.045 230.0 / 1)"
+},
+  {  
   "id": "sakura-ink",
   "backgroundColor": "oklch(88.0% 0.030 340.0 / 1)",
   "mainColor": "oklch(55.0% 0.170 350.0 / 1)",
   "secondaryColor": "oklch(35.0% 0.020 260.0 / 1)"
-},
+  },
   {
   "id": "ocean-tofu",
   "backgroundColor": "oklch(21.0% 0.042 235.0 / 1)",
@@ -508,5 +514,11 @@
   "backgroundColor": "oklch(96.0% 0.025 85.0 / 1)",
   "mainColor": "oklch(72.0% 0.225 320.0 / 1)",
   "secondaryColor": "oklch(80.0% 0.195 200.0 / 1)"
-}
+},
+  {
+    "id": "midnight-katana",
+    "backgroundColor": "oklch(14.0% 0.020 250.0 / 1)",
+    "mainColor": "oklch(82.0% 0.030 240.0 / 1)",
+    "secondaryColor": "oklch(68.0% 0.185 20.0 / 1)"
+  }
 ]

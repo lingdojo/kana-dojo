@@ -276,7 +276,7 @@
       "Ikebana"
     ],
     "correctIndex": 0,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1200,7 +1200,7 @@
       "Bunraku"
     ],
     "correctIndex": 1,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

@@ -510,7 +510,7 @@
     "english": "I'd even borrow a cat's paw",
     "meaning": "Extremely busy",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 58,
@@ -744,7 +744,7 @@
     "english": "Dried bonito to a cat",
     "meaning": "Leave temptation unattended at your own risk",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 84,
@@ -1428,7 +1428,7 @@
     "english": "Kindness is not for others alone",
     "meaning": "Kindness comes back to you",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 160,
