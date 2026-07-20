@@ -527,35 +527,35 @@
     "english": "Failure is the origin of success",
     "meaning": "Mistakes lead to growth"
   },
-{
-  "japanese": "急がば回れ",
-  "romaji": "Isogaba maware",
-  "english": "If in a hurry, go around",
-  "meaning": "The safer path can be faster"
-},
-{
-  "japanese": "木を見て森を見ず",
-  "romaji": "Ki wo mite mori wo mizu",
-  "english": "See the trees but not the forest",
-  "meaning": "Miss the bigger picture"
-},
-{
-  "japanese": "餅は餅屋",
-  "romaji": "Mochi wa mochiya",
-  "english": "Mochi should be made by the mochi shop",
-  "meaning": "Leave it to the experts"
-},
-{
-  "japanese": "魚心あれば水心",
-  "romaji": "Uogokoro areba mizugokoro",
-  "english": "If fish has heart, water has heart",
-  "meaning": "Good intentions will be reciprocated"
-},
   {
-  "japanese": "虎穴に入らずんば虎子を得ず",
-  "romaji": "Koketsu ni irazunba koji wo ezu",
-  "english": "You can’t get the tiger’s cub without entering the lair",
-  "meaning": "No reward without risk"
+    "japanese": "急がば回れ",
+    "romaji": "Isogaba maware",
+    "english": "If in a hurry, go around",
+    "meaning": "The safer path can be faster"
+  },
+  {
+    "japanese": "木を見て森を見ず",
+    "romaji": "Ki wo mite mori wo mizu",
+    "english": "See the trees but not the forest",
+    "meaning": "Miss the bigger picture"
+  },
+  {
+    "japanese": "餅は餅屋",
+    "romaji": "Mochi wa mochiya",
+    "english": "Mochi should be made by the mochi shop",
+    "meaning": "Leave it to the experts"
+  },
+  {
+    "japanese": "魚心あれば水心",
+    "romaji": "Uogokoro areba mizugokoro",
+    "english": "If fish has heart, water has heart",
+    "meaning": "Good intentions will be reciprocated"
+  },
+  {
+    "japanese": "虎穴に入らずんば虎子を得ず",
+    "romaji": "Koketsu ni irazunba koji wo ezu",
+    "english": "You can’t get the tiger’s cub without entering the lair",
+    "meaning": "No reward without risk"
   },
   {
     "japanese": "念には念を入れよ",
@@ -570,15 +570,21 @@
     "meaning": "People forget hardships once they are over"
   },
   {
-  "japanese": "泣きっ面に蜂",
-  "romaji": "Naki tsura ni hachi",
-  "english": "A bee on a crying face",
-  "meaning": "Misfortune piles up"
-},
-{
-  "japanese": "雨垂れ石を穿つ",
-  "romaji": "Amadare ishi wo ugatsu",
-  "english": "Dripping water pierces stone",
-  "meaning": "Persistence can overcome great obstacles"
-}
+    "japanese": "泣きっ面に蜂",
+    "romaji": "Naki tsura ni hachi",
+    "english": "A bee on a crying face",
+    "meaning": "Misfortune piles up"
+  },
+  {
+    "japanese": "雨垂れ石を穿つ",
+    "romaji": "Amadare ishi wo ugatsu",
+    "english": "Dripping water pierces stone",
+    "meaning": "Persistence can overcome great obstacles"
+  },
+  {
+    "japanese": "虎穴に入らずんば虎子を得ず",
+    "romaji": "Koketsu ni irazunba koji wo ezu",
+    "english": "You can’t get the tiger’s cub without entering the lair",
+    "meaning": "No reward without risk"
+  }
 ]
