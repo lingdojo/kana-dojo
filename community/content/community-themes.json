@@ -545,4 +545,10 @@
   "mainColor": "oklch(82.0% 0.185 200.0 / 1)",
   "secondaryColor": "oklch(78.0% 0.210 330.0 / 1)"
 },
+{
+  "id": "mochi-pastel",
+  "backgroundColor": "oklch(94.0% 0.028 340.0 / 1)",
+  "mainColor": "oklch(72.0% 0.145 345.0 / 1)",
+  "secondaryColor": "oklch(75.0% 0.125 155.0 / 1)"
+},
 ]
