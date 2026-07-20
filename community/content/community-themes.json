@@ -502,5 +502,11 @@
   "backgroundColor": "oklch(20.0% 0.018 270.0 / 1)",
   "mainColor": "oklch(70.0% 0.155 25.0 / 1)",
   "secondaryColor": "oklch(55.0% 0.045 260.0 / 1)"
+},
+{
+  "id": "inkstone",
+  "backgroundColor": "oklch(15.0% 0.018 260.0 / 1)",
+  "mainColor": "oklch(78.0% 0.040 230.0 / 1)",
+  "secondaryColor": "oklch(50.0% 0.030 255.0 / 1)"
 }
 ]
