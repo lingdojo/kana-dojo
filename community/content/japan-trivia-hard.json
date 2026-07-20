@@ -676,5 +676,16 @@
     "Rupee"
   ],
   "correctIndex": 1
+},
+{
+  "question": "Which Japanese island is known for its active volcano, Sakurajima?",
+  "difficulty": "hard",
+  "answers": [
+    "Kyushu",
+    "Honshu",
+    "Shikoku",
+    "Hokkaido"
+  ],
+  "correctIndex": 0
 }
 ]
