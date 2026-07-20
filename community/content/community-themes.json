@@ -556,5 +556,11 @@
     " backgroundColor": "oklch(18.0% 0.042 325.0 / 1)",
     "mainColor": "oklch(90.0% 0.115 95.0 / 1)",
     " secondaryColor": "oklch(75.0% 0.195 340.0 / 1)"
-  }
+  },
+  {
+  id: 'kintsugi-gold',
+  backgroundColor: 'oklch(22.0% 0.025 95.0 / 1)',
+  mainColor: 'oklch(84.0% 0.120 95.0 / 1)',
+  secondaryColor: 'oklch(68.0% 0.090 60.0 / 1)'
+  },
 ]
