@@ -538,5 +538,11 @@
   "backgroundColor": "oklch(96.0% 0.008 85.0 / 1)",
   "mainColor": "oklch(20.0% 0.015 270.0 / 1)",
   "secondaryColor": "oklch(45.0% 0.025 260.0 / 1)"
-}
+},
+{
+  "id": "holographic-idol",
+  "backgroundColor": "oklch(14.0% 0.065 300.0 / 1)",
+  "mainColor": "oklch(82.0% 0.185 200.0 / 1)",
+  "secondaryColor": "oklch(78.0% 0.210 330.0 / 1)"
+},
 ]
