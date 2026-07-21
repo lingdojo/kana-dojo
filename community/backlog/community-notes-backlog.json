@@ -21,9 +21,7 @@
     "position": "bottom",
     "text": "Routine note: small non-blocking documentation edits may appear here.",
     "issued": true,
-    "completed": false,
-    "completedBy": "shreyasirayyy",
-    "completedPR": 25226
+    "completed": false
   },
   {
     "id": 4,
@@ -38,8 +36,10 @@
     "file": "docs/community-notes/archival-notes.md",
     "position": "bottom",
     "text": "- Additional community note preserved for documentation housekeeping.",
-    "issued": true,
-    "completed": false
+    "issued": false,
+    "completed": false,
+    "completedBy": "somyapriya01",
+    "completedPR": 25428
   },
   {
     "id": 4,

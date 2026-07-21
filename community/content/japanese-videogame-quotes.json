@@ -593,6 +593,13 @@
   "english": "To live is to fight.",
   "game": "Yakuza: Like a Dragon",
   "character": "Ichiban Kasuga"
+},
+  {
+  "japanese": "勝つと思うな、思えば負けよ",
+  "romaji": "Katsu to omou na, omoeba makeyo",
+  "english": "If you only think of winning, you lose.",
+  "game": "Samurai game proverb line",
+  "character": "Musashi reference"
   },
   {
   "japanese": "俺たちの物語は、ここからだ",
@@ -635,5 +642,19 @@
   "english": "Believe in your comrades.",
   "game": "Dragon Quest series",
   "character": "Recurring command voice"
+},
+{
+  "japanese": "冒険の始まりだ！",
+  "romaji": "Bouken no hajimari da!",
+  "english": "This is the beginning of the adventure!",
+  "game": "Dragon Quest XI",
+  "character": "Hero / party lines"
+},
+{
+  "japanese": "次はもっと強くなる",
+  "romaji": "Tsugi wa motto tsuyoku naru",
+  "english": "Next time, I'll be stronger.",
+  "game": "Pokemon series",
+  "character": "Rival characters"
 }
 ]
