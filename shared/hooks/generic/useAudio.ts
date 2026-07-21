@@ -7,6 +7,7 @@ import {
   getClickSoundVariantBaseUrls,
 } from '@/features/Preferences/data/audio/clickSounds';
 import type { ClickSoundId } from '@/features/Preferences/data/audio/clickSounds';
+import { AudioBufferLruCache } from '@/shared/lib/audio/AudioBufferLruCache';
 
 const random = new Random();
 
@@ -15,9 +16,11 @@ const random = new Random();
 // =============================================================================
 
 let audioContext: AudioContext | null = null;
-const bufferCache = new Map<string, AudioBuffer>();
+const DECODED_AUDIO_CACHE_BYTES = 16 * 1024 * 1024;
+const bufferCache = new AudioBufferLruCache<AudioBuffer>(
+  DECODED_AUDIO_CACHE_BYTES,
+);
 const inFlightLoads = new Map<string, Promise<AudioBuffer | null>>();
-const MAX_CACHE_SIZE = 300;
 const CLICK_SOUND_PRELOAD_LIMIT = 3;
 
 /**
@@ -37,7 +40,7 @@ const getAudioContext = (): AudioContext => {
 
 /**
  * Load and decode an audio file into an AudioBuffer (cached)
- * Uses FIFO eviction when cache exceeds MAX_CACHE_SIZE
+ * Uses byte-bounded LRU eviction to prevent session-long decoded PCM growth.
  */
 const loadAudioBuffer = async (url: string): Promise<AudioBuffer | null> => {
   // Check cache first
@@ -54,14 +57,6 @@ const loadAudioBuffer = async (url: string): Promise<AudioBuffer | null> => {
 
       const arrayBuffer = await response.arrayBuffer();
       const audioBuffer = await ctx.decodeAudioData(arrayBuffer);
-
-      // FIFO eviction: delete oldest entry if cache is full
-      if (bufferCache.size >= MAX_CACHE_SIZE) {
-        const firstKey = bufferCache.keys().next().value;
-        if (firstKey) {
-          bufferCache.delete(firstKey);
-        }
-      }
 
       bufferCache.set(url, audioBuffer);
       return audioBuffer;
@@ -105,22 +100,13 @@ const playBuffer = (buffer: AudioBuffer, volume: number = 1): void => {
  * Web Audio API handles this naturally, but we preload buffers for instant playback
  */
 const createAudioPool = (url: string, volume: number = 1) => {
-  let buffer: AudioBuffer | null = null;
-  let loading = false;
-
-  const ensureLoaded = async () => {
-    if (buffer || loading) return buffer;
-    loading = true;
-    buffer = await loadAudioBuffer(url);
-    loading = false;
-    return buffer;
-  };
+  const ensureLoaded = () => loadAudioBuffer(url);
 
   const play = () => {
-    if (buffer) {
-      playBuffer(buffer, volume);
+    const cached = bufferCache.get(url);
+    if (cached) {
+      playBuffer(cached, volume);
     } else {
-      // Load and play asynchronously if not loaded yet
       ensureLoaded().then(b => {
         if (b) playBuffer(b, volume);
       });
@@ -177,6 +163,7 @@ const CORRECT_SOUND_BASE = '/sounds/correct';
 const ERROR_SOUND_BASE = '/sounds/error/error1/error1_1';
 const LONG_SOUND_BASE = '/sounds/long';
 const LONG_LOOP_VOLUME = 0.12;
+const LOOP_AUDIO_RELEASE_DELAY_MS = 2 * 60 * 1000;
 
 // =============================================================================
 // Preloaded Audio Pools
@@ -187,6 +174,7 @@ let correctPool: ReturnType<typeof createAudioPool> | null = null;
 let errorPool: ReturnType<typeof createAudioPool> | null = null;
 let longPool: ReturnType<typeof createAudioPool> | null = null;
 let longLoopAudio: HTMLAudioElement | null = null;
+let longLoopReleaseTimer: ReturnType<typeof setTimeout> | null = null;
 const clickPools = new Map<string, ReturnType<typeof createAudioPool>>();
 
 const getCorrectPool = () => {
@@ -225,6 +213,30 @@ const getLongLoopAudio = () => {
   }
 
   return longLoopAudio;
+};
+
+const clearLongLoopReleaseTimer = () => {
+  if (!longLoopReleaseTimer) return;
+  clearTimeout(longLoopReleaseTimer);
+  longLoopReleaseTimer = null;
+};
+
+const releaseLongLoopAudio = () => {
+  clearLongLoopReleaseTimer();
+  if (!longLoopAudio) return;
+  longLoopAudio.pause();
+  longLoopAudio.currentTime = 0;
+  longLoopAudio.removeAttribute('src');
+  longLoopAudio.load();
+  longLoopAudio = null;
+};
+
+const scheduleLongLoopRelease = () => {
+  clearLongLoopReleaseTimer();
+  longLoopReleaseTimer = setTimeout(
+    releaseLongLoopAudio,
+    LOOP_AUDIO_RELEASE_DELAY_MS,
+  );
 };
 
 const getClickPool = (baseUrl: string) => {
@@ -340,6 +352,8 @@ export const useLong = () => {
   const playLongLoop = useCallback(() => {
     if (silentMode) return;
 
+    clearLongLoopReleaseTimer();
+
     const audio = getLongLoopAudio();
     if (!audio) return;
 
@@ -353,6 +367,7 @@ export const useLong = () => {
     if (!longLoopAudio) return;
     longLoopAudio.pause();
     longLoopAudio.currentTime = 0;
+    scheduleLongLoopRelease();
   }, []);
 
   useEffect(() => {
@@ -361,6 +376,7 @@ export const useLong = () => {
 
     longLoopAudio.pause();
     longLoopAudio.currentTime = 0;
+    scheduleLongLoopRelease();
   }, [silentMode]);
 
   return { playLong, playLongLoop, stopLongLoop };
@@ -372,6 +388,24 @@ export const useLong = () => {
 
 let christmasAudio: HTMLAudioElement | null = null;
 let savedTime = 0;
+let christmasReleaseTimer: ReturnType<typeof setTimeout> | null = null;
+
+const clearChristmasReleaseTimer = () => {
+  if (!christmasReleaseTimer) return;
+  clearTimeout(christmasReleaseTimer);
+  christmasReleaseTimer = null;
+};
+
+const releaseChristmasAudio = () => {
+  clearChristmasReleaseTimer();
+  if (!christmasAudio) return;
+  christmasAudio.pause();
+  christmasAudio.currentTime = 0;
+  christmasAudio.removeAttribute('src');
+  christmasAudio.load();
+  christmasAudio = null;
+  savedTime = 0;
+};
 
 export const useChristmas = () => {
   const initChristmas = () => {
@@ -392,6 +426,7 @@ export const useChristmas = () => {
   };
 
   const playChristmas = () => {
+    clearChristmasReleaseTimer();
     initChristmas();
     if (christmasAudio) {
       christmasAudio.currentTime = savedTime;
@@ -412,9 +447,23 @@ export const useChristmas = () => {
     savedTime = 0;
   };
 
+  const scheduleRelease = () => {
+    clearChristmasReleaseTimer();
+    christmasReleaseTimer = setTimeout(
+      releaseChristmasAudio,
+      LOOP_AUDIO_RELEASE_DELAY_MS,
+    );
+  };
+
   const isPlaying = () => (christmasAudio ? !christmasAudio.paused : false);
 
-  return { playChristmas, pauseChristmas, isPlaying, resetTimer };
+  return {
+    playChristmas,
+    pauseChristmas,
+    isPlaying,
+    resetTimer,
+    scheduleRelease,
+  };
 };
 
 // =============================================================================
