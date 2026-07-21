@@ -1,5 +1,6 @@
 'use client';
-import { useCallback, useEffect, useRef, useState } from 'react';
+
+import { CSSProperties, useCallback, useEffect, useRef, useState } from 'react';
 import { ChevronsUp } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
@@ -68,7 +69,6 @@ export default function BackToTop() {
   const { playClick } = useClick();
 
   const [visible, setVisible] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
   const [stableVh, setStableVh] = useState('100dvh');
   const [isEntering, setIsEntering] = useState(false);
   const [isExiting, setIsExiting] = useState(false);
@@ -155,8 +155,6 @@ export default function BackToTop() {
   }, []);
 
   useEffect(() => {
-    const mounted = true;
-    setIsMounted(mounted);
     updateStableVh(true);
 
     if (typeof document === 'undefined') return;
@@ -189,7 +187,7 @@ export default function BackToTop() {
 
   const isRootPath = pathname === '/' || pathname === '';
 
-  if (!isMounted || isRootPath) return null;
+  if (isRootPath) return null;
   if (!visible && !isExiting) return null;
 
   const handleClick = () => {
@@ -250,7 +248,7 @@ export default function BackToTop() {
         }
       : {};
 
-  const getExplosionStyle = (): React.CSSProperties => {
+  const getExplosionStyle = (): CSSProperties => {
     if (!USE_EXPLOSION_ANIMATION) return {};
 
     switch (animState) {
@@ -287,7 +285,7 @@ export default function BackToTop() {
           '--stable-vh': stableVh,
           ...animationStyle,
           ...getExplosionStyle(),
-        } as unknown as React.CSSProperties
+        } as unknown as CSSProperties
       }
     >
       <ChevronsUp size={USE_FLOATING_STYLE ? 24 : 32} strokeWidth={2.5} />
