@@ -210,12 +210,6 @@
     "secondaryColor": "oklch(80.0% 0.185 55.0 / 1)"
   },
   {
-    "id": "samurai-steel",
-    "backgroundColor": "oklch(18.0% 0.022 250.0 / 1)",
-    "mainColor": "oklch(80.0% 0.055 240.0 / 1)",
-    "secondaryColor": "oklch(65.0% 0.170 15.0 / 1)"
-  },
-  {
     "id": "wasabi-punch",
     "backgroundColor": "oklch(20.0% 0.048 160.0 / 1)",
     "mainColor": "oklch(72.0% 0.185 145.0 / 1)",
@@ -262,12 +256,6 @@
     "backgroundColor": "oklch(92.0% 0.020 140.0 / 1)",
     "mainColor": "oklch(58.0% 0.165 140.0 / 1)",
     "secondaryColor": "oklch(72.0% 0.115 95.0 / 1)"
-  },
-  {
-    "id": "samurai-steel",
-    "backgroundColor": "oklch(18.0% 0.022 250.0 / 1)",
-    "mainColor": "oklch(80.0% 0.055 240.0 / 1)",
-    "secondaryColor": "oklch(65.0% 0.170 15.0 / 1)"
   },
   {
     "id": "robot-anime",
@@ -586,5 +574,11 @@
     "backgroundColor": "oklch(22.0% 0.020 55.0 / 1)",
     "mainColor": "oklch(68.0% 0.085 65.0 / 1)",
     "secondaryColor": "oklch(58.0% 0.060 45.0 / 1)"
+  },
+  {
+    "id": "samurai-steel",
+    "backgroundColor": "oklch(18.0% 0.022 250.0 / 1)",
+    "mainColor": "oklch(80.0% 0.055 240.0 / 1)",
+    "secondaryColor": "oklch(65.0% 0.170 15.0 / 1)"
   }
 ]

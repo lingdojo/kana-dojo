@@ -813,5 +813,16 @@
     "Okayama"
   ],
   "correctIndex": 0
+},
+  {
+  "question": "Which Japanese festival features people throwing beans to drive away evil spirits?",
+  "difficulty": "medium",
+  "answers": [
+    "Setsubun",
+    "Obon",
+    "Tanabata",
+    "Shichi-Go-San"
+  ],
+  "correctIndex": 0
 }
 ]
