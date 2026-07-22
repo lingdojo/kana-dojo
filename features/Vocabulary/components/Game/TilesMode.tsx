@@ -2,33 +2,40 @@
 import { useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import clsx from 'clsx';
-import useVocabStore, {
-  IVocabObj,
-} from '@/features/Vocabulary/store/useVocabStore';
+import type { IVocabObj } from '@/features/Vocabulary/store/useVocabStore';
 import { Random } from 'random-js';
 import { useCorrect, useError, useClick } from '@/shared/hooks/generic/useAudio';
-import { getGlobalAdaptiveSelector } from '@/shared/lib/adaptiveSelection';
-import Stars from '@/shared/components/Game/Stars';
+import { getGlobalAdaptiveSelector } from '@/shared/utils/adaptiveSelection';
+import Stars from '@/shared/ui-composite/Game/Stars';
 import { useCrazyModeTrigger } from '@/features/CrazyMode/hooks/useCrazyModeTrigger';
-import { useStatsStore } from '@/features/Progress';
-import { useShallow } from 'zustand/react/shallow';
-import { useStopwatch } from 'react-timer-hook';
+import { useAnswerTimer } from '@/shared/hooks/game/useAnswerTimer';
+import { useGameStats } from '@/shared/hooks/game/useGameStats';
 import { useSmartReverseMode } from '@/shared/hooks/game/useSmartReverseMode';
 import { useTilesMode } from '@/shared/hooks/game/useTilesMode';
-import { GameBottomBar } from '@/shared/components/Game/GameBottomBar';
-import FuriganaText from '@/shared/components/text/FuriganaText';
-import AnswerSummary from '@/shared/components/Game/AnswerSummary';
+import { useTilesModeHandlers } from '@/shared/hooks/game/useTilesModeHandlers';
+import { useTilesModeState } from '@/shared/hooks/game/useTilesModeState';
+import { GameBottomBar } from '@/shared/ui-composite/Game/GameBottomBar';
+import FuriganaText from '@/shared/ui-composite/text/FuriganaText';
+import AnswerSummary from '@/shared/ui-composite/Game/AnswerSummary';
 import { CircleCheck } from 'lucide-react';
-import SSRAudioButton from '@/shared/components/audio/SSRAudioButton';
-import { cn } from '@/shared/lib/utils';
+import SSRAudioButton from '@/shared/ui-composite/audio/SSRAudioButton';
 import { useThemePreferences } from '@/features/Preferences';
 import {
-  BottomBarState,
   gameContentVariants,
+  getAnswerRowClassName,
+  getGlassModeClassName,
   useTilesModeActionKey,
-} from '@/shared/components/Game/TilesModeShared';
-import TilesModeGrid from '@/shared/components/Game/TilesModeGrid';
+} from '@/shared/ui-composite/Game/TilesModeShared';
+import TilesModeGrid from '@/shared/ui-composite/Game/TilesModeGrid';
 import useClassicSessionStore from '@/shared/store/useClassicSessionStore';
+import {
+  formatKeyToQuizType,
+  getAvailableQuestionFormats,
+  getQuestionFormatKey,
+  type VocabQuestionFormat,
+  type VocabQuizType,
+} from '@/features/Vocabulary/components/Game/vocabFormatLock';
+import { useSetProgressStore } from '@/features/Progress';
 
 const random = new Random();
 const adaptiveSelector = getGlobalAdaptiveSelector();
@@ -67,6 +74,9 @@ const VocabTilesMode = ({
   onWrong: externalOnWrong,
 }: VocabTilesModeProps) => {
   const logAttempt = useClassicSessionStore(state => state.logAttempt);
+  const recordVocabularyProgress = useSetProgressStore(
+    state => state.recordVocabularyProgress,
+  );
   // Smart reverse mode - used when not controlled externally
   const {
     isReverse: internalIsReverse,
@@ -90,14 +100,10 @@ const VocabTilesMode = ({
     selectedWordObjs.length - 1,
   );
 
-  // Get the current vocabulary collection from the Vocab store
-  const selectedVocabCollection = useVocabStore(
-    state => state.selectedVocabCollection,
-  );
   const isGlassMode = useThemePreferences().isGlassMode;
 
-  // Answer timing for speed achievements
-  const speedStopwatch = useStopwatch({ autoStart: false });
+  const { startAnswerTimer, pauseAnswerTimer, getAnswerTimeMs, resetAnswerTimer } =
+    useAnswerTimer();
   const { playCorrect } = useCorrect();
   const { playErrorTwice } = useError();
   const { playClick } = useClick();
@@ -108,10 +114,10 @@ const VocabTilesMode = ({
   const lastActionTimeRef = useRef<number>(0);
   const DEBOUNCE_MS = 300; // Minimum time between actions
 
+  const stats = useGameStats('vocabulary');
+  const { score, setScore } = stats;
+  const incrementVocabularyCorrect = stats.incrementVocabularyCorrect!;
   const {
-    score,
-    setScore,
-    incrementVocabularyCorrect,
     incrementWrongStreak,
     resetWrongStreak,
     recordAnswerTime,
@@ -120,21 +126,7 @@ const VocabTilesMode = ({
     addCharacterToHistory,
     incrementCharacterScore,
     addCorrectAnswerTime,
-  } = useStatsStore(
-    useShallow(state => ({
-      score: state.score,
-      setScore: state.setScore,
-      incrementVocabularyCorrect: state.incrementVocabularyCorrect,
-      incrementWrongStreak: state.incrementWrongStreak,
-      resetWrongStreak: state.resetWrongStreak,
-      recordAnswerTime: state.recordAnswerTime,
-      incrementCorrectAnswers: state.incrementCorrectAnswers,
-      incrementWrongAnswers: state.incrementWrongAnswers,
-      addCharacterToHistory: state.addCharacterToHistory,
-      incrementCharacterScore: state.incrementCharacterScore,
-      addCorrectAnswerTime: state.addCorrectAnswerTime,
-    })),
-  );
+  } = stats;
 
   // Create Map for O(1) lookups
   const wordObjMap = useMemo(
@@ -142,7 +134,19 @@ const VocabTilesMode = ({
     [selectedWordObjs],
   );
 
-  const [bottomBarState, setBottomBarState] = useState<BottomBarState>('check');
+  const {
+    bottomBarState,
+    setBottomBarState,
+    placedTileIds,
+    setPlacedTileIds,
+    isChecking,
+    setIsChecking,
+    isCelebrating,
+    setIsCelebrating,
+    canCheck,
+    showContinue,
+    showTryAgain,
+  } = useTilesModeState();
 
   // Quiz type: 'meaning' or 'reading' - alternates for kanji-containing words
   const [quizType, setQuizType] = useState<'meaning' | 'reading'>('meaning');
@@ -178,9 +182,18 @@ const VocabTilesMode = ({
 
       // Adjust quiz type based on the selected word
       // Skip reading quiz for kana-only words since reading === word (pointless exercise)
-      let effectiveQuizType = currentQuizType;
+      let effectiveQuizType: VocabQuizType = currentQuizType;
       if (currentQuizType === 'reading' && !containsKanji(selectedWord)) {
         effectiveQuizType = 'meaning';
+      }
+      const lockedFormat = adaptiveSelector.getPreferredLockedFormat(
+        selectedWord,
+        getAvailableQuestionFormats(selectedWord, isReverse),
+      );
+      if (lockedFormat) {
+        effectiveQuizType = formatKeyToQuizType(
+          lockedFormat as VocabQuestionFormat,
+        );
       }
 
       // Determine correct answer based on quiz type and mode
@@ -254,15 +267,22 @@ const VocabTilesMode = ({
     generateQuestion(quizType),
   );
   const [promptSequence, setPromptSequence] = useState(0);
-  const [placedTileIds, setPlacedTileIds] = useState<number[]>([]);
-  const [isChecking, setIsChecking] = useState(false);
-  const [isCelebrating, setIsCelebrating] = useState(false);
   const [displayAnswerSummary, setDisplayAnswerSummary] = useState(false);
   const [currentWordObjForSummary, setCurrentWordObjForSummary] =
     useState<IVocabObj | null>(null);
   const [feedback, setFeedback] = useState<React.ReactElement>(
     <>{'feedback ~'}</>,
   );
+  const { handleTileClick, handleTryAgain: baseHandleTryAgain } =
+    useTilesModeHandlers({
+      isChecking,
+      bottomBarState,
+      setPlacedTileIds,
+      setIsChecking,
+      setBottomBarState,
+      startAnswerTimer,
+      playClick,
+    });
 
   // Determine next quiz type based on word content
   const getNextQuizType = useCallback(
@@ -293,10 +313,17 @@ const VocabTilesMode = ({
       setBottomBarState('check');
       setDisplayAnswerSummary(false);
       // Start timing for the new question
-      speedStopwatch.reset();
-      speedStopwatch.start();
+      startAnswerTimer();
     },
-    [generateQuestion, quizType],
+    [
+      generateQuestion,
+      quizType,
+      startAnswerTimer,
+      setPlacedTileIds,
+      setIsChecking,
+      setIsCelebrating,
+      setBottomBarState,
+    ],
   );
 
   // Only reset game on isReverse change if we're NOT showing the answer summary
@@ -307,12 +334,12 @@ const VocabTilesMode = ({
     }
   }, [isReverse, resetGame, displayAnswerSummary]);
 
-  // Pause stopwatch when game is hidden
+  // Pause timer when game is hidden
   useEffect(() => {
     if (isHidden) {
-      speedStopwatch.pause();
+      pauseAnswerTimer();
     }
-  }, [isHidden]);
+  }, [isHidden, pauseAnswerTimer]);
 
   // Keyboard shortcut for Enter/Space to trigger button
   useTilesModeActionKey(buttonRef);
@@ -327,8 +354,8 @@ const VocabTilesMode = ({
     lastActionTimeRef.current = now;
 
     // Stop timing and record answer time
-    speedStopwatch.pause();
-    const answerTimeMs = speedStopwatch.totalMilliseconds;
+    pauseAnswerTimer();
+    const answerTimeMs = getAnswerTimeMs();
 
     playClick();
     setIsChecking(true);
@@ -346,7 +373,7 @@ const VocabTilesMode = ({
       // Record answer time for speed achievements
       addCorrectAnswerTime(answerTimeMs / 1000);
       recordAnswerTime(answerTimeMs);
-      speedStopwatch.reset();
+      resetAnswerTimer();
 
       playCorrect();
       triggerCrazyMode();
@@ -355,7 +382,13 @@ const VocabTilesMode = ({
       // Track stats for the word
       addCharacterToHistory(questionData.word);
       incrementCharacterScore(questionData.word, 'correct');
+      void recordVocabularyProgress(questionData.word, questionData.quizType);
       adaptiveSelector.updateCharacterWeight(questionData.word, true);
+      adaptiveSelector.registerQuestionFormatResult(
+        questionData.word,
+        getQuestionFormatKey(questionData.quizType, isReverse),
+        true,
+      );
       incrementVocabularyCorrect();
 
       incrementCorrectAnswers();
@@ -395,10 +428,16 @@ const VocabTilesMode = ({
         isCorrect: true,
         timeTakenMs: answerTimeMs,
         optionsShown: Array.from(questionData.allTiles.values()),
-        extra: { isReverse, quizType: questionData.quizType },
+        extra: {
+          contentType: 'vocabulary',
+          canonicalItemKey: questionData.word,
+          questionType: questionData.quizType,
+          isReverse,
+          quizType: questionData.quizType,
+        },
       });
     } else {
-      speedStopwatch.reset();
+      resetAnswerTimer();
       playErrorTwice();
       triggerCrazyMode();
       incrementWrongStreak();
@@ -406,6 +445,11 @@ const VocabTilesMode = ({
 
       incrementCharacterScore(questionData.word, 'wrong');
       adaptiveSelector.updateCharacterWeight(questionData.word, false);
+      adaptiveSelector.registerQuestionFormatResult(
+        questionData.word,
+        getQuestionFormatKey(questionData.quizType, isReverse),
+        false,
+      );
 
       if (score - 1 >= 0) {
         setScore(score - 1);
@@ -431,7 +475,13 @@ const VocabTilesMode = ({
         inputKind: 'word_building',
         isCorrect: false,
         optionsShown: Array.from(questionData.allTiles.values()),
-        extra: { isReverse, quizType: questionData.quizType },
+        extra: {
+          contentType: 'vocabulary',
+          canonicalItemKey: questionData.word,
+          questionType: questionData.quizType,
+          isReverse,
+          quizType: questionData.quizType,
+        },
       });
     }
   }, [
@@ -458,8 +508,14 @@ const VocabTilesMode = ({
     isReverse,
     addCorrectAnswerTime,
     recordAnswerTime,
-    isReverse,
     quizType,
+    pauseAnswerTimer,
+    getAnswerTimeMs,
+    resetAnswerTimer,
+    recordVocabularyProgress,
+    setIsChecking,
+    setBottomBarState,
+    setIsCelebrating,
   ]);
 
   // Handle Continue button (only for correct answers)
@@ -478,7 +534,17 @@ const VocabTilesMode = ({
     externalOnCorrect?.([questionData.word]);
 
     // Determine next quiz type based on word content
-    const nextType = getNextQuizType(questionData.word, quizType);
+    const baseNextType: VocabQuizType = getNextQuizType(
+      questionData.word,
+      quizType,
+    );
+    const lockedFormat = adaptiveSelector.getPreferredLockedFormat(
+      questionData.word,
+      getAvailableQuestionFormats(questionData.word, isReverse),
+    );
+    const nextType = lockedFormat
+      ? formatKeyToQuizType(lockedFormat as VocabQuestionFormat)
+      : baseNextType;
     setQuizType(nextType);
     resetGame(nextType);
   }, [
@@ -493,53 +559,17 @@ const VocabTilesMode = ({
     quizType,
   ]);
 
-  // Handle Try Again button (for wrong answers)
   const handleTryAgain = useCallback(() => {
-    // Debounce: prevent rapid button presses
     const now = Date.now();
     if (now - lastActionTimeRef.current < DEBOUNCE_MS) return;
     lastActionTimeRef.current = now;
-
-    playClick();
-    setPlacedTileIds([]);
-    setIsChecking(false);
-    setBottomBarState('check');
-    speedStopwatch.reset();
-    speedStopwatch.start();
-  }, [playClick]);
-
-  // Handle tile click - add or remove from placed tiles
-  const handleTileClick = useCallback(
-    (id: number, _char: string) => {
-      if (isChecking && bottomBarState !== 'wrong') return;
-
-      playClick();
-
-      // If in wrong state, reset to check state and continue with normal tile logic
-      if (bottomBarState === 'wrong') {
-        setIsChecking(false);
-        setBottomBarState('check');
-        speedStopwatch.reset();
-        speedStopwatch.start();
-      }
-
-      setPlacedTileIds(prevIds =>
-        prevIds.includes(id)
-          ? prevIds.filter(tileId => tileId !== id)
-          : [...prevIds, id],
-      );
-    },
-    [isChecking, bottomBarState, playClick],
-  );
+    baseHandleTryAgain();
+  }, [baseHandleTryAgain]);
 
   // Not enough words
   if (selectedWordObjs.length < 2 || !questionData.word) {
     return null;
   }
-
-  const canCheck = placedTileIds.length > 0 && !isChecking;
-  const showContinue = bottomBarState === 'correct';
-  const showTryAgain = bottomBarState === 'wrong';
 
   // Get the current word object for display (stored with the question)
   const currentWordObj = questionData.wordObj;
@@ -584,9 +614,9 @@ const VocabTilesMode = ({
                 {/* reading quiz: always asks for reading */}
               </span>
               <div
-                className={cn(
+                className={getGlassModeClassName(
                   'flex flex-row items-center justify-center gap-1',
-                  isGlassMode && 'rounded-xl bg-(--card-color) px-4 py-2',
+                  isGlassMode,
                 )}
               >
                 <motion.div
@@ -658,11 +688,10 @@ const VocabTilesMode = ({
                   ? 'ja'
                   : undefined
               }
-              answerRowClassName={clsx(
-                'flex w-full items-center border-b-2 border-(--border-color) px-2 pb-2 md:w-3/4 lg:w-2/3 xl:w-1/2',
+              answerRowClassName={getAnswerRowClassName(
                 isReverse || questionData.quizType === 'reading'
-                  ? 'min-h-[5.5rem]'
-                  : 'min-h-[5rem]',
+                  ? '5.5rem'
+                  : '5rem',
               )}
               tilesContainerClassName={
                 isGlassMode
@@ -698,4 +727,3 @@ const VocabTilesMode = ({
 };
 
 export default VocabTilesMode;
-

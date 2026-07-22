@@ -1,6 +1,6 @@
 'use client';
 
-import TopBar from '@/shared/components/navigation/TopBar';
+import TopBar from '@/shared/ui-composite/navigation/TopBar';
 
 export default function AcademyLayout({
   children,
@@ -16,3 +16,4 @@ export default function AcademyLayout({
     </div>
   );
 }
+

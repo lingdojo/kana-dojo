@@ -13,9 +13,7 @@
     "position": "top",
     "text": "> Community note: this page intentionally accepts tiny formatting-safe edits.",
     "issued": true,
-    "completed": false,
-    "completedBy": "GSuryaP",
-    "completedPR": 12899
+    "completed": false
   },
   {
     "id": 3,
@@ -39,6 +37,16 @@
     "position": "bottom",
     "text": "- Additional community note preserved for documentation housekeeping.",
     "issued": true,
+    "completed": false,
+    "completedBy": "somyapriya01",
+    "completedPR": 25428
+  },
+  {
+    "id": 4,
+    "author": "Jota e João",
+    "note": "Aprender os Kanas primeiro e evitar focar no Romaji acelera muito a compreensão do idioma!",
+    "dateAdded": "2026-06-08",
+    "issued": false,
     "completed": false
   }
 ]

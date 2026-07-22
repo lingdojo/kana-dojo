@@ -1,5 +1,5 @@
 <p align="center">
-<b>This project is backed by</b>
+<b>This project is sponsored by</b>
 <br/>
 <br/>
 <a href="https://vercel.com/oss">
@@ -7,9 +7,12 @@
 </a>
 <br/>
 <br/>
+<a href="https://cossistant.com/open-source-program">
+  <img alt="Cossistant OSS Program" src="https://cdn.cossistant.com/oss/oss-friends.svg" />
+</a>
 </p>
 
-<div id="top"></div>
+<!--<div id="top"></div>-->
 
 # KanaDojo かな道場
 
@@ -21,8 +24,9 @@
 
 **An aesthetic, minimalist, and highly customizable platform for mastering Japanese, inspired by Duolingo and Monkeytype. Built with Next.js and sponsored by Vercel.**
 
-[![Vercel OSS Program](https://img.shields.io/badge/Vercel-OSS%20Program-black?style=for-the-badge&logo=vercel)](https://vercel.com/oss)
+[![Vercel OSS Program](https://img.shields.io/badge/Vercel-OSS%20Program-black?style=for-the-badge&logo=vercel)](https://vercel.com/open-source-program)
 [![Sponsored by Vercel](https://img.shields.io/badge/Sponsored%20by-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/oss)
+<!--[![Sponsored by Cossistant](https://cdn.cossistant.com/oss/oss-friends.svg)](https://cossistant.com/open-source-program)-->
 [![Live Demo](https://img.shields.io/badge/demo-kanadojo.com-blue?style=for-the-badge)](https://kanadojo.com)
 [![DeepWiki](https://img.shields.io/badge/docs-DeepWiki-purple?style=for-the-badge)](https://deepwiki.com/lingdojo/kana-dojo)
 [![Good First Issues](https://img.shields.io/github/issues-search/lingdojo/kana-dojo?query=is%3Aissue+is%3Aopen+label%3A%22good%20first%20issue%22&style=for-the-badge&label=good%20first%20issues&color=brightgreen)](https://github.com/lingdojo/kana-dojo/issues?q=is%3Aissue+is%3Aopen+label%3A%22good%20first%20issue%22)
@@ -140,16 +144,15 @@ npm run check
 
 - [Brandon Haupt](https://www.instagram.com/talorash/) — creator of the KanaDojo logo.
 
-### Sponsor
+### Sponsors
 
-- [Vercel](https://vercel.com/) — KanaDojo is sponsored by Vercel.
-- [Vercel Open Source Program](https://vercel.com/open-source-program) — part of the broader OSS ecosystem we’re grateful to be part of.
+- [Vercel](https://vercel.com/oss) — part of Vercel's Open-source Software Sponsorship Program.
+- [Cossistant](https://cossistant.com/) — part of Cossistant's Open-source Program.
 
 ### Inspiration
 
 - [Duolingo](https://www.duolingo.com/) — main inspiration.
-- [Monkeytype](https://monkeytype.com/) — UI and design inspiration.
-- [Monkeytype GitHub repository](https://github.com/monkeytypegame/monkeytype)
+- [Monkeytype](https://github.com/monkeytypegame/monkeytype) — UI and design inspiration.
 
 ### Japanese Language Libraries
 

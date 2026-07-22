@@ -1,6 +1,6 @@
 'use client';
 
-import TopBar from '@/shared/components/navigation/TopBar';
+import TopBar from '@/shared/ui-composite/navigation/TopBar';
 
 interface ConjugateLayoutProps {
   children: React.ReactNode;
@@ -16,3 +16,4 @@ export default function ConjugateLayout({ children }: ConjugateLayoutProps) {
     </div>
   );
 }
+

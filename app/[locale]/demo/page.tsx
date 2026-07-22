@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { routing } from '@/core/i18n/routing';
-import DemoPage from '@/features/Demo/components/DemoPage';
+import { DemoPage } from '@/features/Demo';
 
 export function generateStaticParams() {
   return routing.locales.map(locale => ({ locale }));

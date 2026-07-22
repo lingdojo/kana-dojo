@@ -5,15 +5,14 @@ import { kana } from '@/features/Kana/data/kana';
 import useKanaStore from '@/features/Kana/store/useKanaStore';
 import { Random } from 'random-js';
 import { useCorrect, useError } from '@/shared/hooks/generic/useAudio';
-// import GameIntel from '@/shared/components/Game/GameIntel';
-import { buttonBorderStyles } from '@/shared/lib/styles';
-import { mcqKeyMappings } from '@/shared/lib/keyMappings';
-import { useStopwatch } from 'react-timer-hook';
+// import GameIntel from '@/shared/ui-composite/Game/GameIntel';
+import { buttonBorderStyles } from '@/shared/utils/styles';
+import { mcqKeyMappings } from '@/shared/utils/keyMappings';
 import { useStatsStore } from '@/features/Progress';
 import { useShallow } from 'zustand/react/shallow';
-import Stars from '@/shared/components/Game/Stars';
+import Stars from '@/shared/ui-composite/Game/Stars';
 import { useCrazyModeTrigger } from '@/features/CrazyMode/hooks/useCrazyModeTrigger';
-import { getGlobalAdaptiveSelector } from '@/shared/lib/adaptiveSelection';
+import { getGlobalAdaptiveSelector } from '@/shared/utils/adaptiveSelection';
 import { useSmartReverseMode } from '@/shared/hooks/game/useSmartReverseMode';
 import { useAdaptiveOptionCount } from '@/shared/hooks/game/useAdaptiveOptionCount';
 import useClassicSessionStore from '@/shared/store/useClassicSessionStore';
@@ -104,32 +103,26 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
     setScore,
     incrementHiraganaCorrect,
     incrementKatakanaCorrect,
-    recordAnswerTime,
     incrementWrongStreak,
     resetWrongStreak,
     incrementCorrectAnswers,
     incrementWrongAnswers,
     addCharacterToHistory,
     incrementCharacterScore,
-    addCorrectAnswerTime,
   } = useStatsStore(
     useShallow(state => ({
       score: state.score,
       setScore: state.setScore,
       incrementHiraganaCorrect: state.incrementHiraganaCorrect,
       incrementKatakanaCorrect: state.incrementKatakanaCorrect,
-      recordAnswerTime: state.recordAnswerTime,
       incrementWrongStreak: state.incrementWrongStreak,
       resetWrongStreak: state.resetWrongStreak,
       incrementCorrectAnswers: state.incrementCorrectAnswers,
       incrementWrongAnswers: state.incrementWrongAnswers,
       addCharacterToHistory: state.addCharacterToHistory,
       incrementCharacterScore: state.incrementCharacterScore,
-      addCorrectAnswerTime: state.addCorrectAnswerTime,
     })),
   );
-
-  const speedStopwatch = useStopwatch({ autoStart: false });
 
   const { playCorrect } = useCorrect();
   const { playErrorTwice } = useError();
@@ -263,10 +256,6 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
             () => random.real(0, 1) - 0.5,
           ),
     );
-    if (isReverse) {
-      speedStopwatch.start();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     isReverse,
     correctRomajiCharReverse,
@@ -275,7 +264,6 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
     correctKanaCharReverse,
     optionCount,
     getIncorrectOptions,
-    // speedStopwatch intentionally excluded - only calling methods, not reading values
   ]);
 
   const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);
@@ -295,11 +283,6 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
     };
   }, [shuffledVariants.length]);
 
-  useEffect(() => {
-    if (isHidden) speedStopwatch.pause();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isHidden]); // speedStopwatch intentionally excluded - only calling methods
-
   // Split variants into rows: first row always has 3, second row has the rest (0-3)
   const { topRow, bottomRow } = useMemo(() => {
     return {
@@ -310,12 +293,6 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
 
   const handleCorrectAnswer = useCallback(
     (correctChar: string) => {
-      speedStopwatch.pause();
-      const answerTimeMs = speedStopwatch.totalMilliseconds;
-      addCorrectAnswerTime(answerTimeMs / 1000);
-      // Track answer time for speed achievements (Requirements 6.1-6.5)
-      recordAnswerTime(answerTimeMs);
-      speedStopwatch.reset();
       playCorrect();
       addCharacterToHistory(correctChar);
       incrementCharacterScore(correctChar, 'correct');
@@ -346,14 +323,11 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
         userAnswer: isReverse ? correctKanaCharReverse : correctRomajiChar,
         inputKind: 'pick',
         isCorrect: true,
-        timeTakenMs: answerTimeMs,
         optionsShown: shuffledVariants,
         extra: { isReverse },
       });
     },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     [
-      addCorrectAnswerTime,
       playCorrect,
       addCharacterToHistory,
       incrementCharacterScore,
@@ -365,7 +339,6 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
       recordDifficultyCorrect,
       incrementHiraganaCorrect,
       incrementKatakanaCorrect,
-      recordAnswerTime,
       resetWrongStreak,
       logAttempt,
       correctKanaChar,
@@ -374,7 +347,6 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
       correctRomajiCharReverse,
       shuffledVariants,
       isReverse,
-      // speedStopwatch, adaptiveSelector intentionally excluded
     ],
   );
 
@@ -536,3 +508,4 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
 };
 
 export default KanaMCQ;
+

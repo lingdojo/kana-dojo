@@ -1,0 +1,47 @@
+# KanaDojo
+
+KanaDojo is a free, open-source Japanese learning app for hiragana, katakana, kanji, vocabulary, verb conjugation, translation and JLPT study.
+
+## Core surfaces
+- Kana practice: hiragana and katakana drills, charts, and guided learning
+- Kanji practice: kanji by JLPT level with readings, meanings, and example words
+- Vocabulary practice: themed and JLPT-based word study
+- Conjugator: Japanese verb forms including te-form, masu-form, passive, causative, and conditional
+- Translator: English to Japanese and Japanese to English
+- Academy: learning guides, study tips, and Japanese-language articles
+- Resources: curated Japanese learning links and tools
+- Anki converter: browser-based deck conversion tool
+- Progress tracking: stats, mastery, and practice history
+
+## Best entry points
+- https://kanadojo.com/
+- https://kanadojo.com/kana
+- https://kanadojo.com/kanji
+- https://kanadojo.com/vocabulary
+- https://kanadojo.com/conjugate
+- https://kanadojo.com/translate
+- https://kanadojo.com/academy
+- https://kanadojo.com/resources
+- https://kanadojo.com/anki-converter
+- https://kanadojo.com/faq
+- https://kanadojo.com/how-to-use
+- https://kanadojo.com/glossary
+
+## Retrieval hints
+- Learn kana / practice hiragana / practice katakana: /kana
+- Learn kanji / JLPT kanji practice: /kanji
+- Learn vocabulary / JLPT vocabulary: /vocabulary
+- Japanese verb conjugation: /conjugate
+- English-Japanese translation: /translate
+- Study guides and explanations: /academy
+- Japanese learning resources: /resources
+
+## Learning focus
+- Free and open-source, ad-free
+- Beginner-friendly and privacy-first
+- Works on desktop, tablet, and mobile
+- Progress is saved locally in the browser
+
+## Technical notes
+- Built with Next.js, React, TypeScript, Tailwind CSS, and next-intl
+- Uses structured data, canonical route structure, and sitemap-based discovery

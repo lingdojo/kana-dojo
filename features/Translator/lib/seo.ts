@@ -28,7 +28,7 @@ export function buildTranslatorMetadata(
 ): Metadata {
   const canonical = toUrl(config.pathname);
   const ogTitle = config.ogTitle ?? config.title;
-  const ogImageUrl = `${BASE_URL}/api/og?title=${encodeURIComponent(ogTitle)}&description=${encodeURIComponent(config.description.slice(0, 100))}&type=default`;
+  // const ogImageUrl = `${BASE_URL}/api/og?title=${encodeURIComponent(ogTitle)}&description=${encodeURIComponent(config.description.slice(0, 100))}&type=default`;
 
   return {
     title: config.title,
@@ -42,20 +42,20 @@ export function buildTranslatorMetadata(
       description: config.description,
       url: canonical,
       type: 'website',
-      images: [
+      /* images: [
         {
           url: ogImageUrl,
           width: 1200,
           height: 630,
           alt: ogTitle,
         },
-      ],
+      ], */
     },
     twitter: {
       card: 'summary_large_image',
       title: ogTitle,
       description: config.description,
-      images: [ogImageUrl],
+      /* images: [ogImageUrl], */
     },
   };
 }

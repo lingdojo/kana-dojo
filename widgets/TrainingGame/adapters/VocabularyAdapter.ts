@@ -1,5 +1,5 @@
-import type { IVocabObj } from '@/features/Vocabulary/store/useVocabStore';
-import { shuffle } from '@/shared/lib/shuffle';
+import type { IVocabObj } from '@/entities/vocabulary';
+import { shuffle } from '@/shared/utils/shuffle';
 import type { ContentAdapter, GameMode } from './ContentAdapter';
 
 /**
@@ -56,3 +56,4 @@ export const vocabularyAdapter: ContentAdapter<IVocabObj> = {
     };
   },
 };
+

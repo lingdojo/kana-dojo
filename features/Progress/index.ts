@@ -81,7 +81,31 @@ export { classifyCharacter } from './lib/classifyCharacter';
 export { detectContentType } from './lib/detectContentType';
 export { calculateAccuracy } from './lib/calculateAccuracy';
 
+// Progress calculation (set progress, star system)
+export {
+  MAX_STARS_PER_SET,
+  KANA_ROW_MASTERY_TARGET,
+  KANA_MAX_STARS,
+  KANA_ROW_MASTERY_CAP,
+  KANJI_SET_PROGRESS_TARGET,
+  KANJI_SET_PROGRESS_CAP,
+  VOCAB_MEANING_PROGRESS_TARGET,
+  VOCAB_MEANING_PROGRESS_CAP,
+  VOCAB_READING_PROGRESS_TARGET,
+  VOCAB_READING_PROGRESS_CAP,
+  VOCAB_SET_PROGRESS_TARGET_PER_WORD,
+  calculateKanjiSetProgress,
+  calculateVocabularySetProgress,
+  calculateKanjiSetProgressAndStars,
+  calculateVocabularySetProgressAndStars,
+} from './lib/setProgress';
+export type {
+  KanjiSetProgressEntry,
+  VocabularySetProgressEntry,
+} from './lib/setProgress';
+
 export { default as useStatsStore } from './store/useStatsStore';
+export { default as useSetProgressStore } from './store/useSetProgressStore';
 
 // ============================================================================
 // PRIVATE - DO NOT IMPORT DIRECTLY

@@ -1,5 +1,5 @@
-import PostWrapper from '@/shared/components/layout/PostWrapper';
-import ContentLayout from '@/shared/components/layout/ContentLayout';
+import PostWrapper from '@/shared/ui-composite/layout/PostWrapper';
+import ContentLayout from '@/shared/ui-composite/layout/ContentLayout';
 import ContributorsGrid from '@/features/Legal/credits/ContributorsGrid';
 import SponsorsGrid from '@/features/Legal/credits/SponsorsGrid';
 import { KO_FI_SUPPORTERS } from '@/features/Legal/credits/sponsorsData';
@@ -136,3 +136,4 @@ KanaDojo is what you see today thanks to everyone's work and suggestions. We'll 
     </ContentLayout>
   );
 }
+

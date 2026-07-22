@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useRef, useState, useCallback } from 'react';
-import { Button } from '@/shared/components/ui/button';
+import { Button } from '@/shared/ui/components/button';
 import { RefreshCcw, Play, Volume2, VolumeX } from 'lucide-react';
 import clsx from 'clsx';
 import { useGameAudio } from '../hooks/useGameAudio';
@@ -825,3 +825,4 @@ export const RunnerGame = () => {
     </div>
   );
 };
+

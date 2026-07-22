@@ -1,6 +1,6 @@
-import LegalLayout from '@/shared/components/layout/LegalLayout';
-import PostWrapper from '@/shared/components/layout/PostWrapper';
-import termsOfService from '@/shared/lib/legal/termsOfService';
+import LegalLayout from '@/shared/ui-composite/layout/LegalLayout';
+import PostWrapper from '@/shared/ui-composite/layout/PostWrapper';
+import termsOfService from '@/shared/utils/legal/termsOfService';
 import { ScrollText } from 'lucide-react';
 
 const TermsOfService = () => {
@@ -16,3 +16,4 @@ const TermsOfService = () => {
 };
 
 export default TermsOfService;
+

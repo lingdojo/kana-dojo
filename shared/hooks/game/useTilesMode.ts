@@ -100,7 +100,7 @@ export const useTilesMode = (options: TilesModeOptions = {}) => {
     enableAdaptiveWordLength = false,
     minWordLength = 1,
     maxWordLength = 3,
-    correctAnswersPerLengthStep = 5,
+    correctAnswersPerLengthStep = 10,
     minTilesModeStreak = 2,
   } = options;
   const activeSessionId = useClassicSessionStore(state => state.activeSessionId);

@@ -3,7 +3,7 @@
 import { Suspense, useEffect, useRef, useCallback, useState } from 'react';
 import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import { Languages, Share2, Check } from 'lucide-react';
-import { cn } from '@/shared/lib/utils';
+import { cn } from '@/shared/utils/utils';
 
 import useConjugatorStore from '../store/useConjugatorStore';
 import ConjugatorInput from './ConjugatorInput';
@@ -181,3 +181,4 @@ export default function ConjugatorPage(props: ConjugatorPageProps) {
     </Suspense>
   );
 }
+

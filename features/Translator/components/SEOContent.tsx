@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { cn } from '@/shared/lib/utils';
+import { cn } from '@/shared/utils/utils';
 
 const steps = [
   'Paste English or Japanese text into the main translator.',
@@ -188,3 +188,4 @@ export default function SEOContent() {
     </section>
   );
 }
+

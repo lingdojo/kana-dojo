@@ -1,5 +1,8 @@
+'use client';
+
 import { create } from 'zustand';
-import { appendAttempt } from '@/shared/lib/sessionHistory';
+import { appendAttempt } from '@/shared/utils/sessionHistory';
+import { getGlobalAdaptiveSelector } from '@/shared/utils/adaptiveSelection';
 
 interface ClassicSessionState {
   activeSessionId: string | null;
@@ -19,7 +22,13 @@ interface ClassicSessionState {
 
 const useClassicSessionStore = create<ClassicSessionState>((set, get) => ({
   activeSessionId: null,
-  setActiveSessionId: id => set({ activeSessionId: id }),
+  setActiveSessionId: id => {
+    const previousId = get().activeSessionId;
+    if (previousId === id) return;
+
+    getGlobalAdaptiveSelector().startSession(id ?? undefined);
+    set({ activeSessionId: id });
+  },
   logAttempt: attempt => {
     const sessionId = get().activeSessionId;
     if (!sessionId) return;
@@ -28,4 +37,5 @@ const useClassicSessionStore = create<ClassicSessionState>((set, get) => ({
 }));
 
 export default useClassicSessionStore;
+
 

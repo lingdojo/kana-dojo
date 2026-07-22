@@ -5,7 +5,7 @@ import useVisitStore from '../store/useVisitStore';
 import StreakStats from './StreakStats';
 import StreakGrid from './StreakGrid';
 import type { TimePeriod } from '../lib/streakCalculations';
-import { cn } from '@/shared/lib/utils';
+import { cn } from '@/shared/utils/utils';
 
 export default function StreakProgress() {
   const { visits, isLoaded, loadVisits } = useVisitStore();
@@ -51,3 +51,4 @@ export default function StreakProgress() {
     </div>
   );
 }
+

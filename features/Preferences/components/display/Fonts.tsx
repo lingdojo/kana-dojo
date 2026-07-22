@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import { useState, useMemo } from 'react';
 import { useClick } from '@/shared/hooks/generic/useAudio';
 import usePreferencesStore from '@/features/Preferences/store/usePreferencesStore';
-import { buttonBorderStyles } from '@/shared/lib/styles';
+import { buttonBorderStyles } from '@/shared/utils/styles';
 import fonts from '../../data/fonts/fonts';
 import { isRecommendedFont } from '../../data/fonts/recommendedFonts';
 import { Star, Type } from 'lucide-react';
@@ -182,3 +182,4 @@ const Fonts = ({ useNewIconDesign = false }: FontsProps) => {
 };
 
 export default Fonts;
+

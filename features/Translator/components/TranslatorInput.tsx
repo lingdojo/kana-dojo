@@ -2,15 +2,15 @@
 
 import { useCallback, useEffect, useRef } from 'react';
 import { X, Keyboard, Mic, MicOff } from 'lucide-react';
-import { cn } from '@/shared/lib/utils';
-import { ActionButton } from '@/shared/components/ui/ActionButton';
+import { cn } from '@/shared/utils/utils';
+import { ActionButton } from '@/shared/ui/components/ActionButton';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/shared/components/ui/select';
+} from '@/shared/ui/components/select';
 import type { Language } from '../types';
 import { useVoiceInput } from '../hooks/useVoiceInput';
 
@@ -309,3 +309,4 @@ export default function TranslatorInput({
     </div>
   );
 }
+

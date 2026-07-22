@@ -6,7 +6,7 @@ import {
   getResourcesBySubcategory,
   getAllResources,
 } from '../data';
-import { generateBreadcrumbSchema } from '@/shared/components/SEO/BreadcrumbSchema';
+import { generateBreadcrumbSchema } from '@/shared/ui-composite/SEO/BreadcrumbSchema';
 
 // Define locales directly to avoid Next.js navigation module import issues in tests
 const SUPPORTED_LOCALES = ['en', 'es'] as const;
@@ -320,3 +320,4 @@ describe('Property 10: Structured Data Validity', () => {
     });
   });
 });
+

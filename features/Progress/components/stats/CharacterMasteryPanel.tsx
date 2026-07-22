@@ -2,11 +2,10 @@
 
 import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { cn } from '@/shared/lib/utils';
-import { ActionButton } from '@/shared/components/ui/ActionButton';
-import { kana } from '@/features/Kana/data/kana';
-import useKanjiStore from '@/features/Kanji/store/useKanjiStore';
-import useVocabStore from '@/features/Vocabulary/store/useVocabStore';
+import { cn } from '@/shared/utils/utils';
+import { useKanaContent } from '@/features/Kana';
+import { useKanjiSelection } from '@/features/Kanji';
+import { useVocabSelection } from '@/features/Vocabulary';
 import type {
   CharacterMasteryItem,
   ContentFilter,
@@ -69,10 +68,12 @@ function isJapaneseText(value: string): boolean {
   return JAPANESE_CHAR_REGEX.test(value);
 }
 
-function buildRomajiToKanaMap(): Map<string, string> {
+function buildRomajiToKanaMap(
+  groups: ReadonlyArray<{ kana: string[]; romanji: string[] }>,
+): Map<string, string> {
   const romajiToKana = new Map<string, string>();
 
-  kana.forEach(group => {
+  groups.forEach(group => {
     group.romanji.forEach((romaji, index) => {
       const normalizedRomaji = romaji.trim().toLowerCase();
       if (!normalizedRomaji) return;
@@ -85,8 +86,6 @@ function buildRomajiToKanaMap(): Map<string, string> {
 
   return romajiToKana;
 }
-
-const ROMAJI_TO_KANA = buildRomajiToKanaMap();
 
 /**
  * Transforms raw character mastery data into CharacterMasteryItem array
@@ -149,8 +148,14 @@ export default function CharacterMasteryPanel({
 }: CharacterMasteryPanelProps) {
   const [contentFilter, setContentFilter] = useState<ContentFilter>('all');
 
-  const selectedKanjiObjs = useKanjiStore(state => state.selectedKanjiObjs);
-  const selectedVocabObjs = useVocabStore(state => state.selectedVocabObjs);
+  const { allGroups: kanaGroups } = useKanaContent();
+  const { selectedKanji: selectedKanjiObjs } = useKanjiSelection();
+  const { selectedVocab: selectedVocabObjs } = useVocabSelection();
+
+  const romajiToKanaMap = useMemo(
+    () => buildRomajiToKanaMap(kanaGroups),
+    [kanaGroups],
+  );
 
   const meaningToJapaneseMap = useMemo(() => {
     const map = new Map<string, string>();
@@ -178,6 +183,38 @@ export default function CharacterMasteryPanel({
     return map;
   }, [selectedKanjiObjs, selectedVocabObjs]);
 
+  const characterDetailsMap = useMemo(() => {
+    const map = new Map<string, { reading?: string; meaning?: string }>();
+
+    kanaGroups.forEach(group => {
+      group.kana.forEach((char, index) => {
+        if (!map.has(char)) {
+          map.set(char, { reading: group.romanji[index] });
+        }
+      });
+    });
+
+    selectedKanjiObjs.forEach(kanjiObj => {
+      if (!map.has(kanjiObj.kanjiChar)) {
+        map.set(kanjiObj.kanjiChar, {
+          reading: kanjiObj.kunyomi[0] || kanjiObj.onyomi[0],
+          meaning: kanjiObj.meanings[0],
+        });
+      }
+    });
+
+    selectedVocabObjs.forEach(vocabObj => {
+      if (!map.has(vocabObj.word)) {
+        map.set(vocabObj.word, {
+          reading: vocabObj.reading,
+          meaning: vocabObj.meanings[0],
+        });
+      }
+    });
+
+    return map;
+  }, [kanaGroups, selectedKanjiObjs, selectedVocabObjs]);
+
   const mergedCharacterMastery = useMemo(() => {
     const merged = new Map<string, { correct: number; incorrect: number }>();
 
@@ -190,7 +227,7 @@ export default function CharacterMasteryPanel({
       }
 
       const normalizedKey = trimmed.toLowerCase();
-      const kanaMatch = ROMAJI_TO_KANA.get(normalizedKey);
+      const kanaMatch = romajiToKanaMap.get(normalizedKey);
       if (kanaMatch) {
         return kanaMatch;
       }
@@ -217,7 +254,7 @@ export default function CharacterMasteryPanel({
     });
 
     return Object.fromEntries(merged);
-  }, [characterMastery, meaningToJapaneseMap]);
+  }, [characterMastery, meaningToJapaneseMap, romajiToKanaMap]);
 
   const allCharacters = useMemo(
     () => transformCharacterData(mergedCharacterMastery),
@@ -358,6 +395,7 @@ export default function CharacterMasteryPanel({
                           key={char.character}
                           item={char}
                           index={idx}
+                          details={characterDetailsMap.get(char.character)}
                         />
                       ))}
                     </div>
@@ -386,6 +424,7 @@ export default function CharacterMasteryPanel({
                           item={char}
                           index={idx}
                           isMastered
+                          details={characterDetailsMap.get(char.character)}
                         />
                       ))}
                     </div>
@@ -448,34 +487,86 @@ export default function CharacterMasteryPanel({
 }
 
 /**
- * Individual character row - color transitions only
+ * Individual character row - click to reveal reading/meaning
  */
 function CharacterRow({
   item,
   index,
   isMastered = false,
+  details,
 }: {
   item: CharacterMasteryItem;
   index: number;
   isMastered?: boolean;
+  details?: { reading?: string; meaning?: string };
 }) {
+  const [revealed, setRevealed] = useState(false);
+  const canReveal = Boolean(details?.reading || details?.meaning);
+
+  const ariaLabel = canReveal
+    ? revealed
+      ? `Hide reading for ${item.character}`
+      : `Reveal reading for ${item.character}`
+    : `${item.character}, no reading available`;
+
   return (
-    <motion.div
+    <motion.button
+      type='button'
+      onClick={() => canReveal && setRevealed(prev => !prev)}
+      aria-pressed={canReveal ? revealed : undefined}
+      aria-label={ariaLabel}
+      disabled={!canReveal}
       initial={{ opacity: 0, x: isMastered ? 10 : -10 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.3, delay: index * 0.05 }}
       className={cn(
-        'flex cursor-pointer items-center justify-between rounded-2xl p-4',
+        'flex w-full items-center justify-between rounded-2xl p-4 text-left',
         'bg-(--background-color)',
         'border border-transparent',
         'transition-colors duration-300',
-        'hover:border-(--main-color)/20 hover:bg-(--border-color)/20',
+        'focus-visible:ring-2 focus-visible:ring-(--main-color) focus-visible:outline-none',
+        canReveal
+          ? 'cursor-pointer hover:border-(--main-color)/20 hover:bg-(--border-color)/20'
+          : 'cursor-default',
       )}
     >
-      <span className='text-3xl font-bold text-(--main-color)'>
-        {item.character}
-      </span>
-      <div className='text-right'>
+      <div className='min-w-0 flex-1 pr-3'>
+        <AnimatePresence mode='wait' initial={false}>
+          {revealed && canReveal ? (
+            <motion.div
+              key='reading'
+              initial={{ opacity: 0, y: 4 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -4 }}
+              transition={{ duration: 0.2 }}
+              className='flex flex-col gap-0.5'
+            >
+              {details?.reading && (
+                <span className='truncate text-2xl font-bold text-(--main-color)'>
+                  {details.reading}
+                </span>
+              )}
+              {details?.meaning && (
+                <span className='truncate text-sm text-(--secondary-color)/80'>
+                  {details.meaning}
+                </span>
+              )}
+            </motion.div>
+          ) : (
+            <motion.span
+              key='character'
+              initial={{ opacity: 0, y: 4 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -4 }}
+              transition={{ duration: 0.2 }}
+              className='block text-3xl font-bold text-(--main-color)'
+            >
+              {item.character}
+            </motion.span>
+          )}
+        </AnimatePresence>
+      </div>
+      <div className='shrink-0 text-right'>
         <div
           className={cn(
             'text-lg font-bold',
@@ -488,6 +579,6 @@ function CharacterRow({
           {item.total} tries
         </div>
       </div>
-    </motion.div>
+    </motion.button>
   );
 }

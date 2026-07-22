@@ -40,7 +40,7 @@ jobs:
             const content = Buffer.from(file.content, 'base64').toString('utf8');
             const module = { exports: {} };
             const vm = require('vm');
-            vm.runInNewContext(content, { module, exports: module.exports, require });
+            vm.runInNewContext(content, { module, exports: module.exports });
             const templates = module.exports;
             const t = templates.issueAutoRespond;
 

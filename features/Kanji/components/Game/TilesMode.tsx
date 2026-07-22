@@ -2,30 +2,33 @@
 import { useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import clsx from 'clsx';
-import useKanjiStore, { IKanjiObj } from '@/features/Kanji/store/useKanjiStore';
+import type { IKanjiObj } from '@/features/Kanji/store/useKanjiStore';
 import { Random } from 'random-js';
 import { useCorrect, useError, useClick } from '@/shared/hooks/generic/useAudio';
-import { getGlobalAdaptiveSelector } from '@/shared/lib/adaptiveSelection';
-import Stars from '@/shared/components/Game/Stars';
+import { getGlobalAdaptiveSelector } from '@/shared/utils/adaptiveSelection';
+import Stars from '@/shared/ui-composite/Game/Stars';
 import { useCrazyModeTrigger } from '@/features/CrazyMode/hooks/useCrazyModeTrigger';
-import { useStatsStore } from '@/features/Progress';
-import { useShallow } from 'zustand/react/shallow';
-import { useStopwatch } from 'react-timer-hook';
+import { useAnswerTimer } from '@/shared/hooks/game/useAnswerTimer';
+import { useGameStats } from '@/shared/hooks/game/useGameStats';
 import { useSmartReverseMode } from '@/shared/hooks/game/useSmartReverseMode';
 import { useTilesMode } from '@/shared/hooks/game/useTilesMode';
-import { GameBottomBar } from '@/shared/components/Game/GameBottomBar';
-import FuriganaText from '@/shared/components/text/FuriganaText';
-import AnswerSummary from '@/shared/components/Game/AnswerSummary';
+import { useTilesModeHandlers } from '@/shared/hooks/game/useTilesModeHandlers';
+import { useTilesModeState } from '@/shared/hooks/game/useTilesModeState';
+import { GameBottomBar } from '@/shared/ui-composite/Game/GameBottomBar';
+import FuriganaText from '@/shared/ui-composite/text/FuriganaText';
+import AnswerSummary from '@/shared/ui-composite/Game/AnswerSummary';
 import { CircleCheck } from 'lucide-react';
-import { cn } from '@/shared/lib/utils';
 import { useThemePreferences } from '@/features/Preferences';
 import {
-  BottomBarState,
   gameContentVariants,
+  getAnswerRowClassName,
+  getGlassModeClassName,
   useTilesModeActionKey,
-} from '@/shared/components/Game/TilesModeShared';
-import TilesModeGrid from '@/shared/components/Game/TilesModeGrid';
+} from '@/shared/ui-composite/Game/TilesModeShared';
+import TilesModeGrid from '@/shared/ui-composite/Game/TilesModeGrid';
 import useClassicSessionStore from '@/shared/store/useClassicSessionStore';
+import { useSetProgressStore } from '@/features/Progress';
+import { useMenuSelectorStore } from '@/shared/ui-composite/Menu/store/useMenuSelectorStore';
 
 const random = new Random();
 const adaptiveSelector = getGlobalAdaptiveSelector();
@@ -53,6 +56,9 @@ const KanjiTilesMode = ({
   onWrong: externalOnWrong,
 }: KanjiTilesModeProps) => {
   const logAttempt = useClassicSessionStore(state => state.logAttempt);
+  const recordKanjiProgress = useSetProgressStore(
+    state => state.recordKanjiProgress,
+  );
   // Smart reverse mode - used when not controlled externally
   const {
     isReverse: internalIsReverse,
@@ -76,24 +82,23 @@ const KanjiTilesMode = ({
     selectedKanjiObjs.length - 1,
   );
 
-  // Get the current JLPT level from the Kanji store
-  const selectedKanjiCollection = useKanjiStore(
-    state => state.selectedKanjiCollection,
+  const selectedKanjiCollection = useMenuSelectorStore(
+    state => state.collections.kanji.selectedCollection,
   );
   const isGlassMode = useThemePreferences().isGlassMode;
 
-  // Answer timing for speed achievements
-  const speedStopwatch = useStopwatch({ autoStart: false });
+  const { startAnswerTimer, pauseAnswerTimer, getAnswerTimeMs, resetAnswerTimer } =
+    useAnswerTimer();
   const { playCorrect } = useCorrect();
   const { playErrorTwice } = useError();
   const { playClick } = useClick();
   const { trigger: triggerCrazyMode } = useCrazyModeTrigger();
   const buttonRef = useRef<HTMLButtonElement>(null);
 
+  const stats = useGameStats('kanji');
+  const { score, setScore } = stats;
+  const incrementKanjiCorrect = stats.incrementKanjiCorrect!;
   const {
-    score,
-    setScore,
-    incrementKanjiCorrect,
     incrementWrongStreak,
     resetWrongStreak,
     recordAnswerTime,
@@ -102,21 +107,7 @@ const KanjiTilesMode = ({
     addCharacterToHistory,
     incrementCharacterScore,
     addCorrectAnswerTime,
-  } = useStatsStore(
-    useShallow(state => ({
-      score: state.score,
-      setScore: state.setScore,
-      incrementKanjiCorrect: state.incrementKanjiCorrect,
-      incrementWrongStreak: state.incrementWrongStreak,
-      resetWrongStreak: state.resetWrongStreak,
-      recordAnswerTime: state.recordAnswerTime,
-      incrementCorrectAnswers: state.incrementCorrectAnswers,
-      incrementWrongAnswers: state.incrementWrongAnswers,
-      addCharacterToHistory: state.addCharacterToHistory,
-      incrementCharacterScore: state.incrementCharacterScore,
-      addCorrectAnswerTime: state.addCorrectAnswerTime,
-    })),
-  );
+  } = stats;
 
   // Create Map for O(1) lookups
   const kanjiObjMap = useMemo(
@@ -124,7 +115,19 @@ const KanjiTilesMode = ({
     [selectedKanjiObjs],
   );
 
-  const [bottomBarState, setBottomBarState] = useState<BottomBarState>('check');
+  const {
+    bottomBarState,
+    setBottomBarState,
+    placedTileIds,
+    setPlacedTileIds,
+    isChecking,
+    setIsChecking,
+    isCelebrating,
+    setIsCelebrating,
+    canCheck,
+    showContinue,
+    showTryAgain,
+  } = useTilesModeState();
 
   // Generate question: 1 kanji with multiple answer options
   const generateQuestion = useCallback(() => {
@@ -179,15 +182,21 @@ const KanjiTilesMode = ({
   }, [isReverse, selectedKanjiObjs, distractorCount, kanjiObjMap]);
 
   const [questionData, setQuestionData] = useState(() => generateQuestion());
-  const [placedTileIds, setPlacedTileIds] = useState<number[]>([]);
-  const [isChecking, setIsChecking] = useState(false);
-  const [isCelebrating, setIsCelebrating] = useState(false);
   const [displayAnswerSummary, setDisplayAnswerSummary] = useState(false);
   const [currentKanjiObjForSummary, setCurrentKanjiObjForSummary] =
     useState<IKanjiObj | null>(null);
   const [feedback, setFeedback] = useState<React.ReactElement>(
     <>{'feedback ~'}</>,
   );
+  const { handleTileClick, handleTryAgain } = useTilesModeHandlers({
+    isChecking,
+    bottomBarState,
+    setPlacedTileIds,
+    setIsChecking,
+    setBottomBarState,
+    startAnswerTimer,
+    playClick,
+  });
 
   const resetGame = useCallback(() => {
     const newQuestion = generateQuestion();
@@ -198,20 +207,26 @@ const KanjiTilesMode = ({
     setBottomBarState('check');
     setDisplayAnswerSummary(false);
     // Start timing for the new question
-    speedStopwatch.reset();
-    speedStopwatch.start();
-  }, [generateQuestion]);
+    startAnswerTimer();
+  }, [
+    generateQuestion,
+    startAnswerTimer,
+    setPlacedTileIds,
+    setIsChecking,
+    setIsCelebrating,
+    setBottomBarState,
+  ]);
 
   useEffect(() => {
     resetGame();
   }, [isReverse, resetGame]);
 
-  // Pause stopwatch when game is hidden
+  // Pause timer when game is hidden
   useEffect(() => {
     if (isHidden) {
-      speedStopwatch.pause();
+      pauseAnswerTimer();
     }
-  }, [isHidden]);
+  }, [isHidden, pauseAnswerTimer]);
 
   // Keyboard shortcut for Enter/Space to trigger button
   useTilesModeActionKey(buttonRef);
@@ -221,8 +236,8 @@ const KanjiTilesMode = ({
     if (placedTileIds.length === 0) return;
 
     // Stop timing and record answer time
-    speedStopwatch.pause();
-    const answerTimeMs = speedStopwatch.totalMilliseconds;
+    pauseAnswerTimer();
+    const answerTimeMs = getAnswerTimeMs();
 
     playClick();
     setIsChecking(true);
@@ -237,7 +252,7 @@ const KanjiTilesMode = ({
       // Record answer time for speed achievements
       addCorrectAnswerTime(answerTimeMs / 1000);
       recordAnswerTime(answerTimeMs);
-      speedStopwatch.reset();
+      resetAnswerTimer();
 
       playCorrect();
       triggerCrazyMode();
@@ -246,6 +261,7 @@ const KanjiTilesMode = ({
       // Track stats for the kanji
       addCharacterToHistory(questionData.kanjiChar);
       incrementCharacterScore(questionData.kanjiChar, 'correct');
+      void recordKanjiProgress(questionData.kanjiChar);
       adaptiveSelector.updateCharacterWeight(questionData.kanjiChar, true);
       incrementKanjiCorrect(selectedKanjiCollection.toUpperCase());
 
@@ -275,10 +291,14 @@ const KanjiTilesMode = ({
         isCorrect: true,
         timeTakenMs: answerTimeMs,
         optionsShown: Array.from(questionData.allTiles.values()),
-        extra: { isReverse },
+        extra: {
+          contentType: 'kanji',
+          canonicalItemKey: questionData.kanjiChar,
+          isReverse,
+        },
       });
     } else {
-      speedStopwatch.reset();
+      resetAnswerTimer();
       playErrorTwice();
       triggerCrazyMode();
       incrementWrongStreak();
@@ -307,7 +327,11 @@ const KanjiTilesMode = ({
         inputKind: 'word_building',
         isCorrect: false,
         optionsShown: Array.from(questionData.allTiles.values()),
-        extra: { isReverse },
+        extra: {
+          contentType: 'kanji',
+          canonicalItemKey: questionData.kanjiChar,
+          isReverse,
+        },
       });
     }
   }, [
@@ -335,6 +359,12 @@ const KanjiTilesMode = ({
     isReverse,
     addCorrectAnswerTime,
     recordAnswerTime,
+    pauseAnswerTimer,
+    getAnswerTimeMs,
+    resetAnswerTimer,
+    setIsChecking,
+    setBottomBarState,
+    setIsCelebrating,
   ]);
 
   // Handle Continue button (only for correct answers)
@@ -357,48 +387,10 @@ const KanjiTilesMode = ({
     resetGame,
   ]);
 
-  // Handle Try Again button (for wrong answers)
-  const handleTryAgain = useCallback(() => {
-    playClick();
-    setPlacedTileIds([]);
-    setIsChecking(false);
-    setBottomBarState('check');
-    speedStopwatch.reset();
-    speedStopwatch.start();
-  }, [playClick]);
-
-  // Handle tile click - add or remove from placed tiles
-  const handleTileClick = useCallback(
-    (id: number, _char: string) => {
-      if (isChecking && bottomBarState !== 'wrong') return;
-
-      playClick();
-
-      // If in wrong state, reset to check state and continue with normal tile logic
-      if (bottomBarState === 'wrong') {
-        setIsChecking(false);
-        setBottomBarState('check');
-        speedStopwatch.reset();
-        speedStopwatch.start();
-      }
-
-      setPlacedTileIds(prevIds =>
-        prevIds.includes(id)
-          ? prevIds.filter(tileId => tileId !== id)
-          : [...prevIds, id],
-      );
-    },
-    [isChecking, bottomBarState, playClick],
-  );
-
   // Not enough characters
   if (selectedKanjiObjs.length < 2 || !questionData.kanjiChar) {
     return null;
   }
-
-  const canCheck = placedTileIds.length > 0 && !isChecking;
-  const showContinue = bottomBarState === 'correct';
-  const showTryAgain = bottomBarState === 'wrong';
 
   // Helper to get reading for a kanji tile
   const getKanjiReading = (kanjiChar: string) => {
@@ -442,9 +434,9 @@ const KanjiTilesMode = ({
           >
             {/* Question Display - shows kanji in normal mode, meaning in reverse mode */}
             <div
-              className={cn(
+              className={getGlassModeClassName(
                 'flex flex-row items-center gap-1',
-                isGlassMode && 'rounded-xl bg-(--card-color) px-4 py-2',
+                isGlassMode,
               )}
             >
               <motion.div
@@ -483,9 +475,8 @@ const KanjiTilesMode = ({
                 isReverse ? 'text-3xl sm:text-4xl' : 'text-xl sm:text-2xl'
               }
               tileLang={isReverse ? 'ja' : undefined}
-              answerRowClassName={clsx(
-                'flex w-full items-center border-b-2 border-(--border-color) px-2 pb-2 md:w-3/4 lg:w-2/3 xl:w-1/2',
-                isReverse ? 'min-h-[5.5rem]' : 'min-h-[5rem]',
+              answerRowClassName={getAnswerRowClassName(
+                isReverse ? '5.5rem' : '5rem',
               )}
               tilesContainerClassName={
                 isGlassMode ? 'rounded-xl bg-(--card-color) px-4 py-2' : undefined
@@ -519,4 +510,3 @@ const KanjiTilesMode = ({
 };
 
 export default KanjiTilesMode;
-

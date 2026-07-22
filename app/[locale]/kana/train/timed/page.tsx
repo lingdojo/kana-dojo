@@ -1,4 +1,4 @@
-import BlitzKana from '@/features/Kana/components/Blitz';
+import { KanaBlitz } from '@/features/Kana';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/core/i18n/metadata-helpers';
 import { routing } from '@/core/i18n/routing';
@@ -25,7 +25,7 @@ export default function TimedKanaPage() {
   return (
     <main className='mx-auto max-w-xl p-4'>
       <h1 className='mb-4 text-center text-2xl font-bold'>Blitz: Kana</h1>
-      <BlitzKana />
+      <KanaBlitz />
     </main>
   );
 }

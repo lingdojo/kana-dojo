@@ -7,10 +7,10 @@ import RelatedFeatures from '@/features/Conjugator/components/RelatedFeatures';
 import { getVerbInfo } from '@/features/Conjugator/lib/engine';
 import { generateNextMetadata } from '@/features/Conjugator/lib/seo/generateMeta';
 import { generateConjugatorSchema } from '@/features/Conjugator/lib/seo/structuredData';
-import { StructuredData } from '@/shared/components/SEO/StructuredData';
-import { BreadcrumbSchema } from '@/shared/components/SEO/BreadcrumbSchema';
+import { StructuredData } from '@/shared/ui-composite/SEO/StructuredData';
+import { BreadcrumbSchema } from '@/shared/ui-composite/SEO/BreadcrumbSchema';
 import { routing } from '@/core/i18n/routing';
-import Loader from '@/shared/components/Skeletons/Loader';
+import Loader from '@/shared/ui-composite/Skeletons/Loader';
 
 export function generateStaticParams() {
   return routing.locales.map(locale => ({ locale }));
@@ -146,3 +146,4 @@ export default async function ConjugatePage({
     </>
   );
 }
+

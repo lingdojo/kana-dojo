@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { routing } from '@/core/i18n/routing';
-import { BreadcrumbSchema } from '@/shared/components/SEO/BreadcrumbSchema';
-import { LearningResourceSchema } from '@/shared/components/SEO/LearningResourceSchema';
+import { BreadcrumbSchema } from '@/shared/ui-composite/SEO/BreadcrumbSchema';
+import { LearningResourceSchema } from '@/shared/ui-composite/SEO/LearningResourceSchema';
 import Script from 'next/script';
 import { ResourcesPageClient } from './ResourcesPageClient';
 import {
@@ -145,3 +145,4 @@ export default async function ResourcesPage({
     </>
   );
 }
+

@@ -1,6 +1,6 @@
 'use client';
 
-import SidebarLayout from '@/shared/components/layout/SidebarLayout';
+import SidebarLayout from '@/shared/ui-composite/layout/SidebarLayout';
 
 export default function MainLayout({
   children,
@@ -9,3 +9,4 @@ export default function MainLayout({
 }) {
   return <SidebarLayout>{children}</SidebarLayout>;
 }
+

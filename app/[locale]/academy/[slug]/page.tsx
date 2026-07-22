@@ -11,8 +11,8 @@ import {
   BlogPostComponent,
   mdxComponents,
 } from '@/features/Blog';
-import { StructuredData } from '@/shared/components/SEO/StructuredData';
-import { AuthorSchema } from '@/shared/components/SEO/AuthorSchema';
+import { StructuredData } from '@/shared/ui-composite/SEO/StructuredData';
+import { AuthorSchema } from '@/shared/ui-composite/SEO/AuthorSchema';
 import { routing, type Locale as _Locale } from '@/core/i18n/routing';
 import type { Locale as BlogLocale } from '@/features/Blog';
 
@@ -273,3 +273,4 @@ function generateHeadingId(text: string): string {
     .replace(/-+/g, '-')
     .trim();
 }
+

@@ -1,10 +1,15 @@
+import { createRequire } from 'node:module';
+import { join } from 'node:path';
 import { NextRequest, NextResponse } from 'next/server';
 import {
   checkAnalyzeRateLimit,
   getClientIP,
   createRateLimitHeaders,
-} from '@/shared/lib/rateLimit';
-import { getRedisCachedJson, setRedisCachedJson } from '@/shared/lib/apiCache';
+} from '@/shared/infra/server/rateLimit';
+import {
+  getRedisCachedJson,
+  setRedisCachedJson,
+} from '@/shared/infra/server/apiCache';
 import type { ApiErrorResponse } from '@/shared/types/api';
 import type KuromojiAnalyzer from 'kuroshiro-analyzer-kuromoji';
 import type { KuromojiToken } from 'kuroshiro-analyzer-kuromoji';
@@ -61,6 +66,20 @@ function cleanupCache() {
   }
 }
 
+function resolveKuromojiDictPath(): string | undefined {
+  try {
+    const _require = createRequire(import.meta.url);
+    const kuromojiEntry = _require.resolve('kuromoji');
+    return kuromojiEntry.replace(/src(?!.*src).*/, 'dict/');
+  } catch {
+    try {
+      return join(process.cwd(), 'node_modules', 'kuromoji', 'dict');
+    } catch {
+      return undefined;
+    }
+  }
+}
+
 // Singleton kuromoji analyzer instance
 let kuromojiAnalyzerInstance: KuromojiAnalyzer | null = null;
 let kuromojiAnalyzerInitPromise: Promise<KuromojiAnalyzer> | null = null;
@@ -80,7 +99,8 @@ async function getKuromojiAnalyzer(): Promise<KuromojiAnalyzer> {
   kuromojiAnalyzerInitPromise = (async () => {
     const { default: KuromojiAnalyzer } =
       await import('kuroshiro-analyzer-kuromoji');
-    const analyzer = new KuromojiAnalyzer();
+    const dictPath = resolveKuromojiDictPath();
+    const analyzer = new KuromojiAnalyzer(dictPath ? { dictPath } : {});
     await analyzer.init();
     kuromojiAnalyzerInstance = analyzer;
     return analyzer;

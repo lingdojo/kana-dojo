@@ -444,7 +444,7 @@ import { KanaCards } from '@/features/Kana';
 import { useKanaSelection } from '@/features/Kana';
 
 // ✅ ALLOWED: shared/ → shared/
-import { cn } from '@/shared/lib/utils';
+import { cn } from '@/shared/utils/utils';
 
 // ✅ ALLOWED: features/ → shared/
 import { statsApi } from '@/shared/events';
@@ -524,3 +524,4 @@ feature/
 - ✅ OSS-friendly contributor experience
 
 See `HYBRID_MODULAR_MIGRATION_PLAN.md` for detailed implementation steps!
+

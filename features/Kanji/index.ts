@@ -9,6 +9,7 @@ export type {
   KanjiSelectionActions,
   IKanjiObj,
 } from './facade';
+export type { KanjiLevel } from '@/entities/kanji';
 
 // Components (page-level)
 export { default as KanjiGame } from './components/Game';

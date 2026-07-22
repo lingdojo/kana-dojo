@@ -1,6 +1,6 @@
-import PostWrapper from '@/shared/components/layout/PostWrapper';
-import privacyPolicy from '@/shared/lib/legal/privacyPolicy';
-import LegalLayout from '@/shared/components/layout/LegalLayout';
+import PostWrapper from '@/shared/ui-composite/layout/PostWrapper';
+import privacyPolicy from '@/shared/utils/legal/privacyPolicy';
+import LegalLayout from '@/shared/ui-composite/layout/LegalLayout';
 import { Cookie } from 'lucide-react';
 
 const PrivacyPolicy = () => {
@@ -16,3 +16,4 @@ const PrivacyPolicy = () => {
 };
 
 export default PrivacyPolicy;
+

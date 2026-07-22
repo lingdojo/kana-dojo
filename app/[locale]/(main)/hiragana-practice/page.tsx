@@ -3,8 +3,8 @@ import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { routing, type Locale } from '@/core/i18n/routing';
 import { generatePageMetadata } from '@/core/i18n/metadata-helpers';
-import { BreadcrumbSchema } from '@/shared/components/SEO/BreadcrumbSchema';
-import { Breadcrumbs } from '@/shared/components/Breadcrumbs';
+import { BreadcrumbSchema } from '@/shared/ui-composite/SEO/BreadcrumbSchema';
+import { Breadcrumbs } from '@/shared/ui-composite/Breadcrumbs';
 
 export function generateStaticParams() {
   return routing.locales.map(locale => ({ locale }));
@@ -150,3 +150,4 @@ export default async function HiraganaPracticePage({
     </>
   );
 }
+

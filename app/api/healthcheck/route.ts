@@ -2,8 +2,9 @@ import { NextResponse } from 'next/server';
 import {
   getAnalyzeRateLimiter,
   getTranslateRateLimiter,
-} from '@/shared/lib/rateLimit';
-import { hasRedisConfig } from '@/shared/lib/redis';
+  getTranslateUsageStats,
+} from '@/shared/infra/server/rateLimit';
+import { hasRedisConfig } from '@/shared/infra/server/redis';
 
 export async function GET(request: Request) {
   const secret = process.env.HEALTHCHECK_SECRET;
@@ -15,6 +16,7 @@ export async function GET(request: Request) {
   }
 
   const translateStats = getTranslateRateLimiter().getStats();
+  const translateUsage = await getTranslateUsageStats();
   const analyzeStats = getAnalyzeRateLimiter().getStats();
 
   return NextResponse.json(
@@ -24,6 +26,9 @@ export async function GET(request: Request) {
       rateLimiters: {
         translate: translateStats,
         analyze: analyzeStats,
+      },
+      usage: {
+        translate: translateUsage,
       },
       timestamp: new Date().toISOString(),
     },

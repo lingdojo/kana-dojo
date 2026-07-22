@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { ChevronDown, Plus, Minus } from 'lucide-react';
-import { cn } from '@/shared/lib/utils';
+import { cn } from '@/shared/utils/utils';
 import { CONJUGATOR_FAQ_ITEMS, type FAQItem } from '../lib/seo/structuredData';
 
 interface FAQProps {
@@ -188,3 +188,4 @@ function FAQItemComponent({
     </div>
   );
 }
+

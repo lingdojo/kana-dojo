@@ -1,11 +1,11 @@
 'use client';
 import * as React from 'react';
-import { Button } from '@/shared/components/ui/button';
+import { Button } from '@/shared/ui/components/button';
 import {
   applyBackup,
   createBackup,
   type BackupFile,
-} from '@/shared/lib/backup';
+} from '@/shared/utils/backup';
 
 const Backup: React.FC = () => {
   const fileRef = React.useRef<HTMLInputElement | null>(null);
@@ -71,3 +71,4 @@ const Backup: React.FC = () => {
 };
 
 export default Backup;
+

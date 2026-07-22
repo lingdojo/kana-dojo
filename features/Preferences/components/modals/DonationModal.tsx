@@ -1,11 +1,11 @@
 'use client';
 
-import { ActionButton } from '@/shared/components/ui/ActionButton';
+import { ActionButton } from '@/shared/ui/components/ActionButton';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { Heart, X } from 'lucide-react';
 import { useCallback } from 'react';
 import { useClick } from '@/shared/hooks/generic/useAudio';
-import { cn } from '@/shared/lib/utils';
+import { cn } from '@/shared/utils/utils';
 
 interface DonationModalProps {
   open: boolean;
@@ -35,7 +35,7 @@ export default function DonationModal({
         >
           <div className='flex items-center justify-between border-b-2 border-(--border-color) bg-(--background-color) px-3 py-4 sm:px-6 sm:py-5'>
             <div className='flex items-center gap-3'>
-              <span className='motion-safe:animate-float inline-flex h-10 w-10 items-center justify-center rounded-xl sm:rounded-2xl border-b-4 border-(--secondary-color-accent) bg-(--secondary-color) text-(--background-color) [--float-distance:-3px] [animation-delay:200ms] sm:h-12 sm:w-12'>
+              <span className='motion-safe:animate-float inline-flex h-10 w-10 items-center justify-center rounded-xl border-b-4 border-(--secondary-color-accent) bg-(--secondary-color) text-(--background-color) [--float-distance:-3px] [animation-delay:200ms] sm:h-12 sm:w-12 sm:rounded-2xl'>
                 <Heart className='size-6 fill-current' />
               </span>
               <DialogPrimitive.Title className='text-xl font-semibold text-(--main-color) sm:text-2xl'>
@@ -44,7 +44,7 @@ export default function DonationModal({
             </div>
             <button
               onClick={handleClose}
-              className='shrink-0 rounded-xl p-2 hover:cursor-pointer hover:bg-(--border-color)'
+              className='shrink-0 rounded-xl p-2 hover:cursor-pointer hover:bg-(--card-color)'
             >
               <X size={24} className='text-(--secondary-color)' />
             </button>
@@ -54,23 +54,23 @@ export default function DonationModal({
             <div className='min-h-0 flex-1 overflow-y-auto px-4 py-3 sm:px-6 sm:py-5'>
               <div className='space-y-4 text-(--secondary-color)'>
                 <p className='text-base leading-7'>
-                  Thank you so much for spending your time with KanaDojo. We are
-                  truly honored to be a part of your Japanese learning journey.
+                  Thank you for spending your time with KanaDojo. We are honored
+                  to be a part of your Japanese learning journey.
                 </p>
                 <p className='text-base leading-7'>
                   If KanaDojo has been helpful to you, we would be incredibly
-                  grateful if you ever felt able to support it with a donation.
-                  {/* 
+                  grateful if you ever considered supporting it with a donation.
+                  {/*
                   We completely understand that not everyone can, and we thank
                   you sincerely just for considering it.
  */}
                 </p>
                 <p className='text-base leading-7'>
                   From day one, we have cared deeply about keeping this a fully
-                  free, open-source and ad-free learning resource for everyone
-                  — a respectful alternative to Duolingo — and we are
-                  wholeheartedly committed to keeping it that way forever.
-                  {/* 
+                  free, open-source and ad-free learning resource for everyone —
+                  and we are wholeheartedly committed to keeping it that way
+                  forever.
+                  {/*
                   Thank
                   you for your kindness, your understanding, and for helping us
                   keep KanaDojo welcoming and accessible for everyone who relies
@@ -80,13 +80,13 @@ export default function DonationModal({
                 <p className='text-base leading-7'>
                   We appreciate you more than we can properly express, and thank
                   you again for being part of this project and for any support
-                  you can offer, in any form.
+                  you can offer.
                 </p>
               </div>
             </div>
 
             <div className='border-t-2 border-(--border-color) px-4 py-4 sm:px-6 sm:py-5'>
-              <div className='flex flex-col gap-1.5 sm:gap-3 sm:flex-row'>
+              <div className='flex flex-col gap-1.5 sm:flex-row sm:gap-3'>
                 <ActionButton
                   colorScheme='main'
                   borderColorScheme='main'
@@ -94,13 +94,13 @@ export default function DonationModal({
                   borderBottomThickness={16}
                   asChild
                   className={cn(
-                    'motion-safe:animate-float px-5 py-4 text-lg font-semibold [--float-distance:-3.5px] [animation-delay:600ms] sm:w-auto',
+                    'motion-safe:animate-float px-5 py-4 text-lg font-semibold [--float-distance:-2.5px] [animation-delay:600ms] sm:w-auto',
                   )}
                 >
                   <a
                     href='https://ko-fi.com/kanadojo'
                     target='_blank'
-                    rel='noreferrer noopener'
+                    rel='noopener'
                     onClick={playClick}
                     className='inline-flex items-center gap-2'
                   >

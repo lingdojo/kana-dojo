@@ -1,14 +1,15 @@
-import VocabMenu from '@/shared/components/Menu/VocabMenu';
+import { VocabMenu } from '@/widgets';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/core/i18n/metadata-helpers';
-import { CourseSchema } from '@/shared/components/SEO/CourseSchema';
-import { BreadcrumbSchema } from '@/shared/components/SEO/BreadcrumbSchema';
+import { CourseSchema } from '@/shared/ui-composite/SEO/CourseSchema';
+import { Breadcrumbs } from '@/shared/ui-composite/Breadcrumbs';
+import { getTranslations } from 'next-intl/server';
 import {
   FAQSchema,
   commonKanaDOJOFAQs,
-} from '@/shared/components/SEO/FAQSchema';
-import { LearningResourceSchema } from '@/shared/components/SEO/LearningResourceSchema';
-import { DojoRouteSchema } from '@/shared/components/SEO/DojoRouteSchema';
+} from '@/shared/ui-composite/SEO/FAQSchema';
+import { LearningResourceSchema } from '@/shared/ui-composite/SEO/LearningResourceSchema';
+import { DojoRouteSchema } from '@/shared/ui-composite/SEO/DojoRouteSchema';
 import { routing } from '@/core/i18n/routing';
 
 // Generate static pages for all locales at build time
@@ -37,16 +38,15 @@ export default async function VocabularyPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'navigation' });
 
   return (
     <>
-      <BreadcrumbSchema
+      <Breadcrumbs
+        className='hidden'
         items={[
-          { name: 'Home', url: `https://kanadojo.com/${locale}` },
-          {
-            name: 'Vocabulary',
-            url: `https://kanadojo.com/${locale}/vocabulary`,
-          },
+          { name: t('menu.home'), url: '/' },
+          { name: t('menu.vocabulary'), url: '/vocabulary' },
         ]}
       />
       <CourseSchema

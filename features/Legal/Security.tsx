@@ -1,6 +1,6 @@
-import PostWrapper from '@/shared/components/layout/PostWrapper';
-import securityPolicy from '@/shared/lib/legal/securityPolicy';
-import LegalLayout from '@/shared/components/layout/LegalLayout';
+import PostWrapper from '@/shared/ui-composite/layout/PostWrapper';
+import securityPolicy from '@/shared/utils/legal/securityPolicy';
+import LegalLayout from '@/shared/ui-composite/layout/LegalLayout';
 import { FileLock2 } from 'lucide-react';
 
 const SecurityPolicy = () => {
@@ -16,3 +16,4 @@ const SecurityPolicy = () => {
 };
 
 export default SecurityPolicy;
+

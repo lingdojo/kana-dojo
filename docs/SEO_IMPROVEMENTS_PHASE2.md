@@ -25,7 +25,7 @@ This document outlines the Phase 2 SEO improvements implemented for KanaDojo, bu
 **Usage Example:**
 
 ```tsx
-import { Breadcrumbs } from '@/shared/components/Breadcrumbs';
+import { Breadcrumbs } from '@/shared/ui-composite/Breadcrumbs';
 
 <Breadcrumbs
   items={[
@@ -63,7 +63,7 @@ import { Breadcrumbs } from '@/shared/components/Breadcrumbs';
 **Usage Example:**
 
 ```tsx
-import { HowToSchema } from '@/shared/components/SEO';
+import { HowToSchema } from '@/shared/ui-composite/SEO';
 
 <HowToSchema
   name='How to Learn Hiragana in One Week'
@@ -116,7 +116,7 @@ import { HowToSchema } from '@/shared/components/SEO';
 **Usage Example:**
 
 ```tsx
-import { AuthorSchema } from '@/shared/components/SEO';
+import { AuthorSchema } from '@/shared/ui-composite/SEO';
 
 <AuthorSchema
   name='Tanaka Sensei'
@@ -162,7 +162,7 @@ import { AuthorSchema } from '@/shared/components/SEO';
 **Usage Example:**
 
 ```tsx
-import { LearningResourceSchema } from '@/shared/components/SEO';
+import { LearningResourceSchema } from '@/shared/ui-composite/SEO';
 
 <LearningResourceSchema
   name='Hiragana Speed Recognition Game'
@@ -215,7 +215,7 @@ import { LearningResourceSchema } from '@/shared/components/SEO';
 **Usage Example:**
 
 ```tsx
-import { VideoSchema } from '@/shared/components/SEO';
+import { VideoSchema } from '@/shared/ui-composite/SEO';
 
 <VideoSchema
   name='How to Write Hiragana あ - Stroke Order Tutorial'
@@ -483,23 +483,23 @@ Potential future improvements:
 
 ```tsx
 // Breadcrumbs
-import { Breadcrumbs } from '@/shared/components/Breadcrumbs';
+import { Breadcrumbs } from '@/shared/ui-composite/Breadcrumbs';
 <Breadcrumbs items={breadcrumbItems} />
 
 // How-To Schema
-import { HowToSchema } from '@/shared/components/SEO';
+import { HowToSchema } from '@/shared/ui-composite/SEO';
 <HowToSchema name="..." description="..." steps={[...]} />
 
 // Author Schema
-import { AuthorSchema } from '@/shared/components/SEO';
+import { AuthorSchema } from '@/shared/ui-composite/SEO';
 <AuthorSchema name="..." expertise="..." credentials={[...]} />
 
 // Learning Resource
-import { LearningResourceSchema } from '@/shared/components/SEO';
+import { LearningResourceSchema } from '@/shared/ui-composite/SEO';
 <LearningResourceSchema learningResourceType="Game" teaches="..." />
 
 // Video Schema (when ready)
-import { VideoSchema } from '@/shared/components/SEO';
+import { VideoSchema } from '@/shared/ui-composite/SEO';
 <VideoSchema name="..." contentUrl="..." thumbnailUrl="..." />
 ```
 
@@ -551,3 +551,4 @@ import { VideoSchema } from '@/shared/components/SEO';
 **Status:** Phase 2 Complete - Integration Recommended
 **Next Steps:** Integrate components into pages, create How-To content
 **Next Review:** February 2025
+

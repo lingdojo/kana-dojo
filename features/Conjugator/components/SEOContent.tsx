@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { cn } from '@/shared/lib/utils';
+import { cn } from '@/shared/utils/utils';
 import type { VerbInfo } from '../types';
 
 interface SEOContentProps {
@@ -63,3 +63,4 @@ export default function SEOContent({ verb }: SEOContentProps) {
     </section>
   );
 }
+

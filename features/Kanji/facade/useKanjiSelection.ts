@@ -1,8 +1,8 @@
 'use client';
 
 import { useMemo } from 'react';
+import type { IKanjiObj } from '@/entities/kanji';
 import useKanjiStore from '../store/useKanjiStore';
-import type { IKanjiObj } from '../store/useKanjiStore';
 
 /**
  * Kanji Selection Facade - Public API for selection state
@@ -14,6 +14,9 @@ export interface KanjiSelection {
   selectedKanji: IKanjiObj[];
   selectedSets: string[];
   selectedCollection: 'n5' | 'n4' | 'n3' | 'n2' | 'n1';
+  selectedSubunitByUnit: Partial<
+    Record<'n5' | 'n4' | 'n3' | 'n2' | 'n1', string>
+  >;
   totalSelected: number;
   isEmpty: boolean;
   gameMode: string;
@@ -26,6 +29,10 @@ export interface KanjiSelectionActions {
   setCollection: (collection: 'n5' | 'n4' | 'n3' | 'n2' | 'n1') => void;
   setSets: (sets: string[]) => void;
   clearSets: () => void;
+  setSubunitForUnit: (
+    unit: 'n5' | 'n4' | 'n3' | 'n2' | 'n1',
+    subunitId: string,
+  ) => void;
   setGameMode: (mode: string) => void;
 }
 
@@ -34,6 +41,9 @@ export function useKanjiSelection(): KanjiSelection & KanjiSelectionActions {
   const selectedSets = useKanjiStore(state => state.selectedKanjiSets);
   const selectedCollection = useKanjiStore(
     state => state.selectedKanjiCollection,
+  );
+  const selectedSubunitByUnit = useKanjiStore(
+    state => state.selectedSubunitByUnit,
   );
   const gameMode = useKanjiStore(state => state.selectedGameModeKanji);
   const addKanji = useKanjiStore(state => state.addKanjiObj);
@@ -44,6 +54,9 @@ export function useKanjiSelection(): KanjiSelection & KanjiSelectionActions {
   );
   const setSets = useKanjiStore(state => state.setSelectedKanjiSets);
   const clearSets = useKanjiStore(state => state.clearKanjiSets);
+  const setSubunitForUnit = useKanjiStore(
+    state => state.setSelectedSubunitForUnit,
+  );
   const setGameMode = useKanjiStore(state => state.setSelectedGameModeKanji);
 
   return useMemo(
@@ -52,6 +65,7 @@ export function useKanjiSelection(): KanjiSelection & KanjiSelectionActions {
       selectedKanji,
       selectedSets,
       selectedCollection,
+      selectedSubunitByUnit,
       totalSelected: selectedKanji.length,
       isEmpty: selectedKanji.length === 0,
       gameMode,
@@ -63,12 +77,14 @@ export function useKanjiSelection(): KanjiSelection & KanjiSelectionActions {
       setCollection,
       setSets,
       clearSets,
+      setSubunitForUnit,
       setGameMode,
     }),
     [
       selectedKanji,
       selectedSets,
       selectedCollection,
+      selectedSubunitByUnit,
       gameMode,
       addKanji,
       addKanjiList,
@@ -76,6 +92,7 @@ export function useKanjiSelection(): KanjiSelection & KanjiSelectionActions {
       setCollection,
       setSets,
       clearSets,
+      setSubunitForUnit,
       setGameMode,
     ],
   );

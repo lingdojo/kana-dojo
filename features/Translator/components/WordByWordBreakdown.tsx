@@ -1,13 +1,13 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { cn } from '@/shared/lib/utils';
+import { cn } from '@/shared/utils/utils';
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from '@/shared/components/ui/tooltip';
+} from '@/shared/ui/components/tooltip';
 import {
   analyzeText,
   needsAnalysis,
@@ -212,3 +212,4 @@ export default function WordByWordBreakdown({
     </TooltipProvider>
   );
 }
+

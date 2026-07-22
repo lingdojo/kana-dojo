@@ -11,8 +11,8 @@
 'use client';
 
 import { useState, useCallback, useRef } from 'react';
-import { cn } from '@/shared/lib/utils';
-import { Button } from '@/shared/components/ui/button';
+import { cn } from '@/shared/utils/utils';
+import { Button } from '@/shared/ui/components/button';
 import { useConversionWorker } from '../hooks/useConversionWorker';
 import {
   getAcceptString,
@@ -475,3 +475,4 @@ export function ConverterInterface({
     </div>
   );
 }
+

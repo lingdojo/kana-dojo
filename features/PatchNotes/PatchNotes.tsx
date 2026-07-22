@@ -1,5 +1,5 @@
-import LegalLayout from '@/shared/components/layout/LegalLayout';
-import PostWrapper from '@/shared/components/layout/PostWrapper';
+import LegalLayout from '@/shared/ui-composite/layout/LegalLayout';
+import PostWrapper from '@/shared/ui-composite/layout/PostWrapper';
 import patchNotesData from './patchNotesData.json';
 import { FileDiff } from 'lucide-react';
 
@@ -31,3 +31,4 @@ const PatchNotes = () => {
 };
 
 export default PatchNotes;
+

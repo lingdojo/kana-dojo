@@ -3,12 +3,12 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import clsx from 'clsx';
-import { Trophy, X } from 'lucide-react';
 import useAchievementStore, {
   type AchievementNotification as NotificationType,
 } from '../../store/useAchievementStore';
 import { useClick } from '@/shared/hooks/generic/useAudio';
-import { cardBorderStyles } from '@/shared/lib/styles';
+import { AchievementCard } from '@/shared/ui';
+import { cardBorderStyles } from '@/shared/utils/styles';
 
 interface AchievementNotificationProps {
   notification: NotificationType;
@@ -60,67 +60,14 @@ const AchievementNotification = ({
           animate={{ x: 0, opacity: 1 }}
           exit={{ x: 400, opacity: 0 }}
           transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-          className={clsx(
-            'relative w-80 cursor-pointer p-4',
-            cardBorderStyles,
-            'border border-solid border-(--border-color)',
-            'shadow-none',
-            'transition-colors duration-200',
-          )}
-          onClick={handleViewDetails}
         >
-          {/* Close button */}
-          <button
-            onClick={handleClose}
-            className={clsx(
-              'absolute top-2 right-2 cursor-pointer rounded p-1',
-              'text-(--secondary-color) hover:text-(--main-color)',
-              'transition-colors duration-200 hover:bg-(--background-color)',
-            )}
-          >
-            <X size={14} />
-          </button>
-
-          <div className='flex items-start gap-3 pr-6'>
-            {/* Achievement Icon */}
-            <div className='flex-shrink-0'>
-              <div
-                className={clsx(
-                  'flex h-10 w-10 items-center justify-center rounded-full',
-                  'bg-yellow-100 text-lg font-bold text-yellow-600',
-                )}
-              >
-                {notification.achievement.icon}
-              </div>
-            </div>
-
-            {/* Content */}
-            <div className='min-w-0 flex-1'>
-              <div className='mb-1 flex items-center gap-2'>
-                <Trophy size={14} className='text-yellow-500' />
-                <span className='text-xs font-semibold tracking-wide text-yellow-600 uppercase'>
-                  Achievement Unlocked
-                </span>
-              </div>
-
-              <h4 className='mb-1 truncate text-sm font-semibold text-(--main-color)'>
-                {notification.achievement.title}
-              </h4>
-
-              <p className='line-clamp-2 text-xs text-(--secondary-color)'>
-                {notification.achievement.description}
-              </p>
-
-              <div className='mt-2 flex items-center justify-between'>
-                <span className='text-xs font-medium text-yellow-600'>
-                  +{notification.achievement.points} points
-                </span>
-                <span className='text-xs text-(--secondary-color)'>
-                  Click to view
-                </span>
-              </div>
-            </div>
-          </div>
+          <AchievementCard
+            achievement={notification.achievement}
+            isUnlocked
+            variant='notification'
+            onClick={handleViewDetails}
+            onClose={handleClose}
+          />
         </motion.div>
       )}
     </AnimatePresence>
@@ -230,3 +177,4 @@ export const AchievementNotificationContainer = () => {
 };
 
 export default AchievementNotification;
+

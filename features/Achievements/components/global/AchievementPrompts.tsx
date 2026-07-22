@@ -6,7 +6,7 @@ import clsx from 'clsx';
 import { Trophy, TrendingUp, Target, Zap } from 'lucide-react';
 import { useAchievementPrompts } from '../../hooks/useAchievementPrompts';
 import { useClick } from '@/shared/hooks/generic/useAudio';
-import { cardBorderStyles } from '@/shared/lib/styles';
+import { cardBorderStyles } from '@/shared/utils/styles';
 import type { AchievementPrompt } from '../../hooks/useAchievementPrompts';
 
 interface AchievementPromptCardProps {
@@ -232,3 +232,4 @@ export const AchievementPromptsContainer = () => {
 };
 
 export default AchievementPromptsContainer;
+

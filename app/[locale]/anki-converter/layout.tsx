@@ -1,6 +1,6 @@
 'use client';
 
-import TopBar from '@/shared/components/navigation/TopBar';
+import TopBar from '@/shared/ui-composite/navigation/TopBar';
 
 interface AnkiConverterLayoutProps {
   children: React.ReactNode;
@@ -18,3 +18,4 @@ export default function AnkiConverterLayout({
     </div>
   );
 }
+

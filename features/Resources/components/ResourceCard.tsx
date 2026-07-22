@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { cn } from '@/shared/lib/utils';
+import { cn } from '@/shared/utils/utils';
 import type { Resource, DifficultyLevel, PriceType, Platform } from '../types';
 import {
   Smartphone,
@@ -256,3 +256,4 @@ function formatCategoryName(categoryId: string): string {
 }
 
 export default ResourceCard;
+

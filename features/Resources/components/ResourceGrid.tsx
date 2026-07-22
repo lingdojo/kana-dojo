@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useRef, useCallback } from 'react';
-import { cn } from '@/shared/lib/utils';
+import { cn } from '@/shared/utils/utils';
 import type { Resource } from '../types';
 import { ResourceCard } from './ResourceCard';
 
@@ -188,3 +188,4 @@ export function ResourceGrid({
 }
 
 export default ResourceGrid;
+

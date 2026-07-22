@@ -1,6 +1,6 @@
 'use client';
 
-import TopBar from '@/shared/components/navigation/TopBar';
+import TopBar from '@/shared/ui-composite/navigation/TopBar';
 
 interface TranslateLayoutProps {
   children: React.ReactNode;
@@ -16,3 +16,4 @@ export default function TranslateLayout({ children }: TranslateLayoutProps) {
     </div>
   );
 }
+

@@ -3,7 +3,7 @@
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { useClick } from '@/shared/hooks/generic/useAudio';
-import { cn } from '@/shared/lib/utils';
+import { cn } from '@/shared/utils/utils';
 import {
   CalendarDays,
   CalendarRange,
@@ -479,3 +479,4 @@ export default function StreakGrid({
 
 // Export for testing
 export { getDaysInPeriod };
+

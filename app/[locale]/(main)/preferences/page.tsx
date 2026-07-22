@@ -1,4 +1,4 @@
-import Settings from '@/features/Preferences/components/sections';
+import { Settings } from '@/features/Preferences';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/core/i18n/metadata-helpers';
 import { routing } from '@/core/i18n/routing';

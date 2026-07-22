@@ -1,4 +1,4 @@
-import AuroraText from '@/shared/components/ui/magicui/AuroraText';
+import AuroraText from '@/shared/ui/components/magicui/AuroraText';
 
 /** Toggle between aurora gradient heading (true) and original heading style (false) */
 const USE_AURORA_MAIN_MENU_HEADING = false;
@@ -26,3 +26,4 @@ const KanaDojoBanner = () => {
 };
 
 export default KanaDojoBanner;
+

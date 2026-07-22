@@ -6,13 +6,17 @@ import {
   getWallpaperStyles,
   getThemeDefaultWallpaperId,
 } from '@/features/Preferences/data/themes/themes';
-import { getWallpaperById } from '@/features/Preferences/data/wallpapers/wallpapers';
+import {
+  getWallpaperById,
+  getWallpaperPreviewUrls,
+} from '@/features/Preferences/data/wallpapers/wallpapers';
 import usePreferencesStore from '@/features/Preferences/store/usePreferencesStore';
 import { useClick } from '@/shared/hooks/generic/useAudio';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { X, Palette } from 'lucide-react';
 import { memo, useCallback, useState, useEffect } from 'react';
 import type { LucideIcon } from 'lucide-react';
+import CollapsibleSection from '@/features/Preferences/components/shared/CollapsibleSection';
 
 interface ThemesModalProps {
   open: boolean;
@@ -69,9 +73,6 @@ const ThemeCard = memo(function ThemeCard({
   onClick,
 }: ThemeCardProps) {
   const [isHovered, setIsHovered] = useState(false);
-  const selectedWallpaperId = usePreferencesStore(
-    state => state.selectedWallpaperId,
-  );
 
   const themeName = theme.displayName ?? theme.id.replaceAll('-', ' ');
   const isChaosTheme = theme.id === '?';
@@ -80,10 +81,8 @@ const ThemeCard = memo(function ThemeCard({
 
   // Check if theme has a default wallpaper (premium themes)
   const themeWallpaperId = getThemeDefaultWallpaperId(theme.id);
-  const wallpaperIdToUse = themeWallpaperId || selectedWallpaperId;
-
-  const wallpaper = wallpaperIdToUse
-    ? getWallpaperById(wallpaperIdToUse)
+  const wallpaper = themeWallpaperId
+    ? getWallpaperById(themeWallpaperId)
     : undefined;
 
   const background = isChaosTheme
@@ -93,7 +92,11 @@ const ThemeCard = memo(function ThemeCard({
       : theme.backgroundColor;
 
   const wallpaperStyles = wallpaper
-    ? getWallpaperStyles(wallpaper.url, isHovered, wallpaper.urlWebp)
+    ? getWallpaperStyles(
+        getWallpaperPreviewUrls(wallpaper).url,
+        isHovered,
+        getWallpaperPreviewUrls(wallpaper).urlWebp,
+      )
     : {};
 
   const borderStyle = isPremiumTheme
@@ -214,22 +217,23 @@ export default function ThemesModal({ open, onOpenChange }: ThemesModalProps) {
             </DialogPrimitive.Title>
             <button
               onClick={handleClose}
-              className='shrink-0 rounded-xl p-2 hover:cursor-pointer hover:bg-(--card-color)'
+              className='shrink-0 rounded-xl p-2 hover:cursor-pointer hover:bg-(--card-color) '
             >
-              <X size={24} className='text-(--secondary-color)' />
+              <X size={24} className='text-(--secondary-color) hover:text-(--secondary-color)' />
             </button>
           </div>
           <div id='modal-scroll' className='flex-1 overflow-y-auto px-6 py-6'>
             <div className='space-y-6'>
               {themeSets.map(group => {
                 const Icon = group.icon;
+                const isPremiumGroup = group.name === 'Premium';
+                const storageKey = `themes-modal-${group.name.toLowerCase().replace(/\s+/g, '-')}`;
+
                 return (
-                  <div key={group.name} className='space-y-3'>
-                    <div className='flex items-center gap-2 text-lg font-medium text-(--main-color)'>
-                      <span className='motion-safe:animate-float flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border-b-4 border-(--secondary-color-accent) bg-(--secondary-color) leading-none text-(--background-color) [--float-distance:-3px]'>
-                        <Icon size={16} />
-                      </span>
-                      {group.name === 'Premium' ? (
+                  <CollapsibleSection
+                    key={group.name}
+                    title={
+                      isPremiumGroup ? (
                         <span>
                           <span className='text-(--main-color)'>Premium</span>
                           <span className='ml-1 text-(--secondary-color)'>
@@ -237,11 +241,16 @@ export default function ThemesModal({ open, onOpenChange }: ThemesModalProps) {
                           </span>
                         </span>
                       ) : (
-                        <span className='text-(--main-color)'>
-                          {group.name}
-                        </span>
-                      )}
-                    </div>
+                        <span className='text-(--main-color)'>{group.name}</span>
+                      )
+                    }
+                    icon={<Icon size={16} />}
+                    useNewIconDesign
+                    level='subsection'
+                    defaultOpen={true}
+                    storageKey={storageKey}
+                    className='gap-3'
+                  >
                     <div className='grid grid-flow-row-dense grid-cols-2 gap-3 p-1 sm:grid-cols-3 md:grid-cols-4'>
                       {group.themes.map(theme => (
                         <ThemeCard
@@ -252,7 +261,7 @@ export default function ThemesModal({ open, onOpenChange }: ThemesModalProps) {
                         />
                       ))}
                     </div>
-                  </div>
+                  </CollapsibleSection>
                 );
               })}
             </div>

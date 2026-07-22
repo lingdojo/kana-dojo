@@ -3,12 +3,12 @@ import {
   hasRedisConfig,
   redisGetJson,
   redisPipeline,
-} from '@/shared/lib/redis';
+} from '@/shared/infra/server/redis';
 import {
   checkProgressSyncRateLimit,
   createRateLimitHeaders,
   getClientIP,
-} from '@/shared/lib/rateLimit';
+} from '@/shared/infra/server/rateLimit';
 import type { ApiErrorResponse } from '@/shared/types/api';
 import {
   buildProgressSyncStorageKey,

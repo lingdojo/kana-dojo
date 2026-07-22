@@ -2,24 +2,76 @@
   {
     "question": "Which Japanese company is known for making the character Hello Kitty?",
     "difficulty": "hard",
-    "answers": ["Sanrio", "Ghibli", "Capcom", "Namco"],
+    "answers": [
+      "Sanrio",
+      "Ghibli",
+      "Capcom",
+      "Namco"
+    ],
     "correctIndex": 0
   },
   {
     "question": "What is the currency of Japan?",
     "difficulty": "easy",
-    "answers": ["Yen", "Won", "Dollar", "Rupee"],
+    "answers": [
+      "Yen",
+      "Won",
+      "Dollar",
+      "Rupee"
+    ],
     "correctIndex": 0
   },
   {
     "question": "Which Japanese city is famous for its street food district, Dotonbori?",
-    "answers": ["Osaka", "Niigata", "Kagoshima", "Takayama"],
+    "answers": [
+      "Osaka",
+      "Niigata",
+      "Kagoshima",
+      "Takayama"
+    ],
     "correctIndex": 0
   },
   {
     "question": "What is the traditional Japanese garment called?",
     "difficulty": "easy",
-    "answers": ["Kimono", "Hanbok", "Cheongsam", "Sari"],
+    "answers": [
+      "Kimono",
+      "Hanbok",
+      "Cheongsam",
+      "Sari"
+    ],
     "correctIndex": 0
-  }
+  },
+  {
+    "question": "What is the name of Japan's highest mountain?",
+    "answer": "Mount Fuji (富士山), standing at 3,776 meters. It is an active volcano and a UNESCO World Heritage Site.",
+    "difficulty": "easy"
+  },
+  {
+    "question": "What is the oldest existing company in the world, located in Japan?",
+    "answer": "Kongō Gumi, a construction company founded in 578 AD that built temples for over 1,400 years.",
+    "difficulty": "medium"
+  },
+  {
+    "question": "Which Japanese dish consists of skewered grilled chicken?",
+    "difficulty": "easy",
+    "answers": [
+      "Yakitori",
+      "Sukiyaki",
+      "Tonkatsu",
+      "Oden"
+    ],
+    "correctIndex": 0
+  },
+  {
+  "question": "What is the name of the traditional Japanese board game similar to chess? (Community variation 25)",
+  "difficulty": "hard",
+  "answers": [
+    "Shogi",
+    "Go",
+    "Mahjong",
+    "Reversi"
+  ],
+  "correctIndex": 0
+}
 ]

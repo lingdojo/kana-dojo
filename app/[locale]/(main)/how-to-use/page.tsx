@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { routing } from '@/core/i18n/routing';
-import { BreadcrumbSchema } from '@/shared/components/SEO/BreadcrumbSchema';
-import { HowToSchema } from '@/shared/components/SEO/HowToSchema';
+import { BreadcrumbSchema } from '@/shared/ui-composite/SEO/BreadcrumbSchema';
+import { HowToSchema } from '@/shared/ui-composite/SEO/HowToSchema';
 
 export function generateStaticParams() {
   return routing.locales.map(locale => ({ locale }));
@@ -507,3 +507,4 @@ export default async function HowToUsePage({
     </>
   );
 }
+

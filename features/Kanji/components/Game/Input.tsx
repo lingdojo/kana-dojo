@@ -3,22 +3,24 @@ import { useState, useEffect, useRef } from 'react';
 import { CircleCheck } from 'lucide-react';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
-import useKanjiStore, { IKanjiObj } from '@/features/Kanji/store/useKanjiStore';
+import type { IKanjiObj } from '@/features/Kanji/store/useKanjiStore';
 import { useClick, useCorrect, useError } from '@/shared/hooks/generic/useAudio';
-// import GameIntel from '@/shared/components/Game/GameIntel';
-import { useStopwatch } from 'react-timer-hook';
+// import GameIntel from '@/shared/ui-composite/Game/GameIntel';
 import { useStatsStore } from '@/features/Progress';
 import { useShallow } from 'zustand/react/shallow';
-import Stars from '@/shared/components/Game/Stars';
-import AnswerSummary from '@/shared/components/Game/AnswerSummary';
-import SSRAudioButton from '@/shared/components/audio/SSRAudioButton';
-import FuriganaText from '@/shared/components/text/FuriganaText';
+import Stars from '@/shared/ui-composite/Game/Stars';
+import AnswerSummary from '@/shared/ui-composite/Game/AnswerSummary';
+import SSRAudioButton from '@/shared/ui-composite/audio/SSRAudioButton';
+import FuriganaText from '@/shared/ui-composite/text/FuriganaText';
 import { useCrazyModeTrigger } from '@/features/CrazyMode/hooks/useCrazyModeTrigger';
-import { getGlobalAdaptiveSelector } from '@/shared/lib/adaptiveSelection';
-import { GameBottomBar } from '@/shared/components/Game/GameBottomBar';
+import { getGlobalAdaptiveSelector } from '@/shared/utils/adaptiveSelection';
+import { GameBottomBar } from '@/shared/ui-composite/Game/GameBottomBar';
 import useClassicSessionStore from '@/shared/store/useClassicSessionStore';
 import { useThemePreferences } from '@/features/Preferences';
-import { cn } from '@/shared/lib/utils';
+import { cn } from '@/shared/utils/utils';
+import { useSetProgressStore } from '@/features/Progress';
+import { shouldSuppressContinueKeyboardShortcut } from '@/shared/utils/game/continueShortcutGuard';
+import { useMenuSelectorStore } from '@/shared/ui-composite/Menu/store/useMenuSelectorStore';
 
 // Get the global adaptive selector for weighted character selection
 const adaptiveSelector = getGlobalAdaptiveSelector();
@@ -38,13 +40,14 @@ const KanjiInputGame = ({
   isReverse = false,
 }: KanjiInputGameProps) => {
   const logAttempt = useClassicSessionStore(state => state.logAttempt);
-  // Get the current JLPT level from the Kanji store
-  const selectedKanjiCollection = useKanjiStore(
-    state => state.selectedKanjiCollection,
+  const recordKanjiProgress = useSetProgressStore(
+    state => state.recordKanjiProgress,
+  );
+  const selectedKanjiCollection = useMenuSelectorStore(
+    state => state.collections.kanji.selectedCollection,
   );
 
   const {
-    score,
     setScore,
     incrementKanjiCorrect,
     recordAnswerTime,
@@ -57,7 +60,6 @@ const KanjiInputGame = ({
     incrementCharacterScore,
   } = useStatsStore(
     useShallow(state => ({
-      score: state.score,
       setScore: state.setScore,
       incrementKanjiCorrect: state.incrementKanjiCorrect,
       recordAnswerTime: state.recordAnswerTime,
@@ -73,7 +75,8 @@ const KanjiInputGame = ({
 
   const isGlassMode = useThemePreferences().isGlassMode;
 
-  const speedStopwatch = useStopwatch({ autoStart: false });
+  const answerStartTimeRef = useRef<number | null>(null);
+  const elapsedTimeMsRef = useRef(0);
 
   const { playClick } = useClick();
   const { playCorrect } = useCorrect();
@@ -87,6 +90,8 @@ const KanjiInputGame = ({
 
   const [inputValue, setInputValue] = useState('');
   const [bottomBarState, setBottomBarState] = useState<BottomBarState>('check');
+  const [clearWrongFeedbackSignal, setClearWrongFeedbackSignal] = useState(0);
+  const [wrongFeedbackSignal, setWrongFeedbackSignal] = useState(0);
 
   // State management based on mode - uses weighted selection for adaptive learning
   const [correctChar, setCorrectChar] = useState(() => {
@@ -118,6 +123,26 @@ const KanjiInputGame = ({
 
   const [displayAnswerSummary, setDisplayAnswerSummary] = useState(false);
   const [promptSequence, setPromptSequence] = useState(0);
+  const pauseTimer = () => {
+    if (answerStartTimeRef.current !== null) {
+      elapsedTimeMsRef.current += performance.now() - answerStartTimeRef.current;
+      answerStartTimeRef.current = null;
+    }
+  };
+  const getElapsedTimeMs = () => {
+    if (answerStartTimeRef.current !== null) {
+      return elapsedTimeMsRef.current + (performance.now() - answerStartTimeRef.current);
+    }
+    return elapsedTimeMsRef.current;
+  };
+  const resetTimer = () => {
+    answerStartTimeRef.current = null;
+    elapsedTimeMsRef.current = 0;
+  };
+  const startTimer = () => {
+    answerStartTimeRef.current = performance.now();
+    elapsedTimeMsRef.current = 0;
+  };
   const [feedback, setFeedback] = useState<React.ReactElement>(
     <>{'feedback ~'}</>,
   );
@@ -133,6 +158,15 @@ const KanjiInputGame = ({
     const handleKeyDown = (event: KeyboardEvent) => {
       const isEnter = event.key === 'Enter';
       const isSpace = event.code === 'Space' || event.key === ' ';
+      const isContinueShortcut = isEnter || isSpace;
+
+      if (
+        isContinueShortcut &&
+        shouldSuppressContinueKeyboardShortcut()
+      ) {
+        event.preventDefault();
+        return;
+      }
 
       if (isEnter) {
         // Guard against Enter key repeat immediately after correct answer
@@ -159,8 +193,8 @@ const KanjiInputGame = ({
   }, [bottomBarState]);
 
   useEffect(() => {
-    if (isHidden) speedStopwatch.pause();
-  }, [isHidden, speedStopwatch]);
+    if (isHidden) pauseTimer();
+  }, [isHidden]);
 
   if (!selectedKanjiObjs || selectedKanjiObjs.length === 0) {
     return null;
@@ -176,14 +210,19 @@ const KanjiInputGame = ({
     }
   };
 
+  const normalizeAnswer = (value: string): string => value.trim().toLowerCase();
+
   const isInputCorrect = (input: string): boolean => {
+    const normalizedInput = normalizeAnswer(input);
+
     if (!isReverse) {
       return (
         Array.isArray(targetChar) &&
-        targetChar.includes(input.trim().toLowerCase())
+        targetChar.some(answer => normalizeAnswer(answer) === normalizedInput)
       );
     } else {
-      return input.trim().toLowerCase() === targetChar;
+      const reverseTargetChar = typeof targetChar === 'string' ? targetChar : '';
+      return normalizedInput === normalizeAnswer(reverseTargetChar);
     }
   };
 
@@ -201,18 +240,20 @@ const KanjiInputGame = ({
   };
 
   const handleCorrectAnswer = (userInput: string) => {
-    speedStopwatch.pause();
-    const answerTimeMs = speedStopwatch.totalMilliseconds;
+    pauseTimer();
+    const answerTimeMs = getElapsedTimeMs();
     addCorrectAnswerTime(answerTimeMs / 1000);
     recordAnswerTime(answerTimeMs);
-    speedStopwatch.reset();
+    resetTimer();
     setCurrentKanjiObj(correctKanjiObj as IKanjiObj);
+    const canonicalKanjiChar = correctKanjiObj?.kanjiChar ?? correctChar;
 
     playCorrect();
-    addCharacterToHistory(correctChar);
-    incrementCharacterScore(correctChar, 'correct');
+    addCharacterToHistory(canonicalKanjiChar);
+    incrementCharacterScore(canonicalKanjiChar, 'correct');
     incrementCorrectAnswers();
-    setScore(score + 1);
+    void recordKanjiProgress(canonicalKanjiChar);
+    setScore(useStatsStore.getState().score + 1);
 
     triggerCrazyMode();
     adaptiveSelector.updateCharacterWeight(correctChar, true);
@@ -237,7 +278,7 @@ const KanjiInputGame = ({
       </>,
     );
     logAttempt({
-      questionId: correctChar,
+      questionId: canonicalKanjiChar,
       questionPrompt: correctChar,
       expectedAnswers: Array.isArray(targetChar)
         ? targetChar.map(v => String(v))
@@ -246,27 +287,34 @@ const KanjiInputGame = ({
       inputKind: 'type',
       isCorrect: true,
       timeTakenMs: answerTimeMs,
-      extra: { isReverse },
+      extra: {
+        contentType: 'kanji',
+        canonicalItemKey: canonicalKanjiChar,
+        isReverse,
+      },
     });
   };
 
   const handleWrongAnswer = () => {
+    const canonicalKanjiChar = correctKanjiObj?.kanjiChar ?? correctChar;
     setInputValue('');
+    setWrongFeedbackSignal(prev => prev + 1);
     playErrorTwice();
 
-    incrementCharacterScore(correctChar, 'wrong');
+    incrementCharacterScore(canonicalKanjiChar, 'wrong');
     incrementWrongAnswers();
-    if (score - 1 < 0) {
+    const nextScore = useStatsStore.getState().score - 1;
+    if (nextScore < 0) {
       setScore(0);
     } else {
-      setScore(score - 1);
+      setScore(nextScore);
     }
     triggerCrazyMode();
     adaptiveSelector.updateCharacterWeight(correctChar, false);
     incrementWrongStreak();
     setBottomBarState('wrong');
     logAttempt({
-      questionId: correctChar,
+      questionId: canonicalKanjiChar,
       questionPrompt: correctChar,
       expectedAnswers: Array.isArray(targetChar)
         ? targetChar.map(v => String(v))
@@ -274,7 +322,11 @@ const KanjiInputGame = ({
       userAnswer: inputValue.trim(),
       inputKind: 'type',
       isCorrect: false,
-      extra: { isReverse },
+      extra: {
+        contentType: 'kanji',
+        canonicalItemKey: canonicalKanjiChar,
+        isReverse,
+      },
     });
   };
 
@@ -298,18 +350,20 @@ const KanjiInputGame = ({
     generateNewCharacter();
     setPromptSequence(prev => prev + 1);
     setBottomBarState('check');
-    speedStopwatch.reset();
-    speedStopwatch.start();
+    startTimer();
   };
 
-  const gameMode = isReverse ? 'reverse input' : 'input';
   const displayCharLang = isReverse ? 'en' : 'ja';
   const inputLang = isReverse ? 'ja' : 'en';
   const textSize = isReverse ? 'text-6xl sm:text-8xl' : 'text-8xl sm:text-9xl';
   const gapSize = isReverse ? 'gap-6 sm:gap-10' : 'gap-4 sm:gap-10';
   const canCheck = inputValue.trim().length > 0 && bottomBarState !== 'correct';
   const showContinue = bottomBarState === 'correct';
-  const showFeedback = bottomBarState !== 'check';
+  const clearWrongFeedback = () => {
+    if (bottomBarState === 'wrong') {
+      setClearWrongFeedbackSignal(prev => prev + 1);
+    }
+  };
 
   // For Bottom Bar feedback
   const feedbackText = isReverse
@@ -382,21 +436,25 @@ const KanjiInputGame = ({
           <textarea
             ref={inputRef}
             value={inputValue}
-            placeholder='Type your answer...'
+            placeholder='type your answer...'
             disabled={showContinue}
             rows={4}
             className={clsx(
               'w-full max-w-xs sm:max-w-sm md:max-w-md',
-              'rounded-2xl px-5 py-4',
-              'rounded-2xl border-1 border-(--border-color) bg-(--card-color)',
+              'rounded-3xl px-5 py-4',
+              'border-4 border-(--border-color) bg-(--card-color)',
               'text-top text-left text-lg font-medium lg:text-xl',
               'text-(--secondary-color) placeholder:text-base placeholder:font-normal placeholder:text-(--secondary-color)/40',
-              'game-input resize-none focus:outline-none',
+              'game-input resize-none focus:border-(--secondary-color)/70 focus:text-(--main-color) focus:outline-none',
               'transition-colors duration-200 ease-out',
               showContinue && 'cursor-not-allowed opacity-60',
             )}
             autoFocus
-            onChange={e => setInputValue(e.target.value)}
+            onChange={e => {
+              setInputValue(e.target.value);
+              clearWrongFeedback();
+            }}
+            onFocus={clearWrongFeedback}
             onKeyDown={e => {
               if (e.key === 'Enter') {
                 e.preventDefault();
@@ -417,6 +475,8 @@ const KanjiInputGame = ({
         feedbackContent={feedbackText}
         buttonRef={buttonRef}
         hideRetry
+        clearWrongFeedbackSignal={clearWrongFeedbackSignal}
+        wrongFeedbackSignal={wrongFeedbackSignal}
       />
 
       <div className='h-32' />
@@ -425,3 +485,4 @@ const KanjiInputGame = ({
 };
 
 export default KanjiInputGame;
+

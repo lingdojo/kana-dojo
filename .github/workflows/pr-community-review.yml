@@ -328,7 +328,7 @@ jobs:
 
             const targetIssue = linkedIssue || foundIssue;
             if (!targetIssue) {
-              warnings.push('Could not find a matching community issue for this PR');
+              // warnings.push('Could not find a matching community issue for this PR');
             }
 
             const isValid = errors.length === 0;

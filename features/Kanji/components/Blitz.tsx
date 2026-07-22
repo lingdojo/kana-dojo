@@ -5,9 +5,9 @@ import useKanjiStore, {
   type IKanjiObj,
 } from '@/features/Kanji/store/useKanjiStore';
 import { useStatsStore } from '@/features/Progress';
-import Blitz, { type BlitzConfig } from '@/shared/components/Blitz';
-import { getSelectionLabels } from '@/shared/lib/selectionFormatting';
-import { shuffle, pickOne } from '@/shared/lib/shuffle';
+import Blitz, { type BlitzConfig } from '@/shared/ui-composite/Blitz';
+import { getSelectionLabels } from '@/shared/utils/selectionFormatting';
+import { shuffle, pickOne } from '@/shared/utils/shuffle';
 
 export default function BlitzKanji() {
   const selectedKanjiObjs = useKanjiStore(state => state.selectedKanjiObjs);
@@ -46,15 +46,12 @@ export default function BlitzKanji() {
     inputPlaceholder: 'Type the meaning...',
     modeDescription: 'Mode: Type (See kanji → Type meaning)',
     checkAnswer: (question, answer, isReverse) => {
-      if (!isReverse) {
-        // Reverse: answer should be the kanji character or kunyomi or onyomi
+      if (isReverse) {
+        // Reverse: answer should be the kanji character or one of its readings
         return (
           answer.trim() === question.kanjiChar ||
           question.kunyomi.some(k => k.split(' ')[0] === answer) ||
-          question.onyomi.some(k => k.split(' ')[0] === answer) ||
-          question.meanings.some(
-            meaning => answer.toLowerCase() === meaning.toLowerCase(),
-          )
+          question.onyomi.some(k => k.split(' ')[0] === answer)
         );
       }
       // Normal: answer should match any meaning
@@ -101,3 +98,4 @@ export default function BlitzKanji() {
 
   return <Blitz config={config} />;
 }
+

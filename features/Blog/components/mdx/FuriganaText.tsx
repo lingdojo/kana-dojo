@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { cn } from '@/shared/lib/utils';
+import { cn } from '@/shared/utils/utils';
 
 interface FuriganaTextProps {
   /** Japanese text (kanji) to display */
@@ -39,3 +39,4 @@ export function FuriganaText({ kanji, reading, className }: FuriganaTextProps) {
 }
 
 export default FuriganaText;
+

@@ -1,11 +1,11 @@
 'use client';
 
 import React from 'react';
-import { cn } from '@/shared/lib/utils';
+import { cn } from '@/shared/utils/utils';
 import {
   formatLastUpdated,
   getFreshnessBadge,
-} from '@/shared/lib/content-freshness';
+} from '@/shared/utils/content-freshness';
 import type {
   BlogPost as BlogPostType,
   BlogPostMeta,
@@ -14,7 +14,7 @@ import type {
 import { TableOfContents } from './TableOfContents';
 import { RelatedPosts } from './RelatedPosts';
 import { mdxComponents } from './mdx';
-import { ActionButton } from '@/shared/components/ui/ActionButton';
+import { ActionButton } from '@/shared/ui/components/ActionButton';
 import { Link } from '@/core/i18n/routing';
 import { ArrowLeft, BookOpen } from 'lucide-react';
 import { useClick } from '@/shared/hooks/generic/useAudio';
@@ -247,3 +247,4 @@ export function BlogPost({
 export { mdxComponents };
 
 export default BlogPost;
+

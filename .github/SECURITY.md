@@ -86,7 +86,7 @@ Prevent XSS attacks:
 <div>{userInput}</div>
 
 // ✅ Correct - sanitized
-import { sanitize } from '@/shared/lib/security';
+import { sanitize } from '@/shared/utils/security';
 <div>{sanitize(userInput)}</div>
 ```
 
@@ -235,3 +235,4 @@ For non-security issues:
 ---
 
 **Last Updated**: January 2025
+

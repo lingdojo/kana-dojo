@@ -5,7 +5,7 @@ import {
   buildTranslatorSchema,
   type TranslatorFaqEntry,
 } from '@/features/Translator/lib/seo';
-import { StructuredData } from '@/shared/components/SEO/StructuredData';
+import { StructuredData } from '@/shared/ui-composite/SEO/StructuredData';
 
 export function generateStaticParams() {
   return [{ locale: 'en' }];
@@ -189,3 +189,4 @@ export default async function JapaneseToEnglishPage(_: PageProps) {
     </>
   );
 }
+

@@ -9,10 +9,9 @@ import {
 import clsx from 'clsx';
 import { Random } from 'random-js';
 import { useCorrect, useError, useClick } from '@/shared/hooks/generic/useAudio';
-import Stars from '@/shared/components/Game/Stars';
+import Stars from '@/shared/ui-composite/Game/Stars';
 import { useCrazyModeTrigger } from '@/features/CrazyMode/hooks/useCrazyModeTrigger';
-import { useStopwatch } from 'react-timer-hook';
-import { GameBottomBar } from '@/shared/components/Game/GameBottomBar';
+import { GameBottomBar } from '@/shared/ui-composite/Game/GameBottomBar';
 import { useThemePreferences } from '@/features/Preferences/facade/useThemePreferences';
 import {
   X,
@@ -338,13 +337,11 @@ const DemoGame = () => {
     }
   }, [theme, setTheme]);
 
-  const speedStopwatch = useStopwatch({ autoStart: false });
   const { playCorrect } = useCorrect();
   const { playErrorTwice } = useError();
   const { playClick } = useClick();
   const { trigger: triggerCrazyMode } = useCrazyModeTrigger();
   const buttonRef = useRef<HTMLButtonElement>(null);
-  const totalTimeStopwatch = useStopwatch({ autoStart: true });
 
   const [score, setScore] = useState(0);
   const [stars, setStars] = useState(0);
@@ -409,8 +406,6 @@ const DemoGame = () => {
     setIsChecking(false);
     setIsCelebrating(false);
     setBottomBarState('check');
-    speedStopwatch.reset();
-    speedStopwatch.start();
   }, [questionIndex, generateQuestion]);
 
   // Initialize first question
@@ -453,9 +448,6 @@ const DemoGame = () => {
   const handleCheck = useCallback(() => {
     if (placedTiles.length === 0 || !currentQuestion) return;
 
-    speedStopwatch.pause();
-    const answerTimeMs = speedStopwatch.totalMilliseconds;
-
     playClick();
     setIsChecking(true);
 
@@ -464,8 +456,6 @@ const DemoGame = () => {
       placedTiles[0] === currentQuestion.correctAnswer;
 
     if (isCorrect) {
-      speedStopwatch.reset();
-
       playCorrect();
       triggerCrazyMode();
       setNumCorrectAnswers(prev => prev + 1);
@@ -474,7 +464,6 @@ const DemoGame = () => {
       setBottomBarState('correct');
       setIsCelebrating(true);
     } else {
-      speedStopwatch.reset();
       playErrorTwice();
       triggerCrazyMode();
       setNumWrongAnswers(prev => prev + 1);
@@ -509,8 +498,6 @@ const DemoGame = () => {
     setPlacedTiles([]);
     setIsChecking(false);
     setBottomBarState('check');
-    speedStopwatch.reset();
-    speedStopwatch.start();
   }, [playClick]);
 
   // Handle tile click - add or remove from placed tiles
@@ -523,8 +510,6 @@ const DemoGame = () => {
       if (bottomBarState === 'wrong') {
         setIsChecking(false);
         setBottomBarState('check');
-        speedStopwatch.reset();
-        speedStopwatch.start();
       }
 
       if (placedTiles.includes(char)) {

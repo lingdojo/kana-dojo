@@ -2,7 +2,7 @@
 
 import { useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { cn } from '@/shared/lib/utils';
+import { cn } from '@/shared/utils/utils';
 import type { MasteryDistribution } from '../../types/stats';
 import { ChartColumn } from 'lucide-react';
 
@@ -274,3 +274,4 @@ export function getMasteryDistributionDisplayValues(
     percentageSum,
   };
 }
+

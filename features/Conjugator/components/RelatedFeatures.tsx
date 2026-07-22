@@ -12,7 +12,7 @@ import {
   Layout,
   Info,
 } from 'lucide-react';
-import { cn } from '@/shared/lib/utils';
+import { cn } from '@/shared/utils/utils';
 import { ReactNode } from 'react';
 
 interface InternalLink {
@@ -97,3 +97,4 @@ export default function RelatedFeatures() {
     </section>
   );
 }
+

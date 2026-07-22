@@ -9,6 +9,7 @@ export type {
   VocabSelectionActions,
   IVocabObj,
 } from './facade';
+export type { VocabLevel } from '@/entities/vocabulary';
 
 // Components (page-level)
 export { default as VocabularyGame } from './components/Game';

@@ -62,7 +62,7 @@ This document outlines the Phase 3 SEO improvements implemented for KanaDojo, co
 **Usage Example:**
 
 ```tsx
-import { FAQSchema, commonKanaDOJOFAQs } from '@/shared/components/SEO';
+import { FAQSchema, commonKanaDOJOFAQs } from '@/shared/ui-composite/SEO';
 
 // Use pre-built FAQs
 <FAQSchema faqs={commonKanaDOJOFAQs} />
@@ -347,15 +347,15 @@ export const viewport: Viewport = {
 
 ```tsx
 // On /faq page
-import { FAQSchema, commonKanaDOJOFAQs } from '@/shared/components/SEO';
+import { FAQSchema, commonKanaDOJOFAQs } from '@/shared/ui-composite/SEO';
 <FAQSchema faqs={commonKanaDOJOFAQs} />;
 
 // On /kana page
-import { FAQSchema, hiraganaFAQs } from '@/shared/components/SEO';
+import { FAQSchema, hiraganaFAQs } from '@/shared/ui-composite/SEO';
 <FAQSchema faqs={hiraganaFAQs} />;
 
 // On /kanji page
-import { FAQSchema, kanjiFAQs } from '@/shared/components/SEO';
+import { FAQSchema, kanjiFAQs } from '@/shared/ui-composite/SEO';
 <FAQSchema faqs={kanjiFAQs} />;
 ```
 
@@ -367,7 +367,7 @@ import { FAQSchema, kanjiFAQs } from '@/shared/components/SEO';
 import {
   formatLastUpdated,
   generateContentAgeMetadata,
-} from '@/shared/lib/content-freshness';
+} from '@/shared/utils/content-freshness';
 
 // Display to users
 <p>{formatLastUpdated(post.updatedAt)}</p>;
@@ -384,7 +384,7 @@ const { datePublished, dateModified } = generateContentAgeMetadata(
 **In content:**
 
 ```tsx
-import { getContextualLink } from '@/shared/lib/internal-links';
+import { getContextualLink } from '@/shared/utils/internal-links';
 
 const hiraganaLink = getContextualLink('hiragana');
 // Use in content: <Link href={hiraganaLink.href}>{hiraganaLink.text}</Link>
@@ -393,8 +393,8 @@ const hiraganaLink = getContextualLink('hiragana');
 **For breadcrumbs:**
 
 ```tsx
-import { generateBreadcrumbLinks } from '@/shared/lib/internal-links';
-import { Breadcrumbs } from '@/shared/components/Breadcrumbs';
+import { generateBreadcrumbLinks } from '@/shared/utils/internal-links';
+import { Breadcrumbs } from '@/shared/ui-composite/Breadcrumbs';
 
 const breadcrumbItems = generateBreadcrumbLinks(pathname, locale);
 <Breadcrumbs items={breadcrumbItems} />;
@@ -405,7 +405,7 @@ const breadcrumbItems = generateBreadcrumbLinks(pathname, locale);
 **After content updates:**
 
 ```tsx
-import { submitSitemapToSearchEngines } from '@/shared/lib/sitemap-utils';
+import { submitSitemapToSearchEngines } from '@/shared/utils/sitemap-utils';
 
 // In your content publishing workflow
 await submitSitemapToSearchEngines('https://kanadojo.com/sitemap.xml');
@@ -564,3 +564,4 @@ All three phases of SEO improvements have been successfully implemented. KanaDoj
 - Mobile optimization
 
 **Don't forget:** Complete the IndexNow setup (see `TODO_INDEXNOW_SETUP.md`) to activate instant Bing indexing!
+

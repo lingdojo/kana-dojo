@@ -113,7 +113,7 @@ git push
 Add IndexNow notifications when you publish/update content:
 
 ```typescript
-import { notifyPageUpdateAllLocales } from '@/shared/lib/indexnow';
+import { notifyPageUpdateAllLocales } from '@/shared/utils/indexnow';
 
 // Example: When publishing a blog post
 await notifyPageUpdateAllLocales('/academy/new-post-slug');
@@ -181,3 +181,4 @@ await notifyPageUpdate('/kana');
 ---
 
 **DELETE THIS FILE** after completing all steps.
+

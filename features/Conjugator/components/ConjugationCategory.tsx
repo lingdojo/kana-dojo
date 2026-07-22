@@ -22,7 +22,7 @@ import {
   Crown,
   FileText,
 } from 'lucide-react';
-import { cn } from '@/shared/lib/utils';
+import { cn } from '@/shared/utils/utils';
 import type {
   ConjugationCategory as CategoryType,
   ConjugationForm,
@@ -312,3 +312,4 @@ function getCategoryInfo(category: CategoryType): {
     }
   );
 }
+

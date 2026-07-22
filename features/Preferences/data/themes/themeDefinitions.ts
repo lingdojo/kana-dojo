@@ -66,6 +66,13 @@ const baseThemeSets: BaseThemeGroup[] = [
     isLight: false,
     themes: [
       {
+        id: 'sapphire-bloom',
+        displayName: 'sapphire bloom',
+        backgroundColor: 'oklch(23.44% 0.0432 267.85 / 1)',
+        mainColor: 'oklch(79.09% 0.1242 299.66 / 1)',
+        secondaryColor: 'oklch(89.39% 0.1672 171.49 / 1)',
+      },
+      {
         id: 'light',
         isLight: true,
         backgroundColor: 'oklch(100.00% 0.0000 89.88 / 1)',
@@ -138,12 +145,6 @@ const baseThemeSets: BaseThemeGroup[] = [
     icon: Moon,
     isLight: false,
     themes: [
-      {
-        id: 'sapphire-bloom',
-        backgroundColor: 'oklch(23.44% 0.0432 267.85 / 1)',
-        mainColor: 'oklch(79.09% 0.1242 299.66 / 1)',
-        secondaryColor: 'oklch(89.39% 0.1672 171.49 / 1)',
-      },
       {
         id: 'monkeytype',
         backgroundColor: 'oklch(33.94% 0.0062 248.01 / 1)',
@@ -1179,6 +1180,13 @@ const baseThemeSets: BaseThemeGroup[] = [
         backgroundColor: 'oklch(15.0% 0.045 280.0 / 1)', // dark base
         mainColor: 'oklch(95.0% 0.180 320.0 / 1)', // bright magenta-pink
         secondaryColor: 'oklch(90.0% 0.200 180.0 / 1)', // vivid cyan
+      },
+      {
+        // "chuugi" (忠義) means "loyalty" in Japanese — dark theme with a surprise
+        id: 'chuugi',
+        backgroundColor: 'oklch(16.0% 0.035 260.0 / 1)', // deep navy
+        mainColor: 'oklch(80.0% 0.155 200.0 / 1)', // bright cyan
+        secondaryColor: 'oklch(85.0% 0.140 145.0 / 1)', // vivid emerald
       },
     ],
   },

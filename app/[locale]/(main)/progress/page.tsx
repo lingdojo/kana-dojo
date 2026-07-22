@@ -1,10 +1,10 @@
 import { Suspense } from 'react';
-import ProgressTabs from '@/features/Progress/components/ProgressTabs';
+import { ProgressTabs } from '@/features/Progress';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/core/i18n/metadata-helpers';
-import { BreadcrumbSchema } from '@/shared/components/SEO/BreadcrumbSchema';
+import { BreadcrumbSchema } from '@/shared/ui-composite/SEO/BreadcrumbSchema';
 import { routing } from '@/core/i18n/routing';
-import Loader from '@/shared/components/Skeletons/Loader';
+import Loader from '@/shared/ui-composite/Skeletons/Loader';
 
 // Generate static pages for all locales at build time
 export function generateStaticParams() {
@@ -50,3 +50,4 @@ export default async function ProgressPage({
     </>
   );
 }
+

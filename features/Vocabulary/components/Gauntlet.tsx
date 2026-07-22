@@ -4,10 +4,10 @@ import React from 'react';
 import useVocabStore, {
   type IVocabObj,
 } from '@/features/Vocabulary/store/useVocabStore';
-import Gauntlet, { type GauntletConfig } from '@/shared/components/Gauntlet';
-import { getSelectionLabels } from '@/shared/lib/selectionFormatting';
-import { shuffle, pickOne } from '@/shared/lib/shuffle';
-import FuriganaText from '@/shared/components/text/FuriganaText';
+import Gauntlet, { type GauntletConfig } from '@/shared/ui-composite/Gauntlet';
+import { getSelectionLabels } from '@/shared/utils/selectionFormatting';
+import { shuffle, pickOne } from '@/shared/utils/shuffle';
+import FuriganaText from '@/shared/ui-composite/text/FuriganaText';
 
 interface GauntletVocabProps {
   onCancel?: () => void;
@@ -95,3 +95,4 @@ const GauntletVocab: React.FC<GauntletVocabProps> = ({ onCancel }) => {
 };
 
 export default GauntletVocab;
+

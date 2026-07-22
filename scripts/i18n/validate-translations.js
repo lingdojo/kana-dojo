@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/* eslint-disable no-console */
 /**
  * Translation Validation Script
  *
@@ -29,10 +30,14 @@ const NAMESPACES = [
   'blog',
   'translator',
   'metadata',
+  'faq',
   'practiceLanding',
   'welcome',
   'experiments',
   'legal',
+  'kanaChart',
+  'conjugator',
+  'resources',
 ];
 
 let hasErrors = false;
@@ -168,7 +173,7 @@ function validateInterpolation(namespace) {
         if (typeof value === 'string') {
           const matches = [...value.matchAll(variableRegex)];
           if (matches.length > 0) {
-            const variables = matches.map(m => m[1]);
+            const _variables = matches.map(m => m[1]);
             // You could store these and compare across languages
             // For now, just verify they're valid format
           }

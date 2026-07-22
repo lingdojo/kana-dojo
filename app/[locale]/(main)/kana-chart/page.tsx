@@ -1,7 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import KanaChartDisplay from './KanaChartDisplay';
 import { routing } from '@/core/i18n/routing';
-import { BreadcrumbSchema } from '@/shared/components/SEO/BreadcrumbSchema';
+import { BreadcrumbSchema } from '@/shared/ui-composite/SEO/BreadcrumbSchema';
 
 export function generateStaticParams() {
   return routing.locales.map(locale => ({ locale }));
@@ -79,3 +79,4 @@ export default async function KanaChartPage({
     </>
   );
 }
+

@@ -18,7 +18,7 @@ import {
 import { BlogPost } from '../components/BlogPost';
 
 // Mock next-intl Link component
-vi.mock('@/shared/components/navigation/Link', () => ({
+vi.mock('@/shared/ui-composite/navigation/Link', () => ({
   Link: ({
     children,
     href,
@@ -361,3 +361,4 @@ describe('Property 19: Heading Hierarchy Maintained', () => {
     );
   });
 });
+

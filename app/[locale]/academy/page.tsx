@@ -2,8 +2,9 @@ import type { Metadata } from 'next';
 import { getBlogPosts, BlogList } from '@/features/Blog';
 import { routing, type Locale } from '@/core/i18n/routing';
 import { generatePageMetadata } from '@/core/i18n/metadata-helpers';
-import { BreadcrumbSchema } from '@/shared/components/SEO/BreadcrumbSchema';
-import { StructuredData } from '@/shared/components/SEO/StructuredData';
+import { Breadcrumbs } from '@/shared/ui-composite/Breadcrumbs';
+import { getTranslations } from 'next-intl/server';
+import { StructuredData } from '@/shared/ui-composite/SEO/StructuredData';
 
 export function generateStaticParams() {
   return routing.locales.map(locale => ({ locale }));
@@ -28,6 +29,7 @@ interface AcademyPageProps {
 export default async function AcademyPage({ params }: AcademyPageProps) {
   const { locale } = await params;
   const posts = getBlogPosts(locale as Locale);
+  const t = await getTranslations({ locale, namespace: 'navigation' });
 
   // Generate ItemList schema for blog post collection
   const itemListSchema = {
@@ -69,10 +71,11 @@ export default async function AcademyPage({ params }: AcademyPageProps) {
   return (
     <>
       {/* Structured Data for SEO */}
-      <BreadcrumbSchema
+      <Breadcrumbs
+        className='hidden'
         items={[
-          { name: 'Home', url: 'https://kanadojo.com' },
-          { name: 'Academy', url: 'https://kanadojo.com/academy' },
+          { name: t('menu.home'), url: '/' },
+          { name: t('menu.academy'), url: '/academy' },
         ]}
       />
       <StructuredData data={itemListSchema} />

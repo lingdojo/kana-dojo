@@ -5,7 +5,7 @@ import {
   getCanonicalNoPrefixPath,
   hasLocalePrefix,
   isTranslatorPath,
-} from './shared/lib/translator-routing';
+} from './shared/utils/translator-routing';
 
 // Create intl middleware once at module level (more efficient)
 const intlMiddleware = createMiddleware(routing);

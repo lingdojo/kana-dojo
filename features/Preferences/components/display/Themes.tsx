@@ -7,11 +7,14 @@ import themeSets, {
   isPremiumThemeId,
   // hexToHsl
 } from '@/features/Preferences/data/themes/themes';
-import { getWallpaperById } from '@/features/Preferences/data/wallpapers/wallpapers';
+import {
+  getWallpaperById,
+  getWallpaperPreviewUrls,
+} from '@/features/Preferences/data/wallpapers/wallpapers';
 import usePreferencesStore from '@/features/Preferences/store/usePreferencesStore';
 import clsx from 'clsx';
 import { useClick, useLong } from '@/shared/hooks/generic/useAudio';
-import { buttonBorderStyles } from '@/shared/lib/styles';
+import { buttonBorderStyles } from '@/shared/utils/styles';
 import { useState } from 'react';
 import { Dice5 } from 'lucide-react';
 import { Random } from 'random-js';
@@ -47,9 +50,6 @@ const Themes = ({ useNewIconDesign = false }: ThemesProps) => {
   const selectedTheme = usePreferencesStore(state => state.theme);
   const setSelectedTheme = usePreferencesStore(state => state.setTheme);
   const themePreview = usePreferencesStore(state => state.themePreview);
-  const selectedWallpaperId = usePreferencesStore(
-    state => state.selectedWallpaperId,
-  );
 
   // Initialize with first theme to avoid hydration mismatch
   const [randomTheme, setRandomTheme] = useState(themeSets[2].themes[0]);
@@ -219,16 +219,14 @@ const Themes = ({ useNewIconDesign = false }: ThemesProps) => {
                     const themeWallpaperId = getThemeDefaultWallpaperId(
                       currentTheme.id,
                     );
-                    const wallpaperIdToUse =
-                      themeWallpaperId || selectedWallpaperId;
-
-                    if (wallpaperIdToUse) {
-                      const wallpaper = getWallpaperById(wallpaperIdToUse);
+                    if (themeWallpaperId) {
+                      const wallpaper = getWallpaperById(themeWallpaperId);
                       if (wallpaper) {
+                        const preview = getWallpaperPreviewUrls(wallpaper);
                         return getWallpaperStyles(
-                          wallpaper.url,
+                          preview.url,
                           isHovered === currentTheme.id,
-                          wallpaper.urlWebp,
+                          preview.urlWebp,
                         );
                       }
                     }
@@ -276,6 +274,13 @@ const Themes = ({ useNewIconDesign = false }: ThemesProps) => {
                 }}
                 onClick={() => {
                   playClick();
+                  if (currentTheme.id === 'chuugi') {
+                    window.open(
+                      'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+                      '_blank',
+                      'noopener,noreferrer',
+                    );
+                  }
                 }}
               >
                 <input
@@ -694,3 +699,4 @@ const Themes = ({ useNewIconDesign = false }: ThemesProps) => {
 };
 
 export default Themes;
+

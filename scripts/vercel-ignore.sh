@@ -26,6 +26,13 @@ is_skip_file() {
   esac
 }
 
+is_merge_commit() {
+  local commit_sha="$1"
+  local parent_count=""
+  parent_count=$(git rev-list --parents -n 1 "$commit_sha" 2>/dev/null | awk '{print NF-1}')
+  [ "${parent_count:-0}" -gt 1 ]
+}
+
 get_changed_files() {
   local files=""
   local all_files=""
@@ -41,35 +48,42 @@ get_changed_files() {
     fi
   }
 
-  # Merge-aware view of the commit itself (critical for merge commits)
-  files=$(git show -m --name-only --pretty="" "$commit_sha" 2>/dev/null || true)
-  append_files "$files"
+  append_with_label() {
+    local label="$1"
+    local candidate="$2"
+    local count=0
+    count=$(printf '%s\n' "$candidate" | tr -d '\r' | sed '/^$/d' | wc -l | tr -d ' ')
+    if [ "${count:-0}" -gt 0 ]; then
+      echo "Diff source: ${label} (${count} files)" >&2
+      append_files "$candidate"
+    fi
+  }
 
-  if [ -n "${VERCEL_GIT_PULL_REQUEST_BASE_BRANCH:-}" ] && [ -n "${VERCEL_GIT_COMMIT_SHA:-}" ]; then
-    git fetch origin "${VERCEL_GIT_PULL_REQUEST_BASE_BRANCH}" --depth=1 2>/dev/null || true
-    files=$(git diff "origin/${VERCEL_GIT_PULL_REQUEST_BASE_BRANCH}...${VERCEL_GIT_COMMIT_SHA}" --name-only 2>/dev/null || true)
-    append_files "$files"
+  # Canonical source for normal commits in Vercel.
+  if [ -n "${VERCEL_GIT_PREVIOUS_SHA:-}" ] && [ -n "${VERCEL_GIT_COMMIT_SHA:-}" ]; then
+    files=$(git diff "${VERCEL_GIT_PREVIOUS_SHA}..${VERCEL_GIT_COMMIT_SHA}" --name-only 2>/dev/null || true)
+    append_with_label "previous..current" "$files"
   fi
 
-  if [ -z "$files" ] && [ -n "${VERCEL_GIT_PREVIOUS_SHA:-}" ] && [ -n "${VERCEL_GIT_COMMIT_SHA:-}" ]; then
-    files=$(git diff "${VERCEL_GIT_PREVIOUS_SHA}...${VERCEL_GIT_COMMIT_SHA}" --name-only 2>/dev/null || true)
-    append_files "$files"
-  fi
-
-  if [ -n "${VERCEL_GIT_COMMIT_SHA:-}" ]; then
+  # Merge commits must use first-parent diff only, otherwise second-parent history
+  # can introduce false positives and trigger unnecessary deployments.
+  if [ -n "${VERCEL_GIT_COMMIT_SHA:-}" ] && is_merge_commit "${VERCEL_GIT_COMMIT_SHA}"; then
     files=$(git diff "${VERCEL_GIT_COMMIT_SHA}^1..${VERCEL_GIT_COMMIT_SHA}" --name-only 2>/dev/null || true)
-    append_files "$files"
+    append_with_label "merge-first-parent" "$files"
+  elif [ -n "${VERCEL_GIT_COMMIT_SHA:-}" ]; then
+    files=$(git show --name-only --pretty="" "${VERCEL_GIT_COMMIT_SHA}" 2>/dev/null || true)
+    append_with_label "commit-show" "$files"
   fi
 
-  if [ -n "${VERCEL_GIT_COMMIT_SHA:-}" ]; then
-    files=$(git show --name-only --pretty="" "${VERCEL_GIT_COMMIT_SHA}" 2>/dev/null || true)
-    append_files "$files"
-  else
+  # Local fallbacks (non-Vercel or missing metadata contexts).
+  if [ "$had_nonempty" -eq 0 ]; then
     files=$(git diff HEAD~1 HEAD --name-only 2>/dev/null || true)
-    append_files "$files"
+    append_with_label "local-head-diff" "$files"
+  fi
 
+  if [ "$had_nonempty" -eq 0 ]; then
     files=$(git show --name-only --pretty="" HEAD 2>/dev/null || true)
-    append_files "$files"
+    append_with_label "local-head-show" "$files"
   fi
 
   if [ "$had_nonempty" -eq 1 ]; then
@@ -80,7 +94,7 @@ get_changed_files() {
   printf ''
 }
 
-LAST_COMMIT_MESSAGE=$(git log -1 --pretty=%s 2>/dev/null || true)
+LAST_COMMIT_MESSAGE="${VERCEL_IGNORE_TEST_COMMIT_MESSAGE:-$(git log -1 --pretty=%s "${VERCEL_GIT_COMMIT_SHA:-HEAD}" 2>/dev/null || true)}"
 if [[ "$LAST_COMMIT_MESSAGE" == chore\(automation\):* ]]; then
   echo "🔵 Automation commit detected; skipping build."
   exit 0
@@ -92,7 +106,12 @@ else
   echo "Vercel Git context not detected (env vars missing)."
 fi
 
-CHANGED_FILES="$(get_changed_files | tr -d '\r' | sed '/^$/d')"
+if [ -n "${VERCEL_IGNORE_TEST_CHANGED_FILES:-}" ]; then
+  echo "Using injected changed files for evaluation (test mode)."
+  CHANGED_FILES="$(printf '%b' "${VERCEL_IGNORE_TEST_CHANGED_FILES}" | tr -d '\r' | sed '/^$/d')"
+else
+  CHANGED_FILES="$(get_changed_files | tr -d '\r' | sed '/^$/d')"
+fi
 
 if [ -z "$CHANGED_FILES" ]; then
   if [[ "$LAST_COMMIT_MESSAGE" =~ ^Merge\ pull\ request\ #[0-9]+ ]]; then
@@ -106,11 +125,12 @@ fi
 REMAINING_FILES=""
 while IFS= read -r file; do
   [ -z "$file" ] && continue
-  if is_skip_file "$file"; then
-    echo "Skipping non-production file: $file"
+  normalized_file=$(printf '%s' "$file" | tr '\\' '/' | sed 's|^\./||')
+  if is_skip_file "$normalized_file"; then
+    echo "Skipping non-production file: $normalized_file"
     continue
   fi
-  REMAINING_FILES="${REMAINING_FILES}${file}"$'\n'
+  REMAINING_FILES="${REMAINING_FILES}${normalized_file}"$'\n'
 done <<EOF
 $CHANGED_FILES
 EOF
@@ -118,6 +138,10 @@ EOF
 REMAINING_FILES="$(printf '%s' "$REMAINING_FILES" | sed '/^$/d')"
 
 if [ -z "$REMAINING_FILES" ]; then
+  if [[ "$LAST_COMMIT_MESSAGE" =~ ^Merge\ pull\ request\ #[0-9]+ ]]; then
+    echo "INFO: Merge PR contains only non-production files. Skipping build."
+    exit 0
+  fi
   echo "Only community, markdown, or package manifest files changed. Skipping build."
   exit 0
 fi
@@ -231,6 +255,10 @@ COMBINED_PATTERN=$(IFS="|"; echo "${IGNORE_PATTERNS[*]}")
 REMAINING=$(printf '%s\n' "$REMAINING_FILES" | grep -vE "$COMBINED_PATTERN" | grep -v '^$' | wc -l)
 
 if [ "$REMAINING" -eq 0 ]; then
+  if [[ "$LAST_COMMIT_MESSAGE" =~ ^Merge\ pull\ request\ #[0-9]+ ]]; then
+    echo "INFO: Merge PR contains only ignored non-production paths. Skipping build."
+    exit 0
+  fi
   echo "🔵 Only non-production files changed. Skipping build."
   exit 0
 else

@@ -12,8 +12,8 @@ import {
   Filter,
   XCircle,
 } from 'lucide-react';
-import { cn } from '@/shared/lib/utils';
-import { ActionButton } from '@/shared/components/ui/ActionButton';
+import { cn } from '@/shared/utils/utils';
+import { ActionButton } from '@/shared/ui/components/ActionButton';
 import {
   AlertDialog,
   AlertDialogContent,
@@ -22,15 +22,15 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from '@/shared/components/ui/alert-dialog';
+} from '@/shared/ui/components/alert-dialog';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/shared/components/ui/select';
-import { Input } from '@/shared/components/ui/input';
+} from '@/shared/ui/components/select';
+import { Input } from '@/shared/ui/components/input';
 import type { TranslationEntry, Language } from '../types';
 import {
   filterHistory,
@@ -470,3 +470,4 @@ export default function TranslationHistory({
     </div>
   );
 }
+

@@ -1,22 +1,21 @@
 'use client';
 import clsx from 'clsx';
 import { useEffect, useState } from 'react';
-import Return from '@/shared/components/Game/ReturnFromGame';
+import Return from '@/shared/ui-composite/Game/ReturnFromGame';
 import MCQ from './MCQ';
 import Input from './Input';
 import TilesMode from './TilesMode';
 import useKanaStore from '@/features/Kana/store/useKanaStore';
 import { useStatsStore } from '@/features/Progress';
 import { useShallow } from 'zustand/react/shallow';
-import Stats from '@/shared/components/Game/Stats';
-import ClassicSessionSummary from '@/shared/components/Game/ClassicSessionSummary';
-import StreakMilestoneOverlay from '@/shared/components/Game/StreakMilestoneOverlay';
+import SessionStats from '@/shared/ui-composite/Game/SessionStats';
+import SessionSummaryScreen from '@/shared/ui-composite/Game/SessionSummaryScreen';
+import StreakMilestoneOverlay from '@/shared/ui-composite/Game/StreakMilestoneOverlay';
 import { useRouter } from '@/core/i18n/routing';
-import { finalizeSession, startSession } from '@/shared/lib/sessionHistory';
+import { finalizeSession, startSession } from '@/shared/utils/sessionHistory';
+import { useMenuSelectorStore } from '@/shared/ui-composite/Menu/store/useMenuSelectorStore';
 import useClassicSessionStore from '@/shared/store/useClassicSessionStore';
-import {
-  shouldShowStreakMilestoneOverlay,
-} from '@/shared/lib/game/streakMilestones';
+import { shouldShowStreakMilestoneOverlay } from '@/shared/utils/game/streakMilestones';
 
 const Game = () => {
   const {
@@ -54,6 +53,9 @@ const Game = () => {
   const [sessionNonce, setSessionNonce] = useState(0);
   const setActiveSessionId = useClassicSessionStore(
     state => state.setActiveSessionId,
+  );
+  const resetKanaSelection = useMenuSelectorStore(
+    state => state.resetKanaSelection,
   );
 
   useEffect(() => {
@@ -107,6 +109,7 @@ const Game = () => {
 
   const handleNewSession = () => {
     resetStats();
+    resetKanaSelection();
     setSessionId(null);
     setActiveSessionId(null);
     setView('playing');
@@ -118,11 +121,15 @@ const Game = () => {
       <div
         key={sessionNonce}
         className={clsx(
-          'flex min-h-[100dvh] max-w-[100dvw] flex-col items-center gap-6 px-4 md:gap-10',
+          'flex min-h-[100dvh] max-w-[100dvw] flex-col items-center gap-8 px-2 md:gap-12 md:px-0',
         )}
       >
-        {showStats && <Stats />}
-        <Return isHidden={showStats} gameMode={gameMode} onQuit={handleQuit} />
+        {showStats && <SessionStats />}
+        <Return
+          isHidden={showStats || view === 'summary'}
+          gameMode={gameMode}
+          onQuit={handleQuit}
+        />
         {gameMode.toLowerCase() === 'pick' ? (
           <TilesMode isHidden={showStats || view !== 'playing'} />
         ) : gameMode.toLowerCase() === 'mcq' ? (
@@ -140,7 +147,7 @@ const Game = () => {
         onDismiss={() => setActiveMilestone(null)}
       />
       {view === 'summary' && (
-        <ClassicSessionSummary
+        <SessionSummaryScreen
           correct={numCorrectAnswers}
           wrong={numWrongAnswers}
           bestStreak={currentStreak}

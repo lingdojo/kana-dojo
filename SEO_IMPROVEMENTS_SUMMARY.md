@@ -275,7 +275,7 @@ Add to these pages:
 - Deep navigation pages
 
 ```tsx
-import { Breadcrumbs } from '@/shared/components/Breadcrumbs';
+import { Breadcrumbs } from '@/shared/ui-composite/Breadcrumbs';
 
 <Breadcrumbs items={[
   { name: 'Home', url: '/' },
@@ -324,7 +324,7 @@ import {
   AuthorSchema,
   LearningResourceSchema,
   VideoSchema
-} from '@/shared/components/SEO';
+} from '@/shared/ui-composite/SEO';
 ```
 
 ### Use Alt Text Generator
@@ -333,7 +333,7 @@ import {
   generateKanaAltText,
   generateKanjiAltText,
   generateAltText
-} from '@/shared/lib/alt-text';
+} from '@/shared/utils/alt-text';
 
 const alt = generateKanaAltText('あ', 'hiragana', 'a', {
   includeSiteName: true,
@@ -343,7 +343,7 @@ const alt = generateKanaAltText('あ', 'hiragana', 'a', {
 
 ### Submit to IndexNow
 ```tsx
-import { notifyPageUpdate } from '@/shared/lib/indexnow';
+import { notifyPageUpdate } from '@/shared/utils/indexnow';
 
 // After publishing new content
 await notifyPageUpdate('/academy/new-article');
@@ -482,3 +482,4 @@ You've implemented comprehensive SEO improvements that will significantly enhanc
 **Don't forget to complete the IndexNow setup to activate instant indexing!**
 
 See `/TODO_INDEXNOW_SETUP.md` for step-by-step instructions.
+

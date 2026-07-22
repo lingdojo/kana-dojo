@@ -30,7 +30,7 @@ This document outlines all the SEO improvements implemented, with special focus 
 **Usage Example:**
 
 ```typescript
-import { notifyPageUpdateAllLocales } from '@/shared/lib/indexnow';
+import { notifyPageUpdateAllLocales } from '@/shared/utils/indexnow';
 
 // When publishing blog post
 await notifyPageUpdateAllLocales('/academy/new-post');
@@ -166,7 +166,7 @@ https://kanadojo.com/api/og?title=...&description=...&type=kana
 **Usage Example:**
 
 ```typescript
-import { generateKanaAltText } from '@/shared/lib/alt-text';
+import { generateKanaAltText } from '@/shared/utils/alt-text';
 
 const alt = generateKanaAltText('あ', 'hiragana', 'a', {
   includeSiteName: true,
@@ -417,3 +417,4 @@ Consider adding IndexNow notifications to:
 **Implementation Date:** January 2025
 **Status:** Phase 1 Complete - Setup Required
 **Next Review:** February 2025
+

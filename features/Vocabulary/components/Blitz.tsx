@@ -5,10 +5,10 @@ import useVocabStore, {
   type IVocabObj,
 } from '@/features/Vocabulary/store/useVocabStore';
 import { useStatsStore } from '@/features/Progress';
-import Blitz, { type BlitzConfig } from '@/shared/components/Blitz';
-import FuriganaText from '@/shared/components/text/FuriganaText';
-import { getSelectionLabels } from '@/shared/lib/selectionFormatting';
-import { shuffle, pickOne } from '@/shared/lib/shuffle';
+import Blitz, { type BlitzConfig } from '@/shared/ui-composite/Blitz';
+import FuriganaText from '@/shared/ui-composite/text/FuriganaText';
+import { getSelectionLabels } from '@/shared/utils/selectionFormatting';
+import { shuffle, pickOne } from '@/shared/utils/shuffle';
 
 export default function BlitzVocab() {
   const selectedVocabObjs = useVocabStore(state => state.selectedVocabObjs);
@@ -99,3 +99,4 @@ export default function BlitzVocab() {
 
   return <Blitz config={config} />;
 }
+

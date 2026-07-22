@@ -1,5 +1,8 @@
+'use client';
+
 import { create } from 'zustand';
-import { persist } from 'zustand/middleware';
+import { persist, createJSONStorage } from 'zustand/middleware';
+import useSetProgressStore from '@/features/Progress/store/useSetProgressStore';
 
 // Types
 interface CharacterScore {
@@ -106,6 +109,7 @@ interface IStatsState {
   // UI state
   showStats: boolean;
   toggleStats: () => void;
+
 
   // Timing
   correctAnswerTimes: number[];
@@ -228,6 +232,26 @@ const createTimedWrongIncrement = (
   });
 };
 
+const DEBOUNCE_MS = 2000;
+let debounceTimerId: ReturnType<typeof setTimeout> | null = null;
+
+function createDebouncedStorage<S>(): ReturnType<typeof createJSONStorage<S>> {
+  const baseStorage = createJSONStorage<S>(() => localStorage);
+  if (!baseStorage) return baseStorage;
+
+  return {
+    getItem: baseStorage.getItem,
+    setItem: (name: string, value: { state: S; version?: number }) => {
+      if (debounceTimerId) clearTimeout(debounceTimerId);
+      debounceTimerId = setTimeout(() => {
+        baseStorage!.setItem(name, value);
+        debounceTimerId = null;
+      }, DEBOUNCE_MS);
+    },
+    removeItem: baseStorage.removeItem,
+  };
+}
+
 const useStatsStore = create<IStatsState>()(
   persist(
     (set, get) => ({
@@ -253,6 +277,7 @@ const useStatsStore = create<IStatsState>()(
       // UI state
       showStats: false,
       toggleStats: () => set(s => ({ showStats: !s.showStats })),
+
 
       // Timing
       correctAnswerTimes: [],
@@ -290,10 +315,25 @@ const useStatsStore = create<IStatsState>()(
           };
           const { correct, wrong } = updatedScore;
           updatedScore.accuracy = correct / (correct + wrong);
+
+          const mastery = { ...s.allTimeStats.characterMastery };
+          if (!mastery[character]) {
+            mastery[character] = { correct: 0, incorrect: 0 };
+          }
+          mastery[character] = {
+            ...mastery[character],
+            [field === 'correct' ? 'correct' : 'incorrect']:
+              mastery[character][field === 'correct' ? 'correct' : 'incorrect'] + 1,
+          };
+
           return {
             characterScores: {
               ...s.characterScores,
               [character]: updatedScore,
+            },
+            allTimeStats: {
+              ...s.allTimeStats,
+              characterMastery: mastery,
             },
           };
         }),
@@ -435,18 +475,7 @@ const useStatsStore = create<IStatsState>()(
         const sessionHour = new Date().getHours();
 
         set(s => {
-          const mastery = { ...s.allTimeStats.characterMastery };
-
-          Object.entries(s.characterScores).forEach(([char, scores]) => {
-            if (!mastery[char]) {
-              mastery[char] = { correct: 0, incorrect: 0 };
-            }
-            mastery[char].correct += scores.correct;
-            mastery[char].incorrect += scores.wrong;
-          });
-
-          // Track training day (Requirements 8.4-8.7)
-          const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD format
+          const today = new Date().toISOString().split('T')[0];
           const trainingDays = s.allTimeStats.trainingDays.includes(today)
             ? s.allTimeStats.trainingDays
             : capArray(
@@ -459,9 +488,9 @@ const useStatsStore = create<IStatsState>()(
               ...s.allTimeStats,
               totalSessions: s.allTimeStats.totalSessions + 1,
               totalCorrect: s.allTimeStats.totalCorrect + s.numCorrectAnswers,
-              totalIncorrect: s.allTimeStats.totalIncorrect + s.numWrongAnswers,
+              totalIncorrect:
+                s.allTimeStats.totalIncorrect + s.numWrongAnswers,
               bestStreak: Math.max(s.allTimeStats.bestStreak, s.currentStreak),
-              characterMastery: mastery,
               trainingDays,
             },
           };
@@ -496,7 +525,8 @@ const useStatsStore = create<IStatsState>()(
         }
       },
 
-      clearAllProgress: () =>
+      clearAllProgress: () => {
+        void useSetProgressStore.getState().clearSetProgress();
         set({
           allTimeStats: {
             totalSessions: 0,
@@ -526,7 +556,8 @@ const useStatsStore = create<IStatsState>()(
             currentWrongStreak: 0,
             maxWrongStreak: 0,
           },
-        }),
+        });
+      },
 
       resetStats: () =>
         set({
@@ -753,6 +784,7 @@ const useStatsStore = create<IStatsState>()(
     }),
     {
       name: 'kanadojo-stats',
+      storage: createDebouncedStorage(),
       partialize: state => ({ allTimeStats: state.allTimeStats }),
       merge: (persistedState, currentState) => {
         const persisted = persistedState as Partial<IStatsState> | undefined;

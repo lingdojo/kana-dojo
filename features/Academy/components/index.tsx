@@ -1,6 +1,6 @@
 'use client';
 import { Link } from '@/core/i18n/routing';
-import Banner from '@/shared/components/Menu/Banner';
+import Banner from '@/shared/ui-composite/Menu/Banner';
 import clsx from 'clsx';
 
 const Academy = () => {
@@ -54,3 +54,4 @@ const Academy = () => {
 };
 
 export default Academy;
+

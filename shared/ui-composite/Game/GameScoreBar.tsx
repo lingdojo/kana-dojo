@@ -1,0 +1,106 @@
+'use client';
+import { useEffect, useState } from 'react';
+import { useStatsDisplay } from '@/features/Progress';
+// import useIndefiniteConfetti from '@/lib/hooks/useInfiniteConfetti';
+import { Random } from 'random-js';
+import { animalIconsLength } from '@/shared/utils/icons';
+
+const random = new Random();
+
+interface Checkpoint {
+  position: number;
+  label: string;
+}
+
+type CheckpointInput = number | Checkpoint;
+
+interface GameScoreBarProps {
+  value?: number;
+  max?: number;
+  checkpoints?: CheckpointInput[];
+}
+
+const GameScoreBar = ({
+  value,
+  max = 20,
+}: // checkpoints = [10, 25, 50, 75] // Default checkpoints at 25%, 50%, 75%
+GameScoreBarProps) => {
+  const { score, setScore, stars, setStars, addIconIndex } = useStatsDisplay();
+
+  // Use explicit value prop if provided (e.g. Gauntlet), otherwise use store score
+  const effectiveScore = value !== undefined ? value : score;
+
+  // Track color cycle separately - only changes on correct answers (score increase)
+  const [colorCycle, setColorCycle] = useState(3);
+  const [prevScore, setPrevScore] = useState(effectiveScore);
+
+  useEffect(() => {
+    if (effectiveScore > prevScore) {
+      setColorCycle(prev => (prev + 1) % 4);
+      setPrevScore(effectiveScore);
+    } else if (effectiveScore < prevScore) {
+      setPrevScore(effectiveScore);
+    }
+  }, [effectiveScore, prevScore]);
+  
+  const getBackground = () => {
+    switch (colorCycle) {
+      case 0:
+        return 'var(--secondary-color)';
+      case 1:
+        return 'linear-gradient(to right, var(--secondary-color), var(--main-color))';
+      case 2:
+        return 'var(--main-color)';
+      case 3:
+        return 'linear-gradient(to right, var(--main-color), var(--secondary-color))';
+      default:
+        return 'var(--secondary-color)';
+    }
+  };
+
+  const percentage = (effectiveScore / max) * 100;
+
+  // const [active, setActive] = useState(false);
+
+  // const emojiArray = ['🍹'];
+
+  useEffect(() => {
+    // Only trigger star logic for store-based progress (not Gauntlet)
+    if (value === undefined && score >= max) {
+      setScore(0);
+      setStars(stars + 1);
+      const newIconIndex = random.integer(0, animalIconsLength - 1);
+      addIconIndex(newIconIndex);
+    }
+  }, [score, value]);
+
+  return (
+    <div className='relative flex w-full flex-col items-center'>
+      {/* Progress Bar Background */}
+      <div className='relative h-4 w-full overflow-hidden rounded-full bg-(--card-color)'>
+        {/* Progress Indicator */}
+        <div
+          className='relative z-10 h-4 rounded-full transition-all duration-500'
+          style={{
+            width: `${percentage}%`,
+            background:
+              getBackground(),
+          }}
+        />
+        {/* Checkpoints */}
+        {[50].map(cp => (
+          <div
+            key={cp}
+            className='absolute top-0 z-0 h-4 w-0 bg-(--border-color)'
+            style={{
+              left: `calc(${cp}% - 1px)`,
+            }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default GameScoreBar;
+

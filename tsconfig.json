@@ -26,8 +26,14 @@
       "@/*": [
         "./*"
       ],
+      "@/entities/*": [
+        "./entities/*"
+      ],
       "@/features/*": [
         "./features/*"
+      ],
+      "@/widgets/*": [
+        "./widgets/*"
       ],
       "@/shared/*": [
         "./shared/*"
@@ -46,7 +52,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "tailwind.config.js",
-    ".next/dev/types/**/*.ts"
+    ".next/dev/types/**/*.ts",
+    ".next/dev/dev/types/**/*.ts"
   ],
   "exclude": [
     "node_modules",

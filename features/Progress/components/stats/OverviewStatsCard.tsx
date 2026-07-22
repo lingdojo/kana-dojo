@@ -2,7 +2,7 @@
 
 import { type ReactNode } from 'react';
 import { motion } from 'framer-motion';
-import { cn } from '@/shared/lib/utils';
+import { cn } from '@/shared/utils/utils';
 
 /**
  * Configuration: Set to true for top border, false for bottom border
@@ -145,3 +145,4 @@ export default function OverviewStatsCard({
     </motion.div>
   );
 }
+

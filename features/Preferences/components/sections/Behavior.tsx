@@ -3,7 +3,7 @@ import usePreferencesStore from '@/features/Preferences/store/usePreferencesStor
 import { useClick } from '@/shared/hooks/generic/useAudio';
 import { AudioLines, VolumeX, Volume2 } from 'lucide-react';
 import { useJapaneseTTS } from '@/features/Preferences/hooks/useJapaneseTTS';
-import { ActionButton } from '@/shared/components/ui/ActionButton';
+import { ActionButton } from '@/shared/ui/components/ActionButton';
 // import{Command, KeyboardOff} from 'lucide-react'
 // import HotkeyReference from './HotkeyReference';
 
@@ -29,6 +29,12 @@ const Behavior = () => {
   const furiganaEnabled = usePreferencesStore(state => state.furiganaEnabled);
   const setFuriganaEnabled = usePreferencesStore(
     state => state.setFuriganaEnabled,
+  );
+  const showExperimentalModes = usePreferencesStore(
+    state => state.showExperimentalModes,
+  );
+  const setShowExperimentalModes = usePreferencesStore(
+    state => state.setShowExperimentalModes,
   );
 
   // Unused but kept for future TTS voice panel
@@ -167,6 +173,22 @@ const Behavior = () => {
         },
       ],
     },
+    {
+      label: 'Enable extra game modes (Blitz + Gauntlet):',
+      value: showExperimentalModes,
+      choices: [
+        {
+          label: <span>on</span>,
+          selectedWhen: true,
+          onClick: () => setShowExperimentalModes(true),
+        },
+        {
+          label: <span>off</span>,
+          selectedWhen: false,
+          onClick: () => setShowExperimentalModes(false),
+        },
+      ],
+    },
   ] as const;
 
   return (
@@ -211,3 +233,4 @@ const Behavior = () => {
 };
 
 export default Behavior;
+

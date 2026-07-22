@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { cn } from '@/shared/lib/utils';
+import { cn } from '@/shared/utils/utils';
 import type { Heading } from '../types/blog';
 
 interface TableOfContentsProps {
@@ -67,3 +67,4 @@ export function TableOfContents({ headings, className }: TableOfContentsProps) {
 }
 
 export default TableOfContents;
+

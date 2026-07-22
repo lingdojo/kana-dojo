@@ -1,6 +1,6 @@
 'use client';
 
-import TopBar from '@/shared/components/navigation/TopBar';
+import TopBar from '@/shared/ui-composite/navigation/TopBar';
 
 interface ResourcesLayoutProps {
   children: React.ReactNode;
@@ -16,3 +16,4 @@ export default function ResourcesLayout({ children }: ResourcesLayoutProps) {
     </div>
   );
 }
+

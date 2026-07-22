@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import type { Category, CategoryWithCount } from '../types';
-import { cn } from '@/shared/lib/utils';
+import { cn } from '@/shared/utils/utils';
 
 interface RelatedCategoriesProps {
   /** Current category to find related categories for */
@@ -129,3 +129,4 @@ export function RelatedCategories({
     </section>
   );
 }
+

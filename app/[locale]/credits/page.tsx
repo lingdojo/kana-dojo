@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { routing } from '@/core/i18n/routing';
 import { ExternalLink, Sparkle } from 'lucide-react';
-import LegalLayout from '@/shared/components/layout/LegalLayout';
+import LegalLayout from '@/shared/ui-composite/layout/LegalLayout';
 
 export function generateStaticParams() {
   return routing.locales.map(locale => ({ locale }));
@@ -269,3 +269,4 @@ export default function CreditsPage() {
     </LegalLayout>
   );
 }
+

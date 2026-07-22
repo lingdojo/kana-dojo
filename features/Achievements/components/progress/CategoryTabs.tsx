@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import clsx from 'clsx';
-import { ActionButton } from '@/shared/components/ui/ActionButton';
+import { ActionButton } from '@/shared/ui/components/ActionButton';
 import { categories, CategoryId } from './constants';
 
 interface CategoryStats {
@@ -66,3 +66,4 @@ export const CategoryTabs = ({
     </div>
   );
 };
+

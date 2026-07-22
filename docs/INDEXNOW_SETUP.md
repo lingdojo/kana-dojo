@@ -67,7 +67,7 @@ Call the utility functions when content changes:
 import {
   notifyPageUpdate,
   notifyPageUpdateAllLocales,
-} from '@/shared/lib/indexnow';
+} from '@/shared/utils/indexnow';
 
 // When publishing a new blog post
 await notifyPageUpdateAllLocales('/academy/new-post-slug');
@@ -149,3 +149,4 @@ Track IndexNow submissions:
 - [IndexNow Official Documentation](https://www.indexnow.org/)
 - [Bing IndexNow Guide](https://www.bing.com/indexnow)
 - [IndexNow API Specification](https://www.indexnow.org/documentation)
+

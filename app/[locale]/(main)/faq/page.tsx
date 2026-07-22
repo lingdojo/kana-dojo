@@ -2,10 +2,10 @@ import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 import { generatePageMetadata } from '@/core/i18n/metadata-helpers';
 import { routing, type Locale } from '@/core/i18n/routing';
-import { Breadcrumbs } from '@/shared/components/Breadcrumbs';
-import { BreadcrumbSchema } from '@/shared/components/SEO/BreadcrumbSchema';
+import { Breadcrumbs } from '@/shared/ui-composite/Breadcrumbs';
+import { BreadcrumbSchema } from '@/shared/ui-composite/SEO/BreadcrumbSchema';
 import FAQSection from './FAQSection';
-import { StructuredData } from '@/shared/components/SEO/StructuredData';
+import { StructuredData } from '@/shared/ui-composite/SEO/StructuredData';
 
 export function generateStaticParams() {
   return routing.locales.map(locale => ({ locale }));
@@ -377,3 +377,4 @@ export default async function FAQPage({
     </>
   );
 }
+

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { routing } from '@/core/i18n/routing';
-import { BreadcrumbSchema } from '@/shared/components/SEO/BreadcrumbSchema';
+import { BreadcrumbSchema } from '@/shared/ui-composite/SEO/BreadcrumbSchema';
 import Script from 'next/script';
 import { SubcategoryPageClient } from './SubcategoryPageClient';
 import {
@@ -183,3 +183,4 @@ export default async function SubcategoryPage({
     </>
   );
 }
+

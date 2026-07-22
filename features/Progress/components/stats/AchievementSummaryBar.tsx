@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { cn } from '@/shared/lib/utils';
+import { cn } from '@/shared/utils/utils';
 import { Trophy, Star, Award, ChevronRight } from 'lucide-react';
 import type { AchievementSummary } from '../../types/stats';
 
@@ -183,3 +183,4 @@ export function getAchievementDisplayValues(summary: AchievementSummary): {
     progressPercent: `${progressPercent.toFixed(0)}%`,
   };
 }
+

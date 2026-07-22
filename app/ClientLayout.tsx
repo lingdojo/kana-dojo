@@ -6,7 +6,7 @@ import { useCrazyMode } from '@/features/CrazyMode';
 import { useShallow } from 'zustand/react/shallow';
 import { usePathname } from 'next/navigation';
 import { ScrollRestoration } from 'next-scroll-restoration';
-import WelcomeModal from '@/shared/components/Modals/WelcomeModal';
+import WelcomeModal from '@/shared/ui-composite/Modals/WelcomeModal';
 import { DonationModal } from '@/features/Preferences';
 import useOnboardingStore from '@/shared/store/useOnboardingStore';
 import {
@@ -20,18 +20,18 @@ import {
   getThemeDefaultWallpaperId,
 } from '@/features/Preferences/data/themes/themes';
 import { getWallpaperById } from '@/features/Preferences/data/wallpapers/wallpapers';
-import BackToTop from '@/shared/components/navigation/BackToTop';
-import MobileBottomBar from '@/shared/components/layout/BottomBar';
+import BackToTop from '@/shared/ui-composite/navigation/BackToTop';
+import MobileBottomBar from '@/shared/ui-composite/layout/BottomBar';
 import { useVisitTracker } from '@/features/Progress/hooks/useVisitTracker';
-import { getGlobalAdaptiveSelector } from '@/shared/lib/adaptiveSelection';
-import GlobalAudioController from '@/shared/components/layout/GlobalAudioController';
+import { getGlobalAdaptiveSelector } from '@/shared/utils/adaptiveSelection';
+import GlobalAudioController from '@/shared/ui-composite/layout/GlobalAudioController';
 import { useClick } from '@/shared/hooks/generic/useAudio';
-import ServiceWorkerRegistration from '@/shared/components/ServiceWorkerRegistration';
-import CursorTrailRenderer from '@/features/Preferences/components/renderers/CursorTrailRenderer';
-import ClickEffectRenderer from '@/features/Preferences/components/renderers/ClickEffectRenderer';
+import ServiceWorkerRegistration from '@/shared/ui-composite/ServiceWorkerRegistration';
+import VisualEffectsRenderer from '@/features/Preferences/components/renderers/VisualEffectsRenderer';
 
 // Initialize adaptive selector early to load persisted weights from IndexedDB
 // This runs once at module load time, ensuring weights are ready before games start
+// Deployment marker: refresh production after server-only bug report pipeline setup.
 if (typeof window !== 'undefined') {
   const selector = getGlobalAdaptiveSelector();
   selector.ensureLoaded().catch(console.error);
@@ -76,6 +76,9 @@ export default function ClientLayout({
   // Deployment trigger #3
   // Deployment trigger #4 - keep this harmless no-op comment
   // Redeploy trigger - redundant whitespaceless comment
+  // Redeploy trigger - April 24, 2026
+  // Redeploy trigger - R2 wallpaper pipeline rollout, June 20, 2026
+
   // Redeploy trigger - second redundant comment to force redeploy (no-op)
   // Redeploy trigger - third redundant comment to test Vercel Edge outage (March 2, 2026)
   const { theme, font } = usePreferencesStore(
@@ -113,6 +116,7 @@ export default function ClientLayout({
       process.env.NEXT_PUBLIC_VERCEL_ENV !== 'production';
     const isTargetRoute = /\/(kana|kanji|vocabulary)(\/|$)/.test(pathname);
     const isPreferencesRoute = /\/preferences(\/|$)/.test(pathname);
+    const isProgressRoute = /\/progress(\/|$)/.test(pathname);
     const isBaseRoute =
       pathname === '/' || pathname === '/en' || pathname === '/ja';
     const donationLastPathKey = 'donation-modal-last-pathname';
@@ -130,22 +134,27 @@ export default function ClientLayout({
       return;
     }
 
-    if ((isDev || isPreviewDeployment) && isPreferencesRoute) {
-      if (typeof window !== 'undefined') {
-        sessionStorage.setItem(donationLastPathKey, pathname);
-      }
-      const timer = setTimeout(() => {
-        setIsDonationModalOpen(true);
-      }, 500);
-      return () => clearTimeout(timer);
-    }
+    // TEMPORARILY COMMENTED OUT: auto-show on preferences in dev/preview
+    // if ((isDev || isPreviewDeployment) && isPreferencesRoute) {
+    //   if (typeof window !== 'undefined') {
+    //     sessionStorage.setItem(donationLastPathKey, pathname);
+    //   }
+    //   const timer = setTimeout(() => {
+    //     setIsDonationModalOpen(true);
+    //   }, 500);
+    //   return () => clearTimeout(timer);
+    // }
 
     const cameFromHome =
       previousPathname === '/' ||
       previousPathname === '/en' ||
       previousPathname === '/ja';
 
-    if (hasSeenWelcome && isTargetRoute && cameFromHome) {
+    const shouldCycle =
+      (hasSeenWelcome && isTargetRoute && cameFromHome) ||
+      (hasSeenWelcome && (isPreferencesRoute || isProgressRoute));
+
+    if (shouldCycle) {
       const nextCount =
         Number(
           typeof window !== 'undefined'
@@ -308,8 +317,7 @@ export default function ClientLayout({
     >
       <GlobalAudioController />
       <ServiceWorkerRegistration />
-      <CursorTrailRenderer />
-      <ClickEffectRenderer />
+      <VisualEffectsRenderer />
       {children}
       <ScrollRestoration />
       <WelcomeModal />
@@ -331,3 +339,4 @@ export default function ClientLayout({
     </div>
   );
 }
+
