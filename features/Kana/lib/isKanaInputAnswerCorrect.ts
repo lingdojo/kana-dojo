@@ -21,7 +21,7 @@ export const isKanaInputAnswerCorrect = ({
   }
 
   const lowerInput = normalizedInput.toLowerCase();
-  if (lowerInput === targetChar || normalizedInput === correctChar) {
+  if (lowerInput === targetChar || normalizedInput.toLowerCase() === correctChar.toLowerCase()) {
     return true;
   }
 
