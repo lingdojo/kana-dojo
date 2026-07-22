@@ -812,5 +812,137 @@
     "Izakaya"
   ],
   "correctIndex": 0
+  },
+  {
+    "question": "What is the traditional Japanese tea ceremony called?",
+    "difficulty": "easy",
+    "answers": [
+      "Ikebana",
+      "Sado",
+      "Kado",
+      "Shodo"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "question": "Which Japanese dish consists of battered and deep-fried seafood or vegetables?",
+    "difficulty": "easy",
+    "answers": [
+      "Karaage",
+      "Katsu",
+      "Tempura",
+      "Gyoza"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "question": "What is the name of Japan's traditional stringed instrument with three strings?",
+    "difficulty": "easy",
+    "answers": [
+      "Koto",
+      "Taiko",
+      "Shamisen",
+      "Shakuhachi"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "question": "Which island is the largest of Japan's four main islands?",
+    "difficulty": "easy",
+    "answers": [
+      "Kyushu",
+      "Hokkaido",
+      "Shikoku",
+      "Honshu"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "question": "Which Japanese dish is a hot pot dish typically containing thinly sliced beef and vegetables?",
+    "difficulty": "easy",
+    "answers": [
+      "Katsudon",
+      "Sukiyaki",
+      "Yakitori",
+      "Tempura"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "question": "What is the capital city of Japan?",
+    "difficulty": "easy",
+    "answers": [
+      "Kyoto",
+      "Yokohama",
+      "Osaka",
+      "Tokyo"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "question": "Which Japanese art form uses calligraphy brushes to write characters expressively?",
+    "difficulty": "easy",
+    "answers": [
+      "Kintsugi",
+      "Origami",
+      "Shodo",
+      "Ikebana"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "question": "What is the Japanese term for a small stand selling street food?",
+    "difficulty": "easy",
+    "answers": [
+      "Ryokan",
+      "Sento",
+      "Yatai",
+      "Izakaya"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "question": "Which Japanese New Year decoration is made of pine, bamboo, and plum branches?",
+    "difficulty": "easy",
+    "answers": [
+      "Omamori",
+      "Shimenawa",
+      "Ema",
+      "Kadomatsu"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "question": "What is the traditional Japanese art of repairing broken pottery with gold called?",
+    "difficulty": "easy",
+    "answers": [
+      "Origami",
+      "Shodo",
+      "Kintsugi",
+      "Ikebana"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "question": "Which season is associated with the Japanese tradition of viewing autumn leaves (momijigari)?",
+    "difficulty": "easy",
+    "answers": [
+      "Summer",
+      "Winter",
+      "Autumn",
+      "Spring"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "question": "Which Japanese snack consists of octopus pieces cooked in a wheat flour batter?",
+    "difficulty": "easy",
+    "answers": [
+      "Onigiri",
+      "Yakisoba",
+      "Okonomiyaki",
+      "Takoyaki"
+    ],
+    "correctIndex": 3
   }
 ]
