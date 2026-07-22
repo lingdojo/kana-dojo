@@ -60,7 +60,7 @@
     "english": "Continuation is power",
     "meaning": "Persistence leads to strength and success",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 8,
@@ -105,7 +105,7 @@
     "english": "One who chases two rabbits catches neither",
     "meaning": "Focus on one thing at a time",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 13,
@@ -339,7 +339,7 @@
     "english": "Not knowing is Buddha",
     "meaning": "Ignorance is bliss",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 39,
@@ -393,7 +393,7 @@
     "english": "Fall seven times, get up eight",
     "meaning": "Never give up",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 45,
@@ -519,7 +519,7 @@
     "english": "Haste will spoil things",
     "meaning": "Haste makes waste",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 59,
@@ -690,7 +690,7 @@
     "english": "Peek at the sky through a needle's eye",
     "meaning": "A narrow viewpoint leads to poor judgment",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 78,
@@ -699,7 +699,7 @@
     "english": "Hurry to do good",
     "meaning": "If it's worth doing, do it at once",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 79,
@@ -752,7 +752,7 @@
     "romaji": "Yabu wo tsutsuite hebi wo dasu",
     "english": "Poke the bush and bring out a snake",
     "meaning": "Stir up trouble unnecessarily",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -798,7 +798,7 @@
     "english": "Watch others and correct yourself",
     "meaning": "Learn from others' behavior",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 90,
@@ -1077,7 +1077,7 @@
     "english": "Fortune comes to a laughing gate",
     "meaning": "Happiness brings good fortune",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 121,
@@ -1095,7 +1095,7 @@
     "english": "Good medicine tastes bitter",
     "meaning": "Helpful advice can be harsh",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 123,
@@ -1518,7 +1518,7 @@
     "english": "The mouth is the source of misfortune",
     "meaning": "Careless words cause trouble",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 170,

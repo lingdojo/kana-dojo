@@ -96,7 +96,7 @@
     "backgroundColor": "oklch(18.0% 0.022 250.0 / 1)",
     "mainColor": "oklch(80.0% 0.055 240.0 / 1)",
     "secondaryColor": "oklch(65.0% 0.170 15.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -356,7 +356,7 @@
     "backgroundColor": "oklch(20.0% 0.048 160.0 / 1)",
     "mainColor": "oklch(72.0% 0.185 145.0 / 1)",
     "secondaryColor": "oklch(82.0% 0.145 130.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -496,7 +496,7 @@
     "backgroundColor": "oklch(24.0% 0.028 65.0 / 1)",
     "mainColor": "oklch(72.0% 0.085 70.0 / 1)",
     "secondaryColor": "oklch(60.0% 0.065 55.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -796,7 +796,7 @@
     "backgroundColor": "oklch(15.0% 0.048 275.0 / 1)",
     "mainColor": "oklch(88.0% 0.125 255.0 / 1)",
     "secondaryColor": "oklch(78.0% 0.165 330.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -886,7 +886,7 @@
     "backgroundColor": "oklch(16.0% 0.025 280.0 / 1)",
     "mainColor": "oklch(85.0% 0.125 220.0 / 1)",
     "secondaryColor": "oklch(78.0% 0.165 45.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -966,7 +966,7 @@
     "backgroundColor": "oklch(20.0% 0.028 285.0 / 1)",
     "mainColor": "oklch(88.0% 0.045 90.0 / 1)",
     "secondaryColor": "oklch(65.0% 0.145 20.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1006,7 +1006,7 @@
     "backgroundColor": "oklch(93.0% 0.012 240.0 / 1)",
     "mainColor": "oklch(55.0% 0.165 230.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.115 185.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1147,7 +1147,9 @@
     "mainColor": "oklch(60.0% 0.130 215.0 / 1)",
     "secondaryColor": "oklch(85.0% 0.155 95.0 / 1)",
     "issued": false,
-    "completed": false
+    "completed": false,
+    "completedBy": "Cyber2905",
+    "completedPR": 25575
   },
   {
     "id": "neon-arcade",
@@ -1166,7 +1168,7 @@
     "backgroundColor": "oklch(92.0% 0.012 90.0 / 1)",
     "mainColor": "oklch(35.0% 0.085 255.0 / 1)",
     "secondaryColor": "oklch(55.0% 0.055 65.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1256,7 +1258,7 @@
     "backgroundColor": "oklch(22.0% 0.020 235.0 / 1)",
     "mainColor": "oklch(78.0% 0.135 215.0 / 1)",
     "secondaryColor": "oklch(85.0% 0.155 90.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1296,7 +1298,7 @@
     "backgroundColor": "oklch(14.0% 0.060 300.0 / 1)",
     "mainColor": "oklch(78.0% 0.220 330.0 / 1)",
     "secondaryColor": "oklch(85.0% 0.175 190.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1636,7 +1638,7 @@
     "backgroundColor": "oklch(23.0% 0.030 85.0 / 1)",
     "mainColor": "oklch(86.0% 0.165 95.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.115 75.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1836,7 +1838,7 @@
     "backgroundColor": "oklch(22.0% 0.020 55.0 / 1)",
     "mainColor": "oklch(68.0% 0.085 65.0 / 1)",
     "secondaryColor": "oklch(58.0% 0.060 45.0 / 1)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
