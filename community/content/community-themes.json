@@ -558,27 +558,33 @@
     " secondaryColor": "oklch(75.0% 0.195 340.0 / 1)"
   },
   {
-  "id": "kintsugi-gold",
-  "backgroundColor": "oklch(22.0% 0.025 95.0 / 1)",
-  "mainColor": "oklch(84.0% 0.120 95.0 / 1)",
-  "secondaryColor": "oklch(68.0% 0.090 60.0 / 1)"
+    "id": "kintsugi-gold",
+    "backgroundColor": "oklch(22.0% 0.025 95.0 / 1)",
+    "mainColor": "oklch(84.0% 0.120 95.0 / 1)",
+    "secondaryColor": "oklch(68.0% 0.090 60.0 / 1)"
   },
   {
-  "id": "inkstone",
-  "backgroundColor": "oklch(15.0% 0.018 260.0 / 1)",
-  "mainColor": "oklch(78.0% 0.040 230.0 / 1)",
-  "secondaryColor": "oklch(50.0% 0.030 255.0 / 1)"
-},
+    "id": "inkstone",
+    "backgroundColor": "oklch(15.0% 0.018 260.0 / 1)",
+    "mainColor": "oklch(78.0% 0.040 230.0 / 1)",
+    "secondaryColor": "oklch(50.0% 0.030 255.0 / 1)"
+  },
   {
-  "id": "jpop-energy",
-  "backgroundColor": "oklch(15.0% 0.055 310.0 / 1)",
-  "mainColor": "oklch(80.0% 0.210 345.0 / 1)",
-  "secondaryColor": "oklch(85.0% 0.175 180.0 / 1)"
-},
+    "id": "jpop-energy",
+    "backgroundColor": "oklch(15.0% 0.055 310.0 / 1)",
+    "mainColor": "oklch(80.0% 0.210 345.0 / 1)",
+    "secondaryColor": "oklch(85.0% 0.175 180.0 / 1)"
+  },
   {
-  "id": "seaside-udon",
-  "backgroundColor": "oklch(92.0% 0.015 210.0 / 1)",
-  "mainColor": "oklch(60.0% 0.130 215.0 / 1)",
-  "secondaryColor": "oklch(85.0% 0.155 95.0 / 1)"
-}
+    "id": "seaside-udon",
+    "backgroundColor": "oklch(92.0% 0.015 210.0 / 1)",
+    "mainColor": "oklch(60.0% 0.130 215.0 / 1)",
+    "secondaryColor": "oklch(85.0% 0.155 95.0 / 1)"
+  },
+  {
+    "id": "driftwood-brown",
+    "backgroundColor": "oklch(22.0% 0.020 55.0 / 1)",
+    "mainColor": "oklch(68.0% 0.085 65.0 / 1)",
+    "secondaryColor": "oklch(58.0% 0.060 45.0 / 1)"
+  }
 ]
