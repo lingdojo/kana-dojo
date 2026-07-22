@@ -823,5 +823,16 @@
       "Origami"
     ],
     "correctIndex": 0
-  }
+  },
+  {
+  "question": "Which city is famous for the Gion Matsuri festival? (Community variation 51)",
+  "difficulty": "easy",
+  "answers": [
+    "Kyoto",
+    "Sendai",
+    "Sapporo",
+    "Kobe"
+  ],
+  "correctIndex": 0
+}
 ]
