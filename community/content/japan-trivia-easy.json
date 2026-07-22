@@ -812,5 +812,27 @@
     "Izakaya"
   ],
   "correctIndex": 0
-  }
+  },
+  {
+    "question": "What is the Japanese art of arranging flowers called? (Community variation 58)",
+    "difficulty": "easy",
+    "answers": [
+      "Ikebana",
+      "Shodo",
+      "Kodo",
+      "Origami"
+    ],
+    "correctIndex": 0
+  },
+  {
+  "question": "Which city is famous for the Gion Matsuri festival? (Community variation 51)",
+  "difficulty": "easy",
+  "answers": [
+    "Kyoto",
+    "Sendai",
+    "Sapporo",
+    "Kobe"
+  ],
+  "correctIndex": 0
+}
 ]

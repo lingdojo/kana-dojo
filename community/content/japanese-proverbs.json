@@ -406,5 +406,71 @@
   "romaji": "Juunin toiro",
   "english": "Ten people, ten colors",
   "meaning": "Different strokes for different folks"
-}
+},
+  {
+    "japanese": "塵も積もれば山となる",
+    "romaji": "Chiri mo tsumoreba yama to naru",
+    "english": "Even dust piles up into a mountain",
+    "meaning": "Small efforts accumulate into something great"
+  },
+  {
+    "japanese": "光陰矢の如し",
+    "romaji": "Kouin ya no gotoshi",
+    "english": "Time is like an arrow",
+    "meaning": "Time flies quickly"
+  },
+  {
+    "japanese": "二階から目薬",
+    "romaji": "Nikai kara megusuri",
+    "english": "Eye drops from the second floor",
+    "meaning": "An ineffective or roundabout way of helping"
+  },
+  {
+    "japanese": "出る杭は打たれる",
+    "romaji": "Deru kui wa utareru",
+    "english": "The nail that sticks out gets hammered down",
+    "meaning": "Those who stand out often face criticism"
+  },
+  {
+    "japanese": "石の上にも三年",
+    "romaji": "Ishi no ue ni mo sannen",
+    "english": "Three years on a stone",
+    "meaning": "Patience and perseverance eventually pay off"
+  },
+  {
+    "japanese": "覆水盆に返らず",
+    "romaji": "Fukusui bon ni kaerazu",
+    "english": "Spilled water cannot return to the tray",
+    "meaning": "No use crying over spilled milk; what's done is done"
+  },
+  {
+    "japanese": "猫の手も借りたい",
+    "romaji": "Neko no te mo karitai",
+    "english": "Wanting to borrow even a cat's paws",
+    "meaning": "So busy that any help, however small, would be welcome"
+  },
+  {
+    "japanese": "蒔かぬ種は生えぬ",
+    "romaji": "Makanu tane wa haenu",
+    "english": "Seeds not sown will not sprout",
+    "meaning": "You reap what you sow; nothing comes without effort"
+  },
+  {
+    "japanese": "犬も歩けば棒に当たる",
+    "romaji": "Inu mo arukeba bou ni ataru",
+    "english": "Even a dog that walks around will hit a stick",
+    "meaning": "Fortune or misfortune can come to those who take action"
+  },
+  {
+    "japanese": "鬼の目にも涙",
+    "romaji": "Oni no me ni mo namida",
+    "english": "Even a demon's eyes shed tears",
+    "meaning": "Even the harshest people have moments of compassion"
+  },
+  {
+    "japanese": "三度目の正直",
+    "romaji": "Sandome no shoujiki",
+    "english": "The third time is the truth",
+    "meaning": "Third time's the charm"
+  }
 ]
