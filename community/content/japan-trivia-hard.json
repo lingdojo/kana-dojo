@@ -654,5 +654,38 @@
     "Kyushu"
   ],
   "correctIndex": 0
+},
+{
+  "question": "What is the name of Japan's national currency? (Community variation 21)",
+  "difficulty": "hard",
+  "answers": [
+    "Yuan",
+    "Yen",
+    "Won",
+    "Rupee"
+  ],
+  "correctIndex": 1
+},
+{
+  "question": "What is the name of Japan's national currency?",
+  "difficulty": "hard",
+  "answers": [
+    "Yuan",
+    "Yen",
+    "Won",
+    "Rupee"
+  ],
+  "correctIndex": 1
+},
+{
+  "question": "Which Japanese island is known for its active volcano, Sakurajima?",
+  "difficulty": "hard",
+  "answers": [
+    "Kyushu",
+    "Honshu",
+    "Shikoku",
+    "Hokkaido"
+  ],
+  "correctIndex": 0
 }
 ]

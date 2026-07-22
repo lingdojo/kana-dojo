@@ -10,6 +10,7 @@ export interface BreadcrumbSchemaProps {
 }
 
 export function generateBreadcrumbSchema(items: BreadcrumbItem[]) {
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://kanadojo.com';
   return {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -17,7 +18,7 @@ export function generateBreadcrumbSchema(items: BreadcrumbItem[]) {
       '@type': 'ListItem',
       position: index + 1,
       name: item.name,
-      item: item.url,
+      item: new URL(item.url, baseUrl).toString(),
     })),
   };
 }
