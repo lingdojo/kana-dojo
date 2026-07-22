@@ -812,5 +812,16 @@
     "Izakaya"
   ],
   "correctIndex": 0
+  },
+  {
+    "question": "What is the Japanese art of arranging flowers called? (Community variation 58)",
+    "difficulty": "easy",
+    "answers": [
+      "Ikebana",
+      "Shodo",
+      "Kodo",
+      "Origami"
+    ],
+    "correctIndex": 0
   }
 ]
