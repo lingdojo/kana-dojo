@@ -219,6 +219,7 @@ const KanaCards = ({ filter = 'all', viewMode, selectedKanaType, selectedSubset 
               />
             ))}
           </div>
+          <div aria-hidden className='py-4' />
         </div>
       );
     }
@@ -328,6 +329,7 @@ const KanaCards = ({ filter = 'all', viewMode, selectedKanaType, selectedSubset 
           );
         });
       })()}
+      <div aria-hidden className='py-4' />
     </div>
   );
 };

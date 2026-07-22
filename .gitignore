@@ -26,13 +26,17 @@
 # misc
 .DS_Store
 *.pem
+.eslintcache
+/tmp/
 
 # Generated build-time data
 /shared/data/commitInfo.json
+/.generated/
 
 # AI tooling state
 /.agent/
 /.agents/
+/.wrangler/
 /.claude/
 /.claudeignore
 /.gemini/
@@ -60,7 +64,7 @@ zizmor-report.json
 *.tsbuildinfo
 next-env.d.ts
 
-# Wallpaper source images (only processed versions in public/wallpapers/ are tracked)
+# Wallpaper source images are processed into ignored .generated/wallpapers/
 
 
 
@@ -68,3 +72,7 @@ next-env.d.ts
 # Audio files - WAV kept locally as fallback, only Opus tracked in git
 /public/sounds/**/*.wav
 /public/sounds/click/click9/
+.env*.local
+
+# Sentry Config File
+.env.sentry-build-plugin

@@ -140,15 +140,15 @@ If your change affects visuals (themes, fonts, UI), take a quick screenshot or G
 ### Editing JSON content safely
 
 Many community contributions update JSON files such as `community/content/japan-facts.json`.
-If the text itself contains quotation marks, escape inner double quotes so the JSON stays valid.
+If the text itself contains quotation marks, you can either use single quotes or escape inner double quotes so the JSON stays valid.
 
 ```json
 {
-  "fact": "The phrase 'yoroshiku onegaishimasu' (よろしくお願いします) is a versatile expression for \"please take care of me.\""
+  "fact": "The phrase 'yoroshiku onegaishimasu' (よろしくお願いします) is a versatile expression for 'please take care of me.'"
 }
 ```
 
-Quick rule: keep JSON keys and values wrapped in double quotes, and write embedded double quotes as `\"`.
+Quick rule: keep JSON keys and values wrapped in double quotes, and write embedded double quotes as `\"` (or use single quotes `'` to avoid escaping).
 
 ## 🌐 Translating the App
 

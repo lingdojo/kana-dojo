@@ -21,9 +21,7 @@
     "position": "bottom",
     "text": "Routine note: small non-blocking documentation edits may appear here.",
     "issued": true,
-    "completed": false,
-    "completedBy": "sanketpatel32",
-    "completedPR": 20972
+    "completed": false
   },
   {
     "id": 4,
@@ -39,7 +37,9 @@
     "position": "bottom",
     "text": "- Additional community note preserved for documentation housekeeping.",
     "issued": true,
-    "completed": false
+    "completed": false,
+    "completedBy": "somyapriya01",
+    "completedPR": 25428
   },
   {
     "id": 4,

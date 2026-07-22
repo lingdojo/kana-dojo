@@ -1,4 +1,18 @@
 // instrumentation-client.ts
+import * as Sentry from '@sentry/nextjs';
+
+Sentry.init({
+  dsn: 'https://a6f82883d78e424ee7b578556b78743d@o4511608063197184.ingest.us.sentry.io/4511608067981312',
+  // Performance rescue: Sentry Replay is intentionally disabled for now.
+  // integrations: [Sentry.replayIntegration()],
+  tracesSampleRate: 0.1,
+  enableLogs: true,
+  // replaysSessionSampleRate: 0.1,
+  // replaysOnErrorSampleRate: 1.0,
+  sendDefaultPii: true,
+});
+
+export const onRouterTransitionStart = Sentry.captureRouterTransitionStart;
 
 /**
  * Global Chunk Load Error Handler
@@ -52,6 +66,11 @@ if (typeof window !== 'undefined' && !sessionStorage.getItem(RELOAD_FLAG)) {
 }
 if (process.env.NODE_ENV === 'development') {
   console.log('PostHog client instrumentation disabled in development mode.');
+}
+
+/*
+ * Performance rescue: PostHog is intentionally disabled without deleting the
+ * integration. Re-enable only after a measured analytics rollout.
 } else if (
   process.env.NODE_ENV === 'production' &&
   process.env.NEXT_PUBLIC_VERCEL_ENV === 'production'
@@ -86,3 +105,4 @@ if (process.env.NODE_ENV === 'development') {
       console.error('[PostHog] Failed to load posthog-js:', err);
     });
 }
+*/

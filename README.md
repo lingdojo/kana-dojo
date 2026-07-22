@@ -1,5 +1,5 @@
 <p align="center">
-<b>This project is backed by</b>
+<b>This project is sponsored by</b>
 <br/>
 <br/>
 <a href="https://vercel.com/oss">
