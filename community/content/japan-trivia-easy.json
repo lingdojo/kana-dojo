@@ -781,37 +781,37 @@
     "correctIndex": 0
   },
   {
-  "question": "What is the Japanese term for a summer fireworks festival?",
-  "difficulty": "easy",
-  "answers": [
-    "Hanabi Taikai",
-    "Bon Odori",
-    "Kagura",
-    "Kanda Matsuri"
-  ],
-  "correctIndex": 0
+    "question": "What is the Japanese term for a summer fireworks festival?",
+    "difficulty": "easy",
+    "answers": [
+      "Hanabi Taikai",
+      "Bon Odori",
+      "Kagura",
+      "Kanda Matsuri"
+    ],
+    "correctIndex": 0
   },
   {
-  "question": "What is the Japanese term for a traditional inn?",
-  "difficulty": "easy",
-  "answers": [
-    "Ryokan",
-    "Minshuku",
-    "Izakaya",
-    "Yatai"
-  ],
-  "correctIndex": 0
+    "question": "What is the Japanese term for a traditional inn?",
+    "difficulty": "easy",
+    "answers": [
+      "Ryokan",
+      "Minshuku",
+      "Izakaya",
+      "Yatai"
+    ],
+    "correctIndex": 0
   },
   {
-  "question": "What is the Japanese term for a hot spring? (Community variation 42)",
-  "difficulty": "easy",
-  "answers": [
-    "Onsen",
-    "Sentou",
-    "Ryokan",
-    "Izakaya"
-  ],
-  "correctIndex": 0
+    "question": "What is the Japanese term for a hot spring? (Community variation 42)",
+    "difficulty": "easy",
+    "answers": [
+      "Onsen",
+      "Sentou",
+      "Ryokan",
+      "Izakaya"
+    ],
+    "correctIndex": 0
   },
   {
     "question": "What is the Japanese art of arranging flowers called? (Community variation 58)",
@@ -825,14 +825,25 @@
     "correctIndex": 0
   },
   {
-  "question": "Which city is famous for the Gion Matsuri festival? (Community variation 51)",
-  "difficulty": "easy",
-  "answers": [
-    "Kyoto",
-    "Sendai",
-    "Sapporo",
-    "Kobe"
-  ],
-  "correctIndex": 0
-}
+    "question": "Which city is famous for the Gion Matsuri festival? (Community variation 51)",
+    "difficulty": "easy",
+    "answers": [
+      "Kyoto",
+      "Sendai",
+      "Sapporo",
+      "Kobe"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which ocean borders Japan to the east? (Community variation 10)",
+    "difficulty": "easy",
+    "answers": [
+      "Atlantic Ocean",
+      "Indian Ocean",
+      "Pacific Ocean",
+      "Arctic Ocean"
+    ],
+    "correctIndex": 2
+  }
 ]
