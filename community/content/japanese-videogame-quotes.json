@@ -539,74 +539,18 @@
     "character": "Shulk"
   },
   {
-  "japanese": "まだまだだね",
-  "romaji": "Mada mada da ne",
-  "english": "You still have lots more to work on.",
-  "game": "The Prince of Tennis: Sweat & Tears 2",
-  "character": "Ryoma Echizen"
+    "japanese": "まだまだだね",
+    "romaji": "Mada mada da ne",
+    "english": "You still have lots more to work on.",
+    "game": "The Prince of Tennis: Sweat & Tears 2",
+    "character": "Ryoma Echizen"
   },
   {
-  "japanese": "この戦い、負けられない！",
-  "romaji": "Kono tatakai, makerarenai!",
-  "english": "I can't lose this fight!",
-  "game": "Fire Emblem series",
-  "character": "Various protagonists"
-  },
-  {
-  "japanese": "希望は前に進むんだ！",
-  "romaji": "Kibou wa mae ni susumun da!",
-  "english": "Hope moves forward!",
-  "game": "Danganronpa series",
-  "character": "Makoto Naegi"
-  },
-  {
-  "japanese": "この戦い、負けられない！",
-  "romaji": "Kono tatakai, makerarenai!",
-  "english": "I can't lose this fight!",
-  "game": "Fire Emblem series",
-  "character": "Various protagonists"
-  },
-  {
-    "japanese": "運命なんて、変えてみせる！",
-    "romaji": "Unmei nante, kaete miseru!",
-    "english": "I'll change destiny!",
-    "game": "Final Fantasy Type-0",
-    "character": "Class Zero"
-  },
-  {
-  "japanese": "仲間を信じろ",
-  "romaji": "Nakama o shinjiro",
-  "english": "Believe in your comrades.",
-  "game": "Dragon Quest series",
-  "character": "Recurring command voice"
-  },
-  {
-  "japanese": "冒険の始まりだ！",
-  "romaji": "Bouken no hajimari da!",
-  "english": "This is the beginning of the adventure!",
-  "game": "Dragon Quest XI",
-  "character": "Hero / party lines"
-  },
-  {
-  "japanese": "生きるってのは、戦うってことだ",
-  "romaji": "Ikiru tte no wa, tatakau tte koto da",
-  "english": "To live is to fight.",
-  "game": "Yakuza: Like a Dragon",
-  "character": "Ichiban Kasuga"
-},
-  {
-  "japanese": "勝つと思うな、思えば負けよ",
-  "romaji": "Katsu to omou na, omoeba makeyo",
-  "english": "If you only think of winning, you lose.",
-  "game": "Samurai game proverb line",
-  "character": "Musashi reference"
-  },
-  {
-  "japanese": "俺たちの物語は、ここからだ",
-  "romaji": "Oretachi no monogatari wa, koko kara da",
-  "english": "Our story starts here.",
-  "game": "Tales series",
-  "character": "Various endings"
+    "japanese": "この戦い、負けられない！",
+    "romaji": "Kono tatakai, makerarenai!",
+    "english": "I can't lose this fight!",
+    "game": "Fire Emblem series",
+    "character": "Various protagonists"
   },
   {
     "japanese": "希望は前に進むんだ！",
@@ -616,18 +560,60 @@
     "character": "Makoto Naegi"
   },
   {
-  "japanese": "世界を救うって、そういうことだろ？",
-  "romaji": "Sekai o sukuu tte, sou iu koto daro?",
-  "english": "Saving the world means doing this, right?",
-  "game": "Persona 5 Strikers",
-  "character": "Joker"
+    "japanese": "この戦い、負けられない！",
+    "romaji": "Kono tatakai, makerarenai!",
+    "english": "I can't lose this fight!",
+    "game": "Fire Emblem series",
+    "character": "Various protagonists"
   },
   {
-  "japanese": "ここからが本番だ",
-  "romaji": "Koko kara ga honban da",
-  "english": "The real challenge starts now.",
-  "game": "Monster Hunter series",
-  "character": "Guild Handler lines"
+    "japanese": "運命なんて、変えてみせる！",
+    "romaji": "Unmei nante, kaete miseru!",
+    "english": "I'll change destiny!",
+    "game": "Final Fantasy Type-0",
+    "character": "Class Zero"
+  },
+  {
+    "japanese": "仲間を信じろ",
+    "romaji": "Nakama o shinjiro",
+    "english": "Believe in your comrades.",
+    "game": "Dragon Quest series",
+    "character": "Recurring command voice"
+  },
+  {
+    "japanese": "冒険の始まりだ！",
+    "romaji": "Bouken no hajimari da!",
+    "english": "This is the beginning of the adventure!",
+    "game": "Dragon Quest XI",
+    "character": "Hero / party lines"
+  },
+  {
+    "japanese": "生きるってのは、戦うってことだ",
+    "romaji": "Ikiru tte no wa, tatakau tte koto da",
+    "english": "To live is to fight.",
+    "game": "Yakuza: Like a Dragon",
+    "character": "Ichiban Kasuga"
+  },
+  {
+    "japanese": "勝つと思うな、思えば負けよ",
+    "romaji": "Katsu to omou na, omoeba makeyo",
+    "english": "If you only think of winning, you lose.",
+    "game": "Samurai game proverb line",
+    "character": "Musashi reference"
+  },
+  {
+    "japanese": "俺たちの物語は、ここからだ",
+    "romaji": "Oretachi no monogatari wa, koko kara da",
+    "english": "Our story starts here.",
+    "game": "Tales series",
+    "character": "Various endings"
+  },
+  {
+    "japanese": "希望は前に進むんだ！",
+    "romaji": "Kibou wa mae ni susumun da!",
+    "english": "Hope moves forward!",
+    "game": "Danganronpa series",
+    "character": "Makoto Naegi"
   },
   {
     "japanese": "世界を救うって、そういうことだろ？",
@@ -637,45 +623,66 @@
     "character": "Joker"
   },
   {
-  "japanese": "仲間を信じろ",
-  "romaji": "Nakama o shinjiro",
-  "english": "Believe in your comrades.",
-  "game": "Dragon Quest series",
-  "character": "Recurring command voice"
-},
-{
-  "japanese": "冒険の始まりだ！",
-  "romaji": "Bouken no hajimari da!",
-  "english": "This is the beginning of the adventure!",
-  "game": "Dragon Quest XI",
-  "character": "Hero / party lines"
-},
-{
-  "japanese": "次はもっと強くなる",
-  "romaji": "Tsugi wa motto tsuyoku naru",
-  "english": "Next time, I'll be stronger.",
-  "game": "Pokemon series",
-  "character": "Rival characters"
-},
-{
-  "japanese": "仲間を信じろ",
-  "romaji": "Nakama o shinjiro",
-  "english": "Believe in your comrades.",
-  "game": "Dragon Quest series",
-  "character": "Recurring command voice"
-},
+    "japanese": "ここからが本番だ",
+    "romaji": "Koko kara ga honban da",
+    "english": "The real challenge starts now.",
+    "game": "Monster Hunter series",
+    "character": "Guild Handler lines"
+  },
   {
-  "japanese": "世界を救うって、そういうことだろ？",
-  "romaji": "Sekai o sukuu tte, sou iu koto daro?",
-  "english": "Saving the world means doing this, right?",
-  "game": "Persona 5 Strikers",
-  "character": "Joker"
-},
+    "japanese": "世界を救うって、そういうことだろ？",
+    "romaji": "Sekai o sukuu tte, sou iu koto daro?",
+    "english": "Saving the world means doing this, right?",
+    "game": "Persona 5 Strikers",
+    "character": "Joker"
+  },
   {
-  "japanese": "世界を救うって、そういうことだろ？",
-  "romaji": "Sekai o sukuu tte, sou iu koto daro?",
-  "english": "Saving the world means doing this, right?",
-  "game": "Persona 5 Strikers",
-  "character": "Joker"
-}
+    "japanese": "仲間を信じろ",
+    "romaji": "Nakama o shinjiro",
+    "english": "Believe in your comrades.",
+    "game": "Dragon Quest series",
+    "character": "Recurring command voice"
+  },
+  {
+    "japanese": "冒険の始まりだ！",
+    "romaji": "Bouken no hajimari da!",
+    "english": "This is the beginning of the adventure!",
+    "game": "Dragon Quest XI",
+    "character": "Hero / party lines"
+  },
+  {
+    "japanese": "次はもっと強くなる",
+    "romaji": "Tsugi wa motto tsuyoku naru",
+    "english": "Next time, I'll be stronger.",
+    "game": "Pokemon series",
+    "character": "Rival characters"
+  },
+  {
+    "japanese": "仲間を信じろ",
+    "romaji": "Nakama o shinjiro",
+    "english": "Believe in your comrades.",
+    "game": "Dragon Quest series",
+    "character": "Recurring command voice"
+  },
+  {
+    "japanese": "世界を救うって、そういうことだろ？",
+    "romaji": "Sekai o sukuu tte, sou iu koto daro?",
+    "english": "Saving the world means doing this, right?",
+    "game": "Persona 5 Strikers",
+    "character": "Joker"
+  },
+  {
+    "japanese": "世界を救うって、そういうことだろ？",
+    "romaji": "Sekai o sukuu tte, sou iu koto daro?",
+    "english": "Saving the world means doing this, right?",
+    "game": "Persona 5 Strikers",
+    "character": "Joker"
+  },
+  {
+    "japanese": "行くぞ、みんな！",
+    "romaji": "Iku zo, minna!",
+    "english": "Let's go, everyone!",
+    "game": "Kingdom Hearts series (JP dub)",
+    "character": "Sora"
+  }
 ]
