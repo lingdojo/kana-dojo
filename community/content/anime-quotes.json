@@ -357,19 +357,19 @@
     "character": "Usagi Tsukino"
   },
   {
-  "japanese": "さらに向こうへ!プルスウルトラ!",
-  "romaji": "Sarani mukou e! Purusu Urutora!",
-  "english": "Go beyond! Plus Ultra!",
-  "anime": "My Hero Academia",
-  "character": "All Might"
-},
-{
-  "japanese": "レロレロレロレロ",
-  "romaji": "Rero rero rero rero",
-  "english": "Lero lero lero lero. (alt wording 27)",
-  "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
-  "character": "Noriaki Kakyoin"
-},
+    "japanese": "さらに向こうへ!プルスウルトラ!",
+    "romaji": "Sarani mukou e! Purusu Urutora!",
+    "english": "Go beyond! Plus Ultra!",
+    "anime": "My Hero Academia",
+    "character": "All Might"
+  },
+  {
+    "japanese": "レロレロレロレロ",
+    "romaji": "Rero rero rero rero",
+    "english": "Lero lero lero lero. (alt wording 27)",
+    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+    "character": "Noriaki Kakyoin"
+  },
   {
     "japanese": "俺は人間をやめるぞ！ジョジョーーッ！！",
     "romaji": "Ore wa ningen o yameru zo! Jojo!!",
@@ -378,38 +378,45 @@
     "character": "Dio Brando"
   },
   {
-  "japanese": "仲間を大切にしない奴はそれ以上のクズだ",
-  "romaji": "Nakama o taisetsu ni shinai yatsu wa sore ijou no kuzu da",
-  "english": "Those who don't take care of their comrades are worse than scum. (alt wording 34) (alt wording 86)",
-  "anime": "Naruto",
-  "character": "Kakashi Hatake"
-},
+    "japanese": "仲間を大切にしない奴はそれ以上のクズだ",
+    "romaji": "Nakama o taisetsu ni shinai yatsu wa sore ijou no kuzu da",
+    "english": "Those who don't take care of their comrades are worse than scum. (alt wording 34) (alt wording 86)",
+    "anime": "Naruto",
+    "character": "Kakashi Hatake"
+  },
   {
-  "japanese": "シシシシシ",
-  "romaji": "Shishishishi",
-  "english": "Shishishi! (alt wording 30) (alt wording 82)",
-  "anime": "One Piece",
-  "character": "Monkey D. Luffy"
-},
+    "japanese": "シシシシシ",
+    "romaji": "Shishishishi",
+    "english": "Shishishi! (alt wording 30) (alt wording 82)",
+    "anime": "One Piece",
+    "character": "Monkey D. Luffy"
+  },
   {
-  "japanese": "ゼハハハハ",
-  "romaji": "Ze hahaha",
-  "english": "Ze ha ha ha! (alt wording 32) (alt wording 84)",
-  "anime": "One Piece",
-  "character": "Marshall D. Teach (Blackbeard)"
-},
+    "japanese": "ゼハハハハ",
+    "romaji": "Ze hahaha",
+    "english": "Ze ha ha ha! (alt wording 32) (alt wording 84)",
+    "anime": "One Piece",
+    "character": "Marshall D. Teach (Blackbeard)"
+  },
   {
-  "japanese": "ゼハハハハ",
-  "romaji": "Ze hahaha",
-  "english": "Ze ha ha ha! (alt wording 32)",
-  "anime": "One Piece",
-  "character": "Marshall D. Teach (Blackbeard)"
-},
+    "japanese": "ゼハハハハ",
+    "romaji": "Ze hahaha",
+    "english": "Ze ha ha ha! (alt wording 32)",
+    "anime": "One Piece",
+    "character": "Marshall D. Teach (Blackbeard)"
+  },
   {
     "japanese": "守るものがある限り、俺は負けない",
     "romaji": "Mamoru mono ga aru kagiri, ore wa makenai",
     "english": "As long as I have something to protect, I won't lose. (alt wording 43)",
     "anime": "Bleach",
     "character": "Ichigo Kurosaki"
+  },
+  {
+    "japanese": "だが…それがいい。",
+    "romaji": "Daga... sore ga ii.",
+    "english": "But... that's what I like.",
+    "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
+    "character": "Yoshikage Kira"
   }
 ]
