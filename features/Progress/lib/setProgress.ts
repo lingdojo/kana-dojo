@@ -1,7 +1,7 @@
 export const MAX_STARS_PER_SET = 3;
 
 // Kana
-export const KANA_ROW_MASTERY_TARGET = 20;
+export const KANA_ROW_MASTERY_TARGET = 30;
 export const KANA_MAX_STARS = MAX_STARS_PER_SET;
 export const KANA_ROW_MASTERY_CAP =
   KANA_ROW_MASTERY_TARGET * KANA_MAX_STARS;

@@ -6,6 +6,7 @@ import { useStatsStore } from '@/features/Progress';
 import { generateKanaQuestion } from '@/features/Kana/lib/generateKanaQuestions';
 import { flattenKanaGroups } from '@/features/Kana/lib/flattenKanaGroup';
 import type { KanaCharacter } from '@/features/Kana/lib/flattenKanaGroup';
+import { isKanaGameAnswerCorrect } from '@/features/Kana/lib/isKanaGameAnswerCorrect';
 import { getSelectionLabels } from '@/shared/utils/selectionFormatting';
 import { shuffle } from '@/shared/utils/shuffle';
 import Blitz, { type BlitzConfig } from '@/shared/ui-composite/Blitz';
@@ -52,14 +53,8 @@ export default function BlitzKana() {
       isReverse ? question.romaji : question.kana,
     inputPlaceholder: 'Type the romaji...',
     modeDescription: 'Mode: Type (See kana → Type romaji)',
-    checkAnswer: (question, answer, isReverse) => {
-      if (isReverse) {
-        // Reverse: answer should be the kana character
-        return answer.trim() === question.kana;
-      }
-      // Normal: answer should match romaji
-      return answer.toLowerCase() === question.romaji.toLowerCase();
-    },
+    checkAnswer: (question, answer, isReverse) =>
+      isKanaGameAnswerCorrect(question, answer, isReverse),
     getCorrectAnswer: (question, isReverse) =>
       isReverse ? question.kana : question.romaji,
     // Pick mode support with reverse mode
@@ -99,4 +94,3 @@ export default function BlitzKana() {
 
   return <Blitz config={config} />;
 }
-

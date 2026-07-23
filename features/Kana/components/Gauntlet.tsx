@@ -5,6 +5,7 @@ import useKanaStore from '@/features/Kana/store/useKanaStore';
 import { generateKanaQuestion } from '@/features/Kana/lib/generateKanaQuestions';
 import { flattenKanaGroups } from '@/features/Kana/lib/flattenKanaGroup';
 import type { KanaCharacter } from '@/features/Kana/lib/flattenKanaGroup';
+import { isKanaGameAnswerCorrect } from '@/features/Kana/lib/isKanaGameAnswerCorrect';
 import { getSelectionLabels } from '@/shared/utils/selectionFormatting';
 import { shuffle } from '@/shared/utils/shuffle';
 import Gauntlet, { type GauntletConfig } from '@/shared/ui-composite/Gauntlet';
@@ -39,12 +40,8 @@ const GauntletKana: React.FC<GauntletKanaProps> = ({ onCancel }) => {
     generateQuestion: items => generateKanaQuestion(items),
     renderQuestion: (question, isReverse) =>
       isReverse ? question.romaji : question.kana,
-    checkAnswer: (question, answer, isReverse) => {
-      if (isReverse) {
-        return answer.trim() === question.kana;
-      }
-      return answer.toLowerCase() === question.romaji.toLowerCase();
-    },
+    checkAnswer: (question, answer, isReverse) =>
+      isKanaGameAnswerCorrect(question, answer, isReverse),
     getCorrectAnswer: (question, isReverse) =>
       isReverse ? question.kana : question.romaji,
     generateOptions: (question, items, count, isReverse) => {
@@ -86,4 +83,3 @@ const GauntletKana: React.FC<GauntletKanaProps> = ({ onCancel }) => {
 };
 
 export default GauntletKana;
-

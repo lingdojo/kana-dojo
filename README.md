@@ -134,7 +134,7 @@ npm run check
 - [Tailwind CSS](https://tailwindcss.com/)  
 - [shadcn/ui](https://ui.shadcn.com/)  
 - [Zustand](https://github.com/pmndrs/zustand)  
-- [Framer Motion](https://www.framer.com/motion/)
+- [Framer Motion](https://framer.com/motion/)
 
 > See [Architecture docs](./docs/ARCHITECTURE.md) for full technical details.
 

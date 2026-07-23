@@ -1,355 +1,5 @@
 [
   {
-    "japanese": "だが断る",
-    "romaji": "Daga kotowaru",
-    "english": "But I refuse. (alt wording 4) (alt wording 56)",
-    "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
-    "character": "Rohan Kishibe"
-  },
-  {
-    "japanese": "シシシシシ",
-    "romaji": "Shishishishi",
-    "english": "Shishishi! (alt wording 30)",
-    "anime": "One Piece",
-    "character": "Monkey D. Luffy"
-  },
-  {
-    "japanese": "シシシシシ",
-    "romaji": "Shishishishi",
-    "english": "Shishishi! (alt wording 30)",
-    "anime": "One Piece",
-    "character": "Monkey D. Luffy"
-  },
-  {
-    "japanese": "何ッ！？",
-    "romaji": "Nani!?",
-    "english": "What?! (alt wording 19) (alt wording 71)",
-    "anime": "Fist of the North Star",
-    "character": "Shin"
-  },
-  {
-    "japanese": "仲間を信じることが俺の魔法だ",
-    "romaji": "Nakama o shinjiru koto ga ore no mahou da",
-    "english": "Believing in my friends is my magic.",
-    "anime": "Fairy Tail",
-    "character": "Natsu Dragneel"
-  },
-  {
-    "japanese": "俺は海賊王になる！",
-    "romaji": "Ore wa kaizoku ou ni naru!",
-    "english": "I'm gonna be King of the Pirates! (alt wording 20)",
-    "anime": "One Piece",
-    "character": "Monkey D. Luffy"
-  },
-  {
-    "japanese": "月に代わっておしおきよ!",
-    "romaji": "Tsuki ni kawatte oshioki yo!",
-    "english": "In the name of the moon, I'll punish you! (alt wording 41)",
-    "anime": "Sailor Moon",
-    "character": "Usagi Tsukino"
-  },
-  {
-    "japanese": "まだだ、まだ終わらんよ！",
-    "romaji": "Mada da, mada owaran yo!",
-    "english": "Not yet! It's not over yet! (alt wording 22) (alt wording 74)",
-    "anime": "Mobile Suit Gundam",
-    "character": "Char Aznable"
-  },
-  {
-    "japanese": "なにィ！？",
-    "romaji": "Nanii!?",
-    "english": "What?! (alt wording 9) (alt wording 61)",
-    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
-    "character": "Joseph Joestar"
-  },
-  {
-    "japanese": "次にお前は「やれやれだぜ」と言う！",
-    "romaji": "Tsugi ni omae wa 'yare yare da ze' to iu!",
-    "english": "Next you'll say, 'Good grief!'",
-    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
-    "character": "Joseph Joestar"
-  },
-  {
-    "japanese": "このジョルノ・ジョバァーナには夢がある！",
-    "romaji": "Kono Joruno Jobana ni wa yume ga aru!",
-    "english": "I, Giorno Giovanna, have a dream! (alt wording 5) (alt wording 57)",
-    "anime": "JoJo's Bizarre Adventure: Golden Wind",
-    "character": "Giorno Giovanna"
-  },
-  {
-    "japanese": "だが断る",
-    "romaji": "Daga kotowaru",
-    "english": "But I refuse. (alt wording 4) (alt wording 56)",
-    "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
-    "character": "Rohan Kishibe"
-  },
-  {
-    "japanese": "光を待つだけでは夜は終わらない。自分で一歩踏み出した時、朝は始まる。",
-    "romaji": "Hikari o matsu dake de wa yoru wa owaranai. Jibun de ippo fumidashita toki, asa wa hajimaru.",
-    "english": "The night doesn't end by waiting for the light. Dawn begins when you take the first step yourself.",
-    "anime": "Original",
-    "character": "Original Character"
-  },
-  {
-    "japanese": "あきらめたらそこで試合終了ですよ…？",
-    "romaji": "Akirametara soko de shiai shuuryou desu yo...?",
-    "english": "If you give up, that's the end of the game. (alt wording 21)",
-    "anime": "Slam Dunk",
-    "character": "Kaede Rukawa"
-  },
-  {
-    "japanese": "何ッ！？",
-    "romaji": "Nani!?",
-    "english": "What?! (alt wording 19)",
-    "anime": "Fist of the North Star",
-    "character": "Shin"
-  },
-  {
-    "japanese": "このジョルノ・ジョバァーナには夢がある！",
-    "romaji": "Kono Joruno Jobana ni wa yume ga aru!",
-    "english": "I, Giorno Giovanna, have a dream! (alt wording 5)",
-    "anime": "JoJo's Bizarre Adventure: Golden Wind",
-    "character": "Giorno Giovanna"
-  },
-  {
-    "japanese": "このジョルノ・ジョバァーナには夢がある！",
-    "romaji": "Kono Joruno Jobana ni wa yume ga aru!",
-    "english": "I, Giorno Giovanna, have a dream! (alt wording 5) (alt wording 57)",
-    "anime": "JoJo's Bizarre Adventure: Golden Wind",
-    "character": "Giorno Giovanna"
-  },
-  {
-    "japanese": "ロードローラーだッ！",
-    "romaji": "Rodo rora da!",
-    "english": "Road roller! (alt wording 1)",
-    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
-    "character": "DIO"
-  },
-  {
-    "japanese": "だが…それがいい。",
-    "romaji": "Daga... sore ga ii.",
-    "english": "But... that's what I like.",
-    "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
-    "character": "Yoshikage Kira"
-  },
-  {
-    "japanese": "一人では弱くても、仲間となら強くなれる",
-    "romaji": "Hitori de wa yowakute mo, nakama to nara tsuyoku nareru",
-    "english": "Even if you're weak alone, you can become strong with your friends.",
-    "anime": "Naruto",
-    "character": "Naruto Uzumaki"
-  },
-  {
-    "japanese": "イエス！イエス！イエス！イエス！",
-    "romaji": "Iesu! Iesu! Iesu! Iesu!",
-    "english": "Yes! Yes! Yes! Yes! (alt wording 2)",
-    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
-    "character": "DIO"
-  },
-  {
-    "japanese": "守るものがある限り、俺は負けない",
-    "romaji": "Mamoru mono ga aru kagiri, ore wa makenai",
-    "english": "As long as I have something to protect, I won't lose.",
-    "anime": "Bleach",
-    "character": "Ichigo Kurosaki"
-  },
-  {
-    "japanese": "月に代わっておしおきよ!",
-    "romaji": "Tsuki ni kawatte oshioki yo!",
-    "english": "In the name of the moon, I'll punish you!",
-    "anime": "Sailor Moon",
-    "character": "Usagi Tsukino"
-  },
-  {
-    "japanese": "月に代わっておしおきよ!",
-    "romaji": "Tsuki ni kawatte oshioki yo!",
-    "english": "In the name of the moon, I'll punish you! (alt wording 41)",
-    "anime": "Sailor Moon",
-    "character": "Usagi Tsukino"
-  },
-  {
-    "japanese": "グララララ",
-    "romaji": "Gurararara",
-    "english": "Gurararara! (alt wording 31) (alt wording 83)",
-    "anime": "One Piece",
-    "character": "Edward Newgate (Whitebeard)"
-  },
-  {
-    "japanese": "俺は人間をやめるぞ！ジョジョーーッ！！",
-    "romaji": "Ore wa ningen o yameru zo! Jojo!!",
-    "english": "I'm going to stop being human, JoJo! (alt wording 12) (alt wording 64)",
-    "anime": "JoJo's Bizarre Adventure: Phantom Blood",
-    "character": "Dio Brando"
-  },
-  {
-    "japanese": "笑えばいいと思うよ",
-    "romaji": "Waraeba ii to omou yo",
-    "english": "I think you should just laugh. (alt wording 24) (alt wording 76)",
-    "anime": "Neon Genesis Evangelion",
-    "character": "Rei Ayanami"
-  },
-  {
-    "japanese": "だが断る",
-    "romaji": "Daga kotowaru",
-    "english": "But I refuse. (alt wording 4) (alt wording 56)",
-    "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
-    "character": "Rohan Kishibe"
-  },
-  {
-    "japanese": "笑えばいいと思うよ",
-    "romaji": "Waraeba ii to omou yo",
-    "english": "I think you should just laugh. (alt wording 24)",
-    "anime": "Neon Genesis Evangelion",
-    "character": "Rei Ayanami"
-  },
-  {
-    "japanese": "やれやれだぜ",
-    "romaji": "Yare yare da ze",
-    "english": "Good grief. (alt wording 6)",
-    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
-    "character": "Jotaro Kujo"
-  },
-  {
-    "japanese": "オレ様の美技にブギウギ",
-    "romaji": "Ore-sama no bigi ni bugiugi",
-    "english": "Dance to my beautiful technique!",
-    "anime": "The Prince of Tennis",
-    "character": "Keigo Atobe"
-  },
-  {
-    "japanese": "グララララ",
-    "romaji": "Gurararara",
-    "english": "Gurararara! (alt wording 31) (alt wording 83)",
-    "anime": "One Piece",
-    "character": "Edward Newgate (Whitebeard)"
-  },
-  {
-    "japanese": "このジョルノ・ジョバァーナには夢がある！",
-    "romaji": "Kono Joruno Jobana ni wa yume ga aru!",
-    "english": "I, Giorno Giovanna, have a dream! (alt wording 5) (alt wording 57)",
-    "anime": "JoJo's Bizarre Adventure: Golden Wind",
-    "character": "Giorno Giovanna"
-  },
-  {
-    "japanese": "だが断る",
-    "romaji": "Daga kotowaru",
-    "english": "But I refuse. (alt wording 4)",
-    "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
-    "character": "Rohan Kishibe"
-  },
-  {
-    "japanese": "マママママ",
-    "romaji": "Mama mama mama",
-    "english": "Mama mama mama. (alt wording 29) (alt wording 81)",
-    "anime": "One Piece",
-    "character": "Charlotte Linlin (Big Mom)"
-  },
-  {
-    "japanese": "無駄無駄無駄無駄無駄！",
-    "romaji": "Muda muda muda muda muda!",
-    "english": "Useless! Useless! Useless! (alt wording 7)",
-    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
-    "character": "DIO"
-  },
-  {
-    "japanese": "諦めるという言葉は俺の辞書にない",
-    "romaji": "Akirameru to iu kotoba wa ore no jisho ni nai",
-    "english": "The word 'give up' isn't in my dictionary.",
-    "anime": "Black Clover",
-    "character": "Asta"
-  },
-  {
-    "japanese": "痛みを伴わない教訓には意味がない",
-    "romaji": "Itami o tomonawanai kyoukun ni wa imi ga nai",
-    "english": "A lesson without pain is meaningless. (alt wording 35)",
-    "anime": "Fullmetal Alchemist: Brotherhood",
-    "character": "Edward Elric"
-  },
-  {
-    "japanese": "世界は残酷だ…それでも美しい",
-    "romaji": "Sekai wa zankoku da... soredemo utsukushii",
-    "english": "This world is cruel... yet so beautiful. (alt wording 26) (alt wording 78)",
-    "anime": "Attack on Titan",
-    "character": "Mikasa Ackerman"
-  },
-  {
-    "japanese": "私、面白いでしょ！？",
-    "romaji": "Watashi, omoshiroi desho!?",
-    "english": "I'm Charming, Aren't I?!",
-    "anime": "Chainsaw Man",
-    "character": "Asa"
-  },
-  {
-    "japanese": "君たちにとって『人間』ってなんだ？",
-    "romaji": "Kimitachi ni totte 'ningen' tte nan da?",
-    "english": "What is human to you people?",
-    "anime": "Darling In The Franxx",
-    "character": "Zero Two"
-  },
-  {
-    "japanese": "撃っていいのは撃たれる覚悟がある奴だけだ",
-    "romaji": "Utte ii no wa uterareru kakugo ga aru yatsu dake da",
-    "english": "Only those prepared to be shot should pull the trigger.",
-    "anime": "Code Geass: Lelouch of the Rebellion",
-    "character": "Lelouch vi Britannia"
-  },
-  {
-    "japanese": "守るものがある限り、俺は負けない",
-    "romaji": "Mamoru mono ga aru kagiri, ore wa makenai",
-    "english": "As long as I have something to protect, I won't lose. (alt wording 43)",
-    "anime": "Bleach",
-    "character": "Ichigo Kurosaki"
-  },
-  {
-    "japanese": "守るものがある限り、俺は負けない",
-    "romaji": "Mamoru mono ga aru kagiri, ore wa makenai",
-    "english": "As long as I have something to protect, I won't lose.",
-    "anime": "Bleach",
-    "character": "Ichigo Kurosaki"
-  },
-  {
-    "japanese": "真実を語ることが残酷であるならば、嘘をつくことは間違いなく優しさの行為に違いない。つまり、優しさとは嘘なのだ。",
-    "romaji": "Shinjitsu o kataru koto ga zankokudearunaraba, usowotsuku koto wa machigainaku yasashi-sa no kōi ni chigainai. Tsumari, yasashi Sato wa usona noda.",
-    "english": "If to be truthful is to be cruel, then lying must surely be an act of kindness. And so, kindness is a lie.",
-    "anime": "My Teen Romantic Comedy SNAFU",
-    "character": "Hikigaya Hachiman"
-  },
-  {
-    "japanese": "僕は新世界の神となる",
-    "romaji": "Boku wa shin sekai no kami to naru",
-    "english": "I will become the god of the new world. (alt wording 44)",
-    "anime": "Death Note",
-    "character": "Light Yagami"
-  },
-  {
-    "japanese": "撃っていいのは撃たれる覚悟がある奴だけだ",
-    "romaji": "Utte ii no wa uterareru kakugo ga aru yatsu dake da",
-    "english": "Only those prepared to be shot should pull the trigger. (alt wording 45)",
-    "anime": "Code Geass: Lelouch of the Rebellion",
-    "character": "Lelouch vi Britannia"
-  },
-  {
-    "japanese": "おれは人間を超越する！",
-    "romaji": "Ore wa ningen o chouetsu suru!",
-    "english": "I will transcend humanity!",
-    "anime": "JoJo's Bizarre Adventure: Battle Tendency",
-    "character": "Kars"
-  },
-  {
-    "japanese": "グララララ",
-    "romaji": "Gurararara",
-    "english": "Gurararara!",
-    "anime": "One Piece",
-    "character": "Edward Newgate (Whitebeard)"
-  },
-  {
-    "japanese": "あきらめたらそこで試合終了ですよ…？",
-    "romaji": "Akirametara soko de shiai shuuryou desu yo...?",
-    "english": "If you give up, that's the end of the game.",
-    "anime": "Slam Dunk",
-    "character": "Kaede Rukawa"
-  },
-  {
     "japanese": "俺を誰だと思ってやがる!",
     "romaji": "Ore o dare da to omotte yagaru!",
     "english": "Who the hell do you think I am!",
@@ -616,24 +266,171 @@
     "character": "Kars"
   },
   {
-  "japanese": "世界は残酷だ…それでも美しい",
-  "romaji": "Sekai wa zankoku da... soredemo utsukushii",
-  "english": "This world is cruel... yet so beautiful. (alt wording 26) (alt wording 78)",
-  "anime": "Attack on Titan",
-  "character": "Mikasa Ackerman"
-},
-{
-  "japanese": "ブチャラティ、来た！",
-  "romaji": "Bucharati, kita!",
-  "english": "Bucciarati is here!",
-  "anime": "JoJo's Bizarre Adventure: Golden Wind",
-  "character": "Narancia Ghirga"
-},
-{
-  "japanese": "貴様ッ！見ているなッ！！",
-  "romaji": "Kisama! Mite iru na!!",
-  "english": "You! You're watching me!",
-  "anime": "JoJo's Bizarre Adventure: Stone Ocean",
-  "character": "Jolyne Cujoh"
-}
+    "japanese": "世界は残酷だ…それでも美しい",
+    "romaji": "Sekai wa zankoku da... soredemo utsukushii",
+    "english": "This world is cruel... yet so beautiful. (alt wording 26) (alt wording 78)",
+    "anime": "Attack on Titan",
+    "character": "Mikasa Ackerman"
+  },
+  {
+    "japanese": "ブチャラティ、来た！",
+    "romaji": "Bucharati, kita!",
+    "english": "Bucciarati is here!",
+    "anime": "JoJo's Bizarre Adventure: Golden Wind",
+    "character": "Narancia Ghirga"
+  },
+  {
+    "japanese": "貴様ッ！見ているなッ！！",
+    "romaji": "Kisama! Mite iru na!!",
+    "english": "You! You're watching me!",
+    "anime": "JoJo's Bizarre Adventure: Stone Ocean",
+    "character": "Jolyne Cujoh"
+  },
+  {
+    "japanese": "オレ様の美技にブギウギ",
+    "romaji": "Ore-sama no bigi ni bugiugi",
+    "english": "Dance to my beautiful technique! (alt wording 23) (alt wording 75)",
+    "anime": "The Prince of Tennis",
+    "character": "Keigo Atobe"
+  },
+  {
+    "japanese": "お前はもう死んでいる",
+    "romaji": "Omae wa mou shindeiru",
+    "english": "You are already dead",
+    "anime": "Fist of the North Star",
+    "character": "Kenshiro"
+  },
+  {
+    "japanese": "俺を誰だと思ってやがる!",
+    "romaji": "Ore o dare da to omotte yagaru!",
+    "english": "Who the hell do you think I am!",
+    "anime": "Gurren Lagann",
+    "character": "Kamina"
+  },
+  {
+    "japanese": "俺は海賊王になる！",
+    "romaji": "Ore wa kaizoku ou ni naru!",
+    "english": "I'm gonna be King of the Pirates!",
+    "anime": "One Piece",
+    "character": "Monkey D. Luffy"
+  },
+  {
+    "japanese": "イエス！イエス！イエス！イエス！",
+    "romaji": "Iesu! Iesu! Iesu! Iesu!",
+    "english": "Yes! Yes! Yes! Yes! (alt wording 2)",
+    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+    "character": "DIO"
+  },
+  {
+    "japanese": "撃っていいのは撃たれる覚悟がある奴だけだ",
+    "romaji": "Utte ii no wa uterareru kakugo ga aru yatsu dake da",
+    "english": "Only those prepared to be shot should pull the trigger. (alt wording 45)",
+    "anime": "Code Geass: Lelouch of the Rebellion",
+    "character": "Lelouch vi Britannia"
+  },
+  {
+    "japanese": "人は忘れられた時に死ぬ。",
+    "romaji": "Hito wa wasurerareta toki ni shinu.",
+    "english": "A person dies when they are forgotten.",
+    "anime": "One Piece",
+    "character": "Dr. Hiriluk"
+  },
+  {
+    "japanese": "駆逐してやる！この世から一匹残らず！",
+    "romaji": "Kuchiku shite yaru! Kono yo kara ippiki nokorazu!",
+    "english": "I'll exterminate them! Every last one from this world! (alt wording 36) (alt wording 88)",
+    "anime": "Attack on Titan",
+    "character": "Eren Yeager"
+  },
+  {
+    "japanese": "あきらめたらそこで試合終了ですよ…？",
+    "romaji": "Akirametara soko de shiai shuuryou desu yo...?",
+    "english": "If you give up, that's the end of the game.",
+    "anime": "Slam Dunk",
+    "character": "Kaede Rukawa"
+  },
+  {
+    "japanese": "月に代わっておしおきよ!",
+    "romaji": "Tsuki ni kawatte oshioki yo!",
+    "english": "In the name of the moon, I'll punish you! (alt wording 41)",
+    "anime": "Sailor Moon",
+    "character": "Usagi Tsukino"
+  },
+  {
+    "japanese": "さらに向こうへ!プルスウルトラ!",
+    "romaji": "Sarani mukou e! Purusu Urutora!",
+    "english": "Go beyond! Plus Ultra!",
+    "anime": "My Hero Academia",
+    "character": "All Might"
+  },
+  {
+    "japanese": "レロレロレロレロ",
+    "romaji": "Rero rero rero rero",
+    "english": "Lero lero lero lero. (alt wording 27)",
+    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+    "character": "Noriaki Kakyoin"
+  },
+  {
+    "japanese": "俺は人間をやめるぞ！ジョジョーーッ！！",
+    "romaji": "Ore wa ningen o yameru zo! Jojo!!",
+    "english": "I'm going to stop being human, JoJo! (alt wording 12) (alt wording 64)",
+    "anime": "JoJo's Bizarre Adventure: Phantom Blood",
+    "character": "Dio Brando"
+  },
+  {
+    "japanese": "仲間を大切にしない奴はそれ以上のクズだ",
+    "romaji": "Nakama o taisetsu ni shinai yatsu wa sore ijou no kuzu da",
+    "english": "Those who don't take care of their comrades are worse than scum. (alt wording 34) (alt wording 86)",
+    "anime": "Naruto",
+    "character": "Kakashi Hatake"
+  },
+  {
+    "japanese": "シシシシシ",
+    "romaji": "Shishishishi",
+    "english": "Shishishi! (alt wording 30) (alt wording 82)",
+    "anime": "One Piece",
+    "character": "Monkey D. Luffy"
+  },
+  {
+    "japanese": "ゼハハハハ",
+    "romaji": "Ze hahaha",
+    "english": "Ze ha ha ha! (alt wording 32) (alt wording 84)",
+    "anime": "One Piece",
+    "character": "Marshall D. Teach (Blackbeard)"
+  },
+  {
+    "japanese": "ゼハハハハ",
+    "romaji": "Ze hahaha",
+    "english": "Ze ha ha ha! (alt wording 32)",
+    "anime": "One Piece",
+    "character": "Marshall D. Teach (Blackbeard)"
+  },
+  {
+    "japanese": "守るものがある限り、俺は負けない",
+    "romaji": "Mamoru mono ga aru kagiri, ore wa makenai",
+    "english": "As long as I have something to protect, I won't lose. (alt wording 43)",
+    "anime": "Bleach",
+    "character": "Ichigo Kurosaki"
+  },
+  {
+    "japanese": "だが…それがいい。",
+    "romaji": "Daga... sore ga ii.",
+    "english": "But... that's what I like.",
+    "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
+    "character": "Yoshikage Kira"
+  },
+  {
+    "japanese": "まだだ、まだ終わらんよ！",
+    "romaji": "Mada da, mada owaran yo!",
+    "english": "Not yet! It's not over yet! (alt wording 22)",
+    "anime": "Mobile Suit Gundam",
+    "character": "Char Aznable"
+  },
+  {
+    "japanese": "オレ様の美技にブギウギ",
+    "romaji": "Ore-sama no bigi ni bugiugi",
+    "english": "Dance to my beautiful technique! (alt wording 23) (alt wording 75)",
+    "anime": "The Prince of Tennis",
+    "character": "Keigo Atobe"
+  }
 ]
