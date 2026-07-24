@@ -68,7 +68,7 @@
     "season": "Summer",
     "kigo": "Summer rain (samidare)",
     "notes": "A dynamic river image with strong seasonal presence.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -128,7 +128,7 @@
     "season": "Autumn",
     "kigo": "Deep autumn (aki fukaki)",
     "notes": "Evokes solitude and curiosity.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
