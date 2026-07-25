@@ -211,7 +211,7 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
         // romaji (e.g. ぢ and じ both map to "ji", づ and ず both map to "zu").
         // Without this, the same string can appear as both a correct-looking and
         // incorrect option simultaneously.
-        const seen = new Set<string>([correctRomajiChar]);
+        const seen = new Set<string>([selectedPairs[correctKanaChar]]);
         return [...Object.values(incorrectPairs)]
           .sort(() => random.real(0, 1) - 0.5)
           .filter((v) => {
@@ -224,7 +224,9 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
         const { [correctRomajiCharReverse]: _, ...incorrectPairs } =
           random.bool() ? selectedPairs1 : selectedPairs2;
         void _;
-        const seen = new Set<string>([correctKanaCharReverse]);
+        // Kana values in the reverse-mode pool are unique (one kana per romaji
+        // key), so a simple Set is enough to guard against any edge-case dupes.
+        const seen = new Set<string>();
         return [...Object.values(incorrectPairs)]
           .sort(() => random.real(0, 1) - 0.5)
           .filter((v) => {
