@@ -623,5 +623,11 @@
     "backgroundColor": "oklch(20.0% 0.020 70.0 / 1)",
     "mainColor": "oklch(85.0% 0.155 85.0 / 1)",
     "secondaryColor": "oklch(60.0% 0.085 25.0 / 1)"
+  },
+  {
+    "id": "misty-shrine",
+    "backgroundColor": "oklch(21.0% 0.025 190.0 / 1)",
+    "mainColor": "oklch(76.0% 0.085 180.0 / 1)",
+    "secondaryColor": "oklch(62.0% 0.065 210.0 / 1)"
   }
 ]
