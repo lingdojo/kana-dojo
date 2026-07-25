@@ -207,15 +207,31 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
       if (!isReverse) {
         const { [correctKanaChar]: _, ...incorrectPairs } = selectedPairs;
         void _;
+        // Deduplicate by romaji value before slicing: some kana share the same
+        // romaji (e.g. ぢ and じ both map to "ji", づ and ず both map to "zu").
+        // Without this, the same string can appear as both a correct-looking and
+        // incorrect option simultaneously.
+        const seen = new Set<string>([correctRomajiChar]);
         return [...Object.values(incorrectPairs)]
           .sort(() => random.real(0, 1) - 0.5)
+          .filter((v) => {
+            if (seen.has(v)) return false;
+            seen.add(v);
+            return true;
+          })
           .slice(0, incorrectCount);
       } else {
         const { [correctRomajiCharReverse]: _, ...incorrectPairs } =
           random.bool() ? selectedPairs1 : selectedPairs2;
         void _;
+        const seen = new Set<string>([correctKanaCharReverse]);
         return [...Object.values(incorrectPairs)]
           .sort(() => random.real(0, 1) - 0.5)
+          .filter((v) => {
+            if (seen.has(v)) return false;
+            seen.add(v);
+            return true;
+          })
           .slice(0, incorrectCount);
       }
     },
