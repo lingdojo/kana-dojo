@@ -214,7 +214,7 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
         const seen = new Set<string>([selectedPairs[correctKanaChar]]);
         return [...Object.values(incorrectPairs)]
           .sort(() => random.real(0, 1) - 0.5)
-          .filter((v) => {
+          .filter(v => {
             if (seen.has(v)) return false;
             seen.add(v);
             return true;
@@ -226,10 +226,10 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
         void _;
         // Kana values in the reverse-mode pool are unique (one kana per romaji
         // key), so a simple Set is enough to guard against any edge-case dupes.
-        const seen = new Set<string>();
+        const seen = new Set<unknown>();
         return [...Object.values(incorrectPairs)]
           .sort(() => random.real(0, 1) - 0.5)
-          .filter((v) => {
+          .filter(v => {
             if (seen.has(v)) return false;
             seen.add(v);
             return true;
@@ -334,10 +334,10 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
       resetWrongStreak();
       logAttempt({
         questionId: correctChar,
-        questionPrompt: isReverse
-          ? correctRomajiCharReverse
-          : correctKanaChar,
-        expectedAnswers: [isReverse ? correctKanaCharReverse : correctRomajiChar],
+        questionPrompt: isReverse ? correctRomajiCharReverse : correctKanaChar,
+        expectedAnswers: [
+          isReverse ? correctKanaCharReverse : correctRomajiChar,
+        ],
         userAnswer: isReverse ? correctKanaCharReverse : correctRomajiChar,
         inputKind: 'pick',
         isCorrect: true,
@@ -394,7 +394,9 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
       logAttempt({
         questionId: isReverse ? correctRomajiCharReverse : correctKanaChar,
         questionPrompt: isReverse ? correctRomajiCharReverse : correctKanaChar,
-        expectedAnswers: [isReverse ? correctKanaCharReverse : correctRomajiChar],
+        expectedAnswers: [
+          isReverse ? correctKanaCharReverse : correctRomajiChar,
+        ],
         userAnswer: selectedChar,
         inputKind: 'pick',
         isCorrect: false,
@@ -526,4 +528,3 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
 };
 
 export default KanaMCQ;
-
