@@ -623,5 +623,11 @@
     "backgroundColor": "oklch(20.0% 0.020 70.0 / 1)",
     "mainColor": "oklch(85.0% 0.155 85.0 / 1)",
     "secondaryColor": "oklch(60.0% 0.085 25.0 / 1)"
+  },
+  {
+    "id": "festival-mask",
+    "backgroundColor": "oklch(20.0% 0.042 15.0 / 1)",
+    "mainColor": "oklch(80.0% 0.175 55.0 / 1)",
+    "secondaryColor": "oklch(72.0% 0.195 20.0 / 1)"
   }
 ]
