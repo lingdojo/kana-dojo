@@ -71,7 +71,12 @@ export const isKanaInputAnswerCorrect = ({
   // always returns undefined and valid alternatives are silently rejected.
   // When promptParts and answerParts are provided, build every valid full-string
   // combination so alternatives work correctly regardless of prompt length.
-  if (promptParts && answerParts && promptParts.length > 0) {
+  if (
+    promptParts &&
+    answerParts &&
+    promptParts.length > 0 &&
+    promptParts.length === answerParts.length
+  ) {
     const validAnswers = buildAltCombinations(promptParts, answerParts, altRomanjiMap);
     return validAnswers.some(
       ans => lowerInput === ans.toLowerCase().normalize('NFC'),
