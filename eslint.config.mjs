@@ -34,7 +34,7 @@ const eslintConfig = [
       ],
       '@typescript-eslint/no-explicit-any': 'warn',
       '@typescript-eslint/no-require-imports': 'warn',
-      'no-console': ['warn', { allow: ['warn', 'error'] }],
+      'no-console': ['warn', { allow: ['warn', 'error', 'group', 'groupEnd'] }],
       'import/no-restricted-paths': 'warn',
       'react/no-unescaped-entities': 'warn',
       'react-hooks/immutability': 'warn',
