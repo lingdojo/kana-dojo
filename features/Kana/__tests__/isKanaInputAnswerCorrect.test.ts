@@ -149,6 +149,60 @@ describe('isKanaInputAnswerCorrect', () => {
     ).toBe(true);
   });
 
+  it('accepts alternatives at multiple positions in a three-part prompt', () => {
+    expect(
+      isKanaInputAnswerCorrect({
+        inputValue: ' SIHUTI ',
+        correctChar: 'しふち',
+        targetChar: 'shifuchi',
+        isReverse: false,
+        altRomanjiMap,
+        promptParts: ['し', 'ふ', 'ち'],
+        answerParts: ['shi', 'fu', 'chi'],
+      }),
+    ).toBe(true);
+  });
+
+  it('accepts alternative romaji for multi-character katakana prompts', () => {
+    expect(
+      isKanaInputAnswerCorrect({
+        inputValue: 'situ',
+        correctChar: 'シツ',
+        targetChar: 'shitsu',
+        isReverse: false,
+        altRomanjiMap,
+        promptParts: ['シ', 'ツ'],
+        answerParts: ['shi', 'tsu'],
+      }),
+    ).toBe(true);
+  });
+
+  it('keeps reverse multi-character matching exact and normalized', () => {
+    expect(
+      isKanaInputAnswerCorrect({
+        inputValue: ' シツ ',
+        correctChar: 'shitsu',
+        targetChar: 'シツ',
+        isReverse: true,
+        altRomanjiMap,
+        promptParts: ['shi', 'tsu'],
+        answerParts: ['シ', 'ツ'],
+      }),
+    ).toBe(true);
+
+    expect(
+      isKanaInputAnswerCorrect({
+        inputValue: 'しつ',
+        correctChar: 'shitsu',
+        targetChar: 'シツ',
+        isReverse: true,
+        altRomanjiMap,
+        promptParts: ['shi', 'tsu'],
+        answerParts: ['シ', 'ツ'],
+      }),
+    ).toBe(false);
+  });
+
   it('rejects incorrect romaji for a multi-character prompt', () => {
     expect(
       isKanaInputAnswerCorrect({
