@@ -1,5 +1,11 @@
 [
   {
+  id: 'autumn-maple',
+  backgroundColor: 'oklch(21.0% 0.052 30.0 / 1)',
+  mainColor: 'oklch(72.0% 0.200 35.0 / 1)',
+  secondaryColor: 'oklch(80.0% 0.165 60.0 / 1)'
+},
+  {
     "id": "harbor-lights",
     "backgroundColor": "oklch(14.0% 0.045 250.0 / 1)",
     "mainColor": "oklch(80.0% 0.140 210.0 / 1)",
