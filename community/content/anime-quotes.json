@@ -1,5 +1,12 @@
 [
   {
+  "japanese": "諦めないってばよ!",
+  "romaji": "Akiramenai tte bayo!",
+  "english": "I never give up, believe it!",
+  "anime": "Naruto",
+  "character": "Naruto Uzumaki"
+  },
+  {
     "japanese": "俺を誰だと思ってやがる!",
     "romaji": "Ore o dare da to omotte yagaru!",
     "english": "Who the hell do you think I am!",
@@ -455,10 +462,31 @@
     "character": "Dio Brando"
   },
   {
-  "japanese": "あきらめたらそこで試合終了ですよ…？",
-  "romaji": "Akirametara soko de shiai shuuryou desu yo...?",
-  "english": "If you give up, that's the end of the game. (alt wording 21)",
-  "anime": "Slam Dunk",
-  "character": "Kaede Rukawa"
-}
+    "japanese": "あきらめたらそこで試合終了ですよ…？",
+    "romaji": "Akirametara soko de shiai shuuryou desu yo...?",
+    "english": "If you give up, that's the end of the game. (alt wording 21)",
+    "anime": "Slam Dunk",
+    "character": "Kaede Rukawa"
+  },
+  {
+    "japanese": "諦めないってばよ!",
+    "romaji": "Akiramenai tte bayo!",
+    "english": "I never give up, believe it!",
+    "anime": "Naruto",
+    "character": "Naruto Uzumaki"
+  },
+  {
+    "japanese": "ブチャラティ、来た！",
+    "romaji": "Bucharati, kita!",
+    "english": "Bucciarati is here! (alt wording 17) (alt wording 69)",
+    "anime": "JoJo's Bizarre Adventure: Golden Wind",
+    "character": "Narancia Ghirga"
+  },
+  {
+    "japanese": "このジョルノ・ジョバァーナには夢がある！",
+    "romaji": "Kono Joruno Jobana ni wa yume ga aru!",
+    "english": "I, Giorno Giovanna, have a dream! (alt wording 5)",
+    "anime": "JoJo's Bizarre Adventure: Golden Wind",
+    "character": "Giorno Giovanna"
+  }
 ]

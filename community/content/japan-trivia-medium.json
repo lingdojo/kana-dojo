@@ -1,4 +1,15 @@
-[
+[ 
+  {
+  "question": "Which of these is a Japanese traditional storytelling art?",
+  "difficulty": "medium",
+  "answers": [
+    "Rakugo",
+    "Kabuki",
+    "Noh",
+    "Ikebana"
+  ],
+  "correctIndex": 0
+  },
   {
     "question": "What is the Japanese term for a traditional inn? (Community variation 46)",
     "difficulty": "medium",

@@ -279,6 +279,8 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
       targetChar,
       isReverse,
       altRomanjiMap,
+      promptParts,
+      answerParts,
     });
 
     playClick();

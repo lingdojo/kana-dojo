@@ -357,10 +357,17 @@
     "character": "Joker"
   },
   {
-  "japanese": "行くぞ、みんな！",
-  "romaji": "Iku zo, minna!",
-  "english": "Let's go, everyone!",
-  "game": "Kingdom Hearts series (JP dub)",
-  "character": "Sora"
-}
+    "japanese": "行くぞ、みんな！",
+    "romaji": "Iku zo, minna!",
+    "english": "Let's go, everyone!",
+    "game": "Kingdom Hearts series (JP dub)",
+    "character": "Sora"
+},
+  {
+    "japanese": "俺は悪くねぇ！",
+    "romaji": "Ore wa warukunee!",
+    "english": "It's not my fault!",
+    "game": "Tales of the Abyss",
+    "character": "Luke fon Fabre"
+} 
 ]
