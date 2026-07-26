@@ -16,6 +16,7 @@ import { getGlobalAdaptiveSelector } from '@/shared/utils/adaptiveSelection';
 import { useSmartReverseMode } from '@/shared/hooks/game/useSmartReverseMode';
 import { useAdaptiveOptionCount } from '@/shared/hooks/game/useAdaptiveOptionCount';
 import useClassicSessionStore from '@/shared/store/useClassicSessionStore';
+import { getUniqueIncorrectOptions } from '@/features/Kana/lib/getUniqueIncorrectOptions';
 
 const random = new Random();
 
@@ -207,39 +208,31 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
       if (!isReverse) {
         const { [correctKanaChar]: _, ...incorrectPairs } = selectedPairs;
         void _;
-        // Deduplicate by romaji value before slicing: some kana share the same
-        // romaji (e.g. ぢ and じ both map to "ji", づ and ず both map to "zu").
-        // Without this, the same string can appear as both a correct-looking and
-        // incorrect option simultaneously.
-        const seen = new Set<string>([selectedPairs[correctKanaChar]]);
-        return [...Object.values(incorrectPairs)]
-          .sort(() => random.real(0, 1) - 0.5)
-          .filter(v => {
-            if (seen.has(v)) return false;
-            seen.add(v);
-            return true;
-          })
-          .slice(0, incorrectCount);
+        return getUniqueIncorrectOptions(
+          correctRomajiChar,
+          Object.values(incorrectPairs).sort(
+            () => random.real(0, 1) - 0.5,
+          ),
+          incorrectCount,
+        );
       } else {
         const { [correctRomajiCharReverse]: _, ...incorrectPairs } =
           random.bool() ? selectedPairs1 : selectedPairs2;
         void _;
-        // Kana values in the reverse-mode pool are unique (one kana per romaji
-        // key), so a simple Set is enough to guard against any edge-case dupes.
-        const seen = new Set<unknown>();
-        return [...Object.values(incorrectPairs)]
-          .sort(() => random.real(0, 1) - 0.5)
-          .filter(v => {
-            if (seen.has(v)) return false;
-            seen.add(v);
-            return true;
-          })
-          .slice(0, incorrectCount);
+        return getUniqueIncorrectOptions(
+          correctKanaCharReverse,
+          Object.values(incorrectPairs).sort(
+            () => random.real(0, 1) - 0.5,
+          ),
+          incorrectCount,
+        );
       }
     },
     [
       isReverse,
       correctKanaChar,
+      correctKanaCharReverse,
+      correctRomajiChar,
       correctRomajiCharReverse,
       selectedPairs,
       selectedPairs1,
