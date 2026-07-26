@@ -33,6 +33,7 @@ import {
 } from '@/features/Vocabulary/components/Game/vocabFormatLock';
 import { useSetProgressStore } from '@/features/Progress';
 import { shouldSuppressContinueKeyboardShortcut } from '@/shared/utils/game/continueShortcutGuard';
+import { isVocabularyMeaningAnswerCorrect } from '@/features/Vocabulary/lib/isVocabularyMeaningAnswerCorrect';
 
 // Get the global adaptive selector for weighted character selection
 const adaptiveSelector = getGlobalAdaptiveSelector();
@@ -219,27 +220,11 @@ const VocabInputGame = ({
     return null;
   }
 
-  const normalizeAnswer = (value: string): string => value.trim().toLowerCase();
-
   const isInputCorrect = (input: string): boolean => {
     if (quizType === 'meaning') {
-      if (!isReverse) {
-        return (
-          Array.isArray(targetChar) &&
-          targetChar.some(
-            answer => normalizeAnswer(answer) === normalizeAnswer(input),
-          )
-        );
-      } else {
-        const reverseTargetChar =
-          typeof targetChar === 'string' ? targetChar : '';
-        const inputAsHiragana = toHiragana(input);
-        const readingAsHiragana = toHiragana(correctWordObj?.reading || '');
-        return (
-          normalizeAnswer(input) === normalizeAnswer(reverseTargetChar) ||
-          inputAsHiragana === readingAsHiragana
-        );
-      }
+      return correctWordObj
+        ? isVocabularyMeaningAnswerCorrect(correctWordObj, input, isReverse)
+        : false;
     } else {
       const targetReading = typeof targetChar === 'string' ? targetChar : '';
       const inputAsHiragana = toHiragana(input);
