@@ -16,6 +16,7 @@ import { getGlobalAdaptiveSelector } from '@/shared/utils/adaptiveSelection';
 import { useSmartReverseMode } from '@/shared/hooks/game/useSmartReverseMode';
 import { useAdaptiveOptionCount } from '@/shared/hooks/game/useAdaptiveOptionCount';
 import useClassicSessionStore from '@/shared/store/useClassicSessionStore';
+import { getUniqueIncorrectOptions } from '@/features/Kana/lib/getUniqueIncorrectOptions';
 
 const random = new Random();
 
@@ -207,21 +208,31 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
       if (!isReverse) {
         const { [correctKanaChar]: _, ...incorrectPairs } = selectedPairs;
         void _;
-        return [...Object.values(incorrectPairs)]
-          .sort(() => random.real(0, 1) - 0.5)
-          .slice(0, incorrectCount);
+        return getUniqueIncorrectOptions(
+          correctRomajiChar,
+          Object.values(incorrectPairs).sort(
+            () => random.real(0, 1) - 0.5,
+          ),
+          incorrectCount,
+        );
       } else {
         const { [correctRomajiCharReverse]: _, ...incorrectPairs } =
           random.bool() ? selectedPairs1 : selectedPairs2;
         void _;
-        return [...Object.values(incorrectPairs)]
-          .sort(() => random.real(0, 1) - 0.5)
-          .slice(0, incorrectCount);
+        return getUniqueIncorrectOptions(
+          correctKanaCharReverse,
+          Object.values(incorrectPairs).sort(
+            () => random.real(0, 1) - 0.5,
+          ),
+          incorrectCount,
+        );
       }
     },
     [
       isReverse,
       correctKanaChar,
+      correctKanaCharReverse,
+      correctRomajiChar,
       correctRomajiCharReverse,
       selectedPairs,
       selectedPairs1,
@@ -316,10 +327,10 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
       resetWrongStreak();
       logAttempt({
         questionId: correctChar,
-        questionPrompt: isReverse
-          ? correctRomajiCharReverse
-          : correctKanaChar,
-        expectedAnswers: [isReverse ? correctKanaCharReverse : correctRomajiChar],
+        questionPrompt: isReverse ? correctRomajiCharReverse : correctKanaChar,
+        expectedAnswers: [
+          isReverse ? correctKanaCharReverse : correctRomajiChar,
+        ],
         userAnswer: isReverse ? correctKanaCharReverse : correctRomajiChar,
         inputKind: 'pick',
         isCorrect: true,
@@ -376,7 +387,9 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
       logAttempt({
         questionId: isReverse ? correctRomajiCharReverse : correctKanaChar,
         questionPrompt: isReverse ? correctRomajiCharReverse : correctKanaChar,
-        expectedAnswers: [isReverse ? correctKanaCharReverse : correctRomajiChar],
+        expectedAnswers: [
+          isReverse ? correctKanaCharReverse : correctRomajiChar,
+        ],
         userAnswer: selectedChar,
         inputKind: 'pick',
         isCorrect: false,
@@ -508,4 +521,3 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
 };
 
 export default KanaMCQ;
-

@@ -10,6 +10,7 @@ import { isKanaGameAnswerCorrect } from '@/features/Kana/lib/isKanaGameAnswerCor
 import { getSelectionLabels } from '@/shared/utils/selectionFormatting';
 import { shuffle } from '@/shared/utils/shuffle';
 import Blitz, { type BlitzConfig } from '@/shared/ui-composite/Blitz';
+import { getUniqueIncorrectOptions } from '@/features/Kana/lib/getUniqueIncorrectOptions';
 
 export default function BlitzKana() {
   const kanaGroupIndices = useKanaStore(state => state.kanaGroupIndices);
@@ -62,20 +63,20 @@ export default function BlitzKana() {
       if (isReverse) {
         // Reverse: options are kana characters
         const correctAnswer = question.kana;
-        const incorrectOptions = shuffle(
-          items.filter(item => item.kana !== correctAnswer),
-        )
-          .slice(0, count - 1)
-          .map(item => item.kana);
+        const incorrectOptions = getUniqueIncorrectOptions(
+          correctAnswer,
+          shuffle(items).map(item => item.kana),
+          count - 1,
+        );
         return [correctAnswer, ...incorrectOptions];
       }
       // Normal: options are romaji
       const correctAnswer = question.romaji;
-      const incorrectOptions = shuffle(
-        items.filter(item => item.romaji !== correctAnswer),
-      )
-        .slice(0, count - 1)
-        .map(item => item.romaji);
+      const incorrectOptions = getUniqueIncorrectOptions(
+        correctAnswer,
+        shuffle(items).map(item => item.romaji),
+        count - 1,
+      );
       return [correctAnswer, ...incorrectOptions];
     },
     getCorrectOption: (question, isReverse) =>

@@ -9,6 +9,7 @@ import { isKanaGameAnswerCorrect } from '@/features/Kana/lib/isKanaGameAnswerCor
 import { getSelectionLabels } from '@/shared/utils/selectionFormatting';
 import { shuffle } from '@/shared/utils/shuffle';
 import Gauntlet, { type GauntletConfig } from '@/shared/ui-composite/Gauntlet';
+import { getUniqueIncorrectOptions } from '@/features/Kana/lib/getUniqueIncorrectOptions';
 
 interface GauntletKanaProps {
   onCancel?: () => void;
@@ -47,31 +48,19 @@ const GauntletKana: React.FC<GauntletKanaProps> = ({ onCancel }) => {
     generateOptions: (question, items, count, isReverse) => {
       if (isReverse) {
         const correctAnswer = question.kana;
-        const seen = new Set([correctAnswer]);
-        const incorrectOptions = shuffle(
-          items.filter(item => item.kana !== correctAnswer),
-        )
-          .filter(item => {
-            if (seen.has(item.kana)) return false;
-            seen.add(item.kana);
-            return true;
-          })
-          .slice(0, count - 1)
-          .map(item => item.kana);
+        const incorrectOptions = getUniqueIncorrectOptions(
+          correctAnswer,
+          shuffle(items).map(item => item.kana),
+          count - 1,
+        );
         return [correctAnswer, ...incorrectOptions];
       }
       const correctAnswer = question.romaji;
-      const seen = new Set([correctAnswer]);
-      const incorrectOptions = shuffle(
-        items.filter(item => item.romaji !== correctAnswer),
-      )
-        .filter(item => {
-          if (seen.has(item.romaji)) return false;
-          seen.add(item.romaji);
-          return true;
-        })
-        .slice(0, count - 1)
-        .map(item => item.romaji);
+      const incorrectOptions = getUniqueIncorrectOptions(
+        correctAnswer,
+        shuffle(items).map(item => item.romaji),
+        count - 1,
+      );
       return [correctAnswer, ...incorrectOptions];
     },
     getCorrectOption: (question, isReverse) =>
