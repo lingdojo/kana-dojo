@@ -356,7 +356,7 @@
     "game": "Onimusha series",
     "character": "Nobunaga Oda",
     "id": 36,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -476,7 +476,7 @@
     "game": "Kingdom Hearts series (JP dub)",
     "character": "Sora",
     "id": 48,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -546,7 +546,7 @@
     "game": "Fire Emblem series",
     "character": "Various protagonists",
     "id": 55,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -796,7 +796,7 @@
     "game": "Samurai game proverb line",
     "character": "Musashi reference",
     "id": 80,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -966,7 +966,7 @@
     "game": "Persona 5 Strikers",
     "character": "Joker",
     "id": 97,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1036,7 +1036,7 @@
     "game": "Steins;Gate: My Darling's Embrace",
     "character": "Rintaro Okabe",
     "id": 104,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1066,7 +1066,7 @@
     "game": "Dragon Quest series",
     "character": "Recurring command voice",
     "id": 107,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1116,7 +1116,7 @@
     "game": "Pokemon series",
     "character": "Rival characters",
     "id": 112,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

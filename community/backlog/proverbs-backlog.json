@@ -141,7 +141,7 @@
     "english": "Fortune comes to a laughing gate",
     "meaning": "Happiness and good fortune come to those who smile",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 17,
@@ -348,7 +348,7 @@
     "english": "Tomorrow's wind will blow tomorrow",
     "meaning": "Don't worry too much about the future",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 40,
@@ -447,7 +447,7 @@
     "english": "Giving birth is easier than worrying",
     "meaning": "Doing is often easier than worrying",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 51,
@@ -528,7 +528,7 @@
     "english": "Hide your head, but not your butt",
     "meaning": "Trying to hide something obvious",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 60,
@@ -744,7 +744,7 @@
     "english": "Dried bonito to a cat",
     "meaning": "Leave temptation unattended at your own risk",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 84,
@@ -933,7 +933,7 @@
     "english": "An inch ahead is darkness",
     "meaning": "The future is uncertain",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 105,
@@ -1275,7 +1275,7 @@
     "english": "Not knowing is Buddha",
     "meaning": "Ignorance is bliss",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 143,
@@ -1509,7 +1509,7 @@
     "english": "A frog in a well doesn’t know the ocean",
     "meaning": "Limited experience limits perspective",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 169,

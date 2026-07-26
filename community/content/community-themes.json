@@ -330,9 +330,9 @@
     "secondaryColor": "oklch(88.0% 0.065 210.0 / 1)"
   },
   {
-    "id": "sakurajima-ash",
-    "backgroundColor": "oklch(22.0% 0.025 270.0 / 1)",
-    "mainColor": "oklch(65.0% 0.170 25.0 / 1)",
-    "secondaryColor": "oklch(58.0% 0.055 260.0 / 1)"
+    "id": "bamboo-mist",
+    "backgroundColor": "oklch(24.0% 0.032 150.0 / 1)",
+    "mainColor": "oklch(78.0% 0.145 145.0 / 1)",
+    "secondaryColor": "oklch(68.0% 0.085 130.0 / 1)"
   }
 ]

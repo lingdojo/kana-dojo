@@ -686,7 +686,7 @@
   {
     "id": 115,
     "fact": "There's a Japanese concept 'mujo' (無常) - impermanence - reminding that nothing lasts, making each moment precious.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1034,7 +1034,7 @@
   {
     "id": 173,
     "fact": "The concept 'kokoro' (心) means heart-mind-spirit combined - emotions and thoughts are not separate in Japanese philosophy.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1064,7 +1064,7 @@
   {
     "id": 178,
     "fact": "Japan has vending machines that dispense hot canned coffee - a major morning ritual for millions of workers.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1076,7 +1076,7 @@
   {
     "id": 180,
     "fact": "Japan has 'sunaba' (砂場) sand therapy - walking barefoot in sand gardens believed to improve mental health.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1304,7 +1304,7 @@
   {
     "id": 218,
     "fact": "The Japanese term 'gacha-gacha' is onomatopoeia for capsule toy machines: the crank sound (gacha) and capsule drop (gacha).",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1520,7 +1520,7 @@
   {
     "id": 254,
     "fact": "The term 'ashita no tenki' (明日の天気) is used in small talk, similar to discussing the weather to open conversations.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1778,7 +1778,7 @@
   {
     "id": 297,
     "fact": "Japan’s 'eki-ben' (駅弁) are region-specific boxed meals sold at train stations, often featuring local specialties.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1802,7 +1802,7 @@
   {
     "id": 301,
     "fact": "Japan’s New Year custom 'hatsumode' (初詣) involves visiting a shrine or temple for the year’s first prayer.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1868,7 +1868,7 @@
   {
     "id": 312,
     "fact": "Japan’s 'shichi-go-san' festival celebrates children at ages 3, 5, and 7 with shrine visits and traditional outfits.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

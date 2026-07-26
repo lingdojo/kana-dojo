@@ -66,7 +66,7 @@
     "english": "Useless! Useless! Useless!",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "DIO",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -146,7 +146,7 @@
     "english": "I reject my humanity, JoJo!",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Joseph Joestar",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -407,7 +407,7 @@
     "anime": "Sailor Moon",
     "character": "Usagi Tsukino",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 42,
@@ -427,7 +427,7 @@
     "anime": "Bleach",
     "character": "Ichigo Kurosaki",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 44,
@@ -566,7 +566,7 @@
     "english": "I, Giorno Giovanna, have a dream! (alt wording 5)",
     "anime": "JoJo's Bizarre Adventure: Golden Wind",
     "character": "Giorno Giovanna",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -826,7 +826,7 @@
     "english": "Gurararara! (alt wording 31)",
     "anime": "One Piece",
     "character": "Edward Newgate (Whitebeard)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -906,7 +906,7 @@
     "english": "Relax, I'm the strongest. (alt wording 39)",
     "anime": "Jujutsu Kaisen",
     "character": "Satoru Gojo",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1206,7 +1206,7 @@
     "english": "Bucciarati is here! (alt wording 17) (alt wording 69)",
     "anime": "JoJo's Bizarre Adventure: Golden Wind",
     "character": "Narancia Ghirga",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
