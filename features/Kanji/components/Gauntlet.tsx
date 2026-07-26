@@ -44,9 +44,9 @@ const GauntletKanji: React.FC<GauntletKanjiProps> = ({ onCancel }) => {
           question.onyomi.some(k => k.split(' ')[0] === answer)
         );
       }
-      // Normal: showing kanji, answer should match any meaning
+      // Normal: answer should match any meaning
       return question.meanings.some(
-        meaning => answer.toLowerCase() === meaning.toLowerCase(),
+        meaning => answer.trim().toLowerCase() === meaning.toLowerCase(),
       );
     },
     getCorrectAnswer: (question, isReverse) =>
@@ -94,4 +94,3 @@ const GauntletKanji: React.FC<GauntletKanjiProps> = ({ onCancel }) => {
 };
 
 export default GauntletKanji;
-

@@ -47,7 +47,7 @@ const GauntletVocab: React.FC<GauntletVocabProps> = ({ onCancel }) => {
       }
       // Normal: answer should match any meaning
       return question.meanings.some(
-        meaning => answer.toLowerCase() === meaning.toLowerCase(),
+        meaning => answer.trim().toLowerCase() === meaning.toLowerCase(),
       );
     },
     getCorrectAnswer: (question, isReverse) =>
@@ -95,4 +95,3 @@ const GauntletVocab: React.FC<GauntletVocabProps> = ({ onCancel }) => {
 };
 
 export default GauntletVocab;
-

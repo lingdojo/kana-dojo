@@ -57,7 +57,7 @@ export default function BlitzVocab() {
       }
       // Normal: answer should match any meaning
       return question.meanings.some(
-        meaning => answer.toLowerCase() === meaning.toLowerCase(),
+        meaning => answer.trim().toLowerCase() === meaning.toLowerCase(),
       );
     },
     getCorrectAnswer: (question, isReverse) =>
@@ -99,4 +99,3 @@ export default function BlitzVocab() {
 
   return <Blitz config={config} />;
 }
-
