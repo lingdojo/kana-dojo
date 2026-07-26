@@ -7,16 +7,7 @@
   "\"「〜そうだ」 can indicate appearance, like 'it looks like'. (community contribution 48)\"",
   "\"「〜つもり」 expresses intent, like 'I plan to' do something. (practice variation 12)\"",
   "\"「〜に気づく」 means 'to notice / realize...'.\"",
-  "\"〜核心语法提示\": \"以下为社区贡献的初学者语法补充包\"",
-  "\"〜▲ 变更说明\": \"根据 Issue #33 的指导说明进行以下标准数据追加\"",
-  "\"〜▲ 规范优化\": \"由 AI 统一校验并规范化了末尾 JSON 数组的标点符号格式\"",
-  "\"〜▲ 变更详情\": \"更新了关于方向与时间变化的语法解释细节\"",
-  "\"〜▲ 贡献时间\": \"2026年05月27日 实验专项提交\"",
-  "\"〜建议反馈\": \"本段落由 AI 自动化工具协同构建完成\"",
-  "\"〜〜〜〜〜〜\": \"=======================================\"",
-  "\"〜基本语法\": \"〜开启了新语法世界的大门嘛\"",
-  "\"〜听闻转述\": \"〜そうです can report hearsay (I heard that...). (practice variation 9)\"",
-  "\"〜对比参照\": \"「〜に比べて」 means compared to... .\"",
+  "\"〜そうです\" can report hearsay (\"I heard that...\"). (practice variation 9)",
   "\"〜ていく/〜てくる\": \"shows direction or change over time, like 'will start' or 'have been'. (Issue #33)\"",
   "\"〜に向けて\" means \"toward / in preparation for\".",
   "\"「〜を通して」 means \\\"through / throughout...\\\".\"",
@@ -55,5 +46,6 @@
   "\"〜おかげで\" expresses gratitude for a cause, \"thanks to\". (practice variation 52)",
   "\"〜ながらも\" means \"even while\" or \"though\" (contrast).",
   "\"〜のに\" expresses contrast or regret, similar to even though. (practice variation 23)",
-  "\"〜うちに\" means \"while\" or \"before\" something changes. (practice variation 40)"
+  "\"〜うちに\" means \"while\" or \"before\" something changes. (practice variation 40)",
+  "\"〜わけがない\" means \"there is no way that...\"."
 ]
