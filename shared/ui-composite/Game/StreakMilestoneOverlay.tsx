@@ -1,14 +1,24 @@
 'use client';
 
-import { lazy, Suspense, useEffect, type MouseEvent } from 'react';
+import { lazy, Suspense, useEffect, useRef } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import confetti from 'canvas-confetti';
 import { Flame } from 'lucide-react';
-import { useHasFinePointer } from '@/shared/hooks/generic/useHasFinePointer';
-import { useClick } from '@/shared/hooks/generic/useAudio';
 import { cn } from '@/shared/utils/utils';
 import { useThemePreferences } from '@/features/Preferences';
+import { useClick } from '@/shared/hooks/generic/useAudio';
+import AdSenseDisplay from '@/shared/ui-composite/Ads/AdSenseDisplay';
+import { GameBottomBar } from '@/shared/ui-composite/Game/GameBottomBar';
+import BottomBar from '@/shared/ui-composite/layout/BottomBar';
 import { suppressContinueKeyboardShortcuts } from '@/shared/utils/game/continueShortcutGuard';
+import { ENABLE_EVERY_QUESTION_AD_OVERLAY } from '@/shared/utils/game/streakMilestones';
+
+const STREAK_MILESTONE_AD_SLOT = '2642983933';
+const ENABLE_STREAK_MILESTONE_DECORATIONS = true;
+const ENABLE_STREAK_MILESTONE_KEYBOARD_SHORTCUTS = false;
+const isStreakMilestoneAdEnabled =
+  process.env.NODE_ENV === 'production' &&
+  process.env.NEXT_PUBLIC_VERCEL_ENV === 'production';
 
 const Decorations = lazy(
   () => import('@/shared/ui-composite/Decorations/Decorations'),
@@ -68,49 +78,46 @@ export default function StreakMilestoneOverlay({
   milestone,
   onDismiss,
 }: StreakMilestoneOverlayProps) {
-  const hasFinePointer = useHasFinePointer();
-  const { playClick } = useClick();
   const { isGlassMode } = useThemePreferences();
+  const { playClick } = useClick();
+  const skipButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
-    if (!milestone) return;
+    if (!ENABLE_STREAK_MILESTONE_KEYBOARD_SHORTCUTS || !milestone) return;
 
-    const absorbKeyboardEvent = (event: KeyboardEvent) => {
+    const isSkipShortcut = (event: KeyboardEvent) =>
+      event.key === 'Enter' || event.code === 'Space' || event.key === ' ';
+
+    const absorbShortcut = (event: KeyboardEvent) => {
+      if (!isSkipShortcut(event)) return;
+
       event.preventDefault();
       event.stopPropagation();
       event.stopImmediatePropagation();
     };
 
     const handleKeyDown = (event: KeyboardEvent) => {
-      absorbKeyboardEvent(event);
+      if (!isSkipShortcut(event)) return;
+
+      absorbShortcut(event);
+      if (event.repeat) return;
+
       suppressContinueKeyboardShortcuts();
-      playClick();
-      onDismiss();
-    };
-
-    const handleKeyUp = (event: KeyboardEvent) => {
-      absorbKeyboardEvent(event);
-    };
-
-    const handleKeyPress = (event: KeyboardEvent) => {
-      absorbKeyboardEvent(event);
+      skipButtonRef.current?.click();
     };
 
     window.addEventListener('keydown', handleKeyDown, true);
-    window.addEventListener('keyup', handleKeyUp, true);
-    window.addEventListener('keypress', handleKeyPress, true);
+    window.addEventListener('keyup', absorbShortcut, true);
+    window.addEventListener('keypress', absorbShortcut, true);
 
     return () => {
       window.removeEventListener('keydown', handleKeyDown, true);
-      window.removeEventListener('keyup', handleKeyUp, true);
-      window.removeEventListener('keypress', handleKeyPress, true);
+      window.removeEventListener('keyup', absorbShortcut, true);
+      window.removeEventListener('keypress', absorbShortcut, true);
     };
-  }, [milestone, onDismiss, playClick]);
+  }, [milestone]);
 
-  const handleDismiss = (event: MouseEvent<HTMLDivElement>) => {
-    event.preventDefault();
-    event.stopPropagation();
-    suppressContinueKeyboardShortcuts();
+  const handleDismiss = () => {
     playClick();
     onDismiss();
   };
@@ -149,12 +156,15 @@ export default function StreakMilestoneOverlay({
           animate='visible'
           exit='exit'
           className='fixed inset-0 z-70 flex h-full w-full items-center justify-center bg-(--background-color)'
-          onClick={handleDismiss}
           role='dialog'
           aria-modal='true'
-          aria-label={`${milestone} in a row`}
+          aria-label={
+            ENABLE_EVERY_QUESTION_AD_OVERLAY
+              ? 'Advertisement'
+              : `${milestone} in a row`
+          }
         >
-          {!isGlassMode && (
+          {ENABLE_STREAK_MILESTONE_DECORATIONS && !isGlassMode && (
             <div className='absolute inset-0 -z-10'>
               <Suspense fallback={<></>}>
                 <Decorations
@@ -171,23 +181,27 @@ export default function StreakMilestoneOverlay({
             variants={contentVariants}
             initial='hidden'
             animate='visible'
-            className='mx-auto flex w-full max-w-4xl flex-col items-center gap-5 px-6 text-center select-none'
+            className='mx-auto flex w-full max-w-4xl flex-col items-center gap-5 px-6 pb-28 text-center select-none'
           >
-            <motion.button
-              variants={itemVariants}
-              className={cn(
-                'inline-flex h-28 w-28 items-center justify-center rounded-4xl border-b-20 border-(--secondary-color-accent) bg-(--secondary-color) text-(--background-color) transition-all duration-200',
-                'motion-safe:animate-float [--float-distance:-8px]',
-              )}
-            >
-              <Flame className='h-16 w-16' strokeWidth={2.5} />
-            </motion.button>
+            {!ENABLE_EVERY_QUESTION_AD_OVERLAY && (
+              <motion.button
+                variants={itemVariants}
+                className={cn(
+                  'hidden h-28 w-28 items-center justify-center rounded-4xl border-b-20 border-(--secondary-color-accent) bg-(--secondary-color) text-(--background-color) transition-all duration-200 md:inline-flex',
+                  'motion-safe:animate-float [--float-distance:-8px]',
+                )}
+              >
+                <Flame className='h-16 w-16' strokeWidth={2.5} />
+              </motion.button>
+            )}
 
             <motion.h2
               variants={itemVariants}
               className='text-4xl font-semibold tracking-tighter text-(--main-color) sm:text-5xl'
             >
-              {milestone} in a row!
+              {ENABLE_EVERY_QUESTION_AD_OVERLAY
+                ? 'Advertisement'
+                : `${milestone} in a row!`}
             </motion.h2>
 
             {/*
@@ -198,13 +212,28 @@ export default function StreakMilestoneOverlay({
               {message}
             </motion.p>
 */}
-            <motion.p
-              variants={itemVariants}
-              className='text-sm text-(--secondary-color)/80'
-            >
-              ({hasFinePointer ? 'click' : 'tap'} to continue)
-            </motion.p>
+            {isStreakMilestoneAdEnabled && (
+              <div className='flex w-full max-w-3xl flex-col items-center gap-2'>
+                {!ENABLE_EVERY_QUESTION_AD_OVERLAY && (
+                  <p className='text-xs font-medium tracking-wide text-(--secondary-color) uppercase'>
+                    Advertisement
+                  </p>
+                )}
+                <div className='w-full'>
+                  <AdSenseDisplay slot={STREAK_MILESTONE_AD_SLOT} />
+                </div>
+              </div>
+            )}
           </motion.div>
+          <GameBottomBar
+            state='check'
+            canCheck={true}
+            feedbackContent={null}
+            actionLabel='skip'
+            onAction={handleDismiss}
+            buttonRef={skipButtonRef}
+          />
+          <BottomBar />
         </motion.div>
       )}
     </AnimatePresence>

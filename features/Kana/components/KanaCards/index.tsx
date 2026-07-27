@@ -1,8 +1,10 @@
 'use client';
 import { Fragment, useMemo, useState } from 'react';
 import clsx from 'clsx';
+import { useMediaQuery } from 'react-responsive';
 import Subset from './Subset';
 import KanaRowCard from './KanaRowCard';
+import KanaRowAdvertisementCard from './KanaRowAdvertisementCard';
 import type { KanaType } from './KanaUnitSelector';
 import { kana } from '@/features/Kana/data/kana';
 import { useClick } from '@/shared/hooks/generic/useAudio';
@@ -13,6 +15,7 @@ import { ChevronUp } from 'lucide-react';
 const STORAGE_KEY = 'kana-hidden-subsets';
 const USE_NEW_KANA_BADGE_DESIGN = true;
 export const USE_NEW_KANA_ROW_DESIGN = true;
+const KANA_ROW_AD_SLOT = '8753785070';
 
 type KanaCardsFilter = 'all' | 'hiragana' | 'katakana';
 
@@ -121,7 +124,12 @@ interface KanaCardsProps {
   selectedSubset?: string;
 }
 
-const KanaCards = ({ filter = 'all', viewMode, selectedKanaType, selectedSubset }: KanaCardsProps) => {
+const KanaCards = ({
+  filter = 'all',
+  viewMode,
+  selectedKanaType,
+  selectedSubset,
+}: KanaCardsProps) => {
   const { playClick } = useClick();
 
   const effectiveFilter: KanaCardsFilter =
@@ -206,6 +214,17 @@ const KanaCards = ({ filter = 'all', viewMode, selectedKanaType, selectedSubset 
     return cards;
   }, [filteredSubsets]);
 
+  const isMediumScreen = useMediaQuery({ minWidth: 768 });
+  const isLargeScreen = useMediaQuery({ minWidth: 1536 });
+  const gridColumnCount = isLargeScreen ? 3 : isMediumScreen ? 2 : 1;
+  const advertisementCount =
+    allKanaRowCards.length === 0
+      ? 0
+      : gridColumnCount === 1
+        ? 1
+        : (gridColumnCount - (allKanaRowCards.length % gridColumnCount)) %
+          gridColumnCount;
+
   if (USE_NEW_KANA_ROW_DESIGN) {
     if (viewMode === 'full') {
       return (
@@ -216,6 +235,12 @@ const KanaCards = ({ filter = 'all', viewMode, selectedKanaType, selectedSubset 
                 key={`${card.globalIndex}-${card.kanaGroup.groupName}`}
                 kanaGroup={card.kanaGroup}
                 globalIndex={card.globalIndex}
+              />
+            ))}
+            {Array.from({ length: advertisementCount }, (_, index) => (
+              <KanaRowAdvertisementCard
+                key={`${gridColumnCount}-column-ad-${index}`}
+                slot={KANA_ROW_AD_SLOT}
               />
             ))}
           </div>
