@@ -125,7 +125,11 @@ const Game = () => {
         )}
       >
         {showStats && <SessionStats />}
-        <Return isHidden={showStats} gameMode={gameMode} onQuit={handleQuit} />
+        <Return
+          isHidden={showStats || view === 'summary'}
+          gameMode={gameMode}
+          onQuit={handleQuit}
+        />
         {gameMode.toLowerCase() === 'pick' ? (
           <TilesMode isHidden={showStats || view !== 'playing'} />
         ) : gameMode.toLowerCase() === 'mcq' ? (

@@ -133,7 +133,11 @@ const Game = () => {
         className='flex min-h-[100dvh] max-w-[100dvw] flex-col items-center gap-8 px-2 md:gap-12 md:px-0'
       >
         {showStats && <SessionStats />}
-        <Return isHidden={showStats} gameMode={gameMode} onQuit={handleQuit} />
+        <Return
+          isHidden={showStats || view === 'summary'}
+          gameMode={gameMode}
+          onQuit={handleQuit}
+        />
         {gameMode.toLowerCase() === 'pick' ? (
           <TilesMode
             key={`vocab-tiles-${sessionNonce}`}

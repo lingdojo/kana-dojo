@@ -522,6 +522,798 @@ export interface BlogTranslations {
   };
 }
 
+export interface TranslatorTranslations {
+  meta: {
+    title: string;
+    description: string;
+  };
+  header: {
+    title: string;
+  };
+  languages: {
+    english: string;
+    japanese: string;
+    en: string;
+    ja: string;
+  };
+  input: {
+    placeholder: {
+      en: string;
+      ja: string;
+    };
+    clearButton: string;
+    characterCount: string;
+    keyboardHint: string;
+    characterLimitWarning: string;
+  };
+  output: {
+    placeholder: {
+      en: string;
+      ja: string;
+    };
+    copyButton: string;
+    copied: string;
+    copiedMessage: string;
+    romanization: string;
+  };
+  actions: {
+    translate: string;
+    translating: string;
+    swapLanguages: string;
+  };
+  history: {
+    title: string;
+    empty: string;
+    emptyHint: string;
+    clearAll: string;
+    deleteEntry: string;
+    clearDialog: {
+      title: string;
+      description: string;
+      cancel: string;
+      confirm: string;
+    };
+    timeAgo: {
+      justNow: string;
+      minutesAgo: string;
+      hoursAgo: string;
+      daysAgo: string;
+    };
+  };
+  offline: {
+    message: string;
+  };
+  errors: {
+    networkError: string;
+    rateLimit: string;
+    invalidInput: string;
+    emptyInput: string;
+    serverError: string;
+    authError: string;
+    unknownError: string;
+  };
+  seo: {
+    guideTitle: string;
+    howToUse: {
+      title: string;
+      intro: string;
+      steps: {
+        step1: string;
+        step2: string;
+        step3: string;
+        step4: string;
+        step5: string;
+      };
+      proTip: string;
+    };
+    writingSystems: {
+      title: string;
+      intro: string;
+      hiragana: {
+        name: string;
+        description: string;
+      };
+      katakana: {
+        name: string;
+        description: string;
+      };
+      kanji: {
+        name: string;
+        description: string;
+      };
+      outro: string;
+    };
+    faq: {
+      title: string;
+      isFree: {
+        question: string;
+        answer: string;
+      };
+      accuracy: {
+        question: string;
+        answer: string;
+      };
+      romanization: {
+        question: string;
+        answer: string;
+      };
+      historySaved: {
+        question: string;
+        answer: string;
+      };
+      maxLength: {
+        question: string;
+        answer: string;
+      };
+    };
+  };
+}
+
+export interface MetadataTranslations {
+  home: {
+    title: string;
+    titleShort: string;
+    description: string;
+    descriptionShort: string;
+    keywords: string;
+  };
+  kana: {
+    title: string;
+    titleShort: string;
+    description: string;
+    keywords: string;
+  };
+  learnHiragana: {
+    title: string;
+    titleShort: string;
+    description: string;
+    keywords: string;
+  };
+  learnKatakana: {
+    title: string;
+    titleShort: string;
+    description: string;
+    keywords: string;
+  };
+  kanaBlitz: {
+    title: string;
+    titleShort: string;
+    description: string;
+    keywords: string;
+  };
+  kanaGauntlet: {
+    title: string;
+    titleShort: string;
+    description: string;
+    keywords: string;
+  };
+  kanji: {
+    title: string;
+    titleShort: string;
+    description: string;
+    keywords: string;
+  };
+  kanjiJlptN5: {
+    title: string;
+    titleShort: string;
+    description: string;
+    keywords: string;
+  };
+  kanjiJlptN4: {
+    title: string;
+    titleShort: string;
+    description: string;
+    keywords: string;
+  };
+  kanjiJlptN3: {
+    title: string;
+    titleShort: string;
+    description: string;
+    keywords: string;
+  };
+  kanjiJlptN2: {
+    title: string;
+    titleShort: string;
+    description: string;
+    keywords: string;
+  };
+  kanjiJlptN1: {
+    title: string;
+    titleShort: string;
+    description: string;
+    keywords: string;
+  };
+  kanjiBlitz: {
+    title: string;
+    titleShort: string;
+    description: string;
+    keywords: string;
+  };
+  kanjiGauntlet: {
+    title: string;
+    titleShort: string;
+    description: string;
+    keywords: string;
+  };
+  vocabulary: {
+    title: string;
+    titleShort: string;
+    description: string;
+    keywords: string;
+  };
+  vocabularyJlptN5: {
+    title: string;
+    titleShort: string;
+    description: string;
+    keywords: string;
+  };
+  vocabularyJlptN4: {
+    title: string;
+    titleShort: string;
+    description: string;
+    keywords: string;
+  };
+  vocabularyJlptN3: {
+    title: string;
+    titleShort: string;
+    description: string;
+    keywords: string;
+  };
+  vocabularyJlptN2: {
+    title: string;
+    titleShort: string;
+    description: string;
+    keywords: string;
+  };
+  vocabularyJlptN1: {
+    title: string;
+    titleShort: string;
+    description: string;
+    keywords: string;
+  };
+  vocabularyBlitz: {
+    title: string;
+    titleShort: string;
+    description: string;
+    keywords: string;
+  };
+  vocabularyGauntlet: {
+    title: string;
+    titleShort: string;
+    description: string;
+    keywords: string;
+  };
+  academy: {
+    title: string;
+    titleShort: string;
+    description: string;
+    keywords: string;
+  };
+  preferences: {
+    title: string;
+    titleShort: string;
+    description: string;
+    keywords: string;
+  };
+  progress: {
+    title: string;
+    titleShort: string;
+    description: string;
+    keywords: string;
+  };
+  privacy: {
+    title: string;
+    titleShort: string;
+    description: string;
+    keywords: string;
+  };
+  terms: {
+    title: string;
+    titleShort: string;
+    description: string;
+    keywords: string;
+  };
+  security: {
+    title: string;
+    titleShort: string;
+    description: string;
+    keywords: string;
+  };
+  credits: {
+    title: string;
+    titleShort: string;
+    description: string;
+    keywords: string;
+  };
+  patchNotes: {
+    title: string;
+    titleShort: string;
+    description: string;
+    keywords: string;
+  };
+  faq: {
+    title: string;
+    titleShort: string;
+    description: string;
+    keywords: string;
+  };
+  experiments: {
+    title: string;
+    titleShort: string;
+    description: string;
+    keywords: string;
+  };
+  translate: {
+    title: string;
+    titleShort: string;
+    description: string;
+    keywords: string;
+  };
+  zen: {
+    title: string;
+    titleShort: string;
+    description: string;
+    keywords: string;
+  };
+  kanaTrain: {
+    title: string;
+    titleShort: string;
+    description: string;
+    keywords: string;
+  };
+  kanjiTrain: {
+    title: string;
+    titleShort: string;
+    description: string;
+    keywords: string;
+  };
+  vocabularyTrain: {
+    title: string;
+    titleShort: string;
+    description: string;
+    keywords: string;
+  };
+  kanaSubset: {
+    hiraganaBase: {
+      title: string;
+      titleShort: string;
+      description: string;
+      keywords: string;
+    };
+    hiraganaDakuon: {
+      title: string;
+      titleShort: string;
+      description: string;
+      keywords: string;
+    };
+    hiraganaYoon: {
+      title: string;
+      titleShort: string;
+      description: string;
+      keywords: string;
+    };
+    katakanaBase: {
+      title: string;
+      titleShort: string;
+      description: string;
+      keywords: string;
+    };
+    katakanaDakuon: {
+      title: string;
+      titleShort: string;
+      description: string;
+      keywords: string;
+    };
+    katakanaYoon: {
+      title: string;
+      titleShort: string;
+      description: string;
+      keywords: string;
+    };
+    katakanaForeign: {
+      title: string;
+      titleShort: string;
+      description: string;
+      keywords: string;
+    };
+  };
+  hiraganaPractice: {
+    title: string;
+    titleShort: string;
+    description: string;
+    keywords: string;
+  };
+  katakanaPractice: {
+    title: string;
+    titleShort: string;
+    description: string;
+    keywords: string;
+  };
+  kanjiPractice: {
+    title: string;
+    titleShort: string;
+    description: string;
+    keywords: string;
+  };
+}
+
+export interface FaqTranslations {
+  kicker: string;
+  title: string;
+  subtitle: string;
+  links: {
+    howToUse: string;
+    glossary: string;
+    translator: string;
+    academy: string;
+    privacy: string;
+    terms: string;
+  };
+  nav: {
+    title: string;
+    backToTop: string;
+    aria: string;
+    note: string;
+  };
+  intro: {
+    title: string;
+    body: string;
+  };
+  cta: {
+    hiragana: string;
+    katakana: string;
+    kanji: string;
+  };
+  footer: {
+    title: string;
+    body: string;
+    links: {
+      kana: string;
+      progress: string;
+    };
+  };
+  sections: {
+    gettingStarted: {
+      title: string;
+      description: string;
+      q1: {
+        question: string;
+        answer: string;
+      };
+      q2: {
+        question: string;
+        answer: string;
+      };
+      q3: {
+        question: string;
+        answer: string;
+      };
+    };
+    learningPath: {
+      title: string;
+      description: string;
+      q1: {
+        question: string;
+        answer: string;
+      };
+      q2: {
+        question: string;
+        answer: string;
+      };
+      q3: {
+        question: string;
+        answer: string;
+      };
+    };
+    features: {
+      title: string;
+      description: string;
+      q1: {
+        question: string;
+        answer: string;
+      };
+      q2: {
+        question: string;
+        answer: string;
+      };
+      q3: {
+        question: string;
+        answer: string;
+      };
+    };
+    privacy: {
+      title: string;
+      description: string;
+      q1: {
+        question: string;
+        answer: string;
+      };
+      q2: {
+        question: string;
+        answer: string;
+      };
+      q3: {
+        question: string;
+        answer: string;
+      };
+    };
+    jlpt: {
+      title: string;
+      description: string;
+      q1: {
+        question: string;
+        answer: string;
+      };
+      q2: {
+        question: string;
+        answer: string;
+      };
+      q3: {
+        question: string;
+        answer: string;
+      };
+    };
+    troubleshooting: {
+      title: string;
+      description: string;
+      q1: {
+        question: string;
+        answer: string;
+      };
+      q2: {
+        question: string;
+        answer: string;
+      };
+      q3: {
+        question: string;
+        answer: string;
+      };
+    };
+  };
+}
+
+export interface PracticeLandingTranslations {
+  hiragana: {
+    title: string;
+    subtitle: string;
+    ctaPrimary: string;
+    ctaSecondary: string;
+    sections: {
+      what: {
+        title: string;
+        body: string;
+      };
+      how: {
+        title: string;
+        bullets: string;
+      };
+      why: {
+        title: string;
+        bullets: string;
+      };
+    };
+    links: {
+      kana: string;
+      train: string;
+      blitz: string;
+      gauntlet: string;
+      faq: string;
+    };
+  };
+  katakana: {
+    title: string;
+    subtitle: string;
+    ctaPrimary: string;
+    ctaSecondary: string;
+    sections: {
+      what: {
+        title: string;
+        body: string;
+      };
+      how: {
+        title: string;
+        bullets: string;
+      };
+      why: {
+        title: string;
+        bullets: string;
+      };
+    };
+    links: {
+      kana: string;
+      train: string;
+      blitz: string;
+      gauntlet: string;
+      faq: string;
+    };
+  };
+  kanji: {
+    title: string;
+    subtitle: string;
+    ctaPrimary: string;
+    ctaSecondary: string;
+    sections: {
+      what: {
+        title: string;
+        body: string;
+      };
+      how: {
+        title: string;
+        bullets: string;
+      };
+      why: {
+        title: string;
+        bullets: string;
+      };
+    };
+    links: {
+      kanji: string;
+      train: string;
+      blitz: string;
+      gauntlet: string;
+      jlpt: string;
+      faq: string;
+    };
+  };
+}
+
+export interface WelcomeTranslations {
+  title: string;
+  subtitle: string;
+  steps: {
+    welcome: {
+      demoCta: string;
+    };
+    behavior: {
+      title: string;
+      subtitle: string;
+      displayLanguage: {
+        title: string;
+        description: string;
+        romaji: string;
+        kana: string;
+      };
+      soundEffects: {
+        title: string;
+        description: string;
+        on: string;
+        off: string;
+      };
+    };
+    themes: {
+      title: string;
+      subtitle: string;
+      randomTheme: string;
+      moreInfo: string;
+      preferences: string;
+    };
+    fonts: {
+      title: string;
+      subtitle: string;
+      randomFont: string;
+      default: string;
+      moreInfo: string;
+      preferences: string;
+    };
+    complete: {
+      title: string;
+      subtitle: string;
+      canChange: string;
+      happyLearning: string;
+    };
+  };
+  features: {
+    behavior: {
+      title: string;
+      description: string;
+    };
+    theme: {
+      title: string;
+      description: string;
+    };
+    font: {
+      title: string;
+      description: string;
+    };
+  };
+  navigation: {
+    previous: string;
+    back: string;
+    next: string;
+    getStarted: string;
+    finishSetup: string;
+  };
+}
+
+export interface ExperimentsTranslations {
+  title: string;
+  description: string;
+  zenMode: {
+    title: string;
+    description: string;
+  };
+  breathing: {
+    title: string;
+    description: string;
+  };
+  ambient: {
+    title: string;
+    description: string;
+  };
+  constellation: {
+    title: string;
+    description: string;
+  };
+  rain: {
+    title: string;
+    description: string;
+  };
+  memory: {
+    title: string;
+    description: string;
+  };
+  sound: {
+    title: string;
+    description: string;
+  };
+  typing: {
+    title: string;
+    description: string;
+  };
+  haiku: {
+    title: string;
+    description: string;
+  };
+}
+
+export interface LegalTranslations {
+  privacy: {
+    title: string;
+    subtitle: string;
+    lastUpdated: string;
+  };
+  terms: {
+    title: string;
+    subtitle: string;
+    lastUpdated: string;
+  };
+  security: {
+    title: string;
+    subtitle: string;
+    lastUpdated: string;
+  };
+  credits: {
+    title: string;
+    subtitle: string;
+    contributors: {
+      title: string;
+      description: string;
+    };
+    sponsors: {
+      title: string;
+      description: string;
+    };
+    openSource: {
+      title: string;
+      description: string;
+    };
+  };
+}
+
+export interface KanaChartTranslations {
+  title: string;
+  subtitle: string;
+  aboutTitle: string;
+  aboutText: string;
+  howToUseTitle: string;
+  howToUse1: string;
+  howToUse2: string;
+  howToUse3: string;
+  howToUse4: string;
+  practiceTitle: string;
+  practiceText: string;
+}
+
 export interface ConjugatorTranslations {
   meta: {
     title: string;
@@ -819,6 +1611,167 @@ export interface ConjugatorTranslations {
   };
 }
 
+export interface ResourcesTranslations {
+  page: {
+    title: string;
+    subtitle: string;
+    showingResults: string;
+  };
+  search: {
+    placeholder: string;
+    results: string;
+    clearSearch: string;
+    noResults: string;
+    noResultsHint: string;
+  };
+  navigation: {
+    allResources: string;
+    categories: string;
+    home: string;
+    resources: string;
+    viewAllCategories: string;
+    relatedCategories: string;
+    relatedCategoriesDescription: string;
+    resourcesCount: string;
+  };
+  filters: {
+    title: string;
+    difficulty: string;
+    price: string;
+    platform: string;
+    clearAll: string;
+    activeFilters: string;
+    removeFilter: string;
+    expand: string;
+    collapse: string;
+  };
+  difficulty: {
+    beginner: string;
+    intermediate: string;
+    advanced: string;
+    'all-levels': string;
+  };
+  priceType: {
+    free: string;
+    freemium: string;
+    paid: string;
+    subscription: string;
+  };
+  platform: {
+    web: string;
+    ios: string;
+    android: string;
+    windows: string;
+    macos: string;
+    linux: string;
+    physical: string;
+    'browser-extension': string;
+    api: string;
+  };
+  card: {
+    featured: string;
+    availableOn: string;
+    moreplatforms: string;
+  };
+  detail: {
+    description: string;
+    availableOn: string;
+    tags: string;
+    notes: string;
+    visitResource: string;
+    visitResourceLabel: string;
+    relatedResources: string;
+    rating: string;
+  };
+  categories: {
+    apps: string;
+    websites: string;
+    textbooks: string;
+    youtube: string;
+    podcasts: string;
+    games: string;
+    jlpt: string;
+    reading: string;
+    listening: string;
+    speaking: string;
+    writing: string;
+    grammar: string;
+    vocabulary: string;
+    kanji: string;
+    immersion: string;
+    community: string;
+  };
+  subcategories: {
+    flashcards: string;
+    dictionaries: string;
+    comprehensive: string;
+    'input-methods': string;
+    courses: string;
+    reference: string;
+    practice: string;
+    beginner: string;
+    intermediate: string;
+    advanced: string;
+    specialized: string;
+    lessons: string;
+    culture: string;
+    entertainment: string;
+    'beginner-podcasts': string;
+    'intermediate-podcasts': string;
+    'native-content': string;
+    rpg: string;
+    'visual-novels': string;
+    'educational-games': string;
+    'casual-games': string;
+    n5: string;
+    n4: string;
+    n3: string;
+    n2: string;
+    n1: string;
+    'graded-readers': string;
+    news: string;
+    manga: string;
+    novels: string;
+    'audio-lessons': string;
+    shadowing: string;
+    comprehension: string;
+    pronunciation: string;
+    conversation: string;
+    tutoring: string;
+    handwriting: string;
+    composition: string;
+    correction: string;
+    guides: string;
+    'practice-grammar': string;
+    'sentence-patterns': string;
+    'frequency-lists': string;
+    'themed-vocab': string;
+    'word-lists': string;
+    'learning-systems': string;
+    'kanji-practice': string;
+    'kanji-reference': string;
+    'media-tools': string;
+    streaming: string;
+    'sentence-mining': string;
+    forums: string;
+    'language-exchange': string;
+    discord: string;
+  };
+  accessibility: {
+    resourceFilters: string;
+    resourceList: string;
+    loadingResources: string;
+    categoryOptions: string;
+    detailedDescription: string;
+  };
+  seo: {
+    mainTitle: string;
+    mainDescription: string;
+    categoryTitle: string;
+    categoryDescription: string;
+  };
+}
+
 /**
  * Complete translation structure with all namespaces
  */
@@ -834,7 +1787,16 @@ export interface Translations {
   errors: ErrorsTranslations;
   menuInfo: MenuInfoTranslations;
   blog: BlogTranslations;
+  translator: TranslatorTranslations;
+  metadata: MetadataTranslations;
+  faq: FaqTranslations;
+  practiceLanding: PracticeLandingTranslations;
+  welcome: WelcomeTranslations;
+  experiments: ExperimentsTranslations;
+  legal: LegalTranslations;
+  kanaChart: KanaChartTranslations;
   conjugator: ConjugatorTranslations;
+  resources: ResourcesTranslations;
 }
 
 /**
@@ -853,7 +1815,16 @@ export type TranslationKey =
   | `errors.${keyof ErrorsTranslations}`
   | `menuInfo.${keyof MenuInfoTranslations}`
   | `blog.${keyof BlogTranslations}`
-  | `conjugator.${keyof ConjugatorTranslations}`;
+  | `translator.${keyof TranslatorTranslations}`
+  | `metadata.${keyof MetadataTranslations}`
+  | `faq.${keyof FaqTranslations}`
+  | `practiceLanding.${keyof PracticeLandingTranslations}`
+  | `welcome.${keyof WelcomeTranslations}`
+  | `experiments.${keyof ExperimentsTranslations}`
+  | `legal.${keyof LegalTranslations}`
+  | `kanaChart.${keyof KanaChartTranslations}`
+  | `conjugator.${keyof ConjugatorTranslations}`
+  | `resources.${keyof ResourcesTranslations}`;
 
 /**
  * Available namespaces
@@ -870,7 +1841,16 @@ export type Namespace =
   | 'errors'
   | 'menuInfo'
   | 'blog'
-  | 'conjugator';
+  | 'translator'
+  | 'metadata'
+  | 'faq'
+  | 'practiceLanding'
+  | 'welcome'
+  | 'experiments'
+  | 'legal'
+  | 'kanaChart'
+  | 'conjugator'
+  | 'resources';
 
 /**
  * Available languages

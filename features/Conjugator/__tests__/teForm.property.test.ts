@@ -11,7 +11,11 @@
 import { describe, it, expect } from 'vitest';
 import * as fc from 'fast-check';
 import { classifyVerb } from '../lib/engine/classifyVerb';
-import { getGodanTeForm, getGodanTaForm } from '../lib/engine/conjugateGodan';
+import {
+  conjugateGodan,
+  getGodanTeForm,
+  getGodanTaForm,
+} from '../lib/engine/conjugateGodan';
 
 // ============================================================================
 // Test Data - Godan Verbs by Ending Type
@@ -99,6 +103,25 @@ const KU_ENDING_VERBS = [
 const IKU_VERB = { verb: '行く', teForm: '行って', taForm: '行った' };
 
 /**
+ * う音便 exception verbs: te-form うて / ta-form うた; include kana inputs too.
+ * not the regular って / った.
+ */
+const U_ONBIN_VERBS = [
+  { verb: '問う', teForm: '問うて', taForm: '問うた' },
+  { verb: '訪う', teForm: '訪うて', taForm: '訪うた' },
+  { verb: 'とう', teForm: 'とうて', taForm: 'とうた' },
+  { verb: '請う', teForm: '請うて', taForm: '請うた' },
+  { verb: '乞う', teForm: '乞うて', taForm: '乞うた' },
+  { verb: '恋う', teForm: '恋うて', taForm: '恋うた' },
+  { verb: 'こう', teForm: 'こうて', taForm: 'こうた' },
+  { verb: '給う', teForm: '給うて', taForm: '給うた' },
+  { verb: '賜う', teForm: '賜うて', taForm: '賜うた' },
+  { verb: 'たまう', teForm: 'たまうて', taForm: 'たまうた' },
+  { verb: '厭う', teForm: '厭うて', taForm: '厭うた' },
+  { verb: 'いとう', teForm: 'いとうて', taForm: 'いとうた' },
+];
+
+/**
  * Godan verbs ending in ぐ (Requirements: 4.5)
  * Te-form: ぐ → いで
  */
@@ -134,6 +157,7 @@ const ALL_GODAN_VERBS = [
   ...GU_ENDING_VERBS,
   ...SU_ENDING_VERBS,
   IKU_VERB,
+  ...U_ONBIN_VERBS,
 ];
 
 // ============================================================================
@@ -239,6 +263,16 @@ describe('Te-form Sound Changes Properties', () => {
       expect(teForm.endsWith('いて')).toBe(false);
     });
 
+    it('う音便 verbs produce うて te-form, not って', () => {
+      U_ONBIN_VERBS.forEach(verbData => {
+        const verbInfo = classifyVerb(verbData.verb);
+        const teForm = getGodanTeForm(verbInfo);
+        expect(teForm).toBe(verbData.teForm);
+        // Must NOT collapse to the regular って form (e.g. 問って)
+        expect(teForm.endsWith('って')).toBe(false);
+      });
+    });
+
     it('ぐ-ending verbs produce いで te-form (Requirements: 4.5)', () => {
       fc.assert(
         fc.property(fc.constantFrom(...GU_ENDING_VERBS), verbData => {
@@ -274,6 +308,15 @@ describe('Te-form Sound Changes Properties', () => {
       );
     });
 
+    it('う音便 verbs produce うた ta-form, not った', () => {
+      U_ONBIN_VERBS.forEach(verbData => {
+        const verbInfo = classifyVerb(verbData.verb);
+        const taForm = getGodanTaForm(verbInfo);
+        expect(taForm).toBe(verbData.taForm);
+        expect(taForm.endsWith('った')).toBe(false);
+      });
+    });
+
     it('te-form preserves verb stem', () => {
       fc.assert(
         fc.property(fc.constantFrom(...ALL_GODAN_VERBS), verbData => {
@@ -293,13 +336,26 @@ describe('Te-form Sound Changes Properties', () => {
           const teForm = getGodanTeForm(verbInfo);
 
           // Te-form should end with て or で
-          const validEndings = ['って', 'んで', 'いて', 'いで', 'して'];
+          const validEndings = ['って', 'んで', 'いて', 'いで', 'して', 'うて'];
           const hasValidEnding = validEndings.some(ending =>
             teForm.endsWith(ending),
           );
           expect(hasValidEnding).toBe(true);
         }),
         { numRuns: 100 },
+      );
+    });
+
+    it('conjugateGodan uses う音便 forms in derived conjugations', () => {
+      const forms = conjugateGodan(classifyVerb('恋う'));
+
+      expect(forms.find(form => form.id === 'te')?.hiragana).toBe('恋うて');
+      expect(forms.find(form => form.id === 'ta')?.hiragana).toBe('恋うた');
+      expect(forms.find(form => form.id === 'conditional-tara')?.hiragana).toBe(
+        '恋うたら',
+      );
+      expect(forms.find(form => form.id === 'progressive-present')?.hiragana).toBe(
+        '恋うている',
       );
     });
   });

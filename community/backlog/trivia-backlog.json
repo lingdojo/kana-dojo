@@ -24,7 +24,7 @@
       "Kairo"
     ],
     "correctIndex": 0,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -193,7 +193,7 @@
     ],
     "correctIndex": 3,
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 15,
@@ -263,7 +263,7 @@
     ],
     "correctIndex": 0,
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 20,
@@ -276,7 +276,7 @@
       "Ikebana"
     ],
     "correctIndex": 0,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -304,7 +304,7 @@
       "Takayama"
     ],
     "correctIndex": 0,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -361,7 +361,7 @@
     ],
     "correctIndex": 1,
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 27,
@@ -375,7 +375,7 @@
     ],
     "correctIndex": 0,
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 28,
@@ -402,7 +402,7 @@
       "Sendai"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -430,7 +430,7 @@
       "Fukuoka"
     ],
     "correctIndex": 0,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -458,7 +458,7 @@
       "Deer"
     ],
     "correctIndex": 0,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -500,7 +500,7 @@
       "Aikido"
     ],
     "correctIndex": 0,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -557,7 +557,7 @@
     ],
     "correctIndex": 0,
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 41,
@@ -598,7 +598,7 @@
       "Shodo"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -612,7 +612,7 @@
       "Yakitori"
     ],
     "correctIndex": 0,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -626,7 +626,7 @@
       "Hokkaido"
     ],
     "correctIndex": 0,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -641,7 +641,7 @@
     ],
     "correctIndex": 0,
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 47,
@@ -654,7 +654,7 @@
       "Bering Sea"
     ],
     "correctIndex": 0,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -724,7 +724,7 @@
       "Yatai"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -738,7 +738,7 @@
       "Mount Haku"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -767,7 +767,7 @@
     ],
     "correctIndex": 0,
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 56,
@@ -850,7 +850,7 @@
       "Fukuoka"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -878,7 +878,7 @@
       "Nagano"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -962,7 +962,7 @@
       "Chankonabe"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -976,7 +976,7 @@
       "Yokohama"
     ],
     "correctIndex": 0,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1032,7 +1032,7 @@
       "Matsue"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1116,7 +1116,7 @@
       "Fue"
     ],
     "correctIndex": 0,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1298,7 +1298,7 @@
       "Tabi"
     ],
     "correctIndex": 0,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1312,7 +1312,7 @@
       "Kyushu"
     ],
     "correctIndex": 3,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1326,7 +1326,7 @@
       "Mount Tate"
     ],
     "correctIndex": 1,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1368,7 +1368,7 @@
       "Okayama"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1396,7 +1396,7 @@
       "Ikebana"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1424,7 +1424,7 @@
       "Takayama"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1480,7 +1480,7 @@
       "Okonomiyaki"
     ],
     "correctIndex": 1,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1494,7 +1494,7 @@
       "Oki"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1536,7 +1536,7 @@
       "Kyogen"
     ],
     "correctIndex": 0,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1606,7 +1606,7 @@
       "Romaji"
     ],
     "correctIndex": 0,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1634,7 +1634,7 @@
       "Kiku"
     ],
     "correctIndex": 0,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1648,7 +1648,7 @@
       "Sendai"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1676,7 +1676,7 @@
       "Osaka Castle"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1746,7 +1746,7 @@
       "Hokkaido"
     ],
     "correctIndex": 0,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1760,7 +1760,7 @@
       "Tateyama"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1788,7 +1788,7 @@
       "Oden"
     ],
     "correctIndex": 0,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1802,7 +1802,7 @@
       "Hinamatsuri"
     ],
     "correctIndex": 0,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1816,7 +1816,7 @@
       "Himeji Castle"
     ],
     "correctIndex": 0,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1844,7 +1844,7 @@
       "Yatai"
     ],
     "correctIndex": 0,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1942,7 +1942,7 @@
       "Hiroshima"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1956,7 +1956,7 @@
       "Torin"
     ],
     "correctIndex": 0,
-    "issued": false,
+    "issued": true,
     "completed": false
   }
 ]

@@ -116,14 +116,16 @@ const Return = ({ isHidden, gameMode, onQuit }: ReturnProps) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isHidden]);
 
-  // Keyboard shortcuts
+  // Keyboard shortcut: Escape exits the game.
+  // Only register when visible to avoid duplicate handling when Session Summary is shown.
   useEffect(() => {
+    if (isHidden) return;
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') buttonRef.current?.click();
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, []);
+  }, [isHidden]);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -206,7 +208,7 @@ const Return = ({ isHidden, gameMode, onQuit }: ReturnProps) => {
         {/* Stats button - visible only on small screens */}
         <ActionButton
           borderRadius='xl'
-          className='w-auto px-2 py-1 text-xl sm:hidden animate-float [--float-distance:-1px]'
+          className='animate-float w-auto px-2 py-1 text-xl [--float-distance:-1px] sm:hidden'
           onClick={handleShowStats}
         >
           <ChartSpline size={22} />
@@ -222,9 +224,7 @@ const Return = ({ isHidden, gameMode, onQuit }: ReturnProps) => {
               className={clsx('text-(--main-color)', modeConfig.className)}
             />
           )}
-          <span className='text-(--secondary-color)'>
-            {normalizedMode}
-          </span>
+          <span className='text-(--secondary-color)'>{normalizedMode}</span>
           <Popover open={isPopoverOpen} onOpenChange={setIsPopoverOpen}>
             <PopoverTrigger asChild>
               <button
@@ -243,7 +243,7 @@ const Return = ({ isHidden, gameMode, onQuit }: ReturnProps) => {
                 }}
                 className='rounded-full hover:cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--main-color)'
               >
-                <span className='flex h-6 w-6 items-center justify-center rounded-lg bg-(--main-color) border-b-3 border-(--main-color-accent) ml-0.5 sm:ml-1 mt-0.5'>
+                <span className='mt-0.5 ml-0.5 flex h-6 w-6 items-center justify-center rounded-lg border-b-3 border-(--main-color-accent) bg-(--main-color) sm:ml-1'>
                   <Check className='h-4 w-4 text-(--background-color)' />
                 </span>
               </button>
@@ -279,7 +279,7 @@ const Return = ({ isHidden, gameMode, onQuit }: ReturnProps) => {
           <ActionButton
             borderRadius='2xl'
             borderBottomThickness={8}
-            className='hidden w-auto py-2 text-xl sm:flex sm:px-6 animate-float [--float-distance:-3px]'
+            className='animate-float hidden w-auto py-2 text-xl [--float-distance:-3px] sm:flex sm:px-6'
             onClick={handleShowStats}
           >
             <ChartSpline size={24} />
@@ -291,4 +291,3 @@ const Return = ({ isHidden, gameMode, onQuit }: ReturnProps) => {
 };
 
 export default Return;
-
