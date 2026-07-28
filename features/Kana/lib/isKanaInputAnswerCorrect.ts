@@ -49,17 +49,17 @@ export const isKanaInputAnswerCorrect = ({
   // Normalize Unicode form and strip surrounding whitespace so that input
   // from an IME or copy-paste (which may arrive in a different NFC/NFD form)
   // is compared on equal footing with the stored answer.
-  const normalizedInput = inputValue.trim().normalize('NFC');
+  const normalizedInput = inputValue.trim().replace(/[\u200B-\u200D\uFEFF]/g, '').normalize('NFKC');
   if (!normalizedInput) return false;
 
   if (isReverse) {
     // Reverse mode: user types the kana character itself.
-    return normalizedInput === targetChar.normalize('NFC');
+    return normalizedInput === targetChar.normalize('NFKC');
   }
 
   // Normal mode: user types romaji. Compare case- and Unicode-insensitively.
   const lowerInput = normalizedInput.toLowerCase();
-  const lowerTarget = targetChar.toLowerCase().normalize('NFC');
+  const lowerTarget = targetChar.toLowerCase().normalize('NFKC');
 
   if (lowerInput === lowerTarget) {
     return true;
@@ -79,13 +79,13 @@ export const isKanaInputAnswerCorrect = ({
   ) {
     const validAnswers = buildAltCombinations(promptParts, answerParts, altRomanjiMap);
     return validAnswers.some(
-      ans => lowerInput === ans.toLowerCase().normalize('NFC'),
+      ans => lowerInput === ans.toLowerCase().normalize('NFKC'),
     );
   }
 
   // Legacy single-character fallback (promptParts not provided).
   const alternatives = altRomanjiMap.get(correctChar);
   return alternatives
-    ? alternatives.some(alt => lowerInput === alt.toLowerCase().normalize('NFC'))
+    ? alternatives.some(alt => lowerInput === alt.toLowerCase().normalize('NFKC'))
     : false;
 };
