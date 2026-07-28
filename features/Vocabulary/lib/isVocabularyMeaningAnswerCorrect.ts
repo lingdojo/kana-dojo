@@ -2,7 +2,7 @@ import { toHiragana } from 'wanakana';
 import type { IVocabObj } from '@/entities/vocabulary';
 
 const normalize = (value: string): string =>
-  value.trim().normalize('NFC').toLowerCase();
+  value.trim().normalize('NFC').toLowerCase().replace(/^to\s+/, '');
 
 export const isVocabularyMeaningAnswerCorrect = (
   vocabulary: IVocabObj,

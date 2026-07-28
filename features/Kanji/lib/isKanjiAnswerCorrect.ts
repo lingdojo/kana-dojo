@@ -1,7 +1,7 @@
 import type { IKanjiObj } from '@/entities/kanji';
 
 const normalize = (value: string): string =>
-  value.trim().normalize('NFC').toLowerCase();
+  value.trim().normalize('NFC').toLowerCase().replace(/^to\s+/, '');
 
 const normalizeReading = (value: string): string =>
   normalize(value.split(' ')[0] ?? '');
