@@ -1,0 +1,1 @@
+{"query":"query { repository(owner: \"lingdojo\", name: \"kana-dojo\") { nameWithOwner id } }"}

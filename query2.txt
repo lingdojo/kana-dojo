@@ -1,0 +1,1 @@
+{"query":"mutation { createPullRequest(input: { repositoryId: \"R_kgDOOwslnw\", baseRefName: \"main\", headRefName: \"issues/26363-anime-quote-125\", headRepositoryId: \"R_kgDOTc1IRA\", title: \"content: add new anime quote\", body: \"Closes #26363\" }) { pullRequest { url number } } }"}
