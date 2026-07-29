@@ -221,7 +221,7 @@ export default function AboutPage() {
         href='https://github.com/lingdojo/kanadojo'
         target='_blank'
         rel='noopener noreferrer'
-        className='mb-12 inline-flex items-center gap-2 rounded-lg bg-(--main-color) px-6 py-3 font-semibold text-white transition-opacity hover:opacity-90'
+        className='mb-12 inline-flex items-center gap-2 rounded-lg bg-(--main-color) px-6 py-3 font-semibold text-(--background-color) transition-opacity hover:opacity-90'
       >
         View on GitHub →
       </a>
@@ -260,4 +260,3 @@ export default function AboutPage() {
     </LegalLayout>
   );
 }
-

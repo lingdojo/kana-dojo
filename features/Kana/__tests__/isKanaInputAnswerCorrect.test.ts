@@ -27,6 +27,18 @@ describe('isKanaInputAnswerCorrect', () => {
     ).toBe(true);
   });
 
+  it('compares primary romaji case-insensitively after Unicode normalization', () => {
+    expect(
+      isKanaInputAnswerCorrect({
+        inputValue: 'o\u0304',
+        correctChar: 'お',
+        targetChar: 'Ō',
+        isReverse: false,
+        altRomanjiMap,
+      }),
+    ).toBe(true);
+  });
+
   it('accepts alternative romaji in normal mode', () => {
     expect(
       isKanaInputAnswerCorrect({
@@ -93,5 +105,130 @@ describe('isKanaInputAnswerCorrect', () => {
         altRomanjiMap,
       }),
     ).toBe(false);
+  });
+
+  it('accepts canonically equivalent kana in reverse mode', () => {
+    expect(
+      isKanaInputAnswerCorrect({
+        inputValue: 'か\u3099',
+        correctChar: 'ga',
+        targetChar: 'が',
+        isReverse: true,
+        altRomanjiMap,
+      }),
+    ).toBe(true);
+  });
+
+  it('accepts primary romaji for a multi-character prompt', () => {
+    // prompt: しぶ → primary answer: shibu
+    expect(
+      isKanaInputAnswerCorrect({
+        inputValue: 'shibu',
+        correctChar: 'しぶ',
+        targetChar: 'shibu',
+        isReverse: false,
+        altRomanjiMap,
+        promptParts: ['し', 'ぶ'],
+        answerParts: ['shi', 'bu'],
+      }),
+    ).toBe(true);
+  });
+
+  it('accepts alternative romaji for a multi-character prompt', () => {
+    // し has alt 'si', so 'sibu' should be accepted for prompt しぶ
+    expect(
+      isKanaInputAnswerCorrect({
+        inputValue: 'sibu',
+        correctChar: 'しぶ',
+        targetChar: 'shibu',
+        isReverse: false,
+        altRomanjiMap,
+        promptParts: ['し', 'ぶ'],
+        answerParts: ['shi', 'bu'],
+      }),
+    ).toBe(true);
+  });
+
+  it('accepts alternatives at multiple positions in a three-part prompt', () => {
+    expect(
+      isKanaInputAnswerCorrect({
+        inputValue: ' SIHUTI ',
+        correctChar: 'しふち',
+        targetChar: 'shifuchi',
+        isReverse: false,
+        altRomanjiMap,
+        promptParts: ['し', 'ふ', 'ち'],
+        answerParts: ['shi', 'fu', 'chi'],
+      }),
+    ).toBe(true);
+  });
+
+  it('accepts alternative romaji for multi-character katakana prompts', () => {
+    expect(
+      isKanaInputAnswerCorrect({
+        inputValue: 'situ',
+        correctChar: 'シツ',
+        targetChar: 'shitsu',
+        isReverse: false,
+        altRomanjiMap,
+        promptParts: ['シ', 'ツ'],
+        answerParts: ['shi', 'tsu'],
+      }),
+    ).toBe(true);
+  });
+
+  it('keeps reverse multi-character matching exact and normalized', () => {
+    expect(
+      isKanaInputAnswerCorrect({
+        inputValue: ' シツ ',
+        correctChar: 'shitsu',
+        targetChar: 'シツ',
+        isReverse: true,
+        altRomanjiMap,
+        promptParts: ['shi', 'tsu'],
+        answerParts: ['シ', 'ツ'],
+      }),
+    ).toBe(true);
+
+    expect(
+      isKanaInputAnswerCorrect({
+        inputValue: 'しつ',
+        correctChar: 'shitsu',
+        targetChar: 'シツ',
+        isReverse: true,
+        altRomanjiMap,
+        promptParts: ['shi', 'tsu'],
+        answerParts: ['シ', 'ツ'],
+      }),
+    ).toBe(false);
+  });
+
+  it('rejects incorrect romaji for a multi-character prompt', () => {
+    expect(
+      isKanaInputAnswerCorrect({
+        inputValue: 'subu',
+        correctChar: 'しぶ',
+        targetChar: 'shibu',
+        isReverse: false,
+        altRomanjiMap,
+        promptParts: ['し', 'ぶ'],
+        answerParts: ['shi', 'bu'],
+      }),
+    ).toBe(false);
+  });
+
+  it('falls back to legacy lookup when promptParts/answerParts lengths differ', () => {
+    // Mismatched lengths should not crash; falls back to correctChar key lookup
+    expect(
+      isKanaInputAnswerCorrect({
+        inputValue: 'si',
+        correctChar: 'し',
+        targetChar: 'shi',
+        isReverse: false,
+        altRomanjiMap,
+        promptParts: ['し', 'ぶ'],
+        answerParts: ['shi'], // intentionally mismatched
+      }),
+    ).toBe(true); // resolved via legacy fallback: altRomanjiMap.get('し') = ['si']
   });
 });

@@ -96,7 +96,7 @@
     "english": "Time is money",
     "meaning": "Time is valuable and should not be wasted",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 12,
@@ -132,7 +132,7 @@
     "english": "Three people together have the wisdom of Monju",
     "meaning": "Two heads are better than one",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 16,
@@ -303,7 +303,7 @@
     "english": "Even Kobo makes mistakes with his brush",
     "meaning": "Even masters make mistakes",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 35,
@@ -312,7 +312,7 @@
     "english": "A bee on a crying face",
     "meaning": "Misfortune never comes alone",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 36,
@@ -321,7 +321,7 @@
     "english": "The mouth is the source of disaster",
     "meaning": "Careless speech can cause trouble",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 37,
@@ -329,7 +329,7 @@
     "romaji": "Deru kugi wa utareru",
     "english": "The nail that sticks out gets hammered down",
     "meaning": "Those who stand out may be criticized",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -402,7 +402,7 @@
     "english": "Tap a stone bridge before crossing",
     "meaning": "Be very cautious",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 46,
@@ -483,7 +483,7 @@
     "english": "The neighbor's flowers are red",
     "meaning": "The grass is always greener on the other side",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 55,
@@ -627,7 +627,7 @@
     "english": "One cry of the crane",
     "meaning": "A single influential person settles a matter",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 71,
@@ -636,7 +636,7 @@
     "english": "An iron club to an ogre",
     "meaning": "Making someone strong even stronger",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 72,
@@ -654,7 +654,7 @@
     "english": "Do laundry while the ogre is away",
     "meaning": "Take advantage of someone's absence",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 74,
@@ -672,7 +672,7 @@
     "english": "Three years on a stone",
     "meaning": "Perseverance will be rewarded",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 76,
@@ -735,7 +735,7 @@
     "english": "Well-side conference",
     "meaning": "Neighborhood gossip",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 83,
@@ -744,7 +744,7 @@
     "english": "Dried bonito to a cat",
     "meaning": "Leave temptation unattended at your own risk",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 84,
@@ -798,7 +798,7 @@
     "english": "Watch others and correct yourself",
     "meaning": "Learn from others' behavior",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 90,
@@ -816,7 +816,7 @@
     "english": "After the rain, the ground hardens",
     "meaning": "Hard times make relationships stronger",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 92,
@@ -852,7 +852,7 @@
     "english": "Sometimes losing is winning",
     "meaning": "Conceding can be the best outcome",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 96,
@@ -879,7 +879,7 @@
     "english": "A rice cake falls from the shelf",
     "meaning": "Unexpected good luck",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 99,
@@ -888,7 +888,7 @@
     "english": "The nail that sticks out gets hammered down",
     "meaning": "Standing out invites criticism",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 100,
@@ -906,7 +906,7 @@
     "english": "Early rising is worth three coins",
     "meaning": "Getting up early brings benefits",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 102,
@@ -960,7 +960,7 @@
     "english": "The moon and a turtle",
     "meaning": "Vastly different; not comparable",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 108,
@@ -1086,7 +1086,7 @@
     "english": "Fall seven times, get up eight",
     "meaning": "Never give up",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 122,
@@ -1095,7 +1095,7 @@
     "english": "Good medicine tastes bitter",
     "meaning": "Helpful advice can be harsh",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 123,
@@ -1176,7 +1176,7 @@
     "english": "Three years on a stone",
     "meaning": "Perseverance brings results",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 132,
@@ -1194,7 +1194,7 @@
     "english": "A three-day monk",
     "meaning": "Someone who quits quickly",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 134,
@@ -1212,7 +1212,7 @@
     "english": "The mouth is the source of misfortune",
     "meaning": "Careless words cause trouble",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 136,
@@ -1230,7 +1230,7 @@
     "english": "One stone, two birds",
     "meaning": "Do two things with one action",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 138,
@@ -1275,7 +1275,7 @@
     "english": "Not knowing is Buddha",
     "meaning": "Ignorance is bliss",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 143,
@@ -1320,7 +1320,7 @@
     "english": "What happens twice will happen a third time",
     "meaning": "Patterns tend to repeat",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 148,
@@ -1383,7 +1383,7 @@
     "english": "A bee on a crying face",
     "meaning": "Misfortune piles up",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 155,
@@ -1437,7 +1437,7 @@
     "english": "Tap a stone bridge before crossing",
     "meaning": "Be very cautious",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 161,
@@ -1572,7 +1572,7 @@
     "english": "Among flowers, cherry blossoms; among men, warriors",
     "meaning": "The best of each kind",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 176,
@@ -1589,7 +1589,7 @@
     "romaji": "Toudai moto kurashi",
     "english": "It’s darkest under the lighthouse",
     "meaning": "The obvious is overlooked",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {

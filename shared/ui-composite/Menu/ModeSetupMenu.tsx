@@ -18,7 +18,7 @@ import {
 } from 'lucide-react';
 import clsx from 'clsx';
 import { useClick } from '@/shared/hooks/generic/useAudio';
-import { Link, useRouter } from '@/core/i18n/routing';
+import { useRouter } from '@/core/i18n/routing';
 import useGauntletSettingsStore from '@/shared/store/useGauntletSettingsStore';
 import {
   DIFFICULTY_CONFIG,
@@ -28,6 +28,7 @@ import {
 import { SelectedLevelsCard } from '@/shared/ui-composite/Menu/SelectedLevelsCard';
 
 import { ActionButton } from '@/shared/ui/components/ActionButton';
+import TransitionAdvertisementOverlay from '@/shared/ui-composite/Game/TransitionAdvertisementOverlay';
 
 const Decorations = lazy(() => import('@/shared/ui-composite/Decorations/Decorations'));
 
@@ -87,6 +88,9 @@ const ModeSetupMenu = ({
   const [gauntletDifficulty, setGauntletDifficulty] =
     useState<GauntletDifficulty>('normal');
   const [gauntletRepetitions, setGauntletRepetitions] = useState<number>(10);
+  const [pendingStartRoute, setPendingStartRoute] = useState<string | null>(
+    null,
+  );
 
   const persistDuration = useCallback(
     (duration: number) => {
@@ -173,6 +177,33 @@ const ModeSetupMenu = ({
     setGauntletRepetitions(gauntletSettings.getRepetitions(dojoType));
   }, [isOpen, mode, dojoType, gauntletSettings, setSelectedGameMode]);
 
+  const getTrainingRoute = useCallback(
+    () =>
+      mode === 'blitz'
+        ? `/${currentDojo}/blitz`
+        : mode === 'gauntlet'
+          ? `/${currentDojo}/gauntlet`
+          : `/${currentDojo}/train`,
+    [currentDojo, mode],
+  );
+
+  const handleStartTraining = useCallback(() => {
+    if (!selectedGameMode) return;
+
+    playClick();
+    if (mode === 'blitz') {
+      persistDuration(challengeDuration);
+    }
+    setPendingStartRoute(getTrainingRoute());
+  }, [
+    challengeDuration,
+    getTrainingRoute,
+    mode,
+    persistDuration,
+    playClick,
+    selectedGameMode,
+  ]);
+
   // Keyboard shortcuts: Escape to close, Enter to start training
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -180,17 +211,7 @@ const ModeSetupMenu = ({
         onClose();
       }
       if (e.key === 'Enter' && selectedGameMode) {
-        playClick();
-        if (mode === 'blitz') {
-          persistDuration(challengeDuration);
-        }
-        const route =
-          mode === 'blitz'
-            ? `/${currentDojo}/blitz`
-            : mode === 'gauntlet'
-              ? `/${currentDojo}/gauntlet`
-              : `/${currentDojo}/train`;
-        router.push(route);
+        handleStartTraining();
       }
     };
 
@@ -207,12 +228,7 @@ const ModeSetupMenu = ({
     isOpen,
     onClose,
     selectedGameMode,
-    currentDojo,
-    playClick,
-    router,
-    mode,
-    challengeDuration,
-    persistDuration,
+    handleStartTraining,
   ]);
 
   const gameModes: GameModeOption[] = [
@@ -460,28 +476,10 @@ const ModeSetupMenu = ({
             </button>
 
             {/* Start Button */}
-            <Link
-              href={
-                mode === 'blitz'
-                  ? `/${currentDojo}/blitz`
-                  : mode === 'gauntlet'
-                    ? `/${currentDojo}/gauntlet`
-                    : `/${currentDojo}/train`
-              }
-              className='w-1/2'
-              onClick={e => {
-                if (!selectedGameMode) {
-                  e.preventDefault();
-                  return;
-                }
-                playClick();
-                if (mode === 'blitz') {
-                  persistDuration(challengeDuration);
-                }
-              }}
-            >
+            <div className='w-1/2'>
               <button
                 disabled={!selectedGameMode}
+                onClick={handleStartTraining}
                 className={clsx(
                   'flex w-full flex-row items-center justify-center gap-2 px-2 py-3 sm:px-6',
                   'rounded-3xl transition-colors duration-200',
@@ -504,11 +502,19 @@ const ModeSetupMenu = ({
                       : 'Go'}
                 </span>
               </button>
-            </Link>
+            </div>
             </div>
           </div>
         </div>
       </div>
+      <TransitionAdvertisementOverlay
+        isOpen={pendingStartRoute !== null}
+        onDismiss={() => {
+          if (!pendingStartRoute) return;
+          router.push(pendingStartRoute);
+          setPendingStartRoute(null);
+        }}
+      />
     </div>
   );
 };

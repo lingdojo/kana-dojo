@@ -30,6 +30,12 @@ const Behavior = () => {
   const setFuriganaEnabled = usePreferencesStore(
     state => state.setFuriganaEnabled,
   );
+  const showExperimentalModes = usePreferencesStore(
+    state => state.showExperimentalModes,
+  );
+  const setShowExperimentalModes = usePreferencesStore(
+    state => state.setShowExperimentalModes,
+  );
 
   // Unused but kept for future TTS voice panel
   const {
@@ -164,6 +170,22 @@ const Behavior = () => {
           ),
           selectedWhen: false,
           onClick: () => setPronunciationAutoPlay(false),
+        },
+      ],
+    },
+    {
+      label: 'Enable extra game modes (Blitz + Gauntlet):',
+      value: showExperimentalModes,
+      choices: [
+        {
+          label: <span>on</span>,
+          selectedWhen: true,
+          onClick: () => setShowExperimentalModes(true),
+        },
+        {
+          label: <span>off</span>,
+          selectedWhen: false,
+          onClick: () => setShowExperimentalModes(false),
         },
       ],
     },
