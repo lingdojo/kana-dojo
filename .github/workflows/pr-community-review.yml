@@ -75,7 +75,6 @@ jobs:
           path: pr-head
           fetch-depth: 1
           persist-credentials: false
-          allow-unsafe-pr-checkout: true
 
       - name: Validate and process contribution
         uses: actions/github-script@v7

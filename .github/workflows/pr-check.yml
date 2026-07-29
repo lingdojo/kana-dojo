@@ -154,7 +154,7 @@ jobs:
         if: steps.pr_state.outputs.should_run == 'true' && steps.community_only.outputs.is_community_only != 'true'
         uses: actions/setup-node@v4
         with:
-          node-version: '24'
+          node-version: '20'
           cache: 'npm'
 
       - name: Install dependencies
