@@ -408,15 +408,27 @@
     "meaning": "Misfortune never comes alone"
   },
   {
-  "japanese": "十人十色",
-  "romaji": "Juunin toiro",
-  "english": "Ten people, ten colors",
-  "meaning": "Different strokes for different folks"
+    "japanese": "十人十色",
+    "romaji": "Juunin toiro",
+    "english": "Ten people, ten colors",
+    "meaning": "Different strokes for different folks"
   },
   {
-  "japanese": "虎穴に入らずんば虎子を得ず",
-  "romaji": "Koketsu ni irazunba koji wo ezu",
-  "english": "If you don't enter the tiger's den, you can't get the cub",
-  "meaning": "Nothing ventured, nothing gained"
+    "japanese": "虎穴に入らずんば虎子を得ず",
+    "romaji": "Koketsu ni irazunba koji wo ezu",
+    "english": "If you don't enter the tiger's den, you can't get the cub",
+    "meaning": "Nothing ventured, nothing gained"
+  },
+  {
+    "japanese": "雨降って地固まる",
+    "romaji": "Ame futte ji katamaru",
+    "english": "After the rain, the ground hardens",
+    "meaning": "Hard times build resilience"
+  },
+  {
+    "japanese": "針の穴から天を覗く",
+    "romaji": "Hari no ana kara ten wo nozoku",
+    "english": "Peek at the sky through a needle's eye",
+    "meaning": "A narrow viewpoint leads to poor judgment"
   }
 ]
