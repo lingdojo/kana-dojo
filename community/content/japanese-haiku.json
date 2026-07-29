@@ -115,5 +115,16 @@
   "season": "Autumn",
   "kigo": "Persimmon (kaki)",
   "notes": "A quintessential autumn haiku contrasting the everyday act of eating fruit with the timeless ringing of a temple bell."
+},
+  {
+  "japanese": "秋深き
+隣は何を
+する人ぞ",
+  "romaji": "Aki fukaki / tonari wa nani o / suru hito zo",
+  "english": "In deep autumn, what kind of person lives next door?",
+  "poet": "Matsuo Basho",
+  "season": "Autumn",
+  "kigo": "Deep autumn (aki fukaki)",
+  "notes": "Evokes solitude and curiosity."
 }
 ]
