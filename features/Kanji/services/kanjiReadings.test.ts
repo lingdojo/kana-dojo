@@ -14,6 +14,18 @@ const kanjiByLevel = {
   n5: n5Kanji,
 } satisfies Record<string, IKanjiObj[]>;
 
+/**
+ * Mirrors the extractKanaFromReading helper in FuriganaText.tsx.
+ * Kept in sync manually — if the production implementation changes,
+ * update this copy too so the tests remain meaningful.
+ */
+const extractKanaFromReading = (reading: string): string => {
+  if (!reading) return reading;
+  const spaceIndex = reading.indexOf(' ');
+  if (spaceIndex !== -1) return reading.slice(spaceIndex + 1).trim();
+  return reading;
+};
+
 describe('kanji readings data', () => {
   it('keeps alternate readings as separate array entries', () => {
     const combinedReadingPattern =
@@ -30,4 +42,24 @@ describe('kanji readings data', () => {
 
     expect(combinedReadings).toEqual([]);
   });
+
+  // Regression test for issue #24304: 男 (otoko) was displayed with wrong reading
+  it('男 (otoko) has correct kunyomi reading in N5 data', () => {
+    const otoko = (n5Kanji as IKanjiObj[]).find(k => k.kanjiChar === '男');
+    expect(otoko).toBeDefined();
+    expect(otoko?.kunyomi[0]).toBe('otoko おとこ');
+    // extractKanaFromReading must return only the kana part, not the romaji prefix
+    expect(extractKanaFromReading(otoko!.kunyomi[0])).toBe('おとこ');
+  });
+
+  it('extractKanaFromReading strips romaji prefix from readings', () => {
+    expect(extractKanaFromReading('otoko おとこ')).toBe('おとこ');
+    expect(extractKanaFromReading('dan ダン')).toBe('ダン');
+    expect(extractKanaFromReading('watakushi わたくし')).toBe('わたくし');
+    // Kana-only entries should be returned unchanged
+    expect(extractKanaFromReading('おとこ')).toBe('おとこ');
+    // Empty string guard
+    expect(extractKanaFromReading('')).toBe('');
+  });
 });
+
