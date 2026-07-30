@@ -1,5 +1,11 @@
 [
   {
+  id: "sakurajima-ash",
+  backgroundColor: "oklch(22.0% 0.025 270.0 / 1",
+  mainColor: "oklch(65.0% 0.170 25.0 / 1)",
+  secondaryColor: "oklch(58.0% 0.055 260.0 / 1)"
+ },
+  {
   id: "tangerine-fizz",
   backgroundColor: "oklch(94.0% 0.015 80.0 / 1)",
   mainColor: "oklch(70.0% 0.195 55.0 / 1)",
