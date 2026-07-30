@@ -212,9 +212,35 @@ const KanaTilesMode = ({
     const distractorSource = isReverse ? selectedKana : selectedRomaji;
     const distractors: string[] = [];
     const usedAnswers = new Set(answerChars);
+
+    const markIdenticalTwins = (char: string, set: Set<string> | string[]) => {
+      const add = (c: string) => {
+        if (set instanceof Set) set.add(c);
+        else if (!set.includes(c)) set.push(c);
+      };
+      if (char === 'へ') add('ヘ');
+      if (char === 'ヘ') add('へ');
+      if (char === 'べ') add('ベ');
+      if (char === 'ベ') add('べ');
+      if (char === 'ぺ') add('ペ');
+      if (char === 'ペ') add('ぺ');
+    };
+
+    answerChars.forEach(c => markIdenticalTwins(c, usedAnswers));
+
     for (let i = 0; i < distractorCount; i++) {
       const available = distractorSource.filter(
-        c => !usedAnswers.has(c) && !distractors.includes(c),
+        c => {
+          if (usedAnswers.has(c) || distractors.includes(c)) return false;
+          // Check if identical twin is already in distractors
+          if (c === 'へ' && distractors.includes('ヘ')) return false;
+          if (c === 'ヘ' && distractors.includes('へ')) return false;
+          if (c === 'べ' && distractors.includes('ベ')) return false;
+          if (c === 'ベ' && distractors.includes('べ')) return false;
+          if (c === 'ぺ' && distractors.includes('ペ')) return false;
+          if (c === 'ペ' && distractors.includes('ぺ')) return false;
+          return true;
+        }
       );
       if (available.length === 0) break;
       const selected = available[random.integer(0, available.length - 1)];

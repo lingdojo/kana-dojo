@@ -54,7 +54,20 @@ export const isKanaInputAnswerCorrect = ({
 
   if (isReverse) {
     // Reverse mode: user types the kana character itself.
-    return normalizedInput === targetChar.normalize('NFC');
+    // Replace identical-looking Katakana with Hiragana to prevent quiz hanging
+    // when users type one but the target is the other (e.g. へ / ヘ, べ / ベ, ぺ / ペ)
+    const inputForComparison = normalizedInput
+      .replace(/ヘ/g, 'へ')
+      .replace(/ベ/g, 'べ')
+      .replace(/ペ/g, 'ぺ');
+
+    const targetForComparison = targetChar
+      .normalize('NFC')
+      .replace(/ヘ/g, 'へ')
+      .replace(/ベ/g, 'べ')
+      .replace(/ペ/g, 'ぺ');
+
+    return inputForComparison === targetForComparison;
   }
 
   // Normal mode: user types romaji. Compare case- and Unicode-insensitively.
