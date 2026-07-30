@@ -1,15 +1,15 @@
 [
   {
-  "id": "tangerine-fizz",
-  "backgroundColor": "oklch(94.0% 0.015 80.0 / 1)",
-  "mainColor": "oklch(70.0% 0.195 55.0 / 1)",
-  "secondaryColor": "oklch(80.0% 0.125 95.0 / 1)"
-},
+    "id": "tangerine-fizz",
+    "backgroundColor": "oklch(94.0% 0.015 80.0 / 1)",
+    "mainColor": "oklch(70.0% 0.195 55.0 / 1)",
+    "secondaryColor": "oklch(80.0% 0.125 95.0 / 1)"
+  },
   {
-  "id": "autumn-maple",
-  "backgroundColor": "oklch(21.0% 0.052 30.0 / 1)",
-  "mainColor": "oklch(72.0% 0.200 35.0 / 1)",
-  "secondaryColor": "oklch(80.0% 0.165 60.0 / 1)"
+    "id": "autumn-maple",
+    "backgroundColor": "oklch(21.0% 0.052 30.0 / 1)",
+    "mainColor": "oklch(72.0% 0.200 35.0 / 1)",
+    "secondaryColor": "oklch(80.0% 0.165 60.0 / 1)"
   },
   {
     "id": "harbor-lights",
@@ -354,17 +354,17 @@
     "secondaryColor": "oklch(72.0% 0.165 25.0 / 1)"
   },
   {
-  "id": "ramen-shop",
-  "backgroundColor": "oklch(94.0% 0.025 85.0 / 1)",
-  "mainColor": "oklch(60.0% 0.195 25.0 / 1)",
-  "secondaryColor": "oklch(88.0% 0.145 90.0 / 1)"
+    "id": "ramen-shop",
+    "backgroundColor": "oklch(94.0% 0.025 85.0 / 1)",
+    "mainColor": "oklch(60.0% 0.195 25.0 / 1)",
+    "secondaryColor": "oklch(88.0% 0.145 90.0 / 1)"
   },
   {
-  "id": "umami-miso",
-  "backgroundColor": "oklch(22.0% 0.028 55.0 / 1)",
-  "mainColor": "oklch(72.0% 0.095 65.0 / 1)",
-  "secondaryColor": "oklch(60.0% 0.125 30.0 / 1)"
-},
+    "id": "umami-miso",
+    "backgroundColor": "oklch(22.0% 0.028 55.0 / 1)",
+    "mainColor": "oklch(72.0% 0.095 65.0 / 1)",
+    "secondaryColor": "oklch(60.0% 0.125 30.0 / 1)"
+  },
   {
     "id": "matcha-foam",
     "backgroundColor": "oklch(92.0% 0.020 140.0 / 1)",
@@ -376,5 +376,11 @@
     "backgroundColor": "oklch(22.0% 0.030 150.0 / 1)",
     "mainColor": "oklch(78.0% 0.135 145.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.090 110.0 / 1)"
+  },
+  {
+    "id": "koi-sunrise",
+    "backgroundColor": "oklch(20.0% 0.035 35.0 / 1)",
+    "mainColor": "oklch(80.0% 0.170 45.0 / 1)",
+    "secondaryColor": "oklch(78.0% 0.095 140.0 / 1)"
   }
 ]
