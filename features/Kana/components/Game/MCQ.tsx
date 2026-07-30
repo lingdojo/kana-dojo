@@ -131,6 +131,8 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
 
   const kanaGroupIndices = useKanaStore(state => state.kanaGroupIndices);
 
+  const isProcessingRef = useRef(false);
+
   const selectedKana = useMemo(
     () => kanaGroupIndices.map(i => kana[i].kana).flat(),
     [kanaGroupIndices],
@@ -279,6 +281,10 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
     getIncorrectOptions,
   ]);
 
+  useEffect(() => {
+    isProcessingRef.current = false;
+  }, [correctKanaChar, correctRomajiCharReverse, wrongSelectedAnswers]);
+
   const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
   useEffect(() => {
@@ -422,6 +428,9 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
 
   const handleOptionClick = useCallback(
     (selectedChar: string) => {
+      if (isProcessingRef.current) return;
+      isProcessingRef.current = true;
+
       if (!isReverse) {
         // Normal pick mode logic
         if (selectedChar === correctRomajiChar) {

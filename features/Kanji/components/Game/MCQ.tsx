@@ -163,6 +163,8 @@ const KanjiMCQ = ({ selectedKanjiObjs, isHidden }: KanjiMCQProps) => {
     correctKanjiObj as IKanjiObj,
   );
 
+  const isProcessingRef = useRef(false);
+
   // What to display as the question
   const displayChar = isReverse ? correctKanjiObj?.meanings[0] : correctChar;
 
@@ -210,6 +212,7 @@ const KanjiMCQ = ({ selectedKanjiObjs, isHidden }: KanjiMCQProps) => {
 
   // Update shuffled options when correctChar or isReverse changes
   useEffect(() => {
+    isProcessingRef.current = false;
     setShuffledOptions(
       [targetChar, ...getIncorrectOptions()].sort(
         () => random.real(0, 1) - 0.5,
@@ -217,6 +220,13 @@ const KanjiMCQ = ({ selectedKanjiObjs, isHidden }: KanjiMCQProps) => {
     );
     setWrongSelectedAnswers([]);
   }, [correctChar, isReverse]);
+
+  // A wrong answer keeps the current prompt on screen. Release the synchronous
+  // event lock only after its disabled-button state has committed, so another
+  // available option can be selected without accepting duplicate rapid input.
+  useEffect(() => {
+    isProcessingRef.current = false;
+  }, [wrongSelectedAnswers]);
 
   const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
@@ -241,6 +251,9 @@ const KanjiMCQ = ({ selectedKanjiObjs, isHidden }: KanjiMCQProps) => {
 
   // Handle tiles mode correct answer
   const handleOptionClick = (selectedOption: string) => {
+    if (isProcessingRef.current) return;
+    isProcessingRef.current = true;
+
     if (selectedOption === targetChar) {
       setDisplayAnswerSummary(true);
       handleCorrectAnswer();
