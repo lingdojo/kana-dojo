@@ -354,4 +354,10 @@ export const kana: KanaGroup[] = [
     romanji: ['ku', 'ke', 'ta'],
     groupName: 'challenge.katakana.kuketa',
   },
+  {
+    // タ (ta) vs テ (te) — commonly confused by beginners (see issue #24283)
+    kana: ['タ', 'テ'],
+    romanji: ['ta', 'te'],
+    groupName: 'challenge.katakana.tate',
+  },
 ];
