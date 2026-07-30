@@ -17,9 +17,9 @@ export const isKanaGameAnswerCorrect = (
   isReverse: boolean | undefined,
 ): boolean => {
   if (isReverse) {
-    return answer.trim() === question.kana;
+    return answer.replace(/\s+/g, '') === question.kana;
   }
-  const normalized = answer.trim().toLowerCase();
+  const normalized = answer.replace(/\s+/g, '').toLowerCase();
   return (
     normalized === question.romaji.toLowerCase() ||
     question.altRomanji.some(alt => normalized === alt.toLowerCase())
