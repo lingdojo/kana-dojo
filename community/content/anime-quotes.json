@@ -525,7 +525,7 @@
     "character": "Yoshikage Kira"
   },
 
-{
+  {
     "japanese": "俺はガンダムだ！",
     "romaji": "Ore wa Gandamu da!",
     "english": "I am Gundam!(alt wording 25) (alt wording 77)",
@@ -538,5 +538,12 @@
     "english": "But I refuse. (alt wording 4)",
     "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
     "character": "Rohan Kishibe"
+  },
+  {
+    "japanese": "だが…それがいい。",
+    "romaji": "Daga... sore ga ii.",
+    "english": "But... that's what I like. (alt wording 16)",
+    "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
+    "character": "Yoshikage Kira"
   }
 ]
