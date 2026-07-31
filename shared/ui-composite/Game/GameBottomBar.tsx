@@ -53,7 +53,10 @@ export const GameBottomBar = ({
   // When hideRetry is true, treat wrong state like check state for button display
   const showRetryButton = isWrong && !hideRetry;
   const showNextButton =
-    actionLabel === 'next' || showContinue || (isWrong && hideRetry);
+    actionLabel === 'next' ||
+    actionLabel === 'skip' ||
+    showContinue ||
+    (isWrong && hideRetry);
 
   // Default titles if not provided
   const defaultTitle = isCorrect
@@ -209,7 +212,7 @@ export const GameBottomBar = ({
                 !showRetryButton &&
                 'cursor-default opacity-60',
               (canCheck || showNextButton) &&
-                'animate-float [--float-distance:-2.5px]',
+                'animate-float [--float-distance:-2px]',
             )}
             onClick={onAction}
           >
