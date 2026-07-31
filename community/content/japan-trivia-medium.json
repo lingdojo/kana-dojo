@@ -822,7 +822,30 @@
       "Sendai"
     ],
     "correctIndex": 0
-  },
+},
+  {
+  "question": "Which Japanese beverage is made from roasted barley?",
+  "difficulty": "medium",
+  "answers": [
+    "Mugicha",
+    "Matcha",
+    "Genmaicha",
+    "Sencha"
+  ],
+  "correctIndex": 0
+},
+  {
+  "question": "What is the traditional Japanese tea ceremony called? (Community variation 19)",
+  "difficulty": "medium",
+  "answers": [
+    "Sado",
+    "Judo",
+    "Kendo",
+    "Shodo"
+  ],
+  "correctIndex": 0
+}
+  ,
   {
     "question": "Which Japanese city is famous for its snow festival featuring ice sculptures?",
     "difficulty": "medium",
@@ -833,49 +856,6 @@
       "Okayama"
     ],
     "correctIndex": 0
-  },
-  {
-    "question": "Which Japanese festival features people throwing beans to drive away evil spirits?",
-    "difficulty": "medium",
-    "answers": [
-      "Setsubun",
-      "Obon",
-      "Tanabata",
-      "Shichi-Go-San"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "question": "Which region is famous for green tea production in Japan?",
-    "difficulty": "medium",
-    "answers": [
-      "Shizuoka",
-      "Okinawa",
-      "Tohoku",
-      "Hokuriku"
-    ],
-    "correctIndex": 0
-  },
-  {
-  "question": "What is the Japanese term for a traditional paper umbrella?",
-  "difficulty": "medium",
-  "answers": [
-    "Wagasa",
-    "Sensu",
-    "Uchiwa",
-    "Furoshiki"
-  ],
-  "correctIndex": 0
-},
-  {
-  "question": "Which Japanese city is famous for the Gion Matsuri festival?",
-  "difficulty": "medium",
-  "answers": [
-    "Kyoto",
-    "Nagoya",
-    "Hiroshima",
-    "Sendai"
-  ],
-  "correctIndex": 0
-}
+  }
 ]
+

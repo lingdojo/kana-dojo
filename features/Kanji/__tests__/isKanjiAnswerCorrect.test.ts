@@ -14,6 +14,26 @@ describe('isKanjiAnswerCorrect', () => {
     expect(isKanjiAnswerCorrect(kanji, ' china ', false)).toBe(true);
   });
 
+  it.each(['speak', 'Speak', 'to speak', '  TO   SPEAK  '])(
+    'accepts optional infinitive prefix in meaning answer %s',
+    answer => {
+      const verb = { ...kanji, meanings: ['to speak'] };
+
+      expect(isKanjiAnswerCorrect(verb, answer, false)).toBe(true);
+    },
+  );
+
+  it('does not remove an infinitive prefix from reverse answers', () => {
+    const prefixedReading = {
+      ...kanji,
+      kanjiChar: 'to speak',
+      kunyomi: [],
+      onyomi: [],
+    };
+
+    expect(isKanjiAnswerCorrect(prefixedReading, 'speak', true)).toBe(false);
+  });
+
   it.each([' 漢 ', ' から ', ' カン '])(
     'normalizes reverse answer %s',
     answer => {

@@ -134,6 +134,21 @@ describe('isKanaInputAnswerCorrect', () => {
     ).toBe(true);
   });
 
+  it('accepts whitespace-separated romaji for a multi-character prompt', () => {
+    // Classic Input should accept the natural "chi te" entry for ちて.
+    expect(
+      isKanaInputAnswerCorrect({
+        inputValue: 'chi te',
+        correctChar: 'ちて',
+        targetChar: 'chite',
+        isReverse: false,
+        altRomanjiMap,
+        promptParts: ['ち', 'て'],
+        answerParts: ['chi', 'te'],
+      }),
+    ).toBe(true);
+  });
+
   it('accepts alternative romaji for a multi-character prompt', () => {
     // し has alt 'si', so 'sibu' should be accepted for prompt しぶ
     expect(
@@ -201,6 +216,18 @@ describe('isKanaInputAnswerCorrect', () => {
         answerParts: ['シ', 'ツ'],
       }),
     ).toBe(false);
+  });
+
+  it('accepts whitespace between kana in reverse mode', () => {
+    expect(
+      isKanaInputAnswerCorrect({
+        inputValue: 'シ ツ',
+        correctChar: 'shitsu',
+        targetChar: 'シツ',
+        isReverse: true,
+        altRomanjiMap,
+      }),
+    ).toBe(true);
   });
 
   it('rejects incorrect romaji for a multi-character prompt', () => {

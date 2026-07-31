@@ -28,7 +28,9 @@ import GlobalAudioController from '@/shared/ui-composite/layout/GlobalAudioContr
 import { useClick } from '@/shared/hooks/generic/useAudio';
 import ServiceWorkerRegistration from '@/shared/ui-composite/ServiceWorkerRegistration';
 import VisualEffectsRenderer from '@/features/Preferences/components/renderers/VisualEffectsRenderer';
-import TransitionAdvertisementOverlay from '@/shared/ui-composite/Game/TransitionAdvertisementOverlay';
+import TransitionAdvertisementOverlay, {
+  isTransitionAdvertisementEnabled,
+} from '@/shared/ui-composite/Game/TransitionAdvertisementOverlay';
 
 // Initialize adaptive selector early to load persisted weights from IndexedDB
 // This runs once at module load time, ensuring weights are ready before games start
@@ -125,7 +127,8 @@ export default function ClientLayout({
     if (
       previousPathname &&
       isTrainingRoute(previousPathname) &&
-      isDojoMenuRoute(pathname)
+      isDojoMenuRoute(pathname) &&
+      isTransitionAdvertisementEnabled('after')
     ) {
       showAdvertisementTimer = setTimeout(() => {
         setIsTransitionAdvertisementOpen(true);
@@ -351,6 +354,7 @@ export default function ClientLayout({
       {children}
       <TransitionAdvertisementOverlay
         isOpen={isTransitionAdvertisementOpen}
+        placement='after'
         onDismiss={() => setIsTransitionAdvertisementOpen(false)}
       />
       <ScrollRestoration />

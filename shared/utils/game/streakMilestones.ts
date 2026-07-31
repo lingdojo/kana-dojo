@@ -1,8 +1,9 @@
 export const STREAK_MILESTONES = [
   10, 25, 50, 75, 100, 125, 150, 175, 200, 225, 250,
 ] as const;
-export const ENABLE_EVERY_QUESTION_AD_OVERLAY = true;
-export const QUESTIONS_PER_AD_OVERLAY = 15;
+// Temporarily disabled while repeated ad mounts and browser memory are audited.
+export const ENABLE_EVERY_QUESTION_AD_OVERLAY = false;
+export const QUESTIONS_PER_AD_OVERLAY = 50;
 
 export type StreakMilestone = (typeof STREAK_MILESTONES)[number];
 

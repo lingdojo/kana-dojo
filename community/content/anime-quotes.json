@@ -1,10 +1,10 @@
 [
   {
-  "japanese": "諦めないってばよ!",
-  "romaji": "Akiramenai tte bayo!",
-  "english": "I never give up, believe it!",
-  "anime": "Naruto",
-  "character": "Naruto Uzumaki"
+    "japanese": "諦めないってばよ!",
+    "romaji": "Akiramenai tte bayo!",
+    "english": "I never give up, believe it!",
+    "anime": "Naruto",
+    "character": "Naruto Uzumaki"
   },
   {
     "japanese": "俺を誰だと思ってやがる!",
@@ -490,31 +490,88 @@
     "character": "Giorno Giovanna"
   },
   {
-  "japanese": "何ッ！？",
-  "romaji": "Nani!?",
-  "english": "What?!",
-  "anime": "Fist of the North Star",
-  "character": "Shin"
+    "japanese": "何ッ！？",
+    "romaji": "Nani!?",
+    "english": "What?!",
+    "anime": "Fist of the North Star",
+    "character": "Shin"
+  },
+  {
+    "japanese": "世界は残酷だ…それでも美しい",
+    "romaji": "Sekai wa zankoku da... soredemo utsukushii",
+    "english": "This world is cruel... yet so beautiful.",
+    "anime": "Attack on Titan",
+    "character": "Mikasa Ackerman"
+  },
+  {
+    "japanese": "なにィ！？",
+    "romaji": "Nanii!?",
+    "english": "What?! (alt wording 9) (alt wording 61)",
+    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+    "character": "Joseph Joestar"
+  },
+  {
+    "japanese": "俺を誰だと思ってやがる!",
+    "romaji": "Ore o dare da to omotte yagaru!",
+    "english": "Who the hell do you think I am!",
+    "anime": "Gurren Lagann",
+    "character": "Kamina"
+  },
+  {
+    "japanese": "だが…それがいい。",
+    "romaji": "Daga... sore ga ii.",
+    "english": "But... that's what I like.",
+    "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
+    "character": "Yoshikage Kira"
+  },
+
+  {
+    "japanese": "俺はガンダムだ！",
+    "romaji": "Ore wa Gandamu da!",
+    "english": "I am Gundam!(alt wording 25) (alt wording 77)",
+    "anime": "Mobile Suit Gundam 00",
+    "character": "Setsuna F. Seiei"
+  },
+  {
+    "japanese": "だが断る",
+    "romaji": "Daga kotowaru",
+    "english": "But I refuse. (alt wording 4)",
+    "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
+    "character": "Rohan Kishibe"
+  },
+  {
+    "japanese": "だが…それがいい。",
+    "romaji": "Daga... sore ga ii.",
+    "english": "But... that's what I like. (alt wording 16)",
+    "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
+    "character": "Yoshikage Kira"
+  },
+  {
+    "japanese": "仲間を大切にしない奴はそれ以上のクズだ",
+    "romaji": "Nakama o taisetsu ni shinai yatsu wa sore ijou no kuzu da",
+    "english": "Those who don't take care of their comrades are worse than scum. (alt wording 34) (alt wording 86)",
+    "anime": "Naruto",
+    "character": "Kakashi Hatake"
+  },
+  {
+    "japanese": "僕はもう逃げない!",
+    "romaji": "Boku wa mou nigenai!",
+    "english": "I won't run away anymore!",
+    "anime": "Hunter x Hunter",
+    "character": "Gon Freecss"
+  },
+  {
+  "japanese": "俺はガンダムだ！",
+  "romaji": "Ore wa Gandamu da!",
+  "english": "I am Gundam!",
+  "anime": "Mobile Suit Gundam 00",
+  "character": "Setsuna F. Seiei"
 },
   {
-  "japanese": "世界は残酷だ…それでも美しい",
-  "romaji": "Sekai wa zankoku da... soredemo utsukushii",
-  "english": "This world is cruel... yet so beautiful.",
-  "anime": "Attack on Titan",
-  "character": "Mikasa Ackerman"
-},
-  {
-  "japanese": "なにィ！？",
-  "romaji": "Nanii!?",
-  "english": "What?! (alt wording 9) (alt wording 61)",
-  "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
-  "character": "Joseph Joestar"
-},
-  {
-  "japanese": "俺を誰だと思ってやがる!",
-  "romaji": "Ore o dare da to omotte yagaru!",
-  "english": "Who the hell do you think I am! (alt wording 46)",
-  "anime": "Gurren Lagann",
-  "character": "Kamina"
+  "japanese": "ゼハハハハ",
+  "romaji": "Ze hahaha",
+  "english": "Ze ha ha ha! (alt wording 32) (alt wording 84)",
+  "anime": "One Piece",
+  "character": "Marshall D. Teach (Blackbeard)"
 }
 ]

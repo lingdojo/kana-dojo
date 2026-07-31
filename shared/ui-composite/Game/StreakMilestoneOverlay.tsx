@@ -16,7 +16,10 @@ import { ENABLE_EVERY_QUESTION_AD_OVERLAY } from '@/shared/utils/game/streakMile
 const STREAK_MILESTONE_AD_SLOT = '2642983933';
 const ENABLE_STREAK_MILESTONE_DECORATIONS = true;
 const ENABLE_STREAK_MILESTONE_KEYBOARD_SHORTCUTS = false;
+// Keep the placement code intact, but do not mount AdSense during the audit.
+const ENABLE_STREAK_MILESTONE_AD = false;
 const isStreakMilestoneAdEnabled =
+  ENABLE_STREAK_MILESTONE_AD &&
   process.env.NODE_ENV === 'production' &&
   process.env.NEXT_PUBLIC_VERCEL_ENV === 'production';
 

@@ -3,6 +3,9 @@ import type { IKanjiObj } from '@/entities/kanji';
 const normalize = (value: string): string =>
   value.trim().normalize('NFC').toLowerCase();
 
+const normalizeMeaning = (value: string): string =>
+  normalize(value).replace(/^to\s+/, '');
+
 const normalizeReading = (value: string): string =>
   normalize(value.split(' ')[0] ?? '');
 
@@ -11,12 +14,14 @@ export const isKanjiAnswerCorrect = (
   answer: string,
   isReverse: boolean | undefined,
 ): boolean => {
-  const normalizedAnswer = normalize(answer);
+  const normalizedAnswer = isReverse
+    ? normalize(answer)
+    : normalizeMeaning(answer);
   if (!normalizedAnswer) return false;
 
   if (!isReverse) {
     return kanji.meanings.some(
-      meaning => normalize(meaning) === normalizedAnswer,
+      meaning => normalizeMeaning(meaning) === normalizedAnswer,
     );
   }
 

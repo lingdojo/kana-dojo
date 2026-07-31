@@ -28,7 +28,9 @@ import {
 import { SelectedLevelsCard } from '@/shared/ui-composite/Menu/SelectedLevelsCard';
 
 import { ActionButton } from '@/shared/ui/components/ActionButton';
-import TransitionAdvertisementOverlay from '@/shared/ui-composite/Game/TransitionAdvertisementOverlay';
+import TransitionAdvertisementOverlay, {
+  isTransitionAdvertisementEnabled,
+} from '@/shared/ui-composite/Game/TransitionAdvertisementOverlay';
 
 const Decorations = lazy(() => import('@/shared/ui-composite/Decorations/Decorations'));
 
@@ -194,13 +196,19 @@ const ModeSetupMenu = ({
     if (mode === 'blitz') {
       persistDuration(challengeDuration);
     }
-    setPendingStartRoute(getTrainingRoute());
+    const trainingRoute = getTrainingRoute();
+    if (isTransitionAdvertisementEnabled('before')) {
+      setPendingStartRoute(trainingRoute);
+    } else {
+      router.push(trainingRoute);
+    }
   }, [
     challengeDuration,
     getTrainingRoute,
     mode,
     persistDuration,
     playClick,
+    router,
     selectedGameMode,
   ]);
 
@@ -509,6 +517,7 @@ const ModeSetupMenu = ({
       </div>
       <TransitionAdvertisementOverlay
         isOpen={pendingStartRoute !== null}
+        placement='before'
         onDismiss={() => {
           if (!pendingStartRoute) return;
           router.push(pendingStartRoute);
