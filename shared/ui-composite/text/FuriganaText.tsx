@@ -12,6 +12,27 @@ interface FuriganaTextProps {
 }
 
 /**
+ * Extracts the kana (hiragana/katakana) part from a reading string.
+ *
+ * Reading strings in the kanji data follow the format "romaji kana"
+ * (e.g. "otoko おとこ", "dan ダン"). This helper reliably extracts only
+ * the kana portion so furigana is never shown with the romaji prefix.
+ *
+ * Examples:
+ *   "otoko おとこ" → "おとこ"
+ *   "dan ダン"     → "ダン"
+ *   "おとこ"       → "おとこ"  (kana-only, returned as-is)
+ */
+const extractKanaFromReading = (reading: string): string => {
+  if (!reading) return reading;
+  const spaceIndex = reading.indexOf(' ');
+  if (spaceIndex !== -1) {
+    return reading.slice(spaceIndex + 1).trim();
+  }
+  return reading;
+};
+
+/**
  * Component for displaying Japanese text with optional furigana (reading annotations)
  * When furigana is enabled in settings, displays reading above the main text
  * When disabled, displays only the main text
@@ -35,7 +56,7 @@ const FuriganaText = ({
           <rt
             className={`text-xs ${furiganaClassName} text-(--secondary-color)`}
           >
-            {reading}
+            {extractKanaFromReading(reading)}
           </rt>
         </ruby>
       );
@@ -48,17 +69,13 @@ const FuriganaText = ({
   }
 
   if (furiganaEnabled && reading) {
-    const hiraganaReading = reading.includes(' ')
-      ? reading.split(' ')[1]
-      : reading;
-
     return (
       <ruby className={className} lang={lang}>
         {text}
         <rt
           className={`text-xs ${furiganaClassName} text-(--secondary-color)`}
         >
-          {hiraganaReading}
+          {extractKanaFromReading(reading)}
         </rt>
       </ruby>
     );

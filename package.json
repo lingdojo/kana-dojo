@@ -44,6 +44,7 @@
   },
   "type": "module",
   "dependencies": {
+    "@aws-sdk/client-translate": "^3.1090.0",
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
     "@fortawesome/free-regular-svg-icons": "^6.7.2",
@@ -58,6 +59,7 @@
     "@radix-ui/react-tooltip": "^1.2.8",
     "@sentry/nextjs": "^10.59.0",
     "@supabase/supabase-js": "^2.108.2",
+    "@swc/helpers": "^0.5.23",
     "@tailwindcss/postcss": "^4.1.18",
     "@tailwindcss/typography": "^0.5.19",
     "@vercel/analytics": "^1.5.0",

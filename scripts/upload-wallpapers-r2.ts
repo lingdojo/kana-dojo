@@ -37,7 +37,7 @@ interface UploadPlanFile {
 }
 
 interface UploadPlan {
-  version: 1;
+  version: 2;
   generatedAt: string;
   assetBaseUrl: string;
   r2Prefix: string;
@@ -47,7 +47,13 @@ interface UploadPlan {
   unchangedFiles: UploadPlanFile[];
   removedSources: string[];
   remoteCleanupCandidates: string[];
-  manifestUrls: { wallpaperId: string; avif: string; webp: string }[];
+  manifestUrls: {
+    wallpaperId: string;
+    avif: string;
+    webp: string;
+    previewAvif: string;
+    previewWebp: string;
+  }[];
   errors: { source: string; error: string }[];
   summary: {
     sourceCount: number;
@@ -72,7 +78,7 @@ interface ReportItem {
 }
 
 interface UploadReport {
-  version: 1;
+  version: 2;
   generatedAt: string;
   planGeneratedAt: string;
   bucket: string;
@@ -82,6 +88,7 @@ interface UploadReport {
   manifestUrlChecks: {
     wallpaperId: string;
     url: string;
+    expectedContentType: string;
     ok: boolean;
     status?: number;
     contentType?: string;
@@ -116,7 +123,7 @@ async function readPlan(): Promise<UploadPlan> {
   try {
     const raw = await readFile(PLAN_PATH, 'utf-8');
     const plan = JSON.parse(raw) as UploadPlan;
-    if (plan.version !== 1 || !Array.isArray(plan.uploadFiles)) {
+    if (plan.version !== 2 || !Array.isArray(plan.uploadFiles)) {
       throw new Error('Unsupported upload plan format');
     }
     return plan;
@@ -287,18 +294,22 @@ async function uploadAndVerify(file: UploadPlanFile): Promise<ReportItem> {
 async function checkPublicUrl(
   wallpaperId: string,
   url: string,
+  expectedContentType: string,
 ): Promise<UploadReport['manifestUrlChecks'][number]> {
   for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
     try {
       const response = await fetch(url, { method: 'HEAD' });
       const contentType = response.headers.get('content-type') ?? undefined;
       const cacheControl = response.headers.get('cache-control') ?? undefined;
-      const ok = response.ok;
+      const hasExpectedContentType = contentType?.startsWith(expectedContentType);
+      const hasImmutableCacheControl = cacheControl?.includes('immutable');
+      const ok = response.ok && hasExpectedContentType && hasImmutableCacheControl;
 
       if (ok) {
         return {
           wallpaperId,
           url,
+          expectedContentType,
           ok: true,
           status: response.status,
           contentType,
@@ -310,11 +321,16 @@ async function checkPublicUrl(
         return {
           wallpaperId,
           url,
+          expectedContentType,
           ok: false,
           status: response.status,
           contentType,
           cacheControl,
-          error: `HTTP ${response.status}`,
+          error: !response.ok
+            ? `HTTP ${response.status}`
+            : !hasExpectedContentType
+              ? `expected ${expectedContentType}, got ${contentType ?? 'no content type'}`
+              : 'missing immutable Cache-Control header',
         };
       }
     } catch (err) {
@@ -322,6 +338,7 @@ async function checkPublicUrl(
         return {
           wallpaperId,
           url,
+          expectedContentType,
           ok: false,
           error: err instanceof Error ? err.message : String(err),
         };
@@ -331,7 +348,13 @@ async function checkPublicUrl(
     await sleep(1000 * attempt);
   }
 
-  return { wallpaperId, url, ok: false, error: 'unreachable' };
+  return {
+    wallpaperId,
+    url,
+    expectedContentType,
+    ok: false,
+    error: 'unreachable',
+  };
 }
 
 async function main() {
@@ -360,8 +383,18 @@ async function main() {
 
   const manifestUrlChecks: UploadReport['manifestUrlChecks'] = [];
   for (const item of plan.manifestUrls) {
-    manifestUrlChecks.push(await checkPublicUrl(item.wallpaperId, item.avif));
-    manifestUrlChecks.push(await checkPublicUrl(item.wallpaperId, item.webp));
+    manifestUrlChecks.push(
+      await checkPublicUrl(item.wallpaperId, item.avif, 'image/avif'),
+    );
+    manifestUrlChecks.push(
+      await checkPublicUrl(item.wallpaperId, item.webp, 'image/webp'),
+    );
+    manifestUrlChecks.push(
+      await checkPublicUrl(item.wallpaperId, item.previewAvif, 'image/avif'),
+    );
+    manifestUrlChecks.push(
+      await checkPublicUrl(item.wallpaperId, item.previewWebp, 'image/webp'),
+    );
   }
 
   const failedCount = uploaded.filter(item => !item.remoteVerified).length;
@@ -374,7 +407,7 @@ async function main() {
   }
 
   const report: UploadReport = {
-    version: 1,
+    version: 2,
     generatedAt: new Date().toISOString(),
     planGeneratedAt: plan.generatedAt,
     bucket: R2_BUCKET,
