@@ -357,17 +357,24 @@
     "character": "Joker"
   },
   {
-  "japanese": "行くぞ、みんな！",
-  "romaji": "Iku zo, minna!",
-  "english": "Let's go, everyone!",
-  "game": "Kingdom Hearts series (JP dub)",
-  "character": "Sora"
-},
- {
-  "japanese": "俺は悪くねぇ！",
-  "romaji": "Ore wa warukunee!",
-  "english": "It's not my fault!",
-  "game": "Tales of the Abyss",
-  "character": "Luke fon Fabre"
-} 
+    "japanese": "行くぞ、みんな！",
+    "romaji": "Iku zo, minna!",
+    "english": "Let's go, everyone!",
+    "game": "Kingdom Hearts series (JP dub)",
+    "character": "Sora"
+  },
+  {
+    "japanese": "俺は悪くねぇ！",
+    "romaji": "Ore wa warukunee!",
+    "english": "It's not my fault!",
+    "game": "Tales of the Abyss",
+    "character": "Luke fon Fabre"
+  },
+  {
+    "japanese": "希望は前に進むんだ！",
+    "romaji": "Kibou wa mae ni susumun da!",
+    "english": "Hope moves forward!",
+    "game": "Danganronpa series",
+    "character": "Makoto Naegi"
+  }
 ]
