@@ -1,4 +1,26 @@
-[
+[  
+  {
+  "question": "Which Japanese castle was the seat of the Tokugawa shogunate?",
+  "difficulty": "medium",
+  "answers": [
+    "Edo Castle",
+    "Himeji Castle",
+    "Matsumoto Castle",
+    "Osaka Castle"
+  ],
+  "correctIndex": 0
+  },
+  {
+  "question": "Which of these is a Japanese traditional storytelling art?",
+  "difficulty": "medium",
+  "answers": [
+    "Rakugo",
+    "Kabuki",
+    "Noh",
+    "Ikebana"
+  ],
+  "correctIndex": 0
+  },
   {
     "question": "What is the Japanese term for a traditional inn? (Community variation 46)",
     "difficulty": "medium",
@@ -800,60 +822,30 @@
       "Sendai"
     ],
     "correctIndex": 0
-  },
+},
   {
-    "question": "Which Japanese city is famous for its snow festival featuring ice sculptures?",
-    "difficulty": "medium",
-    "answers": [
-      "Sapporo",
-      "Sendai",
-      "Fukuoka",
-      "Okayama"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "question": "Which Japanese festival features people throwing beans to drive away evil spirits?",
-    "difficulty": "medium",
-    "answers": [
-      "Setsubun",
-      "Obon",
-      "Tanabata",
-      "Shichi-Go-San"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "question": "Which region is famous for green tea production in Japan?",
-    "difficulty": "medium",
-    "answers": [
-      "Shizuoka",
-      "Okinawa",
-      "Tohoku",
-      "Hokuriku"
-    ],
-    "correctIndex": 0
-  },
-  {
-  "question": "What is the Japanese term for a traditional paper umbrella?",
+  "question": "Which Japanese beverage is made from roasted barley?",
   "difficulty": "medium",
   "answers": [
-    "Wagasa",
-    "Sensu",
-    "Uchiwa",
-    "Furoshiki"
+    "Mugicha",
+    "Matcha",
+    "Genmaicha",
+    "Sencha"
   ],
   "correctIndex": 0
 },
   {
-  "question": "Which Japanese city is famous for the Gion Matsuri festival?",
+  "question": "What is the traditional Japanese tea ceremony called? (Community variation 19)",
   "difficulty": "medium",
   "answers": [
-    "Kyoto",
-    "Nagoya",
-    "Hiroshima",
-    "Sendai"
+    "Sado",
+    "Judo",
+    "Kendo",
+    "Shodo"
   ],
   "correctIndex": 0
 }
 ]
+
+
+// Added new trivia question to bottom of list

@@ -67,4 +67,16 @@ describe('community-themes.json', () => {
   it('yukata-blue should have a unique id among themes', () => {
     expect(themes.filter(t => t.id === 'yukata-blue').length).toBe(1);
   });
+
+  it('should contain the bamboo-mist theme with correct colors', () => {
+    const theme = themes.find(t => t.id === 'bamboo-mist');
+    expect(theme).toBeDefined();
+    expect(theme).toHaveProperty('backgroundColor', 'oklch(24.0% 0.032 150.0 / 1)');
+    expect(theme).toHaveProperty('mainColor', 'oklch(78.0% 0.145 145.0 / 1)');
+    expect(theme).toHaveProperty('secondaryColor', 'oklch(68.0% 0.085 130.0 / 1)');
+  });
+
+  it('bamboo-mist should have a unique id among themes', () => {
+    expect(themes.filter(t => t.id === 'bamboo-mist').length).toBe(1);
+  });
 });
