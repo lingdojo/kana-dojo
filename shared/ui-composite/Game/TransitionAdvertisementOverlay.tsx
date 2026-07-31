@@ -11,6 +11,17 @@ import BottomBar from '@/shared/ui-composite/layout/BottomBar';
 
 const TRANSITION_AD_SLOT = '5452714175';
 const ENABLE_TRANSITION_AD_DECORATIONS = true;
+export type TransitionAdvertisementPlacement = 'before' | 'after';
+
+// Configure transition ads here: [], ['before'], ['after'], or ['before', 'after'].
+export const TRANSITION_AD_PLACEMENTS = [
+  'before',
+  'after',
+] as const satisfies readonly TransitionAdvertisementPlacement[];
+
+export const isTransitionAdvertisementEnabled = (
+  placement: TransitionAdvertisementPlacement,
+) => TRANSITION_AD_PLACEMENTS.includes(placement);
 
 const Decorations = lazy(
   () => import('@/shared/ui-composite/Decorations/Decorations'),
@@ -18,6 +29,7 @@ const Decorations = lazy(
 
 interface TransitionAdvertisementOverlayProps {
   isOpen: boolean;
+  placement: TransitionAdvertisementPlacement;
   onDismiss: () => void;
 }
 
@@ -68,13 +80,15 @@ const itemVariants = {
 
 export default function TransitionAdvertisementOverlay({
   isOpen,
+  placement,
   onDismiss,
 }: TransitionAdvertisementOverlayProps) {
   const { isGlassMode } = useThemePreferences();
+  const shouldShow = isOpen && isTransitionAdvertisementEnabled(placement);
 
   return (
     <AnimatePresence>
-      {isOpen && (
+      {shouldShow && (
         <motion.div
           key='transition-advertisement'
           variants={layerVariants}

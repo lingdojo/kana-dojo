@@ -9,6 +9,7 @@ describe('isKanaGameAnswerCorrect', () => {
     expect(isKanaGameAnswerCorrect(shi, 'shi', false)).toBe(true);
     expect(isKanaGameAnswerCorrect(shi, 'SHI', false)).toBe(true);
     expect(isKanaGameAnswerCorrect(shi, ' shi ', false)).toBe(true);
+    expect(isKanaGameAnswerCorrect(shi, 's h i', false)).toBe(true);
   });
 
   it('accepts alternative romanizations in normal mode', () => {

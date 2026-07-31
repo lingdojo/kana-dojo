@@ -103,6 +103,9 @@ const createAudioPool = (url: string, volume: number = 1) => {
   const ensureLoaded = () => loadAudioBuffer(url);
 
   const play = () => {
+    // Unlock AudioContext synchronously during user interaction
+    getAudioContext();
+    
     const cached = bufferCache.get(url);
     if (cached) {
       playBuffer(cached, volume);
