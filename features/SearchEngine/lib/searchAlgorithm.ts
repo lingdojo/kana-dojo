@@ -2,11 +2,9 @@ export function calculateStringMatchScore(
   query: string,
   target: string,
 ): number {
-  if (!query || !target) return 0;
-
   const q = query.toLowerCase().trim();
   const t = target.toLowerCase().trim();
-
+  if (!q || !t) return 0;
   if (q === t) return 100; // Exact match
   if (t.startsWith(q)) return 80; // Prefix match
 
