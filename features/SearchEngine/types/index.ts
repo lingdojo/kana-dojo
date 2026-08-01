@@ -1,10 +1,5 @@
-export interface KanjiItem {
-  id: number;
-  kanjiChar: string;
-  onyomi: string[];
-  kunyomi: string[];
-  meanings: string[];
-}
+// Re-export the canonical Kanji type from entities to avoid duplication
+export type { IKanjiObj as KanjiItem } from '@/entities/kanji/types';
 
 export interface VocabItem {
   jmdict_seq: string;

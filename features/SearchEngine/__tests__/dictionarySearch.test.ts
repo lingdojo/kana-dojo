@@ -2,6 +2,12 @@ import { describe, it, expect } from 'vitest';
 import { searchKanji, searchVocab } from '../lib/dictionarySearch';
 import { KanjiItem, VocabItem } from '../types';
 
+// Simple romaji mock: maps kana strings used in test fixtures
+const mockToRomaji = (kana: string): string => {
+  const map: Record<string, string> = { 'あう': 'au', 'あお': 'ao' };
+  return map[kana] ?? kana;
+};
+
 describe('dictionarySearch', () => {
   describe('searchKanji', () => {
     const mockKanjiData: KanjiItem[] = [
@@ -90,7 +96,7 @@ describe('dictionarySearch', () => {
     });
 
     it('finds match by romaji', () => {
-      const results = searchVocab('ao', mockVocabData);
+      const results = searchVocab('ao', mockVocabData, mockToRomaji);
       expect(results).toHaveLength(1);
       expect(results[0].item.kanji).toBe('青');
       // Romaji match: 100 * 0.8 = 80
