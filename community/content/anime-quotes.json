@@ -561,24 +561,31 @@
     "character": "Gon Freecss"
   },
   {
-  "japanese": "俺はガンダムだ！",
-  "romaji": "Ore wa Gandamu da!",
-  "english": "I am Gundam!",
-  "anime": "Mobile Suit Gundam 00",
-  "character": "Setsuna F. Seiei"
-},
+    "japanese": "俺はガンダムだ！",
+    "romaji": "Ore wa Gandamu da!",
+    "english": "I am Gundam!",
+    "anime": "Mobile Suit Gundam 00",
+    "character": "Setsuna F. Seiei"
+  },
   {
-  "japanese": "ゼハハハハ",
-  "romaji": "Ze hahaha",
-  "english": "Ze ha ha ha! (alt wording 32) (alt wording 84)",
-  "anime": "One Piece",
-  "character": "Marshall D. Teach (Blackbeard)"
-},
-{
-  "japanese": "逃げるのも勇気だぞ",
-  "romaji": "Nigeru no mo yuuki da zo",
-  "english": "Running away can take courage too.",
-  "anime": "Mob Psycho 100",
-  "character": "Arataka Reigen"
-}
+    "japanese": "ゼハハハハ",
+    "romaji": "Ze hahaha",
+    "english": "Ze ha ha ha! (alt wording 32) (alt wording 84)",
+    "anime": "One Piece",
+    "character": "Marshall D. Teach (Blackbeard)"
+  },
+  {
+    "japanese": "逃げるのも勇気だぞ",
+    "romaji": "Nigeru no mo yuuki da zo",
+    "english": "Running away can take courage too.",
+    "anime": "Mob Psycho 100",
+    "character": "Arataka Reigen"
+  },
+  {
+    "japanese": "僕は新世界の神となる",
+    "romaji": "Boku wa shin sekai no kami to naru",
+    "english": "I will become the god of the new world.",
+    "anime": "Death Note",
+    "character": "Light Yagami"
+  }
 ]
