@@ -63,70 +63,75 @@
     "notes": "A dynamic river image with strong seasonal presence."
   },
   {
-  "japanese": "しばらくは\n花の上なる\n月夜かな",
-  "romaji": "Shibaraku wa / hana no ue naru / tsukiyo kana",
-  "english": "For a while, moonlight rests above the blossoms.",
-  "poet": "Matsuo Basho",
-  "season": "Spring",
-  "kigo": "Blossoms (hana)",
-  "notes": "A quiet scene balancing moonlight and cherry blossoms."
-},
-{
-  "japanese": "秋深き\n隣は何を\nする人ぞ",
-  "romaji": "Aki fukaki / tonari wa nani o / suru hito zo",
-  "english": "In deep autumn, what kind of person lives next door?",
-  "poet": "Matsuo Basho",
-  "season": "Autumn",
-  "kigo": "Deep autumn (aki fukaki)",
-  "notes": "Evokes solitude and curiosity."
-},
-{
-  "japanese": "春の海\nひねもすのたり\nのたりかな",
-  "romaji": "Haru no umi / hinemosu notari / notari kana",
-  "english": "The spring sea stretches lazily all day, rising and falling.",
-  "poet": "Yosa Buson",
-  "season": "Spring",
-  "kigo": "Spring sea (haru no umi)",
-  "notes": "Known for musical phrasing and calm motion."
-},
-{
-  "japanese": "名月や\n池をめぐりて\n夜もすがら",
-  "romaji": "Meigetsu ya / ike o megurite / yo mo sugara",
-  "english": "The harvest moon; I wander around the pond all night long.",
-  "poet": "Matsuo Basho",
-  "season": "Autumn",
-  "kigo": "Harvest moon (meigetsu)",
-  "notes": "Captures Basho's admiration for the autumn moon and the quiet beauty of nighttime reflection."
-},
-{
-  "japanese": "柿食へば\n鐘が鳴るなり\n法隆寺",
-  "romaji": "Kaki kueba / kane ga naru nari / Horyuji",
-  "english": "I bite into a persimmon and a bell resounds—Horyuji Temple.",
-  "poet": "Masaoka Shiki",
-  "season": "Autumn",
-  "kigo": "Persimmon (kaki)",
-  "notes": "A quintessential autumn haiku contrasting the everyday act of eating fruit with the timeless ringing of a temple bell."
-},
+    "japanese": "しばらくは\n花の上なる\n月夜かな",
+    "romaji": "Shibaraku wa / hana no ue naru / tsukiyo kana",
+    "english": "For a while, moonlight rests above the blossoms.",
+    "poet": "Matsuo Basho",
+    "season": "Spring",
+    "kigo": "Blossoms (hana)",
+    "notes": "A quiet scene balancing moonlight and cherry blossoms."
+  },
   {
-  "japanese": "秋深き
-隣は何を
-する人ぞ",
-  "romaji": "Aki fukaki / tonari wa nani o / suru hito zo",
-  "english": "In deep autumn, what kind of person lives next door?",
-  "poet": "Matsuo Basho",
-  "season": "Autumn",
-  "kigo": "Deep autumn (aki fukaki)",
-  "notes": "Evokes solitude and curiosity."
-},
-{
-  "japanese": "雀の子
-そこのけそこのけ
-お馬が通る",
-  "romaji": "Suzume no ko / soko noke soko noke / ouma ga toru",
-  "english": "Little sparrows, move aside, the horse is coming through.",
-  "poet": "Kobayashi Issa",
-  "season": "Spring",
-  "kigo": "Sparrow chicks (suzume no ko)",
-  "notes": "Playful and warm, characteristic of Issa's tone."
-}
+    "japanese": "秋深き\n隣は何を\nする人ぞ",
+    "romaji": "Aki fukaki / tonari wa nani o / suru hito zo",
+    "english": "In deep autumn, what kind of person lives next door?",
+    "poet": "Matsuo Basho",
+    "season": "Autumn",
+    "kigo": "Deep autumn (aki fukaki)",
+    "notes": "Evokes solitude and curiosity."
+  },
+  {
+    "japanese": "春の海\nひねもすのたり\nのたりかな",
+    "romaji": "Haru no umi / hinemosu notari / notari kana",
+    "english": "The spring sea stretches lazily all day, rising and falling.",
+    "poet": "Yosa Buson",
+    "season": "Spring",
+    "kigo": "Spring sea (haru no umi)",
+    "notes": "Known for musical phrasing and calm motion."
+  },
+  {
+    "japanese": "名月や\n池をめぐりて\n夜もすがら",
+    "romaji": "Meigetsu ya / ike o megurite / yo mo sugara",
+    "english": "The harvest moon; I wander around the pond all night long.",
+    "poet": "Matsuo Basho",
+    "season": "Autumn",
+    "kigo": "Harvest moon (meigetsu)",
+    "notes": "Captures Basho's admiration for the autumn moon and the quiet beauty of nighttime reflection."
+  },
+  {
+    "japanese": "柿食へば\n鐘が鳴るなり\n法隆寺",
+    "romaji": "Kaki kueba / kane ga naru nari / Horyuji",
+    "english": "I bite into a persimmon and a bell resounds—Horyuji Temple.",
+    "poet": "Masaoka Shiki",
+    "season": "Autumn",
+    "kigo": "Persimmon (kaki)",
+    "notes": "A quintessential autumn haiku contrasting the everyday act of eating fruit with the timeless ringing of a temple bell."
+  },
+  {
+    "japanese": "秋深き\n隣は何を\nする人ぞ",
+    "romaji": "Aki fukaki / tonari wa nani o / suru hito zo",
+    "english": "In deep autumn, what kind of person lives next door?",
+    "poet": "Matsuo Basho",
+    "season": "Autumn",
+    "kigo": "Deep autumn (aki fukaki)",
+    "notes": "Evokes solitude and curiosity."
+  },
+  {
+    "japanese": "雀の子\nそこのけそこのけ\nお馬が通る",
+    "romaji": "Suzume no ko / soko noke soko noke / ouma ga toru",
+    "english": "Little sparrows, move aside, the horse is coming through.",
+    "poet": "Kobayashi Issa",
+    "season": "Spring",
+    "kigo": "Sparrow chicks (suzume no ko)",
+    "notes": "Playful and warm, characteristic of Issa's tone."
+  },
+  {
+    "japanese": "名月を\n取ってくれろと\n泣く子かな",
+    "romaji": "Meigetsu o / totte kurero to / naku ko kana",
+    "english": "A child cries, asking me to fetch the harvest moon.",
+    "poet": "Kobayashi Issa",
+    "season": "Autumn",
+    "kigo": "Harvest moon (meigetsu)",
+    "notes": "Captures innocent longing through a domestic scene."
+  }
 ]
