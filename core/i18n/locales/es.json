@@ -3,5 +3,13 @@
     "greeting": "¡Bienvenido a KanaDojo!",
     "description": "KanaDojo es una plataforma divertida, estética y minimalista para aprender y practicar el idioma Japonés en linea.",
     "instructions": "Para empezar, coge un dojo. ¡Y comienza a entrenar ahora!"
+  },
+  "Themes": {
+    "ramen-shop": {
+      "id": "ramen-shop",
+      "backgroundColor": "oklch(94.0% 0.025 85.0 / 1)",
+      "mainColor": "oklch(60.0% 0.195 25.0 / 1)",
+      "secondaryColor": "oklch(88.0% 0.145 90.0 / 1)"
+    }
   }
 }
