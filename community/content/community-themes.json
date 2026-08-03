@@ -454,5 +454,11 @@
   backgroundColor: 'oklch(20.0% 0.035 35.0 / 1)',
   mainColor: 'oklch(80.0% 0.170 45.0 / 1)',
   secondaryColor: 'oklch(78.0% 0.095 140.0 / 1)'
+  },
+  {
+    "id": "wasanbon",
+    "backgroundColor": "oklch(96.0% 0.012 95.0 / 1)",
+    "mainColor": "oklch(62.0% 0.110 75.0 / 1)",
+    "secondaryColor": "oklch(70.0% 0.060 85.0 / 1)"
   }
 ]
