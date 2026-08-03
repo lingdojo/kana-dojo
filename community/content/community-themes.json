@@ -382,5 +382,95 @@
     "backgroundColor": "oklch(92.0% 0.012 90.0 / 1)",
     "mainColor": "oklch(35.0% 0.085 255.0 / 1)",
     "secondaryColor": "oklch(55.0% 0.055 65.0 / 1)"
+  },
+  {
+    "id": "origami-crane",
+    "backgroundColor": "oklch(95.0% 0.008 90.0 / 1)",
+    "mainColor": "oklch(55.0% 0.220 25.0 / 1)",
+    "secondaryColor": "oklch(45.0% 0.150 20.0 / 1)"
+  },
+  {
+    "id": "shinkansen-speed",
+    "backgroundColor": "oklch(22.0% 0.035 240.0 / 1)",
+    "mainColor": "oklch(90.0% 0.085 220.0 / 1)",
+    "secondaryColor": "oklch(65.0% 0.185 25.0 / 1)"
+  },
+  {
+    "id": "shoji-glow",
+    "backgroundColor": "oklch(94.0% 0.010 95.0 / 1)",
+    "mainColor": "oklch(45.0% 0.075 65.0 / 1)",
+    "secondaryColor": "oklch(60.0% 0.045 30.0 / 1)"
+  },
+  {
+    "id": "firefly-field",
+    "backgroundColor": "oklch(16.0% 0.038 150.0 / 1)",
+    "mainColor": "oklch(88.0% 0.175 110.0 / 1)",
+    "secondaryColor": "oklch(65.0% 0.125 145.0 / 1)"
+  },
+  {
+    "id": "sumo-strength",
+    "backgroundColor": "oklch(20.0% 0.022 35.0 / 1)",
+    "mainColor": "oklch(72.0% 0.065 75.0 / 1)",
+    "secondaryColor": "oklch(60.0% 0.185 20.0 / 1)"
+  },
+  {
+    "id": "tokyo-metro",
+    "backgroundColor": "oklch(20.0% 0.025 260.0 / 1)",
+    "mainColor": "oklch(70.0% 0.180 145.0 / 1)",
+    "secondaryColor": "oklch(80.0% 0.120 50.0 / 1)"
+  },
+  {
+    "id": "wisteria-dream",
+    "backgroundColor": "oklch(20.0% 0.048 290.0 / 1)",
+    "mainColor": "oklch(72.0% 0.175 295.0 / 1)",
+    "secondaryColor": "oklch(80.0% 0.125 320.0 / 1)"
+  },
+  {
+    "id": "yuzu-mist",
+    "backgroundColor": "oklch(92.0% 0.025 95.0 / 1)",
+    "mainColor": "oklch(70.0% 0.145 85.0 / 1)",
+    "secondaryColor": "oklch(62.0% 0.090 70.0 / 1)"
+  },
+  {
+    "id": "snow-lantern",
+    "backgroundColor": "oklch(94.0% 0.012 250.0 / 1)",
+    "mainColor": "oklch(50.0% 0.145 30.0 / 1)",
+    "secondaryColor": "oklch(40.0% 0.110 250.0 / 1)"
+  },
+  {
+    "id": "spring-bamboo",
+    "backgroundColor": "oklch(93.0% 0.018 150.0 / 1)",
+    "mainColor": "oklch(55.0% 0.145 145.0 / 1)",
+    "secondaryColor": "oklch(70.0% 0.085 120.0 / 1)"
+  },
+  {
+    "id": "papercraft-white",
+    "backgroundColor": "oklch(98.0% 0.005 90.0 / 1)",
+    "mainColor": "oklch(35.0% 0.165 255.0 / 1)",
+    "secondaryColor": "oklch(55.0% 0.145 200.0 / 1)"
+  },
+  {
+    "id": "koi-sunrise",
+    "backgroundColor": "oklch(20.0% 0.035 35.0 / 1)",
+    "mainColor": "oklch(80.0% 0.170 45.0 / 1)",
+    "secondaryColor": "oklch(78.0% 0.095 140.0 / 1)"
+  },
+  {
+    "id": "digital-oni",
+    "backgroundColor": "oklch(14.0% 0.075 355.0 / 1)",
+    "mainColor": "oklch(68.0% 0.240 10.0 / 1)",
+    "secondaryColor": "oklch(78.0% 0.195 150.0 / 1)"
+  },
+  {
+    "id": "tea-ceramic",
+    "backgroundColor": "oklch(23.0% 0.020 60.0 / 1)",
+    "mainColor": "oklch(72.0% 0.085 50.0 / 1)",
+    "secondaryColor": "oklch(60.0% 0.060 35.0 / 1)"
+  },
+  {
+    "id": "autumn-maple",
+    "backgroundColor": "oklch(21.0% 0.052 30.0 / 1)",
+    "mainColor": "oklch(72.0% 0.200 35.0 / 1)",
+    "secondaryColor": "oklch(80.0% 0.165 60.0 / 1)"
   }
 ]

@@ -6,6 +6,12 @@
     "correctIndex": 0
   },
   {
+    "question": "Which Japanese city is known for the floating garden observatory?",
+    "difficulty": "hard",
+    "answers": ["Osaka", "Nagoya", "Kobe", "Yokohama"],
+    "correctIndex": 0
+  },
+  {
     "question": "Which Japanese island chain is known for tropical beaches and coral reefs? (Community variation 27)",
     "difficulty": "hard",
     "answers": ["Okinawa", "Sado", "Awaji", "Oki"],
@@ -712,6 +718,50 @@
 },
 {
    "question": "Which Japanese city hosted the 1998 Winter Olympics? (Community variation 24)",
+  "difficulty": "hard",
+  "answers": [
+    "Nagano",
+    "Kobe",
+    "Hiroshima",
+    "Naha"
+  ],
+  "correctIndex": 0
+},
+  {
+  "question": "Which Japanese food is a grilled eel dish often eaten in summer? (Community variation 26)",
+  "difficulty": "hard",
+  "answers": [
+    "Tempura",
+    "Unagi",
+    "Sukiyaki",
+    "Okonomiyaki"
+  ],
+  "correctIndex": 1
+},
+  {
+  "question": "What is the Japanese name for the autumn moon-viewing festival?",
+  "difficulty": "hard",
+  "answers": [
+    "Tanabata",
+    "Tsukimi",
+    "Shogatsu",
+    "Hina Matsuri"
+  ],
+  "correctIndex": 1
+},
+  {
+  "question": "Which Japanese island is known for its active volcano, Sakurajima?",
+  "difficulty": "hard",
+  "answers": [
+    "Kyushu",
+    "Honshu",
+    "Shikoku",
+    "Hokkaido"
+  ],
+  "correctIndex": 0
+},
+  {
+  "question": "Which Japanese city hosted the 1998 Winter Olympics? (Community variation 24)",
   "difficulty": "hard",
   "answers": [
     "Nagano",

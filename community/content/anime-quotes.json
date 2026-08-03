@@ -524,11 +524,104 @@
     "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
     "character": "Yoshikage Kira"
   },
+
   {
-  "japanese": "だが断る",
-  "romaji": "Daga kotowaru",
-  "english": "But I refuse. (alt wording 4)",
-  "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
-  "character": "Rohan Kishibe"
+    "japanese": "俺はガンダムだ！",
+    "romaji": "Ore wa Gandamu da!",
+    "english": "I am Gundam!(alt wording 25) (alt wording 77)",
+    "anime": "Mobile Suit Gundam 00",
+    "character": "Setsuna F. Seiei"
+  },
+  {
+    "japanese": "だが断る",
+    "romaji": "Daga kotowaru",
+    "english": "But I refuse. (alt wording 4)",
+    "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
+    "character": "Rohan Kishibe"
+  },
+  {
+    "japanese": "だが…それがいい。",
+    "romaji": "Daga... sore ga ii.",
+    "english": "But... that's what I like. (alt wording 16)",
+    "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
+    "character": "Yoshikage Kira"
+  },
+  {
+    "japanese": "仲間を大切にしない奴はそれ以上のクズだ",
+    "romaji": "Nakama o taisetsu ni shinai yatsu wa sore ijou no kuzu da",
+    "english": "Those who don't take care of their comrades are worse than scum. (alt wording 34) (alt wording 86)",
+    "anime": "Naruto",
+    "character": "Kakashi Hatake"
+  },
+  {
+    "japanese": "僕はもう逃げない!",
+    "romaji": "Boku wa mou nigenai!",
+    "english": "I won't run away anymore!",
+    "anime": "Hunter x Hunter",
+    "character": "Gon Freecss"
+  },
+  {
+    "japanese": "俺はガンダムだ！",
+    "romaji": "Ore wa Gandamu da!",
+    "english": "I am Gundam!",
+    "anime": "Mobile Suit Gundam 00",
+    "character": "Setsuna F. Seiei"
+  },
+  {
+    "japanese": "ゼハハハハ",
+    "romaji": "Ze hahaha",
+    "english": "Ze ha ha ha! (alt wording 32) (alt wording 84)",
+    "anime": "One Piece",
+    "character": "Marshall D. Teach (Blackbeard)"
+  },
+  {
+    "japanese": "逃げるのも勇気だぞ",
+    "romaji": "Nigeru no mo yuuki da zo",
+    "english": "Running away can take courage too.",
+    "anime": "Mob Psycho 100",
+    "character": "Arataka Reigen"
+  },
+  {
+    "japanese": "人はいつ死ぬと思う…？人に忘れられた時さ。",
+    "romaji": "Hito wa itsu shinu to omou...? Hito ni wasurerareta toki sa.",
+    "english": "When do you think people die? It's when they are forgotten.",
+    "anime": "One Piece",
+    "character": "Dr. Hiriluk"
+  },
+  {
+    "japanese": "諦めないってばよ!",
+    "romaji": "Akiramenai tte bayo!",
+    "english": "I never give up, believe it! (alt wording 33)",
+    "anime": "Naruto",
+    "character": "Naruto Uzumaki"
+  },
+  {
+    "japanese": "笑えばいいと思うよ",
+    "romaji": "Waraeba ii to omou yo",
+    "english": "I think you should just laugh.",
+    "anime": "Neon Genesis Evangelion",
+    "character": "Rei Ayanami"
+  },
+  {
+    "japanese": "痛みを伴わない教訓には意味がない",
+    "romaji": "Itami o tomonawanai kyoukun ni wa imi ga nai",
+    "english": "A lesson without pain is meaningless. (alt wording 35)",
+    "anime": "Fullmetal Alchemist: Brotherhood",
+    "character": "Edward Elric"
+  },
+  {
+  "japanese": "フォッフォッフォッ",
+  "romaji": "Fo fo fo fo",
+  "english": "Fosh fosh fosh fosh. (alt wording 28)",
+  "anime": "One Piece",
+  "character": "Kozuki Sukiyaki"
+},
+{
+  "japanese": "大丈夫、僕最強だから",
+  "romaji": "Daijoubu, boku saikyou dakara",
+  "english": "Relax, I'm the strongest. (alt wording 39)",
+  "anime": "Jujutsu Kaisen",
+  "character": "Satoru Gojo"
 }
+  
 ]

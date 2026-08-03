@@ -2968,5 +2968,115 @@
       "forks": 9,
       "contributors": 8
     }
+  },
+  {
+    "collectedAt": "2026-07-29T23:00:51.434Z",
+    "stars": 3072,
+    "forks": 2878,
+    "contributors": 2710,
+    "diff": {
+      "stars": 2,
+      "forks": 7,
+      "contributors": 7
+    }
+  },
+  {
+    "collectedAt": "2026-07-30T11:00:53.285Z",
+    "stars": 3075,
+    "forks": 2883,
+    "contributors": 2721,
+    "diff": {
+      "stars": 3,
+      "forks": 5,
+      "contributors": 11
+    }
+  },
+  {
+    "collectedAt": "2026-07-30T23:00:56.992Z",
+    "stars": 3079,
+    "forks": 2890,
+    "contributors": 2729,
+    "diff": {
+      "stars": 4,
+      "forks": 7,
+      "contributors": 8
+    }
+  },
+  {
+    "collectedAt": "2026-07-31T11:00:59.715Z",
+    "stars": 3078,
+    "forks": 2892,
+    "contributors": 2731,
+    "diff": {
+      "stars": -1,
+      "forks": 2,
+      "contributors": 2
+    }
+  },
+  {
+    "collectedAt": "2026-07-31T23:00:53.984Z",
+    "stars": 3078,
+    "forks": 2896,
+    "contributors": 2738,
+    "diff": {
+      "stars": 0,
+      "forks": 4,
+      "contributors": 7
+    }
+  },
+  {
+    "collectedAt": "2026-08-01T11:00:53.750Z",
+    "stars": 3083,
+    "forks": 2898,
+    "contributors": 2742,
+    "diff": {
+      "stars": 5,
+      "forks": 2,
+      "contributors": 4
+    }
+  },
+  {
+    "collectedAt": "2026-08-01T23:00:56.851Z",
+    "stars": 3083,
+    "forks": 2903,
+    "contributors": 2746,
+    "diff": {
+      "stars": 0,
+      "forks": 5,
+      "contributors": 4
+    }
+  },
+  {
+    "collectedAt": "2026-08-02T11:00:52.869Z",
+    "stars": 3092,
+    "forks": 2908,
+    "contributors": 2749,
+    "diff": {
+      "stars": 9,
+      "forks": 5,
+      "contributors": 3
+    }
+  },
+  {
+    "collectedAt": "2026-08-02T23:00:51.732Z",
+    "stars": 3096,
+    "forks": 2913,
+    "contributors": 2756,
+    "diff": {
+      "stars": 4,
+      "forks": 5,
+      "contributors": 7
+    }
+  },
+  {
+    "collectedAt": "2026-08-03T11:00:57.167Z",
+    "stars": 3100,
+    "forks": 2918,
+    "contributors": 2764,
+    "diff": {
+      "stars": 4,
+      "forks": 5,
+      "contributors": 8
+    }
   }
 ]

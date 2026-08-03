@@ -408,15 +408,75 @@
     "meaning": "Misfortune never comes alone"
   },
   {
-  "japanese": "十人十色",
-  "romaji": "Juunin toiro",
-  "english": "Ten people, ten colors",
-  "meaning": "Different strokes for different folks"
+    "japanese": "十人十色",
+    "romaji": "Juunin toiro",
+    "english": "Ten people, ten colors",
+    "meaning": "Different strokes for different folks"
   },
   {
-  "japanese": "虎穴に入らずんば虎子を得ず",
-  "romaji": "Koketsu ni irazunba koji wo ezu",
-  "english": "If you don't enter the tiger's den, you can't get the cub",
-  "meaning": "Nothing ventured, nothing gained"
+    "japanese": "虎穴に入らずんば虎子を得ず",
+    "romaji": "Koketsu ni irazunba koji wo ezu",
+    "english": "If you don't enter the tiger's den, you can't get the cub",
+    "meaning": "Nothing ventured, nothing gained"
+  },
+  {
+    "japanese": "雨後の筍",
+    "romaji": "Ugo no takenoko",
+    "english": "Bamboo shoots after rain",
+    "meaning": "Things spring up rapidly"
+  },
+  {
+    "japanese": "笑う門には福来る",
+    "romaji": "Warau kado ni wa fuku kitaru",
+    "english": "Fortune comes to a laughing gate",
+    "meaning": "Happiness and good fortune come to those who smile"
+  },
+  {
+    "japanese": "縁は異なもの味なもの",
+    "romaji": "En wa inamono aji na mono",
+    "english": "Fate is strange yet delightful",
+    "meaning": "Chance connections can be surprisingly good"
+  },
+  {
+    "japanese": "出る釘は打たれる",
+    "romaji": "Deru kugi wa utareru",
+    "english": "The nail that sticks out gets hammered down",
+    "meaning": "Standing out invites criticism"
+  },
+  {
+    "japanese": "七転び八起き",
+    "romaji": "Nanakorobi yaoki",
+    "english": "Fall seven times, stand up eight",
+    "meaning": "Never give up, perseverance"
+  },
+  {
+    "japanese": "急いては事を仕損じる",
+    "romaji": "Seite wa koto wo shisonjiru",
+    "english": "Haste will spoil things",
+    "meaning": "Rushing leads to mistakes"
+  },
+  {
+    "japanese": "笑う門には福来る",
+    "romaji": "Warau kado ni wa fuku kitaru",
+    "english": "Fortune comes to a laughing gate",
+    "meaning": "Good fortune comes to those who smile"
+  },
+  {
+    "japanese": "木を見て森を見ず",
+    "romaji": "Ki wo mite mori wo mizu",
+    "english": "See the trees but not the forest",
+    "meaning": "Miss the bigger picture"
+  },
+  {
+  "japanese": "三日坊主",
+  "romaji": "Mikka bouzu",
+  "english": "A three-day monk",
+  "meaning": "Someone who quits quickly"
+  },
+  {
+    "japanese": "柳に風",
+    "romaji": "Yanagi ni kaze",
+    "english": "Wind in the willow",
+    "meaning": "Stay flexible and let problems pass"
   }
 ]
