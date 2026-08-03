@@ -2,44 +2,24 @@
   {
     "question": "Which Japanese company is known for making the character Hello Kitty?",
     "difficulty": "hard",
-    "answers": [
-      "Sanrio",
-      "Ghibli",
-      "Capcom",
-      "Namco"
-    ],
+    "answers": ["Sanrio", "Ghibli", "Capcom", "Namco"],
     "correctIndex": 0
   },
   {
     "question": "What is the currency of Japan?",
     "difficulty": "easy",
-    "answers": [
-      "Yen",
-      "Won",
-      "Dollar",
-      "Rupee"
-    ],
+    "answers": ["Yen", "Won", "Dollar", "Rupee"],
     "correctIndex": 0
   },
   {
     "question": "Which Japanese city is famous for its street food district, Dotonbori?",
-    "answers": [
-      "Osaka",
-      "Niigata",
-      "Kagoshima",
-      "Takayama"
-    ],
+    "answers": ["Osaka", "Niigata", "Kagoshima", "Takayama"],
     "correctIndex": 0
   },
   {
     "question": "What is the traditional Japanese garment called?",
     "difficulty": "easy",
-    "answers": [
-      "Kimono",
-      "Hanbok",
-      "Cheongsam",
-      "Sari"
-    ],
+    "answers": ["Kimono", "Hanbok", "Cheongsam", "Sari"],
     "correctIndex": 0
   },
   {
@@ -55,23 +35,19 @@
   {
     "question": "Which Japanese dish consists of skewered grilled chicken?",
     "difficulty": "easy",
-    "answers": [
-      "Yakitori",
-      "Sukiyaki",
-      "Tonkatsu",
-      "Oden"
-    ],
+    "answers": ["Yakitori", "Sukiyaki", "Tonkatsu", "Oden"],
     "correctIndex": 0
   },
   {
-  "question": "What is the name of the traditional Japanese board game similar to chess? (Community variation 25)",
-  "difficulty": "hard",
-  "answers": [
-    "Shogi",
-    "Go",
-    "Mahjong",
-    "Reversi"
-  ],
-  "correctIndex": 0
-}
+    "question": "What is the name of the traditional Japanese board game similar to chess? (Community variation 25)",
+    "difficulty": "hard",
+    "answers": ["Shogi", "Go", "Mahjong", "Reversi"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which region is famous for green tea production in Japan?",
+    "difficulty": "medium",
+    "answers": ["Shizuoka", "Okinawa", "Tohoku", "Hokuriku"],
+    "correctIndex": 0
+  }
 ]
