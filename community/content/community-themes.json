@@ -432,11 +432,11 @@
     "secondaryColor": "oklch(62.0% 0.090 70.0 / 1)"
   },
   {
-  "id": "snow-lantern",
-  "backgroundColor": "oklch(94.0% 0.012 250.0 / 1)",
-  "mainColor": "oklch(50.0% 0.145 30.0 / 1)",
-  "secondaryColor": "oklch(40.0% 0.110 250.0 / 1)"
-},
+    "id": "snow-lantern",
+    "backgroundColor": "oklch(94.0% 0.012 250.0 / 1)",
+    "mainColor": "oklch(50.0% 0.145 30.0 / 1)",
+    "secondaryColor": "oklch(40.0% 0.110 250.0 / 1)"
+  },
   {
     "id": "spring-bamboo",
     "backgroundColor": "oklch(93.0% 0.018 150.0 / 1)",
@@ -450,21 +450,27 @@
     "secondaryColor": "oklch(55.0% 0.145 200.0 / 1)"
   },
   {
-  "id": "koi-sunrise",
-  "backgroundColor": "oklch(20.0% 0.035 35.0 / 1)",
-  "mainColor": "oklch(80.0% 0.170 45.0 / 1)",
-  "secondaryColor": "oklch(78.0% 0.095 140.0 / 1)"
+    "id": "koi-sunrise",
+    "backgroundColor": "oklch(20.0% 0.035 35.0 / 1)",
+    "mainColor": "oklch(80.0% 0.170 45.0 / 1)",
+    "secondaryColor": "oklch(78.0% 0.095 140.0 / 1)"
   },
   {
-  "id": "digital-oni",
-  "backgroundColor": "oklch(14.0% 0.075 355.0 / 1)",
-  "mainColor": "oklch(68.0% 0.240 10.0 / 1)",
-  "secondaryColor": "oklch(78.0% 0.195 150.0 / 1)"
+    "id": "digital-oni",
+    "backgroundColor": "oklch(14.0% 0.075 355.0 / 1)",
+    "mainColor": "oklch(68.0% 0.240 10.0 / 1)",
+    "secondaryColor": "oklch(78.0% 0.195 150.0 / 1)"
   },
   {
     "id": "tea-ceramic",
     "backgroundColor": "oklch(23.0% 0.020 60.0 / 1)",
     "mainColor": "oklch(72.0% 0.085 50.0 / 1)",
     "secondaryColor": "oklch(60.0% 0.060 35.0 / 1)"
+  },
+  {
+    "id": "autumn-maple",
+    "backgroundColor": "oklch(21.0% 0.052 30.0 / 1)",
+    "mainColor": "oklch(72.0% 0.200 35.0 / 1)",
+    "secondaryColor": "oklch(80.0% 0.165 60.0 / 1)"
   }
 ]
