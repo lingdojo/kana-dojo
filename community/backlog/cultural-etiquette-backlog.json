@@ -77,7 +77,7 @@
     "dont": "話を遮る",
     "note": "合意形成を重視する文化。",
     "id": 9,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -482,7 +482,7 @@
     "dont": "初対面でタメ口を使う",
     "note": "距離感が縮まるまでは敬語が無難。",
     "id": 54,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -689,7 +689,7 @@
     "dont": "ゴミを放置する",
     "note": "ゴミ箱が少ない地域がある。",
     "id": 77,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -959,7 +959,7 @@
     "dont": "参道の中央を歩く",
     "note": "中央は神様の通り道とされる。",
     "id": 107,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

@@ -410,7 +410,7 @@
   {
     "id": 69,
     "fact": "The Japanese word 'koi no yokan' (恋の予感) describes knowing you'll inevitably fall in love with someone you just met.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -884,7 +884,7 @@
   {
     "id": 148,
     "fact": "Japan has 'book-off' stores where you can sell and buy used manga, CDs, games, and electronics at bargain prices.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -980,7 +980,7 @@
   {
     "id": 164,
     "fact": "Japan has 'namahage' - demons who visit homes on New Year's Eve to scare children into behaving well.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -998,7 +998,7 @@
   {
     "id": 167,
     "fact": "There's a Japanese concept 'seijitsu' (誠実) meaning sincerity that's shown through actions, not just words.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
