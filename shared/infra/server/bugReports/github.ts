@@ -5,13 +5,24 @@ import type {
 } from './types';
 
 const GITHUB_TIMEOUT_MS = 10000;
+const EMAIL_ADDRESS_PATTERN = /[A-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Z0-9.-]+\.[A-Z]{2,}/gi;
 
+function redactEmailAddresses(value: string): string {
+  return value.replace(EMAIL_ADDRESS_PATTERN, '[redacted]');
+}
+
+function isEmailField(label: string): boolean {
+  return /\be-?mail\b/i.test(label);
+}
 function valueOrUnknown(value: string | null): string {
   return value?.trim() || 'Unknown';
 }
 
 function formatOriginalFields(fields: Record<string, unknown>): string {
-  const entries = Object.entries(fields).filter(([, value]) => {
+  const entries = Object.entries(fields).filter(([label, value]) => {
+    if (isEmailField(label)) {
+      return false;
+    }
     if (value === null || value === undefined) {
       return false;
     }
@@ -29,7 +40,7 @@ function formatOriginalFields(fields: Record<string, unknown>): string {
     .map(([label, value]) => {
       const text =
         typeof value === 'string' ? value : JSON.stringify(value, null, 2);
-      return `### ${label}\n\n${text}`;
+      return `### ${label}\n\n${redactEmailAddresses(text)}`;
     })
     .join('\n\n');
 }
@@ -72,12 +83,11 @@ export function formatGitHubIssueBody({
   const notes = [
     cleaned.triageNotes,
     ...processingNotes,
-    normalized.contact ? `Reporter contact: ${normalized.contact}` : null,
   ]
     .filter(Boolean)
     .join('\n\n');
 
-  return `## Summary
+  const body = `## Summary
 
 ${cleaned.summary}
 
@@ -124,6 +134,8 @@ ${missingInfo}
 
 ${formatOriginalFields(normalized.fields)}
 `;
+
+  return redactEmailAddresses(body);
 }
 
 export async function createGitHubIssue({

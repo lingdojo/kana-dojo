@@ -67,7 +67,7 @@ export default function DonationModal({
                 </p>
                 <p className='text-base leading-7'>
                   From day one, we have cared deeply about keeping this a fully
-                  free, open-source and ad-free learning resource for everyone —
+                  free, accessible and open-source learning resource for everyone —
                   and we are wholeheartedly committed to keeping it that way
                   forever.
                   {/*
