@@ -26,6 +26,8 @@
 # misc
 .DS_Store
 *.pem
+.eslintcache
+/tmp/
 
 # Generated build-time data
 /shared/data/commitInfo.json

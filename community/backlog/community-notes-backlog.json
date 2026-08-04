@@ -14,8 +14,8 @@
     "text": "> Community note: this page intentionally accepts tiny formatting-safe edits.",
     "issued": true,
     "completed": false,
-    "completedBy": "Rezapurian",
-    "completedPR": 22385
+    "completedBy": "Garg-Pankaj29",
+    "completedPR": 26927
   },
   {
     "id": 3,
@@ -38,7 +38,7 @@
     "file": "docs/community-notes/archival-notes.md",
     "position": "bottom",
     "text": "- Additional community note preserved for documentation housekeeping.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

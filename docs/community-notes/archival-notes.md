@@ -11,3 +11,5 @@ Nothing in deployment, onboarding, or product behavior relies on these lines.
 - Additional community note preserved for documentation housekeeping.
 - Additional community note preserved for documentation housekeeping.
 - Additional community note preserved for documentation housekeeping.
+- Additional community note preserved for documentation housekeeping.
+- Additional community note preserved for documentation housekeeping.

@@ -13,41 +13,85 @@
   "dir": "ltr",
   "icons": [
     {
-      "src": "/favicon.ico",
-      "sizes": "48x48 32x32 16x16",
-      "type": "image/x-icon",
-      "purpose": "any maskable"
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
     }
   ],
-  "screenshots": [],
+  "screenshots": [
+    {
+      "src": "/screenshots/wide-1.png",
+      "sizes": "1920x918",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "KanaDojo desktop view"
+    },
+    {
+      "src": "/screenshots/narrow-1.png",
+      "sizes": "792x832",
+      "type": "image/png",
+      "label": "KanaDojo mobile view"
+    }
+  ],
   "shortcuts": [
     {
       "name": "Kana Dojo",
       "short_name": "Kana",
       "description": "Practice Hiragana and Katakana",
       "url": "/kana",
-      "icons": []
+      "icons": [
+        {
+          "src": "/icons/icon-96.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
     },
     {
       "name": "Kanji Dojo",
       "short_name": "Kanji",
       "description": "Practice Kanji characters",
       "url": "/kanji",
-      "icons": []
+      "icons": [
+        {
+          "src": "/icons/icon-96.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
     },
     {
       "name": "Vocabulary Dojo",
       "short_name": "Vocabulary",
       "description": "Practice Japanese vocabulary",
       "url": "/vocabulary",
-      "icons": []
+      "icons": [
+        {
+          "src": "/icons/icon-96.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
     },
     {
       "name": "Japanese Translator",
       "short_name": "Translator",
       "description": "Translate Japanese to English with romaji",
       "url": "/translate",
-      "icons": []
+      "icons": [
+        {
+          "src": "/icons/icon-96.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
     }
   ]
 }

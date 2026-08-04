@@ -31,7 +31,7 @@ import { useMenuSelectorStore } from '@/shared/ui-composite/Menu/store/useMenuSe
 
 type CollectionLevel = 'n5' | 'n4' | 'n3' | 'n2' | 'n1';
 type ContentType = 'kanji' | 'vocabulary';
-const VOCAB_UNIT_WITH_FEWER_SUBUNITS: CollectionLevel = 'n2';
+const VOCAB_EIGHT_SUBUNIT_UNITS: CollectionLevel[] = ['n3', 'n2', 'n1'];
 
 // Calculate number of sets (10 items per set)
 const calculateSets = (length: number) => Math.ceil(length / 10);
@@ -67,14 +67,14 @@ const getCollectionSubunits = (
 
   if (
     isKanji ||
-    collection.name !== VOCAB_UNIT_WITH_FEWER_SUBUNITS ||
+    !VOCAB_EIGHT_SUBUNIT_UNITS.includes(collection.name) ||
     defaultSubunits.length <= 1
   ) {
     return defaultSubunits;
   }
 
   return buildSubunitsForUnit(collection.startLevel, collection.levelCount, {
-    desiredSubunitCount: defaultSubunits.length - 1,
+    desiredSubunitCount: 8,
   });
 };
 

@@ -23,6 +23,7 @@ import {
   SHARP_AVIF_OPTIONS,
   SHARP_WEBP_OPTIONS,
   SUPPORTED_EXTENSIONS,
+  WALLPAPER_PREVIEW_WIDTH,
   formatBytes,
   toDisplayName,
 } from '../features/Preferences/config/imageProcessing.js';
@@ -71,7 +72,7 @@ interface SourceFingerprint {
 }
 
 interface BuildState {
-  version: 1;
+  version: 2;
   generatedAt: string;
   sources: Record<string, SourceFingerprint>;
 }
@@ -103,7 +104,7 @@ interface UploadPlanFile {
 }
 
 interface UploadPlan {
-  version: 1;
+  version: 2;
   generatedAt: string;
   assetBaseUrl: string;
   r2Prefix: string;
@@ -113,7 +114,13 @@ interface UploadPlan {
   unchangedFiles: UploadPlanFile[];
   removedSources: string[];
   remoteCleanupCandidates: string[];
-  manifestUrls: { wallpaperId: string; avif: string; webp: string }[];
+  manifestUrls: {
+    wallpaperId: string;
+    avif: string;
+    webp: string;
+    previewAvif: string;
+    previewWebp: string;
+  }[];
   errors: { source: string; error: string }[];
   summary: {
     sourceCount: number;
@@ -141,12 +148,12 @@ async function readBuildState(): Promise<BuildState> {
   try {
     const raw = await readFile(BUILD_STATE_PATH, 'utf-8');
     const parsed = JSON.parse(raw) as BuildState;
-    if (parsed.version === 1 && parsed.sources) return parsed;
+    if (parsed.version === 2 && parsed.sources) return parsed;
   } catch {
     // Missing or invalid state means a conservative first run.
   }
 
-  return { version: 1, generatedAt: new Date(0).toISOString(), sources: {} };
+  return { version: 2, generatedAt: new Date(0).toISOString(), sources: {} };
 }
 
 async function getSourceImages(): Promise<string[]> {
@@ -238,6 +245,11 @@ async function getSourceFingerprint(
 
   if (!metadata.width || !metadata.height) {
     throw new Error('Could not read image dimensions');
+  }
+  if (metadata.width < WALLPAPER_PREVIEW_WIDTH) {
+    throw new Error(
+      `Source must be at least ${WALLPAPER_PREVIEW_WIDTH}px wide to generate a theme preview`,
+    );
   }
 
   const baseName = parse(filename).name;
@@ -372,6 +384,19 @@ function selectManifestWidth(
   return Math.max(...widths);
 }
 
+function selectPreviewWidth(
+  baseName: string,
+  availableWidths: Map<string, Set<number>>,
+): number {
+  const widths = availableWidths.get(baseName);
+  if (!widths?.has(WALLPAPER_PREVIEW_WIDTH)) {
+    throw new Error(
+      `Missing ${WALLPAPER_PREVIEW_WIDTH}px preview output for ${baseName}`,
+    );
+  }
+  return WALLPAPER_PREVIEW_WIDTH;
+}
+
 function generateManifest(
   results: ProcessResult[],
   availableWidths: Map<string, Set<number>>,
@@ -381,11 +406,14 @@ function generateManifest(
   const entries = successful
     .map(r => {
       const selectedWidth = selectManifestWidth(r.baseName, availableWidths);
+      const previewWidth = selectPreviewWidth(r.baseName, availableWidths);
       return `  {
     id: '${r.baseName}',
     name: '${r.displayName}',
     url: '${R2_ASSET_BASE_URL}/${R2_WALLPAPER_PREFIX}/${r.baseName}-${selectedWidth}w.avif',
     urlWebp: '${R2_ASSET_BASE_URL}/${R2_WALLPAPER_PREFIX}/${r.baseName}-${selectedWidth}w.webp',
+    previewUrl: '${R2_ASSET_BASE_URL}/${R2_WALLPAPER_PREFIX}/${r.baseName}-${previewWidth}w.avif',
+    previewUrlWebp: '${R2_ASSET_BASE_URL}/${R2_WALLPAPER_PREFIX}/${r.baseName}-${previewWidth}w.webp',
   },`;
     })
     .join('\n');
@@ -410,6 +438,10 @@ export interface GeneratedWallpaper {
   url: string;
   /** WebP fallback URL */
   urlWebp: string;
+  /** Small AVIF URL used only by theme-picker cards */
+  previewUrl?: string;
+  /** Small WebP fallback URL used only by theme-picker cards */
+  previewUrlWebp?: string;
 }
 
 /**
@@ -460,10 +492,13 @@ function makeManifestUrls(
     .filter(result => !result.error)
     .map(result => {
       const width = selectManifestWidth(result.baseName, availableWidths);
+      const previewWidth = selectPreviewWidth(result.baseName, availableWidths);
       return {
         wallpaperId: result.baseName,
         avif: `${R2_ASSET_BASE_URL}/${R2_WALLPAPER_PREFIX}/${result.baseName}-${width}w.avif`,
         webp: `${R2_ASSET_BASE_URL}/${R2_WALLPAPER_PREFIX}/${result.baseName}-${width}w.webp`,
+        previewAvif: `${R2_ASSET_BASE_URL}/${R2_WALLPAPER_PREFIX}/${result.baseName}-${previewWidth}w.avif`,
+        previewWebp: `${R2_ASSET_BASE_URL}/${R2_WALLPAPER_PREFIX}/${result.baseName}-${previewWidth}w.webp`,
       };
     });
 }
@@ -485,7 +520,7 @@ async function main() {
       UPLOAD_PLAN_PATH,
       JSON.stringify(
         {
-          version: 1,
+          version: 2,
           generatedAt: new Date().toISOString(),
           assetBaseUrl: R2_ASSET_BASE_URL,
           r2Prefix: R2_WALLPAPER_PREFIX,
@@ -601,15 +636,25 @@ async function main() {
   await writeFile(MANIFEST_PATH, manifest, 'utf-8');
 
   const buildState: BuildState = {
-    version: 1,
+    version: 2,
     generatedAt: new Date().toISOString(),
     sources: nextSources,
   };
   await writeFile(BUILD_STATE_PATH, JSON.stringify(buildState, null, 2), 'utf-8');
 
-  const uploadFiles = results.flatMap(result =>
-    result.outputs.map(output => toPlanFile(result, output)),
-  );
+  const uploadFiles = results.flatMap(result => {
+    if (!result.skipped) {
+      return result.outputs.map(output => toPlanFile(result, output));
+    }
+
+    // A versioned pipeline upgrade can bootstrap pre-generated files locally.
+    // The new 480px preview objects still need their first R2 publication.
+    return result.reason === 'bootstrapped from existing outputs'
+      ? result.expectedOutputs
+          .filter(output => output.width === WALLPAPER_PREVIEW_WIDTH)
+          .map(output => toPlanFile(result, output))
+      : [];
+  });
   const unchangedFiles = results.flatMap(result =>
     result.skipped
       ? result.expectedOutputs.map(output => toPlanFile(result, output))
@@ -620,7 +665,7 @@ async function main() {
   ];
 
   const plan: UploadPlan = {
-    version: 1,
+    version: 2,
     generatedAt: new Date().toISOString(),
     assetBaseUrl: R2_ASSET_BASE_URL,
     r2Prefix: R2_WALLPAPER_PREFIX,

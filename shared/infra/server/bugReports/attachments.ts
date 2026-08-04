@@ -19,7 +19,7 @@ function safeFileName(fileName: string): string {
     .slice(0, 120);
 }
 
-async function createSignedUrl(path: string): Promise<string | null> {
+export async function createSignedUrl(path: string): Promise<string | null> {
   const supabase = getSupabaseAdminClient();
   const { data, error } = await supabase.storage
     .from(getBugReportBucketName())
