@@ -610,18 +610,24 @@
     "character": "Edward Elric"
   },
   {
-  "japanese": "フォッフォッフォッ",
-  "romaji": "Fo fo fo fo",
-  "english": "Fosh fosh fosh fosh. (alt wording 28)",
-  "anime": "One Piece",
-  "character": "Kozuki Sukiyaki"
-},
-{
-  "japanese": "大丈夫、僕最強だから",
-  "romaji": "Daijoubu, boku saikyou dakara",
-  "english": "Relax, I'm the strongest. (alt wording 39)",
-  "anime": "Jujutsu Kaisen",
-  "character": "Satoru Gojo"
-}
-  
+    "japanese": "フォッフォッフォッ",
+    "romaji": "Fo fo fo fo",
+    "english": "Fosh fosh fosh fosh. (alt wording 28)",
+    "anime": "One Piece",
+    "character": "Kozuki Sukiyaki"
+  },
+  {
+    "japanese": "大丈夫、僕最強だから",
+    "romaji": "Daijoubu, boku saikyou dakara",
+    "english": "Relax, I'm the strongest. (alt wording 39)",
+    "anime": "Jujutsu Kaisen",
+    "character": "Satoru Gojo"
+  },
+  {
+    "japanese": "オラに元気を分けてくれ!",
+    "romaji": "Ora ni genki o wakete kure!",
+    "english": "Lend me your energy! (alt wording 52)",
+    "anime": "Dragon Ball Z",
+    "character": "Son Goku"
+  }
 ]
