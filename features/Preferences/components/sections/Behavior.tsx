@@ -14,6 +14,8 @@ const Behavior = () => {
   const setDisplayKana = usePreferencesStore(state => state.setDisplayKana);
   const silentMode = usePreferencesStore(state => state.silentMode);
   const setSilentMode = usePreferencesStore(state => state.setSilentMode);
+  const animeSoundsEnabled = usePreferencesStore(state => state.animeSoundsEnabled);
+  const setAnimeSoundsEnabled = usePreferencesStore(state => state.setAnimeSoundsEnabled);
   const pronunciationEnabled = usePreferencesStore(
     state => state.pronunciationEnabled,
   );
@@ -38,14 +40,14 @@ const Behavior = () => {
   );
 
   // Unused but kept for future TTS voice panel
-  const {
-    availableVoices,
-    currentVoice,
-    setVoice,
-    speak,
-    refreshVoices,
-    hasJapaneseVoices,
-  } = useJapaneseTTS();
+  // const {
+  //   availableVoices,
+  //   currentVoice,
+  //   setVoice,
+  //   speak,
+  //   refreshVoices,
+  //   hasJapaneseVoices,
+  // } = useJapaneseTTS();
 
   /*   const hotkeysOn = useThemeStore(state => state.hotkeysOn);
   const setHotkeys = useThemeStore(state => state.setHotkeys);
@@ -118,6 +120,32 @@ const Behavior = () => {
           ),
           selectedWhen: true,
           onClick: () => setSilentMode(true),
+        },
+      ],
+    },
+    {
+      label: 'Anime sound effects (e.g. Sugoi, Ganbare):',
+      value: animeSoundsEnabled,
+      choices: [
+        {
+          label: (
+            <>
+              <span>on</span>
+              <AudioLines size={20} className='mb-0.5' />
+            </>
+          ),
+          selectedWhen: true,
+          onClick: () => setAnimeSoundsEnabled(true),
+        },
+        {
+          label: (
+            <>
+              <span>off</span>
+              <VolumeX size={20} className='mb-0.5' />
+            </>
+          ),
+          selectedWhen: false,
+          onClick: () => setAnimeSoundsEnabled(false),
         },
       ],
     },
