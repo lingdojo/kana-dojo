@@ -1,5 +1,11 @@
 [
   {
+  id: "ninja-shadow",
+  backgroundColor: "oklch(12.0% 0.015 280.0 / 1)",
+  mainColor: "oklch(65.0% 0.025 270.0 / 1)",
+  secondaryColor: "oklch(55.0% 0.175 15.0 / 1)"
+  },
+  {
   id: "storm-lake",
   backgroundColor: "oklch(15.0% 0.050 250.0 / 1)",
   mainColor: "oklch(78.0% 0.180 235.0 / 1)",
