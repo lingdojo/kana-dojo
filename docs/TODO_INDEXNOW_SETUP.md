@@ -26,6 +26,7 @@ echo "a1b2c3d4-e5f6-7890-abcd-ef1234567890" > public/a1b2c3d4-e5f6-7890-abcd-ef1
 ```
 
 **Important:**
+
 - Filename is: `[YOUR-UUID].txt`
 - Content is: `[YOUR-UUID]` (same UUID, just the text)
 - No extra whitespace or line breaks
@@ -77,15 +78,19 @@ git push
 ## Step 6: Verify After Deployment
 
 1. **Check key file is accessible:**
+
    ```
    https://kanadojo.com/[your-uuid].txt
    ```
+
    Should return your UUID as plain text
 
 2. **Test IndexNow endpoint:**
+
    ```
    https://kanadojo.com/api/indexnow
    ```
+
    Should return `{"service":"IndexNow API","configured":true,...}`
 
 3. **Test a submission:**
@@ -155,17 +160,20 @@ await notifyPageUpdate('/kana');
 ## ❓ Troubleshooting
 
 **Key file not accessible?**
+
 - Make sure it's in the `public/` folder
 - Check the filename exactly matches your UUID
 - Verify it's deployed to production
 - No extra `.txt.txt` extension
 
 **API says not configured?**
+
 - Check environment variable is set in production (not just locally)
 - Redeploy after adding the environment variable
 - Check for typos in the variable name
 
 **Submissions failing?**
+
 - Verify the UUID in your code matches the file
 - Ensure URLs use `https://kanadojo.com` domain
 - Check Bing Webmaster Tools for error messages
@@ -181,4 +189,3 @@ await notifyPageUpdate('/kana');
 ---
 
 **DELETE THIS FILE** after completing all steps.
-

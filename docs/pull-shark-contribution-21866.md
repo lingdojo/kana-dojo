@@ -1,4 +1,5 @@
 # Pull Shark contribution for issue #21866
+
 Repository: lingdojo/kana-dojo
 Issue: [Good First Issue] 🌺 Add new Etiquette Tip 65 - Beginner-Friendly Open-source Contribution
 
