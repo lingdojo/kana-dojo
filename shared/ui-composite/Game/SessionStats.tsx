@@ -1,7 +1,6 @@
 'use client';
 import { useEffect, useMemo } from 'react';
 import {
-  CircleArrowLeft,
   ArrowLeft,
   Hourglass,
   Check,
@@ -50,7 +49,7 @@ function BentoTile({
 }: BentoTileProps) {
   return (
     <div
-      className={`flex min-w-0 flex-col justify-between overflow-hidden rounded-[2rem] border-2 border-(--secondary-color)/10 bg-(--background-color) p-5 sm:p-6 ${className}`}
+      className={`flex min-w-0 flex-col justify-between overflow-hidden rounded-[2rem] border-2 border-(--secondary-color)/10 bg-(--background-color) p-4 sm:p-5 ${className}`}
     >
       <div className='mb-2 flex min-w-0 items-center gap-2'>
         <span
@@ -58,12 +57,12 @@ function BentoTile({
         >
           <Icon className='h-5 w-5' />
         </span>
-        <span className='block min-w-0 break-all text-[11px] leading-tight font-bold tracking-wider text-(--secondary-color) uppercase opacity-60 sm:text-xs'>
+        <span className='block min-w-0 text-[11px] leading-tight font-bold tracking-wider break-words text-(--secondary-color) uppercase opacity-60 sm:text-xs'>
           {label}
         </span>
       </div>
       <div
-        className={`min-w-0 overflow-hidden break-words text-2xl font-black tracking-tighter text-(--main-color) sm:text-3xl ${valueClassName}`}
+        className={`min-w-0 overflow-hidden text-2xl font-black tracking-tighter break-words text-(--main-color) sm:text-3xl lg:text-4xl ${valueClassName}`}
       >
         {value}
       </div>
@@ -169,19 +168,19 @@ const SessionStats: React.FC = () => {
 
   const statsContent = (
     <>
-      <div className='mb-8 flex flex-col items-center gap-1 text-center select-none sm:mb-12 sm:items-start sm:text-left lg:mb-16'>
-        <h1 className='text-3xl font-black tracking-tighter text-(--main-color) lowercase sm:text-5xl lg:text-6xl'>
+      <div className='mb-6 flex flex-col items-center gap-1 text-center select-none sm:mb-8 sm:items-start sm:text-left lg:mb-10'>
+        <h1 className='text-3xl font-black tracking-tighter text-(--main-color) lowercase sm:text-4xl lg:text-5xl'>
           statistics
         </h1>
-        <p className='text-base font-medium tracking-tight text-(--secondary-color) lowercase opacity-60 sm:text-xl'>
+        <p className='text-sm font-medium tracking-tight text-(--secondary-color) lowercase opacity-60 sm:text-base lg:text-lg'>
           track your performance in the current session.
         </p>
       </div>
 
-      <div className='mb-8 flex flex-col gap-4 sm:mb-12 sm:gap-6 lg:mb-16'>
-        <div className='grid grid-cols-1 auto-rows-[minmax(140px,auto)] gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-6'>
-          <div className='relative flex flex-col items-center justify-center rounded-[2.5rem] border-2 border-(--main-color)/20 bg-(--background-color) p-6 sm:col-span-2 sm:flex-row sm:gap-10 sm:p-8 lg:col-span-3 lg:row-span-2'>
-            <div className='relative flex aspect-square w-full max-w-36 flex-col items-center justify-center sm:max-w-44'>
+      <div className='mb-6 flex flex-col gap-4 sm:mb-8 sm:gap-5 lg:mb-10'>
+        <div className='grid auto-rows-[minmax(120px,auto)] grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-5 lg:grid-cols-6'>
+          <div className='relative flex flex-col items-center justify-center rounded-[2.5rem] border-2 border-(--main-color)/20 bg-(--background-color) p-5 sm:col-span-2 sm:flex-row sm:gap-8 sm:p-6 lg:col-span-3 lg:row-span-2'>
+            <div className='relative flex aspect-square w-full max-w-28 flex-col items-center justify-center sm:max-w-36'>
               <div
                 className='h-full w-full rounded-full'
                 style={{
@@ -204,10 +203,12 @@ const SessionStats: React.FC = () => {
                 </span>
               </div>
               <div className='text-3xl font-black tracking-tighter text-(--main-color) sm:text-5xl'>
-                {formatValue(numCorrectAnswers)} / {formatValue(stats.totalAnswers)}
+                {formatValue(numCorrectAnswers)} /{' '}
+                {formatValue(stats.totalAnswers)}
               </div>
               <p className='mt-2 text-sm text-(--secondary-color) lowercase opacity-60 sm:text-base'>
-                out of {stats.totalAnswers} attempts, you answered {numCorrectAnswers} correctly.
+                out of {stats.totalAnswers} attempts, you answered{' '}
+                {numCorrectAnswers} correctly.
               </p>
             </div>
           </div>
@@ -251,7 +252,7 @@ const SessionStats: React.FC = () => {
             Icon={Shapes}
             label='unique chars'
             value={stats.uniqueChars}
-            className='lg:col-span-1'
+            className='lg:col-span-2'
           />
           <BentoTile
             Icon={Timer}
@@ -274,7 +275,7 @@ const SessionStats: React.FC = () => {
         </div>
       </div>
 
-      <div className='sticky bottom-0 z-10 -mx-4 mt-auto flex w-auto items-center justify-center gap-3 border-t-2 border-(--border-color) bg-(--background-color) py-4 px-4 select-none sm:static sm:mx-0 sm:w-full sm:justify-start sm:gap-5 sm:border-0 sm:bg-transparent sm:px-0 sm:py-0'>
+      <div className='sticky bottom-0 z-10 -mx-4 mt-auto flex w-auto items-center justify-center gap-3 border-t-2 border-(--border-color) bg-(--background-color) px-4 py-4 select-none sm:static sm:mx-0 sm:w-full sm:justify-start sm:gap-5 sm:border-0 sm:bg-transparent sm:px-0 sm:py-0'>
         <button
           onClick={() => {
             playClick();
@@ -331,7 +332,7 @@ const SessionStats: React.FC = () => {
 
   return (
     <div className='fixed inset-0 z-50 flex h-full w-full flex-col overflow-x-hidden overflow-y-auto bg-(--background-color)'>
-      <div className='mx-auto flex min-h-full w-full max-w-7xl flex-1 flex-col justify-start px-4 py-8 sm:min-h-[100dvh] sm:justify-center sm:px-8 sm:py-20 lg:px-12 lg:py-16'>
+      <div className='mx-auto my-auto flex min-h-full w-full max-w-7xl flex-1 flex-col justify-start px-4 py-6 sm:px-8 sm:py-10 lg:px-12 lg:py-12'>
         {statsContent}
       </div>
     </div>
@@ -339,4 +340,3 @@ const SessionStats: React.FC = () => {
 };
 
 export default SessionStats;
-

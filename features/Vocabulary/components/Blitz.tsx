@@ -9,6 +9,7 @@ import Blitz, { type BlitzConfig } from '@/shared/ui-composite/Blitz';
 import FuriganaText from '@/shared/ui-composite/text/FuriganaText';
 import { getSelectionLabels } from '@/shared/utils/selectionFormatting';
 import { shuffle, pickOne } from '@/shared/utils/shuffle';
+import { isVocabularyMeaningAnswerCorrect } from '@/features/Vocabulary/lib/isVocabularyMeaningAnswerCorrect';
 
 export default function BlitzVocab() {
   const selectedVocabObjs = useVocabStore(state => state.selectedVocabObjs);
@@ -50,16 +51,8 @@ export default function BlitzVocab() {
       ),
     inputPlaceholder: 'Type the meaning...',
     modeDescription: 'Mode: Type (See Japanese word → Type meaning)',
-    checkAnswer: (question, answer, isReverse) => {
-      if (isReverse) {
-        // Reverse: answer should be the Japanese word
-        return answer.trim() === question.word;
-      }
-      // Normal: answer should match any meaning
-      return question.meanings.some(
-        meaning => answer.toLowerCase() === meaning.toLowerCase(),
-      );
-    },
+    checkAnswer: (question, answer, isReverse) =>
+      isVocabularyMeaningAnswerCorrect(question, answer, isReverse),
     getCorrectAnswer: (question, isReverse) =>
       isReverse ? question.word : question.meanings[0],
     // Pick mode support with reverse mode
@@ -99,4 +92,3 @@ export default function BlitzVocab() {
 
   return <Blitz config={config} />;
 }
-

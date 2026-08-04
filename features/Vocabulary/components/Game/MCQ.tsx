@@ -175,6 +175,8 @@ const VocabMCQ = ({ selectedWordObjs, isHidden }: VocabMCQProps) => {
     correctWordObj as IVocabObj,
   );
 
+  const isProcessingRef = useRef(false);
+
   // What to display as the question
   const displayChar = isReverse ? correctWordObj?.meanings[0] : correctChar;
 
@@ -224,6 +226,7 @@ const VocabMCQ = ({ selectedWordObjs, isHidden }: VocabMCQProps) => {
 
   // Update shuffled options when correctChar or isReverse changes
   useEffect(() => {
+    isProcessingRef.current = false;
     if (!hasWords) return;
     setShuffledOptions(
       [targetChar ?? '', ...getIncorrectOptions()].sort(
@@ -232,6 +235,13 @@ const VocabMCQ = ({ selectedWordObjs, isHidden }: VocabMCQProps) => {
     );
     setWrongSelectedAnswers([]);
   }, [correctChar, hasWords, isReverse, quizType]);
+
+  // A wrong answer keeps the current prompt on screen. Release the synchronous
+  // event lock only after its disabled-button state has committed, so another
+  // available option can be selected without accepting duplicate rapid input.
+  useEffect(() => {
+    isProcessingRef.current = false;
+  }, [wrongSelectedAnswers]);
 
   const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
@@ -252,6 +262,9 @@ const VocabMCQ = ({ selectedWordObjs, isHidden }: VocabMCQProps) => {
   }, [hasWords, shuffledOptions.length]);
 
   const handleOptionClick = (selectedOption: string) => {
+    if (isProcessingRef.current) return;
+    isProcessingRef.current = true;
+
     if (selectedOption === targetChar) {
       setDisplayAnswerSummary(true);
       handleCorrectAnswer();

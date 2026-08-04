@@ -15,7 +15,10 @@ import { useRouter } from '@/core/i18n/routing';
 import { finalizeSession, startSession } from '@/shared/utils/sessionHistory';
 import { useMenuSelectorStore } from '@/shared/ui-composite/Menu/store/useMenuSelectorStore';
 import useClassicSessionStore from '@/shared/store/useClassicSessionStore';
-import { shouldShowStreakMilestoneOverlay } from '@/shared/utils/game/streakMilestones';
+import {
+  ENABLE_EVERY_QUESTION_AD_OVERLAY,
+  shouldShowStreakMilestoneOverlay,
+} from '@/shared/utils/game/streakMilestones';
 
 const Game = () => {
   const {
@@ -60,10 +63,17 @@ const Game = () => {
 
   useEffect(() => {
     if (view !== 'playing') return;
-    if (shouldShowStreakMilestoneOverlay(currentStreak)) {
-      setActiveMilestone(currentStreak);
+    const totalQuestionsAnswered = numCorrectAnswers + numWrongAnswers;
+    if (
+      shouldShowStreakMilestoneOverlay(currentStreak, totalQuestionsAnswered)
+    ) {
+      setActiveMilestone(
+        ENABLE_EVERY_QUESTION_AD_OVERLAY
+          ? totalQuestionsAnswered
+          : currentStreak,
+      );
     }
-  }, [currentStreak, view]);
+  }, [currentStreak, numCorrectAnswers, numWrongAnswers, view]);
 
   useEffect(() => {
     resetStats();

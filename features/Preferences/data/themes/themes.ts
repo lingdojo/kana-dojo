@@ -316,6 +316,8 @@ function syncCustomWallpapers(): void {
       name: wp.name,
       url, // Object URL (full-size) or thumbnail fallback
       urlWebp: '', // Not needed — url is already WebP
+      previewUrl: wp.thumbnailDataUrl,
+      previewUrlWebp: '',
     });
 
     // Register in the theme map
@@ -364,12 +366,18 @@ function ensureCustomThemesLoaded(): void {
 export function applyTheme(themeId: string) {
   ensureCustomThemesLoaded();
   const resolvedThemeId = resolveThemeId(themeId);
+  const isCustomWallpaper = resolvedThemeId.startsWith('custom-');
   const theme = getThemeMap().get(resolvedThemeId);
 
   if (!theme) {
     console.error(`Theme "${themeId}" not found`);
     return;
   }
+
+  const customWallpapers = useCustomWallpaperStore.getState();
+  customWallpapers.releaseObjectUrlsExcept(
+    isCustomWallpaper ? resolvedThemeId : undefined,
+  );
 
   usePreferencesStore
     .getState()
@@ -421,6 +429,20 @@ export function applyTheme(themeId: string) {
       document.body.style.backgroundPosition = 'center';
       document.body.style.backgroundRepeat = 'no-repeat';
       document.body.style.backgroundAttachment = 'fixed';
+
+      if (isCustomWallpaper) {
+        const appliedUrl = wallpaper.url;
+        void customWallpapers.ensureObjectUrl(resolvedThemeId).then(objectUrl => {
+          if (
+            objectUrl &&
+            objectUrl !== appliedUrl &&
+            usePreferencesStore.getState().theme === resolvedThemeId
+          ) {
+            syncCustomWallpapers();
+            applyTheme(resolvedThemeId);
+          }
+        });
+      }
     }
   } else {
     // Clear wallpaper if theme doesn't have one
