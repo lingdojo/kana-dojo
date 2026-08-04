@@ -51,7 +51,7 @@
     "id": 9,
     "text": "\"〜そうです\" can report hearsay (\"I heard that...\").",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 10,
@@ -86,7 +86,7 @@
   {
     "id": 15,
     "text": "\"〜てくれる\" indicates someone does a favor for the speaker.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -218,7 +218,7 @@
   {
     "id": 37,
     "text": "\"〜ことになる\" indicates something was decided (by others or circumstances).",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -314,7 +314,7 @@
   {
     "id": 53,
     "text": "\"〜せいで\" indicates a negative cause, \"because of\".",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -344,7 +344,7 @@
   {
     "id": 58,
     "text": "\"〜ようにする\" means \"make an effort to...\".",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

@@ -272,7 +272,7 @@
   {
     "id": 46,
     "fact": "Japan's Shibuya Crossing sees up to 3,000 people cross at once during peak times - making it the busiest pedestrian intersection in the world.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -290,7 +290,7 @@
   {
     "id": 49,
     "fact": "The word 'amae' (甘え) describes depending on another's goodwill - a uniquely Japanese concept of presuming on someone's affection.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -380,7 +380,7 @@
   {
     "id": 64,
     "fact": "Japanese blood donation has such high demand that mobile donation buses give out snacks, drinks, and lottery tickets as thanks.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -746,7 +746,7 @@
   {
     "id": 125,
     "fact": "The word 'yoroshiku' (よろしく) has no direct translation - it's used for introductions, requests, and meaning 'please treat me well'.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1268,7 +1268,7 @@
   {
     "id": 212,
     "fact": "The Japanese word 'arigatai' (ありがたい) originally meant 'rare and precious', which is why it became associated with gratitude.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

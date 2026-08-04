@@ -399,10 +399,29 @@
     "character": "Various endings"
   },
   {
+  "japanese": "風が、来る！",
+  "romaji": "Kaze ga, kuru!",
+  "english": "The wind is coming!",
+  "game": "The Legend of Zelda: Breath of the Wild (JP)",
+  "character": "Revali"
+},
+  {
+    "japanese": "太陽賛美 ！",
+    "romaji": "Taiyō Banzai!",
+    "english": "Praise the Sun!",
+    "game": "Dark Souls",
+    "character": "Solaire of Astora"
     "japanese": "運命なんて、変えてみせる！",
     "romaji": "Unmei nante, kaete miseru!",
     "english": "I'll change destiny!",
     "game": "Final Fantasy Type-0",
     "character": "Class Zero"
-  }
+  },
+  {
+  "japanese": "生きるってのは、戦うってことだ",
+  "romaji": "Ikiru tte no wa, tatakau tte koto da",
+  "english": "To live is to fight.",
+  "game": "Yakuza: Like a Dragon",
+  "character": "Ichiban Kasuga"
+}
 ]
