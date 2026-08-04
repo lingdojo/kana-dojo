@@ -12,7 +12,7 @@ export function useDictionaryData() {
       try {
         // Fetch all levels in parallel
         const kanjiLevels = ['N5', 'N4', 'N3', 'N2', 'N1'];
-        const vocabLevels = ['n5', 'n4', 'n3', 'n2', 'n1'];
+        const vocabLevels = ['n5', 'n4', 'n3', 'n2', 'n1', 'anime'];
 
         const kanjiPromises = kanjiLevels.map(level =>
           fetch(`/data-kanji/${level}.json`).then(res => res.json())

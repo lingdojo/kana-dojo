@@ -7,6 +7,8 @@ import type { ClickSoundId } from '@/features/Preferences/data/audio/clickSounds
 export interface AudioPreferences {
   silentMode: boolean;
   setSilentMode: (silent: boolean) => void;
+  animeSoundsEnabled: boolean;
+  setAnimeSoundsEnabled: (enabled: boolean) => void;
   pronunciationEnabled: boolean;
   setPronunciationEnabled: (enabled: boolean) => void;
   pronunciationSpeed: number;
@@ -29,6 +31,8 @@ export interface AudioPreferences {
 export function useAudioPreferences(): AudioPreferences {
   const silentMode = usePreferencesStore(state => state.silentMode);
   const setSilentMode = usePreferencesStore(state => state.setSilentMode);
+  const animeSoundsEnabled = usePreferencesStore(state => state.animeSoundsEnabled);
+  const setAnimeSoundsEnabled = usePreferencesStore(state => state.setAnimeSoundsEnabled);
   const pronunciationEnabled = usePreferencesStore(
     state => state.pronunciationEnabled,
   );
@@ -66,6 +70,8 @@ export function useAudioPreferences(): AudioPreferences {
     () => ({
       silentMode,
       setSilentMode,
+      animeSoundsEnabled,
+      setAnimeSoundsEnabled,
       pronunciationEnabled,
       setPronunciationEnabled,
       pronunciationSpeed,
@@ -82,6 +88,8 @@ export function useAudioPreferences(): AudioPreferences {
     [
       silentMode,
       setSilentMode,
+      animeSoundsEnabled,
+      setAnimeSoundsEnabled,
       pronunciationEnabled,
       setPronunciationEnabled,
       pronunciationSpeed,
