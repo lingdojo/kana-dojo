@@ -14,8 +14,8 @@
     "text": "> Community note: this page intentionally accepts tiny formatting-safe edits.",
     "issued": true,
     "completed": false,
-    "completedBy": "Garg-Pankaj29",
-    "completedPR": 26927
+    "completedBy": "darlenepolek",
+    "completedPR": 27256
   },
   {
     "id": 3,
@@ -30,7 +30,7 @@
     "file": "docs/community-notes/workflow-snippets.md",
     "position": "top",
     "text": "_Community note: this markdown file is safe for tiny redundant edits._",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {

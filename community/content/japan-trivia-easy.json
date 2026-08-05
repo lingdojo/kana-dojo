@@ -530,5 +530,11 @@
     "October"
   ],
   "correctIndex": 1
-}
+},
+  {
+    "question": "In which city was instant ramen invented?",
+    "difficulty": "easy",
+    "answers": ["Nagoya", "Osaka", "Tokyo", "Yokohama"],
+    "correctIndex": 1
+  }
 ]

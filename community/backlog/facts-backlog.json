@@ -8,7 +8,7 @@
   {
     "id": 2,
     "fact": "There's a Japanese practice called 'inemuri' (居眠り) - sleeping while present - where napping in public or at work is seen as a sign of dedication rather than laziness.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -20,7 +20,7 @@
   {
     "id": 4,
     "fact": "The Japanese word 'age-otori' (上げ劣り) describes the specific experience of looking worse after a haircut - a feeling so common it needed its own word.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -68,7 +68,7 @@
   {
     "id": 12,
     "fact": "The word 'bakku-shan' (バックシャン) describes someone who looks attractive from behind but not from the front - a uniquely specific observation.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -170,7 +170,7 @@
   {
     "id": 29,
     "fact": "Japan's 7-Eleven stores outnumber those in the US despite Japan being 26 times smaller - there's roughly one 7-Eleven for every 2,300 people.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -188,7 +188,7 @@
   {
     "id": 32,
     "fact": "The practice of 'nemawashi' (根回し) means building consensus before a meeting so decisions appear unanimous - the actual negotiation happens beforehand.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -272,7 +272,7 @@
   {
     "id": 46,
     "fact": "Japan's Shibuya Crossing sees up to 3,000 people cross at once during peak times - making it the busiest pedestrian intersection in the world.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -290,7 +290,7 @@
   {
     "id": 49,
     "fact": "The word 'amae' (甘え) describes depending on another's goodwill - a uniquely Japanese concept of presuming on someone's affection.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -320,7 +320,7 @@
   {
     "id": 54,
     "fact": "Japan has a highway that passes directly through a building in Osaka - the Gate Tower Building has floors 5-7 as a tunnel.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -344,7 +344,7 @@
   {
     "id": 58,
     "fact": "Japan's Seikan Tunnel connecting Honshu and Hokkaido is the world's longest undersea tunnel at 53.85 kilometers.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -380,7 +380,7 @@
   {
     "id": 64,
     "fact": "Japanese blood donation has such high demand that mobile donation buses give out snacks, drinks, and lottery tickets as thanks.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -398,7 +398,7 @@
   {
     "id": 67,
     "fact": "There's a Japanese practice called 'kuuki wo yomu' (空気を読む) - reading the air - understanding unspoken social cues.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -410,13 +410,13 @@
   {
     "id": 69,
     "fact": "The Japanese word 'koi no yokan' (恋の予感) describes knowing you'll inevitably fall in love with someone you just met.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
     "id": 70,
     "fact": "Japan has a shrine where you can pray for better Wi-Fi signal - the Kanda Myojin Shrine in Tokyo blesses electronics.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -470,7 +470,7 @@
   {
     "id": 79,
     "fact": "The Japanese word 'nomunication' combines 'nomu' (drink) and 'communication' - bonding with colleagues over after-work drinks.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -500,13 +500,13 @@
   {
     "id": 84,
     "fact": "Japan has 'crying rooms' in some theaters where parents can watch movies with babies without disturbing other viewers.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
     "id": 85,
     "fact": "The word 'otsukaresama' (お疲れ様) literally means 'you're tired' but is used to acknowledge someone's hard work.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -548,7 +548,7 @@
   {
     "id": 92,
     "fact": "Japan's National Apology Day falls on August 15th, when the nation reflects on World War II and its aftermath.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -614,7 +614,7 @@
   {
     "id": 103,
     "fact": "There's a Japanese word 'kenkyo' (謙虚) for humility so deep it rejects praise - considered one of the highest virtues.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -692,7 +692,7 @@
   {
     "id": 116,
     "fact": "Japan has themed trains where the entire interior is decorated for specific anime, seasonal events, or tourist destinations.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -710,13 +710,13 @@
   {
     "id": 119,
     "fact": "There's a Japanese practice 'meshi' (召し) where a boss inviting you for a meal is essentially a command, not a request.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
     "id": 120,
     "fact": "Japan has more Michelin-starred restaurants than any other country - Tokyo alone has more stars than Paris.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -734,7 +734,7 @@
   {
     "id": 123,
     "fact": "There's a Japanese word 'miryoku' (魅力) for charm or attractiveness that draws people in - the quality that makes things captivating.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -746,7 +746,7 @@
   {
     "id": 125,
     "fact": "The word 'yoroshiku' (よろしく) has no direct translation - it's used for introductions, requests, and meaning 'please treat me well'.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -764,7 +764,7 @@
   {
     "id": 128,
     "fact": "Japan has 'host clubs' where women pay to be flattered and entertained by handsome young men over expensive drinks.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -794,7 +794,7 @@
   {
     "id": 133,
     "fact": "The word 'hazukashii' (恥ずかしい) describes embarrassment that's almost physical - you feel it in your body.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -884,7 +884,7 @@
   {
     "id": 148,
     "fact": "Japan has 'book-off' stores where you can sell and buy used manga, CDs, games, and electronics at bargain prices.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -980,7 +980,7 @@
   {
     "id": 164,
     "fact": "Japan has 'namahage' - demons who visit homes on New Year's Eve to scare children into behaving well.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -998,7 +998,7 @@
   {
     "id": 167,
     "fact": "There's a Japanese concept 'seijitsu' (誠実) meaning sincerity that's shown through actions, not just words.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1022,7 +1022,7 @@
   {
     "id": 171,
     "fact": "There's a Japanese practice 'kashikomarimashita' (かしこまりました) - the ultra-polite way service staff say 'understood.'",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1082,7 +1082,7 @@
   {
     "id": 181,
     "fact": "The word 'kimochi' (気持ち) describes feelings so physical you can sense them in your body - mood embodied.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1178,7 +1178,7 @@
   {
     "id": 197,
     "fact": "The concept 'sessha' (拙者) is an extremely humble way to say 'I' - originally used by samurai to show modesty.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1232,7 +1232,7 @@
   {
     "id": 206,
     "fact": "Many Japanese supermarkets sell 'bento' at night with discount stickers that increase as closing time approaches.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1262,13 +1262,13 @@
   {
     "id": 211,
     "fact": "Japan has regional mascots called 'yuru-chara' (ゆるキャラ) that promote towns, products, and even government agencies.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
     "id": 212,
     "fact": "The Japanese word 'arigatai' (ありがたい) originally meant 'rare and precious', which is why it became associated with gratitude.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1358,7 +1358,7 @@
   {
     "id": 227,
     "fact": "Japan has a culture of seasonal flavors, like sakura in spring and sweet potato in autumn, across snacks and drinks.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1376,7 +1376,7 @@
   {
     "id": 230,
     "fact": "The Japanese word 'nagori' (名残) describes the lingering feeling when a season is ending — like the last strawberries of spring.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1484,7 +1484,7 @@
   {
     "id": 248,
     "fact": "The word 'kazaana' (風穴) refers to naturally cool caves used historically to store ice and preserve food in summer.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1538,7 +1538,7 @@
   {
     "id": 257,
     "fact": "Japan’s 'shugendo' (修験道) is a mountain ascetic tradition combining Shinto, Buddhism, and folk practices.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1604,7 +1604,7 @@
   {
     "id": 268,
     "fact": "The word 'komachi' (小町) is used in place names to reference elegance, inspired by the legendary beauty Ono no Komachi.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1628,7 +1628,7 @@
   {
     "id": 272,
     "fact": "The phrase 'okagesama de' is used to reply modestly to compliments, similar to saying 'thanks to your support'.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1640,7 +1640,7 @@
   {
     "id": 274,
     "fact": "The word 'yuigahama' appears in coastal place names, referencing a long, gently sloping beach.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1652,7 +1652,7 @@
   {
     "id": 276,
     "fact": "The term 'kirei' (綺麗) means both 'beautiful' and 'clean', linking aesthetics with neatness.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1724,7 +1724,7 @@
   {
     "id": 288,
     "fact": "The word 'kira kira' (キラキラ) is an onomatopoeia for sparkle, often used in product names and pop culture.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1754,7 +1754,7 @@
   {
     "id": 293,
     "fact": "Japan has a tradition called 'hajimete no omiyage' where travelers bring their first souvenir to share with family or coworkers.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1844,7 +1844,7 @@
   {
     "id": 308,
     "fact": "'Furoshiki' are reusable cloth wraps used to carry goods or wrap gifts, often with artistic patterns.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1868,13 +1868,13 @@
   {
     "id": 312,
     "fact": "Japan’s 'shichi-go-san' festival celebrates children at ages 3, 5, and 7 with shrine visits and traditional outfits.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
     "id": 313,
     "fact": "The phrase 'yoroshiku onegaishimasu' (よろしくお願いします) is a versatile expression for 'please take care of me.'",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1898,13 +1898,13 @@
   {
     "id": 317,
     "fact": "'Amanatto' are sweetened azuki beans often served with tea as a small snack.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
     "id": 318,
     "fact": "The word 'sukiyaki' refers both to the dish and to a style of cooking ingredients at the table.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
