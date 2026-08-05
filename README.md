@@ -36,7 +36,7 @@
 [![Zustand](https://img.shields.io/badge/Zustand-00C7B7?style=for-the-badge&logo=zustand&logoColor=white)](https://github.com/pmndrs/zustand)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
 [![Vitest](https://img.shields.io/badge/Tests-Vitest-yellow?style=for-the-badge)](https://vitest.dev/)
-[![AGPL-3.0](https://img.shields.io/badge/open-source-green?style=for-the-badge)](https://www.gnu.org/licenses/agpl-3.0)
+[![AGPL-3.0](https://img.shields.io/badge/open-source-green?style=for-the-badge)](https://gnu.org/licenses/agpl-3.0)
 [![Discord](https://img.shields.io/badge/Discord-Join%20Community-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/CyvBNNrSmb)
 [![Email](https://img.shields.io/badge/Email-dev%40kanadojo.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:dev@kanadojo.com)
 
@@ -134,7 +134,7 @@ npm run check
 - [Tailwind CSS](https://tailwindcss.com/)  
 - [shadcn/ui](https://ui.shadcn.com/)  
 - [Zustand](https://github.com/pmndrs/zustand)  
-- [Framer Motion](https://www.framer.com/motion/)
+- [Framer Motion](https://framer.com/motion/)
 
 > See [Architecture docs](./docs/ARCHITECTURE.md) for full technical details.
 

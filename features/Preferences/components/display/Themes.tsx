@@ -7,7 +7,10 @@ import themeSets, {
   isPremiumThemeId,
   // hexToHsl
 } from '@/features/Preferences/data/themes/themes';
-import { getWallpaperById } from '@/features/Preferences/data/wallpapers/wallpapers';
+import {
+  getWallpaperById,
+  getWallpaperPreviewUrls,
+} from '@/features/Preferences/data/wallpapers/wallpapers';
 import usePreferencesStore from '@/features/Preferences/store/usePreferencesStore';
 import clsx from 'clsx';
 import { useClick, useLong } from '@/shared/hooks/generic/useAudio';
@@ -47,9 +50,6 @@ const Themes = ({ useNewIconDesign = false }: ThemesProps) => {
   const selectedTheme = usePreferencesStore(state => state.theme);
   const setSelectedTheme = usePreferencesStore(state => state.setTheme);
   const themePreview = usePreferencesStore(state => state.themePreview);
-  const selectedWallpaperId = usePreferencesStore(
-    state => state.selectedWallpaperId,
-  );
 
   // Initialize with first theme to avoid hydration mismatch
   const [randomTheme, setRandomTheme] = useState(themeSets[2].themes[0]);
@@ -219,16 +219,14 @@ const Themes = ({ useNewIconDesign = false }: ThemesProps) => {
                     const themeWallpaperId = getThemeDefaultWallpaperId(
                       currentTheme.id,
                     );
-                    const wallpaperIdToUse =
-                      themeWallpaperId || selectedWallpaperId;
-
-                    if (wallpaperIdToUse) {
-                      const wallpaper = getWallpaperById(wallpaperIdToUse);
+                    if (themeWallpaperId) {
+                      const wallpaper = getWallpaperById(themeWallpaperId);
                       if (wallpaper) {
+                        const preview = getWallpaperPreviewUrls(wallpaper);
                         return getWallpaperStyles(
-                          wallpaper.url,
+                          preview.url,
                           isHovered === currentTheme.id,
-                          wallpaper.urlWebp,
+                          preview.urlWebp,
                         );
                       }
                     }
