@@ -623,19 +623,25 @@
   "anime": "Jujutsu Kaisen",
   "character": "Satoru Gojo"
 },
-  {
+{
   "japanese": "ほう…向かってくるのか",
   "romaji": "Ho... mukatte kuru no ka",
   "english": "Oh? You're approaching me? (alt wording 3)",
   "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
   "character": "DIO"
 },
-  {
+{
   "japanese": "ブチャラティ、来た！",
   "romaji": "Bucharati, kita!",
   "english": "Bucciarati is here! (alt wording 17)",
   "anime": "JoJo's Bizarre Adventure: Golden Wind",
   "character": "Narancia Ghirga"
+},
+{
+  "japanese": "マママママ",
+  "romaji": "Mama mama mama",
+  "english": "Mama mama mama. (alt wording 29)",
+  "anime": "One Piece",
+  "character": "Charlotte Linlin (Big Mom)"
 }
-  
 ]
