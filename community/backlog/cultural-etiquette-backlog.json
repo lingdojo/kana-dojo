@@ -1076,7 +1076,7 @@
     "dont": "匂いの強いものを持参する",
     "note": "分けやすさが好まれる。",
     "id": 120,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

@@ -596,7 +596,7 @@
     "game": "Samurai game proverb line",
     "character": "Musashi reference",
     "id": 60,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
