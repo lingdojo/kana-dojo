@@ -868,6 +868,17 @@
       "Sayonara"
     ],
     "correctIndex": 1
+  },
+  {
+  "question": "What is the traditional Japanese tea ceremony called? (Community variation 19)",
+  "difficulty": "medium",
+  "answers": [
+    "Sado",
+    "Judo",
+    "Kendo",
+    "Shodo"
+  ],
+  "correctIndex": 0
   }
 ]
 

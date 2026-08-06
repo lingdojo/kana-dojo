@@ -490,5 +490,23 @@
     "backgroundColor": "oklch(12.0% 0.015 280.0 / 1)",
     "mainColor": "oklch(65.0% 0.025 270.0 / 1)",
     "secondaryColor": "oklch(55.0% 0.175 15.0 / 1)"
+  },
+  {
+    "id": "shibuya-haze",
+    "backgroundColor": "oklch(17.0% 0.055 290.0 / 1)",
+    "mainColor": "oklch(82.0% 0.195 310.0 / 1)",
+    "secondaryColor": "oklch(74.0% 0.140 20.0 / 1)"
+  },
+  {
+    "id": "tokyo-metro",
+    "backgroundColor": "oklch(20.0% 0.025 260.0 / 1)",
+    "mainColor": "oklch(70.0% 0.180 145.0 / 1)",
+    "secondaryColor": "oklch(80.0% 0.120 50.0 / 1)"
+  },
+  {
+    "id": "snow-pine",
+    "backgroundColor": "oklch(94.0% 0.010 210.0 / 1)",
+    "mainColor": "oklch(45.0% 0.080 155.0 / 1)",
+    "secondaryColor": "oklch(60.0% 0.040 200.0 / 1)"
   }
 ]
