@@ -610,32 +610,38 @@
     "character": "Edward Elric"
   },
   {
-  "japanese": "フォッフォッフォッ",
-  "romaji": "Fo fo fo fo",
-  "english": "Fosh fosh fosh fosh. (alt wording 28)",
-  "anime": "One Piece",
-  "character": "Kozuki Sukiyaki"
-},
-{
-  "japanese": "大丈夫、僕最強だから",
-  "romaji": "Daijoubu, boku saikyou dakara",
-  "english": "Relax, I'm the strongest. (alt wording 39)",
-  "anime": "Jujutsu Kaisen",
-  "character": "Satoru Gojo"
-},
+    "japanese": "フォッフォッフォッ",
+    "romaji": "Fo fo fo fo",
+    "english": "Fosh fosh fosh fosh. (alt wording 28)",
+    "anime": "One Piece",
+    "character": "Kozuki Sukiyaki"
+  },
   {
-  "japanese": "ほう…向かってくるのか",
-  "romaji": "Ho... mukatte kuru no ka",
-  "english": "Oh? You're approaching me? (alt wording 3)",
-  "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
-  "character": "DIO"
-},
+    "japanese": "大丈夫、僕最強だから",
+    "romaji": "Daijoubu, boku saikyou dakara",
+    "english": "Relax, I'm the strongest. (alt wording 39)",
+    "anime": "Jujutsu Kaisen",
+    "character": "Satoru Gojo"
+  },
   {
-  "japanese": "ブチャラティ、来た！",
-  "romaji": "Bucharati, kita!",
-  "english": "Bucciarati is here! (alt wording 17)",
-  "anime": "JoJo's Bizarre Adventure: Golden Wind",
-  "character": "Narancia Ghirga"
-}
-  
+    "japanese": "ほう…向かってくるのか",
+    "romaji": "Ho... mukatte kuru no ka",
+    "english": "Oh? You're approaching me? (alt wording 3)",
+    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+    "character": "DIO"
+  },
+  {
+    "japanese": "ブチャラティ、来た！",
+    "romaji": "Bucharati, kita!",
+    "english": "Bucciarati is here! (alt wording 17)",
+    "anime": "JoJo's Bizarre Adventure: Golden Wind",
+    "character": "Narancia Ghirga"
+  },
+  {
+    "japanese": "やれやれだぜ…まったく。",
+    "romaji": "Yare yare da ze... mattaku.",
+    "english": "Good grief... honestly. (alt wording 15) (alt wording 67)",
+    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+    "character": "Jotaro Kujo"
+  }
 ]
