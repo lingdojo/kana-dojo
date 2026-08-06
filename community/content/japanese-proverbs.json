@@ -468,10 +468,10 @@
     "meaning": "Miss the bigger picture"
   },
   {
-  "japanese": "三日坊主",
-  "romaji": "Mikka bouzu",
-  "english": "A three-day monk",
-  "meaning": "Someone who quits quickly"
+    "japanese": "三日坊主",
+    "romaji": "Mikka bouzu",
+    "english": "A three-day monk",
+    "meaning": "Someone who quits quickly"
   },
   {
     "japanese": "柳に風",
@@ -479,7 +479,7 @@
     "english": "Wind in the willow",
     "meaning": "Stay flexible and let problems pass"
   },
-  { 
+  {
     "japanese": "塞翁が馬",
     "romaji": "Saiou ga uma",
     "english": "The old man's horse",
@@ -502,5 +502,11 @@
     "romaji": "En wa inamono aji na mono",
     "english": "Fate is strange yet delightful",
     "meaning": "Unexpected connections can be good"
+  },
+  {
+    "japanese": "猫の手も借りたい",
+    "romaji": "Neko no te mo karitai",
+    "english": "I'd even borrow a cat's paw",
+    "meaning": "Extremely busy"
   }
 ]
