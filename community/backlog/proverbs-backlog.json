@@ -285,7 +285,7 @@
     "english": "Spilled water will not return to the tray",
     "meaning": "What is done cannot be undone",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 33,
@@ -384,7 +384,7 @@
     "english": "Dripping water pierces stone",
     "meaning": "Persistence can overcome great obstacles",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 150,
@@ -680,7 +680,7 @@
     "romaji": "Ame futte ji katamaru",
     "english": "After rain, the ground hardens",
     "meaning": "Adversity can strengthen relationships",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -888,7 +888,7 @@
     "english": "The nail that sticks out gets hammered down",
     "meaning": "Standing out invites criticism",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 100,
@@ -1086,7 +1086,7 @@
     "english": "Fall seven times, get up eight",
     "meaning": "Never give up",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 122,
@@ -1410,7 +1410,7 @@
     "english": "Spilled water doesn’t return to the tray",
     "meaning": "What’s done is done",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 158,
@@ -1500,7 +1500,7 @@
     "english": "Chase two rabbits, catch none",
     "meaning": "Focus on one thing",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 168,

@@ -366,7 +366,7 @@
     "game": "Persona 5 Strikers",
     "character": "Joker",
     "id": 37,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -426,7 +426,7 @@
     "game": "Tales of the Abyss",
     "character": "Luke fon Fabre",
     "id": 43,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -646,7 +646,7 @@
     "game": "Danganronpa series",
     "character": "Makoto Naegi",
     "id": 65,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -706,7 +706,7 @@
     "game": "Monster Hunter series",
     "character": "Guild Handler lines",
     "id": 71,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -826,7 +826,7 @@
     "game": "Tales of the Abyss",
     "character": "Luke fon Fabre",
     "id": 83,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1086,7 +1086,7 @@
     "game": "Street Fighter series",
     "character": "Ryu",
     "id": 109,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

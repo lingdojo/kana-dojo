@@ -698,7 +698,7 @@
   {
     "id": 117,
     "fact": "The Japanese word 'yabai' (やばい) originally meant 'dangerous' but now means anything extreme - amazing or terrible.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -734,7 +734,7 @@
   {
     "id": 123,
     "fact": "There's a Japanese word 'miryoku' (魅力) for charm or attractiveness that draws people in - the quality that makes things captivating.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -752,7 +752,7 @@
   {
     "id": 126,
     "fact": "Japan's streets are so safe that children as young as 6 commute alone on public trains to school every day.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -788,7 +788,7 @@
   {
     "id": 132,
     "fact": "Japan has 'gacha' machines that dispense random collectible toys for 100-500 yen - adults are as obsessed as children.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1640,7 +1640,7 @@
   {
     "id": 274,
     "fact": "The word 'yuigahama' appears in coastal place names, referencing a long, gently sloping beach.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1754,7 +1754,7 @@
   {
     "id": 293,
     "fact": "Japan has a tradition called 'hajimete no omiyage' where travelers bring their first souvenir to share with family or coworkers.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1802,7 +1802,7 @@
   {
     "id": 301,
     "fact": "Japan’s New Year custom 'hatsumode' (初詣) involves visiting a shrine or temple for the year’s first prayer.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

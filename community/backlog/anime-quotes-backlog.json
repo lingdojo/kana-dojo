@@ -86,7 +86,7 @@
     "english": "What?!",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Joseph Joestar",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -97,7 +97,7 @@
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Joseph Joestar",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 11,
@@ -506,7 +506,7 @@
     "english": "Running away can take courage too.",
     "anime": "Mob Psycho 100",
     "character": "Arataka Reigen",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -616,7 +616,7 @@
     "english": "Next you'll say, 'Good grief!' (alt wording 10)",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Joseph Joestar",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -826,7 +826,7 @@
     "english": "Gurararara! (alt wording 31)",
     "anime": "One Piece",
     "character": "Edward Newgate (Whitebeard)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -876,7 +876,7 @@
     "english": "I'll exterminate them! Every last one from this world! (alt wording 36)",
     "anime": "Attack on Titan",
     "character": "Eren Yeager",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

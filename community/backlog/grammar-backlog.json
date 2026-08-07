@@ -15,7 +15,7 @@
     "id": 3,
     "text": "\"〜たい\" attaches to a verb stem to express \"want to do\" something.",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 4,
@@ -74,7 +74,7 @@
   {
     "id": 13,
     "text": "\"〜なければならない\" means \"must\" or \"have to\" do something.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -188,7 +188,7 @@
   {
     "id": 32,
     "text": "\"〜たり〜たり\" lists representative actions, like \"do things like A and B\".",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -273,7 +273,7 @@
     "id": 46,
     "text": "\"〜にする\" means \"decide on\" a choice or selection.",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 47,
@@ -740,7 +740,7 @@
   {
     "id": 124,
     "text": "\"〜かもしれない\" means \"might be\" or \"maybe\". (practice variation 39)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -806,7 +806,7 @@
   {
     "id": 135,
     "text": "\"〜わけではない\" means \"not necessarily\" or \"it's not that\". (practice variation 50)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
