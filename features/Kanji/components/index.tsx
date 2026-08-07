@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useMemo } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import useKanjiStore from '@/features/Kanji/store/useKanjiStore';
 import KanjiSetDictionary from '@/features/Kanji/components/SetDictionary';
 import { useMenuSelectorStore } from '@/shared/ui-composite/Menu/store/useMenuSelectorStore';
@@ -14,7 +14,10 @@ import LevelSetCards from '@/shared/ui-composite/Menu/LevelSetCards';
 import useSetProgressHydration from '@/features/Progress/hooks/useSetProgress';
 import {
   calculateKanjiSetProgressAndStars,
+  selectAutoLearningSets,
+  useAutoLearningStore,
   useSetProgressStore,
+  writeAutoLearningHandoff,
 } from '@/features/Progress';
 import {
   N1KanjiLength,
@@ -27,6 +30,9 @@ import {
   buildSubunitsForUnit,
   buildUnitSummaries,
 } from '@/shared/ui-composite/Menu/lib/unitSubunits';
+import AutoLearningButton from '@/shared/ui-composite/Menu/AutoLearningButton';
+import { AUTO_LEARNING_GAME_MODE } from '@/shared/ui-composite/Menu/lib/autoLearningConfig';
+import { useRouter } from '@/core/i18n/routing';
 
 const levelOrder: KanjiLevel[] = ['n5', 'n4', 'n3', 'n2', 'n1'];
 const KANJI_PER_SET = 10;
@@ -46,17 +52,29 @@ const KANJI_SET_COUNTS: Record<KanjiLevel, number> = {
   n1: Math.ceil(N1KanjiLength / KANJI_PER_SET),
 };
 
-const KanjiCards = () => {
+interface KanjiCardsProps {
+  showAutoLearning?: boolean;
+}
+
+const KanjiCards = ({ showAutoLearning = false }: KanjiCardsProps) => {
+  const router = useRouter();
   const persistedKanjiSelector = useMenuSelectorStore(
     state => state.collections.kanji,
   );
-  const selectedKanjiCollectionName =
-    persistedKanjiSelector.selectedCollection;
-  const selectedSubunitByUnit =
-    persistedKanjiSelector.selectedSubunitByUnit;
+  const selectedKanjiCollectionName = persistedKanjiSelector.selectedCollection;
+  const selectedSubunitByUnit = persistedKanjiSelector.selectedSubunitByUnit;
   const selectedKanjiSets = useKanjiStore(state => state.selectedKanjiSets);
   const setSelectedKanjiSets = useKanjiStore(
     state => state.setSelectedKanjiSets,
+  );
+  const reviewCursor = useAutoLearningStore(state => state.reviewCursors.kanji);
+  const hasAutoLearningSelection = useAutoLearningStore(
+    state => state.activeSelections.kanji,
+  );
+  const setReviewCursor = useAutoLearningStore(state => state.setReviewCursor);
+  const [isAutoLearning, setIsAutoLearning] = useState(false);
+  const [autoLearningError, setAutoLearningError] = useState<string | null>(
+    null,
   );
   const { clearKanjiObjs, clearKanjiSets } = useKanjiStore();
   const addKanjiObjs = useKanjiStore(state => state.addKanjiObjs);
@@ -148,7 +166,7 @@ const KanjiCards = () => {
     );
   }, [collapsedRows, collapsedRowsKey]);
 
-  useSetProgressHydration();
+  const isProgressHydrated = useSetProgressHydration();
   const kanjiProgress = useSetProgressStore(state => state.data.kanji);
   const getSetProgressSummary = useCallback(
     (items: IKanjiObj[]) =>
@@ -159,6 +177,84 @@ const KanjiCards = () => {
       ),
     [kanjiProgress],
   );
+  const hasProgress = useMemo(
+    () => Object.values(kanjiProgress).some(entry => entry.correct > 0),
+    [kanjiProgress],
+  );
+
+  const handleAutoLearning = async () => {
+    if (isAutoLearning || !isProgressHydrated) return;
+    setIsAutoLearning(true);
+    setAutoLearningError(null);
+
+    try {
+      let globalSetNumber = 1;
+      const orderedSets: Array<{
+        id: string;
+        payload: {
+          level: KanjiLevel;
+          setName: string;
+          startIndex: number;
+          endIndex: number;
+        };
+        mastered: boolean;
+      }> = [];
+
+      for (const level of levelOrder) {
+        const items = await kanjiDataService.getKanjiByLevel(level);
+        const levelSets = Array.from(
+          { length: Math.ceil(items.length / KANJI_PER_SET) },
+          (_, index) => {
+            const startIndex = index * KANJI_PER_SET;
+            const endIndex = Math.min(
+              (index + 1) * KANJI_PER_SET,
+              items.length,
+            );
+            const setItems = items.slice(startIndex, endIndex);
+            const setNumber = globalSetNumber;
+            globalSetNumber += 1;
+            return {
+              id: `kanji:${level}:${index + 1}`,
+              payload: {
+                level,
+                setName: `Set ${setNumber}`,
+                startIndex,
+                endIndex,
+              },
+              mastered:
+                calculateKanjiSetProgressAndStars(
+                  setItems.map(item => ({
+                    correct: kanjiProgress[item.kanjiChar]?.correct ?? 0,
+                  })),
+                ).stars === 3,
+            };
+          },
+        );
+        orderedSets.push(...levelSets);
+        if (orderedSets.filter(set => !set.mastered).length >= 2) break;
+      }
+      const selection = selectAutoLearningSets(orderedSets, reviewCursor);
+      if (selection.selected.length === 0) {
+        throw new Error('No Kanji sets are available for training.');
+      }
+
+      writeAutoLearningHandoff({
+        dojo: 'kanji',
+        gameMode: AUTO_LEARNING_GAME_MODE,
+        sets: selection.selected.map(set => ({
+          setName: set.payload.setName,
+          level: set.payload.level,
+          startIndex: set.payload.startIndex,
+          endIndex: set.payload.endIndex,
+        })),
+      });
+      setReviewCursor('kanji', selection.nextReviewCursor);
+      router.push('/kanji/learn');
+    } catch {
+      setAutoLearningError('Could not load Kanji sets. Try again.');
+      setIsAutoLearning(false);
+    }
+  };
   const initialCollections = useMemo(() => {
     const cached = kanjiDataService.getAllCached();
 
@@ -194,7 +290,7 @@ const KanjiCards = () => {
       getCollectionName={getCollectionName}
       getCollectionSize={getCollectionSize}
       loadItemsByLevel={loadItemsByLevel}
-      selectedSets={selectedKanjiSets}
+      selectedSets={hasAutoLearningSelection ? [] : selectedKanjiSets}
       setSelectedSets={setSelectedKanjiSets}
       clearSelected={() => {
         clearKanjiSets();
@@ -209,6 +305,16 @@ const KanjiCards = () => {
       activeSubunitRange={activeSubunitRange}
       collapseScopeKey={collapsedRowsKey}
       initialCollections={initialCollections}
+      learningAction={
+        showAutoLearning ? (
+          <AutoLearningButton
+            hasProgress={hasProgress}
+            isLoading={!isProgressHydrated || isAutoLearning}
+            error={autoLearningError}
+            onClick={() => void handleAutoLearning()}
+          />
+        ) : undefined
+      }
     />
   );
 };

@@ -121,7 +121,12 @@ interface KanaCardsProps {
   selectedSubset?: string;
 }
 
-const KanaCards = ({ filter = 'all', viewMode, selectedKanaType, selectedSubset }: KanaCardsProps) => {
+const KanaCards = ({
+  filter = 'all',
+  viewMode,
+  selectedKanaType,
+  selectedSubset,
+}: KanaCardsProps) => {
   const { playClick } = useClick();
 
   const effectiveFilter: KanaCardsFilter =
@@ -218,6 +223,8 @@ const KanaCards = ({ filter = 'all', viewMode, selectedKanaType, selectedSubset 
                 globalIndex={card.globalIndex}
               />
             ))}
+            {/* Kana grid AdSense placements are temporarily disabled while
+                their hydration and browser-memory behavior is investigated. */}
           </div>
           <div aria-hidden className='py-4' />
         </div>

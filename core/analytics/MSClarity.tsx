@@ -1,4 +1,8 @@
-import Script from 'next/script';
+/*
+ * Performance rescue: Microsoft Clarity is intentionally disabled. Preserve
+ * this integration in comments for a future, measured analytics rollout.
+ *
+ * import Script from 'next/script';
 
 const MS_CLARITY_ID = process.env.MS_CLARITY_ID;
 
@@ -19,3 +23,4 @@ export default function MicrosoftClarity() {
     />
   );
 }
+*/

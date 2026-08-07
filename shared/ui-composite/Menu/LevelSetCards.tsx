@@ -8,17 +8,17 @@ import {
   Circle,
   CircleCheck,
   Loader2,
-  MousePointer,
+  // MousePointer, // Quick Select
 } from 'lucide-react';
 
 import { chunkArray } from '@/shared/utils/helperFunctions';
 import { cardBorderStyles } from '@/shared/utils/styles';
 import useGridColumns from '@/shared/hooks/generic/useGridColumns';
 import { useClick } from '@/shared/hooks/generic/useAudio';
-import { ActionButton } from '@/shared/ui/components/ActionButton';
+// import { ActionButton } from '@/shared/ui/components/ActionButton'; // Quick Select
 import MasteryBar from '@/shared/ui/components/MasteryBar';
 import QuickSelectModal from '@/shared/ui-composite/Modals/QuickSelectModal';
-import { cn } from '@/shared/utils/utils';
+// import { cn } from '@/shared/utils/utils'; // Quick Select
 
 export type LevelSetCardsSet = {
   name: string;
@@ -91,9 +91,8 @@ type LevelSetCardsProps<TLevel extends string, TItem> = {
   loadingText: string;
   activeSubunitRange: ActiveSubunitRange;
   collapseScopeKey: string;
-  initialCollections?: Partial<
-    Record<TLevel, LevelSetCardsCollection<TItem>>
-  >;
+  initialCollections?: Partial<Record<TLevel, LevelSetCardsCollection<TItem>>>;
+  learningAction?: React.ReactNode;
 };
 
 const INITIAL_ROWS = 5;
@@ -336,8 +335,9 @@ const LevelSetCards = <TLevel extends string, TItem>({
   activeSubunitRange,
   collapseScopeKey,
   initialCollections,
+  learningAction,
 }: LevelSetCardsProps<TLevel, TItem>) => {
-  const { playClick } = useClick();
+  // const { playClick } = useClick(); // Quick Select
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -460,14 +460,17 @@ const LevelSetCards = <TLevel extends string, TItem>({
     if (sessionStorage.getItem(initializedKey) === 'true') return;
 
     const calculateMasteredRows = () => {
-      const masteredRows = allRows.reduce<number[]>((acc, rowSets, rowIndex) => {
-        const isRowMastered = rowSets.every(
-          set => Math.round(set.progress * 100) >= 100,
-        );
+      const masteredRows = allRows.reduce<number[]>(
+        (acc, rowSets, rowIndex) => {
+          const isRowMastered = rowSets.every(
+            set => Math.round(set.progress * 100) >= 100,
+          );
 
-        if (isRowMastered) acc.push(rowIndex);
-        return acc;
-      }, []);
+          if (isRowMastered) acc.push(rowIndex);
+          return acc;
+        },
+        [],
+      );
 
       if (masteredRows.length > 0) {
         setCollapsedRows(prev =>
@@ -494,12 +497,7 @@ const LevelSetCards = <TLevel extends string, TItem>({
     return () => {
       window.clearTimeout(timeoutId);
     };
-  }, [
-    allRows,
-    collapseScopeKey,
-    selectedCollection,
-    setCollapsedRows,
-  ]);
+  }, [allRows, collapseScopeKey, selectedCollection, setCollapsedRows]);
 
   const handleToggleSet = (setName: string) => {
     const set = setsTemp.find(s => s.name === setName);
@@ -567,6 +565,8 @@ const LevelSetCards = <TLevel extends string, TItem>({
 
   return (
     <div className='flex w-full flex-col gap-4'>
+      {learningAction}
+      {/* Quick Select is intentionally retained for a possible future return.
       <ActionButton
         onClick={() => {
           playClick();
@@ -581,6 +581,7 @@ const LevelSetCards = <TLevel extends string, TItem>({
         <MousePointer className={cn('fill-current')} />
         Quick Select
       </ActionButton>
+      */}
 
       <QuickSelectModal
         isOpen={isModalOpen}
