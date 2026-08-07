@@ -143,10 +143,6 @@ export default function ClientLayout({
   }, [pathname]);
 
   useEffect(() => {
-    const isDev = process.env.NODE_ENV === 'development';
-    const isPreviewDeployment =
-      process.env.NODE_ENV === 'production' &&
-      process.env.NEXT_PUBLIC_VERCEL_ENV !== 'production';
     const isTargetRoute = /\/(kana|kanji|vocabulary)(\/|$)/.test(pathname);
     const isPreferencesRoute = /\/preferences(\/|$)/.test(pathname);
     const isProgressRoute = /\/progress(\/|$)/.test(pathname);
@@ -163,8 +159,10 @@ export default function ClientLayout({
       if (typeof window !== 'undefined') {
         sessionStorage.setItem(donationLastPathKey, pathname);
       }
-      setIsDonationModalOpen(false);
-      return;
+      const timer = setTimeout(() => {
+        setIsDonationModalOpen(false);
+      }, 0);
+      return () => clearTimeout(timer);
     }
 
     // TEMPORARILY COMMENTED OUT: auto-show on preferences in dev/preview
@@ -317,6 +315,7 @@ export default function ClientLayout({
 
   return (
     <div
+      suppressHydrationWarning
       data-scroll-restoration-id='container'
       className={clsx(
         'min-h-[100dvh] max-w-[100dvw] bg-(--background-color) text-(--main-color)',

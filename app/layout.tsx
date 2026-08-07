@@ -182,7 +182,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
           />
         )}
       </head>
-      <body>
+      <body suppressHydrationWarning>
         <SessionPrefetch />
         {isAnalyticsEnabled && (
           <>
@@ -197,4 +197,3 @@ export default async function RootLayout({ children }: RootLayoutProps) {
     </html>
   );
 }
-
