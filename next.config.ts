@@ -47,6 +47,9 @@ const cspReportOnly = [
 ].join('; ');
 
 const nextConfig: NextConfig = {
+  // Automatically memoize eligible React components and hooks.
+  reactCompiler: true,
+
   // Performance optimizations
   reactStrictMode: true,
   compress: false, // Let Vercel handle compression

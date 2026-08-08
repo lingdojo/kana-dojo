@@ -752,9 +752,6 @@ jobs:
                     return ei.japanese === i.japanese && ei.romaji === i.romaji && ei.english === i.english;
                   });
                   if (exists) {
-                    const idiomIdx = idioms.findIndex(function(ii) { return ii.id === i.id; });
-                    idioms[idiomIdx].completed = true;
-                    backlogChanged = true;
                     return false;
                   }
                 }
@@ -806,9 +803,6 @@ jobs:
                     return ed.dialect === d.dialect && ed.standardJapanese === d.standardJapanese && ed.region === d.region;
                   });
                   if (exists) {
-                    const dialectIdx = regionalDialects.findIndex(function(di) { return di.id === d.id; });
-                    regionalDialects[dialectIdx].completed = true;
-                    backlogChanged = true;
                     return false;
                   }
                 }
@@ -860,9 +854,6 @@ jobs:
                     return ef.termA === f.termA && ef.termB === f.termB;
                   });
                   if (exists) {
-                    const falseFriendIdx = falseFriends.findIndex(function(fi) { return fi.id === f.id; });
-                    falseFriends[falseFriendIdx].completed = true;
-                    backlogChanged = true;
                     return false;
                   }
                 }
@@ -912,9 +903,6 @@ jobs:
                     return ec.situation === e.situation && ec.do === e.do && ec.dont === e.dont;
                   });
                   if (exists) {
-                    const etiquetteIdx = culturalEtiquette.findIndex(function(ei) { return ei.id === e.id; });
-                    culturalEtiquette[etiquetteIdx].completed = true;
-                    backlogChanged = true;
                     return false;
                   }
                 }
@@ -964,9 +952,6 @@ jobs:
                     return ee.japanese === e.japanese && ee.romaji === e.romaji && ee.english === e.english;
                   });
                   if (exists) {
-                    const sentenceIdx = exampleSentences.findIndex(function(ei) { return ei.id === e.id; });
-                    exampleSentences[sentenceIdx].completed = true;
-                    backlogChanged = true;
                     return false;
                   }
                 }
@@ -1016,9 +1001,6 @@ jobs:
                     return em.wrong === m.wrong && em.correct === m.correct;
                   });
                   if (exists) {
-                    const mistakeIdx = commonMistakes.findIndex(function(mi) { return mi.id === m.id; });
-                    commonMistakes[mistakeIdx].completed = true;
-                    backlogChanged = true;
                     return false;
                   }
                 }
@@ -1061,9 +1043,6 @@ jobs:
                   return false;
                 }
                 if (Array.isArray(existingWallpaperUrls) && existingWallpaperUrls.includes(entry.url)) {
-                  const urlIdx = wallpaperUrls.findIndex(function(ui) { return ui.id === entry.id; });
-                  wallpaperUrls[urlIdx].completed = true;
-                  backlogChanged = true;
                   return false;
                 }
                 return true;

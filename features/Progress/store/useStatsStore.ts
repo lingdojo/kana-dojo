@@ -3,6 +3,7 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import useSetProgressStore from '@/features/Progress/store/useSetProgressStore';
+import useAutoLearningStore from '@/features/Progress/store/useAutoLearningStore';
 
 // Types
 interface CharacterScore {
@@ -109,7 +110,6 @@ interface IStatsState {
   // UI state
   showStats: boolean;
   toggleStats: () => void;
-
 
   // Timing
   correctAnswerTimes: number[];
@@ -278,7 +278,6 @@ const useStatsStore = create<IStatsState>()(
       showStats: false,
       toggleStats: () => set(s => ({ showStats: !s.showStats })),
 
-
       // Timing
       correctAnswerTimes: [],
       addCorrectAnswerTime: time =>
@@ -323,7 +322,9 @@ const useStatsStore = create<IStatsState>()(
           mastery[character] = {
             ...mastery[character],
             [field === 'correct' ? 'correct' : 'incorrect']:
-              mastery[character][field === 'correct' ? 'correct' : 'incorrect'] + 1,
+              mastery[character][
+                field === 'correct' ? 'correct' : 'incorrect'
+              ] + 1,
           };
 
           return {
@@ -488,8 +489,7 @@ const useStatsStore = create<IStatsState>()(
               ...s.allTimeStats,
               totalSessions: s.allTimeStats.totalSessions + 1,
               totalCorrect: s.allTimeStats.totalCorrect + s.numCorrectAnswers,
-              totalIncorrect:
-                s.allTimeStats.totalIncorrect + s.numWrongAnswers,
+              totalIncorrect: s.allTimeStats.totalIncorrect + s.numWrongAnswers,
               bestStreak: Math.max(s.allTimeStats.bestStreak, s.currentStreak),
               trainingDays,
             },
@@ -527,6 +527,7 @@ const useStatsStore = create<IStatsState>()(
 
       clearAllProgress: () => {
         void useSetProgressStore.getState().clearSetProgress();
+        useAutoLearningStore.getState().resetReviewCursors();
         set({
           allTimeStats: {
             totalSessions: 0,

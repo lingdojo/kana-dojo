@@ -54,15 +54,6 @@
     "notes": "Reflects acceptance and resilience in the face of harsh conditions and loss."
   },
   {
-    "japanese": "痩蛙\n負けるな一茶\nこれにあり",
-    "romaji": "Yasegaeru / makeru na Issa / kore ni ari",
-    "english": "Skinny frog, don't give up! Issa is here with you.",
-    "poet": "Kobayashi Issa",
-    "season": "Spring",
-    "kigo": "Frog (kaeru)",
-    "notes": "Humorous encouragement and compassion in Issa's voice."
-  },
-  {
     "japanese": "五月雨を集めて早し最上川",
     "romaji": "Samidare o / atsume te hayashi / Mogamigawa",
     "english": "Gathering summer rains, the Mogami River rushes on.",
@@ -117,7 +108,9 @@
   "notes": "A quintessential autumn haiku contrasting the everyday act of eating fruit with the timeless ringing of a temple bell."
 },
   {
-  "japanese": "秋深き\n隣は何を\nする人ぞ",
+  "japanese": "秋深き
+隣は何を
+する人ぞ",
   "romaji": "Aki fukaki / tonari wa nani o / suru hito zo",
   "english": "In deep autumn, what kind of person lives next door?",
   "poet": "Matsuo Basho",
@@ -126,54 +119,20 @@
   "notes": "Evokes solitude and curiosity."
 },
 {
-  "japanese": "秋深き隣は何をする人ぞ",
-  "romaji": "Aki fukaki / tonari wa nani o / suru hito zo",
-  "english": "In deep autumn, what kind of person lives next door?",
-  "poet": "Matsuo Basho",
-  "season": "Autumn",
-  "kigo": "Deep autumn (aki fukaki)",
-  "notes": "Evokes solitude and curiosity."
-}
-  ,
-{
-  "japanese": "春の海\nひねもすのたり\nのたりかな",
-  "romaji": "Haru no umi / hinemosu notari / notari kana",
-  "english": "The spring sea stretches lazily all day, rising and falling.",
-  "poet": "Yosa Buson",
-  "season": "Spring",
-  "kigo": "Spring sea (haru no umi)",
-  "notes": "Known for musical phrasing and calm motion."
-}
-  ,
-{
-  "japanese": "閑さや\n岩にしみ入る\n蝉の声",
-  "romaji": "Shizukasa ya / iwa ni shimiiru / semi no koe",
-  "english": "Such stillness — the cries of the cicadas sink into the rocks.",
-  "poet": "Matsuo Basho",
-  "season": "Summer",
-  "kigo": "Cicada (semi)",
-  "notes": "Written at Yamadera temple; one of Basho's most celebrated haiku, evoking profound silence pierced by sound."
-},
-  {
-  "japanese": "秋深き\n隣は何を\nする人ぞ",
-  "romaji": "Aki fukaki / tonari wa nani o / suru hito zo",
-  "english": "In deep autumn, what kind of person lives next door?",
-  "poet": "Matsuo Basho",
-  "season": "Autumn",
-  "kigo": "Deep autumn (aki fukaki)",
-  "notes": "Evokes solitude and curiosity."
-},
-  {
-  "japanese": "痩蛙\n負けるな一茶\nこれにあり",
-  "romaji": "Yasegaeru / makeru na Issa / kore ni ari",
-  "english": "Skinny frog, don't give up! Issa is here with you.",
+  "japanese": "雀の子
+そこのけそこのけ
+お馬が通る",
+  "romaji": "Suzume no ko / soko noke soko noke / ouma ga toru",
+  "english": "Little sparrows, move aside, the horse is coming through.",
   "poet": "Kobayashi Issa",
   "season": "Spring",
-  "kigo": "Frog (kaeru)",
-  "notes": "Humorous encouragement and compassion in Issa's voice."
+  "kigo": "Sparrow chicks (suzume no ko)",
+  "notes": "Playful and warm, characteristic of Issa's tone."
 },
   {
-  "japanese": "春の海\nひねもすのたり\nのたりかな",
+  "japanese": "春の海
+ひねもすのたり
+のたりかな",
   "romaji": "Haru no umi / hinemosu notari / notari kana",
   "english": "The spring sea stretches lazily all day, rising and falling.",
   "poet": "Yosa Buson",

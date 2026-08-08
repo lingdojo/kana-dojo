@@ -1,5 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import {
+  TranslateClient,
+  TranslateTextCommand,
+} from '@aws-sdk/client-translate';
+import {
   checkTranslateUsageLimit,
   checkTranslateRateLimit,
   getClientIP,
@@ -110,13 +114,13 @@ interface AzureTranslateResponseItem {
 interface TranslationProviderResult {
   translatedText: string;
   detectedSourceLanguage?: string;
-  provider: 'azure' | 'google';
+  provider: 'azure' | 'aws' | 'google';
 }
 
 class TranslationProviderError extends Error {
   constructor(
     message: string,
-    readonly provider: 'azure' | 'google',
+    readonly provider: 'azure' | 'aws' | 'google',
     readonly status?: number,
     readonly authError = false,
   ) {
@@ -378,6 +382,66 @@ async function translateWithGoogle({
   };
 }
 
+async function translateWithAws({
+  text,
+  sourceLanguage,
+  targetLanguage,
+}: {
+  text: string;
+  sourceLanguage: 'en' | 'ja';
+  targetLanguage: 'en' | 'ja';
+}): Promise<TranslationProviderResult> {
+  const region = process.env.AWS_REGION;
+  if (!region) {
+    throw new TranslationProviderError(
+      'AWS_REGION is not configured',
+      'aws',
+      500,
+      true,
+    );
+  }
+
+  try {
+    const client = new TranslateClient({ region });
+    const response = await client.send(
+      new TranslateTextCommand({
+        Text: text,
+        SourceLanguageCode: sourceLanguage,
+        TargetLanguageCode: targetLanguage,
+      }),
+    );
+
+    if (!response.TranslatedText) {
+      throw new TranslationProviderError(
+        'Amazon Translate returned an empty translation',
+        'aws',
+        502,
+      );
+    }
+
+    return {
+      translatedText: response.TranslatedText,
+      detectedSourceLanguage: response.SourceLanguageCode,
+      provider: 'aws',
+    };
+  } catch (error) {
+    if (error instanceof TranslationProviderError) {
+      throw error;
+    }
+
+    const status =
+      typeof error === 'object' && error !== null && '$metadata' in error
+        ? (error.$metadata as { httpStatusCode?: number }).httpStatusCode
+        : undefined;
+    throw new TranslationProviderError(
+      `Amazon Translate error${status ? `: ${status}` : ''}`,
+      'aws',
+      status,
+      status === 401 || status === 403,
+    );
+  }
+}
+
 async function translateWithFallback({
   text,
   sourceLanguage,
@@ -394,7 +458,15 @@ async function translateWithFallback({
       azureError instanceof TranslationProviderError
         ? azureError.status
         : undefined;
-    console.error('Azure Translator failed, falling back to Google:', status);
+    console.error('Azure Translator failed, falling back to AWS:', status);
+  }
+
+  try {
+    return await translateWithAws({ text, sourceLanguage, targetLanguage });
+  } catch (awsError) {
+    const status =
+      awsError instanceof TranslationProviderError ? awsError.status : undefined;
+    console.error('Amazon Translate failed, falling back to Google:', status);
     return translateWithGoogle({ text, sourceLanguage, targetLanguage });
   }
 }
@@ -402,7 +474,7 @@ async function translateWithFallback({
 /**
  * POST /api/translate
  * Translates text between English and Japanese using Azure Translator first,
- * with Google Cloud Translation as a secondary fallback.
+ * then Amazon Translate, with Google Cloud Translation as the final fallback.
  */
 export async function POST(request: NextRequest) {
   const startTime = Date.now();
