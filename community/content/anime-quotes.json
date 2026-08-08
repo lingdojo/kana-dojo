@@ -524,7 +524,6 @@
     "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
     "character": "Yoshikage Kira"
   },
-
   {
     "japanese": "俺はガンダムだ！",
     "romaji": "Ore wa Gandamu da!",
@@ -645,10 +644,17 @@
     "character": "Jotaro Kujo"
   },
   {
-  "japanese": "僕は新世界の神となる",
-  "romaji": "Boku wa shin sekai no kami to naru",
-  "english": "I will become the god of the new world.",
-  "anime": "Death Note",
-  "character": "Light Yagami"
-}
+    "japanese": "僕は新世界の神となる",
+    "romaji": "Boku wa shin sekai no kami to naru",
+    "english": "I will become the god of the new world.",
+    "anime": "Death Note",
+    "character": "Light Yagami"
+  },
+  {
+    "japanese": "世界は残酷だ…それでも美しい",
+    "romaji": "Sekai wa zankoku da... soredemo utsukushii",
+    "english": "This world is cruel... yet so beautiful. (alt wording 26)",
+    "anime": "Attack on Titan",
+    "character": "Mikasa Ackerman"
+  }
 ]
