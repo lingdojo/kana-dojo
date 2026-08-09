@@ -1,13 +1,14 @@
 [
   {
     "question": "What is the traditional Japanese tea ceremony called?",
+    "difficulty": "medium",
     "answers": [
       "Sado",
       "Judo",
       "Kendo",
       "Shodo"
     ],
-    "correctAnswerIndex": 0
+    "correctIndex": 0
   },
   {
     "question": "Which Japanese city is known for its deer roaming freely in a large park? (Community variation 12)",
@@ -32,14 +33,14 @@
     "correctIndex": 0
   },
   {
-    "question": "Which city is known for the historic district of Higashiyama?",
+    "question": "What is the name of Japan’s largest lake?",
+    "difficulty": "medium",
     "answers": [
-      "Kanazawa",
-      "Kagoshima",
-      "Nara",
-      "Matsue"
+      "Lake Biwa",
+      "Lake Towada",
+      "Lake Ashi",
+      "Lake Shinji"
     ],
     "correctIndex": 0
   }
 ]
-
