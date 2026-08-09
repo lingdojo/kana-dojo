@@ -287,10 +287,10 @@ const ModeSetupMenu = ({
             <h1 className='text-2xl font-bold text-(--main-color)'>
               {dojoLabel}{' '}
               {mode === 'blitz'
-                ? 'Blitz'
+                  ? 'Blitz'
                 : mode === 'gauntlet'
                   ? 'Gauntlet'
-                  : 'Classic'}
+                  : 'Custom Practice'}
             </h1>
             <p className='text-(--secondary-color)'>
               {mode === 'blitz'

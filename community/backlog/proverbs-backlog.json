@@ -96,7 +96,7 @@
     "english": "Time is money",
     "meaning": "Time is valuable and should not be wasted",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 12,
@@ -177,7 +177,7 @@
     "english": "Not knowing is Buddha",
     "meaning": "Ignorance is bliss",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 21,
@@ -186,7 +186,7 @@
     "english": "Good medicine tastes bitter",
     "meaning": "Helpful advice often sounds harsh",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 22,
@@ -267,7 +267,7 @@
     "english": "Ten people, ten colors",
     "meaning": "Different strokes for different folks",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 31,
@@ -276,7 +276,7 @@
     "english": "Even monkeys fall from trees",
     "meaning": "Experts can make mistakes",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 32,
@@ -348,7 +348,7 @@
     "english": "Tomorrow's wind will blow tomorrow",
     "meaning": "Don't worry too much about the future",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 40,
@@ -663,7 +663,7 @@
     "english": "Counting a raccoon dog's skins before catching it",
     "meaning": "Don't count your chickens before they hatch",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 75,
@@ -708,7 +708,7 @@
     "english": "Just watching is a pleasure",
     "meaning": "Enjoy observing; you don't always need to participate",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 80,
@@ -861,7 +861,7 @@
     "english": "A frog in a well does not know the great sea",
     "meaning": "Limited experience limits perspective",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 97,
@@ -897,7 +897,7 @@
     "english": "Dumplings over flowers",
     "meaning": "Practicality over appearance",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 101,
@@ -942,7 +942,7 @@
     "english": "Haste will spoil things",
     "meaning": "Rushing leads to mistakes",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 106,
@@ -1050,7 +1050,7 @@
     "english": "Water on a hot stone",
     "meaning": "A futile effort",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 118,
@@ -1077,7 +1077,7 @@
     "english": "Fortune comes to a laughing gate",
     "meaning": "Happiness brings good fortune",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 121,
@@ -1149,7 +1149,7 @@
     "english": "See the trees but not the forest",
     "meaning": "Missing the bigger picture",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 129,
@@ -1221,7 +1221,7 @@
     "english": "After ease comes hardship",
     "meaning": "Good times and bad times alternate",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 137,
@@ -1581,7 +1581,7 @@
     "english": "Mochi should be made by the mochi shop",
     "meaning": "Leave it to the experts",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 177,

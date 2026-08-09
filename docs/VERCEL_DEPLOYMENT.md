@@ -131,6 +131,8 @@ Vercel uses the `ignoreCommand` defined in `vercel.json` (`bash scripts/vercel-i
 - The script preserves and enforces all non-production skip categories (including community content, markdown/docs, tooling/config files, generated artifacts, package manifests, and other explicitly allowlisted paths).
 - The script is merge-safe: merge commits are classified using **first-parent diff** (`<merge>^1..<merge>`) so second-parent history cannot cause false production-file detection.
 - Merge PR commits that resolve to non-production-only file sets are hard-skipped for both Preview and Production.
+- Commits that Git successfully resolves to a zero-file diff are hard-skipped, including empty squash commits created after conflict resolution.
+- If every applicable Git comparison fails, the script remains fail-open and proceeds with the build so missing history cannot suppress a legitimate deployment.
 - The ignore script logs diff source strategy and decision reason to simplify incident triage.
 - Regression coverage is available via `npm run vercel:ignore:test` (deterministic injected file sets; no live git history required).
 

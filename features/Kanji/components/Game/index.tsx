@@ -1,11 +1,16 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import Return from '@/shared/ui-composite/Game/ReturnFromGame';
 import MCQ from './MCQ';
 import Input from './Input';
 import TilesMode from './TilesMode';
 import useKanjiStore from '@/features/Kanji/store/useKanjiStore';
-import { useStatsStore } from '@/features/Progress';
+import {
+  clearAutoLearningHandoff,
+  readAutoLearningHandoff,
+  useAutoLearningStore,
+  useStatsStore,
+} from '@/features/Progress';
 import { useShallow } from 'zustand/react/shallow';
 import SessionStats from '@/shared/ui-composite/Game/SessionStats';
 import SessionSummaryScreen from '@/shared/ui-composite/Game/SessionSummaryScreen';
@@ -18,6 +23,8 @@ import {
   ENABLE_EVERY_QUESTION_AD_OVERLAY,
   shouldShowStreakMilestoneOverlay,
 } from '@/shared/utils/game/streakMilestones';
+import { kanjiDataService } from '@/features/Kanji/services/kanjiDataService';
+import type { KanjiLevel } from '@/entities/kanji';
 
 const Game = () => {
   const {
@@ -49,7 +56,16 @@ const Game = () => {
   );
 
   const gameMode = useKanjiStore(state => state.selectedGameModeKanji);
+  const setGameMode = useKanjiStore(state => state.setSelectedGameModeKanji);
   const selectedKanjiObjs = useKanjiStore(state => state.selectedKanjiObjs);
+  const replaceKanjiObjs = useKanjiStore(state => state.setSelectedKanjiObjs);
+  const setSelectedKanjiSets = useKanjiStore(
+    state => state.setSelectedKanjiSets,
+  );
+  const isAutoLearningSessionRef = useRef(false);
+  const setAutoSelectionActive = useAutoLearningStore(
+    state => state.setAutoSelectionActive,
+  );
   const setSelectedKanjiCollection = useKanjiStore(
     state => state.setSelectedKanjiCollection,
   );
@@ -57,6 +73,8 @@ const Game = () => {
     state => state.setSelectedSubunitForUnit,
   );
   const router = useRouter();
+  const [isSelectionReady, setIsSelectionReady] = useState(false);
+  const [selectionError, setSelectionError] = useState<string | null>(null);
   const [view, setView] = useState<'playing' | 'summary'>('playing');
   const [activeMilestone, setActiveMilestone] = useState<number | null>(null);
   const [sessionId, setSessionId] = useState<string | null>(null);
@@ -67,6 +85,83 @@ const Game = () => {
   const resetCollectionSelection = useMenuSelectorStore(
     state => state.resetCollectionSelection,
   );
+
+  useEffect(() => {
+    let isMounted = true;
+
+    const resolveSelection = async () => {
+      const handoff = readAutoLearningHandoff('kanji');
+      if (!handoff) {
+        setIsSelectionReady(true);
+        return;
+      }
+
+      try {
+        isAutoLearningSessionRef.current = true;
+        const levels = Array.from(
+          new Set(
+            handoff.sets
+              .map(set => set.level)
+              .filter((level): level is KanjiLevel => level !== undefined),
+          ),
+        );
+        const levelData = new Map(
+          await Promise.all(
+            levels.map(
+              async level =>
+                [level, await kanjiDataService.getKanjiByLevel(level)] as const,
+            ),
+          ),
+        );
+        if (!isMounted) return;
+
+        replaceKanjiObjs(
+          handoff.sets.flatMap(set =>
+            set.level
+              ? (levelData
+                  .get(set.level)
+                  ?.slice(set.startIndex, set.endIndex) ?? [])
+              : [],
+          ),
+        );
+        setSelectedKanjiSets(
+          handoff.sets.flatMap(set => (set.setName ? [set.setName] : [])),
+        );
+        setGameMode(handoff.gameMode);
+        setAutoSelectionActive('kanji', true);
+        clearAutoLearningHandoff();
+        setIsSelectionReady(true);
+      } catch {
+        if (!isMounted) return;
+        setSelectionError('Could not load your Kanji learning session.');
+      }
+    };
+
+    void resolveSelection();
+    return () => {
+      isMounted = false;
+    };
+  }, [
+    replaceKanjiObjs,
+    setAutoSelectionActive,
+    setGameMode,
+    setSelectedKanjiSets,
+  ]);
+
+  const clearAutoLearningSelection = useCallback(() => {
+    if (!isAutoLearningSessionRef.current) return;
+    replaceKanjiObjs([]);
+    setSelectedKanjiSets([]);
+    setAutoSelectionActive('kanji', false);
+    isAutoLearningSessionRef.current = false;
+  }, [replaceKanjiObjs, setAutoSelectionActive, setSelectedKanjiSets]);
+
+  useEffect(() => {
+    const handleHistoryNavigation = () => clearAutoLearningSelection();
+    window.addEventListener('popstate', handleHistoryNavigation);
+    return () =>
+      window.removeEventListener('popstate', handleHistoryNavigation);
+  }, [clearAutoLearningSelection]);
 
   useEffect(() => {
     if (view !== 'playing') return;
@@ -83,6 +178,7 @@ const Game = () => {
   }, [currentStreak, numCorrectAnswers, numWrongAnswers, view]);
 
   useEffect(() => {
+    if (!isSelectionReady) return;
     resetStats();
     setActiveMilestone(null);
     // Track dojo and mode usage for achievements (Requirements 8.1-8.3)
@@ -100,7 +196,7 @@ const Game = () => {
     });
     // Intentionally keyed by nonce only to avoid resetting a live session.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [sessionNonce]);
+  }, [sessionNonce, isSelectionReady]);
 
   const handleQuit = async () => {
     const id =
@@ -134,6 +230,23 @@ const Game = () => {
     setView('playing');
     setSessionNonce(prev => prev + 1);
   };
+
+  if (!isSelectionReady) {
+    return (
+      <div className='flex min-h-[100dvh] flex-col items-center justify-center gap-4 text-(--secondary-color)'>
+        <p>{selectionError ?? 'Preparing your learning session...'}</p>
+        {selectionError && (
+          <button
+            type='button'
+            className='text-(--main-color) underline'
+            onClick={() => router.push('/kanji')}
+          >
+            Back to Kanji
+          </button>
+        )}
+      </div>
+    );
+  }
 
   return (
     <>
@@ -190,7 +303,10 @@ const Game = () => {
           totalTimeMs={totalMilliseconds}
           correctAnswerTimes={correctAnswerTimes}
           onNewSession={handleNewSession}
-          onBackToSelection={() => router.push('/kanji')}
+          onBackToSelection={() => {
+            clearAutoLearningSelection();
+            router.push('/kanji');
+          }}
         />
       )}
     </>

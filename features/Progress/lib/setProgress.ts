@@ -3,8 +3,7 @@ export const MAX_STARS_PER_SET = 3;
 // Kana
 export const KANA_ROW_MASTERY_TARGET = 50;
 export const KANA_MAX_STARS = MAX_STARS_PER_SET;
-export const KANA_ROW_MASTERY_CAP =
-  KANA_ROW_MASTERY_TARGET * KANA_MAX_STARS;
+export const KANA_ROW_MASTERY_CAP = KANA_ROW_MASTERY_TARGET * KANA_MAX_STARS;
 
 // Kanji
 export const KANJI_SET_PROGRESS_TARGET = 10;
@@ -28,6 +27,34 @@ export interface KanjiSetProgressEntry {
 export interface VocabularySetProgressEntry {
   meaningCorrect: number;
   readingCorrect: number;
+}
+
+export interface KanaSetProgressEntry {
+  correct: number;
+}
+
+export function calculateKanaSetProgressAndStars(
+  entries: KanaSetProgressEntry[],
+): { progress: number; stars: number } {
+  if (entries.length === 0) return { progress: 0, stars: 0 };
+
+  const earned = entries.reduce(
+    (sum, entry) =>
+      sum + Math.min(Math.max(0, entry.correct), KANA_ROW_MASTERY_CAP),
+    0,
+  );
+  const cycleTarget = entries.length * KANA_ROW_MASTERY_TARGET;
+  const cappedEarned = Math.min(earned, cycleTarget * KANA_MAX_STARS);
+  const stars = Math.min(
+    Math.floor(cappedEarned / cycleTarget),
+    KANA_MAX_STARS,
+  );
+  const progress =
+    stars < KANA_MAX_STARS
+      ? (cappedEarned - stars * cycleTarget) / cycleTarget
+      : 1;
+
+  return { progress, stars };
 }
 
 export function getCappedKanjiProgress(correct: number): number {
@@ -122,4 +149,3 @@ export function calculateVocabularySetProgressAndStars(
 
   return { progress, stars };
 }
-

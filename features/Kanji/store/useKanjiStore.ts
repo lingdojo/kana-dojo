@@ -14,6 +14,7 @@ interface IKanjiState {
   setSelectedGameModeKanji: (mode: string) => void;
   addKanjiObj: (kanji: IKanjiObj) => void;
   addKanjiObjs: (kanjis: IKanjiObj[]) => void;
+  setSelectedKanjiObjs: (kanjis: IKanjiObj[]) => void;
   clearKanjiObjs: () => void;
   setSelectedKanjiCollection: (
     collection: 'n5' | 'n4' | 'n3' | 'n2' | 'n1',
@@ -115,6 +116,13 @@ const useKanjiStore = create<IKanjiState>(set => ({
       return sameKanjiArray(next, state.selectedKanjiObjs)
         ? state
         : { selectedKanjiObjs: next };
+    }),
+
+  setSelectedKanjiObjs: kanjiObjects =>
+    set({
+      selectedKanjiObjs: Array.from(
+        new Map(kanjiObjects.map(item => [item.kanjiChar, item])).values(),
+      ),
     }),
 
   clearKanjiObjs: () => set({ selectedKanjiObjs: [] }),
