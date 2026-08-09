@@ -522,9 +522,27 @@
     "meaning": "The grass is always greener on the other side"
   },
   {
-  "japanese": "花より団子",
-  "romaji": "Hana yori dango",
-  "english": "Dumplings over flowers",
-  "meaning": "Practicality over appearance"
-}
+    "japanese": "花より団子",
+    "romaji": "Hana yori dango",
+    "english": "Dumplings over flowers",
+    "meaning": "Practicality over appearance"
+  },
+  {
+    "japanese": "石の上にも三年",
+    "romaji": "Ishi no ue ni mo san nen",
+    "english": "Three years on a stone",
+    "meaning": "Perseverance brings results"
+  },
+  {
+    "japanese": "出る杭は打たれる",
+    "romaji": "Deru kui wa utareru",
+    "english": "The nail that sticks out gets hammered down",
+    "meaning": "Those who stand out may face criticism"
+  },
+  {
+    "japanese": "木を見て森を見ず",
+    "romaji": "Ki wo mite mori wo mizu",
+    "english": "See the trees but not the forest",
+    "meaning": "Missing the bigger picture"
+  }
 ]

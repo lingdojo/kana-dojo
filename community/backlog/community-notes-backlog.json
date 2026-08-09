@@ -4,7 +4,7 @@
     "file": "docs/community-notes/contribution-notes-1.md",
     "position": "bottom",
     "text": "- Community note: this file is used for lightweight contribution practice.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -13,9 +13,7 @@
     "position": "top",
     "text": "> Community note: this page intentionally accepts tiny formatting-safe edits.",
     "issued": true,
-    "completed": false,
-    "completedBy": "darlenepolek",
-    "completedPR": 27256
+    "completed": false
   },
   {
     "id": 3,

@@ -432,5 +432,33 @@
   "english": "The real challenge starts now.",
   "game": "Monster Hunter series",
   "character": "Guild Handler lines"
-  }
+  },
+  {
+  "japanese": "約束された勝利の剣",
+  "romaji": "Yakusoku sareta shouri no ken",
+  "english": "The Sword of Promised Victory.",
+  "game": "Fate/stay night [Realta Nua]",
+  "character": "Saber"
+},
+{
+  "japanese": "負ける気がしない",
+  "romaji": "Makeru ki ga shinai",
+  "english": "I don't feel like I can lose.",
+  "game": "Street Fighter series",
+  "character": "Ryu"
+},
+{
+  "japanese": "ケーキは嘘だ",
+  "romaji": "Keeki wa uso da",
+  "english": "The cake is a lie.",
+  "game": "Portal",
+  "character": "GLaDOS"
+},
+{
+  "japanese": "俺は悪くねぇ！",
+  "romaji": "Ore wa warukunee!",
+  "english": "It's not my fault!",
+  "game": "Tales of the Abyss",
+  "character": "Luke fon Fabre"
+}
 ]

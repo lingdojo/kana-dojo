@@ -658,10 +658,38 @@
     "character": "Mikasa Ackerman"
   },
   {
-  "japanese": "イエス！イエス！イエス！イエス！",
-  "romaji": "Iesu! Iesu! Iesu! Iesu!",
-  "english": "Yes! Yes! Yes! Yes! (alt wording 2) (alt wording 54)",
-  "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
-  "character": "DIO"
+    "japanese": "イエス！イエス！イエス！イエス！",
+    "romaji": "Iesu! Iesu! Iesu! Iesu!",
+    "english": "Yes! Yes! Yes! Yes! (alt wording 2) (alt wording 54)",
+    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+    "character": "DIO"
+  },
+  {
+    "japanese": "駆逐してやる!この世から一匹残らず!",
+    "romaji": "Kuchiku shite yaru! Kono yo kara ippiki nokorazu!",
+    "english": "I'll exterminate them! Every last one from this world!",
+    "anime": "Attack on Titan",
+    "character": "Eren Yeager"
+  },
+  {
+    "japanese": "生殺与奪の権を他人に握らせるな!",
+    "romaji": "Seisatsu yodatsu no ken o tanin ni nigiraseru na!",
+    "english": "Don't let anyone else take control of your life and death! (alt wording 37)",
+    "anime": "Demon Slayer: Kimetsu no Yaiba",
+    "character": "Giyu Tomioka"
+  },
+  {
+    "japanese": "グララララ",
+    "romaji": "Gurararara",
+    "english": "Gurararara! (alt wording 31)",
+    "anime": "One Piece",
+    "character": "Edward Newgate (Whitebeard)"
+  },
+  {
+    "japanese": "やれやれだぜ…まったく。",
+    "romanji": "Yare yare da ze... mattaku.",
+    "english": "I reject my humanity, JoJo!",
+    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+    "character": "Joseph Joestar"
   }
 ]
