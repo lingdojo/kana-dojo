@@ -26,7 +26,7 @@
   {
     "id": 5,
     "text": "\"〜てはいけません\" means \"must not\" and is used for prohibitions.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -218,7 +218,7 @@
   {
     "id": 37,
     "text": "\"〜ことになる\" indicates something was decided (by others or circumstances).",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -273,7 +273,7 @@
     "id": 46,
     "text": "\"〜にする\" means \"decide on\" a choice or selection.",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 47,
@@ -584,7 +584,7 @@
   {
     "id": 98,
     "text": "\"〜なければならない\" means \"must\" or \"have to\" do something. (practice variation 13)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -662,7 +662,7 @@
   {
     "id": 111,
     "text": "\"〜まま\" means \"as is\" or \"unchanged\". (practice variation 26)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

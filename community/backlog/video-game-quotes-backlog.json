@@ -126,7 +126,7 @@
     "game": "Final Fantasy Type-0",
     "character": "Class Zero",
     "id": 13,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -416,7 +416,7 @@
     "game": "Fate/stay night [Realta Nua]",
     "character": "Saber",
     "id": 42,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -536,7 +536,7 @@
     "game": "Yakuza: Like a Dragon",
     "character": "Ichiban Kasuga",
     "id": 54,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1036,7 +1036,7 @@
     "game": "Steins;Gate: My Darling's Embrace",
     "character": "Rintaro Okabe",
     "id": 104,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1046,7 +1046,7 @@
     "game": "Danganronpa series",
     "character": "Makoto Naegi",
     "id": 105,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
