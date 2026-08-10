@@ -139,5 +139,14 @@
   "season": "Spring",
   "kigo": "Spring sea (haru no umi)",
   "notes": "Known for musical phrasing and calm motion."
+},
+  {
+  "japanese": "古池や\n蛙飛びこむ\n水の音",
+  "romaji": "Furu ike ya / kawazu tobikomu / mizu no oto",
+  "english": "An old pond; a frog jumps in; the sound of water.",
+  "poet": "Matsuo Basho",
+  "season": "Spring",
+  "kigo": "Frog (kawazu)",
+  "notes": "A foundational haiku focused on stillness and sudden movement."
 }
 ]
