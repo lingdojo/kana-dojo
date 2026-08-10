@@ -329,7 +329,7 @@
     "dont": "ゴミを放置する",
     "note": "ゴミ箱が少ない地域がある。",
     "id": 37,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
