@@ -743,7 +743,7 @@
     "dont": "通話を続ける",
     "note": "混雑時は特に配慮する。",
     "id": 83,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
