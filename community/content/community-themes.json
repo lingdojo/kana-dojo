@@ -70,5 +70,11 @@
     "backgroundColor": "oklch(23.0% 0.020 75.0 / 1)",
     "mainColor": "oklch(82.0% 0.155 95.0 / 1)",
     "secondaryColor": "oklch(62.0% 0.085 55.0 / 1)"
+  },
+  {
+    "id": "tsukimi-moon",
+    "backgroundColor": "oklch(18.0% 0.028 255.0 / 1)",
+    "mainColor": "oklch(92.0% 0.020 95.0 / 1)",
+    "secondaryColor": "oklch(65.0% 0.105 270.0 / 1)"
   }
 ]
