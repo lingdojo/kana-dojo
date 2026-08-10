@@ -60,10 +60,10 @@
     "secondaryColor": "oklch(85.0% 0.155 70.0 / 1)"
   },
   {
-    "id": "gingko-gold",
-    "backgroundColor": "oklch(23.0% 0.030 85.0 / 1)",
-    "mainColor": "oklch(86.0% 0.165 95.0 / 1)",
-    "secondaryColor": "oklch(70.0% 0.115 75.0 / 1)"
+  "id": "gingko-gold",
+  "backgroundColor": "oklch(23.0% 0.030 85.0 / 1)",
+  "mainColor": "oklch(86.0% 0.165 95.0 / 1)",
+  "secondaryColor": "oklch(70.0% 0.115 75.0 / 1)"
   },
   {
     "id": "gingko-avenue",
