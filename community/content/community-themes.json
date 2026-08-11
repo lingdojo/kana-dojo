@@ -60,10 +60,10 @@
     "secondaryColor": "oklch(85.0% 0.155 70.0 / 1)"
   },
   {
-  "id": "gingko-gold",
-  "backgroundColor": "oklch(23.0% 0.030 85.0 / 1)",
-  "mainColor": "oklch(86.0% 0.165 95.0 / 1)",
-  "secondaryColor": "oklch(70.0% 0.115 75.0 / 1)"
+    "id": "gingko-gold",
+    "backgroundColor": "oklch(23.0% 0.030 85.0 / 1)",
+    "mainColor": "oklch(86.0% 0.165 95.0 / 1)",
+    "secondaryColor": "oklch(70.0% 0.115 75.0 / 1)"
   },
   {
     "id": "gingko-avenue",
@@ -82,5 +82,11 @@
     "backgroundColor": "oklch(14.0% 0.075 355.0 / 1)",
     "mainColor": "oklch(68.0% 0.240 10.0 / 1)",
     "secondaryColor": "oklch(78.0% 0.195 150.0 / 1)"
+  },
+  {
+    "id": "calligraphy-ink",
+    "backgroundColor": "oklch(96.0% 0.008 85.0 / 1)",
+    "mainColor": "oklch(20.0% 0.015 270.0 / 1)",
+    "secondaryColor": "oklch(45.0% 0.025 260.0 / 1)"
   }
 ]
