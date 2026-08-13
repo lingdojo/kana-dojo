@@ -526,5 +526,16 @@
     "difficulty": "easy",
     "answers": ["Kyoto", "Sendai", "Sapporo", "Kobe"],
     "correctIndex": 0
+  },
+  {
+    "question": "What is the Japanese term for a shrine gate? (Community variation 60)",
+    "difficulty": "easy",
+    "answers": [
+      "Torii",
+      "Tori",
+      "Toriya",
+      "Torin"
+    ],
+    "correctIndex": 0
   }
 ]

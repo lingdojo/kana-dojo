@@ -380,7 +380,7 @@
   {
     "id": 64,
     "fact": "Japanese blood donation has such high demand that mobile donation buses give out snacks, drinks, and lottery tickets as thanks.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1526,7 +1526,7 @@
   {
     "id": 255,
     "fact": "Japan’s traditional towel, the 'tenugui' (手ぬぐい), is used for drying hands, wrapping gifts, and decorating homes.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

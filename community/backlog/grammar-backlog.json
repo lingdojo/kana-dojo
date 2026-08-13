@@ -363,7 +363,7 @@
     "id": 61,
     "text": "\"〜にとって\" means \"for / to (someone)\".",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 62,
@@ -710,7 +710,7 @@
   {
     "id": 119,
     "text": "\"〜ように\" can express purpose, like \"in order to\" or \"so that\". (practice variation 34)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

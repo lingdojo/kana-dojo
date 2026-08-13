@@ -856,7 +856,7 @@
     "english": "Those who don't take care of their comrades are worse than scum. (alt wording 34)",
     "anime": "Naruto",
     "character": "Kakashi Hatake",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1266,7 +1266,7 @@
     "english": "Dance to my beautiful technique! (alt wording 23) (alt wording 75)",
     "anime": "The Prince of Tennis",
     "character": "Keigo Atobe",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
