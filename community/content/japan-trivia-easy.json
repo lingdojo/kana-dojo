@@ -526,5 +526,16 @@
     "difficulty": "easy",
     "answers": ["Kyoto", "Sendai", "Sapporo", "Kobe"],
     "correctIndex": 0
-  }
+  },
+  {
+  "question": "What is the main ingredient in miso?",
+  "difficulty": "easy",
+  "answers": [
+    "Fermented soybeans",
+    "Rice flour",
+    "Buckwheat",
+    "Seaweed"
+  ],
+  "correctIndex": 0
+}
 ]
