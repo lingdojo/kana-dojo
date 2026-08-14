@@ -54,6 +54,11 @@ export interface StaleProcessingResetResult {
   cutoffIso: string;
 }
 
+export interface FailedReportRevivalResult {
+  revived: number;
+  reportIds: string[];
+}
+
 type ExportRecord = Record<string, unknown>;
 
 const KNOWN_METADATA_KEYS = new Set([
@@ -471,6 +476,68 @@ export async function loadPendingBackfillReportIds({
   }
 
   return (data || []).map((row) => row.id as string);
+}
+
+export async function loadRecoverableFailedReportIds({
+  limit,
+  supabase = getSupabaseAdminClient(),
+}: {
+  limit?: number;
+  supabase?: SupabaseClient;
+} = {}): Promise<string[]> {
+  let query = supabase
+    .from('bug_reports')
+    .select('id')
+    .eq('source', 'tally')
+    .eq('status', 'failed')
+    .is('github_issue_number', null)
+    .is('github_issue_url', null)
+    .order('created_at', { ascending: true });
+
+  if (limit) {
+    query = query.limit(limit);
+  }
+
+  const { data, error } = await query;
+  if (error) {
+    throw error;
+  }
+
+  return (data || []).map((row) => row.id as string);
+}
+
+export async function reviveFailedReports({
+  reportIds,
+  supabase = getSupabaseAdminClient(),
+}: {
+  reportIds: string[];
+  supabase?: SupabaseClient;
+}): Promise<FailedReportRevivalResult> {
+  if (reportIds.length === 0) {
+    return { revived: 0, reportIds: [] };
+  }
+
+  const { data, error } = await supabase
+    .from('bug_reports')
+    .update({
+      status: 'retryable_error',
+      attempts: 0,
+      last_error: null,
+      updated_at: new Date().toISOString(),
+    })
+    .eq('source', 'tally')
+    .eq('status', 'failed')
+    .is('github_issue_number', null)
+    .is('github_issue_url', null)
+    .in('id', reportIds)
+    .select('id');
+
+  if (error) {
+    throw error;
+  }
+
+  const revivedIds = (data || []).map((row) => row.id as string);
+  return { revived: revivedIds.length, reportIds: revivedIds };
 }
 
 export async function resetStaleProcessingReports({

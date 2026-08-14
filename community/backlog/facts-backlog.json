@@ -122,7 +122,7 @@
   {
     "id": 21,
     "fact": "Japan's oldest company, Kongō Gumi, was a construction company that operated continuously for 1,428 years (578-2006 CE) before being absorbed.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -170,7 +170,7 @@
   {
     "id": 29,
     "fact": "Japan's 7-Eleven stores outnumber those in the US despite Japan being 26 times smaller - there's roughly one 7-Eleven for every 2,300 people.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -728,7 +728,7 @@
   {
     "id": 122,
     "fact": "Japan has 'anti-lonely death' services that check on elderly living alone and arrange their affairs if they pass away.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1136,7 +1136,7 @@
   {
     "id": 190,
     "fact": "Japan has 'lucky bags' (fukubukuro) sold on New Year's - sealed bags of discount mystery items worth more than the price.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1496,7 +1496,7 @@
   {
     "id": 250,
     "fact": "The concept of 'seijaku' (静寂) means profound silence, often used to describe the quiet of temples or deep forests.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1718,7 +1718,7 @@
   {
     "id": 287,
     "fact": "Japan’s 'yukata' are lightweight summer kimono made of cotton, often worn at festivals or firework shows.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1814,7 +1814,7 @@
   {
     "id": 303,
     "fact": "'Natsukashii' (懐かしい) describes a warm, nostalgic feeling when recalling the past.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

@@ -105,7 +105,7 @@ ${changelogSection}
 
     releaseNotes += `---
 
-**Full Changelog**: https://github.com/lingdojo/kanadojo/blob/main/CHANGELOG.md`;
+**Full Changelog**: https://github.com/kana-dojo/kana-dojo/blob/main/CHANGELOG.md`;
 
     // Create annotated tag
     const tagMessage = `Release v${version}: ${latest.changes[0] || 'New release'}`;

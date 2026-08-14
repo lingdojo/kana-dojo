@@ -60,7 +60,7 @@
     "english": "Continuation is power",
     "meaning": "Persistence leads to strength and success",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 8,
@@ -627,7 +627,7 @@
     "english": "One cry of the crane",
     "meaning": "A single influential person settles a matter",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 71,
@@ -645,7 +645,7 @@
     "english": "Water on a hot stone",
     "meaning": "A futile effort with little effect",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 73,
@@ -861,7 +861,7 @@
     "english": "A frog in a well does not know the great sea",
     "meaning": "Limited experience limits perspective",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 97,
@@ -888,7 +888,7 @@
     "english": "The nail that sticks out gets hammered down",
     "meaning": "Standing out invites criticism",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 100,
@@ -1086,7 +1086,7 @@
     "english": "Fall seven times, get up eight",
     "meaning": "Never give up",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 122,
