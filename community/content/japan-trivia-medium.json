@@ -6,17 +6,17 @@
     "correctIndex": 0
   },
   {
-    "question": "Which Japanese city is known for its deer roaming freely in a large park? (Community variation 12)",
+    "question": "Which Japanese city is known for its deer roaming freely in a large park?",
     "difficulty": "medium",
     "answers": ["Nara", "Yokohama", "Kobe", "Nagoya"],
     "correctIndex": 0
   },
   {
-    "question": "Which city is known for the historic district of Higashiyama?",
-    "difficulty": "medium",
-    "answers": ["Kanazawa", "Kagoshima", "Nara", "Matsue"],
-    "correctIndex": 0
-  },
+  "question": "Which city is known for the historic district of Higashiyama?",
+  "difficulty": "medium",
+  "answers": ["Kyoto", "Kanazawa", "Kagoshima", "Nara"],
+  "correctIndex": 0
+},
   {
     "question": "What is the name of Japan’s largest lake?",
     "difficulty": "medium",
