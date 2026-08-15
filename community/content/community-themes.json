@@ -1,5 +1,11 @@
 [
   {
+  id: "tsukiji-morning",
+  backgroundColor: "oklch(22.0% 0.020 235.0 / 1)",
+  mainColor: "oklch(78.0% 0.135 215.0 / 1)",
+  secondaryColor: "oklch(85.0% 0.155 90.0 / 1)"
+  },
+  {
   id: "gingko-avenue",
   backgroundColor: "oklch(23.0% 0.020 75.0 / 1)",
   mainColor: "oklch(82.0% 0.155 95.0 / 1)",
