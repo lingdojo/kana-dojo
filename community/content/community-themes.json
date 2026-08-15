@@ -132,16 +132,16 @@
   "secondaryColor": "oklch(40.0% 0.110 250.0 / 1)"
 },
   {
-  id: 'spring-bamboo',
-  backgroundColor: 'oklch(93.0% 0.018 150.0 / 1)',
-  mainColor: 'oklch(55.0% 0.145 145.0 / 1)',
-  secondaryColor: 'oklch(70.0% 0.085 120.0 / 1)'
+  "id": "spring-bamboo",
+  "backgroundColor": "oklch(93.0% 0.018 150.0 / 1)",
+  "mainColor": "oklch(55.0% 0.145 145.0 / 1)",
+  "secondaryColor": "oklch(70.0% 0.085 120.0 / 1)"
 },
   {
-  id: "school-uniform",
-  backgroundColor: "oklch(92.0% 0.015 250.0 / 1)",
-  mainColor: "oklch(40.0% 0.145 255.0 / 1)",
-  secondaryColor: "oklch(60.0% 0.175 20.0 / 1)"
+  "id": "school-uniform",
+  "backgroundColor": "oklch(92.0% 0.015 250.0 / 1)",
+  "mainColor": "oklch(40.0% 0.145 255.0 / 1)",
+  "secondaryColor": "oklch(60.0% 0.175 20.0 / 1)"
 },
 {
   "id": "torii-sunset",
