@@ -1,4 +1,10 @@
-[ 
+[
+  {
+  id: "gingko-avenue",
+  backgroundColor: "oklch(23.0% 0.020 75.0 / 1)",
+  mainColor: "oklch(82.0% 0.155 95.0 / 1)",
+  secondaryColor: "oklch(62.0% 0.085 55.0 / 1)"
+  },
   {
   id: "cherry-cola",
   backgroundColor: "oklch(18.0% 0.055 20.0 / 1)",
