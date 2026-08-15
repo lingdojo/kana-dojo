@@ -355,47 +355,36 @@ const Sidebar = () => {
   const [loadedExperiments, setLoadedExperiments] = useState<Experiment[]>([]);
   const [isMobileViewport, setIsMobileViewport] = useState(false);
   const isVisible = useScrollVisibility();
-  const [isDesktopSidebarCollapsed, setIsDesktopSidebarCollapsed] = useState(
-    () => {
-      if (typeof window === 'undefined') return false;
-      return (
-        sessionStorage.getItem(SIDEBAR_DESKTOP_COLLAPSED_STORAGE_KEY) === 'true'
-      );
-    },
-  );
-  const [hasVisitedPreferences, setHasVisitedPreferences] = useState(() => {
-    if (typeof window === 'undefined') return false;
-
-    return (
-      localStorage.getItem(SIDEBAR_PREFERENCES_VISITED_STORAGE_KEY) === 'true'
-    );
-  });
+  const [isDesktopSidebarCollapsed, setIsDesktopSidebarCollapsed] =
+    useState(false);
+  const [hasVisitedPreferences, setHasVisitedPreferences] = useState(false);
 
   // Collapse state for all collapsible sections
-  const [isAcademyExpanded, setIsAcademyExpanded] = useState(() => {
-    if (typeof window === 'undefined') return false;
+  const [isAcademyExpanded, setIsAcademyExpanded] = useState(false);
+  const [isToolsExpanded, setIsToolsExpanded] = useState(false);
+  const [isExperimentsExpanded, setIsExperimentsExpanded] = useState(false);
+  const [hasRestoredSidebarState, setHasRestoredSidebarState] = useState(false);
 
-    const stored = sessionStorage.getItem(
-      `${SIDEBAR_SECTION_STORAGE_PREFIX}academy`,
+  // Sync from sessionStorage/localStorage on mount (browser only)
+  useEffect(() => {
+    setIsDesktopSidebarCollapsed(
+      sessionStorage.getItem(SIDEBAR_DESKTOP_COLLAPSED_STORAGE_KEY) === 'true',
     );
-    return stored === null ? false : stored === 'true';
-  });
-  const [isToolsExpanded, setIsToolsExpanded] = useState(() => {
-    if (typeof window === 'undefined') return false;
-
-    const stored = sessionStorage.getItem(
-      `${SIDEBAR_SECTION_STORAGE_PREFIX}tools`,
+    setHasVisitedPreferences(
+      localStorage.getItem(SIDEBAR_PREFERENCES_VISITED_STORAGE_KEY) === 'true',
     );
-    return stored === null ? false : stored === 'true';
-  });
-  const [isExperimentsExpanded, setIsExperimentsExpanded] = useState(() => {
-    if (typeof window === 'undefined') return false;
-
-    const stored = sessionStorage.getItem(
-      `${SIDEBAR_SECTION_STORAGE_PREFIX}experiments`,
-    );
-    return stored === null ? false : stored === 'true';
-  });
+    for (const [stateKey, setter] of [
+      ['academy', setIsAcademyExpanded],
+      ['tools', setIsToolsExpanded],
+      ['experiments', setIsExperimentsExpanded],
+    ] as const) {
+      const stored = sessionStorage.getItem(
+        `${SIDEBAR_SECTION_STORAGE_PREFIX}${stateKey}`,
+      );
+      if (stored !== null) setter(stored === 'true');
+    }
+    setHasRestoredSidebarState(true);
+  }, []);
 
   useEffect(() => {
     const EXPERIMENTS_ORDER_KEY = 'sidebar-experiments-order';
@@ -461,39 +450,39 @@ const Sidebar = () => {
   }, []);
 
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    if (!hasRestoredSidebarState) return;
 
     sessionStorage.setItem(
       `${SIDEBAR_SECTION_STORAGE_PREFIX}academy`,
       String(isAcademyExpanded),
     );
-  }, [isAcademyExpanded]);
+  }, [hasRestoredSidebarState, isAcademyExpanded]);
 
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    if (!hasRestoredSidebarState) return;
 
     sessionStorage.setItem(
       `${SIDEBAR_SECTION_STORAGE_PREFIX}tools`,
       String(isToolsExpanded),
     );
-  }, [isToolsExpanded]);
+  }, [hasRestoredSidebarState, isToolsExpanded]);
 
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    if (!hasRestoredSidebarState) return;
 
     sessionStorage.setItem(
       `${SIDEBAR_SECTION_STORAGE_PREFIX}experiments`,
       String(isExperimentsExpanded),
     );
-  }, [isExperimentsExpanded]);
+  }, [hasRestoredSidebarState, isExperimentsExpanded]);
 
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    if (!hasRestoredSidebarState) return;
     sessionStorage.setItem(
       SIDEBAR_DESKTOP_COLLAPSED_STORAGE_KEY,
       String(isDesktopSidebarCollapsed),
     );
-  }, [isDesktopSidebarCollapsed]);
+  }, [hasRestoredSidebarState, isDesktopSidebarCollapsed]);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -604,7 +593,8 @@ const Sidebar = () => {
         'z-50',
         'border-(--border-color) max-lg:items-center max-lg:justify-evenly max-lg:border-t-2 max-lg:py-2',
         'lg:h-auto lg:border-r lg:px-3',
-        'lg:transition-[width] lg:duration-300 lg:ease-in-out',
+        hasRestoredSidebarState &&
+          'lg:transition-[width] lg:duration-300 lg:ease-in-out',
         isDesktopSidebarCollapsed ? 'lg:w-20' : 'lg:w-80',
         'lg:pb-4',
       )}

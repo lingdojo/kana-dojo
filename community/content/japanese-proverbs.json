@@ -460,5 +460,143 @@
     "romaji": "Warau kado ni wa fuku kitaru",
     "english": "Fortune comes to a laughing gate",
     "meaning": "Good fortune comes to those who smile"
-  }
+  },
+  {
+    "japanese": "木を見て森を見ず",
+    "romaji": "Ki wo mite mori wo mizu",
+    "english": "See the trees but not the forest",
+    "meaning": "Miss the bigger picture"
+  },
+  {
+    "japanese": "三日坊主",
+    "romaji": "Mikka bouzu",
+    "english": "A three-day monk",
+    "meaning": "Someone who quits quickly"
+  },
+  {
+    "japanese": "柳に風",
+    "romaji": "Yanagi ni kaze",
+    "english": "Wind in the willow",
+    "meaning": "Stay flexible and let problems pass"
+  },
+  {
+    "japanese": "塞翁が馬",
+    "romaji": "Saiou ga uma",
+    "english": "The old man's horse",
+    "meaning": "Fortune and misfortune are intertwined"
+  },
+  {
+    "japanese": "捕らぬ狸の皮算用",
+    "romaji": "Toranu tanuki no kawazan'you",
+    "english": "Counting a raccoon dog's skins before catching it",
+    "meaning": "Don't count your chickens before they hatch"
+  },
+  {
+    "japanese": "見るは法楽",
+    "romaji": "Miru wa houraku",
+    "english": "Just watching is a pleasure",
+    "meaning": "Enjoy observing; you don't always need to participate"
+  },
+  {
+    "japanese": "縁は異なもの味なもの",
+    "romaji": "En wa inamono aji na mono",
+    "english": "Fate is strange yet delightful",
+    "meaning": "Unexpected connections can be good"
+  },
+  {
+    "japanese": "猫の手も借りたい",
+    "romaji": "Neko no te mo karitai",
+    "english": "I'd even borrow a cat's paw",
+    "meaning": "Extremely busy"
+  },
+  {
+    "japanese": "鬼の居ぬ間に洗濯",
+    "romaji": "Oni no inuma ni sentaku",
+    "english": "Do laundry while the ogre is away",
+    "meaning": "Take advantage of an opportunity"
+  },
+  {
+    "japanese": "隣の花は赤い",
+    "romaji": "Tonari no hana wa akai",
+    "english": "The neighbor's flowers are red",
+    "meaning": "The grass is always greener on the other side"
+  },
+  {
+    "japanese": "花より団子",
+    "romaji": "Hana yori dango",
+    "english": "Dumplings over flowers",
+    "meaning": "Practicality over appearance"
+  },
+  {
+    "japanese": "石の上にも三年",
+    "romaji": "Ishi no ue ni mo san nen",
+    "english": "Three years on a stone",
+    "meaning": "Perseverance brings results"
+  },
+  {
+    "japanese": "出る杭は打たれる",
+    "romaji": "Deru kui wa utareru",
+    "english": "The nail that sticks out gets hammered down",
+    "meaning": "Those who stand out may face criticism"
+  },
+  {
+    "japanese": "木を見て森を見ず",
+    "romaji": "Ki wo mite mori wo mizu",
+    "english": "See the trees but not the forest",
+    "meaning": "Missing the bigger picture"
+  },
+  {
+    "japanese": "一寸先は闇",
+    "romaji": "Issun saki wa yami",
+    "english": "An inch ahead is darkness",
+    "meaning": "The future is uncertain"
+  },
+  {
+    "japanese": "十人十色",
+    "romaji": "Juunin toiro",
+    "english": "Ten people, ten colors",
+    "meaning": "Different strokes for different folks"
+  },
+  {
+    "japanese": "猿も木から落ちる",
+    "romaji": "Saru mo ki kara ochiru",
+    "english": "Even monkeys fall from trees",
+    "meaning": "Experts can make mistakes"
+  },
+  {
+    "japanese": "旅は道連れ世は情け",
+    "romaji": "Tabi wa michizure yo wa nasake",
+    "english": "Travel needs companions; life needs kindness",
+    "meaning": "Relationships and compassion matter"
+  },
+  {
+    "japanese": "可愛い子には旅をさせよ",
+    "romaji": "Kawaii ko ni wa tabi o saseyo",
+    "english": "Let a beloved child travel",
+    "meaning": "Do not hinder the beloved child; allow a child to experience challenges and learn from them"
+  },
+  {
+    "japanese": "情けは人の為ならず",
+    "romaji": "Nasake wa hito no tame narazu",
+    "english": "Kindness is not for others",
+    "meaning": "A good deed returns to you"
+  },
+  {
+    "japanese": "井の中の蛙大海を知らず",
+    "romaji": "I no naka no kawazu taikai wo shirazu",
+    "english": "A frog in a well does not know the great sea",
+    "meaning": "Limited experience limits perspective"
+  },
+  {
+    "japanese": "知らぬが仏",
+    "romaji": "Shiranu ga hotoke",
+    "english": "Not knowing is Buddha",
+    "meaning": "Ignorance is bliss"
+ },
+ {
+  "japanese": "馬子にも衣装",
+  "romaji": "Mago ni mo ishou",
+  "english": "Even a packhorse driver looks good in fine clothes",
+  "meaning": "Clothes make the person"
+}
 ]

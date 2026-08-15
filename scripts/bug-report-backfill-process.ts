@@ -1,7 +1,9 @@
 /* eslint-disable no-console */
 import {
+  loadRecoverableFailedReportIds,
   loadPendingBackfillReportIds,
   resetStaleProcessingReports,
+  reviveFailedReports,
 } from '@/shared/infra/server/bugReports/backfill';
 import { processBugReports } from '@/shared/infra/server/bugReports/processor';
 
@@ -11,6 +13,7 @@ interface ProcessArgs {
   delayMs: number;
   resetStale: boolean;
   staleMinutes: number;
+  reviveFailed: boolean;
 }
 
 function readArgs(): ProcessArgs {
@@ -27,6 +30,7 @@ function readArgs(): ProcessArgs {
     staleMinutes: process.env.BUG_REPORT_BACKFILL_STALE_MINUTES
       ? Number(process.env.BUG_REPORT_BACKFILL_STALE_MINUTES)
       : 30,
+    reviveFailed: process.env.BUG_REPORT_BACKFILL_REVIVE_FAILED === 'true',
   };
 
   for (let index = 0; index < args.length; index += 1) {
@@ -44,6 +48,8 @@ function readArgs(): ProcessArgs {
     } else if (arg === '--stale-minutes') {
       result.staleMinutes = Number(args[index + 1]);
       index += 1;
+    } else if (arg === '--revive-failed') {
+      result.reviveFailed = true;
     }
   }
 
@@ -68,6 +74,23 @@ async function main() {
   validatePositiveInteger('--limit', args.limit);
   validatePositiveInteger('--delay-ms', args.delayMs);
   validatePositiveInteger('--stale-minutes', args.staleMinutes);
+
+  if (args.reviveFailed) {
+    const reportIds = await loadRecoverableFailedReportIds({ limit: args.limit });
+    if (args.dryRun) {
+      console.log(
+        `[bug-report-backfill] Recoverable failed reports selected: ${reportIds.length}`,
+      );
+      for (const reportId of reportIds) {
+        console.log(`  would revive ${reportId}`);
+      }
+    } else {
+      const result = await reviveFailedReports({ reportIds });
+      console.log(
+        `[bug-report-backfill] Revived ${result.revived} failed report(s) without a recorded GitHub issue`,
+      );
+    }
+  }
 
   if (args.resetStale && !args.dryRun) {
     const result = await resetStaleProcessingReports({

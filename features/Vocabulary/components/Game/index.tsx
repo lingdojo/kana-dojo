@@ -1,12 +1,17 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import Return from '@/shared/ui-composite/Game/ReturnFromGame';
 import Input from './Input';
 import MCQ from './MCQ';
 import TilesMode from './TilesMode';
 
 import useVocabStore from '@/features/Vocabulary/store/useVocabStore';
-import { useStatsStore } from '@/features/Progress';
+import {
+  clearAutoLearningHandoff,
+  readAutoLearningHandoff,
+  useAutoLearningStore,
+  useStatsStore,
+} from '@/features/Progress';
 import { useShallow } from 'zustand/react/shallow';
 import SessionStats from '@/shared/ui-composite/Game/SessionStats';
 import SessionSummaryScreen from '@/shared/ui-composite/Game/SessionSummaryScreen';
@@ -19,6 +24,8 @@ import {
   ENABLE_EVERY_QUESTION_AD_OVERLAY,
   shouldShowStreakMilestoneOverlay,
 } from '@/shared/utils/game/streakMilestones';
+import { vocabDataService } from '@/features/Vocabulary/services/vocabDataService';
+import type { VocabLevel } from '@/entities/vocabulary';
 
 const Game = () => {
   const {
@@ -50,7 +57,16 @@ const Game = () => {
   );
 
   const gameMode = useVocabStore(state => state.selectedGameModeVocab);
+  const setGameMode = useVocabStore(state => state.setSelectedGameModeVocab);
   const selectedVocabObjs = useVocabStore(state => state.selectedVocabObjs);
+  const replaceVocabObjs = useVocabStore(state => state.setSelectedVocabObjs);
+  const setSelectedVocabSets = useVocabStore(
+    state => state.setSelectedVocabSets,
+  );
+  const isAutoLearningSessionRef = useRef(false);
+  const setAutoSelectionActive = useAutoLearningStore(
+    state => state.setAutoSelectionActive,
+  );
   const setSelectedVocabCollection = useVocabStore(
     state => state.setSelectedVocabCollection,
   );
@@ -58,6 +74,8 @@ const Game = () => {
     state => state.setSelectedSubunitForUnit,
   );
   const router = useRouter();
+  const [isSelectionReady, setIsSelectionReady] = useState(false);
+  const [selectionError, setSelectionError] = useState<string | null>(null);
   const [view, setView] = useState<'playing' | 'summary'>('playing');
   const [activeMilestone, setActiveMilestone] = useState<number | null>(null);
   const [sessionId, setSessionId] = useState<string | null>(null);
@@ -68,6 +86,83 @@ const Game = () => {
   const resetCollectionSelection = useMenuSelectorStore(
     state => state.resetCollectionSelection,
   );
+
+  useEffect(() => {
+    let isMounted = true;
+
+    const resolveSelection = async () => {
+      const handoff = readAutoLearningHandoff('vocabulary');
+      if (!handoff) {
+        setIsSelectionReady(true);
+        return;
+      }
+
+      try {
+        isAutoLearningSessionRef.current = true;
+        const levels = Array.from(
+          new Set(
+            handoff.sets
+              .map(set => set.level)
+              .filter((level): level is VocabLevel => level !== undefined),
+          ),
+        );
+        const levelData = new Map(
+          await Promise.all(
+            levels.map(
+              async level =>
+                [level, await vocabDataService.getVocabByLevel(level)] as const,
+            ),
+          ),
+        );
+        if (!isMounted) return;
+
+        replaceVocabObjs(
+          handoff.sets.flatMap(set =>
+            set.level
+              ? (levelData
+                  .get(set.level)
+                  ?.slice(set.startIndex, set.endIndex) ?? [])
+              : [],
+          ),
+        );
+        setSelectedVocabSets(
+          handoff.sets.flatMap(set => (set.setName ? [set.setName] : [])),
+        );
+        setGameMode(handoff.gameMode);
+        setAutoSelectionActive('vocabulary', true);
+        clearAutoLearningHandoff();
+        setIsSelectionReady(true);
+      } catch {
+        if (!isMounted) return;
+        setSelectionError('Could not load your Vocabulary learning session.');
+      }
+    };
+
+    void resolveSelection();
+    return () => {
+      isMounted = false;
+    };
+  }, [
+    replaceVocabObjs,
+    setAutoSelectionActive,
+    setGameMode,
+    setSelectedVocabSets,
+  ]);
+
+  const clearAutoLearningSelection = useCallback(() => {
+    if (!isAutoLearningSessionRef.current) return;
+    replaceVocabObjs([]);
+    setSelectedVocabSets([]);
+    setAutoSelectionActive('vocabulary', false);
+    isAutoLearningSessionRef.current = false;
+  }, [replaceVocabObjs, setAutoSelectionActive, setSelectedVocabSets]);
+
+  useEffect(() => {
+    const handleHistoryNavigation = () => clearAutoLearningSelection();
+    window.addEventListener('popstate', handleHistoryNavigation);
+    return () =>
+      window.removeEventListener('popstate', handleHistoryNavigation);
+  }, [clearAutoLearningSelection]);
 
   useEffect(() => {
     if (view !== 'playing') return;
@@ -84,6 +179,7 @@ const Game = () => {
   }, [currentStreak, numCorrectAnswers, numWrongAnswers, view]);
 
   useEffect(() => {
+    if (!isSelectionReady) return;
     resetStats();
     setActiveMilestone(null);
     // Track dojo and mode usage for achievements (Requirements 8.1-8.3)
@@ -101,7 +197,7 @@ const Game = () => {
     });
     // Intentionally keyed by nonce only to avoid resetting a live session.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [sessionNonce]);
+  }, [sessionNonce, isSelectionReady]);
 
   const handleQuit = async () => {
     const id =
@@ -135,6 +231,23 @@ const Game = () => {
     setView('playing');
     setSessionNonce(prev => prev + 1);
   };
+
+  if (!isSelectionReady) {
+    return (
+      <div className='flex min-h-[100dvh] flex-col items-center justify-center gap-4 text-(--secondary-color)'>
+        <p>{selectionError ?? 'Preparing your learning session...'}</p>
+        {selectionError && (
+          <button
+            type='button'
+            className='text-(--main-color) underline'
+            onClick={() => router.push('/vocabulary')}
+          >
+            Back to Vocabulary
+          </button>
+        )}
+      </div>
+    );
+  }
 
   return (
     <>
@@ -191,7 +304,10 @@ const Game = () => {
           totalTimeMs={totalMilliseconds}
           correctAnswerTimes={correctAnswerTimes}
           onNewSession={handleNewSession}
-          onBackToSelection={() => router.push('/vocabulary')}
+          onBackToSelection={() => {
+            clearAutoLearningSelection();
+            router.push('/vocabulary');
+          }}
         />
       )}
     </>

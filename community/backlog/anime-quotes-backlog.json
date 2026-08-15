@@ -16,7 +16,7 @@
     "english": "Yes! Yes! Yes! Yes!",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "DIO",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -36,7 +36,7 @@
     "english": "But I refuse.",
     "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
     "character": "Rohan Kishibe",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -76,7 +76,7 @@
     "english": "Ora ora ora ora ora!",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Jotaro Kujo",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -86,7 +86,7 @@
     "english": "What?!",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Joseph Joestar",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -97,7 +97,7 @@
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Joseph Joestar",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 11,
@@ -107,7 +107,7 @@
     "anime": "JoJo's Bizarre Adventure: Stone Ocean",
     "character": "Jolyne Cujoh",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 12,
@@ -116,7 +116,7 @@
     "english": "I'm going to stop being human, JoJo!",
     "anime": "JoJo's Bizarre Adventure: Phantom Blood",
     "character": "Dio Brando",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -126,7 +126,7 @@
     "english": "I'm on a different level today!",
     "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
     "character": "Okuyasu Nijimura",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -146,7 +146,7 @@
     "english": "I reject my humanity, JoJo!",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Joseph Joestar",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -156,7 +156,7 @@
     "english": "But... that's what I like.",
     "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
     "character": "Yoshikage Kira",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -166,7 +166,7 @@
     "english": "Bucciarati is here!",
     "anime": "JoJo's Bizarre Adventure: Golden Wind",
     "character": "Narancia Ghirga",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -227,7 +227,7 @@
     "anime": "The Prince of Tennis",
     "character": "Keigo Atobe",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 24,
@@ -246,7 +246,7 @@
     "english": "I am Gundam!",
     "anime": "Mobile Suit Gundam 00",
     "character": "Setsuna F. Seiei",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -276,7 +276,7 @@
     "english": "Fosh fosh fosh fosh.",
     "anime": "One Piece",
     "character": "Kozuki Sukiyaki",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -286,7 +286,7 @@
     "english": "Mama mama mama.",
     "anime": "One Piece",
     "character": "Charlotte Linlin (Big Mom)",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -306,7 +306,7 @@
     "english": "Gurararara!",
     "anime": "One Piece",
     "character": "Edward Newgate (Whitebeard)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -316,7 +316,7 @@
     "english": "Ze ha ha ha!",
     "anime": "One Piece",
     "character": "Marshall D. Teach (Blackbeard)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -327,7 +327,7 @@
     "anime": "Naruto",
     "character": "Naruto Uzumaki",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 34,
@@ -347,7 +347,7 @@
     "anime": "Fullmetal Alchemist: Brotherhood",
     "character": "Edward Elric",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 36,
@@ -437,7 +437,7 @@
     "anime": "Death Note",
     "character": "Light Yagami",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 45,
@@ -446,7 +446,7 @@
     "english": "Only those prepared to be shot should pull the trigger.",
     "anime": "Code Geass: Lelouch of the Rebellion",
     "character": "Lelouch vi Britannia",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -467,7 +467,7 @@
     "anime": "Hunter x Hunter",
     "character": "Gon Freecss",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 48,
@@ -496,7 +496,7 @@
     "english": "The word 'give up' isn't in my dictionary.",
     "anime": "Black Clover",
     "character": "Asta",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -506,7 +506,7 @@
     "english": "Running away can take courage too.",
     "anime": "Mob Psycho 100",
     "character": "Arataka Reigen",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -517,7 +517,7 @@
     "anime": "Dragon Ball Z",
     "character": "Son Goku",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 53,
@@ -526,7 +526,7 @@
     "english": "Road roller! (alt wording 1)",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "DIO",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -556,7 +556,7 @@
     "english": "But I refuse. (alt wording 4)",
     "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
     "character": "Rohan Kishibe",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -566,7 +566,7 @@
     "english": "I, Giorno Giovanna, have a dream! (alt wording 5)",
     "anime": "JoJo's Bizarre Adventure: Golden Wind",
     "character": "Giorno Giovanna",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -636,7 +636,7 @@
     "english": "I'm going to stop being human, JoJo! (alt wording 12)",
     "anime": "JoJo's Bizarre Adventure: Phantom Blood",
     "character": "Dio Brando",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -666,7 +666,7 @@
     "english": "Good grief... honestly. (alt wording 15)",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Jotaro Kujo",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -676,7 +676,7 @@
     "english": "But... that's what I like. (alt wording 16)",
     "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
     "character": "Yoshikage Kira",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -686,7 +686,7 @@
     "english": "Bucciarati is here! (alt wording 17)",
     "anime": "JoJo's Bizarre Adventure: Golden Wind",
     "character": "Narancia Ghirga",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -696,7 +696,7 @@
     "english": "You're already dead. (alt wording 18)",
     "anime": "Fist of the North Star",
     "character": "Kenshiro",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -706,7 +706,7 @@
     "english": "What?! (alt wording 19)",
     "anime": "Fist of the North Star",
     "character": "Shin",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -726,7 +726,7 @@
     "english": "If you give up, that's the end of the game. (alt wording 21)",
     "anime": "Slam Dunk",
     "character": "Kaede Rukawa",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -756,7 +756,7 @@
     "english": "I think you should just laugh. (alt wording 24)",
     "anime": "Neon Genesis Evangelion",
     "character": "Rei Ayanami",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -766,7 +766,7 @@
     "english": "I am Gundam! (alt wording 25)",
     "anime": "Mobile Suit Gundam 00",
     "character": "Setsuna F. Seiei",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -776,7 +776,7 @@
     "english": "This world is cruel... yet so beautiful. (alt wording 26)",
     "anime": "Attack on Titan",
     "character": "Mikasa Ackerman",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -786,7 +786,7 @@
     "english": "Lero lero lero lero. (alt wording 27)",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Noriaki Kakyoin",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -796,7 +796,7 @@
     "english": "Fosh fosh fosh fosh. (alt wording 28)",
     "anime": "One Piece",
     "character": "Kozuki Sukiyaki",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -806,7 +806,7 @@
     "english": "Mama mama mama. (alt wording 29)",
     "anime": "One Piece",
     "character": "Charlotte Linlin (Big Mom)",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -826,7 +826,7 @@
     "english": "Gurararara! (alt wording 31)",
     "anime": "One Piece",
     "character": "Edward Newgate (Whitebeard)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -846,7 +846,7 @@
     "english": "I never give up, believe it! (alt wording 33)",
     "anime": "Naruto",
     "character": "Naruto Uzumaki",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -856,7 +856,7 @@
     "english": "Those who don't take care of their comrades are worse than scum. (alt wording 34)",
     "anime": "Naruto",
     "character": "Kakashi Hatake",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -876,7 +876,7 @@
     "english": "I'll exterminate them! Every last one from this world! (alt wording 36)",
     "anime": "Attack on Titan",
     "character": "Eren Yeager",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -886,7 +886,7 @@
     "english": "Don't let anyone else take control of your life and death! (alt wording 37)",
     "anime": "Demon Slayer: Kimetsu no Yaiba",
     "character": "Tanjiro Kamado",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -966,7 +966,7 @@
     "english": "Only those prepared to be shot should pull the trigger. (alt wording 45)",
     "anime": "Code Geass: Lelouch of the Rebellion",
     "character": "Lelouch vi Britannia",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -986,7 +986,7 @@
     "english": "I won't run away anymore! (alt wording 47)",
     "anime": "Hunter x Hunter",
     "character": "Gon Freecss",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1026,7 +1026,7 @@
     "english": "Running away can take courage too. (alt wording 51)",
     "anime": "Mob Psycho 100",
     "character": "Arataka Reigen",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1036,7 +1036,7 @@
     "english": "Lend me your energy! (alt wording 52)",
     "anime": "Dragon Ball Z",
     "character": "Son Goku",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1066,7 +1066,7 @@
     "english": "Oh? You're approaching me? (alt wording 3) (alt wording 55)",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "DIO",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1076,7 +1076,7 @@
     "english": "But I refuse. (alt wording 4) (alt wording 56)",
     "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
     "character": "Rohan Kishibe",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1096,7 +1096,7 @@
     "english": "Good grief. (alt wording 6) (alt wording 58)",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Jotaro Kujo",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1106,7 +1106,7 @@
     "english": "Useless! Useless! Useless! (alt wording 7) (alt wording 59)",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "DIO",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1126,7 +1126,7 @@
     "english": "What?! (alt wording 9) (alt wording 61)",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Joseph Joestar",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1136,7 +1136,7 @@
     "english": "Next you'll say, 'Good grief!' (alt wording 10) (alt wording 62)",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Joseph Joestar",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1176,7 +1176,7 @@
     "english": "I will transcend humanity! (alt wording 14) (alt wording 66)",
     "anime": "JoJo's Bizarre Adventure: Battle Tendency",
     "character": "Kars",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1196,7 +1196,7 @@
     "english": "But... that's what I like. (alt wording 16) (alt wording 68)",
     "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
     "character": "Yoshikage Kira",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1216,7 +1216,7 @@
     "english": "You're already dead. (alt wording 18) (alt wording 70)",
     "anime": "Fist of the North Star",
     "character": "Kenshiro",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1226,7 +1226,7 @@
     "english": "What?! (alt wording 19) (alt wording 71)",
     "anime": "Fist of the North Star",
     "character": "Shin",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1266,7 +1266,7 @@
     "english": "Dance to my beautiful technique! (alt wording 23) (alt wording 75)",
     "anime": "The Prince of Tennis",
     "character": "Keigo Atobe",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1276,7 +1276,7 @@
     "english": "I think you should just laugh. (alt wording 24) (alt wording 76)",
     "anime": "Neon Genesis Evangelion",
     "character": "Rei Ayanami",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1306,7 +1306,7 @@
     "english": "Lero lero lero lero. (alt wording 27) (alt wording 79)",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Noriaki Kakyoin",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1316,7 +1316,7 @@
     "english": "Fosh fosh fosh fosh. (alt wording 28) (alt wording 80)",
     "anime": "One Piece",
     "character": "Kozuki Sukiyaki",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1326,7 +1326,7 @@
     "english": "Mama mama mama. (alt wording 29) (alt wording 81)",
     "anime": "One Piece",
     "character": "Charlotte Linlin (Big Mom)",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1336,7 +1336,7 @@
     "english": "Shishishi! (alt wording 30) (alt wording 82)",
     "anime": "One Piece",
     "character": "Monkey D. Luffy",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1386,7 +1386,7 @@
     "english": "A lesson without pain is meaningless. (alt wording 35) (alt wording 87)",
     "anime": "Fullmetal Alchemist: Brotherhood",
     "character": "Edward Elric",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

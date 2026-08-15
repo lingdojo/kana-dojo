@@ -2,6 +2,7 @@ import { describe, expect, it, vi } from 'vitest';
 import {
   importBackfillReports,
   parseTallyBackfillExport,
+  reviveFailedReports,
   resetStaleProcessingReports,
 } from './backfill';
 
@@ -143,6 +144,50 @@ describe('parseTallyBackfillExport', () => {
     expect(result.invalidRows).toEqual([
       { index: 1, reason: 'Duplicate submission id in export: sub_1' },
     ]);
+  });
+});
+
+describe('reviveFailedReports', () => {
+  it('resets only failed Tally rows without a recorded GitHub issue', async () => {
+    const select = vi.fn().mockResolvedValue({
+      data: [{ id: 'report_1' }],
+      error: null,
+    });
+    const inIds = vi.fn().mockReturnValue({ select });
+    const issueUrlIs = vi.fn().mockReturnValue({ in: inIds });
+    const issueNumberIs = vi.fn().mockReturnValue({ is: issueUrlIs });
+    const statusEq = vi.fn().mockReturnValue({ is: issueNumberIs });
+    const sourceEq = vi.fn().mockReturnValue({ eq: statusEq });
+    const update = vi.fn().mockReturnValue({ eq: sourceEq });
+    const from = vi.fn().mockReturnValue({ update });
+
+    const result = await reviveFailedReports({
+      reportIds: ['report_1'],
+      supabase: { from } as never,
+    });
+
+    expect(result).toEqual({ revived: 1, reportIds: ['report_1'] });
+    expect(update).toHaveBeenCalledWith(
+      expect.objectContaining({
+        status: 'retryable_error',
+        attempts: 0,
+        last_error: null,
+      }),
+    );
+    expect(sourceEq).toHaveBeenCalledWith('source', 'tally');
+    expect(statusEq).toHaveBeenCalledWith('status', 'failed');
+    expect(issueNumberIs).toHaveBeenCalledWith('github_issue_number', null);
+    expect(issueUrlIs).toHaveBeenCalledWith('github_issue_url', null);
+    expect(inIds).toHaveBeenCalledWith('id', ['report_1']);
+  });
+
+  it('does not query Supabase when there are no rows to revive', async () => {
+    const from = vi.fn();
+
+    await expect(
+      reviveFailedReports({ reportIds: [], supabase: { from } as never }),
+    ).resolves.toEqual({ revived: 0, reportIds: [] });
+    expect(from).not.toHaveBeenCalled();
   });
 });
 
