@@ -171,7 +171,7 @@ npm run check
 
 <div align="center">
 
-[![Star History Chart](https://api.star-history.com/svg?repos=lingdojo/kana-dojo&type=Date)](https://star-history.com/#lingdojo/kana-dojo&Date)
+[![Star History Chart](https://star-history.dera.page/svg?repos=lingdojo/kana-dojo&type=Date)](https://star-history.dera.page/#lingdojo/kana-dojo&Date)
 
 </div>
 
