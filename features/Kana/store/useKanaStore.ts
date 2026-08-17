@@ -6,6 +6,7 @@ interface IKanaState {
   setSelectedGameModeKana: (mode: string) => void;
   addKanaGroupIndex: (kanaGroupIndex: number) => void;
   addKanaGroupIndices: (kanaGroupIndices: number[]) => void;
+  setKanaGroupIndices: (kanaGroupIndices: number[]) => void;
 }
 
 const sameArray = (a: number[], b: number[]) =>
@@ -79,6 +80,8 @@ const useKanaStore = create<IKanaState>(set => ({
         ? state
         : { kanaGroupIndices: next };
     }),
+  setKanaGroupIndices: kanaGroupIndices =>
+    set({ kanaGroupIndices: [...new Set(kanaGroupIndices)] }),
 }));
 
 export default useKanaStore;

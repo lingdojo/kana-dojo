@@ -41,7 +41,7 @@
     "romaji": "Chiri mo tsumoreba yama to naru",
     "english": "Even dust, if piled up, becomes a mountain",
     "meaning": "Small efforts accumulate into great achievements",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -50,7 +50,7 @@
     "romaji": "Nou aru taka wa tsume wo kakusu",
     "english": "The talented hawk hides its talons",
     "meaning": "Truly skilled people don't show off their abilities",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -141,7 +141,7 @@
     "english": "Fortune comes to a laughing gate",
     "meaning": "Happiness and good fortune come to those who smile",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 17,
@@ -204,9 +204,7 @@
     "english": "A frog's child is a frog",
     "meaning": "Like father, like son",
     "completed": false,
-    "issued": false,
-    "completedBy": "atharv-sys32",
-    "completedPR": 26092
+    "issued": false
   },
   {
     "id": 24,
@@ -224,7 +222,7 @@
     "english": "Early rising is worth three coins",
     "meaning": "The early bird catches the worm",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 26,
@@ -350,7 +348,7 @@
     "english": "Tomorrow's wind will blow tomorrow",
     "meaning": "Don't worry too much about the future",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 40,
@@ -359,7 +357,7 @@
     "english": "A strong person under the veranda",
     "meaning": "An unsung hero who supports behind the scenes",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 41,
@@ -422,7 +420,7 @@
     "english": "Even a packhorse driver looks good in fine clothes",
     "meaning": "Clothes make the person",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 48,
@@ -449,7 +447,7 @@
     "english": "Giving birth is easier than worrying",
     "meaning": "Doing is often easier than worrying",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 51,
@@ -530,7 +528,7 @@
     "english": "Hide your head, but not your butt",
     "meaning": "Trying to hide something obvious",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 60,
@@ -548,7 +546,7 @@
     "english": "Mochi should be made by the mochi shop",
     "meaning": "Leave it to the experts",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 62,
@@ -557,7 +555,7 @@
     "english": "It's darkest under the lighthouse",
     "meaning": "The obvious is often overlooked",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 63,
@@ -728,7 +726,7 @@
     "english": "A frog's child is a frog",
     "meaning": "Children resemble their parents",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 82,
@@ -746,7 +744,7 @@
     "english": "Dried bonito to a cat",
     "meaning": "Leave temptation unattended at your own risk",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 84,
@@ -935,7 +933,7 @@
     "english": "An inch ahead is darkness",
     "meaning": "The future is uncertain",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 105,
@@ -971,7 +969,7 @@
     "english": "Tap a stone bridge before crossing",
     "meaning": "Be very cautious",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 109,
@@ -1160,7 +1158,7 @@
     "english": "Travel needs companions; life needs kindness",
     "meaning": "Relationships and compassion matter",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 130,
@@ -1168,7 +1166,7 @@
     "romaji": "Zenin zenka",
     "english": "Good causes bring good results",
     "meaning": "Good deeds lead to good outcomes",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1178,7 +1176,7 @@
     "english": "Three years on a stone",
     "meaning": "Perseverance brings results",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 132,
@@ -1187,7 +1185,7 @@
     "english": "If in a hurry, go around",
     "meaning": "The safer path can be faster",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 133,
@@ -1268,7 +1266,7 @@
     "english": "A bee on a crying face",
     "meaning": "Misfortune never comes alone",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 142,
@@ -1277,7 +1275,7 @@
     "english": "Not knowing is Buddha",
     "meaning": "Ignorance is bliss",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 143,
@@ -1358,7 +1356,7 @@
     "english": "After the rain, the ground hardens",
     "meaning": "Hard times build resilience",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 152,
@@ -1412,7 +1410,7 @@
     "english": "Spilled water doesn’t return to the tray",
     "meaning": "What’s done is done",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 158,
@@ -1502,7 +1500,7 @@
     "english": "Chase two rabbits, catch none",
     "meaning": "Focus on one thing",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 168,
@@ -1511,7 +1509,7 @@
     "english": "A frog in a well doesn’t know the ocean",
     "meaning": "Limited experience limits perspective",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 169,
@@ -1556,7 +1554,7 @@
     "english": "Put care into care",
     "meaning": "Double-check everything",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 174,

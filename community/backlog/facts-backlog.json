@@ -38,7 +38,7 @@
   {
     "id": 7,
     "fact": "Japan has a word 'tarento' (タレント) for TV personalities who are famous simply for being on TV - not actors or musicians, just professional celebrities.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -50,7 +50,7 @@
   {
     "id": 9,
     "fact": "The Japanese concept of 'ma' (間) refers to the meaningful pause or negative space in music, art, and conversation - the beauty of what's not there.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -62,7 +62,7 @@
   {
     "id": 11,
     "fact": "Japan's postal system has a special service where you can mail a letter to your future self, and they'll deliver it years later on the date you specify.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -92,7 +92,7 @@
   {
     "id": 16,
     "fact": "Japan has 'capsule hotels' where guests sleep in pods roughly the size of a coffin - originally designed for businessmen who missed the last train home.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -152,7 +152,7 @@
   {
     "id": 26,
     "fact": "The concept of 'wabi-sabi' (侘寂) finds beauty in imperfection and impermanence - a cracked bowl is more valuable because of its history.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -236,7 +236,7 @@
   {
     "id": 40,
     "fact": "There are over 200 different KitKat flavors created for Japan including sake, wasabi, sweet potato, and cherry blossom.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -674,7 +674,7 @@
   {
     "id": 113,
     "fact": "The word 'jibun' (自分) means 'self' but is also used to mean 'I' in many dialects - showing how identity is tied to selfhood.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -686,7 +686,7 @@
   {
     "id": 115,
     "fact": "There's a Japanese concept 'mujo' (無常) - impermanence - reminding that nothing lasts, making each moment precious.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -728,7 +728,7 @@
   {
     "id": 122,
     "fact": "Japan has 'anti-lonely death' services that check on elderly living alone and arrange their affairs if they pass away.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -992,7 +992,7 @@
   {
     "id": 166,
     "fact": "Japan has a shrine in Kyoto where foxes are believed to be divine messengers - thousands of red torii gates lead to it.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1034,7 +1034,7 @@
   {
     "id": 173,
     "fact": "The concept 'kokoro' (心) means heart-mind-spirit combined - emotions and thoughts are not separate in Japanese philosophy.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1058,13 +1058,13 @@
   {
     "id": 177,
     "fact": "The word 'tadaima' (ただいま) means 'I'm home' and is always answered with 'okaeri' (お帰り) - 'welcome back.'",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
     "id": 178,
     "fact": "Japan has vending machines that dispense hot canned coffee - a major morning ritual for millions of workers.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1076,7 +1076,7 @@
   {
     "id": 180,
     "fact": "Japan has 'sunaba' (砂場) sand therapy - walking barefoot in sand gardens believed to improve mental health.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1106,7 +1106,7 @@
   {
     "id": 185,
     "fact": "The concept 'hara hachi bu' (腹八分) means eating until 80% full - an Okinawan practice linked to longevity.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1124,7 +1124,7 @@
   {
     "id": 188,
     "fact": "Japan has the world's longest-running comic book series - 'Kochira Katsushika-ku Kameari Kōen Mae Hashutsujo' ran for 40 years.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1142,7 +1142,7 @@
   {
     "id": 191,
     "fact": "There's a Japanese concept 'meisou' (瞑想) - meditation that focuses on emptying the mind rather than filling it.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1214,7 +1214,7 @@
   {
     "id": 203,
     "fact": "Japan's elementary school students often clean their classrooms themselves in a routine called 'souji' (掃除), teaching responsibility.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1304,7 +1304,7 @@
   {
     "id": 218,
     "fact": "The Japanese term 'gacha-gacha' is onomatopoeia for capsule toy machines: the crank sound (gacha) and capsule drop (gacha).",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1340,7 +1340,7 @@
   {
     "id": 224,
     "fact": "The Japanese word 'mijikai' (短い) means short, but 'mijikai hanashi' can refer to a concise story — valued in polite conversation.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1424,7 +1424,7 @@
   {
     "id": 238,
     "fact": "The word 'yukimi' (雪見) means snow viewing — eating seasonal treats like snow-viewing daifuku while watching falling snow.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1520,7 +1520,7 @@
   {
     "id": 254,
     "fact": "The term 'ashita no tenki' (明日の天気) is used in small talk, similar to discussing the weather to open conversations.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1676,7 +1676,7 @@
   {
     "id": 280,
     "fact": "The phrase 'shinpuru' (シンプル) is the Japanese adoption of 'simple', often implying elegant minimalism.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1718,7 +1718,7 @@
   {
     "id": 287,
     "fact": "Japan’s 'yukata' are lightweight summer kimono made of cotton, often worn at festivals or firework shows.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1778,7 +1778,7 @@
   {
     "id": 297,
     "fact": "Japan’s 'eki-ben' (駅弁) are region-specific boxed meals sold at train stations, often featuring local specialties.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1802,7 +1802,7 @@
   {
     "id": 301,
     "fact": "Japan’s New Year custom 'hatsumode' (初詣) involves visiting a shrine or temple for the year’s first prayer.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1868,7 +1868,7 @@
   {
     "id": 312,
     "fact": "Japan’s 'shichi-go-san' festival celebrates children at ages 3, 5, and 7 with shrine visits and traditional outfits.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {

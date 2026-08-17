@@ -46,15 +46,15 @@ export const isKanaInputAnswerCorrect = ({
   promptParts,
   answerParts,
 }: KanaInputAnswerOptions): boolean => {
-  // Normalize Unicode form and strip surrounding whitespace so that input
-  // from an IME or copy-paste (which may arrive in a different NFC/NFD form)
+  // Normalize Unicode form and strip ALL whitespace so that input
+  // from an IME, copy-paste, or with intentional spaces (e.g. "chi te")
   // is compared on equal footing with the stored answer.
-  const normalizedInput = inputValue.trim().normalize('NFC');
+  const normalizedInput = inputValue.replace(/\s+/g, '').normalize('NFC');
   if (!normalizedInput) return false;
 
   if (isReverse) {
     // Reverse mode: user types the kana character itself.
-    return normalizedInput === targetChar.normalize('NFC');
+    return normalizedInput === targetChar.replace(/\s+/g, '').normalize('NFC');
   }
 
   // Normal mode: user types romaji. Compare case- and Unicode-insensitively.

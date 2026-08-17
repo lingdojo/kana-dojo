@@ -15,6 +15,27 @@ describe('isVocabularyMeaningAnswerCorrect', () => {
     );
   });
 
+  it.each(['speak', 'Speak', 'to speak', '  TO   SPEAK  '])(
+    'accepts optional infinitive prefix in meaning answer %s',
+    answer => {
+      const verb = { ...vocabulary, meanings: ['to speak'] };
+
+      expect(isVocabularyMeaningAnswerCorrect(verb, answer, false)).toBe(true);
+    },
+  );
+
+  it('does not remove an infinitive prefix from reverse answers', () => {
+    const prefixedWord = {
+      ...vocabulary,
+      word: 'to speak',
+      reading: 'to speak',
+    };
+
+    expect(
+      isVocabularyMeaningAnswerCorrect(prefixedWord, 'speak', true),
+    ).toBe(false);
+  });
+
   it.each([' アメリカ ', 'amerika', 'あめりか'])(
     'accepts reverse answer %s without requiring an IME',
     answer => {

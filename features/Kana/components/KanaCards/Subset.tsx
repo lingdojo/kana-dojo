@@ -8,6 +8,7 @@ import usePreferencesStore from '@/features/Preferences/store/usePreferencesStor
 import { useClick } from '@/shared/hooks/generic/useAudio';
 import { ActionButton } from '@/shared/ui/components/ActionButton';
 import { cn } from '@/shared/utils/utils';
+import { useAutoLearningStore } from '@/features/Progress';
 
 interface SubsetProps {
   sliceRange: number[];
@@ -21,6 +22,9 @@ const Subset = ({ sliceRange, subgroup }: SubsetProps) => {
 
   const kanaGroups = kana.slice(sliceRange[0], sliceRange[1]);
   const kanaGroupIndices = useKanaStore(state => state.kanaGroupIndices);
+  const hasAutoLearningSelection = useAutoLearningStore(
+    state => state.activeSelections.kana,
+  );
   const addKanaGroupIndex = useKanaStore(state => state.addKanaGroupIndex);
   const addKanaGroupIndices = useKanaStore(state => state.addKanaGroupIndices);
   const displayKana = usePreferencesStore(state => state.displayKana);
@@ -28,6 +32,7 @@ const Subset = ({ sliceRange, subgroup }: SubsetProps) => {
   const getGlobalIndex = (localIndex: number) => localIndex + sliceRange[0];
 
   const isChecked = (localIndex: number) =>
+    !hasAutoLearningSelection &&
     kanaGroupIndices.includes(getGlobalIndex(localIndex));
 
   const selectAllInSubset = () => {

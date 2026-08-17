@@ -11,6 +11,17 @@ import BottomBar from '@/shared/ui-composite/layout/BottomBar';
 
 const TRANSITION_AD_SLOT = '5452714175';
 const ENABLE_TRANSITION_AD_DECORATIONS = true;
+export type TransitionAdvertisementPlacement = 'before' | 'after';
+
+// Configure transition ads here: [], ['before'], ['after'], or ['before', 'after'].
+export const TRANSITION_AD_PLACEMENTS: readonly TransitionAdvertisementPlacement[] = [
+  // 'before',
+  // 'after',
+];
+
+export const isTransitionAdvertisementEnabled = (
+  placement: TransitionAdvertisementPlacement,
+) => TRANSITION_AD_PLACEMENTS.includes(placement);
 
 const Decorations = lazy(
   () => import('@/shared/ui-composite/Decorations/Decorations'),
@@ -18,6 +29,7 @@ const Decorations = lazy(
 
 interface TransitionAdvertisementOverlayProps {
   isOpen: boolean;
+  placement: TransitionAdvertisementPlacement;
   onDismiss: () => void;
 }
 
@@ -68,13 +80,15 @@ const itemVariants = {
 
 export default function TransitionAdvertisementOverlay({
   isOpen,
+  placement,
   onDismiss,
 }: TransitionAdvertisementOverlayProps) {
   const { isGlassMode } = useThemePreferences();
+  const shouldShow = isOpen && isTransitionAdvertisementEnabled(placement);
 
   return (
     <AnimatePresence>
-      {isOpen && (
+      {shouldShow && (
         <motion.div
           key='transition-advertisement'
           variants={layerVariants}
@@ -142,32 +156,34 @@ function TransitionAdvertisementBottomBar({ onSkip }: { onSkip: () => void }) {
 
   return (
     <div className='absolute right-0 bottom-0 left-0 z-10 flex w-full items-center justify-center border-t-2 border-(--border-color) bg-(--card-color) px-2.5 py-4 sm:py-3 md:bottom-6 md:px-12 md:pt-2 md:pb-4'>
-      <div className='flex h-[68px] items-end sm:h-[72px]'>
-        <ActionButton
-          borderBottomThickness={12}
-          borderRadius='3xl'
-          className={cn(
-            'animate-float w-full px-6 py-2.5 text-lg font-medium [--float-distance:-2px] sm:w-auto sm:px-12 sm:py-3 sm:text-xl',
-          )}
-          onClick={handleSkip}
-        >
-          <div className='flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-2 border-(--background-color) bg-(--background-color)'>
-            <svg
-              className='h-5 w-5 text-(--main-color)'
-              fill='none'
-              viewBox='0 0 24 24'
-              stroke='currentColor'
-            >
-              <path
-                strokeLinecap='round'
-                strokeLinejoin='round'
-                strokeWidth={2}
-                d='M13 7l5 5m0 0l-5 5m5-5H6'
-              />
-            </svg>
-          </div>
-          <span>skip</span>
-        </ActionButton>
+      <div className='flex w-full flex-row items-end justify-center gap-2 sm:w-1/2 sm:gap-3'>
+        <div className='flex h-[68px] w-full items-end sm:h-[72px] sm:w-auto'>
+          <ActionButton
+            borderBottomThickness={12}
+            borderRadius='3xl'
+            className={cn(
+              'animate-float w-full px-6 py-2.5 text-lg font-medium [--float-distance:-2px] sm:w-auto sm:px-12 sm:py-3 sm:text-xl',
+            )}
+            onClick={handleSkip}
+          >
+            <div className='flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-2 border-(--background-color) bg-(--background-color)'>
+              <svg
+                className='h-5 w-5 text-(--main-color)'
+                fill='none'
+                viewBox='0 0 24 24'
+                stroke='currentColor'
+              >
+                <path
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                  strokeWidth={2}
+                  d='M13 7l5 5m0 0l-5 5m5-5H6'
+                />
+              </svg>
+            </div>
+            <span>skip</span>
+          </ActionButton>
+        </div>
       </div>
     </div>
   );

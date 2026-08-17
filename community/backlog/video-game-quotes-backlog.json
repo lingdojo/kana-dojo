@@ -6,7 +6,7 @@
     "game": "The Prince of Tennis: Sweat & Tears 2",
     "character": "Ryoma Echizen",
     "id": 1,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -46,7 +46,7 @@
     "game": "Danganronpa series",
     "character": "Makoto Naegi",
     "id": 5,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -196,7 +196,7 @@
     "game": "Samurai game proverb line",
     "character": "Musashi reference",
     "id": 20,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -226,7 +226,7 @@
     "game": "Tales of the Abyss",
     "character": "Luke fon Fabre",
     "id": 23,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -356,7 +356,7 @@
     "game": "Onimusha series",
     "character": "Nobunaga Oda",
     "id": 36,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -376,7 +376,7 @@
     "game": "The Legend of Zelda: Breath of the Wild (JP)",
     "character": "Revali",
     "id": 38,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -456,7 +456,7 @@
     "game": "JoJo’s Bizarre Adventure: All-Star Battle",
     "character": "Giorno Giovanna",
     "id": 46,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -476,7 +476,7 @@
     "game": "Kingdom Hearts series (JP dub)",
     "character": "Sora",
     "id": 48,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -486,7 +486,7 @@
     "game": "Street Fighter series",
     "character": "Ryu",
     "id": 49,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -506,7 +506,7 @@
     "game": "Monster Hunter series",
     "character": "Guild Handler lines",
     "id": 51,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -546,7 +546,7 @@
     "game": "Fire Emblem series",
     "character": "Various protagonists",
     "id": 55,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -556,7 +556,7 @@
     "game": "Onimusha series",
     "character": "Nobunaga Oda",
     "id": 56,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -576,7 +576,7 @@
     "game": "The Legend of Zelda: Breath of the Wild (JP)",
     "character": "Revali",
     "id": 58,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -676,7 +676,7 @@
     "game": "Kingdom Hearts series (JP dub)",
     "character": "Sora",
     "id": 68,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -686,7 +686,7 @@
     "game": "Street Fighter series",
     "character": "Ryu",
     "id": 69,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -716,7 +716,7 @@
     "game": "Pokemon series",
     "character": "Rival characters",
     "id": 72,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -796,7 +796,7 @@
     "game": "Samurai game proverb line",
     "character": "Musashi reference",
     "id": 80,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -856,7 +856,7 @@
     "game": "JoJo’s Bizarre Adventure: All-Star Battle",
     "character": "Giorno Giovanna",
     "id": 86,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -886,7 +886,7 @@
     "game": "Street Fighter series",
     "character": "Ryu",
     "id": 89,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -966,7 +966,7 @@
     "game": "Persona 5 Strikers",
     "character": "Joker",
     "id": 97,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1006,7 +1006,7 @@
     "game": "The Prince of Tennis: Sweat & Tears 2",
     "character": "Ryoma Echizen",
     "id": 101,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1036,7 +1036,7 @@
     "game": "Steins;Gate: My Darling's Embrace",
     "character": "Rintaro Okabe",
     "id": 104,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1066,7 +1066,7 @@
     "game": "Dragon Quest series",
     "character": "Recurring command voice",
     "id": 107,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1096,7 +1096,7 @@
     "game": "Dragon Quest XI",
     "character": "Hero / party lines",
     "id": 110,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1116,7 +1116,7 @@
     "game": "Pokemon series",
     "character": "Rival characters",
     "id": 112,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1156,7 +1156,7 @@
     "game": "Onimusha series",
     "character": "Nobunaga Oda",
     "id": 116,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
