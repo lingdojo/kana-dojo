@@ -10,9 +10,9 @@ const vocabulary = {
 
 describe('isVocabularyMeaningAnswerCorrect', () => {
   it('normalizes meaning case and whitespace', () => {
-    expect(isVocabularyMeaningAnswerCorrect(vocabulary, ' america ', false)).toBe(
-      true,
-    );
+    expect(
+      isVocabularyMeaningAnswerCorrect(vocabulary, ' america ', false),
+    ).toBe(true);
   });
 
   it.each(['speak', 'Speak', 'to speak', '  TO   SPEAK  '])(
@@ -24,6 +24,45 @@ describe('isVocabularyMeaningAnswerCorrect', () => {
     },
   );
 
+  it.each(['matter', 'Matter', 'a matter', '  A   MATTER  '])(
+    'accepts optional leading article in meaning answer %s',
+    answer => {
+      const noun = { ...vocabulary, meanings: ['a matter'] };
+
+      expect(isVocabularyMeaningAnswerCorrect(noun, answer, false)).toBe(true);
+    },
+  );
+
+  it.each([
+    ['an apple', 'apple'],
+    ['the dead', 'dead'],
+    ['a light', 'a light'],
+  ])('accepts the bare form %s answered as %s', (meaning, answer) => {
+    const noun = { ...vocabulary, meanings: [meaning] };
+
+    expect(isVocabularyMeaningAnswerCorrect(noun, answer, false)).toBe(true);
+  });
+
+  it('does not strip a bare word that merely starts with an article', () => {
+    const noun = { ...vocabulary, meanings: ['another place'] };
+
+    expect(isVocabularyMeaningAnswerCorrect(noun, 'other place', false)).toBe(
+      false,
+    );
+  });
+
+  it('does not remove a leading article from reverse answers', () => {
+    const articleWord = {
+      ...vocabulary,
+      word: 'the emperor',
+      reading: 'the emperor',
+    };
+
+    expect(isVocabularyMeaningAnswerCorrect(articleWord, 'emperor', true)).toBe(
+      false,
+    );
+  });
+
   it('does not remove an infinitive prefix from reverse answers', () => {
     const prefixedWord = {
       ...vocabulary,
@@ -31,9 +70,9 @@ describe('isVocabularyMeaningAnswerCorrect', () => {
       reading: 'to speak',
     };
 
-    expect(
-      isVocabularyMeaningAnswerCorrect(prefixedWord, 'speak', true),
-    ).toBe(false);
+    expect(isVocabularyMeaningAnswerCorrect(prefixedWord, 'speak', true)).toBe(
+      false,
+    );
   });
 
   it.each([' アメリカ ', 'amerika', 'あめりか'])(
