@@ -1,5 +1,11 @@
 [
   {
+  id: "sumo-strength",
+  backgroundColor: "oklch(20.0% 0.022 35.0 / 1)",
+  mainColor: "oklch(72.0% 0.065 75.0 / 1)",
+  secondaryColor: "oklch(60.0% 0.185 20.0 / 1)"
+  },
+  {
   id: "tsukiji-morning",
   backgroundColor: "oklch(22.0% 0.020 235.0 / 1)",
   mainColor: "oklch(78.0% 0.135 215.0 / 1)",
