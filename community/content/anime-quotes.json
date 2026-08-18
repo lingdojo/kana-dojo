@@ -343,19 +343,26 @@
     "character": "Kakashi Hatake"
   },
   {
-  "japanese": "オレ様の美技にブギウギ",
-  "romaji": "Ore-sama no bigi ni bugiugi",
-  "english": "Dance to my beautiful technique! (alt wording 23) (alt wording 75)",
-  "anime": "The Prince of Tennis",
-  "character": "Keigo Atobe"
-},
+    "japanese": "オレ様の美技にブギウギ",
+    "romaji": "Ore-sama no bigi ni bugiugi",
+    "english": "Dance to my beautiful technique! (alt wording 23) (alt wording 75)",
+    "anime": "The Prince of Tennis",
+    "character": "Keigo Atobe"
+  },
   {
-  "japanese": "世界は残酷だ…それでも美しい",
-  "romaji": "Sekai wa zankoku da... soredemo utsukushii",
-  "english": "This world is cruel... yet so beautiful. (alt wording 26)",
-  "anime": "Attack on Titan",
-  "character": "Mikasa Ackerman"
-},
+    "japanese": "世界は残酷だ…それでも美しい",
+    "romaji": "Sekai wa zankoku da... soredemo utsukushii",
+    "english": "This world is cruel... yet so beautiful. (alt wording 26)",
+    "anime": "Attack on Titan",
+    "character": "Mikasa Ackerman"
+  },
+  {
+    "japanese": "無駄無駄無駄無駄無駄！",
+    "romaji": "Muda muda muda muda muda!",
+    "english": "Useless! Useless! Useless! (alt wording 7)",
+    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+    "character": "DIO"
+  },
   {
   "japanese": "このジョルノ・ジョバァーナには夢がある！",
   "romaji": "Kono Joruno Jobana ni wa yume ga aru!",
