@@ -416,7 +416,7 @@
   {
     "id": 70,
     "fact": "Japan has a shrine where you can pray for better Wi-Fi signal - the Kanda Myojin Shrine in Tokyo blesses electronics.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -440,7 +440,7 @@
   {
     "id": 74,
     "fact": "Japan's vending machines have earthquake sensors that automatically release free drinks during major earthquakes as emergency supplies.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -686,7 +686,7 @@
   {
     "id": 115,
     "fact": "There's a Japanese concept 'mujo' (無常) - impermanence - reminding that nothing lasts, making each moment precious.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1016,7 +1016,7 @@
   {
     "id": 170,
     "fact": "Japan has 'death cafes' where people gather to discuss mortality over tea and cake in a relaxed setting.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

@@ -292,5 +292,17 @@
   "english": "Next time, I'll be stronger.",
   "game": "Pokemon series",
   "character": "Rival characters"
+    "japanese": "風が、来る！",
+    "romaji": "Kaze ga, kuru!",
+    "english": "The wind is coming!",
+    "game": "The Legend of Zelda: Breath of the Wild (JP)",
+    "character": "Revali"
+  },
+  {
+    "japanese": "生きるってのは、戦うってことだ",
+    "romaji": "Ikiru tte no wa, tatakau tte koto da",
+    "english": "To live is to fight.",
+    "game": "Yakuza: Like a Dragon",
+    "character": "Ichiban Kasuga"
   }
 ]

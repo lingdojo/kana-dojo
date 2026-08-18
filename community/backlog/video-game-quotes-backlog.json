@@ -206,7 +206,7 @@
     "game": "The Prince of Tennis: Sweat & Tears 2",
     "character": "Ryoma Echizen",
     "id": 21,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -336,7 +336,7 @@
     "game": "Yakuza: Like a Dragon",
     "character": "Ichiban Kasuga",
     "id": 34,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1076,7 +1076,7 @@
     "game": "Kingdom Hearts series (JP dub)",
     "character": "Sora",
     "id": 108,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
