@@ -185,5 +185,11 @@
     "backgroundColor": "oklch(96.0% 0.008 85.0 / 1)",
     "mainColor": "oklch(20.0% 0.015 270.0 / 1)",
     "secondaryColor": "oklch(45.0% 0.025 260.0 / 1)"
+  },
+  {
+    "id": "akihabara-glow",
+    "backgroundColor": "oklch(15.0% 0.065 300.0 / 1)",
+    "mainColor": "oklch(80.0% 0.210 180.0 / 1)",
+    "secondaryColor": "oklch(85.0% 0.190 320.0 / 1)"
   }
 ]
