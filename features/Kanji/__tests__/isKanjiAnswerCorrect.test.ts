@@ -43,10 +43,14 @@ describe('isKanjiAnswerCorrect', () => {
     expect(isKanjiAnswerCorrect(noun, answer, false)).toBe(true);
   });
 
-  it('strips an article that follows an infinitive prefix', () => {
+  it('preserves compound prefixes whose removal could change meaning', () => {
     const verb = { ...kanji, meanings: ['to the point'] };
 
-    expect(isKanjiAnswerCorrect(verb, 'point', false)).toBe(true);
+    expect(isKanjiAnswerCorrect(verb, 'to the point', false)).toBe(true);
+    expect(isKanjiAnswerCorrect(verb, 'point', false)).toBe(false);
+
+    const spacedVerb = { ...kanji, meanings: ['to   the point'] };
+    expect(isKanjiAnswerCorrect(spacedVerb, 'point', false)).toBe(false);
   });
 
   it.each(['another place', 'antique'])(
@@ -87,10 +91,7 @@ describe('isKanjiAnswerCorrect', () => {
     },
   );
 
-  it.each(['', 'China', 'かん'])(
-    'rejects invalid reverse answer %s',
-    answer => {
-      expect(isKanjiAnswerCorrect(kanji, answer, true)).toBe(false);
-    },
-  );
+  it.each(['', 'China', 'かん'])('rejects invalid reverse answer %s', answer => {
+    expect(isKanjiAnswerCorrect(kanji, answer, true)).toBe(false);
+  });
 });

@@ -10,9 +10,9 @@ const vocabulary = {
 
 describe('isVocabularyMeaningAnswerCorrect', () => {
   it('normalizes meaning case and whitespace', () => {
-    expect(
-      isVocabularyMeaningAnswerCorrect(vocabulary, ' america ', false),
-    ).toBe(true);
+    expect(isVocabularyMeaningAnswerCorrect(vocabulary, ' america ', false)).toBe(
+      true,
+    );
   });
 
   it.each(['speak', 'Speak', 'to speak', '  TO   SPEAK  '])(
@@ -43,6 +43,20 @@ describe('isVocabularyMeaningAnswerCorrect', () => {
     expect(isVocabularyMeaningAnswerCorrect(noun, answer, false)).toBe(true);
   });
 
+  it('preserves compound prefixes whose removal could change meaning', () => {
+    const phrase = { ...vocabulary, meanings: ['to the point'] };
+
+    expect(isVocabularyMeaningAnswerCorrect(phrase, 'to the point', false)).toBe(
+      true,
+    );
+    expect(isVocabularyMeaningAnswerCorrect(phrase, 'point', false)).toBe(false);
+
+    const spacedPhrase = { ...vocabulary, meanings: ['to   the point'] };
+    expect(isVocabularyMeaningAnswerCorrect(spacedPhrase, 'point', false)).toBe(
+      false,
+    );
+  });
+
   it('does not strip a bare word that merely starts with an article', () => {
     const noun = { ...vocabulary, meanings: ['another place'] };
 
@@ -70,9 +84,9 @@ describe('isVocabularyMeaningAnswerCorrect', () => {
       reading: 'to speak',
     };
 
-    expect(isVocabularyMeaningAnswerCorrect(prefixedWord, 'speak', true)).toBe(
-      false,
-    );
+    expect(
+      isVocabularyMeaningAnswerCorrect(prefixedWord, 'speak', true),
+    ).toBe(false);
   });
 
   it.each([' アメリカ ', 'amerika', 'あめりか'])(
