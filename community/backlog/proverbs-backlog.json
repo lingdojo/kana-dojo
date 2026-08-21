@@ -50,7 +50,7 @@
     "romaji": "Nou aru taka wa tsume wo kakusu",
     "english": "The talented hawk hides its talons",
     "meaning": "Truly skilled people don't show off their abilities",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -141,7 +141,7 @@
     "english": "Fortune comes to a laughing gate",
     "meaning": "Happiness and good fortune come to those who smile",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 17,
@@ -204,7 +204,7 @@
     "english": "A frog's child is a frog",
     "meaning": "Like father, like son",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 24,
@@ -258,7 +258,7 @@
     "english": "One time, one meeting",
     "meaning": "Treasure every encounter, for it will never recur",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 30,
@@ -312,7 +312,7 @@
     "english": "A bee on a crying face",
     "meaning": "Misfortune never comes alone",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 36,
@@ -321,7 +321,7 @@
     "english": "The mouth is the source of disaster",
     "meaning": "Careless speech can cause trouble",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 37,
@@ -357,7 +357,7 @@
     "english": "A strong person under the veranda",
     "meaning": "An unsung hero who supports behind the scenes",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 41,
@@ -393,7 +393,7 @@
     "english": "Fall seven times, get up eight",
     "meaning": "Never give up",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 45,
@@ -420,7 +420,7 @@
     "english": "Even a packhorse driver looks good in fine clothes",
     "meaning": "Clothes make the person",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 48,
@@ -537,7 +537,7 @@
     "english": "Among flowers, the cherry blossom; among men, the warrior",
     "meaning": "The best of each kind",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 61,
@@ -573,7 +573,7 @@
     "english": "See the trees but not the forest",
     "meaning": "Miss the bigger picture",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 65,
@@ -582,7 +582,7 @@
     "english": "If you eat poison, eat the plate too",
     "meaning": "If you must do something risky, go all the way",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 66,
@@ -699,7 +699,7 @@
     "english": "Hurry to do good",
     "meaning": "If it's worth doing, do it at once",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 79,
@@ -834,7 +834,7 @@
     "english": "The mouth is the source of disaster",
     "meaning": "Careless words cause trouble",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 94,
@@ -843,7 +843,7 @@
     "english": "Three years on a stone",
     "meaning": "Perseverance brings success",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 95,
@@ -1014,7 +1014,7 @@
     "english": "An iron club to an ogre",
     "meaning": "Adding strength to the strong",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 114,
@@ -1023,7 +1023,7 @@
     "english": "Gold coins to a cat",
     "meaning": "Gifts wasted on those who don't appreciate them",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 115,
@@ -1032,7 +1032,7 @@
     "english": "Wind in the willow",
     "meaning": "Stay flexible and let problems pass",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 116,
@@ -1140,7 +1140,7 @@
     "english": "Watch others and correct yourself",
     "meaning": "Learn from others' behavior",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 128,
@@ -1176,7 +1176,7 @@
     "english": "Three years on a stone",
     "meaning": "Perseverance brings results",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 132,
@@ -1194,7 +1194,7 @@
     "english": "A three-day monk",
     "meaning": "Someone who quits quickly",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 134,
@@ -1239,7 +1239,7 @@
     "english": "Continuation is power",
     "meaning": "Consistency builds strength",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 139,
@@ -1302,7 +1302,7 @@
     "english": "A cane before falling",
     "meaning": "Prevention is better than cure",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 146,
@@ -1320,7 +1320,7 @@
     "english": "What happens twice will happen a third time",
     "meaning": "Patterns tend to repeat",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 148,
@@ -1356,7 +1356,7 @@
     "english": "After the rain, the ground hardens",
     "meaning": "Hard times build resilience",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 152,
@@ -1518,7 +1518,7 @@
     "english": "The mouth is the source of misfortune",
     "meaning": "Careless words cause trouble",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 170,
@@ -1554,7 +1554,7 @@
     "english": "Put care into care",
     "meaning": "Double-check everything",
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 174,

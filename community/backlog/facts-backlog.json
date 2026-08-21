@@ -50,7 +50,7 @@
   {
     "id": 9,
     "fact": "The Japanese concept of 'ma' (間) refers to the meaningful pause or negative space in music, art, and conversation - the beauty of what's not there.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -128,7 +128,7 @@
   {
     "id": 22,
     "fact": "There's a Japanese word 'komorebi' (木漏れ日) specifically for sunlight filtering through leaves - no direct English translation exists.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -152,7 +152,7 @@
   {
     "id": 26,
     "fact": "The concept of 'wabi-sabi' (侘寂) finds beauty in imperfection and impermanence - a cracked bowl is more valuable because of its history.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -170,7 +170,7 @@
   {
     "id": 29,
     "fact": "Japan's 7-Eleven stores outnumber those in the US despite Japan being 26 times smaller - there's roughly one 7-Eleven for every 2,300 people.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -200,7 +200,7 @@
   {
     "id": 34,
     "fact": "There's a Japanese festival called 'Hadaka Matsuri' where thousands of nearly naked men compete to catch lucky charms thrown by priests.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -236,7 +236,7 @@
   {
     "id": 40,
     "fact": "There are over 200 different KitKat flavors created for Japan including sake, wasabi, sweet potato, and cherry blossom.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -248,7 +248,7 @@
   {
     "id": 42,
     "fact": "Japan's elderly population is so large that adult diapers outsell baby diapers - reflecting one of the world's fastest-aging societies.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -416,7 +416,7 @@
   {
     "id": 70,
     "fact": "Japan has a shrine where you can pray for better Wi-Fi signal - the Kanda Myojin Shrine in Tokyo blesses electronics.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -440,7 +440,7 @@
   {
     "id": 74,
     "fact": "Japan's vending machines have earthquake sensors that automatically release free drinks during major earthquakes as emergency supplies.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -620,7 +620,7 @@
   {
     "id": 104,
     "fact": "Japan has train 'pushers' (oshiya) whose job is to physically push passengers into overcrowded trains during rush hour.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -632,13 +632,13 @@
   {
     "id": 106,
     "fact": "Japan has 'rent-a-family' services where you can hire actors to play relatives at weddings or to visit you as fake parents.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
     "id": 107,
     "fact": "There's a Japanese concept 'omoiyari' (思いやり) meaning sensitivity to others' feelings - anticipating needs before they're expressed.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -674,7 +674,7 @@
   {
     "id": 113,
     "fact": "The word 'jibun' (自分) means 'self' but is also used to mean 'I' in many dialects - showing how identity is tied to selfhood.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -686,7 +686,7 @@
   {
     "id": 115,
     "fact": "There's a Japanese concept 'mujo' (無常) - impermanence - reminding that nothing lasts, making each moment precious.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -698,7 +698,7 @@
   {
     "id": 117,
     "fact": "The Japanese word 'yabai' (やばい) originally meant 'dangerous' but now means anything extreme - amazing or terrible.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -902,7 +902,7 @@
   {
     "id": 151,
     "fact": "There's a Japanese practice 'osoji' (大掃除) - major house cleaning before New Year to sweep away the old year's bad luck.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -986,7 +986,7 @@
   {
     "id": 165,
     "fact": "The word 'ganban' (願番) describes taking turns at a task - cooperation without needing explicit coordination.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1016,7 +1016,7 @@
   {
     "id": 170,
     "fact": "Japan has 'death cafes' where people gather to discuss mortality over tea and cake in a relaxed setting.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1052,7 +1052,7 @@
   {
     "id": 176,
     "fact": "Japan has 'gokon' (合コン) - organized group blind dates where equal numbers of men and women meet at izakayas.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1202,7 +1202,7 @@
   {
     "id": 201,
     "fact": "Japan has a word 'tsundoku' (積ん読) for buying books and letting them pile up unread.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1370,7 +1370,7 @@
   {
     "id": 229,
     "fact": "Japan’s 'shrine stamps' called 'goshuin' (御朱印) are calligraphy seals collected in special books by visitors.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1388,7 +1388,7 @@
   {
     "id": 232,
     "fact": "The Japanese word 'tsubame' (燕) means swallow, and many shops put up nesting boxes because swallows are believed to bring good fortune.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1400,7 +1400,7 @@
   {
     "id": 234,
     "fact": "The word 'shiokaze' (潮風) means sea breeze, and coastal towns often write it into song lyrics and seasonal postcards.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1466,7 +1466,7 @@
   {
     "id": 245,
     "fact": "Japan’s 'furoshiki' (風呂敷) are reusable cloth wraps that can be folded into bags for groceries or gifts.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1502,7 +1502,7 @@
   {
     "id": 251,
     "fact": "Japan has an art of arranging flowers called 'ikebana' (生け花), focusing on balance, line, and space rather than volume.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1604,7 +1604,7 @@
   {
     "id": 268,
     "fact": "The word 'komachi' (小町) is used in place names to reference elegance, inspired by the legendary beauty Ono no Komachi.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1622,7 +1622,7 @@
   {
     "id": 271,
     "fact": "Japan’s 'yatai' food stalls are famous for ramen, yakitori, and oden, especially during festivals and late nights.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1688,7 +1688,7 @@
   {
     "id": 282,
     "fact": "The word 'utsuroi' (移ろい) describes subtle transitions, like shifting seasons or fading light.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1910,7 +1910,7 @@
   {
     "id": 319,
     "fact": "The Japanese term 'shinrin-yoku' (森林浴) translates to 'forest bathing' and emphasizes mindful time in nature.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {

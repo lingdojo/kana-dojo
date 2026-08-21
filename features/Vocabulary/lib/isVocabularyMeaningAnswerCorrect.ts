@@ -4,8 +4,16 @@ import type { IVocabObj } from '@/entities/vocabulary';
 const normalize = (value: string): string =>
   value.trim().normalize('NFC').toLowerCase();
 
+/**
+ * A lone English infinitive marker or article is optional. Compound prefixes
+ * such as "to the" are preserved because removing both can change meaning
+ * (for example, "to the point" is not equivalent to "point").
+ */
+const OPTIONAL_MEANING_PREFIX =
+  /^(?:to(?!\s+(?:the|an|a)\s+)\s+|(?:the|an|a)\s+)/;
+
 const normalizeMeaning = (value: string): string =>
-  normalize(value).replace(/^to\s+/, '');
+  normalize(value).replace(OPTIONAL_MEANING_PREFIX, '');
 
 export const isVocabularyMeaningAnswerCorrect = (
   vocabulary: IVocabObj,

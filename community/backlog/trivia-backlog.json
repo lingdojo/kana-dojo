@@ -178,7 +178,7 @@
       "Tabi"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -193,7 +193,7 @@
     ],
     "correctIndex": 3,
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 15,
@@ -375,7 +375,7 @@
     ],
     "correctIndex": 0,
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 28,
@@ -402,7 +402,7 @@
       "Sendai"
     ],
     "correctIndex": 0,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -417,7 +417,7 @@
     ],
     "correctIndex": 0,
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 31,
@@ -444,7 +444,7 @@
       "Oyasumi"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -458,7 +458,7 @@
       "Deer"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -724,7 +724,7 @@
       "Yatai"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -767,7 +767,7 @@
     ],
     "correctIndex": 0,
     "completed": false,
-    "issued": true
+    "issued": false
   },
   {
     "id": 56,
@@ -920,7 +920,7 @@
       "Kanda Matsuri"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -976,7 +976,7 @@
       "Yokohama"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1186,7 +1186,7 @@
       "Kyushu"
     ],
     "correctIndex": 1,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1214,7 +1214,7 @@
       "Udon"
     ],
     "correctIndex": 1,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1354,7 +1354,7 @@
       "Kissa"
     ],
     "correctIndex": 1,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1438,7 +1438,7 @@
       "Comique"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1480,7 +1480,7 @@
       "Okonomiyaki"
     ],
     "correctIndex": 1,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1536,7 +1536,7 @@
       "Kyogen"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1634,7 +1634,7 @@
       "Kiku"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1704,7 +1704,7 @@
       "Izakaya"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1788,7 +1788,7 @@
       "Oden"
     ],
     "correctIndex": 0,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1858,7 +1858,7 @@
       "Mount Haku"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1886,7 +1886,7 @@
       "Hokkaido"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -1914,7 +1914,7 @@
       "Sendai"
     ],
     "correctIndex": 0,
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {

@@ -24,6 +24,59 @@ describe('isVocabularyMeaningAnswerCorrect', () => {
     },
   );
 
+  it.each(['matter', 'Matter', 'a matter', '  A   MATTER  '])(
+    'accepts optional leading article in meaning answer %s',
+    answer => {
+      const noun = { ...vocabulary, meanings: ['a matter'] };
+
+      expect(isVocabularyMeaningAnswerCorrect(noun, answer, false)).toBe(true);
+    },
+  );
+
+  it.each([
+    ['an apple', 'apple'],
+    ['the dead', 'dead'],
+    ['a light', 'a light'],
+  ])('accepts the bare form %s answered as %s', (meaning, answer) => {
+    const noun = { ...vocabulary, meanings: [meaning] };
+
+    expect(isVocabularyMeaningAnswerCorrect(noun, answer, false)).toBe(true);
+  });
+
+  it('preserves compound prefixes whose removal could change meaning', () => {
+    const phrase = { ...vocabulary, meanings: ['to the point'] };
+
+    expect(isVocabularyMeaningAnswerCorrect(phrase, 'to the point', false)).toBe(
+      true,
+    );
+    expect(isVocabularyMeaningAnswerCorrect(phrase, 'point', false)).toBe(false);
+
+    const spacedPhrase = { ...vocabulary, meanings: ['to   the point'] };
+    expect(isVocabularyMeaningAnswerCorrect(spacedPhrase, 'point', false)).toBe(
+      false,
+    );
+  });
+
+  it('does not strip a bare word that merely starts with an article', () => {
+    const noun = { ...vocabulary, meanings: ['another place'] };
+
+    expect(isVocabularyMeaningAnswerCorrect(noun, 'other place', false)).toBe(
+      false,
+    );
+  });
+
+  it('does not remove a leading article from reverse answers', () => {
+    const articleWord = {
+      ...vocabulary,
+      word: 'the emperor',
+      reading: 'the emperor',
+    };
+
+    expect(isVocabularyMeaningAnswerCorrect(articleWord, 'emperor', true)).toBe(
+      false,
+    );
+  });
+
   it('does not remove an infinitive prefix from reverse answers', () => {
     const prefixedWord = {
       ...vocabulary,

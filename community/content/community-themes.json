@@ -96,6 +96,12 @@
     "secondaryColor": "oklch(70.0% 0.120 80.0 / 1)"
   },
   {
+    "id": "pagoda-twilight",
+    "backgroundColor": "oklch(20.0% 0.045 290.0 / 1)",
+    "mainColor": "oklch(68.0% 0.155 315.0 / 1)",
+    "secondaryColor": "oklch(75.0% 0.125 280.0 / 1)"
+  },
+  {
     "id": "izakaya-warm",
     "backgroundColor": "oklch(20.0% 0.045 35.0 / 1)",
     "mainColor": "oklch(70.0% 0.165 30.0 / 1)",
@@ -161,14 +167,13 @@
     "mainColor": "oklch(88.0% 0.175 110.0 / 1)",
     "secondaryColor": "oklch(65.0% 0.125 145.0 / 1)"
   },
-  
-    {
+  {
     "id": "ginkgo-gold",
     "backgroundColor": "oklch(23.0% 0.045 85.0 / 1)",
     "mainColor": "oklch(88.0% 0.170 95.0 / 1)",
     "secondaryColor": "oklch(72.0% 0.135 75.0 / 1)"
   },
-    {
+  {
     "id": "hanami-picnic",
     "backgroundColor": "oklch(96.0% 0.018 20.0 / 1)",
     "mainColor": "oklch(70.0% 0.165 350.0 / 1)",
@@ -186,10 +191,28 @@
     "mainColor": "oklch(85.0% 0.085 215.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.065 195.0 / 1)"
   },
-   {
+  {
     "id": "neon-arcade",
     "backgroundColor": "oklch(13.0% 0.055 300.0 / 1)",
     "mainColor": "oklch(78.0% 0.220 330.0 / 1)",
     "secondaryColor": "oklch(82.0% 0.185 190.0 / 1)"
+  },
+  {
+    "id": "plum-blossom",
+    "backgroundColor": "oklch(23.0% 0.042 340.0 / 1)",
+    "mainColor": "oklch(78.0% 0.165 350.0 / 1)",
+    "secondaryColor": "oklch(88.0% 0.095 85.0 / 1)"
+  },
+  {
+     "id": "matcha-drift",
+     "backgroundColor": "oklch(18.5% 0.035 140.0 / 1)",
+     "mainColor":"oklch(76.0% 0.140 135.0 / 1)",
+     "secondaryColor": "oklch(72.0% 0.070 80.0 / 1)",
+   },
+  {
+    "id": "soba-slate",
+    "backgroundColor": "oklch(18.0% 0.015 250.0 / 1)",
+    "mainColor": "oklch(68.0% 0.085 60.0 / 1)",
+    "secondaryColor": "oklch(58.0% 0.045 70.0 / 1)"
   }
 ]
