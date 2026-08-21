@@ -1,12 +1,17 @@
 'use client';
 import clsx from 'clsx';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import Return from '@/shared/ui-composite/Game/ReturnFromGame';
 import MCQ from './MCQ';
 import Input from './Input';
 import TilesMode from './TilesMode';
 import useKanaStore from '@/features/Kana/store/useKanaStore';
-import { useStatsStore } from '@/features/Progress';
+import {
+  clearAutoLearningHandoff,
+  readAutoLearningHandoff,
+  useAutoLearningStore,
+  useStatsStore,
+} from '@/features/Progress';
 import { useShallow } from 'zustand/react/shallow';
 import SessionStats from '@/shared/ui-composite/Game/SessionStats';
 import SessionSummaryScreen from '@/shared/ui-composite/Game/SessionSummaryScreen';
@@ -15,7 +20,10 @@ import { useRouter } from '@/core/i18n/routing';
 import { finalizeSession, startSession } from '@/shared/utils/sessionHistory';
 import { useMenuSelectorStore } from '@/shared/ui-composite/Menu/store/useMenuSelectorStore';
 import useClassicSessionStore from '@/shared/store/useClassicSessionStore';
-import { shouldShowStreakMilestoneOverlay } from '@/shared/utils/game/streakMilestones';
+import {
+  ENABLE_EVERY_QUESTION_AD_OVERLAY,
+  shouldShowStreakMilestoneOverlay,
+} from '@/shared/utils/game/streakMilestones';
 
 const Game = () => {
   const {
@@ -46,7 +54,14 @@ const Game = () => {
     })),
   );
   const gameMode = useKanaStore(state => state.selectedGameModeKana);
+  const setGameMode = useKanaStore(state => state.setSelectedGameModeKana);
+  const replaceGroups = useKanaStore(state => state.setKanaGroupIndices);
+  const setAutoSelectionActive = useAutoLearningStore(
+    state => state.setAutoSelectionActive,
+  );
+  const isAutoLearningSessionRef = useRef(false);
   const router = useRouter();
+  const [isSelectionReady, setIsSelectionReady] = useState(false);
   const [view, setView] = useState<'playing' | 'summary'>('playing');
   const [activeMilestone, setActiveMilestone] = useState<number | null>(null);
   const [sessionId, setSessionId] = useState<string | null>(null);
@@ -59,13 +74,54 @@ const Game = () => {
   );
 
   useEffect(() => {
-    if (view !== 'playing') return;
-    if (shouldShowStreakMilestoneOverlay(currentStreak)) {
-      setActiveMilestone(currentStreak);
+    const handoff = readAutoLearningHandoff('kana');
+    if (handoff) {
+      isAutoLearningSessionRef.current = true;
+      replaceGroups(
+        handoff.sets.flatMap(set =>
+          Array.from(
+            { length: set.endIndex - set.startIndex },
+            (_, offset) => set.startIndex + offset,
+          ),
+        ),
+      );
+      setGameMode(handoff.gameMode);
+      setAutoSelectionActive('kana', true);
+      clearAutoLearningHandoff();
     }
-  }, [currentStreak, view]);
+    setIsSelectionReady(true);
+  }, [replaceGroups, setAutoSelectionActive, setGameMode]);
+
+  const clearAutoLearningSelection = useCallback(() => {
+    if (!isAutoLearningSessionRef.current) return;
+    replaceGroups([]);
+    setAutoSelectionActive('kana', false);
+    isAutoLearningSessionRef.current = false;
+  }, [replaceGroups, setAutoSelectionActive]);
 
   useEffect(() => {
+    const handleHistoryNavigation = () => clearAutoLearningSelection();
+    window.addEventListener('popstate', handleHistoryNavigation);
+    return () =>
+      window.removeEventListener('popstate', handleHistoryNavigation);
+  }, [clearAutoLearningSelection]);
+
+  useEffect(() => {
+    if (view !== 'playing') return;
+    const totalQuestionsAnswered = numCorrectAnswers + numWrongAnswers;
+    if (
+      shouldShowStreakMilestoneOverlay(currentStreak, totalQuestionsAnswered)
+    ) {
+      setActiveMilestone(
+        ENABLE_EVERY_QUESTION_AD_OVERLAY
+          ? totalQuestionsAnswered
+          : currentStreak,
+      );
+    }
+  }, [currentStreak, numCorrectAnswers, numWrongAnswers, view]);
+
+  useEffect(() => {
+    if (!isSelectionReady) return;
     resetStats();
     setActiveMilestone(null);
     // Track dojo and mode usage for achievements (Requirements 8.1-8.3)
@@ -83,7 +139,7 @@ const Game = () => {
     });
     // Intentionally keyed by nonce only to avoid resetting a live session.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [sessionNonce]);
+  }, [sessionNonce, isSelectionReady]);
 
   const handleQuit = async () => {
     const id =
@@ -115,6 +171,14 @@ const Game = () => {
     setView('playing');
     setSessionNonce(prev => prev + 1);
   };
+
+  if (!isSelectionReady) {
+    return (
+      <div className='flex min-h-[100dvh] items-center justify-center text-(--secondary-color)'>
+        Preparing your learning session...
+      </div>
+    );
+  }
 
   return (
     <>
@@ -155,7 +219,10 @@ const Game = () => {
           totalTimeMs={totalMilliseconds}
           correctAnswerTimes={correctAnswerTimes}
           onNewSession={handleNewSession}
-          onBackToSelection={() => router.push('/kana')}
+          onBackToSelection={() => {
+            clearAutoLearningSelection();
+            router.push('/kana');
+          }}
         />
       )}
     </>

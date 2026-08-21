@@ -2,7 +2,8 @@ import { VocabMenu } from '@/widgets';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/core/i18n/metadata-helpers';
 import { CourseSchema } from '@/shared/ui-composite/SEO/CourseSchema';
-import { BreadcrumbSchema } from '@/shared/ui-composite/SEO/BreadcrumbSchema';
+import { Breadcrumbs } from '@/shared/ui-composite/Breadcrumbs';
+import { getTranslations } from 'next-intl/server';
 import {
   FAQSchema,
   commonKanaDOJOFAQs,
@@ -37,16 +38,15 @@ export default async function VocabularyPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'navigation' });
 
   return (
     <>
-      <BreadcrumbSchema
+      <Breadcrumbs
+        className='hidden'
         items={[
-          { name: 'Home', url: `https://kanadojo.com/${locale}` },
-          {
-            name: 'Vocabulary',
-            url: `https://kanadojo.com/${locale}/vocabulary`,
-          },
+          { name: t('menu.home'), url: '/' },
+          { name: t('menu.vocabulary'), url: '/vocabulary' },
         ]}
       />
       <CourseSchema
@@ -93,4 +93,3 @@ export default async function VocabularyPage({
     </>
   );
 }
-

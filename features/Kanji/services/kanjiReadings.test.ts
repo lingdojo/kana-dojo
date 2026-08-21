@@ -15,6 +15,13 @@ const kanjiByLevel = {
 } satisfies Record<string, IKanjiObj[]>;
 
 describe('kanji readings data', () => {
+  it('includes loom as a meaning of 機 (hata)', () => {
+    const loomKanji = n3Kanji.find(kanji => kanji.kanjiChar === '機');
+
+    expect(loomKanji?.kunyomi).toContain('hata はた');
+    expect(loomKanji?.meanings[0]).toBe('loom');
+  });
+
   it('keeps alternate readings as separate array entries', () => {
     const combinedReadingPattern =
       /\b[a-z][a-z()]*\s+[ァ-ヶーぁ-ゖ]+\s*,\s*[a-z]/i;

@@ -7,16 +7,17 @@ import { useVocabSelection } from '@/features/Vocabulary';
 import { useInputPreferences } from '@/features/Preferences';
 import usePreferencesStore from '@/features/Preferences/store/usePreferencesStore';
 import { useClick } from '@/shared/hooks/generic/useAudio';
-import { Play, Zap, Swords } from 'lucide-react';
+import { Bolt, Play, Zap, Swords } from 'lucide-react';
 import { motion } from 'framer-motion';
 import ModeSetupMenu from '@/shared/ui-composite/Menu/ModeSetupMenu';
 
 // Gauntlet components with onCancel prop support
 import { cn } from '@/shared/utils/utils';
 import { useScrollVisibility } from '@/shared/hooks/generic/useScrollVisibility';
+import { useAutoLearningStore } from '@/features/Progress';
 
 const TRAINING_ACTION_CLASSIC_FLOAT_CLASSES = '';
-  // 'motion-safe:animate-float [--float-distance:-3px] delay-200ms';
+// 'motion-safe:animate-float [--float-distance:-3px] delay-200ms';
 const ACTIVATION_SCROLL_DELAY_MS = 180;
 const ACTIVATION_SCROLL_DELTA_PX = 6;
 
@@ -49,17 +50,30 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
   // Vocab store
   const { selectedVocab: selectedWordObjs, selectedSets: selectedVocabSets } =
     useVocabSelection();
+  const hasAutoLearningSelection = useAutoLearningStore(state =>
+    currentDojo === 'kana'
+      ? state.activeSelections.kana
+      : currentDojo === 'kanji'
+        ? state.activeSelections.kanji
+        : state.activeSelections.vocabulary,
+  );
 
   const isFilled =
-    currentDojo === 'kana'
+    !hasAutoLearningSelection && currentDojo === 'kana'
       ? kanaGroupIndices.length !== 0
-      : currentDojo === 'kanji'
+      : !hasAutoLearningSelection && currentDojo === 'kanji'
         ? selectedKanjiObjs.length > 0
-        : currentDojo === 'vocabulary'
+        : !hasAutoLearningSelection && currentDojo === 'vocabulary'
           ? selectedVocabSets.length > 0 || selectedWordObjs.length > 0
           : false;
 
   const buttonRef = useRef<HTMLButtonElement | null>(null);
+
+  const startAutoLearning = () => {
+    document
+      .querySelector<HTMLButtonElement>('[data-auto-learning-dojo]')
+      ?.click();
+  };
 
   useEffect(() => {
     if (!hotkeysOn) return;
@@ -74,7 +88,11 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
 
       if (event.key === 'Enter' && isFilled) {
         event.preventDefault();
-        setShowGameModesModal(true);
+        if (showExperimentalModes) {
+          setShowGameModesModal(true);
+        } else {
+          startAutoLearning();
+        }
       }
     };
     window.addEventListener('keydown', handleKeyDown);
@@ -82,7 +100,7 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [hotkeysOn, isFilled]);
+  }, [hotkeysOn, isFilled, showExperimentalModes]);
 
   const showBlitz =
     currentDojo === 'kana' ||
@@ -232,7 +250,8 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
     };
   }, []);
 
-  const targetBottom = isMobileViewport && !isSidebarVisible ? 0 : layout.bottom;
+  const targetBottom =
+    isMobileViewport && !isSidebarVisible ? 0 : layout.bottom;
 
   return (
     <>
@@ -271,107 +290,131 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
           !isFilled && 'pointer-events-none',
         )}
       >
-            <div
-              className={clsx(
-                'flex flex-row items-center justify-center gap-2 md:gap-8',
-                'mx-auto w-full max-w-4xl',
-              )}
-            >
-              {[
-                ...(showExperimentalModes
-                  ? [
-                      {
-                        id: 'blitz' as const,
-                        label: 'Blitz' as const,
-                        Icon: Zap,
-                        iconClassName: 'fill-current motion-safe:animate-none',
-                        show: showBlitz,
-                        colorScheme: 'secondary' as const,
-                        onClick: () => {
-                          setGameModesMode('blitz');
-                          setShowGameModesModal(true);
-                        },
-                      },
-                      {
-                        id: 'gauntlet' as const,
-                        label: 'Gauntlet' as const,
-                        Icon: Swords,
-                        iconClassName: 'fill-current',
-                        show: showBlitz,
-                        colorScheme: 'secondary' as const,
-                        onClick: () => {
-                          setGameModesMode('gauntlet');
-                          setShowGameModesModal(true);
-                        },
-                      },
-                    ]
-                  : []),
-                {
-                  id: 'classic' as const,
-                  label: 'Go' as const,
-                  Icon: Play,
-                  iconClassName: isFilled ? 'fill-current' : '',
-                  show: true,
-                  colorScheme: 'primary' as const,
-                  onClick: () => {
-                    setGameModesMode('train');
-                    setShowGameModesModal(true);
+        <div
+          className={clsx(
+            'flex flex-row items-center justify-center gap-2 md:gap-8',
+            'mx-auto w-full max-w-4xl',
+          )}
+        >
+          {[
+            ...(showExperimentalModes
+              ? [
+                  {
+                    id: 'blitz' as const,
+                    label: 'Blitz' as const,
+                    Icon: Zap,
+                    iconClassName: 'fill-current motion-safe:animate-none',
+                    show: showBlitz,
+                    colorScheme: 'secondary' as const,
+                    onClick: () => {
+                      setGameModesMode('blitz');
+                      setShowGameModesModal(true);
+                    },
                   },
-                  ref: buttonRef,
-                },
-              ]
-                .filter(btn => btn.show)
-                .map(
-                  ({
-                    id,
-                    label,
-                    Icon,
-                    iconClassName,
-                    colorScheme,
-                    onClick,
-                    ref,
-                  }) => (
-                    <button
-                      key={id}
-                      ref={ref}
-                      disabled={id === 'classic' && !isFilled}
-                      className={cn(
-                        'flex flex-row items-center justify-center gap-2 py-3',
-                        id === 'classic' && isFilled && TRAINING_ACTION_CLASSIC_FLOAT_CLASSES,
-                        // Mobile: fixed widths (25% for Blitz/Gauntlet, 50% for Classic), no x-padding
-                        // Desktop (sm+): flex-based sizing with padding
-                        id === 'classic'
-                          ? 'w-full sm:w-3/4 md:w-3/5 xl:w-1/2 md:px-6'
-                          : 'w-1/4 sm:w-auto sm:max-w-sm sm:flex-1 sm:px-6',
-                        'rounded-3xl transition-colors duration-200',
-                        'border-b-10',
-                        'hover:cursor-pointer',
-                        colorScheme === 'secondary' &&
-                          'border-(--secondary-color-accent) bg-(--secondary-color)/90 text-(--background-color)',
-                        colorScheme === 'primary' &&
-                          (isFilled
-                            ? 'border-(--main-color-accent) bg-(--main-color) text-(--background-color)'
-                            : 'cursor-not-allowed bg-(--card-color) text-(--border-color)'),
-                      )}
-                      onClick={e => {
-                        e.currentTarget.blur();
-                        playClick();
-                        onClick();
-                      }}
-                    >
-                      <Icon
-                        size={36}
-                        className={cn(
-                          iconClassName,
-                        )}
-                      />
-                      {/* <span className='whitespace-nowrap text-lg font-medium sm:text-xl'>
-                        {label}
-                      </span> */}
-                    </button>
-                  ),
-                )}
-            </div>
+                  {
+                    id: 'gauntlet' as const,
+                    label: 'Gauntlet' as const,
+                    Icon: Swords,
+                    iconClassName: 'fill-current',
+                    show: showBlitz,
+                    colorScheme: 'secondary' as const,
+                    onClick: () => {
+                      setGameModesMode('gauntlet');
+                      setShowGameModesModal(true);
+                    },
+                  },
+                ]
+              : []),
+            ...(!showExperimentalModes
+              ? [
+                  {
+                    id: 'custom' as const,
+                    label: 'Custom' as const,
+                    Icon: Bolt,
+                    iconClassName: 'fill-current',
+                    show: true,
+                    colorScheme: 'secondary' as const,
+                    onClick: () => {
+                      setGameModesMode('train');
+                      setShowGameModesModal(true);
+                    },
+                  },
+                ]
+              : []),
+            {
+              id: 'classic' as const,
+              label: 'Go' as const,
+              Icon: Play,
+              iconClassName: isFilled ? 'fill-current' : '',
+              show: true,
+              colorScheme: 'primary' as const,
+              onClick: () => {
+                if (showExperimentalModes) {
+                  setGameModesMode('train');
+                  setShowGameModesModal(true);
+                  return;
+                }
+
+                startAutoLearning();
+              },
+              ref: buttonRef,
+            },
+          ]
+            .filter(btn => btn.show)
+            .map(
+              ({
+                id,
+                label,
+                Icon,
+                iconClassName,
+                colorScheme,
+                onClick,
+                ref,
+              }) => (
+                <button
+                  key={id}
+                  ref={ref}
+                  disabled={id === 'classic' && !isFilled}
+                  className={cn(
+                    'flex flex-row items-center justify-center gap-2 py-3',
+                    id === 'classic' &&
+                      isFilled &&
+                      TRAINING_ACTION_CLASSIC_FLOAT_CLASSES,
+                    // Mobile: fixed widths (25% for Blitz/Gauntlet, 50% for Classic), no x-padding
+                    // Desktop (sm+): flex-based sizing with padding
+                    id === 'classic'
+                      ? showExperimentalModes
+                        ? 'w-full sm:w-3/4 md:w-3/5 md:px-6 xl:w-1/2'
+                        : 'w-1/2 md:w-3/5 md:px-6'
+                      : id === 'custom'
+                        ? 'w-1/2 sm:max-w-sm sm:flex-1 sm:px-6'
+                        : 'w-1/4 sm:w-auto sm:max-w-sm sm:flex-1 sm:px-6',
+                    'rounded-3xl transition-colors duration-200',
+                    'border-b-10',
+                    'hover:cursor-pointer',
+                    colorScheme === 'secondary' &&
+                      'border-(--secondary-color-accent) bg-(--secondary-color)/90 text-(--background-color)',
+                    colorScheme === 'primary' &&
+                      (isFilled
+                        ? 'border-(--main-color-accent) bg-(--main-color) text-(--background-color)'
+                        : 'cursor-not-allowed bg-(--card-color) text-(--border-color)'),
+                  )}
+                  onClick={e => {
+                    e.currentTarget.blur();
+                    playClick();
+                    onClick();
+                  }}
+                >
+                  <Icon size={36} className={cn(iconClassName)} />
+                  {id === 'custom' && (
+                    <span className='whitespace-nowrap text-lg font-medium sm:text-xl'>
+                      {label}
+                    </span>
+                  )}
+                </button>
+              ),
+            )}
+        </div>
       </motion.div>
 
       {/* Game Modes Interstitial */}
@@ -386,4 +429,3 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
 };
 
 export default TrainingActionBar;
-

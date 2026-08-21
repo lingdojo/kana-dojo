@@ -166,14 +166,14 @@ const MainMenu = () => {
       <div
         className={clsx(
           '3xl:w-2/5 flex w-full flex-col items-center gap-4 px-4 pb-16 max-md:pt-4 sm:w-3/4 md:justify-center lg:w-1/2',
-          'z-50',
+          'pointer-events-none z-50',
           !isGlassMode && 'opacity-90',
           expandDecorations && 'hidden',
         )}
       >
         <div className='flex w-full flex-row items-center justify-between gap-2 px-1'>
           <KanaDojoBanner />
-          <div className='flex w-1/2 flex-row justify-end gap-2 md:w-1/3'>
+          <div className='pointer-events-auto flex w-1/2 flex-row justify-end gap-2 md:w-1/3'>
             <button
               type='button'
               onClick={() => {
@@ -264,9 +264,11 @@ const MainMenu = () => {
             />
           </div>
         </div>
-        <Info />
+        <div className='pointer-events-auto w-full'>
+          <Info />
+        </div>
         <div className={clsx(
-          'w-full rounded-2xl',
+          'pointer-events-auto w-full rounded-2xl',
           USE_NEW_DESIGN
             ? 'border-4 border-(--border-color) bg-(--card-color) overflow-hidden'
             : 'border-1 border-(--border-color) bg-(--background-color) p-1'

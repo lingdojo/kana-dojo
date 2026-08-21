@@ -5,6 +5,16 @@ const mockCheckTranslateRateLimit = vi.fn();
 const mockCheckTranslateUsageLimit = vi.fn();
 const mockGetRedisCachedJson = vi.fn();
 const mockSetRedisCachedJson = vi.fn();
+const mockAwsTranslateSend = vi.fn();
+
+vi.mock('@aws-sdk/client-translate', () => ({
+  TranslateClient: class {
+    send = mockAwsTranslateSend;
+  },
+  TranslateTextCommand: class {
+    constructor(readonly input: unknown) {}
+  },
+}));
 
 vi.mock('@/shared/infra/server/rateLimit', () => ({
   checkTranslateRateLimit: (...args: unknown[]) =>
@@ -95,8 +105,10 @@ describe('POST /api/translate', () => {
     mockCheckTranslateUsageLimit.mockReset();
     mockGetRedisCachedJson.mockReset();
     mockSetRedisCachedJson.mockReset();
+    mockAwsTranslateSend.mockReset();
     vi.stubEnv('AZURE_TRANSLATOR_KEY', 'azure-test-key');
     vi.stubEnv('GOOGLE_TRANSLATE_API_KEY', 'test-key');
+    vi.stubEnv('AWS_REGION', 'eu-central-1');
     vi.stubEnv('TURNSTILE_SECRET_KEY', '');
 
     mockCheckTranslateRateLimit.mockResolvedValue(allowedRateLimitResult());
@@ -212,7 +224,51 @@ describe('POST /api/translate', () => {
     expect(mockSetRedisCachedJson).toHaveBeenCalledTimes(1);
   });
 
-  it('falls back to Google when Azure translation fails', async () => {
+  it('falls back to Amazon Translate when Azure translation fails', async () => {
+    mockAwsTranslateSend.mockResolvedValue({
+      TranslatedText: 'hello from aws',
+      SourceLanguageCode: 'ja',
+    });
+    vi.stubGlobal(
+      'fetch',
+      vi
+        .fn()
+        .mockResolvedValueOnce({
+          ok: false,
+          status: 503,
+          json: async () => ({}),
+        }),
+    );
+
+    const errorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
+    try {
+      const response = await callPost({
+        text: 'こんにちは',
+        sourceLanguage: 'ja',
+        targetLanguage: 'en',
+      });
+
+      expect(response.status).toBe(200);
+      const data = (await response.json()) as {
+        translatedText: string;
+        provider: string;
+      };
+      expect(data.translatedText).toBe('hello from aws');
+      expect(data.provider).toBe('aws');
+      expect(fetch).toHaveBeenCalledTimes(1);
+      expect(mockAwsTranslateSend).toHaveBeenCalledTimes(1);
+      expect(String(vi.mocked(fetch).mock.calls[0][0])).toContain(
+        'api.cognitive.microsofttranslator.com/translate',
+      );
+    } finally {
+      errorSpy.mockRestore();
+    }
+  });
+
+  it('falls back to Google when Azure and Amazon Translate fail', async () => {
+    mockAwsTranslateSend.mockRejectedValue({
+      $metadata: { httpStatusCode: 503 },
+    });
     vi.stubGlobal(
       'fetch',
       vi
@@ -249,9 +305,7 @@ describe('POST /api/translate', () => {
       expect(data.translatedText).toBe('hello from google');
       expect(data.provider).toBe('google');
       expect(fetch).toHaveBeenCalledTimes(2);
-      expect(String(vi.mocked(fetch).mock.calls[0][0])).toContain(
-        'api.cognitive.microsofttranslator.com/translate',
-      );
+      expect(mockAwsTranslateSend).toHaveBeenCalledTimes(1);
       expect(String(vi.mocked(fetch).mock.calls[1][0])).toContain(
         'translation.googleapis.com',
       );

@@ -25,6 +25,7 @@ export interface KanjiSelection {
 export interface KanjiSelectionActions {
   addKanji: (kanji: IKanjiObj) => void;
   addKanjiList: (kanjis: IKanjiObj[]) => void;
+  replaceKanji: (kanjis: IKanjiObj[]) => void;
   clearKanji: () => void;
   setCollection: (collection: 'n5' | 'n4' | 'n3' | 'n2' | 'n1') => void;
   setSets: (sets: string[]) => void;
@@ -49,6 +50,7 @@ export function useKanjiSelection(): KanjiSelection & KanjiSelectionActions {
   const addKanji = useKanjiStore(state => state.addKanjiObj);
   const addKanjiList = useKanjiStore(state => state.addKanjiObjs);
   const clearKanji = useKanjiStore(state => state.clearKanjiObjs);
+  const replaceKanji = useKanjiStore(state => state.setSelectedKanjiObjs);
   const setCollection = useKanjiStore(
     state => state.setSelectedKanjiCollection,
   );
@@ -73,6 +75,7 @@ export function useKanjiSelection(): KanjiSelection & KanjiSelectionActions {
       // Actions
       addKanji,
       addKanjiList,
+      replaceKanji,
       clearKanji,
       setCollection,
       setSets,
@@ -88,6 +91,7 @@ export function useKanjiSelection(): KanjiSelection & KanjiSelectionActions {
       gameMode,
       addKanji,
       addKanjiList,
+      replaceKanji,
       clearKanji,
       setCollection,
       setSets,
