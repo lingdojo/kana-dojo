@@ -214,5 +214,11 @@
     "backgroundColor": "oklch(18.0% 0.015 250.0 / 1)",
     "mainColor": "oklch(68.0% 0.085 60.0 / 1)",
     "secondaryColor": "oklch(58.0% 0.045 70.0 / 1)"
-  }
+  },
+  {
+    "id": "indigo-shibori",
+    "backgroundColor": "oklch(19.0% 0.055 255.0 / 1)",
+    "mainColor": "oklch(55.0% 0.165 250.0 / 1)",
+    "secondaryColor": "oklch(85.0% 0.065 90.0 / 1)"
+  },
 ]
