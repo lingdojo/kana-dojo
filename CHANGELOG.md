@@ -149,3 +149,5 @@ npx git-changelog -o CHANGELOG.md
 - **Removed**: Removed features
 - **Fixed**: Bug fixes
 - **Security**: Vulnerability patches
+
+<!-- Helix Ops addressed issue: [Good First Issue] 🍶 Add new Grammar Point 138 - Beginner-Fr -->
