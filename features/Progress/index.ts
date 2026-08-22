@@ -98,14 +98,33 @@ export {
   calculateVocabularySetProgress,
   calculateKanjiSetProgressAndStars,
   calculateVocabularySetProgressAndStars,
+  calculateKanaSetProgressAndStars,
 } from './lib/setProgress';
 export type {
+  KanaSetProgressEntry,
   KanjiSetProgressEntry,
   VocabularySetProgressEntry,
 } from './lib/setProgress';
 
+export { selectAutoLearningSets } from './lib/autoLearningSelection';
+export type {
+  AutoLearningSet,
+  AutoLearningSelection,
+} from './lib/autoLearningSelection';
+export {
+  writeAutoLearningHandoff,
+  readAutoLearningHandoff,
+  clearAutoLearningHandoff,
+} from './lib/autoLearningHandoff';
+export type {
+  AutoLearningHandoff,
+  AutoLearningSetDescriptor,
+} from './lib/autoLearningHandoff';
+
 export { default as useStatsStore } from './store/useStatsStore';
 export { default as useSetProgressStore } from './store/useSetProgressStore';
+export { default as useAutoLearningStore } from './store/useAutoLearningStore';
+export type { AutoLearningDojo } from './store/useAutoLearningStore';
 
 // ============================================================================
 // PRIVATE - DO NOT IMPORT DIRECTLY

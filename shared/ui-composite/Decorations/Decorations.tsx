@@ -72,6 +72,8 @@ const GRID_COL_CLASSES =
 const CHAR_SIZE_CLASSES =
   'text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl';
 const DIMMED_OPACITY_CLASS = 'opacity-25';
+// Flip this to `true` to render decorations while developing locally.
+const ENABLE_DECORATIONS_IN_DEVELOPMENT = true;
 const ENABLE_MODE_SETUP_DECORATIONS = false;
 const ENABLE_STREAK_MILESTONE_DECORATIONS = true;
 
@@ -337,12 +339,15 @@ interface DecorationsProps {
 }
 
 const Decorations = (props: DecorationsProps) => {
+  const isDisabledInDevelopment =
+    process.env.NODE_ENV === 'development' &&
+    !ENABLE_DECORATIONS_IN_DEVELOPMENT;
   const isDisabledForContext =
     (props.context === 'mode-setup' && !ENABLE_MODE_SETUP_DECORATIONS) ||
     (props.context === 'streak-milestone' &&
       !ENABLE_STREAK_MILESTONE_DECORATIONS);
 
-  if (isDisabledForContext) {
+  if (isDisabledInDevelopment || isDisabledForContext) {
     return null;
   }
 
