@@ -2,7 +2,6 @@
 
 import React, { useEffect, useMemo, useState } from 'react';
 import {
-  CircleArrowLeft,
   ArrowLeft,
   RotateCcw,
   Timer,
@@ -12,12 +11,14 @@ import {
   Trophy,
   Activity,
   Flame,
-  Heart,
   CheckCircle2,
   XCircle,
 } from 'lucide-react';
 import { useClick } from '@/shared/hooks/generic/useAudio';
-import { getBestTime, formatTime as formatGauntletTime } from '@/shared/utils/gauntletStats';
+import {
+  getBestTime,
+  formatTime as formatGauntletTime,
+} from '@/shared/utils/gauntletStats';
 import {
   DIFFICULTY_CONFIG,
   type GauntletSessionStats,
@@ -124,6 +125,9 @@ function ClassicSummary({
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
+      // Ignore auto-repeat while a key is held down. Otherwise holding
+      // Escape/Enter spams navigation callbacks, inflating session counts.
+      if (event.repeat) return;
       if (event.key === 'Escape') {
         event.preventDefault();
         playClick();
@@ -186,7 +190,9 @@ function BlitzSummary({
 
   return (
     <SummaryLayout
-      title={endedReason === 'manual_quit' ? 'session ended' : 'challenge complete!'}
+      title={
+        endedReason === 'manual_quit' ? 'session ended' : 'challenge complete!'
+      }
       subtitle={
         endedReason === 'manual_quit'
           ? 'you quit this blitz session early.'
@@ -228,7 +234,10 @@ function BlitzSummary({
               </div>
               <div className='space-y-2'>
                 {reached.map(goal => (
-                  <div key={goal.id} className='rounded-xl border border-(--main-color)/20 p-2 text-sm text-(--main-color)'>
+                  <div
+                    key={goal.id}
+                    className='rounded-xl border border-(--main-color)/20 p-2 text-sm text-(--main-color)'
+                  >
                     {goal.label}
                   </div>
                 ))}
@@ -247,7 +256,10 @@ function BlitzSummary({
               </div>
               <div className='space-y-2'>
                 {missed.map(goal => (
-                  <div key={goal.id} className='rounded-xl border border-(--border-color) p-2 text-sm text-(--secondary-color) opacity-70'>
+                  <div
+                    key={goal.id}
+                    className='rounded-xl border border-(--border-color) p-2 text-sm text-(--secondary-color) opacity-70'
+                  >
                     {goal.label}
                   </div>
                 ))}
@@ -268,10 +280,10 @@ function GauntletSummary({
   onBackToSelection,
   onNewSession,
 }: GauntletSessionSummaryProps) {
-  const { playClick } = useClick();
   const [previousBest, setPreviousBest] = useState<number | null>(null);
   const total = stats.correctAnswers + stats.wrongAnswers;
-  const accuracy = total > 0 ? Math.round((stats.correctAnswers / total) * 100) : 0;
+  const accuracy =
+    total > 0 ? Math.round((stats.correctAnswers / total) * 100) : 0;
 
   useEffect(() => {
     if (isNewBest) {
@@ -293,7 +305,13 @@ function GauntletSummary({
 
   return (
     <SummaryLayout
-      title={endedReason === 'completed' ? 'victory!' : endedReason === 'manual_quit' ? 'session ended' : 'game over'}
+      title={
+        endedReason === 'completed'
+          ? 'victory!'
+          : endedReason === 'manual_quit'
+            ? 'session ended'
+            : 'game over'
+      }
       subtitle={
         endedReason === 'manual_quit'
           ? `you ended this run early at ${Math.round((stats.questionsCompleted / stats.totalQuestions) * 100)}%.`
@@ -339,7 +357,9 @@ function GauntletSummary({
             </div>
             {(isNewBest || previousBest) && (
               <p className='mt-2 text-sm text-(--secondary-color) lowercase opacity-60'>
-                {isNewBest ? 'new personal best!' : `best: ${formatGauntletTime(previousBest!)}`}
+                {isNewBest
+                  ? 'new personal best!'
+                  : `best: ${formatGauntletTime(previousBest!)}`}
               </p>
             )}
           </div>
@@ -406,18 +426,29 @@ function SummaryLayout({
     <div className='fixed inset-0 z-50 flex h-full w-full flex-col overflow-x-hidden overflow-y-auto bg-(--background-color)'>
       <div className='mx-auto flex w-full max-w-7xl flex-col px-4 py-8 pb-24 sm:px-8 sm:py-12 sm:pb-32 lg:px-12 lg:py-16 lg:pb-40'>
         <div className='mb-8 flex flex-col items-center gap-1 text-center select-none sm:mb-12 sm:items-start sm:text-left lg:mb-16'>
-          <h1 className='text-3xl font-black tracking-tighter text-(--main-color) lowercase sm:text-5xl lg:text-6xl'>{title}</h1>
-          <p className='text-base font-medium tracking-tight text-(--secondary-color) lowercase opacity-60 sm:text-xl'>{subtitle}</p>
+          <h1 className='text-3xl font-black tracking-tighter text-(--main-color) lowercase sm:text-5xl lg:text-6xl'>
+            {title}
+          </h1>
+          <p className='text-base font-medium tracking-tight text-(--secondary-color) lowercase opacity-60 sm:text-xl'>
+            {subtitle}
+          </p>
         </div>
 
         <div className='mb-8 flex flex-col gap-4 sm:mb-12 sm:gap-6 lg:mb-16'>
           <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4'>
             <div className='relative flex flex-col items-center justify-center rounded-[2.5rem] border-2 border-(--main-color)/20 bg-(--background-color) p-6 sm:col-span-2 sm:flex-row sm:gap-12 sm:p-10'>
               <div className='relative flex aspect-square w-full max-w-36 flex-col items-center justify-center sm:max-w-44'>
-                <div className='h-full w-full rounded-full' style={{ background: `conic-gradient(var(--main-color) 0deg ${accuracy * 3.6}deg, var(--border-color) ${accuracy * 3.6}deg 360deg)` }} />
+                <div
+                  className='h-full w-full rounded-full'
+                  style={{
+                    background: `conic-gradient(var(--main-color) 0deg ${accuracy * 3.6}deg, var(--border-color) ${accuracy * 3.6}deg 360deg)`,
+                  }}
+                />
                 <div className='absolute inset-[12%] rounded-full bg-(--background-color)' />
                 <div className='absolute inset-0 flex flex-col items-center justify-center'>
-                  <span className='text-4xl font-black tracking-tighter text-(--main-color) sm:text-5xl'>{accuracy}%</span>
+                  <span className='text-4xl font-black tracking-tighter text-(--main-color) sm:text-5xl'>
+                    {accuracy}%
+                  </span>
                 </div>
               </div>
               <div className='mt-6 flex flex-col items-center text-center sm:mt-0 sm:items-start sm:text-left'>
@@ -425,12 +456,18 @@ function SummaryLayout({
                   <span
                     className={`${sessionStatIconBadgeStyle.base} ${sessionStatIconBadgeStyle.selected}`}
                   >
-                  <Target className='h-5 w-5' />
+                    <Target className='h-5 w-5' />
                   </span>
-                  <span className='text-sm leading-none font-bold tracking-wider text-(--secondary-color) uppercase opacity-60'>accuracy</span>
+                  <span className='text-sm leading-none font-bold tracking-wider text-(--secondary-color) uppercase opacity-60'>
+                    accuracy
+                  </span>
                 </div>
-                <div className='text-3xl font-black tracking-tighter text-(--main-color) sm:text-5xl'>{heroValue}</div>
-                <p className='mt-2 text-sm text-(--secondary-color) lowercase opacity-60 sm:text-base'>{heroDescription}</p>
+                <div className='text-3xl font-black tracking-tighter text-(--main-color) sm:text-5xl'>
+                  {heroValue}
+                </div>
+                <p className='mt-2 text-sm text-(--secondary-color) lowercase opacity-60 sm:text-base'>
+                  {heroDescription}
+                </p>
               </div>
             </div>
 
@@ -441,9 +478,13 @@ function SummaryLayout({
                 >
                   <Timer className='h-5 w-5' />
                 </span>
-                <span className='text-xs leading-none font-bold tracking-widest text-(--secondary-color) uppercase opacity-60'>time spent</span>
+                <span className='text-xs leading-none font-bold tracking-widest text-(--secondary-color) uppercase opacity-60'>
+                  time spent
+                </span>
               </div>
-              <div className='mt-4 text-4xl font-black tracking-tighter text-(--main-color) sm:text-5xl'>{timeValue}</div>
+              <div className='mt-4 text-4xl font-black tracking-tighter text-(--main-color) sm:text-5xl'>
+                {timeValue}
+              </div>
             </div>
 
             <div className='flex flex-col justify-between rounded-[2.5rem] border-2 border-(--main-color)/20 bg-(--background-color) p-6 sm:p-8'>
@@ -453,35 +494,77 @@ function SummaryLayout({
                 >
                   <Star className='h-5 w-5 fill-current' />
                 </span>
-                <span className='text-xs leading-none font-bold tracking-widest text-(--secondary-color) uppercase opacity-60'>{topRightLabel}</span>
+                <span className='text-xs leading-none font-bold tracking-widest text-(--secondary-color) uppercase opacity-60'>
+                  {topRightLabel}
+                </span>
               </div>
-              <div className='mt-4 text-4xl font-black tracking-tighter text-(--main-color) sm:text-5xl'>{topRightValue}</div>
+              <div className='mt-4 text-4xl font-black tracking-tighter text-(--main-color) sm:text-5xl'>
+                {topRightValue}
+              </div>
             </div>
           </div>
 
           <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4'>
-            <MiniStat icon={<Trophy className='fill-current' />} label={firstStatLabel} value={firstStatValue} />
-            <MiniStat icon={<Zap className='fill-current' />} label={secondStatLabel} value={secondStatValue} />
-            <MiniStat icon={<Activity />} label={thirdStatLabel} value={thirdStatValue} />
-            <MiniStat icon={<Zap className='fill-current' />} label={fourthStatLabel} value={fourthStatValue} />
+            <MiniStat
+              icon={<Trophy className='fill-current' />}
+              label={firstStatLabel}
+              value={firstStatValue}
+            />
+            <MiniStat
+              icon={<Zap className='fill-current' />}
+              label={secondStatLabel}
+              value={secondStatValue}
+            />
+            <MiniStat
+              icon={<Activity />}
+              label={thirdStatLabel}
+              value={thirdStatValue}
+            />
+            <MiniStat
+              icon={<Zap className='fill-current' />}
+              label={fourthStatLabel}
+              value={fourthStatValue}
+            />
           </div>
 
           {extraContent}
         </div>
 
-        <div className='sticky bottom-0 z-10 -mx-4 mt-auto flex w-auto items-center justify-center gap-3 border-t-2 border-(--border-color) bg-(--background-color) py-4 px-4 select-none sm:static sm:mx-0 sm:w-full sm:justify-start sm:gap-5 sm:border-0 sm:bg-transparent sm:px-0 sm:py-0'>
-          <button onClick={() => { playClick(); onBackToSelection(); }} className='group flex h-14 flex-1 cursor-pointer items-center justify-center gap-3 rounded-xl bg-(--secondary-color) px-4 text-lg font-bold text-(--background-color) lowercase outline-hidden transition-all duration-150 sm:px-10 sm:text-xl md:flex-none'>
+        <div className='sticky bottom-0 z-10 -mx-4 mt-auto flex w-auto items-center justify-center gap-3 border-t-2 border-(--border-color) bg-(--background-color) px-4 py-4 select-none sm:static sm:mx-0 sm:w-full sm:justify-start sm:gap-5 sm:border-0 sm:bg-transparent sm:px-0 sm:py-0'>
+          <button
+            onClick={() => {
+              playClick();
+              onBackToSelection();
+            }}
+            className='group flex h-14 flex-1 cursor-pointer items-center justify-center gap-3 rounded-xl bg-(--secondary-color) px-4 text-lg font-bold text-(--background-color) lowercase outline-hidden transition-all duration-150 sm:px-10 sm:text-xl md:flex-none'
+          >
             <span className='flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-(--background-color) bg-(--background-color) text-(--secondary-color)'>
-              <ArrowLeft className='h-5 w-5 group-hover:animate-none sm:h-6 sm:w-6' strokeWidth={2.5} />
+              <ArrowLeft
+                className='h-5 w-5 group-hover:animate-none sm:h-6 sm:w-6'
+                strokeWidth={2.5}
+              />
             </span>
             <span className='leading-none'>menu</span>
           </button>
-          <button onClick={() => { playClick(); onNewSession(); }} className='group flex h-14 flex-1 cursor-pointer items-center justify-center gap-3 rounded-xl bg-(--main-color) px-4 text-lg font-bold text-(--background-color) lowercase outline-hidden transition-all duration-150 sm:px-12 sm:text-xl md:flex-none'>
+          <button
+            onClick={() => {
+              playClick();
+              onNewSession();
+            }}
+            className='group flex h-14 flex-1 cursor-pointer items-center justify-center gap-3 rounded-xl bg-(--main-color) px-4 text-lg font-bold text-(--background-color) lowercase outline-hidden transition-all duration-150 sm:px-12 sm:text-xl md:flex-none'
+          >
             <span className='flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-(--background-color) bg-(--background-color) text-(--main-color)'>
-              <RotateCcw className='h-5 w-5 group-hover:animate-none sm:h-6 sm:w-6' strokeWidth={2.5} />
+              <RotateCcw
+                className='h-5 w-5 group-hover:animate-none sm:h-6 sm:w-6'
+                strokeWidth={2.5}
+              />
             </span>
-            <span className='leading-none sm:hidden'>{mobilePrimaryAction}</span>
-            <span className='hidden leading-none sm:inline'>{primaryAction}</span>
+            <span className='leading-none sm:hidden'>
+              {mobilePrimaryAction}
+            </span>
+            <span className='hidden leading-none sm:inline'>
+              {primaryAction}
+            </span>
           </button>
         </div>
       </div>
@@ -506,10 +589,13 @@ function MiniStat({
         >
           {icon}
         </span>
-        <span className='text-[0.65rem] leading-tight font-bold tracking-widest text-(--secondary-color) uppercase opacity-60 sm:text-xs sm:leading-none'>{label}</span>
+        <span className='text-[0.65rem] leading-tight font-bold tracking-widest text-(--secondary-color) uppercase opacity-60 sm:text-xs sm:leading-none'>
+          {label}
+        </span>
       </div>
-      <div className='text-2xl font-black tracking-tighter text-(--main-color) sm:text-3xl'>{value}</div>
+      <div className='text-2xl font-black tracking-tighter text-(--main-color) sm:text-3xl'>
+        {value}
+      </div>
     </div>
   );
 }
-

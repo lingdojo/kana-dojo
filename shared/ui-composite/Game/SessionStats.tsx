@@ -84,6 +84,7 @@ const SessionStats: React.FC = () => {
   useEffect(() => {
     if (USE_STATS_MODAL_LAYOUT) return;
     const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.repeat) return;
       if (e.key === 'Escape') {
         e.stopPropagation(); // Prevent the event from bubbling to ReturnFromGame
         playClick();
