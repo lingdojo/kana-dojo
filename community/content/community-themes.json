@@ -220,5 +220,11 @@
     "backgroundColor": "oklch(88.0% 0.035 85.0 / 1)",
     "mainColor": "oklch(45.0% 0.105 75.0 / 1)",
     "secondaryColor": "oklch(55.0% 0.080 60.0 / 1)"
+  },
+  {
+    "id": "tanuki-mischief",
+    "backgroundColor": "oklch(22.0% 0.042 55.0 / 1)",
+    "mainColor": "oklch(68.0% 0.125 65.0 / 1)",
+    "secondaryColor": "oklch(72.0% 0.155 145.0 / 1)"
   }
 ]
