@@ -1,8 +1,8 @@
 name: Create Community Contribution Issue
 
 on:
-  schedule:
-    - cron: '*/17 * * * *'
+  # Scheduled runs are temporarily disabled while an external cron service
+  # dispatches this workflow.
   workflow_dispatch:
     inputs:
       force_type:
@@ -105,7 +105,7 @@ jobs:
                 return null;
               }
 
-              const eligible = items.filter(predicate);
+              const eligible = items;
 
               if (eligible.length === 0) {
                 return null;
@@ -413,7 +413,7 @@ jobs:
               if (duplicateTheme) {
                 console.log(`Issue already exists for theme "${item.name}": Marking as issued and skipping.`);
                 const themeIdx = themes.findIndex(function(th) { return th.id === item.id; });
-                themes[themeIdx].issued = true;
+                themes[themeIdx].issued = false;
                 fs.writeFileSync(themeBacklogPath, JSON.stringify(themes, null, 2));
                 backlogChanged = true;
 
@@ -431,7 +431,7 @@ jobs:
               issueBody = `${tmpl.header.replace('{name}', item.name)}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### 🎯 Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.detailsHeader}\n\n| Property | Value |\n|----------|-------|\n| **ID** | \`${item.id}\` |\n| **Background** | \`${item.backgroundColor}\` |\n| **Main Color** | \`${item.mainColor}\` |\n| **Secondary** | \`${item.secondaryColor}\` |\n\n> ${tmpl.vibeLabel} ${item.description}\n\n${common.instructionsHeader}\n\n${instructions.slice(0, 4).join('\n')}\n\n${codeBlock}\n\n${instructions.slice(4).join('\n')}\n\n---\n\n${common.footer}`;
               
               const themeIndex = themes.findIndex(function(th) { return th.id === item.id; });
-              themes[themeIndex].issued = true;
+              themes[themeIndex].issued = false;
               fs.writeFileSync(themeBacklogPath, JSON.stringify(themes, null, 2));
               backlogChanged = true;
               
@@ -459,7 +459,7 @@ jobs:
               if (duplicateFact) {
                 console.log(`Issue already exists for fact #${item.id}: Marking as issued and skipping.`);
                 const factIdx = facts.findIndex(function(f) { return f.id === item.id; });
-                facts[factIdx].issued = true;
+                facts[factIdx].issued = false;
                 fs.writeFileSync(factsBacklogPath, JSON.stringify(facts, null, 2));
                 backlogChanged = true;
 
@@ -475,7 +475,7 @@ jobs:
               issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### 🎯 Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.factHeader}\n\n> ${item.fact}\n\n${common.instructionsHeader}\n\n${instructions.slice(0, 4).join('\n')}\n\n${codeBlock}\n\n${instructions.slice(4).join('\n')}\n\n---\n\n${common.footer}`;
               
               const factIndex = facts.findIndex(function(f) { return f.id === item.id; });
-              facts[factIndex].issued = true;
+              facts[factIndex].issued = false;
               fs.writeFileSync(factsBacklogPath, JSON.stringify(facts, null, 2));
               backlogChanged = true;
               } else if (nextType === 'proverb') {
@@ -503,7 +503,7 @@ jobs:
               if (duplicateProverb) {
                 console.log(`Issue already exists for proverb #${item.id}: Marking as issued and skipping.`);
                 const proverbIdx = proverbs.findIndex(function(p) { return p.id === item.id; });
-                proverbs[proverbIdx].issued = true;
+                proverbs[proverbIdx].issued = false;
                 fs.writeFileSync(proverbsBacklogPath, JSON.stringify(proverbs, null, 2));
                 backlogChanged = true;
 
@@ -521,7 +521,7 @@ jobs:
               issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### 🎯 Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.proverbHeader}\n\n| Japanese | Reading | English |\n|----------|---------|---------|\n| **${item.japanese}** | ${item.romaji} | ${item.english} |\n\n> 💡 **Meaning:** ${item.meaning}\n\n${common.instructionsHeader}\n\n${instructions.slice(0, 4).join('\n')}\n\n${codeBlock}\n\n${instructions.slice(4).join('\n')}\n\n---\n\n${common.footer}`;
               
               const proverbIndex = proverbs.findIndex(function(p) { return p.id === item.id; });
-              proverbs[proverbIndex].issued = true;
+              proverbs[proverbIndex].issued = false;
               fs.writeFileSync(proverbsBacklogPath, JSON.stringify(proverbs, null, 2));
               backlogChanged = true;
               } else if (nextType === 'haiku') {
@@ -544,7 +544,7 @@ jobs:
               if (duplicateHaiku) {
                 console.log(`Issue already exists for haiku #${item.id}: Marking as issued and skipping.`);
                 const haikuIdx = haiku.findIndex(function(h) { return h.id === item.id; });
-                haiku[haikuIdx].issued = true;
+                haiku[haikuIdx].issued = false;
                 fs.writeFileSync(haikuBacklogPath, JSON.stringify(haiku, null, 2));
                 backlogChanged = true;
                 continue;
@@ -560,7 +560,7 @@ jobs:
               issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.haikuHeader}\n\n> ${item.japanese.replace(/\n/g, '\n> ')}\n\n**Romaji:** ${item.romaji}  \n**English:** ${item.english}  \n**Poet:** ${item.poet}  \n**Season:** ${item.season}  \n**Kigo:** ${item.kigo}  \n**Notes:** ${item.notes}\n\n${common.instructionsHeader}\n\n${instructions.slice(0, 4).join('\n')}\n\n${codeBlock}\n\n${instructions.slice(4).join('\n')}\n\n---\n\n${common.footer}`;
 
               const haikuIndex = haiku.findIndex(function(h) { return h.id === item.id; });
-              haiku[haikuIndex].issued = true;
+              haiku[haikuIndex].issued = false;
               fs.writeFileSync(haikuBacklogPath, JSON.stringify(haiku, null, 2));
               backlogChanged = true;
               } else if (nextType === 'trivia') {
@@ -588,7 +588,7 @@ jobs:
               if (duplicateTrivia) {
                 console.log(`Issue already exists for trivia #${item.id}: Marking as issued and skipping.`);
                 const triviaIdx = trivia.findIndex(function(q) { return q.id === item.id; });
-                trivia[triviaIdx].issued = true;
+                trivia[triviaIdx].issued = false;
                 fs.writeFileSync(triviaBacklogPath, JSON.stringify(trivia, null, 2));
                 backlogChanged = true;
                 continue;
@@ -606,7 +606,7 @@ jobs:
               issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### 🎯 Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.triviaHeader}\n\n**Question:** ${item.question}\n\n**Answers:**\n${answers.map(function(a, idx) { return `${idx + 1}. ${a}`; }).join('\n')}\n\n**Correct Answer Index:** ${item.correctIndex}\n\n${common.instructionsHeader}\n\n${instructions.slice(0, 4).join('\n')}\n\n${codeBlock}\n\n${instructions.slice(4).join('\n')}\n\n---\n\n${common.footer}`;
 
               const triviaIndex = trivia.findIndex(function(q) { return q.id === item.id; });
-              trivia[triviaIndex].issued = true;
+              trivia[triviaIndex].issued = false;
               fs.writeFileSync(triviaBacklogPath, JSON.stringify(trivia, null, 2));
               backlogChanged = true;
               } else if (nextType === 'grammar') {
@@ -635,7 +635,7 @@ jobs:
               if (duplicateGrammar) {
                 console.log(`Issue already exists for grammar #${item.id}: Marking as issued and skipping.`);
                 const grammarIdx = grammar.findIndex(function(g) { return g.id === item.id; });
-                grammar[grammarIdx].issued = true;
+                grammar[grammarIdx].issued = false;
                 fs.writeFileSync(grammarBacklogPath, JSON.stringify(grammar, null, 2));
                 backlogChanged = true;
                 continue;
@@ -651,7 +651,7 @@ jobs:
               issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### 🎯 Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.grammarHeader}\n\n> ${item.text}\n\n${common.instructionsHeader}\n\n${instructions.slice(0, 4).join('\n')}\n\n${codeBlock}\n\n${instructions.slice(4).join('\n')}\n\n---\n\n${common.footer}`;
 
               const grammarIndex = grammar.findIndex(function(g) { return g.id === item.id; });
-              grammar[grammarIndex].issued = true;
+              grammar[grammarIndex].issued = false;
               fs.writeFileSync(grammarBacklogPath, JSON.stringify(grammar, null, 2));
               backlogChanged = true;
               } else if (nextType === 'animeQuote') {
@@ -681,7 +681,7 @@ jobs:
               if (duplicateQuote) {
                 console.log(`Issue already exists for anime quote #${item.id}: Marking as issued and skipping.`);
                 const quoteIdx = animeQuotes.findIndex(function(q) { return q.id === item.id; });
-                animeQuotes[quoteIdx].issued = true;
+                animeQuotes[quoteIdx].issued = false;
                 fs.writeFileSync(animeQuotesBacklogPath, JSON.stringify(animeQuotes, null, 2));
                 backlogChanged = true;
                 continue;
@@ -697,7 +697,7 @@ jobs:
               issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### 🎯 Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.quoteHeader}\n\n| Japanese | Romaji | English |\n|----------|--------|---------|\n| **${item.japanese}** | ${item.romaji} | ${item.english} |\n\n**Anime:** ${item.anime}  \n**Character:** ${item.character}\n\n${common.instructionsHeader}\n\n${instructions.slice(0, 4).join('\n')}\n\n${codeBlock}\n\n${instructions.slice(4).join('\n')}\n\n---\n\n${common.footer}`;
 
               const quoteIndex = animeQuotes.findIndex(function(q) { return q.id === item.id; });
-              animeQuotes[quoteIndex].issued = true;
+              animeQuotes[quoteIndex].issued = false;
               fs.writeFileSync(animeQuotesBacklogPath, JSON.stringify(animeQuotes, null, 2));
               backlogChanged = true;
               } else if (nextType === 'videoGameQuote') {
@@ -720,7 +720,7 @@ jobs:
 
               if (duplicateQuote) {
                 const quoteIdx = videoGameQuotes.findIndex(function(q) { return q.id === item.id; });
-                videoGameQuotes[quoteIdx].issued = true;
+                videoGameQuotes[quoteIdx].issued = false;
                 fs.writeFileSync(videoGameQuotesBacklogPath, JSON.stringify(videoGameQuotes, null, 2));
                 backlogChanged = true;
                 continue;
@@ -736,7 +736,7 @@ jobs:
               issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.gameQuoteHeader}\n\n| Japanese | Romaji | English |\n|----------|--------|---------|\n| **${item.japanese}** | ${item.romaji} | ${item.english} |\n\n**Game:** ${item.game}  \n**Character:** ${item.character}\n\n${common.instructionsHeader}\n\n${instructions.slice(0, 4).join('\n')}\n\n${codeBlock}\n\n${instructions.slice(4).join('\n')}\n\n---\n\n${common.footer}`;
 
               const quoteIndex = videoGameQuotes.findIndex(function(q) { return q.id === item.id; });
-              videoGameQuotes[quoteIndex].issued = true;
+              videoGameQuotes[quoteIndex].issued = false;
               fs.writeFileSync(videoGameQuotesBacklogPath, JSON.stringify(videoGameQuotes, null, 2));
               backlogChanged = true;
               } else if (nextType === 'idiom') {
@@ -771,7 +771,7 @@ jobs:
               if (duplicateIdiom) {
                 console.log(`Issue already exists for idiom #${item.id}: Marking as issued and skipping.`);
                 const idiomIdx = idioms.findIndex(function(i) { return i.id === item.id; });
-                idioms[idiomIdx].issued = true;
+                idioms[idiomIdx].issued = false;
                 fs.writeFileSync(idiomsBacklogPath, JSON.stringify(idioms, null, 2));
                 backlogChanged = true;
                 continue;
@@ -787,7 +787,7 @@ jobs:
               issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.idiomHeader}\n\n| Japanese | Romaji | English |\n|----------|--------|---------|\n| **${item.japanese}** | ${item.romaji} | ${item.english} |\n\n> **Meaning:** ${item.meaning}\n\n${common.instructionsHeader}\n\n${instructions.slice(0, 4).join('\n')}\n\n${codeBlock}\n\n${instructions.slice(4).join('\n')}\n\n---\n\n${common.footer}`;
 
               const idiomIndex = idioms.findIndex(function(i) { return i.id === item.id; });
-              idioms[idiomIndex].issued = true;
+              idioms[idiomIndex].issued = false;
               fs.writeFileSync(idiomsBacklogPath, JSON.stringify(idioms, null, 2));
               backlogChanged = true;
               } else if (nextType === 'regionalDialect') {
@@ -822,7 +822,7 @@ jobs:
               if (duplicateDialect) {
                 console.log(`Issue already exists for regional dialect #${item.id}: Marking as issued and skipping.`);
                 const dialectIdx = regionalDialects.findIndex(function(d) { return d.id === item.id; });
-                regionalDialects[dialectIdx].issued = true;
+                regionalDialects[dialectIdx].issued = false;
                 fs.writeFileSync(regionalDialectsBacklogPath, JSON.stringify(regionalDialects, null, 2));
                 backlogChanged = true;
                 continue;
@@ -838,7 +838,7 @@ jobs:
               issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.dialectHeader}\n\n| Dialect | Standard Japanese | English | Region |\n|---------|-------------------|---------|--------|\n| **${item.dialect}** | ${item.standardJapanese} | ${item.english} | ${item.region} |\n\n> **Note:** ${item.note}\n\n${common.instructionsHeader}\n\n${instructions.slice(0, 4).join('\n')}\n\n${codeBlock}\n\n${instructions.slice(4).join('\n')}\n\n---\n\n${common.footer}`;
 
               const dialectIndex = regionalDialects.findIndex(function(d) { return d.id === item.id; });
-              regionalDialects[dialectIndex].issued = true;
+              regionalDialects[dialectIndex].issued = false;
               fs.writeFileSync(regionalDialectsBacklogPath, JSON.stringify(regionalDialects, null, 2));
               backlogChanged = true;
             } else if (nextType === 'falseFriend') {
@@ -871,7 +871,7 @@ jobs:
               const duplicateFalseFriend = await hasOpenIssueForQuery(`"Japanese False Friend" "${item.id}"`);
               if (duplicateFalseFriend) {
                 const falseFriendIdx = falseFriends.findIndex(function(f) { return f.id === item.id; });
-                falseFriends[falseFriendIdx].issued = true;
+                falseFriends[falseFriendIdx].issued = false;
                 fs.writeFileSync(falseFriendsBacklogPath, JSON.stringify(falseFriends, null, 2));
                 backlogChanged = true;
                 continue;
@@ -887,7 +887,7 @@ jobs:
               issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.falseFriendHeader}\n\n**Term A:** ${item.termA}  \n**Term B:** ${item.termB}\n\n> **Explanation:** ${item.explanation}\n> **Example:** ${item.example}\n\n${common.instructionsHeader}\n\n${instructions.slice(0, 4).join('\n')}\n\n${codeBlock}\n\n${instructions.slice(4).join('\n')}\n\n---\n\n${common.footer}`;
 
               const falseFriendIndex = falseFriends.findIndex(function(f) { return f.id === item.id; });
-              falseFriends[falseFriendIndex].issued = true;
+              falseFriends[falseFriendIndex].issued = false;
               fs.writeFileSync(falseFriendsBacklogPath, JSON.stringify(falseFriends, null, 2));
               backlogChanged = true;
             } else if (nextType === 'culturalEtiquette') {
@@ -920,7 +920,7 @@ jobs:
               const duplicateEtiquette = await hasOpenIssueForQuery(`"Cultural Etiquette Tip" "${item.id}"`);
               if (duplicateEtiquette) {
                 const etiquetteIdx = culturalEtiquette.findIndex(function(e) { return e.id === item.id; });
-                culturalEtiquette[etiquetteIdx].issued = true;
+                culturalEtiquette[etiquetteIdx].issued = false;
                 fs.writeFileSync(culturalEtiquetteBacklogPath, JSON.stringify(culturalEtiquette, null, 2));
                 backlogChanged = true;
                 continue;
@@ -936,7 +936,7 @@ jobs:
               issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.etiquetteHeader}\n\n**Situation:** ${item.situation}\n\n- Do: ${item.do}\n- Avoid: ${item.dont}\n\n> **Note:** ${item.note}\n\n${common.instructionsHeader}\n\n${instructions.slice(0, 4).join('\n')}\n\n${codeBlock}\n\n${instructions.slice(4).join('\n')}\n\n---\n\n${common.footer}`;
 
               const etiquetteIndex = culturalEtiquette.findIndex(function(e) { return e.id === item.id; });
-              culturalEtiquette[etiquetteIndex].issued = true;
+              culturalEtiquette[etiquetteIndex].issued = false;
               fs.writeFileSync(culturalEtiquetteBacklogPath, JSON.stringify(culturalEtiquette, null, 2));
               backlogChanged = true;
             } else if (nextType === 'exampleSentence') {
@@ -969,7 +969,7 @@ jobs:
               const duplicateSentence = await hasOpenIssueForQuery(`"Example Sentence" "${item.id}"`);
               if (duplicateSentence) {
                 const sentenceIdx = exampleSentences.findIndex(function(e) { return e.id === item.id; });
-                exampleSentences[sentenceIdx].issued = true;
+                exampleSentences[sentenceIdx].issued = false;
                 fs.writeFileSync(exampleSentencesBacklogPath, JSON.stringify(exampleSentences, null, 2));
                 backlogChanged = true;
                 continue;
@@ -985,7 +985,7 @@ jobs:
               issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.sentenceHeader}\n\n| Japanese | Romaji | English | JLPT |\n|----------|--------|---------|------|\n| **${item.japanese}** | ${item.romaji} | ${item.english} | ${item.jlpt} |\n\n${common.instructionsHeader}\n\n${instructions.slice(0, 4).join('\n')}\n\n${codeBlock}\n\n${instructions.slice(4).join('\n')}\n\n---\n\n${common.footer}`;
 
               const sentenceIndex = exampleSentences.findIndex(function(e) { return e.id === item.id; });
-              exampleSentences[sentenceIndex].issued = true;
+              exampleSentences[sentenceIndex].issued = false;
               fs.writeFileSync(exampleSentencesBacklogPath, JSON.stringify(exampleSentences, null, 2));
               backlogChanged = true;
             } else if (nextType === 'commonMistake') {
@@ -1018,7 +1018,7 @@ jobs:
               const duplicateMistake = await hasOpenIssueForQuery(`"Common Learner Mistake" "${item.id}"`);
               if (duplicateMistake) {
                 const mistakeIdx = commonMistakes.findIndex(function(m) { return m.id === item.id; });
-                commonMistakes[mistakeIdx].issued = true;
+                commonMistakes[mistakeIdx].issued = false;
                 fs.writeFileSync(commonMistakesBacklogPath, JSON.stringify(commonMistakes, null, 2));
                 backlogChanged = true;
                 continue;
@@ -1034,7 +1034,7 @@ jobs:
               issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.mistakeHeader}\n\n**Wrong:** ${item.wrong}\n\n**Correct:** ${item.correct}\n\n> **Why:** ${item.explanation}\n\n${common.instructionsHeader}\n\n${instructions.slice(0, 4).join('\n')}\n\n${codeBlock}\n\n${instructions.slice(4).join('\n')}\n\n---\n\n${common.footer}`;
 
               const mistakeIndex = commonMistakes.findIndex(function(m) { return m.id === item.id; });
-              commonMistakes[mistakeIndex].issued = true;
+              commonMistakes[mistakeIndex].issued = false;
               fs.writeFileSync(commonMistakesBacklogPath, JSON.stringify(commonMistakes, null, 2));
               backlogChanged = true;
             } else if (nextType === 'wallpaperUrl') {
@@ -1059,7 +1059,7 @@ jobs:
               const duplicateWallpaperUrl = await hasOpenIssueForQuery(`"Wallpaper URL #${item.id}"`);
               if (duplicateWallpaperUrl) {
                 const urlIdx = wallpaperUrls.findIndex(function(entry) { return entry.id === item.id; });
-                wallpaperUrls[urlIdx].issued = true;
+                wallpaperUrls[urlIdx].issued = false;
                 fs.writeFileSync(wallpaperUrlsBacklogPath, JSON.stringify(wallpaperUrls, null, 2));
                 backlogChanged = true;
                 continue;
@@ -1084,7 +1084,7 @@ jobs:
               issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.urlHeader}\n\n${codeBlock}\n\n${common.instructionsHeader}\n\n${instructions.join('\n')}\n\n---\n\n${common.footer}`;
 
               const wallpaperIndex = wallpaperUrls.findIndex(function(entry) { return entry.id === item.id; });
-              wallpaperUrls[wallpaperIndex].issued = true;
+              wallpaperUrls[wallpaperIndex].issued = false;
               fs.writeFileSync(wallpaperUrlsBacklogPath, JSON.stringify(wallpaperUrls, null, 2));
               backlogChanged = true;
             } else if (nextType === 'communityNote') {
@@ -1100,7 +1100,7 @@ jobs:
               const duplicateCommunityNote = await hasOpenIssueForQuery(`"Community Note Line #${item.id}"`);
               if (duplicateCommunityNote) {
                 const noteIdx = communityNotes.findIndex(function(entry) { return entry.id === item.id; });
-                communityNotes[noteIdx].issued = true;
+                communityNotes[noteIdx].issued = false;
                 fs.writeFileSync(communityNotesBacklogPath, JSON.stringify(communityNotes, null, 2));
                 backlogChanged = true;
                 continue;
@@ -1124,7 +1124,7 @@ jobs:
               issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.noteHeader}\n\n**File:** \`${item.file}\`  \n**Position:** ${item.position}\n\n${codeBlock}\n\n${common.instructionsHeader}\n\n${instructions.join('\n')}\n\n---\n\n${common.footer}`;
 
               const noteIndex = communityNotes.findIndex(function(entry) { return entry.id === item.id; });
-              communityNotes[noteIndex].issued = true;
+              communityNotes[noteIndex].issued = false;
               fs.writeFileSync(communityNotesBacklogPath, JSON.stringify(communityNotes, null, 2));
               backlogChanged = true;
             }
@@ -1338,7 +1338,7 @@ jobs:
             echo "No backlog changes to commit"
             exit 0
           fi
-          commit_msg="chore(automation): mark item as issued"
+          commit_msg="chore(automation): update community issue state"
           max_attempts=5
           attempt=1
           while [ "$attempt" -le "$max_attempts" ]; do
