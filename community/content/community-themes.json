@@ -214,5 +214,11 @@
     "backgroundColor": "oklch(18.0% 0.015 250.0 / 1)",
     "mainColor": "oklch(68.0% 0.085 60.0 / 1)",
     "secondaryColor": "oklch(58.0% 0.045 70.0 / 1)"
+  },
+  {
+    "id": "tatami-room",
+    "backgroundColor": "oklch(88.0% 0.035 85.0 / 1)",
+    "mainColor": "oklch(45.0% 0.105 75.0 / 1)",
+    "secondaryColor": "oklch(55.0% 0.080 60.0 / 1)"
   }
 ]
