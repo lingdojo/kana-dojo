@@ -123,5 +123,10 @@
   "wrong": "私は日本語を好きです。",
   "correct": "私は日本語が好きです。",
   "explanation": "好き takes が, not を. (Pattern set 5)"
+}, 
+  {
+  "wrong": "会議は三時からで始まります。",
+  "correct": "会議は三時から始まります。",
+  "explanation": "Remove unnecessary particle after から. (Pattern set 5)"
 }
 ]
