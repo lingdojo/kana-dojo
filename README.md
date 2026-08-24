@@ -195,3 +195,7 @@ This project is licensed under the AGPL 3.0 License — see [LICENSE.md](./LICEN
 [⬆ Back to top](#top)
 
 </div>
+
+
+## Developer Reference #29090
+Resolves issue #29090: [Good First Issue] 🏮 Add new Japanese Idiom 97 - Beginner-Friendly Open-source Contribution.
