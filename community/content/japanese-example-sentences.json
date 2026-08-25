@@ -148,17 +148,23 @@
   "romaji": "Densha ga okurete ita node, sukoshi chikoku shimashita.",
   "english": "The train was delayed, so I was a little late.",
   "jlpt": "N4"
-},
+  },
   {
   "japanese": "来月から新しいプロジェクトに参加することになりました。",
   "romaji": "Raigetsu kara atarashii purojekuto ni sanka suru koto ni narimashita.",
   "english": "I'm going to join a new project from next month.",
   "jlpt": "N3"
-},
+  },
   {
     "japanese": "提出期限までにレポートを仕上げなければならない。",
     "romaji": "Teishutsu kigen made ni repooto o shiagenakereba naranai.",
     "english": "I must finish the report by the deadline.",
     "jlpt": "N3"
+  },
+  {
+  "japanese": "日本語を勉強し始めて三か月です。",
+  "romaji": "Nihongo o benkyou shihajimete sankagetsu desu.",
+  "english": "It has been three months since I started studying Japanese.",
+  "jlpt": "N5"
   }
 ]
