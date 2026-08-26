@@ -187,5 +187,12 @@
   "english": "troublesome / annoying",
   "region": "Hiroshima",
   "note": "Common Hiroshima dialect expression used when something feels bothersome or tiring. (Set 7)"
-}
+  },
+  {
+  "dialect": "なんくるないさ",
+  "standardJapanese": "なんとかなる",
+  "english": "it'll work out",
+  "region": "Okinawa",
+  "note": "Famous Okinawan resilience phrase. (Set 2)"
+  }
 ]
