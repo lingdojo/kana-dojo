@@ -238,6 +238,12 @@
     "backgroundColor": "oklch(14.0% 0.060 300.0 / 1)",
     "mainColor": "oklch(78.0% 0.220 330.0 / 1)",
     "secondaryColor": "oklch(85.0% 0.175 190.0 / 1)"
+  },
+  {
+    "id": "taiko-thunder",
+    "backgroundColor": "oklch(17.0% 0.035 280.0 / 1)",
+    "mainColor": "oklch(68.0% 0.175 30.0 / 1)",
+    "secondaryColor": "oklch(78.0% 0.125 45.0 / 1)"
   }
 ]
 
