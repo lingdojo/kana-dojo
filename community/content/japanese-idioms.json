@@ -138,9 +138,15 @@
     "meaning": "Have a weakness for something. (Set 6)"
   },
   {
-  "japanese": "気が短い",
-  "romaji": "Ki ga mijikai",
-  "english": "Short-tempered",
-  "meaning": "Impatient temperament. (Set 4)"
-}
+    "japanese": "気が短い",
+    "romaji": "Ki ga mijikai",
+    "english": "Short-tempered",
+    "meaning": "Impatient temperament. (Set 4)"
+  },
+  {
+    "japanese": "鼻が高い",
+    "romaji": "Hana ga takai",
+    "english": "High nose",
+    "meaning": "Feel proud. (Set 3)"
+  }
 ]
