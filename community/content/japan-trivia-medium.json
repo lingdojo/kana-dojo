@@ -85,5 +85,27 @@
       "Fue"
     ],
     "correctIndex": 0
+  },
+    {
+    "question": "Which of these is a Japanese traditional storytelling art?",
+    "difficulty": "medium",
+    "answers": [
+      "Rakugo",
+      "Kabuki",
+      "Noh",
+      "Ikebana"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "question": "What is the Japanese term for a convenience store? (Community variation 17)",
+    "difficulty": "medium",
+    "answers": [
+      "Depato",
+      "Konbini",
+      "Ramen-ya",
+      "Kissa"
+    ],
+    "correctIndex": 1
   }
 ]
