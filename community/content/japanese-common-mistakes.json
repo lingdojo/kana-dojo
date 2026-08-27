@@ -138,5 +138,10 @@
   "wrong": "宿題を忘れないよう、メモします。",
   "correct": "宿題を忘れないように、メモします。",
   "explanation": "Use ように for purpose/prevention. (Pattern set 1)"
-}
+},
+  {
+    "wrong": "これはおいしいだ。",
+    "correct": "これはおいしい。",
+    "explanation": "い-adjectives do not take だ in plain present. (Pattern set 2)"
+  }
 ]
