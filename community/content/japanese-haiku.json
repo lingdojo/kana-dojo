@@ -124,5 +124,14 @@
     "season": "Spring",
     "kigo": "Frog (kawazu)",
     "notes": "A foundational haiku focused on stillness and sudden movement."
+  },
+  {
+    "japanese": "朝顔に\nつるべ取られて\nもらい水",
+    "romaji": "Asagao ni / tsurube torarete / morai mizu",
+    "english": "Morning glories took my well-bucket; I asked next door for water.",
+    "poet": "Kaga no Chiyo",
+    "season": "Summer",
+    "kigo": "Morning glory (asagao)",
+    "notes": "Famous for gentle empathy toward nature."
   }
 ]
