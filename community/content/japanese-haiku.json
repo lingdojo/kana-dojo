@@ -133,5 +133,14 @@
     "season": "Summer",
     "kigo": "Morning glory (asagao)",
     "notes": "Famous for gentle empathy toward nature."
-  }
+  },
+  {
+  "japanese": "行く春や\n鳥啜き魚の\n目は泪",
+  "romaji": "Yuku haru ya / tori naki uo no / me wa namida",
+  "english": "Spring departs; birds cry, and fish eyes seem tearful.",
+  "poet": "Matsuo Basho",
+  "season": "Spring",
+  "kigo": "Departing spring (yuku haru)",
+  "notes": "A classic expression of seasonal transition and sadness."
+}
 ]
