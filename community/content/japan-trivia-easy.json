@@ -601,5 +601,16 @@
     "Oden"
   ],
   "correctIndex": 0
+},
+  {
+  "question": "Which Japanese food is a savory pancake cooked on a griddle?",
+  "difficulty": "easy",
+  "answers": [
+    "Okonomiyaki",
+    "Tempura",
+    "Yakitori",
+    "Sashimi"
+  ],
+  "correctIndex": 0
 }
 ]
