@@ -17,6 +17,7 @@ import { useSmartReverseMode } from '@/shared/hooks/game/useSmartReverseMode';
 import { useAdaptiveOptionCount } from '@/shared/hooks/game/useAdaptiveOptionCount';
 import useClassicSessionStore from '@/shared/store/useClassicSessionStore';
 import { getUniqueIncorrectOptions } from '@/features/Kana/lib/getUniqueIncorrectOptions';
+import { useKanaPronunciation } from '@/features/Kana/hooks/useKanaPronunciation';
 
 const random = new Random();
 
@@ -128,10 +129,12 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
   const { playCorrect } = useCorrect();
   const { playErrorTwice } = useError();
   const { trigger: triggerCrazyMode } = useCrazyModeTrigger();
+  const speakKana = useKanaPronunciation();
 
   const kanaGroupIndices = useKanaStore(state => state.kanaGroupIndices);
 
   const isProcessingRef = useRef(false);
+  const isPronunciationPendingRef = useRef(false);
 
   const selectedKana = useMemo(
     () => kanaGroupIndices.map(i => kana[i].kana).flat(),
@@ -162,9 +165,7 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
   const selectedPairs2 = useMemo<Record<string, string>>(
     () =>
       Object.fromEntries(
-        selectedRomaji
-          .map((key, i) => [key, selectedKana[i] ?? ''])
-          .reverse(),
+        selectedRomaji.map((key, i) => [key, selectedKana[i] ?? '']).reverse(),
       ),
     [selectedRomaji, selectedKana],
   );
@@ -214,9 +215,7 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
         void _;
         return getUniqueIncorrectOptions(
           correctRomajiChar,
-          Object.values(incorrectPairs).sort(
-            () => random.real(0, 1) - 0.5,
-          ),
+          Object.values(incorrectPairs).sort(() => random.real(0, 1) - 0.5),
           incorrectCount,
         );
       } else {
@@ -225,9 +224,7 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
         void _;
         return getUniqueIncorrectOptions(
           correctKanaCharReverse,
-          Object.values(incorrectPairs).sort(
-            () => random.real(0, 1) - 0.5,
-          ),
+          Object.values(incorrectPairs).sort(() => random.real(0, 1) - 0.5),
           incorrectCount,
         );
       }
@@ -311,7 +308,7 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
   }, [shuffledVariants]);
 
   const handleCorrectAnswer = useCallback(
-    (correctChar: string) => {
+    async (correctChar: string) => {
       playCorrect();
       addCharacterToHistory(correctChar);
       incrementCharacterScore(correctChar, 'correct');
@@ -321,8 +318,6 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
       triggerCrazyMode();
       // Update adaptive weight system - reduces probability of mastered characters
       adaptiveSelector.updateCharacterWeight(correctChar, true);
-      // Smart algorithm decides next mode based on performance
-      decideNextMode();
       // Progressive difficulty - track correct answer
       recordDifficultyCorrect();
       // Track content-specific stats for achievements (Requirements 1.1-1.8)
@@ -345,6 +340,9 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
         optionsShown: shuffledVariants,
         extra: { isReverse },
       });
+
+      await speakKana(isReverse ? correctKanaCharReverse : correctChar);
+      decideNextMode();
     },
     [
       playCorrect,
@@ -366,6 +364,7 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
       correctRomajiCharReverse,
       shuffledVariants,
       isReverse,
+      speakKana,
     ],
   );
 
@@ -428,20 +427,23 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
 
   const handleOptionClick = useCallback(
     (selectedChar: string) => {
-      if (isProcessingRef.current) return;
+      if (isProcessingRef.current || isPronunciationPendingRef.current) return;
       isProcessingRef.current = true;
 
       if (!isReverse) {
         // Normal pick mode logic
         if (selectedChar === correctRomajiChar) {
-          handleCorrectAnswer(correctKanaChar);
-          // Use weighted selection - prioritizes characters user struggles with
-          const newKana = adaptiveSelector.selectWeightedCharacter(
-            selectedKana,
-            correctKanaChar,
-          );
-          adaptiveSelector.markCharacterSeen(newKana);
-          setCorrectKanaChar(newKana);
+          isPronunciationPendingRef.current = true;
+          void handleCorrectAnswer(correctKanaChar).then(() => {
+            // Use weighted selection - prioritizes characters user struggles with
+            const newKana = adaptiveSelector.selectWeightedCharacter(
+              selectedKana,
+              correctKanaChar,
+            );
+            adaptiveSelector.markCharacterSeen(newKana);
+            setCorrectKanaChar(newKana);
+            isPronunciationPendingRef.current = false;
+          });
         } else {
           handleWrongAnswer(selectedChar);
         }
@@ -451,14 +453,17 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
           reversedPairs1[selectedChar] === correctRomajiCharReverse ||
           reversedPairs2[selectedChar] === correctRomajiCharReverse
         ) {
-          handleCorrectAnswer(correctRomajiCharReverse);
-          // Use weighted selection - prioritizes characters user struggles with
-          const newRomaji = adaptiveSelector.selectWeightedCharacter(
-            selectedRomaji,
-            correctRomajiCharReverse,
-          );
-          adaptiveSelector.markCharacterSeen(newRomaji);
-          setCorrectRomajiCharReverse(newRomaji);
+          isPronunciationPendingRef.current = true;
+          void handleCorrectAnswer(correctRomajiCharReverse).then(() => {
+            // Use weighted selection - prioritizes characters user struggles with
+            const newRomaji = adaptiveSelector.selectWeightedCharacter(
+              selectedRomaji,
+              correctRomajiCharReverse,
+            );
+            adaptiveSelector.markCharacterSeen(newRomaji);
+            setCorrectRomajiCharReverse(newRomaji);
+            isPronunciationPendingRef.current = false;
+          });
         } else {
           handleWrongAnswer(selectedChar);
         }

@@ -181,6 +181,7 @@ export const useJapaneseTTS = () => {
 
       return new Promise<void>(resolve => {
         const requestId = ++speakRequestIdRef.current;
+        let synthesisErrorRetries = 0;
 
         const stopCurrentSpeech = () => {
           if (speechSynthesis.speaking || speechSynthesis.pending) {
@@ -318,6 +319,16 @@ export const useJapaneseTTS = () => {
             utterance.onerror = event => {
               if (requestId !== speakRequestIdRef.current) {
                 resolve();
+                return;
+              }
+
+              // Chrome TTS can transiently fail, retry with delay
+              if (
+                event.error === 'synthesis-failed' &&
+                synthesisErrorRetries < 2
+              ) {
+                synthesisErrorRetries++;
+                setTimeout(() => attemptSpeak(0), 200);
                 return;
               }
 

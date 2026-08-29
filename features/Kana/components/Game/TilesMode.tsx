@@ -5,7 +5,11 @@ import clsx from 'clsx';
 import { kana } from '@/features/Kana/data/kana';
 import useKanaStore from '@/features/Kana/store/useKanaStore';
 import { Random } from 'random-js';
-import { useCorrect, useError, useClick } from '@/shared/hooks/generic/useAudio';
+import {
+  useCorrect,
+  useError,
+  useClick,
+} from '@/shared/hooks/generic/useAudio';
 // import GameIntel from '@/shared/ui-composite/Game/GameIntel';
 import { getGlobalAdaptiveSelector } from '@/shared/utils/adaptiveSelection';
 import Stars from '@/shared/ui-composite/Game/Stars';
@@ -25,11 +29,11 @@ import {
   gameContentVariants,
   getAnswerRowClassName,
   getGlassModeClassName,
-
   useTilesModeActionKey,
 } from '@/shared/ui-composite/Game/TilesModeShared';
 import TilesModeGrid from '@/shared/ui-composite/Game/TilesModeGrid';
 import useClassicSessionStore from '@/shared/store/useClassicSessionStore';
+import { useKanaPronunciation } from '@/features/Kana/hooks/useKanaPronunciation';
 
 const random = new Random();
 const adaptiveSelector = getGlobalAdaptiveSelector();
@@ -88,15 +92,23 @@ const KanaTilesMode = ({
     minWordLength: 1,
     maxWordLength: 3,
   });
-  const wordLength = isWordLengthControlled ? externalWordLength : internalWordLength;
+  const wordLength = isWordLengthControlled
+    ? externalWordLength
+    : internalWordLength;
 
-  const { startAnswerTimer, pauseAnswerTimer, getAnswerTimeMs, resetAnswerTimer } =
-    useAnswerTimer();
+  const {
+    startAnswerTimer,
+    pauseAnswerTimer,
+    getAnswerTimeMs,
+    resetAnswerTimer,
+  } = useAnswerTimer();
   const { playCorrect } = useCorrect();
   const { playErrorTwice } = useError();
   const { playClick } = useClick();
   const { trigger: triggerCrazyMode } = useCrazyModeTrigger();
+  const speakKana = useKanaPronunciation();
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const isPronunciationPendingRef = useRef(false);
 
   const stats = useGameStats('kana');
   const { score, setScore } = stats;
@@ -296,6 +308,30 @@ const KanaTilesMode = ({
   // Keyboard shortcut for Enter/Space to trigger button
   useTilesModeActionKey(buttonRef);
 
+  // Handle Continue button (only for correct answers)
+  const handleContinue = useCallback(() => {
+    if (isPronunciationPendingRef.current) return;
+
+    playClick();
+    if (externalIsReverse === undefined) {
+      decideNextReverseMode();
+    }
+    if (!isWordLengthControlled) {
+      decideNextTilesProgression();
+    }
+    externalOnCorrect?.(wordData.wordChars);
+    resetGame();
+  }, [
+    playClick,
+    externalIsReverse,
+    decideNextReverseMode,
+    isWordLengthControlled,
+    decideNextTilesProgression,
+    externalOnCorrect,
+    wordData.wordChars,
+    resetGame,
+  ]);
+
   // Handle Check button
   const handleCheck = useCallback(() => {
     if (placedTileIds.length === 0) return;
@@ -310,7 +346,9 @@ const KanaTilesMode = ({
     let isCorrect = false;
 
     if (placedTileIds.length === wordData.answerChars.length) {
-      const placedArray = placedTileIds.map(id => wordData.allTiles.get(id) ?? '');
+      const placedArray = placedTileIds.map(
+        id => wordData.allTiles.get(id) ?? '',
+      );
       isCorrect = placedArray.every(
         (tile, i) => tile === wordData.answerChars[i],
       );
@@ -356,6 +394,14 @@ const KanaTilesMode = ({
         optionsShown: Array.from(wordData.allTiles.values()),
         extra: { isReverse, wordLength },
       });
+
+      isPronunciationPendingRef.current = true;
+      void speakKana(
+        (isReverse ? wordData.answerChars : wordData.wordChars).join(''),
+      ).then(didSpeak => {
+        isPronunciationPendingRef.current = false;
+        if (didSpeak) handleContinue();
+      });
     } else {
       resetAnswerTimer();
       playErrorTwice();
@@ -363,7 +409,9 @@ const KanaTilesMode = ({
       incrementWrongStreak();
       incrementWrongAnswers();
 
-      const placedArray = placedTileIds.map(id => wordData.allTiles.get(id) ?? '');
+      const placedArray = placedTileIds.map(
+        id => wordData.allTiles.get(id) ?? '',
+      );
       wordData.wordChars.forEach((char, index) => {
         incrementCharacterScore(char, 'wrong');
         adaptiveSelector.updateCharacterWeight(
@@ -435,28 +483,8 @@ const KanaTilesMode = ({
     pauseAnswerTimer,
     getAnswerTimeMs,
     resetAnswerTimer,
-  ]);
-
-  // Handle Continue button (only for correct answers)
-  const handleContinue = useCallback(() => {
-    playClick();
-    if (externalIsReverse === undefined) {
-      decideNextReverseMode();
-    }
-    if (!isWordLengthControlled) {
-      decideNextTilesProgression();
-    }
-    externalOnCorrect?.(wordData.wordChars);
-    resetGame();
-  }, [
-    playClick,
-    externalIsReverse,
-    decideNextReverseMode,
-    isWordLengthControlled,
-    decideNextTilesProgression,
-    externalOnCorrect,
-    wordData.wordChars,
-    resetGame,
+    speakKana,
+    handleContinue,
   ]);
 
   // Not enough characters for tiles mode
@@ -490,12 +518,12 @@ const KanaTilesMode = ({
           )}
         >
           {/* Word Display */}
-            <div
-              className={getGlassModeClassName(
-                'flex flex-row items-center gap-1',
-                isGlassMode,
-              )}
-            >
+          <div
+            className={getGlassModeClassName(
+              'flex flex-row items-center gap-1',
+              isGlassMode,
+            )}
+          >
             <motion.p
               className={clsx(
                 'sm:text-8xl',
@@ -550,4 +578,3 @@ const KanaTilesMode = ({
 };
 
 export default KanaTilesMode;
-

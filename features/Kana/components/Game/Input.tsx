@@ -4,7 +4,11 @@ import { kana } from '@/features/Kana/data/kana';
 import useKanaStore from '@/features/Kana/store/useKanaStore';
 import { motion } from 'framer-motion';
 import clsx from 'clsx';
-import { useClick, useCorrect, useError } from '@/shared/hooks/generic/useAudio';
+import {
+  useClick,
+  useCorrect,
+  useError,
+} from '@/shared/hooks/generic/useAudio';
 // import GameIntel from '@/shared/ui-composite/Game/GameIntel';
 import { useStatsStore } from '@/features/Progress';
 import { useShallow } from 'zustand/react/shallow';
@@ -19,6 +23,7 @@ import { useAdaptiveTargetLength } from '@/shared/hooks/game/useAdaptiveTargetLe
 import { useThemePreferences } from '@/features/Preferences';
 import { cn } from '@/shared/utils/utils';
 import { shouldSuppressContinueKeyboardShortcut } from '@/shared/utils/game/continueShortcutGuard';
+import { useKanaPronunciation } from '@/features/Kana/hooks/useKanaPronunciation';
 
 // Get the global adaptive selector for weighted character selection
 const adaptiveSelector = getGlobalAdaptiveSelector();
@@ -85,10 +90,12 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
   const { playCorrect } = useCorrect();
   const { playErrorTwice } = useError();
   const { trigger: triggerCrazyMode } = useCrazyModeTrigger();
+  const speakKana = useKanaPronunciation();
 
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const justAnsweredRef = useRef(false);
+  const isPronunciationPendingRef = useRef(false);
   const {
     targetLength,
     recordCorrect: recordTargetLengthCorrect,
@@ -141,7 +148,12 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
   const buildTargetPair = useCallback(() => {
     const sourceArray = isReverse ? selectedRomaji : selectedKana;
     if (sourceArray.length === 0) {
-      return { correctChar: '', targetChar: '', promptParts: [], answerParts: [] };
+      return {
+        correctChar: '',
+        targetChar: '',
+        promptParts: [],
+        answerParts: [],
+      };
     }
 
     const used = new Set<string>();
@@ -180,13 +192,17 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
   const answerParts = pairData.answerParts;
   const pauseTimer = useCallback(() => {
     if (answerStartTimeRef.current !== null) {
-      elapsedTimeMsRef.current += performance.now() - answerStartTimeRef.current;
+      elapsedTimeMsRef.current +=
+        performance.now() - answerStartTimeRef.current;
       answerStartTimeRef.current = null;
     }
   }, []);
   const getElapsedTimeMs = useCallback(() => {
     if (answerStartTimeRef.current !== null) {
-      return elapsedTimeMsRef.current + (performance.now() - answerStartTimeRef.current);
+      return (
+        elapsedTimeMsRef.current +
+        (performance.now() - answerStartTimeRef.current)
+      );
     }
     return elapsedTimeMsRef.current;
   }, []);
@@ -220,10 +236,7 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
       const isSpace = event.code === 'Space' || event.key === ' ';
       const isContinueShortcut = isEnter || isSpace;
 
-      if (
-        isContinueShortcut &&
-        shouldSuppressContinueKeyboardShortcut()
-      ) {
+      if (isContinueShortcut && shouldSuppressContinueKeyboardShortcut()) {
         event.preventDefault();
         return;
       }
@@ -331,6 +344,14 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
       timeTakenMs: answerTimeMs,
       extra: { isReverse },
     });
+
+    isPronunciationPendingRef.current = true;
+    void speakKana((isReverse ? answerParts : promptParts).join('')).then(
+      didSpeak => {
+        isPronunciationPendingRef.current = false;
+        if (didSpeak) handleContinue();
+      },
+    );
   };
 
   const handleWrongAnswer = (wrongInput: string) => {
@@ -374,6 +395,8 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
   };
 
   const handleContinue = useCallback(() => {
+    if (isPronunciationPendingRef.current) return;
+
     playClick();
     setInputValue('');
     generateNewCharacter();
@@ -476,4 +499,3 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
 };
 
 export default InputGame;
-
