@@ -937,7 +937,9 @@
     "mainColor": "oklch(65.0% 0.180 350.0 / 1)",
     "secondaryColor": "oklch(72.0% 0.145 130.0 / 1)",
     "issued": false,
-    "completed": false
+    "completed": false,
+    "completedBy": "NithishMR",
+    "completedPR": 29399
   },
   {
     "id": "shinto-portal",
@@ -1547,7 +1549,9 @@
     "mainColor": "oklch(80.0% 0.170 45.0 / 1)",
     "secondaryColor": "oklch(78.0% 0.095 140.0 / 1)",
     "issued": false,
-    "completed": false
+    "completed": false,
+    "completedBy": "MdAamirG",
+    "completedPR": 29231
   },
   {
     "id": "soba-slate",
