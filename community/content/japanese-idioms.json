@@ -154,5 +154,15 @@
   "romaji": "Nen ni wa nen o ireru",
   "english": "Add caution to caution",
   "meaning": "Take extra care. (Set 6)"
+    "japanese": "手を抜く",
+    "romaji": "Te o nuku",
+    "english": "Cut corners",
+    "meaning": "Do less than one should. (Set 4)"
+  },
+  {
+    "japanese": "腰が重い",
+    "romaji": "Koshi ga omoi",
+    "english": "Heavy hips",
+    "meaning": "Slow to start doing something. (Set 6)"
   }
 ]

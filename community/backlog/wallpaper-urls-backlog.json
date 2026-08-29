@@ -27,6 +27,8 @@
     "id": 5,
     "url": "https://static.backgrounds.example.com/panoramas/autumn-temple-garden-3440x1440.png",
     "issued": false,
-    "completed": false
+    "completed": false,
+    "completedBy": "ArthurGeraldo",
+    "completedPR": 29230
   }
 ]

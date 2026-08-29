@@ -1,7 +1,9 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import StreakMilestoneOverlay from '@/shared/ui-composite/Game/StreakMilestoneOverlay';
+import StreakMilestoneOverlay, {
+  STREAK_MILESTONE_DONATION_EVENT,
+} from '@/shared/ui-composite/Game/StreakMilestoneOverlay';
 
 const playClick = vi.fn();
 
@@ -41,6 +43,25 @@ afterEach(() => {
 });
 
 describe('StreakMilestoneOverlay keyboard handling', () => {
+  it('requests the donation modal whenever a milestone opens', () => {
+    const showDonationModal = vi.fn();
+    window.addEventListener(
+      STREAK_MILESTONE_DONATION_EVENT,
+      showDonationModal,
+    );
+
+    const { rerender } = render(
+      <StreakMilestoneOverlay milestone={10} onDismiss={vi.fn()} />,
+    );
+    rerender(<StreakMilestoneOverlay milestone={25} onDismiss={vi.fn()} />);
+
+    expect(showDonationModal).toHaveBeenCalledTimes(2);
+    window.removeEventListener(
+      STREAK_MILESTONE_DONATION_EVENT,
+      showDonationModal,
+    );
+  });
+
   it('focuses Skip when the milestone opens', () => {
     render(<StreakMilestoneOverlay milestone={10} onDismiss={vi.fn()} />);
 
@@ -77,6 +98,19 @@ describe('StreakMilestoneOverlay keyboard handling', () => {
     fireEvent.keyDown(document.body, { key: 'Enter', repeat: true });
 
     expect(onDismiss).not.toHaveBeenCalled();
+  });
+
+  it('leaves donation modal keyboard actions alone', () => {
+    const onDismiss = vi.fn();
+    const donationModal = document.createElement('div');
+    donationModal.dataset.donationModal = '';
+    document.body.appendChild(donationModal);
+
+    render(<StreakMilestoneOverlay milestone={10} onDismiss={onDismiss} />);
+    fireEvent.keyDown(donationModal, { key: 'Enter' });
+
+    expect(onDismiss).not.toHaveBeenCalled();
+    donationModal.remove();
   });
 
   it('removes shortcut listeners when the milestone closes', () => {

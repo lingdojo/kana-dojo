@@ -14,6 +14,8 @@ import { suppressContinueKeyboardShortcuts } from '@/shared/utils/game/continueS
 import { ENABLE_EVERY_QUESTION_AD_OVERLAY } from '@/shared/utils/game/streakMilestones';
 
 const STREAK_MILESTONE_AD_SLOT = '2642983933';
+export const STREAK_MILESTONE_DONATION_EVENT =
+  'kana-dojo:streak-milestone-donation';
 const ENABLE_STREAK_MILESTONE_DECORATIONS = true;
 // Let Enter/Space dismiss the overlay so type-mode keyboard users don't
 // accidentally trigger the underlying "next" control (#27829).
@@ -90,6 +92,8 @@ export default function StreakMilestoneOverlay({
   useEffect(() => {
     if (!milestone) return;
 
+    window.dispatchEvent(new Event(STREAK_MILESTONE_DONATION_EVENT));
+
     // Move keyboard focus to Skip so Enter targets this dialog, not the
     // type-mode "next" button still mounted underneath.
     skipButtonRef.current?.focus();
@@ -109,6 +113,7 @@ export default function StreakMilestoneOverlay({
 
     const handleKeyDown = (event: KeyboardEvent) => {
       if (!isSkipShortcut(event)) return;
+      if (document.querySelector('[data-donation-modal]')) return;
 
       absorbShortcut(event);
       if (event.repeat) return;
