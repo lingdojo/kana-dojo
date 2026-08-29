@@ -19,6 +19,9 @@ interface PreferencesState {
   silentMode: boolean;
   setSilentMode: (silent: boolean) => void;
 
+  animeSoundsEnabled: boolean;
+  setAnimeSoundsEnabled: (enabled: boolean) => void;
+
   hotkeysOn: boolean;
   setHotkeys: (hotkeys: boolean) => void;
 
@@ -77,6 +80,8 @@ const usePreferencesStore = create<PreferencesState>()(
       setFont: fontName => set({ font: fontName }),
       silentMode: false,
       setSilentMode: silent => set({ silentMode: silent }),
+      animeSoundsEnabled: false,
+      setAnimeSoundsEnabled: enabled => set({ animeSoundsEnabled: enabled }),
       hotkeysOn: true,
       setHotkeys: hotkeys => set({ hotkeysOn: hotkeys }),
 
