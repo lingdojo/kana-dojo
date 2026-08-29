@@ -165,6 +165,17 @@ const getAudioUrl = (basePath: string, hasOpus: boolean = true): string => {
 const CORRECT_SOUND_BASE = '/sounds/correct';
 const ERROR_SOUND_BASE = '/sounds/error/error1/error1_1';
 const LONG_SOUND_BASE = '/sounds/long';
+
+const ANIME_CORRECT_SOUNDS = [
+  '/sounds/anime/sugoi',
+  '/sounds/anime/nakama'
+];
+
+const ANIME_ERROR_SOUNDS = [
+  '/sounds/anime/ganbare',
+  '/sounds/anime/baka'
+];
+
 const LONG_LOOP_VOLUME = 0.12;
 const LOOP_AUDIO_RELEASE_DELAY_MS = 2 * 60 * 1000;
 
@@ -179,6 +190,8 @@ let longPool: ReturnType<typeof createAudioPool> | null = null;
 let longLoopAudio: HTMLAudioElement | null = null;
 let longLoopReleaseTimer: ReturnType<typeof setTimeout> | null = null;
 const clickPools = new Map<string, ReturnType<typeof createAudioPool>>();
+const animeCorrectPools = new Map<string, ReturnType<typeof createAudioPool>>();
+const animeErrorPools = new Map<string, ReturnType<typeof createAudioPool>>();
 
 const getCorrectPool = () => {
   if (!correctPool) {
@@ -252,6 +265,22 @@ const getClickPool = (baseUrl: string) => {
   return pool;
 };
 
+const playRandomAnimeSound = (
+  pools: Map<string, ReturnType<typeof createAudioPool>>,
+  soundBases: string[],
+  volume: number = 0.7
+) => {
+  const index = Math.floor(Math.random() * soundBases.length);
+  const baseUrl = soundBases[index];
+  let pool = pools.get(baseUrl);
+  if (!pool) {
+    const url = getAudioUrl(baseUrl);
+    pool = createAudioPool(url, volume);
+    pools.set(baseUrl, pool);
+  }
+  pool.play();
+};
+
 // =============================================================================
 // Preload Function for Critical Sounds (Issue #5 - bonus)
 // =============================================================================
@@ -310,33 +339,46 @@ export const useClick = () => {
 };
 
 export const useCorrect = () => {
-  const { silentMode } = useAudioPreferences();
+  const { silentMode, animeSoundsEnabled } = useAudioPreferences();
 
   const playCorrect = useCallback(() => {
     if (silentMode) return;
-    getCorrectPool().play();
-  }, [silentMode]);
+    if (animeSoundsEnabled) {
+      playRandomAnimeSound(animeCorrectPools, ANIME_CORRECT_SOUNDS, 0.7);
+    } else {
+      getCorrectPool().play();
+    }
+  }, [silentMode, animeSoundsEnabled]);
 
   return { playCorrect };
 };
 
 export const useError = () => {
-  const { silentMode } = useAudioPreferences();
+  const { silentMode, animeSoundsEnabled } = useAudioPreferences();
 
   const playError = useCallback(() => {
     if (silentMode) return;
-    getErrorPool().play();
-  }, [silentMode]);
+    if (animeSoundsEnabled) {
+      playRandomAnimeSound(animeErrorPools, ANIME_ERROR_SOUNDS, 1);
+    } else {
+      getErrorPool().play();
+    }
+  }, [silentMode, animeSoundsEnabled]);
 
   // Issue #4: Audio pooling - Web Audio API naturally supports overlapping sounds
   const playErrorTwice = useCallback(() => {
     if (silentMode) return;
 
-    const pool = getErrorPool();
-    pool.play();
-    // Second play after 90ms - Web Audio API handles overlap naturally
-    setTimeout(() => pool.play(), 90);
-  }, [silentMode]);
+    if (animeSoundsEnabled) {
+      playRandomAnimeSound(animeErrorPools, ANIME_ERROR_SOUNDS, 1);
+      setTimeout(() => playRandomAnimeSound(animeErrorPools, ANIME_ERROR_SOUNDS, 1), 90);
+    } else {
+      const pool = getErrorPool();
+      pool.play();
+      // Second play after 90ms - Web Audio API handles overlap naturally
+      setTimeout(() => pool.play(), 90);
+    }
+  }, [silentMode, animeSoundsEnabled]);
 
   return {
     playError,
