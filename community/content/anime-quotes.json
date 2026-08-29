@@ -1,5 +1,12 @@
 [
   {
+    "japanese": "人の夢は終わらねぇ！",
+    "romaji": "Hito no yume wa owaranee!",
+    "english": "A man's dream never ends!",
+    "anime": "One Piece",
+    "character": "Marshall D. Teach (Blackbeard)"
+  },
+  {
     "japanese": "レロレロレロレロ",
     "romaji": "Rero rero rero rero",
     "english": "Lero lero lero lero. (alt wording 27)",
@@ -378,45 +385,52 @@
     "character": "Shin"
   },
   {
-  "japanese": "ほう…向かってくるのか",
-  "romaji": "Ho... mukatte kuru no ka",
-  "english": "Oh? You're approaching me? (alt wording 3)",
-  "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
-  "character": "DIO"
+    "japanese": "ほう…向かってくるのか",
+    "romaji": "Ho... mukatte kuru no ka",
+    "english": "Oh? You're approaching me? (alt wording 3)",
+    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+    "character": "DIO"
   },
   {
-  "japanese": "フォッフォッフォッ",
-  "romaji": "Fo fo fo fo",
-  "english": "Fosh fosh fosh fosh. (alt wording 28)",
-  "anime": "One Piece",
-  "character": "Kozuki Sukiyaki"
+    "japanese": "フォッフォッフォッ",
+    "romaji": "Fo fo fo fo",
+    "english": "Fosh fosh fosh fosh. (alt wording 28)",
+    "anime": "One Piece",
+    "character": "Kozuki Sukiyaki"
+  },
+  {
+    "japanese": "オラに元気を分けてくれ!",
+    "romaji": "Ora ni genki o wakete kure!",
+    "english": "Lend me your energy!",
+    "anime": "Dragon Ball Z",
+    "character": "Son Goku"
+  },
+  {
+    "japanese": "レロレロレロレロ",
+    "romaji": "Rero rero rero rero",
+    "english": "Lero lero lero lero. (alt wording 27) (alt wording 79)",
+    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+    "character": "Noriaki Kakyoin"
+  },
+  {
+    "japanese": "守るものがある限り、俺は負けない",
+    "romaji": "Mamoru mono ga aru kagiri, ore wa makenai",
+    "english": "As long as I have something to protect, I won't lose.",
+    "anime": "Bleach",
+    "character": "Ichigo Kurosaki"
+  },
+  {
+    "japanese": "逃げるのも勇気だぞ",
+    "romaji": "Nigeru no mo yuuki da zo",
+    "english": "Running away can take courage too. (alt wording 51)",
+    "anime": "Mob Psycho 100",
+    "character": "Arataka Reigen"
   },
  {
-  "japanese": "オラに元気を分けてくれ!",
-  "romaji": "Ora ni genki o wakete kure!",
-  "english": "Lend me your energy!",
-  "anime": "Dragon Ball Z",
-  "character": "Son Goku"
- },
- {
-  "japanese": "レロレロレロレロ",
-  "romaji": "Rero rero rero rero",
-  "english": "Lero lero lero lero. (alt wording 27) (alt wording 79)",
-  "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
-  "character": "Noriaki Kakyoin"
-},
-  {
-  "japanese": "守るものがある限り、俺は負けない",
-  "romaji": "Mamoru mono ga aru kagiri, ore wa makenai",
-  "english": "As long as I have something to protect, I won't lose.",
-  "anime": "Bleach",
-  "character": "Ichigo Kurosaki"
-},
-{
-  "japanese": "逃げるのも勇気だぞ",
-  "romaji": "Nigeru no mo yuuki da zo",
-  "english": "Running away can take courage too. (alt wording 51)",
-  "anime": "Mob Psycho 100",
-  "character": "Arataka Reigen"
+  "japanese": "おれは人間を超越する！",
+  "romaji": "Ore wa ningen o chouetsu suru!",
+  "english": "I will transcend humanity! (alt wording 14)",
+  "anime": "JoJo's Bizarre Adventure: Battle Tendency",
+  "character": "Kars"
 }
 ]

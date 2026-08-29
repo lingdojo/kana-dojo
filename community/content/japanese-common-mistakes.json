@@ -138,5 +138,10 @@
   "wrong": "宿題を忘れないよう、メモします。",
   "correct": "宿題を忘れないように、メモします。",
   "explanation": "Use ように for purpose/prevention. (Pattern set 1)"
-}
+},
+  {
+    "wrong": "日本語が好きをです。",
+    "correct": "日本語が好きです。",
+    "explanation": "好き takes が, not を. (Pattern set 3)"
+  }
 ]

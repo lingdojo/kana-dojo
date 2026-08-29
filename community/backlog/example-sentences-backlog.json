@@ -357,7 +357,9 @@
     "jlpt": "N2",
     "id": 40,
     "issued": false,
-    "completed": false
+    "completed": false,
+    "completedBy": "Neelesh3",
+    "completedPR": 29389
   },
   {
     "japanese": "日本語を勉強し始めて三か月です。",
