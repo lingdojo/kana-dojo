@@ -133,5 +133,14 @@
     "season": "Summer",
     "kigo": "Morning glory (asagao)",
     "notes": "Famous for gentle empathy toward nature."
-  }
+  },
+  {
+  "japanese": "柿くへば\n鐘が鳴るなり\n法隆寺",
+  "romaji": "Kaki kueba / kane ga naru nari / Horyuji",
+  "english": "Biting a persimmon, the bell tolls at Horyu-ji.",
+  "poet": "Masaoka Shiki",
+  "season": "Autumn",
+  "kigo": "Persimmon (kaki)",
+  "notes": "A modern-classic haiku blending everyday life with temple atmosphere."
+}
 ]
