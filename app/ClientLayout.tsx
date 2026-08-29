@@ -31,6 +31,7 @@ import VisualEffectsRenderer from '@/features/Preferences/components/renderers/V
 import TransitionAdvertisementOverlay, {
   isTransitionAdvertisementEnabled,
 } from '@/shared/ui-composite/Game/TransitionAdvertisementOverlay';
+import { STREAK_MILESTONE_DONATION_EVENT } from '@/shared/ui-composite/Game/StreakMilestoneOverlay';
 
 // Initialize adaptive selector early to load persisted weights from IndexedDB
 // This runs once at module load time, ensuring weights are ready before games start
@@ -114,6 +115,22 @@ export default function ClientLayout({
 
   const pathname = usePathname();
   const previousPathnameRef = useRef<string | null>(null);
+
+  useEffect(() => {
+    const showDonationModal = () => setIsDonationModalOpen(true);
+
+    window.addEventListener(
+      STREAK_MILESTONE_DONATION_EVENT,
+      showDonationModal,
+    );
+
+    return () => {
+      window.removeEventListener(
+        STREAK_MILESTONE_DONATION_EVENT,
+        showDonationModal,
+      );
+    };
+  }, []);
 
   useEffect(() => {
     const previousPathname = previousPathnameRef.current;

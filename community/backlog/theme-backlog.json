@@ -547,9 +547,7 @@
     "mainColor": "oklch(68.0% 0.175 30.0 / 1)",
     "secondaryColor": "oklch(78.0% 0.125 45.0 / 1)",
     "issued": false,
-    "completed": false,
-    "completedBy": "digvijaysai29",
-    "completedPR": 29188
+    "completed": false
   },
   {
     "id": "izakaya-warm",
@@ -629,9 +627,7 @@
     "mainColor": "oklch(68.0% 0.125 65.0 / 1)",
     "secondaryColor": "oklch(72.0% 0.155 145.0 / 1)",
     "issued": false,
-    "completed": false,
-    "completedBy": "JoseeBarragan",
-    "completedPR": 29098
+    "completed": false
   },
   {
     "id": "soda-float",
@@ -941,7 +937,9 @@
     "mainColor": "oklch(65.0% 0.180 350.0 / 1)",
     "secondaryColor": "oklch(72.0% 0.145 130.0 / 1)",
     "issued": false,
-    "completed": false
+    "completed": false,
+    "completedBy": "NithishMR",
+    "completedPR": 29399
   },
   {
     "id": "shinto-portal",
@@ -1131,9 +1129,7 @@
     "mainColor": "oklch(88.0% 0.020 240.0 / 1)",
     "secondaryColor": "oklch(68.0% 0.110 310.0 / 1)",
     "issued": false,
-    "completed": false,
-    "completedBy": "AndwSX",
-    "completedPR": 29220
+    "completed": false
   },
   {
     "id": "golden-kintsugi",
@@ -1303,9 +1299,7 @@
     "mainColor": "oklch(78.0% 0.220 330.0 / 1)",
     "secondaryColor": "oklch(85.0% 0.175 190.0 / 1)",
     "issued": false,
-    "completed": false,
-    "completedBy": "dhananjaya-hbc",
-    "completedPR": 29149
+    "completed": false
   },
   {
     "id": "ginger-koi",
@@ -1455,9 +1449,7 @@
     "mainColor": "oklch(78.0% 0.085 195.0 / 1)",
     "secondaryColor": "oklch(65.0% 0.045 230.0 / 1)",
     "issued": false,
-    "completed": false,
-    "completedBy": "seifelboghdady",
-    "completedPR": 29127
+    "completed": false
   },
   {
     "id": "peach-mochi",
@@ -1557,7 +1549,9 @@
     "mainColor": "oklch(80.0% 0.170 45.0 / 1)",
     "secondaryColor": "oklch(78.0% 0.095 140.0 / 1)",
     "issued": false,
-    "completed": false
+    "completed": false,
+    "completedBy": "MdAamirG",
+    "completedPR": 29231
   },
   {
     "id": "soba-slate",

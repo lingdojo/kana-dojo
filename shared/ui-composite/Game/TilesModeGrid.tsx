@@ -102,13 +102,17 @@ const ExplodingAnswerTile = memo(
     const getAnimationStyle = (): React.CSSProperties => {
       switch (animState) {
         case 'exploding':
-          return { animation: 'explode 300ms ease-out forwards' };
+          return {
+            animation: 'tiles-mode-explode 300ms ease-out forwards',
+          };
         case 'hidden':
           return { opacity: 0 };
         case 'fading-in':
-          return { animation: `fadeIn ${EXPLOSION_FADE_IN_DURATION_MS}ms ease-in forwards` };
+          return {
+            animation: `tiles-mode-fade-in ${EXPLOSION_FADE_IN_DURATION_MS}ms ease-in forwards`,
+          };
         default:
-          return {};
+          return isCelebrating ? { opacity: 1 } : {};
       }
     };
 
@@ -276,4 +280,3 @@ const TilesModeGrid = ({
 };
 
 export default TilesModeGrid;
-
