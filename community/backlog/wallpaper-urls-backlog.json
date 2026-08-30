@@ -9,7 +9,9 @@
     "id": 2,
     "url": "https://images.samplehost.net/wallpapers/misty-kyoto-street-2560x1440.webp",
     "issued": false,
-    "completed": false
+    "completed": false,
+    "completedBy": "damlakuru55",
+    "completedPR": 29467
   },
   {
     "id": 3,
@@ -27,8 +29,6 @@
     "id": 5,
     "url": "https://static.backgrounds.example.com/panoramas/autumn-temple-garden-3440x1440.png",
     "issued": false,
-    "completed": false,
-    "completedBy": "ArthurGeraldo",
-    "completedPR": 29230
+    "completed": false
   }
 ]

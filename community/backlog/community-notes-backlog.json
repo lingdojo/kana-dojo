@@ -29,7 +29,9 @@
     "position": "top",
     "text": "_Community note: this markdown file is safe for tiny redundant edits._",
     "issued": false,
-    "completed": false
+    "completed": false,
+    "completedBy": "johndavidagaba",
+    "completedPR": 29456
   },
   {
     "id": 5,

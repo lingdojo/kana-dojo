@@ -143,5 +143,10 @@
     "wrong": "日本語が好きをです。",
     "correct": "日本語が好きです。",
     "explanation": "好き takes が, not を. (Pattern set 3)"
+  },
+  {
+    "wrong": "図書館に本を借りました。",
+    "correct": "図書館で本を借りました。",
+    "explanation": "で marks location of action. (Pattern set 4)"
   }
 ]

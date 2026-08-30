@@ -1,5 +1,21 @@
 [
   {
+    "version": "0.1.19",
+    "date": "August 30, 2026",
+    "changes": [
+      "Added keyboard-powered tile selection for Kana, Kanji, and Vocabulary training, with smart prefix matching and recovery from mistyped input",
+      "Streamlined Continue Learning and custom practice flows so training sessions are faster to resume",
+      "Added an experimental game modes preference and improved training controls across Classic, Blitz, and Gauntlet",
+      "Improved Kana input with alternative romanizations, whitespace-separated answers, Unicode normalization, and better multi-character support",
+      "Improved Kanji and Vocabulary answer matching with corrected readings, meanings, spellings, and optional English prefixes",
+      "Made progress tracking more responsive with live Kana mastery updates and better-balanced mastery targets",
+      "Improved game reliability by preventing rapid double advances, restoring milestone shortcuts, and keeping multiple-choice questions interactive after mistakes",
+      "Improved menus, selectors, sidebars, training bars, and mobile layouts for smoother navigation",
+      "Added new themes and premium mountain wallpapers",
+      "Improved translation reliability and fixed PWA installation and audio playback issues"
+    ]
+  },
+  {
     "version": "0.1.18",
     "date": "May 27, 2026",
     "changes": [

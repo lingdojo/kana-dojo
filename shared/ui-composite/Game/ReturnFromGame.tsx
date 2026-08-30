@@ -121,7 +121,9 @@ const Return = ({ isHidden, gameMode, onQuit }: ReturnProps) => {
   useEffect(() => {
     if (isHidden) return;
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') buttonRef.current?.click();
+      if (!e.defaultPrevented && e.key === 'Escape') {
+        buttonRef.current?.click();
+      }
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);

@@ -218,6 +218,7 @@ export const useTilesModeActionKey = (
 ) => {
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.defaultPrevented) return;
       if (
         event.key === 'Enter' ||
         event.code === 'Space' ||
