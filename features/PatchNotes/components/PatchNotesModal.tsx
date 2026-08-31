@@ -130,6 +130,7 @@ export default function PatchNotesModal({
           <div
             ref={scrollRef}
             onScroll={handleScroll}
+            data-scroll-restoration-id='container'
             className='flex-1 overflow-y-auto px-6 py-6'
           >
             <div className='space-y-8'>

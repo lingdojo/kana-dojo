@@ -4,12 +4,14 @@ import useSessionScrollRestoration from '@/shared/hooks/generic/useSessionScroll
 
 interface TestScrollerProps {
   enabled: boolean;
+  mounted?: boolean;
   ready?: boolean;
   storageKey?: string;
 }
 
 function TestScroller({
   enabled,
+  mounted = true,
   ready = true,
   storageKey = 'test-scroll',
 }: TestScrollerProps) {
@@ -18,7 +20,7 @@ function TestScroller({
     ready,
   });
 
-  if (!enabled) return null;
+  if (!enabled || !mounted) return null;
 
   return <div data-testid='scroller' ref={scrollRef} onScroll={handleScroll} />;
 }
@@ -46,12 +48,8 @@ describe('useSessionScrollRestoration', () => {
     sessionStorage.setItem('first-scroll', '120');
     sessionStorage.setItem('second-scroll', '360');
 
-    const first = render(
-      <TestScroller enabled storageKey='first-scroll' />,
-    );
-    const second = render(
-      <TestScroller enabled storageKey='second-scroll' />,
-    );
+    const first = render(<TestScroller enabled storageKey='first-scroll' />);
+    const second = render(<TestScroller enabled storageKey='second-scroll' />);
 
     expect(first.container.querySelector('div')?.scrollTop).toBe(120);
     expect(second.container.querySelector('div')?.scrollTop).toBe(360);
@@ -65,6 +63,15 @@ describe('useSessionScrollRestoration', () => {
 
     view.rerender(<TestScroller enabled ready />);
     expect(view.getByTestId('scroller').scrollTop).toBe(480);
+  });
+
+  it('restores when a portal mounts after the parent layout effect', () => {
+    sessionStorage.setItem('test-scroll', '320');
+    const view = render(<TestScroller enabled mounted={false} />);
+
+    view.rerender(<TestScroller enabled mounted />);
+
+    expect(view.getByTestId('scroller').scrollTop).toBe(320);
   });
 
   it('falls back to the top for an invalid stored position', () => {

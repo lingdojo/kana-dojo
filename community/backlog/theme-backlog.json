@@ -1119,7 +1119,9 @@
     "mainColor": "oklch(55.0% 0.035 250.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.015 90.0 / 1)",
     "issued": false,
-    "completed": false
+    "completed": false,
+    "completedBy": "Gambit-Checkmate",
+    "completedPR": 29522
   },
   {
     "id": "winter-kimono",
