@@ -3,6 +3,7 @@
 <br/>
 <br/>
 <a href="https://vercel.com/oss">
+[![GetMerged Scorecard](https://getmerged.abhishekco.de/api/badge/lingdojo/kana-dojo)](https://getmerged.abhishekco.de/lingdojo/kana-dojo)
   <img alt="Vercel OSS Program" src="https://vercel.com/oss/program-badge-2026.svg" />
 </a>
 <br/>
