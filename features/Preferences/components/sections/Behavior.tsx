@@ -1,13 +1,18 @@
 'use client';
 import usePreferencesStore from '@/features/Preferences/store/usePreferencesStore';
 import { useClick } from '@/shared/hooks/generic/useAudio';
-import { AudioLines, VolumeX, Volume2 } from 'lucide-react';
+import { AudioLines, Ellipsis, Settings2, VolumeX, Volume2 } from 'lucide-react';
 import { useJapaneseTTS } from '@/features/Preferences/hooks/useJapaneseTTS';
 import { ActionButton } from '@/shared/ui/components/ActionButton';
+import CollapsibleSection from '../shared/CollapsibleSection';
 // import{Command, KeyboardOff} from 'lucide-react'
 // import HotkeyReference from './HotkeyReference';
 
-const Behavior = () => {
+interface BehaviorProps {
+  useNewIconDesign?: boolean;
+}
+
+const Behavior = ({ useNewIconDesign = false }: BehaviorProps) => {
   const { playClick } = useClick();
 
   const displayKana = usePreferencesStore(state => state.displayKana);
@@ -58,6 +63,7 @@ const Behavior = () => {
 
   const options = [
     {
+      section: 'core',
       label: 'In the character selection menu, for readings, display:',
       value: displayKana,
       choices: [
@@ -74,6 +80,7 @@ const Behavior = () => {
       ],
     },
     {
+      section: 'core',
       label:
         'Show furigana (reading) above the character/word for kanji/vocabulary:',
       value: furiganaEnabled,
@@ -96,6 +103,7 @@ const Behavior = () => {
       ],
     },
     {
+      section: 'core',
       label: 'Play UI + feedback sound effects:',
       value: silentMode,
       choices: [
@@ -122,6 +130,7 @@ const Behavior = () => {
       ],
     },
     {
+      section: 'other',
       label: 'Enable pronunciation audio:',
       value: pronunciationEnabled,
       choices: [
@@ -148,6 +157,7 @@ const Behavior = () => {
       ],
     },
     {
+      section: 'other',
       label: 'Auto-play pronunciation for new prompts:',
       value: pronunciationAutoPlay,
       choices: [
@@ -174,6 +184,7 @@ const Behavior = () => {
       ],
     },
     {
+      section: 'other',
       label: 'Enable extra game modes (Blitz + Gauntlet):',
       value: showExperimentalModes,
       choices: [
@@ -191,9 +202,10 @@ const Behavior = () => {
     },
   ] as const;
 
-  return (
-    <div className='flex flex-col gap-6'>
-      {options.map(({ label, value, choices }) => (
+  const renderOptions = (section: 'core' | 'other') =>
+    options
+      .filter(option => option.section === section)
+      .map(({ label, value, choices }) => (
         <div key={label} className='flex flex-col gap-2'>
           <h4 className='text-lg'>{label}</h4>
           <div className='flex flex-row gap-6 p-1 md:gap-12'>
@@ -218,7 +230,31 @@ const Behavior = () => {
             })}
           </div>
         </div>
-      ))}
+      ));
+
+  return (
+    <div className='flex flex-col gap-6'>
+      <CollapsibleSection
+        title='Core'
+        icon={<Settings2 size={18} />}
+        useNewIconDesign={useNewIconDesign}
+        level='subsection'
+        defaultOpen={true}
+        storageKey='prefs-behavior-core'
+      >
+        <div className='flex flex-col gap-6'>{renderOptions('core')}</div>
+      </CollapsibleSection>
+
+      <CollapsibleSection
+        title='Other'
+        icon={<Ellipsis size={18} />}
+        useNewIconDesign={useNewIconDesign}
+        level='subsection'
+        defaultOpen={false}
+        storageKey='prefs-behavior-other'
+      >
+        <div className='flex flex-col gap-6'>{renderOptions('other')}</div>
+      </CollapsibleSection>
 
       {/* TTS voice settings (disabled until polished)
       {pronunciationEnabled && ( ... )} */}
