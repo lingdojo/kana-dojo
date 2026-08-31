@@ -153,5 +153,10 @@
   "wrong": "毎日日本語を勉強していますから上手になります。",
   "correct": "毎日日本語を勉強しているので上手になります。",
   "explanation": "ので is smoother/neutral for reason. (Pattern set 6)"
+  },
+  {
+  "wrong": "駅まで十分歩きますかかる。",
+  "correct": "駅まで歩いて十分かかる。",
+  "explanation": "Use natural collocation and order. (Pattern set 5)"
   }
 ]
