@@ -8,7 +8,7 @@
 
 ## Storico Stelle
 
-[![Star History Chart](https://api.star-history.com/svg?repos=lingdojo/kana-dojo&type=date&legend=top-left)](https://www.star-history.com/#lingdojo/kana-dojo&type=date&legend=top-left)
+[![Star History Chart](https://star-history.dera.page/svg?repos=lingdojo/kana-dojo&type=date&legend=top-left)](https://star-history.dera.page/#lingdojo/kana-dojo&type=date&legend=top-left)
 
 **Una piattaforma esteticamente bella e minimalista per padroneggiare il Giapponese ispirata a MonkeyType**
 
