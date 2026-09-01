@@ -259,3 +259,196 @@ describe('isKanaInputAnswerCorrect', () => {
     ).toBe(true); // resolved via legacy fallback: altRomanjiMap.get('し') = ['si']
   });
 });
+
+// ---------------------------------------------------------------------------
+// Normalization regression tests
+// Covers the two transforms introduced in the normalization change:
+//   1. .replace(/[\u200B-\u200D\uFEFF]/g, '')  – strips invisible Unicode chars
+//   2. .normalize('NFKC')                       – maps full-width to ASCII etc.
+// ---------------------------------------------------------------------------
+describe('isKanaInputAnswerCorrect – normalization', () => {
+  // ── Normal (romaji) mode ────────────────────────────────────────────────
+
+  it('accepts plain ASCII romaji (baseline – existing behaviour unchanged)', () => {
+    expect(
+      isKanaInputAnswerCorrect({
+        inputValue: 'ka',
+        correctChar: 'か',
+        targetChar: 'ka',
+        isReverse: false,
+        altRomanjiMap,
+      }),
+    ).toBe(true);
+  });
+
+  it('accepts full-width romaji produced by an IME (NFKC normalisation)', () => {
+    // Ｋ (U+FF2B) Ａ (U+FF21) are full-width Latin letters an IME may emit
+    expect(
+      isKanaInputAnswerCorrect({
+        inputValue: '\uFF4B\uFF41', // ｋａ in full-width
+        correctChar: 'か',
+        targetChar: 'ka',
+        isReverse: false,
+        altRomanjiMap,
+      }),
+    ).toBe(true);
+  });
+
+  it('accepts full-width alternative romaji via the altRomanjiMap (NFKC + alt lookup)', () => {
+    // Full-width 'ｓｉ' should normalise to 'si', which is in the alt map for し
+    expect(
+      isKanaInputAnswerCorrect({
+        inputValue: '\uFF53\uFF49', // ｓｉ
+        correctChar: 'し',
+        targetChar: 'shi',
+        isReverse: false,
+        altRomanjiMap,
+      }),
+    ).toBe(true);
+  });
+
+  it('strips U+200B (zero-width space) from the input', () => {
+    expect(
+      isKanaInputAnswerCorrect({
+        inputValue: 'k\u200Ba',
+        correctChar: 'か',
+        targetChar: 'ka',
+        isReverse: false,
+        altRomanjiMap,
+      }),
+    ).toBe(true);
+  });
+
+  it('strips U+200C (zero-width non-joiner) from the input', () => {
+    expect(
+      isKanaInputAnswerCorrect({
+        inputValue: '\u200Cka',
+        correctChar: 'か',
+        targetChar: 'ka',
+        isReverse: false,
+        altRomanjiMap,
+      }),
+    ).toBe(true);
+  });
+
+  it('strips U+200D (zero-width joiner) from the input', () => {
+    expect(
+      isKanaInputAnswerCorrect({
+        inputValue: 'ka\u200D',
+        correctChar: 'か',
+        targetChar: 'ka',
+        isReverse: false,
+        altRomanjiMap,
+      }),
+    ).toBe(true);
+  });
+
+  it('strips U+FEFF (BOM / zero-width no-break space) from the input', () => {
+    expect(
+      isKanaInputAnswerCorrect({
+        inputValue: '\uFEFFka',
+        correctChar: 'か',
+        targetChar: 'ka',
+        isReverse: false,
+        altRomanjiMap,
+      }),
+    ).toBe(true);
+  });
+
+  it('strips multiple invisible characters scattered through the input', () => {
+    // U+200B before, U+200D in middle, U+FEFF after
+    expect(
+      isKanaInputAnswerCorrect({
+        inputValue: '\u200Bs\u200Di\u200B',
+        correctChar: 'し',
+        targetChar: 'shi',
+        isReverse: false,
+        altRomanjiMap,
+      }),
+    ).toBe(true); // 'si' resolves via alt map
+  });
+
+  it('returns false when input is only invisible characters (empty after stripping)', () => {
+    expect(
+      isKanaInputAnswerCorrect({
+        inputValue: '\u200B\u200C\u200D\uFEFF',
+        correctChar: 'か',
+        targetChar: 'ka',
+        isReverse: false,
+        altRomanjiMap,
+      }),
+    ).toBe(false);
+  });
+
+  it('combines leading/trailing whitespace trimming with invisible-char stripping', () => {
+    expect(
+      isKanaInputAnswerCorrect({
+        inputValue: '  \uFEFFka\u200B  ',
+        correctChar: 'か',
+        targetChar: 'ka',
+        isReverse: false,
+        altRomanjiMap,
+      }),
+    ).toBe(true);
+  });
+
+  // ── Reverse mode ───────────────────────────────────────────────────────
+
+  it('strips invisible characters in reverse mode (kana input)', () => {
+    // User typed し with a leading BOM (clipboard paste artefact)
+    expect(
+      isKanaInputAnswerCorrect({
+        inputValue: '\uFEFFし',
+        correctChar: 'shi',
+        targetChar: 'し',
+        isReverse: true,
+        altRomanjiMap,
+      }),
+    ).toBe(true);
+  });
+
+  it('normalises full-width kana input in reverse mode', () => {
+    // Full-width ａ (U+FF41) would not appear in kana reverse mode in practice,
+    // but NFKC is applied uniformly; verify it does not break a correct kana answer.
+    expect(
+      isKanaInputAnswerCorrect({
+        inputValue: '\u200Bし\u200D',
+        correctChar: 'shi',
+        targetChar: 'し',
+        isReverse: true,
+        altRomanjiMap,
+      }),
+    ).toBe(true);
+  });
+
+  // ── Multi-character prompt mode ─────────────────────────────────────────
+
+  it('accepts full-width romaji for a multi-character prompt (NFKC)', () => {
+    // しぶ primary answer 'shibu'; full-width ｓｈｉｂｕ should normalise and match
+    expect(
+      isKanaInputAnswerCorrect({
+        inputValue: '\uFF53\uFF48\uFF49\uFF42\uFF55', // ｓｈｉｂｕ
+        correctChar: 'しぶ',
+        targetChar: 'shibu',
+        isReverse: false,
+        altRomanjiMap,
+        promptParts: ['し', 'ぶ'],
+        answerParts: ['shi', 'bu'],
+      }),
+    ).toBe(true);
+  });
+
+  it('strips invisible characters for a multi-character prompt', () => {
+    expect(
+      isKanaInputAnswerCorrect({
+        inputValue: '\u200Bshi\u200Dbu\uFEFF',
+        correctChar: 'しぶ',
+        targetChar: 'shibu',
+        isReverse: false,
+        altRomanjiMap,
+        promptParts: ['し', 'ぶ'],
+        answerParts: ['shi', 'bu'],
+      }),
+    ).toBe(true);
+  });
+});
