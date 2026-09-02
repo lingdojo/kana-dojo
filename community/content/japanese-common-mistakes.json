@@ -158,5 +158,10 @@
   "wrong": "駅まで十分歩きますかかる。",
   "correct": "駅まで歩いて十分かかる。",
   "explanation": "Use natural collocation and order. (Pattern set 5)"
+  },
+  {
+    "wrong": "私は日本で三年住んでいます。",
+    "correct": "私は日本に三年住んでいます。",
+    "explanation": "Use に to mark the place where someone lives. (Pattern set 6)"
   }
 ]
