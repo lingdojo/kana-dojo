@@ -3,6 +3,10 @@ import clsx from 'clsx';
 import { useState, useEffect, useRef, useMemo, useCallback, memo } from 'react';
 import { kana } from '@/features/Kana/data/kana';
 import useKanaStore from '@/features/Kana/store/useKanaStore';
+import {
+  flattenKanaGroups,
+  type KanaCharacter,
+} from '@/features/Kana/lib/flattenKanaGroup';
 import { Random } from 'random-js';
 import { useCorrect, useError } from '@/shared/hooks/generic/useAudio';
 // import GameIntel from '@/shared/ui-composite/Game/GameIntel';
@@ -133,126 +137,117 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
 
   const isProcessingRef = useRef(false);
 
-  const selectedKana = useMemo(
-    () => kanaGroupIndices.map(i => kana[i].kana).flat(),
-    [kanaGroupIndices],
-  );
-  const selectedRomaji = useMemo(
-    () => kanaGroupIndices.map(i => kana[i].romanji).flat(),
+  const selectedKanaItems = useMemo(
+    () => flattenKanaGroups(kanaGroupIndices),
     [kanaGroupIndices],
   );
 
-  // For normal pick mode
-  const selectedPairs = useMemo<Record<string, string>>(
-    () =>
-      Object.fromEntries(
-        selectedKana.map((key, i) => [key, selectedRomaji[i] ?? '']),
-      ),
-    [selectedKana, selectedRomaji],
+  const allKanaItems = useMemo(
+    () => flattenKanaGroups(kana.map((_, i) => i)),
+    [],
   );
 
-  // For reverse pick mode
-  const selectedPairs1 = useMemo<Record<string, string>>(
-    () =>
-      Object.fromEntries(
-        selectedRomaji.map((key, i) => [key, selectedKana[i] ?? '']),
-      ),
-    [selectedRomaji, selectedKana],
-  );
-  const selectedPairs2 = useMemo<Record<string, string>>(
-    () =>
-      Object.fromEntries(
-        selectedRomaji
-          .map((key, i) => [key, selectedKana[i] ?? ''])
-          .reverse(),
-      ),
-    [selectedRomaji, selectedKana],
-  );
-  const reversedPairs1 = useMemo<Record<string, string>>(
-    () =>
-      Object.fromEntries(
-        Object.entries(selectedPairs1).map(([key, value]) => [value, key]),
-      ),
-    [selectedPairs1],
-  );
-  const reversedPairs2 = useMemo<Record<string, string>>(
-    () =>
-      Object.fromEntries(
-        Object.entries(selectedPairs2).map(([key, value]) => [value, key]),
-      ),
-    [selectedPairs2],
-  );
-
-  // State for normal pick mode - uses weighted selection for adaptive learning
-  const [correctKanaChar, setCorrectKanaChar] = useState(() => {
-    if (selectedKana.length === 0) return '';
-    const selected = adaptiveSelector.selectWeightedCharacter(selectedKana);
-    adaptiveSelector.markCharacterSeen(selected);
-    return selected;
+  // State for active question item using structured KanaCharacter
+  const [currentItem, setCurrentItem] = useState<KanaCharacter | null>(() => {
+    if (selectedKanaItems.length === 0) return null;
+    const selectedKanaList = selectedKanaItems.map(item => item.kana);
+    const selectedKanaChar = adaptiveSelector.selectWeightedCharacter(
+      selectedKanaList,
+    );
+    adaptiveSelector.markCharacterSeen(selectedKanaChar);
+    return (
+      selectedKanaItems.find(item => item.kana === selectedKanaChar) ??
+      selectedKanaItems[0]
+    );
   });
-  const correctRomajiChar = selectedPairs[correctKanaChar];
 
-  // State for reverse pick mode - uses weighted selection for adaptive learning
-  const [correctRomajiCharReverse, setCorrectRomajiCharReverse] = useState(
-    () => {
-      if (selectedRomaji.length === 0) return '';
-      const selected = adaptiveSelector.selectWeightedCharacter(selectedRomaji);
-      adaptiveSelector.markCharacterSeen(selected);
-      return selected;
-    },
-  );
-  const correctKanaCharReverse = random.bool()
-    ? selectedPairs1[correctRomajiCharReverse]
-    : selectedPairs2[correctRomajiCharReverse];
+  useEffect(() => {
+    if (selectedKanaItems.length === 0) {
+      setCurrentItem(null);
+      return;
+    }
+    if (
+      !currentItem ||
+      !selectedKanaItems.some(
+        item => item.kana === currentItem.kana && item.romaji === currentItem.romaji,
+      )
+    ) {
+      setCurrentItem(selectedKanaItems[0]);
+    }
+  }, [selectedKanaItems, currentItem]);
 
-  // Get incorrect options based on mode and current option count
+  const correctKanaChar = currentItem?.kana ?? '';
+  const correctRomajiChar = currentItem?.romaji ?? '';
+
+  // Get incorrect options based on mode and current option count with fallback
   const getIncorrectOptions = useCallback(
     (count: number) => {
       const incorrectCount = count - 1; // One slot is for the correct answer
+      if (!currentItem) return [];
+
       if (!isReverse) {
-        const { [correctKanaChar]: _, ...incorrectPairs } = selectedPairs;
-        void _;
-        return getUniqueIncorrectOptions(
+        const primaryCandidates = selectedKanaItems
+          .filter(
+            item =>
+              item.kana !== currentItem.kana || item.romaji !== currentItem.romaji,
+          )
+          .map(item => item.romaji);
+
+        const primaryOptions = getUniqueIncorrectOptions(
           correctRomajiChar,
-          Object.values(incorrectPairs).sort(
-            () => random.real(0, 1) - 0.5,
-          ),
+          [...primaryCandidates].sort(() => random.real(0, 1) - 0.5),
           incorrectCount,
         );
+
+        if (primaryOptions.length < incorrectCount) {
+          const fallbackCandidates = allKanaItems
+            .filter(item => item.romaji !== correctRomajiChar)
+            .map(item => item.romaji);
+          const fullPool = [...primaryOptions, ...fallbackCandidates];
+          return getUniqueIncorrectOptions(
+            correctRomajiChar,
+            fullPool.sort(() => random.real(0, 1) - 0.5),
+            incorrectCount,
+          );
+        }
+        return primaryOptions;
       } else {
-        const { [correctRomajiCharReverse]: _, ...incorrectPairs } =
-          random.bool() ? selectedPairs1 : selectedPairs2;
-        void _;
-        return getUniqueIncorrectOptions(
-          correctKanaCharReverse,
-          Object.values(incorrectPairs).sort(
-            () => random.real(0, 1) - 0.5,
-          ),
+        const primaryCandidates = selectedKanaItems
+          .filter(
+            item =>
+              item.kana !== currentItem.kana || item.romaji !== currentItem.romaji,
+          )
+          .map(item => item.kana);
+
+        const primaryOptions = getUniqueIncorrectOptions(
+          correctKanaChar,
+          [...primaryCandidates].sort(() => random.real(0, 1) - 0.5),
           incorrectCount,
         );
+
+        if (primaryOptions.length < incorrectCount) {
+          const fallbackCandidates = allKanaItems
+            .filter(item => item.kana !== correctKanaChar)
+            .map(item => item.kana);
+          const fullPool = [...primaryOptions, ...fallbackCandidates];
+          return getUniqueIncorrectOptions(
+            correctKanaChar,
+            fullPool.sort(() => random.real(0, 1) - 0.5),
+            incorrectCount,
+          );
+        }
+        return primaryOptions;
       }
     },
-    [
-      isReverse,
-      correctKanaChar,
-      correctKanaCharReverse,
-      correctRomajiChar,
-      correctRomajiCharReverse,
-      selectedPairs,
-      selectedPairs1,
-      selectedPairs2,
-    ],
+    [isReverse, currentItem, correctKanaChar, correctRomajiChar, selectedKanaItems, allKanaItems],
   );
 
   const [shuffledVariants, setShuffledVariants] = useState(() => {
     const incorrectOptions = getIncorrectOptions(optionCount);
-    return isReverse
-      ? [correctKanaCharReverse, ...incorrectOptions].sort(
-          () => random.real(0, 1) - 0.5,
-        )
-      : [correctRomajiChar, ...incorrectOptions].sort(
-          () => random.real(0, 1) - 0.5,
-        );
+    const correctAnswer = isReverse ? correctKanaChar : correctRomajiChar;
+    return [correctAnswer, ...incorrectOptions].sort(
+      () => random.real(0, 1) - 0.5,
+    );
   });
 
   const [wrongSelectedAnswers, setWrongSelectedAnswers] = useState<string[]>(
@@ -262,28 +257,24 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
   // Update shuffled variants when correct character or option count changes
   useEffect(() => {
     const incorrectOptions = getIncorrectOptions(optionCount);
+    const correctAnswer = isReverse ? correctKanaChar : correctRomajiChar;
     setShuffledVariants(
-      isReverse
-        ? [correctKanaCharReverse, ...incorrectOptions].sort(
-            () => random.real(0, 1) - 0.5,
-          )
-        : [correctRomajiChar, ...incorrectOptions].sort(
-            () => random.real(0, 1) - 0.5,
-          ),
+      [correctAnswer, ...incorrectOptions].sort(
+        () => random.real(0, 1) - 0.5,
+      ),
     );
   }, [
     isReverse,
-    correctRomajiCharReverse,
+    currentItem,
     correctKanaChar,
     correctRomajiChar,
-    correctKanaCharReverse,
     optionCount,
     getIncorrectOptions,
   ]);
 
   useEffect(() => {
     isProcessingRef.current = false;
-  }, [correctKanaChar, correctRomajiCharReverse, wrongSelectedAnswers]);
+  }, [currentItem, wrongSelectedAnswers]);
 
   const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
@@ -334,12 +325,12 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
       // Reset wrong streak on correct answer (Requirement 10.2)
       resetWrongStreak();
       logAttempt({
-        questionId: correctChar,
-        questionPrompt: isReverse ? correctRomajiCharReverse : correctKanaChar,
+        questionId: correctKanaChar,
+        questionPrompt: isReverse ? correctRomajiChar : correctKanaChar,
         expectedAnswers: [
-          isReverse ? correctKanaCharReverse : correctRomajiChar,
+          isReverse ? correctKanaChar : correctRomajiChar,
         ],
-        userAnswer: isReverse ? correctKanaCharReverse : correctRomajiChar,
+        userAnswer: isReverse ? correctKanaChar : correctRomajiChar,
         inputKind: 'pick',
         isCorrect: true,
         optionsShown: shuffledVariants,
@@ -361,9 +352,7 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
       resetWrongStreak,
       logAttempt,
       correctKanaChar,
-      correctKanaCharReverse,
       correctRomajiChar,
-      correctRomajiCharReverse,
       shuffledVariants,
       isReverse,
     ],
@@ -373,9 +362,7 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
     (selectedChar: string) => {
       setWrongSelectedAnswers([...wrongSelectedAnswers, selectedChar]);
       playErrorTwice();
-      const currentChar = isReverse
-        ? correctRomajiCharReverse
-        : correctKanaChar;
+      const currentChar = correctKanaChar;
       incrementCharacterScore(currentChar, 'wrong');
       incrementWrongAnswers();
       if (score - 1 < 0) {
@@ -393,10 +380,10 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
       // Track wrong streak for achievements (Requirement 10.2)
       incrementWrongStreak();
       logAttempt({
-        questionId: isReverse ? correctRomajiCharReverse : correctKanaChar,
-        questionPrompt: isReverse ? correctRomajiCharReverse : correctKanaChar,
+        questionId: correctKanaChar,
+        questionPrompt: isReverse ? correctRomajiChar : correctKanaChar,
         expectedAnswers: [
-          isReverse ? correctKanaCharReverse : correctRomajiChar,
+          isReverse ? correctKanaChar : correctRomajiChar,
         ],
         userAnswer: selectedChar,
         inputKind: 'pick',
@@ -409,8 +396,8 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
       wrongSelectedAnswers,
       playErrorTwice,
       isReverse,
-      correctRomajiCharReverse,
       correctKanaChar,
+      correctRomajiChar,
       incrementCharacterScore,
       incrementWrongAnswers,
       score,
@@ -420,66 +407,50 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
       recordDifficultyWrong,
       incrementWrongStreak,
       logAttempt,
-      correctKanaCharReverse,
-      correctRomajiChar,
       shuffledVariants,
     ],
   );
 
   const handleOptionClick = useCallback(
     (selectedChar: string) => {
-      if (isProcessingRef.current) return;
+      if (isProcessingRef.current || !currentItem) return;
       isProcessingRef.current = true;
 
-      if (!isReverse) {
-        // Normal pick mode logic
-        if (selectedChar === correctRomajiChar) {
-          handleCorrectAnswer(correctKanaChar);
-          // Use weighted selection - prioritizes characters user struggles with
-          const newKana = adaptiveSelector.selectWeightedCharacter(
-            selectedKana,
-            correctKanaChar,
-          );
-          adaptiveSelector.markCharacterSeen(newKana);
-          setCorrectKanaChar(newKana);
-        } else {
-          handleWrongAnswer(selectedChar);
-        }
+      const expectedAnswer = isReverse ? correctKanaChar : correctRomajiChar;
+
+      if (selectedChar === expectedAnswer) {
+        handleCorrectAnswer(correctKanaChar);
+        const candidates = isReverse
+          ? selectedKanaItems.map(item => item.romaji)
+          : selectedKanaItems.map(item => item.kana);
+        const currentVal = isReverse ? correctRomajiChar : correctKanaChar;
+        const nextVal = adaptiveSelector.selectWeightedCharacter(
+          candidates,
+          currentVal,
+        );
+        adaptiveSelector.markCharacterSeen(nextVal);
+        const nextItem =
+          selectedKanaItems.find(item =>
+            isReverse ? item.romaji === nextVal : item.kana === nextVal,
+          ) ?? selectedKanaItems[0];
+        setCurrentItem(nextItem);
       } else {
-        // Reverse pick mode logic
-        if (
-          reversedPairs1[selectedChar] === correctRomajiCharReverse ||
-          reversedPairs2[selectedChar] === correctRomajiCharReverse
-        ) {
-          handleCorrectAnswer(correctRomajiCharReverse);
-          // Use weighted selection - prioritizes characters user struggles with
-          const newRomaji = adaptiveSelector.selectWeightedCharacter(
-            selectedRomaji,
-            correctRomajiCharReverse,
-          );
-          adaptiveSelector.markCharacterSeen(newRomaji);
-          setCorrectRomajiCharReverse(newRomaji);
-        } else {
-          handleWrongAnswer(selectedChar);
-        }
+        handleWrongAnswer(selectedChar);
       }
     },
     [
       isReverse,
+      currentItem,
+      correctKanaChar,
       correctRomajiChar,
       handleCorrectAnswer,
-      correctKanaChar,
-      selectedKana,
       handleWrongAnswer,
-      reversedPairs1,
-      reversedPairs2,
-      correctRomajiCharReverse,
-      selectedRomaji,
+      selectedKanaItems,
     ],
   );
 
-  const displayChar = isReverse ? correctRomajiCharReverse : correctKanaChar;
-  if (!selectedKana || selectedKana.length === 0) {
+  const displayChar = isReverse ? correctRomajiChar : correctKanaChar;
+  if (!selectedKanaItems || selectedKanaItems.length === 0) {
     return null;
   }
 
