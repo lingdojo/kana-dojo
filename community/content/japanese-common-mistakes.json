@@ -138,5 +138,10 @@
   "wrong": "宿題を忘れないよう、メモします。",
   "correct": "宿題を忘れないように、メモします。",
   "explanation": "Use ように for purpose/prevention. (Pattern set 1)"
+},
+  {
+  "wrong": "毎日日本語を勉強していますから上手になります。",
+  "correct": "毎日日本語を勉強しているので上手になります。",
+  "explanation": "ので is smoother/neutral for reason. (Pattern set 2)"
 }
 ]
