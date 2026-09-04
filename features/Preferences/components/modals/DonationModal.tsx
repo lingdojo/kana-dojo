@@ -28,10 +28,10 @@ export default function DonationModal({
   return (
     <DialogPrimitive.Root open={open} onOpenChange={onOpenChange}>
       <DialogPrimitive.Portal forceMount>
-        <DialogPrimitive.Overlay className='fixed inset-0 z-50 bg-black/80' />
+        <DialogPrimitive.Overlay className='fixed inset-0 z-80 bg-black/80' />
         <DialogPrimitive.Content
-          className='fixed top-1/2 left-1/2 z-50 flex max-h-[72vh] w-[95vw] max-w-2xl -translate-x-1/2 -translate-y-1/2 flex-col gap-0 overflow-hidden rounded-2xl border-0 border-(--border-color) bg-(--background-color) p-0 sm:max-h-[82vh]'
-          onOpenAutoFocus={e => e.preventDefault()}
+          data-donation-modal
+          className='fixed top-1/2 left-1/2 z-80 flex max-h-[72vh] w-[95vw] max-w-2xl -translate-x-1/2 -translate-y-1/2 flex-col gap-0 overflow-hidden rounded-2xl border-0 border-(--border-color) bg-(--background-color) p-0 sm:max-h-[82vh]'
         >
           <div className='flex items-center justify-between border-b-2 border-(--border-color) bg-(--background-color) px-3 py-4 sm:px-6 sm:py-5'>
             <div className='flex items-center gap-3'>
@@ -43,6 +43,7 @@ export default function DonationModal({
               </DialogPrimitive.Title>
             </div>
             <button
+              aria-label='Close donation dialog'
               onClick={handleClose}
               className='shrink-0 rounded-xl p-2 hover:cursor-pointer hover:bg-(--card-color)'
             >

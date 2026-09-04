@@ -7,6 +7,33 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.19] - 2026-08-30
+
+### Added
+
+- Keyboard-powered tile selection for Kana, Kanji, and Vocabulary training,
+  including smart prefix matching and recovery from mistyped input
+- Streamlined Continue Learning and custom practice flows
+- Experimental game modes preference
+- New themes and premium mountain wallpapers
+
+### Changed
+
+- Improved Kana input normalization, alternative romanizations, and
+  multi-character answer support
+- Improved Kanji and Vocabulary readings, meanings, spellings, and answer
+  matching
+- Made Kana mastery updates live and rebalanced mastery targets
+- Refined menus, selectors, sidebars, training bars, and mobile layouts
+- Improved translation provider reliability
+
+### Fixed
+
+- Prevented rapid interactions from skipping game questions
+- Kept multiple-choice games interactive after incorrect answers
+- Restored milestone keyboard shortcuts and improved milestone behavior
+- Fixed PWA installation and iOS audio playback issues
+
 ## [0.1.16] - 2026-03-30
 
 ### Added

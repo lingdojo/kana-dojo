@@ -5,7 +5,9 @@
     "position": "bottom",
     "text": "- Community note: this file is used for lightweight contribution practice.",
     "issued": false,
-    "completed": false
+    "completed": false,
+    "completedBy": "bhaktisharma23",
+    "completedPR": 29645
   },
   {
     "id": 2,
@@ -29,7 +31,9 @@
     "position": "top",
     "text": "_Community note: this markdown file is safe for tiny redundant edits._",
     "issued": false,
-    "completed": false
+    "completed": false,
+    "completedBy": "ManojMJ17",
+    "completedPR": 29567
   },
   {
     "id": 5,

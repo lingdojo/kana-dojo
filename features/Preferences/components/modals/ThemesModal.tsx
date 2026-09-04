@@ -12,6 +12,7 @@ import {
 } from '@/features/Preferences/data/wallpapers/wallpapers';
 import usePreferencesStore from '@/features/Preferences/store/usePreferencesStore';
 import { useClick } from '@/shared/hooks/generic/useAudio';
+import useSessionScrollRestoration from '@/shared/hooks/generic/useSessionScrollRestoration';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { X, Palette } from 'lucide-react';
 import { memo, useCallback, useState, useEffect } from 'react';
@@ -166,6 +167,10 @@ export default function ThemesModal({ open, onOpenChange }: ThemesModalProps) {
   // Lazy load themes
   const [themeSets, setThemeSets] = useState<ThemeGroup[]>([]);
   const [isLoaded, setIsLoaded] = useState(false);
+  const { scrollRef, handleScroll } = useSessionScrollRestoration(
+    'themes-modal-scroll',
+    { enabled: open, ready: isLoaded },
+  );
 
   useEffect(() => {
     if (open && !isLoaded) {
@@ -222,7 +227,12 @@ export default function ThemesModal({ open, onOpenChange }: ThemesModalProps) {
               <X size={24} className='text-(--secondary-color) hover:text-(--secondary-color)' />
             </button>
           </div>
-          <div id='modal-scroll' className='flex-1 overflow-y-auto px-6 py-6'>
+          <div
+            ref={scrollRef}
+            onScroll={handleScroll}
+            data-scroll-restoration-id='container'
+            className='flex-1 overflow-y-auto px-6 py-6'
+          >
             <div className='space-y-6'>
               {themeSets.map(group => {
                 const Icon = group.icon;

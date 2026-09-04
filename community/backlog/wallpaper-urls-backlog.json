@@ -15,7 +15,9 @@
     "id": 3,
     "url": "https://assets.wallpapers.example.org/japan/moonlit-shrine-path-4k.avif",
     "issued": false,
-    "completed": false
+    "completed": false,
+    "completedBy": "delusionalbrain",
+    "completedPR": 29751
   },
   {
     "id": 4,

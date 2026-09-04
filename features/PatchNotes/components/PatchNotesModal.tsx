@@ -2,6 +2,7 @@
 
 import PostWrapper from '@/shared/ui-composite/layout/PostWrapper';
 import { useClick } from '@/shared/hooks/generic/useAudio';
+import useSessionScrollRestoration from '@/shared/hooks/generic/useSessionScrollRestoration';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { X, CircleHelp } from 'lucide-react';
 import { useCallback } from 'react';
@@ -23,6 +24,10 @@ export default function PatchNotesModal({
   onOpenChange,
 }: PatchNotesModalProps) {
   const { playClick } = useClick();
+  const { scrollRef, handleScroll } = useSessionScrollRestoration(
+    'patch-notes-modal-scroll',
+    { enabled: open },
+  );
 
   const handleClose = useCallback(() => {
     playClick();
@@ -122,7 +127,12 @@ export default function PatchNotesModal({
               <X size={24} className='text-(--secondary-color)' />
             </button>
           </div>
-          <div id='modal-scroll' className='flex-1 overflow-y-auto px-6 py-6'>
+          <div
+            ref={scrollRef}
+            onScroll={handleScroll}
+            data-scroll-restoration-id='container'
+            className='flex-1 overflow-y-auto px-6 py-6'
+          >
             <div className='space-y-8'>
               {patchNotesData.map((patch, index) => (
                 <div key={index}>
@@ -132,6 +142,8 @@ export default function PatchNotesModal({
                       .join('\n')}
                     tag={`v${patch.version}`}
                     date={new Date(patch.date).toISOString()}
+                    dateClassName='text-(--main-color)'
+                    listClassName='marker:text-(--main-color)'
                   />
                   {index < patchNotesData.length - 1 && (
                     <hr className='mt-8 border-(--border-color) opacity-50' />

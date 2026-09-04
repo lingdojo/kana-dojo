@@ -352,5 +352,29 @@
     "romaji": "Kuchi wa wazawai no moto",
     "english": "The mouth is the source of misfortune",
     "meaning": "Careless words cause trouble"
+  },
+  {
+    "japanese": "猿も木から落ちる",
+    "romaji": "Saru mo ki kara ochiru",
+    "english": "Even monkeys fall from trees",
+    "meaning": "Experts also make mistakes"
+  },
+  {
+    "japanese": "弘法にも筆の誤り",
+    "romaji": "Koubou ni mo fude no ayamari",
+    "english": "Even Kobo makes mistakes with his brush",
+    "meaning": "Even masters make mistakes"
+  },
+  {
+    "japanese": "猿も木から落ちる",
+    "romaji": "Saru mo ki kara ochiru",
+    "english": "Even monkeys fall from trees",
+    "meaning": "Experts can make mistakes"
+  },
+  {
+    "japanese": "縁は異なもの味なもの",
+    "romaji": "En wa inamono aji na mono",
+    "english": "Fate is strange yet delightful",
+    "meaning": "Unexpected connections can be good"
   }
 ]

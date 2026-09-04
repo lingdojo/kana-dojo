@@ -74,7 +74,7 @@ const CHAR_SIZE_CLASSES =
 const DIMMED_OPACITY_CLASS = 'opacity-25';
 // Flip this to `true` to render decorations while developing locally.
 const ENABLE_DECORATIONS_IN_DEVELOPMENT = true;
-const ENABLE_MODE_SETUP_DECORATIONS = false;
+const ENABLE_MODE_SETUP_DECORATIONS = true;
 const ENABLE_STREAK_MILESTONE_DECORATIONS = true;
 
 const getBreakpointKey = (width: number): BreakpointKey => {
@@ -333,6 +333,7 @@ StaticChar.displayName = 'StaticChar';
 
 interface DecorationsProps {
   expandDecorations: boolean;
+  dimmedOpacityClass?: string;
   forceShow?: boolean;
   interactive?: boolean;
   context?: 'main-menu' | 'mode-setup' | 'streak-milestone';
@@ -356,6 +357,7 @@ const Decorations = (props: DecorationsProps) => {
 
 const DecorationsInner = ({
   expandDecorations,
+  dimmedOpacityClass = DIMMED_OPACITY_CLASS,
   forceShow = false,
   interactive = false,
 }: DecorationsProps) => {
@@ -482,7 +484,7 @@ const DecorationsInner = ({
       <div
         className={clsx(
           'fixed inset-0 overflow-hidden',
-          expandDecorations ? 'opacity-100' : DIMMED_OPACITY_CLASS,
+          expandDecorations ? 'opacity-100' : dimmedOpacityClass,
           interactive ? 'pointer-events-auto' : 'pointer-events-none',
         )}
       >

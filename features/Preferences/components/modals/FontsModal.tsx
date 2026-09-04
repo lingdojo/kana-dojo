@@ -4,6 +4,7 @@ import fonts from '@/features/Preferences/data/fonts/fonts';
 import { isRecommendedFont } from '@/features/Preferences/data/fonts/recommendedFonts';
 import usePreferencesStore from '@/features/Preferences/store/usePreferencesStore';
 import { useClick } from '@/shared/hooks/generic/useAudio';
+import useSessionScrollRestoration from '@/shared/hooks/generic/useSessionScrollRestoration';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { X, BookOpen, Sparkles, Type } from 'lucide-react';
 import { memo, useCallback, useMemo } from 'react';
@@ -80,6 +81,10 @@ export default function FontsModal({ open, onOpenChange }: FontsModalProps) {
   const { playClick } = useClick();
   const selectedFont = usePreferencesStore(state => state.font);
   const setSelectedFont = usePreferencesStore(state => state.setFont);
+  const { scrollRef, handleScroll } = useSessionScrollRestoration(
+    'fonts-modal-scroll',
+    { enabled: open },
+  );
 
   // Separate fonts into recommended and other categories
   const { recommendedFonts, otherFonts } = useMemo(() => {
@@ -125,7 +130,12 @@ export default function FontsModal({ open, onOpenChange }: FontsModalProps) {
               <X size={24} className='text-(--secondary-color)' />
             </button>
           </div>
-          <div id='modal-scroll' className='flex-1 overflow-y-auto px-6 py-6'>
+          <div
+            ref={scrollRef}
+            onScroll={handleScroll}
+            data-scroll-restoration-id='container'
+            className='flex-1 overflow-y-auto px-6 py-6'
+          >
             <div className='space-y-6'>
               <CollapsibleSection
                 title={<span className='text-(--main-color)'>Recommended</span>}
