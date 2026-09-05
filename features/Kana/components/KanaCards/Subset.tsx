@@ -76,6 +76,13 @@ const Subset = ({ sliceRange, subgroup }: SubsetProps) => {
       </span>
     ));
 
+  const isAllSubsetSelected =
+    !hasAutoLearningSelection &&
+    Array.from(
+      { length: sliceRange[1] - sliceRange[0] },
+      (_, i) => sliceRange[0] + i,
+    ).every(idx => kanaGroupIndices.includes(idx));
+
   return (
     <fieldset className='flex flex-col items-start gap-1'>
       {kanaGroups.map((group, i) => {
@@ -151,7 +158,10 @@ const Subset = ({ sliceRange, subgroup }: SubsetProps) => {
           borderBottomThickness={12}
         >
           <MousePointer size={22} className={cn('fill-current')} />
-          <span>select all {subgroup.slice(1).toLowerCase()}</span>
+          <span>
+            {isAllSubsetSelected ? 'deselect' : 'select'} all{' '}
+            {subgroup.slice(1).toLowerCase()}
+          </span>
         </ActionButton>
       </div>
     </fieldset>
