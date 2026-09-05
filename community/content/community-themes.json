@@ -279,5 +279,11 @@
     "backgroundColor": "oklch(22.0% 0.058 35.0 / 1)",
     "mainColor": "oklch(75.0% 0.195 40.0 / 1)",
     "secondaryColor": "oklch(85.0% 0.155 70.0 / 1)"
-}
+  },
+  {
+    "id": "seaside-udon",
+    "backgroundColor": "oklch(92.0% 0.015 210.0 / 1)",
+    "mainColor": "oklch(60.0% 0.130 215.0 / 1)",
+    "secondaryColor": "oklch(85.0% 0.155 95.0 / 1)"
+  }
 ]

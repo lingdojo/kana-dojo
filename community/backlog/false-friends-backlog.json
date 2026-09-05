@@ -321,7 +321,9 @@
     "example": "試合前はみんなハイテンションだった。",
     "id": 36,
     "issued": false,
-    "completed": false
+    "completed": false,
+    "completedBy": "aaqib-hafeez-khan-in",
+    "completedPR": 29804
   },
   {
     "termA": "イメージ (imeeji)",
