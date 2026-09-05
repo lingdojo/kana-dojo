@@ -163,5 +163,10 @@
     "wrong": "私は日本で三年住んでいます。",
     "correct": "私は日本に三年住んでいます。",
     "explanation": "Use に to mark the place where someone lives. (Pattern set 6)"
-  }
+  },
+  {
+  "wrong": "日本語が好きをです。",
+  "correct": "日本語が好きです。",
+  "explanation": "好き takes が, not を. (Pattern set 2)"
+}
 ]
