@@ -3716,5 +3716,27 @@
       "forks": 2,
       "contributors": 4
     }
+  },
+  {
+    "collectedAt": "2026-09-05T11:00:49.189Z",
+    "stars": 3322,
+    "forks": 3206,
+    "contributors": 3047,
+    "diff": {
+      "stars": 4,
+      "forks": 7,
+      "contributors": 3
+    }
+  },
+  {
+    "collectedAt": "2026-09-05T23:00:47.639Z",
+    "stars": 3324,
+    "forks": 3209,
+    "contributors": 3052,
+    "diff": {
+      "stars": 2,
+      "forks": 3,
+      "contributors": 5
+    }
   }
 ]

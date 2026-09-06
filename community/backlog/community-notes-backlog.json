@@ -21,7 +21,9 @@
     "position": "bottom",
     "text": "Routine note: small non-blocking documentation edits may appear here.",
     "issued": false,
-    "completed": false
+    "completed": false,
+    "completedBy": "JebastineE",
+    "completedPR": 29812
   },
   {
     "id": 4,
