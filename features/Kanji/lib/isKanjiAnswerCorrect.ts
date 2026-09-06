@@ -11,7 +11,7 @@ const normalize = (value: string): string =>
 const OPTIONAL_MEANING_PREFIX =
   /^(?:to(?!\s+(?:the|an|a)\s+)\s+|(?:the|an|a)\s+)/;
 
-const normalizeMeaning = (value: string): string =>
+export const normalizeKanjiMeaningAnswer = (value: string): string =>
   normalize(value).replace(OPTIONAL_MEANING_PREFIX, '');
 
 const normalizeReading = (value: string): string =>
@@ -24,12 +24,12 @@ export const isKanjiAnswerCorrect = (
 ): boolean => {
   const normalizedAnswer = isReverse
     ? normalize(answer)
-    : normalizeMeaning(answer);
+    : normalizeKanjiMeaningAnswer(answer);
   if (!normalizedAnswer) return false;
 
   if (!isReverse) {
     return kanji.meanings.some(
-      meaning => normalizeMeaning(meaning) === normalizedAnswer,
+      meaning => normalizeKanjiMeaningAnswer(meaning) === normalizedAnswer,
     );
   }
 
