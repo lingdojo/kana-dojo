@@ -77,6 +77,7 @@ interface SessionHistoryStore {
   activeSessionsById: Record<string, SessionDraft>;
 }
 
+export const SESSION_END_DONATION_EVENT = 'kana-dojo:session-end-donation';
 const STORAGE_KEY = 'kanadojo-session-history-v1';
 
 const getDefaultStore = (): SessionHistoryStore => {
@@ -198,6 +199,8 @@ export async function finalizeSession(params: {
   store.totalSessions += 1;
   store.updatedAt = Date.now();
   await saveStore(store);
+
+  window.dispatchEvent(new Event(SESSION_END_DONATION_EVENT));
+
   return record;
 }
-
