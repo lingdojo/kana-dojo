@@ -4,10 +4,11 @@ Welcome to the KanaDojo documentation. This index provides quick access to all p
 
 ## Getting Started
 
-| Document                                 | Description                              |
-| ---------------------------------------- | ---------------------------------------- |
-| [Contributing Guide](../CONTRIBUTING.md) | How to set up the project and contribute |
-| [Troubleshooting](./TROUBLESHOOTING.md)  | Common issues and solutions              |
+| Document                                                      | Description                              |
+| ------------------------------------------------------------- | ---------------------------------------- |
+| [Contributing Guide](../CONTRIBUTING.md)                      | How to set up the project and contribute |
+| [Troubleshooting](./TROUBLESHOOTING.md)                       | Common issues and solutions              |
+| [Personal Vercel Deployment](./VERCEL_PERSONAL_DEPLOYMENT.md) | Deploy a personal fork on Vercel Hobby   |
 
 ## Architecture & Development
 
@@ -27,7 +28,7 @@ Welcome to the KanaDojo documentation. This index provides quick access to all p
 | --------------------------------- | ------------------------------------------------------- |
 | [Achievements](./ACHIEVEMENTS.md) | Achievement system with 80+ badges across 12 categories |
 | [SEO](./SEO.md)                   | SEO implementation, metadata, and structured data       |
-| [Release Process](./RELEASE.md)   | How app versions and GitHub releases are created         |
+| [Release Process](./RELEASE.md)   | How app versions and GitHub releases are created        |
 
 ## Internationalization (i18n)
 

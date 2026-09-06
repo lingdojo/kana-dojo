@@ -2,6 +2,8 @@
 
 This guide explains how KanaDojo is deployed to Vercel and how the deployment pipeline works.
 
+> **Choosing the right guide:** This is the official production deployment and operations document for KanaDojo. For a personal, non-commercial fork using a Vercel Hobby project, follow the [Personal Vercel Deployment guide](./VERCEL_PERSONAL_DEPLOYMENT.md) instead. The fork guide includes a Hobby-specific `vercel.json` adjustment and does not describe `kanadojo.com` operations.
+
 ---
 
 ## 📋 Table of Contents
@@ -75,15 +77,15 @@ For each pull request:
 
 ### Required Variables
 
-| Variable                        | Description                      | Where to Get                                              |
-| ------------------------------- | -------------------------------- | --------------------------------------------------------- |
-| `GOOGLE_TRANSLATE_API_KEY`      | Google Cloud Translation API key | [Google Cloud Console](https://console.cloud.google.com/) |
-| `NEXT_PUBLIC_GA_ID`             | Google Analytics measurement ID  | [Google Analytics](https://analytics.google.com/)         |
-| `NEXT_PUBLIC_POSTHOG_KEY`       | PostHog API key (client)         | [PostHog](https://posthog.com/)                           |
-| `POSTHOG_API_KEY`               | PostHog API key (server, optional; falls back to `NEXT_PUBLIC_POSTHOG_KEY`) | [PostHog](https://posthog.com/)                 |
-| `POSTHOG_HOST`                  | PostHog host (optional; falls back to `NEXT_PUBLIC_POSTHOG_HOST`) | [PostHog](https://posthog.com/)                           |
-| `NEXT_PUBLIC_SUPABASE_URL`      | Supabase project URL             | [Supabase](https://supabase.com/)                         |
-| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase anonymous key           | [Supabase](https://supabase.com/)                         |
+| Variable                        | Description                                                                 | Where to Get                                              |
+| ------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------- |
+| `GOOGLE_TRANSLATE_API_KEY`      | Google Cloud Translation API key                                            | [Google Cloud Console](https://console.cloud.google.com/) |
+| `NEXT_PUBLIC_GA_ID`             | Google Analytics measurement ID                                             | [Google Analytics](https://analytics.google.com/)         |
+| `NEXT_PUBLIC_POSTHOG_KEY`       | PostHog API key (client)                                                    | [PostHog](https://posthog.com/)                           |
+| `POSTHOG_API_KEY`               | PostHog API key (server, optional; falls back to `NEXT_PUBLIC_POSTHOG_KEY`) | [PostHog](https://posthog.com/)                           |
+| `POSTHOG_HOST`                  | PostHog host (optional; falls back to `NEXT_PUBLIC_POSTHOG_HOST`)           | [PostHog](https://posthog.com/)                           |
+| `NEXT_PUBLIC_SUPABASE_URL`      | Supabase project URL                                                        | [Supabase](https://supabase.com/)                         |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase anonymous key                                                      | [Supabase](https://supabase.com/)                         |
 
 ### Optional Variables
 
