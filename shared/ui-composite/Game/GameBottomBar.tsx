@@ -4,6 +4,7 @@ import { CircleCheck, RotateCcw, Flag } from 'lucide-react';
 import clsx from 'clsx';
 import { ActionButton } from '@/shared/ui/components/ActionButton';
 import { useClick } from '@/shared/hooks/generic/useAudio';
+import useContinueRequestStore from '@/shared/store/useContinueRequestStore';
 
 // Toggle between new SVG check icon (true) and old CircleCheck icon (false)
 const USE_NEW_CHECK_ICON = true;
@@ -47,9 +48,24 @@ export const GameBottomBar = ({
   const isCorrect = state === 'correct';
   const isWrong = state === 'wrong';
   const [hideWrongFeedback, setHideWrongFeedback] = useState(false);
-  const lastClearSignalRef = useRef<number | undefined>(clearWrongFeedbackSignal);
+  const lastClearSignalRef = useRef<number | undefined>(
+    clearWrongFeedbackSignal,
+  );
   const showFeedback = state !== 'check' && !(isWrong && hideWrongFeedback);
   const showContinue = isCorrect;
+
+  // Skipping the streak milestone overlay advances to the next question by
+  // reusing the "next" button's handler (#29270).
+  const requestCount = useContinueRequestStore(state => state.requestCount);
+  const lastSeenRequestCountRef = useRef(requestCount);
+
+  useEffect(() => {
+    if (requestCount === lastSeenRequestCountRef.current) return;
+    lastSeenRequestCountRef.current = requestCount;
+    if (!isCorrect) return;
+    buttonRef?.current?.click();
+  }, [requestCount, isCorrect, buttonRef]);
+
   // When hideRetry is true, treat wrong state like check state for button display
   const showRetryButton = isWrong && !hideRetry;
   const showNextButton =
