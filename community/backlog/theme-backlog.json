@@ -1417,7 +1417,9 @@
     "mainColor": "oklch(65.0% 0.195 25.0 / 1)",
     "secondaryColor": "oklch(78.0% 0.105 85.0 / 1)",
     "issued": false,
-    "completed": false
+    "completed": false,
+    "completedBy": "patrykgawrysiak",
+    "completedPR": 29893
   },
   {
     "id": "poppy-udon",
