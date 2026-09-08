@@ -76,3 +76,6 @@ next-env.d.ts
 
 # Sentry Config File
 .env.sentry-build-plugin
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat
