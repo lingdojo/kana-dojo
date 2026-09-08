@@ -178,5 +178,10 @@
   "wrong": "この漢字は読み方が難しいです。",
   "correct": "この漢字の読み方は難しいです。",
   "explanation": "Prefer noun linkage with の. (Pattern set 1)"
+  },
+  {
+    "wrong": "これはおいしいだ。",
+    "correct": "これはおいしい。",
+    "explanation": "い-adjectives do not take だ in plain present. (Pattern set 5)"
   }
 ]
