@@ -39,7 +39,9 @@
     "position": "bottom",
     "text": "- Additional community note preserved for documentation housekeeping.",
     "issued": false,
-    "completed": false
+    "completed": false,
+    "completedBy": "siddhi-3010",
+    "completedPR": 29983
   },
   {
     "id": 4,

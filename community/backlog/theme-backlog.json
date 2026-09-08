@@ -247,7 +247,9 @@
     "mainColor": "oklch(92.0% 0.025 240.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.135 225.0 / 1)",
     "issued": false,
-    "completed": false
+    "completed": false,
+    "completedBy": "OMSHIVSHARAN",
+    "completedPR": 29979
   },
   {
     "id": "geisha-grace",
