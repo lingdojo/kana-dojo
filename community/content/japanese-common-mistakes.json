@@ -183,5 +183,10 @@
     "wrong": "これはおいしいだ。",
     "correct": "これはおいしい。",
     "explanation": "い-adjectives do not take だ in plain present. (Pattern set 5)"
+  },
+  {
+    "wrong": "Something",
+    "correct": "Something",
+    "explanation": "Something"
   }
 ]
