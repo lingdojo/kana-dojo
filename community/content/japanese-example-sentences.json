@@ -190,5 +190,11 @@
   "romaji": "Moshi jikan ga areba, issho ni fukushuu shimasen ka.",
   "english": "If you have time, would you like to review together?",
   "jlpt": "N3"
+},
+{
+  "japanese": "この漢字の読み方を教えてください。",
+  "romaji": "Kono kanji no yomikata o oshiete kudasai.",
+  "english": "Please tell me how to read this kanji.",
+  "jlpt": "N5"
 }
 ]
