@@ -17,6 +17,7 @@ import { useSmartReverseMode } from '@/shared/hooks/game/useSmartReverseMode';
 import { useAdaptiveOptionCount } from '@/shared/hooks/game/useAdaptiveOptionCount';
 import useClassicSessionStore from '@/shared/store/useClassicSessionStore';
 import { getUniqueIncorrectOptions } from '@/features/Kana/lib/getUniqueIncorrectOptions';
+import { normalizeKanaForComparison } from '@/features/Kana/lib/normalizeKanaForComparison';
 
 const random = new Random();
 
@@ -433,7 +434,7 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
 
       if (!isReverse) {
         // Normal pick mode logic
-        if (selectedChar === correctRomajiChar) {
+        if (normalizeKanaForComparison(selectedChar) === normalizeKanaForComparison(correctRomajiChar)) {
           handleCorrectAnswer(correctKanaChar);
           // Use weighted selection - prioritizes characters user struggles with
           const newKana = adaptiveSelector.selectWeightedCharacter(
