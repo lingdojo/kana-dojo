@@ -601,5 +601,15 @@
     "Oden"
   ],
   "correctIndex": 0
-}
+},
+    "question": "Which Japanese dish consists of skewered grilled chicken? (Community variation 48)",
+  "difficulty": "hard",
+  "answers": [
+    "Yakitori",
+    "Sukiyaki",
+    "Tonkatsu",
+    "Oden"
+  ],
+  "correctIndex": 0
+
 ]
