@@ -129,6 +129,17 @@
     "Mount Tate"
   ],
   "correctIndex": 1
+},
+  {
+  "question": "What is the name of Japan’s national public broadcaster? (Community variation 54)",
+  "difficulty": "medium",
+  "answers": [
+    "NHK",
+    "NHK World Japan",
+    "Asahi",
+    "Fuji TV"
+  ],
+  "correctIndex": 0
 }
 ]
 
