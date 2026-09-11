@@ -183,5 +183,10 @@
     "wrong": "これはおいしいだ。",
     "correct": "これはおいしい。",
     "explanation": "い-adjectives do not take だ in plain present. (Pattern set 5)"
+  },
+  {
+    "wrong": "日本語をわかります。",
+    "correct": "日本語がわかります。",
+    "explanation": "わかる takes が. (Pattern set 4)"
   }
 ]
