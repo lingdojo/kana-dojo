@@ -1811,7 +1811,9 @@
     "mainColor": "oklch(66.0% 0.115 135.0 / 1)",
     "secondaryColor": "oklch(55.0% 0.070 155.0 / 1)",
     "issued": false,
-    "completed": false
+    "completed": false,
+    "completedBy": "laporejero",
+    "completedPR": 30232
   },
   {
     "id": "sakura-soda",
