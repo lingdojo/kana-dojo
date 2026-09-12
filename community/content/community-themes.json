@@ -316,5 +316,11 @@
     "backgroundColor": "oklch(15.0% 0.028 255.0 / 1)",
     "mainColor": "oklch(82.0% 0.155 210.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.145 35.0 / 1)"
-  }
+  },
+  {
+    "id": "cedar-moss",
+    "backgroundColor": "oklch(20.0% 0.030 150.0 / 1)",
+    "mainColor": "oklch(66.0% 0.115 135.0 / 1)",
+    "secondaryColor": "oklch(55.0% 0.070 155.0 / 1)"
+  },
 ]
