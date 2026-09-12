@@ -256,7 +256,7 @@ The first push may prompt you to sign in to GitHub via browser—follow the prom
 - Join our Discord: <https://discord.gg/CyvBNNrSmb> and ask in the #dev channel.
 - Mention maintainers in the issue/PR if blocked.
 - Search existing docs:
-  - [CONTRIBUTING.md](./CONTRIBUTING.md)
+  - [CONTRIBUTING.md](../CONTRIBUTING.md)
   - [docs/](./)
 
 ---
