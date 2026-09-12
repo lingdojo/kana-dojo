@@ -21,6 +21,7 @@ import { cn } from '@/shared/utils/utils';
 import { useSetProgressStore } from '@/features/Progress';
 import { shouldSuppressContinueKeyboardShortcut } from '@/shared/utils/game/continueShortcutGuard';
 import { useMenuSelectorStore } from '@/shared/ui-composite/Menu/store/useMenuSelectorStore';
+import { isKanjiClassicInputAnswerCorrect } from '@/features/Kanji/lib/isKanjiClassicInputAnswerCorrect';
 
 // Get the global adaptive selector for weighted character selection
 const adaptiveSelector = getGlobalAdaptiveSelector();
@@ -210,20 +211,12 @@ const KanjiInputGame = ({
     }
   };
 
-  const normalizeAnswer = (value: string): string => value.trim().toLowerCase();
-
   const isInputCorrect = (input: string): boolean => {
-    const normalizedInput = normalizeAnswer(input);
-
-    if (!isReverse) {
-      return (
-        Array.isArray(targetChar) &&
-        targetChar.some(answer => normalizeAnswer(answer) === normalizedInput)
-      );
-    } else {
-      const reverseTargetChar = typeof targetChar === 'string' ? targetChar : '';
-      return normalizedInput === normalizeAnswer(reverseTargetChar);
-    }
+    return isKanjiClassicInputAnswerCorrect({
+      inputValue: input,
+      target: targetChar,
+      isReverse,
+    });
   };
 
   const handleCheck = () => {
