@@ -4,7 +4,11 @@ import { CircleCheck } from 'lucide-react';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import type { IKanjiObj } from '@/features/Kanji/store/useKanjiStore';
-import { useClick, useCorrect, useError } from '@/shared/hooks/generic/useAudio';
+import {
+  useClick,
+  useCorrect,
+  useError,
+} from '@/shared/hooks/generic/useAudio';
 // import GameIntel from '@/shared/ui-composite/Game/GameIntel';
 import { useStatsStore } from '@/features/Progress';
 import { useShallow } from 'zustand/react/shallow';
@@ -14,6 +18,7 @@ import SSRAudioButton from '@/shared/ui-composite/audio/SSRAudioButton';
 import FuriganaText from '@/shared/ui-composite/text/FuriganaText';
 import { useCrazyModeTrigger } from '@/features/CrazyMode/hooks/useCrazyModeTrigger';
 import { getGlobalAdaptiveSelector } from '@/shared/utils/adaptiveSelection';
+import { isKanjiAnswerCorrect } from '@/features/Kanji/lib/isKanjiAnswerCorrect';
 import { GameBottomBar } from '@/shared/ui-composite/Game/GameBottomBar';
 import useClassicSessionStore from '@/shared/store/useClassicSessionStore';
 import { useThemePreferences } from '@/features/Preferences';
@@ -125,13 +130,17 @@ const KanjiInputGame = ({
   const [promptSequence, setPromptSequence] = useState(0);
   const pauseTimer = () => {
     if (answerStartTimeRef.current !== null) {
-      elapsedTimeMsRef.current += performance.now() - answerStartTimeRef.current;
+      elapsedTimeMsRef.current +=
+        performance.now() - answerStartTimeRef.current;
       answerStartTimeRef.current = null;
     }
   };
   const getElapsedTimeMs = () => {
     if (answerStartTimeRef.current !== null) {
-      return elapsedTimeMsRef.current + (performance.now() - answerStartTimeRef.current);
+      return (
+        elapsedTimeMsRef.current +
+        (performance.now() - answerStartTimeRef.current)
+      );
     }
     return elapsedTimeMsRef.current;
   };
@@ -160,10 +169,7 @@ const KanjiInputGame = ({
       const isSpace = event.code === 'Space' || event.key === ' ';
       const isContinueShortcut = isEnter || isSpace;
 
-      if (
-        isContinueShortcut &&
-        shouldSuppressContinueKeyboardShortcut()
-      ) {
+      if (isContinueShortcut && shouldSuppressContinueKeyboardShortcut()) {
         event.preventDefault();
         return;
       }
@@ -210,20 +216,9 @@ const KanjiInputGame = ({
     }
   };
 
-  const normalizeAnswer = (value: string): string => value.trim().toLowerCase();
-
   const isInputCorrect = (input: string): boolean => {
-    const normalizedInput = normalizeAnswer(input);
-
-    if (!isReverse) {
-      return (
-        Array.isArray(targetChar) &&
-        targetChar.some(answer => normalizeAnswer(answer) === normalizedInput)
-      );
-    } else {
-      const reverseTargetChar = typeof targetChar === 'string' ? targetChar : '';
-      return normalizedInput === normalizeAnswer(reverseTargetChar);
-    }
+    if (!correctKanjiObj) return false;
+    return isKanjiAnswerCorrect(correctKanjiObj, input, isReverse);
   };
 
   const handleCheck = () => {
@@ -485,4 +480,3 @@ const KanjiInputGame = ({
 };
 
 export default KanjiInputGame;
-
