@@ -13,9 +13,7 @@
     "position": "top",
     "text": "> Community note: this page intentionally accepts tiny formatting-safe edits.",
     "issued": false,
-    "completed": false,
-    "completedBy": "mohammedeissa7",
-    "completedPR": 30258
+    "completed": false
   },
   {
     "id": 3,
@@ -39,9 +37,7 @@
     "position": "bottom",
     "text": "- Additional community note preserved for documentation housekeeping.",
     "issued": false,
-    "completed": false,
-    "completedBy": "jyshere",
-    "completedPR": 30248
+    "completed": false
   },
   {
     "id": 4,

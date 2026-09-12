@@ -437,9 +437,7 @@
     "mainColor": "oklch(65.0% 0.025 270.0 / 1)",
     "secondaryColor": "oklch(55.0% 0.175 15.0 / 1)",
     "issued": false,
-    "completed": false,
-    "completedBy": "yunxiyun2",
-    "completedPR": 30154
+    "completed": false
   },
   {
     "id": "konbini-light",
@@ -1239,9 +1237,7 @@
     "mainColor": "oklch(82.0% 0.155 210.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.145 35.0 / 1)",
     "issued": false,
-    "completed": false,
-    "completedBy": "moneyyiiss",
-    "completedPR": 30186
+    "completed": false
   },
   {
     "id": "paper-lantern",
@@ -1811,9 +1807,7 @@
     "mainColor": "oklch(66.0% 0.115 135.0 / 1)",
     "secondaryColor": "oklch(55.0% 0.070 155.0 / 1)",
     "issued": false,
-    "completed": false,
-    "completedBy": "laporejero",
-    "completedPR": 30232
+    "completed": false
   },
   {
     "id": "sakura-soda",

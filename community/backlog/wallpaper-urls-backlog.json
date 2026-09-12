@@ -27,8 +27,6 @@
     "id": 5,
     "url": "https://static.backgrounds.example.com/panoramas/autumn-temple-garden-3440x1440.png",
     "issued": false,
-    "completed": false,
-    "completedBy": "jithendrabathala",
-    "completedPR": 30227
+    "completed": false
   }
 ]
