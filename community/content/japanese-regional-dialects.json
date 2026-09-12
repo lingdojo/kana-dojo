@@ -182,25 +182,25 @@
     "note": "Used for prohibition/failure. (Set 2)"
   },
   {
-  "dialect": "〜たいぎい",
-  "standardJapanese": "めんどくさい",
-  "english": "troublesome / annoying",
-  "region": "Hiroshima",
-  "note": "Common Hiroshima dialect expression used when something feels bothersome or tiring. (Set 7)"
+    "dialect": "〜たいぎい",
+    "standardJapanese": "めんどくさい",
+    "english": "troublesome / annoying",
+    "region": "Hiroshima",
+    "note": "Common Hiroshima dialect expression used when something feels bothersome or tiring. (Set 7)"
   },
   {
-  "dialect": "なんくるないさ",
-  "standardJapanese": "なんとかなる",
-  "english": "it'll work out",
-  "region": "Okinawa",
-  "note": "Famous Okinawan resilience phrase. (Set 2)"
+    "dialect": "なんくるないさ",
+    "standardJapanese": "なんとかなる",
+    "english": "it'll work out",
+    "region": "Okinawa",
+    "note": "Famous Okinawan resilience phrase. (Set 2)"
   },
   {
-  "dialect": "したっけ",
-  "standardJapanese": "それじゃあ",
-  "english": "well then/see you",
-  "region": "Hokkaido",
-  "note": "Transition/goodbye phrase. (Set 2)"
+    "dialect": "したっけ",
+    "standardJapanese": "それじゃあ",
+    "english": "well then/see you",
+    "region": "Hokkaido",
+    "note": "Transition/goodbye phrase. (Set 2)"
   },
   {
     "dialect": "なんくるないさ",
@@ -217,38 +217,45 @@
     "note": "Hokkaido intensifier. (Set 6)"
   },
   {
-  "dialect": "〜だがや",
-  "standardJapanese": "〜だよ",
-  "english": "sentence ending",
-  "region": "Nagoya",
-  "note": "Strong Nagoya marker. (Set 5)"
+    "dialect": "〜だがや",
+    "standardJapanese": "〜だよ",
+    "english": "sentence ending",
+    "region": "Nagoya",
+    "note": "Strong Nagoya marker. (Set 5)"
   },
   {
-  "dialect": "〜だがや",
-  "standardJapanese": "〜だよ",
-  "english": "sentence ending",
-  "region": "Nagoya",
-  "note": "Strong Nagoya marker. (Set 1)"
-},
+    "dialect": "〜だがや",
+    "standardJapanese": "〜だよ",
+    "english": "sentence ending",
+    "region": "Nagoya",
+    "note": "Strong Nagoya marker. (Set 1)"
+  },
   {
-  "dialect": "〜やねん",
-  "standardJapanese": "〜なんだ",
-  "english": "it is that...",
-  "region": "Kansai",
-  "note": "Explanatory ending in conversation. (Set 1)"
-},
+    "dialect": "〜やねん",
+    "standardJapanese": "〜なんだ",
+    "english": "it is that...",
+    "region": "Kansai",
+    "note": "Explanatory ending in conversation. (Set 1)"
+  },
   {
-  "dialect": "〜じゃけぇ",
-  "standardJapanese": "〜だから",
-  "english": "because",
-  "region": "Hiroshima",
-  "note": "Common causal ending. (Set 3)"
-},
+    "dialect": "〜じゃけぇ",
+    "standardJapanese": "〜だから",
+    "english": "because",
+    "region": "Hiroshima",
+    "note": "Common causal ending. (Set 3)"
+  },
   {
-  "dialect": "〜へん",
-  "standardJapanese": "〜ない",
-  "english": "negative form",
-  "region": "Kansai",
-  "note": "Example: 食べへん = 食べない。 (Set 3)"
-}
+    "dialect": "〜へん",
+    "standardJapanese": "〜ない",
+    "english": "negative form",
+    "region": "Kansai",
+    "note": "Example: 食べへん = 食べない。 (Set 3)"
+  },
+  {
+    "dialect": "〜ばい",
+    "standardJapanese": "〜だよ",
+    "english": "sentence ending",
+    "region": "Fukuoka",
+    "note": "Assertive friendly ending. (Set 2)"
+  }
 ]
