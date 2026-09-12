@@ -1239,7 +1239,9 @@
     "mainColor": "oklch(82.0% 0.155 210.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.145 35.0 / 1)",
     "issued": false,
-    "completed": false
+    "completed": false,
+    "completedBy": "moneyyiiss",
+    "completedPR": 30186
   },
   {
     "id": "paper-lantern",

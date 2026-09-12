@@ -196,5 +196,11 @@
   "termB": "naive (English)",
   "explanation": "Often means sensitive/delicate in Japanese. (Set 6)",
   "example": "彼は意外とナイーブな性格だ。"
+},
+{
+  "termA": "コンセント (konsento)",
+  "termB": "consent (English)",
+  "explanation": "コンセント means electrical outlet. (Set 5)",
+  "example": "コンセントが足りないので延長コードを使います。"
 }
 ]
