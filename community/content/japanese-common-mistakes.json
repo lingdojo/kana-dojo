@@ -110,9 +110,9 @@
     "explanation": "Recipient takes に with 教える. (Pattern set 3)"
   },
   {
-  "wrong": "会議は三時からで始まります。",
-  "correct": "会議は三時から始まります。",
-  "explanation": "Remove unnecessary particle after から. (Pattern set 6)"
+    "wrong": "会議は三時からで始まります。",
+    "correct": "会議は三時から始まります。",
+    "explanation": "Remove unnecessary particle after から. (Pattern set 6)"
   },
   {
     "wrong": "静かい部屋",
@@ -120,25 +120,25 @@
     "explanation": "な-adjectives require な before nouns. (Pattern set 5)"
   },
   {
-  "wrong": "私は日本語を好きです。",
-  "correct": "私は日本語が好きです。",
-  "explanation": "好き takes が, not を. (Pattern set 5)"
-}, 
+    "wrong": "私は日本語を好きです。",
+    "correct": "私は日本語が好きです。",
+    "explanation": "好き takes が, not を. (Pattern set 5)"
+  },
   {
-  "wrong": "会議は三時からで始まります。",
-  "correct": "会議は三時から始まります。",
-  "explanation": "Remove unnecessary particle after から. (Pattern set 5)"
-},
+    "wrong": "会議は三時からで始まります。",
+    "correct": "会議は三時から始まります。",
+    "explanation": "Remove unnecessary particle after から. (Pattern set 5)"
+  },
   {
-  "wrong": "私は日本語を話しますです。",
-  "correct": "私は日本語を話します。",
-  "explanation": "Do not stack ます and です in one predicate. (Pattern set 2)"
-},
+    "wrong": "私は日本語を話しますです。",
+    "correct": "私は日本語を話します。",
+    "explanation": "Do not stack ます and です in one predicate. (Pattern set 2)"
+  },
   {
-  "wrong": "宿題を忘れないよう、メモします。",
-  "correct": "宿題を忘れないように、メモします。",
-  "explanation": "Use ように for purpose/prevention. (Pattern set 1)"
-},
+    "wrong": "宿題を忘れないよう、メモします。",
+    "correct": "宿題を忘れないように、メモします。",
+    "explanation": "Use ように for purpose/prevention. (Pattern set 1)"
+  },
   {
     "wrong": "日本語が好きをです。",
     "correct": "日本語が好きです。",
@@ -150,14 +150,14 @@
     "explanation": "で marks location of action. (Pattern set 4)"
   },
   {
-  "wrong": "毎日日本語を勉強していますから上手になります。",
-  "correct": "毎日日本語を勉強しているので上手になります。",
-  "explanation": "ので is smoother/neutral for reason. (Pattern set 6)"
+    "wrong": "毎日日本語を勉強していますから上手になります。",
+    "correct": "毎日日本語を勉強しているので上手になります。",
+    "explanation": "ので is smoother/neutral for reason. (Pattern set 6)"
   },
   {
-  "wrong": "駅まで十分歩きますかかる。",
-  "correct": "駅まで歩いて十分かかる。",
-  "explanation": "Use natural collocation and order. (Pattern set 5)"
+    "wrong": "駅まで十分歩きますかかる。",
+    "correct": "駅まで歩いて十分かかる。",
+    "explanation": "Use natural collocation and order. (Pattern set 5)"
   },
   {
     "wrong": "私は日本で三年住んでいます。",
@@ -165,19 +165,19 @@
     "explanation": "Use に to mark the place where someone lives. (Pattern set 6)"
   },
   {
-  "wrong": "日本語が好きをです。",
-  "correct": "日本語が好きです。",
-  "explanation": "好き takes が, not を. (Pattern set 2)"
+    "wrong": "日本語が好きをです。",
+    "correct": "日本語が好きです。",
+    "explanation": "好き takes が, not を. (Pattern set 2)"
   },
   {
-  "wrong": "これは私のです本。",
-  "correct": "これは私の本です。",
-  "explanation": "Place の correctly in noun phrase. (Pattern set 4)"
+    "wrong": "これは私のです本。",
+    "correct": "これは私の本です。",
+    "explanation": "Place の correctly in noun phrase. (Pattern set 4)"
   },
   {
-  "wrong": "この漢字は読み方が難しいです。",
-  "correct": "この漢字の読み方は難しいです。",
-  "explanation": "Prefer noun linkage with の. (Pattern set 1)"
+    "wrong": "この漢字は読み方が難しいです。",
+    "correct": "この漢字の読み方は難しいです。",
+    "explanation": "Prefer noun linkage with の. (Pattern set 1)"
   },
   {
     "wrong": "これはおいしいだ。",
@@ -190,8 +190,13 @@
     "explanation": "わかる takes が. (Pattern set 4)"
   },
   {
-  "wrong": "日本へ旅行を行きたい。",
-  "correct": "日本へ旅行に行きたい。",
-  "explanation": "Use に行く for purpose. (Pattern set 6)"
-}
+    "wrong": "日本へ旅行を行きたい。",
+    "correct": "日本へ旅行に行きたい。",
+    "explanation": "Use に行く for purpose. (Pattern set 6)"
+  },
+  {
+    "wrong": "もし雨が降ります、行きません。",
+    "correct": "もし雨が降ったら、行きません。",
+    "explanation": "Conditional needs たら/なら etc. (Pattern set 1)"
+  }
 ]
