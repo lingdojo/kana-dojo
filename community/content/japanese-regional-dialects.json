@@ -264,5 +264,12 @@
     "english": "freezing cold",
     "region": "Hokkaido",
     "note": "Used for severe winter cold. (Set 1)"
+  },
+  {
+  "dialect": "〜けん",
+  "standardJapanese": "〜から",
+  "english": "because",
+  "region": "Kyushu",
+  "note": "Reason marker in Kyushu. (Set 5)"
   }
 ]
