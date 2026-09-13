@@ -24,6 +24,8 @@ export const isKanjiClassicInputAnswerCorrect = ({
   if (!Array.isArray(target)) return false;
 
   const normalizedInput = normalizeKanjiMeaningAnswer(inputValue);
+  if (!normalizedInput) return false;
+
   return target.some(
     answer => normalizeKanjiMeaningAnswer(answer) === normalizedInput,
   );

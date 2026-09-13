@@ -35,6 +35,16 @@ describe('isKanjiClassicInputAnswerCorrect', () => {
     ).toBe(false);
   });
 
+  it('rejects an answer that normalizes to empty', () => {
+    expect(
+      isKanjiClassicInputAnswerCorrect({
+        inputValue: '   ',
+        target: [''],
+        isReverse: false,
+      }),
+    ).toBe(false);
+  });
+
   it('keeps reverse answers exact', () => {
     expect(
       isKanjiClassicInputAnswerCorrect({
