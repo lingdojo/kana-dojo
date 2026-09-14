@@ -613,6 +613,17 @@
     "Kanazawa"
   ],
   "correctIndex": 1
+},
+{
+  "question": "Which Japanese city is known for the famous bamboo grove?",
+  "difficulty": "easy",
+  "answers": [
+    "Kyoto",
+    "Tokyo",
+    "Sapporo",
+    "Fukuoka"
+  ],
+  "correctIndex": 0
 }
 
 ]
