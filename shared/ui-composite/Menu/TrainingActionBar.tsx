@@ -69,12 +69,6 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
 
   const buttonRef = useRef<HTMLButtonElement | null>(null);
 
-  const startAutoLearning = () => {
-    document
-      .querySelector<HTMLButtonElement>('[data-auto-learning-dojo]')
-      ?.click();
-  };
-
   useEffect(() => {
     if (!hotkeysOn) return;
 
@@ -88,11 +82,8 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
 
       if (event.key === 'Enter' && isFilled) {
         event.preventDefault();
-        if (showExperimentalModes) {
-          setShowGameModesModal(true);
-        } else {
-          startAutoLearning();
-        }
+        setGameModesMode('train');
+        setShowGameModesModal(true);
       }
     };
     window.addEventListener('keydown', handleKeyDown);
@@ -349,13 +340,8 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
               show: true,
               colorScheme: 'primary' as const,
               onClick: () => {
-                if (showExperimentalModes) {
-                  setGameModesMode('train');
-                  setShowGameModesModal(true);
-                  return;
-                }
-
-                startAutoLearning();
+                setGameModesMode('train');
+                setShowGameModesModal(true);
               },
               ref: buttonRef,
             },
@@ -407,7 +393,7 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
                 >
                   <Icon size={36} className={cn(iconClassName)} />
                   {id === 'custom' && (
-                    <span className='whitespace-nowrap text-lg font-medium sm:text-xl'>
+                    <span className='text-lg font-medium whitespace-nowrap sm:text-xl'>
                       {label}
                     </span>
                   )}
