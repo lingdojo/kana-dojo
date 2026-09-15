@@ -1,7 +1,14 @@
-{
-  "MenuInfo": {
-    "greeting": "¡Bienvenido a KanaDojo!",
-    "description": "KanaDojo es una plataforma divertida, estética y minimalista para aprender y practicar el idioma Japonés en linea.",
-    "instructions": "Para empezar, coge un dojo. ¡Y comienza a entrenar ahora!"
+community/content/community-themes.json
+
+Looking at the issue, the target file is `community/content/community-themes.json`. I need to add the "Sunrise Express" theme to that file. However, the "Target File Code Context" shown is for `es.json` which appears to be unrelated context. The actual task is to add the theme to the community themes JSON file.
+
+```json
+[
+  {
+    "id": "sunrise-express",
+    "backgroundColor": "oklch(21.0% 0.048 50.0 / 1)",
+    "mainColor": "oklch(90.0% 0.145 70.0 / 1)",
+    "secondaryColor": "oklch(78.0% 0.175 40.0 / 1)"
   }
-}
+]
+```
