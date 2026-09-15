@@ -1,7 +1,7 @@
 'use client';
 
-import { useMemo } from 'react';
-import useKanaStore from '../store/useKanaStore';
+import { useCallback, useMemo } from 'react';
+import useKanaStore from '@/features/Kana/store/useKanaStore';
 
 /**
  * Kana Selection Facade - Public API for selection state
@@ -34,6 +34,20 @@ export function useKanaSelection(): KanaSelection & KanaSelectionActions {
   const setGameMode = useKanaStore(state => state.setSelectedGameModeKana);
   const replaceGroups = useKanaStore(state => state.setKanaGroupIndices);
 
+  const clearSelection = useCallback(() => {
+    replaceGroups([]);
+  }, [replaceGroups]);
+
+  const selectAll = useCallback(() => {
+    const allIndices = Array.from({ length: 60 }, (_, i) => i);
+    replaceGroups(allIndices);
+  }, [replaceGroups]);
+
+  const isGroupSelected = useCallback(
+    (index: number) => selectedGroupIndices.includes(index),
+    [selectedGroupIndices],
+  );
+
   return useMemo(
     () => ({
       // State
@@ -46,16 +60,9 @@ export function useKanaSelection(): KanaSelection & KanaSelectionActions {
       addGroup,
       addGroups,
       replaceGroups,
-      clearSelection: () => {
-        // Toggle all currently selected groups to clear them
-        addGroups(selectedGroupIndices);
-      },
-      selectAll: () => {
-        // Select all 69 kana groups (based on kana.ts data)
-        const allIndices = Array.from({ length: 69 }, (_, i) => i);
-        addGroups(allIndices);
-      },
-      isGroupSelected: (index: number) => selectedGroupIndices.includes(index),
+      clearSelection,
+      selectAll,
+      isGroupSelected,
       setGameMode,
     }),
     [
@@ -64,6 +71,9 @@ export function useKanaSelection(): KanaSelection & KanaSelectionActions {
       addGroup,
       addGroups,
       replaceGroups,
+      clearSelection,
+      selectAll,
+      isGroupSelected,
       setGameMode,
     ],
   );
