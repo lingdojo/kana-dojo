@@ -214,5 +214,11 @@
     "romaji": "Kono mondai wa omotta yori muzukashiku nakatta.",
     "english": "This problem wasn't as hard as I expected.",
     "jlpt": "N3"
+  },
+  {
+    "japanese": "この漢字の読み方を教えてください。",
+    "romaji": "Kono kanji no yomikata o oshiete kudasai.",
+    "english": "Please tell me how to read this kanji.",
+    "jlpt": "N5"
   }
 ]
