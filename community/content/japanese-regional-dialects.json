@@ -287,10 +287,17 @@
     "note": "Regional intensifier. (Set 6)"
   },
   {
-  "dialect": "したっけ",
-  "standardJapanese": "それじゃあ",
-  "english": "well then/see you",
-  "region": "Hokkaido",
-  "note": "Transition/goodbye phrase. (Set 2)"
-}
+    "dialect": "したっけ",
+    "standardJapanese": "それじゃあ",
+    "english": "well then/see you",
+    "region": "Hokkaido",
+    "note": "Transition/goodbye phrase. (Set 2)"
+  },
+  {
+    "dialect": "なんでやねん",
+    "standardJapanese": "何でだよ",
+    "english": "What are you talking about?!",
+    "region": "Kansai",
+    "note": "Classic comedic retort (tsukkomi). (Set 6)"
+  }
 ]
