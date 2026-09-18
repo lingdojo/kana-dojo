@@ -231,6 +231,12 @@ const Game = () => {
     setSessionNonce(prev => prev + 1);
   };
 
+  const handleNextQuestion = () => {
+    document
+      .querySelector<HTMLButtonElement>('[data-game-next-question]')
+      ?.click();
+  };
+
   if (!isSelectionReady) {
     return (
       <div className='flex min-h-[100dvh] flex-col items-center justify-center gap-4 text-(--secondary-color)'>
@@ -292,7 +298,10 @@ const Game = () => {
       </div>
       <StreakMilestoneOverlay
         milestone={activeMilestone}
-        onDismiss={() => setActiveMilestone(null)}
+        onDismiss={() => {
+          setActiveMilestone(null);
+          handleNextQuestion();
+        }}
       />
       {view === 'summary' && (
         <SessionSummaryScreen
