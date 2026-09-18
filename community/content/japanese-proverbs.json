@@ -432,9 +432,15 @@
     "meaning": "Things are often easier done than worried about"
   },
   {
-  "japanese": "念には念を入れよ",
-  "romaji": "Nen ni wa nen wo ireyo",
-  "english": "Put care into care",
-  "meaning": "Double-check everything"
-}
+    "japanese": "念には念を入れよ",
+    "romaji": "Nen ni wa nen wo ireyo",
+    "english": "Put care into care",
+    "meaning": "Double-check everything"
+  },
+  {
+    "japanese": "覆水盆に返らず",
+    "romaji": "Fukusui bon ni kaerazu",
+    "english": "Spilled water doesn’t return to the tray",
+    "meaning": "What’s done is done"
+  }
 ]
