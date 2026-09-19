@@ -213,5 +213,10 @@
   "wrong": "宿題を忘れないよう、メモします。",
   "correct": "宿題を忘れないように、メモします。",
   "explanation": "Use ように for purpose/prevention. (Pattern set 6)"
-}
+},
+  {
+    "wrong": "東京は人が多いです、きれいです。",
+    "correct": "東京は人が多くて、きれいです。",
+    "explanation": "Use て-form to connect clauses. (Pattern set 4)"
+  }
 ]
