@@ -9,6 +9,15 @@ const vocabulary = {
 } as IVocabObj;
 
 describe('isVocabularyMeaningAnswerCorrect', () => {
+  it.each(['well then...', 'well then…', 'Well then...'])(
+    'treats typed dots and the ellipsis character as equal in %s',
+    answer => {
+      const phrase = { ...vocabulary, meanings: ['well then…'] };
+
+      expect(isVocabularyMeaningAnswerCorrect(phrase, answer, false)).toBe(true);
+    },
+  );
+
   it('normalizes meaning case and whitespace', () => {
     expect(isVocabularyMeaningAnswerCorrect(vocabulary, ' america ', false)).toBe(
       true,
