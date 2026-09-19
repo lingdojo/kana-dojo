@@ -220,5 +220,11 @@
     "romaji": "Kono kanji no yomikata o oshiete kudasai.",
     "english": "Please tell me how to read this kanji.",
     "jlpt": "N5"
+  },
+  {
+    "japanese": "毎朝コーヒーを飲んでから仕事に行きます。",
+    "romaji": "Mai asa koohii o nonde kara shigoto ni ikimasu.",
+    "english": "I drink coffee every morning before going to work.",
+    "jlpt": "N4"
   }
 ]
