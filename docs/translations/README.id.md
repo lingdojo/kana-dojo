@@ -28,7 +28,7 @@
 
 ## Riwayat Bintang
 
-[![Star History Chart](https://api.star-history.com/svg?repos=lingdojo/kana-dojo&type=date&legend=top-left)](https://www.star-history.com/#lingdojo/kana-dojo&type=date&legend=top-left)
+[![Star History Chart](https://star-history.dera.page/svg?repos=lingdojo/kana-dojo&type=date&legend=top-left)](https://star-history.dera.page/#lingdojo/kana-dojo&type=date&legend=top-left)
 
 **Platform estetis, minimalis, dan sangat dapat disesuaikan untuk menguasai bahasa Jepang yang terinspirasi oleh Monkeytype**
 
