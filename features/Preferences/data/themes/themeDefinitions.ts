@@ -1102,6 +1102,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         mainColor: 'oklch(72.0% 0.145 330.0 / 1)',
         secondaryColor: 'oklch(60.0% 0.075 260.0 / 1)',
       },
+      {
+        id: 'starlit-plum',
+        backgroundColor: 'hsla(285, 48%, 11%, 1)',
+        mainColor: 'hsla(320, 70%, 65%, 1)',
+        secondaryColor: 'hsla(200, 45%, 75%, 1)',
+      },
     ],
   },
   {
