@@ -11,6 +11,7 @@ import AdSenseDisplay from '@/shared/ui-composite/Ads/AdSenseDisplay';
 import { GameBottomBar } from '@/shared/ui-composite/Game/GameBottomBar';
 import BottomBar from '@/shared/ui-composite/layout/BottomBar';
 import { suppressContinueKeyboardShortcuts } from '@/shared/utils/game/continueShortcutGuard';
+import useContinueRequestStore from '@/shared/store/useContinueRequestStore';
 import { ENABLE_EVERY_QUESTION_AD_OVERLAY } from '@/shared/utils/game/streakMilestones';
 
 const STREAK_MILESTONE_AD_SLOT = '2642983933';
@@ -87,6 +88,9 @@ export default function StreakMilestoneOverlay({
 }: StreakMilestoneOverlayProps) {
   const { isGlassMode } = useThemePreferences();
   const { playClick } = useClick();
+  const requestContinue = useContinueRequestStore(
+    state => state.requestContinue,
+  );
   const skipButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
@@ -136,6 +140,7 @@ export default function StreakMilestoneOverlay({
 
   const handleDismiss = () => {
     playClick();
+    requestContinue();
     onDismiss();
   };
 

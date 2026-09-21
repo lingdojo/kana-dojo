@@ -1,7 +1,8 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
-import { describe, expect, it, vi } from 'vitest';
+import { act, render, screen } from '@testing-library/react';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { GameBottomBar } from '@/shared/ui-composite/Game/GameBottomBar';
+import useContinueRequestStore from '@/shared/store/useContinueRequestStore';
 
 describe('GameBottomBar feedback freezing', () => {
   it('keeps last checked feedback while transitioning through check state', () => {
@@ -84,3 +85,80 @@ describe('GameBottomBar feedback freezing', () => {
   });
 });
 
+describe('GameBottomBar milestone-skip auto-continue', () => {
+  beforeEach(() => {
+    useContinueRequestStore.setState({ requestCount: 0 });
+  });
+
+  it('triggers onAction when a continue request arrives in correct state', () => {
+    const onAction = vi.fn();
+    const buttonRef = React.createRef<HTMLButtonElement>();
+    render(
+      <GameBottomBar
+        state='correct'
+        onAction={onAction}
+        canCheck
+        feedbackContent='answer-a'
+        buttonRef={buttonRef}
+      />,
+    );
+
+    act(() => {
+      useContinueRequestStore.getState().requestContinue();
+    });
+
+    expect(onAction).toHaveBeenCalledTimes(1);
+  });
+
+  it('does not trigger onAction for continue requests in check state', () => {
+    const onAction = vi.fn();
+    render(
+      <GameBottomBar
+        state='check'
+        onAction={onAction}
+        canCheck={false}
+        feedbackContent={null}
+      />,
+    );
+
+    act(() => {
+      useContinueRequestStore.getState().requestContinue();
+    });
+
+    expect(onAction).not.toHaveBeenCalled();
+  });
+
+  it('does not trigger onAction for continue requests in wrong state', () => {
+    const onAction = vi.fn();
+    render(
+      <GameBottomBar
+        state='wrong'
+        onAction={onAction}
+        canCheck
+        feedbackContent='answer-a'
+      />,
+    );
+
+    act(() => {
+      useContinueRequestStore.getState().requestContinue();
+    });
+
+    expect(onAction).not.toHaveBeenCalled();
+  });
+
+  it('does not auto-continue on mount when previous requests exist', () => {
+    const onAction = vi.fn();
+    useContinueRequestStore.setState({ requestCount: 3 });
+
+    render(
+      <GameBottomBar
+        state='correct'
+        onAction={onAction}
+        canCheck
+        feedbackContent='answer-a'
+      />,
+    );
+
+    expect(onAction).not.toHaveBeenCalled();
+  });
+});
