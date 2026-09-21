@@ -27,6 +27,7 @@
 [![Vercel OSS Program](https://img.shields.io/badge/Vercel-OSS%20Program-black?style=for-the-badge&logo=vercel)](https://vercel.com/open-source-program)
 [![Sponsored by Vercel](https://img.shields.io/badge/Sponsored%20by-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/oss)
 <!--[![Sponsored by Cossistant](https://cdn.cossistant.com/oss/oss-friends.svg)](https://cossistant.com/open-source-program)-->
+
 [![Live Demo](https://img.shields.io/badge/demo-kanadojo.com-blue?style=for-the-badge)](https://kanadojo.com)
 [![DeepWiki](https://img.shields.io/badge/docs-DeepWiki-purple?style=for-the-badge)](https://deepwiki.com/lingdojo/kana-dojo)
 [![Good First Issues](https://img.shields.io/github/issues-search/lingdojo/kana-dojo?query=is%3Aissue+is%3Aopen+label%3A%22good%20first%20issue%22&style=for-the-badge&label=good%20first%20issues&color=brightgreen)](https://github.com/lingdojo/kana-dojo/issues?q=is%3Aissue+is%3Aopen+label%3A%22good%20first%20issue%22)
@@ -118,22 +119,24 @@ npm run check
 
 ## Documentation
 
-| Document                                                  | Description                                    |
-| --------------------------------------------------------- | ---------------------------------------------- |
-| [Architecture](./docs/ARCHITECTURE.md)                    | Project structure, patterns, and conventions   |
-| [UI Design](./docs/UI_DESIGN.md)                          | Theming, styling, and component guidelines     |
-| [Translation Guide](./docs/TRANSLATION_GUIDE.md)          | How to translate the app                       |
-| [Troubleshooting](./docs/TROUBLESHOOTING.md)              | Common issues and solutions                    |
-| [Beginner Contributing](./docs/CONTRIBUTING-BEGINNERS.md) | Step-by-step guide for first-time contributors |
-| [All Documentation](./docs/)                              | Complete documentation index                   |
+| Document                                                           | Description                                    |
+| ------------------------------------------------------------------ | ---------------------------------------------- |
+| [Architecture](./docs/ARCHITECTURE.md)                             | Project structure, patterns, and conventions   |
+| [UI Design](./docs/UI_DESIGN.md)                                   | Theming, styling, and component guidelines     |
+| [Translation Guide](./docs/TRANSLATION_GUIDE.md)                   | How to translate the app                       |
+| [Troubleshooting](./docs/TROUBLESHOOTING.md)                       | Common issues and solutions                    |
+| [Personal Vercel Deployment](./docs/VERCEL_PERSONAL_DEPLOYMENT.md) | Deploy a personal fork on Vercel Hobby         |
+| [Beginner Contributing](./docs/CONTRIBUTING-BEGINNERS.md)          | Step-by-step guide for first-time contributors |
+| [All Documentation](./docs/)                                       | Complete documentation index                   |
 
 ## Tech Stack
-- [Next.js](https://nextjs.org/) 15  
-- [React](https://react.dev/) 19  
-- [TypeScript](https://www.typescriptlang.org/)  
-- [Tailwind CSS](https://tailwindcss.com/)  
-- [shadcn/ui](https://ui.shadcn.com/)  
-- [Zustand](https://github.com/pmndrs/zustand)  
+
+- [Next.js](https://nextjs.org/) 15
+- [React](https://react.dev/) 19
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [shadcn/ui](https://ui.shadcn.com/)
+- [Zustand](https://github.com/pmndrs/zustand)
 - [Framer Motion](https://framer.com/motion/)
 
 > See [Architecture docs](./docs/ARCHITECTURE.md) for full technical details.
