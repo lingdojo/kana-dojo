@@ -12,6 +12,7 @@ import { useJapaneseTTS } from '@/features/Preferences/hooks/useJapaneseTTS';
 import { ActionButton } from '@/shared/ui/components/ActionButton';
 import { motion } from 'framer-motion';
 import { cn } from '@/shared/utils/utils';
+import { SpeakButton } from '@/shared/ui-composite/Game/SpeakButton';
 
 // Premium spring animation config
 const springConfig = {
@@ -168,7 +169,7 @@ const ContinueButton = ({
 const KanjiDisplay = ({ payload }: { payload: IKanjiObj }) => (
   <motion.div
     variants={mainCharVariants}
-    className='relative flex aspect-square w-full max-w-[100px] sm:max-w-[125px] items-center justify-center'
+    className='relative flex aspect-square w-full max-w-[100px] items-center justify-center sm:max-w-[125px]'
     style={{ perspective: 1000 }}
   >
     <a
@@ -356,6 +357,7 @@ const VocabSummary = ({
   const rawReading = payload.reading || '';
   const baseReading = rawReading.split(' ')[1] || rawReading;
   const displayReading = showKana ? toKana(baseReading) : toRomaji(baseReading);
+  const speakText = toKana(baseReading);
 
   return (
     <motion.div
@@ -363,7 +365,7 @@ const VocabSummary = ({
       initial='hidden'
       animate='visible'
       className={cn(
-        'flex w-full flex-col items-center justify-start gap-4 sm:gap-6 py-4 md:w-3/4 lg:w-1/2',
+        'flex w-full flex-col items-center justify-start gap-4 py-4 sm:gap-6 md:w-3/4 lg:w-1/2',
         isGlassMode && 'rounded-xl bg-(--card-color) px-4 py-2',
       )}
     >
@@ -535,4 +537,3 @@ const AnswerSummary = ({
 };
 
 export default AnswerSummary;
-
