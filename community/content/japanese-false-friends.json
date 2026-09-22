@@ -250,11 +250,11 @@
     "termB": "letter (English)",
     "explanation": "手紙 means physical mail, not alphabet letters. (Set 3)",
     "example": "祖母に手紙を書きました。"
-  }
+  },
   {
-  "termA": "ホッチキス (hocchikisu)",
-  "termB": "Hotchkiss (name)",
-  "explanation": "ホッチキス means stapler. (Set 6)",
-  "example": "資料をホッチキスで留めてください。"
-}
+    "termA": "ホッチキス (hocchikisu)",
+    "termB": "Hotchkiss (name)",
+    "explanation": "ホッチキス means stapler. (Set 6)",
+    "example": "資料をホッチキスで留めてください。"
+  }
 ]
