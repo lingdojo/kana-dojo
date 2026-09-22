@@ -36,6 +36,13 @@ const isKatakana = (char: string): boolean => {
   return code >= 0x30a0 && code <= 0x30ff;
 };
 
+const normalizeKanaForComparison = (value: string): string =>
+  value
+    .replace(/[\u30a1-\u30f6]/g, char =>
+      String.fromCharCode(char.charCodeAt(0) - 0x60),
+    )
+    .replace(/\s+/g, '')
+    .normalize('NFC');
 // Memoized option button component to prevent unnecessary re-renders
 interface OptionButtonProps {
   variantChar: string;
@@ -426,7 +433,7 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
     ],
   );
 
-  const handleOptionClick = useCallback(
+const handleOptionClick = useCallback(
     (selectedChar: string) => {
       if (isProcessingRef.current) return;
       isProcessingRef.current = true;
@@ -447,10 +454,21 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
         }
       } else {
         // Reverse pick mode logic
-        if (
-          reversedPairs1[selectedChar] === correctRomajiCharReverse ||
-          reversedPairs2[selectedChar] === correctRomajiCharReverse
-        ) {
+        const normalizedSelectedChar = normalizeKanaForComparison(selectedChar);
+
+        const isCorrectReverseAnswer =
+          Object.entries(reversedPairs1).some(
+            ([kanaChar, romaji]) =>
+              normalizeKanaForComparison(kanaChar) === normalizedSelectedChar &&
+              romaji === correctRomajiCharReverse,
+          ) ||
+          Object.entries(reversedPairs2).some(
+            ([kanaChar, romaji]) =>
+              normalizeKanaForComparison(kanaChar) === normalizedSelectedChar &&
+              romaji === correctRomajiCharReverse,
+          );
+
+        if (isCorrectReverseAnswer) {
           handleCorrectAnswer(correctRomajiCharReverse);
           // Use weighted selection - prioritizes characters user struggles with
           const newRomaji = adaptiveSelector.selectWeightedCharacter(
@@ -464,19 +482,19 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
         }
       }
     },
-    [
-      isReverse,
-      correctRomajiChar,
-      handleCorrectAnswer,
-      correctKanaChar,
-      selectedKana,
-      handleWrongAnswer,
-      reversedPairs1,
-      reversedPairs2,
-      correctRomajiCharReverse,
-      selectedRomaji,
-    ],
-  );
+  [
+    isReverse,
+    correctRomajiChar,
+    handleCorrectAnswer,
+    correctKanaChar,
+    selectedKana,
+    handleWrongAnswer,
+    reversedPairs1,
+    reversedPairs2,
+    correctRomajiCharReverse,
+    selectedRomaji,
+  ],
+);
 
   const displayChar = isReverse ? correctRomajiCharReverse : correctKanaChar;
   if (!selectedKana || selectedKana.length === 0) {
