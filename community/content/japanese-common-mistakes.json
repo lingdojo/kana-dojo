@@ -223,5 +223,10 @@
   "wrong": "これは私のです本。",
   "correct": "これは私の本です。",
   "explanation": "Place の correctly in noun phrase. (Pattern set 3)"
+},
+  {
+  "wrong": "友達に会うを楽しみにしています。",
+  "correct": "友達に会うのを楽しみにしています。",
+  "explanation": "Nominalize with の before を. (Pattern set 6)"
 }
 ]
