@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+import { createJSONStorage, persist } from 'zustand/middleware';
 
 interface IKanaState {
   selectedGameModeKana: string;
@@ -60,28 +61,44 @@ const toggleNumbers = (arr: number[], input: number[]): number[] => {
   return changed ? next : arr;
 };
 
-const useKanaStore = create<IKanaState>(set => ({
-  selectedGameModeKana: 'Pick',
-  kanaGroupIndices: [],
-  setSelectedGameModeKana: gameMode => set({ selectedGameModeKana: gameMode }),
+const useKanaStore = create<IKanaState>()(
+  persist(
+    set => ({
+      selectedGameModeKana: 'Pick',
+      kanaGroupIndices: [],
+      setSelectedGameModeKana: gameMode =>
+        set({ selectedGameModeKana: gameMode }),
 
-  addKanaGroupIndex: kanaGroupIndex =>
-    set(state => {
-      const next = toggleNumber(state.kanaGroupIndices, kanaGroupIndex);
-      return sameArray(next, state.kanaGroupIndices)
-        ? state
-        : { kanaGroupIndices: next };
-    }),
+      addKanaGroupIndex: kanaGroupIndex =>
+        set(state => {
+          const next = toggleNumber(state.kanaGroupIndices, kanaGroupIndex);
+          return sameArray(next, state.kanaGroupIndices)
+            ? state
+            : { kanaGroupIndices: next };
+        }),
 
-  addKanaGroupIndices: kanaGroupIndices =>
-    set(state => {
-      const next = toggleNumbers(state.kanaGroupIndices, kanaGroupIndices);
-      return sameArray(next, state.kanaGroupIndices)
-        ? state
-        : { kanaGroupIndices: next };
+      addKanaGroupIndices: kanaGroupIndices =>
+        set(state => {
+          const next = toggleNumbers(state.kanaGroupIndices, kanaGroupIndices);
+          return sameArray(next, state.kanaGroupIndices)
+            ? state
+            : { kanaGroupIndices: next };
+        }),
+      setKanaGroupIndices: kanaGroupIndices =>
+        set({ kanaGroupIndices: [...new Set(kanaGroupIndices)] }),
     }),
-  setKanaGroupIndices: kanaGroupIndices =>
-    set({ kanaGroupIndices: [...new Set(kanaGroupIndices)] }),
-}));
+    {
+      name: 'kana-storage',
+      storage:
+        typeof window !== 'undefined'
+          ? createJSONStorage(() => localStorage)
+          : undefined,
+      partialize: state => ({
+        selectedGameModeKana: state.selectedGameModeKana,
+        kanaGroupIndices: state.kanaGroupIndices,
+      }),
+    },
+  ),
+);
 
 export default useKanaStore;
