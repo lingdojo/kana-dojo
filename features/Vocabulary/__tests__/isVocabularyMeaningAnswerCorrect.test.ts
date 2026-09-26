@@ -14,7 +14,9 @@ describe('isVocabularyMeaningAnswerCorrect', () => {
     answer => {
       const phrase = { ...vocabulary, meanings: ['well then…'] };
 
-      expect(isVocabularyMeaningAnswerCorrect(phrase, answer, false)).toBe(true);
+      expect(isVocabularyMeaningAnswerCorrect(phrase, answer, false)).toBe(
+        true,
+      );
     },
   );
 
@@ -27,9 +29,9 @@ describe('isVocabularyMeaningAnswerCorrect', () => {
   });
 
   it('normalizes meaning case and whitespace', () => {
-    expect(isVocabularyMeaningAnswerCorrect(vocabulary, ' america ', false)).toBe(
-      true,
-    );
+    expect(
+      isVocabularyMeaningAnswerCorrect(vocabulary, ' america ', false),
+    ).toBe(true);
   });
 
   it.each(['speak', 'Speak', 'to speak', '  TO   SPEAK  '])(
@@ -63,10 +65,12 @@ describe('isVocabularyMeaningAnswerCorrect', () => {
   it('preserves compound prefixes whose removal could change meaning', () => {
     const phrase = { ...vocabulary, meanings: ['to the point'] };
 
-    expect(isVocabularyMeaningAnswerCorrect(phrase, 'to the point', false)).toBe(
-      true,
+    expect(
+      isVocabularyMeaningAnswerCorrect(phrase, 'to the point', false),
+    ).toBe(true);
+    expect(isVocabularyMeaningAnswerCorrect(phrase, 'point', false)).toBe(
+      false,
     );
-    expect(isVocabularyMeaningAnswerCorrect(phrase, 'point', false)).toBe(false);
 
     const spacedPhrase = { ...vocabulary, meanings: ['to   the point'] };
     expect(isVocabularyMeaningAnswerCorrect(spacedPhrase, 'point', false)).toBe(
@@ -101,9 +105,9 @@ describe('isVocabularyMeaningAnswerCorrect', () => {
       reading: 'to speak',
     };
 
-    expect(
-      isVocabularyMeaningAnswerCorrect(prefixedWord, 'speak', true),
-    ).toBe(false);
+    expect(isVocabularyMeaningAnswerCorrect(prefixedWord, 'speak', true)).toBe(
+      false,
+    );
   });
 
   it.each([' アメリカ ', 'amerika', 'あめりか'])(
@@ -119,5 +123,46 @@ describe('isVocabularyMeaningAnswerCorrect', () => {
     expect(isVocabularyMeaningAnswerCorrect(vocabulary, answer, true)).toBe(
       false,
     );
+  });
+
+  it('accepts ん written as a bare "n" before a vowel (kinyoubi for 金曜日)', () => {
+    const friday = { ...vocabulary, word: '金曜日', reading: 'きんようび' };
+
+    expect(isVocabularyMeaningAnswerCorrect(friday, 'kinyoubi', true)).toBe(
+      true,
+    );
+    expect(isVocabularyMeaningAnswerCorrect(friday, 'Kinyoubi', true)).toBe(
+      true,
+    );
+    expect(isVocabularyMeaningAnswerCorrect(friday, ' kinyoubi ', true)).toBe(
+      true,
+    );
+    expect(isVocabularyMeaningAnswerCorrect(friday, "kin'youbi", true)).toBe(
+      true,
+    );
+  });
+
+  it('accepts ん before a vowel-initial syllable (konya for こんや)', () => {
+    const tonight = { ...vocabulary, word: '今夜', reading: 'こんや' };
+
+    expect(isVocabularyMeaningAnswerCorrect(tonight, 'konya', true)).toBe(true);
+  });
+
+  it('still rejects the ん-flavored spelling for the wrong reading', () => {
+    const weekday = { ...vocabulary, reading: 'きようび' };
+
+    expect(isVocabularyMeaningAnswerCorrect(weekday, 'kinyoubi', true)).toBe(
+      false,
+    );
+  });
+
+  it('does not confuse a syllable-onset or consonant-series "n" with ん', () => {
+    const natsu = { ...vocabulary, word: '夏', reading: 'なつ' };
+    const minna = { ...vocabulary, word: '皆', reading: 'みんな' };
+    const senpai = { ...vocabulary, word: '先輩', reading: 'せんぱい' };
+
+    expect(isVocabularyMeaningAnswerCorrect(natsu, 'natsu', true)).toBe(true);
+    expect(isVocabularyMeaningAnswerCorrect(minna, 'minna', true)).toBe(true);
+    expect(isVocabularyMeaningAnswerCorrect(senpai, 'senpai', true)).toBe(true);
   });
 });
