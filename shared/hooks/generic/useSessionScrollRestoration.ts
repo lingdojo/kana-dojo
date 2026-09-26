@@ -20,8 +20,10 @@ export default function useSessionScrollRestoration(
   const enabledRef = useRef(enabled);
   const readyRef = useRef(ready);
 
-  enabledRef.current = enabled;
-  readyRef.current = ready;
+  useEffect(()=>{
+    enabledRef.current = enabled;
+    readyRef.current = ready;
+  },[enabled,ready])
 
   const savePosition = useCallback(() => {
     try {
