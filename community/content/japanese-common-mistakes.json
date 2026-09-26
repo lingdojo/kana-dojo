@@ -220,18 +220,28 @@
     "explanation": "な-adjectives require な before nouns. (Pattern set 4)"
   },
   {
-  "wrong": "これは私のです本。",
-  "correct": "これは私の本です。",
-  "explanation": "Place の correctly in noun phrase. (Pattern set 3)"
+    "wrong": "これは私のです本。",
+    "correct": "これは私の本です。",
+    "explanation": "Place の correctly in noun phrase. (Pattern set 3)"
   },
   {
-  "wrong": "会議は三時からで始まります。",
-  "correct": "会議は三時から始まります。",
-  "explanation": "Remove unnecessary particle after から. (Pattern set 2)"
+    "wrong": "会議は三時からで始まります。",
+    "correct": "会議は三時から始まります。",
+    "explanation": "Remove unnecessary particle after から. (Pattern set 2)"
   },
   {
-  "wrong": "駅まで十分歩きますかかる。",
-  "correct": "駅まで歩いて十分かかる。",
-  "explanation": "Use natural collocation and order. (Pattern set 3)"
+    "wrong": "駅まで十分歩きますかかる。",
+    "correct": "駅まで歩いて十分かかる。",
+    "explanation": "Use natural collocation and order. (Pattern set 3)"
+  },
+  {
+    "wrong": "東京は人が多いです、きれいです。",
+    "correct": "東京は人が多くて、きれいです。",
+    "explanation": "Use て-form to connect clauses. (Pattern set 6)"
+  },
+  {
+    "wrong": "もし雨が降ります、行きません。",
+    "correct": "もし雨が降ったら、行きません。",
+    "explanation": "Conditional needs たら/なら etc. (Pattern set 3)"
   }
 ]

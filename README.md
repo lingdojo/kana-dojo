@@ -12,7 +12,7 @@
 </a>
 </p>
 
-<!--<div id="top"></div>-->
+<div id="top"></div>
 
 # KanaDojo かな道場
 

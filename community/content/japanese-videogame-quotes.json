@@ -483,6 +483,20 @@
     "character": "Rintaro Okabe"
   },
   {
+    "japanese": "まだまだだね",
+    "romaji": "Mada mada da ne",
+    "english": "You still have lots more to work on.",
+    "game": "The Prince of Tennis: Sweat & Tears 2",
+    "character": "Ryoma Echizen"
+  },
+  {
+    "japanese": "負ける気がしない",
+    "romaji": "Makeru ki ga shinai",
+    "english": "I don't feel like I can lose.",
+    "game": "Street Fighter series",
+    "character": "Ryu"
+  },
+  {
     "japanese": "約束された勝利の剣",
     "romaji": "Yakusoku sareta shouri no ken",
     "english": "The Sword of Promised Victory.",
@@ -490,10 +504,66 @@
     "character": "Saber"
   },
   {
+    "japanese": "冒険の始まりだ！",
+    "romaji": "Bouken no hajimari da!",
+    "english": "This is the beginning of the adventure!",
+    "game": "Dragon Quest XI",
+    "character": "Hero / party lines"
+  },
+  {
+    "japanese": "この戦い、負けられない！",
+    "romaji": "Kono tatakai, makerarenai!",
+    "english": "I can't lose this fight!",
+    "game": "Fire Emblem series",
+    "character": "Various protagonists"
+  },
+  {
+    "japanese": "世界を救うって、そういうことだろ？",
+    "romaji": "Sekai o sukuu tte, sou iu koto daro?",
+    "english": "Saving the world means doing this, right?",
+    "game": "Persona 5 Strikers",
+    "character": "Joker"
+  },
+  {
+    "japanese": "仲間を信じろ",
+    "romaji": "Nakama o shinjiro",
+    "english": "Believe in your comrades.",
+    "game": "Dragon Quest series",
+    "character": "Recurring command voice"
+  },
+  {
     "japanese": "覚悟はいいか？ 俺はできてる。",
     "romaji": "Kakugo wa ii ka? Ore wa dekiteru.",
     "english": "Are you prepared? I am.",
     "game": "JoJo’s Bizarre Adventure: All-Star Battle",
     "character": "Giorno Giovanna"
+  },
+  {
+    "japanese": "未来を変えるんだ！",
+    "romaji": "Mirai o kaerun da!",
+    "english": "We're going to change the future!",
+    "game": "Steins;Gate: My Darling's Embrace",
+    "character": "Rintaro Okabe"
+  },
+  {
+    "japanese": "次はもっと強くなる",
+    "romaji": "Tsugi wa motto tsuyoku naru",
+    "english": "Next time, I'll be stronger.",
+    "game": "Pokemon series",
+    "character": "Rival characters"
+  },
+  {
+    "japanese": "俺は悪くねぇ！",
+    "romaji": "Ore wa warukunee!",
+    "english": "It's not my fault!",
+    "game": "Tales of the Abyss",
+    "character": "Luke fon Fabre"
+  },
+  {
+  "japanese": "覚悟はいいか？ 俺はできてる。",
+  "romaji": "Kakugo wa ii ka? Ore wa dekiteru.",
+  "english": "Are you prepared? I am.",
+  "game": "JoJo’s Bizarre Adventure: All-Star Battle",
+  "character": "Giorno Giovanna"
   }
 ]

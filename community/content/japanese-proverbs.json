@@ -168,12 +168,6 @@
     "meaning": "Miss the bigger picture"
   },
   {
-    "japanese": "三日坊主",
-    "romaji": "Mikka bouzu",
-    "english": "A three-day monk",
-    "meaning": "Someone who quits quickly"
-  },
-  {
     "japanese": "柳に風",
     "romaji": "Yanagi ni kaze",
     "english": "Wind in the willow",
@@ -444,33 +438,63 @@
     "meaning": "What’s done is done"
   },
   {
-  "japanese": "旅は道連れ世は情け",
-  "romaji": "Tabi wa michizure yo wa nasake",
-  "english": "Travel needs companions; life needs kindness",
-  "meaning": "Relationships and compassion matter"
-},
+    "japanese": "旅は道連れ世は情け",
+    "romaji": "Tabi wa michizure yo wa nasake",
+    "english": "Travel needs companions; life needs kindness",
+    "meaning": "Relationships and compassion matter"
+  },
   {
-  "japanese": "覆水盆に返らず",
-  "romaji": "Fukusui bon ni kaerazu",
-  "english": "Spilled water doesn’t return to the tray",
-  "meaning": "What’s done is done"
+    "japanese": "覆水盆に返らず",
+    "romaji": "Fukusui bon ni kaerazu",
+    "english": "Spilled water doesn’t return to the tray",
+    "meaning": "What’s done is done"
+  },
+  {
+    "japanese": "転石苔むさず",
+    "romaji": "Tenseki koke musazu",
+    "english": "A rolling stone gathers no moss",
+    "meaning": "Constant change prevents stagnation"
+  },
+  {
+    "japanese": "井の中の蛙大海を知らず",
+    "romaji": "I no naka no kawazu taikai wo shirazu",
+    "english": "A frog in a well doesn’t know the ocean",
+    "meaning": "Limited experience limits perspective"
+  },
+  {
+    "japanese": "焼け石に水",
+    "romaji": "Yake ishi ni mizu",
+    "english": "Water on a hot stone",
+    "meaning": "A futile effort"
+  },
+  {
+    "japanese": "針の穴から天を覗く",
+    "romaji": "Hari no ana kara ten wo nozoku",
+    "english": "Peek at the sky through a needle's eye",
+    "meaning": "A narrow viewpoint leads to poor judgment"
+  },
+  {
+  "japanese": "後悔先に立たず",
+  "romaji": "Koukai saki ni tatazu",
+  "english": "Regret does not stand before",
+  "meaning": "It's too late for regrets"
 },
 {
-  "japanese": "転石苔むさず",
-  "romaji": "Tenseki koke musazu",
-  "english": "A rolling stone gathers no moss",
-  "meaning": "Constant change prevents stagnation"
+  "japanese": "早起きは三文の徳",
+  "romaji": "Hayaoki wa sanmon no toku",
+  "english": "Early rising brings three coins of benefit",
+  "meaning": "Wake early for advantage"
 },
-  {
-  "japanese": "井の中の蛙大海を知らず",
-  "romaji": "I no naka no kawazu taikai wo shirazu",
-  "english": "A frog in a well doesn’t know the ocean",
-  "meaning": "Limited experience limits perspective"
+{
+  "japanese": "三日坊主",
+  "romaji": "Mikka bouzu",
+  "english": "A three-day monk",
+  "meaning": "Someone who quits quickly"
 },
-  {
-  "japanese": "焼け石に水",
-  "romaji": "Yake ishi ni mizu",
-  "english": "Water on a hot stone",
-  "meaning": "A futile effort"
+{
+  "japanese": "木を見て森を見ず",
+  "romaji": "Ki wo mite mori wo mizu",
+  "english": "See the trees but not the forest",
+  "meaning": "Miss the bigger picture"
 }
 ]

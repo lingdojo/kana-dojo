@@ -306,5 +306,19 @@
     "english": "very",
     "region": "Kansai",
     "note": "Now used nationwide. (Set 5)"
+  },
+  {
+    "dialect": "いけん",
+    "standardJapanese": "いけない",
+    "english": "no/cannot",
+    "region": "Chugoku",
+    "note": "Prohibitive nuance. (Set 4)"
+  },
+  {
+    "dialect": "ほんま",
+    "standardJapanese": "本当に",
+    "english": "really",
+    "region": "Kansai",
+    "note": "Very common in Osaka/Kyoto speech. (Set 4)"
   }
 ]

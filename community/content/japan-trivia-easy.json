@@ -622,5 +622,38 @@
     "difficulty": "easy",
     "answers": ["Soba", "Udon", "Ramen", "Somem"],
     "correctIndex": 0
+  },
+  {
+    "question": "Which mountain is Japan’s highest peak?",
+    "difficulty": "easy",
+    "answers": [
+      "Mount Fuji",
+      "Mount Kita",
+      "Mount Tate",
+      "Mount Haku"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which of these is a Japanese noodle dish served in broth? (Community variation 44)",
+    "difficulty": "easy",
+    "answers": [
+      "Ramen",
+      "Takoyaki",
+      "Gyoza",
+      "Yakitori"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which Japanese city is known for the famous bamboo grove?",
+    "difficulty": "easy",
+    "answers": [
+      "Kyoto",
+      "Tokyo",
+      "Sapporo",
+      "Fukuoka"
+    ],
+    "correctIndex": 0
   }
 ]

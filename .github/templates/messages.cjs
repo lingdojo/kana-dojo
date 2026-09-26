@@ -326,7 +326,7 @@ module.exports = {
       vibeLabel: '💡 **Vibe:**',
       file: 'community/content/community-themes.json',
       itemType: 'theme',
-      prTitle: 'feat(theme): add {name} theme',
+      prTitle: 'theme: add new {name} theme',
       // Theme has unique step2 and step3
       step2:
         'Scroll to the bottom of the file and paste the following theme object just before the closing `]`:',
@@ -368,7 +368,7 @@ module.exports = {
       haikuHeader: '### The Haiku',
       file: 'community/content/japanese-haiku.json',
       itemType: 'haiku object',
-      prTitle: 'content: add japanese haiku',
+      prTitle: 'content: add new japanese haiku',
     },
     trivia: {
       title: 'Trivia Question {id}',
@@ -476,7 +476,7 @@ module.exports = {
       urlHeader: '### The Wallpaper URL String',
       file: 'community/content/community-wallpaper-urls.json',
       itemType: 'JSON string',
-      prTitle: 'content: add wallpaper url #{id}',
+      prTitle: 'content: add new wallpaper url #{id}',
     },
     communityNote: {
       title: 'Community Note Line #{id}',
@@ -486,7 +486,7 @@ module.exports = {
       taskDescription:
         'Add one exact markdown line to a low-priority community notes file.',
       noteHeader: '### The Community Note Edit',
-      prTitle: 'docs: add community note line #{id}',
+      prTitle: 'docs: add new community note line #{id}',
     },
     videoGameQuote: {
       title: 'Video Game Quote {id}',
@@ -498,7 +498,7 @@ module.exports = {
       gameQuoteHeader: '### The Video Game Quote',
       file: 'community/content/japanese-videogame-quotes.json',
       itemType: 'video game quote object',
-      prTitle: 'content: add video game quote',
+      prTitle: 'content: add new video game quote',
     },
     animeQuote: {
       title: 'Anime Quote {id}',
@@ -510,7 +510,7 @@ module.exports = {
       quoteHeader: '### The Quote',
       file: 'community/content/anime-quotes.json',
       itemType: 'anime quote object',
-      prTitle: 'content: add anime quote',
+      prTitle: 'content: add new anime quote',
     },
   },
 };

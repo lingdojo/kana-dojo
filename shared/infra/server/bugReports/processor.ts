@@ -201,7 +201,7 @@ export async function processBugReport(report: BugReportRow): Promise<{
     const githubIssue = await createGitHubIssue({
       title: cleaned.title,
       body,
-      labels: cleaned.labels,
+      labels: [...new Set([...cleaned.labels, 'help wanted', 'enhancement'])],
     });
 
     await saveSuccess({
