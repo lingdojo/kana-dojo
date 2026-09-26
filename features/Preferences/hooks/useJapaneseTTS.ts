@@ -209,10 +209,14 @@ export const useJapaneseTTS = () => {
                 );
                 return;
               } else {
-                console.warn('No voices available after retries');
-                setState((prev: TTSState) => ({ ...prev, isPlaying: false }));
-                resolve();
-                return;
+                // Some browsers never populate getVoices(), notably Brave with
+                // fingerprint blocking on, but still speak when given an
+                // utterance. Bailing out here left the click silent with no
+                // explanation, so fall through and let the engine pick a voice
+                // for ja-JP itself.
+                console.warn(
+                  'No voices reported, speaking with the browser default',
+                );
               }
             }
 
@@ -275,8 +279,9 @@ export const useJapaneseTTS = () => {
                   return 0;
                 });
                 utterance.voice = sortedJapanese[0];
-              } else {
-                // Fallback to matched voice or any voice
+              } else if (matchedVoice || voices[0]) {
+                // Fallback to matched voice or any voice. With no voices at
+                // all, leave it unset so the engine picks one.
                 utterance.voice = matchedVoice || voices[0];
               }
             } else {
@@ -328,22 +333,18 @@ export const useJapaneseTTS = () => {
               resolve();
             };
 
-            // Speak only if we have a voice set
-            if (utterance.voice) {
-              stopCurrentSpeech();
-              setTimeout(() => {
-                if (requestId !== speakRequestIdRef.current) {
-                  resolve();
-                  return;
-                }
+            // An unset voice is still worth speaking: the engine falls back to
+            // its own default for utterance.lang. Requiring one here meant a
+            // browser that hides its voice list stayed silent on every click.
+            stopCurrentSpeech();
+            setTimeout(() => {
+              if (requestId !== speakRequestIdRef.current) {
+                resolve();
+                return;
+              }
 
-                speechSynthesis.speak(utterance);
-              }, 50);
-            } else {
-              console.warn('Could not set voice for speech synthesis');
-              setState((prev: TTSState) => ({ ...prev, isPlaying: false }));
-              resolve();
-            }
+              speechSynthesis.speak(utterance);
+            }, 50);
           } catch (error) {
             console.warn('Speech synthesis error:', error);
             setState((prev: TTSState) => ({ ...prev, isPlaying: false }));
