@@ -1,10 +1,30 @@
 import { describe, expect, it } from 'vitest';
 import { isKanaGameAnswerCorrect } from './isKanaGameAnswerCorrect';
+import { flattenKanaGroups } from './flattenKanaGroup';
+import { kana } from '@/features/Kana/data/kana';
 
 const shi = { kana: 'し', romaji: 'shi', altRomanji: ['si'] };
 const a = { kana: 'あ', romaji: 'a', altRomanji: [] };
 const dzi = { kana: 'ぢ', romaji: 'ji', altRomanji: ['di'] };
 const dzu = { kana: 'づ', romaji: 'zu', altRomanji: ['du'] };
+
+const flattenedChar = (groupName: string, kanaChar: string) => {
+  const index = kana.findIndex(group => group.groupName === groupName);
+  expect(index).toBeGreaterThanOrEqual(0);
+  const flattened = flattenKanaGroups([index]);
+  return flattened.find(char => char.kana === kanaChar) ?? flattened[0];
+};
+
+const STANDARD_ALTERNATES: ReadonlyArray<[string, string, string]> = [
+  ['h.d.z', 'じ', 'zi'],
+  ['h.b.w', 'を', 'o'],
+  ['k.d.z', 'ジ', 'zi'],
+  ['k.b.w', 'ヲ', 'o'],
+  ['challenge.katakana.sonshitsu', 'シ', 'si'],
+  ['challenge.katakana.sonshitsu', 'ツ', 'tu'],
+  ['challenge.katakana.sonshitsu', 'ン', 'nn'],
+  ['challenge.similar.sachiki', 'ち', 'ti'],
+];
 
 describe('isKanaGameAnswerCorrect', () => {
   it('accepts the primary romaji (case- and whitespace-insensitive)', () => {
@@ -39,5 +59,34 @@ describe('isKanaGameAnswerCorrect', () => {
     expect(isKanaGameAnswerCorrect(shi, 'し', true)).toBe(true);
     expect(isKanaGameAnswerCorrect(shi, ' し ', true)).toBe(true);
     expect(isKanaGameAnswerCorrect(shi, 'shi', true)).toBe(false);
+  });
+
+  it.each(STANDARD_ALTERNATES)(
+    'accepts %s as a standard spelling for %s in %s',
+    (groupName, kanaChar, romaji) => {
+      expect(
+        isKanaGameAnswerCorrect(
+          flattenedChar(groupName, kanaChar),
+          romaji,
+          false,
+        ),
+      ).toBe(true);
+    },
+  );
+
+  it.each(STANDARD_ALTERNATES)(
+    'keeps accepting the primary romaji for %s in %s',
+    (groupName, kanaChar) => {
+      const character = flattenedChar(groupName, kanaChar);
+      expect(isKanaGameAnswerCorrect(character, character.romaji, false)).toBe(
+        true,
+      );
+    },
+  );
+
+  it('still accepts wo for を', () => {
+    expect(
+      isKanaGameAnswerCorrect(flattenedChar('h.b.w', 'を'), 'wo', false),
+    ).toBe(true);
   });
 });

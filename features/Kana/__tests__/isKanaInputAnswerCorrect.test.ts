@@ -298,4 +298,41 @@ describe('isKanaInputAnswerCorrect', () => {
       }),
     ).toBe(true);
   });
+
+  it('accepts zi for じ through the data-driven map', () => {
+    const dataMap = buildAltMapFromData();
+    expect(dataMap.get('じ')).toEqual(['zi']);
+    expect(
+      isKanaInputAnswerCorrect({
+        inputValue: 'zi',
+        correctChar: 'じ',
+        targetChar: 'ji',
+        isReverse: false,
+        altRomanjiMap: dataMap,
+      }),
+    ).toBe(true);
+  });
+
+  it('accepts o for を through the data-driven map', () => {
+    const dataMap = buildAltMapFromData();
+    expect(dataMap.get('を')).toEqual(['o']);
+    expect(
+      isKanaInputAnswerCorrect({
+        inputValue: 'o',
+        correctChar: 'を',
+        targetChar: 'wo',
+        isReverse: false,
+        altRomanjiMap: dataMap,
+      }),
+    ).toBe(true);
+    expect(
+      isKanaInputAnswerCorrect({
+        inputValue: 'wo',
+        correctChar: 'を',
+        targetChar: 'wo',
+        isReverse: false,
+        altRomanjiMap: dataMap,
+      }),
+    ).toBe(true);
+  });
 });
