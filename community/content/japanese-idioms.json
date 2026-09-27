@@ -122,7 +122,7 @@
   {
     "japanese": "猫の手も借りたい",
     "romaji": "Neko no te mo karitai",
-    "english": "I’d even borrow a cat’s paws",
+    "english": "I’d even borrow a cat's paws",
     "meaning": "Extremely busy and desperate for help. (Set 3)"
   },
   {
@@ -246,10 +246,10 @@
     "meaning": "Feel proud. (Set 3)"
   },
   {
-  "japanese": "胸を張る",
-  "romaji": "Mune o haru",
-  "english": "Expand chest",
-  "meaning": "Be proud/confident. (Set 4)"
+    "japanese": "胸を張る",
+    "romaji": "Mune o haru",
+    "english": "Expand chest",
+    "meaning": "Be proud/confident. (Set 4)"
   },
   {
     "japanese": "腰が重い",
@@ -264,9 +264,15 @@
     "meaning": "Have many connections. (Set 2)"
   },
   {
-  "japanese": "気が短い",
-  "romaji": "Ki ga mijikai",
-  "english": "Short-tempered",
-  "meaning": "Impatient temperament. (Set 6)"
+    "japanese": "気が短い",
+    "romaji": "Ki ga mijikai",
+    "english": "Short-tempered",
+    "meaning": "Impatient temperament. (Set 6)"
+  },
+  {
+    "japanese": "念には念を入れる",
+    "romaji": "Nen ni wa nen o ireru",
+    "english": "Add caution to caution",
+    "meaning": "Take extra care. (Set 1)"
   }
 ]
