@@ -348,5 +348,12 @@
   "english": "sentence ending",
   "region": "Fukuoka",
   "note": "Assertive friendly ending. (Set 6)"
-}
+},
+  {
+    "dialect": "ぶち",
+    "standardJapanese": "とても",
+    "english": "very",
+    "region": "Yamaguchi/Hiroshima",
+    "note": "Regional intensifier. (Set 4)"
+  }
 ]
