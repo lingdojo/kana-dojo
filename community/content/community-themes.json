@@ -359,5 +359,11 @@
     "backgroundColor": "oklch(18.5% 0.035 140.0 / 1)",
     "mainColor": "oklch(76.0% 0.140 135.0 / 1)",
     "secondaryColor": "oklch(72.0% 0.070 80.0 / 1)"
+  },
+  {
+    "id": "kumo-sky",
+    "backgroundColor": "oklch(90.0% 0.020 220.0 / 1)",
+    "mainColor": "oklch(60.0% 0.090 215.0 / 1)",
+    "secondaryColor": "oklch(70.0% 0.060 200.0 / 1)"
   }
 ]
