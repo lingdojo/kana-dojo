@@ -253,6 +253,11 @@
   "wrong": "私は日本語を話しますです。",
   "correct": "私は日本語を話します。",
   "explanation": "Do not stack ます and です in one predicate. (Pattern set 2)"
+},
+  {
+  "wrong": "図書館に本を借りました。",
+  "correct": "図書館で本を借りました。",
+  "explanation": "で marks location of action. (Pattern set 5)"
 }
 
 ]
