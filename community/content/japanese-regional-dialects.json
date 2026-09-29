@@ -259,18 +259,18 @@
     "note": "Used for severe winter cold. (Set 1)"
   },
   {
-  "dialect": "〜けん",
-  "standardJapanese": "〜から",
-  "english": "because",
-  "region": "Kyushu",
-  "note": "Reason marker in Kyushu. (Set 5)"
+    "dialect": "〜けん",
+    "standardJapanese": "〜から",
+    "english": "because",
+    "region": "Kyushu",
+    "note": "Reason marker in Kyushu. (Set 5)"
   },
   {
-  "dialect": "なんくるないさ",
-  "standardJapanese": "なんとかなる",
-  "english": "it'll work out",
-  "region": "Okinawa",
-  "note": "Famous Okinawan resilience phrase. (Set 6)"
+    "dialect": "なんくるないさ",
+    "standardJapanese": "なんとかなる",
+    "english": "it'll work out",
+    "region": "Okinawa",
+    "note": "Famous Okinawan resilience phrase. (Set 6)"
   },
   {
     "dialect": "ぶち",
@@ -322,31 +322,45 @@
     "note": "Very common in Osaka/Kyoto speech. (Set 4)"
   },
   {
-  "dialect": "ほんま",
-  "standardJapanese": "本当に",
-  "english": "really",
-  "region": "Kansai",
-  "note": "Very common in Osaka/Kyoto speech. (Set 3)"
+    "dialect": "ほんま",
+    "standardJapanese": "本当に",
+    "english": "really",
+    "region": "Kansai",
+    "note": "Very common in Osaka/Kyoto speech. (Set 3)"
   },
   {
-  "dialect": "〜じゃけぇ",
-  "standardJapanese": "〜だから",
-  "english": "because",
-  "region": "Hiroshima",
-  "note": "Common causal ending. (Set 2)"
+    "dialect": "〜じゃけぇ",
+    "standardJapanese": "〜だから",
+    "english": "because",
+    "region": "Hiroshima",
+    "note": "Common causal ending. (Set 2)"
   },
-{
-  "dialect": "〜やねん",
-  "standardJapanese": "〜なんだ",
-  "english": "it is that...",
-  "region": "Kansai",
-  "note": "Explanatory ending in conversation. (Set 1)"
-},
-{
-  "dialect": "にふぇーでーびる",
-  "standardJapanese": "ありがとうございます",
-  "english": "thank you",
-  "region": "Okinawa",
-  "note": "Okinawan gratitude expression. (Set 4)"
-}
+  {
+    "dialect": "〜やねん",
+    "standardJapanese": "〜なんだ",
+    "english": "it is that...",
+    "region": "Kansai",
+    "note": "Explanatory ending in conversation. (Set 1)"
+  },
+  {
+    "dialect": "〜ばい",
+    "standardJapanese": "〜だよ",
+    "english": "sentence ending",
+    "region": "Fukuoka",
+    "note": "Assertive friendly ending. (Set 6)"
+  },
+  {
+    "dialect": "にふぇーでーびる",
+    "standardJapanese": "ありがとうございます",
+    "english": "thank you",
+    "region": "Okinawa",
+    "note": "Okinawan gratitude expression. (Set 4)"
+  },
+  {
+    "dialect": "ほんま",
+    "standardJapanese": "本当に",
+    "english": "really",
+    "region": "Kansai",
+    "note": "Very common in Osaka/Kyoto speech. (Set 6)"
+  }
 ]
