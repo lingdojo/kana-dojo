@@ -4,6 +4,7 @@ import { CircleCheck } from 'lucide-react';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import type { IKanjiObj } from '@/features/Kanji/store/useKanjiStore';
+import { isKanjiAnswerCorrect } from '@/features/Kanji/lib/isKanjiAnswerCorrect';
 import { useClick, useCorrect, useError } from '@/shared/hooks/generic/useAudio';
 // import GameIntel from '@/shared/ui-composite/Game/GameIntel';
 import { useStatsStore } from '@/features/Progress';
@@ -210,20 +211,9 @@ const KanjiInputGame = ({
     }
   };
 
-  const normalizeAnswer = (value: string): string => value.trim().toLowerCase();
-
   const isInputCorrect = (input: string): boolean => {
-    const normalizedInput = normalizeAnswer(input);
-
-    if (!isReverse) {
-      return (
-        Array.isArray(targetChar) &&
-        targetChar.some(answer => normalizeAnswer(answer) === normalizedInput)
-      );
-    } else {
-      const reverseTargetChar = typeof targetChar === 'string' ? targetChar : '';
-      return normalizedInput === normalizeAnswer(reverseTargetChar);
-    }
+    if (!correctKanjiObj) return false;
+    return isKanjiAnswerCorrect(correctKanjiObj, input, isReverse);
   };
 
   const handleCheck = () => {
