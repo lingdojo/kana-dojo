@@ -57,6 +57,10 @@ function createStatsForMasteryAchievement(
   return {
     allTimeStats: {
       characterMastery,
+      contentMastery: {
+        vocabulary:
+          additional?.contentType === 'vocabulary' ? characterMastery : {},
+      },
       totalCorrect: 0,
       totalIncorrect: 0,
       bestStreak: 0,
@@ -87,8 +91,13 @@ function checkMasteryRequirement(
 
   // For vocabulary mastery with minAnswers, check unique words mastered
   if (additional?.contentType === 'vocabulary' && minAnswers !== undefined) {
+    const vocabularyMastery = (
+      stats.allTimeStats.contentMastery as {
+        vocabulary: Record<string, { correct: number; incorrect: number }>;
+      }
+    ).vocabulary;
     let masteredCount = 0;
-    for (const [, charStats] of Object.entries(characterMastery)) {
+    for (const [, charStats] of Object.entries(vocabularyMastery)) {
       const total = charStats.correct + charStats.incorrect;
       if (total > 0) {
         const accuracy = (charStats.correct / total) * 100;
