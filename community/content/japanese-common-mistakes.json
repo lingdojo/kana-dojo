@@ -263,5 +263,10 @@
     "id": 279,
     "mistake": "Using wa instead of ga",
     "correction": "Use ga for new information"
+  },
+  {
+    "id": 759,
+    "mistake": "Using desu directly after an i-adjective past tense wrongly",
+    "correction": "Use katta desu"
   }
 ]
