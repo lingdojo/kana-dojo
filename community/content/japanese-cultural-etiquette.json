@@ -395,16 +395,20 @@
     "context": "General respect"
   },
   {
-  "situation": "乾杯 6",
-  "do": "全員の飲み物が揃ってから乾杯する",
-  "dont": "先に一人で飲み始める",
-  "note": "場の一体感を重視。"
-},
-{
-  "situation": "遅刻時 6",
-  "do": "事前連絡し到着後に謝罪する",
-  "dont": "無連絡で遅れて言い訳を続ける",
-  "note": "先に謝罪が基本。"
-}
-
+    "situation": "\u4e7e\u676f 6",
+    "do": "\u5168\u54e1\u306e\u98f2\u307f\u7269\u304c\u63c3\u3063\u3066\u304b\u3089\u4e7e\u676f\u3059\u308b",
+    "dont": "\u5148\u306b\u4e00\u4eba\u3067\u98f2\u307f\u59cb\u3081\u308b",
+    "note": "\u5834\u306e\u4e00\u4f53\u611f\u3092\u91cd\u8996\u3002"
+  },
+  {
+    "situation": "\u9045\u523b\u6642 6",
+    "do": "\u4e8b\u524d\u9023\u7d61\u3057\u5230\u7740\u5f8c\u306b\u8b1d\u7f6a\u3059\u308b",
+    "dont": "\u7121\u9023\u7d61\u3067\u9045\u308c\u3066\u8a00\u3044\u8a33\u3092\u7d9a\u3051\u308b",
+    "note": "\u5148\u306b\u8b1d\u7f6a\u304c\u57fa\u672c\u3002"
+  },
+  {
+    "id": 406,
+    "tip": "Always take off your shoes before entering a house",
+    "context": "Entering homes"
+  }
 ]
