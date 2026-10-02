@@ -1,5 +1,6 @@
 'use client';
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef, useCallback, useId } from 'react';
+import { useTranslations } from 'next-intl';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { toHiragana } from 'wanakana';
@@ -52,6 +53,8 @@ const VocabInputGame = ({
   isHidden,
   isReverse = false,
 }: VocabInputGameProps) => {
+  const t = useTranslations('vocabulary.game.answerCues');
+  const inputId = useId();
   const logAttempt = useClassicSessionStore(state => state.logAttempt);
   const recordVocabularyProgress = useSetProgressStore(
     state => state.recordVocabularyProgress,
@@ -351,6 +354,12 @@ const VocabInputGame = ({
 
   const displayCharLang = isReverse && quizType === 'meaning' ? 'en' : 'ja';
   const inputLang = quizType === 'reading' ? 'ja' : isReverse ? 'ja' : 'en';
+  const answerCue =
+    quizType === 'reading'
+      ? t('reading')
+      : isReverse
+        ? t('word')
+        : t('meaning');
   const textSize = isReverse ? 'text-5xl sm:text-7xl' : 'text-5xl md:text-8xl';
   const canCheck = inputValue.trim().length > 0 && bottomBarState !== 'correct';
   const showContinue = bottomBarState === 'correct';
@@ -384,13 +393,12 @@ const VocabInputGame = ({
       ) : (
         <>
           <div className='flex flex-col items-center gap-4'>
-            <span className='mb-2 text-sm text-(--secondary-color)'>
-              {quizType === 'meaning'
-                ? isReverse
-                  ? 'What is the word?'
-                  : 'What is the meaning?'
-                : 'What is the reading?'}
-            </span>
+            <label
+              htmlFor={inputId}
+              className='mb-2 rounded-full border border-(--border-color) bg-(--card-color) px-4 py-2 text-base font-semibold text-(--main-color) sm:text-lg'
+            >
+              {answerCue}
+            </label>
             <div
               className={cn(
                 'flex flex-row items-center gap-1',
@@ -435,9 +443,10 @@ const VocabInputGame = ({
           </div>
 
           <textarea
+            id={inputId}
             ref={inputRef}
             value={inputValue}
-            placeholder='type your answer...'
+            placeholder={answerCue}
             disabled={showContinue}
             rows={4}
             className={clsx(

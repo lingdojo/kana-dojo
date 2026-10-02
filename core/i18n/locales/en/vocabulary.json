@@ -36,7 +36,12 @@
     "streak": "Streak: {{count}}",
     "correct": "Correct!",
     "incorrect": "Incorrect",
-    "showAnswer": "Show Answer"
+    "showAnswer": "Show Answer",
+    "answerCues": {
+      "meaning": "Type the meaning",
+      "reading": "Type the reading",
+      "word": "Type the Japanese word"
+    }
   },
   "modes": {
     "pick": "Pick Mode",
