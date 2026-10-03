@@ -280,7 +280,7 @@ const KanjiMCQ = ({ selectedKanjiObjs, isHidden }: KanjiMCQProps) => {
     setCurrentKanjiObj(correctKanjiObj as IKanjiObj);
 
     addCharacterToHistory(correctChar);
-    incrementCharacterScore(correctChar, 'correct');
+    incrementCharacterScore(correctChar, 'correct', 'kanji');
     incrementCorrectAnswers();
     void recordKanjiProgress(correctChar);
     setScore(score + 1);
@@ -313,7 +313,7 @@ const KanjiMCQ = ({ selectedKanjiObjs, isHidden }: KanjiMCQProps) => {
   const handleWrongAnswer = (selectedOption: string) => {
     setWrongSelectedAnswers([...wrongSelectedAnswers, selectedOption]);
     playErrorTwice();
-    incrementCharacterScore(correctChar, 'wrong');
+    incrementCharacterScore(correctChar, 'wrong', 'kanji');
     incrementWrongAnswers();
     if (score - 1 < 0) {
       setScore(0);
