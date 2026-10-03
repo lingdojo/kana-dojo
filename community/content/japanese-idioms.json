@@ -246,10 +246,10 @@
     "meaning": "Feel proud. (Set 3)"
   },
   {
-  "japanese": "胸を張る",
-  "romaji": "Mune o haru",
-  "english": "Expand chest",
-  "meaning": "Be proud/confident. (Set 4)"
+    "japanese": "胸を張る",
+    "romaji": "Mune o haru",
+    "english": "Expand chest",
+    "meaning": "Be proud/confident. (Set 4)"
   },
   {
     "japanese": "腰が重い",
@@ -280,29 +280,35 @@
     "romaji": "Mimi ga hayai",
     "english": "Fast ears",
     "meaning": "Quick to hear news/gossip. (Set 2)"
-},
-{
-  "japanese": "鼻が高い",
-  "romaji": "Hana ga takai",
-  "english": "High nose",
-  "meaning": "Feel proud. (Set 1)"
-},
-     {
-     "japanese": "手を抜く",
-     "romaji": "Te o nuku",
-     "english": "Cut corners",
-     "meaning": "Do less than one should. (Set 3)"
- },
-{
-  "japanese": "首を長くする",
-  "romaji": "Kubi o nagaku suru",
-  "english": "Make neck long",
-  "meaning": "Wait eagerly. (Set 6)"
-},
-{
-  "japanese": "胸を張る",
-  "romaji": "Mune o haru",
-  "english": "Expand chest",
-  "meaning": "Be proud/confident. (Set 3)"
-}
+  },
+  {
+    "japanese": "鼻が高い",
+    "romaji": "Hana ga takai",
+    "english": "High nose",
+    "meaning": "Feel proud. (Set 1)"
+  },
+  {
+    "japanese": "手を抜く",
+    "romaji": "Te o nuku",
+    "english": "Cut corners",
+    "meaning": "Do less than one should. (Set 3)"
+  },
+  {
+    "japanese": "首を長くする",
+    "romaji": "Kubi o nagaku suru",
+    "english": "Make neck long",
+    "meaning": "Wait eagerly. (Set 6)"
+  },
+  {
+    "japanese": "七転び八起き",
+    "romaji": "Nanakorobi yaoki",
+    "english": "Fall seven times, get up eight",
+    "meaning": "Never give up; keep trying after setbacks."
+  },
+  {
+    "japanese": "胸を張る",
+    "romaji": "Mune o haru",
+    "english": "Expand chest",
+    "meaning": "Be proud/confident. (Set 3)"
+  }
 ]
