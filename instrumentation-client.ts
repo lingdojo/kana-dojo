@@ -1,16 +1,20 @@
 // instrumentation-client.ts
 import * as Sentry from '@sentry/nextjs';
 
-Sentry.init({
-  dsn: 'https://a6f82883d78e424ee7b578556b78743d@o4511608063197184.ingest.us.sentry.io/4511608067981312',
-  // Performance rescue: Sentry Replay is intentionally disabled for now.
-  // integrations: [Sentry.replayIntegration()],
-  tracesSampleRate: 0.1,
-  enableLogs: true,
-  // replaysSessionSampleRate: 0.1,
-  // replaysOnErrorSampleRate: 1.0,
-  sendDefaultPii: true,
-});
+const dsn = process.env.NEXT_PUBLIC_SENTRY_DSN;
+
+if (dsn) {
+  Sentry.init({
+    dsn,
+    // Performance rescue: Sentry Replay is intentionally disabled for now.
+    // integrations: [Sentry.replayIntegration()],
+    tracesSampleRate: 0.1,
+    enableLogs: process.env.NEXT_PUBLIC_SENTRY_ENABLE_LOGS === 'true',
+    // replaysSessionSampleRate: 0.1,
+    // replaysOnErrorSampleRate: 1.0,
+    sendDefaultPii: process.env.NEXT_PUBLIC_SENTRY_SEND_DEFAULT_PII === 'true',
+  });
+}
 
 export const onRouterTransitionStart = Sentry.captureRouterTransitionStart;
 
@@ -64,10 +68,6 @@ if (typeof window !== 'undefined' && !sessionStorage.getItem(RELOAD_FLAG)) {
     }
   });
 }
-if (process.env.NODE_ENV === 'development') {
-  console.log('PostHog client instrumentation disabled in development mode.');
-}
-
 /*
  * Performance rescue: PostHog is intentionally disabled without deleting the
  * integration. Re-enable only after a measured analytics rollout.
