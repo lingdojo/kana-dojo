@@ -46,6 +46,21 @@ export function useGameStats(): GameStatsActions {
       'correct',
       (event: StatEvent) => {
         store.incrementCorrectAnswers();
+
+        const contentType = event.contentType || 'general';
+
+        // Content-specific tracking so vocabulary Input/Reverse-Input modes are
+        // counted like MCQ/Tiles (which call incrementVocabularyCorrect directly).
+        if (contentType === 'vocabulary') {
+          store.incrementVocabularyCorrect();
+        }
+
+        // Feed answer-time metadata (emitted by vocab Input) into speed tracking,
+        // matching the direct-hook game modes.
+        if (event.metadata?.timeTaken !== undefined) {
+          store.recordAnswerTime(event.metadata.timeTaken);
+        }
+
         // Update character history based on content type
         if (event.character) {
           store.addCharacterToHistory(event.character);
@@ -53,7 +68,6 @@ export function useGameStats(): GameStatsActions {
         }
 
         // Trigger achievement progress check for correct answers
-        const contentType = event.contentType || 'general';
         checkForAchievementProgress(contentType, true);
       },
     );
@@ -79,6 +93,7 @@ export function useGameStats(): GameStatsActions {
       unsubIncorrect();
       unsubSession();
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [store]);
 
   return {
