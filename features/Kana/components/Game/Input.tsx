@@ -4,7 +4,11 @@ import { kana } from '@/features/Kana/data/kana';
 import useKanaStore from '@/features/Kana/store/useKanaStore';
 import { motion } from 'framer-motion';
 import clsx from 'clsx';
-import { useClick, useCorrect, useError } from '@/shared/hooks/generic/useAudio';
+import {
+  useClick,
+  useCorrect,
+  useError,
+} from '@/shared/hooks/generic/useAudio';
 // import GameIntel from '@/shared/ui-composite/Game/GameIntel';
 import { useStatsStore } from '@/features/Progress';
 import { useShallow } from 'zustand/react/shallow';
@@ -19,6 +23,7 @@ import { useAdaptiveTargetLength } from '@/shared/hooks/game/useAdaptiveTargetLe
 import { useThemePreferences } from '@/features/Preferences';
 import { cn } from '@/shared/utils/utils';
 import { shouldSuppressContinueKeyboardShortcut } from '@/shared/utils/game/continueShortcutGuard';
+import { isComposingKeyboardEvent } from '@/shared/utils/game/inputComposition';
 
 // Get the global adaptive selector for weighted character selection
 const adaptiveSelector = getGlobalAdaptiveSelector();
@@ -141,7 +146,12 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
   const buildTargetPair = useCallback(() => {
     const sourceArray = isReverse ? selectedRomaji : selectedKana;
     if (sourceArray.length === 0) {
-      return { correctChar: '', targetChar: '', promptParts: [], answerParts: [] };
+      return {
+        correctChar: '',
+        targetChar: '',
+        promptParts: [],
+        answerParts: [],
+      };
     }
 
     const used = new Set<string>();
@@ -180,13 +190,17 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
   const answerParts = pairData.answerParts;
   const pauseTimer = useCallback(() => {
     if (answerStartTimeRef.current !== null) {
-      elapsedTimeMsRef.current += performance.now() - answerStartTimeRef.current;
+      elapsedTimeMsRef.current +=
+        performance.now() - answerStartTimeRef.current;
       answerStartTimeRef.current = null;
     }
   }, []);
   const getElapsedTimeMs = useCallback(() => {
     if (answerStartTimeRef.current !== null) {
-      return elapsedTimeMsRef.current + (performance.now() - answerStartTimeRef.current);
+      return (
+        elapsedTimeMsRef.current +
+        (performance.now() - answerStartTimeRef.current)
+      );
     }
     return elapsedTimeMsRef.current;
   }, []);
@@ -222,7 +236,8 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
 
       if (
         isContinueShortcut &&
-        shouldSuppressContinueKeyboardShortcut()
+        (isComposingKeyboardEvent(event) ||
+          shouldSuppressContinueKeyboardShortcut())
       ) {
         event.preventDefault();
         return;
@@ -450,6 +465,7 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
         onKeyDown={e => {
           if (e.key === 'Enter') {
             e.preventDefault();
+            if (isComposingKeyboardEvent(e.nativeEvent)) return;
             if (inputValue.trim().length > 0 && bottomBarState !== 'correct') {
               handleCheck();
             }
@@ -476,4 +492,3 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
 };
 
 export default InputGame;
-

@@ -4,7 +4,11 @@ import { CircleCheck } from 'lucide-react';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import type { IKanjiObj } from '@/features/Kanji/store/useKanjiStore';
-import { useClick, useCorrect, useError } from '@/shared/hooks/generic/useAudio';
+import {
+  useClick,
+  useCorrect,
+  useError,
+} from '@/shared/hooks/generic/useAudio';
 // import GameIntel from '@/shared/ui-composite/Game/GameIntel';
 import { useStatsStore } from '@/features/Progress';
 import { useShallow } from 'zustand/react/shallow';
@@ -20,6 +24,7 @@ import { useThemePreferences } from '@/features/Preferences';
 import { cn } from '@/shared/utils/utils';
 import { useSetProgressStore } from '@/features/Progress';
 import { shouldSuppressContinueKeyboardShortcut } from '@/shared/utils/game/continueShortcutGuard';
+import { isComposingKeyboardEvent } from '@/shared/utils/game/inputComposition';
 import { useMenuSelectorStore } from '@/shared/ui-composite/Menu/store/useMenuSelectorStore';
 import { isKanjiClassicInputAnswerCorrect } from '@/features/Kanji/lib/isKanjiClassicInputAnswerCorrect';
 
@@ -126,13 +131,17 @@ const KanjiInputGame = ({
   const [promptSequence, setPromptSequence] = useState(0);
   const pauseTimer = () => {
     if (answerStartTimeRef.current !== null) {
-      elapsedTimeMsRef.current += performance.now() - answerStartTimeRef.current;
+      elapsedTimeMsRef.current +=
+        performance.now() - answerStartTimeRef.current;
       answerStartTimeRef.current = null;
     }
   };
   const getElapsedTimeMs = () => {
     if (answerStartTimeRef.current !== null) {
-      return elapsedTimeMsRef.current + (performance.now() - answerStartTimeRef.current);
+      return (
+        elapsedTimeMsRef.current +
+        (performance.now() - answerStartTimeRef.current)
+      );
     }
     return elapsedTimeMsRef.current;
   };
@@ -163,7 +172,8 @@ const KanjiInputGame = ({
 
       if (
         isContinueShortcut &&
-        shouldSuppressContinueKeyboardShortcut()
+        (isComposingKeyboardEvent(event) ||
+          shouldSuppressContinueKeyboardShortcut())
       ) {
         event.preventDefault();
         return;
@@ -451,6 +461,7 @@ const KanjiInputGame = ({
             onKeyDown={e => {
               if (e.key === 'Enter') {
                 e.preventDefault();
+                if (isComposingKeyboardEvent(e.nativeEvent)) return;
                 handleEnter(e);
               }
             }}
@@ -478,4 +489,3 @@ const KanjiInputGame = ({
 };
 
 export default KanjiInputGame;
-

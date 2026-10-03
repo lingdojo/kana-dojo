@@ -33,6 +33,7 @@ import {
 } from '@/features/Vocabulary/components/Game/vocabFormatLock';
 import { useSetProgressStore } from '@/features/Progress';
 import { shouldSuppressContinueKeyboardShortcut } from '@/shared/utils/game/continueShortcutGuard';
+import { isComposingKeyboardEvent } from '@/shared/utils/game/inputComposition';
 import { isVocabularyMeaningAnswerCorrect } from '@/features/Vocabulary/lib/isVocabularyMeaningAnswerCorrect';
 
 // Get the global adaptive selector for weighted character selection
@@ -184,7 +185,11 @@ const VocabInputGame = ({
       const isSpace = event.code === 'Space' || event.key === ' ';
       const isContinueShortcut = isEnter || isSpace;
 
-      if (isContinueShortcut && shouldSuppressContinueKeyboardShortcut()) {
+      if (
+        isContinueShortcut &&
+        (isComposingKeyboardEvent(event) ||
+          shouldSuppressContinueKeyboardShortcut())
+      ) {
         event.preventDefault();
         return;
       }
@@ -459,6 +464,7 @@ const VocabInputGame = ({
             onKeyDown={e => {
               if (e.key === 'Enter') {
                 e.preventDefault();
+                if (isComposingKeyboardEvent(e.nativeEvent)) return;
                 handleEnter(e);
               }
             }}
