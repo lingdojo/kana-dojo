@@ -59,7 +59,7 @@ export const isKanaInputAnswerCorrect = ({
 
   // Normal mode: user types romaji. Compare case- and Unicode-insensitively.
   const lowerInput = normalizedInput.toLowerCase();
-  const lowerTarget = targetChar.toLowerCase().normalize('NFC');
+  const lowerTarget = targetChar.toLowerCase().normalize('NFKC');
 
   if (lowerInput === lowerTarget) {
     return true;
@@ -79,13 +79,13 @@ export const isKanaInputAnswerCorrect = ({
   ) {
     const validAnswers = buildAltCombinations(promptParts, answerParts, altRomanjiMap);
     return validAnswers.some(
-      ans => lowerInput === ans.toLowerCase().normalize('NFC'),
+      ans => lowerInput === ans.toLowerCase().normalize('NFKC'),
     );
   }
 
   // Legacy single-character fallback (promptParts not provided).
   const alternatives = altRomanjiMap.get(correctChar);
   return alternatives
-    ? alternatives.some(alt => lowerInput === alt.toLowerCase().normalize('NFC'))
+    ? alternatives.some(alt => lowerInput === alt.toLowerCase().normalize('NFKC'))
     : false;
 };
