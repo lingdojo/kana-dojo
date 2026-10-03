@@ -57,7 +57,7 @@ export const kana: KanaGroup[] = [
   {
     kana: ['わ', 'を', 'ん'],
     romanji: ['wa', 'wo', 'n'],
-    altRomanji: [[], [], ['nn']],
+    altRomanji: [[], ['o'], ['nn']],
     groupName: 'h.b.w',
   },
   {
@@ -68,6 +68,7 @@ export const kana: KanaGroup[] = [
   {
     kana: ['ざ', 'じ', 'ず', 'ぜ', 'ぞ'],
     romanji: ['za', 'ji', 'zu', 'ze', 'zo'],
+    altRomanji: [[], ['zi'], [], [], []],
     groupName: 'h.d.z',
   },
   {
@@ -192,7 +193,7 @@ export const kana: KanaGroup[] = [
   {
     kana: ['ワ', 'ヲ', 'ン'],
     romanji: ['wa', 'wo', 'n'],
-    altRomanji: [[], [], ['nn']],
+    altRomanji: [[], ['o'], ['nn']],
     groupName: 'k.b.w',
   },
   {
@@ -203,6 +204,7 @@ export const kana: KanaGroup[] = [
   {
     kana: ['ザ', 'ジ', 'ズ', 'ゼ', 'ゾ'],
     romanji: ['za', 'ji', 'zu', 'ze', 'zo'],
+    altRomanji: [[], ['zi'], [], [], []],
     groupName: 'k.d.z',
   },
   {
@@ -319,6 +321,7 @@ export const kana: KanaGroup[] = [
   {
     kana: ['さ', 'ち', 'き'],
     romanji: ['sa', 'chi', 'ki'],
+    altRomanji: [[], ['ti'], []],
     groupName: 'challenge.similar.sachiki',
   },
   {
@@ -344,6 +347,7 @@ export const kana: KanaGroup[] = [
   {
     kana: ['ソ', 'ン', 'シ', 'ツ'],
     romanji: ['so', 'n', 'shi', 'tsu'],
+    altRomanji: [[], ['nn'], ['si'], ['tu']],
     groupName: 'challenge.katakana.sonshitsu',
   },
   {
