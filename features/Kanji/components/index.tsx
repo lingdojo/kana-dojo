@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useTranslations } from 'next-intl';
 import useKanjiStore from '@/features/Kanji/store/useKanjiStore';
 import KanjiSetDictionary from '@/features/Kanji/components/SetDictionary';
 import { useMenuSelectorStore } from '@/shared/ui-composite/Menu/store/useMenuSelectorStore';
@@ -58,6 +59,7 @@ interface KanjiCardsProps {
 
 const KanjiCards = ({ showAutoLearning = false }: KanjiCardsProps) => {
   const router = useRouter();
+  const t = useTranslations('kanji.selection');
   const persistedKanjiSelector = useMenuSelectorStore(
     state => state.collections.kanji,
   );
@@ -78,6 +80,8 @@ const KanjiCards = ({ showAutoLearning = false }: KanjiCardsProps) => {
   );
   const { clearKanjiObjs, clearKanjiSets } = useKanjiStore();
   const addKanjiObjs = useKanjiStore(state => state.addKanjiObjs);
+  const selectKanjiLevels = useKanjiStore(state => state.selectKanjiLevels);
+  const clearKanjiLevels = useKanjiStore(state => state.clearKanjiLevels);
   const collapsedRowsByUnit = useKanjiStore(state => state.collapsedRowsByUnit);
   const setCollapsedRowsForUnit = useKanjiStore(
     state => state.setCollapsedRowsForUnit,
@@ -305,6 +309,12 @@ const KanjiCards = ({ showAutoLearning = false }: KanjiCardsProps) => {
       activeSubunitRange={activeSubunitRange}
       collapseScopeKey={collapsedRowsKey}
       initialCollections={initialCollections}
+      bulkSelection={{
+        selectAllLabel: t('selectAll'),
+        clearAllLabel: t('deselectAll'),
+        onSelectAll: selectKanjiLevels,
+        onClearAll: clearKanjiLevels,
+      }}
       learningAction={
         showAutoLearning ? (
           <AutoLearningButton
