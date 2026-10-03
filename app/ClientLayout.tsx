@@ -31,7 +31,7 @@ import VisualEffectsRenderer from '@/features/Preferences/components/renderers/V
 import TransitionAdvertisementOverlay, {
   isTransitionAdvertisementEnabled,
 } from '@/shared/ui-composite/Game/TransitionAdvertisementOverlay';
-import { STREAK_MILESTONE_DONATION_EVENT } from '@/shared/ui-composite/Game/StreakMilestoneOverlay';
+import { SESSION_END_DONATION_EVENT } from '@/shared/utils/sessionHistory';
 
 // Initialize adaptive selector early to load persisted weights from IndexedDB
 // This runs once at module load time, ensuring weights are ready before games start
@@ -119,16 +119,10 @@ export default function ClientLayout({
   useEffect(() => {
     const showDonationModal = () => setIsDonationModalOpen(true);
 
-    window.addEventListener(
-      STREAK_MILESTONE_DONATION_EVENT,
-      showDonationModal,
-    );
+    window.addEventListener(SESSION_END_DONATION_EVENT, showDonationModal);
 
     return () => {
-      window.removeEventListener(
-        STREAK_MILESTONE_DONATION_EVENT,
-        showDonationModal,
-      );
+      window.removeEventListener(SESSION_END_DONATION_EVENT, showDonationModal);
     };
   }, []);
 
@@ -160,10 +154,14 @@ export default function ClientLayout({
   }, [pathname]);
 
   useEffect(() => {
-    const isDev = process.env.NODE_ENV === 'development';
-    const isPreviewDeployment =
-      process.env.NODE_ENV === 'production' &&
-      process.env.NEXT_PUBLIC_VERCEL_ENV !== 'production';
+    // TEMPORARILY COMMENTED OUT: Causes warning in ESLint checks
+    // const isDev = process.env.NODE_ENV === 'development';
+    // const isPreviewDeployment =
+    //   process.env.NODE_ENV === 'production' &&
+    //   process.env.NEXT_PUBLIC_VERCEL_ENV !== 'production';
+
+    const hideDonationModal = () => setIsDonationModalOpen(false);
+
     const isTargetRoute = /\/(kana|kanji|vocabulary)(\/|$)/.test(pathname);
     const isPreferencesRoute = /\/preferences(\/|$)/.test(pathname);
     const isProgressRoute = /\/progress(\/|$)/.test(pathname);
@@ -180,7 +178,7 @@ export default function ClientLayout({
       if (typeof window !== 'undefined') {
         sessionStorage.setItem(donationLastPathKey, pathname);
       }
-      setIsDonationModalOpen(false);
+      hideDonationModal();
       return;
     }
 
