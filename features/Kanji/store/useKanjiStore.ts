@@ -3,6 +3,11 @@ import type { IKanjiObj } from '@/entities/kanji';
 
 export type { IKanjiObj } from '@/entities/kanji';
 
+export interface KanjiLevelSelection {
+  name: string;
+  items: IKanjiObj[];
+}
+
 interface IKanjiState {
   selectedGameModeKanji: string;
   selectedKanjiObjs: IKanjiObj[];
@@ -14,6 +19,8 @@ interface IKanjiState {
   setSelectedGameModeKanji: (mode: string) => void;
   addKanjiObj: (kanji: IKanjiObj) => void;
   addKanjiObjs: (kanjis: IKanjiObj[]) => void;
+  selectKanjiLevels: (levels: KanjiLevelSelection[]) => void;
+  clearKanjiLevels: (levels: KanjiLevelSelection[]) => void;
   setSelectedKanjiObjs: (kanjis: IKanjiObj[]) => void;
   clearKanjiObjs: () => void;
   setSelectedKanjiCollection: (
@@ -116,6 +123,42 @@ const useKanjiStore = create<IKanjiState>(set => ({
       return sameKanjiArray(next, state.selectedKanjiObjs)
         ? state
         : { selectedKanjiObjs: next };
+    }),
+
+  selectKanjiLevels: levels =>
+    set(state => {
+      if (!levels.length) return state;
+      const selectedSets = new Set(state.selectedKanjiSets);
+      const selectedKanji = new Map(
+        state.selectedKanjiObjs.map(item => [item.kanjiChar, item]),
+      );
+      for (const level of levels) {
+        selectedSets.add(level.name);
+        for (const item of level.items) {
+          if (item.kanjiChar) selectedKanji.set(item.kanjiChar, item);
+        }
+      }
+      return {
+        selectedKanjiSets: [...selectedSets],
+        selectedKanjiObjs: [...selectedKanji.values()],
+      };
+    }),
+
+  clearKanjiLevels: levels =>
+    set(state => {
+      if (!levels.length) return state;
+      const names = new Set(levels.map(level => level.name));
+      const chars = new Set(
+        levels.flatMap(level => level.items.map(item => item.kanjiChar)),
+      );
+      return {
+        selectedKanjiSets: state.selectedKanjiSets.filter(
+          name => !names.has(name),
+        ),
+        selectedKanjiObjs: state.selectedKanjiObjs.filter(
+          item => !chars.has(item.kanjiChar),
+        ),
+      };
     }),
 
   setSelectedKanjiObjs: kanjiObjects =>
