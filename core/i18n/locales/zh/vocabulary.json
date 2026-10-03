@@ -36,7 +36,12 @@
     "streak": "连击：{{count}}",
     "correct": "正确！",
     "incorrect": "错误",
-    "showAnswer": "显示答案"
+    "showAnswer": "显示答案",
+    "answerCues": {
+      "meaning": "输入含义",
+      "reading": "输入读音",
+      "word": "输入日语词汇"
+    }
   },
   "modes": {
     "pick": "选择模式",

@@ -273,6 +273,11 @@ export interface VocabularyTranslations {
     correct: string;
     incorrect: string;
     showAnswer: string;
+    answerCues: {
+      meaning: string;
+      reading: string;
+      word: string;
+    };
   };
   modes: {
     pick: string;
