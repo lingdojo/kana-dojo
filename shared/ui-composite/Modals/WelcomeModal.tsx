@@ -469,7 +469,7 @@ const WelcomeModal = () => {
               </p>
             </div>
 
-            <div className='scrollbar-thin scrollbar-thumb-(--border-color) scrollbar-track-transparent max-h-[45vh] space-y-6 overflow-y-auto px-1 sm:max-h-96'>
+            <div className='space-y-6 px-1'>
               {themeSets
                 .filter(
                   themeSet =>
@@ -559,7 +559,7 @@ const WelcomeModal = () => {
                       storageKey={`welcome-themes-${themeSet.name.toLowerCase().replace(/\s+/g, '-')}`}
                       className='gap-3'
                     >
-                      <div className='grid grid-cols-2 gap-3 p-1 sm:grid-cols-3 md:grid-cols-4'>
+                      <div className='grid grid-cols-2 gap-3 p-1.5 sm:grid-cols-3 md:grid-cols-4'>
                         {filteredThemes.map(theme => {
                           const isChaosTheme = theme.id === '?';
                           const isPremiumTheme = isPremiumThemeId(theme.id);
@@ -688,7 +688,7 @@ const WelcomeModal = () => {
               </p>
             </div>
 
-            <div className='scrollbar-thin scrollbar-thumb-(--border-color) scrollbar-track-transparent max-h-80 space-y-6 overflow-y-auto p-1 pr-2'>
+            <div className='space-y-6 p-1 pr-2'>
               <CollapsibleSection
                 title={<span className='text-(--main-color)'>Recommended</span>}
                 icon={<Palette size={16} />}
@@ -850,10 +850,7 @@ const WelcomeModal = () => {
           {/* Content */}
           <div
             ref={contentRef}
-            className={clsx(
-              'min-h-0 p-2 pb-2 sm:p-5',
-              step === 'welcome' ? 'overflow-y-auto' : 'overflow-hidden',
-            )}
+            className='scrollbar-thin scrollbar-thumb-(--border-color) scrollbar-track-transparent min-h-0 flex-1 overflow-y-auto p-2 pb-2 sm:p-5'
           >
             <div key={step}>{renderStepContent()}</div>
           </div>
