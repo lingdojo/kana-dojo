@@ -25,6 +25,7 @@ import GameScoreBar from '@/shared/ui-composite/Game/GameScoreBar';
 import { useClick } from '@/shared/hooks/generic/useAudio';
 import { cn } from '@/shared/utils/utils';
 import { useThemePreferences } from '@/features/Preferences';
+import { normalizeKanaForComparison } from '@/features/Kana/lib/normalizeKanaForComparison';
 import type { GauntletGameMode } from './types';
 
 // Duolingo-like spring animation config
@@ -384,7 +385,7 @@ export default function ActiveGame<T>({
       setIsChecking(true);
 
       const isCorrect =
-        placedTiles.length === 1 && placedTiles[0] === correctAnswer;
+        placedTiles.length === 1 && normalizeKanaForComparison(placedTiles[0]) === normalizeKanaForComparison(correctAnswer);
 
       setCheckedResult({
         selectedOption: placedTiles[0] || '',
