@@ -279,4 +279,9 @@
   "correct": "私は日本語を話します。",
   "explanation": "Do not stack ます and です in one predicate. (Pattern set 2)"
 }
+  {
+  "wrong": "日本へ旅行を行きたい。",
+  "correct": "日本へ旅行に行きたい。",
+  "explanation": "Use に行く for purpose. (Pattern set 5)"
+}
 ]
