@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+import { createJSONStorage, persist } from 'zustand/middleware';
 import type { IKanjiObj } from '@/entities/kanji';
 
 export type { IKanjiObj } from '@/entities/kanji';
@@ -92,64 +93,85 @@ const toggleKanjis = (
   return changed ? next : array;
 };
 
-const useKanjiStore = create<IKanjiState>(set => ({
-  selectedGameModeKanji: 'Pick',
-  selectedKanjiObjs: [],
-  selectedKanjiCollection: 'n5',
-  selectedKanjiSets: [],
-  selectedSubunitByUnit: {},
+const useKanjiStore = create<IKanjiState>()(
+  persist(
+    set => ({
+      selectedGameModeKanji: 'Pick',
+      selectedKanjiObjs: [],
+      selectedKanjiCollection: 'n5',
+      selectedKanjiSets: [],
+      selectedSubunitByUnit: {},
 
-  setSelectedGameModeKanji: gameMode =>
-    set({ selectedGameModeKanji: gameMode }),
+      setSelectedGameModeKanji: gameMode =>
+        set({ selectedGameModeKanji: gameMode }),
 
-  addKanjiObj: kanjiObj =>
-    set(state => {
-      const next = toggleKanji(state.selectedKanjiObjs, kanjiObj);
-      return sameKanjiArray(next, state.selectedKanjiObjs)
-        ? state
-        : { selectedKanjiObjs: next };
+      addKanjiObj: kanjiObj =>
+        set(state => {
+          const next = toggleKanji(state.selectedKanjiObjs, kanjiObj);
+          return sameKanjiArray(next, state.selectedKanjiObjs)
+            ? state
+            : { selectedKanjiObjs: next };
+        }),
+
+      addKanjiObjs: kanjiObjects =>
+        set(state => {
+          const next = toggleKanjis(state.selectedKanjiObjs, kanjiObjects);
+          return sameKanjiArray(next, state.selectedKanjiObjs)
+            ? state
+            : { selectedKanjiObjs: next };
+        }),
+
+      setSelectedKanjiObjs: kanjiObjects =>
+        set({
+          selectedKanjiObjs: Array.from(
+            new Map(kanjiObjects.map(item => [item.kanjiChar, item])).values(),
+          ),
+        }),
+
+      clearKanjiObjs: () => set({ selectedKanjiObjs: [] }),
+
+      setSelectedKanjiCollection: collection =>
+        set({ selectedKanjiCollection: collection }),
+
+      setSelectedKanjiSets: sets => set({ selectedKanjiSets: sets }),
+
+      clearKanjiSets: () => set({ selectedKanjiSets: [] }),
+
+      setSelectedSubunitForUnit: (unit, subunitId) =>
+        set(state => ({
+          selectedSubunitByUnit: {
+            ...state.selectedSubunitByUnit,
+            [unit]: subunitId,
+          },
+        })),
+
+      collapsedRowsByUnit: {},
+      setCollapsedRowsForUnit: (unit, rows) =>
+        set(state => ({
+          collapsedRowsByUnit: {
+            ...state.collapsedRowsByUnit,
+            [unit]: rows,
+          },
+        })),
     }),
-
-  addKanjiObjs: kanjiObjects =>
-    set(state => {
-      const next = toggleKanjis(state.selectedKanjiObjs, kanjiObjects);
-      return sameKanjiArray(next, state.selectedKanjiObjs)
-        ? state
-        : { selectedKanjiObjs: next };
-    }),
-
-  setSelectedKanjiObjs: kanjiObjects =>
-    set({
-      selectedKanjiObjs: Array.from(
-        new Map(kanjiObjects.map(item => [item.kanjiChar, item])).values(),
-      ),
-    }),
-
-  clearKanjiObjs: () => set({ selectedKanjiObjs: [] }),
-
-  setSelectedKanjiCollection: collection =>
-    set({ selectedKanjiCollection: collection }),
-
-  setSelectedKanjiSets: sets => set({ selectedKanjiSets: sets }),
-
-  clearKanjiSets: () => set({ selectedKanjiSets: [] }),
-
-  setSelectedSubunitForUnit: (unit, subunitId) =>
-    set(state => ({
-      selectedSubunitByUnit: {
-        ...state.selectedSubunitByUnit,
-        [unit]: subunitId,
-      },
-    })),
-
-  collapsedRowsByUnit: {},
-  setCollapsedRowsForUnit: (unit, rows) =>
-    set(state => ({
-      collapsedRowsByUnit: {
-        ...state.collapsedRowsByUnit,
-        [unit]: rows,
-      },
-    })),
-}));
+    {
+      name: 'kanji-storage',
+      storage:
+        typeof window !== 'undefined'
+          ? createJSONStorage(() => localStorage)
+          : undefined,
+      partialize: state => ({
+        selectedGameModeKanji: state.selectedGameModeKanji,
+        selectedKanjiObjs: state.selectedKanjiObjs,
+        selectedKanjiSets: state.selectedKanjiSets,
+      }),
+      merge: (persistedState, currentState) => ({
+        ...currentState,
+        ...(persistedState as Partial<IKanjiState>),
+        collapsedRowsByUnit: {},
+      }),
+    },
+  ),
+);
 
 export default useKanjiStore;
