@@ -4,6 +4,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import clsx from 'clsx';
 import { kana } from '@/features/Kana/data/kana';
 import useKanaStore from '@/features/Kana/store/useKanaStore';
+import {
+  flattenKanaGroups,
+  type KanaCharacter,
+} from '@/features/Kana/lib/flattenKanaGroup';
 import { Random } from 'random-js';
 import {
   useCorrect,
@@ -127,27 +131,15 @@ const KanaTilesMode = ({
 
   const kanaGroupIndices = useKanaStore(state => state.kanaGroupIndices);
 
-  // Get all available kana and romaji from selected groups
-  const { selectedKana, selectedRomaji, kanaToRomaji, romajiToKana } =
-    useMemo(() => {
-      const kanaChars = kanaGroupIndices.map(i => kana[i].kana).flat();
-      const romajiChars = kanaGroupIndices.map(i => kana[i].romanji).flat();
+  const selectedKanaItems = useMemo(
+    () => flattenKanaGroups(kanaGroupIndices),
+    [kanaGroupIndices],
+  );
 
-      const k2r: Record<string, string> = {};
-      const r2k: Record<string, string> = {};
-
-      kanaChars.forEach((k, i) => {
-        k2r[k] = romajiChars[i];
-        r2k[romajiChars[i]] = k;
-      });
-
-      return {
-        selectedKana: kanaChars,
-        selectedRomaji: romajiChars,
-        kanaToRomaji: k2r,
-        romajiToKana: r2k,
-      };
-    }, [kanaGroupIndices]);
+  const allKanaItems = useMemo(
+    () => flattenKanaGroups(kana.map((_, i) => i)),
+    [],
+  );
 
   const {
     bottomBarState,
@@ -163,72 +155,82 @@ const KanaTilesMode = ({
     showTryAgain,
   } = useTilesModeState();
 
-  // Memoize dependencies for generateWord to reduce re-renders
-  const generateWordDeps = useMemo(
-    () => ({
-      isReverse,
-      selectedKana,
-      selectedRomaji,
-      wordLength,
-      kanaToRomaji,
-      romajiToKana,
-    }),
-    [
-      isReverse,
-      selectedKana,
-      selectedRomaji,
-      wordLength,
-      kanaToRomaji,
-      romajiToKana,
-    ],
-  );
-
-  // Generate a word (array of characters) and distractors
+  // Generate a word (array of characters) and distractors using structured items
   const generateWord = useCallback(() => {
-    const {
-      isReverse,
-      selectedKana,
-      selectedRomaji,
-      wordLength,
-      kanaToRomaji,
-      romajiToKana,
-    } = generateWordDeps;
-    const sourceChars = isReverse ? selectedRomaji : selectedKana;
     const questionShape = getKanaTilesQuestionShape({
       wordLength,
-      availableCharacterCount: sourceChars.length,
+      availableCharacterCount: selectedKanaItems.length,
     });
-    if (!questionShape.canGenerate) {
-      return { wordChars: [], answerChars: [], allTiles: new Map() };
+    if (!questionShape.canGenerate || selectedKanaItems.length === 0) {
+      return { wordChars: [], answerChars: [], allTiles: new Map<number, string>() };
     }
     const totalTileCount = questionShape.tileCount;
 
-    const wordChars: string[] = [];
-    const usedChars = new Set<string>();
+    const chosenItems: KanaCharacter[] = [];
+    const availableItems = [...selectedKanaItems];
+
     for (let i = 0; i < wordLength; i++) {
-      const available = sourceChars.filter(c => !usedChars.has(c));
-      if (available.length === 0) break;
-      const selected = adaptiveSelector.selectWeightedCharacter(available);
-      wordChars.push(selected);
-      usedChars.add(selected);
-      adaptiveSelector.markCharacterSeen(selected);
+      if (availableItems.length === 0) break;
+      const weightedPromptSource = isReverse
+        ? availableItems.map(item => item.romaji)
+        : availableItems.map(item => item.kana);
+      const selectedPrompt = adaptiveSelector.selectWeightedCharacter(
+        weightedPromptSource,
+      );
+      const chosenIndex = availableItems.findIndex(item =>
+        isReverse ? item.romaji === selectedPrompt : item.kana === selectedPrompt,
+      );
+      if (chosenIndex === -1) break;
+      const [chosen] = availableItems.splice(chosenIndex, 1);
+      chosenItems.push(chosen);
+      adaptiveSelector.markCharacterSeen(selectedPrompt);
     }
 
+    if (chosenItems.length === 0) {
+      return { wordChars: [], answerChars: [], allTiles: new Map<number, string>() };
+    }
+
+    const wordChars = isReverse
+      ? chosenItems.map(item => item.romaji)
+      : chosenItems.map(item => item.kana);
     const answerChars = isReverse
-      ? wordChars.map(r => romajiToKana[r])
-      : wordChars.map(k => kanaToRomaji[k]);
+      ? chosenItems.map(item => item.kana)
+      : chosenItems.map(item => item.romaji);
 
     const distractorCount = Math.max(0, totalTileCount - answerChars.length);
-    const distractorSource = isReverse ? selectedKana : selectedRomaji;
     const distractors: string[] = [];
     const usedAnswers = new Set(answerChars);
-    for (let i = 0; i < distractorCount; i++) {
-      const available = distractorSource.filter(
-        c => !usedAnswers.has(c) && !distractors.includes(c),
+
+    const selectedDistractorSource = isReverse
+      ? selectedKanaItems.map(item => item.kana)
+      : selectedKanaItems.map(item => item.romaji);
+
+    const shuffledSelectedDistractors = [...selectedDistractorSource].sort(
+      () => random.real(0, 1) - 0.5,
+    );
+
+    for (const char of shuffledSelectedDistractors) {
+      if (distractors.length >= distractorCount) break;
+      if (!usedAnswers.has(char) && !distractors.includes(char)) {
+        distractors.push(char);
+      }
+    }
+
+    if (distractors.length < distractorCount) {
+      const fallbackDistractorSource = isReverse
+        ? allKanaItems.map(item => item.kana)
+        : allKanaItems.map(item => item.romaji);
+
+      const shuffledFallbackDistractors = [...fallbackDistractorSource].sort(
+        () => random.real(0, 1) - 0.5,
       );
-      if (available.length === 0) break;
-      const selected = available[random.integer(0, available.length - 1)];
-      distractors.push(selected);
+
+      for (const char of shuffledFallbackDistractors) {
+        if (distractors.length >= distractorCount) break;
+        if (!usedAnswers.has(char) && !distractors.includes(char)) {
+          distractors.push(char);
+        }
+      }
     }
 
     const sortedTiles = [...answerChars, ...distractors].sort(
@@ -241,7 +243,7 @@ const KanaTilesMode = ({
     });
 
     return { wordChars, answerChars, allTiles };
-  }, [generateWordDeps]);
+  }, [isReverse, wordLength, selectedKanaItems, allKanaItems]);
 
   const [wordData, setWordData] = useState(() => generateWord());
   const hasInitializedResetRef = useRef(false);
@@ -492,7 +494,7 @@ const KanaTilesMode = ({
   // Not enough characters for tiles mode
   const questionShape = getKanaTilesQuestionShape({
     wordLength,
-    availableCharacterCount: selectedKana.length,
+    availableCharacterCount: selectedKanaItems.length,
   });
   if (!questionShape.canGenerate || wordData.wordChars.length === 0) {
     return null;
