@@ -132,18 +132,6 @@
     "secondaryColor": "oklch(60.0% 0.085 25.0 / 1)"
   },
   {
-    "id": "torii-sunset",
-    "backgroundColor": "oklch(22.0% 0.058 35.0 / 1)",
-    "mainColor": "oklch(75.0% 0.195 40.0 / 1)",
-    "secondaryColor": "oklch(85.0% 0.155 70.0 / 1)"
-  },
-  {
-    "id": "gingko-avenue",
-    "backgroundColor": "oklch(23.0% 0.020 75.0 / 1)",
-    "mainColor": "oklch(82.0% 0.155 95.0 / 1)",
-    "secondaryColor": "oklch(62.0% 0.085 55.0 / 1)"
-  },
-  {
     "id": "shoji-glow",
     "backgroundColor": "oklch(94.0% 0.010 95.0 / 1)",
     "mainColor": "oklch(45.0% 0.075 65.0 / 1)",
@@ -324,12 +312,6 @@
     "secondaryColor": "oklch(65.0% 0.185 25.0 / 1)"
   },
   {
-    "id": "blooming-ume",
-    "backgroundColor": "oklch(95.0% 0.015 15.0 / 1)",
-    "mainColor": "oklch(62.0% 0.175 350.0 / 1)",
-    "secondaryColor": "oklch(75.0% 0.085 85.0 / 1)"
-  },
-  {
     "id": "sakura-storm",
     "backgroundColor": "oklch(90.0% 0.032 340.0 / 1)",
     "mainColor": "oklch(70.0% 0.185 345.0 / 1)",
@@ -347,34 +329,28 @@
     "mainColor": "oklch(65.0% 0.170 25.0 / 1)",
     "secondaryColor": "oklch(58.0% 0.055 260.0 / 1)"
   },
-{
-  "id": "lucky-bamboo",
-  "backgroundColor": "oklch(92.0% 0.025 145.0 / 1)",
-  "mainColor": "oklch(55.0% 0.175 145.0 / 1)",
-  "secondaryColor": "oklch(45.0% 0.125 140.0 / 1)"
-},
   {
     "id": "wavecrest-blue",
     "backgroundColor": "oklch(17.0% 0.030 245.0 / 1)",
     "mainColor": "oklch(88.0% 0.055 230.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.145 210.0 / 1)"
   },
-    {
-  "id": "fuji-sunrise",
-  "backgroundColor": "oklch(23.0% 0.048 40.0 / 1)",
-  "mainColor": "oklch(85.0% 0.155 55.0 / 1)",
-  "secondaryColor": "oklch(72.0% 0.175 25.0 / 1)"
-},
   {
-  "id": "mochi-pastel",
-  "backgroundColor": "oklch(94.0% 0.028 340.0 / 1)",
-  "mainColor": "oklch(72.0% 0.145 345.0 / 1)",
-  "secondaryColor": "oklch(75.0% 0.125 155.0 / 1)"
-},
-{
-  "id": "tokyo-metro",
-  "backgroundColor": "oklch(20.0% 0.025 260.0 / 1)",
-  "mainColor": "oklch(70.0% 0.180 145.0 / 1)",
-  "secondaryColor": "oklch(80.0% 0.120 50.0 / 1)"
-}
+    "id": "fuji-sunrise",
+    "backgroundColor": "oklch(23.0% 0.048 40.0 / 1)",
+    "mainColor": "oklch(85.0% 0.155 55.0 / 1)",
+    "secondaryColor": "oklch(72.0% 0.175 25.0 / 1)"
+  },
+  {
+    "id": "mochi-pastel",
+    "backgroundColor": "oklch(94.0% 0.028 340.0 / 1)",
+    "mainColor": "oklch(72.0% 0.145 345.0 / 1)",
+    "secondaryColor": "oklch(75.0% 0.125 155.0 / 1)"
+  },
+  {
+    "id": "tokyo-metro",
+    "backgroundColor": "oklch(20.0% 0.025 260.0 / 1)",
+    "mainColor": "oklch(70.0% 0.180 145.0 / 1)",
+    "secondaryColor": "oklch(80.0% 0.120 50.0 / 1)"
+  }
 ]

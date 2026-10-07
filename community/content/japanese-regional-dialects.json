@@ -362,5 +362,19 @@
   "english": "thank you",
   "region": "Kansai",
   "note": "Traditional gratitude expression. (Set 1)"
+},
+{
+  "dialect": "おおきに",
+  "standardJapanese": "ありがとう",
+  "english": "thank you",
+  "region": "Kansai",
+  "note": "Traditional gratitude expression. (Set 2)"
+},
+{
+  "dialect": "めっちゃ",
+  "standardJapanese": "とても",
+  "english": "very",
+  "region": "Kansai",
+  "note": "Now used nationwide. (Set 4)"
 }
 ]

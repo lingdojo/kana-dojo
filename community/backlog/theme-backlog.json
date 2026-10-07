@@ -117,9 +117,7 @@
     "mainColor": "oklch(70.0% 0.180 145.0 / 1)",
     "secondaryColor": "oklch(80.0% 0.120 50.0 / 1)",
     "issued": false,
-    "completed": false,
-    "completedBy": "MrSJ7",
-    "completedPR": 31589
+    "completed": false
   },
   {
     "id": "autumn-maple",
@@ -1689,7 +1687,9 @@
     "mainColor": "oklch(70.0% 0.120 240.0 / 1)",
     "secondaryColor": "oklch(75.0% 0.070 200.0 / 1)",
     "issued": false,
-    "completed": false
+    "completed": false,
+    "completedBy": "maomao1OvO1",
+    "completedPR": 31775
   },
   {
     "id": "sakura-ink",
