@@ -263,45 +263,52 @@
     "english": "Hello"
   },
   {
-  "japanese": "提出期限までにレポートを仕上げなければならない。",
-  "romaji": "Teishutsu kigen made ni repooto o shiagenakereba naranai.",
-  "english": "I must finish the report by the deadline.",
-  "jlpt": "N3"
-},
+    "japanese": "提出期限までにレポートを仕上げなければならない。",
+    "romaji": "Teishutsu kigen made ni repooto o shiagenakereba naranai.",
+    "english": "I must finish the report by the deadline.",
+    "jlpt": "N3"
+  },
   {
-  "japanese": "この問題は思ったより難しくなかった。",
-  "romaji": "Kono mondai wa omotta yori muzukashiku nakatta.",
-  "english": "This problem wasn't as hard as I expected.",
-  "jlpt": "N3"
-},
+    "japanese": "この問題は思ったより難しくなかった。",
+    "romaji": "Kono mondai wa omotta yori muzukashiku nakatta.",
+    "english": "This problem wasn't as hard as I expected.",
+    "jlpt": "N3"
+  },
   {
-  "japanese": "この表現は場面によって失礼に聞こえることがある。",
-  "romaji": "Kono hyougen wa bamen ni yotte shitsurei ni kikoeru koto ga aru.",
-  "english": "This expression can sound rude depending on context.",
-  "jlpt": "N2"
-},
+    "japanese": "この表現は場面によって失礼に聞こえることがある。",
+    "romaji": "Kono hyougen wa bamen ni yotte shitsurei ni kikoeru koto ga aru.",
+    "english": "This expression can sound rude depending on context.",
+    "jlpt": "N2"
+  },
   {
-  "japanese": "雨が降りそうだから、傘を持って行こう。",
-  "romaji": "Ame ga furisou dakara, kasa o motte ikou.",
-  "english": "It looks like rain, so let's bring an umbrella.",
-  "jlpt": "N4"
-},
-{
-  "japanese": "この表現は場面によって失礼に聞こえることがある。",
-  "romaji": "Kono hyougen wa bamen ni yotte shitsurei ni kikoeru koto ga aru.",
-  "english": "This expression can sound rude depending on context.",
-  "jlpt": "N2"
-}
-]
-{
+    "japanese": "雨が降りそうだから、傘を持って行こう。",
+    "romaji": "Ame ga furisou dakara, kasa o motte ikou.",
+    "english": "It looks like rain, so let's bring an umbrella.",
+    "jlpt": "N4"
+  },
+  {
+    "japanese": "この表現は場面によって失礼に聞こえることがある。",
+    "romaji": "Kono hyougen wa bamen ni yotte shitsurei ni kikoeru koto ga aru.",
+    "english": "This expression can sound rude depending on context.",
+    "jlpt": "N2"
+  },
+  {
+    "japanese": "週末は友達と映画を見に行くつもりです。",
+    "romaji": "Shuumatsu wa tomodachi o eiga o mi ni iku tsumori desu.",
+    "english": "I plan to go to a movie with friends this weekend.",
+    "jlpt": "N4"
+  },
+  {
+    "japanese": "彼は毎日図書館で勉強します。",
+    "romaji": "Kare wa mainichi toshokan de benkyou shimasu.",
+    "english": "He studies in the library every day.",
+    "jlpt": "N4"
+  },
+  {
   "japanese": "週末は友達と映画を見に行くつもりです。",
-  "romaji": "Shuumatsu wa tomodachi o eiga o mi ni iku tsumori desu.",
+  "romaji": "Shuumatsu wa tomodachi to eiga o mi ni iku tsumori desu.",
   "english": "I plan to go to a movie with friends this weekend.",
   "jlpt": "N4"
-}
-{
-  "japanese": "彼は毎日図書館で勉強します。",
-  "romaji": "Kare wa mainichi toshokan de benkyou shimasu.",
-  "english": "He studies in the library every day.",
-  "jlpt": "N4"
-}
+  }
+]
+
