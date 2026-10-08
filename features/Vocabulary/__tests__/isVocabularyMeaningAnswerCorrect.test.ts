@@ -82,6 +82,21 @@ describe('isVocabularyMeaningAnswerCorrect', () => {
     );
   });
 
+  it.each(['asoko', 'achira'])(
+    'accepts %s as a valid meaning for over there',
+    word => {
+      const noun = {
+        ...vocabulary,
+        word,
+        reading: word === 'asoko' ? 'そこ' : 'あちら',
+      };
+
+      expect(
+        isVocabularyMeaningAnswerCorrect(noun, 'over there', false),
+      ).toBe(true);
+    },
+  );
+
   it('does not remove a leading article from reverse answers', () => {
     const articleWord = {
       ...vocabulary,
