@@ -360,10 +360,10 @@
     "secondaryColor": "oklch(60.0% 0.085 120.0 / 1)"
   },
   {
-  "id": "onsen-steam",
-  "backgroundColor": "oklch(25.0% 0.022 210.0 / 1)",
-  "mainColor": "oklch(85.0% 0.085 215.0 / 1)",
-  "secondaryColor": "oklch(70.0% 0.065 195.0 / 1)"
+    "id": "onsen-steam",
+    "backgroundColor": "oklch(25.0% 0.022 210.0 / 1)",
+    "mainColor": "oklch(85.0% 0.085 215.0 / 1)",
+    "secondaryColor": "oklch(70.0% 0.065 195.0 / 1)"
   },
   {
     "id": "snow-lantern",
@@ -376,5 +376,11 @@
     "backgroundColor": "oklch(95.0% 0.020 15.0 / 1)",
     "mainColor": "oklch(70.0% 0.155 350.0 / 1)",
     "secondaryColor": "oklch(82.0% 0.090 95.0 / 1)"
+  },
+  {
+    "id": "bento-sage",
+    "backgroundColor": "oklch(20.0% 0.030 145.0 / 1)",
+    "mainColor": "oklch(70.0% 0.115 135.0 / 1)",
+    "secondaryColor": "oklch(58.0% 0.085 160.0 / 1)"
   }
 ]
