@@ -36,7 +36,12 @@
     "streak": "Racha: {{count}}",
     "correct": "¡Correcto!",
     "incorrect": "Incorrecto",
-    "showAnswer": "Mostrar Respuesta"
+    "showAnswer": "Mostrar Respuesta",
+    "answerCues": {
+      "meaning": "Escribe el significado",
+      "reading": "Escribe la lectura",
+      "word": "Escribe la palabra en japonés"
+    }
   },
   "modes": {
     "pick": "Modo Elegir",
