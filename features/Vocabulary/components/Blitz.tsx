@@ -67,11 +67,18 @@ export default function BlitzVocab() {
           .map(item => item.word);
         return [correctAnswer, ...incorrectOptions];
       }
-      // Normal: options are meanings
+      // Normal: options are meanings — deduplicate to avoid identical wrong options
       const correctAnswer = question.meanings[0];
+      const seen = new Set([correctAnswer.toLowerCase().trim()]);
       const incorrectOptions = shuffle(
         items.filter(item => item.word !== question.word),
       )
+        .filter(item => {
+          const meaning = item.meanings[0].toLowerCase().trim();
+          if (seen.has(meaning)) return false;
+          seen.add(meaning);
+          return true;
+        })
         .slice(0, count - 1)
         .map(item => item.meanings[0]);
       return [correctAnswer, ...incorrectOptions];
