@@ -263,5 +263,35 @@
     "id": 279,
     "mistake": "Using wa instead of ga",
     "correction": "Use ga for new information"
-  }
+  },
+  {
+  "wrong": "日本語をわかります。",
+  "correct": "日本語がわかります。",
+  "explanation": "わかる takes が. (Pattern set 3)"
+},
+  {
+  "wrong": "日本へ旅行を行きたい。",
+  "correct": "日本へ旅行に行きたい。",
+  "explanation": "Use に行く for purpose. (Pattern set 3)"
+},
+  {
+  "wrong": "私は日本語を話しますです。",
+  "correct": "私は日本語を話します。",
+  "explanation": "Do not stack ます and です in one predicate. (Pattern set 2)"
+},
+  {
+  "wrong": "この漢字は読み方が難しいです。",
+  "correct": "この漢字の読み方は難しいです。",
+  "explanation": "Prefer noun linkage with の. (Pattern set 1)" 
+},
+{
+  "wrong": "毎日日本語を勉強していますから上手になります。",
+  "correct": "毎日日本語を勉強しているので上手になります。",
+  "explanation": "ので is smoother/neutral for reason. (Pattern set 4)"
+},
+  {
+  "wrong": "宿題を忘れないよう、メモします。",
+  "correct": "宿題を忘れないように、メモします。",
+  "explanation": "Use ように for purpose/prevention. (Pattern set 5)"
+}
 ]

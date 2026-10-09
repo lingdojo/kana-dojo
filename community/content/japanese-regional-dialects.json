@@ -342,13 +342,14 @@
   "region": "Kansai",
   "note": "Explanatory ending in conversation. (Set 1)"
 },
-  {
-  "dialect": "〜ばい",
-  "standardJapanese": "〜だよ",
-  "english": "sentence ending",
-  "region": "Fukuoka",
-  "note": "Assertive friendly ending. (Set 6)"
+{
+  "dialect": "にふぇーでーびる",
+  "standardJapanese": "ありがとうございます",
+  "english": "thank you",
+  "region": "Okinawa",
+  "note": "Okinawan gratitude expression. (Set 4)"
 },
+
   {
   "dialect": "〜ばい",
   "standardJapanese": "〜だよ",
@@ -362,5 +363,40 @@
   "english": "very",
   "region": "Yamaguchi/Hiroshima",
   "note": "Regional intensifier. (Set 2)"
+  },
+{
+  "dialect": "〜じゃけぇ",
+  "standardJapanese": "〜だから",
+  "english": "because",
+  "region": "Hiroshima",
+  "note": "Common causal ending. (Set 5)"
+},
+{
+  "dialect": "おおきに",
+  "standardJapanese": "ありがとう",
+  "english": "thank you",
+  "region": "Kansai",
+  "note": "Traditional gratitude expression. (Set 1)"
+},
+{
+  "dialect": "おおきに",
+  "standardJapanese": "ありがとう",
+  "english": "thank you",
+  "region": "Kansai",
+  "note": "Traditional gratitude expression. (Set 2)"
+},
+{
+  "dialect": "めっちゃ",
+  "standardJapanese": "とても",
+  "english": "very",
+  "region": "Kansai",
+  "note": "Now used nationwide. (Set 4)"
+},
+{
+  "dialect": "しばれる",
+  "standardJapanese": "とても寒い",
+  "english": "freezing cold",
+  "region": "Hokkaido",
+  "note": "Used for severe winter cold. (Set 3)"
 }
 ]

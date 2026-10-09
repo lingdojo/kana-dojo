@@ -1,265 +1,236 @@
 [
   {
-    "japanese": "\u65e5\u672c\u8a9e\u3092\u52c9\u5f37\u3057\u59cb\u3081\u3066\u4e09\u304b\u6708\u3067\u3059\u3002",
+    "japanese": "日本語を勉強し始めて三か月です。",
     "romaji": "Nihongo o benkyou shihajimete sankagetsu desu.",
     "english": "It has been three months since I started studying Japanese.",
     "jlpt": "N5"
   },
   {
-    "japanese": "\u99c5\u306e\u8fd1\u304f\u306b\u65b0\u3057\u3044\u30ab\u30d5\u30a7\u304c\u3067\u304d\u307e\u3057\u305f\u3002",
+    "japanese": "駅の近くに新しいカフェができました。",
     "romaji": "Eki no chikaku ni atarashii kafe ga dekimashita.",
     "english": "A new cafe opened near the station.",
     "jlpt": "N4"
   },
   {
-    "japanese": "\u65e5\u672c\u306e\u30cb\u30e5\u30fc\u30b9\u3092\u6bce\u65e5\u8aad\u3080\u3088\u3046\u306b\u3057\u3066\u3044\u307e\u3059\u3002",
+    "japanese": "日本のニュースを毎日読むようにしています。",
     "romaji": "Nihon no nyuusu o mainichi yomu you ni shiteimasu.",
     "english": "I make a habit of reading Japanese news every day.",
     "jlpt": "N3"
   },
   {
-    "japanese": "\u96e8\u304c\u964d\u308a\u305d\u3046\u3060\u304b\u3089\u3001\u5098\u3092\u6301\u3063\u3066\u884c\u3053\u3046\u3002",
+    "japanese": "雨が降りそうだから、傘を持って行こう。",
     "romaji": "Ame ga furisou dakara, kasa o motte ikou.",
     "english": "It looks like rain, so let's bring an umbrella.",
     "jlpt": "N4"
   },
   {
-    "japanese": "\u3082\u3057\u6642\u9593\u304c\u3042\u308c\u3070\u3001\u4e00\u7dd2\u306b\u5fa9\u7fd2\u3057\u307e\u305b\u3093\u304b\u3002",
+    "japanese": "もし時間があれば、一緒に復習しませんか。",
     "romaji": "Moshi jikan ga areba, issho ni fukushuu shimasen ka.",
     "english": "If you have time, would you like to review together?",
     "jlpt": "N3"
   },
   {
-    "japanese": "\u3053\u306e\u8868\u73fe\u306f\u5834\u9762\u306b\u3088\u3063\u3066\u5931\u793c\u306b\u805e\u3053\u3048\u308b\u3053\u3068\u304c\u3042\u308b\u3002",
+    "japanese": "この表現は場面によって失礼に聞こえることがある。",
     "romaji": "Kono hyougen wa bamen ni yotte shitsurei ni kikoeru koto ga aru.",
     "english": "This expression can sound rude depending on context.",
     "jlpt": "N2"
   },
   {
-    "japanese": "\u4f1a\u8b70\u306f\u4e88\u5b9a\u3088\u308a\u65e9\u304f\u7d42\u308f\u308a\u307e\u3057\u305f\u3002",
+    "japanese": "会議は予定より早く終わりました。",
     "romaji": "Kaigi wa yotei yori hayaku owarimashita.",
     "english": "The meeting ended earlier than scheduled.",
     "jlpt": "N4"
   },
   {
-    "japanese": "\u3053\u306e\u6f22\u5b57\u306e\u8aad\u307f\u65b9\u3092\u6559\u3048\u3066\u304f\u3060\u3055\u3044\u3002",
+    "japanese": "この漢字の読み方を教えてください。",
     "romaji": "Kono kanji no yomikata o oshiete kudasai.",
     "english": "Please tell me how to read this kanji.",
     "jlpt": "N5"
   },
   {
-    "japanese": "\u4eca\u65e5\u306f\u3044\u3044\u5929\u6c17\u3067\u3059\u306d\u3002",
+    "japanese": "今日はいい天気ですね。",
     "romaji": "Kyou wa ii tenki desu ne.",
     "english": "It is nice weather today.",
     "jlpt": "N5"
   },
   {
-    "japanese": "\u9031\u672b\u306f\u53cb\u9054\u3068\u6620\u753b\u3092\u898b\u306b\u884c\u304f\u3064\u3082\u308a\u3067\u3059\u3002",
+    "japanese": "週末は友達と映画を見に行くつもりです。",
     "romaji": "Shuumatsu wa tomodachi to eiga o mi ni iku tsumori desu.",
     "english": "I plan to go to a movie with friends this weekend.",
     "jlpt": "N4"
   },
   {
-    "japanese": "\u6bce\u65e5\u5c11\u3057\u305a\u3064\u65e5\u672c\u8a9e\u3092\u52c9\u5f37\u3057\u3066\u3044\u307e\u3059\u3002",
+    "japanese": "毎日少しずつ日本語を勉強しています。",
     "romaji": "Mainichi sukoshi zutsu nihongo o benkyou shiteimasu.",
     "english": "I study Japanese little by little every day.",
     "jlpt": "N5"
   },
   {
-    "japanese": "\u96fb\u8eca\u304c\u9045\u308c\u3066\u3044\u305f\u306e\u3067\u3001\u5c11\u3057\u9045\u523b\u3057\u307e\u3057\u305f\u3002",
+    "japanese": "電車が遅れていたので、少し遅刻しました。",
     "romaji": "Densha ga okurete ita node, sukoshi chikoku shimashita.",
     "english": "The train was delayed, so I was a little late.",
     "jlpt": "N4"
   },
   {
-    "japanese": "\u63d0\u51fa\u671f\u9650\u307e\u3067\u306b\u30ec\u30dd\u30fc\u30c8\u3092\u4ed5\u4e0a\u3052\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "japanese": "提出期限までにレポートを仕上げなければならない。",
     "romaji": "Teishutsu kigen made ni repooto o shiagenakereba naranai.",
     "english": "I must finish the report by the deadline.",
     "jlpt": "N3"
   },
   {
-    "japanese": "\u96e8\u304c\u964d\u3063\u3066\u304d\u305f\u306e\u3067\u3001\u5098\u3092\u6301\u3063\u3066\u51fa\u304b\u3051\u305f\u3002",
+    "japanese": "雨が降ってきたので、傘を持って出かけた。",
     "romaji": "Ame ga futte kita node, kasa o motte dekaketa.",
     "english": "Since it started raining, I went out with an umbrella.",
     "jlpt": "N4"
   },
   {
-    "japanese": "\u6f22\u5b57\u306e\u610f\u5473\u3092\u6587\u8108\u3067\u63a8\u6e2c\u3059\u308b\u529b\u304c\u5927\u5207\u3060\u3002",
+    "japanese": "漢字の意味を文脈で推測する力が大切だ。",
     "romaji": "Kanji no imi o bunmyaku de suisoku suru chikara ga taisetsu da.",
     "english": "Inferring kanji meaning from context is important.",
     "jlpt": "N2"
   },
   {
-    "japanese": "\u6765\u6708\u304b\u3089\u65b0\u3057\u3044\u30d7\u30ed\u30b8\u30a7\u30af\u30c8\u306b\u53c2\u52a0\u3059\u308b\u3053\u3068\u306b\u306a\u308a\u307e\u3057\u305f\u3002",
+    "japanese": "来月から新しいプロジェクトに参加することになりました。",
     "romaji": "Raigetsu kara atarashii purojekuto ni sanka suru koto ni narimashita.",
     "english": "I'm going to join a new project from next month.",
     "jlpt": "N3"
   },
   {
-    "japanese": "\u3053\u306e\u30a2\u30d7\u30ea\u306f\u521d\u5fc3\u8005\u306b\u3082\u4f7f\u3044\u3084\u3059\u3044\u3002",
+    "japanese": "このアプリは初心者にも使いやすい。",
     "romaji": "Kono apuri wa shoshinsha ni mo tsukaiyasui.",
     "english": "This app is easy to use even for beginners.",
     "jlpt": "N3"
   },
   {
-    "japanese": "\u3053\u306e\u554f\u984c\u306f\u601d\u3063\u305f\u3088\u308a\u96e3\u3057\u304f\u306a\u304b\u3063\u305f\u3002",
+    "japanese": "この問題は思ったより難しくなかった。",
     "romaji": "Kono mondai wa omotta yori muzukashiku nakatta.",
     "english": "This problem wasn't as hard as I expected.",
     "jlpt": "N3"
   },
   {
-    "japanese": "\u5f7c\u306f\u65e5\u672c\u3067\u50cd\u304f\u305f\u3081\u306b\u30d3\u30b8\u30cd\u30b9\u65e5\u672c\u8a9e\u3092\u5b66\u3093\u3067\u3044\u308b\u3002",
+    "japanese": "彼は日本で働くためにビジネス日本語を学んでいる。",
     "romaji": "Kare wa Nihon de hataraku tame ni bijinesu nihongo o manande iru.",
     "english": "He studies business Japanese to work in Japan.",
     "jlpt": "N3"
   },
   {
-    "japanese": "\u5206\u304b\u3089\u306a\u3044\u5358\u8a9e\u306f\u8f9e\u66f8\u3067\u8abf\u3079\u3066\u304b\u3089\u8cea\u554f\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
+    "japanese": "分からない単語は辞書で調べてから質問してください。",
     "romaji": "Wakaranai tango wa jisho de shirabete kara shitsumon shite kudasai.",
     "english": "Please look up unknown words before asking.",
     "jlpt": "N4"
   },
   {
-    "japanese": "\u5bbf\u984c\u3092\u5fd8\u308c\u306a\u3044\u3088\u3046\u306b\u3001\u30ab\u30ec\u30f3\u30c0\u30fc\u306b\u66f8\u3044\u3066\u304a\u304d\u307e\u3059\u3002",
+    "japanese": "宿題を忘れないように、カレンダーに書いておきます。",
     "romaji": "Shukudai o wasurenai you ni, karendaa ni kaite okimasu.",
     "english": "I'll put it in my calendar so I won't forget homework.",
     "jlpt": "N4"
   },
   {
-    "japanese": "\u5e97\u54e1\u3055\u3093\u306b\u304a\u3059\u3059\u3081\u306e\u6599\u7406\u3092\u805e\u3044\u3066\u307f\u305f\u3002",
+    "japanese": "店員さんにおすすめの料理を聞いてみた。",
     "romaji": "Tenin-san ni osusume no ryouri o kiite mita.",
     "english": "I asked the staff for recommended dishes.",
     "jlpt": "N4"
   },
   {
-    "japanese": "\u3082\u3057\u6642\u9593\u304c\u3042\u308c\u3070\u3001\u4e00\u7dd2\u306b\u5fa9\u7fd2\u3057\u307e\u305b\u3093\u304b\u3002",
+    "japanese": "もし時間があれば、一緒に復習しませんか。",
     "romaji": "Moshi jikan ga areba, issho ni fukushuu shimasen ka.",
     "english": "If you have time, would you like to review together?",
     "jlpt": "N3"
   },
   {
-    "japanese": "\u96fb\u8eca\u304c\u9045\u308c\u3066\u3044\u305f\u306e\u3067\u3001\u5c11\u3057\u9045\u523b\u3057\u307e\u3057\u305f\u3002",
+    "japanese": "電車が遅れていたので、少し遅刻しました。",
     "romaji": "Densha ga okurete ita node, sukoshi chikoku shimashita.",
     "english": "The train was delayed, so I was a little late.",
     "jlpt": "N4"
   },
   {
-    "japanese": "\u6765\u6708\u304b\u3089\u65b0\u3057\u3044\u30d7\u30ed\u30b8\u30a7\u30af\u30c8\u306b\u53c2\u52a0\u3059\u308b\u3053\u3068\u306b\u306a\u308a\u307e\u3057\u305f\u3002",
+    "japanese": "来月から新しいプロジェクトに参加することになりました。",
     "romaji": "Raigetsu kara atarashii purojekuto ni sanka suru koto ni narimashita.",
     "english": "I'm going to join a new project from next month.",
     "jlpt": "N3"
   },
   {
-    "japanese": "\u63d0\u51fa\u671f\u9650\u307e\u3067\u306b\u30ec\u30dd\u30fc\u30c8\u3092\u4ed5\u4e0a\u3052\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "japanese": "提出期限までにレポートを仕上げなければならない。",
     "romaji": "Teishutsu kigen made ni repooto o shiagenakereba naranai.",
     "english": "I must finish the report by the deadline.",
     "jlpt": "N3"
   },
   {
-    "japanese": "\u65e5\u672c\u8a9e\u3092\u52c9\u5f37\u3057\u59cb\u3081\u3066\u4e09\u304b\u6708\u3067\u3059\u3002",
+    "japanese": "日本語を勉強し始めて三か月です。",
     "romaji": "Nihongo o benkyou shihajimete sankagetsu desu.",
     "english": "It has been three months since I started studying Japanese.",
     "jlpt": "N5"
   },
   {
-    "japanese": "\u5f7c\u306f\u65e5\u672c\u3067\u50cd\u304f\u305f\u3081\u306b\u30d3\u30b8\u30cd\u30b9\u65e5\u672c\u8a9e\u3092\u5b66\u3093\u3067\u3044\u308b\u3002",
+    "japanese": "彼は日本で働くためにビジネス日本語を学んでいる。",
     "romaji": "Kare wa Nihon de hataraku tame ni bijinesu nihongo o manande iru.",
     "english": "He studies business Japanese to work in Japan.",
     "jlpt": "N3"
   },
   {
-    "japanese": "\u5f7c\u306f\u65e5\u672c\u3067\u50cd\u304f\u305f\u3081\u306b\u30d3\u30b8\u30cd\u30b9\u65e5\u672c\u8a9e\u3092\u5b66\u3093\u3067\u3044\u308b\u3002",
+    "japanese": "彼は日本で働くためにビジネス日本語を学んでいる。",
     "romaji": "Kare wa Nihon de hataraku tame ni bijinesu nihongo o manande iru.",
     "english": "He studies business Japanese to work in Japan.",
     "jlpt": "N3"
   },
   {
-    "japanese": "\u3082\u3057\u6642\u9593\u304c\u3042\u308c\u3070\u3001\u4e00\u7dd2\u306b\u5fa9\u7fd2\u3057\u307e\u305b\u3093\u304b\u3002",
+    "japanese": "もし時間があれば、一緒に復習しませんか。",
     "romaji": "Moshi jikan ga areba, issho ni fukushuu shimasen ka.",
     "english": "If you have time, would you like to review together?",
     "jlpt": "N3"
   },
   {
-    "japanese": "\u3053\u306e\u6f22\u5b57\u306e\u8aad\u307f\u65b9\u3092\u6559\u3048\u3066\u304f\u3060\u3055\u3044\u3002",
+    "japanese": "この漢字の読み方を教えてください。",
     "romaji": "Kono kanji no yomikata o oshiete kudasai.",
     "english": "Please tell me how to read this kanji.",
     "jlpt": "N5"
   },
   {
-    "japanese": "\u3082\u3057\u6642\u9593\u304c\u3042\u308c\u3070\u3001\u4e00\u7dd2\u306b\u5fa9\u7fd2\u3057\u307e\u305b\u3093\u304b\u3002",
+    "japanese": "もし時間があれば、一緒に復習しませんか。",
     "romaji": "Moshi jikan ga areba, issho ni fukushuu shimasen ka.",
     "english": "If you have time, would you like to review together?",
     "jlpt": "N3"
   },
   {
-    "japanese": "\u5e97\u54e1\u3055\u3093\u306b\u304a\u3059\u3059\u3081\u306e\u6599\u7406\u3092\u805e\u3044\u3066\u307f\u305f\u3002",
+    "japanese": "店員さんにおすすめの料理を聞いてみた。",
     "romaji": "Tenin-san ni osusume no ryouri o kiite mita.",
     "english": "I asked the staff for recommended dishes.",
     "jlpt": "N4"
   },
   {
-    "japanese": "\u3053\u306e\u554f\u984c\u306f\u601d\u3063\u305f\u3088\u308a\u96e3\u3057\u304f\u306a\u304b\u3063\u305f\u3002",
+    "japanese": "この問題は思ったより難しくなかった。",
     "romaji": "Kono mondai wa omotta yori muzukashiku nakatta.",
     "english": "This problem wasn't as hard as I expected.",
     "jlpt": "N3"
   },
   {
-    "japanese": "\u3053\u306e\u6f22\u5b57\u306e\u8aad\u307f\u65b9\u3092\u6559\u3048\u3066\u304f\u3060\u3055\u3044\u3002",
+    "japanese": "この漢字の読み方を教えてください。",
     "romaji": "Kono kanji no yomikata o oshiete kudasai.",
     "english": "Please tell me how to read this kanji.",
     "jlpt": "N5"
   },
   {
-    "japanese": "\u6bce\u671d\u30b3\u30fc\u30d2\u30fc\u3092\u98f2\u3093\u3067\u304b\u3089\u4ed5\u4e8b\u306b\u884c\u304d\u307e\u3059\u3002",
+    "japanese": "毎朝コーヒーを飲んでから仕事に行きます。",
     "romaji": "Mai asa koohii o nonde kara shigoto ni ikimasu.",
     "english": "I drink coffee every morning before going to work.",
     "jlpt": "N4"
   },
   {
-    "japanese": "\u6f22\u5b57\u306e\u610f\u5473\u3092\u6587\u8108\u3067\u63a8\u6e2c\u3059\u308b\u529b\u304c\u5927\u5207\u3060\u3002",
-    "romaji": "Kanji no imi o bunmyaku de suisoku suru chikara ga taisetsu da.",
-    "english": "Inferring kanji meaning from context is important.",
-    "jlpt": "N2"
-  },
-  {
-    "japanese": "\u3053\u306e\u30a2\u30d7\u30ea\u306f\u521d\u5fc3\u8005\u306b\u3082\u4f7f\u3044\u3084\u3059\u3044\u3002",
-    "romaji": "Kono apuri wa shoshinsha ni mo tsukaiyasui.",
-    "english": "This app is easy to use even for beginners.",
-    "jlpt": "N3"
-  },
-  {
-    "japanese": "\u5e97\u54e1\u3055\u3093\u306b\u304a\u3059\u3059\u3081\u306e\u6599\u7406\u3092\u805e\u3044\u3066\u307f\u305f\u3002",
-    "romaji": "Tenin-san ni osusume no ryouri o kiite mita.",
-    "english": "I asked the staff for recommended dishes.",
-    "jlpt": "N4"
-  },
-  {
-    "japanese": "\u6f22\u5b57\u306e\u610f\u5473\u3092\u6587\u8108\u3067\u63a8\u6e2c\u3059\u308b\u529b\u304c\u5927\u5207\u3060\u3002",
-    "romaji": "Kanji no imi o bunmyaku de suisoku suru chikara ga taisetsu da.",
-    "english": "Inferring kanji meaning from context is important.",
-    "jlpt": "N2"
-  },
-  {
-    "japanese": "\u5f7c\u5973\u306f\u5fd9\u3057\u3044\u306f\u305a\u306a\u306e\u306b\u3001\u3044\u3064\u3082\u4e01\u5be7\u306b\u8fd4\u4fe1\u3057\u3066\u304f\u308c\u308b\u3002",
+    "japanese": "彼女は忙しいはずなのに、いつも丁寧に返信してくれる。",
     "romaji": "Kanojo wa isogashii hazu na noni, itsumo teinei ni henshin shite kureru.",
     "english": "Even though she must be busy, she always replies politely.",
     "jlpt": "N2"
   },
   {
-    "japanese": "\u65e5\u672c\u8a9e\u3092\u52c9\u5f37\u3057\u59cb\u3081\u3066\u4e09\u304b\u6708\u3067\u3059\u3002",
-    "romaji": "Nihongo o benkyou shihajimete sankagetsu desu.",
-    "english": "It has been three months since I started studying Japanese.",
+    "japanese": "こんにちは",
+    "romaji": "Konnichiwa",
+    "english": "Hello",
     "jlpt": "N5"
   },
   {
-    "japanese": "\u63d0\u51fa\u671f\u9650\u307e\u3067\u306b\u30ec\u30dd\u30fc\u30c8\u3092\u4ed5\u4e0a\u3052\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
-    "romaji": "Teishutsu kigen made ni repooto o shiagenakereba naranai.",
-    "english": "I must finish the report by the deadline.",
-    "jlpt": "N3"
-  },
-  {
-    "id": 192,
-    "japanese": "Konnichiwa",
-    "english": "Hello"
+    "japanese": "彼は毎日図書館で勉強します。",
+    "romaji": "Kare wa mainichi toshokan de benkyou shimasu.",
+    "english": "He studies in the library every day.",
+    "jlpt": "N4"
   }
 ]

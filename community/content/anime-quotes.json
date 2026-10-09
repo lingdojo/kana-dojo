@@ -1,10 +1,11 @@
-[{
-  "japanese": "マママママ",
-  "romaji": "Mama mama mama",
-  "english": "Mama mama mama.",
-  "anime": "One Piece",
-  "character": "Charlotte Linlin (Big Mom)"
-},
+[
+  {
+    "japanese": "マママママ",
+    "romaji": "Mama mama mama",
+    "english": "Mama mama mama.",
+    "anime": "One Piece",
+    "character": "Charlotte Linlin (Big Mom)"
+  },
   {
     "japanese": "人の夢は終わらねぇ！",
     "romaji": "Hito no yume wa owaranee!",
@@ -543,5 +544,54 @@
     "english": "Ora ora ora ora ora! (alt wording 8) (alt wording 60)",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "Jotaro Kujo"
-  }
+  },
+  {
+    "japanese": "ブチャラティ、来た！",
+    "romaji": "Bucharati, kita!",
+    "english": "Bucciarati is here! (alt wording 17) (alt wording 69)",
+    "anime": "JoJo's Bizarre Adventure: Golden Wind",
+       "character": "Narancia Ghirga"
+  },
+  {
+    "japanese": "俺はガンダムだ！",
+    "romaji": "Ore wa Gandamu da!",
+    "english": "I am Gundam! (alt wording 25) (alt wording 77)",
+    "anime": "Mobile Suit Gundam 00",
+    "character": "Setsuna F. Seiei"
+  },
+  {
+  "japanese": "オラオラオラオラオラ！",
+  "romaji": "Ora ora ora ora ora!",
+  "english": "Ora ora ora ora ora! (alt wording 8) (alt wording 60)",
+  "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+  "character": "Jotaro Kujo"
+},
+  {
+  "japanese": "マママママ",
+  "romaji": "Mama mama mama",
+  "english": "Mama mama mama. (alt wording 29) (alt wording 81)",
+  "anime": "One Piece",
+  "character": "Charlotte Linlin (Big Mom)"
+},
+  {
+  "japanese": "マママママ",
+  "romaji": "Mama mama mama",
+  "english": "Mama mama mama. (alt wording 29) (alt wording 81)",
+  "anime": "One Piece",
+  "character": "Charlotte Linlin (Big Mom)"
+},
+  {
+  "japanese": "俺を誰だと思ってやがる!",
+  "romaji": "Ore o dare da to omotte yagaru!",
+  "english": "Who the hell do you think I am!",
+  "anime": "Gurren Lagann",
+  "character": "Kamina"
+},
+  {
+  "japanese": "オラオラオラオラオラ！",
+  "romaji": "Ora ora ora ora ora!",
+  "english": "Ora ora ora ora ora! (alt wording 8) (alt wording 60)",
+  "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+  "character": "Jotaro Kujo"
+}
 ]
