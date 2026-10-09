@@ -18,7 +18,9 @@
       ],
       "difficulty": "all-levels",
       "priceType": "free",
-      "platforms": ["web"],
+      "platforms": [
+        "web"
+      ],
       "url": "https://guidetojapanese.org/learn/",
       "rating": 4.8,
       "featured": true,
@@ -32,10 +34,18 @@
       "descriptionLong": "Imabi is an incredibly detailed Japanese grammar resource that goes beyond what most textbooks cover. It includes lessons on classical Japanese, dialects, and nuanced grammar points. The site is particularly valuable for intermediate to advanced learners seeking deeper understanding.",
       "category": "websites",
       "subcategory": "reference",
-      "tags": ["grammar", "advanced", "classical", "detailed", "free"],
+      "tags": [
+        "grammar",
+        "advanced",
+        "classical",
+        "detailed",
+        "free"
+      ],
       "difficulty": "intermediate",
       "priceType": "free",
-      "platforms": ["web"],
+      "platforms": [
+        "web"
+      ],
       "url": "https://imabi.org/",
       "rating": 4.6,
       "featured": false,
@@ -49,10 +59,18 @@
       "descriptionLong": "Wasabi Japanese offers free, structured Japanese lessons covering grammar, vocabulary, and reading. Each lesson includes audio recordings, example sentences, and practice exercises. The site is well-organized and suitable for self-study.",
       "category": "websites",
       "subcategory": "courses",
-      "tags": ["lessons", "grammar", "audio", "exercises", "free"],
+      "tags": [
+        "lessons",
+        "grammar",
+        "audio",
+        "exercises",
+        "free"
+      ],
       "difficulty": "beginner",
       "priceType": "free",
-      "platforms": ["web"],
+      "platforms": [
+        "web"
+      ],
       "url": "https://www.wasabi-jpn.com/",
       "rating": 4.4,
       "featured": false,
@@ -66,10 +84,18 @@
       "descriptionLong": "Maggie Sensei provides Japanese lessons focusing on natural, conversational Japanese. The site covers grammar points, expressions, and vocabulary with plenty of example sentences showing real-world usage. Lessons are presented in a friendly, approachable style.",
       "category": "websites",
       "subcategory": "reference",
-      "tags": ["grammar", "conversational", "natural", "expressions", "free"],
+      "tags": [
+        "grammar",
+        "conversational",
+        "natural",
+        "expressions",
+        "free"
+      ],
       "difficulty": "intermediate",
       "priceType": "free",
-      "platforms": ["web"],
+      "platforms": [
+        "web"
+      ],
       "url": "https://maggiesensei.com/",
       "rating": 4.5,
       "featured": false,
@@ -83,11 +109,21 @@
       "descriptionLong": "JapanesePod101 offers thousands of audio and video lessons for Japanese learners at all levels. The platform includes lesson notes, vocabulary lists, and interactive tools. While the free content is limited, the paid subscription provides access to a massive library of learning materials.",
       "category": "websites",
       "subcategory": "courses",
-      "tags": ["audio", "video", "lessons", "podcast", "comprehensive"],
+      "tags": [
+        "audio",
+        "video",
+        "lessons",
+        "podcast",
+        "comprehensive"
+      ],
       "difficulty": "all-levels",
       "priceType": "freemium",
       "priceDetails": "Free tier available. Premium from $8/month",
-      "platforms": ["web", "ios", "android"],
+      "platforms": [
+        "web",
+        "ios",
+        "android"
+      ],
       "url": "https://www.japanesepod101.com/",
       "rating": 4.3,
       "featured": false,
@@ -101,10 +137,19 @@
       "descriptionLong": "NHK World Easy Japanese provides free Japanese lessons from Japan's national broadcaster. The course includes audio lessons, video content, and downloadable materials. It's designed for beginners and covers practical Japanese for everyday situations.",
       "category": "websites",
       "subcategory": "courses",
-      "tags": ["NHK", "beginner", "audio", "video", "free", "official"],
+      "tags": [
+        "NHK",
+        "beginner",
+        "audio",
+        "video",
+        "free",
+        "official"
+      ],
       "difficulty": "beginner",
       "priceType": "free",
-      "platforms": ["web"],
+      "platforms": [
+        "web"
+      ],
       "url": "https://www.nhk.or.jp/lesson/en/",
       "rating": 4.4,
       "featured": false,
@@ -127,7 +172,9 @@
       ],
       "difficulty": "beginner",
       "priceType": "free",
-      "platforms": ["web"],
+      "platforms": [
+        "web"
+      ],
       "url": "https://marugotoweb.jp/",
       "rating": 4.3,
       "featured": false,
@@ -141,10 +188,18 @@
       "descriptionLong": "JLPT Sensei is a comprehensive resource for JLPT preparation. It provides grammar explanations, vocabulary lists, and practice questions organized by JLPT level. The site is regularly updated and includes study tips and strategies.",
       "category": "websites",
       "subcategory": "reference",
-      "tags": ["JLPT", "grammar", "vocabulary", "practice", "free"],
+      "tags": [
+        "JLPT",
+        "grammar",
+        "vocabulary",
+        "practice",
+        "free"
+      ],
       "difficulty": "all-levels",
       "priceType": "free",
-      "platforms": ["web"],
+      "platforms": [
+        "web"
+      ],
       "url": "https://jlptsensei.com/",
       "rating": 4.5,
       "featured": false,
@@ -158,10 +213,19 @@
       "descriptionLong": "Japanese Test 4 You offers free JLPT practice tests, grammar explanations, and vocabulary lists for all levels. The site includes thousands of practice questions to help you prepare for the official exam.",
       "category": "websites",
       "subcategory": "practice",
-      "tags": ["JLPT", "practice", "tests", "grammar", "vocabulary", "free"],
+      "tags": [
+        "JLPT",
+        "practice",
+        "tests",
+        "grammar",
+        "vocabulary",
+        "free"
+      ],
       "difficulty": "all-levels",
       "priceType": "free",
-      "platforms": ["web"],
+      "platforms": [
+        "web"
+      ],
       "url": "https://japanesetest4you.com/",
       "rating": 4.3,
       "featured": false,
@@ -175,10 +239,18 @@
       "descriptionLong": "Bunpo.jp is a Japanese grammar dictionary that provides clear, concise explanations of grammar points. Each entry includes example sentences, related grammar, and JLPT level information. Great for quick grammar lookups.",
       "category": "websites",
       "subcategory": "reference",
-      "tags": ["grammar", "dictionary", "reference", "JLPT", "free"],
+      "tags": [
+        "grammar",
+        "dictionary",
+        "reference",
+        "JLPT",
+        "free"
+      ],
       "difficulty": "all-levels",
       "priceType": "free",
-      "platforms": ["web"],
+      "platforms": [
+        "web"
+      ],
       "url": "https://bunpo.jp/",
       "rating": 4.4,
       "featured": false,
@@ -192,10 +264,18 @@
       "descriptionLong": "Erin's Challenge is a free video-based Japanese learning resource from the Japan Foundation. It follows a high school student named Erin and teaches Japanese through skits, manga, and cultural content. Great for visual learners.",
       "category": "websites",
       "subcategory": "courses",
-      "tags": ["video", "culture", "Japan Foundation", "beginner", "free"],
+      "tags": [
+        "video",
+        "culture",
+        "Japan Foundation",
+        "beginner",
+        "free"
+      ],
       "difficulty": "beginner",
       "priceType": "free",
-      "platforms": ["web"],
+      "platforms": [
+        "web"
+      ],
       "url": "https://www.erin.jpf.go.jp/",
       "rating": 4.2,
       "featured": false,
@@ -219,7 +299,11 @@
       "difficulty": "all-levels",
       "priceType": "paid",
       "priceDetails": "Tutor prices vary. Typically $10-30/hour",
-      "platforms": ["web", "ios", "android"],
+      "platforms": [
+        "web",
+        "ios",
+        "android"
+      ],
       "url": "https://www.italki.com/",
       "rating": 4.6,
       "featured": true,
@@ -233,10 +317,18 @@
       "descriptionLong": "Lang-8 is a language exchange platform focused on writing. You write journal entries in Japanese and native speakers correct them. In return, you can correct entries written in your native language. Great for improving writing skills.",
       "category": "websites",
       "subcategory": "practice",
-      "tags": ["writing", "correction", "native-speakers", "exchange", "free"],
+      "tags": [
+        "writing",
+        "correction",
+        "native-speakers",
+        "exchange",
+        "free"
+      ],
       "difficulty": "all-levels",
       "priceType": "free",
-      "platforms": ["web"],
+      "platforms": [
+        "web"
+      ],
       "url": "https://lang-8.com/",
       "rating": 4.3,
       "featured": false,
@@ -260,7 +352,11 @@
       "difficulty": "all-levels",
       "priceType": "freemium",
       "priceDetails": "Free tier available. Premium for additional features",
-      "platforms": ["web", "ios", "android"],
+      "platforms": [
+        "web",
+        "ios",
+        "android"
+      ],
       "url": "https://hinative.com/",
       "rating": 4.4,
       "featured": false,
@@ -274,11 +370,20 @@
       "descriptionLong": "Tandem is a language exchange app that connects you with native Japanese speakers who want to learn your language. Practice through text, voice messages, and video calls. The app includes correction features and translation tools.",
       "category": "websites",
       "subcategory": "practice",
-      "tags": ["exchange", "conversation", "native-speakers", "chat", "video"],
+      "tags": [
+        "exchange",
+        "conversation",
+        "native-speakers",
+        "chat",
+        "video"
+      ],
       "difficulty": "all-levels",
       "priceType": "freemium",
       "priceDetails": "Free with optional premium features",
-      "platforms": ["ios", "android"],
+      "platforms": [
+        "ios",
+        "android"
+      ],
       "url": "https://www.tandem.net/",
       "rating": 4.3,
       "featured": false,
@@ -292,14 +397,46 @@
       "descriptionLong": "Tofugu is a Japanese learning blog created by the team behind WaniKani. It features in-depth articles on grammar, vocabulary, culture, and learning strategies. The site also provides comprehensive resource guides and reviews.",
       "category": "websites",
       "subcategory": "reference",
-      "tags": ["blog", "articles", "culture", "resources", "guides", "free"],
+      "tags": [
+        "blog",
+        "articles",
+        "culture",
+        "resources",
+        "guides",
+        "free"
+      ],
       "difficulty": "all-levels",
       "priceType": "free",
-      "platforms": ["web"],
+      "platforms": [
+        "web"
+      ],
       "url": "https://www.tofugu.com/",
       "rating": 4.7,
       "featured": true,
       "notes": "Excellent articles and resource recommendations."
+    },
+    {
+      "id": "diccionario-japones",
+      "name": "Diccionario Japonés",
+      "nameJa": "ディシオナリオ・ハポネス",
+      "description": "Free Japanese–Spanish dictionary with word and kanji lookup, conjugated-form search, kanji drawing, grammar explanations, and examples in Spanish.",
+      "descriptionLong": "Diccionario Japonés is a free Japanese–Spanish web dictionary offering word and kanji lookup, conjugated-form searches, and kanji drawing. It also provides grammar explanations and examples in Spanish from N5 to N1, plus personal decks that export to Anki. Lookup works without registration; saving decks requires an account.",
+      "category": "websites",
+      "subcategory": "reference",
+      "tags": [
+        "spanish",
+        "dictionary",
+        "kanji",
+        "grammar",
+        "reference",
+        "free"
+      ],
+      "difficulty": "all-levels",
+      "priceType": "free",
+      "platforms": [
+        "web"
+      ],
+      "url": "https://diccionariojapones.com"
     }
   ]
 }
