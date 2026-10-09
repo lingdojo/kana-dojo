@@ -100,20 +100,7 @@ jobs:
               return emojiBank[Math.floor(Math.random() * emojiBank.length)];
             }
 
-            function findRandomEligible(items, predicate) {
-              if (!Array.isArray(items) || items.length === 0) {
-                return null;
-              }
-
-              const eligible = items;
-
-              if (eligible.length === 0) {
-                return null;
-              }
-
-              const randomIndex = Math.floor(Math.random() * eligible.length);
-              return eligible[randomIndex];
-            }
+            const findRandomEligible = require('./.github/lib/find-random-eligible.cjs');
 
             async function resolveMilestoneNumber() {
               const configuredMilestoneTitle = t.common.milestoneTitle;
@@ -396,6 +383,13 @@ jobs:
                 if (th.issued) {
                   return false;
                 }
+                if (Array.isArray(existingThemes)) {
+                  const exists = existingThemes.some(function(et) {
+                    if (!et || typeof et !== 'object') return false;
+                    return et.id === th.id;
+                  });
+                  if (exists) return false;
+                }
                 return true;
               });
               
@@ -438,6 +432,9 @@ jobs:
               } else if (nextType === 'fact') {
               item = findRandomEligible(facts, function(f) {
                 if (f.issued) {
+                  return false;
+                }
+                if (Array.isArray(existingFacts) && existingFacts.includes(f.fact)) {
                   return false;
                 }
                 return true;
@@ -484,6 +481,13 @@ jobs:
                 if (p.issued) {
                   return false;
                 }
+                if (Array.isArray(existingProverbs)) {
+                  const exists = existingProverbs.some(function(ep) {
+                    if (!ep || typeof ep !== 'object') return false;
+                    return ep.japanese === p.japanese && ep.romaji === p.romaji && ep.english === p.english;
+                  });
+                  if (exists) return false;
+                }
                 return true;
               });
               
@@ -529,6 +533,13 @@ jobs:
                 if (h.issued) {
                   return false;
                 }
+                if (Array.isArray(existingHaiku)) {
+                  const exists = existingHaiku.some(function(eh) {
+                    if (!eh || typeof eh !== 'object') return false;
+                    return eh.japanese === h.japanese && eh.romaji === h.romaji && eh.english === h.english;
+                  });
+                  if (exists) return false;
+                }
                 return true;
               });
 
@@ -567,6 +578,13 @@ jobs:
               item = findRandomEligible(trivia, function(q) {
                 if (q.issued) {
                   return false;
+                }
+                if (Array.isArray(existingTrivia)) {
+                  const exists = existingTrivia.some(function(eq) {
+                    if (!eq || typeof eq !== 'object') return false;
+                    return eq.question === q.question;
+                  });
+                  if (exists) return false;
                 }
                 return true;
               });
@@ -615,6 +633,12 @@ jobs:
                 if (g.issued) {
                   return false;
                 }
+                if (Array.isArray(existingGrammar)) {
+                  const exists = existingGrammar.some(function(eg) {
+                    return typeof eg === 'string' ? eg === g.text : (eg && eg.text === g.text);
+                  });
+                  if (exists) return false;
+                }
                 return true;
               });
 
@@ -660,6 +684,13 @@ jobs:
                 if (q.issued) {
                   return false;
                 }
+                if (Array.isArray(existingAnimeQuotes)) {
+                  const exists = existingAnimeQuotes.some(function(eq) {
+                    if (!eq || typeof eq !== 'object') return false;
+                    return eq.japanese === q.japanese && eq.romaji === q.romaji && eq.english === q.english;
+                  });
+                  if (exists) return false;
+                }
                 return true;
               });
 
@@ -704,6 +735,13 @@ jobs:
               item = findRandomEligible(videoGameQuotes, function(q) {
                 if (q.issued) {
                   return false;
+                }
+                if (Array.isArray(existingVideoGameQuotes)) {
+                  const exists = existingVideoGameQuotes.some(function(eq) {
+                    if (!eq || typeof eq !== 'object') return false;
+                    return eq.japanese === q.japanese && eq.romaji === q.romaji && eq.english === q.english;
+                  });
+                  if (exists) return false;
                 }
                 return true;
               });
@@ -1089,7 +1127,9 @@ jobs:
               backlogChanged = true;
             } else if (nextType === 'communityNote') {
               item = findRandomEligible(communityNotes, function(entry) {
-                return !entry.issued && !entry.completed;
+                if (entry.issued || entry.completed) return false;
+                if (!entry.file || !entry.position || !entry.text) return false;
+                return true;
               });
 
               if (!item) {
