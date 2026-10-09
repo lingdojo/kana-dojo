@@ -320,7 +320,7 @@ const VocabMCQ = ({ selectedWordObjs, isHidden }: VocabMCQProps) => {
   const handleCorrectAnswer = () => {
     playCorrect();
     addCharacterToHistory(correctChar);
-    incrementCharacterScore(correctChar, 'correct');
+    incrementCharacterScore(correctChar, 'correct', 'vocabulary');
     incrementCorrectAnswers();
     void recordVocabularyProgress(correctChar, quizType);
     setScore(score + 1);
@@ -344,7 +344,7 @@ const VocabMCQ = ({ selectedWordObjs, isHidden }: VocabMCQProps) => {
   const handleWrongAnswer = (selectedOption: string) => {
     setWrongSelectedAnswers([...wrongSelectedAnswers, selectedOption]);
     playErrorTwice();
-    incrementCharacterScore(correctChar, 'wrong');
+    incrementCharacterScore(correctChar, 'wrong', 'vocabulary');
     incrementWrongAnswers();
     if (score - 1 < 0) {
       setScore(0);

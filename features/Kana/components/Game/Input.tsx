@@ -302,7 +302,7 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
     playCorrect();
     promptParts.forEach(char => {
       addCharacterToHistory(char);
-      incrementCharacterScore(char, 'correct');
+      incrementCharacterScore(char, 'correct', 'kana');
     });
     incrementCorrectAnswers();
     setScore(score + 1);
@@ -340,7 +340,7 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
     playErrorTwice();
 
     promptParts.forEach(char => {
-      incrementCharacterScore(char, 'wrong');
+      incrementCharacterScore(char, 'wrong', 'kana');
     });
     incrementWrongAnswers();
     if (score - 1 < 0) {

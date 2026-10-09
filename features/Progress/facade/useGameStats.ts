@@ -49,7 +49,11 @@ export function useGameStats(): GameStatsActions {
         // Update character history based on content type
         if (event.character) {
           store.addCharacterToHistory(event.character);
-          store.incrementCharacterScore(event.character, 'correct');
+          store.incrementCharacterScore(
+            event.character,
+            'correct',
+            event.contentType,
+          );
         }
 
         // Trigger achievement progress check for correct answers
@@ -65,7 +69,11 @@ export function useGameStats(): GameStatsActions {
         // Update character history based on content type
         if (event.character) {
           store.addCharacterToHistory(event.character);
-          store.incrementCharacterScore(event.character, 'wrong');
+          store.incrementCharacterScore(
+            event.character,
+            'wrong',
+            event.contentType,
+          );
         }
       },
     );

@@ -1,4 +1,5 @@
 import { useStatsStore } from '@/features/Progress';
+import { useCallback } from 'react';
 import { useShallow } from 'zustand/react/shallow';
 
 type GameFeature = 'kana' | 'kanji' | 'vocabulary';
@@ -12,7 +13,10 @@ type CommonGameStats = {
   incrementCorrectAnswers: () => void;
   incrementWrongAnswers: () => void;
   addCharacterToHistory: (character: string) => void;
-  incrementCharacterScore: (character: string, result: 'correct' | 'wrong') => void;
+  incrementCharacterScore: (
+    character: string,
+    result: 'correct' | 'wrong',
+  ) => void;
   addCorrectAnswerTime: (seconds: number) => void;
 };
 
@@ -72,13 +76,21 @@ export const useGameStats = <T extends GameFeature>(
     })),
   );
 
+  const { incrementCharacterScore: recordMastery } = commonStats;
+  const incrementCharacterScore = useCallback(
+    (character: string, result: 'correct' | 'wrong') =>
+      recordMastery(character, result, feature),
+    [recordMastery, feature],
+  );
+  const featureStats = { ...commonStats, incrementCharacterScore };
+
   if (feature === 'kana') {
-    return { ...commonStats, ...kanaStats } as FeatureGameStats<T>;
+    return { ...featureStats, ...kanaStats } as FeatureGameStats<T>;
   }
 
   if (feature === 'kanji') {
-    return { ...commonStats, ...kanjiStats } as FeatureGameStats<T>;
+    return { ...featureStats, ...kanjiStats } as FeatureGameStats<T>;
   }
 
-  return { ...commonStats, ...vocabularyStats } as FeatureGameStats<T>;
+  return { ...featureStats, ...vocabularyStats } as FeatureGameStats<T>;
 };

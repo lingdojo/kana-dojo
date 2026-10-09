@@ -314,7 +314,7 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
     (correctChar: string) => {
       playCorrect();
       addCharacterToHistory(correctChar);
-      incrementCharacterScore(correctChar, 'correct');
+      incrementCharacterScore(correctChar, 'correct', 'kana');
       incrementCorrectAnswers();
       setScore(score + 1);
       setWrongSelectedAnswers([]);
@@ -376,7 +376,7 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
       const currentChar = isReverse
         ? correctRomajiCharReverse
         : correctKanaChar;
-      incrementCharacterScore(currentChar, 'wrong');
+      incrementCharacterScore(currentChar, 'wrong', 'kana');
       incrementWrongAnswers();
       if (score - 1 < 0) {
         setScore(0);

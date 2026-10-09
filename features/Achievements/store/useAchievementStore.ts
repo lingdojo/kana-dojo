@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
+import { countMasteredVocabulary } from '@/features/Achievements/lib/countMasteredVocabulary';
 
 export type AchievementRarity =
   | 'common'
@@ -1350,6 +1351,9 @@ interface AllTimeStatsForAchievements {
   bestStreak?: number;
   totalSessions?: number;
   characterMastery?: Record<string, { correct: number; incorrect: number }>;
+  contentMastery?: {
+    vocabulary?: Record<string, { correct: number; incorrect: number }>;
+  };
   hiraganaCorrect?: number;
   katakanaCorrect?: number;
   kanjiCorrectByLevel?: Record<string, number>;
@@ -1537,25 +1541,10 @@ function checkContentMastery(
 
   // For vocabulary mastery with minAnswers, check unique words mastered
   if (contentType === 'vocabulary' && minAnswers !== undefined) {
-    const relevantEntries = entries.filter(([key]) => {
-      // Vocabulary keys are usually words/phrases. Exclude single-character kana/kanji keys.
-      if (key.length !== 1) return true;
-      if (BASIC_HIRAGANA.has(key) || BASIC_KATAKANA.has(key)) return false;
-      if (isSingleKanji(key)) return false;
-      return true;
-    });
-
-    let masteredCount = 0;
-    for (const [, stats] of relevantEntries) {
-      const total = stats.correct + stats.incorrect;
-      if (total > 0) {
-        const accuracy = (stats.correct / total) * 100;
-        if (accuracy >= value) {
-          masteredCount++;
-        }
-      }
-    }
-    return masteredCount >= minAnswers;
+    return (
+      countMasteredVocabulary(allTimeStats.contentMastery?.vocabulary, value) >=
+      minAnswers
+    );
   }
 
   let relevantEntries: Array<[string, { correct: number; incorrect: number }]>;
