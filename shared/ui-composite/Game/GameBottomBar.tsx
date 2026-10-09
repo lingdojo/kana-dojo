@@ -203,6 +203,7 @@ export const GameBottomBar = ({
         >
           <ActionButton
             ref={buttonRef}
+            data-game-next-question={showContinue ? true : undefined}
             borderBottomThickness={12}
             borderRadius='3xl'
             className={clsx(
