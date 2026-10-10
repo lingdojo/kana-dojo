@@ -9,6 +9,7 @@ import { getSelectionLabels } from '@/shared/utils/selectionFormatting';
 import { shuffle, pickOne } from '@/shared/utils/shuffle';
 import FuriganaText from '@/shared/ui-composite/text/FuriganaText';
 import { isVocabularyMeaningAnswerCorrect } from '@/features/Vocabulary/lib/isVocabularyMeaningAnswerCorrect';
+import { isAmbiguousVocabularyOption } from '@/features/Vocabulary/lib/isAmbiguousVocabularyOption';
 
 interface GauntletVocabProps {
   onCancel?: () => void;
@@ -52,7 +53,11 @@ const GauntletVocab: React.FC<GauntletVocabProps> = ({ onCancel }) => {
         const correctAnswer = question.word;
         const seen = new Set([correctAnswer]);
         const incorrectOptions = shuffle(
-          items.filter(item => item.word !== question.word),
+          items.filter(
+            item =>
+              item.word !== question.word &&
+              !isAmbiguousVocabularyOption(question, item, isReverse),
+          ),
         )
           .filter(item => {
             if (seen.has(item.word)) return false;
