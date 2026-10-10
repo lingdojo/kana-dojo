@@ -349,6 +349,21 @@
   "region": "Okinawa",
   "note": "Okinawan gratitude expression. (Set 4)"
 },
+
+  {
+  "dialect": "〜ばい",
+  "standardJapanese": "〜だよ",
+  "english": "sentence ending",
+  "region": "Fukuoka",
+  "note": "Assertive friendly ending. (Set 3)"
+},
+  {
+  "dialect": "ぶち",
+  "standardJapanese": "とても",
+  "english": "very",
+  "region": "Yamaguchi/Hiroshima",
+  "note": "Regional intensifier. (Set 2)"
+  },
 {
   "dialect": "〜じゃけぇ",
   "standardJapanese": "〜だから",
