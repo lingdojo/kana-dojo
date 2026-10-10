@@ -298,5 +298,10 @@
     "wrong": "毎日日本語を勉強していますから上手になります。",
     "correct": "毎日日本語を勉強しているので上手になります。",
     "explanation": "ので is smoother/neutral for reason. (Pattern set 4)"
-  }
+  },
+  {
+  "wrong": "これは私のです本。",
+  "correct": "これは私の本です。",
+  "explanation": "Place の correctly in noun phrase. (Pattern set 6)"
+}
 ]
