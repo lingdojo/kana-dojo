@@ -715,7 +715,7 @@
   "correctIndex": 0
 },
   {
-  "question": "Which Japanese castle is known for its black exterior and nickname "Crow Castle"?",
+  "question": "Which Japanese castle is known for its black exterior and nickname 'Crow Castle'?",
   "difficulty": "hard",
   "answers": [
     "Matsumoto Castle",
@@ -724,5 +724,16 @@
     "Himeji Castle"
   ],
   "correctIndex": 0
-}
+},
+  {
+    "question": "Which Japanese city is known for its historic wooden district, Gion? (Community variation 29)",
+    "difficulty": "hard",
+    "answers": [
+      "Kyoto",
+      "Yokohama",
+      "Nagoya",
+      "Sendai"
+    ],
+    "correctIndex": 0
+  }
 ]
