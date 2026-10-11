@@ -346,5 +346,11 @@
   "termB": "seal (animal)",
   "explanation": "シール usually means sticker/label. (Set 6)",
   "example": "ノートにシールを貼った。"
+},
+  {
+  "termA": "バイク (baiku)",
+  "termB": "bike (bicycle)",
+  "explanation": "In Japanese バイク usually means motorcycle, not bicycle.",
+  "example": "週末にバイクでツーリングに行った。"
 }
 ]
