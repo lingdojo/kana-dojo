@@ -1,5 +1,11 @@
 [
   {
+    "id": "pearl-wave",
+    "backgroundColor": "oklch(21.0% 0.045 235.0 / 1)",
+    "mainColor": "oklch(88.0% 0.055 245.0 / 1)",
+    "secondaryColor": "oklch(68.0% 0.165 215.0 / 1)"
+  },
+  {
     "id": "tsukiji-morning",
     "backgroundColor": "oklch(22.0% 0.020 235.0 / 1)",
     "mainColor": "oklch(78.0% 0.135 215.0 / 1)",
@@ -358,12 +364,6 @@
     "backgroundColor": "oklch(18.0% 0.030 150.0 / 1)",
     "mainColor": "oklch(70.0% 0.120 145.0 / 1)",
     "secondaryColor": "oklch(60.0% 0.085 120.0 / 1)"
-  },
-  {
-  "id": "onsen-steam",
-  "backgroundColor": "oklch(25.0% 0.022 210.0 / 1)",
-  "mainColor": "oklch(85.0% 0.085 215.0 / 1)",
-  "secondaryColor": "oklch(70.0% 0.065 195.0 / 1)"
   },
   {
     "id": "snow-lantern",
