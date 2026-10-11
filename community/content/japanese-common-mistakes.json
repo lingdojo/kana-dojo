@@ -303,5 +303,10 @@
   "wrong": "もし雨が降ります、行きません。",
   "correct": "もし雨が降ったら、行きません。",
   "explanation": "Conditional needs たら/なら etc. (Pattern set 5)"
-}
+  },
+  {
+    "wrong": "宿題を忘れないよう、メモします。",
+    "correct": "宿題を忘れないように、メモします。",
+    "explanation": "Use ように for purpose/prevention. (Pattern set 1)"
+  }
 ]
