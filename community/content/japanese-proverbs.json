@@ -312,40 +312,45 @@
     "meaning": "A narrow viewpoint leads to poor judgment"
   },
   {
-  "japanese": "後悔先に立たず",
-  "romaji": "Koukai saki ni tatazu",
-  "english": "Regret does not stand before",
-  "meaning": "It's too late for regrets"
-},
+    "japanese": "後悔先に立たず",
+    "romaji": "Koukai saki ni tatazu",
+    "english": "Regret does not stand before",
+    "meaning": "It's too late for regrets"
+  },
   {
-  "japanese": "三日坊主",
-  "romaji": "Mikka bouzu",
-  "english": "A three-day monk",
-  "meaning": "Someone who quits quickly"
-},
+    "japanese": "三日坊主",
+    "romaji": "Mikka bouzu",
+    "english": "A three-day monk",
+    "meaning": "Someone who quits quickly"
+  },
   {
-  "japanese": "腹八分目",
-  "romaji": "Hara hachibunme",
-  "english": "Stomach 80 percent full",
-  "meaning": "Eat in moderation"
-},
+    "japanese": "腹八分目",
+    "romaji": "Hara hachibunme",
+    "english": "Stomach 80 percent full",
+    "meaning": "Eat in moderation"
+  },
   {
-  "japanese": "雨垂れ石を穿つ",
-  "romaji": "Amadare ishi wo ugatsu",
-  "english": "Dripping water pierces stone",
-  "meaning": "Persistence can overcome great obstacles"
-},
-    {
+    "japanese": "雨垂れ石を穿つ",
+    "romaji": "Amadare ishi wo ugatsu",
+    "english": "Dripping water pierces stone",
+    "meaning": "Persistence can overcome great obstacles"
+  },
+  {
     "japanese": "口は災いの元",
     "romaji": "Kuchi wa wazawai no moto",
     "english": "The mouth is the source of disaster",
     "meaning": "Careless speech can cause trouble"
-  
-    },
+  },
   {
     "japanese": "餅は餅屋",
     "romaji": "Mochi wa mochiya",
     "english": "Mochi should be made by the mochi shop",
     "meaning": "Leave it to the experts"
+  },
+  {
+    "japanese": "灯台下暗し",
+    "romaji": "Toudai moto kurashi",
+    "english": "It's darkest under the lighthouse",
+    "meaning": "The obvious is overlooked"
   }
 ]
