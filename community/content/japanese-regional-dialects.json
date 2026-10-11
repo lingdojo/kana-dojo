@@ -405,5 +405,12 @@
   "english": "What are you talking about?!",
   "region": "Kansai",
   "note": "Classic comedic retort (tsukkomi). (Set 4)"
+},
+{
+  "dialect": "〜じゃけぇ",
+  "standardJapanese": "〜だから",
+  "english": "because",
+  "region": "Hiroshima",
+  "note": "Common causal ending. (Set 6)"
 }
 ]
