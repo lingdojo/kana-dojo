@@ -33,6 +33,17 @@
     "correctIndex": 0
   },
   {
+    "question": "Which Japanese city is famous for the Gion Matsuri festival?",
+    "difficulty": "medium",
+    "answers": [
+     "Kyoto",
+     "Nagoya",
+     "Hiroshima",
+     "Sendai"
+    ],
+    "correctIndex": 0
+  },
+  {
     "question": "What is the name of Japan’s largest lake?",
     "difficulty": "medium",
     "answers": [
