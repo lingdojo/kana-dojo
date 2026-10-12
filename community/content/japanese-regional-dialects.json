@@ -397,5 +397,13 @@
   "english": "very",
   "region": "Kansai",
   "note": "Now used nationwide. (Set 3)"
+},
+
+  {
+  "dialect": "なんでやねん",
+  "standardJapanese": "何でだよ",
+  "english": "What are you talking about?!",
+  "region": "Kansai",
+  "note": "Classic comedic retort (tsukkomi). (Set 4)"
 }
 ]

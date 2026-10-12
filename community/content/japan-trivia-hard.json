@@ -715,14 +715,20 @@
   "correctIndex": 0
 },
   {
-  "question": "Which Japanese castle is known for its black exterior and nickname "Crow Castle"?",
+  "question": "Name ANY five of the primary contemporary Budo disciplines recognized by the Japanese Budo Association (Nippon Budo Kyogikai).",
   "difficulty": "hard",
   "answers": [
-    "Matsumoto Castle",
-    "Osaka Castle",
-    "Nijo Castle",
-    "Himeji Castle"
+    "Karatedo (The way of the empty hand)",
+    "Kendo (The way of the sword)",
+    "Kyudo (The way of the bow)",
+    " Judo (The gentle way)",
+    "Aikido (The way of harmonizing energy)",
+    "Shorinji Kempo (A Japanese martial art based on Shaolin kung fu principles)",
+    "Naginata (The art of the Japanese polearm)",
+    "Jukendo (The way of the bayonet)",
+    "* Iaido (The art of drawing and cutting with the sword)"
   ],
   "correctIndex": 0
 }
+
 ]

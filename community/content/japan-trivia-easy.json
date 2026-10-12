@@ -614,5 +614,18 @@
       "Goshuin"
     ],
     "correctIndex": 0
-  }
+  },
+  
+ {
+  "question": "What is the Japanese custom of removing shoes before entering a home called?",
+  "difficulty": "medium",
+  "answers": [
+    "Genkan",
+    "Omotenashi",
+    "Karaoke",
+    "Matsuri"
+  ],
+  "correctIndex": 0
+}
+  
 ]
