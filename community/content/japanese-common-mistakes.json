@@ -308,5 +308,10 @@
   "wrong": "図書館に本を借りました。",
   "correct": "図書館で本を借りました。",
   "explanation": "で marks location of action. (Pattern set 3)"
-}
+},
+  {
+  "wrong": "毎日日本語を勉強していますから上手になります。",
+  "correct": "毎日日本語を勉強しているので上手になります。",
+  "explanation": "ので is smoother/neutral for reason. (Pattern set 1)"
+},
 ]
