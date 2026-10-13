@@ -308,5 +308,10 @@
   "wrong": "図書館に本を借りました。",
   "correct": "図書館で本を借りました。",
   "explanation": "で marks location of action. (Pattern set 3)"
-}
+},
+  {
+    "wrong": "友達に会うを楽しみにしています。",
+    "correct": "友達に会うのを楽しみにしています。",
+    "explanation": "Nominalize with の before を. (Pattern set 2)"
+  }
 ]
