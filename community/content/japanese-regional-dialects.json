@@ -411,5 +411,19 @@
     "english": "but / however",
     "region": "Kumamoto (Kyushu)",
     "note": "Common sentence-ending conjunction in Kumamoto dialect. (Set 5)"
-  }
+  },
+  {
+    "dialect": "なんくるないさ",
+    "standardJapanese": "なんとかなる",
+    "english": "it'll work out",
+    "region": "Okinawa",
+    "note": "Famous Okinawan resilience phrase. (Set 2)"
+  },
+  {
+  "dialect": "めっちゃ",
+  "standardJapanese": "とても",
+  "english": "very",
+  "region": "Kansai",
+  "note": "Now used nationwide. (Set 5)"
+}
 ]

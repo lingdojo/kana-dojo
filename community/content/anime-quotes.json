@@ -565,47 +565,61 @@
   "english": "Ora ora ora ora ora! (alt wording 8) (alt wording 60)",
   "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
   "character": "Jotaro Kujo"
-},
+  },
   {
   "japanese": "マママママ",
   "romaji": "Mama mama mama",
   "english": "Mama mama mama. (alt wording 29) (alt wording 81)",
   "anime": "One Piece",
   "character": "Charlotte Linlin (Big Mom)"
-},
+  },
   {
   "japanese": "マママママ",
   "romaji": "Mama mama mama",
   "english": "Mama mama mama. (alt wording 29) (alt wording 81)",
   "anime": "One Piece",
   "character": "Charlotte Linlin (Big Mom)"
-},
+  },
   {
   "japanese": "俺を誰だと思ってやがる!",
   "romaji": "Ore o dare da to omotte yagaru!",
   "english": "Who the hell do you think I am!",
   "anime": "Gurren Lagann",
   "character": "Kamina"
-},
+  },
   {
   "japanese": "オラオラオラオラオラ！",
   "romaji": "Ora ora ora ora ora!",
   "english": "Ora ora ora ora ora! (alt wording 8) (alt wording 60)",
   "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
   "character": "Jotaro Kujo"
-},
+  },
   {
   "japanese": "撃っていいのは撃たれる覚悟がある奴だけだ",
   "romaji": "Utte ii no wa uterareru kakugo ga aru yatsu dake da",
   "english": "Only those prepared to be shot should pull the trigger. (alt wording 45)",
   "anime": "Code Geass: Lelouch of the Rebellion",
   "character": "Lelouch vi Britannia"
-},
+  },
   {
   "japanese": "なにィ！？",
   "romaji": "Nanii!?",
   "english": "What?! (alt wording 9) (alt wording 61)",
   "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
   "character": "Joseph Joestar"
-}
+  },
+  {
+  "japanese": "俺を誰だと思ってやがる!",
+  "romaji": "Ore o dare da to omotte yagaru!",
+  "english": "Who the hell do you think I am!",
+  "anime": "Gurren Lagann",
+  "character": "Kamina"
+  },
+  {
+    "japanese": "あきらめたらそこで試合終了ですよ…？",
+    "romaji": "Akirametara soko de shiai shuuryou desu yo...?",
+    "english": "If you give up, that's the end of the game. (alt wording 21) (alt wording 73)",
+    "anime": "Slam Dunk",
+    "character": "Kaede Rukawa"
+  }
 ]
