@@ -425,5 +425,12 @@
   "english": "very",
   "region": "Kansai",
   "note": "Now used nationwide. (Set 5)"
-}
+  }, 
+  {
+  "dialect": "しばれる",
+  "standardJapanese": "とても寒い",
+  "english": "freezing cold",
+  "region": "Hokkaido",
+  "note": "Used for severe winter cold. (Set 5)"
+  }
 ]
