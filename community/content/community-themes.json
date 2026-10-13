@@ -431,5 +431,10 @@
   "mainColor": "oklch(70.0% 0.165 350.0 / 1)",
   "secondaryColor": "oklch(78.0% 0.120 135.0 / 1)"
   },
-  
+  {
+  "id": "lucky-cat",
+  "backgroundColor": "oklch(92.0% 0.025 90.0 / 1)",
+  "mainColor": "oklch(65.0% 0.195 40.0 / 1)",
+  "secondaryColor": "oklch(75.0% 0.145 85.0 / 1)"
+  }
 ]
