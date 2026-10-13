@@ -425,5 +425,12 @@
   "english": "very",
   "region": "Kansai",
   "note": "Now used nationwide. (Set 5)"
-}
+},
+  {
+    "dialect": "よか",
+    "standardJapanese": "いい",
+    "english": "good",
+    "region": "Kyushu",
+    "note": "Common Kyushu replacement. (Set 4)"
+  }
 ]
