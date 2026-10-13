@@ -604,7 +604,7 @@
     ],
     "correctIndex": 1
   },
-    {
+  {
     "question": "What is the Japanese term for a Buddhist temple?",
     "difficulty": "easy",
     "answers": [
@@ -616,20 +616,36 @@
     "correctIndex": 0
   },
   
- {
-  "question": "What is the Japanese custom of removing shoes before entering a home called?",
-  "difficulty": "medium",
-  "answers": [
-    "Genkan",
-    "Omotenashi",
-    "Karaoke",
-    "Matsuri"
-  ],
-  "correctIndex": 0
-},
   {
-      "question": "Which city is known for its snow festival and ice sculptures?",
-      "answers": ["Sapporo", "Aomori", "Toyama", "Nagano"],
-      "correctIndex": 0
-    }
+    "question": "What is the Japanese custom of removing shoes before entering a home called?",
+    "difficulty": "medium",
+    "answers": [
+      "Genkan",
+      "Omotenashi",
+      "Karaoke",
+      "Matsuri"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which city is known for its snow festival and ice sculptures?",
+    "answers": [
+      "Sapporo", 
+      "Aomori", 
+      "Toyama", 
+      "Nagano"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "question": "Which animal is famously associated with Inari shrines in Japan? (Community variation 33)",
+    "difficulty": "easy",
+    "answers": [
+      "Fox",
+      "Crane",
+      "Turtle",
+      "Deer"
+    ],
+  "correctIndex": 0
+  }
 ]
