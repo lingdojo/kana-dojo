@@ -201,3 +201,36 @@ export async function finalizeSession(params: {
   return record;
 }
 
+export async function getAllSessions(): Promise<SessionRecord[]> {
+  const store = await loadStore();
+  return store.sessionOrder
+    .map(id => store.sessionsById[id])
+    .filter((session): session is SessionRecord => Boolean(session));
+}
+
+export async function getSessionById(
+  sessionId: string,
+): Promise<SessionRecord | null> {
+  const store = await loadStore();
+  return store.sessionsById[sessionId] ?? null;
+}
+
+export async function deleteSession(sessionId: string): Promise<void> {
+  const store = await loadStore();
+  if (!store.sessionsById[sessionId]) return;
+
+  delete store.sessionsById[sessionId];
+  store.sessionOrder = store.sessionOrder.filter(id => id !== sessionId);
+  store.totalSessions = Math.max(0, store.totalSessions - 1);
+  store.updatedAt = Date.now();
+  await saveStore(store);
+}
+
+export async function clearAllSessions(): Promise<void> {
+  const store = await loadStore();
+  store.sessionsById = {};
+  store.sessionOrder = [];
+  store.totalSessions = 0;
+  store.updatedAt = Date.now();
+  await saveStore(store);
+}
