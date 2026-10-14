@@ -63,14 +63,14 @@ const GauntletVocab: React.FC<GauntletVocabProps> = ({ onCancel }) => {
           .map(item => item.word);
         return [correctAnswer, ...incorrectOptions];
       }
-      // Normal: options are meanings
+      // Normal: options are meanings — deduplicate case-insensitively
       const correctAnswer = question.meanings[0];
-      const seen = new Set([correctAnswer]);
+      const seen = new Set([correctAnswer.toLowerCase().trim()]);
       const incorrectOptions = shuffle(
         items.filter(item => item.word !== question.word),
       )
         .filter(item => {
-          const meaning = item.meanings[0];
+          const meaning = item.meanings[0].toLowerCase().trim();
           if (seen.has(meaning)) return false;
           seen.add(meaning);
           return true;
