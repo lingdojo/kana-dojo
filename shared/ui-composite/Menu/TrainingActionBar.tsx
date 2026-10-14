@@ -14,7 +14,26 @@ import ModeSetupMenu from '@/shared/ui-composite/Menu/ModeSetupMenu';
 // Gauntlet components with onCancel prop support
 import { cn } from '@/shared/utils/utils';
 import { useScrollVisibility } from '@/shared/hooks/generic/useScrollVisibility';
-import { useAutoLearningStore } from '@/features/Progress';
+import {
+  clearAutoLearningHandoff,
+  useAutoLearningStore,
+} from '@/features/Progress';
+import { useRouter } from '@/core/i18n/routing';
+import { resolveClassicGoAction } from './trainingAction';
+
+const startManualSelection = (
+  currentDojo: string,
+  router: ReturnType<typeof useRouter>,
+) => {
+  clearAutoLearningHandoff();
+  if (currentDojo === 'kanji') {
+    router.push('/kanji/learn');
+  } else if (currentDojo === 'vocabulary') {
+    router.push('/vocabulary/learn');
+  } else {
+    router.push('/kana/learn');
+  }
+};
 
 const TRAINING_ACTION_CLASSIC_FLOAT_CLASSES = '';
 // 'motion-safe:animate-float [--float-distance:-3px] delay-200ms';
@@ -34,6 +53,7 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
   );
 
   const { playClick } = useClick();
+  const router = useRouter();
 
   // Modal state
   const [showGameModesModal, setShowGameModesModal] = useState(false);
@@ -88,8 +108,14 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
 
       if (event.key === 'Enter' && isFilled) {
         event.preventDefault();
-        if (showExperimentalModes) {
+        const action = resolveClassicGoAction({
+          isFilled,
+          showExperimentalModes,
+        });
+        if (action === 'game-modes-modal') {
           setShowGameModesModal(true);
+        } else if (action === 'manual-selection') {
+          startManualSelection(currentDojo, router);
         } else {
           startAutoLearning();
         }
@@ -100,7 +126,7 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [hotkeysOn, isFilled, showExperimentalModes]);
+  }, [hotkeysOn, isFilled, showExperimentalModes, currentDojo, router]);
 
   const showBlitz =
     currentDojo === 'kana' ||
@@ -349,9 +375,17 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
               show: true,
               colorScheme: 'primary' as const,
               onClick: () => {
-                if (showExperimentalModes) {
+                const action = resolveClassicGoAction({
+                  isFilled,
+                  showExperimentalModes,
+                });
+                if (action === 'game-modes-modal') {
                   setGameModesMode('train');
                   setShowGameModesModal(true);
+                  return;
+                }
+                if (action === 'manual-selection') {
+                  startManualSelection(currentDojo, router);
                   return;
                 }
 
@@ -407,7 +441,7 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
                 >
                   <Icon size={36} className={cn(iconClassName)} />
                   {id === 'custom' && (
-                    <span className='whitespace-nowrap text-lg font-medium sm:text-xl'>
+                    <span className='text-lg font-medium whitespace-nowrap sm:text-xl'>
                       {label}
                     </span>
                   )}
