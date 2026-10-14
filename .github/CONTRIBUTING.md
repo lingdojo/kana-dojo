@@ -50,7 +50,7 @@ Open [http://localhost:3000](http://localhost:3000) to see KanaDojo running.
 
 ### Troubleshooting
 
-If you run into issues, see our [**Troubleshooting Guide**](./docs/TROUBLESHOOTING.md) for solutions to common problems including:
+If you run into issues, see our [**Troubleshooting Guide**](../docs/TROUBLESHOOTING.md) for solutions to common problems including:
 
 - **Windows**: Firewall settings, antivirus interference, font download issues
 - **macOS**: Permission errors, port conflicts
@@ -67,7 +67,7 @@ For Windows-specific issues, GitHub Codespaces provides a hassle-free alternativ
 
 ### Project Structure
 
-You can explore the codebase in the [Architecture Guide](./docs/ARCHITECTURE.md).
+You can explore the codebase in the [Architecture Guide](../docs/ARCHITECTURE.md).
 
 ---
 
@@ -107,7 +107,7 @@ If your change affects visuals (themes, fonts, UI), take a quick screenshot or G
 
 ## 🌐 Translating the App
 
-KanaDojo is available in English, Spanish, and Japanese — and we're always looking to add more languages! If you're interested in translating the app, see our [**Translation Guide**](./docs/TRANSLATION_GUIDE.md) for detailed instructions on:
+KanaDojo is available in English, Spanish, and Japanese — and we're always looking to add more languages! If you're interested in translating the app, see our [**Translation Guide**](../docs/TRANSLATION_GUIDE.md) for detailed instructions on:
 
 - How translations are structured (namespace-based JSON files)
 - How to add a new language
