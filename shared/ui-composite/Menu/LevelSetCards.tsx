@@ -15,7 +15,7 @@ import { chunkArray } from '@/shared/utils/helperFunctions';
 import { cardBorderStyles } from '@/shared/utils/styles';
 import useGridColumns from '@/shared/hooks/generic/useGridColumns';
 import { useClick } from '@/shared/hooks/generic/useAudio';
-// import { ActionButton } from '@/shared/ui/components/ActionButton'; // Quick Select
+import { ActionButton } from '@/shared/ui/components/ActionButton';
 import MasteryBar from '@/shared/ui/components/MasteryBar';
 import QuickSelectModal from '@/shared/ui-composite/Modals/QuickSelectModal';
 // import { cn } from '@/shared/utils/utils'; // Quick Select
@@ -93,6 +93,12 @@ type LevelSetCardsProps<TLevel extends string, TItem> = {
   collapseScopeKey: string;
   initialCollections?: Partial<Record<TLevel, LevelSetCardsCollection<TItem>>>;
   learningAction?: React.ReactNode;
+  bulkSelection?: {
+    selectAllLabel: string;
+    clearAllLabel: string;
+    onSelectAll: (sets: Array<{ name: string; items: TItem[] }>) => void;
+    onClearAll: (sets: Array<{ name: string; items: TItem[] }>) => void;
+  };
 };
 
 const INITIAL_ROWS = 5;
@@ -336,6 +342,7 @@ const LevelSetCards = <TLevel extends string, TItem>({
   collapseScopeKey,
   initialCollections,
   learningAction,
+  bulkSelection,
 }: LevelSetCardsProps<TLevel, TItem>) => {
   // const { playClick } = useClick(); // Quick Select
 
@@ -398,7 +405,7 @@ const LevelSetCards = <TLevel extends string, TItem>({
   const { setsTemp, allRows, totalRows } = useMemo(() => {
     if (!selectedCollection) {
       return {
-        setsTemp: [] as LevelSetCardsSet[],
+        setsTemp: [] as VisibleSet<TItem>[],
         allRows: [] as VisibleSet<TItem>[][],
         totalRows: 0,
       };
@@ -566,6 +573,29 @@ const LevelSetCards = <TLevel extends string, TItem>({
   return (
     <div className='flex w-full flex-col gap-4'>
       {learningAction}
+      {bulkSelection && (
+        <div className='mx-4 flex gap-3 sm:mx-0'>
+          <ActionButton
+            onClick={() => bulkSelection.onSelectAll(setsTemp)}
+            colorScheme='main'
+            borderColorScheme='main'
+            borderRadius='2xl'
+            className='min-w-0 flex-1 px-3 py-3 text-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--main-color) sm:w-auto sm:flex-none sm:px-5'
+          >
+            {bulkSelection.selectAllLabel}
+          </ActionButton>
+          <ActionButton
+            onClick={() => bulkSelection.onClearAll(setsTemp)}
+            disabled={!setsTemp.some(set => selectedSets.includes(set.name))}
+            colorScheme='secondary'
+            borderColorScheme='secondary'
+            borderRadius='2xl'
+            className='min-w-0 flex-1 px-3 py-3 text-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--secondary-color) disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto sm:flex-none sm:px-5'
+          >
+            {bulkSelection.clearAllLabel}
+          </ActionButton>
+        </div>
+      )}
       {/* Quick Select is intentionally retained for a possible future return.
       <ActionButton
         onClick={() => {
