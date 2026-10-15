@@ -243,7 +243,7 @@ const KanjiInputGame = ({
 
     playCorrect();
     addCharacterToHistory(canonicalKanjiChar);
-    incrementCharacterScore(canonicalKanjiChar, 'correct');
+    incrementCharacterScore(canonicalKanjiChar, 'correct', 'kanji');
     incrementCorrectAnswers();
     void recordKanjiProgress(canonicalKanjiChar);
     setScore(useStatsStore.getState().score + 1);
@@ -294,7 +294,7 @@ const KanjiInputGame = ({
     setWrongFeedbackSignal(prev => prev + 1);
     playErrorTwice();
 
-    incrementCharacterScore(canonicalKanjiChar, 'wrong');
+    incrementCharacterScore(canonicalKanjiChar, 'wrong', 'kanji');
     incrementWrongAnswers();
     const nextScore = useStatsStore.getState().score - 1;
     if (nextScore < 0) {
