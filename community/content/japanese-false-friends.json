@@ -323,46 +323,46 @@
   "explanation": "Often means sensitive/delicate in Japanese. (Set 1)",
   "example": "彼は意外とナイーブな性格だ。"
   },
+{
+  "termA": "ドンマイ (donmai)",
+  "termB": "don't mind (English)",
+  "explanation": "Used to comfort someone: 'never mind'. (Set 6)",
+  "example": "ミスしてもドンマイ！"
+},
+{
+  "termA": "ドンマイ (donmai)",
+  "termB": "don't mind (English)",
+  "explanation": "Used to comfort someone: 'never mind'. (Set 1)",
+  "example": "ミスしてもドンマイ！"
+},
+{
+  "termA": "テンション (tenshon)",
+  "termB": "tension (English)",
+  "explanation": "Often means excitement/energy level in casual Japanese. (Set 4)",
+  "example": "ライブでテンションが上がった。"
+},
   {
-    "termA": "ドンマイ (donmai)",
-    "termB": "don't mind (English)",
-    "explanation": "Used to comfort someone: 'never mind'. (Set 6)",
-    "example": "ミスしてもドンマイ！"
-  },
+  "termA": "シール (shiiru)",
+  "termB": "seal (animal)",
+  "explanation": "シール usually means sticker/label. (Set 6)",
+  "example": "ノートにシールを貼った。"
+},
   {
-    "termA": "ドンマイ (donmai)",
-    "termB": "don't mind (English)",
-    "explanation": "Used to comfort someone: 'never mind'. (Set 1)",
-    "example": "ミスしてもドンマイ！"
-  },
+  "termA": "バイク (baiku)",
+  "termB": "bike (bicycle)",
+  "explanation": "In Japanese バイク usually means motorcycle, not bicycle.",
+  "example": "週末にバイクでツーリングに行った。"
+},
   {
-    "termA": "テンション (tenshon)",
-    "termB": "tension (English)",
-    "explanation": "Often means excitement/energy level in casual Japanese. (Set 4)",
-    "example": "ライブでテンションが上がった。"
-  },
-  {
-    "termA": "シール (shiiru)",
-    "termB": "seal (animal)",
-    "explanation": "シール usually means sticker/label. (Set 6)",
-    "example": "ノートにシールを貼った。"
-  },
-  {
-    "termA": "バイク (baiku)",
-    "termB": "bike (bicycle)",
-    "explanation": "In Japanese バイク usually means motorcycle, not bicycle.",
-    "example": "週末にバイクでツーリングに行った。"
-  },
-  {
-    "termA": "アニメ (anime)",
-    "termB": "anime (English usage)",
-    "explanation": "In Japanese it can refer to animation in general. (Set 2)",
-    "example": "子どものころからアニメが好きだ。"
-  },
-  {
-    "termA": "ドンマイ (donmai)",
-    "termB": "don't mind (English)",
-    "explanation": "Used to comfort someone: 'never mind'. (Set 6)",
-    "example": "ミスしてもドンマイ！"
-  }
+  "termA": "アニメ (anime)",
+  "termB": "anime (English usage)",
+  "explanation": "In Japanese it can refer to animation in general. (Set 2)",
+  "example": "子どものころからアニメが好きだ。"
+},
+{
+  "termA": "ドンマイ (donmai)",
+  "termB": "don't mind (English)",
+  "explanation": "Used to comfort someone: 'never mind'. (Set 6)",
+  "example": "ミスしてもドンマイ！"
+}
 ]
