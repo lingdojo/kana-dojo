@@ -377,7 +377,7 @@
     "mainColor": "oklch(72.0% 0.065 75.0 / 1)",
     "secondaryColor": "oklch(60.0% 0.185 20.0 / 1)"
   },
- 
+
   {
     "id": "jpop-energy",
     "backgroundColor": "oklch(15.0% 0.055 310.0 / 1)",
@@ -396,7 +396,7 @@
     "mainColor": "oklch(82.0% 0.040 230.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.095 260.0 / 1)"
   },
-  
+
   {
     "id": "volcanic-ash",
     "backgroundColor": "oklch(20.0% 0.018 270.0 / 1)",
@@ -419,10 +419,10 @@
   },
   
   {
-    id: 'indigo-shibori',
-    backgroundColor: 'oklch(19.0% 0.055 255.0 / 1)',
-    mainColor: 'oklch(55.0% 0.165 250.0 / 1)',
-    secondaryColor: 'oklch(85.0% 0.065 90.0 / 1)'
+    "id": 'indigo-shibori',
+    "backgroundColor": 'oklch(19.0% 0.055 255.0 / 1)',
+    "mainColor": 'oklch(55.0% 0.165 250.0 / 1)',
+    "secondaryColor": 'oklch(85.0% 0.065 90.0 / 1)'
   },
  
 ]
