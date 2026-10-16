@@ -252,17 +252,18 @@
     "jlpt": "N2"
   },
   {
-  "japanese": "来月から新しいプロジェクトに参加することになりました。",
-  "romaji": "Raigetsu kara atarashii purojekuto ni sanka suru koto ni narimashita.",
-  "english": "I'm going to join a new project from next month.",
-  "jlpt": "N3"
-},
-{
-"japanese": "宿題を忘れないように、カレンダーに書いておきます。",
-"romaji": "Shukudai o wasurenai you ni, karendaa ni kaite okimasu.",
-"english": "I'll put it in my calendar so I won't forget homework.",
-"jlpt": "N4"
-},
+    "japanese": "来月から新しいプロジェクトに参加することになりました。",
+    "romaji": "Raigetsu kara atarashii purojekuto ni sanka suru koto ni narimashita.",
+    "english": "I'm going to join a new project from next month.",
+    "jlpt": "N3"
+  },
+  
+  {
+  "japanese": "宿題を忘れないように、カレンダーに書いておきます。",
+  "romaji": "Shukudai o wasurenai you ni, karendaa ni kaite okimasu.",
+  "english": "I'll put it in my calendar so I won't forget homework.",
+  "jlpt": "N4"
+  },
 
   {
     "japanese": "雨が降りそうだから、傘を持って行こう。",
@@ -270,10 +271,19 @@
     "english": "It looks like rain, so let's bring an umbrella.",
     "jlpt": "N4"
   },
-    {
+  
+  {
     "japanese": "店員さんにおすすめの料理を聞いてみた。",
     "romaji": "Tenin-san ni osusume no ryouri o kiite mita.",
     "english": "I asked the staff for recommended dishes.",
     "jlpt": "N4"
+  },
+  
+  {
+    "japanese": "分からない単語は辞書で調べてから質問してください。",
+    "romaji": "Wakaranai tango wa jisho de shirabete kara shitsumon shite kudasai.",
+    "english": "Please look up unknown words before asking.",
+    "jlpt": "N4"
   }
+  
 ]
