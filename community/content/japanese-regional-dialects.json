@@ -432,5 +432,12 @@
   "english": "well then/see you",
   "region": "Hokkaido",
   "note": "Transition/goodbye phrase. (Set 5)"
+},
+  {
+  "dialect": "なまら",
+  "standardJapanese": "とても",
+  "english": "very",
+  "region": "Hokkaido",
+  "note": "Hokkaido intensifier. (Set 5)"
 }
 ]
