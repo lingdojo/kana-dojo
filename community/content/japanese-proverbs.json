@@ -364,11 +364,17 @@
   "romaji": "Zenin zenka",
   "english": "Good causes bring good results",
   "meaning": "Good deeds lead to good outcomes"
-},
+  },
+    {
+    "japanese": "良薬は口に苦し",
+    "romaji": "Ryouyaku wa kuchi ni nigashi",
+    "english": "Good medicine tastes bitter",
+    "meaning": "Helpful advice can be harsh"
+  },
   {
-  "japanese": "良薬は口に苦し",
-  "romaji": "Ryouyaku wa kuchi ni nigashi",
-  "english": "Good medicine tastes bitter",
-  "meaning": "Helpful advice can be harsh"
-}
+    "japanese": "馬の耳に念仏",
+    "romaji": "Uma no mimi ni nenbutsu",
+    "english": "Preaching Buddha to a horse's ear",
+    "meaning": "Advice is wasted on the unwilling"
+  }
 ]
