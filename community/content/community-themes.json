@@ -377,7 +377,7 @@
     "mainColor": "oklch(72.0% 0.065 75.0 / 1)",
     "secondaryColor": "oklch(60.0% 0.185 20.0 / 1)"
   },
- 
+
   {
     "id": "jpop-energy",
     "backgroundColor": "oklch(15.0% 0.055 310.0 / 1)",
@@ -396,7 +396,7 @@
     "mainColor": "oklch(82.0% 0.040 230.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.095 260.0 / 1)"
   },
-  
+
   {
     "id": "volcanic-ash",
     "backgroundColor": "oklch(20.0% 0.018 270.0 / 1)",
@@ -416,6 +416,35 @@
   "backgroundColor": "oklch(19.0% 0.030 35.0 / 1)",
   "mainColor": "oklch(78.0% 0.185 45.0 / 1)",
   "secondaryColor": "oklch(88.0% 0.115 95.0 / 1)"
-}
- 
+},
+   {
+  "id": "thunder-temple",
+  "backgroundColor": "oklch(16.0% 0.065 280.0 / 1)",
+  "mainColor": "oklch(85.0% 0.185 260.0 / 1)",
+  "secondaryColor": "oklch(75.0% 0.145 290.0 / 1)"
+},
+  {
+    "id": "shibuya-haze",
+    "backgroundColor": "oklch(17.0% 0.055 290.0 / 1)",
+    "mainColor": "oklch(82.0% 0.195 310.0 / 1)",
+    "secondaryColor": "oklch(74.0% 0.140 20.0 / 1)"
+  },
+  {
+    "id": "temple-bell",
+    "backgroundColor": "oklch(22.0% 0.032 60.0 / 1)",
+    "mainColor": "oklch(68.0% 0.095 70.0 / 1)",
+    "secondaryColor": "oklch(58.0% 0.075 55.0 / 1)"
+  },
+  {
+    "id": "golden-kintsugi",
+    "backgroundColor": "oklch(20.0% 0.020 70.0 / 1)",
+    "mainColor": "oklch(85.0% 0.155 85.0 / 1)",
+    "secondaryColor": "oklch(60.0% 0.085 25.0 / 1)"
+  },
+  {
+    "id": "lucky-cat",
+    "backgroundColor": "oklch(92.0% 0.025 90.0 / 1)",
+    "mainColor": "oklch(65.0% 0.195 40.0 / 1)",
+    "secondaryColor": "oklch(75.0% 0.145 85.0 / 1)"
+  }
 ]

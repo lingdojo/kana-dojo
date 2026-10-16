@@ -78,12 +78,6 @@
     "example": "ミスしてもドンマイ！"
   },
   {
-    "termA": "ドンマイ (donmai)",
-    "termB": "don't mind (English)",
-    "explanation": "Used to comfort someone: 'never mind'. (Set 2)",
-    "example": "ミスしてもドンマイ！"
-  },
-  {
     "termA": "リベンジ (ribenji)",
     "termB": "revenge (English)",
     "explanation": "Often used as 'try again after failing'. (Set 4)",
@@ -300,12 +294,6 @@
     "example": "試合前はみんなハイテンションだった。"
   },
   {
-    "termA": "ドンマイ (donmai)",
-    "termB": "don't mind (English)",
-    "explanation": "Used to comfort someone: 'never mind'. (Set 2)",
-    "example": "ミスしてもドンマイ！"
-  },
-  {
     "termA": "ホッチキス (hocchikisu)",
     "termB": "Hotchkiss (name)",
     "explanation": "ホッチキス means stapler. (Set 2)",
@@ -358,11 +346,5 @@
     "termB": "anime (English usage)",
     "explanation": "In Japanese it can refer to animation in general. (Set 2)",
     "example": "子どものころからアニメが好きだ。"
-  },
-  {
-    "termA": "ドンマイ (donmai)",
-    "termB": "don't mind (English)",
-    "explanation": "Used to comfort someone: 'never mind'. (Set 6)",
-    "example": "ミスしてもドンマイ！"
   }
 ]
