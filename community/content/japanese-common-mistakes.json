@@ -323,5 +323,10 @@
   "wrong": "私は兄さんが二人います。",
   "correct": "私は兄が二人います。",
   "explanation": "Use 兄 for your own older brother. (Pattern set 4)"
+  },
+  {
+    "wrong": "会議は三時からで始まります。",
+    "correct": "会議は三時から始まります。",
+    "explanation": "Remove unnecessary particle after から. (Pattern set 5)"
   }
 ]
