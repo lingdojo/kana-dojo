@@ -21,9 +21,7 @@
     "position": "bottom",
     "text": "Routine note: small non-blocking documentation edits may appear here.",
     "issued": false,
-    "completed": false,
-    "completedBy": "vkav271996",
-    "completedPR": 32171
+    "completed": false
   },
   {
     "id": 4,

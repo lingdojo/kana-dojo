@@ -342,15 +342,21 @@
     "meaning": "Have a weakness for something. (Set 3)"
   },
   {
-    "japanese": "口が堅い",
-    "romaji": "Kuchi ga katai",
-    "english": "Tight-lipped",
-    "meaning": "Can keep secrets. (Set 6)"
-  },
+  "japanese": "口が堅い",
+  "romaji": "Kuchi ga katai",
+  "english": "Tight-lipped",
+  "meaning": "Can keep secrets. (Set 6)"
+},
+{
+  "japanese": "頭が上がらない",
+  "romaji": "Atama ga agaranai",
+  "english": "Cannot raise one's head",
+  "meaning": "Feel indebted or unable to oppose someone. (Set 5)"
+},
   {
-    "japanese": "頭が上がらない",
-    "romaji": "Atama ga agaranai",
-    "english": "Cannot raise one’s head",
-    "meaning": "Feel indebted or unable to oppose someone. (Set 5)"
-  }
+  "japanese": "水に流す",
+  "romaji": "Mizu ni nagasu",
+  "english": "Let it flow in water",
+  "meaning": "Let bygones be bygones. (Set 5)"
+}
 ]
