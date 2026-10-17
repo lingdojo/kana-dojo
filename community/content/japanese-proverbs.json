@@ -364,5 +364,17 @@
   "romaji": "Zenin zenka",
   "english": "Good causes bring good results",
   "meaning": "Good deeds lead to good outcomes"
+},
+  {
+  "japanese": "良薬は口に苦し",
+  "romaji": "Ryouyaku wa kuchi ni nigashi",
+  "english": "Good medicine tastes bitter",
+  "meaning": "Helpful advice can be harsh"
+},
+  {
+  "japanese": "針の穴から天を覗く",
+  "romaji": "Hari no ana kara ten wo nozoku",
+  "english": "Peek at the sky through a needle's eye",
+  "meaning": "A narrow viewpoint leads to poor judgment"
 }
 ]

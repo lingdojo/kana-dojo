@@ -729,6 +729,27 @@
     "* Iaido (The art of drawing and cutting with the sword)"
   ],
   "correctIndex": 0
+},
+  {
+  "question": "Which Japanese island is known for its active volcano, Sakurajima?",
+  "difficulty": "hard",
+  "answers": [
+    "Kyushu",
+    "Honshu",
+    "Shikoku",
+    "Hokkaido"
+  ],
+  "correctIndex": 0
+},
+  {
+  "question": "What is the name of the traditional Japanese theater featuring puppets? (Community variation 30)",
+  "difficulty": "hard",
+  "answers": [
+    "Bunraku",
+    "Noh",
+    "Kabuki",
+    "Kyogen"
+  ],
+  "correctIndex": 0
 }
-
 ]
