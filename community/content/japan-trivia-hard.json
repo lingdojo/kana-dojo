@@ -741,14 +741,14 @@
   ],
   "correctIndex": 0
 },
-  {
-  "question": "What is the name of the traditional Japanese theater featuring puppets? (Community variation 30)",
+{
+  "question": "Which Japanese castle is known for its black exterior and nickname \"Crow Castle\"? (Community variation 50)",
   "difficulty": "hard",
   "answers": [
-    "Bunraku",
-    "Noh",
-    "Kabuki",
-    "Kyogen"
+    "Matsumoto Castle",
+    "Osaka Castle",
+    "Nijo Castle",
+    "Himeji Castle"
   ],
   "correctIndex": 0
 }
