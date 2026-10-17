@@ -323,5 +323,10 @@
   "wrong": "私は兄さんが二人います。",
   "correct": "私は兄が二人います。",
   "explanation": "Use 兄 for your own older brother. (Pattern set 4)"
-  }
+  },
+  {
+  "wrong": "私はお金がありませんです。",
+  "correct": "私はお金がありません。",
+  "explanation": "Negative polite form already complete. (Pattern set 6)"
+}
 ]
