@@ -10,6 +10,7 @@ import FuriganaText from '@/shared/ui-composite/text/FuriganaText';
 import { getSelectionLabels } from '@/shared/utils/selectionFormatting';
 import { shuffle, pickOne } from '@/shared/utils/shuffle';
 import { isVocabularyMeaningAnswerCorrect } from '@/features/Vocabulary/lib/isVocabularyMeaningAnswerCorrect';
+import { isAmbiguousVocabularyOption } from '@/features/Vocabulary/lib/isAmbiguousVocabularyOption';
 
 export default function BlitzVocab() {
   const selectedVocabObjs = useVocabStore(state => state.selectedVocabObjs);
@@ -61,7 +62,11 @@ export default function BlitzVocab() {
         // Reverse: options are Japanese words
         const correctAnswer = question.word;
         const incorrectOptions = shuffle(
-          items.filter(item => item.word !== question.word),
+          items.filter(
+            item =>
+              item.word !== question.word &&
+              !isAmbiguousVocabularyOption(question, item, isReverse),
+          ),
         )
           .slice(0, count - 1)
           .map(item => item.word);
