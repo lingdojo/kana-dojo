@@ -628,5 +628,26 @@
   "english": "I am Gundam! (alt wording 25)",
   "anime": "Mobile Suit Gundam 00",
   "character": "Setsuna F. Seiei"
-}
+},
+  {
+    "japanese": "フォッフォッフォッ",
+    "romaji": "Fo fo fo fo",
+    "english": "Fosh fosh fosh fosh. (alt wording 28) (alt wording 80)",
+    "anime": "One Piece",
+    "character": "Kozuki Sukiyaki"
+  },
+  {
+    "japanese": "世界は残酷だ…それでも美しい",
+    "romaji": "Sekai wa zankoku da... soredemo utsukushii",
+    "english": "This world is cruel... yet so beautiful. (alt wording 26) (alt wording 78)",
+    "anime": "Attack on Titan",
+    "character": "Mikasa Ackerman"
+  },
+  {
+    "japanese": "月に代わっておしおきよ!",
+    "romaji": "Tsuki ni kawatte oshioki yo!",
+    "english": "In the name of the moon, I'll punish you!",
+    "anime": "Sailor Moon",
+    "character": "Usagi Tsukino"
+  }
 ]
