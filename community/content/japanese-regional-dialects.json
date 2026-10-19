@@ -420,24 +420,31 @@
     "note": "Famous Okinawan resilience phrase. (Set 2)"
   },
   {
-  "dialect": "めっちゃ",
-  "standardJapanese": "とても",
-  "english": "very",
-  "region": "Kansai",
-  "note": "Now used nationwide. (Set 5)"
-},
+    "dialect": "めっちゃ",
+    "standardJapanese": "とても",
+    "english": "very",
+    "region": "Kansai",
+    "note": "Now used nationwide. (Set 5)"
+  },
   {
-  "dialect": "したっけ",
-  "standardJapanese": "それじゃあ",
-  "english": "well then/see you",
-  "region": "Hokkaido",
-  "note": "Transition/goodbye phrase. (Set 5)"
-},
+    "dialect": "したっけ",
+    "standardJapanese": "それじゃあ",
+    "english": "well then/see you",
+    "region": "Hokkaido",
+    "note": "Transition/goodbye phrase. (Set 5)"
+  },
   {
-  "dialect": "なまら",
-  "standardJapanese": "とても",
-  "english": "very",
-  "region": "Hokkaido",
-  "note": "Hokkaido intensifier. (Set 5)"
-}
+    "dialect": "あかん",
+    "standardJapanese": "だめ",
+    "english": "no good",
+    "region": "Kansai",
+    "note": "Used for prohibition/failure. (Set 3)"
+  },
+  {
+    "dialect": "なんくるないさ",
+    "standardJapanese": "なんとかなる",
+    "english": "it'll work out",
+    "region": "Okinawa",
+    "note": "Famous Okinawan resilience phrase. (Set 5)"
+  }
 ]

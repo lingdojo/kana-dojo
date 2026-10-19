@@ -339,5 +339,16 @@
       "Romaji"
     ],
     "correctIndex": 0
-  }
+  },
+{
+  "question": "Which Japanese island is known for the UNESCO site Shirakami-Sanchi?",
+  "difficulty": "medium",
+  "answers": [
+    "Honshu",
+    "Hokkaido",
+    "Shikoku",
+    "Kyushu"
+  ],
+  "correctIndex": 0
+}
 ]
