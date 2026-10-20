@@ -343,5 +343,11 @@
   "wrong": "先生は私を日本語を教えました。",
   "correct": "先生は私に日本語を教えました。",
   "explanation": "Recipient takes に with 教える. (Pattern set 2)"
-}
+},
+  {
+  "wrong": "私は兄さんが二人います。",
+  "correct": "私は兄が二人います。",
+  "explanation": "Use 兄 for your own older brother. (Pattern set 3)"
+
+  }
 ]
