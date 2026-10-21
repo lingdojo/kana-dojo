@@ -453,5 +453,12 @@
     "english": "because",
     "region": "Hiroshima",
     "note": "Common causal ending. (Set 5)"
+  },
+  {
+    "dialect": "めっちゃ",
+    "standardJapanese": "とても",
+    "english": "very",
+    "region": "Kansai",
+    "note": "Now used nationwide. (Set 4)"
   }
 ]
