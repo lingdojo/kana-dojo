@@ -453,5 +453,12 @@
     "english": "because",
     "region": "Hiroshima",
     "note": "Common causal ending. (Set 5)"
-  }
+  },
+  {
+  "dialect": "したっけ",
+  "standardJapanese": "それじゃあ",
+  "english": "well then/see you",
+  "region": "Hokkaido",
+  "note": "Transition/goodbye phrase. (Set 4)"
+}
 ]
