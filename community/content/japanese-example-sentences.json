@@ -252,34 +252,39 @@
     "jlpt": "N2"
   },
   {
-  "japanese": "来月から新しいプロジェクトに参加することになりました。",
-  "romaji": "Raigetsu kara atarashii purojekuto ni sanka suru koto ni narimashita.",
-  "english": "I'm going to join a new project from next month.",
-  "jlpt": "N3"
-},
-{
-"japanese": "宿題を忘れないように、カレンダーに書いておきます。",
-"romaji": "Shukudai o wasurenai you ni, karendaa ni kaite okimasu.",
-"english": "I'll put it in my calendar so I won't forget homework.",
-"jlpt": "N4"
-},
-
+    "japanese": "来月から新しいプロジェクトに参加することになりました。",
+    "romaji": "Raigetsu kara atarashii purojekuto ni sanka suru koto ni narimashita.",
+    "english": "I'm going to join a new project from next month.",
+    "jlpt": "N3"
+  },
+  {
+    "japanese": "宿題を忘れないように、カレンダーに書いておきます。",
+    "romaji": "Shukudai o wasurenai you ni, karendaa ni kaite okimasu.",
+    "english": "I'll put it in my calendar so I won't forget homework.",
+    "jlpt": "N4"
+  },
   {
     "japanese": "雨が降りそうだから、傘を持って行こう。",
     "romaji": "Ame ga furisou dakara, kasa o motte ikou.",
     "english": "It looks like rain, so let's bring an umbrella.",
     "jlpt": "N4"
   },
-    {
+  {
     "japanese": "店員さんにおすすめの料理を聞いてみた。",
     "romaji": "Tenin-san ni osusume no ryouri o kiite mita.",
     "english": "I asked the staff for recommended dishes.",
     "jlpt": "N4"
   },
   {
-  "japanese": "この問題は思ったより難しくなかった。",
-  "romaji": "Kono mondai wa omotta yori muzukashiku nakatta.",
-  "english": "This problem wasn't as hard as I expected.",
-  "jlpt": "N3"
-}
+    "japanese": "この問題は思ったより難しくなかった。",
+    "romaji": "Kono mondai wa omotta yori muzukashiku nakatta.",
+    "english": "This problem wasn't as hard as I expected.",
+    "jlpt": "N3"
+  },
+  {
+    "japanese": "このアプリは初心者にも使いやすい。",
+    "romaji": "Kono apuri wa shoshinsha ni mo tsukaiyasui.",
+    "english": "This app is easy to use even for beginners.",
+    "jlpt": "N3"
+  }
 ]
