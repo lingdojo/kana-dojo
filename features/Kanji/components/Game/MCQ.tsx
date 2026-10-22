@@ -20,6 +20,9 @@ import { useSmartReverseMode } from '@/shared/hooks/game/useSmartReverseMode';
 import useClassicSessionStore from '@/shared/store/useClassicSessionStore';
 import { useSetProgressStore } from '@/features/Progress';
 import { useMenuSelectorStore } from '@/shared/ui-composite/Menu/store/useMenuSelectorStore';
+import { shuffle } from '@/shared/utils/shuffle';
+import { isKanjiAnswerCorrect } from '@/features/Kanji/lib/isKanjiAnswerCorrect';
+import { pickKanjiDistractorMeanings } from '@/features/Kanji/lib/kanjiPickOptions';
 
 const random = new Random();
 
@@ -173,6 +176,10 @@ const KanjiMCQ = ({ selectedKanjiObjs, isHidden }: KanjiMCQProps) => {
     ? correctKanjiObj?.kanjiChar // reverse: show meaning, answer is kanji
     : correctKanjiObj?.meanings?.[0]; // normal: show kanji, answer is meaning
 
+  // Every meaning of the kanji is a correct translation, in pick mode as
+  // well as when the answer is typed.
+  const acceptedMeanings = correctKanjiObj?.meanings ?? [];
+
   // Get incorrect options based on mode
   const getIncorrectOptions = () => {
     // Filter out the current kanji
@@ -181,11 +188,22 @@ const KanjiMCQ = ({ selectedKanjiObjs, isHidden }: KanjiMCQProps) => {
     );
 
     if (!isReverse) {
-      // Normal mode: answers are meanings
-      return incorrectKanjiObjs
-        .map(obj => obj.meanings[0])
-        .sort(() => random.real(0, 1) - 0.5)
-        .slice(0, 2);
+      // Normal mode: answers are meanings. Every meaning of the current kanji
+      // is a correct translation, so it must not be offered as a wrong option,
+      // and the same meaning must not be offered twice. The primary meaning of
+      // the other kanji is preferred, their other senses are only used when
+      // there are not enough primary meanings left.
+      const primaryMeanings = shuffle(
+        incorrectKanjiObjs.map(obj => obj.meanings?.[0] ?? ''),
+      ).filter(Boolean);
+      const otherMeanings = shuffle(
+        incorrectKanjiObjs.flatMap(obj => obj.meanings?.slice(1) ?? []),
+      ).filter(Boolean);
+      return pickKanjiDistractorMeanings(
+        [...primaryMeanings, ...otherMeanings],
+        correctKanjiObj,
+        2,
+      );
     } else {
       // Reverse mode: answers are kanji characters
       return incorrectKanjiObjs
@@ -254,9 +272,12 @@ const KanjiMCQ = ({ selectedKanjiObjs, isHidden }: KanjiMCQProps) => {
     if (isProcessingRef.current) return;
     isProcessingRef.current = true;
 
-    if (selectedOption === targetChar) {
+    if (
+      correctKanjiObj &&
+      isKanjiAnswerCorrect(correctKanjiObj, selectedOption, isReverse)
+    ) {
       setDisplayAnswerSummary(true);
-      handleCorrectAnswer();
+      handleCorrectAnswer(selectedOption);
       generateNewCharacter();
       setFeedback(
         <>
@@ -275,7 +296,7 @@ const KanjiMCQ = ({ selectedKanjiObjs, isHidden }: KanjiMCQProps) => {
     }
   };
 
-  const handleCorrectAnswer = () => {
+  const handleCorrectAnswer = (selectedAnswer: string) => {
     playCorrect();
     setCurrentKanjiObj(correctKanjiObj as IKanjiObj);
 
@@ -297,8 +318,8 @@ const KanjiMCQ = ({ selectedKanjiObjs, isHidden }: KanjiMCQProps) => {
     logAttempt({
       questionId: correctChar,
       questionPrompt: String(displayChar),
-      expectedAnswers: [String(targetChar)],
-      userAnswer: String(targetChar),
+      expectedAnswers: isReverse ? [String(targetChar)] : acceptedMeanings,
+      userAnswer: String(selectedAnswer),
       inputKind: 'pick',
       isCorrect: true,
       optionsShown: shuffledOptions,
@@ -330,7 +351,7 @@ const KanjiMCQ = ({ selectedKanjiObjs, isHidden }: KanjiMCQProps) => {
     logAttempt({
       questionId: correctChar,
       questionPrompt: String(displayChar),
-      expectedAnswers: [String(targetChar)],
+      expectedAnswers: isReverse ? [String(targetChar)] : acceptedMeanings,
       userAnswer: selectedOption,
       inputKind: 'pick',
       isCorrect: false,
