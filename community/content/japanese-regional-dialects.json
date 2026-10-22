@@ -453,5 +453,12 @@
     "english": "because",
     "region": "Hiroshima",
     "note": "Common causal ending. (Set 5)"
+  },
+  {
+    "dialect": "〜だがや",
+    "standardJapanese": "〜だよ",
+    "english": "sentence ending",
+    "region": "Nagoya",
+    "note": "Strong Nagoya marker. (Set 1)"
   }
 ]
