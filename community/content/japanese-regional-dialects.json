@@ -460,5 +460,12 @@
     "english": "very",
     "region": "Kansai",
     "note": "Now used nationwide. (Set 2)"
+  }, 
+  {
+  "dialect": "でら",
+  "standardJapanese": "とても",
+  "english": "very",
+  "region": "Nagoya",
+  "note": "Characteristic Nagoya intensifier. (Set 5)"
   }
 ]
