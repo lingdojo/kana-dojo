@@ -146,7 +146,7 @@ export default function KanaNebula() {
       </motion.div>
 
       <div className='absolute right-10 bottom-10 z-20 font-mono text-[10px] tracking-widest text-indigo-400 uppercase opacity-20'>
-        Sector {Math.floor(idCounter.current / 10)}-Alpha
+        Sector {Math.floor((stars.length ? stars[stars.length - 1].id + 1 : 0) / 10)}-Alpha
       </div>
     </div>
   );

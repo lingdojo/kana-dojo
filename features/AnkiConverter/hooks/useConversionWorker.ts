@@ -72,7 +72,7 @@ const initialState: ConversionState = {
 export function useConversionWorker(): UseConversionWorkerReturn {
   const [state, setState] = useState<ConversionState>(initialState);
   const workerManager = useRef(getWorkerManager());
-  const isWorkerSupported = workerManager.current.isSupported();
+  const [isWorkerSupported] = useState(() => getWorkerManager().isSupported());
 
   // Cleanup on unmount
   useEffect(() => {
