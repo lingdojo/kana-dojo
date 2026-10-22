@@ -370,6 +370,11 @@
   "termB": "mansion (English)",
   "explanation": "マンション means apartment building in Japanese. (Set 3)",
   "example": "駅前のマンションに住んでいます。"
+},
+  {
+  "termA": "イメージ (imeeji)",
+  "termB": "image",
+  "explanation": "Often means impression/public image. (Set 4)",
+  "example": "会社のイメージが良くなった。"
 }
-
 ]
