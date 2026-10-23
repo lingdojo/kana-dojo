@@ -370,6 +370,11 @@
   "termB": "mansion (English)",
   "explanation": "マンション means apartment building in Japanese. (Set 3)",
   "example": "駅前のマンションに住んでいます。"
-}
-
+},
+  {
+    "termA": "パンツ (pantsu)",
+    "termB": "pants (English)",
+    "explanation": "パンツ usually means underwear in Japanese; trousers are ズボン (zubon). (Set 7)",
+    "example": "新しいパンツを買いました。"
+  }
 ]
