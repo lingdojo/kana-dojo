@@ -300,6 +300,23 @@
       "rating": 4.7,
       "featured": true,
       "notes": "Excellent articles and resource recommendations."
+    },
+    {
+      "id": "diccionario-japones",
+      "name": "Diccionario Japones",
+      "nameJa": "Diccionario Japones",
+      "description": "Kanji dictionary for spanish speakers. / Diccionario de kanji para hablantes de espanol.",
+      "descriptionLong": "Diccionario Japones is a Kanji dictionary and quiz website for Spanish Speakers creaded by Matías Acosta Guzmán. It has a free kanji dictionary that can be accessed withput an account. With an account, you can save decks of Kanji, and access two free learning blocks, with an option to pay for more. It covers N-5 through N-1 levels of fluency. / Diccionario Japonés es un sitio web de diccionario y cuestionarios de kanji para hispanohablantes creado por Matías Acosta Guzmán. Tiene un diccionario de kanji gratis que se puede acceder sin una cuenta. Con una cuenta, puedes guardar mazos de kanji y acceder a dos bloques de aprendizaje gratuitos, con la opción de pagar por más. Cubre los niveles de fluidez N-5 hasta N-1.",
+      "category": "websites",
+      "subcategory": "reference",
+      "tags": ["dictionary", "resources", "free"],
+      "priceType": "freemium",
+      "priceDetails": "Dictionary use is free, quiz tool requires a free account, but most lessons and quizzes are paywalled",
+      "platforms": ["web"],
+      "url": "https://diccionariojapones.com/",
+      "rating": 4.2,
+      "featured": false,
+      "notes": "good source for Kanji definitions in Spanish"
     }
   ]
 }
