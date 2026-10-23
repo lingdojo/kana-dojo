@@ -310,13 +310,14 @@
       "category": "websites",
       "subcategory": "reference",
       "tags": ["dictionary", "resources", "free"],
+      "difficulty": "all-levels",
       "priceType": "freemium",
       "priceDetails": "Dictionary use is free, quiz tool requires a free account, but most lessons and quizzes are paywalled",
       "platforms": ["web"],
       "url": "https://diccionariojapones.com/",
       "rating": 4.2,
       "featured": false,
-      "notes": "good source for Kanji definitions in Spanish"
+      "notes": "Good source for Kanji definitions in Spanish"
     }
   ]
 }
