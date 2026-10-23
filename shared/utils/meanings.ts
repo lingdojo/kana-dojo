@@ -36,3 +36,13 @@ export const normalizeMeaningAnswer = (value: string): string =>
   normalizeAnswerValue(value)
     .replace(ELLIPSIS_VARIANTS, '...')
     .replace(OPTIONAL_MEANING_PREFIX, '');
+
+/**
+ * Stored meanings sometimes end with a parenthetical note such as a
+ * part-of-speech tag ("blue (noun)"). Players type the meaning itself
+ * ("blue"), so the note is optional when comparing answers.
+ */
+const TRAILING_NOTE = /\s*\([^)]*\)\s*$/;
+
+export const stripTrailingNote = (value: string): string =>
+  value.replace(TRAILING_NOTE, '').trim();

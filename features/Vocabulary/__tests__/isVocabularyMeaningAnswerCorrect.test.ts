@@ -82,6 +82,34 @@ describe('isVocabularyMeaningAnswerCorrect', () => {
     );
   });
 
+  it.each(['blue', 'Blue', '  BLUE  ', 'blue (noun)'])(
+    'accepts %s when the stored meaning ends with a part-of-speech tag',
+    answer => {
+      const colour = {
+        ...vocabulary,
+        word: '青',
+        reading: 'あお',
+        meanings: ['blue (noun)'],
+      };
+
+      expect(isVocabularyMeaningAnswerCorrect(colour, answer, false)).toBe(true);
+    },
+  );
+
+  it('does not accept a different tag or a different word', () => {
+    const colour = {
+      ...vocabulary,
+      word: '青',
+      reading: 'あお',
+      meanings: ['blue (noun)'],
+    };
+
+    expect(isVocabularyMeaningAnswerCorrect(colour, 'blue (adj.)', false)).toBe(
+      false,
+    );
+    expect(isVocabularyMeaningAnswerCorrect(colour, 'noun', false)).toBe(false);
+  });
+
   it('does not remove a leading article from reverse answers', () => {
     const articleWord = {
       ...vocabulary,
