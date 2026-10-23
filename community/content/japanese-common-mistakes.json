@@ -348,5 +348,10 @@
   "wrong": "これはおいしいだ。",
   "correct": "これはおいしい。",
   "explanation": "い-adjectives do not take だ in plain present. (Pattern set 5)"
-}
+},
+  {
+    "wrong": "私は学生ありません。",
+    "correct": "私は学生ではありません。",
+    "explanation": "The negative of です is ではありません (or じゃありません); ありません alone does not follow a noun."
+  }
 ]
