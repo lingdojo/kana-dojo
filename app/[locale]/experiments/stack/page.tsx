@@ -10,7 +10,7 @@ export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: 'Kana Stack - Alphabetical Sorting Game | KanaDojo',
-  description: 'Stack kana cards in alphabetical order by romanji.',
+  description: 'Stack kana cards in alphabetical order by romaji.',
 };
 
 export default function StackPage() {

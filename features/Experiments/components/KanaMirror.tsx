@@ -19,7 +19,7 @@ const KanaMirror = () => {
       id: i,
       hiragana: hiragana[i].kana,
       katakana: katakana[i].kana,
-      romanji: hiragana[i].romanji,
+      romaji: hiragana[i].romaji,
     }));
   });
 

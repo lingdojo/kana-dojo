@@ -131,7 +131,7 @@ const KanaTilesMode = ({
   const { selectedKana, selectedRomaji, kanaToRomaji, romajiToKana } =
     useMemo(() => {
       const kanaChars = kanaGroupIndices.map(i => kana[i].kana).flat();
-      const romajiChars = kanaGroupIndices.map(i => kana[i].romanji).flat();
+      const romajiChars = kanaGroupIndices.map(i => kana[i].romaji).flat();
 
       const k2r: Record<string, string> = {};
       const r2k: Record<string, string> = {};

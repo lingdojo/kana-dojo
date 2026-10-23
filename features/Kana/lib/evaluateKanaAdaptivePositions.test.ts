@@ -8,7 +8,7 @@ describe('evaluateKanaAdaptivePositions', () => {
       answerParts: ['shi', 'n', 'bu'],
       inputValue: 'shinxxextra',
       isReverse: false,
-      altRomanjiMap: new Map([['し', ['si']]]),
+      altRomajiMap: new Map([['し', ['si']]]),
     });
 
     expect(result).toEqual([true, true, false]);
@@ -20,7 +20,7 @@ describe('evaluateKanaAdaptivePositions', () => {
       answerParts: ['shi', 'bu'],
       inputValue: 'sibu',
       isReverse: false,
-      altRomanjiMap: new Map([['し', ['si']]]),
+      altRomajiMap: new Map([['し', ['si']]]),
     });
 
     expect(result).toEqual([true, true]);
@@ -32,7 +32,7 @@ describe('evaluateKanaAdaptivePositions', () => {
       answerParts: ['か', 'き', 'く'],
       inputValue: 'かx',
       isReverse: true,
-      altRomanjiMap: new Map(),
+      altRomajiMap: new Map(),
     });
 
     expect(result).toEqual([true, false, false]);

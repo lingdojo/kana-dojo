@@ -69,12 +69,12 @@ function isJapaneseText(value: string): boolean {
 }
 
 function buildRomajiToKanaMap(
-  groups: ReadonlyArray<{ kana: string[]; romanji: string[] }>,
+  groups: ReadonlyArray<{ kana: string[]; romaji: string[] }>,
 ): Map<string, string> {
   const romajiToKana = new Map<string, string>();
 
   groups.forEach(group => {
-    group.romanji.forEach((romaji, index) => {
+    group.romaji.forEach((romaji, index) => {
       const normalizedRomaji = romaji.trim().toLowerCase();
       if (!normalizedRomaji) return;
 
@@ -189,7 +189,7 @@ export default function CharacterMasteryPanel({
     kanaGroups.forEach(group => {
       group.kana.forEach((char, index) => {
         if (!map.has(char)) {
-          map.set(char, { reading: group.romanji[index] });
+          map.set(char, { reading: group.romaji[index] });
         }
       });
     });

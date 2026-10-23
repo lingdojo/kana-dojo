@@ -90,7 +90,7 @@ When a multi-character string appears (e.g. "あい" in Kana), each individual c
 
 ### Concrete example: target string "あい" (2 characters)
 
-The user sees "あい" and must provide the correct romanji "ai".
+The user sees "あい" and must provide the correct romaji "ai".
 
 | # | Case | Stats written to `characterScores` | MasteryBar reads | Result |
 |---|------|--------------------------------------|-----------------|--------|

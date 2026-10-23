@@ -122,7 +122,7 @@ const KanaFortune = () => {
               {result.kana.kana}
             </span>
             <span className='text-xl text-(--secondary-color)'>
-              ({result.kana.romanji})
+              ({result.kana.romaji})
             </span>
           </div>
           <p className={`text-xl ${result.fortune.color}`}>

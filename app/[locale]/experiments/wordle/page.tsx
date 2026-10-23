@@ -10,7 +10,7 @@ export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: 'Kana Wordle - Guessing Game | KanaDojo',
-  description: 'Guess the kana from its romanji in limited tries!',
+  description: 'Guess the kana from its romaji in limited tries!',
 };
 
 export default function WordlePage() {

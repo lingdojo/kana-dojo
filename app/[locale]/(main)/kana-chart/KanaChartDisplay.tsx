@@ -15,7 +15,7 @@ const hiraganaData = {
     ['わ', '', '', '', 'を'],
     ['n', '', '', '', ''],
   ],
-  romanji: [
+  romaji: [
     ['a', 'i', 'u', 'e', 'o'],
     ['ka', 'ki', 'ku', 'ke', 'ko'],
     ['sa', 'shi', 'su', 'se', 'so'],
@@ -44,7 +44,7 @@ const katakanaData = {
     ['ワ', '', '', '', 'ヲ'],
     ['n', '', '', '', ''],
   ],
-  romanji: [
+  romaji: [
     ['a', 'i', 'u', 'e', 'o'],
     ['ka', 'ki', 'ku', 'ke', 'ko'],
     ['sa', 'shi', 'su', 'se', 'so'],
@@ -128,7 +128,7 @@ export default function KanaChartDisplay() {
                           {char}
                         </div>
                         <div className='mt-1 text-sm text-(--secondary-color)'>
-                          {currentData.romanji[rowIndex][colIndex]}
+                          {currentData.romaji[rowIndex][colIndex]}
                         </div>
                       </div>
                     ) : null}

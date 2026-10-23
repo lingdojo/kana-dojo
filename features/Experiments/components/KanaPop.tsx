@@ -42,7 +42,7 @@ export default function KanaPop() {
     const newBubble: Bubble = {
       id: idCounter.current++,
       kana: kanaObj.kana,
-      romaji: kanaObj.romanji,
+      romaji: kanaObj.romaji,
       x: Math.random() * 80 + 10,
       size: Math.random() * 30 + 70, // 70-100px
       speed: Math.random() * 3 + 4, // 4-7s

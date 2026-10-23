@@ -3,7 +3,7 @@ interface EvaluateKanaAdaptivePositionsOptions {
   answerParts: string[];
   inputValue: string;
   isReverse: boolean;
-  altRomanjiMap: Map<string, string[]>;
+  altRomajiMap: Map<string, string[]>;
 }
 
 export const evaluateKanaAdaptivePositions = ({
@@ -11,7 +11,7 @@ export const evaluateKanaAdaptivePositions = ({
   answerParts,
   inputValue,
   isReverse,
-  altRomanjiMap,
+  altRomajiMap,
 }: EvaluateKanaAdaptivePositionsOptions): boolean[] => {
   const normalizedInput = inputValue.trim();
   const results = promptChars.map(() => false);
@@ -35,7 +35,7 @@ export const evaluateKanaAdaptivePositions = ({
   for (let i = 0; i < promptChars.length; i++) {
     const promptChar = promptChars[i];
     const primary = (answerParts[i] ?? '').toLowerCase();
-    const alternatives = (altRomanjiMap.get(promptChar) ?? []).map(alt =>
+    const alternatives = (altRomajiMap.get(promptChar) ?? []).map(alt =>
       alt.toLowerCase(),
     );
     const options = Array.from(new Set([primary, ...alternatives]))

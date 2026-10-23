@@ -145,7 +145,7 @@ const SubsetNew = ({ sliceRange, subgroup }: SubsetProps) => {
                 {renderSeparatedText(group.kana, 'text-(--border-color)')}
               </div>
               <div className='text-[1.5rem] font-normal tracking-wide text-(--secondary-color)'>
-                {renderSeparatedText(group.romanji, 'text-(--border-color)')}
+                {renderSeparatedText(group.romaji, 'text-(--border-color)')}
               </div>
             </div>
           </div>

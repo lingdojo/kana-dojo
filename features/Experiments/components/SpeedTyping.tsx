@@ -80,7 +80,7 @@ const SpeedTyping = () => {
       if (queue.length === 0) return;
 
       const currentKana = queue[0];
-      if (value === currentKana.romanji) {
+      if (value === currentKana.romaji) {
         playCorrect();
         setScore(s => s + 1);
         setInput('');
@@ -89,7 +89,7 @@ const SpeedTyping = () => {
           newQueue.push(allKana[Math.floor(Math.random() * allKana.length)]);
           return newQueue;
         });
-      } else if (currentKana.romanji.startsWith(value)) {
+      } else if (currentKana.romaji.startsWith(value)) {
         // Partial match, keep typing
       } else {
         playError();
@@ -110,7 +110,7 @@ const SpeedTyping = () => {
           Speed Typing
         </h1>
         <p className='mt-2 text-(--secondary-color)'>
-          Type the romanji as fast as you can!
+          Type the romaji as fast as you can!
         </p>
       </div>
 
@@ -166,7 +166,7 @@ const SpeedTyping = () => {
                 </span>
                 {i === 0 && (
                   <span className='mt-1 text-xs text-(--secondary-color)'>
-                    {kana.romanji}
+                    {kana.romaji}
                   </span>
                 )}
               </div>

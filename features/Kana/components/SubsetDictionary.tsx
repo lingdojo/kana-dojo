@@ -51,7 +51,7 @@ const SetDictionary = () => {
                     'bg-(--border-color)',
                   )}
                 >
-                  {kanaSubgroup.romanji.join(' ')}
+                  {kanaSubgroup.romaji.join(' ')}
                 </span>
               )}
             </div>

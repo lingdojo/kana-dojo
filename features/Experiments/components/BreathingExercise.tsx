@@ -93,7 +93,7 @@ const BreathingExercise = () => {
               {currentKana.kana}
             </span>
             <span className='text-xl text-(--secondary-color) md:text-2xl'>
-              {currentKana.romanji}
+              {currentKana.romaji}
             </span>
           </div>
         </div>

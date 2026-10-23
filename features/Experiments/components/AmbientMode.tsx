@@ -6,7 +6,7 @@ import { getRandomKana } from '../data/kanaData';
 interface FloatingKana {
   id: number;
   kana: string;
-  romanji: string;
+  romaji: string;
   x: number;
   y: number;
   size: number;
@@ -35,7 +35,7 @@ const AmbientMode = () => {
       initial.push({
         id: idCounter.current++,
         kana: kana.kana,
-        romanji: kana.romanji,
+        romaji: kana.romaji,
         x: Math.random() * 90 + 5,
         y: Math.random() * 90 + 5,
         size: Math.random() * 2 + 1.5,
@@ -53,7 +53,7 @@ const AmbientMode = () => {
         const newKana: FloatingKana = {
           id: idCounter.current++,
           kana: kana.kana,
-          romanji: kana.romanji,
+          romaji: kana.romaji,
           x: Math.random() * 90 + 5,
           y: 110,
           size: Math.random() * 2 + 1.5,
@@ -104,7 +104,7 @@ const AmbientMode = () => {
           </span>
           {hoveredId === item.id && (
             <span className='absolute -bottom-6 left-1/2 -translate-x-1/2 text-sm whitespace-nowrap text-(--secondary-color)'>
-              {item.romanji}
+              {item.romaji}
             </span>
           )}
         </div>

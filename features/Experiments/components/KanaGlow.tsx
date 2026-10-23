@@ -27,7 +27,7 @@ const KanaGlow = () => {
     return {
       id: i,
       kana: kana.kana,
-      romanji: kana.romanji,
+      romaji: kana.romaji,
       x: (i % 5) * 20 + 10,
       y: Math.floor(i / 5) * 25 + 12,
       hue: (i * 18) % 360,

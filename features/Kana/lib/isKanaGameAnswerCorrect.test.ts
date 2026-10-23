@@ -1,10 +1,10 @@
 import { describe, expect, it } from 'vitest';
 import { isKanaGameAnswerCorrect } from './isKanaGameAnswerCorrect';
 
-const shi = { kana: 'し', romaji: 'shi', altRomanji: ['si'] };
-const a = { kana: 'あ', romaji: 'a', altRomanji: [] };
-const dzi = { kana: 'ぢ', romaji: 'ji', altRomanji: ['di'] };
-const dzu = { kana: 'づ', romaji: 'zu', altRomanji: ['du'] };
+const shi = { kana: 'し', romaji: 'shi', altRomaji: ['si'] };
+const a = { kana: 'あ', romaji: 'a', altRomaji: [] };
+const dzi = { kana: 'ぢ', romaji: 'ji', altRomaji: ['di'] };
+const dzu = { kana: 'づ', romaji: 'zu', altRomaji: ['du'] };
 
 describe('isKanaGameAnswerCorrect', () => {
   it('accepts the primary romaji (case- and whitespace-insensitive)', () => {

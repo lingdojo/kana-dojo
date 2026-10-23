@@ -17,12 +17,12 @@ const KanaSnake = () => {
   const [snake, setSnake] = useState<Position[]>([{ x: 7, y: 7 }]);
   const [direction, setDirection] = useState<Direction>('right');
   const [food, setFood] = useState<
-    Position & { kana: string; romanji: string }
+    Position & { kana: string; romaji: string }
   >({
     x: 10,
     y: 7,
     kana: 'あ',
-    romanji: 'a',
+    romaji: 'a',
   });
   const [collected, setCollected] = useState<string[]>([]);
   const [gameOver, setGameOver] = useState(false);
@@ -38,7 +38,7 @@ const KanaSnake = () => {
         y: Math.floor(Math.random() * GRID_SIZE),
       };
     } while (snake.some(s => s.x === pos.x && s.y === pos.y));
-    return { ...pos, kana: kana.kana, romanji: kana.romanji };
+    return { ...pos, kana: kana.kana, romaji: kana.romaji };
   }, [snake]);
 
   useEffect(() => {

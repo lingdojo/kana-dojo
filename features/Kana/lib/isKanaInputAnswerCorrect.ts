@@ -3,10 +3,10 @@ interface KanaInputAnswerOptions {
   correctChar: string;
   targetChar: string;
   isReverse: boolean;
-  altRomanjiMap: Map<string, string[]>;
+  altRomajiMap: Map<string, string[]>;
   /**
    * The individual kana parts that make up the prompt (e.g. ['し', 'ぶ']).
-   * Required for correct alternative-romanji lookup on multi-character prompts.
+   * Required for correct alternative-romaji lookup on multi-character prompts.
    * When omitted the function falls back to the legacy single-key lookup.
    */
   promptParts?: string[];
@@ -42,7 +42,7 @@ export const isKanaInputAnswerCorrect = ({
   correctChar,
   targetChar,
   isReverse,
-  altRomanjiMap,
+  altRomajiMap,
   promptParts,
   answerParts,
 }: KanaInputAnswerOptions): boolean => {
@@ -66,7 +66,7 @@ export const isKanaInputAnswerCorrect = ({
   }
 
   // Check alternative romanisations.
-  // For multi-character prompts the altRomanjiMap is keyed by individual kana
+  // For multi-character prompts the altRomajiMap is keyed by individual kana
   // (e.g. 'し' → ['si']), so looking up the joined correctChar (e.g. 'しぶ')
   // always returns undefined and valid alternatives are silently rejected.
   // When promptParts and answerParts are provided, build every valid full-string
@@ -77,14 +77,14 @@ export const isKanaInputAnswerCorrect = ({
     promptParts.length > 0 &&
     promptParts.length === answerParts.length
   ) {
-    const validAnswers = buildAltCombinations(promptParts, answerParts, altRomanjiMap);
+    const validAnswers = buildAltCombinations(promptParts, answerParts, altRomajiMap);
     return validAnswers.some(
       ans => lowerInput === ans.toLowerCase().normalize('NFC'),
     );
   }
 
   // Legacy single-character fallback (promptParts not provided).
-  const alternatives = altRomanjiMap.get(correctChar);
+  const alternatives = altRomajiMap.get(correctChar);
   return alternatives
     ? alternatives.some(alt => lowerInput === alt.toLowerCase().normalize('NFC'))
     : false;
