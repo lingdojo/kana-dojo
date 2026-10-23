@@ -460,5 +460,12 @@
     "english": "very",
     "region": "Kansai",
     "note": "Now used nationwide. (Set 2)"
+  },
+  {
+  "dialect": "〜けん",
+  "standardJapanese": "〜から",
+  "english": "because",
+  "region": "Kyushu",
+  "note": "Reason marker in Kyushu. (Set 4)"
   }
 ]
