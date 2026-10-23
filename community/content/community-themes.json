@@ -490,5 +490,11 @@
   "backgroundColor": "oklch(18.0% 0.055 20.0 / 1)",
   "mainColor": "oklch(58.0% 0.195 25.0 / 1)",
   "secondaryColor": "oklch(70.0% 0.145 50.0 / 1)"
+  },
+  {
+    "id": "hanabi-night",
+    "backgroundColor": "oklch(15.0% 0.040 270.0 / 1)",
+    "mainColor": "oklch(75.0% 0.170 350.0 / 1)",
+    "secondaryColor": "oklch(82.0% 0.130 85.0 / 1)"
   }
 ]
