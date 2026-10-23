@@ -1,0 +1,58 @@
+{
+  "title": "Configurações",
+  "description": "Personalize sua experiência de aprendizado",
+  "general": {
+    "title": "Geral",
+    "language": "Idioma",
+    "theme": "Tema",
+    "sound": "Efeitos sonoros",
+    "notifications": "Notificações"
+  },
+  "appearance": {
+    "title": "Aparência",
+    "colorTheme": "Tema de cores",
+    "font": "Fonte japonesa",
+    "fontSize": "Tamanho da fonte",
+    "darkMode": "Modo escuro",
+    "customTheme": "Tema personalizado"
+  },
+  "game": {
+    "title": "Configurações do jogo",
+    "timeLimit": "Limite de tempo",
+    "questionsPerSession": "Perguntas por sessão",
+    "difficulty": "Dificuldade",
+    "autoNext": "Avançar automaticamente",
+    "showHints": "Mostrar dicas"
+  },
+  "audio": {
+    "title": "Áudio",
+    "soundEffects": "Efeitos sonoros",
+    "volume": "Volume",
+    "clickSound": "Som de clique",
+    "correctSound": "Som de resposta correta",
+    "incorrectSound": "Som de resposta incorreta"
+  },
+  "preferences": {
+    "title": "Preferências",
+    "showRomaji": "Mostrar romaji",
+    "showFurigana": "Mostrar furigana",
+    "inputMethod": "Método de entrada",
+    "keyboardShortcuts": "Atalhos de teclado"
+  },
+  "data": {
+    "title": "Dados",
+    "exportData": "Exportar dados",
+    "importData": "Importar dados",
+    "resetProgress": "Redefinir progresso",
+    "clearCache": "Limpar cache",
+    "confirmReset": "Tem certeza de que deseja redefinir todo o progresso? Esta ação não pode ser desfeita."
+  },
+  "themes": {
+    "light": "Claro",
+    "dark": "Escuro",
+    "system": "Sistema",
+    "custom": "Personalizado",
+    "presets": "Temas predefinidos",
+    "createCustom": "Criar tema personalizado"
+  }
+}

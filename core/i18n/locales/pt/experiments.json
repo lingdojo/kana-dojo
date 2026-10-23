@@ -1,0 +1,40 @@
+{
+  "title": "Experimentos",
+  "description": "Explore recursos experimentais e métodos alternativos de aprendizado",
+  "zenMode": {
+    "title": "Modo Zen",
+    "description": "Modo minimalista de foco para praticar sem distrações"
+  },
+  "breathing": {
+    "title": "Exercício de respiração",
+    "description": "Exercício de respiração consciente para melhorar o foco e reduzir o estresse"
+  },
+  "ambient": {
+    "title": "Modo Ambiente",
+    "description": "Pratique com um fundo ambiente e sons relaxantes"
+  },
+  "constellation": {
+    "title": "Constelação de Kana",
+    "description": "Ligue as estrelas para formar caracteres kana"
+  },
+  "rain": {
+    "title": "Chuva de Kana",
+    "description": "Pegue os caracteres kana que caem neste jogo estilo arcade"
+  },
+  "memory": {
+    "title": "Palácio da Memória",
+    "description": "Use técnicas de memorização para lembrar dos caracteres"
+  },
+  "sound": {
+    "title": "Jardim Sonoro",
+    "description": "Aprenda por meio de associações audiovisuais"
+  },
+  "typing": {
+    "title": "Digitação Rápida",
+    "description": "Melhore sua velocidade de digitação com caracteres japoneses"
+  },
+  "haiku": {
+    "title": "Haicai do Dia",
+    "description": "Aprenda por meio da bela poesia japonesa"
+  }
+}

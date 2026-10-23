@@ -1,0 +1,66 @@
+{
+  "title": "Treino de Kanji",
+  "description": "Domine os caracteres Kanji japoneses",
+  "selection": {
+    "title": "Selecione os Kanji",
+    "byLevel": "Por nível JLPT",
+    "byCategory": "Por categoria",
+    "selectAll": "Selecionar tudo",
+    "deselectAll": "Desmarcar tudo",
+    "levels": {
+      "n5": "JLPT N5",
+      "n4": "JLPT N4",
+      "n3": "JLPT N3",
+      "n2": "JLPT N2",
+      "n1": "JLPT N1"
+    }
+  },
+  "game": {
+    "title": "Jogo de Kanji",
+    "start": "Iniciar jogo",
+    "pause": "Pausar",
+    "resume": "Continuar",
+    "finish": "Concluir",
+    "nextQuestion": "Próxima pergunta",
+    "submit": "Enviar resposta",
+    "score": "Pontuação: {{points}}",
+    "timeLeft": "Tempo restante: {{seconds}}s",
+    "streak": "Sequência: {{count}}",
+    "correct": "Correto!",
+    "incorrect": "Incorreto",
+    "showAnswer": "Mostrar resposta",
+    "hint": "Dica"
+  },
+  "modes": {
+    "pick": "Modo Escolha",
+    "reversePick": "Escolha Inversa",
+    "input": "Modo Digitação",
+    "reverseInput": "Digitação Inversa",
+    "description": {
+      "pick": "Veja o kanji e escolha o significado",
+      "reversePick": "Veja o significado e escolha o kanji",
+      "input": "Veja o kanji e digite o significado",
+      "reverseInput": "Veja o significado e digite o kanji"
+    }
+  },
+  "results": {
+    "title": "Resultados",
+    "congratulations": "Parabéns!",
+    "correct": "Corretas: {{count}}",
+    "incorrect": "Incorretas: {{count}}",
+    "accuracy": "Precisão: {{percentage}}%",
+    "timeSpent": "Tempo gasto: {{time}}",
+    "playAgain": "Jogar novamente",
+    "backToMenu": "Voltar ao menu"
+  },
+  "details": {
+    "meaning": "Significado",
+    "readings": "Leituras",
+    "onyomi": "On'yomi",
+    "kunyomi": "Kun'yomi",
+    "examples": "Exemplos",
+    "strokes": "Traços",
+    "radical": "Radical",
+    "jlptLevel": "Nível JLPT"
+  }
+}
