@@ -365,11 +365,10 @@
   "explanation": "Used to comfort someone: 'never mind'. (Set 6)",
   "example": "ミスしてもドンマイ！"
 },
-  {
-  "termA": "マンション (manshon)",
-  "termB": "mansion (English)",
-  "explanation": "マンション means apartment building in Japanese. (Set 3)",
-  "example": "駅前のマンションに住んでいます。"
+{
+  "termA": "手紙 (tegami)",
+  "termB": "letter (English)",
+  "explanation": "手紙 means physical mail, not alphabet letters. (Set 4)",
+  "example": "祖母に手紙を書きました。"
 }
-
 ]
