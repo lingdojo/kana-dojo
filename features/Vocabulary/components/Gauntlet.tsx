@@ -42,7 +42,12 @@ const GauntletVocab: React.FC<GauntletVocabProps> = ({ onCancel }) => {
         <FuriganaText text={question.word} reading={question.reading} />
       ),
     checkAnswer: (question, answer, isReverse) =>
-      isVocabularyMeaningAnswerCorrect(question, answer, isReverse),
+      isVocabularyMeaningAnswerCorrect(
+        question,
+        answer,
+        isReverse,
+        selectedVocabObjs,
+      ),
     getCorrectAnswer: (question, isReverse) =>
       isReverse ? question.word : question.meanings[0],
     // Pick mode support with reverse mode
