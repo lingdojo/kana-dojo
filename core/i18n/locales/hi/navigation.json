@@ -1,0 +1,27 @@
+{
+  "menu": {
+    "home": "होम",
+    "kana": "काना",
+    "kanji": "कांजी",
+    "vocabulary": "शब्दावली",
+    "academy": "अकादमी",
+    "achievements": "उपलब्धियां",
+    "statistics": "आंकड़े",
+    "progress": "प्रगति",
+    "settings": "सेटिंग्स",
+    "preferences": "प्राथमिकताएं",
+    "about": "हमारे बारे में",
+    "help": "सहायता",
+    "logout": "लॉग आउट"
+  },
+  "breadcrumbs": {
+    "home": "होम",
+    "back": "{{name}} पर वापस जाएं"
+  },
+  "footer": {
+    "copyright": "© {{year}} KanaDojo. सर्वाधिकार सुरक्षित।",
+    "privacy": "गोपनीयता नीति",
+    "terms": "सेवा की शर्तें",
+    "contact": "संपर्क करें"
+  }
+}

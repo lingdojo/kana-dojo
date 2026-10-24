@@ -1,0 +1,114 @@
+{
+  "hiragana": {
+    "title": "Hiragana Practice",
+    "subtitle": "Learn hiragana with fast, focused drills and instant feedback.",
+    "ctaPrimary": "Start practicing hiragana",
+    "ctaSecondary": "Open kana dojo",
+    "sections": {
+      "what": {
+        "title": "What is hiragana?",
+        "body": "Hiragana is one of the three Japanese writing systems. It is used for native Japanese words, grammar, and particle endings. Mastering hiragana is the first major step for reading Japanese."
+      },
+      "how": {
+        "title": "How to practice hiragana effectively",
+        "bullets": [
+          "Practice in short sessions daily (5–15 minutes).",
+          "Mix recognition (reading) with recall (typing/answering).",
+          "Review your mistakes immediately and repeat weak characters.",
+          "Avoid relying on romaji once you know the basics."
+        ]
+      },
+      "why": {
+        "title": "Why use KanaDojo for hiragana practice?",
+        "bullets": [
+          "Interactive drills and game-like modes.",
+          "Progress tracking to see what you’ve mastered.",
+          "Multiple modes: training, blitz, and gauntlet.",
+          "Works great on desktop and mobile."
+        ]
+      }
+    },
+    "links": {
+      "kana": "Kana",
+      "train": "Training",
+      "blitz": "Blitz",
+      "gauntlet": "Gauntlet",
+      "faq": "FAQ"
+    }
+  },
+  "katakana": {
+    "title": "Katakana Practice",
+    "subtitle": "Master katakana with fast drills, clear feedback, and steady progress.",
+    "ctaPrimary": "Start practicing katakana",
+    "ctaSecondary": "Open kana dojo",
+    "sections": {
+      "what": {
+        "title": "What is katakana?",
+        "body": "Katakana is one of the three Japanese writing systems. It is commonly used for loanwords, foreign names, onomatopoeia, and emphasis. Katakana becomes essential as soon as you start reading modern Japanese."
+      },
+      "how": {
+        "title": "How to practice katakana effectively",
+        "bullets": [
+          "Focus on confusing pairs (シ/ツ, ソ/ン, etc.).",
+          "Practice recognition and recall—don’t only read.",
+          "Review mistakes and repeat weak characters until consistent.",
+          "Mix basic, dakuon, and combination kana over time."
+        ]
+      },
+      "why": {
+        "title": "Why use KanaDojo for katakana practice?",
+        "bullets": [
+          "Interactive drills and game-like modes.",
+          "Progress tracking to target what you miss.",
+          "Blitz mode to build speed.",
+          "Gauntlet mode to ensure full coverage."
+        ]
+      }
+    },
+    "links": {
+      "kana": "Kana",
+      "train": "Training",
+      "blitz": "Blitz",
+      "gauntlet": "Gauntlet",
+      "faq": "FAQ"
+    }
+  },
+  "kanji": {
+    "title": "Kanji Practice",
+    "subtitle": "Practice kanji by JLPT level with fast drills and progress tracking.",
+    "ctaPrimary": "Start practicing kanji",
+    "ctaSecondary": "Open kanji dojo",
+    "sections": {
+      "what": {
+        "title": "What is kanji?",
+        "body": "Kanji are characters used in Japanese to represent meanings and concepts. Learning kanji takes time, but studying by level (like JLPT N5 → N1) makes it manageable and measurable."
+      },
+      "how": {
+        "title": "How to practice kanji effectively",
+        "bullets": [
+          "Study by level and keep your selection focused.",
+          "Prioritize recognition first, then expand to readings and usage.",
+          "Review missed kanji frequently (spaced repetition-style).",
+          "Use timed drills occasionally to improve recall speed."
+        ]
+      },
+      "why": {
+        "title": "Why use KanaDojo for kanji practice?",
+        "bullets": [
+          "JLPT-organized kanji selection.",
+          "Multiple modes for different goals.",
+          "Progress tracking so you can focus on weak kanji.",
+          "Great for consistent daily practice."
+        ]
+      }
+    },
+    "links": {
+      "kanji": "Kanji",
+      "train": "Training",
+      "blitz": "Blitz",
+      "gauntlet": "Gauntlet",
+      "jlpt": "JLPT Guides",
+      "faq": "FAQ"
+    }
+  }
+}
