@@ -1,0 +1,71 @@
+{
+  "title": "Treino de Vocabulário",
+  "description": "Amplie seu vocabulário em japonês",
+  "selection": {
+    "title": "Selecione o vocabulário",
+    "byLevel": "Por nível JLPT",
+    "byCategory": "Por categoria",
+    "selectAll": "Selecionar tudo",
+    "deselectAll": "Desmarcar tudo",
+    "levels": {
+      "n5": "JLPT N5",
+      "n4": "JLPT N4",
+      "n3": "JLPT N3",
+      "n2": "JLPT N2",
+      "n1": "JLPT N1"
+    },
+    "categories": {
+      "all": "Todas",
+      "nouns": "Substantivos",
+      "verbs": "Verbos",
+      "adjectives": "Adjetivos",
+      "adverbs": "Advérbios",
+      "expressions": "Expressões"
+    }
+  },
+  "game": {
+    "title": "Jogo de Vocabulário",
+    "start": "Iniciar jogo",
+    "pause": "Pausar",
+    "resume": "Continuar",
+    "finish": "Concluir",
+    "nextQuestion": "Próxima pergunta",
+    "submit": "Enviar resposta",
+    "score": "Pontuação: {{points}}",
+    "timeLeft": "Tempo restante: {{seconds}}s",
+    "streak": "Sequência: {{count}}",
+    "correct": "Correto!",
+    "incorrect": "Incorreto",
+    "showAnswer": "Mostrar resposta"
+  },
+  "modes": {
+    "pick": "Modo Escolha",
+    "reversePick": "Escolha Inversa",
+    "input": "Modo Digitação",
+    "reverseInput": "Digitação Inversa",
+    "description": {
+      "pick": "Veja a palavra e escolha o significado",
+      "reversePick": "Veja o significado e escolha a palavra",
+      "input": "Veja a palavra e digite o significado",
+      "reverseInput": "Veja o significado e digite a palavra"
+    }
+  },
+  "results": {
+    "title": "Resultados",
+    "congratulations": "Parabéns!",
+    "correct": "Corretas: {{count}}",
+    "incorrect": "Incorretas: {{count}}",
+    "accuracy": "Precisão: {{percentage}}%",
+    "timeSpent": "Tempo gasto: {{time}}",
+    "playAgain": "Jogar novamente",
+    "backToMenu": "Voltar ao menu"
+  },
+  "details": {
+    "word": "Palavra",
+    "reading": "Leitura",
+    "meaning": "Significado",
+    "examples": "Frases de exemplo",
+    "type": "Tipo",
+    "jlptLevel": "Nível JLPT"
+  }
+}

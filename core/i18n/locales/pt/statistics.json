@@ -1,0 +1,47 @@
+{
+  "title": "Estatísticas",
+  "description": "Seu progresso e estatísticas de aprendizado",
+  "overview": {
+    "title": "Visão geral",
+    "totalStudyTime": "Tempo total de estudo",
+    "questionsAnswered": "Perguntas respondidas",
+    "accuracy": "Precisão geral",
+    "currentStreak": "Sequência atual",
+    "longestStreak": "Maior sequência"
+  },
+  "charts": {
+    "dailyActivity": "Atividade diária",
+    "accuracyOverTime": "Precisão ao longo do tempo",
+    "progressByLevel": "Progresso por nível",
+    "timeByDojo": "Tempo por dojo"
+  },
+  "kana": {
+    "title": "Estatísticas de Kana",
+    "mastered": "Dominados",
+    "learning": "Em aprendizado",
+    "notStarted": "Não iniciados",
+    "hiraganaProgress": "Progresso em Hiragana",
+    "katakanaProgress": "Progresso em Katakana"
+  },
+  "kanji": {
+    "title": "Estatísticas de Kanji",
+    "mastered": "Dominados",
+    "learning": "Em aprendizado",
+    "notStarted": "Não iniciados",
+    "byLevel": "Por nível JLPT"
+  },
+  "vocabulary": {
+    "title": "Estatísticas de Vocabulário",
+    "wordsLearned": "Palavras aprendidas",
+    "mastered": "Dominadas",
+    "learning": "Em aprendizado",
+    "byLevel": "Por nível JLPT"
+  },
+  "performance": {
+    "title": "Desempenho",
+    "bestAccuracy": "Melhor precisão",
+    "fastestTime": "Menor tempo",
+    "longestSession": "Maior sessão",
+    "mostImproved": "Maior evolução"
+  }
+}

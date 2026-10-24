@@ -1,5 +1,5 @@
 // All possible locales (for type definitions and metadata)
-export const allLocales = ['en', 'es', 'fr', 'zh'] as const;
+export const allLocales = ['en', 'es', 'fr', 'pt', 'zh'] as const;
 export type AllLocale = (typeof allLocales)[number];
 
 // Active locales (TEMP: Single locale for dev performance)

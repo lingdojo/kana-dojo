@@ -1,0 +1,67 @@
+{
+  "title": "Bem-vindo ao KanaDojo!",
+  "subtitle": "Vamos personalizar sua experiência de aprendizado",
+  "steps": {
+    "welcome": {
+      "demoCta": "Jogar uma demonstração rápida"
+    },
+    "behavior": {
+      "title": "Configurar comportamento",
+      "subtitle": "Defina suas preferências de exibição e som",
+      "displayLanguage": {
+        "title": "Idioma de exibição",
+        "description": "No menu de seleção de caracteres, para as leituras, exibir:",
+        "romaji": "Romaji, traduções 🇧🇷",
+        "kana": "Kana, Kanji 🇯🇵"
+      },
+      "soundEffects": {
+        "title": "Efeitos sonoros",
+        "description": "Reproduzir efeitos sonoros da interface e de feedback:",
+        "on": "Ligado",
+        "off": "Desligado"
+      }
+    },
+    "themes": {
+      "title": "Escolha seu tema",
+      "subtitle": "Selecione um tema que combine com seu estilo",
+      "randomTheme": "Tema aleatório",
+      "moreInfo": "Mais temas disponíveis em",
+      "preferences": "Preferências"
+    },
+    "fonts": {
+      "title": "Escolha sua fonte",
+      "subtitle": "Escolha a fonte perfeita para os caracteres",
+      "randomFont": "Fonte aleatória",
+      "default": "(padrão)",
+      "moreInfo": "Mais fontes disponíveis em",
+      "preferences": "Preferências"
+    },
+    "complete": {
+      "title": "Tudo pronto!",
+      "subtitle": "Seu KanaDojo agora está personalizado",
+      "canChange": "Você pode alterar essas configurações a qualquer momento nas Preferências.",
+      "happyLearning": "Bons estudos!"
+    }
+  },
+  "features": {
+    "behavior": {
+      "title": "Configurar comportamento",
+      "description": "Defina o idioma de exibição e as preferências de som"
+    },
+    "theme": {
+      "title": "Escolha seu tema",
+      "description": "Selecione um tema que combine com seu estilo"
+    },
+    "font": {
+      "title": "Selecione sua fonte",
+      "description": "Escolha a fonte perfeita para os caracteres"
+    }
+  },
+  "navigation": {
+    "previous": "Anterior",
+    "back": "Voltar",
+    "next": "Próximo",
+    "getStarted": "Começar",
+    "finishSetup": "Concluir configuração"
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "meta": {
+    "title": "Tradutor de japonês - Traduza inglês para japonês e japonês para inglês | KanaDojo",
+    "description": "Tradutor de japonês online e gratuito. Traduza do inglês para o japonês ou do japonês para o inglês na hora. Com romanização (romaji), histórico de traduções e traduções precisas com tecnologia do Google Tradutor."
+  },
+  "header": {
+    "title": "Tradutor de japonês"
+  },
+  "languages": {
+    "english": "English",
+    "japanese": "日本語",
+    "en": "EN",
+    "ja": "JA"
+  },
+  "input": {
+    "placeholder": {
+      "en": "Enter text to translate...",
+      "ja": "テキストを入力してください..."
+    },
+    "clearButton": "Limpar texto",
+    "characterCount": "{count} / {max}",
+    "keyboardHint": "Pressione Ctrl+Enter (⌘+Enter no Mac) para traduzir",
+    "characterLimitWarning": "O texto excede o tamanho máximo de {max} caracteres"
+  },
+  "output": {
+    "placeholder": {
+      "en": "Translation will appear here...",
+      "ja": "翻訳がここに表示されます..."
+    },
+    "copyButton": "Copiar tradução",
+    "copied": "Copiado!",
+    "copiedMessage": "Copiado para a área de transferência!",
+    "romanization": "Romanização (Romaji)"
+  },
+  "actions": {
+    "translate": "Traduzir",
+    "translating": "Traduzindo...",
+    "swapLanguages": "Inverter idiomas"
+  },
+  "history": {
+    "title": "Histórico",
+    "empty": "Ainda não há histórico de traduções",
+    "emptyHint": "Suas traduções aparecerão aqui",
+    "clearAll": "Limpar tudo",
+    "deleteEntry": "Excluir item",
+    "clearDialog": {
+      "title": "Limpar o histórico de traduções?",
+      "description": "Isso excluirá permanentemente todo o seu histórico de traduções. Esta ação não pode ser desfeita.",
+      "cancel": "Cancelar",
+      "confirm": "Limpar tudo"
+    },
+    "timeAgo": {
+      "justNow": "Agora mesmo",
+      "minutesAgo": "há {count} min",
+      "hoursAgo": "há {count} h",
+      "daysAgo": "há {count} d"
+    }
+  },
+  "offline": {
+    "message": "Você está offline. A tradução fica indisponível até você se reconectar."
+  },
+  "errors": {
+    "networkError": "Não foi possível conectar. Verifique sua conexão com a internet.",
+    "rateLimit": "Muitas requisições. Aguarde um momento e tente novamente.",
+    "invalidInput": "Digite um texto válido para traduzir.",
+    "emptyInput": "Digite um texto para traduzir",
+    "serverError": "O serviço de tradução está temporariamente indisponível.",
+    "authError": "Erro de configuração do serviço de tradução.",
+    "unknownError": "Ocorreu um erro durante a tradução. Tente novamente."
+  },
+  "seo": {
+    "guideTitle": "Guia de tradução de japonês",
+    "howToUse": {
+      "title": "Como usar o tradutor de japonês",
+      "intro": "Nosso tradutor de japonês gratuito facilita a tradução de textos entre inglês e japonês. Veja como começar:",
+      "steps": {
+        "step1": "Digite seu texto no campo de entrada à esquerda",
+        "step2": "Selecione o idioma de origem (inglês ou japonês)",
+        "step3": "Clique no botão de traduzir ou pressione Ctrl+Enter",
+        "step4": "Veja sua tradução com romanização (romaji) para o texto em japonês",
+        "step5": "Copie a tradução ou salve-a no histórico"
+      },
+      "proTip": "Dica: use o botão de inverter para trocar rapidamente a direção da tradução e traduzir o resultado de volta."
+    },
+    "writingSystems": {
+      "title": "Sobre os sistemas de escrita japoneses",
+      "intro": "O japonês usa três sistemas de escrita principais, geralmente combinados no mesmo texto:",
+      "hiragana": {
+        "name": "Hiragana (ひらがな)",
+        "description": "Um silabário fonético usado para palavras japonesas nativas, elementos gramaticais e leituras em furigana"
+      },
+      "katakana": {
+        "name": "Katakana (カタカナ)",
+        "description": "Um silabário fonético usado principalmente para palavras estrangeiras, onomatopeias e ênfase"
+      },
+      "kanji": {
+        "name": "Kanji (漢字)",
+        "description": "Caracteres chineses adaptados ao japonês, que representam significados e conceitos. Há mais de 2.000 kanji de uso comum"
+      },
+      "outro": "Nosso tradutor lida com os três sistemas de escrita e oferece romanização (romaji) para ajudar você a ler textos em japonês com o alfabeto latino."
+    },
+    "faq": {
+      "title": "Perguntas frequentes",
+      "isFree": {
+        "question": "Este tradutor de japonês é gratuito?",
+        "answer": "Sim! Nosso tradutor de japonês é totalmente gratuito, sem necessidade de cadastro. Traduza quanto texto precisar."
+      },
+      "accuracy": {
+        "question": "Qual é a precisão da tradução?",
+        "answer": "Nosso tradutor usa a API Google Cloud Translation, um dos serviços de tradução automática mais precisos disponíveis. Embora nenhuma tradução automática seja perfeita, ela oferece traduções de alta qualidade para a maioria dos usos do dia a dia."
+      },
+      "romanization": {
+        "question": "O que é romanização (romaji)?",
+        "answer": "A romanização, ou romaji, é a representação do texto japonês com o alfabeto latino. Ela ajuda quem não fala japonês a ler e pronunciar palavras japonesas. Nosso tradutor oferece romanização automaticamente para textos em japonês."
+      },
+      "historySaved": {
+        "question": "Meu histórico de traduções é salvo?",
+        "answer": "Sim, seu histórico de traduções é salvo localmente no navegador. Isso significa que suas traduções são privadas e acessíveis apenas no seu dispositivo. Você pode limpar o histórico a qualquer momento."
+      },
+      "maxLength": {
+        "question": "Qual é o tamanho máximo do texto?",
+        "answer": "Você pode traduzir até 5.000 caracteres por vez. Para textos mais longos, recomendamos dividi-los em partes menores."
+      }
+    }
+  }
+}

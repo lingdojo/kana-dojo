@@ -1,0 +1,114 @@
+{
+  "hiragana": {
+    "title": "Prática de Hiragana",
+    "subtitle": "Aprenda hiragana com exercícios rápidos e focados e feedback instantâneo.",
+    "ctaPrimary": "Começar a praticar hiragana",
+    "ctaSecondary": "Abrir o dojo de kana",
+    "sections": {
+      "what": {
+        "title": "O que é hiragana?",
+        "body": "O hiragana é um dos três sistemas de escrita japoneses. É usado para palavras japonesas nativas, gramática e terminações de partículas. Dominar o hiragana é o primeiro grande passo para ler japonês."
+      },
+      "how": {
+        "title": "Como praticar hiragana de forma eficaz",
+        "bullets": [
+          "Pratique em sessões curtas todos os dias (5 a 15 minutos).",
+          "Misture reconhecimento (leitura) com memorização (digitar/responder).",
+          "Revise seus erros imediatamente e repita os caracteres mais fracos.",
+          "Evite depender do romaji depois de aprender o básico."
+        ]
+      },
+      "why": {
+        "title": "Por que usar o KanaDojo para praticar hiragana?",
+        "bullets": [
+          "Exercícios interativos e modos em formato de jogo.",
+          "Acompanhamento de progresso para ver o que você já domina.",
+          "Vários modos: treino, blitz e gauntlet.",
+          "Funciona muito bem no computador e no celular."
+        ]
+      }
+    },
+    "links": {
+      "kana": "Kana",
+      "train": "Treino",
+      "blitz": "Blitz",
+      "gauntlet": "Gauntlet",
+      "faq": "FAQ"
+    }
+  },
+  "katakana": {
+    "title": "Prática de Katakana",
+    "subtitle": "Domine o katakana com exercícios rápidos, feedback claro e progresso constante.",
+    "ctaPrimary": "Começar a praticar katakana",
+    "ctaSecondary": "Abrir o dojo de kana",
+    "sections": {
+      "what": {
+        "title": "O que é katakana?",
+        "body": "O katakana é um dos três sistemas de escrita japoneses. É muito usado para palavras estrangeiras, nomes estrangeiros, onomatopeias e ênfase. O katakana se torna essencial assim que você começa a ler o japonês moderno."
+      },
+      "how": {
+        "title": "Como praticar katakana de forma eficaz",
+        "bullets": [
+          "Foque nos pares confusos (シ/ツ, ソ/ン etc.).",
+          "Pratique reconhecimento e memorização, não apenas leitura.",
+          "Revise os erros e repita os caracteres mais fracos até ficarem consistentes.",
+          "Misture kana básicos, dakuon e combinações ao longo do tempo."
+        ]
+      },
+      "why": {
+        "title": "Por que usar o KanaDojo para praticar katakana?",
+        "bullets": [
+          "Exercícios interativos e modos em formato de jogo.",
+          "Acompanhamento de progresso para focar no que você erra.",
+          "Modo Blitz para ganhar velocidade.",
+          "Modo Gauntlet para garantir a cobertura completa."
+        ]
+      }
+    },
+    "links": {
+      "kana": "Kana",
+      "train": "Treino",
+      "blitz": "Blitz",
+      "gauntlet": "Gauntlet",
+      "faq": "FAQ"
+    }
+  },
+  "kanji": {
+    "title": "Prática de Kanji",
+    "subtitle": "Pratique kanji por nível JLPT com exercícios rápidos e acompanhamento de progresso.",
+    "ctaPrimary": "Começar a praticar kanji",
+    "ctaSecondary": "Abrir o dojo de kanji",
+    "sections": {
+      "what": {
+        "title": "O que é kanji?",
+        "body": "Kanji são caracteres usados no japonês para representar significados e conceitos. Aprender kanji leva tempo, mas estudar por nível (como JLPT N5 → N1) torna o processo gerenciável e mensurável."
+      },
+      "how": {
+        "title": "Como praticar kanji de forma eficaz",
+        "bullets": [
+          "Estude por nível e mantenha sua seleção focada.",
+          "Priorize o reconhecimento primeiro e depois avance para leituras e uso.",
+          "Revise com frequência os kanji que errou (no estilo de repetição espaçada).",
+          "Use exercícios cronometrados de vez em quando para melhorar a velocidade de memorização."
+        ]
+      },
+      "why": {
+        "title": "Por que usar o KanaDojo para praticar kanji?",
+        "bullets": [
+          "Seleção de kanji organizada por JLPT.",
+          "Vários modos para diferentes objetivos.",
+          "Acompanhamento de progresso para focar nos kanji mais difíceis.",
+          "Ótimo para a prática diária constante."
+        ]
+      }
+    },
+    "links": {
+      "kanji": "Kanji",
+      "train": "Treino",
+      "blitz": "Blitz",
+      "gauntlet": "Gauntlet",
+      "jlpt": "Guias JLPT",
+      "faq": "FAQ"
+    }
+  }
+}
