@@ -14,6 +14,7 @@ import {
   finalizeSession,
   startSession,
 } from '@/shared/utils/sessionHistory';
+import { normalizeKanaForComparison } from '@/features/Kana/lib/normalizeKanaForComparison';
 
 import EmptyState from './EmptyState';
 import ActiveGame from './ActiveGame';
@@ -414,7 +415,7 @@ export default function Blitz<T>({ config }: BlitzProps<T>) {
     if (!currentQuestion || !getCorrectOption) return;
 
     const correctOption = getCorrectOption(currentQuestion, isReverseActive);
-    const isCorrect = selectedOption === correctOption;
+    const isCorrect = normalizeKanaForComparison(selectedOption) === normalizeKanaForComparison(correctOption);
 
     if (isCorrect) {
       playCorrect();
