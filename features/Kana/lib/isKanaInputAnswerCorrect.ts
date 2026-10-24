@@ -48,18 +48,21 @@ export const isKanaInputAnswerCorrect = ({
 }: KanaInputAnswerOptions): boolean => {
   // Normalize Unicode form and strip ALL whitespace so that input
   // from an IME, copy-paste, or with intentional spaces (e.g. "chi te")
-  // is compared on equal footing with the stored answer.
-  const normalizedInput = inputValue.replace(/\s+/g, '').normalize('NFC');
+  // is compared on equal footing with the stored answer. NFKC (rather
+  // than NFC) additionally folds compatibility characters such as
+  // full-width romaji from Japanese keyboards and half-width katakana,
+  // which otherwise compare unequal despite spelling the same answer.
+  const normalizedInput = inputValue.replace(/\s+/g, '').normalize('NFKC');
   if (!normalizedInput) return false;
 
   if (isReverse) {
     // Reverse mode: user types the kana character itself.
-    return normalizedInput === targetChar.replace(/\s+/g, '').normalize('NFC');
+    return normalizedInput === targetChar.replace(/\s+/g, '').normalize('NFKC');
   }
 
   // Normal mode: user types romaji. Compare case- and Unicode-insensitively.
   const lowerInput = normalizedInput.toLowerCase();
-  const lowerTarget = targetChar.toLowerCase().normalize('NFC');
+  const lowerTarget = targetChar.toLowerCase().normalize('NFKC');
 
   if (lowerInput === lowerTarget) {
     return true;
@@ -77,15 +80,21 @@ export const isKanaInputAnswerCorrect = ({
     promptParts.length > 0 &&
     promptParts.length === answerParts.length
   ) {
-    const validAnswers = buildAltCombinations(promptParts, answerParts, altRomanjiMap);
+    const validAnswers = buildAltCombinations(
+      promptParts,
+      answerParts,
+      altRomanjiMap,
+    );
     return validAnswers.some(
-      ans => lowerInput === ans.toLowerCase().normalize('NFC'),
+      ans => lowerInput === ans.toLowerCase().normalize('NFKC'),
     );
   }
 
   // Legacy single-character fallback (promptParts not provided).
   const alternatives = altRomanjiMap.get(correctChar);
   return alternatives
-    ? alternatives.some(alt => lowerInput === alt.toLowerCase().normalize('NFC'))
+    ? alternatives.some(
+        alt => lowerInput === alt.toLowerCase().normalize('NFKC'),
+      )
     : false;
 };
