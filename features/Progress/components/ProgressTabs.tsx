@@ -3,8 +3,9 @@ import { Suspense, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import SimpleProgress from './SimpleProgress';
 import StreakProgress from './StreakProgress';
+import SessionHistoryPanel from './SessionHistoryPanel';
 import AchievementProgress from '@/features/Achievements/components';
-import { TrendingUp, Flame, Trophy } from 'lucide-react';
+import { TrendingUp, Flame, Trophy, History } from 'lucide-react';
 import { useClick } from '@/shared/hooks/generic/useAudio';
 import { cn } from '@/shared/utils/utils';
 import dynamic from 'next/dynamic';
@@ -22,7 +23,7 @@ const DevAchievementPreview = isDevOrPreview
     )
   : null;
 
-type ViewType = 'statistics' | 'streak' | 'achievements';
+type ViewType = 'statistics' | 'history' | 'streak' | 'achievements';
 
 const viewOptions: { value: ViewType; label: string; icon: React.ReactNode }[] =
   [
@@ -30,6 +31,11 @@ const viewOptions: { value: ViewType; label: string; icon: React.ReactNode }[] =
       value: 'statistics',
       label: 'Stats',
       icon: <TrendingUp className='h-5 w-5' />,
+    },
+    {
+      value: 'history',
+      label: 'History',
+      icon: <History className='h-5 w-5' />,
     },
     {
       value: 'streak',
@@ -51,16 +57,11 @@ const ProgressTabsContent = () => {
 
   const tabParam = searchParams.get('tab') as ViewType | null;
 
-  const [currentView, setCurrentView] = useState<ViewType>('statistics');
-
-  useEffect(() => {
-    if (
-      tabParam &&
-      ['statistics', 'streak', 'achievements'].includes(tabParam)
-    ) {
-      setCurrentView(tabParam);
-    }
-  }, [tabParam]);
+  const currentView: ViewType =
+    tabParam &&
+    ['statistics', 'history', 'streak', 'achievements'].includes(tabParam)
+      ? tabParam
+      : 'statistics';
 
   const [layout, setLayout] = useState<{
     top: number;
@@ -143,7 +144,6 @@ const ProgressTabsContent = () => {
             <button
               key={option.value}
               onClick={() => {
-                setCurrentView(option.value);
                 router.replace(`${pathname}?tab=${option.value}`, {
                   scroll: false,
                 });
@@ -180,6 +180,7 @@ const ProgressTabsContent = () => {
 
       <div className='mt-4 flex w-full flex-col gap-8'>
         {currentView === 'statistics' && <SimpleProgress />}
+        {currentView === 'history' && <SessionHistoryPanel />}
         {currentView === 'streak' && <StreakProgress />}
         {currentView === 'achievements' && <AchievementProgress />}
       </div>
@@ -196,4 +197,3 @@ const ProgressTabs = () => {
 };
 
 export default ProgressTabs;
-
