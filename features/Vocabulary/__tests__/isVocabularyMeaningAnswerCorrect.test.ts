@@ -14,7 +14,9 @@ describe('isVocabularyMeaningAnswerCorrect', () => {
     answer => {
       const phrase = { ...vocabulary, meanings: ['well then…'] };
 
-      expect(isVocabularyMeaningAnswerCorrect(phrase, answer, false)).toBe(true);
+      expect(isVocabularyMeaningAnswerCorrect(phrase, answer, false)).toBe(
+        true,
+      );
     },
   );
 
@@ -27,10 +29,52 @@ describe('isVocabularyMeaningAnswerCorrect', () => {
   });
 
   it('normalizes meaning case and whitespace', () => {
-    expect(isVocabularyMeaningAnswerCorrect(vocabulary, ' america ', false)).toBe(
+    expect(
+      isVocabularyMeaningAnswerCorrect(vocabulary, ' america ', false),
+    ).toBe(true);
+  });
+
+  it.each([
+    'united\u00A0states',
+    '\u200BUnited States\u200B',
+    'Ｕｎｉｔｅｄ Ｓｔａｔｅｓ',
+  ])('accepts pasted or full-width meaning answer %j', answer => {
+    expect(isVocabularyMeaningAnswerCorrect(vocabulary, answer, false)).toBe(
       true,
     );
   });
+
+  it.each([
+    ['OK', 'ＯＫ', 'オーケー'],
+    ['Gパン', 'Ｇパン', 'ジーパン'],
+  ])(
+    'accepts reverse answer %s for full-width word %s',
+    (answer, word, reading) => {
+      const fullWidthWord = { ...vocabulary, word, reading };
+
+      expect(
+        isVocabularyMeaningAnswerCorrect(fullWidthWord, answer, true),
+      ).toBe(true);
+    },
+  );
+
+  it.each(['ｱﾒﾘｶ', 'アメ\u200Bリカ'])(
+    'accepts half-width or pasted reverse answer %j',
+    answer => {
+      expect(isVocabularyMeaningAnswerCorrect(vocabulary, answer, true)).toBe(
+        true,
+      );
+    },
+  );
+
+  it.each(['カ\u200B\u3099ク', 'ｶ\u200Bﾞｸ'])(
+    'accepts pasted reverse reading with separated dakuten %j',
+    answer => {
+      const word = { ...vocabulary, word: '学', reading: 'ガク' };
+
+      expect(isVocabularyMeaningAnswerCorrect(word, answer, true)).toBe(true);
+    },
+  );
 
   it.each(['speak', 'Speak', 'to speak', '  TO   SPEAK  '])(
     'accepts optional infinitive prefix in meaning answer %s',
@@ -63,10 +107,12 @@ describe('isVocabularyMeaningAnswerCorrect', () => {
   it('preserves compound prefixes whose removal could change meaning', () => {
     const phrase = { ...vocabulary, meanings: ['to the point'] };
 
-    expect(isVocabularyMeaningAnswerCorrect(phrase, 'to the point', false)).toBe(
-      true,
+    expect(
+      isVocabularyMeaningAnswerCorrect(phrase, 'to the point', false),
+    ).toBe(true);
+    expect(isVocabularyMeaningAnswerCorrect(phrase, 'point', false)).toBe(
+      false,
     );
-    expect(isVocabularyMeaningAnswerCorrect(phrase, 'point', false)).toBe(false);
 
     const spacedPhrase = { ...vocabulary, meanings: ['to   the point'] };
     expect(isVocabularyMeaningAnswerCorrect(spacedPhrase, 'point', false)).toBe(
@@ -101,9 +147,9 @@ describe('isVocabularyMeaningAnswerCorrect', () => {
       reading: 'to speak',
     };
 
-    expect(
-      isVocabularyMeaningAnswerCorrect(prefixedWord, 'speak', true),
-    ).toBe(false);
+    expect(isVocabularyMeaningAnswerCorrect(prefixedWord, 'speak', true)).toBe(
+      false,
+    );
   });
 
   it.each([' アメリカ ', 'amerika', 'あめりか'])(

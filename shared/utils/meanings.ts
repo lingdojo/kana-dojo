@@ -7,11 +7,29 @@ export function removeVerbDuplicates(meanings: string[]): string[] {
 }
 
 /**
+ * Zero-width and other invisible characters (soft hyphen, ZWSP/ZWNJ/ZWJ,
+ * bidi marks, word joiner, BOM) that come along when an answer is pasted
+ * from a web page or another app. They render as nothing, so the answer
+ * looks correct but never compares equal.
+ */
+const INVISIBLE_CHARACTERS = /[\u00AD\u200B-\u200F\u2060-\u2064\uFEFF]/g;
+
+/**
  * Case/whitespace-insensitive baseline used for reverse (Japanese) answers
  * and as the starting point for meaning answers.
+ *
+ * NFKC folds compatibility forms onto their standard spelling, so full-width
+ * Latin ("ＯＫ"), half-width katakana ("ｱﾒﾘｶ") and non-breaking or
+ * ideographic spaces match what the user can actually type.
+ * Strip invisible characters first so they cannot interrupt combining marks.
  */
 export const normalizeAnswerValue = (value: string): string =>
-  value.trim().normalize('NFC').toLowerCase();
+  value
+    .replace(INVISIBLE_CHARACTERS, '')
+    .normalize('NFKC')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .toLowerCase();
 
 /**
  * A lone English infinitive marker or article is optional. Compound prefixes

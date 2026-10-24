@@ -14,6 +14,20 @@ describe('isKanjiAnswerCorrect', () => {
     expect(isKanjiAnswerCorrect(kanji, ' china ', false)).toBe(true);
   });
 
+  it.each(['\u200BChina\u200B', 'Ｃｈｉｎａ', 'Chi\u00ADna'])(
+    'accepts pasted or full-width meaning answer %j',
+    answer => {
+      expect(isKanjiAnswerCorrect(kanji, answer, false)).toBe(true);
+    },
+  );
+
+  it.each(['ｶﾝ', 'カ\u200Bン'])(
+    'accepts half-width or pasted reverse reading %j',
+    answer => {
+      expect(isKanjiAnswerCorrect(kanji, answer, true)).toBe(true);
+    },
+  );
+
   it.each(['well then...', 'well then…', 'Well then...', 'well then....'])(
     'accepts %s when the stored meaning uses an ellipsis',
     answer => {
@@ -100,7 +114,10 @@ describe('isKanjiAnswerCorrect', () => {
     },
   );
 
-  it.each(['', 'China', 'かん'])('rejects invalid reverse answer %s', answer => {
-    expect(isKanjiAnswerCorrect(kanji, answer, true)).toBe(false);
-  });
+  it.each(['', 'China', 'かん'])(
+    'rejects invalid reverse answer %s',
+    answer => {
+      expect(isKanjiAnswerCorrect(kanji, answer, true)).toBe(false);
+    },
+  );
 });
