@@ -205,8 +205,8 @@ KanaDojo collects minimal user data:
 
 ### Internal Documentation
 
-- [Architecture](./ARCHITECTURE.md)
-- [Performance](./PERFORMANCE_OPTIMIZATIONS.md)
+- [Architecture](../docs/ARCHITECTURE.md)
+- [Performance](../docs/PERFORMANCE_OPTIMIZATIONS.md)
 
 ---
 
