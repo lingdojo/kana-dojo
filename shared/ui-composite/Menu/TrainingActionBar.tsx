@@ -1,5 +1,11 @@
 'use client';
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from 'react';
 import clsx from 'clsx';
 import { useKanaSelection } from '@/features/Kana';
 import { useKanjiSelection } from '@/features/Kanji';
@@ -7,6 +13,7 @@ import { useVocabSelection } from '@/features/Vocabulary';
 import { useInputPreferences } from '@/features/Preferences';
 import usePreferencesStore from '@/features/Preferences/store/usePreferencesStore';
 import { useClick } from '@/shared/hooks/generic/useAudio';
+import { useRouter } from '@/core/i18n/routing';
 import { Bolt, Play, Zap, Swords } from 'lucide-react';
 import { motion } from 'framer-motion';
 import ModeSetupMenu from '@/shared/ui-composite/Menu/ModeSetupMenu';
@@ -68,12 +75,14 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
           : false;
 
   const buttonRef = useRef<HTMLButtonElement | null>(null);
+  const router = useRouter();
 
-  const startAutoLearning = () => {
-    document
-      .querySelector<HTMLButtonElement>('[data-auto-learning-dojo]')
-      ?.click();
-  };
+  // Classic training uses the learner's manual selection, which is what
+  // enables the Go button. Auto-learning stays available through the
+  // dedicated Start/Continue Learning button (see #30400).
+  const startManualTraining = useCallback(() => {
+    router.push(`/${currentDojo}/train`);
+  }, [currentDojo, router]);
 
   useEffect(() => {
     if (!hotkeysOn) return;
@@ -91,7 +100,7 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
         if (showExperimentalModes) {
           setShowGameModesModal(true);
         } else {
-          startAutoLearning();
+          startManualTraining();
         }
       }
     };
@@ -100,7 +109,7 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [hotkeysOn, isFilled, showExperimentalModes]);
+  }, [hotkeysOn, isFilled, showExperimentalModes, startManualTraining]);
 
   const showBlitz =
     currentDojo === 'kana' ||
@@ -355,7 +364,7 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
                   return;
                 }
 
-                startAutoLearning();
+                startManualTraining();
               },
               ref: buttonRef,
             },
@@ -407,7 +416,7 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
                 >
                   <Icon size={36} className={cn(iconClassName)} />
                   {id === 'custom' && (
-                    <span className='whitespace-nowrap text-lg font-medium sm:text-xl'>
+                    <span className='text-lg font-medium whitespace-nowrap sm:text-xl'>
                       {label}
                     </span>
                   )}
