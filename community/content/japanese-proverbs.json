@@ -360,45 +360,51 @@
     "meaning": "Haste makes waste; the slower path is faster"
   },
   {
-  "japanese": "善因善果",
-  "romaji": "Zenin zenka",
-  "english": "Good causes bring good results",
-  "meaning": "Good deeds lead to good outcomes"
-},
+    "japanese": "善因善果",
+    "romaji": "Zenin zenka",
+    "english": "Good causes bring good results",
+    "meaning": "Good deeds lead to good outcomes"
+  },
   {
-  "japanese": "良薬は口に苦し",
-  "romaji": "Ryouyaku wa kuchi ni nigashi",
-  "english": "Good medicine tastes bitter",
-  "meaning": "Helpful advice can be harsh"
-},
+    "japanese": "良薬は口に苦し",
+    "romaji": "Ryouyaku wa kuchi ni nigashi",
+    "english": "Good medicine tastes bitter",
+    "meaning": "Helpful advice can be harsh"
+  },
   {
-  "japanese": "針の穴から天を覗く",
-  "romaji": "Hari no ana kara ten wo nozoku",
-  "english": "Peek at the sky through a needle's eye",
-  "meaning": "A narrow viewpoint leads to poor judgment"
-},
+    "japanese": "針の穴から天を覗く",
+    "romaji": "Hari no ana kara ten wo nozoku",
+    "english": "Peek at the sky through a needle's eye",
+    "meaning": "A narrow viewpoint leads to poor judgment"
+  },
   {
-  "japanese": "一期一会",
-  "romaji": "Ichi go ichi e",
-  "english": "One time, one meeting",
-  "meaning": "Treasure every encounter, for it will never recur"
-},
+    "japanese": "一期一会",
+    "romaji": "Ichi go ichi e",
+    "english": "One time, one meeting",
+    "meaning": "Treasure every encounter, for it will never recur"
+  },
   {
-  "japanese": "覆水盆に返らず",
-  "romaji": "Fukusui bon ni kaerazu",
-  "english": "Spilled water will not return to the tray",
-  "meaning": "What is done cannot be undone"
-},
+    "japanese": "覆水盆に返らず",
+    "romaji": "Fukusui bon ni kaerazu",
+    "english": "Spilled water will not return to the tray",
+    "meaning": "What is done cannot be undone"
+  },
   {
-  "japanese": "出る釘は打たれる",
-  "romaji": "Deru kugi wa utareru",
-  "english": "The nail that sticks out gets hammered down",
-  "meaning": "Standing out invites criticism"
-},
+    "japanese": "出る釘は打たれる",
+    "romaji": "Deru kugi wa utareru",
+    "english": "The nail that sticks out gets hammered down",
+    "meaning": "Standing out invites criticism"
+  },
   {
-  "japanese": "塵も積もれば山となる",
-  "romaji": "Chiri mo tsumoreba yama to naru",
-  "english": "Even dust, when piled up, becomes a mountain",
-  "meaning": "Small efforts add up to great things"
-}
+    "japanese": "塵も積もれば山となる",
+    "romaji": "Chiri mo tsumoreba yama to naru",
+    "english": "Even dust, when piled up, becomes a mountain",
+    "meaning": "Small efforts add up to great things"
+  },
+  {
+    "japanese": "三日坊主",
+    "romaji": "Mikka bouzu",
+    "english": "A three-day monk",
+    "meaning": "Someone who quits quickly"
+  }
 ]
