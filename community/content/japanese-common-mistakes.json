@@ -323,5 +323,10 @@
     "wrong": "毎日日本語を勉強していますから上手になります。",
     "correct": "毎日日本語を勉強しているので上手になります。",
     "explanation": "ので is smoother/neutral for reason. (Pattern set 4)"
+  },
+  {
+    "wrong": "東京は人が多いです、きれいです。",
+    "correct": "東京は人が多くて、きれいです。",
+    "explanation": "Use て-form to connect clauses. (Pattern set 2)"
   }
 ]
