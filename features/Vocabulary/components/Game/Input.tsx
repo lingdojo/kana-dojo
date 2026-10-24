@@ -223,7 +223,12 @@ const VocabInputGame = ({
   const isInputCorrect = (input: string): boolean => {
     if (quizType === 'meaning') {
       return correctWordObj
-        ? isVocabularyMeaningAnswerCorrect(correctWordObj, input, isReverse)
+        ? isVocabularyMeaningAnswerCorrect(
+            correctWordObj,
+            input,
+            isReverse,
+            selectedWordObjs,
+          )
         : false;
     } else {
       const targetReading = typeof targetChar === 'string' ? targetChar : '';
