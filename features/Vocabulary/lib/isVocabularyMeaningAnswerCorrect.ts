@@ -16,6 +16,13 @@ export const isVocabularyMeaningAnswerCorrect = (
   if (!normalizedAnswer) return false;
 
   if (!isReverse) {
+    if (
+      normalizedAnswer === normalizeMeaningAnswer('over there') &&
+      ['asoko', 'achira'].includes(normalizeAnswerValue(vocabulary.word))
+    ) {
+      return true;
+    }
+
     return vocabulary.meanings.some(
       meaning => normalizeMeaningAnswer(meaning) === normalizedAnswer,
     );
