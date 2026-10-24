@@ -7,32 +7,61 @@ import {
   getCappedKanjiProgress,
   getCappedVocabularyMeaningProgress,
   getCappedVocabularyReadingProgress,
+  KANJI_SET_PROGRESS_TARGET,
+  VOCAB_MEANING_PROGRESS_TARGET,
+  VOCAB_READING_PROGRESS_TARGET,
 } from './setProgress';
 
 describe('setProgress', () => {
-  it('caps kanji progress at 10', () => {
-    expect(getCappedKanjiProgress(250)).toBe(10);
-  });
-
-  it('caps vocabulary meaning progress at 5', () => {
-    expect(getCappedVocabularyMeaningProgress(150)).toBe(5);
-  });
-
-  it('caps vocabulary reading progress at 5', () => {
-    expect(getCappedVocabularyReadingProgress(175)).toBe(5);
-  });
-
-  it('calculates partial kanji set progress from capped totals', () => {
-    expect(calculateKanjiSetProgress([{ correct: 3 }, { correct: 5 }])).toBe(
-      0.4,
+  it('caps kanji progress at the configured target', () => {
+    expect(getCappedKanjiProgress(KANJI_SET_PROGRESS_TARGET + 250)).toBe(
+      KANJI_SET_PROGRESS_TARGET,
     );
   });
 
-  it('calculates partial vocabulary set progress from separate meaning and reading caps', () => {
+  it('caps vocabulary meaning progress at the configured target', () => {
+    expect(
+      getCappedVocabularyMeaningProgress(VOCAB_MEANING_PROGRESS_TARGET + 150),
+    ).toBe(VOCAB_MEANING_PROGRESS_TARGET);
+  });
+
+  it('caps vocabulary reading progress at the configured target', () => {
+    expect(
+      getCappedVocabularyReadingProgress(VOCAB_READING_PROGRESS_TARGET + 175),
+    ).toBe(VOCAB_READING_PROGRESS_TARGET);
+  });
+
+  it('calculates partial kanji set progress from capped totals', () => {
+    const halfTarget = KANJI_SET_PROGRESS_TARGET / 2;
+
+    expect(
+      calculateKanjiSetProgress([
+        { correct: halfTarget },
+        { correct: halfTarget },
+      ]),
+    ).toBe(0.5);
+  });
+
+  it('caps over-target kanji answers before calculating progress', () => {
+    expect(
+      calculateKanjiSetProgress([
+        { correct: KANJI_SET_PROGRESS_TARGET * 10 },
+        { correct: 0 },
+      ]),
+    ).toBe(0.5);
+  });
+
+  it('calculates partial vocabulary set progress from separate meaning and reading targets', () => {
     expect(
       calculateVocabularySetProgress([
-        { meaningCorrect: 3, readingCorrect: 5 },
-        { meaningCorrect: 5, readingCorrect: 2 },
+        {
+          meaningCorrect: VOCAB_MEANING_PROGRESS_TARGET / 2,
+          readingCorrect: VOCAB_READING_PROGRESS_TARGET,
+        },
+        {
+          meaningCorrect: VOCAB_MEANING_PROGRESS_TARGET,
+          readingCorrect: VOCAB_READING_PROGRESS_TARGET / 2,
+        },
       ]),
     ).toBe(0.75);
   });
@@ -40,7 +69,10 @@ describe('setProgress', () => {
   it('returns 1 for a fully capped final short set', () => {
     expect(
       calculateVocabularySetProgress([
-        { meaningCorrect: 5, readingCorrect: 5 },
+        {
+          meaningCorrect: VOCAB_MEANING_PROGRESS_TARGET,
+          readingCorrect: VOCAB_READING_PROGRESS_TARGET,
+        },
       ]),
     ).toBe(1);
   });
