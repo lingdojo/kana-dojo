@@ -21,6 +21,7 @@ import { useGameStats } from '@/shared/hooks/game/useGameStats';
 import { useTilesModeHandlers } from '@/shared/hooks/game/useTilesModeHandlers';
 import { useTilesModeState } from '@/shared/hooks/game/useTilesModeState';
 import { getKanaTilesQuestionShape } from '@/features/Kana/lib/getKanaTilesQuestionShape';
+import { getKanaTileDistractorPool } from '@/features/Kana/lib/getKanaTileDistractorPool';
 
 import { GameBottomBar } from '@/shared/ui-composite/Game/GameBottomBar';
 import { cn } from '@/shared/utils/utils';
@@ -219,7 +220,12 @@ const KanaTilesMode = ({
       : wordChars.map(k => kanaToRomaji[k]);
 
     const distractorCount = Math.max(0, totalTileCount - answerChars.length);
-    const distractorSource = isReverse ? selectedKana : selectedRomaji;
+    // In reverse mode the tiles are kana and the prompt is romaji, so the
+    // other script's kana for the same reading answers the prompt just as
+    // well as the expected tile does. Keep it off the board.
+    const distractorSource = isReverse
+      ? getKanaTileDistractorPool(selectedKana, wordChars, kanaToRomaji)
+      : selectedRomaji;
     const distractors: string[] = [];
     const usedAnswers = new Set(answerChars);
     for (let i = 0; i < distractorCount; i++) {
