@@ -1188,6 +1188,13 @@ const baseThemeSets: BaseThemeGroup[] = [
         mainColor: 'oklch(80.0% 0.155 200.0 / 1)', // bright cyan
         secondaryColor: 'oklch(85.0% 0.140 145.0 / 1)', // vivid emerald
       },
+      {
+        // 8-bit arcade nostalgia
+        id: 'pixel-retro',
+        backgroundColor: 'oklch(14.0% 0.025 280.0 / 1)',
+        mainColor: 'oklch(72.0% 0.200 145.0 / 1)',
+        secondaryColor: 'oklch(80.0% 0.185 55.0 / 1)',
+      },
     ],
   },
 ];
