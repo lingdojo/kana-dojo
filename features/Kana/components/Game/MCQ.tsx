@@ -138,7 +138,7 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
     [kanaGroupIndices],
   );
   const selectedRomaji = useMemo(
-    () => kanaGroupIndices.map(i => kana[i].romanji).flat(),
+    () => kanaGroupIndices.map(i => kana[i].romaji).flat(),
     [kanaGroupIndices],
   );
 

@@ -127,7 +127,7 @@ const Subset = ({ sliceRange, subgroup }: SubsetProps) => {
                     getTextOpacity(isFocused, false),
                   )}
                 >
-                  {renderSeparatedText(group.romanji, 'text-(--border-color)')}
+                  {renderSeparatedText(group.romaji, 'text-(--border-color)')}
                 </span>
               </div>
             </label>

@@ -7,7 +7,7 @@ import { hiraganaOnly } from '../data/kanaData';
 
 interface ConstellationPoint {
   kana: string;
-  romanji: string;
+  romaji: string;
   x: number;
   y: number;
   order: number;
@@ -24,7 +24,7 @@ const generateConstellation = (): ConstellationPoint[] => {
   // Generate positions in a rough pattern
   const points: ConstellationPoint[] = shuffled.map((k, i) => ({
     kana: k.kana,
-    romanji: k.romanji,
+    romaji: k.romaji,
     x: 15 + Math.random() * 70,
     y: 15 + Math.random() * 60,
     order: i,
@@ -115,7 +115,7 @@ const KanaConstellation = () => {
           Kana Constellation
         </h1>
         <p className='mt-2 text-(--secondary-color)'>
-          Connect the stars in order: {currentTarget?.romanji || 'Complete!'}
+          Connect the stars in order: {currentTarget?.romaji || 'Complete!'}
         </p>
         <p className='text-sm text-(--secondary-color)'>
           Constellations completed: {score}
@@ -169,7 +169,7 @@ const KanaConstellation = () => {
             <span lang='ja' className='text-lg md:text-xl'>
               {point.kana}
             </span>
-            <span className='text-xs'>{point.romanji}</span>
+            <span className='text-xs'>{point.romaji}</span>
           </button>
         ))}
 

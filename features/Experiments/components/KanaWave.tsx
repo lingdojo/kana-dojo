@@ -35,7 +35,7 @@ export default function KanaWave() {
     const newWave: WaveKana = {
       id: idCounter.current++,
       kana: kanaObj.kana,
-      romaji: kanaObj.romanji,
+      romaji: kanaObj.romaji,
       x: 110, // Start off-screen right
       lane: Math.floor(Math.random() * 3),
     };

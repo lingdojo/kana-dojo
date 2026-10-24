@@ -12,7 +12,7 @@ import type { KanaCharacter } from './flattenKanaGroup';
  * marked wrong.
  */
 export const isKanaGameAnswerCorrect = (
-  question: Pick<KanaCharacter, 'kana' | 'romaji' | 'altRomanji'>,
+  question: Pick<KanaCharacter, 'kana' | 'romaji' | 'altRomaji'>,
   answer: string,
   isReverse: boolean | undefined,
 ): boolean => {
@@ -22,6 +22,6 @@ export const isKanaGameAnswerCorrect = (
   const normalized = answer.replace(/\s+/g, '').toLowerCase();
   return (
     normalized === question.romaji.toLowerCase() ||
-    question.altRomanji.some(alt => normalized === alt.toLowerCase())
+    question.altRomaji.some(alt => normalized === alt.toLowerCase())
   );
 };

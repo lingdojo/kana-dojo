@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import { allKana } from '../data/kanaData';
 
 /**
- * Kana Stack - Stack kana cards by romanji alphabetically
+ * Kana Stack - Stack kana cards by romaji alphabetically
  * Lightweight: Simple drag simulation with transitions
  */
 const KanaStack = () => {
@@ -23,7 +23,7 @@ const KanaStack = () => {
     const unstacked = cards.filter(c => !c.stacked);
     if (unstacked.length === 0) return null;
     return unstacked.reduce((min, c) =>
-      c.romanji.localeCompare(min.romanji) < 0 ? c : min,
+      c.romaji.localeCompare(min.romaji) < 0 ? c : min,
     );
   }, [cards]);
 
@@ -60,10 +60,10 @@ const KanaStack = () => {
       <h2 className='text-xl text-(--main-color)'>
         {allStacked
           ? '🎉 Perfect Stack!'
-          : `Stack alphabetically by romanji (${stack.length}/8)`}
+          : `Stack alphabetically by romaji (${stack.length}/8)`}
       </h2>
       <p className='text-sm text-(--secondary-color)'>
-        Next: Pick the kana with the earliest romanji
+        Next: Pick the kana with the earliest romaji
       </p>
 
       {/* Available Cards */}
@@ -86,7 +86,7 @@ const KanaStack = () => {
                 {card.kana}
               </span>
               <span className='text-xs text-(--secondary-color)'>
-                {card.romanji}
+                {card.romaji}
               </span>
             </button>
           ))}

@@ -10,7 +10,7 @@ type GamePhase = 'memorize' | 'recall' | 'result';
 interface MemoryCard {
   id: number;
   kana: string;
-  romanji: string;
+  romaji: string;
   position: number;
   isRevealed: boolean;
   isMatched: boolean;
@@ -40,7 +40,7 @@ const MemoryPalace = () => {
       pairs.push({
         id: i * 2,
         kana: k.kana,
-        romanji: k.romanji,
+        romaji: k.romaji,
         position: 0,
         isRevealed: true,
         isMatched: false,
@@ -48,7 +48,7 @@ const MemoryPalace = () => {
       pairs.push({
         id: i * 2 + 1,
         kana: k.kana,
-        romanji: k.romanji,
+        romaji: k.romaji,
         position: 0,
         isRevealed: true,
         isMatched: false,
@@ -190,7 +190,7 @@ const MemoryPalace = () => {
                     {card.kana}
                   </span>
                   <span className='text-xs text-(--secondary-color)'>
-                    {card.romanji}
+                    {card.romaji}
                   </span>
                 </>
               ) : (

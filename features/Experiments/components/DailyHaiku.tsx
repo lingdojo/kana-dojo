@@ -8,7 +8,7 @@ import { getDailyHaiku, getRandomHaiku, Haiku } from '../data/haiku';
 const DailyHaiku = () => {
   const [isMounted, setIsMounted] = useState(false);
   const [haiku, setHaiku] = useState<Haiku | null>(null);
-  const [showRomanji, setShowRomanji] = useState(false);
+  const [showRomaji, setShowRomaji] = useState(false);
   const [isDaily, setIsDaily] = useState(true);
   const { playClick } = useClick();
 
@@ -23,9 +23,9 @@ const DailyHaiku = () => {
     setIsDaily(false);
   };
 
-  const toggleRomanji = () => {
+  const toggleRomaji = () => {
     playClick();
-    setShowRomanji(!showRomanji);
+    setShowRomaji(!showRomaji);
   };
 
   if (!isMounted || !haiku) return null;
@@ -57,9 +57,9 @@ const DailyHaiku = () => {
               >
                 {line}
               </p>
-              {showRomanji && (
+              {showRomaji && (
                 <p className='mt-1 text-sm text-(--secondary-color) italic'>
-                  {haiku.romanji[i]}
+                  {haiku.romaji[i]}
                 </p>
               )}
             </div>
@@ -95,18 +95,18 @@ const DailyHaiku = () => {
       {/* Controls */}
       <div className='flex gap-4'>
         <button
-          onClick={toggleRomanji}
+          onClick={toggleRomaji}
           className={clsx(
             'rounded-lg px-4 py-2',
             'border border-(--border-color) bg-(--card-color)',
             'text-(--secondary-color) hover:text-(--main-color)',
             'transition-all duration-250 hover:cursor-pointer',
             'active:scale-95',
-            showRomanji &&
+            showRomaji &&
               'border-(--main-color) text-(--main-color)',
           )}
         >
-          {showRomanji ? 'Hide' : 'Show'} Romanji
+          {showRomaji ? 'Hide' : 'Show'} Romaji
         </button>
         <button
           onClick={handleNewHaiku}

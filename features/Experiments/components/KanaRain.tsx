@@ -7,7 +7,7 @@ interface RainDrop {
   id: number;
   column: number;
   kana: string;
-  romanji: string;
+  romaji: string;
   speed: number;
   opacity: number;
   startDelay: number;
@@ -36,7 +36,7 @@ const KanaRain = () => {
         id: idCounter.current++,
         column: Math.floor(Math.random() * COLUMNS),
         kana: kana.kana,
-        romanji: kana.romanji,
+        romaji: kana.romaji,
         speed: Math.random() * 2 + 3, // 4-6 seconds
         opacity: Math.random() * 0.4 + 0.4, // 0.4-0.8
         startDelay: Math.random() * 5, // 0-5 seconds into animation
@@ -93,7 +93,7 @@ const KanaRain = () => {
           </span>
           {hoveredId === drop.id && (
             <span className='absolute -bottom-5 left-1/2 -translate-x-1/2 font-mono text-xs whitespace-nowrap text-green-400'>
-              {drop.romanji}
+              {drop.romaji}
             </span>
           )}
         </div>

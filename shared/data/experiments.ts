@@ -51,7 +51,7 @@ export const experiments: Experiment[] = [
   // Super Fun Experiments (2026-01-08 Evening)
   {
     name: 'Kana Wordle',
-    description: 'Guess kana from romanji',
+    description: 'Guess kana from romaji',
     href: '/experiments/wordle',
     icon: SquareAsterisk,
     color: 'text-green-400',
@@ -285,7 +285,7 @@ export const experiments: Experiment[] = [
   },
   {
     name: 'Speed Typing',
-    description: 'Test your romanji speed',
+    description: 'Test your romaji speed',
     href: '/experiments/typing',
     icon: Keyboard,
     color: 'text-red-400',

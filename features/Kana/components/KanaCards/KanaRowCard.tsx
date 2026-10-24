@@ -103,7 +103,7 @@ const KanaRowCard = ({ kanaGroup, globalIndex }: KanaRowCardProps) => {
           {renderSeparatedText(kanaGroup.kana, 'text-(--border-color)')}
         </div>
         <div className='text-[1.6rem] font-normal tracking-wide text-(--secondary-color)'>
-          {renderSeparatedText(kanaGroup.romanji, 'text-(--border-color)')}
+          {renderSeparatedText(kanaGroup.romaji, 'text-(--border-color)')}
         </div>
       </div>
     </div>

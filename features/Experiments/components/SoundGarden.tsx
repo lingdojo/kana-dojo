@@ -7,7 +7,7 @@ import { hiraganaOnly } from '../data/kanaData';
 
 interface GardenTile {
   kana: string;
-  romanji: string;
+  romaji: string;
   isActive: boolean;
 }
 
@@ -22,7 +22,7 @@ const SoundGarden = () => {
     // Use first 20 hiragana for the garden
     const gardenKana = hiraganaOnly.slice(0, 20).map(k => ({
       kana: k.kana,
-      romanji: k.romanji,
+      romaji: k.romaji,
       isActive: false,
     }));
     setTiles(gardenKana);
@@ -31,7 +31,7 @@ const SoundGarden = () => {
   const handleTileClick = useCallback(
     (index: number) => {
       playCorrect();
-      setLastPlayed(tiles[index]?.romanji || null);
+      setLastPlayed(tiles[index]?.romaji || null);
 
       setTiles(prev =>
         prev.map((tile, i) => ({
@@ -111,7 +111,7 @@ const SoundGarden = () => {
                   : 'text-(--secondary-color)',
               )}
             >
-              {tile.romanji}
+              {tile.romaji}
             </span>
           </button>
         ))}

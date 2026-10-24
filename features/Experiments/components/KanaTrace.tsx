@@ -104,7 +104,7 @@ export default function KanaTrace() {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const link = document.createElement('a');
-    link.download = `kana-trace-${targetKana.romanji}.png`;
+    link.download = `kana-trace-${targetKana.romaji}.png`;
     link.href = canvas.toDataURL();
     link.click();
   };
@@ -187,7 +187,7 @@ export default function KanaTrace() {
               </div>
               <div>
                 <p className='text-xl font-bold text-(--main-color) capitalize'>
-                  {targetKana.romanji}
+                  {targetKana.romaji}
                 </p>
                 <button
                   onClick={nextKana}

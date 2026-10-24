@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { isKanaInputAnswerCorrect } from '@/features/Kana/lib/isKanaInputAnswerCorrect';
 import { kana } from '@/features/Kana/data/kana';
 
-const altRomanjiMap = new Map<string, string[]>([
+const altRomajiMap = new Map<string, string[]>([
   ['し', ['si']],
   ['ち', ['ti']],
   ['つ', ['tu']],
@@ -18,7 +18,7 @@ const altRomanjiMap = new Map<string, string[]>([
 const buildAltMapFromData = (): Map<string, string[]> => {
   const map = new Map<string, string[]>();
   kana.forEach(group => {
-    group.altRomanji?.forEach((alternatives, idx) => {
+    group.altRomaji?.forEach((alternatives, idx) => {
       if (alternatives.length > 0) map.set(group.kana[idx], alternatives);
     });
   });
@@ -33,7 +33,7 @@ describe('isKanaInputAnswerCorrect', () => {
         correctChar: 'し',
         targetChar: 'shi',
         isReverse: false,
-        altRomanjiMap,
+        altRomajiMap,
       }),
     ).toBe(true);
   });
@@ -45,7 +45,7 @@ describe('isKanaInputAnswerCorrect', () => {
         correctChar: 'お',
         targetChar: 'Ō',
         isReverse: false,
-        altRomanjiMap,
+        altRomajiMap,
       }),
     ).toBe(true);
   });
@@ -57,7 +57,7 @@ describe('isKanaInputAnswerCorrect', () => {
         correctChar: 'し',
         targetChar: 'shi',
         isReverse: false,
-        altRomanjiMap,
+        altRomajiMap,
       }),
     ).toBe(true);
   });
@@ -69,7 +69,7 @@ describe('isKanaInputAnswerCorrect', () => {
         correctChar: 'ん',
         targetChar: 'n',
         isReverse: false,
-        altRomanjiMap,
+        altRomajiMap,
       }),
     ).toBe(true);
 
@@ -79,7 +79,7 @@ describe('isKanaInputAnswerCorrect', () => {
         correctChar: 'ン',
         targetChar: 'n',
         isReverse: false,
-        altRomanjiMap,
+        altRomajiMap,
       }),
     ).toBe(true);
   });
@@ -91,7 +91,7 @@ describe('isKanaInputAnswerCorrect', () => {
         correctChar: 'し',
         targetChar: 'shi',
         isReverse: false,
-        altRomanjiMap,
+        altRomajiMap,
       }),
     ).toBe(false);
   });
@@ -103,7 +103,7 @@ describe('isKanaInputAnswerCorrect', () => {
         correctChar: 'shi',
         targetChar: 'し',
         isReverse: true,
-        altRomanjiMap,
+        altRomajiMap,
       }),
     ).toBe(true);
 
@@ -113,7 +113,7 @@ describe('isKanaInputAnswerCorrect', () => {
         correctChar: 'shi',
         targetChar: 'し',
         isReverse: true,
-        altRomanjiMap,
+        altRomajiMap,
       }),
     ).toBe(false);
   });
@@ -125,7 +125,7 @@ describe('isKanaInputAnswerCorrect', () => {
         correctChar: 'ga',
         targetChar: 'が',
         isReverse: true,
-        altRomanjiMap,
+        altRomajiMap,
       }),
     ).toBe(true);
   });
@@ -138,7 +138,7 @@ describe('isKanaInputAnswerCorrect', () => {
         correctChar: 'しぶ',
         targetChar: 'shibu',
         isReverse: false,
-        altRomanjiMap,
+        altRomajiMap,
         promptParts: ['し', 'ぶ'],
         answerParts: ['shi', 'bu'],
       }),
@@ -153,7 +153,7 @@ describe('isKanaInputAnswerCorrect', () => {
         correctChar: 'ちて',
         targetChar: 'chite',
         isReverse: false,
-        altRomanjiMap,
+        altRomajiMap,
         promptParts: ['ち', 'て'],
         answerParts: ['chi', 'te'],
       }),
@@ -168,7 +168,7 @@ describe('isKanaInputAnswerCorrect', () => {
         correctChar: 'しぶ',
         targetChar: 'shibu',
         isReverse: false,
-        altRomanjiMap,
+        altRomajiMap,
         promptParts: ['し', 'ぶ'],
         answerParts: ['shi', 'bu'],
       }),
@@ -182,7 +182,7 @@ describe('isKanaInputAnswerCorrect', () => {
         correctChar: 'しふち',
         targetChar: 'shifuchi',
         isReverse: false,
-        altRomanjiMap,
+        altRomajiMap,
         promptParts: ['し', 'ふ', 'ち'],
         answerParts: ['shi', 'fu', 'chi'],
       }),
@@ -196,7 +196,7 @@ describe('isKanaInputAnswerCorrect', () => {
         correctChar: 'シツ',
         targetChar: 'shitsu',
         isReverse: false,
-        altRomanjiMap,
+        altRomajiMap,
         promptParts: ['シ', 'ツ'],
         answerParts: ['shi', 'tsu'],
       }),
@@ -210,7 +210,7 @@ describe('isKanaInputAnswerCorrect', () => {
         correctChar: 'shitsu',
         targetChar: 'シツ',
         isReverse: true,
-        altRomanjiMap,
+        altRomajiMap,
         promptParts: ['shi', 'tsu'],
         answerParts: ['シ', 'ツ'],
       }),
@@ -222,7 +222,7 @@ describe('isKanaInputAnswerCorrect', () => {
         correctChar: 'shitsu',
         targetChar: 'シツ',
         isReverse: true,
-        altRomanjiMap,
+        altRomajiMap,
         promptParts: ['shi', 'tsu'],
         answerParts: ['シ', 'ツ'],
       }),
@@ -236,7 +236,7 @@ describe('isKanaInputAnswerCorrect', () => {
         correctChar: 'shitsu',
         targetChar: 'シツ',
         isReverse: true,
-        altRomanjiMap,
+        altRomajiMap,
       }),
     ).toBe(true);
   });
@@ -248,7 +248,7 @@ describe('isKanaInputAnswerCorrect', () => {
         correctChar: 'しぶ',
         targetChar: 'shibu',
         isReverse: false,
-        altRomanjiMap,
+        altRomajiMap,
         promptParts: ['し', 'ぶ'],
         answerParts: ['shi', 'bu'],
       }),
@@ -263,11 +263,11 @@ describe('isKanaInputAnswerCorrect', () => {
         correctChar: 'し',
         targetChar: 'shi',
         isReverse: false,
-        altRomanjiMap,
+        altRomajiMap,
         promptParts: ['し', 'ぶ'],
         answerParts: ['shi'], // intentionally mismatched
       }),
-    ).toBe(true); // resolved via legacy fallback: altRomanjiMap.get('し') = ['si']
+    ).toBe(true); // resolved via legacy fallback: altRomajiMap.get('し') = ['si']
   });
 
   it('accepts di/du for ぢ/づ through the data-driven map', () => {
@@ -284,7 +284,7 @@ describe('isKanaInputAnswerCorrect', () => {
         correctChar: 'ぢ',
         targetChar: 'ji',
         isReverse: false,
-        altRomanjiMap: dataMap,
+        altRomajiMap: dataMap,
       }),
     ).toBe(true);
 
@@ -294,7 +294,7 @@ describe('isKanaInputAnswerCorrect', () => {
         correctChar: 'づ',
         targetChar: 'zu',
         isReverse: false,
-        altRomanjiMap: dataMap,
+        altRomajiMap: dataMap,
       }),
     ).toBe(true);
   });

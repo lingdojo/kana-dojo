@@ -28,7 +28,7 @@ export default function KanaNebula() {
       const newStar: StarKana = {
         id: idCounter.current++,
         kana: kanaObj.kana,
-        romaji: kanaObj.romanji,
+        romaji: kanaObj.romaji,
         x: Math.random() * 100,
         y: Math.random() * 100,
         z: Math.random() * 1000 + 500, // Travel distance

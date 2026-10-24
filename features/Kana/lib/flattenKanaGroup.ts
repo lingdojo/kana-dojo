@@ -3,7 +3,7 @@ import { kana } from '../data/kana';
 export type KanaCharacter = {
   kana: string;
   romaji: string;
-  altRomanji: string[];
+  altRomaji: string[];
   group: string;
 };
 
@@ -13,8 +13,8 @@ export function flattenKanaGroups(indices: number[]): KanaCharacter[] {
     if (!group) return [];
     return group.kana.map((char, idx) => ({
       kana: char,
-      romaji: group.romanji[idx],
-      altRomanji: group.altRomanji?.[idx] ?? [],
+      romaji: group.romaji[idx],
+      altRomaji: group.altRomaji?.[idx] ?? [],
       group: group.groupName,
     }));
   });

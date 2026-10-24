@@ -27,7 +27,7 @@ const KanaOrbit = () => {
       return {
         id: ringIdx * 100 + i,
         kana: kana.kana,
-        romanji: kana.romanji,
+        romaji: kana.romaji,
         ring: ringIdx,
         angle: (360 / ring.count) * i,
         ...ring,
@@ -84,7 +84,7 @@ const KanaOrbit = () => {
               {o.kana}
               {hoveredIdx === o.id && (
                 <span className='absolute -bottom-5 left-1/2 -translate-x-1/2 font-mono text-xs whitespace-nowrap'>
-                  {o.romanji}
+                  {o.romaji}
                 </span>
               )}
             </span>

@@ -108,17 +108,17 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
     [kanaGroupIndices],
   );
   const selectedRomaji = useMemo(
-    () => kanaGroupIndices.map(i => kana[i].romanji).flat(),
+    () => kanaGroupIndices.map(i => kana[i].romaji).flat(),
     [kanaGroupIndices],
   );
 
-  // Map: kana → alternative romanji
+  // Map: kana → alternative romaji
   // Example: 'ん' → ['nn']
-  const altRomanjiMap = useMemo(() => {
+  const altRomajiMap = useMemo(() => {
     const map = new Map<string, string[]>();
     kanaGroupIndices.forEach(i => {
       const group = kana[i];
-      group.altRomanji?.forEach((alternatives, idx) => {
+      group.altRomaji?.forEach((alternatives, idx) => {
         if (alternatives.length > 0) {
           map.set(group.kana[idx], alternatives);
         }
@@ -278,7 +278,7 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
       correctChar,
       targetChar,
       isReverse,
-      altRomanjiMap,
+      altRomajiMap,
       promptParts,
       answerParts,
     });
@@ -354,7 +354,7 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
       answerParts,
       inputValue: wrongInput,
       isReverse,
-      altRomanjiMap,
+      altRomajiMap,
     });
     promptParts.forEach((char, index) => {
       adaptiveSelector.updateCharacterWeight(char, positionResults[index]);

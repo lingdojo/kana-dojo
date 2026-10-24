@@ -28,7 +28,7 @@ export default function FlashRush() {
   const nextQuestion = useCallback(() => {
     const correct = allKana[Math.floor(Math.random() * allKana.length)];
     const others = allKana
-      .filter(k => k.romanji !== correct.romanji)
+      .filter(k => k.romaji !== correct.romaji)
       .sort(() => Math.random() - 0.5)
       .slice(0, 3);
 
@@ -199,7 +199,7 @@ export default function FlashRush() {
             )}
           >
             <span className='text-3xl font-bold text-(--main-color)'>
-              {option.romanji}
+              {option.romaji}
             </span>
           </motion.button>
         ))}

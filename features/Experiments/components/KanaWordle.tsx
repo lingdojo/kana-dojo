@@ -71,7 +71,7 @@ const KanaWordle = () => {
           Find the kana that sounds like:
         </p>
         <p className='mt-2 font-mono text-3xl text-(--accent-color)'>
-          "{target.romanji}"
+          "{target.romaji}"
         </p>
       </div>
 
@@ -135,7 +135,7 @@ const KanaWordle = () => {
           >
             {gameState === 'won'
               ? `🎉 Correct! Found in ${guesses.length} ${guesses.length === 1 ? 'try' : 'tries'}!`
-              : `😢 The answer was ${target.kana} (${target.romanji})`}
+              : `😢 The answer was ${target.kana} (${target.romaji})`}
           </p>
           <button
             onClick={restart}

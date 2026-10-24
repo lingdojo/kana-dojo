@@ -13,7 +13,7 @@ const KanaCatch = () => {
     Array<{
       id: number;
       kana: string;
-      romanji: string;
+      romaji: string;
       x: number;
       y: number;
       speed: number;
@@ -29,7 +29,7 @@ const KanaCatch = () => {
     return {
       id: idCounter,
       kana: kana.kana,
-      romanji: kana.romanji,
+      romaji: kana.romaji,
       x: Math.random() * 80 + 10,
       y: -5,
       speed: 0.3 + Math.random() * 0.3,
