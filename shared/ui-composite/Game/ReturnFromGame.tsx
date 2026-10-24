@@ -28,6 +28,7 @@ import {
   type LucideIcon,
 } from 'lucide-react';
 import GameScoreBar from './GameScoreBar';
+import QuizProgressIndicator from './QuizProgressIndicator';
 import { ActionButton } from '@/shared/ui/components/ActionButton';
 
 // Game mode icon configuration
@@ -207,6 +208,7 @@ const Return = ({ isHidden, gameMode, onQuit }: ReturnProps) => {
           />
         </button>
         <GameScoreBar />
+        <QuizProgressIndicator completedQuestions={numCorrectAnswers} />
         {/* Stats button - visible only on small screens */}
         <ActionButton
           borderRadius='xl'
