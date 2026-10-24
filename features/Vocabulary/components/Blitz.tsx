@@ -10,6 +10,7 @@ import FuriganaText from '@/shared/ui-composite/text/FuriganaText';
 import { getSelectionLabels } from '@/shared/utils/selectionFormatting';
 import { shuffle, pickOne } from '@/shared/utils/shuffle';
 import { isVocabularyMeaningAnswerCorrect } from '@/features/Vocabulary/lib/isVocabularyMeaningAnswerCorrect';
+import { getReverseWordDistractors } from '@/features/Vocabulary/lib/getReverseWordDistractors';
 
 export default function BlitzVocab() {
   const selectedVocabObjs = useVocabStore(state => state.selectedVocabObjs);
@@ -58,13 +59,12 @@ export default function BlitzVocab() {
     // Pick mode support with reverse mode
     generateOptions: (question, items, count, isReverse) => {
       if (isReverse) {
-        // Reverse: options are Japanese words
+        // Reverse: options are Japanese words. Words sharing the displayed
+        // meaning are excluded so the prompt has a single valid answer.
         const correctAnswer = question.word;
         const incorrectOptions = shuffle(
-          items.filter(item => item.word !== question.word),
-        )
-          .slice(0, count - 1)
-          .map(item => item.word);
+          getReverseWordDistractors(question, items),
+        ).slice(0, count - 1);
         return [correctAnswer, ...incorrectOptions];
       }
       // Normal: options are meanings
