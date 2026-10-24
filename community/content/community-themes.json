@@ -366,6 +366,12 @@
     "secondaryColor": "oklch(40.0% 0.110 250.0 / 1)"
   },
   {
+    "id": "taiko-thunder",
+    "backgroundColor": "oklch(17.0% 0.035 280.0 / 1)",
+    "mainColor": "oklch(68.0% 0.175 30.0 / 1)",
+    "secondaryColor": "oklch(78.0% 0.125 45.0 / 1)"
+  },
+  {
     "id": "sakura-latte",
     "backgroundColor": "oklch(95.0% 0.020 15.0 / 1)",
     "mainColor": "oklch(70.0% 0.155 350.0 / 1)",
