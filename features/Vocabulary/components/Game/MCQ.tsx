@@ -4,6 +4,7 @@ import { useState, useEffect, useRef, useMemo, memo } from 'react';
 import { CircleCheck, CircleX } from 'lucide-react';
 import { Random } from 'random-js';
 import { IVocabObj } from '@/features/Vocabulary/store/useVocabStore';
+import { getVocabularyIncorrectWordObjs } from '@/features/Vocabulary/lib/getVocabularyIncorrectWordObjs';
 import { useCorrect, useError } from '@/shared/hooks/generic/useAudio';
 import { buttonBorderStyles } from '@/shared/utils/styles';
 // import GameIntel from '@/shared/ui-composite/Game/GameIntel';
@@ -190,9 +191,11 @@ const VocabMCQ = ({ selectedWordObjs, isHidden }: VocabMCQProps) => {
 
   // Get incorrect options based on mode and quiz type
   const getIncorrectOptions = (): string[] => {
-    // Filter out the current word
-    const incorrectWordObjs = selectedWordObjs.filter(
-      obj => obj.word !== correctChar,
+    // Get valid incorrect options
+    const incorrectWordObjs = getVocabularyIncorrectWordObjs(
+      selectedWordObjs,
+      correctChar,
+      quizType,
     );
 
     if (quizType === 'meaning') {
