@@ -762,5 +762,16 @@
       "Naha"
     ],
     "correctIndex": 0
+  },
+  {
+    "question": "Which Japanese city is famous for its street food district, Dotonbori?",
+    "difficulty": "hard",
+    "answers": [
+      "Osaka",
+      "Niigata",
+      "Kagoshima",
+      "Takayama"
+    ],
+    "correctIndex": 0
   }
 ]
