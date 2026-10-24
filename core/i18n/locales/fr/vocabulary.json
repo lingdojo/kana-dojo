@@ -36,7 +36,12 @@
     "streak": "Série : {{count}}",
     "correct": "Correct !",
     "incorrect": "Incorrect",
-    "showAnswer": "Voir la réponse"
+    "showAnswer": "Voir la réponse",
+    "answerCues": {
+      "meaning": "Saisissez le sens",
+      "reading": "Saisissez la lecture",
+      "word": "Saisissez le mot japonais"
+    }
   },
   "modes": {
     "pick": "Mode choix",
