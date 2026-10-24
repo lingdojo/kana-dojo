@@ -370,5 +370,11 @@
   "termB": "letter (English)",
   "explanation": "手紙 means physical mail, not alphabet letters. (Set 4)",
   "example": "祖母に手紙を書きました。"
+},
+{
+  "termA": "ハイテンション (haitenshon)",
+  "termB": "high tension (English)",
+  "explanation": "Means very energetic mood. (Set 4)",
+  "example": "試合前はみんなハイテンションだった。"
 }
 ]
