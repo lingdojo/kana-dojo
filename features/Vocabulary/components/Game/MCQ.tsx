@@ -24,6 +24,7 @@ import {
   type VocabQuestionFormat,
   type VocabQuizType,
 } from '@/features/Vocabulary/components/Game/vocabFormatLock';
+import { getMCQDistractors } from '@/features/Vocabulary/lib/getMCQDistractors';
 import useClassicSessionStore from '@/shared/store/useClassicSessionStore';
 import { useSetProgressStore } from '@/features/Progress';
 
@@ -188,26 +189,17 @@ const VocabMCQ = ({ selectedWordObjs, isHidden }: VocabMCQProps) => {
         : correctWordObj?.meanings[0] // normal: show word, answer is meaning
       : correctWordObj?.reading; // reading quiz: answer is always reading
 
-  // Get incorrect options based on mode and quiz type
-  const getIncorrectOptions = (): string[] => {
-    // Filter out the current word
-    const incorrectWordObjs = selectedWordObjs.filter(
-      obj => obj.word !== correctChar,
+  // Get incorrect options based on mode and quiz type.
+  // getMCQDistractors excludes any candidate whose display string matches
+  // targetChar, preventing duplicate answer buttons (issue #32148).
+  const getIncorrectOptions = (): string[] =>
+    getMCQDistractors(
+      selectedWordObjs,
+      correctChar,
+      targetChar ?? '',
+      quizType,
+      isReverse,
     );
-
-    if (quizType === 'meaning') {
-      return incorrectWordObjs
-        .map(obj => (isReverse ? obj.word : obj.meanings[0]))
-        .sort(() => random.real(0, 1) - 0.5)
-        .slice(0, 2);
-    } else if (quizType === 'reading') {
-      return incorrectWordObjs
-        .map(obj => obj.reading)
-        .sort(() => random.real(0, 1) - 0.5)
-        .slice(0, 2);
-    }
-    return []; // Fallback in case quizType is neither 'meaning' nor 'reading'
-  };
 
   const randomIncorrectOptions = getIncorrectOptions();
 
@@ -234,6 +226,7 @@ const VocabMCQ = ({ selectedWordObjs, isHidden }: VocabMCQProps) => {
       ) as string[],
     );
     setWrongSelectedAnswers([]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [correctChar, hasWords, isReverse, quizType]);
 
   // A wrong answer keeps the current prompt on screen. Release the synchronous
@@ -489,4 +482,3 @@ const VocabMCQ = ({ selectedWordObjs, isHidden }: VocabMCQProps) => {
 };
 
 export default VocabMCQ;
-
