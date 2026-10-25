@@ -335,5 +335,13 @@
     "english": "no good",
     "region": "Kansai",
     "note": "Used for prohibition/failure. (Set 6)"
+  },
+  {
+    "dialect": "〜じゃけぇ",
+    "standardJapanese": "〜だから",
+    "english": "because",
+    "region": "Hiroshima",
+    "note": "Common causal ending. (Set 2)"
   }
 ]
+
