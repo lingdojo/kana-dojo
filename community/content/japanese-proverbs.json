@@ -11,6 +11,12 @@
     "english": "Carelessness is the greatest enemy",
     "meaning": "Don't let your guard down"
   },
+   {
+    "japanese": "時は金なり",
+    "romaji": "Toki wa kane nari",
+    "english": "Time is money",
+    "meaning": "Time is valuable, so use it wisely"
+  },
   {
     "japanese": "笑う門には福来る",
     "romaji": "Warau kado ni wa fuku kitaru",
@@ -412,5 +418,11 @@
   "romaji": "Shiranu ga hotoke",
   "english": "Not knowing is Buddha",
   "meaning": "Ignorance is bliss"
+},
+{
+  "japanese": "能ある鷹は爪を隠す",
+  "romaji": "Nou aru taka wa tsume wo kakusu",
+  "english": "A skilled hawk hides its talons",
+  "meaning": "True skill is modest"
 }
 ]

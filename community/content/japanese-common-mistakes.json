@@ -323,5 +323,10 @@
     "wrong": "毎日日本語を勉強していますから上手になります。",
     "correct": "毎日日本語を勉強しているので上手になります。",
     "explanation": "ので is smoother/neutral for reason. (Pattern set 4)"
+  },
+  {
+    "wrong": "友達に会うを楽しみにしています。",
+    "correct": "友達に会うのを楽しみにしています。",
+    "explanation": "Nominalize with の before を. (Pattern set 5)"
   }
 ]

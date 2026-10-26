@@ -468,27 +468,45 @@
     "secondaryColor": "oklch(70.0% 0.115 185.0 / 1)"
   },
   {
-  "id": "river-stone",
-  "backgroundColor": "oklch(19.0% 0.020 250.0 / 1)",
-  "mainColor": "oklch(72.0% 0.050 215.0 / 1)",
-  "secondaryColor": "oklch(60.0% 0.040 230.0 / 1)"
+    "id": "river-stone",
+    "backgroundColor": "oklch(19.0% 0.020 250.0 / 1)",
+    "mainColor": "oklch(72.0% 0.050 215.0 / 1)",
+    "secondaryColor": "oklch(60.0% 0.040 230.0 / 1)"
   },
   {
-  "id": "ryokan-evening",
-  "backgroundColor": "oklch(23.0% 0.038 280.0 / 1)",
-  "mainColor": "oklch(78.0% 0.130 55.0 / 1)",
-  "secondaryColor": "oklch(68.0% 0.095 30.0 / 1)"
+    "id": "ryokan-evening",
+    "backgroundColor": "oklch(23.0% 0.038 280.0 / 1)",
+    "mainColor": "oklch(78.0% 0.130 55.0 / 1)",
+    "secondaryColor": "oklch(68.0% 0.095 30.0 / 1)"
   },
   {
-  "id": "coastal-breeze",
-  "backgroundColor": "oklch(20.0% 0.035 225.0 / 1)",
-  "mainColor": "oklch(80.0% 0.120 210.0 / 1)",
-  "secondaryColor": "oklch(70.0% 0.085 195.0 / 1)"
+    "id": "coastal-breeze",
+    "backgroundColor": "oklch(20.0% 0.035 225.0 / 1)",
+    "mainColor": "oklch(80.0% 0.120 210.0 / 1)",
+    "secondaryColor": "oklch(70.0% 0.085 195.0 / 1)"
   },
   {
-  "id": "cherry-cola",
-  "backgroundColor": "oklch(18.0% 0.055 20.0 / 1)",
-  "mainColor": "oklch(58.0% 0.195 25.0 / 1)",
-  "secondaryColor": "oklch(70.0% 0.145 50.0 / 1)"
+    "id": "cherry-cola",
+    "backgroundColor": "oklch(18.0% 0.055 20.0 / 1)",
+    "mainColor": "oklch(58.0% 0.195 25.0 / 1)",
+    "secondaryColor": "oklch(70.0% 0.145 50.0 / 1)"
   },
+  {
+    "id": "gingko-gold",
+    "backgroundColor": "oklch(23.0% 0.030 85.0 / 1)",
+    "mainColor": "oklch(86.0% 0.165 95.0 / 1)",
+    "secondaryColor": "oklch(70.0% 0.115 75.0 / 1)"
+  },
+  {
+  "id": "umbrella-rain",
+  "backgroundColor": "oklch(22.0% 0.018 250.0 / 1)",
+  "mainColor": "oklch(70.0% 0.175 225.0 / 1)",
+  "secondaryColor": "oklch(75.0% 0.145 350.0 / 1)"
+},
+  {
+    "id": "onsen-steam",
+    "backgroundColor": "oklch(25.0% 0.022 210.0 / 1)",
+    "mainColor": "oklch(85.0% 0.085 215.0 / 1)",
+    "secondaryColor": "oklch(70.0% 0.065 195.0 / 1)"
+  }
 ]
