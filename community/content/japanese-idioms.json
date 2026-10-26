@@ -357,5 +357,35 @@
   "romaji": "Mizu ni nagasu",
   "english": "Let it flow in water",
   "meaning": "Let bygones be bygones. (Set 5)"
-}
+},
+  {
+  "japanese": "鼻が高い",
+  "romaji": "Hana ga takai",
+  "english": "High nose",
+  "meaning": "Feel proud. (Set 3)"
+  },
+  {
+    "japanese": "骨が折れる",
+    "romaji": "Hone ga oreru",
+    "english": "Bones break",
+    "meaning": "Requires considerable effort. (Set 3)"
+  },
+  {
+  "japanese": "念には念を入れる",
+  "romaji": "Nen ni wa nen o ireru",
+  "english": "Add caution to caution",
+  "meaning": "Take extra care. (Set 3)"
+  },
+  {
+    "japanese": "立つ鳥跡を濁さず",
+    "romaji": "Tatsu tori ato o nigosazu",
+    "english": "A bird leaves no mess",
+    "meaning": "Leave cleanly without trouble. (Set 3)"
+  },
+  {
+    "japanese": "念には念を入れる",
+    "romaji": "Nen ni wa nen o ireru",
+    "english": "Add caution to caution",
+    "meaning": "Take extra care. (Set 1)"
+  }
 ]
