@@ -425,5 +425,12 @@
   "english": "very",
   "region": "Kansai",
   "note": "Now used nationwide. (Set 5)"
+},   
+{
+  "dialect": "〜だがや",
+  "standardJapanese": "〜だよ",
+  "english": "sentence ending",
+  "region": "Nagoya",
+  "note": "Strong Nagoya marker. (Set 5)"
 }
 ]
