@@ -550,7 +550,7 @@
     "romaji": "Bucharati, kita!",
     "english": "Bucciarati is here! (alt wording 17) (alt wording 69)",
     "anime": "JoJo's Bizarre Adventure: Golden Wind",
-       "character": "Narancia Ghirga"
+    "character": "Narancia Ghirga"
   },
   {
     "japanese": "俺はガンダムだ！",
@@ -560,60 +560,60 @@
     "character": "Setsuna F. Seiei"
   },
   {
-  "japanese": "オラオラオラオラオラ！",
-  "romaji": "Ora ora ora ora ora!",
-  "english": "Ora ora ora ora ora! (alt wording 8) (alt wording 60)",
-  "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
-  "character": "Jotaro Kujo"
+    "japanese": "オラオラオラオラオラ！",
+    "romaji": "Ora ora ora ora ora!",
+    "english": "Ora ora ora ora ora! (alt wording 8) (alt wording 60)",
+    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+    "character": "Jotaro Kujo"
   },
   {
-  "japanese": "マママママ",
-  "romaji": "Mama mama mama",
-  "english": "Mama mama mama. (alt wording 29) (alt wording 81)",
-  "anime": "One Piece",
-  "character": "Charlotte Linlin (Big Mom)"
+    "japanese": "マママママ",
+    "romaji": "Mama mama mama",
+    "english": "Mama mama mama. (alt wording 29) (alt wording 81)",
+    "anime": "One Piece",
+    "character": "Charlotte Linlin (Big Mom)"
   },
   {
-  "japanese": "マママママ",
-  "romaji": "Mama mama mama",
-  "english": "Mama mama mama. (alt wording 29) (alt wording 81)",
-  "anime": "One Piece",
-  "character": "Charlotte Linlin (Big Mom)"
+    "japanese": "マママママ",
+    "romaji": "Mama mama mama",
+    "english": "Mama mama mama. (alt wording 29) (alt wording 81)",
+    "anime": "One Piece",
+    "character": "Charlotte Linlin (Big Mom)"
   },
   {
-  "japanese": "俺を誰だと思ってやがる!",
-  "romaji": "Ore o dare da to omotte yagaru!",
-  "english": "Who the hell do you think I am!",
-  "anime": "Gurren Lagann",
-  "character": "Kamina"
+    "japanese": "俺を誰だと思ってやがる!",
+    "romaji": "Ore o dare da to omotte yagaru!",
+    "english": "Who the hell do you think I am!",
+    "anime": "Gurren Lagann",
+    "character": "Kamina"
   },
   {
-  "japanese": "オラオラオラオラオラ！",
-  "romaji": "Ora ora ora ora ora!",
-  "english": "Ora ora ora ora ora! (alt wording 8) (alt wording 60)",
-  "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
-  "character": "Jotaro Kujo"
+    "japanese": "オラオラオラオラオラ！",
+    "romaji": "Ora ora ora ora ora!",
+    "english": "Ora ora ora ora ora! (alt wording 8) (alt wording 60)",
+    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+    "character": "Jotaro Kujo"
   },
   {
-  "japanese": "撃っていいのは撃たれる覚悟がある奴だけだ",
-  "romaji": "Utte ii no wa uterareru kakugo ga aru yatsu dake da",
-  "english": "Only those prepared to be shot should pull the trigger. (alt wording 45)",
-  "anime": "Code Geass: Lelouch of the Rebellion",
-  "character": "Lelouch vi Britannia"
+    "japanese": "撃っていいのは撃たれる覚悟がある奴だけだ",
+    "romaji": "Utte ii no wa uterareru kakugo ga aru yatsu dake da",
+    "english": "Only those prepared to be shot should pull the trigger. (alt wording 45)",
+    "anime": "Code Geass: Lelouch of the Rebellion",
+    "character": "Lelouch vi Britannia"
   },
   {
-  "japanese": "なにィ！？",
-  "romaji": "Nanii!?",
-  "english": "What?! (alt wording 9) (alt wording 61)",
-  "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
-  "character": "Joseph Joestar"
+    "japanese": "なにィ！？",
+    "romaji": "Nanii!?",
+    "english": "What?! (alt wording 9) (alt wording 61)",
+    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+    "character": "Joseph Joestar"
   },
   {
-  "japanese": "俺を誰だと思ってやがる!",
-  "romaji": "Ore o dare da to omotte yagaru!",
-  "english": "Who the hell do you think I am!",
-  "anime": "Gurren Lagann",
-  "character": "Kamina"
+    "japanese": "俺を誰だと思ってやがる!",
+    "romaji": "Ore o dare da to omotte yagaru!",
+    "english": "Who the hell do you think I am!",
+    "anime": "Gurren Lagann",
+    "character": "Kamina"
   },
   {
     "japanese": "あきらめたらそこで試合終了ですよ…？",
@@ -623,10 +623,73 @@
     "character": "Kaede Rukawa"
   },
   {
-  "japanese": "俺はガンダムだ！",
-  "romaji": "Ore wa Gandamu da!",
-  "english": "I am Gundam! (alt wording 25)",
-  "anime": "Mobile Suit Gundam 00",
-  "character": "Setsuna F. Seiei"
+    "japanese": "俺はガンダムだ！",
+    "romaji": "Ore wa Gandamu da!",
+    "english": "I am Gundam! (alt wording 25)",
+    "anime": "Mobile Suit Gundam 00",
+    "character": "Setsuna F. Seiei"
+  },
+  {
+    "japanese": "フォッフォッフォッ",
+    "romaji": "Fo fo fo fo",
+    "english": "Fosh fosh fosh fosh. (alt wording 28) (alt wording 80)",
+    "anime": "One Piece",
+    "character": "Kozuki Sukiyaki"
+  },
+  {
+    "japanese": "世界は残酷だ…それでも美しい",
+    "romaji": "Sekai wa zankoku da... soredemo utsukushii",
+    "english": "This world is cruel... yet so beautiful. (alt wording 26) (alt wording 78)",
+    "anime": "Attack on Titan",
+    "character": "Mikasa Ackerman"
+  },
+  {
+    "japanese": "月に代わっておしおきよ!",
+    "romaji": "Tsuki ni kawatte oshioki yo!",
+    "english": "In the name of the moon, I'll punish you!",
+    "anime": "Sailor Moon",
+    "character": "Usagi Tsukino"
+  },
+  {
+    "japanese": "だが…それがいい。",
+    "romaji": "Daga... sore ga ii.",
+    "english": "But... that's what I like. (alt wording 16) (alt wording 68)",
+    "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
+    "character": "Yoshikage Kira"
+  },
+  {
+    "japanese": "腕立て伏せ100回！上体起こし100回！スクワット100回！そしてランニング10km！これを毎日やる！！！",
+    "romaji": "Udetatefuse hyakkai! Jōtai okoshi hyakkai! Sukuwatto hyakkai! Soshite ranningu jū-kiromeetoru! Kore wo mainichi yaru!!!",
+    "english": "100 push-ups, 100 sit-ups, 100 squats, and a 10km run! Do this every single day!",
+    "anime": "One Punch Man",
+    "character": "Saitama"
+  },
+  {
+    "japanese": "だが…それがいい。",
+    "romaji": "Daga... sore ga ii.",
+    "english": "But... that's what I like.",
+    "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
+    "character": "Yoshikage Kira"
+  },
+  {
+    "japanese": "次にお前は「やれやれだぜ」と言う！",
+    "romaji": "Tsugi ni omae wa 'yare yare da ze' to iu!",
+    "english": "Next you'll say, 'Good grief!' (alt wording 10)",
+    "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
+    "character": "Joseph Joestar"
+  },
+  {
+    "japanese": "守るものがある限り、俺は負けない",
+    "romaji": "Mamoru mono ga aru kagiri, ore wa makenai",
+    "english": "As long as I have something to protect, I won't lose. (alt wording 43)",
+    "anime": "Bleach",
+    "character": "Ichigo Kurosaki"
+  },
+  {
+  "japanese": "痛みを伴わない教訓には意味がない",
+  "romaji": "Itami o tomonawanai kyoukun ni wa imi ga nai",
+  "english": "A lesson without pain is meaningless. (alt wording 35)",
+  "anime": "Fullmetal Alchemist: Brotherhood",
+  "character": "Edward Elric"
 }
 ]
