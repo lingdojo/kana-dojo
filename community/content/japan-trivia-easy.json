@@ -642,5 +642,16 @@
     "Deer"
   ],
   "correctIndex": 0
+},
+  {
+  "question": "Which Japanese dish consists of rice balls often wrapped in seaweed?",
+  "difficulty": "easy",
+  "answers": [
+    "Onigiri",
+    "Tempura",
+    "Sukiyaki",
+    "Yakitori"
+  ],
+  "correctIndex": 0
 }
 ]
