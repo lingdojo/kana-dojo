@@ -333,5 +333,10 @@
     "wrong": "日本語が好きをです。",
     "correct": "日本語が好きです。",
     "explanation": "好き takes が, not を. (Pattern set 6)"
+  },
+  {
+    "wrong": "東京は人が多いです、きれいです。",
+    "correct": "東京は人が多くて、きれいです。",
+    "explanation": "Use て-form to connect clauses. (Pattern set 3)"
   }
 ]
