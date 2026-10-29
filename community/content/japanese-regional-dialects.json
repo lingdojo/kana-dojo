@@ -356,5 +356,12 @@
     "english": "very",
     "region": "Yamaguchi/Hiroshima",
     "note": "Regional intensifier. (Set 3)"
-  }
+  },
+  {
+  "dialect": "なんくるないさ",
+  "standardJapanese": "なんとかなる",
+  "english": "it'll work out",
+  "region": "Okinawa",
+  "note": "Famous Okinawan resilience phrase. (Set 6)"
+}
 ]
