@@ -12,6 +12,16 @@ interface CharacterScore {
   accuracy: number;
 }
 
+type MasteryContentType = 'kana' | 'kanji' | 'vocabulary';
+type MasteryCounts = Record<string, { correct: number; incorrect: number }>;
+type ContentMastery = Record<MasteryContentType, MasteryCounts>;
+
+const emptyContentMastery = (): ContentMastery => ({
+  kana: {},
+  kanji: {},
+  vocabulary: {},
+});
+
 // Gauntlet-specific stats (Requirements 4.1-4.10)
 interface GauntletStats {
   totalRuns: number;
@@ -39,7 +49,8 @@ interface AllTimeStats {
   totalCorrect: number;
   totalIncorrect: number;
   bestStreak: number;
-  characterMastery: Record<string, { correct: number; incorrect: number }>;
+  characterMastery: MasteryCounts;
+  contentMastery: ContentMastery;
   // Content-specific tracking (Requirements 1.1-1.8, 2.1-2.10, 3.1-3.6)
   hiraganaCorrect: number;
   katakanaCorrect: number;
@@ -124,6 +135,7 @@ interface IStatsState {
   incrementCharacterScore: (
     character: string,
     field: 'correct' | 'wrong',
+    contentType: MasteryContentType,
   ) => void;
 
   // Progress indicators
@@ -301,7 +313,7 @@ const useStatsStore = create<IStatsState>()(
         })),
 
       characterScores: {},
-      incrementCharacterScore: (character, field) =>
+      incrementCharacterScore: (character, field, contentType) =>
         set(s => {
           const currentScore = s.characterScores[character] || {
             correct: 0,
@@ -327,6 +339,19 @@ const useStatsStore = create<IStatsState>()(
               ] + 1,
           };
 
+          const contentMastery =
+            s.allTimeStats.contentMastery ?? emptyContentMastery();
+          const typedMastery = { ...contentMastery[contentType] };
+          const typedScore = typedMastery[character] ?? {
+            correct: 0,
+            incorrect: 0,
+          };
+          const scoreField = field === 'correct' ? 'correct' : 'incorrect';
+          typedMastery[character] = {
+            ...typedScore,
+            [scoreField]: typedScore[scoreField] + 1,
+          };
+
           return {
             characterScores: {
               ...s.characterScores,
@@ -335,6 +360,10 @@ const useStatsStore = create<IStatsState>()(
             allTimeStats: {
               ...s.allTimeStats,
               characterMastery: mastery,
+              contentMastery: {
+                ...contentMastery,
+                [contentType]: typedMastery,
+              },
             },
           };
         }),
@@ -434,6 +463,7 @@ const useStatsStore = create<IStatsState>()(
         totalIncorrect: 0,
         bestStreak: 0,
         characterMastery: {},
+        contentMastery: emptyContentMastery(),
         // Content-specific tracking
         hiraganaCorrect: 0,
         katakanaCorrect: 0,
@@ -535,6 +565,7 @@ const useStatsStore = create<IStatsState>()(
             totalIncorrect: 0,
             bestStreak: 0,
             characterMastery: {},
+            contentMastery: emptyContentMastery(),
             // Content-specific tracking
             hiraganaCorrect: 0,
             katakanaCorrect: 0,
@@ -815,6 +846,14 @@ const useStatsStore = create<IStatsState>()(
             kanjiCorrectByLevel:
               persisted?.allTimeStats?.kanjiCorrectByLevel ?? {},
             characterMastery: persisted?.allTimeStats?.characterMastery ?? {},
+            // Legacy characterMastery has no content type. Keep it for existing
+            // progress displays, but never infer achievement credit from it.
+            contentMastery: {
+              kana: persisted?.allTimeStats?.contentMastery?.kana ?? {},
+              kanji: persisted?.allTimeStats?.contentMastery?.kanji ?? {},
+              vocabulary:
+                persisted?.allTimeStats?.contentMastery?.vocabulary ?? {},
+            },
           },
         };
       },

@@ -3,6 +3,7 @@ import useAchievementStore, {
   ACHIEVEMENTS,
 } from '@/features/Achievements/store/useAchievementStore';
 import { useStatsStore } from '@/features/Progress';
+import { countMasteredVocabulary } from '@/features/Achievements/lib/countMasteredVocabulary';
 import { useClick } from '@/shared/hooks/generic/useAudio';
 import { useShallow } from 'zustand/react/shallow';
 import { CategoryId } from './constants';
@@ -109,23 +110,14 @@ export const useAchievementProgress = () => {
           const contentType = additional?.contentType;
           const targetAccuracy = target;
 
-          const entries = Object.entries(allTimeStats.characterMastery ?? {});
-          let relevantEntries: Array<
-            [string, { correct: number; incorrect: number }]
-          > = [];
-
           if (
             contentType === 'vocabulary' &&
             additional?.minAnswers !== undefined
           ) {
-            relevantEntries = entries.filter(([key]) => key.length !== 1);
-            let masteredCount = 0;
-            for (const [, s] of relevantEntries) {
-              const tot = s.correct + s.incorrect;
-              if (tot > 0 && (s.correct / tot) * 100 >= targetAccuracy)
-                masteredCount++;
-            }
-            current = masteredCount;
+            current = countMasteredVocabulary(
+              allTimeStats.contentMastery?.vocabulary,
+              targetAccuracy,
+            );
             target = additional.minAnswers;
           } else {
             isPercentage = true;
