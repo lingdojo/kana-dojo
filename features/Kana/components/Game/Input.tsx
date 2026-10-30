@@ -4,7 +4,11 @@ import { kana } from '@/features/Kana/data/kana';
 import useKanaStore from '@/features/Kana/store/useKanaStore';
 import { motion } from 'framer-motion';
 import clsx from 'clsx';
-import { useClick, useCorrect, useError } from '@/shared/hooks/generic/useAudio';
+import {
+  useClick,
+  useCorrect,
+  useError,
+} from '@/shared/hooks/generic/useAudio';
 // import GameIntel from '@/shared/ui-composite/Game/GameIntel';
 import { useStatsStore } from '@/features/Progress';
 import { useShallow } from 'zustand/react/shallow';
@@ -42,9 +46,14 @@ type BottomBarState = 'check' | 'correct' | 'wrong';
 interface InputGameProps {
   isHidden: boolean;
   isReverse?: boolean;
+  milestoneContinueSignal: number;
 }
 
-const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
+const InputGame = ({
+  isHidden,
+  isReverse = false,
+  milestoneContinueSignal,
+}: InputGameProps) => {
   const logAttempt = useClassicSessionStore(state => state.logAttempt);
   const {
     score,
@@ -89,6 +98,7 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const justAnsweredRef = useRef(false);
+  const lastMilestoneContinueSignalRef = useRef(milestoneContinueSignal);
   const {
     targetLength,
     recordCorrect: recordTargetLengthCorrect,
@@ -141,7 +151,12 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
   const buildTargetPair = useCallback(() => {
     const sourceArray = isReverse ? selectedRomaji : selectedKana;
     if (sourceArray.length === 0) {
-      return { correctChar: '', targetChar: '', promptParts: [], answerParts: [] };
+      return {
+        correctChar: '',
+        targetChar: '',
+        promptParts: [],
+        answerParts: [],
+      };
     }
 
     const used = new Set<string>();
@@ -180,13 +195,17 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
   const answerParts = pairData.answerParts;
   const pauseTimer = useCallback(() => {
     if (answerStartTimeRef.current !== null) {
-      elapsedTimeMsRef.current += performance.now() - answerStartTimeRef.current;
+      elapsedTimeMsRef.current +=
+        performance.now() - answerStartTimeRef.current;
       answerStartTimeRef.current = null;
     }
   }, []);
   const getElapsedTimeMs = useCallback(() => {
     if (answerStartTimeRef.current !== null) {
-      return elapsedTimeMsRef.current + (performance.now() - answerStartTimeRef.current);
+      return (
+        elapsedTimeMsRef.current +
+        (performance.now() - answerStartTimeRef.current)
+      );
     }
     return elapsedTimeMsRef.current;
   }, []);
@@ -220,10 +239,7 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
       const isSpace = event.code === 'Space' || event.key === ' ';
       const isContinueShortcut = isEnter || isSpace;
 
-      if (
-        isContinueShortcut &&
-        shouldSuppressContinueKeyboardShortcut()
-      ) {
+      if (isContinueShortcut && shouldSuppressContinueKeyboardShortcut()) {
         event.preventDefault();
         return;
       }
@@ -373,13 +389,28 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
     });
   };
 
-  const handleContinue = useCallback(() => {
-    playClick();
+  const advanceToNextExercise = useCallback(() => {
     setInputValue('');
     generateNewCharacter();
     setBottomBarState('check');
     startTimer();
-  }, [playClick, generateNewCharacter, startTimer]);
+  }, [generateNewCharacter, startTimer]);
+
+  const handleContinue = useCallback(() => {
+    playClick();
+    advanceToNextExercise();
+  }, [playClick, advanceToNextExercise]);
+
+  useEffect(() => {
+    if (milestoneContinueSignal === lastMilestoneContinueSignalRef.current) {
+      return;
+    }
+
+    lastMilestoneContinueSignalRef.current = milestoneContinueSignal;
+    //This parent signal intentionally triggers the state changes in the child component for a fresh exercise.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    advanceToNextExercise();
+  }, [milestoneContinueSignal, advanceToNextExercise]);
 
   const _gameMode = isReverse ? 'reverse input' : 'input';
   const canCheck = inputValue.trim().length > 0 && bottomBarState !== 'correct';
@@ -476,4 +507,3 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
 };
 
 export default InputGame;
-

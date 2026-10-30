@@ -64,6 +64,7 @@ const Game = () => {
   const [isSelectionReady, setIsSelectionReady] = useState(false);
   const [view, setView] = useState<'playing' | 'summary'>('playing');
   const [activeMilestone, setActiveMilestone] = useState<number | null>(null);
+  const [milestoneContinueSignal, setMilestoneContinueSignal] = useState(0);
   const [sessionId, setSessionId] = useState<string | null>(null);
   const [sessionNonce, setSessionNonce] = useState(0);
   const setActiveSessionId = useClassicSessionStore(
@@ -172,6 +173,11 @@ const Game = () => {
     setSessionNonce(prev => prev + 1);
   };
 
+  const handleMilestoneDismiss = () => {
+    setActiveMilestone(null);
+    setMilestoneContinueSignal(prev => prev + 1);
+  };
+
   if (!isSelectionReady) {
     return (
       <div className='flex min-h-[100dvh] items-center justify-center text-(--secondary-color)'>
@@ -201,14 +207,21 @@ const Game = () => {
         ) : gameMode.toLowerCase() === 'tiles' ? (
           <TilesMode isHidden={showStats || view !== 'playing'} />
         ) : gameMode.toLowerCase() === 'type' ? (
-          <Input isHidden={showStats || view !== 'playing'} />
+          <Input
+            isHidden={showStats || view !== 'playing'}
+            milestoneContinueSignal={milestoneContinueSignal}
+          />
         ) : gameMode.toLowerCase() === 'anti-type' ? (
-          <Input isHidden={showStats || view !== 'playing'} isReverse={true} />
+          <Input
+            isHidden={showStats || view !== 'playing'}
+            isReverse={true}
+            milestoneContinueSignal={milestoneContinueSignal}
+          />
         ) : null}
       </div>
       <StreakMilestoneOverlay
         milestone={activeMilestone}
-        onDismiss={() => setActiveMilestone(null)}
+        onDismiss={handleMilestoneDismiss}
       />
       {view === 'summary' && (
         <SessionSummaryScreen
