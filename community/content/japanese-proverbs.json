@@ -11,6 +11,12 @@
     "english": "Carelessness is the greatest enemy",
     "meaning": "Don't let your guard down"
   },
+   {
+    "japanese": "時は金なり",
+    "romaji": "Toki wa kane nari",
+    "english": "Time is money",
+    "meaning": "Time is valuable, so use it wisely"
+  },
   {
     "japanese": "笑う門には福来る",
     "romaji": "Warau kado ni wa fuku kitaru",
@@ -358,5 +364,11 @@
     "romaji": "Isogaba maware",
     "english": "If you are in a hurry, go around",
     "meaning": "Haste makes waste; the slower path is faster"
+  },
+  {
+    "japanese": "覆水盆に返らず",
+    "romaji": "Fukusui bon ni kaerazu",
+    "english": "Spilled water will not return to the tray",
+    "meaning": "What is done cannot be undone"
   }
 ]
