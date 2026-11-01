@@ -1,7 +1,8 @@
 // Helpers to export/import user preferences and stats (client-side only)
 
-import { preferencesBackup } from '@/features/Preferences';
-import { progressBackup } from '@/features/Progress';
+import { preferencesBackup } from '@/features/Preferences/facade';
+import { progressBackup } from '@/features/Progress/facade';
+import { achievementsBackup } from '@/features/Achievements/facade';
 
 // JSON-safe type
 export type JSONValue =
@@ -18,6 +19,9 @@ export type BackupFile = {
   theme?: Record<string, JSONValue>;
   customTheme?: Record<string, JSONValue>;
   stats?: Record<string, JSONValue>;
+  achievements?: Record<string, JSONValue>;
+  visits?: string[];
+  setProgress?: Record<string, JSONValue>;
 };
 
 function isPlainObject(v: unknown): v is Record<string, unknown> {
@@ -70,10 +74,17 @@ function getAppVersion(): string {
   return env?.NEXT_PUBLIC_APP_VERSION ?? 'dev';
 }
 
-export function createBackup(): BackupFile {
+export async function createBackup(): Promise<BackupFile> {
   const themeState = preferencesBackup.getPreferencesState();
   const customThemeState = preferencesBackup.getCustomThemeState();
   const statsState = progressBackup.getStatsState();
+  const achievementsState = achievementsBackup.getAchievementsState();
+
+  // Async reads from localforage (IndexedDB)
+  const [visits, setProgress] = await Promise.all([
+    progressBackup.getVisits(),
+    progressBackup.getSetProgress(),
+  ]);
 
   return {
     version: getAppVersion(),
@@ -81,10 +92,15 @@ export function createBackup(): BackupFile {
     theme: toJSONValue(themeState) as Record<string, JSONValue>,
     customTheme: toJSONValue(customThemeState) as Record<string, JSONValue>,
     stats: toJSONValue(statsState) as Record<string, JSONValue>,
+    achievements: toJSONValue(achievementsState) as Record<string, JSONValue>,
+    visits,
+    setProgress: setProgress
+      ? (toJSONValue(setProgress) as Record<string, JSONValue>)
+      : undefined,
   };
 }
 
-export function applyBackup(data: BackupFile): boolean {
+export async function applyBackup(data: BackupFile): Promise<boolean> {
   try {
     if (data.theme) {
       const current = preferencesBackup.getPreferencesState();
@@ -101,6 +117,46 @@ export function applyBackup(data: BackupFile): boolean {
       const picked = filterToKnownKeys(current, data.stats);
       progressBackup.setStatsState(picked);
     }
+    if (data.achievements) {
+      const current = achievementsBackup.getAchievementsState();
+      const picked = filterToKnownKeys(current, data.achievements);
+      achievementsBackup.setAchievementsState(picked);
+    }
+
+    // Async writes to localforage (IndexedDB)
+    const asyncOps: Promise<void>[] = [];
+
+    if (Array.isArray(data.visits)) {
+      const validVisits = data.visits.filter(
+        d => typeof d === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(d),
+      );
+      asyncOps.push(progressBackup.setVisits(validVisits));
+    }
+
+    if (data.setProgress) {
+      const sp = data.setProgress;
+      if (
+        sp.version === 1 &&
+        isPlainObject(sp.kanji) &&
+        isPlainObject(sp.vocabulary)
+      ) {
+        asyncOps.push(
+          progressBackup.setSetProgress({
+            version: 1,
+            updatedAt:
+              typeof sp.updatedAt === 'number' ? sp.updatedAt : Date.now(),
+            kanji: sp.kanji as Record<string, { correct: number }>,
+            vocabulary: sp.vocabulary as Record<
+              string,
+              { meaningCorrect: number; readingCorrect: number }
+            >,
+          }),
+        );
+      }
+    }
+
+    await Promise.all(asyncOps);
+
     return true;
   } catch (err) {
     console.error('[backup] apply failed', err);
