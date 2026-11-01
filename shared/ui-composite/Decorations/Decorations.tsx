@@ -72,7 +72,9 @@ const GRID_COL_CLASSES =
 const CHAR_SIZE_CLASSES =
   'text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl';
 const DIMMED_OPACITY_CLASS = 'opacity-25';
-const ENABLE_MODE_SETUP_DECORATIONS = false;
+// Flip this to `true` to render decorations while developing locally.
+const ENABLE_DECORATIONS_IN_DEVELOPMENT = true;
+const ENABLE_MODE_SETUP_DECORATIONS = true;
 const ENABLE_STREAK_MILESTONE_DECORATIONS = true;
 
 const getBreakpointKey = (width: number): BreakpointKey => {
@@ -329,24 +331,36 @@ StaticChar.displayName = 'StaticChar';
 // MAIN COMPONENT
 // ============================================================================
 
-const Decorations = ({
-  expandDecorations,
-  forceShow = false,
-  interactive = false,
-  context = 'main-menu',
-}: {
+interface DecorationsProps {
   expandDecorations: boolean;
+  dimmedOpacityClass?: string;
   forceShow?: boolean;
   interactive?: boolean;
   context?: 'main-menu' | 'mode-setup' | 'streak-milestone';
-}) => {
-  if (
-    (context === 'mode-setup' && !ENABLE_MODE_SETUP_DECORATIONS) ||
-    (context === 'streak-milestone' && !ENABLE_STREAK_MILESTONE_DECORATIONS)
-  ) {
+}
+
+const Decorations = (props: DecorationsProps) => {
+  const isDisabledInDevelopment =
+    process.env.NODE_ENV === 'development' &&
+    !ENABLE_DECORATIONS_IN_DEVELOPMENT;
+  const isDisabledForContext =
+    (props.context === 'mode-setup' && !ENABLE_MODE_SETUP_DECORATIONS) ||
+    (props.context === 'streak-milestone' &&
+      !ENABLE_STREAK_MILESTONE_DECORATIONS);
+
+  if (isDisabledInDevelopment || isDisabledForContext) {
     return null;
   }
 
+  return <DecorationsInner {...props} />;
+};
+
+const DecorationsInner = ({
+  expandDecorations,
+  dimmedOpacityClass = DIMMED_OPACITY_CLASS,
+  forceShow = false,
+  interactive = false,
+}: DecorationsProps) => {
   const [styles, setStyles] = useState<CharacterStyle[]>([]);
   const [visibleCount, setVisibleCount] = useState<number>(() =>
     calculateVisibleCount(),
@@ -416,6 +430,8 @@ const Decorations = ({
 
   // Inject animation keyframes once when component mounts (for interactive mode only)
   useEffect(() => {
+    if (!interactive) return;
+
     const styleId = 'decorations-animation-keyframes';
     // Only inject if not already present
     if (document.getElementById(styleId)) return;
@@ -432,7 +448,7 @@ const Decorations = ({
         existingStyle.remove();
       }
     };
-  }, []);
+  }, [interactive]);
 
   // Memoize grid content - using separate components for interactive vs static
   const gridContent = useMemo(() => {
@@ -452,7 +468,11 @@ const Decorations = ({
     } else {
       // Static mode: simple display, no animations
       return styles.map((style, index) => (
-        <StaticChar key={index} style={style} intrinsicSize={layoutConfig.cellSize} />
+        <StaticChar
+          key={index}
+          style={style}
+          intrinsicSize={layoutConfig.cellSize}
+        />
       ));
     }
   }, [styles, interactive, handleExplode, layoutConfig.cellSize]);
@@ -464,15 +484,12 @@ const Decorations = ({
       <div
         className={clsx(
           'fixed inset-0 overflow-hidden',
-          expandDecorations ? 'opacity-100' : DIMMED_OPACITY_CLASS,
+          expandDecorations ? 'opacity-100' : dimmedOpacityClass,
           interactive ? 'pointer-events-auto' : 'pointer-events-none',
         )}
       >
         <div
-          className={clsx(
-            'grid h-full w-full gap-0.5 p-2',
-            GRID_COL_CLASSES,
-          )}
+          className={clsx('grid h-full w-full gap-0.5 p-2', GRID_COL_CLASSES)}
         >
           {gridContent}
         </div>

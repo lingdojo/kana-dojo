@@ -8,33 +8,36 @@ import { useEffect } from 'react';
  */
 export default function ServiceWorkerRegistration() {
   useEffect(() => {
+    let updateInterval: ReturnType<typeof setInterval> | undefined;
+    let cancelled = false;
+    let onLoad: (() => void) | undefined;
+
     if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        const registerServiceWorker = async () => {
-          try {
-            const registration = await navigator.serviceWorker.register(
-              '/sw.js',
-              {
-                scope: '/sounds/',
-              },
-            );
+    const registerServiceWorker = async () => {
+      try {
+        const registration = await navigator.serviceWorker.register('/sw.js', {
+          scope: '/',
+        });
 
-            console.warn('Audio SW registered:', registration.scope);
+        if (cancelled) return;
+        updateInterval = setInterval(() => {
+          void registration.update();
+        }, 60 * 60 * 1000);
+      } catch (error) {
+        console.warn('SW registration failed:', error);
+      }
+    };
 
-            setInterval(
-              () => {
-                registration.update();
-              },
-              60 * 60 * 1000,
-            );
-          } catch (error) {
-            console.warn('SW registration failed:', error);
-          }
-        };
-
-        void registerServiceWorker();
-      });
+    onLoad = () => void registerServiceWorker();
+    if (document.readyState === 'complete') onLoad();
+    else window.addEventListener('load', onLoad, { once: true });
     }
+
+    return () => {
+      cancelled = true;
+      if (onLoad) window.removeEventListener('load', onLoad);
+      if (updateInterval) clearInterval(updateInterval);
+    };
   }, []);
 
   return null;

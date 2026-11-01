@@ -1,4 +1,18 @@
 // instrumentation-client.ts
+import * as Sentry from '@sentry/nextjs';
+
+Sentry.init({
+  dsn: 'https://a6f82883d78e424ee7b578556b78743d@o4511608063197184.ingest.us.sentry.io/4511608067981312',
+  // Performance rescue: Sentry Replay is intentionally disabled for now.
+  // integrations: [Sentry.replayIntegration()],
+  tracesSampleRate: 0.1,
+  enableLogs: true,
+  // replaysSessionSampleRate: 0.1,
+  // replaysOnErrorSampleRate: 1.0,
+  sendDefaultPii: true,
+});
+
+export const onRouterTransitionStart = Sentry.captureRouterTransitionStart;
 
 /**
  * Global Chunk Load Error Handler
@@ -52,24 +66,43 @@ if (typeof window !== 'undefined' && !sessionStorage.getItem(RELOAD_FLAG)) {
 }
 if (process.env.NODE_ENV === 'development') {
   console.log('PostHog client instrumentation disabled in development mode.');
+}
+
+/*
+ * Performance rescue: PostHog is intentionally disabled without deleting the
+ * integration. Re-enable only after a measured analytics rollout.
 } else if (
   process.env.NODE_ENV === 'production' &&
   process.env.NEXT_PUBLIC_VERCEL_ENV === 'production'
 ) {
   // Dynamically import PostHog only in actual production deployments (not previews)
-  import('posthog-js').then(module => {
-    const posthog = module.default;
-    const posthogKey = process.env.NEXT_PUBLIC_POSTHOG_KEY;
+  import('posthog-js')
+    .then(module => {
+      const posthog = module?.default;
+      if (typeof posthog?.init !== 'function') {
+        console.warn('[PostHog] Loaded module has no init(); skipping.');
+        return;
+      }
 
-    if (posthogKey) {
-      posthog.init(posthogKey, {
-        api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST,
-        defaults: '2025-05-24',
-      });
-    } else {
-      console.warn(
-        'NEXT_PUBLIC_POSTHOG_KEY is not set; PostHog will not be initialized.',
-      );
-    }
-  });
+      const posthogKey = process.env.NEXT_PUBLIC_POSTHOG_KEY;
+      if (!posthogKey) {
+        console.warn(
+          'NEXT_PUBLIC_POSTHOG_KEY is not set; PostHog will not be initialized.',
+        );
+        return;
+      }
+
+      try {
+        posthog.init(posthogKey, {
+          api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST,
+          defaults: '2025-05-24',
+        });
+      } catch (err) {
+        console.error('[PostHog] init() failed:', err);
+      }
+    })
+    .catch(err => {
+      console.error('[PostHog] Failed to load posthog-js:', err);
+    });
 }
+*/

@@ -11,6 +11,12 @@ import { removeLocaleFromPath } from '@/shared/utils/pathUtils';
 import { useTranslations } from 'next-intl';
 import DevNotice from '@/shared/ui-composite/misc/DevNotice';
 import RandomFact from '@/shared/ui-composite/misc/RandomFact';
+// Temporarily disabled AdSense placement.
+// import AdSenseDisplay from '@/shared/ui-composite/Ads/AdSenseDisplay';
+// const KANA_INFO_AD_SLOT = '5772398513';
+// const isKanaInfoAdEnabled =
+//   process.env.NODE_ENV === 'production' &&
+//   process.env.NEXT_PUBLIC_VERCEL_ENV === 'production';
 
 const Info = () => {
   const pathname = usePathname();
@@ -54,56 +60,65 @@ const Info = () => {
   );
 
   return (
-    <div
-      className={clsx(
-        'flex w-full flex-col gap-1 overflow-hidden rounded-2xl p-4',
-        cardBorderStyles,
-      )}
-    >
-      <motion.h3
+    <>
+      <div
         className={clsx(
-          'group text-xl hover:cursor-pointer',
-          'flex flex-row items-center gap-1',
+          'flex w-full flex-col gap-1 overflow-hidden rounded-2xl p-4',
+          cardBorderStyles,
         )}
-        onClick={() => {
-          playClick();
-          setShowInfo(showInfo => !showInfo);
-        }}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.4, ease: 'linear' }}
       >
-        <ChevronUp
+        <motion.h3
           className={clsx(
-            'duration-250',
-            'text-(--border-color)',
-            'max-md:group-active:text-(--secondary-color)',
-            'md:group-hover:text-(--secondary-color)',
-            !showInfo && 'rotate-180',
+            'group text-xl hover:cursor-pointer',
+            'flex flex-row items-center gap-1',
           )}
-          size={24}
-        />
-        {header}
-      </motion.h3>
-      <motion.div
-        className={clsx(
-          'overflow-hidden duration-300',
-          showInfo ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0',
-          // 'text-(--secondary-color)'
-        )}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, ease: 'linear' }}
-      >
-        {content}
-        {normalizedPath === '/' && (
-          <>
-            <DevNotice />
-            <RandomFact />
-          </>
-        )}
-      </motion.div>
-    </div>
+          onClick={() => {
+            playClick();
+            setShowInfo(showInfo => !showInfo);
+          }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.4, ease: 'linear' }}
+        >
+          <ChevronUp
+            className={clsx(
+              'duration-250',
+              'text-(--border-color)',
+              'max-md:group-active:text-(--secondary-color)',
+              'md:group-hover:text-(--secondary-color)',
+              !showInfo && 'rotate-180',
+            )}
+            size={24}
+          />
+          {header}
+        </motion.h3>
+        <motion.div
+          className={clsx(
+            'overflow-hidden duration-300',
+            showInfo ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0',
+            // 'text-(--secondary-color)'
+          )}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, ease: 'linear' }}
+        >
+          {content}
+          {normalizedPath === '/' && (
+            <>
+              <DevNotice />
+              <RandomFact />
+            </>
+          )}
+        </motion.div>
+      </div>
+      {/* {normalizedPath === '/kana' &&
+        isKanaInfoAdEnabled &&
+        KANA_INFO_AD_SLOT && (
+          <div className='mt-4 w-full'>
+            <AdSenseDisplay slot={KANA_INFO_AD_SLOT} />
+          </div>
+        )} */}
+    </>
   );
 };
 

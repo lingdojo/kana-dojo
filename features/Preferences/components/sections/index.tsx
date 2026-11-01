@@ -37,7 +37,7 @@ const Settings = () => {
         defaultOpen={true}
         storageKey='prefs-behavior'
       >
-        <Behavior />
+        <Behavior useNewIconDesign={USE_NEW_PREFERENCES_ICON_DESIGN} />
       </CollapsibleSection>
 
       {/* Display Section */}

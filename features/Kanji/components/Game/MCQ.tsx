@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import { useState, useEffect, useRef, useMemo, memo } from 'react';
 import { CircleCheck, CircleX } from 'lucide-react';
 import { Random } from 'random-js';
-import useKanjiStore, { IKanjiObj } from '@/features/Kanji/store/useKanjiStore';
+import type { IKanjiObj } from '@/features/Kanji/store/useKanjiStore';
 import { useCorrect, useError } from '@/shared/hooks/generic/useAudio';
 import { buttonBorderStyles } from '@/shared/utils/styles';
 // import GameIntel from '@/shared/ui-composite/Game/GameIntel';
@@ -18,7 +18,8 @@ import { useCrazyModeTrigger } from '@/features/CrazyMode/hooks/useCrazyModeTrig
 import { getGlobalAdaptiveSelector } from '@/shared/utils/adaptiveSelection';
 import { useSmartReverseMode } from '@/shared/hooks/game/useSmartReverseMode';
 import useClassicSessionStore from '@/shared/store/useClassicSessionStore';
-import useSetProgressStore from '@/features/Progress/store/useSetProgressStore';
+import { useSetProgressStore } from '@/features/Progress';
+import { useMenuSelectorStore } from '@/shared/ui-composite/Menu/store/useMenuSelectorStore';
 
 const random = new Random();
 
@@ -107,9 +108,8 @@ const KanjiMCQ = ({ selectedKanjiObjs, isHidden }: KanjiMCQProps) => {
   const { isReverse, decideNextMode, recordWrongAnswer } =
     useSmartReverseMode();
 
-  // Get the current JLPT level from the Kanji store
-  const selectedKanjiCollection = useKanjiStore(
-    state => state.selectedKanjiCollection,
+  const selectedKanjiCollection = useMenuSelectorStore(
+    state => state.collections.kanji.selectedCollection,
   );
 
   const {
@@ -163,6 +163,8 @@ const KanjiMCQ = ({ selectedKanjiObjs, isHidden }: KanjiMCQProps) => {
     correctKanjiObj as IKanjiObj,
   );
 
+  const isProcessingRef = useRef(false);
+
   // What to display as the question
   const displayChar = isReverse ? correctKanjiObj?.meanings[0] : correctChar;
 
@@ -210,6 +212,7 @@ const KanjiMCQ = ({ selectedKanjiObjs, isHidden }: KanjiMCQProps) => {
 
   // Update shuffled options when correctChar or isReverse changes
   useEffect(() => {
+    isProcessingRef.current = false;
     setShuffledOptions(
       [targetChar, ...getIncorrectOptions()].sort(
         () => random.real(0, 1) - 0.5,
@@ -217,6 +220,13 @@ const KanjiMCQ = ({ selectedKanjiObjs, isHidden }: KanjiMCQProps) => {
     );
     setWrongSelectedAnswers([]);
   }, [correctChar, isReverse]);
+
+  // A wrong answer keeps the current prompt on screen. Release the synchronous
+  // event lock only after its disabled-button state has committed, so another
+  // available option can be selected without accepting duplicate rapid input.
+  useEffect(() => {
+    isProcessingRef.current = false;
+  }, [wrongSelectedAnswers]);
 
   const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
@@ -241,6 +251,9 @@ const KanjiMCQ = ({ selectedKanjiObjs, isHidden }: KanjiMCQProps) => {
 
   // Handle tiles mode correct answer
   const handleOptionClick = (selectedOption: string) => {
+    if (isProcessingRef.current) return;
+    isProcessingRef.current = true;
+
     if (selectedOption === targetChar) {
       setDisplayAnswerSummary(true);
       handleCorrectAnswer();

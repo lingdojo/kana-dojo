@@ -36,7 +36,7 @@ export async function generateMetadata({
   const description = t(`kanaSubset.${subsetKey}.description`);
   const keywords = t(`kanaSubset.${subsetKey}.keywords`).split(',');
 
-  const ogImageUrl = `https://kanadojo.com/api/og?title=${encodeURIComponent(titleShort)}&description=${encodeURIComponent(description.slice(0, 100))}&type=kana`;
+  // const ogImageUrl = `https://kanadojo.com/api/og?title=${encodeURIComponent(titleShort)}&description=${encodeURIComponent(description.slice(0, 100))}&type=kana`;
 
   return {
     title,
@@ -47,20 +47,20 @@ export async function generateMetadata({
       description,
       url: `https://kanadojo.com/${locale}/kana/${subset}`,
       type: 'website',
-      images: [
+      /* images: [
         {
           url: ogImageUrl,
           width: 1200,
           height: 630,
           alt: titleShort,
         },
-      ],
+      ], */
     },
     twitter: {
       card: 'summary_large_image',
       title: titleShort,
       description,
-      images: [ogImageUrl],
+      /* images: [ogImageUrl], */
     },
     alternates: {
       canonical: `https://kanadojo.com/${locale}/kana/${subset}`,

@@ -77,7 +77,6 @@ const MobileBottomBar = () => {
   const [isPatchNotesOpen, setIsPatchNotesOpen] = useState(false);
   const [isThemeOpen, setIsThemeOpen] = useState(false);
   const [isFontOpen, setIsFontOpen] = useState(false);
-  const [useBadgeStyle, setUseBadgeStyle] = useState(true);
   const handleClick = (url: string) => {
     playClick();
     window.open(url, '_blank', 'noopener');
@@ -150,7 +149,7 @@ const MobileBottomBar = () => {
                   onClick={() => handleClick(link.url)}
                   className={clsx(
                     isDonate && USE_BADGE_STYLE
-                      ? 'inline-flex h-8 w-8 items-center justify-center rounded-xl  text-(--background-color) border-b-4  bg-(--main-color) border-(--main-color-accent) transition-all duration-200 hover:cursor-pointer'
+                      ? 'inline-flex h-8 w-8 items-center justify-center rounded-xl border-b-4 border-(--main-color-accent) bg-(--main-color) text-(--background-color) transition-all duration-200 hover:cursor-pointer'
                       : 'flex items-center',
                   )}
                   aria-label={`Open ${link.special === 'donate' ? 'Ko-fi' : link.url}`}
@@ -163,7 +162,9 @@ const MobileBottomBar = () => {
                         baseIconClasses,
                         pulseClasses,
                         isPatreon && 'text-blue-500',
-                        isDonate && USE_BADGE_STYLE && '!text-(--background-color)',
+                        isDonate &&
+                          USE_BADGE_STYLE &&
+                          '!text-(--background-color)',
                       )}
                     />
                   ) : (
@@ -173,7 +174,9 @@ const MobileBottomBar = () => {
                         (!isDonate || !USE_BADGE_STYLE) && baseIconClasses,
                         (!isDonate || !USE_BADGE_STYLE) && pulseClasses,
                         isDonate && USE_BADGE_STYLE && 'fill-current',
-                        isDonate && !USE_BADGE_STYLE && 'fill-current text-red-500',
+                        isDonate &&
+                          !USE_BADGE_STYLE &&
+                          'fill-current text-red-500',
                       )}
                     />
                   )}
@@ -216,7 +219,7 @@ const MobileBottomBar = () => {
             <React.Fragment key={idx}>
               {content}
               {idx < infoItems.length - 1 && (
-                  <span className='text-sm text-(--main-color) select-none'>
+                <span className='text-sm text-(--main-color) select-none'>
                   ~
                 </span>
               )}

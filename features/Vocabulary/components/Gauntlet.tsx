@@ -8,6 +8,7 @@ import Gauntlet, { type GauntletConfig } from '@/shared/ui-composite/Gauntlet';
 import { getSelectionLabels } from '@/shared/utils/selectionFormatting';
 import { shuffle, pickOne } from '@/shared/utils/shuffle';
 import FuriganaText from '@/shared/ui-composite/text/FuriganaText';
+import { isVocabularyMeaningAnswerCorrect } from '@/features/Vocabulary/lib/isVocabularyMeaningAnswerCorrect';
 
 interface GauntletVocabProps {
   onCancel?: () => void;
@@ -40,16 +41,8 @@ const GauntletVocab: React.FC<GauntletVocabProps> = ({ onCancel }) => {
       ) : (
         <FuriganaText text={question.word} reading={question.reading} />
       ),
-    checkAnswer: (question, answer, isReverse) => {
-      if (isReverse) {
-        // Reverse: answer should be the Japanese word
-        return answer.trim() === question.word;
-      }
-      // Normal: answer should match any meaning
-      return question.meanings.some(
-        meaning => answer.toLowerCase() === meaning.toLowerCase(),
-      );
-    },
+    checkAnswer: (question, answer, isReverse) =>
+      isVocabularyMeaningAnswerCorrect(question, answer, isReverse),
     getCorrectAnswer: (question, isReverse) =>
       isReverse ? question.word : question.meanings[0],
     // Pick mode support with reverse mode
@@ -95,4 +88,3 @@ const GauntletVocab: React.FC<GauntletVocabProps> = ({ onCancel }) => {
 };
 
 export default GauntletVocab;
-

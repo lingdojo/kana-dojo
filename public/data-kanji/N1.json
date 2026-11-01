@@ -1757,7 +1757,7 @@
       "kyou キョウ"
     ],
     "kunyomi": [
-      "oko(su) おこ(る)"
+      "oko(ru) おこ(る)"
     ],
     "meanings": [
       "entertain",
@@ -2001,7 +2001,7 @@
       "haku ハク"
     ],
     "kunyomi": [
-      "sema(aru) せま(る)"
+      "sema(ru) せま(る)"
     ],
     "meanings": [
       "urge",
@@ -2414,7 +2414,7 @@
     ],
     "kunyomi": [
       "so(meru) そ(める)",
-      "shi(meru) し(みる)"
+      "shi(miru) し(みる)"
     ],
     "meanings": [
       "dye",
@@ -2559,7 +2559,7 @@
     "kanjiChar": "功",
     "onyomi": [
       "kou コウ",
-      "ko ク"
+      "ku ク"
     ],
     "kunyomi": [
       "isao いさお"
@@ -3533,7 +3533,7 @@
     "kanjiChar": "納",
     "onyomi": [
       "nou ノウ",
-      "natsu ナッ",
+      "na ナッ",
       "na ナ",
       "nan ナン",
       "tou トウ"
@@ -5868,7 +5868,7 @@
     "id": 356,
     "kanjiChar": "擁",
     "onyomi": [
-      "yoku ヨウ"
+      "you ヨウ"
     ],
     "kunyomi": [],
     "meanings": [
@@ -5936,7 +5936,7 @@
     "kunyomi": [
       "horo(biru) ほろ(びる)",
       "horo(bu) ほろ(ぶ)",
-      "horo(basu) ほろ(ぼす)"
+      "horo(bosu) ほろ(ぼす)"
     ],
     "meanings": [
       "destroy",
@@ -6868,7 +6868,7 @@
     "id": 419,
     "kanjiChar": "棋",
     "onyomi": [
-      "ko キ"
+      "ki キ"
     ],
     "kunyomi": [
       "go ご"
@@ -7104,7 +7104,7 @@
       "gaku ガク"
     ],
     "kunyomi": [
-      "dake たけ"
+      "take たけ"
     ],
     "meanings": [
       "point",
@@ -7744,8 +7744,8 @@
       "ka カ"
     ],
     "kunyomi": [
-      "itoma ひま",
-      "いとま"
+      "hima ひま",
+      "itoma いとま"
     ],
     "meanings": [
       "spare time",
@@ -9060,7 +9060,7 @@
       "rai ライ"
     ],
     "kunyomi": [
-      "kamirari かみなり",
+      "kaminari かみなり",
       "ikazuchi いかずち",
       "ikadzuchi いかづち"
     ],
@@ -9638,7 +9638,7 @@
     "id": 593,
     "kanjiChar": "顕",
     "onyomi": [
-      "kun ケン"
+      "ken ケン"
     ],
     "kunyomi": [
       "akiraka あきらか",
@@ -10098,7 +10098,7 @@
       "kou コウ"
     ],
     "kunyomi": [
-      "oo(gu) あお(ぐ)",
+      "ao(gu) あお(ぐ)",
       "o(ssharu) お(っしゃる)"
     ],
     "meanings": [
@@ -13137,7 +13137,7 @@
       "sen セン"
     ],
     "kunyomi": [
-      "mu(guru) め(ぐる)",
+      "me(guru) め(ぐる)",
       "ibari いばり"
     ],
     "meanings": [
@@ -16175,7 +16175,7 @@
       "ka カ"
     ],
     "kunyomi": [
-      "kazawai わざわい"
+      "wazawai わざわい"
     ],
     "meanings": [
       "calamity",

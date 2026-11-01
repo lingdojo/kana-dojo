@@ -1,5 +1,5 @@
 const privacyPolicy = `
-**PikaPikaGems Pte Ltd** operates kanadojo.com (the "Site"). This Privacy Policy explains how we handle information related to your use of the Site.
+**KanaDojo** operates kanadojo.com (the "Site"). This Privacy Policy explains how we handle information related to your use of the Site.
 
 
 ## 1. Information We Collect

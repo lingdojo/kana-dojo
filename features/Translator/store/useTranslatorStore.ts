@@ -27,6 +27,8 @@ const useTranslatorStore = create<TranslatorState>()((set, get) => ({
   isLoading: false,
   error: null,
   isOffline: typeof navigator !== 'undefined' ? !navigator.onLine : false,
+  verificationRequired: false,
+  verificationToken: null,
 
   // Auto detection
   autoDetect: true,
@@ -101,8 +103,9 @@ const useTranslatorStore = create<TranslatorState>()((set, get) => ({
     });
   },
 
-  translate: async () => {
-    const { sourceText, sourceLanguage, targetLanguage } = get();
+  translate: async (requestContext = 'manual') => {
+    const { sourceText, sourceLanguage, targetLanguage, verificationToken } =
+      get();
 
     // Validate input
     if (!sourceText || sourceText.trim().length === 0) {
@@ -117,6 +120,8 @@ const useTranslatorStore = create<TranslatorState>()((set, get) => ({
         sourceText,
         sourceLanguage,
         targetLanguage,
+        requestContext,
+        verificationToken || undefined,
       );
 
       // Generate unique ID for history entry
@@ -137,22 +142,34 @@ const useTranslatorStore = create<TranslatorState>()((set, get) => ({
         romanization: response.romanization || null,
         isLoading: false,
         error: null,
+        verificationRequired: false,
       });
 
       // Add to history
       await get().addToHistory(entry);
     } catch (error) {
-      const errorMessage =
+      const code =
         error && typeof error === 'object' && 'code' in error
-          ? getErrorMessage((error as { code: string }).code)
+          ? (error as { code: string }).code
+          : null;
+      const errorMessage = code
+        ? getErrorMessage(code)
           : 'Translation failed. Please try again.';
 
       set({
         isLoading: false,
         error: errorMessage,
+        verificationRequired: code === 'VERIFICATION_REQUIRED',
       });
     }
   },
+
+  setVerificationToken: (token: string | null) =>
+    set({
+      verificationToken: token,
+      verificationRequired: false,
+      error: null,
+    }),
 
   clearInput: () =>
     set({
@@ -160,6 +177,7 @@ const useTranslatorStore = create<TranslatorState>()((set, get) => ({
       translatedText: '',
       romanization: null,
       error: null,
+      verificationRequired: false,
     }),
 
   loadHistory: async () => {

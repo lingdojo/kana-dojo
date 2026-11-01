@@ -8,7 +8,7 @@
     "season": "Perseverance",
     "kigo": "Resilience",
     "notes": "No matter how many times you fail, keep getting back up.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -20,7 +20,7 @@
     "season": "Endurance",
     "kigo": "Persistence",
     "notes": "Small daily efforts create great results over time.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -32,7 +32,7 @@
     "season": "Patience",
     "kigo": "Diligence",
     "notes": "With patience and consistency, even the hardest things become possible.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -44,7 +44,7 @@
     "season": "Hard Work",
     "kigo": "Dedication",
     "notes": "Hard work always pays off, even if the result is not immediate.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -56,7 +56,7 @@
     "season": "Opportunity",
     "kigo": "Action",
     "notes": "Just start moving forward — new doors will appear.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -68,7 +68,7 @@
     "season": "Acceptance",
     "kigo": "Wisdom",
     "notes": "From Dokkodo — one of the 21 precepts of the legendary samurai.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -80,7 +80,7 @@
     "season": "Mindfulness",
     "kigo": "Focus",
     "notes": "Stop worrying about past or future — focus on what you can control now.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -92,7 +92,7 @@
     "season": "Courage",
     "kigo": "Bravery",
     "notes": "Fear is the only thing that truly stops us.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -104,7 +104,7 @@
     "season": "Strategy",
     "kigo": "Mindset",
     "notes": "A calm and defensive mindset often leads to greater victory.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -116,7 +116,7 @@
     "season": "Dreams",
     "kigo": "Determination",
     "notes": "Popular modern motivational phrase in Japan.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -128,7 +128,7 @@
     "season": "Growth",
     "kigo": "Progress",
     "notes": "Big goals are achieved through tiny consistent steps.",
-    "issued": true,
+    "issued": false,
     "completed": false
   },
   {
@@ -140,7 +140,7 @@
     "season": "Self Improvement",
     "kigo": "Growth",
     "notes": "The spirit of constant self-betterment (kaizen).",
-    "issued": true,
+    "issued": false,
     "completed": false
   }
 ]

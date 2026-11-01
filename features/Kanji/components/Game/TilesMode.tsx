@@ -2,9 +2,13 @@
 import { useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import clsx from 'clsx';
-import useKanjiStore, { IKanjiObj } from '@/features/Kanji/store/useKanjiStore';
+import type { IKanjiObj } from '@/features/Kanji/store/useKanjiStore';
 import { Random } from 'random-js';
-import { useCorrect, useError, useClick } from '@/shared/hooks/generic/useAudio';
+import {
+  useCorrect,
+  useError,
+  useClick,
+} from '@/shared/hooks/generic/useAudio';
 import { getGlobalAdaptiveSelector } from '@/shared/utils/adaptiveSelection';
 import Stars from '@/shared/ui-composite/Game/Stars';
 import { useCrazyModeTrigger } from '@/features/CrazyMode/hooks/useCrazyModeTrigger';
@@ -27,11 +31,12 @@ import {
 } from '@/shared/ui-composite/Game/TilesModeShared';
 import TilesModeGrid from '@/shared/ui-composite/Game/TilesModeGrid';
 import useClassicSessionStore from '@/shared/store/useClassicSessionStore';
-import useSetProgressStore from '@/features/Progress/store/useSetProgressStore';
+import { useSetProgressStore } from '@/features/Progress';
+import { useMenuSelectorStore } from '@/shared/ui-composite/Menu/store/useMenuSelectorStore';
+import { useTilesModeKeyboardSelection } from '@/shared/hooks/game/useTilesModeKeyboardSelection';
 
 const random = new Random();
 const adaptiveSelector = getGlobalAdaptiveSelector();
-
 
 interface KanjiTilesModeProps {
   selectedKanjiObjs: IKanjiObj[];
@@ -81,14 +86,17 @@ const KanjiTilesMode = ({
     selectedKanjiObjs.length - 1,
   );
 
-  // Get the current JLPT level from the Kanji store
-  const selectedKanjiCollection = useKanjiStore(
-    state => state.selectedKanjiCollection,
+  const selectedKanjiCollection = useMenuSelectorStore(
+    state => state.collections.kanji.selectedCollection,
   );
   const isGlassMode = useThemePreferences().isGlassMode;
 
-  const { startAnswerTimer, pauseAnswerTimer, getAnswerTimeMs, resetAnswerTimer } =
-    useAnswerTimer();
+  const {
+    startAnswerTimer,
+    pauseAnswerTimer,
+    getAnswerTimeMs,
+    resetAnswerTimer,
+  } = useAnswerTimer();
   const { playCorrect } = useCorrect();
   const { playErrorTwice } = useError();
   const { playClick } = useClick();
@@ -198,6 +206,22 @@ const KanjiTilesMode = ({
     playClick,
   });
 
+  const { clearTypedPrefix } = useTilesModeKeyboardSelection({
+    allTiles: questionData.allTiles,
+    placedTileIds,
+    onTileClick: handleTileClick,
+    enabled: !isHidden && (!isChecking || bottomBarState === 'wrong'),
+    resetKey: `${questionData.kanjiChar}-${bottomBarState}`,
+  });
+
+  const handleGridTileClick = useCallback(
+    (id: number, char: string) => {
+      clearTypedPrefix();
+      handleTileClick(id, char);
+    },
+    [clearTypedPrefix, handleTileClick],
+  );
+
   const resetGame = useCallback(() => {
     const newQuestion = generateQuestion();
     setQuestionData(newQuestion);
@@ -284,7 +308,9 @@ const KanjiTilesMode = ({
       );
       logAttempt({
         questionId: questionData.kanjiChar,
-        questionPrompt: String(questionData.displayChar ?? questionData.kanjiChar),
+        questionPrompt: String(
+          questionData.displayChar ?? questionData.kanjiChar,
+        ),
         expectedAnswers: [questionData.correctAnswer],
         userAnswer: String(selectedTileChar ?? ''),
         inputKind: 'word_building',
@@ -321,7 +347,9 @@ const KanjiTilesMode = ({
       externalOnWrong?.();
       logAttempt({
         questionId: questionData.kanjiChar,
-        questionPrompt: String(questionData.displayChar ?? questionData.kanjiChar),
+        questionPrompt: String(
+          questionData.displayChar ?? questionData.kanjiChar,
+        ),
         expectedAnswers: [questionData.correctAnswer],
         userAnswer: String(selectedTileChar ?? ''),
         inputKind: 'word_building',
@@ -466,7 +494,7 @@ const KanjiTilesMode = ({
             <TilesModeGrid
               allTiles={questionData.allTiles}
               placedTileIds={placedTileIds}
-              onTileClick={handleTileClick}
+              onTileClick={handleGridTileClick}
               isTileDisabled={isChecking && bottomBarState !== 'wrong'}
               isCelebrating={isCelebrating}
               celebrationMode={nextCelebrationMode}
@@ -479,7 +507,9 @@ const KanjiTilesMode = ({
                 isReverse ? '5.5rem' : '5rem',
               )}
               tilesContainerClassName={
-                isGlassMode ? 'rounded-xl bg-(--card-color) px-4 py-2' : undefined
+                isGlassMode
+                  ? 'rounded-xl bg-(--card-color) px-4 py-2'
+                  : undefined
               }
               tilesWrapperKey={questionData.kanjiChar}
             />

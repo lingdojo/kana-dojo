@@ -73,6 +73,7 @@ export const kana: KanaGroup[] = [
   {
     kana: ['だ', 'ぢ', 'づ', 'で', 'ど'],
     romanji: ['da', 'ji', 'zu', 'de', 'do'],
+    altRomanji: [[], ['di'], ['du'], [], []],
     groupName: 'h.d.d',
   },
   {
@@ -207,6 +208,7 @@ export const kana: KanaGroup[] = [
   {
     kana: ['ダ', 'ヂ', 'ヅ', 'デ', 'ド'],
     romanji: ['da', 'ji', 'zu', 'de', 'do'],
+    altRomanji: [[], ['di'], ['du'], [], []],
     groupName: 'k.d.d',
   },
   {
@@ -353,5 +355,11 @@ export const kana: KanaGroup[] = [
     kana: ['ク', 'ケ', 'タ'],
     romanji: ['ku', 'ke', 'ta'],
     groupName: 'challenge.katakana.kuketa',
+  },
+  {
+    // タ (ta) vs テ (te) — commonly confused by beginners (see issue #24283)
+    kana: ['タ', 'テ'],
+    romanji: ['ta', 'te'],
+    groupName: 'challenge.katakana.tate',
   },
 ];

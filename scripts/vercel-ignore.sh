@@ -37,6 +37,7 @@ get_changed_files() {
   local files=""
   local all_files=""
   local had_nonempty=0
+  local had_success=0
   local commit_sha="${VERCEL_GIT_COMMIT_SHA:-HEAD}"
 
   append_files() {
@@ -61,29 +62,49 @@ get_changed_files() {
 
   # Canonical source for normal commits in Vercel.
   if [ -n "${VERCEL_GIT_PREVIOUS_SHA:-}" ] && [ -n "${VERCEL_GIT_COMMIT_SHA:-}" ]; then
-    files=$(git diff "${VERCEL_GIT_PREVIOUS_SHA}..${VERCEL_GIT_COMMIT_SHA}" --name-only 2>/dev/null || true)
-    append_with_label "previous..current" "$files"
+    if files=$(git diff "${VERCEL_GIT_PREVIOUS_SHA}..${VERCEL_GIT_COMMIT_SHA}" --name-only 2>/dev/null); then
+      had_success=1
+      append_with_label "previous..current" "$files"
+    else
+      echo "Diff source failed: previous..current" >&2
+    fi
   fi
 
   # Merge commits must use first-parent diff only, otherwise second-parent history
   # can introduce false positives and trigger unnecessary deployments.
   if [ -n "${VERCEL_GIT_COMMIT_SHA:-}" ] && is_merge_commit "${VERCEL_GIT_COMMIT_SHA}"; then
-    files=$(git diff "${VERCEL_GIT_COMMIT_SHA}^1..${VERCEL_GIT_COMMIT_SHA}" --name-only 2>/dev/null || true)
-    append_with_label "merge-first-parent" "$files"
+    if files=$(git diff "${VERCEL_GIT_COMMIT_SHA}^1..${VERCEL_GIT_COMMIT_SHA}" --name-only 2>/dev/null); then
+      had_success=1
+      append_with_label "merge-first-parent" "$files"
+    else
+      echo "Diff source failed: merge-first-parent" >&2
+    fi
   elif [ -n "${VERCEL_GIT_COMMIT_SHA:-}" ]; then
-    files=$(git show --name-only --pretty="" "${VERCEL_GIT_COMMIT_SHA}" 2>/dev/null || true)
-    append_with_label "commit-show" "$files"
+    if files=$(git show --name-only --pretty="" "${VERCEL_GIT_COMMIT_SHA}" 2>/dev/null); then
+      had_success=1
+      append_with_label "commit-show" "$files"
+    else
+      echo "Diff source failed: commit-show" >&2
+    fi
   fi
 
   # Local fallbacks (non-Vercel or missing metadata contexts).
-  if [ "$had_nonempty" -eq 0 ]; then
-    files=$(git diff HEAD~1 HEAD --name-only 2>/dev/null || true)
-    append_with_label "local-head-diff" "$files"
+  if [ "$had_success" -eq 0 ]; then
+    if files=$(git diff HEAD~1 HEAD --name-only 2>/dev/null); then
+      had_success=1
+      append_with_label "local-head-diff" "$files"
+    else
+      echo "Diff source failed: local-head-diff" >&2
+    fi
   fi
 
-  if [ "$had_nonempty" -eq 0 ]; then
-    files=$(git show --name-only --pretty="" HEAD 2>/dev/null || true)
-    append_with_label "local-head-show" "$files"
+  if [ "$had_success" -eq 0 ]; then
+    if files=$(git show --name-only --pretty="" HEAD 2>/dev/null); then
+      had_success=1
+      append_with_label "local-head-show" "$files"
+    else
+      echo "Diff source failed: local-head-show" >&2
+    fi
   fi
 
   if [ "$had_nonempty" -eq 1 ]; then
@@ -92,6 +113,10 @@ get_changed_files() {
   fi
 
   printf ''
+  if [ "$had_success" -eq 1 ]; then
+    return 0
+  fi
+  return 1
 }
 
 LAST_COMMIT_MESSAGE="${VERCEL_IGNORE_TEST_COMMIT_MESSAGE:-$(git log -1 --pretty=%s "${VERCEL_GIT_COMMIT_SHA:-HEAD}" 2>/dev/null || true)}"
@@ -106,16 +131,37 @@ else
   echo "Vercel Git context not detected (env vars missing)."
 fi
 
-if [ -n "${VERCEL_IGNORE_TEST_CHANGED_FILES:-}" ]; then
+DIFF_RESOLVED=0
+if [ -n "${VERCEL_IGNORE_TEST_DIFF_STATUS:-}" ]; then
   echo "Using injected changed files for evaluation (test mode)."
+  case "$VERCEL_IGNORE_TEST_DIFF_STATUS" in
+    resolved)
+      DIFF_RESOLVED=1
+      CHANGED_FILES="$(printf '%b' "${VERCEL_IGNORE_TEST_CHANGED_FILES:-}" | tr -d '\r' | sed '/^$/d')"
+      ;;
+    unresolved)
+      CHANGED_FILES=""
+      ;;
+    *)
+      echo "Invalid VERCEL_IGNORE_TEST_DIFF_STATUS: $VERCEL_IGNORE_TEST_DIFF_STATUS"
+      exit 1
+      ;;
+  esac
+elif [ "${VERCEL_IGNORE_TEST_CHANGED_FILES+x}" = "x" ]; then
+  echo "Using injected changed files for evaluation (test mode)."
+  DIFF_RESOLVED=1
   CHANGED_FILES="$(printf '%b' "${VERCEL_IGNORE_TEST_CHANGED_FILES}" | tr -d '\r' | sed '/^$/d')"
 else
-  CHANGED_FILES="$(get_changed_files | tr -d '\r' | sed '/^$/d')"
+  RAW_CHANGED_FILES=""
+  if RAW_CHANGED_FILES="$(get_changed_files)"; then
+    DIFF_RESOLVED=1
+  fi
+  CHANGED_FILES="$(printf '%s\n' "$RAW_CHANGED_FILES" | tr -d '\r' | sed '/^$/d')"
 fi
 
 if [ -z "$CHANGED_FILES" ]; then
-  if [[ "$LAST_COMMIT_MESSAGE" =~ ^Merge\ pull\ request\ #[0-9]+ ]]; then
-    echo "🟡 Could not determine changed files for merge commit; conservatively skipping build."
+  if [ "$DIFF_RESOLVED" -eq 1 ]; then
+    echo "🔵 Verified zero-diff commit detected. Skipping build."
     exit 0
   fi
   echo "🟡 Could not determine changed files via git diff. Proceeding with build."

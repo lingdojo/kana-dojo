@@ -19,6 +19,7 @@ export interface KanaSelection {
 export interface KanaSelectionActions {
   addGroup: (index: number) => void;
   addGroups: (indices: number[]) => void;
+  replaceGroups: (indices: number[]) => void;
   clearSelection: () => void;
   selectAll: () => void;
   isGroupSelected: (index: number) => boolean;
@@ -31,6 +32,7 @@ export function useKanaSelection(): KanaSelection & KanaSelectionActions {
   const addGroup = useKanaStore(state => state.addKanaGroupIndex);
   const addGroups = useKanaStore(state => state.addKanaGroupIndices);
   const setGameMode = useKanaStore(state => state.setSelectedGameModeKana);
+  const replaceGroups = useKanaStore(state => state.setKanaGroupIndices);
 
   return useMemo(
     () => ({
@@ -43,6 +45,7 @@ export function useKanaSelection(): KanaSelection & KanaSelectionActions {
       // Actions
       addGroup,
       addGroups,
+      replaceGroups,
       clearSelection: () => {
         // Toggle all currently selected groups to clear them
         addGroups(selectedGroupIndices);
@@ -55,6 +58,13 @@ export function useKanaSelection(): KanaSelection & KanaSelectionActions {
       isGroupSelected: (index: number) => selectedGroupIndices.includes(index),
       setGameMode,
     }),
-    [selectedGroupIndices, gameMode, addGroup, addGroups, setGameMode],
+    [
+      selectedGroupIndices,
+      gameMode,
+      addGroup,
+      addGroups,
+      replaceGroups,
+      setGameMode,
+    ],
   );
 }

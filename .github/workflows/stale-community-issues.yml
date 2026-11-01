@@ -119,10 +119,10 @@ jobs:
             }
 
             const now = new Date();
-            const WARNING_THRESHOLD_MS = templates.config.staleWarningAfterMs;   // 12 hours
-            const CLOSE_THRESHOLD_MS = templates.config.staleCloseAfterMs;       // 24 hours
-            const ASSIGNED_CLOSE_AFTER_WARNING_MS = 12 * 60 * 60 * 1000; // 12 hours
-            const UNASSIGNED_CLOSE_THRESHOLD_MS = 6 * 60 * 60 * 1000; // 6 hours
+            const WARNING_THRESHOLD_MS = templates.config.staleWarningAfterMs;   // 3 days
+            const CLOSE_THRESHOLD_MS = templates.config.staleCloseAfterMs;       // 7 days
+            const ASSIGNED_CLOSE_AFTER_WARNING_MS = 7 * 24 * 60 * 60 * 1000; // 7 days
+            const UNASSIGNED_CLOSE_THRESHOLD_MS = 7 * 24 * 60 * 60 * 1000; // 7 days
 
             let needsCommit = false;
             let themes = JSON.parse(fs.readFileSync(themeBacklogPath, 'utf8'));

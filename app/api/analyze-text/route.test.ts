@@ -8,6 +8,23 @@ const mockSetRedisCachedJson = vi.fn();
 const mockAnalyzerInit = vi.fn();
 const mockAnalyzerParse = vi.fn();
 
+vi.mock('node:module', () => ({
+  default: class MockModule {},
+  createRequire: () => ({
+    resolve: (pkg: string) => {
+      if (pkg === 'kuromoji') {
+        return '/fake/node_modules/kuromoji/src/kuromoji.js';
+      }
+      throw new Error(`Cannot resolve ${pkg}`);
+    },
+  }),
+}));
+
+vi.mock('node:path', () => ({
+  default: {} as unknown as typeof import('node:path'),
+  join: (...args: string[]) => args.join('/'),
+}));
+
 vi.mock('@/shared/infra/server/rateLimit', () => ({
   checkAnalyzeRateLimit: (...args: unknown[]) =>
     mockCheckAnalyzeRateLimit(...args),
@@ -23,7 +40,7 @@ vi.mock('@/shared/infra/server/rateLimit', () => ({
   getClientIP: () => '127.0.0.1',
 }));
 
-vi.mock('@/shared/infra/client/apiCache', () => ({
+vi.mock('@/shared/infra/server/apiCache', () => ({
   getRedisCachedJson: (...args: unknown[]) => mockGetRedisCachedJson(...args),
   setRedisCachedJson: (...args: unknown[]) => mockSetRedisCachedJson(...args),
 }));

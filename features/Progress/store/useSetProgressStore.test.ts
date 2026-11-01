@@ -22,6 +22,7 @@ vi.mock('localforage', () => {
 
 import useStatsStore from '@/features/Progress/store/useStatsStore';
 import useSetProgressStore from '@/features/Progress/store/useSetProgressStore';
+import useAutoLearningStore from '@/features/Progress/store/useAutoLearningStore';
 
 const emptyProgress = {
   version: 1 as const,
@@ -61,7 +62,7 @@ describe('useSetProgressStore', () => {
     expect(useSetProgressStore.getState().data.vocabulary).toEqual({});
   });
 
-  it('caps kanji progress at 100 correct answers', async () => {
+  it('caps kanji progress at 30 correct answers', async () => {
     await useSetProgressStore.getState().hydrate();
 
     for (let i = 0; i < 250; i++) {
@@ -69,7 +70,7 @@ describe('useSetProgressStore', () => {
     }
 
     expect(useSetProgressStore.getState().data.kanji['日']).toEqual({
-      correct: 100,
+      correct: 30,
     });
   });
 
@@ -88,8 +89,8 @@ describe('useSetProgressStore', () => {
     }
 
     expect(useSetProgressStore.getState().data.vocabulary['日本語']).toEqual({
-      meaningCorrect: 50,
-      readingCorrect: 50,
+      meaningCorrect: 15,
+      readingCorrect: 15,
     });
   });
 
@@ -106,10 +107,12 @@ describe('useSetProgressStore', () => {
   it('clearAllProgress also clears the set progress index', async () => {
     await useSetProgressStore.getState().hydrate();
     await useSetProgressStore.getState().recordKanjiProgress('水');
+    useAutoLearningStore.getState().setReviewCursor('kanji', 8);
 
     useStatsStore.getState().clearAllProgress();
     await Promise.resolve();
 
     expect(useSetProgressStore.getState().data.kanji).toEqual({});
+    expect(useAutoLearningStore.getState().reviewCursors.kanji).toBe(0);
   });
 });

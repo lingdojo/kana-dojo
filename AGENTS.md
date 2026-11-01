@@ -57,6 +57,7 @@ KanaDojo is organised by feature: app/, features/, shared/, core/. Keep business
 
 - i18n: `next-intl` (namespace-based). <!-- `npm run i18n:check` instructions omitted here -->
 - Git: use conventional commits `type(scope): desc` (example in repo).
+- Git workflow: the repo owner permits **direct commits to `main`**. Do not open PRs or feature branches for owner-requested changes — commit straight to `main` unless the user explicitly asks for a PR. (External contributor PRs still follow the normal review flow.)
 
 ### Rules summary
 
@@ -75,4 +76,4 @@ KanaDojo is organised by feature: app/, features/, shared/, core/. Keep business
 
 ---
 
-**Last Updated**: 2026-02-15
+**Last Updated**: 2026-09-20

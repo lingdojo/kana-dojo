@@ -22,7 +22,7 @@ export function translateHistoryToCSV(entries: TranslationEntry[]): string {
   const rows = entries.map(entry => {
     const date = new Date(entry.timestamp).toLocaleString();
     return [
-      date,
+      escapeCSVField(date),
       entry.sourceLanguage === 'en' ? 'English' : 'Japanese',
       entry.targetLanguage === 'en' ? 'English' : 'Japanese',
       escapeCSVField(entry.sourceText),

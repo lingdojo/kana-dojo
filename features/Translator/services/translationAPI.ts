@@ -40,6 +40,7 @@ function cleanupClientCache() {
 export const ERROR_CODES = {
   INVALID_INPUT: 'INVALID_INPUT',
   RATE_LIMIT: 'RATE_LIMIT',
+  VERIFICATION_REQUIRED: 'VERIFICATION_REQUIRED',
   API_ERROR: 'API_ERROR',
   AUTH_ERROR: 'AUTH_ERROR',
   NETWORK_ERROR: 'NETWORK_ERROR',
@@ -53,6 +54,8 @@ export const ERROR_MESSAGES: Record<string, string> = {
   [ERROR_CODES.INVALID_INPUT]: 'Please enter valid text to translate.',
   [ERROR_CODES.RATE_LIMIT]:
     'Too many requests. Please wait a moment and try again.',
+  [ERROR_CODES.VERIFICATION_REQUIRED]:
+    'Please verify before translating more text.',
   [ERROR_CODES.API_ERROR]: 'Translation service is temporarily unavailable.',
   [ERROR_CODES.AUTH_ERROR]: 'Translation service configuration error.',
   [ERROR_CODES.NETWORK_ERROR]:
@@ -90,6 +93,8 @@ export async function translate(
   text: string,
   sourceLanguage: Language,
   targetLanguage: Language,
+  requestContext: 'manual' | 'url-prefill' = 'manual',
+  verificationToken?: string,
 ): Promise<TranslationAPIResponse> {
   // Check if offline
   if (!isOnline()) {
@@ -146,6 +151,8 @@ export async function translate(
           text,
           sourceLanguage,
           targetLanguage,
+          requestContext,
+          verificationToken,
         }),
       });
 

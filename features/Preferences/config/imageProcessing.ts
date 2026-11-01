@@ -70,7 +70,10 @@ export const MAX_CUSTOM_WALLPAPERS = 20;
  * Array of widths to generate for CLI pre-processing.
  * Server generates multiple sizes for responsive images.
  */
-export const OUTPUT_WIDTHS = [1920, 2560, 3840];
+/** Fixed width used exclusively by built-in theme-picker cards. */
+export const WALLPAPER_PREVIEW_WIDTH = 480;
+
+export const OUTPUT_WIDTHS = [WALLPAPER_PREVIEW_WIDTH, 1920, 2560, 3840];
 
 // ============================================================================
 // Supported Image Formats

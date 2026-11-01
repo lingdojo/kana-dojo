@@ -5,7 +5,11 @@ import clsx from 'clsx';
 import { kana } from '@/features/Kana/data/kana';
 import useKanaStore from '@/features/Kana/store/useKanaStore';
 import { Random } from 'random-js';
-import { useCorrect, useError, useClick } from '@/shared/hooks/generic/useAudio';
+import {
+  useCorrect,
+  useError,
+  useClick,
+} from '@/shared/hooks/generic/useAudio';
 // import GameIntel from '@/shared/ui-composite/Game/GameIntel';
 import { getGlobalAdaptiveSelector } from '@/shared/utils/adaptiveSelection';
 import Stars from '@/shared/ui-composite/Game/Stars';
@@ -16,6 +20,7 @@ import { useAnswerTimer } from '@/shared/hooks/game/useAnswerTimer';
 import { useGameStats } from '@/shared/hooks/game/useGameStats';
 import { useTilesModeHandlers } from '@/shared/hooks/game/useTilesModeHandlers';
 import { useTilesModeState } from '@/shared/hooks/game/useTilesModeState';
+import { getKanaTilesQuestionShape } from '@/features/Kana/lib/getKanaTilesQuestionShape';
 
 import { GameBottomBar } from '@/shared/ui-composite/Game/GameBottomBar';
 import { cn } from '@/shared/utils/utils';
@@ -24,11 +29,11 @@ import {
   gameContentVariants,
   getAnswerRowClassName,
   getGlassModeClassName,
-
   useTilesModeActionKey,
 } from '@/shared/ui-composite/Game/TilesModeShared';
 import TilesModeGrid from '@/shared/ui-composite/Game/TilesModeGrid';
 import useClassicSessionStore from '@/shared/store/useClassicSessionStore';
+import { useTilesModeKeyboardSelection } from '@/shared/hooks/game/useTilesModeKeyboardSelection';
 
 const random = new Random();
 const adaptiveSelector = getGlobalAdaptiveSelector();
@@ -87,10 +92,16 @@ const KanaTilesMode = ({
     minWordLength: 1,
     maxWordLength: 3,
   });
-  const wordLength = isWordLengthControlled ? externalWordLength : internalWordLength;
+  const wordLength = isWordLengthControlled
+    ? externalWordLength
+    : internalWordLength;
 
-  const { startAnswerTimer, pauseAnswerTimer, getAnswerTimeMs, resetAnswerTimer } =
-    useAnswerTimer();
+  const {
+    startAnswerTimer,
+    pauseAnswerTimer,
+    getAnswerTimeMs,
+    resetAnswerTimer,
+  } = useAnswerTimer();
   const { playCorrect } = useCorrect();
   const { playErrorTwice } = useError();
   const { playClick } = useClick();
@@ -183,10 +194,14 @@ const KanaTilesMode = ({
       romajiToKana,
     } = generateWordDeps;
     const sourceChars = isReverse ? selectedRomaji : selectedKana;
-    const totalTileCount = wordLength <= 1 ? 3 : wordLength === 2 ? 4 : 5;
-    if (sourceChars.length < totalTileCount) {
+    const questionShape = getKanaTilesQuestionShape({
+      wordLength,
+      availableCharacterCount: sourceChars.length,
+    });
+    if (!questionShape.canGenerate) {
       return { wordChars: [], answerChars: [], allTiles: new Map() };
     }
+    const totalTileCount = questionShape.tileCount;
 
     const wordChars: string[] = [];
     const usedChars = new Set<string>();
@@ -242,6 +257,22 @@ const KanaTilesMode = ({
     startAnswerTimer,
     playClick,
   });
+
+  const { clearTypedPrefix } = useTilesModeKeyboardSelection({
+    allTiles: wordData.allTiles,
+    placedTileIds,
+    onTileClick: handleTileClick,
+    enabled: !isHidden && (!isChecking || bottomBarState === 'wrong'),
+    resetKey: `${wordData.wordChars.join('')}-${bottomBarState}`,
+  });
+
+  const handleGridTileClick = useCallback(
+    (id: number, char: string) => {
+      clearTypedPrefix();
+      handleTileClick(id, char);
+    },
+    [clearTypedPrefix, handleTileClick],
+  );
 
   const resetGame = useCallback(() => {
     const newWord = generateWord();
@@ -305,7 +336,9 @@ const KanaTilesMode = ({
     let isCorrect = false;
 
     if (placedTileIds.length === wordData.answerChars.length) {
-      const placedArray = placedTileIds.map(id => wordData.allTiles.get(id) ?? '');
+      const placedArray = placedTileIds.map(
+        id => wordData.allTiles.get(id) ?? '',
+      );
       isCorrect = placedArray.every(
         (tile, i) => tile === wordData.answerChars[i],
       );
@@ -358,7 +391,9 @@ const KanaTilesMode = ({
       incrementWrongStreak();
       incrementWrongAnswers();
 
-      const placedArray = placedTileIds.map(id => wordData.allTiles.get(id) ?? '');
+      const placedArray = placedTileIds.map(
+        id => wordData.allTiles.get(id) ?? '',
+      );
       wordData.wordChars.forEach((char, index) => {
         incrementCharacterScore(char, 'wrong');
         adaptiveSelector.updateCharacterWeight(
@@ -414,6 +449,9 @@ const KanaTilesMode = ({
     incrementWrongAnswers,
     score,
     setScore,
+    setBottomBarState,
+    setIsCelebrating,
+    setIsChecking,
     externalOnWrong,
     externalIsReverse,
     recordReverseModeWrong,
@@ -452,11 +490,11 @@ const KanaTilesMode = ({
   ]);
 
   // Not enough characters for tiles mode
-  const requiredTileCount = wordLength <= 1 ? 3 : wordLength === 2 ? 4 : 5;
-  if (
-    selectedKana.length < requiredTileCount ||
-    wordData.wordChars.length === 0
-  ) {
+  const questionShape = getKanaTilesQuestionShape({
+    wordLength,
+    availableCharacterCount: selectedKana.length,
+  });
+  if (!questionShape.canGenerate || wordData.wordChars.length === 0) {
     return null;
   }
 
@@ -482,12 +520,12 @@ const KanaTilesMode = ({
           )}
         >
           {/* Word Display */}
-            <div
-              className={getGlassModeClassName(
-                'flex flex-row items-center gap-1',
-                isGlassMode,
-              )}
-            >
+          <div
+            className={getGlassModeClassName(
+              'flex flex-row items-center gap-1',
+              isGlassMode,
+            )}
+          >
             <motion.p
               className={clsx(
                 'sm:text-8xl',
@@ -505,7 +543,7 @@ const KanaTilesMode = ({
           <TilesModeGrid
             allTiles={wordData.allTiles}
             placedTileIds={placedTileIds}
-            onTileClick={handleTileClick}
+            onTileClick={handleGridTileClick}
             isTileDisabled={isChecking && bottomBarState !== 'wrong'}
             isCelebrating={isCelebrating}
             celebrationMode={nextCelebrationMode}
@@ -542,4 +580,3 @@ const KanaTilesMode = ({
 };
 
 export default KanaTilesMode;
-

@@ -23,6 +23,7 @@ export interface VocabSelection {
 export interface VocabSelectionActions {
   addVocab: (vocab: IVocabObj) => void;
   addVocabList: (vocabs: IVocabObj[]) => void;
+  replaceVocab: (vocabs: IVocabObj[]) => void;
   clearVocab: () => void;
   setCollection: (collection: string) => void;
   setSets: (sets: string[]) => void;
@@ -44,6 +45,7 @@ export function useVocabSelection(): VocabSelection & VocabSelectionActions {
   const addVocab = useVocabStore(state => state.addVocabObj);
   const addVocabList = useVocabStore(state => state.addVocabObjs);
   const clearVocab = useVocabStore(state => state.clearVocabObjs);
+  const replaceVocab = useVocabStore(state => state.setSelectedVocabObjs);
   const setCollection = useVocabStore(
     state => state.setSelectedVocabCollection,
   );
@@ -68,6 +70,7 @@ export function useVocabSelection(): VocabSelection & VocabSelectionActions {
       // Actions
       addVocab,
       addVocabList,
+      replaceVocab,
       clearVocab,
       setCollection,
       setSets,
@@ -83,6 +86,7 @@ export function useVocabSelection(): VocabSelection & VocabSelectionActions {
       gameMode,
       addVocab,
       addVocabList,
+      replaceVocab,
       clearVocab,
       setCollection,
       setSets,

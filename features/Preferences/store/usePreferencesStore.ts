@@ -59,6 +59,9 @@ interface PreferencesState {
 
   clickSoundId: ClickSoundId;
   setClickSoundId: (id: ClickSoundId) => void;
+
+  showExperimentalModes: boolean;
+  setShowExperimentalModes: (show: boolean) => void;
 }
 
 const usePreferencesStore = create<PreferencesState>()(
@@ -111,6 +114,8 @@ const usePreferencesStore = create<PreferencesState>()(
       setClickEffect: id => set({ clickEffect: id }),
       clickSoundId: DEFAULT_CLICK_SOUND_ID,
       setClickSoundId: id => set({ clickSoundId: id }),
+      showExperimentalModes: false,
+      setShowExperimentalModes: show => set({ showExperimentalModes: show }),
     }),
 
     {

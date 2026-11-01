@@ -136,53 +136,41 @@ interface TileProps {
   motionStyle?: MotionStyle;
 }
 
-export const ActiveTile = memo(
-  ({
-    id,
-    char,
-    onClick,
-    layoutId,
-    isDisabled,
-    sizeClassName,
-    lang,
-    variants,
-    motionStyle,
-  }: TileProps) => {
-    return (
-      <motion.button
-        layoutId={layoutId ?? `${id}-${char}`}
-        layout='position'
-        type='button'
-        onClick={() => onClick(id, char)}
-        disabled={isDisabled}
-        variants={variants}
-        className={clsx(
-          tileBaseStyles,
-          'cursor-pointer transition-colors',
-          'active:mb-[10px] active:translate-y-[10px] active:border-b-0',
-          'border-(--secondary-color-accent) bg-(--secondary-color) text-(--background-color)',
-          isDisabled && 'cursor-not-allowed opacity-50',
-          sizeClassName,
-        )}
-        transition={springConfig}
-        lang={lang}
-        style={motionStyle}
-      >
-        {char}
-      </motion.button>
-    );
-  },
-  (prevProps, nextProps) =>
-    prevProps.id === nextProps.id &&
-    prevProps.char === nextProps.char &&
-    prevProps.layoutId === nextProps.layoutId &&
-    prevProps.isDisabled === nextProps.isDisabled &&
-    prevProps.onClick === nextProps.onClick &&
-    prevProps.sizeClassName === nextProps.sizeClassName &&
-    prevProps.lang === nextProps.lang,
-);
-
-ActiveTile.displayName = 'ActiveTile';
+export const ActiveTile = ({
+  id,
+  char,
+  onClick,
+  layoutId,
+  isDisabled,
+  sizeClassName,
+  lang,
+  variants,
+  motionStyle,
+}: TileProps) => {
+  return (
+    <motion.button
+      layoutId={layoutId ?? `${id}-${char}`}
+      layout='position'
+      type='button'
+      onClick={() => onClick(id, char)}
+      disabled={isDisabled}
+      variants={variants}
+      className={clsx(
+        tileBaseStyles,
+        'cursor-pointer transition-colors',
+        'active:mb-[10px] active:translate-y-[10px] active:border-b-0',
+        'border-(--secondary-color-accent) bg-(--secondary-color) text-(--background-color)',
+        isDisabled && 'cursor-not-allowed opacity-50',
+        sizeClassName,
+      )}
+      transition={springConfig}
+      lang={lang}
+      style={motionStyle}
+    >
+      {char}
+    </motion.button>
+  );
+};
 
 export const BlankTile = memo(
   ({ char, sizeClassName }: { char: string; sizeClassName?: string }) => {
@@ -225,12 +213,12 @@ export const getGlassModeClassName = (
 ) =>
   clsx(baseClassName, isGlassMode && 'rounded-xl bg-(--card-color) px-4 py-2');
 
-
 export const useTilesModeActionKey = (
   buttonRef: RefObject<HTMLButtonElement | null>,
 ) => {
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.defaultPrevented) return;
       if (
         event.key === 'Enter' ||
         event.code === 'Space' ||

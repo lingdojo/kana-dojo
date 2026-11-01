@@ -1,5 +1,6 @@
 'use client';
-import { useCallback, useEffect, useRef, useState } from 'react';
+
+import { CSSProperties, useCallback, useEffect, useRef, useState } from 'react';
 import { ChevronsUp } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
@@ -68,7 +69,6 @@ export default function BackToTop() {
   const { playClick } = useClick();
 
   const [visible, setVisible] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
   const [stableVh, setStableVh] = useState('100dvh');
   const [isEntering, setIsEntering] = useState(false);
   const [isExiting, setIsExiting] = useState(false);
@@ -155,8 +155,18 @@ export default function BackToTop() {
   }, []);
 
   useEffect(() => {
-    const mounted = true;
-    setIsMounted(mounted);
+    // `window.innerHeight`/`visualViewport.height` don't exist during SSR, so
+    // `stableVh` starts at the SSR-safe literal '100dvh' and can only be
+    // resolved to a real pixel value once we're guaranteed to be on the
+    // client (i.e. inside an effect, after mount). Reading it eagerly in the
+    // component body (or via a lazy useState initializer) would run during
+    // the client's hydration render too, producing a different value than
+    // the server-rendered markup and causing a hydration mismatch on the
+    // '--stable-vh' style property. This is a legitimate one-time
+    // measurement of an external, browser-only value on mount, not the
+    // "subscribe then setState in a callback" shape the rule expects, so the
+    // warning here is a false positive for this pattern.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     updateStableVh(true);
 
     if (typeof document === 'undefined') return;
@@ -189,7 +199,7 @@ export default function BackToTop() {
 
   const isRootPath = pathname === '/' || pathname === '';
 
-  if (!isMounted || isRootPath) return null;
+  if (isRootPath) return null;
   if (!visible && !isExiting) return null;
 
   const handleClick = () => {
@@ -250,7 +260,7 @@ export default function BackToTop() {
         }
       : {};
 
-  const getExplosionStyle = (): React.CSSProperties => {
+  const getExplosionStyle = (): CSSProperties => {
     if (!USE_EXPLOSION_ANIMATION) return {};
 
     switch (animState) {
@@ -287,7 +297,7 @@ export default function BackToTop() {
           '--stable-vh': stableVh,
           ...animationStyle,
           ...getExplosionStyle(),
-        } as unknown as React.CSSProperties
+        } as unknown as CSSProperties
       }
     >
       <ChevronsUp size={USE_FLOATING_STYLE ? 24 : 32} strokeWidth={2.5} />

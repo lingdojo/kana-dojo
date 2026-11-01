@@ -52,3 +52,17 @@ export function getWallpaperById(id: string): GeneratedWallpaper | undefined {
     customWallpaperRegistry.get(id)
   );
 }
+
+/**
+ * Return the smallest dedicated card asset when one exists. Runtime custom
+ * wallpapers intentionally fall back to their caller-provided thumbnail/full URL.
+ */
+export function getWallpaperPreviewUrls(wallpaper: GeneratedWallpaper): {
+  url: string;
+  urlWebp: string;
+} {
+  return {
+    url: wallpaper.previewUrl ?? wallpaper.url,
+    urlWebp: wallpaper.previewUrlWebp ?? wallpaper.urlWebp,
+  };
+}

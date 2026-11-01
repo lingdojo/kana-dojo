@@ -2,7 +2,8 @@ import { KanjiMenu } from '@/widgets';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/core/i18n/metadata-helpers';
 import { CourseSchema } from '@/shared/ui-composite/SEO/CourseSchema';
-import { BreadcrumbSchema } from '@/shared/ui-composite/SEO/BreadcrumbSchema';
+import { Breadcrumbs } from '@/shared/ui-composite/Breadcrumbs';
+import { getTranslations } from 'next-intl/server';
 import { FAQSchema, kanjiFAQs } from '@/shared/ui-composite/SEO/FAQSchema';
 import { LearningResourceSchema } from '@/shared/ui-composite/SEO/LearningResourceSchema';
 import { DojoRouteSchema } from '@/shared/ui-composite/SEO/DojoRouteSchema';
@@ -31,13 +32,15 @@ export default async function KanjiPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'navigation' });
 
   return (
     <>
-      <BreadcrumbSchema
+      <Breadcrumbs
+        className='hidden'
         items={[
-          { name: 'Home', url: `https://kanadojo.com/${locale}` },
-          { name: 'Kanji', url: `https://kanadojo.com/${locale}/kanji` },
+          { name: t('menu.home'), url: '/' },
+          { name: t('menu.kanji'), url: '/kanji' },
         ]}
       />
       <CourseSchema
@@ -84,4 +87,3 @@ export default async function KanjiPage({
     </>
   );
 }
-

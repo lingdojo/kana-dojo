@@ -15,11 +15,13 @@ run_case() {
   local expected_exit="$2"
   local commit_message="$3"
   local changed_files="$4"
+  local diff_status="${5:-resolved}"
 
   set +e
   output=$(
     VERCEL_IGNORE_TEST_COMMIT_MESSAGE="$commit_message" \
     VERCEL_IGNORE_TEST_CHANGED_FILES="$changed_files" \
+    VERCEL_IGNORE_TEST_DIFF_STATUS="$diff_status" \
     bash "$SCRIPT_PATH" 2>&1
   )
   actual_exit=$?
@@ -63,5 +65,24 @@ run_case \
   1 \
   "Merge pull request #77777 from contributor/feature" \
   "community/content/japan-facts.json\napp/layout.tsx"
+
+run_case \
+  "empty squash commit skips" \
+  0 \
+  "content: add new grammar point (#27226)" \
+  ""
+
+run_case \
+  "empty merge commit skips" \
+  0 \
+  "Merge pull request #99998 from contributor/resolved-conflict" \
+  ""
+
+run_case \
+  "unresolved git comparison builds" \
+  1 \
+  "feat: production change with unavailable history" \
+  "" \
+  "unresolved"
 
 echo "All vercel-ignore regression cases passed."

@@ -41,7 +41,7 @@ export const celebrationExplodeContainerVariants = {
 };
 
 export const explosionKeyframes = `
-@keyframes explode {
+@keyframes tiles-mode-explode {
   0% {
     transform: scale(1);
     opacity: 1;
@@ -56,7 +56,7 @@ export const explosionKeyframes = `
   }
 }
 
-@keyframes fadeIn {
+@keyframes tiles-mode-fade-in {
   0% {
     opacity: 0;
   }

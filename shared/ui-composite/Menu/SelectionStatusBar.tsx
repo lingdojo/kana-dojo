@@ -13,6 +13,7 @@ import { CircleCheck, Trash } from 'lucide-react';
 import { ActionButton } from '@/shared/ui/components/ActionButton';
 import { AnimatePresence, motion } from 'framer-motion';
 import { cn } from '@/shared/utils/utils';
+import { useAutoLearningStore } from '@/features/Progress';
 
 type ContentType = 'kana' | 'kanji' | 'vocabulary';
 const ACTIVATION_SCROLL_DELAY_MS = 180;
@@ -54,6 +55,13 @@ const SelectionStatusBar = () => {
   // Vocab store
   const vocabSelection = useVocabSelection();
   const selectedVocabSets = vocabSelection.selectedSets;
+  const hasAutoLearningSelection = useAutoLearningStore(state =>
+    isKana
+      ? state.activeSelections.kana
+      : isKanji
+        ? state.activeSelections.kanji
+        : state.activeSelections.vocabulary,
+  );
 
   const { full: formattedSelectionFull, compact: formattedSelectionCompact } =
     useMemo(() => {
@@ -72,11 +80,13 @@ const SelectionStatusBar = () => {
       selectedVocabSets,
     ]);
 
-  const hasSelection = isKana
-    ? kanaGroupIndices.length > 0
-    : isKanji
-      ? selectedKanjiSets.length > 0
-      : selectedVocabSets.length > 0;
+  const hasSelection =
+    !hasAutoLearningSelection &&
+    (isKana
+      ? kanaGroupIndices.length > 0
+      : isKanji
+        ? selectedKanjiSets.length > 0
+        : selectedVocabSets.length > 0);
 
   const handleClear = () => {
     playClick();
@@ -280,7 +290,7 @@ const SelectionStatusBar = () => {
               borderColorScheme='main'
               borderRadius='3xl'
               borderBottomThickness={10}
-              className='w-auto bg-(--main-color)/80 px-4 py-3 lg:px-6 motion-safe:animate-float [--float-distance:-3px] sm:[--float-distance:-5px]'
+              className='motion-safe:animate-float w-auto bg-(--main-color)/80 px-4 py-3 [--float-distance:-3px] sm:[--float-distance:-5px] lg:px-6'
               onClick={handleClear}
               aria-label='Clear selected levels'
             >

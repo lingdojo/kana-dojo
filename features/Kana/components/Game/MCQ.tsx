@@ -16,6 +16,7 @@ import { getGlobalAdaptiveSelector } from '@/shared/utils/adaptiveSelection';
 import { useSmartReverseMode } from '@/shared/hooks/game/useSmartReverseMode';
 import { useAdaptiveOptionCount } from '@/shared/hooks/game/useAdaptiveOptionCount';
 import useClassicSessionStore from '@/shared/store/useClassicSessionStore';
+import { getUniqueIncorrectOptions } from '@/features/Kana/lib/getUniqueIncorrectOptions';
 
 const random = new Random();
 
@@ -130,6 +131,8 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
 
   const kanaGroupIndices = useKanaStore(state => state.kanaGroupIndices);
 
+  const isProcessingRef = useRef(false);
+
   const selectedKana = useMemo(
     () => kanaGroupIndices.map(i => kana[i].kana).flat(),
     [kanaGroupIndices],
@@ -140,37 +143,39 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
   );
 
   // For normal pick mode
-  const selectedPairs = useMemo(
+  const selectedPairs = useMemo<Record<string, string>>(
     () =>
       Object.fromEntries(
-        selectedKana.map((key, i) => [key, selectedRomaji[i]]),
+        selectedKana.map((key, i) => [key, selectedRomaji[i] ?? '']),
       ),
     [selectedKana, selectedRomaji],
   );
 
   // For reverse pick mode
-  const selectedPairs1 = useMemo(
+  const selectedPairs1 = useMemo<Record<string, string>>(
     () =>
       Object.fromEntries(
-        selectedRomaji.map((key, i) => [key, selectedKana[i]]),
+        selectedRomaji.map((key, i) => [key, selectedKana[i] ?? '']),
       ),
     [selectedRomaji, selectedKana],
   );
-  const selectedPairs2 = useMemo(
+  const selectedPairs2 = useMemo<Record<string, string>>(
     () =>
       Object.fromEntries(
-        selectedRomaji.map((key, i) => [key, selectedKana[i]]).reverse(),
+        selectedRomaji
+          .map((key, i) => [key, selectedKana[i] ?? ''])
+          .reverse(),
       ),
     [selectedRomaji, selectedKana],
   );
-  const reversedPairs1 = useMemo(
+  const reversedPairs1 = useMemo<Record<string, string>>(
     () =>
       Object.fromEntries(
         Object.entries(selectedPairs1).map(([key, value]) => [value, key]),
       ),
     [selectedPairs1],
   );
-  const reversedPairs2 = useMemo(
+  const reversedPairs2 = useMemo<Record<string, string>>(
     () =>
       Object.fromEntries(
         Object.entries(selectedPairs2).map(([key, value]) => [value, key]),
@@ -207,21 +212,31 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
       if (!isReverse) {
         const { [correctKanaChar]: _, ...incorrectPairs } = selectedPairs;
         void _;
-        return [...Object.values(incorrectPairs)]
-          .sort(() => random.real(0, 1) - 0.5)
-          .slice(0, incorrectCount);
+        return getUniqueIncorrectOptions(
+          correctRomajiChar,
+          Object.values(incorrectPairs).sort(
+            () => random.real(0, 1) - 0.5,
+          ),
+          incorrectCount,
+        );
       } else {
         const { [correctRomajiCharReverse]: _, ...incorrectPairs } =
           random.bool() ? selectedPairs1 : selectedPairs2;
         void _;
-        return [...Object.values(incorrectPairs)]
-          .sort(() => random.real(0, 1) - 0.5)
-          .slice(0, incorrectCount);
+        return getUniqueIncorrectOptions(
+          correctKanaCharReverse,
+          Object.values(incorrectPairs).sort(
+            () => random.real(0, 1) - 0.5,
+          ),
+          incorrectCount,
+        );
       }
     },
     [
       isReverse,
       correctKanaChar,
+      correctKanaCharReverse,
+      correctRomajiChar,
       correctRomajiCharReverse,
       selectedPairs,
       selectedPairs1,
@@ -265,6 +280,10 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
     optionCount,
     getIncorrectOptions,
   ]);
+
+  useEffect(() => {
+    isProcessingRef.current = false;
+  }, [correctKanaChar, correctRomajiCharReverse, wrongSelectedAnswers]);
 
   const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
@@ -316,10 +335,10 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
       resetWrongStreak();
       logAttempt({
         questionId: correctChar,
-        questionPrompt: isReverse
-          ? correctRomajiCharReverse
-          : correctKanaChar,
-        expectedAnswers: [isReverse ? correctKanaCharReverse : correctRomajiChar],
+        questionPrompt: isReverse ? correctRomajiCharReverse : correctKanaChar,
+        expectedAnswers: [
+          isReverse ? correctKanaCharReverse : correctRomajiChar,
+        ],
         userAnswer: isReverse ? correctKanaCharReverse : correctRomajiChar,
         inputKind: 'pick',
         isCorrect: true,
@@ -376,7 +395,9 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
       logAttempt({
         questionId: isReverse ? correctRomajiCharReverse : correctKanaChar,
         questionPrompt: isReverse ? correctRomajiCharReverse : correctKanaChar,
-        expectedAnswers: [isReverse ? correctKanaCharReverse : correctRomajiChar],
+        expectedAnswers: [
+          isReverse ? correctKanaCharReverse : correctRomajiChar,
+        ],
         userAnswer: selectedChar,
         inputKind: 'pick',
         isCorrect: false,
@@ -407,6 +428,9 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
 
   const handleOptionClick = useCallback(
     (selectedChar: string) => {
+      if (isProcessingRef.current) return;
+      isProcessingRef.current = true;
+
       if (!isReverse) {
         // Normal pick mode logic
         if (selectedChar === correctRomajiChar) {
@@ -508,4 +532,3 @@ const KanaMCQ = ({ isHidden }: KanaMCQProps) => {
 };
 
 export default KanaMCQ;
-

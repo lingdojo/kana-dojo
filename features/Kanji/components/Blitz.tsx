@@ -8,6 +8,7 @@ import { useStatsStore } from '@/features/Progress';
 import Blitz, { type BlitzConfig } from '@/shared/ui-composite/Blitz';
 import { getSelectionLabels } from '@/shared/utils/selectionFormatting';
 import { shuffle, pickOne } from '@/shared/utils/shuffle';
+import { isKanjiAnswerCorrect } from '@/features/Kanji/lib/isKanjiAnswerCorrect';
 
 export default function BlitzKanji() {
   const selectedKanjiObjs = useKanjiStore(state => state.selectedKanjiObjs);
@@ -45,20 +46,8 @@ export default function BlitzKanji() {
       isReverse ? question.meanings[0] : question.kanjiChar,
     inputPlaceholder: 'Type the meaning...',
     modeDescription: 'Mode: Type (See kanji → Type meaning)',
-    checkAnswer: (question, answer, isReverse) => {
-      if (isReverse) {
-        // Reverse: answer should be the kanji character or one of its readings
-        return (
-          answer.trim() === question.kanjiChar ||
-          question.kunyomi.some(k => k.split(' ')[0] === answer) ||
-          question.onyomi.some(k => k.split(' ')[0] === answer)
-        );
-      }
-      // Normal: answer should match any meaning
-      return question.meanings.some(
-        meaning => answer.toLowerCase() === meaning.toLowerCase(),
-      );
-    },
+    checkAnswer: (question, answer, isReverse) =>
+      isKanjiAnswerCorrect(question, answer, isReverse),
     getCorrectAnswer: (question, isReverse) =>
       isReverse ? question.kanjiChar : question.meanings[0],
     // Pick mode support with reverse mode
@@ -98,4 +87,3 @@ export default function BlitzKanji() {
 
   return <Blitz config={config} />;
 }
-

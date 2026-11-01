@@ -18,7 +18,7 @@ import {
 } from 'lucide-react';
 import clsx from 'clsx';
 import { useClick } from '@/shared/hooks/generic/useAudio';
-import { Link, useRouter } from '@/core/i18n/routing';
+import { useRouter } from '@/core/i18n/routing';
 import useGauntletSettingsStore from '@/shared/store/useGauntletSettingsStore';
 import {
   DIFFICULTY_CONFIG,
@@ -28,6 +28,9 @@ import {
 import { SelectedLevelsCard } from '@/shared/ui-composite/Menu/SelectedLevelsCard';
 
 import { ActionButton } from '@/shared/ui/components/ActionButton';
+import TransitionAdvertisementOverlay, {
+  isTransitionAdvertisementEnabled,
+} from '@/shared/ui-composite/Game/TransitionAdvertisementOverlay';
 
 const Decorations = lazy(() => import('@/shared/ui-composite/Decorations/Decorations'));
 
@@ -87,6 +90,9 @@ const ModeSetupMenu = ({
   const [gauntletDifficulty, setGauntletDifficulty] =
     useState<GauntletDifficulty>('normal');
   const [gauntletRepetitions, setGauntletRepetitions] = useState<number>(10);
+  const [pendingStartRoute, setPendingStartRoute] = useState<string | null>(
+    null,
+  );
 
   const persistDuration = useCallback(
     (duration: number) => {
@@ -173,6 +179,39 @@ const ModeSetupMenu = ({
     setGauntletRepetitions(gauntletSettings.getRepetitions(dojoType));
   }, [isOpen, mode, dojoType, gauntletSettings, setSelectedGameMode]);
 
+  const getTrainingRoute = useCallback(
+    () =>
+      mode === 'blitz'
+        ? `/${currentDojo}/blitz`
+        : mode === 'gauntlet'
+          ? `/${currentDojo}/gauntlet`
+          : `/${currentDojo}/train`,
+    [currentDojo, mode],
+  );
+
+  const handleStartTraining = useCallback(() => {
+    if (!selectedGameMode) return;
+
+    playClick();
+    if (mode === 'blitz') {
+      persistDuration(challengeDuration);
+    }
+    const trainingRoute = getTrainingRoute();
+    if (isTransitionAdvertisementEnabled('before')) {
+      setPendingStartRoute(trainingRoute);
+    } else {
+      router.push(trainingRoute);
+    }
+  }, [
+    challengeDuration,
+    getTrainingRoute,
+    mode,
+    persistDuration,
+    playClick,
+    router,
+    selectedGameMode,
+  ]);
+
   // Keyboard shortcuts: Escape to close, Enter to start training
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -180,17 +219,7 @@ const ModeSetupMenu = ({
         onClose();
       }
       if (e.key === 'Enter' && selectedGameMode) {
-        playClick();
-        if (mode === 'blitz') {
-          persistDuration(challengeDuration);
-        }
-        const route =
-          mode === 'blitz'
-            ? `/${currentDojo}/blitz`
-            : mode === 'gauntlet'
-              ? `/${currentDojo}/gauntlet`
-              : `/${currentDojo}/train`;
-        router.push(route);
+        handleStartTraining();
       }
     };
 
@@ -207,12 +236,7 @@ const ModeSetupMenu = ({
     isOpen,
     onClose,
     selectedGameMode,
-    currentDojo,
-    playClick,
-    router,
-    mode,
-    challengeDuration,
-    persistDuration,
+    handleStartTraining,
   ]);
 
   const gameModes: GameModeOption[] = [
@@ -236,6 +260,8 @@ const ModeSetupMenu = ({
       : currentDojo === 'kanji'
         ? 'Kanji'
         : 'Vocabulary';
+  const dojoCharacter =
+    currentDojo === 'kana' ? 'あ' : currentDojo === 'kanji' ? '字' : '語';
   const ModeIcon = mode === 'blitz' ? Zap : mode === 'gauntlet' ? Swords : Play;
 
   if (!isOpen) return null;
@@ -247,26 +273,31 @@ const ModeSetupMenu = ({
         <Suspense fallback={<></>}>
           <Decorations
             expandDecorations={false}
+            dimmedOpacityClass='opacity-20'
             interactive={true}
             context='mode-setup'
           />
         </Suspense>
       </div>
-      <div className='h-full w-full overflow-x-hidden overflow-y-auto overscroll-y-contain'>
+      <div className='pointer-events-none h-full w-full overflow-x-hidden overflow-y-auto overscroll-y-contain'>
         <div className='mx-auto flex min-h-[100dvh] w-full max-w-lg flex-col justify-center p-4'>
-          <div className='w-full space-y-4'>
+          <div className='pointer-events-auto w-full space-y-4'>
           {/* Header */}
           <div className='space-y-3 text-center'>
             <span className='motion-safe:animate-float mx-auto flex h-20 w-20 items-center justify-center rounded-4xl border-b-14 border-(--secondary-color-accent) bg-(--secondary-color) text-(--background-color) [--float-distance:-5px]'>
-              <ModeIcon size={40} className='fill-current' />
+              {mode === 'train' ? (
+                <span className='text-5xl leading-none'>{dojoCharacter}</span>
+              ) : (
+                <ModeIcon size={40} className='fill-current' />
+              )}
             </span>
             <h1 className='text-2xl font-bold text-(--main-color)'>
               {dojoLabel}{' '}
               {mode === 'blitz'
-                ? 'Blitz'
+                  ? 'Blitz'
                 : mode === 'gauntlet'
                   ? 'Gauntlet'
-                  : 'Classic'}
+                  : 'Custom Practice'}
             </h1>
             <p className='text-(--secondary-color)'>
               {mode === 'blitz'
@@ -460,28 +491,10 @@ const ModeSetupMenu = ({
             </button>
 
             {/* Start Button */}
-            <Link
-              href={
-                mode === 'blitz'
-                  ? `/${currentDojo}/blitz`
-                  : mode === 'gauntlet'
-                    ? `/${currentDojo}/gauntlet`
-                    : `/${currentDojo}/train`
-              }
-              className='w-1/2'
-              onClick={e => {
-                if (!selectedGameMode) {
-                  e.preventDefault();
-                  return;
-                }
-                playClick();
-                if (mode === 'blitz') {
-                  persistDuration(challengeDuration);
-                }
-              }}
-            >
+            <div className='w-1/2'>
               <button
                 disabled={!selectedGameMode}
+                onClick={handleStartTraining}
                 className={clsx(
                   'flex w-full flex-row items-center justify-center gap-2 px-2 py-3 sm:px-6',
                   'rounded-3xl transition-colors duration-200',
@@ -501,14 +514,23 @@ const ModeSetupMenu = ({
                     ? 'Start Blitz'
                     : mode === 'gauntlet'
                       ? 'Start Gauntlet'
-                      : 'Start Training'}
+                      : 'Go'}
                 </span>
               </button>
-            </Link>
+            </div>
             </div>
           </div>
         </div>
       </div>
+      <TransitionAdvertisementOverlay
+        isOpen={pendingStartRoute !== null}
+        placement='before'
+        onDismiss={() => {
+          if (!pendingStartRoute) return;
+          router.push(pendingStartRoute);
+          setPendingStartRoute(null);
+        }}
+      />
     </div>
   );
 };

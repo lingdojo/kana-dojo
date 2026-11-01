@@ -12,136 +12,364 @@
     "example": "ノートにシールを貼った。"
   },
   {
-  "termA": "ナンバー (nanbaa)",
-  "termB": "number (English)",
-  "explanation": "Can mean ranking position in Japanese usage. (Set 2)",
-  "example": "彼はチームのナンバー1だ。"
+    "termA": "ナンバー (nanbaa)",
+    "termB": "number (English)",
+    "explanation": "Can mean ranking position in Japanese usage. (Set 2)",
+    "example": "彼はチームのナンバー1だ。"
   },
   {
-  "termA": "テンション (tenshon)",
-  "termB": "tension (English)",
-  "explanation": "Often means excitement/energy level in casual Japanese. (Set 3)",
-  "example": "ライブでテンションが上がった。"
-},
+    "termA": "ファイト (faito)",
+    "termB": "fight (English)",
+    "explanation": "In Japanese, this is often used as a word of encouragement, meaning 'do your best!' or 'go for it!'. (Set 7)",
+    "example": "次の試合もファイト！"
+  },
   {
-  "termA": "バイキング (baikingu)",
-  "termB": "viking (English)",
-  "explanation": "Usually means buffet/all-you-can-eat in Japan. (Set 2)",
-  "example": "ホテルの朝食はバイキングです。"
-},
+    "termA": "テンション (tenshon)",
+    "termB": "tension (English)",
+    "explanation": "Often means excitement/energy level in casual Japanese. (Set 3)",
+    "example": "ライブでテンションが上がった。"
+  },
   {
-  "termA": "カンニング (kanningu)",
-  "termB": "cunning (English)",
-  "explanation": "カンニング means cheating on tests. (Set 3)",
-  "example": "試験でカンニングしてはいけません。"
-},
+    "termA": "バイキング (baikingu)",
+    "termB": "viking (English)",
+    "explanation": "Usually means buffet/all-you-can-eat in Japan. (Set 2)",
+    "example": "ホテルの朝食はバイキングです。"
+  },
   {
-  "termA": "ハイテンション (haitenshon)",
-  "termB": "high tension (English)",
-  "explanation": "Means very energetic mood. (Set 4)",
-  "example": "試合前はみんなハイテンションだった。"
-},
+    "termA": "カンニング (kanningu)",
+    "termB": "cunning (English)",
+    "explanation": "カンニング means cheating on tests. (Set 3)",
+    "example": "試験でカンニングしてはいけません。"
+  },
   {
-  "termA": "ホッチキス (hocchikisu)",
-  "termB": "Hotchkiss (name)",
-  "explanation": "ホッチキス means stapler. (Set 2)",
-  "example": "資料をホッチキスで留めてください。"
-},
+    "termA": "ハイテンション (haitenshon)",
+    "termB": "high tension (English)",
+    "explanation": "Means very energetic mood. (Set 2)",
+    "example": "試合前はみんなハイテンションだった。"
+  },
   {
-  "termA": "ペットボトル (petto botoru)",
-  "termB": "PET bottle",
-  "explanation": "Common term for plastic drink bottle. (Set 6)",
-  "example": "ペットボトルは分別して捨てる。"
-},
+    "termA": "ホッチキス (hocchikisu)",
+    "termB": "Hotchkiss (name)",
+    "explanation": "ホッチキス means stapler. (Set 2)",
+    "example": "資料をホッチキスで留めてください。"
+  },
   {
-  "termA": "マンション (manshon)",
-  "termB": "mansion (English)",
-  "explanation": "マンション means apartment building in Japanese. (Set 3)",
-  "example": "駅前のマンションに住んでいます。"
-},
+    "termA": "ペットボトル (petto botoru)",
+    "termB": "PET bottle",
+    "explanation": "Common term for plastic drink bottle. (Set 6)",
+    "example": "ペットボトルは分別して捨てる。"
+  },
   {
-  "termA": "ペットボトル (petto botoru)",
-  "termB": "PET bottle",
-  "explanation": "Common term for plastic drink bottle. (Set 6)",
-  "example": "ペットボトルは分別して捨てる。"
-},
+    "termA": "マンション (manshon)",
+    "termB": "mansion (English)",
+    "explanation": "マンション means apartment building in Japanese. (Set 3)",
+    "example": "駅前のマンションに住んでいます。"
+  },
   {
-  "termA": "ドンマイ (donmai)",
-  "termB": "don't mind (English)",
-  "explanation": "Used to comfort someone: 'never mind'. (Set 2)",
-  "example": "ミスしてもドンマイ！"
-},
+    "termA": "ペットボトル (petto botoru)",
+    "termB": "PET bottle",
+    "explanation": "Common term for plastic drink bottle. (Set 6)",
+    "example": "ペットボトルは分別して捨てる。"
+  },
   {
-  "termA": "ドンマイ (donmai)",
-  "termB": "don't mind (English)",
-  "explanation": "Used to comfort someone: 'never mind'. (Set 2)",
-  "example": "ミスしてもドンマイ！"
-},
+    "termA": "ドンマイ (donmai)",
+    "termB": "don't mind (English)",
+    "explanation": "Used to comfort someone: 'never mind'. (Set 2)",
+    "example": "ミスしてもドンマイ！"
+  },
   {
-  "termA": "リベンジ (ribenji)",
-  "termB": "revenge (English)",
-  "explanation": "Often used as 'try again after failing'. (Set 4)",
-  "example": "去年落ちた試験に今年リベンジする。"
-},
-{
-  "termA": "マンション (manshon)",
-  "termB": "mansion (English)",
-  "explanation": "マンション means apartment building in Japanese. (Set 5)",
-  "example": "駅前のマンションに住んでいます。"
-},
-{
-  "termA": "ナイーブ (naibu)",
-  "termB": "naive (English)",
-  "explanation": "Often means sensitive/delicate in Jaaapanese. (Set 6)",
-  "example": "彼は意外とナイーブな性格だ。"
-},
+    "termA": "ドンマイ (donmai)",
+    "termB": "don't mind (English)",
+    "explanation": "Used to comfort someone: 'never mind'. (Set 2)",
+    "example": "ミスしてもドンマイ！"
+  },
   {
-  "termA": "ナイーブ (naibu)",
-  "termB": "naive (English)",
-  "explanation": "Often means sensitive/delicate in Japanese. (Set 6)",
-  "example": "彼は意外とナイーブな性格だ。"
-},
-{
-  "termA": "クレーム (kureemu)",
-  "termB": "claim (English)",
-  "explanation": "In Japanese it usually means complaint. (Set 5)",
-  "example": "お客様からクレームが届いた。"
-},
-{
-  "termA": "スマート (sumaato)",
-  "termB": "smart (English)",
-  "explanation": "Often means slim/stylish, not necessarily intelligent. (Set 2)",
-  "example": "彼はスマートな着こなしをしている。"
-},
-{
-  "termA": "アニメ (anime)",
-  "termB": "anime (English usage)",
-  "explanation": "In Japanese it can refer to animation in general. (Set 1)",
-  "example": "子どものころからアニメが好きだ。"
-},
-{
-  "termA": "手紙 (tegami)",
-  "termB": "letter (English)",
-  "explanation": "手紙 means physical mail, not alphabet letters. (Set 4)",
-  "example": "祖母に手紙を書きました。"
-},
+    "termA": "リベンジ (ribenji)",
+    "termB": "revenge (English)",
+    "explanation": "Often used as 'try again after failing'. (Set 4)",
+    "example": "去年落ちた試験に今年リベンジする。"
+  },
+  {
+    "termA": "マンション (manshon)",
+    "termB": "mansion (English)",
+    "explanation": "マンション means apartment building in Japanese. (Set 5)",
+    "example": "駅前のマンションに住んでいます。"
+  },
+  {
+    "termA": "ナイーブ (naibu)",
+    "termB": "naive (English)",
+    "explanation": "Often means sensitive/delicate in Jaaapanese. (Set 6)",
+    "example": "彼は意外とナイーブな性格だ。"
+  },
+  {
+    "termA": "ナイーブ (naibu)",
+    "termB": "naive (English)",
+    "explanation": "Often means sensitive/delicate in Japanese. (Set 6)",
+    "example": "彼は意外とナイーブな性格だ。"
+  },
+  {
+    "termA": "クレーム (kureemu)",
+    "termB": "claim (English)",
+    "explanation": "In Japanese it usually means complaint. (Set 5)",
+    "example": "お客様からクレームが届いた。"
+  },
+  {
+    "termA": "スマート (sumaato)",
+    "termB": "smart (English)",
+    "explanation": "Often means slim/stylish, not necessarily intelligent. (Set 2)",
+    "example": "彼はスマートな着こなしをしている。"
+  },
+  {
+    "termA": "アニメ (anime)",
+    "termB": "anime (English usage)",
+    "explanation": "In Japanese it can refer to animation in general. (Set 1)",
+    "example": "子どものころからアニメが好きだ。"
+  },
+  {
+    "termA": "手紙 (tegami)",
+    "termB": "letter (English)",
+    "explanation": "手紙 means physical mail, not alphabet letters. (Set 4)",
+    "example": "祖母に手紙を書きました。"
+  },
+  {
+    "termA": "コンセント (konsento)",
+    "termB": "consent (English)",
+    "explanation": "コンセント means electrical outlet. (Set 6)",
+    "example": "コンセントが足りないので延長コードを使います。"
+  },
+  {
+    "termA": "イメージ (imeeji)",
+    "termB": "image",
+    "explanation": "Often means impression/public image. (Set 6)",
+    "example": "会社のイメージが良くなった。"
+  },
+  {
+    "termA": "チャレンジ (charenji)",
+    "termB": "challenge (English)",
+    "explanation": "Often means trying something new. (Set 6)",
+    "example": "新しい料理にチャレンジしてみる。"
+  },
+  {
+    "termA": "リベンジ (ribenji)",
+    "termB": "revenge (English)",
+    "explanation": "Often used as 'try again after failing'. (Set 4)",
+    "example": "去年落ちた試験に今年リベンジする。"
+  },
+  {
+    "termA": "リベンジ (ribenji)",
+    "termB": "revenge (English)",
+    "explanation": "Often used as 'try again after failing'. (Set 4)",
+    "example": "去年落ちた試験に今年リベンジする。"
+  },
+  {
+    "termA": "ドンマイ (donmai)",
+    "termB": "don't mind (English)",
+    "explanation": "Used to comfort someone: 'never mind'. (Set 4)",
+    "example": "ミスしてもドンマイ！"
+  },
+  {
+    "termA": "バイキング (baikingu)",
+    "termB": "viking (English)",
+    "explanation": "Usually means buffet/all-you-can-eat in Japan. (Set 1)",
+    "example": "ホテルの朝食はバイキングです。"
+  },
+  {
+    "termA": "シール (shiiru)",
+    "termB": "seal (animal)",
+    "explanation": "シール usually means sticker/label. (Set 6)",
+    "example": "ノートにシールを貼った。"
+  },
+  {
+    "termA": "チャレンジ (charenji)",
+    "termB": "challenge (English)",
+    "explanation": "Often means trying something new. (Set 1)",
+    "example": "新しい料理にチャレンジしてみる。"
+  },
+  {
+    "termA": "クレーム (kureemu)",
+    "termB": "claim (English)",
+    "explanation": "In Japanese it usually means complaint. (Set 5)",
+    "example": "お客様からクレームが届いた。"
+  },
+  {
+    "termA": "ナイーブ (naibu)",
+    "termB": "naive (English)",
+    "explanation": "Often means sensitive/delicate in Japanese. (Set 6)",
+    "example": "彼は意外とナイーブな性格だ。"
+  },
+  {
+    "termA": "コンセント (konsento)",
+    "termB": "consent (English)",
+    "explanation": "コンセント means electrical outlet. (Set 5)",
+    "example": "コンセントが足りないので延長コードを使います。"
+  },
+  {
+    "termA": "リベンジ (ribenji)",
+    "termB": "revenge (English)",
+    "explanation": "Often used as 'try again after failing'. (Set 2)",
+    "example": "去年落ちた試験に今年リベンジする。"
+  },
+  {
+    "termA": "チャレンジ (charenji)",
+    "termB": "challenge (English)",
+    "explanation": "Often means trying something new. (Set 5)",
+    "example": "新しい料理にチャレンジしてみる。"
+  },
+  {
+    "termA": "バイキング (baikingu)",
+    "termB": "viking (English)",
+    "explanation": "Usually means buffet/all-you-can-eat in Japan. (Set 6)",
+    "example": "ホテルの朝食はバイキングです。"
+  },
+  {
+    "termA": "カンニング (kanningu)",
+    "termB": "cunning (English)",
+    "explanation": "カンニング means cheating on tests. (Set 4)",
+    "example": "試験でカンニングしてはいけません。"
+  },
+  {
+    "termA": "スマート (sumaato)",
+    "termB": "smart (English)",
+    "explanation": "Often means slim/stylish, not necessarily intelligent. (Set 6)",
+    "example": "彼はスマートな着こなしをしている。"
+  },
+  {
+    "termA": "バイキング (baikingu)",
+    "termB": "viking (English)",
+    "explanation": "Usually means buffet/all-you-can-eat in Japan. (Set 2)",
+    "example": "ホテルの朝食はバイキングです。"
+  },
+  {
+    "termA": "シール (shiiru)",
+    "termB": "seal (animal)",
+    "explanation": "シール usually means sticker/label. (Set 5)",
+    "example": "ノートにシールを貼った。"
+  },
+  {
+    "termA": "手紙 (tegami)",
+    "termB": "letter (English)",
+    "explanation": "手紙 means physical mail, not alphabet letters. (Set 3)",
+    "example": "祖母に手紙を書きました。"
+  },
+  {
+    "termA": "ホッチキス (hocchikisu)",
+    "termB": "Hotchkiss (name)",
+    "explanation": "ホッチキス means stapler. (Set 6)",
+    "example": "資料をホッチキスで留めてください。"
+  },
+  {
+    "termA": "リベンジ (ribenji)",
+    "termB": "revenge (English)",
+    "explanation": "Often used as 'try again after failing'. (Set 4)",
+    "example": "去年落ちた試験に今年リベンジする。"
+  },
+  {
+    "termA": "コンセント (konsento)",
+    "termB": "consent (English)",
+    "explanation": "コンセント means electrical outlet. (Set 3)",
+    "example": "コンセントが足りないので延長コードを使います。"
+  },
+  {
+    "termA": "アニメ (anime)",
+    "termB": "anime (English usage)",
+    "explanation": "In Japanese it can refer to animation in general. (Set 4)",
+    "example": "子どものころからアニメが好きだ。"
+  },
+  {
+    "termA": "リベンジ (ribenji)",
+    "termB": "revenge (English)",
+    "explanation": "Often used as 'try again after failing'. (Set 5)",
+    "example": "去年落ちた試験に今年リベンジする。"
+  },
+  {
+    "termA": "カンニング (kanningu)",
+    "termB": "cunning (English)",
+    "explanation": "カンニング means cheating on tests. (Set 2)",
+    "example": "試験でカンニングしてはいけません。"
+  },
+  {
+    "termA": "マンション (manshon)",
+    "termB": "mansion (English)",
+    "explanation": "マンション means apartment building in Japanese. (Set 4)",
+    "example": "駅前のマンションに住んでいます。"
+  },
+  {
+    "termA": "ハイテンション (haitenshon)",
+    "termB": "high tension (English)",
+    "explanation": "Means very energetic mood. (Set 6)",
+    "example": "試合前はみんなハイテンションだった。"
+  },
+  {
+    "termA": "ドンマイ (donmai)",
+    "termB": "don't mind (English)",
+    "explanation": "Used to comfort someone: 'never mind'. (Set 2)",
+    "example": "ミスしてもドンマイ！"
+  },
+  {
+    "termA": "ホッチキス (hocchikisu)",
+    "termB": "Hotchkiss (name)",
+    "explanation": "ホッチキス means stapler. (Set 2)",
+    "example": "資料をホッチキスで留めてください。"
+  },
+  {
+    "termA": "リベンジ (ribenji)",
+    "termB": "revenge (English)",
+    "explanation": "Often used as 'try again after failing'. (Set 5)",
+    "example": "去年落ちた試験に今年リベンジする。"
+  },
+  {
+    "termA": "ナイーブ (naibu)",
+    "termB": "naive (English)",
+    "explanation": "Often means sensitive/delicate in Japanese. (Set 1)",
+    "example": "彼は意外とナイーブな性格だ。"
+  },
+  {
+    "termA": "ドンマイ (donmai)",
+    "termB": "don't mind (English)",
+    "explanation": "Used to comfort someone: 'never mind'. (Set 6)",
+    "example": "ミスしてもドンマイ！"
+  },
+  {
+    "termA": "ドンマイ (donmai)",
+    "termB": "don't mind (English)",
+    "explanation": "Used to comfort someone: 'never mind'. (Set 1)",
+    "example": "ミスしてもドンマイ！"
+  },
+  {
+    "termA": "テンション (tenshon)",
+    "termB": "tension (English)",
+    "explanation": "Often means excitement/energy level in casual Japanese. (Set 4)",
+    "example": "ライブでテンションが上がった。"
+  },
+  {
+    "termA": "シール (shiiru)",
+    "termB": "seal (animal)",
+    "explanation": "シール usually means sticker/label. (Set 6)",
+    "example": "ノートにシールを貼った。"
+  },
+  {
+    "termA": "バイク (baiku)",
+    "termB": "bike (bicycle)",
+    "explanation": "In Japanese バイク usually means motorcycle, not bicycle.",
+    "example": "週末にバイクでツーリングに行った。"
+  },
+  {
+    "termA": "アニメ (anime)",
+    "termB": "anime (English usage)",
+    "explanation": "In Japanese it can refer to animation in general. (Set 2)",
+    "example": "子どものころからアニメが好きだ。"
+  },
+  {
+    "termA": "クレーム (kureemu)",
+    "termB": "claim (English)",
+    "explanation": "In Japanese it usually means complaint. (Set 5)",
+    "example": "お客様からクレームが届いた。"
+  },
   {
   "termA": "コンセント (konsento)",
   "termB": "consent (English)",
-  "explanation": "コンセント means electrical outlet. (Set 6)",
+  "explanation": "コンセント means electrical outlet. (Set 5)",
   "example": "コンセントが足りないので延長コードを使います。"
-},
-{
-  "termA": "イメージ (imeeji)",
-  "termB": "image",
-  "explanation": "Often means impression/public image. (Set 6)",
-  "example": "会社のイメージが良くなった。"
-},
-  {
-  "termA": "チャレンジ (charenji)",
-  "termB": "challenge (English)",
-  "explanation": "Often means trying something new. (Set 6)",
-  "example": "新しい料理にチャレンジしてみる。"
 }
-  
 ]
+

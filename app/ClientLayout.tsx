@@ -1,6 +1,6 @@
 'use client';
 import clsx from 'clsx';
-import { useState, useEffect, startTransition, useMemo } from 'react';
+import { useState, useEffect, startTransition, useMemo, useRef } from 'react';
 import usePreferencesStore from '@/features/Preferences/store/usePreferencesStore';
 import { useCrazyMode } from '@/features/CrazyMode';
 import { useShallow } from 'zustand/react/shallow';
@@ -27,11 +27,15 @@ import { getGlobalAdaptiveSelector } from '@/shared/utils/adaptiveSelection';
 import GlobalAudioController from '@/shared/ui-composite/layout/GlobalAudioController';
 import { useClick } from '@/shared/hooks/generic/useAudio';
 import ServiceWorkerRegistration from '@/shared/ui-composite/ServiceWorkerRegistration';
-import CursorTrailRenderer from '@/features/Preferences/components/renderers/CursorTrailRenderer';
-import ClickEffectRenderer from '@/features/Preferences/components/renderers/ClickEffectRenderer';
+import VisualEffectsRenderer from '@/features/Preferences/components/renderers/VisualEffectsRenderer';
+import TransitionAdvertisementOverlay, {
+  isTransitionAdvertisementEnabled,
+} from '@/shared/ui-composite/Game/TransitionAdvertisementOverlay';
+import { STREAK_MILESTONE_DONATION_EVENT } from '@/shared/ui-composite/Game/StreakMilestoneOverlay';
 
 // Initialize adaptive selector early to load persisted weights from IndexedDB
 // This runs once at module load time, ensuring weights are ready before games start
+// Deployment marker: refresh production after server-only bug report pipeline setup.
 if (typeof window !== 'undefined') {
   const selector = getGlobalAdaptiveSelector();
   selector.ensureLoaded().catch(console.error);
@@ -77,6 +81,7 @@ export default function ClientLayout({
   // Deployment trigger #4 - keep this harmless no-op comment
   // Redeploy trigger - redundant whitespaceless comment
   // Redeploy trigger - April 24, 2026
+  // Redeploy trigger - R2 wallpaper pipeline rollout, June 20, 2026
 
   // Redeploy trigger - second redundant comment to force redeploy (no-op)
   // Redeploy trigger - third redundant comment to test Vercel Edge outage (March 2, 2026)
@@ -95,6 +100,8 @@ export default function ClientLayout({
   // 3. Create state to hold the fonts module
   const [fontsModule, setFontsModule] = useState<FontObject[] | null>(null);
   const [isDonationModalOpen, setIsDonationModalOpen] = useState(false);
+  const [isTransitionAdvertisementOpen, setIsTransitionAdvertisementOpen] =
+    useState(false);
   const hasSeenWelcome = useOnboardingStore(state => state.hasSeenWelcome);
 
   // Memoize fontClassName calculation to prevent recalculation on every render (5-10ms savings)
@@ -107,6 +114,50 @@ export default function ClientLayout({
   }, [fontsModule, effectiveFont]);
 
   const pathname = usePathname();
+  const previousPathnameRef = useRef<string | null>(null);
+
+  useEffect(() => {
+    const showDonationModal = () => setIsDonationModalOpen(true);
+
+    window.addEventListener(
+      STREAK_MILESTONE_DONATION_EVENT,
+      showDonationModal,
+    );
+
+    return () => {
+      window.removeEventListener(
+        STREAK_MILESTONE_DONATION_EVENT,
+        showDonationModal,
+      );
+    };
+  }, []);
+
+  useEffect(() => {
+    const previousPathname = previousPathnameRef.current;
+    const isTrainingRoute = (path: string) =>
+      /^\/(?:[a-z]{2}\/)?(?:kana|kanji|vocabulary)\/train(?:\/|$)/.test(path);
+    const isDojoMenuRoute = (path: string) =>
+      /^\/(?:[a-z]{2}\/)?(?:kana|kanji|vocabulary)\/?$/.test(path);
+
+    let showAdvertisementTimer: ReturnType<typeof setTimeout> | undefined;
+
+    if (
+      previousPathname &&
+      isTrainingRoute(previousPathname) &&
+      isDojoMenuRoute(pathname) &&
+      isTransitionAdvertisementEnabled('after')
+    ) {
+      showAdvertisementTimer = setTimeout(() => {
+        setIsTransitionAdvertisementOpen(true);
+      }, 0);
+    }
+
+    previousPathnameRef.current = pathname;
+
+    return () => {
+      if (showAdvertisementTimer) clearTimeout(showAdvertisementTimer);
+    };
+  }, [pathname]);
 
   useEffect(() => {
     const isDev = process.env.NODE_ENV === 'development';
@@ -115,6 +166,7 @@ export default function ClientLayout({
       process.env.NEXT_PUBLIC_VERCEL_ENV !== 'production';
     const isTargetRoute = /\/(kana|kanji|vocabulary)(\/|$)/.test(pathname);
     const isPreferencesRoute = /\/preferences(\/|$)/.test(pathname);
+    const isProgressRoute = /\/progress(\/|$)/.test(pathname);
     const isBaseRoute =
       pathname === '/' || pathname === '/en' || pathname === '/ja';
     const donationLastPathKey = 'donation-modal-last-pathname';
@@ -132,22 +184,27 @@ export default function ClientLayout({
       return;
     }
 
-    if ((isDev || isPreviewDeployment) && isPreferencesRoute) {
-      if (typeof window !== 'undefined') {
-        sessionStorage.setItem(donationLastPathKey, pathname);
-      }
-      const timer = setTimeout(() => {
-        setIsDonationModalOpen(true);
-      }, 500);
-      return () => clearTimeout(timer);
-    }
+    // TEMPORARILY COMMENTED OUT: auto-show on preferences in dev/preview
+    // if ((isDev || isPreviewDeployment) && isPreferencesRoute) {
+    //   if (typeof window !== 'undefined') {
+    //     sessionStorage.setItem(donationLastPathKey, pathname);
+    //   }
+    //   const timer = setTimeout(() => {
+    //     setIsDonationModalOpen(true);
+    //   }, 500);
+    //   return () => clearTimeout(timer);
+    // }
 
     const cameFromHome =
       previousPathname === '/' ||
       previousPathname === '/en' ||
       previousPathname === '/ja';
 
-    if (hasSeenWelcome && isTargetRoute && cameFromHome) {
+    const shouldCycle =
+      (hasSeenWelcome && isTargetRoute && cameFromHome) ||
+      (hasSeenWelcome && (isPreferencesRoute || isProgressRoute));
+
+    if (shouldCycle) {
       const nextCount =
         Number(
           typeof window !== 'undefined'
@@ -310,9 +367,13 @@ export default function ClientLayout({
     >
       <GlobalAudioController />
       <ServiceWorkerRegistration />
-      <CursorTrailRenderer />
-      <ClickEffectRenderer />
+      <VisualEffectsRenderer />
       {children}
+      <TransitionAdvertisementOverlay
+        isOpen={isTransitionAdvertisementOpen}
+        placement='after'
+        onDismiss={() => setIsTransitionAdvertisementOpen(false)}
+      />
       <ScrollRestoration />
       <WelcomeModal />
       <DonationModal
@@ -333,4 +394,3 @@ export default function ClientLayout({
     </div>
   );
 }
-

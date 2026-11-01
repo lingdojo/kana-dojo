@@ -46,6 +46,8 @@ interface CustomWallpaperStore {
   getWallpaperUrl: (id: string) => string | undefined;
   getThumbnailUrl: (id: string) => string | undefined;
   hasWallpaper: (id: string) => boolean;
+  ensureObjectUrl: (id: string) => Promise<string | undefined>;
+  releaseObjectUrlsExcept: (activeId?: string) => void;
   initializeObjectUrls: () => Promise<void>;
 }
 
@@ -56,6 +58,7 @@ interface CustomWallpaperStore {
 const DB_NAME = 'kanadojo-custom-wallpapers';
 const DB_VERSION = 1;
 const STORE_NAME = 'images';
+const objectUrlLoads = new Map<string, Promise<string | undefined>>();
 
 function openDB(): Promise<IDBDatabase> {
   return new Promise((resolve, reject) => {
@@ -173,42 +176,63 @@ export const useCustomWallpaperStore = create<CustomWallpaperStore>()(
         return get().wallpapers.some(w => w.id === id);
       },
 
-      /**
-       * Load all blobs from IndexedDB and create object URLs.
-       * Called once on app startup. Wallpapers whose blobs are missing
-       * (e.g. cleared browser storage) are silently removed from the list.
-       */
-      initializeObjectUrls: async () => {
-        const { wallpapers, initialized } = get();
-        if (initialized) return;
+      ensureObjectUrl: async id => {
+        const existing = get().objectUrls[id];
+        if (existing) return existing;
 
-        const objectUrls: Record<string, string> = {};
-        const validWallpapers: CustomWallpaperMeta[] = [];
+        const pending = objectUrlLoads.get(id);
+        if (pending) return pending;
 
-        for (const wallpaper of wallpapers) {
+        const load = (async () => {
           try {
-            const blob = await loadBlob(wallpaper.id);
-            if (blob) {
-              objectUrls[wallpaper.id] = URL.createObjectURL(blob);
-              validWallpapers.push(wallpaper);
-            } else {
+            const blob = await loadBlob(id);
+            if (!blob) {
               console.warn(
-                `Wallpaper blob not found for "${wallpaper.id}" — removing stale metadata.`,
+                `Wallpaper blob not found for "${id}" — removing stale metadata.`,
               );
+              await get().removeWallpaper(id);
+              return undefined;
             }
+
+            const objectUrl = URL.createObjectURL(blob);
+            set(state => ({
+              objectUrls: { ...state.objectUrls, [id]: objectUrl },
+            }));
+            return objectUrl;
           } catch (err) {
-            console.warn(
-              `Failed to load wallpaper blob for "${wallpaper.id}":`,
-              err,
-            );
+            console.warn(`Failed to load wallpaper blob for "${id}":`, err);
+            return undefined;
+          } finally {
+            objectUrlLoads.delete(id);
           }
+        })();
+
+        objectUrlLoads.set(id, load);
+        return load;
+      },
+
+      releaseObjectUrlsExcept: activeId => {
+        const { objectUrls } = get();
+        const retained: Record<string, string> = {};
+
+        for (const [id, objectUrl] of Object.entries(objectUrls)) {
+          if (id === activeId) retained[id] = objectUrl;
+          else URL.revokeObjectURL(objectUrl);
         }
 
-        set({
-          objectUrls,
-          wallpapers: validWallpapers,
-          initialized: true,
-        });
+        if (Object.keys(retained).length !== Object.keys(objectUrls).length) {
+          set({ objectUrls: retained });
+        }
+      },
+
+      /**
+       * Mark metadata hydration complete. Full-size blobs are loaded only when
+       * their wallpaper becomes active.
+       */
+      initializeObjectUrls: async () => {
+        const { initialized } = get();
+        if (initialized) return;
+        set({ initialized: true });
       },
     }),
     {

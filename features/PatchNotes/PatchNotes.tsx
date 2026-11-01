@@ -8,7 +8,7 @@ const PatchNotes = () => {
     <LegalLayout
       icon={<FileDiff className='size-6' />}
       title='Patch Notes'
-      lastUpdated='April 8, 2026'
+      lastUpdated='August 30, 2026'
     >
       <div className='space-y-8'>
         {patchNotesData.map((patch, index) => (
@@ -31,4 +31,3 @@ const PatchNotes = () => {
 };
 
 export default PatchNotes;
-

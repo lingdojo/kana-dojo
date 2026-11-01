@@ -11,6 +11,7 @@ export * from '@/shared/utils/indexnow';
 export * from '@/shared/utils/info';
 export * from '@/shared/utils/internal-links';
 export * from '@/shared/utils/keyMappings';
+export * from '@/shared/utils/meanings';
 export * from '@/shared/utils/pathUtils';
 export * from '@/shared/utils/sessionHistory';
 export * from '@/shared/utils/shuffle';

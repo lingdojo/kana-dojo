@@ -2,11 +2,13 @@
 import { useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import clsx from 'clsx';
-import useVocabStore, {
-  IVocabObj,
-} from '@/features/Vocabulary/store/useVocabStore';
+import type { IVocabObj } from '@/features/Vocabulary/store/useVocabStore';
 import { Random } from 'random-js';
-import { useCorrect, useError, useClick } from '@/shared/hooks/generic/useAudio';
+import {
+  useCorrect,
+  useError,
+  useClick,
+} from '@/shared/hooks/generic/useAudio';
 import { getGlobalAdaptiveSelector } from '@/shared/utils/adaptiveSelection';
 import Stars from '@/shared/ui-composite/Game/Stars';
 import { useCrazyModeTrigger } from '@/features/CrazyMode/hooks/useCrazyModeTrigger';
@@ -37,7 +39,8 @@ import {
   type VocabQuestionFormat,
   type VocabQuizType,
 } from '@/features/Vocabulary/components/Game/vocabFormatLock';
-import useSetProgressStore from '@/features/Progress/store/useSetProgressStore';
+import { useSetProgressStore } from '@/features/Progress';
+import { useTilesModeKeyboardSelection } from '@/shared/hooks/game/useTilesModeKeyboardSelection';
 
 const random = new Random();
 const adaptiveSelector = getGlobalAdaptiveSelector();
@@ -102,14 +105,14 @@ const VocabTilesMode = ({
     selectedWordObjs.length - 1,
   );
 
-  // Get the current vocabulary collection from the Vocab store
-  const selectedVocabCollection = useVocabStore(
-    state => state.selectedVocabCollection,
-  );
   const isGlassMode = useThemePreferences().isGlassMode;
 
-  const { startAnswerTimer, pauseAnswerTimer, getAnswerTimeMs, resetAnswerTimer } =
-    useAnswerTimer();
+  const {
+    startAnswerTimer,
+    pauseAnswerTimer,
+    getAnswerTimeMs,
+    resetAnswerTimer,
+  } = useAnswerTimer();
   const { playCorrect } = useCorrect();
   const { playErrorTwice } = useError();
   const { playClick } = useClick();
@@ -290,6 +293,22 @@ const VocabTilesMode = ({
       playClick,
     });
 
+  const { clearTypedPrefix } = useTilesModeKeyboardSelection({
+    allTiles: questionData.allTiles,
+    placedTileIds,
+    onTileClick: handleTileClick,
+    enabled: !isHidden && (!isChecking || bottomBarState === 'wrong'),
+    resetKey: `${questionData.word}-${bottomBarState}`,
+  });
+
+  const handleGridTileClick = useCallback(
+    (id: number, char: string) => {
+      clearTypedPrefix();
+      handleTileClick(id, char);
+    },
+    [clearTypedPrefix, handleTileClick],
+  );
+
   // Determine next quiz type based on word content
   const getNextQuizType = useCallback(
     (
@@ -425,7 +444,7 @@ const VocabTilesMode = ({
         questionId: questionData.word,
         questionPrompt: String(
           questionData.quizType === 'meaning' && isReverse
-            ? questionData.wordObj?.meanings?.[0] ?? questionData.word
+            ? (questionData.wordObj?.meanings?.[0] ?? questionData.word)
             : questionData.word,
         ),
         expectedAnswers: [questionData.correctAnswer],
@@ -473,7 +492,7 @@ const VocabTilesMode = ({
         questionId: questionData.word,
         questionPrompt: String(
           questionData.quizType === 'meaning' && isReverse
-            ? questionData.wordObj?.meanings?.[0] ?? questionData.word
+            ? (questionData.wordObj?.meanings?.[0] ?? questionData.word)
             : questionData.word,
         ),
         expectedAnswers: [questionData.correctAnswer],
@@ -679,7 +698,7 @@ const VocabTilesMode = ({
             <TilesModeGrid
               allTiles={questionData.allTiles}
               placedTileIds={placedTileIds}
-              onTileClick={handleTileClick}
+              onTileClick={handleGridTileClick}
               isTileDisabled={isChecking && bottomBarState !== 'wrong'}
               isCelebrating={isCelebrating}
               celebrationMode={nextCelebrationMode}

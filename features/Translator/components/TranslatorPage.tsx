@@ -1,6 +1,6 @@
 'use client';
 
-import { Suspense, useEffect, useRef } from 'react';
+import { Suspense, useCallback, useEffect, useRef } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { ArrowLeftRight, WifiOff, Languages, Sparkles } from 'lucide-react';
 import { cn } from '@/shared/utils/utils';
@@ -16,7 +16,84 @@ interface TranslatorPageProps {
   locale?: string;
 }
 
-function TranslatorPageContent({ locale = 'en' }: TranslatorPageProps) {
+const URL_AUTOTRANSLATE_CHAR_LIMIT = 300;
+
+interface TurnstileWindow extends Window {
+  turnstile?: {
+    render: (
+      container: HTMLElement,
+      options: {
+        sitekey: string;
+        callback: (token: string) => void;
+        'expired-callback': () => void;
+        'error-callback': () => void;
+      },
+    ) => string;
+    remove: (widgetId: string) => void;
+  };
+}
+
+function TurnstileVerification({
+  onVerified,
+}: {
+  onVerified: (token: string) => void;
+}) {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
+    if (!siteKey || !containerRef.current) {
+      return;
+    }
+
+    let widgetId: string | null = null;
+    const renderWidget = () => {
+      const turnstile = (window as TurnstileWindow).turnstile;
+      if (!turnstile || !containerRef.current || widgetId) {
+        return;
+      }
+
+      widgetId = turnstile.render(containerRef.current, {
+        sitekey: siteKey,
+        callback: onVerified,
+        'expired-callback': () => onVerified(''),
+        'error-callback': () => onVerified(''),
+      });
+    };
+
+    if ((window as TurnstileWindow).turnstile) {
+      renderWidget();
+    } else {
+      const existingScript = document.querySelector(
+        'script[src="https://challenges.cloudflare.com/turnstile/v0/api.js"]',
+      );
+      if (!existingScript) {
+        const script = document.createElement('script');
+        script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+        script.async = true;
+        script.defer = true;
+        script.onload = renderWidget;
+        document.head.appendChild(script);
+      } else {
+        existingScript.addEventListener('load', renderWidget, { once: true });
+      }
+    }
+
+    return () => {
+      if (widgetId && (window as TurnstileWindow).turnstile) {
+        (window as TurnstileWindow).turnstile?.remove(widgetId);
+      }
+    };
+  }, [onVerified]);
+
+  return (
+    <div className='flex justify-center' aria-label='Human verification'>
+      <div ref={containerRef} />
+    </div>
+  );
+}
+
+function TranslatorPageContent({ locale: _locale = 'en' }: TranslatorPageProps) {
   const searchParams = useSearchParams();
   const initializedFromUrl = useRef(false);
 
@@ -29,11 +106,13 @@ function TranslatorPageContent({ locale = 'en' }: TranslatorPageProps) {
     isLoading,
     error,
     isOffline,
+    verificationRequired,
     history,
     setSourceText,
     setSourceLanguage,
     swapLanguages,
     translate,
+    setVerificationToken,
     loadHistory,
     deleteFromHistory,
     clearHistory,
@@ -64,10 +143,12 @@ function TranslatorPageContent({ locale = 'en' }: TranslatorPageProps) {
 
       if (hasParams) {
         initializedFromUrl.current = true;
-        // Auto-translate if text was provided via URL
-        setTimeout(() => {
-          translate();
-        }, 100);
+        if (text.trim().length <= URL_AUTOTRANSLATE_CHAR_LIMIT) {
+          // Auto-translate short shared snippets only; longer URL text needs a click.
+          setTimeout(() => {
+            translate('url-prefill');
+          }, 100);
+        }
       }
     }
   }, [searchParams, initFromUrlParams, translate]);
@@ -75,6 +156,13 @@ function TranslatorPageContent({ locale = 'en' }: TranslatorPageProps) {
   const handleTranslate = () => {
     if (!isOffline && sourceText.trim().length > 0) translate();
   };
+
+  const handleVerified = useCallback((token: string) => {
+    setVerificationToken(token || null);
+    if (token && !isOffline && sourceText.trim().length > 0) {
+      translate();
+    }
+  }, [isOffline, setVerificationToken, sourceText, translate]);
 
   return (
     <div
@@ -214,6 +302,10 @@ function TranslatorPageContent({ locale = 'en' }: TranslatorPageProps) {
           {isLoading ? 'Translating...' : 'Translate'}
         </ActionButton>
       </div>
+
+      {verificationRequired && process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && (
+        <TurnstileVerification onVerified={handleVerified} />
+      )}
 
       <div className='mt-6'>
         <TranslationHistory

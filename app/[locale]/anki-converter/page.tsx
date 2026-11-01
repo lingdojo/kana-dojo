@@ -55,14 +55,14 @@ export async function generateMetadata({
       url: `${BASE_URL}/anki-converter`,
       siteName: 'KanaDojo',
       locale: ogLocale,
-      images: [
+      /* images: [
         {
           url: `${BASE_URL}/api/og?title=${encodeURIComponent('Anki Deck to JSON Converter')}&description=${encodeURIComponent('Free, private, browser-based conversion')}`,
           width: 1200,
           height: 630,
           alt: 'Anki Deck to JSON Converter - KanaDojo',
         },
-      ],
+      ], */
     },
     twitter: {
       card: 'summary_large_image',

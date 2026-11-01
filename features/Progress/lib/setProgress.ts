@@ -1,8 +1,24 @@
-export const KANJI_SET_PROGRESS_TARGET = 35;
-export const VOCAB_MEANING_PROGRESS_TARGET = 35;
-export const VOCAB_READING_PROGRESS_TARGET = 25;
+export const MAX_STARS_PER_SET = 3;
+
+// Kana
+export const KANA_ROW_MASTERY_TARGET = 50;
+export const KANA_MAX_STARS = MAX_STARS_PER_SET;
+export const KANA_ROW_MASTERY_CAP = KANA_ROW_MASTERY_TARGET * KANA_MAX_STARS;
+
+// Kanji
+export const KANJI_SET_PROGRESS_TARGET = 8;
+export const KANJI_SET_PROGRESS_CAP =
+  KANJI_SET_PROGRESS_TARGET * MAX_STARS_PER_SET;
+
+// Vocabulary
+export const VOCAB_MEANING_PROGRESS_TARGET = 4;
+export const VOCAB_READING_PROGRESS_TARGET = 4;
 export const VOCAB_SET_PROGRESS_TARGET_PER_WORD =
   VOCAB_MEANING_PROGRESS_TARGET + VOCAB_READING_PROGRESS_TARGET;
+export const VOCAB_MEANING_PROGRESS_CAP =
+  VOCAB_MEANING_PROGRESS_TARGET * MAX_STARS_PER_SET;
+export const VOCAB_READING_PROGRESS_CAP =
+  VOCAB_READING_PROGRESS_TARGET * MAX_STARS_PER_SET;
 
 export interface KanjiSetProgressEntry {
   correct: number;
@@ -11,6 +27,34 @@ export interface KanjiSetProgressEntry {
 export interface VocabularySetProgressEntry {
   meaningCorrect: number;
   readingCorrect: number;
+}
+
+export interface KanaSetProgressEntry {
+  correct: number;
+}
+
+export function calculateKanaSetProgressAndStars(
+  entries: KanaSetProgressEntry[],
+): { progress: number; stars: number } {
+  if (entries.length === 0) return { progress: 0, stars: 0 };
+
+  const earned = entries.reduce(
+    (sum, entry) =>
+      sum + Math.min(Math.max(0, entry.correct), KANA_ROW_MASTERY_CAP),
+    0,
+  );
+  const cycleTarget = entries.length * KANA_ROW_MASTERY_TARGET;
+  const cappedEarned = Math.min(earned, cycleTarget * KANA_MAX_STARS);
+  const stars = Math.min(
+    Math.floor(cappedEarned / cycleTarget),
+    KANA_MAX_STARS,
+  );
+  const progress =
+    stars < KANA_MAX_STARS
+      ? (cappedEarned - stars * cycleTarget) / cycleTarget
+      : 1;
+
+  return { progress, stars };
 }
 
 export function getCappedKanjiProgress(correct: number): number {
@@ -54,3 +98,54 @@ export function calculateVocabularySetProgress(
   return earned / (entries.length * VOCAB_SET_PROGRESS_TARGET_PER_WORD);
 }
 
+export function calculateKanjiSetProgressAndStars(
+  entries: KanjiSetProgressEntry[],
+): { progress: number; stars: number } {
+  if (entries.length === 0) return { progress: 0, stars: 0 };
+
+  const earned = entries.reduce(
+    (sum, entry) =>
+      sum + Math.min(Math.max(0, entry.correct), KANJI_SET_PROGRESS_CAP),
+    0,
+  );
+
+  const cycleTarget = entries.length * KANJI_SET_PROGRESS_TARGET;
+  const cappedEarned = Math.min(earned, cycleTarget * MAX_STARS_PER_SET);
+  const stars = Math.min(
+    Math.floor(cappedEarned / cycleTarget),
+    MAX_STARS_PER_SET,
+  );
+  const progress =
+    stars < MAX_STARS_PER_SET
+      ? (cappedEarned - stars * cycleTarget) / cycleTarget
+      : 1;
+
+  return { progress, stars };
+}
+
+export function calculateVocabularySetProgressAndStars(
+  entries: VocabularySetProgressEntry[],
+): { progress: number; stars: number } {
+  if (entries.length === 0) return { progress: 0, stars: 0 };
+
+  const earned = entries.reduce(
+    (sum, entry) =>
+      sum +
+      Math.min(Math.max(0, entry.meaningCorrect), VOCAB_MEANING_PROGRESS_CAP) +
+      Math.min(Math.max(0, entry.readingCorrect), VOCAB_READING_PROGRESS_CAP),
+    0,
+  );
+
+  const cycleTarget = entries.length * VOCAB_SET_PROGRESS_TARGET_PER_WORD;
+  const cappedEarned = Math.min(earned, cycleTarget * MAX_STARS_PER_SET);
+  const stars = Math.min(
+    Math.floor(cappedEarned / cycleTarget),
+    MAX_STARS_PER_SET,
+  );
+  const progress =
+    stars < MAX_STARS_PER_SET
+      ? (cappedEarned - stars * cycleTarget) / cycleTarget
+      : 1;
+
+  return { progress, stars };
+}

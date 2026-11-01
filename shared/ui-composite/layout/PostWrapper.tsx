@@ -3,21 +3,29 @@
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
+interface PostWrapperProps {
+  textContent: string;
+  tag?: string;
+  date?: string;
+  dateClassName?: string;
+  listClassName?: string;
+}
+
 const PostWrapper = ({
   textContent,
   tag,
   date,
-}: {
-  textContent: string;
-  tag?: string;
-  date?: string;
-}) => {
+  dateClassName,
+  listClassName,
+}: PostWrapperProps) => {
   return (
     <div>
       {tag && date && (
         <div className='mb-10 flex w-full items-center justify-between'>
           <h1 className='text-5xl font-bold text-(--main-color)'>{tag}</h1>
-          <span className='text-xs text-(--secondary-color)'>
+          <span
+            className={`text-xs text-(--secondary-color) ${dateClassName ?? ''}`}
+          >
             {new Date(date).toLocaleDateString('en-GB', {
               day: '2-digit',
               month: 'short',
@@ -55,7 +63,7 @@ const PostWrapper = ({
           ),
           ul: props => (
             <ul
-              className='mb-5 ml-5 list-outside list-disc space-y-2 text-(--secondary-color)'
+              className={`mb-5 ml-5 list-outside list-disc space-y-2 text-(--secondary-color) ${listClassName ?? ''}`}
               {...props}
             />
           ),

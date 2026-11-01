@@ -4,9 +4,9 @@ import localforage from 'localforage';
 import { create } from 'zustand';
 
 import {
-  KANJI_SET_PROGRESS_TARGET,
-  VOCAB_MEANING_PROGRESS_TARGET,
-  VOCAB_READING_PROGRESS_TARGET,
+  KANJI_SET_PROGRESS_CAP,
+  VOCAB_MEANING_PROGRESS_CAP,
+  VOCAB_READING_PROGRESS_CAP,
 } from '@/features/Progress/lib/setProgress';
 
 export interface AllTimeSetProgress {
@@ -60,7 +60,23 @@ async function loadPersistedSetProgress(): Promise<AllTimeSetProgress> {
   }
 }
 
-async function persistSetProgress(data: AllTimeSetProgress): Promise<void> {
+const PERSIST_DEBOUNCE_MS = 2000;
+
+let persistTimeoutId: ReturnType<typeof setTimeout> | null = null;
+
+function debouncedPersist(data: AllTimeSetProgress): void {
+  if (persistTimeoutId) clearTimeout(persistTimeoutId);
+  persistTimeoutId = setTimeout(async () => {
+    await setProgressStore.setItem(STORAGE_KEY, data);
+    persistTimeoutId = null;
+  }, PERSIST_DEBOUNCE_MS);
+}
+
+async function persistSetProgressNow(data: AllTimeSetProgress): Promise<void> {
+  if (persistTimeoutId) {
+    clearTimeout(persistTimeoutId);
+    persistTimeoutId = null;
+  }
   await setProgressStore.setItem(STORAGE_KEY, data);
 }
 
@@ -96,7 +112,7 @@ const useSetProgressStore = create<SetProgressState>((set, get) => ({
       const current = state.data.kanji[kanjiChar] ?? { correct: 0 };
       const nextCorrect = Math.min(
         current.correct + 1,
-        KANJI_SET_PROGRESS_TARGET,
+        KANJI_SET_PROGRESS_CAP,
       );
 
       if (nextCorrect === current.correct) {
@@ -121,7 +137,7 @@ const useSetProgressStore = create<SetProgressState>((set, get) => ({
       return;
     }
 
-    await persistSetProgress(nextData);
+    debouncedPersist(nextData);
   },
 
   recordVocabularyProgress: async (word, questionType) => {
@@ -145,14 +161,14 @@ const useSetProgressStore = create<SetProgressState>((set, get) => ({
               ...current,
               meaningCorrect: Math.min(
                 current.meaningCorrect + 1,
-                VOCAB_MEANING_PROGRESS_TARGET,
+                VOCAB_MEANING_PROGRESS_CAP,
               ),
             }
           : {
               ...current,
               readingCorrect: Math.min(
                 current.readingCorrect + 1,
-                VOCAB_READING_PROGRESS_TARGET,
+                VOCAB_READING_PROGRESS_CAP,
               ),
             };
 
@@ -182,13 +198,13 @@ const useSetProgressStore = create<SetProgressState>((set, get) => ({
       return;
     }
 
-    await persistSetProgress(nextData);
+    debouncedPersist(nextData);
   },
 
   clearSetProgress: async () => {
     const data = createDefaultSetProgress();
     set({ data, isHydrated: true });
-    await persistSetProgress(data);
+    await persistSetProgressNow(data);
   },
 }));
 
