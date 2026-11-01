@@ -306,28 +306,29 @@
     "meaning": "Never give up; keep trying after setbacks."
   },
   {
-  "japanese": "骨が折れる",
-  "romaji": "Hone ga oreru",
-  "english": "Bones break",
-  "meaning": "Requires considerable effort. (Set 5)"
-},{
+    "japanese": "骨が折れる",
+    "romaji": "Hone ga oreru",
+    "english": "Bones break",
+    "meaning": "Requires considerable effort. (Set 5)"
+  },
+  {
     "japanese": "腹が立つ",
     "romaji": "Hara ga tatsu",
     "english": "Stomach stands up",
     "meaning": "Get angry. (Set 3)"
   },
   {
-  "japanese": "気が短い",
-  "romaji": "Ki ga mijikai",
-  "english": "Short-tempered",
-  "meaning": "Impatient temperament. (Set 4)"
-},
+    "japanese": "気が短い",
+    "romaji": "Ki ga mijikai",
+    "english": "Short-tempered",
+    "meaning": "Impatient temperament. (Set 4)"
+  },
   {
-  "japanese": "目がない",
-  "romaji": "Me ga nai",
-  "english": "No eyes",
-  "meaning": "Have a weakness for something. (Set 4)"
-},
+    "japanese": "目がない",
+    "romaji": "Me ga nai",
+    "english": "No eyes",
+    "meaning": "Have a weakness for something. (Set 4)"
+  },
   {
     "japanese": "猫の手も借りたい",
     "romaji": "Neko no te mo karitai",
@@ -335,21 +336,81 @@
     "meaning": "Extremely busy and desperate for help. (Set 4)"
   },
   {
+    "japanese": "目がない",
+    "romaji": "Me ga nai",
+    "english": "No eyes",
+    "meaning": "Have a weakness for something. (Set 3)"
+  },
+  {
+    "japanese": "口が堅い",
+    "romaji": "Kuchi ga katai",
+    "english": "Tight-lipped",
+    "meaning": "Can keep secrets. (Set 6)"
+  },
+  {
+    "japanese": "頭が上がらない",
+    "romaji": "Atama ga agaranai",
+    "english": "Cannot raise one's head",
+    "meaning": "Feel indebted or unable to oppose someone. (Set 5)"
+  },
+  {
+    "japanese": "水に流す",
+    "romaji": "Mizu ni nagasu",
+    "english": "Let it flow in water",
+    "meaning": "Let bygones be bygones. (Set 5)"
+  },
+  {
+    "japanese": "鼻が高い",
+    "romaji": "Hana ga takai",
+    "english": "High nose",
+    "meaning": "Feel proud. (Set 3)"
+  },
+  {
+    "japanese": "骨が折れる",
+    "romaji": "Hone ga oreru",
+    "english": "Bones break",
+    "meaning": "Requires considerable effort. (Set 3)"
+  },
+  {
+    "japanese": "念には念を入れる",
+    "romaji": "Nen ni wa nen o ireru",
+    "english": "Add caution to caution",
+    "meaning": "Take extra care. (Set 3)"
+  },
+  {
+    "japanese": "立つ鳥跡を濁さず",
+    "romaji": "Tatsu tori ato o nigosazu",
+    "english": "A bird leaves no mess",
+    "meaning": "Leave cleanly without trouble. (Set 3)"
+  },
+  {
+    "japanese": "念には念を入れる",
+    "romaji": "Nen ni wa nen o ireru",
+    "english": "Add caution to caution",
+    "meaning": "Take extra care. (Set 1)"
+  },
+  {
+    "japanese": "顔が広い",
+    "romaji": "Kao ga hiroi",
+    "english": "Wide face",
+    "meaning": "Have many connections. (Set 5)"
+  },
+{
   "japanese": "目がない",
   "romaji": "Me ga nai",
   "english": "No eyes",
-  "meaning": "Have a weakness for something. (Set 3)"
-},
-  {
-  "japanese": "口が堅い",
-  "romaji": "Kuchi ga katai",
-  "english": "Tight-lipped",
-  "meaning": "Can keep secrets. (Set 6)"
+  "meaning": "Have a weakness for something. (Set 4)"
 },
 {
-  "japanese": "頭が上がらない",
-  "romaji": "Atama ga agaranai",
-  "english": "Cannot raise one's head",
-  "meaning": "Feel indebted or unable to oppose someone. (Set 5)"
+  "japanese": "胸を張る",
+  "romaji": "Mune o haru",
+  "english": "Expand chest",
+  "meaning": "Be proud/confident. (Set 5)"
+},
+{
+  "japanese": "骨が折れる",
+  "romaji": "Hone ga oreru",
+  "english": "Bones break",
+  "meaning": "Requires considerable effort. (Set 2)"
 }
 ]

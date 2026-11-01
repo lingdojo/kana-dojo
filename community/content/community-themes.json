@@ -377,7 +377,6 @@
     "mainColor": "oklch(72.0% 0.065 75.0 / 1)",
     "secondaryColor": "oklch(60.0% 0.185 20.0 / 1)"
   },
- 
   {
     "id": "jpop-energy",
     "backgroundColor": "oklch(15.0% 0.055 310.0 / 1)",
@@ -396,12 +395,22 @@
     "mainColor": "oklch(82.0% 0.040 230.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.095 260.0 / 1)"
   },
-  
   {
     "id": "volcanic-ash",
     "backgroundColor": "oklch(20.0% 0.018 270.0 / 1)",
     "mainColor": "oklch(70.0% 0.155 25.0 / 1)",
     "secondaryColor": "oklch(55.0% 0.045 260.0 / 1)"
+  },
+  {
+    "id": "yakuza-tattoo",
+    "backgroundColor": "oklch(17.0% 0.045 255.0 / 1)",
+    "mainColor": "oklch(62.0% 0.185 220.0 / 1)",
+    "secondaryColor": "oklch(70.0% 0.175 15.0 / 1)"
+  },
+  {
+    "id": "festival-yatai",
+    "backgroundColor": "oklch(19.0% 0.030 35.0 / 1)",
+    "mainColor": "oklch(78.0% 0.185 45.0 / 1)",
+    "secondaryColor": "oklch(88.0% 0.115 95.0 / 1)"
   }
- 
 ]

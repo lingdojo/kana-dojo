@@ -358,5 +358,61 @@
   "termB": "anime (English usage)",
   "explanation": "In Japanese it can refer to animation in general. (Set 2)",
   "example": "子どものころからアニメが好きだ。"
+},
+{
+  "termA": "ドンマイ (donmai)",
+  "termB": "don't mind (English)",
+  "explanation": "Used to comfort someone: 'never mind'. (Set 6)",
+  "example": "ミスしてもドンマイ！"
+},
+{
+  "termA": "手紙 (tegami)",
+  "termB": "letter (English)",
+  "explanation": "手紙 means physical mail, not alphabet letters. (Set 4)",
+  "example": "祖母に手紙を書きました。"
+},
+{
+  "termA": "ナイーブ (naibu)",
+  "termB": "naive (English)",
+  "explanation": "Often means sensitive/delicate in Japanese. (Set 5)",
+  "example": "彼は意外とナイーブな性格だ。"
+},
+{
+  "termA": "クレーム (kureemu)",
+  "termB": "claim (English)",
+  "explanation": "In Japanese it usually means complaint. (Set 6)",
+  "example": "お客様からクレームが届いた。"
+},
+  {
+  "termA": "クレーム (kureemu)",
+  "termB": "claim (English)",
+  "explanation": "In Japanese it usually means complaint. (Set 6)",
+  "example": "お客様からクレームが届いた。"
+  },
+  {
+  "termA": "ホッチキス (hocchikisu)",
+  "termB": "Hotchkiss (name)",
+  "explanation": "ホッチキス means stapler. (Set 5)",
+  "example": "資料をホッチキスで留めてください。"
+  },
+  {
+    "termA": "マンション (manshon)",
+    "termB": "mansion (English)",
+    "explanation": "マンション means apartment building in Japanese. (Set 2)",
+    "example": "駅前のマンションに住んでいます。"
+  },
+  {
+  "termA": "アニメ (anime)",
+  "termB": "anime (English usage)",
+  "explanation": "In Japanese it can refer to animation in general. (Set 6)",
+  "example": "子どものころからアニメが好きだ。"
+},
+  {
+  "termA": "リベンジ (ribenji)",
+  "termB": "revenge (English)",
+  "explanation": "Often used as 'try again after failing'. (Set 4)",
+  "example": "去年落ちた試験に今年リベンジする。"
 }
+
 ]
+
