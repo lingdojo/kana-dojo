@@ -40,6 +40,7 @@ const eslintConfig = [
       'react-hooks/immutability': 'warn',
       'react-hooks/preserve-manual-memoization': 'warn',
       'react-hooks/purity': 'warn',
+      'react-hooks/refs': 'warn',
       'react-hooks/set-state-in-effect': 'warn',
       // Trailing commas are handled by Prettier, not enforced by ESLint
       'comma-dangle': 'off',
