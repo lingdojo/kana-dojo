@@ -665,4 +665,16 @@
     ],
     "correctIndex": 0
   }
+,
+  {
+    "question": "What is the traditional Japanese garment worn on special occasions called?",
+    "difficulty": "easy",
+    "answers": [
+      "Kimono",
+      "Hanbok",
+      "Yukata",
+      "Sari"
+    ],
+    "correctIndex": 0
+  }
 ]
