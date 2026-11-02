@@ -412,5 +412,11 @@
     "backgroundColor": "oklch(19.0% 0.030 35.0 / 1)",
     "mainColor": "oklch(78.0% 0.185 45.0 / 1)",
     "secondaryColor": "oklch(88.0% 0.115 95.0 / 1)"
+  },
+  {
+    "id": "karasu-black",
+    "backgroundColor": "oklch(14.0% 0.010 270.0 / 1)",
+    "mainColor": "oklch(72.0% 0.055 200.0 / 1)",
+    "secondaryColor": "oklch(62.0% 0.095 320.0 / 1)"
   }
 ]
