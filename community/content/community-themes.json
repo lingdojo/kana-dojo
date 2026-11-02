@@ -412,5 +412,12 @@
     "backgroundColor": "oklch(19.0% 0.030 35.0 / 1)",
     "mainColor": "oklch(78.0% 0.185 45.0 / 1)",
     "secondaryColor": "oklch(88.0% 0.115 95.0 / 1)"
+  }, 
+  {
+      "id": "kyoto-kimono",
+    "backgroundColor": "oklch(93.0% 0.015 15.0 / 1)",
+    "mainColor": "oklch(55.0% 0.22 25.0 / 1)",
+    "secondaryColor": "oklch(75.0% 0.14 85.0 / 1)"
   }
+
 ]
