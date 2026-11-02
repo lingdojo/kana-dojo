@@ -356,5 +356,12 @@
     "english": "very",
     "region": "Yamaguchi/Hiroshima",
     "note": "Regional intensifier. (Set 3)"
-  }
+  },
+  {
+  "dialect": "〜けん",
+  "standardJapanese": "〜から",
+  "english": "because",
+  "region": "Kyushu",
+  "note": "Reason marker in Kyushu. (Set 3)"
+ }
 ]
