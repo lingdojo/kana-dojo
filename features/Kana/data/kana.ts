@@ -73,6 +73,7 @@ export const kana: KanaGroup[] = [
   {
     kana: ['だ', 'ぢ', 'づ', 'で', 'ど'],
     romanji: ['da', 'ji', 'zu', 'de', 'do'],
+    altRomanji: [[], ['di'], ['du'], [], []],
     groupName: 'h.d.d',
   },
   {
@@ -207,6 +208,7 @@ export const kana: KanaGroup[] = [
   {
     kana: ['ダ', 'ヂ', 'ヅ', 'デ', 'ド'],
     romanji: ['da', 'ji', 'zu', 'de', 'do'],
+    altRomanji: [[], ['di'], ['du'], [], []],
     groupName: 'k.d.d',
   },
   {

@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { isKanaInputAnswerCorrect } from '@/features/Kana/lib/isKanaInputAnswerCorrect';
+import { kana } from '@/features/Kana/data/kana';
 
 const altRomanjiMap = new Map<string, string[]>([
   ['し', ['si']],
@@ -13,6 +14,16 @@ const altRomanjiMap = new Map<string, string[]>([
   ['フ', ['hu']],
   ['ン', ['nn']],
 ]);
+
+const buildAltMapFromData = (): Map<string, string[]> => {
+  const map = new Map<string, string[]>();
+  kana.forEach(group => {
+    group.altRomanji?.forEach((alternatives, idx) => {
+      if (alternatives.length > 0) map.set(group.kana[idx], alternatives);
+    });
+  });
+  return map;
+};
 
 describe('isKanaInputAnswerCorrect', () => {
   it('accepts primary romaji in normal mode', () => {
@@ -257,5 +268,34 @@ describe('isKanaInputAnswerCorrect', () => {
         answerParts: ['shi'], // intentionally mismatched
       }),
     ).toBe(true); // resolved via legacy fallback: altRomanjiMap.get('し') = ['si']
+  });
+
+  it('accepts di/du for ぢ/づ through the data-driven map', () => {
+    // Regression #29312: 'di' is the standard keystroke for ぢ and 'du' for づ.
+    const dataMap = buildAltMapFromData();
+    expect(dataMap.get('ぢ')).toEqual(['di']);
+    expect(dataMap.get('づ')).toEqual(['du']);
+    expect(dataMap.get('ヂ')).toEqual(['di']);
+    expect(dataMap.get('ヅ')).toEqual(['du']);
+
+    expect(
+      isKanaInputAnswerCorrect({
+        inputValue: 'di',
+        correctChar: 'ぢ',
+        targetChar: 'ji',
+        isReverse: false,
+        altRomanjiMap: dataMap,
+      }),
+    ).toBe(true);
+
+    expect(
+      isKanaInputAnswerCorrect({
+        inputValue: 'du',
+        correctChar: 'づ',
+        targetChar: 'zu',
+        isReverse: false,
+        altRomanjiMap: dataMap,
+      }),
+    ).toBe(true);
   });
 });

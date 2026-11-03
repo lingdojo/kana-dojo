@@ -2,6 +2,7 @@
 
 import React, { Component, ReactNode, ErrorInfo } from 'react';
 import { ErrorFallback } from './ErrorFallback';
+import { logError } from '@/shared/utils/errorLogger';
 
 interface Props {
   children: ReactNode;
@@ -38,15 +39,10 @@ export class GameErrorBoundary extends Component<Props, State> {
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
     const { gameName } = this.props;
 
-    // Log to console with game context
-    console.error(
-      `Game Error Boundary (${gameName || 'Unknown'}) caught an error:`,
-      error,
-      errorInfo,
-    );
-
-    // TODO: Send to error tracking service with game context
-    // logErrorToService(error, { ...errorInfo, gameName });
+    logError(error, errorInfo, {
+      boundary: 'game',
+      gameName: gameName || 'Unknown',
+    });
   }
 
   // Reset error state and restart game

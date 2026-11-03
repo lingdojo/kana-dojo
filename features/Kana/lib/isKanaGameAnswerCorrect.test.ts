@@ -3,6 +3,8 @@ import { isKanaGameAnswerCorrect } from './isKanaGameAnswerCorrect';
 
 const shi = { kana: 'し', romaji: 'shi', altRomanji: ['si'] };
 const a = { kana: 'あ', romaji: 'a', altRomanji: [] };
+const dzi = { kana: 'ぢ', romaji: 'ji', altRomanji: ['di'] };
+const dzu = { kana: 'づ', romaji: 'zu', altRomanji: ['du'] };
 
 describe('isKanaGameAnswerCorrect', () => {
   it('accepts the primary romaji (case- and whitespace-insensitive)', () => {
@@ -18,6 +20,14 @@ describe('isKanaGameAnswerCorrect', () => {
     // accepted it.
     expect(isKanaGameAnswerCorrect(shi, 'si', false)).toBe(true);
     expect(isKanaGameAnswerCorrect(shi, 'SI', false)).toBe(true);
+  });
+
+  it('accepts di/du romanizations for ぢ and づ', () => {
+    // Regression #29312: 'di' is the standard keystroke for ぢ and 'du' for づ.
+    expect(isKanaGameAnswerCorrect(dzi, 'di', false)).toBe(true);
+    expect(isKanaGameAnswerCorrect(dzi, 'ji', false)).toBe(true);
+    expect(isKanaGameAnswerCorrect(dzu, 'du', false)).toBe(true);
+    expect(isKanaGameAnswerCorrect(dzu, 'zu', false)).toBe(true);
   });
 
   it('rejects an incorrect romaji', () => {

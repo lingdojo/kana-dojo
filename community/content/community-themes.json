@@ -132,18 +132,6 @@
     "secondaryColor": "oklch(60.0% 0.085 25.0 / 1)"
   },
   {
-    "id": "torii-sunset",
-    "backgroundColor": "oklch(22.0% 0.058 35.0 / 1)",
-    "mainColor": "oklch(75.0% 0.195 40.0 / 1)",
-    "secondaryColor": "oklch(85.0% 0.155 70.0 / 1)"
-  },
-  {
-    "id": "gingko-avenue",
-    "backgroundColor": "oklch(23.0% 0.020 75.0 / 1)",
-    "mainColor": "oklch(82.0% 0.155 95.0 / 1)",
-    "secondaryColor": "oklch(62.0% 0.085 55.0 / 1)"
-  },
-  {
     "id": "shoji-glow",
     "backgroundColor": "oklch(94.0% 0.010 95.0 / 1)",
     "mainColor": "oklch(45.0% 0.075 65.0 / 1)",
@@ -184,12 +172,6 @@
     "backgroundColor": "oklch(16.0% 0.035 35.0 / 1)",
     "mainColor": "oklch(75.0% 0.165 55.0 / 1)",
     "secondaryColor": "oklch(62.0% 0.185 20.0 / 1)"
-  },
-  {
-    "id": "onsen-steam",
-    "backgroundColor": "oklch(25.0% 0.022 210.0 / 1)",
-    "mainColor": "oklch(85.0% 0.085 215.0 / 1)",
-    "secondaryColor": "oklch(70.0% 0.065 195.0 / 1)"
   },
   {
     "id": "neon-arcade",
@@ -233,7 +215,7 @@
     "mainColor": "oklch(78.0% 0.085 195.0 / 1)",
     "secondaryColor": "oklch(65.0% 0.045 230.0 / 1)"
   },
-    {
+  {
     "id": "osaka-neon",
     "backgroundColor": "oklch(14.0% 0.060 300.0 / 1)",
     "mainColor": "oklch(78.0% 0.220 330.0 / 1)",
@@ -280,5 +262,161 @@
     "backgroundColor": "oklch(92.0% 0.015 250.0 / 1)",
     "mainColor": "oklch(40.0% 0.145 255.0 / 1)",
     "secondaryColor": "oklch(60.0% 0.175 20.0 / 1)"
+  },
+  {
+    "id": "tea-ceremony",
+    "backgroundColor": "oklch(25.0% 0.028 145.0 / 1)",
+    "mainColor": "oklch(62.0% 0.115 135.0 / 1)",
+    "secondaryColor": "oklch(75.0% 0.075 90.0 / 1)"
+  },
+  {
+    "id": "komorebi-green",
+    "backgroundColor": "oklch(22.0% 0.030 150.0 / 1)",
+    "mainColor": "oklch(78.0% 0.135 145.0 / 1)",
+    "secondaryColor": "oklch(70.0% 0.090 110.0 / 1)"
+  },
+  {
+    "id": "tangerine-fizz",
+    "backgroundColor": "oklch(94.0% 0.015 80.0 / 1)",
+    "mainColor": "oklch(70.0% 0.195 55.0 / 1)",
+    "secondaryColor": "oklch(80.0% 0.125 95.0 / 1)"
+  },
+  {
+    "id": "tsukimi-night",
+    "backgroundColor": "oklch(14.0% 0.030 260.0 / 1)",
+    "mainColor": "oklch(88.0% 0.050 230.0 / 1)",
+    "secondaryColor": "oklch(68.0% 0.075 260.0 / 1)"
+  },
+  {
+    "id": "autumn-temple",
+    "backgroundColor": "oklch(20.0% 0.048 35.0 / 1)",
+    "mainColor": "oklch(68.0% 0.185 40.0 / 1)",
+    "secondaryColor": "oklch(78.0% 0.135 55.0 / 1)"
+  },
+  {
+    "id": "lucky-cat",
+    "backgroundColor": "oklch(92.0% 0.025 90.0 / 1)",
+    "mainColor": "oklch(65.0% 0.195 40.0 / 1)",
+    "secondaryColor": "oklch(75.0% 0.145 85.0 / 1)"
+  },
+  {
+    "id": "shinkansen-speed",
+    "backgroundColor": "oklch(22.0% 0.035 240.0 / 1)",
+    "mainColor": "oklch(90.0% 0.085 220.0 / 1)",
+    "secondaryColor": "oklch(65.0% 0.185 25.0 / 1)"
+  },
+  {
+    "id": "sakura-storm",
+    "backgroundColor": "oklch(90.0% 0.032 340.0 / 1)",
+    "mainColor": "oklch(70.0% 0.185 345.0 / 1)",
+    "secondaryColor": "oklch(55.0% 0.145 350.0 / 1)"
+  },
+  {
+    "id": "harbor-lanterns",
+    "backgroundColor": "oklch(16.5% 0.040 250.0 / 1)",
+    "mainColor": "oklch(78.0% 0.170 45.0 / 1)",
+    "secondaryColor": "oklch(70.0% 0.090 210.0 / 1)"
+  },
+  {
+    "id": "sakurajima-ash",
+    "backgroundColor": "oklch(22.0% 0.025 270.0 / 1)",
+    "mainColor": "oklch(65.0% 0.170 25.0 / 1)",
+    "secondaryColor": "oklch(58.0% 0.055 260.0 / 1)"
+  },
+  {
+    "id": "wavecrest-blue",
+    "backgroundColor": "oklch(17.0% 0.030 245.0 / 1)",
+    "mainColor": "oklch(88.0% 0.055 230.0 / 1)",
+    "secondaryColor": "oklch(70.0% 0.145 210.0 / 1)"
+  },
+  {
+    "id": "fuji-sunrise",
+    "backgroundColor": "oklch(23.0% 0.048 40.0 / 1)",
+    "mainColor": "oklch(85.0% 0.155 55.0 / 1)",
+    "secondaryColor": "oklch(72.0% 0.175 25.0 / 1)"
+  },
+  {
+    "id": "mochi-pastel",
+    "backgroundColor": "oklch(94.0% 0.028 340.0 / 1)",
+    "mainColor": "oklch(72.0% 0.145 345.0 / 1)",
+    "secondaryColor": "oklch(75.0% 0.125 155.0 / 1)"
+  },
+  {
+    "id": "tokyo-metro",
+    "backgroundColor": "oklch(20.0% 0.025 260.0 / 1)",
+    "mainColor": "oklch(70.0% 0.180 145.0 / 1)",
+    "secondaryColor": "oklch(80.0% 0.120 50.0 / 1)"
+  },
+  {
+    "id": "bamboo-shadow",
+    "backgroundColor": "oklch(18.0% 0.030 150.0 / 1)",
+    "mainColor": "oklch(70.0% 0.120 145.0 / 1)",
+    "secondaryColor": "oklch(60.0% 0.085 120.0 / 1)"
+  },
+  {
+    "id": "onsen-steam",
+    "backgroundColor": "oklch(25.0% 0.022 210.0 / 1)",
+    "mainColor": "oklch(85.0% 0.085 215.0 / 1)",
+    "secondaryColor": "oklch(70.0% 0.065 195.0 / 1)"
+  },
+  {
+    "id": "snow-lantern",
+    "backgroundColor": "oklch(94.0% 0.012 250.0 / 1)",
+    "mainColor": "oklch(50.0% 0.145 30.0 / 1)",
+    "secondaryColor": "oklch(40.0% 0.110 250.0 / 1)"
+  },
+  {
+    "id": "sakura-latte",
+    "backgroundColor": "oklch(95.0% 0.020 15.0 / 1)",
+    "mainColor": "oklch(70.0% 0.155 350.0 / 1)",
+    "secondaryColor": "oklch(82.0% 0.090 95.0 / 1)"
+  },
+  {
+    "id": "sumo-strength",
+    "backgroundColor": "oklch(20.0% 0.022 35.0 / 1)",
+    "mainColor": "oklch(72.0% 0.065 75.0 / 1)",
+    "secondaryColor": "oklch(60.0% 0.185 20.0 / 1)"
+  },
+  {
+    "id": "jpop-energy",
+    "backgroundColor": "oklch(15.0% 0.055 310.0 / 1)",
+    "mainColor": "oklch(80.0% 0.210 345.0 / 1)",
+    "secondaryColor": "oklch(85.0% 0.175 180.0 / 1)"
+  },
+  {
+    "id": "holographic-idol",
+    "backgroundColor": "oklch(14.0% 0.065 300.0 / 1)",
+    "mainColor": "oklch(82.0% 0.185 200.0 / 1)",
+    "secondaryColor": "oklch(78.0% 0.210 330.0 / 1)"
+  },
+  {
+    "id": "moonlit-bay",
+    "backgroundColor": "oklch(16.0% 0.018 240.0 / 1)",
+    "mainColor": "oklch(82.0% 0.040 230.0 / 1)",
+    "secondaryColor": "oklch(70.0% 0.095 260.0 / 1)"
+  },
+  {
+    "id": "volcanic-ash",
+    "backgroundColor": "oklch(20.0% 0.018 270.0 / 1)",
+    "mainColor": "oklch(70.0% 0.155 25.0 / 1)",
+    "secondaryColor": "oklch(55.0% 0.045 260.0 / 1)"
+  },
+  {
+    "id": "yakuza-tattoo",
+    "backgroundColor": "oklch(17.0% 0.045 255.0 / 1)",
+    "mainColor": "oklch(62.0% 0.185 220.0 / 1)",
+    "secondaryColor": "oklch(70.0% 0.175 15.0 / 1)"
+  },
+  {
+    "id": "festival-yatai",
+    "backgroundColor": "oklch(19.0% 0.030 35.0 / 1)",
+    "mainColor": "oklch(78.0% 0.185 45.0 / 1)",
+    "secondaryColor": "oklch(88.0% 0.115 95.0 / 1)"
+    },
+  {
+    "id": "sundown-shrine",
+    "backgroundColor": "oklch(18.0% 0.055 330.0 / 1)",
+    "mainColor": "oklch(72.0% 0.195 35.0 / 1)",
+    "secondaryColor": "oklch(85.0% 0.095 275.0 / 1)"
   }
 ]
