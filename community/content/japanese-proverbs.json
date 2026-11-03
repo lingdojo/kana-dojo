@@ -11,7 +11,7 @@
     "english": "Carelessness is the greatest enemy",
     "meaning": "Don't let your guard down"
   },
-   {
+  {
     "japanese": "時は金なり",
     "romaji": "Toki wa kane nari",
     "english": "Time is money",
@@ -372,9 +372,15 @@
     "meaning": "What is done cannot be undone"
   },
   {
-  "japanese": "百聞は一見に如かず",
-  "romaji": "Hyakubun wa ikken ni shikazu",
-  "english": "Hearing a hundred times is not as good as seeing once",
-  "meaning": "Seeing is believing"
-}
+    "japanese": "百聞は一見に如かず",
+    "romaji": "Hyakubun wa ikken ni shikazu",
+    "english": "Hearing a hundred times is not as good as seeing once",
+    "meaning": "Seeing is believing"
+  },
+  {
+    "japanese": "後悔先に立たず",
+    "romaji": "Koukai saki ni tatazu",
+    "english": "Regret does not stand before",
+    "meaning": "It's too late for regrets"
+  }
 ]
