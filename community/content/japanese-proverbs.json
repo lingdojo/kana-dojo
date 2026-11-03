@@ -12,6 +12,12 @@
     "meaning": "Don't let your guard down"
   },
   {
+    "japanese": "時は金なり",
+    "romaji": "Toki wa kane nari",
+    "english": "Time is money",
+    "meaning": "Time is valuable, so use it wisely"
+  },
+  {
     "japanese": "笑う門には福来る",
     "romaji": "Warau kado ni wa fuku kitaru",
     "english": "Fortune comes to a laughing gate",
@@ -360,9 +366,21 @@
     "meaning": "Haste makes waste; the slower path is faster"
   },
   {
-  "japanese": "善因善果",
-  "romaji": "Zenin zenka",
-  "english": "Good causes bring good results",
-  "meaning": "Good deeds lead to good outcomes"
-}
+    "japanese": "覆水盆に返らず",
+    "romaji": "Fukusui bon ni kaerazu",
+    "english": "Spilled water will not return to the tray",
+    "meaning": "What is done cannot be undone"
+  },
+  {
+    "japanese": "百聞は一見に如かず",
+    "romaji": "Hyakubun wa ikken ni shikazu",
+    "english": "Hearing a hundred times is not as good as seeing once",
+    "meaning": "Seeing is believing"
+  },
+  {
+    "japanese": "後悔先に立たず",
+    "romaji": "Koukai saki ni tatazu",
+    "english": "Regret does not stand before",
+    "meaning": "It's too late for regrets"
+  }
 ]

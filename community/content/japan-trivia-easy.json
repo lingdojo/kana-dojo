@@ -642,5 +642,39 @@
     "Deer"
   ],
   "correctIndex": 0
-}
+},
+  {
+  "question": "Which Japanese dish consists of rice balls often wrapped in seaweed?",
+  "difficulty": "easy",
+  "answers": [
+    "Onigiri",
+    "Tempura",
+    "Sukiyaki",
+    "Yakitori"
+  ],
+  "correctIndex": 0
+},
+  {
+    "question": "What is the Japanese art of arranging flowers called? (Community variation 58)",
+    "difficulty": "easy",
+    "answers": [
+      "Ikebana",
+      "Shodo",
+      "Kodo",
+      "Origami"
+    ],
+    "correctIndex": 0
+  }
+,
+  {
+    "question": "What is the traditional Japanese garment worn on special occasions called?",
+    "difficulty": "easy",
+    "answers": [
+      "Kimono",
+      "Hanbok",
+      "Yukata",
+      "Sari"
+    ],
+    "correctIndex": 0
+  }
 ]
