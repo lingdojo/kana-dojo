@@ -249,7 +249,20 @@
     "japanese": "漢字の意味を文脈で推測する力が大切だ。",
     "romaji": "Kanji no imi o bunmyaku de suisoku suru chikara ga taisetsu da.",
     "english": "Inferring kanji meaning from context is important.",
+   "jlpt": "N2"
+  },
+  {
+     {
+    "japanese": "漢字の意味を文脈で推測する力が大切だ。",
+    "romaji": "Kanji no imi o bunmyaku de suisoku suru chikara ga taisetsu da.",
+    "english": "Inferring kanji meaning from context is important.",
     "jlpt": "N2"
+  },
+  {
+    "japanese": "店員さんにおすすめの料理を聞いてみた。",
+    "romaji": "Tenin-san ni osusume no ryouri o kiite mita.",
+    "english": "I asked the staff for recommended dishes.",
+    "jlpt": "N4"
   },
   {
     "japanese": "来月から新しいプロジェクトに参加することになりました。",
@@ -260,6 +273,12 @@
   {
     "japanese": "宿題を忘れないように、カレンダーに書いておきます。",
     "romaji": "Shukudai o wasurenai you ni, karendaa ni kaite okimasu.",
+    "english": "I'll put it in my calendar so I won't forget homework.",
+    "jlpt": "N4"
+  },
+  },
+  {
+    "japanese": "宿題を忘れないように、カレンダーに書いておきます。",wasurenai you ni, karendaa ni kaite okimasu.",
     "english": "I'll put it in my calendar so I won't forget homework.",
     "jlpt": "N4"
   },
