@@ -424,5 +424,11 @@
   "backgroundColor": "oklch(17.0% 0.035 20.0 / 1)",
   "mainColor": "oklch(65.0% 0.215 30.0 / 1)",
   "secondaryColor": "oklch(78.0% 0.135 70.0 / 1)"
+  },
+  {
+    "id": "edo-vintage",
+    "backgroundColor": "oklch(24.0% 0.028 65.0 / 1)",
+    "mainColor": "oklch(72.0% 0.085 70.0 / 1)",
+    "secondaryColor": "oklch(60.0% 0.065 55.0 / 1)"
   }
 ]
