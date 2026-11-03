@@ -1,11 +1,5 @@
 [
   {
-    "japanese": "手に入れる",
-    "romaji": "Te ni ireru",
-    "english": "Put into one’s hand",
-    "meaning": "Obtain something. (Set 1)"
-  },
-  {
     "japanese": "腹が立つ",
     "romaji": "Hara ga tatsu",
     "english": "Stomach stands up",
@@ -262,5 +256,11 @@
     "romaji": "Kao ga hiroi",
     "english": "Wide face",
     "meaning": "Have many connections. (Set 2)"
-  }
+  },
+  {
+  "japanese": "手に入れる",
+  "romaji": "Te ni ireru",
+  "english": "Put into one’s hand",
+  "meaning": "Obtain something. (Set 1)"
+}
 ]
