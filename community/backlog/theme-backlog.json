@@ -467,9 +467,7 @@
     "mainColor": "oklch(70.0% 0.185 345.0 / 1)",
     "secondaryColor": "oklch(55.0% 0.145 350.0 / 1)",
     "issued": false,
-    "completed": false,
-    "completedBy": "sharanrajt",
-    "completedPR": 30935
+    "completed": false
   },
   {
     "id": "ramen-steam",
@@ -1159,9 +1157,7 @@
     "mainColor": "oklch(78.0% 0.220 330.0 / 1)",
     "secondaryColor": "oklch(82.0% 0.185 190.0 / 1)",
     "issued": false,
-    "completed": false,
-    "completedBy": "yashushakya",
-    "completedPR": 30977
+    "completed": false
   },
   {
     "id": "quiet-library",
@@ -1891,9 +1887,7 @@
     "mainColor": "oklch(78.0% 0.170 45.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.090 210.0 / 1)",
     "issued": false,
-    "completed": false,
-    "completedBy": "Himanshuch8055",
-    "completedPR": 31014
+    "completed": false
   },
   {
     "id": "sumi-ink",
