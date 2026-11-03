@@ -412,11 +412,17 @@
     "backgroundColor": "oklch(19.0% 0.030 35.0 / 1)",
     "mainColor": "oklch(78.0% 0.185 45.0 / 1)",
     "secondaryColor": "oklch(88.0% 0.115 95.0 / 1)"
-    },
+  },
   {
     "id": "sundown-shrine",
     "backgroundColor": "oklch(18.0% 0.055 330.0 / 1)",
     "mainColor": "oklch(72.0% 0.195 35.0 / 1)",
     "secondaryColor": "oklch(85.0% 0.095 275.0 / 1)"
+  },
+  {
+  "id": "maple-lacquer",
+  "backgroundColor": "oklch(17.0% 0.035 20.0 / 1)",
+  "mainColor": "oklch(65.0% 0.215 30.0 / 1)",
+  "secondaryColor": "oklch(78.0% 0.135 70.0 / 1)"
   }
 ]
