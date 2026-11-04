@@ -14,6 +14,7 @@ import LevelSetCards from '@/shared/ui-composite/Menu/LevelSetCards';
 import useSetProgressHydration from '@/features/Progress/hooks/useSetProgress';
 import {
   calculateKanjiSetProgressAndStars,
+  clearAutoLearningHandoff,
   selectAutoLearningSets,
   useAutoLearningStore,
   useSetProgressStore,
@@ -78,6 +79,9 @@ const KanjiCards = ({ showAutoLearning = false }: KanjiCardsProps) => {
   );
   const { clearKanjiObjs, clearKanjiSets } = useKanjiStore();
   const addKanjiObjs = useKanjiStore(state => state.addKanjiObjs);
+  const setSelectedKanjiObjs = useKanjiStore(
+    state => state.setSelectedKanjiObjs,
+  );
   const collapsedRowsByUnit = useKanjiStore(state => state.collapsedRowsByUnit);
   const setCollapsedRowsForUnit = useKanjiStore(
     state => state.setCollapsedRowsForUnit,
@@ -255,6 +259,20 @@ const KanjiCards = ({ showAutoLearning = false }: KanjiCardsProps) => {
       setIsAutoLearning(false);
     }
   };
+
+  const selectedLevelCount = hasAutoLearningSelection
+    ? 0
+    : selectedKanjiSets.length;
+
+  // Train picked levels if there are any
+  const handleStartClick = () => {
+    if (selectedLevelCount > 0) {
+      clearAutoLearningHandoff();
+      router.push('/kanji/train');
+      return;
+    }
+    void handleAutoLearning();
+  };
   const initialCollections = useMemo(() => {
     const cached = kanjiDataService.getAllCached();
 
@@ -297,6 +315,7 @@ const KanjiCards = ({ showAutoLearning = false }: KanjiCardsProps) => {
         clearKanjiObjs();
       }}
       toggleItems={items => addKanjiObjs(items)}
+      replaceItems={items => setSelectedKanjiObjs(items)}
       collapsedRows={collapsedRows}
       setCollapsedRows={setCollapsedRows}
       renderSetDictionary={items => <KanjiSetDictionary words={items} />}
@@ -309,9 +328,10 @@ const KanjiCards = ({ showAutoLearning = false }: KanjiCardsProps) => {
         showAutoLearning ? (
           <AutoLearningButton
             hasProgress={hasProgress}
+            selectedCount={selectedLevelCount}
             isLoading={!isProgressHydrated || isAutoLearning}
             error={autoLearningError}
-            onClick={() => void handleAutoLearning()}
+            onClick={handleStartClick}
           />
         ) : undefined
       }

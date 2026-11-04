@@ -34,10 +34,12 @@ Without that, collapsing row `0` inside one Subunit would also collapse row `0` 
 
 ## Bulk actions
 
-Quick Select actions now operate only on the visible Levels inside the active Subunit:
+Quick Select and the Random 10 button work on every Level in the selected Unit, not just the active Subunit:
 
 - Select All
 - Clear All
-- Random selection
+- Random 3, 5, or 10
 
-This avoids mixing hidden Levels from other Subunits into the current selection.
+Bulk actions replace the selection (set names and items together) instead of toggling, so the selected Levels always match what gets trained.
+
+Selections are kept when switching Subunits, so Levels from different Subunits of the same Unit can be trained together. Each Subunit tab shows how many of its Levels are selected, so nothing picked is hidden.

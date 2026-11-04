@@ -40,8 +40,9 @@ Subunits only filter which already-loaded Levels are shown and bulk-selected. Sw
 ## Selection behavior
 
 - Selecting a new Unit clears the current Level selection and switches to the first Subunit of that Unit.
-- Selecting a new Subunit also clears the current Level selection so we do not keep invisible selected Levels from another Subunit.
-- Quick Select operates only inside the active Subunit.
+- Selecting a new Subunit keeps the current Level selection, so Levels from different Subunits of the same Unit can be trained together.
+- Each Subunit tab shows a count of its selected Levels, so selected Levels in other Subunits are never invisible.
+- Quick Select and Random 10 work on all Levels in the active Unit.
 
 ## Current deterministic map
 

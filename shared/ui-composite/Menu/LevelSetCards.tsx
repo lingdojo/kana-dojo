@@ -7,18 +7,19 @@ import {
   ChevronUp,
   Circle,
   CircleCheck,
+  Dices,
   Loader2,
-  // MousePointer, // Quick Select
+  MousePointer,
 } from 'lucide-react';
 
 import { chunkArray } from '@/shared/utils/helperFunctions';
+import { pickRandom } from '@/shared/utils/shuffle';
 import { cardBorderStyles } from '@/shared/utils/styles';
 import useGridColumns from '@/shared/hooks/generic/useGridColumns';
 import { useClick } from '@/shared/hooks/generic/useAudio';
-// import { ActionButton } from '@/shared/ui/components/ActionButton'; // Quick Select
+import { ActionButton } from '@/shared/ui/components/ActionButton';
 import MasteryBar from '@/shared/ui/components/MasteryBar';
 import QuickSelectModal from '@/shared/ui-composite/Modals/QuickSelectModal';
-// import { cn } from '@/shared/utils/utils'; // Quick Select
 
 export type LevelSetCardsSet = {
   name: string;
@@ -30,7 +31,6 @@ export type LevelSetCardsSet = {
 
 type ActiveSubunitRange = {
   id: string;
-  label: string;
   startLevel: number;
   endLevel: number;
 };
@@ -79,6 +79,7 @@ type LevelSetCardsProps<TLevel extends string, TItem> = {
   setSelectedSets: (sets: string[]) => void;
   clearSelected: () => void;
   toggleItems: (items: TItem[]) => void;
+  replaceItems: (items: TItem[]) => void;
 
   collapsedRows: number[];
   setCollapsedRows: (
@@ -327,6 +328,7 @@ const LevelSetCards = <TLevel extends string, TItem>({
   setSelectedSets,
   clearSelected,
   toggleItems,
+  replaceItems,
   collapsedRows,
   setCollapsedRows,
   renderSetDictionary,
@@ -337,7 +339,7 @@ const LevelSetCards = <TLevel extends string, TItem>({
   initialCollections,
   learningAction,
 }: LevelSetCardsProps<TLevel, TItem>) => {
-  // const { playClick } = useClick(); // Quick Select
+  const { playClick } = useClick();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -395,10 +397,10 @@ const LevelSetCards = <TLevel extends string, TItem>({
 
   const numColumns = useGridColumns();
 
-  const { setsTemp, allRows, totalRows } = useMemo(() => {
+  const { unitSets, allRows, totalRows } = useMemo(() => {
     if (!selectedCollection) {
       return {
-        setsTemp: [] as LevelSetCardsSet[],
+        unitSets: [] as LevelSetCardsSet[],
         allRows: [] as VisibleSet<TItem>[][],
         totalRows: 0,
       };
@@ -439,7 +441,7 @@ const LevelSetCards = <TLevel extends string, TItem>({
     const rows: VisibleSet<TItem>[][] = chunkArray(visibleSets, numColumns);
 
     return {
-      setsTemp: visibleSets,
+      unitSets: sets,
       allRows: rows,
       totalRows: rows.length,
     };
@@ -499,14 +501,17 @@ const LevelSetCards = <TLevel extends string, TItem>({
     };
   }, [allRows, collapseScopeKey, selectedCollection, setCollapsedRows]);
 
-  const handleToggleSet = (setName: string) => {
-    const set = setsTemp.find(s => s.name === setName);
-    if (!set || !selectedCollection) return;
+  const getSetItems = (set: LevelSetCardsSet) =>
+    selectedCollection
+      ? selectedCollection.data.slice(
+          set.start * itemsPerSet,
+          set.end * itemsPerSet,
+        )
+      : [];
 
-    const setItems = selectedCollection.data.slice(
-      set.start * itemsPerSet,
-      set.end * itemsPerSet,
-    );
+  const handleToggleSet = (setName: string) => {
+    const set = unitSets.find(s => s.name === setName);
+    if (!set) return;
 
     if (selectedSets.includes(setName)) {
       setSelectedSets(selectedSets.filter(s => s !== setName));
@@ -514,21 +519,17 @@ const LevelSetCards = <TLevel extends string, TItem>({
       setSelectedSets([...new Set(selectedSets.concat(setName))]);
     }
 
-    toggleItems(setItems);
+    toggleItems(getSetItems(set));
+  };
+
+  // Replace instead of toggle so sets and items match
+  const replaceSelection = (chosenSets: LevelSetCardsSet[]) => {
+    setSelectedSets(chosenSets.map(set => set.name));
+    replaceItems(chosenSets.flatMap(set => getSetItems(set)));
   };
 
   const handleSelectAll = () => {
-    const allSetNames = setsTemp.map(set => set.name);
-    setSelectedSets(allSetNames);
-    if (selectedCollection) {
-      const visibleItems = setsTemp.flatMap(set =>
-        selectedCollection.data.slice(
-          set.start * itemsPerSet,
-          set.end * itemsPerSet,
-        ),
-      );
-      toggleItems(visibleItems);
-    }
+    replaceSelection(unitSets);
   };
 
   const handleClearAll = () => {
@@ -536,21 +537,9 @@ const LevelSetCards = <TLevel extends string, TItem>({
   };
 
   const handleSelectRandom = (count: number) => {
-    const shuffled = [...setsTemp].sort(() => Math.random() - 0.5);
-    const randomSets = shuffled.slice(0, Math.min(count, shuffled.length));
-    const randomSetNames = randomSets.map(set => set.name);
-
-    setSelectedSets(randomSetNames);
-
-    if (selectedCollection) {
-      const randomItems = randomSets.flatMap(set =>
-        selectedCollection.data.slice(
-          set.start * itemsPerSet,
-          set.end * itemsPerSet,
-        ),
-      );
-      toggleItems(randomItems);
-    }
+    const randomSets = pickRandom(unitSets, count);
+    // Keep level order
+    replaceSelection(unitSets.filter(set => randomSets.includes(set)));
   };
 
   if (!selectedCollection) {
@@ -563,37 +552,56 @@ const LevelSetCards = <TLevel extends string, TItem>({
     );
   }
 
+  const firstLevel = unitSets[0]?.levelNumber;
+  const lastLevel = unitSets[unitSets.length - 1]?.levelNumber;
+
   return (
     <div className='flex w-full flex-col gap-4'>
       {learningAction}
-      {/* Quick Select is intentionally retained for a possible future return.
-      <ActionButton
-        onClick={() => {
-          playClick();
-          setIsModalOpen(true);
-        }}
-        className='px-2 py-3 opacity-90'
-        borderRadius='3xl'
-        borderBottomThickness={14}
-        colorScheme='main'
-        borderColorScheme='main'
-      >
-        <MousePointer className={cn('fill-current')} />
-        Quick Select
-      </ActionButton>
-      */}
+
+      {/* Quick picks for the whole unit */}
+      <div className='grid grid-cols-2 gap-4'>
+        <ActionButton
+          onClick={() => {
+            playClick();
+            setIsModalOpen(true);
+          }}
+          className='px-2 py-3'
+          borderRadius='3xl'
+          borderBottomThickness={10}
+          colorScheme='secondary'
+          borderColorScheme='secondary'
+        >
+          <MousePointer className='fill-current' />
+          Quick Select
+        </ActionButton>
+        <ActionButton
+          onClick={() => {
+            playClick();
+            handleSelectRandom(10);
+          }}
+          className='px-2 py-3'
+          borderRadius='3xl'
+          borderBottomThickness={10}
+          colorScheme='secondary'
+          borderColorScheme='secondary'
+        >
+          <Dices className='fill-current' />
+          Random 10
+        </ActionButton>
+      </div>
 
       <QuickSelectModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        sets={setsTemp}
+        sets={unitSets}
         selectedSets={selectedSets}
         onToggleSet={handleToggleSet}
         onSelectAll={handleSelectAll}
         onClearAll={handleClearAll}
         onSelectRandom={handleSelectRandom}
         unitName={selectedUnitName}
-        scopeLabel={activeSubunitRange.label}
+        scopeLabel={`Levels ${firstLevel}-${lastLevel}`}
       />
 
       <VisibleRowsSection

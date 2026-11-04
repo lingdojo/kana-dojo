@@ -7,6 +7,7 @@ import { cn } from '@/shared/utils/utils';
 
 interface AutoLearningButtonProps {
   hasProgress: boolean;
+  selectedCount?: number;
   isLoading: boolean;
   error: string | null;
   onClick: () => void;
@@ -15,6 +16,7 @@ interface AutoLearningButtonProps {
 
 const AutoLearningButton = ({
   hasProgress,
+  selectedCount = 0,
   isLoading,
   error,
   onClick,
@@ -22,7 +24,6 @@ const AutoLearningButton = ({
 }: AutoLearningButtonProps) => (
   <div className={cn('w-full', className)}>
     <ActionButton
-      data-auto-learning-dojo
       onClick={onClick}
       disabled={isLoading}
       className='px-2 py-3 disabled:cursor-wait disabled:opacity-70'
@@ -36,7 +37,11 @@ const AutoLearningButton = ({
       ) : (
         <Play className='fill-current' />
       )}
-      {hasProgress ? 'Continue Learning' : 'Start Learning'}
+      {selectedCount > 0
+        ? `Start Selected Levels (${selectedCount})`
+        : hasProgress
+          ? 'Continue Learning'
+          : 'Start Learning'}
     </ActionButton>
     {error && (
       <p role='alert' className='mt-2 px-2 text-sm text-red-500'>
