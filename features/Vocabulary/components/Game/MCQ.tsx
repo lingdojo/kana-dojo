@@ -24,6 +24,7 @@ import {
   type VocabQuestionFormat,
   type VocabQuizType,
 } from '@/features/Vocabulary/components/Game/vocabFormatLock';
+import { isAmbiguousVocabularyOption } from '@/features/Vocabulary/lib/isAmbiguousVocabularyOption';
 import useClassicSessionStore from '@/shared/store/useClassicSessionStore';
 import { useSetProgressStore } from '@/features/Progress';
 
@@ -197,6 +198,11 @@ const VocabMCQ = ({ selectedWordObjs, isHidden }: VocabMCQProps) => {
 
     if (quizType === 'meaning') {
       return incorrectWordObjs
+        .filter(
+          obj =>
+            !correctWordObj ||
+            !isAmbiguousVocabularyOption(correctWordObj, obj, isReverse),
+        )
         .map(obj => (isReverse ? obj.word : obj.meanings[0]))
         .sort(() => random.real(0, 1) - 0.5)
         .slice(0, 2);
