@@ -53,7 +53,11 @@ const SUBSET_LABELS: Record<KanaType, Record<string, string>> = {
 
 const KanaMenu = ({ filter = 'all' }: { filter?: KanaMenuFilter }) => {
   const { playClick } = useClick();
-  const { addGroups: addKanaGroupIndices, replaceGroups } = useKanaSelection();
+  const {
+    selectedGroupIndices,
+    addGroups: addKanaGroupIndices,
+    replaceGroups,
+  } = useKanaSelection();
   const { allGroups: kana } = useKanaContent();
   const router = useRouter();
   const characterMastery = useStatsStore(
@@ -95,9 +99,50 @@ const KanaMenu = ({ filter = 'all' }: { filter?: KanaMenuFilter }) => {
     ? persistedKanaSelection.selectedSubset
     : fallbackSelectedSubset;
 
+  const activeSubsetIndices = useMemo(() => {
+    const key = `${filterOverride}-${selectedSubset}`;
+    const sliceRange = SUBSET_SLICE_RANGES[key];
+    if (!sliceRange) return [];
+    return Array.from(
+      { length: sliceRange[1] - sliceRange[0] },
+      (_, i) => sliceRange[0] + i,
+    );
+  }, [filterOverride, selectedSubset]);
+
+  const compactIndices = useMemo(
+    () =>
+      kana
+        .map((k, i) => ({ k, i }))
+        .filter(({ k }) => {
+          if (k.groupName.startsWith('challenge.')) return false;
+          if (filter === 'hiragana') return k.groupName.startsWith('h.');
+          if (filter === 'katakana') return k.groupName.startsWith('k.');
+          return true;
+        })
+        .map(({ i }) => i),
+    [filter, kana],
+  );
+
+  const isAllSubsetSelected =
+    activeSubsetIndices.length > 0 &&
+    activeSubsetIndices.every(idx => selectedGroupIndices.includes(idx));
+
+  const isAllCompactSelected =
+    compactIndices.length > 0 &&
+    compactIndices.every(idx => selectedGroupIndices.includes(idx));
+
   const kanaTypeLabel = KANA_TYPE_LABELS[filterOverride];
   const subsetLabel = SUBSET_LABELS[filterOverride]?.[selectedSubset];
-  const selectAllLabel = `Select  ${kanaTypeLabel} ${subsetLabel}`;
+  const subsetActionPrefix = isAllSubsetSelected ? 'Deselect' : 'Select';
+  const selectAllLabel = `${subsetActionPrefix} ${kanaTypeLabel} ${subsetLabel}`;
+
+  const compactActionPrefix = isAllCompactSelected ? 'Deselect' : 'Select';
+  const compactSelectAllLabel =
+    filter === 'hiragana'
+      ? `${compactActionPrefix} All Hiragana`
+      : filter === 'katakana'
+        ? `${compactActionPrefix} All Katakana`
+        : `${compactActionPrefix} All Kana`;
 
   const hasKanaProgress = useMemo(
     () =>
@@ -185,90 +230,36 @@ const KanaMenu = ({ filter = 'all' }: { filter?: KanaMenuFilter }) => {
             }}
           />
         )}
+        {filter === 'all' && (
+          <AutoLearningButton
+            hasProgress={hasKanaProgress}
+            isLoading={isAutoLearning}
+            error={autoLearningError}
+            onClick={() => void handleAutoLearning()}
+          />
+        )}
         <div className='flex w-full flex-row items-center gap-2'>
-          {filter === 'all' ? (
-            <AutoLearningButton
-              hasProgress={hasKanaProgress}
-              isLoading={isAutoLearning}
-              error={autoLearningError}
-              onClick={() => void handleAutoLearning()}
-              className='flex-1'
-            />
-          ) : (
-            <ActionButton
-              onClick={e => {
-                e.currentTarget.blur();
-                playClick();
-                if (viewMode === 'full') {
-                  const key = `${filterOverride}-${selectedSubset}`;
-                  const sliceRange = SUBSET_SLICE_RANGES[key];
-                  if (sliceRange) {
-                    const indices = Array.from(
-                      { length: sliceRange[1] - sliceRange[0] },
-                      (_, i) => sliceRange[0] + i,
-                    );
-                    addKanaGroupIndices(indices);
-                  }
-                } else {
-                  const indices = kana
-                    .map((k, i) => ({ k, i }))
-                    .filter(({ k }) => {
-                      if (k.groupName.startsWith('challenge.')) return false;
-                      if (filter === 'hiragana')
-                        return k.groupName.startsWith('h.');
-                      if (filter === 'katakana')
-                        return k.groupName.startsWith('k.');
-                      return true;
-                    })
-                    .map(({ i }) => i);
-                  addKanaGroupIndices(indices);
+          <ActionButton
+            onClick={e => {
+              e.currentTarget.blur();
+              playClick();
+              if (viewMode === 'full') {
+                if (activeSubsetIndices.length > 0) {
+                  addKanaGroupIndices(activeSubsetIndices);
                 }
-              }}
-              className='flex-1 px-2 py-2 sm:py-3'
-              borderBottomThickness={14}
-              borderRadius='3xl'
-            >
-              <MousePointer className={cn('fill-current')} />
-              {viewMode === 'full' ? selectAllLabel : 'Select All Kana'}
-            </ActionButton>
-          )}
-          {/*
-            Previous root Kana selection button retained for easy restoration:
-            <ActionButton
-              onClick={e => {
-                e.currentTarget.blur();
-                playClick();
-                if (viewMode === 'full') {
-                  const key = `${filterOverride}-${selectedSubset}`;
-                  const sliceRange = SUBSET_SLICE_RANGES[key];
-                  if (sliceRange) {
-                    const indices = Array.from(
-                      { length: sliceRange[1] - sliceRange[0] },
-                      (_, i) => sliceRange[0] + i,
-                    );
-                    addKanaGroupIndices(indices);
-                  }
-                } else {
-                  const indices = kana
-                    .map((k, i) => ({ k, i }))
-                    .filter(({ k }) => {
-                      if (k.groupName.startsWith('challenge.')) return false;
-                      if (filter === 'hiragana') return k.groupName.startsWith('h.');
-                      if (filter === 'katakana') return k.groupName.startsWith('k.');
-                      return true;
-                    })
-                    .map(({ i }) => i);
-                  addKanaGroupIndices(indices);
+              } else {
+                if (compactIndices.length > 0) {
+                  addKanaGroupIndices(compactIndices);
                 }
-              }}
-              className='flex-1 px-2 py-2 sm:py-3'
-              borderBottomThickness={14}
-              borderRadius='3xl'
-            >
-              <MousePointer className={cn('fill-current')} />
-              {viewMode === 'full' ? selectAllLabel : 'Select All Kana'}
-            </ActionButton>
-          */}
+              }
+            }}
+            className='flex-1 px-2 py-2 sm:py-3'
+            borderBottomThickness={14}
+            borderRadius='3xl'
+          >
+            <MousePointer className={cn('fill-current')} />
+            {viewMode === 'full' ? selectAllLabel : compactSelectAllLabel}
+          </ActionButton>
           <ActionButton
             onClick={() => {
               playClick();
