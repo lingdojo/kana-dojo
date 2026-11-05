@@ -439,12 +439,19 @@
     "english": "Let's go, everyone!",
     "game": "Kingdom Hearts series (JP dub)",
     "character": "Sora"
-  }, 
+  },
   {
-  "japanese": "風が、来る！",
-  "romaji": "Kaze ga, kuru!",
-  "english": "The wind is coming!",
-  "game": "The Legend of Zelda: Breath of the Wild (JP)",
-  "character": "Revali"
-}
+    "japanese": "風が、来る！",
+    "romaji": "Kaze ga, kuru!",
+    "english": "The wind is coming!",
+    "game": "The Legend of Zelda: Breath of the Wild (JP)",
+    "character": "Revali"
+  },
+  {
+    "japanese": "未来を変えるんだ！",
+    "romaji": "Mirai o kaerun da!",
+    "english": "We're going to change the future!",
+    "game": "Steins;Gate: My Darling's Embrace",
+    "character": "Rintaro Okabe"
+  }
 ]
