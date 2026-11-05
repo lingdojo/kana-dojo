@@ -9,6 +9,7 @@ export const isVocabularyMeaningAnswerCorrect = (
   vocabulary: IVocabObj,
   answer: string,
   isReverse: boolean | undefined,
+  alternatives?: IVocabObj[],
 ): boolean => {
   const normalizedAnswer = isReverse
     ? normalizeAnswerValue(answer)
@@ -21,9 +22,22 @@ export const isVocabularyMeaningAnswerCorrect = (
     );
   }
 
-  return (
-    normalizeAnswerValue(vocabulary.word) === normalizedAnswer ||
+  const answerMatchesVocabulary = (candidate: IVocabObj): boolean =>
+    normalizeAnswerValue(candidate.word) === normalizedAnswer ||
     toHiragana(normalizedAnswer) ===
-      toHiragana(normalizeAnswerValue(vocabulary.reading))
+      toHiragana(normalizeAnswerValue(candidate.reading));
+
+  if (answerMatchesVocabulary(vocabulary)) return true;
+
+  const primaryMeaning = vocabulary.meanings[0];
+  if (!primaryMeaning || !alternatives) return false;
+
+  const normalizedPrimaryMeaning = normalizeMeaningAnswer(primaryMeaning);
+  return alternatives.some(
+    candidate =>
+      candidate !== vocabulary &&
+      normalizeMeaningAnswer(candidate.meanings[0] ?? '') ===
+        normalizedPrimaryMeaning &&
+      answerMatchesVocabulary(candidate),
   );
 };
