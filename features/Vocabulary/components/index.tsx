@@ -12,6 +12,7 @@ import LevelSetCards from '@/shared/ui-composite/Menu/LevelSetCards';
 import useSetProgressHydration from '@/features/Progress/hooks/useSetProgress';
 import {
   calculateVocabularySetProgressAndStars,
+  clearAutoLearningHandoff,
   selectAutoLearningSets,
   useAutoLearningStore,
   useSetProgressStore,
@@ -88,6 +89,7 @@ const VocabCards = ({ showAutoLearning = false }: VocabCardsProps) => {
     null,
   );
   const addWordObjs = useVocabStore(state => state.addVocabObjs);
+  const setWordObjs = useVocabStore(state => state.setSelectedVocabObjs);
   const { clearVocabObjs, clearVocabSets } = useVocabStore();
   const collapsedRowsByUnit = useVocabStore(state => state.collapsedRowsByUnit);
   const setCollapsedRowsForUnit = useVocabStore(
@@ -291,6 +293,20 @@ const VocabCards = ({ showAutoLearning = false }: VocabCardsProps) => {
       setIsAutoLearning(false);
     }
   };
+
+  const selectedLevelCount = hasAutoLearningSelection
+    ? 0
+    : selectedVocabSets.length;
+
+  // Train picked levels if there are any
+  const handleStartClick = () => {
+    if (selectedLevelCount > 0) {
+      clearAutoLearningHandoff();
+      router.push('/vocabulary/train');
+      return;
+    }
+    void handleAutoLearning();
+  };
   const initialCollections = useMemo(() => {
     const cached = vocabDataService.getAllCached();
 
@@ -330,6 +346,7 @@ const VocabCards = ({ showAutoLearning = false }: VocabCardsProps) => {
         clearVocabSets();
       }}
       toggleItems={items => addWordObjs(items)}
+      replaceItems={items => setWordObjs(items)}
       collapsedRows={collapsedRows}
       setCollapsedRows={setCollapsedRows}
       renderSetDictionary={items => <VocabSetDictionary words={items} />}
@@ -342,9 +359,10 @@ const VocabCards = ({ showAutoLearning = false }: VocabCardsProps) => {
         showAutoLearning ? (
           <AutoLearningButton
             hasProgress={hasProgress}
+            selectedCount={selectedLevelCount}
             isLoading={!isProgressHydrated || isAutoLearning}
             error={autoLearningError}
-            onClick={() => void handleAutoLearning()}
+            onClick={handleStartClick}
           />
         ) : undefined
       }

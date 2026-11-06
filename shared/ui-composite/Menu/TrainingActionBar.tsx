@@ -1,5 +1,11 @@
 'use client';
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from 'react';
 import clsx from 'clsx';
 import { useKanaSelection } from '@/features/Kana';
 import { useKanjiSelection } from '@/features/Kanji';
@@ -14,7 +20,11 @@ import ModeSetupMenu from '@/shared/ui-composite/Menu/ModeSetupMenu';
 // Gauntlet components with onCancel prop support
 import { cn } from '@/shared/utils/utils';
 import { useScrollVisibility } from '@/shared/hooks/generic/useScrollVisibility';
-import { useAutoLearningStore } from '@/features/Progress';
+import {
+  clearAutoLearningHandoff,
+  useAutoLearningStore,
+} from '@/features/Progress';
+import { useRouter } from '@/core/i18n/routing';
 
 const TRAINING_ACTION_CLASSIC_FLOAT_CLASSES = '';
 // 'motion-safe:animate-float [--float-distance:-3px] delay-200ms';
@@ -67,13 +77,13 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
           ? selectedVocabSets.length > 0 || selectedWordObjs.length > 0
           : false;
 
-  const buttonRef = useRef<HTMLButtonElement | null>(null);
+  const router = useRouter();
 
-  const startAutoLearning = () => {
-    document
-      .querySelector<HTMLButtonElement>('[data-auto-learning-dojo]')
-      ?.click();
-  };
+  // Train what the user picked
+  const startSelectedTraining = useCallback(() => {
+    clearAutoLearningHandoff();
+    router.push(`/${currentDojo}/train`);
+  }, [currentDojo, router]);
 
   useEffect(() => {
     if (!hotkeysOn) return;
@@ -91,7 +101,7 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
         if (showExperimentalModes) {
           setShowGameModesModal(true);
         } else {
-          startAutoLearning();
+          startSelectedTraining();
         }
       }
     };
@@ -100,7 +110,7 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [hotkeysOn, isFilled, showExperimentalModes]);
+  }, [hotkeysOn, isFilled, showExperimentalModes, startSelectedTraining]);
 
   const showBlitz =
     currentDojo === 'kana' ||
@@ -194,19 +204,21 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
   }, []);
 
   useEffect(() => {
-    if (!isFilled) {
-      setIsActivationLocked(false);
+    // Set state on the next frame
+    const frameId = window.requestAnimationFrame(() => {
+      setIsActivationLocked(isFilled);
       setCanUnlockOnScroll(false);
-      return;
+    });
+    if (!isFilled) {
+      return () => window.cancelAnimationFrame(frameId);
     }
 
-    setIsActivationLocked(true);
-    setCanUnlockOnScroll(false);
     const timeoutId = window.setTimeout(() => {
       setCanUnlockOnScroll(true);
     }, ACTIVATION_SCROLL_DELAY_MS);
 
     return () => {
+      window.cancelAnimationFrame(frameId);
       window.clearTimeout(timeoutId);
     };
   }, [isFilled]);
@@ -355,65 +367,53 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
                   return;
                 }
 
-                startAutoLearning();
+                startSelectedTraining();
               },
-              ref: buttonRef,
             },
           ]
             .filter(btn => btn.show)
-            .map(
-              ({
-                id,
-                label,
-                Icon,
-                iconClassName,
-                colorScheme,
-                onClick,
-                ref,
-              }) => (
-                <button
-                  key={id}
-                  ref={ref}
-                  disabled={id === 'classic' && !isFilled}
-                  className={cn(
-                    'flex flex-row items-center justify-center gap-2 py-3',
-                    id === 'classic' &&
-                      isFilled &&
-                      TRAINING_ACTION_CLASSIC_FLOAT_CLASSES,
-                    // Mobile: fixed widths (25% for Blitz/Gauntlet, 50% for Classic), no x-padding
-                    // Desktop (sm+): flex-based sizing with padding
-                    id === 'classic'
-                      ? showExperimentalModes
-                        ? 'w-full sm:w-3/4 md:w-3/5 md:px-6 xl:w-1/2'
-                        : 'w-1/2 md:w-3/5 md:px-6'
-                      : id === 'custom'
-                        ? 'w-1/2 sm:max-w-sm sm:flex-1 sm:px-6'
-                        : 'w-1/4 sm:w-auto sm:max-w-sm sm:flex-1 sm:px-6',
-                    'rounded-3xl transition-colors duration-200',
-                    'border-b-10',
-                    'hover:cursor-pointer',
-                    colorScheme === 'secondary' &&
-                      'border-(--secondary-color-accent) bg-(--secondary-color)/90 text-(--background-color)',
-                    colorScheme === 'primary' &&
-                      (isFilled
-                        ? 'border-(--main-color-accent) bg-(--main-color) text-(--background-color)'
-                        : 'cursor-not-allowed bg-(--card-color) text-(--border-color)'),
-                  )}
-                  onClick={e => {
-                    e.currentTarget.blur();
-                    playClick();
-                    onClick();
-                  }}
-                >
-                  <Icon size={36} className={cn(iconClassName)} />
-                  {id === 'custom' && (
-                    <span className='whitespace-nowrap text-lg font-medium sm:text-xl'>
-                      {label}
-                    </span>
-                  )}
-                </button>
-              ),
-            )}
+            .map(({ id, label, Icon, iconClassName, colorScheme, onClick }) => (
+              <button
+                key={id}
+                disabled={id === 'classic' && !isFilled}
+                className={cn(
+                  'flex flex-row items-center justify-center gap-2 py-3',
+                  id === 'classic' &&
+                    isFilled &&
+                    TRAINING_ACTION_CLASSIC_FLOAT_CLASSES,
+                  // Mobile: fixed widths (25% for Blitz/Gauntlet, 50% for Classic), no x-padding
+                  // Desktop (sm+): flex-based sizing with padding
+                  id === 'classic'
+                    ? showExperimentalModes
+                      ? 'w-full sm:w-3/4 md:w-3/5 md:px-6 xl:w-1/2'
+                      : 'w-1/2 md:w-3/5 md:px-6'
+                    : id === 'custom'
+                      ? 'w-1/2 sm:max-w-sm sm:flex-1 sm:px-6'
+                      : 'w-1/4 sm:w-auto sm:max-w-sm sm:flex-1 sm:px-6',
+                  'rounded-3xl transition-colors duration-200',
+                  'border-b-10',
+                  'hover:cursor-pointer',
+                  colorScheme === 'secondary' &&
+                    'border-(--secondary-color-accent) bg-(--secondary-color)/90 text-(--background-color)',
+                  colorScheme === 'primary' &&
+                    (isFilled
+                      ? 'border-(--main-color-accent) bg-(--main-color) text-(--background-color)'
+                      : 'cursor-not-allowed bg-(--card-color) text-(--border-color)'),
+                )}
+                onClick={e => {
+                  e.currentTarget.blur();
+                  playClick();
+                  onClick();
+                }}
+              >
+                <Icon size={36} className={cn(iconClassName)} />
+                {(id === 'custom' || id === 'classic') && (
+                  <span className='text-lg font-medium whitespace-nowrap sm:text-xl'>
+                    {label}
+                  </span>
+                )}
+              </button>
+            ))}
         </div>
       </motion.div>
 
