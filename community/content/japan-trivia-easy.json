@@ -644,13 +644,48 @@
   "correctIndex": 0
 },
   {
-    "question": "Which Japanese dish is made of raw fish over rice? (Community variation 34)",
+  "question": "Which Japanese dish consists of rice balls often wrapped in seaweed?",
+  "difficulty": "easy",
+  "answers": [
+    "Onigiri",
+    "Tempura",
+    "Sukiyaki",
+    "Yakitori"
+  ],
+  "correctIndex": 0
+},
+  {
+    "question": "What is the Japanese art of arranging flowers called? (Community variation 58)",
     "difficulty": "easy",
     "answers": [
-      "Sushi",
-      "Tempura",
-      "Tonkatsu",
-      "Okonomiyaki"
+      "Ikebana",
+      "Shodo",
+      "Kodo",
+      "Origami"
+    ],
+    "correctIndex": 0
+  }
+,
+  {
+    "question": "What is the traditional Japanese garment worn on special occasions called?",
+    "difficulty": "easy",
+    "answers": [
+      "Kimono",
+      "Hanbok",
+      "Yukata",
+      "Sari"
+    ],
+    "correctIndex": 0
+  }
+  ,
+  {
+    "question": "Which city is known for its snow festival and ice sculptures?",
+    "difficulty": "easy",
+    "answers": [
+      "Sapporo",
+      "Aomori",
+      "Toyama",
+      "Nagano"
     ],
     "correctIndex": 0
   }
