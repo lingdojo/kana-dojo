@@ -1,0 +1,33 @@
+{
+  "general": {
+    "unknownError": "एक अज्ञात त्रुटि हुई",
+    "networkError": "नेटवर्क त्रुटि। कृपया अपने कनेक्शन की जांच करें।",
+    "serverError": "सर्वर त्रुटि। कृपया बाद में पुनः प्रयास करें।",
+    "notFound": "नहीं मिला",
+    "unauthorized": "अनधिकृत पहुंच (Unauthorized access)",
+    "forbidden": "पहुंच निषिद्ध (Access forbidden)",
+    "timeout": "अनुरोध समय समाप्त (Request timeout)"
+  },
+  "validation": {
+    "required": "यह फ़ील्ड आवश्यक है",
+    "invalidFormat": "अमान्य प्रारूप",
+    "tooShort": "इनपुट बहुत छोटा है",
+    "tooLong": "इनपुट बहुत लंबा है",
+    "invalidEmail": "अमान्य ईमेल पता",
+    "invalidNumber": "संख्या होनी चाहिए",
+    "outOfRange": "मान सीमा से बाहर है"
+  },
+  "game": {
+    "noSelection": "शुरू करने के लिए कृपया कम से कम एक आइटम चुनें",
+    "loadFailed": "खेल का डेटा लोड करने में विफल",
+    "saveFailed": "प्रगति सहेजने में विफल",
+    "invalidAnswer": "उत्तर का प्रारूप अमान्य है"
+  },
+  "data": {
+    "loadFailed": "डेटा लोड करने में विफल",
+    "saveFailed": "डेटा सहेजने में विफल",
+    "exportFailed": "डेटा निर्यात (Export) करने में विफल",
+    "importFailed": "डेटा आयात (Import) करने में विफल",
+    "invalidData": "अमान्य डेटा प्रारूप"
+  }
+}
