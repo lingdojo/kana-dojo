@@ -298,4 +298,33 @@ describe('isKanaInputAnswerCorrect', () => {
       }),
     ).toBe(true);
   });
+
+  it('accepts full-width romaji as typed on Japanese keyboards', () => {
+    // Regression #25451: answers typed with full-width alphanumeric
+    // characters (common with JP keyboard/IME) were rejected even though
+    // they spell the same answer, forcing copy-paste of the shown answer.
+    expect(
+      isKanaInputAnswerCorrect({
+        inputValue: 'ｓｈｉ',
+        correctChar: 'し',
+        targetChar: 'shi',
+        isReverse: false,
+        altRomanjiMap,
+      }),
+    ).toBe(true);
+  });
+
+  it('accepts half-width katakana answers in reverse mode', () => {
+    // Regression #25451: half-width katakana from mobile flick input
+    // is compatibility-equivalent to the stored full-width kana.
+    expect(
+      isKanaInputAnswerCorrect({
+        inputValue: 'ﾊ',
+        correctChar: 'は',
+        targetChar: 'ハ',
+        isReverse: true,
+        altRomanjiMap,
+      }),
+    ).toBe(true);
+  });
 });
