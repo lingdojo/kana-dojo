@@ -72,13 +72,16 @@ const initialState: ConversionState = {
 export function useConversionWorker(): UseConversionWorkerReturn {
   const [state, setState] = useState<ConversionState>(initialState);
   const workerManager = useRef(getWorkerManager());
-  const isWorkerSupported = workerManager.current.isSupported();
+  // getWorkerManager() returns a module-level singleton, so this is the same
+  // manager the ref holds; reading it here keeps refs out of render.
+  const isWorkerSupported = getWorkerManager().isSupported();
 
   // Cleanup on unmount
   useEffect(() => {
+    const manager = workerManager.current;
     return () => {
       // Cleanup worker memory when component unmounts
-      workerManager.current.cleanup();
+      manager.cleanup();
     };
   }, []);
 
