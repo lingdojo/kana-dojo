@@ -14,7 +14,9 @@ describe('isVocabularyMeaningAnswerCorrect', () => {
     answer => {
       const phrase = { ...vocabulary, meanings: ['well then…'] };
 
-      expect(isVocabularyMeaningAnswerCorrect(phrase, answer, false)).toBe(true);
+      expect(isVocabularyMeaningAnswerCorrect(phrase, answer, false)).toBe(
+        true,
+      );
     },
   );
 
@@ -27,9 +29,9 @@ describe('isVocabularyMeaningAnswerCorrect', () => {
   });
 
   it('normalizes meaning case and whitespace', () => {
-    expect(isVocabularyMeaningAnswerCorrect(vocabulary, ' america ', false)).toBe(
-      true,
-    );
+    expect(
+      isVocabularyMeaningAnswerCorrect(vocabulary, ' america ', false),
+    ).toBe(true);
   });
 
   it.each(['speak', 'Speak', 'to speak', '  TO   SPEAK  '])(
@@ -63,10 +65,12 @@ describe('isVocabularyMeaningAnswerCorrect', () => {
   it('preserves compound prefixes whose removal could change meaning', () => {
     const phrase = { ...vocabulary, meanings: ['to the point'] };
 
-    expect(isVocabularyMeaningAnswerCorrect(phrase, 'to the point', false)).toBe(
-      true,
+    expect(
+      isVocabularyMeaningAnswerCorrect(phrase, 'to the point', false),
+    ).toBe(true);
+    expect(isVocabularyMeaningAnswerCorrect(phrase, 'point', false)).toBe(
+      false,
     );
-    expect(isVocabularyMeaningAnswerCorrect(phrase, 'point', false)).toBe(false);
 
     const spacedPhrase = { ...vocabulary, meanings: ['to   the point'] };
     expect(isVocabularyMeaningAnswerCorrect(spacedPhrase, 'point', false)).toBe(
@@ -101,9 +105,9 @@ describe('isVocabularyMeaningAnswerCorrect', () => {
       reading: 'to speak',
     };
 
-    expect(
-      isVocabularyMeaningAnswerCorrect(prefixedWord, 'speak', true),
-    ).toBe(false);
+    expect(isVocabularyMeaningAnswerCorrect(prefixedWord, 'speak', true)).toBe(
+      false,
+    );
   });
 
   it.each([' アメリカ ', 'amerika', 'あめりか'])(
@@ -119,5 +123,67 @@ describe('isVocabularyMeaningAnswerCorrect', () => {
     expect(isVocabularyMeaningAnswerCorrect(vocabulary, answer, true)).toBe(
       false,
     );
+  });
+
+  describe('reverse answers shared by several entries', () => {
+    const overThere: IVocabObj[] = [
+      { word: 'あそこ', reading: 'あそこ', meanings: ['over there'] },
+      { word: 'あっち', reading: 'あっち', meanings: ['over there'] },
+      { word: 'そちら', reading: 'そちら', meanings: ['over there'] },
+      { word: 'そっち', reading: 'そっち', meanings: ['over there'] },
+      { word: '向こう', reading: 'むこう', meanings: ['over there'] },
+    ] as IVocabObj[];
+
+    const [asoko] = overThere;
+
+    it.each(['あそこ', 'あっち', 'そちら', 'そっち', '向こう', 'むこう'])(
+      'accepts %s when the question displays a meaning they all share',
+      answer => {
+        expect(
+          isVocabularyMeaningAnswerCorrect(asoko, answer, true, overThere),
+        ).toBe(true);
+      },
+    );
+
+    it('still rejects an entry that does not carry the displayed meaning', () => {
+      const session = [...overThere, vocabulary];
+
+      expect(
+        isVocabularyMeaningAnswerCorrect(asoko, 'アメリカ', true, session),
+      ).toBe(false);
+    });
+
+    it('accepts the displayed entry when no session pool is supplied', () => {
+      expect(isVocabularyMeaningAnswerCorrect(asoko, 'あそこ', true)).toBe(
+        true,
+      );
+    });
+
+    it('rejects a synonym when no session pool is supplied', () => {
+      expect(isVocabularyMeaningAnswerCorrect(asoko, 'あっち', true)).toBe(
+        false,
+      );
+    });
+
+    it('matches a shared meaning that is not the first meaning of the candidate', () => {
+      const thatWay = {
+        word: 'あちら',
+        reading: 'あちら',
+        meanings: ['that way', 'over there'],
+      } as IVocabObj;
+
+      expect(
+        isVocabularyMeaningAnswerCorrect(asoko, 'あちら', true, [thatWay]),
+      ).toBe(true);
+    });
+
+    it('does not widen normal mode, where only the shown entry counts', () => {
+      expect(
+        isVocabularyMeaningAnswerCorrect(asoko, 'over there', false, overThere),
+      ).toBe(true);
+      expect(
+        isVocabularyMeaningAnswerCorrect(asoko, 'America', false, overThere),
+      ).toBe(false);
+    });
   });
 });
