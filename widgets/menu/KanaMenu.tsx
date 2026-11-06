@@ -23,6 +23,10 @@ import {
   writeAutoLearningHandoff,
 } from '@/features/Progress';
 import { useRouter } from '@/core/i18n/routing';
+import {
+  getKanaAutoLearningGroups,
+  normalizeKanaReviewCursor,
+} from '@/features/Kana/lib/getKanaAutoLearningGroups';
 
 type KanaMenuFilter = 'all' | 'hiragana' | 'katakana';
 
@@ -115,7 +119,11 @@ const KanaMenu = ({ filter = 'all' }: { filter?: KanaMenuFilter }) => {
     setAutoLearningError(null);
 
     try {
-      const orderedSets = kana.slice(0, 60).map((group, index) => ({
+      const filteredGroups = getKanaAutoLearningGroups(
+        kana.slice(0, 60),
+        filterOverride,
+      );
+      const orderedSets = filteredGroups.map(({ group, index }) => ({
         id: group.groupName,
         payload: { group, index },
         mastered:
@@ -125,7 +133,11 @@ const KanaMenu = ({ filter = 'all' }: { filter?: KanaMenuFilter }) => {
             })),
           ).stars === 3,
       }));
-      const selection = selectAutoLearningSets(orderedSets, reviewCursor);
+      const safeReviewCursor = normalizeKanaReviewCursor(
+        reviewCursor,
+        orderedSets.length,
+      );
+      const selection = selectAutoLearningSets(orderedSets, safeReviewCursor);
 
       if (selection.selected.length === 0) {
         throw new Error('No Kana groups are available for training.');
