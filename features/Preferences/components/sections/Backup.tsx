@@ -11,8 +11,8 @@ const Backup: React.FC = () => {
   const fileRef = React.useRef<HTMLInputElement | null>(null);
   const [message, setMessage] = React.useState<string | null>(null);
 
-  const onExport = () => {
-    const data = createBackup();
+  const onExport = async () => {
+    const data = await createBackup();
     const blob = new Blob([JSON.stringify(data, null, 2)], {
       type: 'application/json',
     });
@@ -29,7 +29,7 @@ const Backup: React.FC = () => {
     try {
       const text = await file.text();
       const parsed = JSON.parse(text) as BackupFile;
-      const ok = applyBackup(parsed);
+      const ok = await applyBackup(parsed);
       setMessage(ok ? 'Imported backup successfully' : 'Import failed');
     } catch {
       setMessage('Invalid file');
@@ -58,17 +58,17 @@ const Backup: React.FC = () => {
           hidden
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
             const f = e.target.files?.[0];
-            if (f) onFilePicked(f);
+            if (f) void onFilePicked(f);
           }}
         />
       </div>
       {message && <p className='text-sm text-(--secondary-color)'>{message}</p>}
       <p className='text-xs opacity-70'>
-        Exports only preferences and stats. No account data is included.
+        Exports preferences, stats, streaks, achievements, and learning
+        progress. No account data is included.
       </p>
     </div>
   );
 };
 
 export default Backup;
-
