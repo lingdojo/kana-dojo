@@ -282,6 +282,23 @@
       "url": "https://japaneseskills.com/en/",
       "featured": false,
       "notes": "Practice questions are original, not past JLPT papers. Not affiliated with the JLPT organisers."
+    },
+    {
+      "id": "ok-jlpt",
+      "name": "OK JLPT",
+      "nameJa": "OK JLPT",
+      "description": "Past JLPT papers to take online, with answers and explanations.",
+      "descriptionLong": "OK JLPT lets you take past JLPT papers from 2010 to 2026 in the browser, as a timed mock test or one question at a time. Every paper has its listening audio, every question has the correct answer and an explanation, and you get an estimated score when you submit. You can also practise one question type across all papers. The interface is in English, Simplified Chinese and Traditional Chinese.",
+      "category": "jlpt",
+      "subcategory": "n5",
+      "tags": ["practice-tests", "past-papers", "listening", "mock-exam", "explanations"],
+      "difficulty": "all-levels",
+      "priceType": "freemium",
+      "priceDetails": "N5 and N4 papers free with no sign-up; N1-N3 have one free paper per level. Passes from US$2.99/month to US$19.99 one-time.",
+      "platforms": ["web", "ios"],
+      "url": "https://okjlpt.com/en/papers",
+      "featured": false,
+      "notes": "Not affiliated with the JLPT organisers."
     }
   ]
 }
