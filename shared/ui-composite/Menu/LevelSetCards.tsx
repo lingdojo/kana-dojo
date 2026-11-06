@@ -8,17 +8,17 @@ import {
   Circle,
   CircleCheck,
   Loader2,
-  // MousePointer, // Quick Select
+  MousePointer,
 } from 'lucide-react';
 
 import { chunkArray } from '@/shared/utils/helperFunctions';
 import { cardBorderStyles } from '@/shared/utils/styles';
 import useGridColumns from '@/shared/hooks/generic/useGridColumns';
 import { useClick } from '@/shared/hooks/generic/useAudio';
-// import { ActionButton } from '@/shared/ui/components/ActionButton'; // Quick Select
+import { ActionButton } from '@/shared/ui/components/ActionButton';
 import MasteryBar from '@/shared/ui/components/MasteryBar';
 import QuickSelectModal from '@/shared/ui-composite/Modals/QuickSelectModal';
-// import { cn } from '@/shared/utils/utils'; // Quick Select
+import { cn } from '@/shared/utils/utils';
 
 export type LevelSetCardsSet = {
   name: string;
@@ -337,7 +337,7 @@ const LevelSetCards = <TLevel extends string, TItem>({
   initialCollections,
   learningAction,
 }: LevelSetCardsProps<TLevel, TItem>) => {
-  // const { playClick } = useClick(); // Quick Select
+  const { playClick } = useClick();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -566,7 +566,6 @@ const LevelSetCards = <TLevel extends string, TItem>({
   return (
     <div className='flex w-full flex-col gap-4'>
       {learningAction}
-      {/* Quick Select is intentionally retained for a possible future return.
       <ActionButton
         onClick={() => {
           playClick();
@@ -581,7 +580,6 @@ const LevelSetCards = <TLevel extends string, TItem>({
         <MousePointer className={cn('fill-current')} />
         Quick Select
       </ActionButton>
-      */}
 
       <QuickSelectModal
         isOpen={isModalOpen}
