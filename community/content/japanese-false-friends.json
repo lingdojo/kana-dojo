@@ -2,7 +2,7 @@
   {
     "termA": "サラリーマン (sarariman)",
     "termB": "salaryman",
-    "explanation": "Refers broadly to office workers. (Set 3)",
+    "explanation": "Refers broadly to office workers. (Set 2)",
     "example": "父は都内でサラリーマンをしている。"
   },
   {
@@ -366,22 +366,27 @@
     "example": "お客様からクレームが届いた。"
   },
   {
-  "termA": "コンセント (konsento)",
-  "termB": "consent (English)",
-  "explanation": "コンセント means electrical outlet. (Set 5)",
-  "example": "コンセントが足りないので延長コードを使います。"
- }, 
+    "termA": "コンセント (konsento)",
+    "termB": "consent (English)",
+    "explanation": "コンセント means electrical outlet. (Set 5)",
+    "example": "コンセントが足りないので延長コードを使います。"
+  },
   {
-  "termA": "ハイテンション (haitenshon)",
-  "termB": "high tension (English)",
-  "explanation": "Means very energetic mood. (Set 4)",
-  "example": "試合前はみんなハイテンションだった。"
-}, 
-{
-  "termA": "スマート (sumaato)",
-  "termB": "smart (English)",
-  "explanation": "Often means slim/stylish, not necessarily intelligent. (Set 2)",
-  "example": "彼はスマートな着こなしをしている。"
-}
+    "termA": "ハイテンション (haitenshon)",
+    "termB": "high tension (English)",
+    "explanation": "Means very energetic mood. (Set 4)",
+    "example": "試合前はみんなハイテンションだった。"
+  },
+  {
+    "termA": "スマート (sumaato)",
+    "termB": "smart (English)",
+    "explanation": "Often means slim/stylish, not necessarily intelligent. (Set 2)",
+    "example": "彼はスマートな着こなしをしている。"
+  },
+  {
+    "termA": "ドンマイ (donmai)",
+    "termB": "don't mind (English)",
+    "explanation": "Used to comfort someone: 'never mind'. (Set 5)",
+    "example": "ミスしてもドンマイ！"
+  }
 ]
-
