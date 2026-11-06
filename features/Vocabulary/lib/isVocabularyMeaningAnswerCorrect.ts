@@ -3,6 +3,7 @@ import type { IVocabObj } from '@/entities/vocabulary';
 import {
   normalizeAnswerValue,
   normalizeMeaningAnswer,
+  stripTrailingNote,
 } from '@/shared/utils/meanings';
 
 export const isVocabularyMeaningAnswerCorrect = (
@@ -16,9 +17,13 @@ export const isVocabularyMeaningAnswerCorrect = (
   if (!normalizedAnswer) return false;
 
   if (!isReverse) {
-    return vocabulary.meanings.some(
-      meaning => normalizeMeaningAnswer(meaning) === normalizedAnswer,
-    );
+    return vocabulary.meanings.some(meaning => {
+      const normalizedMeaning = normalizeMeaningAnswer(meaning);
+      return (
+        normalizedMeaning === normalizedAnswer ||
+        stripTrailingNote(normalizedMeaning) === normalizedAnswer
+      );
+    });
   }
 
   return (
