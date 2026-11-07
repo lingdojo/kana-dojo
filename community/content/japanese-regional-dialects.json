@@ -383,6 +383,13 @@
   "standardJapanese": "いけない",
   "english": "no/cannot",
   "region": "Chugoku",
-  "note": "Prohibitive nuance. (Set 2)"
- }
+      "note": "Prohibitive nuance. (Set 2)"
+  },
+  {
+    "dialect": "ぶち",
+    "standardJapanese": "とても",
+    "english": "very",
+    "region": "Yamaguchi/Hiroshima",
+    "note": "Regional intensifier. (Set 2)"
+  }
 ]
