@@ -4,7 +4,11 @@ import { kana } from '@/features/Kana/data/kana';
 import useKanaStore from '@/features/Kana/store/useKanaStore';
 import { motion } from 'framer-motion';
 import clsx from 'clsx';
-import { useClick, useCorrect, useError } from '@/shared/hooks/generic/useAudio';
+import {
+  useClick,
+  useCorrect,
+  useError,
+} from '@/shared/hooks/generic/useAudio';
 // import GameIntel from '@/shared/ui-composite/Game/GameIntel';
 import { useStatsStore } from '@/features/Progress';
 import { useShallow } from 'zustand/react/shallow';
@@ -88,7 +92,6 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
 
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
-  const justAnsweredRef = useRef(false);
   const {
     targetLength,
     recordCorrect: recordTargetLengthCorrect,
@@ -141,7 +144,12 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
   const buildTargetPair = useCallback(() => {
     const sourceArray = isReverse ? selectedRomaji : selectedKana;
     if (sourceArray.length === 0) {
-      return { correctChar: '', targetChar: '', promptParts: [], answerParts: [] };
+      return {
+        correctChar: '',
+        targetChar: '',
+        promptParts: [],
+        answerParts: [],
+      };
     }
 
     const used = new Set<string>();
@@ -180,13 +188,17 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
   const answerParts = pairData.answerParts;
   const pauseTimer = useCallback(() => {
     if (answerStartTimeRef.current !== null) {
-      elapsedTimeMsRef.current += performance.now() - answerStartTimeRef.current;
+      elapsedTimeMsRef.current +=
+        performance.now() - answerStartTimeRef.current;
       answerStartTimeRef.current = null;
     }
   }, []);
   const getElapsedTimeMs = useCallback(() => {
     if (answerStartTimeRef.current !== null) {
-      return elapsedTimeMsRef.current + (performance.now() - answerStartTimeRef.current);
+      return (
+        elapsedTimeMsRef.current +
+        (performance.now() - answerStartTimeRef.current)
+      );
     }
     return elapsedTimeMsRef.current;
   }, []);
@@ -204,8 +216,11 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
   const isReady = isReverse ? hasRomaji : hasKana;
 
   useEffect(() => {
-    if (inputRef.current && bottomBarState === 'check') {
-      inputRef.current.focus();
+    if (inputRef.current && bottomBarState !== 'correct') {
+      const frame = requestAnimationFrame(() => {
+        inputRef.current?.focus();
+      });
+      return () => cancelAnimationFrame(frame);
     }
   }, [bottomBarState]);
 
@@ -220,16 +235,13 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
       const isSpace = event.code === 'Space' || event.key === ' ';
       const isContinueShortcut = isEnter || isSpace;
 
-      if (
-        isContinueShortcut &&
-        shouldSuppressContinueKeyboardShortcut()
-      ) {
+      if (isContinueShortcut && shouldSuppressContinueKeyboardShortcut()) {
         event.preventDefault();
         return;
       }
 
       if (isEnter) {
-        if (justAnsweredRef.current) {
+        if (event.repeat) {
           event.preventDefault();
           return;
         }
@@ -284,15 +296,16 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
     });
 
     playClick();
+    setInputValue('');
 
     if (isCorrect) {
-      handleCorrectAnswer();
+      handleCorrectAnswer(trimmedInput);
     } else {
       handleWrongAnswer(trimmedInput);
     }
   };
 
-  const handleCorrectAnswer = () => {
+  const handleCorrectAnswer = (userInput: string) => {
     pauseTimer();
     const answerTimeMs = getElapsedTimeMs();
     addCorrectAnswerTime(answerTimeMs / 1000);
@@ -317,15 +330,11 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
     resetWrongStreak();
     recordTargetLengthCorrect();
     setBottomBarState('correct');
-    justAnsweredRef.current = true;
-    setTimeout(() => {
-      justAnsweredRef.current = false;
-    }, 300);
     logAttempt({
       questionId: correctChar,
       questionPrompt: correctChar,
       expectedAnswers: [String(targetChar)],
-      userAnswer: inputValue.trim(),
+      userAnswer: userInput,
       inputKind: 'type',
       isCorrect: true,
       timeTakenMs: answerTimeMs,
@@ -335,7 +344,6 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
 
   const handleWrongAnswer = (wrongInput: string) => {
     setLastWrongInput(wrongInput);
-    setInputValue('');
     setWrongFeedbackSignal(prev => prev + 1);
     playErrorTwice();
 
@@ -450,6 +458,7 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
         onKeyDown={e => {
           if (e.key === 'Enter') {
             e.preventDefault();
+            e.stopPropagation();
             if (inputValue.trim().length > 0 && bottomBarState !== 'correct') {
               handleCheck();
             }
@@ -476,4 +485,3 @@ const InputGame = ({ isHidden, isReverse = false }: InputGameProps) => {
 };
 
 export default InputGame;
-
