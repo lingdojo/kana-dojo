@@ -439,12 +439,19 @@
     "english": "Let's go, everyone!",
     "game": "Kingdom Hearts series (JP dub)",
     "character": "Sora"
-  }, 
+  },
   {
-  "japanese": "風が、来る！",
-  "romaji": "Kaze ga, kuru!",
-  "english": "The wind is coming!",
-  "game": "The Legend of Zelda: Breath of the Wild (JP)",
-  "character": "Revali"
-}
+    "japanese": "風が、来る！",
+    "romaji": "Kaze ga, kuru!",
+    "english": "The wind is coming!",
+    "game": "The Legend of Zelda: Breath of the Wild (JP)",
+    "character": "Revali"
+  },
+  {
+    "japanese": "世界を救うって、そういうことだろ？",
+    "romaji": "Sekai o sukuu tte, sou iu koto daro?",
+    "english": "Saving the world means doing this, right?",
+    "game": "Persona 5 Strikers",
+    "character": "Joker"
+  }
 ]
