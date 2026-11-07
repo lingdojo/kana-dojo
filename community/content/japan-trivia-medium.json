@@ -405,5 +405,16 @@
       "Sendai"
     ],
     "correctIndex": 0
-  }
+  },
+  {
+  "question": "Which Japanese island is the southernmost of the four main islands? (Community variation 14)",
+  "difficulty": "medium",
+  "answers": [
+    "Honshu",
+    "Hokkaido",
+    "Shikoku",
+    "Kyushu"
+  ],
+  "correctIndex": 3
+}
 ]
