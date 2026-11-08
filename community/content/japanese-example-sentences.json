@@ -358,5 +358,11 @@
     "romaji": " Moshi jikan ga areba, issho ni fukushuu shimasen ka.", 
     "english": " If you have time, would you like to review together?", 
     "jlpt": " N3" 
+  },
+  {
+    "japanese": "会議は予定より早く終わりました。",
+    "romaji": "Kaigi wa yotei yori hayaku owarimashita.",
+    "english": "The meeting ended earlier than scheduled.",
+    "jlpt": "N4"
   }
 ]
