@@ -397,9 +397,7 @@
     "mainColor": "oklch(75.0% 0.175 195.0 / 1)",
     "secondaryColor": "oklch(80.0% 0.195 330.0 / 1)",
     "issued": false,
-    "completed": false,
-    "completedBy": "Seokhui-Jeong",
-    "completedPR": 33680
+    "completed": false
   },
   {
     "id": "tea-ceremony",
