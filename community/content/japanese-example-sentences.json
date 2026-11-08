@@ -352,5 +352,11 @@
   "romaji": "Shukudai o wasurenai you ni, karendaa ni kaite okimasu.",
   "english": "I'll put it in my calendar so I won't forget homework.",
   "jlpt": "N4"
+  },
+  { 
+    "japanese": " もし時間があれば、一緒に復習しませんか。", 
+    "romaji": " Moshi jikan ga areba, issho ni fukushuu shimasen ka.", 
+    "english": " If you have time, would you like to review together?", 
+    "jlpt": " N3" 
   }
 ]
