@@ -390,15 +390,9 @@
     "example": "ミスしてもドンマイ！"
   },
   {
-    "termA": "クレーム (kureemu)",
-    "termB": "claim (English)",
-    "explanation": "In Japanese it usually means complaint. (Set 4)",
-    "example": "お客様からクレームが届いた。"
-  },
-  {
-    "termA": "テンション (tenshon)",
-    "termB": "tension (English)",
-    "explanation": "Often means excitement/energy level in casual Japanese. (Set 5)",
-    "example": "ライブでテンションが上がった。"
-  }
+  "termA": "ナンバー (nanbaa)",
+  "termB": "number (English)",
+  "explanation": "Can mean ranking position in Japanese usage. (Set 6)",
+  "example": "彼はチームのナンバー1だ。"
+}
 ]
