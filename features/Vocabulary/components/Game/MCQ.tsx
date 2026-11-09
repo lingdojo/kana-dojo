@@ -26,6 +26,7 @@ import {
 } from '@/features/Vocabulary/components/Game/vocabFormatLock';
 import useClassicSessionStore from '@/shared/store/useClassicSessionStore';
 import { useSetProgressStore } from '@/features/Progress';
+import { getReverseWordDistractors } from '@/features/Vocabulary/lib/getReverseWordDistractors';
 
 const random = new Random();
 
@@ -196,6 +197,13 @@ const VocabMCQ = ({ selectedWordObjs, isHidden }: VocabMCQProps) => {
     );
 
     if (quizType === 'meaning') {
+      if (isReverse && correctWordObj) {
+        // Reverse: options are words. Words sharing the displayed meaning
+        // are excluded so the prompt has a single valid answer.
+        return getReverseWordDistractors(correctWordObj, selectedWordObjs)
+          .sort(() => random.real(0, 1) - 0.5)
+          .slice(0, 2);
+      }
       return incorrectWordObjs
         .map(obj => (isReverse ? obj.word : obj.meanings[0]))
         .sort(() => random.real(0, 1) - 0.5)
@@ -489,4 +497,3 @@ const VocabMCQ = ({ selectedWordObjs, isHidden }: VocabMCQProps) => {
 };
 
 export default VocabMCQ;
-

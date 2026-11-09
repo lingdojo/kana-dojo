@@ -9,6 +9,7 @@ import { getSelectionLabels } from '@/shared/utils/selectionFormatting';
 import { shuffle, pickOne } from '@/shared/utils/shuffle';
 import FuriganaText from '@/shared/ui-composite/text/FuriganaText';
 import { isVocabularyMeaningAnswerCorrect } from '@/features/Vocabulary/lib/isVocabularyMeaningAnswerCorrect';
+import { getReverseWordDistractors } from '@/features/Vocabulary/lib/getReverseWordDistractors';
 
 interface GauntletVocabProps {
   onCancel?: () => void;
@@ -48,19 +49,12 @@ const GauntletVocab: React.FC<GauntletVocabProps> = ({ onCancel }) => {
     // Pick mode support with reverse mode
     generateOptions: (question, items, count, isReverse) => {
       if (isReverse) {
-        // Reverse: options are Japanese words
+        // Reverse: options are Japanese words. Words sharing the displayed
+        // meaning are excluded so the prompt has a single valid answer.
         const correctAnswer = question.word;
-        const seen = new Set([correctAnswer]);
         const incorrectOptions = shuffle(
-          items.filter(item => item.word !== question.word),
-        )
-          .filter(item => {
-            if (seen.has(item.word)) return false;
-            seen.add(item.word);
-            return true;
-          })
-          .slice(0, count - 1)
-          .map(item => item.word);
+          getReverseWordDistractors(question, items),
+        ).slice(0, count - 1);
         return [correctAnswer, ...incorrectOptions];
       }
       // Normal: options are meanings

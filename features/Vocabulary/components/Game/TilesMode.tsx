@@ -40,6 +40,7 @@ import {
   type VocabQuizType,
 } from '@/features/Vocabulary/components/Game/vocabFormatLock';
 import { useSetProgressStore } from '@/features/Progress';
+import { getReverseWordDistractors } from '@/features/Vocabulary/lib/getReverseWordDistractors';
 import { useTilesModeKeyboardSelection } from '@/shared/hooks/game/useTilesModeKeyboardSelection';
 
 const random = new Random();
@@ -218,11 +219,13 @@ const VocabTilesMode = ({
       } else {
         // Meaning quiz
         if (isReverse) {
-          // Reverse: show meaning, answer is word
+          // Reverse: show meaning, answer is word. Words sharing the
+          // displayed meaning are excluded so the prompt has a single
+          // valid answer.
           correctAnswerRaw = selectedWord;
-          distractorSourceRaw = selectedWordObjs
-            .filter(obj => obj.word !== selectedWord)
-            .map(obj => obj.word);
+          distractorSourceRaw = selectedWordObj
+            ? getReverseWordDistractors(selectedWordObj, selectedWordObjs)
+            : [];
         } else {
           // Normal: show word, answer is meaning
           correctAnswerRaw = selectedWordObj.meanings[0];
