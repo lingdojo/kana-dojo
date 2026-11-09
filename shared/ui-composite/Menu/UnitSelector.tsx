@@ -28,6 +28,7 @@ import {
   type SubunitSummary,
 } from '@/shared/ui-composite/Menu/lib/unitSubunits';
 import { useMenuSelectorStore } from '@/shared/ui-composite/Menu/store/useMenuSelectorStore';
+import { useAutoLearningStore } from '@/features/Progress';
 
 type CollectionLevel = 'n5' | 'n4' | 'n3' | 'n2' | 'n1';
 type ContentType = 'kanji' | 'vocabulary';
@@ -81,12 +82,21 @@ const getCollectionSubunits = (
 type SubunitSelectorProps = {
   subunits: SubunitSummary[];
   selectedSubunitId: string;
+  selectedSets: string[];
   onSelect: (subunitId: string) => void;
 };
+
+// Set names look like "Set 13"
+const countSelectedLevels = (selectedSets: string[], subunit: SubunitSummary) =>
+  selectedSets.filter(setName => {
+    const level = Number(setName.replace('Set ', ''));
+    return level >= subunit.startLevel && level <= subunit.endLevel;
+  }).length;
 
 const SubunitSelector = ({
   subunits,
   selectedSubunitId,
+  selectedSets,
   onSelect,
 }: SubunitSelectorProps) => {
   if (subunits.length <= 1) {
@@ -98,6 +108,7 @@ const SubunitSelector = ({
       {subunits.map(subunit => {
         const isSelected = subunit.id === selectedSubunitId;
         const shortLabel = subunit.label.replace('Levels ', '');
+        const selectedCount = countSelectedLevels(selectedSets, subunit);
 
         return (
           <div key={subunit.id} className='relative flex'>
@@ -129,6 +140,20 @@ const SubunitSelector = ({
                 Levels <span className='whitespace-nowrap'>{shortLabel}</span>
               </span>
               <span className='inline sm:hidden'>{shortLabel}</span>
+              {/* Picked levels in this group */}
+              {selectedCount > 0 && (
+                <span
+                  className={clsx(
+                    'absolute top-1 right-1 rounded-full px-1.5 text-xs',
+                    isSelected
+                      ? 'bg-(--background-color)/20 text-(--background-color)'
+                      : 'bg-(--background-color) text-(--secondary-color)',
+                  )}
+                >
+                  {selectedCount}
+                  <span className='sr-only'> selected</span>
+                </span>
+              )}
             </ActionButton>
           </div>
         );
@@ -162,6 +187,17 @@ const UnitSelector = () => {
   const clearKanjiSets = useKanjiStore(state => state.clearKanjiSets);
   const clearVocab = useVocabStore(state => state.clearVocabObjs);
   const clearVocabSets = useVocabStore(state => state.clearVocabSets);
+  const selectedKanjiSets = useKanjiStore(state => state.selectedKanjiSets);
+  const selectedVocabSets = useVocabStore(state => state.selectedVocabSets);
+  const hasAutoSelection = useAutoLearningStore(
+    state => state.activeSelections[storageContentType],
+  );
+  // Auto learning picks are not the user's picks
+  const selectedSets = hasAutoSelection
+    ? []
+    : isKanji
+      ? selectedKanjiSets
+      : selectedVocabSets;
 
   const collections = useMemo(() => {
     const levels: CollectionLevel[] = ['n5', 'n4', 'n3', 'n2', 'n1'];
@@ -186,16 +222,15 @@ const UnitSelector = () => {
   useEffect(() => {
     const syncFrameId = window.requestAnimationFrame(() => {
       setVisualCollection(selectedCollection);
-      setVisualSubunitByUnit(persistedCollectionSelection.selectedSubunitByUnit);
+      setVisualSubunitByUnit(
+        persistedCollectionSelection.selectedSubunitByUnit,
+      );
     });
 
     return () => {
       window.cancelAnimationFrame(syncFrameId);
     };
-  }, [
-    persistedCollectionSelection.selectedSubunitByUnit,
-    selectedCollection,
-  ]);
+  }, [persistedCollectionSelection.selectedSubunitByUnit, selectedCollection]);
 
   const handleCollectionSelect = (level: CollectionLevel) => {
     playClick();
@@ -246,8 +281,7 @@ const UnitSelector = () => {
   const activeSubunits = activeCollection
     ? getCollectionSubunits(activeCollection, isKanji)
     : [];
-  const selectedSubunitId =
-    visualSubunitByUnit[visualCollection];
+  const selectedSubunitId = visualSubunitByUnit[visualCollection];
   const selectedSubunitExists = activeSubunits.some(
     subunit => subunit.id === selectedSubunitId,
   );
@@ -266,17 +300,12 @@ const UnitSelector = () => {
       [visualCollection]: subunitId,
     };
     setVisualSubunitByUnit(nextSubunitByUnit);
-
-    if (isKanji) {
-      clearKanji();
-      clearKanjiSets();
-      setPersistedCollectionSubunit('kanji', visualCollection, subunitId);
-      return;
-    }
-
-    clearVocab();
-    clearVocabSets();
-    setPersistedCollectionSubunit('vocabulary', visualCollection, subunitId);
+    // Keep picked levels so groups can be mixed
+    setPersistedCollectionSubunit(
+      storageContentType,
+      visualCollection,
+      subunitId,
+    );
   };
 
   if (useNewUnitSelectorDesign) {
@@ -376,7 +405,9 @@ const UnitSelector = () => {
                       )}
                     >
                       <div className='flex items-center gap-2'>
-                        <span className='text-xl'>{collection.displayName}</span>
+                        <span className='text-xl'>
+                          {collection.displayName}
+                        </span>
                         <span
                           className={clsx(
                             'rounded px-1.5 py-0.5 text-xs',
@@ -409,6 +440,7 @@ const UnitSelector = () => {
                   <SubunitSelector
                     subunits={activeSubunits}
                     selectedSubunitId={resolvedSelectedSubunitId}
+                    selectedSets={selectedSets}
                     onSelect={handleSubunitSelect}
                   />
                 </div>
