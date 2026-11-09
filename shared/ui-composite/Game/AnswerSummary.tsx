@@ -3,15 +3,26 @@ import { toKana, toRomaji } from 'wanakana';
 import type { IKanjiObj } from '@/features/Kanji';
 import type { IVocabObj } from '@/features/Vocabulary';
 import { CircleArrowRight, Volume2 } from 'lucide-react';
-import { Dispatch, SetStateAction, useRef, useEffect, useCallback } from 'react';
+import {
+  Dispatch,
+  SetStateAction,
+  useRef,
+  useEffect,
+  useCallback,
+  useState,
+} from 'react';
 import { useClick } from '@/shared/hooks/generic/useAudio';
 import { removeVerbDuplicates } from '@/shared/utils/meanings';
 import FuriganaText from '@/shared/ui-composite/text/FuriganaText';
-import { useAudioPreferences, useThemePreferences } from '@/features/Preferences';
+import {
+  useAudioPreferences,
+  useThemePreferences,
+} from '@/features/Preferences';
 import { useJapaneseTTS } from '@/features/Preferences/hooks/useJapaneseTTS';
 import { ActionButton } from '@/shared/ui/components/ActionButton';
 import { motion } from 'framer-motion';
 import { cn } from '@/shared/utils/utils';
+import JapaneseVoiceNotice from '@/shared/ui-composite/audio/JapaneseVoiceNotice';
 
 // Premium spring animation config
 const springConfig = {
@@ -168,7 +179,7 @@ const ContinueButton = ({
 const KanjiDisplay = ({ payload }: { payload: IKanjiObj }) => (
   <motion.div
     variants={mainCharVariants}
-    className='relative flex aspect-square w-full max-w-[100px] sm:max-w-[125px] items-center justify-center'
+    className='relative flex aspect-square w-full max-w-[100px] items-center justify-center sm:max-w-[125px]'
     style={{ perspective: 1000 }}
   >
     <a
@@ -363,7 +374,7 @@ const VocabSummary = ({
       initial='hidden'
       animate='visible'
       className={cn(
-        'flex w-full flex-col items-center justify-start gap-4 sm:gap-6 py-4 md:w-3/4 lg:w-1/2',
+        'flex w-full flex-col items-center justify-start gap-4 py-4 sm:gap-6 md:w-3/4 lg:w-1/2',
         isGlassMode && 'rounded-xl bg-(--card-color) px-4 py-2',
       )}
     >
@@ -452,7 +463,10 @@ const AnswerSummary = ({
   const { isGlassMode } = useThemePreferences();
   const { pronunciationEnabled, pronunciationSpeed, pronunciationPitch } =
     useAudioPreferences();
-  const { speak, refreshVoices } = useJapaneseTTS();
+  const { speak, refreshVoices, voicesLoaded, hasJapaneseVoices } =
+    useJapaneseTTS();
+  const [hasRequestedPronunciation, setHasRequestedPronunciation] =
+    useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   const playReadingPronunciation = useCallback(
@@ -460,11 +474,9 @@ const AnswerSummary = ({
       const normalizedReading = reading.trim();
       if (!pronunciationEnabled || !normalizedReading) return;
 
+      setHasRequestedPronunciation(true);
       if (typeof window !== 'undefined') {
         refreshVoices();
-        const isFirefox = /Firefox/i.test(navigator.userAgent);
-        const delay = isFirefox ? 300 : 100;
-        await new Promise(resolve => setTimeout(resolve, delay));
       }
 
       await speak(normalizedReading, {
@@ -503,36 +515,45 @@ const AnswerSummary = ({
     setDisplayAnswerSummary(false);
   };
 
-  return isKanjiObj(payload) ? (
-    <KanjiSummary
-      key={payload.id}
-      payload={payload}
-      feedback={feedback}
-      onContinue={handleContinue}
-      buttonRef={buttonRef}
-      isGlassMode={isGlassMode}
-      canPlayPronunciation={pronunciationEnabled}
-      onPlayPronunciation={reading => {
-        void playReadingPronunciation(reading);
-      }}
-      isEmbedded={isEmbedded}
-    />
-  ) : (
-    <VocabSummary
-      key={payload.word}
-      payload={payload}
-      feedback={feedback}
-      onContinue={handleContinue}
-      buttonRef={buttonRef}
-      isGlassMode={isGlassMode}
-      canPlayPronunciation={pronunciationEnabled}
-      onPlayPronunciation={reading => {
-        void playReadingPronunciation(reading);
-      }}
-      isEmbedded={isEmbedded}
-    />
+  return (
+    <>
+      <JapaneseVoiceNotice
+        requested={hasRequestedPronunciation}
+        voicesLoaded={voicesLoaded}
+        hasJapaneseVoices={hasJapaneseVoices}
+        onDismiss={() => setHasRequestedPronunciation(false)}
+      />
+      {isKanjiObj(payload) ? (
+        <KanjiSummary
+          key={payload.id}
+          payload={payload}
+          feedback={feedback}
+          onContinue={handleContinue}
+          buttonRef={buttonRef}
+          isGlassMode={isGlassMode}
+          canPlayPronunciation={pronunciationEnabled}
+          onPlayPronunciation={reading => {
+            void playReadingPronunciation(reading);
+          }}
+          isEmbedded={isEmbedded}
+        />
+      ) : (
+        <VocabSummary
+          key={payload.word}
+          payload={payload}
+          feedback={feedback}
+          onContinue={handleContinue}
+          buttonRef={buttonRef}
+          isGlassMode={isGlassMode}
+          canPlayPronunciation={pronunciationEnabled}
+          onPlayPronunciation={reading => {
+            void playReadingPronunciation(reading);
+          }}
+          isEmbedded={isEmbedded}
+        />
+      )}
+    </>
   );
 };
 
 export default AnswerSummary;
-
