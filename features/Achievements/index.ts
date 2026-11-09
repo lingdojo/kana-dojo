@@ -8,3 +8,6 @@ export type {
 } from './store/useAchievementStore';
 
 export { default as useAchievementStore } from './store/useAchievementStore';
+
+export { achievementsBackup } from './facade';
+export type { AchievementStoreState } from './facade';
