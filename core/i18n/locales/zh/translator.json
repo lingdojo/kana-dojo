@@ -1,40 +1,126 @@
 {
-  "title": "翻译器",
-  "description": "日语 ↔ 英语翻译，支持罗马字显示",
-  "input": {
-    "placeholder": "输入要翻译的文本...",
-    "from": "源语言",
-    "to": "目标语言"
+  "meta": {
+    "title": "日语翻译器 - 英译日、日译英 | KanaDojo",
+    "description": "免费的在线日语翻译器，可即时进行英语与日语互译。支持罗马字标注、翻译历史，并使用 Google 翻译提供准确的翻译结果。"
+  },
+  "header": {
+    "title": "日语翻译器"
   },
   "languages": {
-    "japanese": "日语",
     "english": "英语",
-    "auto": "自动检测"
+    "japanese": "日语",
+    "en": "EN",
+    "ja": "JA"
+  },
+  "input": {
+    "placeholder": {
+      "en": "请输入要翻译的文本...",
+      "ja": "翻訳するテキストを入力..."
+    },
+    "clearButton": "清除输入",
+    "characterCount": "{count} / {max}",
+    "keyboardHint": "按 Ctrl+Enter（Mac 上按 ⌘+Enter）进行翻译",
+    "characterLimitWarning": "文本超过了 {max} 个字符的长度限制"
+  },
+  "output": {
+    "placeholder": {
+      "en": "翻译结果将在此处显示...",
+      "ja": "翻訳結果がここに表示されます..."
+    },
+    "copyButton": "复制译文",
+    "copied": "已复制！",
+    "copiedMessage": "已复制到剪贴板！",
+    "romanization": "罗马字标注（Romaji）"
   },
   "actions": {
     "translate": "翻译",
-    "swap": "交换语言",
-    "copy": "复制结果",
-    "clear": "清除"
+    "translating": "正在翻译...",
+    "swapLanguages": "交换语言"
   },
-  "results": {
-    "translation": "翻译结果",
-    "romaji": "罗马字",
-    "reading": "读音",
-    "noResults": "未找到翻译结果"
+  "history": {
+    "title": "翻译历史",
+    "empty": "暂无翻译历史",
+    "emptyHint": "您的翻译记录将显示在这里",
+    "clearAll": "全部清除",
+    "deleteEntry": "删除记录",
+    "clearDialog": {
+      "title": "清除翻译历史？",
+      "description": "这将永久删除所有翻译历史记录。此操作无法撤销。",
+      "cancel": "取消",
+      "confirm": "全部清除"
+    },
+    "timeAgo": {
+      "justNow": "刚刚",
+      "minutesAgo": "{count}分钟前",
+      "hoursAgo": "{count}小时前",
+      "daysAgo": "{count}天前"
+    }
   },
-  "features": {
-    "title": "功能特点",
-    "romajiSupport": "罗马字支持",
-    "romajiDescription": "显示日语文本的罗马字读音",
-    "instantTranslation": "即时翻译",
-    "instantDescription": "快速获取翻译结果",
-    "multipleInputs": "多种输入",
-    "multipleDescription": "支持日语和英语输入"
+  "offline": {
+    "message": "您当前处于离线状态。重新连接网络后才能使用翻译功能。"
   },
   "errors": {
+    "networkError": "无法连接。请检查您的网络连接。",
+    "rateLimit": "请求过于频繁。请稍候再试。",
+    "invalidInput": "请输入有效的待翻译文本。",
     "emptyInput": "请输入要翻译的文本",
-    "translationFailed": "翻译失败，请重试",
-    "languageNotSupported": "不支持的语言"
+    "serverError": "翻译服务暂时不可用。",
+    "authError": "翻译服务配置错误。",
+    "unknownError": "翻译过程中发生错误。请重试。"
+  },
+  "seo": {
+    "guideTitle": "日语翻译指南",
+    "howToUse": {
+      "title": "如何使用日语翻译器",
+      "intro": "使用我们的免费日语翻译器，可以轻松地在英语和日语之间互译。请按照以下步骤开始使用：",
+      "steps": {
+        "step1": "在左侧的输入框中输入文本",
+        "step2": "选择源语言（英语或日语）",
+        "step3": "点击翻译按钮，或按 Ctrl+Enter",
+        "step4": "查看译文；对于日语文本，还可以查看罗马字标注",
+        "step5": "复制译文，或将其保存到历史记录中"
+      },
+      "proTip": "小技巧：使用交换按钮可以快速反转翻译方向，将译文再翻译回原语言。"
+    },
+    "writingSystems": {
+      "title": "日语书写系统简介",
+      "intro": "日语主要使用三种书写系统，而且经常在同一段文本中混合使用：",
+      "hiragana": {
+        "name": "平假名（ひらがな）",
+        "description": "一种表音音节文字，用于书写日语固有词、语法成分以及振假名读音。"
+      },
+      "katakana": {
+        "name": "片假名（カタカナ）",
+        "description": "一种表音音节文字，主要用于书写外来语、拟声词以及强调内容。"
+      },
+      "kanji": {
+        "name": "汉字（漢字）",
+        "description": "日语借用并改造的汉字，用来表达含义和概念。常用汉字有 2,000 多个。"
+      },
+      "outro": "我们的翻译器支持这三种书写系统，并为日语文本提供罗马字标注，帮助您使用拉丁字母阅读日语。"
+    },
+    "faq": {
+      "title": "常见问题",
+      "isFree": {
+        "question": "这款日语翻译器免费吗？",
+        "answer": "是的！这款日语翻译器完全免费，无需注册。您可以根据需要翻译任意数量的文本。"
+      },
+      "accuracy": {
+        "question": "翻译准确度如何？",
+        "answer": "我们的翻译器使用 Google Cloud Translation API，这是目前准确度较高的机器翻译服务之一。虽然机器翻译无法做到百分之百准确，但对于大多数日常使用场景，它都能提供高质量的译文。"
+      },
+      "romanization": {
+        "question": "什么是罗马字（Romaji）？",
+        "answer": "罗马字是使用拉丁字母表示日语文本的方式，可以帮助不会日语的人阅读和发音日语单词。我们的翻译器会自动为日语文本提供罗马字标注。"
+      },
+      "historySaved": {
+        "question": "我的翻译历史会被保存吗？",
+        "answer": "会的，您的翻译历史会保存在浏览器本地。这意味着您的翻译记录是私密的，只有您自己的设备可以访问。您可以随时清除历史记录。"
+      },
+      "maxLength": {
+        "question": "文本长度上限是多少？",
+        "answer": "每次最多可以翻译 5,000 个字符。如果文本更长，建议将其拆分成较短的部分分别翻译。"
+      }
+    }
   }
 }
