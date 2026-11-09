@@ -354,4 +354,18 @@
     "correct": "日本語が好きです。",
     "explanation": "好き takes が, not を. (Pattern set 5)"
   }
+  "wrong": "\u53cb\u9054\u306b\u4f1a\u3046\u3092\u697d\u3057\u307f\u306b\u3057\u3066\u3044\u307e\u3059\u3002",
+  "correct": "\u53cb\u9054\u306b\u4f1a\u3046\u306e\u3092\u697d\u3057\u307f\u306b\u3057\u3066\u3044\u307e\u3059\u3002",
+  "explanation": "Nominalize with \u306e before \u3092. (Pattern set 5)"
+  },
+  {
+  "wrong": "これはおいしいだ。",
+  "correct": "これはおいしい。",
+  "explanation": "い-adjectives do not take だ in plain present. (Pattern set 5)"
+},
+  {
+  "wrong": "この漢字は読み方が難しいです。",
+  "correct": "この漢字の読み方は難しいです。",
+  "explanation": "Prefer noun linkage with の. (Pattern set 5)"
+}
 ]
