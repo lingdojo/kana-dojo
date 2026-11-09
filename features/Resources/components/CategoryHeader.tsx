@@ -29,10 +29,7 @@ export function CategoryHeader({
 
   return (
     <header
-      className={cn(
-        'mb-12 border-b border-(--border-color) pb-12',
-        className,
-      )}
+      className={cn('mb-12 border-b border-(--border-color) pb-12', className)}
       role='banner'
     >
       <div className='flex flex-col gap-6 md:flex-row md:items-end md:justify-between'>
@@ -41,15 +38,18 @@ export function CategoryHeader({
             <span className='text-[10px] font-bold tracking-[0.3em] text-(--secondary-color) uppercase opacity-40'>
               Category Collection
             </span>
-            {count > 0 && (
-              <span className='font-mono text-[10px] text-(--secondary-color) opacity-40'>
-                / {count} items
-              </span>
-            )}
+            <span className='font-mono text-[10px] text-(--secondary-color) opacity-40'>
+              / {count} {count === 1 ? 'resource' : 'resources'}
+            </span>
           </div>
           <h1 className='text-5xl leading-none font-black tracking-tighter text-(--main-color) md:text-7xl'>
             {category.name}
           </h1>
+          {category.nameJa && (
+            <p className='mt-2 text-sm text-(--secondary-color) opacity-60'>
+              {category.nameJa}
+            </p>
+          )}
         </div>
       </div>
 
@@ -73,4 +73,3 @@ export function CategoryHeader({
     </header>
   );
 }
-

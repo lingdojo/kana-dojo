@@ -13,7 +13,10 @@ export interface AllTimeSetProgress {
   version: 1;
   updatedAt: number;
   kanji: Record<string, { correct: number }>;
-  vocabulary: Record<string, { meaningCorrect: number; readingCorrect: number }>;
+  vocabulary: Record<
+    string,
+    { meaningCorrect: number; readingCorrect: number }
+  >;
 }
 
 interface SetProgressState {
@@ -44,7 +47,8 @@ const createDefaultSetProgress = (): AllTimeSetProgress => ({
 
 async function loadPersistedSetProgress(): Promise<AllTimeSetProgress> {
   try {
-    const data = await setProgressStore.getItem<AllTimeSetProgress>(STORAGE_KEY);
+    const data =
+      await setProgressStore.getItem<AllTimeSetProgress>(STORAGE_KEY);
     if (!data || data.version !== 1) {
       return createDefaultSetProgress();
     }
@@ -111,7 +115,7 @@ const useSetProgressStore = create<SetProgressState>((set, get) => ({
     set(state => {
       const current = state.data.kanji[kanjiChar] ?? { correct: 0 };
       const nextCorrect = Math.min(
-        current.correct + 1,
+        Math.max(0, current.correct) + 1,
         KANJI_SET_PROGRESS_CAP,
       );
 
@@ -160,14 +164,14 @@ const useSetProgressStore = create<SetProgressState>((set, get) => ({
           ? {
               ...current,
               meaningCorrect: Math.min(
-                current.meaningCorrect + 1,
+                Math.max(0, current.meaningCorrect) + 1,
                 VOCAB_MEANING_PROGRESS_CAP,
               ),
             }
           : {
               ...current,
               readingCorrect: Math.min(
-                current.readingCorrect + 1,
+                Math.max(0, current.readingCorrect) + 1,
                 VOCAB_READING_PROGRESS_CAP,
               ),
             };

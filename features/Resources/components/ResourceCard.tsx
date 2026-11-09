@@ -86,7 +86,7 @@ function getPriceLabel(priceType: PriceType): string {
     free: 'Free',
     freemium: 'Freemium',
     paid: 'Paid',
-    subscription: 'Subs',
+    subscription: 'Subscription',
   };
   return labels[priceType];
 }
@@ -102,10 +102,7 @@ interface PlatformIconProps {
 function PlatformIcon({ platform, className }: PlatformIconProps) {
   const iconProps = {
     size: 12,
-    className: cn(
-      'shrink-0 text-(--secondary-color) opacity-40',
-      className,
-    ),
+    className: cn('shrink-0 text-(--secondary-color) opacity-40', className),
   };
 
   const icons: Record<Platform, React.ReactNode> = {
@@ -179,9 +176,16 @@ export function ResourceCard({
             {formatCategoryName(resource.category)}
           </Badge>
           <div className='flex items-center gap-1'>
-            {resource.platforms.slice(0, 3).map(platform => (
-              <PlatformIcon key={platform} platform={platform} />
-            ))}
+            {resource.platforms.length > 0 && (
+              <>
+                <span className='text-xs text-(--secondary-color) opacity-60'>
+                  Available on:
+                </span>
+                {[...new Set(resource.platforms)].slice(0, 3).map(platform => (
+                  <PlatformIcon key={platform} platform={platform} />
+                ))}
+              </>
+            )}
           </div>
         </div>
 
@@ -236,24 +240,23 @@ export function ResourceCard({
 function formatCategoryName(categoryId: string): string {
   const names: Record<string, string> = {
     apps: 'Apps',
-    websites: 'Web',
-    textbooks: 'Print',
-    youtube: 'Video',
-    podcasts: 'Audio',
+    websites: 'Websites',
+    textbooks: 'Textbooks',
+    youtube: 'YouTube',
+    podcasts: 'Podcasts',
     games: 'Games',
     jlpt: 'JLPT',
-    reading: 'Read',
-    listening: 'Listen',
-    speaking: 'Speak',
-    writing: 'Write',
+    reading: 'Reading',
+    listening: 'Listening',
+    speaking: 'Speaking',
+    writing: 'Writing',
     grammar: 'Grammar',
-    vocabulary: 'Vocab',
+    vocabulary: 'Vocabulary',
     kanji: 'Kanji',
     immersion: 'Immersion',
-    community: 'Social',
+    community: 'Community',
   };
   return names[categoryId] || categoryId;
 }
 
 export default ResourceCard;
-
