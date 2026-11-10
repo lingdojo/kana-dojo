@@ -358,5 +358,10 @@
   "wrong": "この漢字は読み方が難しいです。",
   "correct": "この漢字の読み方は難しいです。",
   "explanation": "Prefer noun linkage with の. (Pattern set 5)"
+},
+{
+  "wrong": "東京は人が多いです、きれいです。",
+  "correct": "東京は人が多くて、きれいです。",
+  "explanation": "Use て-form to connect clauses. (Pattern set 4)"
 }
 ]
