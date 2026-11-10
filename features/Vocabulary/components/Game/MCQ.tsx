@@ -16,6 +16,7 @@ import SSRAudioButton from '@/shared/ui-composite/audio/SSRAudioButton';
 import FuriganaText from '@/shared/ui-composite/text/FuriganaText';
 import { useCrazyModeTrigger } from '@/features/CrazyMode/hooks/useCrazyModeTrigger';
 import { getGlobalAdaptiveSelector } from '@/shared/utils/adaptiveSelection';
+import { filterDistractorCandidates } from '@/features/Vocabulary/lib/distractors';
 import { useSmartReverseMode } from '@/shared/hooks/game/useSmartReverseMode';
 import {
   formatKeyToQuizType,
@@ -191,9 +192,9 @@ const VocabMCQ = ({ selectedWordObjs, isHidden }: VocabMCQProps) => {
   // Get incorrect options based on mode and quiz type
   const getIncorrectOptions = (): string[] => {
     // Filter out the current word
-    const incorrectWordObjs = selectedWordObjs.filter(
-      obj => obj.word !== correctChar,
-    );
+    const incorrectWordObjs = correctWordObj
+      ? filterDistractorCandidates(selectedWordObjs, correctWordObj, quizType)
+      : selectedWordObjs.filter(obj => obj.word !== correctChar);
 
     if (quizType === 'meaning') {
       return incorrectWordObjs
@@ -489,4 +490,3 @@ const VocabMCQ = ({ selectedWordObjs, isHidden }: VocabMCQProps) => {
 };
 
 export default VocabMCQ;
-
