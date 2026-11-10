@@ -438,15 +438,21 @@
     "secondaryColor": "oklch(72.0% 0.165 285.0 / 1)"
   },
   {
-  "id": "ruby-kabuki",
-  "backgroundColor": "oklch(16.0% 0.040 20.0 / 1)",
-  "mainColor": "oklch(70.0% 0.215 25.0 / 1)",
-  "secondaryColor": "oklch(85.0% 0.055 95.0 / 1)"
-},
+    "id": "ruby-kabuki",
+    "backgroundColor": "oklch(16.0% 0.040 20.0 / 1)",
+    "mainColor": "oklch(70.0% 0.215 25.0 / 1)",
+    "secondaryColor": "oklch(85.0% 0.055 95.0 / 1)"
+  },
   {
     "id": "poppy-udon",
     "backgroundColor": "oklch(21.0% 0.030 45.0 / 1)",
     "mainColor": "oklch(75.0% 0.155 55.0 / 1)",
     "secondaryColor": "oklch(82.0% 0.135 95.0 / 1)"
+  },
+  {
+    "id": "sundown-shrine",
+    "backgroundColor": "oklch(18.0% 0.055 330.0 / 1)",
+    "mainColor": "oklch(72.0% 0.195 35.0 / 1)",
+    "secondaryColor": "oklch(85.0% 0.095 275.0 / 1)"
   }
 ]
