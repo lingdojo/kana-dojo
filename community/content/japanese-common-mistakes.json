@@ -355,8 +355,18 @@
     "explanation": "い-adjectives do not take だ in plain present. (Pattern set 5)"
   },
   {
-    "wrong": "先生は私を日本語を教えました。",
-    "correct": "先生は私に日本語を教えました。",
-    "explanation": "Recipient takes に with 教える. (Pattern set 5)"
-  }
+  "wrong": "これはおいしいだ。",
+  "correct": "これはおいしい。",
+  "explanation": "い-adjectives do not take だ in plain present. (Pattern set 5)"
+},
+  {
+  "wrong": "この漢字は読み方が難しいです。",
+  "correct": "この漢字の読み方は難しいです。",
+  "explanation": "Prefer noun linkage with の. (Pattern set 5)"
+},
+{
+  "wrong": "東京は人が多いです、きれいです。",
+  "correct": "東京は人が多くて、きれいです。",
+  "explanation": "Use て-form to connect clauses. (Pattern set 4)"
+}
 ]
