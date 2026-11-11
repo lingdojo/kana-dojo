@@ -260,9 +260,9 @@
     "explanation": "\u3067 marks location of action. (Pattern set 5)"
   },
   {
-    "id": 279,
-    "mistake": "Using wa instead of ga",
-    "correction": "Use ga for new information"
+    "wrong": "Using wa instead of ga",
+    "correct": "Use ga for new information",
+    "explanation": "が presents the subject as new information, while は presents it as a topic already familiar to the listener."
   },
   {
   "wrong": "日本語をわかります。",
