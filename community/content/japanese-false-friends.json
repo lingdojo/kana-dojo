@@ -400,5 +400,11 @@
   "termB": "mansion (English)",
   "explanation": "マンション means apartment building in Japanese. (Set 2)",
   "example": "駅前のマンションに住んでいます。"
+},
+  {
+  "termA": "ホッチキス (hocchikisu)",
+  "termB": "Hotchkiss (name)",
+  "explanation": "ホッチキス means stapler. (Set 5)",
+  "example": "資料をホッチキスで留めてください。"
 }
 ]
