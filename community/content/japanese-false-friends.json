@@ -394,5 +394,11 @@
   "termB": "number (English)",
   "explanation": "Can mean ranking position in Japanese usage. (Set 6)",
   "example": "彼はチームのナンバー1だ。"
+},
+{
+  "termA": "マンション (manshon)",
+  "termB": "mansion (English)",
+  "explanation": "マンション means apartment building in Japanese. (Set 2)",
+  "example": "駅前のマンションに住んでいます。"
 }
 ]

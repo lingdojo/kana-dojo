@@ -384,5 +384,12 @@
   "english": "no/cannot",
   "region": "Chugoku",
   "note": "Prohibitive nuance. (Set 2)"
- }
+ },
+  {
+    "dialect": "でら",
+    "standardJapanese": "とても",
+    "english": "very",
+    "region": "Nagoya",
+    "note": "Characteristic Nagoya intensifier. (Set 6)"
+  }
 ]
