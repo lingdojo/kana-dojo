@@ -469,7 +469,7 @@ const WelcomeModal = () => {
               </p>
             </div>
 
-            <div className='scrollbar-thin scrollbar-thumb-(--border-color) scrollbar-track-transparent max-h-[45vh] space-y-6 overflow-y-auto px-1 sm:max-h-96'>
+            <div className='scrollbar-thin scrollbar-thumb-(--border-color) scrollbar-track-transparent max-h-[45vh] space-y-6 overflow-y-auto px-1 pb-18 sm:max-h-96'>
               {themeSets
                 .filter(
                   themeSet =>
