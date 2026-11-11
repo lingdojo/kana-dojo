@@ -99,17 +99,6 @@
     "correctIndex": 0
   },
   {
-    "question": "What is the Japanese term for a hot spring? (Community variation 42)",
-    "difficulty": "easy",
-    "answers": [
-      "Onsen",
-      "Sentou",
-      "Ryokan",
-      "Izakaya"
-    ],
-    "correctIndex": 0
-  },
-  {
     "question": "Which Japanese city is famous for the floating torii gate at Itsukushima Shrine? (Community variation 1)",
     "difficulty": "easy",
     "answers": [
@@ -143,17 +132,6 @@
     "correctIndex": 0
   },
   {
-    "question": "Which Japanese city is known for the famous bamboo grove? (Community variation 31)",
-    "difficulty": "easy",
-    "answers": [
-      "Kyoto",
-      "Tokyo",
-      "Sapporo",
-      "Fukuoka"
-    ],
-    "correctIndex": 0
-  },
-  {
     "question": "Which Japanese dish consists of skewered grilled chicken? (Community variation 48)",
     "difficulty": "easy",
     "answers": [
@@ -172,17 +150,6 @@
       "Osaka Castle",
       "Matsumoto Castle",
       "Nijo Castle"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "question": "What is the main ingredient in miso? (Community variation 56)",
-    "difficulty": "easy",
-    "answers": [
-      "Fermented soybeans",
-      "Rice flour",
-      "Buckwheat",
-      "Seaweed"
     ],
     "correctIndex": 0
   },
@@ -220,17 +187,6 @@
     "correctIndex": 0
   },
   {
-    "question": "What is the Japanese term for a summer fireworks festival?",
-    "difficulty": "easy",
-    "answers": [
-      "Hanabi Taikai",
-      "Bon Odori",
-      "Kagura",
-      "Kanda Matsuri"
-    ],
-    "correctIndex": 0
-  },
-  {
     "question": "What is the Japanese term for a traditional inn?",
     "difficulty": "easy",
     "answers": [
@@ -238,17 +194,6 @@
       "Minshuku",
       "Izakaya",
       "Yatai"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "question": "What is the Japanese term for a hot spring? (Community variation 42)",
-    "difficulty": "easy",
-    "answers": [
-      "Onsen",
-      "Sentou",
-      "Ryokan",
-      "Izakaya"
     ],
     "correctIndex": 0
   },
@@ -275,17 +220,6 @@
     "correctIndex": 0
   },
   {
-    "question": "Which Japanese food is a savory pancake cooked on a griddle?",
-    "difficulty": "easy",
-    "answers": [
-      "Okonomiyaki",
-      "Tempura",
-      "Yakitori",
-      "Sashimi"
-    ],
-    "correctIndex": 0
-  },
-  {
     "question": "What is the Japanese term for a shrine gate? (Community variation 60)",
     "difficulty": "easy",
     "answers": [
@@ -308,17 +242,6 @@
     "correctIndex": 0
   },
   {
-    "question": "What is the Japanese art of arranging flowers called? (Community variation 58)",
-    "difficulty": "easy",
-    "answers": [
-      "Ikebana",
-      "Shodo",
-      "Kodo",
-      "Origami"
-    ],
-    "correctIndex": 0
-  },
-  {
     "question": "What is Japan’s currency called?",
     "difficulty": "easy",
     "answers": [
@@ -326,17 +249,6 @@
       "Won",
       "Yuan",
       "Ringgit"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "question": "What is the Japanese term for a traditional inn?",
-    "difficulty": "easy",
-    "answers": [
-      "Ryokan",
-      "Minshuku",
-      "Izakaya",
-      "Yatai"
     ],
     "correctIndex": 0
   },
@@ -385,17 +297,6 @@
     "correctIndex": 0
   },
   {
-    "question": "What is the Japanese term for a hot spring? (Community variation 42)",
-    "difficulty": "easy",
-    "answers": [
-      "Onsen",
-      "Sentou",
-      "Ryokan",
-      "Izakaya"
-    ],
-    "correctIndex": 0
-  },
-  {
     "question": "Which city is famous for the Gion Matsuri festival?",
     "difficulty": "easy",
     "answers": [
@@ -403,28 +304,6 @@
       "Sendai",
       "Sapporo",
       "Kobe"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "question": "What is the Japanese term for a shrine gate? (Community variation 60)",
-    "difficulty": "easy",
-    "answers": [
-      "Torii",
-      "Tori",
-      "Toriya",
-      "Torin"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "question": "Which Japanese art form involves arranging flowers?",
-    "difficulty": "easy",
-    "answers": [
-      "Ikebana",
-      "Origami",
-      "Ukiyo-e",
-      "Shodo"
     ],
     "correctIndex": 0
   },
@@ -451,83 +330,6 @@
     "correctIndex": 0
   },
   {
-    "question": "Which Japanese castle is nicknamed the \"White Heron\" for its bright exterior? (Community variation 9)",
-    "difficulty": "easy",
-    "answers": [
-      "Himeji Castle",
-      "Osaka Castle",
-      "Matsumoto Castle",
-      "Nijo Castle"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "question": "Which animal is famously associated with Inari shrines in Japan? (Community variation 33)",
-    "difficulty": "easy",
-    "answers": [
-      "Fox",
-      "Crane",
-      "Turtle",
-      "Deer"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "question": "Which Japanese dish consists of skewered grilled chicken? (Community variation 48)",
-    "difficulty": "easy",
-    "answers": [
-      "Yakitori",
-      "Sukiyaki",
-      "Tonkatsu",
-      "Oden"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "question": "Which Japanese city is famous for the floating torii gate at Itsukushima Shrine? (Community variation 1)",
-    "difficulty": "easy",
-    "answers": [
-      "Kyoto",
-      "Hiroshima",
-      "Nagasaki",
-      "Kanazawa"
-    ],
-    "correctIndex": 1
-  },
-  {
-    "question": "Which Japanese castle is nicknamed the \"White Heron\" for its bright exterior? (Community variation 9)",
-    "difficulty": "easy",
-    "answers": [
-      "Himeji Castle",
-      "Osaka Castle",
-      "Matsumoto Castle",
-      "Nijo Castle"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "question": "Which Japanese dish is made with buckwheat noodles?",
-    "difficulty": "easy",
-    "answers": [
-      "Soba",
-      "Udon",
-      "Ramen",
-      "Somem"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "question": "Which mountain is Japan’s highest peak?",
-    "difficulty": "easy",
-    "answers": [
-      "Mount Fuji",
-      "Mount Kita",
-      "Mount Tate",
-      "Mount Haku"
-    ],
-    "correctIndex": 0
-  },
-  {
     "question": "Which of these is a Japanese noodle dish served in broth? (Community variation 44)",
     "difficulty": "easy",
     "answers": [
@@ -546,17 +348,6 @@
       "Tokyo",
       "Sapporo",
       "Fukuoka"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "question": "What is the Japanese term for cherry blossoms?",
-    "difficulty": "easy",
-    "answers": [
-      "Sakura",
-      "Ume",
-      "Momiji",
-      "Kiku"
     ],
     "correctIndex": 0
   },
@@ -583,17 +374,6 @@
     "correctIndex": 2
   },
   {
-    "question": "Which city is famous for the Gion Matsuri festival?",
-    "difficulty": "easy",
-    "answers": [
-      "Kyoto",
-      "Sendai",
-      "Sapporo",
-      "Kobe"
-    ],
-    "correctIndex": 0
-  },
-  {
     "question": "Which Japanese island is home to the city of Sapporo? (Community variation 5)",
     "difficulty": "easy",
     "answers": [
@@ -604,7 +384,7 @@
     ],
     "correctIndex": 1
   },
-    {
+  {
     "question": "What is the Japanese term for a Buddhist temple?",
     "difficulty": "easy",
     "answers": [
@@ -615,8 +395,7 @@
     ],
     "correctIndex": 0
   },
-  
- {
+  {
   "question": "What is the Japanese custom of removing shoes before entering a home called?",
   "difficulty": "medium",
   "answers": [
@@ -624,22 +403,6 @@
     "Omotenashi",
     "Karaoke",
     "Matsuri"
-  ],
-  "correctIndex": 0
-},
-  {
-      "question": "Which city is known for its snow festival and ice sculptures?",
-      "answers": ["Sapporo", "Aomori", "Toyama", "Nagano"],
-      "correctIndex": 0
-    },
-  {
-  "question": "Which animal is famously associated with Inari shrines in Japan? (Community variation 33)",
-  "difficulty": "easy",
-  "answers": [
-    "Fox",
-    "Crane",
-    "Turtle",
-    "Deer"
   ],
   "correctIndex": 0
 },
@@ -655,18 +418,6 @@
   "correctIndex": 0
 },
   {
-    "question": "What is the Japanese art of arranging flowers called? (Community variation 58)",
-    "difficulty": "easy",
-    "answers": [
-      "Ikebana",
-      "Shodo",
-      "Kodo",
-      "Origami"
-    ],
-    "correctIndex": 0
-  }
-,
-  {
     "question": "What is the traditional Japanese garment worn on special occasions called?",
     "difficulty": "easy",
     "answers": [
@@ -676,8 +427,7 @@
       "Sari"
     ],
     "correctIndex": 0
-  }
-  ,
+  },
   {
     "question": "Which city is known for its snow festival and ice sculptures?",
     "difficulty": "easy",
@@ -686,17 +436,6 @@
       "Aomori",
       "Toyama",
       "Nagano"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "question": "Which Japanese art form involves arranging flowers?",
-    "difficulty": "easy",
-    "answers": [
-      "Ikebana",
-      "Origami",
-      "Ukiyo-e",
-      "Shodo"
     ],
     "correctIndex": 0
   }
