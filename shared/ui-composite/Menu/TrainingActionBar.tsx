@@ -1,5 +1,11 @@
 'use client';
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from 'react';
 import clsx from 'clsx';
 import { useKanaSelection } from '@/features/Kana';
 import { useKanjiSelection } from '@/features/Kanji';
@@ -10,6 +16,7 @@ import { useClick } from '@/shared/hooks/generic/useAudio';
 import { Bolt, Play, Zap, Swords } from 'lucide-react';
 import { motion } from 'framer-motion';
 import ModeSetupMenu from '@/shared/ui-composite/Menu/ModeSetupMenu';
+import { useRouter } from '@/core/i18n/routing';
 
 // Gauntlet components with onCancel prop support
 import { cn } from '@/shared/utils/utils';
@@ -28,6 +35,7 @@ interface ITopBarProps {
 const TrainingActionBar: React.FC<ITopBarProps> = ({
   currentDojo,
 }: ITopBarProps) => {
+  const router = useRouter();
   const { hotkeysOn } = useInputPreferences();
   const showExperimentalModes = usePreferencesStore(
     state => state.showExperimentalModes,
@@ -69,11 +77,9 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
 
   const buttonRef = useRef<HTMLButtonElement | null>(null);
 
-  const startAutoLearning = () => {
-    document
-      .querySelector<HTMLButtonElement>('[data-auto-learning-dojo]')
-      ?.click();
-  };
+  const startTraining = useCallback(() => {
+    router.push(`/${currentDojo}/learn`);
+  }, [currentDojo, router]);
 
   useEffect(() => {
     if (!hotkeysOn) return;
@@ -91,7 +97,7 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
         if (showExperimentalModes) {
           setShowGameModesModal(true);
         } else {
-          startAutoLearning();
+          startTraining();
         }
       }
     };
@@ -100,7 +106,7 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [hotkeysOn, isFilled, showExperimentalModes]);
+  }, [hotkeysOn, isFilled, showExperimentalModes, startTraining]);
 
   const showBlitz =
     currentDojo === 'kana' ||
@@ -355,7 +361,7 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
                   return;
                 }
 
-                startAutoLearning();
+                startTraining();
               },
               ref: buttonRef,
             },
@@ -407,7 +413,7 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
                 >
                   <Icon size={36} className={cn(iconClassName)} />
                   {id === 'custom' && (
-                    <span className='whitespace-nowrap text-lg font-medium sm:text-xl'>
+                    <span className='text-lg font-medium whitespace-nowrap sm:text-xl'>
                       {label}
                     </span>
                   )}
