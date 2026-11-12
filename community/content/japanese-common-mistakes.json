@@ -363,5 +363,10 @@
   "wrong": "東京は人が多いです、きれいです。",
   "correct": "東京は人が多くて、きれいです。",
   "explanation": "Use て-form to connect clauses. (Pattern set 4)"
-}
+  },
+  {
+    "wrong": "図書館に本を借りました。",
+    "correct": "図書館で本を借りました。",
+    "explanation": "で marks location of action. (Pattern set 3)"
+  }
 ]
