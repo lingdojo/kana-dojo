@@ -41,7 +41,7 @@ const containsKanji = (text: string): boolean => {
 // Helper for synonymous strings that must never appear together as options.
 // Must match each word's meanings[0], lowercased.
 const SYNONYM_GROUPS: string[][] = [
-  ['over', 'over there'],
+  ['there', 'over there'],
   // add more as you find them
 ];
 
