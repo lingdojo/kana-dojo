@@ -93,6 +93,10 @@ jobs:
           github-token: ${{ secrets.AUTOMATION_PR_TOKEN || secrets.GITHUB_TOKEN }}
           script: |
             const fs = require('fs');
+            const {
+              findRandomEligible,
+              toJsonStringLiteral,
+            } = require('./.github/scripts/community-issue-utils.cjs');
             const templates = require('./.github/templates/messages.cjs');
             const emojiBank = require('./.github/templates/emojis.cjs');
             const t = templates.issueCreation;
@@ -102,21 +106,6 @@ jobs:
 
             function pickEmoji() {
               return emojiBank[Math.floor(Math.random() * emojiBank.length)];
-            }
-
-            function findRandomEligible(items, predicate) {
-              if (!Array.isArray(items) || items.length === 0) {
-                return null;
-              }
-
-              const eligible = items;
-
-              if (eligible.length === 0) {
-                return null;
-              }
-
-              const randomIndex = Math.floor(Math.random() * eligible.length);
-              return eligible[randomIndex];
             }
 
             async function resolveMilestoneNumber() {
@@ -616,7 +605,7 @@ jobs:
               } else if (nextType === 'grammar') {
               // Grammar
               item = findRandomEligible(grammar, function(g) {
-                if (g.issued) {
+                if (g.issued || g.completed || existingGrammar.includes(g.text)) {
                   return false;
                 }
                 return true;
@@ -650,7 +639,7 @@ jobs:
               issueTitle = t.buildIssueTitle(pickEmoji(), tmpl.title.replace('{id}', item.id));
 
               const instructions = t.buildInstructions(tmpl.file, tmpl.itemType, tmpl.prTitle).map((instr, i) => `${i + 1}. ${instr.replace(/{id}/g, item.id)}`);
-              const codeBlock = `\`\`\`json\n"${item.text}"\n\`\`\``;
+              const codeBlock = `\`\`\`json\n${toJsonStringLiteral(item.text)}\n\`\`\``;
 
               issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### 🎯 Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.grammarHeader}\n\n> ${item.text}\n\n${common.instructionsHeader}\n\n${instructions.slice(0, 4).join('\n')}\n\n${codeBlock}\n\n${instructions.slice(4).join('\n')}\n\n---\n\n${common.footer}`;
 
