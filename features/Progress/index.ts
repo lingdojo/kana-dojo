@@ -25,6 +25,7 @@ export type {
 // Components (page-level)
 export { default as ProgressTabs } from './components/ProgressTabs';
 export { default as SimpleProgress } from './components/SimpleProgress';
+export { default as SessionHistoryPanel } from './components/SessionHistoryPanel';
 
 // Stats Components (new revamped stats page)
 export {
