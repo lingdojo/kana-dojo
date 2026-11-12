@@ -38,6 +38,16 @@ const containsKanji = (text: string): boolean => {
   return /[\u4E00-\u9FAF]/.test(text);
 };
 
+// Helper for synonymous strings that must never appear together as options.
+// Must match each word's meanings[0], lowercased.
+const SYNONYM_GROUPS: string[][] = [
+  ['there', 'over there'],
+  // add more as you find them
+];
+
+const areKnownSynonyms = (a: string, b: string) =>
+  a === b || SYNONYM_GROUPS.some(g => g.includes(a) && g.includes(b));
+
 // Memoized option button component to prevent unnecessary re-renders
 interface OptionButtonProps {
   option: string;
@@ -188,7 +198,6 @@ const VocabMCQ = ({ selectedWordObjs, isHidden }: VocabMCQProps) => {
         : correctWordObj?.meanings[0] // normal: show word, answer is meaning
       : correctWordObj?.reading; // reading quiz: answer is always reading
 
-  // Get incorrect options based on mode and quiz type
   const getIncorrectOptions = (): string[] => {
     // Filter out the current word
     const incorrectWordObjs = selectedWordObjs.filter(
@@ -196,7 +205,15 @@ const VocabMCQ = ({ selectedWordObjs, isHidden }: VocabMCQProps) => {
     );
 
     if (quizType === 'meaning') {
-      return incorrectWordObjs
+      const shown = (correctWordObj?.meanings[0] ?? '').toLowerCase();
+
+      const safe = incorrectWordObjs.filter(
+        obj => !areKnownSynonyms(shown, (obj.meanings[0] ?? '').toLowerCase()),
+      );
+      // Fall back to the full pool if the selection is too small
+      const pool = safe.length >= 2 ? safe : incorrectWordObjs;
+
+      return pool
         .map(obj => (isReverse ? obj.word : obj.meanings[0]))
         .sort(() => random.real(0, 1) - 0.5)
         .slice(0, 2);
@@ -206,7 +223,7 @@ const VocabMCQ = ({ selectedWordObjs, isHidden }: VocabMCQProps) => {
         .sort(() => random.real(0, 1) - 0.5)
         .slice(0, 2);
     }
-    return []; // Fallback in case quizType is neither 'meaning' nor 'reading'
+    return []; // fallback
   };
 
   const randomIncorrectOptions = getIncorrectOptions();
