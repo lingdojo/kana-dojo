@@ -392,10 +392,17 @@
     "note": "Characteristic Nagoya intensifier. (Set 6)"
   },
   {
-  "dialect": "なまら",
-  "standardJapanese": "とても",
-  "english": "very",
-  "region": "Hokkaido",
-  "note": "Hokkaido intensifier. (Set 6)"
+    "dialect": "なまら",
+    "standardJapanese": "とても",
+    "english": "very",
+    "region": "Hokkaido",
+    "note": "Hokkaido intensifier. (Set 6)"
+  },
+  {
+    "dialect": "〜へん",
+    "standardJapanese": "〜ない",
+    "english": "negative form",
+    "region": "Kansai",
+    "note": "Example: 食べへん = 食べない。 (Set 2)"
   }
 ]
