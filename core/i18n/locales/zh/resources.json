@@ -1,56 +1,160 @@
 {
-  "title": "学习资源",
-  "description": "精选日语学习资源",
+  "page": {
+    "title": "日语学习资源",
+    "subtitle": "探索 {count}+ 个精选日语学习资源",
+    "showingResults": "正在显示 {total} 个资源中的 {filtered} 个"
+  },
+  "search": {
+    "placeholder": "搜索资源...",
+    "results": "{count} 个结果",
+    "clearSearch": "清除搜索",
+    "noResults": "未找到资源",
+    "noResultsHint": "请尝试调整筛选条件或搜索关键词"
+  },
+  "navigation": {
+    "allResources": "全部资源",
+    "categories": "分类",
+    "home": "首页",
+    "resources": "资源",
+    "viewAllCategories": "查看所有分类",
+    "relatedCategories": "相关分类",
+    "relatedCategoriesDescription": "探索以下相关分类中的更多日语学习资源：",
+    "resourcesCount": "{count} 个资源"
+  },
+  "filters": {
+    "title": "筛选条件",
+    "difficulty": "难度",
+    "price": "价格",
+    "platform": "平台",
+    "clearAll": "清除全部",
+    "activeFilters": "已启用 {count} 个筛选条件",
+    "removeFilter": "移除“{filter}”筛选条件",
+    "expand": "展开 {section} 子分类",
+    "collapse": "折叠 {section} 子分类"
+  },
+  "difficulty": {
+    "beginner": "初级",
+    "intermediate": "中级",
+    "advanced": "高级",
+    "all-levels": "所有级别"
+  },
+  "priceType": {
+    "free": "免费",
+    "freemium": "免费增值",
+    "paid": "付费",
+    "subscription": "订阅制"
+  },
+  "platform": {
+    "web": "网页",
+    "ios": "iOS",
+    "android": "Android",
+    "windows": "Windows",
+    "macos": "macOS",
+    "linux": "Linux",
+    "physical": "实体产品",
+    "browser-extension": "浏览器扩展",
+    "api": "API"
+  },
+  "card": {
+    "featured": "精选资源",
+    "availableOn": "可用平台：{platforms}",
+    "moreplatforms": "+{count}"
+  },
+  "detail": {
+    "description": "描述",
+    "availableOn": "可用平台",
+    "tags": "标签",
+    "notes": "备注",
+    "visitResource": "访问 {name}",
+    "visitResourceLabel": "访问 {name}（在新标签页中打开）",
+    "relatedResources": "相关资源",
+    "rating": "评分：满分 5 星，当前为 {rating} 星"
+  },
   "categories": {
-    "all": "全部",
-    "learning": "学习",
-    "tools": "工具",
-    "reference": "参考",
-    "culture": "文化"
+    "apps": "应用程序",
+    "websites": "网站",
+    "textbooks": "教材",
+    "youtube": "YouTube 频道",
+    "podcasts": "播客",
+    "games": "电子游戏",
+    "jlpt": "JLPT 备考",
+    "reading": "阅读",
+    "listening": "听力",
+    "speaking": "口语",
+    "writing": "写作",
+    "grammar": "语法",
+    "vocabulary": "词汇",
+    "kanji": "汉字",
+    "immersion": "沉浸式学习",
+    "community": "学习社区"
   },
-  "featured": {
-    "title": "推荐资源",
-    "description": "我们推荐的高质量日语学习资源"
+  "subcategories": {
+    "flashcards": "记忆卡应用",
+    "dictionaries": "词典应用",
+    "comprehensive": "综合学习",
+    "input-methods": "输入法",
+    "courses": "在线课程",
+    "reference": "参考网站",
+    "practice": "练习网站",
+    "beginner": "初级教材",
+    "intermediate": "中级教材",
+    "advanced": "高级教材",
+    "specialized": "专项学习书籍",
+    "lessons": "课程频道",
+    "culture": "文化与语言",
+    "entertainment": "娱乐式学习",
+    "beginner-podcasts": "初级播客",
+    "intermediate-podcasts": "中级播客",
+    "native-content": "母语者内容",
+    "rpg": "角色扮演游戏（RPG）",
+    "visual-novels": "视觉小说",
+    "educational-games": "教育类游戏",
+    "casual-games": "休闲游戏",
+    "n5": "JLPT N5",
+    "n4": "JLPT N4",
+    "n3": "JLPT N3",
+    "n2": "JLPT N2",
+    "n1": "JLPT N1",
+    "graded-readers": "分级读物",
+    "news": "新闻网站",
+    "manga": "漫画",
+    "novels": "小说与文学作品",
+    "audio-lessons": "音频课程",
+    "shadowing": "跟读练习资源",
+    "comprehension": "理解能力练习",
+    "pronunciation": "发音",
+    "conversation": "会话练习",
+    "tutoring": "在线辅导",
+    "handwriting": "书写练习",
+    "composition": "文章写作",
+    "correction": "写作批改",
+    "guides": "语法指南",
+    "practice-grammar": "语法练习",
+    "sentence-patterns": "句型",
+    "frequency-lists": "词频列表",
+    "themed-vocab": "主题词汇",
+    "word-lists": "词汇列表与记忆卡组",
+    "learning-systems": "学习体系",
+    "kanji-practice": "汉字练习",
+    "kanji-reference": "汉字参考资料",
+    "media-tools": "媒体工具",
+    "streaming": "流媒体服务",
+    "sentence-mining": "例句收集",
+    "forums": "论坛与讨论区",
+    "language-exchange": "语言交换",
+    "discord": "Discord 社群"
   },
-  "learning": {
-    "title": "学习资源",
-    "description": "综合日语课程和学习材料",
-    "items": {
-      "textbooks": "教材",
-      "apps": "应用程序",
-      "websites": "网站",
-      "youtube": "YouTube频道"
-    }
+  "accessibility": {
+    "resourceFilters": "资源筛选条件与分类",
+    "resourceList": "资源列表",
+    "loadingResources": "正在加载资源",
+    "categoryOptions": "{title}选项",
+    "detailedDescription": "分类详细说明"
   },
-  "tools": {
-    "title": "学习工具",
-    "description": "辅助日语学习的工具",
-    "items": {
-      "dictionaries": "词典",
-      "anki": "Anki记忆卡片",
-      "imputMethods": "输入法"
-    }
-  },
-  "reference": {
-    "title": "参考资料",
-    "description": "日语语法和词汇参考",
-    "items": {
-      "grammar": "语法指南",
-      "jlpt": "JLPT资源",
-      "kanji": "汉字字典"
-    }
-  },
-  "culture": {
-    "title": "日本文化",
-    "description": "了解日本文化和习俗",
-    "items": {
-      "etiquette": "礼仪",
-      "media": "媒体",
-      "travel": "旅行"
-    }
-  },
-  "links": {
-    "visit": "访问网站",
-    "learnMore": "了解更多"
+  "seo": {
+    "mainTitle": "最佳日语学习资源 - 应用程序、教材、YouTube 等 | KanaDojo",
+    "mainDescription": "探索 {count}+ 个精选日语学习资源。查找适合各种水平的日语学习应用、教材、YouTube 频道、播客、游戏和工具。",
+    "categoryTitle": "最佳日语学习{category} | KanaDojo 资源",
+    "categoryDescription": "探索最适合日语学习的{category}。这里精选了 {count}+ 个适合各个水平的资源。"
   }
 }
