@@ -390,21 +390,27 @@
     "example": "ミスしてもドンマイ！"
   },
   {
-  "termA": "ナンバー (nanbaa)",
-  "termB": "number (English)",
-  "explanation": "Can mean ranking position in Japanese usage. (Set 6)",
-  "example": "彼はチームのナンバー1だ。"
-},
-{
-  "termA": "マンション (manshon)",
-  "termB": "mansion (English)",
-  "explanation": "マンション means apartment building in Japanese. (Set 2)",
-  "example": "駅前のマンションに住んでいます。"
-},
-{
-  "termA": "アニメ (anime)",
-  "termB": "anime (English usage)",
-  "explanation": "In Japanese it can refer to animation in general. (Set 2)",
-  "example": "子どものころからアニメが好きだ。"
-}
+    "termA": "ナンバー (nanbaa)",
+    "termB": "number (English)",
+    "explanation": "Can mean ranking position in Japanese usage. (Set 6)",
+    "example": "彼はチームのナンバー1だ。"
+  },
+  {
+    "termA": "マンション (manshon)",
+    "termB": "mansion (English)",
+    "explanation": "マンション means apartment building in Japanese. (Set 2)",
+    "example": "駅前のマンションに住んでいます。"
+  },
+  {
+    "termA": "アニメ (anime)",
+    "termB": "anime (English usage)",
+    "explanation": "In Japanese it can refer to animation in general. (Set 2)",
+    "example": "子どものころからアニメが好きだ。"
+  },
+  {
+    "termA": "マンション (manshon)",
+    "termB": "mansion (English)",
+    "explanation": "マンション means apartment building in Japanese. (Set 6)",
+    "example": "駅前のマンションに住んでいます。"
+  }
 ]
