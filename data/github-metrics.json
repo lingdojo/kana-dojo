@@ -5135,5 +5135,38 @@
       "forks": 5,
       "contributors": 7
     }
+  },
+  {
+    "collectedAt": "2026-11-12T00:00:56.098Z",
+    "stars": 3843,
+    "forks": 3880,
+    "contributors": 3704,
+    "diff": {
+      "stars": 2,
+      "forks": 2,
+      "contributors": 3
+    }
+  },
+  {
+    "collectedAt": "2026-11-12T12:00:57.554Z",
+    "stars": 3847,
+    "forks": 3890,
+    "contributors": 3706,
+    "diff": {
+      "stars": 4,
+      "forks": 10,
+      "contributors": 2
+    }
+  },
+  {
+    "collectedAt": "2026-11-13T00:00:59.927Z",
+    "stars": 3855,
+    "forks": 3899,
+    "contributors": 3709,
+    "diff": {
+      "stars": 8,
+      "forks": 9,
+      "contributors": 3
+    }
   }
 ]

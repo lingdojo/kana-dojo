@@ -439,19 +439,33 @@
     "english": "Let's go, everyone!",
     "game": "Kingdom Hearts series (JP dub)",
     "character": "Sora"
-  }, 
+  },
   {
-  "japanese": "風が、来る！",
-  "romaji": "Kaze ga, kuru!",
-  "english": "The wind is coming!",
-  "game": "The Legend of Zelda: Breath of the Wild (JP)",
-  "character": "Revali"
-},
+    "japanese": "風が、来る！",
+    "romaji": "Kaze ga, kuru!",
+    "english": "The wind is coming!",
+    "game": "The Legend of Zelda: Breath of the Wild (JP)",
+    "character": "Revali"
+  },
   {
     "japanese": "俺は悪くねぇ！",
     "romaji": "Ore wa warukunee!",
     "english": "It's not my fault!",
     "game": "Tales of the Abyss",
     "character": "Luke fon Fabre"
+  },
+  {
+    "japanese": "次はもっと強くなる",
+    "romaji": "Tsugi wa motto tsuyoku naru",
+    "english": "Next time, I'll be stronger.",
+    "game": "Pokemon series",
+    "character": "Rival characters"
+  },
+  {
+    "japanese": "覚悟はいいか？ 俺はできてる。",
+    "romaji": "Kakugo wa ii ka? Ore wa dekiteru.",
+    "english": "Are you prepared? I am.",
+    "game": "JoJo’s Bizarre Adventure: All-Star Battle",
+    "character": "Giorno Giovanna"
   }
 ]
