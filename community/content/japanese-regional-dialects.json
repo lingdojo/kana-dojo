@@ -397,5 +397,12 @@
     "english": "thank you",
     "region": "Kansai",
     "note": "Traditional gratitude expression. (Set 4)"
+  },
+  {
+    "dialect": "なんでやねん",
+    "standardJapanese": "何でだよ",
+    "english": "What are you talking about?!",
+    "region": "Kansai",
+    "note": "Classic comedic retort (tsukkomi). (Set 3)"
   }
 ]
