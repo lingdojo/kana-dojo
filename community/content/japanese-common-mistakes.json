@@ -373,5 +373,11 @@
   "wrong": "この漢字は読み方が難しいです。",
   "correct": "この漢字の読み方は難しいです。",
   "explanation": "Prefer noun linkage with の. (Pattern set 6)"
+  },
+
+  {
+    "wrong": "\u9759\u304b\u3044\u90e8\u5c4b",
+    "correct": "\u9759\u304b\u306a\u90e8\u5c4b",
+    "explanation": "\u306a-adjectives require \u306a before nouns. (Pattern set 6)"
   }
 ]
