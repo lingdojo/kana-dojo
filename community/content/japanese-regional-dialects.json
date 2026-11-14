@@ -322,13 +322,12 @@
     "note": "Very common in Osaka/Kyoto speech. (Set 4)"
   },
   {
-  "dialect": "ほんま",
-  "standardJapanese": "本当に",
-  "english": "really",
-  "region": "Kansai",
-  "note": "Very common in Osaka/Kyoto speech. (Set 3)"
-  }
-,
+    "dialect": "ほんま",
+    "standardJapanese": "本当に",
+    "english": "really",
+    "region": "Kansai",
+    "note": "Very common in Osaka/Kyoto speech. (Set 3)"
+  },
   {
     "dialect": "あかん",
     "standardJapanese": "だめ",
@@ -344,12 +343,12 @@
     "note": "Explanatory ending in conversation. (Set 1)"
   },
   {
-  "dialect": "にふぇーでーびる",
-  "standardJapanese": "ありがとうございます",
-  "english": "thank you",
-  "region": "Okinawa",
-  "note": "Okinawan gratitude expression. (Set 6)"
-},
+    "dialect": "にふぇーでーびる",
+    "standardJapanese": "ありがとうございます",
+    "english": "thank you",
+    "region": "Okinawa",
+    "note": "Okinawan gratitude expression. (Set 6)"
+  },
   {
     "dialect": "ぶち",
     "standardJapanese": "とても",
@@ -358,31 +357,45 @@
     "note": "Regional intensifier. (Set 3)"
   },
   {
-  "dialect": "〜けん",
-  "standardJapanese": "〜から",
-  "english": "because",
-  "region": "Kyushu",
-  "note": "Reason marker in Kyushu. (Set 3)"
- },
- {
-  "dialect": "〜へん",
-  "standardJapanese": "〜ない",
-  "english": "negative form",
-  "region": "Kansai",
-  "note": "Example: 食べへん = 食べない。 (Set 2)"
- },
- {
+    "dialect": "〜けん",
+    "standardJapanese": "〜から",
+    "english": "because",
+    "region": "Kyushu",
+    "note": "Reason marker in Kyushu. (Set 3)"
+  },
+  {
+    "dialect": "〜へん",
+    "standardJapanese": "〜ない",
+    "english": "negative form",
+    "region": "Kansai",
+    "note": "Example: 食べへん = 食べない。 (Set 2)"
+  },
+  {
+    "dialect": "なまら",
+    "standardJapanese": "とても",
+    "english": "very",
+    "region": "Hokkaido",
+    "note": "Hokkaido intensifier. (Set 2)"
+  },
+  {
+    "dialect": "いけん",
+    "standardJapanese": "いけない",
+    "english": "no/cannot",
+    "region": "Chugoku",
+    "note": "Prohibitive nuance. (Set 2)"
+  },
+  {
+    "dialect": "でら",
+    "standardJapanese": "とても",
+    "english": "very",
+    "region": "Nagoya",
+    "note": "Characteristic Nagoya intensifier. (Set 6)"
+  },
+  {
   "dialect": "なまら",
   "standardJapanese": "とても",
   "english": "very",
   "region": "Hokkaido",
-  "note": "Hokkaido intensifier. (Set 2)"
- },
- {
-  "dialect": "いけん",
-  "standardJapanese": "いけない",
-  "english": "no/cannot",
-  "region": "Chugoku",
-  "note": "Prohibitive nuance. (Set 2)"
- }
+  "note": "Hokkaido intensifier. (Set 6)"
+  }
 ]
