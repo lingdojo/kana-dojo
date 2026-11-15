@@ -45,6 +45,17 @@ export const IRREGULAR_VERBS: Record<string, IrregularType> = {
 export const SURU_COMPOUND_SUFFIXES = ['する'];
 
 /**
+ * Godan verbs whose kana spelling ends in する but are not する-compounds
+ * (e.g. こする 擦る, ゆする 揺する)
+ */
+export const GODAN_VERBS_ENDING_IN_SURU = [
+  'こする',
+  'ゆする',
+  'かする',
+  'なする',
+];
+
+/**
  * 来る-compound verb suffixes
  * Used to detect compound verbs like 持ってくる
  */
@@ -213,6 +224,7 @@ export const KNOWN_ICHIDAN_VERBS: string[] = [
   '寝る', // ねる (to sleep)
   '出る', // でる (to exit)
   'でる',
+  '出来る', // できる (to be able to)
   '開ける', // あける (to open)
   'あける',
   '閉める', // しめる (to close)
