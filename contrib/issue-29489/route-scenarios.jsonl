@@ -35,3 +35,4 @@
 {"path":"/kana/train/level/n4","training":true,"reason":"active training route; defer donation"}
 {"path":"/kana/train.backup","training":false,"reason":"not an active training route; do not defer"}
 {"path":"/kana/train/practice/3","training":true,"reason":"active training route; defer donation"}
+{"path":"/kana/train_old","training":false,"reason":"not an active training route; do not defer"}
