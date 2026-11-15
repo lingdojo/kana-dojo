@@ -93,3 +93,4 @@
 {"path":"/vocabulary/train/input","training":true,"reason":"active training route; defer donation"}
 {"path":"/vocabulary/Train","training":false,"reason":"not an active training route; do not defer"}
 {"path":"/vocabulary/train/reverse-input","training":true,"reason":"active training route; defer donation"}
+{"path":"/vocabulary/TRAIN","training":false,"reason":"not an active training route; do not defer"}
