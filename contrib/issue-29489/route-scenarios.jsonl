@@ -1,2 +1,3 @@
 {"path":"/kana/train","training":true,"reason":"active training route; defer donation"}
 {"path":"/kana/training","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/kana/train/","training":true,"reason":"active training route; defer donation"}
