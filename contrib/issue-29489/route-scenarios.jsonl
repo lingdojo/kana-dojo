@@ -109,3 +109,4 @@
 {"path":"/vocabulary/train/unit/basic","training":true,"reason":"active training route; defer donation"}
 {"path":"/vocabulary/trainx","training":false,"reason":"not an active training route; do not defer"}
 {"path":"/vocabulary/train/unit/advanced","training":true,"reason":"active training route; defer donation"}
+{"path":"/vocabulary/training/1","training":false,"reason":"not an active training route; do not defer"}
