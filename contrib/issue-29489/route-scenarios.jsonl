@@ -67,3 +67,4 @@
 {"path":"/kanji/train/session/2","training":true,"reason":"active training route; defer donation"}
 {"path":"/kanji/quiz","training":false,"reason":"not an active training route; do not defer"}
 {"path":"/kanji/train/unit/basic","training":true,"reason":"active training route; defer donation"}
+{"path":"/kanji/trainx","training":false,"reason":"not an active training route; do not defer"}
