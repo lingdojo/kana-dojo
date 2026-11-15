@@ -184,3 +184,4 @@
 {"path":"/en/kanji/practice","training":false,"reason":"not an active training route; do not defer"}
 {"path":"/en/kanji/train/session/1","training":true,"reason":"active training route; defer donation"}
 {"path":"/en/kanji/review","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/en/kanji/train/session/2","training":true,"reason":"active training route; defer donation"}
