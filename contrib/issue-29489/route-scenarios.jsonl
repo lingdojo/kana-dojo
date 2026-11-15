@@ -151,3 +151,4 @@
 {"path":"/en/kana/train/unit/advanced","training":true,"reason":"active training route; defer donation"}
 {"path":"/en/kana/training/1","training":false,"reason":"not an active training route; do not defer"}
 {"path":"/en/kana/train/level/n5","training":true,"reason":"active training route; defer donation"}
+{"path":"/en/kana/trainer/10","training":false,"reason":"not an active training route; do not defer"}
