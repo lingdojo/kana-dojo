@@ -52,3 +52,4 @@
 {"path":"/kanji/trains","training":false,"reason":"not an active training route; do not defer"}
 {"path":"/kanji/train/input","training":true,"reason":"active training route; defer donation"}
 {"path":"/kanji/Train","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/kanji/train/reverse-input","training":true,"reason":"active training route; defer donation"}
