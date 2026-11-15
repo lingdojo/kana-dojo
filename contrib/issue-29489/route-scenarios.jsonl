@@ -61,3 +61,4 @@
 {"path":"/kanji/train/challenge/10","training":true,"reason":"active training route; defer donation"}
 {"path":"/kanji/train-quick","training":false,"reason":"not an active training route; do not defer"}
 {"path":"/kanji/train/challenge/20","training":true,"reason":"active training route; defer donation"}
+{"path":"/kanji/practice","training":false,"reason":"not an active training route; do not defer"}
