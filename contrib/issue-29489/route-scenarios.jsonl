@@ -71,3 +71,4 @@
 {"path":"/kanji/train/unit/advanced","training":true,"reason":"active training route; defer donation"}
 {"path":"/kanji/training/1","training":false,"reason":"not an active training route; do not defer"}
 {"path":"/kanji/train/level/n5","training":true,"reason":"active training route; defer donation"}
+{"path":"/kanji/trainer/10","training":false,"reason":"not an active training route; do not defer"}
