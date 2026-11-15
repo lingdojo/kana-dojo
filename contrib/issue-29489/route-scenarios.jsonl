@@ -12,3 +12,4 @@
 {"path":"/kana/trains","training":false,"reason":"not an active training route; do not defer"}
 {"path":"/kana/train/input","training":true,"reason":"active training route; defer donation"}
 {"path":"/kana/Train","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/kana/train/reverse-input","training":true,"reason":"active training route; defer donation"}
