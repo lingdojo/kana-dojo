@@ -161,3 +161,4 @@
 {"path":"/en/kanji/train","training":true,"reason":"active training route; defer donation"}
 {"path":"/en/kanji/training","training":false,"reason":"not an active training route; do not defer"}
 {"path":"/en/kanji/train/","training":true,"reason":"active training route; defer donation"}
+{"path":"/en/kanji/trainer","training":false,"reason":"not an active training route; do not defer"}
