@@ -25,3 +25,4 @@
 {"path":"/kana/train/session/1","training":true,"reason":"active training route; defer donation"}
 {"path":"/kana/review","training":false,"reason":"not an active training route; do not defer"}
 {"path":"/kana/train/session/2","training":true,"reason":"active training route; defer donation"}
+{"path":"/kana/quiz","training":false,"reason":"not an active training route; do not defer"}
