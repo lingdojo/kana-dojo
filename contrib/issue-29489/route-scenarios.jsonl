@@ -130,3 +130,4 @@
 {"path":"/en/kana/train2","training":false,"reason":"not an active training route; do not defer"}
 {"path":"/en/kana/train/reverse-pick","training":true,"reason":"active training route; defer donation"}
 {"path":"/en/kana/trains","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/en/kana/train/input","training":true,"reason":"active training route; defer donation"}
