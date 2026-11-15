@@ -177,3 +177,4 @@
 {"path":"/en/kanji/train/lesson/1","training":true,"reason":"active training route; defer donation"}
 {"path":"/en/kanji/train_new","training":false,"reason":"not an active training route; do not defer"}
 {"path":"/en/kanji/train/lesson/2","training":true,"reason":"active training route; defer donation"}
+{"path":"/en/kanji/train-v2","training":false,"reason":"not an active training route; do not defer"}
