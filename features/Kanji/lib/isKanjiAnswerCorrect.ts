@@ -1,11 +1,14 @@
 import type { IKanjiObj } from '@/entities/kanji';
+import { getReadingAnswerForms } from '@/features/Kanji/lib/getReadingAnswerForms';
 import {
   normalizeAnswerValue,
   normalizeMeaningAnswer,
 } from '@/shared/utils/meanings';
 
-const normalizeReading = (value: string): string =>
-  normalizeAnswerValue(value.split(' ')[0] ?? '');
+const matchesReading = (reading: string, answer: string): boolean =>
+  getReadingAnswerForms(reading).some(
+    form => normalizeAnswerValue(form) === answer,
+  );
 
 export const isKanjiAnswerCorrect = (
   kanji: IKanjiObj,
@@ -25,11 +28,7 @@ export const isKanjiAnswerCorrect = (
 
   return (
     normalizeAnswerValue(kanji.kanjiChar) === normalizedAnswer ||
-    kanji.kunyomi.some(
-      reading => normalizeReading(reading) === normalizedAnswer,
-    ) ||
-    kanji.onyomi.some(
-      reading => normalizeReading(reading) === normalizedAnswer,
-    )
+    kanji.kunyomi.some(reading => matchesReading(reading, normalizedAnswer)) ||
+    kanji.onyomi.some(reading => matchesReading(reading, normalizedAnswer))
   );
 };

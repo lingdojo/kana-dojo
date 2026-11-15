@@ -103,4 +103,27 @@ describe('isKanjiAnswerCorrect', () => {
   it.each(['', 'China', 'かん'])('rejects invalid reverse answer %s', answer => {
     expect(isKanjiAnswerCorrect(kanji, answer, true)).toBe(false);
   });
+
+  describe('readings with okurigana', () => {
+    const study = {
+      kanjiChar: '学',
+      meanings: ['study', 'learning', 'science'],
+      kunyomi: ['mana(bu) まな(ぶ)'],
+      onyomi: ['gaku ガク'],
+    } as IKanjiObj;
+
+    it.each(['manabu', 'Manabu', 'まなぶ', 'mana(bu)', 'gaku', 'ガク', '学'])(
+      'accepts %s as a reverse answer for 学',
+      answer => {
+        expect(isKanjiAnswerCorrect(study, answer, true)).toBe(true);
+      },
+    );
+
+    it.each(['mana', 'bu', 'まな', 'まな(ぶ)x'])(
+      'rejects partial reading %s',
+      answer => {
+        expect(isKanjiAnswerCorrect(study, answer, true)).toBe(false);
+      },
+    );
+  });
 });
