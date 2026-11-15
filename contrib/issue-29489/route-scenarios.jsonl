@@ -188,3 +188,4 @@
 {"path":"/en/kanji/quiz","training":false,"reason":"not an active training route; do not defer"}
 {"path":"/en/kanji/train/unit/basic","training":true,"reason":"active training route; defer donation"}
 {"path":"/en/kanji/trainx","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/en/kanji/train/unit/advanced","training":true,"reason":"active training route; defer donation"}
