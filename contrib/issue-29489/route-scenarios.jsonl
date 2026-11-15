@@ -85,3 +85,4 @@
 {"path":"/vocabulary/train/1","training":true,"reason":"active training route; defer donation"}
 {"path":"/vocabulary/trainers","training":false,"reason":"not an active training route; do not defer"}
 {"path":"/vocabulary/train/1/","training":true,"reason":"active training route; defer donation"}
+{"path":"/vocabulary/train-1","training":false,"reason":"not an active training route; do not defer"}
