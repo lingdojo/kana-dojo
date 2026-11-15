@@ -15,3 +15,4 @@
 {"path":"/kana/train/reverse-input","training":true,"reason":"active training route; defer donation"}
 {"path":"/kana/TRAIN","training":false,"reason":"not an active training route; do not defer"}
 {"path":"/kana/train/lesson/1","training":true,"reason":"active training route; defer donation"}
+{"path":"/kana/train_new","training":false,"reason":"not an active training route; do not defer"}
