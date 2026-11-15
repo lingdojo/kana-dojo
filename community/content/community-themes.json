@@ -502,5 +502,11 @@
       "backgroundColor": "oklch(16.0% 0.030 260.0 / 1)",
       "mainColor": "oklch(82.0% 0.085 220.0 / 1)",
       "secondaryColor": "oklch(70.0% 0.145 330.0 / 1)"
+    },
+    {
+      "id": "kendo-strike",
+      "backgroundColor": "oklch(16.0% 0.028 265.0 / 1)",
+      "mainColor": "oklch(65.0% 0.025 270.0 / 1)",
+      "secondaryColor": "oklch(72.0% 0.165 25.0 / 1)"
     }
 ]
