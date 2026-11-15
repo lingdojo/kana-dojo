@@ -80,3 +80,4 @@
 {"path":"/kanji/train-data","training":false,"reason":"not an active training route; do not defer"}
 {"path":"/vocabulary/train","training":true,"reason":"active training route; defer donation"}
 {"path":"/vocabulary/training","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/vocabulary/train/","training":true,"reason":"active training route; defer donation"}
