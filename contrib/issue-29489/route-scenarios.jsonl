@@ -172,3 +172,4 @@
 {"path":"/en/kanji/trains","training":false,"reason":"not an active training route; do not defer"}
 {"path":"/en/kanji/train/input","training":true,"reason":"active training route; defer donation"}
 {"path":"/en/kanji/Train","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/en/kanji/train/reverse-input","training":true,"reason":"active training route; defer donation"}
