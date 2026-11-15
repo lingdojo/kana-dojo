@@ -141,3 +141,4 @@
 {"path":"/en/kana/train/challenge/10","training":true,"reason":"active training route; defer donation"}
 {"path":"/en/kana/train-quick","training":false,"reason":"not an active training route; do not defer"}
 {"path":"/en/kana/train/challenge/20","training":true,"reason":"active training route; defer donation"}
+{"path":"/en/kana/practice","training":false,"reason":"not an active training route; do not defer"}
