@@ -77,3 +77,4 @@
 {"path":"/kanji/train/practice/3","training":true,"reason":"active training route; defer donation"}
 {"path":"/kanji/train_old","training":false,"reason":"not an active training route; do not defer"}
 {"path":"/kanji/train/quiz/10","training":true,"reason":"active training route; defer donation"}
+{"path":"/kanji/train-data","training":false,"reason":"not an active training route; do not defer"}
