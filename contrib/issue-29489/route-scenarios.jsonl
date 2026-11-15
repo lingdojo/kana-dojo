@@ -40,3 +40,4 @@
 {"path":"/kana/train-data","training":false,"reason":"not an active training route; do not defer"}
 {"path":"/kanji/train","training":true,"reason":"active training route; defer donation"}
 {"path":"/kanji/training","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/kanji/train/","training":true,"reason":"active training route; defer donation"}
