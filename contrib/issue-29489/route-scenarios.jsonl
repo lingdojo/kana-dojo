@@ -117,3 +117,4 @@
 {"path":"/vocabulary/train/practice/3","training":true,"reason":"active training route; defer donation"}
 {"path":"/vocabulary/train_old","training":false,"reason":"not an active training route; do not defer"}
 {"path":"/vocabulary/train/quiz/10","training":true,"reason":"active training route; defer donation"}
+{"path":"/vocabulary/train-data","training":false,"reason":"not an active training route; do not defer"}
