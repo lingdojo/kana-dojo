@@ -392,10 +392,17 @@
     "note": "Characteristic Nagoya intensifier. (Set 6)"
   },
   {
-  "dialect": "なまら",
-  "standardJapanese": "とても",
-  "english": "very",
-  "region": "Hokkaido",
-  "note": "Hokkaido intensifier. (Set 6)"
+    "dialect": "おおきに",
+    "standardJapanese": "ありがとう",
+    "english": "thank you",
+    "region": "Kansai",
+    "note": "Traditional gratitude expression. (Set 4)"
+  },
+  {
+    "dialect": "なんでやねん",
+    "standardJapanese": "何でだよ",
+    "english": "What are you talking about?!",
+    "region": "Kansai",
+    "note": "Classic comedic retort (tsukkomi). (Set 3)"
   }
 ]
