@@ -397,5 +397,12 @@
   "english": "very",
   "region": "Hokkaido",
   "note": "Hokkaido intensifier. (Set 6)"
+  },
+  {
+  "dialect": "なんでやねん",
+  "standardJapanese": "何でだよ",
+  "english": "What are you talking about?!",
+  "region": "Kansai",
+  "note": "Classic comedic retort (tsukkomi). (Set 4)"
   }
 ]
