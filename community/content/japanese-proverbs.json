@@ -438,9 +438,15 @@
     "meaning": "Giving something valuable to someone who can't appreciate it"
   },
   {
-  "japanese": "毒を食らわば皿まで",
-  "romaji": "Doku wo kurawaba sara made",
-  "english": "If you eat poison, eat the plate too",
-  "meaning": "If you must do it, go all the way"
+    "japanese": "毒を食らわば皿まで",
+    "romaji": "Doku wo kurawaba sara made",
+    "english": "If you eat poison, eat the plate too",
+    "meaning": "If you must do it, go all the way"
+  },
+  {
+    "japanese": "藪をつついて蛇を出す",
+    "romaji": "Yabu wo tsutsuite hebi wo dasu",
+    "english": "Poke the bush and bring out a snake",
+    "meaning": "Stir up trouble unnecessarily"
   }
 ]
