@@ -31,6 +31,19 @@ export function hasVisit(visits: string[], date: string): boolean {
 }
 
 /**
+ * Returns the previous calendar day (at local noon).
+ * Steps by calendar day rather than subtracting 24 hours, because days around
+ * daylight saving time changes are 23 or 25 hours long and subtracting a fixed
+ * 24 hours can skip a day or land on the same day twice.
+ */
+function getPreviousDay(date: Date): Date {
+  const previous = new Date(date);
+  previous.setHours(12, 0, 0, 0);
+  previous.setDate(previous.getDate() - 1);
+  return previous;
+}
+
+/**
  * Calculates the current consecutive day streak
  * - If visited today, counts consecutive days ending at today
  * - If not visited today but visited yesterday, counts consecutive days ending at yesterday
@@ -41,7 +54,7 @@ export function calculateCurrentStreak(visits: string[]): number {
 
   const sortedVisits = [...visits].sort().reverse(); // Most recent first
   const today = formatDate(new Date());
-  const yesterday = formatDate(new Date(Date.now() - 24 * 60 * 60 * 1000));
+  const yesterday = formatDate(getPreviousDay(new Date()));
 
   // Check if we have a visit today or yesterday to start counting
   const hasToday = sortedVisits.includes(today);
@@ -50,9 +63,7 @@ export function calculateCurrentStreak(visits: string[]): number {
   if (!hasToday && !hasYesterday) return 0;
 
   // Start from today if visited, otherwise from yesterday
-  let currentDate = hasToday
-    ? new Date()
-    : new Date(Date.now() - 24 * 60 * 60 * 1000);
+  let currentDate = hasToday ? new Date() : getPreviousDay(new Date());
   let streak = 0;
 
   while (true) {
@@ -60,7 +71,7 @@ export function calculateCurrentStreak(visits: string[]): number {
     if (sortedVisits.includes(dateStr)) {
       streak++;
       // Move to previous day
-      currentDate = new Date(currentDate.getTime() - 24 * 60 * 60 * 1000);
+      currentDate = getPreviousDay(currentDate);
     } else {
       break;
     }
