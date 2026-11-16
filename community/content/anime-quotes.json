@@ -357,66 +357,73 @@
     "character": "Char Aznable"
   },
   {
-  "japanese": "次は君だ",
-  "romaji": "Tsugi wa kimi da",
-  "english": "Next, it's your turn.",
-  "anime": "My Hero Academia",
-  "character": "All Might"
+    "japanese": "次は君だ",
+    "romaji": "Tsugi wa kimi da",
+    "english": "Next, it's your turn.",
+    "anime": "My Hero Academia",
+    "character": "All Might"
   },
   {
-  "japanese": "笑えばいいと思うよ",
-  "romaji": "Waraeba ii to omou yo",
-  "english": "I think you should just laugh.",
-  "anime": "Neon Genesis Evangelion",
-  "character": "Rei Ayanami"
-},
+    "japanese": "笑えばいいと思うよ",
+    "romaji": "Waraeba ii to omou yo",
+    "english": "I think you should just laugh.",
+    "anime": "Neon Genesis Evangelion",
+    "character": "Rei Ayanami"
+  },
   {
-  "japanese": "フォッフォッフォッ",
-  "romaji": "Fo fo fo fo",
-  "english": "Fosh fosh fosh fosh. (alt wording 28) (alt wording 80)",
-  "anime": "One Piece",
-  "character": "Kozuki Sukiyaki"
-},
+    "japanese": "フォッフォッフォッ",
+    "romaji": "Fo fo fo fo",
+    "english": "Fosh fosh fosh fosh. (alt wording 28) (alt wording 80)",
+    "anime": "One Piece",
+    "character": "Kozuki Sukiyaki"
+  },
   {
-  "japanese": "ブチャラティ、来た！",
-  "romaji": "Bucharati, kita!",
-  "english": "Bucciarati is here! (alt wording 17)",
-  "anime": "JoJo's Bizarre Adventure: Golden Wind",
-  "character": "Narancia Ghirga"
-},
-{
-  "japanese": "シシシシシ",
-  "romaji": "Shishishishi",
-  "english": "Shishishi! (alt wording 30) (alt wording 82)",
-  "anime": "One Piece",
-  "character": "Monkey D. Luffy"
-},
-{
-  "japanese": "このジョルノ・ジョバァーナには夢がある！",
-  "romaji": "Kono Joruno Jobana ni wa yume ga aru!",
-  "english": "I, Giorno Giovanna, have a dream! (alt wording 5) (alt wording 57)",
-  "anime": "JoJo's Bizarre Adventure: Golden Wind",
-  "character": "Giorno Giovanna"
-},
-{
-  "japanese": "ブチャラティ、来た！",
-  "romaji": "Bucharati, kita!",
-  "english": "Bucciarati is here! (alt wording 17)",
-  "anime": "JoJo's Bizarre Adventure: Golden Wind",
-  "character": "Narancia Ghirga"
-},
-{
-  "japanese": "駆逐してやる!この世から一匹残らず!",
-  "romaji": "Kuchiku shite yaru! Kono yo kara ippiki nokorazu!",
-  "english": "I'll exterminate them! Every last one from this world!",
-  "anime": "Attack on Titan",
-  "character": "Eren Yeager"
-},
-{
-  "japanese": "今日の俺は一味違うぜ！",
-  "romaji": "Kyou no ore wa hitomi chigau ze!",
-  "english": "I'm on a different level today!",
-  "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
-  "character": "Okuyasu Nijimura"
-}
+    "japanese": "ブチャラティ、来た！",
+    "romaji": "Bucharati, kita!",
+    "english": "Bucciarati is here! (alt wording 17)",
+    "anime": "JoJo's Bizarre Adventure: Golden Wind",
+    "character": "Narancia Ghirga"
+  },
+  {
+    "japanese": "シシシシシ",
+    "romaji": "Shishishishi",
+    "english": "Shishishi! (alt wording 30) (alt wording 82)",
+    "anime": "One Piece",
+    "character": "Monkey D. Luffy"
+  },
+  {
+    "japanese": "このジョルノ・ジョバァーナには夢がある！",
+    "romaji": "Kono Joruno Jobana ni wa yume ga aru!",
+    "english": "I, Giorno Giovanna, have a dream! (alt wording 5) (alt wording 57)",
+    "anime": "JoJo's Bizarre Adventure: Golden Wind",
+    "character": "Giorno Giovanna"
+  },
+  {
+    "japanese": "ブチャラティ、来た！",
+    "romaji": "Bucharati, kita!",
+    "english": "Bucciarati is here! (alt wording 17)",
+    "anime": "JoJo's Bizarre Adventure: Golden Wind",
+    "character": "Narancia Ghirga"
+  },
+  {
+    "japanese": "駆逐してやる!この世から一匹残らず!",
+    "romaji": "Kuchiku shite yaru! Kono yo kara ippiki nokorazu!",
+    "english": "I'll exterminate them! Every last one from this world!",
+    "anime": "Attack on Titan",
+    "character": "Eren Yeager"
+  },
+  {
+    "japanese": "今日の俺は一味違うぜ！",
+    "romaji": "Kyou no ore wa hitomi chigau ze!",
+    "english": "I'm on a different level today!",
+    "anime": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
+    "character": "Okuyasu Nijimura"
+  },
+  {
+    "japanese": "撃っていいのは撃たれる覚悟がある奴だけだ",
+    "romaji": "Utte ii no wa uterareru kakugo ga aru yatsu dake da",
+    "english": "Only those prepared to be shot should pull the trigger. (alt wording 45)",
+    "anime": "Code Geass: Lelouch of the Rebellion",
+    "character": "Lelouch vi Britannia"
+  }
 ]
