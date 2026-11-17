@@ -1,7 +1,7 @@
 {
-  "lastType": "commonMistake",
-  "lastRun": "2026-11-14T10:35:40.754Z",
-  "totalIssuesCreated": 21798,
+  "lastType": "falseFriend",
+  "lastRun": "2026-11-17T09:25:39.193Z",
+  "totalIssuesCreated": 21883,
   "consecutiveNoIssueRuns": 0,
-  "lastIssueCreatedAt": "2026-11-14T10:35:40.758Z"
+  "lastIssueCreatedAt": "2026-11-17T09:25:39.198Z"
 }
