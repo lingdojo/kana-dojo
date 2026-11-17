@@ -204,6 +204,23 @@
       "notes": "Free indie game. Basic graphics but effective learning."
     },
     {
+      "id": "dangochains",
+      "name": "DangoChains",
+      "nameJa": "団子チェーン",
+      "description": "Daily word-grouping puzzle in Japanese at three levels, with readings and meanings.",
+      "descriptionLong": "DangoChains is a daily puzzle for Japanese learners: sort 16 Japanese words into 4 hidden groups of 4. Each day has three boards: Easy (everyday words, furigana on), Normal (about JLPT N4-N3) and Hard (N2 and up, idioms and kanji compounds). Groups play on how Japanese works, such as counters, unusual kanji readings and words hiding other words. After each game every word is shown with its reading and English meaning. It plays in the browser with no account; the iOS and Android apps add streaks, reminders and the archive of past puzzles.",
+      "category": "games",
+      "subcategory": "educational-games",
+      "tags": ["vocabulary", "kanji", "daily", "puzzle", "JLPT"],
+      "difficulty": "all-levels",
+      "priceType": "freemium",
+      "priceDetails": "Daily boards are free on the web and in the apps. A one-time in-app purchase unlocks the archive of past puzzles.",
+      "platforms": ["web", "ios", "android"],
+      "url": "https://dangochains.com/play/",
+      "featured": false,
+      "notes": "The last 7 days stay playable on the web, and shared result grids link to the same board."
+    },
+    {
       "id": "fire-emblem-three-houses",
       "name": "Fire Emblem: Three Houses",
       "nameJa": "ファイアーエムブレム 風花雪月",
