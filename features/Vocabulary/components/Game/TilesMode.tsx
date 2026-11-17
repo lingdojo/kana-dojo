@@ -39,6 +39,7 @@ import {
   type VocabQuestionFormat,
   type VocabQuizType,
 } from '@/features/Vocabulary/components/Game/vocabFormatLock';
+import { filterDistractorCandidates } from '@/features/Vocabulary/lib/distractors';
 import { useSetProgressStore } from '@/features/Progress';
 import { useTilesModeKeyboardSelection } from '@/shared/hooks/game/useTilesModeKeyboardSelection';
 
@@ -205,6 +206,14 @@ const VocabTilesMode = ({
         );
       }
 
+      // Exclude words that would also be a valid answer (same primary meaning
+      // or same reading), so a correct synonym is never scored as wrong.
+      const distractorWordObjs = filterDistractorCandidates(
+        selectedWordObjs,
+        selectedWordObj,
+        effectiveQuizType,
+      );
+
       // Determine correct answer based on quiz type and mode
       let correctAnswerRaw: string | undefined;
       let distractorSourceRaw: Array<string | undefined>;
@@ -212,23 +221,17 @@ const VocabTilesMode = ({
       if (effectiveQuizType === 'reading') {
         // Reading quiz: answer is always the reading
         correctAnswerRaw = selectedWordObj.reading;
-        distractorSourceRaw = selectedWordObjs
-          .filter(obj => obj.word !== selectedWord)
-          .map(obj => obj.reading);
+        distractorSourceRaw = distractorWordObjs.map(obj => obj.reading);
       } else {
         // Meaning quiz
         if (isReverse) {
           // Reverse: show meaning, answer is word
           correctAnswerRaw = selectedWord;
-          distractorSourceRaw = selectedWordObjs
-            .filter(obj => obj.word !== selectedWord)
-            .map(obj => obj.word);
+          distractorSourceRaw = distractorWordObjs.map(obj => obj.word);
         } else {
           // Normal: show word, answer is meaning
           correctAnswerRaw = selectedWordObj.meanings[0];
-          distractorSourceRaw = selectedWordObjs
-            .filter(obj => obj.word !== selectedWord)
-            .map(obj => obj.meanings[0]);
+          distractorSourceRaw = distractorWordObjs.map(obj => obj.meanings[0]);
         }
       }
 

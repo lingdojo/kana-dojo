@@ -6,6 +6,7 @@ import { cn } from '@/shared/utils/utils';
 import { useKanaContent } from '@/features/Kana';
 import { useKanjiSelection } from '@/features/Kanji';
 import { useVocabSelection } from '@/features/Vocabulary';
+import { useRouter } from '@/core/i18n/routing';
 import type {
   CharacterMasteryItem,
   ContentFilter,
@@ -14,6 +15,7 @@ import type {
 import { classifyCharacter } from '../../lib/classifyCharacter';
 import { detectContentType } from '../../lib/detectContentType';
 import { calculateAccuracy } from '../../lib/calculateAccuracy';
+import { buildMeaningToJapaneseMap } from '../../lib/buildMeaningToJapaneseMap';
 
 /**
  * Props for the CharacterMasteryPanel component
@@ -150,38 +152,33 @@ export default function CharacterMasteryPanel({
 
   const { allGroups: kanaGroups } = useKanaContent();
   const { selectedKanji: selectedKanjiObjs } = useKanjiSelection();
-  const { selectedVocab: selectedVocabObjs } = useVocabSelection();
+  const {
+    selectedVocab: selectedVocabObjs,
+    replaceVocab,
+    setSets,
+    setGameMode,
+  } = useVocabSelection();
+  const router = useRouter();
+
+  const practiceVocabulary = (word: string) => {
+    const vocabulary = selectedVocabObjs.find(obj => obj.word === word);
+    if (!vocabulary) return;
+
+    replaceVocab([vocabulary]);
+    setSets([]);
+    setGameMode('Type');
+    router.push('/vocabulary/learn');
+  };
 
   const romajiToKanaMap = useMemo(
     () => buildRomajiToKanaMap(kanaGroups),
     [kanaGroups],
   );
 
-  const meaningToJapaneseMap = useMemo(() => {
-    const map = new Map<string, string>();
-
-    selectedKanjiObjs.forEach(kanjiObj => {
-      kanjiObj.meanings.forEach(meaning => {
-        const normalizedMeaning = meaning.trim().toLowerCase();
-        if (!normalizedMeaning) return;
-        if (!map.has(normalizedMeaning)) {
-          map.set(normalizedMeaning, kanjiObj.kanjiChar);
-        }
-      });
-    });
-
-    selectedVocabObjs.forEach(vocabObj => {
-      vocabObj.meanings.forEach(meaning => {
-        const normalizedMeaning = meaning.trim().toLowerCase();
-        if (!normalizedMeaning) return;
-        if (!map.has(normalizedMeaning)) {
-          map.set(normalizedMeaning, vocabObj.word);
-        }
-      });
-    });
-
-    return map;
-  }, [selectedKanjiObjs, selectedVocabObjs]);
+  const meaningToJapaneseMap = useMemo(
+    () => buildMeaningToJapaneseMap(selectedKanjiObjs, selectedVocabObjs),
+    [selectedKanjiObjs, selectedVocabObjs],
+  );
 
   const characterDetailsMap = useMemo(() => {
     const map = new Map<string, { reading?: string; meaning?: string }>();
@@ -396,6 +393,11 @@ export default function CharacterMasteryPanel({
                           item={char}
                           index={idx}
                           details={characterDetailsMap.get(char.character)}
+                          onPractice={
+                            char.contentType === 'vocabulary'
+                              ? () => practiceVocabulary(char.character)
+                              : undefined
+                          }
                         />
                       ))}
                     </div>
@@ -425,6 +427,11 @@ export default function CharacterMasteryPanel({
                           index={idx}
                           isMastered
                           details={characterDetailsMap.get(char.character)}
+                          onPractice={
+                            char.contentType === 'vocabulary'
+                              ? () => practiceVocabulary(char.character)
+                              : undefined
+                          }
                         />
                       ))}
                     </div>
@@ -494,11 +501,13 @@ function CharacterRow({
   index,
   isMastered = false,
   details,
+  onPractice,
 }: {
   item: CharacterMasteryItem;
   index: number;
   isMastered?: boolean;
   details?: { reading?: string; meaning?: string };
+  onPractice?: () => void;
 }) {
   const [revealed, setRevealed] = useState(false);
   const canReveal = Boolean(details?.reading || details?.meaning);
@@ -510,12 +519,7 @@ function CharacterRow({
     : `${item.character}, no reading available`;
 
   return (
-    <motion.button
-      type='button'
-      onClick={() => canReveal && setRevealed(prev => !prev)}
-      aria-pressed={canReveal ? revealed : undefined}
-      aria-label={ariaLabel}
-      disabled={!canReveal}
+    <motion.div
       initial={{ opacity: 0, x: isMastered ? 10 : -10 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.3, delay: index * 0.05 }}
@@ -524,13 +528,22 @@ function CharacterRow({
         'bg-(--background-color)',
         'border border-transparent',
         'transition-colors duration-300',
-        'focus-visible:ring-2 focus-visible:ring-(--main-color) focus-visible:outline-none',
-        canReveal
-          ? 'cursor-pointer hover:border-(--main-color)/20 hover:bg-(--border-color)/20'
-          : 'cursor-default',
       )}
     >
-      <div className='min-w-0 flex-1 pr-3'>
+      <button
+        type='button'
+        onClick={() => canReveal && setRevealed(prev => !prev)}
+        aria-pressed={canReveal ? revealed : undefined}
+        aria-label={ariaLabel}
+        disabled={!canReveal}
+        className={cn(
+          'min-w-0 flex-1 pr-3 text-left',
+          'focus-visible:ring-2 focus-visible:ring-(--main-color) focus-visible:outline-none',
+          canReveal
+            ? 'cursor-pointer hover:border-(--main-color)/20 hover:bg-(--border-color)/20'
+            : 'cursor-default',
+        )}
+      >
         <AnimatePresence mode='wait' initial={false}>
           {revealed && canReveal ? (
             <motion.div
@@ -565,8 +578,8 @@ function CharacterRow({
             </motion.span>
           )}
         </AnimatePresence>
-      </div>
-      <div className='shrink-0 text-right'>
+      </button>
+      <div className='flex shrink-0 items-center gap-3 text-right'>
         <div
           className={cn(
             'text-lg font-bold',
@@ -578,7 +591,16 @@ function CharacterRow({
         <div className='text-xs text-(--secondary-color)/60'>
           {item.total} tries
         </div>
+        {onPractice && (
+          <button
+            type='button'
+            onClick={onPractice}
+            className='rounded-lg bg-(--main-color) px-3 py-2 text-xs font-semibold text-(--background-color) transition-opacity hover:opacity-80 focus-visible:ring-2 focus-visible:ring-(--main-color) focus-visible:outline-none'
+          >
+            Practice
+          </button>
+        )}
       </div>
-    </motion.button>
+    </motion.div>
   );
 }
