@@ -282,6 +282,23 @@
       "url": "https://japaneseskills.com/en/",
       "featured": false,
       "notes": "Practice questions are original, not past JLPT papers. Not affiliated with the JLPT organisers."
+    },
+    {
+      "id": "nihongo-to-japan",
+      "name": "Nihongo to Japan",
+      "nameJa": "日本語から日本へ",
+      "description": "Free JLPT N5 to N1 grammar guides, vocabulary lists and practice questions.",
+      "descriptionLong": "Nihongo to Japan is a JLPT study site with grammar guides, vocabulary lists and practice questions for every level from N5 to N1, a conjugation trainer, a level-check test and a free self-study course. The interface is available in English, Traditional Chinese, Simplified Chinese, Korean, Vietnamese, Indonesian, Thai, Spanish and French.",
+      "category": "jlpt",
+      "subcategory": "n5",
+      "tags": ["grammar", "vocabulary", "practice", "self-study"],
+      "difficulty": "all-levels",
+      "priceType": "freemium",
+      "priceDetails": "All lessons, grammar guides and practice questions are free (ad-supported). An optional paid pass adds extra practice sets, PDFs and ad-free use.",
+      "platforms": ["web"],
+      "url": "https://www.nihongotojapan.com/en/jlpt",
+      "featured": false,
+      "notes": "Practice questions are original, not past JLPT papers. Not affiliated with the JLPT organisers."
     }
   ]
 }
