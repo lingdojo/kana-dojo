@@ -236,6 +236,16 @@ export const KNOWN_ICHIDAN_VERBS: string[] = [
   'しらべる',
   '比べる', // くらべる (to compare)
   'くらべる',
+  // Single-kanji ichidan verbs: one kanji + る can't be classified by spelling
+  '似る', // にる (to resemble)
+  '煮る', // にる (to boil)
+  '得る', // える (to obtain)
+  '経る', // へる (to pass through)
+  '射る', // いる (to shoot)
+  '干る', // ひる (to dry up)
+  '診る', // みる (to examine)
+  '観る', // みる (to watch)
+  '看る', // みる (to look after)
 ];
 
 // ============================================================================
