@@ -2,6 +2,7 @@ import type { IVocabObj, VocabLevel } from '@/entities/vocabulary';
 import {
   useVocabCacheStore,
 } from '@/features/Vocabulary/store/useVocabCacheStore';
+import { splitDefinitionList } from '@/shared/utils/meanings';
 
 type RawVocabEntry = {
   jmdict_seq: string;
@@ -11,10 +12,7 @@ type RawVocabEntry = {
 };
 
 const toWordObj = (entry: RawVocabEntry): IVocabObj => {
-  const definitionPieces = entry.waller_definition
-    .split(/[;,]/)
-    .map(piece => piece.trim())
-    .filter(Boolean);
+  const definitionPieces = splitDefinitionList(entry.waller_definition);
 
   return {
     word: entry.kanji?.trim() || entry.kana,
