@@ -1,0 +1,66 @@
+{
+  "title": "Kanji Training",
+  "description": "Master Japanese Kanji characters",
+  "selection": {
+    "title": "Select Kanji",
+    "byLevel": "By JLPT Level",
+    "byCategory": "By Category",
+    "selectAll": "Select All",
+    "deselectAll": "Deselect All",
+    "levels": {
+      "n5": "JLPT N5",
+      "n4": "JLPT N4",
+      "n3": "JLPT N3",
+      "n2": "JLPT N2",
+      "n1": "JLPT N1"
+    }
+  },
+  "game": {
+    "title": "Kanji Game",
+    "start": "Start Game",
+    "pause": "Pause",
+    "resume": "Resume",
+    "finish": "Finish",
+    "nextQuestion": "Next Question",
+    "submit": "Submit Answer",
+    "score": "Score: {{points}}",
+    "timeLeft": "Time left: {{seconds}}s",
+    "streak": "Streak: {{count}}",
+    "correct": "Correct!",
+    "incorrect": "Incorrect",
+    "showAnswer": "Show Answer",
+    "hint": "Hint"
+  },
+  "modes": {
+    "pick": "Pick Mode",
+    "reversePick": "Reverse Pick",
+    "input": "Input Mode",
+    "reverseInput": "Reverse Input",
+    "description": {
+      "pick": "See kanji, choose the meaning",
+      "reversePick": "See meaning, choose the kanji",
+      "input": "See kanji, type the meaning",
+      "reverseInput": "See meaning, type the kanji"
+    }
+  },
+  "results": {
+    "title": "Results",
+    "congratulations": "Congratulations!",
+    "correct": "Correct: {{count}}",
+    "incorrect": "Incorrect: {{count}}",
+    "accuracy": "Accuracy: {{percentage}}%",
+    "timeSpent": "Time spent: {{time}}",
+    "playAgain": "Play Again",
+    "backToMenu": "Back to Menu"
+  },
+  "details": {
+    "meaning": "Meaning",
+    "readings": "Readings",
+    "onyomi": "On'yomi",
+    "kunyomi": "Kun'yomi",
+    "examples": "Examples",
+    "strokes": "Strokes",
+    "radical": "Radical",
+    "jlptLevel": "JLPT Level"
+  }
+}

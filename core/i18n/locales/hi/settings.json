@@ -1,0 +1,58 @@
+{
+  "title": "Settings",
+  "description": "Customize your learning experience",
+  "general": {
+    "title": "General",
+    "language": "Language",
+    "theme": "Theme",
+    "sound": "Sound Effects",
+    "notifications": "Notifications"
+  },
+  "appearance": {
+    "title": "Appearance",
+    "colorTheme": "Color Theme",
+    "font": "Japanese Font",
+    "fontSize": "Font Size",
+    "darkMode": "Dark Mode",
+    "customTheme": "Custom Theme"
+  },
+  "game": {
+    "title": "Game Settings",
+    "timeLimit": "Time Limit",
+    "questionsPerSession": "Questions per Session",
+    "difficulty": "Difficulty",
+    "autoNext": "Auto Next Question",
+    "showHints": "Show Hints"
+  },
+  "audio": {
+    "title": "Audio",
+    "soundEffects": "Sound Effects",
+    "volume": "Volume",
+    "clickSound": "Click Sound",
+    "correctSound": "Correct Answer Sound",
+    "incorrectSound": "Incorrect Answer Sound"
+  },
+  "preferences": {
+    "title": "Preferences",
+    "showRomaji": "Show Romaji",
+    "showFurigana": "Show Furigana",
+    "inputMethod": "Input Method",
+    "keyboardShortcuts": "Keyboard Shortcuts"
+  },
+  "data": {
+    "title": "Data",
+    "exportData": "Export Data",
+    "importData": "Import Data",
+    "resetProgress": "Reset Progress",
+    "clearCache": "Clear Cache",
+    "confirmReset": "Are you sure you want to reset all progress? This action cannot be undone."
+  },
+  "themes": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System",
+    "custom": "Custom",
+    "presets": "Theme Presets",
+    "createCustom": "Create Custom Theme"
+  }
+}

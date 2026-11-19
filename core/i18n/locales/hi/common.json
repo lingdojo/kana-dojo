@@ -1,0 +1,67 @@
+{
+  "buttons": {
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "confirm": "Confirm",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "finish": "Finish",
+    "start": "Start",
+    "pause": "Pause",
+    "resume": "Resume",
+    "reset": "Reset",
+    "clear": "Clear",
+    "apply": "Apply",
+    "done": "Done",
+    "ok": "OK",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "messages": {
+    "loading": "Loading...",
+    "saving": "Saving...",
+    "success": "Success!",
+    "error": "An error occurred",
+    "saved": "Saved successfully",
+    "deleted": "Deleted successfully",
+    "updated": "Updated successfully",
+    "noData": "No data available",
+    "tryAgain": "Please try again",
+    "confirmDelete": "Are you sure you want to delete this?"
+  },
+  "validation": {
+    "required": "This field is required",
+    "invalid": "Invalid value",
+    "tooShort": "Too short",
+    "tooLong": "Too long",
+    "email": "Invalid email address",
+    "number": "Must be a number"
+  },
+  "time": {
+    "seconds": "seconds",
+    "minutes": "minutes",
+    "hours": "hours",
+    "days": "days",
+    "second": "second",
+    "minute": "minute",
+    "hour": "hour",
+    "day": "day"
+  },
+  "actions": {
+    "edit": "Edit",
+    "view": "View",
+    "download": "Download",
+    "upload": "Upload",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "refresh": "Refresh",
+    "share": "Share",
+    "copy": "Copy",
+    "paste": "Paste",
+    "backToTop": "Back to top"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "title": "शब्दावली प्रशिक्षण",
+  "description": "अपनी जापानी शब्दावली का विस्तार करें",
+  "selection": {
+    "title": "शब्दावली चुनें",
+    "byLevel": "JLPT स्तर के अनुसार",
+    "byCategory": "श्रेणी के अनुसार",
+    "selectAll": "सभी चुनें",
+    "deselectAll": "सभी अनचयनित करें",
+    "levels": {
+      "n5": "JLPT N5",
+      "n4": "JLPT N4",
+      "n3": "JLPT N3",
+      "n2": "JLPT N2",
+      "n1": "JLPT N1"
+    },
+    "categories": {
+      "all": "सभी",
+      "nouns": "संज्ञा",
+      "verbs": "क्रिया",
+      "adjectives": "विशेषण",
+      "adverbs": "क्रिया विशेषण",
+      "expressions": "अभिव्यक्तियाँ"
+    }
+  },
+  "game": {
+    "title": "शब्दावली खेल",
+    "start": "खेल शुरू करें",
+    "pause": "विराम दें",
+    "resume": "फिर से शुरू करें",
+    "finish": "समाप्त करें",
+    "nextQuestion": "अगला प्रश्न",
+    "submit": "उत्तर जमा करें",
+    "score": "अंक: {{points}}",
+    "timeLeft": "शेष समय: {{seconds}}s",
+    "streak": "लगातार सही: {{count}}",
+    "correct": "सही!",
+    "incorrect": "गलत",
+    "showAnswer": "उत्तर दिखाएं"
+  },
+  "modes": {
+    "pick": "चयन मोड",
+    "reversePick": "विपरीत चयन मोड",
+    "input": "इनपुट मोड",
+    "reverseInput": "विपरीत इनपुट मोड",
+    "description": {
+      "pick": "शब्द देखें, अर्थ चुनें",
+      "reversePick": "अर्थ देखें, शब्द चुनें",
+      "input": "शब्द देखें, अर्थ टाइप करें",
+      "reverseInput": "अर्थ देखें, शब्द टाइप करें"
+    }
+  },
+  "results": {
+    "title": "परिणाम",
+    "congratulations": "बधाई हो!",
+    "correct": "सही: {{count}}",
+    "incorrect": "गलत: {{count}}",
+    "accuracy": "सटीकता: {{percentage}}%",
+    "timeSpent": "बिताया गया समय: {{time}}",
+    "playAgain": "फिर से खेलें",
+    "backToMenu": "मुख्य मेनू पर वापस जाएं"
+  },
+  "details": {
+    "word": "शब्द",
+    "reading": "उच्चारण",
+    "meaning": "अर्थ",
+    "examples": "उदाहरण वाक्य",
+    "type": "प्रकार",
+    "jlptLevel": "JLPT स्तर"
+  }
+}
