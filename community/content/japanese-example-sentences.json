@@ -160,5 +160,11 @@
     "romaji": "Toshokan de karita hon o kinou yomiowemashita.",
     "english": "I finished reading the book I borrowed from the library yesterday.",
     "jlpt": "N4"
+  },
+  {
+    "japanese": "この漢字の読み方を教えてください。",
+    "romaji": "Kono kanji no yomikata o oshiete kudasai.",
+    "english": "Please tell me how to read this kanji.",
+    "jlpt": "N5"
   }
 ]
