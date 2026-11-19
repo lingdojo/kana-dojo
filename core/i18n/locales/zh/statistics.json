@@ -1,45 +1,47 @@
 {
   "title": "统计",
-  "description": "查看您的学习进度",
+  "description": "您的学习进度和统计数据",
   "overview": {
     "title": "概览",
     "totalStudyTime": "总学习时间",
-    "totalSessions": "总学习次数",
-    "totalQuestions": "总题目数",
-    "averageAccuracy": "平均准确率",
-    "currentStreak": "当前连续天数",
-    "longestStreak": "最长连续天数"
+    "questionsAnswered": "已回答题目数",
+    "accuracy": "总体准确率",
+    "currentStreak": "当前连续学习天数",
+    "longestStreak": "最长连续学习天数"
   },
   "charts": {
     "dailyActivity": "每日活动",
-    "weeklyProgress": "每周进度",
-    "monthlyProgress": "每月进度",
-    "accuracyByType": "按类型准确率"
+    "accuracyOverTime": "准确率变化趋势",
+    "progressByLevel": "各级别学习进度",
+    "timeByDojo": "各道场学习时间"
   },
   "kana": {
     "title": "假名统计",
-    "hiragana": "平假名",
-    "katakana": "片假名",
     "mastered": "已掌握",
     "learning": "学习中",
-    "needsPractice": "需要练习"
+    "notStarted": "尚未开始",
+    "hiraganaProgress": "平假名学习进度",
+    "katakanaProgress": "片假名学习进度"
   },
   "kanji": {
     "title": "汉字统计",
-    "byLevel": "按级别",
     "mastered": "已掌握",
-    "learning": "学习中"
+    "learning": "学习中",
+    "notStarted": "尚未开始",
+    "byLevel": "按 JLPT 等级统计"
   },
   "vocabulary": {
     "title": "词汇统计",
-    "byLevel": "按级别",
+    "wordsLearned": "已学习词汇量",
     "mastered": "已掌握",
-    "learning": "学习中"
+    "learning": "学习中",
+    "byLevel": "按 JLPT 等级统计"
   },
-  "time": {
-    "today": "今天",
-    "thisWeek": "本周",
-    "thisMonth": "本月",
-    "allTime": "全部时间"
+  "performance": {
+    "title": "学习表现",
+    "bestAccuracy": "最高准确率",
+    "fastestTime": "最快完成时间",
+    "longestSession": "最长学习时长",
+    "mostImproved": "进步最大"
   }
 }
