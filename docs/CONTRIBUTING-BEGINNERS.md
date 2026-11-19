@@ -18,11 +18,11 @@
    - macOS: Install Xcode Command Line Tools by running `xcode-select --install` in Terminal, or download from git-scm.com.
    - Linux: Use your package manager, e.g. `sudo apt install git`.
 6. **Install Node.js (includes npm)**:
-   - Go to <https://nodejs.org/en/download>. Choose the **LTS** installer for your OS.
+   - Go to <https://nodejs.org/en/download>. Select **Node.js 24 LTS** and download the installer for your OS.
    - Run the installer and accept defaults.
 7. **Install a code editor**: We recommend [VS Code](https://code.visualstudio.com/download). Download, run installer, accept defaults.
 
-> **Check setup**: Open Terminal/PowerShell and run `git --version` and `node --version`. Both should print versions. If not, reinstall.
+> **Check setup**: Open Terminal/PowerShell and run `git --version` and `node --version`. Git should print its version, and Node.js should show `v24.x.x` if you installed the recommended version.
 
 </details>
 
