@@ -52,7 +52,12 @@ export default function BlitzVocab() {
     inputPlaceholder: 'Type the meaning...',
     modeDescription: 'Mode: Type (See Japanese word → Type meaning)',
     checkAnswer: (question, answer, isReverse) =>
-      isVocabularyMeaningAnswerCorrect(question, answer, isReverse),
+      isVocabularyMeaningAnswerCorrect(
+        question,
+        answer,
+        isReverse,
+        selectedVocabObjs,
+      ),
     getCorrectAnswer: (question, isReverse) =>
       isReverse ? question.word : question.meanings[0],
     // Pick mode support with reverse mode
