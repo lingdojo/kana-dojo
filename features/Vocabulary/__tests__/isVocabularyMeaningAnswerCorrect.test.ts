@@ -14,7 +14,9 @@ describe('isVocabularyMeaningAnswerCorrect', () => {
     answer => {
       const phrase = { ...vocabulary, meanings: ['well then…'] };
 
-      expect(isVocabularyMeaningAnswerCorrect(phrase, answer, false)).toBe(true);
+      expect(isVocabularyMeaningAnswerCorrect(phrase, answer, false)).toBe(
+        true,
+      );
     },
   );
 
@@ -26,10 +28,26 @@ describe('isVocabularyMeaningAnswerCorrect', () => {
     );
   });
 
+  it.each(['well...', 'well…'])(
+    'accepts %s for さあ when the stored meaning uses an ellipsis',
+    answer => {
+      const vocabularyWithEllipsis = {
+        ...vocabulary,
+        word: 'さあ',
+        reading: 'さあ',
+        meanings: ['well…'],
+      };
+
+      expect(
+        isVocabularyMeaningAnswerCorrect(vocabularyWithEllipsis, answer, false),
+      ).toBe(true);
+    },
+  );
+
   it('normalizes meaning case and whitespace', () => {
-    expect(isVocabularyMeaningAnswerCorrect(vocabulary, ' america ', false)).toBe(
-      true,
-    );
+    expect(
+      isVocabularyMeaningAnswerCorrect(vocabulary, ' america ', false),
+    ).toBe(true);
   });
 
   it.each(['speak', 'Speak', 'to speak', '  TO   SPEAK  '])(
@@ -63,10 +81,12 @@ describe('isVocabularyMeaningAnswerCorrect', () => {
   it('preserves compound prefixes whose removal could change meaning', () => {
     const phrase = { ...vocabulary, meanings: ['to the point'] };
 
-    expect(isVocabularyMeaningAnswerCorrect(phrase, 'to the point', false)).toBe(
-      true,
+    expect(
+      isVocabularyMeaningAnswerCorrect(phrase, 'to the point', false),
+    ).toBe(true);
+    expect(isVocabularyMeaningAnswerCorrect(phrase, 'point', false)).toBe(
+      false,
     );
-    expect(isVocabularyMeaningAnswerCorrect(phrase, 'point', false)).toBe(false);
 
     const spacedPhrase = { ...vocabulary, meanings: ['to   the point'] };
     expect(isVocabularyMeaningAnswerCorrect(spacedPhrase, 'point', false)).toBe(
@@ -101,9 +121,9 @@ describe('isVocabularyMeaningAnswerCorrect', () => {
       reading: 'to speak',
     };
 
-    expect(
-      isVocabularyMeaningAnswerCorrect(prefixedWord, 'speak', true),
-    ).toBe(false);
+    expect(isVocabularyMeaningAnswerCorrect(prefixedWord, 'speak', true)).toBe(
+      false,
+    );
   });
 
   it.each([' アメリカ ', 'amerika', 'あめりか'])(
