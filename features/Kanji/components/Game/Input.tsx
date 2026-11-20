@@ -22,6 +22,7 @@ import { useSetProgressStore } from '@/features/Progress';
 import { shouldSuppressContinueKeyboardShortcut } from '@/shared/utils/game/continueShortcutGuard';
 import { useMenuSelectorStore } from '@/shared/ui-composite/Menu/store/useMenuSelectorStore';
 import { isKanjiClassicInputAnswerCorrect } from '@/features/Kanji/lib/isKanjiClassicInputAnswerCorrect';
+import { getKanjiClassicInputTargets } from '@/features/Kanji/lib/getReadingAnswerForms';
 
 // Get the global adaptive selector for weighted character selection
 const adaptiveSelector = getGlobalAdaptiveSelector();
@@ -116,11 +117,7 @@ const KanjiInputGame = ({
 
   const targetChar = isReverse
     ? correctKanjiObj?.kanjiChar
-    : [
-        ...(correctKanjiObj?.meanings ?? []),
-        ...(correctKanjiObj?.kunyomi?.map(k => k.split(' ')[0]) ?? []),
-        ...(correctKanjiObj?.onyomi?.map(k => k.split(' ')[0]) ?? []),
-      ];
+    : getKanjiClassicInputTargets(correctKanjiObj);
 
   const [displayAnswerSummary, setDisplayAnswerSummary] = useState(false);
   const [promptSequence, setPromptSequence] = useState(0);
