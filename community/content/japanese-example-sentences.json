@@ -166,5 +166,11 @@
     "romaji": "Kono kanji no yomikata o oshiete kudasai.",
     "english": "Please tell me how to read this kanji.",
     "jlpt": "N5"
+  },
+  {
+    "japanese": "漢字の意味を文脈で推測する力が大切だ。",
+    "romaji": "Kanji no imi o bunmyaku de suisoku suru chikara ga taisetsu da.",
+    "english": "Inferring kanji meaning from context is important.",
+    "jlpt": "N2"
   }
 ]
