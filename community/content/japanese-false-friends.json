@@ -390,39 +390,45 @@
     "example": "ミスしてもドンマイ！"
   },
   {
-  "termA": "ナンバー (nanbaa)",
-  "termB": "number (English)",
-  "explanation": "Can mean ranking position in Japanese usage. (Set 6)",
-  "example": "彼はチームのナンバー1だ。"
-},
-{
-  "termA": "マンション (manshon)",
-  "termB": "mansion (English)",
-  "explanation": "マンション means apartment building in Japanese. (Set 2)",
-  "example": "駅前のマンションに住んでいます。"
-},
-{
-  "termA": "アニメ (anime)",
-  "termB": "anime (English usage)",
-  "explanation": "In Japanese it can refer to animation in general. (Set 2)",
-  "example": "子どものころからアニメが好きだ。"
-},
+    "termA": "ナンバー (nanbaa)",
+    "termB": "number (English)",
+    "explanation": "Can mean ranking position in Japanese usage. (Set 6)",
+    "example": "彼はチームのナンバー1だ。"
+  },
   {
-  "termA": "チャレンジ (charenji)",
-  "termB": "challenge (English)",
-  "explanation": "Often means trying something new. (Set 3)",
-  "example": "新しい料理にチャレンジしてみる。"
-},
+    "termA": "マンション (manshon)",
+    "termB": "mansion (English)",
+    "explanation": "マンション means apartment building in Japanese. (Set 2)",
+    "example": "駅前のマンションに住んでいます。"
+  },
   {
-  "termA": "サラリーマン (sarariman)",
-  "termB": "salaryman",
-  "explanation": "Refers broadly to office workers. (Set 3)",
-  "example": "父は都内でサラリーマンをしている。"
-},
+    "termA": "アニメ (anime)",
+    "termB": "anime (English usage)",
+    "explanation": "In Japanese it can refer to animation in general. (Set 2)",
+    "example": "子どものころからアニメが好きだ。"
+  },
   {
-  "termA": "ナンバー (nanbaa)",
-  "termB": "number (English)",
-  "explanation": "Can mean ranking position in Japanese usage. (Set 2)",
-  "example": "彼はチームのナンバー1だ。"
-}
+    "termA": "チャレンジ (charenji)",
+    "termB": "challenge (English)",
+    "explanation": "Often means trying something new. (Set 3)",
+    "example": "新しい料理にチャレンジしてみる。"
+  },
+  {
+    "termA": "サラリーマン (sarariman)",
+    "termB": "salaryman",
+    "explanation": "Refers broadly to office workers. (Set 3)",
+    "example": "父は都内でサラリーマンをしている。"
+  },
+  {
+    "termA": "ナンバー (nanbaa)",
+    "termB": "number (English)",
+    "explanation": "Can mean ranking position in Japanese usage. (Set 2)",
+    "example": "彼はチームのナンバー1だ。"
+  },
+  {
+    "termA": "ナイーブ (naibu)",
+    "termB": "naive (English)",
+    "explanation": "Often means sensitive/delicate in Japanese. (Set 2)",
+    "example": "彼は意外とナイーブな性格だ。"
+  }
 ]
