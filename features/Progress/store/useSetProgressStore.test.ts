@@ -20,6 +20,11 @@ vi.mock('localforage', () => {
   };
 });
 
+import {
+  KANJI_SET_PROGRESS_CAP,
+  VOCAB_MEANING_PROGRESS_CAP,
+  VOCAB_READING_PROGRESS_CAP,
+} from '@/features/Progress/lib/setProgress';
 import useStatsStore from '@/features/Progress/store/useStatsStore';
 import useSetProgressStore from '@/features/Progress/store/useSetProgressStore';
 import useAutoLearningStore from '@/features/Progress/store/useAutoLearningStore';
@@ -62,7 +67,7 @@ describe('useSetProgressStore', () => {
     expect(useSetProgressStore.getState().data.vocabulary).toEqual({});
   });
 
-  it('caps kanji progress at 30 correct answers', async () => {
+  it('caps kanji progress at the configured cap', async () => {
     await useSetProgressStore.getState().hydrate();
 
     for (let i = 0; i < 250; i++) {
@@ -70,7 +75,7 @@ describe('useSetProgressStore', () => {
     }
 
     expect(useSetProgressStore.getState().data.kanji['日']).toEqual({
-      correct: 30,
+      correct: KANJI_SET_PROGRESS_CAP,
     });
   });
 
@@ -89,8 +94,8 @@ describe('useSetProgressStore', () => {
     }
 
     expect(useSetProgressStore.getState().data.vocabulary['日本語']).toEqual({
-      meaningCorrect: 15,
-      readingCorrect: 15,
+      meaningCorrect: VOCAB_MEANING_PROGRESS_CAP,
+      readingCorrect: VOCAB_READING_PROGRESS_CAP,
     });
   });
 
