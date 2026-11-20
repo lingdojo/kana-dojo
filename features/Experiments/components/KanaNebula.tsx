@@ -16,11 +16,36 @@ interface StarKana {
   opacity: number;
 }
 
+// Small seeded PRNG (mulberry32) so the server and client render identical stars.
+function mulberry32(seed: number) {
+  let a = seed >>> 0;
+  return () => {
+    a = (a + 0x6d2b79f5) >>> 0;
+    let t = a;
+    t = Math.imul(t ^ (t >>> 15), t | 1);
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+const distantStarRandom = mulberry32(0x6b616e61);
+
+// Pre-formatted strings keep the style serialization identical on server and client.
+const DISTANT_STARS = Array.from({ length: 100 }, () => ({
+  width: `${(distantStarRandom() * 2).toFixed(3)}px`,
+  height: `${(distantStarRandom() * 2).toFixed(3)}px`,
+  top: `${(distantStarRandom() * 100).toFixed(3)}%`,
+  left: `${(distantStarRandom() * 100).toFixed(3)}%`,
+  opacity: distantStarRandom().toFixed(3),
+}));
+
 export default function KanaNebula() {
   const [stars, setStars] = useState<StarKana[]>([]);
   const { playClick } = useClick();
   const idCounter = useRef(0);
   const containerRef = useRef<HTMLDivElement>(null);
+  // Total stars spawned so far (ids are sequential), derived from state.
+  const spawnedCount = (stars.at(-1)?.id ?? -1) + 1;
 
   useEffect(() => {
     const spawnStar = () => {
@@ -44,8 +69,14 @@ export default function KanaNebula() {
 
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
-      document.documentElement.style.setProperty('--mouse-x', `${event.clientX}px`);
-      document.documentElement.style.setProperty('--mouse-y', `${event.clientY}px`);
+      document.documentElement.style.setProperty(
+        '--mouse-x',
+        `${event.clientX}px`,
+      );
+      document.documentElement.style.setProperty(
+        '--mouse-y',
+        `${event.clientY}px`,
+      );
     };
 
     document.addEventListener('mousemove', handleMouseMove);
@@ -65,17 +96,11 @@ export default function KanaNebula() {
 
       {/* Distant Stars (Static) */}
       <div className='absolute inset-0 opacity-30'>
-        {[...Array(100)].map((_, i) => (
+        {DISTANT_STARS.map((style, i) => (
           <div
             key={i}
             className='absolute rounded-full bg-white transition-opacity'
-            style={{
-              width: Math.random() * 2,
-              height: Math.random() * 2,
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-              opacity: Math.random(),
-            }}
+            style={style}
           />
         ))}
       </div>
@@ -146,7 +171,7 @@ export default function KanaNebula() {
       </motion.div>
 
       <div className='absolute right-10 bottom-10 z-20 font-mono text-[10px] tracking-widest text-indigo-400 uppercase opacity-20'>
-        Sector {Math.floor(idCounter.current / 10)}-Alpha
+        Sector {Math.floor(spawnedCount / 10)}-Alpha
       </div>
     </div>
   );
