@@ -370,9 +370,9 @@
     "explanation": "い-adjectives do not take だ in plain present. (Pattern set 5)"
   },
   {
-  "wrong": "この漢字は読み方が難しいです。",
-  "correct": "この漢字の読み方は難しいです。",
-  "explanation": "Prefer noun linkage with の. (Pattern set 6)"
+    "wrong": "この漢字は読み方が難しいです。",
+    "correct": "この漢字の読み方は難しいです。",
+    "explanation": "Prefer noun linkage with の. (Pattern set 6)"
   },
 
   {
@@ -381,8 +381,13 @@
     "explanation": "\u306a-adjectives require \u306a before nouns. (Pattern set 6)"
   },
   {
-  "wrong": "もし雨が降ります、行きません。",
-  "correct": "もし雨が降ったら、行きません。",
-  "explanation": "Conditional needs たら/なら etc. (Pattern set 2)"
-}
+    "wrong": "もし雨が降ります、行きません。",
+    "correct": "もし雨が降ったら、行きません。",
+    "explanation": "Conditional needs たら/なら etc. (Pattern set 2)"
+  },
+  {
+    "wrong": "毎日日本語を勉強していますから上手になります。",
+    "correct": "毎日日本語を勉強しているので上手になります。",
+    "explanation": "ので is smoother/neutral for reason. (Pattern set 3)"
+  }
 ]
