@@ -193,7 +193,7 @@ Per maggiori dettagli: [docs/ARCHITECTURE.md](./docs/ARCHITECTURE.md).
 
 ### Prerequisiti
 
-- **Node.js** 18.x o superiore
+- **Node.js** 24 LTS (consigliato)
 - **npm** 10.x o superiore
 
 ### Installazione
