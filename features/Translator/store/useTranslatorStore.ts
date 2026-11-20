@@ -26,7 +26,6 @@ const useTranslatorStore = create<TranslatorState>()((set, get) => ({
   // UI state
   isLoading: false,
   error: null,
-  isOffline: typeof navigator !== 'undefined' ? !navigator.onLine : false,
   verificationRequired: false,
   verificationToken: null,
 
@@ -154,7 +153,7 @@ const useTranslatorStore = create<TranslatorState>()((set, get) => ({
           : null;
       const errorMessage = code
         ? getErrorMessage(code)
-          : 'Translation failed. Please try again.';
+        : 'Translation failed. Please try again.';
 
       set({
         isLoading: false,
@@ -258,15 +257,5 @@ const useTranslatorStore = create<TranslatorState>()((set, get) => ({
     return true;
   },
 }));
-
-// Set up online/offline listeners
-if (typeof window !== 'undefined') {
-  window.addEventListener('online', () => {
-    useTranslatorStore.setState({ isOffline: false });
-  });
-  window.addEventListener('offline', () => {
-    useTranslatorStore.setState({ isOffline: true });
-  });
-}
 
 export default useTranslatorStore;

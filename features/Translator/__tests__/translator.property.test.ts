@@ -528,7 +528,6 @@ describe('Translator Store Property Tests', () => {
       romanization: null,
       isLoading: false,
       error: null,
-      isOffline: false,
       history: [],
     });
   });
@@ -758,7 +757,6 @@ describe('Property 1: Translation produces result', () => {
             romanization: null,
             isLoading: false,
             error: null,
-            isOffline: false,
             history: [],
           });
 
