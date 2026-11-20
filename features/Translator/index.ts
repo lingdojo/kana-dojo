@@ -17,6 +17,7 @@ export * from './lib/historyFilters';
 // Hooks
 export { useVoiceInput } from './hooks/useVoiceInput';
 export { useVoiceOutput } from './hooks/useVoiceOutput';
+export { useOnlineStatus } from './hooks/useOnlineStatus';
 
 // Store
 export { default as useTranslatorStore } from './store/useTranslatorStore';

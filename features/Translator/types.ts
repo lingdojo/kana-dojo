@@ -40,7 +40,6 @@ export interface TranslatorState {
   // UI state
   isLoading: boolean;
   error: string | null;
-  isOffline: boolean;
   verificationRequired: boolean;
   verificationToken: string | null;
 
