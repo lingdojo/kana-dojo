@@ -276,12 +276,6 @@
     "secondaryColor": "oklch(70.0% 0.090 110.0 / 1)"
   },
   {
-    "id": "tangerine-fizz",
-    "backgroundColor": "oklch(94.0% 0.015 80.0 / 1)",
-    "mainColor": "oklch(70.0% 0.195 55.0 / 1)",
-    "secondaryColor": "oklch(80.0% 0.125 95.0 / 1)"
-  },
-  {
     "id": "tsukimi-night",
     "backgroundColor": "oklch(14.0% 0.030 260.0 / 1)",
     "mainColor": "oklch(88.0% 0.050 230.0 / 1)",
@@ -514,5 +508,11 @@
       "backgroundColor": "oklch(13.0% 0.015 260.0 / 1)",
       "mainColor": "oklch(68.0% 0.035 220.0 / 1)",
       "secondaryColor": "oklch(45.0% 0.025 260.0 / 1)"
+    },
+    {
+      "id": "tangerine-fizz",
+      "backgroundColor": "oklch(94.0% 0.015 80.0 / 1)",
+      "mainColor": "oklch(70.0% 0.195 55.0 / 1)",
+      "secondaryColor": "oklch(80.0% 0.125 95.0 / 1)"
     }
 ]
