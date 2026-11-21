@@ -514,5 +514,11 @@
       "backgroundColor": "oklch(13.0% 0.015 260.0 / 1)",
       "mainColor": "oklch(68.0% 0.035 220.0 / 1)",
       "secondaryColor": "oklch(45.0% 0.025 260.0 / 1)"
-    }
+    },
+  {
+    "id": "okinawa-sea",
+    "backgroundColor": "oklch(23.0% 0.055 215.0 / 1)",
+    "mainColor": "oklch(82.0% 0.165 195.0 / 1)",
+    "secondaryColor": "oklch(90.0% 0.125 180.0 / 1)"
+  }
 ]
