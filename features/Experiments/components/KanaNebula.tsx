@@ -21,6 +21,16 @@ export default function KanaNebula() {
   const { playClick } = useClick();
   const idCounter = useRef(0);
   const containerRef = useRef<HTMLDivElement>(null);
+  // Generated once so the static background doesn't jump on every re-render.
+  const [distantStars] = useState(() =>
+    Array.from({ length: 100 }, () => ({
+      width: Math.random() * 2,
+      height: Math.random() * 2,
+      top: `${Math.random() * 100}%`,
+      left: `${Math.random() * 100}%`,
+      opacity: Math.random(),
+    })),
+  );
 
   useEffect(() => {
     const spawnStar = () => {
@@ -44,8 +54,14 @@ export default function KanaNebula() {
 
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
-      document.documentElement.style.setProperty('--mouse-x', `${event.clientX}px`);
-      document.documentElement.style.setProperty('--mouse-y', `${event.clientY}px`);
+      document.documentElement.style.setProperty(
+        '--mouse-x',
+        `${event.clientX}px`,
+      );
+      document.documentElement.style.setProperty(
+        '--mouse-y',
+        `${event.clientY}px`,
+      );
     };
 
     document.addEventListener('mousemove', handleMouseMove);
@@ -54,6 +70,10 @@ export default function KanaNebula() {
       document.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);
+
+  // Star ids come from idCounter, so the newest star's id + 1 is the number
+  // spawned so far. Deriving it from state avoids reading the ref in render.
+  const spawnedCount = stars.length > 0 ? stars[stars.length - 1].id + 1 : 0;
 
   return (
     <div
@@ -65,17 +85,11 @@ export default function KanaNebula() {
 
       {/* Distant Stars (Static) */}
       <div className='absolute inset-0 opacity-30'>
-        {[...Array(100)].map((_, i) => (
+        {distantStars.map((style, i) => (
           <div
             key={i}
             className='absolute rounded-full bg-white transition-opacity'
-            style={{
-              width: Math.random() * 2,
-              height: Math.random() * 2,
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-              opacity: Math.random(),
-            }}
+            style={style}
           />
         ))}
       </div>
@@ -146,7 +160,7 @@ export default function KanaNebula() {
       </motion.div>
 
       <div className='absolute right-10 bottom-10 z-20 font-mono text-[10px] tracking-widest text-indigo-400 uppercase opacity-20'>
-        Sector {Math.floor(idCounter.current / 10)}-Alpha
+        Sector {Math.floor(spawnedCount / 10)}-Alpha
       </div>
     </div>
   );
