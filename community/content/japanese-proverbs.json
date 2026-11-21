@@ -92,8 +92,8 @@
   {
     "japanese": "情けは人の為ならず",
     "romaji": "Nasake wa hito no tame narazu",
-    "english": "Kindness is not for others",
-    "meaning": "Good deeds return to you"
+    "english": "Kindness is not for others alone",
+    "meaning": "Kindness comes back to you"
   },
   {
     "japanese": "棚からぼた餅",
@@ -342,22 +342,10 @@
     "meaning": "Persistence can overcome great obstacles"
   },
   {
-    "japanese": "口は災いの元",
-    "romaji": "Kuchi wa wazawai no moto",
-    "english": "The mouth is the source of disaster",
-    "meaning": "Careless speech can cause trouble"
-  },
-  {
     "japanese": "餅は餅屋",
     "romaji": "Mochi wa mochiya",
     "english": "Mochi should be made by the mochi shop",
     "meaning": "Leave it to the experts"
-  },
-  {
-    "japanese": "灯台下暗し",
-    "romaji": "Toudai moto kurashi",
-    "english": "It's darkest under the lighthouse",
-    "meaning": "The obvious is overlooked"
   },
   {
     "japanese": "急がば回れ",
@@ -366,22 +354,10 @@
     "meaning": "Haste makes waste; the slower path is faster"
   },
   {
-    "japanese": "覆水盆に返らず",
-    "romaji": "Fukusui bon ni kaerazu",
-    "english": "Spilled water will not return to the tray",
-    "meaning": "What is done cannot be undone"
-  },
-  {
     "japanese": "百聞は一見に如かず",
     "romaji": "Hyakubun wa ikken ni shikazu",
     "english": "Hearing a hundred times is not as good as seeing once",
     "meaning": "Seeing is believing"
-  },
-  {
-    "japanese": "後悔先に立たず",
-    "romaji": "Koukai saki ni tatazu",
-    "english": "Regret does not stand before",
-    "meaning": "It's too late for regrets"
   },
   {
     "japanese": "一期一会",
@@ -396,18 +372,6 @@
     "meaning": "True skill is modest"
   },
   {
-    "japanese": "縁は異なもの味なもの",
-    "romaji": "En wa inamono aji na mono",
-    "english": "Fate is strange yet delightful",
-    "meaning": "Chance connections can be surprisingly good"
-  },
-  {
-    "japanese": "情けは人の為ならず",
-    "romaji": "Nasake wa hito no tame narazu",
-    "english": "Kindness is not for others alone",
-    "meaning": "Kindness comes back to you"
-  },
-  {
     "japanese": "三人寄れば文殊の知恵",
     "romaji": "Sannin yoreba monju no chie",
     "english": "Three people together have the wisdom of Monju",
@@ -418,18 +382,6 @@
     "romaji": "Zen wa isoge",
     "english": "Hurry to do good",
     "meaning": "Do worthwhile things promptly"
-  },
-  {
-    "japanese": "雨降って地固まる",
-    "romaji": "Ame futte ji katamaru",
-    "english": "After the rain, the ground hardens",
-    "meaning": "Hard times build resilience"
-  },
-  {
-    "japanese": "泣きっ面に蜂",
-    "romaji": "Naki tsura ni hachi",
-    "english": "A bee on a crying face",
-    "meaning": "Misfortune piles up"
   },
   {
     "japanese": "猫に小判",
