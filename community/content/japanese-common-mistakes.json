@@ -384,5 +384,15 @@
   "wrong": "もし雨が降ります、行きません。",
   "correct": "もし雨が降ったら、行きません。",
   "explanation": "Conditional needs たら/なら etc. (Pattern set 2)"
+},
+{
+  "wrong": "もし雨が降ります、行きません。",
+  "correct": "もし雨が降ったら、行きません。",
+  "explanation": "Conditional needs たら/なら etc. (Pattern set 2)"
+},
+{
+  "wrong": "駅まで十分歩きますかかる。",
+  "correct": "駅まで歩いて十分かかる。",
+  "explanation": "Use natural collocation and order. (Pattern set 3)"
 }
 ]
