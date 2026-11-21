@@ -92,8 +92,44 @@ For each pull request:
 | Variable              | Description                       | Default |
 | --------------------- | --------------------------------- | ------- |
 | `DISCORD_WEBHOOK_URL` | Discord webhook for notifications | Not set |
-| `SENTRY_DSN`          | Sentry error tracking             | Not set |
 | `ANALYZE`             | Bundle analysis                   | `false` |
+
+### Sentry (optional, opt-in)
+
+Sentry is **disabled by default**. When no DSN is configured the SDK is a no-op:
+no errors, logs, or PII are sent, and no source maps are uploaded. A fork that
+sets no Sentry variables stays fully silent. To use Sentry, set the variables
+below explicitly — nothing is hardcoded.
+
+#### Runtime
+
+| Variable                              | Scope         | Default | Description                                                     |
+| ------------------------------------- | ------------- | ------- | --------------------------------------------------------------- |
+| `SENTRY_DSN`                          | server / edge | not set | DSN for server and edge error reporting                         |
+| `NEXT_PUBLIC_SENTRY_DSN`              | client        | not set | DSN for browser error reporting; inlined into the client bundle |
+| `SENTRY_ENABLE_LOGS`                  | server / edge | `false` | Enable Sentry structured logs (`Sentry.logger`)                 |
+| `NEXT_PUBLIC_SENTRY_ENABLE_LOGS`      | client        | `false` | Same, for the browser                                           |
+| `SENTRY_SEND_DEFAULT_PII`             | server / edge | `false` | Attach default PII (IP, user id, headers, …) to events          |
+| `NEXT_PUBLIC_SENTRY_SEND_DEFAULT_PII` | client        | `false` | Same, for the browser                                           |
+
+Booleans use the literal string `true` (not `1`). `SENTRY_*` targets server and
+edge; the `NEXT_PUBLIC_*` variants target the browser.
+
+#### Source map upload (build-time)
+
+Uploaded only when **all four** of the following are set:
+
+| Variable                    | Description                                       |
+| --------------------------- | ------------------------------------------------- |
+| `SENTRY_UPLOAD_SOURCE_MAPS` | `true` enables source map upload                  |
+| `SENTRY_AUTH_TOKEN`         | **Secret.** Token used to authenticate the upload |
+| `SENTRY_ORG`                | Sentry organization slug                          |
+| `SENTRY_PROJECT`            | Sentry project slug                               |
+
+> **Migration note (official deployment).** These values were previously
+> hardcoded. Configure `SENTRY_DSN`, `NEXT_PUBLIC_SENTRY_DSN`, the logs/PII
+> flags, and the source map upload variables before merging, or error reporting
+> and source map upload will silently stop.
 
 ### Setting Environment Variables
 
