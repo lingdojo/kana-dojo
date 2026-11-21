@@ -1,0 +1,200 @@
+{"path":"/kana/train","training":true,"reason":"active training route; defer donation"}
+{"path":"/kana/training","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/kana/train/","training":true,"reason":"active training route; defer donation"}
+{"path":"/kana/trainer","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/kana/train/1","training":true,"reason":"active training route; defer donation"}
+{"path":"/kana/trainers","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/kana/train/1/","training":true,"reason":"active training route; defer donation"}
+{"path":"/kana/train-1","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/kana/train/pick","training":true,"reason":"active training route; defer donation"}
+{"path":"/kana/train2","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/kana/train/reverse-pick","training":true,"reason":"active training route; defer donation"}
+{"path":"/kana/trains","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/kana/train/input","training":true,"reason":"active training route; defer donation"}
+{"path":"/kana/Train","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/kana/train/reverse-input","training":true,"reason":"active training route; defer donation"}
+{"path":"/kana/TRAIN","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/kana/train/lesson/1","training":true,"reason":"active training route; defer donation"}
+{"path":"/kana/train_new","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/kana/train/lesson/2","training":true,"reason":"active training route; defer donation"}
+{"path":"/kana/train-v2","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/kana/train/challenge/10","training":true,"reason":"active training route; defer donation"}
+{"path":"/kana/train-quick","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/kana/train/challenge/20","training":true,"reason":"active training route; defer donation"}
+{"path":"/kana/practice","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/kana/train/session/1","training":true,"reason":"active training route; defer donation"}
+{"path":"/kana/review","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/kana/train/session/2","training":true,"reason":"active training route; defer donation"}
+{"path":"/kana/quiz","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/kana/train/unit/basic","training":true,"reason":"active training route; defer donation"}
+{"path":"/kana/trainx","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/kana/train/unit/advanced","training":true,"reason":"active training route; defer donation"}
+{"path":"/kana/training/1","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/kana/train/level/n5","training":true,"reason":"active training route; defer donation"}
+{"path":"/kana/trainer/10","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/kana/train/level/n4","training":true,"reason":"active training route; defer donation"}
+{"path":"/kana/train.backup","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/kana/train/practice/3","training":true,"reason":"active training route; defer donation"}
+{"path":"/kana/train_old","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/kana/train/quiz/10","training":true,"reason":"active training route; defer donation"}
+{"path":"/kana/train-data","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/kanji/train","training":true,"reason":"active training route; defer donation"}
+{"path":"/kanji/training","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/kanji/train/","training":true,"reason":"active training route; defer donation"}
+{"path":"/kanji/trainer","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/kanji/train/1","training":true,"reason":"active training route; defer donation"}
+{"path":"/kanji/trainers","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/kanji/train/1/","training":true,"reason":"active training route; defer donation"}
+{"path":"/kanji/train-1","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/kanji/train/pick","training":true,"reason":"active training route; defer donation"}
+{"path":"/kanji/train2","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/kanji/train/reverse-pick","training":true,"reason":"active training route; defer donation"}
+{"path":"/kanji/trains","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/kanji/train/input","training":true,"reason":"active training route; defer donation"}
+{"path":"/kanji/Train","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/kanji/train/reverse-input","training":true,"reason":"active training route; defer donation"}
+{"path":"/kanji/TRAIN","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/kanji/train/lesson/1","training":true,"reason":"active training route; defer donation"}
+{"path":"/kanji/train_new","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/kanji/train/lesson/2","training":true,"reason":"active training route; defer donation"}
+{"path":"/kanji/train-v2","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/kanji/train/challenge/10","training":true,"reason":"active training route; defer donation"}
+{"path":"/kanji/train-quick","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/kanji/train/challenge/20","training":true,"reason":"active training route; defer donation"}
+{"path":"/kanji/practice","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/kanji/train/session/1","training":true,"reason":"active training route; defer donation"}
+{"path":"/kanji/review","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/kanji/train/session/2","training":true,"reason":"active training route; defer donation"}
+{"path":"/kanji/quiz","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/kanji/train/unit/basic","training":true,"reason":"active training route; defer donation"}
+{"path":"/kanji/trainx","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/kanji/train/unit/advanced","training":true,"reason":"active training route; defer donation"}
+{"path":"/kanji/training/1","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/kanji/train/level/n5","training":true,"reason":"active training route; defer donation"}
+{"path":"/kanji/trainer/10","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/kanji/train/level/n4","training":true,"reason":"active training route; defer donation"}
+{"path":"/kanji/train.backup","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/kanji/train/practice/3","training":true,"reason":"active training route; defer donation"}
+{"path":"/kanji/train_old","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/kanji/train/quiz/10","training":true,"reason":"active training route; defer donation"}
+{"path":"/kanji/train-data","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/vocabulary/train","training":true,"reason":"active training route; defer donation"}
+{"path":"/vocabulary/training","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/vocabulary/train/","training":true,"reason":"active training route; defer donation"}
+{"path":"/vocabulary/trainer","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/vocabulary/train/1","training":true,"reason":"active training route; defer donation"}
+{"path":"/vocabulary/trainers","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/vocabulary/train/1/","training":true,"reason":"active training route; defer donation"}
+{"path":"/vocabulary/train-1","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/vocabulary/train/pick","training":true,"reason":"active training route; defer donation"}
+{"path":"/vocabulary/train2","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/vocabulary/train/reverse-pick","training":true,"reason":"active training route; defer donation"}
+{"path":"/vocabulary/trains","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/vocabulary/train/input","training":true,"reason":"active training route; defer donation"}
+{"path":"/vocabulary/Train","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/vocabulary/train/reverse-input","training":true,"reason":"active training route; defer donation"}
+{"path":"/vocabulary/TRAIN","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/vocabulary/train/lesson/1","training":true,"reason":"active training route; defer donation"}
+{"path":"/vocabulary/train_new","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/vocabulary/train/lesson/2","training":true,"reason":"active training route; defer donation"}
+{"path":"/vocabulary/train-v2","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/vocabulary/train/challenge/10","training":true,"reason":"active training route; defer donation"}
+{"path":"/vocabulary/train-quick","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/vocabulary/train/challenge/20","training":true,"reason":"active training route; defer donation"}
+{"path":"/vocabulary/practice","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/vocabulary/train/session/1","training":true,"reason":"active training route; defer donation"}
+{"path":"/vocabulary/review","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/vocabulary/train/session/2","training":true,"reason":"active training route; defer donation"}
+{"path":"/vocabulary/quiz","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/vocabulary/train/unit/basic","training":true,"reason":"active training route; defer donation"}
+{"path":"/vocabulary/trainx","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/vocabulary/train/unit/advanced","training":true,"reason":"active training route; defer donation"}
+{"path":"/vocabulary/training/1","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/vocabulary/train/level/n5","training":true,"reason":"active training route; defer donation"}
+{"path":"/vocabulary/trainer/10","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/vocabulary/train/level/n4","training":true,"reason":"active training route; defer donation"}
+{"path":"/vocabulary/train.backup","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/vocabulary/train/practice/3","training":true,"reason":"active training route; defer donation"}
+{"path":"/vocabulary/train_old","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/vocabulary/train/quiz/10","training":true,"reason":"active training route; defer donation"}
+{"path":"/vocabulary/train-data","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/en/kana/train","training":true,"reason":"active training route; defer donation"}
+{"path":"/en/kana/training","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/en/kana/train/","training":true,"reason":"active training route; defer donation"}
+{"path":"/en/kana/trainer","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/en/kana/train/1","training":true,"reason":"active training route; defer donation"}
+{"path":"/en/kana/trainers","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/en/kana/train/1/","training":true,"reason":"active training route; defer donation"}
+{"path":"/en/kana/train-1","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/en/kana/train/pick","training":true,"reason":"active training route; defer donation"}
+{"path":"/en/kana/train2","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/en/kana/train/reverse-pick","training":true,"reason":"active training route; defer donation"}
+{"path":"/en/kana/trains","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/en/kana/train/input","training":true,"reason":"active training route; defer donation"}
+{"path":"/en/kana/Train","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/en/kana/train/reverse-input","training":true,"reason":"active training route; defer donation"}
+{"path":"/en/kana/TRAIN","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/en/kana/train/lesson/1","training":true,"reason":"active training route; defer donation"}
+{"path":"/en/kana/train_new","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/en/kana/train/lesson/2","training":true,"reason":"active training route; defer donation"}
+{"path":"/en/kana/train-v2","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/en/kana/train/challenge/10","training":true,"reason":"active training route; defer donation"}
+{"path":"/en/kana/train-quick","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/en/kana/train/challenge/20","training":true,"reason":"active training route; defer donation"}
+{"path":"/en/kana/practice","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/en/kana/train/session/1","training":true,"reason":"active training route; defer donation"}
+{"path":"/en/kana/review","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/en/kana/train/session/2","training":true,"reason":"active training route; defer donation"}
+{"path":"/en/kana/quiz","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/en/kana/train/unit/basic","training":true,"reason":"active training route; defer donation"}
+{"path":"/en/kana/trainx","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/en/kana/train/unit/advanced","training":true,"reason":"active training route; defer donation"}
+{"path":"/en/kana/training/1","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/en/kana/train/level/n5","training":true,"reason":"active training route; defer donation"}
+{"path":"/en/kana/trainer/10","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/en/kana/train/level/n4","training":true,"reason":"active training route; defer donation"}
+{"path":"/en/kana/train.backup","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/en/kana/train/practice/3","training":true,"reason":"active training route; defer donation"}
+{"path":"/en/kana/train_old","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/en/kana/train/quiz/10","training":true,"reason":"active training route; defer donation"}
+{"path":"/en/kana/train-data","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/en/kanji/train","training":true,"reason":"active training route; defer donation"}
+{"path":"/en/kanji/training","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/en/kanji/train/","training":true,"reason":"active training route; defer donation"}
+{"path":"/en/kanji/trainer","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/en/kanji/train/1","training":true,"reason":"active training route; defer donation"}
+{"path":"/en/kanji/trainers","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/en/kanji/train/1/","training":true,"reason":"active training route; defer donation"}
+{"path":"/en/kanji/train-1","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/en/kanji/train/pick","training":true,"reason":"active training route; defer donation"}
+{"path":"/en/kanji/train2","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/en/kanji/train/reverse-pick","training":true,"reason":"active training route; defer donation"}
+{"path":"/en/kanji/trains","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/en/kanji/train/input","training":true,"reason":"active training route; defer donation"}
+{"path":"/en/kanji/Train","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/en/kanji/train/reverse-input","training":true,"reason":"active training route; defer donation"}
+{"path":"/en/kanji/TRAIN","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/en/kanji/train/lesson/1","training":true,"reason":"active training route; defer donation"}
+{"path":"/en/kanji/train_new","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/en/kanji/train/lesson/2","training":true,"reason":"active training route; defer donation"}
+{"path":"/en/kanji/train-v2","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/en/kanji/train/challenge/10","training":true,"reason":"active training route; defer donation"}
+{"path":"/en/kanji/train-quick","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/en/kanji/train/challenge/20","training":true,"reason":"active training route; defer donation"}
+{"path":"/en/kanji/practice","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/en/kanji/train/session/1","training":true,"reason":"active training route; defer donation"}
+{"path":"/en/kanji/review","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/en/kanji/train/session/2","training":true,"reason":"active training route; defer donation"}
+{"path":"/en/kanji/quiz","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/en/kanji/train/unit/basic","training":true,"reason":"active training route; defer donation"}
+{"path":"/en/kanji/trainx","training":false,"reason":"not an active training route; do not defer"}
+{"path":"/en/kanji/train/unit/advanced","training":true,"reason":"active training route; defer donation"}
+{"path":"/en/kanji/train/level/n5","training":true,"reason":"active training route; defer donation"}
+{"path":"/en/kanji/train/level/n4","training":true,"reason":"active training route; defer donation"}
+{"path":"/en/kanji/train/practice/3","training":true,"reason":"active training route; defer donation"}
+{"path":"/en/kanji/train/quiz/10","training":true,"reason":"active training route; defer donation"}
+{"path":"/en/vocabulary/train","training":true,"reason":"active training route; defer donation"}
+{"path":"/en/vocabulary/train/","training":true,"reason":"active training route; defer donation"}
+{"path":"/en/vocabulary/train/1","training":true,"reason":"active training route; defer donation"}
+{"path":"/en/vocabulary/train/1/","training":true,"reason":"active training route; defer donation"}
+{"path":"/en/vocabulary/train/pick","training":true,"reason":"active training route; defer donation"}
