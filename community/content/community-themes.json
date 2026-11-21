@@ -514,5 +514,11 @@
       "backgroundColor": "oklch(13.0% 0.015 260.0 / 1)",
       "mainColor": "oklch(68.0% 0.035 220.0 / 1)",
       "secondaryColor": "oklch(45.0% 0.025 260.0 / 1)"
+    },
+    {
+      "id": "anime-pop",
+      "backgroundColor": "oklch(95.0% 0.015 85.0 / 1)",
+      "mainColor": "oklch(65.0% 0.235 345.0 / 1)",
+      "secondaryColor": "oklch(70.0% 0.200 260.0 / 1)"
     }
 ]
