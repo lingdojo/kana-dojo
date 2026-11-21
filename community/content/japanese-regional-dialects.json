@@ -404,5 +404,12 @@
     "english": "negative form",
     "region": "Kansai",
     "note": "Example: 食べへん = 食べない。 (Set 6)"
+  },
+  {
+    "dialect": "〜けん",
+    "standardJapanese": "〜から",
+    "english": "because",
+    "region": "Kyushu",
+    "note": "Reason marker in Kyushu. (Set 5)"
   }
 ]
