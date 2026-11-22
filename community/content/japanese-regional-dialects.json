@@ -413,10 +413,10 @@
     "note": "Reason marker in Kyushu. (Set 5)"
   },
   {
-  "dialect": "〜へん",
-  "standardJapanese": "〜ない",
-  "english": "negative form",
-  "region": "Kansai",
-  "note": "Example: 食べへん = 食べない。 (Set 4)"
-}
+  "dialect": "ぶち",
+  "standardJapanese": "とても",
+  "english": "very",
+  "region": "Yamaguchi/Hiroshima",
+  "note": "Regional intensifier. (Set 6)"
+  }
 ]

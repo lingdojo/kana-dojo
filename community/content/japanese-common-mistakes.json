@@ -374,7 +374,6 @@
   "correct": "この漢字の読み方は難しいです。",
   "explanation": "Prefer noun linkage with の. (Pattern set 6)"
   },
-
   {
     "wrong": "\u9759\u304b\u3044\u90e8\u5c4b",
     "correct": "\u9759\u304b\u306a\u90e8\u5c4b",
@@ -384,15 +383,20 @@
   "wrong": "もし雨が降ります、行きません。",
   "correct": "もし雨が降ったら、行きません。",
   "explanation": "Conditional needs たら/なら etc. (Pattern set 2)"
-},
-{
+  },
+  {
   "wrong": "もし雨が降ります、行きません。",
   "correct": "もし雨が降ったら、行きません。",
   "explanation": "Conditional needs たら/なら etc. (Pattern set 2)"
-},
-{
+  },
+  {
   "wrong": "駅まで十分歩きますかかる。",
   "correct": "駅まで歩いて十分かかる。",
   "explanation": "Use natural collocation and order. (Pattern set 3)"
+},
+{
+  "wrong": "先生は私を日本語を教えました。",
+  "correct": "先生は私に日本語を教えました。",
+  "explanation": "Recipient takes に with 教える. (Pattern set 6)"
 }
 ]
