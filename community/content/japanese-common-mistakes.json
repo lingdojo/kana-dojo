@@ -394,5 +394,10 @@
   "wrong": "駅まで十分歩きますかかる。",
   "correct": "駅まで歩いて十分かかる。",
   "explanation": "Use natural collocation and order. (Pattern set 3)"
+},
+{
+  "wrong": "日本語をわかります。",
+  "correct": "日本語がわかります。",
+  "explanation": "わかる takes が. (Pattern set 4)"
 }
 ]
