@@ -24,7 +24,23 @@ export async function POST(request: NextRequest) {
     const sitemapUrl = body.sitemapUrl || `${SITE_URL}/sitemap.xml`;
 
     // Validate sitemap URL
-    if (!sitemapUrl.startsWith(SITE_URL)) {
+    let isValidUrl = false;
+
+    if (typeof sitemapUrl === 'string') {
+      try {
+        const parsedUrl = new URL(sitemapUrl);
+        const expectedUrl = new URL(SITE_URL);
+
+        isValidUrl =
+          parsedUrl.origin === expectedUrl.origin &&
+          !parsedUrl.username &&
+          !parsedUrl.password;
+      } catch {
+        isValidUrl = false;
+      }
+    }
+
+    if (!isValidUrl) {
       return NextResponse.json(
         { error: 'Invalid sitemap URL' },
         { status: 400 },
