@@ -67,8 +67,6 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
           ? selectedVocabSets.length > 0 || selectedWordObjs.length > 0
           : false;
 
-  const buttonRef = useRef<HTMLButtonElement | null>(null);
-
   const startAutoLearning = () => {
     document
       .querySelector<HTMLButtonElement>('[data-auto-learning-dojo]')
@@ -357,7 +355,6 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
 
                 startAutoLearning();
               },
-              ref: buttonRef,
             },
           ]
             .filter(btn => btn.show)
@@ -369,11 +366,9 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
                 iconClassName,
                 colorScheme,
                 onClick,
-                ref,
               }) => (
                 <button
                   key={id}
-                  ref={ref}
                   disabled={id === 'classic' && !isFilled}
                   className={cn(
                     'flex flex-row items-center justify-center gap-2 py-3',

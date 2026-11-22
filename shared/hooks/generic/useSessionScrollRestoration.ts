@@ -20,9 +20,6 @@ export default function useSessionScrollRestoration(
   const enabledRef = useRef(enabled);
   const readyRef = useRef(ready);
 
-  enabledRef.current = enabled;
-  readyRef.current = ready;
-
   const savePosition = useCallback(() => {
     try {
       sessionStorage.setItem(storageKey, String(positionRef.current));
@@ -62,6 +59,8 @@ export default function useSessionScrollRestoration(
   );
 
   useLayoutEffect(() => {
+    enabledRef.current = enabled;
+    readyRef.current = ready;
     if (!enabled || !ready || !scrollElementRef.current) return;
     restorePosition(scrollElementRef.current);
   }, [enabled, ready, restorePosition]);
