@@ -430,5 +430,11 @@
     "termB": "naive (English)",
     "explanation": "Often means sensitive/delicate in Japanese. (Set 2)",
     "example": "彼は意外とナイーブな性格だ。"
-  }
+  },
+  {
+  "termA": "サラリーマン (sarariman)",
+  "termB": "salaryman",
+  "explanation": "Refers broadly to office workers. (Set 1)",
+  "example": "父は都内でサラリーマンをしている。"
+}
 ]
