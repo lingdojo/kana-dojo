@@ -79,7 +79,8 @@ For each pull request:
 
 | Variable                        | Description                                                                 | Where to Get                                              |
 | ------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------- |
-| `GOOGLE_TRANSLATE_API_KEY`      | Google Cloud Translation API key                                            | [Google Cloud Console](https://console.cloud.google.com/) |
+| `AZURE_TRANSLATOR_KEY`          | Azure Translator API key (primary translation provider)                    | [Azure Portal](https://portal.azure.com/)                 |
+| `DEEPSEEK_API_KEY`               | DeepSeek API key (translation fallback; shared with bug report processing)  | [DeepSeek Platform](https://platform.deepseek.com/)       |
 | `NEXT_PUBLIC_GA_ID`             | Google Analytics measurement ID                                             | [Google Analytics](https://analytics.google.com/)         |
 | `NEXT_PUBLIC_POSTHOG_KEY`       | PostHog API key (client)                                                    | [PostHog](https://posthog.com/)                           |
 | `POSTHOG_API_KEY`               | PostHog API key (server, optional; falls back to `NEXT_PUBLIC_POSTHOG_KEY`) | [PostHog](https://posthog.com/)                           |
@@ -91,6 +92,8 @@ For each pull request:
 
 | Variable              | Description                       | Default |
 | --------------------- | --------------------------------- | ------- |
+| `AZURE_TRANSLATOR_ENDPOINT` | Azure Translator endpoint (optional) | Microsoft's public endpoint |
+| `AZURE_TRANSLATOR_REGION` | Azure Translator region (optional) | Not set |
 | `DISCORD_WEBHOOK_URL` | Discord webhook for notifications | Not set |
 | `SENTRY_DSN`          | Sentry error tracking             | Not set |
 | `ANALYZE`             | Bundle analysis                   | `false` |
