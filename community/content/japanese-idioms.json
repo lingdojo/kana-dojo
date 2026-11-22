@@ -442,5 +442,23 @@
   "romaji": "Nen ni wa nen o ireru",
   "english": "Add caution to caution",
   "meaning": "Take extra care. (Set 5)"
+},
+  {
+  "japanese": "足を引っ張る",
+  "romaji": "Ashi o hipparu",
+  "english": "Pull someone back",
+  "meaning": "Hold someone back. (Set 3)"
+},
+{
+  "japanese": "鼻が高い",
+  "romaji": "Hana ga takai",
+  "english": "High nose",
+  "meaning": "Feel proud. (Set 2)"
+},
+{
+  "japanese": "腹が立つ",
+  "romaji": "Hara ga tatsu",
+  "english": "Stomach stands up",
+  "meaning": "Get angry. (Set 5)"
 }
 ]

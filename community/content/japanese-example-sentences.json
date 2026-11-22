@@ -162,9 +162,15 @@
     "jlpt": "N4"
   },
   {
-    "japanese": "この漢字の読み方を教えてください。",
-    "romaji": "Kono kanji no yomikata o oshiete kudasai.",
-    "english": "Please tell me how to read this kanji.",
-    "jlpt": "N5"
+    "japanese": "日本のニュースを毎日読むようにしています。",
+    "romaji": "Nihon no nyuusu o mainichi yomu you ni shiteimasu.",
+    "english": "I make a habit of reading Japanese news every day.",
+    "jlpt": "N3"
+  },
+  {
+    "japanese": "雨が降りそうだから、傘を持って行こう。",
+    "romaji": "Ame ga furisou dakara, kasa o motte ikou.",
+    "english": "It looks like rain, so let's bring an umbrella.",
+    "jlpt": "N4"
   }
 ]
