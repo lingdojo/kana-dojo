@@ -860,8 +860,8 @@
     "romaji": "I no naka no kawazu taikai wo shirazu",
     "english": "A frog in a well does not know the great sea",
     "meaning": "Limited experience limits perspective",
-    "completed": false,
-    "issued": false
+    "completed": true,
+    "issued": true
   },
   {
     "id": 97,

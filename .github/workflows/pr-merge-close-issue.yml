@@ -392,7 +392,7 @@ jobs:
                     const proverbIndex = proverbs.findIndex(function(p) { return p.id === proverbId; });
                     if (proverbIndex !== -1) {
                       proverbs[proverbIndex].issued = false;
-                      proverbs[proverbIndex].issued = false;
+                      proverbs[proverbIndex].completed = true;
                       proverbs[proverbIndex].completedBy = prAuthor;
                       proverbs[proverbIndex].completedPR = prNumber;
                       fs.writeFileSync(proverbsBacklogPath, JSON.stringify(proverbs, null, 2));

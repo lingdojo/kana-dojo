@@ -485,7 +485,13 @@ jobs:
               } else if (nextType === 'proverb') {
               // Proverb
               item = findRandomEligible(proverbs, function(p) {
-                if (p.issued) {
+                if (p.issued || p.completed) {
+                  return false;
+                }
+                // Skip proverbs already added to the content file (#34454)
+                if (existingProverbs.some(function(existing) {
+                  return existing.japanese === p.japanese;
+                })) {
                   return false;
                 }
                 return true;
