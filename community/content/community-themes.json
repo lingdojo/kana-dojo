@@ -496,5 +496,11 @@
     "backgroundColor": "oklch(16.0% 0.055 270.0 / 1)",
     "mainColor": "oklch(72.0% 0.195 220.0 / 1)",
     "secondaryColor": "oklch(68.0% 0.205 30.0 / 1)"
+  },
+  {
+    "id": "shoji-glow",
+    "backgroundColor": "oklch(94.0% 0.010 95.0 / 1)",
+    "mainColor": "oklch(45.0% 0.075 65.0 / 1)",
+    "secondaryColor": "oklch(60.0% 0.045 30.0 / 1)"
   }
 ]
