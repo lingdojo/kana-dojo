@@ -184,7 +184,7 @@ KanaDojo wurde mit modernen Web-Technologien für optimale Leistung und Entwickl
 
 ### Voraussetzungen
 
-- **Node.js** 18.x oder höher
+- **Node.js** 24 LTS (empfohlen)
 - **npm** 10.x oder höher (kommt mit Node.js)
 
 ### Installation

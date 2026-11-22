@@ -81,6 +81,8 @@ All contributions are welcome! Whether you're fixing bugs, adding features, impr
 
 ## Quick Start
 
+We recommend [Node.js 24 LTS](https://nodejs.org/en/download) for local development.
+
 ```bash
 git clone https://github.com/lingdojo/kana-dojo.git
 cd kana-dojo
