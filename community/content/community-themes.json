@@ -514,5 +514,11 @@
       "backgroundColor": "oklch(13.0% 0.015 260.0 / 1)",
       "mainColor": "oklch(68.0% 0.035 220.0 / 1)",
       "secondaryColor": "oklch(45.0% 0.025 260.0 / 1)"
-    }
+    },
+  {
+    "id": "robot-anime",
+    "backgroundColor": "oklch(16.0% 0.055 270.0 / 1)",
+    "mainColor": "oklch(72.0% 0.195 220.0 / 1)",
+    "secondaryColor": "oklch(68.0% 0.205 30.0 / 1)"
+  }
 ]
