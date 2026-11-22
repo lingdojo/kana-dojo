@@ -1,7 +1,7 @@
 {
-  "lastType": "fact",
-  "lastRun": "2026-11-20T22:55:43.955Z",
-  "totalIssuesCreated": 21981,
+  "lastType": "commonMistake",
+  "lastRun": "2026-11-22T09:40:51.205Z",
+  "totalIssuesCreated": 22021,
   "consecutiveNoIssueRuns": 0,
-  "lastIssueCreatedAt": "2026-11-20T22:55:43.961Z"
+  "lastIssueCreatedAt": "2026-11-22T09:40:51.342Z"
 }
