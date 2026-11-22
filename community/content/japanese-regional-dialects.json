@@ -411,5 +411,12 @@
     "english": "because",
     "region": "Kyushu",
     "note": "Reason marker in Kyushu. (Set 5)"
+  },
+  {
+    "dialect": "ぶち",
+    "standardJapanese": "とても",
+    "english": "very",
+    "region": "Yamaguchi/Hiroshima",
+    "note": "Regional intensifier. (Set 6)"
   }
 ]
