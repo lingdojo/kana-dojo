@@ -485,10 +485,16 @@
     "mainColor": "oklch(70.0% 0.195 55.0 / 1)",
     "secondaryColor": "oklch(80.0% 0.125 95.0 / 1)"
   },
+{
+  "id": "thunder-god",
+  "backgroundColor": "oklch(14.0% 0.058 290.0 / 1)",
+  "mainColor": "oklch(88.0% 0.195 95.0 / 1)",
+  "secondaryColor": "oklch(75.0% 0.180 275.0 / 1)"
+},
   {
-    "id": "thunder-god",
-    "backgroundColor": "oklch(14.0% 0.058 290.0 / 1)",
-    "mainColor": "oklch(88.0% 0.195 95.0 / 1)",
-    "secondaryColor": "oklch(75.0% 0.180 275.0 / 1)"
+    "id": "robot-anime",
+    "backgroundColor": "oklch(16.0% 0.055 270.0 / 1)",
+    "mainColor": "oklch(72.0% 0.195 220.0 / 1)",
+    "secondaryColor": "oklch(68.0% 0.205 30.0 / 1)"
   }
 ]

@@ -395,8 +395,18 @@
     "explanation": "Use natural collocation and order. (Pattern set 3)"
   },
   {
-    "wrong": "先生は私を日本語を教えました。",
-    "correct": "先生は私に日本語を教えました。",
-    "explanation": "Recipient takes に with 教える. (Pattern set 6)"
-  }
+  "wrong": "駅まで十分歩きますかかる。",
+  "correct": "駅まで歩いて十分かかる。",
+  "explanation": "Use natural collocation and order. (Pattern set 3)"
+},
+{
+  "wrong": "先生は私を日本語を教えました。",
+  "correct": "先生は私に日本語を教えました。",
+  "explanation": "Recipient takes に with 教える. (Pattern set 6)"
+},
+{
+  "wrong": "日本語をわかります。",
+  "correct": "日本語がわかります。",
+  "explanation": "わかる takes が. (Pattern set 4)"
+}
 ]
