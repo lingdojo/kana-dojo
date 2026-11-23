@@ -175,7 +175,7 @@ KanaDojo, en iyi performans ve geliştirici deneyimi için modern web teknolojil
 
 ### Önkoşullar
 
-- **Node.js** 18.x veya üstü
+- **Node.js** 24 LTS (önerilen)
 - **npm** 10.x veya üstü (Node.js ile birlikte gelir)
 
 ### Kurulum
