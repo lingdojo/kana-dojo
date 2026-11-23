@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, useRef, useCallback } from 'react';
+import { useEffect, useLayoutEffect, useState, useRef, useCallback } from 'react';
 import { usePathname } from 'next/navigation';
 import { useRouter } from '@/core/i18n/routing';
 import { useChallengeTimer } from '@/shared/hooks/game/useChallengeTimer';
@@ -131,10 +131,15 @@ export default function Blitz<T>({ config }: BlitzProps<T>) {
 
   // Refs for stable callbacks
   const generateQuestionRef = useRef(generateQuestion);
-  generateQuestionRef.current = generateQuestion;
-
   const generateOptionsRef = useRef(generateOptions);
-  generateOptionsRef.current = generateOptions;
+
+  // Written after render rather than during it: a ref assigned in the render body
+  // is a mutation React does not know about, and reading it back before the write
+  // reflects the previous render's closures.
+  useLayoutEffect(() => {
+    generateQuestionRef.current = generateQuestion;
+    generateOptionsRef.current = generateOptions;
+  });
 
   // Initialize question
   useEffect(() => {
