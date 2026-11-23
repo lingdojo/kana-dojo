@@ -178,6 +178,23 @@
       "rating": 4.5,
       "featured": false,
       "notes": "Get personalized feedback on your speaking."
+    },
+    {
+      "id": "japan-cat",
+      "name": "Japan Cat",
+      "nameJa": "Japan Cat",
+      "description": "AI conversation partner for speaking Japanese out loud.",
+      "descriptionLong": "Japan Cat is an AI conversation partner for practicing spoken Japanese. It corrects each sentence, explains the grammar in English, Cantonese or Mandarin, and remembers your mistakes. It offers JLPT N5-N1 levels and a hands-free driving mode, and includes 1,081 free picture memory cards.",
+      "category": "speaking",
+      "subcategory": "conversation",
+      "tags": ["ai", "conversation", "corrections", "jlpt", "voice"],
+      "difficulty": "all-levels",
+      "priceType": "freemium",
+      "priceDetails": "Free to start (20 AI conversation messages a month, memory cards free). Optional Premium subscription.",
+      "platforms": ["web", "ios", "android"],
+      "url": "https://japancat.co",
+      "featured": false,
+      "notes": "Grammar explanations available in English, Cantonese or Mandarin."
     }
   ]
 }
