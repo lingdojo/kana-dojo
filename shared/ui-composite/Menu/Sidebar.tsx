@@ -704,11 +704,10 @@ const Sidebar = () => {
             </div>
           );
         })}
-
       <button
         onClick={toggleDesktopSidebarCollapse}
         className={clsx(
-          'hidden cursor-pointer items-center rounded-2xl px-3 py-1.5 text-(--secondary-color) transition-colors hover:bg-(--card-color) hover:text-(--main-color) lg:absolute lg:bottom-8 lg:left-5 lg:flex',
+          'hidden cursor-pointer items-center rounded-2xl px-3 py-1.5 text-(--secondary-color) transition-colors hover:bg-(--card-color) hover:text-(--main-color) lg:mt-auto lg:mb-4 lg:bottom-8 lg:left-5 lg:flex',
         )}
         aria-label={
           isDesktopSidebarCollapsed ? 'Expand sidebar' : 'Collapse sidebar'
