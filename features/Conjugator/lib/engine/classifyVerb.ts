@@ -17,6 +17,7 @@ import {
   KNOWN_ICHIDAN_VERBS,
   SURU_COMPOUND_SUFFIXES,
   KURU_COMPOUND_SUFFIXES,
+  GODAN_VERBS_ENDING_IN_SURU,
   HIRAGANA_TO_ROMAJI,
   HIRAGANA_COMBINATIONS,
 } from '../../data/verbData';
@@ -139,6 +140,7 @@ function getStem(str: string): string {
  * Returns the prefix if it is, null otherwise
  */
 export function detectSuruCompound(verb: string): string | null {
+  if (GODAN_VERBS_ENDING_IN_SURU.includes(verb)) return null;
   for (const suffix of SURU_COMPOUND_SUFFIXES) {
     if (verb.endsWith(suffix) && verb.length > suffix.length) {
       return verb.slice(0, -suffix.length);
@@ -150,11 +152,17 @@ export function detectSuruCompound(verb: string): string | null {
 /**
  * Check if a verb is a 来る-compound verb (e.g., 持ってくる)
  * Returns the prefix if it is, null otherwise
+ *
+ * The prefix must be a te-form (ending in て/で), so verbs that merely end in
+ * くる/来る (つくる, おくる, 出来る) are not treated as compounds.
  */
 export function detectKuruCompound(verb: string): string | null {
   for (const suffix of KURU_COMPOUND_SUFFIXES) {
     if (verb.endsWith(suffix) && verb.length > suffix.length) {
-      return verb.slice(0, -suffix.length);
+      const prefix = verb.slice(0, -suffix.length);
+      if (prefix.endsWith('て') || prefix.endsWith('で')) {
+        return prefix;
+      }
     }
   }
   return null;
