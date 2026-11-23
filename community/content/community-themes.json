@@ -496,5 +496,11 @@
     "backgroundColor": "oklch(16.0% 0.055 270.0 / 1)",
     "mainColor": "oklch(72.0% 0.195 220.0 / 1)",
     "secondaryColor": "oklch(68.0% 0.205 30.0 / 1)"
+},
+  {
+  "id": "thunder-temple",
+  "backgroundColor": "oklch(16.0% 0.065 280.0 / 1)",
+  "mainColor": "oklch(85.0% 0.185 260.0 / 1)",
+  "secondaryColor": "oklch(75.0% 0.145 290.0 / 1)"
   }
 ]
