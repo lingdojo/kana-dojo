@@ -22,6 +22,13 @@ describe('kanji readings data', () => {
     expect(loomKanji?.meanings[0]).toBe('loom');
   });
 
+  it('includes association as a meaning of 会', () => {
+    const meetingKanji = n4Kanji.find(kanji => kanji.kanjiChar === '会');
+
+    expect(meetingKanji?.meanings[0]).toBe('meeting');
+    expect(meetingKanji?.meanings).toContain('association');
+  });
+
   it('keeps alternate readings as separate array entries', () => {
     const combinedReadingPattern =
       /\b[a-z][a-z()]*\s+[ァ-ヶーぁ-ゖ]+\s*,\s*[a-z]/i;
