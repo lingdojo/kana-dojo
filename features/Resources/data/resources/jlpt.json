@@ -282,6 +282,21 @@
       "url": "https://japaneseskills.com/en/",
       "featured": false,
       "notes": "Practice questions are original, not past JLPT papers. Not affiliated with the JLPT organisers."
+    },
+    {
+      "id": "examsim",
+      "name": "ExamSim",
+      "description": "Free, timed JLPT N5 mock exam and short listening exercises.",
+      "descriptionLong": "The mock follows the JLPT N5 section times and gives learners a score breakdown. Short listening exercises include original dialogues, transcripts and answer explanations. English and Brazilian Portuguese guides include a two-week study plan.",
+      "category": "jlpt",
+      "subcategory": "n5",
+      "tags": ["practice-tests", "listening", "mock-exam", "explanations"],
+      "difficulty": "beginner",
+      "priceType": "freemium",
+      "priceDetails": "The full N5 mock is free with a free account. Short listening exercises open without signup. Full N4–N1 mocks require a paid plan.",
+      "platforms": ["web"],
+      "url": "https://examsim.org/en/jlpt-n5-practice-test",
+      "featured": false
     }
   ]
 }
