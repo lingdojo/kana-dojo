@@ -19,7 +19,7 @@ The CLI tool is included with the KanaDojo project. No separate installation req
 
 **Prerequisites:**
 
-- Node.js 18+
+- [Node.js 24 LTS](https://nodejs.org/en/download) (recommended)
 - npm or yarn
 
 **Verify Installation:**

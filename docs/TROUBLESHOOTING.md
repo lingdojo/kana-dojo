@@ -311,8 +311,10 @@ npm run dev --loglevel silly
 
 ### Check Node and npm Versions
 
+For local development, we recommend Node.js 24 LTS.
+
 ```bash
-node --version  # Should be 18.x or higher
+node --version
 npm --version   # Should be 10.x or higher
 ```
 

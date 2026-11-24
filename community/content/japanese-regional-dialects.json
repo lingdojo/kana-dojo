@@ -329,11 +329,11 @@
     "note": "Very common in Osaka/Kyoto speech. (Set 3)"
   },
   {
-    "dialect": "〜じゃけぇ",
-    "standardJapanese": "〜だから",
-    "english": "because",
-    "region": "Hiroshima",
-    "note": "Common causal ending. (Set 2)"
+    "dialect": "あかん",
+    "standardJapanese": "だめ",
+    "english": "no good",
+    "region": "Kansai",
+    "note": "Used for prohibition/failure. (Set 6)"
   },
   {
     "dialect": "〜やねん",
@@ -347,111 +347,76 @@
     "standardJapanese": "ありがとうございます",
     "english": "thank you",
     "region": "Okinawa",
-    "note": "Okinawan gratitude expression. (Set 4)"
+    "note": "Okinawan gratitude expression. (Set 6)"
   },
   {
-    "dialect": "〜じゃけぇ",
-    "standardJapanese": "〜だから",
-    "english": "because",
-    "region": "Hiroshima",
-    "note": "Common causal ending. (Set 5)"
-  },
-  {
-    "dialect": "おおきに",
-    "standardJapanese": "ありがとう",
-    "english": "thank you",
-    "region": "Kansai",
-    "note": "Traditional gratitude expression. (Set 1)"
-  },
-  {
-    "dialect": "おおきに",
-    "standardJapanese": "ありがとう",
-    "english": "thank you",
-    "region": "Kansai",
-    "note": "Traditional gratitude expression. (Set 2)"
-  },
-  {
-    "dialect": "めっちゃ",
+    "dialect": "ぶち",
     "standardJapanese": "とても",
     "english": "very",
-    "region": "Kansai",
-    "note": "Now used nationwide. (Set 4)"
+    "region": "Yamaguchi/Hiroshima",
+    "note": "Regional intensifier. (Set 3)"
   },
   {
-    "dialect": "しばれる",
-    "standardJapanese": "とても寒い",
-    "english": "freezing cold",
-    "region": "Hokkaido",
-    "note": "Used for severe winter cold. (Set 3)"
+    "dialect": "〜けん",
+    "standardJapanese": "〜から",
+    "english": "because",
+    "region": "Kyushu",
+    "note": "Reason marker in Kyushu. (Set 3)"
   },
   {
     "dialect": "〜へん",
     "standardJapanese": "〜ない",
     "english": "negative form",
     "region": "Kansai",
-    "note": "Example: 食べへん = 食べない。 (Set 3)"
+    "note": "Example: 食べへん = 食べない。 (Set 2)"
   },
   {
-    "dialect": "めっちゃ",
+    "dialect": "なまら",
     "standardJapanese": "とても",
     "english": "very",
-    "region": "Kansai",
-    "note": "Now used nationwide. (Set 3)"
-  },
-  {
-    "dialect": "なんでやねん",
-    "standardJapanese": "何でだよ",
-    "english": "What are you talking about?!",
-    "region": "Kansai",
-    "note": "Classic comedic retort (tsukkomi). (Set 4)"
-  },
-  {
-    "dialect": "ばってん",
-    "standardJapanese": "しかし（でも）",
-    "english": "but / however",
-    "region": "Kumamoto (Kyushu)",
-    "note": "Common sentence-ending conjunction in Kumamoto dialect. (Set 5)"
-  },
-  {
-    "dialect": "なんくるないさ",
-    "standardJapanese": "なんとかなる",
-    "english": "it'll work out",
-    "region": "Okinawa",
-    "note": "Famous Okinawan resilience phrase. (Set 2)"
-  },
-  {
-    "dialect": "めっちゃ",
-    "standardJapanese": "とても",
-    "english": "very",
-    "region": "Kansai",
-    "note": "Now used nationwide. (Set 5)"
-  },
-  {
-    "dialect": "したっけ",
-    "standardJapanese": "それじゃあ",
-    "english": "well then/see you",
     "region": "Hokkaido",
-    "note": "Transition/goodbye phrase. (Set 5)"
+    "note": "Hokkaido intensifier. (Set 2)"
   },
   {
-    "dialect": "あかん",
-    "standardJapanese": "だめ",
-    "english": "no good",
+    "dialect": "いけん",
+    "standardJapanese": "いけない",
+    "english": "no/cannot",
+    "region": "Chugoku",
+    "note": "Prohibitive nuance. (Set 2)"
+  },
+  {
+    "dialect": "でら",
+    "standardJapanese": "とても",
+    "english": "very",
+    "region": "Nagoya",
+    "note": "Characteristic Nagoya intensifier. (Set 6)"
+  },
+  {
+    "dialect": "なまら",
+    "standardJapanese": "とても",
+    "english": "very",
+    "region": "Hokkaido",
+    "note": "Hokkaido intensifier. (Set 6)"
+  },
+  {
+    "dialect": "〜へん",
+    "standardJapanese": "〜ない",
+    "english": "negative form",
     "region": "Kansai",
-    "note": "Used for prohibition/failure. (Set 3)"
+    "note": "Example: 食べへん = 食べない。 (Set 6)"
   },
   {
-    "dialect": "なんくるないさ",
-    "standardJapanese": "なんとかなる",
-    "english": "it'll work out",
-    "region": "Okinawa",
-    "note": "Famous Okinawan resilience phrase. (Set 5)"
-  },
-{
-    "dialect": "〜じゃけぇ",
-    "standardJapanese": "〜だから",
+    "dialect": "〜けん",
+    "standardJapanese": "〜から",
     "english": "because",
-    "region": "Hiroshima",
-    "note": "Common causal ending. (Set 5)"
+    "region": "Kyushu",
+    "note": "Reason marker in Kyushu. (Set 5)"
+  },
+  {
+  "dialect": "ぶち",
+  "standardJapanese": "とても",
+  "english": "very",
+  "region": "Yamaguchi/Hiroshima",
+  "note": "Regional intensifier. (Set 6)"
   }
 ]

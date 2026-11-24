@@ -12,6 +12,12 @@
     "meaning": "Don't let your guard down"
   },
   {
+    "japanese": "時は金なり",
+    "romaji": "Toki wa kane nari",
+    "english": "Time is money",
+    "meaning": "Time is valuable, so use it wisely"
+  },
+  {
     "japanese": "笑う門には福来る",
     "romaji": "Warau kado ni wa fuku kitaru",
     "english": "Fortune comes to a laughing gate",
@@ -360,39 +366,93 @@
     "meaning": "Haste makes waste; the slower path is faster"
   },
   {
-  "japanese": "善因善果",
-  "romaji": "Zenin zenka",
-  "english": "Good causes bring good results",
-  "meaning": "Good deeds lead to good outcomes"
-},
+    "japanese": "覆水盆に返らず",
+    "romaji": "Fukusui bon ni kaerazu",
+    "english": "Spilled water will not return to the tray",
+    "meaning": "What is done cannot be undone"
+  },
   {
-  "japanese": "良薬は口に苦し",
-  "romaji": "Ryouyaku wa kuchi ni nigashi",
-  "english": "Good medicine tastes bitter",
-  "meaning": "Helpful advice can be harsh"
-},
+    "japanese": "百聞は一見に如かず",
+    "romaji": "Hyakubun wa ikken ni shikazu",
+    "english": "Hearing a hundred times is not as good as seeing once",
+    "meaning": "Seeing is believing"
+  },
   {
-  "japanese": "針の穴から天を覗く",
-  "romaji": "Hari no ana kara ten wo nozoku",
-  "english": "Peek at the sky through a needle's eye",
-  "meaning": "A narrow viewpoint leads to poor judgment"
-},
+    "japanese": "後悔先に立たず",
+    "romaji": "Koukai saki ni tatazu",
+    "english": "Regret does not stand before",
+    "meaning": "It's too late for regrets"
+  },
+  {
+    "japanese": "一期一会",
+    "romaji": "Ichi go ichi e",
+    "english": "One time, one meeting",
+    "meaning": "Treasure every encounter, for it will never recur"
+  },
+  {
+    "japanese": "能ある鷹は爪を隠す",
+    "romaji": "Nou aru taka wa tsume wo kakusu",
+    "english": "A skilled hawk hides its talons",
+    "meaning": "True skill is modest"
+  },
+  {
+    "japanese": "縁は異なもの味なもの",
+    "romaji": "En wa inamono aji na mono",
+    "english": "Fate is strange yet delightful",
+    "meaning": "Chance connections can be surprisingly good"
+  },
+  {
+    "japanese": "情けは人の為ならず",
+    "romaji": "Nasake wa hito no tame narazu",
+    "english": "Kindness is not for others alone",
+    "meaning": "Kindness comes back to you"
+  },
+  {
+    "japanese": "三人寄れば文殊の知恵",
+    "romaji": "Sannin yoreba monju no chie",
+    "english": "Three people together have the wisdom of Monju",
+    "meaning": "Two heads are better than one"
+  },
+  {
+    "japanese": "善は急げ",
+    "romaji": "Zen wa isoge",
+    "english": "Hurry to do good",
+    "meaning": "Do worthwhile things promptly"
+  },
+  {
+    "japanese": "雨降って地固まる",
+    "romaji": "Ame futte ji katamaru",
+    "english": "After the rain, the ground hardens",
+    "meaning": "Hard times build resilience"
+  },
+  {
+    "japanese": "泣きっ面に蜂",
+    "romaji": "Naki tsura ni hachi",
+    "english": "A bee on a crying face",
+    "meaning": "Misfortune piles up"
+  },
+  {
+    "japanese": "猫に小判",
+    "romaji": "Neko ni koban",
+    "english": "Gold coins to a cat",
+    "meaning": "Giving something valuable to someone who can't appreciate it"
+  },
+  {
+  "japanese": "毒を食らわば皿まで",
+  "romaji": "Doku wo kurawaba sara made",
+  "english": "If you eat poison, eat the plate too",
+  "meaning": "If you must do it, go all the way"
+  },
   {
   "japanese": "一期一会",
   "romaji": "Ichi go ichi e",
   "english": "One time, one meeting",
   "meaning": "Treasure every encounter, for it will never recur"
-},
+  },
   {
-  "japanese": "覆水盆に返らず",
-  "romaji": "Fukusui bon ni kaerazu",
-  "english": "Spilled water will not return to the tray",
-  "meaning": "What is done cannot be undone"
-},
-  {
-  "japanese": "出る釘は打たれる",
-  "romaji": "Deru kugi wa utareru",
-  "english": "The nail that sticks out gets hammered down",
-  "meaning": "Standing out invites criticism"
-}
+    "japanese": "怪我の功名",
+    "romaji": "Kega no koumyou",
+    "english": "Fame from a mistake",
+    "meaning": "A lucky break that comes from an error"
+  }
 ]

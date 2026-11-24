@@ -20,8 +20,6 @@ export default function useSessionScrollRestoration(
   const enabledRef = useRef(enabled);
   const readyRef = useRef(ready);
 
-  // Keep the latest options for the callback ref. A layout effect runs before
-  // the restore effect below and before paint, so it is never stale there.
   useLayoutEffect(() => {
     enabledRef.current = enabled;
     readyRef.current = ready;

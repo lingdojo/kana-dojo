@@ -3,6 +3,9 @@ import * as Sentry from '@sentry/nextjs';
 
 Sentry.init({
   dsn: 'https://a6f82883d78e424ee7b578556b78743d@o4511608063197184.ingest.us.sentry.io/4511608067981312',
+  // Don't send events from local development: the /monitoring tunnel route
+  // returns 500s under `next dev` and floods the browser console.
+  enabled: process.env.NODE_ENV === 'production',
   // Performance rescue: Sentry Replay is intentionally disabled for now.
   // integrations: [Sentry.replayIntegration()],
   tracesSampleRate: 0.1,
@@ -65,6 +68,7 @@ if (typeof window !== 'undefined' && !sessionStorage.getItem(RELOAD_FLAG)) {
   });
 }
 if (process.env.NODE_ENV === 'development') {
+  // eslint-disable-next-line no-console
   console.log('PostHog client instrumentation disabled in development mode.');
 }
 

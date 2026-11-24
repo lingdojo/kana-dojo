@@ -7,7 +7,7 @@
  * @module features/AnkiConverter/hooks/useConversionWorker
  */
 
-import { useState, useCallback, useEffect, useRef } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import type {
   ConversionOptions,
   ConversionResult,
@@ -71,19 +71,16 @@ const initialState: ConversionState = {
  */
 export function useConversionWorker(): UseConversionWorkerReturn {
   const [state, setState] = useState<ConversionState>(initialState);
-  const workerManager = useRef(getWorkerManager());
-  // getWorkerManager() returns a module-level singleton, so this is the same
-  // manager the ref holds; reading it here keeps refs out of render.
-  const isWorkerSupported = getWorkerManager().isSupported();
+  const [workerManager] = useState(getWorkerManager);
+  const isWorkerSupported = workerManager.isSupported();
 
   // Cleanup on unmount
   useEffect(() => {
-    const manager = workerManager.current;
     return () => {
       // Cleanup worker memory when component unmounts
-      manager.cleanup();
+      workerManager.cleanup();
     };
-  }, []);
+  }, [workerManager]);
 
   /**
    * Handle progress updates
@@ -119,11 +116,7 @@ export function useConversionWorker(): UseConversionWorkerReturn {
       };
 
       try {
-        const result = await workerManager.current.convert(
-          file,
-          options,
-          callbacks,
-        );
+        const result = await workerManager.convert(file, options, callbacks);
 
         setState(prev => ({
           ...prev,
@@ -145,7 +138,7 @@ export function useConversionWorker(): UseConversionWorkerReturn {
         }
       }
     },
-    [handleProgress, handleError],
+    [workerManager, handleProgress, handleError],
   );
 
   /**
@@ -213,8 +206,8 @@ export function useConversionWorker(): UseConversionWorkerReturn {
   const reset = useCallback(() => {
     setState(initialState);
     // Cleanup worker memory
-    workerManager.current.cleanup();
-  }, []);
+    workerManager.cleanup();
+  }, [workerManager]);
 
   return {
     state,

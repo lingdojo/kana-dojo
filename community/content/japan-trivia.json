@@ -44,13 +44,25 @@
   },
   {
     "question": "What is the name of Japan's highest mountain?",
-    "answer": "Mount Fuji (富士山), standing at 3,776 meters. It is an active volcano and a UNESCO World Heritage Site.",
-    "difficulty": "easy"
+    "difficulty": "easy",
+    "answers": [
+      "Mount Fuji",
+      "Mount Tate",
+      "Mount Haku",
+      "Mount Kita"
+    ],
+    "correctIndex": 0
   },
   {
     "question": "What is the oldest existing company in the world, located in Japan?",
-    "answer": "Kongō Gumi, a construction company founded in 578 AD that built temples for over 1,400 years.",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "answers": [
+      "Kongō Gumi",
+      "Kikkoman",
+      "Mitsui",
+      "Sumitomo"
+    ],
+    "correctIndex": 0
   },
   {
     "question": "Which Japanese dish consists of skewered grilled chicken?",

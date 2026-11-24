@@ -16,21 +16,36 @@ interface StarKana {
   opacity: number;
 }
 
+// Small seeded PRNG (mulberry32) so the server and client render identical stars.
+function mulberry32(seed: number) {
+  let a = seed >>> 0;
+  return () => {
+    a = (a + 0x6d2b79f5) >>> 0;
+    let t = a;
+    t = Math.imul(t ^ (t >>> 15), t | 1);
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+const distantStarRandom = mulberry32(0x6b616e61);
+
+// Pre-formatted strings keep the style serialization identical on server and client.
+const DISTANT_STARS = Array.from({ length: 100 }, () => ({
+  width: `${(distantStarRandom() * 2).toFixed(3)}px`,
+  height: `${(distantStarRandom() * 2).toFixed(3)}px`,
+  top: `${(distantStarRandom() * 100).toFixed(3)}%`,
+  left: `${(distantStarRandom() * 100).toFixed(3)}%`,
+  opacity: distantStarRandom().toFixed(3),
+}));
+
 export default function KanaNebula() {
   const [stars, setStars] = useState<StarKana[]>([]);
   const { playClick } = useClick();
   const idCounter = useRef(0);
   const containerRef = useRef<HTMLDivElement>(null);
-  // Generated once so the static background doesn't jump on every re-render.
-  const [distantStars] = useState(() =>
-    Array.from({ length: 100 }, () => ({
-      width: Math.random() * 2,
-      height: Math.random() * 2,
-      top: `${Math.random() * 100}%`,
-      left: `${Math.random() * 100}%`,
-      opacity: Math.random(),
-    })),
-  );
+  // Total stars spawned so far (ids are sequential), derived from state.
+  const spawnedCount = (stars.at(-1)?.id ?? -1) + 1;
 
   useEffect(() => {
     const spawnStar = () => {
@@ -71,10 +86,6 @@ export default function KanaNebula() {
     };
   }, []);
 
-  // Star ids come from idCounter, so the newest star's id + 1 is the number
-  // spawned so far. Deriving it from state avoids reading the ref in render.
-  const spawnedCount = stars.length > 0 ? stars[stars.length - 1].id + 1 : 0;
-
   return (
     <div
       ref={containerRef}
@@ -85,7 +96,7 @@ export default function KanaNebula() {
 
       {/* Distant Stars (Static) */}
       <div className='absolute inset-0 opacity-30'>
-        {distantStars.map((style, i) => (
+        {DISTANT_STARS.map((style, i) => (
           <div
             key={i}
             className='absolute rounded-full bg-white transition-opacity'

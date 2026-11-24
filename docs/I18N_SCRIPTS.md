@@ -364,7 +364,7 @@ npm run i18n:check
 ### CSV Export Not Working
 
 1. Ensure `scripts/i18n/` directory exists
-2. Check Node.js version (requires 18+)
+2. Check that your Node.js version matches the [local setup guide](../CONTRIBUTING.md).
 3. Verify all translation files are valid JSON
 
 ---
