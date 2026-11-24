@@ -418,5 +418,12 @@
   "english": "very",
   "region": "Yamaguchi/Hiroshima",
   "note": "Regional intensifier. (Set 6)"
+  },
+  {
+    "dialect": "あかん",
+    "standardJapanese": "だめ",
+    "english": "no good",
+    "region": "Kansai",
+    "note": "Used for prohibition/failure. (Set 3)"
   }
 ]
