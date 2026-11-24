@@ -436,5 +436,17 @@
   "termB": "salaryman",
   "explanation": "Refers broadly to office workers. (Set 1)",
   "example": "父は都内でサラリーマンをしている。"
-}
+},
+  {
+      "termA": "カンニング (kanningu)",
+      "termB": "cunning (English)",
+      "explanation": "カンニング means cheating on tests. (Set 6)",
+      "example": "試験でカンニングしてはいけません。"
+  },
+  {
+      "termA": "バイキング (baikingu)",
+      "termB": "viking (English)",
+      "explanation": "Usually means buffet/all-you-can-eat in Japan. (Set 5)",
+      "example": "ホテルの朝食はバイキングです。"
+  }
 ]
