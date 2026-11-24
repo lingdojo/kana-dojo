@@ -460,5 +460,29 @@
   "romaji": "Hara ga tatsu",
   "english": "Stomach stands up",
   "meaning": "Get angry. (Set 5)"
-}
+},
+  {
+      "japanese": "気が進まない",
+      "romaji": "Ki ga susumanai",
+      "english": "Spirit doesn't proceed",
+      "meaning": "Not feel like doing it. (Set 2)"
+  },
+  {
+      "japanese": "頭が上がらない",
+      "romaji": "Atama ga agaranai",
+      "english": "Cannot raise one’s head",
+      "meaning": "Feel indebted or unable to oppose someone. (Set 6)"
+  },
+  {
+      "japanese": "腰が重い",
+      "romaji": "Koshi ga omoi",
+      "english": "Heavy hips",
+      "meaning": "Slow to start doing something. (Set 5)"
+  },
+  {
+      "japanese": "猫の手も借りたい",
+      "romaji": "Neko no te mo karitai",
+      "english": "I’d even borrow a cat’s paws",
+      "meaning": "Extremely busy and desperate for help. (Set 5)"
+  }
 ]
