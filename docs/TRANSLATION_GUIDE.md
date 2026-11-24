@@ -33,7 +33,7 @@ Currently, we support:
 - 🇪🇸 **Spanish (es)**
 - 🇯🇵 **Japanese (ja)**
 
-We're planning to add: Portuguese, French, German, Italian, Chinese, Korean, Russian, and Arabic.
+We're planning to add: Portuguese, French, German, Italian, Chinese, Korean, Russian, Hindi, and Arabic.
 
 ---
 

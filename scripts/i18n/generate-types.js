@@ -147,7 +147,7 @@ export type Namespace = ${NAMESPACES.map(ns => `'${ns}'`).join(' | ')};
 /**
  * Available languages
  */
-export type Locale = 'en' | 'es' | 'pt' | 'fr' | 'de' | 'it' | 'zh' | 'ko' | 'ru' | 'ar';
+export type Locale = 'en' | 'es' | 'pt' | 'fr' | 'de' | 'it' | 'zh' | 'ko' | 'ru' | 'ar' | 'hi';
 `;
 
   // Write to file

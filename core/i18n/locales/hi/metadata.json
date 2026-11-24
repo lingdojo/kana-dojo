@@ -1,0 +1,287 @@
+{
+  "home": {
+    "title": "KanaDojo - ऑनलाइन जापानी हिरागाना, काताकाना, कांजी और शब्दावली सीखें",
+    "titleShort": "KanaDojo - ऑनलाइन जापानी सीखें",
+    "description": "KanaDojo के साथ जापानी सीखें - हिरागाना, काताकाना, कांजी और शब्दावली सीखने के लिए एक सुंदर और न्यूनतम मंच। इंटरैक्टिव गेम के साथ अभ्यास करें, प्रगति ट्रैक करें और 100+ थीम के साथ अनुकूलित करें।",
+    "descriptionShort": "इंटरैक्टिव गेम, प्रगति ट्रैकिंग और सुंदर थीम के साथ जापानी हिरागाना, काताकाना, कांजी और शब्दावली में महारत हासिल करें।",
+    "keywords": "learn japanese hindi, jaapani seekhein, hiragana seekhein, katakana seekhein, kanji seekhein, japanese vocabulary hindi, japanese learning app, kanadojo hindi, JLPT preparation hindi"
+  },
+  "kana": {
+    "title": "काना डोजो - स्तर के अनुसार जापानी हिरागाना और काताकाना सीखें",
+    "titleShort": "काना डोजो - हिरागाना और काताकाना सीखें",
+    "description": "इंटरैक्टिव गेम, क्विज़ और अभ्यास के साथ हिरागाना और काताकाना में महारत हासिल करें। त्वरित प्रतिक्रिया और प्रगति ट्रैकिंग के साथ स्तर के अनुसार अभ्यास करें।",
+    "keywords": "learn kana hindi, hiragana chart, katakana chart, japanese alphabet hindi, kana quiz, hiragana practice, katakana practice"
+  },
+  "learnHiragana": {
+    "title": "हिरागाना सीखें - संपूर्ण हिरागाना चार्ट, अभ्यास और क्विज़ | KanaDojo",
+    "titleShort": "हिरागाना सीखें",
+    "description": "इंटरैक्टिव अभ्यास और निर्देशित पाठों के साथ हिरागाना तेज़ी से सीखें। त्वरित प्रतिक्रिया के साथ संपूर्ण हिरागाना चार्ट, दाकुओन और योओन में महारत हासिल करें।",
+    "keywords": "learn hiragana hindi, hiragana chart hindi, hiragana practice, hiragana pronunciation, memorize hiragana fast"
+  },
+  "learnKatakana": {
+    "title": "काताकाना सीखें - संपूर्ण काताकाना चार्ट, अभ्यास और क्विज़ | KanaDojo",
+    "titleShort": "काताकाना सीखें",
+    "description": "इंटरैक्टिव अभ्यास और स्पष्ट प्रतिक्रिया के साथ काताकाना तेज़ी से सीखें। संपूर्ण काताकाना चार्ट, दाकुओन, योओन और विदेशी ध्वनियों में महारत हासिल करें।",
+    "keywords": "learn katakana hindi, katakana chart hindi, katakana practice, katakana pronunciation, foreign sounds katakana"
+  },
+  "kanaBlitz": {
+    "title": "काना ब्लिट्ज़ - अपनी हिरागाना और काताकाना गति का परीक्षण करें",
+    "titleShort": "काना ब्लिट्ज़ - गति परीक्षण",
+    "description": "काना ब्लिट्ज़ के साथ अपनी जापानी काना पहचान गति का परीक्षण करें। समयबद्ध अभ्यासों के साथ खुद को चुनौती दें और प्रगति ट्रैक करें।",
+    "keywords": "kana speed test, hiragana speed, katakana speed, timed kana quiz, fast kana recognition"
+  },
+  "kanaGauntlet": {
+    "title": "काना गॉन्टलेट - प्रत्येक वर्ण में महारत हासिल करें",
+    "titleShort": "काना गॉन्टलेट - पूर्ण महारत",
+    "description": "काना गॉन्टलेट के साथ प्रत्येक हिरागाना और काताकाना वर्ण में महारत हासिल करें। सभी जापानी काना के लिए व्यापक अभ्यास।",
+    "keywords": "kana mastery, hiragana mastery, katakana mastery, comprehensive kana practice"
+  },
+  "kanji": {
+    "title": "कांजी डोजो - JLPT स्तर के अनुसार जापानी कांजी वर्ण सीखें",
+    "titleShort": "कांजी डोजो - कांजी सीखें",
+    "description": "JLPT स्तर N5 से N1 तक व्यवस्थित कांजी सीखें। स्ट्रोक ऑर्डर, ओनयोमी, कुनयोमी और अर्थों का इंटरैक्टिव रूप से अभ्यास करें।",
+    "keywords": "learn kanji hindi, kanji n5 hindi, kanji meanings, kanji readings, jlpt kanji practice"
+  },
+  "kanjiJlptN5": {
+    "title": "JLPT N5 कांजी सीखें - शुरुआती स्तर की जापानी कांजी | KanaDojo",
+    "titleShort": "JLPT N5 कांजी",
+    "description": "शुरुआती लोगों के लिए आवश्यक सभी JLPT N5 कांजी सीखें। अर्थ, पठन और उदाहरण वाक्यों के साथ अभ्यास करें।",
+    "keywords": "jlpt n5 kanji hindi, beginner kanji, basic japanese kanji, n5 kanji list"
+  },
+  "kanjiJlptN4": {
+    "title": "JLPT N4 कांजी सीखें - प्राथमिक स्तर की जापानी कांजी | KanaDojo",
+    "titleShort": "JLPT N4 कांजी",
+    "description": "JLPT N4 कांजी में महारत हासिल करें। अपने कांजी ज्ञान को बुनियादी स्तर से आगे बढ़ाएं।",
+    "keywords": "jlpt n4 kanji hindi, elementary kanji, n4 kanji list, japanese kanji study"
+  },
+  "kanjiJlptN3": {
+    "title": "JLPT N3 कांजी सीखें - मध्यवर्ती जापानी कांजी | KanaDojo",
+    "titleShort": "JLPT N3 कांजी",
+    "description": "दैनिक जीवन और परीक्षा की तैयारी के लिए मध्यवर्ती स्तर की JLPT N3 कांजी सीखें।",
+    "keywords": "jlpt n3 kanji, intermediate kanji hindi, n3 kanji list"
+  },
+  "kanjiJlptN2": {
+    "title": "JLPT N2 कांजी सीखें - उच्च-मध्यवर्ती जापानी कांजी | KanaDojo",
+    "titleShort": "JLPT N2 कांजी",
+    "description": "उन्नत पढ़ने और व्यावसायिक संचार के लिए JLPT N2 कांजी सीखें।",
+    "keywords": "jlpt n2 kanji, upper intermediate kanji, business japanese kanji"
+  },
+  "kanjiJlptN1": {
+    "title": "JLPT N1 कांजी सीखें - उन्नत जापानी कांजी | KanaDojo",
+    "titleShort": "JLPT N1 कांजी",
+    "description": "धाराप्रवाह जापानी पढ़ने के लिए उन्नत स्तर की JLPT N1 कांजी में महारत हासिल करें।",
+    "keywords": "jlpt n1 kanji, advanced kanji, master japanese kanji"
+  },
+  "kanjiBlitz": {
+    "title": "कांजी ब्लिट्ज़ - अपनी कांजी पहचान गति का परीक्षण करें",
+    "titleShort": "कांजी ब्लिट्ज़ - गति परीक्षण",
+    "description": "समयबद्ध चुनौतियों के साथ कांजी पहचान गति में सुधार करें।",
+    "keywords": "kanji speed test, timed kanji quiz, fast kanji recall"
+  },
+  "kanjiGauntlet": {
+    "title": "कांजी गॉन्टलेट - संपूर्ण कांजी महारत चुनौती",
+    "titleShort": "कांजी गॉन्टलेट - पूर्ण महारत",
+    "description": "कांजी गॉन्टलेट के साथ सभी कांजी वर्णों में संपूर्ण महारत हासिल करें।",
+    "keywords": "kanji gauntlet, kanji mastery test, full kanji challenge"
+  },
+  "vocabulary": {
+    "title": "शब्दावली डोजो - JLPT स्तर के अनुसार जापानी शब्द सीखें",
+    "titleShort": "शब्दावली डोजो - शब्दावली सीखें",
+    "description": "JLPT स्तर और विषय के अनुसार जापानी शब्दावली का विस्तार करें। पठन, अर्थ और उदाहरण वाक्यों के साथ अभ्यास करें।",
+    "keywords": "japanese vocabulary hindi, learn japanese words, jlpt vocabulary, japanese words with meaning"
+  },
+  "vocabularyJlptN5": {
+    "title": "JLPT N5 शब्दावली - शुरुआती जापानी शब्द | KanaDojo",
+    "titleShort": "JLPT N5 शब्दावली",
+    "description": "शुरुआती परीक्षा के लिए सभी आवश्यक JLPT N5 शब्द सीखें।",
+    "keywords": "jlpt n5 vocabulary hindi, basic japanese words, n5 vocab list"
+  },
+  "vocabularyJlptN4": {
+    "title": "JLPT N4 शब्दावली - प्राथमिक जापानी शब्द | KanaDojo",
+    "titleShort": "JLPT N4 शब्दावली",
+    "description": "दैनिक बातचीत के लिए आवश्यक JLPT N4 शब्दावली में महारत हासिल करें।",
+    "keywords": "jlpt n4 vocabulary hindi, elementary japanese words, n4 vocab list"
+  },
+  "vocabularyJlptN3": {
+    "title": "JLPT N3 शब्दावली - मध्यवर्ती जापानी शब्द | KanaDojo",
+    "titleShort": "JLPT N3 शब्दावली",
+    "description": "व्यापक समझ के लिए मध्यवर्ती JLPT N3 शब्द सीखें।",
+    "keywords": "jlpt n3 vocabulary, intermediate japanese words"
+  },
+  "vocabularyJlptN2": {
+    "title": "JLPT N2 शब्दावली - उच्च-मध्यवर्ती जापानी शब्द | KanaDojo",
+    "titleShort": "JLPT N2 शब्दावली",
+    "description": "समाचार और कार्यस्थल के लिए उच्च-मध्यवर्ती JLPT N2 शब्दावली सीखें।",
+    "keywords": "jlpt n2 vocabulary, business japanese vocabulary"
+  },
+  "vocabularyJlptN1": {
+    "title": "JLPT N1 शब्दावली - उन्नत जापानी शब्द | KanaDojo",
+    "titleShort": "JLPT N1 शब्दावली",
+    "description": "उन्नत अभिव्यक्ति के लिए संपूर्ण JLPT N1 शब्दावली सीखें।",
+    "keywords": "jlpt n1 vocabulary, advanced japanese words"
+  },
+  "vocabularyBlitz": {
+    "title": "शब्दावली ब्लिट्ज़ - अपनी शब्द स्मरण गति का परीक्षण करें",
+    "titleShort": "शब्दावली ब्लिट्ज़ - गति परीक्षण",
+    "description": "समयबद्ध शब्द चुनौतियों के साथ अपनी शब्दावली स्मरण गति में सुधार करें।",
+    "keywords": "vocabulary speed test, japanese word quiz, timed vocab recall"
+  },
+  "vocabularyGauntlet": {
+    "title": "शब्दावली गॉन्टलेट - संपूर्ण शब्द महारत चुनौती",
+    "titleShort": "शब्दावली गॉन्टलेट - पूर्ण महारत",
+    "description": "व्यापक शब्दावली अभ्यास के साथ जापानी शब्दों में महारत हासिल करें।",
+    "keywords": "vocabulary gauntlet, master japanese vocabulary"
+  },
+  "academy": {
+    "title": "अकादमी - जापानी भाषा सीखने की मार्गदर्शिकाएँ | KanaDojo",
+    "titleShort": "अकादमी - शिक्षण मार्गदर्शिकाएँ",
+    "description": "व्याकरण, संस्कृति और अध्ययन युक्तियों पर व्यापक जापानी शिक्षण मार्गदर्शिकाएँ देखें।",
+    "keywords": "learn japanese guides hindi, japanese grammar hindi, how to study japanese"
+  },
+  "preferences": {
+    "title": "प्राथमिकताएं - अपना शिक्षण अनुभव अनुकूलित करें | KanaDojo",
+    "titleShort": "प्राथमिकताएं",
+    "description": "थीम, फ़ॉन्ट, ध्वनि और इनपुट प्राथमिकताओं को अपनी पसंद के अनुसार समायोजित करें।",
+    "keywords": "kanadojo preferences, customize theme, study settings"
+  },
+  "progress": {
+    "title": "प्रगति डैशबोर्ड - अपने अध्ययन के आंकड़े ट्रैक करें | KanaDojo",
+    "titleShort": "प्रगति डैशबोर्ड",
+    "description": "विस्तृत आंकड़ों के साथ अपनी जापानी सीखने की प्रगति, सटीकता और स्ट्रीक को ट्रैक करें।",
+    "keywords": "learning progress, study stats, japanese streak tracker"
+  },
+  "privacy": {
+    "title": "गोपनीयता नीति | KanaDojo",
+    "titleShort": "गोपनीयता नीति",
+    "description": "जानें कि KanaDojo आपकी गोपनीयता और स्थानीय डेटा की सुरक्षा कैसे करता है।",
+    "keywords": "privacy policy, data protection, kanadojo privacy"
+  },
+  "terms": {
+    "title": "सेवा की शर्तें | KanaDojo",
+    "titleShort": "सेवा की शर्तें",
+    "description": "KanaDojo का उपयोग करने के नियम और शर्तें पढ़ें।",
+    "keywords": "terms of service, user agreement, kanadojo terms"
+  },
+  "security": {
+    "title": "सुरक्षा नीति | KanaDojo",
+    "titleShort": "सुरक्षा नीति",
+    "description": "KanaDojo पर सुरक्षा मानकों और प्रक्रियाओं की जानकारी प्राप्त करें।",
+    "keywords": "security policy, app security, kanadojo security"
+  },
+  "credits": {
+    "title": "श्रेय और योगदानकर्ता | KanaDojo",
+    "titleShort": "श्रेय",
+    "description": "KanaDojo को संभव बनाने वाले अद्भुत योगदानकर्ताओं और प्रायोजकों से मिलें।",
+    "keywords": "contributors, open source credits, kanadojo supporters"
+  },
+  "patchNotes": {
+    "title": "पैच नोट्स और अपडेट इतिहास | KanaDojo",
+    "titleShort": "पैच नोट्स",
+    "description": "KanaDojo के नवीनतम सुधार, नई सुविधाएं और अपडेट देखें।",
+    "keywords": "patch notes, updates, changelog, new features"
+  },
+  "faq": {
+    "title": "अक्सर पूछे जाने वाले प्रश्न | KanaDojo",
+    "titleShort": "FAQ",
+    "description": "KanaDojo और जापानी भाषा सीखने के बारे में सामान्य प्रश्नों के उत्तर प्राप्त करें।",
+    "keywords": "faq, frequently asked questions, help, japanese learning help"
+  },
+  "experiments": {
+    "title": "प्रयोग - प्रायोगिक जापानी शिक्षण सुविधाएं | KanaDojo",
+    "titleShort": "प्रयोग",
+    "description": "वैकल्पिक जापानी शिक्षण विधियों और प्रयोगात्मक सुविधाओं का अन्वेषण करें।",
+    "keywords": "experimental features, zen mode, interactive japanese games"
+  },
+  "translate": {
+    "title": "जापानी अनुवादक - ऑनलाइन अंग्रेजी-जापानी अनुवाद | KanaDojo",
+    "titleShort": "जापानी अनुवादक",
+    "description": "रोमनीकरण और इतिहास के साथ मुफ़्त ऑनलाइन जापानी अनुवादक।",
+    "keywords": "japanese translator, translate english to japanese, romaji translation"
+  },
+  "zen": {
+    "title": "ज़ेन मोड - विकर्षण-मुक्त जापानी अभ्यास | KanaDojo",
+    "titleShort": "ज़ेन मोड",
+    "description": "न्यूनतम फोकस मोड के साथ शांत वातावरण में जापानी वर्णों का अभ्यास करें।",
+    "keywords": "zen mode, distraction free study, calm japanese practice"
+  },
+  "kanaTrain": {
+    "title": "काना प्रशिक्षण - हिरागाना और काताकाना अभ्यास | KanaDojo",
+    "titleShort": "काना प्रशिक्षण",
+    "description": "अनुकूलित अभ्यास सेट के साथ जापानी काना वर्णों में महारत हासिल करें।",
+    "keywords": "kana training, hiragana drills, katakana drills"
+  },
+  "kanjiTrain": {
+    "title": "कांजी प्रशिक्षण - स्तर के अनुसार कांजी अभ्यास | KanaDojo",
+    "titleShort": "कांजी प्रशिक्षण",
+    "description": "JLPT स्तर के अनुसार कांजी वर्णों का केंद्रित अभ्यास करें।",
+    "keywords": "kanji training, kanji flashcards, jlpt kanji drill"
+  },
+  "vocabularyTrain": {
+    "title": "शब्दावली प्रशिक्षण - जापानी शब्द अभ्यास | KanaDojo",
+    "titleShort": "शब्दावली प्रशिक्षण",
+    "description": "दैनिक जापानी शब्दावली और JLPT शब्दों का अभ्यास करें।",
+    "keywords": "vocabulary training, japanese word practice, vocab drill"
+  },
+  "kanaSubset": {
+    "hiraganaBase": {
+      "title": "हिरागाना मूल वर्ण (あ-わ) - बुनियादी हिरागाना सीखें | KanaDojo",
+      "titleShort": "हिरागाना मूल वर्ण",
+      "description": "सभी 46 बुनियादी हिरागाना वर्णों (あいうえお, かきくけこ, さしすせそ आदि) में महारत हासिल करें। संपूर्ण संदर्भ मार्गदर्शिका।",
+      "keywords": "hiragana base hindi, basic hiragana, hiragana chart, learn hiragana basics"
+    },
+    "hiraganaDakuon": {
+      "title": "हिरागाना दाकुओन (が-ぽ) - सघोष हिरागाना वर्ण | KanaDojo",
+      "titleShort": "हिरागाना दाकुओन वर्ण",
+      "description": "हिरागाना दाकुओन और हान्दाकुओन वर्णों (がぎぐげご, ざじずぜぞ, だぢづでど, ばびぶべぼ, ぱぴぷぺぽ) को उच्चारण गाइड के साथ सीखें।",
+      "keywords": "hiragana dakuon hindi, voiced hiragana, hiragana with dakuten"
+    },
+    "hiraganaYoon": {
+      "title": "हिरागाना योओन (きゃ-りょ) - संयुक्त हिरागाना वर्ण | KanaDojo",
+      "titleShort": "हिरागाना योओन वर्ण",
+      "description": "हिरागाना योओन संयोजन वर्णों (きゃきゅきょ, しゃしゅしょ, ちゃちゅちょ आदि) में महारत हासिल करें। सभी 33 संयुक्त ध्वनियां सीखें।",
+      "keywords": "hiragana yoon hindi, combined hiragana, hiragana digraphs"
+    },
+    "katakanaBase": {
+      "title": "काताकाना मूल वर्ण (ア-ワ) - बुनियादी काताकाना सीखें | KanaDojo",
+      "titleShort": "काताकाना मूल वर्ण",
+      "description": "सभी 46 बुनियादी काताकाना वर्णों (アイウエオ, カキクケコ, サシスセソ आदि) में महारत हासिल करें। संपूर्ण संदर्भ मार्गदर्शिका।",
+      "keywords": "katakana base hindi, basic katakana, katakana chart, learn katakana basics"
+    },
+    "katakanaDakuon": {
+      "title": "काताकाना दाकुओन (ガ-ポ) - सघोष काताकाना वर्ण | KanaDojo",
+      "titleShort": "काताकाना दाकुओन वर्ण",
+      "description": "काताकाना दाकुओन और हान्दाकुओन वर्णों (ガギグゲゴ, ザジズゼゾ, ダヂヅデド, バビブベボ, パピプペポ) को उच्चारण गाइड के साथ सीखें।",
+      "keywords": "katakana dakuon hindi, voiced katakana, katakana with dakuten"
+    },
+    "katakanaYoon": {
+      "title": "काताकाना योओन (キャ-リョ) - संयुक्त काताकाना वर्ण | KanaDojo",
+      "titleShort": "काताकाना योओन वर्ण",
+      "description": "काताकाना योओन संयोजन वर्णों (キャキュキョ, シャシュショ, チャチュチョ आदि) में महारत हासिल करें। सभी 33 संयुक्त ध्वनियां सीखें।",
+      "keywords": "katakana yoon hindi, combined katakana, katakana digraphs"
+    },
+    "katakanaForeign": {
+      "title": "काताकाना विदेशी ध्वनियां (ファ-ウィ) - विस्तारित काताकाना | KanaDojo",
+      "titleShort": "काताकाना विदेशी ध्वनियां",
+      "description": "विदेशी ऋणशब्दों के लिए विस्तारित काताकाना वर्ण (ファ, フィ, ウィ, ウェ आदि) सीखें।",
+      "keywords": "katakana foreign sounds hindi, extended katakana, katakana loanwords"
+    }
+  },
+  "hiraganaPractice": {
+    "title": "हिरागाना अभ्यास - निःशुल्क ऑनलाइन हिरागाना ड्रिल | KanaDojo",
+    "titleShort": "हिरागाना अभ्यास",
+    "description": "त्वरित ड्रिल, फ़्लैशकार्ड और इंटरैक्टिव गेम के साथ जापानी हिरागाना का ऑनलाइन अभ्यास करें।",
+    "keywords": "hiragana practice online hindi, hiragana drills, free hiragana practice"
+  },
+  "katakanaPractice": {
+    "title": "काताकाना अभ्यास - निःशुल्क ऑनलाइन काताकाना ड्रिल | KanaDojo",
+    "titleShort": "काताकाना अभ्यास",
+    "description": "त्वरित ड्रिल, फ़्लैशकार्ड और इंटरैक्टिव गेम के साथ जापानी काताकाना का ऑनलाइन अभ्यास करें।",
+    "keywords": "katakana practice online hindi, katakana drills, free katakana practice"
+  },
+  "kanjiPractice": {
+    "title": "कांजी अभ्यास - JLPT कांजी का ऑनलाइन अभ्यास करें | KanaDojo",
+    "titleShort": "कांजी अभ्यास",
+    "description": "JLPT स्तर N5 से N1 तक इंटरैक्टिव गेम और क्विज़ के साथ कांजी का अभ्यास करें।",
+    "keywords": "kanji practice online hindi, jlpt kanji drill, learn kanji characters"
+  }
+}
