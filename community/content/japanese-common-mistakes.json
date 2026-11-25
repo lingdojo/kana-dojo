@@ -405,8 +405,8 @@
   "explanation": "わかる takes が. (Pattern set 4)"
 },
 {
-  "wrong": "宿題を忘れないよう、メモします。",
-  "correct": "宿題を忘れないように、メモします。",
-  "explanation": "Use ように for purpose/prevention. (Pattern set 6)"
+  "wrong": "静かい部屋",
+  "correct": "静かな部屋",
+  "explanation": "な-adjectives require な before nouns. (Pattern set 2)"
 }
 ]

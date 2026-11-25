@@ -123,7 +123,8 @@ Never commit secrets to the repository:
 
 ```
 # .env.local (never commit this)
-GOOGLE_TRANSLATE_API_KEY=your-key-here
+AZURE_TRANSLATOR_KEY=your-key-here
+DEEPSEEK_API_KEY=your-key-here
 NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
 ```
 
