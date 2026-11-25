@@ -409,4 +409,10 @@
   "correct": "静かな部屋",
   "explanation": "な-adjectives require な before nouns. (Pattern set 2)"
 }
+,
+  {
+        "wrong": "東京は人が多いです、きれいです。",
+        "correct": "東京は人が多くて、きれいです。",
+        "explanation": "Use て-form to connect clauses. (Pattern set 5)"
+  }
 ]
