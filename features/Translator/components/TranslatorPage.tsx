@@ -7,6 +7,7 @@ import { cn } from '@/shared/utils/utils';
 import { ActionButton } from '@/shared/ui/components/ActionButton';
 
 import useTranslatorStore from '../store/useTranslatorStore';
+import { useOnlineStatus } from '../hooks/useOnlineStatus';
 import TranslatorInput from './TranslatorInput';
 import TranslatorOutput from './TranslatorOutput';
 import TranslationHistory from './TranslationHistory';
@@ -93,7 +94,9 @@ function TurnstileVerification({
   );
 }
 
-function TranslatorPageContent({ locale: _locale = 'en' }: TranslatorPageProps) {
+function TranslatorPageContent({
+  locale: _locale = 'en',
+}: TranslatorPageProps) {
   const searchParams = useSearchParams();
   const initializedFromUrl = useRef(false);
 
@@ -105,7 +108,6 @@ function TranslatorPageContent({ locale: _locale = 'en' }: TranslatorPageProps) 
     romanization,
     isLoading,
     error,
-    isOffline,
     verificationRequired,
     history,
     setSourceText,
@@ -119,6 +121,7 @@ function TranslatorPageContent({ locale: _locale = 'en' }: TranslatorPageProps) 
     restoreFromHistory,
     initFromUrlParams,
   } = useTranslatorStore();
+  const isOffline = !useOnlineStatus();
 
   // Load history on mount
   useEffect(() => {
@@ -157,12 +160,15 @@ function TranslatorPageContent({ locale: _locale = 'en' }: TranslatorPageProps) 
     if (!isOffline && sourceText.trim().length > 0) translate();
   };
 
-  const handleVerified = useCallback((token: string) => {
-    setVerificationToken(token || null);
-    if (token && !isOffline && sourceText.trim().length > 0) {
-      translate();
-    }
-  }, [isOffline, setVerificationToken, sourceText, translate]);
+  const handleVerified = useCallback(
+    (token: string) => {
+      setVerificationToken(token || null);
+      if (token && !isOffline && sourceText.trim().length > 0) {
+        translate();
+      }
+    },
+    [isOffline, setVerificationToken, sourceText, translate],
+  );
 
   return (
     <div
@@ -327,4 +333,3 @@ export default function TranslatorPage(props: TranslatorPageProps) {
     </Suspense>
   );
 }
-

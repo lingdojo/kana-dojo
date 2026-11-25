@@ -72,13 +72,15 @@ export function getErrorMessage(code: string): string {
 }
 
 /**
- * Check if the browser is online
+ * Check if the browser is online.
+ *
+ * Only trusts `navigator.onLine` when it is a real boolean: during SSR there may
+ * be no `navigator` at all, and Node.js 21+ defines a global `navigator` without
+ * `onLine`. Both cases are treated as online.
  */
 export function isOnline(): boolean {
-  if (typeof navigator === 'undefined') {
-    return true; // Assume online in SSR
-  }
-  return navigator.onLine;
+  const onLine = globalThis.navigator?.onLine;
+  return typeof onLine === 'boolean' ? onLine : true;
 }
 
 /**
