@@ -420,10 +420,10 @@
   "note": "Regional intensifier. (Set 6)"
   },
   {
-      "dialect": "めっちゃ",
-    "standardJapanese": "とても",
-    "english": "very",
-    "region": "Kansai",
-    "note": "Now used nationwide. (Set 2)"
-  }
+  "dialect": "よか",
+  "standardJapanese": "いい",
+  "english": "good",
+  "region": "Kyushu",
+  "note": "Common Kyushu replacement. (Set 3)"
+}
 ]
