@@ -73,7 +73,7 @@ npm run build    # Generate sitemap
 - **Twitter Cards**: Optimized for Twitter/X sharing
 - **Canonical URLs**: Proper canonical tags to avoid duplicate content
 - **Robots**: Configured for optimal crawling and indexing
-- **Multi-language Support**: Alternate locale tags for en, es, ja
+- **Multi-language Support**: Alternate locale tags for en and es
 
 #### Page-Level Metadata
 
@@ -132,7 +132,7 @@ Enhanced `manifest.json` with:
 
 ### 6. Internationalization (i18n)
 
-- Support for 3 languages: English, Spanish, Japanese
+- Support for 2 active languages: English and Spanish (see `core/i18n/routing.ts`)
 - Hreflang tags in sitemap
 - Alternate locale tags in metadata
 - Locale-specific URLs (when needed)

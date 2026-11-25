@@ -31,9 +31,10 @@ Currently, we support:
 
 - 🇬🇧 **English (en)** - Reference language
 - 🇪🇸 **Spanish (es)**
-- 🇯🇵 **Japanese (ja)**
 
-We're planning to add: Portuguese, French, German, Italian, Chinese, Korean, Russian, and Arabic.
+Translation files also exist for French (`fr`), Simplified Chinese (`zh`) and German (`de`, metadata only), but these locales are not enabled in `core/i18n/routing.ts` yet and are not checked by `npm run i18n:validate`. The active locales are the ones listed in `routing.ts`.
+
+We're planning to add: Portuguese, Italian, Korean, Russian, and Arabic.
 
 ---
 
@@ -53,9 +54,7 @@ core/i18n/locales/
 │   ├── statistics.json
 │   ├── settings.json
 │   └── errors.json
-├── es/          # Spanish
-│   └── (same files)
-└── ja/          # Japanese
+└── es/          # Spanish
     └── (same files)
 ```
 
@@ -277,7 +276,7 @@ Examples:
 
 ### File Naming
 
-- Use **lowercase** for folder names: `en`, `es`, `ja`
+- Use **lowercase** for folder names: `en`, `es`, `fr`
 - Use **lowercase + kebab-case** for multi-word languages: `pt-br`, `zh-cn`
 - JSON files must have **exact** names: `common.json`, not `Common.json`
 
