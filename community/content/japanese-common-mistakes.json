@@ -408,5 +408,10 @@
   "wrong": "静かい部屋",
   "correct": "静かな部屋",
   "explanation": "な-adjectives require な before nouns. (Pattern set 2)"
-}
+},
+  {
+    "wrong": "これはおいしいだ。",
+    "correct": "これはおいしい。",
+    "explanation": "い-adjectives do not take だ in plain present. (Pattern set 3)"
+  }
 ]
