@@ -380,28 +380,23 @@
     "explanation": "\u306a-adjectives require \u306a before nouns. (Pattern set 6)"
   },
   {
-  "wrong": "もし雨が降ります、行きません。",
-  "correct": "もし雨が降ったら、行きません。",
-  "explanation": "Conditional needs たら/なら etc. (Pattern set 2)"
+    "wrong": "もし雨が降ります、行きません。",
+    "correct": "もし雨が降ったら、行きません。",
+    "explanation": "Conditional needs たら/なら etc. (Pattern set 2)"
   },
   {
-  "wrong": "もし雨が降ります、行きません。",
-  "correct": "もし雨が降ったら、行きません。",
-  "explanation": "Conditional needs たら/なら etc. (Pattern set 2)"
+    "wrong": "もし雨が降ります、行きません。",
+    "correct": "もし雨が降ったら、行きません。",
+    "explanation": "Conditional needs たら/なら etc. (Pattern set 2)"
   },
   {
-  "wrong": "駅まで十分歩きますかかる。",
-  "correct": "駅まで歩いて十分かかる。",
-  "explanation": "Use natural collocation and order. (Pattern set 3)"
-},
-{
-  "wrong": "先生は私を日本語を教えました。",
-  "correct": "先生は私に日本語を教えました。",
-  "explanation": "Recipient takes に with 教える. (Pattern set 6)"
-},
-{
-  "wrong": "日本語をわかります。",
-  "correct": "日本語がわかります。",
-  "explanation": "わかる takes が. (Pattern set 4)"
-}
+    "wrong": "駅まで十分歩きますかかる。",
+    "correct": "駅まで歩いて十分かかる。",
+    "explanation": "Use natural collocation and order. (Pattern set 3)"
+  },
+  {
+    "wrong": "毎日日本語を勉強していますから上手になります。",
+    "correct": "毎日日本語を勉強しているので上手になります。",
+    "explanation": "ので is smoother/neutral for reason. (Pattern set 5)"
+  }
 ]
