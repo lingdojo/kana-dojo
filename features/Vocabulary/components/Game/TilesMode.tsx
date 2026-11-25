@@ -3,7 +3,6 @@ import { useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import clsx from 'clsx';
 import type { IVocabObj } from '@/features/Vocabulary/store/useVocabStore';
-import { Random } from 'random-js';
 import {
   useCorrect,
   useError,
@@ -41,8 +40,12 @@ import {
 } from '@/features/Vocabulary/components/Game/vocabFormatLock';
 import { useSetProgressStore } from '@/features/Progress';
 import { useTilesModeKeyboardSelection } from '@/shared/hooks/game/useTilesModeKeyboardSelection';
+import {
+  getVocabIncorrectOptions,
+  isVocabOptionCorrect,
+} from '@/features/Vocabulary/lib/vocabQuizOptions';
+import { shuffle } from '@/shared/utils/shuffle';
 
-const random = new Random();
 const adaptiveSelector = getGlobalAdaptiveSelector();
 
 // Helper function to check if a word contains kanji characters
@@ -206,31 +209,12 @@ const VocabTilesMode = ({
       }
 
       // Determine correct answer based on quiz type and mode
-      let correctAnswerRaw: string | undefined;
-      let distractorSourceRaw: Array<string | undefined>;
-
-      if (effectiveQuizType === 'reading') {
-        // Reading quiz: answer is always the reading
-        correctAnswerRaw = selectedWordObj.reading;
-        distractorSourceRaw = selectedWordObjs
-          .filter(obj => obj.word !== selectedWord)
-          .map(obj => obj.reading);
-      } else {
-        // Meaning quiz
-        if (isReverse) {
-          // Reverse: show meaning, answer is word
-          correctAnswerRaw = selectedWord;
-          distractorSourceRaw = selectedWordObjs
-            .filter(obj => obj.word !== selectedWord)
-            .map(obj => obj.word);
-        } else {
-          // Normal: show word, answer is meaning
-          correctAnswerRaw = selectedWordObj.meanings[0];
-          distractorSourceRaw = selectedWordObjs
-            .filter(obj => obj.word !== selectedWord)
-            .map(obj => obj.meanings[0]);
-        }
-      }
+      const correctAnswerRaw =
+        effectiveQuizType === 'reading'
+          ? selectedWordObj.reading
+          : isReverse
+            ? selectedWord
+            : selectedWordObj.meanings[0];
 
       const correctAnswer = normalizeOption(correctAnswerRaw);
       if (!correctAnswer) {
@@ -243,18 +227,16 @@ const VocabTilesMode = ({
         };
       }
 
-      const distractors = distractorSourceRaw
-        .map(normalizeOption)
-        .filter((value): value is string => value !== null)
-        .filter(option => option !== correctAnswer)
-        .filter((option, idx, arr) => arr.indexOf(option) === idx)
-        .sort(() => random.real(0, 1) - 0.5)
-        .slice(0, distractorCount);
+      const distractors = getVocabIncorrectOptions({
+        correctWordObj: selectedWordObj,
+        wordObjs: selectedWordObjs,
+        count: distractorCount,
+        quizType: effectiveQuizType,
+        isReverse,
+      });
 
       // Shuffle all tiles
-      const sortedTiles = [correctAnswer, ...distractors].sort(
-        () => random.real(0, 1) - 0.5,
-      );
+      const sortedTiles = shuffle([correctAnswer, ...distractors]);
       const allTiles = new Map<number, string>();
       sortedTiles.forEach((char, i) => {
         allTiles.set(i, char);
@@ -351,13 +333,20 @@ const VocabTilesMode = ({
     ],
   );
 
-  // Only reset game on isReverse change if we're NOT showing the answer summary
-  // This prevents the summary from being hidden when smart reverse mode changes after a correct answer
+  const [prevIsReverse, setPrevIsReverse] = useState(isReverse);
+  if (prevIsReverse !== isReverse && !displayAnswerSummary) {
+    setPrevIsReverse(isReverse);
+    setQuestionData(generateQuestion(quizType));
+    setPromptSequence(prev => prev + 1);
+    setPlacedTileIds([]);
+    setIsChecking(false);
+    setIsCelebrating(false);
+    setBottomBarState('check');
+  }
+
   useEffect(() => {
-    if (!displayAnswerSummary) {
-      resetGame();
-    }
-  }, [isReverse, resetGame, displayAnswerSummary]);
+    startAnswerTimer();
+  }, [promptSequence, startAnswerTimer]);
 
   // Pause timer when game is hidden
   useEffect(() => {
@@ -389,7 +378,15 @@ const VocabTilesMode = ({
     const selectedTileChar = questionData.allTiles.get(placedTileIds[0]);
     const isCorrect =
       placedTileIds.length === 1 &&
-      selectedTileChar === questionData.correctAnswer;
+      selectedTileChar !== undefined &&
+      isVocabOptionCorrect({
+        selectedOption: selectedTileChar,
+        correctWordObj: questionData.wordObj ?? undefined,
+        correctAnswer: questionData.correctAnswer,
+        quizType: questionData.quizType,
+        isReverse,
+        wordObjMap,
+      });
 
     // Use the word object stored with the question (guaranteed to be correct)
     const selectedWordObj = questionData.wordObj;
@@ -421,10 +418,13 @@ const VocabTilesMode = ({
       setBottomBarState('correct');
       setIsCelebrating(true);
 
-      // Use the word object stored with the question - guaranteed to be valid
-      // since the question wouldn't have been generated without it
-      if (selectedWordObj) {
-        setCurrentWordObjForSummary(selectedWordObj);
+      const answeredWordObj =
+        questionData.quizType === 'meaning' && isReverse
+          ? (wordObjMap.get(selectedTileChar) ?? selectedWordObj)
+          : selectedWordObj;
+
+      if (answeredWordObj) {
+        setCurrentWordObjForSummary(answeredWordObj);
         setDisplayAnswerSummary(true);
       }
 
@@ -436,7 +436,7 @@ const VocabTilesMode = ({
           : questionData.word; // meaning+normal or reading: showed word
       setFeedback(
         <>
-          <span className='text-(--secondary-color)'>{`${displayText} = ${questionData.correctAnswer} `}</span>
+          <span className='text-(--secondary-color)'>{`${displayText} = ${selectedTileChar} `}</span>
           <CircleCheck className='inline text-(--main-color)' />
         </>,
       );
@@ -527,7 +527,6 @@ const VocabTilesMode = ({
     setScore,
     externalOnWrong,
     externalIsReverse,
-    decideNextReverseMode,
     recordReverseModeWrong,
     logAttempt,
     isReverse,
@@ -538,6 +537,7 @@ const VocabTilesMode = ({
     getAnswerTimeMs,
     resetAnswerTimer,
     recordVocabularyProgress,
+    wordObjMap,
     setIsChecking,
     setBottomBarState,
     setIsCelebrating,
@@ -582,6 +582,7 @@ const VocabTilesMode = ({
     resetGame,
     getNextQuizType,
     quizType,
+    isReverse,
   ]);
 
   const handleTryAgain = useCallback(() => {
