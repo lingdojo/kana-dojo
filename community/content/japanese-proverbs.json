@@ -456,12 +456,6 @@
     "meaning": "A lucky break that comes from an error"
   },
   {
-    "japanese": "口は災いの元",
-    "romaji": "Kuchi wa wazawai no moto",
-    "english": "The mouth is the source of disaster",
-    "meaning": "Careless speech can cause trouble"
-  },
-  {
     "japanese": "急いては事を仕損じる",
     "romaji": "Seite wa koto wo shisonjiru",
     "english": "Haste will spoil things",
@@ -472,5 +466,11 @@
     "romaji": "Nen ni wa nen wo ireyo",
     "english": "Put care into care",
     "meaning": "Double-check; be extra careful"
+  },
+  {
+    "japanese": "口は災いの元",
+    "romaji": "Kuchi wa wazawai no moto",
+    "english": "The mouth is the source of disaster",
+    "meaning": "Careless speech can cause trouble"
   }
 ]
