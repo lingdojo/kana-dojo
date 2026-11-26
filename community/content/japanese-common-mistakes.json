@@ -408,5 +408,10 @@
   "wrong": "静かい部屋",
   "correct": "静かな部屋",
   "explanation": "な-adjectives require な before nouns. (Pattern set 2)"
-}
+},
+{
+  "wrong": "日本語をわかります。",
+  "correct": "日本語がわかります。",
+  "explanation": "わかる takes が. (Pattern set 1)"
+}  
 ]
