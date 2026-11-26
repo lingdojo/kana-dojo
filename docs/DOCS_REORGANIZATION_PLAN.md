@@ -117,7 +117,7 @@ Open [http://localhost:3000](http://localhost:3000)
 
 ## Tech Stack
 
-Next.js 15 · React 19 · TypeScript · Tailwind CSS · Zustand
+Next.js 16 · React 19 · TypeScript · Tailwind CSS · Zustand
 
 > See [Architecture docs](./docs/ARCHITECTURE.md) for full details
 

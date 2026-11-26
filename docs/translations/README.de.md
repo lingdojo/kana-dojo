@@ -12,7 +12,7 @@ Eine ästhetische, minimalistische und hochgradig anpassbare Plattform zur Beher
 
 [![Live Demo](https://img.shields.io/badge/demo-live-success?style=for-the-badge)](https://kanadojo.com)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg?style=for-the-badge)](https://www.gnu.org/licenses/agpl-3.0)
-[![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
 
@@ -140,7 +140,7 @@ KanaDojo wurde mit modernen Web-Technologien für optimale Leistung und Entwickl
 
 ### Kern-Framework
 
-- **Next.js 15** – React-Framework mit App Router für serverseitiges Rendering und optimale Leistung.
+- **Next.js 16** – React-Framework mit App Router für serverseitiges Rendering und optimale Leistung.
 - **React 19** – Neuestes React mit Concurrent Features.
 - **TypeScript** – Typensichere Entwicklung.
 

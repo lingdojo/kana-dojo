@@ -14,7 +14,7 @@
 
 ## Introduction
 
-This document describes KanaDojo's architecture, a Japanese learning platform built with Next.js 15, React 19, and TypeScript. The current architecture is based on a **feature-based pattern**, which organizes code by functionality rather than by file type.
+This document describes KanaDojo's architecture, a Japanese learning platform built with Next.js 16, React 19, and TypeScript. The current architecture is based on a **feature-based pattern**, which organizes code by functionality rather than by file type.
 
 ### Why This Document?
 
@@ -139,7 +139,7 @@ kanadojo/
 
 ### 📁 `app/` - Next.js App Router
 
-Contains Next.js 15 pages, layouts, and routing. Uses the App Router pattern with internationalization.
+Contains Next.js 16 pages, layouts, and routing. Uses the App Router pattern with internationalization.
 
 ```
 app/
@@ -343,12 +343,12 @@ shared/
 
 **Ownership matrix:**
 
-| Layer | Owns | Must not own |
-| --- | --- | --- |
-| `shared/` | primitives, technical infra, generic hooks/utils | domain models, page orchestration, feature-specific workflows |
-| `entities/` | domain models, domain selectors, reusable domain types | route ownership, page sections, app wiring |
-| `features/` | business workflows, feature state, feature UI | cross-feature page composition, unrelated domain reuse buckets |
-| `widgets/` | cross-feature page-section composition | feature internals, domain source of truth |
+| Layer       | Owns                                                   | Must not own                                                   |
+| ----------- | ------------------------------------------------------ | -------------------------------------------------------------- |
+| `shared/`   | primitives, technical infra, generic hooks/utils       | domain models, page orchestration, feature-specific workflows  |
+| `entities/` | domain models, domain selectors, reusable domain types | route ownership, page sections, app wiring                     |
+| `features/` | business workflows, feature state, feature UI          | cross-feature page composition, unrelated domain reuse buckets |
+| `widgets/`  | cross-feature page-section composition                 | feature internals, domain source of truth                      |
 
 **Rules for Shared:**
 
@@ -367,23 +367,23 @@ shared/
 
 **Shared component triage guide:**
 
-| Current area | Target home | Rationale |
-| --- | --- | --- |
-| `shared/components/ui/*` | `shared/ui/components/*` | Primitive UI surface for all layers |
-| `shared/components/Menu/*` | `widgets/menu/*` | Page-section orchestration across features |
-| `shared/components/*` (non-primitive reusable) | `shared/ui-composite/*` | Generic composite UI blocks |
-| workflow-specific composite blocks | `widgets/*` or `features/*` | Keep shared free from feature/page orchestration |
+| Current area                                   | Target home                 | Rationale                                        |
+| ---------------------------------------------- | --------------------------- | ------------------------------------------------ |
+| `shared/components/ui/*`                       | `shared/ui/components/*`    | Primitive UI surface for all layers              |
+| `shared/components/Menu/*`                     | `widgets/menu/*`            | Page-section orchestration across features       |
+| `shared/components/*` (non-primitive reusable) | `shared/ui-composite/*`     | Generic composite UI blocks                      |
+| workflow-specific composite blocks             | `widgets/*` or `features/*` | Keep shared free from feature/page orchestration |
 
 **Shared utility segmentation guide:**
 
-| Legacy path | Preferred entrypoint |
-| --- | --- |
-| `shared/lib/rateLimit` | `shared/infra/server/rateLimit` |
-| `shared/lib/redis` | `shared/infra/server/redis` |
-| `shared/lib/server/*` | `shared/infra/server/*` |
-| `shared/lib/apiCache` | `shared/infra/client/apiCache` |
-| `shared/lib/constants` | `shared/config/constants` |
-| `shared/lib/*` (pure helpers) | `shared/utils/*` |
+| Legacy path                   | Preferred entrypoint            |
+| ----------------------------- | ------------------------------- |
+| `shared/lib/rateLimit`        | `shared/infra/server/rateLimit` |
+| `shared/lib/redis`            | `shared/infra/server/redis`     |
+| `shared/lib/server/*`         | `shared/infra/server/*`         |
+| `shared/lib/apiCache`         | `shared/infra/client/apiCache`  |
+| `shared/lib/constants`        | `shared/config/constants`       |
+| `shared/lib/*` (pure helpers) | `shared/utils/*`                |
 
 ### 🧱 `core/` - Fundamental Infrastructure
 
