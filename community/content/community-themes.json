@@ -485,16 +485,41 @@
     "mainColor": "oklch(70.0% 0.195 55.0 / 1)",
     "secondaryColor": "oklch(80.0% 0.125 95.0 / 1)"
   },
-{
-  "id": "thunder-god",
-  "backgroundColor": "oklch(14.0% 0.058 290.0 / 1)",
-  "mainColor": "oklch(88.0% 0.195 95.0 / 1)",
-  "secondaryColor": "oklch(75.0% 0.180 275.0 / 1)"
-},
+  {
+    "id": "thunder-god",
+    "backgroundColor": "oklch(14.0% 0.058 290.0 / 1)",
+    "mainColor": "oklch(88.0% 0.195 95.0 / 1)",
+    "secondaryColor": "oklch(75.0% 0.180 275.0 / 1)"
+  },
   {
     "id": "robot-anime",
     "backgroundColor": "oklch(16.0% 0.055 270.0 / 1)",
     "mainColor": "oklch(72.0% 0.195 220.0 / 1)",
     "secondaryColor": "oklch(68.0% 0.205 30.0 / 1)"
+  },
+  {
+    "id": "matcha-drift",
+    "backgroundColor": "oklch(18.5% 0.035 140.0 / 1)",
+    "mainColor": "oklch(76.0% 0.140 135.0 / 1)",
+    "secondaryColor": "oklch(72.0% 0.070 80.0 / 1)"
+  },
+  {
+    "id": "shoji-sunlight",
+    "backgroundColor": "oklch(95.0% 0.008 95.0 / 1)",
+    "mainColor": "oklch(52.0% 0.070 80.0 / 1)",
+    "secondaryColor": "oklch(65.0% 0.045 60.0 / 1)"
+  },
+  {
+    "id": "golden-kintsugi",
+    "backgroundColor": "oklch(20.0% 0.020 70.0 / 1)",
+    "mainColor": "oklch(85.0% 0.155 85.0 / 1)",
+    "secondaryColor": "oklch(60.0% 0.085 25.0 / 1)"
+  },
+
+  {
+    "id": "wasanbon",
+    "backgroundColor": "oklch(96.0% 0.012 95.0 / 1)",
+    "mainColor": "oklch(62.0% 0.110 75.0 / 1)",
+    "secondaryColor": "oklch(70.0% 0.060 85.0 / 1)"
   }
 ]

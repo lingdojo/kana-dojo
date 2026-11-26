@@ -1,9 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
 import {
-  TranslateClient,
-  TranslateTextCommand,
-} from '@aws-sdk/client-translate';
-import {
   checkTranslateUsageLimit,
   checkTranslateRateLimit,
   getClientIP,
@@ -24,9 +20,7 @@ const TRANSLATE_ANALYTICS_ENABLED = false;
 const trackTranslate: (
   event: string,
   properties?: Record<string, unknown>,
-) => void = TRANSLATE_ANALYTICS_ENABLED
-  ? captureServerEvent
-  : () => {};
+) => void = TRANSLATE_ANALYTICS_ENABLED ? captureServerEvent : () => {};
 
 // Simple in-memory cache for translations (reduces API calls)
 const translationCache = new Map<
@@ -91,6 +85,7 @@ interface TranslationRequestBody {
   requestContext?: 'manual' | 'url-prefill';
 }
 
+/* Google Cloud Translation fallback retained for reference only; not active.
 interface GoogleTranslateResponse {
   data: {
     translations: Array<{
@@ -99,6 +94,7 @@ interface GoogleTranslateResponse {
     }>;
   };
 }
+*/
 
 interface AzureTranslateResponseItem {
   detectedLanguage?: {
@@ -114,13 +110,13 @@ interface AzureTranslateResponseItem {
 interface TranslationProviderResult {
   translatedText: string;
   detectedSourceLanguage?: string;
-  provider: 'azure' | 'aws' | 'google';
+  provider: 'azure' | 'deepseek';
 }
 
 class TranslationProviderError extends Error {
   constructor(
     message: string,
-    readonly provider: 'azure' | 'aws' | 'google',
+    readonly provider: 'azure' | 'deepseek',
     readonly status?: number,
     readonly authError = false,
   ) {
@@ -322,6 +318,72 @@ async function translateWithAzure({
   };
 }
 
+async function translateWithDeepSeek({
+  text,
+  sourceLanguage,
+  targetLanguage,
+}: {
+  text: string;
+  sourceLanguage: 'en' | 'ja';
+  targetLanguage: 'en' | 'ja';
+}): Promise<TranslationProviderResult> {
+  const apiKey = process.env.DEEPSEEK_API_KEY;
+  if (!apiKey) {
+    throw new TranslationProviderError(
+      'DEEPSEEK_API_KEY is not configured',
+      'deepseek',
+      500,
+      true,
+    );
+  }
+
+  const response = await fetch('https://api.deepseek.com/chat/completions', {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      model: 'deepseek-flash',
+      thinking: { type: 'disabled' },
+      messages: [
+        {
+          role: 'system',
+          content: `Translate the user's text from ${sourceLanguage} to ${targetLanguage}. Return only the translated text, preserving its meaning and formatting. Do not add explanations or quotes.`,
+        },
+        { role: 'user', content: text },
+      ],
+    }),
+  });
+
+  if (!response.ok) {
+    throw new TranslationProviderError(
+      `DeepSeek translation error: ${response.status}`,
+      'deepseek',
+      response.status,
+      response.status === 401 || response.status === 403,
+    );
+  }
+
+  const data = (await response.json()) as {
+    choices?: Array<{ message?: { content?: string | null } }>;
+  };
+  const translatedText = data.choices?.[0]?.message?.content?.trim();
+  if (!translatedText) {
+    throw new TranslationProviderError(
+      'DeepSeek returned an empty translation',
+      'deepseek',
+      502,
+    );
+  }
+
+  return {
+    translatedText,
+    provider: 'deepseek',
+  };
+}
+
+/* Previous Google Cloud Translation provider implementation, intentionally disabled.
 async function translateWithGoogle({
   text,
   sourceLanguage,
@@ -342,12 +404,9 @@ async function translateWithGoogle({
   }
 
   const googleApiUrl = `https://translation.googleapis.com/language/translate/v2?key=${apiKey}`;
-
   const googleResponse = await fetch(googleApiUrl, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       q: text,
       source: sourceLanguage,
@@ -355,7 +414,6 @@ async function translateWithGoogle({
       format: 'text',
     }),
   });
-
   if (!googleResponse.ok) {
     throw new TranslationProviderError(
       `Google Translate error: ${googleResponse.status}`,
@@ -364,7 +422,6 @@ async function translateWithGoogle({
       googleResponse.status === 401 || googleResponse.status === 403,
     );
   }
-
   const data = (await googleResponse.json()) as GoogleTranslateResponse;
   const translation = data.data.translations[0];
   if (!translation?.translatedText) {
@@ -374,73 +431,13 @@ async function translateWithGoogle({
       502,
     );
   }
-
   return {
     translatedText: translation.translatedText,
     detectedSourceLanguage: translation.detectedSourceLanguage,
     provider: 'google',
   };
 }
-
-async function translateWithAws({
-  text,
-  sourceLanguage,
-  targetLanguage,
-}: {
-  text: string;
-  sourceLanguage: 'en' | 'ja';
-  targetLanguage: 'en' | 'ja';
-}): Promise<TranslationProviderResult> {
-  const region = process.env.AWS_REGION;
-  if (!region) {
-    throw new TranslationProviderError(
-      'AWS_REGION is not configured',
-      'aws',
-      500,
-      true,
-    );
-  }
-
-  try {
-    const client = new TranslateClient({ region });
-    const response = await client.send(
-      new TranslateTextCommand({
-        Text: text,
-        SourceLanguageCode: sourceLanguage,
-        TargetLanguageCode: targetLanguage,
-      }),
-    );
-
-    if (!response.TranslatedText) {
-      throw new TranslationProviderError(
-        'Amazon Translate returned an empty translation',
-        'aws',
-        502,
-      );
-    }
-
-    return {
-      translatedText: response.TranslatedText,
-      detectedSourceLanguage: response.SourceLanguageCode,
-      provider: 'aws',
-    };
-  } catch (error) {
-    if (error instanceof TranslationProviderError) {
-      throw error;
-    }
-
-    const status =
-      typeof error === 'object' && error !== null && '$metadata' in error
-        ? (error.$metadata as { httpStatusCode?: number }).httpStatusCode
-        : undefined;
-    throw new TranslationProviderError(
-      `Amazon Translate error${status ? `: ${status}` : ''}`,
-      'aws',
-      status,
-      status === 401 || status === 403,
-    );
-  }
-}
+*/
 
 async function translateWithFallback({
   text,
@@ -458,23 +455,16 @@ async function translateWithFallback({
       azureError instanceof TranslationProviderError
         ? azureError.status
         : undefined;
-    console.error('Azure Translator failed, falling back to AWS:', status);
+    console.error('Azure Translator failed, falling back to DeepSeek:', status);
   }
 
-  try {
-    return await translateWithAws({ text, sourceLanguage, targetLanguage });
-  } catch (awsError) {
-    const status =
-      awsError instanceof TranslationProviderError ? awsError.status : undefined;
-    console.error('Amazon Translate failed, falling back to Google:', status);
-    return translateWithGoogle({ text, sourceLanguage, targetLanguage });
-  }
+  return translateWithDeepSeek({ text, sourceLanguage, targetLanguage });
 }
 
 /**
  * POST /api/translate
  * Translates text between English and Japanese using Azure Translator first,
- * then Amazon Translate, with Google Cloud Translation as the final fallback.
+ * with DeepSeek as the fallback.
  */
 export async function POST(request: NextRequest) {
   const startTime = Date.now();

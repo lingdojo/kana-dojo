@@ -23,7 +23,7 @@ KanaDojo provides serverless API endpoints for:
 
 - **Text Analysis**: Japanese text tokenization using Kuromoji
 - **OG Images**: Dynamic social card generation
-- **Translation**: English/Japanese translation using Google Cloud Translation API
+- **Translation**: English/Japanese translation using Azure Translator with DeepSeek fallback
 
 All endpoints run on **Vercel Edge** for low latency.
 
@@ -128,7 +128,7 @@ https://kanadojo.com/api/og?title=Learn%20Hiragana&type=kana
 
 ### POST /api/translate
 
-Translates text between English and Japanese using Google Cloud Translation API.
+Translates text between English and Japanese using Azure Translator first, with DeepSeek as the fallback.
 
 **Endpoint**: `POST /api/translate`
 
@@ -265,11 +265,12 @@ Translation and analysis results are cached to reduce API calls:
 
 Required secrets (set in Vercel):
 
-| Variable                   | Description                      |
-| -------------------------- | -------------------------------- |
-| `GOOGLE_TRANSLATE_API_KEY` | Google Cloud Translation API key |
+| Variable               | Description                                 |
+| ---------------------- | ------------------------------------------- |
+| `AZURE_TRANSLATOR_KEY` | Azure Translator API key (primary provider) |
+| `DEEPSEEK_API_KEY`     | DeepSeek API key (fallback provider)        |
 
-**Note**: This key is stored securely in Vercel and never exposed to the client.
+**Note**: These keys are stored securely in Vercel and never exposed to the client.
 
 ---
 

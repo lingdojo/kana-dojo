@@ -5,17 +5,6 @@ const mockCheckTranslateRateLimit = vi.fn();
 const mockCheckTranslateUsageLimit = vi.fn();
 const mockGetRedisCachedJson = vi.fn();
 const mockSetRedisCachedJson = vi.fn();
-const mockAwsTranslateSend = vi.fn();
-
-vi.mock('@aws-sdk/client-translate', () => ({
-  TranslateClient: class {
-    send = mockAwsTranslateSend;
-  },
-  TranslateTextCommand: class {
-    constructor(readonly input: unknown) {}
-  },
-}));
-
 vi.mock('@/shared/infra/server/rateLimit', () => ({
   checkTranslateRateLimit: (...args: unknown[]) =>
     mockCheckTranslateRateLimit(...args),
@@ -105,10 +94,8 @@ describe('POST /api/translate', () => {
     mockCheckTranslateUsageLimit.mockReset();
     mockGetRedisCachedJson.mockReset();
     mockSetRedisCachedJson.mockReset();
-    mockAwsTranslateSend.mockReset();
     vi.stubEnv('AZURE_TRANSLATOR_KEY', 'azure-test-key');
-    vi.stubEnv('GOOGLE_TRANSLATE_API_KEY', 'test-key');
-    vi.stubEnv('AWS_REGION', 'eu-central-1');
+    vi.stubEnv('DEEPSEEK_API_KEY', 'test-key');
     vi.stubEnv('TURNSTILE_SECRET_KEY', '');
 
     mockCheckTranslateRateLimit.mockResolvedValue(allowedRateLimitResult());
@@ -212,11 +199,9 @@ describe('POST /api/translate', () => {
     const data = (await response.json()) as { provider: string };
     expect(data.provider).toBe('azure');
     expect(mockCheckTranslateRateLimit).toHaveBeenCalledWith('127.0.0.1');
-    expect(mockCheckTranslateUsageLimit).toHaveBeenCalledWith(
-      '127.0.0.1',
-      5,
-      { verified: false },
-    );
+    expect(mockCheckTranslateUsageLimit).toHaveBeenCalledWith('127.0.0.1', 5, {
+      verified: false,
+    });
     expect(fetch).toHaveBeenCalledTimes(1);
     expect(String(vi.mocked(fetch).mock.calls[0][0])).toContain(
       'api.cognitive.microsofttranslator.com/translate',
@@ -224,51 +209,7 @@ describe('POST /api/translate', () => {
     expect(mockSetRedisCachedJson).toHaveBeenCalledTimes(1);
   });
 
-  it('falls back to Amazon Translate when Azure translation fails', async () => {
-    mockAwsTranslateSend.mockResolvedValue({
-      TranslatedText: 'hello from aws',
-      SourceLanguageCode: 'ja',
-    });
-    vi.stubGlobal(
-      'fetch',
-      vi
-        .fn()
-        .mockResolvedValueOnce({
-          ok: false,
-          status: 503,
-          json: async () => ({}),
-        }),
-    );
-
-    const errorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
-    try {
-      const response = await callPost({
-        text: 'こんにちは',
-        sourceLanguage: 'ja',
-        targetLanguage: 'en',
-      });
-
-      expect(response.status).toBe(200);
-      const data = (await response.json()) as {
-        translatedText: string;
-        provider: string;
-      };
-      expect(data.translatedText).toBe('hello from aws');
-      expect(data.provider).toBe('aws');
-      expect(fetch).toHaveBeenCalledTimes(1);
-      expect(mockAwsTranslateSend).toHaveBeenCalledTimes(1);
-      expect(String(vi.mocked(fetch).mock.calls[0][0])).toContain(
-        'api.cognitive.microsofttranslator.com/translate',
-      );
-    } finally {
-      errorSpy.mockRestore();
-    }
-  });
-
-  it('falls back to Google when Azure and Amazon Translate fail', async () => {
-    mockAwsTranslateSend.mockRejectedValue({
-      $metadata: { httpStatusCode: 503 },
-    });
+  it('falls back directly to DeepSeek when Azure translation fails', async () => {
     vi.stubGlobal(
       'fetch',
       vi
@@ -282,9 +223,7 @@ describe('POST /api/translate', () => {
           ok: true,
           status: 200,
           json: async () => ({
-            data: {
-              translations: [{ translatedText: 'hello from google' }],
-            },
+            choices: [{ message: { content: 'hello from deepseek' } }],
           }),
         }),
     );
@@ -302,13 +241,17 @@ describe('POST /api/translate', () => {
         translatedText: string;
         provider: string;
       };
-      expect(data.translatedText).toBe('hello from google');
-      expect(data.provider).toBe('google');
+      expect(data.translatedText).toBe('hello from deepseek');
+      expect(data.provider).toBe('deepseek');
       expect(fetch).toHaveBeenCalledTimes(2);
-      expect(mockAwsTranslateSend).toHaveBeenCalledTimes(1);
       expect(String(vi.mocked(fetch).mock.calls[1][0])).toContain(
-        'translation.googleapis.com',
+        'api.deepseek.com/chat/completions',
       );
+      const deepSeekRequest = JSON.parse(
+        String(vi.mocked(fetch).mock.calls[1][1]?.body),
+      ) as { model: string; thinking: { type: string } };
+      expect(deepSeekRequest.model).toBe('deepseek-flash');
+      expect(deepSeekRequest.thinking).toEqual({ type: 'disabled' });
     } finally {
       errorSpy.mockRestore();
     }
