@@ -55,6 +55,81 @@ describe('isKanjiClassicInputAnswerCorrect', () => {
     ).toBe(false);
   });
 
+  it('accepts Hepburn and kana forms of a stored reading', () => {
+    const readings = ['nyuu ニュウ'];
+
+    expect(
+      isKanjiClassicInputAnswerCorrect({
+        inputValue: 'nyū',
+        target: ['milk'],
+        readings,
+        isReverse: false,
+      }),
+    ).toBe(true);
+    expect(
+      isKanjiClassicInputAnswerCorrect({
+        inputValue: 'ニュウ',
+        target: ['milk'],
+        readings,
+        isReverse: false,
+      }),
+    ).toBe(true);
+    expect(
+      isKanjiClassicInputAnswerCorrect({
+        inputValue: 'nyuu',
+        target: ['milk'],
+        readings,
+        isReverse: false,
+      }),
+    ).toBe(true);
+  });
+
+  it('accepts Nyuga for the on-yomi of 乳', () => {
+    expect(
+      isKanjiClassicInputAnswerCorrect({
+        inputValue: 'Nyuga',
+        target: ['milk', 'breasts'],
+        readings: ['chichi ちち', 'chi ち', 'nyuu ニュウ'],
+        isReverse: false,
+      }),
+    ).toBe(true);
+    expect(
+      isKanjiClassicInputAnswerCorrect({
+        inputValue: 'nyuga',
+        target: ['milk', 'breasts'],
+        readings: ['chichi ちち', 'chi ち', 'nyuu ニュウ'],
+        isReverse: false,
+      }),
+    ).toBe(true);
+  });
+
+  it('does not convert an English meaning into kana', () => {
+    expect(
+      isKanjiClassicInputAnswerCorrect({
+        inputValue: 'の',
+        target: ['no'],
+        readings: ['mu む'],
+        isReverse: false,
+      }),
+    ).toBe(false);
+    expect(
+      isKanjiClassicInputAnswerCorrect({
+        inputValue: 'じゃぱん',
+        target: ['Japan'],
+        readings: ['nichi ニチ'],
+        isReverse: false,
+      }),
+    ).toBe(false);
+    expect(
+      isKanjiClassicInputAnswerCorrect({
+        inputValue: 'no',
+        target: ['no'],
+        readings: ['mu む'],
+        isReverse: false,
+      }),
+    ).toBe(true);
+  });
+
   it('keeps reverse answers exact', () => {
     expect(
       isKanjiClassicInputAnswerCorrect({

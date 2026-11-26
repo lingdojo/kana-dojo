@@ -115,6 +115,36 @@ describe('isVocabularyMeaningAnswerCorrect', () => {
     },
   );
 
+  it('accepts the reading of 入学 and rejects the shorter Nyuga spelling', () => {
+    const enrollment = {
+      ...vocabulary,
+      word: '入学',
+      reading: 'にゅうがく',
+      meanings: ['to enter school or university'],
+    };
+
+    expect(isVocabularyMeaningAnswerCorrect(enrollment, 'nyuugaku', true)).toBe(
+      true,
+    );
+    expect(isVocabularyMeaningAnswerCorrect(enrollment, 'nyūgaku', true)).toBe(
+      true,
+    );
+    expect(isVocabularyMeaningAnswerCorrect(enrollment, 'Nyuga', true)).toBe(
+      false,
+    );
+  });
+
+  it('accepts Nyuga when the reading is にゅが', () => {
+    const nyuga = {
+      ...vocabulary,
+      word: 'にゅが',
+      reading: 'にゅが',
+      meanings: ['nyuga'],
+    };
+
+    expect(isVocabularyMeaningAnswerCorrect(nyuga, 'Nyuga', true)).toBe(true);
+  });
+
   it.each(['', 'China', 'ameriko'])('rejects invalid answer %s', answer => {
     expect(isVocabularyMeaningAnswerCorrect(vocabulary, answer, true)).toBe(
       false,
