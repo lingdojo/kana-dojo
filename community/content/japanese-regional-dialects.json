@@ -425,5 +425,12 @@
   "english": "good",
   "region": "Kyushu",
   "note": "Common Kyushu replacement. (Set 3)"
-}
+  },
+  {
+    "dialect": "よか",
+    "standardJapanese": "いい",
+    "english": "good",
+    "region": "Kyushu",
+    "note": "Common Kyushu replacement. (Set 5)"
+  }
 ]
