@@ -11,15 +11,16 @@ Welcome to the KanaDojo documentation. This index provides quick access to all p
 
 ## Architecture & Development
 
-| Document                                      | Description                                                |
-| --------------------------------------------- | ---------------------------------------------------------- |
-| [Architecture](./ARCHITECTURE.md)             | Project structure, patterns, and conventions               |
-| [UI Design](./UI_DESIGN.md)                   | Theming system, styling guidelines, and component patterns |
-| [Performance](./PERFORMANCE_OPTIMIZATIONS.md) | Dev server and build optimizations                         |
-| [Audio](./AUDIO_OPTIMIZATION.md)              | Audio system implementation details                        |
-| [GitHub Workflows](./GITHUB_WORKFLOWS.md)     | CI/CD pipeline documentation                               |
-| [Vercel Deployment](./VERCEL_DEPLOYMENT.md)   | Deployment process and configuration                       |
-| [i18n Scripts](./I18N_SCRIPTS.md)             | Internationalization tooling documentation                 |
+| Document                                                      | Description                                                |
+| ------------------------------------------------------------- | ---------------------------------------------------------- |
+| [Architecture](./ARCHITECTURE.md)                             | Project structure, patterns, and conventions               |
+| [UI Design](./UI_DESIGN.md)                                   | Theming system, styling guidelines, and component patterns |
+| [Performance](./PERFORMANCE_OPTIMIZATIONS.md)                 | Dev server and build optimizations                         |
+| [Audio](./AUDIO_OPTIMIZATION.md)                              | Audio system implementation details                        |
+| [GitHub Workflows](./GITHUB_WORKFLOWS.md)                     | CI/CD pipeline documentation                               |
+| [Vercel Deployment](./VERCEL_DEPLOYMENT.md)                   | Deployment process and configuration                       |
+| [Personal Vercel Deployment](./VERCEL_PERSONAL_DEPLOYMENT.md) | Deploy a personal fork on Vercel Hobby                     |
+| [i18n Scripts](./I18N_SCRIPTS.md)                             | Internationalization tooling documentation                 |
 
 ## Features
 
@@ -27,7 +28,7 @@ Welcome to the KanaDojo documentation. This index provides quick access to all p
 | --------------------------------- | ------------------------------------------------------- |
 | [Achievements](./ACHIEVEMENTS.md) | Achievement system with 80+ badges across 12 categories |
 | [SEO](./SEO.md)                   | SEO implementation, metadata, and structured data       |
-| [Release Process](./RELEASE.md)   | How app versions and GitHub releases are created         |
+| [Release Process](./RELEASE.md)   | How app versions and GitHub releases are created        |
 
 ## Internationalization (i18n)
 

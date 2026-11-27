@@ -28,7 +28,7 @@ If you’re new to open source, this is a great place to start. We’ve tagged s
 
 Before you jump in, make sure your environment is ready:
 
-- **Node.js 18+**
+- **[Node.js 24 LTS](https://nodejs.org/en/download)** (recommended)
 - **npm 10+** (comes with Node)
 
 ### Quick Setup

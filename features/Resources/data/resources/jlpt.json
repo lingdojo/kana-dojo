@@ -265,6 +265,23 @@
       "rating": 4.7,
       "featured": true,
       "notes": "Search for decks specific to your target JLPT level."
+    },
+    {
+      "id": "kotonoha",
+      "name": "Kotonoha",
+      "nameJa": "言の葉",
+      "description": "JLPT words, grammar and reading by level, with practice questions.",
+      "descriptionLong": "Kotonoha is a JLPT study site. It has 9,040 words, 828 grammar points and 802 reading sentences sorted by level, N5 to N1, and 7,200 original practice questions from Starter to N2. Each question shows the reading, pitch accent, an example and an explanation. The interface is in Simplified Chinese, Traditional Chinese, English and Korean.",
+      "category": "jlpt",
+      "subcategory": "n5",
+      "tags": ["vocabulary", "grammar", "reading", "practice", "pitch-accent"],
+      "difficulty": "all-levels",
+      "priceType": "freemium",
+      "priceDetails": "Study materials and Starter/N5 practice free. N4-N2 practice and audio: ¥480/month or ¥4,800/year.",
+      "platforms": ["web"],
+      "url": "https://japaneseskills.com/en/",
+      "featured": false,
+      "notes": "Practice questions are original, not past JLPT papers. Not affiliated with the JLPT organisers."
     }
   ]
 }

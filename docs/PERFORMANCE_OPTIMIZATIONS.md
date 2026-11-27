@@ -86,7 +86,7 @@ This document outlines all the performance optimizations applied to improve dev 
 1. **Use SSD**: Ensure your project is on an SSD drive
 2. **Exclude from Antivirus**: Add node_modules and .next to antivirus exclusions
 3. **Close Unnecessary Apps**: Free up RAM and CPU
-4. **Use Node 18+**: Latest Node versions have better performance
+4. Use the [Node.js version recommended in the contribution guide](../CONTRIBUTING.md).
 5. **Clear .next folder**: Run `rm -rf .next` if builds feel slow
 
 ### Commands:

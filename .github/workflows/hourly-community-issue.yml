@@ -13,6 +13,10 @@ on:
         description: 'Do not create an issue; only log selection'
         required: false
         type: boolean
+      scheduler_run_id:
+        description: 'Internal random-scheduler run identifier'
+        required: false
+        type: string
 
 permissions:
   actions: read
@@ -1259,6 +1263,36 @@ jobs:
             core.setOutput('should_commit', 'true');
             core.setOutput('notify_discord', 'false');
             core.setOutput('backlog_file', backlogFileMap[selectedType] || 'community/backlog/');
+
+      - name: Report random scheduler outcome
+        if: always() && inputs.scheduler_run_id != '' && vars.COMMUNITY_ISSUE_SCHEDULER_CALLBACK_URL != ''
+        continue-on-error: true
+        env:
+          SCHEDULER_RUN_ID: ${{ inputs.scheduler_run_id }}
+          SCHEDULER_CALLBACK_URL: ${{ vars.COMMUNITY_ISSUE_SCHEDULER_CALLBACK_URL }}
+          SCHEDULER_CALLBACK_SECRET: ${{ secrets.COMMUNITY_ISSUE_SCHEDULER_CALLBACK_SECRET }}
+          ISSUE_CREATED: ${{ steps.create-issue.outputs.issue_created }}
+          ISSUE_REASON: ${{ steps.create-issue.outputs.reason }}
+        run: |
+          if [ -z "$SCHEDULER_CALLBACK_SECRET" ]; then
+            echo "Scheduler callback secret is not configured; the scheduler lease will expire and retry."
+            exit 0
+          fi
+
+          if [ "$ISSUE_CREATED" = "true" ]; then
+            outcome=created
+          elif [ "$ISSUE_REASON" = "no_available_items" ]; then
+            outcome=no_issue
+          else
+            outcome=failed
+          fi
+
+          curl --fail-with-body --silent --show-error \
+            --max-time 10 \
+            -X POST "$SCHEDULER_CALLBACK_URL" \
+            -H "Authorization: Bearer $SCHEDULER_CALLBACK_SECRET" \
+            -H "Content-Type: application/json" \
+            --data "{\"runId\":\"$SCHEDULER_RUN_ID\",\"outcome\":\"$outcome\"}"
 
       - name: Add reactions and welcome comment
         if: steps.create-issue.outputs.issue_created == 'true'

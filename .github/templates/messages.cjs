@@ -222,7 +222,7 @@ module.exports = {
     common: {
       titleTemplate:
         // '[Good First Issue] {emoji} Add new {issueType} - Beginner-Friendly Contribution (good-first-issue, <1 min, no setup)',
-        '[good first issue] {emoji} Add new {issueType} (good-first-issue)',
+        '[good first issue, hacktoberfest] {emoji} Add new {issueType} (good-first-issue)',
       shortTitleTemplate: '{emoji} Add new {issueType} {id}',
       difficulty: 'Easy (good first issue!)',
       instructionsHeader: '### 📝 Instructions',

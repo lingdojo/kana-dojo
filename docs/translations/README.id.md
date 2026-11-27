@@ -212,7 +212,7 @@ Setiap fitur berisi komponen, store, data, tipe, dan logika bisnis sendiri, memu
 
 ### Prasyarat
 
-- **Node.js** 18.x atau lebih tinggi
+- **Node.js** 24 LTS (disarankan)
 - **npm** 10.x atau lebih tinggi (sudah termasuk dengan Node.js)
 
 ### Instalasi
