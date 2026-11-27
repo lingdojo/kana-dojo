@@ -6,6 +6,26 @@ import { NextRequest, NextResponse } from 'next/server';
  */
 
 const SITE_URL = 'https://kanadojo.com';
+const SITE_HOSTNAME = 'kanadojo.com';
+
+function isValidSiteUrl(candidate: unknown): candidate is string {
+  if (typeof candidate !== 'string') {
+    return false;
+  }
+
+  try {
+    const parsed = new URL(candidate);
+    return (
+      parsed.protocol === 'https:' &&
+      parsed.hostname === SITE_HOSTNAME &&
+      parsed.port === '' &&
+      parsed.username === '' &&
+      parsed.password === ''
+    );
+  } catch {
+    return false;
+  }
+}
 
 interface SubmissionResult {
   engine: 'google' | 'bing';
@@ -20,11 +40,16 @@ interface SubmissionResult {
  */
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.json();
-    const sitemapUrl = body.sitemapUrl || `${SITE_URL}/sitemap.xml`;
+    const body: unknown = await request.json();
+    const rawSitemapUrl =
+      body && typeof body === 'object' && 'sitemapUrl' in body
+        ? (body as { sitemapUrl?: unknown }).sitemapUrl
+        : undefined;
+    const sitemapUrl =
+      rawSitemapUrl === undefined ? `${SITE_URL}/sitemap.xml` : rawSitemapUrl;
 
-    // Validate sitemap URL
-    if (!sitemapUrl.startsWith(SITE_URL)) {
+    // Validate sitemap URL strictly by parsed HTTPS origin
+    if (!isValidSiteUrl(sitemapUrl)) {
       return NextResponse.json(
         { error: 'Invalid sitemap URL' },
         { status: 400 },

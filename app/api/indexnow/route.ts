@@ -8,6 +8,27 @@ import { NextRequest, NextResponse } from 'next/server';
 
 const INDEXNOW_KEY = process.env.INDEXNOW_KEY || '';
 const SITE_URL = 'https://kanadojo.com';
+const SITE_HOSTNAME = 'kanadojo.com';
+const MAX_URLS_PER_SUBMISSION = 10000;
+
+function isValidIndexNowUrl(candidate: unknown): candidate is string {
+  if (typeof candidate !== 'string') {
+    return false;
+  }
+
+  try {
+    const parsed = new URL(candidate);
+    return (
+      parsed.protocol === 'https:' &&
+      parsed.hostname === SITE_HOSTNAME &&
+      parsed.port === '' &&
+      parsed.username === '' &&
+      parsed.password === ''
+    );
+  } catch {
+    return false;
+  }
+}
 
 // IndexNow endpoints (Bing, Yandex, Seznam.cz, Naver, etc. all support it)
 const INDEXNOW_ENDPOINT = 'https://api.indexnow.org/indexnow';
@@ -31,13 +52,14 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const body: IndexNowSubmission = await request.json();
-    const { url, urls } = body;
+    const body: unknown = await request.json();
+    const { url, urls } =
+      body && typeof body === 'object' ? (body as IndexNowSubmission) : {};
 
     // Collect URLs to submit
-    const urlList: string[] = [];
-    if (url) urlList.push(url);
-    if (urls && Array.isArray(urls)) urlList.push(...urls);
+    const urlList: unknown[] = [];
+    if (url !== undefined) urlList.push(url);
+    if (Array.isArray(urls)) urlList.push(...urls);
 
     if (urlList.length === 0) {
       return NextResponse.json(
@@ -46,15 +68,17 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Validate URLs belong to our domain
-    const validUrls = urlList.filter(u => {
-      try {
-        const parsed = new URL(u);
-        return parsed.hostname === 'kanadojo.com';
-      } catch {
-        return false;
-      }
-    });
+    if (urlList.length > MAX_URLS_PER_SUBMISSION) {
+      return NextResponse.json(
+        {
+          error: `Too many URLs provided. Maximum allowed is ${MAX_URLS_PER_SUBMISSION}.`,
+        },
+        { status: 400 },
+      );
+    }
+
+    // Validate URLs strictly belong to our HTTPS origin
+    const validUrls = urlList.filter(isValidIndexNowUrl);
 
     if (validUrls.length === 0) {
       return NextResponse.json(
