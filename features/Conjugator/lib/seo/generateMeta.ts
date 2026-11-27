@@ -33,7 +33,7 @@ export interface ConjugatorMeta {
   /** Canonical URL */
   canonicalUrl: string;
   /** Open Graph image URL */
-  // ogImage: string;
+  ogImage: string;
   /** Short title for OG */
   titleShort: string;
 }
@@ -72,6 +72,10 @@ const BASE_KEYWORDS = [
   'Japanese passive form',
   'Japanese causative form',
   'JLPT verb conjugation',
+  'JLPT',
+  'learn Japanese',
+  '食べる',
+  '書く',
 ];
 
 /**
@@ -82,10 +86,10 @@ export const BASE_META: ConjugatorMeta = {
   title: 'Japanese Verb Conjugator | All Conjugation Forms | KanaDojo',
   titleShort: 'Japanese Verb Conjugator',
   description:
-    'Free Japanese verb conjugator with all conjugation forms. Conjugate any Japanese verb instantly - Godan, Ichidan, irregular verbs. Get te-form, masu-form, potential, passive, causative and more.',
+    'Free Japanese verb conjugator to learn all conjugation forms. Practice any Japanese verb instantly - Godan, Ichidan, irregular verbs, 食べる (taberu), and 書く (kaku). Study te-form, masu-form, potential, passive, causative, and JLPT grammar.',
   keywords: BASE_KEYWORDS,
   canonicalUrl: `${BASE_URL}${CONJUGATE_PATH}`,
-  // ogImage: `${BASE_URL}/api/og?title=${encodeURIComponent('Japanese Verb Conjugator')}&description=${encodeURIComponent('Conjugate any Japanese verb instantly')}&type=default`,
+  ogImage: `${BASE_URL}/api/og?title=${encodeURIComponent('Japanese Verb Conjugator')}&description=${encodeURIComponent('Learn Japanese verb conjugation')}&type=default`,
 };
 
 // ============================================================================
@@ -148,8 +152,11 @@ export function generateCanonicalUrl(
   verb?: string,
   options?: GenerateMetaOptions,
 ): string {
-  const baseUrl = options?.baseUrl ?? BASE_URL;
-  let url = `${baseUrl}${CONJUGATE_PATH}`;
+  const baseUrl = (options?.baseUrl ?? BASE_URL).replace(/\/+$/, '');
+  const localePath = options?.locale
+    ? `/${encodeURIComponent(options.locale)}`
+    : '';
+  let url = `${baseUrl}${localePath}${CONJUGATE_PATH}`;
 
   // Add verb parameter if provided
   if (verb) {
@@ -180,13 +187,12 @@ export function generateVerbMeta(
   const titleShort = `${verb.dictionaryForm} (${verb.romaji}) Conjugation`;
 
   // Generate unique description (Requirements: 15.2)
-  const description = `Complete conjugation of the Japanese ${verbTypeDisplay} ${verb.dictionaryForm} (${verb.romaji}). All forms including te-form, masu-form, potential, passive, causative, conditional, and more. Free online conjugator.`;
+  const description = `Learn Japanese ${verbTypeDisplay} verb conjugation with ${verb.dictionaryForm} (${verb.romaji}). Explore te-form, masu-form, potential, passive, causative, and conditional forms, with JLPT grammar examples such as 食べる and 書く. Free online conjugator.`;
 
   // Generate canonical URL (Requirements: 15.1)
   const canonicalUrl = generateCanonicalUrl(verb.dictionaryForm, options);
 
-  // Generate OG image URL
-  // const ogImage = `${baseUrl}/api/og?title=${encodeURIComponent(titleShort)}&description=${encodeURIComponent(`${verbTypeDisplay} - All conjugation forms`)}&type=default`;
+  const ogImage = `${baseUrl.replace(/\/+$/, '')}/api/og?title=${encodeURIComponent(titleShort)}&description=${encodeURIComponent(`${verbTypeDisplay} - All conjugation forms`)}&type=default`;
 
   // Generate keywords
   const keywords = generateVerbKeywords(verb);
@@ -197,7 +203,7 @@ export function generateVerbMeta(
     description,
     keywords,
     canonicalUrl,
-    // ogImage,
+    ogImage,
   };
 }
 
@@ -244,20 +250,20 @@ export function generateNextMetadata(
       description: meta.description,
       url: meta.canonicalUrl,
       type: 'website' as const,
-      /* images: [
+      images: [
         {
           url: meta.ogImage,
           width: 1200,
           height: 630,
           alt: meta.titleShort,
         },
-      ], */
+      ],
     },
     twitter: {
       card: 'summary_large_image' as const,
       title: meta.titleShort,
       description: meta.description,
-      /* images: [meta.ogImage], */
+      images: [meta.ogImage],
     },
     alternates: {
       canonical: meta.canonicalUrl,
