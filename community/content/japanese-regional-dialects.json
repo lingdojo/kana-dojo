@@ -313,5 +313,12 @@
     "english": "no/cannot",
     "region": "Chugoku",
     "note": "Prohibitive nuance. (Set 4)"
-  }
+  },
+  {
+  "dialect": "〜だがや",
+  "standardJapanese": "〜だよ",
+  "english": "sentence ending",
+  "region": "Nagoya",
+  "note": "Strong Nagoya marker. (Set 1)"
+}    
 ]
