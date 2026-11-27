@@ -178,5 +178,11 @@
     "romaji": "Raigetsu kara atarashii purojekuto ni sanka suru koto ni narimashita.",
     "english": "I'm going to join a new project from next month.",
     "jlpt": "N3"
+  },
+  {
+    "japanese": "この漢字の読み方を教えてください。",
+    "romaji": "Kono kanji no yomikata o oshiete kudasai.",
+    "english": "Please tell me how to read this kanji.",
+    "jlpt": "N5"
   }
 ]
