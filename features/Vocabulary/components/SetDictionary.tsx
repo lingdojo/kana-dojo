@@ -3,12 +3,15 @@
 import clsx from 'clsx';
 import { toKana, toRomaji } from 'wanakana';
 import { IWord } from '@/shared/types/interfaces';
-import { cardBorderStyles } from '@/shared/utils/styles';
-import { useAudioPreferences, useThemePreferences } from '@/features/Preferences';
+import {
+  useAudioPreferences,
+  useThemePreferences,
+} from '@/features/Preferences';
 import { useJapaneseTTS } from '@/features/Preferences/hooks/useJapaneseTTS';
 import FuriganaText from '@/shared/ui-composite/text/FuriganaText';
 import { Volume2 } from 'lucide-react';
 import { memo, useCallback, useState } from 'react';
+import JapaneseVoiceNotice from '@/shared/ui-composite/audio/JapaneseVoiceNotice';
 
 type SetDictionaryProps = {
   words: IWord[];
@@ -20,7 +23,16 @@ const SetDictionary = memo(function SetDictionary({
   const { displayKana: showKana } = useThemePreferences();
   const { pronunciationEnabled, pronunciationSpeed, pronunciationPitch } =
     useAudioPreferences();
-  const { speak, stop, isPlaying, refreshVoices } = useJapaneseTTS();
+  const {
+    speak,
+    stop,
+    isPlaying,
+    refreshVoices,
+    voicesLoaded,
+    hasJapaneseVoices,
+  } = useJapaneseTTS();
+  const [hasRequestedPronunciation, setHasRequestedPronunciation] =
+    useState(false);
   const [activePronunciationText, setActivePronunciationText] = useState<
     string | null
   >(null);
@@ -36,13 +48,11 @@ const SetDictionary = memo(function SetDictionary({
         return;
       }
 
+      setHasRequestedPronunciation(true);
       setActivePronunciationText(normalizedReading);
 
       if (typeof window !== 'undefined') {
         refreshVoices();
-        const isFirefox = /Firefox/i.test(navigator.userAgent);
-        const delay = isFirefox ? 300 : 100;
-        await new Promise(resolve => setTimeout(resolve, delay));
       }
 
       await speak(normalizedReading, {
@@ -69,6 +79,12 @@ const SetDictionary = memo(function SetDictionary({
 
   return (
     <div className={clsx('flex flex-col')}>
+      <JapaneseVoiceNotice
+        requested={hasRequestedPronunciation}
+        voicesLoaded={voicesLoaded}
+        hasJapaneseVoices={hasJapaneseVoices}
+        onDismiss={() => setHasRequestedPronunciation(false)}
+      />
       {words.map((wordObj, i) => {
         const rawReading =
           typeof wordObj.reading === 'string' ? wordObj.reading : '';
@@ -144,4 +160,3 @@ const SetDictionary = memo(function SetDictionary({
 });
 
 export default SetDictionary;
-
