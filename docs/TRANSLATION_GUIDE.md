@@ -33,7 +33,9 @@ Currently, we support:
 - 🇪🇸 **Spanish (es)**
 - 🇯🇵 **Japanese (ja)**
 
-We're planning to add: Portuguese, French, German, Italian, Chinese, Korean, Russian, and Arabic.
+Translation files are also staged in `core/i18n/locales/` for: French (`fr`), Simplified Chinese (`zh`), and Hindi (`hi`).
+
+We're planning to add: Portuguese, German, Italian, Korean, Russian, and Arabic.
 
 ---
 

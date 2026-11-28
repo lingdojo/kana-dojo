@@ -1,0 +1,66 @@
+{
+  "title": "कांजी प्रशिक्षण",
+  "description": "जापानी कांजी वर्णों में महारत हासिल करें",
+  "selection": {
+    "title": "कांजी चुनें",
+    "byLevel": "JLPT स्तर के अनुसार",
+    "byCategory": "श्रेणी के अनुसार",
+    "selectAll": "सभी चुनें",
+    "deselectAll": "सभी अचयनित करें",
+    "levels": {
+      "n5": "JLPT N5",
+      "n4": "JLPT N4",
+      "n3": "JLPT N3",
+      "n2": "JLPT N2",
+      "n1": "JLPT N1"
+    }
+  },
+  "game": {
+    "title": "कांजी गेम",
+    "start": "गेम शुरू करें",
+    "pause": "रोकें",
+    "resume": "जारी रखें",
+    "finish": "समाप्त",
+    "nextQuestion": "अगला प्रश्न",
+    "submit": "उत्तर जमा करें",
+    "score": "स्कोर: {{points}}",
+    "timeLeft": "शेष समय: {{seconds}}s",
+    "streak": "स्ट्रीक: {{count}}",
+    "correct": "सही!",
+    "incorrect": "गलत",
+    "showAnswer": "उत्तर दिखाएं",
+    "hint": "संकेत"
+  },
+  "modes": {
+    "pick": "चयन मोड",
+    "reversePick": "उल्टा चयन",
+    "input": "इनपुट मोड",
+    "reverseInput": "उल्टा इनपुट",
+    "description": {
+      "pick": "कांजी देखें, अर्थ चुनें",
+      "reversePick": "अर्थ देखें, कांजी चुनें",
+      "input": "कांजी देखें, अर्थ टाइप करें",
+      "reverseInput": "अर्थ देखें, कांजी टाइप करें"
+    }
+  },
+  "results": {
+    "title": "परिणाम",
+    "congratulations": "बधाई हो!",
+    "correct": "सही: {{count}}",
+    "incorrect": "गलत: {{count}}",
+    "accuracy": "सटीकता: {{percentage}}%",
+    "timeSpent": "बिताया गया समय: {{time}}",
+    "playAgain": "फिर से खेलें",
+    "backToMenu": "मेनू पर वापस जाएं"
+  },
+  "details": {
+    "meaning": "अर्थ",
+    "readings": "पठन",
+    "onyomi": "ओनयोमी",
+    "kunyomi": "कुनयोमी",
+    "examples": "उदाहरण",
+    "strokes": "स्ट्रोक्स",
+    "radical": "रेडिकल",
+    "jlptLevel": "JLPT स्तर"
+  }
+}

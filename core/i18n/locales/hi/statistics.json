@@ -1,0 +1,47 @@
+{
+  "title": "आंकड़े",
+  "description": "आपकी सीखने की प्रगति और आंकड़े",
+  "overview": {
+    "title": "अवलोकन",
+    "totalStudyTime": "कुल अध्ययन समय",
+    "questionsAnswered": "उत्तर दिए गए प्रश्न",
+    "accuracy": "समग्र सटीकता",
+    "currentStreak": "वर्तमान स्ट्रीक",
+    "longestStreak": "सबसे लंबी स्ट्रीक"
+  },
+  "charts": {
+    "dailyActivity": "दैनिक गतिविधि",
+    "accuracyOverTime": "समय के साथ सटीकता",
+    "progressByLevel": "स्तर के अनुसार प्रगति",
+    "timeByDojo": "डोजो के अनुसार समय"
+  },
+  "kana": {
+    "title": "काना आंकड़े",
+    "mastered": "महारत हासिल",
+    "learning": "सीख रहे हैं",
+    "notStarted": "शुरू नहीं हुआ",
+    "hiraganaProgress": "हिरागाना प्रगति",
+    "katakanaProgress": "काताकाना प्रगति"
+  },
+  "kanji": {
+    "title": "कांजी आंकड़े",
+    "mastered": "महारत हासिल",
+    "learning": "सीख रहे हैं",
+    "notStarted": "शुरू नहीं हुआ",
+    "byLevel": "JLPT स्तर के अनुसार"
+  },
+  "vocabulary": {
+    "title": "शब्दावली आंकड़े",
+    "wordsLearned": "सीखे गए शब्द",
+    "mastered": "महारत हासिल",
+    "learning": "सीख रहे हैं",
+    "byLevel": "JLPT स्तर के अनुसार"
+  },
+  "performance": {
+    "title": "प्रदर्शन",
+    "bestAccuracy": "सर्वश्रेष्ठ सटीकता",
+    "fastestTime": "सबसे तेज़ समय",
+    "longestSession": "सबसे लंबा सत्र",
+    "mostImproved": "सर्वाधिक सुधार"
+  }
+}

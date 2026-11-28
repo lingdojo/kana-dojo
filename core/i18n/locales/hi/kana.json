@@ -1,0 +1,65 @@
+{
+  "metadata": {
+    "title": "KanaDojo: काना",
+    "description": "काना डोजो वह स्थान है जहाँ आप जापानी की दो मुख्य वर्णमालाओं - हिरागाना और काताकाना को सीख सकते हैं और उनका अभ्यास कर सकते हैं।"
+  },
+  "title": "काना प्रशिक्षण",
+  "description": "हिरागाना और काताकाना में महारत हासिल करें",
+  "selection": {
+    "title": "काना समूह चुनें",
+    "hiragana": "हिरागाना",
+    "katakana": "काताकाना",
+    "selectAll": "सभी चुनें",
+    "deselectAll": "सभी अचयनित करें",
+    "groups": {
+      "basic": "मूल",
+      "dakuon": "दाकुओन",
+      "combo": "संयोजन",
+      "yoon": "योओन"
+    }
+  },
+  "game": {
+    "title": "काना गेम",
+    "start": "गेम शुरू करें",
+    "pause": "रोकें",
+    "resume": "जारी रखें",
+    "finish": "समाप्त",
+    "nextQuestion": "अगला प्रश्न",
+    "submit": "उत्तर जमा करें",
+    "score": "स्कोर: {{points}}",
+    "timeLeft": "शेष समय: {{seconds}}s",
+    "streak": "स्ट्रीक: {{count}}",
+    "correct": "सही!",
+    "incorrect": "गलत",
+    "tryAgain": "पुनः प्रयास करें"
+  },
+  "modes": {
+    "pick": "चयन मोड",
+    "reversePick": "उल्टा चयन",
+    "input": "इनपुट मोड",
+    "reverseInput": "उल्टा इनपुट",
+    "description": {
+      "pick": "काना देखें, उच्चारण चुनें",
+      "reversePick": "उच्चारण देखें, काना चुनें",
+      "input": "काना देखें, उच्चारण टाइप करें",
+      "reverseInput": "उच्चारण देखें, काना टाइप करें"
+    }
+  },
+  "results": {
+    "title": "परिणाम",
+    "congratulations": "बधाई हो!",
+    "correct": "सही: {{count}}",
+    "incorrect": "गलत: {{count}}",
+    "accuracy": "सटीकता: {{percentage}}%",
+    "timeSpent": "बिताया गया समय: {{time}}",
+    "playAgain": "फिर से खेलें",
+    "backToMenu": "मेनू पर वापस जाएं"
+  },
+  "dictionary": {
+    "title": "काना शब्दकोश",
+    "search": "काना खोजें...",
+    "character": "वर्ण",
+    "romaji": "रोमाजी",
+    "type": "प्रकार"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "privacy": {
+    "title": "गोपनीयता नीति",
+    "subtitle": "KanaDojo पर आपका डेटा संरक्षण",
+    "lastUpdated": "अंतिम अपडेट"
+  },
+  "terms": {
+    "title": "सेवा की शर्तें",
+    "subtitle": "KanaDojo उपयोग दिशानिर्देश",
+    "lastUpdated": "अंतिम अपडेट"
+  },
+  "security": {
+    "title": "सुरक्षा नीति",
+    "subtitle": "हम KanaDojo को सुरक्षित कैसे रखते हैं",
+    "lastUpdated": "अंतिम अपडेट"
+  },
+  "credits": {
+    "title": "श्रेय",
+    "subtitle": "योगदानकर्ता और समर्थक",
+    "contributors": {
+      "title": "योगदानकर्ता",
+      "description": "हमारे सभी अद्भुत योगदानकर्ताओं को धन्यवाद"
+    },
+    "sponsors": {
+      "title": "प्रायोजक",
+      "description": "हमारे प्रायोजकों को विशेष धन्यवाद"
+    },
+    "openSource": {
+      "title": "ओपन सोर्स",
+      "description": "इन अद्भुत ओपन सोर्स परियोजनाओं के साथ निर्मित"
+    }
+  }
+}

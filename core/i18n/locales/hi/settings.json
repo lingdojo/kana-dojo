@@ -1,0 +1,58 @@
+{
+  "title": "सेटिंग्स",
+  "description": "अपने सीखने के अनुभव को अनुकूलित करें",
+  "general": {
+    "title": "सामान्य",
+    "language": "भाषा",
+    "theme": "थीम",
+    "sound": "ध्वनि प्रभाव",
+    "notifications": "सूचनाएं"
+  },
+  "appearance": {
+    "title": "दिखावट",
+    "colorTheme": "रंग थीम",
+    "font": "जापानी फ़ॉन्ट",
+    "fontSize": "फ़ॉन्ट का आकार",
+    "darkMode": "डार्क मोड",
+    "customTheme": "कस्टम थीम"
+  },
+  "game": {
+    "title": "गेम सेटिंग्स",
+    "timeLimit": "समय सीमा",
+    "questionsPerSession": "प्रति सत्र प्रश्न",
+    "difficulty": "कठिनाई",
+    "autoNext": "स्वचालित अगला प्रश्न",
+    "showHints": "संकेत दिखाएं"
+  },
+  "audio": {
+    "title": "ऑडियो",
+    "soundEffects": "ध्वनि प्रभाव",
+    "volume": "वॉल्यूम",
+    "clickSound": "क्लिक ध्वनि",
+    "correctSound": "सही उत्तर की ध्वनि",
+    "incorrectSound": "गलत उत्तर की ध्वनि"
+  },
+  "preferences": {
+    "title": "प्राथमिकताएं",
+    "showRomaji": "रोमाजी दिखाएं",
+    "showFurigana": "फुरिगाना दिखाएं",
+    "inputMethod": "इनपुट विधि",
+    "keyboardShortcuts": "कीबोर्ड शॉर्टकट"
+  },
+  "data": {
+    "title": "डेटा",
+    "exportData": "डेटा निर्यात करें",
+    "importData": "डेटा आयात करें",
+    "resetProgress": "प्रगति रीसेट करें",
+    "clearCache": "कैश साफ़ करें",
+    "confirmReset": "क्या आप वाकई सारी प्रगति रीसेट करना चाहते हैं? यह क्रिया पूर्ववत नहीं की जा सकती।"
+  },
+  "themes": {
+    "light": "लाइट",
+    "dark": "डार्क",
+    "system": "सिस्टम",
+    "custom": "कस्टम",
+    "presets": "थीम प्रीसेट",
+    "createCustom": "कस्टम थीम बनाएं"
+  }
+}

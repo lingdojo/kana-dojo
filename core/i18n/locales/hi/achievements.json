@@ -1,0 +1,33 @@
+{
+  "title": "उपलब्धियां",
+  "description": "अपनी प्रगति को ट्रैक करें और उपलब्धियां अर्जित करें",
+  "unlocked": "अनलॉक किया गया",
+  "locked": "लॉक किया गया",
+  "progress": "प्रगति: {{current}}/{{total}}",
+  "earnedOn": "{{date}} को अर्जित किया",
+  "categories": {
+    "all": "सभी",
+    "kana": "काना",
+    "kanji": "कांजी",
+    "vocabulary": "शब्दावली",
+    "general": "सामान्य",
+    "special": "विशेष"
+  },
+  "rarity": {
+    "common": "साधारण",
+    "rare": "दुर्लभ",
+    "epic": "उत्कृष्ट",
+    "legendary": "दिग्गज"
+  },
+  "notifications": {
+    "achievementUnlocked": "उपलब्धि अनलॉक हुई!",
+    "congratulations": "बधाई हो!",
+    "youEarned": "आपने अर्जित किया"
+  },
+  "stats": {
+    "totalAchievements": "कुल उपलब्धियां",
+    "unlockedAchievements": "अनलॉक किया गया",
+    "completionRate": "पूर्णता दर",
+    "recentAchievements": "हाल की उपलब्धियां"
+  }
+}
