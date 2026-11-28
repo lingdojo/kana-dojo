@@ -82,21 +82,21 @@ core/i18n/locales/
 - Basic understanding of JSON format
 - Text editor (VS Code recommended)
 - Git (for contributing)
+- Node.js and npm (for running the validation scripts)
 
-### Option 1: Edit JSON Files Directly (Recommended for Developers)
+### Edit JSON Files Directly
 
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/yourusername/kanadojo.git
-   cd kanadojo
+   git clone https://github.com/<your-username>/kana-dojo.git
+   cd kana-dojo
    ```
 
 2. **Find your language folder**
 
-   ```bash
-   cd core/i18n/locales/es  # For Spanish
-   ```
+   Open `core/i18n/locales/es/` for Spanish, for example. Keep your terminal at the
+   repository root when running npm commands.
 
 3. **Edit the JSON files**
    - Use any text editor
@@ -105,33 +105,19 @@ core/i18n/locales/
 
 4. **Validate your translations**
 
+   Run this command from the repository root:
+
    ```bash
    npm run i18n:validate
    ```
 
 5. **Submit a pull request**
 
-### Option 2: Use CSV Export (Recommended for Non-Technical Translators)
+### CSV and Spreadsheet Editing
 
-1. **Export translations to CSV**
-
-   ```bash
-   npm run i18n:export-csv
-   ```
-
-   This creates CSV files in `scripts/i18n/reports/`
-
-2. **Edit in Excel/Google Sheets**
-   - Open the CSV files
-   - Translate the columns for your language
-   - Leave the `Key` column unchanged
-
-3. **Send the CSV files back**
-   - Email them to the project maintainer
-   - Or upload them in a GitHub issue
-
-4. **We'll import them for you**
-   (Import script coming soon)
+CSV export and import are not currently available as npm scripts. Use the JSON
+editing workflow above to contribute translations. If you need help editing JSON
+files, ask for guidance in a GitHub issue.
 
 ---
 
@@ -387,54 +373,61 @@ Examples:
 
 ## Tools & Scripts
 
+Run the following commands from the repository root, which contains `package.json`.
+
 ### Validation Script
 
-Check that all translation keys match across languages:
+Check the translation files for the languages and namespaces listed in
+`scripts/i18n/validate-translations.js`. The script reports missing files, invalid
+JSON, and missing or extra keys compared with English:
 
 ```bash
 npm run i18n:validate
 ```
 
-**Output:**
+A successful run ends with:
 
 ```
 ✅ All translations are valid!
 ```
 
-Or if there are errors:
-
-```
-❌ ES: Missing 3 keys:
-  - kana.game.hint
-  - kanji.details.radical
-  ...
-```
+If validation fails, review the reported files and keys before submitting your
+translation changes.
 
 ### Generate TypeScript Types
 
-Creates autocomplete for developers:
+Generate translation interfaces and key types from the English namespace files:
 
 ```bash
 npm run i18n:generate-types
 ```
 
-### Export to CSV
+This writes `core/i18n/types.d.ts`. Regenerate the types after changing English
+translation keys, and review the generated file before committing it.
 
-Export all translations to CSV files for easier editing:
+### Check i18n Configuration
 
-```bash
-npm run i18n:export-csv
-```
-
-Files are saved to: `scripts/i18n/reports/*.csv`
-
-### Scan for Hardcoded Strings
-
-Find untranslated strings in the codebase:
+Check that the locales in `core/i18n/routing.ts` and namespaces in
+`core/i18n/request.ts` match the lists used by the translation validator:
 
 ```bash
-npm run i18n:scan
+npm run i18n:config:check
 ```
+
+### Run All i18n Checks
+
+Run configuration validation, translation validation, and type generation in that
+order:
+
+```bash
+npm run i18n:check
+```
+
+The command stops if a step fails. If both validation steps pass, the final step
+writes `core/i18n/types.d.ts`.
+
+The available npm scripts are listed in [`package.json`](../package.json). CSV
+export and hardcoded-string scanning are not currently available as npm scripts.
 
 ---
 
