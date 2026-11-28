@@ -4,7 +4,7 @@
     "titleShort": "KanaDojo - ऑनलाइन जापानी सीखें",
     "description": "KanaDojo के साथ जापानी सीखें - हिरागाना, काताकाना, कांजी और शब्दावली सीखने के लिए एक सुंदर और न्यूनतम मंच। इंटरैक्टिव गेम के साथ अभ्यास करें, प्रगति ट्रैक करें और 100+ थीम के साथ अनुकूलित करें।",
     "descriptionShort": "इंटरैक्टिव गेम, प्रगति ट्रैकिंग और सुंदर थीम के साथ जापानी हिरागाना, काताकाना, कांजी और शब्दावली में महारत हासिल करें।",
-    "keywords": "learn japanese hindi, jaapani seekhein, hiragana seekhein, katakana seekhein, kanji seekhein, japanese vocabulary hindi, japanese learning app, kanadojo hindi, JLPT preparation hindi"
+    "keywords": "जापानी सीखें, हिंदी में जापानी सीखें, हिरागाना सीखें, काताकाना सीखें, कांजी सीखें, जापानी शब्दावली, जापानी सीखने का ऐप, KanaDojo, JLPT तैयारी"
   },
   "kana": {
     "title": "काना डोजो - स्तर के अनुसार जापानी हिरागाना और काताकाना सीखें",
@@ -34,18 +34,18 @@
     "title": "काना गॉन्टलेट - प्रत्येक वर्ण में महारत हासिल करें",
     "titleShort": "काना गॉन्टलेट - पूर्ण महारत",
     "description": "काना गॉन्टलेट के साथ प्रत्येक हिरागाना और काताकाना वर्ण में महारत हासिल करें। सभी जापानी काना के लिए व्यापक अभ्यास।",
-    "keywords": "kana mastery, hiragana mastery, katakana mastery, comprehensive kana practice"
+    "keywords": "काना महारत, हिरागाना महारत, काताकाना महारत, संपूर्ण काना अभ्यास"
   },
   "kanji": {
     "title": "कांजी डोजो - JLPT स्तर के अनुसार जापानी कांजी वर्ण सीखें",
     "titleShort": "कांजी डोजो - कांजी सीखें",
-    "description": "JLPT स्तर N5 से N1 तक व्यवस्थित कांजी सीखें। स्ट्रोक ऑर्डर, ओनयोमी, कुनयोमी और अर्थों का इंटरैक्टिव रूप से अभ्यास करें।",
+    "description": "JLPT स्तर N5 से N1 तक व्यवस्थित जापानी कांजी सीखें। इंटरैक्टिव अभ्यास, त्वरित सेट चयन और प्रगति ट्रैकिंग के साथ पठन और अर्थों का अभ्यास करें।",
     "keywords": "learn kanji hindi, kanji n5 hindi, kanji meanings, kanji readings, jlpt kanji practice"
   },
   "kanjiJlptN5": {
     "title": "JLPT N5 कांजी सीखें - शुरुआती स्तर की जापानी कांजी | KanaDojo",
     "titleShort": "JLPT N5 कांजी",
-    "description": "शुरुआती लोगों के लिए आवश्यक सभी JLPT N5 कांजी सीखें। अर्थ, पठन और उदाहरण वाक्यों के साथ अभ्यास करें।",
+    "description": "इंटरैक्टिव अभ्यास, स्तर सेट और त्वरित प्रतिक्रिया के साथ JLPT N5 कांजी का अध्ययन करें। शुरुआती कांजी पहचान और पठन सटीकता को मजबूत बनाएं।",
     "keywords": "jlpt n5 kanji hindi, beginner kanji, basic japanese kanji, n5 kanji list"
   },
   "kanjiJlptN4": {
@@ -178,7 +178,7 @@
     "title": "पैच नोट्स और अपडेट इतिहास | KanaDojo",
     "titleShort": "पैच नोट्स",
     "description": "KanaDojo के नवीनतम सुधार, नई सुविधाएं और अपडेट देखें।",
-    "keywords": "patch notes, updates, changelog, new features"
+    "keywords": "पैच नोट्स, अपडेट, चेंजलॉग, नई सुविधाएं"
   },
   "faq": {
     "title": "अक्सर पूछे जाने वाले प्रश्न | KanaDojo",

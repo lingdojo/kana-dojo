@@ -56,7 +56,7 @@
     "api": "API"
   },
   "card": {
-    "featured": "विशेष रुप से प्रदर्शित संसाधन",
+    "featured": "विशेष रूप से प्रदर्शित संसाधन",
     "availableOn": "उपलब्ध है: {platforms}",
     "moreplatforms": "+{count}"
   },
@@ -98,7 +98,7 @@
     "grammar": "व्याकरण",
     "vocabulary": "शब्दावली",
     "kanji": "कांजी",
-    "immersion": "विसर्जन (इमर्शन)",
+    "immersion": "भाषा विसर्जन (इमर्शन)",
     "community": "समुदाय"
   },
   "subcategories": {
