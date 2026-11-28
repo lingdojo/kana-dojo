@@ -14,6 +14,7 @@ import Stars from '@/shared/ui-composite/Game/Stars';
 import AnswerSummary from '@/shared/ui-composite/Game/AnswerSummary';
 import SSRAudioButton from '@/shared/ui-composite/audio/SSRAudioButton';
 import FuriganaText from '@/shared/ui-composite/text/FuriganaText';
+import FuriganaToggle from './FuriganaToggle';
 import { useCrazyModeTrigger } from '@/features/CrazyMode/hooks/useCrazyModeTrigger';
 import { getGlobalAdaptiveSelector } from '@/shared/utils/adaptiveSelection';
 import { useSmartReverseMode } from '@/shared/hooks/game/useSmartReverseMode';
@@ -427,13 +428,17 @@ const VocabMCQ = ({ selectedWordObjs, isHidden }: VocabMCQProps) => {
         <>
           <div className='flex flex-col items-center gap-4'>
             {/* Show prompt based on quiz type */}
-            <span className='mb-2 text-sm text-(--secondary-color)'>
-              {quizType === 'meaning'
-                ? isReverse
-                  ? 'What is the word?' // reverse: given meaning, find word
-                  : 'What is the meaning?' // normal: given word, find meaning
-                : 'What is the reading?'}
-            </span>
+            <div className='mb-2 flex flex-row items-center gap-2'>
+              <span className='text-sm text-(--secondary-color)'>
+                {quizType === 'meaning'
+                  ? isReverse
+                    ? 'What is the word?' // reverse: given meaning, find word
+                    : 'What is the meaning?' // normal: given word, find meaning
+                  : 'What is the reading?'}
+              </span>
+              {/* Furigana is only shown for the meaning quiz in normal mode */}
+              {quizType === 'meaning' && !isReverse && <FuriganaToggle />}
+            </div>
             <div className='flex flex-row items-center justify-center gap-1'>
               <FuriganaText
                 text={displayChar ?? ''}

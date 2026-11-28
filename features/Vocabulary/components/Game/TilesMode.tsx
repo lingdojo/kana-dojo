@@ -20,6 +20,7 @@ import { useTilesModeHandlers } from '@/shared/hooks/game/useTilesModeHandlers';
 import { useTilesModeState } from '@/shared/hooks/game/useTilesModeState';
 import { GameBottomBar } from '@/shared/ui-composite/Game/GameBottomBar';
 import FuriganaText from '@/shared/ui-composite/text/FuriganaText';
+import FuriganaToggle from './FuriganaToggle';
 import AnswerSummary from '@/shared/ui-composite/Game/AnswerSummary';
 import { CircleCheck } from 'lucide-react';
 import SSRAudioButton from '@/shared/ui-composite/audio/SSRAudioButton';
@@ -630,14 +631,20 @@ const VocabTilesMode = ({
             {/* Question Display */}
             <div className='flex flex-col items-center gap-4'>
               {/* Show prompt based on quiz type (use effective quiz type from question) */}
-              <span className='mb-2 text-sm text-(--secondary-color)'>
-                {questionData.quizType === 'meaning'
-                  ? isReverse
-                    ? 'What is the word?' // meaning+reverse: given meaning, find word
-                    : 'What is the meaning?' // meaning+normal: given word, find meaning
-                  : 'What is the reading?'}{' '}
-                {/* reading quiz: always asks for reading */}
-              </span>
+              <div className='mb-2 flex flex-row items-center gap-2'>
+                <span className='text-sm text-(--secondary-color)'>
+                  {questionData.quizType === 'meaning'
+                    ? isReverse
+                      ? 'What is the word?' // meaning+reverse: given meaning, find word
+                      : 'What is the meaning?' // meaning+normal: given word, find meaning
+                    : 'What is the reading?'}{' '}
+                  {/* reading quiz: always asks for reading */}
+                </span>
+                {/* Furigana is only shown for the meaning quiz in normal mode */}
+                {questionData.quizType === 'meaning' && !isReverse && (
+                  <FuriganaToggle />
+                )}
+              </div>
               <div
                 className={getGlassModeClassName(
                   'flex flex-row items-center justify-center gap-1',
