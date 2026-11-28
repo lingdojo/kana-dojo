@@ -408,5 +408,10 @@
   "wrong": "静かい部屋",
   "correct": "静かな部屋",
   "explanation": "な-adjectives require な before nouns. (Pattern set 2)"
+},
+{
+  "wrong": "もし雨が降ります、行きません。",
+  "correct": "もし雨が降ったら、行きません。",
+  "explanation": "Conditional needs たら/なら etc. (Pattern set 4)"
 }
 ]
