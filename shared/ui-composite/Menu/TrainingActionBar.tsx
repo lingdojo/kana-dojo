@@ -357,7 +357,6 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
 
                 startAutoLearning();
               },
-              ref: buttonRef,
             },
           ]
             .filter(btn => btn.show)
@@ -369,11 +368,13 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
                 iconClassName,
                 colorScheme,
                 onClick,
-                ref,
               }) => (
                 <button
                   key={id}
-                  ref={ref}
+                  // The ref is attached at the JSX level rather than carried inside
+                  // the objects above: putting it in a plain array makes it travel
+                  // through filter/map, which can read it during render.
+                  ref={id === 'classic' ? buttonRef : undefined}
                   disabled={id === 'classic' && !isFilled}
                   className={cn(
                     'flex flex-row items-center justify-center gap-2 py-3',
