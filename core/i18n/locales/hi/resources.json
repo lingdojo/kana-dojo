@@ -6,7 +6,7 @@
   },
   "search": {
     "placeholder": "संसाधन खोजें...",
-    "results": "{count} {count, plural, one {result} other {results}}",
+    "results": "{count} {count, plural, one {परिणाम} other {परिणाम}}",
     "clearSearch": "खोज साफ़ करें",
     "noResults": "कोई संसाधन नहीं मिला",
     "noResultsHint": "अपने फ़िल्टर या खोज क्वेरी को समायोजित करने का प्रयास करें"
@@ -27,7 +27,7 @@
     "price": "मूल्य",
     "platform": "प्लेटफ़ॉर्म",
     "clearAll": "सभी साफ़ करें",
-    "activeFilters": "{count} {count, plural, one {filter} other {filters}} active",
+    "activeFilters": "{count} {count, plural, one {सक्रिय फ़िल्टर} other {सक्रिय फ़िल्टर}}",
     "removeFilter": "{filter} फ़िल्टर हटाएं",
     "expand": "{section} उपश्रेणियां विस्तृत करें",
     "collapse": "{section} उपश्रेणियां संक्षिप्त करें"
