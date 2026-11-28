@@ -6,9 +6,10 @@ import useVocabStore, {
 } from '@/features/Vocabulary/store/useVocabStore';
 import Gauntlet, { type GauntletConfig } from '@/shared/ui-composite/Gauntlet';
 import { getSelectionLabels } from '@/shared/utils/selectionFormatting';
-import { shuffle, pickOne } from '@/shared/utils/shuffle';
+import { pickOne } from '@/shared/utils/shuffle';
 import FuriganaText from '@/shared/ui-composite/text/FuriganaText';
 import { isVocabularyMeaningAnswerCorrect } from '@/features/Vocabulary/lib/isVocabularyMeaningAnswerCorrect';
+import { getVocabIncorrectOptions } from '@/features/Vocabulary/lib/vocabQuizOptions';
 
 interface GauntletVocabProps {
   onCancel?: () => void;
@@ -47,36 +48,14 @@ const GauntletVocab: React.FC<GauntletVocabProps> = ({ onCancel }) => {
       isReverse ? question.word : question.meanings[0],
     // Pick mode support with reverse mode
     generateOptions: (question, items, count, isReverse) => {
-      if (isReverse) {
-        // Reverse: options are Japanese words
-        const correctAnswer = question.word;
-        const seen = new Set([correctAnswer]);
-        const incorrectOptions = shuffle(
-          items.filter(item => item.word !== question.word),
-        )
-          .filter(item => {
-            if (seen.has(item.word)) return false;
-            seen.add(item.word);
-            return true;
-          })
-          .slice(0, count - 1)
-          .map(item => item.word);
-        return [correctAnswer, ...incorrectOptions];
-      }
-      // Normal: options are meanings
-      const correctAnswer = question.meanings[0];
-      const seen = new Set([correctAnswer]);
-      const incorrectOptions = shuffle(
-        items.filter(item => item.word !== question.word),
-      )
-        .filter(item => {
-          const meaning = item.meanings[0];
-          if (seen.has(meaning)) return false;
-          seen.add(meaning);
-          return true;
-        })
-        .slice(0, count - 1)
-        .map(item => item.meanings[0]);
+      const correctAnswer = isReverse ? question.word : question.meanings[0];
+      const incorrectOptions = getVocabIncorrectOptions({
+        correctWordObj: question,
+        wordObjs: items,
+        count: count - 1,
+        quizType: 'meaning',
+        isReverse: !!isReverse,
+      });
       return [correctAnswer, ...incorrectOptions];
     },
     getCorrectOption: (question, isReverse) =>

@@ -8,8 +8,9 @@ import { useStatsStore } from '@/features/Progress';
 import Blitz, { type BlitzConfig } from '@/shared/ui-composite/Blitz';
 import FuriganaText from '@/shared/ui-composite/text/FuriganaText';
 import { getSelectionLabels } from '@/shared/utils/selectionFormatting';
-import { shuffle, pickOne } from '@/shared/utils/shuffle';
+import { pickOne } from '@/shared/utils/shuffle';
 import { isVocabularyMeaningAnswerCorrect } from '@/features/Vocabulary/lib/isVocabularyMeaningAnswerCorrect';
+import { getVocabIncorrectOptions } from '@/features/Vocabulary/lib/vocabQuizOptions';
 
 export default function BlitzVocab() {
   const selectedVocabObjs = useVocabStore(state => state.selectedVocabObjs);
@@ -57,23 +58,14 @@ export default function BlitzVocab() {
       isReverse ? question.word : question.meanings[0],
     // Pick mode support with reverse mode
     generateOptions: (question, items, count, isReverse) => {
-      if (isReverse) {
-        // Reverse: options are Japanese words
-        const correctAnswer = question.word;
-        const incorrectOptions = shuffle(
-          items.filter(item => item.word !== question.word),
-        )
-          .slice(0, count - 1)
-          .map(item => item.word);
-        return [correctAnswer, ...incorrectOptions];
-      }
-      // Normal: options are meanings
-      const correctAnswer = question.meanings[0];
-      const incorrectOptions = shuffle(
-        items.filter(item => item.word !== question.word),
-      )
-        .slice(0, count - 1)
-        .map(item => item.meanings[0]);
+      const correctAnswer = isReverse ? question.word : question.meanings[0];
+      const incorrectOptions = getVocabIncorrectOptions({
+        correctWordObj: question,
+        wordObjs: items,
+        count: count - 1,
+        quizType: 'meaning',
+        isReverse: !!isReverse,
+      });
       return [correctAnswer, ...incorrectOptions];
     },
     getCorrectOption: (question, isReverse) =>

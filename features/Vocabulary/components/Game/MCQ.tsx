@@ -2,7 +2,6 @@
 import clsx from 'clsx';
 import { useState, useEffect, useRef, useMemo, memo } from 'react';
 import { CircleCheck, CircleX } from 'lucide-react';
-import { Random } from 'random-js';
 import { IVocabObj } from '@/features/Vocabulary/store/useVocabStore';
 import { useCorrect, useError } from '@/shared/hooks/generic/useAudio';
 import { buttonBorderStyles } from '@/shared/utils/styles';
@@ -26,8 +25,11 @@ import {
 } from '@/features/Vocabulary/components/Game/vocabFormatLock';
 import useClassicSessionStore from '@/shared/store/useClassicSessionStore';
 import { useSetProgressStore } from '@/features/Progress';
-
-const random = new Random();
+import {
+  getVocabIncorrectOptions,
+  isVocabOptionCorrect,
+} from '@/features/Vocabulary/lib/vocabQuizOptions';
+import { shuffle } from '@/shared/utils/shuffle';
 
 // Get the global adaptive selector for weighted character selection
 const adaptiveSelector = getGlobalAdaptiveSelector();
@@ -188,34 +190,23 @@ const VocabMCQ = ({ selectedWordObjs, isHidden }: VocabMCQProps) => {
         : correctWordObj?.meanings[0] // normal: show word, answer is meaning
       : correctWordObj?.reading; // reading quiz: answer is always reading
 
-  // Get incorrect options based on mode and quiz type
-  const getIncorrectOptions = (): string[] => {
-    // Filter out the current word
-    const incorrectWordObjs = selectedWordObjs.filter(
-      obj => obj.word !== correctChar,
-    );
+  const optionKey = `${correctChar}|${isReverse}|${quizType}|${hasWords}`;
+  const [prevOptionKey, setPrevOptionKey] = useState(optionKey);
 
-    if (quizType === 'meaning') {
-      return incorrectWordObjs
-        .map(obj => (isReverse ? obj.word : obj.meanings[0]))
-        .sort(() => random.real(0, 1) - 0.5)
-        .slice(0, 2);
-    } else if (quizType === 'reading') {
-      return incorrectWordObjs
-        .map(obj => obj.reading)
-        .sort(() => random.real(0, 1) - 0.5)
-        .slice(0, 2);
-    }
-    return []; // Fallback in case quizType is neither 'meaning' nor 'reading'
+  const buildShuffledOptions = () => {
+    if (!hasWords || !correctWordObj) return [];
+    const incorrectOptions = getVocabIncorrectOptions({
+      correctWordObj,
+      wordObjs: selectedWordObjs,
+      count: 2,
+      quizType,
+      isReverse,
+    });
+    return shuffle([targetChar ?? '', ...incorrectOptions]);
   };
 
-  const randomIncorrectOptions = getIncorrectOptions();
-
-  const [shuffledOptions, setShuffledOptions] = useState(
-    [targetChar ?? '', ...randomIncorrectOptions].sort(
-      () => random.real(0, 1) - 0.5,
-    ) as string[],
-  );
+  const [shuffledOptions, setShuffledOptions] =
+    useState<string[]>(buildShuffledOptions);
 
   const [displayAnswerSummary, setDisplayAnswerSummary] = useState(false);
   const [promptSequence, setPromptSequence] = useState(0);
@@ -224,17 +215,15 @@ const VocabMCQ = ({ selectedWordObjs, isHidden }: VocabMCQProps) => {
     [],
   );
 
-  // Update shuffled options when correctChar or isReverse changes
+  if (prevOptionKey !== optionKey) {
+    setPrevOptionKey(optionKey);
+    setShuffledOptions(buildShuffledOptions());
+    setWrongSelectedAnswers([]);
+  }
+
   useEffect(() => {
     isProcessingRef.current = false;
-    if (!hasWords) return;
-    setShuffledOptions(
-      [targetChar ?? '', ...getIncorrectOptions()].sort(
-        () => random.real(0, 1) - 0.5,
-      ) as string[],
-    );
-    setWrongSelectedAnswers([]);
-  }, [correctChar, hasWords, isReverse, quizType]);
+  }, [optionKey]);
 
   // A wrong answer keeps the current prompt on screen. Release the synchronous
   // event lock only after its disabled-button state has committed, so another
@@ -265,7 +254,16 @@ const VocabMCQ = ({ selectedWordObjs, isHidden }: VocabMCQProps) => {
     if (isProcessingRef.current) return;
     isProcessingRef.current = true;
 
-    if (selectedOption === targetChar) {
+    const isCorrect = isVocabOptionCorrect({
+      selectedOption,
+      correctWordObj,
+      correctAnswer: targetChar ?? '',
+      quizType,
+      isReverse,
+      wordObjMap,
+    });
+
+    if (isCorrect) {
       setDisplayAnswerSummary(true);
       handleCorrectAnswer();
       generateNewCharacter();
@@ -275,7 +273,11 @@ const VocabMCQ = ({ selectedWordObjs, isHidden }: VocabMCQProps) => {
           <CircleCheck className='inline text-(--main-color)' />
         </>,
       );
-      setCurrentWordObj(correctWordObj as IVocabObj);
+      const answeredWordObj =
+        quizType === 'meaning' && isReverse
+          ? (wordObjMap.get(selectedOption) ?? correctWordObj)
+          : correctWordObj;
+      setCurrentWordObj(answeredWordObj as IVocabObj);
       logAttempt({
         questionId: correctChar,
         questionPrompt: String(displayChar),
@@ -489,4 +491,3 @@ const VocabMCQ = ({ selectedWordObjs, isHidden }: VocabMCQProps) => {
 };
 
 export default VocabMCQ;
-
