@@ -130,6 +130,20 @@ describe('isKanaInputAnswerCorrect', () => {
     ).toBe(true);
   });
 
+  it('accepts nyuga for the kana prompt にゅが', () => {
+    expect(
+      isKanaInputAnswerCorrect({
+        inputValue: 'Nyuga',
+        correctChar: 'にゅが',
+        targetChar: 'nyuga',
+        isReverse: false,
+        altRomanjiMap,
+        promptParts: ['にゅ', 'が'],
+        answerParts: ['nyu', 'ga'],
+      }),
+    ).toBe(true);
+  });
+
   it('accepts primary romaji for a multi-character prompt', () => {
     // prompt: しぶ → primary answer: shibu
     expect(

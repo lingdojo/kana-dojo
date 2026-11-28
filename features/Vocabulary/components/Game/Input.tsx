@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
-import { toHiragana } from 'wanakana';
+import { readingsMatch } from '@/shared/utils/japaneseReading';
 import { IVocabObj } from '@/features/Vocabulary/store/useVocabStore';
 import {
   useClick,
@@ -227,9 +227,7 @@ const VocabInputGame = ({
         : false;
     } else {
       const targetReading = typeof targetChar === 'string' ? targetChar : '';
-      const inputAsHiragana = toHiragana(input);
-      const targetAsHiragana = toHiragana(targetReading);
-      return inputAsHiragana === targetAsHiragana || input === targetReading;
+      return readingsMatch(input, targetReading);
     }
   };
 

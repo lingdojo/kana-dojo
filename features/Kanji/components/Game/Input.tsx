@@ -114,12 +114,17 @@ const KanjiInputGame = ({
     correctKanjiObj as IKanjiObj,
   );
 
+  const meaningTargets = correctKanjiObj?.meanings ?? [];
+  const readingTargets = [
+    ...(correctKanjiObj?.kunyomi ?? []),
+    ...(correctKanjiObj?.onyomi ?? []),
+  ];
+
   const targetChar = isReverse
     ? correctKanjiObj?.kanjiChar
     : [
-        ...(correctKanjiObj?.meanings ?? []),
-        ...(correctKanjiObj?.kunyomi?.map(k => k.split(' ')[0]) ?? []),
-        ...(correctKanjiObj?.onyomi?.map(k => k.split(' ')[0]) ?? []),
+        ...meaningTargets,
+        ...readingTargets.map(reading => reading.split(' ')[0]),
       ];
 
   const [displayAnswerSummary, setDisplayAnswerSummary] = useState(false);
@@ -214,7 +219,8 @@ const KanjiInputGame = ({
   const isInputCorrect = (input: string): boolean => {
     return isKanjiClassicInputAnswerCorrect({
       inputValue: input,
-      target: targetChar,
+      target: isReverse ? targetChar : meaningTargets,
+      readings: isReverse ? [] : readingTargets,
       isReverse,
     });
   };

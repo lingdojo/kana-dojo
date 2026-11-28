@@ -100,7 +100,52 @@ describe('isKanjiAnswerCorrect', () => {
     },
   );
 
-  it.each(['', 'China', 'かん'])('rejects invalid reverse answer %s', answer => {
+  it('accepts the hiragana form of a katakana reading', () => {
+    expect(isKanjiAnswerCorrect(kanji, 'かん', true)).toBe(true);
+  });
+
+  it.each(['', 'China'])('rejects invalid reverse answer %s', answer => {
     expect(isKanjiAnswerCorrect(kanji, answer, true)).toBe(false);
+  });
+
+  it('keeps meaning questions on English and accepts the reading in reverse', () => {
+    const milk = {
+      ...kanji,
+      kanjiChar: '乳',
+      meanings: ['milk', 'breasts'],
+      kunyomi: ['chichi ちち', 'chi ち'],
+      onyomi: ['nyuu ニュウ'],
+    };
+
+    expect(isKanjiAnswerCorrect(milk, 'milk', false)).toBe(true);
+    expect(isKanjiAnswerCorrect(milk, 'nyuu', false)).toBe(false);
+    expect(isKanjiAnswerCorrect(milk, 'nyū', false)).toBe(false);
+    expect(isKanjiAnswerCorrect(milk, 'Nyuga', false)).toBe(false);
+
+    expect(isKanjiAnswerCorrect(milk, 'nyuu', true)).toBe(true);
+    expect(isKanjiAnswerCorrect(milk, 'nyū', true)).toBe(true);
+    expect(isKanjiAnswerCorrect(milk, 'ニュウ', true)).toBe(true);
+    expect(isKanjiAnswerCorrect(milk, 'にゅう', true)).toBe(true);
+    expect(isKanjiAnswerCorrect(milk, 'Nyuga', true)).toBe(true);
+    expect(isKanjiAnswerCorrect(milk, 'nyuga', true)).toBe(true);
+  });
+
+  it('accepts nyu for 入 and does not treat Nyuga as that reading', () => {
+    const enter = {
+      ...kanji,
+      kanjiChar: '入',
+      meanings: ['enter'],
+      kunyomi: ['nyu にゅ'],
+      onyomi: ['nyuu ニュウ'],
+    };
+
+    expect(isKanjiAnswerCorrect(enter, 'nyu', false)).toBe(false);
+    expect(isKanjiAnswerCorrect(enter, 'enter', false)).toBe(true);
+    expect(isKanjiAnswerCorrect(enter, 'nyu', true)).toBe(true);
+    expect(isKanjiAnswerCorrect(enter, 'nyuu', true)).toBe(true);
+    expect(isKanjiAnswerCorrect(enter, 'Nyuga', true)).toBe(true);
+
+    const shortReadingOnly = { ...enter, onyomi: [] };
+    expect(isKanjiAnswerCorrect(shortReadingOnly, 'Nyuga', true)).toBe(false);
   });
 });
