@@ -28,7 +28,9 @@ import {
   type LucideIcon,
 } from 'lucide-react';
 import GameScoreBar from './GameScoreBar';
+import QuizProgressIndicator from './QuizProgressIndicator';
 import { ActionButton } from '@/shared/ui/components/ActionButton';
+import useClassicFeedbackStore from '@/shared/store/useClassicFeedbackStore';
 
 // Game mode icon configuration
 const GAME_MODE_ICONS: Record<
@@ -80,6 +82,17 @@ const Return = ({ isHidden, gameMode, onQuit }: ReturnProps) => {
   const currentStreak = stats.currentStreak;
   const toggleStats = stats.toggleStats;
   const setNewTotalMilliseconds = stats.setNewTotalMilliseconds;
+  const setClassicSessionActive = useClassicFeedbackStore(
+    state => state.setClassicSessionActive,
+  );
+  const isReviewingCorrectAnswer = useClassicFeedbackStore(
+    state => state.isShowingAnswerSummary || state.isShowingCorrectBottomBar,
+  );
+
+  useEffect(() => {
+    setClassicSessionActive(true);
+    return () => setClassicSessionActive(false);
+  }, [setClassicSessionActive]);
 
   const { playClick } = useClick();
   const pathname = usePathname();
@@ -199,14 +212,25 @@ const Return = ({ isHidden, gameMode, onQuit }: ReturnProps) => {
       )}
     >
       {/* Header with exit and progress */}
-      <div className='flex w-full flex-row items-center justify-between gap-3 md:gap-4'>
-        <button type='button' ref={buttonRef} onClick={handleExit}>
+      <div className='flex w-full flex-row items-center justify-between gap-2.5 sm:gap-3 md:gap-4'>
+        <button
+          type='button'
+          ref={buttonRef}
+          onClick={handleExit}
+          className='shrink-0'
+        >
           <X
             size={32}
             className='text-(--border-color) duration-250 hover:scale-125 hover:cursor-pointer hover:text-(--secondary-color)'
           />
         </button>
         <GameScoreBar />
+        <QuizProgressIndicator
+          currentQuestion={Math.max(
+            1,
+            numCorrectAnswers + 1 - (isReviewingCorrectAnswer ? 1 : 0),
+          )}
+        />
         {/* Stats button - visible only on small screens */}
         <ActionButton
           borderRadius='xl'

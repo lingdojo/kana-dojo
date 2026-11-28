@@ -22,6 +22,7 @@ import {
 } from '@/shared/ui-composite/Game/GameBottomBar';
 import Stars from '@/shared/ui-composite/Game/Stars';
 import GameScoreBar from '@/shared/ui-composite/Game/GameScoreBar';
+import QuizProgressIndicator from '@/shared/ui-composite/Game/QuizProgressIndicator';
 import { useClick } from '@/shared/hooks/generic/useAudio';
 import { cn } from '@/shared/utils/utils';
 import { useThemePreferences } from '@/features/Preferences';
@@ -288,6 +289,7 @@ export default function ActiveGame<T>({
   const isTypeMode = gameMode === 'Type';
 
   // Internal game state - reset when question changes
+  const [prevQuestionKey, setPrevQuestionKey] = useState(questionKey);
   const [placedTiles, setPlacedTiles] = useState<string[]>([]);
   const [bottomBarState, setBottomBarState] = useState<BottomBarState>('check');
   const [isChecking, setIsChecking] = useState(false);
@@ -298,18 +300,21 @@ export default function ActiveGame<T>({
     isCorrect: boolean;
   } | null>(null);
 
-  // Reset state when question changes
-  useEffect(() => {
+  if (prevQuestionKey !== questionKey) {
+    setPrevQuestionKey(questionKey);
     setPlacedTiles([]);
     setBottomBarState('check');
     setIsChecking(false);
     setIsCelebrating(false);
     setCheckedResult(null);
-    if (isTypeMode && setUserAnswer) {
-      setUserAnswer('');
-      // Focus the input after a small delay to allow render
-      setTimeout(() => inputRef.current?.focus(), 100);
-    }
+  }
+
+  // Reset typed input and focus when question changes in Type mode
+  useEffect(() => {
+    if (!isTypeMode) return;
+    setUserAnswer?.('');
+    const timer = setTimeout(() => inputRef.current?.focus(), 100);
+    return () => clearTimeout(timer);
   }, [questionKey, isTypeMode, setUserAnswer]);
 
   // Keyboard shortcut for Enter/Space to trigger the action button.
@@ -488,20 +493,19 @@ export default function ActiveGame<T>({
         {/* Exit Button */}
         <button
           onClick={onCancel}
-          className='text-(--border-color) duration-250 hover:cursor-pointer hover:text-(--secondary-color)'
+          className='shrink-0 text-(--border-color) duration-250 hover:cursor-pointer hover:text-(--secondary-color)'
         >
           <X size={32} />
         </button>
 
         {/* Progress Display */}
-        <div className='flex items-center gap-2 text-sm text-(--muted-color)'>
-          <span>
-            {currentIndex} / {totalQuestions}
-          </span>
-        </div>
+        <QuizProgressIndicator
+          currentQuestion={currentIndex + 1}
+          totalQuestions={totalQuestions}
+        />
 
         {/* Lives Display */}
-        <div className='flex items-center gap-1'>
+        <div className='flex shrink-0 items-center gap-1'>
           {Array.from({ length: maxLives }).map((_, i) => {
             const hasLife = i < lives;
             return (
@@ -719,4 +723,3 @@ export default function ActiveGame<T>({
     </div>
   );
 }
-

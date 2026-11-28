@@ -1,9 +1,13 @@
 'use client';
-import React, { ReactNode, useEffect, useRef, useState } from 'react';
+import React, { ReactNode, useEffect, useLayoutEffect, useState } from 'react';
 import { CircleCheck, RotateCcw, Flag } from 'lucide-react';
 import clsx from 'clsx';
 import { ActionButton } from '@/shared/ui/components/ActionButton';
 import { useClick } from '@/shared/hooks/generic/useAudio';
+import useClassicFeedbackStore from '@/shared/store/useClassicFeedbackStore';
+
+const useIsomorphicLayoutEffect =
+  typeof window !== 'undefined' ? useLayoutEffect : useEffect;
 
 // Toggle between new SVG check icon (true) and old CircleCheck icon (false)
 const USE_NEW_CHECK_ICON = true;
@@ -47,16 +51,17 @@ export const GameBottomBar = ({
   const isCorrect = state === 'correct';
   const isWrong = state === 'wrong';
   const [hideWrongFeedback, setHideWrongFeedback] = useState(false);
-  const lastClearSignalRef = useRef<number | undefined>(clearWrongFeedbackSignal);
-  const showFeedback = state !== 'check' && !(isWrong && hideWrongFeedback);
-  const showContinue = isCorrect;
-  // When hideRetry is true, treat wrong state like check state for button display
-  const showRetryButton = isWrong && !hideRetry;
-  const showNextButton =
-    actionLabel === 'next' ||
-    actionLabel === 'skip' ||
-    showContinue ||
-    (isWrong && hideRetry);
+  const [prevState, setPrevState] = useState(state);
+  const [prevWrongSignal, setPrevWrongSignal] = useState(wrongFeedbackSignal);
+  const [prevClearSignal, setPrevClearSignal] = useState(
+    clearWrongFeedbackSignal,
+  );
+  const isClassicSessionActive = useClassicFeedbackStore(
+    state => state.isClassicSessionActive,
+  );
+  const setShowingCorrectBottomBar = useClassicFeedbackStore(
+    state => state.setShowingCorrectBottomBar,
+  );
 
   // Default titles if not provided
   const defaultTitle = isCorrect
@@ -71,35 +76,65 @@ export const GameBottomBar = ({
   const [frozenTitle, setFrozenTitle] = useState(displayTitle);
   const [frozenFeedbackContent, setFrozenFeedbackContent] =
     useState<ReactNode>(feedbackContent);
+  const [prevDisplayTitle, setPrevDisplayTitle] = useState(displayTitle);
+  const [prevFeedbackContent, setPrevFeedbackContent] =
+    useState<ReactNode>(feedbackContent);
 
-  useEffect(() => {
+  const hasPrimitiveFeedbackChanged =
+    (typeof feedbackContent !== 'object' || feedbackContent === null) &&
+    feedbackContent !== prevFeedbackContent;
+
+  if (
+    state !== prevState ||
+    displayTitle !== prevDisplayTitle ||
+    hasPrimitiveFeedbackChanged
+  ) {
+    setPrevState(state);
+    setPrevDisplayTitle(displayTitle);
+    setPrevFeedbackContent(feedbackContent);
+
     if (state !== 'check') {
       setFrozenTitle(displayTitle);
       setFrozenFeedbackContent(feedbackContent);
     }
-  }, [state, displayTitle, feedbackContent]);
-
-  useEffect(() => {
-    if (state !== 'wrong') {
+    if (state !== 'wrong' && hideWrongFeedback) {
       setHideWrongFeedback(false);
     }
-  }, [state]);
+  }
 
-  useEffect(() => {
+  if (wrongFeedbackSignal !== prevWrongSignal) {
+    setPrevWrongSignal(wrongFeedbackSignal);
+    if (state !== 'check') {
+      setFrozenTitle(displayTitle);
+      setFrozenFeedbackContent(feedbackContent);
+    }
     if (state === 'wrong') {
       setHideWrongFeedback(false);
     }
-  }, [state, wrongFeedbackSignal]);
+  }
 
-  useEffect(() => {
-    const didClearSignalChange =
-      lastClearSignalRef.current !== clearWrongFeedbackSignal;
-    lastClearSignalRef.current = clearWrongFeedbackSignal;
-
-    if (state === 'wrong' && didClearSignalChange) {
+  if (clearWrongFeedbackSignal !== prevClearSignal) {
+    setPrevClearSignal(clearWrongFeedbackSignal);
+    if (state === 'wrong') {
       setHideWrongFeedback(true);
     }
-  }, [state, clearWrongFeedbackSignal]);
+  }
+
+  useIsomorphicLayoutEffect(() => {
+    if (!isClassicSessionActive || !isCorrect) return;
+    setShowingCorrectBottomBar(true);
+    return () => setShowingCorrectBottomBar(false);
+  }, [isClassicSessionActive, isCorrect, setShowingCorrectBottomBar]);
+
+  const showFeedback = state !== 'check' && !(isWrong && hideWrongFeedback);
+  const showContinue = isCorrect;
+  // When hideRetry is true, treat wrong state like check state for button display
+  const showRetryButton = isWrong && !hideRetry;
+  const showNextButton =
+    actionLabel === 'next' ||
+    actionLabel === 'skip' ||
+    showContinue ||
+    (isWrong && hideRetry);
 
   return (
     <div
