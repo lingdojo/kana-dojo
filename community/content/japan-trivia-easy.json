@@ -460,5 +460,16 @@
       "Aikido"
     ],
     "correctIndex": 0
+  },
+  {
+    "question": "Which Japanese dish consists of skewered grilled chicken?",
+    "difficulty": "easy",
+    "answers": [
+      "Yakitori",
+      "Sukiyaki",
+      "Tonkatsu",
+      "Oden"
+    ],
+    "correctIndex": 0
   }
 ]
