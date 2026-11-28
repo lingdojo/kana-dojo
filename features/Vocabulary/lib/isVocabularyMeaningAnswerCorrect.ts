@@ -21,9 +21,14 @@ export const isVocabularyMeaningAnswerCorrect = (
     );
   }
 
+  const readings = [vocabulary.reading, ...(vocabulary.readings ?? [])];
+
   return (
     normalizeAnswerValue(vocabulary.word) === normalizedAnswer ||
-    toHiragana(normalizedAnswer) ===
-      toHiragana(normalizeAnswerValue(vocabulary.reading))
+    readings.some(
+      reading =>
+        toHiragana(normalizedAnswer) ===
+        toHiragana(normalizeAnswerValue(reading)),
+    )
   );
 };

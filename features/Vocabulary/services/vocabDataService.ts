@@ -1,7 +1,6 @@
 import type { IVocabObj, VocabLevel } from '@/entities/vocabulary';
-import {
-  useVocabCacheStore,
-} from '@/features/Vocabulary/store/useVocabCacheStore';
+import { attachAlternateReadings } from '@/features/Vocabulary/lib/vocabularyReadings';
+import { useVocabCacheStore } from '@/features/Vocabulary/store/useVocabCacheStore';
 
 type RawVocabEntry = {
   jmdict_seq: string;
@@ -57,7 +56,7 @@ export const vocabDataService = {
     pendingRequests[level] = fetch(`/data-vocab/${level}.json`)
       .then(res => res.json() as Promise<RawVocabEntry[]>)
       .then(data => {
-        const words = data.map(toWordObj);
+        const words = attachAlternateReadings(data.map(toWordObj));
         setCachedLevel(level, words);
         delete pendingRequests[level];
         return words;
