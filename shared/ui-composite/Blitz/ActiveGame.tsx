@@ -5,6 +5,7 @@ import { Timer, Target, X } from 'lucide-react';
 import clsx from 'clsx';
 import { ActionButton } from '@/shared/ui/components/ActionButton';
 import GoalTimersPanel from '@/shared/ui-composite/Timer/GoalTimersPanel';
+import QuizProgressIndicator from '@/shared/ui-composite/Game/QuizProgressIndicator';
 import { buttonBorderStyles } from '@/shared/utils/styles';
 import { useThemePreferences } from '@/features/Preferences';
 import { cn } from '@/shared/utils/utils';
@@ -228,8 +229,8 @@ function GameHeader({
   onCancel: () => void;
 }) {
   return (
-    <div className='flex items-center justify-between'>
-      <div className='flex items-center gap-2'>
+    <div className='flex items-center justify-between gap-2'>
+      <div className='flex shrink-0 items-center gap-2'>
         <Timer className='text-(--main-color)' size={20} />
         <span
           className={clsx(
@@ -242,7 +243,8 @@ function GameHeader({
           {minutes}:{seconds.toString().padStart(2, '0')}
         </span>
       </div>
-      <div className='flex items-center gap-4'>
+      <QuizProgressIndicator currentQuestion={stats.correct + 1} />
+      <div className='flex shrink-0 items-center gap-3 sm:gap-4'>
         <div className='text-right text-sm text-(--muted-color)'>
           <div>
             <span className='text-(--secondary-color)'>Score: </span>
@@ -534,4 +536,3 @@ function GoalTimersSidebar({
     </div>
   );
 }
-

@@ -3,15 +3,25 @@ import { toKana, toRomaji } from 'wanakana';
 import type { IKanjiObj } from '@/features/Kanji';
 import type { IVocabObj } from '@/features/Vocabulary';
 import { CircleArrowRight, Volume2 } from 'lucide-react';
-import { Dispatch, SetStateAction, useRef, useEffect, useCallback } from 'react';
+import {
+  Dispatch,
+  SetStateAction,
+  useRef,
+  useEffect,
+  useCallback,
+} from 'react';
 import { useClick } from '@/shared/hooks/generic/useAudio';
 import { removeVerbDuplicates } from '@/shared/utils/meanings';
 import FuriganaText from '@/shared/ui-composite/text/FuriganaText';
-import { useAudioPreferences, useThemePreferences } from '@/features/Preferences';
+import {
+  useAudioPreferences,
+  useThemePreferences,
+} from '@/features/Preferences';
 import { useJapaneseTTS } from '@/features/Preferences/hooks/useJapaneseTTS';
 import { ActionButton } from '@/shared/ui/components/ActionButton';
 import { motion } from 'framer-motion';
 import { cn } from '@/shared/utils/utils';
+import useClassicFeedbackStore from '@/shared/store/useClassicFeedbackStore';
 
 // Premium spring animation config
 const springConfig = {
@@ -168,7 +178,7 @@ const ContinueButton = ({
 const KanjiDisplay = ({ payload }: { payload: IKanjiObj }) => (
   <motion.div
     variants={mainCharVariants}
-    className='relative flex aspect-square w-full max-w-[100px] sm:max-w-[125px] items-center justify-center'
+    className='relative flex aspect-square w-full max-w-[100px] items-center justify-center sm:max-w-[125px]'
     style={{ perspective: 1000 }}
   >
     <a
@@ -363,7 +373,7 @@ const VocabSummary = ({
       initial='hidden'
       animate='visible'
       className={cn(
-        'flex w-full flex-col items-center justify-start gap-4 sm:gap-6 py-4 md:w-3/4 lg:w-1/2',
+        'flex w-full flex-col items-center justify-start gap-4 py-4 sm:gap-6 md:w-3/4 lg:w-1/2',
         isGlassMode && 'rounded-xl bg-(--card-color) px-4 py-2',
       )}
     >
@@ -454,6 +464,14 @@ const AnswerSummary = ({
     useAudioPreferences();
   const { speak, refreshVoices } = useJapaneseTTS();
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const setShowingAnswerSummary = useClassicFeedbackStore(
+    state => state.setShowingAnswerSummary,
+  );
+
+  useEffect(() => {
+    setShowingAnswerSummary(true);
+    return () => setShowingAnswerSummary(false);
+  }, [setShowingAnswerSummary]);
 
   const playReadingPronunciation = useCallback(
     async (reading: string) => {
@@ -535,4 +553,3 @@ const AnswerSummary = ({
 };
 
 export default AnswerSummary;
-

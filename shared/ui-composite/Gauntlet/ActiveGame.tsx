@@ -493,7 +493,7 @@ export default function ActiveGame<T>({
         {/* Exit Button */}
         <button
           onClick={onCancel}
-          className='text-(--border-color) duration-250 hover:cursor-pointer hover:text-(--secondary-color)'
+          className='shrink-0 text-(--border-color) duration-250 hover:cursor-pointer hover:text-(--secondary-color)'
         >
           <X size={32} />
         </button>
@@ -505,7 +505,7 @@ export default function ActiveGame<T>({
         />
 
         {/* Lives Display */}
-        <div className='flex items-center gap-1'>
+        <div className='flex shrink-0 items-center gap-1'>
           {Array.from({ length: maxLives }).map((_, i) => {
             const hasLife = i < lives;
             return (
