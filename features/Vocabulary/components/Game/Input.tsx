@@ -2,7 +2,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
-import { toHiragana } from 'wanakana';
 import { IVocabObj } from '@/features/Vocabulary/store/useVocabStore';
 import {
   useClick,
@@ -34,6 +33,10 @@ import {
 import { useSetProgressStore } from '@/features/Progress';
 import { shouldSuppressContinueKeyboardShortcut } from '@/shared/utils/game/continueShortcutGuard';
 import { isVocabularyMeaningAnswerCorrect } from '@/features/Vocabulary/lib/isVocabularyMeaningAnswerCorrect';
+import {
+  getAcceptedVocabularyReadings,
+  isVocabularyReadingAnswerCorrect,
+} from '@/features/Vocabulary/lib/vocabularyReadings';
 
 // Get the global adaptive selector for weighted character selection
 const adaptiveSelector = getGlobalAdaptiveSelector();
@@ -226,10 +229,14 @@ const VocabInputGame = ({
         ? isVocabularyMeaningAnswerCorrect(correctWordObj, input, isReverse)
         : false;
     } else {
-      const targetReading = typeof targetChar === 'string' ? targetChar : '';
-      const inputAsHiragana = toHiragana(input);
-      const targetAsHiragana = toHiragana(targetReading);
-      return inputAsHiragana === targetAsHiragana || input === targetReading;
+      // Accept every reading of the displayed word (e.g. 行く: いく / ゆく).
+      return correctWordObj
+        ? isVocabularyReadingAnswerCorrect(
+            correctWordObj,
+            input,
+            selectedWordObjs,
+          )
+        : false;
     }
   };
 
@@ -363,9 +370,14 @@ const VocabInputGame = ({
   // For Bottom Bar feedback
   const feedbackText = isReverse
     ? targetChar
-    : Array.isArray(targetChar)
-      ? targetChar[0]
-      : targetChar;
+    : quizType === 'reading' && correctWordObj
+      ? // Show every accepted reading, e.g. "いく / ゆく" for 行く.
+        getAcceptedVocabularyReadings(correctWordObj, selectedWordObjs).join(
+          ' / ',
+        )
+      : Array.isArray(targetChar)
+        ? targetChar[0]
+        : targetChar;
 
   return (
     <div
