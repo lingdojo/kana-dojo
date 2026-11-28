@@ -131,10 +131,15 @@ export default function Blitz<T>({ config }: BlitzProps<T>) {
 
   // Refs for stable callbacks
   const generateQuestionRef = useRef(generateQuestion);
-  generateQuestionRef.current = generateQuestion;
-
   const generateOptionsRef = useRef(generateOptions);
-  generateOptionsRef.current = generateOptions;
+
+  // Written in an effect, not during render: assigning a ref while rendering is what
+  // react-hooks/set-state-in-effect and `Cannot access refs during render` flag, and it made
+  // `npm run check` fail on main. Every reader below is an effect or a handler, never render.
+  useEffect(() => {
+    generateQuestionRef.current = generateQuestion;
+    generateOptionsRef.current = generateOptions;
+  }, [generateQuestion, generateOptions]);
 
   // Initialize question
   useEffect(() => {
