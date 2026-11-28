@@ -1,4 +1,6 @@
 import { describe, expect, it } from 'vitest';
+import n5Kanji from '@/public/data-kanji/N5.json';
+import { getKanjiClassicInputTargets } from '@/features/Kanji/lib/getReadingAnswerForms';
 import { isKanjiClassicInputAnswerCorrect } from '@/features/Kanji/lib/isKanjiClassicInputAnswerCorrect';
 
 describe('isKanjiClassicInputAnswerCorrect', () => {
@@ -64,4 +66,21 @@ describe('isKanjiClassicInputAnswerCorrect', () => {
       }),
     ).toBe(false);
   });
+
+  it.each(['manabu', 'まなぶ', 'gaku', 'ガク', 'study'])(
+    'accepts %s for 学 with the targets built from the kanji data',
+    inputValue => {
+      const target = getKanjiClassicInputTargets(
+        n5Kanji.find(kanji => kanji.kanjiChar === '学'),
+      );
+
+      expect(
+        isKanjiClassicInputAnswerCorrect({
+          inputValue,
+          target,
+          isReverse: false,
+        }),
+      ).toBe(true);
+    },
+  );
 });
