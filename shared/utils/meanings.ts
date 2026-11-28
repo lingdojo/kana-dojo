@@ -36,3 +36,29 @@ export const normalizeMeaningAnswer = (value: string): string =>
   normalizeAnswerValue(value)
     .replace(ELLIPSIS_VARIANTS, '...')
     .replace(OPTIONAL_MEANING_PREFIX, '');
+
+/**
+ * Splits a dictionary definition such as "ogre,demon,it (i.e., in a game of
+ * tag)" into its meanings. Commas and semicolons inside parentheses belong to
+ * the annotation, so only top-level separators split the list.
+ */
+export const splitDefinitionList = (definition: string): string[] => {
+  const pieces: string[] = [];
+  let depth = 0;
+  let current = '';
+
+  for (const char of definition) {
+    if (char === '(') depth += 1;
+    else if (char === ')') depth = Math.max(0, depth - 1);
+
+    if ((char === ',' || char === ';') && depth === 0) {
+      pieces.push(current);
+      current = '';
+    } else {
+      current += char;
+    }
+  }
+  pieces.push(current);
+
+  return pieces.map(piece => piece.trim()).filter(Boolean);
+};
