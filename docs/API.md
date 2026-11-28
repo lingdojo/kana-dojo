@@ -265,10 +265,10 @@ Translation and analysis results are cached to reduce API calls:
 
 Required secrets (set in Vercel):
 
-| Variable                   | Description                      |
-| -------------------------- | -------------------------------- |
+| Variable               | Description                                 |
+| ---------------------- | ------------------------------------------- |
 | `AZURE_TRANSLATOR_KEY` | Azure Translator API key (primary provider) |
-| `DEEPSEEK_API_KEY` | DeepSeek API key (fallback provider) |
+| `DEEPSEEK_API_KEY`     | DeepSeek API key (fallback provider)        |
 
 **Note**: These keys are stored securely in Vercel and never exposed to the client.
 

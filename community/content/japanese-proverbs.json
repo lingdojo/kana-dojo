@@ -438,16 +438,16 @@
     "meaning": "Giving something valuable to someone who can't appreciate it"
   },
   {
-  "japanese": "毒を食らわば皿まで",
-  "romaji": "Doku wo kurawaba sara made",
-  "english": "If you eat poison, eat the plate too",
-  "meaning": "If you must do it, go all the way"
+    "japanese": "毒を食らわば皿まで",
+    "romaji": "Doku wo kurawaba sara made",
+    "english": "If you eat poison, eat the plate too",
+    "meaning": "If you must do it, go all the way"
   },
   {
-  "japanese": "一期一会",
-  "romaji": "Ichi go ichi e",
-  "english": "One time, one meeting",
-  "meaning": "Treasure every encounter, for it will never recur"
+    "japanese": "一期一会",
+    "romaji": "Ichi go ichi e",
+    "english": "One time, one meeting",
+    "meaning": "Treasure every encounter, for it will never recur"
   },
   {
     "japanese": "怪我の功名",
@@ -456,15 +456,21 @@
     "meaning": "A lucky break that comes from an error"
   },
   {
-  "japanese": "急いては事を仕損じる",
-  "romaji": "Seite wa koto wo shisonjiru",
-  "english": "Haste will spoil things",
-  "meaning": "Rushing leads to mistakes"
-},
-{
-  "japanese": "念には念を入れよ",
-  "romaji": "Nen ni wa nen wo ireyo",
-  "english": "Put care into care",
-  "meaning": "Double-check; be extra careful"
-}
+    "japanese": "急いては事を仕損じる",
+    "romaji": "Seite wa koto wo shisonjiru",
+    "english": "Haste will spoil things",
+    "meaning": "Rushing leads to mistakes"
+  },
+  {
+    "japanese": "念には念を入れよ",
+    "romaji": "Nen ni wa nen wo ireyo",
+    "english": "Put care into care",
+    "meaning": "Double-check; be extra careful"
+  },
+  {
+    "japanese": "口は災いの元",
+    "romaji": "Kuchi wa wazawai no moto",
+    "english": "The mouth is the source of disaster",
+    "meaning": "Careless speech can cause trouble"
+  }
 ]

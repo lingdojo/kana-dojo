@@ -77,26 +77,26 @@ For each pull request:
 
 ### Required Variables
 
-| Variable                        | Description                                                                 | Where to Get                                              |
-| ------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------- |
-| `AZURE_TRANSLATOR_KEY`          | Azure Translator API key (primary translation provider)                    | [Azure Portal](https://portal.azure.com/)                 |
-| `DEEPSEEK_API_KEY`               | DeepSeek API key (translation fallback; shared with bug report processing)  | [DeepSeek Platform](https://platform.deepseek.com/)       |
-| `NEXT_PUBLIC_GA_ID`             | Google Analytics measurement ID                                             | [Google Analytics](https://analytics.google.com/)         |
-| `NEXT_PUBLIC_POSTHOG_KEY`       | PostHog API key (client)                                                    | [PostHog](https://posthog.com/)                           |
-| `POSTHOG_API_KEY`               | PostHog API key (server, optional; falls back to `NEXT_PUBLIC_POSTHOG_KEY`) | [PostHog](https://posthog.com/)                           |
-| `POSTHOG_HOST`                  | PostHog host (optional; falls back to `NEXT_PUBLIC_POSTHOG_HOST`)           | [PostHog](https://posthog.com/)                           |
-| `NEXT_PUBLIC_SUPABASE_URL`      | Supabase project URL                                                        | [Supabase](https://supabase.com/)                         |
-| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase anonymous key                                                      | [Supabase](https://supabase.com/)                         |
+| Variable                        | Description                                                                 | Where to Get                                        |
+| ------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------- |
+| `AZURE_TRANSLATOR_KEY`          | Azure Translator API key (primary translation provider)                     | [Azure Portal](https://portal.azure.com/)           |
+| `DEEPSEEK_API_KEY`              | DeepSeek API key (translation fallback; shared with bug report processing)  | [DeepSeek Platform](https://platform.deepseek.com/) |
+| `NEXT_PUBLIC_GA_ID`             | Google Analytics measurement ID                                             | [Google Analytics](https://analytics.google.com/)   |
+| `NEXT_PUBLIC_POSTHOG_KEY`       | PostHog API key (client)                                                    | [PostHog](https://posthog.com/)                     |
+| `POSTHOG_API_KEY`               | PostHog API key (server, optional; falls back to `NEXT_PUBLIC_POSTHOG_KEY`) | [PostHog](https://posthog.com/)                     |
+| `POSTHOG_HOST`                  | PostHog host (optional; falls back to `NEXT_PUBLIC_POSTHOG_HOST`)           | [PostHog](https://posthog.com/)                     |
+| `NEXT_PUBLIC_SUPABASE_URL`      | Supabase project URL                                                        | [Supabase](https://supabase.com/)                   |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase anonymous key                                                      | [Supabase](https://supabase.com/)                   |
 
 ### Optional Variables
 
-| Variable              | Description                       | Default |
-| --------------------- | --------------------------------- | ------- |
+| Variable                    | Description                          | Default                     |
+| --------------------------- | ------------------------------------ | --------------------------- |
 | `AZURE_TRANSLATOR_ENDPOINT` | Azure Translator endpoint (optional) | Microsoft's public endpoint |
-| `AZURE_TRANSLATOR_REGION` | Azure Translator region (optional) | Not set |
-| `DISCORD_WEBHOOK_URL` | Discord webhook for notifications | Not set |
-| `SENTRY_DSN`          | Sentry error tracking             | Not set |
-| `ANALYZE`             | Bundle analysis                   | `false` |
+| `AZURE_TRANSLATOR_REGION`   | Azure Translator region (optional)   | Not set                     |
+| `DISCORD_WEBHOOK_URL`       | Discord webhook for notifications    | Not set                     |
+| `SENTRY_DSN`                | Sentry error tracking                | Not set                     |
+| `ANALYZE`                   | Bundle analysis                      | `false`                     |
 
 ### Setting Environment Variables
 

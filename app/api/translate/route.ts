@@ -20,9 +20,7 @@ const TRANSLATE_ANALYTICS_ENABLED = false;
 const trackTranslate: (
   event: string,
   properties?: Record<string, unknown>,
-) => void = TRANSLATE_ANALYTICS_ENABLED
-  ? captureServerEvent
-  : () => {};
+) => void = TRANSLATE_ANALYTICS_ENABLED ? captureServerEvent : () => {};
 
 // Simple in-memory cache for translations (reduces API calls)
 const translationCache = new Map<

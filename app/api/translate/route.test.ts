@@ -199,11 +199,9 @@ describe('POST /api/translate', () => {
     const data = (await response.json()) as { provider: string };
     expect(data.provider).toBe('azure');
     expect(mockCheckTranslateRateLimit).toHaveBeenCalledWith('127.0.0.1');
-    expect(mockCheckTranslateUsageLimit).toHaveBeenCalledWith(
-      '127.0.0.1',
-      5,
-      { verified: false },
-    );
+    expect(mockCheckTranslateUsageLimit).toHaveBeenCalledWith('127.0.0.1', 5, {
+      verified: false,
+    });
     expect(fetch).toHaveBeenCalledTimes(1);
     expect(String(vi.mocked(fetch).mock.calls[0][0])).toContain(
       'api.cognitive.microsofttranslator.com/translate',

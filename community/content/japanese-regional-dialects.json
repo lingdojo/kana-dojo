@@ -413,18 +413,18 @@
     "note": "Reason marker in Kyushu. (Set 5)"
   },
   {
-  "dialect": "ぶち",
-  "standardJapanese": "とても",
-  "english": "very",
-  "region": "Yamaguchi/Hiroshima",
-  "note": "Regional intensifier. (Set 6)"
+    "dialect": "ぶち",
+    "standardJapanese": "とても",
+    "english": "very",
+    "region": "Yamaguchi/Hiroshima",
+    "note": "Regional intensifier. (Set 6)"
   },
   {
-  "dialect": "よか",
-  "standardJapanese": "いい",
-  "english": "good",
-  "region": "Kyushu",
-  "note": "Common Kyushu replacement. (Set 3)"
+    "dialect": "よか",
+    "standardJapanese": "いい",
+    "english": "good",
+    "region": "Kyushu",
+    "note": "Common Kyushu replacement. (Set 3)"
   },
   {
     "dialect": "よか",
