@@ -66,6 +66,20 @@
       "notes": "Excellent for learning from Netflix and YouTube."
     },
     {
+      "id": "palingo-dictation",
+      "name": "Palingo",
+      "description": "Practise Japanese dictation with captioned YouTube videos.",
+      "descriptionLong": "In desktop Chrome, use a non-live YouTube video with Japanese captions. Replay a sentence, type what you hear, and compare it with the captions.",
+      "category": "immersion",
+      "subcategory": "media-tools",
+      "tags": ["YouTube", "Japanese-subtitles", "dictation"],
+      "difficulty": "intermediate",
+      "priceType": "freemium",
+      "priceDetails": "Basic dictation is free without an account. Translation uses credits.",
+      "platforms": ["browser-extension"],
+      "url": "https://palingo.pro/en/features/youtube-dictation/"
+    },
+    {
       "id": "asbplayer",
       "name": "asbplayer",
       "nameJa": "asbplayer",
