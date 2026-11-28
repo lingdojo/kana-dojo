@@ -115,9 +115,21 @@ export default function ClientLayout({
 
   const pathname = usePathname();
   const previousPathnameRef = useRef<string | null>(null);
+  const pendingDonationUntilPracticeEndRef = useRef(false);
 
   useEffect(() => {
-    const showDonationModal = () => setIsDonationModalOpen(true);
+    const showDonationModal = () => {
+      // Streak milestone prompts must never interrupt an active quiz.
+      const isTraining =
+        /^\/(?:[a-z]{2}\/)?(?:kana|kanji|vocabulary)\/train(?:\/|$)/.test(
+          window.location.pathname,
+        );
+      if (isTraining) {
+        pendingDonationUntilPracticeEndRef.current = true;
+      } else {
+        setIsDonationModalOpen(true);
+      }
+    };
 
     window.addEventListener(
       STREAK_MILESTONE_DONATION_EVENT,
@@ -140,6 +152,7 @@ export default function ClientLayout({
       /^\/(?:[a-z]{2}\/)?(?:kana|kanji|vocabulary)\/?$/.test(path);
 
     let showAdvertisementTimer: ReturnType<typeof setTimeout> | undefined;
+    let showDonationTimer: ReturnType<typeof setTimeout> | undefined;
 
     if (
       previousPathname &&
@@ -152,10 +165,26 @@ export default function ClientLayout({
       }, 0);
     }
 
+    // Deliver a queued donation request only after the learner exits training.
+    // If a transition advertisement is due, wait until it is dismissed.
+    if (
+      previousPathname &&
+      isTrainingRoute(previousPathname) &&
+      !isTrainingRoute(pathname) &&
+      pendingDonationUntilPracticeEndRef.current &&
+      !(isDojoMenuRoute(pathname) && isTransitionAdvertisementEnabled('after'))
+    ) {
+      pendingDonationUntilPracticeEndRef.current = false;
+      showDonationTimer = setTimeout(() => {
+        setIsDonationModalOpen(true);
+      }, 0);
+    }
+
     previousPathnameRef.current = pathname;
 
     return () => {
       if (showAdvertisementTimer) clearTimeout(showAdvertisementTimer);
+      if (showDonationTimer) clearTimeout(showDonationTimer);
     };
   }, [pathname]);
 
@@ -218,6 +247,11 @@ export default function ClientLayout({
       }
 
       if (nextCount % 2 === 0) {
+        // Navigation-based prompts are also postponed during training.
+        if (/^\/(?:[a-z]{2}\/)?(?:kana|kanji|vocabulary)\/train(?:\/|$)/.test(pathname)) {
+          pendingDonationUntilPracticeEndRef.current = true;
+          return;
+        }
         const timer = setTimeout(() => {
           setIsDonationModalOpen(true);
         }, 500);
@@ -372,7 +406,13 @@ export default function ClientLayout({
       <TransitionAdvertisementOverlay
         isOpen={isTransitionAdvertisementOpen}
         placement='after'
-        onDismiss={() => setIsTransitionAdvertisementOpen(false)}
+        onDismiss={() => {
+          setIsTransitionAdvertisementOpen(false);
+          if (pendingDonationUntilPracticeEndRef.current) {
+            pendingDonationUntilPracticeEndRef.current = false;
+            setIsDonationModalOpen(true);
+          }
+        }}
       />
       <ScrollRestoration />
       <WelcomeModal />
