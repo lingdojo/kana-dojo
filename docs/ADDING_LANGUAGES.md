@@ -6,9 +6,9 @@ This guide explains how to add new language support to KanaDojo with full SEO op
 
 - ✅ English (en) - Primary
 - ✅ Spanish (es) - Fully localized
-- ✅ Japanese (ja) - Fully localized
-- 📝 French (fr) - Template/Example included
-- 📝 German (de) - Template/Example included
+- 📝 French (fr) - Translation files included, not enabled in routing yet
+- 📝 Simplified Chinese (zh) - Translation files included, not enabled in routing yet
+- 📝 German (de) - Metadata file only, not enabled in routing yet
 
 ## 🚀 Quick Start: Adding a New Language
 
@@ -53,10 +53,12 @@ Open the new file and translate all strings:
 
 ```typescript
 export const routing = defineRouting({
-  locales: ['en', 'es', 'ja', 'YOUR_LOCALE'], // Add your locale here
+  locales: ['en', 'es', 'YOUR_LOCALE'], // Add your locale here
   defaultLocale: 'en',
 });
 ```
+
+Also add the same locale to the `LANGUAGES` array in `scripts/i18n/validate-translations.js`. `npm run i18n:config:check` fails if the two lists differ.
 
 ### Step 4: Update Root Layout Metadata
 
@@ -67,7 +69,7 @@ Add your locale to the OpenGraph alternates:
 ```typescript
 openGraph: {
   // ...existing config
-  alternateLocale: ['es_ES', 'ja_JP', 'YOUR_LOCALE']; // Add here
+  alternateLocale: ['es_ES', 'YOUR_LOCALE']; // Add here
 }
 ```
 
