@@ -229,7 +229,7 @@ function GameHeader({
   onCancel: () => void;
 }) {
   return (
-    <div className='flex items-center justify-between gap-2'>
+    <div className='flex flex-wrap items-center justify-between gap-2'>
       <div className='flex shrink-0 items-center gap-2'>
         <Timer className='text-(--main-color)' size={20} />
         <span
@@ -244,7 +244,7 @@ function GameHeader({
         </span>
       </div>
       <QuizProgressIndicator currentQuestion={stats.correct + 1} />
-      <div className='flex shrink-0 items-center gap-3 sm:gap-4'>
+      <div className='flex shrink-0 items-center gap-2.5 sm:gap-4'>
         <div className='text-right text-sm text-(--muted-color)'>
           <div>
             <span className='text-(--secondary-color)'>Score: </span>

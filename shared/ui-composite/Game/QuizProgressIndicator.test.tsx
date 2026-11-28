@@ -3,6 +3,7 @@ import { act, fireEvent, render, screen } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import QuizProgressIndicator from '@/shared/ui-composite/Game/QuizProgressIndicator';
 import ReturnFromGame from '@/shared/ui-composite/Game/ReturnFromGame';
+import { GameBottomBar } from '@/shared/ui-composite/Game/GameBottomBar';
 import BlitzActiveGame from '@/shared/ui-composite/Blitz/ActiveGame';
 import GauntletActiveGame from '@/shared/ui-composite/Gauntlet/ActiveGame';
 import useClassicFeedbackStore from '@/shared/store/useClassicFeedbackStore';
@@ -199,6 +200,79 @@ describe('Classic ReturnFromGame progress integration', () => {
     );
     expect(screen.getByText('Question').parentElement?.textContent).toBe(
       'Question 1',
+    );
+  });
+
+  it('keeps holding Question N when an overlaid GameBottomBar (e.g. StreakMilestoneOverlay) mounts and unmounts', () => {
+    const { rerender } = render(
+      <>
+        <ReturnFromGame isHidden={false} gameMode='Pick' onQuit={vi.fn()} />
+        <GameBottomBar
+          state='check'
+          onAction={vi.fn()}
+          canCheck={true}
+          feedbackContent='a'
+        />
+      </>,
+    );
+    expect(screen.getByText('Question').parentElement?.textContent).toBe(
+      'Question 1',
+    );
+
+    // User answers correctly: bottom bar becomes 'correct', Milestone overlay opens with state='check'
+    mockStatsState.correctAnswers = 1;
+    rerender(
+      <>
+        <ReturnFromGame isHidden={false} gameMode='Pick' onQuit={vi.fn()} />
+        <GameBottomBar
+          state='correct'
+          onAction={vi.fn()}
+          canCheck={true}
+          feedbackContent='a'
+        />
+        <GameBottomBar
+          state='check'
+          onAction={vi.fn()}
+          canCheck={true}
+          feedbackContent={null}
+          actionLabel='skip'
+        />
+      </>,
+    );
+    expect(screen.getByText('Question').parentElement?.textContent).toBe(
+      'Question 1',
+    );
+
+    // User skips milestone overlay while still viewing "Nicely done!" for Question 1:
+    rerender(
+      <>
+        <ReturnFromGame isHidden={false} gameMode='Pick' onQuit={vi.fn()} />
+        <GameBottomBar
+          state='correct'
+          onAction={vi.fn()}
+          canCheck={true}
+          feedbackContent='a'
+        />
+      </>,
+    );
+    expect(screen.getByText('Question').parentElement?.textContent).toBe(
+      'Question 1',
+    );
+
+    // User clicks Continue on the game bottom bar -> advances to Question 2:
+    rerender(
+      <>
+        <ReturnFromGame isHidden={false} gameMode='Pick' onQuit={vi.fn()} />
+        <GameBottomBar
+          state='check'
+          onAction={vi.fn()}
+          canCheck={false}
+          feedbackContent='a'
+        />
+      </>,
+    );
+    expect(screen.getByText('Question').parentElement?.textContent).toBe(
+      'Question 2',
     );
   });
 });

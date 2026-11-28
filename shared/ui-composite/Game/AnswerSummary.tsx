@@ -8,8 +8,12 @@ import {
   SetStateAction,
   useRef,
   useEffect,
+  useLayoutEffect,
   useCallback,
 } from 'react';
+
+const useIsomorphicLayoutEffect =
+  typeof window !== 'undefined' ? useLayoutEffect : useEffect;
 import { useClick } from '@/shared/hooks/generic/useAudio';
 import { removeVerbDuplicates } from '@/shared/utils/meanings';
 import FuriganaText from '@/shared/ui-composite/text/FuriganaText';
@@ -468,7 +472,7 @@ const AnswerSummary = ({
     state => state.setShowingAnswerSummary,
   );
 
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     setShowingAnswerSummary(true);
     return () => setShowingAnswerSummary(false);
   }, [setShowingAnswerSummary]);

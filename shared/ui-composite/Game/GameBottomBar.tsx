@@ -1,10 +1,13 @@
 'use client';
-import React, { ReactNode, useEffect, useState } from 'react';
+import React, { ReactNode, useEffect, useLayoutEffect, useState } from 'react';
 import { CircleCheck, RotateCcw, Flag } from 'lucide-react';
 import clsx from 'clsx';
 import { ActionButton } from '@/shared/ui/components/ActionButton';
 import { useClick } from '@/shared/hooks/generic/useAudio';
 import useClassicFeedbackStore from '@/shared/store/useClassicFeedbackStore';
+
+const useIsomorphicLayoutEffect =
+  typeof window !== 'undefined' ? useLayoutEffect : useEffect;
 
 // Toggle between new SVG check icon (true) and old CircleCheck icon (false)
 const USE_NEW_CHECK_ICON = true;
@@ -77,10 +80,14 @@ export const GameBottomBar = ({
   const [prevFeedbackContent, setPrevFeedbackContent] =
     useState<ReactNode>(feedbackContent);
 
+  const hasPrimitiveFeedbackChanged =
+    (typeof feedbackContent !== 'object' || feedbackContent === null) &&
+    feedbackContent !== prevFeedbackContent;
+
   if (
     state !== prevState ||
     displayTitle !== prevDisplayTitle ||
-    feedbackContent !== prevFeedbackContent
+    hasPrimitiveFeedbackChanged
   ) {
     setPrevState(state);
     setPrevDisplayTitle(displayTitle);
@@ -97,6 +104,10 @@ export const GameBottomBar = ({
 
   if (wrongFeedbackSignal !== prevWrongSignal) {
     setPrevWrongSignal(wrongFeedbackSignal);
+    if (state !== 'check') {
+      setFrozenTitle(displayTitle);
+      setFrozenFeedbackContent(feedbackContent);
+    }
     if (state === 'wrong') {
       setHideWrongFeedback(false);
     }
@@ -109,9 +120,9 @@ export const GameBottomBar = ({
     }
   }
 
-  useEffect(() => {
-    if (!isClassicSessionActive) return;
-    setShowingCorrectBottomBar(isCorrect);
+  useIsomorphicLayoutEffect(() => {
+    if (!isClassicSessionActive || !isCorrect) return;
+    setShowingCorrectBottomBar(true);
     return () => setShowingCorrectBottomBar(false);
   }, [isClassicSessionActive, isCorrect, setShowingCorrectBottomBar]);
 
