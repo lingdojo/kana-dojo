@@ -12,7 +12,7 @@
 
 [![लाइव डेमो](https://img.shields.io/badge/demo-kanadojo.com-blue?style=for-the-badge)](https://kanadojo.com)
 [![लाइसेंस](https://img.shields.io/badge/license-AGPL--v3-blue)](LICENSE.md)
-[![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)](ht tps://nextjs.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=next.js)](ht tps://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19-blue?style=for-the-badge&logo=react)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
 
@@ -138,7 +138,7 @@ KanaDojo को बेहतरीन प्रदर्शन और डेव�
 
 ### कोर फ्रेमवर्क
 
-- **[Next.js 15](https://nextjs.org/)** - सर्वर-साइड रेंडरिंग और बेहतरीन प्रदर्शन के लिए ऐप राउटर के साथ रिएक्ट फ्रेमवर्क
+- **[Next.js 16](https://nextjs.org/)** - सर्वर-साइड रेंडरिंग और बेहतरीन प्रदर्शन के लिए ऐप राउटर के साथ रिएक्ट फ्रेमवर्क
 - **[React 19](https://react.dev/)** - समवर्ती सुविधाओं के साथ नवीनतम रिएक्ट
 - **[TypeScript](https://www.typescriptlang.org/)** - टाइप-सेफ डेवलपमेंट
 

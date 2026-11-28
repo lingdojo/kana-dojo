@@ -12,7 +12,7 @@
 
 [![Live Demo](https://img.shields.io/badge/demo-kanadojo.com-blue?style=for-the-badge)](https://kanadojo.com)
 [![License](https://img.shields.io/badge/license-AGPL--v3-blue)](LICENSE.md)
-[![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19-blue?style=for-the-badge&logo=react)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
 
@@ -138,7 +138,7 @@ KanaDojo 採現代化網頁技術打造，以提供最佳效能與開發者體�
 
 ### 核心框架
 
-- **[Next.js 15](https://nextjs.org/)** - 基於 React 的框架，透過 App Router 提供伺服器端渲染與最佳效能
+- **[Next.js 16](https://nextjs.org/)** - 基於 React 的框架，透過 App Router 提供伺服器端渲染與最佳效能
 - **[React 19](https://react.dev/)** - 最新版 React，具備並行功能
 - **[TypeScript](https://www.typescriptlang.org/)** - 型別安全開發
 

@@ -23,7 +23,7 @@
 KanaDojo is built with modern web technologies optimized for performance and developer experience:
 
 - **TypeScript** - Type-safe development
-- **Next.js 15** - App Router with React 19
+- **Next.js 16** - App Router with React 19
 - **Tailwind CSS** - Utility-first styling
 - **shadcn/ui** - High-quality, accessible component library (slow adoption in progress)
 - **Framer Motion** - Smooth animations via `motion` package
@@ -1156,4 +1156,3 @@ This document should be updated whenever:
 
 **Questions or Suggestions?**  
 Please open an issue or discussion on GitHub to improve this documentation.
-

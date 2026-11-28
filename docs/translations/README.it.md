@@ -15,7 +15,7 @@
 [![Live Demo](https://img.shields.io/badge/demo-kanadojo.com-blue?style=for-the-badge)](https://kanadojo.com)
 [![DeepWiki](https://img.shields.io/badge/docs-DeepWiki-purple?style=for-the-badge)](https://deepwiki.com/lingdojo/kana-dojo)
 [![License](https://img.shields.io/badge/license-AGPL--v3-blue?style=for-the-badge)](LICENSE.md)
-[![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19-blue?style=for-the-badge&logo=react)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
 
@@ -135,7 +135,7 @@ KanaDojo è sviluppato utilizzando tecnologie web moderne, con particolare atten
 
 ### Framework Principali
 
-- **[Next.js 15](https://nextjs.org/)** - Framework React con App Router per SSR e performance ottimizzate
+- **[Next.js 16](https://nextjs.org/)** - Framework React con App Router per SSR e performance ottimizzate
 - **[React 19](https://react.dev/)** - Ultima versione di React con funzionalità concorrenti
 - **[TypeScript](https://www.typescriptlang.org/)** - Sviluppo fortemente tipizzato
 

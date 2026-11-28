@@ -10,7 +10,7 @@ This file provides comprehensive guidance for AI coding assistants (GitHub Copil
 
 ## Shell Environment
 
-**Windows PowerShell**: use `;` 
+**Windows PowerShell**: use `;`
 
 **Linux/macOS/WSL**: use `&&`
 
@@ -20,11 +20,11 @@ This file provides comprehensive guidance for AI coding assistants (GitHub Copil
 
 ## Project Overview
 
-**KanaDojo** is a Japanese learning platform built with Next.js 15, React 19, and TypeScript. It provides gamified training for Hiragana, Katakana, Kanji, and Vocabulary.
+**KanaDojo** is a Japanese learning platform built with Next.js 16, React 19, and TypeScript. It provides gamified training for Hiragana, Katakana, Kanji, and Vocabulary.
 
 | Aspect    | Technology                               |
 | --------- | ---------------------------------------- |
-| Framework | Next.js 15 with App Router and Turbopack |
+| Framework | Next.js 16 with App Router and Turbopack |
 | Language  | TypeScript (strict mode)                 |
 | Styling   | Tailwind CSS + shadcn/ui                 |
 | State     | Zustand with localStorage persistence    |

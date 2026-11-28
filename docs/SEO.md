@@ -210,7 +210,7 @@ Enhanced `manifest.json` with:
 
 ### Performance
 
-- Next.js 15 with App Router for optimal performance
+- Next.js 16 with App Router for optimal performance
 - Server-side rendering (SSR) for better SEO
 - Static generation where possible
 - Image optimization with next/image
